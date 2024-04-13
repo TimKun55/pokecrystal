@@ -191,6 +191,7 @@ ItemDescriptions:
 	dw MusicMailDesc
 	dw MirageMailDesc
 	dw TeruSama25Desc
+	dw TeruSama25Desc
 	assert_table_length NUM_ITEMS
 	dw TeruSama26Desc
 	dw TeruSama26Desc
@@ -222,7 +223,6 @@ ItemDescriptions:
 	dw TeruSama27Desc
 	dw TeruSama27Desc
 	dw TeruSama27Desc
-	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama28Desc
