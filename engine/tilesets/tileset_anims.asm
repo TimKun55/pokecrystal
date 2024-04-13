@@ -42,7 +42,7 @@ TilesetKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
@@ -55,7 +55,7 @@ TilesetParkAnim:
 	dw NULL,  WaitTileAnimation
 	dw vTiles2 tile $5f, AnimateFountainTile
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
@@ -73,7 +73,7 @@ TilesetForestAnim:
 	dw NULL,  ForestTreeRightAnimation2
 	dw NULL,  AnimateFlowerTile
 	dw vTiles2 tile $14, AnimateWaterTile
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
@@ -81,7 +81,7 @@ TilesetJohtoAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
 	dw WhirlpoolFrames1, AnimateWhirlpoolTile
@@ -126,7 +126,7 @@ TilesetPortAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -184,7 +184,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $14, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -205,7 +205,7 @@ TilesetIcePathAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $35, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $31, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
