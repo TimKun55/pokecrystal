@@ -498,14 +498,12 @@ PhoneCall::
 	ld [hl], "☎"
 	inc hl
 	inc hl
-; BUG: The unused phonecall script command may crash (see docs/bugs_and_glitches.md)
-	ld a, [wPhoneScriptBank]
-	ld b, a
 	ld a, [wPhoneCaller]
 	ld e, a
 	ld a, [wPhoneCaller + 1]
 	ld d, a
-	call BrokenPlaceFarString
+	ld a, [wPhoneScriptBank]
+	call PlaceFarString
 	ret
 
 Phone_NoSignal:
