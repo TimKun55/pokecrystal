@@ -1,7 +1,7 @@
 	object_const_def
-	const SILVERCAVEROOM3_RED
+	const MTSILVERROOM3_RED
 
-SilverCaveRoom3_MapScripts:
+MtSilverRoom3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -25,7 +25,7 @@ Red:
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	disappear SILVERCAVEROOM3_RED
+	disappear MTSILVERROOM3_RED
 	pause 15
 	special FadeInFromBlack
 	pause 30
@@ -48,11 +48,11 @@ RedLeavesText:
 	line "<……>"
 	done
 
-SilverCaveRoom3_MapEvents:
+MtSilverRoom3_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 33, SILVER_CAVE_ROOM_2, 2
+	warp_event  9, 33, MT_SILVER_ROOM_2, 2
 
 	def_coord_events
 

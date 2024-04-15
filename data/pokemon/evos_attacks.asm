@@ -2108,8 +2108,8 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
-	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 6, EMBER
+	db 12, SMOKESCREEN
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
 	db 36, SWIFT
@@ -2121,9 +2121,9 @@ QuilavaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
-	db 1, SMOKESCREEN
-	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 1, EMBER
+	db 6, EMBER
+	db 12, SMOKESCREEN
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 42, SWIFT
@@ -2134,10 +2134,10 @@ TyphlosionEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
-	db 1, SMOKESCREEN
 	db 1, EMBER
-	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 1, SMOKESCREEN
+	db 6, EMBER
+	db 12, SMOKESCREEN
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 45, SWIFT

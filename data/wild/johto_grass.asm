@@ -261,7 +261,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      44,  48
 	db  8, XATU,          44,  48
 	db  8, BELLOSSOM,     44,  48
-	db  8, SYLVEON,       44,  48
+;	db  8, SYLVEON,       44,  48
+	db  8, EEVEE,         44,  48
 	; day
 	;   %, species,		 min, max
 	db 22, LEDIAN,        44,  48
@@ -270,7 +271,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      44,  48
 	db  8, XATU,          44,  48
 	db  8, BELLOSSOM,     44,  48
-	db  8, SYLVEON,       44,  48
+;	db  8, SYLVEON,       44,  48
+	db  8, EEVEE,         44,  48
 	; nite
 	;   %, species,		 min, max
 	db 22, LEDIAN,        44,  48
@@ -279,7 +281,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      44,  48
 	db  8, XATU,          44,  48
 	db  8, BELLOSSOM,     44,  48
-	db  8, SYLVEON,       44,  48
+;	db  8, SYLVEON,       44,  48
+	db  8, EEVEE,         44,  48
 	end_grass_wildmons
 
 	def_grass_wildmons TIN_TOWER_9F
@@ -292,7 +295,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      46,  50
 	db  8, XATU,          46,  50
 	db  8, BELLOSSOM,     46,  50
-	db  8, SYLVEON,       46,  50
+;	db  8, SYLVEON,       46,  50
+	db  8, EEVEE,         44,  48
 	; day
 	;   %, species,		 min, max
 	db 22, LEDIAN,        46,  50
@@ -301,7 +305,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      46,  50
 	db  8, XATU,          46,  50
 	db  8, BELLOSSOM,     46,  50
-	db  8, SYLVEON,       46,  50
+;	db  8, SYLVEON,       46,  50
+	db  8, EEVEE,         44,  48
 	; nite
 	;   %, species,		 min, max
 	db 22, LEDIAN,        46,  50
@@ -310,7 +315,8 @@ JohtoGrassWildMons:
 	db 10, SUNFLORA,      46,  50
 	db  8, XATU,          46,  50
 	db  8, BELLOSSOM,     46,  50
-	db  8, SYLVEON,       46,  50
+;	db  8, SYLVEON,       46,  50
+	db  8, EEVEE,         44,  48
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_1F
@@ -1157,7 +1163,8 @@ JohtoGrassWildMons:
 	db 22, KINGLER,       46,  48
 	db 22, DEWGONG,       46,  48
 	db 22, SLOWKING,      46,  48
-	db 10, TOGEKISS,      48,  50
+;	db 10, TOGEKISS,      48,  50
+	db 10, TOGETIC,       48,  50
 	db  8, KINGLER,       48,  50
 	db  8, DEWGONG,       48,  50
 	db  8, SLOWKING,      48,  50
@@ -1166,7 +1173,8 @@ JohtoGrassWildMons:
 	db 22, KINGLER,       46,  48
 	db 22, DEWGONG,       46,  48
 	db 22, SLOWKING,      46,  48
-	db 10, TOGEKISS,      48,  50
+;	db 10, TOGEKISS,      48,  50
+	db 10, TOGETIC,       48,  50
 	db  8, KINGLER,       48,  50
 	db  8, DEWGONG,       48,  50
 	db  8, SLOWKING,      48,  50
@@ -1175,7 +1183,8 @@ JohtoGrassWildMons:
 	db 22, KINGLER,       46,  48
 	db 22, DEWGONG,       46,  48
 	db 22, SLOWKING,      46,  48
-	db 10, TOGEKISS,      48,  50
+;	db 10, TOGEKISS,      48,  50
+	db 10, TOGETIC,       48,  50
 	db  8, KINGLER,       48,  50
 	db  8, DEWGONG,       48,  50
 	db  8, SLOWKING,      48,  50

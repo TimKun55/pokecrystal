@@ -3154,7 +3154,7 @@ wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
 wTeamRocketBaseB3FSceneID::                       db
 wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
-wSilverCaveRoom3SceneID::                         db
+wMtSilverRoom3SceneID::                           db
 wVictoryRoadSceneID::                             db
 wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db

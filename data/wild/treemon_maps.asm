@@ -36,7 +36,7 @@ TreeMonMaps:
 	treemon_map MAHOGANY_TOWN,             TREEMON_SET_CITY
 	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
 	treemon_map BLACKTHORN_CITY,           TREEMON_SET_CITY
-	treemon_map SILVER_CAVE_OUTSIDE,       TREEMON_SET_CITY
+	treemon_map MT_SILVER_OUTSIDE,         TREEMON_SET_CITY
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
 	db -1
 

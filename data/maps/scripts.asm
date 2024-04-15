@@ -308,10 +308,10 @@ INCLUDE "maps/WhirlIslandSE.asm"
 INCLUDE "maps/WhirlIslandB1F.asm"
 INCLUDE "maps/WhirlIslandB2F.asm"
 INCLUDE "maps/WhirlIslandLugiaChamber.asm"
-INCLUDE "maps/SilverCaveRoom1.asm"
-INCLUDE "maps/SilverCaveRoom2.asm"
-INCLUDE "maps/SilverCaveRoom3.asm"
-INCLUDE "maps/SilverCaveItemRooms.asm"
+INCLUDE "maps/MtSilverRoom1.asm"
+INCLUDE "maps/MtSilverRoom2.asm"
+INCLUDE "maps/MtSilverRoom3.asm"
+INCLUDE "maps/MtSilverItemRooms.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
 INCLUDE "maps/DragonsDen1F.asm"
@@ -476,13 +476,13 @@ INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route23.asm"
-INCLUDE "maps/SilverCavePokecenter1F.asm"
+INCLUDE "maps/MtSilverPokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
 
 
 SECTION "Map Scripts 25", ROMX
 
-INCLUDE "maps/SilverCaveOutside.asm"
+INCLUDE "maps/MtSilverOutside.asm"
 INCLUDE "maps/Route10North.asm"
 
 ENDSECTION

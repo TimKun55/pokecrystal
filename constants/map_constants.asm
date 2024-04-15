@@ -136,10 +136,10 @@ ENDM
 	map_const WHIRL_ISLAND_B1F,                            20, 18 ; 71
 	map_const WHIRL_ISLAND_B2F,                            10, 18 ; 72
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ; 73
-	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 74
-	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 75
-	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 76
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 77
+	map_const MT_SILVER_ROOM_1,                            10, 18 ; 74
+	map_const MT_SILVER_ROOM_2,                            15, 18 ; 75
+	map_const MT_SILVER_ROOM_3,                            10, 18 ; 76
+	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 77
 	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
 	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 79
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
@@ -375,8 +375,8 @@ ENDM
 
 	newgroup SILVER                                               ; 19
 	map_const ROUTE_28,                                    20,  9 ;  1
-	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
-	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
+	map_const MT_SILVER_OUTSIDE,                           20, 18 ;  2
+	map_const MT_SILVER_POKECENTER_1F,                      5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
 	endgroup
 

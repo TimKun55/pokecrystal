@@ -88,6 +88,8 @@ PrepareFrontpic:
 	ret
 
 _PrepareFrontpic:
+	ld a, BANK(sEnemyFrontpicTileCount)
+	call OpenSRAM
 	push de
 	call GetBaseData
 	ld a, [wBasePicSize]
@@ -95,18 +97,25 @@ _PrepareFrontpic:
 	ld b, a
 	push bc
 	call GetFrontpicPointer
-	ld a, BANK(wDecompressEnemyFrontpic)
+	ld a, BANK(wDecompressScratch)
 	ldh [rSVBK], a
 	ld a, b
-	ld de, wDecompressEnemyFrontpic
+	ld de, wDecompressScratch
 	call FarDecompress
+	; Save decompressed size
+	swap e
+	swap d
+	ld a, d
+	and $f0
+	or e
+	ld [sEnemyFrontpicTileCount], a	
 	pop bc
-	ld hl, wDecompressScratch
-	ld de, wDecompressEnemyFrontpic
+	ld hl, sPaddedEnemyFrontpic
+	ld de, wDecompressScratch
 	call PadFrontpic
 	pop hl
 	push hl
-	ld de, wDecompressScratch
+	ld de, sPaddedEnemyFrontpic
 	ld c, 7 * 7
 	ldh a, [hROMBank]
 	pop hl

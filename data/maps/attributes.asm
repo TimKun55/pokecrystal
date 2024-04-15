@@ -142,7 +142,7 @@ ENDM
 	connection south, Route45, ROUTE_45, 0
 	connection west, Route44, ROUTE_44, 9
 
-	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
+	map_attributes MtSilverOutside, MT_SILVER_OUTSIDE, $2c, EAST
 	connection east, Route28, ROUTE_28, 9
 
 	map_attributes Route26, ROUTE_26, $05, WEST
@@ -153,7 +153,7 @@ ENDM
 	connection east, Route26, ROUTE_26, -45
 
 	map_attributes Route28, ROUTE_28, $2c, WEST
-	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
+	connection west, MtSilverOutside, MT_SILVER_OUTSIDE, -9
 
 	map_attributes Route29, ROUTE_29, $05, NORTH | WEST | EAST
 	connection north, Route46, ROUTE_46, 10
@@ -449,10 +449,10 @@ ENDM
 	map_attributes WhirlIslandB1F, WHIRL_ISLAND_B1F, $09, 0
 	map_attributes WhirlIslandB2F, WHIRL_ISLAND_B2F, $2e, 0
 	map_attributes WhirlIslandLugiaChamber, WHIRL_ISLAND_LUGIA_CHAMBER, $0f, 0
-	map_attributes SilverCaveRoom1, SILVER_CAVE_ROOM_1, $09, 0
-	map_attributes SilverCaveRoom2, SILVER_CAVE_ROOM_2, $09, 0
-	map_attributes SilverCaveRoom3, SILVER_CAVE_ROOM_3, $09, 0
-	map_attributes SilverCaveItemRooms, SILVER_CAVE_ITEM_ROOMS, $09, 0
+	map_attributes MtSilverRoom1, MT_SILVER_ROOM_1, $09, 0
+	map_attributes MtSilverRoom2, MT_SILVER_ROOM_2, $09, 0
+	map_attributes MtSilverRoom3, MT_SILVER_ROOM_3, $09, 0
+	map_attributes MtSilverItemRooms, MT_SILVER_ITEM_ROOMS, $09, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $09, 0
@@ -612,7 +612,7 @@ ENDM
 	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0
-	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
+	map_attributes MtSilverPokecenter1F, MT_SILVER_POKECENTER_1F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

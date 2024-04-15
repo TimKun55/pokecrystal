@@ -289,7 +289,7 @@ VermilionPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
-SilverCavePokecenter1F_Blocks:
+MtSilverPokecenter1F_Blocks:
 CeladonPokecenter1F_Blocks:
 CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
@@ -451,8 +451,8 @@ LakeOfRage_Blocks:
 BlackthornCity_Blocks:
 	INCBIN "maps/BlackthornCity.ablk"
 
-SilverCaveOutside_Blocks:
-	INCBIN "maps/SilverCaveOutside.ablk"
+MtSilverOutside_Blocks:
+	INCBIN "maps/MtSilverOutside.ablk"
 
 Route6_Blocks:
 	INCBIN "maps/Route6.ablk"
@@ -565,14 +565,14 @@ WhirlIslandB2F_Blocks:
 WhirlIslandLugiaChamber_Blocks:
 	INCBIN "maps/WhirlIslandLugiaChamber.ablk"
 
-SilverCaveRoom1_Blocks:
-	INCBIN "maps/SilverCaveRoom1.ablk"
+MtSilverRoom1_Blocks:
+	INCBIN "maps/MtSilverRoom1.ablk"
 
-SilverCaveRoom2_Blocks:
-	INCBIN "maps/SilverCaveRoom2.ablk"
+MtSilverRoom2_Blocks:
+	INCBIN "maps/MtSilverRoom2.ablk"
 
-SilverCaveRoom3_Blocks:
-	INCBIN "maps/SilverCaveRoom3.ablk"
+MtSilverRoom3_Blocks:
+	INCBIN "maps/MtSilverRoom3.ablk"
 
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
@@ -763,8 +763,8 @@ MrFujisHouse_Blocks:
 LavRadioTower1F_Blocks:
 	INCBIN "maps/LavRadioTower1F.ablk"
 
-SilverCaveItemRooms_Blocks:
-	INCBIN "maps/SilverCaveItemRooms.ablk"
+MtSilverItemRooms_Blocks:
+	INCBIN "maps/MtSilverItemRooms.ablk"
 
 DayCare_Blocks:
 	INCBIN "maps/DayCare.ablk"

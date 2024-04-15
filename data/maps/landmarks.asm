@@ -53,7 +53,7 @@ Landmarks:
 	landmark 132,  64, Route45Name
 	landmark 112,  72, DarkCaveName
 	landmark 124,  88, Route46Name
-	landmark 148,  68, SilverCaveName
+	landmark 148,  68, MtSilverName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -117,7 +117,7 @@ CianwoodCityName:    db "CIANWOOD<BSP>CITY@"
 MahoganyTownName:    db "MAHOGANY<BSP>TOWN@"
 BlackthornCityName:  db "BLACKTHORN<BSP>CITY@"
 LakeOfRageName:      db "LAKE OF<BSP>RAGE@"
-SilverCaveName:      db "SILVER CAVE@"
+MtSilverName:        db "MT.SILVER@"
 SproutTowerName:     db "SPROUT<BSP>TOWER@"
 RuinsOfAlphName:     db "RUINS<BSP>OF ALPH@"
 UnionCaveName:       db "UNION CAVE@"

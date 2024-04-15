@@ -429,7 +429,8 @@ KantoGrassWildMons:
 	; nite
 	;   %, species,		 min, max
 	db 22, KADABRA,       52,  55
-	db 22, HONCHKROW,     52,  55
+;	db 22, HONCHKROW,     52,  55
+	db 22, MURKROW,       52,  55
 	db 22, JIGGLYPUFF,    52,  55
 	db 10, PERSIAN,       52,  55
 	db  8, HOUNDOOM,      52,  55
@@ -681,7 +682,8 @@ KantoGrassWildMons:
 	db 22, GRIMER,        55,  57
 	db 10, MUK,           55,  57
 	db  8, MURKROW,       55,  57
-	db  8, HONCHKROW,     58,  60
+;	db  8, HONCHKROW,     58,  60
+	db  8, MURKROW,       58,  60
 	db  8, MUK,           58,  60
 	end_grass_wildmons
 
@@ -710,7 +712,8 @@ KantoGrassWildMons:
 	db 22, FEAROW,        57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, HONCHKROW,     60,  62
+;	db 10, HONCHKROW,     60,  62
+	db 10, MURKROW,       60,  62
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
 	db  8, MUK,           69,  62

@@ -256,7 +256,7 @@ BlackthornGroupSprites:
 	db 0 ; end
 
 SilverGroupSprites:
-; Route28, SilverCaveOutside
+; Route28, MtSilverOutside
 	; 0 of max 9 walking sprites
 	db 0 ; end
 
