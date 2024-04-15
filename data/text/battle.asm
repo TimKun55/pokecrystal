@@ -703,6 +703,16 @@ AlreadyAsleepText:
 	text "<TARGET>'s"
 	line "already asleep!"
 	prompt
+	
+AlreadyBurnedText:
+	text "<TARGET>'s"
+	line "already burned!"
+	prompt
+
+AlreadyFrozenText:
+	text "<TARGET>'s"
+	line "already frozen!"
+	prompt
 
 WasPoisonedText:
 	text "<TARGET>"
