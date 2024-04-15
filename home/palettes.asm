@@ -323,11 +323,3 @@ ReloadSpritesNoPalettes::
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
 	ret
-
-LoadOverworldAttrmapPals::
-	homecall _LoadOverworldAttrmapPals
-	ret
-
-ScrollBGMapPalettes::
-	homecall _ScrollBGMapPalettes
-	ret
