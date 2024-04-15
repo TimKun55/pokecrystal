@@ -225,12 +225,6 @@ BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
 
-UnusedRivalWinText: ; unreferenced
-	text "<RIVAL>: Yes!"
-	line "I guess I chose a"
-	cont "good #MON!"
-	prompt
-
 LostAgainstText:
 	text "Lost against"
 	line "<ENEMY>!"
