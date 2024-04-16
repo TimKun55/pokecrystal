@@ -166,7 +166,7 @@ _LoadMetatilesOrAttributes:
 	add a
 	ld l, a
 	ld h, 0
-	add hl, hl
+;	add hl, hl
 	add hl, hl
 	add hl, hl
 	add hl, hl
