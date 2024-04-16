@@ -529,6 +529,11 @@ SECTION "Battle Tower", ROMX
 INCLUDE "engine/events/battle_tower/trainer_text.asm"
 
 
+SECTION "Battle Weather Images", ROMX
+
+INCLUDE "gfx/weather_images.asm"
+
+
 SECTION "bank5B", ROMX
 
 INCLUDE "mobile/mobile_5b.asm"

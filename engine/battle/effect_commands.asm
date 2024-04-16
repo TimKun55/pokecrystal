@@ -1565,6 +1565,9 @@ BattleCommand_CheckHit:
 
 	call .ThunderRain
 	ret z
+	
+	call .BlizzardHail
+	ret z	
 
 	call .XAccuracy
 	ret nz
@@ -1751,6 +1754,17 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+	
+.BlizzardHail:
+; Return z if the current move always hits in hail, and it is hailing.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BLIZZARD
+	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
 	ret
 
 .XAccuracy:
@@ -2560,6 +2574,8 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	call HailDefBoost
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
@@ -2584,6 +2600,8 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+
+	call SandstormSpDefBoost
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
@@ -2811,6 +2829,8 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	call HailDefBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
@@ -2835,6 +2855,8 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	call SandstormSpDefBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
@@ -6585,6 +6607,8 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
+INCLUDE "engine/battle/move_effects/hail.asm"
+
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
@@ -6824,3 +6848,55 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+	
+SandstormSpDefBoost::
+; First, check if Sandstorm is active.
+    ld a, [wBattleWeather]
+    cp WEATHER_SANDSTORM
+    ret nz
+
+; Then, check the opponent's types.
+    ld hl, wEnemyMonType1
+    ldh a, [hBattleTurn]
+    and a
+    jr z, .ok
+    ld hl, wBattleMonType1
+.ok
+    ld a, [hli]
+    cp ROCK
+    jr z, HailDefBoost.start_boost
+    ld a, [hl]
+    cp ROCK
+    ret nz
+
+    jr HailDefBoost.start_boost
+
+HailDefBoost::
+    ; First, check if Hail is active.
+    ld a, [wBattleWeather]
+    cp WEATHER_HAIL
+    ret nz
+
+; Then, check the opponent's types.
+    ld hl, wEnemyMonType1
+    ldh a, [hBattleTurn]
+    and a
+    jr z, .ok
+    ld hl, wBattleMonType1
+.ok
+    ld a, [hli]
+    cp ICE
+    jr z, .start_boost
+    ld a, [hl]
+    cp ICE
+    ret nz
+
+.start_boost
+    ld h, b
+    ld l, c
+    srl b
+    rr c
+    add hl, bc
+    ld b, h
+    ld c, l
+    ret
