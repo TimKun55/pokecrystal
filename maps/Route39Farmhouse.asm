@@ -1,4 +1,4 @@
-DEF ROUTE39FARMHOUSE_MILK_PRICE EQU 500
+DEF ROUTE39FARMHOUSE_MILK_PRICE EQU 5500
 
 	object_const_def
 	const ROUTE39FARMHOUSE_POKEFAN_M
@@ -21,15 +21,13 @@ PokefanM_DairyFarmer:
 	end
 
 FarmerMScript_SellMilk:
-	checkitem MOOMOO_MILK
-	iftrue FarmerMScript_Milking
 	writetext FarmerMText_BuyMilk
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse FarmerMScript_NoSale
 	checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
 	ifequal HAVE_LESS, FarmerMScript_NoMoney
-	giveitem MOOMOO_MILK
+	giveitem MOOMOO_MILK, 12
 	iffalse FarmerMScript_NoRoom
 	takemoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
 	special PlaceMoneyTopRight
@@ -55,12 +53,6 @@ FarmerMScript_NoRoom:
 
 FarmerMScript_NoSale:
 	writetext FarmerMText_NoSale
-	waitbutton
-	closetext
-	end
-
-FarmerMScript_Milking:
-	writetext FarmerMText_Milking
 	waitbutton
 	closetext
 	end
@@ -121,8 +113,9 @@ FarmerMText_BuyMilk:
 	para "Give it to #MON"
 	line "to restore HP!"
 
-	para "I'll give it to ya"
-	line "fer just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
+	para "I'll sell ya"
+	line "a dozen fer"
+	cont "just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
 	done
 
 FarmerMText_GotMilk:
@@ -170,11 +163,6 @@ FarmerFText_HealedMiltank:
 
 	para "Here's somethin'"
 	line "fer your trouble."
-	done
-
-Text_ReceivedTM13: ; unreferenced
-	text "<PLAYER> received"
-	line "TM13 SNORE."
 	done
 
 FarmerFText_SnoreSpeech:

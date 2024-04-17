@@ -13,6 +13,7 @@ INCLUDE "engine/overworld/npc_movement.asm"
 INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
+INCLUDE "engine/pokemon/correct_party_errors.asm"
 
 
 SECTION "bank2", ROMX
@@ -63,7 +64,6 @@ INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-INCLUDE "engine/pokemon/correct_party_errors.asm"
 
 
 SECTION "bank5", ROMX
@@ -144,6 +144,11 @@ SECTION "Effect Commands", ROMX
 INCLUDE "engine/battle/effect_commands.asm"
 
 
+SECTION "Effect Command Pointers", ROMX
+
+INCLUDE "data/battle/effect_command_pointers.asm"
+
+
 SECTION "Enemy Trainers", ROMX
 
 INCLUDE "engine/battle/ai/items.asm"
@@ -155,7 +160,6 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
-INCLUDE "data/battle/effect_command_pointers.asm"
 
 
 SECTION "Overworld Wildmon Data", ROMX

@@ -2320,6 +2320,8 @@ wItemsPocketCursor::    db
 wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
+wBerryPocketCursor::    db
+wMedicinePocketCursor:: db
 
 wPCItemsScrollPosition::        db
 	ds 1
@@ -2327,6 +2329,8 @@ wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
+wBerryPocketScrollPosition::    db
+wMedicinePocketScrollPosition:: db
 
 wSwitchMon::
 wSwitchItem::
@@ -2832,7 +2836,9 @@ NEXTU
 ; catch tutorial dude pack
 wDudeNumItems:: db
 wDudeItems:: ds 2 * 4 + 1
+wDudeNumMedicine::
 
+wDudeNumBerries::
 wDudeNumKeyItems:: db
 wDudeKeyItems:: ds 18 + 1
 
@@ -2985,7 +2991,7 @@ endr
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 40
+;	ds 40
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3057,6 +3063,12 @@ wKeyItems:: ds MAX_KEY_ITEMS + 1
 
 wNumBalls:: db
 wBalls:: ds MAX_BALLS * 2 + 1
+
+wNumBerries:: db
+wBerries:: ds MAX_BERRIES * 2 + 1
+
+wNumMedicines:: db
+wMedicines:: ds MAX_MEDICINES * 2 + 1
 
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
@@ -3199,7 +3211,7 @@ wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+;	ds 100
 
 wEventFlags:: flag_array NUM_EVENTS
 
