@@ -7,6 +7,7 @@
 	const ILEXFOREST_KURT
 	const ILEXFOREST_LASS
 	const ILEXFOREST_YOUNGSTER2
+	const ILEXFOREST_BUG_MANIAC
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
@@ -35,52 +36,52 @@ IlexForestFarfetchdCallback:
 	endcallback
 
 .PositionOne:
-	moveobject ILEXFOREST_FARFETCHD, 14, 31
+	moveobject ILEXFOREST_FARFETCHD, 16, 41
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionTwo:
-	moveobject ILEXFOREST_FARFETCHD, 15, 25
+	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionThree:
-	moveobject ILEXFOREST_FARFETCHD, 20, 24
+	moveobject ILEXFOREST_FARFETCHD, 22, 34
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionFour:
-	moveobject ILEXFOREST_FARFETCHD, 29, 22
+	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionFive:
-	moveobject ILEXFOREST_FARFETCHD, 28, 31
+	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionSix:
-	moveobject ILEXFOREST_FARFETCHD, 24, 35
+	moveobject ILEXFOREST_FARFETCHD, 26, 45
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionSeven:
-	moveobject ILEXFOREST_FARFETCHD, 22, 31
+	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionEight:
-	moveobject ILEXFOREST_FARFETCHD, 15, 29
+	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionNine:
-	moveobject ILEXFOREST_FARFETCHD, 10, 35
+	moveobject ILEXFOREST_FARFETCHD, 12, 45
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
 .PositionTen:
-	moveobject ILEXFOREST_FARFETCHD, 6, 28
+	moveobject ILEXFOREST_FARFETCHD, 8, 38
 	appear ILEXFOREST_FARFETCHD
 	endcallback
 
@@ -123,7 +124,7 @@ IlexForestFarfetchdScript:
 	waitbutton
 	closetext
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos1_Pos2
-	moveobject ILEXFOREST_FARFETCHD, 15, 25
+	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 2
@@ -133,7 +134,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal DOWN, .Position2_Down
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos3
-	moveobject ILEXFOREST_FARFETCHD, 20, 24
+	moveobject ILEXFOREST_FARFETCHD, 22, 34
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 3
@@ -141,7 +142,7 @@ IlexForestFarfetchdScript:
 
 .Position2_Down:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos8
-	moveobject ILEXFOREST_FARFETCHD, 15, 29
+	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 8
@@ -151,7 +152,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal LEFT, .Position3_Left
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos4
-	moveobject ILEXFOREST_FARFETCHD, 29, 22
+	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 4
@@ -159,7 +160,7 @@ IlexForestFarfetchdScript:
 
 .Position3_Left:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos2
-	moveobject ILEXFOREST_FARFETCHD, 15, 25
+	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 2
@@ -169,7 +170,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal UP, .Position4_Up
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos5
-	moveobject ILEXFOREST_FARFETCHD, 28, 31
+	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 5
@@ -177,7 +178,7 @@ IlexForestFarfetchdScript:
 
 .Position4_Up:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos3
-	moveobject ILEXFOREST_FARFETCHD, 20, 24
+	moveobject ILEXFOREST_FARFETCHD, 22, 34
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 3
@@ -189,7 +190,7 @@ IlexForestFarfetchdScript:
 	ifequal LEFT, .Position5_Left
 	ifequal RIGHT, .Position5_Right
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos6
-	moveobject ILEXFOREST_FARFETCHD, 24, 35
+	moveobject ILEXFOREST_FARFETCHD, 26, 45
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 6
@@ -197,7 +198,7 @@ IlexForestFarfetchdScript:
 
 .Position5_Left:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos7
-	moveobject ILEXFOREST_FARFETCHD, 22, 31
+	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 7
@@ -205,7 +206,7 @@ IlexForestFarfetchdScript:
 
 .Position5_Up:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Up
-	moveobject ILEXFOREST_FARFETCHD, 29, 22
+	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 4
@@ -213,7 +214,7 @@ IlexForestFarfetchdScript:
 
 .Position5_Right:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Right
-	moveobject ILEXFOREST_FARFETCHD, 29, 22
+	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 4
@@ -223,7 +224,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal RIGHT, .Position6_Right
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos7
-	moveobject ILEXFOREST_FARFETCHD, 22, 31
+	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 7
@@ -231,7 +232,7 @@ IlexForestFarfetchdScript:
 
 .Position6_Right:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos5
-	moveobject ILEXFOREST_FARFETCHD, 28, 31
+	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 5
@@ -242,7 +243,7 @@ IlexForestFarfetchdScript:
 	ifequal DOWN, .Position7_Down
 	ifequal LEFT, .Position7_Left
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos8
-	moveobject ILEXFOREST_FARFETCHD, 15, 29
+	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 8
@@ -250,7 +251,7 @@ IlexForestFarfetchdScript:
 
 .Position7_Left:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos6
-	moveobject ILEXFOREST_FARFETCHD, 24, 35
+	moveobject ILEXFOREST_FARFETCHD, 26, 45
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 6
@@ -258,7 +259,7 @@ IlexForestFarfetchdScript:
 
 .Position7_Down:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos5
-	moveobject ILEXFOREST_FARFETCHD, 28, 31
+	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 5
@@ -270,7 +271,7 @@ IlexForestFarfetchdScript:
 	ifequal LEFT, .Position8_Left
 	ifequal RIGHT, .Position8_Right
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos9
-	moveobject ILEXFOREST_FARFETCHD, 10, 35
+	moveobject ILEXFOREST_FARFETCHD, 12, 45
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 9
@@ -278,7 +279,7 @@ IlexForestFarfetchdScript:
 
 .Position8_Right:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos7
-	moveobject ILEXFOREST_FARFETCHD, 22, 31
+	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 7
@@ -287,7 +288,7 @@ IlexForestFarfetchdScript:
 .Position8_Up:
 .Position8_Left:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos2
-	moveobject ILEXFOREST_FARFETCHD, 15, 25
+	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 2
@@ -298,7 +299,7 @@ IlexForestFarfetchdScript:
 	ifequal DOWN, .Position9_Down
 	ifequal RIGHT, .Position9_Right
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos10
-	moveobject ILEXFOREST_FARFETCHD, 6, 28
+	moveobject ILEXFOREST_FARFETCHD, 8, 38
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 10
@@ -309,7 +310,7 @@ IlexForestFarfetchdScript:
 
 .Position9_Right:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Right
-	moveobject ILEXFOREST_FARFETCHD, 15, 29
+	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 8
@@ -317,7 +318,7 @@ IlexForestFarfetchdScript:
 
 .Position9_Down:
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Down
-	moveobject ILEXFOREST_FARFETCHD, 15, 29
+	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
 	loadmem wFarfetchdPosition, 8
@@ -395,6 +396,17 @@ TrainerBugCatcherWayne:
 	waitbutton
 	closetext
 	end
+	
+TrainerBugManiacBobby:
+	trainer BUG_MANIAC, BOBBY, EVENT_BEAT_BUG_MANIAC_BOBBY, BugManiacBobbySeenText, BugManiacBobbyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacBobbyAfterBattleText
+	waitbutton
+	closetext
+	end
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
@@ -402,8 +414,8 @@ IlexForestLassScript:
 IlexForestRevive:
 	itemball REVIVE
 
-IlexForestXAttack:
-	itemball X_ATTACK
+IlexForestTMChargeBeam:
+	itemball TM_CHARGE_BEAM
 
 IlexForestAntidote:
 	itemball ANTIDOTE
@@ -411,8 +423,8 @@ IlexForestAntidote:
 IlexForestEther:
 	itemball ETHER
 
-IlexForestHiddenEther:
-	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
+IlexForestHiddenLeafStone:
+	hiddenitem LEAF_STONE, EVENT_ILEX_FOREST_HIDDEN_LEAF_STONE
 
 IlexForestHiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
@@ -934,32 +946,53 @@ BugCatcherWayneAfterBattleText:
 	cont "places too."
 	done
 
+BugManiacBobbySeenText:
+	text "Wait! You beat"
+	line "BUGSY?"
+
+	para "Let's battle!"
+	done
+
+BugManiacBobbyBeatenText:
+	text "Not bad!"
+	done
+
+BugManiacBobbyAfterBattleText:
+	text "Wow, yeah you"
+	line "definitely beat"
+	
+	para "BUGSY with that"
+	line "kind of power!"
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  1,  5, ROUTE_34_ILEX_FOREST_GATE, 3
-	warp_event  3, 42, ILEX_FOREST_AZALEA_GATE, 1
-	warp_event  3, 43, ILEX_FOREST_AZALEA_GATE, 2
+	warp_event  4,  7, ROUTE_34_ILEX_FOREST_GATE, 3
+	warp_event  5, 52, ILEX_FOREST_AZALEA_GATE, 1
+	warp_event  5, 53, ILEX_FOREST_AZALEA_GATE, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 17, BGEVENT_READ, IlexForestSignpost
-	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
-	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
-	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
-	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
+	bg_event  5, 19, BGEVENT_READ, IlexForestSignpost
+	bg_event 13,  9, BGEVENT_ITEM, IlexForestHiddenLeafStone
+	bg_event 24, 16, BGEVENT_ITEM, IlexForestHiddenSuperPotion
+	bg_event  3, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event 11, 25, BGEVENT_UP, IlexForestShrineScript
+	bg_event 10, 25, BGEVENT_UP, IlexForestShrineScript
 
 	def_object_events
-	object_event 14, 31, SPRITE_BIRD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
-	object_event  7, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE
-	object_event  5, 28, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
-	object_event 15, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1
-	object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
-	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
-	object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
-	object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
-	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
-	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
-	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 16, 41, SPRITE_FARFETCH_D_ILEX, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
+	object_event  9, 38, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE
+	object_event  7, 38, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
+	object_event 17, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1
+	object_event 22, 42, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
+	object_event 10, 39, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
+	object_event  5, 34, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
+	object_event  3, 28, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacBobby, EVENT_BEAT_BUG_MANIAC_BOBBY, -1
+	object_event 14,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
+	object_event 11, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestTMChargeBeam, EVENT_ILEX_FOREST_TM_CHARGE_BEAM
+	object_event 19,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
+	object_event 29,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER

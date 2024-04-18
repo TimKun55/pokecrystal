@@ -1,7 +1,7 @@
 ; AI_SMART knows these moves are usable all-around.
 
 UsefulMoves:
-	db DOUBLE_EDGE
+	db GIGA_IMPACT
 	db SING
 	db FLAMETHROWER
 	db HYDRO_PUMP
@@ -18,6 +18,6 @@ UsefulMoves:
 	db HYPNOSIS
 	db RECOVER
 	db FIRE_BLAST
-	db SOFTBOILED
+	db FRESH_SNACK
 	db SUPER_FANG
 	db -1 ; end

@@ -8,7 +8,7 @@ MoveEffectsPointers:
 	dw BurnHit
 	dw FreezeHit
 	dw ParalyzeHit
-	dw Selfdestruct
+	dw Explosion
 	dw DreamEater
 	dw MirrorMove
 	dw AttackUp
@@ -38,13 +38,13 @@ MoveEffectsPointers:
 	dw PayDay
 	dw LightScreen
 	dw TriAttack
+	dw SpecialAttackUpHit
 	dw NormalHit
-	dw OHKOHit
 	dw RazorWind
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw NormalHit
+	dw Hurricane
 	dw MultiHit
 	dw NormalHit
 	dw Mist
@@ -78,8 +78,8 @@ MoveEffectsPointers:
 	dw EvasionDownHit
 	dw SkyAttack
 	dw ConfuseHit
-	dw PoisonMultiHit
 	dw NormalHit
+	dw Acrobatics
 	dw Substitute
 	dw HyperBeam
 	dw Rage
@@ -109,9 +109,9 @@ MoveEffectsPointers:
 	dw Thief
 	dw MeanLook
 	dw Nightmare
-	dw FlameWheel
+	dw DefrostBurnHit
 	dw Curse
-	dw NormalHit
+	dw SpeedUpHit
 	dw Protect
 	dw Spikes
 	dw Foresight
@@ -124,18 +124,18 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
+	dw NormalHit
 	dw Safeguard
 	dw SacredFire
 	dw Magnitude
 	dw BatonPass
 	dw Pursuit
 	dw RapidSpin
+	dw DoBurn
 	dw NormalHit
-	dw NormalHit
-	dw MorningSun
-	dw Synthesis
-	dw Moonlight
+	dw HealWeather
+	dw FreezeHit ; for Blizzard, purposefully with different EFFECT_* constant
+	dw Hail
 	dw HiddenPower
 	dw RainDance
 	dw SunnyDay
@@ -158,6 +158,5 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
-	dw FreezeHit ; for Blizzard, purposefully with different EFFECT_* constant
-	dw Hail
+	dw Hex
 	assert_table_length NUM_MOVE_EFFECTS

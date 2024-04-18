@@ -1,10 +1,12 @@
 	object_const_def
 	const INDIGOPLATEAUPOKECENTER1F_NURSE
+	const INDIGOPLATEAUPOKECENTER1F_CHANSEY
 	const INDIGOPLATEAUPOKECENTER1F_CLERK
 	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
 	const INDIGOPLATEAUPOKECENTER1F_RIVAL
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
+	const INDIGOPLATEAUPOKECENTER1F_TUTOR
 
 IndigoPlateauPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -136,6 +138,9 @@ PlateauRivalScriptDone:
 
 IndigoPlateauPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+	
+IndigoPlateauPokecenter1FChansey:
+	jumpstd PokecenterChanseyScript
 
 IndigoPlateauPokecenter1FClerkScript:
 	opentext
@@ -172,6 +177,58 @@ AbraScript:
 	writetext AbraText
 	cry ABRA
 	waitbutton
+	refreshscreen
+	pokepic ABRA
+	waitbutton
+	closepokepic
+	closetext
+	end
+	
+IndigoPlateauPokecenter1FTutorScript:
+	faceplayer
+	opentext
+	writetext IndigoPlateauPokecenter1FTutorIntroText
+	yesorno
+	iffalse .TutorRefused
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .payfortutor
+	setval GIGA_IMPACT
+	writetext IndigoPlateauPokecenter1FGigaImpactClear
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetext IndigoPlateauPokecenter1FTutorRefused
+	waitbutton
+	closetext
+	end
+	
+.payfortutor
+	special PlaceMoneyTopRight
+	checkmoney YOUR_MONEY, 25000
+	ifequal HAVE_LESS, .NotEnough
+	writetext IndigoPlateauPokecenter1FGigaImpactForAPrice
+	yesorno
+	iffalse .TutorRefused
+	setval GIGA_IMPACT
+	writetext IndigoPlateauPokecenter1FGigaImpactClear
+	special MoveTutor
+	ifequal FALSE, .TeachMovePay
+	
+.TeachMovePay
+ 	writetext IndigoPlateauPokecenter1FGigaImpactPayment
+	takemoney YOUR_MONEY, 25000
+ 	waitbutton
+ 	sjump .TeachMove
+	
+.NotEnough:
+	writetext IndigoPlateauPokecenter1FGigaImpactNotEnough
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext IndigoPlateauPokecenter1FGigaImpactTaught
+	waitbutton
 	closetext
 	end
 
@@ -200,6 +257,9 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step DOWN
 	step_end
+	
+PokemonJournalGiovanniScript:
+	jumptext PokemonJournalGiovanniText
 
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "At the #MON"
@@ -299,26 +359,95 @@ TeleportGuyNoText:
 AbraText:
 	text "ABRA: Aabra…"
 	done
+	
+IndigoPlateauPokecenter1FTutorIntroText:
+	text "If you've made it"
+	line "here, that must"
+	cont "mean you're aiming"
+	cont "to be the best!"
+	
+	para "How about I teach"
+	line "your #MON a"
+	cont "super-strong move:"
+	
+	para "GIGA IMPACT!"
+	done
+	
+IndigoPlateauPokecenter1FGigaImpactClear:
+	text_start
+	done
+	
+IndigoPlateauPokecenter1FGigaImpactForAPrice:
+	text "It'll cost you"
+	line "¥25,000."
+	
+	para "Should I?"
+	done
+	
+IndigoPlateauPokecenter1FGigaImpactPayment:
+	text "<PLAYER> gave the"
+	line "Tutor ¥25,000."
+	done
+	
+IndigoPlateauPokecenter1FGigaImpactNotEnough:
+	text "Sorry kid, you"
+	line "don't have enough."
+	done
+	
+IndigoPlateauPokecenter1FGigaImpactTaught:
+	text "It's perfect for"
+	line "#MON with high"
+	cont "Physical Attack!"
+	
+	para "Just watch out for"
+	line "the recharge turn."
+	done
+	
+IndigoPlateauPokecenter1FTutorRefused:
+	text "But I thought you"
+	line "wanted to be the"
+	cont "best?"
+	
+PokemonJournalGiovanniText:
+	text "#MON JOURNAL"
+
+	para "Special Feature:"
+	line "BOSS GIOVANNI!"
+
+	para "When police sear-"
+	line "ched the abandoned"
+	cont "VIRIDIAN GYM, they"
+
+	para "discovered that"
+	line "its LEADER,"
+	cont "GIOVANNI, had"
+
+	para "also been the"
+	line "TEAM ROCKET BOSS."
+	done
 
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 13, ROUTE_23, 1
-	warp_event  6, 13, ROUTE_23, 2
+;	warp_event  9, 13, INDIGO_PLATEAU, 1
+;	warp_event 10, 13, INDIGO_PLATEAU, 2
 	warp_event  0, 13, POKECENTER_2F, 1
-	warp_event 14,  3, WILLS_ROOM, 1
+	warp_event 12,  3, WILLS_ROOM, 1
 
 	def_coord_events
-	coord_event 16,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle1
-	coord_event 17,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle2
+	coord_event 14,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle1
+	coord_event 15,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle2
 
 	def_bg_events
+	bg_event 13,  7, BGEVENT_READ, PokemonJournalGiovanniScript
 
 	def_object_events
-	object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
-	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
-	object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
-	object_event 16,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
-	object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY
+	object_event  9,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
+	object_event 10,  7, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FChansey, -1
+	object_event  1,  9, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
+	object_event  5, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
+	object_event 14,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
+	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
+	object_event  5,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY
+	object_event  3,  7, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FTutorScript, -1

@@ -172,11 +172,11 @@ PokedexDataPointerTable:
 	dba CrobatPokedexEntry
 	dba ChinchouPokedexEntry
 	dba LanturnPokedexEntry
-	dba PichuPokedexEntry
-	dba CleffaPokedexEntry
-	dba IgglybuffPokedexEntry
+	dba MagnezonePokedexEntry
+	dba CorsolaPokedexEntry
 	dba TogepiPokedexEntry
 	dba TogeticPokedexEntry
+	dba TogekissPokedexEntry
 	dba NatuPokedexEntry
 	dba XatuPokedexEntry
 	dba MareepPokedexEntry
@@ -198,9 +198,9 @@ PokedexDataPointerTable:
 	dba QuagsirePokedexEntry
 	dba EspeonPokedexEntry
 	dba UmbreonPokedexEntry
-	dba MurkrowPokedexEntry
+	dba SylveonPokedexEntry
 	dba SlowkingPokedexEntry
-	dba MisdreavusPokedexEntry
+	dba StantlerPokedexEntry
 	dba UnownPokedexEntry
 	dba WobbuffetPokedexEntry
 	dba GirafarigPokedexEntry
@@ -222,7 +222,7 @@ PokedexDataPointerTable:
 	dba MagcargoPokedexEntry
 	dba SwinubPokedexEntry
 	dba PiloswinePokedexEntry
-	dba CorsolaPokedexEntry
+	dba MamoswinePokedexEntry
 	dba RemoraidPokedexEntry
 	dba OctilleryPokedexEntry
 	dba DelibirdPokedexEntry
@@ -233,14 +233,14 @@ PokedexDataPointerTable:
 	dba KingdraPokedexEntry
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry
-	dba Porygon2PokedexEntry
-	dba StantlerPokedexEntry
+	dba MisdreavusPokedexEntry
+	dba MismagiusPokedexEntry
 	dba SmearglePokedexEntry
 	dba TyroguePokedexEntry
 	dba HitmontopPokedexEntry
-	dba SmoochumPokedexEntry
-	dba ElekidPokedexEntry
-	dba MagbyPokedexEntry
+	dba MurkrowPokedexEntry
+	dba HonchkrowPokedexEntry
+	dba Porygon2PokedexEntry
 	dba MiltankPokedexEntry
 	dba BlisseyPokedexEntry
 	dba RaikouPokedexEntry

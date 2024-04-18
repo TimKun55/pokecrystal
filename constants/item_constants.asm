@@ -79,17 +79,17 @@
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
-	const PSNCUREBERRY ; 4a
+	const PECHA_BERRY  ; 4a
 	const GOLD_LEAF    ; 4b
 	const SOFT_SAND    ; 4c
 	const SHARP_BEAK   ; 4d
-	const PRZCUREBERRY ; 4e
-	const BURNT_BERRY  ; 4f
-	const ICE_BERRY    ; 50
+	const CHERI_BERRY  ; 4e
+	const ASPEAR_BERRY ; 4f
+	const RAWST_BERRY  ; 50
 	const POISON_BARB  ; 51
 	const KINGS_ROCK   ; 52
-	const BITTER_BERRY ; 53
-	const MINT_BERRY   ; 54
+	const PERSIM_BERRY ; 53
+	const CHESTO_BERRY ; 54
 	const RED_APRICORN ; 55
 	const TINYMUSHROOM ; 56
 	const BIG_MUSHROOM ; 57
@@ -114,7 +114,7 @@
 	const SMOKE_BALL   ; 6a
 	const NEVERMELTICE ; 6b
 	const MAGNET       ; 6c
-	const MIRACLEBERRY ; 6d
+	const LUM_BERRY    ; 6d
 	const PEARL        ; 6e
 	const BIG_PEARL    ; 6f
 	const EVERSTONE    ; 70
@@ -140,7 +140,7 @@
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
-	const ITEM_87      ; 87
+	const EVIOLITE     ; 87
 	const ITEM_88      ; 88
 	const ZINC         ; 89
 	const CHARCOAL     ; 8a
@@ -155,7 +155,7 @@
 	const ITEM_93      ; 93
 	const ITEM_94      ; 94
 	const ITEM_95      ; 95
-	const MYSTERYBERRY ; 96
+	const LEPPA_BERRY  ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
 	const ITEM_99      ; 99
@@ -178,8 +178,8 @@
 	const POLKADOT_BOW ; aa
 	const ITEM_AB      ; ab
 	const UP_GRADE     ; ac
-	const BERRY        ; ad
-	const GOLD_BERRY   ; ae
+	const ORAN_BERRY   ; ad
+	const SITRUS_BERRY ; ae
 	const SQUIRTBOTTLE ; af
 	const ITEM_B0      ; b0
 	const PARK_BALL    ; b1
@@ -238,7 +238,7 @@ DEF TM01 EQU const_value
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
 	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
+	add_tm ROCK_TOMB    ; d4
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_TAIL    ; d6
 	add_tm DRAGONBREATH ; d7
@@ -260,14 +260,20 @@ DEF TM01 EQU const_value
 	add_tm DEFENSE_CURL ; e7
 	add_tm THUNDERPUNCH ; e8
 	add_tm DREAM_EATER  ; e9
-	add_tm DETECT       ; ea
+	add_tm HEAT_WAVE    ; ea
 	add_tm REST         ; eb
 	add_tm ATTRACT      ; ec
 	add_tm THIEF        ; ed
 	add_tm STEEL_WING   ; ee
 	add_tm FIRE_PUNCH   ; ef
 	add_tm FURY_CUTTER  ; f0
-	add_tm NIGHTMARE    ; f1 ;f2-f7 reserved for new TMs
+	add_tm NIGHTMARE    ; f1
+	add_tm MEGA_DRAIN	; f2
+	add_tm BODY_SLAM	; f3
+	add_tm SLUDGE		; f4
+	add_tm FAINT_ATTACK	; f5
+	add_tm BULLDOZE		; f6
+	add_tm CHARGE_BEAM	; f7
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -304,6 +310,35 @@ DEF MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
+	add_mt DISARM_VOICE
+	add_mt DRAIN_KISS
+	add_mt DAZZLINGLEAM
+	add_mt MOONBLAST
+	add_mt POISON_JAB
+	add_mt SILVER_WIND
+	add_mt STONE_EDGE
+	add_mt NASTY_PLOT
+	add_mt HURRICANE
+	add_mt ENERGY_BALL
+	add_mt ROCK_BLAST
+	add_mt X_SCISSOR
+	add_mt GUNK_SHOT
+	add_mt ICICLE_SPEAR
+	add_mt ACROBATICS
+	add_mt DRAIN_PUNCH
+	add_mt DARK_PULSE
+	add_mt SIGNAL_BEAM
+	add_mt NIGHT_SLASH
+	add_mt FOCUS_BLAST
+	add_mt GROWTH_PUNCH
+	add_mt FLAME_CHARGE
+	add_mt SAND_TOMB
+	add_mt WATER_PULSE
+	add_mt ZEN_HEADBUTT
+	add_mt AIR_SLASH
+	add_mt HAIL
+	add_mt PLAY_ROUGH
+	add_mt GIGA_IMPACT
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

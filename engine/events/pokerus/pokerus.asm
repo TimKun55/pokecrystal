@@ -123,7 +123,7 @@ GivePokerusAndConvertBerries:
 
 ConvertBerriesToBerryJuice:
 ; If we haven't been to Goldenrod City at least once,
-; prevent Shuckle from turning held Berry into Berry Juice.
+; prevent Shuckle from turning held Oran Berry into Berry Juice.
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
 	ret z
@@ -141,7 +141,7 @@ ConvertBerriesToBerryJuice:
 	ld bc, MON_ITEM
 	add hl, bc
 	ld a, [hl]
-	cp BERRY
+	cp ORAN_BERRY
 	jr z, .convertToJuice
 
 .loopMon

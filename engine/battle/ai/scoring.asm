@@ -311,7 +311,7 @@ AI_Smart:
 AI_Smart_EffectHandlers:
 	dbw EFFECT_SLEEP,            AI_Smart_Sleep
 	dbw EFFECT_LEECH_HIT,        AI_Smart_LeechHit
-	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
+	dbw EFFECT_EXPLOSION,        AI_Smart_Explosion
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
 	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
@@ -327,7 +327,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_RAZOR_WIND,       AI_Smart_RazorWind
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
-	dbw EFFECT_UNUSED_2B,        AI_Smart_Unused2B
+	dbw EFFECT_HURRICANE,        AI_Smart_Hurricane
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
@@ -355,7 +355,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THIEF,            AI_Smart_Thief
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
-	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
+	dbw EFFECT_DEFROST_BURN_HIT, AI_Smart_DefrostBurnHit
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
 	dbw EFFECT_FORESIGHT,        AI_Smart_Foresight
@@ -371,9 +371,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,          AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
-	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
-	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
-	dbw EFFECT_MOONLIGHT,        AI_Smart_Moonlight
+	dbw EFFECT_HEAL_WEATHER,     AI_Smart_HealWeather
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
@@ -389,6 +387,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_HEX,              AI_Smart_Hex
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	db -1 ; end
 
@@ -549,8 +548,8 @@ AI_Smart_LockOn:
 	pop hl
 	jp AIDiscourageMove
 
-AI_Smart_Selfdestruct:
-; Selfdestruct, Explosion
+AI_Smart_Explosion:
+; Explosion
 
 ; Unless this is the enemy's last Pokemon...
 	push hl
@@ -942,9 +941,7 @@ AI_Smart_ForceSwitch:
 	ret
 
 AI_Smart_Heal:
-AI_Smart_MorningSun:
-AI_Smart_Synthesis:
-AI_Smart_Moonlight:
+AI_Smart_HealWeather:
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
@@ -1039,7 +1036,6 @@ AI_Smart_TrapTarget:
 	ret
 
 AI_Smart_RazorWind:
-AI_Smart_Unused2B:
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish_count
@@ -1118,8 +1114,7 @@ AI_Smart_SpDefenseUp2:
 	jr nc, .discourage
 
 ; 80% chance to greatly encourage this move if
-; enemy's Special Defense level is lower than +2,
-; and the player's Pokémon is Special-oriented.
+; enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
@@ -1518,6 +1513,17 @@ AI_Smart_DefrostOpponent:
 	dec [hl]
 	dec [hl]
 	ret
+	
+AI_Smart_Hex:
+; Greatly encourage this move if the player has a status condition.
+
+	ld a, [wBattleMonStatus]
+	and a
+	ret z
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
 
 AI_Smart_Spite:
 	ld a, [wLastPlayerCounterMove]
@@ -1574,9 +1580,6 @@ AI_Smart_Spite:
 	dec [hl]
 	dec [hl]
 	ret
-
-.dismiss ; unreferenced
-	jp AIDiscourageMove
 
 AI_Smart_DestinyBond:
 AI_Smart_Reversal:
@@ -1829,7 +1832,7 @@ AI_Smart_Nightmare:
 	dec [hl]
 	ret
 
-AI_Smart_FlameWheel:
+AI_Smart_DefrostBurnHit:
 ; Use this move if the enemy is frozen.
 
 	ld a, [wEnemyMonStatus]
@@ -2714,6 +2717,7 @@ AI_Smart_Solarbeam:
 	ret
 
 AI_Smart_Thunder:
+AI_Smart_Hurricane:
 ; 90% chance to discourage this move when it's sunny.
 
 	ld a, [wBattleWeather]

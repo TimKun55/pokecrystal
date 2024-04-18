@@ -40,16 +40,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.ablk"
 
 Pokecenter2F_Blocks:
-CinnabarPokecenter2FBeta_Blocks:
-CeruleanPokecenter2FBeta_Blocks:
-Route10Pokecenter2FBeta_Blocks:
-VermilionPokecenter2FBeta_Blocks:
-PewterPokecenter2FBeta_Blocks:
-FuchsiaPokecenter2FBeta_Blocks:
-LavenderPokecenter2FBeta_Blocks:
-CeladonPokecenter2FBeta_Blocks:
-ViridianPokecenter2FBeta_Blocks:
-SaffronPokecenter2FBeta_Blocks:
 	INCBIN "maps/Pokecenter2F.ablk"
 
 Route41_Blocks:
@@ -113,7 +103,6 @@ Route38_Blocks:
 	INCBIN "maps/Route38.ablk"
 
 OlivineTimsHouse_Blocks:
-OlivineHouseBeta_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
@@ -164,7 +153,6 @@ CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
-SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
@@ -808,9 +796,6 @@ VermilionPortPassage_Blocks:
 
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.ablk"
-
-SafariZoneBeta_Blocks:
-	INCBIN "maps/SafariZoneBeta.ablk"
 
 UndergroundPath_Blocks:
 	INCBIN "maps/UndergroundPath.ablk"

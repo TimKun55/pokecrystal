@@ -136,7 +136,7 @@ ParalyzeHit:
 	paralyzetarget
 	endmove
 
-Selfdestruct:
+Explosion:
 	checkobedience
 	usedmovetext
 	doturn
@@ -146,7 +146,7 @@ Selfdestruct:
 	stab
 	damagevariation
 	checkhit
-	selfdestruct
+	explosion
 	moveanimnosub
 	failuretext
 	applydamage
@@ -732,6 +732,50 @@ AttackUpHit:
 	checkfaint
 	buildopponentrage
 	endmove
+	
+SpecialAttackUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	specialattackup
+	statupmessage
+	checkfaint
+	buildopponentrage
+	endmove
+	
+SpeedUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	speedup
+	statupmessage
+	checkfaint
+	buildopponentrage
+	endmove
 
 AllUpHit:
 	checkobedience
@@ -862,34 +906,6 @@ MultiHit:
 	kingsrock
 	endmove
 
-PoisonMultiHit:
-	checkobedience
-	usedmovetext
-	doturn
-	startloop
-	lowersub
-	checkhit
-	effectchance
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivelooptext
-	checkfaint
-	buildopponentrage
-	endloop
-	raisesub
-	kingsrock
-	poisontarget
-	endmove
-
 FlinchHit:
 	checkobedience
 	usedmovetext
@@ -909,21 +925,6 @@ FlinchHit:
 	checkfaint
 	buildopponentrage
 	flinchtarget
-	endmove
-
-OHKOHit:
-	checkobedience
-	usedmovetext
-	doturn
-	stab
-	ohko
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
 	endmove
 
 RecoilHit:
@@ -1052,6 +1053,18 @@ DoParalyze:
 	checkhit
 	checksafeguard
 	paralyze
+	endmove
+	
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	moveanim
+	checksafeguard
+	failuretext
+	burntarget
 	endmove
 
 SkyAttack:
@@ -1460,7 +1473,7 @@ Nightmare:
 	nightmare
 	endmove
 
-FlameWheel:
+DefrostBurnHit:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1643,27 +1656,6 @@ Present:
 	kingsrock
 	endmove
 
-Frustration:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	frustrationpower
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
-	endmove
-
 Safeguard:
 	checkobedience
 	usedmovetext
@@ -1764,25 +1756,11 @@ RapidSpin:
 	kingsrock
 	endmove
 
-MorningSun:
+HealWeather:
 	checkobedience
 	usedmovetext
 	doturn
-	healmorn
-	endmove
-
-Synthesis:
-	checkobedience
-	usedmovetext
-	doturn
-	healday
-	endmove
-
-Moonlight:
-	checkobedience
-	usedmovetext
-	doturn
-	healnite
+	healweather
 	endmove
 
 HiddenPower:
@@ -2073,6 +2051,71 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+	
+Acrobatics:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	acrobatics
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+Hex:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	hex
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+Hurricane:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	hurricaneaccuracy
+	checkhit
+	effectchance
+	stab
+	damagevariation
+	doubleflyingdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	confusetarget
 	endmove
 	
 Hail:

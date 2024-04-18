@@ -171,11 +171,11 @@ AnimationPointers:
 	dw CrobatAnimation
 	dw ChinchouAnimation
 	dw LanturnAnimation
-	dw PichuAnimation
-	dw CleffaAnimation
-	dw IgglybuffAnimation
+	dw MagnezoneAnimation
+	dw CorsolaAnimation
 	dw TogepiAnimation
 	dw TogeticAnimation
+	dw TogekissAnimation
 	dw NatuAnimation
 	dw XatuAnimation
 	dw MareepAnimation
@@ -197,9 +197,9 @@ AnimationPointers:
 	dw QuagsireAnimation
 	dw EspeonAnimation
 	dw UmbreonAnimation
-	dw MurkrowAnimation
+	dw SylveonAnimation
 	dw SlowkingAnimation
-	dw MisdreavusAnimation
+	dw StantlerAnimation
 	dw UnownAnimation
 	dw WobbuffetAnimation
 	dw GirafarigAnimation
@@ -221,7 +221,7 @@ AnimationPointers:
 	dw MagcargoAnimation
 	dw SwinubAnimation
 	dw PiloswineAnimation
-	dw CorsolaAnimation
+	dw MamoswineAnimation
 	dw RemoraidAnimation
 	dw OctilleryAnimation
 	dw DelibirdAnimation
@@ -232,14 +232,14 @@ AnimationPointers:
 	dw KingdraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation
-	dw Porygon2Animation
-	dw StantlerAnimation
+	dw MisdreavusAnimation
+	dw MismagiusAnimation
 	dw SmeargleAnimation
 	dw TyrogueAnimation
 	dw HitmontopAnimation
-	dw SmoochumAnimation
-	dw ElekidAnimation
-	dw MagbyAnimation
+	dw MurkrowAnimation
+	dw HonchkrowAnimation
+	dw Porygon2Animation
 	dw MiltankAnimation
 	dw BlisseyAnimation
 	dw RaikouAnimation

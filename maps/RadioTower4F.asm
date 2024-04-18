@@ -1,7 +1,7 @@
 	object_const_def
 	const RADIOTOWER4F_FISHER
 	const RADIOTOWER4F_TEACHER
-	const RADIOTOWER4F_GROWLITHE
+	const RADIOTOWER4F_MEOWTH
 	const RADIOTOWER4F_ROCKET1
 	const RADIOTOWER4F_ROCKET2
 	const RADIOTOWER4F_ROCKET_GIRL
@@ -18,8 +18,8 @@ RadioTower4FFisherScript:
 RadioTower4FDJMaryScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_PINK_BOW_FROM_MARY
-	iftrue .GotPinkBow
+	checkevent EVENT_GOT_POLKADOT_BOW_FROM_MARY
+	iftrue .GotPolkadotBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRockets
 	writetext RadioTower4FDJMaryText
@@ -30,15 +30,15 @@ RadioTower4FDJMaryScript:
 .ClearedRockets:
 	writetext RadioTower4FDJMaryText_ClearedRockets
 	promptbutton
-	verbosegiveitem PINK_BOW
+	verbosegiveitem POLKADOT_BOW
 	iffalse .NoRoom
 	writetext RadioTower4FDJMaryText_GivePinkBow
 	waitbutton
 	closetext
-	setevent EVENT_GOT_PINK_BOW_FROM_MARY
+	setevent EVENT_GOT_POLKADOT_BOW_FROM_MARY
 	end
 
-.GotPinkBow:
+.GotPolkadotBow:
 	writetext RadioTower4FDJMaryText_After
 	waitbutton
 .NoRoom:
@@ -50,6 +50,10 @@ RadioTowerMeowth:
 	writetext RadioTowerMeowthText
 	cry MEOWTH
 	waitbutton
+	refreshscreen
+	pokepic MEOWTH
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -64,13 +68,13 @@ TrainerGruntM10:
 	closetext
 	end
 
-TrainerExecutivem2:
-	trainer EXECUTIVEM, EXECUTIVEM_2, EVENT_BEAT_ROCKET_EXECUTIVEM_2, Executivem2SeenText, Executivem2BeatenText, 0, .Script
+RadioTowerProton:
+	trainer PROTON, PROTON2, EVENT_BEAT_PROTON_2, RadioTowerProtonSeenText, RadioTowerProtonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Executivem2AfterBattleText
+	writetext RadioTowerProtonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -166,21 +170,22 @@ GruntM10AfterBattleText:
 	line "it! I was beaten!"
 	done
 
-Executivem2SeenText:
-	text "Stop! I'm known as"
-	line "the TEAM ROCKET"
-	cont "fortress!"
+RadioTowerProtonSeenText:
+	text "You!! I haven't"
+	line "forgotten the way"
+	cont "you humiliated"
+	
+	para "us at the WELL!"
 
 	para "You're not taking"
 	line "another step!"
 	done
 
-Executivem2BeatenText:
-	text "The fortress came"
-	line "down!"
+RadioTowerProtonBeatenText:
+	text "Humiliation again!"
 	done
 
-Executivem2AfterBattleText:
+RadioTowerProtonAfterBattleText:
 	text "You've earned my"
 	line "respect, so here's"
 	cont "some advice."
@@ -261,8 +266,8 @@ RadioTower4F_MapEvents:
 	def_object_events
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
-	object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
+	object_event 12,  7, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 14,  1, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RadioTowerProton, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  4,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER

@@ -173,11 +173,11 @@ IconPointers:
 	dw CrobatIcon
 	dw ChinchouIcon
 	dw LanturnIcon
-	dw PichuIcon
-	dw CleffaIcon
-	dw IgglybuffIcon
+	dw MagnezoneIcon
+	dw CorsolaIcon
 	dw TogepiIcon
 	dw TogeticIcon
+	dw TogekissIcon
 	dw NatuIcon
 	dw XatuIcon
 	dw MareepIcon
@@ -199,9 +199,9 @@ IconPointers:
 	dw QuagsireIcon
 	dw EspeonIcon
 	dw UmbreonIcon
-	dw MurkrowIcon
+	dw SylveonIcon
 	dw SlowkingIcon
-	dw MisdreavusIcon
+	dw StantlerIcon
 	dw UnownIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
@@ -222,8 +222,8 @@ IconPointers:
 	dw SlugmaIcon
 	dw MagcargoIcon
 	dw SwinubIcon
-	dw Piloswine
-	dw CorsolaIcon
+	dw PiloswineIcon
+	dw MamoswineIcon
 	dw RemoraidIcon
 	dw OctilleryIcon
 	dw DelibirdIcon
@@ -234,14 +234,14 @@ IconPointers:
 	dw KingdraIcon
 	dw PhanpyIcon
 	dw DonphanIcon
-	dw Porygon2Icon
-	dw StantlerIcon
+	dw MisdreavusIcon
+	dw MismagiusIcon
 	dw SmeargleIcon
 	dw TyrogueIcon
 	dw HitmontopIcon
-	dw SmoochumIcon
-	dw ElekidIcon
-	dw MagbyIcon
+	dw MurkrowIcon
+	dw HonchkrowIcon
+	dw Porygon2Icon
 	dw MiltankIcon
 	dw BlisseyIcon
 	dw RaikouIcon

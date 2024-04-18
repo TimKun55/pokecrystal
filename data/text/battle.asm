@@ -468,10 +468,9 @@ BattleText_UserWasReleasedFromStringBuffer1:
 	text "!"
 	prompt
 
-UsedBindText:
-	text "<USER>"
-	line "used BIND on"
-	cont "<TARGET>!"
+SandTombTrapText:
+	text "<TARGET>"
+	line "was trapped!"
 	prompt
 
 WhirlpoolTrapText:
@@ -487,12 +486,6 @@ FireSpinTrapText:
 WrappedByText:
 	text "<TARGET>"
 	line "was WRAPPED by"
-	cont "<USER>!"
-	prompt
-
-ClampedByText:
-	text "<TARGET>"
-	line "was CLAMPED by"
 	cont "<USER>!"
 	prompt
 
