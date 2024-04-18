@@ -12,9 +12,18 @@ CinnabarIslandFlypointCallback:
 	endcallback
 
 CinnabarIslandBlue:
-	faceplayer
+	readvar VAR_BADGES
+	ifequal 15, .BlueBacktoGym
 	opentext
 	writetext CinnabarIslandBlueText
+	waitbutton
+	closetext	
+	end
+	
+.BlueBacktoGym
+	faceplayer
+	opentext
+	writetext CinnabarIslandBlue2Text
 	waitbutton
 	closetext
 	playsound SFX_WARP_TO
@@ -40,13 +49,7 @@ CinnabarIslandBlueTeleport:
 	step_end
 
 CinnabarIslandBlueText:
-	text "Who are you?"
-
-	para "Well, it's plain"
-	line "to see that you're"
-	cont "a trainer…"
-
-	para "My name's BLUE."
+	text "My name's BLUE."
 
 	para "I was once the"
 	line "CHAMPION, although"
@@ -91,9 +94,15 @@ CinnabarIslandBlueText:
 
 	para "That's the way it"
 	line "is…"
+	done
 
-	para "But, anyway, I'm"
-	line "still a trainer."
+CinnabarIslandBlue2Text:
+	text "BLUE: <PLAYER>,"
+	para "you're back."
+	
+	para "Oh, you've earned"
+	line "all the other"
+	cont "KANTO BADGES?"
 
 	para "If I see a strong"
 	line "opponent, it makes"
@@ -103,8 +112,7 @@ CinnabarIslandBlueText:
 	line "battle me, come to"
 	cont "the VIRIDIAN GYM."
 
-	para "I'll take you on"
-	line "then."
+	para "I'll take you on."
 	done
 
 CinnabarIslandGymSignText:
@@ -112,8 +120,12 @@ CinnabarIslandGymSignText:
 	line "here…"
 
 	para "CINNABAR GYM has"
-	line "relocated to SEA-"
-	cont "FOAM ISLANDS."
+	line "relocated to"
+	cont "inside the"
+	cont "Volcano."
+	
+	para "Please take care"
+	line "when climbing up."
 
 	para "BLAINE"
 	done
@@ -129,15 +141,16 @@ CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
+	warp_event 13, 11, CINNABAR_POKECENTER_1F, 1
+	warp_event 10,  7, CINNABAR_VOLCANO_1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
-	bg_event  9, 11, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event  7,  7, BGEVENT_READ, CinnabarIslandSign
-	bg_event  9,  1, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event 14, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
+	bg_event 11,  7, BGEVENT_READ, CinnabarIslandGymSign
+	bg_event  7, 11, BGEVENT_READ, CinnabarIslandSign
+	bg_event  5,  6, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events
-	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event  6,  9, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

@@ -1,5 +1,6 @@
 	object_const_def
 	const PEWTERGYM_BROCK
+	const PEWTERGYM_ONIX
 	const PEWTERGYM_YOUNGSTER
 	const PEWTERGYM_GYM_GUIDE
 
@@ -11,6 +12,8 @@ PewterGym_MapScripts:
 PewterGymBrockScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_KANTO_LEADERS
+	iftrue .BrockScript_Rematch
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .FightDone
 	writetext BrockIntroText
@@ -30,11 +33,50 @@ PewterGymBrockScript:
 	writetext BrockBoulderBadgeText
 	waitbutton
 	closetext
+	readvar VAR_BADGES
+	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
 	writetext BrockFightDoneText
 	waitbutton
+	closetext
+	end
+
+.afterbattle16
+	setevent EVENT_BEAT_KANTO_LEADERS
+	end
+	
+.BrockScript_Rematch
+	writetext BrockRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext BrockWinLossRematchText, 0
+	loadtrainer BROCK, BROCK2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BrockRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+.EndRematch
+	writetext BrockNextTimeText
+	waitbutton
+	closetext
+	end
+
+PewterGymOnix:
+	opentext
+	writetext OnixText
+	cry ONIX
+	waitbutton
+	refreshscreen
+	pokepic ONIX
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -113,7 +155,7 @@ BrockWinLossText:
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
-	line "BOULDERBADGE."
+	line "the BOULDERBADGE."
 	done
 
 BrockBoulderBadgeText:
@@ -123,13 +165,6 @@ BrockBoulderBadgeText:
 	para "battling you, even"
 	line "though I am a bit"
 	cont "upset."
-
-	para "That BOULDERBADGE"
-	line "will make your"
-
-	para "#MON even more"
-	line "powerful."
-	done
 
 BrockFightDoneText:
 	text "BROCK: The world"
@@ -142,6 +177,32 @@ BrockFightDoneText:
 	line "I'm going to be-"
 	cont "come a lot strong-"
 	cont "er too."
+	done
+	
+BrockRematchIntroText:
+	text "<PLAYER>!"
+	line "Good to see"
+	cont "you again."
+	
+	para "Feel like having"
+	line "a rematch?"
+	done
+	
+BrockWinLossRematchText:
+	text "All rocked out!"
+	done
+	
+BrockRematchAfterBattleText:
+	text "You're still"
+	line "so strong!"
+	
+	para "Come back for"
+	line "a rematch"
+	cont "sometime!"
+	done
+	
+BrockNextTimeText:
+	text "No problem."
 	done
 
 CamperJerrySeenText:
@@ -205,6 +266,11 @@ PewterGymGuideWinText:
 	para "inspiring. I mean"
 	line "that seriously."
 	done
+	
+OnixText:
+	text "ONIX: Nix!!"
+	line "Onixnix!"
+	done
 
 PewterGym_MapEvents:
 	db 0, 0 ; filler
@@ -216,10 +282,11 @@ PewterGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  2, 11, BGEVENT_READ, PewterGymStatue
-	bg_event  7, 11, BGEVENT_READ, PewterGymStatue
+	bg_event  3, 11, BGEVENT_READ, PewterGymStatue
+	bg_event  6, 11, BGEVENT_READ, PewterGymStatue
 
 	def_object_events
 	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
+	object_event  4,  1, SPRITE_ONIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymOnix, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
-	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1
+	object_event  7, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1

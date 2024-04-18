@@ -1,6 +1,7 @@
 	object_const_def
 	const CERULEANGYM_ROCKET
 	const CERULEANGYM_MISTY
+	const CERULEANGYM_STARMIE
 	const CERULEANGYM_SWIMMER_GIRL1
 	const CERULEANGYM_SWIMMER_GIRL2
 	const CERULEANGYM_SWIMMER_GUY
@@ -59,6 +60,8 @@ CeruleanGymGruntRunsOutScript:
 CeruleanGymMistyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_KANTO_LEADERS
+	iftrue .MistyScript_Rematch
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
 	writetext MistyIntroText
@@ -77,9 +80,51 @@ CeruleanGymMistyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
+	readvar VAR_BADGES
+	ifequal 16, .afterbattle16
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton
+	closetext
+	end
+	
+.afterbattle16
+	setevent EVENT_BEAT_KANTO_LEADERS
+	writetext MistyFightDoneText
+	waitbutton
+	closetext
+	end
+
+.MistyScript_Rematch
+	writetext MistyRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext MistyWinLossRematchText, 0
+	loadtrainer MISTY, MISTY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext MistyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+.EndRematch
+	writetext MistyNextTimeText
+	waitbutton
+	closetext
+	end
+	
+CeruleanGymStarmie:
+	opentext
+	writetext StarmieText
+	cry STARMIE
+	waitbutton
+	refreshscreen
+	pokepic STARMIE
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -262,12 +307,12 @@ MistyWinLossText:
 	line "you are skilled…"
 
 	para "Here you go. It's"
-	line "CASCADEBADGE."
+	line "the CASCADEBADGE."
 	done
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "CASCADEBADGE."
+	line "the CASCADEBADGE."
 	done
 
 MistyFightDoneText:
@@ -281,6 +326,35 @@ MistyFightDoneText:
 
 	para "I can battle some"
 	line "skilled trainers."
+	done
+	
+MistyRematchIntroText:
+	text "Oh, it's you"
+	line "<PLAYER>."
+	
+	para "Are you back for"
+	line "a rematch?"
+	done
+	
+MistyWinLossRematchText:
+	text "Looks like this"
+	line "is it…"
+	done
+	
+MistyRematchAfterBattleText:
+	text "Wow!"
+	
+	para "You are getting"
+	line "stronger with"
+	cont "each battle!"
+	
+	para "Come back for"
+	line "a rematch"
+	cont "sometime!"
+	done
+	
+MistyNextTimeText:
+	text "Next time, then!"
 	done
 
 SwimmerfDianaSeenText:
@@ -359,25 +433,31 @@ CeruleanGymGuideWinText:
 	line "was one heck of a"
 	cont "great battle!"
 	done
+	
+StarmieText:
+	text "STARMIE: Staaar!!"
+	line "Mieeeee!"
+	done
 
 CeruleanGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 15, CERULEAN_CITY, 5
-	warp_event  5, 15, CERULEAN_CITY, 5
+	warp_event  4, 17, CERULEAN_CITY, 5
+	warp_event  5, 17, CERULEAN_CITY, 5
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  8, BGEVENT_ITEM, CeruleanGymHiddenMachinePart
-	bg_event  2, 13, BGEVENT_READ, CeruleanGymStatue1
-	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
+	bg_event  3, 10, BGEVENT_ITEM, CeruleanGymHiddenMachinePart
+	bg_event  2, 15, BGEVENT_READ, CeruleanGymStatue1
+	bg_event  6, 15, BGEVENT_READ, CeruleanGymStatue2
 
 	def_object_events
-	object_event  4, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
+	object_event  4, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
 	object_event  5,  3, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  4,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  8,  9, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  4,  3, SPRITE_STARMIE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymStarmie, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  2,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  1, 12, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  8,  8, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  3, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM

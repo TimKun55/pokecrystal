@@ -662,6 +662,89 @@ _MartBoughtText::
 	text_ram wStringBuffer2
 	text "(S)."
 	done
+	
+MadamItemsShop_IntroText::
+	text "Hello, there!"
+
+	para "I'm Madam Items!"
+	line "Would you like"
+	cont "some items that"
+
+	para "can help certain"
+	line "#MON evolve"
+	cont "when traded?"
+	done
+
+MadamItemsShop_ComeAgainText::
+	text "See you next time!"
+	done
+
+MadamItemsShop_HowManyText::
+	text "How many you"
+	line "need?"
+	done
+
+MadamItemsShop_CostsThisMuchText::
+	text "That will cost"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". That OK?"
+	done
+
+MadamItemsShop_InsufficientFundsText::
+	text "Uh-oh, not enough!"
+	done
+
+MadamItemsShop_BagFullText::
+	text "Oh, your bag"
+	line "is full!"
+	done
+
+MadamItemsShop_HereYouGoText::
+	text "Here you go!"
+	done
+
+BerryShop_IntroText::
+	text "Hello, there!"
+
+	para "Welcome to KANTO'S"
+	line "BERRY SHOP!"
+	cont "We've gathered the"
+
+	para "best BERRIES from"
+	line "all over to sell"
+	cont "to TRAINERS!"
+	done
+
+BerryShop_ComeAgainText::
+	text "See you next time!"
+	done
+
+BerryShop_HowManyText::
+	text "How many you"
+	line "need?"
+	done
+
+BerryShop_CostsThisMuchText::
+	text "That'll be"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". That OK?"
+	done
+
+BerryShop_InsufficientFundsText::
+	text "Oh! You don't"
+	line "have enough!"
+	done
+
+BerryShop_BagFullText::
+	text "Oops, your bag"
+	line "is full!"
+	done
+
+BerryShop_HereYouGoText::
+	text "Here ya go!"
+	done
 
 _SlotsBetHowManyCoinsText::
 	text "Bet how many"

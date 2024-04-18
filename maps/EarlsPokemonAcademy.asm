@@ -138,9 +138,6 @@ AcademyNotebook:
 	closetext
 	end
 
-AcademyStickerMachine: ; unreferenced
-	jumptext AcademyStickerMachineText
-
 AcademyBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -251,8 +248,9 @@ EarlsPokemonAcademyGameboyKid2Text:
 
 EarlsPokemonAcademyYoungster2Text:
 	text "A #MON holding"
-	line "a BERRY will heal"
-	cont "itself in battle."
+	line "an ORAN BERRY"
+	cont "will heal itself"
+	cont "in battle."
 
 	para "Many other items"
 	line "can be held by"
@@ -268,10 +266,6 @@ AcademyBlackboardText:
 
 	para "status changes in"
 	line "battle."
-	done
-
-AcademyBlackboardText2: ; unreferenced
-	text "Read which topic?"
 	done
 
 AcademyPoisonText:

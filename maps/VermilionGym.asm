@@ -1,5 +1,6 @@
 	object_const_def
 	const VERMILIONGYM_SURGE
+	const VERMILIONGYM_RAICHU
 	const VERMILIONGYM_GENTLEMAN
 	const VERMILIONGYM_ROCKER
 	const VERMILIONGYM_SUPER_NERD
@@ -13,6 +14,8 @@ VermilionGym_MapScripts:
 VermilionGymSurgeScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_KANTO_LEADERS
+	iftrue .SurgeScript_Rematch
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
 	writetext LtSurgeIntroText
@@ -34,11 +37,50 @@ VermilionGymSurgeScript:
 	writetext LtSurgeThunderBadgeText
 	waitbutton
 	closetext
+	readvar VAR_BADGES
+	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
 	writetext LtSurgeFightDoneText
 	waitbutton
+	closetext
+	end
+	
+.afterbattle16
+	setevent EVENT_BEAT_KANTO_LEADERS
+	end
+
+.SurgeScript_Rematch
+	writetext LtSurgeRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext LtSurgeWinLossRematchText, 0
+	loadtrainer LT_SURGE, LT_SURGE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LtSurgeRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+.EndRematch
+	writetext LtSurgeNextTimeText
+	waitbutton
+	closetext
+	end
+
+VermilionGymRaichu:
+	opentext
+	writetext RaichuText
+	cry RAICHU
+	waitbutton
+	refreshscreen
+	pokepic RAICHU
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -130,24 +172,21 @@ LtSurgeWinLossText:
 	line "You are strong!"
 
 	para "OK, kid. You get"
-	line "THUNDERBADGE!"
+	line "the THUNDERBADGE!"
 	done
 
 ReceivedThunderBadgeText:
 	text "<PLAYER> received"
-	line "THUNDERBADGE."
+	line "the THUNDERBADGE."
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
+	text "SURGE: Consider"
+	line "it proof that"
+	cont "you defeated me."
 
-	para "Consider it proof"
-	line "that you defeated"
-
-	para "me. You wear it"
-	line "proudly, hear?"
+	para "You wear it"
+	line "proudly, y'hear?"
 	done
 
 LtSurgeFightDoneText:
@@ -157,6 +196,33 @@ LtSurgeFightDoneText:
 
 	para "My #MON and I"
 	line "are still at it!"
+	done
+	
+LtSurgeRematchIntroText:
+	text "Hey kid!"
+	line "You're back!"
+	
+	para "We going"
+	line "another round?"
+	done
+	
+LtSurgeWinLossRematchText:
+	text "Haha, shocking!"
+	done
+	
+LtSurgeRematchAfterBattleText:
+	text "I still need"
+	line "to work on"
+	cont "closing the gap"
+	cont "between us."
+	
+	para "Come back for"
+	line "a rematch!"
+	done
+	
+LtSurgeNextTimeText:
+	text "Make sure to keep"
+	line "up your training."
 	done
 
 GentlemanGregorySeenText:
@@ -258,6 +324,11 @@ VermilionGymTrashCanText:
 	line "but trash."
 	done
 
+RaichuText:
+	text "RAICHU: Rai!!"
+	line "Raichuuu!"
+	done
+
 VermilionGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -288,6 +359,7 @@ VermilionGym_MapEvents:
 
 	def_object_events
 	object_event  5,  2, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
+	object_event  4,  2, SPRITE_RAICHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymRaichu, -1
 	object_event  8,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanGregory, -1
 	object_event  4,  7, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristVincent, -1
 	object_event  0, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerJugglerHorton, -1

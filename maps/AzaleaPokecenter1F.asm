@@ -1,5 +1,6 @@
 	object_const_def
 	const AZALEAPOKECENTER1F_NURSE
+	const AZALEAPOKECENTER1F_CHANSEY
 	const AZALEAPOKECENTER1F_GENTLEMAN
 	const AZALEAPOKECENTER1F_FISHING_GURU
 	const AZALEAPOKECENTER1F_POKEFAN_F
@@ -15,6 +16,9 @@ AzaleaPokecenter1FNoopScene:
 
 AzaleaPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+
+AzaleaPokecenter1FChansey:
+	jumpstd PokecenterChanseyScript
 
 AzaleaPokecenter1FGentlemanScript:
 	jumptextfaceplayer AzaleaPokecenter1FGentlemanText
@@ -34,18 +38,14 @@ AzaleaPokecenter1FGentlemanText:
 
 	para "your #MON has"
 	line "fainted."
-	done
-
-AzaleaPokecenter1FUnusedText: ; unreferenced
-	text "This BILL guy"
-	line "created the system"
-
-	para "for storing"
-	line "#MON in a PC."
-
-	para "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	
+	para "And if you want"
+	line "your #MON to"
+	cont "forget the HM"
+	
+	para "move, just visit"
+	line "the MOVE DELETER"
+	cont "on the 2nd floor."
 	done
 
 AzaleaPokecenter1FFishingGuruText:
@@ -78,8 +78,8 @@ AzaleaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, AZALEA_TOWN, 1
-	warp_event  4,  7, AZALEA_TOWN, 1
+	warp_event  5,  7, AZALEA_TOWN, 1
+	warp_event  6,  7, AZALEA_TOWN, 1
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -87,7 +87,8 @@ AzaleaPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FNurseScript, -1
-	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
-	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
+	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FNurseScript, -1
+	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FChansey, -1
+	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
+	object_event  9,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1

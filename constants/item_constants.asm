@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const ITEM_19      ; 19
+	const BIG_NUGGET   ; 19
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -58,7 +58,7 @@
 	const ITEM_32      ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
-	const X_SPECIAL    ; 35
+	const X_SP_ATK     ; 35
 	const COIN_CASE    ; 36
 	const ITEMFINDER   ; 37
 	const POKE_FLUTE   ; 38
@@ -95,7 +95,7 @@
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
 	const BLU_APRICORN ; 59
-	const ITEM_5A      ; 5a
+	const DUSK_BALL    ; 5a
 	const AMULET_COIN  ; 5b
 	const YLW_APRICORN ; 5c
 	const GRN_APRICORN ; 5d
@@ -125,7 +125,7 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const ITEM_78      ; 78
+	const X_SP_DEF     ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
@@ -152,9 +152,9 @@
 	const DRAGON_FANG  ; 90
 	const ITEM_91      ; 91
 	const LEFTOVERS    ; 92
-	const ITEM_93      ; 93
-	const ITEM_94      ; 94
-	const ITEM_95      ; 95
+	const OLD_AMBER    ; 93
+	const DOME_FOSSIL  ; 94
+	const HELIX_FOSSIL ; 95
 	const LEPPA_BERRY  ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98

@@ -168,14 +168,17 @@ Route12_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11, 33, ROUTE_12_SUPER_ROD_HOUSE, 1
+	warp_event  9, 33, ROUTE_12_SUPER_ROD_HOUSE, 1
+	warp_event  9,  3, ROUTE_12_LAVENDER_GATE, 3
+	warp_event  2, 26, ROUTE_11_ROUTE_12_GATE, 3
+	warp_event  2, 27, ROUTE_11_ROUTE_12_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 11, 27, BGEVENT_READ, Route12Sign
-	bg_event 13,  9, BGEVENT_READ, FishingSpotSign
-	bg_event 14, 13, BGEVENT_ITEM, Route12HiddenElixer
+	bg_event 12,  9, BGEVENT_READ, FishingSpotSign
+	bg_event 15, 13, BGEVENT_ITEM, Route12HiddenElixer
 
 	def_object_events
 	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMartin, -1

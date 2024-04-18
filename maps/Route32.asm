@@ -172,8 +172,6 @@ TrainerFisherRalph1:
 	opentext
 	checkflag ENGINE_RALPH_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkflag ENGINE_QWILFISH_SWARM
-	iftrue .Swarm
 	checkcellnum PHONE_FISHER_RALPH
 	iftrue .NumberAccepted
 	checkevent EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
@@ -252,12 +250,6 @@ TrainerFisherRalph1:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
-
-.Swarm:
-	writetext FisherRalphSwarmText
-	waitbutton
-	closetext
 	end
 
 .AskNumber1:
@@ -936,7 +928,7 @@ Route32_MapEvents:
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
 	bg_event  9,  1, BGEVENT_READ, Route32RuinsSign
-	bg_event 10, 84, BGEVENT_READ, Route32UnionCaveSign
+	bg_event  8, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
 	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion

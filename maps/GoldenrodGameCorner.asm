@@ -311,21 +311,21 @@ GoldenrodGameCornerLeftTheirDrinkScript:
 GoldenrodGameCornerSlotsMachineScript:
 	random 6
 	ifequal 0, GoldenrodGameCornerLuckySlotsMachineScript
-	reanchormap
+	refreshscreen
 	setval FALSE
 	special SlotMachine
 	closetext
 	end
 
 GoldenrodGameCornerLuckySlotsMachineScript:
-	reanchormap
+	refreshscreen
 	setval TRUE
 	special SlotMachine
 	closetext
 	end
 
 GoldenrodGameCornerCardFlipMachineScript:
-	reanchormap
+	refreshscreen
 	special CardFlip
 	closetext
 	end

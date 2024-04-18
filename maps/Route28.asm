@@ -17,13 +17,13 @@ Route28_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  3, ROUTE_28_STEEL_WING_HOUSE, 1
-	warp_event 33,  5, VICTORY_ROAD_GATE, 7
+	warp_event 11,  5, ROUTE_28_STEEL_WING_HOUSE, 1
+	warp_event 35,  6, VICTORY_ROAD_GATE, 7
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 31,  5, BGEVENT_READ, Route28Sign
-	bg_event 25,  2, BGEVENT_ITEM, Route28HiddenRareCandy
+	bg_event 30,  6, BGEVENT_READ, Route28Sign
+	bg_event 29,  3, BGEVENT_ITEM, Route28HiddenRareCandy
 
 	def_object_events

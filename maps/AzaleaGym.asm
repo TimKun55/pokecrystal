@@ -1,10 +1,12 @@
 	object_const_def
 	const AZALEAGYM_BUGSY
+	const AZALEAGYM_SCYTHER
 	const AZALEAGYM_BUG_CATCHER1
 	const AZALEAGYM_BUG_CATCHER2
 	const AZALEAGYM_BUG_CATCHER3
 	const AZALEAGYM_TWIN1
 	const AZALEAGYM_TWIN2
+	const AZALEAGYM_BUG_MANIAC
 	const AZALEAGYM_GYM_GUIDE
 
 AzaleaGym_MapScripts:
@@ -15,6 +17,10 @@ AzaleaGym_MapScripts:
 AzaleaGymBugsyScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal 16, .BugsyScript_16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BugsyScript_Rematch
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .FightDone
 	writetext BugsyText_INeverLose
@@ -53,6 +59,54 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_BugMonsAreDeep
 	waitbutton
 .NoRoomForFuryCutter:
+	closetext
+	end
+	
+.BugsyScript_16Badges
+	writetext Bugsy16IntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext BugsyWinLossRematchText, 0
+	loadtrainer BUGSY, BUGSY3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Bugsy16AfterBattleText
+	waitbutton
+	closetext
+	end
+
+.BugsyScript_Rematch
+	writetext BugsyRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext BugsyWinLossRematchText, 0
+	loadtrainer BUGSY, BUGSY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BugsyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.EndRematch
+	writetext BugsyNextTimeText
+	waitbutton
+	closetext
+	end
+
+AzaleaGymScyther:
+	opentext
+	writetext ScytherText
+	cry SCYTHER
+	waitbutton
+	refreshscreen
+	pokepic SCYTHER
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -121,6 +175,17 @@ TrainerBugCatcherJosh:
 	waitbutton
 	closetext
 	end
+	
+TrainerBugManiacXander:
+	trainer BUG_MANIAC, XANDER, EVENT_BEAT_BUG_MANIAC_XANDER, BugManiacXanderSeenText, BugManiacXanderBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BugManiacXanderAfterBattleText
+	waitbutton
+	closetext
+	end
 
 AzaleaGymGuideScript:
 	faceplayer
@@ -179,13 +244,13 @@ BugsyText_ResearchIncomplete:
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HIVEBADGE."
+	line "the HIVEBADGE."
 	done
 
 BugsyText_HiveBadgeSpeech:
 	text "Do you know the"
-	line "benefits of HIVE-"
-	cont "BADGE?"
+	line "benefits of the"
+	cont "HIVEBADGE?"
 
 	para "If you have it,"
 	line "#MON up to L30"
@@ -228,6 +293,65 @@ BugsyText_BugMonsAreDeep:
 
 	para "Study your favor-"
 	line "ites thoroughly."
+	done
+	
+BugsyRematchIntroText:
+	text "Oh, <PLAYER>!"
+	line "You're here!"
+	
+	para "Feel like having"
+	line "a rematch?"
+	done
+	
+BugsyWinLossRematchText:
+	text "Aww, that's the"
+	line "end of it…"
+	done
+	
+BugsyRematchAfterBattleText:
+	text "Woah, I thought"
+	line "I had done enough"
+	cont "research!"
+	
+	para "I need to do more!"
+	
+	para "Feel free to"
+	line "come back for"
+	cont "a rematch!"
+	done
+	
+Bugsy16IntroText:
+	text "It's <PLAYER>!"
+	
+	para "You've been doing"
+	line "a lot of your own"
+	cont "research, haven't"
+	cont "you?"
+	
+	para "You've beaten all"
+	line "the KANTO GYM"
+	cont "LEADERS!"
+	
+	para "I'm going to use"
+	line "my strongest team"
+	cont "against you!"
+	
+	para "Want a rematch?"
+	done
+	
+Bugsy16AfterBattleText:
+	text "Wow!"
+	line "I learned a lot"
+	cont "from that battle!"
+	
+	para "Feel free to"
+	line "come back for"
+	cont "a rematch!"
+	done
+	
+BugsyNextTimeText:
+	text "You can come"
+	line "back anytime!"
 	done
 
 BugCatcherBennySeenText:
@@ -290,6 +414,25 @@ BugCatcherJoshAfterBattleText:
 	text "I guess I should"
 	line "teach them better"
 	cont "moves…"
+	done
+	
+BugManiacXanderSeenText:
+	text "People tend to"
+	line "think bug #MON"
+	cont "are weak!"
+
+	para "I love proving"
+	line "them wrong!"
+	done
+
+BugManiacXanderBeatenText:
+	text "Aahhhh!"
+	done
+
+BugManiacXanderAfterBattleText:
+	text "They're not weak"
+	line "but you're"
+	cont "definitely strong!"
 	done
 
 TwinsAmyandmay1SeenText:
@@ -358,6 +501,11 @@ AzaleaGymGuideWinText:
 	line "you, the future of"
 	cont "#MON is bright!"
 	done
+	
+ScytherText:
+	text "SCYTHER: Scyth!"
+	line "Scytherrrr!"
+	done
 
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler
@@ -373,10 +521,12 @@ AzaleaGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue
 
 	def_object_events
-	object_event  5,  7, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
-	object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
-	object_event  8,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1
-	object_event  0,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1
+	object_event  5,  3, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
+	object_event  4,  3, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymScyther, -1
+	object_event  2,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
+	object_event  1,  9, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1
+	object_event  7,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
 	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
+	object_event  8,  8, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacXander, -1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1

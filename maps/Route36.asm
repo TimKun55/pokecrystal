@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE36_YOUNGSTER1
 	const ROUTE36_YOUNGSTER2
-	const ROUTE36_WEIRD_TREE
+	const ROUTE36_SUDOWOODO
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
 	const ROUTE36_FRUIT_TREE
@@ -53,7 +53,7 @@ SudowoodoScript:
 
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
+	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
 	end
 
 .Fight:
@@ -69,7 +69,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	closetext
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
+	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
 	opentext
 	writetext SudowoodoAttackedText
 	waitbutton
@@ -78,7 +78,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
 	ifequal DRAW, DidntCatchSudowoodo
-	disappear ROUTE36_WEIRD_TREE
+	disappear ROUTE36_SUDOWOODO
 	reloadmapafterbattle
 	end
 
@@ -88,8 +88,8 @@ DidntUseSquirtbottleScript:
 
 DidntCatchSudowoodo:
 	reloadmapafterbattle
-	applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee
-	disappear ROUTE36_WEIRD_TREE
+	applymovement ROUTE36_SUDOWOODO, WeirdTreeMovement_Flee
+	disappear ROUTE36_SUDOWOODO
 	special RefreshSprites
 	end
 
@@ -681,5 +681,5 @@ Route36_MapEvents:
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
-	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
+	object_event 34, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36

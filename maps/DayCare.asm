@@ -78,29 +78,6 @@ Text_GrampsLookingForYou:
 	line "for you."
 	done
 
-Text_DayCareManTalksAboutEggTicket: ; unreferenced
-	text "I'm the DAY-CARE"
-	line "MAN."
-
-	para "There's something"
-	line "new in GOLDENROD"
-
-	para "called the TRADE"
-	line "CORNER."
-
-	para "I was given an EGG"
-	line "TICKET that can be"
-
-	para "traded in for a"
-	line "ODD EGG."
-
-	para "But since we run a"
-	line "DAY-CARE, we don't"
-
-	para "need it. You may"
-	line "as well have it."
-	done
-
 DayCareManText_GiveOddEgg:
 	text "I'm the DAY-CARE"
 	line "MAN."
@@ -123,10 +100,6 @@ DayCareManText_GiveOddEgg:
 
 	para "Then fine, this is"
 	line "yours to keep!"
-	done
-
-DayCareText_ComeAgain: ; unreferenced
-	text "Come again."
 	done
 
 DayCareText_GotOddEgg:
@@ -157,16 +130,15 @@ DayCare_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0,  5, ROUTE_34, 3
-	warp_event  0,  6, ROUTE_34, 4
+	warp_event  0,  4, ROUTE_34, 3
+	warp_event  0,  5, ROUTE_34, 4
 	warp_event  2,  7, ROUTE_34, 5
 	warp_event  3,  7, ROUTE_34, 5
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
-	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
+	bg_event  5,  1, BGEVENT_READ, DayCareBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE

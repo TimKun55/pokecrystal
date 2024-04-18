@@ -1,5 +1,7 @@
 	object_const_def
 	const MAHOGANYGYM_PRYCE
+	const MAHOGANYGYM_PILOSWINE
+	const MAHOGANYGYM_MAMOSWINE
 	const MAHOGANYGYM_BEAUTY1
 	const MAHOGANYGYM_ROCKER1
 	const MAHOGANYGYM_BEAUTY2
@@ -11,10 +13,27 @@ MahoganyGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, MahoganyGymMamoswineCallback
+	
+MahoganyGymMamoswineCallback:
+	checkevent EVENT_ROUTE_23_PRYCE
+	iftrue .MamoswineAppear
+	disappear MAHOGANYGYM_MAMOSWINE
+	appear MAHOGANYGYM_PILOSWINE
+	endcallback
+
+.MamoswineAppear:
+	disappear MAHOGANYGYM_PILOSWINE
+	appear MAHOGANYGYM_MAMOSWINE
+	endcallback
 
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal 16, .PryceScript_16Badges
+	checkevent EVENT_ROUTE_23_PRYCE
+	iftrue .PryceScript_Rematch
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
 	writetext PryceText_Intro
@@ -34,7 +53,7 @@ MahoganyGymPryceScript:
 	scall MahoganyGymActivateRockets
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
-	iftrue PryceScript_Defeat
+	iftrue .PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE
 	setevent EVENT_BEAT_SKIER_CLARISSA
 	setevent EVENT_BEAT_BOARDER_RONALD
@@ -43,17 +62,77 @@ MahoganyGymPryceScript:
 	writetext PryceText_GlacierBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_ICY_WIND
-	iffalse MahoganyGym_NoRoomForIcyWind
+	iffalse .MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
 	waitbutton
 	closetext
 	end
 
-PryceScript_Defeat:
+.PryceScript_Defeat:
 	writetext PryceText_CherishYourPokemon
 	waitbutton
-MahoganyGym_NoRoomForIcyWind:
+.MahoganyGym_NoRoomForIcyWind:
+	closetext
+	end
+	
+.PryceScript_16Badges
+	writetext Pryce16IntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext PryceWinLossRematchText, 0
+	loadtrainer PRYCE, PRYCE3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Pryce16AfterBattleText
+	waitbutton
+	closetext
+	end
+
+.PryceScript_Rematch
+	writetext PryceRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext PryceWinLossRematchText, 0
+	loadtrainer PRYCE, PRYCE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext PryceRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.EndRematch
+	writetext PryceNextTimeText
+	waitbutton
+	closetext
+	end
+
+MahoganyGymPiloswine:
+	opentext
+	writetext PiloswineText
+	cry PILOSWINE
+	waitbutton
+	refreshscreen
+	pokepic PILOSWINE
+	waitbutton
+	closepokepic
+	closetext
+	end
+	
+MahoganyGymMamoswine:
+	opentext
+	writetext MamoswineText
+	cry MAMOSWINE
+	waitbutton
+	refreshscreen
+	pokepic MAMOSWINE
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -194,17 +273,15 @@ PryceText_Impressed:
 
 Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
-	line "GLACIERBADGE."
+	line "the GLACIERBADGE."
 	done
 
 PryceText_GlacierBadgeSpeech:
-	text "That BADGE will"
-	line "raise the SPECIAL"
-	cont "stats of #MON."
+	text "The GLACIERBADGE"
+	line "will let your"
 
-	para "It also lets your"
-	line "#MON use WHIRL-"
-	cont "POOL to get across"
+	para "#MON use WHIRL-"
+	line "POOL to get across"
 	cont "real whirlpools."
 
 	para "And this… This is"
@@ -236,6 +313,71 @@ PryceText_CherishYourPokemon:
 
 	para "Cherish your time"
 	line "together!"
+	done
+
+PryceRematchIntroText:
+	text "<PLAYER>."
+	line "You're returned."
+	
+	para "Did you want to"
+	line "have a rematch?"
+	done
+	
+PryceWinLossRematchText:
+	text "Hmm."
+	line "Seems as if my"
+	cont "luck has run out."
+	done
+	
+PryceRematchAfterBattleText:
+	text "A wonderful"
+	line "battle."
+	
+	para "Please, feel free"
+	line "to return for"
+	cont "a rematch."
+	done
+	
+Pryce16IntroText:
+	text "<PLAYER>."
+	line "You have done it."
+	
+	para "You've defeated"
+	line "all of the KANTO"
+	cont "GYM LEADERS."
+	
+	para "An amazing"
+	line "achievement."
+	
+	para "Very well done."
+	
+	para "However, I hope"
+	line "you know what this"
+	cont "means."
+	
+	para "I can finally use"
+	line "my strongest team"
+	cont "against you."
+	
+	para "Shall we have"
+	line "a rematch?"
+	done
+	
+Pryce16AfterBattleText:
+	text "As your elder, it"
+	line "makes me truly"
+	cont "happy to see"
+	cont "your growth."
+	
+	para "Please, feel free"
+	line "to return for"
+	cont "a rematch."
+	done
+	
+PryceNextTimeText:
+	text "I understand."
+	line "Come back when"
+	cont "you're able."
 	done
 
 BoarderRonaldSeenText:
@@ -370,6 +512,16 @@ MahoganyGymGuideWinText:
 	line "eration gap!"
 	done
 
+PiloswineText:
+	text "PILOSWINE: Lo!!"
+	line "PiloPilo!"
+	done
+	
+MamoswineText:
+	text "MAMOSWINE: Mooo!"
+	line "Mammooo!"
+	done
+
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -385,6 +537,8 @@ MahoganyGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1
+	object_event  4,  3, SPRITE_PILOSWINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPiloswine, EVENT_GOT_A_POKEMON_FROM_ELM
+	object_event  4,  3, SPRITE_MAMOSWINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymMamoswine, EVENT_ROUTE_23_PRYCE
 	object_event  4,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierRoxanne, -1
 	object_event  0, 17, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderRonald, -1
 	object_event  9, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierClarissa, -1

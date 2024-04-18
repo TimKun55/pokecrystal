@@ -30,7 +30,7 @@ Red:
 	special FadeInFromBlack
 	pause 30
 	special HealParty
-	reanchormap
+	refreshscreen
 	credits
 	end
 

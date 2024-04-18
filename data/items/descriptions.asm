@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw BigNuggetDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -53,7 +53,7 @@ ItemDescriptions:
 	dw TeruSama4Desc
 	dw XDefendDesc
 	dw XSpeedDesc
-	dw XSpecialDesc
+	dw XSpAtkDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw TeruSama5Desc
@@ -90,7 +90,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw DuskBallDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -120,7 +120,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
+	dw XSpDefDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -147,9 +147,9 @@ ItemDescriptions:
 	dw DragonFangDesc
 	dw TeruSama14Desc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
+	dw OldAmberDesc
+	dw DomeFossilDesc
+	dw HelixFossilDesc
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
@@ -354,8 +354,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+BigNuggetDesc:
+	db   "Made of pure gold."
+	next "Sell very high.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -463,7 +464,7 @@ XSpeedDesc:
 	db   "Raises SPEED."
 	next "(1 BTL)@"
 
-XSpecialDesc:
+XSpAtkDesc:
 	db   "Raises SPECIAL"
 	next "ATTACK. (1 BTL)@"
 
@@ -608,8 +609,9 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
+DuskBallDesc:
+	db   "Works best at NITE"
+	next "or in caves.@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
@@ -723,8 +725,9 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
+XSpDefDesc:
+	db   "Raises SPECIAL"
+	next "DEFENSE. (1 BTL)@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"
@@ -825,14 +828,17 @@ LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-TeruSama15Desc:
-	db   "?@"
+OldAmberDesc:
+	db   "Amber with genes"
+	next "of ancient #MON@"
 
-TeruSama16Desc:
-	db   "?@"
+DomeFossilDesc:
+	db   "Shell of ancient"
+	next "marine #MON.@"
 
-TeruSama17Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "Seashell of ancie-"
+	next "nt marine #MON.@"
 
 LeppaBerryDesc:
 	db   "A self-restore"

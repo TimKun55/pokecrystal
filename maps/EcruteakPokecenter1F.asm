@@ -1,9 +1,11 @@
 	object_const_def
 	const ECRUTEAKPOKECENTER1F_NURSE
+	const ECRUTEAKPOKECENTER1F_CHANSEY
 	const ECRUTEAKPOKECENTER1F_POKEFAN_M
 	const ECRUTEAKPOKECENTER1F_COOLTRAINER_F
 	const ECRUTEAKPOKECENTER1F_GYM_GUIDE
 	const ECRUTEAKPOKECENTER1F_BILL
+	const ECRUTEAKPOKECENTER1F_TUTOR
 
 EcruteakPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -13,13 +15,13 @@ EcruteakPokecenter1F_MapScripts:
 	def_callbacks
 
 EcruteakPokecenter1FMeetBillScene:
-	sdefer EcruteakPokcenter1FBillActivatesTimeCapsuleScript
+	sdefer EcruteakPokcenter1FBillMeetsPlayer
 	end
 
 EcruteakPokecenter1FNoopScene:
 	end
 
-EcruteakPokcenter1FBillActivatesTimeCapsuleScript:
+EcruteakPokcenter1FBillMeetsPlayer:
 	pause 30
 	playsound SFX_EXIT_BUILDING
 	appear ECRUTEAKPOKECENTER1F_BILL
@@ -57,14 +59,96 @@ EcruteakPokcenter1FBillActivatesTimeCapsuleScript:
 
 EcruteakPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+	
+EcruteakPokecenter1FChansey:
+	jumpstd PokecenterChanseyScript
+	
+EcruteakPokecenter1FTutor:
+	faceplayer
+	opentext
+	writetext EcruteakPokecenter1FTutorIntro
+	waitbutton
+	special PlaceMoneyTopRight
+	checkmoney YOUR_MONEY, 4000
+	ifequal HAVE_LESS, .NotEnough
+	writetext EcruteakPokecenter1FAskYesNo
+	yesorno
+	iffalse .Refused
+	writetext EcruteakPokecenter1FTutorWhichMoveText
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .RockBlast
+	ifequal 2, .GrowthPunch
+	ifequal 3, .FlameCharge
+	sjump .Refused
+
+.RockBlast:
+	setval ROCK_BLAST
+	writetext EcruteakPokecenter1FTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.GrowthPunch:
+	setval GROWTH_PUNCH
+	writetext EcruteakPokecenter1FTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.FlameCharge:
+	setval FLAME_CHARGE
+	writetext EcruteakPokecenter1FTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.Refused:
+	writetext EcruteakPokecenter1FTutorRefusalText
+	waitbutton
+	closetext
+	end
+	
+.Incompatible:
+	writetext EcruteakPokecenter1FTutorIncompatibleText
+	waitbutton
+	closetext
+	end
+	
+.NotEnough:
+	writetext EcruteakPokecenter1FTutorNotEnough
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext EcruteakPokecenter1FTutorPayment
+	takemoney YOUR_MONEY, 4000
+	waitbutton
+	writetext EcruteakPokecenter1FTutorUseWisely
+	waitbutton
+	writetext EcruteakPokecenter1FFarewellKidText
+	waitbutton
+	closetext
+	end
+	
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "ROCK BLAST@"
+	db "GROWTH PUNCH@"
+	db "FLAME CHARGE@"
+	db "CANCEL@"
 
 EcruteakPokecenter1FPokefanMScript:
-	special CheckMobileAdapterStatusSpecial
-	iftrue .mobile
 	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
-
-.mobile
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMTextMobile
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
@@ -77,6 +161,8 @@ EcruteakPokecenter1FBillMovement1:
 	step UP
 	step UP
 	step UP
+	step RIGHT
+	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -102,62 +188,99 @@ EcruteakPokecenter1F_BillText1:
 	line "who are you?"
 
 	para "Hmm, <PLAYER>, huh?"
-	line "You've come at the"
-	cont "right time."
+	line "Nice to meet you."
 	done
 
 EcruteakPokecenter1F_BillText2:
 	text "I just finished"
-	line "adjustments on my"
-	cont "TIME CAPSULE."
+	line "visiting my"
+	cont "friends."
+	
+	para "You probably know"
+	line "them as the"
+	
+	para "MOVE DELETER and"
+	line "MOVE RELEARNER."
 
-	para "You know that"
-	line "#MON can be"
-	cont "traded, right?"
+	para "Whenever I'm in"
+	line "GOLDENROD to see"
+	cont "family, I make"
+	
+	para "sure to come to"
+	line "ECRUTEAK, too!"
 
-	para "My TIME CAPSULE"
-	line "was developed to"
-
-	para "enable trades with"
-	line "the past."
-
-	para "But you can't send"
-	line "anything that"
-
-	para "didn't exist in"
-	line "the past."
-
-	para "If you did, the PC"
-	line "in the past would"
-	cont "have a breakdown."
-
-	para "So you have to"
-	line "remove anything"
-
-	para "that wasn't around"
-	line "in the past."
-
-	para "Put simply, no"
-	line "sending new moves"
-
-	para "or new #MON in"
-	line "the TIME CAPSULE."
-
-	para "Don't you worry."
-	line "I'm done with the"
-	cont "adjustments."
-
-	para "Tomorrow, TIME"
-	line "CAPSULES will be"
-
-	para "running at all"
-	line "#MON CENTERS."
-
-	para "I have to hurry on"
-	line "back to GOLDENROD"
-	cont "and see my folks."
+	para "Anyway, I should"
+	line "head back to"
+	cont "GOLDENROD and"
+	cont "see my folks."
 
 	para "Buh-bye!"
+	done
+	
+EcruteakPokecenter1FTutorIntro:
+	text "Hi there!"
+	line "I'm a MOVE TUTOR!"
+	
+	para "For ¥4000,"
+	line "I can teach your"
+	cont "#MON a pretty"
+
+	para "useful move if"
+	line "you'd like."
+	done
+	
+EcruteakPokecenter1FAskYesNo:
+	text "Should I teach"
+	line "them a move?"
+	done
+
+EcruteakPokecenter1FTutorRefusalText:
+	text "Come back here"
+	line "if you want to"
+	
+	para "teach your"
+	line "#MON a new"
+	cont "move!"
+	done
+
+EcruteakPokecenter1FTutorWhichMoveText:
+	text "Great! You won't"
+	line "regret it!"
+
+	para "Which move should"
+	line "I teach?"
+	done
+
+EcruteakPokecenter1FTutorPayment:
+	text "<PLAYER> gave the"
+	line "Tutor ¥4000."
+	done
+	
+EcruteakPokecenter1FTutorNotEnough:
+	text "Oh, sorry, you"
+	line "can't afford it."
+	done
+
+EcruteakPokecenter1FTutorUseWisely:
+	text "Use these wisely"
+	line "to your advantage"
+	cont "in battle."
+	done
+
+EcruteakPokecenter1FFarewellKidText:
+	text "Goodbye and"
+	line "good luck on"
+	cont "your journey."
+	done
+	
+EcruteakPokecenter1FTutorIncompatibleText:
+	text "I'm sorry, your"
+	line "#MON can't"
+	cont "learn this move…"
+	done
+
+EcruteakPokecenter1FTutorMoveText:
+	text_start
 	done
 
 EcruteakPokecenter1FPokefanMText:
@@ -208,8 +331,8 @@ EcruteakPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 6
-	warp_event  4,  7, ECRUTEAK_CITY, 6
+	warp_event  5,  7, ECRUTEAK_CITY, 4
+	warp_event  6,  7, ECRUTEAK_CITY, 4
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -217,8 +340,10 @@ EcruteakPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1
-	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1
-	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
-	object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
+	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1
+	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FChansey, -1
+	object_event 10,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1
+	object_event  2,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
+	object_event  8,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
 	object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_POKE_CENTER_BILL
+	object_event  8,  1, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FTutor, -1

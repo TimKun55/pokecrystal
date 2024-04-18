@@ -1,5 +1,6 @@
 	object_const_def
 	const GOLDENRODGYM_WHITNEY
+	const GOLDENRODGYM_MILTANK
 	const GOLDENRODGYM_LASS1
 	const GOLDENRODGYM_LASS2
 	const GOLDENRODGYM_BEAUTY1
@@ -21,9 +22,13 @@ GoldenrodGymNoop2Scene:
 
 GoldenrodGymWhitneyScript:
 	faceplayer
+	opentext	
+	readvar VAR_BADGES
+	ifequal 16, .WhitneyScript_16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .WhitneyScript_Rematch
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
-	opentext
 	writetext WhitneyBeforeText
 	waitbutton
 	closetext
@@ -39,7 +44,6 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
 .FightDone:
-	opentext
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
 	writetext WhitneyYouMeanieText
@@ -76,6 +80,54 @@ GoldenrodGymWhitneyScript:
 	writetext WhitneyGoodCryText
 	waitbutton
 .NoRoomForAttract:
+	closetext
+	end
+	
+.WhitneyScript_16Badges
+	writetext Whitney16IntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext WhitneyWinLossRematchText, 0
+	loadtrainer WHITNEY, WHITNEY3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Whitney16AfterBattleText
+	waitbutton
+	closetext
+	end
+
+.WhitneyScript_Rematch
+	writetext WhitneyRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext WhitneyWinLossRematchText, 0
+	loadtrainer WHITNEY, WHITNEY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext WhitneyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.EndRematch
+	writetext WhitneyNextTimeText
+	waitbutton
+	closetext
+	end
+	
+GoldenrodGymMiltank:
+	opentext
+	writetext MiltankText
+	cry MILTANK
+	waitbutton
+	refreshscreen
+	pokepic MILTANK
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -225,7 +277,7 @@ WhitneyWhatDoYouWantText:
 
 	para "Oh, right."
 	line "I forgot. Here's"
-	cont "PLAINBADGE."
+	cont "the PLAINBADGE."
 	done
 
 PlayerReceivedPlainBadgeText:
@@ -234,15 +286,11 @@ PlayerReceivedPlainBadgeText:
 	done
 
 WhitneyPlainBadgeText:
-	text "PLAINBADGE lets"
-	line "your #MON use"
+	text "The PLAINBADGE"
+	line "lets your #MON"
 
-	para "STRENGTH outside"
+	para "use STRENGTH out"
 	line "of battle."
-
-	para "It also boosts"
-	line "your #MON's"
-	cont "SPEED."
 
 	para "Oh, you can have"
 	line "this too!"
@@ -266,6 +314,60 @@ WhitneyGoodCryText:
 
 	para "Come for a visit"
 	line "again! Bye-bye!"
+	done
+
+WhitneyRematchIntroText:
+	text "Oh, hi <PLAYER>!"
+	line "Good to see"
+	cont "you again."
+	
+	para "Feel like having"
+	line "a rematch?"
+	done
+	
+WhitneyWinLossRematchText:
+	text "You really"
+	line "are strong!"
+	done
+	
+WhitneyRematchAfterBattleText:
+	text "I'm going to get"
+	line "even stronger,"
+	
+	para "Just you watch!"
+	
+	para "Feel free to"
+	line "come back for"
+	cont "a rematch!"
+	done
+	
+Whitney16IntroText:
+	text "Wow, <PLAYER>!"
+	line "You did it!"
+	
+	para "You beat all"
+	line "the KANTO GYM"
+	cont "LEADERS!"
+	
+	para "I'm going to use"
+	line "my strongest team"
+	cont "against you!"
+	
+	para "Want a rematch?"
+	done
+	
+Whitney16AfterBattleText:
+	text "Wow!"
+	line "That was an"
+	cont "amazing battle!"
+	
+	para "Come back for"
+	line "a rematch soon!"
+	done
+	
+WhitneyNextTimeText:
+	text "Aww, well come"
+	line "back soon."
 	done
 
 LassCarrieSeenText:
@@ -376,6 +478,10 @@ GoldenrodGymGuideWinText:
 	line "was busy admiring"
 	cont "the ladies here."
 	done
+	
+MiltankText:
+	text "MILTANK: Mooo!!"
+	done
 
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
@@ -393,6 +499,7 @@ GoldenrodGym_MapEvents:
 
 	def_object_events
 	object_event  8,  3, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
+	object_event  9,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltank, -1
 	object_event  9, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
 	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
 	object_event  0,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
