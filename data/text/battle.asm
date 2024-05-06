@@ -218,6 +218,12 @@ SentAllToMomText:
 	text "Sent all to MOM!"
 	prompt
 
+UnusedRivalLossText: ; unreferenced
+	text "<RIVAL>: Huh? I"
+	line "should've chosen"
+	cont "your #MON!"
+	prompt
+
 BattleText_MonFainted:
 	text_ram wBattleMonNickname
 	text_start
@@ -366,6 +372,8 @@ BattleText_StringBuffer1GrewToLevel:
 	text "!@"
 	sound_dex_fanfare_50_79
 	text_end
+
+	text_end ; unreferenced
 
 BattleText_WildMonIsEating:
 	text "Wild @"
@@ -1121,6 +1129,11 @@ BattleText_LinkErrorBattleCanceled:
 	line "been canceled…"
 	prompt
 
+BattleText_NoTimeLeftToday: ; unreferenced
+	text "There is no time"
+	line "left today!"
+	done
+	
 ItStartedToHailText:
 	text "It started"
 	line "to hail!"
