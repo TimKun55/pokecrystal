@@ -480,8 +480,8 @@ AcidDescription:
 	line "Eff DEF ▼1.@"
 
 EmberDescription:
-	db   "Attacks with small"
-	line "flames. May burn.@"
+	db   "Small flames."
+	line "May burn.@"
 
 FlamethrowerDescription:
 	db   "Intense flames."

@@ -982,16 +982,13 @@ MoveScreenLoop:
 
 .moving_move
 	ld a, " "
-	hlcoord 1, 12
-	ld bc, 5
+	hlcoord 1, 11
+	ld bc, 8
 	call ByteFill
-	hlcoord 1, 12
-	lb bc, 5, 7
-	call ClearBox
 	hlcoord 1, 12
 	lb bc, 5, SCREEN_WIDTH - 2
 	call ClearBox
-	hlcoord 2, 13
+	hlcoord 1, 12
 	ld de, String_MoveWhere
 	call PlaceString
 	jp .joy_loop
@@ -1024,8 +1021,6 @@ MoveScreenLoop:
 	ld a, [wCurPartyMon]
 	cp b
 	jp z, .joy_loop
-	ld de, SFX_SWITCH_POCKETS
-	call PlaySFX
 	jp MoveScreenLoop
 
 .d_left
@@ -1040,8 +1035,6 @@ MoveScreenLoop:
 	ld a, [wCurPartyMon]
 	cp b
 	jp z, .joy_loop
-	ld de, SFX_SWITCH_POCKETS
-	call PlaySFX
 	jp MoveScreenLoop
 
 .cycle_right
@@ -1167,7 +1160,7 @@ MoveScreen2DMenuData:
 	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
 
 String_MoveWhere:
-	db "Select a move<NEXT>to swap places.@"
+	db "Where?@"
 
 SetUpMoveScreenBG:
 	call ClearBGPalettes
@@ -1186,8 +1179,8 @@ SetUpMoveScreenBG:
 	ld [wTempIconSpecies], a
 	ld e, MONICON_MOVES
 	farcall LoadMenuMonIcon
-	hlcoord 0, -1
-	ld b, 1
+	hlcoord 0, 1
+	ld b, 9
 	ld c, 18
 	call Textbox
 	hlcoord 0, 11
@@ -1392,7 +1385,7 @@ PlaceMoveData:
 	call PlaceString
 
 .description
-	hlcoord 1, 15
+	hlcoord 1, 14
 	predef PrintMoveDescription
 
 	ld b, SCGB_MOVE_LIST
@@ -1402,9 +1395,9 @@ PlaceMoveData:
 	ret
 
 String_MoveType_Top:
-	db "          @"
+	db "┌────────┐@"
 String_MoveType_Bottom:
-	db "┌─────────@"
+	db "│        └@"
 String_MoveAtk:
 	db "BP /@"
 String_MoveAcc:
