@@ -22,6 +22,7 @@ NewPokedexOrder:
 	db RATICATE
 	db SENTRET
 	db FURRET
+	db PICHU
 	db PIKACHU
 	db RAICHU
 	db CATERPIE
@@ -40,13 +41,14 @@ NewPokedexOrder:
 	db ZUBAT
 	db GOLBAT
 	db CROBAT
+	db CLEFFA
 	db CLEFAIRY
 	db CLEFABLE
+	db IGGLYBUFF
 	db JIGGLYPUFF
 	db WIGGLYTUFF
 	db TOGEPI
 	db TOGETIC
-	db TOGEKISS
 	db SANDSHREW
 	db SANDSLASH
 	db EKANS
@@ -119,7 +121,6 @@ NewPokedexOrder:
 	db MUK
 	db MAGNEMITE
 	db MAGNETON
-	db MAGNEZONE
 	db VOLTORB
 	db ELECTRODE
 	db AIPOM
@@ -150,8 +151,11 @@ NewPokedexOrder:
 	db GIRAFARIG
 	db TAUROS
 	db MILTANK
+	db MAGBY
 	db MAGMAR
+	db SMOOCHUM
 	db JYNX
+	db ELEKID
 	db ELECTABUZZ
 	db MR__MIME
 	db SMEARGLE
@@ -183,7 +187,6 @@ NewPokedexOrder:
 	db FLAREON
 	db ESPEON
 	db UMBREON
-	db SYLVEON
 	db HORSEA
 	db SEADRA
 	db KINGDRA
@@ -191,7 +194,6 @@ NewPokedexOrder:
 	db DELIBIRD
 	db SWINUB
 	db PILOSWINE
-	db MAMOSWINE
 	db TEDDIURSA
 	db URSARING
 	db PHANPY
@@ -208,14 +210,12 @@ NewPokedexOrder:
 	db RHYHORN
 	db RHYDON
 	db MURKROW
-	db HONCHKROW
 	db HOUNDOUR
 	db HOUNDOOM
 	db SLUGMA
 	db MAGCARGO
 	db SNEASEL
 	db MISDREAVUS
-	db MISMAGIUS
 	db PORYGON
 	db PORYGON2
 	db CHANSEY

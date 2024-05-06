@@ -11,7 +11,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; CHUCK
 	dn  7, 12, 13, 13 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
-	dn 14, 14, 14, 14 ; POKEMON_PROF
+	dn  9,  8,  8,  8 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; WILL
 	dn 13, 12, 13, 13 ; CAL
 	dn 13, 12, 13, 13 ; BRUNO
@@ -52,13 +52,13 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
 	dn  9,  8,  8,  8 ; BLACKBELT_T
-	dn 13,  8, 10,  8 ; ARCHER
+	dn 13,  8, 10,  8 ; EXECUTIVEM
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn  7, 14, 10,  8 ; ARIANA
+	dn  7, 14, 10,  8 ; EXECUTIVEF
 	dn  9,  8,  8,  8 ; SAGE
-	dn  7,  8,  8,  8 ; HEX_MANIAC
+	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
 	dn  9,  8,  8,  8 ; POKEFANM
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
@@ -69,11 +69,4 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
-	dn 13, 13, 13, 13 ; EX_BOSS
-	dn  9, 10, 10, 10 ; LADY
-	dn 14, 14, 14, 14 ; AGATHA
-	dn 14, 14, 14, 14 ; LORELEI
-	dn 12,  7, 14,  8 ; PROTON
-	dn  7, 14,  8, 10 ; PETREL
-	dn  9,  9,  9,  9 ; BUG_MANIAC 
 	assert_table_length NUM_TRAINER_CLASSES

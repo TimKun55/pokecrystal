@@ -53,13 +53,13 @@ TrainerPicPointers::
 	dba FirebreatherPic
 	dba JugglerPic
 	dba BlackbeltTPic
-	dba ArcherPic
+	dba ExecutivemPic
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ArianaPic
+	dba ExecutivefPic
 	dba SagePic
-	dba HexManiacPic
+	dba MediumPic
 	dba BoarderPic
 	dba PokefanmPic
 	dba KimonoGirlPic
@@ -70,11 +70,4 @@ TrainerPicPointers::
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
-	dba ExBossPic
-	dba LadyPic
-	dba AgathaPic
-	dba LoreleiPic
-	dba ProtonPic
-	dba PetrelPic
-	dba BugManiacPic
 	assert_table_length NUM_TRAINER_CLASSES

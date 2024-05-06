@@ -345,16 +345,16 @@ PokemonPicPointers::
 	dba ChinchouBackpic
 	dba LanturnFrontpic
 	dba LanturnBackpic
-	dba MagnezoneFrontpic
-	dba MagnezoneBackpic
-	dba CorsolaFrontpic
-	dba CorsolaBackpic
+	dba PichuFrontpic
+	dba PichuBackpic
+	dba CleffaFrontpic
+	dba CleffaBackpic
+	dba IgglybuffFrontpic
+	dba IgglybuffBackpic
 	dba TogepiFrontpic
 	dba TogepiBackpic
 	dba TogeticFrontpic
 	dba TogeticBackpic
-	dba TogekissFrontpic
-	dba TogekissBackpic
 	dba NatuFrontpic
 	dba NatuBackpic
 	dba XatuFrontpic
@@ -397,13 +397,12 @@ PokemonPicPointers::
 	dba EspeonBackpic
 	dba UmbreonFrontpic
 	dba UmbreonBackpic
-	dba SylveonFrontpic
-	dba SylveonBackpic
+	dba MurkrowFrontpic
+	dba MurkrowBackpic
 	dba SlowkingFrontpic
 	dba SlowkingBackpic
-	dba StantlerFrontpic
-	dba StantlerBackpic
-
+	dba MisdreavusFrontpic
+	dba MisdreavusBackpic
 
 	; Unown pics have their own table. See UnownPicPointers
 	dbw -1, -1
@@ -449,8 +448,8 @@ PokemonPicPointers::
 	dba SwinubBackpic
 	dba PiloswineFrontpic
 	dba PiloswineBackpic
-	dba MamoswineFrontpic
-	dba MamoswineBackpic
+	dba CorsolaFrontpic
+	dba CorsolaBackpic
 	dba RemoraidFrontpic
 	dba RemoraidBackpic
 	dba OctilleryFrontpic
@@ -471,22 +470,22 @@ PokemonPicPointers::
 	dba PhanpyBackpic
 	dba DonphanFrontpic
 	dba DonphanBackpic
-	dba MisdreavusFrontpic
-	dba MisdreavusBackpic
-	dba MismagiusFrontpic
-	dba MismagiusBackpic
+	dba Porygon2Frontpic
+	dba Porygon2Backpic
+	dba StantlerFrontpic
+	dba StantlerBackpic
 	dba SmeargleFrontpic
 	dba SmeargleBackpic
 	dba TyrogueFrontpic
 	dba TyrogueBackpic
 	dba HitmontopFrontpic
 	dba HitmontopBackpic
-	dba MurkrowFrontpic
-	dba MurkrowBackpic
-	dba HonchkrowFrontpic
-	dba HonchkrowBackpic
-	dba Porygon2Frontpic
-	dba Porygon2Backpic
+	dba SmoochumFrontpic
+	dba SmoochumBackpic
+	dba ElekidFrontpic
+	dba ElekidBackpic
+	dba MagbyFrontpic
+	dba MagbyBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
 	dba BlisseyFrontpic

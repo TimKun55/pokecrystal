@@ -268,7 +268,7 @@ sTrainerRankingUnused3:: ds 3
 sTrainerRankingColosseumWins:: ds 3
 sTrainerRankingColosseumLosses:: ds 3
 sTrainerRankingColosseumDraws:: ds 3
-sTrainerRankingExplosion:: ds 3
+sTrainerRankingSelfdestruct:: ds 3
 sTrainerRankingCurrentSlotsStreak:: ds 2
 sTrainerRankingLongestSlotsStreak:: ds 2
 sTrainerRankingTotalSlotsPayouts:: ds 4

@@ -173,11 +173,11 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw MagnezoneEvosAttacks
-	dw CorsolaEvosAttacks
+	dw PichuEvosAttacks
+	dw CleffaEvosAttacks
+	dw IgglybuffEvosAttacks
 	dw TogepiEvosAttacks
 	dw TogeticEvosAttacks
-	dw TogekissEvosAttacks
 	dw NatuEvosAttacks
 	dw XatuEvosAttacks
 	dw MareepEvosAttacks
@@ -199,9 +199,9 @@ EvosAttacksPointers::
 	dw QuagsireEvosAttacks
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
-	dw SylveonEvosAttacks
+	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
-	dw StantlerEvosAttacks
+	dw MisdreavusEvosAttacks
 	dw UnownEvosAttacks
 	dw WobbuffetEvosAttacks
 	dw GirafarigEvosAttacks
@@ -223,7 +223,7 @@ EvosAttacksPointers::
 	dw MagcargoEvosAttacks
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
-	dw MamoswineEvosAttacks
+	dw CorsolaEvosAttacks
 	dw RemoraidEvosAttacks
 	dw OctilleryEvosAttacks
 	dw DelibirdEvosAttacks
@@ -234,14 +234,14 @@ EvosAttacksPointers::
 	dw KingdraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
-	dw MisdreavusEvosAttacks
-	dw MismagiusEvosAttacks
+	dw Porygon2EvosAttacks
+	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
-	dw MurkrowEvosAttacks
-	dw HonchkrowEvosAttacks
-	dw Porygon2EvosAttacks
+	dw SmoochumEvosAttacks
+	dw ElekidEvosAttacks
+	dw MagbyEvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks

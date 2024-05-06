@@ -84,30 +84,30 @@ WadeFoundRare:
 WadeHasItem2:
 	setflag ENGINE_WADE_HAS_ITEM
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_31
-	clearevent EVENT_WADE_HAS_ORAN_BERRY
-	clearevent EVENT_WADE_HAS_PECHA_BERRY
-	clearevent EVENT_WADE_HAS_CHERI_BERRY
-	clearevent EVENT_WADE_HAS_PERSIM_BERRY
+	clearevent EVENT_WADE_HAS_BERRY
+	clearevent EVENT_WADE_HAS_PSNCUREBERRY
+	clearevent EVENT_WADE_HAS_PRZCUREBERRY
+	clearevent EVENT_WADE_HAS_BITTER_BERRY
 	random 4
-	ifequal 0, .OranBerry
-	ifequal 1, .PechaBerry
-	ifequal 2, .CheriBerry
-	ifequal 3, .Persimberry
+	ifequal 0, .Berry
+	ifequal 1, .PsnCureBerry
+	ifequal 2, .PrzCureBerry
+	ifequal 3, .Bitterberry
 
-.OranBerry:
-	setevent EVENT_WADE_HAS_ORAN_BERRY
+.Berry:
+	setevent EVENT_WADE_HAS_BERRY
 	sjump .FoundBerry
 
-.PechaBerry:
-	setevent EVENT_WADE_HAS_PECHA_BERRY
+.PsnCureBerry:
+	setevent EVENT_WADE_HAS_PSNCUREBERRY
 	sjump .FoundBerry
 
-.CheriBerry:
-	setevent EVENT_WADE_HAS_CHERI_BERRY
+.PrzCureBerry:
+	setevent EVENT_WADE_HAS_PRZCUREBERRY
 	sjump .FoundBerry
 
-.Persimberry:
-	setevent EVENT_WADE_HAS_PERSIM_BERRY
+.Bitterberry:
+	setevent EVENT_WADE_HAS_BITTER_BERRY
 
 .FoundBerry:
 	farsjump PhoneScript_FoundItem_Male

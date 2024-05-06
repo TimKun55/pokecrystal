@@ -1,14 +1,14 @@
 	object_const_def
 	const RADIOTOWER5F_DIRECTOR
-	const RADIOTOWER5F_ARCHER
-	const RADIOTOWER5F_ARIANA
+	const RADIOTOWER5F_ROCKET
+	const RADIOTOWER5F_ROCKET_GIRL
 	const RADIOTOWER5F_ROCKER
 	const RADIOTOWER5F_POKE_BALL
 
 RadioTower5F_MapScripts:
 	def_scene_scripts
 	scene_script RadioTower5FNoop1Scene, SCENE_RADIOTOWER5F_FAKE_DIRECTOR
-	scene_script RadioTower5FNoop2Scene, SCENE_RADIOTOWER5F_ARCHER
+	scene_script RadioTower5FNoop2Scene, SCENE_RADIOTOWER5F_ROCKET_BOSS
 	scene_script RadioTower5FNoop3Scene, SCENE_RADIOTOWER5F_NOOP
 
 	def_callbacks
@@ -37,7 +37,7 @@ FakeDirectorScript:
 	closetext
 	winlosstext FakeDirectorWinText, 0
 	setlasttalked RADIOTOWER5F_DIRECTOR
-	loadtrainer PETREL, PETREL2
+	loadtrainer EXECUTIVEM, EXECUTIVEM_3
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -45,8 +45,8 @@ FakeDirectorScript:
 	promptbutton
 	verbosegiveitem BASEMENT_KEY
 	closetext
-	setscene SCENE_RADIOTOWER5F_ARCHER
-	setevent EVENT_BEAT_PETREL_2
+	setscene SCENE_RADIOTOWER5F_ROCKET_BOSS
+	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_3
 	end
 
 Director:
@@ -65,41 +65,41 @@ Director:
 	closetext
 	end
 
-RadioTower5FAriana:
-	trainer ARIANA, ARIANA2, EVENT_BEAT_ARIANA_2, ArianaSeenText, ArianaBeatenText, 0, .Script
+TrainerExecutivef1:
+	trainer EXECUTIVEF, EXECUTIVEF_1, EVENT_BEAT_ROCKET_EXECUTIVEF_1, Executivef1SeenText, Executivef1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext ArianaAfterBattleText
+	writetext Executivef1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-RadioTower5FArcherScript:
+RadioTower5FRocketBossScript:
 	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
 	playmusic MUSIC_ROCKET_ENCOUNTER
-	turnobject RADIOTOWER5F_ARCHER, RIGHT
+	turnobject RADIOTOWER5F_ROCKET, RIGHT
 	opentext
-	writetext ArcherBeforeText
+	writetext RadioTower5FRocketBossBeforeText
 	waitbutton
 	closetext
-	winlosstext ArcherWinText, 0
-	setlasttalked RADIOTOWER5F_ARCHER
-	loadtrainer ARCHER, ARCHER1
+	winlosstext RadioTower5FRocketBossWinText, 0
+	setlasttalked RADIOTOWER5F_ROCKET
+	loadtrainer EXECUTIVEM, EXECUTIVEM_1
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext ArcherAfterText
+	writetext RadioTower5FRocketBossAfterText
 	waitbutton
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	disappear RADIOTOWER5F_ARCHER
-	disappear RADIOTOWER5F_ARIANA
+	disappear RADIOTOWER5F_ROCKET
+	disappear RADIOTOWER5F_ROCKET_GIRL
 	pause 15
 	special FadeInFromBlack
-	setevent EVENT_BEAT_ARCHER_1
+	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
 	setevent EVENT_CLEARED_RADIO_TOWER
 	clearflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	setevent EVENT_GOLDENROD_CITY_ROCKET_SCOUT
@@ -237,7 +237,7 @@ FakeDirectorTextAfter:
 	line "get that far."
 	done
 
-ArianaSeenText:
+Executivef1SeenText:
 	text "Remember me from"
 	line "the HIDEOUT in"
 	cont "MAHOGANY TOWN?"
@@ -246,7 +246,7 @@ ArianaSeenText:
 	line "won't this time."
 	done
 
-ArianaBeatenText:
+Executivef1BeatenText:
 	text "This can't be"
 	line "happening!"
 
@@ -254,7 +254,7 @@ ArianaBeatenText:
 	line "I still lost…"
 	done
 
-ArianaAfterBattleText:
+Executivef1AfterBattleText:
 	text "<PLAYER>, isn't it?"
 
 	para "A brat like you"
@@ -268,7 +268,7 @@ ArianaAfterBattleText:
 	cont "your power."
 	done
 
-ArcherBeforeText:
+RadioTower5FRocketBossBeforeText:
 	text "Oh? You managed to"
 	line "get this far?"
 
@@ -297,12 +297,12 @@ ArcherBeforeText:
 	cont "our plans."
 	done
 
-ArcherWinText:
+RadioTower5FRocketBossWinText:
 	text "No! Forgive me,"
 	line "GIOVANNI!"
 	done
 
-ArcherAfterText:
+RadioTower5FRocketBossAfterText:
 	text "How could this be?"
 
 	para "Our dreams have"
@@ -427,7 +427,7 @@ RadioTower5F_MapEvents:
 
 	def_coord_events
 	coord_event  0,  3, SCENE_RADIOTOWER5F_FAKE_DIRECTOR, FakeDirectorScript
-	coord_event 16,  5, SCENE_RADIOTOWER5F_ARCHER, RadioTower5FArcherScript
+	coord_event 16,  5, SCENE_RADIOTOWER5F_ROCKET_BOSS, RadioTower5FRocketBossScript
 
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, RadioTower5FDirectorsOfficeSign
@@ -438,7 +438,7 @@ RadioTower5F_MapEvents:
 
 	def_object_events
 	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
-	object_event 13,  5, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, RadioTower5FAriana, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 13,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL

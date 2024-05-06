@@ -1,2 +1,2 @@
-	frame 5, 35
+	frame 4, 35
 	endanim

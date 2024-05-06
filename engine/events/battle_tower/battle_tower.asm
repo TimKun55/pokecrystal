@@ -432,7 +432,7 @@ endr
 
 .not_move
 	dec hl
-	ld a, TACKLE
+	ld a, POUND
 	ld [hli], a
 	xor a
 	ld [hli], a

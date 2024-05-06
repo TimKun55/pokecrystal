@@ -406,14 +406,14 @@ StubbedTrainerRankings_ColosseumDraws:
 	ld hl, sTrainerRankingColosseumDraws
 	jr StubbedTrainerRankings_Increment3Byte
 
-; Counts uses of Explosion.
-StubbedTrainerRankings_Explosion:
+; Counts uses of both Selfdestruct and Explosion.
+StubbedTrainerRankings_Selfdestruct:
 	ret
 	; Only counts if it’s the player’s turn
 	ldh a, [hBattleTurn]
 	and a
 	ret nz
-	ld hl, sTrainerRankingExplosion
+	ld hl, sTrainerRankingSelfdestruct
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Increment4Byte:

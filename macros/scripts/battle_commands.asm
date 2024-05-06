@@ -30,7 +30,7 @@ ENDM
 	command burntarget              ; 17
 	command freezetarget            ; 18
 	command paralyzetarget          ; 19
-	command explosion               ; 1a
+	command selfdestruct            ; 1a
 	command mirrormove              ; 1b
 	command statup                  ; 1c
 	command statdown                ; 1d
@@ -42,6 +42,7 @@ ENDM
 	command forceswitch             ; 23
 	command endloop                 ; 24
 	command flinchtarget            ; 25
+	command ohko                    ; 26
 	command recoil                  ; 27
 	command mist                    ; 28
 	command focusenergy             ; 29
@@ -63,7 +64,7 @@ ENDM
 	command charge                  ; 39
 	command checkcharge             ; 3a
 	command traptarget              ; 3b
-	command acrobatics              ; 3c
+	command effect0x3c              ; 3c
 	command rampage                 ; 3d
 	command checkrampage            ; 3e
 	command constantdamage          ; 3f
@@ -96,21 +97,22 @@ ENDM
 	command endure                  ; 5a
 	command checkcurl               ; 5b
 	command rolloutpower            ; 5c
-	command hurricaneaccuracy       ; 5d
+	command effect0x5d              ; 5d
 	command furycutter              ; 5e
 	command attract                 ; 5f
 	command happinesspower          ; 60
 	command present                 ; 61
 	command damagecalc              ; 62
+	command frustrationpower        ; 63
 	command safeguard               ; 64
 	command checksafeguard          ; 65
 	command getmagnitude            ; 66
 	command batonpass               ; 67
 	command pursuit                 ; 68
 	command clearhazards            ; 69
-	command healweather             ; 6a
-	command starthail               ; 6b
-	command hex                     ; 6c
+	command healmorn                ; 6a
+	command healday                 ; 6b
+	command healnite                ; 6c
 	command hiddenpower             ; 6d
 	command startrain               ; 6e
 	command startsun                ; 6f
@@ -178,6 +180,7 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+	command starthail               ; b0
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

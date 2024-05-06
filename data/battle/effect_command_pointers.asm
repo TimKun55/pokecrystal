@@ -30,7 +30,7 @@ BattleCommandPointers:
 	dw BattleCommand_BurnTarget
 	dw BattleCommand_FreezeTarget
 	dw BattleCommand_ParalyzeTarget
-	dw BattleCommand_Explosion
+	dw BattleCommand_Selfdestruct
 	dw BattleCommand_MirrorMove
 	dw BattleCommand_StatUp
 	dw BattleCommand_StatDown
@@ -42,6 +42,7 @@ BattleCommandPointers:
 	dw BattleCommand_ForceSwitch
 	dw BattleCommand_EndLoop
 	dw BattleCommand_FlinchTarget
+	dw BattleCommand_OHKO
 	dw BattleCommand_Recoil
 	dw BattleCommand_Mist
 	dw BattleCommand_FocusEnergy
@@ -63,7 +64,7 @@ BattleCommandPointers:
 	dw BattleCommand_Charge
 	dw BattleCommand_CheckCharge
 	dw BattleCommand_TrapTarget
-	dw BattleCommand_Acrobatics
+	dw BattleCommand_Unused3C
 	dw BattleCommand_Rampage
 	dw BattleCommand_CheckRampage
 	dw BattleCommand_ConstantDamage
@@ -96,21 +97,22 @@ BattleCommandPointers:
 	dw BattleCommand_Endure
 	dw BattleCommand_CheckCurl
 	dw BattleCommand_RolloutPower
-	dw BattleCommand_HurricaneAccuracy
+	dw BattleCommand_Unused5D
 	dw BattleCommand_FuryCutter
 	dw BattleCommand_Attract
 	dw BattleCommand_HappinessPower
 	dw BattleCommand_Present
 	dw BattleCommand_DamageCalc
+	dw BattleCommand_FrustrationPower
 	dw BattleCommand_Safeguard
 	dw BattleCommand_CheckSafeguard
 	dw BattleCommand_GetMagnitude
 	dw BattleCommand_BatonPass
 	dw BattleCommand_Pursuit
 	dw BattleCommand_ClearHazards
-	dw BattleCommand_HealWeather
-	dw BattleCommand_StartHail
-	dw BattleCommand_Hex
+	dw BattleCommand_HealMorn
+	dw BattleCommand_HealDay
+	dw BattleCommand_HealNite
 	dw BattleCommand_HiddenPower
 	dw BattleCommand_StartRain
 	dw BattleCommand_StartSun
@@ -178,4 +180,5 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+	dw BattleCommand_StartHail
 	assert_table_length NUM_EFFECT_COMMANDS

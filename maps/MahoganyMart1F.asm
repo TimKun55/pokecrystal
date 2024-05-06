@@ -88,7 +88,7 @@ MahoganyMart1FLanceUncoversStaircaseScript:
 	showemote EMOTE_SHOCK, MAHOGANYMART1F_PHARMACIST, 10
 	playsound SFX_FAINT
 	changeblock 6, 2, $1e ; stairs
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
 	turnobject MAHOGANYMART1F_LANCE, LEFT
@@ -153,6 +153,16 @@ MahoganyMart1FLanceApproachHiddenStairsMovement:
 MahoganyMart1FLanceGoDownStairsMovement:
 	slow_step RIGHT
 	step_end
+
+MahoganyMart1FRageCandyBarText: ; unreferenced
+	text "Hello, kiddo!"
+
+	para "How would you like"
+	line "some RAGECANDYBAR?"
+
+	para "It's the thing to"
+	line "eat in MAHOGANY!"
+	done
 
 MahoganyMart1FPharmacistText_LanceEntered:
 	text "Arrgh… You found"
@@ -224,5 +234,5 @@ MahoganyMart1F_MapEvents:
 	object_event  4,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FPharmacistScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  1,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FBlackBeltScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  4,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
-	object_event  3,  6, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
+	object_event  3,  6, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
 	object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS

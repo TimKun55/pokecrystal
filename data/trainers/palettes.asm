@@ -59,13 +59,13 @@ INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
 INCBIN "gfx/trainers/blackbelt_t.gbcpal", middle_colors
-INCBIN "gfx/trainers/archer.gbcpal", middle_colors
+INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
-INCBIN "gfx/trainers/ariana.gbcpal", middle_colors
+INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sage.gbcpal", middle_colors
-INCBIN "gfx/trainers/hex_maniac.gbcpal", middle_colors
+INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
@@ -76,12 +76,5 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
-INCBIN "gfx/trainers/exboss.gbcpal", middle_colors
-INCBIN "gfx/trainers/lady.gbcpal", middle_colors
-INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
-INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
-INCBIN "gfx/trainers/proton.gbcpal", middle_colors
-INCBIN "gfx/trainers/petrel.gbcpal", middle_colors
-INCBIN "gfx/trainers/bug_maniac.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

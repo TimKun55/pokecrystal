@@ -56,7 +56,6 @@ StdScripts::
 	add_stdscript PCScript
 	add_stdscript GameCornerCoinVendorScript
 	add_stdscript HappinessCheckScript
-	add_stdscript PokecenterChanseyScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -320,8 +319,8 @@ BugContestResultsScript:
 	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_SITRUS_BERRY
-	clearevent EVENT_CONTEST_OFFICER_HAS_ORAN_BERRY
+	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
+	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	opentext
 	farwritetext ContestResults_ReadyToJudgeText
 	waitbutton
@@ -333,7 +332,7 @@ BugContestResultsScript:
 	farwritetext ContestResults_ConsolationPrizeText
 	promptbutton
 	waitsfx
-	verbosegiveitem ORAN_BERRY
+	verbosegiveitem BERRY
 	iffalse BugContestResults_NoRoomForBerry
 
 BugContestResults_DidNotWin:
@@ -404,10 +403,10 @@ BugContestResults_SecondPlace:
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_ThirdPlace:
-	getitemname STRING_BUFFER_4, SITRUS_BERRY
+	getitemname STRING_BUFFER_4, GOLD_BERRY
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
-	verbosegiveitem SITRUS_BERRY
+	verbosegiveitem GOLD_BERRY
 	iffalse BugContestResults_NoRoomForGoldBerry
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
@@ -426,13 +425,13 @@ BugContestResults_NoRoomForEverstone:
 BugContestResults_NoRoomForGoldBerry:
 	farwritetext BugContestPrizeNoRoomText
 	promptbutton
-	setevent EVENT_CONTEST_OFFICER_HAS_SITRUS_BERRY
+	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForBerry:
 	farwritetext BugContestPrizeNoRoomText
 	promptbutton
-	setevent EVENT_CONTEST_OFFICER_HAS_ORAN_BERRY
+	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	sjump BugContestResults_DidNotWin
 
 BugContestResults_CopyContestantsToResults:
@@ -487,8 +486,8 @@ InitializeEventsScript:
 	setevent EVENT_ILEX_FOREST_FARFETCHD
 	setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	setevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_ARIANA
-	setevent EVENT_TEAM_ROCKET_BASE_B2F_ARIANA
+	setevent EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
+	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_DRAGONITE
 	setevent EVENT_RIVAL_TEAM_ROCKET_BASE
 	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
@@ -1893,15 +1892,3 @@ Movement_ContestResults_WalkAfterWarp:
 	step DOWN
 	turn_head UP
 	step_end
-	
-PokecenterChanseyScript:
-	opentext
-	farwritetext PokecenterChanseyText
-	cry CHANSEY
-	waitbutton
-	refreshscreen
-	pokepic CHANSEY
-	waitbutton
-	closepokepic
-	closetext
-	end

@@ -171,11 +171,11 @@ PokemonNames::
 	db "CROBAT@@@@"
 	db "CHINCHOU@@"
 	db "LANTURN@@@"
-	db "MAGNEZONE@"		; replaced Pichu					172
-	db "CORSOLA@@@"		; replaced Cleffa					173
-	db "TOGEPI@@@@"		; replaced Igglybuff, moved Togepi	174
-	db "TOGETIC@@@"		; replaced Togepi, moved Togetic	175
-	db "TOGEKISS@@"		; replaced Togetic					176
+	db "PICHU@@@@@"
+	db "CLEFFA@@@@"
+	db "IGGLYBUFF@"
+	db "TOGEPI@@@@"
+	db "TOGETIC@@@"
 	db "NATU@@@@@@"
 	db "XATU@@@@@@"
 	db "MAREEP@@@@"
@@ -197,9 +197,9 @@ PokemonNames::
 	db "QUAGSIRE@@"
 	db "ESPEON@@@@"
 	db "UMBREON@@@"
-	db "SYLVEON@@@"		; replaced Murkrow (moved)			198
+	db "MURKROW@@@"
 	db "SLOWKING@@"
-	db "STANTLER@@"		; replaced Misdreavus (moved)		200
+	db "MISDREAVUS"
 	db "UNOWN@@@@@"
 	db "WOBBUFFET@"
 	db "GIRAFARIG@"
@@ -221,7 +221,7 @@ PokemonNames::
 	db "MAGCARGO@@"
 	db "SWINUB@@@@"
 	db "PILOSWINE@"
-	db "MAMOSWINE@" 	; replaced Corsola (moved)			222
+	db "CORSOLA@@@"
 	db "REMORAID@@"
 	db "OCTILLERY@"
 	db "DELIBIRD@@"
@@ -232,14 +232,14 @@ PokemonNames::
 	db "KINGDRA@@@"
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"
-	db "MISDREAVUS"		; replaced Porygon2 (moved)			233
-	db "MISMAGIUS@"		; replaced Stantler (moved)			234
+	db "PORYGON2@@"
+	db "STANTLER@@"
 	db "SMEARGLE@@"
 	db "TYROGUE@@@"
 	db "HITMONTOP@"
-	db "MURKROW@@@"		; replaced Smoochum					238
-	db "HONCHKROW@"		; replaced Elekid					239
-	db "PORYGON2@@"		; replaced Magby					240
+	db "SMOOCHUM@@"
+	db "ELEKID@@@@"
+	db "MAGBY@@@@@"
 	db "MILTANK@@@"
 	db "BLISSEY@@@"
 	db "RAIKOU@@@@"

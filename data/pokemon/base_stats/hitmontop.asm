@@ -1,7 +1,7 @@
 	db HITMONTOP ; 237
 
 	db  50,  95,  95,  70,  35, 110
-	evs  0,   0,   0,   0,   0,   2
+	evs  0,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, FIGHTING ; type
@@ -9,12 +9,12 @@
 	db 138 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio
-	db 2 ; step cycles to hatch
+	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hitmontop/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, ROCK_TOMB, RETURN, DIG, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, THIEF, BODY_SLAM, BULLDOZE, STRENGTH, STONE_EDGE, FOCUS_BLAST, GROWTH_PUNCH, GIGA_IMPACT
+	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, FRUSTRATION, RETURN, DIG, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, DETECT, REST, ATTRACT, THIEF, STRENGTH
 	; end

@@ -7,10 +7,9 @@ RainDanceMoves:
 	db BUBBLEBEAM
 	db THUNDER
 	db WATERFALL
+	db CLAMP
+	db BUBBLE
+	db CRABHAMMER
 	db OCTAZOOKA
 	db WHIRLPOOL
-	db WATER_PULSE
-	db AQUA_JET
-	db HURRICANE
-	db SCALD
 	db -1 ; end

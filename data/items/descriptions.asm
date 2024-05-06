@@ -74,17 +74,17 @@ ItemDescriptions:
 	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
-	dw PechaBerryDesc
+	dw PsnCureBerryDesc
 	dw GoldLeafDesc
 	dw SoftSandDesc
 	dw SharpBeakDesc
-	dw CheriBerryDesc
-	dw AspearBerryDesc
-	dw RawstBerryDesc
+	dw PrzCureBerryDesc
+	dw BurntBerryDesc
+	dw IceBerryDesc
 	dw PoisonBarbDesc
 	dw KingsRockDesc
-	dw PersimBerryDesc
-	dw ChestoBerryDesc
+	dw BitterBerryDesc
+	dw MintBerryDesc
 	dw RedApricornDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
@@ -109,7 +109,7 @@ ItemDescriptions:
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
-	dw LumBerryDesc
+	dw MiracleBerryDesc
 	dw PearlDesc
 	dw BigPearlDesc
 	dw EverStoneDesc
@@ -135,7 +135,7 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw EvioliteDesc
+	dw TeruSama9Desc
 	dw TeruSama10Desc
 	dw ZincDesc
 	dw CharcoalDesc
@@ -150,7 +150,7 @@ ItemDescriptions:
 	dw TeruSama15Desc
 	dw TeruSama16Desc
 	dw TeruSama17Desc
-	dw LeppaBerryDesc
+	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw TeruSama18Desc
@@ -173,8 +173,8 @@ ItemDescriptions:
 	dw PolkadotBowDesc
 	dw TeruSama22Desc
 	dw UpGradeDesc
-	dw OranBerryDesc
-	dw SitrusBerryDesc
+	dw BerryDesc
+	dw GoldBerryDesc
 	dw SquirtBottleDesc
 	dw TeruSama23Desc
 	dw ParkBallDesc
@@ -546,7 +546,7 @@ QuickClawDesc:
 	db   "Raises 1st strike"
 	next "ratio. (HOLD)@"
 
-PechaBerryDesc:
+PsnCureBerryDesc:
 	db   "A self-cure for"
 	next "poison. (HOLD)@"
 
@@ -562,15 +562,15 @@ SharpBeakDesc:
 	db   "Powers up flying-"
 	next "type moves. (HOLD)@"
 
-CheriBerryDesc:
+PrzCureBerryDesc:
 	db   "A self-cure for"
 	next "paralysis. (HOLD)@"
 
-AspearBerryDesc:
+BurntBerryDesc:
 	db   "A self-cure for"
 	next "freezing. (HOLD)@"
 
-RawstBerryDesc:
+IceBerryDesc:
 	db   "A self-heal for a"
 	next "burn. (HOLD)@"
 
@@ -582,11 +582,11 @@ KingsRockDesc:
 	db   "May make the foe"
 	next "flinch. (HOLD)@"
 
-PersimBerryDesc:
+BitterBerryDesc:
 	db   "A self-cure for"
 	next "confusion. (HOLD)@"
 
-ChestoBerryDesc:
+MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
@@ -679,7 +679,7 @@ MagnetDesc:
 	db   "Boosts electric-"
 	next "type moves. (HOLD)@"
 
-LumBerryDesc:
+MiracleBerryDesc:
 	db   "Cures all status"
 	next "problems. (HOLD)@"
 
@@ -781,9 +781,8 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-EvioliteDesc:
-	db   "Ups defenses if"
-	next "#MON can evolve@"
+TeruSama9Desc:
+	db   "?@"
 
 TeruSama10Desc:
 	db   "?@"
@@ -798,7 +797,7 @@ CharcoalDesc:
 
 BerryJuiceDesc:
 	db   "Restores #MON"
-	next "HP by 90.@"
+	next "HP by 20.@"
 
 ScopeLensDesc:
 	db   "Raises critical"
@@ -834,7 +833,7 @@ TeruSama16Desc:
 TeruSama17Desc:
 	db   "?@"
 
-LeppaBerryDesc:
+MysteryBerryDesc:
 	db   "A self-restore"
 	next "for PP. (HOLD)@"
 
@@ -921,13 +920,13 @@ UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
 
-OranBerryDesc:
+BerryDesc:
 	db   "A self-restore"
-	next "item. (20HP, HOLD)@"
+	next "item. (10HP, HOLD)@"
 
-SitrusBerryDesc:
+GoldBerryDesc:
 	db   "A self-restore"
-	next "item. (50HP, HOLD)@"
+	next "item. (30HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"

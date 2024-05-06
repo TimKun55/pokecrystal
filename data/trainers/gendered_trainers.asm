@@ -26,12 +26,10 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
-	db EX_BOSS
-	db BUG_MANIAC
 .End
 
 FemaleTrainers:
-	db HEX_MANIAC
+	db MEDIUM
 	db LASS
 	db BEAUTY
 	db SKIER
@@ -41,7 +39,4 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
-	db LADY
-	db AGATHA
-	db LORELEI
 .End

@@ -235,10 +235,10 @@ Route36Officer_ContestHasConcluded:
 	iftrue .Sunstone
 	checkevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
 	iftrue .Everstone
-	checkevent EVENT_CONTEST_OFFICER_HAS_SITRUS_BERRY
-	iftrue .SitrusBerry
-	checkevent EVENT_CONTEST_OFFICER_HAS_ORAN_BERRY
-	iftrue .OranBerry
+	checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
+	iftrue .GoldBerry
+	checkevent EVENT_CONTEST_OFFICER_HAS_BERRY
+	iftrue .Berry
 	writetext Route36NationalParkGateOfficer1ContestIsOverText
 	waitbutton
 	closetext
@@ -262,21 +262,21 @@ Route36Officer_ContestHasConcluded:
 	closetext
 	end
 
-.SitrusBerry:
+.GoldBerry:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem SITRUS_BERRY
+	verbosegiveitem GOLD_BERRY
 	iffalse .BagFull
-	clearevent EVENT_CONTEST_OFFICER_HAS_SITRUS_BERRY
+	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	closetext
 	end
 
-.OranBerry:
+.Berry:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem ORAN_BERRY
+	verbosegiveitem BERRY
 	iffalse .BagFull
-	clearevent EVENT_CONTEST_OFFICER_HAS_ORAN_BERRY
+	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	closetext
 	end
 
@@ -462,6 +462,10 @@ BugCatchingContestant10BScript:
 	waitbutton
 	closetext
 	end
+
+UnusedBugCatchingContestExplanationSign: ; unreferenced
+; duplicate of BugCatchingContestExplanationSign in Route35NationalParkGate.asm
+	jumptext UnusedBugCatchingContestExplanationText
 
 Route36NationalParkGatePlayerWaitWithContestantsMovement:
 	big_step DOWN
@@ -789,6 +793,39 @@ BugCatchingContestant10BStillCompetingText:
 
 	para "not good enough to"
 	line "win."
+	done
+
+UnusedSilphScope2Text: ; unreferenced
+; This text is referring to Sudowoodo.
+; The SILPHSCOPE2 was later reworked into the SQUIRTBOTTLE.
+	text "I hear there's a"
+	line "#MON that looks"
+	cont "just like a tree."
+
+	para "You can reveal its"
+	line "identity using a"
+	cont "SILPHSCOPE 2."
+	done
+
+UnusedBugCatchingContestExplanationText:
+; duplicate of BugCatchingContestExplanationText in Route35NationalParkGate.asm
+	text "The Bug-Catching"
+	line "Contest is held on"
+
+	para "Tuesday, Thursday"
+	line "and Saturday."
+
+	para "Not only do you"
+	line "earn a prize just"
+
+	para "for participating,"
+	line "you also get to"
+
+	para "keep the bug"
+	line "#MON you may"
+
+	para "have at the end of"
+	line "the contest."
 	done
 
 Route36NationalParkGateOfficer1WellHoldPrizeText:

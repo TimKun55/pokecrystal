@@ -18,7 +18,7 @@ GiveShuckle:
 	ld b, CAUGHT_BY_UNKNOWN
 	farcall SetGiftPartyMonCaughtData
 
-; Holding an Oran Berry.
+; Holding a Berry.
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
 	dec a
@@ -26,7 +26,7 @@ GiveShuckle:
 	push bc
 	ld hl, wPartyMon1Item
 	call AddNTimes
-	ld [hl], ORAN_BERRY
+	ld [hl], BERRY
 	pop bc
 	pop af
 

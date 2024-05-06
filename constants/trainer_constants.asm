@@ -30,43 +30,27 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
-	const FALKNER2
-	const FALKNER3
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
-	const WHITNEY2
-	const WHITNEY3
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
-	const BUGSY2
-	const BUGSY3
 
 	trainerclass MORTY ; 4
 	const MORTY1
-	const MORTY2
-	const MORTY3
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
-	const PRYCE2
-	const PRYCE3
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
-	const JASMINE2
-	const JASMINE3
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
-	const CHUCK2
-	const CHUCK3
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
-	const CLAIR2
-	const CLAIR3
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -89,7 +73,6 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass WILL ; b
 	const WILL1
-	const WILL2
 
 	trainerclass CAL ; c
 	const CAL1 ; unused
@@ -98,31 +81,24 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BRUNO ; d
 	const BRUNO1
-	const BRUNO2
 
 	trainerclass KAREN ; e
 	const KAREN1
-	const KAREN2
 
 	trainerclass KOGA ; f
 	const KOGA1
-	const KOGA2
 
 	trainerclass CHAMPION ; 10
 	const LANCE
-	const LANCE2
 
 	trainerclass BROCK ; 11
 	const BROCK1
-	const BROCK2
 
 	trainerclass MISTY ; 12
 	const MISTY1
-	const MISTY2
 
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
-	const LT_SURGE2
 
 	trainerclass SCIENTIST ; 14
 	const ROSS
@@ -133,7 +109,6 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
-	const ERIKA2
 
 	trainerclass YOUNGSTER ; 16
 	const JOEY1
@@ -197,7 +172,6 @@ DEF KRIS EQU __trainer_class__
 	const JOSE3
 	const VANCE2
 	const VANCE3
-	const TREY
 
 	trainerclass LASS ; 19
 	const CARRIE
@@ -217,11 +191,9 @@ DEF KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
-	const SANDY
 
 	trainerclass JANINE ; 1a
 	const JANINE1
-	const JANINE2
 
 	trainerclass COOLTRAINERM ; 1b
 	const NICK
@@ -303,7 +275,6 @@ DEF KRIS EQU __trainer_class__
 	const ZACH
 	const BRENT4
 	const MILLER
-	const JORDAN
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -356,7 +327,6 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
-	const SABRINA2
 
 	trainerclass BUG_CATCHER ; 24
 	const DON
@@ -530,7 +500,6 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
-	const BLAINE2
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
@@ -566,9 +535,11 @@ DEF KRIS EQU __trainer_class__
 	const KENJI3
 	const WAI
 
-	trainerclass ARCHER ; 33
-	const ARCHER1
-	const ARCHER2
+	trainerclass EXECUTIVEM ; 33
+	const EXECUTIVEM_1
+	const EXECUTIVEM_2
+	const EXECUTIVEM_3
+	const EXECUTIVEM_4
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
@@ -636,10 +607,9 @@ DEF KRIS EQU __trainer_class__
 	const TODD5
 	const QUENTIN
 
-	trainerclass ARIANA ; 37
-	const ARIANA1
-	const ARIANA2
-	const ARIANA3
+	trainerclass EXECUTIVEF ; 37
+	const EXECUTIVEF_1
+	const EXECUTIVEF_2
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -655,10 +625,10 @@ DEF KRIS EQU __trainer_class__
 	const MASA
 	const KOJI
 
-	trainerclass HEX_MANIAC ; 39
+	trainerclass MEDIUM ; 39
 	const MARTHA
 	const GRACE
-	const BETHANY ; Used in Silver Hall - Zapdos
+	const BETHANY ; unused
 	const MARGRET ; unused
 	const ETHEL ; unused
 	const REBECCA
@@ -686,14 +656,12 @@ DEF KRIS EQU __trainer_class__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
+	const NAOKO_UNUSED ; unused
 	const NAOKO
 	const SAYO
 	const ZUKI
 	const KUNI
 	const MIKI
-	const SAKURA1 ; Dance Theater
-	const SAKURA2
-	const SAKURA3	
 
 	trainerclass TWINS ; 3d
 	const AMYANDMAY1
@@ -720,7 +688,6 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BLUE ; 40
 	const BLUE1
-	const BLUE2
 
 	trainerclass OFFICER ; 41
 	const KEITH
@@ -735,49 +702,5 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
-	
-	trainerclass EX_BOSS ; 44
-	const GIOVANNI
-	
-	trainerclass LADY ; 45
-	const SUE
-	const BEA
-	const MIA
-	const KAT
-	const ADA
-	const MAE
-	const KAI
-	const AYA
-	const GIA
-	const LIA
-	const ZOE
-	const EVA
-	
-	trainerclass AGATHA ; 46
-	const AGATHA1
-	
-	trainerclass LORELEI ; 47
-	const LORELEI1
-	
-	trainerclass PROTON ; 48
-	const PROTON1
-	const PROTON2
-	const PROTON3
-	
-	trainerclass PETREL ; 49
-	const PETREL1
-	const PETREL2
-	const PETREL3	
-	
-	trainerclass BUG_MANIAC ; 50
-	const XANDER
-	const BOBBY
-	const CARL
-	const PETE
-	const KEIRAN
-	const SHAUN
-	const ELI
-	const MATT
-	const TOBI
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

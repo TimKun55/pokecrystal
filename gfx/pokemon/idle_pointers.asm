@@ -171,11 +171,11 @@ AnimationIdlePointers:
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw MagnezoneAnimationIdle
-	dw CorsolaAnimationIdle
+	dw PichuAnimationIdle
+	dw CleffaAnimationIdle
+	dw IgglybuffAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
-	dw TogekissAnimationIdle
 	dw NatuAnimationIdle
 	dw XatuAnimationIdle
 	dw MareepAnimationIdle
@@ -197,9 +197,9 @@ AnimationIdlePointers:
 	dw QuagsireAnimationIdle
 	dw EspeonAnimationIdle
 	dw UmbreonAnimationIdle
-	dw SylveonAnimationIdle
+	dw MurkrowAnimationIdle
 	dw SlowkingAnimationIdle
-	dw StantlerAnimationIdle
+	dw MisdreavusAnimationIdle
 	dw UnownAnimationIdle
 	dw WobbuffetAnimationIdle
 	dw GirafarigAnimationIdle
@@ -221,7 +221,7 @@ AnimationIdlePointers:
 	dw MagcargoAnimationIdle
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle
-	dw MamoswineAnimationIdle
+	dw CorsolaAnimationIdle
 	dw RemoraidAnimationIdle
 	dw OctilleryAnimationIdle
 	dw DelibirdAnimationIdle
@@ -232,14 +232,14 @@ AnimationIdlePointers:
 	dw KingdraAnimationIdle
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle
-	dw MisdreavusAnimationIdle
-	dw MismagiusAnimationIdle
+	dw Porygon2AnimationIdle
+	dw StantlerAnimationIdle
 	dw SmeargleAnimationIdle
 	dw TyrogueAnimationIdle
 	dw HitmontopAnimationIdle
-	dw MurkrowAnimationIdle
-	dw HonchkrowAnimationIdle
-	dw Porygon2AnimationIdle
+	dw SmoochumAnimationIdle
+	dw ElekidAnimationIdle
+	dw MagbyAnimationIdle
 	dw MiltankAnimationIdle
 	dw BlisseyAnimationIdle
 	dw RaikouAnimationIdle

@@ -214,7 +214,7 @@ CheckBTMonMovesForErrors:
 	ld a, [hl]
 	cp NUM_ATTACKS + 1
 	jr c, .okay
-	ld a, TACKLE
+	ld a, POUND
 	ld [hl], a
 
 .okay

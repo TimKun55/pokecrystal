@@ -81,16 +81,12 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
-	cp ARCHER
+	cp EXECUTIVEM
 	jr z, .done
-	cp ARIANA
-	jr z, .done
-	cp PROTON
-	jr z, .done
-	cp PETREL
+	cp EXECUTIVEF
 	jr z, .done
 	cp SCIENTIST
-	jr z, .done
+	jr z, .done	
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader

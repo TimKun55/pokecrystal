@@ -31,7 +31,6 @@ ROM0
 	"Home"
 ROMX $01
 	"bank1"
-	"Egg Moves"
 ROMX $02
 	"bank2"
 ROMX $03
@@ -45,9 +44,11 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
+	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
+	"Egg Moves"
 ROMX $09
 	"bank9"
 ROMX $0a
@@ -105,7 +106,6 @@ ROMX $20
 	"bank20"
 ROMX $21
 	"bank21"
-	"Extra Songs 1"
 ROMX $22
 	"Crystal Features 2"
 ROMX $23
@@ -141,6 +141,7 @@ ROMX $31
 	"Sprites 2"
 ROMX $32
 	"bank32"
+	"The End"
 ROMX $33
 	"Move Animations"
 	"Extra Songs 2"
@@ -316,14 +317,6 @@ ROMX $7e
 ROMX $7f
 	org $7de0
 	"Stadium 2 Checksums"
-ROMX $80
-	"The End"
-ROMX $81
-	"Tileset Data 10"
-ROMX $82
-	"Pokedex1"
-ROMX $83
-	"Pokedex2"
 WRAM0
 	"Stack"
 	"Audio RAM"

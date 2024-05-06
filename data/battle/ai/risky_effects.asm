@@ -2,5 +2,6 @@
 ; even if they would KO the player.
 
 RiskyEffects:
-	db EFFECT_EXPLOSION
+	db EFFECT_SELFDESTRUCT
+	db EFFECT_OHKO
 	db -1 ; end

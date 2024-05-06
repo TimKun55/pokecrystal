@@ -344,7 +344,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
-	call HandleLeppaberry
+	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
@@ -1411,7 +1411,7 @@ HandleLeftovers:
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
 
-HandleLeppaberry:
+HandleMysteryberry:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .DoEnemyFirst

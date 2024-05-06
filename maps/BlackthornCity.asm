@@ -303,7 +303,7 @@ BlackthornCityTrainerTipsText:
 	text "TRAINER TIPS"
 
 	para "A #MON holding"
-	line "a LUM BERRY"
+	line "a MIRACLEBERRY"
 
 	para "will cure itself"
 	line "of any status"

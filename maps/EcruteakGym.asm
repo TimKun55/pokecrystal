@@ -1,10 +1,9 @@
 	object_const_def
 	const ECRUTEAKGYM_MORTY
-	const ECRUTEAKGYM_GENGAR
 	const ECRUTEAKGYM_SAGE1
 	const ECRUTEAKGYM_SAGE2
-	const ECRUTEAKGYM_HEX_MANIAC1
-	const ECRUTEAKGYM_HEX_MANIAC2
+	const ECRUTEAKGYM_GRANNY1
+	const ECRUTEAKGYM_GRANNY2
 	const ECRUTEAKGYM_GYM_GUIDE
 	const ECRUTEAKGYM_GRAMPS
 
@@ -25,10 +24,6 @@ EcruteakGymNoopScene:
 EcruteakGymMortyScript:
 	faceplayer
 	opentext
-	readvar VAR_BADGES
-	ifequal 16, .MortyScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .MortyScript_Rematch
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
 	writetext MortyIntroText
@@ -54,8 +49,8 @@ EcruteakGymMortyScript:
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
 	setevent EVENT_BEAT_SAGE_PING
-	setevent EVENT_BEAT_HEX_MANIAC_MARTHA
-	setevent EVENT_BEAT_HEX_MANIAC_GRACE
+	setevent EVENT_BEAT_MEDIUM_MARTHA
+	setevent EVENT_BEAT_MEDIUM_GRACE
 	writetext MortyText_FogBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_SHADOW_BALL
@@ -70,54 +65,6 @@ EcruteakGymMortyScript:
 	writetext MortyFightDoneText
 	waitbutton
 .NoRoomForShadowBall:
-	closetext
-	end
-	
-.MortyScript_16Badges
-	writetext Morty16IntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext MortyWinLossRematchText, 0
-	loadtrainer MORTY, MORTY3
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext Morty16AfterBattleText
-	waitbutton
-	closetext
-	end
-
-.MortyScript_Rematch
-	writetext MortyRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext MortyWinLossRematchText, 0
-	loadtrainer MORTY, MORTY2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext MortyRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-
-.EndRematch
-	writetext MortyNextTimeText
-	waitbutton
-	closetext
-	end
-
-EcruteakGymGengar:
-	opentext
-	writetext GengarText
-	cry GENGAR
-	waitbutton
-	refreshscreen
-	pokepic GENGAR
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -170,24 +117,24 @@ TrainerSagePing:
 	closetext
 	end
 
-TrainerHexManiacMartha:
-	trainer HEX_MANIAC, MARTHA, EVENT_BEAT_HEX_MANIAC_MARTHA, HexManiacMarthaSeenText, HexManiacMarthaBeatenText, 0, .Script
+TrainerMediumMartha:
+	trainer MEDIUM, MARTHA, EVENT_BEAT_MEDIUM_MARTHA, MediumMarthaSeenText, MediumMarthaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacMarthaAfterBattleText
+	writetext MediumMarthaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHexManiacGrace:
-	trainer HEX_MANIAC, GRACE, EVENT_BEAT_HEX_MANIAC_GRACE, HexManiacGraceSeenText, HexManiacGraceBeatenText, 0, .Script
+TrainerMediumGrace:
+	trainer MEDIUM, GRACE, EVENT_BEAT_MEDIUM_GRACE, MediumGraceSeenText, MediumGraceBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HexManiacGraceAfterBattleText
+	writetext MediumGraceAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -281,11 +228,11 @@ MortyWinLossText:
 
 Text_ReceivedFogBadge:
 	text "<PLAYER> received"
-	line "the FOGBADGE."
+	line "FOGBADGE."
 	done
 
 MortyText_FogBadgeSpeech:
-	text "By having the FOG-"
+	text "By having FOG-"
 	line "BADGE, #MON up"
 
 	para "to L50 will obey"
@@ -325,62 +272,6 @@ MortyFightDoneText:
 
 	para "I envy you for"
 	line "that…"
-	done
-	
-MortyRematchIntroText:
-	text "Hello, <PLAYER>!"
-	line "Welcome back."
-	
-	para "Do you feel like"
-	line "having a rematch?"
-	done
-	
-MortyWinLossRematchText:
-	text "Still so strong."
-	done
-	
-MortyRematchAfterBattleText:
-	text "That was a great"
-	line "battle, but just"
-	
-	para "wait, I'm going to"
-	line "get even stronger."
-	
-	para "Come back for"
-	line "a rematch when"
-	cont "you've got time."
-	done
-	
-Morty16IntroText:
-	text "<PLAYER>."
-	line "You've done it."
-	
-	para "You've defeated"
-	line "all of the KANTO"
-	cont "GYM LEADERS."
-	
-	para "Which means I"
-	line "can go all out"
-	cont "against you."
-	
-	para "Want a rematch?"
-	done
-	
-Morty16AfterBattleText:
-	text "Impressive."
-	line "I didn't think our"
-	cont "potentials are so"
-	cont "different."
-	
-	para "Come back for"
-	line "a rematch when"
-	cont "you feel like it."
-	done
-	
-MortyNextTimeText:
-	text "No problem."
-	line "Come back if you'd"
-	cont "like a rematch."
 	done
 
 SageJeffreySeenText:
@@ -426,20 +317,20 @@ SagePingAfterBattleText:
 	cont "them!"
 	done
 
-HexManiacMarthaSeenText:
+MediumMarthaSeenText:
 	text "I shall win!"
 	done
 
-HexManiacMarthaBeatenText:
+MediumMarthaBeatenText:
 	text "I, I, I lost!"
 	done
 
-HexManiacMarthaAfterBattleText:
+MediumMarthaAfterBattleText:
 	text "The one who wants"
 	line "to win most--will!"
 	done
 
-HexManiacGraceSeenText:
+MediumGraceSeenText:
 	text "Stumped by our in-"
 	line "visible floor?"
 
@@ -447,11 +338,11 @@ HexManiacGraceSeenText:
 	line "want a hint!"
 	done
 
-HexManiacGraceBeatenText:
+MediumGraceBeatenText:
 	text "Wha-what?"
 	done
 
-HexManiacGraceAfterBattleText:
+MediumGraceAfterBattleText:
 	text "Fine. I shall tell"
 	line "you the secret of"
 
@@ -492,18 +383,13 @@ EcruteakGymClosedText:
 
 	para "Hohohoho."
 	done
-	
-GengarText:
-	text "GENGAR: Gen!!"
-	line "GengarGen!"
-	done
 
 EcruteakGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, ECRUTEAK_CITY, 8
-	warp_event  5, 17, ECRUTEAK_CITY, 8
+	warp_event  4, 17, ECRUTEAK_CITY, 10
+	warp_event  5, 17, ECRUTEAK_CITY, 10
 	warp_event  4, 14, ECRUTEAK_GYM, 4
 	warp_event  2,  4, ECRUTEAK_GYM, 3
 	warp_event  3,  4, ECRUTEAK_GYM, 3
@@ -543,11 +429,10 @@ EcruteakGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, EcruteakGymStatue
 
 	def_object_events
-	object_event  5,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
-	object_event  4,  1, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengar, -1
+	object_event  5,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
 	object_event  2,  7, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
 	object_event  3, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
-	object_event  7,  5, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHexManiacMartha, -1
-	object_event  7,  9, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHexManiacGrace, -1
+	object_event  7,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumMartha, -1
+	object_event  7,  9, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumGrace, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
 	object_event  4, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
