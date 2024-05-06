@@ -2021,12 +2021,12 @@ GetHealingItemAmount:
 
 INCLUDE "data/items/heal_hp.asm"
 
-Softboiled_MilkDrinkFunction:
-; Softboiled/Milk Drink in the field
+FreshSnackFunction:
+; Fresh Snack in the field
 	ld a, [wPartyMenuCursor]
 	dec a
 	ld b, a
-	call .SelectMilkDrinkRecipient ; select pokemon
+	call .SelectFreshSnackRecipient ; select pokemon
 	jr c, .skip
 	ld a, b
 	ld [wCurPartyMon], a
@@ -2051,7 +2051,7 @@ Softboiled_MilkDrinkFunction:
 	ld [wPartyMenuCursor], a
 	ret
 
-.SelectMilkDrinkRecipient:
+.SelectFreshSnackRecipient:
 .loop
 	push bc
 	ld a, PARTYMENUACTION_HEALING_ITEM

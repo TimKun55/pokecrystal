@@ -730,24 +730,9 @@ Text_BattleUser::
 	text "<USER>@"
 	text_end
 
-_BattleMadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	prompt
-
 _BattleTookSunlightText::
 	text_start
 	line "took in sunlight!"
-	prompt
-
-_BattleLoweredHeadText::
-	text_start
-	line "lowered its head!"
-	prompt
-
-_BattleGlowingText::
-	text_start
-	line "is glowing!"
 	prompt
 
 _BattleFlewText::
@@ -764,12 +749,7 @@ _ActorNameText::
 	text "<USER>@"
 	text_end
 
-_UsedMove1Text::
-	text_start
-	line "used @"
-	text_end
-
-_UsedMove2Text::
+_UsedMoveText::
 	text_start
 	line "used @"
 	text_end
@@ -781,27 +761,6 @@ _UsedInsteadText::
 
 _MoveNameText::
 	text_ram wStringBuffer2
-	text_end
-
-	text_end ; unreferenced
-
-_EndUsedMove1Text::
-	text "!"
-	done
-
-_EndUsedMove2Text::
-	text "!"
-	done
-
-_EndUsedMove3Text::
-	text "!"
-	done
-
-_EndUsedMove4Text::
-	text "!"
-	done
-
-_EndUsedMove5Text::
 	text "!"
 	done
 

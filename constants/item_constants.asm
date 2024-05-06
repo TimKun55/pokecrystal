@@ -238,7 +238,7 @@ DEF TM01 EQU const_value
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
 	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
+	add_tm ROCK_TOMB    ; d4
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_TAIL    ; d6
 	add_tm DRAGONBREATH ; d7
@@ -260,7 +260,7 @@ DEF TM01 EQU const_value
 	add_tm DEFENSE_CURL ; e7
 	add_tm THUNDERPUNCH ; e8
 	add_tm DREAM_EATER  ; e9
-	add_tm DETECT       ; ea
+	add_tm HEAT_WAVE    ; ea
 	add_tm REST         ; eb
 	add_tm ATTRACT      ; ec
 	add_tm THIEF        ; ed

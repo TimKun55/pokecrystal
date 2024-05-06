@@ -8,6 +8,12 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_SUICUNE
 	jr z, .failed
+;	cp BATTLETYPE_LUGIA
+;	jr z, .failed
+;	cp BATTLETYPE_HO_OH
+;	jr z, .failed
+;	cp BATTLETYPE_KANTO_LEGEND
+;	jr z, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar

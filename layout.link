@@ -141,7 +141,6 @@ ROMX $31
 	"Sprites 2"
 ROMX $32
 	"bank32"
-	"The End"
 ROMX $33
 	"Move Animations"
 	"Extra Songs 2"
@@ -317,6 +316,8 @@ ROMX $7e
 ROMX $7f
 	org $7de0
 	"Stadium 2 Checksums"
+ROMX $80
+	"The End"
 WRAM0
 	"Stack"
 	"Audio RAM"
