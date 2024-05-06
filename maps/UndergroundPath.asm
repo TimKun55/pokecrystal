@@ -6,8 +6,8 @@ UndergroundPath_MapScripts:
 UndergroundPathHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_UNDERGROUND_PATH_HIDDEN_FULL_RESTORE
 
-UndergroundPathHiddenXSpDef:
-	hiddenitem X_SP_DEF, EVENT_UNDERGROUND_PATH_HIDDEN_X_SP_DEF
+UndergroundPathHiddenXSpecial:
+	hiddenitem X_SPECIAL, EVENT_UNDERGROUND_PATH_HIDDEN_X_SPECIAL
 
 UndergroundPath_MapEvents:
 	db 0, 0 ; filler
@@ -20,6 +20,6 @@ UndergroundPath_MapEvents:
 
 	def_bg_events
 	bg_event  3,  9, BGEVENT_ITEM, UndergroundPathHiddenFullRestore
-	bg_event  1, 19, BGEVENT_ITEM, UndergroundPathHiddenXSpDef
+	bg_event  1, 19, BGEVENT_ITEM, UndergroundPathHiddenXSpecial
 
 	def_object_events

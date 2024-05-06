@@ -234,6 +234,11 @@ OfficerText_FoundTM:
 	cont "you take it away?"
 	done
 
+Text_ReceivedTM30: ; unreferenced
+	text "<PLAYER> received"
+	line "TM30."
+	done
+
 OfficerText_AvoidGrass:
 	text "Use this gate to"
 	line "avoid walking in"

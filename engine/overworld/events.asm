@@ -140,7 +140,7 @@ UnusedWait30Frames: ; unreferenced
 HandleMap:
 	call ResetOverworldDelay
 	call HandleMapTimeAndJoypad
-	call HandleStoneTable
+	farcall HandleCmdQueue ; no need to farcall
 	call MapEvents
 
 ; Not immediately entering a connected map will cause problems.

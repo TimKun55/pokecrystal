@@ -83,6 +83,9 @@ MagikarpLengthRaterScript:
 	closetext
 	end
 
+LakeOfRageMagikarpHouseUnusedRecordSign: ; unreferenced
+	jumptext LakeOfRageMagikarpHouseUnusedRecordText
+
 MagikarpHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -199,6 +202,9 @@ LakeOfRageMagikarpHouseUnusedRecordText:
 	text " caught by"
 	line "@"
 	text_ram wStringBuffer4
+	text_end
+
+LakeOfRageMagikarpHouseUnusedDummyText: ; unreferenced
 	text_end
 
 LakeOfRageMagikarpHouse_MapEvents:

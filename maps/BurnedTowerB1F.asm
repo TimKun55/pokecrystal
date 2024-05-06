@@ -90,9 +90,9 @@ ReleaseTheBeasts:
 	setevent EVENT_BURNED_TOWER_MORTY
 	setevent EVENT_BURNED_TOWER_1F_EUSINE
 	appear BURNEDTOWERB1F_EUSINE
-	refreshscreen
+	reanchormap
 	changeblock 6, 14, $1b ; ladder
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_BURNEDTOWERB1F_NOOP
 	end
@@ -152,6 +152,12 @@ BurnedTowerSuicuneMovement2:
 	fast_jump_step UP
 	big_step UP
 	fast_jump_step RIGHT
+	remove_sliding
+	step_end
+
+BurnedTowerUnusedMovement: ; unreferenced
+	set_sliding
+	big_step DOWN
 	remove_sliding
 	step_end
 

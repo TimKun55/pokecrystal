@@ -1,7 +1,5 @@
 	object_const_def
 	const VIOLETGYM_FALKNER
-	const VIOLETGYM_HOOTHOOT
-	const VIOLETGYM_NOCTOWL
 	const VIOLETGYM_YOUNGSTER1
 	const VIOLETGYM_YOUNGSTER2
 	const VIOLETGYM_GYM_GUIDE
@@ -10,25 +8,10 @@ VioletGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, VioletGymNoctowlCallback
-	
-VioletGymNoctowlCallback:
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .NoctowlAppear
-	disappear VIOLETGYM_NOCTOWL
-	endcallback
-
-.NoctowlAppear:
-	disappear VIOLETGYM_HOOTHOOT
-	endcallback	
 
 VioletGymFalknerScript:
 	faceplayer
 	opentext
-	readvar VAR_BADGES
-	ifequal 16, .FalknerScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .FalknerScript_Rematch
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
 	writetext FalknerIntroText
@@ -67,42 +50,6 @@ VioletGymFalknerScript:
 	writetext FalknerFightDoneText
 	waitbutton
 .NoRoomForMudSlap:
-	closetext
-	end
-
-.FalknerScript_16Badges
-	writetext Falkner16IntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext FalknerWinLossRematchText, 0
-	loadtrainer FALKNER, FALKNER3
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext Falkner16AfterBattleText
-	waitbutton
-	closetext
-	end
-
-.FalknerScript_Rematch
-	writetext FalknerRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext FalknerWinLossRematchText, 0
-	loadtrainer FALKNER, FALKNER2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext FalknerRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-
-.EndRematch
-	writetext FalknerNextTimeText
-	waitbutton
 	closetext
 	end
 
@@ -155,30 +102,6 @@ VioletGymGuideScript:
 	closetext
 	end
 
-VioletGymHoothoot:
-	opentext
-	writetext HoothootText
-	cry HOOTHOOT
-	waitbutton
-	refreshscreen
-	pokepic HOOTHOOT
-	waitbutton
-	closepokepic
-	closetext
-	end
-	
-VioletGymNoctowl:
-	opentext
-	writetext NoctowlText
-	cry NOCTOWL
-	waitbutton
-	refreshscreen
-	pokepic NOCTOWL
-	waitbutton
-	closepokepic
-	closetext
-	end
-
 VioletGymStatue:
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue .Beaten
@@ -225,12 +148,15 @@ FalknerWinLossText:
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "the ZEPHYRBADGE."
+	line "ZEPHYRBADGE."
 	done
 
 FalknerZephyrBadgeText:
-	text "The ZEPHYRBADGE"
-	line "will enable"
+	text "ZEPHYRBADGE"
+	line "raises the attack"
+	cont "power of #MON."
+
+	para "It also enables"
 	line "#MON to use"
 
 	para "FLASH, if they"
@@ -279,57 +205,6 @@ FalknerFightDoneText:
 
 	para "the greatest bird"
 	line "master!"
-	done
-	
-FalknerRematchIntroText:
-	text "<PLAYER>!"
-	line "You're back!"
-	
-	para "Feel like having"
-	line "a rematch?"
-	done
-	
-FalknerWinLossRematchText:
-	text "Soaring high!"
-	done
-	
-FalknerRematchAfterBattleText:
-	text "You're as strong"
-	line "as ever!"
-	
-	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
-	done
-	
-Falkner16IntroText:
-	text "<PLAYER>!"
-	line "You did it!"
-	
-	para "You've beaten all"
-	line "the KANTO GYM"
-	cont "LEADERS!"
-	
-	para "I can finally use"
-	line "my strongest team"
-	cont "against you!"
-	
-	para "Want a rematch?"
-	done
-	
-Falkner16AfterBattleText:
-	text "Wow!"
-	line "That was an"
-	cont "amazing battle!"
-	
-	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
-	done
-	
-FalknerNextTimeText:
-	text "Come back"
-	line "anytime!"
 	done
 
 BirdKeeperRodSeenText:
@@ -403,16 +278,6 @@ VioletGymGuideWinText:
 	para "be the CHAMP in no"
 	line "time at all!"
 	done
-	
-HoothootText:
-	text "HOOTHOOT: Hoo!!"
-	line "Hoohoo!"
-	done
-	
-NoctowlText:
-	text "NOCTOWL: Noc!!"
-	line "Towwwwl!"
-	done
 
 VioletGym_MapEvents:
 	db 0, 0 ; filler
@@ -429,8 +294,6 @@ VioletGym_MapEvents:
 
 	def_object_events
 	object_event  5,  1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymFalknerScript, -1
-	object_event  4,  1, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymHoothoot, -1
-	object_event  4,  1, SPRITE_NOCTOWL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymNoctowl, EVENT_FOUGHT_SUDOWOODO
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
 	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuideScript, -1

@@ -189,8 +189,8 @@ ScriptCommandTable:
 	dw Script_changeblock                ; 7a
 	dw Script_reloadmap                  ; 7b
 	dw Script_refreshmap                 ; 7c
-	dw Script_usestonetable              ; 7d
-	dw Script_clearstonetable            ; 7e
+	dw Script_writecmdqueue              ; 7d
+	dw Script_delcmdqueue                ; 7e
 	dw Script_playmusic                  ; 7f
 	dw Script_encountermusic             ; 80
 	dw Script_musicfadeout               ; 81
@@ -656,6 +656,8 @@ Script_fruittree:
 	jp ScriptJump
 
 Script_swarm:
+	call GetScriptByte
+	ld c, a
 	call GetScriptByte
 	ld d, a
 	call GetScriptByte
@@ -2115,17 +2117,25 @@ Script_dontrestartmapmusic:
 	ld [wDontPlayMapMusicOnReload], a
 	ret
 
-Script_usestonetable:
+Script_writecmdqueue:
 	call GetScriptByte
-	ld [wStoneTableAddress], a
+	ld e, a
 	call GetScriptByte
-	ld [wStoneTableAddress+1], a
+	ld d, a
+	ld a, [wScriptBank]
+	ld b, a
+	farcall WriteCmdQueue ; no need to farcall
 	ret
 
-Script_clearstonetable:
+Script_delcmdqueue:
 	xor a
-	ld [wStoneTableAddress], a
-	ld [wStoneTableAddress+1], a
+	ld [wScriptVar], a
+	call GetScriptByte
+	ld b, a
+	farcall DelCmdQueue ; no need to farcall
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
 	ret
 
 Script_changemapblocks:

@@ -1,6 +1,5 @@
 	object_const_def
 	const BLACKTHORNGYM1F_CLAIR
-	const BLACKTHORNGYM1F_KINGDRA
 	const BLACKTHORNGYM1F_COOLTRAINER_M1
 	const BLACKTHORNGYM1F_COOLTRAINER_M2
 	const BLACKTHORNGYM1F_COOLTRAINER_F
@@ -19,7 +18,7 @@ BlackthornGym1FBouldersCallback:
 .skip1
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_2
 	iffalse .skip2
-	changeblock 0, 4, $3a ; fallen boulder 1
+	changeblock 2, 4, $3a ; fallen boulder 1
 .skip2
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_3
 	iffalse .skip3
@@ -30,10 +29,6 @@ BlackthornGym1FBouldersCallback:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
-	readvar VAR_BADGES
-	ifequal 16, .ClairScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .ClairScript_Rematch
 	checkflag ENGINE_RISINGBADGE
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
@@ -92,54 +87,6 @@ BlackthornGymClairScript:
 .GotTM24:
 	writetext BlackthornGymClairText_League
 	waitbutton
-	closetext
-	end
-	
-.ClairScript_16Badges
-	writetext Clair16IntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext ClairWinLossRematchText, 0
-	loadtrainer CLAIR, CLAIR3
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext Clair16AfterBattleText
-	waitbutton
-	closetext
-	end
-
-.ClairScript_Rematch
-	writetext ClairRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext ClairWinLossRematchText, 0
-	loadtrainer CLAIR, CLAIR2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext ClairRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-
-.EndRematch
-	writetext ClairNextTimeText
-	waitbutton
-	closetext
-	end
-	
-BlackthornGymKingdra:
-	opentext
-	writetext KingdraText
-	cry KINGDRA
-	waitbutton
-	refreshscreen
-	pokepic KINGDRA
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -335,63 +282,6 @@ BlackthornGymClairText_League:
 	para "Give it every-"
 	line "thing you've got."
 	done
-	
-ClairRematchIntroText:
-	text "<PLAYER>."
-	line "You're here."
-	
-	para "Shall we have"
-	line "a rematch?"
-	done
-	
-ClairWinLossRematchText:
-	text "Its over…"
-	done
-	
-ClairRematchAfterBattleText:
-	text "You haven't been"
-	line "slacking off."
-	cont "Good."
-	
-	para "Come back for"
-	line "a rematch"
-	cont "sometime."
-	done
-	
-Clair16IntroText:
-	text "<PLAYER>."
-	line "You've done it."
-	
-	para "You've done what"
-	line "few have been able"
-	cont "to do."
-	
-	para "You've beaten all"
-	line "the KANTO and"
-	cont "JOHTO GYM LEADERS."
-	
-	para "I can now use"
-	line "my strongest team"
-	cont "against you!"
-	
-	para "Want a rematch?"
-	done
-	
-Clair16AfterBattleText:
-	text "Well, that's it."
-	line "My #MON and I"
-	cont "gave it our all."
-	
-	para "Well done."
-	
-	para "Feel free to"
-	line "come back for"
-	cont "a rematch."
-	done
-	
-ClairNextTimeText:
-	text "I see."
-	done
 
 CooltrainermPaulSeenText:
 	text "Your first battle"
@@ -494,11 +384,6 @@ BlackthornGymGuideWinText:
 	cont "#MON CHAMPION!"
 	done
 
-KingdraText:
-	text "KINGDRA: Dra!!"
-	line "DraKingdra!"
-	done
-
 BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -507,7 +392,7 @@ BlackthornGym1F_MapEvents:
 	warp_event  5, 17, BLACKTHORN_CITY, 1
 	warp_event  1,  7, BLACKTHORN_GYM_2F, 1
 	warp_event  7,  9, BLACKTHORN_GYM_2F, 2
-	warp_event  4,  7, BLACKTHORN_GYM_2F, 3
+	warp_event  2,  6, BLACKTHORN_GYM_2F, 3
 	warp_event  7,  7, BLACKTHORN_GYM_2F, 4
 	warp_event  7,  6, BLACKTHORN_GYM_2F, 5
 
@@ -518,8 +403,7 @@ BlackthornGym1F_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, BlackthornGymStatue
 
 	def_object_events
-	object_event  5,  2, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1
-	object_event  4,  2, SPRITE_KINGDRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymKingdra, -1
+	object_event  5,  3, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1
 	object_event  6,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1

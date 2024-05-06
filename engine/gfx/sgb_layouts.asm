@@ -539,8 +539,8 @@ endr
 	jr z, .cave
 	cp DUNGEON
 	jr z, .cave
-	cp FOREST
-	jr z, .forest
+	cp ENVIRONMENT_5
+	jr z, .env5
 	cp GATE
 	jr z, .gate
 	ld a, [wMapGroup]
@@ -559,7 +559,7 @@ endr
 	ld a, PREDEFPAL_DUNGEONS
 	ret
 
-.forest
+.env5
 	ld a, PREDEFPAL_VERMILION
 	ret
 

@@ -38,17 +38,6 @@ GameCornerPrizeMonCheckDex:
 	farcall NewPokedexEntry
 	call ExitAllMenus
 	ret
-	
-ShowPokedexEntry:
-    ld a, [wScriptVar]
-    dec a
-    call SetSeenMon
-    call FadeToMenu
-    ld a, [wScriptVar]
-    ld [wNamedObjectIndex], a
-    farcall NewPokedexEntry
-    call ExitAllMenus
-    ret
 
 UnusedSetSeenMon:
 	ld a, [wScriptVar]
@@ -296,34 +285,24 @@ UnusedCheckUnusedTwoDayTimer:
 ActivateFishingSwarm:
 	ld a, [wScriptVar]
 	ld [wFishingSwarmFlag], a
-	jr SetSwarmFlag
+	ret
 
 StoreSwarmMapIndices::
+	ld a, c
+	and a
+	jr nz, .yanma
+; swarm dark cave violet entrance
 	ld a, d
-	ld [wSwarmMapGroup], a
+	ld [wDunsparceMapGroup], a
 	ld a, e
-	ld [wSwarmMapNumber], a
-
-SetSwarmFlag:
-	ld hl, wDailyFlags1
-	set DAILYFLAGS1_SWARM_F, [hl]
+	ld [wDunsparceMapNumber], a
 	ret
 
-CheckSwarmFlag::
-	ld hl, wDailyFlags1
-	bit DAILYFLAGS1_SWARM_F, [hl]
-	jr z, .clear_swarm
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.clear_swarm
-	ld a, 1
-	ld [wScriptVar], a
-	xor a
-	ld [wFishingSwarmFlag], a
-	ld [wSwarmMapGroup], a
-	ld [wSwarmMapNumber], a
+.yanma
+	ld a, d
+	ld [wYanmaMapGroup], a
+	ld a, e
+	ld [wYanmaMapNumber], a
 	ret
 
 CheckPokerus:

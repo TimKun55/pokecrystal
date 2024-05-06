@@ -1,6 +1,5 @@
 	object_const_def
 	const KARENSROOM_KAREN
-	const KARENSROOM_HOUNDOOM
 
 KarensRoom_MapScripts:
 	def_scene_scripts
@@ -30,11 +29,11 @@ KarensRoomDoorsCallback:
 
 KarensRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, KarensRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_KARENSROOM_NOOP
 	setevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
@@ -50,12 +49,9 @@ KarenScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KarenScript_KarenBeatenText, 0
-	readvar VAR_BADGES
-	ifequal 16, .KarenScript_16Badges
 	loadtrainer KAREN, KAREN1
 	startbattle
 	reloadmapafterbattle
-.AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_KAREN
 	opentext
 	writetext KarenScript_KarenDefeatText
@@ -63,33 +59,15 @@ KarenScript_Battle:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_KARENS_ROOM_EXIT_OPEN
 	waitsfx
 	end
-	
-.KarenScript_16Badges:
-	loadtrainer KAREN, KAREN2
-	startbattle
-	reloadmapafterbattle
-	sjump .AfterBattle
 
 KarenScript_AfterBattle:
 	writetext KarenScript_KarenDefeatText
 	waitbutton
-	closetext
-	end
-
-KarensRoomHoundoom:
-	opentext
-	writetext HoundoomText
-	cry HOUNDOOM
-	waitbutton
-	refreshscreen
-	pokepic HOUNDOOM
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -151,11 +129,6 @@ KarenScript_KarenDefeatText:
 	para "Go on--the CHAM-"
 	line "PION is waiting."
 	done
-	
-HoundoomText:
-	text "HOUNDOOM: Grr!!"
-	line "Awooo!"
-	done
 
 KarensRoom_MapEvents:
 	db 0, 0 ; filler
@@ -171,5 +144,4 @@ KarensRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1
-	object_event  4,  7, SPRITE_HOUNDOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarensRoomHoundoom, -1
+	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1

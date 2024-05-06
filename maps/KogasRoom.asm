@@ -1,6 +1,5 @@
 	object_const_def
 	const KOGASROOM_KOGA
-	const KOGASROOM_CROBAT
 
 KogasRoom_MapScripts:
 	def_scene_scripts
@@ -30,11 +29,11 @@ KogasRoomDoorsCallback:
 
 KogasRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, KogasRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_KOGASROOM_NOOP
 	setevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
@@ -50,12 +49,9 @@ KogaScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
-	readvar VAR_BADGES
-	ifequal 16, .KogaScript_16Badges
 	loadtrainer KOGA, KOGA1
 	startbattle
 	reloadmapafterbattle
-.AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_KOGA
 	opentext
 	writetext KogaScript_KogaDefeatText
@@ -63,33 +59,15 @@ KogaScript_Battle:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_KOGAS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
-.KogaScript_16Badges:
-	loadtrainer KOGA, KOGA2
-	startbattle
-	reloadmapafterbattle
-	sjump .AfterBattle
-
 KogaScript_AfterBattle:
 	writetext KogaScript_KogaDefeatText
 	waitbutton
-	closetext
-	end
-	
-KogasRoomCrobat:
-	opentext
-	writetext CrobatText
-	cry CROBAT
-	waitbutton
-	refreshscreen
-	pokepic CROBAT
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -148,10 +126,6 @@ KogaScript_KogaDefeatText:
 	line "room, and put your"
 	cont "abilities to test!"
 	done
-	
-CrobatText:
-	text "CROBAT: Skreee!!"
-	done
 
 KogasRoom_MapEvents:
 	db 0, 0 ; filler
@@ -168,4 +142,3 @@ KogasRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1
-	object_event  4,  7, SPRITE_CROBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogasRoomCrobat, -1

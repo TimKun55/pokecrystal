@@ -5,8 +5,6 @@
 	const MARTTYPE_BARGAIN
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
-	const MARTTYPE_MADAMITEMS
-	const MARTTYPE_BERRY
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def
@@ -25,13 +23,11 @@
 	const MART_MAHOGANY_1
 	const MART_MAHOGANY_2
 	const MART_BLACKTHORN
-	const MART_BLACKTHORN_MADAM
 	const MART_VIRIDIAN
 	const MART_PEWTER
 	const MART_CERULEAN
 	const MART_LAVENDER
 	const MART_VERMILION
-	const MART_BERRY
 	const MART_CELADON_2F_1
 	const MART_CELADON_2F_2
 	const MART_CELADON_3F

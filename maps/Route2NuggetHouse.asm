@@ -23,6 +23,9 @@ Route2NuggetHouseFisherScript:
 	closetext
 	end
 
+Route2NuggetHouseBookshelf: ; unreferenced
+	jumpstd DifficultBookshelfScript
+
 Route2NuggetHouseFisherText:
 	text "Hi! Wow, I'm glad"
 	line "to see you."

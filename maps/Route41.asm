@@ -1,9 +1,9 @@
 	object_const_def
-	const ROUTE41_SWIMMER_GUY1
-	const ROUTE41_SWIMMER_GUY2
-	const ROUTE41_SWIMMER_GUY3
-	const ROUTE41_SWIMMER_GUY4
-	const ROUTE41_SWIMMER_GUY5
+	const ROUTE41_OLIVINE_RIVAL1
+	const ROUTE41_OLIVINE_RIVAL2
+	const ROUTE41_OLIVINE_RIVAL3
+	const ROUTE41_OLIVINE_RIVAL4
+	const ROUTE41_OLIVINE_RIVAL5
 	const ROUTE41_SWIMMER_GIRL1
 	const ROUTE41_SWIMMER_GIRL2
 	const ROUTE41_SWIMMER_GIRL3
@@ -350,7 +350,7 @@ Route41_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 10, 31, BGEVENT_ITEM, Route41HiddenMaxEther
+	bg_event  9, 35, BGEVENT_ITEM, Route41HiddenMaxEther
 
 	def_object_events
 	object_event 32,  6, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCharlie, -1

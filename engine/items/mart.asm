@@ -22,8 +22,6 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
-	dw MadamItemsShop
-	dw BerryShop
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -73,24 +71,6 @@ Pharmacist:
 	ld hl, PharmacyComeAgainText
 	call MartTextbox
 	ret
-	
-MadamItemsShop:
-	call FarReadMart
-	call LoadStandardMenuHeader
-	ld hl, Text_MadamItemsShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, Text_MadamItemsShop_ComeAgain
-	jp MartTextbox
-
-BerryShop:
-	call FarReadMart
-	call LoadStandardMenuHeader
-	ld hl, Text_BerryShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, Text_BerryShop_ComeAgain
-	jp MartTextbox
 
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
@@ -455,8 +435,6 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
-	dwb .MadamItemsPointers, 0
-	dwb .BerryPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -488,22 +466,6 @@ GetMartDialogGroup:
 	dw PharmacyNoMoneyText
 	dw PharmacyPackFullText
 	dw PharmacyThanksText
-	dw BuyMenuLoop
-	
-.MadamItemsPointers:
-	dw Text_MadamItemsShop_HowMany
-	dw Text_MadamItemsShop_CostsThisMuch
-	dw Text_MadamItemsShop_InsufficientFunds
-	dw Text_MadamItemsShop_BagFull
-	dw Text_MadamItemsShop_HereYouGo
-	dw BuyMenuLoop
-
-.BerryPointers:
-	dw Text_BerryShop_HowMany
-	dw Text_BerryShop_CostsThisMuch
-	dw Text_BerryShop_InsufficientFunds
-	dw Text_BerryShop_BagFull
-	dw Text_BerryShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -680,7 +642,7 @@ MenuHeader_Buy:
 	db 4, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wCurMartCount
-	dba PlaceMenuItemName
+	dba PlaceMartMenuItemName
 	dba .PrintBCDPrices
 	dba UpdateItemDescription
 
@@ -785,62 +747,6 @@ PharmacyNoMoneyText:
 PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
 	text_end
-	
-Text_MadamItemsShop_Intro:
-	text_far MadamItemsShop_IntroText
-	text_end
-
-Text_MadamItemsShop_ComeAgain:
-	text_far MadamItemsShop_ComeAgainText
-	text_end
-
-Text_MadamItemsShop_HowMany:
-	text_far MadamItemsShop_HowManyText
-	text_end
-
-Text_MadamItemsShop_CostsThisMuch:
-	text_far MadamItemsShop_CostsThisMuchText
-	text_end
-
-Text_MadamItemsShop_InsufficientFunds:
-	text_far MadamItemsShop_InsufficientFundsText
-	text_end
-
-Text_MadamItemsShop_BagFull:
-	text_far MadamItemsShop_BagFullText
-	text_end
-
-Text_MadamItemsShop_HereYouGo:
-	text_far MadamItemsShop_HereYouGoText
-	text_end
-	
-Text_BerryShop_Intro:
-	text_far BerryShop_IntroText
-	text_end
-
-Text_BerryShop_ComeAgain:
-	text_far BerryShop_ComeAgainText
-	text_end
-
-Text_BerryShop_HowMany:
-	text_far BerryShop_HowManyText
-	text_end
-
-Text_BerryShop_CostsThisMuch:
-	text_far BerryShop_CostsThisMuchText
-	text_end
-
-Text_BerryShop_InsufficientFunds:
-	text_far BerryShop_InsufficientFundsText
-	text_end
-
-Text_BerryShop_BagFull:
-	text_far BerryShop_BagFullText
-	text_end
-
-Text_BerryShop_HereYouGo:
-	text_far BerryShop_HereYouGoText
-	text_end
 
 SellMenu:
 	call DisableSpriteUpdates
@@ -857,6 +763,16 @@ SellMenu:
 	call ReturnToMapWithSpeechTextbox
 	and a
 	ret
+
+.NothingToSell: ; unreferenced
+	ld hl, .NothingToSellText
+	call MenuTextboxBackup
+	and a
+	ret
+
+.NothingToSellText:
+	text_far _NothingToSellText
+	text_end
 
 .TryToSellItem:
 	farcall CheckItemMenu
@@ -929,6 +845,9 @@ MartSellHowManyText:
 MartSellPriceText:
 	text_far _MartSellPriceText
 	text_end
+
+UnusedDummyString: ; unreferenced
+	db "！ダミー！@" ; "!Dummy!"
 
 MartWelcomeText:
 	text_far _MartWelcomeText

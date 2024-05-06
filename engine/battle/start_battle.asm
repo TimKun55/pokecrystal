@@ -42,15 +42,6 @@ PlayBattleMusic:
 	call MaxVolume
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_LUGIA
-	ld de, MUSIC_LUGIA_BATTLE
-	jp z, .done
-	cp BATTLETYPE_HO_OH
-	ld de, MUSIC_HO_OH_BATTLE
-	jp z, .done
-	cp BATTLETYPE_KANTO_LEGEND
-	ld de, MUSIC_KANTO_LEGEND_BATTLE
-	jp z, .done	
 	cp BATTLETYPE_SUICUNE
 	ld de, MUSIC_SUICUNE_BATTLE
 	jp z, .done

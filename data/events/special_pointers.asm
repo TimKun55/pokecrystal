@@ -69,7 +69,6 @@ SpecialsPointers::
 	add_special UpdateSprites ; bank 0
 	add_special UpdatePlayerSprite ; bank 0
 	add_special GameCornerPrizeMonCheckDex
-	add_special ShowPokedexEntry
 	add_special UnusedSetSeenMon ; unused
 	add_special WaitSFX ; bank 0
 	add_special PlayMapMusic ; bank 0
@@ -184,5 +183,3 @@ SpecialsPointers::
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
 	add_special UnusedDummySpecial ; unused
-	
-	add_special MoveReminder

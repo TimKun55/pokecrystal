@@ -98,6 +98,9 @@ CeladonDeptStore6FVendingMachine:
 CeladonDeptStore6FDirectory:
 	jumptext CeladonDeptStore6FDirectoryText
 
+CeladonDeptStore6FElevatorButton: ; unreferenced
+	jumpstd ElevatorButtonScript
+
 CeladonVendingText:
 	text "A vending machine!"
 	line "Here's the menu."

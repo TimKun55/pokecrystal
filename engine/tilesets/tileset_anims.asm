@@ -38,25 +38,9 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
-TilesetKanto3Anim:
-TilesetIndigoAnim:
-	dw vTiles2 tile $01, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-	
-TilesetKanto2Anim:
-TilesetKanto4Anim:
-	dw vTiles2 tile $01, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw vTiles2 tile $5f, AnimateFountainTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -88,15 +72,13 @@ TilesetForestAnim:
 	dw NULL,  ForestTreeLeftAnimation2
 	dw NULL,  ForestTreeRightAnimation2
 	dw NULL,  AnimateFlowerTile
-	dw vTiles2 tile $01, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetJohtoAnim:
-TilesetJohto2Anim:
-TilesetJohto3Anim:
-	dw vTiles2 tile $01, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -110,8 +92,36 @@ TilesetJohto3Anim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+UnusedTilesetAnim1: ; unreferenced
+; Scrolls tile $03 like cave water, but also has the standard $03 flower tile.
+	dw vTiles2 tile $03, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $03, WriteTileFromAnimBuffer
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
+UnusedTilesetAnim2: ; unreferenced
+; Scrolls tile $14 like cave water.
+	dw vTiles2 tile $14, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetPortAnim:
-	dw vTiles2 tile $01, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -134,6 +144,38 @@ TilesetEliteFourRoomAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+UnusedTilesetAnim3: ; unreferenced
+; Scrolls tile $53 like a waterfall; scrolls tile $03 like cave water.
+	dw vTiles2 tile $53, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $53, WriteTileFromAnimBuffer
+	dw vTiles2 tile $03, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $03, WriteTileFromAnimBuffer
+	dw vTiles2 tile $53, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $53, WriteTileFromAnimBuffer
+	dw NULL,  DoneTileAnimation
+
+UnusedTilesetAnim4: ; unreferenced
+; Scrolls tile $54 like a waterfall; scrolls tile $03 like cave water.
+	dw vTiles2 tile $54, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $54, WriteTileFromAnimBuffer
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $03, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $03, WriteTileFromAnimBuffer
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $54, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $54, WriteTileFromAnimBuffer
+	dw NULL,  DoneTileAnimation
+
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
@@ -142,7 +184,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $14, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -154,13 +196,6 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  AnimateLavaBubbleTile2
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateLavaBubbleTile1
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetIcePathAnim:
@@ -202,9 +237,22 @@ TilesetTowerAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
+UnusedTilesetAnim5: ; unreferenced
+; Scrolls tile $4f like cave water.
+	dw vTiles2 tile $4f, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $4f, WriteTileFromAnimBuffer
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetBattleTowerOutsideAnim:
-TilesetJohtoHouseAnim:
-TilesetKantoHouseAnim:
+TilesetHouseAnim:
+TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:
 TilesetGateAnim:
 TilesetLabAnim:
@@ -222,6 +270,7 @@ TilesetBattleTowerInsideAnim:
 TilesetRuinsOfAlphAnim:
 TilesetRadioTowerAnim:
 TilesetUndergroundAnim:
+TilesetBetaWordRoomAnim:
 TilesetHoOhWordRoomAnim:
 TilesetKabutoWordRoomAnim:
 TilesetOmanyteWordRoomAnim:
@@ -617,9 +666,9 @@ AnimateFlowerTile:
 	ld hl, .FlowerTileFrames
 	add hl, de
 
-; Write the tile graphic from hl (now sp) to tile $02 (now hl)
+; Write the tile graphic from hl (now sp) to tile $03 (now hl)
 	ld sp, hl
-	ld hl, vTiles2 tile $02
+	ld hl, vTiles2 tile $03
 	jp WriteTile
 
 .FlowerTileFrames:
@@ -653,7 +702,7 @@ AnimateLavaBubbleTile1:
 
 ; Write the tile graphic from hl (now sp) to tile $5b (now hl)
 	ld sp, hl
-	ld hl, vTiles2 tile $6a
+	ld hl, vTiles2 tile $5b
 	jp WriteTile
 
 AnimateLavaBubbleTile2:
@@ -678,7 +727,7 @@ AnimateLavaBubbleTile2:
 
 ; Write the tile graphic from hl (now sp) to tile $38 (now hl)
 	ld sp, hl
-	ld hl, vTiles2 tile $69
+	ld hl, vTiles2 tile $38
 	jp WriteTile
 
 LavaBubbleTileFrames:

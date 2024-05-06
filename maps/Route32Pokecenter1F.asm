@@ -1,9 +1,7 @@
 	object_const_def
 	const ROUTE32POKECENTER1F_NURSE
-	const ROUTE32POKECENTER1F_CHANSEY
 	const ROUTE32POKECENTER1F_FISHING_GURU
 	const ROUTE32POKECENTER1F_COOLTRAINER_F
-;	const ROUTE32POKECENTER1F_LADY_SUE
 
 Route32Pokecenter1F_MapScripts:
 	def_scene_scripts
@@ -12,9 +10,6 @@ Route32Pokecenter1F_MapScripts:
 
 Route32Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
-	
-Route32Pokecenter1FChansey:
-	jumpstd PokecenterChanseyScript
 
 Route32Pokecenter1FFishingGuruScript:
 	faceplayer
@@ -47,17 +42,6 @@ Route32Pokecenter1FFishingGuruScript:
 
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
-
-;Route32Pokecenter1FLadySue:
-;	trainer LADY, SUE, EVENT_BEAT_LADY_SUE, LadySueSeenText, LadySueBeatenText, 0, .Script
-
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext LadySueAfterBattleText
-;	waitbutton
-;	closetext
-;	end
 
 Route32Pokecenter1FFishingGuruText_Question:
 	text "This is a great"
@@ -108,37 +92,12 @@ Route32Pokecenter1FCooltrainerFText:
 	cont "power…"
 	done
 
-LadySueSeenText:
-	text "Hello there!"
-	line "Do you know about"
-	cont "the FAIRY TYPE?"
-	
-	para "They're cute but"
-	line "don't underesti-"
-	cont "mate them."
-	done
-
-LadySueBeatenText:
-	text "Oh, wow, you are"
-	line "very strong."
-	done
-
-LadySueAfterBattleText:
-	text "That was fun!"
-	line "You should see if"
-	cont "you can find all"
-	
-	para "my sisters!"
-	line "I'm sure they'd"
-	cont "like to battle!"
-	done
-	
 Route32Pokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  7, ROUTE_32, 1
-	warp_event  6,  7, ROUTE_32, 1
+	warp_event  3,  7, ROUTE_32, 1
+	warp_event  4,  7, ROUTE_32, 1
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -146,8 +105,6 @@ Route32Pokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
-	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FChansey, -1
-	object_event  1,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
-	object_event  9,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
-;	object_event  4,  3, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, Route32Pokecenter1FLadySue, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
+	object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
+	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1

@@ -3,8 +3,6 @@
 	const ROUTE14_YOUNGSTER
 	const ROUTE14_POKEFAN_M2
 	const ROUTE14_KIM
-	const ROUTE14_LADY_EVA
-	const ROUTE14_TOGEKISS
 
 Route14_MapScripts:
 	def_scene_scripts
@@ -49,30 +47,6 @@ TrainerPokefanmTrevor:
 	opentext
 	writetext PokefanmTrevorAfterBattleText
 	waitbutton
-	closetext
-	end
-	
-TrainerLadyEva:
-	trainer LADY, EVA, EVENT_BEAT_LADY_EVA, LadyEvaSeenText, LadyEvaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext LadyEvaAfterBattleText
-	waitbutton
-	setevent EVENT_BEAT_LIA_ZOE_EVA
-	closetext
-	end
-
-Route14Togekiss:
-	opentext
-	writetext Route14TogekissText
-	cry TOGEKISS
-	waitbutton
-	refreshscreen
-	pokepic TOGEKISS
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -138,45 +112,6 @@ PokefanmTrevorAfterBattleText:
 	para "identify where I"
 	line "got my #MON…"
 	done
-	
-LadyEvaSeenText:
-	text "Hi! I'm EVA."
-	line "You're the TRAINER"
-	cont "from JOHTO!"
-	
-	para "My sisters have"
-	line "told me all about"
-	cont "you, and I'm quite"
-	
-	para "keen to battle!"
-	line "Hope you're ready!"
-	done
-	
-LadyEvaBeatenText:
-	text "You're really good"
-	line "at this!"
-	done
-
-LadyEvaAfterBattleText:
-	para "I thought I would"
-	line "apply to be a GYM"
-	cont "LEADER for the"
-	
-	para "FAIRY TYPE but"
-	line "you've shown me"
-	cont "I've still got"
-	
-	para "room for"
-	line "improvement!"
-	
-	para "If you've beaten"
-	line "LIA and ZOE, go"
-	cont "see GRANNY!"
-	done
-
-Route14TogekissText:
-	text "TOGEKISS: Toge!"
-	done
 
 Route14_MapEvents:
 	db 0, 0 ; filler
@@ -192,5 +127,3 @@ Route14_MapEvents:
 	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
 	object_event  6, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
 	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
-	object_event 15, 11, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerLadyEva, -1
-	object_event 16, 11, SPRITE_TOGEKISS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route14Togekiss, -1

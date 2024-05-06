@@ -57,6 +57,12 @@ GameFreakGraphicArtistScript:
 	closetext
 	end
 
+.CancelPrinting: ; unreferenced
+	writetext GameFreakGraphicArtistErrorText
+	waitbutton
+	closetext
+	end
+
 GameFreakProgrammerScript:
 	jumptextfaceplayer GameFreakProgrammerText
 

@@ -402,10 +402,32 @@ _JohtoWildmonCheck:
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE
-    ld a, [wSwarmMapGroup]
+	push hl
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_DUNSPARCE_SWARM_F, [hl]
+	pop hl
+	jr z, .CheckYanma
+	ld a, [wDunsparceMapGroup]
+	cp d
+	jr nz, .CheckYanma
+	ld a, [wDunsparceMapNumber]
+	cp e
+	jr nz, .CheckYanma
+	call LookUpWildmonsForMapDE
+	jr nc, _NoSwarmWildmon
+	scf
+	ret
+
+.CheckYanma:
+	push hl
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_YANMA_SWARM_F, [hl]
+	pop hl
+	jr z, _NoSwarmWildmon
+	ld a, [wYanmaMapGroup]
 	cp d
 	jr nz, _NoSwarmWildmon
-	ld a, [wSwarmMapNumber]
+	ld a, [wYanmaMapNumber]
 	cp e
 	jr nz, _NoSwarmWildmon
 	call LookUpWildmonsForMapDE

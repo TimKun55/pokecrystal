@@ -1,5 +1,5 @@
 	object_const_def
-	const SLOWPOKEWELLB1F_PROTON
+	const SLOWPOKEWELLB1F_ROCKET1
 	const SLOWPOKEWELLB1F_ROCKET2
 	const SLOWPOKEWELLB1F_ROCKET3
 	const SLOWPOKEWELLB1F_ROCKET_GIRL
@@ -28,17 +28,17 @@ TrainerGruntM29:
 	closetext
 	end
 
-SlowpokeWellProton:
-	trainer PROTON, PROTON1, EVENT_BEAT_PROTON_1, SlowpokeWellProtonSeenText, SlowpokeWellProtonBeatenText, 0, .Script
+TrainerGruntM1:
+	trainer GRUNTM, GRUNTM_1, EVENT_BEAT_ROCKET_GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SlowpokeWellProtonWhenTalkText
+	writetext TrainerGruntM1WhenTalkText
 	waitbutton
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	disappear SLOWPOKEWELLB1F_PROTON
+	disappear SLOWPOKEWELLB1F_ROCKET1
 	disappear SLOWPOKEWELLB1F_ROCKET2
 	disappear SLOWPOKEWELLB1F_ROCKET3
 	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
@@ -221,7 +221,7 @@ GruntM29AfterBattleText:
 	line "thing for money!"
 	done
 
-SlowpokeWellProtonSeenText:
+GruntM1SeenText:
 	text "What do you want?"
 
 	para "If you interrupt"
@@ -229,13 +229,13 @@ SlowpokeWellProtonSeenText:
 	cont "expect any mercy!"
 	done
 
-SlowpokeWellProtonBeatenText:
+GruntM1BeatenText:
 	text "You did OK today,"
 	line "but wait till next"
 	cont "time!"
 	done
 
-SlowpokeWellProtonWhenTalkText:
+TrainerGruntM1WhenTalkText:
 	text "Yeah, TEAM ROCKET"
 	line "was broken up"
 	cont "three years ago."
@@ -330,11 +330,11 @@ SlowpokeWellB1F_MapEvents:
 
 	def_object_events
 	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  5,  2, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, SlowpokeWellProton, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  5,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event 10,  3, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  7,  4, SPRITE_SLOWPOKE_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	object_event  6,  2, SPRITE_SLOWPOKE_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
+	object_event 10,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  7,  4, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
+	object_event  6,  2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
 	object_event 16, 14, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FKurtScript, EVENT_SLOWPOKE_WELL_KURT
 	object_event  3,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
-	object_event  9,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION
+	object_event 10,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION

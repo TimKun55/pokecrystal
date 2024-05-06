@@ -1,6 +1,5 @@
 	object_const_def
 	const LANCESROOM_LANCE
-	const LANCESROOM_DRAGONITE
 	const LANCESROOM_MARY
 	const LANCESROOM_OAK
 
@@ -32,11 +31,11 @@ LancesRoomDoorsCallback:
 
 LancesRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, LancesRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 22, $34 ; wall
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_LANCESROOM_APPROACH_LANCE
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
@@ -58,14 +57,10 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	readvar VAR_BADGES
-	ifequal 16, .LanceScript_16Badges
 	loadtrainer CHAMPION, LANCE
-	startbattle	
+	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-.AfterBattle:
-	disappear LANCESROOM_DRAGONITE
 	setevent EVENT_BEAT_CHAMPION_LANCE
 	opentext
 	writetext LanceBattleAfterText
@@ -73,7 +68,7 @@ LancesRoomLanceScript:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
@@ -131,25 +126,6 @@ LancesRoomLanceScript:
 	special FadeOutToWhite
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
-	end
-	
-.LanceScript_16Badges
-	loadtrainer CHAMPION, LANCE2
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
-	
-LancesRoomDragoniteScript:
-	opentext
-	writetext DragoniteText
-	cry DRAGONITE
-	waitbutton
-	refreshscreen
-	pokepic DRAGONITE
-	waitbutton
-	closepokepic
-	closetext
 	end
 
 LancesRoom_EnterMovement:
@@ -358,10 +334,6 @@ LancesRoomMaryNoInterviewText:
 	line "We haven't done"
 	cont "the interview!"
 	done
-	
-DragoniteText:
-	text "DRAGONITE: Drago!"
-	done
 
 LancesRoom_MapEvents:
 	db 0, 0 ; filler
@@ -380,6 +352,5 @@ LancesRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1
-	object_event  6,  3, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, LancesRoomDragoniteScript, -1
 	object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
 	object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY

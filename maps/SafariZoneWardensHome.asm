@@ -54,12 +54,8 @@ WardensGranddaughterText2:
 	line "disappointed that"
 
 	para "SAFARI ZONE closed"
-	line "down, so it's a"
-	cont "good thing my Dad"
-	
-	para "was able to step"
-	line "in and keep it"
-	cont "open for everyone!"
+	line "down, but Grandpa"
+	cont "is so stubborn…"
 	done
 
 WardenPhotoText:
@@ -82,8 +78,8 @@ SafariZoneWardensHome_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, FUCHSIA_CITY, 5
-	warp_event  3,  7, FUCHSIA_CITY, 5
+	warp_event  2,  7, FUCHSIA_CITY, 6
+	warp_event  3,  7, FUCHSIA_CITY, 6
 
 	def_coord_events
 

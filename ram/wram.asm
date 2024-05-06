@@ -2304,7 +2304,7 @@ wStringBuffer5:: ds STRING_BUFFER_LENGTH
 
 wBattleMenuCursorPosition:: db
 
-wBuffer1:: db
+	ds 1
 
 wCurBattleMon::
 ; index of the player's mon currently in battle (0-5)
@@ -2991,9 +2991,9 @@ for n, 1, NUM_OBJECT_STRUCTS
 wObject{d:n}Struct:: object_struct wObject{d:n}
 endr
 
-wStoneTableAddress:: dw
+wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-;	ds 62
+;	ds 40
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3431,8 +3431,8 @@ wEggMon:: box_struct wEggMon
 wBugContestSecondPartySpecies:: db
 wContestMon:: party_struct wContestMon
 
-wSwarmMapGroup:: db
-wSwarmMapNumber:: db
+wDunsparceMapGroup:: db
+wDunsparceMapNumber:: db
 wFishingSwarmFlag:: db
 
 wRoamMon1:: roam_struct wRoamMon1

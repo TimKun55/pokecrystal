@@ -1,6 +1,5 @@
 	object_const_def
 	const CIANWOODGYM_CHUCK
-	const CIANWOODGYM_POLIWRATH
 	const CIANWOODGYM_BLACK_BELT1
 	const CIANWOODGYM_BLACK_BELT2
 	const CIANWOODGYM_BLACK_BELT3
@@ -18,10 +17,6 @@ CianwoodGym_MapScripts:
 CianwoodGymChuckScript:
 	faceplayer
 	opentext
-	readvar VAR_BADGES
-	ifequal 16, .ChuckScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .ChuckScript_Rematch
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
 	writetext ChuckIntroText1
@@ -75,54 +70,6 @@ CianwoodGymChuckScript:
 	writetext ChuckAfterText
 	waitbutton
 .BagFull:
-	closetext
-	end
-
-.ChuckScript_16Badges
-	writetext Chuck16IntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext ChuckWinLossRematchText, 0
-	loadtrainer CHUCK, CHUCK3
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext Chuck16AfterBattleText
-	waitbutton
-	closetext
-	end
-
-.ChuckScript_Rematch
-	writetext ChuckRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext ChuckWinLossRematchText, 0
-	loadtrainer CHUCK, CHUCK2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext ChuckRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-
-.EndRematch
-	writetext ChuckNextTimeText
-	waitbutton
-	closetext
-	end
-	
-CianwoodGymPoliwrath:
-	opentext
-	writetext PoliwrathText
-	cry POLIWRATH
-	waitbutton
-	refreshscreen
-	pokepic POLIWRATH
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -243,20 +190,20 @@ ChuckLossText:
 
 	para "How about that!"
 	line "You're worthy of"
-	cont "the STORMBADGE!"
+	cont "STORMBADGE!"
 	done
 
 GetStormBadgeText:
 	text "<PLAYER> received"
-	line "the STORMBADGE."
+	line "STORMBADGE."
 	done
 
 ChuckExplainBadgeText:
-	text "The STORMBADGE"
-	line "makes all #MON"
+	text "STORMBADGE makes"
+	line "all #MON up to"
 
-	para "up to L70 obey,"
-	line "even traded ones."
+	para "L70 obey, even"
+	line "traded ones."
 
 	para "It also lets your"
 	line "#MON use FLY"
@@ -289,77 +236,6 @@ ChuckAfterText:
 	para "From now on, I'm"
 	line "going to train 24"
 	cont "hours a day!"
-	done
-
-ChuckRematchIntroText:
-	text "WAHAHAHAHA!"
-	
-	para "Good to see you"
-	line "<PLAYER>!"
-	
-	para "Feel like having"
-	line "a rematch?"
-	done
-	
-ChuckWinLossRematchText:
-	text "WAHAHAH!" 
-	line "Smashed like"
-	cont "a rock!"
-	done
-	
-ChuckRematchAfterBattleText:
-	text "Even after 24 hour"
-	line "training, I still"
-	cont "can't win!"
-	
-	para "I wonder if I can"
-	line "fit more training"
-	cont "into my day…?"
-	
-	para "WAHAHAHAHA!"
-	
-	para "Anyway, feel free"
-	line "to come back for"
-	cont "a rematch!"
-	
-	para "That counts as"
-	line "great training!"
-	done
-	
-Chuck16IntroText:
-	text "<PLAYER>!"
-	line "You've done it!"
-	
-	para "You've beaten all"
-	line "the KANTO GYM"
-	cont "LEADERS, too!"
-	
-	para "You've been doing"
-	line "some intense"
-	cont "training!"
-	
-	para "Should we have"
-	line "a rematch?"
-	done
-	
-Chuck16AfterBattleText:
-	text "WAHAHAHAHA!"
-	line "That was an"
-	cont "amazing battle!"
-	
-	para "This is the best"
-	line "training I've"
-	cont "ever done!"
-	
-	para "Feel free to"
-	line "come back for"
-	cont "another round!"
-	done
-	
-ChuckNextTimeText:
-	text "Ahh, no problem."
-	line "Come back for"
-	cont "another round!"
 	done
 
 BlackbeltYoshiSeenText:
@@ -426,11 +302,6 @@ BlackbeltLungAfterText:
 	line "My… my pride is"
 	cont "shattered…"
 	done
-	
-PoliwrathText:
-	text "POLIWRATH: Poli!!"
-	line "WrathPoliwrath!"
-	done
 
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler
@@ -446,13 +317,12 @@ CianwoodGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, CianwoodGymStatue
 
 	def_object_events
-	object_event  5,  1, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
-	object_event  4,  1, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
+	object_event  4,  1, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
 	object_event  2, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
 	object_event  7, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
 	object_event  3,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
 	object_event  5,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1
-	object_event  6,  1, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
+	object_event  5,  1, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  4,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  5,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1

@@ -52,7 +52,8 @@ CherrygroveGymSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
+	bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
+	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHousePokefanMScript, -1

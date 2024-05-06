@@ -1,6 +1,5 @@
 	object_const_def
 	const WILLSROOM_WILL
-	const WILLSROOM_XATU
 
 WillsRoom_MapScripts:
 	def_scene_scripts
@@ -30,11 +29,11 @@ WillsRoomDoorsCallback:
 
 WillsRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, WillsRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_WILLSROOM_NOOP
 	setevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
@@ -50,12 +49,9 @@ WillScript_Battle:
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
-	readvar VAR_BADGES
-	ifequal 16, .WillScript_16Badges	
 	loadtrainer WILL, WILL1
 	startbattle
 	reloadmapafterbattle
-.AfterBattle
 	setevent EVENT_BEAT_ELITE_4_WILL
 	opentext
 	writetext WillScript_WillDefeatText
@@ -63,33 +59,15 @@ WillScript_Battle:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	waitsfx
 	end
-	
-.WillScript_16Badges:
-	loadtrainer WILL, WILL2
-	startbattle
-	reloadmapafterbattle
-	sjump .AfterBattle
 
 WillScript_AfterBattle:
 	writetext WillScript_WillDefeatText
 	waitbutton
-	closetext
-	end
-	
-WillsRoomXatu:
-	opentext
-	writetext XatuText
-	cry XATU
-	waitbutton
-	refreshscreen
-	pokepic XATU
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -147,11 +125,6 @@ WillScript_WillDefeatText:
 	para "the true ferocity"
 	line "of the ELITE FOUR."
 	done
-	
-XatuText:
-	text "XATU: Xaa!!"
-	line "Xatuuu!"
-	done
 
 WillsRoom_MapEvents:
 	db 0, 0 ; filler
@@ -167,4 +140,3 @@ WillsRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
-	object_event  4,  7, SPRITE_XATU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WillsRoomXatu, -1

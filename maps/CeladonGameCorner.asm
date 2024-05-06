@@ -111,21 +111,21 @@ CeladonGameCornerPoster2Script:
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
 	ifequal 0, CeladonGameCornerSlotMachineScript
-	refreshscreen
+	reanchormap
 	setval FALSE
 	special SlotMachine
 	closetext
 	end
 
 CeladonGameCornerSlotMachineScript:
-	refreshscreen
+	reanchormap
 	setval TRUE
 	special SlotMachine
 	closetext
 	end
 
 CeladonGameCornerCardFlipScript:
-	refreshscreen
+	reanchormap
 	special CardFlip
 	closetext
 	end
@@ -140,6 +140,11 @@ CeladonGameCornerSodaCanScript:
 	special CardFlip
 	closetext
 	end
+
+CeladonGameCornerUnusedMovementData: ; unreferenced
+	step RIGHT
+	turn_head LEFT
+	step_end
 
 CeladonGameCornerReceptionistText:
 	text "Welcome!"

@@ -15,8 +15,8 @@ Tilesets::
 	tileset TilesetJohtoModern
 	tileset TilesetKanto
 	tileset TilesetBattleTowerOutside
-	tileset TilesetJohtoHouse
-	tileset TilesetKantoHouse
+	tileset TilesetHouse
+	tileset TilesetPlayersHouse
 	tileset TilesetPokecenter
 	tileset TilesetGate
 	tileset TilesetPort
@@ -31,6 +31,7 @@ Tilesets::
 	tileset TilesetChampionsRoom
 	tileset TilesetLighthouse
 	tileset TilesetPlayersRoom
+	tileset TilesetPokeComCenter
 	tileset TilesetBattleTowerInside
 	tileset TilesetTower
 	tileset TilesetCave
@@ -41,14 +42,9 @@ Tilesets::
 	tileset TilesetIcePath
 	tileset TilesetDarkCave
 	tileset TilesetForest
+	tileset TilesetBetaWordRoom
 	tileset TilesetHoOhWordRoom
 	tileset TilesetKabutoWordRoom
 	tileset TilesetOmanyteWordRoom
 	tileset TilesetAerodactylWordRoom
-	tileset TilesetIndigo
-	tileset TilesetJohto2
-	tileset TilesetJohto3
-	tileset TilesetKanto2
-	tileset TilesetKanto3
-	tileset TilesetKanto4
 	assert_table_length NUM_TILESETS + 1

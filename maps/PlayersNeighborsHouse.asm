@@ -1,8 +1,6 @@
 	object_const_def
 	const PLAYERSNEIGHBORSHOUSE_COOLTRAINER_F
 	const PLAYERSNEIGHBORSHOUSE_POKEFAN_F
-	const PLAYERSNEIGHBORSHOUSE_MAGNEMITE
-	const PLAYERSNEIGHBORSHOUSE_PIKACHU
 
 PlayersNeighborsHouse_MapScripts:
 	def_scene_scripts
@@ -14,30 +12,6 @@ PlayersNeighborsDaughterScript:
 
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
-	
-PlayersNeighborMagnemiteScript:
-	opentext
-	writetext PlayersNeighborMagnemiteText
-	cry MAGNEMITE	
-	waitbutton
-	refreshscreen
-	pokepic MAGNEMITE
-	waitbutton
-	closepokepic
-	closetext
-	end
-	
-PlayersNeighborPikachuScript:
-	opentext
-	writetext PlayersNeighborPikachuText
-	cry PIKACHU	
-	waitbutton
-	refreshscreen
-	pokepic PIKACHU
-	waitbutton
-	closepokepic
-	closetext
-	end
 
 PlayersNeighborsHouseBookshelfScript:
 	jumpstd MagazineBookshelfScript
@@ -71,10 +45,8 @@ PlayersNeighborsHouseRadioScript:
 	end
 
 PlayersNeighborsDaughterText:
-	text "Evolved #MON"
-	line "like MAGNETON and"
-	cont "PILOSWINE are able"
-	cont "to evolve again!"
+	text "PIKACHU is an"
+	line "evolved #MON."
 
 	para "I was amazed by"
 	line "PROF.ELM's find-"
@@ -102,15 +74,6 @@ PlayersNeighborText:
 	line "#MON!"
 
 	para "But then, so do I!"
-	done
-	
-PlayersNeighborMagnemiteText:
-	text "MAGNEMITE: Mag!"
-	line "MiteMagne!!"
-	done
-
-PlayersNeighborPikachuText:
-	text "PIKACHU: Pika! Pi!"
 	done
 
 PlayerNeighborRadioText1:
@@ -143,11 +106,10 @@ PlayersNeighborsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
-	bg_event  5,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
+	bg_event  0,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
+	bg_event  1,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
+	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
 
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1
 	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
-	object_event  4,  5, SPRITE_MAGNEMITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PlayersNeighborMagnemiteScript, -1
-	object_event  4,  1, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersNeighborPikachuScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR

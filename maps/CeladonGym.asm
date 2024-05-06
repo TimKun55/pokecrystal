@@ -1,6 +1,5 @@
 	object_const_def
 	const CELADONGYM_ERIKA
-	const CELADONGYM_BELLOSSOM
 	const CELADONGYM_LASS1
 	const CELADONGYM_LASS2
 	const CELADONGYM_BEAUTY
@@ -15,8 +14,6 @@ CeladonGym_MapScripts:
 CeladonGymErikaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_KANTO_LEADERS
-	iftrue .ErikaScript_Rematch
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
 	writetext ErikaBeforeBattleText
@@ -47,45 +44,6 @@ CeladonGymErikaScript:
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
 	waitbutton
-	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
-	end
-	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	end
-	
-.ErikaScript_Rematch
-	writetext ErikaRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext ErikaWinLossRematchText, 0
-	loadtrainer ERIKA, ERIKA2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext ErikaRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-.EndRematch
-	writetext ErikaNextTimeText
-	waitbutton
-	closetext
-	end
-	
-CeladonGymBellossom:
-	opentext
-	writetext BellossomText
-	cry BELLOSSOM
-	waitbutton
-	refreshscreen
-	pokepic BELLOSSOM
-	waitbutton
-	closepokepic
 	closetext
 	end
 
@@ -188,12 +146,12 @@ ErikaBeatenText:
 	line "strong…"
 
 	para "I shall give you"
-	line "the RAINBOWBADGE…"
+	line "RAINBOWBADGE…"
 	done
 
 PlayerReceivedRainbowBadgeText:
 	text "<PLAYER> received"
-	line "the RAINBOWBADGE."
+	line "RAINBOWBADGE."
 	done
 
 ErikaExplainTMText:
@@ -227,34 +185,6 @@ ErikaAfterBattleText:
 
 	para "trainers spurs me"
 	line "to do better…"
-	done
-	
-ErikaRematchIntroText:
-	text "Oh, <PLAYER>."
-	line "So good to see"
-	cont "you again."
-	
-	para "Would you like to"
-	line "have a rematch?"
-	done
-	
-ErikaWinLossRematchText:
-	text "You have grown"
-	line "even stronger!"
-	done
-	
-ErikaRematchAfterBattleText:
-	text "You seem to be"
-	line "flourishing!"
-	
-	para "Come back for"
-	line "a rematch"
-	cont "sometime."
-	done
-	
-ErikaNextTimeText:
-	text "Maybe next"
-	line "time, then."
 	done
 
 LassMichelleSeenText:
@@ -334,11 +264,6 @@ TwinsJoAndZoe2AfterBattleText:
 	text "ERIKA is much,"
 	line "much stronger!"
 	done
-	
-BellossomText:
-	text "BELLOSSOM: Som!!"
-	line "BellBell!"
-	done
 
 CeladonGym_MapEvents:
 	db 0, 0 ; filler
@@ -355,9 +280,8 @@ CeladonGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymErikaScript, -1
-	object_event  4,  3, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymBellossom, -1
-	object_event  7,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassMichelle, -1
-	object_event  2,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerTanya, -1
-	object_event  3,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
+	object_event  7,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassMichelle, -1
+	object_event  2,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTanya, -1
+	object_event  3,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
 	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1

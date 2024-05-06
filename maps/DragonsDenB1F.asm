@@ -216,7 +216,7 @@ ClairText_GiveDragonbreathDragonDen:
 
 Text_ReceivedTM24:
 	text "<PLAYER> received"
-	line "TM24."
+	line "TM24 DRAGONBREATH."
 	done
 
 ClairText_DescribeDragonbreathDragonDen:
@@ -417,7 +417,7 @@ DragonsDenB1F_MapEvents:
 	bg_event 18, 24, BGEVENT_READ, DragonShrineSignpost
 	bg_event 33, 29, BGEVENT_ITEM, DragonsDenB1FHiddenRevive
 	bg_event 21, 17, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion
-	bg_event 12, 27, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
+	bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
 	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG

@@ -18,6 +18,9 @@ RadioTower2F_MapScripts:
 
 	def_callbacks
 
+RadioTower2FNoopScene: ; unreferenced
+	end
+
 RadioTower2FSuperNerdScript:
 	jumptextfaceplayer RadioTower2FSuperNerdText
 
@@ -130,7 +133,7 @@ Buena:
 	waitbutton
 	closetext
 	turnobject RADIOTOWER2F_BUENA, DOWN
-	refreshscreen
+	reanchormap
 	special BuenasPassword
 	closetext
 	iffalse .WrongAnswer

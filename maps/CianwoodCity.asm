@@ -9,7 +9,6 @@
 	const CIANWOODCITY_ROCK5
 	const CIANWOODCITY_ROCK6
 	const CIANWOODCITY_POKEFAN_F
-	const CIANWOODCITY_LADY_MAE
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
 
@@ -119,17 +118,8 @@ CianwoodCityPokefanM:
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
 
-CianwoodCityLadyMae:
-	trainer LADY, MAE, EVENT_BEAT_LADY_MAE, LadyMaeSeenText, LadyMaeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext LadyMaeAfterBattleText
-	waitbutton
-	setevent EVENT_BEAT_KAT_ADA_MAE
-	closetext
-	end
+CianwoodCityUnusedScript: ; unreferenced
+	jumptextfaceplayer CianwoodCityUnusedText
 
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
@@ -139,6 +129,12 @@ CianwoodGymSign:
 
 CianwoodPharmacySign:
 	jumptext CianwoodPharmacySignText
+
+CianwoodPhotoStudioSign:
+	jumptext CianwoodPhotoStudioSignText
+
+CianwoodPokeSeerSign:
+	jumptext CianwoodPokeSeerSignText
 
 CianwoodPokecenterSign:
 	jumpstd PokecenterSignScript
@@ -268,6 +264,16 @@ CianwoodCityLassText:
 	line "MON."
 	done
 
+CianwoodCityUnusedText:
+	text "There are several"
+	line "islands between"
+	cont "here and OLIVINE."
+
+	para "A mythical sea"
+	line "creature supposed-"
+	cont "ly lives there."
+	done
+
 EusineSuicuneText:
 	text "EUSINE: Yo,"
 	line "<PLAYER>."
@@ -329,30 +335,6 @@ EusineAfterText:
 
 	para "See you around!"
 	done
-	
-LadyMaeSeenText:
-	text "Hello there."
-	line "I'm taking a quick"
-	cont "break here. Those"
-	
-	para "WHIRL ISLANDS are"
-	line "pretty cool!"
-	
-	para "Wait, you're a"
-	line "TRAINER?"
-	cont "Let's battle!"
-	done
-
-LadyMaeBeatenText:
-	text "Wow!"
-	done
-
-LadyMaeAfterBattleText:
-	text "You're powerful!"
-	line "You should talk to"
-	cont "my Dad in"
-	cont "ECRUTEAK."
-	done
 
 CianwoodCitySignText:
 	text "CIANWOOD CITY"
@@ -382,40 +364,54 @@ CianwoodPharmacySignText:
 	line "Medicinal Queries"
 	done
 
+CianwoodPhotoStudioSignText:
+	text "CIANWOOD CITY"
+	line "PHOTO STUDIO"
+
+	para "Take a Snapshot as"
+	line "a Keepsake!"
+	done
+
+CianwoodPokeSeerSignText:
+	text "THE # SEER"
+	line "AHEAD"
+	done
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17, 41, MANIAS_HOUSE, 1
-	warp_event  8, 45, CIANWOOD_GYM, 1
+	warp_event  8, 43, CIANWOOD_GYM, 1
 	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
-	warp_event 17, 47, CIANWOOD_PHARMACY, 1
-	warp_event 11, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
-	warp_event  5, 17, CIANWOOD_BEASTS_HOUSE, 1
-	warp_event 19, 35, CIANWOOD_MOVE_TUTOR_HOUSE, 1
+	warp_event 15, 47, CIANWOOD_PHARMACY, 1
+	warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1
+	warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
+	warp_event  5, 17, POKE_SEERS_HOUSE, 1
 
 	def_coord_events
 	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
 
 	def_bg_events
-	bg_event 16, 32, BGEVENT_READ, CianwoodCitySign
-	bg_event  6, 45, BGEVENT_READ, CianwoodGymSign
+	bg_event 20, 34, BGEVENT_READ, CianwoodCitySign
+	bg_event  7, 45, BGEVENT_READ, CianwoodGymSign
 	bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign
-	bg_event 15, 47, BGEVENT_READ, CianwoodPharmacySign
+	bg_event 19, 47, BGEVENT_READ, CianwoodPharmacySign
+	bg_event  8, 32, BGEVENT_READ, CianwoodPhotoStudioSign
+	bg_event  8, 24, BGEVENT_READ, CianwoodPokeSeerSign
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
 	def_object_events
 	object_event 21, 37, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
-	object_event  8, 36, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
+	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  6, 23, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  9, 24, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
+	object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
+	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
-	object_event  4, 26, SPRITE_LADY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, CianwoodCityLadyMae, -1
-	object_event  7, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
+	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY

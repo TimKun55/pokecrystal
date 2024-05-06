@@ -794,15 +794,16 @@ MACRO refreshmap
 	db refreshmap_command
 ENDM
 
-	const usestonetable_command ; $7d
-MACRO usestonetable
-	db usestonetable_command
-	dw \1 ; stonetable_pointer
+	const writecmdqueue_command ; $7d
+MACRO writecmdqueue
+	db writecmdqueue_command
+	dw \1 ; queue_pointer
 ENDM
 
-	const clearstonetable_command ; $7e
-MACRO clearstonetable
-	db clearstonetable_command
+	const delcmdqueue_command ; $7e
+MACRO delcmdqueue
+	db delcmdqueue_command
+	db \1 ; byte
 ENDM
 
 	const playmusic_command ; $7f
@@ -1002,7 +1003,8 @@ ENDM
 	const swarm_command ; $a0
 MACRO swarm
 	db swarm_command
-	map_id \1 ; map
+	db \1 ; flag
+	map_id \2 ; map
 ENDM
 
 	const halloffame_command ; $a1

@@ -1,7 +1,5 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
-	const VIRIDIANGYM_ARCANINE
-	const VIRIDIANGYM_COOLTRAINERM
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -12,8 +10,6 @@ ViridianGym_MapScripts:
 ViridianGymBlueScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_KANTO_LEADERS
-	iftrue .BlueScript_Rematch
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
 	writetext LeaderBlueBeforeText
@@ -24,8 +20,6 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
-	setevent EVENT_BEAT_COOLTRAINERM_ERICK
-	setevent EVENT_BEAT_BEAUTY_JULIE
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -34,71 +28,10 @@ ViridianGymBlueScript:
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
 	writetext LeaderBlueEpilogueText
-	waitbutton
-	closetext
-	end
-	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	end
-	
-.BlueScript_Rematch
-	writetext BlueRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext BlueWinLossRematchText, 0
-	loadtrainer BLUE, BLUE2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext BlueRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-.EndRematch
-	writetext BlueNextTimeText
-	waitbutton
-	closetext
-	end
-	
-ViridianGymArcanine:
-	opentext
-	writetext ArcanineText
-	cry ARCANINE
-	waitbutton
-	refreshscreen
-	pokepic ARCANINE
-	waitbutton
-	closepokepic
-	closetext
-	end
-
-TrainerCooltrainerMErick:
-	trainer COOLTRAINERM, ERICK, EVENT_BEAT_COOLTRAINERM_ERICK, CooltrainerMErickSeenText, CooltrainerMErickBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CooltrainerMErickAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-TrainerBeautyJulie:
-	trainer BEAUTY, JULIE, EVENT_BEAT_BEAUTY_JULIE, BeautyJulieSeenText, BeautyJulieBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BeautyJulieAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -171,12 +104,12 @@ LeaderBlueWinText:
 
 	para "Tch, all right…"
 	line "Here, take this--"
-	cont "the EARTHBADGE."
+	cont "it's EARTHBADGE."
 	done
 
 Text_ReceivedEarthBadge:
 	text "<PLAYER> received"
-	line "the EARTHBADGE."
+	line "EARTHBADGE."
 	done
 
 LeaderBlueAfterText:
@@ -201,71 +134,6 @@ LeaderBlueEpilogueText:
 	para "You'd better not"
 	line "lose until I beat"
 	cont "you. Got it?"
-	done
-	
-BlueRematchIntroText:
-	text "Oh, <PLAYER>,"
-	line "you're back!"
-	
-	para "Feel like having"
-	line "a rematch?"
-	done
-	
-BlueWinLossRematchText:
-	text "Ahh, lost again?"
-	done
-	
-BlueRematchAfterBattleText:
-	text "You're still strong"
-	line "but I'll beat you"
-	cont "next time."
-	
-	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
-	done
-	
-BlueNextTimeText:
-	text "No? Well, come"
-	line "back when you're"
-	cont "feeling it."
-	done
-	
-CooltrainerMErickSeenText:
-	text "Wow, you made it"
-	line "to our GYM!"
-	cont "You must be good!"
-	done
-	
-CooltrainerMErickBeatenText:
-	text "Yep! Too good!"
-	done
-	
-CooltrainerMErickAfterBattleText:
-	text "This used to be"
-	line "a GROUND-TYPE GYM."
-	done
-
-BeautyJulieSeenText:
-	text "Ooh, you're cute."
-	line "But are you"
-	cont "strong, too?"
-	done
-	
-BeautyJulieBeatenText:
-	text "Cute and strong!"
-	done
-	
-BeautyJulieAfterBattleText:
-	text "When BLUE became"
-	line "LEADER he"
-	cont "remodeled the GYM."
-	
-	para "It's much better"
-	line "without all those"
-	
-	para "dumb warp tiles"
-	line "around the place!"
 	done
 
 ViridianGymGuideText:
@@ -299,10 +167,6 @@ ViridianGymGuideWinText:
 	line "tears to my eyes."
 	done
 
-ArcanineText:
-	text "ARCANINE: Awooo!!"
-	done
-
 ViridianGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -317,8 +181,5 @@ ViridianGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  4,  3, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymArcanine, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  6, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, TrainerBeautyJulie, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, TrainerCooltrainerMErick, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE

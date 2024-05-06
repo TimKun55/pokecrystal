@@ -298,22 +298,24 @@ ROMX $74
 ROMX $77
 	"Unown Font"
 	"Print Party"
+	"Tileset Data 7"
 	"bank77"
 	"Pokégear GFX"
 	"European Mail"
 ROMX $78
 	"Debug Room"
-	"Tileset Data 7"
+	"Tileset Data 8"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
-	"Tileset Data 8"
+	"Mobile News Data"
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
-	"Tileset Data 9"
+	org $7de0
+	"Stadium 2 Checksums"
 ROMX $80
 	"The End"
 ROMX $81

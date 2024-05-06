@@ -81,6 +81,9 @@ UnionCave1FPotion:
 UnionCave1FAwakening:
 	itemball AWAKENING
 
+UnionCave1FUnusedSign: ; unreferenced
+	jumptext UnionCave1FUnusedSignText
+
 HikerRussellSeenText:
 	text "You're headed to"
 	line "AZALEA, are you?"

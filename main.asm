@@ -127,18 +127,12 @@ INCLUDE "engine/link/link.asm"
 INCLUDE "engine/battle/link_result.asm"
 
 
-SECTION "Own Section", ROMX
-
-INCLUDE "engine/battle/swarm_shiny.asm"
-
-
 SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/events/move_deleter.asm"
-INCLUDE "engine/events/move_reminder.asm"
 INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
@@ -684,6 +678,10 @@ SECTION "Battle Tower Trainer Data", ROMX
 INCLUDE "data/battle_tower/unknown.asm"
 
 
+SECTION "Mobile News Data", ROMX
+
+INCLUDE "mobile/news/news.asm"
+
 
 SECTION "Crystal Events", ROMX
 
@@ -718,5 +716,13 @@ SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"
 
+
+SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
+
+; The end of the ROM is taken up by checksums of the content, apparently used
+; by Pokémon Stadium 2 due to the checksums' "N64PS3" header. (In Japan,
+; Pokémon Stadium Gold and Silver was the third Stadium release for N64.)
+; This SECTION reserves space for those checksums.
+; If it is removed, also remove the "tools/stadium" command in the Makefile.
 
 	ds $220

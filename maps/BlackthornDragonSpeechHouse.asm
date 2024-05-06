@@ -1,6 +1,6 @@
 	object_const_def
 	const BLACKTHORNDRAGONSPEECHHOUSE_GRANNY
-	const BLACKTHORNDRAGONSPEECHHOUSE_EKANS
+	const BLACKTHORNDRAGONSPEECHHOUSE_DRATINI
 
 BlackthornDragonSpeechHouse_MapScripts:
 	def_scene_scripts

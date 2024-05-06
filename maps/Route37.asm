@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE37_TWIN1
-	const ROUTE37_TWIN2
+	const ROUTE37_WEIRD_TREE1
+	const ROUTE37_WEIRD_TREE2
 	const ROUTE37_YOUNGSTER
 	const ROUTE37_FRUIT_TREE1
 	const ROUTE37_SUNNY
@@ -243,8 +243,8 @@ Route37_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  9, BGEVENT_READ, Route37Sign
-	bg_event 10,  2, BGEVENT_ITEM, Route37HiddenEther
+	bg_event  5,  3, BGEVENT_READ, Route37Sign
+	bg_event  4,  2, BGEVENT_ITEM, Route37HiddenEther
 
 	def_object_events
 	object_event  6, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1

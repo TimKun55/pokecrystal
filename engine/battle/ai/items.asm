@@ -282,8 +282,7 @@ AI_Items:
 	dbw X_ATTACK,     .XAttack
 	dbw X_DEFEND,     .XDefend
 	dbw X_SPEED,      .XSpeed
-	dbw X_SP_ATK,     .XSpAtk
-	dbw X_SP_DEF,     .XSpDef
+	dbw X_SPECIAL,    .XSpecial
 	db -1 ; end
 
 .FullHeal:
@@ -484,16 +483,10 @@ AI_Items:
 	call EnemyUsedXSpeed
 	jp .Use
 
-.XSpAtk:
+.XSpecial:
 	call .XItem
 	jp c, .DontUse
-	call EnemyUsedXSpAtk
-	jp .Use
-	
-.XSpDef:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedXSpDef
+	call EnemyUsedXSpecial
 	jp .Use
 
 .XItem:
@@ -813,14 +806,9 @@ EnemyUsedXSpeed:
 	ld a, X_SPEED
 	jr EnemyUsedXItem
 
-EnemyUsedXSpDef:
-	ld b, SP_DEFENSE
-	ld a, X_SP_DEF
-	jr EnemyUsedXItem
-
-EnemyUsedXSpAtk:
+EnemyUsedXSpecial:
 	ld b, SP_ATTACK
-	ld a, X_SP_ATK
+	ld a, X_SPECIAL
 
 ; Parameter
 ; a = ITEM_CONSTANT

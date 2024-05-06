@@ -2,7 +2,6 @@
 	const ROUTE20_SWIMMER_GIRL1
 	const ROUTE20_SWIMMER_GIRL2
 	const ROUTE20_SWIMMER_GUY
-	const ROUTE20_OFFICER
 
 Route20_MapScripts:
 	def_scene_scripts
@@ -46,14 +45,9 @@ TrainerSwimmermCameron:
 	waitbutton
 	closetext
 	end
-	
-Route20OfficerScript:
-	faceplayer
-	opentext
-	writetext Route20OfficerScriptText
-	waitbutton
-	closetext
-	end
+
+CinnabarGymSign:
+	jumptext CinnabarGymSignText
 
 SwimmerfNicoleSeenText:
 	text "I feel so much"
@@ -107,30 +101,27 @@ SwimmermCameronAfterBattleText:
 	line "can also swim in"
 	cont "ponds and rivers."
 	done
-	
-Route20OfficerScriptText:
-	text "Sorry, no entry"
-	line "to SEAFOAM ISLAND."
-	
-	para "There was a"
-	line "cave-in during"
-	cont "the eruption and"
-	
-	para "It's not safe"
-	line "to enter"
+
+CinnabarGymSignText:
+	text "What does this"
+	line "sign say?"
+
+	para "CINNABAR GYM"
+	line "LEADER: BLAINE"
 	done
 
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 38,  7, SEAFOAM_GYM, 1
 
 	def_coord_events
 
 	def_bg_events
+	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign
 
 	def_object_events
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
-	object_event 38,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route20OfficerScript, -1

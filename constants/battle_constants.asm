@@ -74,7 +74,6 @@ DEF MAX_STAT_VALUE EQU 999
 
 ; shiny dvs
 DEF ATKDEFDV_SHINY EQU $EA
-DEF ATKDEFDV_SHINYF EQU $1A
 DEF SPDSPCDV_SHINY EQU $AA
 
 ; battle classes (wBattleMode values)
@@ -97,9 +96,6 @@ DEF SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_FORCEITEM
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_SUICUNE
-	const BATTLETYPE_LUGIA
-	const BATTLETYPE_HO_OH
-	const BATTLETYPE_KANTO_LEGEND
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def

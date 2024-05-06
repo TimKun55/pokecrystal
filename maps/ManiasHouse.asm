@@ -83,11 +83,20 @@ ManiaScript:
 	closetext
 	end
 
+.nothingleft ; unreferenced
+	writetext ManiaText_ShuckleIsYourLastMon
+	waitbutton
+	closetext
+	end
+
 .default_postevent
 	writetext ManiaText_HappinessSpeech
 	waitbutton
 	closetext
 	end
+
+ManiasHouseUnusedBookshelf: ; unreferenced
+	jumpstd PictureBookshelfScript
 
 ManiaText_AskLookAfterShuckle:
 	text "I, I'm in shock!"

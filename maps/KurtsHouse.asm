@@ -68,7 +68,7 @@ Kurt1:
 .ClearedSlowpokeWell:
 	writetext KurtsHouseKurtHonoredToMakeBallsText
 	promptbutton
-	verbosegiveitem LURE_BALL, 5
+	verbosegiveitem LURE_BALL
 	iffalse .NoRoomForBall
 	setevent EVENT_KURT_GAVE_YOU_LURE_BALL
 .GotLureBall:
@@ -449,9 +449,9 @@ KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	big_step DOWN
 	big_step DOWN
 	step_end
-	
+
 KurtsHouseKurtGetStartedText:
-	text "Kurt: I'll get"
+	text "KURT: I'll get"
 	line "started right now!"
 	done
 
