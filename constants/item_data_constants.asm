@@ -117,6 +117,7 @@ DEF MAIL_STRUCT_LENGTH_JP EQU $2a ; mailmsg_jp struct
 	const_skip
 	const_skip
 	const HELD_METAL_POWDER
+	const HELD_EVIOLITE
 
 	const_next 50
 	const HELD_NORMAL_BOOST

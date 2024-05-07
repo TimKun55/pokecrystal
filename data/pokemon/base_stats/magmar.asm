@@ -7,7 +7,7 @@
 	db FIRE, POISON ; type
 	db 45 ; catch rate
 	db 167 ; base exp
-	db BURNT_BERRY, BURNT_BERRY ; items
+	db ASPEAR_BERRY, ASPEAR_BERRY ; items
 	db GENDER_F25 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magmar/front.dimensions"

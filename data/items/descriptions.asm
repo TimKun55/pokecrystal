@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw BigNuggetDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -53,7 +53,7 @@ ItemDescriptions:
 	dw TeruSama4Desc
 	dw XDefendDesc
 	dw XSpeedDesc
-	dw XSpecialDesc
+	dw XSpAtkDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw TeruSama5Desc
@@ -74,23 +74,23 @@ ItemDescriptions:
 	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
-	dw PsnCureBerryDesc
+	dw PechaBerryDesc
 	dw GoldLeafDesc
 	dw SoftSandDesc
 	dw SharpBeakDesc
-	dw PrzCureBerryDesc
-	dw BurntBerryDesc
-	dw IceBerryDesc
+	dw CheriBerryDesc
+	dw AspearBerryDesc
+	dw RawstBerryDesc
 	dw PoisonBarbDesc
 	dw KingsRockDesc
-	dw BitterBerryDesc
-	dw MintBerryDesc
+	dw PersimBerryDesc
+	dw ChestoBerryDesc
 	dw RedApricornDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw DuskBallDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -109,7 +109,7 @@ ItemDescriptions:
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
-	dw MiracleBerryDesc
+	dw LumBerryDesc
 	dw PearlDesc
 	dw BigPearlDesc
 	dw EverStoneDesc
@@ -120,7 +120,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
+	dw XSpDefDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -135,7 +135,7 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
+	dw EvioliteDesc
 	dw TeruSama10Desc
 	dw ZincDesc
 	dw CharcoalDesc
@@ -147,10 +147,10 @@ ItemDescriptions:
 	dw DragonFangDesc
 	dw TeruSama14Desc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
-	dw MysteryBerryDesc
+	dw OldAmberDesc
+	dw DomeFossilDesc
+	dw HelixFossilDesc
+	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw TeruSama18Desc
@@ -173,8 +173,8 @@ ItemDescriptions:
 	dw PolkadotBowDesc
 	dw TeruSama22Desc
 	dw UpGradeDesc
-	dw BerryDesc
-	dw GoldBerryDesc
+	dw OranBerryDesc
+	dw SitrusBerryDesc
 	dw SquirtBottleDesc
 	dw TeruSama23Desc
 	dw ParkBallDesc
@@ -354,8 +354,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+BigNuggetDesc:
+	db   "Made of pure gold."
+	next "Sell very high.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -463,7 +464,7 @@ XSpeedDesc:
 	db   "Raises SPEED."
 	next "(1 BTL)@"
 
-XSpecialDesc:
+XSpAtkDesc:
 	db   "Raises SPECIAL"
 	next "ATTACK. (1 BTL)@"
 
@@ -546,7 +547,7 @@ QuickClawDesc:
 	db   "Raises 1st strike"
 	next "ratio. (HOLD)@"
 
-PsnCureBerryDesc:
+PechaBerryDesc:
 	db   "A self-cure for"
 	next "poison. (HOLD)@"
 
@@ -562,15 +563,15 @@ SharpBeakDesc:
 	db   "Powers up flying-"
 	next "type moves. (HOLD)@"
 
-PrzCureBerryDesc:
+CheriBerryDesc:
 	db   "A self-cure for"
 	next "paralysis. (HOLD)@"
 
-BurntBerryDesc:
+AspearBerryDesc:
 	db   "A self-cure for"
 	next "freezing. (HOLD)@"
 
-IceBerryDesc:
+RawstBerryDesc:
 	db   "A self-heal for a"
 	next "burn. (HOLD)@"
 
@@ -582,11 +583,11 @@ KingsRockDesc:
 	db   "May make the foe"
 	next "flinch. (HOLD)@"
 
-BitterBerryDesc:
+PersimBerryDesc:
 	db   "A self-cure for"
 	next "confusion. (HOLD)@"
 
-MintBerryDesc:
+ChestoBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
@@ -608,8 +609,9 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
+DuskBallDesc:
+	db   "Works best at NITE"
+	next "or in caves.@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
@@ -679,7 +681,7 @@ MagnetDesc:
 	db   "Boosts electric-"
 	next "type moves. (HOLD)@"
 
-MiracleBerryDesc:
+LumBerryDesc:
 	db   "Cures all status"
 	next "problems. (HOLD)@"
 
@@ -723,8 +725,9 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
+XSpDefDesc:
+	db   "Raises SPECIAL"
+	next "DEFENSE. (1 BTL)@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"
@@ -781,8 +784,9 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+EvioliteDesc:
+	db   "Ups defenses if"
+	next "#MON can evolve@"
 
 TeruSama10Desc:
 	db   "?@"
@@ -797,7 +801,7 @@ CharcoalDesc:
 
 BerryJuiceDesc:
 	db   "Restores #MON"
-	next "HP by 20.@"
+	next "HP by 90.@"
 
 ScopeLensDesc:
 	db   "Raises critical"
@@ -824,16 +828,19 @@ LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-TeruSama15Desc:
-	db   "?@"
+OldAmberDesc:
+	db   "Amber with genes"
+	next "of ancient #MON@"
 
-TeruSama16Desc:
-	db   "?@"
+DomeFossilDesc:
+	db   "Shell of ancient"
+	next "marine #MON.@"
 
-TeruSama17Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "Seashell of ancie-"
+	next "nt marine #MON.@"
 
-MysteryBerryDesc:
+LeppaBerryDesc:
 	db   "A self-restore"
 	next "for PP. (HOLD)@"
 
@@ -920,13 +927,13 @@ UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
 
-BerryDesc:
+OranBerryDesc:
 	db   "A self-restore"
-	next "item. (10HP, HOLD)@"
+	next "item. (20HP, HOLD)@"
 
-GoldBerryDesc:
+SitrusBerryDesc:
 	db   "A self-restore"
-	next "item. (30HP, HOLD)@"
+	next "item. (50HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"
