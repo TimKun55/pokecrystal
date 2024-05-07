@@ -171,11 +171,11 @@ FramesPointers:
 	dw CrobatFrames
 	dw ChinchouFrames
 	dw LanturnFrames
-	dw PichuFrames
-	dw CleffaFrames
-	dw IgglybuffFrames
+	dw MagnezoneFrames
+	dw CorsolaFrames
 	dw TogepiFrames
 	dw TogeticFrames
+	dw TogekissFrames
 	dw NatuFrames
 	dw XatuFrames
 	dw MareepFrames
@@ -197,9 +197,9 @@ FramesPointers:
 	dw QuagsireFrames
 	dw EspeonFrames
 	dw UmbreonFrames
-	dw MurkrowFrames
+	dw SylveonFrames
 	dw SlowkingFrames
-	dw MisdreavusFrames
+	dw StantlerFrames
 	dw UnownFrames
 	dw WobbuffetFrames
 	dw GirafarigFrames
@@ -221,7 +221,7 @@ FramesPointers:
 	dw MagcargoFrames
 	dw SwinubFrames
 	dw PiloswineFrames
-	dw CorsolaFrames
+	dw MamoswineFrames
 	dw RemoraidFrames
 	dw OctilleryFrames
 	dw DelibirdFrames
@@ -232,14 +232,14 @@ FramesPointers:
 	dw KingdraFrames
 	dw PhanpyFrames
 	dw DonphanFrames
-	dw Porygon2Frames
-	dw StantlerFrames
+	dw MisdreavusFrames
+	dw MismagiusFrames
 	dw SmeargleFrames
 	dw TyrogueFrames
 	dw HitmontopFrames
-	dw SmoochumFrames
-	dw ElekidFrames
-	dw MagbyFrames
+	dw MurkrowFrames
+	dw HonchkrowFrames
+	dw Porygon2Frames
 	dw MiltankFrames
 	dw BlisseyFrames
 	dw RaikouFrames

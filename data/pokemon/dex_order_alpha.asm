@@ -1,3 +1,4 @@
+
 ; Every Pokémon sorted alphabetically by name.
 
 AlphabeticalPokedexOrder:
@@ -30,7 +31,6 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db CLEFFA
 	db CLOYSTER
 	db CORSOLA
 	db CROBAT
@@ -54,7 +54,6 @@ AlphabeticalPokedexOrder:
 	db EKANS
 	db ELECTABUZZ
 	db ELECTRODE
-	db ELEKID
 	db ENTEI
 	db ESPEON
 	db EXEGGCUTE
@@ -87,13 +86,13 @@ AlphabeticalPokedexOrder:
 	db HITMONLEE
 	db HITMONTOP
 	db HO_OH
+	db HONCHKROW
 	db HOOTHOOT
 	db HOPPIP
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
-	db IGGLYBUFF
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
@@ -118,12 +117,13 @@ AlphabeticalPokedexOrder:
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
-	db MAGBY
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
 	db MAGNEMITE
 	db MAGNETON
+	db MAGNEZONE
+	db MAMOSWINE
 	db MANKEY
 	db MANTINE
 	db MAREEP
@@ -136,6 +136,7 @@ AlphabeticalPokedexOrder:
 	db MEWTWO
 	db MILTANK
 	db MISDREAVUS
+	db MISMAGIUS
 	db MOLTRES
 	db MR__MIME
 	db MUK
@@ -158,7 +159,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY
@@ -204,7 +204,6 @@ AlphabeticalPokedexOrder:
 	db SLOWPOKE
 	db SLUGMA
 	db SMEARGLE
-	db SMOOCHUM
 	db SNEASEL
 	db SNORLAX
 	db SNUBBULL
@@ -220,11 +219,13 @@ AlphabeticalPokedexOrder:
 	db SUNFLORA
 	db SUNKERN
 	db SWINUB
+	db SYLVEON
 	db TANGELA
 	db TAUROS
 	db TEDDIURSA
 	db TENTACOOL
 	db TENTACRUEL
+	db TOGEKISS
 	db TOGEPI
 	db TOGETIC
 	db TOTODILE

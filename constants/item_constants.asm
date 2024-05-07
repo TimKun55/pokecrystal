@@ -267,7 +267,13 @@ DEF TM01 EQU const_value
 	add_tm STEEL_WING   ; ee
 	add_tm FIRE_PUNCH   ; ef
 	add_tm FURY_CUTTER  ; f0
-	add_tm NIGHTMARE    ; f1 ;f2-f7 reserved for new TMs
+	add_tm NIGHTMARE    ; f1
+	add_tm MEGA_DRAIN   ; f2
+	add_tm BODY_SLAM    ; f3
+	add_tm SLUDGE       ; f4
+	add_tm FAINT_ATTACK ; f5
+	add_tm BULLDOZE     ; f6
+	add_tm CHARGE_BEAM  ; f7
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -304,6 +310,35 @@ DEF MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
+	add_mt DISARM_VOICE
+	add_mt DRAIN_KISS
+	add_mt DAZZLINGLEAM
+	add_mt MOONBLAST
+	add_mt POISON_JAB
+	add_mt SILVER_WIND
+	add_mt STONE_EDGE
+	add_mt NASTY_PLOT
+	add_mt HURRICANE
+	add_mt ENERGY_BALL
+	add_mt ROCK_BLAST
+	add_mt X_SCISSOR
+	add_mt GUNK_SHOT
+	add_mt ICICLE_SPEAR
+	add_mt ACROBATICS
+	add_mt DRAIN_PUNCH
+	add_mt DARK_PULSE
+	add_mt SIGNAL_BEAM
+	add_mt NIGHT_SLASH
+	add_mt FOCUS_BLAST
+	add_mt GROWTH_PUNCH
+	add_mt FLAME_CHARGE
+	add_mt SAND_TOMB
+	add_mt WATER_PULSE
+	add_mt ZEN_HEADBUTT
+	add_mt AIR_SLASH
+	add_mt HAIL
+	add_mt PLAY_ROUGH
+	add_mt GIGA_IMPACT
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

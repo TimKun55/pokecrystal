@@ -19,8 +19,8 @@ BillsGrandpa:
 	promptbutton
 	setevent EVENT_MET_BILLS_GRANDPA
 .MetGrandpa:
-	checkevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	iftrue .ShowedPichu
+	checkevent EVENT_SHOWED_MAGNEMITE_TO_BILLS_GRANDPA
+	iftrue .ShowedMagnemite
 	checkevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
 	iftrue .ShowedGrowlitheVulpix
 	checkevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
@@ -101,7 +101,7 @@ BillsGrandpa:
 	sjump .ShowedGrowlitheVulpix
 
 .GotFireStone:
-	writetext BillsGrandpaPichuText
+	writetext BillsGrandpaMagnemiteText
 	promptbutton
 	writetext BillsGrandpaAskToSeeMonText
 	yesorno
@@ -109,10 +109,10 @@ BillsGrandpa:
 	scall .ExcitedToSee
 	special BillsGrandfather
 	iffalse .SaidNo
-	ifnotequal PICHU, .WrongPokemon
+	ifnotequal MAGNEMITE, .WrongPokemon
 	scall .CorrectPokemon
-	setevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	sjump .ShowedPichu
+	setevent EVENT_SHOWED_MAGNEMITE_TO_BILLS_GRANDPA
+	sjump .ShowedMagnemite
 
 .ShowedLickitung:
 	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
@@ -158,7 +158,7 @@ BillsGrandpa:
 	closetext
 	end
 
-.ShowedPichu:
+.ShowedMagnemite:
 	scall .ReceiveItem
 	verbosegiveitem THUNDERSTONE
 	iffalse .BagFull
@@ -208,6 +208,12 @@ BillsGrandpa:
 .BagFull:
 	closetext
 	end
+	
+PokemonJournalBillScript:
+	writetext PokemonJournalBillText
+	
+BillsHousePCScript:
+	writetext BillsHousePCText
 
 BillsGrandpaIntroText:
 	text "Hm? You know BILL?"
@@ -335,20 +341,46 @@ BillsGrandpaVulpixText:
 	cont "like that."
 	done
 
-BillsGrandpaPichuText:
+BillsGrandpaMagnemiteText:
 	text "Do you know that"
-	line "hugely popular"
+	line "round, grey"
 	cont "#MON?"
 
 	para "The #MON that"
-	line "has a yellow body"
-	cont "and red cheeks."
+	line "has 6 magnets all"
+	cont "over its body."
 
 	para "I would love to"
 	line "see what it looks"
 
 	para "like before it"
 	line "evolves."
+	done
+
+PokemonJournalBillText:
+	text "#MON JOURNAL"
+
+	para "Special Feature:"
+	line "#MANIAC BILL!"
+
+	para "BILL invented the"
+	line "#MON STORAGE"
+	cont "SYSTEM to hold his"
+
+	para "own vast #MON"
+	line "collection."
+
+	para "Apparently, the"
+	line "first one he"
+
+	para "caught was an"
+	line "ABRA."
+	done
+	
+BillsHousePCText:
+	text "There's a spinning"
+	line "3D model of a"
+	cont "PORYGON."
 	done
 
 BillsHouse_MapEvents:
@@ -361,6 +393,9 @@ BillsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  6,  1, BGEVENT_READ, PokemonJournalBillScript
+	bg_event  7,  1, BGEVENT_READ, PokemonJournalBillScript
+	bg_event  5,  1, BGEVENT_READ, BillsHousePCText
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1

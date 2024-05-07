@@ -14,6 +14,8 @@ INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
+INCLUDE "data/pokemon/unused_pic_banks.asm"
+INCLUDE "engine/battle/getgen1trainerclassname.asm"
 
 
 SECTION "bank2", ROMX
@@ -233,15 +235,10 @@ SECTION "bank14", ROMX
 
 INCLUDE "engine/pokemon/party_menu.asm"
 INCLUDE "engine/events/poisonstep.asm"
-INCLUDE "engine/events/sweet_scent.asm"
 INCLUDE "engine/events/squirtbottle.asm"
-INCLUDE "engine/events/card_key.asm"
-INCLUDE "engine/events/basement_key.asm"
-INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
 INCLUDE "engine/pokemon/categories.asm"
-INCLUDE "engine/battle/getgen1trainerclassname.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
@@ -249,7 +246,6 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
-INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -277,6 +273,9 @@ INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
 INCLUDE "data/text/battle.asm"
 INCLUDE "engine/debug/color_picker.asm"
+INCLUDE "engine/events/sweet_scent.asm"
+INCLUDE "engine/events/card_key.asm"
+INCLUDE "engine/events/sacred_ash.asm"
 
 
 SECTION "bank21", ROMX
@@ -285,6 +284,7 @@ INCLUDE "engine/printer/printer_serial.asm"
 INCLUDE "engine/printer/printer.asm"
 INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
+INCLUDE "engine/events/basement_key.asm"
 
 
 SECTION "Crystal Features 2", ROMX

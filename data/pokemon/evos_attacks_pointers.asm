@@ -1,3 +1,4 @@
+
 ; Evolutions and attacks are grouped together since they're both checked at level-up.
 
 EvosAttacksPointers::
@@ -173,11 +174,11 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw PichuEvosAttacks
-	dw CleffaEvosAttacks
-	dw IgglybuffEvosAttacks
+	dw MagnezoneEvosAttacks
+	dw CorsolaEvosAttacks
 	dw TogepiEvosAttacks
 	dw TogeticEvosAttacks
+	dw TogekissEvosAttacks
 	dw NatuEvosAttacks
 	dw XatuEvosAttacks
 	dw MareepEvosAttacks
@@ -199,9 +200,9 @@ EvosAttacksPointers::
 	dw QuagsireEvosAttacks
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
-	dw MurkrowEvosAttacks
+	dw SylveonEvosAttacks
 	dw SlowkingEvosAttacks
-	dw MisdreavusEvosAttacks
+	dw StantlerEvosAttacks
 	dw UnownEvosAttacks
 	dw WobbuffetEvosAttacks
 	dw GirafarigEvosAttacks
@@ -223,7 +224,7 @@ EvosAttacksPointers::
 	dw MagcargoEvosAttacks
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
-	dw CorsolaEvosAttacks
+	dw MamoswineEvosAttacks
 	dw RemoraidEvosAttacks
 	dw OctilleryEvosAttacks
 	dw DelibirdEvosAttacks
@@ -234,14 +235,14 @@ EvosAttacksPointers::
 	dw KingdraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
-	dw Porygon2EvosAttacks
-	dw StantlerEvosAttacks
+	dw MisdreavusEvosAttacks
+	dw MismagiusEvosAttacks
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
-	dw SmoochumEvosAttacks
-	dw ElekidEvosAttacks
-	dw MagbyEvosAttacks
+	dw MurkrowEvosAttacks
+	dw HonchkrowEvosAttacks
+	dw Porygon2EvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks

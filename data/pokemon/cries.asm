@@ -1,3 +1,4 @@
+
 MACRO mon_cry
 ; index, pitch, length
 	dw \1, \2, \3
@@ -177,11 +178,11 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
-	mon_cry CRY_PICHU,         0,  320 ; PICHU
-	mon_cry CRY_CLEFFA,       97,  145 ; CLEFFA
-	mon_cry CRY_CHIKORITA,   232,  232 ; IGGLYBUFF
+	mon_cry CRY_METAPOD,      32,  320 ; MAGNEZONE
+	mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
+	mon_cry CRY_TOGETIC,      83,  256 ; TOGEKISS
 	mon_cry CRY_NATU,       -103,  256 ; NATU
 	mon_cry CRY_NATU,       -167,  360 ; XATU
 	mon_cry CRY_MAREEP,       34,  216 ; MAREEP
@@ -203,9 +204,9 @@ PokemonCries::
 	mon_cry CRY_WOOPER,     -198,  320 ; QUAGSIRE
 	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
 	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
-	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
+	mon_cry CRY_VENONAT,     176,  111 ; SYLVEON
 	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
-	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
+	mon_cry CRY_AIPOM,      -352,  384 ; STANTLER
 	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
 	mon_cry CRY_AMPHAROS,    635,  324 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,    65,  512 ; GIRAFARIG
@@ -227,7 +228,7 @@ PokemonCries::
 	mon_cry CRY_MAGCARGO,   -525,  448 ; MAGCARGO
 	mon_cry CRY_CYNDAQUIL,   510,  320 ; SWINUB
 	mon_cry CRY_MAGCARGO,   -265,  256 ; PILOSWINE
-	mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA
+	mon_cry CRY_MAGCARGO,   -280,  280 ; MAMOSWINE
 	mon_cry CRY_SUNFLORA,     13,  256 ; REMORAID
 	mon_cry CRY_TOTODILE,      0,  384 ; OCTILLERY
 	mon_cry CRY_TEDDIURSA,     2,  106 ; DELIBIRD
@@ -238,14 +239,14 @@ PokemonCries::
 	mon_cry CRY_SLUGMA,      763,  256 ; KINGDRA
 	mon_cry CRY_SENTRET,      72,  560 ; PHANPY
 	mon_cry CRY_DONPHAN,       0,  416 ; DONPHAN
-	mon_cry CRY_GIRAFARIG,   115,  576 ; PORYGON2
-	mon_cry CRY_AIPOM,      -352,  384 ; STANTLER
+	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
+	mon_cry CRY_HOOTHOOT,    608,  353 ; MISMAGIUS
 	mon_cry CRY_PICHU,      -538,  496 ; SMEARGLE
 	mon_cry CRY_AIPOM,        44,  264 ; TYROGUE
 	mon_cry CRY_SLUGMA,        0,  256 ; HITMONTOP
-	mon_cry CRY_MARILL,      104,  256 ; SMOOCHUM
-	mon_cry CRY_SUNFLORA,   -728,  180 ; ELEKID
-	mon_cry CRY_TEDDIURSA,   374,   58 ; MAGBY
+	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
+	mon_cry CRY_MARILL,      -62,  568 ; HONCHKROW
+	mon_cry CRY_GIRAFARIG,   115,  576 ; PORYGON2
 	mon_cry CRY_GLIGAR,     -461,  416 ; MILTANK
 	mon_cry CRY_SLOWKING,    659,  320 ; BLISSEY
 	mon_cry CRY_RAIKOU,      558,  288 ; RAIKOU
