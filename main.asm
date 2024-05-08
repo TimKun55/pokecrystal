@@ -127,6 +127,11 @@ INCLUDE "engine/link/link.asm"
 INCLUDE "engine/battle/link_result.asm"
 
 
+SECTION "Own Section", ROMX
+
+INCLUDE "engine/battle/swarm_shiny.asm"
+
+
 SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"
