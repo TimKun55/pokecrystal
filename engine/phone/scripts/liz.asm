@@ -59,7 +59,7 @@ LizGossip:
 	ifequal 4, .SwimmerF
 	ifequal 5, .KimonoGirl
 	ifequal 6, .Skier
-	ifequal 7, .Medium
+	ifequal 7, .HexManiac
 	ifequal 8, .PokefanM
 
 .CoolTrainerM:
@@ -90,8 +90,8 @@ LizGossip:
 	gettrainerclassname STRING_BUFFER_4, SKIER
 	sjump LizGossipScript
 
-.Medium:
-	gettrainerclassname STRING_BUFFER_4, MEDIUM
+.HexManiac:
+	gettrainerclassname STRING_BUFFER_4, HEX_MANIAC
 	sjump LizGossipScript
 
 .PokefanM:

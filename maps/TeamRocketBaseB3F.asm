@@ -1,7 +1,7 @@
 	object_const_def
 	const TEAMROCKETBASEB3F_LANCE
-	const TEAMROCKETBASEB3F_ROCKET1
-	const TEAMROCKETBASEB3F_MOLTRES
+	const TEAMROCKETBASEB3F_PETREL
+	const TEAMROCKETBASEB3F_MURKROW
 	const TEAMROCKETBASEB3F_ROCKET_GIRL
 	const TEAMROCKETBASEB3F_ROCKET2
 	const TEAMROCKETBASEB3F_SCIENTIST1
@@ -18,7 +18,7 @@ TeamRocketBaseB3F_MapScripts:
 	def_scene_scripts
 	scene_script TeamRocketBaseB3FLanceGetsPasswordScene, SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD
 	scene_script TeamRocketBaseB3FNoop1Scene,             SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER
-	scene_script TeamRocketBaseB3FNoop2Scene,             SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS
+	scene_script TeamRocketBaseB3FNoop2Scene,             SCENE_TEAMROCKETBASEB3F_PETREL
 	scene_script TeamRocketBaseB3FNoop3Scene,             SCENE_TEAMROCKETBASEB3F_NOOP
 
 	def_callbacks
@@ -49,7 +49,7 @@ TeamRocketBaseB3FCheckGiovanniDoorCallback:
 LanceGetPasswordScript:
 	turnobject PLAYER, LEFT
 	pause 5
-	turnobject TEAMROCKETBASEB3F_MOLTRES, RIGHT
+	cry MURKROW
 	pause 20
 	applymovement TEAMROCKETBASEB3F_LANCE, RocketBaseLanceApproachesPlayerMovement
 	opentext
@@ -77,50 +77,55 @@ RocketBaseRival:
 	applymovement PLAYER, RocketBaseRivalShovesPlayerMovement
 	applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalLeavesMovement
 	disappear TEAMROCKETBASEB3F_RIVAL
-	setscene SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS
+	setscene SCENE_TEAMROCKETBASEB3F_PETREL
 	special RestartMapMusic
 	end
 
 TeamRocketBaseB3FRocketScript:
 	jumptextfaceplayer TeamRocketBaseB3FRocketText
 
-RocketBaseBossLeft:
-	applymovement PLAYER, RocketBasePlayerApproachesBossLeftMovement
-	sjump RocketBaseBoss
+PetrelLeft:
+	applymovement PLAYER, RocketBasePlayerApproachesPetrelLeftMovement
+	sjump Petrel
 
-RocketBaseBossRight:
-	applymovement PLAYER, RocketBasePlayerApproachesBossRightMovement
-RocketBaseBoss:
+PetrelRight:
+	applymovement PLAYER, RocketBasePlayerApproachesPetrelRightMovement
+Petrel:
 	pause 30
-	showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ROCKET1, 15
+	showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_PETREL, 15
 	playmusic MUSIC_ROCKET_ENCOUNTER
-	turnobject TEAMROCKETBASEB3F_ROCKET1, DOWN
+	turnobject TEAMROCKETBASEB3F_PETREL, DOWN
 	opentext
-	writetext ExecutiveM4BeforeText
+	writetext PetrelBeforeText
 	waitbutton
 	closetext
-	applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossApproachesPlayerMovement
-	winlosstext ExecutiveM4BeatenText, 0
-	setlasttalked TEAMROCKETBASEB3F_ROCKET1
-	loadtrainer EXECUTIVEM, EXECUTIVEM_4
+	applymovement TEAMROCKETBASEB3F_PETREL, PetrelApproachesPlayerMovement
+	winlosstext PetrelBeatenText, 0
+	setlasttalked TEAMROCKETBASEB3F_PETREL
+	loadtrainer PETREL, PETREL1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_4
+	setevent EVENT_BEAT_PETREL_1
 	opentext
-	writetext ExecutiveM4AfterText
+	writetext PetrelAfterText
 	waitbutton
 	closetext
-	applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossHitsTableMovement
+	applymovement TEAMROCKETBASEB3F_PETREL, PetrelHitsTableMovement
 	playsound SFX_TACKLE
-	applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossLeavesMovement
-	disappear TEAMROCKETBASEB3F_ROCKET1
+	applymovement TEAMROCKETBASEB3F_PETREL, PetrelLeavesMovement
+	disappear TEAMROCKETBASEB3F_PETREL
 	setscene SCENE_TEAMROCKETBASEB3F_NOOP
 	end
 
 RocketBaseMurkrow:
 	opentext
 	writetext RocketBaseMurkrowText
+	cry MURKROW
 	waitbutton
+	refreshscreen
+	pokepic MURKROW
+	waitbutton
+	closepokepic
 	closetext
 	setevent EVENT_LEARNED_HAIL_GIOVANNI
 	end
@@ -193,7 +198,7 @@ TeamRocketBaseB3FLockedDoor:
 	waitbutton
 	playsound SFX_ENTER_DOOR
 	changeblock 10, 8, $07 ; floor
-	refreshmap
+	reloadmappart
 	closetext
 	setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
 	waitsfx
@@ -230,7 +235,7 @@ RocketBaseLanceLeavesMovement:
 	step LEFT
 	step_end
 
-RocketBasePlayerApproachesBossLeftMovement:
+RocketBasePlayerApproachesPetrelLeftMovement:
 	step UP
 	step UP
 	step UP
@@ -239,7 +244,7 @@ RocketBasePlayerApproachesBossLeftMovement:
 	turn_head UP
 	step_end
 
-RocketBasePlayerApproachesBossRightMovement:
+RocketBasePlayerApproachesPetrelRightMovement:
 	step UP
 	step UP
 	step LEFT
@@ -249,16 +254,16 @@ RocketBasePlayerApproachesBossRightMovement:
 	turn_head UP
 	step_end
 
-RocketBaseBossApproachesPlayerMovement:
+PetrelApproachesPlayerMovement:
 	step DOWN
 	step_end
 
-RocketBaseBossHitsTableMovement:
+PetrelHitsTableMovement:
 	big_step RIGHT
 	big_step RIGHT
 	step_end
 
-RocketBaseBossLeavesMovement:
+PetrelLeavesMovement:
 	fix_facing
 	fast_jump_step LEFT
 	remove_fixed_facing
@@ -383,7 +388,7 @@ RocketBaseRivalText:
 	cont "the likes of you!"
 	done
 
-ExecutiveM4BeforeText:
+PetrelBeforeText:
 	text "What? Who are you?"
 	line "This is the office"
 
@@ -410,7 +415,7 @@ ExecutiveM4BeforeText:
 	cont "place!"
 	done
 
-ExecutiveM4BeatenText:
+PetrelBeatenText:
 	text "I… I couldn't do a"
 	line "thing…"
 
@@ -418,7 +423,7 @@ ExecutiveM4BeatenText:
 	line "forgive me…"
 	done
 
-ExecutiveM4AfterText:
+PetrelAfterText:
 	text "No, I can't let"
 	line "this affect me."
 
@@ -573,8 +578,8 @@ TeamRocketBaseB3F_MapEvents:
 	warp_event 27, 14, TEAM_ROCKET_BASE_B2F, 5
 
 	def_coord_events
-	coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossLeft
-	coord_event 11,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossRight
+	coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_PETREL, PetrelLeft
+	coord_event 11,  8, SCENE_TEAMROCKETBASEB3F_PETREL, PetrelRight
 	coord_event  8, 10, SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER, RocketBaseRival
 
 	def_bg_events
@@ -591,8 +596,8 @@ TeamRocketBaseB3F_MapEvents:
 
 	def_object_events
 	object_event 25, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LanceGetPasswordScript, EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS
-	object_event  8,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE
-	object_event  7,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event  8,  3, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE
+	object_event  7,  2, SPRITE_MURKROW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 21,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SlowpokeTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  5, 14, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, RaticateTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 23, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistRoss, EVENT_TEAM_ROCKET_BASE_POPULATION

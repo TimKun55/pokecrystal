@@ -233,7 +233,7 @@ MisdreavusFrontpic:  INCBIN "gfx/pokemon/misdreavus/front.animated.2bpp.lz"
 HoundourFrontpic:    INCBIN "gfx/pokemon/houndour/front.animated.2bpp.lz"
 MankeyFrontpic:      INCBIN "gfx/pokemon/mankey/front.animated.2bpp.lz"
 CelebiFrontpic:      INCBIN "gfx/pokemon/celebi/front.animated.2bpp.lz"
-MediumPic:           INCBIN "gfx/trainers/medium.2bpp.lz"
+HexManiacPic:        INCBIN "gfx/trainers/hex_maniac.2bpp.lz"
 PinecoFrontpic:      INCBIN "gfx/pokemon/pineco/front.animated.2bpp.lz"
 KrabbyFrontpic:      INCBIN "gfx/pokemon/krabby/front.animated.2bpp.lz"
 FisherPic:           INCBIN "gfx/trainers/fisher.2bpp.lz"
@@ -260,6 +260,7 @@ KimonoGirlPic:       INCBIN "gfx/trainers/kimono_girl.2bpp.lz"
 AlakazamBackpic:     INCBIN "gfx/pokemon/alakazam/back.2bpp.lz"
 AipomFrontpic:       INCBIN "gfx/pokemon/aipom/front.animated.2bpp.lz"
 AbraFrontpic:        INCBIN "gfx/pokemon/abra/front.animated.2bpp.lz"
+Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
 
 
 SECTION "Pics 11", ROMX
@@ -518,7 +519,7 @@ HoppipBackpic:       INCBIN "gfx/pokemon/hoppip/back.2bpp.lz"
 BluePic:             INCBIN "gfx/trainers/blue.2bpp.lz"
 GranbullBackpic:     INCBIN "gfx/pokemon/granbull/back.2bpp.lz"
 GentlemanPic:        INCBIN "gfx/trainers/gentleman.2bpp.lz"
-ExecutivemPic:       INCBIN "gfx/trainers/executive_m.2bpp.lz"
+ArcherPic:           INCBIN "gfx/trainers/archer.2bpp.lz"
 SpearowBackpic:      INCBIN "gfx/pokemon/spearow/back.2bpp.lz"
 SunkernBackpic:      INCBIN "gfx/pokemon/sunkern/back.2bpp.lz"
 LaprasBackpic:       INCBIN "gfx/pokemon/lapras/back.2bpp.lz"
@@ -548,7 +549,7 @@ SECTION "Pics 17", ROMX
 ParasBackpic:        INCBIN "gfx/pokemon/paras/back.2bpp.lz"
 VaporeonBackpic:     INCBIN "gfx/pokemon/vaporeon/back.2bpp.lz"
 TentacoolBackpic:    INCBIN "gfx/pokemon/tentacool/back.2bpp.lz"
-ExecutivefPic:       INCBIN "gfx/trainers/executive_f.2bpp.lz"
+ArianaPic:           INCBIN "gfx/trainers/ariana.2bpp.lz"
 BulbasaurBackpic:    INCBIN "gfx/pokemon/bulbasaur/back.2bpp.lz"
 MamoswineBackpic:    INCBIN "gfx/pokemon/mamoswine/back.2bpp.lz"
 MagnezoneBackpic:    INCBIN "gfx/pokemon/magnezone/back.2bpp.lz"
@@ -729,7 +730,6 @@ SandshrewFrontpic:   INCBIN "gfx/pokemon/sandshrew/front.animated.2bpp.lz"
 SECTION "Pics 22", ROMX
 
 CelebiBackpic:       INCBIN "gfx/pokemon/celebi/back.2bpp.lz"
-Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
 
 SECTION "Pics 23", ROMX
 

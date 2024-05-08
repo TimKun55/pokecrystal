@@ -53,13 +53,13 @@ BTTrainerClassGenders:
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER
 	db MALE   ; BLACKBELT_T
-	db MALE   ; EXECUTIVEM
+	db MALE   ; ARCHER
 	db MALE   ; PSYCHIC_T
 	db FEMALE ; PICNICKER
 	db MALE   ; CAMPER
-	db FEMALE ; EXECUTIVEF
+	db FEMALE ; ARIANA
 	db MALE   ; SAGE
-	db FEMALE ; MEDIUM
+	db FEMALE ; HEX_MANIAC
 	db MALE   ; BOARDER
 	db MALE   ; POKEFANM
 	db FEMALE ; KIMONO_GIRL
@@ -69,4 +69,12 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
-	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN
+	db MALE   ; MYSTICALMAN
+	db MALE   ; EX_BOSS
+	db FEMALE ; LADY
+	db FEMALE ; AGATHA
+	db FEMALE ; LORELEI
+	db MALE   ; PROTON
+	db MALE   ; PETREL
+	db MALE   ; BUG_MANIAC
+	assert_table_length NUM_TRAINER_CLASSES

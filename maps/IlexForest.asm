@@ -7,6 +7,7 @@
 	const ILEXFOREST_KURT
 	const ILEXFOREST_LASS
 	const ILEXFOREST_YOUNGSTER2
+	const ILEXFOREST_BUG_MANIAC
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
@@ -395,6 +396,17 @@ TrainerBugCatcherWayne:
 	waitbutton
 	closetext
 	end
+	
+TrainerBugManiacBobby:
+	trainer BUG_MANIAC, BOBBY, EVENT_BEAT_BUG_MANIAC_BOBBY, BugManiacBobbySeenText, BugManiacBobbyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacBobbyAfterBattleText
+	waitbutton
+	closetext
+	end
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
@@ -402,8 +414,8 @@ IlexForestLassScript:
 IlexForestRevive:
 	itemball REVIVE
 
-IlexForestXAttack:
-	itemball X_ATTACK
+IlexForestTMChargeBeam:
+	itemball TM_CHARGE_BEAM
 
 IlexForestAntidote:
 	itemball ANTIDOTE
@@ -411,17 +423,14 @@ IlexForestAntidote:
 IlexForestEther:
 	itemball ETHER
 
-IlexForestHiddenEther:
-	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
+IlexForestHiddenLeafStone:
+	hiddenitem LEAF_STONE, EVENT_ILEX_FOREST_HIDDEN_LEAF_STONE
 
 IlexForestHiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
-
-IlexForestBoulder: ; unreferenced
-	jumpstd StrengthBoulderScript
 
 IlexForestSignpost:
 	jumptext IlexForestSignpostText
@@ -933,6 +942,25 @@ BugCatcherWayneAfterBattleText:
 	line "HEADBUTT in other"
 	cont "places too."
 	done
+	
+BugManiacBobbySeenText:
+	text "Wait! You beat"
+	line "BUGSY?"
+
+	para "Let's battle!"
+	done
+
+BugManiacBobbyBeatenText:
+	text "Not bad!"
+	done
+
+BugManiacBobbyAfterBattleText:
+	text "Wow, yeah you"
+	line "definitely beat"
+	
+	para "BUGSY with that"
+	line "kind of power!"
+	done
 
 IlexForest_MapEvents:
 	db 0, 0 ; filler
@@ -946,20 +974,22 @@ IlexForest_MapEvents:
 
 	def_bg_events
 	bg_event  3, 17, BGEVENT_READ, IlexForestSignpost
-	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
+	bg_event 13,  9, BGEVENT_ITEM, IlexForestHiddenLeafStone
 	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
-	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
+	bg_event 11, 25, BGEVENT_UP, IlexForestShrineScript
+	bg_event 10, 25, BGEVENT_UP, IlexForestShrineScript
 
 	def_object_events
-	object_event 14, 31, SPRITE_BIRD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
+	object_event 14, 31, SPRITE_FARFETCH_D_ILEX, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
 	object_event  7, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE
 	object_event  5, 28, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	object_event 15, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1
 	object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
 	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
+	object_event  3, 28, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacBobby, EVENT_BEAT_BUG_MANIAC_BOBBY, -1
 	object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
-	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
+	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestTMChargeBeam, EVENT_ILEX_FOREST_TM_CHARGE_BEAM
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
