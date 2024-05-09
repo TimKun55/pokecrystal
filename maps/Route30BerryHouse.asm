@@ -10,13 +10,13 @@ Route30BerryHousePokefanMScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_ORAN_BERRY_FROM_ROUTE_30_HOUSE
-	iftrue .GotBerry
+	iftrue .GotOranBerry
 	writetext Route30BerrySpeechHouseMonEatBerriesText
 	promptbutton
 	verbosegiveitem ORAN_BERRY, 3
 	iffalse .NoRoom
 	setevent EVENT_GOT_ORAN_BERRY_FROM_ROUTE_30_HOUSE
-.GotBerry:
+.GotOranBerry:
 	writetext Route30BerrySpeechHouseCheckTreesText
 	waitbutton
 .NoRoom:

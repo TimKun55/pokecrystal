@@ -1,6 +1,6 @@
 	object_const_def
 	const OLIVINELIGHTHOUSE6F_JASMINE
-	const OLIVINELIGHTHOUSE6F_AMPHAROS
+	const OLIVINELIGHTHOUSE6F_MONSTER
 	const OLIVINELIGHTHOUSE6F_POKE_BALL
 
 OlivineLighthouse6F_MapScripts:
@@ -36,7 +36,7 @@ OlivineLighthouseJasmine:
 	closetext
 	turnobject OLIVINELIGHTHOUSE6F_JASMINE, RIGHT
 	pause 15
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	opentext
 	playmusic MUSIC_HEAL
 	writetext JasmineAmphyHowAreYouFeelingText
@@ -52,13 +52,13 @@ OlivineLighthouseJasmine:
 	writetext AmphyPaluPaluluText
 	waitbutton
 	closetext
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	pause 10
 	faceplayer
 	opentext
@@ -90,7 +90,7 @@ OlivineLighthouseJasmine:
 	closetext
 	turnobject OLIVINELIGHTHOUSE6F_JASMINE, RIGHT
 	pause 15
-	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	opentext
 	writetext JasmineAmphyHangOnText
 	waitbutton

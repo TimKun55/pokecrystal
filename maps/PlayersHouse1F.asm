@@ -4,6 +4,7 @@
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
 	const PLAYERSHOUSE1F_POKEFAN_F
+	const PLAYERSHOUSE1F_PIKACHU
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
@@ -181,6 +182,18 @@ NeighborScript:
 	closetext
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
 	end
+	
+NeighborPikachuScript:
+	opentext
+	writetext NeighborPikachuText
+	cry PIKACHU
+	waitbutton
+	refreshscreen
+	pokepic PIKACHU
+	waitbutton
+	closepokepic
+	closetext
+	end
 
 PlayersHouse1FTVScript:
 	jumptext PlayersHouse1FTVText
@@ -263,11 +276,9 @@ ComeHomeForDSTText:
 	done
 
 KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
+	text "That's my kid!"
+	line "Always so tech"
+	cont "savvy!"
 	done
 
 DontKnowTheInstructionsText:
@@ -277,17 +288,17 @@ DontKnowTheInstructionsText:
 	para "Turn the #GEAR"
 	line "on and select the"
 	cont "PHONE icon."
-	done
-
-InstructionsNextText:
-	text "Phone numbers are"
+	
+	para "Phone numbers are"
 	line "stored in memory."
 
 	para "Just choose a name"
 	line "you want to call."
+	done
 
-	para "Gee, isn't that"
-	line "convenient?"
+InstructionsNextText:
+	text "Phones really are"
+	line "so convenient."
 	done
 
 HurryUpElmIsWaitingText:
@@ -350,6 +361,10 @@ NeighborText:
 	para "She really loves"
 	line "#MON!"
 	done
+	
+NeighborPikachuText:
+	text "PIKACHU: Pika! Pi!"
+	done
 
 PlayersHouse1FStoveText:
 	text "Mom's specialty!"
@@ -387,23 +402,24 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, NEW_BARK_TOWN, 2
-	warp_event  7,  7, NEW_BARK_TOWN, 2
-	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
+	warp_event  8,  7, NEW_BARK_TOWN, 2
+	warp_event  9,  7, NEW_BARK_TOWN, 2
+	warp_event 11,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
-	coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
-	coord_event  9,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
+	coord_event 10,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
+	coord_event 11,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, PlayersHouse1FStoveScript
-	bg_event  1,  1, BGEVENT_READ, PlayersHouse1FSinkScript
-	bg_event  2,  1, BGEVENT_READ, PlayersHouse1FFridgeScript
-	bg_event  4,  1, BGEVENT_READ, PlayersHouse1FTVScript
+	bg_event  3,  1, BGEVENT_READ, PlayersHouse1FStoveScript
+	bg_event  2,  1, BGEVENT_READ, PlayersHouse1FSinkScript
+	bg_event  1,  1, BGEVENT_READ, PlayersHouse1FFridgeScript
+	bg_event  6,  1, BGEVENT_READ, PlayersHouse1FTVScript
 
 	def_object_events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  9,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  3,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  9,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  1,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  5,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NeighborPikachuScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

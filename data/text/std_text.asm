@@ -387,3 +387,7 @@ RegisteredNumber2Text:
 	text_ram wStringBuffer3
 	text "'s number."
 	done
+
+PokecenterChanseyText:
+	text "CHANSEY: Chansey!!"
+	done

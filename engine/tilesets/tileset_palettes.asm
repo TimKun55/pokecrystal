@@ -1,23 +1,16 @@
 LoadSpecialMapPalette:
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
 	cp TILESET_ICE_PATH
 	jr z, .ice_path
-	cp TILESET_HOUSE
-	jr z, .house
 	cp TILESET_RADIO_TOWER
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_POKECENTER
+	jr z, .pokecenter
 	jr .do_nothing
-
-.pokecom_2f
-	call LoadPokeComPalette
-	scf
-	ret
 
 .battle_tower_inside
 	call LoadBattleTowerInsidePalette
@@ -33,11 +26,6 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.house
-	call LoadHousePalette
-	scf
-	ret
-
 .radio_tower
 	call LoadRadioTowerPalette
 	scf
@@ -47,21 +35,15 @@ LoadSpecialMapPalette:
 	call LoadMansionPalette
 	scf
 	ret
+	
+.pokecenter
+	call LoadPokeCenterPalette
+	scf
+	ret
 
 .do_nothing
 	and a
 	ret
-
-LoadPokeComPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, PokeComPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
-PokeComPalette:
-INCLUDE "gfx/tilesets/pokecom_center.pal"
 
 LoadBattleTowerInsidePalette:
 	ld a, BANK(wBGPals1)
@@ -84,17 +66,6 @@ LoadIcePathPalette:
 
 IcePathPalette:
 INCLUDE "gfx/tilesets/ice_path.pal"
-
-LoadHousePalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, HousePalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
-HousePalette:
-INCLUDE "gfx/tilesets/house.pal"
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -135,3 +106,14 @@ LoadMansionPalette:
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
+
+LoadPokeCenterPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PokeCenterPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+PokeCenterPalette:
+INCLUDE "gfx/tilesets/pokecenter.pal"

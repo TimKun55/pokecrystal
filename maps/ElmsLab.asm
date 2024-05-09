@@ -160,7 +160,7 @@ CyndaquilPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
 	waitbutton
@@ -190,7 +190,7 @@ TotodilePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic TOTODILE
 	cry TOTODILE
 	waitbutton
@@ -218,7 +218,7 @@ ChikoritaPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic CHIKORITA
 	cry CHIKORITA
 	waitbutton
@@ -601,9 +601,6 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
-
-ElmsLabTrashcan2: ; unreferenced
-	jumpstd TrashCanScript
 
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -1207,12 +1204,6 @@ ElmGiveTicketText2:
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
-	done
-
-ElmsLabMonEggText: ; unreferenced
-	text "It's the #MON"
-	line "EGG being studied"
-	cont "by PROF.ELM."
 	done
 
 AideText_GiveYouPotion:

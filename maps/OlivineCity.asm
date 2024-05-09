@@ -2,7 +2,7 @@
 	const OLIVINECITY_SAILOR1
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
-	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_RIVAL
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -28,9 +28,9 @@ OlivineCityRivalSceneTop:
 	special FadeOutMusic
 	pause 15
 	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
+	appear OLIVINECITY_RIVAL
 	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalApproachesTopMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext OlivineCityRivalText
@@ -38,9 +38,9 @@ OlivineCityRivalSceneTop:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesTopMovement
 	setscene SCENE_OLIVINECITY_NOOP
-	disappear OLIVINECITY_OLIVINE_RIVAL
+	disappear OLIVINECITY_RIVAL
 	special RestartMapMusic
 	end
 
@@ -50,9 +50,9 @@ OlivineCityRivalSceneBottom:
 	special FadeOutMusic
 	pause 15
 	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
+	appear OLIVINECITY_RIVAL
 	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalApproachesBottomMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext OlivineCityRivalText
@@ -60,8 +60,8 @@ OlivineCityRivalSceneBottom:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement
-	disappear OLIVINECITY_OLIVINE_RIVAL
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesBottomMovement
+	disappear OLIVINECITY_RIVAL
 	setscene SCENE_OLIVINECITY_NOOP
 	special RestartMapMusic
 	end
@@ -287,32 +287,31 @@ OlivineCity_MapEvents:
 
 	def_warp_events
 	warp_event 13, 21, OLIVINE_POKECENTER_1F, 1
-	warp_event 10, 11, OLIVINE_GYM, 1
-	warp_event 25, 11, OLIVINE_TIMS_HOUSE, 1
-	warp_event  0,  0, OLIVINE_HOUSE_BETA, 1 ; inaccessible
-	warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
-	warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1
+	warp_event 10,  9, OLIVINE_GYM, 1
+	warp_event 25, 12, OLIVINE_TIMS_HOUSE, 1
+	warp_event 11, 14, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
+	warp_event 17, 14, OLIVINE_GOOD_ROD_HOUSE, 1
 	warp_event  7, 21, OLIVINE_CAFE, 1
-	warp_event 19, 17, OLIVINE_MART, 2
-	warp_event 29, 27, OLIVINE_LIGHTHOUSE_1F, 1
-	warp_event 19, 27, OLIVINE_PORT_PASSAGE, 1
-	warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2
+	warp_event 23, 21, OLIVINE_MART, 2
+	warp_event 31, 21, OLIVINE_LIGHTHOUSE_1F, 1
+	warp_event 19, 31, OLIVINE_PORT_PASSAGE, 1
+	warp_event 20, 31, OLIVINE_PORT_PASSAGE, 2
 
 	def_coord_events
-	coord_event 13, 12, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop
-	coord_event 13, 13, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneBottom
+	coord_event 13, 10, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop
+	coord_event 13, 11, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneBottom
 
 	def_bg_events
-	bg_event 17, 11, BGEVENT_READ, OlivineCitySign
-	bg_event 20, 24, BGEVENT_READ, OlivineCityPortSign
-	bg_event  7, 11, BGEVENT_READ, OlivineGymSign
-	bg_event 30, 28, BGEVENT_READ, OlivineLighthouseSign
+	bg_event 16,  8, BGEVENT_READ, OlivineCitySign
+	bg_event 17, 25, BGEVENT_READ, OlivineCityPortSign
+	bg_event  8,  9, BGEVENT_READ, OlivineGymSign
+	bg_event 32, 26, BGEVENT_READ, OlivineLighthouseSign
 	bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
-	bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign
+	bg_event 24, 21, BGEVENT_READ, OlivineCityMartSign
 
 	def_object_events
-	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
-	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
+	object_event 25, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
+	object_event 19, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
-	object_event 10, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY

@@ -1,5 +1,6 @@
 	object_const_def
 	const BRUNOSROOM_BRUNO
+	const BRUNOSROOM_HITMONCHAMP
 
 BrunosRoom_MapScripts:
 	def_scene_scripts
@@ -29,11 +30,11 @@ BrunosRoomDoorsCallback:
 
 BrunosRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, BrunosRoom_EnterMovement
-	reanchormap $86
+	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	refreshmap
+	reloadmappart
 	closetext
 	setscene SCENE_BRUNOSROOM_NOOP
 	setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
@@ -49,9 +50,12 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
+	readvar VAR_BADGES
+	ifequal 16, .BrunoScript_16Badges
 	loadtrainer BRUNO, BRUNO1
 	startbattle
 	reloadmapafterbattle
+.AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_BRUNO
 	opentext
 	writetext BrunoScript_BrunoDefeatText
@@ -59,15 +63,33 @@ BrunoScript_Battle:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	refreshmap
+	reloadmappart
 	closetext
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 
+.BrunoScript_16Badges:
+	loadtrainer BRUNO, BRUNO2
+	startbattle
+	reloadmapafterbattle
+	sjump .AfterBattle
+
 BrunoScript_AfterBattle:
 	writetext BrunoScript_BrunoDefeatText
 	waitbutton
+	closetext
+	end
+
+BrunosRoomMachamp:
+	opentext
+	writetext MachampText
+	cry MACHAMP
+	waitbutton
+	refreshscreen
+	pokepic MACHAMP
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -121,6 +143,11 @@ BrunoScript_BrunoDefeatText:
 	para "Go face your next"
 	line "challenge!"
 	done
+	
+MachampText:
+	text "MACHAMP: Champ!!"
+	line "Machampchamp!"
+	done
 
 BrunosRoom_MapEvents:
 	db 0, 0 ; filler
@@ -137,3 +164,4 @@ BrunosRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1
+	object_event  4,  7, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunosRoomMachamp, -1

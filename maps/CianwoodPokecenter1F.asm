@@ -1,5 +1,6 @@
 	object_const_def
 	const CIANWOODPOKECENTER1F_NURSE
+	const CIANWOODPOKECENTER1F_CHANSEY
 	const CIANWOODPOKECENTER1F_LASS
 	const CIANWOODPOKECENTER1F_GYM_GUIDE
 	const CIANWOODPOKECENTER1F_SUPER_NERD
@@ -11,6 +12,9 @@ CianwoodPokecenter1F_MapScripts:
 
 CianwoodPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+
+CianwoodPokecenter1FChansey:
+	jumpstd PokecenterChanseyScript
 
 CianwoodPokecenter1FLassScript:
 	jumptextfaceplayer CianwoodPokecenter1FLassText
@@ -89,32 +93,6 @@ CianwoodGymGuideWinText:
 	cont "looking at you!"
 	done
 
-CianwoodPokecenter1FUnusedText1: ; unreferenced
-	text "Don't you get the"
-	line "urge to show off"
-
-	para "your #MON to"
-	line "friends?"
-
-	para "I wish I could"
-	line "show the #MON I"
-
-	para "raised to my pal"
-	line "in VIOLET."
-	done
-
-CianwoodPokecenter1FUnusedText2: ; unreferenced
-	text "I've been battling"
-	line "my pal in VIOLET"
-
-	para "using a MOBILE"
-	line "ADAPTER link."
-
-	para "I'm down 5-7"
-	line "against him. I've"
-	cont "gotta crank it up!"
-	done
-
 CianwoodPokecenter1FSuperNerdText:
 	text "I love showing off"
 	line "the #MON that"
@@ -128,13 +106,13 @@ CianwoodPokecenter1FSuperNerdText:
 	para "battles, and show"
 	line "off my #MON!"
 	done
-
+	
 CianwoodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, CIANWOOD_CITY, 3
-	warp_event  4,  7, CIANWOOD_CITY, 3
+	warp_event  5,  7, CIANWOOD_CITY, 3
+	warp_event  6,  7, CIANWOOD_CITY, 3
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -142,7 +120,8 @@ CianwoodPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
-	object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1
-	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
+	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1
+	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FChansey, -1
+	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
+	object_event  3,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1
+	object_event 10,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1

@@ -252,12 +252,6 @@ TrainerFisherRalph1:
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.Swarm:
-	writetext FisherRalphSwarmText
-	waitbutton
-	closetext
-	end
-
 .AskNumber1:
 	jumpstd AskNumber1MScript
 	end
@@ -934,7 +928,7 @@ Route32_MapEvents:
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
 	bg_event  9,  1, BGEVENT_READ, Route32RuinsSign
-	bg_event 10, 84, BGEVENT_READ, Route32UnionCaveSign
+	bg_event  8, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
 	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion

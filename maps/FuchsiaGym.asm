@@ -1,5 +1,6 @@
 	object_const_def
 	const FUCHSIAGYM_JANINE
+	const FUCHSIAGYM_WEEZING
 	const FUCHSIAGYM_FUCHSIA_GYM_1
 	const FUCHSIAGYM_FUCHSIA_GYM_2
 	const FUCHSIAGYM_FUCHSIA_GYM_3
@@ -12,6 +13,8 @@ FuchsiaGym_MapScripts:
 	def_callbacks
 
 FuchsiaGymJanineScript:
+	checkevent EVENT_BEAT_KANTO_LEADERS
+	iftrue .JanineScript_Rematch
 	checkflag ENGINE_SOULBADGE
 	iftrue .FightDone
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
@@ -54,6 +57,45 @@ FuchsiaGymJanineScript:
 .AfterTM:
 	writetext JanineText_ApplyMyself
 	waitbutton
+	closetext
+	readvar VAR_BADGES
+	ifequal 16, .afterbattle16
+	end
+
+.afterbattle16
+	setevent EVENT_BEAT_KANTO_LEADERS
+	end
+	
+.JanineScript_Rematch
+	writetext JanineRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext JanineWinLossRematchText, 0
+	loadtrainer JANINE, JANINE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext JanineRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+.EndRematch
+	writetext JanineNextTimeText
+	waitbutton
+	closetext
+	end	
+	
+FuchsiaGymWeezing:
+	opentext
+	writetext WeezingText
+	cry WEEZING
+	waitbutton
+	refreshscreen
+	pokepic WEEZING
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -252,13 +294,13 @@ JanineText_ToughOne:
 	line "tough one. You"
 	cont "definitely won…"
 
-	para "Here's SOULBADGE."
-	line "Take it."
+	para "Here's the SOUL-"
+	line "BADGE. Take it."
 	done
 
 Text_ReceivedSoulBadge:
 	text "<PLAYER> received"
-	line "SOULBADGE."
+	line "the SOULBADGE."
 	done
 
 JanineText_ToxicSpeech:
@@ -283,6 +325,36 @@ JanineText_ApplyMyself:
 	para "I want to become"
 	line "better than both"
 	cont "Father and you!"
+	done
+	
+JanineRematchIntroText:
+	text "<PLAYER>."
+	line "Its good to see"
+	cont "you again."
+	
+	para "Have you come"
+	line "for a rematch?"
+	done
+	
+JanineWinLossRematchText:
+	text "You've got a great" 
+	line "battle technique!"
+	done
+	
+JanineRematchAfterBattleText:
+	text "I'm going to keep"
+	line "training so I can"
+	
+	para "surpass both you"
+	line "and my father!"
+	
+	para "Come back for"
+	line "a rematch"
+	cont "sometime!"
+	done
+	
+JanineNextTimeText:
+	text "I'll be here."
 	done
 
 LassAliceBeforeText:
@@ -378,12 +450,17 @@ FuchsiaGymGuideWinText:
 	cont "from JOHTO!"
 	done
 
+WeezingText:
+	text "WEEZING: Zing!!"
+	line "WeezingWee!"
+	done
+
 FuchsiaGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, FUCHSIA_CITY, 3
-	warp_event  5, 17, FUCHSIA_CITY, 3
+	warp_event  4, 17, FUCHSIA_CITY, 2
+	warp_event  5, 17, FUCHSIA_CITY, 2
 
 	def_coord_events
 
@@ -392,9 +469,10 @@ FuchsiaGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, FuchsiaGymStatue
 
 	def_object_events
-	object_event  1, 10, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
-	object_event  5,  7, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
-	object_event  5, 11, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
-	object_event  9,  4, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1
-	object_event  4,  2, SPRITE_FUCHSIA_GYM_4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CamperBarryScript, -1
+	object_event  5,  9, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
+	object_event  4,  9, SPRITE_WEEZING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymWeezing, -1
+	object_event  5,  7, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
+	object_event  5, 13, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
+	object_event  9,  4, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1
+	object_event  4,  2, SPRITE_FUCHSIA_GYM_4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CamperBarryScript, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymGuideScript, -1

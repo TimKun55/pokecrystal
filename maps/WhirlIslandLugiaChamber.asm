@@ -30,8 +30,8 @@ Lugia:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_LUGIA
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-	loadwildmon LUGIA, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LUGIA
+	loadwildmon LUGIA, 75
 	startbattle
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
 	reloadmapafterbattle
@@ -52,4 +52,4 @@ WhirlIslandLugiaChamber_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
+	object_event  9,  8, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA

@@ -3,8 +3,8 @@
 	const POKEMONFANCLUB_RECEPTIONIST
 	const POKEMONFANCLUB_CLEFAIRY_GUY
 	const POKEMONFANCLUB_TEACHER
-	const POKEMONFANCLUB_CLEFAIRY
-	const POKEMONFANCLUB_BAYLEEF
+	const POKEMONFANCLUB_FAIRY
+	const POKEMONFANCLUB_ODDISH
 
 PokemonFanClub_MapScripts:
 	def_scene_scripts
@@ -77,7 +77,7 @@ PokemonFanClubClefairyGuyScript:
 	waitsfx
 	giveitem LOST_ITEM
 	iffalse .NoRoom
-	disappear POKEMONFANCLUB_CLEFAIRY
+	disappear POKEMONFANCLUB_FAIRY
 	writetext PokemonFanClubPlayerReceivedDollText
 	playsound SFX_KEY_ITEM
 	waitsfx

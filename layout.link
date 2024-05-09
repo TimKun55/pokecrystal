@@ -31,6 +31,7 @@ ROM0
 	"Home"
 ROMX $01
 	"bank1"
+	"Egg Moves"
 ROMX $02
 	"bank2"
 ROMX $03
@@ -44,11 +45,9 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
-	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
-	"Egg Moves"
 ROMX $09
 	"bank9"
 ROMX $0a
@@ -106,6 +105,7 @@ ROMX $20
 	"bank20"
 ROMX $21
 	"bank21"
+	"Extra Songs 1"
 ROMX $22
 	"Crystal Features 2"
 ROMX $23
@@ -298,24 +298,22 @@ ROMX $74
 ROMX $77
 	"Unown Font"
 	"Print Party"
-	"Tileset Data 7"
 	"bank77"
 	"Pokégear GFX"
 	"European Mail"
 ROMX $78
 	"Debug Room"
-	"Tileset Data 8"
+	"Tileset Data 7"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
-	"Mobile News Data"
+	"Tileset Data 8"
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
-	org $7de0
-	"Stadium 2 Checksums"
+	"Tileset Data 9"
 ROMX $80
 	"The End"
 WRAM0

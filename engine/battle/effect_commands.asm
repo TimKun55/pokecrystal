@@ -4994,12 +4994,12 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_SUICUNE
 	jp z, .fail
-;	cp BATTLETYPE_LUGIA
-;	jp z, .fail	
-;	cp BATTLETYPE_HO_OH
-;	jp z, .fail
-;	cp BATTLETYPE_KANTO_LEGEND
-;	jp z, .fail		
+	cp BATTLETYPE_LUGIA
+	jp z, .fail	
+	cp BATTLETYPE_HO_OH
+	jp z, .fail
+	cp BATTLETYPE_KANTO_LEGEND
+	jp z, .fail		
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .force_player_switch

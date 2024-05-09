@@ -55,10 +55,10 @@ RadioTower1FLuckyNumberManScript:
 	closetext
 	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement
 	opentext
-	ifless 2, .NoPrize ; 0-1 digits match
-	ifless 3, .ThirdPlace ; 2 digits match
-	ifless 5, .SecondPlace ; 3-4 digits match
-	sjump .FirstPlace ; all digits match
+	ifequal 1, .FirstPlace
+	ifequal 2, .SecondPlace
+	ifequal 3, .ThirdPlace
+	sjump .NoPrize
 
 .GameOver:
 	writetext RadioTower1FLuckyNumberManComeAgainText

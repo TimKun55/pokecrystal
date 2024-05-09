@@ -43,7 +43,7 @@ RuinsOfAlphKabutoChamberWallOpenScript:
 	pause 30
 	playsound SFX_STRENGTH
 	changeblock 4, 0, $30 ; open wall
-	refreshmap
+	reloadmappart
 	earthquake 50
 	setscene SCENE_RUINSOFALPHKABUTOCHAMBER_NOOP
 	closetext
@@ -53,7 +53,7 @@ RuinsOfAlphKabutoChamberReceptionistScript:
 	jumptextfaceplayer RuinsOfAlphKabutoChamberReceptionistText
 
 RuinsOfAlphKabutoChamberPuzzle:
-	reanchormap
+	refreshscreen
 	setval UNOWNPUZZLE_KABUTO
 	special UnownPuzzle
 	closetext
@@ -70,7 +70,7 @@ RuinsOfAlphKabutoChamberPuzzle:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	changeblock 2, 2, $18 ; left hole
 	changeblock 4, 2, $19 ; right hole
-	refreshmap
+	reloadmappart
 	playsound SFX_STRENGTH
 	earthquake 80
 	applymovement PLAYER, RuinsOfAlphKabutoChamberSkyfallTopMovement
@@ -200,31 +200,9 @@ RuinsOfAlphKabutoChamberScientistTremorText:
 	cont "this wall here…"
 	done
 
-RuinsOfAlphKabutoChamberUnusedText: ; unreferenced
-	text "The patterns on"
-	line "the wall appear to"
-	cont "be words!"
-
-	para "And those sliding"
-	line "stone panels seem"
-
-	para "to be signals of"
-	line "some kind."
-
-	para "I think they make"
-	line "#MON appear,"
-
-	para "but it's not clear"
-	line "yet…"
-	done
-
 RuinsOfAlphKabutoChamberWallPatternLeftText:
 	text "Patterns appeared"
 	line "on the walls…"
-	done
-
-RuinsOfAlphKabutoChamberUnownText: ; unreferenced
-	text "It's UNOWN text!"
 	done
 
 RuinsOfAlphKabutoChamberWallPatternRightText:

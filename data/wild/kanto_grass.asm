@@ -936,128 +936,128 @@ KantoGrassWildMons:
 	db  8, RAICHU,        65,  68
 	end_grass_wildmons
 	
-;	def_grass_wildmons SAFARI_ZONE_HUB
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-;	; morn
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, NIDOQUEEN,     60,  62
-;	db 23, NIDOKING,      60,  62
-;	db 10, RHYDON,        60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; day
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, NIDOQUEEN,     60,  62
-;	db 23, NIDOKING,      60,  62
-;	db 10, RHYDON,        60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; nite
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, NIDOQUEEN,     60,  62
-;	db 23, NIDOKING,      60,  62
-;	db 10, RHYDON,        60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	end_grass_wildmons
-;	
-;	def_grass_wildmons SAFARI_ZONE_EAST
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-;	; morn
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, DODRIO,        60,  62
-;	db 23, PARASECT,      60,  62
-;	db 10, KANGASKHAN,    60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; day
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, DODRIO,        60,  62
-;	db 23, PARASECT,      60,  62
-;	db 10, KANGASKHAN,    60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; nite
-;	;   %, species,		 min, max
-;	db 23, EXEGGUTOR,     60,  62
-;	db 23, DODRIO,        60,  62
-;	db 23, PARASECT,      60,  62
-;	db 10, KANGASKHAN,    60,  62
-;	db  8, SCYTHER,       60,  62
-;	db  8, PINSIR,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	end_grass_wildmons
-;	
-;	def_grass_wildmons SAFARI_ZONE_NORTH
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-;	; morn
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, PARASECT,      60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  9, TAUROS,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; day
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, PARASECT,      60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  9, TAUROS,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	; nite
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, PARASECT,      60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  9, TAUROS,        60,  62
-;	db  5, BLISSEY,       60,  62
-;	end_grass_wildmons
-;	
-;	def_grass_wildmons SAFARI_ZONE_WEST
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-;	; morn
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, DODRIO,        60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  7, TAUROS,        60,  62
-;	db  7, KANGASKHAN,    60,  62
-;	; day
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, DODRIO,        60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  7, TAUROS,        60,  62
-;	db  7, KANGASKHAN,    60,  62
-;	; nite
-;	;   %, species,		 min, max
-;	db 22, EXEGGUTOR,     60,  62
-;	db 22, DODRIO,        60,  62
-;	db 22, VENOMOTH,      60,  62
-;	db 10, NIDOKING,      60,  62
-;	db 10, NIDOQUEEN,     60,  62
-;	db  7, TAUROS,        60,  62
-;	db  7, KANGASKHAN,    60,  62
-;	end_grass_wildmons
-;
-;	db -1 ; end
+	def_grass_wildmons SAFARI_ZONE_HUB
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, NIDOQUEEN,     60,  62
+	db 23, NIDOKING,      60,  62
+	db 10, RHYDON,        60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	; day
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, NIDOQUEEN,     60,  62
+	db 23, NIDOKING,      60,  62
+	db 10, RHYDON,        60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	; nite
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, NIDOQUEEN,     60,  62
+	db 23, NIDOKING,      60,  62
+	db 10, RHYDON,        60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	end_grass_wildmons
+	
+	def_grass_wildmons SAFARI_ZONE_EAST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, DODRIO,        60,  62
+	db 23, PARASECT,      60,  62
+	db 10, KANGASKHAN,    60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	; day
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, DODRIO,        60,  62
+	db 23, PARASECT,      60,  62
+	db 10, KANGASKHAN,    60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	; nite
+	;   %, species,		 min, max
+	db 23, EXEGGUTOR,     60,  62
+	db 23, DODRIO,        60,  62
+	db 23, PARASECT,      60,  62
+	db 10, KANGASKHAN,    60,  62
+	db  8, SCYTHER,       60,  62
+	db  8, PINSIR,        60,  62
+	db  5, BLISSEY,       60,  62
+	end_grass_wildmons
+	
+	def_grass_wildmons SAFARI_ZONE_NORTH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, PARASECT,      60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  9, TAUROS,        60,  62
+	db  5, BLISSEY,       60,  62
+	; day
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, PARASECT,      60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  9, TAUROS,        60,  62
+	db  5, BLISSEY,       60,  62
+	; nite
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, PARASECT,      60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  9, TAUROS,        60,  62
+	db  5, BLISSEY,       60,  62
+	end_grass_wildmons
+	
+	def_grass_wildmons SAFARI_ZONE_WEST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, DODRIO,        60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  7, TAUROS,        60,  62
+	db  7, KANGASKHAN,    60,  62
+	; day
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, DODRIO,        60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  7, TAUROS,        60,  62
+	db  7, KANGASKHAN,    60,  62
+	; nite
+	;   %, species,		 min, max
+	db 22, EXEGGUTOR,     60,  62
+	db 22, DODRIO,        60,  62
+	db 22, VENOMOTH,      60,  62
+	db 10, NIDOKING,      60,  62
+	db 10, NIDOQUEEN,     60,  62
+	db  7, TAUROS,        60,  62
+	db  7, KANGASKHAN,    60,  62
+	end_grass_wildmons
+
+	db -1 ; end

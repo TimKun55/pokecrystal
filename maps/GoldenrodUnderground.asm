@@ -386,7 +386,7 @@ BasementDoorScript::
 	waitbutton
 	closetext
 	changeblock 18, 6, $2e ; unlocked door
-	refreshmap
+	reloadmappart
 	closetext
 	setevent EVENT_USED_BASEMENT_KEY
 	end

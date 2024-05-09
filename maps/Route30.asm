@@ -4,8 +4,8 @@
 	const ROUTE30_YOUNGSTER3
 	const ROUTE30_BUG_CATCHER
 	const ROUTE30_YOUNGSTER4
-	const ROUTE30_RATTATA1
-	const ROUTE30_RATTATA2
+	const ROUTE30_MONSTER1
+	const ROUTE30_MONSTER2
 	const ROUTE30_FRUIT_TREE1
 	const ROUTE30_FRUIT_TREE2
 	const ROUTE30_COOLTRAINER_F
@@ -24,7 +24,7 @@ YoungsterJoey_ImportantBattleScript:
 	pause 30
 	closetext
 	playsound SFX_TACKLE
-	applymovement ROUTE30_RATTATA2, Route30_JoeysRattataAttacksMovement
+	applymovement ROUTE30_MONSTER2, Route30_JoeysRattataAttacksMovement
 	opentext
 	faceplayer
 	writetext Text_ThisIsABigBattle
@@ -32,7 +32,7 @@ YoungsterJoey_ImportantBattleScript:
 	turnobject ROUTE30_YOUNGSTER1, UP
 	closetext
 	playsound SFX_TACKLE
-	applymovement ROUTE30_RATTATA1, Route30_MikeysRattataAttacksMovement
+	applymovement ROUTE30_MONSTER1, Route30_MikeysRattataAttacksMovement
 	special RestartMapMusic
 	end
 
@@ -409,14 +409,14 @@ Route30_MapEvents:
 
 	def_warp_events
 	warp_event  7, 39, ROUTE_30_BERRY_HOUSE, 1
-	warp_event 17,  5, MR_POKEMONS_HOUSE, 1
+	warp_event 15,  5, MR_POKEMONS_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  9, 43, BGEVENT_READ, Route30Sign
 	bg_event 13, 29, BGEVENT_READ, MrPokemonsHouseDirectionsSign
-	bg_event 15,  5, BGEVENT_READ, MrPokemonsHouseSign
+	bg_event 13,  5, BGEVENT_READ, MrPokemonsHouseSign
 	bg_event  3, 21, BGEVENT_READ, Route30TrainerTips
 	bg_event 11, 10, BGEVENT_ITEM, Route30HiddenPotion
 

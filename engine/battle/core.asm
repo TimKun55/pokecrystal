@@ -3846,6 +3846,12 @@ TryToRunAwayFromBattle:
 	jp z, .cant_escape
 	cp BATTLETYPE_SUICUNE
 	jp z, .cant_escape
+	cp BATTLETYPE_LUGIA
+	jp z, .cant_escape
+	cp BATTLETYPE_HO_OH
+	jp z, .cant_escape
+	cp BATTLETYPE_KANTO_LEGEND
+	jp z, .cant_escape
 
 	ld a, [wLinkMode]
 	and a

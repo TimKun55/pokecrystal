@@ -40,14 +40,14 @@ RuinsOfAlphOmanyteChamberWallOpenScript:
 	pause 30
 	playsound SFX_STRENGTH
 	changeblock 4, 0, $30 ; open wall
-	refreshmap
+	reloadmappart
 	earthquake 50
 	setscene SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP
 	closetext
 	end
 
 RuinsOfAlphOmanyteChamberPuzzle:
-	reanchormap
+	refreshscreen
 	setval UNOWNPUZZLE_OMANYTE
 	special UnownPuzzle
 	closetext
@@ -63,7 +63,7 @@ RuinsOfAlphOmanyteChamberPuzzle:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	changeblock 2, 2, $18 ; left hole
 	changeblock 4, 2, $19 ; right hole
-	refreshmap
+	reloadmappart
 	playsound SFX_STRENGTH
 	earthquake 80
 	applymovement PLAYER, RuinsOfAlphOmanyteChamberSkyfallTopMovement
@@ -111,10 +111,6 @@ RuinsOfAlphOmanyteChamberSkyfallTopMovement:
 RuinsOfAlphOmanyteChamberWallPatternLeftText:
 	text "Patterns appeared"
 	line "on the walls…"
-	done
-
-RuinsOfAlphOmanyteChamberUnownText: ; unreferenced
-	text "It's UNOWN text!"
 	done
 
 RuinsOfAlphOmanyteChamberWallPatternRightText:

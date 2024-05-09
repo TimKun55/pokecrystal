@@ -194,37 +194,36 @@ KantoWaterWildMons:
 	db 20, TENTACRUEL,    57,  60
 	end_water_wildmons
 
-;	def_water_wildmons SAFARI_ZONE_HUB
-;	db 6 percent ; encounter rate
-;	;   %, species,		 min, max
-;	db 60, SLOWBRO,       57,  60
-;	db 20, DRAGONITE,     57,  60
-;	db 20, SEAKING,       57,  60
-;	end_water_wildmons
-;	
-;	def_water_wildmons SAFARI_ZONE_EAST
-;	db 6 percent ; encounter rate
-;	;   %, species,		 min, max
-;	db 60, SEAKING,       57,  60
-;	db 20, DRAGONITE,     57,  60
-;	db 20, SLOWBRO,       57,  60
-;	end_water_wildmons
-;	
-;	def_water_wildmons SAFARI_ZONE_NORTH
-;	db 6 percent ; encounter rate
-;	;   %, species,		 min, max
-;	db 60, GOLDUCK,       57,  60
-;	db 20, DRAGONITE,     57,  60
-;	db 20, SEAKING,       57,  60
-;	end_water_wildmons
-;
-;	def_water_wildmons SAFARI_ZONE_WEST
-;	db 6 percent ; encounter rate
-;	;   %, species,		 min, max
-;	db 60, GOLDUCK,       57,  60
-;	db 20, DRAGONITE,     57,  60
-;	db 20, SLOWBRO,       57,  60
-;	end_water_wildmons
-
+	def_water_wildmons SAFARI_ZONE_HUB
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, SLOWBRO,       57,  60
+	db 20, DRAGONITE,     57,  60
+	db 20, SEAKING,       57,  60
+	end_water_wildmons
 	
+	def_water_wildmons SAFARI_ZONE_EAST
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, SEAKING,       57,  60
+	db 20, DRAGONITE,     57,  60
+	db 20, SLOWBRO,       57,  60
+	end_water_wildmons
+	
+	def_water_wildmons SAFARI_ZONE_NORTH
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, GOLDUCK,       57,  60
+	db 20, DRAGONITE,     57,  60
+	db 20, SEAKING,       57,  60
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_WEST
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, GOLDUCK,       57,  60
+	db 20, DRAGONITE,     57,  60
+	db 20, SLOWBRO,       57,  60
+	end_water_wildmons
+
 	db -1 ; end

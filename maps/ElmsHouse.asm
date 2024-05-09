@@ -43,18 +43,6 @@ ElmsSonText:
 	cont "professor!"
 	done
 
-ElmsHouseLabFoodText: ; unreferenced
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
-
-ElmsHousePokemonFoodText: ; unreferenced
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
-	done
-
 ElmsHousePCText:
 	text "#MON. Where do"
 	line "they come from? "
@@ -78,6 +66,12 @@ ElmsHousePCText:
 	line "PROF.ELM's re-"
 	cont "search papers."
 	done
+	
+ElmsHouseFridgeText:
+	text "There's some food"
+	line "here. This must be"
+	cont "for #MON."
+	done
 
 ElmsHouse_MapEvents:
 	db 0, 0 ; filler
@@ -89,8 +83,8 @@ ElmsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, ElmsHousePC
-	bg_event  6,  1, BGEVENT_READ, ElmsHouseBookshelf
+	bg_event  6,  1, BGEVENT_READ, ElmsHousePC
+	bg_event  0,  1, BGEVENT_READ, ElmsHouseFridgeText
 	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
 
 	def_object_events

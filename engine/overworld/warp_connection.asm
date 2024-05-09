@@ -7,8 +7,10 @@ HandleNewMap:
 	ld a, MAPCALLBACK_NEWMAP
 	call RunMapCallback
 HandleContinueMap:
-	farcall ClearCmdQueue
-	ld a, MAPCALLBACK_CMDQUEUE
+	xor a
+	ld [wStoneTableAddress], a
+	ld [wStoneTableAddress+1], a
+	ld a, MAPCALLBACK_STONETABLE
 	call RunMapCallback
 	call GetMapTimeOfDay
 	ld [wMapTimeOfDay], a
@@ -213,8 +215,6 @@ EnterMapWarp:
 	call GetAnyMapTileset
 	ld a, c
 	cp TILESET_POKECENTER
-	jr z, .pokecenter_pokecom
-	cp TILESET_POKECOM_CENTER
 	jr z, .pokecenter_pokecom
 	ret
 .pokecenter_pokecom

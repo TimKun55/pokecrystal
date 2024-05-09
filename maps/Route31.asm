@@ -128,15 +128,15 @@ TrainerBugCatcherWade1:
 	iffalse .PackFull
 	sjump .Done
 .Pechaberry:
-	verbosegiveitem EVENT_WADE_HAS_PECHA_BERRY
+	verbosegiveitem PECHA_BERRY
 	iffalse .PackFull
 	sjump .Done
 .Cheriberry:
-	verbosegiveitem EVENT_WADE_HAS_CHERI_BERRY
+	verbosegiveitem CHERI_BERRY
 	iffalse .PackFull
 	sjump .Done
 .PersimBerry:
-	verbosegiveitem EVENT_WADE_HAS_PERSIM_BERRY
+	verbosegiveitem PERSIM_BERRY
 	iffalse .PackFull
 .Done:
 	clearflag ENGINE_WADE_HAS_ITEM

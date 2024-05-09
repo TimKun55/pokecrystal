@@ -30,7 +30,7 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
-;	dw SafariGroupSprites
+	dw SafariGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
 ; Route1 and ViridianCity are connected
@@ -357,14 +357,14 @@ CableClubGroupSprites:
 	; 0 of max 9 walking sprites
 	db 0 ; end
 	
-;SafariGroupSprites:
+SafariGroupSprites:
 ; SafariZoneHub, SafariZoneEast, SafariZoneNorth, SafariZoneWest
-;	db SPRITE_GENTLEMAN
-;	db SPRITE_LASS
-;	db SPRITE_FISHER
-;	db SPRITE_SCIENTIST
-;	db SPRITE_COOLTRAINER_F
-;	db SPRITE_MEW
-;	; 6 of max 9 walking sprites
-;	db SPRITE_POKE_BALL
-;	db 0 ; end
+	db SPRITE_GENTLEMAN
+	db SPRITE_LASS
+	db SPRITE_FISHER
+	db SPRITE_SCIENTIST
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_MEW
+	; 6 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db 0 ; end

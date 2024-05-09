@@ -150,6 +150,15 @@ SECTION "Extra Songs 2", ROMX
 INCLUDE "audio/music/postcredits.asm"
 
 
+SECTION "New Songs", ROMX
+
+INCLUDE "audio/music/pokemonmart.asm"
+INCLUDE "audio/music/lugiabattle.asm"
+INCLUDE "audio/music/hoohbattle.asm"
+INCLUDE "audio/music/kantolegendbattle.asm"
+INCLUDE "audio/music/safarizone.asm"
+
+
 SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"

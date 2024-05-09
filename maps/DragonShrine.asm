@@ -630,12 +630,12 @@ DragonShrineHereRisingBadgeText:
 
 DragonShrinePlayerReceivedRisingBadgeText:
 	text "<PLAYER> received"
-	line "RISINGBADGE."
+	line "the RISINGBADGE."
 	done
 
 DragonShrineRisingBadgeExplanationText:
-	text "RISINGBADGE will"
-	line "enable your"
+	text "The RISINGBADGE"
+	line "will enable your"
 
 	para "#MON to use the"
 	line "move for climbing"
