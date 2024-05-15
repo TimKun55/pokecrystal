@@ -6,12 +6,14 @@
 	const RADIOTOWER3F_ROCKET2
 	const RADIOTOWER3F_ROCKET3
 	const RADIOTOWER3F_SCIENTIST
+	const RADIOTOWER3F_PETREL
 
 RadioTower3F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback
+	callback MAPCALLBACK_OBJECTS, RadioTower3FPetrelCallback
 
 RadioTower3FCardKeyShutterCallback:
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
@@ -21,6 +23,16 @@ RadioTower3FCardKeyShutterCallback:
 .Change:
 	changeblock 14, 2, $2a ; open shutter
 	changeblock 14, 4, $01 ; floor
+	endcallback
+	
+RadioTower3FPetrelCallback:
+	checkevent EVENT_KANTO_ROCKET_DISBAND
+	iftrue .Appear
+	disappear RADIOTOWER3F_PETREL
+	endcallback
+
+.Appear:
+	appear RADIOTOWER3F_PETREL
 	endcallback
 
 RadioTower3FSuperNerdScript:
@@ -121,6 +133,15 @@ TrainerScientistMarc:
 	opentext
 	writetext ScientistMarcAfterBattleText
 	waitbutton
+	closetext
+	end
+	
+RadioTower3FPetrelScript:
+	faceplayer
+	opentext
+	writetext RadioTower3FPetrelText
+	waitbutton
+	turnobject RADIOTOWER3F_PETREL, DOWN
 	closetext
 	end
 
@@ -306,6 +327,18 @@ ScientistMarcAfterBattleText:
 	line "strong a signal as"
 	cont "I need from here."
 	done
+	
+RadioTower3FPetrelText:
+	text "I came here to"
+	line "apologise to"
+	cont "everyone, but"
+	
+	para "no one wants to"
+	line "talk to me."
+	
+	para "I get it,"
+	line "but still…"
+	done
 
 RadioTower3FCardKeySlotText:
 	text "It's the CARD KEY"
@@ -349,3 +382,4 @@ RadioTower3F_MapEvents:
 	object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM9, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  9,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerScientistMarc, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 10,  1, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower3FPetrelScript, EVENT_KANTO_ROCKET_DISBAND

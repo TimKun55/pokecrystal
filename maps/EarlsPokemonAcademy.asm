@@ -5,6 +5,10 @@
 	const EARLSPOKEMONACADEMY_GAMEBOY_KID2
 	const EARLSPOKEMONACADEMY_YOUNGSTER2
 	const EARLSPOKEMONACADEMY_POKEDEX
+	const EARLSPOKEMONACADEMY_YOUNGSTER3
+	const EARLSPOKEMONACADEMY_BUG_CATCHER
+	const EARLSPOKEMONACADEMY_LASS
+	const EARLSPOKEMONACADEMY_TEACHER
 
 EarlsPokemonAcademy_MapScripts:
 	def_scene_scripts
@@ -59,6 +63,85 @@ EarlsPokemonAcademyGameboyKid2Script:
 
 EarlsPokemonAcademyYoungster2Script:
 	jumptextfaceplayer EarlsPokemonAcademyYoungster2Text
+	
+TrainerYoungsterGabe:
+	trainer YOUNGSTER, GABE, EVENT_BEAT_YOUNGSTER_GABE, YoungsterGabeSeenText, YoungsterGabeBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext YoungsterGabeAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugCatcherJon:
+	trainer BUG_CATCHER, JON, EVENT_BEAT_BUG_CATCHER_JON, BugCatcherJonSeenText, BugCatcherJonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherJonAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TrainerLassMai:
+	trainer LASS, MAI, EVENT_BEAT_LASS_MAI, LassMaiSeenText, LassMaiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassMaiAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TeacherEnomotoScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_TEACHER_ENOMOTO
+	iftrue .FightDone
+	writetext TeacherEnomotoIntroText
+	waitbutton
+	yesorno
+	iffalse .EnomotoEnd
+	checkevent EVENT_BEAT_YOUNGSTER_GABE
+	iffalse .battlemore
+	checkevent EVENT_BEAT_BUG_CATCHER_JON
+	iffalse .battlemore
+	checkevent EVENT_BEAT_LASS_MAI
+	iffalse .battlemore
+	writetext TeacherEnomotoLetsBattleText
+	waitbutton
+	closetext
+	winlosstext EnomotoText_WellDone, 0
+	loadtrainer TEACHER, ENOMOTO
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_TEACHER_ENOMOTO
+	opentext
+	writetext TeacherEnomotoTakeThisText
+	waitbutton
+	verbosegiveitem EVIOLITE
+	setevent EVENT_GOT_EVIOLITE
+.FightDone
+	writetext TeacherEnomotoStrongerText
+	waitbutton
+	closetext
+	end
+
+.EnomotoEnd
+	writetext TeacherEnomotoEndText
+	waitbutton
+	closetext
+	end
+
+.battlemore
+	writetext TeacherEnomotoBattleMoreText
+	waitbutton
+	closetext
+	end
 
 AcademyBlackboard:
 	opentext
@@ -394,6 +477,136 @@ AcademyNotebookText3:
 	line "anymore…"
 	done
 
+YoungsterGabeSeenText:
+	text "We're helping"
+	line "ENOMOTO Sensei!"
+	done
+
+YoungsterGabeBeatenText:
+	text "Oh, you're"
+	line "strong."
+	done
+
+YoungsterGabeAfterBattleText:
+	text "Status conditions"
+	line "can be scary"
+	cont "if you're not"
+	cont "ready for them."
+	done
+
+BugCatcherJonSeenText:
+	text "I've got some"
+	line "free time."
+
+	para "Battle me!"
+	done
+
+BugCatcherJonBeatenText:
+	text "I should have"
+	line "just studied."
+	done
+
+BugCatcherJonAfterBattleText:
+	text "Watch out for"
+	line "your #MON"
+	cont "being poisoned."
+
+	para "If it's regular"
+	line "poison, it'll take"
+	cont "damage over time."
+
+	para "If it's bad"
+	line "poison, the damage"
+	cont "it takes increases"
+	cont "over time."
+	done
+	
+LassMaiSeenText:
+	text "Do you know"
+	line "just how scary"
+	cont "sleep can be?"
+	done
+
+LassMaiBeatenText:
+	text "Aww, losing"
+	line "was scarier."
+	done
+
+LassMaiAfterBattleText:
+	text "Most moves that"
+	line "put a #MON"
+	cont "to sleep are"
+
+	para "not very accurate."
+
+	para "But there is ONE"
+	line "move that has"
+	cont "100% accuracy."
+	done
+	
+TeacherEnomotoIntroText:
+	text "Welcome to my"
+	line "Battle Course!"
+
+	para "I'm Enomoto."
+
+	para "I've been hired"
+	line "by Earl to teach"
+
+	para "the practical"
+	line "side of status"
+	cont "conditions."
+
+	para "Are you ready"
+	line "for your test?"
+	done
+
+TeacherEnomotoEndText:
+	text "Hmm, best to make"
+	line "sure you're fully"
+	cont "prepared."
+	done
+
+TeacherEnomotoBattleMoreText:
+	text "Hmm, I think you"
+	line "need to battle the"
+	cont "others first."
+	done
+
+TeacherEnomotoLetsBattleText:
+	text "You seem well"
+	line "prepared."
+
+	para "Let's begin."
+	done
+
+EnomotoText_WellDone:
+	text "Oh, my!"
+	line "You've done"
+	cont "very well!"
+	done
+
+TeacherEnomotoTakeThisText:
+	text "As a reward,"
+	line "take this item"
+	
+	para "I found it while"
+	line "overseas in UNOVA."
+	done
+
+TeacherEnomotoStrongerText:
+	text "The EVIOLITE will"
+	line "increase the"
+	cont "Defense stats of"
+
+	para "a #MON that"
+	line "can still evolve"
+	cont "by 50% each."
+
+	para "Put it to"
+	line "good use!"
+	done
+
 AcademyStickerMachineText:
 	text "This super machine"
 	line "prints data out as"
@@ -405,21 +618,25 @@ EarlsPokemonAcademy_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3, 15, VIOLET_CITY, 3
-	warp_event  4, 15, VIOLET_CITY, 3
+	warp_event  5, 15, VIOLET_CITY, 3
+	warp_event  6, 15, VIOLET_CITY, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, AcademyBookshelf
-	bg_event  1,  1, BGEVENT_READ, AcademyBookshelf
-	bg_event  3,  0, BGEVENT_READ, AcademyBlackboard
-	bg_event  4,  0, BGEVENT_READ, AcademyBlackboard
+	bg_event 14,  1, BGEVENT_READ, AcademyBookshelf
+	bg_event 15,  1, BGEVENT_READ, AcademyBookshelf
+	bg_event 17,  0, BGEVENT_READ, AcademyBlackboard
+	bg_event 18,  0, BGEVENT_READ, AcademyBlackboard
 
 	def_object_events
-	object_event  4,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1
-	object_event  3, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1
-	object_event  4, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1
-	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1
-	object_event  2,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1
+	object_event 18,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL
+	object_event 16,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1
+	object_event 17, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1
+	object_event 18, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1
+	object_event 18,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1
+	object_event 16,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1
+	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerYoungsterGabe, -1
+	object_event  7, 11, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJon, -1
+	object_event  4,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLassMai, -1
+	object_event  5,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeacherEnomotoScript, -1

@@ -65,6 +65,14 @@ KantoWaterWildMons:
 	db 20, QUAGSIRE,      55,  58
 	db 20, TENTACRUEL,    55,  58
 	end_water_wildmons
+	
+	def_water_wildmons ROUTE_14
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, TENTACOOL,     53,  55
+	db 20, QUAGSIRE,      55,  58
+	db 20, TENTACRUEL,    55,  58
+	end_water_wildmons
 
 	def_water_wildmons ROUTE_19
 	db 6 percent ; encounter rate

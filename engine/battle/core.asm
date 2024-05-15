@@ -5828,7 +5828,7 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
-	hlcoord 1, 11
+	hlcoord 1, 10
 	ld de, .Disabled
 	call PlaceString
 	jp .done
@@ -5960,7 +5960,7 @@ MoveInfoBox:
 	ret
 
 .Disabled:
-	db "Disabled!@"
+	db "No use!@"
 
 .PrintPP:
 	hlcoord 3, 10

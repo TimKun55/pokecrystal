@@ -1588,15 +1588,17 @@ GastlyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 7, SPITE
+	db 10, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 20, NIGHT_SHADE
 	db 24, CONFUSE_RAY
-	db 28, DARK_PULSE
-	db 33, DREAM_EATER
-	db 36, DESTINY_BOND
-	db 39, HEX
+	db 28, SLUDGE
+	db 32, DARK_PULSE
+	db 36, DREAM_EATER
+	db 39, DESTINY_BOND
+	db 42, HEX
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
@@ -1605,12 +1607,14 @@ GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 7, SPITE
+	db 10, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 20, NIGHT_SHADE
 	db 24, CONFUSE_RAY
-	db 31, DARK_PULSE
+	db 29, SLUDGE
+	db 34, DARK_PULSE
 	db 39, DREAM_EATER
 	db 43, DESTINY_BOND
 	db 47, HEX
@@ -3351,7 +3355,7 @@ SudowoodoEvosAttacks:
 	db 31, SAND_TOMB
 	db 34, ROCK_SLIDE
 	db 37, COUNTER
-	db 30, SLAM
+	db 40, SLAM
 	db 43, TAKE_DOWN
 	db 47, STONE_EDGE
 	db 50, BODY_SLAM

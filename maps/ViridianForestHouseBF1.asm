@@ -109,11 +109,11 @@ GiovanniText_DNASampleText:
 
 Text_ReceivedDNASample:
 	text "<PLAYER> received"
-	line "DNA SAMPLE."
+	line "the DNA SAMPLE."
 	done
 	
 GiovanniText_DNASampleSpeech:
-	text "That's a SAMPLE"
+	text "That's a sample"
 	line "of the MYTHICAL"
 	cont "#MON MEW's DNA."
 
@@ -131,7 +131,7 @@ GiovanniText_DNASampleSpeech:
 
 	para "in our extensive"
 	line "experiments to"
-	cont "create MEWTWO"
+	cont "create MEWTWO."
 	done
 
 GiovanniText_Mew:
@@ -140,15 +140,15 @@ GiovanniText_Mew:
 	cont "both MEWTWO and"
 	
 	para "MEW respond to"
-	line "this SAMPLE."
+	line "this sample."
 	
 	para "Seeing how you"
-	line "handle your #MON"
-	cont "it's clear that"
+	line "handle your"
+	cont "#MON it's clear"
 	
-	para "you are a powerful"
-	line "and capable"
-	cont "TRAINER."
+	para "that you are a"
+	line "powerful and"
+	cont "capable trainer."
 	
 	para "I know I can trust"
 	line "you with this item"
@@ -185,7 +185,7 @@ ViridianForestHouseBF1Notebook1Text:
 ViridianForestHouseBF1Notebook1Text1:
 	text "I noticed that"
 	line "when we had the"
-	cont "SAMPLE with us, my"
+	cont "sample with us, my"
 
 	para "men would claim to"
 	line "have seen a pink"
@@ -195,12 +195,12 @@ ViridianForestHouseBF1Notebook1Text1:
 	done
 
 ViridianForestHouseBF1Notebook1Text2:
-	text "Could the SAMPLE"
+	text "Could the sample"
 	line "be calling out to"
-
-	para "MEW somehow?"
-	line "Testing this"
-	cont "theory, we set out"
+	cont "MEW somehow?"
+	
+	para "Testing this"
+	line "theory, we set out"
 
 	para "across the region"
 	line "and discovered"
@@ -250,7 +250,7 @@ ViridianForestHouseBF1Notebook2Text:
 	done
 
 ViridianForestHouseBF1Notebook2Text1:
-	text "SILVER CAVE."
+	text "MT SILVER."
 	line "Good luck."
 	done
 

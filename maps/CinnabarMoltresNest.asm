@@ -8,7 +8,7 @@ CinnabarMoltresNest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, CinnabarMoltresNestMoltresCallback
 	
 CinnabarMoltresNestMoltresCallback:
-	checkevent EVENT_FOUGHT_MOLTRES
+	checkevent EVENT_MOLTRES_NEST_MOLTRES
 	iftrue .NoAppear
 	checkevent EVENT_LEGENDARY_BIRDS_ACTIVE
 	iftrue .Appear
@@ -29,7 +29,7 @@ CinnabarMoltresNestMoltres:
 	cry MOLTRES
 	pause 15
 	closetext
-	setevent EVENT_FOUGHT_MOLTRES
+	setevent EVENT_MOLTRES_NEST_MOLTRES
 	loadvar VAR_BATTLETYPE, BATTLETYPE_KANTO_LEGEND
 	loadwildmon MOLTRES, 60
 	startbattle

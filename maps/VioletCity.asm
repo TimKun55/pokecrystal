@@ -144,7 +144,6 @@ VioletCityFollowEarl_MovementData:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
-	big_step RIGHT
 	turn_head RIGHT
 	turn_head DOWN
 	turn_head LEFT

@@ -7,10 +7,12 @@
 	const AZALEATOWN_SLOWPOKE2
 	const AZALEATOWN_SLOWPOKE3
 	const AZALEATOWN_SLOWPOKE4
+	const AZALEATOWN_SLOWPOKE5
 	const AZALEATOWN_FRUIT_TREE
 	const AZALEATOWN_RIVAL
 	const AZALEATOWN_AZALEA_ROCKET3
 	const AZALEATOWN_KURT_OUTSIDE
+	const AZALEATOWN_PROTON
 
 AzaleaTown_MapScripts:
 	def_scene_scripts
@@ -20,6 +22,7 @@ AzaleaTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback
+	callback MAPCALLBACK_OBJECTS, AzaleaTownProtonCallback
 
 AzaleaTownNoop1Scene:
 	end
@@ -32,6 +35,18 @@ AzaleaTownNoop3Scene:
 
 AzaleaTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_AZALEA
+	endcallback
+	
+AzaleaTownProtonCallback:
+	checkevent EVENT_KANTO_ROCKET_DISBAND
+	iftrue .Appear
+	disappear AZALEATOWN_PROTON
+	disappear AZALEATOWN_SLOWPOKE5
+	endcallback
+
+.Appear:
+	appear AZALEATOWN_PROTON
+	appear AZALEATOWN_SLOWPOKE5
 	endcallback
 
 AzaleaTownRivalBattleScene1:
@@ -177,6 +192,24 @@ AzaleaTownKurtScript:
 	writetext AzaleaTownKurtText3
 	waitbutton
 	turnobject AZALEATOWN_KURT_OUTSIDE, LEFT
+	closetext
+	end
+	
+AzaleaTownProtonScript:
+	faceplayer
+	opentext
+	writetext AzaleaTownProtonText
+	waitbutton
+	turnobject AZALEATOWN_PROTON, UP
+	closetext
+	end
+
+AzaleaTownProtonSlowpokeScript:
+	opentext
+	writetext AzaleaTownSlowpokeText1
+	pause 60
+	cry SLOWPOKE
+	waitbutton
 	closetext
 	end
 
@@ -379,7 +412,7 @@ AzaleaTownSlowpokeText1:
 AzaleaTownSlowpokeText2:
 	text "<……> <……>Yawn?"
 	done
-
+	
 WoosterText:
 	text "WOOSTER: Gugyoo…"
 	done
@@ -400,6 +433,20 @@ AzaleaTownKurtText3:
 	text "Could you go see"
 	line "why ILEX FOREST is"
 	cont "so restless?"
+	done
+	
+AzaleaTownProtonText:
+	text "I came back here"
+	line "to apologise for"
+	
+	para "what we did to"
+	line "the SLOWPOKE, but"
+	
+	para "they don't seem"
+	line "to trust me yet…"
+	
+	para "I'm sorry"
+	line "little guy."
 	done
 
 AzaleaTownSignText:
@@ -472,7 +519,7 @@ AzaleaTown_MapEvents:
 
 	def_bg_events
 	bg_event 19,  9, BGEVENT_READ, AzaleaTownSign
-	bg_event 10,  9, BGEVENT_READ, KurtsHouseSign
+	bg_event 10,  8, BGEVENT_READ, KurtsHouseSign
 	bg_event  8, 17, BGEVENT_READ, AzaleaGymSign
 	bg_event 29,  8, BGEVENT_READ, SlowpokeWellSign
 	bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign
@@ -490,7 +537,9 @@ AzaleaTown_MapEvents:
 	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 15, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 18, 16, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonSlowpokeScript, EVENT_KANTO_ROCKET_DISBAND
 	object_event  7,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhiteApricornTree, -1
 	object_event 11, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
+	object_event 18, 18, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonScript, EVENT_AZALEA_TOWN_KURT

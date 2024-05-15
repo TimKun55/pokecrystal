@@ -968,13 +968,13 @@ CinnabarVolcanoB1F_Blocks:
 CinnabarMoltresNest_Blocks:
 	INCBIN "maps/CinnabarMoltresNest.ablk"
 
-Route13East_Blocks:
-	INCBIN "maps/Route13East.ablk"
+Route14ZapdosNest_Blocks:
+	INCBIN "maps/Route14ZapdosNest.ablk"
 
-Route13Island_Blocks:
-	INCBIN "maps/Route13Island.ablk"
+MtSilverRoom4_Blocks:
+	INCBIN "maps/MtSilverRoom4.ablk"
 	
-Route13ZapdosNest_Blocks:
-	INCBIN "maps/Route13ZapdosNest.ablk"
+UndergroundRoom_Blocks:
+	INCBIN "maps/UndergroundRoom.ablk"
 
 ENDSECTION

@@ -302,17 +302,9 @@ ENDM
 	connection north, Route13, ROUTE_13, 0
 	connection west, Route15, ROUTE_15, 9
 	
-	map_attributes Route13East, ROUTE_13_EAST, $25, WEST | EAST
-	connection west, Route13, ROUTE_13, 0
-	connection east, Route13Island, ROUTE_13_ISLAND, 0
-	
-	map_attributes Route13Island, ROUTE_13_ISLAND, $25, WEST
-	connection west, Route13East, ROUTE_13, 0
-
-	map_attributes Route13, ROUTE_13, $25, NORTH | SOUTH | EAST
+	map_attributes Route13, ROUTE_13, $25, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, 20
 	connection south, Route14, ROUTE_14, 0
-	connection east, Route13East, ROUTE_13_EAST, 0
 
 	map_attributes Route12, ROUTE_12, $25, NORTH | SOUTH | WEST
 	connection north, LavenderTown, LAVENDER_TOWN, 0
@@ -466,6 +458,7 @@ ENDM
 	map_attributes MtSilverRoom1, MT_SILVER_ROOM_1, $09, 0
 	map_attributes MtSilverRoom2, MT_SILVER_ROOM_2, $09, 0
 	map_attributes MtSilverRoom3, MT_SILVER_ROOM_3, $09, 0
+	map_attributes MtSilverRoom4, MT_SILVER_ROOM_4, $09, 0	
 	map_attributes MtSilverItemRooms, MT_SILVER_ITEM_ROOMS, $09, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
@@ -490,6 +483,7 @@ ENDM
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes MountMoon, MOUNT_MOON, $09, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
+	map_attributes UndergroundRoom, UNDERGROUND_ROOM, $00, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes SafariZoneFuchsiaGate, SAFARI_ZONE_FUCHSIA_GATE, $00, 0
@@ -625,7 +619,7 @@ ENDM
 	map_attributes FuchsiaPokecenter1F, FUCHSIA_POKECENTER_1F, $00, 0
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
-	map_attributes Route13ZapdosNest, ROUTE_13_ZAPDOS_NEST, $2f, 0
+	map_attributes Route14ZapdosNest, ROUTE_14_ZAPDOS_NEST, $2f, 0
 	map_attributes LavenderPokecenter1F, LAVENDER_POKECENTER_1F, $00, 0
 	map_attributes MrFujisHouse, MR_FUJIS_HOUSE, $00, 0
 	map_attributes LavenderSpeechHouse, LAVENDER_SPEECH_HOUSE, $00, 0

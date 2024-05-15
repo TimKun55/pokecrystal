@@ -139,20 +139,22 @@ ENDM
 	map_const MT_SILVER_ROOM_1,                            10, 18 ; 74
 	map_const MT_SILVER_ROOM_2,                            15, 18 ; 75
 	map_const MT_SILVER_ROOM_3,                            10, 18 ; 76
-	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 77
-	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
-	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 16 ; 79
-	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
-	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
-	map_const DRAGON_SHRINE,                                5,  5 ; 82
-	map_const TOHJO_FALLS,                                 15, 17 ; 83
-	map_const DIGLETTS_CAVE,                               10, 18 ; 84
-	map_const VIRIDIAN_FOREST,                             24, 22 ; 85
-	map_const MOUNT_MOON,                                  15,  9 ; 86
-	map_const UNDERGROUND_PATH,                             3, 14 ; 87
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 88
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 89	
-	map_const VICTORY_ROAD,                                10, 36 ; 90
+	map_const MT_SILVER_ROOM_4,                            10,  9 ; 77
+	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 78
+	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 79
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 16 ; 80
+	map_const DRAGONS_DEN_1F,                               5,  9 ; 81
+	map_const DRAGONS_DEN_B1F,                             20, 18 ; 82
+	map_const DRAGON_SHRINE,                                5,  5 ; 83
+	map_const TOHJO_FALLS,                                 15, 17 ; 84
+	map_const DIGLETTS_CAVE,                               10, 18 ; 85
+	map_const VIRIDIAN_FOREST,                             24, 22 ; 86
+	map_const MOUNT_MOON,                                  15,  9 ; 87
+	map_const UNDERGROUND_PATH,                             3, 14 ; 88
+	map_const ROCK_TUNNEL_1F,                              15, 18 ; 89
+	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 90	
+	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const UNDERGROUND_ROOM,                             9, 10 ; 92
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -244,7 +246,7 @@ ENDM
 	map_const VIOLET_CITY,                                 20, 18 ;  5
 	map_const VIOLET_MART,                                  6,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  8 ;  7
-	map_const EARLS_POKEMON_ACADEMY,                        4,  8 ;  8
+	map_const EARLS_POKEMON_ACADEMY,                       11,  8 ;  8
 	map_const VIOLET_NICKNAME_SPEECH_HOUSE,                 4,  4 ;  9
 	map_const VIOLET_POKECENTER_1F,                         6,  4 ; 10
 	map_const VIOLET_KYLES_HOUSE,                           4,  4 ; 11
@@ -349,7 +351,7 @@ ENDM
 	map_const ROUTE_12,                                    10, 27 ;  1
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
-	map_const ROUTE_14,                                    10, 18 ;  4
+	map_const ROUTE_14,                                    30, 18 ;  4
 	map_const ROUTE_15,                                    20,  9 ;  5
 	map_const ROUTE_16,                                    10, 12 ;  6
 	map_const ROUTE_17,                                    10, 45 ;  7
@@ -365,9 +367,7 @@ ENDM
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 17
 	map_const ROUTE_16_GATE,                                5,  4 ; 18
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 19
-	map_const ROUTE_13_EAST,                               21,  9 ; 20
-	map_const ROUTE_13_ISLAND,							   30,  9 ; 21
-	map_const ROUTE_13_ZAPDOS_NEST,                        15, 15 ; 22
+	map_const ROUTE_14_ZAPDOS_NEST,                        15, 15 ; 20
 	endgroup
 
 	newgroup LAVENDER                                             ; 18

@@ -1,7 +1,6 @@
 	object_const_def
 	const VERMILIONBERRYMART_BEAUTY
-	const VERMILIONBERRYMART_BELLOSSOM
-	const VERMILIONBERRYMART_VILEPLUME
+	const VERMILIONBERRYMART_RATICATE
 
 VermilionBerryMart_MapScripts:
 	def_scene_scripts
@@ -15,40 +14,22 @@ VermilionBerry:
 	closetext
 	end
 	
-VermilionBerryBellossom:
+VermilionBerryRaticate:
 	opentext
-	writetext VermilionBerryBellossomText
-	cry BELLOSSOM	
+	writetext VermilionBerryRaticateText
+	cry RATICATE	
 	waitbutton
 	refreshscreen
-	pokepic BELLOSSOM
+	pokepic RATICATE
 	waitbutton
 	closepokepic
 	closetext
 	end
 	
-VermilionBerryOddish:
-	opentext
-	writetext VermilionBerryOddishText
-	cry ODDISH	
-	waitbutton
-	refreshscreen
-	pokepic ODDISH
-	waitbutton
-	closepokepic
-	closetext
-	end
-
-VermilionBerryBellossomText:
-	text "BELLOSSOM: Bel!"
-	line "Lossom!!"
+VermilionBerryRaticateText:
+	text "RATICATE: Rati!"
 	done
 	
-VermilionBerryOddishText:
-	text "ODDISH: Odd!"
-	line "Oddish!!"
-	done
-
 VermilionBerryMart_MapEvents:
 	db 0, 0 ; filler
 
@@ -62,5 +43,4 @@ VermilionBerryMart_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionBerry, -1
-	object_event  4,  5, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionBerryBellossom, -1
-	object_event  6,  3, SPRITE_ODDISH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionBerryOddish, -1
+	object_event  4,  5, SPRITE_RATICATE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionBerryRaticate, -1

@@ -25,7 +25,7 @@ ViridianForestHouseStaircaseCallback:
 	endcallback
 
 .ShowStairs:
-	changeblock 0, 0, $3b ; stairs
+	changeblock 3, 0, $89 ; stairs
 	endcallback
 
 ViridianForestHouseAriana:

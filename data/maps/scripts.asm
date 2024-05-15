@@ -87,7 +87,6 @@ INCLUDE "maps/Route32Pokecenter1F.asm"
 INCLUDE "maps/Route35GoldenrodGate.asm"
 INCLUDE "maps/Route35NationalParkGate.asm"
 INCLUDE "maps/Route36RuinsOfAlphGate.asm"
-INCLUDE "maps/Route36NationalParkGate.asm"
 
 
 SECTION "Map Scripts 6", ROMX
@@ -209,9 +208,6 @@ INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/ViridianMart.asm"
-INCLUDE "maps/ViridianPokecenter1F.asm"
-INCLUDE "maps/Route2NuggetHouse.asm"
-INCLUDE "maps/Route2Gate.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -500,8 +496,12 @@ INCLUDE "maps/CinnabarVolcanoB1F.asm"
 INCLUDE "maps/CinnabarMoltresNest.asm"
 INCLUDE "maps/CianwoodBeastsHouse.asm"
 INCLUDE "maps/EcruteakFairyFamilyHouse.asm"
-INCLUDE "maps/Route13East.asm"
-INCLUDE "maps/Route13Island.asm"
-INCLUDE "maps/Route13ZapdosNest.asm"
+INCLUDE "maps/Route14ZapdosNest.asm"
+INCLUDE "maps/MtSilverRoom4.asm"
+INCLUDE "maps/Route36NationalParkGate.asm"
+INCLUDE "maps/Route2Gate.asm"
+INCLUDE "maps/Route2NuggetHouse.asm"
+INCLUDE "maps/ViridianPokecenter1F.asm"
+INCLUDE "maps/UndergroundRoom.asm"
 
 ENDSECTION

@@ -3,6 +3,7 @@
 	const ECRUTEAKFAIRYFAMILYHOUSE_POKEFAN_F
 	const ECRUTEAKFAIRYFAMILYHOUSE_GRAMPS
 	const ECRUTEAKFAIRYFAMILYHOUSE_GRANNY
+	const ECRUTEAKFAIRYFAMILYHOUSE_SYLVEON
 
 EcruteakFairyFamilyHouse_MapScripts:
 	def_scene_scripts
@@ -175,6 +176,18 @@ EcruteakFairyFamilyHouseGrannyScript:
 	db "MOONBLAST@"
 	db "PLAY ROUGH@"
 	db "CANCEL@"
+	
+EcruteakFairyFamilyHouseSylveonScript:
+	opentext
+	writetext FairySylveonText
+	cry SYLVEON
+	waitbutton
+	refreshscreen
+	pokepic SYLVEON
+	waitbutton
+	closepokepic
+	closetext
+	end
 
 FairyMomWelcomeText:
 	text "Welcome! If you're"
@@ -387,6 +400,11 @@ UltimateFairyMoveTaughtText:
 EcruteakFairyFamilyHouseGrannyMoveText:
 	text_start
 	done
+	
+FairySylveonText:
+	text "SYLVEON: Syl!"
+	line "Veon! Syl!"
+	done
 
 EcruteakFairyFamilyHouse_MapEvents:
 	db 0, 0 ; filler
@@ -404,3 +422,4 @@ EcruteakFairyFamilyHouse_MapEvents:
 	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseMomScript, -1
 	object_event  0,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseGrampsScript, -1
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseGrannyScript, -1
+	object_event  4,  1, SPRITE_SYLVEON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseSylveonScript, -1

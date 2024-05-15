@@ -4,6 +4,7 @@
 	const DANCETHEATER_KIMONO_GIRL3
 	const DANCETHEATER_KIMONO_GIRL4
 	const DANCETHEATER_KIMONO_GIRL5
+	const DANCETHEATER_KIMONO_GIRL6
 	const DANCETHEATER_GENTLEMAN
 	const DANCETHEATER_RHYDON
 	const DANCETHEATER_COOLTRAINER_M
@@ -68,6 +69,61 @@ TrainerKimonoGirlMiki:
 	waitbutton
 	closetext
 	end
+	
+TrainerKimonoGirlSakura:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_KIMONO_GIRL_SAKURA
+	iftrue .FightDone
+	writetext KimonoGirlSakuraSeenText
+	waitbutton
+	closetext
+	winlosstext KimonoGirlSakuraBeatenText, 0
+	loadtrainer KIMONO_GIRL, SAKURA1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_KIMONO_GIRL_SAKURA
+	opentext
+.FightDone
+	writetext KimonoGirlSakuraAfterBattleText
+	waitbutton
+	checkevent EVENT_BLUE_IN_CINNABAR
+	iftrue .SakuraRematch2
+	checkevent EVENT_DRAGON_SHRINE_CLAIR
+	iffalse .KimonoGirlSakuraNextTime
+	writetext SakuraRematchText
+	yesorno
+	iftrue .SakuraRematch1
+.KimonoGirlSakuraNextTime
+	writetext KimonoGirlSakuraNextTimeText
+	waitbutton
+	closetext
+	end
+	
+.SakuraRematch1
+	winlosstext SakuraRematchDefeatText, 0
+	loadtrainer KIMONO_GIRL, SAKURA2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext KimonoGirlSakuraNextTimeText
+	waitbutton
+	closetext
+	end
+	
+.SakuraRematch2
+	writetext SakuraRematchText
+	yesorno
+	iffalse .KimonoGirlSakuraNextTime
+	winlosstext SakuraRematchDefeatText, 0
+	loadtrainer KIMONO_GIRL, SAKURA3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext KimonoGirlSakuraNextTimeText
+	waitbutton
+	closetext
+	end
 
 DanceTheaterSurfGuy:
 	faceplayer
@@ -85,6 +141,8 @@ DanceTheaterSurfGuy:
 	checkevent EVENT_BEAT_KIMONO_GIRL_KUNI
 	iffalse .KimonoGirlsUndefeated
 	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
+	iffalse .KimonoGirlsUndefeated
+	checkevent EVENT_BEAT_KIMONO_GIRL_SAKURA
 	iffalse .KimonoGirlsUndefeated
 	sjump .GetSurf
 
@@ -119,10 +177,15 @@ SurfGuyAlreadyGaveSurf:
 	end
 
 DanceTheaterRhydon:
+	faceplayer
 	opentext
-	writetext RhydonText
+	writetext DanceTheaterRhydonText
 	cry RHYDON
 	waitbutton
+	refreshscreen
+	pokepic RHYDON
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -232,6 +295,47 @@ KimonoGirlMikiAfterBattleText:
 	para "My #MON keep my"
 	line "spirits up too."
 	done
+	
+KimonoGirlSakuraSeenText:
+	text "#MON battles"
+	line "and dancing are"
+	cont "very similar."
+	
+	para "They both need"
+	line "a huge amount"
+	cont "of discipline."
+	
+	para "Let me show you"
+	line "what we can do!"
+	done
+	
+KimonoGirlSakuraBeatenText:
+	text "Oh wow, we need"
+	line "more discipline."
+	done
+	
+SakuraRematchDefeatText:
+	text "Still not enough?"
+	done
+
+KimonoGirlSakuraAfterBattleText:
+	text "Our dancing and"
+	line "training programs"
+	cont "are pretty intense"
+	cont "and regular."
+	done
+	
+KimonoGirlSakuraNextTimeText:
+	text "You should come"
+	line "back for a rematch"
+	cont "sometime!"
+	done
+	
+SakuraRematchText:
+	text "You're back!"
+	line "Would you like"
+	cont "a rematch?"
+	done
 
 SurfGuyNeverLeftAScratchText:
 	text "Not only are the"
@@ -291,7 +395,7 @@ SurfGuyElegantKimonoGirlsText:
 	cont "the KIMONO GIRLS…"
 	done
 
-RhydonText:
+DanceTheaterRhydonText:
 	text "RHYDON: Gugooh"
 	line "gugogooh!"
 	done
@@ -351,9 +455,10 @@ DanceTheater_MapEvents:
 	def_object_events
 	object_event  0,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlNaoko, -1
 	object_event  2,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlSayo, -1
-	object_event  6,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlZuki, -1
+	object_event  7,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlZuki, -1
 	object_event  9,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlKuni, -1
 	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, -1
+	object_event  4,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlSakura, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYDON_WALKING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
 	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCooltrainerMScript, -1

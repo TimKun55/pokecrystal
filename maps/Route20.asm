@@ -113,11 +113,13 @@ Route20OfficerScriptText:
 	line "to SEAFOAM ISLAND."
 	
 	para "There was a"
-	line "cave-in during"
-	cont "the eruption and"
+	line "cave-in and"
+	
+	para "flooding during"
+	line "the eruption."
 	
 	para "It's not safe"
-	line "to enter"
+	line "to enter."
 	done
 
 Route20_MapEvents:

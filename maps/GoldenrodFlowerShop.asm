@@ -1,6 +1,7 @@
 	object_const_def
 	const GOLDENRODFLOWERSHOP_TEACHER
 	const GOLDENRODFLOWERSHOP_FLORIA
+	const GOLDENRODFLOWERSHOP_BELLOSSOM
 
 GoldenrodFlowerShop_MapScripts:
 	def_scene_scripts
@@ -70,6 +71,18 @@ FlowerShopFloriaScript:
 .FoughtSudowoodo:
 	writetext GoldenrodFlowerShopFloriaItReallyWasAMonText
 	waitbutton
+	closetext
+	end
+
+FlowerShopBellossomScript:
+	opentext
+	writetext FlowerShopBellossomText
+	cry BELLOSSOM	
+	waitbutton
+	refreshscreen
+	pokepic BELLOSSOM
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -144,6 +157,11 @@ GoldenrodFlowerShopFloriaItReallyWasAMonText:
 	text "So it really was a"
 	line "#MON!"
 	done
+	
+FlowerShopBellossomText:
+	text "BELLOSSOM: Bel!"
+	line "Lossom!!"
+	done
 
 GoldenrodFlowerShop_MapEvents:
 	db 0, 0 ; filler
@@ -159,3 +177,5 @@ GoldenrodFlowerShop_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
 	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
+	object_event  5,  1, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopBellossomScript, -1
+	

@@ -683,6 +683,12 @@ AipomEggMoves:
 	db DOUBLESLAP
 	db BEAT_UP
 	db -1 ; end
+	
+SunkernEggMoves:
+	db STUN_SPORE
+	db POISONPOWDER
+	db SLEEP_POWDER
+	db -1 ; end
 
 YanmaEggMoves:
 	db REVERSAL

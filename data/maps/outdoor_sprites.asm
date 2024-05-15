@@ -100,7 +100,8 @@ VermilionGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_SCIENTIST
 	db SPRITE_LADY
-	; 7 of max 9 walking sprites
+	db SPRITE_FALKNER
+	; 8 of max 9 walking sprites
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
 	db SPRITE_POKE_BALL
@@ -220,7 +221,8 @@ AzaleaGroupSprites:
 	db SPRITE_ROCKET
 	db SPRITE_RIVAL
 	db SPRITE_LASS
-	; 7 of max 9 walking sprites
+	db SPRITE_PROTON
+	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
 	db SPRITE_KURT

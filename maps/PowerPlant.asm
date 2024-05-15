@@ -6,6 +6,7 @@
 	const POWERPLANT_GYM_GUIDE3
 	const POWERPLANT_MANAGER
 	const POWERPLANT_FOREST
+	const POWERPLANT_GIOVANNI
 
 PowerPlant_MapScripts:
 	def_scene_scripts
@@ -192,6 +193,27 @@ Forest:
 	trade NPC_TRADE_FOREST
 	waitbutton
 	closetext
+	end
+	
+PowerPlantGiovanniScript:
+	faceplayer
+	opentext
+	checkevent EVENT_RETURNED_MACHINE_PART
+	iftrue .GiovanniExit
+	writetext PowerPlantGiovanniSearchingText
+	waitbutton
+	closetext
+	end
+	
+.GiovanniExit
+	setevent EVENT_POWER_PLANT_GIOVANNI
+	writetext PowerPlantGiovanniLeavingText
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	disappear POWERPLANT_GIOVANNI
+	pause 25
+	special FadeInFromBlack
 	end
 
 PowerPlantBookshelf:
@@ -384,6 +406,38 @@ PowerPlantManagerMyBelovedGeneratorText:
 
 	para "Keep pumping the"
 	line "electricity out!"
+	done
+	
+PowerPlantGiovanniSearchingText:
+	text "???: I heard a"
+	line "rumour that TEAM"
+	cont "ROCKET had been"
+	
+	para "spotted here, and"
+	line "stole something,"
+	
+	para "so I came to"
+	line "search for them."
+	done
+	
+PowerPlantGiovanniLeavingText:
+	text "???: You found the"
+	line "ROCKET member,"
+	cont "defeated him, and"
+	
+	para "retrieved what was"
+	line "stolen from here?"
+	
+	para "I'm very impressed"
+	line "that one your age"
+	cont "is that capable."
+	
+	para "Though, I guess"
+	line "I really shouldn't"
+	cont "be surprised."
+	
+	para "………"
+	line "Thank you."
 	done
 
 PowerPlant_MapEvents:

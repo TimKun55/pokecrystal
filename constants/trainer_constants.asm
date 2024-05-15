@@ -150,6 +150,7 @@ DEF KRIS EQU __trainer_class__
 	const JASON
 	const JOEY4
 	const JOEY5
+	const GABE
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -218,6 +219,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA4
 	const DANA5
 	const SANDY
+	const MAI
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -353,6 +355,7 @@ DEF KRIS EQU __trainer_class__
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
+	const ENOMOTO
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -378,6 +381,7 @@ DEF KRIS EQU __trainer_class__
 	const ARNIE4
 	const ARNIE5
 	const WAYNE
+	const JON
 
 	trainerclass FISHER ; 25
 	const JUSTIN
@@ -658,7 +662,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass HEX_MANIAC ; 39
 	const MARTHA
 	const GRACE
-	const BETHANY ; Used in Silver Hall - Zapdos
+	const BETHANY ; unused
 	const MARGRET ; unused
 	const ETHEL ; unused
 	const REBECCA
