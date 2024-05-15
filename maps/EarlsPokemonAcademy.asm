@@ -541,17 +541,18 @@ LassMaiAfterBattleText:
 
 	para "But there is ONE"
 	line "move that has"
-	cont "100% accuracy."
+	cont "100 percent"
+	cont "accuracy."
 	done
 	
 TeacherEnomotoIntroText:
 	text "Welcome to my"
-	line "Battle Course!"
+	line "BATTLE COURSE!"
 
-	para "I'm Enomoto."
+	para "I'm ENOMOTO."
 
 	para "I've been hired"
-	line "by Earl to teach"
+	line "by EARL to teach"
 
 	para "the practical"
 	line "side of status"
@@ -601,7 +602,8 @@ TeacherEnomotoStrongerText:
 
 	para "a #MON that"
 	line "can still evolve"
-	cont "by 50% each."
+	cont "by 50 percent"
+	cont "each."
 
 	para "Put it to"
 	line "good use!"

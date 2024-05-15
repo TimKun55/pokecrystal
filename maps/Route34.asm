@@ -90,7 +90,6 @@ TrainerCamperTodd1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_CAMPER_TODD
-	endifjustbattled
 	opentext
 	checkflag ENGINE_TODD_READY_FOR_REMATCH
 	iftrue .Rematch
@@ -215,7 +214,6 @@ TrainerPicnickerGina1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
-	endifjustbattled
 	opentext
 	checkflag ENGINE_GINA_READY_FOR_REMATCH
 	iftrue .Rematch

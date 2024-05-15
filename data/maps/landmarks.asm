@@ -9,7 +9,7 @@ Landmarks:
 	table_width 4, Landmarks
 	landmark  -8, -16, SpecialMapName
 	landmark 132, 100, NewBarkTownName
-	landmark 120, 100, Route29Name
+	landmark 112, 100, Route29Name
 	landmark  92, 100, CherrygroveCityName
 	landmark  92,  80, Route30Name
 	landmark  88,  60, Route31Name
@@ -21,7 +21,7 @@ Landmarks:
 	landmark  68, 124, Route33Name
 	landmark  60, 124, AzaleaTownName
 	landmark  62, 122, SlowpokeWellName
-	landmark  44, 120, IlexForestName
+	landmark  44, 124, IlexForestName
 	landmark  44, 112, Route34Name
 	landmark  44,  92, GoldenrodCityName
 	landmark  42,  92, RadioTowerName

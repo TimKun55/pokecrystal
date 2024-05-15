@@ -29,7 +29,6 @@ TrainerBirdKeeperJose2:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
-	endifjustbattled
 	opentext
 	checkflag ENGINE_JOSE_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -164,7 +163,6 @@ TrainerCooltrainerfReena:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
-	endifjustbattled
 	opentext
 	checkflag ENGINE_REENA_READY_FOR_REMATCH
 	iftrue .WantsBattle
