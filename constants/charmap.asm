@@ -123,11 +123,13 @@
 	charmap "└",         $be
 	charmap "┘",         $bf
 	
-	charmap ">",		 $c6
-	charmap "<",		 $c7
-	charmap "=",		 $c8
-	charmap "+",		 $c9
-	charmap "<%>",		 $ca
+	charmap "<ID>",      $c0
+	charmap "№",         $c1
+	
+	charmap ">",		 $c7
+	charmap "<",		 $c8
+	charmap "=",		 $c9
+	charmap "+",		 $ca
 	charmap "<BOLD_P>",	 $cb
 	charmap "<BOLD_C>",  $cc
 	charmap "<%>",		 $cd

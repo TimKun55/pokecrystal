@@ -128,7 +128,6 @@ MadamItemsHouse_Blocks:
 BlackthornMoveTutorHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
 GoldenrodNameRater_Blocks:
-;PrimosHouse_Blocks:
 ManiasHouse_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 ;CianwoodMrTradebackHouse_Blocks:
@@ -148,7 +147,7 @@ EcruteakItemfinderHouse_Blocks:
 EcruteakSwarmHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
-;VioletDollsHouse_Blocks:
+VioletPrimosHouse_Blocks:
 	INCBIN "maps/TraditionalHouse.ablk"
 
 CeruleanPoliceStation_Blocks:
@@ -968,13 +967,25 @@ CinnabarVolcanoB1F_Blocks:
 CinnabarMoltresNest_Blocks:
 	INCBIN "maps/CinnabarMoltresNest.ablk"
 
-Route14ZapdosNest_Blocks:
-	INCBIN "maps/Route14ZapdosNest.ablk"
+Route14ArticunoNest_Blocks:
+	INCBIN "maps/Route14ArticunoNest.ablk"
 
 MtSilverRoom4_Blocks:
 	INCBIN "maps/MtSilverRoom4.ablk"
 	
 UndergroundRoom_Blocks:
 	INCBIN "maps/UndergroundRoom.ablk"
+	
+Route4ZapdosNest_Blocks:
+	INCBIN "maps/Route4ZapdosNest.ablk"
+
+SaffronAviculturalSociety1F_Blocks:
+	INCBIN "maps/SaffronAviculturalSociety1F.ablk"
+
+SaffronAviculturalSociety2F_Blocks:
+	INCBIN "maps/SaffronAviculturalSociety2F.ablk"
+
+SaffronAviculturalSociety3F_Blocks:
+	INCBIN "maps/SaffronAviculturalSociety3F.ablk"
 
 ENDSECTION

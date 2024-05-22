@@ -359,9 +359,13 @@ ENDM
 	connection west, PewterCity, PEWTER_CITY, -5
 	connection east, Route4, ROUTE_4, 0
 
-	map_attributes Route4, ROUTE_4, $45, WEST | EAST
+	map_attributes Route4, ROUTE_4, $45, SOUTH | WEST | EAST 
+	connection south, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 4
 	connection west, Route3, ROUTE_3, 0
 	connection east, CeruleanCity, CERULEAN_CITY, -5
+	
+	map_attributes Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, $45, NORTH
+	connection north, Route4, ROUTE_4, -4
 
 	map_attributes Route8, ROUTE_8, $45, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -11
@@ -547,6 +551,7 @@ ENDM
 	map_attributes VioletNicknameSpeechHouse, VIOLET_NICKNAME_SPEECH_HOUSE, $00, 0
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes VioletKylesHouse, VIOLET_KYLES_HOUSE, $00, 0
+	map_attributes VioletPrimosHouse, VIOLET_PRIMOS_HOUSE, $00, 0
 	map_attributes Route32RuinsOfAlphGate, ROUTE_32_RUINS_OF_ALPH_GATE, $00, 0
 	map_attributes Route32Pokecenter1F, ROUTE_32_POKECENTER_1F, $00, 0
 	map_attributes Route35GoldenrodGate, ROUTE_35_GOLDENROD_GATE, $00, 0
@@ -619,7 +624,7 @@ ENDM
 	map_attributes FuchsiaPokecenter1F, FUCHSIA_POKECENTER_1F, $00, 0
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
-	map_attributes Route14ZapdosNest, ROUTE_14_ZAPDOS_NEST, $2f, 0
+	map_attributes Route14ArticunoNest, ROUTE_14_ARTICUNO_NEST, $40, 0
 	map_attributes LavenderPokecenter1F, LAVENDER_POKECENTER_1F, $00, 0
 	map_attributes MrFujisHouse, MR_FUJIS_HOUSE, $00, 0
 	map_attributes LavenderSpeechHouse, LAVENDER_SPEECH_HOUSE, $00, 0
@@ -701,6 +706,9 @@ ENDM
 	map_attributes SaffronPokecenter1F, SAFFRON_POKECENTER_1F, $00, 0
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $00, 0
 	map_attributes SaffronMagnetTrainStation, SAFFRON_MAGNET_TRAIN_STATION, $00, 0
+	map_attributes SaffronAviculturalSociety1F, SAFFRON_AVICULTURAL_SOCIETY_1F, $00, 0
+	map_attributes SaffronAviculturalSociety2F, SAFFRON_AVICULTURAL_SOCIETY_2F, $00, 0
+	map_attributes SaffronAviculturalSociety3F, SAFFRON_AVICULTURAL_SOCIETY_3F, $00, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $00, 0
 	map_attributes CopycatsHouse1F, COPYCATS_HOUSE_1F, $00, 0
 	map_attributes CopycatsHouse2F, COPYCATS_HOUSE_2F, $00, 0

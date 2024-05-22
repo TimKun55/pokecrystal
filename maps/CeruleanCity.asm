@@ -1,9 +1,9 @@
 	object_const_def
 	const CERULEANCITY_COOLTRAINER_M
 	const CERULEANCITY_SUPER_NERD
-	const CERULEANCITY_SLOWPOKE
+	const CERULEANCITY_SLOWBRO
 	const CERULEANCITY_COOLTRAINER_F
-	const CERULEANCITY_FISHER
+	const CERULEANCITY_POKEFAN_M
 	const CERULEANCITY_YOUNGSTER
 
 CeruleanCity_MapScripts:
@@ -40,6 +40,10 @@ CeruleanCitySlowbro:
 	writetext CeruleanCitySlowbroText
 	cry SLOWBRO
 	waitbutton
+	refreshscreen
+	pokepic SLOWBRO
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -65,7 +69,7 @@ CeruleanCityCooltrainerFScript:
 	closetext
 	end
 
-CeruleanCityFisherScript:
+CeruleanCityPokefanMScript:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
@@ -73,13 +77,13 @@ CeruleanCityFisherScript:
 	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	iftrue .MetCeruleanRocket
 .ReturnedMachinePart:
-	writetext CeruleanCityFisherText
+	writetext CeruleanCityPokefanMText
 	waitbutton
 	closetext
 	end
 
 .MetCeruleanRocket:
-	writetext CeruleanCityFisherRocketTipText
+	writetext CeruleanCityPokefanMRocketTipText
 	waitbutton
 	closetext
 	end
@@ -199,13 +203,13 @@ CeruleanCityCooltrainerFText3:
 	text "…"
 	done
 
-CeruleanCityFisherText:
+CeruleanCityPokefanMText:
 	text "I'm a huge fan of"
 	line "CERULEAN GYM's"
 	cont "MISTY."
 	done
 
-CeruleanCityFisherRocketTipText:
+CeruleanCityPokefanMRocketTipText:
 	text "I saw this shady"
 	line "guy go off toward"
 	cont "CERULEAN's CAPE."
@@ -300,7 +304,7 @@ CeruleanCity_MapEvents:
 	def_object_events
 	object_event  9, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 22, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
-	object_event 29, 26, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
+	object_event 29, 26, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event 30, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
-	object_event 15, 27, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
+	object_event 15, 27, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanMScript, -1
 	object_event  8, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1

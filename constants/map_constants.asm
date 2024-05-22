@@ -217,6 +217,7 @@ ENDM
 	map_const ROUTE_24,                                    10,  9 ; 14
 	map_const ROUTE_25,                                    30,  9 ; 15
 	map_const CERULEAN_CITY,                               20, 18 ; 16
+	map_const ROUTE_4_ZAPDOS_NEST,                          9, 14 ; 17
 	endgroup
 
 	newgroup AZALEA                                               ;  8
@@ -250,12 +251,13 @@ ENDM
 	map_const VIOLET_NICKNAME_SPEECH_HOUSE,                 4,  4 ;  9
 	map_const VIOLET_POKECENTER_1F,                         6,  4 ; 10
 	map_const VIOLET_KYLES_HOUSE,                           4,  4 ; 11
-	map_const ROUTE_32_RUINS_OF_ALPH_GATE,                  5,  4 ; 12
-	map_const ROUTE_32_POKECENTER_1F,                       6,  4 ; 13
-	map_const ROUTE_35_GOLDENROD_GATE,                      5,  4 ; 14
-	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 15
-	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 16
-	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
+	map_const VIOLET_PRIMOS_HOUSE,                          4,  4 ; 12
+	map_const ROUTE_32_RUINS_OF_ALPH_GATE,                  5,  4 ; 13
+	map_const ROUTE_32_POKECENTER_1F,                       6,  4 ; 14
+	map_const ROUTE_35_GOLDENROD_GATE,                      5,  4 ; 15
+	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 16
+	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 17
+	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 18
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11
@@ -367,7 +369,7 @@ ENDM
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 17
 	map_const ROUTE_16_GATE,                                5,  4 ; 18
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 19
-	map_const ROUTE_14_ZAPDOS_NEST,                        15, 15 ; 20
+	map_const ROUTE_14_ARTICUNO_NEST,                      11, 13 ; 20
 	endgroup
 
 	newgroup LAVENDER                                             ; 18
@@ -492,6 +494,9 @@ ENDM
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 11
 	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ; 12
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 13
+	map_const SAFFRON_AVICULTURAL_SOCIETY_1F,               6,  5 ; 14
+	map_const SAFFRON_AVICULTURAL_SOCIETY_2F,               6,  6 ; 15
+	map_const SAFFRON_AVICULTURAL_SOCIETY_3F,               7,  8 ; 16	
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26

@@ -3181,8 +3181,10 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wAviculturalSociety1FSceneID::                    db
+wAviculturalSociety2FSceneID::                    db
 
-	ds 49
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

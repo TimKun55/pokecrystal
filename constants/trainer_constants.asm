@@ -535,6 +535,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BLAINE ; 2e
 	const BLAINE1
 	const BLAINE2
+	const BLAINE3
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
@@ -759,9 +760,11 @@ DEF KRIS EQU __trainer_class__
 	
 	trainerclass AGATHA ; 46
 	const AGATHA1
+	const AGATHA2
 	
 	trainerclass LORELEI ; 47
 	const LORELEI1
+	const LORELEI2
 	
 	trainerclass PROTON ; 48
 	const PROTON1

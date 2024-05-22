@@ -496,12 +496,21 @@ INCLUDE "maps/CinnabarVolcanoB1F.asm"
 INCLUDE "maps/CinnabarMoltresNest.asm"
 INCLUDE "maps/CianwoodBeastsHouse.asm"
 INCLUDE "maps/EcruteakFairyFamilyHouse.asm"
-INCLUDE "maps/Route14ZapdosNest.asm"
+INCLUDE "maps/Route14ArticunoNest.asm"
 INCLUDE "maps/MtSilverRoom4.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/UndergroundRoom.asm"
+INCLUDE "maps/VioletPrimosHouse.asm"
+INCLUDE "maps/Route4ZapdosNest.asm"
+
+
+SECTION "Map Scripts 27", ROMX
+
+INCLUDE "maps/SaffronAviculturalSociety1F.asm"
+INCLUDE "maps/SaffronAviculturalSociety2F.asm"
+INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 
 ENDSECTION

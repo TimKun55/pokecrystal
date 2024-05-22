@@ -84,4 +84,6 @@ MapScenes::
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 ;	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 ;	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
+	scene_var SAFFRON_AVICULTURAL_SOCIETY_1F,              wAviculturalSociety1FSceneID
+	scene_var SAFFRON_AVICULTURAL_SOCIETY_2F,              wAviculturalSociety2FSceneID
 	db -1 ; end

@@ -139,3 +139,14 @@
 	tilecoll WALL, WINDOW, PC, FLOOR ; 8a
 	tilecoll WALL, WALL, WALL, WALL ; 8b
 	tilecoll WALL, WALL, BOOKSHELF, FLOOR ; 8c
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8d
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8e
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 8f
+	tilecoll WALL, FLOOR, BOOKSHELF, FLOOR ; 90
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 91
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 92
+	tilecoll WALL, STAIRCASE, COUNTER, FLOOR ; 93
+	tilecoll WALL, WINDOW, WALL, FLOOR ; 94
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 95
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 96
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 97

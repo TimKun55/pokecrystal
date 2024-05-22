@@ -147,9 +147,6 @@ INCBIN "data/tilesets/underground_metatiles.bin"
 TilesetUndergroundColl::
 INCLUDE "data/tilesets/underground_collision.asm"
 
-TilesetDarkCaveGFX::
-INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
-
 
 SECTION "Tileset Data 5", ROMX
 
@@ -188,9 +185,6 @@ INCBIN "data/tilesets/traditional_house_metatiles.bin"
 
 
 SECTION "Tileset Data 6", ROMX
-
-TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetChampionsRoomGFX::
 INCBIN "gfx/tilesets/champions_room.2bpp.lz"
@@ -521,3 +515,12 @@ INCBIN "gfx/tilesets/indigo.2bpp.lz"
 
 TilesetIndigoMeta::
 INCBIN "data/tilesets/indigo_metatiles.bin"
+
+
+SECTION "Tileset Data 18", ROMX
+
+TilesetForestGFX::
+INCBIN "gfx/tilesets/forest.2bpp.lz"
+
+TilesetDarkCaveGFX::
+INCBIN "gfx/tilesets/dark_cave.2bpp.lz"

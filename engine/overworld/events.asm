@@ -35,41 +35,6 @@ CheckEnabledMapEventsBit5:
 	bit 5, [hl]
 	ret
 
-DisableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 2, [hl]
-	ret
-
-DisableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 1, [hl]
-	ret
-
-DisableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 0, [hl]
-	ret
-
-DisableWildEncounters: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 4, [hl]
-	ret
-
-EnableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 2, [hl]
-	ret
-
-EnableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 1, [hl]
-	ret
-
-EnableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 0, [hl]
-	ret
-
 EnableWildEncounters:
 	ld hl, wEnabledPlayerEvents
 	set 4, [hl]
@@ -130,11 +95,6 @@ EnterMap:
 	ldh [hMapEntryMethod], a
 	ld a, MAPSTATUS_HANDLE
 	ld [wMapStatus], a
-	ret
-
-UnusedWait30Frames: ; unreferenced
-	ld c, 30
-	call DelayFrames
 	ret
 
 HandleMap:
@@ -474,11 +434,6 @@ CheckTimeEvents:
 	ld a, BANK(BugCatchingContestOverScript)
 	ld hl, BugCatchingContestOverScript
 	call CallScript
-	scf
-	ret
-
-.unused ; unreferenced
-	ld a, $8 ; ???
 	scf
 	ret
 
@@ -928,11 +883,6 @@ CountStep:
 	scf
 	ret
 
-.whiteout ; unreferenced
-	ld a, PLAYEREVENT_WHITEOUT
-	scf
-	ret
-
 DoRepelStep:
 	ld a, [wRepelEffect]
 	and a
@@ -990,9 +940,6 @@ PlayerEventScriptPointers:
 	assert_table_length NUM_PLAYER_EVENTS + 1
 
 InvalidEventScript:
-	end
-
-UnusedPlayerEventScript: ; unreferenced
 	end
 
 HatchEggScript:

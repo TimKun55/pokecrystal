@@ -316,6 +316,9 @@ ROMX $7f
 	"Tileset Data 9"
 ROMX $80
 	"The End"
+	"Map Scripts 26"
+ROMX $81
+	"Map Scripts 27"	
 WRAM0
 	"Stack"
 	"Audio RAM"

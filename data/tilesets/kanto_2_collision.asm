@@ -218,3 +218,4 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; d9
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; da
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; db
+	tilecoll FLOOR, WALL, FLOOR, WALL ; dc

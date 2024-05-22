@@ -64,36 +64,36 @@ KantoGrassWildMons:
 	db  8, CLEFABLE,      57,  60
 	end_grass_wildmons
 	
-;	def_grass_wildmons VIRIDIAN_FOREST
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-;	; morn
-;	;   %, species,		 min, max
-;	db 22, PIKACHU,       57,  60
-;	db 22, BUTTERFREE,    62,  65
-;	db 22, BEEDRILL,      62,  65
-;	db 10, LEDIAN,        62,  65
-;	db  8, VENOMOTH,      62,  65
-;	db  8, HERACROSS,     62,  65
-;	db  8, FORRETRESS,    62,  65
-;	; day
-;	;   %, species,		 min, max
-;	db 22, PIKACHU,       57,  60
-;	db 22, BUTTERFREE,    62,  65
-;	db 22, BEEDRILL,      62,  65
-;	db 10, LEDIAN,        62,  65
-;	db  8, VENOMOTH,      62,  65
-;	db  8, HERACROSS,     62,  65
-;	db  8, FORRETRESS,    62,  65
-;	; nite
-;	;   %, species,		 min, max
-;	db 22, PIKACHU,       57,  60
-;	db 22, BUTTERFREE,    62,  65
-;	db 22, BEEDRILL,      62,  65
-;	db 10, ARIADOS,       62,  65
-;	db  8, VENOMOTH,      62,  65
-;	db  8, HERACROSS,     62,  65
-;	db  8, FORRETRESS,    62,  65
-;	end_grass_wildmons
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, PIKACHU,       57,  60
+	db 22, BUTTERFREE,    62,  65
+	db 22, BEEDRILL,      62,  65
+	db 10, LEDIAN,        62,  65
+	db  8, VENOMOTH,      62,  65
+	db  8, HERACROSS,     62,  65
+	db  8, FORRETRESS,    62,  65
+	; day
+	;   %, species,		 min, max
+	db 22, PIKACHU,       57,  60
+	db 22, BUTTERFREE,    62,  65
+	db 22, BEEDRILL,      62,  65
+	db 10, LEDIAN,        62,  65
+	db  8, VENOMOTH,      62,  65
+	db  8, HERACROSS,     62,  65
+	db  8, FORRETRESS,    62,  65
+	; nite
+	;   %, species,		 min, max
+	db 22, PIKACHU,       57,  60
+	db 22, BUTTERFREE,    62,  65
+	db 22, BEEDRILL,      62,  65
+	db 10, ARIADOS,       62,  65
+	db  8, VENOMOTH,      62,  65
+	db  8, HERACROSS,     62,  65
+	db  8, FORRETRESS,    62,  65
+	end_grass_wildmons
 	
 	def_grass_wildmons ROCK_TUNNEL_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -429,8 +429,7 @@ KantoGrassWildMons:
 	; nite
 	;   %, species,		 min, max
 	db 22, KADABRA,       52,  55
-;	db 22, HONCHKROW,     52,  55
-	db 22, MURKROW,       52,  55
+	db 22, HONCHKROW,     52,  55
 	db 22, JIGGLYPUFF,    52,  55
 	db 10, PERSIAN,       52,  55
 	db  8, HOUNDOOM,      52,  55
@@ -682,8 +681,7 @@ KantoGrassWildMons:
 	db 22, GRIMER,        55,  57
 	db 10, MUK,           55,  57
 	db  8, MURKROW,       55,  57
-;	db  8, HONCHKROW,     58,  60
-	db  8, MURKROW,       58,  60
+	db  8, HONCHKROW,     58,  60
 	db  8, MUK,           58,  60
 	end_grass_wildmons
 
@@ -712,8 +710,7 @@ KantoGrassWildMons:
 	db 22, FEAROW,        57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-;	db 10, HONCHKROW,     60,  62
-	db 10, MURKROW,       60,  62
+	db 10, HONCHKROW,     60,  62
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
 	db  8, MUK,           69,  62

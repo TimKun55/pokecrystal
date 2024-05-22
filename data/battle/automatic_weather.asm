@@ -15,8 +15,10 @@ ENDM
 	auto_weather_map ROUTE_43, AUTOMATIC_RAIN
 	auto_weather_map LAKE_OF_RAGE, AUTOMATIC_RAIN
 	auto_weather_map ROUTE_45, AUTOMATIC_SANDSTORM
-;	auto_weather_map MAHOGANY_GYM, AUTOMATIC_HAIL
-;	auto_weather_map CINNABAR_MOLTRES_NEST, AUTOMATIC_SUN
+	auto_weather_map MAHOGANY_GYM, AUTOMATIC_HAIL
+	auto_weather_map ROUTE_14_ARTICUNO_NEST, AUTOMATIC_HAIL
+	auto_weather_map ROUTE_4_ZAPDOS_NEST, AUTOMATIC_RAIN
+	auto_weather_map CINNABAR_MOLTRES_NEST, AUTOMATIC_SUN
 	db 0 ; end
 
 AutomaticWeatherEffects:

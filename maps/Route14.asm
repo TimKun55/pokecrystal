@@ -182,8 +182,8 @@ Route14_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 44, 24, ROUTE_14_ZAPDOS_NEST, 1
-	warp_event 45, 24, ROUTE_14_ZAPDOS_NEST, 2
+	warp_event 44, 24, ROUTE_14_ARTICUNO_NEST, 1
+	warp_event 45, 24, ROUTE_14_ARTICUNO_NEST, 2
 
 	def_coord_events
 

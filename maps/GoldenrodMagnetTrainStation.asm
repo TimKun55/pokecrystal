@@ -1,3 +1,7 @@
+DEF GOLDENRODMAGNETTRAINSTATION_FRESH_WATER_PRICE EQU 200
+DEF GOLDENRODMAGNETTRAINSTATION_SODA_POP_PRICE    EQU 300
+DEF GOLDENRODMAGNETTRAINSTATION_LEMONADE_PRICE    EQU 350
+
 	object_const_def
 	const GOLDENRODMAGNETTRAINSTATION_OFFICER
 	const GOLDENRODMAGNETTRAINSTATION_GENTLEMAN
@@ -65,6 +69,79 @@ Script_ArriveFromSaffron:
 	waitbutton
 	closetext
 	end
+	
+GoldenrodMagnetTrainStationVendingMachine:
+	opentext
+	writetext GoldenrodMagnetTrainStationVendingText
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .FreshWater
+	ifequal 2, .SodaPop
+	ifequal 3, .Lemonade
+	closetext
+	end
+
+.FreshWater:
+	checkmoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_FRESH_WATER_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem FRESH_WATER
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_FRESH_WATER_PRICE
+	getitemname STRING_BUFFER_3, FRESH_WATER
+	sjump .VendItem
+
+.SodaPop:
+	checkmoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_SODA_POP_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem SODA_POP
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_SODA_POP_PRICE
+	getitemname STRING_BUFFER_3, SODA_POP
+	sjump .VendItem
+
+.Lemonade:
+	checkmoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_LEMONADE_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem LEMONADE
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, GOLDENRODMAGNETTRAINSTATION_LEMONADE_PRICE
+	getitemname STRING_BUFFER_3, LEMONADE
+	sjump .VendItem
+
+.VendItem:
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext GoldenrodMagnetTrainStationClangText
+	promptbutton
+	itemnotify
+	sjump .Start
+
+.NotEnoughMoney:
+	writetext GoldenrodMagnetTrainStationVendingNoMoneyText
+	waitbutton
+	sjump .Start
+
+.NotEnoughSpace:
+	writetext GoldenrodMagnetTrainStationVendingNoSpaceText
+	waitbutton
+	sjump .Start
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "FRESH WATER  ¥{d:GOLDENRODMAGNETTRAINSTATION_FRESH_WATER_PRICE}@"
+	db "SODA POP     ¥{d:GOLDENRODMAGNETTRAINSTATION_SODA_POP_PRICE}@"
+	db "LEMONADE     ¥{d:GOLDENRODMAGNETTRAINSTATION_LEMONADE_PRICE}@"
+	db "CANCEL@"
 
 GoldenrodMagnetTrainStationGentlemanScript:
 	jumptextfaceplayer GoldenrodMagnetTrainStationGentlemanText
@@ -161,6 +238,29 @@ GoldenrodMagnetTrainStationGentlemanText:
 	line "JOHTO much closer"
 	cont "to KANTO."
 	done
+	
+GoldenrodMagnetTrainStationVendingText:
+	text "A vending machine!"
+	line "Here's the menu."
+	done
+
+GoldenrodMagnetTrainStationClangText:
+	text "Clang! A can of"
+	line "@"
+	text_ram wStringBuffer3
+	text_start
+	cont "popped out!"
+	done
+
+GoldenrodMagnetTrainStationVendingNoMoneyText:
+	text "Oops, not enough"
+	line "money."
+	done
+
+GoldenrodMagnetTrainStationVendingNoSpaceText:
+	text "There's no more"
+	line "room for stuff."
+	done
 
 GoldenrodMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
@@ -175,7 +275,11 @@ GoldenrodMagnetTrainStation_MapEvents:
 	coord_event 11,  6, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON, Script_ArriveFromSaffron
 
 	def_bg_events
+	bg_event  4, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  5, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  6, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  7, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
 
 	def_object_events
 	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
-	object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	object_event 10, 13, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN

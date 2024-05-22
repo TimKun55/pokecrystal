@@ -109,9 +109,13 @@ PokemonFanClubBayleefScript:
 	writetext PokemonFanClubBayleefText
 	cry BAYLEEF
 	waitbutton
+	refreshscreen
+	pokepic BAYLEEF
+	waitbutton
+	closepokepic
 	closetext
 	end
-
+	
 PokemonFanClubListenSign:
 	jumptext PokemonFanClubListenSignText
 
