@@ -2660,7 +2660,7 @@ BattleAnim_Flash:
 	anim_ret
 
 BattleAnim_Substitute:
-	anim_sound 0, 0, SFX_SURF
+	anim_sound 0, 0, SFX_SHARPEN
 	anim_if_param_equal $3, .dropsub2
 	anim_if_param_equal $2, .raisesub
 	anim_if_param_equal $1, .dropsub

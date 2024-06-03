@@ -80,7 +80,7 @@
 	const SPRITE_CLEFAIRY_WALKING ; 4c
 	const SPRITE_CHRIS_SURF ; 4d
 	const SPRITE_KRIS_SURF ; 4e
-	const SPRITE_RATTATA ; 4f
+	const SPRITE_RATTATA_BACK ; 4f
 	const SPRITE_BIG_ONIX ; 50
 	const SPRITE_N64 ; 51
 	const SPRITE_SUDOWOODO ; 52
@@ -118,25 +118,27 @@
 	const SPRITE_PROTON ; 79
 	const SPRITE_EUSINE ; 7a
 	const SPRITE_PRIMO ; 7b
+	const SPRITE_SCHOOLBOY ; 7c
+	const SPRITE_BIRD_KEEPER ; 7d
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_next $80
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
-	const SPRITE_GEODUDE ; 81
-	const SPRITE_GROWLITHE ; 82
-	const SPRITE_WEEDLE ; 83
+	const SPRITE_TYROGUE ; 81
+	const SPRITE_PERSIAN ; 82
+	const SPRITE_HITMONCHAN ; 83
 	const SPRITE_SHELLDER ; 84
 	const SPRITE_ODDISH ; 85
 	const SPRITE_GENGAR ; 86
 	const SPRITE_ZUBAT ; 87
 	const SPRITE_MAGIKARP ; 88
 	const SPRITE_SQUIRTLE ; 89
-	const SPRITE_TOGEPI ; 8a
+	const SPRITE_RATTATA ; 8a
 	const SPRITE_BUTTERFREE ; 8b
 	const SPRITE_DIGLETT ; 8c
-	const SPRITE_POLIWAG ; 8d
+	const SPRITE_HITMONLEE ; 8d
 	const SPRITE_PIKACHU ; 8e
 	const SPRITE_CLEFAIRY ; 8f
 	const SPRITE_CHARMANDER ; 90
@@ -146,7 +148,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_JIGGLYPUFF ; 94
 	const SPRITE_GRIMER ; 95
 	const SPRITE_MILTANK ; 96
-	const SPRITE_PARAS ; 97
+	const SPRITE_HITMONTOP ; 97
 	const SPRITE_TENTACOOL ; 98
 	const SPRITE_TAUROS ; 99
 	const SPRITE_MACHOP ; 9a

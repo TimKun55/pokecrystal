@@ -23,10 +23,6 @@ Tileset0Meta::
 TilesetJohtoMeta::
 INCBIN "data/tilesets/johto_metatiles.bin"
 
-Tileset0Coll::
-TilesetJohtoColl::
-INCLUDE "data/tilesets/johto_collision.asm"
-
 
 SECTION "Tileset Data 2", ROMX
 
@@ -101,12 +97,6 @@ INCBIN "data/tilesets/game_corner_metatiles.bin"
 
 TilesetGameCornerColl::
 INCLUDE "data/tilesets/game_corner_collision.asm"
-
-TilesetTrainStationMeta::
-INCBIN "data/tilesets/train_station_metatiles.bin"
-
-TilesetTrainStationColl::
-INCLUDE "data/tilesets/train_station_collision.asm"
 
 
 SECTION "Tileset Data 4", ROMX
@@ -204,9 +194,6 @@ INCBIN "data/tilesets/johto_house_metatiles.bin"
 TilesetJohtoHouseColl::
 INCLUDE "data/tilesets/johto_house_collision.asm"
 
-TilesetLighthouseGFX::
-INCBIN "gfx/tilesets/lighthouse.2bpp.lz"
-
 TilesetLighthouseMeta::
 INCBIN "data/tilesets/lighthouse_metatiles.bin"
 
@@ -230,6 +217,9 @@ TilesetKabutoWordRoomColl::
 TilesetOmanyteWordRoomColl::
 TilesetAerodactylWordRoomColl::
 INCLUDE "data/tilesets/beta_word_room_collision.asm"
+
+TilesetTrainStationMeta::
+INCBIN "data/tilesets/train_station_metatiles.bin"
 
 
 SECTION "Tileset Data 7", ROMX
@@ -257,11 +247,9 @@ TilesetCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
 TilesetCaveMeta::
-TilesetDarkCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin"
 
 TilesetCaveColl::
-TilesetDarkCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
 
@@ -344,14 +332,10 @@ INCBIN "data/tilesets/pokecom_center_attributes.bin"
 TilesetBattleTowerInsideAttr::
 INCBIN "data/tilesets/battle_tower_inside_attributes.bin"
 
-TilesetTowerAttr::
-INCBIN "data/tilesets/tower_attributes.bin"
-
 
 SECTION "Tileset Data 11", ROMX
 
 TilesetCaveAttr::
-TilesetDarkCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin"
 
 TilesetRuinsOfAlphAttr::
@@ -386,9 +370,6 @@ INCLUDE "data/tilesets/players_room_collision.asm"
 
 TilesetTraditionalHouseColl::
 INCLUDE "data/tilesets/traditional_house_collision.asm"
-
-TilesetPlayersRoomMeta::
-INCBIN "data/tilesets/players_room_metatiles.bin"
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto_2.2bpp.lz"
@@ -524,3 +505,43 @@ INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetDarkCaveGFX::
 INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
+
+TilesetTrainStationColl::
+INCLUDE "data/tilesets/train_station_collision.asm"
+
+Tileset0Coll::
+TilesetJohtoColl::
+INCLUDE "data/tilesets/johto_collision.asm"
+
+TilesetLighthouseGFX::
+INCBIN "gfx/tilesets/lighthouse.2bpp.lz"
+
+TilesetTowerAttr::
+INCBIN "data/tilesets/tower_attributes.bin"
+
+TilesetDarkCaveMeta::
+INCBIN "data/tilesets/dark_cave_metatiles.bin"
+
+TilesetDarkCaveColl::
+INCLUDE "data/tilesets/dark_cave_collision.asm"
+
+TilesetDarkCaveAttr::
+INCBIN "data/tilesets/dark_cave_attributes.bin"
+
+TilesetKanto5Meta::
+INCBIN "data/tilesets/kanto_5_metatiles.bin"
+
+TilesetKanto5Coll::
+INCLUDE "data/tilesets/kanto_5_collision.asm"
+
+
+SECTION "Tileset Data 19", ROMX
+
+TilesetKanto5GFX::
+INCBIN "gfx/tilesets/kanto_5.2bpp.lz"
+
+TilesetKanto5Attr::
+INCBIN "data/tilesets/kanto_5_attributes.bin"
+
+TilesetPlayersRoomMeta::
+INCBIN "data/tilesets/players_room_metatiles.bin"

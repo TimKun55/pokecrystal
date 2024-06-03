@@ -36,11 +36,12 @@ _AnimateTileset::
 	jp hl
 
 Tileset0Anim:
-TilesetJohtoModernAnim:
 TilesetKantoAnim:
 TilesetKanto3Anim:
+TilesetKanto5Anim:
 TilesetIndigoAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -52,6 +53,7 @@ TilesetIndigoAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 	
+TilesetJohtoModernAnim:
 TilesetKanto2Anim:
 TilesetKanto4Anim:
 	dw vTiles2 tile $01, AnimateWaterTile

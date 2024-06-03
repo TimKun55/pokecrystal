@@ -1,6 +1,6 @@
 	object_const_def
 	const CELADONCITY_FISHER
-	const CELADONCITY_POLIWAG
+	const CELADONCITY_POLIWRATH
 	const CELADONCITY_TEACHER1
 	const CELADONCITY_GRAMPS1
 	const CELADONCITY_GRAMPS2
@@ -27,6 +27,10 @@ CeladonCityPoliwrath:
 	writetext CeladonCityPoliwrathText
 	cry POLIWRATH
 	waitbutton
+	refreshscreen
+	pokepic POLIWRATH
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -89,21 +93,15 @@ CeladonCityPoliwrathText:
 	done
 
 CeladonCityTeacher1Text:
-if DEF(_CRYSTAL_AU)
-	text "I lost at the"
-	line "machines."
-	done
-else
 	text "I lost at the slot"
 	line "machines again…"
 
-	para "We girls also play"
-	line "the slots now."
+	para "I've got to work"
+	line "hard to make more"
 
-	para "You should check"
-	line "them out too."
+	para "money so I can"
+	line "keep playing…"
 	done
-endc
 
 CeladonCityGramps1Text:
 	text "GRIMER have been"
@@ -199,17 +197,10 @@ CeladonCityMansionSignText:
 	done
 
 CeladonCityGameCornerSignText:
-if DEF(_CRYSTAL_AU)
-	text "The Game Area for"
-	line "Grown-ups--CELADON"
-	cont "GAME CORNER"
-	done
-else
 	text "The Playground for"
 	line "Everybody--CELADON"
 	cont "GAME CORNER"
 	done
-endc
 
 CeladonCityTrainerTipsText:
 	text "TRAINER TIPS"
@@ -217,9 +208,8 @@ CeladonCityTrainerTipsText:
 	para "GUARD SPEC."
 	line "protects #MON"
 
-	para "against SPECIAL"
-	line "attacks such as"
-	cont "fire and water."
+	para "from having their"
+	line "stats lowered!"
 
 	para "Get your items at"
 	line "CELADON DEPT."
@@ -239,6 +229,9 @@ CeladonCity_MapEvents:
 	warp_event 23, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
 	warp_event 10, 29, CELADON_GYM, 1
 	warp_event 25, 29, CELADON_CAFE, 1
+	warp_event 33, 17, CELADON_HOME_DECOR_STORE_1F, 1
+	warp_event  0, 24, ROUTE_16_GATE, 3
+	warp_event  0, 25, ROUTE_16_GATE, 4
 
 	def_coord_events
 
@@ -254,7 +247,7 @@ CeladonCity_MapEvents:
 
 	def_object_events
 	object_event 26, 11, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
-	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
+	object_event 27, 11, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
 	object_event 23, 23, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
 	object_event 14, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
 	object_event 12, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1

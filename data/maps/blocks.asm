@@ -196,6 +196,7 @@ Route5SaffronGate_Blocks:
 Route12LavenderGate_Blocks:
 Route2ViridianForestGate_Blocks:
 ViridianForestRoute2Gate_Blocks:
+Route1ViridianGate_Blocks:
 	INCBIN "maps/NorthSouthGate.ablk"
 
 CinnabarIsland_Blocks:
@@ -237,6 +238,7 @@ Route39_Blocks:
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
 
+Route36VioletGate_Blocks:
 Route38EcruteakGate_Blocks:
 Route42EcruteakGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
@@ -853,8 +855,14 @@ UndergroundPath_Blocks:
 Route39Barn_Blocks:
 	INCBIN "maps/Route39Barn.ablk"
 
-VictoryRoad_Blocks:
-	INCBIN "maps/VictoryRoad.ablk"
+VictoryRoad1F_Blocks:
+	INCBIN "maps/VictoryRoad1F.ablk"
+
+VictoryRoad2F_Blocks:
+	INCBIN "maps/VictoryRoad2F.ablk"
+
+VictoryRoad3F_Blocks:
+	INCBIN "maps/VictoryRoad3F.ablk"
 
 Route23_Blocks:
 	INCBIN "maps/Route23.ablk"
@@ -987,5 +995,32 @@ SaffronAviculturalSociety2F_Blocks:
 
 SaffronAviculturalSociety3F_Blocks:
 	INCBIN "maps/SaffronAviculturalSociety3F.ablk"
+
+GoldenrodHomeDecorStore1F_Blocks:
+	INCBIN "maps/GoldenrodHomeDecorStore1F.ablk"
+	
+GoldenrodHomeDecorStore2F_Blocks:
+	INCBIN "maps/GoldenrodHomeDecorStore2F.ablk"
+	
+GoldenrodHomeDecorStore3F_Blocks:
+	INCBIN "maps/GoldenrodHomeDecorStore3F.ablk"
+
+GoldenrodHomeDecorStore4F_Blocks:
+	INCBIN "maps/GoldenrodHomeDecorStore4F.ablk"
+
+CeladonHomeDecorStore1F_Blocks:
+	INCBIN "maps/CeladonHomeDecorStore1F.ablk"
+	
+CeladonHomeDecorStore2F_Blocks:
+	INCBIN "maps/CeladonHomeDecorStore2F.ablk"
+	
+CeladonHomeDecorStore3F_Blocks:
+	INCBIN "maps/CeladonHomeDecorStore3F.ablk"
+
+CeladonHomeDecorStore4F_Blocks:
+	INCBIN "maps/CeladonHomeDecorStore4F.ablk"
+
+GoldenrodToyStore_Blocks:
+	INCBIN "maps/GoldenrodToyStore.ablk"
 
 ENDSECTION

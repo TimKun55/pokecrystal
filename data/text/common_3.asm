@@ -239,11 +239,9 @@ _ReceivedItemText::
 	done
 
 _PutItemInPocketText::
-	text "<PLAYER> put the"
-	line "@"
-	text_ram wStringBuffer1
-	text " in"
-	cont "the @"
+	text "<PLAYER> put"
+	line "it in the"
+	cont "@"
 	text_ram wStringBuffer3
 	text "."
 	prompt
@@ -600,6 +598,89 @@ _PharmacyNoMoneyText::
 _PharmacyComeAgainText::
 	text "All right."
 	line "See you around."
+	done
+
+_BerryShop_IntroText::
+	text "Hello, sweetie!"
+
+	para "Would you like"
+	line "any BERRYS?"
+
+	para "We've been all"
+	line "gathering them"
+	cont "from all over!"
+	done
+
+_BerryShop_ComeAgainText::
+	text "Bye bye!"
+	done
+
+_BerryShop_HowManyText::
+	text "How many do you"
+	line "need?"
+	done
+
+_BerryShop_CostsThisMuchText::
+	text "That'll cost"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". Is that OK?"
+	done
+
+_BerryShop_InsufficientFundsText::
+	text "Sorry, sweetheart,"
+	line "not enough money."
+	done
+
+_BerryShop_BagFullText::
+	text "Oh, your bag"
+	line "is full!"
+	done
+
+_BerryShop_HereYouGoText::
+	text "There you go,"
+	line "sweetheart!"
+	done
+
+_MadamItems_IntroText::
+	text "Hello there."
+
+	para "I sell items that"
+	line "can help certain"
+	cont "#MON evolve"
+	
+	para "when they hold"
+	line "them and reach a"
+	cont "particular level."
+	done
+
+_MadamItems_ComeAgainText::
+	text "Come again!"
+	done
+
+_MadamItems_HowManyText::
+	text "How many do you"
+	line "need?"
+	done
+
+_MadamItems_CostsThisMuchText::
+	text "That will cost"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text "."
+	done
+
+_MadamItems_InsufficientFundsText::
+	text "Hmm, you don't"
+	line "have enough…"
+	done
+
+_MadamItems_BagFullText::
+	text "Your bag is full."
+	done
+
+_MadamItems_HereYouGoText::
+	text "Here you are."
 	done
 
 _NothingToSellText::

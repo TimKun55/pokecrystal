@@ -10,6 +10,7 @@
 	const NATIONALPARK_POKEFAN_F2
 	const NATIONALPARK_POKEFAN_M
 	const NATIONALPARK_LASS2
+	const NATIONALPARK_LADY_MIA
 	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_GAMEBOY_KID
 	const NATIONALPARK_POKE_BALL2
@@ -52,11 +53,14 @@ NationalParkTeacher2Script:
 	jumptextfaceplayer NationalParkTeacher2Text
 
 NationalParkPersian:
-	faceplayer
 	opentext
 	writetext NationalParkPersianText
 	cry PERSIAN
 	waitbutton
+	refreshscreen
+	pokepic PERSIAN
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -284,6 +288,25 @@ TrainerLassKrise:
 	waitbutton
 	closetext
 	end
+	
+NationalParkLadyMia:
+	trainer LADY, MIA, EVENT_BEAT_LADY_MIA, LadyMiaSeenText, LadyMiaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyMiaAfterBattleText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_LADY_SUE
+	iffalse .end
+	checkevent EVENT_BEAT_LADY_BEA
+	iffalse .end
+	setevent EVENT_BEAT_SUE_BEA_MIA
+	end
+
+.end
+	end
 
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
@@ -467,6 +490,30 @@ PokefanFBeverlyMarillFriendText:
 	para "Oh, I wish for a"
 	line "MARILL of my own…"
 	done
+	
+LadyMiaSeenText:
+	text "Hello there!"
+	line "You seem like a"
+	cont "strong trainer!"
+	
+	para "Want to battle?"
+	done
+
+LadyMiaBeatenText:
+	text "Haha! I was"
+	line "totally right!"
+	done
+
+LadyMiaAfterBattleText:
+	text "You battle like a"
+	line "pro! You should"
+	
+	para "visit the family"
+	line "home in ECRUTEAK."
+	
+	para "They would love"
+	line "to meet you."
+	done
 
 LassKriseSeenText:
 	text "Hello? Why are you"
@@ -533,11 +580,12 @@ NationalPark_MapEvents:
 	object_event 13, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 12, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 19, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 28, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event 28, 40, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event 29, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
 	object_event 20, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 18,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event 10, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
+	object_event  4, 19, SPRITE_LADY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, NationalParkLadyMia, -1
 	object_event 37, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 28,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  3, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG

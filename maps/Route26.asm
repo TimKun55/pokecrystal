@@ -2,9 +2,10 @@
 	const ROUTE26_COOLTRAINER_M1
 	const ROUTE26_COOLTRAINER_M2
 	const ROUTE26_COOLTRAINER_F1
-	const ROUTE26_COOLTRAINER_F2
-	const ROUTE26_YOUNGSTER
+	const ROUTE26_PSYCHIC
+	const ROUTE26_BIRD_KEEPER
 	const ROUTE26_FISHER1
+	const ROUTE26_BUG_MANIAC
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
 	const ROUTE26_FISHER2
@@ -152,38 +153,40 @@ TrainerCooltrainerfJoyce:
 	closetext
 	end
 
-TrainerCooltrainerfBeth1:
-	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
+TrainerBirdKeeperJose2:
+	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
+	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
 	opentext
-	checkflag ENGINE_BETH_READY_FOR_REMATCH
+	checkflag ENGINE_JOSE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERF_BETH
+	checkflag ENGINE_JOSE_HAS_STAR_PIECE
+	iftrue .HasStarPiece
+	checkcellnum PHONE_BIRDKEEPER_JOSE
 	iftrue .NumberAccepted
-	checkevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
-	writetext CooltrainerfBethAfterText
+	writetext BirdKeeperJose2AfterBattleText
 	promptbutton
-	setevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERF_BETH
+	askforphonenumber PHONE_BIRDKEEPER_JOSE
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
+	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
 .WantsBattle:
 	scall .Rematch
-	winlosstext CooltrainerfBeth1BeatenText, 0
-	readmem wBethFightCount
+	winlosstext BirdKeeperJose2BeatenText, 0
+	readmem wJoseFightCount
 	ifequal 2, .Fight2
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
@@ -194,65 +197,72 @@ TrainerCooltrainerfBeth1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer COOLTRAINERF, BETH1
+	loadtrainer BIRD_KEEPER, JOSE2
 	startbattle
 	reloadmapafterbattle
-	loadmem wBethFightCount, 1
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
+	loadmem wJoseFightCount, 1
+	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer COOLTRAINERF, BETH2
+	loadtrainer BIRD_KEEPER, JOSE1
 	startbattle
 	reloadmapafterbattle
-	loadmem wBethFightCount, 2
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
+	loadmem wJoseFightCount, 2
+	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
 .LoadFight2:
-	loadtrainer COOLTRAINERF, BETH3
+	loadtrainer BIRD_KEEPER, JOSE3
 	startbattle
 	reloadmapafterbattle
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
+	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
+.HasStarPiece:
+	scall .Gift
+	verbosegiveitem STAR_PIECE
+	iffalse .NoRoom
+	clearflag ENGINE_JOSE_HAS_STAR_PIECE
+	sjump .NumberAccepted
+
+.NoRoom:
+	sjump .PackFull
+
 .AskNumber1:
-	jumpstd AskNumber1FScript
+	jumpstd AskNumber1MScript
 	end
 
 .AskNumber2:
-	jumpstd AskNumber2FScript
+	jumpstd AskNumber2MScript
 	end
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
+	jumpstd RegisteredNumberMScript
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
-	jumpstd NumberDeclinedFScript
+	jumpstd NumberDeclinedMScript
 	end
 
 .PhoneFull:
-	jumpstd PhoneFullFScript
+	jumpstd PhoneFullMScript
 	end
 
 .Rematch:
-	jumpstd RematchFScript
+	jumpstd RematchMScript
 	end
 
-TrainerPsychicRichard:
-	trainer PSYCHIC_T, RICHARD, EVENT_BEAT_PSYCHIC_RICHARD, PsychicRichardSeenText, PsychicRichardBeatenText, 0, .Script
+.Gift:
+	jumpstd GiftMScript
+	end
 
-.Script:
-	endifjustbattled
-	opentext
-	writetext PsychicRichardAfterBattleText
-	waitbutton
-	closetext
+.PackFull:
+	jumpstd PackFullMScript
 	end
 
 TrainerFisherScott:
@@ -262,6 +272,17 @@ TrainerFisherScott:
 	endifjustbattled
 	opentext
 	writetext FisherScottAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugManiacShaun:
+	trainer BUG_MANIAC, SHAUN, EVENT_BEAT_BUG_MANIAC_SHAUN, BugManiacShaunSeenText, BugManiacShaunBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacShaunAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -372,30 +393,21 @@ CooltrainerfJoyceAfterBattleText:
 	line "harder next time."
 	done
 
-CooltrainerfBeth1SeenText:
-	text "I lost to a train-"
-	line "er named <RIVAL>."
-
-	para "He was really"
-	line "strong, but…"
-
-	para "It was as if he"
-	line "absolutely had to"
-	cont "win at any cost."
-
-	para "I felt sorry for"
-	line "his #MON."
+BirdKeeperJose2SeenText:
+	text "Tweet! Tweet!"
+	line "Tetweet!"
 	done
 
-CooltrainerfBeth1BeatenText:
-	text "#MON aren't"
-	line "tools of war."
+BirdKeeperJose2BeatenText:
+	text "Tweet!"
 	done
 
-CooltrainerfBethAfterText:
-	text "#MON are in-"
-	line "valuable, lifelong"
-	cont "partners."
+BirdKeeperJose2AfterBattleText:
+	text "BIRD KEEPERS like"
+	line "me mimic bird"
+
+	para "whistles to com-"
+	line "mand #MON."
 	done
 
 PsychicRichardSeenText:
@@ -445,6 +457,28 @@ FisherScottAfterBattleText:
 	line "give up."
 	done
 
+BugManiacShaunSeenText:
+	text "You're on your"
+	line "way to the"
+	cont "#MON LEAGUE?"
+
+	para "We should battle"
+	line "as a warm up!"
+	done
+
+BugManiacShaunBeatenText:
+	text "Oh, wow, too hot!"
+	done
+
+BugManiacShaunAfterBattleText:
+	text "I lost but I'm"
+	line "not giving up!"
+
+	para "Maybe I should"
+	line "have a rematch"
+	cont "with BUGSY…?"
+	done
+
 Route26SignText:
 	text "ROUTE 26"
 
@@ -483,9 +517,10 @@ Route26_MapEvents:
 	object_event 14, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermJake, -1
 	object_event 11, 82, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermGaven3, -1
 	object_event  9, 58, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJoyce, -1
-	object_event  5,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfBeth1, -1
-	object_event 12, 72, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
+	object_event  5,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJose2, -1
+	object_event 12, 72, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
 	object_event  8, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
+	object_event  8, 46, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacShaun, -1
 	object_event 12, 51, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event  5, 90, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route26Fisher2Script, -1

@@ -49,10 +49,10 @@ Route6SaffronGuardWelcomeText:
 
 Route6SaffronGuardMagnetTrainText:
 	text "The MAGNET TRAIN"
-	line "is the most famous"
+	line "is one of the most"
 
-	para "thing about SAF-"
-	line "FRON."
+	para "famous things"
+	line "about SAFFRON."
 	done
 
 Route6SaffronGate_MapEvents:

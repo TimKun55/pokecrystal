@@ -186,7 +186,7 @@ MrPokemonIntroText2:
 
 MrPokemonsHouse_GotEggText:
 	text "<PLAYER> received"
-	line "MYSTERY EGG."
+	line "the MYSTERY EGG."
 	done
 
 MrPokemonIntroText3:
@@ -305,7 +305,7 @@ MrPokemonsHouse_OakText1:
 
 MrPokemonsHouse_GetDexText:
 	text "<PLAYER> received"
-	line "#DEX!"
+	line "the #DEX!"
 	done
 
 MrPokemonsHouse_OakText2:

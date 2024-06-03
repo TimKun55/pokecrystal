@@ -157,8 +157,69 @@ KantoGrassWildMons:
 	db  8, KANGASKHAN,    52,  55
 	end_grass_wildmons
 
+	def_grass_wildmons VICTORY_ROAD_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	; day
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	; nite
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	end_grass_wildmons
 
-	def_grass_wildmons VICTORY_ROAD
+	def_grass_wildmons VICTORY_ROAD_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	; day
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	; nite
+	;   %, species,		 min, max
+	db 22, GOLEM,         37,  40
+	db 22, RHYHORN,       35,  38
+	db 22, ONIX,          37,  40
+	db 10, GOLBAT,        35,  38
+	db  8, SANDSLASH,     37,  40
+	db  8, PUPITAR,       37,  40
+	db  8, MAGCARGO,      37,  40
+	end_grass_wildmons
+
+	def_grass_wildmons VICTORY_ROAD_3F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max

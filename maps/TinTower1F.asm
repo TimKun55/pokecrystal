@@ -415,11 +415,11 @@ TinTower1FSage3Text:
 	done
 
 TinTower1FSage4Text1:
-	text "HO-OH appears to"
-	line "have descended"
+	text "Use the RAINBOW"
+	line "WING to try and"
 
-	para "upon this, the TIN"
-	line "TOWER!"
+	para "summon HO-OH here,"
+	line "to the TIN TOWER!"
 	done
 
 TinTower1FSage5Text1:

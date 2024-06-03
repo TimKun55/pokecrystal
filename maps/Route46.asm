@@ -2,6 +2,7 @@
 	const ROUTE46_POKEFAN_M
 	const ROUTE46_YOUNGSTER
 	const ROUTE46_LASS
+	const ROUTE46_LADY_GIA
 	const ROUTE46_FRUIT_TREE1
 	const ROUTE46_FRUIT_TREE2
 	const ROUTE46_POKE_BALL
@@ -154,6 +155,25 @@ TrainerHikerBailey:
 	waitbutton
 	closetext
 	end
+	
+TrainerLadyGia:
+	trainer LADY, GIA, EVENT_BEAT_LADY_GIA, LadyGiaSeenText, LadyGiaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyGiaAfterBattleText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_LADY_KAI
+	iffalse .end
+	checkevent EVENT_BEAT_LADY_AYA
+	iffalse .end
+	setevent EVENT_BEAT_KAI_AYA_GIA
+	end
+
+.end
+	end
 
 Route46Sign:
 	jumptext Route46SignText
@@ -241,6 +261,31 @@ PicnickerErin2BeatenText:
 	line "that present from"
 	cont "the other time."
 	done
+	
+LadyGiaSeenText:
+	text "Oh, a stranger!"
+	line "I was taking a"
+	cont "break."
+	
+	para "I'm getting bored"
+	line "though. Wanna see"
+	
+	para "my cute FAIRY"
+	line "#MON?"
+	done
+
+LadyGiaBeatenText:
+	text "Oh, I lost…"
+	done
+
+LadyGiaAfterBattleText:
+	text "You're powerful!"
+	line "You should"
+	cont "talk to my"
+	
+	para "Gramps in"
+	line "ECRUTEAK."
+	done
 
 Route46SignText:
 	text "ROUTE 46"
@@ -262,8 +307,9 @@ Route46_MapEvents:
 
 	def_object_events
 	object_event 12, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
-	object_event  5, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
+	object_event  5, 14, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperTed, -1
 	object_event  2, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
+	object_event  9,  4, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerLadyGia, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
 	object_event  2, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED

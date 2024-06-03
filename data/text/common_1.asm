@@ -4,7 +4,7 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! Found"
+	text "Hey! Found some"
 	line "@"
 	text_ram wStringBuffer3
 	text "S!"
@@ -124,8 +124,6 @@ _GrewToLevelText::
 	sound_dex_fanfare_50_79 ; plays SFX_DEX_FANFARE_50_79, identical to SFX_LEVEL_UP
 	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _CameToItsSensesText::
 	text_ram wStringBuffer1
@@ -831,7 +829,7 @@ _LC_Text6::
 
 _LC_Text7::
 	text_start
-	line "This week's Lucky"
+	line "Today's Lucky"
 	done
 
 _LC_Text8::

@@ -55,7 +55,10 @@ CinnabarMoltresNestBlaine:
 	closetext
 	cry MAGMAR
 	applymovement CINNABARMOLTRESNEST_BLAINE, GuardianBlaineExitMovement
-	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	playsound SFX_THROW_BALL
+	pause 5
+	playsound SFX_BALL_POOF
+	pause 5
 	cry MOLTRES
 	pause 15
 	playsound SFX_ESCAPE_ROPE

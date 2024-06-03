@@ -280,7 +280,7 @@ AviculturalSocietyBook1Text:
 	para "However KANTO has"
 	line "3 LEGENDARY bird"
 	cont "#MON."
-	line
+	done
 	
 AviculturalSocietyBook2Text:
 	text "There are many"
@@ -293,7 +293,7 @@ AviculturalSocietyBook2Text:
 	para "However JOHTO has"
 	line "2 LEGENDARY bird"
 	cont "#MON."
-	line 
+	done 
 
 SaffronAviculturalSociety1F_MapEvents:
 	db 0, 0 ; filler
@@ -316,9 +316,9 @@ SaffronAviculturalSociety1F_MapEvents:
 
 	def_object_events
 	object_event  6,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyReceptionistScript, -1
-	object_event  2,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper1Script, -1
-	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper2Script, -1
-	object_event  9,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper3Script, -1
+	object_event  2,  4, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper1Script, -1
+	object_event 10,  7, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper2Script, -1
+	object_event  9,  1, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper3Script, -1
 	object_event  1,  4, SPRITE_PIDGEOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyPidgeotScript, -1
 	object_event 11,  4, SPRITE_DODRIO, SPRITEMOVEDATA_POKEMON, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyDodrioScript, -1
 	object_event  4,  3, SPRITE_FEAROW, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyFearowScript, -1

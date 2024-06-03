@@ -1,13 +1,46 @@
+	object_const_def
+	const ROUTE7_BUG_MANIAC
+
 Route7_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerBugManiacEli:
+	trainer BUG_MANIAC, ELI, EVENT_BEAT_BUG_MANIAC_ELI, BugManiacEliSeenText, BugManiacEliBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacEliAfterBattleText
+	waitbutton
+	closetext
+	end
 
 Route7UndergroundPathSign:
 	jumptext Route7UndergroundPathSignText
 
 Route7LockedDoor:
 	jumptext Route7LockedDoorText
+
+BugManiacEliSeenText:
+	text "I've been training"
+	line "to take on ERIKA!"
+	
+	para "I won't lose!"
+	done
+
+BugManiacEliBeatenText:
+	text "Well, I guess not!"
+	done
+
+BugManiacEliAfterBattleText:
+	text "Back to training I"
+	line "go! It's good to"
+	
+	para "have goals to"
+	line "work towards!"
+	done
 
 Route7UndergroundPathSignText:
 	text "What's this flyer?"
@@ -46,3 +79,4 @@ Route7_MapEvents:
 	bg_event  5, 11, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events
+	object_event  6,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1

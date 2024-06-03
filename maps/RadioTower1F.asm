@@ -32,8 +32,8 @@ RadioTower1FLuckyNumberManScript:
 	opentext
 	writetext RadioTower1FLuckyNumberManAskToPlayText
 	promptbutton
-	special CheckLuckyNumberShowFlag
-	iffalse .skip
+	checkflag ENGINE_LUCKY_NUMBER_SHOW
+	iftrue .skip
 	special ResetLuckyNumberShowFlag
 .skip
 	special PrintTodaysLuckyNumber
@@ -82,7 +82,7 @@ RadioTower1FLuckyNumberManScript:
 	playsound SFX_2ND_PLACE
 	waitsfx
 	promptbutton
-	giveitem EXP_SHARE
+	giveitem EGG_TICKET
 	iffalse .BagFull
 	itemnotify
 	setflag ENGINE_LUCKY_NUMBER_SHOW
@@ -235,7 +235,7 @@ RadioTower1FLuckyNumberManAskToPlayText:
 	done
 
 RadioTower1FLuckyNumberManThisWeeksIdIsText:
-	text "This week's ID"
+	text "Today's ID number"
 	line "number is @"
 	text_ram wStringBuffer3
 	text "."
@@ -253,7 +253,7 @@ RadioTower1FLuckyNumberManDotDotDotText:
 
 RadioTower1FLuckyNumberManComeAgainText:
 	text "Please come back"
-	line "next week for the"
+	line "tomorrow for the"
 	cont "next LUCKY NUMBER."
 	done
 

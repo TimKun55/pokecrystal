@@ -85,7 +85,7 @@ OverworldSprites:
 	overworld_sprite ClefairyWalkingSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ChrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite RattataSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite RattataBackSpriteGFX, 8, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite N64SpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SudowoodoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
@@ -123,4 +123,6 @@ OverworldSprites:
 	overworld_sprite ProtonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite PrimoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SchoolboySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BirdKeeperSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES

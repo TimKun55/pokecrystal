@@ -11,6 +11,7 @@
 	const ROUTE34_COOLTRAINER_F1
 	const ROUTE34_COOLTRAINER_F2
 	const ROUTE34_COOLTRAINER_F3
+	const ROUTE34_LADY_BEA
 	const ROUTE34_POKE_BALL
 
 Route34_MapScripts:
@@ -502,6 +503,17 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	slow_step UP
 	slow_step UP
 	step_end
+	
+Route34LadyBea:
+	trainer LADY, BEA, EVENT_BEAT_LADY_BEA, LadyBeaSeenText, LadyBeaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyBeaAfterBattleText
+	waitbutton
+	closetext
+	end
 
 YoungsterSamuelSeenText:
 	text "This is where I do"
@@ -511,17 +523,6 @@ YoungsterSamuelSeenText:
 YoungsterSamuelBeatenText:
 	text "Beaten by a"
 	line "passing stranger!"
-	done
-
-YoungsterSamuelMobileText: ; unreferenced
-	text "Have you been to"
-	line "GOLDENROD CITY?"
-
-	para "Weren't you amazed"
-	line "by how they've"
-
-	para "changed the"
-	line "#MON CENTER?"
 	done
 
 YoungsterSamuelAfterText:
@@ -721,6 +722,31 @@ CooltrainerfKateAfterText:
 	para "here. You sure"
 	line "startled us."
 	done
+	
+LadyBeaSeenText:
+	text "Hi!"
+	line "I'm one of the"
+	cont "FAIRY SISTERS!"
+	
+	para "Do you know how"
+	line "cute FAIRY TYPES"
+	cont "are? Strong too!"
+	done
+
+LadyBeaBeatenText:
+	text "Woah, so"
+	line "strong!"
+	done
+
+LadyBeaAfterBattleText:
+	text "You may have"
+	line "defeated me, but"
+	cont "my sisters will"
+	
+	para "definitely want to"
+	line "battle you! See if"
+	cont "you can find them!"
+	done
 
 Route34IlexForestSignText:
 	text "ILEX FOREST"
@@ -776,9 +802,9 @@ Route34_MapEvents:
 	bg_event  8, 24, BGEVENT_ITEM, Route34HiddenSuperPotion
 
 	def_object_events
-	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperTodd1, -1
+	object_event 13,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperTodd1, -1
 	object_event 15, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
-	object_event 11, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
+	object_event 16, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
 	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
 	object_event 18, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
@@ -788,4 +814,5 @@ Route34_MapEvents:
 	object_event 11, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1
 	object_event  3, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
 	object_event  6, 51, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
+	object_event 11, 20, SPRITE_LADY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, Route34LadyBea, -1
 	object_event  7, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route34Nugget, EVENT_ROUTE_34_NUGGET

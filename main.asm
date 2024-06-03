@@ -15,7 +15,6 @@ INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
-INCLUDE "engine/battle/getgen1trainerclassname.asm"
 
 
 SECTION "bank2", ROMX

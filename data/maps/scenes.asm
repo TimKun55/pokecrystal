@@ -73,8 +73,8 @@ MapScenes::
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
 	scene_var TEAM_ROCKET_BASE_B3F,                        wTeamRocketBaseB3FSceneID
 	scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, wGoldenrodUndergroundSwitchRoomEntrancesSceneID
-	scene_var MT_SILVER_ROOM_3,                            wMtSilverRoom3SceneID ; unused
-	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
+	scene_var MT_SILVER_ROOM_4,                            wMtSilverRoom4MewtwoSceneID
+	scene_var VICTORY_ROAD_3F,                             wVictoryRoad3FSceneID
 	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
@@ -86,4 +86,6 @@ MapScenes::
 ;	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var SAFFRON_AVICULTURAL_SOCIETY_1F,              wAviculturalSociety1FSceneID
 	scene_var SAFFRON_AVICULTURAL_SOCIETY_2F,              wAviculturalSociety2FSceneID
+	scene_var WHIRL_ISLAND_LUGIA_CHAMBER,                  wWhirlIslandLugiaChamberSceneID
+	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
 	db -1 ; end

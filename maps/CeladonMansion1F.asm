@@ -17,6 +17,10 @@ CeladonMansion1FMeowth:
 	writetext CeladonMansion1FMeowthText
 	cry MEOWTH
 	waitbutton
+	refreshscreen
+	pokepic MEOWTH
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -25,6 +29,10 @@ CeladonMansion1FClefairy:
 	writetext CeladonMansion1FClefairyText
 	cry CLEFAIRY
 	waitbutton
+	refreshscreen
+	pokepic CLEFAIRY
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -33,6 +41,10 @@ CeladonMansion1FNidoranF:
 	writetext CeladonMansion1FNidoranFText
 	cry NIDORAN_F
 	waitbutton
+	refreshscreen
+	pokepic NIDORAN_F
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -91,6 +103,6 @@ CeladonMansion1F_MapEvents:
 
 	def_object_events
 	object_event  1,  5, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansionManager, -1
-	object_event  2,  6, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FMeowth, -1
+	object_event  2,  6, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FMeowth, -1
 	object_event  3,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FClefairy, -1
-	object_event  4,  4, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FNidoranF, -1
+	object_event  4,  4, SPRITE_NIDORAN_F, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansion1FNidoranF, -1

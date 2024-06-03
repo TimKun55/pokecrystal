@@ -4,6 +4,7 @@
 	const ROUTE36_SUDOWOODO
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
+	const ROUTE36_BUG_MANIAC
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
@@ -104,12 +105,12 @@ Route36FloriaScript:
 	closetext
 	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
 	readvar VAR_FACING
-	ifequal UP, .Up
+	ifequal DOWN, .Down
 	applymovement ROUTE36_FLORIA, FloriaMovement1
 	disappear ROUTE36_FLORIA
 	end
 
-.Up:
+.Down:
 	applymovement ROUTE36_FLORIA, FloriaMovement2
 	disappear ROUTE36_FLORIA
 	end
@@ -309,6 +310,17 @@ TrainerPsychicMark:
 	closetext
 	end
 
+TrainerBugManiacCarl:
+	trainer BUG_MANIAC, CARL, EVENT_BEAT_BUG_MANIAC_CARL, BugManiacCarlSeenText, BugManiacCarlBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacCarlAfterBattleText
+	waitbutton
+	closetext
+	end
+
 ArthurScript:
 	faceplayer
 	opentext
@@ -377,8 +389,6 @@ FloriaMovement1:
 	step LEFT
 	step LEFT
 	step LEFT
-	step LEFT
-	step LEFT
 	step_end
 
 FloriaMovement2:
@@ -386,6 +396,7 @@ FloriaMovement2:
 	step DOWN
 	step DOWN
 	step DOWN
+	step LEFT
 	step LEFT
 	step LEFT
 	step LEFT
@@ -554,6 +565,24 @@ PsychicMarkAfterBattleText:
 	para "what my opponent"
 	line "was thinking."
 	done
+	
+BugManiacCarlSeenText:
+	text "I caught some"
+	line "strong #MON in"
+	cont "the PARK!"
+	done
+
+BugManiacCarlBeatenText:
+	text "Well…"
+	done
+
+BugManiacCarlAfterBattleText:
+	text "Haha, guess I"
+	line "should train more"
+
+	para "before mouthing"
+	line "off, hey?"
+	done
 
 SchoolboyAlan1SeenText:
 	text "Thanks to my stud-"
@@ -661,6 +690,8 @@ Route36_MapEvents:
 	warp_event 18,  9, ROUTE_36_NATIONAL_PARK_GATE, 4
 	warp_event 47, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 1
 	warp_event 48, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 2
+	warp_event 55,  8, ROUTE_36_VIOLET_GATE, 1
+	warp_event 55,  9, ROUTE_36_VIOLET_GATE, 2
 
 	def_coord_events
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
@@ -669,16 +700,17 @@ Route36_MapEvents:
 	def_bg_events
 	bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2
 	bg_event 45, 11, BGEVENT_READ, RuinsOfAlphNorthSign
-	bg_event 55,  7, BGEVENT_READ, Route36Sign
+	bg_event 53,  7, BGEVENT_READ, Route36Sign
 	bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1
 
 	def_object_events
-	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
-	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
+	object_event 20, 13, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
+	object_event 31, 14, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
+	object_event 30,  6, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacCarl, -1
 	object_event 35,  9, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
-	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
+	object_event 50,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
-	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
+	object_event 46,  6, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 34, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36

@@ -3,7 +3,6 @@
 	const SAFARIZONENORTH_SCIENTIST
 	const SAFARIZONENORTH_POKE_BALL1
 	const SAFARIZONENORTH_POKE_BALL2
-	const SAFARIZONENORTH_POKE_BALL3
 	const SAFARIZONENORTH_MEW
 
 SafariZoneNorth_MapScripts:
@@ -15,8 +14,8 @@ SafariZoneNorth_MapScripts:
 SafariZoneNorthMewCallback:
 	checkevent EVENT_FOUGHT_MEW
 	iftrue .NoAppear
-;	checkitem DNA_SAMPLE
-;	iftrue .Appear
+	checkitem DNA_SAMPLE
+	iftrue .Appear
 	sjump .NoAppear
 	
 .Appear:
@@ -53,9 +52,6 @@ SafariZoneNorthProtein:
 
 SafariZoneNorthRareCandy:
 	itemball RARE_CANDY
-	
-;SafariZoneNorthWideLens:
-;	itemball WIDE_LENS
 	
 SafariZoneNorthAreaSign:
 	jumptext SafariZoneNorthAreaSignText
@@ -154,7 +150,6 @@ SafariZoneNorth_MapEvents:
 	def_object_events
 	object_event 18, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthFisherScript, -1
 	object_event 30,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthScientistScript, -1
-	object_event 24, 18, SPRITE_MEW, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthMew, EVENT_SAFARI_ZONE_NORTH_MEW
+	object_event 24, 17, SPRITE_MEW, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthMew, EVENT_SAFARI_ZONE_NORTH_MEW
 	object_event  6,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneNorthProtein, EVENT_SAFARI_ZONE_NORTH_PROTEIN
 	object_event 15, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneNorthRareCandy, EVENT_SAFARI_ZONE_NORTH_RARE_CANDY
-;	object_event 40, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneNorthWideLens, EVENT_SAFARI_ZONE_NORTH_WIDE_LENS

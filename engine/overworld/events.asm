@@ -843,8 +843,7 @@ CountStep:
 
 .skip_happiness
 	; Every 256 steps, offset from the happiness incrementor by 128 steps,
-	; decrease the hatch counter of all your eggs until you reach the first
-	; one that is ready to hatch.
+	; decrease the hatch counter of all your eggs until you reach the first one that is ready to hatch.
 	ld a, [wStepCount]
 	cp $80
 	jr nz, .skip_egg
@@ -1027,13 +1026,11 @@ TryTileCollisionEvent::
 	call GetFacingTileCoord
 	ld [wFacingTileID], a
 	ld c, a
-	; CheckFacingTileForStdScript preserves c, and
-	; farcall copies c back into a.
+	; CheckFacingTileForStdScript preserves c, and farcall copies c back into a.
 	farcall CheckFacingTileForStdScript
 	jr c, .done
 
-	; CheckCutTreeTile expects a == [wFacingTileID], which
-	; it still is after the previous farcall.
+	; CheckCutTreeTile expects a == [wFacingTileID], which it still is after the previous farcall.
 	call CheckCutTreeTile
 	jr nz, .whirlpool
 	farcall TryCutOW
@@ -1225,9 +1222,8 @@ INCLUDE "data/wild/bug_contest_mons.asm"
 DoBikeStep::
 	nop
 	nop
-	; If the bike shop owner doesn't have our number, or
-	; if we've already gotten the call, we don't have to
-	; be here.
+	; If the bike shop owner doesn't have our number, or if we've already 
+	; gotten the call, we don't have to be here.
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
 	jr z, .NoCall
@@ -1237,14 +1233,12 @@ DoBikeStep::
 	cp PLAYER_BIKE
 	jr nz, .NoCall
 
-	; If we're not in an area of phone service, we don't
-	; have to be here.
+	; If we're not in an area of phone service, we don't have to be here.
 	call GetMapPhoneService
 	and a
 	jr nz, .NoCall
 
-	; Check the bike step count and check whether we've
-	; taken 65536 of them yet.
+	; Check the bike step count and check whether we've taken 65536 of them yet.
 	ld hl, wBikeStep
 	ld a, [hli]
 	ld d, a
@@ -1262,14 +1256,12 @@ DoBikeStep::
 	ld [hl], d
 
 .dont_increment
-	; If we've taken at least 1024 steps, have the bike
-	;  shop owner try to call us.
+	; If we've taken at least 1024 steps, have the bike shop owner try to call us.
 	ld a, d
 	cp HIGH(1024)
 	jr c, .NoCall
 
-	; If a call has already been queued, don't overwrite
-	; that call.
+	; If a call has already been queued, don't overwrite that call.
 	ld a, [wSpecialPhoneCallID]
 	and a
 	jr nz, .NoCall

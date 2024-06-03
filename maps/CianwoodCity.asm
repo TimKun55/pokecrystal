@@ -127,8 +127,15 @@ CianwoodCityLadyMae:
 	opentext
 	writetext LadyMaeAfterBattleText
 	waitbutton
-	setevent EVENT_BEAT_KAT_ADA_MAE
 	closetext
+	checkevent EVENT_BEAT_LADY_KAT
+	iffalse .end
+	checkevent EVENT_BEAT_LADY_ADA
+	iffalse .end
+	setevent EVENT_BEAT_KAT_ADA_MAE
+	end
+
+.end
 	end
 
 CianwoodCitySign:

@@ -19,6 +19,10 @@ CeruleanDiglett:
 	writetext CeruleanDiglettText
 	cry DIGLETT
 	waitbutton
+	refreshscreen
+	pokepic DIGLETT
+	waitbutton
+	closepokepic
 	closetext
 	end
 

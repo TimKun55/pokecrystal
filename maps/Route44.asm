@@ -6,6 +6,8 @@
 	const ROUTE44_YOUNGSTER2
 	const ROUTE44_COOLTRAINER_M
 	const ROUTE44_COOLTRAINER_F
+	const ROUTE44_LADY_AYA
+	const ROUTE44_BUG_MANIAC
 	const ROUTE44_FRUIT_TREE
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
@@ -294,6 +296,28 @@ TrainerCooltrainermAllen:
 	waitbutton
 	closetext
 	end
+	
+TrainerLadyAya:
+	trainer LADY, AYA, EVENT_BEAT_LADY_AYA, LadyAyaSeenText, LadyAyaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyAyaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugManiacKeiran:
+	trainer BUG_MANIAC, KEIRAN, EVENT_BEAT_BUG_MANIAC_KEIRAN, BugManiacKeiranSeenText, BugManiacKeiranBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacKeiranAfterBattleText
+	waitbutton
+	closetext
+	end
 
 Route44Sign1:
 	jumptext Route44Sign1Text
@@ -489,6 +513,53 @@ CooltrainerfCybilAfterBattleText:
 	line "become what I am"
 	cont "today--an elite."
 	done
+	
+LadyAyaSeenText:
+	text "Umm, sorry if I'm"
+	line "wrong, but are you"
+	cont "that strong"
+	
+	para "trainer my sisters"
+	line "told me about?"
+	
+	para "Could we battle,"
+	line "please?"
+	done
+
+LadyAyaBeatenText:
+	text "Wow, thank you!"
+	done
+
+LadyAyaAfterBattleText:
+	text "My sisters were"
+	line "right. You're"
+	cont "powerful."
+	
+	para "Good luck on"
+	line "your journey."
+	done
+
+BugManiacKeiranSeenText:
+	text "Most people give"
+	line "up on bug #MON"
+	
+	para "but they're still"
+	line "strong in battle!"
+	done
+
+BugManiacKeiranBeatenText:
+	text "Well, I guess"
+	line "you're stronger!"
+	done
+
+BugManiacKeiranAfterBattleText:
+	text "Good luck on your"
+	line "journey and make"
+	cont "sure not to"
+	
+	para "underestimate"
+	line "Bug #MON!"
+	done
 
 Route44Sign1Text:
 	text "ROUTE 44"
@@ -518,11 +589,13 @@ Route44_MapEvents:
 	def_object_events
 	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
 	object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
-	object_event 10,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
+	object_event 10,  9, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
 	object_event 43,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
-	object_event 51,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
+	object_event 51,  5, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
 	object_event 41, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
 	object_event 31, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
+	object_event 50, 14, SPRITE_LADY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyAya, -1
+	object_event 15,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacKeiran, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL

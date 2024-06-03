@@ -61,8 +61,8 @@ EcruteakCityFisherScript:
 	closetext
 	end
 
-EcruteakCityYoungsterScript:
-	jumptextfaceplayer EcruteakCityYoungsterText
+EcruteakCitySchoolboyScript:
+	jumptextfaceplayer EcruteakCitySchoolboyText
 
 EcruteakCitySign:
 	jumptext EcruteakCitySignText
@@ -155,7 +155,7 @@ EcruteakCityFisherText_JasmineReturned:
 	cont "night again."
 	done
 
-EcruteakCityYoungsterText:
+EcruteakCitySchoolboyText:
 	text "I hear #MON are"
 	line "rampaging at the"
 
@@ -261,5 +261,5 @@ EcruteakCity_MapEvents:
 	object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
 	object_event  7, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
 	object_event  7, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
-	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
+	object_event 10, 14, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
 	object_event  4, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

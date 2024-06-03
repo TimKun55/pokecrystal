@@ -2,7 +2,7 @@
 	const LAVENDERTOWN_POKEFAN_M
 	const LAVENDERTOWN_TEACHER
 	const LAVENDERTOWN_GRAMPS
-	const LAVENDERTOWN_YOUNGSTER
+	const LAVENDERTOWN_SCHOOLBOY
 
 LavenderTown_MapScripts:
 	def_scene_scripts
@@ -23,8 +23,8 @@ LavenderTownTeacherScript:
 LavenderTownGrampsScript:
 	jumptextfaceplayer LavenderTownGrampsText
 
-LavenderTownYoungsterScript:
-	jumptextfaceplayer LavenderTownYoungsterText
+LavenderTownSchoolboyScript:
+	jumptextfaceplayer LavenderTownSchoolboyText
 
 LavenderTownSign:
 	jumptext LavenderTownSignText
@@ -66,7 +66,7 @@ LavenderTownGrampsText:
 	cont "of #MON."
 	done
 
-LavenderTownYoungsterText:
+LavenderTownSchoolboyText:
 	text "You need a #"
 	line "FLUTE to wake"
 	cont "sleeping #MON."
@@ -131,4 +131,4 @@ LavenderTown_MapEvents:
 	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
 	object_event  2, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
 	object_event 15, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
-	object_event  6, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownYoungsterScript, -1
+	object_event  6, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownSchoolboyScript, -1

@@ -3,9 +3,58 @@
 
 TinTowerRoof_MapScripts:
 	def_scene_scripts
+	scene_script TinTowerRoofNoop1Scene, SCENE_TINTOWERROOF_RAINBOW_WING_CHECK
+	scene_script TinTowerRoofNoop2Scene, SCENE_TINTOWERROOF_HO_OH_APPEAR	
+	scene_script TinTowerRoofNoop3Scene, SCENE_TINTOWERROOF_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, TinTowerRoofHoOhCallback
+
+TinTowerRoofNoop1Scene:
+	end
+
+TinTowerRoofNoop2Scene:
+	end
+
+TinTowerRoofNoop3Scene:
+	end
+
+TinTowerRoofRainbowWingCheck:
+	checkitem RAINBOW_WING
+	iffalse .NoWing
+	playsound SFX_TWINKLE
+	pause 5
+	showemote EMOTE_SHOCK, PLAYER, 15
+	opentext
+	writetext RainbowWingGlimmerText
+	waitbutton
+	closetext
+	setscene SCENE_TINTOWERROOF_HO_OH_APPEAR
+	end
+	
+.NoWing
+	end
+	
+TinTowerRoofHoohAppear:
+	checkitem RAINBOW_WING
+	iffalse .NoWing
+	earthquake 72
+	waitsfx
+	playsound SFX_FLY
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	pause 15
+	cry HO_OH
+	pause 15
+	opentext
+	writetext TowerShookText
+	waitbutton
+	closetext
+	setscene SCENE_WHIRLISLANDLUGIACHAMBER_NOOP
+	end
+
+.NoWing
+	end
 
 TinTowerRoofHoOhCallback:
 	checkevent EVENT_FOUGHT_HO_OH
@@ -38,6 +87,21 @@ TinTowerHoOh:
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	end
 
+RainbowWingGlimmerText:
+	text "?!"
+	
+	para "The RAINBOW WING"
+	line "is glowing!"
+	done
+	
+TowerShookText:
+	text "The whole TOWER"
+	line "just shook!"
+	
+	para "Did something"
+	line "land on it?"
+	done
+
 HoOhText:
 	text "Shaoooh!"
 	done
@@ -46,11 +110,15 @@ TinTowerRoof_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 13, TIN_TOWER_9F, 4
+	warp_event  7, 17, TIN_TOWER_9F, 4
 
 	def_coord_events
+	coord_event  6, 16, SCENE_TINTOWERROOF_RAINBOW_WING_CHECK, TinTowerRoofRainbowWingCheck
+	coord_event  7, 16, SCENE_TINTOWERROOF_RAINBOW_WING_CHECK, TinTowerRoofRainbowWingCheck
+	coord_event  6, 12, SCENE_TINTOWERROOF_HO_OH_APPEAR, TinTowerRoofHoohAppear
+	coord_event  7, 12, SCENE_TINTOWERROOF_HO_OH_APPEAR, TinTowerRoofHoohAppear
 
 	def_bg_events
 
 	def_object_events
-	object_event  9,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
+	object_event  7,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH

@@ -22,8 +22,8 @@ ViridianForestHouseBF1GiovanniScript:
 	opentext
 	writetext GiovanniText_DNASampleText
 	promptbutton
-;	verbosegiveitem DNA_SAMPLE
-;	setevent EVENT_GOT_DNA_SAMPLE
+	verbosegiveitem DNA_SAMPLE
+	setevent EVENT_GOT_DNA_SAMPLE
 	writetext GiovanniText_DNASampleSpeech
 	waitbutton
 .GotDNASample:
@@ -89,8 +89,7 @@ GiovanniText_1:
 	line "a very powerful"
 	cont "trainer."
 	
-	para "Please, let me"
-	line "test you!"
+	para "Please, battle me."
 	done
 
 GiovanniText_AfterBattle:

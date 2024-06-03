@@ -10,12 +10,12 @@ Route11Route12GateOfficerScript:
 	jumptextfaceplayer Route11Route12GateOfficerText
 
 Route11Route12GateOfficerText:
-	text "Hey!"
-	line "This is a test"
+	text "DIGLETT'S CAVE is"
+	line "a super convenient"
+	cont "shortcut between"
 
-	para "Still testing"
-	line "and testing"
-	cont "aaaand I'm done."
+	para "VERMILLION CITY"
+	line "and PEWTER CITY."
 	done
 
 Route11Route12Gate_MapEvents:

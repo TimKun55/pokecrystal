@@ -1066,7 +1066,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_TRADE, KINGS_ROCK, POLITOED
+	db EVOLVE_HELD, KINGS_ROCK, 35, POLITOED
 	db 0 ; no more evolutions
 	db 1, SWEET_KISS
 	db 1, TACKLE
@@ -1104,8 +1104,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_TRADE, -1, ALAKAZAM
-AlakazamEvosAttacks:
+	db EVOLVE_LEVEL, 40, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, TELEPORT
 	db 1, CONFUSION
@@ -1120,6 +1119,23 @@ AlakazamEvosAttacks:
 	db 41, CONFUSE_RAY
 	db 44, PSYCHIC_M
 	db 47, FUTURE_SIGHT
+	db 0 ; no more level-up moves	
+	
+AlakazamEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TELEPORT
+	db 1, CONFUSION
+	db 18, DISABLE
+	db 21, PSYBEAM
+	db 23, REFLECT
+	db 26, ZEN_HEADBUTT
+	db 29, LIGHT_SCREEN
+	db 32, RECOVER
+	db 35, BARRIER
+	db 38, BATON_PASS
+	db 45, CONFUSE_RAY
+	db 51, PSYCHIC_M
+	db 57, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -1134,15 +1150,14 @@ MachopEvosAttacks:
 	db 23, FORESIGHT
 	db 26, REVERSAL
 	db 31, VITAL_THROW
-	db 37, SCARY_FACE
-	db 43, DRAIN_PUNCH
-	db 45, CROSS_CHOP
-	db 50, DYNAMICPUNCH
+	db 35, SCARY_FACE
+	db 39, DRAIN_PUNCH
+	db 43, CROSS_CHOP
+	db 47, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	db EVOLVE_TRADE, -1, MACHAMP
-MachampEvosAttacks:
+	db EVOLVE_LEVEL, 40, MACHAMP
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
@@ -1155,9 +1170,27 @@ MachampEvosAttacks:
 	db 34, VITAL_THROW
 	db 39, SCARY_FACE 
 	db 43, DRAIN_PUNCH 
-	db 52, MEGA_PUNCH
-	db 56, CROSS_CHOP
-	db 60, DYNAMICPUNCH
+	db 47, MEGA_PUNCH
+	db 52, CROSS_CHOP
+	db 58, DYNAMICPUNCH
+	db 0 ; no more level-up moves	
+
+MachampEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, LOW_KICK
+	db 1, LEER
+	db 7, KARATE_CHOP
+	db 13, FOCUS_ENERGY
+	db 15, SEISMIC_TOSS
+	db 19, MACH_PUNCH
+	db 23, FORESIGHT
+	db 26, REVERSAL
+	db 34, VITAL_THROW
+	db 39, SCARY_FACE 
+	db 45, DRAIN_PUNCH 
+	db 49, MEGA_PUNCH
+	db 55, CROSS_CHOP
+	db 61, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 BellsproutEvosAttacks:
@@ -1265,7 +1298,25 @@ GeodudeEvosAttacks:
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	db EVOLVE_TRADE, -1, GOLEM
+	db EVOLVE_LEVEL, 40, GOLEM
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 4, MUD_SLAP
+	db 7, RAPID_SPIN
+	db 10, ROLLOUT
+	db 14, MAGNITUDE
+	db 17, ROCK_THROW
+	db 20, BULLDOZE
+	db 23, ROCK_BLAST
+	db 28, ANCIENTPOWER
+	db 32, SANDSTORM
+	db 37, ROCK_SLIDE
+	db 41, EARTHQUAKE
+	db 46, EXPLOSION
+	db 50, STONE_EDGE
+	db 0 ; no more level-up moves	
+
 GolemEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
@@ -1280,9 +1331,9 @@ GolemEvosAttacks:
 	db 28, ANCIENTPOWER
 	db 32, SANDSTORM
 	db 37, ROCK_SLIDE
-	db 40, EARTHQUAKE
-	db 45, EXPLOSION
-	db 50, STONE_EDGE
+	db 44, EARTHQUAKE
+	db 50, EXPLOSION
+	db 56, STONE_EDGE
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
@@ -1329,7 +1380,7 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 32, SLOWBRO
-	db EVOLVE_TRADE, KINGS_ROCK, SLOWKING
+	db EVOLVE_HELD, KINGS_ROCK, 32, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1602,8 +1653,7 @@ GastlyEvosAttacks:
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	db EVOLVE_TRADE, -1, GENGAR
-GengarEvosAttacks:
+	db EVOLVE_LEVEL, 40, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1621,8 +1671,26 @@ GengarEvosAttacks:
 	db 52, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
+GengarEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, HYPNOSIS
+	db 1, LICK
+	db 7, SPITE
+	db 10, SMOG
+	db 13, MEAN_LOOK
+	db 16, CURSE
+	db 20, NIGHT_SHADE
+	db 24, CONFUSE_RAY
+	db 29, SLUDGE
+	db 34, DARK_PULSE
+	db 39, DREAM_EATER
+	db 45, DESTINY_BOND
+	db 50, HEX
+	db 55, SLUDGE_BOMB
+	db 0 ; no more level-up moves
+
 OnixEvosAttacks:
-	db EVOLVE_TRADE, METAL_COAT, STEELIX
+	db EVOLVE_HELD, METAL_COAT, 34, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
@@ -1638,8 +1706,7 @@ OnixEvosAttacks:
 	db 36, ROCK_SLIDE
 	db 40, SLAM
 	db 44, DRAGONBREATH
-	db 48, IRON_BASH
-	db 52, STONE_EDGE
+	db 48, STONE_EDGE
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
@@ -2032,7 +2099,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
+	db EVOLVE_HELD, DRAGON_SCALE, 42, KINGDRA
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 4, SMOKESCREEN
@@ -2135,7 +2202,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 	
 ScytherEvosAttacks:
-	db EVOLVE_TRADE, METAL_COAT, SCIZOR
+	db EVOLVE_HELD, METAL_COAT, 34, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2401,7 +2468,7 @@ FlareonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	db EVOLVE_TRADE, UP_GRADE, PORYGON2
+	db EVOLVE_HELD, UP_GRADE, 40, PORYGON2
 	db 0 ; no more evolutions
 	db 1, FLASH_CANNON
 	db 1, CONVERSION
@@ -2760,6 +2827,7 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
+	db 1, WILL_O_WISP
 	db 6, EMBER
 	db 10, SMOKESCREEN
 	db 13, QUICK_ATTACK
@@ -4284,9 +4352,9 @@ SmeargleEvosAttacks:
 	db 0 ; no more level-up moves
 
 TyrogueEvosAttacks:
-	db EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
-	db EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
-	db EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
+	db EVOLVE_HELD, BOXING_MITTS, 20, HITMONCHAN
+	db EVOLVE_HELD, SPRING_SHOES, 20, HITMONLEE
+	db EVOLVE_HELD, SPINNING_TOP, 20, HITMONTOP
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FOCUS_ENERGY

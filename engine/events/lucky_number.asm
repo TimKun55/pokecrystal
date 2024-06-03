@@ -69,8 +69,8 @@ CheckForLuckyNumberWinners:
 	pop bc ; restores box + position, if applicable
 	call WaitSFX
 	ld a, [wScriptVar]
-	and a
-	ret z ; found nothing
+	cp 2
+	ret c ; found nothing
 
 	; Prepare found storage mon ID
 	push bc

@@ -55,7 +55,10 @@ Route4ZapdosNestAgatha:
 	closetext
 	cry GENGAR
 	applymovement ROUTE4ZAPDOSNEST_AGATHA, GuardianAgathaExitMovement
-	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	playsound SFX_THROW_BALL
+	pause 5
+	playsound SFX_BALL_POOF
+	pause 5
 	cry ZAPDOS
 	pause 15
 	playsound SFX_ESCAPE_ROPE

@@ -3,7 +3,7 @@
 	const CERULEANCITY_SUPER_NERD
 	const CERULEANCITY_SLOWBRO
 	const CERULEANCITY_COOLTRAINER_F
-	const CERULEANCITY_POKEFAN_M
+	const CERULEANCITY_BIRD_KEEPER
 	const CERULEANCITY_YOUNGSTER
 
 CeruleanCity_MapScripts:
@@ -69,7 +69,7 @@ CeruleanCityCooltrainerFScript:
 	closetext
 	end
 
-CeruleanCityPokefanMScript:
+CeruleanCityBirdKeeperScript:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
@@ -77,13 +77,13 @@ CeruleanCityPokefanMScript:
 	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	iftrue .MetCeruleanRocket
 .ReturnedMachinePart:
-	writetext CeruleanCityPokefanMText
+	writetext CeruleanCityBirdKeeperText
 	waitbutton
 	closetext
 	end
 
 .MetCeruleanRocket:
-	writetext CeruleanCityPokefanMRocketTipText
+	writetext CeruleanCityBirdKeeperRocketTipText
 	waitbutton
 	closetext
 	end
@@ -203,13 +203,13 @@ CeruleanCityCooltrainerFText3:
 	text "…"
 	done
 
-CeruleanCityPokefanMText:
+CeruleanCityBirdKeeperText:
 	text "I'm a huge fan of"
 	line "CERULEAN GYM's"
 	cont "MISTY."
 	done
 
-CeruleanCityPokefanMRocketTipText:
+CeruleanCityBirdKeeperRocketTipText:
 	text "I saw this shady"
 	line "guy go off toward"
 	cont "CERULEAN's CAPE."
@@ -306,5 +306,5 @@ CeruleanCity_MapEvents:
 	object_event 22, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
 	object_event 29, 26, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event 30, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
-	object_event 15, 27, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityPokefanMScript, -1
+	object_event 15, 27, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityBirdKeeperScript, -1
 	object_event  8, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1

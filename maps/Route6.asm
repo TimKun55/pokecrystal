@@ -2,6 +2,7 @@
 	const ROUTE6_POKEFAN_M1
 	const ROUTE6_POKEFAN_M2
 	const ROUTE6_POKEFAN_M3
+	const ROUTE6_LADY_LIA
 
 Route6_MapScripts:
 	def_scene_scripts
@@ -26,6 +27,17 @@ TrainerPokefanmAllan:
 	endifjustbattled
 	opentext
 	writetext PokefanmAllanAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TrainerLadyLia:
+	trainer LADY, LIA, EVENT_BEAT_LADY_LIA, LadyLiaSeenText, LadyLiaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyLiaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -89,12 +101,37 @@ PokefanmAllanAfterBattleText:
 	cont "your heart melt?"
 	done
 
+LadyLiaSeenText:
+	text "You've beaten all"
+	line "the JOHTO GYM"
+	cont "LEADERS?! Wow!"
+	
+	para "We just HAVE TO"
+	line "battle!"
+	done
+
+LadyLiaBeatenText:
+	text "So strong!"
+	done
+
+LadyLiaAfterBattleText:
+	text "I'm trying to show"
+	line "the people of"
+	cont "KANTO how useful"
+	
+	para "FAIRY TYPES are!"
+	
+	para "2 of my sisters"
+	line "are doing the"
+	cont "same!"
+	done
+
 Route6_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17,  3, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 1
-	warp_event  7,  3, ROUTE_6_SAFFRON_GATE, 3
+	warp_event  7,  1, ROUTE_6_SAFFRON_GATE, 3
 
 	def_coord_events
 
@@ -105,3 +142,4 @@ Route6_MapEvents:
 	object_event 17,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route6PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
 	object_event  9,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmRex, -1
 	object_event 10,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
+	object_event 13, 12, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyLia, -1

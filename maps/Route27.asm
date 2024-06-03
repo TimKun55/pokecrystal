@@ -3,8 +3,8 @@
 	const ROUTE27_COOLTRAINER_M2
 	const ROUTE27_COOLTRAINER_F1
 	const ROUTE27_COOLTRAINER_F2
+	const ROUTE27_COOLTRAINER_F3
 	const ROUTE27_YOUNGSTER1
-	const ROUTE27_YOUNGSTER2
 	const ROUTE27_POKE_BALL1
 	const ROUTE27_POKE_BALL2
 
@@ -24,40 +24,38 @@ TrainerPsychicGilbert:
 	closetext
 	end
 
-TrainerBirdKeeperJose2:
-	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
+TrainerCooltrainerfBeth1:
+	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
+	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
 	opentext
-	checkflag ENGINE_JOSE_READY_FOR_REMATCH
+	checkflag ENGINE_BETH_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_JOSE_HAS_STAR_PIECE
-	iftrue .HasStarPiece
-	checkcellnum PHONE_BIRDKEEPER_JOSE
+	checkcellnum PHONE_COOLTRAINERF_BETH
 	iftrue .NumberAccepted
-	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
-	writetext BirdKeeperJose2AfterBattleText
+	writetext CooltrainerfBethAfterText
 	promptbutton
-	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_JOSE
+	askforphonenumber PHONE_COOLTRAINERF_BETH
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
+	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
 .WantsBattle:
 	scall .Rematch
-	winlosstext BirdKeeperJose2BeatenText, 0
-	readmem wJoseFightCount
+	winlosstext CooltrainerfBeth1BeatenText, 0
+	readmem wBethFightCount
 	ifequal 2, .Fight2
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
@@ -68,72 +66,65 @@ TrainerBirdKeeperJose2:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer BIRD_KEEPER, JOSE2
+	loadtrainer COOLTRAINERF, BETH1
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 1
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
+	loadmem wBethFightCount, 1
+	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
+	loadtrainer COOLTRAINERF, BETH2
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 2
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
+	loadmem wBethFightCount, 2
+	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
 .LoadFight2:
-	loadtrainer BIRD_KEEPER, JOSE3
+	loadtrainer COOLTRAINERF, BETH3
 	startbattle
 	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
+	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
-.HasStarPiece:
-	scall .Gift
-	verbosegiveitem STAR_PIECE
-	iffalse .NoRoom
-	clearflag ENGINE_JOSE_HAS_STAR_PIECE
-	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
-
 .AskNumber1:
-	jumpstd AskNumber1MScript
+	jumpstd AskNumber1FScript
 	end
 
 .AskNumber2:
-	jumpstd AskNumber2MScript
+	jumpstd AskNumber2FScript
 	end
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
+	jumpstd RegisteredNumberFScript
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	jumpstd NumberAcceptedFScript
 	end
 
 .NumberDeclined:
-	jumpstd NumberDeclinedMScript
+	jumpstd NumberDeclinedFScript
 	end
 
 .PhoneFull:
-	jumpstd PhoneFullMScript
+	jumpstd PhoneFullFScript
 	end
 
 .Rematch:
-	jumpstd RematchMScript
+	jumpstd RematchFScript
 	end
 
-.Gift:
-	jumpstd GiftMScript
-	end
+TrainerPsychicRichard:
+	trainer PSYCHIC_T, RICHARD, EVENT_BEAT_PSYCHIC_RICHARD, PsychicRichardSeenText, PsychicRichardBeatenText, 0, .Script
 
-.PackFull:
-	jumpstd PackFullMScript
+.Script:
+	endifjustbattled
+	opentext
+	writetext PsychicRichardAfterBattleText
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainermBlake:
@@ -270,6 +261,32 @@ Route27TMSolarbeam:
 Route27RareCandy:
 	itemball RARE_CANDY
 
+CooltrainerfBeth1SeenText:
+	text "I lost to a train-"
+	line "er named <RIVAL>."
+
+	para "He was really"
+	line "strong, but…"
+
+	para "It was as if he"
+	line "absolutely had to"
+	cont "win at any cost."
+
+	para "I felt sorry for"
+	line "his #MON."
+	done
+
+CooltrainerfBeth1BeatenText:
+	text "#MON aren't"
+	line "tools of war."
+	done
+
+CooltrainerfBethAfterText:
+	text "#MON are in-"
+	line "valuable, lifelong"
+	cont "partners."
+	done
+
 CooltrainermBlakeSeenText:
 	text "You look pretty"
 	line "strong."
@@ -381,23 +398,6 @@ PsychicGilbertAfterBattleText:
 	line "premonition says."
 	done
 
-BirdKeeperJose2SeenText:
-	text "Tweet! Tweet!"
-	line "Tetweet!"
-	done
-
-BirdKeeperJose2BeatenText:
-	text "Tweet!"
-	done
-
-BirdKeeperJose2AfterBattleText:
-	text "BIRD KEEPERS like"
-	line "me mimic bird"
-
-	para "whistles to com-"
-	line "mand #MON."
-	done
-
 TohjoFallsJohtoSignText:
 	text "TOHJO FALLS"
 
@@ -425,7 +425,7 @@ Route27_MapEvents:
 	object_event 24,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermBrian, -1
 	object_event 55, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1
 	object_event 42,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMegan, -1
-	object_event 67, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1
-	object_event 60,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperJose2, -1
+	object_event 67, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1
+	object_event 60,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfBeth1, -1
 	object_event 51,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM
 	object_event 54, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY

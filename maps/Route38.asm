@@ -6,6 +6,7 @@
 	const ROUTE38_SAILOR
 	const ROUTE38_FRUIT_TREE
 	const ROUTE38_BEAUTY2
+	const ROUTE38_LADY_KAT
 
 Route38_MapScripts:
 	def_scene_scripts
@@ -308,6 +309,17 @@ TrainerBeautyOlivia:
 	waitbutton
 	closetext
 	end
+	
+TrainerLadyKat:
+	trainer LADY, KAT, EVENT_BEAT_LADY_KAT, LadyKatSeenText, LadyKatBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyKatAfterBattleText
+	waitbutton
+	closetext
+	end
 
 Route38Sign:
 	jumptext Route38SignText
@@ -444,6 +456,27 @@ BeautyOliviaAfterBattleText:
 	para "they only sell a"
 	line "bottle at a time."
 	done
+	
+LadyKatSeenText:
+	text "Hi there!"
+	line "Did you just come"
+	cont "from ECRUTEAK?"
+	
+	para "Did you visit my"
+	line "family's house?"
+	
+	para "We should battle!"
+	done
+
+LadyKatBeatenText:
+	text "Aww, I lost!"
+	done
+
+LadyKatAfterBattleText:
+	text "JOHTO is such a"
+	line "beautiful region"
+	cont "but I miss HOENN."
+	done
 
 Route38SignText:
 	text "ROUTE 38"
@@ -482,10 +515,11 @@ Route38_MapEvents:
 	bg_event  5, 13, BGEVENT_READ, Route38TrainerTips
 
 	def_object_events
-	object_event  4,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
+	object_event  4,  1, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
 	object_event 15,  3, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
-	object_event 12, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, -1
+	object_event 12, 15, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, -1
 	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+	object_event 31,  5, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyKat, -1

@@ -42,6 +42,10 @@ Route30BerrySpeechHouseCheckTreesText:
 	text "Check trees for"
 	line "BERRIES. They just"
 	cont "drop right off."
+	
+	para "Though some can't"
+	line "be eaten, they're"
+	cont "still useful."
 	done
 
 Route30BerryHouse_MapEvents:

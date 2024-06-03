@@ -141,7 +141,7 @@ Route17_MapEvents:
 
 	def_bg_events
 	bg_event  8, 55, BGEVENT_ITEM, Route17HiddenMaxEther
-	bg_event  8, 77, BGEVENT_ITEM, Route17HiddenMaxElixer
+	bg_event  4, 81, BGEVENT_ITEM, Route17HiddenMaxElixer
 
 	def_object_events
 	object_event  4, 17, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerRiley, -1

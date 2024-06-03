@@ -1061,9 +1061,7 @@ DoBurn:
 	doturn
 	stab
 	checkhit
-	moveanim
 	checksafeguard
-	failuretext
 	burntarget
 	endmove
 

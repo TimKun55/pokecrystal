@@ -6,7 +6,7 @@
 	const ROUTE32_YOUNGSTER2
 	const ROUTE32_YOUNGSTER3
 	const ROUTE32_LASS1
-	const ROUTE32_COOLTRAINER_M
+	const ROUTE32_BIRD_KEEPER
 	const ROUTE32_YOUNGSTER4
 	const ROUTE32_FISHER4
 	const ROUTE32_POKE_BALL1
@@ -16,7 +16,7 @@
 
 Route32_MapScripts:
 	def_scene_scripts
-	scene_script Route32Noop1Scene, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS
+	scene_script Route32Noop1Scene, SCENE_ROUTE32_BIRD_KEEPER_BLOCKS
 	scene_script Route32Noop2Scene, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
 	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
 
@@ -42,9 +42,9 @@ Route32FriedaCallback:
 	appear ROUTE32_FRIEDA
 	endcallback
 
-Route32CooltrainerMScript:
+Route32BirdKeeperScript:
 	faceplayer
-Route32CooltrainerMContinueScene:
+Route32BirdKeeperContinueScene:
 	opentext
 	checkevent EVENT_GOT_MIRACLE_SEED_IN_ROUTE_32
 	iftrue .GotMiracleSeed
@@ -52,19 +52,13 @@ Route32CooltrainerMContinueScene:
 	iffalse .DontHaveZephyrBadge
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue .GiveMiracleSeed
-	writetext Route32CooltrainerMText_AideIsWaiting
-	waitbutton
-	closetext
-	end
-
-.GoToSproutTower: ; unreferenced
-	writetext Route32CooltrainerMText_UnusedSproutTower
+	writetext Route32BirdKeeperText_AideIsWaiting
 	waitbutton
 	closetext
 	end
 
 .GiveMiracleSeed:
-	writetext Route32CooltrainerMText_HaveThisSeed
+	writetext Route32BirdKeeperText_HaveThisSeed
 	promptbutton
 	verbosegiveitem MIRACLE_SEED
 	iffalse .BagFull
@@ -72,32 +66,32 @@ Route32CooltrainerMContinueScene:
 	sjump .GotMiracleSeed
 
 .DontHaveZephyrBadge:
-	writetext Route32CooltrainerMText_VioletGym
+	writetext Route32BirdKeeperText_VioletGym
 	waitbutton
 	closetext
 	end
 
 .GotMiracleSeed:
-	writetext Route32CooltrainerMText_ExperiencesShouldBeUseful
+	writetext Route32BirdKeeperText_ExperiencesShouldBeUseful
 	waitbutton
 .BagFull:
 	closetext
 	end
 
-Route32CooltrainerMStopsYouScene:
-	turnobject ROUTE32_COOLTRAINER_M, LEFT
+Route32BirdKeeperStopsYouScene:
+	turnobject ROUTE32_BIRD_KEEPER, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext Route32CooltrainerMText_WhatsTheHurry
+	writetext Route32BirdKeeperText_WhatsTheHurry
 	waitbutton
 	closetext
-	follow PLAYER, ROUTE32_COOLTRAINER_M
-	applymovement PLAYER, Movement_Route32CooltrainerMPushesYouBackToViolet
+	follow PLAYER, ROUTE32_BIRD_KEEPER
+	applymovement PLAYER, Movement_Route32BirdKeeperPushesYouBackToViolet
 	stopfollow
 	turnobject PLAYER, DOWN
-	scall Route32CooltrainerMContinueScene
-	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset1
-	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset2
+	scall Route32BirdKeeperContinueScene
+	applymovement ROUTE32_BIRD_KEEPER, Movement_Route32BirdKeeperReset1
+	applymovement ROUTE32_BIRD_KEEPER, Movement_Route32BirdKeeperReset2
 	end
 
 Route32RoarTMGuyScript:
@@ -499,25 +493,25 @@ Route32HiddenGreatBall:
 Route32HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_32_HIDDEN_SUPER_POTION
 
-Movement_Route32CooltrainerMPushesYouBackToViolet:
+Movement_Route32BirdKeeperPushesYouBackToViolet:
 	step UP
 	step UP
 	step_end
 
-Movement_Route32CooltrainerMReset1:
+Movement_Route32BirdKeeperReset1:
 	step DOWN
 	step_end
 
-Movement_Route32CooltrainerMReset2:
+Movement_Route32BirdKeeperReset2:
 	step RIGHT
 	step_end
 
-Route32CooltrainerMText_WhatsTheHurry:
+Route32BirdKeeperText_WhatsTheHurry:
 	text "Wait up!"
 	line "What's the hurry?"
 	done
 
-Route32CooltrainerMText_AideIsWaiting:
+Route32BirdKeeperText_AideIsWaiting:
 	text "<PLAYER>, right?"
 	line "Some guy wearing"
 
@@ -531,22 +525,7 @@ Route32CooltrainerMText_AideIsWaiting:
 	line "CENTER."
 	done
 
-Route32CooltrainerMText_UnusedSproutTower:
-	text "Have you gone to"
-	line "SPROUT TOWER?"
-
-	para "If you ever visit"
-	line "VIOLET CITY, "
-
-	para "they'll expect you"
-	line "to train there."
-
-	para "That's basic for"
-	line "trainers. Go to"
-	cont "SPROUT TOWER!"
-	done
-
-Route32CooltrainerMText_VioletGym:
+Route32BirdKeeperText_VioletGym:
 	text "Have you gone to"
 	line "the #MON GYM?"
 
@@ -559,7 +538,7 @@ Route32CooltrainerMText_VioletGym:
 	cont "trainers!"
 	done
 
-Route32CooltrainerMText_HaveThisSeed:
+Route32BirdKeeperText_HaveThisSeed:
 	text "You have some good"
 	line "#MON there."
 
@@ -584,7 +563,7 @@ Route32CooltrainerMText_HaveThisSeed:
 	cont "type moves."
 	done
 
-Route32CooltrainerMText_ExperiencesShouldBeUseful:
+Route32BirdKeeperText_ExperiencesShouldBeUseful:
 	text "Your experiences"
 	line "in VIOLET CITY"
 
@@ -666,45 +645,6 @@ FisherRalphSwarmText:
 
 	para "and catch as many"
 	line "as you can, kid!"
-	done
-
-Route32UnusedFisher1SeenText: ; unreferenced
-	text "I keep catching"
-	line "the same #MON…"
-
-	para "Maybe a battle"
-	line "will turn things"
-	cont "around for me."
-	done
-
-Route32UnusedFisher1BeatenText: ; unreferenced
-	text "Nothing ever goes"
-	line "right for me now…"
-	done
-
-Route32UnusedFisher1AfterText: ; unreferenced
-	text "How come the guy"
-	line "next to me catches"
-	cont "good #MON?"
-	done
-
-Route32UnusedFisher2SeenText: ; unreferenced
-	text "Heh, I'm on a roll"
-	line "today. How about a"
-	cont "battle, kid?"
-	done
-
-Route32UnusedFisher2BeatenText: ; unreferenced
-	text "Oof. I wasn't"
-	line "lucky that time."
-	done
-
-Route32UnusedFisher2AfterText: ; unreferenced
-	text "You have to have a"
-	line "good ROD if you"
-
-	para "want to catch good"
-	line "#MON."
 	done
 
 FisherHenrySeenText:
@@ -820,12 +760,6 @@ BirdKeeperPeterAfterText:
 	cont "in VIOLET CITY."
 	done
 
-Route32UnusedText: ; unreferenced
-	text "The fishermen"
-	line "yelled at me for"
-	cont "bugging them…"
-	done
-
 Text_RoarIntro:
 	text "WROOOOAR!"
 	line "PEOPLE RUN WHEN I"
@@ -920,7 +854,7 @@ Route32_MapEvents:
 	warp_event  6, 79, UNION_CAVE_1F, 4
 
 	def_coord_events
-	coord_event 18,  8, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS, Route32CooltrainerMStopsYouScene
+	coord_event 18,  8, SCENE_ROUTE32_BIRD_KEEPER_BLOCKS, Route32BirdKeeperStopsYouScene
 	coord_event  7, 71, SCENE_ROUTE32_OFFER_SLOWPOKETAIL, Route32WannaBuyASlowpokeTailScript
 
 	def_bg_events
@@ -937,10 +871,10 @@ Route32_MapEvents:
 	object_event  6, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
 	object_event 11, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
 	object_event  4, 63, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
-	object_event  3, 45, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
+	object_event  3, 45, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
 	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
-	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
-	object_event 11, 82, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPeter, -1
+	object_event 19,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32BirdKeeperScript, -1
+	object_event 11, 82, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPeter, -1
 	object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1

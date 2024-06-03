@@ -3,7 +3,6 @@
 ; item associated with the table entry is used instead.
 
 TimeCapsule_CatchRateItems:
-	db ITEM_2D, PERSIM_BERRY
 	db ITEM_32, SITRUS_BERRY
 	db ITEM_64, ORAN_BERRY
 	db ITEM_BE, ORAN_BERRY

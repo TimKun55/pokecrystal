@@ -2,6 +2,7 @@
 	const ROUTE39_SAILOR
 	const ROUTE39_POKEFAN_M
 	const ROUTE39_POKEFAN_F1
+	const ROUTE39_BUG_MANIAC
 	const ROUTE39_MILTANK1
 	const ROUTE39_MILTANK2
 	const ROUTE39_MILTANK3
@@ -164,6 +165,17 @@ TrainerPokefanfJaime:
 	closetext
 	end
 
+TrainerBugManiacPete:
+	trainer BUG_MANIAC, PETE, EVENT_BEAT_BUG_MANIAC_PETE, BugManiacPeteSeenText, BugManiacPeteBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacPeteAfterBattleText
+	waitbutton
+	closetext
+	end
+
 Route39Sign:
 	jumptext Route39SignText
 
@@ -276,6 +288,20 @@ PsychicNormanAfterBattleText:
 	cont "potential."
 	done
 
+BugManiacPeteSeenText:
+	text "Hey!"
+	line "We should battle!"
+	done
+
+BugManiacPeteBeatenText:
+	text "Oh, I lost?"
+	done
+
+BugManiacPeteAfterBattleText:
+	text "You're really"
+	line "good at this!"
+	done
+
 PokefanfJaimeHopeItGetsDarkText:
 	text "Ufufufu… I hope it"
 	line "gets dark soon."
@@ -359,10 +385,11 @@ Route39_MapEvents:
 	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, -1
 	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
 	object_event 12, 14, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
+	object_event  8, 31, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacPete, -1
 	object_event  6, 12, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  9, 10, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  3, 15, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  9, 14, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
+	object_event 13,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
 	object_event  9,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1

@@ -11,6 +11,7 @@
 	const ROUTE40_POKEFAN_M
 	const ROUTE40_LASS2
 	const ROUTE40_STANDING_YOUNGSTER
+	const ROUTE40_LADY_ADA
 
 Route40_MapScripts:
 	def_scene_scripts
@@ -69,6 +70,17 @@ TrainerSwimmermRandall:
 	endifjustbattled
 	opentext
 	writetext SwimmermRandallAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TrainerLadyAda:
+	trainer LADY, ADA, EVENT_BEAT_LADY_ADA, LadyAdaSeenText, LadyAdaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyAdaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -135,31 +147,6 @@ Route40Rock:
 Route40HiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ROUTE_40_HIDDEN_HYPER_POTION
 
-Route40_StepRightUp6Movement: ; unreferenced
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp5Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp4Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
 SwimmermSimonSeenText:
 	text "You have to warm"
 	line "up before going"
@@ -194,6 +181,25 @@ SwimmermRandallAfterBattleText:
 	text "Swimming exercises"
 	line "your entire body."
 	cont "It's healthy."
+	done
+
+LadyAdaSeenText:
+	text "Hello!"
+	line "Are you the strong"
+	cont "trainer my sisters"
+	
+	para "told me about?"
+	line "Let's battle!"
+	done
+
+LadyAdaBeatenText:
+	text "A defeat!"
+	done
+
+LadyAdaAfterBattleText:
+	text "You really are"
+	line "strong! Just like"
+	cont "the FAIRY TYPE!"
 	done
 
 SwimmerfElaineSeenText:
@@ -360,3 +366,4 @@ Route40_MapEvents:
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
 	object_event 16,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+	object_event 12,  8, SPRITE_LADY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerLadyAda, -1

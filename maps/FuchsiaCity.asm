@@ -1,5 +1,5 @@
 	object_const_def
-	const FUCHSIACITY_YOUNGSTER
+	const FUCHSIACITY_BIRD_KEEPER
 	const FUCHSIACITY_POKEFAN_M
 	const FUCHSIACITY_TEACHER
 	const FUCHSIACITY_FRUIT_TREE
@@ -19,8 +19,8 @@ FuchsiaCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	endcallback
 
-FuchsiaCityYoungster:
-	jumptextfaceplayer FuchsiaCityYoungsterText
+FuchsiaCityBirdKeeper:
+	jumptextfaceplayer FuchsiaCityBirdKeeperText
 
 FuchsiaCityPokefanM:
 	jumptextfaceplayer FuchsiaCityPokefanMText
@@ -127,7 +127,7 @@ FuchsiaCityMartSign:
 FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
-FuchsiaCityYoungsterText:
+FuchsiaCityBirdKeeperText:
 	text "One of the ELITE"
 	line "FOUR used to be"
 
@@ -267,7 +267,7 @@ FuchsiaCity_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 19, BGEVENT_READ, FuchsiaCitySign
+	bg_event 24, 18, BGEVENT_READ, FuchsiaCitySign
 	bg_event  4, 27, BGEVENT_READ, FuchsiaGymSign
 	bg_event 21, 15, BGEVENT_READ, SafariZoneParkSign
 	bg_event 29, 27, BGEVENT_READ, WardensHomeSign
@@ -281,7 +281,7 @@ FuchsiaCity_MapEvents:
 	bg_event 35,  9, BGEVENT_READ, NidoqueenSign
 
 	def_object_events
-	object_event 23, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityYoungster, -1
+	object_event 23, 29, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityBirdKeeper, -1
 	object_event 10, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM, -1
 	object_event 23, 22, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
 	object_event 25,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1

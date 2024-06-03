@@ -55,7 +55,10 @@ Route14ArticunoNestLorelei:
 	closetext
 	cry LAPRAS
 	applymovement ROUTE14ARTICUNONEST_LORELEI, GuardianLoreleiExitMovement
-	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	playsound SFX_THROW_BALL
+	pause 5
+	playsound SFX_BALL_POOF
+	pause 5
 	cry ARTICUNO
 	pause 15
 	playsound SFX_ESCAPE_ROPE

@@ -23,6 +23,8 @@ DayCareEggCheckCallback:
 DayCareManScript_Inside:
 	faceplayer
 	opentext
+	checkitem EGG_TICKET
+	iftrue .TicketOddEgg
 	checkevent EVENT_GOT_ODD_EGG
 	iftrue .AlreadyHaveOddEgg
 	writetext DayCareManText_GiveOddEgg
@@ -50,6 +52,22 @@ DayCareManScript_Inside:
 
 .AlreadyHaveOddEgg:
 	special DayCareMan
+	waitbutton
+	closetext
+	end
+
+.TicketOddEgg:
+	writetext EggTicketText
+	promptbutton
+	closetext
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	takeitem EGG_TICKET
+	special GiveOddEgg
+	opentext
+	writetext TradedTicketForOddEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
 	waitbutton
 	closetext
 	end
@@ -108,17 +126,29 @@ DayCareText_GotOddEgg:
 	done
 
 DayCareText_DescribeOddEgg:
-	text "I found that when"
-	line "I was caring for"
+	text "We've been raising"
+	line "special #MON"
+	cont "for a promotion."
+	
+	para "If you find an EGG"
+	line "TICKET, bring it"
+	
+	para "to me, and you'll"
+	line "get another EGG."
+	done
 
-	para "someone's #MON"
-	line "before."
+EggTicketText:
+	text "Oh! You've got"
+	line "an EGG TICKET!"
+	
+	para "I'll exchange it"
+	line "for a special EGG."
+	done
 
-	para "But the trainer"
-	line "didn't want the"
-
-	para "EGG, so I'd kept"
-	line "it around."
+TradedTicketForOddEggText:
+	text "<PLAYER> exchanged"
+	line "the EGG TICKET for"
+	cont "the ODD EGG!"
 	done
 
 DayCareText_PartyFull:

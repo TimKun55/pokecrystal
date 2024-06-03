@@ -5,6 +5,7 @@
 	const ROUTE43_FISHER
 	const ROUTE43_LASS
 	const ROUTE43_YOUNGSTER
+	const ROUTE43_LADY_KAI
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
 
@@ -304,6 +305,17 @@ TrainerPicnickerTiffany:
 .PackFull:
 	jumpstd PackFullFScript
 	end
+	
+TrainerLadyKai:
+	trainer LADY, KAI, EVENT_BEAT_LADY_KAI, LadyKaiSeenText, LadyKaiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyKaiAfterBattleText
+	waitbutton
+	closetext
+	end
 
 Route43Sign1:
 	jumptext Route43Sign1Text
@@ -459,6 +471,26 @@ PicnickerTiffanyClefairyText:
 	line "just the most"
 	cont "adorable thing?"
 	done
+	
+LadyKaiSeenText:
+	text "Ooh, you"
+	line "look strong!"
+	cont "Let's battle!"
+	done
+
+LadyKaiBeatenText:
+	text "My, my, my!"
+	done
+
+LadyKaiAfterBattleText:
+	text "That was fun!"
+	line "Are you the one"
+	cont "who's been taking"
+	
+	para "on my sisters?"
+	line "You're pretty"
+	cont "good!"
+	done
 
 Route43Sign1Text:
 	text "ROUTE 43"
@@ -519,6 +551,7 @@ Route43_MapEvents:
 	object_event 14,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
 	object_event  4, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
 	object_event  9, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
-	object_event 13, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
+	object_event 13, 40, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
+	object_event  9, 44, SPRITE_LADY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyKai, -1
 	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event 12, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER

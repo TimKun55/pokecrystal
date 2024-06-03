@@ -5,6 +5,7 @@
 	const ROUTE9_LASS2
 	const ROUTE9_POKEFAN_M1
 	const ROUTE9_POKEFAN_M2
+	const ROUTE9_LADY_ZOE
 
 Route9_MapScripts:
 	def_scene_scripts
@@ -73,6 +74,17 @@ TrainerHikerSidney:
 	endifjustbattled
 	opentext
 	writetext HikerSidneyAfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TrainerLadyZoe:
+	trainer LADY, ZOE, EVENT_BEAT_LADY_ZOE, LadyZoeSeenText, LadyZoeBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadyZoeAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -195,6 +207,27 @@ HikerSidneyAfterBattleText:
 	line "across a small"
 	cont "river."
 	done
+	
+LadyZoeSeenText:
+	text "YOU! BATTLE!"
+	line "NOW!!!"
+	done
+
+LadyZoeBeatenText:
+	text "No! I lost to a"
+	line "random?!"
+	done
+
+LadyZoeAfterBattleText:
+	para "YOU'RE the trainer"
+	line "from JOHTO?!"
+
+	para "Oh, well, no"
+	cont "wonder I lost!"
+	
+	para "I guess"
+	line "that's OK…"
+	done
 
 Route9SignText:
 	text "ROUTE 9"
@@ -215,9 +248,10 @@ Route9_MapEvents:
 	bg_event 41, 15, BGEVENT_ITEM, Route9HiddenEther
 
 	def_object_events
-	object_event 23, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDean, -1
+	object_event 23, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDean, -1
 	object_event 39,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerHeidi, -1
-	object_event 11,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperSid, -1
+	object_event 11,  4, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperSid, -1
 	object_event 12, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerEdna, -1
 	object_event 28,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerTim, -1
 	object_event 36, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerHikerSidney, -1
+	object_event  9,  9, SPRITE_LADY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyZoe, -1

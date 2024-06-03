@@ -22,6 +22,8 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw BerryShop
+	dw MadamItems
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -71,6 +73,24 @@ Pharmacist:
 	ld hl, PharmacyComeAgainText
 	call MartTextbox
 	ret
+
+BerryShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, BerryShopIntroText
+	call MartTextbox
+	call BuyMenu
+	ld hl, BerryShopComeAgainText
+	jp MartTextbox
+
+MadamItems:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, MadamItemsIntroText
+	call MartTextbox
+	call BuyMenu
+	ld hl, MadamItemsComeAgainText
+	jp MartTextbox
 
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
@@ -435,6 +455,8 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .BerryShopPointers, 0
+	dwb .MadamItemsPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -466,6 +488,22 @@ GetMartDialogGroup:
 	dw PharmacyNoMoneyText
 	dw PharmacyPackFullText
 	dw PharmacyThanksText
+	dw BuyMenuLoop
+
+.BerryShopPointers:
+	dw BerryShopHowManyText
+	dw BerryShopCostsThisMuchText
+	dw BerryShopInsufficientFundsText
+	dw BerryShopBagFullText
+	dw BerryShopHereYouGoText
+	dw BuyMenuLoop
+
+.MadamItemsPointers:
+	dw MadamItemsHowManyText
+	dw MadamItemsCostsThisMuchText
+	dw MadamItemsInsufficientFundsText
+	dw MadamItemsBagFullText
+	dw MadamItemsHereYouGoText
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -746,6 +784,62 @@ PharmacyNoMoneyText:
 
 PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
+	text_end
+
+BerryShopIntroText:
+	text_far _BerryShop_IntroText
+	text_end
+
+BerryShopComeAgainText:
+	text_far _BerryShop_ComeAgainText
+	text_end
+
+BerryShopHowManyText:
+	text_far _BerryShop_HowManyText
+	text_end
+
+BerryShopCostsThisMuchText:
+	text_far _BerryShop_CostsThisMuchText
+	text_end
+
+BerryShopInsufficientFundsText:
+	text_far _BerryShop_InsufficientFundsText
+	text_end
+
+BerryShopBagFullText:
+	text_far _BerryShop_BagFullText
+	text_end
+
+BerryShopHereYouGoText:
+	text_far _BerryShop_HereYouGoText
+	text_end
+
+MadamItemsIntroText:
+	text_far _MadamItems_IntroText
+	text_end
+
+MadamItemsComeAgainText:
+	text_far _MadamItems_ComeAgainText
+	text_end
+
+MadamItemsHowManyText:
+	text_far _MadamItems_HowManyText
+	text_end
+
+MadamItemsCostsThisMuchText:
+	text_far _MadamItems_CostsThisMuchText
+	text_end
+
+MadamItemsInsufficientFundsText:
+	text_far _MadamItems_InsufficientFundsText
+	text_end
+
+MadamItemsBagFullText:
+	text_far _MadamItems_BagFullText
+	text_end
+
+MadamItemsHereYouGoText:
+	text_far _MadamItems_HereYouGoText
 	text_end
 
 SellMenu:

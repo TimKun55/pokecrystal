@@ -3170,8 +3170,8 @@ wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
 wTeamRocketBaseB3FSceneID::                       db
 wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
-wMtSilverRoom3SceneID::                           db
-wVictoryRoadSceneID::                             db
+wMtSilverRoom4MewtwoSceneID::                     db
+wVictoryRoad3FSceneID::                           db
 wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
 wOlivinePortSceneID::                             db
@@ -3183,8 +3183,10 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wAviculturalSociety1FSceneID::                    db
 wAviculturalSociety2FSceneID::                    db
+wWhirlIslandLugiaChamberSceneID::                 db
+wTinTowerRoofSceneID::                            db
 
-	ds 47
+	ds 45
 
 ; fight counts
 wJackFightCount::    db

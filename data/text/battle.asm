@@ -312,8 +312,8 @@ BattleText_UserHurtBySpikes:
 
 RecoveredUsingText:
 	text "<TARGET>"
-	line "recovered using a"
-	cont "@"
+	line "recovered using"
+	cont "the @"
 	text_ram wStringBuffer1
 	text "!"
 	prompt

@@ -2,19 +2,19 @@ SpriteMons:
 ; entries correspond to SPRITE_* constants past SPRITE_POKEMON
 	table_width 1, SpriteMons
 	db UNOWN
-	db GEODUDE
-	db GROWLITHE
-	db WEEDLE
+	db TYROGUE
+	db PERSIAN
+	db HITMONCHAN
 	db SHELLDER
 	db ODDISH
 	db GENGAR
 	db ZUBAT
 	db MAGIKARP
 	db SQUIRTLE
-	db TOGEPI
+	db RATTATA
 	db BUTTERFREE
 	db DIGLETT
-	db POLIWAG
+	db HITMONLEE
 	db PIKACHU
 	db CLEFAIRY
 	db CHARMANDER
@@ -24,7 +24,7 @@ SpriteMons:
 	db JIGGLYPUFF
 	db GRIMER
 	db MILTANK
-	db PARAS
+	db HITMONTOP
 	db TENTACOOL
 	db TAUROS
 	db MACHOP
@@ -82,12 +82,12 @@ SpriteMons:
 	db SLUGMA
 	db WOOPER
 	db MAGCARGO
-	db GRAVELER
-	db DELIBIRD
+	db SKARMORY
+	db PIDGEOT
 	db SYLVEON
 	db MAGNEMITE
 	db MAMOSWINE
-	db SPEAROW
+	db FEAROW
 	db RATICATE
 	db CHIKORITA
 	db CYNDAQUIL

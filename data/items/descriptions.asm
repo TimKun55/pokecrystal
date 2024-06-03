@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw DNASampleDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -153,9 +153,9 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama18Desc
-	dw TeruSama19Desc
-	dw TeruSama20Desc
+	dw BoxingMittsDesc
+	dw SpringShoesDesc
+	dw SpinningTopDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -434,8 +434,9 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
+DNASampleDesc:
+	db   "A thin vile with"
+	next "an eyelash inside.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -762,8 +763,8 @@ MachinePartDesc:
 	next "the POWER PLANT.@"
 
 EggTicketDesc:
-	db   "May use at Golden-"
-	next "rod trade corner.@"
+	db   "Exchange with the"
+	next "DAY-CARE MAN.@"
 
 LostItemDesc:
 	db   "The # DOLL lost"
@@ -778,7 +779,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 BasementKeyDesc:
-	db   "Opens doors.@"
+	db   "Opens certain"
+	next "locked doors.@"
 
 PassDesc:
 	db   "A ticket for the"
@@ -786,7 +788,7 @@ PassDesc:
 
 EvioliteDesc:
 	db   "Ups defenses if"
-	next "#MON can evolve@"
+	next "#MON evolves.@"
 
 TeruSama10Desc:
 	db   "?@"
@@ -852,14 +854,17 @@ BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
 
-TeruSama18Desc:
-	db   "?@"
+BoxingMittsDesc:
+	db   "A pair of red"
+	next "mitts for boxing.@"
 
-TeruSama19Desc:
-	db   "?@"
+SpringShoesDesc:
+	db   "Pair of shoes with"
+	next "springs. Bouncy.@"
 
-TeruSama20Desc:
-	db   "?@"
+SpinningTopDesc:
+	db   "Colorful spinning"
+	next "top. Very fun.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

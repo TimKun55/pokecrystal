@@ -114,7 +114,6 @@ ROMX $24
 	"bank24"
 ROMX $25
 	"Maps"
-	"Events"
 ROMX $26
 	"Map Scripts 11"
 ROMX $27
@@ -184,9 +183,8 @@ ROMX $42
 ROMX $43
 	"Title"
 ROMX $44
-	"Mobile Adapter SDK"
+	"Events"
 ROMX $45
-	"Mobile Adapter SDK Mail"
 	"mobile45"
 ROMX $46
 	"mobile46"
@@ -319,6 +317,10 @@ ROMX $80
 	"Map Scripts 26"
 ROMX $81
 	"Map Scripts 27"	
+ROMX $82
+	"Mobile Adapter SDK"
+ROMX $83
+	"Mobile Adapter SDK Mail"
 WRAM0
 	"Stack"
 	"Audio RAM"

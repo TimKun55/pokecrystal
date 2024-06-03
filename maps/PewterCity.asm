@@ -24,18 +24,8 @@ PewterCityBugCatcherScript:
 PewterCityGrampsScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SILVER_WING
-	iftrue .GotSilverWing
 	writetext PewterCityGrampsText
 	promptbutton
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
-	closetext
-	end
-
-.GotSilverWing:
-	writetext PewterCityGrampsText_GotSilverWing
-	waitbutton
 	closetext
 	end
 
@@ -88,30 +78,14 @@ PewterCityGrampsText:
 	line "the way out here"
 	cont "from JOHTO?"
 
-	para "That brings back"
-	line "memories. When I"
+	para "Did you come via"
+	line "the MAGNET TRAIN,"
 
-	para "was young, I went"
-	line "to JOHTO to train."
+	para "the S.S.AQUA or"
+	line "from ROUTE 22?"
 
-	para "You remind me so"
-	line "much of what I was"
-
-	para "like as a young"
-	line "man."
-
-	para "Here. I want you"
-	line "to have this item"
-	cont "I found in JOHTO."
-	done
-
-PewterCityGrampsText_GotSilverWing:
-	text "Going to new, un-"
-	line "known places and"
-	cont "seeing new people…"
-
-	para "Those are the joys"
-	line "of travel."
+	para "It's amazing how"
+	line "connected we are!"
 	done
 
 PewterCitySignText:

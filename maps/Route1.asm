@@ -82,6 +82,7 @@ Route1_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  9,  1, ROUTE_1_VIRIDIAN_GATE, 3
 
 	def_coord_events
 
@@ -89,6 +90,6 @@ Route1_MapEvents:
 	bg_event  7, 27, BGEVENT_READ, Route1Sign
 
 	def_object_events
-	object_event 10, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSchoolboyDanny, -1
+	object_event 10, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSchoolboyDanny, -1
 	object_event  9, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfQuinn, -1
 	object_event  5,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1

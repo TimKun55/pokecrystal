@@ -326,17 +326,16 @@ PlateauRivalLoseText:
 	done
 
 TeleportGuyText1:
-	text "Ah! You're chal-"
-	line "lenging the ELITE"
+	text "Ah! Are you"
+	line "challenging the"
+	cont "ELITE FOUR?"
 
-	para "FOUR? Are you sure"
+	para "Are you sure"
 	line "you're ready?"
 
 	para "If you need to"
-	line "train some more,"
-
-	para "my ABRA can help"
-	line "you."
+	line "train more, my"
+	cont "ABRA can help you."
 
 	para "It can TELEPORT"
 	line "you home."

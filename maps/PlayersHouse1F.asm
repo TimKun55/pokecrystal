@@ -75,11 +75,11 @@ MeetMomScript:
 .ExplainPhone:
 	writetext DontKnowTheInstructionsText
 	promptbutton
+	writetext InstructionsNextText
+	waitbutton
 	sjump .FinishPhone
 
 .FinishPhone:
-	writetext InstructionsNextText
-	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -277,8 +277,7 @@ ComeHomeForDSTText:
 
 KnowTheInstructionsText:
 	text "That's my kid!"
-	line "Always so tech"
-	cont "savvy!"
+	line "So tech savvy!"
 	done
 
 DontKnowTheInstructionsText:

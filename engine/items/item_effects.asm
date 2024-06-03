@@ -58,7 +58,7 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; ITEM_2D
+	dw NoEffect            ; DNA_SAMPLE
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
@@ -166,9 +166,9 @@ ItemEffects:
 	dw RestorePPEffect     ; LEPPA_BERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
-	dw NoEffect            ; ITEM_9B
+	dw NoEffect            ; BOXING_MITTS
+	dw NoEffect            ; SPRING_SHOES
+	dw NoEffect            ; SPINNING_TOP
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL

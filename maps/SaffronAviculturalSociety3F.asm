@@ -452,7 +452,7 @@ SaffronAviculturalSociety3F_MapEvents:
 
 	def_object_events
 	object_event  6,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyGrampsScript, -1
-	object_event  8,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSociety3FBirdKeeperScript, -1
+	object_event  8,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSociety3FBirdKeeperScript, -1
 	object_event  2,  1, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyLoreleiScript, -1
 	object_event 11,  1, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyAgathaScript, -1
 	object_event  5,  7, SPRITE_ARTICUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ArticunoStatueScript, -1

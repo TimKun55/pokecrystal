@@ -3,6 +3,8 @@
 	const MOUNTMOONGIFTSHOP_GRAMPS2 ; day only
 	const MOUNTMOONGIFTSHOP_LASS1 ; morning only
 	const MOUNTMOONGIFTSHOP_LASS2 ; day only
+	const MOUNTMOONGIFTSHOP_CLEFAIRY1 ; morning only
+	const MOUNTMOONGIFTSHOP_CLEFAIRY2 ; day only 
 
 MountMoonGiftShop_MapScripts:
 	def_scene_scripts
@@ -19,10 +21,82 @@ MountMoonGiftShopClerkScript:
 MountMoonGiftShopLassScript:
 	jumptextfaceplayer MountMoonGiftShopLassText
 
+MountMoonGiftShopClefairyDollScript:
+	checkevent EVENT_DECO_CLEFAIRY_DOLL
+	iftrue .ClefairyDollPurchased 
+	opentext
+	writetext ClefairyDollPriceText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .RefusePurchase
+	checkmoney YOUR_MONEY, 12000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	takemoney YOUR_MONEY, 12000
+	setevent EVENT_DECO_CLEFAIRY_DOLL
+	writetext BoughtClefairyDollText
+	playsound SFX_TRANSACTION
+	waitbutton
+	writetext ClefairyDollSentText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney:
+	writetext ClefairyDollNoMoneyText
+	waitbutton
+	closetext
+	end
+
+.RefusePurchase
+	writetext ClefairyDollNoSaleText
+	waitbutton
+	closetext
+	end
+	
+.ClefairyDollPurchased:
+	opentext
+	writetext ClefairyDollText
+	waitbutton
+	closetext
+	end
+
 MountMoonGiftShopLassText:
 	text "When the sun goes"
 	line "down, CLEFAIRY"
 	cont "come out to play."
+	done
+	
+ClefairyDollText:
+	text "It's a super cute"
+	line "CLEFAIRY DOLL."
+	done
+
+ClefairyDollNoSaleText:
+	text "Maybe next time."
+	done
+
+ClefairyDollNoMoneyText:
+	text "Not enough money…"
+	done
+
+ClefairyDollPriceText:
+	text "It's a super cute"
+	line "CLEFAIRY DOLL."
+	
+	para "The price is"
+	line "¥12,000."
+	
+	para "Buy it?"
+	done
+	
+BoughtClefairyDollText:
+	text "<PLAYER> bought"
+	line "CLEFAIRY DOLL."
+	done
+
+ClefairyDollSentText:
+	text "CLEFAIRY DOLL"
+	line "was sent home."
 	done
 
 MountMoonGiftShop_MapEvents:
@@ -41,3 +115,5 @@ MountMoonGiftShop_MapEvents:
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClerkScript, -1
 	object_event  1,  6, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopLassScript, -1
 	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopLassScript, -1
+	object_event  2,  2, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClefairyDollScript, -1
+	object_event  2,  3, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClefairyDollScript, -1
