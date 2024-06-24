@@ -239,9 +239,11 @@ _ReceivedItemText::
 	done
 
 _PutItemInPocketText::
-	text "<PLAYER> put"
-	line "it in the"
-	cont "@"
+	text "<PLAYER> put the"
+	line "@"
+	text_ram wStringBuffer1
+	text " in"
+	cont "the @"
 	text_ram wStringBuffer3
 	text "."
 	prompt

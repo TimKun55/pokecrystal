@@ -87,7 +87,7 @@ Route1_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7, 27, BGEVENT_READ, Route1Sign
+	bg_event  8, 27, BGEVENT_READ, Route1Sign
 
 	def_object_events
 	object_event 10, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSchoolboyDanny, -1

@@ -60,6 +60,7 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const MAHOGANY_MOVE_TUTOR_HOUSE,                    4,  4 ;  8
+	map_const MAHOGANY_BAKERY,                              6,  5 ;  9
 	endgroup
 
 	newgroup DUNGEONS                                             ;  3
@@ -146,7 +147,7 @@ ENDM
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 81
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 82
 	map_const DRAGON_SHRINE,                                5,  5 ; 83
-	map_const TOHJO_FALLS,                                 15, 17 ; 84
+	map_const TOHJO_FALLS,                                 21, 17 ; 84
 	map_const DIGLETTS_CAVE,                               10, 18 ; 85
 	map_const VIRIDIAN_FOREST,                             24, 22 ; 86
 	map_const MOUNT_MOON,                                  15,  9 ; 87
@@ -161,24 +162,23 @@ ENDM
 
 	newgroup ECRUTEAK                                             ;  4
 	map_const ROUTE_35,                                    10, 18 ;  1
-	map_const ROUTE_35_GOLDENROD_GATE,                      5,  4 ;  2
-	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ;  3
-	map_const ROUTE_36,                                    30,  9 ;  4
-	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ;  5
-	map_const ROUTE_37,                                    10,  9 ;  6
-	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  7
-	map_const WISE_TRIOS_ROOM,                              4,  4 ;  8
-	map_const ECRUTEAK_POKECENTER_1F,                       6,  4 ;  9
-	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ; 10
-	map_const DANCE_THEATER,                                6,  7 ; 11
-	map_const ECRUTEAK_MART,                                6,  4 ; 12
-	map_const ECRUTEAK_GYM,                                 5,  9 ; 13
-	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ; 14
-	map_const ECRUTEAK_CITY,                               20, 18 ; 15
-	map_const ECRUTEAK_FAIRY_FAMILY_HOUSE,                  4,  4 ; 16
-	map_const ECRUTEAK_SWARM_HOUSE,                         4,  4 ; 17 	
-	map_const BELLCHIME_TRAIL,                             15, 10 ; 18
-
+	map_const ROUTE_36,                                    30,  9 ;  2
+	map_const ROUTE_37,                                    10,  9 ;  3
+	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  4
+	map_const WISE_TRIOS_ROOM,                              4,  4 ;  5
+	map_const ECRUTEAK_POKECENTER_1F,                       6,  4 ;  6
+	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  7
+	map_const DANCE_THEATER,                                6,  7 ;  8
+	map_const ECRUTEAK_MART,                                6,  4 ;  9
+	map_const ECRUTEAK_GYM,                                 5,  9 ; 10
+	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ; 11
+	map_const ECRUTEAK_CITY,                               20, 18 ; 12
+	map_const ECRUTEAK_FAIRY_FAMILY_HOUSE,                  4,  4 ; 13
+	map_const ECRUTEAK_SWARM_HOUSE,                         4,  4 ; 14 	
+	map_const BELLCHIME_TRAIL,                             15, 10 ; 15
+	map_const ROUTE_35_GOLDENROD_GATE,                      5,  4 ; 16
+	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 17
+	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 18
 	endgroup
 
 	newgroup BLACKTHORN                                           ;  5
@@ -266,7 +266,7 @@ ENDM
 
 	newgroup GOLDENROD                                            ; 11
 	map_const ROUTE_34,                                    10, 27 ;  1
-	map_const GOLDENROD_CITY,                              20, 18 ;  2
+	map_const GOLDENROD_CITY,                              21, 18 ;  2
 	map_const GOLDENROD_GYM,                               10,  9 ;  3
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
@@ -490,7 +490,7 @@ ENDM
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  6
 	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  7
 	map_const ELMS_HOUSE,                                   4,  4 ;  8
-	map_const ROUTE_27_SANDSTORM_HOUSE,                     4,  4 ;  9
+	map_const ROUTE_27_AERIAL_ACE_HOUSE,                    4,  4 ;  9
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 10
 	endgroup
 
@@ -511,6 +511,7 @@ ENDM
 	map_const SAFFRON_AVICULTURAL_SOCIETY_1F,               6,  5 ; 14
 	map_const SAFFRON_AVICULTURAL_SOCIETY_2F,               6,  6 ; 15
 	map_const SAFFRON_AVICULTURAL_SOCIETY_3F,               7,  8 ; 16	
+	map_const SAFFRON_ODDISH_DOLL_HOUSE,                    4,  4 ; 17
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26

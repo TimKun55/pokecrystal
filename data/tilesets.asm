@@ -48,8 +48,10 @@ Tilesets::
 	tileset TilesetIndigo
 	tileset TilesetJohto2
 	tileset TilesetJohto3
+	tileset TilesetJohto4
 	tileset TilesetKanto2
 	tileset TilesetKanto3
 	tileset TilesetKanto4
 	tileset TilesetKanto5
+	tileset TilesetKanto6
 	assert_table_length NUM_TILESETS + 1

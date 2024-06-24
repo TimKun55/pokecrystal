@@ -292,6 +292,7 @@ SaffronCity_MapEvents:
 	warp_event 39, 26, ROUTE_8_SAFFRON_GATE, 1
 	warp_event 39, 27, ROUTE_8_SAFFRON_GATE, 2
 	warp_event 13,  7, SAFFRON_AVICULTURAL_SOCIETY_1F, 1
+	warp_event 15, 31, SAFFRON_ODDISH_DOLL_HOUSE, 1
 
 	def_coord_events
 

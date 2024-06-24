@@ -545,3 +545,30 @@ INCBIN "data/tilesets/kanto_5_attributes.bin"
 
 TilesetPlayersRoomMeta::
 INCBIN "data/tilesets/players_room_metatiles.bin"
+
+TilesetJohto4Attr::
+INCBIN "data/tilesets/johto_4_attributes.bin"
+
+TilesetJohto4Coll::
+INCLUDE "data/tilesets/johto_4_collision.asm"
+
+TilesetJohto4Meta::
+INCBIN "data/tilesets/johto_4_metatiles.bin"
+
+TilesetJohto4GFX::
+INCBIN "gfx/tilesets/johto_4.2bpp.lz"
+
+TilesetKanto6Attr::
+INCBIN "data/tilesets/kanto_6_attributes.bin"
+
+
+SECTION "Tileset Data 20", ROMX
+
+TilesetKanto6Coll::
+INCLUDE "data/tilesets/kanto_6_collision.asm"
+
+TilesetKanto6Meta::
+INCBIN "data/tilesets/kanto_6_metatiles.bin"
+
+TilesetKanto6GFX::
+INCBIN "gfx/tilesets/kanto_6.2bpp.lz"

@@ -1,5 +1,6 @@
 	object_const_def
 	const OLIVINEGYM_JASMINE
+	const OLIVINEGYM_STEELIX
 	const OLIVINEGYM_GYM_GUIDE
 
 OlivineGym_MapScripts:
@@ -10,6 +11,10 @@ OlivineGym_MapScripts:
 OlivineGymJasmineScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal 16, .JasmineScript_16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .JasmineScript_Rematch	
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
 	writetext Jasmine_SteelTypeIntro
@@ -44,6 +49,54 @@ OlivineGymJasmineScript:
 	writetext Jasmine_GoodLuck
 	waitbutton
 .NoRoomForIronTail:
+	closetext
+	end
+	
+.JasmineScript_16Badges
+	writetext Jasmine16IntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext JasmineWinLossRematchText, 0
+	loadtrainer JASMINE, JASMINE3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Jasmine16AfterBattleText
+	waitbutton
+	closetext
+	end
+
+.JasmineScript_Rematch
+	writetext JasmineRematchIntroText
+	yesorno
+	iffalse .EndRematch
+	closetext
+	winlosstext JasmineWinLossRematchText, 0
+	loadtrainer JASMINE, JASMINE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext JasmineRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.EndRematch
+	writetext JasmineNextTimeText
+	waitbutton
+	closetext
+	end
+	
+OlivineGymSteelix:
+	opentext
+	writetext SteelixText
+	cry STEELIX
+	waitbutton
+	refreshscreen
+	pokepic STEELIX
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -152,6 +205,67 @@ Jasmine_GoodLuck:
 	line "how to say this,"
 	cont "but good luck…"
 	done
+	
+JasmineRematchIntroText:
+	text "Oh, <PLAYER>!"
+	line "Hello, good to"
+	cont "see you again."
+	
+	para "Feel like having"
+	line "a rematch?"
+	done
+	
+JasmineWinLossRematchText:
+	text "Well done…"
+	done
+	
+JasmineRematchAfterBattleText:
+	text "Properly tempered"
+	line "steel won't be"
+	cont "made rusty by"
+	cont "things like this!"
+	
+	para "Keep training"
+	line "without giving up,"
+	
+	para "I'll do the same,"
+	line "and be sure"
+	cont "to back for" 
+	cont "a rematch!"
+	done
+	
+Jasmine16IntroText:
+	text "<PLAYER>!"
+	line "You're back, and"
+	cont "you've done it!"
+	
+	para "You've beaten all"
+	line "the KANTO GYM"
+	cont "LEADERS!"
+	
+	para "I'm going to use"
+	line "my strongest team"
+	cont "against you!"
+	
+	para "Want a rematch?"
+	done
+	
+Jasmine16AfterBattleText:
+	text "As strong as the"
+	line "strongest steel!"
+	
+	para "You're as strong"
+	line "as you are kind!"
+	
+	para "Feel free to"
+	line "come back for"
+	cont "a rematch!"
+	done
+	
+JasmineNextTimeText:
+	text "You can come"
+	line "back anytime!"
+	done
 
 OlivineGymGuideText:
 	text "JASMINE uses the"
@@ -185,6 +299,11 @@ OlivineGymGuidePreText:
 	line "has to be compas-"
 	cont "sionate."
 	done
+	
+SteelixText:
+	text "STEELIX: Stee!!"
+	line "LixSteelix!"
+	done
 
 OlivineGym_MapEvents:
 	db 0, 0 ; filler
@@ -200,5 +319,6 @@ OlivineGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, OlivineGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
+	object_event  5,  2, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
+	object_event  4,  2, SPRITE_STEELIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, OlivineGymSteelix, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1

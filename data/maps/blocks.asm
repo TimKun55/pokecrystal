@@ -121,7 +121,6 @@ ViridianNicknameSpeechHouse_Blocks:
 	INCBIN "maps/House2.ablk"
 
 MahoganyRedGyaradosSpeechHouse_Blocks:
-MahoganyMoveTutorHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MadamItemsHouse_Blocks:
@@ -153,6 +152,7 @@ VioletPrimosHouse_Blocks:
 CeruleanPoliceStation_Blocks:
 CeladonMansionRoofHouse_Blocks:
 MrPsychicsHouse_Blocks:
+SaffronOddishDollHouse_Blocks:
 	INCBIN "maps/KantoHouse1.ablk"
 
 DayOfWeekSiblingsHouse_Blocks:
@@ -168,7 +168,7 @@ Route12SuperRodHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
 Route26HealHouse_Blocks:
-Route27SandstormHouse_Blocks:
+Route27AerialAceHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
 	INCBIN "maps/KantoHouse4.ablk"
 	
@@ -1022,5 +1022,11 @@ CeladonHomeDecorStore4F_Blocks:
 
 GoldenrodToyStore_Blocks:
 	INCBIN "maps/GoldenrodToyStore.ablk"
+
+MahoganyBakery_Blocks:
+	INCBIN "maps/MahoganyBakery.ablk"
+
+MahoganyMoveTutorHouse_Blocks:
+	INCBIN "maps/MahoganyMoveTutorHouse.ablk"
 
 ENDSECTION

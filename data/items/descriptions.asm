@@ -50,7 +50,7 @@ ItemDescriptions:
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
+	dw SpicyPoffinDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpAtkDesc
@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
+	dw DryPoffinDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -136,16 +136,16 @@ ItemDescriptions:
 	dw BasementKeyDesc
 	dw PassDesc
 	dw EvioliteDesc
-	dw TeruSama10Desc
+	dw SweetPoffinDesc
 	dw ZincDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
-	dw TeruSama13Desc
+	dw BitterPoffinDesc
+	dw SourPoffinDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
+	dw RichPoffinDesc
 	dw LeftoversDesc
 	dw OldAmberDesc
 	dw DomeFossilDesc
@@ -162,7 +162,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama21Desc
+	dw MildPoffinDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -171,7 +171,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw SaltyPoffinDesc
 	dw UpGradeDesc
 	dw OranBerryDesc
 	dw SitrusBerryDesc
@@ -454,8 +454,9 @@ XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
 
-TeruSama4Desc:
-	db   "?@"
+SpicyPoffinDesc:
+	db   "Raises ATK."
+	next "(1 BTL) (HOLD)@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
@@ -647,8 +648,9 @@ BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
 
-TeruSama7Desc:
-	db   "?@"
+DryPoffinDesc:
+	db   "Raises DEF."
+	next "(1 BTL) (HOLD)@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -790,8 +792,9 @@ EvioliteDesc:
 	db   "Ups defenses if"
 	next "#MON evolves.@"
 
-TeruSama10Desc:
-	db   "?@"
+SweetPoffinDesc:
+	db   "Raises SPCL.ATK."
+	next "(1 BTL) (HOLD)@"
 
 ZincDesc:
 	db   "Raises SPCL.DEF"
@@ -809,11 +812,13 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-TeruSama12Desc:
-	db   "?@"
+BitterPoffinDesc:
+	db   "Raises SPCL.DEF."
+	next "(1 BTL) (HOLD)@"
 
-TeruSama13Desc:
-	db   "?@"
+SourPoffinDesc:
+	db   "Raises SPEED."
+	next "(1 BTL) (HOLD)@"
 
 MetalCoatDesc:
 	db   "Powers up steel-"
@@ -823,8 +828,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
+RichPoffinDesc:
+	db   "Raises ACCURACY."
+	next "(1 BTL) (HOLD)@"
 
 LeftoversDesc:
 	db   "Restores HP during"
@@ -890,8 +896,9 @@ FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
 
-TeruSama21Desc:
-	db   "?@"
+MildPoffinDesc:
+	db   "Raises EVASION."
+	next "(1 BTL) (HOLD)@"
 
 LightBallDesc:
 	db   "An odd, electrical"
@@ -925,8 +932,9 @@ PolkadotBowDesc:
 	db   "Powers up fairy-"
 	next "type moves. (HOLD)@"
 
-TeruSama22Desc:
-	db   "?@"
+SaltyPoffinDesc:
+	db   "Raises CRIT."
+	next "(1 BTL) (HOLD)@"
 
 UpGradeDesc:
 	db   "A mysterious box"

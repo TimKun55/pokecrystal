@@ -362,6 +362,12 @@ ChooseMoveToLearn:
 	lb bc, 9, 18
 	call TextboxBorder
 
+	; Adds a gap in the move list's text box border
+	; that prevents clipping with some names.
+	hlcoord 2, 1
+	lb bc, 1, 16
+	call ClearBox
+
 	; This replaces the tile using the identifier
 	; of "$6e" with the fourteenth tile of the
 	; "FontBattleExtra gfx" font. Also, only 1
@@ -388,14 +394,15 @@ ChooseMoveToLearn:
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
-	hlcoord  5, 1
+	hlcoord  3, 1
 	call PlaceString
 
 	; This displays the Pokémon's level
-	; right after the Pokémon's name.
-	push bc
+	; at the coordinates defined at
+	; "hlcoord". In this case that is
+	; the top right of the screen.
 	farcall CopyMonToTempMon
-	pop hl
+	hlcoord 14, 1
 	call PrintLevel
 
 	; Creates the menu, sets the "B_BUTTON"

@@ -71,6 +71,10 @@ Route34IlexForestGateButterfreeScript:
 	writetext Route34IlexForestGateButterfreeText
 	cry BUTTERFREE
 	waitbutton
+	refreshscreen
+	pokepic BUTTERFREE
+	waitbutton
+	closepokepic
 	closetext
 	end
 

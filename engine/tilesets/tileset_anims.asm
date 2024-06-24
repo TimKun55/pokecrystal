@@ -39,6 +39,7 @@ Tileset0Anim:
 TilesetKantoAnim:
 TilesetKanto3Anim:
 TilesetKanto5Anim:
+TilesetKanto6Anim:
 TilesetIndigoAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -90,7 +91,7 @@ TilesetForestAnim:
 	dw NULL,  ForestTreeLeftAnimation2
 	dw NULL,  ForestTreeRightAnimation2
 	dw NULL,  AnimateFlowerTile
-	dw vTiles2 tile $01, AnimateWaterTile
+	dw vTiles2 tile $13, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
@@ -98,6 +99,7 @@ TilesetForestAnim:
 TilesetJohtoAnim:
 TilesetJohto2Anim:
 TilesetJohto3Anim:
+TilesetJohto4Anim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

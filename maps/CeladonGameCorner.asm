@@ -1,13 +1,18 @@
+DEF CELADONGAMECORNER_VOLTORB_DOLL_COINS    EQU 6500
+DEF CELADONGAMECORNER_TENTACOOL_DOLL_COINS  EQU 6500
+DEF CELADONGAMECORNER_EEVEE_DOLL_COINS      EQU 7500
+
 	object_const_def
 	const CELADONGAMECORNER_CLERK
 	const CELADONGAMECORNER_RECEPTIONIST
-	const CELADONGAMECORNER_POKEFAN_M
+	const CELADONGAMECORNER_POKEFAN_M1
 	const CELADONGAMECORNER_TEACHER
 	const CELADONGAMECORNER_FISHING_GURU
 	const CELADONGAMECORNER_FISHER1
 	const CELADONGAMECORNER_FISHER2
 	const CELADONGAMECORNER_GYM_GUIDE
 	const CELADONGAMECORNER_GRAMPS
+	const CELADONGAMECORNER_POKEFAN_M2
 
 CeladonGameCorner_MapScripts:
 	def_scene_scripts
@@ -26,7 +31,7 @@ CeladonGameCornerPokefanMScript:
 	writetext CeladonGameCornerPokefanMText
 	waitbutton
 	closetext
-	turnobject CELADONGAMECORNER_POKEFAN_M, LEFT
+	turnobject CELADONGAMECORNER_POKEFAN_M1, LEFT
 	end
 
 CeladonGameCornerTeacherScript:
@@ -60,7 +65,7 @@ CeladonGameCornerFisherScript:
 	ifequal HAVE_MORE, .FullCoinCase
 	getstring STRING_BUFFER_4, .coinname
 	scall .GiveCoins
-	givecoins 18
+	givecoins 250
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_AT_CELADON
 .GotCoins:
 	writetext CeladonGameCornerFisherText2
@@ -101,6 +106,112 @@ CeladonGameCornerGrampsScript:
 	closetext
 	turnobject CELADONGAMECORNER_GRAMPS, LEFT
 	end
+
+CeladonGameCornerPokefanMDollScript:
+	faceplayer
+	opentext
+	writetext CeladonGameCorner_PokefanMDollIntroText
+	waitbutton
+	checkitem COIN_CASE
+	iffalse CeladonGameCorner_NoCoinCase
+	writetext CeladonGameCorner_AskWhichDollText
+CeladonGameCorner_dollloop:
+	special DisplayCoinCaseBalance
+	loadmenu CeladonGameCorner_DollMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Voltorb
+	ifequal 2, .Tentacool
+	ifequal 3, .Eevee
+	sjump CeladonGameCorner_CancelPurchaseScript
+
+.Voltorb:
+	checkevent EVENT_DECO_VOLTORB_DOLL
+	iftrue CeladonGameCorner_alreadyhavedoll
+	checkcoins CELADONGAMECORNER_VOLTORB_DOLL_COINS
+	ifequal HAVE_LESS, CeladonGameCorner_notenoughcoins
+	getitemname STRING_BUFFER_3, DECO_VOLTORB_DOLL
+	scall CeladonGameCorner_askbuy
+	iffalse CeladonGameCorner_CancelPurchaseScript
+	giveitem DECO_VOLTORB_DOLL
+	takecoins CELADONGAMECORNER_VOLTORB_DOLL_COINS
+	setevent EVENT_DECO_VOLTORB_DOLL
+	sjump CeladonGameCorner_purchased
+
+.Tentacool:
+	checkevent EVENT_DECO_TENTACOOL_DOLL
+	iftrue CeladonGameCorner_alreadyhavedoll
+	checkcoins CELADONGAMECORNER_TENTACOOL_DOLL_COINS
+	ifequal HAVE_LESS, CeladonGameCorner_notenoughcoins
+	getitemname STRING_BUFFER_3, DECO_TENTACOOL_DOLL
+	scall CeladonGameCorner_askbuy
+	iffalse CeladonGameCorner_CancelPurchaseScript
+	giveitem DECO_TENTACOOL_DOLL
+	takecoins CELADONGAMECORNER_TENTACOOL_DOLL_COINS
+	setevent EVENT_DECO_TENTACOOL_DOLL
+	sjump CeladonGameCorner_purchased
+
+.Eevee:
+	checkevent EVENT_DECO_EEVEE_DOLL
+	iftrue CeladonGameCorner_alreadyhavedoll
+	checkcoins CELADONGAMECORNER_EEVEE_DOLL_COINS
+	ifequal HAVE_LESS, CeladonGameCorner_notenoughcoins
+	getitemname STRING_BUFFER_3, DECO_EEVEE_DOLL
+	scall CeladonGameCorner_askbuy
+	iffalse CeladonGameCorner_CancelPurchaseScript
+	giveitem DECO_EEVEE_DOLL
+	takecoins CELADONGAMECORNER_EEVEE_DOLL_COINS
+	setevent EVENT_DECO_EEVEE_DOLL
+	sjump CeladonGameCorner_purchased
+
+CeladonGameCorner_askbuy:
+	writetext CeladonGameCorner_ConfirmPurchaseText
+	yesorno
+	end
+
+CeladonGameCorner_purchased:
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext CeladonGameCorner_HereYouGoText
+	waitbutton
+	sjump CeladonGameCorner_dollloop
+	
+CeladonGameCorner_alreadyhavedoll:
+	writetext CeladonGameCorner_AlreadyHaveDollText
+	waitbutton
+	sjump CeladonGameCorner_dollloop
+
+CeladonGameCorner_notenoughcoins:
+	writetext CeladonGameCorner_NotEnoughCoinsText
+	waitbutton
+	closetext
+	end
+
+CeladonGameCorner_CancelPurchaseScript:
+	writetext CeladonGameCorner_ComeAgainText
+	waitbutton
+	closetext
+	end
+
+CeladonGameCorner_NoCoinCase:
+	writetext CeladonGameCorner_NoCoinCaseText
+	waitbutton
+	closetext
+	end
+
+CeladonGameCorner_DollMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "VOLTORB DOLL    {d:CELADONGAMECORNER_VOLTORB_DOLL_COINS}@"
+	db "TENTACOOL DOLL  {d:CELADONGAMECORNER_TENTACOOL_DOLL_COINS}@"
+	db "EEVEE DOLL      {d:CELADONGAMECORNER_EEVEE_DOLL_COINS}@"
+	db "CANCEL@"
 
 CeladonGameCornerPoster1Script:
 	jumptext CeladonGameCornerPoster1Text
@@ -158,12 +269,6 @@ CeladonGameCornerPokefanMText:
 	done
 
 CeladonGameCornerTeacherText:
-if DEF(_CRYSTAL_AU)
-	text "The weather"
-	line "outside is very"
-	cont "nice."
-	done
-else
 	text "It's this machine"
 	line "I want."
 
@@ -173,15 +278,8 @@ else
 	para "should pay out"
 	line "today."
 	done
-endc
 
 CeladonGameCornerFishingGuruText:
-if DEF(_CRYSTAL_AU)
-	text "This machine looks"
-	line "the same as the"
-	cont "others."
-	done
-else
 	text "I think this slot"
 	line "machine will pay"
 	cont "out…"
@@ -189,19 +287,8 @@ else
 	para "The odds vary"
 	line "among machines."
 	done
-endc
 
 CeladonGameCornerFisherText1:
-if DEF(_CRYSTAL_AU)
-	text "Whoa!"
-
-	para "What? You want to"
-	line "play this machine?"
-
-	para "Here, take my"
-	line "coins."
-	done
-else
 	text "Gahahaha!"
 
 	para "The coins just"
@@ -213,7 +300,6 @@ else
 	para "I'll share my luck"
 	line "with you!"
 	done
-endc
 
 CeladonGameCornerFisherText2:
 	text "Gahahaha!"
@@ -235,11 +321,6 @@ CeladonGameCornerFisherNoCoinCaseText:
 	done
 
 CeladonGameCornerFisherFullCoinCaseText:
-if DEF(_CRYSTAL_AU)
-	text "Your COIN CASE is"
-	line "full."
-	done
-else
 	text "Hey, your COIN"
 	line "CASE is full, kid."
 
@@ -247,18 +328,13 @@ else
 	line "a winning streak"
 	cont "too."
 	done
-endc
 
 CeladonGymGuideText:
 	text "Hey! CHAMP in"
 	line "making!"
 
 	para "Are you playing"
-if DEF(_CRYSTAL_AU)
-	line "too?"
-else
 	line "the slots too?"
-endc
 
 	para "I'm trying to get"
 	line "enough coins for a"
@@ -269,19 +345,12 @@ endc
 	done
 
 CeladonGameCornerGrampsText:
-if DEF(_CRYSTAL_AU)
-	text "Is there any"
-	line "difference between"
-	cont "these lines?"
-	done
-else
 	text "Hmmm… The odds are"
 	line "surely better for"
 
 	para "PIKACHU's line,"
 	line "but… What to do?"
 	done
-endc
 
 CeladonGameCornerPoster1Text:
 	text "Hey!"
@@ -313,6 +382,53 @@ CeladonGameCornerSodaCanText:
 	line "coming back…"
 
 	para "Huh? It's empty!"
+	done
+
+CeladonGameCorner_PokefanMDollIntroText:
+	text "Hello!"
+	
+	para "I've got a few"
+	line "DOLLS I can"
+	cont "trade for coins."
+	
+	para "Just don't tell"
+	line "the clerks!"
+	done
+
+CeladonGameCorner_AskWhichDollText:
+	text "Which DOLL would"
+	line "you like?"
+	done
+
+CeladonGameCorner_ConfirmPurchaseText:
+	text "OK, so you wanted"
+	line "a @"
+	text_ram wStringBuffer3
+	text "?"
+	done
+
+CeladonGameCorner_HereYouGoText:
+	text "Here you go!"
+	done
+	
+CeladonGameCorner_AlreadyHaveDollText:
+	text "You already have"
+	line "that DOLL."
+	done
+
+CeladonGameCorner_NotEnoughCoinsText:
+	text "You don't have"
+	line "enough coins."
+	done
+
+CeladonGameCorner_ComeAgainText:
+	text "Oh. Please come"
+	line "back with coins!"
+	done
+
+CeladonGameCorner_NoCoinCaseText:
+	text "Oh? You don't have"
+	line "a COIN CASE."
 	done
 
 CeladonGameCorner_MapEvents:
@@ -374,3 +490,4 @@ CeladonGameCorner_MapEvents:
 	object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1
 	object_event 11,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGymGuideScript, -1
 	object_event  2,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerGrampsScript, -1
+	object_event 19,  1, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPokefanMDollScript, -1

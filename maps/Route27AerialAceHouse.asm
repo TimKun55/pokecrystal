@@ -1,45 +1,45 @@
 	object_const_def
-	const ROUTE27SANDSTORMHOUSE_GRANNY
+	const ROUTE27AERIALACEHOUSE_GRANNY
 
-Route27SandstormHouse_MapScripts:
+Route27AerialAceHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-SandstormHouseWoman:
+AerialAceHouseWoman:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM37_SANDSTORM
+	checkevent EVENT_GOT_TM37_AERIAL_ACE
 	iftrue .AlreadyGotItem
 	special GetFirstPokemonHappiness
-	writetext SandstormHouseWomanText1
+	writetext AerialAceHouseWomanText1
 	promptbutton
 	ifgreater 150 - 1, .Loyal
 	sjump .Disloyal
 
 .Loyal:
-	writetext SandstormHouseWomanLoyalText
+	writetext AerialAceHouseWomanLoyalText
 	promptbutton
-	verbosegiveitem TM_SANDSTORM
+	verbosegiveitem TM_AERIAL_ACE
 	iffalse .Done
-	setevent EVENT_GOT_TM37_SANDSTORM
+	setevent EVENT_GOT_TM37_AERIAL_ACE
 .AlreadyGotItem:
-	writetext SandstormHouseSandstormDescription
+	writetext AerialAceHouseAerialAceDescription
 	waitbutton
 .Done:
 	closetext
 	end
 
 .Disloyal:
-	writetext SandstormHouseWomanDisloyalText
+	writetext AerialAceHouseWomanDisloyalText
 	waitbutton
 	closetext
 	end
 
-SandstormHouseBookshelf:
+AerialAceHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
-SandstormHouseWomanText1:
+AerialAceHouseWomanText1:
 	text "Where are you off"
 	line "to with #MON?"
 
@@ -52,7 +52,7 @@ SandstormHouseWomanText1:
 	para "Let me see…"
 	done
 
-SandstormHouseWomanLoyalText:
+AerialAceHouseWomanLoyalText:
 	text "Ah! Your #MON"
 	line "trusts you very"
 	cont "much."
@@ -64,22 +64,19 @@ SandstormHouseWomanLoyalText:
 	line "your journey."
 	done
 
-SandstormHouseSandstormDescription:
+AerialAceHouseAerialAceDescription:
 	text "TM37 happens to be"
-	line "SANDSTORM."
+	line "AERIAL ACE."
 
 	para "It's a move that"
-	line "inflicts damage on"
-	cont "both battlers."
+	line "never misses."
 
-	para "It's for advanced"
-	line "trainers only."
-
-	para "Use it if you"
-	line "dare. Good luck!"
+	para "Use it to your"
+	line "advantage."
+	cont "Good luck!"
 	done
 
-SandstormHouseWomanDisloyalText:
+AerialAceHouseWomanDisloyalText:
 	text "If it doesn't come"
 	line "to trust you some"
 
@@ -91,7 +88,7 @@ SandstormHouseWomanDisloyalText:
 	cont "and trainers."
 	done
 
-Route27SandstormHouse_MapEvents:
+Route27AerialAceHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
@@ -101,8 +98,8 @@ Route27SandstormHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, SandstormHouseBookshelf
-	bg_event  1,  1, BGEVENT_READ, SandstormHouseBookshelf
+	bg_event  0,  1, BGEVENT_READ, AerialAceHouseBookshelf
+	bg_event  1,  1, BGEVENT_READ, AerialAceHouseBookshelf
 
 	def_object_events
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1
+	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AerialAceHouseWoman, -1

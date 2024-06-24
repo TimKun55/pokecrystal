@@ -20,7 +20,12 @@ VioletNicknameSpeechHouseBirdScript:
 	writetext VioletNicknameSpeechHouseBirdText
 	cry PIDGEY
 	waitbutton
+	refreshscreen
+	pokepic PIDGEY
+	waitbutton
+	closepokepic
 	closetext
+	end
 	end
 
 VioletNicknameSpeechHouseTeacherText:

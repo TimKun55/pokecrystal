@@ -71,7 +71,6 @@ ENDM
 	command encore                  ; 41
 	command painsplit               ; 42
 	command snore                   ; 43
-	command conversion2             ; 44
 	command lockon                  ; 45
 	command sketch                  ; 46
 	command defrostopponent         ; 47
@@ -178,6 +177,7 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+	command burn                    ; b0
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

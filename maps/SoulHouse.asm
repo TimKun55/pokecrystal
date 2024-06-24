@@ -19,8 +19,30 @@ SoulHouseLassScript:
 	jumptextfaceplayer SoulHouseLassText
 
 SoulHouseGrannyScript:
-	jumptextfaceplayer SoulHouseGrannyText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM_HEX
+	iftrue .GotTM11
+	writetext SoulHouseGrannyOldTrainerText
+	promptbutton
+	verbosegiveitem TM_HEX
+	iffalse .NoRoom
+	writetext SoulHouseGrannyOldHexText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM_HEX
+	end	
 
+.NoRoom:
+	closetext
+	end	
+	
+.GotTM11
+	writetext SoulHouseGrannyText
+	waitbutton
+	closetext
+	end
+	
 MrFujiText:
 	text "MR.FUJI: Welcome."
 
@@ -60,6 +82,27 @@ SoulHouseLassText:
 	text "I came with my mom"
 	line "to visit #MON"
 	cont "graves…"
+	done
+
+SoulHouseGrannyOldTrainerText:
+	text "My #MON and"
+	line "I trained all"
+	cont "the time."
+	
+	para "This was part of"
+	line "our favourite"
+	cont "stratergy."
+	
+	para "You can"
+	line "have this."
+	done
+
+SoulHouseGrannyOldHexText:
+	text "HEX can do some"
+	line "nasty damage if"
+	
+	para "the opponent has a"
+	line "STATUS CONDITION."
 	done
 
 SoulHouseGrannyText:

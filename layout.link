@@ -293,6 +293,10 @@ ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
 	"Pokedex Entries 193-251"
+ROMX $75
+	"Pokemon Base Stats"
+ROMX $76
+	"Mobile Adapter SDK"
 ROMX $77
 	"Unown Font"
 	"Print Party"
@@ -302,6 +306,11 @@ ROMX $77
 ROMX $78
 	"Debug Room"
 	"Tileset Data 7"
+ROMX $79
+	"The End"
+	"Map Scripts 26"
+ROMX $7a
+	"Map Scripts 27"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
@@ -313,13 +322,6 @@ ROMX $7e
 ROMX $7f
 	"Tileset Data 9"
 ROMX $80
-	"The End"
-	"Map Scripts 26"
-ROMX $81
-	"Map Scripts 27"	
-ROMX $82
-	"Mobile Adapter SDK"
-ROMX $83
 	"Mobile Adapter SDK Mail"
 WRAM0
 	"Stack"

@@ -30,17 +30,19 @@
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_DARK_CAVE            ; 1e
 	const TILESET_FOREST               ; 1f
-	const TILESET_HO_OH_WORD_ROOM      ; 21
-	const TILESET_KABUTO_WORD_ROOM     ; 22
-	const TILESET_OMANYTE_WORD_ROOM    ; 23
-	const TILESET_AERODACTYL_WORD_ROOM ; 24
-	const TILESET_INDIGO               ; 25
-	const TILESET_JOHTO_2              ; 26
-	const TILESET_JOHTO_3              ; 27
+	const TILESET_HO_OH_WORD_ROOM      ; 20
+	const TILESET_KABUTO_WORD_ROOM     ; 21
+	const TILESET_OMANYTE_WORD_ROOM    ; 22
+	const TILESET_AERODACTYL_WORD_ROOM ; 23
+	const TILESET_INDIGO               ; 24
+	const TILESET_JOHTO_2              ; 25
+	const TILESET_JOHTO_3              ; 26
+	const TILESET_JOHTO_4              ; 27
 	const TILESET_KANTO_2              ; 28
 	const TILESET_KANTO_3              ; 29
 	const TILESET_KANTO_4              ; 2a
 	const TILESET_KANTO_5              ; 2b
+	const TILESET_KANTO_6              ; 2c
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

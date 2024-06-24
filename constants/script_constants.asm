@@ -72,6 +72,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const VAR_BLUECARDBALANCE  ; 18
 	const VAR_BUENASPASSWORD   ; 19
 	const VAR_KENJI_BREAK      ; 1a
+	const VAR_POFFIN_BERRYS    ; 1b
 DEF NUM_VARS EQU const_value
 
 ; variable action types
@@ -212,13 +213,14 @@ DEF EMOTE_LENGTH EQU 6
 	const FRUITTREE_ROUTE_42_1      ; 16
 	const FRUITTREE_ROUTE_42_2      ; 17
 	const FRUITTREE_ROUTE_42_3      ; 18
-	const FRUITTREE_ROUTE_11        ; 19
-	const FRUITTREE_ROUTE_2         ; 1a
-	const FRUITTREE_ROUTE_1         ; 1b
-	const FRUITTREE_ROUTE_8         ; 1c
-	const FRUITTREE_PEWTER_CITY_1   ; 1d
-	const FRUITTREE_PEWTER_CITY_2   ; 1e
-	const FRUITTREE_FUCHSIA_CITY    ; 1f
+	const FRUITTREE_ROUTE_42_4      ; 19
+	const FRUITTREE_ROUTE_11        ; 1a
+	const FRUITTREE_ROUTE_2         ; 1b
+	const FRUITTREE_ROUTE_1         ; 1c
+	const FRUITTREE_ROUTE_8         ; 1d
+	const FRUITTREE_PEWTER_CITY_1   ; 1e
+	const FRUITTREE_PEWTER_CITY_2   ; 1f
+	const FRUITTREE_FUCHSIA_CITY    ; 20
 DEF NUM_FRUIT_TREES EQU const_value - 1
 
 ; describedecoration arguments

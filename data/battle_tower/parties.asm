@@ -408,7 +408,7 @@ BattleTowerMons:
 	db 174, 174, 174, 174, 174, 174 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 0, 0, 0 ; PP
+	db 15, 10, 0, 0 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level

@@ -110,8 +110,12 @@ DayCareManText_GiveOddEgg:
 	para "We were shocked to"
 	line "find an EGG!"
 
-	para "How incredible is"
-	line "that?"
+	para "Since then, we"
+	line "raise #MON"
+	
+	para "for other trainers"
+	line "and sometimes"
+	cont "find EGGS!"
 
 	para "Well, wouldn't you"
 	line "like this EGG?"

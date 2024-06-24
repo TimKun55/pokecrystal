@@ -22,7 +22,6 @@ AzaleaTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, AzaleaTownProtonCallback
 
 AzaleaTownNoop1Scene:
 	end
@@ -37,18 +36,6 @@ AzaleaTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_AZALEA
 	endcallback
 	
-AzaleaTownProtonCallback:
-	checkevent EVENT_KANTO_ROCKET_DISBAND
-	iftrue .Appear
-	disappear AZALEATOWN_PROTON
-	disappear AZALEATOWN_SLOWPOKE5
-	endcallback
-
-.Appear:
-	appear AZALEATOWN_PROTON
-	appear AZALEATOWN_SLOWPOKE5
-	endcallback
-
 AzaleaTownRivalBattleScene1:
 	moveobject AZALEATOWN_RIVAL, 11, 11
 	turnobject PLAYER, RIGHT
@@ -198,9 +185,13 @@ AzaleaTownKurtScript:
 AzaleaTownProtonScript:
 	faceplayer
 	opentext
-	writetext AzaleaTownProtonText
+	writetext AzaleaTownProton1Text
 	waitbutton
+	closetext
 	turnobject AZALEATOWN_PROTON, UP
+	opentext
+	writetext AzaleaTownProton2Text
+	waitbutton
 	closetext
 	end
 
@@ -435,7 +426,7 @@ AzaleaTownKurtText3:
 	cont "so restless?"
 	done
 	
-AzaleaTownProtonText:
+AzaleaTownProton1Text:
 	text "I came back here"
 	line "to apologise for"
 	
@@ -444,8 +435,10 @@ AzaleaTownProtonText:
 	
 	para "they don't seem"
 	line "to trust me yet…"
+	done
 	
-	para "I'm sorry"
+AzaleaTownProton2Text:
+	text "I'm so sorry"
 	line "little guy."
 	done
 
@@ -533,13 +526,13 @@ AzaleaTown_MapEvents:
 	object_event 22,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrampsScript, -1
 	object_event 15, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1
 	object_event  7,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
-	object_event  8, 19, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
-	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
-	object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
-	object_event 15, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
-	object_event 18, 16, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonSlowpokeScript, EVENT_KANTO_ROCKET_DISBAND
+	object_event  8, 19, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 15, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 18, 16, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonSlowpokeScript, EVENT_REPENTING_ROCKETS
 	object_event  7,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhiteApricornTree, -1
 	object_event 11, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
-	object_event 18, 18, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonScript, EVENT_KANTO_ROCKET_DISBAND
+	object_event 18, 18, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonScript, EVENT_REPENTING_ROCKETS

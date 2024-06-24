@@ -68,14 +68,14 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 43
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 44
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 45
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 46
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 47
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 46
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 47
 	tilecoll WALL, WALL, WALL, WALL ; 48
 	tilecoll WALL, WALL, WALL, WALL ; 49
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4b
+	tilecoll WARP_PANEL, FLOOR, FLOOR, FLOOR ; 4a
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 4b
 	tilecoll WALL, WALL, WALL, WALL ; 4c
 	tilecoll WALL, WALL, WALL, WALL ; 4d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4e
-	tilecoll WARP_PANEL, FLOOR, FLOOR, FLOOR ; 4f
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 4f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 50

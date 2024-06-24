@@ -94,8 +94,8 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; 5d
 	tilecoll WALL, FLOOR, WALL, WALL ; 5e
 	tilecoll WALL, WALL, WALL, WALL ; 5f
-	tilecoll WALL, WALL, WALL, WALL ; 60
-	tilecoll WALL, WALL, WALL, WALL ; 61
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 60
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 61
 	tilecoll WALL, FLOOR, WALL, WARP_CARPET_DOWN ; 62
 	tilecoll WALL, WATERFALL, WALL, WATERFALL ; 63
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 64

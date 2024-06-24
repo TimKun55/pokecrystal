@@ -343,7 +343,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
 	dbw EFFECT_PAIN_SPLIT,       AI_Smart_PainSplit
 	dbw EFFECT_SNORE,            AI_Smart_Snore
-	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
 	dbw EFFECT_DEFROST_OPPONENT, AI_Smart_DefrostOpponent
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
@@ -1685,45 +1684,6 @@ AI_Smart_Thief:
 	ld a, [hl]
 	add $1e
 	ld [hl], a
-	ret
-
-AI_Smart_Conversion2:
-	ld a, [wLastPlayerMove]
-	and a
-	jr z, .discourage
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-
-	ld a, BANK(Moves)
-	call GetFarByte
-	ld [wPlayerMoveStruct + MOVE_TYPE], a
-
-	xor a
-	ldh [hBattleTurn], a
-
-	callfar BattleCheckTypeMatchup
-
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop hl
-	jr c, .discourage
-	ret z
-
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	ret
-
-.discourage
-	call Random
-	cp 10 percent
-	ret c
-	inc [hl]
 	ret
 
 AI_Smart_Disable:

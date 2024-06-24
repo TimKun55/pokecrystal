@@ -42,6 +42,10 @@ RadioTowerJigglypuff:
 	writetext RadioTowerJigglypuffText
 	cry JIGGLYPUFF
 	waitbutton
+	refreshscreen
+	pokepic JIGGLYPUFF
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -135,12 +139,21 @@ Buena:
 	closetext
 	iffalse .WrongAnswer
 	opentext
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .WeekendCorrect
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .WeekendCorrect
+	readvar VAR_WEEKDAY
+	ifequal FRIDAY, .FriMonCorrect
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .FriMonCorrect
 	writetext RadioTower2FBuenaCorrectAnswerText
 	waitbutton
 	closetext
 	readvar VAR_BLUECARDBALANCE
 	addval 1
 	writevar VAR_BLUECARDBALANCE
+.FinishShow
 	waitsfx
 	playsound SFX_TRANSACTION
 	setflag ENGINE_BUENAS_PASSWORD_2
@@ -183,6 +196,24 @@ Buena:
 	pause 20
 	special RestartMapMusic
 	end
+
+.WeekendCorrect:
+	writetext RadioTower2FBuenaCorrectAnswerWeekendText
+	waitbutton
+	closetext
+	readvar VAR_BLUECARDBALANCE
+	addval 3
+	writevar VAR_BLUECARDBALANCE
+	sjump .FinishShow
+
+.FriMonCorrect:
+	writetext RadioTower2FBuenaCorrectAnswerFriMonText
+	waitbutton
+	closetext
+	readvar VAR_BLUECARDBALANCE
+	addval 2
+	writevar VAR_BLUECARDBALANCE
+	sjump .FinishShow
 
 .PlayedAlready:
 	writetext RadioTower2FBuenaAlreadyPlayedText
@@ -560,6 +591,31 @@ RadioTower2FBuenaCorrectAnswerText:
 
 	para "You earned one"
 	line "point! Congrats!"
+	done
+
+RadioTower2FBuenaCorrectAnswerWeekendText:
+	text "BUENA: YIPPEE!"
+	line "That's right!"
+
+	para "You did tune in!"
+	line "I'm so happy!"
+
+	para "Because it's the"
+	line "weekend, you've"
+	
+	para "earned 3 points!"
+	line "Congrats!"
+	done
+
+RadioTower2FBuenaCorrectAnswerFriMonText:
+	text "BUENA: YIPPEE!"
+	line "That's right!"
+
+	para "You did tune in!"
+	line "I'm so happy!"
+
+	para "You earned two"
+	line "points! Congrats!"
 	done
 
 RadioTower2FBuenaDidYouForgetText:

@@ -490,8 +490,8 @@ Route32PokecenterSign:
 Route32HiddenGreatBall:
 	hiddenitem GREAT_BALL, EVENT_ROUTE_32_HIDDEN_GREAT_BALL
 
-Route32HiddenSuperPotion:
-	hiddenitem SUPER_POTION, EVENT_ROUTE_32_HIDDEN_SUPER_POTION
+Route32HiddenSunStone:
+	hiddenitem SUN_STONE, EVENT_ROUTE_32_HIDDEN_SUN_STONE
 
 Movement_Route32BirdKeeperPushesYouBackToViolet:
 	step UP
@@ -863,7 +863,7 @@ Route32_MapEvents:
 	bg_event  8, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
 	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
-	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
+	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSunStone
 
 	def_object_events
 	object_event  8, 49, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJustin, -1

@@ -164,8 +164,8 @@ EcruteakItemfinderHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 11
-	warp_event  4,  7, ECRUTEAK_CITY, 11
+	warp_event  3,  7, ECRUTEAK_CITY, 9
+	warp_event  4,  7, ECRUTEAK_CITY, 9
 
 	def_coord_events
 
@@ -174,4 +174,4 @@ EcruteakItemfinderHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1
-	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1
+	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1

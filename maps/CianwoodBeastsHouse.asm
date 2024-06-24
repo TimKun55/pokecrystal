@@ -65,8 +65,8 @@ GrannyBeastsText:
 	para "truly represent"
 	line "their majesty!"
 	
-	para "Please, check them"
-	line "out!"
+	para "Please, check"
+	line "them out!"
 	done
 	
 StatueText:

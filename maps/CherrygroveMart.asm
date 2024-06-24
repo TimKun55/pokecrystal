@@ -61,9 +61,9 @@ CherrygroveMartYoungsterText:
 	para "bug #MON poi-"
 	line "soned my #MON!"
 
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
+	para "I just kept going"
+	line "and my #MON"
+	cont "kept losing HP."
 
 	para "You should keep an"
 	line "ANTIDOTE with you."

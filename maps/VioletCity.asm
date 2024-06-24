@@ -7,7 +7,6 @@
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
-	const VIOLETCITY_SUDOWOODO
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -68,12 +67,6 @@ VioletCityGrampsScript:
 
 VioletCityYoungsterScript:
 	jumptextfaceplayer VioletCityYoungsterText
-
-VioletSudowoodoScript:
-	waitsfx
-	playsound SFX_SANDSTORM
-	applymovement VIOLETCITY_SUDOWOODO, VioletSudowoodoShakeMovement
-	end
 
 VioletCitySign:
 	jumptext VioletCitySignText
@@ -183,10 +176,6 @@ VioletCitySpinningEarl_MovementData:
 	turn_head DOWN
 	step_end
 	
-VioletSudowoodoShakeMovement:
-	tree_shake
-	step_end
-
 Text_EarlAsksIfYouBeatFalkner:
 	text "Hello!"
 	line "You are trainer?"
@@ -302,7 +291,6 @@ VioletCity_MapEvents:
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
 	warp_event  0,  8, ROUTE_36_VIOLET_GATE, 3
 	warp_event  0,  9, ROUTE_36_VIOLET_GATE, 4
-;	warp_event 13, 15, ROUTE_23, 3
 
 	def_coord_events
 
@@ -324,4 +312,3 @@ VioletCity_MapEvents:
 	object_event 17, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
-	object_event 31, 20, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletSudowoodoScript, -1

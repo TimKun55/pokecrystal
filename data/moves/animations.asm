@@ -2336,32 +2336,23 @@ BattleAnim_FlashCannon:
 	anim_ret
 
 BattleAnim_WaterPulse:
-	anim_2gfx BATTLE_ANIM_GFX_BEAM, BATTLE_ANIM_GFX_WATER
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_sound 0, 0, SFX_SURF
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 64, 92, $0
-	anim_wait 4
-	anim_sound 0, 0, SFX_SURF
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 80, 84, $0
-	anim_wait 4
+	anim_2gfx BATTLE_ANIM_GFX_EGG, BATTLE_ANIM_GFX_WATER
 	anim_sound 0, 1, SFX_SURF
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 96, 76, $0
+.loop
+	anim_obj BATTLE_ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
-	anim_sound 0, 1, SFX_SURF
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
+	anim_wait 4
+	anim_loop 3, .loop
 	anim_bgeffect BATTLE_BG_EFFECT_START_WATER, $0, BG_EFFECT_TARGET, $0
 	anim_call BattleAnim_UserObj_2Row
-	anim_sound 0, 1, SFX_HYDRO_PUMP
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 124, 72, $0
+	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 120, 72, $0
 	anim_bgeffect BATTLE_BG_EFFECT_WATER, $30, $0, $0
 	anim_wait 8
-	anim_sound 0, 1, SFX_HYDRO_PUMP
 	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 132, 72, $0
 	anim_bgeffect BATTLE_BG_EFFECT_WATER, $1c, $0, $0
 	anim_wait 8
-	anim_sound 0, 1, SFX_HYDRO_PUMP
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 140, 72, $0
+	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 144, 72, $0
 	anim_bgeffect BATTLE_BG_EFFECT_WATER, $8, $0, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_1

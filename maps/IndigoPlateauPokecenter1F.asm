@@ -262,17 +262,17 @@ PokemonJournalGiovanniScript:
 	jumptext PokemonJournalGiovanniText
 
 IndigoPlateauPokecenter1FCooltrainerMText:
-	text "At the #MON"
-	line "LEAGUE, you'll get"
-
-	para "tested by the"
-	line "ELITE FOUR."
+	text "Are you ready to"
+	line "get tested by"
+	cont "the ELITE FOUR?"
 
 	para "You have to beat"
-	line "them all. If you"
+	line "them all, one"
+	cont "after the other."
 
-	para "lose, you have to"
-	line "start all over!"
+	para "If you lose, you"
+	line "have to start the"
+	line "challenge over!"
 	done
 
 PlateauRivalText1:
@@ -356,7 +356,7 @@ TeleportGuyNoText:
 	done
 
 AbraText:
-	text "ABRA: Aabra…"
+	text "ABRA: Aabraa…"
 	done
 	
 IndigoPlateauPokecenter1FTutorIntroText:
@@ -395,8 +395,8 @@ IndigoPlateauPokecenter1FGigaImpactNotEnough:
 	
 IndigoPlateauPokecenter1FGigaImpactTaught:
 	text "It's perfect for"
-	line "#MON with high"
-	cont "Physical Attack!"
+	line "a #MON with"
+	cont "high ATTACK!"
 	
 	para "Just watch out for"
 	line "the recharge turn."
@@ -406,6 +406,7 @@ IndigoPlateauPokecenter1FTutorRefused:
 	text "But I thought you"
 	line "wanted to be the"
 	cont "best?"
+	done
 	
 PokemonJournalGiovanniText:
 	text "#MON JOURNAL"
@@ -445,7 +446,7 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  9,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
 	object_event 10,  7, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FChansey, -1
 	object_event  1,  9, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
-	object_event  5, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
+	object_event 13, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
 	object_event 14,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
 	object_event  5,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY

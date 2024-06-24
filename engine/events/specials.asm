@@ -383,11 +383,10 @@ SnorlaxAwake:
 
 .ProximityCoords:
 	;   x,  y
-	db 33,  8 ; left
-	db 34, 10 ; below
-	db 35, 10 ; below
-	db 36,  8 ; right
-	db 36,  9 ; right
+	db  2,  8 ; left
+	db  2,  9 ; left
+	db  5,  8 ; right
+	db  5,  9 ; right
 	db -1
 
 PlayCurMonCry:

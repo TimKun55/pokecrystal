@@ -36,6 +36,7 @@ CGBLayoutJumptable:
 	dw _CGB_PokegearPals
 	dw _CGB_StatsScreenHPPals
 	dw _CGB_Pokedex
+	dw _CGB_Pokedex_EvoPage
 	dw _CGB_SlotMachine
 	dw _CGB_BetaTitleScreen
 	dw _CGB_GSIntro
@@ -369,11 +370,18 @@ _CGB_Pokedex:
 ; mon type 2
 	ld a, [wBaseType2]
 	ld c, a ; farcall will clobber a for the bank
+	ld a, [wBaseType1]
+	cp c
+	jr z, .same_type
 	farcall GetMonTypeIndex
 ; load the 2nd type pal 
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7
 	farcall LoadMonBaseTypePal ; loads type color into slot 3 of pal 7
+	jr .got_palette
+.same_type
+	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7
+	call LoadSingleBlackPal
 
 .got_palette
 	call WipeAttrmap
@@ -382,11 +390,25 @@ _CGB_Pokedex:
 	ld a, $1 ; green question mark palette
 	call FillBoxCGB
 
-	; Both mon types
-	; if no 2nd Type, those 4 Squares will appear normally as blank Black Tiles
-	hlcoord 9, 1, wAttrmap
-	lb bc, 1, 8 ; box 1 tile in HEIGHT, 8 tiles in WIDTH
+	; ; Both mon types
+	; ; if no 2nd Type, those 4 Squares will appear normally as blank Black Tiles
+	; hlcoord 9, 1, wAttrmap
+	; lb bc, 1, 8 ; box 1 tile in HEIGHT, 8 tiles in WIDTH
+	; ld a, $7 ; mon base type pals
+	; call FillBoxCGB
+
+; mon base types
+	hlcoord 9, 6, wAttrmap
+	lb bc, 1, 8
 	ld a, $7 ; mon base type pals
+	set 3, a ; VRAM 1
+	call FillBoxCGB
+
+; page nums
+	hlcoord 18, 7, wAttrmap
+	lb bc, 1, 2
+	ld a, $0 ; dex pal
+	set 3, a ; vram1
 	call FillBoxCGB
 
 	call InitPartyMenuOBPals
@@ -395,6 +417,128 @@ _CGB_Pokedex:
 	ld bc, 1 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+	
+_CGB_Pokedex_EvoPage:
+	call WipeAttrmap
+
+	ld de, wBGPals1
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
+
+	ld de, wBGPals1 palette 6
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette	
+	
+	; ld de, wBGPals1 palette 6
+	; call LoadSingleBlackPal
+; main screen within border, vram 1
+	hlcoord 1, 1, wAttrmap
+	lb bc, 16, 19
+	ld a, 0
+	set 3, a
+	call FillBoxCGB
+
+; mon slot 1 types
+	hlcoord 16, 2, wAttrmap
+	lb bc, 2, 4
+	ld a, 1
+	set 3, a
+	call FillBoxCGB
+; mon slot 2 types
+	hlcoord 16, 5, wAttrmap
+	lb bc, 2, 4
+	ld a, 2
+	set 3, a
+	call FillBoxCGB
+; mon slot 3 types
+	hlcoord 16, 8, wAttrmap
+	lb bc, 3, 4
+	ld a, 3
+	set 3, a
+	call FillBoxCGB
+; mon slot 4 types
+	hlcoord 16, 12, wAttrmap
+	lb bc, 3, 4
+	ld a, 4
+	set 3, a
+	call FillBoxCGB
+
+	call InitPartyMenuOBPals
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+_CGB_Pokedex_PicsPage:
+	call WipeAttrmap
+	ld de, wBGPals1
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
+; pokemon pals
+	ld a, [wCurPartySpecies]
+	call GetMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black ; mon palette
+; secondary pokedex pal
+	ld de, wBGPals1 palette 6
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette	
+	
+	ld de, wBGPals1 palette 6
+	call LoadSingleBlackPal
+; black background
+	ld de, wBGPals1 palette 7	
+	call LoadSingleBlackPal
+
+; animated front pic
+	hlcoord 0, 0, wAttrmap
+	lb bc, 9, 9
+	ld a, 0
+	set 3, a
+	call FillBoxCGB
+; animated front pic
+	hlcoord 1, 1, wAttrmap
+	lb bc, 7, 7
+	ld a, 1
+	set 3, a
+	call FillBoxCGB
+
+; back pic border
+	hlcoord 10, 0, wAttrmap
+	lb bc, 9, 9
+	ld a, 0
+	set 3, a
+	call FillBoxCGB
+; ; back pic
+	hlcoord 11, 2, wAttrmap
+	lb bc, 6, 6
+	ld a, 1
+	set 3, a
+	call FillBoxCGB
+
+
+; sprite box border
+	hlcoord 1, 13, wAttrmap
+	lb bc, 4, 4
+	ld a, 0
+	set 3, a
+	call FillBoxCGB
+; sprite box
+	; hlcoord 2, 14
+	; lb bc, 2, 2
+	; ld a, 0
+	; call FillBoxCGB
+
+	call InitPartyMenuOBPals
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE

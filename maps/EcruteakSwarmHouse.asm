@@ -11,12 +11,16 @@ SwarmGrampsScript:
 	opentext
 	checkflag ENGINE_SWARM
 	iftrue .skiprandomswarm
-	random 5
+	random 9
 	ifequal 0, .dunsparce
 	ifequal 1, .yanma
     ifequal 2, .qwilfish
 	ifequal 3, .heracross
 	ifequal 4, .mareep
+	ifequal 5, .sentret
+	ifequal 6, .miltank
+	ifequal 7, .mantine
+	ifequal 8, .girafarig
 
 .dunsparce
 	setflag ENGINE_SWARM
@@ -54,6 +58,38 @@ SwarmGrampsScript:
 	setflag ENGINE_SWARM
 	swarm ROUTE_36
 	writetext SwarmMareepText
+	waitbutton
+	closetext
+	end
+
+.sentret
+	setflag ENGINE_SWARM
+	swarm ROUTE_29
+	writetext SwarmSentretText
+	waitbutton
+	closetext
+	end
+
+.miltank
+	setflag ENGINE_SWARM
+	swarm ROUTE_38
+	writetext SwarmMiltankText
+	waitbutton
+	closetext
+	end
+
+.mantine
+	setflag ENGINE_SWARM
+	swarm ROUTE_41
+	writetext SwarmMantineText
+	waitbutton
+	closetext
+	end
+
+.girafarig
+	setflag ENGINE_SWARM
+	swarm ROUTE_43
+	writetext SwarmGirafarigText
 	waitbutton
 	closetext
 	end
@@ -112,6 +148,46 @@ SwarmMareepText:
 	para "Oh yes! There's a"
 	line "swarm of MAREEP"
 	cont "on ROUTE 36."
+	done
+
+SwarmSentretText:
+	text "Let me see…"
+	line "What did the news"
+	cont "say?"
+
+	para "Oh yes! There's a"
+	line "swarm of SENTRET"
+	cont "on ROUTE 29."
+	done
+	
+SwarmMiltankText:
+	text "Let me see…"
+	line "What did the news"
+	cont "say?"
+
+	para "Oh yes! There's a"
+	line "swarm of MILTANK"
+	cont "on ROUTE 38."
+	done
+
+SwarmMantineText:
+	text "Let me see…"
+	line "What did the news"
+	cont "say?"
+
+	para "Oh yes! There's a"
+	line "swarm of MANTINE"
+	cont "on ROUTE 41."
+	done
+
+SwarmGirafarigText:
+	text "Let me see…"
+	line "What did the news"
+	cont "say?"
+
+	para "Oh yes! There's a"
+	line "swarm of GIRAFARIG"
+	cont "on ROUTE 43."
 	done
 
 SkipSwarmText:

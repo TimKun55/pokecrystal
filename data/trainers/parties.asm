@@ -1559,11 +1559,16 @@ PokemaniacGroup:
 	db -1 ; end
 
 GruntMGroup:
+	; GRUNTM (1) ;replaced for Proton
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 14, KOFFING
+	db -1 ; end
+	
 	; GRUNTM (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 11, RATTATA
-	db 13, ZUBAT
-	db 13, EKANS
+	db 12, RATTATA
+	db 14, ZUBAT
+	db 14, EKANS
 	db -1 ; end
 
 	; GRUNTM (3)
@@ -1729,8 +1734,8 @@ GruntMGroup:
 
 	; GRUNTM (29)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 11, RATTATA
-	db 11, SENTRET
+	db 13, RATTATA
+	db 13, SENTRET
 	db -1 ; end
 
 	; GRUNTM (30)
@@ -3865,8 +3870,8 @@ OfficerGroup:
 GruntFGroup:
 	; GRUNTF (1)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 11, ZUBAT
-	db 13, EKANS
+	db 12, ZUBAT
+	db 14, EKANS
 	db -1 ; end
 
 	; GRUNTF (2)

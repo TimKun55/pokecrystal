@@ -4,7 +4,6 @@
 	const ROUTE36_SUDOWOODO
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
-	const ROUTE36_BUG_MANIAC
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
@@ -105,12 +104,12 @@ Route36FloriaScript:
 	closetext
 	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
 	readvar VAR_FACING
-	ifequal DOWN, .Down
+	ifequal UP, .Up
 	applymovement ROUTE36_FLORIA, FloriaMovement1
 	disappear ROUTE36_FLORIA
 	end
 
-.Down:
+.Up:
 	applymovement ROUTE36_FLORIA, FloriaMovement2
 	disappear ROUTE36_FLORIA
 	end
@@ -310,17 +309,6 @@ TrainerPsychicMark:
 	closetext
 	end
 
-TrainerBugManiacCarl:
-	trainer BUG_MANIAC, CARL, EVENT_BEAT_BUG_MANIAC_CARL, BugManiacCarlSeenText, BugManiacCarlBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BugManiacCarlAfterBattleText
-	waitbutton
-	closetext
-	end
-
 ArthurScript:
 	faceplayer
 	opentext
@@ -392,7 +380,7 @@ FloriaMovement1:
 	step_end
 
 FloriaMovement2:
-	step LEFT
+	step RIGHT
 	step DOWN
 	step DOWN
 	step DOWN
@@ -565,24 +553,6 @@ PsychicMarkAfterBattleText:
 	para "what my opponent"
 	line "was thinking."
 	done
-	
-BugManiacCarlSeenText:
-	text "I caught some"
-	line "strong #MON in"
-	cont "the PARK!"
-	done
-
-BugManiacCarlBeatenText:
-	text "Well…"
-	done
-
-BugManiacCarlAfterBattleText:
-	text "Haha, guess I"
-	line "should train more"
-
-	para "before mouthing"
-	line "off, hey?"
-	done
 
 SchoolboyAlan1SeenText:
 	text "Thanks to my stud-"
@@ -706,7 +676,6 @@ Route36_MapEvents:
 	def_object_events
 	object_event 20, 13, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 30,  6, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacCarl, -1
 	object_event 35,  9, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 50,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1

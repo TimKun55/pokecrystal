@@ -33,6 +33,36 @@ SwarmGrassWildMons:
 	db  8, TEDDIURSA,     3,   6
 	db  8, LARVITAR,      3,   7
 
+	map_id ROUTE_29
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 20, PIDGEY,         2,   3
+	db 26, SENTRET,        2,   3
+	db 20, RATTATA,        2,   3
+	db 10, HOPPIP,         2,   3
+	db  8, PIDGEY,         2,   3
+	db  8, SENTRET,        2,   3
+	db  8, RATTATA,        2,   3
+	; day
+	;   %, species,		 min, max
+	db 20, PIDGEY,         2,   3
+	db 26, SENTRET,        2,   3
+	db 20, RATTATA,        2,   3
+	db 10, HOPPIP,         2,   3
+	db  8, PIDGEY,         2,   3
+	db  8, SENTRET,        2,   3
+	db  8, RATTATA,        2,   3
+	; nite
+	;   %, species,		 min, max
+	db 20, HOOTHOOT,       2,   3
+	db 26, SENTRET,        2,   3
+	db 22, RATTATA,        2,   3
+	db 10, SENTRET,        2,   3
+	db  8, RATTATA,        2,   3
+	db  8, SENTRET,        2,   3
+	db  8, HOOTHOOT,       2,   3
+
 ; Mareep swarm
     map_id ROUTE_36
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -94,6 +124,68 @@ SwarmGrassWildMons:
 	db  8, ABRA,         12,  15
 	db  8, YANMA,        16,  18
 	db  8, DITTO,        11,  15
+
+; Miltank swarm
+	map_id ROUTE_38
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 18, DODUO,         18,  20
+	db 18, VOLTORB,       18,  20
+	db 18, MAGNEMITE,     18,  20
+	db 10, FLAAFFY,       18,  20
+	db  8, TAUROS,        16,  17
+	db 14, MILTANK,       16,  17
+	db 14, MILTANK,       16,  17
+	; day
+	;   %, species,		 min, max
+	db 18, DODUO,         18,  20
+	db 18, VOLTORB,       18,  20
+	db 18, MAGNEMITE,     18,  20
+	db 10, FLAAFFY,       18,  20
+	db  8, TAUROS,        16,  17
+	db 14, MILTANK,       16,  17
+	db 14, MILTANK,       16,  17
+	; nite
+	;   %, species,		 min, max
+	db 22, MEOWTH,        18,  20
+	db 14, MILTANK,       16,  17
+	db 14, MILTANK,       16,  17
+	db 10, MURKROW,       18,  20
+	db  8, HOUNDOUR,      18,  20
+	db  8, ARIADOS,       20,  22
+	db  8, MISDREAVUS,    18,  20
+
+; Girafarig swarm
+	map_id ROUTE_43
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 15, SKIPLOOM,      26,  28
+	db 15, FLAAFFY,       29,  32
+	db 15, FARFETCH_D,    30,  32
+	db 10, FURRET,        28,  30
+	db 29, GIRAFARIG,     30,  32
+	db  8, FURRET,        30,  32
+	db  8, EXEGGCUTE,     30,  32
+	; day
+	;   %, species,		 min, max
+	db 15, SKIPLOOM,      26,  28
+	db 15, FLAAFFY,       29,  32
+	db 15, FARFETCH_D,    30,  32
+	db 10, FURRET,        28,  30
+	db 29, GIRAFARIG,     30,  32
+	db  8, FURRET,        30,  32
+	db  8, EXEGGCUTE,     30,  32
+	; nite
+	;   %, species,		 min, max
+	db 15, VENONAT,       26,  28
+	db 15, NOCTOWL,       29,  32
+	db 15, FARFETCH_D,    30,  32
+	db 10, FLAAFFY,       30,  32
+	db 29, GIRAFARIG,     30,  32
+	db  8, VENOMOTH,      30,  32
+	db  8, VENOMOTH,      30,  32
 	
 ; Heracross swarm
 	map_id ILEX_FOREST

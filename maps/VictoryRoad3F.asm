@@ -210,7 +210,7 @@ VictoryRoadRivalDefeatText:
 	done
 
 VictoryRoadRivalAfterText:
-	text "… … … … …"
+	text "…… …… ……"
 	
 	para "I haven't given up"
 	line "on becoming the"

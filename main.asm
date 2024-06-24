@@ -19,7 +19,6 @@ INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 SECTION "bank2", ROMX
 
-INCLUDE "engine/overworld/player_object.asm"
 INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
@@ -252,7 +251,6 @@ INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
-INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
 
 
@@ -305,6 +303,7 @@ INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
+INCLUDE "engine/events/poffin.asm"
 
 
 SECTION "bank23", ROMX
@@ -648,6 +647,11 @@ INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
 
 
+SECTION "Pokemon Base Stats", ROMX
+
+INCLUDE "data/pokemon/base_stats.asm"
+
+
 SECTION "Print Party", ROMX
 
 INCLUDE "engine/printer/print_party.asm"
@@ -700,6 +704,22 @@ SECTION "Pokedex2", ROMX
 INCLUDE "engine/pokedex/pokedex_3.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
+
+
+SECTION "bank2 Overflow", ROMX
+
+INCLUDE "engine/overworld/player_object.asm"
+
+
+SECTION "DEX GFX 2", ROMX
+PokedexLZ:
+INCBIN "gfx/pokedex/pokedex.2bpp.lz"
+PokedexSlowpokeLZ:
+INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+Pokedex_ExtraTiles:
+INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
+Pokedex_PageNumTiles:
+INCBIN "gfx/pokedex/dex_pagenums.2bpp"
 
 
 SECTION "Newbox", ROMX

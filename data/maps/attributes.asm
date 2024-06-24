@@ -118,8 +118,8 @@ ENDM
 	connection east, Route41, ROUTE_41, 0
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $35, NORTH | SOUTH
-	connection north, Route35, ROUTE_35, 5
-	connection south, Route34, ROUTE_34, 5
+	connection north, Route35, ROUTE_35, 6
+	connection south, Route34, ROUTE_34, 6
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, NORTH | WEST
 	connection north, Route39, ROUTE_39, 5
@@ -130,7 +130,7 @@ ENDM
 	connection west, Route38, ROUTE_38, 5
 	connection east, Route42, ROUTE_42, 9
 
-	map_attributes MahoganyTown, MAHOGANY_TOWN, $71, NORTH | WEST | EAST
+	map_attributes MahoganyTown, MAHOGANY_TOWN, $45, NORTH | WEST | EAST
 	connection north, Route43, ROUTE_43, 0
 	connection west, Route42, ROUTE_42, 0
 	connection east, Route44, ROUTE_44, 0
@@ -177,12 +177,12 @@ ENDM
 	connection west, AzaleaTown, AZALEA_TOWN, 0
 
 	map_attributes Route34, ROUTE_34, $05, NORTH | EAST
-	connection north, GoldenrodCity, GOLDENROD_CITY, -5
+	connection north, GoldenrodCity, GOLDENROD_CITY, -6
 	connection east, AzaleaTown, AZALEA_TOWN, 18
 
 	map_attributes Route35, ROUTE_35, $05, NORTH | SOUTH
 	connection north, Route36, ROUTE_36, 0
-	connection south, GoldenrodCity, GOLDENROD_CITY, -5
+	connection south, GoldenrodCity, GOLDENROD_CITY, -6
 
 	map_attributes Route36, ROUTE_36, $05, NORTH | SOUTH | EAST
 	connection north, Route37, ROUTE_37, 10
@@ -217,7 +217,7 @@ ENDM
 	connection north, LakeOfRage, LAKE_OF_RAGE, -5
 	connection south, MahoganyTown, MAHOGANY_TOWN, 0
 
-	map_attributes Route44, ROUTE_44, $71, WEST | EAST
+	map_attributes Route44, ROUTE_44, $45, WEST | EAST
 	connection west, MahoganyTown, MAHOGANY_TOWN, 0
 	connection east, BlackthornCity, BLACKTHORN_CITY, -9
 
@@ -434,10 +434,11 @@ ENDM
 	map_attributes OlivineLighthouse6F, OLIVINE_LIGHTHOUSE_6F, $00, 0
 	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $00, 0
 	map_attributes MahoganyMoveTutorHouse, MAHOGANY_MOVE_TUTOR_HOUSE, $00, 0
+	map_attributes MahoganyBakery, MAHOGANY_BAKERY, $00, 0	
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $00, 0
 	map_attributes TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $00, 0
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $00, 0
-	map_attributes IlexForest, ILEX_FOREST, $05, 0
+	map_attributes IlexForest, ILEX_FOREST, $29, 0
 	map_attributes GoldenrodUnderground, GOLDENROD_UNDERGROUND, $00, 0
 	map_attributes GoldenrodUndergroundSwitchRoomEntrances, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, $00, 0
 	map_attributes GoldenrodDeptStoreB1F, GOLDENROD_DEPT_STORE_B1F, $00, 0
@@ -698,7 +699,7 @@ ENDM
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
 	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
 	map_attributes Route2ViridianForestGate, ROUTE_2_VIRIDIAN_FOREST_GATE, $00, 0
-	map_attributes ViridianForest, VIRIDIAN_FOREST, $05, 0
+	map_attributes ViridianForest, VIRIDIAN_FOREST, $4d, 0
 	map_attributes ViridianForestHouse, VIRIDIAN_FOREST_HOUSE, $00, 0
 	map_attributes ViridianForestHouseBF1, VIRIDIAN_FOREST_HOUSE_BF1, $00, 0
 	map_attributes ViridianForestRoute2Gate, VIRIDIAN_FOREST_ROUTE_2_GATE, $00, 0	
@@ -711,7 +712,7 @@ ENDM
 	map_attributes ElmsHouse, ELMS_HOUSE, $00, 0
 	map_attributes Route26HealHouse, ROUTE_26_HEAL_HOUSE, $00, 0
 	map_attributes DayOfWeekSiblingsHouse, DAY_OF_WEEK_SIBLINGS_HOUSE, $00, 0
-	map_attributes Route27SandstormHouse, ROUTE_27_SANDSTORM_HOUSE, $00, 0
+	map_attributes Route27AerialAceHouse, ROUTE_27_AERIAL_ACE_HOUSE, $00, 0
 	map_attributes Route29Route46Gate, ROUTE_29_ROUTE_46_GATE, $00, 0
 	map_attributes FightingDojo, FIGHTING_DOJO, $00, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $00, 0
@@ -722,6 +723,7 @@ ENDM
 	map_attributes SaffronAviculturalSociety1F, SAFFRON_AVICULTURAL_SOCIETY_1F, $00, 0
 	map_attributes SaffronAviculturalSociety2F, SAFFRON_AVICULTURAL_SOCIETY_2F, $00, 0
 	map_attributes SaffronAviculturalSociety3F, SAFFRON_AVICULTURAL_SOCIETY_3F, $00, 0
+	map_attributes SaffronOddishDollHouse, SAFFRON_ODDISH_DOLL_HOUSE, $00, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $00, 0
 	map_attributes CopycatsHouse1F, COPYCATS_HOUSE_1F, $00, 0
 	map_attributes CopycatsHouse2F, COPYCATS_HOUSE_2F, $00, 0

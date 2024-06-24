@@ -219,3 +219,4 @@
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; da
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; db
 	tilecoll FLOOR, WALL, FLOOR, WALL ; dc
+	tilecoll WALL, WALL, FLOOR, FLOOR ; dd

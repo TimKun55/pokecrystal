@@ -416,7 +416,7 @@ Route30_MapEvents:
 	bg_event  9, 43, BGEVENT_READ, Route30Sign
 	bg_event 13, 29, BGEVENT_READ, MrPokemonsHouseDirectionsSign
 	bg_event 13,  5, BGEVENT_READ, MrPokemonsHouseSign
-	bg_event  3, 21, BGEVENT_READ, Route30TrainerTips
+	bg_event  3, 23, BGEVENT_READ, Route30TrainerTips
 	bg_event 11, 10, BGEVENT_ITEM, Route30HiddenPotion
 
 	def_object_events

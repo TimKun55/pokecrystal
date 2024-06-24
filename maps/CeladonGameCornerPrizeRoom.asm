@@ -1,8 +1,8 @@
 DEF CELADONGAMECORNERPRIZEROOM_TM32_COINS     EQU 1500
 DEF CELADONGAMECORNERPRIZEROOM_TM29_COINS     EQU 3500
 DEF CELADONGAMECORNERPRIZEROOM_TM15_COINS     EQU 7500
-DEF CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS  EQU 2222
-DEF CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 5555
+DEF CELADONGAMECORNERPRIZEROOM_NINETALES_COINS  EQU 3333
+DEF CELADONGAMECORNERPRIZEROOM_CHANSEY_COINS  EQU 5555
 DEF CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 8888
 
 	object_const_def
@@ -43,8 +43,6 @@ CeladonPrizeRoom_tmcounterloop:
 .DoubleTeam:
 	checkitem TM_DOUBLE_TEAM
 	iftrue CeladonPrizeRoom_alreadyhavetm
-	checkitem TM_DOUBLE_TEAM
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
@@ -58,8 +56,6 @@ CeladonPrizeRoom_tmcounterloop:
 .Psychic:
 	checkitem TM_PSYCHIC_M
 	iftrue CeladonPrizeRoom_alreadyhavetm
-	checkitem TM_PSYCHIC_M
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_PSYCHIC_M
@@ -71,8 +67,6 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_purchased
 
 .HyperBeam:
-	checkitem TM_HYPER_BEAM
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkitem TM_HYPER_BEAM
 	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM15_COINS
@@ -153,45 +147,45 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Pikachu
-	ifequal 2, .Porygon
+	ifequal 1, .Ninetales
+	ifequal 2, .Chansey
 	ifequal 3, .Larvitar
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
-.Pikachu:
-	checkcoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
+.Ninetales:
+	checkcoins CELADONGAMECORNERPRIZEROOM_NINETALES_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
-	getmonname STRING_BUFFER_3, PIKACHU
+	getmonname STRING_BUFFER_3, NINETALES
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
-	setval PIKACHU
+	setval NINETALES
 	special GameCornerPrizeMonCheckDex
-	givepoke PIKACHU, 25
-	takecoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
+	givepoke NINETALES, 45
+	takecoins CELADONGAMECORNERPRIZEROOM_NINETALES_COINS
 	sjump .loop
 
-.Porygon:
-	checkcoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
+.Chansey:
+	checkcoins CELADONGAMECORNERPRIZEROOM_CHANSEY_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
-	getmonname STRING_BUFFER_3, PORYGON
+	getmonname STRING_BUFFER_3, CHANSEY
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
-	setval PORYGON
+	setval CHANSEY
 	special GameCornerPrizeMonCheckDex
-	givepoke PORYGON, 15
-	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
+	givepoke CHANSEY, 45
+	takecoins CELADONGAMECORNERPRIZEROOM_CHANSEY_COINS
 	sjump .loop
 
 .Larvitar:
@@ -208,7 +202,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval LARVITAR
 	special GameCornerPrizeMonCheckDex
-	givepoke LARVITAR, 40
+	givepoke LARVITAR, 45
 	takecoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
 	sjump .loop
 
@@ -221,23 +215,18 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "PIKACHU    {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
-	db "PORYGON    {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
+	db "NINETALES  {d:CELADONGAMECORNERPRIZEROOM_NINETALES_COINS}@"
+	db "CHANSEY    {d:CELADONGAMECORNERPRIZEROOM_CHANSEY_COINS}@"
 	db "LARVITAR   {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomGentlemanText:
-	text "I wanted PORYGON,"
+	text "I wanted CHANSEY,"
 	line "but I was short by"
 	cont "100 coins…"
 	done
 
 CeladonGameCornerPrizeRoomPharmacistText:
-if DEF(_CRYSTAL_AU)
-	text "I don't want to"
-	line "lose my coins."
-	done
-else
 	text "Whew…"
 
 	para "I've got to stay"
@@ -247,7 +236,6 @@ else
 	line "cool, or I'll lose"
 	cont "all my money…"
 	done
-endc
 
 CeladonPrizeRoom_PrizeVendorIntroText:
 	text "Welcome!"

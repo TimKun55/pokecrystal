@@ -1,7 +1,8 @@
 	object_const_def
 	const ROUTE37_TWIN1
 	const ROUTE37_TWIN2
-	const ROUTE37_YOUNGSTER
+	const ROUTE37_SCHOOLBOY
+	const ROUTE37_BUG_MANIAC
 	const ROUTE37_FRUIT_TREE1
 	const ROUTE37_SUNNY
 	const ROUTE37_FRUIT_TREE2
@@ -52,6 +53,17 @@ TrainerPsychicGreg:
 	endifjustbattled
 	opentext
 	writetext PsychicGregAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugManiacCarl:
+	trainer BUG_MANIAC, CARL, EVENT_BEAT_BUG_MANIAC_CARL, BugManiacCarlSeenText, BugManiacCarlBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugManiacCarlAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -171,6 +183,24 @@ PsychicGregAfterBattleText:
 	cont "battle techniques."
 	done
 
+BugManiacCarlSeenText:
+	text "I caught some"
+	line "strong #MON in"
+	cont "the PARK!"
+	done
+
+BugManiacCarlBeatenText:
+	text "Well…"
+	done
+
+BugManiacCarlAfterBattleText:
+	text "Haha, guess I"
+	line "should train more"
+
+	para "before mouthing"
+	line "off, hey?"
+	done
+
 MeetSunnyText:
 	text "SUNNY: Hi!"
 
@@ -250,6 +280,7 @@ Route37_MapEvents:
 	object_event  6, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1
 	object_event  7, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1
 	object_event  6,  6, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1
+	object_event 15, 11, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacCarl, -1
 	object_event 13,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1
 	object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
 	object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1

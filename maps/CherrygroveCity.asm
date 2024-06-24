@@ -453,7 +453,7 @@ RivalCherrygroveWinText:
 CherrygroveRivalText_YouLost:
 	text "Oh no! You saw my"
 	line "TRAINER CARD!"
-	cont "Give that back!!"
+	cont "Give that back!"
 	
 	para "<……> <……> <……>"
 
@@ -558,7 +558,7 @@ CherrygroveCity_MapEvents:
 
 	def_bg_events
 	bg_event 24,  6, BGEVENT_READ, CherrygroveCitySign
-	bg_event 23,  9, BGEVENT_READ, GuideGentsHouseSign
+	bg_event 23, 10, BGEVENT_READ, GuideGentsHouseSign
 	bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign
 	bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign
 

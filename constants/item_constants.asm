@@ -55,7 +55,7 @@
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const SPICY_POFFIN ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SP_ATK     ; 35
@@ -105,7 +105,7 @@
 	const WHT_APRICORN ; 61
 	const BLACKBELT_I  ; 62
 	const BLK_APRICORN ; 63
-	const ITEM_64      ; 64
+	const DRY_POFFIN   ; 64
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
@@ -141,16 +141,16 @@
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
 	const EVIOLITE     ; 87
-	const ITEM_88      ; 88
+	const SWEET_POFFIN ; 88
 	const ZINC         ; 89
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
-	const ITEM_8D      ; 8d
-	const ITEM_8E      ; 8e
+	const BITTERPOFFIN ; 8d
+	const SOUR_POFFIN  ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const ITEM_91      ; 91
+	const RICH_POFFIN  ; 91
 	const LEFTOVERS    ; 92
 	const OLD_AMBER    ; 93
 	const DOME_FOSSIL  ; 94
@@ -167,7 +167,7 @@
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
-	const ITEM_A2      ; a2
+	const MILD_POFFIN  ; a2
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5
@@ -176,7 +176,7 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
-	const ITEM_AB      ; ab
+	const SALTY_POFFIN ; ab
 	const UP_GRADE     ; ac
 	const ORAN_BERRY   ; ad
 	const SITRUS_BERRY ; ae
@@ -228,14 +228,14 @@ DEF TM01 EQU const_value
 	add_tm ROCK_SMASH   ; c7
 	add_tm PSYCH_UP     ; c8
 	add_tm HIDDEN_POWER ; c9
-	add_tm SUNNY_DAY    ; ca
+	add_tm HEX          ; ca
 	add_tm SWEET_SCENT  ; cb
 	add_tm SNORE        ; cc
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
 	add_tm ICY_WIND     ; cf
 	add_tm PROTECT      ; d0
-	add_tm RAIN_DANCE   ; d1
+	add_tm SCALD        ; d1
 	add_tm GIGA_DRAIN   ; d2
 	add_tm ENDURE       ; d3
 	add_tm ROCK_TOMB    ; d4
@@ -254,7 +254,7 @@ DEF TM01 EQU const_value
 	add_tm SWAGGER      ; e1
 	add_tm SLEEP_TALK   ; e2
 	add_tm SLUDGE_BOMB  ; e3
-	add_tm SANDSTORM    ; e4
+	add_tm AERIAL_ACE   ; e4
 	add_tm FIRE_BLAST   ; e5
 	add_tm SWIFT        ; e6
 	add_tm DEFENSE_CURL ; e7
@@ -339,6 +339,9 @@ DEF MT01 EQU const_value
 	add_mt HAIL
 	add_mt PLAY_ROUGH
 	add_mt GIGA_IMPACT
+	add_mt RAIN_DANCE
+	add_mt SUNNY_DAY
+	add_mt SANDSTORM
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

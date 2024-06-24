@@ -9,7 +9,7 @@ ViridianForestHouse_MapScripts:
 	callback MAPCALLBACK_TILES, ViridianForestHouseStaircaseCallback
 	
 ViridianForestHouseArianaCallback:
-	checkevent EVENT_KANTO_ROCKET_DISBAND
+	checkevent EVENT_REPENTING_ROCKETS
 	iftrue .Appear
 	disappear VIRIDIANFORESTHOUSE_ARIANA
 	endcallback
@@ -82,9 +82,9 @@ ViridianForestHouseArianaText:
 	
 	para "I'll set out soon"
 	line "but I have some-"
-	cont "thing I have to"
 	
-	para "do here first."
+	para "thing I have to"
+	line "do here first."
 	done
 
 ViridianForestHouseNotebookText:
@@ -154,4 +154,4 @@ ViridianForestHouse_MapEvents:
 	bg_event  6,  1, BGEVENT_READ, ViridianForestHouseBookshelfNotebook
 
 	def_object_events
-	object_event  3,  1, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseAriana, EVENT_KANTO_ROCKET_DISBAND	
+	object_event  3,  1, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseAriana, EVENT_REPENTING_ROCKETS	

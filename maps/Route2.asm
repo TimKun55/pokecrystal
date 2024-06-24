@@ -36,7 +36,7 @@ Route2_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15, 15, ROUTE_2_NUGGET_HOUSE, 1
+	warp_event 15, 14, ROUTE_2_NUGGET_HOUSE, 1
 	warp_event 15, 31, ROUTE_2_GATE, 3
 	warp_event 15, 27, ROUTE_2_GATE, 1
 	warp_event 16, 27, ROUTE_2_GATE, 2

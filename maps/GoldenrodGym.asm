@@ -21,14 +21,14 @@ GoldenrodGymNoop2Scene:
 	end
 
 GoldenrodGymWhitneyScript:
-	faceplayer
-	opentext	
+	faceplayer	
 	readvar VAR_BADGES
 	ifequal 16, .WhitneyScript_16Badges
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .WhitneyScript_Rematch
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
+	opentext
 	writetext WhitneyBeforeText
 	waitbutton
 	closetext
@@ -46,6 +46,7 @@ GoldenrodGymWhitneyScript:
 .FightDone:
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
+	opentext
 	writetext WhitneyYouMeanieText
 	waitbutton
 	closetext
@@ -56,6 +57,7 @@ GoldenrodGymWhitneyScript:
 	iftrue .GotAttract
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
+	opentext
 	writetext WhitneyWhatDoYouWantText
 	promptbutton
 	waitsfx
@@ -66,6 +68,7 @@ GoldenrodGymWhitneyScript:
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
 .GotPlainBadge:
+	opentext
 	writetext WhitneyPlainBadgeText
 	promptbutton
 	verbosegiveitem TM_ATTRACT
@@ -77,6 +80,7 @@ GoldenrodGymWhitneyScript:
 	end
 
 .GotAttract:
+	opentext
 	writetext WhitneyGoodCryText
 	waitbutton
 .NoRoomForAttract:
@@ -84,6 +88,7 @@ GoldenrodGymWhitneyScript:
 	end
 	
 .WhitneyScript_16Badges
+	opentext
 	writetext Whitney16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -99,6 +104,7 @@ GoldenrodGymWhitneyScript:
 	end
 
 .WhitneyScript_Rematch
+	opentext
 	writetext WhitneyRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -282,7 +288,7 @@ WhitneyWhatDoYouWantText:
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "PLAINBADGE."
+	line "the PLAINBADGE."
 	done
 
 WhitneyPlainBadgeText:

@@ -73,6 +73,10 @@ TrainerKimonoGirlMiki:
 TrainerKimonoGirlSakura:
 	faceplayer
 	opentext
+	checkevent EVENT_BLUE_IN_CINNABAR
+	iftrue .SakuraRematch2
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .SakuraRematch1
 	checkevent EVENT_BEAT_KIMONO_GIRL_SAKURA
 	iftrue .FightDone
 	writetext KimonoGirlSakuraSeenText
@@ -87,20 +91,13 @@ TrainerKimonoGirlSakura:
 .FightDone
 	writetext KimonoGirlSakuraAfterBattleText
 	waitbutton
-	checkevent EVENT_BLUE_IN_CINNABAR
-	iftrue .SakuraRematch2
-	checkevent EVENT_DRAGON_SHRINE_CLAIR
-	iffalse .KimonoGirlSakuraNextTime
-	writetext SakuraRematchText
-	yesorno
-	iftrue .SakuraRematch1
-.KimonoGirlSakuraNextTime
-	writetext KimonoGirlSakuraNextTimeText
-	waitbutton
 	closetext
 	end
 	
 .SakuraRematch1
+	writetext SakuraRematchText
+	yesorno
+	iffalse .KimonoGirlSakuraNextTime
 	winlosstext SakuraRematchDefeatText, 0
 	loadtrainer KIMONO_GIRL, SAKURA2
 	startbattle
@@ -121,6 +118,12 @@ TrainerKimonoGirlSakura:
 	reloadmapafterbattle
 	opentext
 	writetext KimonoGirlSakuraNextTimeText
+	waitbutton
+	closetext
+	end
+
+.KimonoGirlSakuraNextTime
+	writetext SakuraMaybeNextTimeText
 	waitbutton
 	closetext
 	end
@@ -337,6 +340,11 @@ SakuraRematchText:
 	cont "a rematch?"
 	done
 
+SakuraMaybeNextTimeText:
+	text "Oh, maybe next"
+	line "time, then."
+	done
+
 SurfGuyNeverLeftAScratchText:
 	text "Not only are the"
 	line "KIMONO GIRLS great"
@@ -443,8 +451,8 @@ DanceTheater_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 13, ECRUTEAK_CITY, 8
-	warp_event  6, 13, ECRUTEAK_CITY, 8
+	warp_event  5, 13, ECRUTEAK_CITY, 6
+	warp_event  6, 13, ECRUTEAK_CITY, 6
 
 	def_coord_events
 
@@ -460,6 +468,6 @@ DanceTheater_MapEvents:
 	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, -1
 	object_event  4,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerKimonoGirlSakura, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
-	object_event  6,  8, SPRITE_RHYDON_WALKING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
+	object_event  6,  8, SPRITE_RHYDON_WALKING, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
 	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCooltrainerMScript, -1
 	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterGrannyScript, -1

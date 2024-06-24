@@ -13,7 +13,6 @@ RadioTower3F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback
-	callback MAPCALLBACK_OBJECTS, RadioTower3FPetrelCallback
 
 RadioTower3FCardKeyShutterCallback:
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
@@ -25,16 +24,6 @@ RadioTower3FCardKeyShutterCallback:
 	changeblock 14, 4, $01 ; floor
 	endcallback
 	
-RadioTower3FPetrelCallback:
-	checkevent EVENT_KANTO_ROCKET_DISBAND
-	iftrue .Appear
-	disappear RADIOTOWER3F_PETREL
-	endcallback
-
-.Appear:
-	appear RADIOTOWER3F_PETREL
-	endcallback
-
 RadioTower3FSuperNerdScript:
 	jumptextfaceplayer RadioTower3FSuperNerdText
 
@@ -57,8 +46,8 @@ RadioTower3FGymGuideScript:
 RadioTower3FCooltrainerFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER
-	iftrue .GotSunnyDay
+	checkevent EVENT_GOT_EGG_TICKET_FROM_RADIO_TOWER
+	iftrue .GotEggTicket
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .NoRockets
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
@@ -77,15 +66,15 @@ RadioTower3FCooltrainerFScript:
 .NoRockets:
 	writetext RadioTower3FCooltrainerFYoureMyHeroText
 	promptbutton
-	verbosegiveitem TM_SUNNY_DAY
+	verbosegiveitem EGG_TICKET
 	iffalse .NoRoom
-	writetext RadioTower3FCooltrainerFItsSunnyDayText
+	writetext RadioTower3FCooltrainerFEggTicketText
 	waitbutton
 	closetext
-	setevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER
+	setevent EVENT_GOT_EGG_TICKET_FROM_RADIO_TOWER
 	end
 
-.GotSunnyDay:
+.GotEggTicket:
 	writetext RadioTower3FCooltrainerFYouWereMarvelousText
 	waitbutton
 .NoRoom:
@@ -237,11 +226,11 @@ RadioTower3FCooltrainerFYoureMyHeroText:
 	line "my appreciation."
 	done
 
-RadioTower3FCooltrainerFItsSunnyDayText:
-	text "It's SUNNY DAY."
-	line "It powers up fire-"
-	cont "type moves for a"
-	cont "while."
+RadioTower3FCooltrainerFEggTicketText:
+	text "Bring that to the"
+	line "DAY-CARE MAN, and"
+	cont "he'll give you a"
+	cont "rare EGG!"
 	done
 
 RadioTower3FCooltrainerFYouWereMarvelousText:
@@ -382,4 +371,4 @@ RadioTower3F_MapEvents:
 	object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM9, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  9,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerScientistMarc, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 10,  1, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower3FPetrelScript, EVENT_KANTO_ROCKET_DISBAND
+	object_event 10,  1, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower3FPetrelScript, EVENT_REPENTING_ROCKETS

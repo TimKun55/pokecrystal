@@ -63,4 +63,3 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; 3e
 	tilecoll FLOOR, WALL, WALL, WALL ; 3f
 	tilecoll WALL, WALL, WALL, WALL ; 40
-	tilecoll WALL, WALL, WALL, WALL ; 41

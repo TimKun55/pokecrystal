@@ -4699,7 +4699,7 @@ HandleStatBoostingHeldItems:
 	ld [bc], a
 	ld [de], a
 	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
+	ld hl, BattleText_UsersStringBuffer1Eaten
 	call StdBattleTextbox
 	callfar BattleCommand_StatUpMessage
 	ret

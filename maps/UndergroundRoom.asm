@@ -76,6 +76,7 @@ UndergroundRoomArcherScript:
 	promptbutton
 	closetext
 	setevent EVENT_KANTO_ROCKET_DISBAND
+	clearevent EVENT_REPENTING_ROCKETS
 	special FadeOutToBlack
 	disappear UNDERGROUNDROOM_GIOVANNI
 	disappear UNDERGROUNDROOM_ARIANA

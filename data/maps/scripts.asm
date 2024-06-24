@@ -17,6 +17,7 @@ INCLUDE "maps/GoldenrodDeptStore6F.asm"
 INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
+INCLUDE "maps/MahoganyBakery.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -55,6 +56,7 @@ INCLUDE "maps/RadioTower1F.asm"
 INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
 INCLUDE "maps/RadioTower4F.asm"
+INCLUDE "maps/SaffronOddishDollHouse.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -164,7 +166,7 @@ INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
-INCLUDE "maps/Route27SandstormHouse.asm"
+INCLUDE "maps/Route27AerialAceHouse.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
 
 

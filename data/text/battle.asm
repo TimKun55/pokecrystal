@@ -326,6 +326,13 @@ BattleText_UsersStringBuffer1Activated:
 	cont "activated!"
 	prompt
 
+BattleText_UsersStringBuffer1Eaten:
+	text "<USER> ate the" 
+	line "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
 BattleText_ItemsCantBeUsedHere:
 	text "Items can't be"
 	line "used here."

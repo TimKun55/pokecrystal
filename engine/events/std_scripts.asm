@@ -73,6 +73,8 @@ PokecenterNurseScript:
 .morn
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .morn_comcenter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .morn_champion
 	farwritetext NurseMornText
 	promptbutton
 	sjump .ok
@@ -80,10 +82,16 @@ PokecenterNurseScript:
 	farwritetext PokeComNurseMornText
 	promptbutton
 	sjump .ok
+.morn_champion
+	farwritetext NurseMornChampText
+	promptbutton
+	sjump .ok
 
 .day
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .day_comcenter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .day_champion
 	farwritetext NurseDayText
 	promptbutton
 	sjump .ok
@@ -91,15 +99,25 @@ PokecenterNurseScript:
 	farwritetext PokeComNurseDayText
 	promptbutton
 	sjump .ok
+.day_champion
+	farwritetext NurseDayChampText
+	promptbutton
+	sjump .ok
 
 .nite
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .nite_comcenter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .nite_champion
 	farwritetext NurseNiteText
 	promptbutton
 	sjump .ok
 .nite_comcenter
 	farwritetext PokeComNurseNiteText
+	promptbutton
+	sjump .ok
+.nite_champion
+	farwritetext NurseNiteChampText
 	promptbutton
 	sjump .ok
 
@@ -612,6 +630,7 @@ InitializeEventsScript:
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	setevent EVENT_INITIALIZED_EVENTS
+	setevent EVENT_REPENTING_ROCKETS
 	endcallback
 
 AskNumber1MScript:

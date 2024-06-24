@@ -2959,7 +2959,10 @@ wStartSecond:: db
 
 wRTC:: ds 4
 
-	ds 4
+wPokedexEntryType::     db
+wPokedexEntryPageNum::  db
+wPokedexEvoStage2::		db
+wPokedexEvoStage3::     db
 
 wDST::
 ; bit 7: dst
@@ -3312,9 +3315,7 @@ wdc60:: db
 
 wStepCount:: db
 wPoisonStepCount:: db
-	ds 2
 wHappinessStepCount:: db
-	ds 1
 
 wParkBallsRemaining::
 wSafariBallsRemaining:: db
@@ -3322,15 +3323,14 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-	ds 22
-
 wLuckyNumberShowFlag:: db
-	ds 1
+wRepelType:: db
 wLuckyIDNumber:: dw
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
 wBikeStep:: dw
 wKurtApricornQuantity:: db
+wPoffinBerryQuantity:: db
 
 wPlayerDataEnd::
 
@@ -3348,7 +3348,7 @@ wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
 
-	ds 3
+	ds 2 ; ds 3
 
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db

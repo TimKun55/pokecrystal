@@ -18,6 +18,31 @@ NurseNiteText:
 	line "#MON CENTER."
 	done
 
+NurseMornChampText:
+	text "Good morning,"
+	line "CHAMPION <PLAYER>!"
+	
+	para "Welcome to our"
+	line "#MON CENTER."
+	done
+
+NurseDayChampText:
+	text "Hello, CHAMPION"
+	line "<PLAYER>!"
+	
+	para "Welcome to our"
+	line "#MON CENTER."
+	done
+
+NurseNiteChampText:
+	text "Good evening,"
+	line "CHAMPION <PLAYER>!"
+	cont "You're out late."
+
+	para "Welcome to our"
+	line "#MON CENTER."
+	done
+
 PokeComNurseMornText:
 	text "Good morning!"
 

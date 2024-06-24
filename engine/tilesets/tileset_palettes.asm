@@ -10,6 +10,8 @@ LoadSpecialMapPalette:
 	jr z, .mansion_mobile
 	cp TILESET_POKECENTER
 	jr z, .pokecenter
+	cp TILESET_TRAIN_STATION
+	jr z, .trainstation
 	jr .do_nothing
 
 .battle_tower_inside
@@ -38,6 +40,11 @@ LoadSpecialMapPalette:
 	
 .pokecenter
 	call LoadPokeCenterPalette
+	scf
+	ret
+
+.trainstation
+	call LoadTrainStationPalette
 	scf
 	ret
 
@@ -117,3 +124,14 @@ LoadPokeCenterPalette:
 	
 PokeCenterPalette:
 INCLUDE "gfx/tilesets/pokecenter.pal"
+
+LoadTrainStationPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, TrainStationPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+TrainStationPalette:
+INCLUDE "gfx/tilesets/train_station.pal"	

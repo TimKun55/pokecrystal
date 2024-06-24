@@ -184,3 +184,10 @@
 	tilecoll WALL, WALL, WALL, WALL ; b7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
+	tilecoll FLOOR, WALL, WALL, WALL ; ba
+	tilecoll WATER, WATER, WATER, WATER ; bb
+	tilecoll WATER, WATER, WATER, WATER ; bc
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; bd
+	tilecoll FLOOR, FLOOR, WALL, WALL ; be
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; bf
+	tilecoll CUT_TREE, FLOOR, WALL, FLOOR ; c0

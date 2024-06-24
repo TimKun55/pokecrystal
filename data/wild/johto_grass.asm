@@ -629,29 +629,29 @@ JohtoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, CATERPIE,       4,   6
 	db 22, WEEDLE,         4,   6
-	db 22, PARAS,          9,  12
-	db 10, PINECO,         9,  12
+	db 22, PARAS,         10,  14
+	db 10, PINECO,        10,  14
 	db  8, METAPOD,        8,   9
 	db  8, KAKUNA,         8,   9
-	db  8, HERACROSS,      9,  11
+	db  8, HERACROSS,     10,  14
 	; day
 	;   %, species,		 min, max
 	db 22, CATERPIE,       4,   6
 	db 22, WEEDLE,         4,   6
-	db 22, PARAS,          9,  12
-	db 10, PINECO,         9,  12
+	db 22, PARAS,         10,  14
+	db 10, PINECO,        10,  14
 	db  8, METAPOD,        8,   9
 	db  8, KAKUNA,         8,   9
-	db  8, HERACROSS,      9,  11
+	db  8, HERACROSS,     10,  14
 	; nite
 	;   %, species,		 min, max
-	db 22, ODDISH,         8,  11
-	db 22, VENONAT,        7,  10
-	db 22, PSYDUCK,        9,  12
-	db 10, PINECO,         9,  12
-	db  8, ODDISH,        10,  12
-	db  8, PARAS,          9,  12
-	db  8, HERACROSS,      9,  11	
+	db 22, ODDISH,        10,  14
+	db 22, VENONAT,       10,  14
+	db 22, PSYDUCK,       10,  14
+	db 10, PINECO,        10,  14
+	db  8, ODDISH,        12,  15
+	db  8, PARAS,         10,  13
+	db  8, HERACROSS,     10,  14	
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -1798,7 +1798,7 @@ JohtoGrassWildMons:
 	db 10, FLAAFFY,       30,  32
 	db  8, GIRAFARIG,     30,  32
 	db  8, VENOMOTH,      30,  32
-	db  8, VENOMOTH,      30,  32	
+	db  8, VENOMOTH,      30,  32
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44

@@ -65,6 +65,16 @@ _HowManyShouldIMakeText::
 	line "make?"
 	done
 
+_WhichBerryText::
+	text "Which BERRY"
+	line "should I use?"
+	done
+	
+_HowManyPoffinsText::
+	text "How many would"
+	line "you like?"
+	done
+
 _RecoveredSomeHPText::
 	text_ram wStringBuffer1
 	text_start
@@ -1332,6 +1342,15 @@ _BugCatchingContestIsOverText::
 _RepelWoreOffText::
 	text "REPEL's effect"
 	line "wore off."
+	done
+
+_UseAnotherRepelText::
+	text "@"
+	text_ram wStringBuffer3
+	text "'s"
+	line "wore off."
+
+	para "Use another?"
 	done
 
 _PlayerFoundItemText::

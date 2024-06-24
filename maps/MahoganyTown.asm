@@ -117,6 +117,9 @@ MahoganyTownRagecandybarSign:
 	
 MahoganyMoveTutorHouseSign:
 	jumptext MahoganyMoveTutorHouseSignText
+	
+MahoganyBakerySign:
+	jumptext MahoganyBakerySignText
 
 MahoganyGymSign:
 	jumptext MahoganyGymSignText
@@ -239,6 +242,13 @@ MahoganyMoveTutorHouseSignText:
 	line "TUTOR'S HOUSE"
 	done
 
+MahoganyBakerySignText:
+	text "MAHOGANY BAKERY"
+	
+	para "Delicious treats"
+	line "for your #MON"
+	done
+
 MahoganyGymSignText:
 	text "MAHOGANY TOWN"
 	line "#MON GYM"
@@ -258,17 +268,19 @@ MahoganyTown_MapEvents:
 	warp_event 13, 13, MAHOGANY_POKECENTER_1F, 1
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 	warp_event 17, 13, MAHOGANY_MOVE_TUTOR_HOUSE, 1
+	warp_event  3,  5, MAHOGANY_BAKERY, 1
 
 	def_coord_events
 	coord_event 19,  8, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript
 	coord_event 19,  9, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript
 
 	def_bg_events
-	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
+	bg_event  7,  4, BGEVENT_READ, MahoganyTownSign
 	bg_event  9,  7, BGEVENT_READ, MahoganyTownRagecandybarSign
 	bg_event  4, 13, BGEVENT_READ, MahoganyGymSign
 	bg_event 14, 13, BGEVENT_READ, MahoganyTownPokecenterSign
 	bg_event 18, 14, BGEVENT_READ, MahoganyMoveTutorHouseSign
+	bg_event  1,  5, BGEVENT_READ, MahoganyBakerySign
 
 	def_object_events
 	object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST

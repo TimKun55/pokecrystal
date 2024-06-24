@@ -1062,7 +1062,7 @@ DoBurn:
 	stab
 	checkhit
 	checksafeguard
-	burntarget
+	burn
 	endmove
 
 SkyAttack:
@@ -1325,14 +1325,6 @@ Snore:
 	buildopponentrage
 	flinchtarget
 	kingsrock
-	endmove
-
-Conversion2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	conversion2
 	endmove
 
 LockOn:
