@@ -10,21 +10,12 @@ VioletGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, VioletGymNoctowlCallback
 	
-VioletGymNoctowlCallback:
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .NoctowlAppear
-	disappear VIOLETGYM_NOCTOWL
-	endcallback
-
-.NoctowlAppear:
-	disappear VIOLETGYM_HOOTHOOT
-	endcallback	
-
 VioletGymFalknerScript:
 	faceplayer
 	opentext
+;	checkevent EVENT_FALKNER_REMATCH
+;	iftrue .comebacktomorrow
 	readvar VAR_BADGES
 	ifequal 16, .FalknerScript_16Badges
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -70,11 +61,18 @@ VioletGymFalknerScript:
 	closetext
 	end
 
+;.comebacktomorrow
+;	writetext FalknerComeBackTomorrow
+;	waitbutton
+;	closetext
+;	end
+
 .FalknerScript_16Badges
 	writetext Falkner16IntroText
 	yesorno
 	iffalse .EndRematch
 	closetext
+;	setevent EVENT_FALKNER_REMATCH
 	winlosstext FalknerWinLossRematchText, 0
 	loadtrainer FALKNER, FALKNER3
 	startbattle
@@ -90,6 +88,7 @@ VioletGymFalknerScript:
 	yesorno
 	iffalse .EndRematch
 	closetext
+;	setevent EVENT_FALKNER_REMATCH
 	winlosstext FalknerWinLossRematchText, 0
 	loadtrainer FALKNER, FALKNER2
 	startbattle
@@ -188,52 +187,52 @@ VioletGymStatue:
 	jumpstd GymStatue2Script
 
 FalknerIntroText:
-	text "I'm FALKNER, the"
-	line "VIOLET #MON GYM"
+	text "I'm Falkner, the"
+	line "Violet #mon Gym"
 	cont "leader!"
 
 	para "People say you can"
 	line "clip flying-type"
 
-	para "#MON's wings"
+	para "#mon's wings"
 	line "with a jolt of"
 	cont "electricity…"
 
 	para "I won't allow such"
 	line "insults to bird"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "I'll show you the"
 	line "real power of the"
 
 	para "magnificent bird"
-	line "#MON!"
+	line "#mon!"
 	done
 
 FalknerWinLossText:
 	text "…Darn! My dad's"
 	line "cherished bird"
-	cont "#MON…"
+	cont "#mon…"
 
 	para "All right."
 	line "Take this."
 
 	para "It's the official"
-	line "#MON LEAGUE"
-	cont "ZEPHYRBADGE."
+	line "#mon League"
+	cont "ZephyrBadge."
 	done
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "the ZEPHYRBADGE."
+	line "the ZephyrBadge."
 	done
 
 FalknerZephyrBadgeText:
-	text "The ZEPHYRBADGE"
+	text "The ZephyrBadge"
 	line "will enable"
-	line "#MON to use"
+	cont "#mon to use"
 
-	para "FLASH, if they"
+	para "Flash, if they"
 	line "have it, anytime."
 
 	para "Here--take this"
@@ -242,7 +241,7 @@ FalknerZephyrBadgeText:
 
 FalknerTMMudSlapText:
 	text "By using a TM, a"
-	line "#MON will"
+	line "#mon will"
 
 	para "instantly learn a"
 	line "new move."
@@ -252,7 +251,7 @@ FalknerTMMudSlapText:
 	cont "you like."
 
 	para "TM31 contains"
-	line "MUD-SLAP."
+	line "Mud-Slap."
 
 	para "It reduces the"
 	line "enemy's accuracy"
@@ -266,13 +265,13 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
-	text "There are #MON"
-	line "GYMS in cities and"
+	text "There are #mon"
+	line "Gyms in cities and"
 	cont "towns ahead."
 
 	para "You should test"
 	line "your skills at"
-	cont "these GYMS."
+	cont "these Gyms."
 
 	para "I'm going to train"
 	line "harder to become"
@@ -298,8 +297,8 @@ FalknerRematchAfterBattleText:
 	line "as ever!"
 	
 	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
+	line "come back tomorrow"
+	cont "for a rematch!"
 	done
 	
 Falkner16IntroText:
@@ -307,8 +306,8 @@ Falkner16IntroText:
 	line "You did it!"
 	
 	para "You've beaten all"
-	line "the KANTO GYM"
-	cont "LEADERS!"
+	line "the Kanto Gym"
+	cont "Leaders!"
 	
 	para "I can finally use"
 	line "my strongest team"
@@ -323,13 +322,21 @@ Falkner16AfterBattleText:
 	cont "amazing battle!"
 	
 	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
+	line "come back tomorrow"
+	cont "for a rematch!"
 	done
 	
 FalknerNextTimeText:
 	text "Come back"
 	line "anytime!"
+	done
+
+FalknerComeBackTomorrow:
+	text "Battle again?"
+	line "Haha, we need a"
+	
+	para "rest! Come back"
+	line "tomorrow!"
 	done
 
 BirdKeeperRodSeenText:
@@ -340,7 +347,7 @@ BirdKeeperRodSeenText:
 	line "training night and"
 
 	para "day to become bird"
-	line "#MON masters."
+	line "#mon masters."
 
 	para "Come on!"
 	done
@@ -350,7 +357,7 @@ BirdKeeperRodBeatenText:
 	done
 
 BirdKeeperRodAfterBattleText:
-	text "FALKNER's skills"
+	text "Falkner's skills"
 	line "are for real!"
 
 	para "Don't get cocky"
@@ -361,7 +368,7 @@ BirdKeeperRodAfterBattleText:
 BirdKeeperAbeSeenText:
 	text "Let me see if you"
 	line "are good enough to"
-	cont "face FALKNER!"
+	cont "face Falkner!"
 	done
 
 BirdKeeperAbeBeatenText:
@@ -400,17 +407,17 @@ VioletGymGuideWinText:
 	text "Nice battle! Keep"
 	line "it up, and you'll"
 
-	para "be the CHAMP in no"
+	para "be the Champ in no"
 	line "time at all!"
 	done
 	
 HoothootText:
-	text "HOOTHOOT: Hoo!!"
+	text "Hoothoot: Hoo!!"
 	line "Hoohoo!"
 	done
 	
 NoctowlText:
-	text "NOCTOWL: Noc!!"
+	text "Noctowl: Noc!!"
 	line "Towwwwl!"
 	done
 
@@ -429,8 +436,8 @@ VioletGym_MapEvents:
 
 	def_object_events
 	object_event  5,  1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymFalknerScript, -1
-	object_event  4,  1, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymHoothoot, -1
-	object_event  4,  1, SPRITE_NOCTOWL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymNoctowl, EVENT_FOUGHT_SUDOWOODO
+	object_event  4,  1, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymHoothoot, EVENT_VIOLET_GYM_HOOTHOOT
+	object_event  4,  1, SPRITE_NOCTOWL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymNoctowl, EVENT_VIOLET_GYM_NOCTOWL
 	object_event  7,  6, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
 	object_event  2, 10, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuideScript, -1

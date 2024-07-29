@@ -11,14 +11,14 @@ SafariZoneFuchsiaGateOfficerScript:
 
 SafariZoneFuchsiaGateOfficerText:
 	text "Welcome to the"
-	line "SAFARI ZONE!"
+	line "Safari Zone!"
 
 	para "It's free entry"
 	line "but be careful."
 	
 	para "You'll find some"
 	line "rare, but strong"
-	cont "#MON out there!"
+	cont "#mon out there!"
 	done
 
 SafariZoneFuchsiaGate_MapEvents:

@@ -58,7 +58,7 @@ ItemFinderHouseRadio:
 EcruteakItemfinderAdventureText:
 	text "Ah. You're on an"
 	line "adventure with"
-	cont "your #MON?"
+	cont "your #mon?"
 
 	para "Well, what's an"
 	line "adventure without"
@@ -86,7 +86,7 @@ ItemfinderExplanationText:
 	para "that aren't ob-"
 	line "vious."
 
-	para "Use ITEMFINDER to"
+	para "Use Itemfinder to"
 	line "check if there is"
 
 	para "an item on the"
@@ -101,8 +101,8 @@ ItemfinderExplanationText:
 	para "Oh yeah--I heard"
 	line "there are items"
 
-	para "in ECRUTEAK's"
-	line "BURNED TOWER."
+	para "in Ecruteak's"
+	line "Burned Tower."
 	done
 
 EcruteakItemfinderToEachHisOwnText:
@@ -111,25 +111,25 @@ EcruteakItemfinderToEachHisOwnText:
 	done
 
 EcruteakHistoryBookText:
-	text "HISTORY OF"
-	line "ECRUTEAK"
+	text "History Of"
+	line "Ecruteak"
 
 	para "Want to read it?"
 	done
 
 EcruteakTwoTowersText:
-	text "In ECRUTEAK, there"
+	text "In Ecruteak, there"
 	line "were two towers."
 
 	para "Each tower was the"
 	line "roost of powerful"
-	cont "flying #MON."
+	cont "flying #mon."
 
 	para "But one of the"
 	line "towers burned to"
 	cont "the ground."
 
-	para "The two #MON"
+	para "The two #mon"
 	line "haven't been seen"
 	cont "since…"
 
@@ -137,10 +137,10 @@ EcruteakTwoTowersText:
 	done
 
 EcruteakThreeMonText:
-	text "ECRUTEAK was also"
+	text "Ecruteak was also"
 	line "home to three"
 
-	para "#MON that raced"
+	para "#mon that raced"
 	line "around the town."
 
 	para "They were said to"

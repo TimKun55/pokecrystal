@@ -20,43 +20,43 @@ CinnabarVolcano1FSign:
 CinnabarVolcano1FOfficerText:
 	text "Hello."
 	
-	para "The GYM is up"
+	para "The Gym is up"
 	line "the ladder to"
-	cont "the left."
+	cont "the north."
 	
-	para "The ladder on"
-	line "the left will take"
+	para "The ladder to the"
+	line "south will take"
 	
 	para "you deeper into"
-	line "the Volcano."
+	line "the volcano."
 	
 	para "It's usually"
 	line "closed off, but"
 	cont "I see you have"
 	
-	para "all the JOHTO"
-	line "BADGES. Please"
+	para "all the Johto"
+	line "Badges. Please"
 	cont "be careful."
 	done
 	
 CinnabarVolcanoSignText:
-	text "CINNABAR ISLAND"
-	line "#MON GYM ahead"
+	text "Cinnabar Island"
+	line "#mon Gym ahead"
 	done
 
 CinnabarVolcano1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 11, CINNABAR_ISLAND, 2
-	warp_event  5,  5, CINNABAR_VOLCANO_2F, 1
-	warp_event 18,  9, CINNABAR_VOLCANO_B1F, 1
+	warp_event 17, 11, CINNABAR_ISLAND, 2
+	warp_event 13,  5, CINNABAR_VOLCANO_2F, 1
+	warp_event  5, 17, CINNABAR_VOLCANO_B1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 13,  9, BGEVENT_READ, CinnabarVolcano1FSign
+	bg_event 14, 10, BGEVENT_READ, CinnabarVolcano1FSign
 
 	def_object_events
-	object_event 15,  9, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CinnabarVolcano1FOfficer, -1
+	object_event 13, 10, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CinnabarVolcano1FOfficer, -1
 	

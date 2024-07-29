@@ -65,6 +65,8 @@ GoldenrodGymWhitneyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_PLAINBADGE
+	setevent EVENT_VIOLET_GYM_HOOTHOOT
+	clearevent EVENT_VIOLET_GYM_NOCTOWL
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
 .GotPlainBadge:
@@ -241,13 +243,13 @@ BridgetWalksAwayMovement:
 	step_end
 
 WhitneyBeforeText:
-	text "Hi! I'm WHITNEY!"
+	text "Hi! I'm Whitney!"
 
 	para "Everyone was into"
-	line "#MON, so I got"
+	line "#mon, so I got"
 	cont "into it too!"
 
-	para "#MON are"
+	para "#mon are"
 	line "super-cute!"
 
 	para "You want to bat-"
@@ -279,23 +281,23 @@ WhitneyWhatDoYouWantText:
 	text "…Sniff…"
 
 	para "What? What do you"
-	line "want? A BADGE?"
+	line "want? A Badge?"
 
 	para "Oh, right."
 	line "I forgot. Here's"
-	cont "the PLAINBADGE."
+	cont "the PlainBadge."
 	done
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "the PLAINBADGE."
+	line "the PlainBadge."
 	done
 
 WhitneyPlainBadgeText:
-	text "The PLAINBADGE"
-	line "lets your #MON"
+	text "The PlainBadge"
+	line "lets your #mon"
 
-	para "use STRENGTH out"
+	para "use Strength out"
 	line "of battle."
 
 	para "Oh, you can have"
@@ -303,10 +305,10 @@ WhitneyPlainBadgeText:
 	done
 
 WhitneyAttractText:
-	text "It's ATTRACT!"
+	text "It's Attract!"
 	line "It makes full use"
 
-	para "of a #MON's"
+	para "of a #mon's"
 	line "charm."
 
 	para "Isn't it just per-"
@@ -352,8 +354,8 @@ Whitney16IntroText:
 	line "You did it!"
 	
 	para "You beat all"
-	line "the KANTO GYM"
-	cont "LEADERS!"
+	line "the Kanto Gym"
+	cont "Leaders!"
 	
 	para "I'm going to use"
 	line "my strongest team"
@@ -378,7 +380,7 @@ WhitneyNextTimeText:
 
 LassCarrieSeenText:
 	text "Don't let my"
-	line "#MON's cute"
+	line "#mon's cute"
 
 	para "looks fool you."
 	line "They can whip you!"
@@ -390,17 +392,17 @@ LassCarrieBeatenText:
 	done
 
 LassCarrieAfterBattleText:
-	text "Do my #MON"
+	text "Do my #mon"
 	line "think I'm cute?"
 	done
 
 LassBridgetSeenText:
 	text "I like cute #-"
-	line "MON better than"
-	cont "strong #MON."
+	line "mon better than"
+	cont "strong #mon."
 
 	para "But I have strong"
-	line "and cute #MON!"
+	line "and cute #mon!"
 	done
 
 LassBridgetBeatenText:
@@ -409,7 +411,7 @@ LassBridgetBeatenText:
 
 LassBridgetAfterBattleText:
 	text "I'm trying to beat"
-	line "WHITNEY, but…"
+	line "Whitney, but…"
 	cont "It's depressing."
 
 	para "I'm okay! If I"
@@ -421,7 +423,7 @@ LassBridgetAfterBattleText:
 
 BridgetWhitneyCriesText:
 	text "Oh, no. You made"
-	line "WHITNEY cry."
+	line "Whitney cry."
 
 	para "It's OK. She'll"
 	line "stop soon. She"
@@ -456,27 +458,27 @@ BeautySamanthaSeenText:
 	done
 
 BeautySamanthaBeatenText:
-	text "No! Oh, MEOWTH,"
+	text "No! Oh, Meowth,"
 	line "I'm so sorry!"
 	done
 
 BeautySamanthaAfterBattleText:
-	text "I taught MEOWTH"
+	text "I taught Meowth"
 	line "moves for taking"
 	cont "on any type…"
 	done
 
 GoldenrodGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making!"
 
-	para "This GYM is home"
+	para "This Gym is home"
 	line "to normal-type"
-	cont "#MON trainers."
+	cont "#mon trainers."
 
 	para "I recommend you"
 	line "use fighting-type"
-	cont "#MON."
+	cont "#mon."
 	done
 
 GoldenrodGymGuideWinText:
@@ -486,7 +488,7 @@ GoldenrodGymGuideWinText:
 	done
 	
 MiltankText:
-	text "MILTANK: Mooo!!"
+	text "Miltank: Mooo!!"
 	done
 
 GoldenrodGym_MapEvents:

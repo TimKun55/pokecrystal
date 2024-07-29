@@ -50,7 +50,7 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const DNA_SAMPLE   ; 2d
+	const SECRET_KEY   ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
@@ -78,7 +78,7 @@
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48
-	const QUICK_CLAW   ; 49
+	const DIPLOMA      ; 49
 	const PECHA_BERRY  ; 4a
 	const GOLD_LEAF    ; 4b
 	const SOFT_SAND    ; 4c
@@ -166,7 +166,7 @@
 	const FLOWER_MAIL  ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
-	const FAST_BALL    ; a1
+	const NET_BALL     ; a1
 	const MILD_POFFIN  ; a2
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
@@ -181,11 +181,11 @@
 	const ORAN_BERRY   ; ad
 	const SITRUS_BERRY ; ae
 	const SQUIRTBOTTLE ; af
-	const ITEM_B0      ; b0
+	const OLD_SEA_MAP  ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
-	const BRICK_PIECE  ; b4
+	const PANCAKESTACK ; b3
+	const QUICK_CLAW   ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
 	const PORTRAITMAIL ; b7
@@ -271,7 +271,7 @@ DEF TM01 EQU const_value
 	add_tm MEGA_DRAIN	; f2
 	add_tm BODY_SLAM	; f3
 	add_tm SLUDGE		; f4
-	add_tm FAINT_ATTACK	; f5
+	add_tm FEINT_ATTACK	; f5
 	add_tm BULLDOZE		; f6
 	add_tm CHARGE_BEAM	; f7
 DEF NUM_TMS EQU __tmhm_value__ - 1

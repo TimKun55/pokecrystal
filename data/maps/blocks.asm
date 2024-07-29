@@ -150,9 +150,10 @@ VioletPrimosHouse_Blocks:
 	INCBIN "maps/TraditionalHouse.ablk"
 
 CeruleanPoliceStation_Blocks:
-CeladonMansionRoofHouse_Blocks:
+CeladonCurseHouse_Blocks:
 MrPsychicsHouse_Blocks:
 SaffronOddishDollHouse_Blocks:
+FuchsiaCinnabarHouse1_Blocks:
 	INCBIN "maps/KantoHouse1.ablk"
 
 DayOfWeekSiblingsHouse_Blocks:
@@ -237,6 +238,9 @@ Route39_Blocks:
 
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
+
+CeladonMansionRoofHouse_Blocks:
+	INCBIN "maps/CeladonMansionRoofHouse.ablk"
 
 Route36VioletGate_Blocks:
 Route38EcruteakGate_Blocks:
@@ -957,9 +961,6 @@ ViridianForestHouseBF1_Blocks:
 IndigoPlateau_Blocks:
 	INCBIN "maps/IndigoPlateau.ablk"
 	
-BellchimeTrail_Blocks:
-	INCBIN "maps/BellchimeTrail.ablk"
-	
 CinnabarVolcano1F_Blocks:
 	INCBIN "maps/CinnabarVolcano1F.ablk"
 
@@ -978,9 +979,6 @@ CinnabarMoltresNest_Blocks:
 Route14ArticunoNest_Blocks:
 	INCBIN "maps/Route14ArticunoNest.ablk"
 
-MtSilverRoom4_Blocks:
-	INCBIN "maps/MtSilverRoom4.ablk"
-	
 UndergroundRoom_Blocks:
 	INCBIN "maps/UndergroundRoom.ablk"
 	
@@ -1028,5 +1026,32 @@ MahoganyBakery_Blocks:
 
 MahoganyMoveTutorHouse_Blocks:
 	INCBIN "maps/MahoganyMoveTutorHouse.ablk"
+
+CinnabarIslandRecoveryLab_Blocks:
+	INCBIN "maps/CinnabarIslandRecoveryLab.ablk"
+
+VermilionSailorsHouse_Blocks:
+	INCBIN "maps/VermilionSailorsHouse.ablk"
+
+FarawayIslandOutside_Blocks:
+	INCBIN "maps/FarawayIslandOutside.ablk"
+
+FarawayIslandInside_Blocks:
+	INCBIN "maps/FarawayIslandInside.ablk"
+
+CeruleanCave1F_Blocks:
+	INCBIN "maps/CeruleanCave1F.ablk"
+
+CeruleanCave2F_Blocks:
+	INCBIN "maps/CeruleanCave2F.ablk"
+
+CeruleanCaveB1F_Blocks:
+	INCBIN "maps/CeruleanCaveB1F.ablk"
+
+CeruleanEmptyHouse_Blocks:
+	INCBIN "maps/CeruleanEmptyHouse.ablk"
+
+CeruleanEmptyHouseUnderground_Blocks:
+	INCBIN "maps/CeruleanEmptyHouseUnderground.ablk"
 
 ENDSECTION

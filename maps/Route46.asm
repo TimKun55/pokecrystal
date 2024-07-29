@@ -190,7 +190,7 @@ Route46FruitTree2:
 HikerBaileySeenText:
 	text "Awright! I'll show"
 	line "you the power of"
-	cont "mountain #MON!"
+	cont "mountain #mon!"
 	done
 
 HikerBaileyBeatenText:
@@ -200,13 +200,13 @@ HikerBaileyBeatenText:
 
 HikerBaileyAfterBattleText:
 	text "It's over. I don't"
-	line "mind. We HIKERS"
+	line "mind. We Hikers"
 	cont "are like that."
 	done
 
 CamperTedSeenText:
 	text "I'm raising #-"
-	line "MON too!"
+	line "mon too!"
 
 	para "Will you battle"
 	line "with me?"
@@ -225,7 +225,7 @@ CamperTedAfterBattleText:
 	done
 
 PicnickerErin1SeenText:
-	text "I raise #MON"
+	text "I raise #mon"
 	line "too!"
 
 	para "Will you battle"
@@ -238,9 +238,9 @@ PicnickerErin1BeatenText:
 
 PicnickerErinAfterBattleText:
 	text "I've been to many"
-	line "GYMS, but the GYM"
+	line "Gyms, but the Gym"
 
-	para "in GOLDENROD is my"
+	para "in Goldenrod is my"
 	line "favorite."
 
 	para "It's filled with"
@@ -270,8 +270,8 @@ LadyGiaSeenText:
 	para "I'm getting bored"
 	line "though. Wanna see"
 	
-	para "my cute FAIRY"
-	line "#MON?"
+	para "my cute Fairy"
+	line "#mon?"
 	done
 
 LadyGiaBeatenText:
@@ -284,12 +284,12 @@ LadyGiaAfterBattleText:
 	cont "talk to my"
 	
 	para "Gramps in"
-	line "ECRUTEAK."
+	line "Ecruteak."
 	done
 
 Route46SignText:
-	text "ROUTE 46"
-	line "MOUNTAIN RD. AHEAD"
+	text "Route 46"
+	line "Mountain Rd. ahead"
 	done
 
 Route46_MapEvents:

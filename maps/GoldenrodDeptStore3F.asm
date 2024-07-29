@@ -31,27 +31,27 @@ GoldenrodDeptStore3FSuperNerdText:
 	text "I, I, I'm really"
 	line "impatient!"
 
-	para "I use X SPEED in"
+	para "I use X Speed in"
 	line "battle to speed up"
-	cont "my #MON."
+	cont "my #mon."
 	done
 
 GoldenrodDeptStore3FRockerText:
 	text "Hey! When you bat-"
 	line "tle, do you use X"
-	cont "SPECIAL?"
+	cont "Sp.Atk.?"
 
 	para "It's awesome. It"
 	line "really jacks up"
-	cont "SPECIAL ATTACK!"
+	cont "Special Attack!"
 	done
 
 GoldenrodDeptStore3FDirectoryText:
 	text "For Victory"
 	line "Seekers"
 
-	para "3F BATTLE"
-	line "   COLLECTION"
+	para "3F Battle"
+	line "   Collection"
 	done
 
 GoldenrodDeptStore3F_MapEvents:
@@ -70,5 +70,5 @@ GoldenrodDeptStore3F_MapEvents:
 
 	def_object_events
 	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore3FClerkScript, -1
-	object_event 12,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore3FSuperNerdScript, -1
-	object_event  2,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore3FRockerScript, -1
+	object_event  6,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore3FSuperNerdScript, -1
+	object_event 10,  2, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore3FRockerScript, -1

@@ -160,7 +160,7 @@ GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement:
 	step_end
 
 GoldenrodPokecenter1FGameboyKidText:
-	text "The COLOSSEUM"
+	text "The Colosseum"
 	line "upstairs is for"
 	cont "link battles."
 
@@ -173,7 +173,7 @@ GoldenrodPokecenter1FGameboyKidText:
 
 GoldenrodPokecenter1FLassText:
 	text "A higher level"
-	line "#MON doesn't"
+	line "#mon doesn't"
 	cont "always win."
 
 	para "After all, it may"
@@ -183,7 +183,7 @@ GoldenrodPokecenter1FLassText:
 	para "I don't think"
 	line "there is a single"
 
-	para "#MON that is"
+	para "#mon that is"
 	line "the toughest."
 	done
 
@@ -193,7 +193,7 @@ GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText:
 	para "Congratulations!"
 
 	para "As a special deal,"
-	line "a GS BALL has been"
+	line "a GS Ball has been"
 	cont "sent just for you!"
 
 	para "Please accept it!"
@@ -210,7 +210,7 @@ GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
 
 	para "Oh! Do you happen"
 	line "to have something"
-	cont "named EON MAIL?"
+	cont "named Eon Mail"
 
 	para "My daughter is"
 	line "after one."
@@ -220,8 +220,8 @@ GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
 	done
 
 GoldenrodPokecenter1FAskGiveAwayAnEonMailText:
-	text "Give away an EON"
-	line "MAIL?"
+	text "Give away an Eon"
+	line "Mail?"
 	done
 
 GoldenrodPokecenter1FPokefanFThisIsForYouText:
@@ -249,7 +249,7 @@ GoldenrodPokecenter1FPokefanFAnotherTimeThenText:
 
 GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText:
 	text "<PLAYER> gave away"
-	line "the EON MAIL."
+	line "the Eon Mail."
 	done
 
 GoldenrodPokecenter1F_MapEvents:

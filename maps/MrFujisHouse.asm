@@ -21,6 +21,10 @@ MrFujisPsyduck:
 	writetext MrFujisPsyduckText
 	cry PSYDUCK
 	waitbutton
+	refreshscreen
+	pokepic PSYDUCK
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -29,6 +33,10 @@ MrFujisNidorino:
 	writetext MrFujisNidorinoText
 	cry NIDORINO
 	waitbutton
+	refreshscreen
+	pokepic NIDORINO
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -37,6 +45,10 @@ MrFujisPidgey:
 	writetext MrFujisPidgeyText
 	cry PIDGEY
 	waitbutton
+	refreshscreen
+	pokepic PIDGEY
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -50,31 +62,31 @@ MrFujisHouseSuperNerdText:
 	para "home now."
 
 	para "He should be at"
-	line "the SOUL HOUSE."
+	line "the Soul House."
 	done
 
 MrFujisHouseLassText:
 	text "Some cold-hearted"
 	line "people stop caring"
-	cont "for their #MON."
+	cont "for their #mon."
 
 	para "Grandpa takes in"
 	line "the poor homeless"
 
-	para "#MON and takes"
+	para "#mon and takes"
 	line "care of them."
 	done
 
 MrFujisPsyduckText:
-	text "PSYDUCK: Gu-guwa?"
+	text "Psyduck: Gu-guwa?"
 	done
 
 MrFujisNidorinoText:
-	text "NIDORINO: Gyun!"
+	text "Nidorino: Gyun!"
 	done
 
 MrFujisPidgeyText:
-	text "PIDGEY: Pijji!"
+	text "Pidgey: Pijji!"
 	done
 
 MrFujisHouse_MapEvents:
@@ -94,5 +106,5 @@ MrFujisHouse_MapEvents:
 	object_event  6,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHouseSuperNerdScript, -1
 	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseLassScript, -1
 	object_event  8,  4, SPRITE_PSYDUCK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1
-	object_event  5,  5, SPRITE_NIDORINO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
+	object_event  5,  5, SPRITE_NIDORINO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
 	object_event  1,  3, SPRITE_PIDGEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisPidgey, -1

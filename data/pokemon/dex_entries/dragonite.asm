@@ -1,5 +1,5 @@
-	db "DRAGON@" ; species name
-	dw 703, 4630 ; height, weight
+	db "Dragon@" ; species name
+	dw 220, 2100 ; height, weight
 
 	db   "It is said that"
 	next "somewhere in the"

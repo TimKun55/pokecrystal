@@ -1,0 +1,253 @@
+OldPokedexOrder:
+	db BULBASAUR  ; 01
+	db IVYSAUR    ; 02
+	db VENUSAUR   ; 03
+	db CHARMANDER ; 04
+	db CHARMELEON ; 05
+	db CHARIZARD  ; 06
+	db SQUIRTLE   ; 07
+	db WARTORTLE  ; 08
+	db BLASTOISE  ; 09
+	db CATERPIE   ; 0a
+	db METAPOD    ; 0b
+	db BUTTERFREE ; 0c
+	db WEEDLE     ; 0d
+	db KAKUNA     ; 0e
+	db BEEDRILL   ; 0f
+	db PIDGEY     ; 10
+	db PIDGEOTTO  ; 11
+	db PIDGEOT    ; 12
+	db RATTATA    ; 13
+	db RATICATE   ; 14
+	db SPEAROW    ; 15
+	db FEAROW     ; 16
+	db EKANS      ; 17
+	db ARBOK      ; 18
+	db PIKACHU    ; 19
+	db RAICHU     ; 1a
+	db RAICHU_A
+	db SANDSHREW  ; 1b
+	db SANDSLASH  ; 1c
+	db NIDORAN_F  ; 1d
+	db NIDORINA   ; 1e
+	db NIDOQUEEN  ; 1f
+	db NIDORAN_M  ; 20
+	db NIDORINO   ; 21
+	db NIDOKING   ; 22
+	db CLEFAIRY   ; 23
+	db CLEFABLE   ; 24
+	db VULPIX     ; 25
+	db NINETALES  ; 26
+	db JIGGLYPUFF ; 27
+	db WIGGLYTUFF ; 28
+	db ZUBAT      ; 29
+	db GOLBAT     ; 2a
+	db ODDISH     ; 2b
+	db GLOOM      ; 2c
+	db VILEPLUME  ; 2d
+	db PARAS      ; 2e
+	db PARASECT   ; 2f
+	db VENONAT    ; 30
+	db VENOMOTH   ; 31
+	db DIGLETT    ; 32
+	db DUGTRIO    ; 33
+	db MEOWTH     ; 34
+	db PERSIAN    ; 35
+	db PSYDUCK    ; 36
+	db GOLDUCK    ; 37
+	db MANKEY     ; 38
+	db PRIMEAPE   ; 39
+	db GROWLITHE  ; 3a
+	db ARCANINE   ; 3b
+	db POLIWAG    ; 3c
+	db POLIWHIRL  ; 3d
+	db POLIWRATH  ; 3e
+	db ABRA       ; 3f
+	db KADABRA    ; 40
+	db ALAKAZAM   ; 41
+	db MACHOP     ; 42
+	db MACHOKE    ; 43
+	db MACHAMP    ; 44
+	db BELLSPROUT ; 45
+	db WEEPINBELL ; 46
+	db VICTREEBEL ; 47
+	db TENTACOOL  ; 48
+	db TENTACRUEL ; 49
+	db GEODUDE    ; 4a
+	db GRAVELER   ; 4b
+	db GOLEM      ; 4c
+	db PONYTA     ; 4d
+	db RAPIDASH   ; 4e
+	db SLOWPOKE   ; 4f
+	db SLOWBRO    ; 50
+	db MAGNEMITE  ; 51
+	db MAGNETON   ; 52
+	db FARFETCH_D ; 53
+	db DODUO      ; 54
+	db DODRIO     ; 55
+	db SEEL       ; 56
+	db DEWGONG    ; 57
+	db GRIMER     ; 58
+	db MUK        ; 59
+	db SHELLDER   ; 5a
+	db CLOYSTER   ; 5b
+	db GASTLY     ; 5c
+	db HAUNTER    ; 5d
+	db GENGAR     ; 5e
+	db ONIX       ; 5f
+	db DROWZEE    ; 60
+	db HYPNO      ; 61
+	db KRABBY     ; 62
+	db KINGLER    ; 63
+	db VOLTORB    ; 64
+	db ELECTRODE  ; 65
+	db EXEGGCUTE  ; 66
+	db EXEGGUTOR  ; 67
+	db CUBONE     ; 68
+	db MAROWAK    ; 69
+	db HITMONLEE  ; 6a
+	db HITMONCHAN ; 6b
+	db LICKITUNG  ; 6c
+	db KOFFING    ; 6d
+	db WEEZING    ; 6e
+	db RHYHORN    ; 6f
+	db RHYDON     ; 70
+	db CHANSEY    ; 71
+	db TANGELA    ; 72
+	db KANGASKHAN 
+	db HORSEA
+	db SEADRA
+	db GOLDEEN
+	db SEAKING
+	db STARYU
+	db STARMIE
+	db MR__MIME
+	db SCYTHER
+	db JYNX
+	db ELECTABUZZ
+	db MAGMAR
+	db PINSIR
+	db TAUROS
+	db MAGIKARP
+	db GYARADOS
+	db LAPRAS
+	db DITTO
+	db EEVEE
+	db VAPOREON
+	db JOLTEON
+	db FLAREON
+	db PORYGON
+	db OMANYTE
+	db OMASTAR
+	db KABUTO
+	db KABUTOPS
+	db AERODACTYL
+	db SNORLAX
+	db ARTICUNO 
+	db ZAPDOS 
+	db MOLTRES 
+	db DRATINI 
+	db DRAGONAIR
+	db DRAGONITE
+	db MEWTWO
+	db MEW
+	db CHIKORITA 
+	db BAYLEEF
+	db MEGANIUM 
+	db CYNDAQUIL
+	db QUILAVA 
+	db TYPHLOSION
+	db TOTODILE
+	db CROCONAW  
+	db FERALIGATR
+	db SENTRET 
+	db FURRET  
+	db HOOTHOOT
+	db NOCTOWL
+	db LEDYBA   
+	db LEDIAN 
+	db SPINARAK
+	db ARIADOS
+	db CROBAT 
+	db CHINCHOU
+	db LANTURN
+	db MAGNEZONE
+	db CORSOLA
+	db TOGEPI
+	db TOGETIC 
+	db TOGEKISS  
+	db NATU 
+	db XATU 
+	db MAREEP   
+	db FLAAFFY  
+	db AMPHAROS 
+	db BELLOSSOM 
+	db MARILL   
+	db AZUMARILL
+	db SUDOWOODO
+	db POLITOED 
+	db HOPPIP  
+	db SKIPLOOM 
+	db JUMPLUFF 
+	db AIPOM  
+	db SUNKERN
+	db SUNFLORA 
+	db YANMA   
+	db WOOPER  
+	db QUAGSIRE
+	db ESPEON  
+	db UMBREON
+	db SYLVEON 
+	db SLOWKING 
+	db STANTLER 
+	db UNOWN  
+	db WOBBUFFET 
+	db GIRAFARIG
+	db PINECO
+	db FORRETRESS
+	db DUNSPARCE
+	db GLIGAR
+	db STEELIX
+	db SNUBBULL
+	db GRANBULL
+	db QWILFISH
+	db SCIZOR
+	db SHUCKLE 
+	db HERACROSS
+	db SNEASEL 
+	db TEDDIURSA
+	db URSARING 
+	db SLUGMA 
+	db MAGCARGO
+	db SWINUB  
+	db PILOSWINE
+	db MAMOSWINE
+	db REMORAID
+	db OCTILLERY 
+	db DELIBIRD 
+	db MANTINE 
+	db SKARMORY
+	db HOUNDOUR
+	db HOUNDOOM
+	db KINGDRA
+	db PHANPY
+	db DONPHAN
+	db MISDREAVUS
+	db MISMAGIUS
+	db SMEARGLE 
+	db TYROGUE
+	db HITMONTOP
+	db MURKROW
+	db HONCHKROW
+	db PORYGON2
+	db MILTANK
+	db BLISSEY
+	db RAIKOU
+	db ENTEI
+	db SUICUNE
+	db LARVITAR
+	db PUPITAR
+	db TYRANITAR
+	db LUGIA
+	db HO_OH
+	db CELEBI

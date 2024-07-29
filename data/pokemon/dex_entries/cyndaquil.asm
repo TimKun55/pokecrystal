@@ -1,5 +1,5 @@
-	db "FIRE MOUSE@" ; species name
-	dw 108, 170 ; height, weight
+	db "Fire Mouse@" ; species name
+	dw 050, 079 ; height, weight
 
 	db   "The fire that"
 	next "spouts from its"

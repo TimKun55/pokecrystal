@@ -100,7 +100,7 @@ VictoryRoad3FRivalNext:
 VictoryRoad3FUltraBall:
 	itemball ULTRA_BALL
 
-VictoryRoad3BigNugget:
+VictoryRoad3FBigNugget:
 	itemball BIG_NUGGET
 
 VictoryRoad3FTMEarthquake:
@@ -158,9 +158,9 @@ VictoryRoadRivalBeforeText:
 
 	para "…Are you going to"
 	line "challenge the"
-	cont "#MON LEAGUE?"
+	cont "#mon League?"
 
-	para "VICTORY ROAD is at"
+	para "Victory Road is at"
 	line "its end, for sure."
 
 	para "But did you"
@@ -276,5 +276,5 @@ VictoryRoad3F_MapEvents:
 	object_event 23, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoad3FRock, -1
 	object_event 23, 13, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoad3FRock, -1
 	object_event 16,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoad3FUltraBall, EVENT_VICTORY_ROAD_3F_ULTRA_BALL
-	object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoad3BigNugget, EVENT_VICTORY_ROAD_3F_BIG_NUGGET
+	object_event  8, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoad3FBigNugget, EVENT_VICTORY_ROAD_3F_BIG_NUGGET
 	object_event 23, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoad3FTMEarthquake, EVENT_VICTORY_ROAD_3F_TM_EARTHQUAKE

@@ -90,10 +90,10 @@ GoldenrodHomeDecorStore3FClerk1Script:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "RED C.    ¥45000@"
-	db "YELLOW C. ¥45000@"
-	db "GREEN C.  ¥45000@"
-	db "CANCEL@"
+	db "Red C.    ¥45000@"
+	db "Yellow C. ¥45000@"
+	db "Green C.  ¥45000@"
+	db "Cancel@"
 
 GoldenrodHomeDecorStore3FClerk2Script:
 	checkevent EVENT_DECO_CARPET_2
@@ -162,7 +162,7 @@ GoldenrodHomeDecorStore3FClerk2Text:
 
 GoldenrodHomeDecorStore3FClerk2SaleText:
 	text "Our imported"
-	line "ROYAL BLUE Carpet"
+	line "Royal Blue Carpet"
 
 	para "is on sale right"
 	line "now for ¥35,000."
@@ -182,41 +182,41 @@ GoldenrodHomeDecorStore3FClerk2NoText:
 
 BoughtRedCarpetText:
 	text "<PLAYER> bought"
-	line "RED CARPET."
+	line "Red Carpet."
 	done
 
 RedCarpetSentText:
-	text "RED CARPET"
+	text "Red Carpet"
 	line "was sent home."
 	done
 
 BoughtBlueCarpetText:
 	text "<PLAYER> bought"
-	line "BLUE CARPET."
+	line "Blue Carpet."
 	done
 
 BlueCarpetSentText:
-	text "BLUE CARPET"
+	text "Blue Carpet"
 	line "was sent home."
 	done
 
 BoughtYellowCarpetText:
 	text "<PLAYER> bought"
-	line "YELLOW CARPET."
+	line "Yellow Carpet."
 	done
 
 YellowCarpetSentText:
-	text "YELLOW CARPET"
+	text "Yellow Carpet"
 	line "was sent home."
 	done
 
 BoughtGreenCarpetText:
 	text "<PLAYER> bought"
-	line "GREEN CARPET."
+	line "Green Carpet."
 	done
 
 GreenCarpetSentText:
-	text "GREEN CARPET"
+	text "Green Carpet"
 	line "was sent home."
 	done
 
@@ -238,7 +238,7 @@ GoldenrodHomeDecorStore3FYoungsterText:
 GoldenrodHomeDecorStore3FBeautyText:
 	text "Some of these"
 	line "carpets are im-"
-	cont "ported from KALOS!"
+	cont "ported from Kalos!"
 	done
 
 GoldenrodHomeDecorStore3FDirectoryText:

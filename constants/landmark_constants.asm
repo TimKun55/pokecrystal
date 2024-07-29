@@ -13,8 +13,8 @@
 	const LANDMARK_RUINS_OF_ALPH     ; 09
 	const LANDMARK_UNION_CAVE        ; 0a
 	const LANDMARK_ROUTE_33          ; 0b
-	const LANDMARK_AZALEA_TOWN       ; 0c
-	const LANDMARK_SLOWPOKE_WELL     ; 0d
+	const LANDMARK_SLOWPOKE_WELL     ; 0c
+	const LANDMARK_AZALEA_TOWN       ; 0d
 	const LANDMARK_ILEX_FOREST       ; 0e
 	const LANDMARK_ROUTE_34          ; 0f
 	const LANDMARK_GOLDENROD_CITY    ; 10
@@ -99,7 +99,9 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_26          ; 5e
 	const LANDMARK_TOHJO_FALLS       ; 5f
 	const LANDMARK_ROUTE_28          ; 60
-	const LANDMARK_FAST_SHIP         ; 61
+	const LANDMARK_CERULEAN_CAVE     ; 61
+	const LANDMARK_FAST_SHIP         ; 62
+	const LANDMARK_FARAWAY_ISLAND    ; 63
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

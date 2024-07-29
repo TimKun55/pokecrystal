@@ -25,7 +25,7 @@ SpecialsPointers::
 	add_special TradeCenter
 	add_special Colosseum
 	add_special TimeCapsule
-	add_special CableClubCheckWhichChris
+	add_special CableClubCheckWhichPlayer
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
 	add_special UnlockMysteryGift
@@ -45,7 +45,7 @@ SpecialsPointers::
 	add_special DayCareLady
 	add_special DayCareManOutside
 	add_special MoveDeletion
-	add_special BankOfMom
+	add_special BankOfMum
 	add_special MagnetTrain
 	add_special NameRival
 	add_special SetDayOfWeek

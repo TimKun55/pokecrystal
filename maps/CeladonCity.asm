@@ -80,16 +80,16 @@ CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityFisherText:
-	text "This POLIWRATH is"
+	text "This Poliwrath is"
 	line "my partner."
 
 	para "I wonder if it'll"
 	line "ever evolve into a"
-	cont "frog #MON."
+	cont "frog #mon."
 	done
 
 CeladonCityPoliwrathText:
-	text "POLIWRATH: Croak!"
+	text "Poliwrath: Croak!"
 	done
 
 CeladonCityTeacher1Text:
@@ -104,13 +104,13 @@ CeladonCityTeacher1Text:
 	done
 
 CeladonCityGramps1Text:
-	text "GRIMER have been"
+	text "Grimer have been"
 	line "appearing lately."
 
 	para "See that pond out"
 	line "in front of the"
 
-	para "house? GRIMER live"
+	para "house? Grimer live"
 	line "there now."
 
 	para "Where did they"
@@ -119,7 +119,7 @@ CeladonCityGramps1Text:
 	done
 
 CeladonCityGramps2Text:
-	text "Nihihi! This GYM"
+	text "Nihihi! This Gym"
 	line "is great! Only"
 
 	para "girls are allowed"
@@ -130,7 +130,7 @@ CeladonCityYoungster1Text:
 	text "Want to know a"
 	line "secret?"
 
-	para "CELADON MANSION"
+	para "Celadon Mansion"
 	line "has a hidden back"
 	cont "door."
 	done
@@ -146,7 +146,7 @@ CeladonCityYoungster2Text:
 	done
 
 CeladonCityTeacher2Text:
-	text "CELADON DEPT.STORE"
+	text "Celadon Dept.Store"
 	line "has the biggest"
 
 	para "and best selection"
@@ -171,16 +171,16 @@ CeladonCityLassText:
 	done
 
 CeladonCitySignText:
-	text "CELADON CITY"
+	text "Celadon City"
 
 	para "The City of"
 	line "Rainbow Dreams"
 	done
 
 CeladonGymSignText:
-	text "CELADON CITY"
-	line "#MON GYM"
-	cont "LEADER: ERIKA"
+	text "Celadon City"
+	line "#mon Gym"
+	cont "Leader: Erika"
 
 	para "The Nature-Loving"
 	line "Princess"
@@ -188,32 +188,32 @@ CeladonGymSignText:
 
 CeladonCityDeptStoreSignText:
 	text "Find What You"
-	line "Need at CELADON"
-	cont "DEPT.STORE!"
+	line "Need at Celadon"
+	cont "Dept.Store!"
 	done
 
 CeladonCityMansionSignText:
-	text "CELADON MANSION"
+	text "Celadon Mansion"
 	done
 
 CeladonCityGameCornerSignText:
 	text "The Playground for"
-	line "Everybody--CELADON"
-	cont "GAME CORNER"
+	line "Everybody--Celadon"
+	cont "Game Corner"
 	done
 
 CeladonCityTrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "GUARD SPEC."
-	line "protects #MON"
+	para "Guard Spec."
+	line "protects #mon"
 
 	para "from having their"
 	line "stats lowered!"
 
 	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	line "Celadon Dept."
+	cont "Store!"
 	done
 
 CeladonCity_MapEvents:
@@ -229,9 +229,10 @@ CeladonCity_MapEvents:
 	warp_event 23, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
 	warp_event 10, 29, CELADON_GYM, 1
 	warp_event 25, 29, CELADON_CAFE, 1
-	warp_event 33, 17, CELADON_HOME_DECOR_STORE_1F, 1
+	warp_event  9,  9, CELADON_HOME_DECOR_STORE_1F, 1
 	warp_event  0, 24, ROUTE_16_GATE, 3
 	warp_event  0, 25, ROUTE_16_GATE, 4
+	warp_event 29, 23, CELADON_CURSE_HOUSE, 1
 
 	def_coord_events
 

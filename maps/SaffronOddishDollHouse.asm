@@ -35,18 +35,18 @@ SaffronOddishDollHousePokefanFScript:
 
 PokefanFWantToGoShoppingText:
 	text "I really wish the"
-	line "TRAIN was running."
+	line "Train was running."
 
 	para "I need to go"
 	line "shopping in"
-	cont "GOLDENROD…"
+	cont "Goldenrod…"
 	done
 
 SaffronOddishDollHousePokefanF_ReturnedMachinePartText:
 	text "Wait! It's you!"
 
 	para "You helped get the"
-	line "TRAIN running!"
+	line "Train running!"
 
 	para "I can finally go"
 	line "shopping again!"
@@ -56,7 +56,7 @@ SaffronOddishDollHousePokefanF_ReturnedMachinePartText:
 	done
 
 OddishDollSentText:
-	text "The ODDISH DOLL"
+	text "The Oddish Doll"
 	line "was sent home."
 	done
 

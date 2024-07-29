@@ -1,5 +1,5 @@
-	db "MYSTIC@" ; species name
-	dw 411, 330 ; height, weight
+	db "Mystic@" ; species name
+	dw 150, 150 ; height, weight
 
 	db   "Once it begins to"
 	next "meditate at sun-"

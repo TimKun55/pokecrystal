@@ -151,8 +151,8 @@ VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
 
 VermilionCityTeacherText:
-	text "VERMILION PORT is"
-	line "KANTO's seaside"
+	text "Vermilion Port is"
+	line "Kanto's seaside"
 	cont "gateway."
 
 	para "Luxury liners from"
@@ -161,7 +161,7 @@ VermilionCityTeacherText:
 	done
 
 VermilionMachopOwnerText:
-	text "My #MON is"
+	text "My #mon is"
 	line "preparing the land"
 	cont "for construction."
 
@@ -171,30 +171,30 @@ VermilionMachopOwnerText:
 	done
 
 VermilionMachopText1:
-	text "MACHOP: Guooh"
+	text "Machop: Guooh"
 	line "gogogoh!"
 	done
 
 VermilionMachopText2:
-	text "A MACHOP is growl-"
+	text "A Machop is growl-"
 	line "ing while stomping"
 	cont "the ground flat."
 	done
 
 VermilionCitySuperNerdText:
 	text "There are eight"
-	line "GYMS in KANTO."
+	line "Gyms in Kanto."
 
 	para "That big building"
-	line "is VERMILION's"
-	cont "#MON GYM."
+	line "is Vermilion's"
+	cont "#mon Gym."
 	done
 
 VermilionCityBadgeGuyTrainerText:
 	text "Skilled trainers"
-	line "gather in KANTO."
+	line "gather in Kanto."
 
-	para "GYM LEADERS are"
+	para "Gym Leaders are"
 	line "especially strong."
 
 	para "They won't be easy"
@@ -203,8 +203,8 @@ VermilionCityBadgeGuyTrainerText:
 
 VermilionCityBadgeGuySomeBadgesText:
 	text "You've started to"
-	line "collect KANTO GYM"
-	cont "BADGES?"
+	line "collect Kanto Gym"
+	cont "Badges?"
 
 	para "Don't you agree"
 	line "that the trainers"
@@ -215,19 +215,19 @@ VermilionCityBadgeGuyMostBadgesText:
 	text "I guess you'll be"
 	line "finished with your"
 
-	para "conquest of KANTO"
-	line "GYMS soon."
+	para "conquest of Kanto"
+	line "Gyms soon."
 
 	para "Let me know if"
 	line "you get all eight"
-	cont "BADGES."
+	cont "Badges."
 	done
 
 VermilionCityBadgeGuyAllBadgesText:
 	text "Congratulations!"
 
 	para "You got all the"
-	line "KANTO GYM BADGES."
+	line "Kanto Gym Badges."
 
 	para "I've got a reward"
 	line "for your efforts."
@@ -235,13 +235,13 @@ VermilionCityBadgeGuyAllBadgesText:
 
 VermilionCityBadgeGuyBattleEdgeText:
 	text "Having a variety"
-	line "of #MON types"
+	line "of #mon types"
 
 	para "should give you an"
 	line "edge in battle."
 
-	para "I'm sure the KANTO"
-	line "GYM BADGES will"
+	para "I'm sure the Kanto"
+	line "Gym Badges will"
 	cont "help you."
 	done
 	
@@ -250,8 +250,8 @@ VermilionCityTutorHurricaneText:
 	line "Are you a trainer?"
 	
 	para "Oh, you've earned"
-	line "all of the BADGES"
-	cont "of JOHTO?"
+	line "all of the Badges"
+	cont "of Johto?"
 
 	para "Wow! You must be"
 	line "quite strong."
@@ -266,8 +266,8 @@ VermilionCityTutorHurricaneText2:
 	text "Would you like me"
 	line "to teach your"
 
-	para "#MON to use"
-	line "HURRICANE for"
+	para "#mon to use"
+	line "Hurricane for"
 	cont "¥20000?"
 	done
 
@@ -303,43 +303,43 @@ VermilionCityTutorNotEnough:
 	
 VermilionCityTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 
 VermilionCitySignText:
-	text "VERMILION CITY"
+	text "Vermilion City"
 
 	para "The Port of"
 	line "Exquisite Sunsets"
 	done
 
 VermilionGymSignText:
-	text "VERMILION CITY"
-	line "#MON GYM"
-	cont "LEADER: LT.SURGE"
+	text "Vermilion City"
+	line "#mon Gym"
+	cont "Leader: Lt.Surge"
 
 	para "The Lightning"
 	line "American"
 	done
 
 PokemonFanClubSignText:
-	text "#MON FAN CLUB"
+	text "#mon Fan Club"
 
-	para "All #MON Fans"
+	para "All #mon Fans"
 	line "Welcome!"
 	done
 
 VermilionCityPortSignText:
-	text "VERMILION PORT"
-	line "ENTRANCE"
+	text "Vermilion Port"
+	line "Entrance"
 	done
 
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  5, VERMILION_FISHING_SPEECH_HOUSE, 1
+	warp_event 19,  5, VERMILION_FISHING_SPEECH_HOUSE, 1
 	warp_event  9,  5, VERMILION_POKECENTER_1F, 1
 	warp_event  7, 13, POKEMON_FAN_CLUB, 1
 	warp_event 13, 13, VERMILION_MAGNET_TRAIN_SPEECH_HOUSE, 1
@@ -349,6 +349,7 @@ VermilionCity_MapEvents:
 	warp_event 19, 31, VERMILION_PORT_PASSAGE, 1
 	warp_event 20, 31, VERMILION_PORT_PASSAGE, 2
 	warp_event 13,  5, VERMILION_BERRY_MART, 1
+	warp_event  5,  5, VERMILION_SAILORS_HOUSE, 1
 
 	def_coord_events
 

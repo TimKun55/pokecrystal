@@ -108,7 +108,7 @@ INCLUDE "audio/music/lookyoungster.asm"
 INCLUDE "audio/music/tintower.asm"
 INCLUDE "audio/music/sprouttower.asm"
 INCLUDE "audio/music/burnedtower.asm"
-INCLUDE "audio/music/mom.asm"
+INCLUDE "audio/music/mum.asm"
 INCLUDE "audio/music/victoryroad.asm"
 INCLUDE "audio/music/pokemonlullaby.asm"
 INCLUDE "audio/music/pokemonmarch.asm"
@@ -157,6 +157,9 @@ INCLUDE "audio/music/lugiabattle.asm"
 INCLUDE "audio/music/hoohbattle.asm"
 INCLUDE "audio/music/kantolegendbattle.asm"
 INCLUDE "audio/music/safarizone.asm"
+INCLUDE "audio/music/cinnabarisland.asm"
+INCLUDE "audio/music/abandonedship.asm"
+INCLUDE "audio/music/ceruleancave.asm"
 
 
 SECTION "Sound Effects", ROMX

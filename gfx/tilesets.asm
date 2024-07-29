@@ -206,12 +206,6 @@ INCLUDE "data/tilesets/forest_collision.asm"
 TilesetFacilityMeta::
 INCBIN "data/tilesets/facility_metatiles.bin"
 
-TilesetBattleTowerOutsideMeta::
-INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
-
-TilesetBattleTowerOutsideColl::
-INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
-
 TilesetHoOhWordRoomColl::
 TilesetKabutoWordRoomColl::
 TilesetOmanyteWordRoomColl::
@@ -367,9 +361,6 @@ INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin"
 
 TilesetPlayersRoomColl::
 INCLUDE "data/tilesets/players_room_collision.asm"
-
-TilesetTraditionalHouseColl::
-INCLUDE "data/tilesets/traditional_house_collision.asm"
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto_2.2bpp.lz"
@@ -572,3 +563,12 @@ INCBIN "data/tilesets/kanto_6_metatiles.bin"
 
 TilesetKanto6GFX::
 INCBIN "gfx/tilesets/kanto_6.2bpp.lz"
+
+TilesetBattleTowerOutsideMeta::
+INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
+
+TilesetBattleTowerOutsideColl::
+INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
+
+TilesetTraditionalHouseColl::
+INCLUDE "data/tilesets/traditional_house_collision.asm"

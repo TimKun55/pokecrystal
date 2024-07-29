@@ -389,7 +389,6 @@ SwimmermPic:         INCBIN "gfx/trainers/swimmer_m.2bpp.lz"
 SunkernFrontpic:     INCBIN "gfx/pokemon/sunkern/front.animated.2bpp.lz"
 NidorinoBackpic:     INCBIN "gfx/pokemon/nidorino/back.2bpp.lz"
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
-CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 
 
 SECTION "Pics 14", ROMX
@@ -693,8 +692,6 @@ MagnetonFrontpic:    INCBIN "gfx/pokemon/magneton/front.animated.2bpp.lz"
 DugtrioFrontpic:     INCBIN "gfx/pokemon/dugtrio/front.animated.2bpp.lz"
 CyndaquilFrontpic:   INCBIN "gfx/pokemon/cyndaquil/front.animated.2bpp.lz"
 
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
 
@@ -730,6 +727,9 @@ SandshrewFrontpic:   INCBIN "gfx/pokemon/sandshrew/front.animated.2bpp.lz"
 SECTION "Pics 22", ROMX
 
 CelebiBackpic:       INCBIN "gfx/pokemon/celebi/back.2bpp.lz"
+CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
+RaichuAFrontpic:     INCBIN "gfx/pokemon/raichu_a/front.animated.2bpp.lz"
+RaichuABackpic:      INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
 
 SECTION "Pics 23", ROMX
 

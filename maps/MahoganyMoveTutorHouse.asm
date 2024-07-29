@@ -87,10 +87,10 @@ MahoganyMoveTutor1Script:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ENERGY BALL@"
-	db "DARK PULSE@"
-	db "AIR SLASH@"
-	db "CANCEL@"
+	db "Energy Ball@"
+	db "Dark Pulse@"
+	db "Air Slash@"
+	db "Cancel@"
 	
 MahoganyMoveTutor2:
 	faceplayer
@@ -163,9 +163,9 @@ MahoganyMoveTutor2:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "HAIL@"
-	db "SANDSTORM@"
-	db "CANCEL@"
+	db "Hail@"
+	db "Sandstorm@"
+	db "Cancel@"
 
 MahoganyMoveTutor3:
 	faceplayer
@@ -238,9 +238,9 @@ MahoganyMoveTutor3:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "RAIN DANCE@"
-	db "SUNNY DAY@"
-	db "CANCEL@"
+	db "Rain Dance@"
+	db "Sunny Day@"
+	db "Cancel@"
 
 TutorHouseBookshelfLeft:
 	jumptext TutorHouseBookshelfLeftText
@@ -251,7 +251,7 @@ TutorHouseBookshelfRight:
 AskTeachAMove1Text:
 	text "Hi there!"
 	line "For ¥8,000, I can"
-	cont "teach your #MON"
+	cont "teach your #mon"
 
 	para "amazing moves if"
 	line "you'd like."
@@ -267,7 +267,7 @@ MahoganyMoveTutorRefusalText:
 	line "you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -303,7 +303,7 @@ MahoganyMoveTutor1FarewellKidText:
 
 MahoganyMoveTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 
@@ -316,8 +316,8 @@ AskTeachAMoveWeather1Text:
 	line "How's the weather?"
 	
 	para "I teach damaging"
-	line "weather MOVES to"
-	cont "#MON for"
+	line "Weather Moves to"
+	cont "#mon for"
 	cont "¥2,000."
 	done
 
@@ -325,8 +325,8 @@ AskTeachAMoveWeather2Text:
 	text "Hi there!"
 	line "How's the weather?"
 	
-	para "I teach weather"
-	line "MOVES to #MON"
+	para "I teach Weather"
+	line "Moves to #mon"
 	cont "for ¥1,500."
 	done
 
@@ -355,57 +355,57 @@ MahoganyMoveTutorWeatherGoodluckText:
 	done
 
 TutorHouseBookshelfLeftText:
-	text "RAIN DANCE makes"
-	line "WATER moves stron-"
-	cont "ger and FIRE moves"
+	text "Rain Dance makes"
+	line "Water moves stron-"
+	cont "ger and Fire moves"
 	cont "weaker."
 	
 	para "It also gives"
-	line "THUNDER full"
+	line "Thunder full"
 	cont "accuracy, as well"
-	cont "as HURRICANE."
+	cont "as Hurricane."
 	
 	para "It also weakens"
-	line "SOLARBEAM."
+	line "Solarbeam."
 	
-	para "SUNNY DAY makes"
-	line "FIRE moves stron-"
-	cont "get and WATER"
+	para "Sunny Day makes"
+	line "Fire moves stron-"
+	cont "get and Water"
 	cont "moves weaker."
 	
-	para "SOLARBEAM fires"
+	para "Solarbeam fires"
 	line "off without a"
 	cont "charge up turn."
 	done
 
 TutorHouseBookshelfRightText:
-	text "SANDSTORM damages"
-	line "all TYPES each"
+	text "Sandstorm damages"
+	line "all Types each"
 	
 	para "turn except for"
-	line "GROUND, ROCK"
-	cont "and STEEL TYPES."
+	line "Ground, Rock"
+	cont "and Steel Types."
 	
 	para "Increases the"
-	line "SPCL.DEF of"
+	line "Special Defense of"
 	
-	para "ROCK TYPES by"
+	para "Rock Types by"
 	line "1.5x while active."
 
-	para "HAIL damages all"
-	line "TYPES each turn"
+	para "Hail damages all"
+	line "Types each turn"
 	
 	para "except for"
-	line "ICE TYPES."
+	line "Ice Types."
 	
 	para "Increases the"
-	line "DEFENSE of"
+	line "Defense of"
 	
-	para "ICE TYPES by"
+	para "Ice Types by"
 	line "1.5x while active."
 	
 	para "It also weakens"
-	line "SOLARBEAM."
+	line "Solarbeam."
 	done	
 
 MahoganyMoveTutorHouse_MapEvents:

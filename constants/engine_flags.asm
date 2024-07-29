@@ -11,9 +11,9 @@
 	const ENGINE_DAY_CARE_MAN_HAS_MON
 ; wDayCareLady
 	const ENGINE_DAY_CARE_LADY_HAS_MON
-; wMomSavingMoney
-	const ENGINE_MOM_SAVING_MONEY
-	const ENGINE_MOM_ACTIVE
+; wMumSavingMoney
+	const ENGINE_MUM_SAVING_MONEY
+	const ENGINE_MUM_ACTIVE
 ; wUnusedTwoDayTimerOn
 	const ENGINE_UNUSED_TWO_DAY_TIMER_ON
 ; wStatusFlags

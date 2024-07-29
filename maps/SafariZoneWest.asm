@@ -40,7 +40,7 @@ SafariZoneWestTMBodySlam:
 SafariZoneWestGentlemanText:
 	text "I love this place!"
 	line "So many rare"
-	cont "#MON to find!"
+	cont "#mon to find!"
 	done
 	
 SafariZoneWestLassText:
@@ -49,40 +49,41 @@ SafariZoneWestLassText:
 	cont "but I still can't"
 	
 	para "seem to catch"
-	line "a TAUROS!"
+	line "a Tauros!"
 	done
 
 SafariZoneWestAreaSignText:
-	text "SAFARI ZONE"
-	line "WEST AREA"
+	text "Safari Zone"
+	line "West Area"
 	done
 
 SafariZoneWestRestHouseSignText:
-	text "REST HOUSE"
+	text "Rest House"
 	done
 
 SafariZoneWestTrainerTips1SignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "FIRE-TYPE #MON"
+	para "Fire-type #mon"
 	line "cannot be burnt,"
 
-	para "and ICE TYPES can't"
-	line "be frozen solid."
+	para "and ice-type #-"
+	line "mon can't be"
+	cont "frozen solid."
 	done
 
 SafariZoneWestTrainerTips2SignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "In a SANDSTORM,"
-	line "ROCK-TYPE #MON"
+	para "In a Sandstorm,"
+	line "rock-type #mon"
 
 	para "get a boost to"
-	line "their SPDEF and"
+	line "their Sp.Def and"
 	
-	para "in HAIL, ICE TYPES"
-	line "get a boost to"
-	cont "their DEF."
+	para "in Hail, ice-type"
+	line "#mon get a"
+	cont "Def boost."
 	done
 
 SafariZoneWest_MapEvents:

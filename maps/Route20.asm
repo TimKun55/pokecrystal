@@ -74,9 +74,9 @@ SwimmerfNicoleAfterBattleText:
 
 SwimmerfLoriSeenText:
 	text "What an impressive"
-	line "collection of GYM"
+	line "collection of Gym"
 
-	para "BADGES. We should"
+	para "Badges. We should"
 	line "battle!"
 	done
 
@@ -85,7 +85,7 @@ SwimmerfLoriBeatenText:
 	done
 
 SwimmerfLoriAfterBattleText:
-	text "SURF is no longer"
+	text "Surf is no longer"
 	line "the only HM move"
 	cont "you use in water."
 	done
@@ -95,7 +95,7 @@ SwimmermCameronSeenText:
 	line "possible to swim"
 
 	para "all the way to"
-	line "JOHTO."
+	line "Johto."
 	done
 
 SwimmermCameronBeatenText:
@@ -110,7 +110,7 @@ SwimmermCameronAfterBattleText:
 	
 Route20OfficerScriptText:
 	text "Sorry, no entry"
-	line "to SEAFOAM ISLAND."
+	line "to Seafoam Island."
 	
 	para "There was a"
 	line "cave-in and"
@@ -135,4 +135,4 @@ Route20_MapEvents:
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
-	object_event 38,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route20OfficerScript, -1
+	object_event 38,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route20OfficerScript, -1

@@ -9,9 +9,9 @@ ItemPocketNames:
 	dw .Medicine
 	assert_table_length NUM_ITEM_TYPES
 
-.Item: db "ITEM POCKET@"
-.Key:  db "KEY POCKET@"
-.Ball: db "BALL POCKET@"
-.TM:   db "TM POCKET@"
-.Berry: db "BERRY POCKET@"
-.Medicine: db "MED. POCKET@"
+.Item: db "Item Pocket@"
+.Key:  db "Key Pocket@"
+.Ball: db "Ball Pocket@"
+.TM:   db "TM Pocket@"
+.Berry: db "Berry Pocket@"
+.Medicine: db "Med. Pocket@"

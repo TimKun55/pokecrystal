@@ -139,10 +139,14 @@ DisplayDexMonEvos:
 	call z, EVO_level
 	cp EVOLVE_ITEM
 	call z, EVO_item
-	cp EVOLVE_HELD
-	call z, EVO_held
+	cp EVOLVE_TRADE
+	call z, EVO_trade
 	cp EVOLVE_HAPPINESS
 	call z, EVO_happiness
+	cp EVOLVE_STAT
+	call z, EVO_stats
+	cp EVOLVE_HELD
+	call z, EVO_held
 ; after the Evo manner specific prints, HL should be pointing to next EVO manner or 0
 	pop af ; manner of evo
 	pop hl ; manner of evo byte +1
@@ -273,7 +277,7 @@ DisplayDexMonEvos:
 ; .EVO_text:
 ; 	db "EVOLUTIONS@"
 .doesnt_evo_text:
-	db "DOES NOT EVOLVE@"
+	db "Does Not Evolve@"
 .exit_early_print_cont
 	pop af
 .exit_early_print_cont2
@@ -326,8 +330,6 @@ EVO_level:
 	push hl ; pointing to lvl byte
 	call EVO_gethlcoord
 	ld [hl], $75 ; $5d
-	; ld de, .level_text
-	; call PlaceString ; "LVL"
 
 	pop hl ; pointing to lvl byte
 	ld a, BANK("Evolutions and Attacks")
@@ -340,8 +342,6 @@ EVO_level:
 	call PrintNum ; lvl evolved at
 	call EVO_inchlcoord	
 	ret
-; .level_text:
-; 	db "LVL@"
 
 EVO_item:
 	ld a, BANK("Evolutions and Attacks")
@@ -360,59 +360,46 @@ EVO_item:
 	call EVO_inchlcoord
 	ret
 .item_text:
-	db "ITEM@"
+	db "Item@"
 
-EVO_held:
-	push hl ; pointing to lvl byte
-	call EVO_gethlcoord
-	ld [hl], $75 ; $5d
-
-	pop hl ; pointing to lvl byte
+EVO_trade:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	ld [wTextDecimalByte], a
-	ld de, wTextDecimalByte
+	push af ; item index or -1 for no item
+	call EVO_gethlcoord
+	ld de, .trade_text
+	call PlaceString ; mon species
+	
+	pop af ; item index
+	cp -1
+	jr z, .done
+	push af ; trade item index
+	
 	call EVO_inchlcoord
-	inc hl
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum ; lvl evolved at
-	call EVO_inchlcoord	
+	ld b, 0
+	ld c, 5
+	add hl, bc
+	ld de, .hold_text
+	call PlaceString
+	
+	pop af
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	call EVO_inchlcoord
+	call PlaceString
+.done
+	call EVO_inchlcoord
 	ret
-
-	; ld a, BANK("Evolutions and Attacks")
-	; call GetFarByte
-	; push af ; item index or -1 for no item
-	; call EVO_gethlcoord
-	; ld de, .held_text
-	; call PlaceString ; mon species
-	
-	; pop af ; item index
-	; cp -1
-	; jr z, .done
-	; push af ; trade item index
-	
-	; call EVO_inchlcoord
-	; ld b, 0
-	; ld c, 5
-	; add hl, bc
-	; ld de, .hold_text
-	; call PlaceString
-	
-	; pop af
-	; ld [wNamedObjectIndex], a
-	; call GetItemName
-	; call EVO_inchlcoord
-	; call PlaceString
-; .done
-	; call EVO_inchlcoord
-	; ret
-; .held_text:
-	; db "HELD@"
-; .hold_text:
-	; db " ", "<+>","@"
+.trade_text:
+	db "Trade@"
+.hold_text:
+	db " ", "<+>","@"
 
 EVO_happiness:
 	push hl ; time of day byte
+	; call EVO_inchlcoord
+	; ld de, .happiness_text
+	; call PlaceString ; mon species
 	
 	pop hl ; time of day byte
 	ld a, BANK("Evolutions and Attacks")
@@ -441,6 +428,68 @@ EVO_happiness:
 .nite_text:
 	db $6e, $73, "@"
 	; db "NITE@"
+
+EVO_stats:
+	push hl ; level Needed byte
+	call EVO_gethlcoord
+	ld [hl], $75 ; for vram1 side
+
+	pop hl ; level needed byte
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte ; stats needed
+	
+	inc hl ; stats const needed byte
+	push hl ; stats const needed byte
+;print lvl
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	call EVO_inchlcoord
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	inc hl ;
+	call PrintNum
+	
+	pop hl ; stats const needed byte
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte ; Stats Const, ATK >= DEF etc
+
+	ld de, .atk_eq_def_text
+	cp ATK_EQ_DEF
+	jr z, .done
+	ld de, .atk_gt_def_text
+	cp ATK_LT_DEF
+	jr z, .done
+	ld de, .atk_lt_def_text
+.done
+	call EVO_inchlcoord
+	call PlaceString
+	call EVO_inchlcoord
+	ret
+
+.atk_eq_def_text:
+	db "Atk = Def@"
+.atk_gt_def_text:
+	db "Atk > Def@"
+.atk_lt_def_text:
+	db "Atk < Def@"
+
+EVO_held:
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	call EVO_inchlcoord
+	push af ; item index
+	ld de, .item_text
+	call PlaceString ; item:
+
+	pop af ; item index
+	ld [wNamedObjectIndex], a
+	call GetItemName
+
+	call EVO_inchlcoord
+	call PlaceString
+	call EVO_inchlcoord
+	ret
+.item_text:
+	db "Item@"
 
 EVO_place_Mon_Types:
 	push af

@@ -61,15 +61,15 @@ JackThunderTriviaText:
 	text "Did you know?"
 
 	para "When it's raining,"
-	line "THUNDER is sure to"
+	line "Thunder is sure to"
 	cont "strike."
 	done
 
 JackRolloutTriviaText:
 	text "Did you know…?"
 
-	para "If you use DEFENSE"
-	line "CURL, ROLLOUT's"
+	para "If you use Defense"
+	line "Curl, Rollout's"
 
 	para "power goes way up"
 	line "past normal."
@@ -79,7 +79,7 @@ JackSolarbeamTriviaText:
 	text "Did you know…?"
 
 	para "If the sunlight is"
-	line "harsh, SOLARBEAM"
+	line "harsh, Solarbeam"
 
 	para "doesn't need to be"
 	line "charged up."
@@ -89,9 +89,9 @@ JackStompTriviaText:
 	text "Did you know…?"
 
 	para "If the opponent"
-	line "uses MINIMIZE,"
+	line "uses Minimize,"
 
-	para "your STOMP becomes"
+	para "your Stomp becomes"
 	line "more powerful."
 	done
 
@@ -99,9 +99,9 @@ JackGustTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
-	line "is FLYing, your"
+	line "is Flying, your"
 
-	para "GUST becomes much"
+	para "Gust becomes much"
 	line "more powerful."
 	done
 
@@ -109,9 +109,9 @@ JackTwisterTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
-	line "is FLYing, your"
+	line "is Flying, your"
 
-	para "TWISTER becomes"
+	para "Twister becomes"
 	line "more powerful."
 	done
 
@@ -119,9 +119,9 @@ JackEarthquakeTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
-	line "uses DIG, your"
+	line "uses Dig, your"
 
-	para "EARTHQUAKE becomes"
+	para "Earthquake becomes"
 	line "more powerful."
 	done
 
@@ -129,9 +129,9 @@ JackMagnitudeTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
-	line "uses DIG, your"
+	line "uses Dig, your"
 
-	para "MAGNITUDE becomes"
+	para "Magnitude becomes"
 	line "more powerful."
 	done
 
@@ -142,7 +142,7 @@ JackSandstormTriviaText:
 	line "and steel types"
 
 	para "can't be hurt by"
-	line "SANDSTORM."
+	line "Sandstorm."
 	done
 
 JackSunnyDayTriviaText:

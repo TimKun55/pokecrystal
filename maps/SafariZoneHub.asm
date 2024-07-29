@@ -20,12 +20,12 @@ SafariZoneHubRestHouseSign:
 	jumptext SafariZoneHubRestHouseSignText
 	
 SafariZoneHubAreaSignText:
-	text "SAFARI ZONE"
-	line "CENTER AREA"
+	text "Safari Zone"
+	line "Center Area"
 	done
 
 SafariZoneHubRestHouseSignText:
-	text "REST HOUSE"
+	text "Rest House"
 	done
 
 SafariZoneHub_MapEvents:

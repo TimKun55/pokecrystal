@@ -26,6 +26,6 @@ BadEgg:
 	bigdw 5 ; SAtk
 	bigdw 5 ; SDef
 	db EGG ; Alt species
-	db "BAD EGG@@@@" ; Nickname
+	db "Bad Egg@@@@" ; Nickname
 	db "?@@@@@@@@@@" ; OT name
 BadEggEnd:

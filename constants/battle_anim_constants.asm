@@ -130,7 +130,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_PETAL_DANCE         ; 61
 	const BATTLE_ANIM_OBJ_SLUDGE_BOMB         ; 62
 	const BATTLE_ANIM_OBJ_PAY_DAY             ; 63
-	const BATTLE_ANIM_OBJ_SONICBOOM_JP_UNUSED ; 64
+	const BATTLE_ANIM_OBJ_ENERGY_BALL         ; 64
 	const BATTLE_ANIM_OBJ_MIMIC               ; 65
 	const BATTLE_ANIM_OBJ_ATTRACT             ; 66
 	const BATTLE_ANIM_OBJ_BONEMERANG          ; 67
@@ -177,7 +177,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_DRAGONBREATH        ; 90
 	const BATTLE_ANIM_OBJ_CONVERSION          ; 91
 	const BATTLE_ANIM_OBJ_SPIDER_WEB          ; 92
-	const BATTLE_ANIM_OBJ_CAKE_UNUSED         ; 93
+	const BATTLE_ANIM_OBJ_CAKE                ; 93
 	const BATTLE_ANIM_OBJ_NIGHTMARE           ; 94
 	const BATTLE_ANIM_OBJ_IN_NIGHTMARE        ; 95
 	const BATTLE_ANIM_OBJ_LOVELY_KISS         ; 96
@@ -196,7 +196,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ZAP_CANNON          ; a3
 	const BATTLE_ANIM_OBJ_SPITE               ; a4
 	const BATTLE_ANIM_OBJ_CURSE               ; a5
-	const BATTLE_ANIM_OBJ_PERISH_SONG         ; a6
+	const BATTLE_ANIM_OBJ_ICICLE_CRASH        ; a6
 	const BATTLE_ANIM_OBJ_FORESIGHT           ; a7
 	const BATTLE_ANIM_OBJ_RAPID_SPIN          ; a8
 	const BATTLE_ANIM_OBJ_SWAGGER             ; a9
@@ -462,7 +462,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_MEGAPHONE_UNUSED      ; 98
 	const BATTLE_ANIM_FRAMESET_ITEM_BAG              ; 99
 	const BATTLE_ANIM_FRAMESET_SPIDER_WEB            ; 9a
-	const BATTLE_ANIM_FRAMESET_UNUSED_CAKE           ; 9b
+	const BATTLE_ANIM_FRAMESET_CAKE                  ; 9b
 	const BATTLE_ANIM_FRAMESET_IMP                   ; 9c
 	const BATTLE_ANIM_FRAMESET_IMP_FLIPPED           ; 9d
 	const BATTLE_ANIM_FRAMESET_CHERUB                ; 9e

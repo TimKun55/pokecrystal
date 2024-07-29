@@ -89,10 +89,10 @@ CeladonHomeDecorStore2FClerk1Script:
 .MenuData1:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "MAGNA     ¥30000@"
-	db "TROPIC    ¥40000@"
-	db "JUMBO     ¥80000@"
-	db "CANCEL@"
+	db "Magna     ¥30000@"
+	db "Tropic    ¥40000@"
+	db "Jumbo     ¥80000@"
+	db "Cancel@"
 
 CeladonHomeDecorStore2FClerk2Script:
 	faceplayer
@@ -175,10 +175,10 @@ CeladonHomeDecorStore2FClerk2Script:
 .MenuData2:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "PIKACHU   ¥20000@"
-	db "CLEFAIRY  ¥10000@"
-	db "MARILL    ¥40000@"
-	db "CANCEL@"
+	db "Pikachu   ¥20000@"
+	db "Clefairy  ¥10000@"
+	db "Marill    ¥40000@"
+	db "Cancel@"
 
 CeladonHomeDecorStore2FPokefanfScript:
 	jumptextfaceplayer CeladonHomeDecorStore2FPokefanfText
@@ -203,31 +203,31 @@ CeladonHomeDecorStore2FClerk1Text:
 
 BoughtMagnaPlantText:
 	text "<PLAYER> bought"
-	line "MAGNA PLANT."
+	line "Magna Plant."
 	done
 
 MagnaPlantSentText:
-	text "MAGNA PLANT"
+	text "Magna Plant"
 	line "was sent home."
 	done
 
 BoughtTropicPlantText:
 	text "<PLAYER> bought"
-	line "TROPIC PLANT."
+	line "Tropic Plant."
 	done
 
 TropicPlantSentText:
-	text "TROPIC PLANT"
+	text "Tropic Plant"
 	line "was sent home."
 	done
 
 BoughtJumboPlantText:
 	text "<PLAYER> bought"
-	line "JUMBO PLANT."
+	line "Jumbo Plant."
 	done
 
 JumboPlantSentText:
-	text "JUMBO PLANT"
+	text "Jumbo Plant"
 	line "was sent home."
 	done
 	
@@ -239,31 +239,31 @@ CeladonHomeDecorStore2FClerk2Text:
 
 BoughtPikachuPosterText:
 	text "<PLAYER> bought"
-	line "PIKACHU POSTER."
+	line "Pikachu Poster."
 	done
 
 PikachuPosterSentText:
-	text "PIKACHU POSTER"
+	text "Pikachu Poster"
 	line "was sent home."
 	done
 
 BoughtClefairyPosterText:
 	text "<PLAYER> bought"
-	line "CLEFAIRY POSTER."
+	line "Clefairy Poster."
 	done
 
 ClefairyPosterSentText:
-	text "CLEFAIRY POSTER"
+	text "Clefairy Poster"
 	line "was sent home."
 	done
 
 BoughtMarillPosterText:
 	text "<PLAYER> bought"
-	line "MARILL POSTER."
+	line "Marill Poster."
 	done
 
 MarillPosterSentText:
-	text "MARILL POSTER"
+	text "Marill Poster"
 	line "was sent home."
 	done
 
@@ -298,17 +298,17 @@ CeladonHomeDecorStore2FDirectoryText:
 	done
 	
 CeladonHomeDecorStore2FClefairyPosterText:
-	text "A CLEFAIRY Poster."
+	text "A Clefairy Poster."
 	line "It's super cute!"
 	done
 
 CeladonHomeDecorStore2FMarillPosterText:
-	text "A MARILL Poster."
+	text "A Marill Poster."
 	line "It's so dynamic!"
 	done
 
 CeladonHomeDecorStore2FPikachuPosterText:
-	text "A PIKACHU Poster."
+	text "A Pikachu Poster."
 	line "It's so cool!"
 	done
 

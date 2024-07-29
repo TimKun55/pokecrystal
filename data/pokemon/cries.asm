@@ -178,7 +178,7 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
-	mon_cry CRY_METAPOD,      32,  320 ; MAGNEZONE
+	mon_cry CRY_METAPOD,     -32,  450 ; MAGNEZONE
 	mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
@@ -258,8 +258,8 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	mon_cry CRY_RAICHU,      230,  140 ; RAICHU_A
 	assert_table_length NUM_POKEMON
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 252
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 253
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 255

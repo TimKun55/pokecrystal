@@ -5,6 +5,8 @@
 	const ROUTE14_KIM
 	const ROUTE14_LADY_EVA
 	const ROUTE14_TOGEKISS
+	const ROUTE14_SWIMMER_GUY1
+	const ROUTE14_SWIMMER_GUY2
 
 Route14_MapScripts:
 	def_scene_scripts
@@ -51,6 +53,28 @@ TrainerPokefanmTrevor:
 	waitbutton
 	closetext
 	end
+
+Route14SwimmermHal:
+	trainer SWIMMERM, HAL, EVENT_BEAT_SWIMMERM_HAL, SwimmermHalSeenText, SwimmermHalBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmermHalAfterBattleText
+	waitbutton
+	closetext
+	end
+
+Route14SwimmermPaton:
+	trainer SWIMMERM, PATON, EVENT_BEAT_SWIMMERM_PATON, SwimmermPatonSeenText, SwimmermPatonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmermPatonAfterBattleText
+	waitbutton
+	closetext
+	end
 	
 TrainerLadyEva:
 	trainer LADY, EVA, EVENT_BEAT_LADY_EVA, LadyEvaSeenText, LadyEvaBeatenText, 0, .Script
@@ -88,7 +112,7 @@ PokefanmCarterSeenText:
 	line "I had a hard time"
 
 	para "catching my prized"
-	line "#MON."
+	line "#mon."
 	done
 
 PokefanmCarterBeatenText:
@@ -96,8 +120,8 @@ PokefanmCarterBeatenText:
 	done
 
 PokefanmCarterAfterBattleText:
-	text "SQUIRTLE, CHARMAN-"
-	line "DER and BULBASAUR…"
+	text "Squirtle, Charman-"
+	line "der and Bulbasaur…"
 
 	para "I think that's a"
 	line "well-balanced mix."
@@ -106,7 +130,7 @@ PokefanmCarterAfterBattleText:
 BirdKeeperRoySeenText:
 	text "My dream is to fly"
 	line "with my beloved"
-	cont "bird #MON."
+	cont "bird #mon."
 	done
 
 BirdKeeperRoyBeatenText:
@@ -115,17 +139,17 @@ BirdKeeperRoyBeatenText:
 	done
 
 BirdKeeperRoyAfterBattleText:
-	text "You have #MON"
+	text "You have #mon"
 	line "that know the HM"
 
-	para "move FLY, don't"
+	para "move Fly, don't"
 	line "you? I envy you."
 	done
 
 PokefanmTrevorSeenText:
 	text "Hi. Did you know…?"
 
-	para "#MON get more"
+	para "#mon get more"
 	line "friendly if you"
 
 	para "train them in a"
@@ -135,7 +159,7 @@ PokefanmTrevorSeenText:
 
 PokefanmTrevorBeatenText:
 	text "Where did I meet"
-	line "this PSYDUCK?"
+	line "this Psyduck?"
 	done
 
 PokefanmTrevorAfterBattleText:
@@ -143,13 +167,60 @@ PokefanmTrevorAfterBattleText:
 	line "an easy way to"
 
 	para "identify where I"
-	line "got my #MON…"
+	line "got my #mon…"
+	done
+
+SwimmermHalSeenText:
+	text "Swimming today."
+
+	para "Swimming tomorrow."
+
+	para "Battle now!"
+	done
+
+SwimmermHalBeatenText:
+	text "Should have stuck"
+	line "to swimming."
+	done
+
+SwimmermHalAfterBattleText:
+	text "I've gotta do a"
+	line "lot more training;"
+
+	para "for #mon and"
+	line "for swimming."
+	done
+
+SwimmermPatonSeenText:
+	text "I swam out here"
+	line "to explore that"
+	cont "small island, but"
+
+	para "there was nothing"
+	line "there."
+
+	para "I need to vent"
+	line "with a battle!"
+	done
+
+SwimmermPatonBeatenText:
+	text "Frustrated AND"
+	line "disappointed."
+	done
+
+SwimmermPatonAfterBattleText:
+	text "There has to be"
+	line "something there!"
+
+	para "It's colder there"
+	line "and the trees look"
+	cont "frozen…"
 	done
 	
 LadyEvaSeenText:
-	text "Hi! I'm EVA."
-	line "You're the TRAINER"
-	cont "from JOHTO!"
+	text "Hi! I'm Eva."
+	line "You're the trainer"
+	cont "from Johto!"
 	
 	para "My sisters have"
 	line "told me all about"
@@ -165,11 +236,11 @@ LadyEvaBeatenText:
 	done
 
 LadyEvaAfterBattleText:
-	para "I thought I would"
-	line "apply to be a GYM"
-	cont "LEADER for the"
+	text "I thought I would"
+	line "apply to be a Gym"
+	cont "Leader for the"
 	
-	para "FAIRY TYPE but"
+	para "fairy-type but"
 	line "you've shown me"
 	cont "I've still got"
 	
@@ -177,12 +248,12 @@ LadyEvaAfterBattleText:
 	line "improvement!"
 	
 	para "If you've beaten"
-	line "LIA and ZOE, go"
-	cont "see GRANNY!"
+	line "Lia and Zoe, go"
+	cont "see Granny!"
 	done
 
 Route14TogekissText:
-	text "TOGEKISS: Toge!"
+	text "Togekiss: Toge!"
 	done
 
 Route14_MapEvents:
@@ -203,3 +274,5 @@ Route14_MapEvents:
 	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
 	object_event 15, 11, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerLadyEva, -1
 	object_event 16, 11, SPRITE_TOGEKISS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route14Togekiss, -1
+	object_event 29, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route14SwimmermHal, -1
+	object_event 35, 10, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route14SwimmermPaton, -1

@@ -1,5 +1,5 @@
-	db "MAGICAL@" ; species name
-	dw 211, 97 ; height, width
+	db "Magical@" ; species name
+	dw 090, 44 ; height, width
 
 	db   "Its cries sound"
 	next "like incantations"

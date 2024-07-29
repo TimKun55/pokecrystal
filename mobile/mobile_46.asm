@@ -3881,17 +3881,17 @@ Strings_L10ToL100:
 	db " L:80 @@"
 	db " L:90 @@"
 	db " L:100@@"
-	db "CANCEL@@"
+	db "Cancel@@"
 
 Strings_Ll0ToL40:
 	db " L:10 @@"
 	db " L:20 @@"
 	db " L:30 @@"
 	db " L:40 @@"
-	db "CANCEL@@"
+	db "Cancel@@"
 
 BattleTowerCancelString: ; unreferenced
-	db "CANCEL@"
+	db "Cancel@"
 
 BattleTower_LevelCheck:
 	ldh a, [rSVBK]
@@ -4628,10 +4628,10 @@ BattleTowerRoomMenu2_UpdateYesNoMenu:
 	ret
 
 String_11a2cf:
-	db "YES@"
+	db "Yes@"
 
 String_11a2d3:
-	db "NO@"
+	db "No@"
 
 MenuHeader_11a2d6: ; unreferenced
 	db MENU_BACKUP_TILES ; flags
@@ -5422,25 +5422,25 @@ Function11a9f4: ; unreferenced
 	ret
 
 Text_SaveFileWillBeSent:
-	text "SAVE FILE will be"
+	text "Save File will be"
 	line "sent."
 	done
 
 Text_SentSaveFileReadingNews:
-	text "Sent SAVE FILE."
-	line "Reading NEWS…"
+	text "Sent Save File."
+	line "Reading News…"
 	done
 
 Text_ReadingNews:
-	text "Reading NEWS…"
+	text "Reading News…"
 	done
 
 Text_ReceivedNews:
-	text "Received NEWS!"
+	text "Received News!"
 	done
 
 Text_QuitReadingNews:
-	text "Quit reading NEWS?"
+	text "Quit reading News?"
 	done
 
 Text_CanceledSendingSaveFile: ; unreferenced
@@ -5464,22 +5464,22 @@ Text_BattleRoomVisitLimit: ; unreferenced
 	done
 
 Text_PartyMonTopsThisLevel:
-	text "A party #MON"
+	text "A party #mon"
 	line "tops this level."
 	done
 
 Text_UberRestriction:
 	text_ram wcd49
 	text " may go"
-	line "only to BATTLE"
+	line "only to Battle"
 
-	para "ROOMS that are"
+	para "Rooms that are"
 	line "Lv.70 or higher."
 	done
 
 Text_CancelBattleRoomChallenge:
-	text "Cancel your BATTLE"
-	line "ROOM challenge?"
+	text "Cancel your Battle"
+	line "Room challenge?"
 	done
 
 Text_ExitGymLeaderHonorRoll:
@@ -5498,7 +5498,7 @@ Text_WhatLevelDoYouWantToChallenge:
 	done
 
 Text_CheckBattleRoomListByMaxLevel:
-	text "Check BATTLE ROOM"
+	text "Check Battle Room"
 	line "list by max level?"
 	done
 
@@ -5513,7 +5513,7 @@ Text_WhichBattleRoom: ; unreferenced
 
 Text_ThisBattleRoomPleaseWait: ; unreferenced
 	text_ram wStringBuffer3
-	text "'s ROOM"
+	text "'s Room"
 	line "@"
 	text_ram wStringBuffer4
 	text "?"

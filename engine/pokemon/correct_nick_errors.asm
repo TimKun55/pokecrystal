@@ -69,6 +69,6 @@ CorrectNickErrors::
 	db "<NI>",     "<NO>"    + 1
 	db "<ROUTE>",  "<GREEN>" + 1
 	db "<ENEMY>",  "<ENEMY>" + 1
-	db "<MOM>",    "<TM>"    + 1
+	db "<MUM>",    "<TM>"    + 1
 	db "<ROCKET>", " "
 	db -1 ; end

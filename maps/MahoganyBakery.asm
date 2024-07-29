@@ -204,14 +204,14 @@ MahoganyBakeryTeddiursa:
 	end
 
 BakeryPoffinsFromBerryText:
-	text "We make POFFINS"
-	line "from BERRYS."
+	text "We make Poffins"
+	line "from Berries."
 
 	para "Collect them from"
 	line "trees and bring"
 	cont "them to us."
 
-	para "We'll make POFFINS"
+	para "We'll make Poffins"
 	line "out of them."
 	done
 
@@ -220,7 +220,7 @@ BakeryAskYouHaveABerryText:
 	line "BERRYS for me?"
 
 	para "Good! I'll make"
-	line "some POFFINS!"
+	line "some Poffins!"
 	done
 
 BakeryGetStartedText:
@@ -237,38 +237,38 @@ BakeryTurnedOutGreatText:
 	line "out great."
 
 	para "Try letting your"
-	line "#MON hold"
+	line "#mon hold"
 	cont "one in battle!"
 	done
 
 BakeryGrampsPoffinExplainText:
-	text "When a #MON"
-	line "holding a POFFIN"
+	text "When a #mon"
+	line "holding a Poffin"
 	
 	para "gets hit in"
 	line "battle, it eats"
 	
-	para "the POFFIN and"
+	para "the Poffin and"
 	line "gets a stat boost!"
 	
-	para "Our POFFINS are"
+	para "Our Poffins are"
 	line "quite popular!"
 	done
 
 MahoganyBakeryLassText:
-	text "My TEDDIURSA has"
-	line "a high ATK stat"
+	text "My Teddiursa has"
+	line "a high Atk stat"
 	
 	para "and loves to eat"
-	line "SPICY POFFINS!"
+	line "Spicy Poffins!"
 	
 	para "In battle, it"
-	line "makes TEDDIURSA"
+	line "makes Teddiursa"
 	cont "even stronger!"
 	done
 
 MahoganyBakeryTeddiursaText:
-	text "TEDDIURSA: Diur!"
+	text "Teddiursa: Diur!"
 	done
 
 MahoganyBakery_MapEvents:

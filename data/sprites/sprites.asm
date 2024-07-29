@@ -7,8 +7,8 @@ ENDM
 OverworldSprites:
 ; entries correspond to SPRITE_* constants
 	table_width NUM_SPRITEDATA_FIELDS, OverworldSprites
-	overworld_sprite ChrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ChrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite EthanSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite EthanBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GameboyKidSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite RivalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OakSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
@@ -18,9 +18,9 @@ OverworldSprites:
 	overworld_sprite ElderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JanineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite KurtSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MumSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BlaineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite RedsMumSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PURPLE
@@ -83,7 +83,7 @@ OverworldSprites:
 	overworld_sprite BikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PharmacistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ClefairyWalkingSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ChrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite EthanSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RattataBackSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN

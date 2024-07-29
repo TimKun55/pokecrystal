@@ -1,4 +1,39 @@
 LoadSpecialMapPalette:
+    ld a, [wMapGroup]
+    cp GROUP_CELADON_CITY
+    jr nz, .continue1
+    ld a, [wMapNumber]
+    cp MAP_CELADON_GYM
+    jp z, .gym_palette
+	
+.continue1
+    cp GROUP_VIRIDIAN_CITY
+    jr nz, .continue2
+    ld a, [wMapNumber]
+    cp MAP_VIRIDIAN_GYM
+    jp z, .gym_palette
+
+.continue2
+	cp GROUP_FAST_SHIP_1F
+    jr nz, .continue3
+    ld a, [wMapNumber]
+    cp MAP_FARAWAY_ISLAND_OUTSIDE
+    jp z, .faraway_palette
+	cp MAP_FARAWAY_ISLAND_INSIDE
+    jp z, .faraway_palette
+
+.continue3
+	cp GROUP_SPROUT_TOWER_1F
+    jr nz, .continue4
+    ld a, [wMapNumber]
+    cp MAP_CERULEAN_CAVE_1F
+    jp z, .ceruleancave_palette
+	cp MAP_CERULEAN_CAVE_2F
+    jp z, .ceruleancave_palette
+    cp MAP_CERULEAN_CAVE_B1F
+    jp z, .ceruleancave_palette
+
+.continue4
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -10,8 +45,6 @@ LoadSpecialMapPalette:
 	jr z, .mansion_mobile
 	cp TILESET_POKECENTER
 	jr z, .pokecenter
-	cp TILESET_TRAIN_STATION
-	jr z, .trainstation
 	jr .do_nothing
 
 .battle_tower_inside
@@ -43,8 +76,18 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.trainstation
-	call LoadTrainStationPalette
+.gym_palette
+	call LoadGymPalette
+	scf
+	ret
+
+.faraway_palette
+	call LoadFarawayPalette
+	scf
+	ret
+
+.ceruleancave_palette
+	call LoadCeruleanCavePalette
 	scf
 	ret
 
@@ -125,13 +168,35 @@ LoadPokeCenterPalette:
 PokeCenterPalette:
 INCLUDE "gfx/tilesets/pokecenter.pal"
 
-LoadTrainStationPalette:
+LoadGymPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, TrainStationPalette
+	ld hl, GymPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
 	
-TrainStationPalette:
-INCLUDE "gfx/tilesets/train_station.pal"	
+GymPalette:
+INCLUDE "gfx/tilesets/gym_palette.pal"	
+
+LoadFarawayPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, FarawayPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+FarawayPalette:
+INCLUDE "gfx/tilesets/faraway_palette.pal"
+
+LoadCeruleanCavePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CeruleanCavePalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+CeruleanCavePalette:
+INCLUDE "gfx/tilesets/ceruleancave_palette.pal"

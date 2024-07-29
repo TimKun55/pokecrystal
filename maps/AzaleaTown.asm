@@ -22,6 +22,7 @@ AzaleaTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback
+	callback MAPCALLBACK_OBJECTS, AzaleaTownProtonCallback
 
 AzaleaTownNoop1Scene:
 	end
@@ -34,6 +35,18 @@ AzaleaTownNoop3Scene:
 
 AzaleaTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_AZALEA
+	endcallback
+
+AzaleaTownProtonCallback:
+	checkevent EVENT_BEAT_PROTON_3
+	iftrue .Appear
+	disappear AZALEATOWN_PROTON
+	disappear AZALEATOWN_SLOWPOKE5
+	endcallback
+
+.Appear:
+	appear AZALEATOWN_PROTON
+	appear AZALEATOWN_SLOWPOKE5
 	endcallback
 	
 AzaleaTownRivalBattleScene1:
@@ -272,7 +285,7 @@ AzaleaTownRivalBeforeText:
 	line "thing."
 
 	para "Is it true that"
-	line "TEAM ROCKET has"
+	line "Team Rocket has"
 	cont "returned?"
 
 	para "What? You beat"
@@ -286,19 +299,19 @@ AzaleaTownRivalBeforeText:
 
 AzaleaTownRivalWinText:
 	text "… Humph! Useless"
-	line "#MON!"
+	line "#mon!"
 
 	para "Listen, you. You"
 	line "only won because"
 
-	para "my #MON were"
+	para "my #mon were"
 	line "weak."
 	done
 
 AzaleaTownRivalAfterText:
 	text "I hate the weak."
 
-	para "#MON, trainers."
+	para "#mon, trainers."
 	line "It doesn't matter"
 	cont "who or what."
 
@@ -306,8 +319,8 @@ AzaleaTownRivalAfterText:
 	line "strong and wipe"
 	cont "out the weak."
 
-	para "That goes for TEAM"
-	line "ROCKET too."
+	para "That goes for Team"
+	line "Rocket too."
 
 	para "They act big and"
 	line "tough in a group."
@@ -341,7 +354,7 @@ AzaleaTownRocket1Text:
 
 AzaleaTownRocket2Text:
 	text "Do you know about"
-	line "SLOWPOKETAIL? I"
+	line "SlowpokeTail? I"
 	cont "heard it's tasty!"
 
 	para "Aren't you glad I"
@@ -349,17 +362,17 @@ AzaleaTownRocket2Text:
 	done
 
 AzaleaTownGrampsTextBefore:
-	text "The SLOWPOKE have"
+	text "The Slowpoke have"
 	line "disappeared from"
 	cont "town…"
 
 	para "I heard their"
-	line "TAILS are being"
+	line "Tails are being"
 	cont "sold somewhere."
 	done
 
 AzaleaTownGrampsTextAfter:
-	text "The SLOWPOKE have"
+	text "The Slowpoke have"
 	line "returned."
 
 	para "Knowing them, they"
@@ -371,17 +384,17 @@ AzaleaTownGrampsTextAfter:
 
 AzaleaTownTeacherText:
 	text "Did you come to"
-	line "get KURT to make"
-	cont "some BALLS?"
+	line "get Kurt to make"
+	cont "some Balls?"
 
 	para "A lot of people do"
 	line "just that."
 	done
 
 AzaleaTownYoungsterText:
-	text "Cut through AZALEA"
+	text "Cut through Azalea"
 	line "and you'll be in"
-	cont "ILEX FOREST."
+	cont "Ilex Forest."
 
 	para "But these skinny"
 	line "trees make it"
@@ -389,13 +402,13 @@ AzaleaTownYoungsterText:
 	para "impossible to get"
 	line "through."
 
-	para "The CHARCOAL MAN's"
-	line "#MON can CUT"
+	para "The Charcoal Man's"
+	line "#mon can Cut"
 	cont "down trees."
 	done
 
 AzaleaTownSlowpokeText1:
-	text "SLOWPOKE: …"
+	text "Slowpoke: …"
 
 	para "<……> <……> <……>"
 	done
@@ -404,12 +417,12 @@ AzaleaTownSlowpokeText2:
 	text "<……> <……>Yawn?"
 	done
 	
-WoosterText:
-	text "WOOSTER: Gugyoo…"
+WoosterText: ; unused
+	text "Wooster: Gugyoo…"
 	done
 
 AzaleaTownKurtText1:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "restless!"
 
 	para "What is going on?"
@@ -417,12 +430,12 @@ AzaleaTownKurtText1:
 
 AzaleaTownKurtText2:
 	text "<PLAYER>, here's"
-	line "your GS BALL back!"
+	line "your GS Ball back!"
 	done
 
 AzaleaTownKurtText3:
 	text "Could you go see"
-	line "why ILEX FOREST is"
+	line "why Ilex Forest is"
 	cont "so restless?"
 	done
 	
@@ -431,7 +444,7 @@ AzaleaTownProton1Text:
 	line "to apologise for"
 	
 	para "what we did to"
-	line "the SLOWPOKE, but"
+	line "the Slowpoke, but"
 	
 	para "they don't seem"
 	line "to trust me yet…"
@@ -443,50 +456,50 @@ AzaleaTownProton2Text:
 	done
 
 AzaleaTownSignText:
-	text "AZALEA TOWN"
+	text "Azalea Town"
 	line "Where People and"
 
-	para "#MON Live in"
+	para "#mon Live in"
 	line "Happy Harmony"
 	done
 
 KurtsHouseSignText:
-	text "KURT'S HOUSE"
+	text "Kurt's House"
 	done
 
 AzaleaGymSignText:
-	text "AZALEA TOWN"
-	line "#MON GYM"
-	cont "LEADER: BUGSY"
+	text "Azalea Town"
+	line "#mon Gym"
+	cont "Leader: Bugsy"
 
 	para "The Walking"
-	line "Bug #MON"
+	line "Bug #mon"
 	cont "Encyclopedia"
 	done
 
 SlowpokeWellSignText:
-	text "SLOWPOKE WELL"
+	text "Slowpoke Well"
 
 	para "Also known as the"
-	line "RAINMAKER WELL."
+	line "Rainmaker Well."
 
 	para "Locals believe"
-	line "that a SLOWPOKE's"
+	line "that a Slowpoke's"
 	cont "yawn summons rain."
 
 	para "Records show that"
-	line "a SLOWPOKE's yawn"
+	line "a Slowpoke's yawn"
 
 	para "ended a drought"
 	line "400 years ago."
 	done
 
 CharcoalKilnSignText:
-	text "CHARCOAL KILN"
+	text "Charcoal Kiln"
 	done
 
 AzaleaTownIlexForestSignText:
-	text "ILEX FOREST"
+	text "Ilex Forest"
 
 	para "Enter through the"
 	line "gate."

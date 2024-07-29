@@ -152,6 +152,9 @@ MrPokemonsHouse_BrokenComputer:
 MrPokemonsHouse_StrangeCoins:
 	jumptext MrPokemonsHouse_StrangeCoinsText
 
+MrPokemonsHouse_DisplayCabinet:
+	jumptext MrPokemonsHouse_DisplayCabinetText
+
 MrPokemonsHouse_PlayerWalksToMrPokemon:
 	step RIGHT
 	step UP
@@ -174,54 +177,54 @@ MrPokemonIntroText1:
 	text "Hello, hello! You"
 	line "must be <PLAY_G>."
 
-	para "PROF.ELM said that"
+	para "Prof.Elm said that"
 	line "you would visit."
 	done
 
 MrPokemonIntroText2:
 	text "This is what I"
-	line "want PROF.ELM to"
+	line "want Prof.Elm to"
 	cont "examine."
 	done
 
 MrPokemonsHouse_GotEggText:
 	text "<PLAYER> received"
-	line "the MYSTERY EGG."
+	line "the Mystery Egg."
 	done
 
 MrPokemonIntroText3:
 	text "I know a couple"
-	line "who run a #MON"
-	cont "DAY-CARE service."
+	line "who run a #mon"
+	cont "Day-Care service."
 
 	para "They gave me that"
-	line "EGG."
+	line "Egg."
 
 	para "I was intrigued,"
 	line "so I sent mail to"
-	cont "PROF.ELM."
+	cont "Prof.Elm."
 
-	para "For #MON evolu-"
-	line "tion, PROF.ELM is"
+	para "For #mon evolu-"
+	line "tion, Prof.Elm is"
 	cont "the authority."
 	done
 
 MrPokemonIntroText4:
-	text "Even PROF.OAK here"
+	text "Even Prof.Oak here"
 	line "recognizes that."
 	done
 
 MrPokemonIntroText5:
 	text "If my assumption"
-	line "is correct, PROF."
-	cont "ELM will know it."
+	line "is correct, Prof."
+	cont "Elm will know it."
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
 	text "You are returning"
-	line "to PROF.ELM?"
+	line "to Prof.Elm?"
 
-	para "Here. Your #MON"
+	para "Here. Your #mon"
 	line "should have some"
 	cont "rest."
 	done
@@ -240,45 +243,45 @@ MrPokemonText_AlwaysNewDiscoveries:
 	done
 
 MrPokemonsHouse_OakText1:
-	text "OAK: Aha! So"
+	text "Oak: Aha! So"
 	line "you're <PLAY_G>!"
 
-	para "I'm OAK! A #MON"
+	para "I'm Oak! A #mon"
 	line "researcher."
 
 	para "I was just visit-"
 	line "ing my old friend"
-	cont "MR.#MON."
+	cont "Mr.#mon."
 
 	para "I heard you were"
 	line "running an errand"
 
-	para "for PROF.ELM, so I"
+	para "for Prof.Elm, so I"
 	line "waited here."
 
 	para "Oh! What's this?"
-	line "A rare #MON!"
+	line "A rare #mon!"
 
 	para "Let's see…"
 
 	para "Hm, I see!"
 
 	para "I understand why"
-	line "PROF.ELM gave you"
+	line "Prof.Elm gave you"
 
-	para "a #MON for this"
+	para "a #mon for this"
 	line "errand."
 
 	para "To researchers"
-	line "like PROF.ELM and"
+	line "like Prof.Elm and"
 
-	para "I, #MON are our"
+	para "I, #mon are our"
 	line "friends."
 
 	para "He saw that you"
 	line "would treat your"
 
-	para "#MON with love"
+	para "#mon with love"
 	line "and care."
 
 	para "…Ah!"
@@ -291,12 +294,12 @@ MrPokemonsHouse_OakText1:
 
 	para "See? This is the"
 	line "latest version of"
-	cont "#DEX."
+	cont "#dex."
 
 	para "It automatically"
 	line "records data on"
 
-	para "#MON you've"
+	para "#mon you've"
 	line "seen or caught."
 
 	para "It's a hi-tech"
@@ -305,21 +308,21 @@ MrPokemonsHouse_OakText1:
 
 MrPokemonsHouse_GetDexText:
 	text "<PLAYER> received"
-	line "the #DEX!"
+	line "the #dex!"
 	done
 
 MrPokemonsHouse_OakText2:
 	text "Go meet many kinds"
-	line "of #MON and"
+	line "of #mon and"
 
 	para "complete that"
-	line "#DEX!"
+	line "#dex!"
 
 	para "But I've stayed"
 	line "too long."
 
 	para "I have to get to"
-	line "GOLDENROD for my"
+	line "Goldenrod for my"
 	cont "usual radio show."
 
 	para "<PLAY_G>, I'm"
@@ -327,9 +330,9 @@ MrPokemonsHouse_OakText2:
 	done
 
 MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
+	text "Hm? That Scale!"
 	line "What's that?"
-	cont "A red GYARADOS?"
+	cont "A red Gyarados?"
 
 	para "That's rare! "
 	line "I, I want it…"
@@ -338,8 +341,8 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
+	line "Exp.Share I got"
+	cont "from Prof.Oak."
 	done
 
 MrPokemonText_Disappointed:
@@ -370,6 +373,12 @@ MrPokemonsHouse_StrangeCoinsText:
 	line "another country…"
 	done
 
+MrPokemonsHouse_DisplayCabinetText:
+	text "A collection of"
+	line "rare and old items"
+	cont "from all over!"
+	done
+
 MrPokemonsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -385,6 +394,7 @@ MrPokemonsHouse_MapEvents:
 	bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins
+	bg_event  3,  1, BGEVENT_READ, MrPokemonsHouse_DisplayCabinet
 
 	def_object_events
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1

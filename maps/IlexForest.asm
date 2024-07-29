@@ -8,6 +8,7 @@
 	const ILEXFOREST_LASS
 	const ILEXFOREST_YOUNGSTER2
 	const ILEXFOREST_BUG_MANIAC
+	const ILEXFOREST_PINECO
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
@@ -17,6 +18,7 @@ IlexForest_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback
+	callback MAPCALLBACK_OBJECTS, IlexForestPinecoShinyCallback
 
 IlexForestFarfetchdCallback:
 	checkevent EVENT_GOT_HM01_CUT
@@ -83,6 +85,21 @@ IlexForestFarfetchdCallback:
 .PositionTen:
 	moveobject ILEXFOREST_FARFETCHD, 8, 38
 	appear ILEXFOREST_FARFETCHD
+	endcallback
+
+IlexForestPinecoShinyCallback:
+	checkevent EVENT_ILEX_FOREST_PINECO_ENCOUNTERED
+	iftrue .NoAppear
+	checkevent EVENT_GOT_DIPLOMA
+	iftrue .Appear
+	sjump .NoAppear
+
+.Appear
+	appear ILEXFOREST_PINECO
+	endcallback
+
+.NoAppear
+	disappear ILEXFOREST_PINECO
 	endcallback
 
 IlexForestCharcoalApprenticeScript:
@@ -386,6 +403,16 @@ IlexForestHeadbuttGuyScript:
 	closetext
 	end
 
+IlexForestPineco:
+	cry PINECO
+	loadwildmon PINECO, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY
+	startbattle
+	disappear ILEXFOREST_PINECO
+	reloadmapafterbattle
+	setevent EVENT_ILEX_FOREST_PINECO_ENCOUNTERED
+	end
+
 TrainerBugCatcherWayne:
 	trainer BUG_CATCHER, WAYNE, EVENT_BEAT_BUG_CATCHER_WAYNE, BugCatcherWayneSeenText, BugCatcherWayneBeatenText, 0, .Script
 
@@ -431,9 +458,6 @@ IlexForestHiddenSuperPotion:
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
-
-IlexForestBoulder: ; unreferenced
-	jumpstd StrengthBoulderScript
 
 IlexForestSignpost:
 	jumptext IlexForestSignpostText
@@ -752,15 +776,15 @@ IlexForestApprenticeIntroText:
 	line "is going to be"
 	cont "steaming…"
 
-	para "The FARFETCH'D"
-	line "that CUTS trees"
+	para "The Farfetch'd"
+	line "that Cuts trees"
 
 	para "for charcoal took"
 	line "off on me."
 
 	para "I can't go looking"
 	line "for it here in the"
-	cont "ILEX FOREST."
+	cont "Ilex Forest."
 
 	para "It's too big, dark"
 	line "and scary for me…"
@@ -770,23 +794,23 @@ IlexForestApprenticeAfterText:
 	text "Wow! Thanks a"
 	line "whole bunch!"
 
-	para "My boss's #MON"
+	para "My boss's #mon"
 	line "won't obey me be-"
 	cont "cause I don't have"
-	cont "a BADGE."
+	cont "a Badge."
 	done
 
 Text_ItsTheMissingPokemon:
 	text "It's the missing"
-	line "#MON!"
+	line "#mon!"
 	done
 
 Text_Kwaaaa:
-	text "FARFETCH'D: Kwaa!"
+	text "Farfetch'd: Kwaa!"
 	done
 
 Text_CharcoalMasterIntro:
-	text "Ah! My FARFETCH'D!"
+	text "Ah! My Farfetch'd!"
 
 	para "You found it for"
 	line "us, kid?"
@@ -794,7 +818,7 @@ Text_CharcoalMasterIntro:
 	para "Without it, we"
 	line "wouldn't be able"
 
-	para "to CUT trees for"
+	para "to Cut trees for"
 	line "charcoal."
 
 	para "Thanks, kid!"
@@ -807,17 +831,17 @@ Text_CharcoalMasterIntro:
 	done
 
 Text_CharcoalMasterOutro:
-	text "That's the CUT HM."
+	text "That's the Cut HM."
 	line "Teach that to a"
 
-	para "#MON to clear"
+	para "#mon to clear"
 	line "small trees."
 
 	para "Of course, you"
 	line "have to have the"
 
-	para "GYM BADGE from"
-	line "AZALEA to use it."
+	para "Gym Badge from"
+	line "Azalea to use it."
 	done
 
 Text_CharcoalMasterTalkAfter:
@@ -835,7 +859,7 @@ Text_HeadbuttIntro:
 	text "What am I doing?"
 
 	para "I'm shaking trees"
-	line "using HEADBUTT."
+	line "using Headbutt."
 
 	para "It's fun. Here,"
 	line "you try it too!"
@@ -843,9 +867,9 @@ Text_HeadbuttIntro:
 
 Text_HeadbuttOutro:
 	text "Rattle trees with"
-	line "HEADBUTT. Some-"
+	line "Headbutt. Some-"
 	cont "times, sleeping"
-	cont "#MON fall out."
+	cont "#mon fall out."
 	done
 
 Text_IlexForestLass:
@@ -855,7 +879,7 @@ Text_IlexForestLass:
 	done
 
 IlexForestSignpostText:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "so overgrown with"
 
 	para "trees that you"
@@ -867,8 +891,8 @@ IlexForestSignpostText:
 	done
 
 Text_IlexForestShrine:
-	text "ILEX FOREST"
-	line "SHRINE…"
+	text "Ilex Forest"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -876,8 +900,8 @@ Text_IlexForestShrine:
 	done
 
 Text_ShrineCelebiEvent:
-	text "ILEX FOREST"
-	line "SHRINE…"
+	text "Ilex Forest"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -888,16 +912,16 @@ Text_ShrineCelebiEvent:
 	para "It's a hole."
 	line "It looks like the"
 
-	para "GS BALL would fit"
+	para "GS Ball would fit"
 	line "inside it."
 
 	para "Want to put the GS"
-	line "BALL here?"
+	line "Ball here?"
 	done
 
 Text_InsertGSBall:
 	text "<PLAYER> put in the"
-	line "GS BALL."
+	line "GS Ball."
 	done
 
 Text_KurtCaughtCelebi:
@@ -908,14 +932,14 @@ Text_KurtCaughtCelebi:
 	line "fantastic. Thanks!"
 
 	para "The legends about"
-	line "that SHRINE were"
+	line "that Shrine were"
 	cont "real after all."
 
 	para "I feel inspired by"
 	line "what I just saw."
 
 	para "It motivates me to"
-	line "make better BALLS!"
+	line "make better Balls!"
 
 	para "I'm going!"
 	done
@@ -925,30 +949,30 @@ BugCatcherWayneSeenText:
 	line "me like that!"
 
 	para "You frightened a"
-	line "#MON away!"
+	line "#mon away!"
 	done
 
 BugCatcherWayneBeatenText:
 	text "I hadn't seen that"
-	line "#MON before…"
+	line "#mon before…"
 	done
 
 BugCatcherWayneAfterBattleText:
-	text "A #MON I've"
+	text "A #mon I've"
 	line "never seen before"
 
 	para "fell out of the"
 	line "tree when I used"
-	cont "HEADBUTT."
+	cont "Headbutt."
 
 	para "I ought to use"
-	line "HEADBUTT in other"
+	line "Headbutt in other"
 	cont "places too."
 	done
 
 BugManiacBobbySeenText:
 	text "Wait! You beat"
-	line "BUGSY?"
+	line "Bugsy?"
 
 	para "Let's battle!"
 	done
@@ -961,7 +985,7 @@ BugManiacBobbyAfterBattleText:
 	text "Wow, yeah you"
 	line "definitely beat"
 	
-	para "BUGSY with that"
+	para "Bugsy with that"
 	line "kind of power!"
 	done
 
@@ -979,7 +1003,7 @@ IlexForest_MapEvents:
 	bg_event  5, 19, BGEVENT_READ, IlexForestSignpost
 	bg_event 13,  9, BGEVENT_ITEM, IlexForestHiddenLeafStone
 	bg_event 24, 16, BGEVENT_ITEM, IlexForestHiddenSuperPotion
-	bg_event  3, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event 12, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event 11, 25, BGEVENT_UP, IlexForestShrineScript
 	bg_event 10, 25, BGEVENT_UP, IlexForestShrineScript
 
@@ -989,10 +1013,11 @@ IlexForest_MapEvents:
 	object_event  7, 38, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	object_event 17, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1
 	object_event 22, 42, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
-	object_event 10, 39, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
+	object_event 10, 32, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  5, 34, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
 	object_event  3, 28, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacBobby, -1
 	object_event 14,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
-	object_event 11, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestTMChargeBeam, EVENT_ILEX_FOREST_TM_CHARGE_BEAM
-	object_event 19,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
+	object_event 20, 24, SPRITE_PINECO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IlexForestPineco, EVENT_ILEX_FOREST_PINECO
+	object_event 19,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestTMChargeBeam, EVENT_ILEX_FOREST_TM_CHARGE_BEAM
+	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 29,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER

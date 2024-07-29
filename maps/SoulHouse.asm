@@ -44,25 +44,25 @@ SoulHouseGrannyScript:
 	end
 	
 MrFujiText:
-	text "MR.FUJI: Welcome."
+	text "Mr.Fuji: Welcome."
 
 	para "Hmm… You appear to"
 	line "be raising your"
 
-	para "#MON in a kind"
+	para "#mon in a kind"
 	line "and loving manner."
 
-	para "#MON lovers"
+	para "#mon lovers"
 	line "come here to pay"
 
 	para "their respects to"
-	line "departed #MON."
+	line "departed #mon."
 
 	para "Please offer con-"
 	line "dolences for the"
 
 	para "souls of the de-"
-	line "parted #MON."
+	line "parted #mon."
 
 	para "I'm sure that will"
 	line "make them happy."
@@ -70,22 +70,22 @@ MrFujiText:
 
 SoulHouseTeacherText:
 	text "There are other"
-	line "graves of #MON"
+	line "graves of #mon"
 	cont "here, I think."
 
 	para "There are many"
 	line "chambers that only"
-	cont "MR.FUJI may enter."
+	cont "Mr.Fuji may enter."
 	done
 
 SoulHouseLassText:
-	text "I came with my mom"
-	line "to visit #MON"
+	text "I came with my mum"
+	line "to visit #mon"
 	cont "graves…"
 	done
 
 SoulHouseGrannyOldTrainerText:
-	text "My #MON and"
+	text "My #mon and"
 	line "I trained all"
 	cont "the time."
 	
@@ -98,15 +98,16 @@ SoulHouseGrannyOldTrainerText:
 	done
 
 SoulHouseGrannyOldHexText:
-	text "HEX can do some"
+	text "Hex can do some"
 	line "nasty damage if"
 	
 	para "the opponent has a"
-	line "STATUS CONDITION."
+	line "status condition"
+	cont "like Psn or Brn."
 	done
 
 SoulHouseGrannyText:
-	text "The #MON that"
+	text "The #mon that"
 	line "lived with me…"
 
 	para "I loved them like"

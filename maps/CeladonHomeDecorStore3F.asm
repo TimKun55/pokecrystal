@@ -97,7 +97,7 @@ CeladonHomeDecorStore3FClerk1Script:
 	db "NES       ¥80000@"
 	db "SNES     ¥130000@"
 	db "N64      ¥180000@"
-	db "CANCEL@"
+	db "Cancel@"
 
 CeladonHomeDecorStore3FClerk2Script:
 	checkevent EVENT_DECO_VIRTUAL_BOY
@@ -176,7 +176,7 @@ CeladonHomeDecorStore3FClerk2Text:
 
 CeladonHomeDecorStore3FClerk2SaleText:
 	text "Our very rare"
-	line "VIRTUAL BOY"
+	line "Virtual Boy"
 
 	para "is on sale right"
 	line "now for ¥230,000."
@@ -206,11 +206,11 @@ NESSentText:
 
 BoughtVirtualBoyText:
 	text "<PLAYER> bought"
-	line "VIRTUAL BOY."
+	line "Virtual Boy."
 	done
 
 VirtualBoySentText:
-	text "VIRTUAL BOY"
+	text "Virtual Boy"
 	line "was sent home."
 	done
 

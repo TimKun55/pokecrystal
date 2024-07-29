@@ -188,8 +188,8 @@ BillsHouseSign:
 Route25Protein:
 	itemball PROTEIN
 
-Route25HiddenPotion:
-	hiddenitem POTION, EVENT_ROUTE_25_HIDDEN_POTION
+Route25HiddenMaxPotion:
+	hiddenitem MAX_POTION, EVENT_ROUTE_25_HIDDEN_MAX_POTION
 
 Route25MistysDateLeavesMovement1:
 	big_step DOWN
@@ -236,7 +236,7 @@ Route25MistyLeavesMovement:
 	step_end
 
 Route25MistyDateText:
-	text "MISTY: Aww! Why"
+	text "Misty: Aww! Why"
 	line "did you have to"
 
 	para "show up and bug us"
@@ -251,22 +251,22 @@ Route25MistyDateText:
 
 	para "…"
 
-	para "…Oh? Those BADGES"
+	para "…Oh? Those Badges"
 	line "you have… Are they"
-	cont "JOHTO GYM BADGES?"
+	cont "Johto Gym Badges?"
 
 	para "If you have eight,"
 	line "you must be good."
 
 	para "OK, then. Come to"
-	line "CERULEAN GYM."
+	line "Cerulean Gym."
 
 	para "I'll be happy to"
 	line "take you on."
 
-	para "I'm MISTY, the"
-	line "GYM LEADER in"
-	cont "CERULEAN."
+	para "I'm Misty, the"
+	line "Gym Leader in"
+	cont "Cerulean."
 	done
 
 SchoolboyDudleySeenText:
@@ -414,13 +414,13 @@ CooltrainermKevinAfterBattleText:
 	line "battle!"
 
 	para "You and your #-"
-	line "MON are truly out-"
+	line "mon are truly out-"
 	cont "standing!"
 	done
 
 BillsHouseSignText:
-	text "SEA COTTAGE"
-	line "BILL'S HOUSE"
+	text "Sea Cottage"
+	line "Bill's House"
 	done
 
 Route25_MapEvents:
@@ -435,7 +435,7 @@ Route25_MapEvents:
 
 	def_bg_events
 	bg_event 45,  5, BGEVENT_READ, BillsHouseSign
-	bg_event  4,  5, BGEVENT_ITEM, Route25HiddenPotion
+	bg_event  4,  5, BGEVENT_ITEM, Route25HiddenMaxPotion
 
 	def_object_events
 	object_event 46,  9, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_25_MISTY_BOYFRIEND

@@ -9,7 +9,7 @@ ViridianForestHouse_MapScripts:
 	callback MAPCALLBACK_TILES, ViridianForestHouseStaircaseCallback
 	
 ViridianForestHouseArianaCallback:
-	checkevent EVENT_REPENTING_ROCKETS
+	checkevent EVENT_BEAT_ARIANA_3
 	iftrue .Appear
 	disappear VIRIDIANFORESTHOUSE_ARIANA
 	endcallback
@@ -17,7 +17,6 @@ ViridianForestHouseArianaCallback:
 .Appear:
 	appear VIRIDIANFORESTHOUSE_ARIANA
 	endcallback
-
 	
 ViridianForestHouseStaircaseCallback:
 	checkcode VAR_BADGES
@@ -25,7 +24,7 @@ ViridianForestHouseStaircaseCallback:
 	endcallback
 
 .ShowStairs:
-	changeblock 3, 0, $89 ; stairs
+	changeblock 6, 0, $89 ; stairs
 	endcallback
 
 ViridianForestHouseAriana:
@@ -35,7 +34,7 @@ ViridianForestHouseAriana:
 	waitbutton
 	closetext
 	turnobject VIRIDIANFORESTHOUSE_ARIANA, LEFT
-	pause 45
+	pause 30
 	turnobject VIRIDIANFORESTHOUSE_ARIANA, UP
 	end
 	
@@ -61,11 +60,11 @@ ViridianForestHouseArianaText:
 	text "Oh, it's you,"
 	line "<PLAY_G>."
 	
-	para "ARCHER said you'd"
+	para "Archer said you'd"
 	line "eventually find"
 	cont "this place."
 	
-	para "GIOVANNI explained"
+	para "Giovanni explained"
 	line "everything to us."
 	
 	para "It's been an"
@@ -102,7 +101,7 @@ ViridianForestHouseNotebookText:
 
 ViridianForestHouseNotebookText1:
 	text "Using the DNA"
-	line "SAMPLE we had"
+	line "sample we had"
 	cont "collected, I used"
 
 	para "it to flush"
@@ -117,8 +116,8 @@ ViridianForestHouseNotebookText2:
 	line "tracked down our"
 
 	para "failed creation in"
-	line "the CERULEAN"
-	cont "DUNGEON. MEWTWO's"
+	line "the Cerulean"
+	cont "Cave. Mewtwo's"
 
 	para "strength was far"
 	line "beyond what I had"
@@ -128,17 +127,30 @@ ViridianForestHouseNotebookText2:
 	done
 
 ViridianForestHouseNotebookText3:
-	text "Our battle left"
-	line "the CAVE destroyed"
-	cont "and I barely"
+	text "Our battle was"
+	line "intense and I"
+	cont "barely managed to"
 
-	para "managed to escape"
-	line "with my life."
+	para "escape with my"
+	line "life."
+	
+	para "To prevent others"
+	line "from finding it"
+	
+	para "I ordered the"
+	line "entrance destoyed"
+	
+	para "and a secret one"
+	line "created, so, one"
+	
+	para "day, a powerful"
+	line "trainer could do"
+	
+	para "what I couldn't."
 
 	para "That being is"
 	line "cursed with power."
 	done
-
 
 ViridianForestHouse_MapEvents:
 	db 0, 0 ; filler

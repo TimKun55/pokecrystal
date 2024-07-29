@@ -2092,11 +2092,11 @@ Hurricane:
 	critical
 	damagestats
 	damagecalc
+	stab
 	hurricaneaccuracy
+	damagevariation
 	checkhit
 	effectchance
-	stab
-	damagevariation
 	doubleflyingdamage
 	moveanim
 	failuretext

@@ -90,7 +90,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GRIMER
 	db BEAT_UP      ; MUK
 	db NO_MOVE      ; SHELLDER
-	db NO_MOVE      ; CLOYSTER
+	db ICICLE_SPEAR ; CLOYSTER
 	db NO_MOVE      ; GASTLY
 	db NO_MOVE      ; HAUNTER
 	db NO_MOVE      ; GENGAR
@@ -185,7 +185,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MARILL
 	db NO_MOVE      ; AZUMARILL
 	db NO_MOVE      ; SUDOWOODO
-	db PERISH_SONG  ; POLITOED
+	db SING         ; POLITOED
 	db NO_MOVE      ; HOPPIP
 	db NO_MOVE      ; SKIPLOOM
 	db NO_MOVE      ; JUMPLUFF
@@ -251,4 +251,5 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HOOH
 	db NO_MOVE      ; CELEBI
+	db PSYCHIC_M    ; RAICHU_A
 	assert_table_length NUM_POKEMON

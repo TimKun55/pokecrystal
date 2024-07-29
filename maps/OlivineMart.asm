@@ -21,7 +21,7 @@ OlivineMartLassScript:
 	jumptextfaceplayer OlivineMartLassText
 
 OlivineMartCooltrainerFText:
-	text "Do your #MON"
+	text "Do your #mon"
 	line "already know the"
 
 	para "move for carrying"
@@ -29,12 +29,12 @@ OlivineMartCooltrainerFText:
 	done
 
 OlivineMartLassText:
-	text "My BUTTERFREE came"
+	text "My Butterfree came"
 	line "from my boyfriend"
 	cont "overseas."
 
 	para "It carried some"
-	line "MAIL from him."
+	line "Mail from him."
 
 	para "Want to know what"
 	line "it says?"
@@ -47,8 +47,8 @@ OlivineMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, OLIVINE_CITY, 8
-	warp_event  3,  7, OLIVINE_CITY, 8
+	warp_event  2,  7, OLIVINE_CITY, 7
+	warp_event  3,  7, OLIVINE_CITY, 7
 
 	def_coord_events
 

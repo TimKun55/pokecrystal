@@ -47,7 +47,7 @@ CeladonEusine:
 	waitbutton
 	closetext
 	readvar VAR_FACING
-	ifequal UP, .Location1
+	ifequal RIGHT, .Location1
 	applymovement CELADONPOKECENTER1F_EUSINE, .Movement1
 	sjump .Continue
 
@@ -60,7 +60,10 @@ CeladonEusine:
 	end
 
 .Movement2:
+	step UP
 	step LEFT
+	step LEFT
+	step LEFT	
 	step DOWN
 	step DOWN
 	step DOWN
@@ -68,15 +71,17 @@ CeladonEusine:
 	step_end
 
 .Movement1:
-	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
 	step DOWN
 	step DOWN
 	step DOWN
 	step_end
 
 CeladonPokecenter1FCooltrainerFText:
-	text "ERIKA is a master"
-	line "of grass #MON."
+	text "Erika is a master"
+	line "of grass #mon."
 
 	para "She'll make you"
 	line "pay if you don't"
@@ -84,18 +89,18 @@ CeladonPokecenter1FCooltrainerFText:
 	done
 
 CeladonPokecenter1FPharmacistText:
-	text "TEAM ROCKET's"
+	text "Team Rocket's"
 	line "hideout is in the"
 
 	para "basement of the"
-	line "GAME CORNER."
+	line "Game Corner."
 
 	para "Oh, wait. That was"
 	line "three years ago."
 	done
 
 CeladonEusineText1:
-	text "EUSINE: Hi!"
+	text "Eusine: Hi!"
 
 	para "I'm back visiting"
 	line "my hometown."
@@ -112,14 +117,14 @@ EusineLeavesCeladonText:
 	line "fresh rumors of a"
 
 	para "rainbow-colored"
-	line "#MON appearing"
-	cont "at TIN TOWER."
+	line "#mon appearing"
+	cont "at Tin Tower."
 
 	para "I've just had my"
 	line "party healed, so"
 
 	para "now I'm headed to"
-	line "ECRUTEAK."
+	line "Ecruteak."
 
 	para "I'll be seeing"
 	line "you, <PLAYER>!"
@@ -132,8 +137,8 @@ NoBeastsText:
 	para "Have you caught"
 	line "the legendary"
 
-	para "#MON RAIKOU and"
-	line "ENTEI?"
+	para "#mon Raikou and"
+	line "Entei?"
 
 	para "<……><……><……>"
 

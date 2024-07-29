@@ -97,28 +97,28 @@ Text_GrampsLookingForYou:
 	done
 
 DayCareManText_GiveOddEgg:
-	text "I'm the DAY-CARE"
-	line "MAN."
+	text "I'm the Day-Care"
+	line "Man."
 
 	para "Do you know about"
-	line "EGGS?"
+	line "Eggs?"
 
 	para "I was raising"
-	line "#MON with my"
+	line "#mon with my"
 	cont "wife, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "Since then, we"
-	line "raise #MON"
+	line "raise #mon"
 	
 	para "for other trainers"
 	line "and sometimes"
-	cont "find EGGS!"
+	cont "find Eggs!"
 
 	para "Well, wouldn't you"
-	line "like this EGG?"
+	line "like this Egg?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
@@ -126,16 +126,16 @@ DayCareManText_GiveOddEgg:
 
 DayCareText_GotOddEgg:
 	text "<PLAYER> received"
-	line "ODD EGG!"
+	line "Odd Egg!"
 	done
 
 DayCareText_DescribeOddEgg:
 	text "We've been raising"
-	line "special #MON"
+	line "special #mon"
 	cont "for a promotion."
 	
-	para "If you find an EGG"
-	line "TICKET, bring it"
+	para "If you find an Egg"
+	line "Ticket, bring it"
 	
 	para "to me, and you'll"
 	line "get another EGG."
@@ -143,16 +143,16 @@ DayCareText_DescribeOddEgg:
 
 EggTicketText:
 	text "Oh! You've got"
-	line "an EGG TICKET!"
+	line "an Egg Ticket!"
 	
 	para "I'll exchange it"
-	line "for a special EGG."
+	line "for a special Egg."
 	done
 
 TradedTicketForOddEggText:
 	text "<PLAYER> exchanged"
-	line "the EGG TICKET for"
-	cont "the ODD EGG!"
+	line "the Egg Ticket for"
+	cont "the Odd Egg!"
 	done
 
 DayCareText_PartyFull:

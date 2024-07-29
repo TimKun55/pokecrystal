@@ -1,5 +1,5 @@
-	db "EVOLUTION@" ; species name
-	dw 100, 140 ; height, weight
+	db "Evolution@" ; species name
+	dw 030, 65 ; height, weight
 
 	db   "Its ability to"
 	next "evolve into many"

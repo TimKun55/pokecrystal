@@ -24,6 +24,7 @@ NewPokedexOrder:
 	db FURRET
 	db PIKACHU
 	db RAICHU
+	db RAICHU_A
 	db CATERPIE
 	db METAPOD
 	db BUTTERFREE

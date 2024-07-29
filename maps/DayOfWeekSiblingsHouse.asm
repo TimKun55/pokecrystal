@@ -32,7 +32,7 @@ DayOfWeekSiblingsHousePokedexText2:
 	line "sisters:"
 
 	para "We take pride in"
-	line "serving #MON"
+	line "serving #mon"
 	cont "trainers."
 
 	para "When trainers talk"
@@ -40,32 +40,32 @@ DayOfWeekSiblingsHousePokedexText2:
 	cont "something useful."
 
 	para "Love,"
-	line "MONICA"
+	line "Monica"
 
 	para "Keep reading?"
 	done
 
 DayOfWeekSiblingsHousePokedexText3:
-	text "Monday, MONICA"
-	line "ROUTE 40"
+	text "Monday, Monica"
+	line "Route 40"
 
-	para "Tuesday, TUSCANY"
-	line "ROUTE 29"
+	para "Tuesday, Tuscany"
+	line "Route 29"
 
-	para "Wednesday, WESLEY"
-	line "LAKE OF RAGE"
+	para "Wednesday, Wesley"
+	line "Lake Of Rage"
 
-	para "Thursday, ARTHUR"
-	line "ROUTE 36"
+	para "Thursday, Arthur"
+	line "Route 36"
 
-	para "Friday, FRIEDA"
-	line "ROUTE 32"
+	para "Friday, Frieda"
+	line "Route 32"
 
-	para "Saturday, SANTOS"
-	line "BLACKTHORN CITY"
+	para "Saturday, Santos"
+	line "Blackthorn City"
 
-	para "Sunday, SUNNY"
-	line "ROUTE 37"
+	para "Sunday, Sunny"
+	line "Route 37"
 	done
 
 DayOfWeekSiblingsHouse_MapEvents:
@@ -80,4 +80,4 @@ DayOfWeekSiblingsHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1
+	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1

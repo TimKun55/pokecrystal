@@ -1,117 +1,223 @@
 	object_const_def
-	const CELADONMANSIONROOFHOUSE_PHARMACIST
+	const CELADONMANSIONROOFHOUSE_GRANNY1
+	const CELADONMANSIONROOFHOUSE_GRANNY2
+	const CELADONMANSIONROOFHOUSE_PSYDUCK
+	const CELADONMANSIONROOFHOUSE_WOOPER
+	
 
 CeladonMansionRoofHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, CeladonMansionRoofHouseGrannyPlayingCallback
+	
+CeladonMansionRoofHouseGrannyPlayingCallback:
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .GrannyStreaming
+	ifequal MONDAY, .GrannyStreaming
+	ifequal WEDNESDAY, .GrannyStreaming
+	ifequal THURSDAY, .GrannyStreaming
+	disappear CELADONMANSIONROOFHOUSE_GRANNY1
+	appear CELADONMANSIONROOFHOUSE_GRANNY2
+	endcallback
 
-CeladonMansionRoofHousePharmacistScript:
+.GrannyStreaming:
+	disappear CELADONMANSIONROOFHOUSE_GRANNY2
+	appear CELADONMANSIONROOFHOUSE_GRANNY1
+	endcallback
+
+CeladonMansionRoofHouseGrannyStream:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM03_CURSE
-	iftrue .GotCurse
-	writetext CeladonMansionRoofHousePharmacistIntroText
-	promptbutton
-	checktime NITE
-	iftrue .Night
-	writetext CeladonMansionRoofHousePharmacistNotNightText
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .SundaeScaries
+	writetext GrannyStreamingText
+	waitbutton
+	closetext
+	end
+	
+.SundaeScaries
+	writetext GrannySundaeScariesText
 	waitbutton
 	closetext
 	end
 
-.Night:
-	writetext CeladonMansionRoofHousePharmacistStoryText
-	promptbutton
-	verbosegiveitem TM_CURSE
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM03_CURSE
-.GotCurse:
-	writetext CeladonMansionRoofHousePharmacistCurseText
+CeladonMansionRoofHouseGrannyWatch:
+	faceplayer
+	opentext
+	writetext GrannyWatchingStreamText
 	waitbutton
-.NoRoom:
+	closetext
+	turnobject CELADONMANSIONROOFHOUSE_GRANNY2, UP
+	end
+	
+CeladonMansionRoofHousePsyduckScript:
+	opentext
+	writetext GrannyHousePsyduckText
+	cry PSYDUCK
+	waitbutton
+	refreshscreen
+	pokepic PSYDUCK
+	waitbutton
+	closepokepic
 	closetext
 	end
+	
+CeladonMansionRoofHouseWooperScript:
+	opentext
+	writetext GrannyHouseWooperText
+	cry WOOPER
+	waitbutton
+	refreshscreen
+	pokepic WOOPER
+	waitbutton
+	closepokepic
+	closetext
+	end
+	
+GrannysPC:
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .SundaeScariesPC
+	ifequal TUESDAY, .NotStreamingPC
+	ifequal FRIDAY, .NotStreamingPC
+	ifequal SATURDAY, .NotStreamingPC
+	jumptext GrannysPCText
+	
+.SundaeScariesPC
+	jumptext SundaeScariesGrannysPCText
 
-CeladonMansionRoofHousePharmacistIntroText:
-	text "Let me recount a"
-	line "terrifying tale…"
+.NotStreamingPC
+	jumptext GrannyWatchPCText
+
+GrannysTV:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NotStreamingTV
+	ifequal FRIDAY, .NotStreamingTV
+	ifequal SATURDAY, .NotStreamingTV
+	jumptext GrannysTVText
+	
+.NotStreamingTV
+	jumptext GrannyWatchTVText
+
+GrannyStreamingText:
+	text "Sorry, dear,"
+	line "I'm streaming"
+	cont "right now."
+	
+	para "Come back"
+	line "another time."
 	done
 
-CeladonMansionRoofHousePharmacistNotNightText:
-	text "Then again, it's"
-	line "not as scary while"
+GrannySundaeScariesText:
+	text "URAAAAAAHHHHH!!!"
+	
+	para "Oh, dear, you"
+	line "scared the life"
+	cont "out of me!!"
+	
+	para "I'm seeing stars!"
+	
+	para "Jeez…"
+	
+	para "Today is Sundae"
+	line "Scaries, so I'm"
+	cont "extra jumpy."
+	done
+	
+GrannyWatchingStreamText:
+	text "Today is a day"
+	line "off, but I like"
+	cont "watching others"
+	cont "stream."
+	
+	para "It's good fun!"
+	
+	para "Good luck out"
+	line "there, dear and"
+	
+	para "remember to ask"
+	line "yourself the"
+	cont "three questions:"
+	
+	para "'What is because"
+	line "of me?',"
+	
+	para "'What is because"
+	line "of others?',"
+	cont "and,"
+	
+	para "'What is because.'"
+	
+	para "If you can answer"
+	line "those questions"
+	cont "honestly, you can"
+	
+	para "get through"
+	line "anything in life."
+	
+	para "I love you very"
+	line "much, dear."
 
-	para "it's still light"
-	line "outside."
-
-	para "Come back after"
-	line "sunset, OK?"
+	para "You're doing"
+	line "so well!"
+	
+	para "Raspberries!!!"
+	done
+	
+GrannyHousePsyduckText:
+	text "Psyduck: Psyyy?"
 	done
 
-CeladonMansionRoofHousePharmacistStoryText:
-	text "Once upon a time,"
-	line "there was a little"
-
-	para "boy who was given"
-	line "a new BICYCLE…"
-
-	para "He wanted to try"
-	line "it right away…"
-
-	para "He was having so"
-	line "much fun that he"
-
-	para "didn't notice the"
-	line "sun had set…"
-
-	para "While riding home"
-	line "in the pitch-black"
-
-	para "night, the bike"
-	line "suddenly slowed!"
-
-	para "The pedals became"
-	line "heavy!"
-
-	para "When he stopped"
-	line "pedaling, the bike"
-
-	para "began slipping"
-	line "backwards!"
-
-	para "It was as if the"
-	line "bike were cursed"
-
-	para "and trying to drag"
-	line "him into oblivion!"
-
-	para "…"
-
-	para "…"
-
-	para "SHRIEEEEK!"
-
-	para "The boy had been"
-	line "riding uphill on"
-	cont "CYCLING ROAD!"
-
-	para "…"
-	line "Ba-dum ba-dum!"
-
-	para "For listening so"
-	line "patiently, you may"
-	cont "take this--TM03!"
+GrannyHouseWooperText::
+	text "Wooper: Oopa?"
+	
+	para "        :0        "
+	done
+	
+GrannysPCText:
+	text "There's some kind"
+	line "of video game"
+	cont "on the screen."
+	
+	para "A bunch of people"
+	line "in different colo-"
+	cont "red space suits?"
+	
+	para "Looks like fun!"
+	done
+	
+SundaeScariesGrannysPCText:
+	text "There's some kind"
+	line "of video game"
+	cont "on the screen."
+	
+	para "It looks super"
+	line "scary!"
+	
+	para "Looks like fun…?"
 	done
 
-CeladonMansionRoofHousePharmacistCurseText:
-	text "TM03 is CURSE."
+GrannyWatchPCText:
+	text "Lots of people"
+	line "are commenting"
+	cont "on the game"
+	cont "being played."
+	
+	para "They seem to be"
+	line "having a fun time!"
+	done
 
-	para "It's a terrifying"
-	line "move that slowly"
+GrannysTVText:
+	text "The TV is off."
+	done
 
-	para "whittles down the"
-	line "victim's HP."
+GrannyWatchTVText:
+	text "This looks like"
+	line "a fun game!"
+	
+	para "Better move so"
+	line "Granny can keep"
+	cont "watching."
 	done
 
 CeladonMansionRoofHouse_MapEvents:
@@ -124,6 +230,13 @@ CeladonMansionRoofHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  6,  1, BGEVENT_READ, GrannysPC
+	bg_event  7,  1, BGEVENT_READ, GrannysPC
+	bg_event  5,  1, BGEVENT_READ, GrannysTV
 
 	def_object_events
-	object_event  3,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1
+	object_event  7,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseGrannyStream, EVENT_PLAYERS_HOUSE_MUM_1
+	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseGrannyWatch, EVENT_PLAYERS_HOUSE_MUM_2
+	object_event  7,  4, SPRITE_PSYDUCK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePsyduckScript, -1
+	object_event  0,  3, SPRITE_WOOPER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseWooperScript, -1
+	

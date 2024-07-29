@@ -16,17 +16,32 @@ PlaceDiplomaOnScreen:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call CopyBytes
 	ld de, .Player
-	hlcoord 2, 5
+	hlcoord 2, 3
 	call PlaceString
 	ld de, .EmptyString
-	hlcoord 15, 5
+	hlcoord 15, 3
 	call PlaceString
 	ld de, wPlayerName
-	hlcoord 9, 5
+	hlcoord 9, 3
 	call PlaceString
 	ld de, .Certification
-	hlcoord 2, 8
+	hlcoord 2, 6
 	call PlaceString
+	ld de, .GameFreak
+	hlcoord 9, 12
+	call PlaceString
+	ld de, .PlayTime
+	hlcoord 10, 14
+	call PlaceString
+	hlcoord 10, 15
+	ld de, wGameTimeHours
+	lb bc, 2, 4
+	call PrintNum
+	ld [hl], $67 ; colon
+	inc hl
+	ld de, wGameTimeMinutes
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
 	call EnableLCD
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
@@ -36,47 +51,19 @@ PlaceDiplomaOnScreen:
 	ret
 
 .Player:
-	db "PLAYER@"
+	db "Player@"
 
 .EmptyString:
 	db "@"
 
 .Certification:
-	db   "This certifies"
-	next "that you have"
-	next "completed the"
-	next "new #DEX."
+	db   "Certified #dex"
+	next "completionist."
 	next "Congratulations!"
 	db   "@"
 
-PrintDiplomaPage2:
-	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, " "
-	call ByteFill
-	ld hl, DiplomaPage2Tilemap
-	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyBytes
-	ld de, .GameFreak
-	hlcoord 8, 0
-	call PlaceString
-	ld de, .PlayTime
-	hlcoord 3, 15
-	call PlaceString
-	hlcoord 12, 15
-	ld de, wGameTimeHours
-	lb bc, 2, 4
-	call PrintNum
-	ld [hl], $67 ; colon
-	inc hl
-	ld de, wGameTimeMinutes
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
-
-.PlayTime: db "PLAY TIME@"
-.GameFreak: db "GAME FREAK@"
+.PlayTime: db "Play Time@"
+.GameFreak: db "Game Freak@"
 
 DiplomaGFX:
 INCBIN "gfx/diploma/diploma.2bpp.lz"

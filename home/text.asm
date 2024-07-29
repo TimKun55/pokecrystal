@@ -241,7 +241,7 @@ ENDM
 	dict "<SCROLL>",  _ContTextNoPause
 	dict "<_CONT>",   _ContText
 	dict "<PARA>",    Paragraph
-	dict "<MOM>",     PrintMomsName
+	dict "<MUM>",     PrintMumsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
 	dict "<ROUTE>",   PlaceJPRoute
@@ -285,7 +285,7 @@ MACRO print_name
 	jp PlaceCommandCharacter
 ENDM
 
-PrintMomsName:   print_name wMomsName
+PrintMumsName:   print_name wMumsName
 PrintPlayerName: print_name wPlayerName
 PrintRivalName:  print_name wRivalName
 PrintRedsName:   print_name wRedsName
@@ -383,10 +383,10 @@ PlaceCommandCharacter::
 	jp NextChar
 
 TMCharText::      db "TM@"
-TrainerCharText:: db "TRAINER@"
+TrainerCharText:: db "Trainer@"
 PCCharText::      db "PC@"
-RocketCharText::  db "ROCKET@"
-PlacePOKeText::   db "POKé@"
+RocketCharText::  db "Rocket@"
+PlacePOKeText::   db "Poké@"
 KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
@@ -1022,11 +1022,11 @@ TextCommand_DAY::
 	dw .Fri
 	dw .Satur
 
-.Sun:    db "SUN@"
-.Mon:    db "MON@"
-.Tues:   db "TUES@"
-.Wednes: db "WEDNES@"
-.Thurs:  db "THURS@"
-.Fri:    db "FRI@"
-.Satur:  db "SATUR@"
-.Day:    db "DAY@"
+.Sun:    db "Sun@"
+.Mon:    db "Mon@"
+.Tues:   db "Tues@"
+.Wednes: db "Wednes@"
+.Thurs:  db "Thurs@"
+.Fri:    db "Fri@"
+.Satur:  db "Satur@"
+.Day:    db "day@"

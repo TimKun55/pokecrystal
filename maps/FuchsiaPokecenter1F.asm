@@ -65,15 +65,15 @@ FuchsiaPokecenter1FJanineImpersonatorSpinMovement:
 FuchsiaPokecenter1FCooltrainerMText:
 	text "Hey! You have a"
 	line "brand new kind of"
-	cont "#DEX."
+	cont "#dex."
 
-	para "Did PROF.OAK give"
+	para "Did Prof.Oak give"
 	line "that to you?"
 	done
 
 FuchsiaPokecenter1FCooltrainerFText:
 	text "I got quite a"
-	line "shock at the GYM."
+	line "shock at the Gym."
 
 	para "There were all"
 	line "these girls who"
@@ -81,7 +81,7 @@ FuchsiaPokecenter1FCooltrainerFText:
 	done
 
 FuchsiaPokecenter1FJanineImpersonatorText1:
-	text "I'm JANINE! Hocus-"
+	text "I'm Janine! Hocus-"
 	line "pocus… Poof!"
 	done
 

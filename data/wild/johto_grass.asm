@@ -782,155 +782,155 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, SEEL,          32,  34
-	db 10, SWINUB,        31,  33
-	db  8, SWINUB,        32,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          31,  33
+	db 22, SWINUB,        31,  33
+	db 22, SEEL,          34,  37
+	db 10, SWINUB,        34,  35
+	db  8, SWINUB,        36,  38
+	db  8, DELIBIRD,      36,  40
+	db  8, JYNX,          36,  40
 	; day
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, SEEL,          32,  34
-	db 10, SWINUB,        31,  33
-	db  8, SWINUB,        32,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          31,  33
+	db 22, SWINUB,        31,  33
+	db 22, SEEL,          34,  37
+	db 10, SWINUB,        34,  35
+	db  8, SWINUB,        36,  38
+	db  8, DELIBIRD,      36,  40
+	db  8, JYNX,          36,  40
 	; nite
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, SEEL,          32,  34
-	db 10, SWINUB,        31,  33
-	db  8, SWINUB,        32,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          31,  33
+	db 22, SWINUB,        31,  33
+	db 22, SEEL,          34,  37
+	db 10, SWINUB,        34,  35
+	db  8, SWINUB,        36,  38
+	db  8, DELIBIRD,      36,  40
+	db  8, JYNX,          36,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, JYNX,          30,  32
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      34,  37
+	db 10, SWINUB,        34,  38
+	db  8, JYNX,          35,  37
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; day
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, JYNX,          30,  32
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      34,  37
+	db 10, SWINUB,        34,  38
+	db  8, JYNX,          35,  37
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; nite
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, JYNX,          30,  32
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          32,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      34,  37
+	db 10, SWINUB,        34,  38
+	db  8, JYNX,          35,  37
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B2F_MAHOGANY_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; day
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; nite
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B2F_BLACKTHORN_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; day
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	; nite
 	;   %, species,		 min, max
-	db 22, SEEL,          30,  32
-	db 22, SWINUB,        30,  32
-	db 22, DELIBIRD,      30,  32
-	db 10, SWINUB,        31,  33
-	db  8, SNEASEL,       31,  34
-	db  8, DELIBIRD,      31,  34
-	db  8, JYNX,          31,  34
+	db 22, SEEL,          32,  35
+	db 22, SWINUB,        31,  34
+	db 22, DELIBIRD,      35,  37
+	db 10, SWINUB,        35,  38
+	db  8, SNEASEL,       37,  40
+	db  8, DELIBIRD,      38,  40
+	db  8, JYNX,          38,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, DEWGONG,       30,  32
-	db 22, SWINUB,        30,  32
-	db 22, JYNX,          31,  34
-	db 10, DELIBIRD,      31,  34
-	db  8, SNEASEL,       31,  34
-	db  8, PILOSWINE,     31,  34
-	db  8, JYNX,          31,  34
+	db 22, DEWGONG,       35,  38
+	db 22, SWINUB,        35,  38
+	db 22, JYNX,          38,  40
+	db 10, DELIBIRD,      38,  40
+	db  8, SNEASEL,       38,  41
+	db  8, PILOSWINE,     38,  41
+	db  8, JYNX,          38,  41
 	; day
 	;   %, species,		 min, max
-	db 22, DEWGONG,       30,  32
-	db 22, SWINUB,        30,  32
-	db 22, JYNX,          31,  34
-	db 10, DELIBIRD,      31,  34
-	db  8, SNEASEL,       31,  34
-	db  8, PILOSWINE,     31,  34
-	db  8, JYNX,          31,  34
+	db 22, DEWGONG,       35,  38
+	db 22, SWINUB,        35,  38
+	db 22, JYNX,          38,  40
+	db 10, DELIBIRD,      38,  40
+	db  8, SNEASEL,       38,  41
+	db  8, PILOSWINE,     38,  41
+	db  8, JYNX,          38,  41
 	; nite
 	;   %, species,		 min, max
-	db 22, DEWGONG,       30,  32
-	db 22, SWINUB,        30,  32
-	db 22, JYNX,          31,  34
-	db 10, DELIBIRD,      31,  34
-	db  8, SNEASEL,       31,  34
-	db  8, PILOSWINE,     31,  34
-	db  8, JYNX,          31,  34
+	db 22, DEWGONG,       35,  38
+	db 22, SWINUB,        35,  38
+	db 22, JYNX,          38,  40
+	db 10, DELIBIRD,      38,  40
+	db  8, SNEASEL,       38,  41
+	db  8, PILOSWINE,     38,  41
+	db  8, JYNX,          38,  41
 	end_grass_wildmons
 
 	def_grass_wildmons WHIRL_ISLAND_NW
@@ -1186,7 +1186,7 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, PUPITAR,       67,  70
-	db 22, RHYDON,        67,  70
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     67,  70
 	db 10, SCIZOR,        67,  70
 	db  8, STEELIX,       67,  70
@@ -1195,7 +1195,7 @@ JohtoGrassWildMons:
 	; day
 	;   %, species,		 min, max
 	db 22, PUPITAR,       67,  70
-	db 22, RHYDON,        67,  70
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     67,  70
 	db 10, SCIZOR,        67,  70
 	db  8, STEELIX,       67,  70
@@ -1204,7 +1204,7 @@ JohtoGrassWildMons:
 	; nite
 	;   %, species,		 min, max
 	db 22, PUPITAR,       67,  70
-	db 22, RHYDON,        67,  70
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     67,  70
 	db 10, SCIZOR,        67,  70
 	db  8, STEELIX,       67,  70
@@ -1217,7 +1217,7 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, PUPITAR,       69,  72
-	db 22, RHYDON,        69,  72
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     69,  72
 	db 10, SCIZOR,        69,  72
 	db  8, STEELIX,       69,  72
@@ -1226,7 +1226,7 @@ JohtoGrassWildMons:
 	; day
 	;   %, species,		 min, max
 	db 22, PUPITAR,       69,  72
-	db 22, RHYDON,        69,  72
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     69,  72
 	db 10, SCIZOR,        69,  72
 	db  8, STEELIX,       69,  72
@@ -1235,7 +1235,7 @@ JohtoGrassWildMons:
 	; nite
 	;   %, species,		 min, max
 	db 22, PUPITAR,       69,  72
-	db 22, RHYDON,        69,  72
+	db 22, MISMAGIUS,     67,  70
 	db 22, HITMONTOP,     69,  72
 	db 10, SCIZOR,        69,  72
 	db  8, STEELIX,       69,  72
@@ -1284,7 +1284,7 @@ JohtoGrassWildMons:
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
 	db  8, SCIZOR,        70,  73
-	db  8, HOUNDOOM,      70,  73
+	db  8, PORYGON2,      70,  73
 	; day
 	;   %, species,		 min, max
 	db 22, STEELIX,       70,  73
@@ -1293,7 +1293,7 @@ JohtoGrassWildMons:
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
 	db  8, SCIZOR,        70,  73
-	db  8, HOUNDOOM,      70,  73
+	db  8, PORYGON2,      70,  73
 	; nite
 	;   %, species,		 min, max
 	db 22, STEELIX,       70,  73
@@ -1302,7 +1302,7 @@ JohtoGrassWildMons:
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
 	db  8, SCIZOR,        70,  73
-	db  8, HOUNDOOM,      70,  73
+	db  8, PORYGON2,      70,  73
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1340,31 +1340,31 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, GRAVELER,      33,  36
-	db 22, GOLBAT,        32,  35
-	db 22, URSARING,      31,  34
-	db 10, WOBBUFFET,     33,  35
-	db  8, ONIX,          33,  36
-	db  8, DUNSPARCE,     33,  36
-	db  8, URSARING,      33,  36
+	db 22, GRAVELER,      39,  42
+	db 22, GOLBAT,        38,  41
+	db 22, URSARING,      37,  40
+	db 10, WOBBUFFET,     38,  41
+	db  8, ONIX,          38,  42
+	db  8, DUNSPARCE,     38,  42
+	db  8, URSARING,      38,  42
 	; day
 	;   %, species,		 min, max
-	db 22, GRAVELER,      33,  36
-	db 22, GOLBAT,        32,  35
-	db 22, URSARING,      31,  34
-	db 10, WOBBUFFET,     33,  35
-	db  8, ONIX,          33,  36
-	db  8, DUNSPARCE,     33,  36
-	db  8, URSARING,      33,  36
+	db 22, GRAVELER,      39,  42
+	db 22, GOLBAT,        38,  41
+	db 22, URSARING,      37,  40
+	db 10, WOBBUFFET,     38,  41
+	db  8, ONIX,          38,  42
+	db  8, DUNSPARCE,     38,  42
+	db  8, URSARING,      38,  42
 	; nite
 	;   %, species,		 min, max
-	db 22, GRAVELER,      33,  36
-	db 22, GOLBAT,        32,  35
-	db 22, URSARING,      31,  34
-	db 10, WOBBUFFET,     33,  35
-	db  8, ONIX,          33,  36
-	db  8, DUNSPARCE,     33,  36
-	db  8, URSARING,      33,  36
+	db 22, GRAVELER,      39,  42
+	db 22, GOLBAT,        38,  41
+	db 22, URSARING,      37,  40
+	db 10, WOBBUFFET,     38,  41
+	db  8, ONIX,          38,  42
+	db  8, DUNSPARCE,     38,  42
+	db  8, URSARING,      38,  42
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_27
@@ -1375,27 +1375,27 @@ JohtoGrassWildMons:
 	db 22, ARBOK,         33,  36
 	db 22, PONYTA,        33,  36
 	db 19, DODRIO,        33,  36
-	db  5, CHIKORITA,      5,   5
-	db  5, CYNDAQUIL,      5,   5
-	db  5, TOTODILE,       5,   5
+	db  5, CHIKORITA,     26,  30
+	db  5, CYNDAQUIL,     26,  30
+	db  5, TOTODILE,      26,  30
 	; day
 	;   %, species,		 min, max
 	db 22, DODUO,         33,  36
 	db 22, ARBOK,         33,  36
 	db 22, PONYTA,        33,  36
 	db 19, DODRIO,        33,  36
-	db  5, BAYLEEF,       23,  26
-	db  5, QUILAVA,       23,  26
-	db  5, CROCONAW,      23,  26
+	db  5, BAYLEEF,       31,  35
+	db  5, QUILAVA,       31,  35
+	db  5, CROCONAW,      31,  35
 	; nite
 	;   %, species,		 min, max
 	db 22, DODUO,         33,  36
 	db 22, ARBOK,         33,  36
 	db 22, PONYTA,        33,  36
 	db 19, DODRIO,        33,  36
-	db  5, MEGANIUM,      33,  36
-	db  5, TYPHLOSION,    33,  36
-	db  5, FERALIGATR,    33,  36
+	db  5, MEGANIUM,      36,  40
+	db  5, TYPHLOSION,    36,  40
+	db  5, FERALIGATR,    36,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
@@ -1619,8 +1619,8 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, LEDYBA,         2,   4
-	db 22, PIDGEY,         3,   4
+	db 22, LEDYBA,         4,   6
+	db 22, PIDGEY,         4,   6
 	db 22, BELLSPROUT,     3,   5
 	db 10, GROWLITHE,      4,   5
 	db  8, MAREEP,         4,   5
@@ -1628,8 +1628,8 @@ JohtoGrassWildMons:
 	db  8, SUNKERN,        5,   6
 	; day
 	;   %, species,		 min, max
-	db 22, LEDYBA,         2,   4
-	db 22, PIDGEY,         3,   4
+	db 22, LEDYBA,         4,   6
+	db 22, PIDGEY,         4,   6
 	db 22, BELLSPROUT,     3,   5
 	db 10, GROWLITHE,      4,   5
 	db  8, MAREEP,         4,   5
@@ -1637,8 +1637,8 @@ JohtoGrassWildMons:
 	db  8, SUNKERN,        5,   6
 	; nite
 	;   %, species,		 min, max
-	db 22, SPINARAK,       2,   4
-	db 22, HOOTHOOT,       3,   4
+	db 22, SPINARAK,       4,   6
+	db 22, HOOTHOOT,       4,   6
 	db 22, BELLSPROUT,     3,   5
 	db 10, HOOTHOOT,       4,   5
 	db  8, MAREEP,         4,   5
@@ -1709,7 +1709,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
 	db 22, DODUO,         20,  22
@@ -1836,31 +1836,31 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, SKARMORY,      32,  35
-	db 22, GRAVELER,      34,  37
-	db 22, URSARING,      34,  37
-	db 10, SKARMORY,      33,  36
-	db  8, GLIGAR,        34,  37
-	db  8, DONPHAN,       34,  37
-	db  8, SKARMORY,      34,  37
+	db 22, SKARMORY,      33,  34
+	db 22, GRAVELER,      37,  40
+	db 22, URSARING,      37,  40
+	db 10, SKARMORY,      35,  37
+	db  8, GLIGAR,        37,  40
+	db  8, DONPHAN,       37,  40
+	db  8, SKARMORY,      38,  40
 	; day
 	;   %, species,		 min, max
-	db 22, SKARMORY,      32,  35
-	db 22, GRAVELER,      34,  37
-	db 22, URSARING,      34,  37
-	db 10, SKARMORY,      33,  36
-	db  8, GLIGAR,        34,  37
-	db  8, DONPHAN,       34,  37
-	db  8, SKARMORY,      34,  37
+	db 22, SKARMORY,      33,  34
+	db 22, GRAVELER,      37,  40
+	db 22, URSARING,      37,  40
+	db 10, SKARMORY,      35,  37
+	db  8, GLIGAR,        37,  40
+	db  8, DONPHAN,       37,  40
+	db  8, SKARMORY,      38,  40
 	; nite
 	;   %, species,		 min, max
-	db 22, SKARMORY,      32,  35
-	db 22, GRAVELER,      34,  37
-	db 22, URSARING,      34,  37
-	db 10, SKARMORY,      33,  36
-	db  8, GLIGAR,        34,  37
-	db  8, DONPHAN,       34,  37
-	db  8, SKARMORY,      34,  37
+	db 22, SKARMORY,      33,  34
+	db 22, GRAVELER,      37,  40
+	db 22, URSARING,      37,  40
+	db 10, SKARMORY,      35,  37
+	db  8, GLIGAR,        37,  40
+	db  8, DONPHAN,       37,  40
+	db  8, SKARMORY,      38,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
@@ -1903,7 +1903,7 @@ JohtoGrassWildMons:
 	db 22, SNORLAX,       68,  70
 	db 10, SKARMORY,      68,  70
 	db  8, HOUNDOOM,      68,  70
-	db  8, PORYGON2,      68,  70
+	db  8, MAMOSWINE,     68,  70
 	db  8, BLISSEY,       68,  70
 	; day
 	;   %, species,		 min, max
@@ -1912,7 +1912,7 @@ JohtoGrassWildMons:
 	db 22, SNORLAX,       68,  70
 	db 10, SKARMORY,      68,  70
 	db  8, HOUNDOOM,      68,  70
-	db  8, PORYGON2,      68,  70
+	db  8, MAMOSWINE,     68,  70
 	db  8, BLISSEY,       68,  70
 	; nite
 	;   %, species,		 min, max
@@ -1921,7 +1921,7 @@ JohtoGrassWildMons:
 	db 22, SNORLAX,       68,  70
 	db 10, SKARMORY,      68,  70
 	db  8, HOUNDOOM,      68,  70
-	db  8, PORYGON2,      68,  70
+	db  8, MAMOSWINE,     68,  70
 	db  8, BLISSEY,       68,  70
 	end_grass_wildmons
 

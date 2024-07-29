@@ -273,16 +273,16 @@ CooltrainerfBeth1SeenText:
 	cont "win at any cost."
 
 	para "I felt sorry for"
-	line "his #MON."
+	line "his #mon."
 	done
 
 CooltrainerfBeth1BeatenText:
-	text "#MON aren't"
+	text "#mon aren't"
 	line "tools of war."
 	done
 
 CooltrainerfBethAfterText:
-	text "#MON are in-"
+	text "#mon are in-"
 	line "valuable, lifelong"
 	cont "partners."
 	done
@@ -328,7 +328,7 @@ CooltrainerfReenaSeenText:
 	text "You shouldn't"
 	line "underestimate the"
 
-	para "wild #MON in"
+	para "wild #mon in"
 	line "these parts."
 	done
 
@@ -361,10 +361,10 @@ CooltrainerfMeganBeatenText:
 CooltrainerfMeganAfterBattleText:
 	text "I'm checking out"
 	line "pre- and post-"
-	cont "evolution #MON."
+	cont "evolution #mon."
 
 	para "Evolution really"
-	line "does make #MON"
+	line "does make #mon"
 	cont "stronger."
 
 	para "But evolved forms"
@@ -381,8 +381,8 @@ PsychicGilbertSeenText:
 	para "Mmmmmmm…"
 
 	para "I got it! You're"
-	line "on the #MON"
-	cont "LEAGUE challenge!"
+	line "on the #mon"
+	cont "League challenge!"
 	done
 
 PsychicGilbertBeatenText:
@@ -392,19 +392,19 @@ PsychicGilbertBeatenText:
 PsychicGilbertAfterBattleText:
 	text "With your skills,"
 	line "you'll do well at"
-	cont "the LEAGUE."
+	cont "the League."
 
 	para "That's what my"
 	line "premonition says."
 	done
 
 TohjoFallsJohtoSignText:
-	text "TOHJO FALLS"
+	text "Tohjo Falls"
 
-	para "THE LINK BETWEEN"
-	line "KANTO AND JOHTO"
+	para "The link between"
+	line "Kanto and Johto"
 	
-	para "#MON LEAGUE"
+	para "#mon League"
 	line "ahead."
 	done
 

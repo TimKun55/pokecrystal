@@ -10,10 +10,10 @@ EcruteakFairyFamilyHouse_MapScripts:
 
 	def_callbacks
 
-EcruteakFairyFamilyHouseMomScript:
+EcruteakFairyFamilyHouseMumScript:
 	faceplayer
 	opentext
-	writetext FairyMomWelcomeText
+	writetext FairyMumWelcomeText
 	waitbutton
 	checkevent EVENT_BEAT_SUE_BEA_MIA
 	iffalse .NoMoves
@@ -37,7 +37,7 @@ EcruteakFairyFamilyHouseMomScript:
 	end
 	
 .NoMoves
-	writetext MomNoMoves
+	writetext MumNoMoves
 	waitbutton
 	closetext
 	end
@@ -111,10 +111,14 @@ EcruteakFairyFamilyHouseGrampsScript:
 EcruteakFairyFamilyHouseGrannyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_LIA_ZOE_EVA
+	iftrue .GrannyTeachMove
 	writetext FairyGrannyWelcomeText
 	waitbutton
-	checkevent EVENT_BEAT_LIA_ZOE_EVA
-	iffalse .NoMoves
+	closetext
+	end
+
+.GrannyTeachMove
 	writetext UltimateFairyMoveText
 	yesorno
 	iffalse .TutorRefused
@@ -158,24 +162,18 @@ EcruteakFairyFamilyHouseGrannyScript:
 	closetext
 	end
 	
-.NoMoves
-	writetext GrannyNoMoves
-	waitbutton
-	closetext
-	end
-	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y
+	menu_coords 0, 5, 15, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "MOONBLAST@"
-	db "PLAY ROUGH@"
-	db "CANCEL@"
+	db "Moonblast@"
+	db "Play Rough@"
+	db "Cancel@"
 	
 EcruteakFairyFamilyHouseSylveonScript:
 	opentext
@@ -189,12 +187,12 @@ EcruteakFairyFamilyHouseSylveonScript:
 	closetext
 	end
 
-FairyMomWelcomeText:
+FairyMumWelcomeText:
 	text "Welcome! If you're"
 	line "visiting us, you"
 	cont "must be interested"
 	
-	para "in FAIRY TYPES!"
+	para "in fairy-types!"
 	line "Have you been"
 	cont "battling my"
 	
@@ -204,17 +202,17 @@ FairyMomWelcomeText:
 DisarmVoiceText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
-	cont "#MON to use"
+	cont "#mon to use"
 	
-	para "DISARM VOICE?"
+	para "Disarm Voice?"
 	done
 	
-MomNoMoves:
+MumNoMoves:
 	text "Oh, I guess not."
 	
 	para "Look for them"
 	line "somewhere south"
-	cont "of ECRUTEAK."
+	cont "of Ecruteak."
 	done
 
 DisarmVoiceRefused:
@@ -239,7 +237,7 @@ FairyDadWelcomeText:
 	line "visiting us, you"
 	cont "must be interested"
 	
-	para "in FAIRY TYPES!"
+	para "in fairy-types!"
 	line "Have you been"
 	cont "battling my"
 	
@@ -249,9 +247,9 @@ FairyDadWelcomeText:
 DrainKissText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
-	cont "#MON to use"
+	cont "#mon to use"
 	
-	para "DRAIN KISS?"
+	para "Drain Kiss?"
 	done
 	
 DadNoMoves:
@@ -259,7 +257,7 @@ DadNoMoves:
 	
 	para "Look for them"
 	line "somewhere west"
-	cont "of ECRUTEAK."
+	cont "of Ecruteak."
 	done
 
 DrainKissRefused:
@@ -284,7 +282,7 @@ FairyGrampsWelcomeText:
 	cont "visiting us, you"
 	
 	para "must be interested"
-	line "in FAIRY TYPES!"
+	line "in fairy-types!"
 	
 	para "Have you been"
 	line "battling my"
@@ -294,9 +292,9 @@ FairyGrampsWelcomeText:
 DazzlingleamText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
-	cont "#MON to use"
+	cont "#mon to use"
 	
-	para "DAZZLINGLEAM?"
+	para "DazzlinGleam?"
 	done
 	
 GrampsNoMoves:
@@ -304,7 +302,7 @@ GrampsNoMoves:
 	
 	para "Look for them"
 	line "somewhere east"
-	cont "of ECRUTEAK."
+	cont "of Ecruteak."
 	done
 
 DazzlingleamRefused:
@@ -328,13 +326,13 @@ FairyGrannyWelcomeText:
 	line "My family and I"
 	cont "recently moved"
 
-	para "from the HOENN"
-	line "REGION and we've"
+	para "from the Hoenn"
+	line "Region and we've"
 	cont "been looking for"
 
 	para "an excuse to teach"
-	line "TRAINERS about the"
-	cont "FAIRY TYPE!"
+	line "trainers about the"
+	cont "fairy-type!"
 
 	para "My granddaughters"
 	line "love to battle."
@@ -346,22 +344,25 @@ FairyGrannyWelcomeText:
 	line "we will gladly"
 	cont "teach your"
 	
-	para "#MON some FAIRY"
-	line "TYPE moves!"
+	para "#mon some fairy"
+	line "-type moves!"
 	
 	para "Defeat them all"
 	line "and I will teach"
 	cont "you the ultimate"
 	
-	para "FAIRY TYPE moves!"
+	para "fairy-type moves!"
 	done
 
 UltimateFairyMoveText:
 	text "Very well done!"
+	line "You've defeated my"
+	cont "granddaughters!"
 	
 	para "Shall I teach your"
-	line "#MON to use the"
-	cont "ultimate moves?"
+	line "#mon to use the"
+	cont "strongest Fairy"
+	cont "moves?"
 	done
 	
 UltimateFairyMoveWhichMoveText:
@@ -373,15 +374,10 @@ UltimateFairyMoveWhichMoveText:
 	
 EcruteakFairyFamilyHouseIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 	
-GrannyNoMoves:
-	text "Good luck out"
-	line "there, dear!" 
-	done
-
 UltimateFairyMoveRefusedText:
 	text "Oh, really? After"
 	line "all your efforts?"
@@ -402,7 +398,7 @@ EcruteakFairyFamilyHouseGrannyMoveText:
 	done
 	
 FairySylveonText:
-	text "SYLVEON: Syl!"
+	text "Sylveon: Syl!"
 	line "Veon! Syl!"
 	done
 
@@ -410,8 +406,8 @@ EcruteakFairyFamilyHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 13
-	warp_event  4,  7, ECRUTEAK_CITY, 13
+	warp_event  3,  7, ECRUTEAK_CITY, 16
+	warp_event  4,  7, ECRUTEAK_CITY, 16
 
 	def_coord_events
 
@@ -419,7 +415,7 @@ EcruteakFairyFamilyHouse_MapEvents:
 
 	def_object_events
 	object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseDadScript, -1
-	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseMomScript, -1
+	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseMumScript, -1
 	object_event  0,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseGrampsScript, -1
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseGrannyScript, -1
 	object_event  4,  1, SPRITE_SYLVEON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakFairyFamilyHouseSylveonScript, -1

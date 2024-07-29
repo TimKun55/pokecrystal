@@ -1,5 +1,5 @@
-	db "EGG@" ; species name
-	dw 307, 760 ; height, weight
+	db "Egg@" ; species name
+	dw 110, 346 ; height, weight
 
 	db   "People try to"
 	next "catch it for its"

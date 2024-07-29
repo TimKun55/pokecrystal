@@ -210,7 +210,7 @@ FakeDirectorTextBefore2:
 
 	para "Do you want to"
 	line "know where we hid"
-	cont "the real DIRECTOR?"
+	cont "the real Director?"
 
 	para "Sure, I'll tell"
 	line "you. But only if"
@@ -224,14 +224,14 @@ FakeDirectorWinText:
 
 FakeDirectorTextAfter:
 	text "We stashed the"
-	line "real DIRECTOR in"
+	line "real Director in"
 
-	para "the UNDERGROUND"
-	line "WAREHOUSE."
+	para "the Underground"
+	line "Warehouse."
 
 	para "It's at the far"
-	line "end of the UNDER-"
-	cont "GROUND."
+	line "end of the Under-"
+	cont "ground."
 
 	para "But I doubt you'll"
 	line "get that far."
@@ -239,8 +239,8 @@ FakeDirectorTextAfter:
 
 ArianaSeenText:
 	text "Remember me from"
-	line "the HIDEOUT in"
-	cont "MAHOGANY TOWN?"
+	line "the Hudeout in"
+	cont "Mahogany Town?"
 
 	para "I lost then, but I"
 	line "won't this time."
@@ -261,7 +261,7 @@ ArianaAfterBattleText:
 	line "won't appreciate"
 
 	para "the magnificence"
-	line "of TEAM ROCKET."
+	line "of Team Rocket."
 
 	para "That's too bad."
 	line "I really admire"
@@ -276,14 +276,14 @@ ArcherBeforeText:
 	line "the trainer."
 
 	para "We intend to take"
-	line "over this RADIO"
+	line "over this Radio"
 
-	para "STATION and an-"
+	para "Station and an-"
 	line "nounce our come-"
 	cont "back."
 
 	para "That should bring"
-	line "our boss GIOVANNI"
+	line "our boss Giovanni"
 
 	para "back from his solo"
 	line "training."
@@ -299,7 +299,7 @@ ArcherBeforeText:
 
 ArcherWinText:
 	text "No! Forgive me,"
-	line "GIOVANNI!"
+	line "Giovanni!"
 	done
 
 ArcherAfterText:
@@ -311,23 +311,23 @@ ArcherAfterText:
 	para "I wasn't up to the"
 	line "task after all."
 
-	para "Like GIOVANNI did"
+	para "Like Giovanni did"
 	line "before me, I will"
 
-	para "disband TEAM"
-	line "ROCKET here today."
+	para "disband Team"
+	line "Rocket here today."
 
 	para "Farewell."
 	done
 
 RadioTower5FDirectorThankYouText:
-	text "DIRECTOR: <PLAY_G>,"
+	text "Director: <PLAY_G>,"
 	line "thank you!"
 
 	para "Your courageous"
 	line "actions have saved"
 
-	para "#MON nation-"
+	para "#mon nation-"
 	line "wide."
 
 	para "I know it's not"
@@ -338,23 +338,23 @@ RadioTower5FDirectorThankYouText:
 RadioTower5FDirectorDescribeClearBellText:
 	text "There used to be a"
 	line "tower right here"
-	cont "in GOLDENROD CITY."
+	cont "in Goldenrod City."
 
 	para "But it was old and"
 	line "creaky."
 
 	para "So we replaced it"
-	line "with our RADIO"
-	cont "TOWER."
+	line "with our Radio"
+	cont "Tower."
 
 	para "We dug up that"
 	line "bell during"
 	cont "construction."
 
 	para "I heard that all"
-	line "sorts of #MON"
+	line "sorts of #mon"
 
-	para "lived in GOLDENROD"
+	para "lived in Goldenrod"
 	line "in the past."
 
 	para "Perhaps…"
@@ -362,19 +362,19 @@ RadioTower5FDirectorDescribeClearBellText:
 	para "That bell has some"
 	line "connection to the"
 
-	para "TIN TOWER in"
-	line "ECRUTEAK CITY…"
+	para "Tin Tower in"
+	line "Ecruteak City…"
 
 	para "Ah!"
 
 	para "That reminds me…"
 
-	para "I overheard TEAM"
-	line "ROCKET whispering."
+	para "I overheard Team"
+	line "Rocket whispering."
 
 	para "Apparently, some-"
 	line "thing is going on"
-	cont "at the TIN TOWER."
+	cont "at the Tin Tower."
 
 	para "I have no idea"
 	line "what is happening,"
@@ -383,7 +383,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	line "into it."
 
 	para "OK, I better go to"
-	line "my OFFICE."
+	line "my Office."
 	done
 
 RadioTower5FDirectorText:
@@ -391,13 +391,13 @@ RadioTower5FDirectorText:
 	line "<PLAY_G>!"
 
 	para "You know, I love"
-	line "#MON."
+	line "#mon."
 
-	para "I built this RADIO"
-	line "TOWER so I could"
+	para "I built this Radio"
+	line "Tower so I could"
 
 	para "express my love"
-	line "of #MON."
+	line "of #mon."
 
 	para "It would be nice"
 	line "if people enjoyed"
@@ -405,17 +405,17 @@ RadioTower5FDirectorText:
 	done
 
 BenText:
-	text "BEN: Do you listen"
+	text "Ben: Do you listen"
 	line "to our music?"
 	done
 
 RadioTower5FDirectorsOfficeSignText:
-	text "5F DIRECTOR'S"
-	line "   OFFICE"
+	text "5F Director's"
+	line "   Office"
 	done
 
 RadioTower5FStudio1SignText:
-	text "5F STUDIO 1"
+	text "5F Studio 1"
 	done
 
 RadioTower5F_MapEvents:

@@ -1,11 +1,11 @@
-MomPhoneGreetingText:
+MumPhoneGreetingText:
 	text "Hello?"
 
 	para "Oh, hi, <PLAYER>!"
 	line "Working hard?"
 	done
 
-MomPhoneLandmarkText:
+MumPhoneLandmarkText:
 	text "Oh, so you're in"
 	line "@"
 	text_ram wStringBuffer3
@@ -19,7 +19,7 @@ MomPhoneLandmarkText:
 	line "take a look?"
 	done
 
-MomPhoneGenericAreaText:
+MumPhoneGenericAreaText:
 	text "Really, you're in"
 	line "@"
 	text_ram wStringBuffer3
@@ -30,17 +30,17 @@ MomPhoneGenericAreaText:
 	cont "of neat, <PLAYER>."
 	done
 
-MomPhoneNewBarkText:
+MumPhoneNewBarkText:
 	text "What? You're in"
 	line "@"
 	text_ram wStringBuffer3
 	text "?"
 
-	para "Come see your MOM"
+	para "Come see your Mum"
 	line "sometime!"
 	done
 
-MomPhoneCherrygroveText:
+MumPhoneCherrygroveText:
 	text "You're visiting"
 	line "@"
 	text_ram wStringBuffer3
@@ -50,17 +50,17 @@ MomPhoneCherrygroveText:
 	line "home for a bit?"
 	done
 
-MomOtherAreaText:
+MumOtherAreaText:
 	text "Wow, you're in"
 	line "@"
 	text_ram wStringBuffer3
 	text "?"
 
 	para "Good luck on your"
-	line "#MON quest!"
+	line "#mon quest!"
 	done
 
-MomDeterminedText:
+MumDeterminedText:
 	text "That sounds really"
 	line "tough."
 
@@ -71,7 +71,7 @@ MomDeterminedText:
 	line "be OK, right?"
 	done
 
-MomCheckBalanceText:
+MumCheckBalanceText:
 	text "By the way, you've"
 	line "saved up ¥@"
 	text_ram wStringBuffer3
@@ -81,12 +81,12 @@ MomCheckBalanceText:
 	line "keep on saving?"
 	done
 
-MomImportantToSaveText:
+MumImportantToSaveText:
 	text "It's important to"
 	line "save your money."
 	done
 
-MomYoureNotSavingText:
+MumYoureNotSavingText:
 	text "Oh, <PLAYER>,"
 	line "you're not saving"
 
@@ -94,7 +94,7 @@ MomYoureNotSavingText:
 	line "you like to save?"
 	done
 
-MomYouveSavedText:
+MumYouveSavedText:
 	text "By the way, you've"
 	line "saved up ¥@"
 	text_ram wStringBuffer3
@@ -104,41 +104,41 @@ MomYouveSavedText:
 	line "saving again?"
 	done
 
-MomOKIllSaveText:
+MumOKIllSaveText:
 	text "OK. I'll save your"
 	line "money."
 	done
 
-MomPhoneWontSaveMoneyText:
+MumPhoneWontSaveMoneyText:
 	text "OK. I won't save"
 	line "your money."
 	done
 
-MomPhoneHangUpText:
+MumPhoneHangUpText:
 	text "<PLAYER>, keep it"
 	line "up! I'm rooting"
 	cont "for you, baby!"
 	done
 
-MomPhoneNoPokemonText:
+MumPhoneNoPokemonText:
 	text "Hello?"
 
 	para "Oh, hi, <PLAYER>!"
-	line "Wasn't PROF.ELM"
+	line "Wasn't Prof.Elm"
 	cont "waiting for you?"
 	done
 
-MomPhoneNoPokedexText:
+MumPhoneNoPokedexText:
 	text "Hello?"
 
 	para "Oh, hi, <PLAYER>!"
 	line "You're on a big"
 
-	para "mission for PROF."
-	line "ELM? Be good!"
+	para "mission for Prof."
+	line "Elm? Be good!"
 	done
 
-MomPhoneNoGymQuestText:
+MumPhoneNoGymQuestText:
 	text "Hello?"
 
 	para "Hi, <PLAYER>! If"
@@ -148,13 +148,13 @@ MomPhoneNoGymQuestText:
 	line "on home, dear."
 	done
 
-MomPhoneLectureText:
+MumPhoneLectureText:
 	text "Hello?"
 
 	para "…… <PLAYER>?"
-	line "I heard from PROF."
+	line "I heard from Prof."
 
-	para "ELM that you went"
+	para "Elm that you went"
 	line "on a long trip."
 
 	para "I wish you would"

@@ -446,8 +446,8 @@ GiveTakeItemMenuData:
 .Items:
 	db STATICMENU_CURSOR ; flags
 	db 2 ; # items
-	db "GIVE@"
-	db "TAKE@"
+	db "Give@"
+	db "Take@"
 
 PokemonSwapItemText:
 	text_far _PokemonSwapItemText
@@ -579,9 +579,9 @@ MonMailAction:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "READ@"
-	db "TAKE@"
-	db "QUIT@"
+	db "Read@"
+	db "Take@"
+	db "Quit@"
 
 TakeMail:
 	ld hl, .MailAskSendToPCText
@@ -1267,9 +1267,9 @@ PlaceMoveData:
 	hlcoord 0, 11
 	ld de, String_MoveType_Bottom
 	call PlaceString
-; Place Move "Atk"/BP String
+; Place Move "Atk"/Pow String
 	hlcoord 2, 12
-	ld de, String_MoveAtk ; string for "BP"
+	ld de, String_MoveAtk ; string for "Pow"
 	call PlaceString
 
 ; Place Move Cateogry
@@ -1325,7 +1325,7 @@ PlaceMoveData:
 
 ; Place Move Accuracy
 	hlcoord 10, 12
-	ld de, String_MoveAcc ; string for "ACC"
+	ld de, String_MoveAcc ; string for "Acc"
 	call PlaceString
 	hlcoord 18, 12
 	ld [hl], "<%>"
@@ -1364,13 +1364,13 @@ PlaceMoveData:
 	call PrintNum
 
 	hlcoord 10, 13
-	ld de, String_MoveChance ; string for "EFCT"
+	ld de, String_MoveChance ; string for "Eff"
 	call PlaceString
 	hlcoord 18, 13
 	ld [hl], "<%>"
 .no_efct_chance
 
-; Print BP Num
+; Print Pow Num
 	ld a, [wCurSpecies]
 	dec a
 	ld hl, Moves + MOVE_POWER
@@ -1386,7 +1386,7 @@ PlaceMoveData:
 	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
 	call PrintNum
 ; Print Move Description
-	jr .description ; printed BP, don't overwrite with "---", jump to print description
+	jr .description ; printed Pow, don't overwrite with "---", jump to print description
 .no_power
 	ld de, String_MoveNoPower ; string for "---"
 	call PlaceString
@@ -1406,11 +1406,11 @@ String_MoveType_Top:
 String_MoveType_Bottom:
 	db "┌─────────@"
 String_MoveAtk:
-	db "BP /@"
+	db "Pow/@"
 String_MoveAcc:
-	db "ACC/@"
+	db "Acc/@"
 String_MoveChance:
-	db "EFCT/@"
+	db "Eff/@"
 String_MoveNoPower:
 	db "---@"
 

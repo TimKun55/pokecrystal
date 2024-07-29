@@ -79,7 +79,7 @@
 	const MUSIC_RUINS_OF_ALPH_RADIO          ; 4b
 	const MUSIC_CAPTURE                      ; 4c
 	const MUSIC_ROUTE_26                     ; 4d
-	const MUSIC_MOM                          ; 4e
+	const MUSIC_MUM                          ; 4e
 	const MUSIC_VICTORY_ROAD                 ; 4f
 	const MUSIC_POKEMON_LULLABY              ; 50
 	const MUSIC_POKEMON_MARCH                ; 51
@@ -110,6 +110,9 @@
 	const MUSIC_HO_OH_BATTLE			     ; 69
 	const MUSIC_KANTO_LEGEND_BATTLE          ; 6a
 	const MUSIC_SAFARI_ZONE                  ; 6b
+	const MUSIC_CINNABAR_ISLAND              ; 6c
+	const MUSIC_ABANDONED_SHIP               ; 6d
+	const MUSIC_CERULEAN_CAVE                ; 6e
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

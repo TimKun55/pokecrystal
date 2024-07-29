@@ -24,6 +24,7 @@ Route23Clair:
 	startbattle
 	disappear ROUTE23_KINGDRA
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_CLAIR
 	setevent EVENT_ROUTE_23_CLAIR
 	opentext
 	writetext Route23ClairAfterText
@@ -64,13 +65,13 @@ Route23ClairBeforeText:
 	cont "others wanted to"
 	
 	para "do an old-school"
-	line "LEADER send-off."
+	line "Leader send-off."
 	
 	para "So, as the final"
 	line "obstacle between"
 	
 	para "you and the"
-	line "LEAGUE, I"
+	line "Leader, I"
 	cont "challenge you."
 	done
 
@@ -85,16 +86,16 @@ Route23ClairAfterText:
 	cont "you've become"
 
 	para "even stronger."
-	line "The MASTER was"
+	line "The Master was"
 	cont "correct."
 	
 	para "Go. You've beaten"
 	line "us all twice; the"
-	cont "LEAGUE had better"
+	cont "Leader had better"
 	
 	para "not underestimate"
 	line "you and your"
-	cont "#MON!"
+	cont "#mon!"
 	done
 
 Route23ClairVictoryText:
@@ -104,16 +105,16 @@ Route23ClairVictoryText:
 	done
 	
 Route23KingdraText:
-	text "KINGDRA: Draa!"
+	text "Kingdra: Draa!"
 	done
 
 IndigoPlateauSignText:
-	text "INDIGO PLATEAU"
+	text "Indigo Plateau"
 
 	para "The Ultimate Goal"
 	line "for Trainers!"
 
-	para "#MON LEAGUE HQ"
+	para "#mon League HQ"
 	done
 
 IndigoPlateau_MapEvents:

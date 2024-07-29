@@ -103,8 +103,8 @@ KogasRoom_EnterMovement:
 KogaScript_KogaBeforeText:
 	text "Fwahahahaha!"
 
-	para "I am KOGA of the"
-	line "ELITE FOUR."
+	para "I am Koga of the"
+	line "Elite Four."
 
 	para "I live in shadows,"
 	line "a ninja!"
@@ -122,7 +122,7 @@ KogaScript_KogaBeforeText:
 
 	para "Fwahahahaha!"
 
-	para "#MON is not"
+	para "#mon is not"
 	line "merely about brute"
 
 	para "force--you shall"
@@ -150,7 +150,7 @@ KogaScript_KogaDefeatText:
 	done
 	
 CrobatText:
-	text "CROBAT: Skreee!!"
+	text "Crobat: Skreee!!"
 	done
 
 KogasRoom_MapEvents:

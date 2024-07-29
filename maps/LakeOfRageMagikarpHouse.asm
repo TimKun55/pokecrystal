@@ -87,16 +87,16 @@ MagikarpHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 MagikarpLengthRaterText_LakeOfRageHistory:
-	text "LAKE OF RAGE is"
+	text "Lake Of Rage is"
 	line "actually a crater"
 
 	para "made by rampaging"
-	line "GYARADOS."
+	line "Gyarados."
 
 	para "The crater filled"
 	line "up with rainwater"
 
-	para "and the LAKE was"
+	para "and the Lake was"
 	line "formed."
 
 	para "That's the story"
@@ -108,7 +108,7 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	para "It used to be that"
 	line "you could catch"
 
-	para "lively MAGIKARP"
+	para "lively Magikarp"
 	line "there, but…"
 
 	para "I don't understand"
@@ -116,7 +116,7 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	done
 
 MagikarpLengthRaterText_MenInBlack:
-	text "The LAKE hasn't"
+	text "The Lake hasn't"
 	line "been normal since"
 
 	para "those men wearing"
@@ -124,25 +124,25 @@ MagikarpLengthRaterText_MenInBlack:
 	done
 
 MagikarpLengthRaterText_WorldsLargestMagikarp:
-	text "LAKE OF RAGE is"
+	text "Lake Of Rage is"
 	line "back to normal."
 
-	para "The MAGIKARP have"
+	para "The Magikarp have"
 	line "returned."
 
 	para "I may yet realize"
 	line "my dream of see-"
 	cont "ing the world's"
-	cont "largest MAGIKARP."
+	cont "largest Magikarp."
 
-	para "Do you have a ROD?"
+	para "Do you have a Rod?"
 	line "Please help me if"
 	cont "you do."
 	done
 
 MagikarpLengthRaterText_YouHaveAMagikarp:
 	text "Ah, you have a"
-	line "MAGIKARP! Let's"
+	line "Magikarp! Let's"
 
 	para "see how big that"
 	line "baby is."
@@ -180,7 +180,7 @@ MagikarpLengthRaterText_TooShort:
 
 MagikarpLengthRaterText_NotMagikarp:
 	text "What? That's not a"
-	line "MAGIKARP!"
+	line "Magikarp!"
 	done
 
 MagikarpLengthRaterText_Refused:
@@ -192,7 +192,7 @@ MagikarpLengthRaterText_Refused:
 	done
 
 LakeOfRageMagikarpHouseUnusedRecordText:
-	text "CURRENT RECORD"
+	text "Current Record"
 
 	para "@"
 	text_ram wStringBuffer3

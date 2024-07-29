@@ -14,7 +14,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 ; checkmoney/takemoney accounts
 	const_def
 	const YOUR_MONEY ; 0
-	const MOMS_MONEY ; 1
+	const MUMS_MONEY ; 1
 
 ; checkmoney/checkcoins return values
 	const_def
@@ -182,6 +182,7 @@ DEF NUM_FLOORS EQU const_value
 	const EMOTE_ROD
 	const EMOTE_BOULDER_DUST
 	const EMOTE_GRASS_RUSTLE
+	const EMOTE_PUDDLE_SPLASH
 DEF NUM_EMOTES EQU const_value
 DEF EMOTE_FROM_MEM EQU -1
 DEF EMOTE_LENGTH EQU 6
@@ -303,6 +304,8 @@ DEF NUM_UNOWN_PUZZLES EQU const_value
 	const UNOWNWORDS_LIGHT  ; 1
 	const UNOWNWORDS_WATER  ; 2
 	const UNOWNWORDS_HO_OH  ; 3
+DEF NUM_UNOWN_WALLS EQU const_value
+DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
 
 ; MoveTutor setval arguments
 	const_def 1

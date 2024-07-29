@@ -31,6 +31,7 @@ Route23Falkner:
 	startbattle
 	disappear ROUTE23_NOCTOWL
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_FALKNER
 	setevent EVENT_ROUTE_23_FALKNER
 	opentext
 	writetext Route23FalknerAfterText
@@ -52,6 +53,7 @@ Route23Bugsy:
 	startbattle
 	disappear ROUTE23_SCYTHER
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_BUGSY
 	setevent EVENT_ROUTE_23_BUGSY
 	opentext
 	writetext Route23BugsyAfterText
@@ -73,6 +75,7 @@ Route23Whitney:
 	startbattle
 	disappear ROUTE23_MILTANK
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_WHITNEY
 	setevent EVENT_ROUTE_23_WHITNEY
 	opentext
 	writetext Route23WhitneyAfterText
@@ -94,6 +97,7 @@ Route23Morty:
 	startbattle
 	disappear ROUTE23_GENGAR
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_MORTY
 	setevent EVENT_ROUTE_23_MORTY
 	opentext
 	writetext Route23MortyAfterText
@@ -115,6 +119,7 @@ Route23Chuck:
 	startbattle
 	disappear ROUTE23_POLIWRATH
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_CHUCK
 	setevent EVENT_ROUTE_23_CHUCK
 	opentext
 	writetext Route23ChuckAfterText
@@ -136,6 +141,7 @@ Route23Jasmine:
 	startbattle
 	disappear ROUTE23_STEELIX
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_JASMINE
 	setevent EVENT_ROUTE_23_JASMINE
 	opentext
 	writetext Route23JasmineAfterText
@@ -157,7 +163,10 @@ Route23Pryce:
 	startbattle
 	disappear ROUTE23_MAMOSWINE
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROUTE_23_PRYCE
 	setevent EVENT_ROUTE_23_PRYCE
+	setevent EVENT_MAHOGANY_GYM_PILOSWINE
+	clearevent EVENT_MAHOGANY_GYM_MAMOSWINE
 	opentext
 	writetext Route23PryceAfterText
 	waitbutton
@@ -301,15 +310,15 @@ Route23FalknerBeforeText:
 	text "<PLAYER>!"
 	line "It's been a while!"
 
-	para "CLAIR told us that"
+	para "Clair told us that"
 	line "you had earned"
 	cont "your final badge"
 	
 	para "and that you"
 	line "were on your way"
-	cont "to the #MON"
+	cont "to the #mon"
 
-	para "LEAGUE! So, we"
+	para "League! So, we"
 	line "decided to wait"
 	cont "for you here!"
 	
@@ -336,7 +345,7 @@ Route23FalknerAfterText:
 
 	para "become a better"
 	line "trainer and"
-	cont "GYM LEADER."
+	cont "Gym Leader."
 	
 	para "I'm going to keep"
 	line "training hard and"
@@ -344,7 +353,7 @@ Route23FalknerAfterText:
 	
 	para "next time."
 	line "Good luck at the"
-	cont "LEAGUE!"
+	cont "League!"
 	
 	para "And good luck"
 	line "with everyone"
@@ -356,13 +365,13 @@ Route23FalknerVictoryText:
 	done
 	
 Route23NoctowlText:
-	text "NOCTOWL: Towl!!"
+	text "Noctowl: Towl!!"
 	line "NocTowl!"
 	done
 
 Route23BugsyBeforeText:
 	text "Hey <PLAYER>!"
-	line "Did FALKNER tell"
+	line "Did Falkner tell"
 	
 	para "you we all wanna"
 	line "battle you?"
@@ -401,7 +410,7 @@ Route23BugsyVictoryText:
 	done
 	
 Route23ScytherText:
-	text "SCYTHER: Scyth!"
+	text "Scyther: Scyth!"
 	line "Scytherrrr!"
 	done
 	
@@ -430,7 +439,7 @@ Route23WhitneyAfterText:
 
 	para "I'm sure you'll"
 	line "do really well at"
-	cont "the LEAGUE!"
+	cont "the League!"
 	
 	para "Good luck!"
 	done
@@ -440,7 +449,7 @@ Route23WhitneyVictoryText:
 	done
 	
 Route23MiltankText:
-	text "MILTANK: Miltaa!!"
+	text "Miltank: Miltaa!!"
 	done
 	
 Route23MortyBeforeText:
@@ -456,7 +465,7 @@ Route23MortyBeforeText:
 	cont "pursuit of the"
 	
 	para "rainbow-colored"
-	line "#MON."
+	line "#mon."
 	
 	para "My defeat at your"
 	line "hands only pushed"
@@ -480,11 +489,11 @@ Route23MortyAfterText:
 	cont "encounter that"
 
 	para "rainbow-colored"
-	line "#MON."
+	line "#mon."
 	
 	para "But, you are"
 	line "strong enough for"
-	cont "the LEAGUE right"
+	cont "the League right"
 	cont "now."
 	
 	para "I wish you the"
@@ -496,7 +505,7 @@ Route23MortyVictoryText:
 	done
 	
 Route23GengarText:
-	text "GENGAR: Gen!"
+	text "Gengar: Gen!"
 	line "GarGar!"
 	done
 	
@@ -530,7 +539,7 @@ Route23ChuckAfterText:
 	para "You're in for a"
 	line "tough battle"
 	cont "against the"
-	cont "LEAGUE."
+	cont "League."
 	
 	para "I know you"
 	line "can do it!"
@@ -542,7 +551,7 @@ Route23ChuckVictoryText:
 	done
 	
 Route23PoliwrathText:
-	text "POLIWRATH: Wrath!"
+	text "Poliwrath: Wrath!"
 	line "Poli!"
 	done
 	
@@ -553,7 +562,7 @@ Route23JasmineBeforeText:
 	para "It's good to see"
 	line "you again."
 	
-	para "CLAIR told us"
+	para "Clair told us"
 	line "how strong"
 	cont "you've become."
 	
@@ -566,7 +575,7 @@ Route23JasmineDefeatText:
 	done
 
 Route23JasmineAfterText:
-	text "As a GYM LEADER"
+	text "As a Gym Leader"
 	line "it makes me happy"
 	cont "to see how strong"
 	cont "you've become."
@@ -577,10 +586,10 @@ Route23JasmineAfterText:
 	
 	para "I'll never forget"
 	line "how you helped"
-	cont "AMPHY that time."
+	cont "Amphy that time."
 	
 	para "Go and show the"
-	line "LEAGUE just how"
+	line "League just how"
 	cont "strong you are."
 	
 	para "Good luck."
@@ -591,7 +600,7 @@ Route23JasmineVictoryText:
 	done
 	
 Route23SteelixText:
-	text "STEELIX: Stee!"
+	text "Steelix: Stee!"
 	line "LixLix!"
 	done
 
@@ -601,7 +610,7 @@ Route23PryceBeforeText:
 	
 	para "No need for words."
 	
-	para "A #MON battle"
+	para "A #mon battle"
 	line "is the best"
 	cont "way for us"
 	cont "to communicate."
@@ -618,10 +627,10 @@ Route23PryceAfterText:
 
 	para "It's been a very"
 	line "long time since we"
-	cont "LEADERS saw a"
+	cont "Leaders saw a"
 	
 	para "trainer off to"
-	line "the LEAGUE."
+	line "the League."
 	
 	para "Go and show them"
 	line "your power."
@@ -634,12 +643,12 @@ Route23PryceVictoryText:
 	done
 	
 Route23MamoswineText:
-	text "MAMOSWINE: Mooo!"
+	text "Mamoswine: Mooo!"
 	line "Mammooo!"
 	done
 
 VictoryRoadSignText:
-	text "VICTORY ROAD"
+	text "Victory Road"
 
 	para "The last test"
 	line "for Trainers!"
@@ -649,8 +658,8 @@ Route23_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 139, VICTORY_ROAD_GATE, 4
-	warp_event  7, 139, VICTORY_ROAD_GATE, 5
+	warp_event  6, 139, VICTORY_ROAD_GATE, 3
+	warp_event  7, 139, VICTORY_ROAD_GATE, 4
 	warp_event  8,  41, VICTORY_ROAD_1F,  1
 	warp_event 10,  23, VICTORY_ROAD_3F, 10
 

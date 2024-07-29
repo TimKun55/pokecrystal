@@ -43,13 +43,13 @@ CeladonDeptStore5FGentlemanText:
 	text "I want to buy some"
 	line "items that raise"
 
-	para "#MON stats, but"
+	para "#mon stats, but"
 	line "I don't have"
 	cont "enough money…"
 	done
 
 CeladonDeptStore5FSailorText:
-	text "I want PP UP, so I"
+	text "I want PP Up, so I"
 	line "can raise the PP"
 
 	para "of moves. But you"
@@ -59,14 +59,14 @@ CeladonDeptStore5FSailorText:
 CeladonDeptStore5FTeacherText:
 	text "Using items on"
 	line "them makes #-"
-	cont "MON happy."
+	cont "mon happy."
 
 	para "They hate certain"
 	line "items, though…"
 	done
 
 CeladonDeptStore5FDirectoryText:
-	text "5F: DRUG STORE"
+	text "5F: Drug Store"
 	done
 
 CeladonDeptStore5F_MapEvents:

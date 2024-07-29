@@ -1,5 +1,5 @@
-	db "HAIRY BUG@" ; species name
-	dw 100, 70 ; height, weight
+	db "Hairy Bug@" ; species name
+	dw 030, 32 ; height, weight
 
 	db   "The barb on top of"
 	next "its head secretes"

@@ -333,7 +333,7 @@ _PrintDiploma:
 	xor a
 	ldh [hBGMapMode], a
 
-	farcall PrintDiplomaPage2
+;	farcall PrintDiplomaPage2
 
 	ln a, 0, 3 ; to be loaded to wPrinterMargins
 	call Printer_PrepareTilemapForPrint

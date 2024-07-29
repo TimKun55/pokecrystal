@@ -1,11 +1,11 @@
-DEF NUM_MOM_ITEMS_1 EQUS "((MomItems_1.End - MomItems_1) / 8)"
-DEF NUM_MOM_ITEMS_2 EQUS "((MomItems_2.End - MomItems_2) / 8)"
+DEF NUM_MUM_ITEMS_1 EQUS "((MumItems_1.End - MumItems_1) / 8)"
+DEF NUM_MUM_ITEMS_2 EQUS "((MumItems_2.End - MumItems_2) / 8)"
 
 	const_def 1
-	const MOM_ITEM
-	const MOM_DOLL
+	const MUM_ITEM
+	const MUM_DOLL
 
-MomTriesToBuySomething::
+MumTriesToBuySomething::
 	ld a, [wMapReentryScriptQueueFlag]
 	and a
 	ret nz
@@ -13,10 +13,10 @@ MomTriesToBuySomething::
 	and a
 	ret nz
 	xor a
-	ld [wWhichMomItemSet], a
-	call CheckBalance_MomItem2
+	ld [wWhichMumItemSet], a
+	call CheckBalance_MumItem2
 	ret nc
-	call Mom_GiveItemOrDoll
+	call Mum_GiveItemOrDoll
 	ret nc
 	ld b, BANK(.Script)
 	ld de, .Script
@@ -29,25 +29,25 @@ MomTriesToBuySomething::
 	farsjump Script_ReceivePhoneCall
 
 .ASMFunction:
-	call MomBuysItem_DeductFunds
-	call Mom_GetScriptPointer
-	ld a, [wWhichMomItemSet]
+	call MumBuysItem_DeductFunds
+	call Mum_GetScriptPointer
+	ld a, [wWhichMumItemSet]
 	and a
 	jr nz, .ok
-	ld hl, wWhichMomItem
+	ld hl, wWhichMumItem
 	inc [hl]
 .ok
-	ld a, PHONE_MOM
+	ld a, PHONE_MUM
 	ld [wCurCaller], a
 	ld bc, wCallerContact
 	ld hl, PHONE_CONTACT_TRAINER_CLASS
 	add hl, bc
 	ld [hl], TRAINER_NONE
 	inc hl
-	ld [hl], PHONE_MOM
+	ld [hl], PHONE_MUM
 	ld hl, PHONE_CONTACT_SCRIPT2_BANK
 	add hl, bc
-	ld a, BANK(Mom_GetScriptPointer)
+	ld a, BANK(Mum_GetScriptPointer)
 	ld [hli], a
 	ld a, e
 	ld [hli], a
@@ -55,18 +55,18 @@ MomTriesToBuySomething::
 	ld [hl], a
 	ret
 
-CheckBalance_MomItem2:
-	ld a, [wWhichMomItem]
-	cp NUM_MOM_ITEMS_2
+CheckBalance_MumItem2:
+	ld a, [wWhichMumItem]
+	cp NUM_MUM_ITEMS_2
 	jr nc, .nope
-	call GetItemFromMom
+	call GetItemFromMum
 	ld a, [hli]
 	ldh [hMoneyTemp], a
 	ld a, [hli]
 	ldh [hMoneyTemp + 1], a
 	ld a, [hli]
 	ldh [hMoneyTemp + 2], a
-	ld de, wMomsMoney
+	ld de, wMumsMoney
 	ld bc, hMoneyTemp
 	farcall CompareMoney
 	jr nc, .have_enough_money
@@ -80,14 +80,14 @@ CheckBalance_MomItem2:
 
 .check_have_2300
 	ld hl, hMoneyTemp
-	ld [hl], HIGH(MOM_MONEY >> 8)
+	ld [hl], HIGH(MUM_MONEY >> 8)
 	inc hl
-	ld [hl], HIGH(MOM_MONEY) ; mid
+	ld [hl], HIGH(MUM_MONEY) ; mid
 	inc hl
-	ld [hl], LOW(MOM_MONEY)
+	ld [hl], LOW(MUM_MONEY)
 .loop
-	ld de, wMomItemTriggerBalance
-	ld bc, wMomsMoney
+	ld de, wMumItemTriggerBalance
+	ld bc, wMumsMoney
 	farcall CompareMoney
 	jr z, .exact
 	jr nc, .less_than
@@ -100,21 +100,21 @@ CheckBalance_MomItem2:
 
 .exact
 	call .AddMoney
-	ld a, NUM_MOM_ITEMS_1
+	ld a, NUM_MUM_ITEMS_1
 	call RandomRange
 	inc a
-	ld [wWhichMomItemSet], a
+	ld [wWhichMumItemSet], a
 	scf
 	ret
 
 .AddMoney:
-	ld de, wMomItemTriggerBalance
+	ld de, wMumItemTriggerBalance
 	ld bc, hMoneyTemp
 	farcall AddMoney
 	ret
 
-MomBuysItem_DeductFunds:
-	call GetItemFromMom
+MumBuysItem_DeductFunds:
+	call GetItemFromMum
 	ld de, 3 ; cost
 	add hl, de
 	ld a, [hli]
@@ -123,17 +123,17 @@ MomBuysItem_DeductFunds:
 	ldh [hMoneyTemp + 1], a
 	ld a, [hli]
 	ldh [hMoneyTemp + 2], a
-	ld de, wMomsMoney
+	ld de, wMumsMoney
 	ld bc, hMoneyTemp
 	farcall TakeMoney
 	ret
 
-Mom_GiveItemOrDoll:
-	call GetItemFromMom
+Mum_GiveItemOrDoll:
+	call GetItemFromMum
 	ld de, 6 ; item type
 	add hl, de
 	ld a, [hli]
-	cp MOM_ITEM
+	cp MUM_ITEM
 	jr z, .not_doll
 	ld a, [hl]
 	ld c, a
@@ -151,47 +151,47 @@ Mom_GiveItemOrDoll:
 	call ReceiveItem
 	ret
 
-Mom_GetScriptPointer:
-	call GetItemFromMom
+Mum_GetScriptPointer:
+	call GetItemFromMum
 	ld de, 6 ; item type
 	add hl, de
 	ld a, [hli]
 	ld de, .ItemScript
-	cp MOM_ITEM
+	cp MUM_ITEM
 	ret z
 	ld de, .DollScript
 	ret
 
 .ItemScript:
-	writetext MomHiHowAreYouText
-	writetext MomFoundAnItemText
-	writetext MomBoughtWithYourMoneyText
-	writetext MomItsInPCText
+	writetext MumHiHowAreYouText
+	writetext MumFoundAnItemText
+	writetext MumBoughtWithYourMoneyText
+	writetext MumItsInPCText
 	end
 
 .DollScript:
-	writetext MomHiHowAreYouText
-	writetext MomFoundADollText
-	writetext MomBoughtWithYourMoneyText
-	writetext MomItsInYourRoomText
+	writetext MumHiHowAreYouText
+	writetext MumFoundADollText
+	writetext MumBoughtWithYourMoneyText
+	writetext MumItsInYourRoomText
 	end
 
-GetItemFromMom:
-	ld a, [wWhichMomItemSet]
+GetItemFromMum:
+	ld a, [wWhichMumItemSet]
 	and a
 	jr z, .zero
 	dec a
-	ld de, MomItems_1
+	ld de, MumItems_1
 	jr .GetFromList1
 
 .zero
-	ld a, [wWhichMomItem]
-	cp NUM_MOM_ITEMS_2
+	ld a, [wWhichMumItem]
+	cp NUM_MUM_ITEMS_2
 	jr c, .ok
 	xor a
 
 .ok
-	ld de, MomItems_2
+	ld de, MumItems_2
 
 .GetFromList1:
 	ld l, a
@@ -202,30 +202,30 @@ endr
 	add hl, de
 	ret
 
-INCLUDE "data/items/mom_phone.asm"
+INCLUDE "data/items/mum_phone.asm"
 
-MomHiHowAreYouText:
-	text_far _MomHiHowAreYouText
+MumHiHowAreYouText:
+	text_far _MumHiHowAreYouText
 	text_end
 
-MomFoundAnItemText:
-	text_far _MomFoundAnItemText
+MumFoundAnItemText:
+	text_far _MumFoundAnItemText
 	text_end
 
-MomBoughtWithYourMoneyText:
-	text_far _MomBoughtWithYourMoneyText
+MumBoughtWithYourMoneyText:
+	text_far _MumBoughtWithYourMoneyText
 	text_end
 
-MomItsInPCText:
-	text_far _MomItsInPCText
+MumItsInPCText:
+	text_far _MumItsInPCText
 	text_end
 
-MomFoundADollText:
-	text_far _MomFoundADollText
+MumFoundADollText:
+	text_far _MumFoundADollText
 	text_end
 
-MomItsInYourRoomText:
-	text_far _MomItsInYourRoomText
+MumItsInYourRoomText:
+	text_far _MumItsInYourRoomText
 	text_end
 
 

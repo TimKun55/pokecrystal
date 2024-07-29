@@ -79,7 +79,7 @@ CeladonGameCornerFisherScript:
 	end
 
 .coinname
-	db "COIN@"
+	db "Coin@"
 
 .NoCoinCase:
 	writetext CeladonGameCornerFisherNoCoinCaseText
@@ -201,17 +201,17 @@ CeladonGameCorner_NoCoinCase:
 
 CeladonGameCorner_DollMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	menu_coords 0, 2, 19, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "VOLTORB DOLL    {d:CELADONGAMECORNER_VOLTORB_DOLL_COINS}@"
-	db "TENTACOOL DOLL  {d:CELADONGAMECORNER_TENTACOOL_DOLL_COINS}@"
-	db "EEVEE DOLL      {d:CELADONGAMECORNER_EEVEE_DOLL_COINS}@"
-	db "CANCEL@"
+	db "Voltorb    {d:CELADONGAMECORNER_VOLTORB_DOLL_COINS}@"
+	db "Tentacool  {d:CELADONGAMECORNER_TENTACOOL_DOLL_COINS}@"
+	db "Eevee      {d:CELADONGAMECORNER_EEVEE_DOLL_COINS}@"
+	db "Cancel@"
 
 CeladonGameCornerPoster1Script:
 	jumptext CeladonGameCornerPoster1Text
@@ -313,7 +313,7 @@ CeladonGameCornerFisherText2:
 
 CeladonGameCornerFisherNoCoinCaseText:
 	text "Hey, you don't"
-	line "have a COIN CASE."
+	line "have a Coin Case."
 
 	para "How am I supposed"
 	line "to give you any"
@@ -321,8 +321,8 @@ CeladonGameCornerFisherNoCoinCaseText:
 	done
 
 CeladonGameCornerFisherFullCoinCaseText:
-	text "Hey, your COIN"
-	line "CASE is full, kid."
+	text "Hey, your Coin"
+	line "Case is full, kid."
 
 	para "You must be riding"
 	line "a winning streak"
@@ -330,7 +330,7 @@ CeladonGameCornerFisherFullCoinCaseText:
 	done
 
 CeladonGymGuideText:
-	text "Hey! CHAMP in"
+	text "Hey! Champ in"
 	line "making!"
 
 	para "Are you playing"
@@ -338,7 +338,7 @@ CeladonGymGuideText:
 
 	para "I'm trying to get"
 	line "enough coins for a"
-	cont "prize #MON."
+	cont "prize #mon."
 
 	para "But I don't have"
 	line "enough coins yet…"
@@ -348,7 +348,7 @@ CeladonGameCornerGrampsText:
 	text "Hmmm… The odds are"
 	line "surely better for"
 
-	para "PIKACHU's line,"
+	para "Pikachu's line,"
 	line "but… What to do?"
 	done
 
@@ -388,7 +388,7 @@ CeladonGameCorner_PokefanMDollIntroText:
 	text "Hello!"
 	
 	para "I've got a few"
-	line "DOLLS I can"
+	line "Dolls I can"
 	cont "trade for coins."
 	
 	para "Just don't tell"
@@ -396,7 +396,7 @@ CeladonGameCorner_PokefanMDollIntroText:
 	done
 
 CeladonGameCorner_AskWhichDollText:
-	text "Which DOLL would"
+	text "Which Doll would"
 	line "you like?"
 	done
 
@@ -413,7 +413,7 @@ CeladonGameCorner_HereYouGoText:
 	
 CeladonGameCorner_AlreadyHaveDollText:
 	text "You already have"
-	line "that DOLL."
+	line "that Doll."
 	done
 
 CeladonGameCorner_NotEnoughCoinsText:
@@ -428,7 +428,7 @@ CeladonGameCorner_ComeAgainText:
 
 CeladonGameCorner_NoCoinCaseText:
 	text "Oh? You don't have"
-	line "a COIN CASE."
+	line "a Coin Case."
 	done
 
 CeladonGameCorner_MapEvents:

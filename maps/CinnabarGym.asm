@@ -99,13 +99,13 @@ CinnabarGymGuideScript:
 	end
 
 BlaineIntroText:
-	text "BLAINE: Waaah!"
+	text "Blaine: Waaah!"
 
-	para "My original GYM"
+	para "My original Gym"
 	line "burned down."
 
 	para "My fire-breathing"
-	line "#MON and I have"
+	line "#mon and I have"
 
 	para "a new home inside"
 	line "of the volcano."
@@ -117,27 +117,27 @@ BlaineIntroText:
 
 	para "If you can beat"
 	line "me, I'll give you"
-	cont "a BADGE."
+	cont "a Badge."
 
 	para "Ha! You'd better"
-	line "have BURN HEAL!"
+	line "have Burn Heal!"
 	done
 
 BlaineWinLossText:
-	text "BLAINE: Awesome."
+	text "Blaine: Awesome."
 	line "I've burned out…"
 
 	para "You've earned the"
-	line "VOLCANOBADGE!"
+	line "VolcanoBadge!"
 	done
 
 ReceivedVolcanoBadgeText:
 	text "<PLAYER> received"
-	line "the VOLCANOBADGE."
+	line "the VolcanoBadge."
 	done
 
 BlaineAfterBattleText:
-	text "BLAINE: I did lose"
+	text "Blaine: I did lose"
 	line "this time, but I'm"
 
 	para "going to win the"
@@ -145,8 +145,8 @@ BlaineAfterBattleText:
 	done
 
 BlaineFightDoneText:
-	text "BLAINE: My fire"
-	line "#MON will be"
+	text "Blaine: My fire"
+	line "#mon will be"
 
 	para "even stronger."
 	line "Just you watch!"
@@ -201,11 +201,11 @@ CinnabarGymGuideWinText:
 	line "out about being"
 	cont "in a VOLCANO!"
 
-	text "A #MON GYM can"
+	para "A #mon Gym can"
 	line "be anywhere as"
 
-	para "long as the GYM"
-	line "LEADER is there."
+	para "long as the Gym"
+	line "Leader is there."
 
 	para "There's no need"
 	line "for a building."
@@ -216,7 +216,7 @@ CinnabarGymGuideWinText:
 	done
 
 MagmarText:
-	text "MAGMAR: Maaaar!!"
+	text "Magmar: Maaaar!!"
 	line "MarMagmar!"
 	done
 

@@ -126,19 +126,19 @@ MoomooScript:
 	end
 
 Route39BarnTwinMoomooIsSickText:
-	text "MOOMOO is sick…"
+	text "Moomoo is sick…"
 
 	para "She needs lots of"
-	line "BERRIES."
+	line "Berries."
 	done
 
 Route39BarnTwinWereFeedingMoomooText:
 	text "We're feeding"
-	line "MOOMOO!"
+	line "Moomoo!"
 	done
 
 MoomooWeakMooText:
-	text "MILTANK: …Moo…"
+	text "Miltank: …Moo…"
 	done
 
 Route39BarnItsCryIsWeakText:
@@ -146,44 +146,44 @@ Route39BarnItsCryIsWeakText:
 	done
 
 MoomooHappyMooText:
-	text "MILTANK: Mooo!"
+	text "Miltank: Mooo!"
 	done
 
 Route39BarnAskGiveBerryText:
 	text "Give a BERRY to"
-	line "MILTANK?"
+	line "Miltank?"
 	done
 
 Route39BarnGaveBerryText:
 	text "<PLAYER> gave a"
-	line "BERRY to MILTANK."
+	line "Berry to Miltank."
 	done
 
 Route39BarnLittleHealthierText:
-	text "MILTANK became a"
+	text "Miltank became a"
 	line "little healthier!"
 	done
 
 Route39BarnQuiteHealthyText:
-	text "MILTANK became"
+	text "Miltank became"
 	line "quite healthy!"
 	done
 
 Route39BarnTotallyHealthyText:
-	text "MILTANK became"
+	text "Miltank became"
 	line "totally healthy!"
 	done
 
 Route39BarnNoBerriesText:
 	text "<PLAYER> has no"
-	line "BERRIES…"
+	line "Berries…"
 	done
 
 Route39BarnRefusedBerryText:
 	text "<PLAYER> wouldn't"
-	line "give a BERRY."
+	line "give a Berry."
 
-	para "MILTANK looks sad."
+	para "Miltank looks sad."
 	done
 
 Route39Barn_MapEvents:

@@ -17,7 +17,7 @@ ViridianForest_MapScripts:
 	callback MAPCALLBACK_TILES, ViridianForestNoTreeCallBack
 	
 ViridianForestNoTreeCallBack:
-	checkevent EVENT_TEAM_ROCKET_DISBANDED
+	checkevent EVENT_KANTO_ROCKET_DISBAND
 	iffalse .end
 	changeblock 6, 6, $59 ; cleared tree
 .end
@@ -109,7 +109,7 @@ ViridianForestHiddenRevive:
 	hiddenitem REVIVE, EVENT_VIRIDIAN_FOREST_HIDDEN_REVIVE
 
 BugCatcherRobSeenText:
-	text "My bug #MON are"
+	text "My bug #mon are"
 	line "tough. Prepare to"
 	cont "lose!"
 	done
@@ -121,7 +121,7 @@ BugCatcherRobBeatenText:
 BugCatcherRobAfterBattleText:
 	text "I'm going to look"
 	line "for stronger bug"
-	cont "#MON."
+	cont "#mon."
 	done
 
 BugCatcherEdSeenText:
@@ -144,7 +144,7 @@ BugCatcherEdAfterBattleText:
 
 BugCatcherDougSeenText:
 	text "Why don't girls"
-	line "like bug #MON?"
+	line "like bug #mon?"
 	done
 
 BugCatcherDougBeatenText:
@@ -152,7 +152,7 @@ BugCatcherDougBeatenText:
 	done
 
 BugCatcherDougAfterBattleText:
-	text "Bug #MON squish"
+	text "Bug #mon squish"
 	line "like plush toys"
 
 	para "when you squeeze"
@@ -175,13 +175,13 @@ BugManiacMattAfterBattleText:
 	text "Maybe it's too"
 	line "dark in here?"
 
-	para "My #MON seem to"
+	para "My #mon seem to"
 	line "like it, though!"
 	done
 
 BugManiacTobiSeenText:
 	text "I've been trying"
-	line "to beat BROCK for"
+	line "to beat Brock for"
 	cont "ages, and I think"
 	
 	para "I'm finally ready!"
@@ -193,11 +193,11 @@ BugManiacTobiBeatenText:
 	done
 
 BugManiacTobiAfterBattleText:
-	text "I love my #MON"
+	text "I love my #mon"
 	line "but their types"
 
 	para "are a bad matchup"
-	line "for BROCK."
+	line "for Brock."
 	done
 	
 ViridianForestOfficerText:
@@ -211,11 +211,11 @@ ViridianForestOfficerText:
 	done 
 
 ViridianForest1SignText:
-	text "VIRIDIAN FOREST"
+	text "Viridian Forest"
 	done
 
 ViridianForest2SignText:
-	text "VIRIDIAN FOREST"
+	text "Viridian Forest"
 	done
 
 ViridianForest_MapEvents:

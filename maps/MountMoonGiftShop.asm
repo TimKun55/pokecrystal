@@ -22,9 +22,9 @@ MountMoonGiftShopLassScript:
 	jumptextfaceplayer MountMoonGiftShopLassText
 
 MountMoonGiftShopClefairyDollScript:
+	opentext
 	checkevent EVENT_DECO_CLEFAIRY_DOLL
 	iftrue .ClefairyDollPurchased 
-	opentext
 	writetext ClefairyDollPriceText
 	special PlaceMoneyTopRight
 	yesorno
@@ -54,7 +54,6 @@ MountMoonGiftShopClefairyDollScript:
 	end
 	
 .ClefairyDollPurchased:
-	opentext
 	writetext ClefairyDollText
 	waitbutton
 	closetext
@@ -62,13 +61,13 @@ MountMoonGiftShopClefairyDollScript:
 
 MountMoonGiftShopLassText:
 	text "When the sun goes"
-	line "down, CLEFAIRY"
+	line "down, Clefairy"
 	cont "come out to play."
 	done
 	
 ClefairyDollText:
 	text "It's a super cute"
-	line "CLEFAIRY DOLL."
+	line "Clefairy Doll."
 	done
 
 ClefairyDollNoSaleText:
@@ -81,7 +80,7 @@ ClefairyDollNoMoneyText:
 
 ClefairyDollPriceText:
 	text "It's a super cute"
-	line "CLEFAIRY DOLL."
+	line "Clefairy Doll."
 	
 	para "The price is"
 	line "¥12,000."
@@ -91,11 +90,11 @@ ClefairyDollPriceText:
 	
 BoughtClefairyDollText:
 	text "<PLAYER> bought"
-	line "CLEFAIRY DOLL."
+	line "the Clefairy Doll."
 	done
 
 ClefairyDollSentText:
-	text "CLEFAIRY DOLL"
+	text "The Clefairy Doll"
 	line "was sent home."
 	done
 
@@ -115,5 +114,5 @@ MountMoonGiftShop_MapEvents:
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClerkScript, -1
 	object_event  1,  6, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopLassScript, -1
 	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopLassScript, -1
-	object_event  2,  2, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClefairyDollScript, -1
+	object_event  2,  3, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClefairyDollScript, -1
 	object_event  2,  3, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MountMoonGiftShopClefairyDollScript, -1

@@ -40,15 +40,15 @@ GrannyBeastsText:
 	cont "visitors out here."
 	
 	para "Do you know about"
-	line "JOHTO'S LEGENDARY"
-	cont "BEASTS?"
+	line "Johto's Legendary"
+	cont "Beasts?"
 	
 	para "Years ago when I"
 	line "was a young girl"
 	cont "on my journey, I"
 	
 	para "encountered both"
-	line "RAIKOU and ENTEI."
+	line "Raikou and Entei."
 	
 	para "To witness such"
 	line "amazing creatures"
@@ -79,8 +79,8 @@ CianwoodBeastsHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, CIANWOOD_CITY, 7
-	warp_event  3,  7, CIANWOOD_CITY, 7
+	warp_event  2,  7, CIANWOOD_CITY, 6
+	warp_event  3,  7, CIANWOOD_CITY, 6
 
 	def_coord_events
 

@@ -611,7 +611,7 @@ CheckCanDeletePhoneNumber:
 	; and a
 	ret nz
 	ld a, b
-	cp PHONECONTACT_MOM
+	cp PHONECONTACT_MUM
 	ret z
 	cp PHONECONTACT_ELM
 	ret z

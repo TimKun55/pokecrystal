@@ -1,7 +1,7 @@
 ; PhoneContacts indexes (see data/phone/phone_contacts.asm)
 	const_def
 	const PHONE_00
-	const PHONE_MOM
+	const PHONE_MUM
 	const PHONE_OAK
 	const PHONE_BILL
 	const PHONE_ELM

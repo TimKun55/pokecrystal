@@ -234,14 +234,14 @@ MortyIntroText:
 	text "Good of you to"
 	line "have come."
 
-	para "Here in ECRUTEAK,"
-	line "#MON have been"
+	para "Here in Ecruteak,"
+	line "#mon have been"
 	cont "revered."
 
 	para "It's said that a"
 	line "rainbow-colored"
 
-	para "#MON will come"
+	para "#mon will come"
 	line "down to appear"
 
 	para "before a truly"
@@ -263,7 +263,7 @@ MortyIntroText:
 	line "more, I could see"
 
 	para "a future in which"
-	line "I meet the #MON"
+	line "I meet the #mon"
 	cont "of rainbow colors."
 
 	para "You're going to"
@@ -276,23 +276,23 @@ MortyWinLossText:
 	line "enough yet…"
 
 	para "All right. This"
-	line "BADGE is yours."
+	line "Badge is yours."
 	done
 
 Text_ReceivedFogBadge:
 	text "<PLAYER> received"
-	line "the FOGBADGE."
+	line "the FogBadge."
 	done
 
 MortyText_FogBadgeSpeech:
-	text "By having the FOG-"
-	line "BADGE, #MON up"
+	text "By having the Fog-"
+	line "Badge, #mon up"
 
 	para "to L50 will obey"
 	line "you."
 
-	para "Also, #MON that"
-	line "know SURF will be"
+	para "Also, #mon that"
+	line "know Surf will be"
 
 	para "able to use that"
 	line "move anytime."
@@ -302,11 +302,11 @@ MortyText_FogBadgeSpeech:
 	done
 
 MortyText_ShadowBallSpeech:
-	text "It's SHADOW BALL."
+	text "It's Shadow Ball."
 	line "It causes damage"
 
 	para "and may reduce"
-	line "SPCL.DEF."
+	line "Sp.Def."
 
 	para "Use it if it"
 	line "appeals to you."
@@ -356,8 +356,8 @@ Morty16IntroText:
 	line "You've done it."
 	
 	para "You've defeated"
-	line "all of the KANTO"
-	cont "GYM LEADERS."
+	line "all of the Kanto"
+	cont "Gym Leaders."
 	
 	para "Which means I"
 	line "can go all out"
@@ -385,7 +385,7 @@ MortyNextTimeText:
 
 SageJeffreySeenText:
 	text "I spent the spring"
-	line "with my #MON."
+	line "with my #mon."
 
 	para "Then summer, fall"
 	line "and winter…"
@@ -403,14 +403,14 @@ SageJeffreyBeatenText:
 	done
 
 SageJeffreyAfterBattleText:
-	text "Where did #MON"
+	text "Where did #mon"
 	line "come from?"
 	done
 
 SagePingSeenText:
 	text "Can you inflict"
 	line "any damage on our"
-	cont "#MON?"
+	cont "#mon?"
 	done
 
 SagePingBeatenText:
@@ -419,7 +419,7 @@ SagePingBeatenText:
 
 SagePingAfterBattleText:
 	text "We use only ghost-"
-	line "type #MON."
+	line "type #mon."
 
 	para "No normal-type"
 	line "attack can harm"
@@ -471,7 +471,7 @@ EcruteakGymGuideText:
 	line "may tell you some"
 
 	para "deep secrets about"
-	line "ECRUTEAK."
+	line "Ecruteak."
 	done
 
 EcruteakGymGuideWinText:
@@ -484,8 +484,8 @@ EcruteakGymGuideWinText:
 	done
 
 EcruteakGymClosedText:
-	text "MORTY, the GYM"
-	line "LEADER, is absent."
+	text "Morty, the Gym"
+	line "Leader, is absent."
 
 	para "Sorry, but you'll"
 	line "have to leave."
@@ -494,7 +494,7 @@ EcruteakGymClosedText:
 	done
 	
 GengarText:
-	text "GENGAR: Gen!!"
+	text "Gengar: Gen!!"
 	line "GengarGen!"
 	done
 

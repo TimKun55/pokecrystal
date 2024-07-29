@@ -105,20 +105,20 @@ OlivinePokecenter1FTutor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "POISON JAB@"
-	db "SILVER WIND@"
-	db "NIGHT SLASH@"
-	db "CANCEL@"
+	db "Poison Jab@"
+	db "Silver Wind@"
+	db "Night Slash@"
+	db "Cancel@"
 
 OlivinePokecenter1FFisherText:
-	text "The SAILOR in the"
-	line "OLIVINE CAFE next"
+	text "The Sailor in the"
+	line "Olivine Cafe next"
 
 	para "door is really"
 	line "generous."
 
 	para "He taught my"
-	line "#MON STRENGTH."
+	line "#mon Strength."
 
 	para "Now it can move"
 	line "big boulders."
@@ -126,21 +126,21 @@ OlivinePokecenter1FFisherText:
 
 OlivinePokecenter1FTeacherText:
 	text "There's a person"
-	line "in CIANWOOD CITY"
+	line "in Cianwood City"
 	cont "across the sea."
 
 	para "I heard him brag-"
 	line "ging about his"
-	cont "rare #MON."
+	cont "rare #mon."
 	done
 	
 OlivinePokecenter1FTutorIntro:
 	text "Hi there!"
-	line "I'm a MOVE TUTOR!"
+	line "I'm a Move Tutor!"
 	
 	para "For ¥6,500,"
 	line "I can teach your"
-	cont "#MON a pretty"
+	cont "#mon a pretty"
 
 	para "useful move if"
 	line "you'd like."
@@ -156,7 +156,7 @@ OlivinePokecenter1FTutorRefusalText:
 	line "if you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -192,7 +192,7 @@ OlivinePokecenter1FFarewellKidText:
 	
 OlivinePokecenter1FTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 

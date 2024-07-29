@@ -93,10 +93,10 @@ GoldenrodHomeDecorStore1FClerkScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "CHIKORITA  ¥16000@"
-	db "CYNDAQUIL  ¥16000@"
-	db "TOTODILE   ¥16000@"
-	db "CANCEL@"	
+	db "Chikorita  ¥16000@"
+	db "Cyndaquil  ¥16000@"
+	db "Totodile   ¥16000@"
+	db "Cancel@"	
 	
 HomeDecorVendingMachine:
 	opentext
@@ -166,10 +166,10 @@ HomeDecorVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FRESH WATER  ¥{d:GOLDENRODHOMEDECORSTORE1F_FRESH_WATER_PRICE}@"
-	db "SODA POP     ¥{d:GOLDENRODHOMEDECORSTORE1F_SODA_POP_PRICE}@"
-	db "LEMONADE     ¥{d:GOLDENRODHOMEDECORSTORE1F_LEMONADE_PRICE}@"
-	db "CANCEL@"
+	db "Fresh Water  ¥{d:GOLDENRODHOMEDECORSTORE1F_FRESH_WATER_PRICE}@"
+	db "Soda Pop     ¥{d:GOLDENRODHOMEDECORSTORE1F_SODA_POP_PRICE}@"
+	db "Lemonade     ¥{d:GOLDENRODHOMEDECORSTORE1F_LEMONADE_PRICE}@"
+	db "Cancel@"
 	
 GoldenrodHomeDecorStore1FReceptionistScript:
 	jumptextfaceplayer GoldenrodHomeDecorStore1FReceptionistText
@@ -191,8 +191,8 @@ GoldenrodHomeDecorStore1FDirectory:
 
 GoldenrodHomeDecorStore1FReceptionistText:
 	text "Hello! Welcome to"
-	line "GOLDENROD CITY"
-	cont "HOME DECOR STORE!"
+	line "Goldenrod City"
+	cont "Home Decor Store!"
 
 	para "The directory is"
 	line "on the wall."
@@ -200,37 +200,37 @@ GoldenrodHomeDecorStore1FReceptionistText:
 
 GoldenrodHomeDecorStore1FClerkText:
 	text "Welcome! Would you"
-	line "like a DOLL as a"
+	line "like a Doll as a"
 	cont "souvenir?"
 	done
 
 BoughtChikoritaDollText:
 	text "<PLAYER> bought"
-	line "CHIKORITA DOLL."
+	line "Chikorita Doll."
 	done
 
 ChikoritaDollSentText:
-	text "CHIKORITA DOLL"
+	text "Chikorita Doll"
 	line "was sent home."
 	done
 
 BoughtCindaquilDollText:
 	text "<PLAYER> bought"
-	line "CYNDAQUIL DOLL."
+	line "Cyndaquil Doll."
 	done
 
 CindaquilDollSentText:
-	text "CINDAQUIL DOLL"
+	text "Cyndaquil Doll"
 	line "was sent home."
 	done
 
 BoughtTotodileDollText:
 	text "<PLAYER> bought"
-	line "TOTODILE DOLL."
+	line "Totodile Doll."
 	done
 
 TotodileDollSentText:
-	text "TOTODILE DOLL"
+	text "Totodile Doll"
 	line "was sent home."
 	done
 
@@ -273,17 +273,17 @@ HomeDecorVendingNoSpaceText:
 
 GoldenrodHomeDecorStore1FChikoritaDollText:
 	text "It's a cute"
-	line "CHIKORITA DOLL!"
+	line "Chikorita Doll!"
 	done
 
 GoldenrodHomeDecorStore1FCindaquilDollText:
 	text "It's a tough"
-	line "CYNDAQUIL DOLL!"
+	line "Cyndaquil Doll!"
 	done
 
 GoldenrodHomeDecorStore1FTotodileDollText:
 	text "It's a cool"
-	line "TOTODILE DOLL!"
+	line "Totodile Doll!"
 	done
 
 GoldenrodHomeDecorStore1FBugManiacText:
@@ -291,7 +291,7 @@ GoldenrodHomeDecorStore1FBugManiacText:
 	line "recently, but they"
 
 	para "don't have any"
-	line "BUG #MON DOLLS."
+	line "Bug #mon Dolls."
 	done
 
 GoldenrodHomeDecorStore1FDirectoryText:

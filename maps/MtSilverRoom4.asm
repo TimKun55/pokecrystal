@@ -16,8 +16,6 @@ MtSilverRoom4Noop2Scene:
 	end
 
 MtSilverRoom4MewtwoAppear:
-	checkitem DNA_SAMPLE
-	iffalse .NoSample
 	playsound SFX_STRENGTH
 	pause 5
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -34,17 +32,9 @@ MtSilverRoom4MewtwoAppear:
 	setscene SCENE_MTSILVERROOM4_NOOP
 	end
 
-.NoSample
-	end
-
 MtSilverRoom4MewtwoCallback:
 	checkevent EVENT_MT_SILVER_ROOM_4_MEWTWO
 	iftrue .NoAppear
-	checkitem DNA_SAMPLE
-	iftrue .Appear
-	sjump .NoAppear
-
-.Appear:
 	appear MTSILVERROOM4_MEWTWO
 	endcallback
 

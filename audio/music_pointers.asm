@@ -81,7 +81,7 @@ Music:
 	dba Music_RuinsOfAlphRadio
 	dba Music_SuccessfulCapture
 	dba Music_Route26
-	dba Music_Mom
+	dba Music_Mum
 	dba Music_VictoryRoad
 	dba Music_PokemonLullaby
 	dba Music_PokemonMarch
@@ -112,4 +112,7 @@ Music:
 	dba Music_HoOhBattle
 	dba Music_KantoLegendBattle
 	dba Music_SafariZone
+	dba Music_CinnabarIsland
+	dba Music_AbandonedShip
+	dba Music_CeruleanCave
 	assert_table_length NUM_MUSIC_SONGS

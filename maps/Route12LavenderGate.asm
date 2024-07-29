@@ -10,16 +10,18 @@ Route12LavenderGateOfficerScript:
 	jumptextfaceplayer  Route12LavenderGateOfficerText
 
 Route12LavenderGateOfficerText:
-	text "Test"
-	line "Testing."
+	text "Go north for the"
+	line "Radio Tower, Power"
+	cont "Plant, and"
+	cont "Cerulean City."
 
-	para "TEEEEEEST"
-	line "TESSSSSST"
-	cont "Still test."
+	para "Go south for"
+	line "Vermilion City,"
+	cont "Fuchsia City and"
+	cont "the Safari Zone."
 
-	para "Keeping it going"
-	line "almost done...."
-	cont "...aaand finished."
+	para "So much to do,"
+	line "so much to see!"
 	done
 
 Route12LavenderGate_MapEvents:

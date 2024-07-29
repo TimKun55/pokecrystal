@@ -216,7 +216,24 @@ WindowScript:
 
 TVScript:
 	opentext
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .GrannyStreamScaries
+	ifequal MONDAY, .GrannyStream
+	ifequal WEDNESDAY, .GrannyStream
+	ifequal THURSDAY, .GrannyStream
 	farwritetext TVText
+	waitbutton
+	closetext
+	end
+
+.GrannyStreamScaries:
+	farwritetext GrannyStreamScariesText
+	waitbutton
+	closetext
+	end
+
+.GrannyStream:
+	farwritetext GrannyStreamText
 	waitbutton
 	closetext
 	end
@@ -261,7 +278,7 @@ SmashRockScript:
 	farsjump AskRockSmashScript
 
 PokecenterSignScript:
-	farjumptext PokecenterSignText
+	farjumptext PokeCenterSignText
 
 MartSignScript:
 	farjumptext MartSignText
@@ -295,19 +312,19 @@ DayToTextScript:
 	getstring STRING_BUFFER_3, .SaturdayText
 	end
 .SundayText:
-	db "SUNDAY@"
+	db "Sunday@"
 .MondayText:
-	db "MONDAY@"
+	db "Monday@"
 .TuesdayText:
-	db "TUESDAY@"
+	db "Tuesday@"
 .WednesdayText:
-	db "WEDNESDAY@"
+	db "Wednesday@"
 .ThursdayText:
-	db "THURSDAY@"
+	db "Thursday@"
 .FridayText:
-	db "FRIDAY@"
+	db "Friday@"
 .SaturdayText:
-	db "SATURDAY@"
+	db "Saturday@"
 
 GoldenrodRocketsScript:
 	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
@@ -599,7 +616,7 @@ InitializeEventsScript:
 	setevent EVENT_GOLDENROD_SALE_OFF
 	setevent EVENT_ECRUTEAK_CITY_GRAMPS
 	setevent EVENT_EUSINE_IN_BURNED_TOWER
-	setevent EVENT_PLAYERS_HOUSE_MOM_2
+	setevent EVENT_PLAYERS_HOUSE_MUM_2
 	setevent EVENT_WISE_TRIOS_ROOM_WISE_TRIO_2
 	setevent EVENT_CIANWOOD_CITY_EUSINE
 	setevent EVENT_TIN_TOWER_1F_EUSINE
@@ -629,8 +646,22 @@ InitializeEventsScript:
 	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	setevent EVENT_INITIALIZED_EVENTS
 	setevent EVENT_REPENTING_ROCKETS
+	setevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	setevent EVENT_LORELEI_IN_SAFFRON
+	setevent EVENT_AGATHA_IN_SAFFRON
+	setevent EVENT_APPEARING_POKEMON
+	setevent EVENT_ROUTE_23_FALKNER
+	setevent EVENT_ROUTE_23_BUGSY
+	setevent EVENT_ROUTE_23_WHITNEY
+	setevent EVENT_ROUTE_23_MORTY
+	setevent EVENT_ROUTE_23_CHUCK
+	setevent EVENT_ROUTE_23_JASMINE
+	setevent EVENT_ROUTE_23_PRYCE
+	setevent EVENT_ROUTE_23_CLAIR
+	setevent EVENT_VIOLET_GYM_NOCTOWL
+	setevent EVENT_MAHOGANY_GYM_MAMOSWINE
+	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 
 AskNumber1MScript:
@@ -1882,7 +1913,7 @@ CoinVendor_IntroScript:
 	db 3 ; items
 	db " 50 :  ¥1000@"
 	db "500 : ¥10000@"
-	db "CANCEL@"
+	db "Cancel@"
 
 HappinessCheckScript:
 	faceplayer
@@ -1915,7 +1946,7 @@ Movement_ContestResults_WalkAfterWarp:
 	
 PokecenterChanseyScript:
 	opentext
-	farwritetext PokecenterChanseyText
+	farwritetext PokeCenterChanseyText
 	cry CHANSEY
 	waitbutton
 	refreshscreen

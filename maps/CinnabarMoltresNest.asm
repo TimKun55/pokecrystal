@@ -25,7 +25,7 @@ CinnabarMoltresNestBlaineCallback:
 	endcallback
 
 CinnabarMoltresNestMoltresCallback:
-	checkevent EVENT_MOLTRES_NEST_MOLTRES
+	checkevent EVENT_FOUGHT_MOLTRES
 	iftrue .NoAppear
 	checkevent EVENT_BEAT_GUARDIAN_BLAINE
 	iftrue .Appear
@@ -50,7 +50,8 @@ CinnabarMoltresNestBlaine:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_BLAINE
-	opentext GuardianBlaineOutroText
+	opentext 
+	writetext GuardianBlaineOutroText
 	waitbutton
 	closetext
 	cry MAGMAR
@@ -78,9 +79,9 @@ CinnabarMoltresNestMoltres:
 	startbattle
 	disappear CINNABARMOLTRESNEST_MOLTRES
 	reloadmapafterbattle
-	checkevent EVENT_ARTICUNO_NEST_ARTICUNO
+	checkevent EVENT_FOUGHT_ARTICUNO
 	iffalse .end
-	checkevent EVENT_ZAPDOS_NEST_ZAPDOS
+	checkevent EVENT_FOUGHT_ZAPDOS
 	iffalse .end
 	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	end
@@ -100,11 +101,11 @@ GuardianBlaineIntroText:
 	line "You're back!"
 	
 	para "As one of the"
-	line "GUARDIANS I can't"
+	line "Guardians I can't"
 	cont "let anyone get"
 	
 	para "their hands on"
-	line "MOLTRES. But"
+	line "Moltres. But"
 	
 	para "you're not just"
 	line "anyone, are ya?"
@@ -113,11 +114,11 @@ GuardianBlaineIntroText:
 	line "strong, but are"
 	
 	para "you ready to prove"
-	line "it to MOLTRES?"
+	line "it to Moltres?"
 	
 	para "You're gonna need"
 	line "a bit more than"
-	cont "BURN HEAL!"
+	cont "Burn Heal!"
 	done
 	
 GuardianBlaineWinLossText:
@@ -135,25 +136,25 @@ GuardianBlaineOutroText:
 	para "You've definitely"
 	line "proved yourself"
 	cont "not just to me"
-	cont "but to MOLTRES."
+	cont "but to Moltres."
 	
 	para "RED left clear"
 	line "instructions;"
 	
 	para "I'll now release"
-	line "MOLTRES and you"
+	line "Moltres and you"
 	
 	para "can try to capture"
 	line "it. You've got"
 	cont "work cut out for"
 	cont "you, kid!"
 	
-	para "C'mon, MAGMAR!"
+	para "C'mon, Magmar!"
 	line "Let's go."
 	done
 
 MoltresText:
-	text "MOLTRES: Gshya!"
+	text "Moltres: Gshya!"
 	done
 	
 CinnabarMoltresNest_MapEvents:
@@ -168,5 +169,5 @@ CinnabarMoltresNest_MapEvents:
 
 	def_object_events
 	object_event 11, 16, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestBlaine, EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	object_event  6, 12, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestMoltres, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event  6, 12, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestMoltres, EVENT_MOLTRES_NEST_MOLTRES
 	

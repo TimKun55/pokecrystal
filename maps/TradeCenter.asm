@@ -8,7 +8,7 @@ TradeCenter_MapScripts:
 	scene_script TradeCenterNoopScene,       SCENE_TRADECENTER_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, TradeCenterSetWhichChrisCallback
+	callback MAPCALLBACK_OBJECTS, TradeCenterSetWhichPlayerCallback
 
 TradeCenterInitializeScene:
 	sdefer TradeCenterInitializeAndPreparePokecenter2FScript
@@ -17,8 +17,8 @@ TradeCenterInitializeScene:
 TradeCenterNoopScene:
 	end
 
-TradeCenterSetWhichChrisCallback:
-	special CableClubCheckWhichChris
+TradeCenterSetWhichPlayerCallback:
+	special CableClubCheckWhichPlayer
 	iffalse .Chris2
 	disappear TRADECENTER_CHRIS2
 	appear TRADECENTER_CHRIS1
@@ -58,5 +58,5 @@ TradeCenter_MapEvents:
 	bg_event  5,  4, BGEVENT_LEFT, TradeCenterConsoleScript
 
 	def_object_events
-	object_event  3,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  6,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	object_event  3,  4, SPRITE_ETHAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  6,  4, SPRITE_ETHAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

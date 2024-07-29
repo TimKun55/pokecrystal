@@ -5,12 +5,14 @@
 	const UNIONCAVEB2F_POKE_BALL1
 	const UNIONCAVEB2F_POKE_BALL2
 	const UNIONCAVEB2F_LAPRAS
+	const UNIONCAVEB2F_WOOPER
 
 UnionCaveB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
+	callback MAPCALLBACK_OBJECTS, UnionCaveB2FWooperShinyCallback
 
 UnionCaveB2FLaprasCallback:
 	checkflag ENGINE_UNION_CAVE_LAPRAS
@@ -25,6 +27,21 @@ UnionCaveB2FLaprasCallback:
 	appear UNIONCAVEB2F_LAPRAS
 	endcallback
 
+UnionCaveB2FWooperShinyCallback:
+	checkevent EVENT_UNION_CAVE_B2F_WOOPER_ENCOUNTERED
+	iftrue .NoAppear
+	checkevent EVENT_GOT_DIPLOMA
+	iftrue .Appear
+	sjump .NoAppear
+
+.Appear
+	appear UNIONCAVEB2F_WOOPER
+	endcallback
+
+.NoAppear
+	disappear UNIONCAVEB2F_WOOPER
+	endcallback
+
 UnionCaveLapras:
 	faceplayer
 	cry LAPRAS
@@ -33,6 +50,16 @@ UnionCaveLapras:
 	disappear UNIONCAVEB2F_LAPRAS
 	setflag ENGINE_UNION_CAVE_LAPRAS
 	reloadmapafterbattle
+	end
+
+UnionCaveWooper:
+	cry WOOPER
+	loadwildmon WOOPER, 15
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY
+	startbattle
+	disappear UNIONCAVEB2F_WOOPER
+	reloadmapafterbattle
+	setevent EVENT_UNION_CAVE_B2F_WOOPER_ENCOUNTERED
 	end
 
 TrainerCooltrainermNick:
@@ -92,7 +119,7 @@ CooltrainermNickBeatenText:
 	done
 
 CooltrainermNickAfterBattleText:
-	text "Your #MON style"
+	text "Your #mon style"
 	line "is stunning and"
 	cont "colorful, I admit."
 
@@ -117,7 +144,7 @@ CooltrainerfGwenAfterBattleText:
 	done
 
 CooltrainerfEmmaSeenText:
-	text "If the #MON I"
+	text "If the #mon I"
 	line "liked were there,"
 	cont "I'd go anywhere."
 
@@ -132,11 +159,11 @@ CooltrainerfEmmaBeatenText:
 
 CooltrainerfEmmaAfterBattleText:
 	text "Just once a week,"
-	line "a #MON comes to"
+	line "a #mon comes to"
 	cont "the water's edge."
 
 	para "I wanted to see"
-	line "that #MON…"
+	line "that #mon…"
 	done
 
 UnionCaveB2F_MapEvents:
@@ -153,6 +180,7 @@ UnionCaveB2F_MapEvents:
 	object_event 15, 19, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermNick, -1
 	object_event  5, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfGwen, -1
 	object_event  3, 30, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfEmma, -1
-	object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
+	object_event 17, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
 	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
 	object_event 11, 31, SPRITE_LAPRAS_SAFARI, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS
+	object_event 16,  8, SPRITE_WOOPER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveWooper, EVENT_UNION_CAVE_B2F_WOOPER

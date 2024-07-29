@@ -18,6 +18,7 @@ UndergroundRoomArcherScript:
 	closetext
 	pause 15
 	turnobject UNDERGROUNDROOM_ARCHER, DOWN
+	showemote EMOTE_SHOCK, UNDERGROUNDROOM_ARCHER, 15
 	opentext
 	writetext UndergroundArcherSeenText
 	promptbutton
@@ -39,6 +40,7 @@ UndergroundRoomArcherScript:
 	moveobject UNDERGROUNDROOM_GIOVANNI, 11,  9
 	appear UNDERGROUNDROOM_GIOVANNI
 	applymovement UNDERGROUNDROOM_GIOVANNI, UndergroundRoomGiovanniEnterMovement
+	showemote EMOTE_SHOCK, UNDERGROUNDROOM_ARCHER, 15
 	turnobject UNDERGROUNDROOM_ARCHER, LEFT
 	turnobject PLAYER, LEFT
 	opentext
@@ -62,7 +64,7 @@ UndergroundRoomArcherScript:
 	promptbutton
 	closetext
 	playsound SFX_GLASS_TING
-	pause 15
+	pause 30
 	applymovement UNDERGROUNDROOM_ARCHER, UndergroundRoomArcherLeaveMovement1
 	opentext
 	writetext UndergroundArcherFarewellText
@@ -163,6 +165,7 @@ UndergroundRoomArcherLeaveMovement2:
 	step DOWN
 	step DOWN
 	step DOWN
+	step DOWN
 	step_end
 
 UndergroundRoomPlayerMovement:
@@ -182,14 +185,10 @@ UndergroundRoomSneasel:
 	end
 
 UndergroundRoomComputer:	
-	opentext
-	writetext UndergroundRoomComputerText
-	waitbutton
-	closetext
-	end
+	jumptext UndergroundRoomComputerText
 	
 UndergroundArcherBeforeText:
-	text "ARIANA, not now."
+	text "Ariana, not now."
 	
 	para "I'm so close to"
 	line "pinpointing his"
@@ -225,7 +224,7 @@ UndergroundArcherBeforeBattleText:
 	line "Not when I'm so"
 	
 	para "close to finding"
-	line "the BOSS!!"
+	line "the Boss!!"
 	done
 	
 UndergroundArcherWinLossText:
@@ -238,7 +237,7 @@ UndergroundArcherWinLossText:
 UndergroundArcherAfterBattleText:
 	text "How are you this"
 	line "powerful of a"
-	cont "TRAINER?!"
+	cont "trainer?!"
 	
 	para "You beat us"
 	line "already; why are"
@@ -250,17 +249,17 @@ UndergroundArcherAfterBattleText:
 	line "getting in the"
 	
 	para "way of us finding"
-	line "GIOVANNI?!?!?!"
+	line "Giovanni?!"
 	done
 	
 UndergroundArcherBossText:
-	text "BOSS?!?!"
+	text "Archer: BOSS?!"
 	done
 	
 UndergroundArcherHereText:
-	text "Its…its you!"
+	text "Its…its you…"
 	
-	para "You're here!"
+	para "You're here…"
 	line "You're actually"
 	cont "here!"
 	
@@ -269,7 +268,7 @@ UndergroundArcherHereText:
 	done
 	
 UndergroundArcherShockText:
-	text "ARCHER:'Why'?"
+	text "Archer:'Why'?"
 	line "For you!"
 	
 	para "You taught us to"
@@ -285,7 +284,7 @@ UndergroundArcherShockText:
 	
 	para "that you had appa-"
 	line "rently abandoned"
-	cont "the TEAM."
+	cont "the Team."
 	
 	para "But you would"
 	line "never do that!"
@@ -307,34 +306,34 @@ UndergroundArcherFarewellText:
 	done
 	
 UndergroundGiovanniStopText:
-	text "???: ARCHER."
+	text "???: Archer."
 	line "Stop this."
 	done
 
 UndergroundGiovanni1Text:
-	text "GIOVANNI: Your"
+	text "Giovanni: Your"
 	line "'hard work'?"
 	
 	para "I followed this"
 	line "child in here"
 	cont "after hearing"
 	
-	para "rumours about TEAM"
-	line "ROCKET being"
+	para "rumours about Team"
+	line "Rocket being"
 	
 	para "active again in"
-	line "KANTO."
+	line "Kanto."
 	
 	para "I'm guessing that"
 	line "business at the"
 	
-	para "POWER PLANT was"
+	para "Power Plant was"
 	line "your doing?"
 	
 	para "Absolute fools!"
 	
 	para "I disbanded the"
-	line "TEAM years ago"
+	line "Team years ago"
 	cont "with good reason"
 	
 	para "and you wanted to"
@@ -342,14 +341,14 @@ UndergroundGiovanni1Text:
 	done
 
 UndergroundGiovanni2Text:
-	text "I see."
+	text "Giovanni: I see."
 	
 	para "I should have"
 	line "told you in"
 	cont "person myself."
 	
 	para "For all my grand"
-	line "plans for the TEAM"
+	line "plans for the Team"
 	cont "they were all"
 	
 	para "squashed by one"
@@ -364,7 +363,7 @@ UndergroundGiovanni2Text:
 	line "trainers are"
 	cont "emerging."
 	
-	para "#MON are not"
+	para "#mon are not"
 	line "tools for us to"
 	cont "exploit and use"
 	
@@ -372,7 +371,7 @@ UndergroundGiovanni2Text:
 	line "I was a fool"
 	cont "to try."
 	
-	para "ARCHER, I want you"
+	para "Archer, I want you"
 	line "four to come to"
 	cont "my place and I'll"
 	
@@ -390,7 +389,7 @@ UndergroundGiovanni3Text:
 	
 	para "Because of you"
 	line "I was finally able"
-	cont "to put TEAM ROCKET"
+	cont "to put Team Rocket"
 	
 	para "to rest. You are"
 	line "a very remarkable"
@@ -409,6 +408,12 @@ UndergroundPetrelSeenText:
 	text "Wait, you?!"
 	line "How did you even"
 	cont "get in here?!"
+	
+	para "I left the"
+	line "door open?!"
+	
+	para "Aah!!"
+	line "This is my fault!"
 	done
 
 UndergroundPetrelBeatenText:
@@ -417,7 +422,7 @@ UndergroundPetrelBeatenText:
 
 UndergroundPetrelAfterBattleText:
 	text "All we wanted was"
-	line "to find GIOVANNI…"
+	line "to find Giovanni…"
 	cont "this time…"
 	done
 	
@@ -475,7 +480,7 @@ UndergroundArianaAfterBattleText:
 	done
 	
 SneaselText:
-	text "SNEASEL: Neeaa!!"
+	text "Sneasel: Neeaa!!"
 	done
 	
 UndergroundRoomComputerText:
@@ -483,8 +488,8 @@ UndergroundRoomComputerText:
 	line "of GPS system?"
 	
 	para "It seems to be"
-	line "showing VIRIDIAN"
-	cont "FOREST."
+	line "showing the west"
+	cont "side of Kanto."
 	done
 
 UndergroundRoom_MapEvents:
@@ -501,7 +506,7 @@ UndergroundRoom_MapEvents:
 	def_object_events
 	object_event 13,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UndergroundRoomArcherScript, EVENT_KANTO_ROCKET_DISBAND
 	object_event 12,  3, SPRITE_SNEASEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UndergroundRoomSneasel, EVENT_KANTO_ROCKET_DISBAND
-	object_event  4,  8, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, ExecutivePetrel, EVENT_KANTO_ROCKET_DISBAND
+	object_event  4,  8, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, ExecutivePetrel, EVENT_KANTO_ROCKET_DISBAND
 	object_event  8, 10, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveProton, EVENT_KANTO_ROCKET_DISBAND
 	object_event  9, 10, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveAriana, EVENT_KANTO_ROCKET_DISBAND
 	object_event 14, 19, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_KANTO_ROCKET_DISBAND

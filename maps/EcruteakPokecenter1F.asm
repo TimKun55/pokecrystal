@@ -142,10 +142,10 @@ EcruteakPokecenter1FTutor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ROCK BLAST@"
-	db "GROWTH PUNCH@"
-	db "FLAME CHARGE@"
-	db "CANCEL@"
+	db "Rock Blast@"
+	db "Growth Punch@"
+	db "Flame Charge@"
+	db "Cancel@"
 
 EcruteakPokecenter1FPokefanMScript:
 	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
@@ -184,7 +184,7 @@ EcruteakPokecenter1FPlayerMovement1:
 	step_end
 
 EcruteakPokecenter1F_BillText1:
-	text "Hi, I'm BILL. And"
+	text "Hi, I'm Bill. And"
 	line "who are you?"
 
 	para "Hmm, <PLAYER>, huh?"
@@ -199,19 +199,19 @@ EcruteakPokecenter1F_BillText2:
 	para "You probably know"
 	line "them as the"
 	
-	para "MOVE DELETER and"
-	line "MOVE RELEARNER."
+	para "Move Deleter and"
+	line "Move Relearner."
 
 	para "Whenever I'm in"
-	line "GOLDENROD to see"
+	line "Goldenrod to see"
 	cont "family, I make"
 	
 	para "sure to come to"
-	line "ECRUTEAK, too!"
+	line "Ecruteak, too!"
 
 	para "Anyway, I should"
 	line "head back to"
-	cont "GOLDENROD and"
+	cont "Goldenrod and"
 	cont "see my folks."
 
 	para "Buh-bye!"
@@ -219,11 +219,11 @@ EcruteakPokecenter1F_BillText2:
 	
 EcruteakPokecenter1FTutorIntro:
 	text "Hi there!"
-	line "I'm a MOVE TUTOR!"
+	line "I'm a Move Tutor!"
 	
 	para "For ¥4000,"
 	line "I can teach your"
-	cont "#MON a pretty"
+	cont "#mon a pretty"
 
 	para "useful move if"
 	line "you'd like."
@@ -239,7 +239,7 @@ EcruteakPokecenter1FTutorRefusalText:
 	line "if you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -275,7 +275,7 @@ EcruteakPokecenter1FFarewellKidText:
 	
 EcruteakPokecenter1FTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 
@@ -284,12 +284,12 @@ EcruteakPokecenter1FTutorMoveText:
 	done
 
 EcruteakPokecenter1FPokefanMText:
-	text "The way the KIMONO"
-	line "GIRLS dance is"
+	text "The way the Kimono"
+	line "Girls dance is"
 
 	para "marvelous. Just"
 	line "like the way they"
-	cont "use their #MON."
+	cont "use their #mon."
 	done
 
 EcruteakPokecenter1FPokefanMTextMobile:
@@ -305,23 +305,23 @@ EcruteakPokecenter1FPokefanMTextMobile:
 	para "Where, you ask?"
 
 	para "It's a little past"
-	line "OLIVINE CITY."
+	line "Olivine City."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
-	text "MORTY, the GYM"
-	line "LEADER, is soooo"
+	text "Morty, the Gym"
+	line "Leader, is soooo"
 	cont "cool."
 
-	para "His #MON are"
+	para "His #mon are"
 	line "really tough too."
 	done
 
 EcruteakPokecenter1FGymGuideText:
-	text "LAKE OF RAGE…"
+	text "Lake Of Rage…"
 
 	para "The appearance of"
-	line "a GYARADOS swarm…"
+	line "a Gyarados swarm…"
 
 	para "I smell a conspir-"
 	line "acy. I know it!"

@@ -97,9 +97,9 @@ PrimosHouseWooperScript:
 	end
 
 PrimoIntroText:
-	text "Hi! I'm PRIMO."
+	text "Hi! I'm Primo."
 	line "I moved here from"
-	cont "KANTO not too"
+	cont "Kanto not too"
 	cont "long ago."
 
 	para "You recently"
@@ -114,24 +114,24 @@ PrimoIntroText:
 PrimoBeatFalknerText:
 	text "Hmm, you don't"
 	line "seem to have any"
-	cont "GYM BADGES."
+	cont "Gym Badges."
 	
-	para "Defeat FALKNER and"
+	para "Defeat Falkner and"
 	line "I'll have some-"
 	cont "thing for you!"
 	done
 
 PrimoTakeThisSlugmaText:
 	text "Hey, you've got"
-	line "FALKNER'S BADGE!"
+	line "Falkner's Badge!"
 
 	para "Would you like"
-	line "this SLUGMA?"
+	line "this Slugma?"
 	done
 
 PrimoAmazingText:
 	text "Amazing!"
-	line "SLUGMA isn't easy"
+	line "Slugma isn't easy"
 	cont "to raise but"
 
 	para "it can be very"
@@ -141,22 +141,22 @@ PrimoAmazingText:
 
 ReceivedSlugmaText:
 	text "<PLAYER> received"
-	line "SLUGMA!"
+	line "Slugma!"
 	done
 
 PrimoSlugmaComeInHandyText:
-	text "As a FIRE type,"
-	line "SLUGMA will"
+	text "As a fire-type,"
+	line "Slugma will"
 	cont "definitely come"
 	
 	para "in handy in the"
-	line "AZALEA GYM!"
+	line "Azalea Gym!"
 	done
 
 PrimoPartyFullText:
 	text "Whoa, wait. You"
 	line "can't carry any"
-	cont "more #MON."
+	cont "more #mon."
 	done
 
 PrimoNoSlugmaText:
@@ -169,23 +169,23 @@ PrimoNoSlugmaText:
 
 PrimoLoveJohtoText:
 	text "Moving here from"
-	line "VIRIDIAN CITY was"
+	line "Viridian City was"
 	cont "a bit hectic!"
 	
 	para "But I absolutely"
-	line "love JOHTO!"
+	line "love Johto!"
 	done
 	
 PrimosHouseMareepText:
-	text "MAREEP: Meep!"
+	text "Mareep: Meep!"
 	done
 
 PrimosHouseSlugmaText:
-	text "SLUGMA: Maaag!"
+	text "Slugma: Maaag!"
 	done
 
 PrimosHouseWooperText:
-	text "WOOPER: Oopaa!"
+	text "Wooper: Oopaa!"
 	done
 
 VioletPrimosHouse_MapEvents:

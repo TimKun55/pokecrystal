@@ -10,7 +10,7 @@ ViridianForestHouseBF1GiovanniScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
-	iftrue .GotDNASample
+	iftrue .GotSecretKey
 	writetext GiovanniText_1
 	waitbutton
 	closetext
@@ -20,47 +20,20 @@ ViridianForestHouseBF1GiovanniScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GIOVANNI
 	opentext
-	writetext GiovanniText_DNASampleText
+	writetext GiovanniSecretKeyText
 	promptbutton
-	verbosegiveitem DNA_SAMPLE
-	setevent EVENT_GOT_DNA_SAMPLE
-	writetext GiovanniText_DNASampleSpeech
+	verbosegiveitem SECRET_KEY
+	setevent EVENT_GOT_SECRET_KEY
+	writetext GiovanniSecretKeySpeech
 	waitbutton
-.GotDNASample:
-	writetext GiovanniText_Mew
+.GotSecretKey:
+	writetext GiovanniSecretKeyExplainText
 	waitbutton
 	closetext
 	end
-	
-ViridianForestHouseBF1Notebook1:
-	opentext
-	writetext ViridianForestHouseBF1Notebook1Text
-	yesorno
-	iffalse .Done
-	writetext ViridianForestHouseBF1Notebook1Text1
-	yesorno
-	iffalse .Done
-	writetext ViridianForestHouseBF1Notebook1Text2
-	yesorno
-	iffalse .Done
-	writetext ViridianForestHouseBF1Notebook1Text3
-	waitbutton
-.Done:
-	closetext
-	end
-	
-ViridianForestHouseBF1Notebook2:
-	opentext
-	writetext ViridianForestHouseBF1Notebook2Text
-	yesorno
-	iffalse .Done
-	writetext ViridianForestHouseBF1Notebook2Text1
-	yesorno
-	iffalse .Done
-	waitbutton
-.Done:
-	closetext
-	end
+
+ViridianForestHouseBF1Notebook:
+	jumptext ViridianForestHouseBF1NotebookText
 	
 GiovanniText_1:
 	text "So, you've found"
@@ -71,8 +44,14 @@ GiovanniText_1:
 	cont "repent for all my"
 
 	para "past mistakes and"
-	line "failures. Once"
-	cont "again it's a child"
+	line "failures but it"
+	cont "seems I had"
+	
+	para "some unfinished"
+	line "business."
+
+	para "Once again it"
+	line "is a child"
 
 	para "who has shown me"
 	line "the way and helped"
@@ -80,10 +59,10 @@ GiovanniText_1:
 	
 	para "If it wasn't for"
 	line "you, I wouldn't"
-	cont "have found ARCHER"
+	cont "have found Archer"
 	
 	para "and the others and"
-	line "resolved the TEAM."
+	line "resolved the Team."
 
 	para "I know you are"
 	line "a very powerful"
@@ -98,7 +77,7 @@ GiovanniText_AfterBattle:
 	cont "are amazing!"
 	done
 	
-GiovanniText_DNASampleText:
+GiovanniSecretKeyText:
 	text "I think you might"
 	line "be able to use"
 	cont "this item."
@@ -106,56 +85,44 @@ GiovanniText_DNASampleText:
 	para "Take this."
 	done
 
-Text_ReceivedDNASample:
+Text_ReceivedSecretKey:
 	text "<PLAYER> received"
-	line "the DNA SAMPLE."
+	line "the Secret Key."
 	done
 	
-GiovanniText_DNASampleSpeech:
-	text "That's a sample"
-	line "of the MYTHICAL"
-	cont "#MON MEW's DNA."
+GiovanniSecretKeySpeech:
+	text "That's the Key"
+	line "to the secret"
+	cont "entrance to"
 
-	para "As the former BOSS"
-	line "of TEAM ROCKET and"
-	cont "the GYM LEADER of"
-
-	para "VIRIDIAN CITY, I"
-	line "used my influence"
-	cont "to fund a huge"
-	
-	para "research expedition."
-	line "We found that DNA"
-	cont "SAMPLE and used it"
-
-	para "in our extensive"
-	line "experiments to"
-	cont "create MEWTWO."
+	para "Cerulean Cave I"
+	line "had made."
 	done
 
-GiovanniText_Mew:
-	para "After years, I've"
-	line "discovered that"
-	cont "both MEWTWO and"
+GiovanniSecretKeyExplainText:
+	text "There's an empty"
+	line "house in Cerulean."
 	
-	para "MEW respond to"
-	line "this sample."
+	para "Use that Key on"
+	line "the bookshelf to"
+	
+	para "reveal the"
+	line "entrance."
 	
 	para "Seeing how you"
 	line "handle your"
-	cont "#MON it's clear"
+	cont "#mon it's clear"
 	
 	para "that you are a"
 	line "powerful and"
 	cont "capable trainer."
 	
-	para "I know I can trust"
-	line "you with this item"
-	cont "and the ones it's"
+	para "I know I can"
+	line "trust you with"
+	cont "this item."
 	
-	para "linked to."
-	line "With this, I feel"
-	cont "like I am one step"
+	para "With this, I feel"
+	line "like I am one step"
 	
 	para "closer to atoning"
 	line "for all my crimes."
@@ -167,92 +134,19 @@ GiovanniText_Mew:
 	line "and the others,"
 	cont "can do it."
 	done
+
+ViridianForestHouseBF1NotebookText:
+	text "Seems to be a list"
+	line "of trainer names."
 	
-ViridianForestHouseBF1Notebook1Text:
-	text "After using MEW's"
-	line "DNA to create"
-
-	para "MEWTWO, I sent out"
-	line "4 teams to search"
-
-	para "for MEW. They all"
-	line "failed."
-
-	para "Keep reading?"
-	done
-
-ViridianForestHouseBF1Notebook1Text1:
-	text "I noticed that"
-	line "when we had the"
-	cont "sample with us, my"
-
-	para "men would claim to"
-	line "have seen a pink"
-	cont "blur passing by."
-
-	para "Keep reading?"
-	done
-
-ViridianForestHouseBF1Notebook1Text2:
-	text "Could the sample"
-	line "be calling out to"
-	cont "MEW somehow?"
+	para "Almost all of the"
+	line "names have a tick"
+	cont "next to them."
 	
-	para "Testing this"
-	line "theory, we set out"
-
-	para "across the region"
-	line "and discovered"
-	cont "something."
-
-	para "Keep reading?"
+	para "It's titled"
+	line "'Amends'"
 	done
-
-ViridianForestHouseBF1Notebook1Text3:
-	text "The men saw the"
-	line "blur around"
-	cont "FUCHSIA the most."
-
-	para "We spent weeks"
-	line "trying to pinpoint"
-	cont "a precise location"
-
-	para "but failed. In the"
-	line "end, once again,"
-	cont "I was forced to"
-
-	para "give up. My plans"
-	line "in ruins…"
 	
-	para "My family in ruins"
-	line "…I sacrificed"
-	cont "everything and"
-	
-	para "gained nothing…"
-	line "I have failed."
-	done
-
-ViridianForestHouseBF1Notebook2Text:
-	text "Having this SAMPLE"
-	line "around FUCHSIA may"
-	cont "encourage MEW to"
-
-	para "appear. As for"
-	line "MEWTWO, if you"
-	cont "truly wish to test"
-
-	para "yourself, the last"
-	line "report I have on"
-	cont "its location is…"
-
-	para "Keep reading?"
-	done
-
-ViridianForestHouseBF1Notebook2Text1:
-	text "MT SILVER."
-	line "Good luck."
-	done
-
 ViridianForestHouseBF1_MapEvents:
 	db 0, 0 ; filler
 
@@ -262,8 +156,7 @@ ViridianForestHouseBF1_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  6, BGEVENT_READ, ViridianForestHouseBF1Notebook1
-	bg_event  0,  6, BGEVENT_READ, ViridianForestHouseBF1Notebook2
+	bg_event 6,  6, BGEVENT_READ, ViridianForestHouseBF1Notebook
 
 	def_object_events
-	object_event  4,  2, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseBF1GiovanniScript, -1
+	object_event  0,  6, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseBF1GiovanniScript, -1

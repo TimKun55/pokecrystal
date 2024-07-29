@@ -156,7 +156,7 @@ BattleAnimFrameData:
 	dw .Frameset_MegaphoneUnused     ; BATTLE_ANIM_FRAMESET_MEGAPHONE_UNUSED
 	dw .Frameset_ItemBag             ; BATTLE_ANIM_FRAMESET_ITEM_BAG
 	dw .Frameset_SpiderWeb           ; BATTLE_ANIM_FRAMESET_SPIDER_WEB
-	dw .Frameset_UnusedCake          ; BATTLE_ANIM_FRAMESET_UNUSED_CAKE
+	dw .Frameset_Cake                ; BATTLE_ANIM_FRAMESET_CAKE
 	dw .Frameset_Imp                 ; BATTLE_ANIM_FRAMESET_IMP
 	dw .Frameset_ImpFlipped          ; BATTLE_ANIM_FRAMESET_IMP_FLIPPED
 	dw .Frameset_Cherub              ; BATTLE_ANIM_FRAMESET_CHERUB
@@ -1104,7 +1104,7 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_B7, 32
 	oamend
 
-.Frameset_UnusedCake:
+.Frameset_Cake:
 	oamframe BATTLE_ANIM_OAMSET_1B, 32
 	oamend
 

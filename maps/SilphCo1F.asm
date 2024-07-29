@@ -29,8 +29,8 @@ SilphCoOfficerScript:
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
-	line "SILPH CO.'s HEAD"
-	cont "OFFICE BUILDING."
+	line "Silph Co.'s Head"
+	cont "Office Building."
 	done
 
 SilphCoOfficerText:
@@ -46,7 +46,7 @@ SilphCoOfficerText:
 	done
 
 SilphCoOfficerText_GotUpGrade:
-	text "It's SILPH CO.'s"
+	text "It's Silph Co.'s"
 	line "latest product."
 
 	para "It's not for sale"

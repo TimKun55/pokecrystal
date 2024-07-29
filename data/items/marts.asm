@@ -92,7 +92,7 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 7 ; # items
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
@@ -100,10 +100,11 @@ MartGoldenrod2F1:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db PANCAKESTACK
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 9 ; # items
+	db 10 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db DUSK_BALL
@@ -113,6 +114,7 @@ MartGoldenrod2F2:
 	db FULL_HEAL
 	db POKE_DOLL
 	db FLOWER_MAIL
+	db MORPH_MAIL
 	db -1 ; end
 
 MartGoldenrod3F:
@@ -303,7 +305,7 @@ MartBerry:
 	db -1 ; end
 
 MartCeladon2F1:
-	db 7 ; # items
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -311,6 +313,7 @@ MartCeladon2F1:
 	db REVIVE
 	db SUPER_REPEL
 	db MAX_REPEL
+	db PANCAKESTACK
 	db -1 ; end
 
 MartCeladon2F2:
@@ -337,10 +340,16 @@ MartCeladon3F:
 	db -1 ; end
 
 MartCeladon4F:
-	db 3 ; # items
+	db 9 ; # items
 	db POKE_DOLL
-	db LOVELY_MAIL
+	db FLOWER_MAIL
 	db SURF_MAIL
+	db LOVELY_MAIL
+	db EON_MAIL
+	db MORPH_MAIL
+	db BLUESKY_MAIL
+	db MUSIC_MAIL
+	db MIRAGE_MAIL
 	db -1 ; end
 
 MartCeladon5F1:

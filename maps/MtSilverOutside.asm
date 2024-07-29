@@ -21,7 +21,7 @@ MtSilverOutsideHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_MT_SILVER_OUTSIDE_HIDDEN_FULL_RESTORE
 
 MtSilverSignText:
-	text "MT.SILVER"
+	text "Mt.Silver"
 	done
 
 MtSilverOutside_MapEvents:

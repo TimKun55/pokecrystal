@@ -90,7 +90,7 @@ CherrygroveCityGuideGent:
 	end
 
 .mapcardname
-	db "MAP CARD@"
+	db "Map Card@"
 
 .No:
 	writetext GuideGentNoText
@@ -347,10 +347,10 @@ GuideGentTourText1:
 	done
 
 GuideGentPokecenterText:
-	text "This is a #MON"
-	line "CENTER. They heal"
+	text "This is a #mon"
+	line "Center. They heal"
 
-	para "your #MON in no"
+	para "your #mon in no"
 	line "time at all."
 
 	para "You'll be relying"
@@ -361,24 +361,24 @@ GuideGentPokecenterText:
 	done
 
 GuideGentMartText:
-	text "This is a #MON"
-	line "MART."
+	text "This is a #mon"
+	line "Mart."
 
-	para "They sell BALLS"
+	para "They sell Balls"
 	line "for catching wild"
 
-	para "#MON and other"
+	para "#mon and other"
 	line "useful items."
 	done
 
 GuideGentRoute30Text:
-	text "ROUTE 30 is out"
+	text "Route 30 is out"
 	line "this way."
 
 	para "Trainers will be"
 	line "battling their"
 
-	para "prized #MON"
+	para "prized #mon"
 	line "there."
 	done
 
@@ -386,7 +386,7 @@ GuideGentSeaText:
 	text "This is the sea,"
 	line "as you can see."
 
-	para "Some #MON are"
+	para "Some #mon are"
 	line "found only in"
 	cont "water."
 	done
@@ -403,14 +403,14 @@ GuideGentGiftText:
 	done
 
 GotMapCardText:
-	text "<PLAYER>'s #GEAR"
-	line "now has a MAP!"
+	text "<PLAYER>'s #Gear"
+	line "now has a Map!"
 	done
 
 GuideGentPokegearText:
-	text "#GEAR becomes"
+	text "#Gear becomes"
 	line "more useful as you"
-	cont "add CARDS."
+	cont "add Cards."
 
 	para "I wish you luck on"
 	line "your journey!"
@@ -427,8 +427,8 @@ GuideGentNoText:
 CherrygroveRivalText_Seen:
 	text "<……> <……> <……>"
 
-	para "You got a #MON"
-	line "at the LAB."
+	para "You got a #mon"
+	line "at the Lab."
 
 	para "What a waste."
 	line "A wimp like you."
@@ -439,7 +439,7 @@ CherrygroveRivalText_Seen:
 	line "I'm saying?"
 
 	para "Well, I too, have"
-	line "a good #MON."
+	line "a good #mon."
 
 	para "I'll show you"
 	line "what I mean!"
@@ -452,14 +452,14 @@ RivalCherrygroveWinText:
 
 CherrygroveRivalText_YouLost:
 	text "Oh no! You saw my"
-	line "TRAINER CARD!"
+	line "Trainer Card!"
 	cont "Give that back!"
 	
 	para "<……> <……> <……>"
 
 	para "I'm going to be"
 	line "the world's great-"
-	cont "est #MON"
+	cont "est #mon"
 	cont "trainer."
 	done
 
@@ -470,35 +470,35 @@ RivalCherrygroveLossText:
 
 CherrygroveRivalText_YouWon:
 	text "Oh no! You saw my"
-	line "TRAINER CARD!"
+	line "Trainer Card!"
 	cont "Give that back!!"
 	
 	para "<……> <……> <……>"
 
 	para "I'm going to be"
 	line "the world's great-"
-	cont "est #MON"
+	cont "est #mon"
 	cont "trainer."
 	done
 
 CherrygroveTeacherText_NoMapCard:
 	text "Did you talk to"
 	line "the old man by the"
-	cont "#MON CENTER?"
+	cont "#mon Center?"
 
-	para "He'll put a MAP of"
-	line "JOHTO on your"
-	cont "#GEAR."
+	para "He'll put a Map of"
+	line "Johto on your"
+	cont "#Gear."
 	done
 
 CherrygroveTeacherText_HaveMapCard:
 	text "When you're with"
-	line "#MON, going"
+	line "#mon, going"
 	cont "anywhere is fun."
 	done
 
 CherrygroveYoungsterText_NoPokedex:
-	text "MR.#MON's house"
+	text "Mr.#mon's house"
 	line "is still farther"
 	cont "up ahead."
 	done
@@ -508,19 +508,19 @@ CherrygroveYoungsterText_HavePokedex:
 	line "trainers on the"
 	cont "road."
 
-	para "My #MON lost."
+	para "My #mon lost."
 	line "They're a mess! I"
 
 	para "must take them to"
-	line "a #MON CENTER."
+	line "a #mon Center."
 	done
 
 MysticWaterGuyTextBefore:
-	text "A #MON I caught"
+	text "A #mon I caught"
 	line "had an item."
 
 	para "I think it's"
-	line "MYSTIC WATER."
+	line "Mystic Water."
 
 	para "I don't need it,"
 	line "so do you want it?"
@@ -532,14 +532,14 @@ MysticWaterGuyTextAfter:
 	done
 
 CherrygroveCitySignText:
-	text "CHERRYGROVE CITY"
+	text "Cherrygrove City"
 
 	para "The City of Cute,"
 	line "Fragrant Flowers"
 	done
 
 GuideGentsHouseSignText:
-	text "GUIDE GENT'S HOUSE"
+	text "Guide Gent's House"
 	done
 
 CherrygroveCity_MapEvents:

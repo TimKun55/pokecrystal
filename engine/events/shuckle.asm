@@ -5,10 +5,10 @@ GiveShuckle:
 	xor a ; PARTYMON
 	ld [wMonType], a
 
-; Level 15 Shuckle.
+; Level 30 Shuckle.
 	ld a, SHUCKLE
 	ld [wCurPartySpecies], a
-	ld a, 15
+	ld a, 30
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
@@ -18,7 +18,7 @@ GiveShuckle:
 	ld b, CAUGHT_BY_UNKNOWN
 	farcall SetGiftPartyMonCaughtData
 
-; Holding an Oran Berry.
+; Holding a Berry Juice.
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
 	dec a
@@ -26,7 +26,7 @@ GiveShuckle:
 	push bc
 	ld hl, wPartyMon1Item
 	call AddNTimes
-	ld [hl], ORAN_BERRY
+	ld [hl], BERRY_JUICE
 	pop bc
 	pop af
 

@@ -12,6 +12,8 @@ CeladonMansion3F_MapScripts:
 GameFreakGameDesignerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_DIPLOMA
+	iftrue .GotDiploma
 	writetext GameFreakGameDesignerText
 	readvar VAR_DEXCAUGHT
 	ifgreater NUM_POKEMON - 2 - 1, .CompletedPokedex ; ignore Mew and Celebi
@@ -28,31 +30,22 @@ GameFreakGameDesignerScript:
 	promptbutton
 	special Diploma
 	writetext GameFreakGameDesignerAfterDiplomaText
+	promptbutton
+	verbosegiveitem DIPLOMA
+	closetext
+	setevent EVENT_GOT_DIPLOMA
+	end
+
+.GotDiploma
+	writetext GameFreakGameDesignerGotDiplomaText
 	waitbutton
 	closetext
-	setevent EVENT_ENABLE_DIPLOMA_PRINTING
 	end
 
 GameFreakGraphicArtistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
-	iftrue .CanPrintDiploma
 	writetext GameFreakGraphicArtistText
-	waitbutton
-	closetext
-	end
-
-.CanPrintDiploma:
-	writetext GameFreakGraphicArtistPrintDiplomaText
-	yesorno
-	iffalse .Refused
-	special PrintDiploma
-	closetext
-	end
-
-.Refused:
-	writetext GameFreakGraphicArtistRefusedText
 	waitbutton
 	closetext
 	end
@@ -78,18 +71,18 @@ CeladonMansion3FReferenceMaterial:
 GameFreakGameDesignerText:
 	text "Is that right?"
 
-	para "I'm the GAME"
-	line "DESIGNER!"
+	para "I'm the Game"
+	line "Designer!"
 
 	para "Filling up your"
-	line "#DEX is tough,"
+	line "#dex is tough,"
 	cont "but don't give up!"
 	done
 
 GameFreakGameDesignerCompletedPokedexText:
 	text "Wow! Excellent!"
 	line "You completed your"
-	cont "#DEX!"
+	cont "#dex!"
 
 	para "Congratulations!"
 	done
@@ -99,65 +92,45 @@ GameFreakGameDesignerPauseForDiplomaText:
 	done
 
 GameFreakGameDesignerAfterDiplomaText:
-	text "The GRAPHIC ARTIST"
-	line "will print out a"
-	cont "DIPLOMA for you."
+	text "Here, take it."
+	line "You've earned it!"
+	done
 
-	para "You should go show"
-	line "it off."
+GameFreakGameDesignerGotDiplomaText:
+	text "It makes me so"
+	line "happy that some-"
+	cont "one earned the"
+	cont "Diploma!"
 	done
 
 GameFreakGraphicArtistText:
-	text "I'm the GRAPHIC"
-	line "ARTIST."
+	text "I'm the Graphic"
+	line "Artist."
 
 	para "I drew you!"
 	done
 
-GameFreakGraphicArtistPrintDiplomaText:
-	text "I'm the GRAPHIC"
-	line "ARTIST."
-
-	para "Oh, you completed"
-	line "your #DEX?"
-
-	para "Want me to print"
-	line "out your DIPLOMA?"
-	done
-
-GameFreakGraphicArtistRefusedText:
-	text "Give me a shout if"
-	line "you want your"
-	cont "DIPLOMA printed."
-	done
-
-GameFreakGraphicArtistErrorText:
-	text "Something's wrong."
-	line "I'll have to can-"
-	cont "cel printing."
-	done
-
 GameFreakProgrammerText:
 	text "Who, me? I'm the"
-	line "PROGRAMMER."
+	line "Programmer."
 
 	para "Play the slot"
 	line "machines!"
 	done
 
 GameFreakCharacterDesignerText:
-	text "Aren't the TWINS"
+	text "Aren't the Twins"
 	line "adorable?"
 
-	para "JASMINE's pretty"
+	para "Jasmine's pretty"
 	line "too."
 
 	para "Oh, I love them!"
 	done
 
 CeladonMansion3FDevRoomSignText:
-	text "GAME FREAK"
-	line "DEVELOPMENT ROOM"
+	text "Game Freak"
+	line "Development Room"
 	done
 
 CeladonMansion3FDrawingText:
@@ -178,7 +151,7 @@ CeladonMansion3FReferenceMaterialText:
 	text "It's crammed with"
 	line "reference materi-"
 	cont "als. There's even"
-	cont "a # DOLL."
+	cont "a # Doll."
 	done
 
 CeladonMansion3F_MapEvents:

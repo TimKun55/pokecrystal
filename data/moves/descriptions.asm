@@ -176,7 +176,7 @@ MoveDescriptions::
 	dw SnoreDescription
 	dw CurseDescription
 	dw NastyPlotDescription
-	dw WillOWispDescription
+	dw WillOWiSpdescription
 	dw AeroblastDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
@@ -195,7 +195,7 @@ MoveDescriptions::
 	dw ZapCannonDescription
 	dw ForesightDescription
 	dw DestinyBondDescription
-	dw PerishSongDescription
+	dw IcicleCrashDescription
 	dw IcyWindDescription
 	dw HeatWaveDescription
 	dw PoisonJabDescription
@@ -266,7 +266,7 @@ Move00Description:
 
 EnergyBallDescription:
 	db   "Power from nature."
-	line "Eff SPDEF ▼1.@"
+	line "Eff SpDef ▼1.@"
 
 KarateChopDescription:
 RazorLeafDescription:
@@ -321,7 +321,7 @@ DarkPulseDescription:
 
 FlameChargeDescription:
 	db   "Cloaks with flame"
-	line "to attack. SPD ▲1.@"
+	line "to Attack. Spd ▲1.@"
 
 DazzlingleamDescription:
 	db   "Dazzles with a"
@@ -329,11 +329,11 @@ DazzlingleamDescription:
 
 SwordsDanceDescription:
 	db   "A frenetic dance."
-	line "ATK ▲2.@"
+	line "Atk ▲2.@"
 
 CutDescription:
 	db   "Cuts hard."
-	line "Eff SPD ▼1.@"
+	line "Eff Spd ▼1.@"
 
 GustDescription:
 	db   "Whips up a strong"
@@ -347,7 +347,7 @@ AerialAceDescription:
 SwiftDescription:
 FaintAttackDescription:
 DisarmVoiceDescription:
-	db   "An attack that"
+	db   "An Attack that"
 	line "never misses.@"
 
 FlyDescription:
@@ -367,16 +367,16 @@ VineWhipDescription:
 	line "slender vines.@"
 
 StompDescription:
-	db   "An attack that may"
+	db   "An Attack that may"
 	line "cause flinching.@"
 
 DoubleKickDescription:
 	db   "A double kicking"
-	line "attack.@"
+	line "Attack.@"
 
 MegaKickDescription:
 	db   "A powerful kicking"
-	line "attack.@"
+	line "Attack.@"
 
 SilverWindDescription:
 	db   "Silver dust blown."
@@ -384,10 +384,10 @@ SilverWindDescription:
 
 GrowthPunchDescription:
 	db   "Reinforced Punch."
-	line "Eff ATK ▲1.@"
+	line "Eff Atk ▲1.@"
 
 SandAttackDescription:
-	db   "Reduces accuracy"
+	db   "Reduces Accuracy"
 	line "by throwing sand.@"
 
 HeadbuttDescription:
@@ -395,7 +395,7 @@ HeadbuttDescription:
 	line "May flinch.@"
 
 HornAttackDescription:
-	db   "An attack using a"
+	db   "An Attack using a"
 	line "horn to jab.@"
 
 FuryStrikesDescription:
@@ -408,10 +408,10 @@ WaterPulseDescription:
 
 TackleDescription:
 	db   "A full-body charge"
-	line "attack.@"
+	line "Attack.@"
 
 BodySlamDescription:
-	db   "Full-body attack."
+	db   "Full-body Attack."
 	line "May paralyze.@"
 
 WrapDescription:
@@ -428,7 +428,7 @@ ThrashDescription:
 
 TailWhipDescription:
 	db   "Wags tail cutely."
-	line "Foe's DEF ▼1.@"
+	line "Foe's Def ▼1.@"
 
 PoisonStingDescription:
 	db   "Stabs with barb."
@@ -444,7 +444,7 @@ PinMissileDescription:
 
 LeerDescription:
 	db   "Intimidating look."
-	line "Foe's DEF ▼1.@"
+	line "Foe's Def ▼1.@"
 
 BiteDescription:
 BugBiteDescription:
@@ -453,7 +453,7 @@ BugBiteDescription:
 
 GrowlDescription:
 	db   "Growls cutely."
-	line "Foe's ATK ▼1.@"
+	line "Foe's Atk ▼1.@"
 
 RoarDescription:
 	db   "Scares wild foes"
@@ -477,7 +477,7 @@ DisableDescription:
 
 AcidDescription:
 	db   "Sprays acid."
-	line "Eff DEF ▼1.@"
+	line "Eff Def ▼1.@"
 
 EmberDescription:
 	db   "Small flames."
@@ -493,15 +493,15 @@ MistDescription:
 
 WaterGunDescription:
 	db   "Squirts water to"
-	line "attack.@"
+	line "Attack.@"
 
 HydroPumpDescription:
 	db   "A powerful water-"
-	line "type attack.@"
+	line "type Attack.@"
 
 SurfDescription:
 	db   "A strong water-"
-	line "type attack.@"
+	line "type Attack.@"
 
 IceBeamDescription:
 	db   "Icy energy beam."
@@ -517,11 +517,11 @@ PsybeamDescription:
 
 BubblebeamDescription:
 	db   "Bubbles shot."
-	line "Eff SPD ▼1.@"
+	line "Eff Spd ▼1.@"
 
 AuroraBeamDescription:
 	db   "Pretty beam."
-	line "Eff ATK ▼1.@"
+	line "Eff Atk ▼1.@"
 
 HyperBeamDescription:
 GigaImpactDescription:
@@ -534,11 +534,11 @@ PeckDescription:
 
 DrillPeckDescription:
 	db   "A strong, spin-"
-	line "ning-peck attack.@"
+	line "ning-peck Attack.@"
 
 FocusBlastDescription:
 	db   "Fires focused po-"
-	line "wer. Eff SPDEF ▼1.@"
+	line "wer. Eff SpDef ▼1.@"
 
 LowKickDescription:
 	db   "A tripping kick."
@@ -554,7 +554,7 @@ NightShadeDescription:
 	line "equals damage HP.@"
 
 StrengthDescription:
-	db   "A powerful attack."
+	db   "A powerful Attack."
 	line "May flinch.@"
 
 LeechSeedDescription:
@@ -563,7 +563,7 @@ LeechSeedDescription:
 
 GrowthDescription:
 	db   "Forces body to"
-	line "grow. SPATK ▲1.@"
+	line "grow. SpAtk ▲1.@"
 
 SolarbeamDescription:
 	db   "Turn 1: Charge up."
@@ -587,7 +587,7 @@ PetalDanceDescription:
 
 StringShotDescription:
 	db   "Sprays sticky"
-	line "strings. SPD ▼2.@"
+	line "strings. Spd ▼2.@"
 
 DragonRageDescription:
 	db   "Always inflicts"
@@ -638,7 +638,7 @@ ConfusionDescription:
 
 PsychicMDescription:
 	db   "Powerful force."
-	line "Eff SPDEF ▼1.@"
+	line "Eff SpDef ▼1.@"
 
 HypnosisDescription:
 	db   "May put the foe to"
@@ -646,18 +646,18 @@ HypnosisDescription:
 
 PowerUpDescription:
 	db   "Channels inner po-"
-	line "wer. ATK ▲1.@"
+	line "wer. Atk ▲1.@"
 
 AgilityDescription:
 	db   "Relaxes body."
-	line "SPD ▲2.@"
+	line "Spd ▲2.@"
 
 QuickAttackDescription:
 	db   "Lets the user get"
 	line "in the first hit.@"
 
 RageDescription:
-	db   "Raises ATTACK if"
+	db   "Raises Attack if"
 	line "the user is hit.@"
 
 TeleportDescription:
@@ -670,11 +670,11 @@ MimicDescription:
 
 ScreechDescription:
 	db   "Horrible sound."
-	line "DEF ▼2.@"
+	line "Def ▼2.@"
 
 DoubleTeamDescription:
 	db   "Makes illusory co-"
-	line "pies. EVA ▲1.@"
+	line "pies. Eva ▲1.@"
 
 RecoverDescription:
 FreshSnackDescription:
@@ -683,15 +683,15 @@ FreshSnackDescription:
 
 HardenDescription:
 	db   "Stiffens muscles."
-	line "DEF ▲1.@"
+	line "Def ▲1.@"
 
 MinimizeDescription:
 	db   "Compresses cells."
-	line "EVA ▲1.@"
+	line "Eva ▲1.@"
 
 SmokescreenDescription:
 	db   "Dark smoke or ink."
-	line "ACC ▼1.@"
+	line "Acc ▼1.@"
 
 ConfuseRayDescription:
 SweetKissDescription:
@@ -700,14 +700,14 @@ SweetKissDescription:
 
 DefenseCurlDescription:
 	db   "Curls up."
-	line "DEF ▲1.@"
+	line "Def ▲1.@"
 
 BarrierDescription:
 	db   "Makes sturdy wall."
-	line "DEF ▲2.@"
+	line "Def ▲2.@"
 
 LightScreenDescription:
-	db   "Ups SPCL.DEF with"
+	db   "Ups Sp.Def with"
 	line "a wall of light.@"
 
 HazeDescription:
@@ -715,7 +715,7 @@ HazeDescription:
 	line "stat changes.@"
 
 ReflectDescription:
-	db   "Raises DEFENSE"
+	db   "Raises Defense"
 	line "with a barrier.@"
 
 FocusEnergyDescription:
@@ -728,7 +728,7 @@ BideDescription:
 
 MetronomeDescription:
 	db   "Randomly uses any"
-	line "#MON move.@"
+	line "#mon move.@"
 
 MirrorMoveDescription:
 	db   "Counters with the"
@@ -776,11 +776,11 @@ IcicleSpearDescription:
 
 ConstrictDescription:
 	db   "Tentacles or vines"
-	line "wrap. Eff SPD ▼1.@"
+	line "wrap. Eff Spd ▼1.@"
 
 AmnesiaDescription:
 	db   "Forgets something."
-	line "SPDEF ▲2.@"
+	line "SpDef ▲2.@"
 
 HexDescription:
 	db   "Double damage to"
@@ -800,7 +800,7 @@ IronBashDescription:
 
 ChargeBeamDescription:
 	db   "Electric charge."
-	line "Eff SPATK ▲1.@"
+	line "Eff SpAtk ▲1.@"
 
 HurricaneDescription:
 	db   "Wraps foe in fier-"
@@ -824,7 +824,7 @@ SporeDescription:
 
 FlashDescription:
 	db   "Blinds foe."
-	line "Eff ACC ▼1.@"
+	line "Eff Acc ▼1.@"
 
 SplashDescription:
 	db   "Has no effect"
@@ -832,7 +832,7 @@ SplashDescription:
 
 AcidArmorDescription:
 	db   "Alters cellular"
-	line "structure. DEF ▲2.@"
+	line "structure. Def ▲2.@"
 
 ZenHeadbuttDescription:
 	db   "Focuses, rams head"
@@ -844,11 +844,11 @@ ExplosionDescription:
 
 FlashCannonDescription:
 	db   "Blasts light ene-"
-	line "rgy. Eff SPDEF ▼1.@"
+	line "rgy. Eff SpDef ▼1.@"
 
 BulldozeDescription:
 	db   "Tramples foe."
-	line "Eff SPD ▼1.@"
+	line "Eff Spd ▼1.@"
 
 RestDescription:
 	db   "Sleep for 2 turns"
@@ -891,7 +891,7 @@ TripleKickDescription:
 	line "with rising power.@"
 
 ThiefDescription:
-	db   "An attack that may"
+	db   "An Attack that may"
 	line "steal a held item.@"
 
 XScissorDescription:
@@ -911,7 +911,7 @@ FlameWheelDescription:
 	line "Thaws. May burn.@"
 
 SnoreDescription:
-	db   "An attack useable"
+	db   "An Attack useable"
 	line "only while asleep.@"
 
 CurseDescription:
@@ -920,15 +920,15 @@ CurseDescription:
 
 NastyPlotDescription:
 	db   "Thinks bad though-"
-	line "ts. SPATK ▲2.@"
+	line "ts. SpAtk ▲2.@"
 
-WillOWispDescription:
+WillOWiSpdescription:
 	db   "A move that may"
 	line "burn the foe.@"
 
 CottonSporeDescription:
 	db   "Cotton-like spores"
-	line "stick. SPD ▼2.@"
+	line "stick. Spd ▼2.@"
 
 ReversalDescription:
 	db   "Stronger if the"
@@ -943,7 +943,7 @@ PowderSnowDescription:
 	line "May freeze.@"
 
 ProtectDescription:
-	db   "Foils attack that"
+	db   "Foils Attack that"
 	line "turn. It may fail.@"
 
 MachPunchDescription:
@@ -952,11 +952,11 @@ MachPunchDescription:
 
 ScaryFaceDescription:
 	db   "Very scary face."
-	line "SPD ▼2.@"
+	line "Spd ▼2.@"
 
 BellyDrumDescription:
 	db   "Halves own HP;"
-	line "ATK ▲6.@"
+	line "Atk ▲6.@"
 
 SludgeBombDescription:
 	db   "Filthy sludge."
@@ -964,11 +964,11 @@ SludgeBombDescription:
 
 MudSlapDescription:
 	db   "Blinds with mud."
-	line "ACC ▼1.@"
+	line "Acc ▼1.@"
 
 OctazookaDescription:
 	db   "Sprays ink."
-	line "Eff ACC ▼1.@"
+	line "Eff Acc ▼1.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
@@ -979,20 +979,20 @@ ZapCannonDescription:
 	line "Will paralyze.@"
 
 ForesightDescription:
-	db   "Negates accuracy"
+	db   "Negates Accuracy"
 	line "reduction moves.@"
 
 DestinyBondDescription:
 	db   "The foe faints if"
 	line "the user does.@"
 
-PerishSongDescription:
-	db   "Both user and foe"
-	line "faint in 3 turns.@"
+IcicleCrashDescription:
+	db   "Drops large ici-"
+	line "cles. May flinch.@"
 
 IcyWindDescription:
 	db   "Gust of cold air."
-	line "SPD ▼1.@"
+	line "Spd ▼1.@"
 
 HeatWaveDescription:
 	db   "Blasts hot air."
@@ -1004,7 +1004,7 @@ PoisonJabDescription:
 
 LockOnDescription:
 	db   "Ensures the line"
-	line "attack will hit.@"
+	line "Attack will hit.@"
 
 OutrageDescription:
 	db   "Works 2-3 turns"
@@ -1021,7 +1021,7 @@ EndureDescription:
 
 CharmDescription:
 	db   "Looks very cute."
-	line "ATK ▼2.@"
+	line "Atk ▼2.@"
 
 RolloutDescription:
 	db   "Attacks 5 turns"
@@ -1032,7 +1032,7 @@ FalseSwipeDescription:
 	line "with at least 1HP.@"
 
 SwaggerDescription:
-	db   "Foe ATK ▲2"
+	db   "Foe Atk ▲2"
 	line "and confuses.@"
 
 RockBlastDescription:
@@ -1049,7 +1049,7 @@ FuryCutterDescription:
 
 SteelWingDescription:
 	db   "Hard wings hit."
-	line "Eff DEF ▲1.@"
+	line "Eff Def ▲1.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
@@ -1060,7 +1060,7 @@ AttractDescription:
 	line "gender infatuated.@"
 
 SleepTalkDescription:
-	db   "Randomly attacks"
+	db   "Randomly Attacks"
 	line "while asleep.@"
 
 HealBellDescription:
@@ -1068,7 +1068,7 @@ HealBellDescription:
 	line "status problems.@"
 
 ReturnDescription:
-	db   "An attack that is"
+	db   "An Attack that is"
 	line "based on loyalty.@"
 
 PresentDescription:
@@ -1077,7 +1077,7 @@ PresentDescription:
 
 PlayRoughDescription:
 	db   "Plays rough with"
-	line "target. Eff ATK ▼1@"
+	line "target. Eff Atk ▼1@"
 
 SafeguardDescription:
 	db   "Prevents all"
@@ -1092,7 +1092,7 @@ SacredFireDescription:
 	line "Thaws. May burn.@"
 
 MagnitudeDescription:
-	db   "A ground attack"
+	db   "A ground Attack"
 	line "with random power.@"
 
 DynamicpunchDescription:
@@ -1101,7 +1101,7 @@ DynamicpunchDescription:
 
 MegahornDescription:
 	db   "A powerful charge"
-	line "attack.@"
+	line "Attack.@"
 
 DragonbreathDescription:
 	db   "A blast of breath."
@@ -1117,11 +1117,11 @@ EncoreDescription:
 
 PursuitDescription:
 	db   "Heavily strikes"
-	line "switching #MON.@"
+	line "switching #mon.@"
 
 RapidSpinDescription:
 	db   "Fast spinning"
-	line "attack. SPD ▲1.@"
+	line "Attack. Spd ▲1.@"
 
 SweetScentDescription:
 	db   "Alluring aroma."
@@ -1129,11 +1129,11 @@ SweetScentDescription:
 
 IronTailDescription:
 	db   "Steel tail smashes"
-	line "foe. Eff DEF ▼1.@"
+	line "foe. Eff Def ▼1.@"
 
 MetalClawDescription:
 	db   "Steel claws slash"
-	line "foe. Eff ATK ▲1.@"
+	line "foe. Eff Atk ▲1.@"
 
 VitalThrowDescription:
 	db   "A 2nd-strike move"
@@ -1149,15 +1149,15 @@ AirSlashDescription:
 
 RockTombDescription:
 	db   "Hurles boulders."
-	line "SPD ▼1.@"
+	line "Spd ▼1.@"
 
 HiddenPowerDescription:
 	db   "The power varies"
-	line "with the #MON.@"
+	line "with the #mon.@"
 
 TwisterDescription:
 	db   "Whips up a tornado"
-	line "to attack.@"
+	line "to Attack.@"
 
 RainDanceDescription:
 	db   "Boosts water-type"
@@ -1169,11 +1169,11 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "Bites very hard."
-	line "Eff DEF ▼1.@"
+	line "Eff Def ▼1.@"
 
 MirrorCoatDescription:
-	db   "Counters a SPCL."
-	line "ATK move double.@"
+	db   "Counters a Sp.Atk"
+	line "move by double.@"
 
 PsychUpDescription:
 	db   "Copies the foe's"
@@ -1189,25 +1189,25 @@ AncientpowerDescription:
 
 ShadowBallDescription:
 	db   "Throw shadowy blob"
-	line "Eff SPDEF ▼1.@"
+	line "Eff SpDef ▼1.@"
 
 FutureSightDescription:
-	db   "An attack that"
+	db   "An Attack that"
 	line "hits on 3rd turn.@"
 
 RockSmashDescription:
 	db   "Shattering punch."
-	line "Eff DEF ▼1.@"
+	line "Eff Def ▼1.@"
 
 BeatUpDescription:
-	db   "Party #MON join"
-	line "in the attack.@"
+	db   "Party #mon join"
+	line "in the Attack.@"
 	
 MoonblastDescription:
 	db   "Energy from Moon."
-	line "Eff SPATK ▼1.@"
+	line "Eff SpAtk ▼1.@"
 	
 BugBuzzDescription:
 	db   "Vibrates loudly."
-	line "Eff SPDEF ▼1.@"
+	line "Eff SpDef ▼1.@"
 	

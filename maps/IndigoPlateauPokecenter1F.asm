@@ -264,7 +264,7 @@ PokemonJournalGiovanniScript:
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "Are you ready to"
 	line "get tested by"
-	cont "the ELITE FOUR?"
+	cont "the Elite Four?"
 
 	para "You have to beat"
 	line "them all, one"
@@ -272,23 +272,23 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 
 	para "If you lose, you"
 	line "have to start the"
-	line "challenge over!"
+	cont "challenge over!"
 	done
 
 PlateauRivalText1:
 	text "Hold it."
 
 	para "You're going to"
-	line "take the #MON"
+	line "take the #mon"
 
-	para "LEAGUE challenge"
+	para "League challenge"
 	line "now?"
 
 	para "That's not going"
 	line "to happen."
 
 	para "My super-well-"
-	line "trained #MON"
+	line "trained #mon"
 
 	para "are going to pound"
 	line "you."
@@ -309,7 +309,7 @@ PlateauRivalText2:
 
 	para "I… I have to think"
 	line "more about my"
-	cont "#MON…"
+	cont "#mon…"
 
 	para "Humph! Try not to"
 	line "lose!"
@@ -322,22 +322,22 @@ PlateauRivalLoseText:
 	line "With my partners,"
 
 	para "I'm going to be"
-	line "the CHAMPION!"
+	line "the Champion!"
 	done
 
 TeleportGuyText1:
 	text "Ah! Are you"
 	line "challenging the"
-	cont "ELITE FOUR?"
+	cont "Elite Four?"
 
 	para "Are you sure"
 	line "you're ready?"
 
 	para "If you need to"
 	line "train more, my"
-	cont "ABRA can help you."
+	cont "Abra can help you."
 
-	para "It can TELEPORT"
+	para "It can Teleport"
 	line "you home."
 
 	para "Would you like to"
@@ -356,7 +356,7 @@ TeleportGuyNoText:
 	done
 
 AbraText:
-	text "ABRA: Aabraa…"
+	text "Abra: Aabraa…"
 	done
 	
 IndigoPlateauPokecenter1FTutorIntroText:
@@ -366,10 +366,10 @@ IndigoPlateauPokecenter1FTutorIntroText:
 	cont "to be the best!"
 	
 	para "How about I teach"
-	line "your #MON a"
+	line "your #mon a"
 	cont "super-strong move:"
 	
-	para "GIGA IMPACT!"
+	para "Giga Impact!"
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactClear:
@@ -395,8 +395,8 @@ IndigoPlateauPokecenter1FGigaImpactNotEnough:
 	
 IndigoPlateauPokecenter1FGigaImpactTaught:
 	text "It's perfect for"
-	line "a #MON with"
-	cont "high ATTACK!"
+	line "a #mon with"
+	cont "high Attack!"
 	
 	para "Just watch out for"
 	line "the recharge turn."
@@ -409,21 +409,21 @@ IndigoPlateauPokecenter1FTutorRefused:
 	done
 	
 PokemonJournalGiovanniText:
-	text "#MON JOURNAL"
+	text "#mon Journal"
 
 	para "Special Feature:"
-	line "BOSS GIOVANNI!"
+	line "Boss Giovanni!"
 
 	para "When police sear-"
 	line "ched the abandoned"
-	cont "VIRIDIAN GYM, they"
+	cont "Viridian Gym, they"
 
 	para "discovered that"
-	line "its LEADER,"
-	cont "GIOVANNI, had"
+	line "its Leader,"
+	cont "Giovanni, had"
 
 	para "also been the"
-	line "TEAM ROCKET BOSS."
+	line "Team Rocket Boss."
 	done
 
 IndigoPlateauPokecenter1F_MapEvents:

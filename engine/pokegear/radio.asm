@@ -1695,7 +1695,7 @@ BuenasPasswordCheckTime:
 	ret
 
 BuenasPasswordChannelName:
-	db "BUENA'S PASSWORD@"
+	db "Buena's Password@"
 
 BuenaRadioText1:
 	text_far _BuenaRadioText1

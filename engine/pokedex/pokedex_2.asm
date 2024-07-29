@@ -223,6 +223,17 @@ DisplayDexEntry:
 	; call WaitBGMap
 	ret
 
+; Print dex number
+	hlcoord 2, 8
+	ld a, $5c ; No
+	ld [hli], a
+	ld a, $5d ; .
+	ld [hli], a
+	ld de, wTempSpecies
+	call GetPokemonNumber
+	hlcoord 4, 8
+	call PlaceString
+
 GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl
@@ -467,7 +478,7 @@ DexEntry_NextCategory:
 	ret
 
 DexEntry_NONE_text:
-	db "NONE@"
+	db "None@"
 
 DisplayDexMonStats::
 	ld a, [wTempSpecies]
@@ -510,7 +521,7 @@ DisplayDexMonStats::
 	ld [wPokedexEntryPageNum], a
 	ret
 .Base_stats_text:
-	db "BASE STATS@"
+	db "Base Stats@"
 
 DisplayDexMonMoves::
 	ld a, [wTempSpecies]
@@ -674,7 +685,7 @@ Pokedex_Print_NextLvlMoves:
 	call DexEntry_NextCategory
 	ret
 .lvl_moves_text:
-	db "LVL-UP MOVES@"
+	db "Lvl-Up Moves@"
 
 Pokedex_PrintFieldMoves:
 ; CheckLvlUpMoves, 1 for fail, 0 for yes, in c
@@ -837,7 +848,7 @@ Pokedex_PrintFieldMoves:
 	; a needs to be the TM/HM/MT item id	
 	; do not increment index, so it will print both on next page
 .Field_Moves_text:
-	db "FIELD MOVES@"
+	db "Field Moves@"
 
 Field_Moves_List:
 	db TELEPORT, FRESH_SNACK, \
@@ -1009,7 +1020,7 @@ Pokedex_Calc_EggMovesPtr:
 	call PlaceString
 	ret
 .EggMoves_text:
-	db "EGG MOVES@"
+	db "Egg Moves@"
 
 Pokedex_Print_Egg_moves:
 ; Print No more than 5 moves
@@ -1127,7 +1138,7 @@ Pokedex_PrintTMs:
 	call PlaceString
 	ret
 .dex_TM_text:
-	db "TECHNICAL MACHINES@"
+	db "Technical Machines@"
 
 Pokedex_anymoreTMs:
 	; b has the current HM index
@@ -1221,7 +1232,7 @@ Pokedex_PrintMTs:
 	call PlaceString
 	ret
 .dex_MT_text:
-	db "MOVE TUTORS@"
+	db "Move Tutors@"
 
 Pokedex_anymoreMTs:
 	ld a, NUM_TUTORS - 1

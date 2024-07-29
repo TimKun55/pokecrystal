@@ -13,7 +13,7 @@ LavenderSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 LavenderSpeechHousePokefanFText:
-	text "LAVENDER is a"
+	text "Lavender is a"
 	line "tiny, quiet town"
 
 	para "at the foot of the"
@@ -22,7 +22,7 @@ LavenderSpeechHousePokefanFText:
 	para "It's gotten a bit"
 	line "busier since the"
 
-	para "RADIO TOWER was"
+	para "Radio Tower was"
 	line "built."
 	done
 

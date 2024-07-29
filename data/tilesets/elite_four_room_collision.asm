@@ -81,7 +81,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 50
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 51
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 52
-	tilecoll ICE, FLOOR, ICE, ICE ; 53
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 53
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 54
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 55
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 56

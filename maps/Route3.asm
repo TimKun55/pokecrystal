@@ -116,7 +116,7 @@ FirebreatherBurtBeatenText:
 
 FirebreatherBurtAfterBattleText:
 	text "The greatest fire-"
-	line "breather in KANTO,"
+	line "breather in Kanto,"
 	cont "that's me."
 
 	para "But not the best"
@@ -124,7 +124,7 @@ FirebreatherBurtAfterBattleText:
 	done
 
 Route3MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."

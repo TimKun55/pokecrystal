@@ -193,7 +193,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; c0
 	tilecoll WALL, WALL, WALL, WALL ; c1
 	tilecoll WALL, WALL, WALL, WALL ; c2
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL ; c3
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; c3
 	tilecoll WALL, WALL, WALL, WALL ; c4
 	tilecoll WALL, WALL, DOOR, WALL ; c5
 	tilecoll FLOOR, FLOOR, WALL, WALL ; c6
@@ -210,3 +210,5 @@
 	tilecoll WATER, WATER, WALL, WALL ; d1
 	tilecoll WATER, WATER, WALL, WALL ; d2
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; d3
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d4
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d5

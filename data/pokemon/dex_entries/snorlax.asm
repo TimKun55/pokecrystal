@@ -1,7 +1,7 @@
-	db "SLEEPING@" ; species name
-	dw 611, 10140 ; height, weight
+	db "Sleeping@" ; species name
+	dw 210, 4600 ; height, weight
 
-	db   "This #MON's"
+	db   "This #mon's"
 	next "stomach is so"
 	next "strong, even"
 

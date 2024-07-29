@@ -398,7 +398,7 @@ DragonShrineElderGreetingText:
 	para "No need to explain"
 	line "why you came."
 
-	para "CLAIR sent you"
+	para "Clair sent you"
 	line "here, didn't she?"
 
 	para "That girl is a"
@@ -415,7 +415,7 @@ DragonShrineElderGreetingText:
 	done
 
 DragonShrineQuestion1Text:
-	text "What are #MON"
+	text "What are #mon"
 	line "to you?"
 	done
 
@@ -433,12 +433,12 @@ DragonShrineQuestion3Text:
 DragonShrineQuestion4Text:
 	text "What is most"
 	line "important for"
-	cont "raising #MON?"
+	cont "raising #mon?"
 	done
 
 DragonShrineQuestion5Text:
-	text "Strong #MON."
-	line "Weak #MON."
+	text "Strong #mon."
+	line "Weak #mon."
 
 	para "Which is more"
 	line "important?"
@@ -448,7 +448,7 @@ DragonShrinePassedTestText:
 	text "Hm… I see…"
 
 	para "You care deeply"
-	line "for #MON."
+	line "for #mon."
 
 	para "Very commendable."
 
@@ -460,26 +460,26 @@ DragonShrinePassedTestText:
 
 	para "It will see you"
 	line "through at the"
-	cont "#MON LEAGUE."
+	cont "#mon League."
 	done
 
 DragonShrineMustIInformLanceText:
-	text "CLAIR!"
+	text "Clair!"
 
 	para "This child is"
 	line "impeccable, in"
 	cont "skill and spirit!"
 
 	para "Admit defeat and"
-	line "confer the RISING-"
-	cont "BADGE!"
+	line "confer the Rising-"
+	cont "Badge!"
 
 	para "…Or must I inform"
-	line "LANCE of this?"
+	line "Lance of this?"
 	done
 
 DragonShrineElderScoldsClairText:
-	text "CLAIR…"
+	text "Clair…"
 
 	para "Reflect upon what"
 	line "it is that you"
@@ -503,7 +503,7 @@ DragonShrineTakeThisDratiniText:
 	para "I have something"
 	line "for you."
 
-	para "Take this DRATINI"
+	para "Take this Dratini"
 	line "as proof that I"
 
 	para "have recognized"
@@ -512,16 +512,16 @@ DragonShrineTakeThisDratiniText:
 
 DragonShrinePlayerReceivedDratiniText:
 	text "<PLAYER> received"
-	line "DRATINI!"
+	line "Dratini!"
 	done
 
 DragonShrinePartyFullText:
-	text "Hm? Your #MON"
+	text "Hm? Your #mon"
 	line "party is full."
 	done
 
 DragonShrineSymbolicDragonText:
-	text "Dragon #MON are"
+	text "Dragon #mon are"
 	line "symbolic of our"
 	cont "clan."
 
@@ -533,7 +533,7 @@ DragonShrineSymbolicDragonText:
 	done
 
 DragonShrineClairsGrandfatherText:
-	text "CLAIR appears to"
+	text "Clair appears to"
 	line "have learned an"
 
 	para "invaluable lesson"
@@ -549,7 +549,7 @@ DragonShrineRivalIsInTrainingText:
 	cont "training here."
 
 	para "He is much like"
-	line "CLAIR when she was"
+	line "Clair when she was"
 
 	para "younger. It is a"
 	line "little worrisome…"
@@ -574,19 +574,19 @@ DragonShrineElder2Text:
 	line "some time since a"
 
 	para "trainer has gained"
-	line "our MASTER's rare"
+	line "our Master's rare"
 	cont "approval."
 
 	para "In fact, not since"
-	line "Master LANCE."
+	line "Master Lance."
 	done
 
 DragonShrineElder3Text:
 	text "You know young"
-	line "Master LANCE?"
+	line "Master Lance?"
 
 	para "He looks so much"
-	line "like our MASTER"
+	line "like our Master"
 	cont "did in his youth."
 
 	para "It's in their"
@@ -623,25 +623,25 @@ DragonShrineIUnderstandText:
 
 DragonShrineHereRisingBadgeText:
 	text "Here, this is the"
-	line "RISINGBADGE…"
+	line "RisingBadge…"
 
 	para "Hurry up! Take it!"
 	done
 
 DragonShrinePlayerReceivedRisingBadgeText:
 	text "<PLAYER> received"
-	line "the RISINGBADGE."
+	line "the RisingBadge."
 	done
 
 DragonShrineRisingBadgeExplanationText:
-	text "The RISINGBADGE"
+	text "The RisingBadge"
 	line "will enable your"
 
-	para "#MON to use the"
+	para "#mon to use the"
 	line "move for climbing"
 	cont "waterfalls."
 
-	para "Also, all #MON"
+	para "Also, all #mon"
 	line "will recognize you"
 
 	para "as a trainer and"

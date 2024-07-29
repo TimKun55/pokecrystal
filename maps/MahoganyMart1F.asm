@@ -64,9 +64,9 @@ MahoganyMart1FLanceUncoversStaircaseScript:
 	pause 15
 	opentext
 	writetext MahoganyMart1FLanceDragoniteHyperBeamText
-	pause 15
+	waitbutton
 	closetext
-	playsound SFX_TACKLE
+	playsound SFX_HYPER_BEAM
 	applymovement MAHOGANYMART1F_DRAGONITE, MahoganyMart1FDragoniteTackleMovement
 	applymovement MAHOGANYMART1F_BLACK_BELT, MahoganyMart1FBlackBeltKnockedBackMovement
 	pause 15
@@ -165,10 +165,10 @@ MahoganyMart1FBlackBeltText:
 	line "ment worked like a"
 	cont "charm."
 
-	para "MAGIKARP are just"
+	para "Magikarp are just"
 	line "worthless, but"
 
-	para "GYARADOS are big"
+	para "Gyarados are big"
 	line "moneymakers."
 	done
 
@@ -176,12 +176,12 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 	text "Urrgh…"
 
 	para "That guy's dragon"
-	line "#MON are tough…"
+	line "#mon are tough…"
 	done
 
 MahoganyMart1FLanceDragoniteHyperBeamText:
-	text "LANCE: DRAGONITE,"
-	line "HYPER BEAM."
+	text "Lance: Dragonite,"
+	line "Hyper Beam."
 	done
 
 MahoganyMart1FLanceRadioText:
@@ -201,7 +201,7 @@ MahoganyMart1FLanceStairsText:
 	done
 
 MahoganyMart1FLanceSplitUpText:
-	text "LANCE: <PLAY_G>, we"
+	text "Lance: <PLAY_G>, we"
 	line "should split up to"
 
 	para "check this place."
@@ -225,4 +225,4 @@ MahoganyMart1F_MapEvents:
 	object_event  1,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FBlackBeltScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  4,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
 	object_event  3,  6, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
-	object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS
+	object_event  1,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS

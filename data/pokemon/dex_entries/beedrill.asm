@@ -1,5 +1,5 @@
-	db "POISON BEE@" ; species name
-	dw 303, 650 ; height, weight
+	db "Poison Bee@" ; species name
+	dw 100, 295 ; height, weight
 
 	db   "It uses sharp,"
 	next "poisonous stings"

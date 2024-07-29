@@ -23,13 +23,13 @@ Route2ViridianForestGateBeedrillScript:
 	end
 
 Route2ViridianForestGateOfficerText:
-	text "The FORREST has"
+	text "The Forest has"
 	line "some strong Bugs!"
 	cont "Be careful!"
 	done
 	
 Route2ViridianForestGateBeedrillText:
-	text "BEEDRILL: Beeeeee!"
+	text "Beedrill: Beeeeee!"
 	done
 
 

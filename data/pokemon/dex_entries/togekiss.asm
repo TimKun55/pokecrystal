@@ -1,5 +1,5 @@
-	db "JUBILEE@" ; species name
-	dw 411, 838 ; height, width
+	db "Jubilee@" ; species name
+	dw 150, 380 ; height, width
 
 	db   "It shares many"
 	next "blessings with"

@@ -554,6 +554,8 @@ Area_Page:
 	ld e, a
 	predef Pokedex_GetArea
 	call Pokedex_BlackOutBG
+	call Pokedex_LoadGFX
+	call Pokedex_LoadAnyFootprint
 	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
@@ -1501,16 +1503,16 @@ Pokedex_DrawOptionScreenBG:
 	ret
 
 .Title:
-	db $3b, " OPTION ", $3c, -1
+	db $3b, " Option ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
-	next "A to Z MODE"
+	db   "New #dex Mode"
+	next "Old #dex Mode"
+	next "A to Z Mode"
 	db   "@"
 
 .UnownMode:
-	db "UNOWN MODE@"
+	db "Unown Mode@"
 
 Pokedex_DrawSearchScreenBG:
 	call Pokedex_FillBackgroundColor2
@@ -1535,19 +1537,19 @@ Pokedex_DrawSearchScreenBG:
 	ret
 
 .Title:
-	db $3b, " SEARCH ", $3c, -1
+	db $3b, " Search ", $3c, -1
 
 .TypeLeftRightArrows:
 	db $3d, "        ", $3e, -1
 
 .Types:
-	db   "TYPE1"
-	next "TYPE2"
+	db   "Type1"
+	next "Type2"
 	db   "@"
 
 .Menu:
-	db   "BEGIN SEARCH!!"
-	next "CANCEL"
+	db   "Begin Search!!"
+	next "Cancel"
 	db   "@"
 
 Pokedex_DrawSearchResultsScreenBG:
@@ -1581,9 +1583,9 @@ Pokedex_DrawSearchResultsScreenBG:
 	ret
 
 .BottomWindowText:
-	db   "SEARCH RESULTS"
-	next "  TYPE"
-	next "    FOUND!"
+	db   "Search Results"
+	next "  Type"
+	next "    Found!"
 	db   "@"
 
 Pokedex_PlaceSearchResultsTypeStrings:
@@ -1837,8 +1839,10 @@ Pokedex_PrintNumberIfOldMode:
 	ld de, -SCREEN_WIDTH
 	add hl, de
 	ld de, wTempSpecies
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
+	push hl
+	call GetPokemonNumber
+	pop hl
+	call PlaceString
 	pop hl
 	ret
 
@@ -1930,6 +1934,7 @@ Pokedex_OrderMonsByMode:
 
 .NewMode:
 	ld de, NewPokedexOrder
+.do_dex
 	ld hl, wPokedexOrder
 	ld c, NUM_POKEMON
 .loopnew
@@ -1942,16 +1947,8 @@ Pokedex_OrderMonsByMode:
 	ret
 
 .OldMode:
-	ld hl, wPokedexOrder
-	ld a, $1
-	ld c, NUM_POKEMON
-.loopold
-	ld [hli], a
-	inc a
-	dec c
-	jr nz, .loopold
-	call .FindLastSeen
-	ret
+	ld de, OldPokedexOrder
+	jr .do_dex
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
@@ -2010,6 +2007,8 @@ INCLUDE "data/pokemon/dex_order_alpha.asm"
 
 INCLUDE "data/pokemon/dex_order_new.asm"
 
+INCLUDE "data/pokemon/dex_order_old.asm"
+
 Pokedex_DisplayModeDescription:
 	xor a
 	ldh [hBGMapMode], a
@@ -2046,7 +2045,7 @@ Pokedex_DisplayModeDescription:
 	next "alphabetically.@"
 
 .UnownMode:
-	db   "UNOWN are listed"
+	db   "Unown are listed"
 	next "in catching order.@"
 
 Pokedex_DisplayChangingModesMessage:
@@ -2175,6 +2174,27 @@ endr
 	ret
 
 INCLUDE "data/types/search_strings.asm"
+
+Pokedex_GetDexNumber:
+; Get the intended number of the selected Pokémon.
+	push bc
+	push hl
+	
+	ld a, [wTempSpecies] ;a = current mon (internal number)
+	ld b, a ;b = Needed mon (a and b must be matched)
+	ld c, 0 ;c = index
+	ld hl,OldPokedexOrder
+	
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld a, c
+	ld [wUnusedBCDNumber], a
+	pop hl
+	pop bc
+	ret
 
 Pokedex_SearchForMons:
 	ld a, [wDexSearchMonType2]

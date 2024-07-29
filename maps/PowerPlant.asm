@@ -210,10 +210,18 @@ PowerPlantGiovanniScript:
 	writetext PowerPlantGiovanniLeavingText
 	waitbutton
 	closetext
-	special FadeOutToBlack
+	readvar VAR_FACING
+	ifequal UP, .Location1
+	applymovement POWERPLANT_GIOVANNI, GiovanniExitMove1
+	sjump .Continue
+
+.Location1:
+	applymovement POWERPLANT_GIOVANNI, GiovanniExitMove2
+.Continue:
 	disappear POWERPLANT_GIOVANNI
-	pause 25
-	special FadeInFromBlack
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	setmapscene CERULEAN_CITY, SCENE_CERULEANCITY_DISGUISED
 	end
 
 PowerPlantBookshelf:
@@ -234,9 +242,21 @@ PowerPlantOfficer1ReturnToPostMovement:
 	turn_head DOWN
 	step_end
 
+GiovanniExitMove1:
+	step DOWN
+	step RIGHT
+	step DOWN
+	step_end
+
+GiovanniExitMove2:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
 PowerPlantOfficer1AThiefBrokeInText:
 	text "A thief broke into"
-	line "the POWER PLANT…"
+	line "the Power Plant…"
 
 	para "What is the world"
 	line "coming to?"
@@ -244,7 +264,7 @@ PowerPlantOfficer1AThiefBrokeInText:
 
 PowerPlantOfficer1CeruleanShadyCharacterText:
 	text "I just got word"
-	line "from CERULEAN."
+	line "from Cerulean."
 
 	para "It appears that a"
 	line "shady character"
@@ -285,7 +305,7 @@ PowerPlantGymGuide1GeneratorUpAndRunningText:
 	done
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
-	text "This POWER PLANT"
+	text "This Power Plant"
 	line "had been abandoned"
 	cont "in the past."
 
@@ -293,7 +313,7 @@ PowerPlantGymGuide2PowerPlantUpAndRunningText:
 	line "and running to"
 
 	para "provide power to"
-	line "the MAGNET TRAIN."
+	line "the Magnet Train."
 	done
 
 PowerPlantGymGuide2GeneratorIsRunningAgainText:
@@ -302,8 +322,8 @@ PowerPlantGymGuide2GeneratorIsRunningAgainText:
 	done
 
 PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
-	text "The POWER PLANT's"
-	line "MANAGER is up"
+	text "The Power Plant's"
+	line "Manager is up"
 	cont "ahead."
 
 	para "But since someone"
@@ -317,12 +337,12 @@ PowerPlantOfficer2ManagerHasBeenCheerfulText:
 	text "Since the gener-"
 	line "ator's been fixed,"
 
-	para "the MANAGER has"
+	para "the Manager has"
 	line "been cheerful."
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
-	text "The MAGNET TRAIN"
+	text "The Magnet Train"
 	line "consumes a lot of"
 	cont "electricity."
 
@@ -335,12 +355,12 @@ PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
 	text "All right! We can"
 	line "finally get the"
 
-	para "MAGNET TRAIN"
+	para "Magnet Train"
 	line "running again."
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "MANAGER: I, I, I'm"
+	text "Manager: I, I, I'm"
 	line "ready to blast"
 	cont "someone!"
 
@@ -353,12 +373,12 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	para "If I catch him,"
 	line "he's going to get"
 
-	para "a taste of my ZAP"
-	line "CANNON!"
+	para "a taste of my Zap"
+	line "Cannon!"
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
-	text "MANAGER: I won't"
+	text "Manager: I won't"
 	line "forgive him!"
 
 	para "The culprit can"
@@ -371,10 +391,10 @@ PowerPlantManagerIWontForgiveCulpritText:
 	done
 
 PowerPlantManagerThatsThePartText:
-	text "MANAGER: Ah! Yeah!"
+	text "Manager: Ah! Yeah!"
 
 	para "That's the missing"
-	line "PART from my be-"
+	line "Part from my be-"
 	cont "loved generator!"
 	cont "You found it?"
 	done
@@ -387,8 +407,8 @@ PowerPlantManagerTakeThisTMText:
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	text "MANAGER: TM07 is"
-	line "my ZAP CANNON."
+	text "Manager: TM07 is"
+	line "my Zap Cannon."
 
 	para "It's a powerful"
 	line "technique!"
@@ -401,7 +421,7 @@ PowerPlantManagerTM07IsZapCannonText:
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:
-	text "MANAGER: My be-"
+	text "Manager: My be-"
 	line "loved generator!"
 
 	para "Keep pumping the"
@@ -410,8 +430,8 @@ PowerPlantManagerMyBelovedGeneratorText:
 	
 PowerPlantGiovanniSearchingText:
 	text "???: I heard a"
-	line "rumour that TEAM"
-	cont "ROCKET had been"
+	line "rumour that Team"
+	cont "Rocket had been"
 	
 	para "spotted here, and"
 	line "stole something,"
@@ -422,7 +442,7 @@ PowerPlantGiovanniSearchingText:
 	
 PowerPlantGiovanniLeavingText:
 	text "???: You found the"
-	line "ROCKET member,"
+	line "Rocket member,"
 	cont "defeated him, and"
 	
 	para "retrieved what was"
@@ -435,6 +455,13 @@ PowerPlantGiovanniLeavingText:
 	para "Though, I guess"
 	line "I really shouldn't"
 	cont "be surprised."
+
+	para "I'll see if I can"
+	line "find that member."
+	
+	para "He was in Cerulean"
+	line "City? I'll check"
+	cont "there first."
 	
 	para "………"
 	line "Thank you."
@@ -460,5 +487,6 @@ PowerPlant_MapEvents:
 	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide2Script, -1
 	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficer2Script, -1
 	object_event  7,  2, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide4Script, -1
-	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
+	object_event 17,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
 	object_event  5,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
+	object_event  1, 15, SPRITE_GIOVANNI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantGiovanniScript, EVENT_POWER_PLANT_GIOVANNI

@@ -1,8 +1,8 @@
-	db "SYMBOL@" ; species name
-	dw 108, 110 ; height, weight
+	db "Symbol@" ; species name
+	dw 050, 50 ; height, weight
 
 	db   "Because different"
-	next "types of UNOWN"
+	next "types of Unown"
 	next "exist, it is said"
 
 	page "that they must"

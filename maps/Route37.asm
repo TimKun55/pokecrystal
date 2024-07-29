@@ -127,43 +127,43 @@ Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER
 
 TwinsAnnandanne1SeenText:
-	text "ANN: ANNE and I"
+	text "Ann: Anne and I"
 	line "are in this to-"
 	cont "gether!"
 	done
 
 TwinsAnnandanne1BeatenText:
-	text "ANN & ANNE: Nnn… A"
+	text "Ann & Anne: Nnn… A"
 	line "little too strong."
 	done
 
 TwinsAnnandanne1AfterBattleText:
-	text "ANN: I can tell"
+	text "Ann: I can tell"
 	line "what my sister and"
 
-	para "my #MON are"
+	para "my #mon are"
 	line "thinking."
 	done
 
 TwinsAnnandanne2SeenText:
-	text "ANNE: ANN and I"
+	text "Anne: Ann and I"
 	line "are in this to-"
 	cont "gether!"
 	done
 
 TwinsAnnandanne2BeatenText:
-	text "ANN & ANNE: Nnn… A"
+	text "Ann & Anne: Nnn… A"
 	line "little too strong."
 	done
 
 TwinsAnnandanne2AfterBattleText:
-	text "ANNE: We share the"
+	text "Anne: We share the"
 	line "same feelings as"
-	cont "our #MON."
+	cont "our #mon."
 	done
 
 PsychicGregSeenText:
-	text "#MON can't do a"
+	text "#mon can't do a"
 	line "thing if they are"
 	cont "asleep."
 
@@ -177,7 +177,7 @@ PsychicGregBeatenText:
 	done
 
 PsychicGregAfterBattleText:
-	text "Putting #MON to"
+	text "Putting #mon to"
 	line "sleep or paralyz-"
 	cont "ing them are good"
 	cont "battle techniques."
@@ -185,8 +185,8 @@ PsychicGregAfterBattleText:
 
 BugManiacCarlSeenText:
 	text "I caught some"
-	line "strong #MON in"
-	cont "the PARK!"
+	line "strong #mon in"
+	cont "the Park!"
 	done
 
 BugManiacCarlBeatenText:
@@ -202,9 +202,9 @@ BugManiacCarlAfterBattleText:
 	done
 
 MeetSunnyText:
-	text "SUNNY: Hi!"
+	text "Sunny: Hi!"
 
-	para "I'm SUNNY of Sun-"
+	para "I'm Sunny of Sun-"
 	line "day, meaning it's"
 	cont "Sunday today!"
 	done
@@ -222,7 +222,7 @@ SunnyGivesGiftText2:
 	done
 
 SunnyGaveGiftText:
-	text "SUNNY: That thing…"
+	text "Sunny: That thing…"
 
 	para "Um…"
 
@@ -233,36 +233,36 @@ SunnyGaveGiftText:
 	para "Oh! I remember"
 	line "now!"
 
-	para "A #MON that"
+	para "A #mon that"
 	line "knows electric"
 
 	para "moves should hold"
 	line "it."
 
-	para "My sis MONICA said"
+	para "My sis Monica said"
 	line "it powers up"
 	cont "electric moves!"
 	done
 
 SunnySundayText:
-	text "SUNNY: My sisters"
+	text "Sunny: My sisters"
 	line "and brothers are"
-	cont "MONICA, TUSCANY,"
-	cont "WESLEY, ARTHUR,"
-	cont "FRIEDA and SANTOS."
+	cont "Monica, Tuscany,"
+	cont "Wesley, Arthur,"
+	cont "Frieda and Santos."
 
 	para "They're all older"
 	line "than me!"
 	done
 
 SunnyNotSundayText:
-	text "SUNNY: Isn't today"
+	text "Sunny: Isn't today"
 	line "Sunday?"
 	cont "Um… I forgot!"
 	done
 
 Route37SignText:
-	text "ROUTE 37"
+	text "Route 37"
 	done
 
 Route37_MapEvents:

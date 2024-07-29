@@ -94,10 +94,10 @@ CeladonHomeDecorStore1FClerkScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "BULBASAUR  ¥16000@"
-	db "CHARMANDER ¥16000@"
-	db "SQUIRTLE   ¥16000@"
-	db "CANCEL@"	
+	db "Bulbasaur  ¥16000@"
+	db "Charmander ¥16000@"
+	db "Squirtle   ¥16000@"
+	db "Cancel@"	
 	
 CeladonHomeDecorStore1FMagikarpDollScript:
 	checkevent EVENT_DECO_MAGIKARP_DOLL
@@ -197,8 +197,8 @@ CeladonHomeDecorStore1FDirectory:
 
 CeladonHomeDecorStore1FReceptionistText:
 	text "Hello! Welcome to"
-	line "CELADON CITY"
-	cont "HOME DECOR STORE!"
+	line "Celadon City"
+	cont "Home Decor Store!"
 
 	para "The directory is"
 	line "on the wall."
@@ -206,37 +206,37 @@ CeladonHomeDecorStore1FReceptionistText:
 
 CeladonHomeDecorStore1FClerkText:
 	text "Welcome! Would you"
-	line "like a DOLL as a"
+	line "like a Doll as a"
 	cont "souvenir?"
 	done
 
 BoughtBulbasaurDollText:
 	text "<PLAYER> bought"
-	line "BULBASAUR DOLL."
+	line "Bulbasaur Doll."
 	done
 
 BulbasaurDollSentText:
-	text "BULBASAUR DOLL"
+	text "Bulbasaur Doll"
 	line "was sent home."
 	done
 
 BoughtCharmanderDollText:
 	text "<PLAYER> bought"
-	line "CHARMANDER DOLL."
+	line "Charmander Doll."
 	done
 
 CharmanderDollSentText:
-	text "CHARMANDER DOLL"
+	text "Charmander Doll"
 	line "was sent home."
 	done
 
 BoughtSquirtleDollText:
 	text "<PLAYER> bought"
-	line "SQUIRTLE DOLL."
+	line "Squirtle Doll."
 	done
 
 SquirtleDollSentText:
-	text "SQUIRTLE DOLL"
+	text "Squirtle Doll"
 	line "was sent home."
 	done
 
@@ -255,17 +255,17 @@ CeladonHomeDecorStore1FNextTimeText:
 	done
 
 ClerkSellMagikarpDollText:
-	text "CLERK: You like"
-	line "the MAGIKARP DOLL?"
+	text "Clerk: You like"
+	line "the Magikarp Doll?"
 
 	para "It'll cost you"
 	line "¥90,000."
 	done
 
 ClerkSellJigglypuffDollText:
-	text "CLERK: You"
+	text "Clerk: You"
 	line "like the"
-	cont "JIGGLYPUFF DOLL?"
+	cont "Jigglypuff Doll?"
 
 	para "It'll cost you"
 	line "¥120,000."
@@ -273,57 +273,57 @@ ClerkSellJigglypuffDollText:
 	
 BoughtMagikarpDollText:
 	text "<PLAYER> bought"
-	line "MAGIKARP DOLL."
+	line "Magikarp Doll."
 	done
 
 MagikarpDollSentText:
-	text "MAGIKARP DOLL"
+	text "Magikarp Doll"
 	line "was sent home."
 	done
 	
 BoughtJigglypuffDollText:
 	text "<PLAYER> bought"
-	line "JIGGLYPUFF DOLL."
+	line "Jigglypuff Doll."
 	done
 
 JigglypuffDollSentText:
-	text "JIGGLYPUFF DOLL"
+	text "Jigglypuff Doll"
 	line "was sent home."
 	done
 	
 MagikarpDollText:
 	text "It's a very cute"
-	line "MAGIKARP DOLL."
+	line "Magikarp Doll."
 	done
 	
 JigglypuffDollText:
 	text "It's a cute"
-	line "JIGGLYPUFF DOLL."
+	line "Jigglypuff Doll."
 	done
 	
 DollClerkNoSaleText:
-	text "CLERK: Well, if"
+	text "Clerk: Well, if"
 	line "you say so."
 	done
 
 DollClerkNoMoneyText:
-	text "CLERK: You can't"
+	text "Clerk: You can't"
 	line "afford it!"
 	done
 
 CeladonHomeDecorStore1FBulbasaurDollText:
 	text "It's a cute"
-	line "BULBASAUR doll!"
+	line "Bulbasaur doll!"
 	done
 
 CeladonHomeDecorStore1FCharmanderDollText:
 	text "It's a tough"
-	line "CHARMANDER doll!"
+	line "Charmander doll!"
 	done
 
 CeladonHomeDecorStore1FSquirtleDollText:
 	text "It's a cool"
-	line "SQUIRTLE doll!"
+	line "Squirtle doll!"
 	done
 
 CeladonHomeDecorStore1FBeautyText:

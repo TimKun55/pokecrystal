@@ -10,11 +10,11 @@ Route36VioletGateOfficerScript:
 	jumptextfaceplayer Route36VioletGateOfficerText
 
 Route36VioletGateOfficerText:
-	text "The RUINS OF ALPH,"
-	line "SPROUT TOWER,"
+	text "The Ruins Of Alph,"
+	line "Sprout Tower,"
 
-	para "TIN TOWER and"
-	line "the BURNED TOWER."
+	para "Tin Tower and"
+	line "the Burned Tower."
 
 	para "There's so much to"
 	line "see and experience"

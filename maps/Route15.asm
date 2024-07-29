@@ -125,16 +125,16 @@ TeacherHillaryAfterBattleText:
 
 SchoolboyKippSeenText:
 	text "Hang on. I have to"
-	line "phone my mom."
+	line "phone my mum."
 	done
 
 SchoolboyKippBeatenText:
-	text "Sorry, Mom!"
+	text "Sorry, Mum!"
 	line "I was beaten!"
 	done
 
 SchoolboyKippAfterBattleText:
-	text "My mom worries so"
+	text "My mum worries so"
 	line "much about me, I"
 
 	para "have to phone her"
@@ -159,9 +159,9 @@ SchoolboyTommyAfterBattleText:
 
 SchoolboyJohnnySeenText:
 	text "We're on a field"
-	line "trip to LAVENDER"
+	line "trip to Lavender"
 
-	para "RADIO TOWER for"
+	para "Radio Tower for"
 	line "social studies."
 	done
 
@@ -187,16 +187,16 @@ SchoolboyBillyBeatenText:
 	done
 
 SchoolboyBillyAfterBattleText:
-	text "If #MON were a"
+	text "If #mon were a"
 	line "subject at school,"
 	cont "I'd be the best!"
 	done
 
 Route15SignText:
-	text "ROUTE 15"
+	text "Route 15"
 
-	para "FUCHSIA CITY -"
-	line "LAVENDER TOWN"
+	para "Fuchsia City -"
+	line "Lavender Town"
 	done
 
 Route15_MapEvents:

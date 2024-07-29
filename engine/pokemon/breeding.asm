@@ -53,9 +53,9 @@ CheckBreedmonCompatibility:
 	jr z, .done
 
 .compute
-	call .CheckDVs
-	ld c, 255
-	jp z, .done
+	call .CheckDVs ; remove
+	ld c, 255      ; remove
+	jp z, .done    ; remove
 	ld a, [wBreedMon2Species]
 	ld b, a
 	ld a, [wBreedMon1Species]
@@ -84,7 +84,7 @@ CheckBreedmonCompatibility:
 	ld [wBreedingCompatibility], a
 	ret
 
-.CheckDVs:
+.CheckDVs: ; can remove all this to get rid of 'family relations' check
 ; If Defense DVs match and the lower 3 bits of the Special DVs match,
 ; avoid breeding
 	ld a, [wBreedMon1DVs]

@@ -2565,13 +2565,13 @@ WinTrainerBattle:
 	ld a, [wAmuletCoin]
 	and a
 	call nz, .DoubleReward
-	call .CheckMaxedOutMomMoney
+	call .CheckMaxedOutMumMoney
 	push af
 	ld a, FALSE
 	jr nc, .okay
-	ld a, [wMomSavingMoney]
-	and MOM_SAVING_MONEY_MASK
-	cp (1 << MOM_SAVING_SOME_MONEY_F) | (1 << MOM_SAVING_HALF_MONEY_F)
+	ld a, [wMumSavingMoney]
+	and MUM_SAVING_MONEY_MASK
+	cp (1 << MUM_SAVING_SOME_MONEY_F) | (1 << MUM_SAVING_HALF_MONEY_F)
 	jr nz, .okay
 	inc a ; TRUE
 
@@ -2582,7 +2582,7 @@ WinTrainerBattle:
 	ld a, b
 	and a
 	jr z, .loop2
-	call .AddMoneyToMom
+	call .AddMoneyToMum
 	dec c
 	dec b
 	jr .loop
@@ -2600,10 +2600,10 @@ WinTrainerBattle:
 	call .DoubleReward
 	pop af
 	jr nc, .KeepItAll
-	ld a, [wMomSavingMoney]
-	and MOM_SAVING_MONEY_MASK
+	ld a, [wMumSavingMoney]
+	and MUM_SAVING_MONEY_MASK
 	jr z, .KeepItAll
-	ld hl, .SentToMomTexts
+	ld hl, .SentToMumTexts
 	dec a
 	ld c, a
 	ld b, 0
@@ -2618,10 +2618,10 @@ WinTrainerBattle:
 	ld hl, GotMoneyForWinningText
 	jp StdBattleTextbox
 
-.AddMoneyToMom:
+.AddMoneyToMum:
 	push bc
 	ld hl, wBattleReward + 2
-	ld de, wMomsMoney + 2
+	ld de, wMumsMoney + 2
 	call AddBattleMoneyToAccount
 	pop bc
 	ret
@@ -2648,14 +2648,14 @@ WinTrainerBattle:
 	ld [hl], a
 	ret
 
-.SentToMomTexts:
-; entries correspond to MOM_SAVING_* constants
-	dw SentSomeToMomText
-	dw SentHalfToMomText
-	dw SentAllToMomText
+.SentToMumTexts:
+; entries correspond to MUM_SAVING_* constants
+	dw SentSomeToMumText
+	dw SentHalfToMumText
+	dw SentAllToMumText
 
-.CheckMaxedOutMomMoney:
-	ld hl, wMomsMoney + 2
+.CheckMaxedOutMumMoney:
+	ld hl, wMumsMoney + 2
 	ld a, [hld]
 	cp LOW(MAX_MONEY)
 	ld a, [hld]
@@ -4860,7 +4860,7 @@ PrintPlayerHUD:
 	ld a, "♀"
 
 .got_gender_char
-	hlcoord 17, 8
+	hlcoord 17, 8 ; gender char
 	ld [hl], a
 ; Player Mon Status Condition GFX
 	predef Player_LoadNonFaintStatus ; loads needed Status Conditon GFX into VRAM
@@ -5912,7 +5912,7 @@ MoveInfoBox:
 	hlcoord 1, 8
 	call PlaceString
 
-	hlcoord 4, 8
+	hlcoord 5, 8
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr nz, .haspower
@@ -5930,9 +5930,9 @@ MoveInfoBox:
 	hlcoord 1, 9
 	ld de, .accuracy_string ; "ACC"
 	call PlaceString
-	hlcoord 7, 9
-	ld [hl], "<%>"
-	hlcoord 4, 9
+;	hlcoord 7, 9
+;	ld [hl], "<%>"
+	hlcoord 5, 9
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
 ; convert from hex to decimal
 ; this is the same code used in function "Adjust_Percent" in engine\pokemon\mon_stats.asm
@@ -5982,11 +5982,11 @@ MoveInfoBox:
 	ld [hl], a
 	ret
 .power_string:
-	db "BP@"
+	db "Pow@"
 .nopower_string:
 	db "---@"
 .accuracy_string:
-	db "AC@"
+	db "Acc@"
 
 CheckPlayerHasUsableMoves:
 	ld a, STRUGGLE
@@ -9226,19 +9226,19 @@ GetTrainerBackpic:
 ; What gender are we?
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	jr nz, .Chris
+	jr nz, .Ethan
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .Chris
+	jr z, .Ethan
 
 ; It's a girl.
 	farcall GetKrisBackpic
 	ret
 
-.Chris:
+.Ethan:
 ; It's a boy.
-	ld b, BANK(ChrisBackpic)
-	ld hl, ChrisBackpic
+	ld b, BANK(EthanBackpic)
+	ld hl, EthanBackpic
 
 .Decompress:
 	ld de, vTiles2 tile $31

@@ -25,7 +25,7 @@ Route7LockedDoor:
 
 BugManiacEliSeenText:
 	text "I've been training"
-	line "to take on ERIKA!"
+	line "to take on Erika!"
 	
 	para "I won't lose!"
 	done
@@ -49,16 +49,16 @@ Route7UndergroundPathSignText:
 	line "have been holding"
 
 	para "battles in the"
-	line "UNDERGROUND PATH."
+	line "Underground Path."
 
 	para "Because of rising"
 	line "complaints by lo-"
 	cont "cal residents, the"
-	cont "UNDERGROUND PATH"
+	cont "Underground Path"
 	cont "has been sealed"
 	cont "indefinitely."
 
-	para "CELADON POLICE"
+	para "Celadon Police"
 	done
 
 Route7LockedDoorText:

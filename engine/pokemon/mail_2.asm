@@ -67,23 +67,8 @@ ReadAnyMail:
 	ldh a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON | START
 	jr z, .loop
-	vc_patch Forbid_printing_mail
-if DEF(_CRYSTAL11_VC)
 	and NO_INPUT
-else
-	and START
-endc
-	vc_patch_end
-	jr nz, .pressed_start
 	ret
-
-.pressed_start
-	ld a, [wJumptableIndex]
-	push af
-	callfar PrintMailAndExit ; printer
-	pop af
-	ld [wJumptableIndex], a
-	jr .loop
 
 .LoadGFX:
 	ld h, d

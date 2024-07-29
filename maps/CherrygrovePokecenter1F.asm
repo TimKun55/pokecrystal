@@ -118,16 +118,16 @@ CherrygrovePokecenter1FTutorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "STONE EDGE@"
-	db "GUNK SHOT@"
-	db "FOCUS BLAST@"
-	db "CANCEL@"
+	db "Stone Edge@"
+	db "Gunk Shot@"
+	db "Focus Blast@"
+	db "Cancel@"
 
 CherrygrovePokecenter1FFisherText:
 	text "It's great. I can"
 	line "store any number"
 
-	para "of #MON, and"
+	para "of #mon, and"
 	line "it's all free."
 	done
 
@@ -138,8 +138,8 @@ CherrygrovePokecenter1FGentlemanText:
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
+	text "The Communication"
+	line "Center upstairs"
 	cont "was just built."
 
 	para "But they're still"
@@ -147,21 +147,21 @@ CherrygrovePokecenter1FTeacherText:
 	done
 
 CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
+	text "The Communication"
+	line "Center upstairs"
 	cont "was just built."
 
-	para "I traded #MON"
+	para "I traded #mon"
 	line "there already!"
 	done
 	
 CherrygrovePokecenter1FTutorIntro:
 	text "Hi there!"
-	line "I'm a MOVE TUTOR!"
+	line "I'm a Move Tutor!"
 	
 	para "For ¥20,000,"
 	line "I can teach your"
-	cont "#MON an"
+	cont "#mon an"
 
 	para "amazing move if"
 	line "you'd like."
@@ -177,7 +177,7 @@ CherrygrovePokecenter1FTutorRefusalText:
 	line "if you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -213,7 +213,7 @@ CherrygrovePokecenter1FFarewellKidText:
 
 CherrygrovePokecenter1FTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 

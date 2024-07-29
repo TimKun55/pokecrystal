@@ -216,10 +216,10 @@ BillsHousePCScript:
 	writetext BillsHousePCText
 
 BillsGrandpaIntroText:
-	text "Hm? You know BILL?"
+	text "Hm? You know Bill?"
 	line "He's my grandson."
 
-	para "He's in JOHTO. He"
+	para "He's in Johto. He"
 	line "does something"
 
 	para "with PCs, so I'm"
@@ -228,7 +228,7 @@ BillsGrandpaIntroText:
 
 BillsGrandpaAskToSeeMonText:
 	text "If you have that"
-	line "#MON, may I see"
+	line "#mon, may I see"
 	cont "it, please?"
 	done
 
@@ -268,7 +268,7 @@ BillsGrandpaComeAgainText:
 BillsGrandpaShownAllThePokemonText:
 	text "Thanks for showing"
 	line "me so many cute"
-	cont "#MON."
+	cont "#mon."
 
 	para "I really enjoyed"
 	line "myself. I'm glad"
@@ -281,15 +281,15 @@ BillsGrandpaWrongPokemonText:
 	text "Hm?"
 
 	para "That's not the"
-	line "#MON that I was"
+	line "#mon that I was"
 	cont "told about."
 	done
 
 BillsGrandpaLickitungText:
-	text "My grandson BILL"
+	text "My grandson Bill"
 	line "told me about a"
 
-	para "#MON that has a"
+	para "#mon that has a"
 	line "long tongue."
 	done
 
@@ -297,14 +297,14 @@ BillsGrandpaOddishText:
 	text "Ah, my grandson"
 	line "mentioned a round,"
 
-	para "green #MON that"
+	para "green #mon that"
 	line "has leaves growing"
 	cont "on its head."
 	done
 
 BillsGrandpaStaryuText:
 	text "Do you know of a"
-	line "sea #MON that"
+	line "sea #mon that"
 
 	para "has a red sphere"
 	line "in its body?"
@@ -321,32 +321,32 @@ BillsGrandpaStaryuText:
 	done
 
 BillsGrandpaGrowlitheText:
-	text "BILL told me about"
-	line "a #MON that is"
+	text "Bill told me about"
+	line "a #mon that is"
 
 	para "very loyal to its"
 	line "trainer."
 
 	para "It's supposed to"
-	line "ROAR well."
+	line "Roar well."
 	done
 
 BillsGrandpaVulpixText:
 	text "I heard about a"
-	line "cute #MON that"
+	line "cute #mon that"
 	cont "has six tails."
 
 	para "I would love to"
-	line "hug a cute #MON"
+	line "hug a cute #mon"
 	cont "like that."
 	done
 
 BillsGrandpaMagnemiteText:
 	text "Do you know that"
 	line "round, grey"
-	cont "#MON?"
+	cont "#mon?"
 
-	para "The #MON that"
+	para "The #mon that"
 	line "has 6 magnets all"
 	cont "over its body."
 
@@ -358,29 +358,29 @@ BillsGrandpaMagnemiteText:
 	done
 
 PokemonJournalBillText:
-	text "#MON JOURNAL"
+	text "#mon Journal"
 
 	para "Special Feature:"
-	line "#MANIAC BILL!"
+	line "#maniac Bill!"
 
-	para "BILL invented the"
-	line "#MON STORAGE"
-	cont "SYSTEM to hold his"
+	para "Bill invented the"
+	line "#mon Storage"
+	cont "System to hold his"
 
-	para "own vast #MON"
+	para "own vast #mon"
 	line "collection."
 
 	para "Apparently, the"
 	line "first one he"
 
 	para "caught was an"
-	line "ABRA."
+	line "Abra."
 	done
 	
 BillsHousePCText:
 	text "There's a spinning"
 	line "3D model of a"
-	cont "PORYGON."
+	cont "Porygon."
 	done
 
 BillsHouse_MapEvents:
@@ -395,7 +395,7 @@ BillsHouse_MapEvents:
 	def_bg_events
 	bg_event  6,  1, BGEVENT_READ, PokemonJournalBillScript
 	bg_event  7,  1, BGEVENT_READ, PokemonJournalBillScript
-	bg_event  5,  1, BGEVENT_READ, BillsHousePCText
+	bg_event  5,  1, BGEVENT_READ, BillsHousePCScript
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1

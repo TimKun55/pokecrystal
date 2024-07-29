@@ -17,7 +17,7 @@ SafariZoneWestRestHouse2FisherText:
 	line "As a reward for"
 	cont "reaching this"
 	
-	para "REST HOUSE, have"
+	para "Rest House, have"
 	line "this HM as a"
 	cont "reward…"
 	cont "… … …"

@@ -20,6 +20,10 @@ CeruleanTradeSpeechHouseKangaskhanScript:
 	writetext CeruleanTradeSpeechHouseKangaskhanText
 	cry KANGASKHAN
 	waitbutton
+	refreshscreen
+	pokepic KANGASKHAN
+	waitbutton
+	closepokepic
 	closetext
 	end
 
@@ -28,13 +32,17 @@ CeruleanTradeSpeechHouseZubatScript:
 	writetext CeruleanTradeSpeechHouseZubatText
 	cry ZUBAT
 	waitbutton
+	refreshscreen
+	pokepic ZUBAT
+	waitbutton
+	closepokepic
 	closetext
 	end
 
 CeruleanTradeSpeechHouseGrannyText:
 	text "My husband lives"
 	line "happily with #-"
-	cont "MON he got through"
+	cont "mon he got through"
 	cont "trades."
 	done
 
@@ -43,12 +51,12 @@ CeruleanTradeSpeechHouseGrampsText:
 	done
 
 CeruleanTradeSpeechHouseKangaskhanText:
-	text "KANGASKHAN: Garu"
+	text "Kangaskhan: Garu"
 	line "garuu."
 	done
 
 CeruleanTradeSpeechHouseZubatText:
-	text "ZUBAT: Zuba zubaa."
+	text "Zubat: Zuba zubaa."
 	done
 
 CeruleanTradeSpeechHouse_MapEvents:
@@ -66,4 +74,4 @@ CeruleanTradeSpeechHouse_MapEvents:
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrampsScript, -1
 	object_event  5,  2, SPRITE_KANGASKHAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseKangaskhanScript, -1
-	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1
+	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1

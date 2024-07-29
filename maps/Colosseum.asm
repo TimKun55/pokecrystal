@@ -9,7 +9,7 @@ Colosseum_MapScripts:
 	scene_script ColosseumNoop2Scene ; unused
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, ColosseumSetWhichChrisCallback
+	callback MAPCALLBACK_OBJECTS, ColosseumSetWhichPlayerCallback
 	callback MAPCALLBACK_NEWMAP, ColosseumPreparePokecenter2FCallback
 
 ColosseumInitializeScene:
@@ -22,8 +22,8 @@ ColosseumNoop1Scene:
 ColosseumNoop2Scene:
 	end
 
-ColosseumSetWhichChrisCallback:
-	special CableClubCheckWhichChris
+ColosseumSetWhichPlayerCallback:
+	special CableClubCheckWhichPlayer
 	iffalse .Chris2
 	disappear COLOSSEUM_CHRIS2
 	appear COLOSSEUM_CHRIS1
@@ -74,5 +74,5 @@ Colosseum_MapEvents:
 	bg_event  5,  4, BGEVENT_LEFT, ColosseumConsoleScript
 
 	def_object_events
-	object_event  3,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  6,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	object_event  3,  4, SPRITE_ETHAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  6,  4, SPRITE_ETHAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

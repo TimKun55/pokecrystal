@@ -106,6 +106,11 @@ TilesetJohto4Anim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $54, ReadTileToAnimBuffer ; waterfall?
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $54, WriteTileFromAnimBuffer ; waterfall?
 	dw WhirlpoolFrames1, AnimateWhirlpoolTile
 	dw WhirlpoolFrames2, AnimateWhirlpoolTile
 	dw WhirlpoolFrames3, AnimateWhirlpoolTile
@@ -148,7 +153,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $40, ReadTileToAnimBuffer
+	dw vTiles2 tile $40, ReadTileToAnimBuffer ; waterfall?
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -156,7 +161,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $40, WriteTileFromAnimBuffer
+	dw vTiles2 tile $40, WriteTileFromAnimBuffer ; waterfall?
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateLavaBubbleTile2
 	dw NULL,  WaitTileAnimation
@@ -207,6 +212,16 @@ TilesetTowerAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetBattleTowerOutsideAnim:
+	dw vTiles2 tile $01, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlower2Tile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:
@@ -631,6 +646,40 @@ AnimateFlowerTile:
 	INCBIN "gfx/tilesets/flower/cgb_1.2bpp"
 	INCBIN "gfx/tilesets/flower/dmg_2.2bpp"
 	INCBIN "gfx/tilesets/flower/cgb_2.2bpp"
+
+AnimateFlower2Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 2 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %10
+
+; CGB has different tile graphics for flowers
+	ld e, a
+	ldh a, [hCGB]
+	and 1
+	add e
+
+; hl = .FlowerTileFrames + a * 16
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, .Flower2TileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $02 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $02
+	jp WriteTile
+
+.Flower2TileFrames:
+	INCBIN "gfx/tilesets/flower_2/dmg_1.2bpp"
+	INCBIN "gfx/tilesets/flower_2/cgb_1.2bpp"
+	INCBIN "gfx/tilesets/flower_2/dmg_2.2bpp"
+	INCBIN "gfx/tilesets/flower_2/cgb_2.2bpp"
 
 AnimateLavaBubbleTile1:
 ; Save the stack pointer in bc for WriteTile to restore

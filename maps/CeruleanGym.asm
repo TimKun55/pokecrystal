@@ -274,51 +274,51 @@ CeruleanGymGruntByeText:
 CeruleanGymNote1Text:
 	text "Sorry, I'll be out"
 	line "for a while."
-	cont "MISTY, GYM LEADER"
+	cont "Misty, Gym Leader"
 	done
 
 CeruleanGymNote2Text:
-	text "Since MISTY's out,"
+	text "Since Misty's out,"
 	line "we'll be away too."
-	cont "GYM TRAINERS"
+	cont "Gym Trainers"
 	done
 
 MistyIntroText:
-	text "MISTY: I was ex-"
+	text "Misty: I was ex-"
 	line "pecting you, you"
 	cont "pest!"
 
 	para "You may have a"
-	line "lot of JOHTO GYM"
+	line "lot of Johto Gym"
 
-	para "BADGES, but you'd"
+	para "Badges, but you'd"
 	line "better not take me"
 	cont "too lightly."
 
 	para "My water-type"
-	line "#MON are tough!"
+	line "#mon are tough!"
 	done
 
 MistyWinLossText:
-	text "MISTY: You really"
+	text "Misty: You really"
 	line "are good…"
 
 	para "I'll admit that"
 	line "you are skilled…"
 
 	para "Here you go. It's"
-	line "the CASCADEBADGE."
+	line "the CascadeBadge."
 	done
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "the CASCADEBADGE."
+	line "the CascadeBadge."
 	done
 
 MistyFightDoneText:
-	text "MISTY: Are there"
+	text "Misty: Are there"
 	line "many strong train-"
-	cont "ers in JOHTO? Like"
+	cont "ers in Johto? Like"
 	cont "you, I mean."
 
 	para "I'm going to"
@@ -388,7 +388,7 @@ SwimmerfBrianaAfterBattleText:
 	text "Don't be too smug"
 	line "about beating me."
 
-	para "MISTY will destroy"
+	para "Misty will destroy"
 	line "you if you get"
 	cont "complacent."
 	done
@@ -405,7 +405,7 @@ SwimmermParkerBeatenText:
 	done
 
 SwimmermParkerAfterBattleText:
-	text "MISTY has gotten"
+	text "Misty has gotten"
 	line "much better in the"
 	cont "past few years."
 
@@ -415,10 +415,10 @@ SwimmermParkerAfterBattleText:
 	done
 
 CeruleanGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making!"
 
-	para "Since MISTY was"
+	para "Since Misty was"
 	line "away, I went out"
 
 	para "for some fun too."
@@ -435,7 +435,7 @@ CeruleanGymGuideWinText:
 	done
 	
 StarmieText:
-	text "STARMIE: Staaar!!"
+	text "Starmie: Staaar!!"
 	line "Mieeeee!"
 	done
 
@@ -456,8 +456,8 @@ CeruleanGym_MapEvents:
 	def_object_events
 	object_event  4, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
 	object_event  5,  3, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  4,  3, SPRITE_STARMIE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymStarmie, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  2,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  4,  3, SPRITE_STARMIE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeruleanGymStarmie, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  6,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  1, 12, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  8,  8, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  6, 11, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  3, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM

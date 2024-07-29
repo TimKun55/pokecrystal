@@ -15,6 +15,7 @@ INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
+INCLUDE "engine/events/poisonstep_pals.asm"
 
 
 SECTION "bank2", ROMX
@@ -78,7 +79,7 @@ INCLUDE "engine/events/pokecenter_pc.asm"
 INCLUDE "engine/items/mart.asm"
 INCLUDE "engine/events/money.asm"
 INCLUDE "data/items/marts.asm"
-INCLUDE "engine/events/mom.asm"
+INCLUDE "engine/events/mum.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
@@ -324,6 +325,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 
 SECTION "Phone Scripts 1", ROMX
@@ -377,7 +379,7 @@ SECTION "Phone Scripts 2", ROMX
 
 INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/phone/scripts/unused.asm"
-INCLUDE "engine/phone/scripts/mom.asm"
+INCLUDE "engine/phone/scripts/mum.asm"
 INCLUDE "engine/phone/scripts/bill.asm"
 INCLUDE "engine/phone/scripts/elm.asm"
 INCLUDE "engine/phone/scripts/jack.asm"
@@ -410,13 +412,12 @@ INCLUDE "engine/phone/scripts/parry.asm"
 INCLUDE "engine/phone/scripts/erin.asm"
 INCLUDE "engine/phone/scripts/generic_callee.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
+INCLUDE "engine/battle_anims/bg_effects.asm"
 
 
 SECTION "bank32", ROMX
 
-INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
-INCLUDE "engine/events/poisonstep_pals.asm"
 
 
 SECTION "Move Animations", ROMX
@@ -489,7 +490,7 @@ SECTION "bank3F", ROMX
 
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
-INCLUDE "engine/events/mom_phone.asm"
+INCLUDE "engine/events/mum_phone.asm"
 
 
 SECTION "mobile40", ROMX
@@ -604,7 +605,7 @@ INCLUDE "data/phone/text/liz_overworld.asm"
 
 SECTION "Special Phone Text", ROMX
 
-INCLUDE "data/phone/text/mom.asm"
+INCLUDE "data/phone/text/mum.asm"
 INCLUDE "data/phone/text/bill.asm"
 INCLUDE "data/phone/text/elm.asm"
 INCLUDE "data/phone/text/jack_callee.asm"

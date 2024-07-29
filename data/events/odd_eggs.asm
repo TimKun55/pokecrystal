@@ -1,4 +1,4 @@
-DEF NUM_ODD_EGGS EQU 14
+DEF NUM_ODD_EggS EQU 14
 
 MACRO prob
 	DEF prob_total += \1
@@ -30,7 +30,7 @@ DEF prob_total = 0
 ; Tyrogue
 	prob 10
 	prob 1
-	assert_table_length NUM_ODD_EGGS
+	assert_table_length NUM_ODD_EggS
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
 OddEggs:
@@ -56,7 +56,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db PIKACHU
 	db NO_ITEM
@@ -78,7 +78,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db CHINCHOU
 	db NO_ITEM
@@ -100,7 +100,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db CHINCHOU
 	db NO_ITEM
@@ -122,7 +122,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db SNEASEL
 	db NO_ITEM
@@ -144,7 +144,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 7 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db SNEASEL
 	db NO_ITEM
@@ -166,7 +166,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db SWINUB
 	db NO_ITEM
@@ -188,7 +188,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db SWINUB
 	db NO_ITEM
@@ -210,7 +210,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 14 ; SAtk
 	bigdw 12 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db HOUNDOUR
 	db NO_ITEM
@@ -232,7 +232,7 @@ OddEggs:
 	bigdw 13 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db HOUNDOUR
 	db NO_ITEM
@@ -254,7 +254,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db CHANSEY
 	db NO_ITEM
@@ -276,7 +276,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 11 ; SAtk
 	bigdw 10 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db CHANSEY
 	db NO_ITEM
@@ -298,7 +298,7 @@ OddEggs:
 	bigdw 15 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db TYROGUE
 	db NO_ITEM
@@ -320,7 +320,7 @@ OddEggs:
 	bigdw 8 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db TYROGUE
 	db NO_ITEM
@@ -342,6 +342,6 @@ OddEggs:
 	bigdw 9 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
-	assert_table_length NUM_ODD_EGGS
+	assert_table_length NUM_ODD_EggS

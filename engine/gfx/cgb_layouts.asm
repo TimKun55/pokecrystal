@@ -234,7 +234,7 @@ _CGB_PokegearPals:
 	ld hl, MalePokegearPals
 .got_pals
 	ld de, wBGPals1
-	ld bc, 6 palettes
+	ld bc, 8 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call ApplyPals
@@ -986,7 +986,7 @@ _CGB_UnownPuzzle:
 
 _CGB_TrainerCard:
 	ld de, wBGPals1
-	xor a ; CHRIS
+	xor a ; ETHAN
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, FALKNER ; KRIS
@@ -1022,7 +1022,7 @@ _CGB_TrainerCard:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 .got_gender
 	call ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -1030,7 +1030,7 @@ _CGB_TrainerCard:
 	lb bc, 7, 5
 	ld a, [wPlayerGender]
 	and a
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 	jr z, .got_gender2
 	ld a, $1 ; kris
 .got_gender2
@@ -1095,7 +1095,7 @@ INCLUDE "gfx/trainer_card/johto_badges.pal"
 	
 _CGB_TrainerCardKanto:
  	ld de, wBGPals1
-	xor a ; CHRIS & MISTY
+	xor a ; ETHAN & MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, FALKNER ; KRIS
@@ -1131,7 +1131,7 @@ _CGB_TrainerCardKanto:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 .got_gender
 	call ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -1139,7 +1139,7 @@ _CGB_TrainerCardKanto:
 	lb bc, 7, 5
 	ld a, [wPlayerGender]
 	and a
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 	jr z, .got_gender2
 	ld a, $1 ; kris
 .got_gender2
@@ -1150,7 +1150,7 @@ _CGB_TrainerCardKanto:
 	call FillBoxCGB
 	hlcoord 6, 11, wAttrmap
 	lb bc, 2, 4	
-	ld a, $0 ; misty / chris
+	ld a, $0 ; misty / ethan
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrmap
 	lb bc, 2, 4
@@ -1181,7 +1181,7 @@ _CGB_TrainerCardKanto:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender3
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 .got_gender3
 	hlcoord 18, 1, wAttrmap
 	ld [hl], a
@@ -1307,7 +1307,7 @@ _CGB_PackPals:
 	jr .got_gender
 
 .tutorial_male
-	ld hl, .ChrisPackPals
+	ld hl, .EthanPackPals
 
 .got_gender
 	ld de, wBGPals1
@@ -1341,7 +1341,7 @@ _CGB_PackPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
-.ChrisPackPals:
+.EthanPackPals:
 INCLUDE "gfx/pack/pack.pal"
 
 .KrisPackPals:

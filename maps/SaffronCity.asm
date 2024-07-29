@@ -2,21 +2,80 @@
 	const SAFFRONCITY_LASS1
 	const SAFFRONCITY_POKEFAN_M
 	const SAFFRONCITY_COOLTRAINER_M
-	const SAFFRONCITY_COOLTRAINER_F
+	const SAFFRONCITY_COOLTRAINER_F1
 	const SAFFRONCITY_FISHER
 	const SAFFRONCITY_YOUNGSTER1
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
+	const SAFFRONCITY_COOLTRAINER_F2
 
 SaffronCity_MapScripts:
 	def_scene_scripts
+	scene_script SaffronCityNoop1Scene, SCENE_SAFFRONCITY_NOOP
+	scene_script SaffronCityNoop2Scene, SCENE_SAFFRONCITY_DISGUISED
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, SaffronCityFlypointCallback
 
+SaffronCityNoop1Scene:
+	end
+
+SaffronCityNoop2Scene:
+	end
+
 SaffronCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	endcallback
+	
+SaffronCityDisguisedLeft:
+	readvar VAR_FACING
+	ifequal LEFT, .continueappear
+	end
+	
+.continueappear
+	moveobject SAFFRONCITY_COOLTRAINER_F2, 21,  8
+	appear SAFFRONCITY_COOLTRAINER_F2
+	pause 5
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
+	pause 10
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
+	pause 10
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, RIGHT
+	pause 5
+	showemote EMOTE_SHOCK, SAFFRONCITY_COOLTRAINER_F2, 15
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedFastMovement
+	disappear SAFFRONCITY_COOLTRAINER_F2
+	showemote EMOTE_QUESTION, PLAYER, 30
+	setscene SCENE_SAFFRONCITY_NOOP
+	setmapscene ROUTE_5, SCENE_ROUTE5_DISGUISED
+	end
+
+SaffronCityDisguisedRight:
+	readvar VAR_FACING
+	ifequal RIGHT, .continueappear
+	end
+	
+.continueappear
+	moveobject SAFFRONCITY_COOLTRAINER_F2, 15,  8
+	appear SAFFRONCITY_COOLTRAINER_F2
+	pause 5
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
+	pause 10
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
+	pause 10
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	pause 5
+	showemote EMOTE_SHOCK, SAFFRONCITY_COOLTRAINER_F2, 15
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedFastMovement
+	disappear SAFFRONCITY_COOLTRAINER_F2
+	showemote EMOTE_QUESTION, PLAYER, 30
+	setscene SCENE_SAFFRONCITY_NOOP
+	setmapscene ROUTE_5, SCENE_ROUTE5_DISGUISED
+	end
 
 SaffronCityLass1Script:
 	faceplayer
@@ -108,6 +167,22 @@ SaffronCityMartSign:
 SaffronAviculturalSocietySign:
 	jumptext SaffronAviculturalSocietySignText
 
+SaffronDisguisedSlowMovementLeft:
+	slow_step LEFT 
+	step_end
+
+SaffronDisguisedSlowMovementRight:
+	slow_step RIGHT 
+	step_end
+
+SaffronDisguisedFastMovement:
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	step_end
+
 SaffronCityLass1Text:
 	text "A little girl who"
 	line "is an expert at"
@@ -123,41 +198,41 @@ SaffronCityLass1Text:
 	done
 
 SaffronCityLass1Text_ReturnedMachinePart:
-	text "The COPYCAT girl"
+	text "The Copycat girl"
 	line "looked unhappy."
 
 	para "She said she lost"
 	line "her favorite #"
-	cont "DOLL--CLEFAIRY."
+	cont "Doll--Clefairy."
 	done
 
 SaffronCityPokefanMText:
 	text "You came out from"
-	line "JOHTO?"
+	line "Johto?"
 
 	para "You can zip back"
-	line "home if the MAGNET"
-	cont "TRAIN's running."
+	line "home if the Magnet"
+	cont "Train's running."
 	done
 
 SaffronCityPokefanMText_ReturnedMachinePart:
 	text "You came out from"
-	line "JOHTO?"
+	line "Johto?"
 
 	para "You can zip back"
 	line "home by hopping on"
-	cont "the MAGNET TRAIN."
+	cont "the Magnet Train."
 	done
 
 SaffronCityCooltrainerMText:
-	text "I went to the GYM,"
+	text "I went to the Gym,"
 	line "raring for battles"
 	cont "against trainers…"
 
 	para "It turns out, I"
 	line "stumbled into the"
 
-	para "unused GYM next"
+	para "unused Gym next"
 	line "door."
 
 	para "Boy, I was pretty"
@@ -165,12 +240,12 @@ SaffronCityCooltrainerMText:
 	done
 
 SaffronCityCooltrainerFText:
-	text "This is SILPH CO.,"
-	line "famous for #MON"
+	text "This is Silph Co.,"
+	line "famous for #mon"
 	cont "merchandise."
 
-	para "In the past, TEAM"
-	line "ROCKET wanted the"
+	para "In the past, Team"
+	line "Rocket wanted the"
 
 	para "company because of"
 	line "that."
@@ -181,7 +256,7 @@ SaffronCityFisherText:
 
 	para "I hear there's big"
 	line "trouble brewing at"
-	cont "the POWER PLANT."
+	cont "the Power Plant."
 
 	para "Chew… Chew…"
 	done
@@ -191,7 +266,7 @@ SaffronCityFisherText_ReturnedMachinePart:
 
 	para "I hear there was"
 	line "big trouble at the"
-	cont "POWER PLANT."
+	cont "Power Plant."
 
 	para "Chew… Chew…"
 	line "Haaah, I'm full!"
@@ -207,9 +282,9 @@ SaffronCityYoungster1Text:
 
 SaffronCityYoungster2Text:
 	text "There's a place"
-	line "called TRAINER"
+	line "called Trainer"
 
-	para "HOUSE in VIRIDIAN"
+	para "House in Viridian"
 	line "where trainers"
 
 	para "gather from all"
@@ -230,46 +305,46 @@ SaffronCityLass2Text:
 	done
 
 SaffronCitySignText:
-	text "SAFFRON CITY"
+	text "Saffron City"
 
 	para "Shining, Golden"
 	line "Land of Commerce"
 	done
 
 SaffronGymSignText:
-	text "SAFFRON CITY"
-	line "#MON GYM"
-	cont "LEADER: SABRINA"
+	text "Saffron City"
+	line "#mon Gym"
+	cont "Leader: Sabrina"
 
 	para "The Master of"
-	line "Psychic #MON!"
+	line "Psychic #mon!"
 	done
 
 FightingDojoSignText:
 	text "Everyone Welcome!"
-	line "FIGHTING DOJO"
+	line "Fighting Dojo"
 	done
 
 SilphCoSignText:
-	text "SILPH CO."
-	line "OFFICE BUILDING"
+	text "Silph Co."
+	line "Office Building"
 	done
 
 MrPsychicsHouseSignText:
-	text "MR.PSYCHIC'S"
-	line "HOUSE"
+	text "Mr.Psychic's"
+	line "House"
 	done
 
 SaffronCityMagnetTrainStationSignText:
-	text "SAFFRON CITY"
-	line "MAGNET TRAIN"
-	cont "STATION"
+	text "Saffron City"
+	line "Magnet Train"
+	cont "Station"
 	done
 
 SaffronAviculturalSocietySignText:
-	text "SAFFRON CITY"
-	line "AVICULTURAL"
-	cont "SOCIETY"
+	text "Saffron City"
+	line "Avicultural"
+	cont "Society"
 	done
 
 SaffronCity_MapEvents:
@@ -295,6 +370,10 @@ SaffronCity_MapEvents:
 	warp_event 15, 31, SAFFRON_ODDISH_DOLL_HOUSE, 1
 
 	def_coord_events
+	coord_event 15,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
+	coord_event 15,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
+	coord_event 20,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
+	coord_event 20,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
 
 	def_bg_events
 	bg_event  9, 31, BGEVENT_READ, SaffronCitySign
@@ -315,4 +394,5 @@ SaffronCity_MapEvents:
 	object_event 30, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
 	object_event 23, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
-	object_event 18,  9, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event  4,  7, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI

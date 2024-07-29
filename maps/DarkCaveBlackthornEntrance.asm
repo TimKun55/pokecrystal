@@ -35,8 +35,8 @@ DarkCaveBlackthornEntrancePharmacistText1:
 	text "Whoa! You startled"
 	line "me there!"
 
-	para "I had my BLACK-"
-	line "GLASSES on, so I"
+	para "I had my Black-"
+	line "Glasses on, so I"
 
 	para "didn't notice you"
 	line "at all."
@@ -48,13 +48,13 @@ DarkCaveBlackthornEntrancePharmacistText1:
 	line "worry about it."
 
 	para "I'll give you a"
-	line "pair of BLACK-"
-	cont "GLASSES, so forget"
+	line "pair of Black-"
+	cont "Glasses, so forget"
 	cont "you saw me, OK?"
 	done
 
 DarkCaveBlackthornEntrancePharmacistText2:
-	text "BLACKGLASSES ups"
+	text "BlackGlasses ups"
 	line "the power of dark-"
 	cont "type moves."
 	done

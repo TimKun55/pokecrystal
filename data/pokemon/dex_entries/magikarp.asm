@@ -1,8 +1,8 @@
-	db "FISH@" ; species name
-	dw 211, 220 ; height, weight
+	db "Fish@" ; species name
+	dw 090, 100 ; height, weight
 
 	db   "This weak and"
-	next "pathetic #MON"
+	next "pathetic #mon"
 	next "gets easily pushed"
 
 	page "along rivers when"

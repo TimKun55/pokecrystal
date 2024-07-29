@@ -13,6 +13,7 @@ RadioTower3F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback
+	callback MAPCALLBACK_OBJECTS, RadioTower3FPetrelCallback
 
 RadioTower3FCardKeyShutterCallback:
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
@@ -22,6 +23,16 @@ RadioTower3FCardKeyShutterCallback:
 .Change:
 	changeblock 14, 2, $2a ; open shutter
 	changeblock 14, 4, $01 ; floor
+	endcallback
+
+RadioTower3FPetrelCallback:
+	checkevent EVENT_BEAT_PETREL_3
+	iftrue .Appear
+	disappear RADIOTOWER3F_PETREL
+	endcallback
+
+.Appear:
+	appear RADIOTOWER3F_PETREL
 	endcallback
 	
 RadioTower3FSuperNerdScript:
@@ -168,7 +179,7 @@ RadioTower3FSuperNerdText:
 	text "We have recordings"
 	line "of the cries of"
 
-	para "all #MON that"
+	para "all #mon that"
 	line "have been found."
 
 	para "We must have about"
@@ -177,14 +188,14 @@ RadioTower3FSuperNerdText:
 
 RadioTower3FGymGuideText_Rockets:
 	text "To trainers, #-"
-	line "MON are their"
+	line "mon are their"
 	cont "beloved partners."
 
 	para "It's terrible how"
-	line "TEAM ROCKET is"
+	line "Team Rocket is"
 
 	para "trying to control"
-	line "#MON."
+	line "#mon."
 	done
 
 RadioTower3FGymGuideText:
@@ -200,11 +211,11 @@ RadioTower3FGymGuideText:
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:
-	text "The TEAM ROCKET"
+	text "The Team Rocket"
 	line "boss has locked"
 	cont "himself in."
 
-	para "But the DIRECTOR"
+	para "But the Director"
 	line "can open it."
 
 	para "He's up on the"
@@ -214,7 +225,7 @@ RadioTower3FCooltrainerFPleaseSaveDirectorText:
 	done
 
 RadioTower3FCooltrainerFIsDirectorSafeText:
-	text "Is the DIRECTOR"
+	text "Is the Director"
 	line "safe?"
 	done
 
@@ -228,9 +239,9 @@ RadioTower3FCooltrainerFYoureMyHeroText:
 
 RadioTower3FCooltrainerFEggTicketText:
 	text "Bring that to the"
-	line "DAY-CARE MAN, and"
+	line "Day-Care Man, and"
 	cont "he'll give you a"
-	cont "rare EGG!"
+	cont "rare Egg!"
 	done
 
 RadioTower3FCooltrainerFYouWereMarvelousText:
@@ -244,7 +255,7 @@ GruntM7SeenText:
 
 	para "I'm to crush any-"
 	line "one who challenges"
-	cont "TEAM ROCKET!"
+	cont "Team Rocket!"
 	done
 
 GruntM7BeatenText:
@@ -261,7 +272,7 @@ GruntM7AfterBattleText:
 
 GruntM8SeenText:
 	text "It feels great"
-	line "ordering #MON"
+	line "ordering #mon"
 	cont "to commit crimes."
 	done
 
@@ -274,7 +285,7 @@ GruntM8AfterBattleText:
 	line "losing!"
 
 	para "Darn it! I hate"
-	line "useless #MON!"
+	line "useless #mon!"
 	done
 
 GruntM9SeenText:
@@ -292,7 +303,7 @@ GruntM9BeatenText:
 GruntM9AfterBattleText:
 	text "What?! You made it"
 	line "past our men in"
-	cont "the UNDERGROUND?"
+	cont "the Underground?"
 
 	para "How could you?"
 	done
@@ -330,22 +341,22 @@ RadioTower3FPetrelText:
 	done
 
 RadioTower3FCardKeySlotText:
-	text "It's the CARD KEY"
+	text "It's the Card Key"
 	line "slot."
 	done
 
 InsertedTheCardKeyText:
 	text "<PLAYER> inserted"
-	line "the CARD KEY."
+	line "the Card Key."
 	done
 
 RadioTower3FPersonnelSignText:
-	text "3F PERSONNEL"
+	text "3F Personnel"
 	done
 
 RadioTower3FPokemonMusicSignText:
-	text "#MON MUSIC with"
-	line "Host DJ BEN"
+	text "#mon Music with"
+	line "Host DJ Ben"
 	done
 
 RadioTower3F_MapEvents:

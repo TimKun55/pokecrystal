@@ -129,11 +129,11 @@ ViridianGymStatue:
 	jumpstd GymStatue2Script
 
 LeaderBlueBeforeText:
-	text "BLUE: Yo! Finally"
+	text "Blue: Yo! Finally"
 	line "got here, huh?"
 
 	para "I wasn't in the"
-	line "mood at CINNABAR,"
+	line "mood at Cinnabar,"
 
 	para "but now I'm ready"
 	line "to battle you."
@@ -142,9 +142,9 @@ LeaderBlueBeforeText:
 
 	para "You're telling me"
 	line "you conquered all"
-	cont "the GYMS in JOHTO?"
+	cont "the Gyms in Johto?"
 
-	para "Heh! JOHTO's GYMS"
+	para "Heh! Johto's Gyms"
 	line "must be pretty"
 	cont "pathetic then."
 
@@ -157,12 +157,12 @@ LeaderBlueBeforeText:
 	para "battling you right"
 	line "now."
 
-	para "Ready, JOHTO"
-	line "CHAMP?"
+	para "Ready, Johto"
+	line "Champ?"
 	done
 
 LeaderBlueWinText:
-	text "BLUE: What?"
+	text "Blue: What?"
 
 	para "How the heck did I"
 	line "lose to you?"
@@ -171,16 +171,16 @@ LeaderBlueWinText:
 
 	para "Tch, all right…"
 	line "Here, take this--"
-	cont "the EARTHBADGE."
+	cont "the EarthBadge."
 	done
 
 Text_ReceivedEarthBadge:
 	text "<PLAYER> received"
-	line "the EARTHBADGE."
+	line "the EarthBadge."
 	done
 
 LeaderBlueAfterText:
-	text "BLUE: …"
+	text "Blue: …"
 
 	para "All right, I was"
 	line "wrong. You're the"
@@ -196,7 +196,7 @@ LeaderBlueAfterText:
 	done
 
 LeaderBlueEpilogueText:
-	text "BLUE: Listen, you."
+	text "Blue: Listen, you."
 
 	para "You'd better not"
 	line "lose until I beat"
@@ -233,7 +233,7 @@ BlueNextTimeText:
 	
 CooltrainerMErickSeenText:
 	text "Wow, you made it"
-	line "to our GYM!"
+	line "to our Gym!"
 	cont "You must be good!"
 	done
 	
@@ -243,7 +243,7 @@ CooltrainerMErickBeatenText:
 	
 CooltrainerMErickAfterBattleText:
 	text "This used to be"
-	line "a GROUND-TYPE GYM."
+	line "a ground-type Gym."
 	done
 
 BeautyJulieSeenText:
@@ -257,9 +257,9 @@ BeautyJulieBeatenText:
 	done
 	
 BeautyJulieAfterBattleText:
-	text "When BLUE became"
-	line "LEADER he"
-	cont "remodeled the GYM."
+	text "When Blue became"
+	line "Leader he"
+	cont "remodeled the Gym."
 	
 	para "It's much better"
 	line "without all those"
@@ -269,17 +269,17 @@ BeautyJulieAfterBattleText:
 	done
 
 ViridianGymGuideText:
-	text "Yo, CHAMP in"
+	text "Yo, Champ in"
 	line "making!"
 
 	para "How's it going?"
 	line "Looks like you're"
 	cont "on a roll."
 
-	para "The GYM LEADER is"
+	para "The Gym Leader is"
 	line "a guy who battled"
 
-	para "the CHAMPION three"
+	para "the Champion three"
 	line "years ago."
 
 	para "He's no pushover."
@@ -300,7 +300,7 @@ ViridianGymGuideWinText:
 	done
 
 ArcanineText:
-	text "ARCANINE: Awooo!!"
+	text "Arcanine: Awooo!!"
 	done
 
 ViridianGym_MapEvents:
@@ -319,6 +319,6 @@ ViridianGym_MapEvents:
 	def_object_events
 	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
 	object_event  4,  3, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymArcanine, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  6, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, TrainerBeautyJulie, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, TrainerCooltrainerMErick, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  6, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulie, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMErick, EVENT_VIRIDIAN_GYM_BLUE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE

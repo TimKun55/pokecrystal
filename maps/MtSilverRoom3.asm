@@ -63,7 +63,7 @@ RedLeavesText:
 	done
 	
 PikachuText:
-	text "PIKACHU: Piii!!"
+	text "Pikachu: Piii!!"
 	done
 
 MtSilverRoom3_MapEvents:
@@ -71,7 +71,6 @@ MtSilverRoom3_MapEvents:
 
 	def_warp_events
 	warp_event  9, 33, MT_SILVER_ROOM_2, 2
-	warp_event  9,  7, MT_SILVER_ROOM_4, 1
 
 	def_coord_events
 

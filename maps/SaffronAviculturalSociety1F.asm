@@ -129,8 +129,8 @@ AviculturalSociety1FStepDownMovement:
 
 AviculturalSocietyReceptionistText:
 	text "Welcome to the"
-	line "AVICULTURAL"
-	cont "SOCIETY."
+	line "Avicultural"
+	cont "Society."
 	
 	para "Anyone can join"
 	line "as long as you"
@@ -140,18 +140,18 @@ AviculturalSocietyReceptionistText:
 
 AviculturalSociety1FBirdKeeper1Text:
 	text "I've been all"
-	line "over KANTO with my"
+	line "over Kanto with my"
 	cont "trusted partner."
 	
-	para "Bird #MON"
+	para "Bird #mon"
 	line "are the best!"
 	done
 
 AviculturalSociety1FBirdKeeper2Text:
 	text "I've been tracking"
 	line "the location of"
-	cont "several #MON"
-	cont "in JOHTO!"
+	cont "several #mon"
+	cont "in Johto!"
 	
 	para "I'm tired!"
 	done
@@ -169,7 +169,7 @@ AviculturalSocietyBirdKeeper3NoEntryText:
 
 AviculturalSocietyBirdKeeper3YouMayPassText:
 	text "Wow! You got the"
-	line "TRAIN back up and"
+	line "Train back up and"
 	cont "running?"
 	
 	para "Thank you!"
@@ -179,16 +179,16 @@ AviculturalSocietyBirdKeeper3YouMayPassText:
 	done
 
 AviculturalSocietyPidgeotText:
-	text "PIDGEOT: Geot!"
+	text "Pidgeot: Geot!"
 	done
 	
 AviculturalSocietyDodrioText:
-	text "DODRIO: Drio!"
+	text "Dodrio: Drio!"
 	line "Dododo!"
 	done
 	
 AviculturalSocietyFearowText:
-	text "FEAROW: Feeaar!"
+	text "Fearow: Feeaar!"
 	done
 
 AviculturalSocietySign1Text:
@@ -209,90 +209,90 @@ AviculturalSocietyBookshelf1Text:
 	text "All these books"
 	line "seem to be about"
 	
-	para "bird #MON and"
+	para "bird #mon and"
 	line "their habitats!"
 	
-	para "PIDGEOT can be"
-	line "found on ROUTES 1,"
+	para "Pidgeot can be"
+	line "found on Routes 1,"
 	cont "2, 13, 14,"
 	cont "15 and 25."
 	
-	para "FEAROW can be"
-	line "found on ROUTES 2,"
+	para "Fearow can be"
+	line "found on Routes 2,"
 	cont "3, 4, 5, 7, 9, 16,"
 	cont "17, 18 and 22."
 	
-	para "FARFETCH'D can be"
-	line "found in JOHTO on"
-	cont "ROUTE 43."
+	para "Farfetch'd can be"
+	line "found in Johto on"
+	cont "Route 43."
 	
-	para "DODRIO can be"
-	line "found on ROUTES"
-	cont "22, 26, the SAFARI"
-	cont "ZONE and Route 27."
+	para "Dodrio can be"
+	line "found on Routes"
+	cont "22, 26, the Safari"
+	cont "Zone and Route 27."
 	done
 	
 AviculturalSocietyBookshelf2Text:
 	text "All these books"
 	line "seem to be about"
 	
-	para "bird #MON and"
+	para "bird #mon and"
 	line "their habitats!"
 	
-	para "NOCTOWL can be"
-	line "found on ROUTES 1,"
+	para "Noctowl can be"
+	line "found on Routes 1,"
 	cont "13, 14, 15,"
 	cont "37, 42 and 43."
 	
-	para "TOGEKISS can be"
+	para "Togekiss can be"
 	line "found deep in"
-	cont "WHIRL ISLANDS."
+	cont "Whirl Islands."
 	
-	para "XATU can be found"
-	line "in TIN TOWER."
+	para "Xatu can be found"
+	line "in Tin Tower."
 	
-	para "MURKROW can be"
-	line "found on ROUTES 7,"
-	cont "16, 17, BURNED"
-	cont "TOWER, 38 and 39."
+	para "Murkrow can be"
+	line "found on Routes 7,"
+	cont "16, 17, Burned"
+	cont "Tower, 38 and 39."
 	
-	para "HONCHKROW can be"
-	line "found on ROUTES 7,"
+	para "Honchkrow can be"
+	line "found on Routes 7,"
 	cont "16 and 17."
 	
-	para "DELIBIRD can be"
+	para "Delibird can be"
 	line "found in the"
-	cont "ICE PATH and"
-	cont "DARK CAVE."
+	cont "Ice Path and"
+	cont "Dark Cave."
 	
-	para "SKARMORY can be"
-	line "found on ROUTE 45."
+	para "Skarmory can be"
+	line "found on Route 45."
 	done
 	
 AviculturalSocietyBook1Text:
 	text "There are many"
-	line "FLYING TYPE"
-	cont "#MON but not"
+	line "Flying Type"
+	cont "#mon but not"
 	
 	para "all of them are"
 	line "birds."
 	
-	para "However KANTO has"
-	line "3 LEGENDARY bird"
-	cont "#MON."
+	para "However Kanto has"
+	line "3 Legendary bird"
+	cont "#mon."
 	done
 	
 AviculturalSocietyBook2Text:
 	text "There are many"
-	line "FLYING TYPE"
-	cont "#MON but not"
+	line "Flying Type"
+	cont "#mon but not"
 	
 	para "all of them are"
 	line "birds."
 	
-	para "However JOHTO has"
-	line "2 LEGENDARY bird"
-	cont "#MON."
+	para "However Johto has"
+	line "2 Legendary bird"
+	cont "#mon."
 	done 
 
 SaffronAviculturalSociety1F_MapEvents:

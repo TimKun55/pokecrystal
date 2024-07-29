@@ -125,17 +125,17 @@ JohtoWaterWildMons:
 	def_water_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, CORSOLA,       32,  34
-	db 20, CORSOLA,       34,  36
-	db 20, POLITOED,      34,  36
+	db 60, CORSOLA,       35,  38
+	db 20, CORSOLA,       39,  42
+	db 20, POLITOED,      38,  42
 	end_water_wildmons
 
 	def_water_wildmons DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
 	db 60, DRATINI,       27,  29
-	db 20, DRAGONAIR,     31,  34
-	db 20, GYARADOS,      31,  34
+	db 20, DRAGONAIR,     36,  40
+	db 20, GYARADOS,      36,  40
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_PORT

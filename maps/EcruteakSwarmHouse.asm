@@ -106,8 +106,8 @@ SwarmDunsparceText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of DUNSPARCE"
-	cont "at DARK CAVE."
+	line "swarm of Dunsparce"
+	cont "at Dark Cave."
 	done
 	
 SwarmYanmaText:
@@ -116,8 +116,8 @@ SwarmYanmaText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of YANMA"
-	cont "on ROUTE 35."
+	line "swarm of Yanma"
+	cont "on Route 35."
 	done
 	
 SwarmQwilfishText:
@@ -126,8 +126,8 @@ SwarmQwilfishText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of QWILFISH"
-	cont "on ROUTE 32."
+	line "swarm of Qwilfish"
+	cont "on Route 32."
 	done
 	
 SwarmHeracrossText:
@@ -136,8 +136,8 @@ SwarmHeracrossText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of HERACROSS"
-	cont "in ILEX FOREST."
+	line "swarm of Heracross"
+	cont "in Ilex Forest."
 	done
 	
 SwarmMareepText:
@@ -146,8 +146,8 @@ SwarmMareepText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of MAREEP"
-	cont "on ROUTE 36."
+	line "swarm of Mareep"
+	cont "on Route 36."
 	done
 
 SwarmSentretText:
@@ -156,8 +156,8 @@ SwarmSentretText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of SENTRET"
-	cont "on ROUTE 29."
+	line "swarm of Sentret"
+	cont "on Route 29."
 	done
 	
 SwarmMiltankText:
@@ -166,8 +166,8 @@ SwarmMiltankText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of MILTANK"
-	cont "on ROUTE 38."
+	line "swarm of Miltank"
+	cont "on Route 38."
 	done
 
 SwarmMantineText:
@@ -176,8 +176,8 @@ SwarmMantineText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of MANTINE"
-	cont "on ROUTE 41."
+	line "swarm of Mantine"
+	cont "on Route 41."
 	done
 
 SwarmGirafarigText:
@@ -186,12 +186,12 @@ SwarmGirafarigText:
 	cont "say?"
 
 	para "Oh yes! There's a"
-	line "swarm of GIRAFARIG"
-	cont "on ROUTE 43."
+	line "swarm of Girafarig"
+	cont "on Route 43."
 	done
 
 SkipSwarmText:
-	text "Often #MON"
+	text "Often #mon"
 	line "of unusual colors"
 
 	para "are reported in"
@@ -202,8 +202,8 @@ EcruteakSwarmHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 14
-	warp_event  4,  7, ECRUTEAK_CITY, 14
+	warp_event  3,  7, ECRUTEAK_CITY, 17
+	warp_event  4,  7, ECRUTEAK_CITY, 17
 
 	def_coord_events
 

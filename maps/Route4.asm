@@ -8,6 +8,14 @@ Route4_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, Route4EasyAccessCallback
+
+Route4EasyAccessCallback:
+	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
+	iffalse .done
+	changeblock 30,  8, $1f
+.done:
+	endcallback
 
 TrainerBirdKeeperHank:
 	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
@@ -53,7 +61,7 @@ Route4HiddenUltraBall:
 
 BirdKeeperHankSeenText:
 	text "I'm raising my"
-	line "#MON. Want to"
+	line "#mon. Want to"
 	cont "battle with me?"
 	done
 
@@ -64,7 +72,7 @@ BirdKeeperHankBeatenText:
 
 BirdKeeperHankAfterBattleText:
 	text "If you have a"
-	line "specific #MON"
+	line "specific #mon"
 
 	para "that you want to"
 	line "raise, put it out"
@@ -90,8 +98,8 @@ PicnickerHopeBeatenText:
 	done
 
 PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
+	text "I heard Clefairy"
+	line "appear at Mt.Moon."
 
 	para "But where could"
 	line "they be?"
@@ -112,7 +120,7 @@ PicnickerSharonAfterBattleText:
 	done
 
 MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."

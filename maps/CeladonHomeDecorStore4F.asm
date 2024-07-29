@@ -94,10 +94,10 @@ CeladonHomeDecorStore4FClerk1Script:
 .MenuData1:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "DIGLETT    ¥14000@"
-	db "SHELLDER   ¥14000@"
-	db "GRIMER     ¥14000@"
-	db "CANCEL@"
+	db "Diglett    ¥14000@"
+	db "Shellder   ¥14000@"
+	db "Grimer     ¥14000@"
+	db "Cancel@"
 	
 CeladonHomeDecorStore4FClerk2Script:
 	faceplayer
@@ -180,10 +180,10 @@ CeladonHomeDecorStore4FClerk2Script:
 .MenuData2:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "UNOWN      ¥25000@"
-	db "GENGAR     ¥50000@"
-	db "SURF PIKA  ¥90000@"
-	db "CANCEL@"
+	db "Unown      ¥25000@"
+	db "Gengar     ¥50000@"
+	db "Surf Pika  ¥90000@"
+	db "Cancel@"
 
 CeladonHomeDecorStore4FDiglettDollScript:
 	jumptext CeladonHomeDecorStore4FDiglettDollText
@@ -214,31 +214,31 @@ CeladonHomeDecorStore4FClerkText:
 
 BoughtDiglettDollText:
 	text "<PLAYER> bought"
-	line "DIGLETT DOLL."
+	line "Diglett Doll."
 	done
 
 DiglettDollSentText:
-	text "DIGLETT DOLL"
+	text "Diglett Doll"
 	line "was sent home."
 	done
 
 BoughtShellderDollText:
 	text "<PLAYER> bought"
-	line "SHELLDER DOLL."
+	line "Shellder Doll."
 	done
 
 ShellderDollSentText:
-	text "SHELLDER DOLL"
+	text "Shellder Doll"
 	line "was sent home."
 	done
 
 BoughtGrimerDollText:
 	text "<PLAYER> bought"
-	line "GRIMER DOLL."
+	line "Grimer Doll."
 	done
 
 GrimerDollSentText:
-	text "GRIMER DOLL"
+	text "Grimer Doll"
 	line "was sent home."
 	done
 
@@ -258,64 +258,64 @@ CeladonHomeDecorStore4FNextTimeText:
 	
 BoughtUnownDollText:
 	text "<PLAYER> bought"
-	line "UNOWN DOLL."
+	line "Unown Doll."
 	done
 
 UnownDollSentText:
-	text "UNOWN DOLL"
+	text "Unown Doll"
 	line "was sent home."
 	done
 
 BoughtGengarDollText:
 	text "<PLAYER> bought"
-	line "GENGAR DOLL."
+	line "Gengar Doll."
 	done
 
 GengarDollSentText:
-	text "GENGAR DOLL"
+	text "Gengar Doll"
 	line "was sent home."
 	done
 
 BoughtSurfPikachuDollText:
 	text "<PLAYER> bought"
-	line "SURFING PIKACHU"
-	cont "DOLL."
+	line "Surfing Pikachu"
+	cont "Doll."
 	done
 
 SurfPikachuDollSentText:
-	text "SURFING PIKACHU"
-	line "DOLL was"
+	text "Surfing Pikachu"
+	line "Doll was"
 	cont "sent home."
 	done
 
 CeladonHomeDecorStore4FDiglettDollText:
 	text "It's a cute"
-	line "DIGLETT DOLL!"
+	line "Diglett Doll!"
 	done
 	
 CeladonHomeDecorStore4FShellderDollText:
 	text "It's a cute"
-	line "SHELLDER DOLL!"
+	line "Shellder Doll!"
 	done
 
 CeladonHomeDecorStore4FGrimerDollText:
 	text "It's a cute"
-	line "GRIMER DOLL!"
+	line "Grimer Doll!"
 	done
 
 CeladonHomeDecorStore4FUnownDollText:
-	text "An UNOWN DOLL."
+	text "An Unown Doll."
 	line "It's cute…?"
 	done
 
 CeladonHomeDecorStore4FGengarDollText:
 	text "A spooky"
-	line "GENGAR DOLL!"
+	line "Gengar Doll!"
 	done
 
 CeladonHomeDecorStore4FSurfingPikachuDollText:
-	text "A super cool SURF-"
-	line "ING PIKACHU DOLL!"
+	text "A super cool Surf-"
+	line "ing Pikachu Doll!"
 	done
 
 CeladonHomeDecorStore4FDirectoryText:

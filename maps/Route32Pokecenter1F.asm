@@ -68,7 +68,7 @@ Route32Pokecenter1FFishingGuruText_Question:
 	cont "about you?"
 
 	para "Would you like one"
-	line "of my RODS?"
+	line "of my Rods?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
@@ -86,7 +86,7 @@ Route32Pokecenter1FFishingGuruText_GiveOldRod:
 	line "be it the sea or a"
 
 	para "stream, try out"
-	line "your ROD."
+	line "your Rod."
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
@@ -101,17 +101,17 @@ Route32Pokecenter1FFishingGuruText_After:
 
 Route32Pokecenter1FCooltrainerFText:
 	text "What should I make"
-	line "my #MON hold?"
+	line "my #mon hold?"
 
 	para "Maybe an item that"
-	line "increases ATTACK"
+	line "increases Attack"
 	cont "power…"
 	done
 
 LadySueSeenText:
 	text "Hello there!"
 	line "Do you know about"
-	cont "the FAIRY TYPE?"
+	cont "the fairy-type?"
 	
 	para "They're cute but"
 	line "don't underesti-"

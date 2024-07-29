@@ -24,6 +24,7 @@ PlayersNeighborMagnemiteScript:
 	pokepic MAGNEMITE
 	waitbutton
 	closepokepic
+	verbosegiveitem RARE_CANDY, 50
 	closetext
 	end
 	
@@ -71,18 +72,18 @@ PlayersNeighborsHouseRadioScript:
 	end
 
 PlayersNeighborsDaughterText:
-	text "Evolved #MON"
-	line "like MAGNETON and"
-	cont "PILOSWINE are able"
+	text "Evolved #mon"
+	line "like Magneton and"
+	cont "Piloswine are able"
 	cont "to evolve again!"
 
 	para "I was amazed by"
-	line "PROF.ELM's find-"
+	line "Prof.Elm's find-"
 	cont "ings."
 
 	para "He's so famous for"
 	line "his research on"
-	cont "#MON evolution."
+	cont "#mon evolution."
 
 	para "…sigh…"
 
@@ -95,42 +96,42 @@ PlayersNeighborText:
 	text "My daughter is"
 	line "adamant about"
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "becoming Prof."
+	line "Elm's assistant."
 
 	para "She really loves"
-	line "#MON!"
+	line "#mon!"
 
 	para "But then, so do I!"
 	done
 	
 PlayersNeighborMagnemiteText:
-	text "MAGNEMITE: Mag!"
+	text "Magnemite: Mag!"
 	line "MiteMagne!!"
 	done
 
 PlayersNeighborPikachuText:
-	text "PIKACHU: Pika! Pi!"
+	text "Pikachu: Pika! Pi!"
 	done
 
 PlayerNeighborRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
+	text "Prof.Oak's #mon"
+	line "Talk! Please tune"
 	cont "in next time!"
 	done
 
 PlayerNeighborRadioText2:
-	text "#MON CHANNEL!"
+	text "#mon Channel!"
 	done
 
 PlayerNeighborRadioText3:
-	text "This is DJ MARY,"
+	text "This is DJ Mary,"
 	line "your co-host!"
 	done
 
 PlayerNeighborRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
+	text "#mon!"
+	line "#mon Channel…"
 	done
 
 PlayersNeighborsHouse_MapEvents:

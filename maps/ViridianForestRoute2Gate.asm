@@ -29,7 +29,7 @@ ViridianForestRoute2GateOfficerText:
 	done
 	
 ViridianForestRoute2GateParasectText:
-	text "PARASECT: Parasss!"
+	text "Parasect: Parasss!"
 	done
 
 

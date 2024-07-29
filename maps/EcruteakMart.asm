@@ -21,23 +21,28 @@ EcruteakMartGrannyScript:
 	jumptextfaceplayer EcruteakMartGrannyText
 
 EcruteakMartSuperNerdText:
-	text "My EEVEE evolved"
-	line "into an ESPEON."
+	text "My Eevee evolved"
+	line "into an Espeon."
 
-	para "But my friend's"
-	line "EEVEE turned into"
-	cont "an UMBREON."
+	para "And my friend's"
+	line "Eevee turned into"
+	cont "an Umbreon."
 
-	para "I wonder why? We"
-	line "both were raising"
-
-	para "our EEVEE in the"
-	line "same way…"
+	para "I used a Sun Stone"
+	line "and he used a"
+	cont "Moon Stone."
+	
+	para "The Kimono Girls"
+	line "have an evolution"
+	cont "we've never seen."
+	
+	para "I wonder what"
+	line "they did?"
 	done
 
 EcruteakMartGrannyText:
-	text "If you use REVIVE,"
-	line "a #MON that's"
+	text "If you use Revive,"
+	line "a #mon that's"
 
 	para "fainted will wake"
 	line "right up."

@@ -1257,7 +1257,7 @@ PhoneScript_MonFlavorText:
 
 GrandmaString: db "Grandma@"
 GrandpaString: db "Grandpa@"
-MomString: db "Mom@"
+MumString: db "Mum@"
 DadString: db "Dad@"
 SisterString: db "Sister@"
 BrotherString: db "Brother@"

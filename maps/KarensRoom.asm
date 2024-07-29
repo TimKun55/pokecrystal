@@ -101,14 +101,14 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenScript_KarenBeforeText:
-	text "I am KAREN of the"
-	line "ELITE FOUR."
+	text "I am Karen of the"
+	line "Elite Four."
 
 	para "You're <PLAYER>?"
 	line "How amusing."
 
 	para "I love dark-type"
-	line "#MON."
+	line "#mon."
 
 	para "I find their wild,"
 	line "tough image to be"
@@ -130,9 +130,9 @@ KarenScript_KarenBeatenText:
 	done
 
 KarenScript_KarenDefeatText:
-	text "Strong #MON."
+	text "Strong #mon."
 
-	para "Weak #MON."
+	para "Weak #mon."
 
 	para "That is only the"
 	line "selfish perception"
@@ -148,12 +148,12 @@ KarenScript_KarenDefeatText:
 	line "You understand"
 	cont "what's important."
 
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "Go on--the Cham-"
+	line "pion is waiting."
 	done
 	
 HoundoomText:
-	text "HOUNDOOM: Grr!!"
+	text "Houndoom: Grr!!"
 	line "Awooo!"
 	done
 

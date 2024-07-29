@@ -1,5 +1,5 @@
-	db "FIVE STAR@" ; species name
-	dw 407, 780 ; height, weight
+	db "Five Star@" ; species name
+	dw 140, 356 ; height, weight
 
 	db   "In the daytime"
 	next "when it gets warm,"

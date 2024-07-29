@@ -60,7 +60,7 @@ TiffanysFamilyMembers:
 	random 6
 	ifequal 0, .Grandma
 	ifequal 1, .Grandpa
-	ifequal 2, .Mom
+	ifequal 2, .Mum
 	ifequal 3, .Dad
 	ifequal 4, .Sister
 	ifequal 5, .Brother
@@ -73,8 +73,8 @@ TiffanysFamilyMembers:
 	getstring STRING_BUFFER_4, GrandpaString
 	sjump .PoorClefairy
 
-.Mom:
-	getstring STRING_BUFFER_4, MomString
+.Mum:
+	getstring STRING_BUFFER_4, MumString
 	sjump .PoorClefairy
 
 .Dad:

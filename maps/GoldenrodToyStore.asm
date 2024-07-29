@@ -75,7 +75,7 @@ GoldenrodToyStoreHitmontopScript:
 
 GoldenrodToyStoreYoungsterText:
 	text "Did you know that"
-	line "TYROGUE can evolve"
+	line "Tyrogue can evolve"
 	
 	para "depending on which"
 	line "toy it holds?"
@@ -91,24 +91,24 @@ GoldenrodToyStoreTeacherText:
 	line "simple children's"
 	cont "toys can cause"
 	
-	para "a #MON to"
+	para "a #mon to"
 	line "evolve!"
 	done
 
 GoldenrodToyStoreTyrogueText:
-	text "TYROGUE: Tyty!"
+	text "Tyrogue: Tyty!"
 	done
 
 GoldenrodToyStoreHitmonchanText:
-	text "HITMONCHAN: Cha!"
+	text "Hitmonchan: Cha!"
 	done
 
 GoldenrodToyStoreHitmonleeText:
-	text "HITMONLEE: Monlee!"
+	text "Hitmonlee: Monlee!"
 	done
 	
 GoldenrodToyStoreHitmontopText:
-	text "HITMONTOP: Montop!"
+	text "Hitmontop: Montop!"
 	done
 
 GoldenrodToyStore_MapEvents:

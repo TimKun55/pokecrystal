@@ -473,9 +473,8 @@ DisplayHOFMon:
 	ld [hli], a
 	ld [hl], "<DOT>"
 	hlcoord 3, 13
-	ld de, wTextDecimalByte
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
+	call GetPokemonNumber
+	call PlaceString
 	call GetBasePokemonName
 	hlcoord 7, 13
 	call PlaceString
@@ -593,4 +592,4 @@ HOF_AnimatePlayerPic:
 	ret
 
 .PlayTime:
-	db "PLAY TIME@"
+	db "Play Time@"

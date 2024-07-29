@@ -2,8 +2,8 @@
 ; OverworldSprites indexes (see data/sprites/sprites.asm)
 	const_def
 	const SPRITE_NONE ; 00
-	const SPRITE_CHRIS ; 01
-	const SPRITE_CHRIS_BIKE ; 02
+	const SPRITE_ETHAN ; 01
+	const SPRITE_ETHAN_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
 	const SPRITE_RIVAL ; 04
 	const SPRITE_OAK ; 05
@@ -13,9 +13,9 @@
 	const SPRITE_ELDER ; 09
 	const SPRITE_JANINE ; 0a
 	const SPRITE_KURT ; 0b
-	const SPRITE_MOM ; 0c
+	const SPRITE_MUM ; 0c
 	const SPRITE_BLAINE ; 0d
-	const SPRITE_REDS_MOM ; 0e
+	const SPRITE_REDS_MUM ; 0e
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ELM ; 10
 	const SPRITE_WILL ; 11
@@ -78,7 +78,7 @@
 	const SPRITE_BIKER ; 4a
 	const SPRITE_PHARMACIST ; 4b
 	const SPRITE_CLEFAIRY_WALKING ; 4c
-	const SPRITE_CHRIS_SURF ; 4d
+	const SPRITE_ETHAN_SURF ; 4d
 	const SPRITE_KRIS_SURF ; 4e
 	const SPRITE_RATTATA_BACK ; 4f
 	const SPRITE_BIG_ONIX ; 50
@@ -87,9 +87,9 @@
 	const SPRITE_AMPHAROS ; 53
 	const SPRITE_POKE_BALL ; 54
 	const SPRITE_POKEDEX ; 55
-	const SPRITE_PAPER ; 56
+	const SPRITE_PAPER ; 56 ; NOT USED
 	const SPRITE_VIRTUAL_BOY ; 57
-	const SPRITE_OLD_LINK_RECEPTIONIST ; 58
+	const SPRITE_OLD_LINK_RECEPTIONIST ; 58 ; NOT USED
 	const SPRITE_ROCK ; 59
 	const SPRITE_BOULDER ; 5a
 	const SPRITE_SNES ; 5b
@@ -125,102 +125,102 @@ DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_next $80
 DEF SPRITE_POKEMON EQU const_value
-	const SPRITE_UNOWN ; 80
-	const SPRITE_TYROGUE ; 81
-	const SPRITE_PERSIAN ; 82
-	const SPRITE_HITMONCHAN ; 83
-	const SPRITE_SHELLDER ; 84
-	const SPRITE_ODDISH ; 85
-	const SPRITE_GENGAR ; 86
-	const SPRITE_ZUBAT ; 87
-	const SPRITE_MAGIKARP ; 88
-	const SPRITE_SQUIRTLE ; 89
-	const SPRITE_RATTATA ; 8a
-	const SPRITE_BUTTERFREE ; 8b
-	const SPRITE_DIGLETT ; 8c
-	const SPRITE_HITMONLEE ; 8d
-	const SPRITE_PIKACHU ; 8e
-	const SPRITE_CLEFAIRY ; 8f
-	const SPRITE_CHARMANDER ; 90
-	const SPRITE_PINSIR ; 91
-	const SPRITE_STARMIE ; 92
-	const SPRITE_BULBASAUR ; 93
-	const SPRITE_JIGGLYPUFF ; 94
-	const SPRITE_GRIMER ; 95
-	const SPRITE_MILTANK ; 96
-	const SPRITE_HITMONTOP ; 97
-	const SPRITE_TENTACOOL ; 98
-	const SPRITE_TAUROS ; 99
-	const SPRITE_MACHOP ; 9a
-	const SPRITE_VOLTORB ; 9b
-	const SPRITE_NIDOKING ; 9c
-	const SPRITE_NIDOQUEEN ; 9d
-	const SPRITE_MOLTRES ; 9e
-	const SPRITE_SNORLAX ; 9f
-	const SPRITE_GYARADOS ; a0
-	const SPRITE_LUGIA ; a1
-	const SPRITE_HO_OH ; a2
-	const SPRITE_ARTICUNO ; a3
-	const SPRITE_ZAPDOS ; a4
-	const SPRITE_MEWTWO ; a5
-	const SPRITE_XATU ; a6
-	const SPRITE_CROBAT ; a7
-	const SPRITE_MACHAMP ; a8
-	const SPRITE_HOUNDOOM ; a9
-	const SPRITE_HOOTHOOT ; aa
-	const SPRITE_SCYTHER ; ab
-	const SPRITE_STEELIX ; ac
-	const SPRITE_POLIWRATH ; ad
-	const SPRITE_PILOSWINE ; ae
-	const SPRITE_KINGDRA ; af
-	const SPRITE_RAICHU ; b0
-	const SPRITE_ALAKAZAM ; b1
-	const SPRITE_ONIX ; b2
-	const SPRITE_BELLOSSOM ; b3
-	const SPRITE_WEEZING ; b4
-	const SPRITE_MAGMAR ; b5
-	const SPRITE_ARCANINE ; b6
-	const SPRITE_FARFETCH_D ; b7
-	const SPRITE_CHANSEY ; b8
-	const SPRITE_PIDGEY ; b9
-	const SPRITE_ABRA ; ba
-	const SPRITE_ELECTRODE ; bb
-	const SPRITE_DRATINI ; bc
-	const SPRITE_MEOWTH ; bd
-	const SPRITE_NIDORAN_F ; be
-	const SPRITE_BLISSEY ; bf
-	const SPRITE_PSYDUCK ; c0
-	const SPRITE_NIDORINO ; c1
-	const SPRITE_NIDORAN_M ; c2
-	const SPRITE_BAYLEEF ; c3
-	const SPRITE_MACHOKE ; c4
-	const SPRITE_KANGASKHAN ; c5
-	const SPRITE_DODRIO ; c6
-	const SPRITE_BEEDRILL ; c7
-	const SPRITE_PARASECT ; c8
-	const SPRITE_TOGEKISS ; c9
-	const SPRITE_SNEASEL ; ca
-	const SPRITE_NOCTOWL ; cb
-	const SPRITE_SCIZOR ; cc
-	const SPRITE_MAREEP ; cd
-	const SPRITE_SLUGMA ; ce
-	const SPRITE_WOOPER ; cf
-	const SPRITE_MAGCARGO ; d0
-	const SPRITE_SKARMORY ; d1
-	const SPRITE_PIDGEOT ; d2
-	const SPRITE_SYLVEON ; d3
-	const SPRITE_MAGNEMITE ; d4
-	const SPRITE_MAMOSWINE ; d5
-	const SPRITE_FEAROW ; d6
-	const SPRITE_RATICATE ; d7
-	const SPRITE_CHIKORITA ; d8
-	const SPRITE_CYNDAQUIL ; d9
-	const SPRITE_TOTODILE ; da
-	const SPRITE_TEDDIURSA ; db
-	const SPRITE_EEVEE ; dc
-	const SPRITE_SLOWPOKE ; dd
-	const SPRITE_SLOWBRO ; de
-	const SPRITE_MURKROW ; df
+	const SPRITE_BULBASAUR ; 80      ; DOLL
+	const SPRITE_CHARMANDER ; 81     ; DOLL
+	const SPRITE_SQUIRTLE ; 82       ; DOLL
+	const SPRITE_BUTTERFREE ; 83     ; Route34IlexForestGate
+	const SPRITE_BEEDRILL ; 84       ; Route2ViridianForestGate
+	const SPRITE_PIDGEY ; 85         ; MrFujisHouse, VioletNicknameSpeechHouse
+	const SPRITE_PIDGEOT ; 86        ; SaffronAviculturalSociety1F
+	const SPRITE_RATTATA ; 87        ; Route30
+	const SPRITE_RATICATE ; 88       ; VermilionBerryMart, ViridianNicknameSpeechHouse
+	const SPRITE_FEAROW ; 89         ; Route28SteelWingHouse, SaffronAviculturalSociety1F, ViridianNicknameSpeechHouse
+	const SPRITE_PIKACHU ; 8a        ; DOLL, MtSilverRoom3, PlayersHouse1F, PlayersNeighborsHouse
+	const SPRITE_RAICHU  ; 8b        ; VermilionGym
+	const SPRITE_NIDORAN_F ; 8c      ; CeladonMansion1F
+	const SPRITE_NIDOQUEEN ; 8d      ; FuchsiaCity
+	const SPRITE_NIDORAN_M ; 8e      ; PewterNidoranSpeechHouse
+	const SPRITE_NIDORINO ; 8f       ; MrFujisHouse
+	const SPRITE_NIDOKING ; 90       ; FuchsiaCity
+	const SPRITE_CLEFAIRY ; 91       ; DOLL, CeladonMansion1F, CopycatsHouse2F, MountMoonGiftShop, MountMoonSquare, PokemonFanClub
+	const SPRITE_JIGGLYPUFF ; 92     ; DOLL, CeladonHomeDecorStore1F, PewterPokecenter1F, RadioTower2F
+	const SPRITE_ZUBAT ; 93          ; CeruleanTradeSpeechHouse
+	const SPRITE_ODDISH ; 94         ; DOLL
+	const SPRITE_PARASECT ; 95       ; ViridianForestRoute2Gate
+	const SPRITE_DIGLETT ; 96        ; DOLL, CeladonHomeDecorStore4F, CeruleanPoliceStation
+	const SPRITE_MEOWTH ; 97         ; CeladonMansion1F, RadioTower4F
+	const SPRITE_PERSIAN ; 98        ; NationalPark
+	const SPRITE_PSYDUCK ; 99        ; MrFujisHouse
+	const SPRITE_ARCANINE ; 9a       ; ViridianGym
+	const SPRITE_POLIWRATH ; 9b      ; CeladonCity, CianwoodGym, Route23
+	const SPRITE_ABRA ; 9c           ; IndigoPlateauPokecenter1F
+	const SPRITE_ALAKAZAM ; 9d       ; SaffronGym
+	const SPRITE_MACHOP ; 9e         ; VermilionCity
+	const SPRITE_MACHOKE ; 9f        ; GoldenrodDeptStoreB1F
+	const SPRITE_MACHAMP ; a0        ; BrunosRoom
+	const SPRITE_TENTACOOL ; a1      ; DOLL
+	const SPRITE_SLOWPOKE ; a2       ; AzaleaTown, KurtsHouse, SlowpokeWellB1F
+	const SPRITE_SLOWBRO ; a3        ; CeruleanCity
+	const SPRITE_MAGNEMITE ; a4      ; PlayersNeighborsHouse
+	const SPRITE_PINECO ; a5         ; Ilex Forest (Static, Shiny, after Diploma)
+	const SPRITE_DODRIO ; a6         ; CopycatsHouse2F, SaffronAviculturalSociety1F
+	const SPRITE_GRIMER ; a7         ; DOLL, CeladonHomeDecorStore4F
+	const SPRITE_SHELLDER ; a8       ; DOLL, CeladonHomeDecorStore4F
+	const SPRITE_GENGAR ; a9         ; DOLL, CeladonHomeDecorStore4F, CopycatsHouse2F, EcruteakGym, Route23
+	const SPRITE_ONIX ; aa           ; PewterGym
+	const SPRITE_VOLTORB ; ab        ; DOLL
+	const SPRITE_ELECTRODE ; ac      ; TeamRocketBaseB2F
+	const SPRITE_HITMONLEE ; ad      ; GoldenrodToyStore
+	const SPRITE_HITMONCHAN ; ae     ; GoldenrodToyStore
+	const SPRITE_WEEZING ; af        ; FuchsiaGym
+	const SPRITE_CHANSEY ; b0        ; All PokeCenters
+	const SPRITE_KANGASKHAN ; b1     ; CeruleanTradeSpeechHouse
+	const SPRITE_STARMIE ; b2        ; CeruleanGym
+	const SPRITE_SCYTHER ; b3        ; AzaleaGym, Route23
+	const SPRITE_MAGMAR ; b4         ; CinnabarGym
+	const SPRITE_PINSIR ; b5         ; FuchsiaCity
+	const SPRITE_TAUROS ; b6         ; FuchsiaCity
+	const SPRITE_MAGIKARP ; b7       ; DOLL, CeladonHomeDecorStore1F
+	const SPRITE_GYARADOS ; b8       ; LakeOfRage
+	const SPRITE_EEVEE ; b9          ; DOLL
+	const SPRITE_GLIGAR ; ba         ; Route 45 (Static, Shiny, after Diploma)
+	const SPRITE_ARTICUNO ; bb       ; Route14ArticunoNest, SaffronAviculturalSociety3F
+	const SPRITE_ZAPDOS ; bc         ; Route4ZapdosNest, SaffronAviculturalSociety3F
+	const SPRITE_MOLTRES ; bd        ; CinnabarMoltresNest, SaffronAviculturalSociety3F
+	const SPRITE_DRATINI ; be        ; BlackthornDragonSpeechHouse
+	const SPRITE_MEWTWO ; bf         ; CeruleanCaveB1F
+	const SPRITE_CHIKORITA ; c0      ; DOLL, GoldenrodHomeDecorStore1F
+	const SPRITE_BAYLEEF ; c1        ; PokemonFanClub
+	const SPRITE_CYNDAQUIL ; c2      ; DOLL, GoldenrodHomeDecorStore1F 
+	const SPRITE_TOTODILE ; c3       ; DOLL, GoldenrodHomeDecorStore1F
+	const SPRITE_HOOTHOOT ; c4       ; NewBarkTown, VioletGym
+	const SPRITE_NOCTOWL ; c5        ; Route23, VioletGym
+	const SPRITE_CROBAT ; c6         ; KogasRoom
+	const SPRITE_TOGEKISS ; c7       ; Route14
+	const SPRITE_XATU ; c8           ; WillsRoom
+	const SPRITE_MAREEP ; c9         ; DOLL, VioletPrimosHouse
+	const SPRITE_BELLOSSOM ; ca      ; CeladonGym, CopycatsHouse2F, GoldenrodFlowerShop
+	const SPRITE_WOOPER ; cb         ; VioletPrimosHouse, Union Cave B2F (Static, Shiny, after Diploma)
+	const SPRITE_SYLVEON ; cc        ; EcruteakFairyFamilyHouse
+	const SPRITE_UNOWN ; cd          ; DOLL, CeladonHomeDecorStore4F
+	const SPRITE_STEELIX ; ce        ; OlivineGym, Route23 
+	const SPRITE_SCIZOR ; cf         ; NONE
+	const SPRITE_SNEASEL ; d0        ; UndergroundRoom
+	const SPRITE_TEDDIURSA ; d1      ; DOLL, MahoganyBakery
+	const SPRITE_SLUGMA ; d2         ; VioletPrimosHouse
+	const SPRITE_MAGCARGO ; d3       ; NONE
+	const SPRITE_PILOSWINE ; d4      ; MahoganyGym
+	const SPRITE_MAMOSWINE ; d5      ; MahoganyGym, Route23
+	const SPRITE_SKARMORY ; d6       ; SaffronAviculturalSociety2F
+	const SPRITE_HOUNDOOM ; d7       ; KarensRoom
+	const SPRITE_KINGDRA ; d8        ; BlackthornGym1F, IndigoPlateau
+	const SPRITE_TYROGUE ; d9        ; GoldenrodToyStore
+	const SPRITE_HITMONTOP ; da      ; GoldenrodToyStore
+	const SPRITE_MURKROW ; db        ; SaffronAviculturalSociety2F, TeamRocketBaseB3F
+	const SPRITE_MILTANK ; dc        ; GoldenrodGym, Route23, Route39, Route39Barn
+	const SPRITE_BLISSEY ; dd        ; CopycatsHouse1F
+	const SPRITE_LUGIA ; de          ; WhirlIslandLugiaChamber
+	const SPRITE_HO_OH ; df          ; TinTowerRoof
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

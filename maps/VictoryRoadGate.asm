@@ -38,7 +38,18 @@ _VictoryRoadGateBadgeCheckScript:
 	writetext VictoryRoadGateEightBadgesText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_ROUTE_23_FALKNER
+	iftrue .end
+	clearevent EVENT_ROUTE_23_FALKNER
+	clearevent EVENT_ROUTE_23_BUGSY
+	clearevent EVENT_ROUTE_23_WHITNEY
+	clearevent EVENT_ROUTE_23_MORTY
+	clearevent EVENT_ROUTE_23_CHUCK
+	clearevent EVENT_ROUTE_23_JASMINE
+	clearevent EVENT_ROUTE_23_PRYCE
+	clearevent EVENT_ROUTE_23_CLAIR
 	setscene SCENE_VICTORYROADGATE_NOOP
+.end
 	end
 
 VictoryRoadGateLeftBlackBeltScript:
@@ -59,8 +70,8 @@ VictoryRoadGateOfficerText:
 
 VictoryRoadGateNotEnoughBadgesText:
 	text "You don't have all"
-	line "the GYM BADGES of"
-	cont "JOHTO."
+	line "the Gym Badges of"
+	cont "Johto."
 
 	para "I'm sorry, but I"
 	line "can't let you go"
@@ -69,7 +80,7 @@ VictoryRoadGateNotEnoughBadgesText:
 
 VictoryRoadGateEightBadgesText:
 	text "Oh! The eight"
-	line "BADGES of JOHTO!"
+	line "Badges of Johto!"
 
 	para "Please, go right"
 	line "on through!"
@@ -77,18 +88,18 @@ VictoryRoadGateEightBadgesText:
 
 VictoryRoadGateLeftBlackBeltText:
 	text "This way leads to"
-	line "MT.SILVER."
+	line "Mt.Silver."
 
 	para "You'll see scary-"
-	line "strong #MON out"
+	line "strong #mon out"
 	cont "there."
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "Off to the #MON"
-	line "LEAGUE, are you?"
+	text "Off to the #mon"
+	line "League, are you?"
 
-	para "The ELITE FOUR are"
+	para "The Elite Four are"
 	line "so strong it's"
 
 	para "scary, and they're"

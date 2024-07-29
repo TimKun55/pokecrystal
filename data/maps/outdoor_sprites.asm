@@ -64,7 +64,9 @@ PewterGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_BIRD_KEEPER
 	db SPRITE_SCHOOLBOY
-	; max 8 of 9 walking sprites
+	db SPRITE_BEAUTY
+	; max 9 of 9 walking sprites
+	db SPRITE_BUG_MANIAC
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -77,7 +79,7 @@ CeruleanGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_BIRD_KEEPER
 	db SPRITE_LASS
-	db SPRITE_ROCKET
+	db SPRITE_ROCKET ; doesn't walk? Spins on spot, then warps away
 	db SPRITE_MISTY
 	db SPRITE_AGATHA
 	db SPRITE_SCHOOLBOY
@@ -148,11 +150,12 @@ FuchsiaGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_SUPER_NERD
 	db SPRITE_BIKER
-	db SPRITE_LADY
 	db SPRITE_BIRD_KEEPER
-	; 8 of max 9 walking sprites
+	db SPRITE_SWIMMER_GUY
+	; 9 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_LADY
 	db SPRITE_LAPRAS_SAFARI
 	db SPRITE_NIDOKING
 	db SPRITE_NIDOQUEEN
@@ -174,7 +177,7 @@ IndigoGroupSprites:
 	; 8 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_NOCTOWL
-	db SPRITE_SCIZOR
+	db SPRITE_SCYTHER
 	db SPRITE_MILTANK
 	db SPRITE_GENGAR
 	db SPRITE_POLIWRATH
@@ -353,11 +356,13 @@ BlackthornGroupSprites:
 	db SPRITE_SCHOOLBOY
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
+	db SPRITE_GLIGAR
 	db 0 ; end
 
 SilverGroupSprites:
 ; Route28, SilverCaveOutside
 	; 0 of max 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:
@@ -379,7 +384,7 @@ DungeonsGroupSprites:
 	db 0 ; end
 
 FastShipGroupSprites:
-; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
+; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof, Faraway Island
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
 	db SPRITE_SUPER_NERD
@@ -388,6 +393,7 @@ FastShipGroupSprites:
 	db SPRITE_CLEFAIRY
 	; 6 of max 9 walking sprites
 	db SPRITE_HO_OH
+	db SPRITE_MEW
 	db SPRITE_ROCK
 	db 0 ; end
 
@@ -403,7 +409,6 @@ SafariGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_SCIENTIST
 	db SPRITE_COOLTRAINER_F
-	db SPRITE_MEW
 	; 6 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end

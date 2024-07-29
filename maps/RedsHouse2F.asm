@@ -3,11 +3,20 @@ RedsHouse2F_MapScripts:
 
 	def_callbacks
 
+RedsHouse2FTVScript:
+	jumptext RedsHouse2FTVText
+
 RedsHouse2FN64Script:
 	jumptext RedsHouse2FN64Text
 
 RedsHouse2FPCScript:
 	jumptext RedsHouse2FPCText
+
+RedsHouse2FTVText:
+	text "It's displaying"
+	line "what's on the"
+	cont "console."
+	done
 
 RedsHouse2FN64Text:
 	text "<PLAYER> played the"
@@ -32,6 +41,7 @@ RedsHouse2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3,  4, BGEVENT_READ, RedsHouse2FTVScript
 	bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
 	bg_event  0,  1, BGEVENT_READ, RedsHouse2FPCScript
 

@@ -20,7 +20,7 @@ Route40BattleTowerGateTwinScript:
 
 Route40BattleTowerGateRockerText:
 	text "Are you going to"
-	line "the BATTLE TOWER?"
+	line "the Battle Tower?"
 
 	para "This is a secret,"
 	line "but if you win a"
@@ -31,7 +31,7 @@ Route40BattleTowerGateRockerText:
 
 Route40BattleTowerGateTwinText:
 	text "The levels of the"
-	line "#MON I want to"
+	line "#mon I want to"
 
 	para "use are all"
 	line "different."

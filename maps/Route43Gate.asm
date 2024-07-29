@@ -1,4 +1,4 @@
-DEF ROUTE43GATE_TOLL EQU 1000
+DEF ROUTE43GATE_TOLL EQU 2500
 
 	object_const_def
 	const ROUTE43GATE_OFFICER
@@ -217,8 +217,8 @@ RocketText_MakingABundle:
 	para "Everyone wants to"
 	line "see what's going"
 
-	para "on up at LAKE OF"
-	line "RAGE."
+	para "on up at Lake Of"
+	line "Rage."
 	done
 
 OfficerText_FoundTM:

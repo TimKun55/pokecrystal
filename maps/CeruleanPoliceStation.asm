@@ -42,7 +42,7 @@ CeruleanPoliceStationPokefanFText:
 	done
 
 CeruleanDiglettText:
-	text "DIGLETT: Dug dug."
+	text "Diglett: Dug dug."
 	done
 
 CeruleanPoliceStation_MapEvents:

@@ -531,12 +531,12 @@ YoungsterSamuelAfterText:
 
 	para "After all, I'm"
 	line "trying to become"
-	cont "a GYM LEADER."
+	cont "a Gym Leader."
 	done
 
 YoungsterIanSeenText:
 	text "I'm the best in my"
-	line "class at #MON."
+	line "class at #mon."
 	done
 
 YoungsterIanBeatenText:
@@ -553,7 +553,7 @@ YoungsterIanAfterText:
 CamperTodd1SeenText:
 	text "I'm confident in"
 	line "my ability to"
-	cont "raise #MON."
+	cont "raise #mon."
 
 	para "Want to see?"
 	done
@@ -565,9 +565,9 @@ CamperTodd1BeatenText:
 
 CamperTodd1AfterText:
 	text "Maybe I should"
-	line "take one to a DAY-"
+	line "take one to a Day-"
 
-	para "CARE. Or maybe use"
+	para "Care. Or maybe use"
 	line "some items…"
 	done
 
@@ -624,8 +624,8 @@ OfficerKeithDaytimeText:
 
 PokefanmBrandonSeenText:
 	text "I just got my"
-	line "#MON back from"
-	cont "DAY-CARE."
+	line "#mon back from"
+	cont "Day-Care."
 
 	para "Let's see how much"
 	line "stronger it got!"
@@ -637,7 +637,7 @@ PokefanmBrandonBeatenText:
 	done
 
 PokefanmBrandonAfterText:
-	text "My #MON knew"
+	text "My #mon knew"
 	line "moves I didn't"
 	cont "know it had."
 
@@ -646,23 +646,23 @@ PokefanmBrandonAfterText:
 	done
 
 CooltrainerfIreneSeenText:
-	text "IRENE: Kyaaah!"
+	text "Irene: Kyaaah!"
 	line "Someone found us!"
 	done
 
 CooltrainerfIreneBeatenText:
-	text "IRENE: Ohhh!"
+	text "Irene: Ohhh!"
 	line "Too strong!"
 	done
 
 CooltrainerfIreneAfterText1:
-	text "IRENE: My sister"
+	text "Irene: My sister"
 	line "KATE will get you"
 	cont "for this!"
 	done
 
 CooltrainerfIreneAfterText2:
-	text "IRENE: Isn't this"
+	text "Irene: Isn't this"
 	line "beach great?"
 
 	para "It's our secret"
@@ -670,41 +670,41 @@ CooltrainerfIreneAfterText2:
 	done
 
 CooltrainerfJennSeenText:
-	text "JENN: You can't"
-	line "beat IRENE and go"
+	text "Jenn: You can't"
+	line "beat Irene and go"
 	cont "unpunished!"
 	done
 
 CooltrainerfJennBeatenText:
-	text "JENN: So sorry,"
-	line "IRENE! Sis!"
+	text "Jenn: So sorry,"
+	line "Irene! Sis!"
 	done
 
 CooltrainerfJennAfterText1:
-	text "JENN: Don't get"
+	text "Jenn: Don't get"
 	line "cocky! My sister"
-	cont "KATE is tough!"
+	cont "Kate is tough!"
 	done
 
 CooltrainerfJennAfterText2:
-	text "JENN: Sunlight"
+	text "Jenn: Sunlight"
 	line "makes your body"
 	cont "stronger."
 	done
 
 CooltrainerfKateSeenText:
-	text "KATE: You sure"
+	text "Kate: You sure"
 	line "were mean to my"
 	cont "little sisters!"
 	done
 
 CooltrainerfKateBeatenText:
-	text "KATE: No! I can't"
+	text "Kate: No! I can't"
 	line "believe I lost."
 	done
 
 CooltrainerfKateOfferSoftSandText:
-	text "KATE: You're too"
+	text "Kate: You're too"
 	line "strong. I didn't"
 	cont "stand a chance."
 
@@ -713,7 +713,7 @@ CooltrainerfKateOfferSoftSandText:
 	done
 
 CooltrainerfKateAfterText:
-	text "KATE: I'm sorry we"
+	text "Kate: I'm sorry we"
 	line "jumped you."
 
 	para "We never expected"
@@ -726,10 +726,10 @@ CooltrainerfKateAfterText:
 LadyBeaSeenText:
 	text "Hi!"
 	line "I'm one of the"
-	cont "FAIRY SISTERS!"
+	cont "Fairy Sisters!"
 	
 	para "Do you know how"
-	line "cute FAIRY TYPES"
+	line "cute fairy-types"
 	cont "are? Strong too!"
 	done
 
@@ -749,37 +749,37 @@ LadyBeaAfterBattleText:
 	done
 
 Route34IlexForestSignText:
-	text "ILEX FOREST"
-	line "THROUGH THE GATE"
+	text "Ilex Forest"
+	line "through the Gate"
 	done
 
 Route34SignText:
-	text "ROUTE 34"
+	text "Route 34"
 
-	para "GOLDENROD CITY -"
-	line "AZALEA TOWN"
+	para "Goldenrod City -"
+	line "Azalea Town"
 
-	para "ILEX FOREST"
-	line "SOMEWHERE BETWEEN"
+	para "Ilex Forest"
+	line "somewhere between"
 	done
 
 Route34TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "BERRY trees grow"
-	line "new BERRIES"
+	para "Berry trees grow"
+	line "new Berries"
 	cont "every day."
 
 	para "Make a note of"
 	line "which trees bear"
-	cont "which BERRIES."
+	cont "which Berries."
 	done
 
 DayCareSignText:
-	text "DAY-CARE"
+	text "Day-Care"
 
-	para "LET US RAISE YOUR"
-	line "#MON FOR YOU!"
+	para "Let us raise your"
+	line "#mon for you!"
 	done
 
 Route34_MapEvents:

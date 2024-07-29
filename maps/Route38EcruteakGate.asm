@@ -13,9 +13,9 @@ Route38EcruteakGateOfficerText:
 	text "Where did you say"
 	line "you're from?"
 
-	para "NEW BARK TOWN?"
+	para "New Bark Town?"
 
-	para "PROF.ELM lives"
+	para "Prof.Elm lives"
 	line "over there, right?"
 
 	para "You've come a long"
@@ -28,8 +28,8 @@ Route38EcruteakGate_MapEvents:
 	def_warp_events
 	warp_event  0,  4, ROUTE_38, 1
 	warp_event  0,  5, ROUTE_38, 2
-	warp_event  9,  4, ECRUTEAK_CITY, 11
-	warp_event  9,  5, ECRUTEAK_CITY, 12
+	warp_event  9,  4, ECRUTEAK_CITY, 14
+	warp_event  9,  5, ECRUTEAK_CITY, 15
 
 	def_coord_events
 

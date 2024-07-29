@@ -3,43 +3,11 @@
 	const SAFARIZONENORTH_SCIENTIST
 	const SAFARIZONENORTH_POKE_BALL1
 	const SAFARIZONENORTH_POKE_BALL2
-	const SAFARIZONENORTH_MEW
 
 SafariZoneNorth_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, SafariZoneNorthMewCallback
-	
-SafariZoneNorthMewCallback:
-	checkevent EVENT_FOUGHT_MEW
-	iftrue .NoAppear
-	checkitem DNA_SAMPLE
-	iftrue .Appear
-	sjump .NoAppear
-	
-.Appear:
-	appear SAFARIZONENORTH_MEW
-	endcallback
-
-.NoAppear:
-	disappear SAFARIZONENORTH_MEW
-	endcallback
-
-SafariZoneNorthMew:
-	faceplayer
-	opentext
-	writetext MewText
-	cry MEW
-	pause 15
-	closetext
-	loadwildmon MEW, 60	
-	loadvar VAR_BATTLETYPE, BATTLETYPE_KANTO_LEGEND
-	startbattle
-	disappear SAFARIZONENORTH_MEW
-	setevent EVENT_FOUGHT_MEW
-	reloadmapafterbattle
-	end
 
 SafariZoneNorthFisherScript:
 	jumptextfaceplayer SafariZoneNorthFisherText
@@ -84,16 +52,16 @@ SafariZoneNorthScientistText:
 	done
 
 SafariZoneNorthAreaSignText:
-	text "SAFARI ZONE"
-	line "NORTH AREA"
+	text "Safari Zone"
+	line "North Area"
 	done
 
 SafariZoneNorthRestHouseSignText:
-	text "REST HOUSE"
+	text "Rest House"
 	done
 
 SafariZoneNorthTrainerTips1SignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Moves of the same"
 	line "type can do"
@@ -102,9 +70,9 @@ SafariZoneNorthTrainerTips1SignText:
 	done
 
 SafariZoneNorthTrainerTips2SignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
-	para "#MON hide in"
+	para "#mon hide in"
 	line "tall grass!"
 
 	para "Zigzag through"
@@ -113,17 +81,13 @@ SafariZoneNorthTrainerTips2SignText:
 	done
 
 SafariZoneNorthTrainerTips3SignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "The rest of the"
 	line "sign has been"
 	cont "torn away…"
 	done
 	
-MewText:
-	text "Mew!"
-	done
-
 SafariZoneNorth_MapEvents:
 	db 0, 0 ; filler
 
@@ -150,6 +114,5 @@ SafariZoneNorth_MapEvents:
 	def_object_events
 	object_event 18, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthFisherScript, -1
 	object_event 30,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthScientistScript, -1
-	object_event 24, 17, SPRITE_MEW, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthMew, EVENT_SAFARI_ZONE_NORTH_MEW
 	object_event  6,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneNorthProtein, EVENT_SAFARI_ZONE_NORTH_PROTEIN
 	object_event 15, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneNorthRareCandy, EVENT_SAFARI_ZONE_NORTH_RARE_CANDY

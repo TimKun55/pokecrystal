@@ -126,11 +126,11 @@ RuinsOfAlphHoOhChamberWallHoleText:
 RuinsOfAlphHoOhChamberAncientReplicaText:
 	text "It's a replica of"
 	line "an ancient #-"
-	cont "MON."
+	cont "mon."
 	done
 
 RuinsOfAlphHoOhChamberDescriptionText:
-	text "A #MON that"
+	text "A #mon that"
 	line "flew gracefully on"
 
 	para "rainbow-colored"

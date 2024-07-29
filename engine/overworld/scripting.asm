@@ -1190,7 +1190,7 @@ Script_reloadmapafterbattle:
 .notblackedout
 	bit 0, d
 	jr z, .was_wild
-	farcall MomTriesToBuySomething
+	farcall MumTriesToBuySomething
 	jr .done
 
 .was_wild
@@ -1806,7 +1806,7 @@ GetMoneyAccount:
 	and a
 	ld de, wMoney ; YOUR_MONEY
 	ret z
-	ld de, wMomsMoney ; MOMS_MONEY
+	ld de, wMumsMoney ; MUMS_MONEY
 	ret
 
 LoadMoneyAmountToMem:

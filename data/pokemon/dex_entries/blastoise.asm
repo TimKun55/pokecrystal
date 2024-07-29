@@ -1,5 +1,5 @@
-	db "SHELLFISH@" ; species name
-	dw 503, 1890 ; height, weight
+	db "Shellfish@" ; species name
+	dw 160, 855 ; height, weight
 
 	db   "It firmly plants"
 	next "its feet on the"

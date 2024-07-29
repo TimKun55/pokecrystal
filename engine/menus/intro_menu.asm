@@ -28,16 +28,16 @@ PrintDayOfWeek:
 	ret
 
 .Days:
-	db "SUN@"
-	db "MON@"
-	db "TUES@"
-	db "WEDNES@"
-	db "THURS@"
-	db "FRI@"
-	db "SATUR@"
+	db "Sun@"
+	db "Mon@"
+	db "Tues@"
+	db "Wednes@"
+	db "Thurs@"
+	db "Fri@"
+	db "Satur@"
 
 .Day:
-	db "DAY@"
+	db "day@"
 
 NewGame_ClearTilemapEtc:
 	xor a
@@ -204,14 +204,14 @@ endc
 	ld [wMoney + 2], a
 
 	xor a
-	ld [wWhichMomItem], a
+	ld [wWhichMumItem], a
 
-	ld hl, wMomItemTriggerBalance
-	ld [hl], HIGH(MOM_MONEY >> 8)
+	ld hl, wMumItemTriggerBalance
+	ld [hl], HIGH(MUM_MONEY >> 8)
 	inc hl
-	ld [hl], HIGH(MOM_MONEY) ; mid
+	ld [hl], HIGH(MUM_MONEY) ; mid
 	inc hl
-	ld [hl], LOW(MOM_MONEY)
+	ld [hl], LOW(MUM_MONEY)
 
 	call InitializeNPCNames
 
@@ -243,15 +243,15 @@ InitializeMagikarpHouse:
 	ret
 
 .Ralph:
-	db "RALPH@"
+	db "Ralph@"
 
 InitializeNPCNames:
 	ld hl, .Rival
 	ld de, wRivalName
 	call .Copy
 
-	ld hl, .Mom
-	ld de, wMomsName
+	ld hl, .Mum
+	ld de, wMumsName
 	call .Copy
 
 	ld hl, .Red
@@ -267,9 +267,9 @@ InitializeNPCNames:
 	ret
 
 .Rival:  db "???@"
-.Red:    db "RED@"
-.Green:  db "GREEN@"
-.Mom:    db "MOM@"
+.Red:    db "Red@"
+.Green:  db "Green@"
+.Mum:    db "Mum@"
 
 InitializeWorld:
 	call ShrinkPlayer
@@ -501,10 +501,10 @@ Continue_LoadMenuHeader:
 .MenuData_Dex:
 	db 0 ; flags
 	db 4 ; items
-	db "PLAYER@"
-	db "BADGES@"
-	db "#DEX@"
-	db "TIME@"
+	db "Player@"
+	db "Badges@"
+	db "#dex@"
+	db "Time@"
 
 .MenuHeader_NoDex:
 	db MENU_BACKUP_TILES ; flags
@@ -515,10 +515,10 @@ Continue_LoadMenuHeader:
 .MenuData_NoDex:
 	db 0 ; flags
 	db 4 ; items
-	db "PLAYER <PLAYER>@"
-	db "BADGES@"
+	db "Player <PLAYER>@"
+	db "Badges@"
 	db " @"
-	db "TIME@"
+	db "Time@"
 
 Continue_DisplayBadgesDexPlayerName:
 	call MenuBoxCoord2Tile
@@ -748,9 +748,9 @@ NamePlayer:
 	ret
 
 .Ethan:
-	db "ETHAN@@@@@@"
+	db "Ethan@@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "Kris@@@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
 	call LoadMenuHeader

@@ -1,4 +1,4 @@
 PermanentNumbers:
-	db PHONECONTACT_MOM
+	db PHONECONTACT_MUM
 	db PHONECONTACT_ELM
 	db -1 ; end

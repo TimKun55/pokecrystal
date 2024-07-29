@@ -18,6 +18,9 @@ INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/MahoganyBakery.asm"
+INCLUDE "maps/CinnabarIslandRecoveryLab.asm"
+INCLUDE "maps/CeladonCurseHouse.asm"
+INCLUDE "maps/FarawayIslandOutside.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -46,6 +49,9 @@ INCLUDE "maps/OlivineLighthouse1F.asm"
 INCLUDE "maps/OlivineLighthouse2F.asm"
 INCLUDE "maps/OlivineLighthouse3F.asm"
 INCLUDE "maps/OlivineLighthouse4F.asm"
+INCLUDE "maps/VermilionSailorsHouse.asm"
+INCLUDE "maps/FarawayIslandInside.asm"
+INCLUDE "maps/Route1ViridianGate.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -57,6 +63,8 @@ INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
 INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronOddishDollHouse.asm"
+INCLUDE "maps/CeruleanEmptyHouse.asm"
+INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -399,7 +407,7 @@ INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
-INCLUDE "maps/BellchimeTrail.asm"
+INCLUDE "maps/FuchsiaCinnabarHouse1.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -501,7 +509,6 @@ INCLUDE "maps/CinnabarMoltresNest.asm"
 INCLUDE "maps/CianwoodBeastsHouse.asm"
 INCLUDE "maps/EcruteakFairyFamilyHouse.asm"
 INCLUDE "maps/Route14ArticunoNest.asm"
-INCLUDE "maps/MtSilverRoom4.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
@@ -516,7 +523,6 @@ SECTION "Map Scripts 27", ROMX
 INCLUDE "maps/SaffronAviculturalSociety1F.asm"
 INCLUDE "maps/SaffronAviculturalSociety2F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
-INCLUDE "maps/Route1ViridianGate.asm"
 INCLUDE "maps/Route36VioletGate.asm"
 INCLUDE "maps/GoldenrodHomeDecorStore1F.asm"
 INCLUDE "maps/GoldenrodHomeDecorStore2F.asm"
@@ -527,5 +533,9 @@ INCLUDE "maps/CeladonHomeDecorStore2F.asm"
 INCLUDE "maps/CeladonHomeDecorStore3F.asm"
 INCLUDE "maps/CeladonHomeDecorStore4F.asm"
 INCLUDE "maps/GoldenrodToyStore.asm"
+INCLUDE "maps/CeruleanCave1F.asm"
+INCLUDE "maps/CeruleanCave2F.asm"
+INCLUDE "maps/CeruleanCaveB1F.asm"
+
 
 ENDSECTION

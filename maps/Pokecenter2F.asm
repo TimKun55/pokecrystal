@@ -502,28 +502,28 @@ Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft_2:
 
 Text_BattleReceptionistMobile:
 	text "Would you like to"
-	line "battle over a GAME"
+	line "battle over a Game"
 
-	para "LINK cable or by"
+	para "Link cable or by"
 	line "mobile phone?"
 	done
 
 Text_TradeReceptionistMobile:
 	text "Would you like to"
-	line "trade over a GAME"
+	line "trade over a Game"
 
-	para "LINK cable or by"
+	para "Link cable or by"
 	line "mobile phone?"
 	done
 
 Text_ThisWayToMobileRoom: ; unreferenced
 	text "This way to the"
-	line "MOBILE ROOM."
+	line "Mobile Room."
 	done
 
 Text_BattleReceptionistIntro:
-	text "Welcome to CABLE"
-	line "CLUB COLOSSEUM."
+	text "Welcome to Cable"
+	line "Club Colosseum."
 
 	para "You may battle a"
 	line "friend here."
@@ -533,11 +533,11 @@ Text_BattleReceptionistIntro:
 	done
 
 Text_TradeReceptionistIntro:
-	text "Welcome to CABLE"
-	line "TRADE CENTER."
+	text "Welcome to Cable"
+	line "Trade Center."
 
 	para "You may trade your"
-	line "#MON here with"
+	line "#mon here with"
 	cont "a friend."
 
 	para "Would you like to"
@@ -603,13 +603,13 @@ Text_PleaseEnter: ; unreferenced
 
 Text_TradeRoomClosed:
 	text "I'm sorry--the"
-	line "TRADE MACHINE is"
+	line "Trade Machine is"
 	cont "being adjusted."
 	done
 
 Text_BattleRoomClosed:
 	text "I'm sorry--the"
-	line "BATTLE MACHINE is"
+	line "Battle Machine is"
 	cont "being adjusted."
 	done
 
@@ -635,7 +635,7 @@ Text_MysteryGiftDeliveryGuy_NoRoom:
 	line "space for this."
 
 	para "Stop in at any"
-	line "#MON CENTER"
+	line "#mon Center"
 
 	para "across the country"
 	line "to pick it up."
@@ -663,13 +663,13 @@ Text_LikeTheLook:
 Text_BrokeStadiumRules:
 	text "Excuse me!"
 
-	para "For STADIUM rules,"
+	para "For Stadium rules,"
 	line "please bring six"
 
-	para "different #MON,"
-	line "excluding EGGS."
+	para "different #mon,"
+	line "excluding Eggs."
 
-	para "The six #MON"
+	para "The six #mon"
 	line "must be different."
 
 	para "Also, they must"

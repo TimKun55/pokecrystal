@@ -100,12 +100,12 @@ TinTowerHoOh:
 RainbowWingGlimmerText:
 	text "?!"
 	
-	para "The RAINBOW WING"
+	para "The Rainbow Wing"
 	line "is glowing!"
 	done
 	
 TowerShookText:
-	text "The whole TOWER"
+	text "The whole Tower"
 	line "just shook!"
 	
 	para "Did something"
@@ -121,7 +121,7 @@ TinTowerRoofSomethingHereText:
 
 TinTowerRoofSacredAshText:
 	text "<PLAYER> gathered"
-	line "up the SACRED ASH."
+	line "up the Sacred Ash."
 	done
 
 HoOhText:

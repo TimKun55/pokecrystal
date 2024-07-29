@@ -88,10 +88,10 @@ GoldenrodHomeDecorStore2FClerkScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "PINK      ¥62000@"
-	db "POLKADOT  ¥94000@"
-	db "PIKACHU  ¥126000@"
-	db "CANCEL@"
+	db "Pink      ¥62000@"
+	db "Polkadot  ¥94000@"
+	db "Pikachu  ¥126000@"
+	db "Cancel@"
 
 GoldenrodHomeDecorStore2FPokefanfScript:
 	jumptextfaceplayer GoldenrodHomeDecorStore2FPokefanfText
@@ -107,31 +107,31 @@ GoldenrodHomeDecorStore2FClerkText:
 
 BoughtPinkBedText:
 	text "<PLAYER> bought"
-	line "PINK BED."
+	line "Pink Bed."
 	done
 
 PinkBedSentText:
-	text "PINK BED"
+	text "Pink Bed"
 	line "was sent home."
 	done
 
 BoughtPolkaDotBedText:
 	text "<PLAYER> bought"
-	line "POLKADOT BED."
+	line "Polkadot Bed."
 	done
 
 PolkaDotBedSentText:
-	text "POLKADOT BED"
+	text "Polkadot Bed"
 	line "was sent home."
 	done
 
 BoughtPikachuBedText:
 	text "<PLAYER> bought"
-	line "PIKACHU BED."
+	line "Pikachu Bed."
 	done
 
 PikachuBedSentText:
-	text "PIKACHU BED"
+	text "Pikachu Bed"
 	line "was sent home."
 	done
 
@@ -154,8 +154,8 @@ GoldenrodHomeDecorStore2FPokefanfText:
 	line "cost more than"
 	cont "generic ones."
 
-	para "But the PIKACHU"
-	line "BED is so cute…"
+	para "But the Pikachu"
+	line "Bed is so cute…"
 	done
 	
 GoldenrodHomeDecorStore2FDirectoryText:

@@ -13,7 +13,7 @@
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName
 	charmap "<ENEMY>",   $3f
-	charmap "<MOM>",     $49 ; wMomsName
+	charmap "<MUM>",     $49 ; wMumsName
 	charmap "<PKMN>",    $4a ; "<PK><MN>"
 	charmap "<_CONT>",   $4b ; implements "<CONT>"
 	charmap "<SCROLL>",  $4c
@@ -400,6 +400,17 @@
 	charmap "７", $fd
 	charmap "８", $fe
 	charmap "９", $ff
+
+; Unown charmap, for Unown words (see gfx/tilesets/ruins_of_alph.png)
+pushc
+	newcharmap unown
+	DEF PRINTABLE_UNOWN EQUS "ABCDEFGHIJKLMNOPQRSTUVWXYZ-"
+	for i, STRLEN("{PRINTABLE_UNOWN}")
+		charmap STRSUB("{PRINTABLE_UNOWN}", i + 1, 1), $10 * (i / 8) + 2 * i
+	endr
+	charmap "@", $ff ; end
+popc
+
 
 ; ASCII charmap, for mobile functions
 pushc

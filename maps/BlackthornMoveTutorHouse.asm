@@ -86,15 +86,15 @@ BlackthornMoveTutorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ACROBATICS@"
-	db "SIGNAL BEAM@"
-	db "ZEN HEADBUTT@"
-	db "CANCEL@"
+	db "Acrobatics@"
+	db "Signal Beam@"
+	db "Zen Headbutt@"
+	db "Cancel@"
 
 BlackthornAskTeachAMoveText:
 	text "Hi there!"
 	line "For ¥10,000, I can"
-	cont "teach your #MON"
+	cont "teach your #mon"
 
 	para "amazing moves if"
 	line "you'd like."
@@ -110,7 +110,7 @@ BlackthornMoveTutorRefusalText:
 	line "if you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -149,7 +149,7 @@ BlackthornMoveTutorFarewellKidText:
 
 BlackthornMoveTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 

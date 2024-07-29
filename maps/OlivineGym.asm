@@ -1,6 +1,8 @@
 	object_const_def
 	const OLIVINEGYM_JASMINE
 	const OLIVINEGYM_STEELIX
+	const OLIVINEGYM_COOLTRAINER_M
+	const OLIVINEGYM_BEAUTY
 	const OLIVINEGYM_GYM_GUIDE
 
 OlivineGym_MapScripts:
@@ -35,6 +37,8 @@ OlivineGymJasmineScript:
 .FightDone:
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
+	setevent EVENT_BEAT_COOLTRAINERM_ANDY
+	setevent EVENT_BEAT_BEAUTY_JACLYN
 	writetext Jasmine_BadgeSpeech
 	promptbutton
 	verbosegiveitem TM_IRON_TAIL
@@ -84,6 +88,28 @@ OlivineGymJasmineScript:
 
 .EndRematch
 	writetext JasmineNextTimeText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerMAndy:
+	trainer COOLTRAINERM, ANDY, EVENT_BEAT_COOLTRAINERM_ANDY, CooltrainerMAndySeenText, CooltrainerMAndyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerMAndyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyJaclyn:
+	trainer BEAUTY, JACLYN, EVENT_BEAT_BEAUTY_JACLYN, BeautyJaclynSeenText, BeautyJaclynBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyJaclynAfterText
 	waitbutton
 	closetext
 	end
@@ -148,7 +174,7 @@ OlivineGymStatue:
 Jasmine_SteelTypeIntro:
 	text "…Thank you for"
 	line "your help at the"
-	cont "LIGHTHOUSE…"
+	cont "Lighthouse…"
 
 	para "But this is dif-"
 	line "ferent. Please"
@@ -156,8 +182,8 @@ Jasmine_SteelTypeIntro:
 	para "allow me to intro-"
 	line "duce myself."
 
-	para "I am JASMINE, a"
-	line "GYM LEADER. I use"
+	para "I am Jasmine, a"
+	line "Gym Leader. I use"
 	cont "the steel-type."
 
 	para "…Do you know about"
@@ -178,15 +204,15 @@ Jasmine_BetterTrainer:
 	line "kindness."
 
 	para "In accordance with"
-	line "LEAGUE rules, I"
+	line "League rules, I"
 
 	para "confer upon you"
-	line "this BADGE."
+	line "this Badge."
 	done
 
 Text_ReceivedMineralBadge:
 	text "<PLAYER> received"
-	line "the MINERALBADGE."
+	line "the MineralBadge."
 	done
 
 Jasmine_BadgeSpeech:
@@ -197,7 +223,7 @@ Jasmine_BadgeSpeech:
 Jasmine_IronTailSpeech:
 	text "…You could use"
 	line "that TM to teach"
-	cont "IRON TAIL."
+	cont "Iron Tail."
 	done
 
 Jasmine_GoodLuck:
@@ -240,8 +266,8 @@ Jasmine16IntroText:
 	cont "you've done it!"
 	
 	para "You've beaten all"
-	line "the KANTO GYM"
-	cont "LEADERS!"
+	line "the Kanto Gym"
+	cont "Leaders!"
 	
 	para "I'm going to use"
 	line "my strongest team"
@@ -267,8 +293,51 @@ JasmineNextTimeText:
 	line "back anytime!"
 	done
 
+CooltrainerMAndySeenText:
+	text "You crossed the"
+	line "sea to help Amphy?"
+
+	para "You must be"
+	line "pretty strong!"
+	done	
+
+CooltrainerMAndyBeatenText:
+	text "Yup! Definitely."
+	done
+
+CooltrainerMAndyAfterText:
+	text "I wanted to help"
+	line "but none of my"
+	cont "#mon can Surf."
+	done
+
+BeautyJaclynSeenText:
+	text "Don't you just"
+	line "love how shiny"
+	cont "steel-types are?"
+	done	
+
+BeautyJaclynBeatenText:
+	text "I was blinded!"
+	done
+
+BeautyJaclynAfterText:
+	text "Jasmine used to"
+	line "be a rock-type"
+	
+	para "trainer and trai-"	
+	line "ned with Brock."
+	
+	para "I'm glad she"
+	line "became a steel"
+	cont "specialist."
+	
+	para "Steel-types are"
+	line "just better."
+	done
+
 OlivineGymGuideText:
-	text "JASMINE uses the"
+	text "Jasmine uses the"
 	line "newly discovered"
 	cont "steel-type."
 
@@ -288,12 +357,12 @@ OlivineGymGuideWinText:
 	done
 
 OlivineGymGuidePreText:
-	text "JASMINE, the GYM"
-	line "LEADER, is at the"
-	cont "LIGHTHOUSE."
+	text "Jasmine, the Gym"
+	line "Leader, is at the"
+	cont "Lighthouse."
 
 	para "She's been tending"
-	line "to a sick #MON."
+	line "to a sick #mon."
 
 	para "A strong trainer"
 	line "has to be compas-"
@@ -301,7 +370,7 @@ OlivineGymGuidePreText:
 	done
 	
 SteelixText:
-	text "STEELIX: Stee!!"
+	text "Steelix: Stee!!"
 	line "LixSteelix!"
 	done
 
@@ -321,4 +390,6 @@ OlivineGym_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
 	object_event  4,  2, SPRITE_STEELIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, OlivineGymSteelix, EVENT_OLIVINE_GYM_JASMINE
+	object_event  6, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMAndy, EVENT_OLIVINE_GYM_JASMINE
+	object_event  3,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJaclyn, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1

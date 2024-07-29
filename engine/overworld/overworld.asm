@@ -53,8 +53,8 @@ RefreshSprites::
 	ret
 
 GetPlayerSprite:
-; Get Chris or Kris's sprite.
-	ld hl, ChrisStateSprites
+; Get Ethan or Kris's sprite.
+	ld hl, EthanStateSprites
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .go
@@ -74,10 +74,10 @@ GetPlayerSprite:
 	cp -1
 	jr nz, .loop
 
-; Any player state not in the array defaults to Chris's sprite.
+; Any player state not in the array defaults to Ethan's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_ETHAN
 	jr .finish
 
 .good
@@ -151,12 +151,17 @@ LoadMiscTiles:
 	farcall LoadEmote
 	call GetMapEnvironment
 	call CheckOutdoorMap
-	ld c, EMOTE_GRASS_RUSTLE
 	jr z, .outdoor
-	ld c, EMOTE_BOULDER_DUST
+ 	ld c, EMOTE_BOULDER_DUST
+	jr .load_emote
+
 .outdoor
+	ld c, EMOTE_GRASS_RUSTLE
 	farcall LoadEmote
-	ret
+	ld c, EMOTE_PUDDLE_SPLASH
+.load_emote
+ 	farcall LoadEmote
+ 	ret
 
 SafeGetSprite:
 	push hl

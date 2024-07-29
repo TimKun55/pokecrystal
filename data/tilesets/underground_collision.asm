@@ -73,7 +73,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 48
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 49
 	tilecoll FLOOR, WARP_CARPET_RIGHT, FLOOR, WALL ; 4a
-	tilecoll LADDER, WALL, FLOOR, WALL ; 4b
+	tilecoll STAIRCASE, WALL, FLOOR, WALL ; 4b
 	tilecoll WALL, WALL, WALL, WALL ; 4c
 	tilecoll WALL, WALL, WALL, WALL ; 4d
 	tilecoll WALL, WALL, WALL, WALL ; 4e
@@ -81,6 +81,9 @@
 	tilecoll WALL, WALL, WALL, WALL ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 52
-	tilecoll WALL, WALL, WALL, WALL ; 53
+	tilecoll WALL, WALL, WALL, FLOOR ; 53
 	tilecoll WALL, WALL, WALL, WALL ; 54
 	tilecoll WALL, WALL, WALL, WALL ; 55
+	tilecoll CAVE, WALL, FLOOR, FLOOR ; 56
+	tilecoll WALL, WALL, LADDER, WALL ; 57
+	tilecoll WALL, LADDER, WALL, WALL ; 58

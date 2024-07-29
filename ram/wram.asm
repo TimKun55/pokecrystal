@@ -1665,7 +1665,7 @@ wBattleTowerRoomMenuJumptableIndex:: db
 NEXTU
 ; miscellaneous
 wFrameCounter::
-wMomBankDigitCursorPosition::
+wMumBankDigitCursorPosition::
 wNamingScreenLetterCase::
 wHallOfFameMonCounter::
 wTradeDialog::
@@ -2943,7 +2943,7 @@ wPlayerData::
 wPlayerID:: dw
 
 wPlayerName:: ds NAME_LENGTH
-wMomsName::   ds NAME_LENGTH
+wMumsName::   ds NAME_LENGTH
 wRivalName::  ds NAME_LENGTH
 wRedsName::   ds NAME_LENGTH
 wGreensName:: ds NAME_LENGTH
@@ -3044,9 +3044,9 @@ wStatusFlags2::
 	db
 
 wMoney:: ds 3
-wMomsMoney:: ds 3
+wMumsMoney:: ds 3
 
-wMomSavingMoney::
+wMumSavingMoney::
 ; bit 0: saving some money
 ; bit 1: saving half money (unused)
 ; bit 2: saving all money (unused)
@@ -3173,7 +3173,7 @@ wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
 wTeamRocketBaseB3FSceneID::                       db
 wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
-wMtSilverRoom4MewtwoSceneID::                     db
+wCeruleanCaveB1FMewtwoSceneID::                   db
 wVictoryRoad3FSceneID::                           db
 wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
@@ -3188,8 +3188,12 @@ wAviculturalSociety1FSceneID::                    db
 wAviculturalSociety2FSceneID::                    db
 wWhirlIslandLugiaChamberSceneID::                 db
 wTinTowerRoofSceneID::                            db
+wSaffronCityDisguisedSceneID::                    db
+wCeruleanCityDisguisedSceneID::                   db
+wRoute5DisguisedSceneID::                         db
+wUndergroundPathSceneID::                         db
 
-	ds 45
+	ds 41
 
 ; fight counts
 wJackFightCount::    db
@@ -3270,10 +3274,10 @@ wDecoLeftOrnament::  db
 wDecoRightOrnament:: db
 wDecoBigDoll::       db
 
-; Items bought from Mom
-wWhichMomItem:: db
-wWhichMomItemSet:: db
-wMomItemTriggerBalance:: ds 3
+; Items bought from Mum
+wWhichMumItem:: db
+wWhichMumItemSet:: db
+wMumItemTriggerBalance:: ds 3
 
 wDailyResetTimer:: dw
 wDailyFlags1:: db

@@ -25,9 +25,9 @@ Route4ZapdosNestAgathaCallback:
 	endcallback
 
 Route4ZapdosNestZapdosCallback:
-	checkevent EVENT_ZAPDOS_NEST_ZAPDOS
+	checkevent EVENT_FOUGHT_ZAPDOS
 	iftrue .NoAppear
-	checkevent EVENT_BEAT_GUARDIAN_AGATHA
+	checkevent EVENT_AGATHA_IN_SAFFRON
 	iftrue .Appear
 	sjump .NoAppear
 	
@@ -50,7 +50,8 @@ Route4ZapdosNestAgatha:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_AGATHA
-	opentext GuardianAgathaOutroText
+	opentext
+	writetext GuardianAgathaOutroText
 	waitbutton
 	closetext
 	cry GENGAR
@@ -67,21 +68,20 @@ Route4ZapdosNestAgatha:
 	end
 	
 Route4ZapdosNestZapdos:
-	faceplayer
 	opentext
 	writetext ZapdosText
 	cry ZAPDOS
 	pause 15
 	closetext
-	setevent EVENT_ZAPDOS_NEST_ZAPDOS
+	setevent EVENT_FOUGHT_ZAPDOS
 	loadvar VAR_BATTLETYPE, BATTLETYPE_KANTO_LEGEND
 	loadwildmon ZAPDOS, 70
 	startbattle
 	disappear ROUTE4ZAPDOSNEST_ZAPDOS
 	reloadmapafterbattle
-	checkevent EVENT_ARTICUNO_NEST_ARTICUNO
+	checkevent EVENT_FOUGHT_ARTICUNO
 	iffalse .end
-	checkevent EVENT_MOLTRES_NEST_MOLTRES
+	checkevent EVENT_FOUGHT_MOLTRES
 	iffalse .end
 	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	end
@@ -115,8 +115,8 @@ GuardianAgathaIntroText:
 	
 	para "Maybe not."
 	
-	para "As a former ELITE"
-	line "FOUR member, I"
+	para "As a former Elite"
+	line "Four member, I"
 	cont "expect only the"
 	
 	para "best from my"
@@ -139,7 +139,7 @@ GuardianAgathaOutroText:
 	para "I really am"
 	line "impressed with how"
 	cont "you handled your"
-	cont "#MON."
+	cont "#mon."
 	
 	para "At my age, it's"
 	line "good to know that"
@@ -151,16 +151,16 @@ GuardianAgathaOutroText:
 	para "Speaking of,"
 	
 	para "The former"
-	line "CHAMPION, RED,"
+	line "Champion, Red,"
 	cont "asked me to watch"
 	
-	para "over ZAPDOS until"
+	para "over Zapdos until"
 	line "another strong,"
 	cont "worthy trainer"
 	cont "appeared."
 	
 	para "I'll now release"
-	line "ZAPDOS and you"
+	line "Zapdos and you"
 	
 	para "can try to"
 	line "capture it."
@@ -169,16 +169,16 @@ GuardianAgathaOutroText:
 	line "You'll need it."
 	
 	para "Also, come to the"
-	line "SOCIETY sometime,"
+	line "Society sometime,"
 	
 	para "I want to have"
 	line "a rematch."
 	
-	para "Let's go, GENGAR."
+	para "Let's go, Gengar."
 	done
 
 ZapdosText:
-	text "ZAPDOS: Gshya!"
+	text "Zapdos: Gshya!"
 	done
 
 Route4ZapdosNest_MapEvents:
@@ -192,4 +192,4 @@ Route4ZapdosNest_MapEvents:
 
 	def_object_events
 	object_event  8, 19, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4ZapdosNestAgatha, EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	object_event  8, 14, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route4ZapdosNestZapdos, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event  8, 14, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route4ZapdosNestZapdos, EVENT_ZAPDOS_NEST_ZAPDOS

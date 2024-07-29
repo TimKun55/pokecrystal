@@ -25,9 +25,9 @@ Route14ArticunoNestLoreleiCallback:
 	endcallback
 
 Route14ArticunoNestArticunoCallback:
-	checkevent EVENT_ARTICUNO_NEST_ARTICUNO
+	checkevent EVENT_FOUGHT_ARTICUNO
 	iftrue .NoAppear
-	checkevent EVENT_BEAT_GUARDIAN_LORELEI
+	checkevent EVENT_LORELEI_IN_SAFFRON
 	iftrue .Appear
 	sjump .NoAppear
 	
@@ -50,15 +50,16 @@ Route14ArticunoNestLorelei:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_LORELEI
-	opentext GuardianLoreleiOutroText
+	opentext 
+	writetext GuardianLoreleiOutroText
 	waitbutton
 	closetext
 	cry LAPRAS
 	applymovement ROUTE14ARTICUNONEST_LORELEI, GuardianLoreleiExitMovement
 	playsound SFX_THROW_BALL
-	pause 5
+	waitsfx
 	playsound SFX_BALL_POOF
-	pause 5
+	waitsfx
 	cry ARTICUNO
 	pause 15
 	playsound SFX_ESCAPE_ROPE
@@ -67,21 +68,20 @@ Route14ArticunoNestLorelei:
 	end
 	
 Route14ArticunoNestArticuno:
-	faceplayer
 	opentext
 	writetext ArticunoText
 	cry ARTICUNO
 	pause 15
 	closetext
-	setevent EVENT_ARTICUNO_NEST_ARTICUNO
+	setevent EVENT_FOUGHT_ARTICUNO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_KANTO_LEGEND
 	loadwildmon ARTICUNO, 70
 	startbattle
 	disappear ROUTE14ARTICUNONEST_ARTICUNO
 	reloadmapafterbattle
-	checkevent EVENT_ZAPDOS_NEST_ZAPDOS
+	checkevent EVENT_FOUGHT_ZAPDOS
 	iffalse .end
-	checkevent EVENT_MOLTRES_NEST_MOLTRES
+	checkevent EVENT_FOUGHT_MOLTRES
 	iffalse .end
 	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	end
@@ -108,16 +108,16 @@ GuardianLoreleiIntroText:
 	para "looks aren't"
 	line "everything."
 	
-	para "As a former ELITE"
-	line "FOUR member and as"
+	para "As a former Elite"
+	line "Four member and as"
 	
-	para "the GUARDIAN of"
-	line "ARTICUNO, let me"
+	para "the Guardian of"
+	line "Articuno, let me"
 	
 	para "warn you; you had"
 	line "best be prepared."
 	
-	para "ARTICUNO, let's"
+	para "Articuno, let's"
 	line "do this."
 	done
 	
@@ -138,12 +138,12 @@ GuardianLoreleiOutroText:
 	line "new, powerful"
 	cont "trainers emerging."
 	
-	para "The former CHAMPION"
+	para "The last Champion"
 	line "gave us clear"
 	cont "instructions;"
 	
 	para "I'll now release"
-	line "ARTICUNO and you"
+	line "Articuno and you"
 	
 	para "can try to"
 	line "capture it."
@@ -151,16 +151,16 @@ GuardianLoreleiOutroText:
 	para "Good luck."
 	
 	para "Come past the"
-	line "SOCIETY sometime,"
+	line "Society sometime,"
 	
 	para "I'd like to have"
 	line "a rematch."
 	
-	para "Let's go, LAPRAS."
+	para "Let's go, Lapras."
 	done
 
 ArticunoText:
-	text "ARTICUNO: Gshya!"
+	text "Articuno: Gshya!"
 	done
 
 Route14ArticunoNest_MapEvents:
@@ -176,4 +176,4 @@ Route14ArticunoNest_MapEvents:
 
 	def_object_events
 	object_event  9, 11, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14ArticunoNestLorelei, EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	object_event 10,  6, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route14ArticunoNestArticuno, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event 10,  6, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route14ArticunoNestArticuno, EVENT_ARTICUNO_NEST_ARTICUNO

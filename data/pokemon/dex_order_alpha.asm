@@ -180,6 +180,7 @@ AlphabeticalPokedexOrder:
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
+	db RAICHU_A
 	db RAIKOU
 	db RAPIDASH
 	db RATICATE

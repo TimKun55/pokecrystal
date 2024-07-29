@@ -89,7 +89,7 @@ Lugia:
 SilverWingGlimmerText:
 	text "?!"
 	
-	para "The SILVER WING"
+	para "The Silver Wing"
 	line "is glowing!"
 	done
 	

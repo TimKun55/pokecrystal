@@ -110,22 +110,22 @@ RadioTower4FStudio2Sign:
 RadioTower4FFisherText:
 	text "I listened to the"
 	line "radio while I was"
-	cont "at the RUINS."
+	cont "at the Ruins."
 
 	para "I heard a strange"
 	line "broadcast there."
 	done
 
 RadioTower4FDJMaryText:
-	text "MARY: Why? Why do"
+	text "Mary: Why? Why do"
 	line "I have to suffer"
 	cont "through this?"
 
-	para "MEOWTH, help me!"
+	para "Meowth, help me!"
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
-	text "MARY: Oh! You're"
+	text "Mary: Oh! You're"
 	line "my little savior!"
 
 	para "Will you take this"
@@ -133,28 +133,28 @@ RadioTower4FDJMaryText_ClearedRockets:
 	done
 
 RadioTower4FDJMaryText_GivePinkBow:
-	text "MARY: It's just"
-	line "right for #MON"
+	text "Mary: It's just"
+	line "right for #mon"
 
 	para "that know normal-"
 	line "type moves."
 	done
 
 RadioTower4FDJMaryText_After:
-	text "MARY: Please tune"
-	line "into me on PROF."
+	text "Mary: Please tune"
+	line "into me on Prof."
 
-	para "OAK'S #MON TALK"
+	para "Oak's #mon Talk"
 	line "show."
 	done
 
 RadioTowerMeowthText:
-	text "MEOWTH: Meowth…"
+	text "Meowth: Meowth…"
 	done
 
 GruntM10SeenText:
 	text "You plan to rescue"
-	line "the DIRECTOR?"
+	line "the Director?"
 
 	para "That won't be pos-"
 	line "sible because I'm"
@@ -175,7 +175,7 @@ RadioTowerProtonSeenText:
 	line "forgotten the way"
 	cont "you humiliated"
 	
-	para "us at the WELL!"
+	para "us at the Well!"
 
 	para "You're not taking"
 	line "another step!"
@@ -197,10 +197,10 @@ RadioTowerProtonAfterBattleText:
 
 GruntF4SeenText:
 	text "Don't I think"
-	line "#MON are cute?"
+	line "#mon are cute?"
 
 	para "I'll think my"
-	line "#MON are cute--"
+	line "#mon are cute--"
 
 	para "after they beat"
 	line "yours!"
@@ -216,13 +216,13 @@ GruntF4AfterBattleText:
 	line "beautiful self!"
 
 	para "Who cares about"
-	line "#MON?"
+	line "#mon?"
 	done
 
 ScientistRichSeenText:
 	text "Most excellent."
 
-	para "This RADIO TOWER"
+	para "This Radio Tower"
 	line "will fulfill our"
 	cont "grand design."
 	done
@@ -237,15 +237,15 @@ ScientistRichBeatenText:
 ScientistRichAfterBattleText:
 	text "Do you honestly"
 	line "believe you can"
-	cont "stop TEAM ROCKET?"
+	cont "stop Team Rocket?"
 	done
 
 RadioTower4FProductionSignText:
-	text "4F PRODUCTION"
+	text "4F Production"
 	done
 
 RadioTower4FStudio2SignText:
-	text "4F STUDIO 2"
+	text "4F Studio 2"
 	done
 
 RadioTower4F_MapEvents:

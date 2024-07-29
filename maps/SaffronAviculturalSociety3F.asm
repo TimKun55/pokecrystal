@@ -37,10 +37,10 @@ AviculturalSocietyAgathaCallback:
 AviculturalSocietyGrampsScript:
 	faceplayer
 	opentext
-	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iftrue .GrampsLuck
 	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	iftrue .GrampsEncounteredBirds
+	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	iftrue .GrampsLuck
 	writetext AviculturalSocietyGrampsIntroText
 	waitbutton
 	closetext
@@ -78,6 +78,9 @@ AviculturalSociety3FBirdKeeperScript:
 	writetext AviculturalSocietyBirdKeeperBeginText
 	waitbutton
 	setevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	setevent EVENT_MOLTRES_NEST_MOLTRES
+	setevent EVENT_ZAPDOS_NEST_ZAPDOS
+	setevent EVENT_ARTICUNO_NEST_ARTICUNO
 	closetext
 	end
 	
@@ -169,38 +172,38 @@ AviculturalSocietyGrampsIntroText:
 	
 	para "Have you come to"
 	line "learn more about"
-	cont "the great LEGENDS"
+	cont "the great Legends"
 	
 	para "or are you think-"
 	line "ing of challening"
-	cont "the GUARDIANS?"
+	cont "the Guardians?"
 	
 	para "Either way, I am"
 	line "impressed!"
 	
 	para "I'm the founder of"
-	line "the AVICULTURAL"
-	cont "SOCIETY."
+	line "the Avicultural"
+	cont "Society."
 	
 	para "You might not"
 	line "believe it, but my"
 	cont "family is deeply"
 	
 	para "connected to the"
-	line "great LUGIA."
+	line "great Lugia."
 	
 	para "Others have family"
 	line "or friends who" 
 	
 	para "have spotted the"
-	line "LEGENDARY BIRDS."
+	line "Legendary Birds."
 	
 	para "So I set out,"
 	line "found as many"
 	cont "of them as I could"
 	
 	para "and formed this"
-	line "SOCIETY to have"
+	line "Society to have"
 	cont "all the data"
 	cont "in one place."
 	
@@ -214,7 +217,7 @@ AviculturalSocietyGrampsGoodLuckText:
 	text "Oh ho!"
 	line "I see that you're"
 	cont "taking on the"
-	cont "GUARDIANS!"
+	cont "Guardians!"
 	
 	para "Very few have"
 	line "succeeded."
@@ -254,10 +257,10 @@ AviculturalSocietyGrampsYouDidItText:
 	
 AviculturalSocietyGrampsSilverWingText:
 	text "That is the"
-	line "SILVER WING."
+	line "Silver Wing."
 	
 	para "A feather from"
-	line "LUGIA itself."
+	line "Lugia itself."
 	
 	para "Many have tried"
 	line "to find it, but"
@@ -267,9 +270,9 @@ AviculturalSocietyGrampsSilverWingText:
 	cont "successful."
 	
 	para "Take this to"
-	line "WHIRL ISLANDS"
+	line "Whirl Islands"
 	cont "and challenge"
-	cont "LUGIA."
+	cont "Lugia."
 	done	
 
 AviculturalSocietyBirdKeeperIntroText:
@@ -278,11 +281,11 @@ AviculturalSocietyBirdKeeperIntroText:
 	para "If you're here,"
 	line "you must want to"
 	cont "take on the"
-	cont "GUARDIANS."
+	cont "Guardians."
 	
 	para "You will need to" 
 	line "track down each"
-	cont "GUARDIAN then try"
+	cont "Guardian then try"
 	
 	para "defeat them"
 	line "in battle."
@@ -292,7 +295,7 @@ AviculturalSocietyBirdKeeperIntroText:
 	cont "have a chance to"
 	
 	para "prove yourself to"
-	line "each mighty BIRD."
+	line "each mighty Bird."
 	
 	para "Will take on"
 	line "the challenge?"
@@ -307,9 +310,9 @@ AviculturalSocietyBirdKeeperEncounteredBirdsText:
 	text "You did it?!"
 	
 	para "You defeated the"
-	line "GUARDIANS and"
+	line "Guardians and"
 	cont "encountered the"
-	cont "LEGENDARY BIRDS?"
+	cont "Legendary Birds?"
 	
 	para "You're amazing!"
 	done
@@ -324,7 +327,7 @@ AviculturalSocietyBirdKeeperBeginText:
 	text "Very well."
 	
 	para "I'll let the"
-	line "GUARDIANS know"
+	line "Guardians know"
 	cont "and you can"
 	cont "seek them out."
 	done
@@ -373,7 +376,7 @@ AgathaRematchAfterBattleText:
 	cont "training."
 	
 	para "Unlike a certain"
-	line "PROFESSOR…"
+	line "Professor…"
 	
 	para "Anyway, keep"
 	line "it up."
@@ -389,19 +392,19 @@ AgathaNextTimeText:
 ArticunoStatueText:
 	text "An extremely det-"
 	line "ailed statue of"
-	cont "ARTICUNO."
+	cont "Articuno."
 	done
 
 ZapdosStatueText:
 	text "An extremely det-"
 	line "ailed statue of"
-	cont "ZAPDOS."
+	cont "Zapdos."
 	done
 
 MoltresStatueText:
 	text "An extremely det-"
 	line "ailed statue of"
-	cont "MOLTRES."
+	cont "Moltres."
 	done
 
 AviculturalSociety3FBookshelf1Text:
@@ -424,11 +427,11 @@ AviculturalSociety3FBookshelf1Text:
 AviculturalSociety3FBookshelf2Text:
 	text "Said to be the"
 	line "leader of the"
-	cont "LEGENDARY BIRDS."
+	cont "Legendary Birds."
 	
 	para "Should they find"
 	line "themselves in a"
-	cont "rage, LUGIA will"
+	cont "rage, Lugia will"
 
 	para "appear to calm"
 	line "them with its"
@@ -453,8 +456,8 @@ SaffronAviculturalSociety3F_MapEvents:
 	def_object_events
 	object_event  6,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyGrampsScript, -1
 	object_event  8,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSociety3FBirdKeeperScript, -1
-	object_event  2,  1, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyLoreleiScript, -1
-	object_event 11,  1, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyAgathaScript, -1
+	object_event  2,  1, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyLoreleiScript, EVENT_LORELEI_IN_SAFFRON
+	object_event 11,  1, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyAgathaScript, EVENT_AGATHA_IN_SAFFRON
 	object_event  5,  7, SPRITE_ARTICUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ArticunoStatueScript, -1
 	object_event  7,  7, SPRITE_ZAPDOS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ZapdosStatueScript, -1
 	object_event  9,  7, SPRITE_MOLTRES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, MoltresStatueScript, -1

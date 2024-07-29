@@ -18,14 +18,14 @@ Route10PokecenterSign:
 	jumpstd PokecenterSignScript
 
 RockTunnelSignText:
-	text "ROCK TUNNEL"
+	text "Rock Tunnel"
 
 	para "Through to"
-	line "LAVENDER TOWN"
+	line "Lavender Town"
 	done
 
 PowerPlantSignText:
-	text "KANTO POWER PLANT"
+	text "Kanto Power Plant"
 	done
 
 Route10North_MapEvents:

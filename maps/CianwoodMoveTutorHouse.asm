@@ -85,15 +85,15 @@ CianwoodMoveTutorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "X-SCISSOR@"
-	db "DRAIN PUNCH@"
-	db "WATER PULSE@"
-	db "CANCEL@"
+	db "X-Scissor@"
+	db "Drain Punch@"
+	db "Water Pulse@"
+	db "Cancel@"
 
 CianwoodTutorIntro:
 	text "Hi there!"
 	line "For ¥8000, I can"
-	para "teach your #MON"
+	para "teach your #mon"
 
 	para "amazing moves if"
 	line "you'd like."
@@ -109,7 +109,7 @@ CianwoodMoveTutorRefusalText:
 	line "if you want to"
 	
 	para "teach your"
-	line "#MON a new"
+	line "#mon a new"
 	cont "move!"
 	done
 
@@ -148,7 +148,7 @@ CianwoodMoveTutorFarewellKidText:
 
 CianwoodMoveTutorIncompatibleText:
 	text "I'm sorry, your"
-	line "#MON can't"
+	line "#mon can't"
 	cont "learn this move…"
 	done
 
@@ -160,8 +160,8 @@ CianwoodMoveTutorHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, CIANWOOD_CITY, 9
-	warp_event  3,  7, CIANWOOD_CITY, 9
+	warp_event  2,  7, CIANWOOD_CITY, 7
+	warp_event  3,  7, CIANWOOD_CITY, 7
 
 	def_coord_events
 

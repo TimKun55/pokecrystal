@@ -190,7 +190,7 @@
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
-	const FAINT_ATTACK ; b9
+	const FEINT_ATTACK ; b9
 	const SWEET_KISS   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
@@ -200,7 +200,7 @@
 	const ZAP_CANNON   ; c0
 	const FORESIGHT    ; c1
 	const DESTINY_BOND ; c2
-	const PERISH_SONG  ; c3
+	const ICICLE_CRASH ; c3
 	const ICY_WIND     ; c4
 	const HEAT_WAVE    ; c5
 	const POISON_JAB   ; c6

@@ -162,10 +162,10 @@ SaffronMagnetTrainStationVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FRESH WATER  ¥{d:SAFFRONMAGNETTRAINSTATION_FRESH_WATER_PRICE}@"
-	db "SODA POP     ¥{d:SAFFRONMAGNETTRAINSTATION_SODA_POP_PRICE}@"
-	db "LEMONADE     ¥{d:SAFFRONMAGNETTRAINSTATION_LEMONADE_PRICE}@"
-	db "CANCEL@"
+	db "Fresh Water  ¥{d:SAFFRONMAGNETTRAINSTATION_FRESH_WATER_PRICE}@"
+	db "Soda Pop     ¥{d:SAFFRONMAGNETTRAINSTATION_SODA_POP_PRICE}@"
+	db "Lemonade     ¥{d:SAFFRONMAGNETTRAINSTATION_LEMONADE_PRICE}@"
+	db "Cancel@"
 
 SaffronMagnetTrainStationOfficerApproachTrainDoorMovement:
 	step UP
@@ -203,13 +203,13 @@ SaffronMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 
 SaffronMagnetTrainStationOfficerTrainIsntOperatingText:
 	text "I'm sorry, but the"
-	line "MAGNET TRAIN isn't"
+	line "Magnet Train isn't"
 	cont "operating now."
 	done
 
 SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:
 	text "We'll soon depart"
-	line "for GOLDENROD."
+	line "for Goldenrod."
 
 	para "Are you coming on"
 	line "board?"
@@ -217,7 +217,7 @@ SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:
 
 SaffronMagnetTrainStationOfficerRightThisWayText:
 	text "May I see your"
-	line "rail PASS, please?"
+	line "rail Pass, please?"
 
 	para "OK. Right this"
 	line "way, please."
@@ -225,7 +225,7 @@ SaffronMagnetTrainStationOfficerRightThisWayText:
 
 SaffronMagnetTrainStationOfficerYouDontHaveAPassText:
 	text "Sorry, but you"
-	line "don't have a PASS."
+	line "don't have a Pass."
 	done
 
 SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText:
@@ -235,14 +235,14 @@ SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText:
 
 SaffronMagnetTrainStationOfficerArrivedInSaffronText:
 	text "We have arrived in"
-	line "SAFFRON."
+	line "Saffron."
 
 	para "We hope to see you"
 	line "again."
 	done
 
 SaffronMagnetTrainStationGymGuideText:
-	text "The MAGNET TRAIN"
+	text "The Magnet Train"
 	line "is a super-modern"
 
 	para "rail liner that"
@@ -264,30 +264,30 @@ SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart:
 	line "have I gone back"
 
 	para "and forth between"
-	line "KANTO and JOHTO?"
+	line "Kanto and Johto?"
 	done
 
 SaffronMagnetTrainStationTeacherText:
-	text "Before the MAGNET"
-	line "TRAIN STATION was"
+	text "Before the Magnet"
+	line "Train Station was"
 
 	para "built, there was a"
 	line "house there."
 
 	para "A little girl"
-	line "named COPYCAT used"
+	line "named Copycat used"
 	cont "to live there."
 	done
 
 SaffronMagnetTrainStationLassText:
 	text "Hi. Do you have a"
-	line "rail PASS? I have"
+	line "rail Pass? I have"
 
 	para "one. All the peo-"
-	line "ple in SAFFRON who"
+	line "ple in Saffron who"
 
-	para "ride the MAGNET"
-	line "TRAIN have PASSES."
+	para "ride the Magnet"
+	line "Train have Passes."
 	done
 	
 SaffronMagnetTrainStationVendingText:

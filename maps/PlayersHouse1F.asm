@@ -1,14 +1,14 @@
 	object_const_def
-	const PLAYERSHOUSE1F_MOM1
-	const PLAYERSHOUSE1F_MOM2
-	const PLAYERSHOUSE1F_MOM3
-	const PLAYERSHOUSE1F_MOM4
+	const PLAYERSHOUSE1F_MUM1
+	const PLAYERSHOUSE1F_MUM2
+	const PLAYERSHOUSE1F_MUM3
+	const PLAYERSHOUSE1F_MUM4
 	const PLAYERSHOUSE1F_POKEFAN_F
 	const PLAYERSHOUSE1F_PIKACHU
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
-	scene_script PlayersHouse1FNoop1Scene, SCENE_PLAYERSHOUSE1F_MEET_MOM
+	scene_script PlayersHouse1FNoop1Scene, SCENE_PLAYERSHOUSE1F_MEET_MUM
 	scene_script PlayersHouse1FNoop2Scene, SCENE_PLAYERSHOUSE1F_NOOP
 
 	def_callbacks
@@ -19,21 +19,21 @@ PlayersHouse1FNoop1Scene:
 PlayersHouse1FNoop2Scene:
 	end
 
-MeetMomLeftScript:
+MeetMumLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 
-MeetMomRightScript:
-	playmusic MUSIC_MOM
-	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
+MeetMumRightScript:
+	playmusic MUSIC_MUM
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MUM1, 15
 	turnobject PLAYER, LEFT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .OnRight
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsTowardPlayerMovement
-	sjump MeetMomScript
+	applymovement PLAYERSHOUSE1F_MUM1, MumTurnsTowardPlayerMovement
+	sjump MeetMumScript
 
 .OnRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
-MeetMomScript:
+	applymovement PLAYERSHOUSE1F_MUM1, MumWalksToPlayerMovement
+MeetMumScript:
 	opentext
 	writetext ElmsLookingForYouText
 	promptbutton
@@ -41,11 +41,11 @@ MeetMomScript:
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
+	addcellnum PHONE_MUM
 	setscene SCENE_PLAYERSHOUSE1F_NOOP
-	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	writetext MomGivesPokegearText
+	setevent EVENT_PLAYERS_HOUSE_MUM_1
+	clearevent EVENT_PLAYERS_HOUSE_MUM_2
+	writetext MumGivesPokegearText
 	promptbutton
 	special SetDayOfWeek
 .SetDayOfWeek:
@@ -88,39 +88,39 @@ MeetMomScript:
 	sjump .Finish
 
 .FromRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsBackMovement
+	applymovement PLAYERSHOUSE1F_MUM1, MumTurnsBackMovement
 	sjump .Finish
 
 .FromLeft:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement
+	applymovement PLAYERSHOUSE1F_MUM1, MumWalksBackMovement
 	sjump .Finish
 
 .Finish:
 	special RestartMapMusic
-	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	turnobject PLAYERSHOUSE1F_MUM1, LEFT
 	end
 
-MeetMomTalkedScript:
-	playmusic MUSIC_MOM
-	sjump MeetMomScript
+MeetMumTalkedScript:
+	playmusic MUSIC_MUM
+	sjump MeetMumScript
 
 PokegearName:
-	db "#GEAR@"
+	db "#Gear@"
 
 PlayersHouse1FReceiveItemStd:
 	jumpstd ReceiveItemScript
 	end
 
-MomScript:
+MumScript:
 	faceplayer
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	checkscene
-	iffalse MeetMomTalkedScript ; SCENE_PLAYERSHOUSE1F_MEET_MOM
+	iffalse MeetMumTalkedScript ; SCENE_PLAYERSHOUSE1F_MEET_MUM
 	opentext
-	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
+	checkevent EVENT_FIRST_TIME_BANKING_WITH_MUM
 	iftrue .FirstTimeBanking
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .BankOfMom
+	checkevent EVENT_TALKED_TO_MUM_AFTER_MYSTERY_EGG_QUEST
+	iftrue .BankOfMum
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
@@ -143,10 +143,10 @@ MomScript:
 	end
 
 .GaveMysteryEgg:
-	setevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-.BankOfMom:
-	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	special BankOfMom
+	setevent EVENT_FIRST_TIME_BANKING_WITH_MUM
+.BankOfMum:
+	setevent EVENT_TALKED_TO_MUM_AFTER_MYSTERY_EGG_QUEST
+	special BankOfMum
 	waitbutton
 	closetext
 	end
@@ -207,27 +207,27 @@ PlayersHouse1FSinkScript:
 PlayersHouse1FFridgeScript:
 	jumptext PlayersHouse1FFridgeText
 
-MomTurnsTowardPlayerMovement:
+MumTurnsTowardPlayerMovement:
 	turn_head RIGHT
 	step_end
 
-MomWalksToPlayerMovement:
+MumWalksToPlayerMovement:
 	slow_step RIGHT
 	step_end
 
-MomTurnsBackMovement:
+MumTurnsBackMovement:
 	turn_head LEFT
 	step_end
 
-MomWalksBackMovement:
+MumWalksBackMovement:
 	slow_step LEFT
 	step_end
 
 ElmsLookingForYouText:
 	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+	line "neighbor, Prof."
 
-	para "ELM, was looking"
+	para "Elm, was looking"
 	line "for you."
 
 	para "He said he wanted"
@@ -235,17 +235,17 @@ ElmsLookingForYouText:
 	cont "thing for him."
 
 	para "Oh! I almost for-"
-	line "got! Your #MON"
+	line "got! Your #mon"
 
-	para "GEAR is back from"
+	para "Gear is back from"
 	line "the repair shop."
 
 	para "Here you go!"
 	done
 
-MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
+MumGivesPokegearText:
+	text "#mon Gear, or"
+	line "just #Gear."
 
 	para "It's essential if"
 	line "you want to be a"
@@ -272,7 +272,7 @@ ComeHomeForDSTText:
 
 	para "By the way, do you"
 	line "know how to use"
-	cont "the PHONE?"
+	cont "the Phone?"
 	done
 
 KnowTheInstructionsText:
@@ -284,9 +284,9 @@ DontKnowTheInstructionsText:
 	text "I'll read the"
 	line "instructions."
 
-	para "Turn the #GEAR"
+	para "Turn the #Gear"
 	line "on and select the"
-	cont "PHONE icon."
+	cont "Phone icon."
 	
 	para "Phone numbers are"
 	line "stored in memory."
@@ -301,15 +301,15 @@ InstructionsNextText:
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
+	text "Prof.Elm is wait-"
 	line "ing for you."
 
 	para "Hurry up, baby!"
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
+	text "So, what was Prof."
+	line "Elm's errand?"
 
 	para "…"
 
@@ -354,27 +354,27 @@ NeighborText:
 	para "My daughter is"
 	line "adamant about"
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "becoming Prof."
+	line "Elm's assistant."
 
 	para "She really loves"
-	line "#MON!"
+	line "#mon!"
 	done
 	
 NeighborPikachuText:
-	text "PIKACHU: Pika! Pi!"
+	text "Pikachu: Pika! Pi!"
 	done
 
 PlayersHouse1FStoveText:
-	text "Mom's specialty!"
+	text "Mum's specialty!"
 
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	para "Cinnabar Volcano"
+	line "Burger!"
 	done
 
 PlayersHouse1FSinkText:
 	text "The sink is spot-"
-	line "less. Mom likes it"
+	line "less. Mum likes it"
 	cont "clean."
 	done
 
@@ -382,8 +382,8 @@ PlayersHouse1FFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
+	para "Fresh Water and"
+	line "tasty Lemonade!"
 	done
 
 PlayersHouse1FTVText:
@@ -406,8 +406,8 @@ PlayersHouse1F_MapEvents:
 	warp_event 11,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
-	coord_event 10,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
-	coord_event 11,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
+	coord_event 10,  4, SCENE_PLAYERSHOUSE1F_MEET_MUM, MeetMumLeftScript
+	coord_event 11,  4, SCENE_PLAYERSHOUSE1F_MEET_MUM, MeetMumRightScript
 
 	def_bg_events
 	bg_event  3,  1, BGEVENT_READ, PlayersHouse1FStoveScript
@@ -416,9 +416,9 @@ PlayersHouse1F_MapEvents:
 	bg_event  6,  1, BGEVENT_READ, PlayersHouse1FTVScript
 
 	def_object_events
-	object_event  9,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  3,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  9,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  1,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  9,  4, SPRITE_MUM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_1
+	object_event  3,  2, SPRITE_MUM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
+	object_event  9,  4, SPRITE_MUM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
+	object_event  1,  2, SPRITE_MUM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
 	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	object_event  5,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NeighborPikachuScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

@@ -116,19 +116,19 @@ PewterGymStatue:
 	jumpstd GymStatue2Script
 
 BrockIntroText:
-	text "BROCK: Wow, it's"
+	text "Brock: Wow, it's"
 	line "not often that we"
 
 	para "get a challenger"
-	line "from JOHTO."
+	line "from Johto."
 
-	para "I'm BROCK, the"
-	line "PEWTER GYM LEADER."
+	para "I'm Brock, the"
+	line "Pewter Gym Leader."
 
 	para "I'm an expert on"
-	line "rock-type #MON."
+	line "rock-type #mon."
 
-	para "My #MON are im-"
+	para "My #mon are im-"
 	line "pervious to most"
 
 	para "physical attacks."
@@ -141,8 +141,8 @@ BrockIntroText:
 	done
 
 BrockWinLossText:
-	text "BROCK: Your #-"
-	line "MON's powerful at-"
+	text "Brock: Your #-"
+	line "mon's powerful at-"
 	cont "tacks overcame my"
 	cont "rock-hard defense…"
 
@@ -150,16 +150,16 @@ BrockWinLossText:
 	line "than I expected…"
 
 	para "Go ahead--take"
-	line "this BADGE."
+	line "this Badge."
 	done
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
-	line "the BOULDERBADGE."
+	line "the BoulderBadge."
 	done
 
 BrockBoulderBadgeText:
-	text "BROCK: <PLAY_G>,"
+	text "Brock: <PLAY_G>,"
 	line "thanks. I enjoyed"
 
 	para "battling you, even"
@@ -167,11 +167,12 @@ BrockBoulderBadgeText:
 	cont "upset."
 
 BrockFightDoneText:
-	text "BROCK: The world"
-	line "is huge. There are"
+	text "Brock: The world"
+	line "is huge."
 
-	para "still many strong"
-	line "trainers like you."
+	para "There are still"
+	line "many strong"
+	cont "trainers like you."
 
 	para "Just wait and see."
 	line "I'm going to be-"
@@ -207,11 +208,11 @@ BrockNextTimeText:
 
 CamperJerrySeenText:
 	text "The trainers of"
-	line "this GYM use rock-"
-	cont "type #MON."
+	line "this Gym use rock-"
+	cont "type #mon."
 
 	para "The rock-type has"
-	line "high DEFENSE."
+	line "high Defense."
 
 	para "Battles could end"
 	line "up going a long"
@@ -227,7 +228,7 @@ CamperJerryBeatenText:
 
 CamperJerryAfterBattleText:
 	text "Hey, you! Trainer"
-	line "from JOHTO! BROCK"
+	line "from Johto! Brock"
 
 	para "is tough. He'll"
 	line "punish you if you"
@@ -237,25 +238,25 @@ CamperJerryAfterBattleText:
 	done
 
 PewterGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making! You're"
 
 	para "really rocking."
 	line "Are you battling"
 
-	para "the GYM LEADERS of"
-	line "KANTO?"
+	para "the Gym Leaders of"
+	line "Kanto?"
 
 	para "They're strong and"
 	line "dedicated people,"
 
-	para "just like JOHTO's"
-	line "GYM LEADERS."
+	para "just like Johto's"
+	line "Gym Leaders."
 	done
 
 PewterGymGuideWinText:
-	text "Yo! CHAMP in"
-	line "making! That GYM"
+	text "Yo! Champ in"
+	line "making! That Gym"
 
 	para "didn't give you"
 	line "much trouble."
@@ -268,7 +269,7 @@ PewterGymGuideWinText:
 	done
 	
 OnixText:
-	text "ONIX: Nix!!"
+	text "Onix: Nix!!"
 	line "Onixnix!"
 	done
 
@@ -287,6 +288,6 @@ PewterGym_MapEvents:
 
 	def_object_events
 	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
-	object_event  4,  1, SPRITE_ONIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymOnix, -1
+	object_event  4,  1, SPRITE_ONIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, PewterGymOnix, -1
 	object_event  2,  5, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
 	object_event  7, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1

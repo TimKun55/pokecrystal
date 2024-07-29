@@ -39,7 +39,7 @@ SquirtleEggMoves:
 
 PidgeyEggMoves:
 	db PURSUIT
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db FORESIGHT
 	db OMINOUS_WIND
 	db AIR_SLASH
@@ -55,7 +55,7 @@ RattataEggMoves:
 	db -1 ; end
 
 SpearowEggMoves:
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
@@ -122,7 +122,7 @@ ClefairyEggMoves:
 	db -1 ; end
 
 VulpixEggMoves:
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db HYPNOSIS
 	db REVERSAL
 	db SPITE
@@ -135,8 +135,7 @@ VulpixEggMoves:
 	db -1 ; end
 	
 JigglypuffEggMoves:
-	db FAINT_ATTACK
-	db PERISH_SONG
+	db FEINT_ATTACK
 	db MOONBLAST
 	db PRESENT
 	db CHARM
@@ -146,7 +145,7 @@ JigglypuffEggMoves:
 ZubatEggMoves:
 	db QUICK_ATTACK
 	db PURSUIT
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db GUST
 	db OMINOUS_WIND
 	db NASTY_PLOT
@@ -179,7 +178,7 @@ VenonatEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db SCREECH
 	db ANCIENTPOWER
 	db PURSUIT
@@ -299,13 +298,12 @@ DoduoEggMoves:
 	db QUICK_ATTACK
 	db SUPERSONIC
 	db HAZE
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db REVERSAL
 	db -1 ; end
 
 SeelEggMoves:
 	db LICK
-	db PERISH_SONG
 	db DISABLE
 	db PECK
 	db SLAM
@@ -334,7 +332,6 @@ ShellderEggMoves:
 	db -1 ; end
 
 GastlyEggMoves:
-	db PERISH_SONG
 	db HAZE
 	db OMINOUS_WIND
 	db WILL_O_WISP
@@ -373,7 +370,6 @@ CuboneEggMoves:
 	db ANCIENTPOWER
 	db BELLY_DRUM
 	db SCREECH
-	db PERISH_SONG
 	db SWORDS_DANCE
 	db IRON_BASH
 	db -1 ; end
@@ -576,7 +572,7 @@ SentretEggMoves:
 HoothootEggMoves:
 	db MIRROR_MOVE
 	db SUPERSONIC
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db WING_ATTACK
 	db HURRICANE
 	db -1 ; end
@@ -632,7 +628,7 @@ NatuEggMoves:
 	db HAZE
 	db DRILL_PECK
 	db QUICK_ATTACK
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db STEEL_WING
 	db DAZZLINGLEAM
 	db ZEN_HEADBUTT
@@ -654,7 +650,6 @@ MarillEggMoves:
 	db AMNESIA
 	db FUTURE_SIGHT
 	db BELLY_DRUM
-	db PERISH_SONG
 	db SUPERSONIC
 	db FORESIGHT
 	db DISARM_VOICE
@@ -747,7 +742,7 @@ GligarEggMoves:
 
 SnubbullEggMoves:
 	db METRONOME
-	db FAINT_ATTACK
+	db FEINT_ATTACK
 	db REFLECT
 	db PRESENT
 	db CRUNCH

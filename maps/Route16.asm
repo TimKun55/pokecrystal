@@ -5,25 +5,25 @@ Route16_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route16AlwaysOnBikeCallback
 
 Route16AlwaysOnBikeCallback:
-	readvar VAR_YCOORD
-	ifless 5, .CanWalk
-	readvar VAR_XCOORD
-	ifgreater 13, .CanWalk
+;	readvar VAR_YCOORD
+;	ifless 5, .CanWalk
+;	readvar VAR_XCOORD
+;	ifgreater 13, .CanWalk
 	setflag ENGINE_ALWAYS_ON_BIKE
 	endcallback
 
-.CanWalk:
-	clearflag ENGINE_ALWAYS_ON_BIKE
-	endcallback
+;.CanWalk:
+;	clearflag ENGINE_ALWAYS_ON_BIKE
+;	endcallback
 
 CyclingRoadSign:
 	jumptext CyclingRoadSignText
 
 CyclingRoadSignText:
-	text "CYCLING ROAD"
+	text "Cycling Road"
 
-	para "DOWNHILL COASTING"
-	line "ALL THE WAY!"
+	para "Downhill coasting"
+	line "all the way!"
 	done
 
 Route16_MapEvents:

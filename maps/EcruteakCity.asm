@@ -82,11 +82,14 @@ EcruteakCityPokecenterSign:
 EcruteakCityMartSign:
 	jumpstd MartSignScript
 
+TinTowerSign:
+	jumptext TinTowerSignText
+
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
 
 EcruteakCityGramps1Text:
-	text "ECRUTEAK used to"
+	text "Ecruteak used to"
 	line "have two towers:"
 
 	para "one each in the"
@@ -98,10 +101,10 @@ EcruteakCityGramps2Text:
 	line "Have you learned"
 
 	para "to dance like the"
-	line "KIMONO GIRLS?"
+	line "Kimono Girls?"
 
 	para "If you go to their"
-	line "DANCE THEATER, an"
+	line "Dance Theater, an"
 
 	para "odd old man will"
 	line "give you something"
@@ -110,9 +113,9 @@ EcruteakCityGramps2Text:
 
 EcruteakCityLass1Text:
 	text "I'm going to prac-"
-	line "tice at the DANCE"
+	line "tice at the Dance"
 
-	para "THEATER. Care to"
+	para "Theater. Care to"
 	line "join me?"
 	done
 
@@ -126,7 +129,7 @@ EcruteakCityLass2Text:
 	done
 
 EcruteakCityLass2Text_ReleasedBeasts:
-	text "Three big #MON"
+	text "Three big #mon"
 	line "ran off in differ-"
 	cont "ent directions."
 	cont "What were they?"
@@ -134,10 +137,10 @@ EcruteakCityLass2Text_ReleasedBeasts:
 
 EcruteakCityFisherText:
 	text "I heard a rumor"
-	line "about OLIVINE"
-	cont "LIGHTHOUSE."
+	line "about Olivine"
+	cont "Lighthouse."
 
-	para "The #MON that"
+	para "The #mon that"
 	line "serves as the"
 
 	para "beacon fell ill."
@@ -146,8 +149,8 @@ EcruteakCityFisherText:
 	done
 
 EcruteakCityFisherText_JasmineReturned:
-	text "The #MON at"
-	line "OLIVINE LIGHTHOUSE"
+	text "The #mon at"
+	line "Olivine Lighthouse"
 	cont "has been cured."
 
 	para "Boats can safely"
@@ -156,10 +159,10 @@ EcruteakCityFisherText_JasmineReturned:
 	done
 
 EcruteakCitySchoolboyText:
-	text "I hear #MON are"
+	text "I hear #mon are"
 	line "rampaging at the"
 
-	para "LAKE OF RAGE. I'd"
+	para "Lake Of Rage. I'd"
 	line "like to see that."
 	done
 
@@ -170,11 +173,11 @@ EcruteakCityGramps3Text:
 	para "This tower burned"
 	line "in a fire. Three"
 
-	para "nameless #MON"
+	para "nameless #mon"
 	line "perished in it."
 
 	para "A rainbow-colored"
-	line "#MON descended"
+	line "#mon descended"
 
 	para "from the sky and"
 	line "resurrected them…"
@@ -182,8 +185,8 @@ EcruteakCityGramps3Text:
 	para "It's a legend that"
 	line "has been passed"
 
-	para "down by ECRUTEAK"
-	line "GYM LEADERS."
+	para "down by Ecruteak"
+	line "Gym Leaders."
 
 	para "Me?"
 
@@ -193,7 +196,7 @@ EcruteakCityGramps3Text:
 	done
 
 EcruteakCitySignText:
-	text "ECRUTEAK CITY"
+	text "Ecruteak City"
 	line "A Historical City"
 
 	para "Where the Past"
@@ -201,21 +204,21 @@ EcruteakCitySignText:
 	done
 
 EcruteakGymSignText:
-	text "ECRUTEAK CITY"
-	line "#MON GYM"
-	cont "LEADER: MORTY"
+	text "Ecruteak City"
+	line "#mon Gym"
+	cont "LEADER: Morty"
 
 	para "The Mystic Seer of"
 	line "the Future"
 	done
 
 EcruteakDanceTheaterSignText:
-	text "ECRUTEAK DANCE"
-	line "THEATER"
+	text "Ecruteak Dance"
+	line "Theater"
 	done
 
 BurnedTowerSignText:
-	text "BURNED TOWER"
+	text "Burned Tower"
 
 	para "It was destroyed"
 	line "by a mysterious"
@@ -225,41 +228,53 @@ BurnedTowerSignText:
 	line "as it is unsafe."
 	done
 
+TinTowerSignText:
+	text "Tin Tower"
+
+	para "A legendary #-"
+	line "MON is said to"
+	cont "roost here."
+	done
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 35, 26, ROUTE_42_ECRUTEAK_GATE, 1
-	warp_event 35, 27, ROUTE_42_ECRUTEAK_GATE, 2
-	warp_event 17,  7, ECRUTEAK_TIN_TOWER_ENTRANCE, 1
-	warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1
-	warp_event  5, 17, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
-	warp_event 23, 21, DANCE_THEATER, 1
-	warp_event 29, 21, ECRUTEAK_MART, 2
-	warp_event  6, 27, ECRUTEAK_GYM, 1
-	warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1
-	warp_event  5,  5, BURNED_TOWER_1F, 1
-	warp_event  0, 18, ROUTE_38_ECRUTEAK_GATE, 3
-	warp_event  0, 19, ROUTE_38_ECRUTEAK_GATE, 4
-	warp_event 13, 17, ECRUTEAK_FAIRY_FAMILY_HOUSE, 1
-	warp_event 29, 27, ECRUTEAK_SWARM_HOUSE, 1
+	warp_event 35, 38, ROUTE_42_ECRUTEAK_GATE, 1
+	warp_event 35, 39, ROUTE_42_ECRUTEAK_GATE, 2
+	warp_event 17, 19, ECRUTEAK_TIN_TOWER_ENTRANCE, 1
+	warp_event 23, 39, ECRUTEAK_POKECENTER_1F, 1
+	warp_event  5, 29, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
+	warp_event 23, 33, DANCE_THEATER, 1
+	warp_event 29, 33, ECRUTEAK_MART, 2
+	warp_event  6, 39, ECRUTEAK_GYM, 1
+	warp_event 13, 39, ECRUTEAK_ITEMFINDER_HOUSE, 1
+	warp_event  5, 13, BURNED_TOWER_1F, 1
+	warp_event 20,  4, WISE_TRIOS_ROOM, 1
+	warp_event 20,  5, WISE_TRIOS_ROOM, 2
+	warp_event 33, 13, TIN_TOWER_1F, 1
+	warp_event  0, 30, ROUTE_38_ECRUTEAK_GATE, 3
+	warp_event  0, 31, ROUTE_38_ECRUTEAK_GATE, 4
+	warp_event 13, 29, ECRUTEAK_FAIRY_FAMILY_HOUSE, 1
+	warp_event 29, 39, ECRUTEAK_SWARM_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
-	bg_event  4, 27, BGEVENT_READ, EcruteakGymSign
-	bg_event 20, 21, BGEVENT_READ, EcruteakDanceTheaterSign
-	bg_event  6, 10, BGEVENT_READ, BurnedTowerSign
-	bg_event 24, 27, BGEVENT_READ, EcruteakCityPokecenterSign
-	bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign
-	bg_event 16, 10, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
+	bg_event 15, 33, BGEVENT_READ, EcruteakCitySign
+	bg_event  4, 39, BGEVENT_READ, EcruteakGymSign
+	bg_event 20, 33, BGEVENT_READ, EcruteakDanceTheaterSign
+	bg_event  6, 22, BGEVENT_READ, BurnedTowerSign
+	bg_event 24, 39, BGEVENT_READ, EcruteakCityPokecenterSign
+	bg_event 30, 33, BGEVENT_READ, EcruteakCityMartSign
+	bg_event 34, 14, BGEVENT_READ, TinTowerSign
+	bg_event 16, 22, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
 
 	def_object_events
-	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
-	object_event 19, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
-	object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
-	object_event  7, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
-	object_event  7, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
-	object_event 10, 14, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
-	object_event  3, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 18, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
+	object_event 19, 33, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
+	object_event 21, 41, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
+	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
+	object_event  7, 32, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
+	object_event 10, 26, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
+	object_event  6, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

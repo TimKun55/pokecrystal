@@ -58,12 +58,12 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; DNA_SAMPLE
+	dw NoEffect            ; SECRET_KEY
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; SPICY_POFFIN
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SP_ATK
@@ -86,7 +86,7 @@ ItemEffects:
 	dw NoEffect            ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
 	dw RestoreHPEffect     ; MOOMOO_MILK
-	dw NoEffect            ; QUICK_CLAW
+	dw DiplomaEffect       ; DIPLOMA
 	dw StatusHealingEffect ; PECHA_BERRY
 	dw NoEffect            ; GOLD_LEAF
 	dw NoEffect            ; SOFT_SAND
@@ -113,7 +113,7 @@ ItemEffects:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; ITEM_64
+	dw NoEffect            ; DRY_POFFIN
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
@@ -149,16 +149,16 @@ ItemEffects:
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
 	dw NoEffect            ; EVIOLITE
-	dw NoEffect            ; ITEM_88
+	dw NoEffect            ; SWEET_POFFIN
 	dw VitaminEffect       ; ZINC
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
-	dw NoEffect            ; ITEM_8E
+	dw NoEffect            ; BITTERPOFFIN
+	dw NoEffect            ; SOUR_POFFIN
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; ITEM_91
+	dw NoEffect            ; RICH_POFFIN
 	dw NoEffect            ; LEFTOVERS
 	dw NoEffect            ; OLD_AMBER
 	dw NoEffect            ; DOME_FOSSIL
@@ -174,8 +174,8 @@ ItemEffects:
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
-	dw PokeBallEffect      ; FAST_BALL
-	dw NoEffect            ; ITEM_A2
+	dw PokeBallEffect      ; NET_BALL
+	dw NoEffect            ; MILD_POFFIN
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -184,18 +184,18 @@ ItemEffects:
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; ITEM_AB
+	dw NoEffect            ; SALTY_POFFIN
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; ORAN_BERRY
 	dw RestoreHPEffect     ; SITRUS_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_B0
+	dw NoEffect            ; OLD_SEA_MAP
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
-	assert_table_length ITEM_B3
-; The items past ITEM_B3 do not have effect entries:
-;	BRICK_PIECE
+	dw EvoStoneEffect      ; PANCAKESTACK
+	assert_table_length PANCAKESTACK
+; The items past PANCAKESTACK do not have effect entries:
+;	QUICK_CLAW
 ;	SURF_MAIL
 ;	LITEBLUEMAIL
 ;	PORTRAITMAIL
@@ -742,7 +742,7 @@ BallMultiplierFunctionTable:
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
-	dbw FAST_BALL,   FastBallMultiplier
+	dbw NET_BALL,    NetBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
@@ -995,34 +995,33 @@ LoveBallMultiplier:
 	pop bc
 	ret
 
-FastBallMultiplier:
-	ld a, [wTempEnemyMonSpecies]
-	ld c, a
-	ld hl, FleeMons
-	ld d, 3
+NetBallMultiplier:
+	ld a, [wEnemyMonType1]
+	cp WATER
+	jr z, .WaterOrBug
+	cp BUG
+	jr z, .WaterOrBug
+	ld a, [wEnemyMonType2]
+	cp WATER
+	jr z, .WaterOrBug
+	cp BUG
+	ret nz
 
-.loop
-	ld a, BANK(FleeMons)
-	call GetFarByte
-
-	inc hl
-	cp -1
-	jr z, .next
-	cp c
-	jr nz, .loop
-	sla b
+.WaterOrBug
+; b is the catch rate
+; a := b + b + b == b × 3
+	ld a, b
+	add a
 	jr c, .max
 
-	sla b
-	ret nc
+	add b
+	jr c, .max
+
+	ld b, a
+	ret
 
 .max
 	ld b, $ff
-	ret
-
-.next
-	dec d
-	jr nz, .loop
 	ret
 
 LevelBallMultiplier:
@@ -1138,6 +1137,17 @@ ReturnToBattle_UseBall:
 TownMapEffect:
 	farcall PokegearMap
 	ret
+
+DiplomaEffect:
+	call FadeToMenu
+	farcall _Diploma
+	call Call_ExitMenu
+	xor a
+	ldh [hBGMapMode], a
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
+ 	ret
 
 BicycleEffect:
 	farcall BikeFunction
@@ -1256,12 +1266,12 @@ StatStrings:
 	dw .sp_atk
 	dw .sp_def
 
-.health  db "HEALTH@"
-.attack  db "ATTACK@"
-.defense db "DEFENSE@"
-.speed   db "SPEED@"
-.sp_atk  db "SPCL.ATK@"
-.sp_def  db "SPCL.DEF@"
+.health  db "Health@"
+.attack  db "Attack@"
+.defense db "Defense@"
+.speed   db "Speed@"
+.sp_atk  db "Sp.Atk@"
+.sp_def  db "Sp.Def@"
 
 GetEVRelativePointer:
 	ld a, [wCurItem]

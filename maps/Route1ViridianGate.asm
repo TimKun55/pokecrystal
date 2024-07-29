@@ -16,20 +16,20 @@ Route1ViridianGuardScript:
 
 Route1ViridianGuardText:
 	text "Welcome to"
-	line "VIRIDIAN CITY."
+	line "Viridian City."
 
 	para "Head north for"
-	line "PEWTER CITY via"
-	cont "VIRIDIAN FOREST."
+	line "Pewter CITY via"
+	cont "Viridian Forest."
 
 	para "Head south for"
-	line "PALLET TOWN."
+	line "Pallet Town."
 
 	para "Head west for the"
-	line "#MON LEAGUE,"
+	line "#mon League,"
 
-	para "MT. SILVER and"
-	line "JOHTO."
+	para "Mt.Silver and"
+	line "Johto."
 	done
 
 Route1ViridianGate_MapEvents:

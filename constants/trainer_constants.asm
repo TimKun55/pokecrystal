@@ -18,9 +18,9 @@ ENDM
 ; - BTTrainerClassSprites (see data/trainers/sprites.asm)
 ; - BTTrainerClassGenders (see data/trainers/genders.asm)
 ; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
-DEF CHRIS EQU __trainer_class__
+DEF ETHAN EQU __trainer_class__
 	trainerclass TRAINER_NONE ; 0
-	const PHONECONTACT_MOM
+	const PHONECONTACT_MUM
 	const PHONECONTACT_BIKESHOP
 	const PHONECONTACT_BILL
 	const PHONECONTACT_ELM
@@ -238,8 +238,8 @@ DEF KRIS EQU __trainer_class__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK ; unused
-	const ANDY ; unused
+	const ERICK ; ; Viridian Gym
+	const ANDY ; ; Olivine Gym
 	const TYLER ; unused
 	const SEAN
 	const KEVIN
@@ -273,9 +273,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
 	const SAMANTHA
-	const JULIE ; unused
-	const JACLYN ; unused
-	const BRENDA ; unused
+	const JULIE ; ; Viridian Gym
+	const JACLYN ; ; Olivine Gym
+	const BRENDA ; Route 26
 	const CASSIE
 	const CAROLINE ; unused
 	const CARLENE ; unused
@@ -297,7 +297,7 @@ DEF KRIS EQU __trainer_class__
 	const BEN
 	const BRENT1
 	const RON
-	const ETHAN
+	const TRAVIS
 	const BRENT2
 	const BRENT3
 	const ISSAC
@@ -472,8 +472,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SUPER_NERD ; 29
 	const STAN
 	const ERIC
-	const GREGG ; unused
-	const JAY ; unused
+	const GREGG ; ; Route 5
+	const JAY ; ; Route 5
 	const DAVE ; unused
 	const SAM
 	const TOM
@@ -522,8 +522,8 @@ DEF KRIS EQU __trainer_class__
 	const ANTHONY5
 
 	trainerclass BIKER ; 2d
-	const BIKER_BENNY ; unused
-	const KAZU ; unused
+	const BIKER_BENNY ; ; Route 17
+	const KAZU ; ; Route 17
 	const DWAYNE
 	const HARRIS
 	const ZEKE
@@ -776,7 +776,7 @@ DEF KRIS EQU __trainer_class__
 	const PETREL2
 	const PETREL3	
 	
-	trainerclass BUG_MANIAC ; 50
+	trainerclass BUG_MANIAC ; 4a
 	const XANDER
 	const BOBBY
 	const CARL

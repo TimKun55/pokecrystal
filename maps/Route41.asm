@@ -154,7 +154,7 @@ SwimmermCharlieAfterBattleText:
 SwimmermGeorgeSeenText:
 	text "I'm a bit tired."
 	line "If I win, lend me"
-	cont "your #MON."
+	cont "your #mon."
 	done
 
 SwimmermGeorgeBeatenText:
@@ -163,11 +163,11 @@ SwimmermGeorgeBeatenText:
 
 SwimmermGeorgeAfterBattleText:
 	text "It's so far to"
-	line "CIANWOOD."
+	line "Cianwood."
 
 	para "But it's no easy"
 	line "return trip to"
-	cont "OLIVINE either."
+	cont "Olivine either."
 
 	para "What should I do?"
 	done
@@ -191,7 +191,7 @@ SwimmermBerkeAfterBattleText:
 	line "stormy night…"
 
 	para "I saw this giant"
-	line "#MON flying"
+	line "#mon flying"
 	cont "from the islands."
 
 	para "It was scattering"
@@ -220,7 +220,7 @@ SwimmermKirkAfterBattleText:
 SwimmermMathewSeenText:
 	text "Are you seeking"
 	line "the secrets of"
-	cont "WHIRL ISLANDS?"
+	cont "Whirl Islands?"
 	done
 
 SwimmermMathewBeatenText:
@@ -230,7 +230,7 @@ SwimmermMathewBeatenText:
 
 SwimmermMathewAfterBattleText:
 	text "A secret about"
-	line "WHIRL ISLANDS…"
+	line "Whirl Islands…"
 
 	para "It's pitch-black"
 	line "inside!"
@@ -238,7 +238,7 @@ SwimmermMathewAfterBattleText:
 
 SwimmerfKayleeSeenText:
 	text "I'm on my way to"
-	line "WHIRL ISLANDS."
+	line "Whirl Islands."
 
 	para "I'm going explor-"
 	line "ing with friends."
@@ -252,8 +252,8 @@ SwimmerfKayleeBeatenText:
 SwimmerfKayleeAfterBattleText:
 	text "There's supposed"
 	line "to be a big #-"
-	cont "MON deep beneath"
-	cont "WHIRL ISLANDS."
+	cont "mon deep beneath"
+	cont "Whirl Islands."
 
 	para "I wonder what it"
 	line "could be?"
@@ -262,7 +262,7 @@ SwimmerfKayleeAfterBattleText:
 SwimmerfSusieSeenText:
 	text "You look so ele-"
 	line "gant, riding your"
-	cont "#MON."
+	cont "#mon."
 	done
 
 SwimmerfSusieBeatenText:
@@ -272,7 +272,7 @@ SwimmerfSusieBeatenText:
 SwimmerfSusieAfterBattleText:
 	text "Wasn't there a hit"
 	line "song about a boy"
-	cont "riding a LAPRAS?"
+	cont "riding a Lapras?"
 	done
 
 SwimmerfDeniseSeenText:
@@ -316,11 +316,11 @@ SwimmerfKaraBeatenText:
 SwimmerfKaraAfterBattleText:
 	text "I heard roars from"
 	line "deep inside the"
-	cont "ISLANDS."
+	cont "Islands."
 	done
 
 SwimmerfWendySeenText:
-	text "At night, STARYU"
+	text "At night, Staryu"
 	line "gather near the"
 	cont "water's surface."
 	done
@@ -331,7 +331,7 @@ SwimmerfWendyBeatenText:
 
 SwimmerfWendyAfterBattleText:
 	text "The clusters of"
-	line "STARYU light up"
+	line "Staryu light up"
 	cont "at the same time."
 
 	para "It's so beautiful,"

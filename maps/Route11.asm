@@ -91,7 +91,7 @@ Route11HiddenRevive:
 
 YoungsterOwenSeenText:
 	text "There's no cheat-"
-	line "ing in #MON."
+	line "ing in #mon."
 
 	para "Let's keep it fair"
 	line "and square!"
@@ -125,7 +125,7 @@ YoungsterJasonBeatenText:
 
 YoungsterJasonAfterBattleText:
 	text "I'm going to catch"
-	line "more #MON in"
+	line "more #mon in"
 	cont "the grass."
 	done
 
@@ -162,30 +162,30 @@ PsychicFidelAfterBattleText:
 
 	para "You're strong be-"
 	line "cause you believe"
-	cont "in your #MON."
+	cont "in your #mon."
 	done
 
 Route11SnorlaxSleepingText:
-	text "SNORLAX is snoring"
+	text "Snorlax is snoring"
 	line "peacefully…"
 	done
 
 Route11RadioNearSnorlaxText:
-	text "The #GEAR was"
+	text "The #Gear was"
 	line "placed near the"
-	cont "sleeping SNORLAX…"
+	cont "sleeping Snorlax…"
 
 	para "…"
 
-	para "SNORLAX woke up!"
+	para "Snorlax woke up!"
 	done
 
 Route11DiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
+	text "Diglett's Cave"
 	done
 
 Route11SignText:
-	text "ROUTE 11"
+	text "Route 11"
 	done
 
 Route11_MapEvents:

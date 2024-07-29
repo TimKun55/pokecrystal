@@ -10,6 +10,22 @@ KantoWaterWildMons:
 	db 20, SEAKING,       31,  34
 	end_water_wildmons
 
+	def_water_wildmons CERULEAN_CAVE_1F
+	db 4 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, GOLDUCK,       63,  66
+	db 20, OCTILLERY,     63,  66
+	db 20, STARMIE,       63,  66
+	end_water_wildmons
+
+	def_water_wildmons CERULEAN_CAVE_B1F
+	db 4 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, GOLDUCK,       63,  66
+	db 20, OCTILLERY,     63,  66
+	db 20, STARMIE,       63,  66
+	end_water_wildmons
+
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
@@ -104,6 +120,14 @@ KantoWaterWildMons:
 	db 60, POLIWHIRL,     57,  60
 	db 20, POLIWHIRL,     60,  63
 	db 20, POLIWRATH,     62,  65
+	end_water_wildmons
+
+	def_water_wildmons ROUTE_23
+	db 2 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, GOLDEEN,       40,  42
+	db 20, GOLDUCK,       40,  42
+	db 20, SEAKING,       40,  42
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_24

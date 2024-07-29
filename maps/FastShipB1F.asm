@@ -235,7 +235,7 @@ FastShipB1FOnDutySailorText:
 FastShipB1FOnDutySailorRefusedText:
 	text "Oh, gee…"
 
-	para "The CAPTAIN will"
+	para "The Captain will"
 	line "be furious…"
 	done
 
@@ -260,7 +260,7 @@ FastShipB1FOnDutySailorDirectionsText:
 
 	para "The stairs at the"
 	line "end lead to the"
-	cont "CAPTAIN's cabin."
+	cont "Captain's cabin."
 	done
 
 SailorJeffSeenText:
@@ -291,11 +291,11 @@ PicnickerDebraBeatenText:
 	done
 
 PicnickerDebraAfterBattleText:
-	text "SAFFRON, CELADON…"
+	text "Saffron, Celadon…"
 	line "I hear there are"
 
 	para "many big cities"
-	line "in KANTO."
+	line "in Kanto."
 	done
 
 JugglerFritzSeenText:
@@ -313,7 +313,7 @@ JugglerFritzAfterBattleText:
 	line "me. Next time,"
 
 	para "I'm taking the"
-	line "MAGNET TRAIN."
+	line "Magnet Train."
 	done
 
 SailorGarrettSeenText:
@@ -330,8 +330,8 @@ SailorGarrettAfterBattleText:
 	text "We get different"
 	line "passengers from"
 
-	para "VERMILION CITY to"
-	line "OLIVINE CITY."
+	para "Vermilion City to"
+	line "Olivine City."
 	done
 
 FisherJonahSeenText:
@@ -350,7 +350,7 @@ FisherJonahBeatenText:
 
 FisherJonahAfterBattleText:
 	text "I plan to fish off"
-	line "VERMILION's pier."
+	line "Vermilion's pier."
 	done
 
 BlackbeltWaiSeenText:
@@ -368,8 +368,8 @@ BlackbeltWaiBeatenText:
 
 BlackbeltWaiAfterBattleText:
 	text "I couldn't find"
-	line "the KARATE KING in"
-	cont "JOHTO."
+	line "the Karate King in"
+	cont "Johto."
 
 	para "He's supposed to"
 	line "be training in a"
@@ -380,8 +380,8 @@ SailorKennethSeenText:
 	text "I'm a sailor man!"
 
 	para "But I'm training"
-	line "#MON, so I can"
-	cont "become the CHAMP!"
+	line "#mon, so I can"
+	cont "become the Champ!"
 	done
 
 SailorKennethBeatenText:
@@ -390,11 +390,11 @@ SailorKennethBeatenText:
 	done
 
 SailorKennethAfterBattleText:
-	text "Eight BADGES!"
+	text "Eight Badges!"
 	line "They must prove"
 
 	para "that you've beaten"
-	line "GYM LEADERS."
+	line "Gym Leaders."
 
 	para "No wonder you're"
 	line "so good!"
@@ -411,13 +411,13 @@ TeacherShirleyBeatenText:
 
 TeacherShirleyAfterBattleText:
 	text "We're on a field"
-	line "trip to the RUINS"
-	cont "outside VIOLET."
+	line "trip to the Ruins"
+	cont "outside Violet."
 	done
 
 SchoolboyNateSeenText:
 	text "Do you know the"
-	line "RUINS OF ALPH?"
+	line "Ruins Of Alph"
 	done
 
 SchoolboyNateBeatenText:
@@ -427,13 +427,13 @@ SchoolboyNateBeatenText:
 SchoolboyNateAfterBattleText:
 	text "Radios pick up"
 	line "strange signals"
-	cont "inside the RUINS."
+	cont "inside the Ruins."
 	done
 
 SchoolboyRickySeenText:
 	text "There are some odd"
 	line "stone panels in"
-	cont "the RUINS OF ALPH."
+	cont "the Ruins Of Alph."
 	done
 
 SchoolboyRickyBeatenText:

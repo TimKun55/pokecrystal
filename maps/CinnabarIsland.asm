@@ -12,17 +12,16 @@ CinnabarIslandFlypointCallback:
 	endcallback
 
 CinnabarIslandBlue:
+	faceplayer
+	opentext
 	readvar VAR_BADGES
 	ifequal 15, .BlueBacktoGym
-	opentext
 	writetext CinnabarIslandBlueText
 	waitbutton
 	closetext	
 	end
 	
 .BlueBacktoGym
-	faceplayer
-	opentext
 	writetext CinnabarIslandBlue2Text
 	waitbutton
 	closetext
@@ -41,6 +40,9 @@ CinnabarIslandSign:
 CinnabarIslandPokecenterSign:
 	jumpstd PokecenterSignScript
 
+CinnabarRecoveryLabSign:
+	jumptext CinnabarRecoveryLabSignText
+
 CinnabarIslandHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
 
@@ -49,15 +51,15 @@ CinnabarIslandBlueTeleport:
 	step_end
 
 CinnabarIslandBlueText:
-	text "My name's BLUE."
+	text "My name's Blue."
 
 	para "I was once the"
-	line "CHAMPION, although"
+	line "Champion, although"
 
 	para "it was for only a"
 	line "short time…"
 
-	para "That meddling RED"
+	para "That meddling Red"
 	line "did me in…"
 
 	para "Anyway, what do"
@@ -84,7 +86,7 @@ CinnabarIslandBlueText:
 	para "We can go on win-"
 	line "ning and losing in"
 
-	para "#MON. But if"
+	para "#mon. But if"
 	line "nature so much as"
 
 	para "twitches, we can"
@@ -97,12 +99,12 @@ CinnabarIslandBlueText:
 	done
 
 CinnabarIslandBlue2Text:
-	text "BLUE: <PLAYER>,"
+	text "Blue: <PLAYER>,"
 	para "you're back."
 	
 	para "Oh, you've earned"
 	line "all the other"
-	cont "KANTO BADGES?"
+	cont "Kanto Badges?"
 
 	para "If I see a strong"
 	line "opponent, it makes"
@@ -110,7 +112,7 @@ CinnabarIslandBlue2Text:
 
 	para "If you want to"
 	line "battle me, come to"
-	cont "the VIRIDIAN GYM."
+	cont "the Viridian Gym."
 
 	para "I'll take you on."
 	done
@@ -119,7 +121,7 @@ CinnabarIslandGymSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "CINNABAR GYM has"
+	para "Cinnabar Gym has"
 	line "relocated to"
 	cont "inside the"
 	cont "Volcano."
@@ -127,30 +129,37 @@ CinnabarIslandGymSignText:
 	para "Please take care"
 	line "when climbing up."
 
-	para "BLAINE"
+	para "Blaine"
 	done
 
 CinnabarIslandSignText:
-	text "CINNABAR ISLAND"
+	text "Cinnabar Island"
 
 	para "The Fiery Town of"
 	line "Burning Desire"
 	done
 
+CinnabarRecoveryLabSignText:
+	text "Cinnabar"
+	line "Recovery Lab"
+	done	
+
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 11, CINNABAR_POKECENTER_1F, 1
-	warp_event 10,  7, CINNABAR_VOLCANO_1F, 1
+	warp_event 21, 17, CINNABAR_POKECENTER_1F, 1
+	warp_event 10, 14, CINNABAR_VOLCANO_1F, 1
+	warp_event 23,  8, CINNABAR_ISLAND_RECOVERY_LAB, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 14, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
-	bg_event 11,  8, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event  7, 10, BGEVENT_READ, CinnabarIslandSign
-	bg_event  5,  6, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event 22, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
+	bg_event 18, 16, BGEVENT_READ, CinnabarIslandGymSign
+	bg_event 20, 12, BGEVENT_READ, CinnabarIslandSign
+	bg_event 22,  9, BGEVENT_READ, CinnabarRecoveryLabSign
+	bg_event 15, 12, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events
-	object_event  6,  9, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event 11, 16, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

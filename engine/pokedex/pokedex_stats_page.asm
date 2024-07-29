@@ -122,15 +122,15 @@ Pokedex_GBS_Stats:
 BS_HP_text:
 	db " HP@"
 BS_SPEED_text:
-	db "SPE@"
+	db "Spe@"
 BS_ATK_text:
-	db "ATK@"
+	db "Atk@"
 BS_DEF_text:
-	db "DEF@"
+	db "Def@"
 BS_SPCL_text:
-	db "SPA@"
+	db "SpA@"
 BS_SPCLDEF_text:
-	db "SPD@"
+	db "SpD@"
 
 Pokedex_Get_Items:
 ; TODO: Add code to differentiate same items in both entries, special cases
@@ -431,7 +431,7 @@ Pokedex_PrintBaseExp:
 	call PrintNum
 	ret
 .Exp_text:
-	db "EXP Yield:@"
+	db "Exp Yield:@"
 
 Pokedex_PrintHatchSteps:
 ; wBaseEggSteps
@@ -588,9 +588,9 @@ Pokedex_HeightWeight:
 	hlcoord 3, 15
 	ld de, .Weight
 	call PlaceString
-; lbs string
-	hlcoord 11, 15
-	ld de, .Pounds
+; kgs string
+	hlcoord 14, 15
+	ld de, .Kilos
 	call PlaceString
 
 ; get pokemon's dex entry ptr in b:de
@@ -618,7 +618,7 @@ Pokedex_HeightWeight:
 	ld [wPoisonStepCount + 1], a
 	ld de, wPoisonStepCount
 ; Print the height, with two of the four digits in front of the decimal point
-	hlcoord 7, 14
+	hlcoord 11, 14
 	lb bc, 2, (2 << 4) | 4
 	call PrintNum
 ; get weight
@@ -633,12 +633,12 @@ Pokedex_HeightWeight:
 	ld [wPoisonStepCount + 1], a
 	ld de, wPoisonStepCount
 ; Print the weight, with four of the five digits in front of the decimal point
-	hlcoord 5, 15
+	hlcoord 9, 15
 	lb bc, 2, (4 << 4) | 5
 	call PrintNum
 
-; Replace the decimal point with a ft symbol
-	hlcoord 9, 14
+; Replace the decimal point with a m symbol
+	hlcoord 13, 14
 	ld [hl], $5e
 	inc hl
 	inc hl
@@ -646,8 +646,8 @@ Pokedex_HeightWeight:
 	ld [hl], $5f
 	ret
 .Height:
-	db "HT@" ;   ? ?? @" ; HT  ?'??"
+	db "Height@" ;   ? ?? @" ; HT  ?'??"
 .Weight:
-	db "WT@" ;   ???lb@"
-.Pounds:
-	db "0lbs@"
+	db "Weight@" ;   ???lb@"
+.Kilos:
+	db "0Kg@"

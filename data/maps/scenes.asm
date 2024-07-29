@@ -73,7 +73,7 @@ MapScenes::
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
 	scene_var TEAM_ROCKET_BASE_B3F,                        wTeamRocketBaseB3FSceneID
 	scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, wGoldenrodUndergroundSwitchRoomEntrancesSceneID
-	scene_var MT_SILVER_ROOM_4,                            wMtSilverRoom4MewtwoSceneID
+	scene_var CERULEAN_CAVE_B1F,                           wCeruleanCaveB1FMewtwoSceneID
 	scene_var VICTORY_ROAD_3F,                             wVictoryRoad3FSceneID
 	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
@@ -88,4 +88,8 @@ MapScenes::
 	scene_var SAFFRON_AVICULTURAL_SOCIETY_2F,              wAviculturalSociety2FSceneID
 	scene_var WHIRL_ISLAND_LUGIA_CHAMBER,                  wWhirlIslandLugiaChamberSceneID
 	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
+	scene_var SAFFRON_CITY,                                wSaffronCityDisguisedSceneID
+	scene_var CERULEAN_CITY,                               wCeruleanCityDisguisedSceneID
+	scene_var ROUTE_5,                                     wRoute5DisguisedSceneID
+	scene_var UNDERGROUND_PATH,                            wUndergroundPathSceneID
 	db -1 ; end

@@ -28,7 +28,7 @@ SafariZoneEastTrainerTipsSign:
 	
 SafariZoneEastCooltrainer_fText:
 	text "Trying to find"
-	line "some rare #MON"
+	line "some rare #mon"
 	
 	para "but I keep finding"
 	line "the same 3 over"
@@ -36,19 +36,19 @@ SafariZoneEastCooltrainer_fText:
 	done
 	
 SafariZoneEastAreaSignText:
-	text "SAFARI ZONE"
-	line "EAST AREA"
+	text "Safari Zone"
+	line "East Area"
 	done
 	
 SafariZoneEastRestHouseSignText:
-	text "REST HOUSE"
+	text "Rest House"
 	done
 	
 SafariZoneEastTrainerTipsSignText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Search for rare"
-	line "#MON but beware"
+	line "#mon but beware"
 	cont "of powerful ones."
 	done
 

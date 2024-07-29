@@ -27,7 +27,7 @@ VermilionBerryRaticate:
 	end
 	
 VermilionBerryRaticateText:
-	text "RATICATE: Rati!"
+	text "Raticate: Rati!"
 	done
 	
 VermilionBerryMart_MapEvents:

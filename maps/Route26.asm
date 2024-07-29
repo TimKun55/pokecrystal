@@ -268,6 +268,17 @@ TrainerBirdKeeperJose2:
 	jumpstd PackFullMScript
 	end
 
+TrainerBeautyBrenda:
+	trainer BEAUTY, BRENDA, EVENT_BEAT_BEAUTY_BRENDA, BeautyBrendaSeenText, BeautyBrendaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyBrendaAfterBattleText
+	waitbutton
+	closetext
+	end
+
 TrainerFisherScott:
 	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
 
@@ -318,18 +329,18 @@ Route26Fisher2Text:
 
 	para "You've taken your"
 	line "first step into"
-	cont "KANTO."
+	cont "Kanto."
 
 	para "Check your #-"
-	line "GEAR MAP and see."
+	line "Gear Map and see."
 	done
 
 CooltrainermJakeSeenText:
 	text "I'm making my"
 	line "final preparations"
 
-	para "for the #MON"
-	line "LEAGUE."
+	para "for the #mon"
+	line "League."
 	done
 
 CooltrainermJakeBeatenText:
@@ -339,16 +350,16 @@ CooltrainermJakeBeatenText:
 CooltrainermJakeAfterBattleText:
 	text "It's going to be"
 	line "tough to win at"
-	cont "the LEAGUE."
+	cont "the League."
 
 	para "I need to do some"
 	line "more training."
 
 	para "I hear that the"
-	line "LEAGUE's ELITE"
+	line "League's Elite"
 
-	para "FOUR are tougher"
-	line "than GYM LEADERS."
+	para "Four are tougher"
+	line "than Gym Leaders."
 	done
 
 CooltrainermGaven3SeenText:
@@ -363,13 +374,13 @@ CooltrainermGaven3BeatenText:
 	done
 
 CooltrainermGavenAfterText:
-	text "To get to #MON"
-	line "LEAGUE, you have"
+	text "To get to #mon"
+	line "League, you have"
 
 	para "to get through"
-	line "VICTORY ROAD."
+	line "Victory Road."
 
-	para "But VICTORY ROAD"
+	para "But Victory Road"
 	line "is tough."
 
 	para "Practically nobody"
@@ -393,7 +404,7 @@ CooltrainerfJoyceBeatenText:
 
 CooltrainerfJoyceAfterBattleText:
 	text "I've defeated"
-	line "eight GYM LEADERS,"
+	line "eight Gym Leaders,"
 
 	para "so I was feeling"
 	line "confident."
@@ -412,16 +423,16 @@ BirdKeeperJose2BeatenText:
 	done
 
 BirdKeeperJose2AfterBattleText:
-	text "BIRD KEEPERS like"
+	text "Bird Keepers like"
 	line "me mimic bird"
 
 	para "whistles to com-"
-	line "mand #MON."
+	line "mand #mon."
 	done
 
 PsychicRichardSeenText:
 	text "Wow, look at all"
-	line "those BADGES!"
+	line "those Badges!"
 	cont "I'm impressed."
 
 	para "But you're not"
@@ -436,12 +447,32 @@ PsychicRichardBeatenText:
 	done
 
 PsychicRichardAfterBattleText:
-	text "People and #MON"
+	text "People and #mon"
 	line "grow from their"
 	cont "experiences."
 
 	para "Don't get lazy and"
 	line "complacent."
+	done
+
+BeautyBrendaSeenText:
+	text "On your way to the"
+	line "League, hey?"
+
+	para "Let's see if"
+	line "you're ready!"
+	done
+
+BeautyBrendaBeatenText:
+	text "Ok, ok, you won!"
+	done
+
+BeautyBrendaAfterBattleText:
+	text "After a bit more"
+	line "training, I'm"
+
+	para "going to challenge"
+	line "them, too!"
 	done
 
 FisherScottSeenText:
@@ -450,7 +481,7 @@ FisherScottSeenText:
 
 	para "I feel like I"
 	line "could boot even"
-	cont "the LEAGUE CHAMP!"
+	cont "the League Champ!"
 	done
 
 FisherScottBeatenText:
@@ -462,14 +493,14 @@ FisherScottAfterBattleText:
 	text "Just like in fish-"
 	line "ing, it's all over"
 
-	para "in #MON if you"
+	para "in #mon if you"
 	line "give up."
 	done
 
 BugManiacShaunSeenText:
 	text "You're on your"
 	line "way to the"
-	cont "#MON LEAGUE?"
+	cont "#mon League?"
 
 	para "We should battle"
 	line "as a warm up!"
@@ -485,23 +516,23 @@ BugManiacShaunAfterBattleText:
 
 	para "Maybe I should"
 	line "have a rematch"
-	cont "with BUGSY…?"
+	cont "with Bugsy…?"
 	done
 
 Route26SignText:
-	text "ROUTE 26"
+	text "Route 26"
 
-	para "#MON LEAGUE"
-	line "RECEPTION GATE"
+	para "#mon League"
+	line "Reception Gate"
 	done
 	
 TohjoFallsKantoSignText:
-	text "TOHJO FALLS"
+	text "Tohjo Falls"
 
-	para "THE LINK BETWEEN"
-	line "KANTO AND JOHTO"
+	para "The link between"
+	line "Kanto and Johto"
 	
-	para "NEW BARK TOWN"
+	para "New Bark Town"
 	line "ahead."
 	done
 
@@ -509,7 +540,7 @@ Route26_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  5, VICTORY_ROAD_GATE, 3
+	warp_event  7,  5, VICTORY_ROAD_GATE, 5
 	warp_event 15, 51, ROUTE_26_HEAL_HOUSE, 1
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 	warp_event  4, 89, TOHJO_FALLS, 2
@@ -520,7 +551,7 @@ Route26_MapEvents:
 
 	def_bg_events
 	bg_event  8,  6, BGEVENT_READ, Route26Sign
-	bg_event  6, 90, BGEVENT_READ, TohjoFallsJohtoSign
+	bg_event  6, 90, BGEVENT_READ, TohjoFallsKantoSign
 
 
 	def_object_events
@@ -528,9 +559,9 @@ Route26_MapEvents:
 	object_event 11,  82, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermGaven3, -1
 	object_event  9,  58, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJoyce, -1
 	object_event  5,   8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJose2, -1
-	object_event 12,  72, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
+	object_event 12,  72, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyBrenda, -1
 	object_event  8,  38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
-	object_event  8,  46, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacShaun, -1
+	object_event  7, 45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacShaun, -1
 	object_event 12,  51, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9,  15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event  9,  96, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1

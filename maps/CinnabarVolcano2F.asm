@@ -9,12 +9,12 @@ CinnabarVolcano2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  5, CINNABAR_VOLCANO_1F, 2
-	warp_event 18,  5, CINNABAR_VOLCANO_2F, 5
-	warp_event 29, 23, CINNABAR_VOLCANO_2F, 4
-	warp_event  5, 19, CINNABAR_VOLCANO_2F, 3
-	warp_event 18, 19, CINNABAR_VOLCANO_2F, 2
-	warp_event 29,  3, CINNABAR_GYM, 1
+	warp_event  5, 15, CINNABAR_VOLCANO_1F, 2
+	warp_event  7,  5, CINNABAR_VOLCANO_2F, 5
+	warp_event 31, 25, CINNABAR_VOLCANO_2F, 4
+	warp_event  5, 25, CINNABAR_VOLCANO_2F, 3
+	warp_event 19,  5, CINNABAR_VOLCANO_2F, 2
+	warp_event 31,  5, CINNABAR_GYM, 1
 
 	def_coord_events
 

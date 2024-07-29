@@ -128,78 +128,78 @@ FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
 FuchsiaCityBirdKeeperText:
-	text "One of the ELITE"
-	line "FOUR used to be"
+	text "One of the Elite"
+	line "Four used to be"
 
-	para "the LEADER of"
-	line "FUCHSIA's GYM."
+	para "the Leader of"
+	line "Fuchsia's Gym."
 	done
 
 FuchsiaCityPokefanMText:
-	text "KOGA's daughter"
+	text "Koga's daughter"
 	line "succeeded him as"
 
-	para "the GYM LEADER"
+	para "the Gym Leader"
 	line "after he joined"
-	cont "the ELITE FOUR."
+	cont "the Elite Four."
 	done
 
 FuchsiaCityTeacherText:
-	text "The SAFARI ZONE"
+	text "The Safari Zone"
 	line "has reopened. It's"
 	cont "very good"
 
 	para "considering it's"
-	line "FUCHSIA's main"
+	line "Fuchsia's main"
 	cont "attraction."
 	done
 	
 FuchsiaCityLaprasText:
-	text "LAPRAS: Laaap!"
+	text "Lapras: Laaap!"
 
 FuchsiaCityTaurosText:
-	text "TAUROS: Rosss!"
+	text "Tauros: Rosss!"
 
 FuchsiaCityPinsirText:
-	text "PINSIR: Sirrr!"
+	text "Pinsir: Sirrr!"
 
 FuchsiaCityNidokingText:
-	text "NIDOKING: Kinggg!"
+	text "Nidoking: Kinggg!"
 
 FuchsiaCityNidoqueenText:
-	text "NIDOQUEEN: Qweeen!"
+	text "Nidoqueen: Qweeen!"
 
 FuchsiaCitySignText:
-	text "FUCHSIA CITY"
+	text "Fuchsia City"
 
 	para "Behold! It's"
 	line "Passion Pink!"
 	done
 
 FuchsiaGymSignText:
-	text "FUCHSIA CITY"
-	line "#MON GYM"
-	cont "LEADER: JANINE"
+	text "Fuchsia City"
+	line "#mon Gym"
+	cont "Leader: Janine"
 
 	para "The Poisonous"
 	line "Ninja Master"
 	done
 
 SafariZoneParkSignText:
-	text "SAFARI ZONE PARK"
+	text "Safari Zone Park"
 
 	para "Come and see"
-	line "some rare #MON"
+	line "some rare #mon"
 	cont "free of charge!"
 	done
 
 WardensHomeSignText:
-	text "SAFARI ZONE"
-	line "WARDEN'S HOME"
+	text "Safari Zone"
+	line "Warden's Home"
 	done
 
 SafariZoneSignText:
-	text "SAFARI ZONE"
+	text "Safari Zone"
 	line "Reopened!"
 
 	para "Celebrating the"
@@ -208,24 +208,24 @@ SafariZoneSignText:
 	done
 
 LaprasSignText:
-	text "LAPRAS"
-	line "WATER/ICE"
+	text "Lapras"
+	line "Water/Ice Type"
 	
-	para "Once endangered"
+	para "Once endangered,"
 	line "now thriving."
 	done
 	
 NidokingSignText:
-	text "NIDOKING"
-	line "POISON/GROUND"
+	text "Nidoking"
+	line "Poison/Ground Type"
 	
 	para "Very versatile"
 	line "and powerful."
 	done
 	
 NidoqueenSignText:
-	text "NIDOQUEEN"
-	line "POISON/GROUND"
+	text "Nidoqueen"
+	line "Poison/Ground Type"
 	
 	para "Very versatile"
 	line "and powerful."
@@ -233,16 +233,16 @@ NidoqueenSignText:
 	done
 	
 PinsirSignText:
-	text "PINSIR"
-	line "BUG"
+	text "Pinsir"
+	line "Bug Type"
 	
 	para "Crushes with its"
 	line "vice-like pincers."
 	done
 	
 TaurosSignText:
-	text "TAUROS"
-	line "NORMAL"
+	text "Tauros"
+	line "Normal Type"
 	
 	para "Takes aim, charges"
 	line "quickly and gores"
@@ -263,6 +263,7 @@ FuchsiaCity_MapEvents:
 	warp_event 37, 21, ROUTE_15_FUCHSIA_GATE, 2
 	warp_event  7, 33, ROUTE_19_FUCHSIA_GATE, 1
 	warp_event  8, 33, ROUTE_19_FUCHSIA_GATE, 2
+	warp_event  9, 19, FUCHSIA_CINNABAR_HOUSE_1, 1
 
 	def_coord_events
 

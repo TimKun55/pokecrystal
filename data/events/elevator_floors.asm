@@ -34,4 +34,4 @@ ElevatorFloorNames:
 ._9F:  db "9F@"
 ._10F: db "10F@"
 ._11F: db "11F@"
-.ROOF: db "ROOF@"
+.ROOF: db "Roof@"

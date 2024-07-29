@@ -58,16 +58,16 @@ PewterCityFruitTree2:
 
 PewterCityCooltrainerFText:
 	text "Have you visited"
-	line "PEWTER GYM?"
+	line "Pewter Gym?"
 
-	para "The LEADER uses"
-	line "rock-type #MON."
+	para "The Leader uses"
+	line "rock-type #mon."
 	done
 
 PewterCityBugCatcherText:
-	text "At night, CLEFAIRY"
+	text "At night, Clefairy"
 	line "come out to play"
-	cont "at MT.MOON."
+	cont "at Mt.Moon."
 
 	para "But not every"
 	line "night."
@@ -76,38 +76,38 @@ PewterCityBugCatcherText:
 PewterCityGrampsText:
 	text "Ah, you came all"
 	line "the way out here"
-	cont "from JOHTO?"
+	cont "from Johto?"
 
 	para "Did you come via"
-	line "the MAGNET TRAIN,"
+	line "the Magnet Train,"
 
-	para "the S.S.AQUA or"
-	line "from ROUTE 22?"
+	para "the S.S.Aqua or"
+	line "from Route 22?"
 
 	para "It's amazing how"
 	line "connected we are!"
 	done
 
 PewterCitySignText:
-	text "PEWTER CITY"
+	text "Pewter City"
 	line "A Stone Gray City"
 	done
 
 PewterGymSignText:
-	text "PEWTER CITY"
-	line "#MON GYM"
-	cont "LEADER: BROCK"
+	text "Pewter City"
+	line "#mon Gym"
+	cont "Leader: Brock"
 
 	para "The Rock Solid"
-	line "#MON Trainer"
+	line "#mon Trainer"
 	done
 
 PewterMuseumSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "PEWTER MUSEUM OF"
-	line "SCIENCE is closed"
+	para "Pewter Museum Of"
+	line "Science is closed"
 	cont "for renovations…"
 	done
 
@@ -115,13 +115,13 @@ PewterCityMtMoonGiftShopSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "MT.MOON GIFT SHOP"
-	line "NOW OPEN!"
+	para "Mt.Moon Gift Shop"
+	line "Now open!"
 	done
 
 PewterCityWelcomeSignText:
-	text "WELCOME TO"
-	line "PEWTER CITY!"
+	text "Welcome to"
+	line "Pewter City!"
 	done
 
 PewterCity_MapEvents:
@@ -149,5 +149,5 @@ PewterCity_MapEvents:
 	object_event 12,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
 	object_event 15, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterCityBugCatcherScript, -1
 	object_event 28, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
-	object_event 27, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
-	object_event 24, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
+	object_event 26, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
+	object_event 24, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
