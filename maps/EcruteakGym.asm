@@ -145,7 +145,7 @@ EcruteakGymClosed:
 	special FadeOutToWhite
 	playsound SFX_ENTER_DOOR
 	waitsfx
-	warp ECRUTEAK_CITY, 6, 27
+	warp ECRUTEAK_CITY, 6, 40
 	end
 
 TrainerSageJeffrey:

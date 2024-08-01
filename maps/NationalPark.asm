@@ -400,14 +400,14 @@ NationalParkPersianText:
 	done
 
 NationalParkGameboyKidText:
-	text "I'm printing out"
+	text "I'm studying"
 	line "my #dex."
 
-	para "You can also print"
-	line "out stuff like"
-
-	para "Mail and your PC"
-	line "Boxes."
+	para "It has so much"
+	line "useful info!"
+	
+	para "Are you using"
+	line "yours?"
 	done
 
 SchoolboyJack1SeenText:
@@ -555,7 +555,7 @@ NationalParkTrainerTipsText:
 	line "Bakery for items"
 	
 	para "to power up your"
-	cont "#mon in battle."
+	line "#mon in battle."
 	done
 
 NationalPark_MapEvents:
@@ -587,7 +587,7 @@ NationalPark_MapEvents:
 	object_event 20, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 18,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event 10, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
-	object_event  8, 22, SPRITE_LADY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, NationalParkLadyMia, -1
+	object_event  8, 22, SPRITE_LADY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, NationalParkLadyMia, -1
 	object_event 37, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 28,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  3, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG

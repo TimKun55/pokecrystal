@@ -431,15 +431,6 @@ ChooseMoveToLearn:
 	ld [hl], a
 	ret
 
-; This adds a text box border line to the description
-; box that replaces a leftover piece of the notch
-; that remains when the cancel option is highlighted.
-.cancel_border_fix
-	hlcoord 0, 10
-	ld [hl], "│"
-	inc hl
-	ret
-
 ; This begins the printing of all of the move's details,
 ; including the border around the description.
 .print_move_details
@@ -448,13 +439,6 @@ ChooseMoveToLearn:
 	hlcoord 0, 11
 	lb bc, 5, 18
 	call TextboxBorder
-
-	; This code will relative jump to the
-	; ".cancel_border_fix" local jump if
-	; the cancel entry is highlighted.
-	ld a, [wMenuSelection]
-	cp -1
-	jr z, .cancel_border_fix
 ; This code falls through into the ".print_move_desc" local jump.
 
 ; This prints the moves description.

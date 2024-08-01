@@ -179,7 +179,7 @@ ItemNames::
 	li "Park Ball"
 	li "Rainbow Wing"
 	li "PancakeStack"
-	li "Brick Piece"
+	li "Quick Claw"
 	li "Surf Mail"
 	li "LiteBlueMail"
 	li "PortraitMail"
@@ -189,7 +189,7 @@ ItemNames::
 	li "Bluesky Mail"
 	li "Music Mail"
 	li "Mirage Mail"
-	li "Quick Claw"
+	li "TERU-SAMA"
 	li "TERU-SAMA"
 	assert_list_length NUM_ITEMS
 	li "TM01"

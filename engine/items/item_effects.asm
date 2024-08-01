@@ -206,6 +206,7 @@ ItemEffects:
 ;	MUSIC_MAIL
 ;	MIRAGE_MAIL
 ;	ITEM_BE
+;   ITEM_BF
 ; They all have the ITEMMENU_NOUSE attribute so they can't be used anyway.
 ; NoEffect would be appropriate, with the table then being NUM_ITEMS long.
 

@@ -253,9 +253,9 @@ BattleTurn:
 	jr nz, .quit
 .skip_iteration
 	call ParsePlayerAction
-	push af
-	call ClearSprites
-	pop af
+;	push af
+;	call ClearSprites
+;	pop af
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
@@ -5049,6 +5049,7 @@ BattleMenu:
 	call UpdateBattleHuds
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
+	call GetWeatherImage
 .ok
 
 .loop
@@ -5069,6 +5070,9 @@ BattleMenu:
 	ret c
 
 .next
+	push hl
+	call ClearSprites
+	pop hl
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, [wBattleMenuCursorPosition]
@@ -5530,23 +5534,37 @@ MoveSelectionScreen:
 	ld c, 14
 .got_dims
 	call Textbox
+	
+; removes vertical line in move selection box in battle
+	ld a, " "
+	hlcoord 4, 13
+	ld [hl], a
+	hlcoord 4, 14
+	ld [hl], a
+	hlcoord 4, 15
+	ld [hl], a
+	hlcoord 4, 16
+	ld [hl], a
+	ld a, "─"
+	hlcoord 4, 17
+	ld [hl], a
 
-	hlcoord 6, 17 - NUM_MOVES
+	hlcoord 7, 17 - NUM_MOVES
 	ld a, [wMoveSelectionMenuType]
 	cp $2
 	jr nz, .got_start_coord
-	hlcoord 6, 17 - NUM_MOVES - 4
+	hlcoord 7, 17 - NUM_MOVES - 4
 .got_start_coord
 	ld a, SCREEN_WIDTH
 	ld [wListMovesLineSpacing], a
 	predef ListMoves
 
-	ld b, 5
+	ld b, 6
 	ld a, [wMoveSelectionMenuType]
 	cp $2
 	ld a, 17 - NUM_MOVES
 	jr nz, .got_default_coord
-	ld b, 5
+	ld b, 6
 	ld a, 17 - NUM_MOVES - 4
 
 .got_default_coord
@@ -5603,11 +5621,11 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
-	call GetWeatherImage
+;	call GetWeatherImage
 	ld a, [wSwappingMove]
 	and a
 	jr z, .interpret_joypad
-	hlcoord 5, 13
+	hlcoord 6, 13
 	ld bc, SCREEN_WIDTH
 	dec a
 	call AddNTimes
@@ -5690,11 +5708,11 @@ MoveSelectionScreen:
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
 .place_textbox_start_over
-	push hl
-	call ClearSprites
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	pop hl
+;	push hl
+;	call ClearSprites
+;	ld b, SCGB_BATTLE_COLORS
+;	call GetSGBLayout
+;	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
 	jp MoveSelectionScreen
@@ -5811,8 +5829,8 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 7 ; upper right corner of the textbox
-	ld b, 4 ; Box height
+	hlcoord 0, 8 ; upper right corner of the textbox
+	ld b, 3 ; Box height
 	ld c, 7 ; Box length
 	call Textbox
 	call MobileTextBorder
@@ -5879,7 +5897,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $55 
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
-	hlcoord 4, 11 ; placing the Type Tiles in  the MoveInfoBox
+	hlcoord 1, 15 ; placing the Type Tiles in  the MoveInfoBox
 	ld [hl], $55
 	inc hl
 	ld [hl], $56
@@ -5902,17 +5920,17 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 1, 11 ; placing the Category Tiles in the MoveInfoBox
+	hlcoord 2, 16 ; placing the Category Tiles in the MoveInfoBox
 	ld [hl], $59
 	inc hl
 	ld [hl], $5a
 
 ; print move BP (Base Power)
 	ld de, .power_string ; "BP"
-	hlcoord 1, 8
+	hlcoord 1, 9
 	call PlaceString
 
-	hlcoord 5, 8
+	hlcoord 5, 9
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr nz, .haspower
@@ -5927,33 +5945,42 @@ MoveInfoBox:
 	
 ; print move ACC
 .print_acc
-	hlcoord 1, 9
-	ld de, .accuracy_string ; "ACC"
+	hlcoord 1, 10
+	ld de, .accuracy_string ; "Acc"
 	call PlaceString
-;	hlcoord 7, 9
-;	ld [hl], "<%>"
-	hlcoord 5, 9
+	hlcoord 4, 10
+	ld [hl], "<%>"
+	hlcoord 5, 10
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
-; convert from hex to decimal
-; this is the same code used in function "Adjust_Percent" in engine\pokemon\mon_stats.asm
-	ldh [hMultiplicand], a
-	ld a, 100
-	ldh [hMultiplier], a
-	call Multiply
-	; Divide hDividend length b (max 4 bytes) by hDivisor. Result in hQuotient.
-	ld b, 2
-	ld a, 255
-	ldh [hDivisor], a
-	call Divide
-	ldh a, [hQuotient + 3]
-	cp 100
-	jr z, .print_num
-	inc a
-.print_num
+	call Adjust_Percent_Battle
+.print_num_acc
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
+	
+; Effect Chance
+	hlcoord 1, 11
+	ld de, .EffectChance
+	call PlaceString
+	hlcoord 4, 11
+	ld [hl], "<%>"
+	hlcoord 5, 11
+	ld a, [wPlayerMoveStruct + MOVE_CHANCE]
+	call Adjust_Percent_Battle
+	and a
+	jr nz, .print_effect_chance
+	; print the "---"
+	ld de, .nopower_string ; "---"
+	call PlaceString
+	jr .effect_chance_done
+.print_effect_chance
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
+	call PrintNum
+.effect_chance_done
+; set battle CGB layout	
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 .done
@@ -5963,7 +5990,7 @@ MoveInfoBox:
 	db "No use!@"
 
 .PrintPP:
-	hlcoord 3, 10
+	hlcoord 3, 13
 	push hl
 	ld de, wStringBuffer1
 	lb bc, 1, 2
@@ -5971,12 +5998,13 @@ MoveInfoBox:
 	pop hl
 	inc hl
 	inc hl
+	hlcoord 2, 14
 	ld [hl], "/"
 	inc hl
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 1, 10
+	hlcoord 1, 13
 	ld a, "P"
 	ld [hli], a
 	ld [hl], a
@@ -5987,6 +6015,22 @@ MoveInfoBox:
 	db "---@"
 .accuracy_string:
 	db "Acc@"
+.EffectChance:
+	db "Eff@"
+
+Adjust_Percent_Battle:
+	ldh [hMultiplicand + 2], a
+	xor a
+	ldh [hMultiplicand + 1], a
+	ldh [hMultiplicand], a
+	ld a, 100
+	ldh [hMultiplier], a ; 1 byte only
+	call Multiply
+	ldh a, [hProduct + 2]
+    and a ; check if our result is zero
+    ret z ; if zero, done
+    inc a ; else, add one
+    ret
 
 CheckPlayerHasUsableMoves:
 	ld a, STRUGGLE

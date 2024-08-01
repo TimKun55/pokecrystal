@@ -184,8 +184,12 @@ _CGB_FinishBattleScreenLayout:
 	jr nz, .done
 
 	; Move Type and Category pal
-	hlcoord 1, 11, wAttrmap
-	ld bc, 7
+	hlcoord 1, 16, wAttrmap
+	ld bc, 3
+	ld a, $5
+	call ByteFill
+	hlcoord 1, 15, wAttrmap
+	ld bc, 4
 	ld a, $5
 	call ByteFill
 

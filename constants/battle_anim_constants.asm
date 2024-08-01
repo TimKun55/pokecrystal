@@ -124,7 +124,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HAZE                ; 5b
 	const BATTLE_ANIM_OBJ_MIST                ; 5c
 	const BATTLE_ANIM_OBJ_SMOG                ; 5d
-	const BATTLE_ANIM_OBJ_POISON_GAS          ; 5e
+	const BATTLE_ANIM_OBJ_STUN_SPORE          ; 5e
 	const BATTLE_ANIM_OBJ_HORN                ; 5f
 	const BATTLE_ANIM_OBJ_NEEDLE              ; 60
 	const BATTLE_ANIM_OBJ_PETAL_DANCE         ; 61
@@ -142,7 +142,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_SHINY               ; 6d
 	const BATTLE_ANIM_OBJ_SKY_ATTACK          ; 6e
 	const BATTLE_ANIM_OBJ_LICK                ; 6f
-	const BATTLE_ANIM_OBJ_WITHDRAW            ; 70
+	const BATTLE_ANIM_OBJ_POISON_POWDER       ; 70
 	const BATTLE_ANIM_OBJ_DRAIN               ; 71
 	const BATTLE_ANIM_OBJ_GROWTH              ; 72
 	const BATTLE_ANIM_OBJ_CONVERSION2         ; 73

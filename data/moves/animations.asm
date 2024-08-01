@@ -1480,9 +1480,29 @@ BattleAnim_Sing:
 	anim_ret
 
 BattleAnim_Poisonpowder:
+	anim_1gfx BATTLE_ANIM_GFX_POWDER
+.loop
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_POISON_POWDER, 104, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_POISON_POWDER, 136, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_POISON_POWDER, 112, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_POISON_POWDER, 128, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_POISON_POWDER, 120, 16, $0
+	anim_wait 4
+	anim_loop 2, .loop
+	anim_wait 96
+	anim_ret
+
 BattleAnim_SleepPowder:
 BattleAnim_Spore:
-BattleAnim_StunSpore:
 	anim_1gfx BATTLE_ANIM_GFX_POWDER
 .loop
 	anim_sound 0, 1, SFX_POWDER
@@ -1499,6 +1519,28 @@ BattleAnim_StunSpore:
 	anim_wait 4
 	anim_sound 0, 1, SFX_POWDER
 	anim_obj BATTLE_ANIM_OBJ_POWDER, 120, 16, $0
+	anim_wait 4
+	anim_loop 2, .loop
+	anim_wait 96
+	anim_ret
+
+BattleAnim_StunSpore:
+	anim_1gfx BATTLE_ANIM_GFX_POWDER
+.loop
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_STUN_SPORE, 104, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_STUN_SPORE, 136, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_STUN_SPORE, 112, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_STUN_SPORE, 128, 16, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POWDER
+	anim_obj BATTLE_ANIM_OBJ_STUN_SPORE, 120, 16, $0
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 96
@@ -2328,6 +2370,7 @@ BattleAnim_IronBash:
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
 	anim_wait 16
 	anim_call BattleAnim_ShowMon_0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_HornAttack:
@@ -3338,7 +3381,7 @@ BattleAnim_DragonPulse:
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $30, $4, $10
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
-	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_sound 6, 2, SFX_EMBER
 .loop
 	anim_obj BATTLE_ANIM_OBJ_DRAGONBREATH, 64, 92, $4
 	anim_wait 4

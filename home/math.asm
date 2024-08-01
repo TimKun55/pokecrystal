@@ -25,7 +25,7 @@ SimpleDivide::
 	ret
 
 Multiply::
-; Multiply hMultiplicand (3 bytes) by hMultiplier. Result in hProduct.
+; Multiply hMultiplicand (3 bytes) by hMultiplier (1 byte) Result in hProduct (4 bytes).
 ; All values are big endian.
 	push hl
 	push bc
@@ -47,3 +47,34 @@ Divide::
 	pop de
 	pop hl
 	ret
+
+Adjust_percent::
+; in: a: value (x/256)
+; out: a: value (x/100)
+	; Multiply hMultiplicand (3 bytes) by hMultiplier (1 byte) Result in hProduct (4 bytes).
+	; All values are big endian.
+; cross multiply by 100, then divide by 256	
+	
+	; hMultiplicand (3 bytes) is big endian, so least significant goes to the right	
+	ldh [hMultiplicand + 2], a ; 3rd byte of hMultiplicand
+	; our value is out of 256 (but still only a max of 255 so 1 byte)
+	; so we are always only going to need the 3rd byte of hMultiplicand 
+	
+	; zero out the other two bytes
+	xor a
+	ldh [hMultiplicand + 1], a
+	ldh [hMultiplicand], a
+	
+	ld a, 100
+	ldh [hMultiplier], a ; 1 byte only
+	call Multiply
+
+	; since we know 255 is the max possible value, that means our Product will NEVER exceed 2-bytes
+	; because we are cross multiplying and now need to divide by 256
+	ldh a, [hProduct + 2] ; high byte of the 2-byte Product of the cross multiplication, low byte is hProduct + 3
+	; hProduct + 0 and hProduct + 1 will never have anything but zero since we'll never exceed a 2-byte Product
+	
+    and a ; check if our result is zero
+    ret z ; if zero, done
+    inc a ; else, add one
+    ret

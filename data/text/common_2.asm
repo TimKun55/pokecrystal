@@ -658,7 +658,7 @@ _OakThisIsntTheTimeText::
 
 _YouDontHaveAMonText::
 	text "You don't have a"
-	line "#MON!"
+	line "#mon!"
 	prompt
 
 _RegisteredItemText::
@@ -891,12 +891,6 @@ _AnimationTypeText:: ; unreferenced
 	text_ram wStringBuffer2
 	text_end
 
-	text_end ; unreferenced
-
-_MonNumberText:: ; unreferenced
-	text "#MON number?"
-	done
-
 _WasSentToBillsPCText::
 	text_ram wStringBuffer1
 	text " was"
@@ -942,7 +936,7 @@ _ContestCaughtMonText::
 	prompt
 
 _ContestAskSwitchText::
-	text "Switch #MON?"
+	text "Switch #mon?"
 	done
 
 _ContestAlreadyCaughtText::
@@ -1146,7 +1140,7 @@ _PokecenterBillsPCText::
 	text "Bill's PC"
 	line "accessed."
 
-	para "#MON Storage"
+	para "#mon Storage"
 	line "System opened."
 	prompt
 
