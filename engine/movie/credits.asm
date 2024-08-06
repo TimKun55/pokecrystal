@@ -77,7 +77,7 @@ Credits::
 	call SetDefaultBGPAndOBP
 	ldh a, [hVBlank]
 	push af
-	ld a, VBLANK_CREDITS
+	ld a, $5
 	ldh [hVBlank], a
 	ldh a, [hInMenu]
 	push af	

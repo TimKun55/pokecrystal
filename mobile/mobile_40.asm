@@ -98,7 +98,6 @@ DisableMobile:
 	xor a
 	ldh [hMobileReceive], a
 	ldh [hMobile], a
-	assert VBLANK_NORMAL == 0
 	xor a
 	ldh [hVBlank], a
 	call NormalSpeed
@@ -1383,7 +1382,7 @@ Function1008e0:
 	push bc
 	xor a
 	ldh [hBGMapMode], a
-	ld a, VBLANK_CUTSCENE_CGB
+	ld a, $03
 	ldh [hVBlank], a
 	call Function100970
 	call Function100902
@@ -2449,8 +2448,9 @@ Unknown_10102c:
 Function101050:
 	call Function10107d
 	ld a, [wOTPartyCount]
+rept 2 ; ???
 	ld hl, wc608
-	ld hl, wc608 ; redundant
+endr
 	ld bc, wc7bb - wc608
 	call Function1010de
 	ld hl, wc7bb

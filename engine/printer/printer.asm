@@ -71,7 +71,7 @@ PrintDexEntry:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_SERIAL
+	ld [hl], 4 ; vblank mode that calls AskSerial
 
 	ld a, 8 ; 16 rows
 	ld [wPrinterQueueLength], a
@@ -139,7 +139,7 @@ PrintUnownStamp:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_SERIAL
+	ld [hl], 4 ; vblank mode that calls AskSerial
 
 	xor a
 	ldh [hBGMapMode], a
@@ -214,7 +214,7 @@ PrintMail:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_SERIAL
+	ld [hl], 4 ; vblank mode that calls AskSerial
 
 	ld a, 18 / 2
 	ld [wPrinterQueueLength], a
@@ -257,7 +257,7 @@ PrintPartymon:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_SERIAL
+	ld [hl], 4 ; vblank mode that calls AskSerial
 
 	ld a, 16 / 2
 	ld [wPrinterQueueLength], a
@@ -315,7 +315,7 @@ _PrintDiploma:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_SERIAL
+	ld [hl], 4 ; vblank mode that calls AskSerial
 
 	ln a, 1, 0 ; to be loaded to wPrinterMargins
 	call Printer_PrepareTilemapForPrint
