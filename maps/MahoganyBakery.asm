@@ -217,7 +217,7 @@ BakeryPoffinsFromBerryText:
 
 BakeryAskYouHaveABerryText:
 	text "Do you have any"
-	line "BERRYS for me?"
+	line "Berries for me?"
 
 	para "Good! I'll make"
 	line "some Poffins!"

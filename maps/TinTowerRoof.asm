@@ -86,15 +86,6 @@ TinTowerHoOh:
 	disappear TINTOWERROOF_HO_OH
 	reloadmapafterbattle
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
-	opentext
-	writetext TinTowerRoofSomethingHereText
-	waitbutton
-	giveitem SACRED_ASH
-	writetext TinTowerRoofSacredAshText
-	playsound SFX_ITEM
-	waitsfx
-	waitbutton
-	closetext
 	end
 
 RainbowWingGlimmerText:
@@ -110,18 +101,6 @@ TowerShookText:
 	
 	para "Did something"
 	line "land on it?"
-	done
-
-TinTowerRoofSomethingHereText:
-	text "Oh?"
-	
-	para "There's something"
-	line "on the ground…"
-	done
-
-TinTowerRoofSacredAshText:
-	text "<PLAYER> gathered"
-	line "up the Sacred Ash."
 	done
 
 HoOhText:

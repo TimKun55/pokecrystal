@@ -5897,7 +5897,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $55 
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
-	hlcoord 1, 15 ; placing the Type Tiles in  the MoveInfoBox
+	hlcoord 1, 13 ; placing the Type Tiles in  the MoveInfoBox
 	ld [hl], $55
 	inc hl
 	ld [hl], $56
@@ -5920,7 +5920,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 2, 16 ; placing the Category Tiles in the MoveInfoBox
+	hlcoord 2, 14 ; placing the Category Tiles in the MoveInfoBox
 	ld [hl], $59
 	inc hl
 	ld [hl], $5a
@@ -5990,21 +5990,19 @@ MoveInfoBox:
 	db "No use!@"
 
 .PrintPP:
-	hlcoord 3, 13
-	push hl
+	hlcoord 3, 15
+	ld [hl], " "
 	ld de, wStringBuffer1
 	lb bc, 1, 2
 	call PrintNum
-	pop hl
-	inc hl
-	inc hl
-	hlcoord 2, 14
+	hlcoord 2, 16
 	ld [hl], "/"
 	inc hl
+	ld [hl], " "
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 1, 13
+	hlcoord 1, 15
 	ld a, "P"
 	ld [hli], a
 	ld [hl], a
@@ -6304,15 +6302,25 @@ LoadEnemyMon:
 ; In a wild battle, we pull from the item slots in BaseData
 
 ; Force Item1
-; Used for Ho-Oh, Lugia and Snorlax encounters
+; Used for Ho-Oh, Kanto Legendaries, Celebi and Snorlax encounters
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCEITEM
+	jr z, .UseItem1
+	cp BATTLETYPE_HO_OH
+	jr z, .UseItem1
+	cp BATTLETYPE_CELEBI
+	jr z, .UseItem1
+	cp BATTLETYPE_KANTO_LEGEND
+	jr nz, .NoGuaranteedItem
+.UseItem1
 	ld a, [wBaseItem1]
-	jr z, .UpdateItem
+	jr .UpdateItem
 
+.NoGuaranteedItem
 ; Failing that, it's all up to chance
 ;  Effective chances:
 ;    55% None, 36% Item1, 9% Item2
+
 ; 45% chance of getting an item
 	call BattleRandom
 	cp 55 percent + 1
@@ -6321,7 +6329,7 @@ LoadEnemyMon:
 
 ; From there, a 20% chance for Item2
 	call BattleRandom
-	cp 20 percent ; 20% of 45% = 9% Item2
+	cp 20 percent + 1 ; 20% of 45% = 9% Item2
 	ld a, [wBaseItem1]
 	jr nc, .UpdateItem
 	ld a, [wBaseItem2]
@@ -7066,7 +7074,8 @@ ApplyStatLevelMultiplier:
 	pop bc
 	ret
 
-INCLUDE "data/battle/stat_multipliers_2.asm"
+StatLevelMultipliers_Applied:
+INCLUDE "data/battle/stat_multipliers.asm"
 
 _LoadBattleFontsHPBar:
 	callfar LoadBattleFontsHPBar

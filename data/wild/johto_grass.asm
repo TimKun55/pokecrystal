@@ -1243,7 +1243,7 @@ JohtoGrassWildMons:
 	db  8, GENGAR,        69,  72
 	end_grass_wildmons
 
-	def_grass_wildmons MT_SILVER_ROOM_3
+	def_grass_wildmons MT_SILVER_PEAK
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max

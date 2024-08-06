@@ -1,8 +1,8 @@
 	object_const_def
-	const MTSILVERROOM3_RED
-	const MTSILVERROOM3_PIKACHU
+	const MTSILVERPEAK_RED
+	const MTSILVERPEAK_PIKACHU
 
-MtSilverRoom3_MapScripts:
+MtSilverPeak_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -26,8 +26,8 @@ Red:
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	disappear MTSILVERROOM3_RED
-	disappear MTSILVERROOM3_PIKACHU
+	disappear MTSILVERPEAK_RED
+	disappear MTSILVERPEAK_PIKACHU
 	pause 15
 	special FadeInFromBlack
 	pause 30
@@ -36,7 +36,7 @@ Red:
 	credits
 	end
 	
-MtSilverRoom3Pikachu:
+MtSilverPeakPikachu:
 	opentext
 	writetext PikachuText
 	cry PIKACHU
@@ -66,16 +66,16 @@ PikachuText:
 	text "Pikachu: Piii!!"
 	done
 
-MtSilverRoom3_MapEvents:
+MtSilverPeak_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 33, MT_SILVER_ROOM_2, 2
+	warp_event  9, 27, MT_SILVER_ROOM_2, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  9, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
-	object_event 10, 10, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverRoom3Pikachu, EVENT_RED_IN_MT_SILVER
+	object_event  9,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
+	object_event 10,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverPeakPikachu, EVENT_RED_IN_MT_SILVER

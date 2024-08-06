@@ -170,7 +170,7 @@ JasmineCianwoodPharmacyText:
 	para "…I understand"
 	line "that there is a"
 
-	para "wonderful Pharmaphy"
+	para "wonderful Pharmacy"
 	line "in Cianwood…"
 
 	para "But that's across"
@@ -226,7 +226,7 @@ JasmineThankYouText:
 	line "very much."
 
 	para "…I will return to"
-	line "the GYM…"
+	line "the Gym…"
 	done
 
 JasmineISeeText:

@@ -1294,7 +1294,7 @@ PlaceMoveData:
 	ld hl, vTiles2 tile $59 ; category icon tile slot in VRAM, destination
 	lb bc, BANK(CategoryIconGFX), 2
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 7, 13
+	hlcoord 16, 12
 	ld a, $59 ; category icon tile 1
 	ld [hli], a
 	ld [hl], $5a ; category icon tile 2
@@ -1314,7 +1314,7 @@ PlaceMoveData:
 	ld hl, vTiles2 tile $5b ; $5b is destination Tile for first Type Tile
 	lb bc, BANK(TypeIconGFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
 	call Request1bpp
-	hlcoord 2, 13
+	hlcoord 11, 12
 	ld a, $5b ; first Type Tile
 	ld [hli], a
 	inc a ; Tile $5c
@@ -1324,10 +1324,10 @@ PlaceMoveData:
 	ld [hl], $5e ; final Type Tile
 
 ; Place Move Accuracy
-	hlcoord 10, 12
+	hlcoord 2, 13
 	ld de, String_MoveAcc ; string for "Acc"
 	call PlaceString
-	hlcoord 18, 12
+	hlcoord 9, 13
 	ld [hl], "<%>"
 
 	; getting the actual Move's accuracy
@@ -1339,7 +1339,7 @@ PlaceMoveData:
 	ld a, BANK(Moves)
 	call GetFarByte
 	call Adjust_percent ; outputs accuracy in decimal instead of hex to print appropiatley
-	hlcoord 15, 12
+	hlcoord 6, 13
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
@@ -1363,7 +1363,7 @@ PlaceMoveData:
 	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
 	call PrintNum
 
-	hlcoord 10, 13
+	hlcoord 11, 13
 	ld de, String_MoveChance ; string for "Eff"
 	call PlaceString
 	hlcoord 18, 13

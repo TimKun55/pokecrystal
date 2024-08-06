@@ -107,6 +107,8 @@ _CGB_BattleColors:
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER_HP
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
+;	ld hl, BallHUDPalette
+;	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
 	ld de, wOBPals1
 	pop hl
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
@@ -137,6 +139,9 @@ _CGB_FinishBattleScreenLayout:
 	lb bc, 4, 10
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
+;	hlcoord 1, 1, wAttrmap
+;	ld a, PAL_BATTLE_BG_5
+;	ld [hl], a
 	hlcoord 10, 7, wAttrmap
 	lb bc, 5, 10
 	ld a, PAL_BATTLE_BG_PLAYER_HP
@@ -184,11 +189,11 @@ _CGB_FinishBattleScreenLayout:
 	jr nz, .done
 
 	; Move Type and Category pal
-	hlcoord 1, 16, wAttrmap
+	hlcoord 1, 14, wAttrmap
 	ld bc, 3
 	ld a, $5
 	call ByteFill
-	hlcoord 1, 15, wAttrmap
+	hlcoord 1, 13, wAttrmap
 	ld bc, 4
 	ld a, $5
 	call ByteFill
@@ -1257,7 +1262,7 @@ _CGB_MoveList:
 	call LoadCPaletteBytesFromHLIntoDE
 
 ; Type and Category tiles
-	hlcoord 2, 13, wAttrmap
+	hlcoord 11, 12, wAttrmap
 	ld bc, 8 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
 	ld a, $2 ; Palette 2
 	call ByteFill

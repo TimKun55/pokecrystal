@@ -191,3 +191,13 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; be
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; bf
 	tilecoll CUT_TREE, FLOOR, WALL, FLOOR ; c0
+	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, WALL, WALL ; c2
+	tilecoll FLOOR, FLOOR, WALL, WALL ; c3
+	tilecoll WALL, WALL, WALL, WALL ; c4
+	tilecoll WALL, WALL, WALL, WALL ; c5
+	tilecoll WALL, WALL, WALL, DOOR ; c6
+	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; c8
+	tilecoll HEADBUTT_TREE, PUDDLE, PUDDLE, PUDDLE ; c9
+	tilecoll PUDDLE, PUDDLE, PUDDLE, HEADBUTT_TREE ; ca

@@ -21,6 +21,10 @@ Route39Miltank:
 	writetext Route39MiltankText
 	cry MILTANK
 	waitbutton
+	refreshscreen
+	pokepic MILTANK
+	waitbutton
+	closepokepic
 	closetext
 	end
 

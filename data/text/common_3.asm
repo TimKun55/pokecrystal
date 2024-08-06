@@ -741,7 +741,7 @@ _MartBoughtText::
 	text " for"
 	line "@"
 	text_ram wStringBuffer2
-	text "(S)."
+	text "(s)."
 	done
 
 _SlotsBetHowManyCoinsText::

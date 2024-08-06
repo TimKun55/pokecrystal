@@ -305,18 +305,19 @@ BattleAnim_SweetScent2:
 BattleAnim_ThrowPokeBall:
 	anim_if_param_equal NO_ITEM, .TheTrainerBlockedTheBall
 	anim_if_param_equal MASTER_BALL, .MasterBall
-	anim_if_param_equal ULTRA_BALL, .UltraBall
-	anim_if_param_equal GREAT_BALL, .GreatBall
 	; any other ball
-	anim_2gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_SMOKE
+	anim_4gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_POKE_BALL_BG, BATTLE_ANIM_GFX_SMOKE, BATTLE_ANIM_GFX_OBJECTS
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 68, 92, $40
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 68, 92, $30
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL_BG, 68, 92, $30
 	anim_wait 36
 	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
+	anim_setobj $3, $7
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL_BG, 136, 65, $0
+	anim_setobj $4, $7
 	anim_wait 16
 	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 64, $10
+	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 60, $10
 	anim_wait 16
 	anim_jump .Shake
 
@@ -329,60 +330,35 @@ BattleAnim_ThrowPokeBall:
 	anim_wait 32
 	anim_ret
 
-.UltraBall:
-	anim_2gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_SMOKE
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 68, 92, $40
-	anim_wait 36
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
-	anim_wait 16
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 64, $10
-	anim_wait 16
-	anim_jump .Shake
-
-.GreatBall:
-	anim_2gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_SMOKE
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 68, 92, $40
-	anim_wait 36
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
-	anim_wait 16
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 64, $10
-	anim_wait 16
-	anim_jump .Shake
-
 .MasterBall:
-	anim_3gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_SMOKE, BATTLE_ANIM_GFX_SPEED
+	anim_5gfx BATTLE_ANIM_GFX_POKE_BALL, BATTLE_ANIM_GFX_POKE_BALL_BG, BATTLE_ANIM_GFX_SMOKE, BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_OBJECTS
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 64, 92, $20
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 68, 92, $30
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL_BG, 68, 92, $30
 	anim_wait 36
 	anim_obj BATTLE_ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
+	anim_setobj $3, $7
+	anim_obj BATTLE_ANIM_OBJ_POKE_BALL_BG, 136, 65, $0
+	anim_setobj $4, $7
 	anim_wait 16
 	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 64, $10
+	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 60, $10
 	anim_wait 24
 	anim_sound 0, 1, SFX_MASTER_BALL
-	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $30
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $31
-	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $32
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $33
-	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $34
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $35
-	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $36
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 136, 56, $37
 	anim_wait 64
 .Shake:
 	anim_bgeffect BATTLE_BG_EFFECT_RETURN_MON, $0, BG_EFFECT_TARGET, $0
 	anim_wait 8
-	anim_incobj 2
+	anim_incobj 3
+	anim_incobj 4
 	anim_wait 16
 	anim_sound 0, 1, SFX_CHANGE_DEX_MODE
 	anim_incobj 1
+	anim_incobj 2
 	anim_wait 32
 	anim_sound 0, 1, SFX_BALL_BOUNCE
 	anim_wait 32
@@ -396,17 +372,25 @@ BattleAnim_ThrowPokeBall:
 	anim_if_var_equal $1, .Click
 	anim_if_var_equal $2, .BreakFree
 	anim_incobj 1
+	anim_incobj 2
 	anim_sound 0, 1, SFX_BALL_WOBBLE
 	anim_jump .Loop
 
 .Click:
+	anim_obj BATTLE_ANIM_OBJ_ENCORE_STAR, 120, 52, $2c
+	anim_obj BATTLE_ANIM_OBJ_ENCORE_STAR, 152, 52, $34
+	anim_sound 0, 1, SFX_PECK
+	anim_wait 4
+	anim_sound 0, 1, SFX_PECK
+	anim_wait 12
 	anim_keepsprites
 	anim_ret
 
 .BreakFree:
 	anim_setobj $1, $b
+	anim_setobj $2, $b
 	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 64, $10
+	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 136, 56, $10
 	anim_wait 2
 	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, BG_EFFECT_TARGET, $0
 	anim_wait 32

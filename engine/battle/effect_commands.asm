@@ -4666,6 +4666,7 @@ GetStatName:
 
 INCLUDE "data/battle/stat_names.asm"
 
+StatLevelMultipliers:
 INCLUDE "data/battle/stat_multipliers.asm"
 
 BattleCommand_AllStatsUp:

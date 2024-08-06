@@ -100,7 +100,6 @@ NewBarkTownTeacherScript:
 	writetext Text_CallMumOnGear
 	waitbutton
 	closetext
-	verbosegiveitem RARE_CANDY, 20
 	end
 
 NewBarkTownFisherScript:

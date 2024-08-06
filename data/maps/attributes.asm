@@ -462,7 +462,7 @@ ENDM
 	map_attributes WhirlIslandLugiaChamber, WHIRL_ISLAND_LUGIA_CHAMBER, $0f, 0
 	map_attributes MtSilverRoom1, MT_SILVER_ROOM_1, $09, 0
 	map_attributes MtSilverRoom2, MT_SILVER_ROOM_2, $09, 0
-	map_attributes MtSilverRoom3, MT_SILVER_ROOM_3, $09, 0
+	map_attributes MtSilverPeak, MT_SILVER_PEAK, $8d, 0
 	map_attributes MtSilverItemRooms, MT_SILVER_ITEM_ROOMS, $09, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0

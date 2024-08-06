@@ -685,7 +685,7 @@ Pokedex_Print_NextLvlMoves:
 	call DexEntry_NextCategory
 	ret
 .lvl_moves_text:
-	db "Lvl-Up Moves@"
+	db "Level-Up Moves@"
 
 Pokedex_PrintFieldMoves:
 ; CheckLvlUpMoves, 1 for fail, 0 for yes, in c

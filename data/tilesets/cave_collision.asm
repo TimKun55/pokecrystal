@@ -110,10 +110,10 @@
 	tilecoll WALL, WALL, WALL, WALL ; 6d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 6e
 	tilecoll WALL, WALL, WALL, LADDER ; 6f
-	tilecoll WALL, FLOOR, WALL, WALL ; 70
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 71
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 72
-	tilecoll FLOOR, WALL, WALL, WALL ; 73
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 70
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 71
+	tilecoll WALL, WALL, WALL, CAVE ; 72
+	tilecoll WALL, WALL, WALL, WALL ; 73
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 74
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 75
 	tilecoll WALL, WALL, WALL, WALL ; 76

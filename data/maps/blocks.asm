@@ -597,8 +597,8 @@ MtSilverRoom1_Blocks:
 MtSilverRoom2_Blocks:
 	INCBIN "maps/MtSilverRoom2.ablk"
 
-MtSilverRoom3_Blocks:
-	INCBIN "maps/MtSilverRoom3.ablk"
+MtSilverPeak_Blocks:
+	INCBIN "maps/MtSilverPeak.ablk"
 
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:

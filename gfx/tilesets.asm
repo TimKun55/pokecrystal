@@ -537,9 +537,6 @@ INCBIN "data/tilesets/kanto_5_attributes.bin"
 TilesetPlayersRoomMeta::
 INCBIN "data/tilesets/players_room_metatiles.bin"
 
-TilesetJohto4Attr::
-INCBIN "data/tilesets/johto_4_attributes.bin"
-
 TilesetJohto4Coll::
 INCLUDE "data/tilesets/johto_4_collision.asm"
 
@@ -572,3 +569,6 @@ INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
 TilesetTraditionalHouseColl::
 INCLUDE "data/tilesets/traditional_house_collision.asm"
+
+TilesetJohto4Attr::
+INCBIN "data/tilesets/johto_4_attributes.bin"

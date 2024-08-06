@@ -469,9 +469,6 @@ TrainerCooltrainerfKate:
 	closetext
 	end
 
-Route34IlexForestSign: ; unreferenced
-	jumptext Route34IlexForestSignText
-
 Route34Sign:
 	jumptext Route34SignText
 
@@ -657,7 +654,7 @@ CooltrainerfIreneBeatenText:
 
 CooltrainerfIreneAfterText1:
 	text "Irene: My sister"
-	line "KATE will get you"
+	line "Kate will get you"
 	cont "for this!"
 	done
 

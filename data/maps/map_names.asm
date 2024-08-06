@@ -164,7 +164,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name73 ; map_const WHIRL_ISLAND_LUGIA_CHAMBER,          ; 73
 	dw Dungeons_Map_Name74 ; map_const MT_SILVER_ROOM_1,                    ; 74
 	dw Dungeons_Map_Name75 ; map_const MT_SILVER_ROOM_2,                    ; 75
-	dw Dungeons_Map_Name76 ; map_const MT_SILVER_ROOM_3,                    ; 76
+	dw Dungeons_Map_Name76 ; map_const MT_SILVER_PEAK,                      ; 76
 	dw Dungeons_Map_Name77 ; map_const MT_SILVER_ROOM_4,                    ; 77
 	dw Dungeons_Map_Name78 ; map_const MT_SILVER_ITEM_ROOMS,                ; 78
 	dw Dungeons_Map_Name79 ; map_const DARK_CAVE_VIOLET_ENTRANCE            ; 79
@@ -790,8 +790,8 @@ Dungeons_Map_Name74: ; map_const MT_SILVER_ROOM_1,; 74
 	db "MT. SILVER R1@"
 Dungeons_Map_Name75: ; map_const MT_SILVER_ROOM_2,; 75
 	db "MT. SILVER R2@"
-Dungeons_Map_Name76: ; map_const MT_SILVER_ROOM_3,; 76
-	db "MT. SILVER R3@"
+Dungeons_Map_Name76: ; map_const MT_SILVER_PEAK,; 76
+	db "MT. SILVER PEAK@"
 Dungeons_Map_Name77: ; map_const MT_SILVER_ROOM_4,; 76
 	db "MT. SILVER R4@"
 Dungeons_Map_Name78: ; map_const MT_SILVER_ITEM_ROOMS,; 77

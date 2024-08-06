@@ -25,7 +25,7 @@ MtSilverRoom2_MapEvents:
 
 	def_warp_events
 	warp_event 17, 31, MT_SILVER_ROOM_1, 2
-	warp_event 23,  3, MT_SILVER_ROOM_3, 1
+	warp_event 23,  3, MT_SILVER_PEAK, 1
 	warp_event 13, 21, MT_SILVER_ITEM_ROOMS, 1
 	warp_event 11,  5, MT_SILVER_ITEM_ROOMS, 2
 

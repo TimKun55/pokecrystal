@@ -377,29 +377,6 @@ Unused_CheckShininess:
 	and a
 	ret
 
-SGB_ApplyCreditsPals: ; unreferenced
-	push de
-	push bc
-	ld hl, PalPacket_Pal01
-	ld de, wSGBPals
-	ld bc, PALPACKET_LENGTH
-	call CopyBytes
-	pop bc
-	pop de
-	ld a, c
-	ld [wSGBPals + 3], a
-	ld a, b
-	ld [wSGBPals + 4], a
-	ld a, e
-	ld [wSGBPals + 5], a
-	ld a, d
-	ld [wSGBPals + 6], a
-	ld hl, wSGBPals
-	call PushSGBPals
-	ld hl, BlkPacket_AllPal0
-	call PushSGBPals
-	ret
-
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
 	call CopyFourPalettes
@@ -1545,6 +1522,9 @@ INCLUDE "gfx/battle/hp_bar.pal"
 
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
+
+;BallHUDPalette:
+;INCLUDE "gfx/battle/ball_hud.pal"
 
 INCLUDE "data/pokemon/palettes.asm"
 

@@ -275,8 +275,8 @@ RadioTower1FLuckyNumberManOkayMatchText:
 	cont "three numbers!"
 
 	para "You've won second"
-	line "prize, an Exp."
-	cont "Share!"
+	line "prize, an Egg"
+	cont "Ticket!"
 	done
 
 RadioTower1FLuckyNumberManWeakMatchText:

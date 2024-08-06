@@ -33,6 +33,9 @@ FarawayIslandSailorScript:
 	closetext
 	end
 
+FarawayIslandSign:
+	jumptext FarawayIslandSignText
+
 FarawayIslandEnterFastShipMovement:
 	step DOWN
 	step_end
@@ -82,7 +85,7 @@ FarawayIslandOutside_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 35, BGEVENT_READ, FarawayIslandSignText
+	bg_event  3, 35, BGEVENT_READ, FarawayIslandSign
 
 	def_object_events
 	object_event 11, 41, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FarawayIslandSailorScript, -1
