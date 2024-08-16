@@ -1311,6 +1311,15 @@ _ItemStatRoseText::
 	text " rose."
 	prompt
 
+_ItemHappinessRoseButStatFellText::
+	text_ram wStringBuffer1
+	text " became"
+	line "friendly. Base"
+	cont "@"
+	text_ram wStringBuffer2
+	text " fell!"
+	prompt
+
 _ItemCantUseOnMonText::
 	text "That can't be used"
 	line "on this #mon."

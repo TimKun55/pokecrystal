@@ -1179,8 +1179,8 @@ AncientpowerDescription:
 	line "All stats ▲1.@"
 
 ShadowBallDescription:
-	db   "Throw shadowy blob"
-	line "SpDef ▼1.@"
+	db   "Throws a shadowy"
+	line "blob. SpDef ▼1.@"
 
 FutureSightDescription:
 	db   "An attack that"
@@ -1195,8 +1195,8 @@ BeatUpDescription:
 	line "in the attack.@"
 	
 MoonblastDescription:
-	db   "Energy from Moon."
-	line "SpAtk ▼1.@"
+	db   "Uses power of the"
+	line "Moon. SpAtk ▼1.@"
 	
 BugBuzzDescription:
 	db   "Vibrates loudly."

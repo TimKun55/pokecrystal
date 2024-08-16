@@ -1059,7 +1059,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_HELD, KINGS_ROCK, 35, POLITOED
+	db EVOLVE_HELD_LEVEL, KINGS_ROCK, 35, POLITOED
 	db 0 ; no more evolutions
 	db 1, SWEET_KISS
 	db 1, TACKLE
@@ -1370,7 +1370,7 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 32, SLOWBRO
-	db EVOLVE_HELD, KINGS_ROCK, 32, SLOWKING
+	db EVOLVE_HELD_LEVEL, KINGS_ROCK, 32, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1681,7 +1681,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_HELD, METAL_COAT, 34, STEELIX
+	db EVOLVE_HELD_LEVEL, METAL_COAT, 34, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
@@ -2089,7 +2089,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	db EVOLVE_HELD, DRAGON_SCALE, 42, KINGDRA
+	db EVOLVE_HELD_LEVEL, DRAGON_SCALE, 42, KINGDRA
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 4, SMOKESCREEN
@@ -2190,7 +2190,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 	
 ScytherEvosAttacks:
-	db EVOLVE_HELD, METAL_COAT, 34, SCIZOR
+	db EVOLVE_HELD_LEVEL, METAL_COAT, 34, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2452,7 +2452,7 @@ FlareonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	db EVOLVE_HELD, UP_GRADE, 40, PORYGON2
+	db EVOLVE_HELD_LEVEL, UP_GRADE, 40, PORYGON2
 	db 0 ; no more evolutions
 	db 1, FLASH_CANNON
 	db 1, CONVERSION
@@ -4319,9 +4319,9 @@ SmeargleEvosAttacks:
 	db 0 ; no more level-up moves
 
 TyrogueEvosAttacks:
-	db EVOLVE_HELD, BOXING_MITTS, 20, HITMONCHAN
-	db EVOLVE_HELD, SPRING_SHOES, 20, HITMONLEE
-	db EVOLVE_HELD, SPINNING_TOP, 20, HITMONTOP
+	db EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
+	db EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
+	db EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FOCUS_ENERGY

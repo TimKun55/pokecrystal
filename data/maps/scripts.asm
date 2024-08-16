@@ -17,10 +17,8 @@ INCLUDE "maps/GoldenrodDeptStore6F.asm"
 INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
-INCLUDE "maps/MahoganyBakery.asm"
 INCLUDE "maps/CinnabarIslandRecoveryLab.asm"
 INCLUDE "maps/CeladonCurseHouse.asm"
-INCLUDE "maps/FarawayIslandOutside.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -52,6 +50,7 @@ INCLUDE "maps/OlivineLighthouse4F.asm"
 INCLUDE "maps/VermilionSailorsHouse.asm"
 INCLUDE "maps/FarawayIslandInside.asm"
 INCLUDE "maps/Route1ViridianGate.asm"
+INCLUDE "maps/FarawayIslandOutside.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -532,7 +531,6 @@ INCLUDE "maps/CeladonHomeDecorStore1F.asm"
 INCLUDE "maps/CeladonHomeDecorStore2F.asm"
 INCLUDE "maps/CeladonHomeDecorStore3F.asm"
 INCLUDE "maps/CeladonHomeDecorStore4F.asm"
-INCLUDE "maps/GoldenrodToyStore.asm"
 INCLUDE "maps/CeruleanCave1F.asm"
 INCLUDE "maps/CeruleanCave2F.asm"
 INCLUDE "maps/CeruleanCaveB1F.asm"

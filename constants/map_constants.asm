@@ -60,7 +60,6 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const MAHOGANY_MOVE_TUTOR_HOUSE,                    4,  4 ;  8
-	map_const MAHOGANY_BAKERY,                              6,  5 ;  9
 	endgroup
 
 	newgroup DUNGEONS                                             ;  3
@@ -296,7 +295,6 @@ ENDM
 	map_const GOLDENROD_HOME_DECOR_STORE_2F,                5,  4 ; 25
 	map_const GOLDENROD_HOME_DECOR_STORE_3F,                5,  4 ; 26
 	map_const GOLDENROD_HOME_DECOR_STORE_4F,                5,  4 ; 27
-	map_const GOLDENROD_TOY_STORE,                          5,  4 ; 28
 	endgroup
 
 	newgroup VERMILION                                            ; 12

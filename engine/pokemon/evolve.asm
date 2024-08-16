@@ -87,7 +87,7 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 	
-	cp EVOLVE_HELD
+	cp EVOLVE_HELD_LEVEL
 	jp z, .held
 
 ; EVOLVE_STAT
@@ -677,7 +677,7 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	cp EVOLVE_HELD
+	cp EVOLVE_HELD_LEVEL
 	jr z, .held_param
 	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
 	jr nz, .not_tyrogue

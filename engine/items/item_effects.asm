@@ -63,7 +63,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; SPICY_POFFIN
+	dw LowerEVBerryEffect  ; POMEG_BERRY
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SP_ATK
@@ -113,7 +113,7 @@ ItemEffects:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; DRY_POFFIN
+	dw LowerEVBerryEffect  ; KELPSY_BERRY
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
@@ -149,16 +149,16 @@ ItemEffects:
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
 	dw NoEffect            ; EVIOLITE
-	dw NoEffect            ; SWEET_POFFIN
+	dw LowerEVBerryEffect  ; QUALOT_BERRY
 	dw VitaminEffect       ; ZINC
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; BITTERPOFFIN
-	dw NoEffect            ; SOUR_POFFIN
+	dw LowerEVBerryEffect  ; HONDEW_BERRY
+	dw LowerEVBerryEffect  ; GREPA_BERRY
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; RICH_POFFIN
+	dw LowerEVBerryEffect  ; TAMATO_BERRY
 	dw NoEffect            ; LEFTOVERS
 	dw NoEffect            ; OLD_AMBER
 	dw NoEffect            ; DOME_FOSSIL
@@ -1185,6 +1185,54 @@ EvoStoneEffect:
 	ld [wItemEffectSucceeded], a
 	ret
 
+LowerEVBerryEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	call RareCandy_StatBooster_GetParameters
+
+	call GetEVRelativePointer
+
+    ld a, MON_EVS
+    call GetPartyParamLocation
+	
+	add hl, bc
+	pop af
+	or [hl]
+    jp nc, NoEffectMessage
+
+	ld a, [hl]
+	sub 10
+	jr nc, .ev_value_ok
+	xor a
+
+.ev_value_ok
+	ld [hl], a
+	call UpdateStatsAfterItem
+
+    call GetEVRelativePointer
+
+	ld hl, StatStrings
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, wStringBuffer2
+	ld bc, ITEM_NAME_LENGTH
+	call CopyBytes
+
+	call Play_SFX_FULL_HEAL
+	
+	ld hl, ItemHappinessRoseButStatFellText
+	call PrintText
+
+	ld c, HAPPINESS_USEDEVBERRY
+	farcall ChangeHappiness
+
+	jp UseDisposableItem
+
 VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1259,6 +1307,10 @@ ItemStatRoseText:
 	text_far _ItemStatRoseText
 	text_end
 
+ItemHappinessRoseButStatFellText:
+	text_far _ItemHappinessRoseButStatFellText
+	text_end
+
 StatStrings:
 	dw .health
 	dw .attack
@@ -1297,6 +1349,12 @@ EVItemPointerOffsets:
 	db CARBOS,  MON_SPD_EV - MON_EVS
 	db CALCIUM, MON_SAT_EV - MON_EVS
 	db ZINC,    MON_SDF_EV - MON_EVS
+	db POMEG_BERRY,  MON_HP_EV - MON_EVS
+	db KELPSY_BERRY, MON_ATK_EV - MON_EVS
+	db QUALOT_BERRY, MON_DEF_EV - MON_EVS
+	db HONDEW_BERRY, MON_SAT_EV - MON_EVS
+	db GREPA_BERRY,  MON_SDF_EV - MON_EVS
+	db TAMATO_BERRY, MON_SPD_EV - MON_EVS
 
 RareCandy_StatBooster_GetParameters:
 	ld a, [wCurPartySpecies]

@@ -25,19 +25,6 @@ SetMenuMonIconColor:
 	ld hl, wShadowOAMSprite00Attributes
 	jp _ApplyMenuMonIconColor
 
-SetMenuMonIconColor_NoShiny:
-	push hl
-	push de
-	push bc
-	push af
-
-	ld a, [wTempIconSpecies]
-	ld [wCurPartySpecies], a
-	and a
-	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wShadowOAMSprite00Attributes
-	jp _ApplyMenuMonIconColor
-
 SetDexMonIconColor_NoShiny:
 	push hl
 	push de
@@ -57,6 +44,7 @@ SetDexMonIconColor_NoShiny:
 	add hl, de
 	pop af
 	jp _ApplyMenuMonIconColor
+
 SetDexMonIconColor_SpritePage:
 	push hl
 	push de
@@ -66,7 +54,7 @@ SetDexMonIconColor_SpritePage:
 	ld a, [wTempIconSpecies]
 	ld [wCurPartySpecies], a
 	and a
-;	ld hl, wPokedexShinyToggle
+	ld hl, wPokedexShinyToggle
 	bit 0, [hl]
 	jr z, .not_shiny
 	scf
@@ -80,6 +68,19 @@ SetDexMonIconColor_SpritePage:
 	ld e, a
 	add hl, de
 	pop af
+	jp _ApplyMenuMonIconColor
+
+SetMenuMonIconColor_NoShiny:
+	push hl
+	push de
+	push bc
+	push af
+
+	ld a, [wTempIconSpecies]
+	ld [wCurPartySpecies], a
+	and a
+	call GetMenuMonIconPalette_PredeterminedShininess
+	ld hl, wShadowOAMSprite00Attributes
 	jp _ApplyMenuMonIconColor
 
 LoadPartyMenuMonIconColors:
@@ -235,7 +236,7 @@ LoadMenuMonIcon:
 	dw Trade_LoadMonIconGFX             ; MONICON_TRADE
 	dw Mobile_InitAnimatedMonIcon       ; MONICON_MOBILE1
 	dw Mobile_InitPartyMenuBGPal71      ; MONICON_MOBILE2
-	dw Pokedex_InitAnimatedMonIcon       ; MONICON_UNUSED
+	dw Pokedex_InitAnimatedMonIcon      ; MONICON_UNUSED
 
 Unused_GetPartyMenuMonIcon:
 	call InitPartyMenuIcon
@@ -448,7 +449,6 @@ Pokedex_InitAnimatedMonIcon:
 	call SetDexMonIconColor_NoShiny
 	
 	ld a, [wTempIconSpecies]
-;	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	call GetMemIconGFX
 

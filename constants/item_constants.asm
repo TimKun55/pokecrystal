@@ -55,7 +55,7 @@
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const SPICY_POFFIN ; 32
+	const POMEG_BERRY  ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SP_ATK     ; 35
@@ -105,7 +105,7 @@
 	const WHT_APRICORN ; 61
 	const BLACKBELT_I  ; 62
 	const BLK_APRICORN ; 63
-	const DRY_POFFIN   ; 64
+	const KELPSY_BERRY ; 64
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
@@ -141,16 +141,16 @@
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
 	const EVIOLITE     ; 87
-	const SWEET_POFFIN ; 88
+	const QUALOT_BERRY ; 88
 	const ZINC         ; 89
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
-	const BITTERPOFFIN ; 8d
-	const SOUR_POFFIN  ; 8e
+	const HONDEW_BERRY ; 8d
+	const GREPA_BERRY  ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const RICH_POFFIN  ; 91
+	const TAMATO_BERRY ; 91
 	const LEFTOVERS    ; 92
 	const OLD_AMBER    ; 93
 	const DOME_FOSSIL  ; 94
@@ -167,7 +167,7 @@
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const NET_BALL     ; a1
-	const MILD_POFFIN  ; a2
+	const ITEM_A2      ; a2
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5
@@ -176,7 +176,7 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
-	const SALTY_POFFIN ; ab
+	const ITEM_AB      ; ab
 	const UP_GRADE     ; ac
 	const ORAN_BERRY   ; ad
 	const SITRUS_BERRY ; ae

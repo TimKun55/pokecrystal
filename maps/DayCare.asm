@@ -116,6 +116,13 @@ DayCareManText_GiveOddEgg:
 	para "for other trainers"
 	line "and sometimes"
 	cont "find Eggs!"
+	
+	para "You know, your"
+	line "#dex shows Egg"
+	cont "groups, and how"
+
+	para "long they take to"
+	line "hatch!"
 
 	para "Well, wouldn't you"
 	line "like this Egg?"

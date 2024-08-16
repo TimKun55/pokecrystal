@@ -434,7 +434,6 @@ ENDM
 	map_attributes OlivineLighthouse6F, OLIVINE_LIGHTHOUSE_6F, $00, 0
 	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $00, 0
 	map_attributes MahoganyMoveTutorHouse, MAHOGANY_MOVE_TUTOR_HOUSE, $00, 0
-	map_attributes MahoganyBakery, MAHOGANY_BAKERY, $00, 0	
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $00, 0
 	map_attributes TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $00, 0
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $00, 0
@@ -591,7 +590,6 @@ ENDM
 	map_attributes GoldenrodHomeDecorStore2F, GOLDENROD_HOME_DECOR_STORE_2F, $00, 0
 	map_attributes GoldenrodHomeDecorStore3F, GOLDENROD_HOME_DECOR_STORE_3F, $00, 0
 	map_attributes GoldenrodHomeDecorStore4F, GOLDENROD_HOME_DECOR_STORE_4F, $00, 0
-	map_attributes GoldenrodToyStore, GOLDENROD_TOY_STORE, $00, 0
 	map_attributes VermilionFishingSpeechHouse, VERMILION_FISHING_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
