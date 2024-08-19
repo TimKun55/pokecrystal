@@ -73,7 +73,7 @@ OaksAssistant2Script:
 	closetext
 	end
 
-.Aide525Caught
+.Aide252Caught
 	writetext ShinyCharmAideTextSuccess
 	promptbutton
 	verbosegiveitem SHINY_CHARM
@@ -260,7 +260,7 @@ AideExplainShinyCharmText:
 	line "happy hunting."
 	done
 
-AideGotExpCharmText:
+AideGotShinyCharmText:
 	text "Thanks to your"
 	line "work on the #-"
 	cont "dex, the Prof's"
