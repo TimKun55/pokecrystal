@@ -2434,7 +2434,7 @@ wCurPartyLevel:: db
 
 wScrollingMenuListSize:: db
 
-	ds 1
+wCriticalCaptureCheck:: db
 
 ; used when following a map warp
 wNextWarp:: db

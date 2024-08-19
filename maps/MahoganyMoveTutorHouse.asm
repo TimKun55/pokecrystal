@@ -427,7 +427,8 @@ TutorHouseBookshelfRightText:
 GrannyHelloTakeText:
 	text "Hello, dear."
 	
-	para "Use these!"
+;	para "Use these!"
+	para "I'm a placeholder."
 	done
 
 MahoganyMoveTutorHouse_MapEvents:

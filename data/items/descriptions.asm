@@ -153,16 +153,16 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw BoxingMittsDesc
-	dw SpringShoesDesc
+	dw ShinyCharmDesc
+	dw ExpCharmDesc
 	dw SpinningTopDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
 	dw LevelBallDesc
 	dw LureBallDesc
+	dw FastBallDesc
 	dw NetBallDesc
-	dw TeruSama25Desc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -860,13 +860,13 @@ BerserkGeneDesc:
 	db   "Boosts Attack but"
 	next "causes confusion.@"
 
-BoxingMittsDesc:
-	db   "A pair of red"
-	next "mitts for boxing.@"
+ShinyCharmDesc:
+	db   "Raises chance of"
+	next "Shiny #mon.@"
 
-SpringShoesDesc:
-	db   "Pair of shoes with"
-	next "springs. Bouncy.@"
+ExpCharmDesc:
+	db   "Earns extra Exp."
+	next "points in battle.@"
 
 SpinningTopDesc:
 	db   "Colorful spinning"
@@ -891,6 +891,10 @@ LevelBallDesc:
 LureBallDesc:
 	db   "A Ball for #mon"
 	next "hooked by a Rod.@"
+
+FastBallDesc:
+	db   "A Ball for #mon"
+	next "w/base 100+ Spd.@"
 
 NetBallDesc:
 	db   "A Ball for Water"

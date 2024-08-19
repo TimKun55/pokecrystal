@@ -29,9 +29,9 @@ BallColors:
 	RGB 00, 19, 21
 	RGB 30, 10, 06
 	
-	db NET_BALL
-	RGB 06, 27, 27
-	RGB 14, 14, 14
+	db FAST_BALL
+	RGB 31, 15, 00
+	RGB 31, 25, 08
 	
 	db FRIEND_BALL
 	RGB 07, 20, 00
@@ -52,6 +52,10 @@ BallColors:
 	db DUSK_BALL
 	RGB 00, 29, 07 
 	RGB 31, 16, 05
+
+	db NET_BALL
+	RGB 06, 27, 27
+	RGB 14, 14, 14
 	
 	db -1 ; end
 	RGB 31 , 31, 31

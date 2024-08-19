@@ -166,16 +166,16 @@ ItemEffects:
 	dw RestorePPEffect     ; LEPPA_BERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; BOXING_MITTS
-	dw NoEffect            ; SPRING_SHOES
+	dw NoEffect            ; SHINY_CHARM
+	dw NoEffect            ; EXP_CHARM
 	dw NoEffect            ; SPINNING_TOP
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
+	dw PokeBallEffect      ; FAST_BALL
 	dw PokeBallEffect      ; NET_BALL
-	dw NoEffect            ; MILD_POFFIN
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -184,7 +184,7 @@ ItemEffects:
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; SALTY_POFFIN
+	dw NoEffect            ; ITEM_AB
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; ORAN_BERRY
 	dw RestoreHPEffect     ; SITRUS_BERRY
@@ -369,6 +369,8 @@ PokeBallEffect:
 
 .skip_hp_calc
 	ld b, a
+;	call CriticalCapture
+
 	ld [wFinalCatchRate], a
 	call Random
 
@@ -743,11 +745,12 @@ BallMultiplierFunctionTable:
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
-	dbw NET_BALL,    NetBallMultiplier
+	dbw FAST_BALL,   FastBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
 	dbw DUSK_BALL,   DuskBallMultiplier
+	dbw NET_BALL,    NetBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -994,6 +997,21 @@ LoveBallMultiplier:
 
 .done1
 	pop bc
+	ret
+
+FastBallMultiplier:
+	ld a, [wTempEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseSpeed]
+	cp 100
+	ret nc
+	sla b
+	jr c, .max
+	sla b
+	ret nc
+.max
+	ld b, $ff
 	ret
 
 NetBallMultiplier:
@@ -3045,3 +3063,138 @@ GetMthMoveOfCurrentMon:
 	ld b, 0
 	add hl, bc
 	ret
+
+;CriticalCapture:
+	; Critical Capture has a 5 step multiplier, starting from 30 Pokémon caught and going up to 600 Pokémon caught as follows:
+
+	; 601 or more: 2.5x multiplier
+	; 451 ~ 600: 2x multiplier
+	; 301 ~ 450: 1.5x multiplier
+	; 151 ~ 300: 1x multiplier
+	; 31 ~ 150: 0.5x multiplier
+
+	; Since Johto has 251 Pokémon, as opposed to 649 like Unova and later, the values will be adjusted accordingly:
+
+	; 201 or more: 2.5x multiplier
+	; 151 ~ 200: 2x multiplier
+	; 101 ~ 150: 1.5x multiplier
+	; 51 ~ 100: 1x multiplier
+	; 21 ~ 50: 0.5x multiplier
+
+	; Due to differences on how the Pokémon being caught is determined, instead of checking
+	; for the wobbling 4 times to determine whether the Pokémon was caught or not,
+	; Gen II games determine if it was caught beforehand, with no relation to the wobbling.
+
+	; To compensate for that, the Catch Rate will be multiplied by 4.
+
+;	push hl
+;	push bc
+;	push de
+
+;	ld [wFinalCatchRate], a
+;	ld [wCriticalCaptureCheck], a
+
+	; Check Dex
+;	ld hl, wPokedexCaught
+;	ld b, wEndPokedexCaught - wPokedexCaught
+;	call CountSetBits
+
+;	ld a, [wCriticalCaptureCheck]
+;	ld b, a
+;	ld a, c
+;	ld c, 0
+
+;	cp 201
+;	jr nc, .BonusFive
+;	cp 151
+;	jr nc, .BonusFour
+;	cp 101
+;	jr nc, .BonusThree
+;	cp 51
+;	jr nc, .BonusTwo
+;	cp 21
+;	jr nc, .BonusOne
+;	jr .NoCriticalCapture
+
+;.BonusFive ; 2.5x
+;	ld a, b
+;	srl a
+;	add b
+;	jr c, .FixCatchRate
+;	add b
+;	ld b, a
+;	jr c, .FixCatchRate
+;	jr .Continue
+;.BonusFour ; 2x
+;	ld a, b
+;	add b
+;	jr c, .FixCatchRate
+;	add b
+;	ld b, a
+;	jr c, .FixCatchRate
+;	jr .Continue
+;.BonusThree ; 1.5x
+;	ld a, b
+;	srl a
+;	add b
+;	ld b, a
+;	jr c, .FixCatchRate
+;	jr .Continue
+;.BonusTwo ; 1x
+;	ld a, b
+;	sla a
+;	ld b, a
+;	jr c, .FixCatchRate
+;	jr .Continue
+;.BonusOne ; 0.5x
+;	ld a, b
+;	srl a
+;	ld b, a
+;	jr c, .FixCatchRate
+;	jr .Continue
+
+;.FixCatchRate
+;	ld b, $ff
+;.Continue
+;	ld a, b
+;	ld c, 6
+;	call SimpleDivide
+
+;	ld a, CATCH_CHARM
+;	ld [wCurItem], a
+;	ld hl, wNumItems
+;	call CheckItem
+;	jr nc, .CheckedCharmMultiplier
+;	ld a, b
+;	sla a
+;	ld b, a
+;	jr nc, .CheckedCharmMultiplier
+;	ld b, $ff
+;.CheckedCharmMultiplier
+;	call Random
+;	cp b
+;	jr c, .CriticalCaptureWorked
+;.NoCriticalCapture
+;	xor a
+;	ld [wCriticalCaptureCheck], a
+;	jr .Finish
+;.CriticalCaptureWorked
+;	ld a, 1
+;	ld [wCriticalCaptureCheck], a
+;	ld a, [wFinalCatchRate]
+;	sla a
+;	jr c, .NewCatchRate
+;	sla a
+;	jr c, .NewCatchRate
+;	ld [wFinalCatchRate], a
+;	jr .Finish
+;.NewCatchRate
+;	ld a, $ff
+;	ld [wFinalCatchRate], a
+;.Finish
+;	ld a, [wFinalCatchRate]
+;	pop de
+;	pop bc
+;	pop hl
+;	ld b, a
+;	ret

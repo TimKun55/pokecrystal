@@ -253,9 +253,9 @@ BattleTurn:
 	jr nz, .quit
 .skip_iteration
 	call ParsePlayerAction
-;	push af
-;	call ClearSprites
-;	pop af
+	push af
+	call ClearSprites
+	pop af
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
@@ -5708,11 +5708,11 @@ MoveSelectionScreen:
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
 .place_textbox_start_over
-;	push hl
-;	call ClearSprites
-;	ld b, SCGB_BATTLE_COLORS
-;	call GetSGBLayout
-;	pop hl
+	push hl
+	call ClearSprites
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
 	jp MoveSelectionScreen
@@ -5905,7 +5905,7 @@ MoveInfoBox:
 	ld [hl], $57
 	inc hl
 	ld [hl], $58
-
+; get move category
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
 	and ~TYPE_MASK
 	swap a
@@ -6434,6 +6434,59 @@ LoadEnemyMon:
 
 .skipshine:
 ; Generate new random DVs
+
+; The Shiny Charm increases the chance a Pokémon will be shiny.
+; In regular games, it adds 2 additional rolls to shininess, raising
+; the chance of a shiny Pokémon appearing from 1/8192 to 3/8192 (~1/2731).
+
+; This implementation uses the already defined shiny DVs for Gyarados,
+; so it checks based on 65535 values instead of 8192 values.
+
+; To compensate for that, it adds 5 additional rolls for each DV byte,
+; which means the actual chance is increased from 1/8192 to ~1/2621.
+
+	ld a, SHINY_CHARM
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .NoShinyCharm
+
+	push de
+	push hl
+	ld a, 6
+	ld d, a
+.loopAtkDef
+	ld a, d
+	dec a
+	ld d, a
+	jr z, .DoneAtkDef
+	call BattleRandom
+	ld e, a
+	cp ATKDEFDV_SHINY ; checks if ATK is 14 and DEF is 10
+	jr nz, .loopAtkDef
+.DoneAtkDef
+	ld a, e
+	ld b, a
+
+	ld a, 6
+	ld d, a
+.loopSpdSpc
+	ld a, d
+	dec a
+	ld d, a
+	jr z, .DoneSpdSpc
+	call BattleRandom
+	ld e, a
+	cp SPDSPCDV_SHINY ; checks if SPD is 10 and SPC is 10
+	jr nz, .loopSpdSpc
+.DoneSpdSpc
+	ld a, e
+	ld c, a
+	pop hl
+	pop de
+	jr .UpdateDVs
+
+.NoShinyCharm
 	call BattleRandom
 	ld b, a
 	call BattleRandom
@@ -6497,7 +6550,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6506,7 +6559,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
@@ -7363,6 +7416,15 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
+; Exp. Charm increases experience received by 50% when
+; the player has the item on their bag.
+	ld a, EXP_CHARM
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .NoExpCharm
+	call BoostExp
+.NoExpCharm
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM

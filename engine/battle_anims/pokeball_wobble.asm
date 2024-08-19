@@ -8,6 +8,24 @@ GetPokeBallWobble:
 	ld d, a
 	push de
 
+;	ld a, BANK(wCriticalCaptureCheck) ; aka BANK(wFinalCatchRate)
+;	ldh [rSVBK], a
+
+;	ld a, [wCriticalCaptureCheck]
+;	cp 1
+;	jr nz, .NoCritical
+
+;	ld a, BANK(wThrownBallWobbleCount) ; aka BANK(wFinalCatchRate)
+;	ldh [rSVBK], a
+
+;	ld a, [wThrownBallWobbleCount]
+;	inc a
+;	ld [wThrownBallWobbleCount], a
+
+;	cp 2
+;	jr .Continue
+
+;.NoCritical
 	ld a, BANK(wThrownBallWobbleCount) ; aka BANK(wFinalCatchRate)
 	ldh [rSVBK], a
 
@@ -17,6 +35,7 @@ GetPokeBallWobble:
 
 ; Wobble up to 3 times.
 	cp 3 + 1
+;.Continue
 	jr z, .finished
 
 	ld a, [wWildMon]

@@ -11,7 +11,6 @@ Marts:
 	dw MartGoldenrod3F
 	dw MartGoldenrod4F
 	dw MartGoldenrod5F
-	dw MartGoldenrodToy
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
@@ -83,7 +82,8 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 6 ; # items
+	db NET_BALL
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -148,17 +148,10 @@ MartGoldenrod5F:
 	db TM_SLUDGE
 	db -1 ; end
 
-MartGoldenrodToy:
-	db 3 ; # items
-	db BOXING_MITTS
-	db SPRING_SHOES
-	db SPINNING_TOP
-	db -1 ; end
-
 MartOlivine:
 	db 10 ; # items
 	db GREAT_BALL
-	db SUPER_POTION
+	db NET_BALL
 	db HYPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -242,22 +235,22 @@ MartViridian:
 	db -1 ; end
 
 MartPewter:
-	db 8 ; # items
+	db 7 ; # items
 	db GREAT_BALL
-	db SUPER_POTION
+	db DUSK_BALL
+	db HYPER_POTION
+	db REVIVE
 	db SUPER_REPEL
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
+	db FULL_HEAL
 	db MOON_STONE
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
+	db 10 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
-	db SUPER_POTION
+	db NET_BALL
+	db HYPER_POTION
 	db SUPER_REPEL
 	db FULL_HEAL
 	db X_DEFEND
@@ -269,7 +262,7 @@ MartCerulean:
 MartLavender:
 	db 8 ; # items
 	db GREAT_BALL
-	db SUPER_POTION
+	db DUSK_BALL
 	db HYPER_POTION
 	db MAX_REPEL
 	db ANTIDOTE
@@ -280,8 +273,8 @@ MartLavender:
 
 MartVermilion:
 	db 8 ; # items
+	db GREAT_BALL
 	db ULTRA_BALL
-	db SUPER_POTION
 	db HYPER_POTION
 	db REVIVE
 	db PARLYZ_HEAL
@@ -305,11 +298,12 @@ MartBerry:
 	db -1 ; end
 
 MartCeladon2F1:
-	db 8 ; # items
+	db 9 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db MAX_POTION
+	db FULL_RESTORE
 	db REVIVE
 	db SUPER_REPEL
 	db MAX_REPEL
@@ -378,7 +372,7 @@ MartFuchsia:
 	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
-	db SUPER_POTION
+	db NET_BALL
 	db HYPER_POTION
 	db FULL_HEAL
 	db MAX_REPEL
@@ -401,7 +395,8 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 7 ; # items
+	db 8 ; # items
+	db POKE_BALL
 	db POKE_DOLL
 	db FRESH_WATER
 	db SODA_POP

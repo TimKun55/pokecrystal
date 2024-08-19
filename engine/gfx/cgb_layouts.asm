@@ -138,9 +138,9 @@ _CGB_FinishBattleScreenLayout:
 	lb bc, 4, 10
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
-	hlcoord 1, 1, wAttrmap
-	ld a, PAL_BATTLE_BG_TEXT
-	ld [hl], a
+;	hlcoord 1, 1, wAttrmap ; colouring the caught ball
+;	ld a, PAL_BATTLE_BG_TEXT
+;	ld [hl], a
 	hlcoord 10, 7, wAttrmap
 	lb bc, 5, 10
 	ld a, PAL_BATTLE_BG_PLAYER_HP
@@ -287,7 +287,6 @@ _CGB_StatsScreenHPPals:
 	; NOTE: Won't hurt anything if you don't have a 4th stats page, just leave it
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-
 	call LoadStatsScreenStatusIconPalette
 
 ; Load Pokemon's Type Palette(s)
@@ -588,13 +587,13 @@ _CGB_Pokedex_PicsPage:
 	call LoadSingleBlackPal
 
 ; animated front pic
-	hlcoord 1, 1, wAttrmap
+	hlcoord 2, 2, wAttrmap
 	lb bc, 7, 7
 	ld a, 1 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
 
 ; ; back pic
-	hlcoord 11, 2, wAttrmap
+	hlcoord 12, 2, wAttrmap
 	lb bc, 6, 6
 	ld a, 1 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
@@ -1364,6 +1363,7 @@ _CGB_MoveList:
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap
 
+; Category Icon Pals
 	ld hl, Moves + MOVE_TYPE
 	ld a, [wCurSpecies]
 	dec a
@@ -1387,6 +1387,7 @@ _CGB_MoveList:
 	ld c, 4 ; 2 colors (4 bytes)
 	call LoadCPaletteBytesFromHLIntoDE
 
+; Type Icon Pals
 	ld hl, Moves + MOVE_TYPE
 	ld a, [wCurSpecies]
 	dec a

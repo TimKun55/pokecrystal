@@ -19,7 +19,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	set 5, [hl]
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
-	hlcoord 1, 1
+	hlcoord 2, 2
 	
 ;;; Taken from _PrepMonFrontPic
 	push hl
@@ -40,7 +40,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	farcall Pokedex_LoadTextboxSpaceGFX
 	ld de, vTiles2 tile $00
 	predef GetAnimatedFrontpic
-	hlcoord 1, 1
+	hlcoord 2, 2
 	ld d, $0
 	ld e, ANIM_MON_MENU
 	predef LoadMonAnimation
@@ -106,7 +106,7 @@ Pokedex_PlaceBackPic:
 	ld a, $80
 	ldh [hGraphicStartTile], a
 	lb bc, 6, 6
-	hlcoord 11, 2
+	hlcoord 12, 2
 	predef PlaceGraphic
 
 	ld a, $0

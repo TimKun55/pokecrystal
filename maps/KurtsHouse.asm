@@ -81,7 +81,7 @@ Kurt1:
 	checkevent EVENT_GAVE_KURT_GRN_APRICORN
 	iftrue .GiveFriendBall
 	checkevent EVENT_GAVE_KURT_WHT_APRICORN
-	iftrue .GiveNetBall
+	iftrue .GiveFastBall
 	checkevent EVENT_GAVE_KURT_BLK_APRICORN
 	iftrue .GiveHeavyBall
 	checkevent EVENT_GAVE_KURT_PNK_APRICORN
@@ -231,12 +231,12 @@ Kurt1:
 	clearevent EVENT_GAVE_KURT_GRN_APRICORN
 	sjump ._ThatTurnedOutGreat
 
-.GiveNetBall:
+.GiveFastBall:
 	checkflag ENGINE_KURT_MAKING_BALLS
 	iftrue KurtMakingBallsScript
 	writetext KurtsHouseKurtJustFinishedYourBallText
 	promptbutton
-	verbosegiveitemvar NET_BALL, VAR_KURT_APRICORNS
+	verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS
 	iffalse .NoRoomForBall
 	clearevent EVENT_GAVE_KURT_WHT_APRICORN
 	sjump ._ThatTurnedOutGreat

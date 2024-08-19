@@ -1,21 +1,33 @@
 MoveReminder:
-	; Loads and prints the "MoveReminderIntroText" text.
-	; Then prompts the player to select "YES" or "NO".
+	; Loads and prints the "MoveReminderIntroText" text and places
+	; the player's current money at the top right corner of the
+	; screen. Then prompts the player to select "YES" or "NO".
 	; Relative jump to the ".cancel" local jump
 	; if the player selected "NO" and continue
 	; if the player selected "YES".
 	ld hl, MoveReminderIntroText
 	call PrintText
+	farcall PlaceMoneyTopRight
 	call YesNoBox
 	jr c, .cancel
+
+	; Calls the "CheckCostAgainstPlayerMoney" label. Relative jump
+	; to the ".not_enough_money" local jump if the player does
+	; not have enough money and continue if they do.
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
 
 	; Loads and prints the "MoveReminderWhichMonText" text.
 	ld hl, MoveReminderWhichMonText
 	call PrintText
+; This code falls through into the ".loop_party_menu" local jump.
 
-	; Loads the party menu to select a Pokémon. Relative jump
-	; to the ".cancel" local jump if the player leaves
-	; the party menu without selecting anything.
+; This is where the party menu loop begins.
+
+; Loads the party menu to select a Pokémon. Relative jump
+; to the ".cancel" local jump if the player leaves
+; the party menu without selecting anything.
+.loop_party_menu
 	farcall SelectMonFromParty
 	jr c, .cancel
 
@@ -40,12 +52,16 @@ MoveReminder:
 	; Loads and prints the "MoveReminderWhichMoveText" text.
 	ld hl, MoveReminderWhichMoveText
 	call PrintText
+; This code falls through into the ".loop_move_menu" local jump.
 
-	; Generates the Move Reminder's menu. Relative jump to the
-	; ".exit_menu" local jump if the player leaves
-	; the menu and continue if they do not.
+; This is where the move menu loop begins.
+
+; Generates the Move Reminder's menu. Relative jump to the
+; ".loop_party_menu" local jump if the player leaves
+; the menu and continue if they do not.
+.loop_move_menu
 	call ChooseMoveToLearn
-	jr c, .exit_menu
+	jr c, .loop_party_menu
 
 	; If the player selects a move, load the move's name and copy
 	; it for later. This is used for displaying the move's
@@ -67,13 +83,16 @@ MoveReminder:
 	ld a, b
 	dec a
 	jr z, .move_learned
-; This code falls through into the ".exit_menu" local jump.
+; This code falls through into the ".recheck_for_moves" local jump.
 
-; Exits the menu and goes back to the
-; map with a speech text box open.
-.exit_menu
-	call ReturnToMapWithSpeechTextbox
-; This code falls through into the ".cancel" local jump.
+; Rechecks for any moves that can be learned. Relative
+; jump to the ".no_moves_to_learn" local jump if
+; there are none and relative jump to the
+; ".loop_move_menu" local jump if there are.
+.recheck_for_moves
+	call GetRemindableMoves
+	jr z, .no_moves_to_learn
+	jr .loop_move_menu
 
 ; Loads and prints the "MoveReminderCancelText" text.
 ; This ends the dialogue.
@@ -81,32 +100,92 @@ MoveReminder:
 	ld hl, MoveReminderCancelText
 	jp PrintText
 
-; Loads and prints the "MoveReminderEggText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderEggText" text and then waits for
+; the player to press a button for the text to progress. Then
+; relative jump to the ".loop_party_menu" local jump.
 .is_an_egg
 	ld hl, MoveReminderEggText
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
 
-; Loads and prints the "MoveReminderNotaMonText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderNotaMonText" text and then waits
+; for the player to press a button for the text to progress. Then
+; relative jump to the ".loop_party_menu" local jump.
 .not_a_pokemon
 	ld hl, MoveReminderNotaMonText
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
 
-; Loads and prints the "MoveReminderNoMovesText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderNoMovesText" text and then waits
+; for the player to press a button for the text to progress. Then
+; relative jump to the ".loop_party_menu" local jump.
 .no_moves_to_learn
 	ld hl, MoveReminderNoMovesText
+	call PrintText
+	jr .loop_party_menu
+
+; Loads and prints the "MoveReminderNotEnoughMoneyText" text.
+; This will end the dialogue.
+.not_enough_money
+	ld hl, MoveReminderNotEnoughMoneyText
 	jp PrintText
 
 ; Exits the menu and goes back to the map with a
 ; speech text box open and then loads and prints
 ; the "MoveReminderMoveLearnedText" text.
-; This ends the dialogue.
 .move_learned
 	call ReturnToMapWithSpeechTextbox
 	ld hl, MoveReminderMoveLearnedText
-	jp PrintText
+	call PrintText
+; This code falls through into the ".pay_for_move" local jump.
+
+; Places the player's current money at the top right corner of
+; the screen, retrieves the amount of money defined in the
+; "MoveCost" label, removes the defined amount of money from
+; the player, plays the "SFX_TRANSACTION" sound effect and
+; finally prints the "MoveReminderPaymentReceivedText" text.
+.pay_for_move
+	farcall PlaceMoneyTopRight
+	ld hl, MoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	call ApplyTilemap
+	call PromptButton
+	call WaitSFX
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall TakeMoney
+	farcall PlaceMoneyTopRight
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	ld hl, MoveReminderPaymentReceivedText
+	call PrintText
+
+	; Calls the "CheckCostAgainstPlayerMoney" label. Relative
+	; jump to the ".not_enough_money" local jump if the
+	; player does not have enough money and relative jump
+	; to the ".recheck_for_moves" local jump if they do.
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
+	jr .recheck_for_moves
+
+; Compares the value of "MoveCost" to
+; the amount of money the player has.
+CheckCostAgainstPlayerMoney:
+	ld hl, MoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	ret
+
+; The cost for learning a move.
+MoveCost:
+	dt 500
 
 ; Checks for moves that can be learned and returns
 ; a zero flag if there are none.
@@ -279,13 +358,13 @@ ChooseMoveToLearn:
 	; This creates a border around the move list.
 	; "hlcoord" configures the position.
 	; "lb bc" configures the size.
-	hlcoord 0, -1
-	lb bc, 1, 18
+	hlcoord 0,  0
+	lb bc, 9, 18
 	call TextboxBorder
 
 	; Adds a gap in the move list's text box border
 	; that prevents clipping with some names.
-	hlcoord 2, 1
+	hlcoord 2, 0
 	lb bc, 1, 16
 	call ClearBox
 
@@ -315,7 +394,7 @@ ChooseMoveToLearn:
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
-	hlcoord  3, 1
+	hlcoord  3, 0
 	call PlaceString
 
 	; This displays the Pokémon's level
@@ -323,7 +402,7 @@ ChooseMoveToLearn:
 	; "hlcoord". In this case that is
 	; the top right of the screen.
 	farcall CopyMonToTempMon
-	hlcoord 14, 1
+	hlcoord 14, 0
 	call PrintLevel
 
 	; Creates the menu, sets the "B_BUTTON"
@@ -352,7 +431,7 @@ ChooseMoveToLearn:
 ; vertical scroll arrows will be located.
 .MenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 1, 2, SCREEN_WIDTH - 2, 10
+	menu_coords 1, 1, SCREEN_WIDTH - 2,  9
 	dw .MenuData
 	db 1
 
@@ -431,14 +510,30 @@ ChooseMoveToLearn:
 	ld [hl], a
 	ret
 
+; This adds a text box border line to the description
+; box that replaces a leftover piece of the notch
+; that remains when the cancel option is highlighted.
+.cancel_border_fix
+	hlcoord 0,  9
+	ld [hl], "│"
+	inc hl
+	ret
+
 ; This begins the printing of all of the move's details,
 ; including the border around the description.
 .print_move_details
 
 	; This creates a border around the description.
-	hlcoord 0, 11
-	lb bc, 5, 18
+	hlcoord 0, 10
+	lb bc, 6, 18
 	call TextboxBorder
+
+	; This code will relative jump to the
+	; ".cancel_border_fix" local jump if
+	; the cancel entry is highlighted.
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .cancel_border_fix
 ; This code falls through into the ".print_move_desc" local jump.
 
 ; This prints the moves description.
@@ -450,88 +545,49 @@ ChooseMoveToLearn:
 	ret z
 	dec a
 	ld [wCurSpecies], a
-	hlcoord 1, 15
+	hlcoord 1, 14
 	predef PrintMoveDescription
+; This code falls through into the ".print_move_type" local jump.
+
+; This prints the move's type.
+.print_move_type
+	ld a, [wCurSpecies]
+	ld b, a
+	hlcoord 2, 11
+	predef PrintMoveType
 ; This code falls through into the ".print_move_stat_strings" local jump.
 
 ; This prints the notch in the description text box border
-; and the "TYPE/", "Pow/", "Eff/" and "Acc/" strings.
+; and the "TYPE/", "ATK/", "EFF/" and "ACC/" strings.
 .print_move_stat_strings
-;	hlcoord 0, 10
-;	ld de, MoveTypeTopString
-;	call PlaceString
-;	hlcoord 0, 11
-;	ld de, MoveTypeString
-;	call PlaceString
-	hlcoord  2, 12
+	hlcoord 0,  9
+	ld de, MoveTypeTopString
+	call PlaceString
+	hlcoord 0, 10
+	ld de, MoveTypeString
+	call PlaceString
+	hlcoord 12, 11
 	ld de, MoveAttackString
 	call PlaceString
-	hlcoord  11, 13
+	hlcoord  4, 12
 	ld de, MoveChanceString
 	call PlaceString
-	hlcoord 18, 13
-	ld [hl], "<%>"
-	
-	hlcoord 2, 13
+	hlcoord 12, 12
 	ld de, MoveAccuracyString
 	call PlaceString
-	hlcoord 9, 13
-	ld [hl], "<%>"
+; This code falls through into the ".print_move_category" local jump.
 
-; This code falls through into the ".print_move_attack" local jump.
-
-; This prints the move's category ("PHYSICAL",
-; "SPECIAL" or "STATUS").
+; This prints the move's category ("PHYSICAL", "SPECIAL" or "STATUS").
 .print_move_category
 	ld a, [wCurSpecies]
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	push af ; raw Move Type+category Byte, unmasked
-	and ~TYPE_MASK ; Specific to Phys/Spec split
-	swap a ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	dec a  ; Specific to Phys/Spec split
-	ld hl, CategoryIconGFX ; ptr to Category GFX loaded from PNG(2bpp)
-	ld bc, 2 tiles
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, vTiles2 tile $59 ; category icon tile slot in VRAM, destination
-	lb bc, BANK(CategoryIconGFX), 2
-	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 16, 12
-	ld a, $59 ; category icon tile 1
-	ld [hli], a
-	ld [hl], $5a ; category icon tile 2
-; Place Move Type
-	pop af ; raw Move Type+category Byte, unmasked
-	and TYPE_MASK ; Phys/Spec Split specific
-	ld c, a
-	farcall GetMonTypeIndex
-	ld a, c
-; Type Index adjust done
-; Load Type GFX Tiles, color will be in Slot 4 of Palette
-	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
-	ld bc, 4 * LEN_1BPP_TILE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
-	call AddNTimes ; increments pointer based on Type Index
-	ld d, h
-	ld e, l ; de is the source Pointer
-	ld hl, vTiles2 tile $5b ; $5b is destination Tile for first Type Tile
-	lb bc, BANK(TypeIconGFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
-	call Request1bpp
-	hlcoord 11, 12
-	ld a, $5b ; first Type Tile
-	ld [hli], a
-	inc a ; Tile $5c
-	ld [hli], a
-	inc a ; Tile $5d
-	ld [hli], a
-	ld [hl], $5e ; final Type Tile
+	ld b, a
+	farcall GetMoveCategoryName
+	hlcoord 1, 10
+	ld de, wStringBuffer1
+	call PlaceString
+	hlcoord 1, 11
+	ld [hl], "/"
+	inc hl
 ; This code falls through into the ".print_move_chance" local jump.
 
 ; This prints the move's status effect chance number.
@@ -548,7 +604,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord  15, 13
+	hlcoord  8, 12
 	call PrintNum
 	jr .print_move_accuracy
 
@@ -561,7 +617,7 @@ ChooseMoveToLearn:
 .print_move_null_chance
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord  15, 13
+	hlcoord  8, 12
 	call PlaceString
 ; This code falls through into the ".print_move_accuracy" local jump.
 
@@ -585,7 +641,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 6, 13
+	hlcoord 16, 12
 	call PrintNum
 	jr .print_move_attack
 
@@ -594,7 +650,7 @@ ChooseMoveToLearn:
 .perfect_accuracy
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord 6, 13
+	hlcoord 16, 12
 	call PlaceString
 ; This code falls through into the ".print_move_attack" local jump.
 
@@ -611,14 +667,14 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord  6, 12
+	hlcoord 16, 11
 	jp PrintNum
 
 ; This prints "---" if the move has an attack of "0".
 ; This means that the move does not initially cause
 ; damage or is a one hit knockout move.
 .print_move_null_attack
-	hlcoord 6, 12
+	hlcoord 16, 11
 	ld de, MoveNullValueString
 	ld bc, 3
 	jp PlaceString
@@ -674,18 +730,18 @@ ConvertPercentages:
 
 ; This is a notch that will be placed on
 ; the top left of the description box.
-;MoveTypeTopString:
-;	db "┌────────┐@"
+MoveTypeTopString:
+	db "┌────────┐@"
 
 ; This is the string that displays
 ; above the move's type.
-;MoveTypeString:
-;	db "│        └@"
+MoveTypeString:
+	db "│        └@"
 
 ; This is the string that precedes
 ; the move's attack number.
 MoveAttackString:
-	db "Pow/@"
+	db "ATK/@"
 
 ; This displays when a move has
 ; a metric with a null value.
@@ -695,21 +751,22 @@ MoveNullValueString:
 ; This is the string that precedes
 ; the move's accuracy number.
 MoveAccuracyString:
-	db "Acc/@"
+	db "ACC/@"
 
 ; This is the string that precedes the
 ; move's status effect chance number.
 MoveChanceString:
-	db "Eff/@"
+	db "EFF/@"
 
 ; This is the text that displays when the player
 ; first talks to the move reminder.
 MoveReminderIntroText:
 	text "Hi, I'm the Move"
 	line "Reminder!"
-
-	para "I can make #mon"
-	line "remember moves."
+	
+	para "For ¥500, I can"
+	line "make #MON"
+	cont "remember a move."
 
 	para "Are you"
 	line "interested?"
@@ -718,7 +775,7 @@ MoveReminderIntroText:
 ; This is the text that displays just
 ; before the party menu opens.
 MoveReminderWhichMonText:
-	text "Which #mon?"
+	text "Which #MON?"
 	prompt
 
 ; This is the text that displays after
@@ -741,7 +798,7 @@ MoveReminderCancelText:
 MoveReminderEggText:
 	text "An EGG can't learn"
 	line "any moves!"
-	done
+	prompt
 
 ; This is the text that displays if the player
 ; selects an entry in the party menu that
@@ -751,22 +808,40 @@ MoveReminderNotaMonText:
 
 	para "I'm sorry, but I"
 	line "can only teach"
-	cont "moves to #mon!"
-	done
+	cont "moves to #MON!"
+	prompt
 
 ; This is the text that displays if the player
 ; selects a Pokémon in the party menu that
 ; has no moves that can be learned.
 MoveReminderNoMovesText:
 	text "There are no moves"
-	line "for this #mon"
+	line "for this #MON"
 	cont "to learn."
+	prompt
+
+; This is the text that displays if the player
+; does not have enough money to learn a move.
+MoveReminderNotEnoughMoneyText:
+	text "Hm… You don't have"
+	line "enough money."
+
+	para "Please come back"
+	line "when you do."
 	done
 
 ; This is the text that displays after a
 ; Pokémon successfully learns a move.
 MoveReminderMoveLearnedText:
-	text "Done! Your #mon"
+	text "Done! Your #MON"
 	line "remembered the"
 	cont "move."
 	done
+
+; This is the text that displays after the
+; Move Reminder accepts payment.
+MoveReminderPaymentReceivedText:
+	text "Pleasure doing"
+	line "business with"
+	cont "you!"
+	prompt
