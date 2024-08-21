@@ -186,3 +186,5 @@ SpecialsPointers::
 	add_special UnusedDummySpecial ; unused
 	
 	add_special MoveReminder
+	
+	add_special SelectBerryForPoffin

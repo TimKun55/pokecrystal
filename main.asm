@@ -129,7 +129,6 @@ INCLUDE "engine/battle/link_result.asm"
 SECTION "Own Section", ROMX
 
 INCLUDE "engine/battle/swarm_shiny.asm"
-INCLUDE "engine/games/slot_machine.asm"
 
 
 SECTION "bankB", ROMX
@@ -305,6 +304,7 @@ INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
+INCLUDE "engine/events/poffin.asm"
 
 
 SECTION "bank23", ROMX
@@ -324,6 +324,7 @@ INCLUDE "engine/phone/phone.asm"
 INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
+INCLUDE "engine/games/slot_machine.asm"
 INCLUDE "data/pokemon/dex_numbers.asm"
 
 
@@ -696,21 +697,14 @@ INCLUDE "engine/events/odd_egg.asm"
 
 SECTION "Pokedex1", ROMX
 INCLUDE "engine/pokedex/pokedex.asm"
-
-
-SECTION "Pokedex2", ROMX
 INCLUDE "engine/pokedex/pokedex_2.asm"
 
 
-SECTION "Pokedex3", ROMX
+SECTION "Pokedex2", ROMX
 
 INCLUDE "engine/pokedex/pokedex_3.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
-
-
-SECTION "Map GroupNums Names", ROMX
-INCLUDE "data/maps/map_names.asm"
 
 
 SECTION "bank2 Overflow", ROMX
@@ -719,29 +713,14 @@ INCLUDE "engine/overworld/player_object.asm"
 
 
 SECTION "DEX GFX 2", ROMX
-IF USE_COMPRESSED_POKEDEX_GFX == TRUE
 PokedexLZ:
 INCBIN "gfx/pokedex/pokedex.2bpp.lz"
 PokedexSlowpokeLZ:
 INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
-ELSE
-; IF USE_COMPRESSED_POKEDEX_GFX == FALSE
-PokedexGFX:
-INCBIN "gfx/pokedex/pokedex.2bpp"
-PokedexSlowpokeGFX:
-INCBIN "gfx/pokedex/slowpoke.2bpp"
-ENDC
-
 Pokedex_ExtraTiles:
 INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
 Pokedex_PageNumTiles:
 INCBIN "gfx/pokedex/dex_pagenums.2bpp"
-Pokedex_MathTiles:
-INCBIN "gfx/pokedex/math_symbols_inverted.1bpp"
-Pokedex_Imperial_Tiles:
-INCBIN "gfx/pokedex/inversed_feet_inches.1bpp"
-Pokedex_RightArrow_Tile:
-INCBIN "gfx/pokedex/inversed_rightarrow.1bpp"
 
 
 SECTION "Newbox", ROMX

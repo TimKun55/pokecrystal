@@ -12,63 +12,41 @@ DisplayDexMonEvos:
 	lb bc, SCREEN_HEIGHT - 4, SCREEN_WIDTH
 	call ClearBox
 	call EVO_Draw_border
-
+	; hlcoord 5, 16
+	; call GetPokemonName
+	; call PlaceString
+	; ld b,b
 	ld a, [wTempSpecies]
-	ld [wCurDamage + 2], a
 	callfar GetPreEvolution
 	callfar GetPreEvolution
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
-	
+	; push af ; earliest EVO species
 	
 	ld de, .stage1_text
 	hlcoord 6, 1
 	call PlaceString
-
-	ld a, [wCurDamage + 2]
-	ld b, a
-	ld a, [wCurPartySpecies]
-	cp b
-	jr nz, .dont_arrow_stage1
-	hlcoord 5, 2
-	ld [hl], "→"
-.dont_arrow_stage1	
 	hlcoord 6, 2
 	call EVO_sethlcoord
-
-	; will be overwritten if we havent seen mon, and the option is enabled
-	call GetPokemonName ; uses wNamedObjectIndex
-IF EVO_HIDE_UNSEEN == TRUE
-	call EVO_CheckSeenMon
-	jr nz, .seen_1
-	ld de, EVO_Unseen_Mon_text
-.seen_1	
-ENDC
+	call GetPokemonName
 	call PlaceString
-
+	; hlcoord 5, 17
+	; ld de, .EVO_text
+	; call PlaceString
 	ld a, -1
 	ld [wStatsScreenFlags], a
 	call EVO_DrawSpriteBox
-
+	call EVO_place_CaughtIcon
 	hlcoord 6, 2
 	call EVO_sethlcoord
-	call EVO_place_Mon_Types	
-
-IF EVO_HIDE_UNSEEN == TRUE
-	call EVO_CheckSeenMon
-	jr z, .unseen_no_gfx_2
-ENDC	
-	call EVO_place_CaughtIcon
+	call EVO_place_Mon_Types
 	call EVO_place_Mon_Icon
-IF EVO_HIDE_UNSEEN == TRUE	
-.unseen_no_gfx_2
-ENDC
-
 	xor a
 	ld [wStatsScreenFlags], a
 	
+	;pop af ; earliest evo species
 	ld a, [wCurPartySpecies]
 	dec a
 	ld b, 0
@@ -85,8 +63,6 @@ ENDC
 	hlcoord 3, 6
 	ld de, .doesnt_evo_text
 	call PlaceString
-	hlcoord 5, 2
-	ld [hl], " "
 	ret ; no Evos
 .does_evo
 	push hl
@@ -97,6 +73,7 @@ ENDC
 	; we're in a multi-page evo line
 	pop hl ; dont need this value, just fix stack
 	pop af ; dont need this value, just fix stack
+	;call EVO_print_pagenum ; returns additional page num/index
 	ld a, [wCurDamage] ; page num
 	ld c, 4 ; we want the 4th Evo
 	call SimpleMultiply
@@ -113,6 +90,8 @@ ENDC
 	ld b, 1 ; stage 3
 	jr .cont
 .normal_line
+	; push af
+	; push hl
 	hlcoord 6, 4
 	ld de, .stage2_text
 	call PlaceString
@@ -133,61 +112,23 @@ ENDC
 	push hl ; manner of EVO byte + 1
 ; get Species	
 	cp EVOLVE_STAT
-	jr z, .extra_byte_1
-IF DEF(EVOLVE_HELD_LEVEL)
-	cp EVOLVE_HELD_LEVEL
-	jr z, .extra_byte_1
-ENDC
-	jr .no_extra_1
-.extra_byte_1
+	jr nz, .no_extra1
 	inc hl
-.no_extra_1
+.no_extra1
 	inc hl ; species byte
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte ; species
 	ld [wNamedObjectIndex], a
-
-	; will be overwritten if we havent seen mon, and the option is enabled
-	call GetPokemonName ; uses wNamedObjectIndex
-IF EVO_HIDE_UNSEEN == TRUE
-	call EVO_CheckSeenMon
-	jr nz, .seen_2
-	ld de, EVO_Unseen_Mon_text
-.seen_2	
-ENDC
+	call GetPokemonName ; uses NamedObjectIndex
 	call EVO_gethlcoord
+	; dec hl
 	call PlaceString
-
-	push af ; manner of evo
-	push bc ; count and stage
-	ld a, [wCurDamage + 2]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	jr nz, .dont_print_arrow
-	dec hl
-	ld [hl], "→"
-	inc hl
-.dont_print_arrow
-	pop bc ; count and stage
-	pop af ; manner of evo
-
 	call EVO_DrawSpriteBox
-	call EVO_place_Mon_Types
-IF EVO_HIDE_UNSEEN == TRUE
-	push af
-	push bc
-	call EVO_CheckSeenMon
-	jr z, .unseen_no_gfx_1
-ENDC
 	call EVO_place_CaughtIcon
+	call EVO_place_Mon_Types
 	call EVO_place_Mon_Icon
-IF EVO_HIDE_UNSEEN == TRUE
-.unseen_no_gfx_1
-	pop bc
-	pop af
-ENDC
 	call EVO_inchlcoord
+
 ; done printing species
 	pop hl ; manner of evo byte +1
 	pop af ; manner of evo
@@ -204,28 +145,16 @@ ENDC
 	call z, EVO_happiness
 	cp EVOLVE_STAT
 	call z, EVO_stats
-IF DEF(EVOLVE_HELD)	
 	cp EVOLVE_HELD
 	call z, EVO_held
-ENDC
-IF DEF(EVOLVE_HELD_LEVEL)	
-	cp EVOLVE_HELD_LEVEL
-	call z, EVO_held_level
-ENDC
 ; after the Evo manner specific prints, HL should be pointing to next EVO manner or 0
 	pop af ; manner of evo
 	pop hl ; manner of evo byte +1
 ; get Next EVO Manner or 0	
 	cp EVOLVE_STAT
-	jr z, .extra_byte_2
-IF DEF(EVOLVE_HELD_LEVEL)
-	cp EVOLVE_HELD_LEVEL
-	jr z, .extra_byte_2
-ENDC
-	jr .no_extra_2
-.extra_byte_2
+	jr nz, .no_extra2
 	inc hl
-.no_extra_2
+.no_extra2
 	inc hl ; species byte
 	inc hl ; points to next evo manner or 0
 	ld a, BANK(EvosAttacksPointers)
@@ -245,7 +174,7 @@ ENDC
 	cp 3
 	jp z, .exit_early_print_cont
 	pop af
-	jp .main_loop
+	jr .main_loop
 .done_stage
 	xor a
 	cp b
@@ -269,15 +198,9 @@ ENDC
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte ; manner of stage 1 evo ; if zero, no evos
 	cp EVOLVE_STAT
-	jr z, .extra_byte_3
-IF DEF(EVOLVE_HELD_LEVEL)
-	cp EVOLVE_HELD_LEVEL
-	jr z, .extra_byte_3
-ENDC
-	jr .no_extra_3
-.extra_byte_3
+	jr nz, .no_extra3
 	inc hl
-.no_extra_3
+.no_extra3
 	inc hl
 	inc hl ; species byte
 	ld a, BANK("Evolutions and Attacks")
@@ -322,6 +245,8 @@ ENDC
 	ld a, [wStatsScreenFlags]
 	cp 1
 	jr nz, .not_single
+	; hlcoord 14, 17
+	; ld [hl], $7f ; black square
 .not_single
 	xor a
 	ld [wStatsScreenFlags], a
@@ -339,12 +264,18 @@ ENDC
 	ret
 .stage1_text:
 	db $6b, $6c, $6d, "1@"
+	; db "STAGE 1:@"
 .stage2_text:
 	db $6b, $6c, $6d, "2@"
+	; db "STAGE 2:@"
 .stage3_text:
 	db $6b, $6c, $6d, "3@"
+	; db "STAGE 3
 .cont_page_text:
 	db $63, $64, $65, $66, "@"
+	; db "CONT", $eb, "@"
+; .EVO_text:
+; 	db "EVOLUTIONS@"
 .doesnt_evo_text:
 	db "Does Not Evolve@"
 .exit_early_print_cont
@@ -377,6 +308,7 @@ EVO_gethlcoord::
 EVO_inchlcoord:
 	push af
 	push bc
+	; push de
 	ld a, [wPokedexEvoStage2]
 	ld h, a
 	ld a, [wPokedexEvoStage3]
@@ -397,7 +329,7 @@ EVO_inchlcoord:
 EVO_level:
 	push hl ; pointing to lvl byte
 	call EVO_gethlcoord
-	ld [hl], "<DEX_LV_VRAM1>" ; lvl icon
+	ld [hl], $75 ; $5d
 
 	pop hl ; pointing to lvl byte
 	ld a, BANK("Evolutions and Attacks")
@@ -461,10 +393,14 @@ EVO_trade:
 .trade_text:
 	db "Trade@"
 .hold_text:
-	db " ", "+","@"
+	db " ", "<+>","@"
 
 EVO_happiness:
 	push hl ; time of day byte
+	; call EVO_inchlcoord
+	; ld de, .happiness_text
+	; call PlaceString ; mon species
+	
 	pop hl ; time of day byte
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -496,7 +432,7 @@ EVO_happiness:
 EVO_stats:
 	push hl ; level Needed byte
 	call EVO_gethlcoord
-	ld [hl], "<DEX_LV_VRAM1>" ; for vram1 side
+	ld [hl], $75 ; for vram1 side
 
 	pop hl ; level needed byte
 	ld a, BANK("Evolutions and Attacks")
@@ -520,7 +456,7 @@ EVO_stats:
 	cp ATK_EQ_DEF
 	jr z, .done
 	ld de, .atk_gt_def_text
-	cp ATK_GT_DEF
+	cp ATK_LT_DEF
 	jr z, .done
 	ld de, .atk_lt_def_text
 .done
@@ -530,156 +466,64 @@ EVO_stats:
 	ret
 
 .atk_eq_def_text:
-	db "ATK = DEF@"
+	db "Atk = Def@"
 .atk_gt_def_text:
-	db "ATK > DEF@"
+	db "Atk > Def@"
 .atk_lt_def_text:
-	db "ATK < DEF@"
+	db "Atk < Def@"
 
-IF DEF(EVOLVE_HELD)
 EVO_held:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	push af ; item index or -1 for no item
-	call EVO_gethlcoord
-	ld de, .hold_text
-	call PlaceString ; hold text
-	
-	pop af
-	ld [wNamedObjectIndex], a
-	call GetItemName
 	call EVO_inchlcoord
-	call EVO_inchlcoord
-	call PlaceString
-.done
-	call EVO_inchlcoord
-	ret
-.hold_text:
-	db "Hold@"
-ENDC
-
-IF DEF(EVOLVE_HELD_LEVEL)
-EVO_held_level:
-	; push hl ; pointing to item byte
-	ld a, BANK("Evolutions and Attacks")
-	call GetFarByte
 	push af ; item index
+	ld de, .item_text
+	call PlaceString ; item:
 
-	inc hl ; pointing to lvl byte
-	ld a, BANK("Evolutions and Attacks")
-	call GetFarByte
-	ld [wTextDecimalByte], a
-	call EVO_gethlcoord
-	push hl ; position of lvl icon
-	; ld [hl], "<DEX_LV_VRAM1>" ; lvl icon
-	ld de, .hold_text
-	call PlaceString
-
-	ld de, wTextDecimalByte
-	pop hl ; position of lvl icon
-	call EVO_inchlcoord
-	inc hl
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum ; lvl evolved at
-	
-	pop af
+	pop af ; item index
 	ld [wNamedObjectIndex], a
 	call GetItemName
+
 	call EVO_inchlcoord
-	call PlaceString	
-.done
+	call PlaceString
 	call EVO_inchlcoord
 	ret
-.hold_text:
-	db "<DEX_LV_VRAM1>   + Hold@"
-ENDC
+.item_text:
+	db "Item@"
 
 EVO_place_Mon_Types:
 	push af
 	push bc
 	push hl
+	ld a, [wTempMonSpecies]
+	ld a, [wTempSpecies]
 	ld a, [wCurSpecies]
 	push af
 	ld a, [wCurPartySpecies]
+	
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a	
 	call GetBaseData
 
-IF EVO_HIDE_UNSEEN == TRUE
-	call EVO_CheckSeenMon
-	jr nz, .seen_done_1
-	ld c, 18 ; index of ???
-	jr .skip_to_unk_1
-.seen_done_1
-ENDC
-
 ; set up the palette based on the current mon slot
 	ld a, [wBaseType1]
-
-IF SWAP_DARK_GHOST_TYPES == TRUE
-	call Evo_page_Swap_Dark_Ghost
-ENDC
-
 	ld c, a
-	predef GetMonTypeIndex
-
-IF EVO_HIDE_UNSEEN == TRUE
-.skip_to_unk_1
-ENDC	
+	call EVO_adjust_type_index
 	ld d, c
 	ld a, [wBaseType2]
-IF SWAP_DARK_GHOST_TYPES == TRUE
-	call Evo_page_Swap_Dark_Ghost
-ENDC
 	ld c, a ; type 2
-	predef GetMonTypeIndex
+	call EVO_adjust_type_index
 	ld b, d
-
-IF EVO_HIDE_UNSEEN == TRUE
-	push de
-	push bc
-	call EVO_CheckSeenMon
-	jr nz, .seen_done_2
-	pop bc
-	pop de
-	ld c, 18 ; index of ???
-	jr .skip_to_unk_2
-.seen_done_2
-	pop bc
-	pop de
-.skip_to_unk_2
-ENDC
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	call .determine_paladdr ; pal 1, 2, 3, or 4
 	farcall LoadDexTypePals
-	call SetDefaultBGPAndOBP ; call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
-ENDC
 
 	ld a, [wBaseType1]
-
-IF SWAP_DARK_GHOST_TYPES == TRUE
-	call Evo_page_Swap_Dark_Ghost
-ENDC
-
 	ld c, a
-	predef GetMonTypeIndex
+	call EVO_adjust_type_index
 	ld a, c
-
-IF EVO_HIDE_UNSEEN == TRUE
-	push af
-	call EVO_CheckSeenMon
-	jr nz, .seen_done_3
-	pop af ; unload stack
-	ld a, 18 ; index of ???
-	jr .done_3
-.seen_done_3
-	pop af
-.done_3
-ENDC
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
+	; ld hl, DexTypeLightIconGFX
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
@@ -688,16 +532,14 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	call .determine_mon_slot1
 	ld a, b
 	push af
+	; lb bc, BANK(DexTypeLightIconGFX), 4
 	lb bc, BANK(TypeLightIconGFX), 4
 	
 	ld a, $1
 	ldh [rVBK], a
 	call Request2bpp
-ENDC
 
 	call EVO_type_gethlcoord
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	pop af
 	ld [hli], a
 	inc a
@@ -708,39 +550,16 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ld [hl], a
 	ld a, $0
 	ldh [rVBK], a
-ELSE
-; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
-	call DEX_EVO_NO_CUSTOM_GFX_PrintType_Short
-ENDC
-
 ; 2nd Type
 	ld a, [wBaseType1]
 	ld b, a
 	ld a, [wBaseType2]
 	cp b
 	jp z, .done
-
-IF SWAP_DARK_GHOST_TYPES == TRUE
-	call Evo_page_Swap_Dark_Ghost
-ENDC
-
 	ld c, a ; type 2
-	predef GetMonTypeIndex
+	call EVO_adjust_type_index
+
 	ld a, c ; type 2
-
-IF EVO_HIDE_UNSEEN == TRUE
-	push af
-	call EVO_CheckSeenMon
-	jr nz, .seen_done_4
-	pop af
-	ld a, 18 ; index of ???
-	jr .skip_to_unk_4
-.seen_done_4
-	pop af
-.skip_to_unk_4
-ENDC
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX ; DexTypeDarkIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
@@ -753,13 +572,11 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 
 	ld a, $1
 	ldh [rVBK], a
+	; lb bc, BANK(DexTypeDarkIconGFX), 4
 	lb bc, BANK(TypeDarkIconGFX), 4
 	call Request2bpp
-ENDC
 	
 	call EVO_type2_gethlcoord
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	pop af
 	ld [hli], a
 	inc a
@@ -770,11 +587,6 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ld [hl], a
 	ld a, $0
 	ldh [rVBK], a
-ELSE
-; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
-	call DEX_EVO_NO_CUSTOM_GFX_PrintType_Short 
-ENDC
-
 .done
 	pop af
 	ld [wCurSpecies], a
@@ -782,8 +594,6 @@ ENDC
 	pop bc
 	pop af
 	ret
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 .determine_mon_slot1:
 	ld a, [wStatsScreenFlags]
 	ld b, $40
@@ -818,7 +628,6 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ld b, $5c
 	ld hl, vTiles2 tile $5c
 	ret
-
 .determine_paladdr:
 	ld a, [wStatsScreenFlags]
 	ld de, wBGPals1 palette 1 ; + 2
@@ -832,7 +641,6 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ret z
 	ld de, wBGPals1 palette 4 ; + 2
 	ret
-ENDC
 
 EVO_type_gethlcoord:
 	push bc
@@ -860,6 +668,19 @@ EVO_type2_gethlcoord:
 	dec hl
 	pop af
 	pop bc
+	ret
+
+EVO_adjust_type_index:
+	ld a, c
+; Skip Bird
+	cp BIRD
+	jr c, .done
+	cp UNUSED_TYPES
+	dec a
+	jr c, .done
+	sub UNUSED_TYPES
+.done
+	ld c, a
 	ret
 
 EVO_place_Mon_Icon:
@@ -897,31 +718,34 @@ EVO_DrawSpriteBox:
 	cp 2
 	jr z, .slot4
 ; slot 1
-	hlcoord 1, 5
+	hlcoord 1, 5 ; 0, 4
 	jr .start
 .slot3
-	hlcoord 1, 9
+	hlcoord 1, 9 ; 0, 8
 	jr .start
 .slot4
-	hlcoord 1, 13
+	hlcoord 1, 13 ; 0, 12
 	jr .start
 .stage1
-	hlcoord 1, 1
+	hlcoord 1, 1 ; 0, 0
 .start
 ; top left corner
-	ld [hl], $7a ; 3x1 corner, VRAM1
+	; hlcoord 0, 0
+	ld [hl], $77
 	push hl
 	inc hl
 ; top border
-	ld a, $79 ; VRAM1
+	ld a, $7b
 	ld bc, 2
+	; hlcoord 1, 0
 	push hl
 	call ByteFill
 	pop hl
 ; top right corner
+	; hlcoord 3, 0
 	inc hl
 	inc hl	
-	ld [hl], $7b ; VRAM1
+	ld [hl], $78
 
 	pop hl
 	ld bc, SCREEN_WIDTH
@@ -929,22 +753,25 @@ EVO_DrawSpriteBox:
 	push hl
 ; left side	
 	push hl
+	; hlcoord 0, 1
 	lb bc, 2, 1
-	ld a, $7c ; VRAM1
+	ld a, $7d
 	call FillBoxWithByte
 	pop hl
 	inc hl
 ;white sprite box fill
+	; hlcoord 1, 1
 	lb bc, 2, 2
-	ld a, $62 ; $VRAM1
+	ld a, $62 ; $7f
 	push hl
 	call FillBoxWithByte
 	pop hl
 ; right side
 	inc hl
 	inc hl
+	; hlcoord 3, 1
 	lb bc, 2, 1
-	ld a, $7d ; VRAM1
+	ld a, $7e
 	call FillBoxWithByte
 
 ; bottom left corner
@@ -952,18 +779,30 @@ EVO_DrawSpriteBox:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	add hl, bc
-	ld [hl], $7a ; VRAM1
+	; hlcoord 0, 3
+	ld [hl], $79
 ; bottom border
 	inc hl
-	ld a, $79 ; VRAM1
+	ld a, $7c
 	ld bc, 2
+	; hlcoord 1, 3
 	push hl
 	call ByteFill
 	pop hl
 ; bottom right corner
 	inc hl
 	inc hl
-	ld [hl], $7b ; VRAM1
+	; hlcoord 3, 3
+	ld [hl], $7a
+	; ld a, [wStatsScreenFlags]
+	; cp 2
+	; jr nz, .notslot4
+	; hlcoord 1, 16
+	; ld a, $39
+	; ld [hli], a
+	; ld [hli], a
+	; ld [hli], a
+	; ld [hli], a
 .notslot4
 	pop af
 	pop bc
@@ -973,6 +812,7 @@ EVO_DrawSpriteBox:
 
 EVO_set_multi_page_ptr:
 	ld c, a
+	; push af ; 4th entry, 8th entry, etc
 	ld a, [wCurDamage + 1]
 	; if we're continuing the stage 3 mons,
 	; need to dec a to account for stage 2 mon that wont be in evo list
@@ -1010,15 +850,9 @@ EVO_set_multi_page_ptr:
 	; check for 0? shouldnt encounter 0
 	ld a, d
 	cp EVOLVE_STAT
-	jr z, .extra_4
-IF DEF(EVOLVE_HELD_ITEM)
-	cp EVOLVE_HELD_ITEM
-	jr z, .extra_4
-ENDC
-	jr .no_extra_4
-.extra_4
+	jr nz, .no_extra1
 	inc hl
-.no_extra_4
+.no_extra1
 	inc hl
 	inc hl ; species byte
 	inc hl ; next EVO manner byte
@@ -1028,15 +862,9 @@ ENDC
 	call GetFarByte ; manner of evo ; if zero, no evos
 	; check for 0? shouldnt encounter 0
 	cp EVOLVE_STAT
-	jr z, .extra_5
-IF DEF(EVOLVE_HELD_ITEM)
-	cp EVOLVE_HELD_ITEM
-	jr z, .extra_5
-ENDC
-	jr .no_extra_5
-.extra_5
+	jr nz, .no_extra2
 	inc hl
-.no_extra_5
+.no_extra2
 	inc hl
 	inc hl ; species byte
 	ld a, BANK("Evolutions and Attacks")
@@ -1070,18 +898,18 @@ EVO_place_CaughtIcon:
 	cp 2
 	jr z, .slot4
 ; slot 1
-	hlcoord 5, 4 ; 5, 5
+	hlcoord 5, 5 ; 0, 4
 	jr .start
 .slot3
-	hlcoord 5, 8 ; 5, 9
+	hlcoord 5, 9 ; 0, 8
 	jr .start
 .slot4
-	hlcoord 5, 12 ; 5, 13
+	hlcoord 5, 13 ; 0, 12
 	jr .start
 .stage1
-	hlcoord 5, 1 ; 5, 2
+	hlcoord 5, 2 ; 0, 0
 .start
-	ld [hl], $70 ; pokeball icon, VRAM1
+	ld [hl], $76 ; pokeball icon
 .done
 	pop af
 	pop bc
@@ -1090,6 +918,8 @@ EVO_place_CaughtIcon:
 	ret
 
 EVO_Draw_border:
+	; ld b,b
+
 ; Request1bpp
 ; Load 1bpp at b:de to occupy c tiles of hl.
 	xor a
@@ -1154,94 +984,7 @@ EVO_Draw_border:
 	hlcoord 16, 16
 	ld de, .back_page_text
 	call PlaceString
-
-	; print up/down arrows
-	hlcoord 19, 0
-	ld [hl], $3f
-	hlcoord 19, 17
-	ld [hl], $40
-
 	call WaitBGMap
 	ret
 .back_page_text:
-	db $67, $68, $69, $6a, "@" ; VRAM1
-
-IF SWAP_DARK_GHOST_TYPES == TRUE
-Evo_page_Swap_Dark_Ghost:
-	cp GHOST
-	jr nz, .check_dark
-	ld a, DARK
-	jr .done
-.check_dark
-	cp DARK
-	jr nz, .done
-	ld a, GHOST
-.done
-	ret
-ENDC
-
-IF USE_GEN3_STYLE_TYPE_GFX == FALSE
-DEX_EVO_NO_CUSTOM_GFX_PrintType_Short:
-; Print type a at hl.
-	push hl
-IF EVO_HIDE_UNSEEN == TRUE	
-	push af
-	call EVO_CheckSeenMon
-	jr nz, .seen
-	pop af ; discarding
-	ld a, 18 ; index of ???
-	jr .done
-.seen
-	pop af
-.done
-ENDC
-	ld hl, .Types
-	ld bc, 4 ; since each entry is 4 bytes
-	call AddNTimes
-	ld d, h
-	ld e, l
-	pop hl
-	inc hl
-	jp PlaceString
-
-.Types
-	db "NRM@"
-	db "FIT@"
-	db "FLY@"
-	db "PSN@"
-	db "GRD@"
-	db "RCK@"
-	db "BUG@"
-	db "GHS@"
-	db "STL@"
-	db "FIR@"
-	db "WAT@"
-	db "GRS@"
-	db "ELC@"
-	db "PSY@"
-	db "ICE@"
-	db "DRG@"
-	db "DRK@"
-	db "FAI@"
-	db "???@"
-ENDC
-
-IF EVO_HIDE_UNSEEN == TRUE
-EVO_CheckSeenMon:
-	push de
-	push hl
-	ld a, [wNamedObjectIndex]
-	dec a
-	call CheckSeenMon
-	pop hl
-	pop de
-	and a ; 0 means unseen, 1 is seen
-	; jr nz, .seen_mon
-	; ld de, .EVO_Unseen_Mon_text
-; .seen_mon
-	ret
-
-EVO_Unseen_Mon_text:
-	db "?????@"
-ENDC
-
+	db $67, $68, $69, $6a, "@"

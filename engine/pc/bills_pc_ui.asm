@@ -1138,7 +1138,7 @@ _GetCursorMon:
 
 	; Poképic tilemap
 	hlcoord 0, 0
-	newfarcall Pokedex_PlaceFrontpicAtHL
+	newfarcall PlaceFrontpicAtHL
 
 	; Nickname
 	hlcoord 8, 0

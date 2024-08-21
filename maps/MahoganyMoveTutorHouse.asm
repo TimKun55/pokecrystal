@@ -2,7 +2,6 @@
 	const MAHOGANYMOVETUTORHOUSE_BLACK_BELT
 	const MAHOGANYMOVETUTORHOUSE_SUPER_NERD1
 	const MAHOGANYMOVETUTORHOUSE_SUPER_NERD2
-	const MAHOGANYMOVETUTORHOUSE_GRANNY
 
 MahoganyMoveTutorHouse_MapScripts:
 	def_scene_scripts
@@ -242,21 +241,6 @@ MahoganyMoveTutor3:
 	db "Rain Dance@"
 	db "Sunny Day@"
 	db "Cancel@"
-	
-EVGranny:
-	faceplayer
-	opentext
-	writetext GrannyHelloTakeText
-	waitbutton
-	verbosegiveitem POMEG_BERRY, 10
-	verbosegiveitem KELPSY_BERRY, 10
-	verbosegiveitem QUALOT_BERRY, 10
-	verbosegiveitem HONDEW_BERRY, 10
-	verbosegiveitem GREPA_BERRY, 10
-	verbosegiveitem TAMATO_BERRY, 10
-	waitbutton
-	closetext
-	end
 
 TutorHouseBookshelfLeft:
 	jumptext TutorHouseBookshelfLeftText
@@ -422,13 +406,7 @@ TutorHouseBookshelfRightText:
 	
 	para "It also weakens"
 	line "Solarbeam."
-	done
-
-GrannyHelloTakeText:
-	text "Hello, dear."
-	
-	para "Use these!"
-	done
+	done	
 
 MahoganyMoveTutorHouse_MapEvents:
 	db 0, 0 ; filler
@@ -447,4 +425,3 @@ MahoganyMoveTutorHouse_MapEvents:
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor1Script, -1
 	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor2, -1
 	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor3, -1
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EVGranny, -1

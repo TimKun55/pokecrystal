@@ -283,10 +283,6 @@ CatchingTutorialDeclinedText:
 
 	para "#mon, you have"
 	line "to walk a lot."
-
-	para "Your #dex shows"
-	line "where you can find"
-	cont "them too!"
 	done
 
 CatchingTutorialRepeatText:

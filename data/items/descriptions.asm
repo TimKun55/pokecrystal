@@ -50,7 +50,7 @@ ItemDescriptions:
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw PomegBerryDesc
+	dw SpicyPoffinDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpAtkDesc
@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw KelpsyBerryDesc
+	dw DryPoffinDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -136,16 +136,16 @@ ItemDescriptions:
 	dw BasementKeyDesc
 	dw PassDesc
 	dw EvioliteDesc
-	dw QualotBerryDesc
+	dw SweetPoffinDesc
 	dw ZincDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw HondewBerryDesc
-	dw GrepaBerryDesc
+	dw BitterPoffinDesc
+	dw SourPoffinDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TamatoBerryDesc
+	dw RichPoffinDesc
 	dw LeftoversDesc
 	dw OldAmberDesc
 	dw DomeFossilDesc
@@ -162,7 +162,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw NetBallDesc
-	dw TeruSama25Desc
+	dw MildPoffinDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -171,7 +171,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama25Desc
+	dw SaltyPoffinDesc
 	dw UpGradeDesc
 	dw OranBerryDesc
 	dw SitrusBerryDesc
@@ -454,9 +454,9 @@ XAttackDesc:
 	db   "Raises Attack."
 	next "(1 Btl)@"
 
-PomegBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base HP.@"
+SpicyPoffinDesc:
+	db   "Raises Attack."
+	next "(1 Btl) (Hold)@"
 
 XDefendDesc:
 	db   "Raises Defense."
@@ -648,9 +648,9 @@ BlkApricornDesc:
 	db   "A black Apricorn."
 	next "@"
 
-KelpsyBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base Atk.@"
+DryPoffinDesc:
+	db   "Raises Def."
+	next "(1 Btl) (Hold)@"
 
 PnkApricornDesc:
 	db   "A pink Apricorn."
@@ -792,9 +792,9 @@ EvioliteDesc:
 	db   "Ups Defenses if"
 	next "#mon evolves.@"
 
-QualotBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base Def.@"
+SweetPoffinDesc:
+	db   "Raises Sp.Atk."
+	next "(1 Btl) (Hold)@"
 
 ZincDesc:
 	db   "Raises Sp.Def"
@@ -812,13 +812,13 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (Hold)@"
 
-HondewBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base SpA.@"
+BitterPoffinDesc:
+	db   "Raises Sp.Def."
+	next "(1 Btl) (Hold)@"
 
-GrepaBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base SpD.@"
+SourPoffinDesc:
+	db   "Raises Speed."
+	next "(1 Btl) (Hold)@"
 
 MetalCoatDesc:
 	db   "Powers up steel-"
@@ -828,9 +828,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (Hold)@"
 
-TamatoBerryDesc:
-	db   "Grows friendly,"
-	next "lowers base Spd.@"
+RichPoffinDesc:
+	db   "Raises Accuracy."
+	next "(1 Btl) (Hold)@"
 
 LeftoversDesc:
 	db   "Restores HP during"
@@ -896,6 +896,10 @@ NetBallDesc:
 	db   "A Ball for Water"
 	next "and Bug #mon.@"
 
+MildPoffinDesc:
+	db   "Raises Evasion."
+	next "(1 Btl) (Hold)@"
+
 LightBallDesc:
 	db   "An odd, electrical"
 	next "orb. (Hold)@"
@@ -927,6 +931,10 @@ SunStoneDesc:
 PolkadotBowDesc:
 	db   "Powers up fairy-"
 	next "type moves. (Hold)@"
+
+SaltyPoffinDesc:
+	db   "Raises Crit."
+	next "(1 Btl) (Hold)@"
 
 UpGradeDesc:
 	db   "A mysterious box"
