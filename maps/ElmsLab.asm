@@ -996,6 +996,10 @@ ElmAfterTheftText5:
 	line "true? Th-that's"
 	cont "incredible!"
 
+	para "The #dex shows"
+	line "how #mon evolve"
+	cont "and learn moves."
+
 	para "He is superb at"
 	line "seeing the poten-"
 	cont "tial of people as"

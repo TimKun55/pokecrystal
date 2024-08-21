@@ -39,7 +39,8 @@
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
 	charmap "<LV>",      $6e
-
+	charmap "<DEX_LV>",  $5d
+	charmap "<DEX_LV_VRAM1>",$74
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $71
 	charmap "『",         $72 ; Japanese opening quote, unused
@@ -52,6 +53,7 @@
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
 	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
+	charmap "<DEX_⁂>",   $64 ; gfx/stats/stats_tiles.png, tile 14, VRAM0
 
 ; Actual characters (from gfx/font/font.png)
 
@@ -123,18 +125,12 @@
 	charmap "└",         $be
 	charmap "┘",         $bf
 	
-	charmap "<ID>",      $c0
-	charmap "№",         $c1
-	
-	charmap ">",		 $c7
-	charmap "<",		 $c8
-	charmap "=",		 $c9
-	charmap "+",		 $ca
-	charmap "<BOLD_P>",	 $cb
-	charmap "<BOLD_C>",  $cc
-	charmap "<%>",		 $cd
-	charmap "′",         $ce
-	charmap "″",         $cf
+	charmap ">",		 $ca
+	charmap "<",	     $cb
+	charmap "=",         $cc
+	charmap "+",		 $cd
+	charmap "<%>",       $ce
+	charmap "<BOLD_m>",  $cf
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1
@@ -147,8 +143,8 @@
 	charmap "■",         $d7
 	charmap "▲",         $d8
 	charmap "☎",        $d9
-	charmap "<BOLD_V>",  $da
-	charmap "<BOLD_S>",  $db
+	charmap "<ID>",      $da
+	charmap "№",         $db
 	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
 	charmap "“",         $dd ; opening quote
 	charmap "”",         $de ; closing quote

@@ -1,32 +1,3 @@
-StatusIconPals:
-; OK
-	RGB 31, 31, 31
-; PSN
-	RGB 27, 11, 27
-; PAR
-	RGB 30, 20, 00
-; SLP
-	RGB 17, 17, 17
-; BRN
-	RGB 31, 08, 02
-; FRZ
-	RGB 09, 18, 31
-; FNT
-	RGB 00, 00, 00
-; TOX
-	RGB 27, 06, 28
-
-CategoryIconPals:
-; PHYSICAL
-	RGB 31, 28, 00
-	RGB 27, 04, 02
-; SPECIAL
-	RGB 27, 31, 31
-	RGB 00, 14, 29
-; STATUS
-	RGB 31, 31, 31
-	RGB 21, 21, 14
-
 TypeIconPals:
 ; NORMAL
 	RGB 21, 21, 14

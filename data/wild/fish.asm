@@ -231,3 +231,104 @@ TimeFishGroups:
 	db HORSEA,     40,  HORSEA,     40 ; 19
 	db TENTACOOL,  20,  TENTACOOL,  20 ; 20
 	db TENTACOOL,  40,  TENTACOOL,  40 ; 21
+
+FishGroups_Names::
+	table_width 2, FishGroups_Names
+	dw Group1_Name
+	dw Group2_Name
+	dw Group3_Name
+	dw Group4_Name
+	dw Group5_Name
+	dw Group6_Name
+	dw Group7_Name
+	dw Group8_Name
+	dw Group9_Name
+	dw Group10_Name
+	dw Group11_Name
+	dw Group12_Name
+	dw Group13_Name
+	assert_table_length NUM_FISHGROUPS ; (13, NONE is not included in the count)
+
+; max length : 11 characters
+Group1_Name:
+	db " Shore@"
+Group2_Name:
+	db " Ocean@"
+Group3_Name:
+	db " Lake@"
+Group4_Name:
+	db " Pond@"
+Group5_Name:
+	db " Dratini@"
+Group6_Name:
+	db " Swarm 1@"
+Group7_Name:
+	db " Swarm 2@"
+Group8_Name:
+	db " Gyarados@"
+Group9_Name:
+	db " Route 45@"
+	; db " DRATINI 2@"
+Group10_Name:
+	db " Whirl@"
+Group11_Name:
+	db " Qwilfish@"
+Group12_Name:
+	db " Remoraid@"
+Group13_Name:
+	db " Route 12@"
+	; db " QWILFISH 2@"
+
+GetFishGroupName:
+; given fishing group num in 'a'
+; return str ptr in 'de'
+	dec a
+	add a ; doubles the index since ptrs are 2 bytes
+	ld hl, FishGroups_Names
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ret
+
+GetMapsFishGroup::
+	dec d ; map num
+	dec e ; map group
+	push de
+	ld d, 0
+	; 'e' is the map group
+	ld hl, MapGroupPointers
+	add hl, de ; since ptrs are 2 bytes, double the index
+	add hl, de
+	ld a, BANK(MapGroupPointers)
+	call GetFarWord
+	pop de
+	ld a, d ; map num becomes the index, do the same as map group
+	ld bc, MAP_LENGTH
+	; hl is pointing to map group ptr
+	call AddNTimes ;  Add bc * a to hl.
+	; fish group is the very last byte in the entry
+	ld bc, MAP_LENGTH - 1
+	add hl, bc
+	ld a, BANK(MapGroupPointers)
+	call GetFarByte
+	; ld a, [hl] ; fishing group
+	cp FISHGROUP_NONE
+	jr z, .fishgroup_none
+	call GetFishGroupName
+	; ptr to fishgroup name is in de
+	ret
+.fishgroup_none
+	xor a
+	ld d, a
+	ld e, a
+	ret
+
+; GetNextMapName_FishGroup:
+; given: Fish group
+; given: page number + num already printed
+; calculate the map number of next map entry with that fishing group
+; get map name based on map index
+; return: map name ptr in 'de'

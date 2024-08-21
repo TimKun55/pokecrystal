@@ -66,6 +66,10 @@ GoldenrodDeptStore4FGameboyKidText:
 
 	para "certain item!"
 	line "Pretty cool, hey?"
+
+	para "Your #dex shows"
+	line "how #mon really"
+	cont "evolve!"	
 	done
 
 GoldenrodDeptStore4FDirectoryText:

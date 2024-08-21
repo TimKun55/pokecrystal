@@ -2,6 +2,9 @@ NewPokedexEntry:
 	ldh a, [hMapAnims]
 	push af
 	xor a
+	ld [wPokedexShinyToggle], a
+	ld [wPokedexEntryPageNum], a
+
 	ldh [hMapAnims], a
 	call LowVolume
 	call ClearBGPalettes
@@ -14,22 +17,19 @@ NewPokedexEntry:
 	add POKEDEX_SCX
 	ldh [hSCX], a
 	xor a
+	ldh [hSCY], a
 	ld [wPokedexStatus], a
 	farcall _NewPokedexEntry
 	call WaitPressAorB_BlinkCursor
-    ld a, [wNamedObjectIndex]
-    dec a
-    call CheckCaughtMon
-    jr z, .notcaught
 	ld a, 1 ; page 2
 	ld [wPokedexStatus], a
 	farcall DisplayDexEntry
 	call WaitPressAorB_BlinkCursor
-.notcaught
 	pop af
 	ld [wPokedexStatus], a
 	call MaxVolume
-	farcall Pokedex_BlackOutBG
+	; call RotateThreePalettesRight
+	farcall Pokedex_BlackOutBG ; RotateThreePalettesRight causes ugly visual artifacts
 	ldh a, [hSCX]
 	add -POKEDEX_SCX
 	ldh [hSCX], a
