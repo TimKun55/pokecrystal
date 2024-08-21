@@ -206,7 +206,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_STEELIX ; ce        ; OlivineGym, Route23 
 	const SPRITE_SCIZOR ; cf         ; NONE
 	const SPRITE_SNEASEL ; d0        ; UndergroundRoom
-	const SPRITE_TEDDIURSA ; d1      ; DOLL, MahoganyBakery
+	const SPRITE_TEDDIURSA ; d1      ; DOLL
 	const SPRITE_SLUGMA ; d2         ; VioletPrimosHouse
 	const SPRITE_MAGCARGO ; d3       ; NONE
 	const SPRITE_PILOSWINE ; d4      ; MahoganyGym

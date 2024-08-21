@@ -255,6 +255,7 @@ DEF NUM_TREEMON_SETS EQU const_value
 	const HAPPINESS_REVIVALHERB       ; 11
 	const HAPPINESS_GROOMING          ; 12
 	const HAPPINESS_GAINLEVELATHOME   ; 13
+	const HAPPINESS_USEDEVBERRY       ; 14
 DEF NUM_HAPPINESS_CHANGES EQU const_value - 1
 
 ; significant happiness values

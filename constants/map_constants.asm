@@ -60,7 +60,6 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const MAHOGANY_MOVE_TUTOR_HOUSE,                    4,  4 ;  8
-	map_const MAHOGANY_BAKERY,                              6,  5 ;  9
 	endgroup
 
 	newgroup DUNGEONS                                             ;  3

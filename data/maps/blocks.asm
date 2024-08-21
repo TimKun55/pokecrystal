@@ -1021,9 +1021,6 @@ CeladonHomeDecorStore4F_Blocks:
 GoldenrodToyStore_Blocks:
 	INCBIN "maps/GoldenrodToyStore.ablk"
 
-MahoganyBakery_Blocks:
-	INCBIN "maps/MahoganyBakery.ablk"
-
 MahoganyMoveTutorHouse_Blocks:
 	INCBIN "maps/MahoganyMoveTutorHouse.ablk"
 
