@@ -545,10 +545,10 @@ SpriteAnimFunc_TradeTubeBulge:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
-	dec [hl]
-	dec [hl]
-	cp $00
-	jr c, .delete
+	inc [hl]
+	inc [hl]
+	cp $b0
+	jr nc, .delete
 	and $3
 	ret nz
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE

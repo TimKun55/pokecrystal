@@ -278,12 +278,11 @@ gfx/battle_balls/level_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/lure_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/moon_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/friend_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
-gfx/battle_balls/fast_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
+gfx/battle_balls/net_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/heavy_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/love_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/park_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/dusk_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
-gfx/battle_balls/net_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 
 gfx/player/ethan.2bpp: rgbgfx += -Z
 gfx/player/ethan_back.2bpp: rgbgfx += -Z

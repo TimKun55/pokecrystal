@@ -54,34 +54,7 @@ OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text
 
 OaksAssistant2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_SHINY_CHARM
-	iftrue .AlreadyGotShinyCharm
-	writetext ShinyCharmAideIntroText
-	waitbutton
-	readvar VAR_DEXCAUGHT
-	ifgreater 252, .Aide252Caught
-	writetext ShinyCharmAideTextFailure
-	waitbutton
-	closetext
-	end
-
-.AlreadyGotShinyCharm:
-	writetext AideGotShinyCharmText
-	waitbutton
-	closetext
-	end
-
-.Aide525Caught
-	writetext ShinyCharmAideTextSuccess
-	promptbutton
-	verbosegiveitem SHINY_CHARM
-	setevent EVENT_GOT_SHINY_CHARM
-	writetext AideExplainShinyCharmText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer OaksAssistant2Text
 
 OaksAssistant3Script:
 	jumptextfaceplayer OaksAssistant3Text
@@ -217,50 +190,7 @@ OaksAssistant1Text:
 	line "like to hear it."
 	done
 
-ShinyCharmAideIntroText:
-	text "Hi, <PLAYER>!"
-	
-	para "If you've regis-"
-	line "tered EVERY"
-	cont "#mon in your"
-	
-	para "#dex, I have"
-	line "something super"
-	cont "useful for you!"
-	done
-	
-ShinyCharmAideTextFailure:
-	text "Hmm… You don't have"
-	line "enough #mon."
-
-	para "Check your #dex"
-	line "for locations on"
-	cont "where to find"
-	cont "more of them!"
-	done
-
-ShinyCharmAideTextSuccess:
-	text "Oh! You've done"
-	line "it! You completed"
-	cont "the #dex!"
-
-	para "Here's the best"
-	line "reward I can give;"
-	cont "the Shiny Charm!"
-	done
-	
-AideExplainShinyCharmText:
-	text "Having that Charm"
-	line "will raise the"
-	
-	para "chance of finding"
-	line "a shiny #mon!"
-	
-	para "Use it well and"
-	line "happy hunting."
-	done
-
-AideGotExpCharmText:
+OaksAssistant2Text:
 	text "Thanks to your"
 	line "work on the #-"
 	cont "dex, the Prof's"

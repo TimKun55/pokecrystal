@@ -158,16 +158,16 @@
 	const LEPPA_BERRY  ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const SHINY_CHARM  ; 99
-	const EXP_CHARM    ; 9a
+	const BOXING_MITTS ; 99
+	const SPRING_SHOES ; 9a
 	const SPINNING_TOP ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
-	const FAST_BALL    ; a1
-	const NET_BALL     ; a2
+	const NET_BALL     ; a1
+	const ITEM_A2      ; a2
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5

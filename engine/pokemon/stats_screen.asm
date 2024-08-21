@@ -569,6 +569,7 @@ LoadPinkPage:
 	ld de, .Type_Text ; string for "TYPE/"
 	hlcoord 0, 14
 	call PlaceString
+
 	call PrintMonTypeTiles ; custom GFX function
 
 	ld a, [wTempMonPokerusStatus]

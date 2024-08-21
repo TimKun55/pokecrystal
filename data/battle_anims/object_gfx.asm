@@ -62,10 +62,9 @@ AnimBallObjGFX:
 	dbw LURE_BALL, 		AnimObjLureBallGFX
 	dbw MOON_BALL, 		AnimObjMoonBallGFX
 	dbw FRIEND_BALL, 	AnimObjFriendBallGFX
-	dbw FAST_BALL,      AnimObjFastBallGFX
+	dbw NET_BALL, 		AnimObjNetBallGFX
 	dbw HEAVY_BALL, 	AnimObjHeavyBallGFX
 	dbw LOVE_BALL, 		AnimObjLoveBallGFX
 	dbw PARK_BALL, 		AnimObjParkBallGFX
 	dbw DUSK_BALL,      AnimObjDuskBallGFX
-	dbw NET_BALL, 		AnimObjNetBallGFX
 	dbw -1, 			AnimObjPokeBallGFX ; failsafe
