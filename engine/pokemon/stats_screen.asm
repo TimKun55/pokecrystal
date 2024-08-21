@@ -783,12 +783,12 @@ LoadBluePage:
 
 .PlaceOTInfo:
 	ld de, IDNoString
-	hlcoord 0, 9
+	hlcoord 1, 8
 	call PlaceString
 	ld de, OTString
-	hlcoord 0, 12
+	hlcoord 1, 11
 	call PlaceString
-	hlcoord 2, 10
+	hlcoord 1, 9
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -796,7 +796,7 @@ LoadBluePage:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 13
+	hlcoord 1, 12
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -808,9 +808,10 @@ LoadBluePage:
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 13
+	hlcoord 9, 12
 	ld [hl], a
 .done
+	call StatsScreen_PrintHappiness
 	ret
 
 .OTNamePointers:
@@ -825,29 +826,18 @@ IDNoString:
 	db "<ID>№.@"
 
 OTString:
-	db "OT/@"
-
-LoadOrangePage:
-	call StatsScreen_placeCaughtLevel
-	call StatsScreen_placeCaughtTime
-	call StatsScreen_placeCaughtLocation
-	call StatsScreen_PrintDVs
-	call StatsScreen_PrintHappiness
-	ret
+	db "OT:@"
 
 StatsScreen_PrintHappiness:
-	hlcoord 1, 15
+	hlcoord 1, 16
 	ld [hl], $34 ; heart icon
 	
-	hlcoord 13, 15
-	ld [hl], $34 ; heart icon
-
 	hlcoord 3, 16
 	lb bc, 1, 3
 	ld de, wTempMonHappiness
 	call PrintNum
 	ld de, .HappinessString
-	hlcoord 3, 15
+	hlcoord 1, 14
 	call PlaceString
 	ld de, .outofMaxLoveString
 	hlcoord 6, 16
@@ -859,16 +849,101 @@ StatsScreen_PrintHappiness:
 .outofMaxLoveString:
 	db "/255@"
 
+LoadOrangePage:
+	call StatsScreen_placeCaughtLevel
+	call StatsScreen_placeCaughtTime
+	call StatsScreen_placeCaughtLocation
+	call StatsScreen_PrintDVs
+	call StatsScreen_PrintEVs
+	ret
+
+StatsScreen_PrintEVs:
+	hlcoord 13, 11
+	ld de, .EVNamestring
+	call PlaceString
+	
+	hlcoord 11, 12
+	ld de, .EVHPstring
+	call PlaceString
+	hlcoord 15, 12
+	lb bc, 1, 3
+	ld de, wTempMonHPEV
+	call PrintNum
+
+	hlcoord 11, 13
+	ld de, .EVAtkstring
+	call PlaceString
+	hlcoord 15, 13
+	lb bc, 1, 3
+	ld de, wTempMonAtkEV
+	call PrintNum
+
+	hlcoord 11, 14
+	ld de, .EVDefstring
+	call PlaceString
+	hlcoord 15, 14
+	lb bc, 1, 3
+	ld de, wTempMonDefEV
+	call PrintNum
+
+	hlcoord 11, 15
+	ld de, .EVSpAstring
+	call PlaceString
+	hlcoord 15, 15
+	lb bc, 1, 3
+	ld de, wTempMonSpclAtkEV
+	call PrintNum
+
+	hlcoord 11, 16
+	ld de, .EVSpDstring
+	call PlaceString
+	hlcoord 15, 16
+	lb bc, 1, 3
+	ld de, wTempMonSpclDefEV
+	call PrintNum
+
+	hlcoord 11, 17
+	ld de, .EVSpestring
+	call PlaceString
+	hlcoord 15, 17
+	lb bc, 1, 3
+	ld de, wTempMonSpdEV
+	call PrintNum
+
+.EVNamestring:
+	db "EVs@"
+.EVHPstring:
+	db "HP :@"
+.EVAtkstring:
+	db "Atk:@"
+.EVDefstring:
+	db "Def:@"
+.EVSpAstring:
+	db "SpA:@"
+.EVSpDstring:
+	db "SpD:@"
+.EVSpestring:
+	db "Spe:@"	
+
 StatsScreen_PrintDVs:
-	hlcoord 1, 12
-	ld de, .DVstring1
+	hlcoord 4, 11
+	ld de, .DVNamestring
 	call PlaceString
-	hlcoord 1, 13
-	ld de, .DVstring2
+	hlcoord 2, 12
+	ld de, .DVHPstring
 	call PlaceString
-	; hlcoord 1, 14
-	; ld de, .DVstring3
-	; call PlaceString
+	hlcoord 2, 13
+	ld de, .DVAtkstring
+	call PlaceString
+	hlcoord 2, 14
+	ld de, .DVDefstring
+	call PlaceString
+	hlcoord 2, 15
+	ld de, .DVSpcstring
+	call PlaceString
+	hlcoord 2, 16
+	ld de, .DVSpestring
+	call PlaceString
 
 	; we're using wPokedexStatus because why not, nobody using it atm lol
 	; ATK DV
@@ -889,7 +964,7 @@ StatsScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 10, 12
+	hlcoord 6, 13
 	call PrintNum
 
 	; DEF DV
@@ -909,7 +984,7 @@ StatsScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 17, 12
+	hlcoord 6, 14
 	call PrintNum
 
 	; SPE DV
@@ -930,7 +1005,7 @@ StatsScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 17, 13 ; 1, 5, 9, 13
+	hlcoord 6, 16 ; 1, 5, 9, 13
 	call PrintNum
 
 	; SPC DV
@@ -950,7 +1025,7 @@ StatsScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 10, 13
+	hlcoord 6, 15
 	call PrintNum
 	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
 	; call PrintNum
@@ -971,21 +1046,26 @@ StatsScreen_PrintDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 3, 13 ; 1, 4, 7, 10, 13 
+	hlcoord 6, 12 ; 1, 4, 7, 10, 13 
 	call PrintNum
 	ret
 
-.DVstring1:
-	db "DVs: Atk    Def   @"
-.DVstring2:	
-	; db "Atk    Def@"
-	db "HP   Spc    Spe   @"
-; .DVstring3:
-; 	db "SPC    SPE    HP@"
+.DVNamestring:
+	db "DVs@"
+.DVHPstring:
+	db "HP :@"
+.DVAtkstring:
+	db "Atk:@"
+.DVDefstring:
+	db "Def:@"
+.DVSpcstring:
+	db "Spc:@"
+.DVSpestring:
+	db "Spe:@"
 
 StatsScreen_placeCaughtLocation:
 	ld de, .MetAtMapString
-	hlcoord 1, 9
+	hlcoord 1, 8
 	call PlaceString
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
@@ -997,12 +1077,12 @@ StatsScreen_placeCaughtLocation:
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call PlaceString
 	ret	
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call PlaceString
 	ret
 .MetAtMapString:
@@ -1013,6 +1093,7 @@ StatsScreen_placeCaughtLocation:
 StatsScreen_placeCaughtTime:
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
+	ret z ; no time
 	rlca
 	rlca
 	dec a
@@ -1022,7 +1103,7 @@ StatsScreen_placeCaughtTime:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 6, 9
+	hlcoord 6, 8
 	call PlaceString
 	ret
 .times
@@ -1034,7 +1115,7 @@ StatsScreen_placeCaughtLevel:
 	; caught level
 	ld a, [wTempMonCaughtLevel]
 	and CAUGHT_LEVEL_MASK	
-	and a
+;	and a
 	jr z, .unknown_level
 	cp CAUGHT_EGG_LEVEL ; egg marker value
 	jr nz, .print
@@ -1042,17 +1123,17 @@ StatsScreen_placeCaughtLevel:
 
 .print
 	ld [wTextDecimalByte], a
-	hlcoord 12, 9
+	hlcoord 12, 8
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	hlcoord 11, 9
+	hlcoord 11, 8
 	ld [hl], "<LV>"
 	ret
 
 .unknown_level
 	ld de, .MetUnknownLevelString
-	hlcoord 11, 9
+	hlcoord 6, 8
 	call PlaceString
 	ret   
 .MetUnknownLevelString:
