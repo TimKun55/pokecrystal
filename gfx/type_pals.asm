@@ -28,7 +28,7 @@ TypeIconPals:
 ; PSYCHIC
 	RGB 31, 09, 15
 ; ICE
-	RGB 16, 29, 23
+	RGB 16, 27, 27
 ; DRAGON
 	RGB 15, 07, 31
 ; DARK
