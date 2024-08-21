@@ -161,8 +161,8 @@ ItemDescriptions:
 	dw FlowerMailDesc
 	dw LevelBallDesc
 	dw LureBallDesc
+	dw FastBallDesc
 	dw NetBallDesc
-	dw TeruSama25Desc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -879,6 +879,10 @@ LevelBallDesc:
 LureBallDesc:
 	db   "A Ball for #mon"
 	next "hooked by a Rod.@"
+
+FastBallDesc:
+	db   "A Ball for #mon"
+	next "w/base 100+ Spd.@"
 
 NetBallDesc:
 	db   "A Ball for Water"

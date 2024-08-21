@@ -166,8 +166,8 @@
 	const FLOWER_MAIL  ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
-	const NET_BALL     ; a1
-	const ITEM_A2      ; a2
+	const FAST_BALL    ; a1
+	const NET_BALL     ; a2
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5

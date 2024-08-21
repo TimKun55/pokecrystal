@@ -174,8 +174,8 @@ ItemEffects:
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
+	dw PokeBallEffect      ; FAST_BALL
 	dw PokeBallEffect      ; NET_BALL
-	dw NoEffect            ; ITEM_A2
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -743,11 +743,12 @@ BallMultiplierFunctionTable:
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
-	dbw NET_BALL,    NetBallMultiplier
+	dbw FAST_BALL,   FastBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
 	dbw DUSK_BALL,   DuskBallMultiplier
+	dbw NET_BALL,    NetBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -994,6 +995,21 @@ LoveBallMultiplier:
 
 .done1
 	pop bc
+	ret
+
+FastBallMultiplier:
+	ld a, [wTempEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseSpeed]
+	cp 100
+	ret nc
+	sla b
+	jr c, .max
+	sla b
+	ret nc
+.max
+	ld b, $ff
 	ret
 
 NetBallMultiplier:
