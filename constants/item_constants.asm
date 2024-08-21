@@ -158,9 +158,9 @@
 	const LEPPA_BERRY  ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const BOXING_MITTS ; 99
-	const SPRING_SHOES ; 9a
-	const SPINNING_TOP ; 9b
+	const ITEM_99      ; 99
+	const ITEM_9a      ; 9a
+	const ITEM_9b      ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e

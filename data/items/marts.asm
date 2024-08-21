@@ -11,7 +11,6 @@ Marts:
 	dw MartGoldenrod3F
 	dw MartGoldenrod4F
 	dw MartGoldenrod5F
-	dw MartGoldenrodToy
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
@@ -146,13 +145,6 @@ MartGoldenrod5F:
 	db TM_ICE_PUNCH
 	db TM_MEGA_DRAIN
 	db TM_SLUDGE
-	db -1 ; end
-
-MartGoldenrodToy:
-	db 3 ; # items
-	db BOXING_MITTS
-	db SPRING_SHOES
-	db SPINNING_TOP
 	db -1 ; end
 
 MartOlivine:

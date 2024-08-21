@@ -145,7 +145,7 @@ DisplayDexMonEvos:
 	call z, EVO_happiness
 	cp EVOLVE_STAT
 	call z, EVO_stats
-	cp EVOLVE_HELD
+	cp EVOLVE_HELD_LEVEL
 	call z, EVO_held
 ; after the Evo manner specific prints, HL should be pointing to next EVO manner or 0
 	pop af ; manner of evo

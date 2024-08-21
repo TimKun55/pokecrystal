@@ -153,9 +153,9 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw BoxingMittsDesc
-	dw SpringShoesDesc
-	dw SpinningTopDesc
+	dw TeruSama25Desc
+	dw TeruSama25Desc
+	dw TeruSama25Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -859,18 +859,6 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Boosts Attack but"
 	next "causes confusion.@"
-
-BoxingMittsDesc:
-	db   "A pair of red"
-	next "mitts for boxing.@"
-
-SpringShoesDesc:
-	db   "Pair of shoes with"
-	next "springs. Bouncy.@"
-
-SpinningTopDesc:
-	db   "Colorful spinning"
-	next "top. Very fun.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

@@ -170,8 +170,8 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_ONIX ; aa           ; PewterGym
 	const SPRITE_VOLTORB ; ab        ; DOLL
 	const SPRITE_ELECTRODE ; ac      ; TeamRocketBaseB2F
-	const SPRITE_HITMONLEE ; ad      ; GoldenrodToyStore
-	const SPRITE_HITMONCHAN ; ae     ; GoldenrodToyStore
+	const SPRITE_HITMONLEE ; ad      ; NONE
+	const SPRITE_HITMONCHAN ; ae     ; NONE
 	const SPRITE_WEEZING ; af        ; FuchsiaGym
 	const SPRITE_CHANSEY ; b0        ; All PokeCenters
 	const SPRITE_KANGASKHAN ; b1     ; CeruleanTradeSpeechHouse
@@ -214,8 +214,8 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_SKARMORY ; d6       ; SaffronAviculturalSociety2F
 	const SPRITE_HOUNDOOM ; d7       ; KarensRoom
 	const SPRITE_KINGDRA ; d8        ; BlackthornGym1F, IndigoPlateau
-	const SPRITE_TYROGUE ; d9        ; GoldenrodToyStore
-	const SPRITE_HITMONTOP ; da      ; GoldenrodToyStore
+	const SPRITE_TYROGUE ; d9        ; NONE
+	const SPRITE_HITMONTOP ; da      ; NONE
 	const SPRITE_MURKROW ; db        ; SaffronAviculturalSociety2F, TeamRocketBaseB3F
 	const SPRITE_MILTANK ; dc        ; GoldenrodGym, Route23, Route39, Route39Barn
 	const SPRITE_BLISSEY ; dd        ; CopycatsHouse1F

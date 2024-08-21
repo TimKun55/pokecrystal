@@ -590,7 +590,6 @@ ENDM
 	map_attributes GoldenrodHomeDecorStore2F, GOLDENROD_HOME_DECOR_STORE_2F, $00, 0
 	map_attributes GoldenrodHomeDecorStore3F, GOLDENROD_HOME_DECOR_STORE_3F, $00, 0
 	map_attributes GoldenrodHomeDecorStore4F, GOLDENROD_HOME_DECOR_STORE_4F, $00, 0
-	map_attributes GoldenrodToyStore, GOLDENROD_TOY_STORE, $00, 0
 	map_attributes VermilionFishingSpeechHouse, VERMILION_FISHING_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
