@@ -5708,11 +5708,11 @@ MoveSelectionScreen:
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
 .place_textbox_start_over
-;	push hl
-;	call ClearSprites
-;	ld b, SCGB_BATTLE_COLORS
-;	call GetSGBLayout
-;	pop hl
+	push hl
+	call ClearSprites
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
 	jp MoveSelectionScreen

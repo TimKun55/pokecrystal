@@ -549,7 +549,7 @@ ENDC
 	call ByteFill	
 	hlcoord 1, 16, wAttrmap
 	ld bc, 4
-	call ByteFill
+	call ByteFill				
 
 	call InitPartyMenuOBPals
 	call ApplyAttrmap

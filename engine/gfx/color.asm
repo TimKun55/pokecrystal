@@ -1692,6 +1692,8 @@ endr
 	call FarCopyWRAM
 	ret
 
+INCLUDE "gfx/type_pals.asm"
+
 INCLUDE "data/maps/environment_colors.asm"
 
 INCLUDE "gfx/types_cats_status_pals.asm"

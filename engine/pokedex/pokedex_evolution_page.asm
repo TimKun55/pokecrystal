@@ -1,4 +1,3 @@
-
 DisplayDexMonEvos:
 	ld a, DEXENTRY_EVO
 	ld [wPokedexEntryType], a
@@ -620,7 +619,6 @@ ENDC
 IF SWAP_DARK_GHOST_TYPES == TRUE
 	call Evo_page_Swap_Dark_Ghost
 ENDC
-
 	ld c, a
 	predef GetMonTypeIndex
 

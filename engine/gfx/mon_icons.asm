@@ -44,7 +44,6 @@ SetDexMonIconColor_NoShiny:
 	add hl, de
 	pop af
 	jp _ApplyMenuMonIconColor
-
 SetDexMonIconColor_SpritePage:
 	push hl
 	push de
@@ -488,7 +487,6 @@ Pokedex_InitAnimatedMonIcon:
 	pop af
 	ld [wCurPartySpecies], a
 	ret
-
 Trade_LoadMonIconGFX:
 	ld a, [wTempIconSpecies]
 	ld [wCurIcon], a
