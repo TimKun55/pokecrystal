@@ -152,7 +152,7 @@ ItemNames::
 	li "Leppa Berry"
 	li "Dragon Scale"
 	li "Berserk Gene"
-	li "TERU-SAMA"
+	li "Exp. Charm"
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "Sacred Ash"

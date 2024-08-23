@@ -51,6 +51,7 @@ INCLUDE "maps/OlivineLighthouse4F.asm"
 INCLUDE "maps/VermilionSailorsHouse.asm"
 INCLUDE "maps/FarawayIslandInside.asm"
 INCLUDE "maps/Route1ViridianGate.asm"
+INCLUDE "maps/Route43MahoganyGate.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -389,7 +390,6 @@ INCLUDE "maps/MahoganyPokecenter1F.asm"
 INCLUDE "maps/Route42EcruteakGate.asm"
 INCLUDE "maps/LakeOfRageHiddenPowerHouse.asm"
 INCLUDE "maps/LakeOfRageMagikarpHouse.asm"
-INCLUDE "maps/Route43MahoganyGate.asm"
 INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/RedsHouse2F.asm"

@@ -7363,6 +7363,15 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
+; Exp. Charm increases experience received by 50% when
+; the player has the item on their bag.
+	ld a, EXP_CHARM
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .NoExpCharm
+	call BoostExp
+.NoExpCharm
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM

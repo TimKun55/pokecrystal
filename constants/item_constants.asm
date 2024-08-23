@@ -158,7 +158,7 @@
 	const LEPPA_BERRY  ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const ITEM_99      ; 99
+	const EXP_CHARM    ; 99
 	const ITEM_9a      ; 9a
 	const ITEM_9b      ; 9b
 	const SACRED_ASH   ; 9c

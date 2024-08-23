@@ -153,7 +153,7 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama25Desc
+	dw ExpCharmDesc
 	dw TeruSama25Desc
 	dw TeruSama25Desc
 	dw SacredAshDesc
@@ -859,6 +859,10 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Boosts Attack but"
 	next "causes confusion.@"
+
+ExpCharmDesc:
+	db   "Earns extra Exp."
+	next "points in battle.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

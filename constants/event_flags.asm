@@ -1591,7 +1591,8 @@
 	const EVENT_ROUTE_23_JASMINE
 	const EVENT_ROUTE_23_PRYCE
 	const EVENT_ROUTE_23_CLAIR
-; Unused: next 108 events
+	const EVENT_GOT_EXP_CHARM
+; Unused: next 107 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800
