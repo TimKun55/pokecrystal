@@ -153,7 +153,7 @@ ItemNames::
 	li "Dragon Scale"
 	li "Berserk Gene"
 	li "Exp. Charm"
-	li "TERU-SAMA"
+	li "Shiny Charm"
 	li "TERU-SAMA"
 	li "Sacred Ash"
 	li "Heavy Ball"

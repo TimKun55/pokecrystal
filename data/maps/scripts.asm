@@ -65,6 +65,7 @@ INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronOddishDollHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
+INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -394,7 +395,6 @@ INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/RedsHouse2F.asm"
 INCLUDE "maps/BluesHouse.asm"
-INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 20", ROMX

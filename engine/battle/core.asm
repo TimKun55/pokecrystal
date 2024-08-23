@@ -2047,25 +2047,6 @@ GetMaxHP:
 	ld c, a
 	ret
 
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
-	ret
-
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
 	ldh a, [hBattleTurn]
@@ -6434,6 +6415,59 @@ LoadEnemyMon:
 
 .skipshine:
 ; Generate new random DVs
+
+; The Shiny Charm increases the chance a Pokémon will be shiny.
+; In regular games, it adds 2 additional rolls to shininess, raising
+; the chance of a shiny Pokémon appearing from 1/8192 to 3/8192 (~1/2731).
+
+; This implementation uses the already defined shiny DVs for Gyarados,
+; so it checks based on 65535 values instead of 8192 values.
+
+; To compensate for that, it adds 5 additional rolls for each DV byte,
+; which means the actual chance is increased from 1/8192 to ~1/2621.
+
+	ld a, SHINY_CHARM
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .NoShinyCharm
+
+	push de
+	push hl
+	ld a, 6
+	ld d, a
+.loopAtkDef
+	ld a, d
+	dec a
+	ld d, a
+	jr z, .DoneAtkDef
+	call BattleRandom
+	ld e, a
+	cp ATKDEFDV_SHINY ; checks if ATK is 14 and DEF is 10
+	jr nz, .loopAtkDef
+.DoneAtkDef
+	ld a, e
+	ld b, a
+
+	ld a, 6
+	ld d, a
+.loopSpdSpc
+	ld a, d
+	dec a
+	ld d, a
+	jr z, .DoneSpdSpc
+	call BattleRandom
+	ld e, a
+	cp SPDSPCDV_SHINY ; checks if SPD is 10 and SPC is 10
+	jr nz, .loopSpdSpc
+.DoneSpdSpc
+	ld a, e
+	ld c, a
+	pop hl
+	pop de
+	jr .UpdateDVs
+
+.NoShinyCharm
 	call BattleRandom
 	ld b, a
 	call BattleRandom
@@ -6497,7 +6531,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6506,7 +6540,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]

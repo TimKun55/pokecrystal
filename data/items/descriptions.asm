@@ -154,7 +154,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw ExpCharmDesc
-	dw TeruSama25Desc
+	dw ShinyCharmDesc
 	dw TeruSama25Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
@@ -863,6 +863,10 @@ BerserkGeneDesc:
 ExpCharmDesc:
 	db   "Earns extra Exp."
 	next "points in battle.@"
+
+ShinyCharmDesc:
+	db "Raises chance of"
+	next "Shiny #mon.@"
 
 SacredAshDesc:
 	db   "Fully revives all"
