@@ -129,7 +129,6 @@ LakeOfRageMagikarpHouse_Blocks:
 GoldenrodNameRater_Blocks:
 ManiasHouse_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
-;CianwoodMrTradebackHouse_Blocks:
 CianwoodBeastsHouse_Blocks:
 CianwoodMoveTutorHouse_Blocks:
 	INCBIN "maps/JohtoHouse3.ablk"
@@ -273,9 +272,6 @@ Route5_Blocks:
 
 Route9_Blocks:
 	INCBIN "maps/Route9.ablk"
-
-Route22_Blocks:
-	INCBIN "maps/Route22.ablk"
 
 
 SECTION "Map Blocks 2", ROMX
@@ -1047,5 +1043,8 @@ CeruleanEmptyHouse_Blocks:
 
 CeruleanEmptyHouseUnderground_Blocks:
 	INCBIN "maps/CeruleanEmptyHouseUnderground.ablk"
+	
+Route22_Blocks:
+	INCBIN "maps/Route22.ablk"
 
 ENDSECTION

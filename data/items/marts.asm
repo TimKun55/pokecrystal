@@ -326,7 +326,7 @@ MartCeladon2F2:
 
 MartCeladon3F:
 	db 5 ; # items
-	db TM_PSYCH_UP
+	db TM_CALM_MIND
 	db TM_PROTECT
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH

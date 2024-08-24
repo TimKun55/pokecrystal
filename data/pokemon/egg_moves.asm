@@ -206,7 +206,7 @@ PsyduckEggMoves:
 MankeyEggMoves:
 	db ROCK_SLIDE
 	db FORESIGHT
-	db POWER_UP
+	db BULK_UP
 	db COUNTER
 	db REVERSAL
 	db BEAT_UP
@@ -239,7 +239,7 @@ AbraEggMoves:
 
 MachopEggMoves:
 	db LIGHT_SCREEN
-	db POWER_UP
+	db BULK_UP
 	db GROWTH_PUNCH
 	db ENCORE
 	db -1 ; end
@@ -464,7 +464,7 @@ ElectabuzzEggMoves:
 	db BARRIER
 	db CROSS_CHOP
 	db KARATE_CHOP
-	db POWER_UP
+	db BULK_UP
 	db GROWTH_PUNCH
 	db -1 ; end
 
@@ -622,6 +622,7 @@ TogepiEggMoves:
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db NASTY_PLOT
+	db CALM_MIND
 	db -1 ; end
 
 NatuEggMoves:

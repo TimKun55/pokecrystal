@@ -179,47 +179,6 @@ CheckAbleToSwitch:
 	call FindAliveEnemyMons
 	ret c
 
-	ld a, [wEnemySubStatus1]
-	bit SUBSTATUS_PERISH, a
-	jr z, .no_perish
-
-	ld a, [wEnemyPerishCount]
-	cp 1
-	jr nz, .no_perish
-
-	; Perish count is 1
-
-	call FindAliveEnemyMons
-	call FindEnemyMonsWithAtLeastQuarterMaxHP
-	call FindEnemyMonsThatResistPlayer
-	call FindAliveEnemyMonsWithASuperEffectiveMove
-
-	ld a, e
-	cp 2
-	jr nz, .not_2
-
-	ld a, [wEnemyAISwitchScore]
-	add $30 ; maximum chance
-	ld [wEnemySwitchMonParam], a
-	ret
-
-.not_2
-	call FindAliveEnemyMons
-	sla c
-	sla c
-	ld b, $ff
-
-.loop1
-	inc b
-	sla c
-	jr nc, .loop1
-
-	ld a, b
-	add $30 ; maximum chance
-	ld [wEnemySwitchMonParam], a
-	ret
-
-.no_perish
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp 11

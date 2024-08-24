@@ -90,7 +90,7 @@ BattleCommandPointers:
 	dw BattleCommand_Protect
 	dw BattleCommand_Spikes
 	dw BattleCommand_Foresight
-	dw BattleCommand_PerishSong
+	dw BattleCommand_BulkUp ; PerishSong
 	dw BattleCommand_StartSandstorm
 	dw BattleCommand_Endure
 	dw BattleCommand_CheckCurl
@@ -151,7 +151,7 @@ BattleCommandPointers:
 	dw BattleCommand_SwitchTurn
 	dw BattleCommand_FakeOut
 	dw BattleCommand_BellyDrum
-	dw BattleCommand_PsychUp
+	dw BattleCommand_CalmMind
 	dw BattleCommand_Rage
 	dw BattleCommand_DoubleFlyingDamage
 	dw BattleCommand_DoubleUndergroundDamage
@@ -178,4 +178,5 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_Burn
+	dw BattleCommand_Growth
 	assert_table_length NUM_EFFECT_COMMANDS

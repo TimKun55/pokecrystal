@@ -90,7 +90,7 @@ ENDM
 	command protect                 ; 55
 	command spikes                  ; 56
 	command foresight               ; 57
-	command perishsong              ; 58
+	command bulkup                  ; 58
 	command startsandstorm          ; 59
 	command endure                  ; 5a
 	command checkcurl               ; 5b
@@ -151,7 +151,7 @@ ENDM
 	command switchturn              ; 93
 	command fakeout                 ; 94
 	command bellydrum               ; 95
-	command psychup                 ; 96
+	command calmmind                ; 96
 	command rage                    ; 97
 	command doubleflyingdamage      ; 98
 	command doubleundergrounddamage ; 99
@@ -178,6 +178,7 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command burn                    ; b0
+	command growth                  ; b1
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

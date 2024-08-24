@@ -89,13 +89,6 @@ SandstormHitsText:
 	line "<USER>!"
 	prompt
 
-PerishCountText:
-	text "<USER>'s"
-	line "Perish count is @"
-	text_decimal wTextDecimalByte, 1, 1
-	text "!"
-	prompt
-
 BattleText_TargetRecoveredWithItem:
 	text "<TARGET>"
 	line "recovered with"
@@ -1029,11 +1022,6 @@ IdentifiedText:
 	text "<USER>"
 	line "identified"
 	cont "<TARGET>!"
-	prompt
-
-StartPerishText:
-	text "Both #mon will"
-	line "faint in 3 turns!"
 	prompt
 
 SandstormBrewedText:

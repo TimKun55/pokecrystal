@@ -27,7 +27,7 @@ MoveEffectsPointers:
 	dw TriAttack
 	dw SpecialAttackUpHit
 	dw NormalHit
-	dw RazorWind
+	dw CalmMind     ; RazorWind
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
@@ -90,7 +90,7 @@ MoveEffectsPointers:
 	dw Pursuit
 	dw RapidSpin
 	dw DoBurn
-	dw NormalHit
+	dw Growth
 	dw FreezeHit ; for Blizzard, purposefully with different EFFECT_* constant
 	dw HiddenPower
 	dw DefenseUpHit
@@ -145,7 +145,7 @@ MoveEffectsPointers:
 	dw Curse
 	dw Protect
 	dw Spikes
-	dw PerishSong
+	dw BulkUp          ; PerishSong
 	dw Sandstorm
 	dw Endure
 	dw Safeguard
@@ -155,7 +155,6 @@ MoveEffectsPointers:
 	dw RainDance
 	dw SunnyDay
 	dw BellyDrum
-	dw PsychUp
 	dw Teleport
 	dw DefenseCurl
 	assert_table_length NUM_MOVE_EFFECTS

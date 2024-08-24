@@ -6346,8 +6346,6 @@ INCLUDE "engine/battle/move_effects/spikes.asm"
 
 INCLUDE "engine/battle/move_effects/foresight.asm"
 
-INCLUDE "engine/battle/move_effects/perish_song.asm"
-
 INCLUDE "engine/battle/move_effects/sandstorm.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
@@ -6361,6 +6359,12 @@ INCLUDE "engine/battle/move_effects/return.asm"
 INCLUDE "engine/battle/move_effects/present.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
+
+INCLUDE "engine/battle/move_effects/calmmind.asm"
+
+INCLUDE "engine/battle/move_effects/bulkup.asm"
+
+INCLUDE "engine/battle/move_effects/growth.asm"
 
 SafeCheckSafeguard:
 	push hl
@@ -6487,8 +6491,6 @@ INCLUDE "engine/battle/move_effects/rain_dance.asm"
 INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
-
-INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 

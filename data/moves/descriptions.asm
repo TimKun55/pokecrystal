@@ -96,7 +96,7 @@ MoveDescriptions::
 	dw ConfusionDescription
 	dw PsychicMDescription
 	dw HypnosisDescription
-	dw PowerUpDescription
+	dw BulkUpDescription
 	dw AgilityDescription
 	dw QuickAttackDescription
 	dw RageDescription
@@ -244,7 +244,7 @@ MoveDescriptions::
 	dw SunnyDayDescription
 	dw CrunchDescription
 	dw MirrorCoatDescription
-	dw PsychUpDescription
+	dw CalmMindDescription
 	dw ExtremespeedDescription
 	dw AncientpowerDescription
 	dw ShadowBallDescription
@@ -564,8 +564,8 @@ LeechSeedDescription:
 	line "foe on every turn.@"
 
 GrowthDescription:
-	db   "Forces body to"
-	line "grow. SpAtk ▲1.@"
+	db   "Makes body grow."
+	line "SpAtk and Atk ▲1.@"
 
 SolarbeamDescription:
 	db   "Turn 1: Charge up."
@@ -642,9 +642,9 @@ HypnosisDescription:
 	db   "May put the foe to"
 	line "sleep.@"
 
-PowerUpDescription:
-	db   "Channels inner po-"
-	line "wer. Atk ▲1.@"
+BulkUpDescription:
+	db   "Tenses muscles."
+	line "Atk and Def ▲1.@"
 
 AgilityDescription:
 	db   "Relaxes and light-"
@@ -1166,9 +1166,9 @@ MirrorCoatDescription:
 	db   "Counters a Sp.Atk"
 	line "move by double.@"
 
-PsychUpDescription:
-	db   "Copies the foe's"
-	line "stat changes.@"
+CalmMindDescription:
+	db   "Focuses mind."
+	line "SpAtk, SpDef ▲1.@"
 
 ExtremespeedDescription:
 	db   "A powerful first-"

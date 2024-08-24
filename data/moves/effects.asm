@@ -1176,26 +1176,11 @@ Disable:
 	disable
 	endmove
 
-RazorWind:
-	checkcharge
+CalmMind:
 	checkobedience
-	doturn
-	charge
 	usedmovetext
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
+	doturn
+	calmmind
 	endmove
 
 Fly:
@@ -1514,11 +1499,11 @@ Foresight:
 	foresight
 	endmove
 
-PerishSong:
+BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	perishsong
+	bulkup
 	endmove
 
 Sandstorm:
@@ -1802,13 +1787,6 @@ BellyDrum:
 	usedmovetext
 	doturn
 	bellydrum
-	endmove
-
-PsychUp:
-	checkobedience
-	usedmovetext
-	doturn
-	psychup
 	endmove
 
 MirrorCoat:
@@ -2113,4 +2091,11 @@ Hail:
 	usedmovetext
 	doturn
 	starthail
+	endmove
+
+Growth:
+	checkobedience
+	usedmovetext
+	doturn
+	growth
 	endmove

@@ -32,7 +32,6 @@ AI_Redundant:
 	dbw EFFECT_NIGHTMARE,    .Nightmare
 	dbw EFFECT_SPIKES,       .Spikes
 	dbw EFFECT_FORESIGHT,    .Foresight
-	dbw EFFECT_PERISH_SONG,  .PerishSong
 	dbw EFFECT_SANDSTORM,    .Sandstorm
 	dbw EFFECT_ATTRACT,      .Attract
 	dbw EFFECT_SAFEGUARD,    .Safeguard
@@ -126,11 +125,6 @@ AI_Redundant:
 .Foresight:
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_IDENTIFIED, a
-	ret
-
-.PerishSong:
-	ld a, [wPlayerSubStatus1]
-	bit SUBSTATUS_PERISH, a
 	ret
 
 .Sandstorm:

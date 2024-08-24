@@ -321,9 +321,6 @@ HandleBetweenTurnEffects:
 	call HandleWrap
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandlePerishSong
-	call CheckFaint_PlayerThenEnemy
-	ret c
 	jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
@@ -336,9 +333,6 @@ HandleBetweenTurnEffects:
 	call CheckFaint_EnemyThenPlayer
 	ret c
 	call HandleWrap
-	call CheckFaint_EnemyThenPlayer
-	ret c
-	call HandlePerishSong
 	call CheckFaint_EnemyThenPlayer
 	ret c
 
@@ -1223,74 +1217,6 @@ ResidualDamage:
 	ld c, 20
 	call DelayFrames
 	xor a
-	ret
-
-HandlePerishSong:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .EnemyFirst
-	call SetPlayerTurn
-	call .do_it
-	call SetEnemyTurn
-	jp .do_it
-
-.EnemyFirst:
-	call SetEnemyTurn
-	call .do_it
-	call SetPlayerTurn
-
-.do_it
-	ld hl, wPlayerPerishCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_count
-	ld hl, wEnemyPerishCount
-
-.got_count
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVar
-	bit SUBSTATUS_PERISH, a
-	ret z
-	dec [hl]
-	ld a, [hl]
-	ld [wTextDecimalByte], a
-	push af
-	ld hl, PerishCountText
-	call StdBattleTextbox
-	pop af
-	ret nz
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	res SUBSTATUS_PERISH, [hl]
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .kill_enemy
-	ld hl, wBattleMonHP
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld hl, wPartyMon1HP
-	ld a, [wCurBattleMon]
-	call GetPartyLocation
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ret
-
-.kill_enemy
-	ld hl, wEnemyMonHP
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld a, [wBattleMode]
-	dec a
-	ret z
-	ld hl, wOTPartyMon1HP
-	ld a, [wCurOTMon]
-	call GetPartyLocation
-	xor a
-	ld [hli], a
-	ld [hl], a
 	ret
 
 HandleWrap:

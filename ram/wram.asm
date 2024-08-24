@@ -399,7 +399,7 @@ wPlayerConfuseCount:: db
 wPlayerToxicCount:: db
 wPlayerDisableCount:: db
 wPlayerEncoreCount:: db
-wPlayerPerishCount:: db
+	ds 1
 wPlayerFuryCutterCount:: db
 wPlayerProtectCount:: db
 
@@ -408,7 +408,7 @@ wEnemyConfuseCount:: db
 wEnemyToxicCount:: db
 wEnemyDisableCount:: db
 wEnemyEncoreCount:: db
-wEnemyPerishCount:: db
+	ds 1
 wEnemyFuryCutterCount:: db
 wEnemyProtectCount:: db
 
