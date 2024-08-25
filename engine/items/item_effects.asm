@@ -192,9 +192,9 @@ ItemEffects:
 	dw NoEffect            ; OLD_SEA_MAP
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw EvoStoneEffect      ; PANCAKESTACK
-	assert_table_length PANCAKESTACK
-; The items past PANCAKESTACK do not have effect entries:
+	dw NoEffect            ; ITEM_B3
+	assert_table_length ITEM_B3
+; The items past ITEM_B3 do not have effect entries:
 ;	QUICK_CLAW
 ;	SURF_MAIL
 ;	LITEBLUEMAIL

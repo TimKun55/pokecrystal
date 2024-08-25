@@ -92,7 +92,7 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 8 ; # items
+	db 7 ; # items
 	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
@@ -100,7 +100,6 @@ MartGoldenrod2F1:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
-	db PANCAKESTACK
 	db -1 ; end
 
 MartGoldenrod2F2:
@@ -298,7 +297,7 @@ MartBerry:
 	db -1 ; end
 
 MartCeladon2F1:
-	db 9 ; # items
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -307,7 +306,6 @@ MartCeladon2F1:
 	db REVIVE
 	db SUPER_REPEL
 	db MAX_REPEL
-	db PANCAKESTACK
 	db -1 ; end
 
 MartCeladon2F2:

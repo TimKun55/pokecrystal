@@ -437,7 +437,7 @@ ArbokEvosAttacks:
 
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db EVOLVE_ITEM, PANCAKESTACK, RAICHU_A
+	db EVOLVE_ITEM, SUN_STONE, RAICHU_A
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, TAIL_WHIP

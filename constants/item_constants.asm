@@ -184,7 +184,7 @@
 	const OLD_SEA_MAP  ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
-	const PANCAKESTACK ; b3
+	const ITEM_B3      ; b3
 	const QUICK_CLAW   ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6

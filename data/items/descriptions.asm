@@ -179,7 +179,7 @@ ItemDescriptions:
 	dw OldSeaMapDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw PancakeStackDesc
+	dw TeruSama25Desc
 	dw QuickClawDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -955,10 +955,6 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
-
-PancakeStackDesc:
-	db   "A sweet and fluffy"
-	next "treat from Alola.@"
 
 QuickClawDesc:
 	db   "Raises 1st strike"

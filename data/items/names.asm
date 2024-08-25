@@ -178,7 +178,7 @@ ItemNames::
 	li "Old Sea Map"
 	li "Park Ball"
 	li "Rainbow Wing"
-	li "PancakeStack"
+	li "TERU-SAMA"
 	li "Quick Claw"
 	li "Surf Mail"
 	li "LiteBlueMail"
