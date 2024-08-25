@@ -2999,7 +2999,7 @@ endr
 wStoneTableAddress:: dw
 
 ;	ds 40
-	ds 22
+	ds 20
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3336,7 +3336,6 @@ wLuckyIDNumber:: dw
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
 wBikeStep:: dw
 wKurtApricornQuantity:: db
-wPoffinBerryQuantity:: db
 
 wPlayerDataEnd::
 
@@ -3354,7 +3353,7 @@ wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
 
-	ds 2 ; ds 3
+	ds 3
 
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db

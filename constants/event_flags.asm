@@ -293,15 +293,6 @@
 	const EVENT_GAVE_KURT_WHT_APRICORN
 	const EVENT_GAVE_KURT_BLK_APRICORN
 	const EVENT_GAVE_KURT_PNK_APRICORN
-; Poffin Berry events
-	const EVENT_GAVE_POFFIN_CHERI
-	const EVENT_GAVE_POFFIN_CHESTO
-	const EVENT_GAVE_POFFIN_PECHA
-	const EVENT_GAVE_POFFIN_RAWST
-	const EVENT_GAVE_POFFIN_ASPEAR
-	const EVENT_GAVE_POFFIN_PERSIM
-	const EVENT_GAVE_POFFIN_ORAN
-	const EVENT_GAVE_POFFIN_SITRUS
 ; Phone events
 	const EVENT_JACK_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
@@ -555,7 +546,7 @@
 	const EVENT_FOUGHT_MEWTWO
 	const EVENT_GOT_SECRET_KEY
 		;add all gym leader and Kimono Girl rematch flags
-; Unused: next 138 events
+; Unused: next 146 events
 
 	const_next 800
 ; Trainer flags

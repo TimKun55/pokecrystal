@@ -65,16 +65,6 @@ _HowManyShouldIMakeText::
 	line "make?"
 	done
 
-_WhichBerryText::
-	text "Which Berry"
-	line "should I use?"
-	done
-	
-_HowManyPoffinsText::
-	text "How many would"
-	line "you like?"
-	done
-
 _RecoveredSomeHPText::
 	text_ram wStringBuffer1
 	text_start
