@@ -181,7 +181,7 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 	line "#mon are tough…"
 	done
 
-MahoganyMart1FLanceDragoniteHyperBeamText:
+MahoganyMart1FLanceDragoniteOutrageText:
 	text "Lance: Dragonite,"
 	line "Outrage!"
 	done
