@@ -166,8 +166,8 @@ ItemEffects:
 	dw RestorePPEffect     ; LEPPA_BERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; EXP_CHARM
-	dw NoEffect            ; SHINY_CHARM
+	dw NoEffect            ; ITEM_99
+	dw NoEffect            ; ITEM_9a
 	dw NoEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
