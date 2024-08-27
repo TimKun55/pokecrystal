@@ -62,14 +62,16 @@ MahoganyMart1FBlackBeltScript:
 
 MahoganyMart1FLanceUncoversStaircaseScript:
 	pause 15
+	cry DRAGONITE
+	pause 15
 	opentext
-	writetext MahoganyMart1FLanceDragoniteHyperBeamText
+	writetext MahoganyMart1FLanceDragoniteOutrageText
 	waitbutton
 	closetext
-	playsound SFX_HYPER_BEAM
+	playsound SFX_OUTRAGE
 	applymovement MAHOGANYMART1F_DRAGONITE, MahoganyMart1FDragoniteTackleMovement
 	applymovement MAHOGANYMART1F_BLACK_BELT, MahoganyMart1FBlackBeltKnockedBackMovement
-	pause 15
+	pause 30
 	disappear MAHOGANYMART1F_DRAGONITE
 	pause 15
 	applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPlayerMovement
@@ -181,7 +183,7 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 
 MahoganyMart1FLanceDragoniteHyperBeamText:
 	text "Lance: Dragonite,"
-	line "Hyper Beam."
+	line "Outrage!"
 	done
 
 MahoganyMart1FLanceRadioText:
