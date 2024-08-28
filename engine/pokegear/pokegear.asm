@@ -554,7 +554,7 @@ Pokegear_UpdateClock:
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 10, 6
+	decoord 11, 1
 	farcall PrintHoursMins
 	ld hl, .GearTodayText
 	bccoord 2, 6
@@ -628,7 +628,7 @@ Pokegear_UpdateClock:
 	ld de, .FishGrpStr
 	call PlaceString
 .print_tod
-	hlcoord 13, 1 ; hlcoord 13, 6
+	hlcoord 10, 1 ; hlcoord 13, 6
 	ld a, [wTimeOfDay]
 	and a
 	jr z, .Morn
@@ -637,25 +637,25 @@ Pokegear_UpdateClock:
 	ld [hl], $6f ; nite icon
 	ld de, .NiteStr
 .got_tod		
-	hlcoord 15, 1
+	hlcoord 14, 6
 	; inc hl
 	call PlaceString
 
-	hlcoord 12, 0 ; hlcoord 11, 0
+	hlcoord 9, 0 ; hlcoord 11, 0
 	ld [hl], $40 ; round edge
 	inc hl
 	ld a, $7f
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	hlcoord 12, 2 ; hlcoord 11, 2
+	hlcoord 9, 2 ; hlcoord 11, 2
 	ld [hl], $42
 	inc hl
 	ld a, $7f
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	hlcoord 12, 1
+	hlcoord 9, 1
 	; ld [hli], a
 	ld [hl], a
 	ret
