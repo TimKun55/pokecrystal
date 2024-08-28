@@ -247,7 +247,6 @@ ROMX $5e
 	"Pics 23"
 ROMX $5f
 	"mobile5F"
-	"Pics 24"
 ROMX $60
 	"Map Scripts 13"
 	"Pokedex Entries 001-064"
@@ -278,6 +277,7 @@ ROMX $6c
 	"Map Scripts 25"
 ROMX $6d
 	"Special Phone Text"
+	"Pics 24"
 ROMX $6e
 	"Pokedex Entries 065-128"
 ROMX $6f
