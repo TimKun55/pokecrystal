@@ -362,9 +362,6 @@ INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin"
 TilesetPlayersRoomColl::
 INCLUDE "data/tilesets/players_room_collision.asm"
 
-TilesetJohto2GFX::
-INCBIN "gfx/tilesets/johto_2.2bpp.lz"
-
 
 SECTION "Tileset Data 12", ROMX
 
@@ -572,3 +569,6 @@ INCLUDE "data/tilesets/traditional_house_collision.asm"
 
 TilesetJohto4Attr::
 INCBIN "data/tilesets/johto_4_attributes.bin"
+
+TilesetJohto2GFX::
+INCBIN "gfx/tilesets/johto_2.2bpp.lz"

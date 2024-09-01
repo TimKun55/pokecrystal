@@ -5,15 +5,24 @@
 	const CIANWOODGYM_BLACK_BELT2
 	const CIANWOODGYM_BLACK_BELT3
 	const CIANWOODGYM_BLACK_BELT4
-	const CIANWOODGYM_BOULDER1
-	const CIANWOODGYM_BOULDER2
-	const CIANWOODGYM_BOULDER3
-	const CIANWOODGYM_BOULDER4
 
 CianwoodGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, CianwoodGymWaterfallButtonCallback
+
+CianwoodGymWaterfallButtonCallback:
+	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	iftrue .NoWaterfall
+	endcallback	
+
+.NoWaterfall
+	changeblock 8,  4, $cc
+	changeblock 8,  6, $ce
+	changeblock 8,  8, $ce
+	changeblock 8, 10, $d0
+	endcallback
 
 CianwoodGymChuckScript:
 	faceplayer
@@ -24,22 +33,9 @@ CianwoodGymChuckScript:
 	iftrue .ChuckScript_Rematch
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
-	writetext ChuckIntroText1
-	waitbutton
-	closetext
-	turnobject CIANWOODGYM_CHUCK, RIGHT
-	opentext
-	writetext ChuckIntroText2
-	waitbutton
-	closetext
-	applymovement CIANWOODGYM_BOULDER1, CianwoodGymMovement_ChuckChucksBoulder
-	playsound SFX_STRENGTH
-	earthquake 80
-	disappear CIANWOODGYM_BOULDER1
-	pause 30
-	faceplayer
-	opentext
-	writetext ChuckIntroText3
+	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	iffalse .ChuckWaterfallTraining
+	writetext ChuckIntroText
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, 0
@@ -113,9 +109,17 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	end
+
+.ChuckWaterfallTraining
+	writetext WaterfallTrainingText
+	waitbutton
+	closetext
+	end
 	
 CianwoodGymPoliwrath:
 	opentext
+	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	iffalse .PoliwrathWaterfallTraining
 	writetext PoliwrathText
 	cry POLIWRATH
 	waitbutton
@@ -123,6 +127,12 @@ CianwoodGymPoliwrath:
 	pokepic POLIWRATH
 	waitbutton
 	closepokepic
+	closetext
+	end
+
+.PoliwrathWaterfallTraining
+	writetext WaterfallTrainingText
+	waitbutton
 	closetext
 	end
 
@@ -181,8 +191,29 @@ TrainerBlackbeltLung:
 	closetext
 	end
 
-CianwoodGymBoulder:
-	jumpstd StrengthBoulderScript
+CianwoodWaterfallButton:
+	opentext
+	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	iftrue .Pushed
+	writetext CianwoodGymButtonPressText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_STRENGTH
+	earthquake 50
+	changeblock 8,  4, $cc
+	changeblock 8,  6, $ce
+	changeblock 8,  8, $ce
+	changeblock 8, 10, $d0
+	reloadmappart
+	setevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	end
+
+.Pushed
+	writetext CianwoodGymButtonIsPressedText
+	waitbutton
+	closetext
+	end
 
 CianwoodGymStatue:
 	checkflag ENGINE_STORMBADGE
@@ -192,49 +223,41 @@ CianwoodGymStatue:
 	gettrainername STRING_BUFFER_4, CHUCK, CHUCK1
 	jumpstd GymStatue2Script
 
-CianwoodGymMovement_ChuckChucksBoulder:
-	set_sliding
-	big_step LEFT
-	big_step UP
-	fast_jump_step RIGHT
-	remove_sliding
-	step_end
+ChuckIntroText:
+	text "Ooomph!"
 
-ChuckIntroText1:
-	text "WAHAHAH!"
+	para "The pounding"
+	line "waterfall right"
+	cont "onto my head…"
 
-	para "So you've come"
-	line "this far!"
+	para "Arrgh!"
+	
+	para "Why did you stop"
+	line "the waterfall from"
+	cont "pouring on me?"
 
-	para "Let me tell you,"
-	line "I'm tough!"
-
-	para "My #mon will"
-	line "crush stones and"
-	cont "shatter bones!"
-
-	para "Watch this!"
-	done
-
-ChuckIntroText2:
-	text "Chuck: Urggh!"
-	line "…"
-
-	para "Oooarrgh!"
-	done
-
-ChuckIntroText3:
-	text "There! Scared now,"
-	line "are you?"
-
+	para "You just spoiled"
+	line "my training!"
+	
+	para "I have to warn you"
+	line "that I am a strong"
+	
+	para "Trainer training"
+	line "every day under"
+	cont "this waterfall!"
+	
 	para "What?"
-	line "It has nothing to"
-
-	para "do with #mon?"
+	
+	para "It has nothing to"
+	line "do with #mon?"
+	
+	para "…"
 	line "That's true!"
-
-	para "Come on. We shall"
-	line "do battle!"
+	cont "… …"
+	
+	para "Come on."
+	line "We shall"
+	cont "do battle!"
 	done
 
 ChuckLossText:
@@ -432,27 +455,46 @@ PoliwrathText:
 	line "WrathPoliwrath!"
 	done
 
+CianwoodGymButtonPressText:
+	text "It's a big red"
+	line "button."
+	
+	para "Should probably"
+	line "press it!"
+	done
+
+CianwoodGymButtonIsPressedText:
+	text "The button has"
+	line "already been"
+	cont "pressed."
+	done
+
+WaterfallTrainingText:
+	text "They're so into"
+	line "their training,"
+	
+	para "they don't seem"
+	line "to notice you."
+	done
+
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, CIANWOOD_CITY, 2
-	warp_event  5, 17, CIANWOOD_CITY, 2
+	warp_event  8, 17, CIANWOOD_CITY, 2
+	warp_event  9, 17, CIANWOOD_CITY, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 15, BGEVENT_READ, CianwoodGymStatue
-	bg_event  6, 15, BGEVENT_READ, CianwoodGymStatue
+	bg_event  6,  3, BGEVENT_READ, CianwoodWaterfallButton
+	bg_event  7, 15, BGEVENT_READ, CianwoodGymStatue
+	bg_event 10, 15, BGEVENT_READ, CianwoodGymStatue
 
 	def_object_events
-	object_event  5,  1, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
-	object_event  4,  1, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
-	object_event  2, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
-	object_event  7, 12, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
-	object_event  3,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
-	object_event  5,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1
-	object_event  6,  1, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
-	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
-	object_event  4,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
-	object_event  5,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
+	object_event  9, 10, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
+	object_event  8, 10, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
+	object_event  3, 10, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
+	object_event 15,  8, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
+	object_event 11,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
+	object_event  5,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1

@@ -545,8 +545,9 @@
 	const EVENT_GUARDIANS_DEFEATED
 	const EVENT_FOUGHT_MEWTWO
 	const EVENT_GOT_SECRET_KEY
+	const EVENT_WALL_OPENED_IN_INNER_CHAMBER
 		;add all gym leader and Kimono Girl rematch flags
-; Unused: next 146 events
+; Unused: next 145 events
 
 	const_next 800
 ; Trainer flags
@@ -1434,9 +1435,10 @@
 	const EVENT_ILEX_FOREST_PINECO
 	const EVENT_UNION_CAVE_B2F_WOOPER
 	const EVENT_ROUTE_45_GLIGAR
-; Unused: next 98 events
-; (In pokegold the previous 4 event flags were not defined,
-; but in pokecrystal the 'const_next 1900' is redundant.)
+	const EVENT_GS_BALL_CHAMBER_UNOWN
+	const EVENT_GS_BALL_CHAMBER_GS_BALL
+	const EVENT_BUTTON_IN_CIANWOOD_GYM
+; Unused: next 96 events
 
 	const_next 1800
 ; Kanto people
