@@ -159,6 +159,7 @@ ENDM
 	map_const CERULEAN_CAVE_1F,                            17, 11 ; 94
 	map_const CERULEAN_CAVE_2F,                            17, 11 ; 95	
 	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 96
+;	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,                4,  6 ; 97
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -452,7 +453,7 @@ ENDM
 	map_const ROUTE_41,                                    25, 27 ;  2
 	map_const CIANWOOD_CITY,                               15, 27 ;  3
 	map_const MANIAS_HOUSE,                                 4,  4 ;  4
-	map_const CIANWOOD_GYM,                                 5,  9 ;  5
+	map_const CIANWOOD_GYM,                                 9,  9 ;  5
 	map_const CIANWOOD_POKECENTER_1F,                       6,  4 ;  6
 	map_const CIANWOOD_PHARMACY,                            4,  4 ;  7
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
