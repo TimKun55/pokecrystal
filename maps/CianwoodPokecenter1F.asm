@@ -49,13 +49,12 @@ CianwoodPokecenter1FLassText:
 	done
 
 CianwoodGymGuideText:
-	text "The #mon Gym"
-	line "trainers here are"
-	cont "macho bullies."
+	text "The #mon at this"
+	line "Gym are all rough"
+	cont "and tough."
 
-	para "If I stick around,"
-	line "they might come"
-	cont "after me."
+	para "They could blow me"
+	line "away in a second."
 
 	para "Here's some ad-"
 	line "vice: the Gym"
@@ -73,18 +72,16 @@ CianwoodGymGuideText:
 	para "can use their"
 	line "physical strength."
 
-	para "And those boulders"
-	line "in the middle of"
-	cont "the Gym?"
+	para "By the way, Chuck,"
+	line "the Gym Leader, is"
+	cont "into his waterfall"
+	cont "training."
 
-	para "If you don't move"
-	line "them correctly,"
+	para "He won't be able"
+	line "to hear you unless"
 
-	para "you won't reach"
-	line "the Gym Leader."
-
-	para "If you get stuck,"
-	line "go outside."
+	para "you somehow stop"
+	line "the intense water."
 	done
 
 CianwoodGymGuideWinText:

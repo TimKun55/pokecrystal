@@ -452,7 +452,6 @@ BlackbeltLungAfterText:
 	
 PoliwrathText:
 	text "Poliwrath: Poli!!"
-	line "WrathPoliwrath!"
 	done
 
 CianwoodGymButtonPressText:
