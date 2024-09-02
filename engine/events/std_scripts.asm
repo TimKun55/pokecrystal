@@ -667,6 +667,7 @@ InitializeEventsScript:
 	setevent EVENT_ILEX_FOREST_PINECO
 	setevent EVENT_UNION_CAVE_B2F_WOOPER
 	setevent EVENT_ROUTE_45_GLIGAR
+	setevent EVENT_GS_BALL_CHAMBER_GS_BALL
 	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 

@@ -534,6 +534,7 @@ INCLUDE "maps/CeladonHomeDecorStore4F.asm"
 INCLUDE "maps/CeruleanCave1F.asm"
 INCLUDE "maps/CeruleanCave2F.asm"
 INCLUDE "maps/CeruleanCaveB1F.asm"
+INCLUDE "maps/RuinsOfAlphGSBallChamber.asm"
 
 
 ENDSECTION

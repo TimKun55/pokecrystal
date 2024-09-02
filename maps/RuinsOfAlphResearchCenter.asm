@@ -62,14 +62,33 @@ RuinsOfAlphResearchCenterScientist3Script:
 	faceplayer
 	opentext
 	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .PrinterAvailable
+	ifequal NUM_UNOWN, .CaveDoorOpen
 	writetext RuinsOfAlphResearchCenterScientist3Text
 	waitbutton
 	closetext
 	end
 
-.PrinterAvailable:
-	writetext RuinsOfAlphResearchCenterScientist3_PrinterAvailable
+.CaveDoorOpen:
+	checkevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
+	iftrue .AlreadyOpened
+	writetext RuinsOfAlphResearchCenterScientist3_AllUnown
+	waitbutton
+	closetext
+	pause 30
+	earthquake 50
+	playsound SFX_STRENGTH
+	showemote EMOTE_SHOCK, PLAYER, 15
+	showemote EMOTE_SHOCK, RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 15
+	pause 30
+	opentext
+	writetext RuinsOfAlphResearchCenterScientist3_GoCheck
+	waitbutton	
+	closetext
+	setevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
+	end
+
+.AlreadyOpened
+	writetext RuinsOfAlphResearchCenterScientist3_MoreToDiscover
 	waitbutton
 	closetext
 	end
@@ -355,19 +374,37 @@ RuinsOfAlphResearchCenterScientist3Text:
 	line "many kinds exist."
 	done
 
-RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
+RuinsOfAlphResearchCenterScientist3_AllUnown:
 	text "You caught all the"
 	line "Unown variations?"
 
 	para "That's a great"
 	line "achievement!"
 
-	para "I've set up the"
-	line "printer here for"
-	cont "handling Unown."
+	para "I can't believe"
+	line "you managed to-"
+	done
 
-	para "Feel free to use"
-	line "it anytime."
+RuinsOfAlphResearchCenterScientist3_GoCheck:
+	text "Wha…What was that?"
+	
+	para "Did something"
+	line "happen in the"
+	cont "Inner Chamber?"
+	
+	para "I work in a Lab"
+	line "not in the field!"
+	
+	para "Can you go check?"
+	done
+
+RuinsOfAlphResearchCenterScientist3_MoreToDiscover:
+	text "No matter how much"
+	line "we learn and dis-"
+	cont "cover, there's"
+	
+	para "always more to"
+	line "learn and find."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:

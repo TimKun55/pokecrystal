@@ -184,6 +184,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name94 ; map_const CERULEAN_CAVE_1F						; 94
 	dw Dungeons_Map_Name95 ; map_const CERULEAN_CAVE_2F                     ; 95
 	dw Dungeons_Map_Name96 ; map_const CERULEAN_CAVE_B1F                    ; 96
+	dw Dungeons_Map_Name97 ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER        ; 97
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -838,6 +839,8 @@ Dungeons_Map_Name95: ; map_const CERULEAN_CAVE_2F,;  95
 	db "Cerulean Cave 2F@"
 Dungeons_Map_Name96: ; map_const CERULEAN_CAVE_B1F,;  96
 	db "Cerulean Cave B1F@"
+Dungeons_Map_Name97: ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,;  97
+	db "GS Ball Chamber@"
 
 Ecruteak_Map_Name1: ; map_const ROUTE_35,;  1
 	db "Route 35@"

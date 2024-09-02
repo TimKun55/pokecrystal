@@ -202,7 +202,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_BELLOSSOM ; ca      ; CeladonGym, CopycatsHouse2F, GoldenrodFlowerShop
 	const SPRITE_WOOPER ; cb         ; VioletPrimosHouse, Union Cave B2F (Static, Shiny, after Diploma)
 	const SPRITE_SYLVEON ; cc        ; EcruteakFairyFamilyHouse
-	const SPRITE_UNOWN ; cd          ; DOLL, CeladonHomeDecorStore4F
+	const SPRITE_UNOWN ; cd          ; DOLL, CeladonHomeDecorStore4F, RuinsOfAlphGSBallChamber
 	const SPRITE_STEELIX ; ce        ; OlivineGym, Route23 
 	const SPRITE_SCIZOR ; cf         ; NONE
 	const SPRITE_SNEASEL ; d0        ; UndergroundRoom

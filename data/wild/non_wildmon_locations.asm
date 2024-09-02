@@ -87,8 +87,8 @@ SuicuneEvent_Str:
 	next "key to the hunt."
 	next "Lvl 40.@"
 CelebiEvent_Str:
-	db 	 "GS Ball."
-	next ""
+	db   "Find all 26 to"
+	next "find the GS Ball."
 	next "Offer to Shrine.@"
 LugiaEvent_Str:
 	db 	 "Silver Wing, dull"

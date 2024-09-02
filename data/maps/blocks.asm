@@ -1047,4 +1047,7 @@ CeruleanEmptyHouseUnderground_Blocks:
 Route22_Blocks:
 	INCBIN "maps/Route22.ablk"
 
+RuinsOfAlphGSBallChamber_Blocks:
+	INCBIN "maps/RuinsOfAlphGSBallChamber.ablk"
+
 ENDSECTION

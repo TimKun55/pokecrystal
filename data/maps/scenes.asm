@@ -92,4 +92,5 @@ MapScenes::
 	scene_var CERULEAN_CITY,                               wCeruleanCityDisguisedSceneID
 	scene_var ROUTE_5,                                     wRoute5DisguisedSceneID
 	scene_var UNDERGROUND_PATH,                            wUndergroundPathSceneID
+	scene_var RUINS_OF_ALPH_GS_BALL_CHAMBER,               wRuinsOfAlphGSBallChamberSceneID
 	db -1 ; end

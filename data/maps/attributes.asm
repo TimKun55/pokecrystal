@@ -421,6 +421,7 @@ ENDM
 	map_attributes RuinsOfAlphKabutoWordRoom, RUINS_OF_ALPH_KABUTO_WORD_ROOM, $00, 0
 	map_attributes RuinsOfAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $00, 0
 	map_attributes RuinsOfAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $00, 0
+	map_attributes RuinsOfAlphGSBallChamber, RUINS_OF_ALPH_GS_BALL_CHAMBER, $00, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $09, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $09, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
@@ -686,7 +687,7 @@ ENDM
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
 	map_attributes Route17Route18Gate, ROUTE_17_ROUTE_18_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
-	map_attributes CianwoodGym, CIANWOOD_GYM, $00, 0
+	map_attributes CianwoodGym, CIANWOOD_GYM, $df, 0
 	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0
 	map_attributes CianwoodPharmacy, CIANWOOD_PHARMACY, $00, 0
 	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $00, 0

@@ -3195,8 +3195,9 @@ wSaffronCityDisguisedSceneID::                    db
 wCeruleanCityDisguisedSceneID::                   db
 wRoute5DisguisedSceneID::                         db
 wUndergroundPathSceneID::                         db
+wRuinsOfAlphGSBallChamberSceneID::                db
 
-	ds 41
+	ds 40
 
 ; fight counts
 wJackFightCount::    db

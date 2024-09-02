@@ -9,6 +9,16 @@ RuinsOfAlphInnerChamber_MapScripts:
 	scene_script RuinsOfAlphInnerChamberStrangePresenceScene, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, RuinsOfAlphInnerChamberHiddenDoorCallback
+
+RuinsOfAlphInnerChamberHiddenDoorCallback:
+	checkevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
+	iftrue .WallOpened
+	endcallback
+	
+.WallOpened:
+	changeblock 5, 0, $30 ; opened wall
+	endcallback
 
 RuinsOfAlphInnerChamberNoopScene:
 	end
@@ -87,6 +97,7 @@ RuinsOfAlphInnerChamber_MapEvents:
 	warp_event  4, 21, RUINS_OF_ALPH_OMANYTE_CHAMBER, 4
 	warp_event 15, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 3
 	warp_event 16, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 4
+	warp_event 10,  0, RUINS_OF_ALPH_GS_BALL_CHAMBER, 1
 
 	def_coord_events
 
