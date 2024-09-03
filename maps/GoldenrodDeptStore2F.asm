@@ -1,6 +1,7 @@
 	object_const_def
 	const GOLDENRODDEPTSTORE2F_CLERK1
 	const GOLDENRODDEPTSTORE2F_CLERK2
+	const GOLDENRODDEPTSTORE2F_CLERK3
 	const GOLDENRODDEPTSTORE2F_YOUNGSTER
 	const GOLDENRODDEPTSTORE2F_COOLTRAINER_F
 	const GOLDENRODDEPTSTORE2F_GENTLEMAN
@@ -21,6 +22,13 @@ GoldenrodDeptStore2FClerk2Script:
 	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_2
+	closetext
+	end
+
+GoldenrodDeptStore2FClerk3Script:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_3
 	closetext
 	end
 
@@ -94,6 +102,7 @@ GoldenrodDeptStore2F_MapEvents:
 	def_object_events
 	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk1Script, -1
 	object_event 13,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk2Script, -1
+	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk3Script, -1
 	object_event  9,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FYoungsterScript, -1
-	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FCooltrainerFScript, -1
-	object_event  2,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FGentlemanScript, -1
+	object_event  5,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FCooltrainerFScript, -1
+	object_event  1,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FGentlemanScript, -1
