@@ -182,33 +182,14 @@
 	tilecoll WALL, WALL, WALL, WALL ; b5
 	tilecoll WALL, WALL, WALL, WALL ; b6
 	tilecoll WALL, WALL, WALL, WALL ; b7
-	tilecoll WALL, WALL, WALL, FLOOR ; b8
-	tilecoll WALL, WALL, FLOOR, FLOOR ; b9
-	tilecoll WALL, WALL, FLOOR, WALL ; ba
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bb
-	tilecoll WALL, FLOOR, WALL, FLOOR ; bc
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bd
-	tilecoll FLOOR, WALL, FLOOR, WALL ; be
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; bf
-	tilecoll WALL, WALL, FLOOR, WALL ; c0
-	tilecoll WALL, WALL, WALL, FLOOR ; c1
+	tilecoll WALL, WALL, WALL, WALL ; b8
+	tilecoll WALL, WALL, WALL, WALL ; b9
+	tilecoll WALL, WALL, WALL, WALL ; ba
+	tilecoll WALL, WALL, WALL, WALL ; bb
+	tilecoll WALL, WALL, WALL, WALL ; bc
+	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll WALL, WALL, WALL, WALL ; be
+	tilecoll WALL, WALL, WALL, WALL ; bf
+	tilecoll WALL, WALL, WALL, WALL ; c0
+	tilecoll WALL, WALL, WALL, WALL ; c1
 	tilecoll WALL, WALL, WALL, WALL ; c2
-	tilecoll WALL, WALL, WALL, WALL ; c3
-	tilecoll WALL, WALL, WALL, WALL ; c4
-	tilecoll WALL, WALL, PUDDLE, PUDDLE ; c5
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; c6
-	tilecoll WALL, WALL, WALL, WALL ; c7
-	tilecoll WALL, FLOOR, WALL, WALL ; c8
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c9
-	tilecoll FLOOR, WALL, WALL, WALL ; ca
-	tilecoll FLOOR, WALL, FLOOR, WALL ; cb
-	tilecoll WALL, WALL, WALL, WALL ; cc
-	tilecoll WALL, WALL, WALL, WALL ; cd
-	tilecoll WALL, WALL, WALL, WALL ; ce
-	tilecoll FLOOR, FLOOR, WALL, WALL ; cf
-	tilecoll WALL, WALL, WALL, WALL ; d0
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d1
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d2
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d3
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d4
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d5

@@ -23,17 +23,17 @@ RockTunnel1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15,  3, ROUTE_10_NORTH, 1
+	warp_event 25,  3, ROUTE_10_NORTH, 1
 	warp_event 11, 25, ROUTE_10_SOUTH, 1
 	warp_event  5,  3, ROCK_TUNNEL_B1F, 3
 	warp_event 15,  9, ROCK_TUNNEL_B1F, 2
-	warp_event 27,  3, ROCK_TUNNEL_B1F, 4
+	warp_event 13,  3, ROCK_TUNNEL_B1F, 4
 	warp_event 27, 13, ROCK_TUNNEL_B1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 24,  4, BGEVENT_ITEM, RockTunnel1FHiddenXAccuracy
+	bg_event 17,  3, BGEVENT_ITEM, RockTunnel1FHiddenXAccuracy
 	bg_event 21, 15, BGEVENT_ITEM, RockTunnel1FHiddenXDefend
 
 	def_object_events

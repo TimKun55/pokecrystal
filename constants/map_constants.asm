@@ -132,7 +132,7 @@ ENDM
 	map_const WHIRL_ISLAND_NE,                             10,  9 ; 67
 	map_const WHIRL_ISLAND_SW,                             10,  9 ; 68
 	map_const WHIRL_ISLAND_CAVE,                            5,  9 ; 69
-	map_const WHIRL_ISLAND_SE,                              5,  9 ; 70
+	map_const WHIRL_ISLAND_SE,                              7, 10 ; 70
 	map_const WHIRL_ISLAND_B1F,                            20, 18 ; 71
 	map_const WHIRL_ISLAND_B2F,                            10, 18 ; 72
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10, 14 ; 73
@@ -141,7 +141,7 @@ ENDM
 	map_const MT_SILVER_PEAK,                              10, 16 ; 76
 	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 77
 	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
-	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 16 ; 79
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               19, 16 ; 79
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
@@ -150,8 +150,8 @@ ENDM
 	map_const VIRIDIAN_FOREST,                             24, 22 ; 85
 	map_const MOUNT_MOON,                                  15,  9 ; 86
 	map_const UNDERGROUND_PATH,                             3, 14 ; 87
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 88
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 89	
+	map_const ROCK_TUNNEL_1F,                              15, 14 ; 88
+	map_const ROCK_TUNNEL_B1F,                             15, 14 ; 89	
 	map_const VICTORY_ROAD_1F,                             14, 18 ; 90
 	map_const VICTORY_ROAD_2F,                             22, 11 ; 91
 	map_const VICTORY_ROAD_3F,                             23, 12 ; 92
