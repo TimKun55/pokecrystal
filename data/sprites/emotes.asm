@@ -18,7 +18,7 @@ Emotes:
 	emote FishEmote,      4, $f8
 	emote JumpShadowGFX,  1, $fc
 	emote FishingRodGFX,  2, $fc
-	emote PuddleSplashGFX, 1, $fd
 	emote BoulderDustGFX, 2, $fe
-	emote GrassRustleGFX, 1, $fe
+	emote GrassRustleGFX, 1, $fd
+	emote PuddleSplashGFX, 1, $fb
 	assert_table_length NUM_EMOTES
