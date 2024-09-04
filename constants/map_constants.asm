@@ -124,10 +124,10 @@ ENDM
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const ICE_PATH_1F,                                 20, 15 ; 61
-	map_const ICE_PATH_B1F,                                10, 18 ; 62
-	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
-	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ; 64
-	map_const ICE_PATH_B3F,                                10,  9 ; 65
+	map_const ICE_PATH_B1F,                                12, 20 ; 62
+	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  12, 11 ; 63
+	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 7, 11 ; 64
+	map_const ICE_PATH_B3F,                                12,  8 ; 65
 	map_const WHIRL_ISLAND_NW,                              5,  9 ; 66
 	map_const WHIRL_ISLAND_NE,                             10,  9 ; 67
 	map_const WHIRL_ISLAND_SW,                             10,  9 ; 68
