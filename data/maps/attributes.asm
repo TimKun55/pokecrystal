@@ -447,11 +447,11 @@ ENDM
 	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $01, 0
 	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $01, 0
 	map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $01, 0
-	map_attributes IcePath1F, ICE_PATH_1F, $01, 0
-	map_attributes IcePathB1F, ICE_PATH_B1F, $01, 0
-	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $01, 0
-	map_attributes IcePathB2FBlackthornSide, ICE_PATH_B2F_BLACKTHORN_SIDE, $01, 0
-	map_attributes IcePathB3F, ICE_PATH_B3F, $01, 0
+	map_attributes IcePath1F, ICE_PATH_1F, $09, 0
+	map_attributes IcePathB1F, ICE_PATH_B1F, $19, 0
+	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $19, 0
+	map_attributes IcePathB2FBlackthornSide, ICE_PATH_B2F_BLACKTHORN_SIDE, $19, 0
+	map_attributes IcePathB3F, ICE_PATH_B3F, $19, 0
 	map_attributes WhirlIslandNW, WHIRL_ISLAND_NW, $01, 0
 	map_attributes WhirlIslandNE, WHIRL_ISLAND_NE, $01, 0
 	map_attributes WhirlIslandSW, WHIRL_ISLAND_SW, $01, 0
