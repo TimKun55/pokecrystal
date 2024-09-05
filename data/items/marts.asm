@@ -66,7 +66,7 @@ MartViolet:
 	db AWAKENING
 	db X_ATTACK
 	db X_SPEED
-	db FLOWER_MAIL
+	db EON_MAIL
 	db -1 ; end
 
 MartAzalea:
@@ -80,7 +80,7 @@ MartAzalea:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db LEAF_STONE
-	db FLOWER_MAIL
+	db LOVELY_MAIL
 	db -1 ; end
 
 MartCianwood:
@@ -245,7 +245,7 @@ MartViridian:
 	db -1 ; end
 
 MartPewter:
-	db 7 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db DUSK_BALL
 	db HYPER_POTION
@@ -253,6 +253,7 @@ MartPewter:
 	db SUPER_REPEL
 	db FULL_HEAL
 	db MOON_STONE
+	db MUSIC_MAIL
 	db -1 ; end
 
 MartCerulean:
@@ -270,7 +271,7 @@ MartCerulean:
 	db -1 ; end
 
 MartLavender:
-	db 8 ; # items
+	db 9 ; # items
 	db GREAT_BALL
 	db DUSK_BALL
 	db HYPER_POTION
@@ -279,6 +280,7 @@ MartLavender:
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
+	db EON_MAIL
 	db -1 ; end
 
 MartVermilion:
@@ -409,7 +411,7 @@ MartSaffron:
 	db X_DEFEND
 	db X_SP_ATK
 	db X_SP_DEF
-	db FLOWER_MAIL
+	db MIRAGE_MAIL
 	db -1 ; end
 
 MartMtMoon:
