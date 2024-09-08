@@ -41,8 +41,18 @@ TreeMonMaps::
 	db -1
 
 RockMonMaps::
+	treemon_map BURNED_TOWER_1F,           TREEMON_SET_ROCK
 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
-	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, TREEMON_SET_ROCK
-	treemon_map SLOWPOKE_WELL_B1F,         TREEMON_SET_ROCK
+	treemon_map ICE_PATH_B3F,              TREEMON_SET_ROCK
+	treemon_map MOUNT_MOON_SQUARE,         TREEMON_SET_ROCK
+	treemon_map ROUTE_19,                  TREEMON_SET_ROCK
+	treemon_map ROUTE_26,                  TREEMON_SET_ROCK
+	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
+	treemon_map ROUTE_41,                  TREEMON_SET_ROCK
+	treemon_map TOHJO_FALLS,               TREEMON_SET_ROCK
+	treemon_map VICTORY_ROAD_1F,           TREEMON_SET_ROCK
+	treemon_map VICTORY_ROAD_2F,           TREEMON_SET_ROCK
+	treemon_map VICTORY_ROAD_3F,           TREEMON_SET_ROCK
+
 	db -1

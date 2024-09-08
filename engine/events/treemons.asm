@@ -157,15 +157,12 @@ GetTreeMon:
 	cp 8
 	jr nc, NoTreeMon
 	jr .skip
-.loop
-	inc hl
-	inc hl
-	inc hl
 .skip
 	ld a, [hli]
-	inc a
-	jr nz, .loop
-	; fallthrough
+	cp -1
+	jr nz, .skip
+	call SelectTreeMon
+	ret
 
 GetRockMons:
 ; Return the address of TreeMon table a in hl.
@@ -199,7 +196,6 @@ SelectTreeMon:
 .loop
 	sub [hl]
 	jr c, .ok
-	inc hl
 	inc hl
 	inc hl
 	inc hl
