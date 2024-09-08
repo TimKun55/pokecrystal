@@ -21,11 +21,11 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "There's no Great"
-	line "Ball here. #"
+	text "They don't sell"
+	line "Great Balls here."
 
-	para "Ball will have"
-	line "to do."
+	para "# Balls will"
+	line "have to do."
 
 	para "I wish KURT would"
 	line "make me some of"

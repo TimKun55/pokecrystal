@@ -49,7 +49,7 @@ CianwoodPokecenter1FLassText:
 	done
 
 CianwoodGymGuideText:
-	text "The #mon at this"
+	text "The #mon at the"
 	line "Gym are all rough"
 	cont "and tough."
 
