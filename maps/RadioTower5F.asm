@@ -2,6 +2,7 @@
 	const RADIOTOWER5F_DIRECTOR
 	const RADIOTOWER5F_ARCHER
 	const RADIOTOWER5F_ARIANA
+	const RADIOTOWER5F_FAKE_DIRECTOR
 	const RADIOTOWER5F_ROCKER
 	const RADIOTOWER5F_POKE_BALL
 
@@ -23,16 +24,24 @@ RadioTower5FNoop3Scene:
 	end
 
 FakeDirectorScript:
-	turnobject RADIOTOWER5F_DIRECTOR, UP
-	showemote EMOTE_SHOCK, RADIOTOWER5F_DIRECTOR, 15
+	turnobject RADIOTOWER5F_FAKE_DIRECTOR, UP
+	showemote EMOTE_SHOCK, RADIOTOWER5F_FAKE_DIRECTOR, 15
 	opentext
 	writetext FakeDirectorTextBefore1
 	waitbutton
 	closetext
-	applymovement RADIOTOWER5F_DIRECTOR, FakeDirectorMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	applymovement RADIOTOWER5F_FAKE_DIRECTOR, FakeDirectorMovement
 	opentext
 	writetext FakeDirectorTextBefore2
+	waitbutton
+	closetext
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	applymovement RADIOTOWER5F_FAKE_DIRECTOR, Movement_UnmaskSpin
+	faceplayer
+	variablesprite SPRITE_FAKE_DIRECTOR, SPRITE_PETREL
+	special LoadUsedSpritesGFX
+	opentext
+	writetext FakeDirectorTextBefore3
 	waitbutton
 	closetext
 	winlosstext FakeDirectorWinText, 0
@@ -41,7 +50,7 @@ FakeDirectorScript:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FakeDirectorTextAfter
+	writetext PetrelTextAfter
 	promptbutton
 	verbosegiveitem BASEMENT_KEY
 	closetext
@@ -49,17 +58,17 @@ FakeDirectorScript:
 	setevent EVENT_BEAT_PETREL_2
 	end
 
-Director:
+RadioTower5FPetrel:
 	faceplayer
 	opentext
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .TrueDirector
-	writetext FakeDirectorTextAfter
+	writetext PetrelTextAfter
 	waitbutton
 	closetext
 	end
 
-.TrueDirector:
+Director:
+	faceplayer
+	opentext
 	writetext RadioTower5FDirectorText
 	waitbutton
 	closetext
@@ -159,6 +168,22 @@ FakeDirectorMovement:
 	step UP
 	step_end
 
+Movement_UnmaskSpin:
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	step_end
+
 RadioTower5FDirectorWalksIn:
 	step DOWN
 	step DOWN
@@ -201,8 +226,10 @@ FakeDirectorTextBefore2:
 
 	para "Wrong!"
 	line "I'm an imposter!"
+	done
 
-	para "I pretended to be"
+FakeDirectorTextBefore3:
+	text "I pretended to be"
 	line "the real thing to"
 
 	para "prepare for our"
@@ -222,7 +249,7 @@ FakeDirectorWinText:
 	line "you where he is."
 	done
 
-FakeDirectorTextAfter:
+PetrelTextAfter:
 	text "We stashed the"
 	line "real Director in"
 
@@ -437,8 +464,9 @@ RadioTower5F_MapEvents:
 	bg_event 17,  1, BGEVENT_READ, RadioTower5FBookshelf
 
 	def_object_events
-	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
+	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 13,  5, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 17,  2, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, RadioTower5FAriana, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  3,  6, SPRITE_FAKE_DIRECTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, RadioTower5FPetrel, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
