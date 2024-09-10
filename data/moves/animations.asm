@@ -700,8 +700,9 @@ BattleAnim_Doubleslap:
 
 BattleAnim_DrainPunch:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_HIT
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $1, $0
 	anim_sound 0, 1, SFX_SUBMISSION
-	anim_obj BATTLE_ANIM_OBJ_PUNCH, 17, 0,  7, 0, $0
+	anim_obj BATTLE_ANIM_OBJ_PUNCH_SHAKE, 17, 0,  7, 0, $0
 	anim_wait 6
 	anim_sound 0, 1, SFX_PLACE_PUZZLE_PIECE_DOWN
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 17, 0,  7, 0, $0
