@@ -174,7 +174,6 @@ hSystemBooted:: db
 if DEF(_DEBUG)
 hDebugRoomMenuPage::
 endc
-hClockResetTrigger:: db
 
 hFarCallSavedA:: db
 hFarCallSavedHL::
@@ -187,6 +186,6 @@ hFunctionTarget::
 hFunctionTargetLo:: db
 hFunctionTargetHi:: db
 
-	ds 13
+	ds 14
 
 ENDSECTION
