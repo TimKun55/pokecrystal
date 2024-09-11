@@ -627,9 +627,10 @@ TrainerCard_JohtoBadgesOAM:
 	db $10, $20, $24, $20 | (1 << 7)
 
 	; Stormbadge
+	; X-flips on alternate cycles.
 	db $80, $18, 4, 4, 4, 4
-	db $14, $20, $24, $20 | (1 << 7)
-	db $14, $20, $24, $20 | (1 << 7)
+	db $14, 		   $20, $24, $20 | (1 << 7)
+	db $14 | (1 << 7), $20, $24, $20 | (1 << 7)
 
 	; Glacierbadge
 	db $80, $58, 6, 6, 6, 6
