@@ -266,7 +266,7 @@ PetrelTextAfter:
 
 ArianaSeenText:
 	text "Remember me from"
-	line "the Hudeout in"
+	line "the Hideout in"
 	cont "Mahogany Town?"
 
 	para "I lost then, but I"
