@@ -676,27 +676,77 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hBGMapMode], a
 	call DelayFrame
 	call DelayFrame
-	jr .nextscene
+	jp .nextscene
 
 .cgb
+	ld hl, .championpals
+	ld a, [wOtherTrainerClass]
+	cp CHAMPION
+	jp z, .load_pals
+	cp RED
+	jp z, .load_pals
+	ld hl, .elitefourpals
+	ld a, [wOtherTrainerClass]
+	cp WILL
+	jr z, .load_pals
+	cp BRUNO
+	jr z, .load_pals
+	cp KOGA
+	jr z, .load_pals
+	cp KAREN
+	jr z, .load_pals
+	ld hl, .gympals
+	ld a, [wOtherTrainerClass]
+	cp FALKNER
+	jr z, .load_pals
+	cp BUGSY
+	jr z, .load_pals
+	cp WHITNEY
+	jr z, .load_pals
+	cp MORTY
+	jr z, .load_pals
+	cp CHUCK
+	jr z, .load_pals
+	cp JASMINE
+	jr z, .load_pals
+	cp PRYCE
+	jr z, .load_pals
+	cp CLAIR
+	jr z, .load_pals
+	cp BROCK
+	jr z, .load_pals
+	cp MISTY
+	jr z, .load_pals
+	cp LT_SURGE
+	jr z, .load_pals
+	cp ERIKA
+	jr z, .load_pals
+	cp SABRINA
+	jr z, .load_pals
+	cp JANINE
+	jr z, .load_pals
+	cp BLAINE
+	jr z, .load_pals
+	cp BLUE
+	jr z, .load_pals
 	ld hl, .rocketpals
 	ld a, [wOtherTrainerClass]
 	cp GRUNTM
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp GRUNTF
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp ARCHER
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp ARIANA
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp PETREL
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp PROTON
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	cp SCIENTIST
-	jr z, .load_rocket_pals
+	jr z, .load_pals
 	ld hl, .pals
-.load_rocket_pals
+.load_pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	cp DARKNESS_F
@@ -775,6 +825,15 @@ INCLUDE "gfx/overworld/rocket_battle.pal"
 	ret z
 	ld de, PokeBallTransition
 	ret
+
+.gympals:
+INCLUDE "gfx/overworld/gym_battle.pal"
+
+.elitefourpals:
+INCLUDE "gfx/overworld/elite_four_battle.pal"
+
+.championpals:
+INCLUDE "gfx/overworld/champion_battle.pal"
 
 PokeBallTransition:
 ; 16x16 overlay of a Poke Ball

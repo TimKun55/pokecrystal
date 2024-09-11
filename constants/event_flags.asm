@@ -1438,7 +1438,8 @@
 	const EVENT_GS_BALL_CHAMBER_UNOWN
 	const EVENT_GS_BALL_CHAMBER_GS_BALL
 	const EVENT_BUTTON_IN_CIANWOOD_GYM
-; Unused: next 96 events
+	const EVENT_CHAMPION_ROOM_DRAGONITE
+; Unused: next 95 events
 
 	const_next 1800
 ; Kanto people

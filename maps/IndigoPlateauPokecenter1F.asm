@@ -41,6 +41,7 @@ IndigoPlateauPokecenter1FPrepareElite4Callback:
 	clearevent EVENT_BEAT_ELITE_4_KAREN
 	clearevent EVENT_BEAT_CHAMPION_LANCE
 	setevent EVENT_LANCES_ROOM_OAK_AND_MARY
+	clearevent EVENT_CHAMPION_ROOM_DRAGONITE
 	endcallback
 
 PlateauRivalBattle1:

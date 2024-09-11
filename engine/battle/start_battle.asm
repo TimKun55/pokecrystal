@@ -70,19 +70,29 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	jr .done
+	jp .done
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jr z, .done
 	cp RED
+	jr z, .done
+	
+	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
+	cp WILL
+	jr z, .done
+	cp KOGA
+	jr z, .done
+	cp BRUNO
+	jr z, .done
+	cp KAREN
 	jr z, .done
 
 	ld de, MUSIC_ROCKET_BATTLE
@@ -105,8 +115,6 @@ PlayBattleMusic:
 	farcall IsKantoGymLeader
 	jr c, .done
 
-	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders
-	; but they have been taken care of before this
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	farcall IsGymLeader
 	jr c, .done

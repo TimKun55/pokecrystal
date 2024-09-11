@@ -52,6 +52,7 @@ Script_ApproachLanceFromRight:
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
 LancesRoomLanceScript:
 	turnobject LANCESROOM_LANCE, LEFT
+	turnobject LANCESROOM_DRAGONITE, LEFT
 	opentext
 	writetext LanceBattleIntroText
 	waitbutton
@@ -380,6 +381,6 @@ LancesRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1
-	object_event  6,  3, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, LancesRoomDragoniteScript, -1
+	object_event  6,  3, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomDragoniteScript, EVENT_CHAMPION_ROOM_DRAGONITE
 	object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
 	object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
