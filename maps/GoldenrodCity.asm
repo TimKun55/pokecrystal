@@ -248,7 +248,14 @@ GoldenrodCityRocket5Script:
 	end
 
 GoldenrodCityRocket6Script:
-	jumptextfaceplayer GoldenrodCityRocket6Text
+	faceplayer
+	opentext
+	writetext GoldenrodCityRocket6Text
+	waitbutton
+	closetext
+	playsound SFX_TACKLE
+	applymovement PLAYER, GoldenrodCity_RocketPushesYou
+	end
 
 GoldenrodCityStationSign:
 	jumptext GoldenrodCityStationSignText
@@ -298,6 +305,12 @@ GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement:
 	step RIGHT
 	step UP
 	step UP
+	step_end
+
+GoldenrodCity_RocketPushesYou:
+	fix_facing
+	jump_step LEFT
+	remove_fixed_facing
 	step_end
 
 GoldenrodCityPokefanMText:
