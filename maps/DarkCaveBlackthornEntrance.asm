@@ -64,7 +64,7 @@ DarkCaveBlackthornEntrance_MapEvents:
 
 	def_warp_events
 	warp_event 35,  3, ROUTE_45, 1
-	warp_event  3, 25, DARK_CAVE_VIOLET_ENTRANCE, 2
+	warp_event  3, 29, DARK_CAVE_VIOLET_ENTRANCE, 2
 
 	def_coord_events
 
