@@ -54,6 +54,10 @@ CeruleanCaveB1FMewtwo:
 	startbattle
 	disappear CERULEANCAVEB1F_MEWTWO
 	reloadmapafterbattle
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_MEWTWO
+.nocatch
 	end
 
 SomethingPowerfulText:

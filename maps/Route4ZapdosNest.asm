@@ -79,6 +79,10 @@ Route4ZapdosNestZapdos:
 	startbattle
 	disappear ROUTE4ZAPDOSNEST_ZAPDOS
 	reloadmapafterbattle
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_ZAPDOS
+.nocatch
 	checkevent EVENT_FOUGHT_ARTICUNO
 	iffalse .end
 	checkevent EVENT_FOUGHT_MOLTRES

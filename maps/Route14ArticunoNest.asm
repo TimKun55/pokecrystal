@@ -79,6 +79,10 @@ Route14ArticunoNestArticuno:
 	startbattle
 	disappear ROUTE14ARTICUNONEST_ARTICUNO
 	reloadmapafterbattle
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_ARTICUNO
+.nocatch
 	checkevent EVENT_FOUGHT_ZAPDOS
 	iffalse .end
 	checkevent EVENT_FOUGHT_MOLTRES

@@ -30,6 +30,10 @@ FarawayIslandMew:
 	disappear FARAWAYISLANDINSIDE_MEW
 	setevent EVENT_FOUGHT_MEW
 	reloadmapafterbattle
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_MEW
+.nocatch
 	end
 
 MewText:

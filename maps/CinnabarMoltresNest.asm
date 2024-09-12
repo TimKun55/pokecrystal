@@ -79,6 +79,10 @@ CinnabarMoltresNestMoltres:
 	startbattle
 	disappear CINNABARMOLTRESNEST_MOLTRES
 	reloadmapafterbattle
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_MOLTRES
+.nocatch
 	checkevent EVENT_FOUGHT_ARTICUNO
 	iffalse .end
 	checkevent EVENT_FOUGHT_ZAPDOS
