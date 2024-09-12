@@ -69,6 +69,7 @@ PewterGroupSprites:
 	db SPRITE_BUG_MANIAC
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_ROCK
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
