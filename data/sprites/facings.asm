@@ -241,10 +241,10 @@ FacingGrass2:
 
 FacingSplash1:
 	db 2 ; #
-	db  8,  0, ABSOLUTE_TILE_ID, $fd
-	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $fd
+	db  8,  0, ABSOLUTE_TILE_ID, $ff
+	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $ff
 
 FacingSplash2:
 	db 2 ; #
-	db  9, -1, ABSOLUTE_TILE_ID, $fd
-	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fd
+	db  9, -1, ABSOLUTE_TILE_ID, $ff
+	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $ff

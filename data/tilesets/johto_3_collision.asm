@@ -205,8 +205,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; cc
 	tilecoll WALL, WALL, WALL, WALL ; cd
 	tilecoll WALL, WALL, WALL, WALL ; ce
-	tilecoll WALL, WALL, PUDDLE, PUDDLE ; cf
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d0
+	tilecoll WALL, WALL, FLOOR, FLOOR ; cf
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d0
 	tilecoll WALL, FLOOR, WALL, WALL ; d1
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; d2
 	tilecoll FLOOR, WALL, WALL, WALL ; d3
@@ -216,10 +216,10 @@
 	tilecoll WALL, WALL, WALL, WALL ; d7
 	tilecoll FLOOR, FLOOR, WALL, WALL ; d8
 	tilecoll WALL, WALL, WALL, WALL ; d9
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; da
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; db
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; dc
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; dd
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; de
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; da
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; db
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; de
 	tilecoll WALL, WALL, WALL, WALL ; df
 	tilecoll WALL, WALL, WALL, WALL ; e0
