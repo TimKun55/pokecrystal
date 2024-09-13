@@ -6,12 +6,12 @@
 	const ROUTE26_BIRD_KEEPER
 	const ROUTE26_FISHER1
 	const ROUTE26_BUG_MANIAC
+	const ROUTE26_FISHER2
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
 	const ROUTE26_ROCK1
 	const ROUTE26_ROCK2
 	const ROUTE26_ROCK3
-	const ROUTE26_FISHER2
 
 Route26_MapScripts:
 	def_scene_scripts
@@ -532,8 +532,11 @@ TohjoFallsKantoSignText:
 	para "The link between"
 	line "Kanto and Johto"
 	
-	para "New Bark Town"
-	line "ahead."
+	para "West: New"
+	line "Bark Town."
+
+	para "North: #mon"
+	line "League."
 	done
 
 Route26_MapEvents:
@@ -562,10 +565,10 @@ Route26_MapEvents:
 	object_event 12,  72, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyBrenda, -1
 	object_event  8,  38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event  7, 45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacShaun, -1
+	object_event  5,  90, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, Route26Fisher2Script, -1
 	object_event 12,  51, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9,  15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event  9,  96, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
 	object_event 12,  98, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
 	object_event 11, 100, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
 	object_event  8, 100, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26PPUp, EVENT_ROUTE_26_PP_UP
-	object_event  5,  90, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route26Fisher2Script, -1

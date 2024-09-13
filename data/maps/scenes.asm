@@ -24,7 +24,7 @@ MapScenes::
 	scene_var KARENS_ROOM,                                 wKarensRoomSceneID
 	scene_var LANCES_ROOM,                                 wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                                wHallOfFameSceneID
-	scene_var ROUTE_27,                                    wRoute27SceneID
+	scene_var ROUTE_26,                                    wRoute26SceneID
 	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID
 	scene_var ELMS_LAB,                                    wElmsLabSceneID
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID

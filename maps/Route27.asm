@@ -404,8 +404,11 @@ TohjoFallsJohtoSignText:
 	para "The link between"
 	line "Kanto and Johto"
 	
-	para "#mon League"
-	line "ahead."
+	para "North: #mon"
+	line "League."
+	
+	para "West: New"
+	line "Bark Town."
 	done
 
 Route27_MapEvents:

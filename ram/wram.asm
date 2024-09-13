@@ -3127,7 +3127,7 @@ wBrunosRoomSceneID::                              db
 wKarensRoomSceneID::                              db
 wLancesRoomSceneID::                              db
 wHallOfFameSceneID::                              db
-wRoute27SceneID::                                 db
+wRoute26SceneID::                                 db
 wNewBarkTownSceneID::                             db
 wElmsLabSceneID::                                 db
 wPlayersHouse1FSceneID::                          db
