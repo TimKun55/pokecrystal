@@ -1,17 +1,25 @@
 LoadSpecialMapPalette:
     ld a, [wMapGroup]
-    cp GROUP_CELADON_CITY
+    cp GROUP_SPROUT_TOWER_1F
     jr nz, .continue1
     ld a, [wMapNumber]
-    cp MAP_CELADON_GYM
-    jp z, .gym_palette
-	
+    cp MAP_CERULEAN_CAVE_1F
+    jp z, .cavevolcano_palette
+	cp MAP_CERULEAN_CAVE_2F
+    jp z, .cavevolcano_palette
+    cp MAP_CERULEAN_CAVE_B1F
+    jp z, .cavevolcano_palette
+
 .continue1
-    cp GROUP_VIRIDIAN_CITY
+	cp GROUP_CINNABAR_POKECENTER_1F
     jr nz, .continue2
     ld a, [wMapNumber]
-    cp MAP_VIRIDIAN_GYM
-    jp z, .gym_palette
+    cp MAP_CINNABAR_VOLCANO_1F
+    jp z, .cavevolcano_palette
+    cp MAP_CINNABAR_VOLCANO_2F
+    jp z, .cavevolcano_palette
+    cp MAP_CINNABAR_VOLCANO_B1F
+    jp z, .cavevolcano_palette
 
 .continue2
 	cp GROUP_FAST_SHIP_1F
@@ -23,17 +31,20 @@ LoadSpecialMapPalette:
     jp z, .faraway_palette
 
 .continue3
-	cp GROUP_SPROUT_TOWER_1F
+    cp GROUP_CELADON_CITY
     jr nz, .continue4
     ld a, [wMapNumber]
-    cp MAP_CERULEAN_CAVE_1F
-    jp z, .ceruleancave_palette
-	cp MAP_CERULEAN_CAVE_2F
-    jp z, .ceruleancave_palette
-    cp MAP_CERULEAN_CAVE_B1F
-    jp z, .ceruleancave_palette
+    cp MAP_CELADON_GYM
+    jp z, .gym_palette
 
 .continue4
+    cp GROUP_VIRIDIAN_CITY
+    jr nz, .continue5
+    ld a, [wMapNumber]
+    cp MAP_VIRIDIAN_GYM
+    jp z, .gym_palette
+
+.continue5
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -86,8 +97,8 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.ceruleancave_palette
-	call LoadCeruleanCavePalette
+.cavevolcano_palette
+	call LoadCaveVolcanoPalette
 	scf
 	ret
 
@@ -190,13 +201,13 @@ LoadFarawayPalette:
 FarawayPalette:
 INCLUDE "gfx/tilesets/faraway_palette.pal"
 
-LoadCeruleanCavePalette:
+LoadCaveVolcanoPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, CeruleanCavePalette
+	ld hl, CaveVolcanoPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
 	
-CeruleanCavePalette:
-INCLUDE "gfx/tilesets/ceruleancave_palette.pal"
+CaveVolcanoPalette:
+INCLUDE "gfx/tilesets/cavevolcano_palette.pal"
