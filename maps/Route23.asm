@@ -566,7 +566,7 @@ Route23JasmineBeforeText:
 	line "how strong"
 	cont "you've become."
 	
-	para "umm…"
+	para "Umm…"
 	line "could we battle?"
 	done
 

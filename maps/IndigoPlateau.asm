@@ -71,7 +71,7 @@ Route23ClairBeforeText:
 	line "obstacle between"
 	
 	para "you and the"
-	line "Leader, I"
+	line "League, I"
 	cont "challenge you."
 	done
 
@@ -91,7 +91,7 @@ Route23ClairAfterText:
 	
 	para "Go. You've beaten"
 	line "us all twice; the"
-	cont "Leader had better"
+	cont "League had better"
 	
 	para "not underestimate"
 	line "you and your"

@@ -64,9 +64,9 @@ LancesRoomLanceScript:
 	loadtrainer CHAMPION, LANCE
 	startbattle	
 	dontrestartmapmusic
-	reloadmapafterbattle
 .AfterBattle:
 	disappear LANCESROOM_DRAGONITE
+	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
 	opentext
 	writetext LanceBattleAfterText
@@ -138,7 +138,6 @@ LancesRoomLanceScript:
 	loadtrainer CHAMPION, LANCE2
 	startbattle
 	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .AfterBattle
 	
 LancesRoomDragoniteScript:
@@ -307,7 +306,7 @@ LancesRoomMaryOhNoOakText:
 	done
 
 LancesRoomOakCongratulationsText:
-	text "PROF.OAK: Ah,"
+	text "Prof.Oak: Ah,"
 	line "<PLAY_G>!"
 
 	para "It's been a long"

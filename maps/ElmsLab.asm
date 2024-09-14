@@ -1195,7 +1195,7 @@ ElmGiveTicketText1:
 
 	para "Now you can travel"
 	line "to Kanto and catch"
-	line "#mon there!"
+	cont "#mon there!"
 	done
 
 ElmGiveTicketText2:
