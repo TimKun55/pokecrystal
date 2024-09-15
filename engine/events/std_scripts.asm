@@ -59,8 +59,6 @@ StdScripts::
 	add_stdscript PokecenterChanseyScript
 
 PokecenterNurseScript:
-; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
-
 	opentext
 	checktime MORN
 	iftrue .morn
@@ -71,15 +69,15 @@ PokecenterNurseScript:
 	sjump .ok
 
 .morn
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .morn_comcenter
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .morn_grandchamp
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .morn_champion
 	farwritetext NurseMornText
 	promptbutton
 	sjump .ok
-.morn_comcenter
-	farwritetext PokeComNurseMornText
+.morn_grandchamp
+	farwritetext NurseMornGrandChampText
 	promptbutton
 	sjump .ok
 .morn_champion
@@ -88,15 +86,15 @@ PokecenterNurseScript:
 	sjump .ok
 
 .day
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .day_comcenter
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .day_grandchamp
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .day_champion
 	farwritetext NurseDayText
 	promptbutton
 	sjump .ok
-.day_comcenter
-	farwritetext PokeComNurseDayText
+.day_grandchamp
+	farwritetext NurseDayGrandChampText
 	promptbutton
 	sjump .ok
 .day_champion
@@ -105,15 +103,15 @@ PokecenterNurseScript:
 	sjump .ok
 
 .nite
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .nite_comcenter
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .nite_grandchamp
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .nite_champion
 	farwritetext NurseNiteText
 	promptbutton
 	sjump .ok
-.nite_comcenter
-	farwritetext PokeComNurseNiteText
+.nite_grandchamp
+	farwritetext NurseNiteGrandChampText
 	promptbutton
 	sjump .ok
 .nite_champion
@@ -122,9 +120,6 @@ PokecenterNurseScript:
 	sjump .ok
 
 .ok
-	; only do this once
-	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
-
 	farwritetext NurseAskHealText
 	yesorno
 	iffalse .done
@@ -167,20 +162,9 @@ PokecenterNurseScript:
 	end
 
 .pokerus
-	; already cleared earlier in the script
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
-	sjump .pokerus_done
-
-.pokerus_comcenter
-	farwritetext PokeComNursePokerusText
-	waitbutton
-	closetext
-
-.pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
 	specialphonecall SPECIALCALL_POKERUS
 	end

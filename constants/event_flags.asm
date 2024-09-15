@@ -204,7 +204,8 @@
 	const EVENT_ILEX_FOREST_PINECO_ENCOUNTERED
 	const EVENT_UNION_CAVE_B2F_WOOPER_ENCOUNTERED
 	const EVENT_ROUTE_45_GLIGAR_ENCOUNTERED
-; Unused: next 51 events
+	const EVENT_GRAND_CHAMPION
+; Unused: next 50 events
 
 	const_next 250
 ; Kanto story events

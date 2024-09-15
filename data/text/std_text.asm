@@ -43,35 +43,31 @@ NurseNiteChampText:
 	line "#mon Center."
 	done
 
-PokeComNurseMornText:
-	text "Good morning!"
-
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#Com Center."
+NurseMornGrandChampText:
+	text "Good morning,"
+	line "Grand Champion"
+	cont "<PLAYER>!"
+	
+	para "Welcome to our"
+	line "#mon Center."
 	done
 
-PokeComNurseDayText:
-	text "Hello!"
-
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#Com Center."
+NurseDayGrandChampText:
+	text "Hello, Grand"
+	line "Champion <PLAYER>!"
+	
+	para "Welcome to our"
+	line "#mon Center."
 	done
 
-PokeComNurseNiteText:
-	text "Good to see you"
-	line "working so late."
+NurseNiteGrandChampText:
+	text "Good evening,"
+	line "Grand Champion"
+	cont "<PLAYER>!"
+	cont "You're out late."
 
-	para "This is the #-"
-	line "mon Communication"
-
-	para "Center--or the"
-	line "#Com Center."
+	para "Welcome to our"
+	line "#mon Center."
 	done
 
 NurseAskHealText:

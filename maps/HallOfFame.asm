@@ -39,6 +39,12 @@ HallOfFameEnterScript:
 	special RespawnOneOffs
 	setmapscene SPROUT_TOWER_3F, SCENE_SPROUTTOWER3F_NOOP
 	special HealParty
+	readvar VAR_BADGES
+	ifless 16, .SkipGrandChamp
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .SkipGrandChamp
+	setevent EVENT_GRAND_CHAMPION
+.SkipGrandChamp:
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
