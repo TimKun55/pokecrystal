@@ -268,7 +268,7 @@ VermilionCityTutorHurricaneText2:
 
 	para "#mon to use"
 	line "Hurricane for"
-	cont "¥20000?"
+	cont "¥20,000?"
 	done
 
 VermilionCityTutorHurricaneRefused:

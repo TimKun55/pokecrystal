@@ -2438,9 +2438,9 @@ SailorGroup:
 
 	; SAILOR (9)
 	db "Stanly@", TRAINERTYPE_NORMAL
-	db 36, MACHOP
-	db 39, MACHOKE
-	db 36, PSYDUCK
+	db 40, MACHOP
+	db 45, MACHOKE
+	db 40, PSYDUCK
 	db -1 ; end
 
 	; SAILOR (10)
