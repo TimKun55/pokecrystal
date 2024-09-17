@@ -96,6 +96,11 @@ VermilionCityTutorScript:
 	setval HURRICANE
 	special MoveTutor
 	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetext VermilionCityTutorHurricaneRefused
+	waitbutton
+	closetext
+	end
 	
 .TeachMove
 	writetext VermilionCityTutorHurricaneClear
@@ -104,12 +109,6 @@ VermilionCityTutorScript:
 	takemoney YOUR_MONEY, 20000
 	waitbutton
 	writetext VermilionCityTutorHurricaneTaught
-	waitbutton
-	closetext
-	end
-	
-.TutorRefused
-	writetext VermilionCityTutorHurricaneRefused
 	waitbutton
 	closetext
 	end
