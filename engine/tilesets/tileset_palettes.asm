@@ -45,6 +45,13 @@ LoadSpecialMapPalette:
     jp z, .gym_palette
 
 .continue5
+    cp GROUP_SAFFRON_CITY
+    jr nz, .continue6
+    ld a, [wMapNumber]
+    cp MAP_SAFFRON_GYM
+    jp z, .saffron_gym_palette
+
+.continue6
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -89,6 +96,11 @@ LoadSpecialMapPalette:
 
 .gym_palette
 	call LoadGymPalette
+	scf
+	ret
+
+.saffron_gym_palette
+	call LoadSaffronGymPalette
 	scf
 	ret
 
@@ -211,3 +223,14 @@ LoadCaveVolcanoPalette:
 	
 CaveVolcanoPalette:
 INCLUDE "gfx/tilesets/cavevolcano_palette.pal"
+
+LoadSaffronGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SaffronGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+SaffronGymPalette:
+INCLUDE "gfx/tilesets/saffron_gym_palette.pal"
