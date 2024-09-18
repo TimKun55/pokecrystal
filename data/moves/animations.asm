@@ -2661,16 +2661,12 @@ BattleAnim_ZenHeadbutt:
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
 	anim_call BattleAnim_ShowMon_0
-	anim_call BattleAnim_ShowMon_0
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_TACKLE
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 128, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 138, 48, $0
 	anim_wait 6
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 144, 48, $0
-	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
@@ -2725,8 +2721,8 @@ BattleAnim_FlameCharge:
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
 	anim_sound 0, 1, SFX_EMBER
 .loop
-	anim_obj BATTLE_ANIM_OBJ_BURNED, 64, 80, $10
-	anim_obj BATTLE_ANIM_OBJ_BURNED, 64, 80, $90
+	anim_obj BATTLE_ANIM_OBJ_BURNED, 48, 84, $10
+	anim_obj BATTLE_ANIM_OBJ_BURNED, 48, 84, $90
 	anim_wait 4
 	anim_loop 4, .loop
 	anim_wait 16
