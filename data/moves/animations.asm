@@ -2470,18 +2470,27 @@ BattleAnim_PinMissile:
 BattleAnim_IcicleSpear:
 	anim_3gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_ICE, BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 72, 72, $2
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 64, 92, $28
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 56, 84, $28
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $9c
 	anim_wait 12
-	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 80, 88, $2
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 52, 88, $28
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 128, 48, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 128, 48, $10
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 128, 48, $9c
 	anim_wait 12
-	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 76, 80, $2
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 132, 52, $0
-	anim_call BattleAnimSub_Ice
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 132, 52, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 132, 52, $10
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 132, 52, $9c
 	anim_wait 16
 	anim_ret
 
@@ -3836,7 +3845,12 @@ BattleAnim_IcicleCrash:
 	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 128, 68, $30
 	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
 	anim_wait 40
-	anim_call BattleAnimSub_Ice
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 128, 66, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 120, 66, $9c
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 152, 66, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 152, 66, $9c
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 144, 66, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 66, $9c
 	anim_wait 32
 	anim_ret
 
