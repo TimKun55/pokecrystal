@@ -16,7 +16,7 @@ AnimObjGFX:
 	anim_obj_gfx 18, AnimObjPlantGFX
 	anim_obj_gfx 12, AnimObjSmokeGFX
 	anim_obj_gfx  9, AnimObjExplosionGFX
-	anim_obj_gfx 17, AnimObjRocksGFX
+	anim_obj_gfx 19, AnimObjRocksGFX
 	anim_obj_gfx  6, AnimObjIceGFX
 	anim_obj_gfx 10, NULL ; use AnimBallObjGFX
 	anim_obj_gfx 10, AnimObjPokeBallBGGFX
@@ -50,6 +50,7 @@ AnimObjGFX:
 	anim_obj_gfx 24, AnimObjAeroblastGFX
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL
+	anim_obj_gfx  6, AnimObjIcicleCrashGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
 
 

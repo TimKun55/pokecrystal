@@ -38,6 +38,7 @@ AnimObjAngelsGFX:    INCBIN "gfx/battle_anims/angels.2bpp.lz"
 AnimObjWaveGFX:      INCBIN "gfx/battle_anims/wave.2bpp.lz"
 AnimObjAeroblastGFX: INCBIN "gfx/battle_anims/aeroblast.2bpp.lz"
 AnimObjPokeBallBGGFX: INCBIN "gfx/battle_balls/background.2bpp.lz"
+AnimObjIcicleCrashGFX: INCBIN "gfx/battle_anims/iciclecrash.2bpp.lz"
 
 
 SECTION "Battle Ball Icons", ROMX

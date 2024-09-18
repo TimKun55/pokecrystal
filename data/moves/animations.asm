@@ -762,16 +762,18 @@ BattleAnim_DoubleKick:
 	anim_ret
 
 BattleAnim_SilverWind:
-	anim_1gfx BATTLE_ANIM_GFX_POWDER
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 88, 0, $0
+	anim_1gfx BATTLE_ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgeffect BATTLE_BG_EFFECT_WHIRLPOOL, $0, $0, $0
+.loop	
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
 	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 72, 0, $1
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
 	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
 	anim_wait 8
-	anim_loop 16, .loop
+	anim_loop 4, .loop
+	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
 	anim_wait 8
 	anim_ret
 
@@ -1374,10 +1376,12 @@ BattleAnim_Sonicboom:
 
 BattleAnim_GunkShot:
 	anim_1gfx BATTLE_ANIM_GFX_POISON
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $24
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
+	anim_call BattleAnimSub_Acid
+	anim_wait 4
 	anim_call BattleAnimSub_Sludge
-	anim_wait 56
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Explosion:
@@ -1850,12 +1854,14 @@ BattleAnim_Bide:
 BattleAnim_OminousWind:
 	anim_1gfx BATTLE_ANIM_GFX_WIND
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_bgeffect BATTLE_BG_EFFECT_WHIRLPOOL, $0, $0, $0
 	anim_wait 4
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_GUST, 136, 72, $0
 	anim_wait 6
 	anim_loop 9, .loop
+	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
 	anim_ret
 
 BattleAnim_Wrap:
@@ -2348,14 +2354,15 @@ BattleAnim_IronBash:
 	anim_call BattleAnim_TargetObj_1Row
 	anim_call BattleAnimSub_Metallic
 	anim_wait 4
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $2, $0
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_resetobp0
-	anim_sound 0, 1, SFX_MEGA_KICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
-	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_BODY_SLAM, $0, BG_EFFECT_USER, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_wait 6
 	anim_call BattleAnim_ShowMon_0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_HornAttack:
@@ -2461,19 +2468,21 @@ BattleAnim_PinMissile:
 	anim_ret
 
 BattleAnim_IcicleSpear:
-	anim_2gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_ICE
-	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
-	anim_obj BATTLE_ANIM_OBJ_HORN, 72, 72, $2
-	anim_wait 8
+	anim_3gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_ICE, BATTLE_ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 72, 72, $2
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj BATTLE_ANIM_OBJ_HORN, 80, 88, $2
-	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 80, 88, $2
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj BATTLE_ANIM_OBJ_HORN, 76, 80, $2
-	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 48, $0
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPEAR, 76, 80, $2
 	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 132, 52, $0
 	anim_call BattleAnimSub_Ice
-	anim_wait 32
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Transform:
@@ -2544,25 +2553,62 @@ BattleAnim_Mimic:
 	anim_ret
 
 BattleAnim_StoneEdge:
-	anim_1gfx BATTLE_ANIM_GFX_ROCKS
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
-	anim_sound 0, 1, SFX_EMBER
-	anim_wait 16
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 128, 64, $40
-	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 120, 68, $30
-	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 152, 68, $30
-	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 144, 64, $40
-	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 136, 68, $30
-	anim_wait 48
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_ROCKS
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 156, 64, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 152, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 128, 64, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 108, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 112, 64, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 148, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 118, 64, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 136, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 116, 64, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE_STILL, 144, 64, $8
+	anim_wait 32
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 156, 64, $8
+	anim_wait 2
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $55, $1, $0
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 152, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 128, 64, $8
+	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL_YFIX, 120, 40, $0
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 108, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 112, 64, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 148, 64, $8
+	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL_YFIX, 152, 48, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 118, 64, $8
+	anim_wait 2
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 136, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 116, 64, $8
+	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL_YFIX, 136, 56, $0
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STONE_EDGE, 144, 64, $8
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Bulldoze:
@@ -2779,7 +2825,7 @@ BattleAnim_Hurricane:
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_GUST, 136, 72, $0
 	anim_wait 6
 	anim_loop 9, .loop
@@ -3776,22 +3822,22 @@ BattleAnim_DestinyBond:
 	anim_ret
 
 BattleAnim_IcicleCrash:
-	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_ICE
+	anim_2gfx BATTLE_ANIM_GFX_ICICLECRASH, BATTLE_ANIM_GFX_ICE
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $1, $0
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 128, 64, $40
+	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 120, 64, $40
 	anim_wait 2
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 120, 68, $30
+	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 112, 68, $30
 	anim_wait 2
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 152, 68, $30
+	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 142, 68, $30
 	anim_wait 2
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 144, 64, $40
+	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 136, 64, $40
 	anim_wait 2
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 136, 68, $30
+	anim_obj BATTLE_ANIM_OBJ_ICICLE_CRASH, 128, 68, $30
 	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
 	anim_wait 40
 	anim_call BattleAnimSub_Ice
@@ -3799,34 +3845,32 @@ BattleAnim_IcicleCrash:
 	anim_ret
 
 BattleAnim_IcyWind:
-	anim_1gfx BATTLE_ANIM_GFX_SPEED
+	anim_1gfx BATTLE_ANIM_GFX_ICE
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
-	anim_battlergfx_1row
-	anim_sound 0, 0, SFX_PSYCHIC
 .loop
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
-	anim_wait 8
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_BLIZZARD, 64, 88, $4
+	anim_wait 2
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_BLIZZARD, 64, 96, $3
+	anim_wait 2
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_BLIZZARD, 64, 88, $3
+	anim_wait 2
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_BLIZZARD, 64, 96, $4
+	anim_wait 2
 	anim_loop 2, .loop
-	anim_wait 16
-	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
-	anim_wait 6
-	anim_bgeffect BATTLE_BG_EFFECT_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
-	anim_wait 64
-	anim_incbgeffect BATTLE_BG_EFFECT_NIGHT_SHADE
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 4
-	anim_incobj 7
-	anim_wait 1
+	anim_call BattleAnimSub_Ice
+	anim_wait 32
 	anim_ret
 
 BattleAnim_HeatWave:
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_bgp $90
+	anim_bgeffect BATTLE_BG_EFFECT_WHIRLPOOL, $0, $0, $0
 .loop
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj BATTLE_ANIM_OBJ_FIRE_SPIN, 64, 88, $4
@@ -3842,6 +3886,7 @@ BattleAnim_HeatWave:
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 48
+	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
 	anim_ret
 
 BattleAnim_PoisonJab:
@@ -4015,14 +4060,16 @@ BattleAnim_Swagger:
 
 BattleAnim_RockBlast:
 	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_STRENGTH, 64, 104, $1
-	anim_wait 80
-	anim_incobj 1
-	anim_wait 20
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+	anim_sound 6, 2, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_ROCK_BLAST, 64, 92, $4
 	anim_wait 16
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $d0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $50
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Spark:
@@ -4507,31 +4554,24 @@ BattleAnim_Crunch:
 	anim_ret
 
 BattleAnim_RockTomb:
-	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_HIT
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_Y, $10, $1, $20
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_STRENGTH, 64, 104, $1
-	anim_wait 128
-	anim_incobj 1
-	anim_wait 20
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $1, $0
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 128, 64, $40
-	anim_wait 2
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 120, 68, $30
-	anim_wait 2
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 152, 68, $30
-	anim_wait 2
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 144, 64, $40
-	anim_wait 2
-	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj BATTLE_ANIM_OBJ_SMALL_ROCK, 136, 68, $30
-	anim_wait 80
+	anim_1gfx BATTLE_ANIM_GFX_ROCKS
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 128, 18, $10
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 152, 17, $10
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 112, 17, $10
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 136, 16, $10
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
+	anim_wait 40
 	anim_ret
 
 BattleAnim_HiddenPower:

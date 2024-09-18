@@ -220,6 +220,11 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ENEMYFEET_2ROW      ; ba
 	const BATTLE_ANIM_OBJ_PLAYERHEAD_2ROW     ; bb
 	const BATTLE_ANIM_OBJ_HAIL                ; bc
+	const BATTLE_ANIM_OBJ_ICE_SPEAR           ; bd
+	const BATTLE_ANIM_OBJ_ROCK_BLAST          ; be
+	const BATTLE_ANIM_OBJ_ROCK_TOMB           ; bf
+	const BATTLE_ANIM_OBJ_STONE_EDGE_STILL    ; c0
+	const BATTLE_ANIM_OBJ_STONE_EDGE          ; c1
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -305,6 +310,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_ANCIENT_POWER             ; 4d
 	const BATTLE_ANIM_FUNC_ROCK_SMASH                ; 4e
 	const BATTLE_ANIM_FUNC_COTTON                    ; 4f
+	const BATTLE_ANIM_FUNC_ROCK_TOMB                 ; 50
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -495,6 +501,8 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW        ; b7
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW       ; b8
 	const BATTLE_ANIM_FRAMESET_HAIL                  ; b9
+	const BATTLE_ANIM_FRAMESET_STONE_EDGE            ; ba
+	const BATTLE_ANIM_FRAMESET_ICICLE                ; bc
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -716,6 +724,8 @@ DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 	const BATTLE_ANIM_OAMSET_D6
 	const BATTLE_ANIM_OAMSET_D7
 	const BATTLE_ANIM_OAMSET_HAIL
+	const BATTLE_ANIM_OAMSET_STONE_EDGE
+	const BATTLE_ANIM_OAMSET_ICICLE
 DEF NUM_BATTLE_ANIM_OAMSETS EQU const_value
 
 assert NUM_BATTLE_ANIM_OAMSETS <= FIRST_OAM_CMD, \
@@ -823,6 +833,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_AEROBLAST  ; 27
 	const BATTLE_ANIM_GFX_PLAYERHEAD ; 28
 	const BATTLE_ANIM_GFX_ENEMYFEET   ; 29
+	const BATTLE_ANIM_GFX_ICICLECRASH ; 2a
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
