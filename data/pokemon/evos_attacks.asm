@@ -1603,7 +1603,6 @@ MukEvosAttacks:
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
 	db 0 ; no more evolutions
-	db 1, ICICLE_CRASH
 	db 1, TACKLE
 	db 1, HARDEN
 	db 5, WATER_GUN
