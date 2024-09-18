@@ -210,10 +210,10 @@ BillsGrandpa:
 	end
 	
 PokemonJournalBillScript:
-	writetext PokemonJournalBillText
+	jumptext PokemonJournalBillText
 	
 BillsHousePCScript:
-	writetext BillsHousePCText
+	jumptext BillsHousePCText
 
 BillsGrandpaIntroText:
 	text "Hm? You know Bill?"

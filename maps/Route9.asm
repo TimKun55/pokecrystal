@@ -222,7 +222,7 @@ LadyZoeAfterBattleText:
 	line "from Johto?!"
 
 	para "Oh, well, no"
-	cont "wonder I lost!"
+	line "wonder I lost!"
 	
 	para "I guess"
 	line "that's OK…"

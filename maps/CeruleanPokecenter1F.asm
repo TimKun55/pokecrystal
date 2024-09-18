@@ -54,7 +54,7 @@ CeruleanPokecenter1FGymGuideText:
 	text "The Magnet Train"
 	line "travels at over"
 
-	para "550 km/h. It goes"
+	para "550km/h. It goes"
 	line "between Kanto and"
 
 	para "Johto in almost no"
