@@ -97,6 +97,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RockSmash
 	dw BattleAnimFunc_Cotton
 	dw BattleAnimFunc_RockTomb
+	dw BattleAnimFunc_Hurricane
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -4276,6 +4277,44 @@ BattleAnimFunc_RockTomb:
 	jp BattleAnim_IncAnonJumptableIndex
 .two
 	ret
+
+BattleAnimFunc_Hurricane:
+; Moves object in a ring around position slightly faster. Uses anim_incobj to move to second phase,  where it expands the radius 8 pixels at a time for 13 frames and then disappears
+; Obj Param: Defines starting position in circle
+	call BattleAnim_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	ld d, $18
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	inc [hl] ; increased rotation speed
+	inc [hl]
+	jp BattleAnim_StepCircle
+
+.one
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], $18
+.two
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jp nc, DeinitBattleAnimation
+	ld d, a
+	add $8
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jp BattleAnim_StepCircle
+
 
 BattleAnim_StepCircle:
 ; Inches object in a circular movement where its height is 1/4 the width

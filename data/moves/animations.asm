@@ -1813,7 +1813,6 @@ BattleAnim_FreshSnack:
 	anim_ret
 
 BattleAnim_FocusEnergy:
-BattleAnim_BulkUp:
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, BG_EFFECT_USER, $40
@@ -2825,19 +2824,22 @@ BattleAnim_Minimize:
 	anim_ret
 
 BattleAnim_Hurricane:
-	anim_2gfx BATTLE_ANIM_GFX_WIND, BATTLE_ANIM_GFX_HIT
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $30, $4, $10
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_2gfx BATTLE_ANIM_GFX_HURRICANE, BATTLE_ANIM_GFX_WIND
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $90, $4, $10
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $4, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_obj BATTLE_ANIM_OBJ_HURRICANE, 132, 56, $38
+	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 24, $10
+	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 48, $2
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 56, $c
+	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 104, $e
 .loop
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj BATTLE_ANIM_OBJ_GUST, 136, 72, $0
-	anim_wait 6
-	anim_loop 9, .loop
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 64, $18
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 32, $18
-	anim_wait 16
+	anim_wait 4
+	anim_loop 18, .loop
+	anim_wait 24
 	anim_ret
 
 BattleAnim_NightShade:
@@ -3112,6 +3114,24 @@ BattleAnim_Rage:
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 152, 40, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_BulkUp:
+	anim_2gfx BATTLE_ANIM_GFX_BULK_UP, BATTLE_ANIM_GFX_WIND
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_BULK_UP, 48, 88, $0
+	anim_wait 32
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 0, SFX_HORN_ATTACK
+	anim_wait 16
+	anim_wait 8
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 0, SFX_HORN_ATTACK
+	anim_wait 24
+	anim_clearobjs
+	anim_sound 0, 0, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SWAGGER, 72, 88, $44
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Agility:
@@ -3392,25 +3412,10 @@ BattleAnim_Thief:
 BattleAnim_XScissor:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 18, 0,  6, 0, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 15, 0,  6, 0, $0
-	anim_wait 8
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $58, $2, $0
-	anim_sound 0, 1, SFX_CUT
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 18, 4,  5, 0, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 14, 4,  5, 0, $0
-	anim_wait 8
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $58, $2, $0
-	anim_sound 0, 1, SFX_CUT
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 19, 0,  4, 0, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 14, 0,  4, 0, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 150, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 118, 40, $0
 	anim_wait 32
-	anim_sound 0, 1, SFX_VICEGRIP
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $10
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 18, 4,  5, 0, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 14, 4,  5, 0, $0
-	anim_wait 20
 	anim_ret
 
 BattleAnim_DragonPulse:
@@ -4565,9 +4570,10 @@ BattleAnim_Crunch:
 
 BattleAnim_RockTomb:
 	anim_1gfx BATTLE_ANIM_GFX_ROCKS
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 128, 18, $10
 	anim_wait 18
-	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_sound 0, 1, SFX_EGG_BOMB	
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 152, 17, $10
 	anim_wait 18
@@ -4576,11 +4582,10 @@ BattleAnim_RockTomb:
 	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 112, 17, $10
 	anim_wait 18
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 136, 16, $10
 	anim_wait 18
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
 	anim_wait 40
 	anim_ret
 

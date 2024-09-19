@@ -189,6 +189,8 @@ BattleAnimFrameData:
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
 	dw .Frameset_StoneEdge           ; BATTLE_ANIM_FRAMESET_STONE_EDGE
 	dw .Frameset_Icicle              ; BATTLE_ANIM_FRAMESET_ICICLE
+	dw .Frameset_Hurricane           ; BATTLE_ANIM_FRAMESET_HURRICANE
+	dw .Frameset_BulkUp              ; BATTLE_ANIM_FRAMESET_BULK_UP
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1282,4 +1284,15 @@ BattleAnimFrameData:
 
 .Frameset_Icicle:
 	oamframe BATTLE_ANIM_OAMSET_ICICLE, 8
+	oamend
+
+.Frameset_Hurricane:
+	oamframe BATTLE_ANIM_OAMSET_HURRICANE, 2
+	oamframe BATTLE_ANIM_OAMSET_HURRICANE, 2, OAM_X_FLIP
+	oamrestart
+
+.Frameset_BulkUp
+	oamframe BATTLE_ANIM_OAMSET_BULK_UP1,  32
+	oamframe BATTLE_ANIM_OAMSET_BULK_UP2,  24
+	oamframe BATTLE_ANIM_OAMSET_BULK_UP2,  24
 	oamend

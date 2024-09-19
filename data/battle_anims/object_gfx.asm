@@ -51,6 +51,8 @@ AnimObjGFX:
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  6, AnimObjIcicleCrashGFX
+	anim_obj_gfx 18, AnimObjHurricaneGFX
+	anim_obj_gfx 18, AnimObjBulkUpGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
 
 
