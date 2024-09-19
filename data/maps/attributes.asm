@@ -400,7 +400,7 @@ ENDM
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $bd, 0
 	map_attributes NationalPark, NATIONAL_PARK, $45, 0
-	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
+	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $45, 0
 	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
 	map_attributes RadioTower2F, RADIO_TOWER_2F, $00, 0
 	map_attributes RadioTower3F, RADIO_TOWER_3F, $00, 0

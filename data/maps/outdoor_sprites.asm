@@ -80,7 +80,7 @@ CeruleanGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_BIRD_KEEPER
 	db SPRITE_LASS
-	db SPRITE_ROCKET ; doesn't walk? Spins on spot, then warps away
+	db SPRITE_ROCKET
 	db SPRITE_MISTY
 	db SPRITE_AGATHA
 	db SPRITE_SCHOOLBOY
