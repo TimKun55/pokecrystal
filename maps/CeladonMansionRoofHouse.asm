@@ -34,12 +34,14 @@ CeladonMansionRoofHouseGrannyStream:
 	writetext GrannyStreamingText
 	waitbutton
 	closetext
+	turnobject CELADONMANSIONROOFHOUSE_GRANNY1, UP
 	end
 	
 .SundaeScaries
 	writetext GrannySundaeScariesText
 	waitbutton
 	closetext
+	turnobject CELADONMANSIONROOFHOUSE_GRANNY1, UP
 	end
 
 CeladonMansionRoofHouseGrannyWatch:
