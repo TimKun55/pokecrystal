@@ -175,7 +175,7 @@ Route36OfficerScriptContest:
 	special FadeOutToWhite
 	waitsfx
 	special SelectRandomBugContestContestants
-	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 35, 18
+	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18
 	end
 
 .LeaveMonsWithOfficer:
