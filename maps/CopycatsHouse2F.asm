@@ -268,7 +268,7 @@ CopycatText_GivePass:
 
 CopycatText_ExplainPass:
 	text "Copycat: That's"
-	line "the PASS for the"
+	line "the Pass for the"
 	cont "Magnet Train."
 
 	para "The rail company"
