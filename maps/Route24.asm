@@ -26,13 +26,35 @@ Route24RocketScript:
 	writetext Route24RocketDisappearsText
 	waitbutton
 	closetext
-	special FadeOutToBlack
-	special ReloadSpritesNoPalettes
+	readvar VAR_FACING
+	ifequal UP, .Location1
+	applymovement ROUTE24_ROCKET, RocketExitMove1
+	sjump .Continue
+
+.Location1:
+	applymovement ROUTE24_ROCKET, RocketExitMove2
+.Continue:
 	disappear ROUTE24_ROCKET
-	pause 25
-	special FadeInFromBlack
 	playmapmusic
 	end
+
+RocketExitMove1:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+RocketExitMove2:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
 Route24RocketSeenText:
 	text "Hey, kid! Me am a"
