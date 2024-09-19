@@ -25,13 +25,36 @@ CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 
-CeruleanCityDisguised:
+CeruleanCityDisguisedLeft:
 	readvar VAR_FACING
-	ifequal UP, .continueappear
+	ifequal UP, .continueappearleft
 	end
 	
-.continueappear
+.continueappearleft
 	moveobject CERULEANCITY_COOLTRAINER_M2, 21, 29
+	appear CERULEANCITY_COOLTRAINER_M2
+	pause 5
+	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedMovement
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	pause 15
+	turnobject CERULEANCITY_COOLTRAINER_M2, UP
+	pause 15
+	showemote EMOTE_SHOCK, CERULEANCITY_COOLTRAINER_M2, 15
+	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedFastMovement
+	disappear CERULEANCITY_COOLTRAINER_M2
+	showemote EMOTE_QUESTION, PLAYER, 30
+	setscene SCENE_CERULEANCITY_NOOP
+	setmapscene SAFFRON_CITY, SCENE_SAFFRONCITY_DISGUISED
+	end
+
+CeruleanCityDisguisedRight:
+	readvar VAR_FACING
+	ifequal UP, .continueappearright
+	end
+	
+.continueappearright
+	moveobject CERULEANCITY_COOLTRAINER_M2, 22, 29
 	appear CERULEANCITY_COOLTRAINER_M2
 	pause 5
 	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedMovement
@@ -337,8 +360,8 @@ CeruleanCity_MapEvents:
 	warp_event  9, 15, CERULEAN_EMPTY_HOUSE, 1
 
 	def_coord_events
-	coord_event 26, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguised
-	coord_event 27, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguised
+	coord_event 26, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguisedLeft
+	coord_event 27, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguisedRight
 
 	def_bg_events
 	bg_event 28, 24, BGEVENT_READ, CeruleanCitySign
