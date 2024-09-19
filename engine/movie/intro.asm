@@ -978,16 +978,6 @@ IntroScene20:
 	call Intro_Scene20_AppearUnown
 	ret
 
-.AppearUnownPal2: ; unreferenced
-	ld a, c
-	and $1c
-	srl a
-	srl a
-	ld [wIntroSceneTimer], a
-	ld a, 1
-	call Intro_Scene20_AppearUnown
-	ret
-
 .finished:
 	call NextIntroScene
 	ret

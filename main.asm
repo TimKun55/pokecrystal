@@ -421,7 +421,6 @@ INCLUDE "data/moves/animations.asm"
 
 SECTION "Move Animations", ROMX
 
-INCLUDE "engine/events/bug_contest/display_stats.asm"
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "engine/battle_anims/functions.asm"
@@ -471,6 +470,7 @@ SECTION "bank39", ROMX
 INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
+INCLUDE "engine/events/bug_contest/display_stats.asm"
 
 
 SECTION "bank3E", ROMX
