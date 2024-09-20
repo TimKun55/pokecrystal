@@ -326,6 +326,9 @@ INCBIN "data/tilesets/pokecom_center_attributes.bin"
 TilesetBattleTowerInsideAttr::
 INCBIN "data/tilesets/battle_tower_inside_attributes.bin"
 
+TilesetIcePathAttr::
+INCBIN "data/tilesets/ice_path_attributes.bin"
+
 
 SECTION "Tileset Data 11", ROMX
 
@@ -340,9 +343,6 @@ INCBIN "data/tilesets/radio_tower_attributes.bin"
 
 TilesetUndergroundAttr::
 INCBIN "data/tilesets/underground_attributes.bin"
-
-TilesetIcePathAttr::
-INCBIN "data/tilesets/ice_path_attributes.bin"
 
 TilesetForestAttr::
 INCBIN "data/tilesets/forest_attributes.bin"
@@ -401,12 +401,6 @@ INCBIN "data/tilesets/lab_attributes.bin"
 TilesetIcePathGFX::
 INCBIN "gfx/tilesets/ice_path.2bpp.lz"
 
-TilesetIcePathMeta::
-INCBIN "data/tilesets/ice_path_metatiles.bin"
-
-TilesetIcePathColl::
-INCLUDE "data/tilesets/ice_path_collision.asm"
-
 TilesetPlayersRoomGFX::
 INCBIN "gfx/tilesets/players_room.2bpp.lz"
 
@@ -460,6 +454,12 @@ INCBIN "gfx/tilesets/kanto_4.2bpp.lz"
 
 TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
+
+TilesetIcePathMeta::
+INCBIN "data/tilesets/ice_path_metatiles.bin"
+
+TilesetIcePathColl::
+INCLUDE "data/tilesets/ice_path_collision.asm"
 
 
 SECTION "Tileset Data 17", ROMX
