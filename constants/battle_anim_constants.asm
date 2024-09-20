@@ -141,6 +141,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_KINESIS             ; 6b
 	const BATTLE_ANIM_OBJ_FLASH               ; 6c
 	const BATTLE_ANIM_OBJ_SHINY               ; 6d
+	const BATTLE_ANIM_OBJ_DRAGON_PULSE        ; 6e
 	const BATTLE_ANIM_OBJ_LICK                ; 6f
 	const BATTLE_ANIM_OBJ_POISON_POWDER       ; 70
 	const BATTLE_ANIM_OBJ_DRAIN               ; 71
@@ -227,6 +228,13 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ICE_SPLASH          ; c2
 	const BATTLE_ANIM_OBJ_HURRICANE           ; c3
 	const BATTLE_ANIM_OBJ_BULK_UP             ; c4
+	const BATTLE_ANIM_OBJ_SMALL_GLOW          ; c5
+	const BATTLE_ANIM_OBJ_SHRINKING_RING_SMALL ; c6
+	const BATTLE_ANIM_OBJ_SHRINKING_RING_BIG  ; c7
+	const BATTLE_ANIM_OBJ_GRAY_GLOW           ; c8
+	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; c9
+	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_R       ; ca
+	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_B       ; cb
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -441,6 +449,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_STAR                  ; 78
 	const BATTLE_ANIM_FRAMESET_SPOON                 ; 79
 	const BATTLE_ANIM_FRAMESET_SPARKLE               ; 7a
+	const BATTLE_ANIM_FRAMESET_DRAGON_PULSE          ; 7b
 	const BATTLE_ANIM_FRAMESET_LICK                  ; 7c
 	const BATTLE_ANIM_FRAMESET_WITHDRAW_SHELL        ; 7d
 	const BATTLE_ANIM_FRAMESET_SHRINKING_CHARGE_ORB  ; 7e
@@ -507,6 +516,10 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_ICICLE                ; bb
 	const BATTLE_ANIM_FRAMESET_HURRICANE             ; bc
 	const BATTLE_ANIM_FRAMESET_BULK_UP               ; bd
+	const BATTLE_ANIM_FRAMESET_SMALL_GLOW            ; be
+	const BATTLE_ANIM_FRAMESET_SHRINKING_RING_SMALL  ; bf
+	const BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG    ; c0
+	const BATTLE_ANIM_FRAMESET_TINY_GLOW             ; c1
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -732,6 +745,9 @@ DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 	const BATTLE_ANIM_OAMSET_HURRICANE
 	const BATTLE_ANIM_OAMSET_BULK_UP1
 	const BATTLE_ANIM_OAMSET_BULK_UP2
+	const BATTLE_ANIM_OAMSET_BIG_RING1
+	const BATTLE_ANIM_OAMSET_BIG_RING2
+	const BATTLE_ANIM_OAMSET_SMALL_RING
 DEF NUM_BATTLE_ANIM_OAMSETS EQU const_value
 
 assert NUM_BATTLE_ANIM_OAMSETS <= FIRST_OAM_CMD, \
@@ -841,6 +857,9 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_ICICLECRASH ; 2a
 	const BATTLE_ANIM_GFX_HURRICANE  ; 2b
 	const BATTLE_ANIM_GFX_BULK_UP    ; 2c
+	const BATTLE_ANIM_GFX_RINGS      ; 2d
+	const BATTLE_ANIM_GFX_BIG_RINGS  ; 2e
+	const BATTLE_ANIM_GFX_GLOW       ; 2f
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
