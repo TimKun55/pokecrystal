@@ -51,7 +51,7 @@ WardensGranddaughterText1:
 
 WardensGranddaughterText2:
 	text "Many people were"
-	line "disappointed that"
+	line "sad that the"
 
 	para "Safari Zone closed"
 	line "down, so it's a"
