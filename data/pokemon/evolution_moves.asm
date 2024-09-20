@@ -88,7 +88,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SEEL
 	db ICICLE_SPEAR ; DEWGONG
 	db NO_MOVE      ; GRIMER
-	db BEAT_UP      ; MUK
+	db NO_MOVE      ; MUK
 	db NO_MOVE      ; SHELLDER
 	db ICICLE_SPEAR ; CLOYSTER
 	db NO_MOVE      ; GASTLY

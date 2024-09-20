@@ -1594,7 +1594,6 @@ MukEvosAttacks:
 	db 30, SCREECH
 	db 33, SLUDGE_BOMB
 	db 36, THIEF
-	db 37, BEAT_UP
 	db 42, ACID_ARMOR
 	db 50, GUNK_SHOT
 	db 58, DARK_PULSE
@@ -3914,19 +3913,20 @@ SneaselEvosAttacks:
 	db 1, LEER
 	db 5, POWDER_SNOW
 	db 8, QUICK_ATTACK
-	db 12, FURY_STRIKES
-	db 16, FEINT_ATTACK
-	db 20, ICY_WIND
-	db 23, METAL_CLAW
-	db 27, AGILITY
-	db 30, SLASH
-	db 34, HAIL
-	db 38, ICE_BEAM
-	db 41, NASTY_PLOT
-	db 45, HEALINGLIGHT
-	db 48, X_SCISSOR
-	db 52, NIGHT_SLASH
-	db 56, ICICLE_CRASH
+	db 11, FURY_STRIKES
+	db 14, FEINT_ATTACK
+	db 18, ICY_WIND
+	db 22, BEAT_UP
+	db 25, METAL_CLAW
+	db 28, AGILITY
+	db 32, SLASH
+	db 36, HAIL
+	db 40, ICE_BEAM
+	db 44, NASTY_PLOT
+	db 48, HEALINGLIGHT
+	db 52, X_SCISSOR
+	db 56, NIGHT_SLASH
+	db 60, ICICLE_CRASH
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:
@@ -4190,8 +4190,8 @@ HoundourEvosAttacks:
 	db 12, WILL_O_WISP
 	db 15, BITE
 	db 18, FLAME_WHEEL
-	db 21, BEAT_UP
-	db 25, PURSUIT
+	db 21, PURSUIT
+	db 25, FLAME_CHARGE
 	db 30, FEINT_ATTACK
 	db 34, FIRE_SPIN
 	db 38, CRUNCH
@@ -4209,8 +4209,8 @@ HoundoomEvosAttacks:
 	db 12, WILL_O_WISP
 	db 15, BITE
 	db 18, FLAME_WHEEL
-	db 21, BEAT_UP
-	db 26, PURSUIT
+	db 21, PURSUIT
+	db 26, FLAME_CHARGE
 	db 32, FEINT_ATTACK
 	db 37, FIRE_SPIN
 	db 42, CRUNCH
