@@ -124,7 +124,6 @@ BattleAnimFrameData:
 	dw .Frameset_Star                ; BATTLE_ANIM_FRAMESET_STAR
 	dw .Frameset_Spoon               ; BATTLE_ANIM_FRAMESET_SPOON
 	dw .Frameset_Sparkle             ; BATTLE_ANIM_FRAMESET_SPARKLE
-	dw .Frameset_SkyAttack           ; BATTLE_ANIM_FRAMESET_SKY_ATTACK
 	dw .Frameset_Lick                ; BATTLE_ANIM_FRAMESET_LICK
 	dw .Frameset_WithdrawShell       ; BATTLE_ANIM_FRAMESET_WITHDRAW_SHELL
 	dw .Frameset_ShrinkingChargeOrb  ; BATTLE_ANIM_FRAMESET_SHRINKING_CHARGE_ORB
@@ -967,10 +966,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_99, 32
 	oamframe BATTLE_ANIM_OAMSET_99, 32
 	oamframe BATTLE_ANIM_OAMSET_9A,  8
-	oamend
-
-.Frameset_SkyAttack:
-	oamframe BATTLE_ANIM_OAMSET_9B,  8
 	oamend
 
 .Frameset_Lick:

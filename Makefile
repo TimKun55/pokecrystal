@@ -266,7 +266,6 @@ gfx/battle_anims/noise.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/objects.2bpp: tools/gfx += --remove-whitespace --remove-xflip
 gfx/battle_anims/reflect.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/rocks.2bpp: tools/gfx += --remove-whitespace
-gfx/battle_anims/skyattack.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
 gfx/battle_balls/background.2bpp: tools/gfx += --remove-xflip --keep-whitespace
