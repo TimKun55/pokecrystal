@@ -25,7 +25,7 @@ Route4ZapdosNestAgathaCallback:
 	endcallback
 
 Route4ZapdosNestZapdosCallback:
-	checkevent EVENT_FOUGHT_ZAPDOS
+	checkflag ENGINE_PLAYER_CAUGHT_ZAPDOS
 	iftrue .NoAppear
 	checkevent EVENT_AGATHA_IN_SAFFRON
 	iftrue .Appear

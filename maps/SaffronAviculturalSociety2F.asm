@@ -72,10 +72,6 @@ AviculturalSocietySkarmoryScript:
 	waitbutton
 	closepokepic
 	closetext
-	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
-	setevent EVENT_FOUGHT_ARTICUNO
-	setevent EVENT_FOUGHT_ZAPDOS
-	setevent EVENT_FOUGHT_MOLTRES
 	end
 
 AviculturalSocietyArticunoBookshelf:

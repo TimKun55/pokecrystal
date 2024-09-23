@@ -3141,7 +3141,7 @@ wRoute36NationalParkGateSceneID::                 db
 wAzaleaTownSceneID::                              db
 wGoldenrodGymSceneID::                            db
 wGoldenrodMagnetTrainStationSceneID::             db
-wGoldenrodPokecenter1FSceneID::                   db
+wCinnabarVolcano1FSceneID::                       db
 wOlivineCitySceneID::                             db
 wRoute34SceneID::                                 db
 wRoute34IlexForestGateSceneID::                   db

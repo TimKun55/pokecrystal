@@ -18,8 +18,6 @@ LoadSpecialMapPalette:
     jp z, .cavevolcano_palette
     cp MAP_CINNABAR_VOLCANO_2F
     jp z, .cavevolcano_palette
-    cp MAP_CINNABAR_VOLCANO_B1F
-    jp z, .cavevolcano_palette
 
 .continue2
 	cp GROUP_FAST_SHIP_1F

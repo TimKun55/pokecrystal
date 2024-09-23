@@ -527,10 +527,14 @@ ENDM
 	map_attributes CinnabarPokecenter1F, CINNABAR_POKECENTER_1F, $00, 0
 	map_attributes CinnabarVolcano1F, CINNABAR_VOLCANO_1F, $bd, 0
 	map_attributes CinnabarVolcano2F, CINNABAR_VOLCANO_2F, $bd, 0
-	map_attributes CinnabarGym, CINNABAR_GYM, $00, 0
-	map_attributes CinnabarVolcanoB1F, CINNABAR_VOLCANO_B1F, $bd, 0	
 	map_attributes CinnabarMoltresNest, CINNABAR_MOLTRES_NEST, $00, 0
 	map_attributes CinnabarIslandRecoveryLab, CINNABAR_ISLAND_RECOVERY_LAB, $00, 0
+	map_attributes SeafoamGym, SEAFOAM_GYM, $00, 0
+	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $db, 0
+	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $db, 0
+	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $db, 0
+	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $db, 0
+	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $db, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
 	map_attributes CeruleanPoliceStation, CERULEAN_POLICE_STATION, $00, 0
@@ -640,7 +644,6 @@ ENDM
 	map_attributes FuchsiaPokecenter1F, FUCHSIA_POKECENTER_1F, $00, 0
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
-	map_attributes Route14ArticunoNest, ROUTE_14_ARTICUNO_NEST, $40, 0
 	map_attributes FuchsiaCinnabarHouse1, FUCHSIA_CINNABAR_HOUSE_1, $00, 0
 	map_attributes LavenderPokecenter1F, LAVENDER_POKECENTER_1F, $00, 0
 	map_attributes MrFujisHouse, MR_FUJIS_HOUSE, $00, 0

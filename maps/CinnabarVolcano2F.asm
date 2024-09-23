@@ -14,7 +14,7 @@ CinnabarVolcano2F_MapEvents:
 	warp_event 31, 25, CINNABAR_VOLCANO_2F, 4
 	warp_event  5, 25, CINNABAR_VOLCANO_2F, 3
 	warp_event 19,  5, CINNABAR_VOLCANO_2F, 2
-	warp_event 31,  5, CINNABAR_GYM, 1
+	warp_event 31,  5, CINNABAR_MOLTRES_NEST, 1
 
 	def_coord_events
 

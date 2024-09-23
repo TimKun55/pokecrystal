@@ -123,11 +123,7 @@ CinnabarIslandGymSignText:
 
 	para "Cinnabar Gym has"
 	line "relocated to"
-	cont "inside the"
-	cont "Volcano."
-	
-	para "Please take care"
-	line "when climbing up."
+	cont "Seafoam Islands."
 
 	para "Blaine"
 	done

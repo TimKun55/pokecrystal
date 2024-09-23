@@ -51,6 +51,7 @@ INCLUDE "maps/OlivineLighthouse4F.asm"
 INCLUDE "maps/VermilionSailorsHouse.asm"
 INCLUDE "maps/FarawayIslandInside.asm"
 INCLUDE "maps/Route1ViridianGate.asm"
+INCLUDE "maps/Route2Gate.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -64,6 +65,7 @@ INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronOddishDollHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
+INCLUDE "maps/SeafoamGym.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -502,24 +504,21 @@ SECTION "Map Scripts 26", ROMX
 INCLUDE "maps/EcruteakSwarmHouse.asm"
 INCLUDE "maps/CinnabarVolcano1F.asm"
 INCLUDE "maps/CinnabarVolcano2F.asm"
-INCLUDE "maps/CinnabarGym.asm"
-INCLUDE "maps/CinnabarVolcanoB1F.asm"
 INCLUDE "maps/CinnabarMoltresNest.asm"
 INCLUDE "maps/CianwoodBeastsHouse.asm"
 INCLUDE "maps/EcruteakFairyFamilyHouse.asm"
-INCLUDE "maps/Route14ArticunoNest.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
-INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/UndergroundRoom.asm"
 INCLUDE "maps/VioletPrimosHouse.asm"
 INCLUDE "maps/Route4ZapdosNest.asm"
+INCLUDE "maps/SeafoamIslands1F.asm"
+INCLUDE "maps/SaffronAviculturalSociety1F.asm"
 
 
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/SaffronAviculturalSociety1F.asm"
 INCLUDE "maps/SaffronAviculturalSociety2F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 INCLUDE "maps/Route36VioletGate.asm"
@@ -535,6 +534,10 @@ INCLUDE "maps/CeruleanCave1F.asm"
 INCLUDE "maps/CeruleanCave2F.asm"
 INCLUDE "maps/CeruleanCaveB1F.asm"
 INCLUDE "maps/RuinsOfAlphGSBallChamber.asm"
+INCLUDE "maps/SeafoamIslandsB1F.asm"
+INCLUDE "maps/SeafoamIslandsB2F.asm"
+INCLUDE "maps/SeafoamIslandsB3F.asm"
+INCLUDE "maps/SeafoamIslandsB4F.asm"
 
 
 ENDSECTION

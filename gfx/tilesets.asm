@@ -243,9 +243,6 @@ INCBIN "gfx/tilesets/cave.2bpp.lz"
 TilesetCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin"
 
-TilesetCaveColl::
-INCLUDE "data/tilesets/cave_collision.asm"
-
 
 SECTION "Tileset Data 8", ROMX
 
@@ -326,9 +323,6 @@ INCBIN "data/tilesets/pokecom_center_attributes.bin"
 TilesetBattleTowerInsideAttr::
 INCBIN "data/tilesets/battle_tower_inside_attributes.bin"
 
-TilesetIcePathAttr::
-INCBIN "data/tilesets/ice_path_attributes.bin"
-
 
 SECTION "Tileset Data 11", ROMX
 
@@ -361,6 +355,9 @@ INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin"
 
 TilesetPlayersRoomColl::
 INCLUDE "data/tilesets/players_room_collision.asm"
+
+TilesetCaveColl::
+INCLUDE "data/tilesets/cave_collision.asm"
 
 
 SECTION "Tileset Data 12", ROMX
@@ -415,6 +412,9 @@ INCLUDE "data/tilesets/port_collision.asm"
 
 TilesetTrainStationGFX::
 INCBIN "gfx/tilesets/train_station.2bpp.lz"
+
+TilesetTraditionalHouseColl::
+INCLUDE "data/tilesets/traditional_house_collision.asm"
 
 
 SECTION "Tileset Data 15", ROMX
@@ -564,11 +564,11 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl::
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
-TilesetTraditionalHouseColl::
-INCLUDE "data/tilesets/traditional_house_collision.asm"
-
 TilesetJohto4Attr::
 INCBIN "data/tilesets/johto_4_attributes.bin"
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto_2.2bpp.lz"
+
+TilesetIcePathAttr::
+INCBIN "data/tilesets/ice_path_attributes.bin"

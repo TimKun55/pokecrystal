@@ -25,7 +25,7 @@ CinnabarMoltresNestBlaineCallback:
 	endcallback
 
 CinnabarMoltresNestMoltresCallback:
-	checkevent EVENT_FOUGHT_MOLTRES
+	checkflag ENGINE_PLAYER_CAUGHT_MOLTRES
 	iftrue .NoAppear
 	checkevent EVENT_BEAT_GUARDIAN_BLAINE
 	iftrue .Appear
@@ -56,10 +56,11 @@ CinnabarMoltresNestBlaine:
 	closetext
 	cry MAGMAR
 	applymovement CINNABARMOLTRESNEST_BLAINE, GuardianBlaineExitMovement
+	pause 25
 	playsound SFX_THROW_BALL
 	pause 5
 	playsound SFX_BALL_POOF
-	pause 5
+	pause 15
 	cry MOLTRES
 	pause 15
 	playsound SFX_ESCAPE_ROPE
@@ -73,7 +74,7 @@ CinnabarMoltresNestMoltres:
 	cry MOLTRES
 	pause 15
 	closetext
-	setevent EVENT_MOLTRES_NEST_MOLTRES
+	setevent EVENT_FOUGHT_MOLTRES
 	loadvar VAR_BATTLETYPE, BATTLETYPE_KANTO_LEGEND
 	loadwildmon MOLTRES, 70
 	startbattle
@@ -94,15 +95,15 @@ CinnabarMoltresNestMoltres:
 	end
 	
 GuardianBlaineExitMovement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
+	step UP
+	step UP
+	step UP
+	step UP
 	step_end
 
 GuardianBlaineIntroText:
 	text "Ohoho!"
-	line "You're back!"
+	line "We meet again!"
 	
 	para "As one of the"
 	line "Guardians I can't"
@@ -142,7 +143,7 @@ GuardianBlaineOutroText:
 	cont "not just to me"
 	cont "but to Moltres."
 	
-	para "RED left clear"
+	para "Red left clear"
 	line "instructions;"
 	
 	para "I'll now release"
@@ -165,13 +166,13 @@ CinnabarMoltresNest_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 25,  5, CINNABAR_VOLCANO_B1F, 2
+	warp_event  7, 17, CINNABAR_VOLCANO_2F, 6
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event 11, 16, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestBlaine, EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	object_event  6, 12, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestMoltres, EVENT_MOLTRES_NEST_MOLTRES
+	object_event  7, 14, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestBlaine, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event  6,  7, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestMoltres, EVENT_MOLTRES_NEST_MOLTRES
 	

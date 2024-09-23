@@ -203,12 +203,16 @@ ENDM
 	map_const ROUTE_20,                                    30,  9 ;  4
 	map_const ROUTE_21,                                    10, 18 ;  5
 	map_const CINNABAR_ISLAND,                             14, 12 ;  6
-	map_const CINNABAR_VOLCANO_1F,                         12, 11 ;  7
+	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
-	map_const CINNABAR_GYM,                                 6,  9 ;  9
-	map_const CINNABAR_VOLCANO_B1F,                        15, 12 ; 10
-	map_const CINNABAR_MOLTRES_NEST,                       16, 11 ; 11
-	map_const CINNABAR_ISLAND_RECOVERY_LAB,                 4,  4 ; 12
+	map_const CINNABAR_MOLTRES_NEST,                        7, 11 ;  9
+	map_const CINNABAR_ISLAND_RECOVERY_LAB,                 4,  4 ; 10
+	map_const SEAFOAM_GYM,                                  9,  9 ; 11
+	map_const SEAFOAM_ISLANDS_1F,                          11,  5 ; 12
+	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 13
+	map_const SEAFOAM_ISLANDS_B2F,                         15, 10 ; 14
+	map_const SEAFOAM_ISLANDS_B3F,                         17, 10 ; 15
+	map_const SEAFOAM_ISLANDS_B4F,                         18, 11 ; 16
 	endgroup
 
 	newgroup CERULEAN                                             ;  7
@@ -369,7 +373,7 @@ ENDM
 	map_const ROUTE_12,                                    10, 27 ;  1
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
-	map_const ROUTE_14,                                    30, 18 ;  4
+	map_const ROUTE_14,                                    13, 18 ;  4
 	map_const ROUTE_15,                                    20,  9 ;  5
 	map_const ROUTE_16,                                    10, 12 ;  6
 	map_const ROUTE_17,                                    10, 45 ;  7
@@ -385,8 +389,7 @@ ENDM
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 17
 	map_const ROUTE_16_GATE,                                5,  4 ; 18
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 19
-	map_const ROUTE_14_ARTICUNO_NEST,                      11, 13 ; 20
-	map_const FUCHSIA_CINNABAR_HOUSE_1,                     4,  4 ; 21
+	map_const FUCHSIA_CINNABAR_HOUSE_1,                     4,  4 ; 20
 	endgroup
 
 	newgroup LAVENDER                                             ; 18

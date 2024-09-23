@@ -102,7 +102,7 @@ DEF COLL_HOP_UP_LEFT       EQU $a7 ; unused
 DEF COLL_RIGHT_WALL        EQU $b0
 DEF COLL_LEFT_WALL         EQU $b1
 DEF COLL_UP_WALL           EQU $b2
-DEF COLL_DOWN_WALL         EQU $b3 ; unused
+DEF COLL_DOWN_WALL         EQU $b3
 DEF COLL_DOWN_RIGHT_WALL   EQU $b4 ; unused
 DEF COLL_DOWN_LEFT_WALL    EQU $b5 ; unused
 DEF COLL_UP_RIGHT_WALL     EQU $b6 ; unused

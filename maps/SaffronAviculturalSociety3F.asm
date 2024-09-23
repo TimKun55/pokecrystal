@@ -77,10 +77,8 @@ AviculturalSociety3FBirdKeeperScript:
 	iffalse .Refused
 	writetext AviculturalSocietyBirdKeeperBeginText
 	waitbutton
-	setevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	setevent EVENT_MOLTRES_NEST_MOLTRES
-	setevent EVENT_ZAPDOS_NEST_ZAPDOS
-	setevent EVENT_ARTICUNO_NEST_ARTICUNO
+	clearevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	setevent EVENT_CINNABAR_VOLCANO_1F_OFFICER
 	closetext
 	end
 	

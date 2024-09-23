@@ -1,8 +1,9 @@
 	object_const_def
 	const ROUTE20_SWIMMER_GIRL1
 	const ROUTE20_SWIMMER_GIRL2
-	const ROUTE20_SWIMMER_GUY
-	const ROUTE20_OFFICER
+	const ROUTE20_SWIMMER_GUY1
+	const ROUTE20_SWIMMER_GUY2
+	const ROUTE20_SWIMMER_GUY3
 
 Route20_MapScripts:
 	def_scene_scripts
@@ -46,14 +47,31 @@ TrainerSwimmermCameron:
 	waitbutton
 	closetext
 	end
-	
-Route20OfficerScript:
-	faceplayer
+
+TrainerSwimmermHal:
+	trainer SWIMMERM, HAL, EVENT_BEAT_SWIMMERM_HAL, SwimmermHalSeenText, SwimmermHalBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
 	opentext
-	writetext Route20OfficerScriptText
+	writetext SwimmermHalAfterBattleText
 	waitbutton
 	closetext
 	end
+
+TrainerSwimmermPaton:
+	trainer SWIMMERM, PATON, EVENT_BEAT_SWIMMERM_PATON, SwimmermPatonSeenText, SwimmermPatonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmermPatonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SeafoamIslandsSign:
+	jumptext SeafoamIslandsSignText
 
 SwimmerfNicoleSeenText:
 	text "I feel so much"
@@ -107,32 +125,70 @@ SwimmermCameronAfterBattleText:
 	line "can also swim in"
 	cont "ponds and rivers."
 	done
-	
-Route20OfficerScriptText:
-	text "Sorry, no entry"
-	line "to Seafoam Island."
-	
-	para "There was a"
-	line "cave-in and"
-	
-	para "flooding during"
-	line "the eruption."
-	
-	para "It's not safe"
-	line "to enter."
+
+SwimmermHalSeenText:
+	text "Swimming today."
+
+	para "Swimming tomorrow."
+
+	para "Battle now!"
 	done
 
+SwimmermHalBeatenText:
+	text "Should have stuck"
+	line "to swimming."
+	done
+
+SwimmermHalAfterBattleText:
+	text "I've gotta do a"
+	line "lot more training;"
+
+	para "for #mon and"
+	line "for swimming."
+	done
+
+SwimmermPatonSeenText:
+	text "I swam out here"
+	line "to explore the"
+
+	para "Seafoam Islands"
+	line "but got lost"
+	cont "in there."
+	done
+
+SwimmermPatonBeatenText:
+	text "Frustrated AND"
+	line "disappointed."
+	done
+
+SwimmermPatonAfterBattleText:
+	text "I want to explore"
+	line "more but I have a"
+
+	para "bad sense of"
+	line "direction…"
+	done
+
+SeafoamIslandsSignText:
+	text "Seafoam Islands"
+	done
+	
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 38, 11, SEAFOAM_ISLANDS_1F, 1
+	warp_event 30,  7, SEAFOAM_ISLANDS_1F, 4
 
 	def_coord_events
 
 	def_bg_events
+	bg_event 32,  8, BGEVENT_READ, SeafoamIslandsSign
+	bg_event 36, 12, BGEVENT_READ, SeafoamIslandsSign
 
 	def_object_events
-	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
-	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
-	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
-	object_event 38,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route20OfficerScript, -1
+	object_event 54,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
+	object_event 46,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
+	object_event 15, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+	object_event  2,  6, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSwimmermHal, -1
+	object_event 22, 10, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPaton, -1

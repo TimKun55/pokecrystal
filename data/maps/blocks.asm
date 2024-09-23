@@ -963,17 +963,11 @@ CinnabarVolcano1F_Blocks:
 CinnabarVolcano2F_Blocks:
 	INCBIN "maps/CinnabarVolcano2F.ablk"
 	
-CinnabarGym_Blocks:
-	INCBIN "maps/CinnabarGym.ablk"
-	
-CinnabarVolcanoB1F_Blocks:
-	INCBIN "maps/CinnabarVolcanoB1F.ablk"
+SeafoamGym_Blocks:
+	INCBIN "maps/SeafoamGym.ablk"
 
 CinnabarMoltresNest_Blocks:
 	INCBIN "maps/CinnabarMoltresNest.ablk"
-
-Route14ArticunoNest_Blocks:
-	INCBIN "maps/Route14ArticunoNest.ablk"
 
 UndergroundRoom_Blocks:
 	INCBIN "maps/UndergroundRoom.ablk"
@@ -1049,5 +1043,20 @@ Route22_Blocks:
 
 RuinsOfAlphGSBallChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphGSBallChamber.ablk"
+
+SeafoamIslands1F_Blocks:
+	INCBIN "maps/SeafoamIslands1F.ablk"
+
+SeafoamIslandsB1F_Blocks:
+	INCBIN "maps/SeafoamIslandsB1F.ablk"
+
+SeafoamIslandsB2F_Blocks:
+	INCBIN "maps/SeafoamIslandsB2F.ablk"
+
+SeafoamIslandsB3F_Blocks:
+	INCBIN "maps/SeafoamIslandsB3F.ablk"
+
+SeafoamIslandsB4F_Blocks:
+	INCBIN "maps/SeafoamIslandsB4F.ablk"
 
 ENDSECTION

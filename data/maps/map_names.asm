@@ -234,10 +234,14 @@ Cinnabar_Map_Names: ;newgroup CINNABAR										;  6
 	dw Cinnabar_Map_Name6 ; map_const CINNABAR_ISLAND						;  6
 	dw Cinnabar_Map_Name7 ; map_const CINNABAR_VOLCANO_1F					;  7
 	dw Cinnabar_Map_Name8 ; map_const CINNABAR_VOLCANO_2F					;  8
-	dw Cinnabar_Map_Name9 ; map_const CINNABAR_GYM							;  9
-	dw Cinnabar_Map_Name10 ; map_const CINNABAR_VOLCANO_B1F					; 10
-	dw Cinnabar_Map_Name11 ; map_const CINNABAR_MOLTRES_NEST				; 11
-	dw Cinnabar_Map_Name12 ; map_const CINNABAR_ISLAND_RECOVERY_LAB      	; 12	
+	dw Cinnabar_Map_Name9 ; map_const CINNABAR_MOLTRES_NEST				    ;  9
+	dw Cinnabar_Map_Name10 ; map_const CINNABAR_ISLAND_RECOVERY_LAB      	; 10
+	dw Cinnabar_Map_Name11 ; map_const SEAFOAM_GYM							; 11
+	dw Cinnabar_Map_Name12 ; map_const SEAFOAM_ISLANDS_1F					; 12
+	dw Cinnabar_Map_Name13 ; map_const SEAFOAM_ISLANDS_B1F					; 13
+	dw Cinnabar_Map_Name14 ; map_const SEAFOAM_ISLANDS_B2F					; 14
+	dw Cinnabar_Map_Name15 ; map_const SEAFOAM_ISLANDS_B3F					; 15
+	dw Cinnabar_Map_Name16 ; map_const SEAFOAM_ISLANDS_B4F					; 16
 	assert_table_length NUM_CINNABAR_MAPS
 
 Cerulean_Map_Names: ;newgroup CERULEAN										;  7
@@ -425,8 +429,7 @@ Fuchsia_Map_Names: ;newgroup FUCHSIA										; 17
 	dw Fuchsia_Map_Name17 ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE			; 17
 	dw Fuchsia_Map_Name18 ; map_const ROUTE_16_GATE							; 18
 	dw Fuchsia_Map_Name19 ; map_const ROUTE_17_ROUTE_18_GATE				; 19
-	dw Fuchsia_Map_Name20 ; map_const ROUTE_14_ARTICUNO_NEST				; 20
-	dw Fuchsia_Map_Name21 ; map_const FUCHSIA_CINNABAR_HOUSE_1				; 21
+	dw Fuchsia_Map_Name20 ; map_const FUCHSIA_CINNABAR_HOUSE_1				; 20
 	assert_table_length NUM_FUCHSIA_MAPS
 
 Lavender_Map_Names: ;newgroup LAVENDER										; 18
@@ -875,7 +878,7 @@ Ecruteak_Map_Name15: ; map_const ROUTE_35_GOLDENROD_GATE,; 10
 Ecruteak_Map_Name16: ; map_const ROUTE_35_NATIONAL_PARK_GATE ; 14
 	db "Route 35 Gate 2@"
 Ecruteak_Map_Name17: ; map_const ROUTE_36_NATIONAL_PARK_GATE ; 15
-	db "Route 36 GATE@"
+	db "Route 36 Gate@"
 
 Blackthorn_Map_Name1: ; map_const BLACKTHORN_GYM_1F ;  1
 	db "Blackthorn Gym@"
@@ -916,14 +919,22 @@ Cinnabar_Map_Name7: ; map_const CINNABAR_VOLCANO_1F,;  7
 	db "Cinnabar Vol 1F@"
 Cinnabar_Map_Name8: ; map_const CINNABAR_VOLCANO_2F,;  8
 	db "Cinnabar Vol 2F@"
-Cinnabar_Map_Name9: ; map_const CINNABAR_GYM,;   9
-	db "Cinnabar Gym@"
-Cinnabar_Map_Name10: ; map_const CINNABAR_VOLCANO_B1F,;  10
-	db "Cinnabar Vol B1F@"
-Cinnabar_Map_Name11: ; map_const CINNABAR_MOLTRES_NEST,;  11
+Cinnabar_Map_Name9: ; map_const CINNABAR_MOLTRES_NEST,;  9
 	db "Moltres Nest@"
-Cinnabar_Map_Name12: ; map_const CINNABAR_ISLAND_RECOVERY_LAB,;  12
+Cinnabar_Map_Name10: ; map_const CINNABAR_ISLAND_RECOVERY_LAB,;  10
 	db "Cinnabar Rec. Lab@"
+Cinnabar_Map_Name11: ; map_const CINNABAR_GYM,; 11
+	db "Cinnabar Gym@"
+Cinnabar_Map_Name12: ; map_const SEAFOAM_ISLANDS_1F,; 12
+	db "Seafoam Isl. 1F@"
+Cinnabar_Map_Name13: ; map_const SEAFOAM_ISLANDS_B1F,; 13
+	db "Seafoam Isl. B1F@"
+Cinnabar_Map_Name14: ; map_const SEAFOAM_ISLANDS_B2F,; 14
+	db "Seafoam Isl. B2F@"
+Cinnabar_Map_Name15: ; map_const SEAFOAM_ISLANDS_B3F,; 15
+	db "Seafoam Isl. B3F@"
+Cinnabar_Map_Name16: ; map_const SEAFOAM_ISLANDS_B4F,; 16
+	db "Seafoam Isl. B4F@"
 
 Cerulean_Map_Name1: ; map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE ;  1
 	db "Cerulean House 1@"
@@ -1221,9 +1232,7 @@ Fuchsia_Map_Name18: ; map_const ROUTE_16_GATE 					; 18
 	db "Route 16 Gate@"
 Fuchsia_Map_Name19: ; map_const ROUTE_17_ROUTE_18_GATE 			; 19
 	db "Route 17 Gate@"
-Fuchsia_Map_Name20: ; map_const ROUTE_14_ARTICUNO_NEST 			; 20
-	db "Articuno Nest@"
-Fuchsia_Map_Name21: ; map_const FUCHSIA_CINNABAR_HOUSE_1 		; 21
+Fuchsia_Map_Name20: ; map_const FUCHSIA_CINNABAR_HOUSE_1 		; 20
 	db "Fuchsia House@"
 
 Lavender_Map_Name1: ; map_const ROUTE_8,;  1

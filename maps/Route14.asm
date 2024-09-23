@@ -5,8 +5,6 @@
 	const ROUTE14_KIM
 	const ROUTE14_LADY_EVA
 	const ROUTE14_TOGEKISS
-	const ROUTE14_SWIMMER_GUY1
-	const ROUTE14_SWIMMER_GUY2
 
 Route14_MapScripts:
 	def_scene_scripts
@@ -50,28 +48,6 @@ TrainerPokefanmTrevor:
 	endifjustbattled
 	opentext
 	writetext PokefanmTrevorAfterBattleText
-	waitbutton
-	closetext
-	end
-
-Route14SwimmermHal:
-	trainer SWIMMERM, HAL, EVENT_BEAT_SWIMMERM_HAL, SwimmermHalSeenText, SwimmermHalBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SwimmermHalAfterBattleText
-	waitbutton
-	closetext
-	end
-
-Route14SwimmermPaton:
-	trainer SWIMMERM, PATON, EVENT_BEAT_SWIMMERM_PATON, SwimmermPatonSeenText, SwimmermPatonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SwimmermPatonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -159,7 +135,7 @@ PokefanmTrevorSeenText:
 
 PokefanmTrevorBeatenText:
 	text "Where did I meet"
-	line "this Psyduck?"
+	line "this Golduck?"
 	done
 
 PokefanmTrevorAfterBattleText:
@@ -168,53 +144,6 @@ PokefanmTrevorAfterBattleText:
 
 	para "identify where I"
 	line "got my #mon…"
-	done
-
-SwimmermHalSeenText:
-	text "Swimming today."
-
-	para "Swimming tomorrow."
-
-	para "Battle now!"
-	done
-
-SwimmermHalBeatenText:
-	text "Should have stuck"
-	line "to swimming."
-	done
-
-SwimmermHalAfterBattleText:
-	text "I've gotta do a"
-	line "lot more training;"
-
-	para "for #mon and"
-	line "for swimming."
-	done
-
-SwimmermPatonSeenText:
-	text "I swam out here"
-	line "to explore that"
-	cont "small island, but"
-
-	para "there was nothing"
-	line "there."
-
-	para "I need to vent"
-	line "with a battle!"
-	done
-
-SwimmermPatonBeatenText:
-	text "Frustrated AND"
-	line "disappointed."
-	done
-
-SwimmermPatonAfterBattleText:
-	text "There has to be"
-	line "something there!"
-
-	para "It's colder there"
-	line "and the trees look"
-	cont "frozen…"
 	done
 	
 LadyEvaSeenText:
@@ -260,8 +189,6 @@ Route14_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 44, 24, ROUTE_14_ARTICUNO_NEST, 1
-	warp_event 45, 24, ROUTE_14_ARTICUNO_NEST, 2
 
 	def_coord_events
 
@@ -274,5 +201,3 @@ Route14_MapEvents:
 	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
 	object_event 15, 11, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerLadyEva, -1
 	object_event 16, 11, SPRITE_TOGEKISS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route14Togekiss, -1
-	object_event 29, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route14SwimmermHal, -1
-	object_event 35, 10, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route14SwimmermPaton, -1

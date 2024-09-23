@@ -2895,16 +2895,16 @@ FirebreatherGroup:
 
 	; FIREBREATHER (2)
 	db "Dick@", TRAINERTYPE_NORMAL
-	db 64, ONIX
-	db 65, CLOYSTER
-	db 66, LICKITUNG
+	db 64, FLAREON
+	db 66, HOUNDOOM
+	db 65, RAPIDASH
 	db -1 ; end
 
 	; FIREBREATHER (3)
 	db "Ned@", TRAINERTYPE_NORMAL
-	db 15, KOFFING
-	db 16, GROWLITHE
-	db 15, KOFFING
+	db 65, ARCANINE
+	db 62, NINETALES
+	db 64, SUNFLORA
 	db -1 ; end
 
 	; FIREBREATHER (4)
