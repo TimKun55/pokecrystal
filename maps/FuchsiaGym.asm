@@ -19,8 +19,20 @@ FuchsiaGymJanineScript:
 	iftrue .JanineScript_Rematch
 	checkflag ENGINE_SOULBADGE
 	iftrue .FightDone
-	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	writetext JanineText_DisappointYou
+	waitbutton
+	closetext
+	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
+	readvar VAR_FACING
+	ifequal RIGHT, .MoveForWeezing
+.AppearWeezing
+	turnobject FUCHSIAGYM_JANINE, LEFT
+	refreshscreen
+	appear FUCHSIAGYM_WEEZING
+	cry WEEZING
+	faceplayer
+	opentext
+	writetext JanineText_ThatsMe
 	waitbutton
 	closetext
 	winlosstext JanineText_ToughOne, 0
@@ -42,11 +54,7 @@ FuchsiaGymJanineScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_SOULBADGE
-	sjump .AfterBattle
 .FightDone:
-	faceplayer
-	opentext
-.AfterBattle:
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
 	writetext JanineText_ToxicSpeech
@@ -65,6 +73,11 @@ FuchsiaGymJanineScript:
 .afterbattle16
 	setevent EVENT_BEAT_KANTO_LEADERS
 	end
+
+.MoveForWeezing
+	applymovement PLAYER, PlayerMoveForWeezing
+	turnobject PLAYER, UP
+	sjump .AppearWeezing
 	
 .JanineScript_Rematch
 	writetext JanineRematchIntroText
@@ -275,6 +288,11 @@ Movement_NinjaSpin:
 	turn_head DOWN
 	step_end
 
+PlayerMoveForWeezing:
+	step DOWN
+	step RIGHT
+	step_end
+
 JanineText_DisappointYou:
 	text "Fufufufu…"
 
@@ -284,8 +302,10 @@ JanineText_DisappointYou:
 	para "I'm only joking!"
 
 	para "I'm the real deal!"
+	done
 
-	para "Janine of Fuchsia"
+JanineText_ThatsMe:
+	text "Janine of Fuchsia"
 	line "Gym, that's me!"
 	done
 
@@ -470,7 +490,7 @@ FuchsiaGym_MapEvents:
 
 	def_object_events
 	object_event  5,  9, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
-	object_event  4,  9, SPRITE_WEEZING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymWeezing, -1
+	object_event  4,  9, SPRITE_WEEZING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymWeezing, EVENT_FUCHSIA_GYM_WEEZING
 	object_event  5,  7, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
 	object_event  5, 13, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
 	object_event  9,  4, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1

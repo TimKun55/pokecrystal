@@ -184,7 +184,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_GYARADOS ; b8       ; LakeOfRage
 	const SPRITE_EEVEE ; b9          ; DOLL
 	const SPRITE_GLIGAR ; ba         ; Route 45 (Static, Shiny, after Diploma)
-	const SPRITE_ARTICUNO ; bb       ; Route14ArticunoNest, SaffronAviculturalSociety3F
+	const SPRITE_ARTICUNO ; bb       ; Seafoam Islands, SaffronAviculturalSociety3F
 	const SPRITE_ZAPDOS ; bc         ; Route4ZapdosNest, SaffronAviculturalSociety3F
 	const SPRITE_MOLTRES ; bd        ; CinnabarMoltresNest, SaffronAviculturalSociety3F
 	const SPRITE_DRATINI ; be        ; BlackthornDragonSpeechHouse

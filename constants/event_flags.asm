@@ -1445,7 +1445,8 @@
 	const EVENT_GS_BALL_CHAMBER_GS_BALL
 	const EVENT_BUTTON_IN_CIANWOOD_GYM
 	const EVENT_CHAMPION_ROOM_DRAGONITE
-; Unused: next 95 events
+	const EVENT_FUCHSIA_GYM_WEEZING
+; Unused: next 94 events
 
 	const_next 1800
 ; Kanto people
