@@ -7,7 +7,6 @@ Route4ZapdosNest_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route4ZapdosNestAgathaCallback
-	callback MAPCALLBACK_OBJECTS, Route4ZapdosNestZapdosCallback
 	
 Route4ZapdosNestAgathaCallback:
 	checkevent EVENT_BEAT_GUARDIAN_AGATHA
@@ -22,21 +21,6 @@ Route4ZapdosNestAgathaCallback:
 
 .NoAppear:
 	disappear ROUTE4ZAPDOSNEST_AGATHA
-	endcallback
-
-Route4ZapdosNestZapdosCallback:
-	checkflag ENGINE_PLAYER_CAUGHT_ZAPDOS
-	iftrue .NoAppear
-	checkevent EVENT_AGATHA_IN_SAFFRON
-	iftrue .Appear
-	sjump .NoAppear
-	
-.Appear:
-	appear ROUTE4ZAPDOSNEST_ZAPDOS
-	endcallback
-
-.NoAppear:
-	disappear ROUTE4ZAPDOSNEST_ZAPDOS
 	endcallback
 
 Route4ZapdosNestAgatha:

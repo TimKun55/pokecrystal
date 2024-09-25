@@ -7,22 +7,6 @@ SeafoamIslandsB4F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, SeafoamIslandsB4FArticunoCallback
-
-SeafoamIslandsB4FArticunoCallback:
-	checkflag ENGINE_PLAYER_CAUGHT_ARTICUNO
-	iftrue .NoAppear
-	checkevent EVENT_LORELEI_IN_SAFFRON
-	iftrue .Appear
-	sjump .NoAppear
-	
-.Appear:
-	appear SEAFOAMISLANDSB4F_ARTICUNO
-	endcallback
-
-.NoAppear:
-	disappear SEAFOAMISLANDSB4F_ARTICUNO
-	endcallback
 
 SeafoamIslandsB4Articuno:
 	opentext

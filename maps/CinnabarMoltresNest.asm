@@ -7,7 +7,6 @@ CinnabarMoltresNest_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, CinnabarMoltresNestBlaineCallback
-	callback MAPCALLBACK_OBJECTS, CinnabarMoltresNestMoltresCallback
 	
 CinnabarMoltresNestBlaineCallback:
 	checkevent EVENT_BEAT_GUARDIAN_BLAINE
@@ -22,21 +21,6 @@ CinnabarMoltresNestBlaineCallback:
 
 .NoAppear:
 	disappear CINNABARMOLTRESNEST_BLAINE
-	endcallback
-
-CinnabarMoltresNestMoltresCallback:
-	checkflag ENGINE_PLAYER_CAUGHT_MOLTRES
-	iftrue .NoAppear
-	checkevent EVENT_BEAT_GUARDIAN_BLAINE
-	iftrue .Appear
-	sjump .NoAppear
-
-.Appear:
-	appear CINNABARMOLTRESNEST_MOLTRES
-	endcallback
-
-.NoAppear:
-	disappear CINNABARMOLTRESNEST_MOLTRES
 	endcallback
 
 CinnabarMoltresNestBlaine:
