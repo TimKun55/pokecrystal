@@ -507,7 +507,7 @@ ENDM
 
 	newgroup SAFFRON                                              ; 25
 	map_const SAFFRON_CITY,                                20, 20 ;  1
-	map_const FIGHTING_DOJO,                                5,  6 ;  2
+	map_const FIGHTING_DOJO,                                5,  7 ;  2
 	map_const SAFFRON_GYM,                                 10,  9 ;  3
 	map_const SAFFRON_MART,                                 6,  4 ;  4
 	map_const SAFFRON_POKECENTER_1F,                        6,  4 ;  5

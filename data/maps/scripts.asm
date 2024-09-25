@@ -259,6 +259,7 @@ INCLUDE "maps/BrunosRoom.asm"
 INCLUDE "maps/KarensRoom.asm"
 INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
+INCLUDE "maps/FightingDojo.asm"
 
 
 SECTION "Map Scripts 14", ROMX
@@ -291,7 +292,6 @@ INCLUDE "maps/CeruleanMart.asm"
 INCLUDE "maps/Route10Pokecenter1F.asm"
 INCLUDE "maps/PowerPlant.asm"
 INCLUDE "maps/BillsHouse.asm"
-INCLUDE "maps/FightingDojo.asm"
 INCLUDE "maps/SaffronGym.asm"
 INCLUDE "maps/SaffronMart.asm"
 INCLUDE "maps/SaffronPokecenter1F.asm"
