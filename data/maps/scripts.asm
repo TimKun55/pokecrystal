@@ -538,6 +538,7 @@ INCLUDE "maps/SeafoamIslandsB1F.asm"
 INCLUDE "maps/SeafoamIslandsB2F.asm"
 INCLUDE "maps/SeafoamIslandsB3F.asm"
 INCLUDE "maps/SeafoamIslandsB4F.asm"
+INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 
 
 ENDSECTION

@@ -422,6 +422,7 @@ ENDM
 	map_attributes RuinsOfAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $00, 0
 	map_attributes RuinsOfAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $00, 0
 	map_attributes RuinsOfAlphGSBallChamber, RUINS_OF_ALPH_GS_BALL_CHAMBER, $00, 0
+	map_attributes RuinsOfAlphCaveEntrance, RUINS_OF_ALPH_CAVE_ENTRANCE, $00, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $bd, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $bd, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $bd, 0
@@ -529,12 +530,12 @@ ENDM
 	map_attributes CinnabarVolcano2F, CINNABAR_VOLCANO_2F, $bd, 0
 	map_attributes CinnabarMoltresNest, CINNABAR_MOLTRES_NEST, $00, 0
 	map_attributes CinnabarIslandRecoveryLab, CINNABAR_ISLAND_RECOVERY_LAB, $00, 0
-	map_attributes SeafoamGym, SEAFOAM_GYM, $00, 0
-	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $db, 0
-	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $db, 0
-	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $db, 0
-	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $db, 0
-	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $db, 0
+	map_attributes SeafoamGym, SEAFOAM_GYM, $bd, 0
+	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $bd, 0
+	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $01, 0
+	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $01, 0
+	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $01, 0
+	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $01, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
 	map_attributes CeruleanPoliceStation, CERULEAN_POLICE_STATION, $00, 0

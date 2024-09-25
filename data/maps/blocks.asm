@@ -1059,4 +1059,7 @@ SeafoamIslandsB3F_Blocks:
 SeafoamIslandsB4F_Blocks:
 	INCBIN "maps/SeafoamIslandsB4F.ablk"
 
+RuinsOfAlphCaveEntrance_Blocks:
+	INCBIN "maps/RuinsOfAlphCaveEntrance.ablk"
+
 ENDSECTION
