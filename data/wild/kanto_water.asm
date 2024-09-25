@@ -26,6 +26,14 @@ KantoWaterWildMons:
 	db 20, STARMIE,       63,  66
 	end_water_wildmons
 
+	def_water_wildmons SEAFOAM_ISLANDS_B4F
+	db 4 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, DEWGONG,       55,  58
+	db 20, SEADRA,        55,  58
+	db 20, SLOWBRO,       55,  58
+	end_water_wildmons
+
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max

@@ -374,6 +374,130 @@ KantoGrassWildMons:
 	db  8, DITTO,         63,  66
 	end_grass_wildmons
 
+	def_grass_wildmons SEAFOAM_ISLANDS_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	end_grass_wildmons
+
+	def_grass_wildmons SEAFOAM_ISLANDS_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	end_grass_wildmons
+
+	def_grass_wildmons SEAFOAM_ISLANDS_B3F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	end_grass_wildmons
+
+	def_grass_wildmons SEAFOAM_ISLANDS_B4F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SEEL,          54,  57
+	db 22, GOLBAT,        55,  58
+	db 22, GOLDUCK,       55,  58
+	db 10, DEWGONG,       55,  58
+	db  8, ZUBAT,         54,  57
+	db  8, JYNX,          55,  58
+	db  8, PSYDUCK,       54,  57
+	end_grass_wildmons
+
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
