@@ -3445,9 +3445,9 @@ CamperGroup:
 
 	; CAMPER (18)
 	db "Jerry@", TRAINERTYPE_NORMAL
-	db 66, SANDSLASH
-	db 67, DONPHAN
-	db 68, MAROWAK
+	db 66, CORSOLA
+	db 67, GOLEM
+	db 68, RHYDON
 	db -1 ; end
 
 	; CAMPER (19)

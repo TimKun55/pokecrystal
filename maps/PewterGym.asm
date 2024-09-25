@@ -165,6 +165,7 @@ BrockBoulderBadgeText:
 	para "battling you, even"
 	line "though I am a bit"
 	cont "upset."
+	done
 
 BrockFightDoneText:
 	text "Brock: The world"
