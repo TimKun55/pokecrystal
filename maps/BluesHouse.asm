@@ -65,10 +65,10 @@ DaisyScript:
 
 DaisyHelloText:
 	text "Daisy: Hi! My kid"
-	line "brother is the GYM"
+	line "brother is the Gym"
 
-	para "LEADER in VIRIDIAN"
-	line "CITY."
+	para "Leader in Viridian"
+	line "City."
 
 	para "But he goes out"
 	line "of town so often,"

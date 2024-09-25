@@ -61,8 +61,8 @@ ViridianPokecenter1FCooltrainerFText:
 	cont "of Cinnabar Gym"
 
 	para "rebuilt the Gym"
-	line "inside of the"
-	cont "volcano."
+	line "inside of Seafoam"
+	cont "Islands."
 	
 	para "Is that safe?"
 	done

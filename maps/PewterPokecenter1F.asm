@@ -47,7 +47,7 @@ PewterPokecenter1FTeacherText:
 	text "…Yeah, and the"
 	line "Gym in Cinnabar's"
 
-	para "been rebuilt. I"
+	para "been moved. I"
 	line "was really amazed."
 
 	para "…Yes? I'm on the"

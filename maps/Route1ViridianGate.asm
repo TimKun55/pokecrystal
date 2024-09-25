@@ -19,7 +19,7 @@ Route1ViridianGuardText:
 	line "Viridian City."
 
 	para "Head north for"
-	line "Pewter CITY via"
+	line "Pewter City via"
 	cont "Viridian Forest."
 
 	para "Head south for"

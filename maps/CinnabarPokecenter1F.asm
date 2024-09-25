@@ -23,11 +23,10 @@ CinnabarPokecenter1FFisherScript:
 
 CinnabarPokecenter1FCooltrainerFText:
 	text "Cinnabar Gym's"
-	line "Blaine apparently"
+	line "Blaine had to move"
 
-	para "rebuilt his Gym"
-	line "inside of the"
-	cont "volcano!"
+	para "his Gym to the"
+	line "Seafoam Islands."
 	done
 
 CinnabarPokecenter1FFisherText:
