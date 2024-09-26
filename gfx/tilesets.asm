@@ -386,6 +386,9 @@ INCBIN "data/tilesets/johto_3_metatiles.bin"
 TilesetJohto3Coll::
 INCLUDE "data/tilesets/johto_3_collision.asm"
 
+TilesetIcePathAttr::
+INCBIN "data/tilesets/ice_path_attributes.bin"
+
 
 SECTION "Tileset Data 14", ROMX
 
@@ -569,6 +572,3 @@ INCBIN "data/tilesets/johto_4_attributes.bin"
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto_2.2bpp.lz"
-
-TilesetIcePathAttr::
-INCBIN "data/tilesets/ice_path_attributes.bin"
