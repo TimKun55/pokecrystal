@@ -423,6 +423,7 @@ ENDM
 	map_attributes RuinsOfAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $00, 0
 	map_attributes RuinsOfAlphGSBallChamber, RUINS_OF_ALPH_GS_BALL_CHAMBER, $00, 0
 	map_attributes RuinsOfAlphCaveEntrance, RUINS_OF_ALPH_CAVE_ENTRANCE, $00, 0
+	map_attributes SlowpokeWellEntrance, SLOWPOKE_WELL_ENTRANCE, $A1, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $bd, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $bd, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $bd, 0

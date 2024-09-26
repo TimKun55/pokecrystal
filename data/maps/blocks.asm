@@ -1062,4 +1062,7 @@ SeafoamIslandsB4F_Blocks:
 RuinsOfAlphCaveEntrance_Blocks:
 	INCBIN "maps/RuinsOfAlphCaveEntrance.ablk"
 
+SlowpokeWellEntrance_Blocks:
+	INCBIN "maps/SlowpokeWellEntrance.ablk"
+
 ENDSECTION

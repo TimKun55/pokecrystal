@@ -161,6 +161,7 @@ ENDM
 	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 96
 	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,                4,  6 ; 97
 	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 98
+	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
