@@ -179,111 +179,62 @@ RuinsOfAlphResearchCenterFossilScientist:
 	iftrue .GiveOmanyte
 	writetext FossilScientistIntroText
 	waitbutton
-	loadmenu .MoveMenuHeader
-	verticalmenu
-	closewindow
-	ifequal REVIVE_OLD_AMBER, .OldAmber
-	ifequal REVIVE_DOME_FOSSIL, .DomeFossil
-	ifequal REVIVE_HELIX_FOSSIL, .HelixFossil
-	sjump .No
-
-.OldAmber
-	checkitem OLD_AMBER
-	iffalse .No
-	getmonname STRING_BUFFER_3, AERODACTYL
-	writetext FossilScientistMonText
-	promptbutton
-	setevent EVENT_GAVE_SCIENTIST_OLD_AMBER
-	takeitem OLD_AMBER
-	writetext FossilScientistGiveText
-	waitbutton
-	sjump .GaveScientistFossil
-
-.DomeFossil:
-	checkitem DOME_FOSSIL
-	iffalse .No
-	getmonname STRING_BUFFER_3, KABUTO
-	writetext FossilScientistMonText
-	promptbutton
-	setevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
-	takeitem DOME_FOSSIL
-	opentext
-	writetext FossilScientistGiveText
-	waitbutton
-	sjump .GaveScientistFossil
-
-.HelixFossil:
 	checkitem HELIX_FOSSIL
-	iffalse .No
-	getmonname STRING_BUFFER_3, OMANYTE
-	writetext FossilScientistMonText
-	promptbutton
-	setevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
-	takeitem HELIX_FOSSIL
-	writetext FossilScientistGiveText
+	iftrue .own_helix
+	checkitem DOME_FOSSIL
+	iftrue .own_dome
+	checkitem OLD_AMBER
+	iftrue IsOldAmber
+	writetext FossilScientistNoFossilText
 	waitbutton
-	sjump .GaveScientistFossil
-
-.No
-	writetext FossilScientistNoText
-	waitbutton
-	closetext
-	end
-
-.GaveScientistFossil:
-	writetext FossilScientistTimeText
-	waitbutton
-	closetext
-	special FadeOutToBlack ; uncomment the next five lines to immediately receive the fossil
-	special ReloadSpritesNoPalettes
-	playsound SFX_WARP_TO
-	waitsfx
-	pause 35
-	sjump RuinsOfAlphResearchCenterFossilScientist
-
-.GiveAerodactyl:
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
-	writetext FossilScientistDoneText
-	promptbutton
-	getmonname STRING_BUFFER_3, AERODACTYL
-	writetext FossilScientistReceiveText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	waitbutton
-	givepoke AERODACTYL, 30
-	closetext
-	end
-
-.GiveKabuto:
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
-	writetext FossilScientistDoneText
-	promptbutton
-	getmonname STRING_BUFFER_3, KABUTO
-	writetext FossilScientistReceiveText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	waitbutton
-	givepoke KABUTO, 30
 	closetext
 	end
 
 .GiveOmanyte:
+
+	playsound SFX_FULL_HEAL
+	writetext FossilScientistDoneText
+	waitbutton
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceivedOmanyteText
+	playsound SFX_CAUGHT_MON
+	waitsfx	
+	givepoke OMANYTE, 30
+	writetext FossilScientistGoodCareText
+	waitbutton
+	closetext
 	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	end
+
+.GiveKabuto:
 	writetext FossilScientistDoneText
-	promptbutton
-	getmonname STRING_BUFFER_3, OMANYTE
-	writetext FossilScientistReceiveText
+	waitbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceivedKabutoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
+	givepoke KABUTO, 30
+	writetext FossilScientistGoodCareText
 	waitbutton
-	givepoke OMANYTE, 30
 	closetext
+	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	end
+
+.GiveAerodactyl:
+	writetext FossilScientistDoneText
+	waitbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceivedAerodactylText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke AERODACTYL, 30
+	writetext FossilScientistGoodCareText
+	waitbutton
+	closetext
+	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
 	end
 
 .NoRoom:
@@ -292,19 +243,173 @@ RuinsOfAlphResearchCenterFossilScientist:
 	closetext
 	end
 
-.MoveMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
-	dw .MenuData
+.own_helix
+	checkitem DOME_FOSSIL
+	iftrue .own_helix_and_dome
+	checkitem OLD_AMBER
+	iftrue .ask_helix_amber
+	writetext FossilScientistIsHelixFossilText
+	yesorno
+	iftrue IsHelixFossil
+	jump .no_fossil
+
+.own_dome
+	checkitem OLD_AMBER
+	iftrue .ask_dome_amber
+	writetext FossilScientistIsDomeFossilText
+	yesorno
+	iftrue IsDomeFossil
+	jump .no_fossil
+
+.own_helix_and_dome
+	checkitem OLD_AMBER
+	iftrue .ask_helix_dome_amber
+	loadmenu HelixDomeMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, IsHelixFossil
+	ifequal $2, IsDomeFossil
+	jump .no_fossil
+
+.ask_helix_amber
+	loadmenu HelixAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, IsHelixFossil
+	ifequal $2, IsOldAmber
+	jump .no_fossil
+
+.ask_dome_amber
+	loadmenu DomeAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, IsDomeFossil
+	ifequal $2, IsOldAmber
+	jump .no_fossil
+
+.ask_helix_dome_amber
+	loadmenu HelixDomeAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, IsHelixFossil
+	ifequal $2, IsDomeFossil
+	ifequal $3, IsOldAmber
+.no_fossil:
+	writetext FossilScientistNoFossilText
+	waitbutton
+	closetext
+	end
+
+HelixDomeMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
 	db 1 ; default option
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Old Amber@"
-	db "Dome Fossil@"
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
 	db "Helix Fossil@"
+	db "Dome Fossil@"
 	db "Cancel@"
+
+HelixAmberMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
+	db "Helix Fossil@"
+	db "Old Amber@"
+	db "Cancel@"
+
+DomeAmberMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 14 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
+	db "Dome Fossil@"
+	db "Old Amber@"
+	db "Cancel@"
+
+HelixDomeAmberMenuDataHeader:
+	db $40 ; flags
+	db 02, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 4 ; items
+	db "Helix Fossil@"
+	db "Dome Fossil@"
+	db "Old Amber@"
+	db "Cancel@"
+
+IsHelixFossil:
+	writetext FossilScientistIsHelixFossilText
+	yesorno
+	iffalse DeniedRessurection
+	writetext FossilScientistTimeText
+	waitbutton
+	closetext
+	takeitem HELIX_FOSSIL
+	setevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	special FadeOutToBlack 
+	special ReloadSpritesNoPalettes
+	playsound SFX_WARP_TO
+	waitsfx
+	pause 35
+	sjump RuinsOfAlphResearchCenterFossilScientist
+
+IsDomeFossil:
+	writetext FossilScientistIsDomeFossilText
+	yesorno
+	iffalse DeniedRessurection
+	writetext FossilScientistTimeText
+	waitbutton
+	closetext
+	takeitem DOME_FOSSIL
+	setevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	special FadeOutToBlack 
+	special ReloadSpritesNoPalettes
+	playsound SFX_WARP_TO
+	waitsfx
+	pause 35
+	sjump RuinsOfAlphResearchCenterFossilScientist
+
+IsOldAmber:
+	writetext FossilScientistIsOldAmberText
+	yesorno
+	iffalse DeniedRessurection
+	writetext FossilScientistTimeText
+	waitbutton
+	closetext
+	takeitem OLD_AMBER
+	setevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	special FadeOutToBlack 
+	special ReloadSpritesNoPalettes
+	playsound SFX_WARP_TO
+	waitsfx
+	pause 35
+	sjump RuinsOfAlphResearchCenterFossilScientist
+
+DeniedRessurection:
+	writetext FossilScientistNoFossilText
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphResearchCenterPrinter:
 	opentext
@@ -507,6 +612,11 @@ FossilScientistIntroText:
 	line "fossil for me?"
 	done
 
+FossilScientistNoFossilText:
+	text "No fossils?"
+	line "Too bad!"
+	done
+
 FossilScientistNoText:
 	text "No? Too bad!"
 
@@ -518,6 +628,10 @@ FossilScientistPartyFullText:
 
 	para "Your party is"
 	line "already full!"
+	
+	para "I'll hold onto it"
+	line "while you make"
+	cont "room for it."
 	done
 
 FossilScientistTimeText:
@@ -530,22 +644,40 @@ FossilScientistDoneText:
 	para "All done!"
 	done
 
-FossilScientistMonText:
-	text "Oh! That is"
-	line "a fossil!"
+FossilScientistIsHelixFossilText:
+	text "Oh! That's a"
+	line "Helix Fossil!"
 
-	para "It is fossil of"
-	line "@"
-	text_ram wStringBuffer3
-	text ", a"
+	para "That's the fossil"
+	line "of Omanyte, an"
+	cont "extinct #mon."
 
-	para "#mon that is"
-	line "already extinct!"
+	para "Should I bring it"
+	line "back to life?"
+	done
 
-	para "My Resurrection"
-	line "Machine will make"
-	cont "that #mon live"
-	cont "again!"
+FossilScientistIsDomeFossilText:
+	text "Oh! That's a"
+	line "Dome Fossil!"
+
+	para "That's the fossil"
+	line "of Kabuto, an"
+	cont "extinct #mon."
+
+	para "Should I bring it"
+	line "back to life?"
+	done
+
+FossilScientistIsOldAmberText:
+	text "Oh! That's some"
+	line "Old Amber!"
+
+	para "That's the fossil"
+	line "of Aerodactyl, an"
+	cont "extinct #mon."
+
+	para "Should I bring it"
+	line "back to life?"
 	done
 
 FossilScientistGiveText:
@@ -556,11 +688,24 @@ FossilScientistGiveText:
 	line "over the fossil."
 	done
 
-FossilScientistReceiveText:
+ReceivedAerodactylText:
 	text "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
+	line "Aerodactyl!"
+	done
+
+ReceivedOmanyteText:
+	text "<PLAYER> received"
+	line "Omanyte!"
+	done
+
+ReceivedKabutoText:
+	text "<PLAYER> received"
+	line "Kabuto!"
+	done
+
+FossilScientistGoodCareText:
+	text "Take good care"
+	line "of it!"
 	done
 
 RuinsOfAlphResearchCenterComputerText:
