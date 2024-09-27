@@ -40,7 +40,7 @@ AviculturalSocietyGrampsScript:
 	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	iftrue .GrampsEncounteredBirds
 	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iftrue .GrampsLuck
+	iffalse .GrampsLuck
 	writetext AviculturalSocietyGrampsIntroText
 	waitbutton
 	closetext
