@@ -69,7 +69,7 @@ AviculturalSociety3FBirdKeeperScript:
 	faceplayer
 	opentext
 	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iftrue .GoodLuck
+	iffalse .GoodLuck
 	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	iftrue .EncounteredBirds
 	writetext AviculturalSocietyBirdKeeperIntroText
@@ -79,6 +79,7 @@ AviculturalSociety3FBirdKeeperScript:
 	waitbutton
 	clearevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
 	setevent EVENT_CINNABAR_VOLCANO_1F_OFFICER
+	setmapscene CINNABAR_VOLCANO_1F, SCENE_CINNABARVOLCANO1F_NOOP
 	closetext
 	end
 	

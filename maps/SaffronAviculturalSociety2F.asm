@@ -127,9 +127,8 @@ AviculturalSocietyBirdKeeper2NoEntryText:
 	done
 
 AviculturalSocietyBirdKeeper2YouMayPassText:
-	text "You've been to"
-	line "Cinnabar and"
-	cont "beaten Blaine?"
+	text "You've defeated"
+	line "Blaine?"
 	
 	para "Please go on up."
 	done 

@@ -228,6 +228,7 @@ FirebreatherNedSeenText:
 
 FirebreatherNedBeatenText:
 	text "…mera…?"
+	done
 
 FirebreatherNedAfterBattleText:
 	text "All burnt out…"

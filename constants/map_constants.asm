@@ -214,7 +214,7 @@ ENDM
 	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 13
 	map_const SEAFOAM_ISLANDS_B2F,                         15, 10 ; 14
 	map_const SEAFOAM_ISLANDS_B3F,                         17, 10 ; 15
-	map_const SEAFOAM_ISLANDS_B4F,                         18, 11 ; 16
+	map_const SEAFOAM_ISLANDS_B4F,                         20, 11 ; 16
 	endgroup
 
 	newgroup CERULEAN                                             ;  7

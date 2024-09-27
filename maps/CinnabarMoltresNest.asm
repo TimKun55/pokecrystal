@@ -6,23 +6,7 @@ CinnabarMoltresNest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, CinnabarMoltresNestBlaineCallback
 	
-CinnabarMoltresNestBlaineCallback:
-	checkevent EVENT_BEAT_GUARDIAN_BLAINE
-	iftrue .NoAppear
-	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iftrue .Appear
-	sjump .NoAppear
-
-.Appear:
-	appear CINNABARMOLTRESNEST_BLAINE
-	endcallback
-
-.NoAppear:
-	disappear CINNABARMOLTRESNEST_BLAINE
-	endcallback
-
 CinnabarMoltresNestBlaine:
 	faceplayer
 	opentext
