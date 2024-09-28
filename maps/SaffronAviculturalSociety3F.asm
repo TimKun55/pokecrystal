@@ -352,6 +352,7 @@ LoreleiRematchAfterBattleText:
 LoreleiNextTimeText:
 	text "Hmm, maybe"
 	line "next time, then."
+	done
 
 AgathaRematchIntroText:
 	text "Ah, you're here,"

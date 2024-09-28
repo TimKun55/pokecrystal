@@ -6,23 +6,7 @@ Route4ZapdosNest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route4ZapdosNestAgathaCallback
 	
-Route4ZapdosNestAgathaCallback:
-	checkevent EVENT_BEAT_GUARDIAN_AGATHA
-	iftrue .NoAppear
-	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iftrue .Appear
-	sjump .NoAppear
-
-.Appear:
-	appear ROUTE4ZAPDOSNEST_AGATHA
-	endcallback
-
-.NoAppear:
-	disappear ROUTE4ZAPDOSNEST_AGATHA
-	endcallback
-
 Route4ZapdosNestAgatha:
 	faceplayer
 	opentext
@@ -40,10 +24,11 @@ Route4ZapdosNestAgatha:
 	closetext
 	cry GENGAR
 	applymovement ROUTE4ZAPDOSNEST_AGATHA, GuardianAgathaExitMovement
+	pause 25
 	playsound SFX_THROW_BALL
 	pause 5
 	playsound SFX_BALL_POOF
-	pause 5
+	pause 15
 	cry ZAPDOS
 	pause 15
 	playsound SFX_ESCAPE_ROPE

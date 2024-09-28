@@ -143,9 +143,10 @@ AviculturalSocietySkarmoryText:
 	done
 
 AviculturalSocietyArticunoBookshelfText:
-	text "It used to make"
-	line "its home in the"
-	cont "Seafoam Islands."
+	text "Prefering colder"
+	line "climates, its"
+	cont "options in Kanto"
+	cont "are limited."
 	
 	para "Its current where-"
 	line "abouts are unknown"
@@ -153,7 +154,8 @@ AviculturalSocietyArticunoBookshelfText:
 	
 	para "reported colder"
 	line "temperatures in"
-	cont "the east of Kanto."
+	cont "the southern seas"
+	cont "of Kanto."
 	
 	para "Articuno, also"
 	line "known as Furiizaa."
@@ -188,7 +190,7 @@ AviculturalSocietyMoltresBookshelfText:
 
 	para "reported increased"
 	line "temperatures in"
-	cont "southern Kanto."
+	cont "south-east Kanto."
 
 	para "Moltres, also"
 	line "known as Faiyaa."
