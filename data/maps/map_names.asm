@@ -173,7 +173,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name83 ; map_const TOHJO_FALLS   						; 83
 	dw Dungeons_Map_Name84 ; map_const DIGLETTS_CAVE                        ; 84
 	dw Dungeons_Map_Name85 ; map_const VIRIDIAN_FOREST                      ; 85
-	dw Dungeons_Map_Name86 ; map_const MOUNT_MOON    						; 86
+	dw Dungeons_Map_Name86 ; map_const MOUNT_MOON_1F    					; 86
 	dw Dungeons_Map_Name87 ; map_const UNDERGROUND_PATH                     ; 87
 	dw Dungeons_Map_Name88 ; map_const ROCK_TUNNEL_1F                       ; 88
 	dw Dungeons_Map_Name89 ; map_const ROCK_TUNNEL_B1F 	                    ; 89
@@ -187,6 +187,8 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name97 ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER        ; 97
 	dw Dungeons_Map_Name98 ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE          ; 98
 	dw Dungeons_Map_Name99 ; map_const SLOWPOKE_WELL_ENTRANCE               ; 99
+	dw Dungeons_Map_Name100 ; map_const MOUNT_MOON_B1F                      ; 100
+	dw Dungeons_Map_Name101 ; map_const MOUNT_MOON_B2F                      ; 100
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -822,8 +824,8 @@ Dungeons_Map_Name84: ; map_const DIGLETTS_CAVE,; 84
 	db "Diglett's Cave@"
 Dungeons_Map_Name85: ; map_const VIRIDIAN_FOREST,; 85
 	db "Viridian Forest@"
-Dungeons_Map_Name86: ; map_const MOUNT_MOON,; 86
-	db "Mt. Moon@"	
+Dungeons_Map_Name86: ; map_const MOUNT_MOON_1F,; 86
+	db "Mt. Moon 1F@"	
 Dungeons_Map_Name87: ; map_const UNDERGROUND_PATH,; 87
 	db "Underground Path@"
 Dungeons_Map_Name88: ; map_const ROCK_TUNNEL_1F,; 88
@@ -850,6 +852,10 @@ Dungeons_Map_Name98: ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE,; 98
 	db "Ruins of Alph Cave@"
 Dungeons_Map_Name99: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
 	db "Slowpoke Well Ent.@"
+Dungeons_Map_Name100: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
+	db "Mt. Moon B1F@"
+Dungeons_Map_Name101: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
+	db "Mt. Moon B2F@"
 
 Ecruteak_Map_Name1: ; map_const ROUTE_35,;  1
 	db "Route 35@"

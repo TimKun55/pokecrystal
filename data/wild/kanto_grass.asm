@@ -33,7 +33,7 @@ KantoGrassWildMons:
 	db  8, DUGTRIO,       47,  50
 	end_grass_wildmons
 
-	def_grass_wildmons MOUNT_MOON
+	def_grass_wildmons MOUNT_MOON_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
@@ -41,8 +41,8 @@ KantoGrassWildMons:
 	db 22, GOLEM,         57,  60
 	db 22, SANDSLASH,     57,  60
 	db 10, CROBAT,        57,  60
-	db  8, OMASTAR,       57,  60
-	db  8, KABUTOPS,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, GOLEM,         57,  60
 	db  8, CLEFABLE,      57,  60
 	; day
 	;   %, species,		 min, max
@@ -50,8 +50,8 @@ KantoGrassWildMons:
 	db 22, GOLEM,         57,  60
 	db 22, SANDSLASH,     57,  60
 	db 10, CROBAT,        57,  60
-	db  8, OMASTAR,       57,  60
-	db  8, KABUTOPS,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, GOLEM,         57,  60
 	db  8, CLEFABLE,      57,  60
 	; nite
 	;   %, species,		 min, max
@@ -59,8 +59,70 @@ KantoGrassWildMons:
 	db 22, GOLEM,         57,  60
 	db 22, SANDSLASH,     57,  60
 	db 10, CROBAT,        57,  60
-	db  8, OMASTAR,       57,  60
+	db  8, PARASECT,      57,  60
+	db  8, GOLEM,         57,  60
+	db  8, CLEFABLE,      57,  60
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 10, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	; day
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 10, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	; nite
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 22, PARASECT,      57,  60
+	db 10, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	db  8, PARASECT,      57,  60
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, GOLEM,         57,  60
+	db 22, SANDSLASH,     57,  60
+	db 10, CROBAT,        57,  60
 	db  8, KABUTOPS,      57,  60
+	db  8, OMASTAR,       57,  60
+	db  8, CLEFABLE,      57,  60
+	; day
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, GOLEM,         57,  60
+	db 22, SANDSLASH,     57,  60
+	db 10, CROBAT,        57,  60
+	db  8, KABUTOPS,      57,  60
+	db  8, OMASTAR,       57,  60
+	db  8, CLEFABLE,      57,  60
+	; nite
+	;   %, species,		 min, max
+	db 22, PARASECT,      57,  60
+	db 22, GOLEM,         57,  60
+	db 22, SANDSLASH,     57,  60
+	db 10, CROBAT,        57,  60
+	db  8, KABUTOPS,      57,  60
+	db  8, OMASTAR,       57,  60
 	db  8, CLEFABLE,      57,  60
 	end_grass_wildmons
 	

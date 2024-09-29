@@ -148,7 +148,7 @@ ENDM
 	map_const TOHJO_FALLS,                                 21, 17 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	map_const VIRIDIAN_FOREST,                             24, 22 ; 85
-	map_const MOUNT_MOON,                                  15,  9 ; 86
+	map_const MOUNT_MOON_1F,                               15, 13 ; 86
 	map_const UNDERGROUND_PATH,                             3, 14 ; 87
 	map_const ROCK_TUNNEL_1F,                              15, 14 ; 88
 	map_const ROCK_TUNNEL_B1F,                             15, 14 ; 89	
@@ -162,6 +162,8 @@ ENDM
 	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,                4,  6 ; 97
 	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 98
 	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
+	map_const MOUNT_MOON_B1F,                              18, 16 ; 100
+	map_const MOUNT_MOON_B2F,                              16, 17 ; 101
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

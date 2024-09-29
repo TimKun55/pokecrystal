@@ -681,6 +681,12 @@ YoungsterGroup:
 	db 9, PIKACHU,	THUNDER_WAVE, THUNDERSHOCK, CHARM, TAIL_WHIP
 	db -1 ; end
 
+	; YOUNGSTER (15)
+	db "Zak@", TRAINERTYPE_NORMAL
+	db 60, VENUSAUR
+	db 60, MEGANIUM
+	db -1 ; end
+
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "Jack@", TRAINERTYPE_NORMAL
@@ -1070,7 +1076,13 @@ LassGroup:
 	db "Mai@", TRAINERTYPE_MOVES
 	db 8, ODDISH,   ABSORB, GROWTH, ACID, SLEEP_POWDER
 	db 9, DROWZEE,	TACKLE, HYPNOSIS, DISABLE, CONFUSION
-	db -1 ; end	
+	db -1 ; end
+
+	; LASS (19)
+	db "Verity@", TRAINERTYPE_NORMAL
+	db 60, VILEPLUME
+	db 61, VICTREEBEL
+	db -1 ; end
 
 JanineGroup:
 	; JANINE (1)
@@ -2499,9 +2511,8 @@ SuperNerdGroup:
 
 	; SUPER_NERD (5)
 	db "Dave@", TRAINERTYPE_NORMAL
-	db 64, NIDOQUEEN
-	db 65, TAUROS
-	db 66, DITTO
+	db 60, MAGNEZONE
+	db 60, ELECTRODE
 	db -1 ; end
 
 	; SUPER_NERD (6)
@@ -2539,9 +2550,9 @@ SuperNerdGroup:
 
 	; SUPER_NERD (11)
 	db "Russ@", TRAINERTYPE_NORMAL
-	db 27, MAGNEMITE
-	db 27, MAGNEMITE
-	db 27, MAGNEMITE
+	db 60, DODRIO
+	db 60, PORYGON
+	db 60, MAGNEZONE
 	db -1 ; end
 
 	; SUPER_NERD (12)
@@ -2779,6 +2790,17 @@ HikerGroup:
 	db 48, MACHOKE,    CROSS_CHOP, VITAL_THROW, MEGA_PUNCH, DIG
 	db -1 ; end
 
+	; HIKER (23)
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 63, GOLEM
+	db -1 ; end
+
+	; HIKER (24)
+	db "Micky@", TRAINERTYPE_NORMAL
+	db 60, MACHAMP
+	db 62, RHYDON
+	db -1 ; end
+
 BikerGroup:
 	; BIKER (1)
 	db "Benny@", TRAINERTYPE_NORMAL
@@ -2967,11 +2989,9 @@ JugglerGroup:
 	db -1 ; end
 
 	; JUGGLER (4)
-	db "Irwin@", TRAINERTYPE_NORMAL
-	db 20, VOLTORB
-	db 22, VOLTORB
-	db 24, VOLTORB
-	db 26, VOLTORB
+	db "Nedd@", TRAINERTYPE_NORMAL
+	db 60, WEEZING
+	db 60, ELECTRODE
 	db -1 ; end
 
 	; JUGGLER (5)
@@ -3389,7 +3409,7 @@ CamperGroup:
 
 	; CAMPER (9)
 	db "Harvey@", TRAINERTYPE_NORMAL
-	db 15, NIDORINO
+	db 60, NIDOKING
 	db -1 ; end
 
 	; CAMPER (10)
@@ -3602,9 +3622,9 @@ HexManiacGroup:
 
 	; HEX_MANIAC (3)
 	db "Bethany@", TRAINERTYPE_NORMAL
-	db 64, SLOWBRO
-	db 65, WIGGLYTUFF
-	db 66, GENGAR
+	db 60, SLOWBRO
+	db 60, WIGGLYTUFF
+	db 60, GENGAR
 	db -1 ; end
 
 	; HEX_MANIAC (4)
@@ -4225,5 +4245,12 @@ BugManiacGroup:
 	db "Tobi@", TRAINERTYPE_NORMAL
 	db 60, PINSIR
 	db 60, HERACROSS
+	db 62, VENOMOTH
+	db -1 ; end
+
+	; BUG_MANIAC (10)
+	db "Van@", TRAINERTYPE_NORMAL
+	db 60, PARASECT
+	db 61, BUTTERFREE
 	db 62, VENOMOTH
 	db -1 ; end

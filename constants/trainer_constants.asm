@@ -151,6 +151,7 @@ DEF KRIS EQU __trainer_class__
 	const JOEY4
 	const JOEY5
 	const GABE
+	const ZAK
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -212,7 +213,7 @@ DEF KRIS EQU __trainer_class__
 	const MICHELLE
 	const DANA1
 	const ELLEN
-	const CONNIE2 ; unused
+	const VERITY ; Mount Moon 1F
 	const CONNIE3 ; unused
 	const DANA2
 	const DANA3
@@ -475,13 +476,13 @@ DEF KRIS EQU __trainer_class__
 	const ERIC
 	const GREGG ; ; Route 5
 	const JAY ; ; Route 5
-	const DAVE ; unused
+	const DAVE ; Mount Moon 1F
 	const SAM
 	const TOM
 	const PAT
 	const SHAWN
 	const TERU
-	const RUSS ; unused
+	const RUSS ; Mount Moon B2F
 	const NORTON ; unused
 	const HUGH
 	const MARKUS
@@ -521,6 +522,8 @@ DEF KRIS EQU __trainer_class__
 	const PARRY3
 	const ANTHONY4
 	const ANTHONY5
+	const DAN
+	const MICKY
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; ; Route 17
@@ -557,7 +560,7 @@ DEF KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2 ; unused
+	const NEDD ; Mount Moon B2F
 	const IRWIN3 ; unused
 	const IRWIN4 ; unused
 
@@ -631,7 +634,7 @@ DEF KRIS EQU __trainer_class__
 	const LLOYD
 	const DEAN
 	const SID
-	const HARVEY ; unused
+	const HARVEY ; Mount Moon B2F
 	const DALE ; unused
 	const TED
 	const TODD2
@@ -668,7 +671,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass HEX_MANIAC ; 39
 	const MARTHA
 	const GRACE
-	const BETHANY ; unused
+	const BETHANY ; Mount Moon B2F
 	const MARGRET ; unused
 	const ETHEL ; unused
 	const REBECCA
@@ -793,5 +796,6 @@ DEF KRIS EQU __trainer_class__
 	const ELI
 	const MATT
 	const TOBI
+	const VAN
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

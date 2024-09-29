@@ -82,6 +82,7 @@ INCLUDE "maps/SafariZoneNorthRestHouse.asm"
 INCLUDE "maps/SafariZoneEastRestHouse.asm"
 INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
+INCLUDE "maps/MountMoon1F.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -108,6 +109,7 @@ INCLUDE "maps/TeamRocketBaseB1F.asm"
 INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
 INCLUDE "maps/IlexForest.asm"
+INCLUDE "maps/MountMoonB2F.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -139,7 +141,6 @@ INCLUDE "maps/Route17Route18Gate.asm"
 SECTION "Map Scripts 8", ROMX
 
 INCLUDE "maps/DiglettsCave.asm"
-INCLUDE "maps/MountMoon.asm"
 INCLUDE "maps/UndergroundPath.asm"
 INCLUDE "maps/RockTunnel1F.asm"
 INCLUDE "maps/RockTunnelB1F.asm"
@@ -540,6 +541,7 @@ INCLUDE "maps/SeafoamIslandsB3F.asm"
 INCLUDE "maps/SeafoamIslandsB4F.asm"
 INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 INCLUDE "maps/SlowpokeWellEntrance.asm"
+INCLUDE "maps/MountMoonB1F.asm"
 
 
 ENDSECTION
