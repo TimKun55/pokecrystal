@@ -350,6 +350,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SKIER ; 21
 	const ROXANNE
 	const CLARISSA
+	const CADY
 
 	trainerclass TEACHER ; 22
 	const COLETTE
@@ -677,6 +678,8 @@ DEF KRIS EQU __trainer_class__
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const SHAUN
+	const BRYCE
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
@@ -786,7 +789,7 @@ DEF KRIS EQU __trainer_class__
 	const CARL
 	const PETE
 	const KEIRAN
-	const SHAUN
+	const NEVILLE
 	const ELI
 	const MATT
 	const TOBI

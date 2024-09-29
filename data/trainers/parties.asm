@@ -1797,6 +1797,11 @@ SkierGroup:
 	db 36, DEWGONG
 	db -1 ; end
 
+	; SKIER (3)
+	db "Cady@", TRAINERTYPE_NORMAL
+	db 60, DELIBIRD
+	db -1 ; end
+
 TeacherGroup:
 	; TEACHER (1)
 	db "Colette@", TRAINERTYPE_NORMAL
@@ -3645,6 +3650,18 @@ BoarderGroup:
 	db 32, SHELLDER
 	db -1 ; end
 
+	; BOARDER (3)
+	db "Shaun@", TRAINERTYPE_NORMAL
+	db 58, CLOYSTER
+	db 58, DEWGONG
+	db -1 ; end
+
+	; BOARDER (3)
+	db "Bryce@", TRAINERTYPE_NORMAL
+	db 58, DEWGONG
+	db 58, LAPRAS
+	db -1 ; end
+
 PokefanMGroup:
 	; POKEFANM (1)
 	db "William@", TRAINERTYPE_ITEM
@@ -4183,7 +4200,7 @@ BugManiacGroup:
 	db -1 ; end
 	
 	; BUG_MANIAC (6)
-	db "Shaun@", TRAINERTYPE_NORMAL
+	db "Neville@", TRAINERTYPE_NORMAL
 	db 43, YANMA
 	db 43, VENOMOTH
 	db 43, SCYTHER

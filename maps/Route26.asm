@@ -290,13 +290,13 @@ TrainerFisherScott:
 	closetext
 	end
 
-TrainerBugManiacShaun:
-	trainer BUG_MANIAC, SHAUN, EVENT_BEAT_BUG_MANIAC_SHAUN, BugManiacShaunSeenText, BugManiacShaunBeatenText, 0, .Script
+TrainerBugManiacNeville:
+	trainer BUG_MANIAC, NEVILLE, EVENT_BEAT_BUG_MANIAC_NEVILLE, BugManiacNevilleSeenText, BugManiacNevilleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugManiacShaunAfterBattleText
+	writetext BugManiacNevilleAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -497,7 +497,7 @@ FisherScottAfterBattleText:
 	line "give up."
 	done
 
-BugManiacShaunSeenText:
+BugManiacNevilleSeenText:
 	text "You're on your"
 	line "way to the"
 	cont "#mon League?"
@@ -506,11 +506,11 @@ BugManiacShaunSeenText:
 	line "as a warm up!"
 	done
 
-BugManiacShaunBeatenText:
+BugManiacNevilleBeatenText:
 	text "Oh, wow, too hot!"
 	done
 
-BugManiacShaunAfterBattleText:
+BugManiacNevilleAfterBattleText:
 	text "I lost but I'm"
 	line "not giving up!"
 
