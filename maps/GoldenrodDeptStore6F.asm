@@ -11,79 +11,6 @@ GoldenrodDeptStore6F_MapScripts:
 
 	def_callbacks
 
-GoldenrodVendingMachine:
-	opentext
-	writetext GoldenrodVendingText
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .FreshWater
-	ifequal 2, .SodaPop
-	ifequal 3, .Lemonade
-	closetext
-	end
-
-.FreshWater:
-	checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE
-	getitemname STRING_BUFFER_3, FRESH_WATER
-	sjump .VendItem
-
-.SodaPop:
-	checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem SODA_POP
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE
-	getitemname STRING_BUFFER_3, SODA_POP
-	sjump .VendItem
-
-.Lemonade:
-	checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LEMONADE
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE
-	getitemname STRING_BUFFER_3, LEMONADE
-	sjump .VendItem
-
-.VendItem:
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext GoldenrodClangText
-	promptbutton
-	itemnotify
-	sjump .Start
-
-.NotEnoughMoney:
-	writetext GoldenrodVendingNoMoneyText
-	waitbutton
-	sjump .Start
-
-.NotEnoughSpace:
-	writetext GoldenrodVendingNoSpaceText
-	waitbutton
-	sjump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Fresh Water  ¥{d:GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE}@"
-	db "Soda Pop     ¥{d:GOLDENRODDEPTSTORE6F_SODA_POP_PRICE}@"
-	db "Lemonade     ¥{d:GOLDENRODDEPTSTORE6F_LEMONADE_PRICE}@"
-	db "Cancel@"
-
 GoldenrodDeptStore6FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore6FLassText
 
@@ -96,28 +23,8 @@ GoldenrodDeptStore6FDirectory:
 GoldenrodDeptStore6FElevatorButton:
 	jumpstd ElevatorButtonScript
 
-GoldenrodVendingText:
-	text "A vending machine!"
-	line "Here's the menu."
-	done
-
-GoldenrodClangText:
-	text "Clang! A can of"
-	line "@"
-	text_ram wStringBuffer3
-	text_start
-	cont "popped out!"
-	done
-
-GoldenrodVendingNoMoneyText:
-	text "Oops, not enough"
-	line "money."
-	done
-
-GoldenrodVendingNoSpaceText:
-	text "There's no more"
-	line "room for stuff."
-	done
+GoldenrodDeptStore6FVendingMachine:
+	jumpstd VendingMachineScript
 
 GoldenrodDeptStore6FLassText:
 	text "Do you listen to"
@@ -162,10 +69,10 @@ GoldenrodDeptStore6F_MapEvents:
 	def_bg_events
 	bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore6FDirectory
 	bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore6FElevatorButton
-	bg_event  8,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event  9,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event 10,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event 11,  1, BGEVENT_UP, GoldenrodVendingMachine
+	bg_event  8,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
+	bg_event  9,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
+	bg_event 10,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
+	bg_event 11,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
 
 	def_object_events
 	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1

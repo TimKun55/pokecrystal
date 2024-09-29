@@ -445,3 +445,36 @@ RegisteredNumber2Text:
 PokeCenterChanseyText:
 	text "Chansey: Chansey!!"
 	done
+
+VendingMachineText:
+	text "A vending machine!"
+	line "Here's the menu."
+	done
+
+VendingMachineClangText:
+	text "Clang!"
+
+	para "@"
+	text_ram wStringBuffer3
+	text ""
+	line "popped out."
+	done
+
+VendingMachineScoreText:
+	text "Score! An extra"
+
+	line "@"
+	text_ram wStringBuffer3
+	text ""
+	cont "popped out."
+	done
+
+VendingMachineNoMoneyText:
+	text "Oops, not enough"
+	line "money…"
+	done
+
+VendingMachineNoSpaceText:
+	text "There's no more"
+	line "room for stuff…"
+	done

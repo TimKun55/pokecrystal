@@ -22,105 +22,11 @@ CeladonDeptStore6FSuperNerdScript:
 CeladonDeptStore6FYoungsterScript:
 	jumptextfaceplayer CeladonDeptStore6FYoungsterText
 
-CeladonDeptStore6FVendingMachine:
-	opentext
-	writetext CeladonVendingText
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .FreshWater
-	ifequal 2, .SodaPop
-	ifequal 3, .Lemonade
-	closetext
-	end
-
-.FreshWater:
-	checkmoney YOUR_MONEY, CELADONDEPTSTORE6F_FRESH_WATER_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, CELADONDEPTSTORE6F_FRESH_WATER_PRICE
-	getitemname STRING_BUFFER_3, FRESH_WATER
-	sjump .VendItem
-
-.SodaPop:
-	checkmoney YOUR_MONEY, CELADONDEPTSTORE6F_SODA_POP_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem SODA_POP
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, CELADONDEPTSTORE6F_SODA_POP_PRICE
-	getitemname STRING_BUFFER_3, SODA_POP
-	sjump .VendItem
-
-.Lemonade:
-	checkmoney YOUR_MONEY, CELADONDEPTSTORE6F_LEMONADE_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LEMONADE
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, CELADONDEPTSTORE6F_LEMONADE_PRICE
-	getitemname STRING_BUFFER_3, LEMONADE
-	sjump .VendItem
-
-.VendItem:
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext CeladonClangText
-	promptbutton
-	itemnotify
-	sjump .Start
-
-.NotEnoughMoney:
-	writetext CeladonVendingNoMoneyText
-	waitbutton
-	sjump .Start
-
-.NotEnoughSpace:
-	writetext CeladonVendingNoSpaceText
-	waitbutton
-	sjump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Fresh Water  ¥{d:CELADONDEPTSTORE6F_FRESH_WATER_PRICE}@"
-	db "Soda Pop     ¥{d:CELADONDEPTSTORE6F_SODA_POP_PRICE}@"
-	db "Lemonade     ¥{d:CELADONDEPTSTORE6F_LEMONADE_PRICE}@"
-	db "Cancel@"
-
 CeladonDeptStore6FDirectory:
 	jumptext CeladonDeptStore6FDirectoryText
 
-CeladonVendingText:
-	text "A vending machine!"
-	line "Here's the menu."
-	done
-
-CeladonClangText:
-	text "Clang!"
-
-	para "@"
-	text_ram wStringBuffer3
-	text_start
-	line "popped out."
-	done
-
-CeladonVendingNoMoneyText:
-	text "Oops, not enough"
-	line "money…"
-	done
-
-CeladonVendingNoSpaceText:
-	text "There's no more"
-	line "room for stuff…"
-	done
+CeladonDeptStore6FVendingMachine:
+	jumpstd VendingMachineScript
 
 CeladonDeptStore6FSuperNerdText:
 	text "A vending machine"

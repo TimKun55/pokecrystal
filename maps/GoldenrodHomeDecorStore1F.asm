@@ -99,77 +99,7 @@ GoldenrodHomeDecorStore1FClerkScript:
 	db "Cancel@"	
 	
 HomeDecorVendingMachine:
-	opentext
-	writetext HomeDecorVendingText
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .FreshWater
-	ifequal 2, .SodaPop
-	ifequal 3, .Lemonade
-	closetext
-	end
-
-.FreshWater:
-	checkmoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_FRESH_WATER_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_FRESH_WATER_PRICE
-	getitemname STRING_BUFFER_3, FRESH_WATER
-	sjump .VendItem
-
-.SodaPop:
-	checkmoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_SODA_POP_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem SODA_POP
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_SODA_POP_PRICE
-	getitemname STRING_BUFFER_3, SODA_POP
-	sjump .VendItem
-
-.Lemonade:
-	checkmoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_LEMONADE_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LEMONADE
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, GOLDENRODHOMEDECORSTORE1F_LEMONADE_PRICE
-	getitemname STRING_BUFFER_3, LEMONADE
-	sjump .VendItem
-
-.VendItem:
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext HomeDecorClangText
-	promptbutton
-	itemnotify
-	sjump .Start
-
-.NotEnoughMoney:
-	writetext HomeDecorVendingNoMoneyText
-	waitbutton
-	sjump .Start
-
-.NotEnoughSpace:
-	writetext HomeDecorVendingNoSpaceText
-	waitbutton
-	sjump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Fresh Water  ¥{d:GOLDENRODHOMEDECORSTORE1F_FRESH_WATER_PRICE}@"
-	db "Soda Pop     ¥{d:GOLDENRODHOMEDECORSTORE1F_SODA_POP_PRICE}@"
-	db "Lemonade     ¥{d:GOLDENRODHOMEDECORSTORE1F_LEMONADE_PRICE}@"
-	db "Cancel@"
+	jumpstd VendingMachineScript
 	
 GoldenrodHomeDecorStore1FReceptionistScript:
 	jumptextfaceplayer GoldenrodHomeDecorStore1FReceptionistText
@@ -248,29 +178,6 @@ GoldenrodHomeDecorStore1FNextTimeText:
 	text "See you next time!"
 	done
 	
-HomeDecorVendingText:
-	text "A vending machine!"
-	line "Here's the menu."
-	done
-
-HomeDecorClangText:
-	text "Clang! A can of"
-	line "@"
-	text_ram wStringBuffer3
-	text_start
-	cont "popped out!"
-	done
-
-HomeDecorVendingNoMoneyText:
-	text "Oops, not enough"
-	line "money."
-	done
-
-HomeDecorVendingNoSpaceText:
-	text "There's no more"
-	line "room for stuff."
-	done
-
 GoldenrodHomeDecorStore1FChikoritaDollText:
 	text "It's a cute"
 	line "Chikorita Doll!"

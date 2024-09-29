@@ -95,77 +95,7 @@ SaffronMagnetTrainStationLassScript:
 	jumptextfaceplayer SaffronMagnetTrainStationLassText
 	
 SaffronMagnetTrainStationVendingMachine:
-	opentext
-	writetext SaffronMagnetTrainStationVendingText
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .FreshWater
-	ifequal 2, .SodaPop
-	ifequal 3, .Lemonade
-	closetext
-	end
-
-.FreshWater:
-	checkmoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_FRESH_WATER_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_FRESH_WATER_PRICE
-	getitemname STRING_BUFFER_3, FRESH_WATER
-	sjump .VendItem
-
-.SodaPop:
-	checkmoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_SODA_POP_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem SODA_POP
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_SODA_POP_PRICE
-	getitemname STRING_BUFFER_3, SODA_POP
-	sjump .VendItem
-
-.Lemonade:
-	checkmoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_LEMONADE_PRICE
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LEMONADE
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, SAFFRONMAGNETTRAINSTATION_LEMONADE_PRICE
-	getitemname STRING_BUFFER_3, LEMONADE
-	sjump .VendItem
-
-.VendItem:
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext SaffronMagnetTrainStationClangText
-	promptbutton
-	itemnotify
-	sjump .Start
-
-.NotEnoughMoney:
-	writetext SaffronMagnetTrainStationVendingNoMoneyText
-	waitbutton
-	sjump .Start
-
-.NotEnoughSpace:
-	writetext SaffronMagnetTrainStationVendingNoSpaceText
-	waitbutton
-	sjump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Fresh Water  ¥{d:SAFFRONMAGNETTRAINSTATION_FRESH_WATER_PRICE}@"
-	db "Soda Pop     ¥{d:SAFFRONMAGNETTRAINSTATION_SODA_POP_PRICE}@"
-	db "Lemonade     ¥{d:SAFFRONMAGNETTRAINSTATION_LEMONADE_PRICE}@"
-	db "Cancel@"
+	jumpstd VendingMachineScript
 
 SaffronMagnetTrainStationOfficerApproachTrainDoorMovement:
 	step UP
@@ -290,29 +220,6 @@ SaffronMagnetTrainStationLassText:
 	line "Train have Passes."
 	done
 	
-SaffronMagnetTrainStationVendingText:
-	text "A vending machine!"
-	line "Here's the menu."
-	done
-
-SaffronMagnetTrainStationClangText:
-	text "Clang! A can of"
-	line "@"
-	text_ram wStringBuffer3
-	text_start
-	cont "popped out!"
-	done
-
-SaffronMagnetTrainStationVendingNoMoneyText:
-	text "Oops, not enough"
-	line "money."
-	done
-
-SaffronMagnetTrainStationVendingNoSpaceText:
-	text "There's no more"
-	line "room for stuff."
-	done
-
 SaffronMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
 
