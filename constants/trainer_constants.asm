@@ -241,12 +241,13 @@ DEF KRIS EQU __trainer_class__
 	const BRIAN
 	const ERICK ; ; Viridian Gym
 	const ANDY ; ; Olivine Gym
-	const TYLER ; unused
+	const TYLER ; Earl's Academy Basement
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const STEVE ; Earl's Academy Basement
 	const ALLEN
 	const DARIN
+	const JAMIE ; Earl's Academy Basement
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN
@@ -270,6 +271,9 @@ DEF KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
+	const CARLA ; Earl's Academy Basement
+	const CATT ; Earl's Academy Basement
+	const PAM ; Earl's Academy Basement
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA

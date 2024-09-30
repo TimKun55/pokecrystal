@@ -1071,4 +1071,7 @@ MountMoonB1F_Blocks:
 MountMoonB2F_Blocks:
 	INCBIN "maps/MountMoonB2F.ablk"
 
+EarlsPokemonAcademyB1F_Blocks:
+	INCBIN "maps/EarlsPokemonAcademyB1F.ablk"
+
 ENDSECTION

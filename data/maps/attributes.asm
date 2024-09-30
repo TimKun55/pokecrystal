@@ -563,6 +563,7 @@ ENDM
 	map_attributes VioletMart, VIOLET_MART, $00, 0
 	map_attributes VioletGym, VIOLET_GYM, $00, 0
 	map_attributes EarlsPokemonAcademy, EARLS_POKEMON_ACADEMY, $00, 0
+	map_attributes EarlsPokemonAcademyB1F, EARLS_POKEMON_ACADEMY_B1F, $01, 0
 	map_attributes VioletNicknameSpeechHouse, VIOLET_NICKNAME_SPEECH_HOUSE, $00, 0
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes VioletKylesHouse, VIOLET_KYLES_HOUSE, $00, 0

@@ -20,6 +20,7 @@ INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/CinnabarIslandRecoveryLab.asm"
 INCLUDE "maps/CeladonCurseHouse.asm"
 INCLUDE "maps/FarawayIslandOutside.asm"
+INCLUDE "maps/EarlsPokemonAcademyB1F.asm"
 
 
 SECTION "Map Scripts 2", ROMX

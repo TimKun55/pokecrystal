@@ -307,6 +307,7 @@ Violet_Map_Names: ;newgroup VIOLET											; 10
 	dw Violet_Map_Name11 ; map_const ROUTE_32_POKECENTER_1F					; 11
 	dw Violet_Map_Name12 ; map_const ROUTE_36_RUINS_OF_ALPH_GATE			; 12
 	dw Violet_Map_Name13 ; map_const ROUTE_36_VIOLET_GATE					; 13
+	dw Violet_Map_Name14 ; map_const EARLS_POKEMON_ACADEMY_B1F              ; 14
 	assert_table_length NUM_VIOLET_MAPS
 
 Goldenrod_Map_Names: ;newgroup GOLDENROD									; 11
@@ -1015,32 +1016,34 @@ Lake_of_Rage_Map_Name5: ; map_const ROUTE_43 ;  5
 Lake_of_Rage_Map_Name6: ; map_const LAKE_OF_RAGE ; 6
 	db "Lake Of Rage@"                                             ; 10
 
-Violet_Map_Name1: ; map_const ROUTE_32,;  1
+Violet_Map_Name1: ; map_const ROUTE_32								;  1
 	db "Route 32@"
-Violet_Map_Name2: ; map_const VIOLET_CITY,;  5
+Violet_Map_Name2: ; map_const VIOLET_CITY							;  2
 	db "Violet City@"
-Violet_Map_Name3: ; map_const VIOLET_MART ;  6
+Violet_Map_Name3: ; map_const VIOLET_MART 							;  3
 	db "Violet <POKE>Mart@"
-Violet_Map_Name4: ; map_const VIOLET_GYM ;  7
+Violet_Map_Name4: ; map_const VIOLET_GYM 							;  4
 	db "Violet Gym@"
-Violet_Map_Name5: ; map_const EARLS_POKEMON_ACADEMY ;  8
+Violet_Map_Name5: ; map_const EARLS_POKEMON_ACADEMY 				;  5
 	db "Earl's Academy@"
-Violet_Map_Name6: ; map_const VIOLET_NICKNAME_SPEECH_HOUSE ;  9
+Violet_Map_Name6: ; map_const VIOLET_NICKNAME_SPEECH_HOUSE 			;  6
 	db "Violet House 1@"
-Violet_Map_Name7: ; map_const VIOLET_POKECENTER_1F ; 10
+Violet_Map_Name7: ; map_const VIOLET_POKECENTER_1F 					; 7
 	db "Violet <PKMN> Center@"
-Violet_Map_Name8: ; map_const VIOLET_KYLES_HOUSE ; 11
+Violet_Map_Name8: ; map_const VIOLET_KYLES_HOUSE 					; 8
 	db "Kyle's House@"
-Violet_Map_Name9: ; map_const VIOLET_PRIMOS_HOUSE ; 11
+Violet_Map_Name9: ; map_const VIOLET_PRIMOS_HOUSE 					; 9
 	db "Primo's House@"
-Violet_Map_Name10: ; map_const ROUTE_32_RUINS_OF_ALPH_GATE ; 12
+Violet_Map_Name10: ; map_const ROUTE_32_RUINS_OF_ALPH_GATE 			; 10
 	db "Route 32 Gate 1@"
-Violet_Map_Name11: ; map_const ROUTE_32_POKECENTER_1F ; 13
+Violet_Map_Name11: ; map_const ROUTE_32_POKECENTER_1F 				; 11
 	db "Route 32 <PKMN> Cen.@"
-Violet_Map_Name12: ; map_const ROUTE_36_RUINS_OF_ALPH_GATE ; 16
+Violet_Map_Name12: ; map_const ROUTE_36_RUINS_OF_ALPH_GATE 			; 12
 	db "Route 36 Gate 2@"
-Violet_Map_Name13: ; map_const ROUTE_36_VIOLET_GATE ; 16
+Violet_Map_Name13: ; map_const ROUTE_36_VIOLET_GATE 				; 13
 	db "Route 36 Gate 1@"
+Violet_Map_Name14: ; map_const EARLS_POKEMON_ACADEMY_B1F 			; 14
+	db "Earl's Academy B1F@"
 
 Goldenrod_Map_Name1: ; map_const ROUTE_34,;  1
 	db "Route 34@"

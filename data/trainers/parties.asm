@@ -1198,10 +1198,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (15)
 	db "Tyler@", TRAINERTYPE_NORMAL
-	db 66, PARASECT
-	db 67, RAPIDASH
-	db 68, ELECTRODE
-	db 69, PINSIR
+	db 6, MACHOP
+	db 6, GROWLITHE
+	db 6, EKANS
+	db 6, TEDDIURSA
+	db 6, GOLDEEN
+	db 6, LARVITAR
 	db -1 ; end
 
 	; COOLTRAINERM (16)
@@ -1221,9 +1223,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (18)
 	db "Steve@", TRAINERTYPE_NORMAL
-	db 14, BULBASAUR
-	db 14, CHARMANDER
-	db 14, SQUIRTLE
+	db 6, VENONAT
+	db 6, SEEL
+	db 6, DROWZEE
+	db 6, HOPPIP
+	db 6, LEDYBA
+	db 6, EEVEE
 	db -1 ; end
 
 	; COOLTRAINERM (19)
@@ -1236,6 +1241,16 @@ CooltrainerMGroup:
 	; COOLTRAINERM (20)
 	db "Darin@", TRAINERTYPE_MOVES
 	db 42, DRAGONAIR,  WRAP, SURF, DRAGON_RAGE, SLAM
+	db -1 ; end
+	
+	; COOLTRAINERM (21)
+	db "Jamie@", TRAINERTYPE_NORMAL
+	db 6, PIDGEY
+	db 6, VULPIX
+	db 6, DIGLETT
+	db 6, AIPOM
+	db 6, DELIBIRD
+	db 6, MURKROW
 	db -1 ; end
 
 CooltrainerFGroup:
@@ -1370,19 +1385,34 @@ CooltrainerFGroup:
 	db -1 ; end
 	
 	; COOLTRAINERF (22)
-	db "Tina@", TRAINERTYPE_NORMAL
-	db 64, MURKROW
-	db 65, SUNFLORA
-	db 66, ARBOK
+	db "Carla@", TRAINERTYPE_NORMAL
+	db 6, SHELLDER
+	db 6, SANDSHREW
+	db 6, CORSOLA
+	db 6, EXEGGCUTE
+	db 6, PINECO
+	db 6, TANGELA
 	db -1 ; end
 	
 	; COOLTRAINERF (23)
-	db "Lara@", TRAINERTYPE_NORMAL
-	db 66, KANGASKHAN
-	db 67, GOLEM
-	db 68, JYNX
-	db 69, FARFETCH_D
-	db -1 ; end	
+	db "Catt@", TRAINERTYPE_NORMAL
+	db 6, PSYDUCK
+	db 6, NATU
+	db 6, HOUNDOUR
+	db 6, ODDISH
+	db 6, MAREEP
+	db 6, PORYGON
+	db -1 ; end
+
+	; COOLTRAINERF (24)
+	db "Pam@", TRAINERTYPE_NORMAL
+	db 6, SLOWPOKE
+	db 6, GRIMER
+	db 6, DITTO
+	db 6, WOOPER
+	db 6, DUNSPARCE
+	db 6, PHANPY
+	db -1 ; end
 
 BeautyGroup:
 	; BEAUTY (1)

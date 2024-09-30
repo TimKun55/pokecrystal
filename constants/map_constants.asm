@@ -265,7 +265,7 @@ ENDM
 	map_const VIOLET_CITY,                                 20, 18 ;  2
 	map_const VIOLET_MART,                                  6,  4 ;  3
 	map_const VIOLET_GYM,                                   5,  8 ;  4
-	map_const EARLS_POKEMON_ACADEMY,                       11,  8 ;  5
+	map_const EARLS_POKEMON_ACADEMY,                       15,  8 ;  5
 	map_const VIOLET_NICKNAME_SPEECH_HOUSE,                 4,  4 ;  6
 	map_const VIOLET_POKECENTER_1F,                         6,  4 ;  7
 	map_const VIOLET_KYLES_HOUSE,                           4,  4 ;  8
@@ -274,6 +274,7 @@ ENDM
 	map_const ROUTE_32_POKECENTER_1F,                       6,  4 ; 11
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 12
 	map_const ROUTE_36_VIOLET_GATE,                         5,  4 ; 13
+	map_const EARLS_POKEMON_ACADEMY_B1F,                    7,  6 ; 14
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11

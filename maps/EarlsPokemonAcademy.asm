@@ -9,6 +9,7 @@
 	const EARLSPOKEMONACADEMY_BUG_CATCHER
 	const EARLSPOKEMONACADEMY_LASS
 	const EARLSPOKEMONACADEMY_TEACHER
+	const EARLSPOKEMONACADEMY_RECEPTIONIST
 
 EarlsPokemonAcademy_MapScripts:
 	def_scene_scripts
@@ -143,6 +144,9 @@ TeacherEnomotoScript:
 	closetext
 	end
 
+AcademyReceptionistScript:
+	jumptextfaceplayer AcademyReceptionistText
+
 AcademyBlackboard:
 	opentext
 	writetext AcademyBlackboardText
@@ -227,6 +231,9 @@ AcademyBookshelf:
 	waitbutton
 	closetext
 	end
+
+AcademyVendingMachine:
+	jumpstd VendingMachineScript
 
 AcademyEarlSpinMovement:
 	turn_head DOWN
@@ -638,29 +645,49 @@ TeacherEnomotoStrongerText:
 	line "good use!"
 	done
 
+AcademyReceptionistText:
+	text "Welcome to Earl's"
+	line "Academy!"
+	
+	para "To the right is"
+	line "the theory course."
+	
+	para "To the left is"
+	line "the battle course."
+	
+	para "Downstairs is the"
+	line "Advanced course."
+	done
+
 EarlsPokemonAcademy_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 15, VIOLET_CITY, 3
-	warp_event  6, 15, VIOLET_CITY, 3
+	warp_event 15, 15, VIOLET_CITY, 3
+	warp_event 16, 15, VIOLET_CITY, 3
+	warp_event 16, 10, EARLS_POKEMON_ACADEMY_B1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 14,  1, BGEVENT_READ, AcademyBookshelf
-	bg_event 15,  1, BGEVENT_READ, AcademyBookshelf
-	bg_event 17,  0, BGEVENT_READ, AcademyBlackboard
-	bg_event 18,  0, BGEVENT_READ, AcademyBlackboard
+	bg_event 22,  1, BGEVENT_READ, AcademyBookshelf
+	bg_event 23,  1, BGEVENT_READ, AcademyBookshelf
+	bg_event 25,  0, BGEVENT_READ, AcademyBlackboard
+	bg_event 26,  0, BGEVENT_READ, AcademyBlackboard
+	bg_event 10, 11, BGEVENT_READ, AcademyVendingMachine
+	bg_event 11, 11, BGEVENT_READ, AcademyVendingMachine
+	bg_event 20, 11, BGEVENT_READ, AcademyVendingMachine
+	bg_event 21, 11, BGEVENT_READ, AcademyVendingMachine
 
 	def_object_events
-	object_event 18,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL
-	object_event 16,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1
-	object_event 17, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1
-	object_event 18, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1
-	object_event 18,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1
-	object_event 16,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1
+	object_event 26,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL
+	object_event 24,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1
+	object_event 25, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1
+	object_event 26, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1
+	object_event 26,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1
+	object_event 24,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1
 	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerYoungsterGabe, -1
 	object_event  7, 11, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJon, -1
 	object_event  4,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerLassMai, -1
 	object_event  5,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeacherEnomotoScript, -1
+	object_event 14, 10, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AcademyReceptionistScript, -1
