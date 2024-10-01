@@ -1623,7 +1623,8 @@
 	const EVENT_MOUNT_MOON_B2F_ZINC
 	const EVENT_MOUNT_MOON_B2F_RARE_CANDY
 	const EVENT_MOUNT_MOON_B2F_MOON_STONE
-; Unused: next 96 events
+	const EVENT_ROUTE_6_MAX_POTION
+; Unused: next 95 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

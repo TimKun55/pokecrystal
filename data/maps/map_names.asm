@@ -380,6 +380,7 @@ Pewter_Map_Names: ;newgroup PEWTER											; 14
 	dw Pewter_Map_Name5 ; map_const PEWTER_MART								;  5
 	dw Pewter_Map_Name6 ; map_const PEWTER_POKECENTER_1F					;  6
 	dw Pewter_Map_Name7 ; map_const PEWTER_SNOOZE_SPEECH_HOUSE				;  7
+	dw Pewter_Map_Name8 ; map_const ROUTE_3_POKECENTER_1F 					;  8
 	assert_table_length NUM_PEWTER_MAPS
 
 Fast_Ship_Map_Names: ;newgroup FAST_SHIP										; 15
@@ -1159,7 +1160,9 @@ Pewter_Map_Name5: ; map_const PEWTER_MART ;  5
 Pewter_Map_Name6: ; map_const PEWTER_POKECENTER_1F ;  6
 	db "Pewter <PKMN> Center@"
 Pewter_Map_Name7: ; map_const PEWTER_SNOOZE_SPEECH_HOUSE ;  7
-	db "Pewter House 2@"                                          ; 15
+	db "Pewter House 2@"
+Pewter_Map_Name8: ; map_const ROUTE_3_POKECENTER_1F ;  8
+	db "Route 3 <PKMN> Cen.@" 
 
 Fast_Ship_Map_Name1: ; map_const OLIVINE_PORT,;  1
 	db "Olivine Marina@"

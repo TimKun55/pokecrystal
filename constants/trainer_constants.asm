@@ -349,7 +349,7 @@ DEF KRIS EQU __trainer_class__
 	const PRESTON
 	const EDWARD
 	const GREGORY
-	const VIRGIL ; unused
+	const VIRGIL ; Route 6
 	const ALFRED
 
 	trainerclass SKIER ; 21
@@ -425,8 +425,8 @@ DEF KRIS EQU __trainer_class__
 	const BERKE
 	const KIRK
 	const MATHEW
-	const HAL ; unused
-	const PATON ; unused
+	const HAL ; Route 20
+	const PATON ; Route 20
 	const DARYL ; unused
 	const WALTER ; unused
 	const TONY ; unused
@@ -639,7 +639,7 @@ DEF KRIS EQU __trainer_class__
 	const DEAN
 	const SID
 	const HARVEY ; Mount Moon B2F
-	const DALE ; unused
+	const DALE ; Route 6
 	const TED
 	const TODD2
 	const TODD3

@@ -203,9 +203,9 @@ ENDM
 	newgroup CINNABAR                                             ;  6
 	map_const CINNABAR_POKECENTER_1F,                       6,  4 ;  1
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
-	map_const ROUTE_19,                                    10, 18 ;  3
-	map_const ROUTE_20,                                    30,  9 ;  4
-	map_const ROUTE_21,                                    10, 18 ;  5
+	map_const ROUTE_19,                                    10, 22 ;  3
+	map_const ROUTE_20,                                    35,  9 ;  4
+	map_const ROUTE_21,                                    10, 23 ;  5
 	map_const CINNABAR_ISLAND,                             14, 12 ;  6
 	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
@@ -230,7 +230,7 @@ ENDM
 	map_const POWER_PLANT,                                 10,  9 ;  8
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_4,                                     20,  9 ; 10
-	map_const ROUTE_5,                                     10, 12 ; 11
+	map_const ROUTE_5,                                     10, 13 ; 11
 	map_const ROUTE_9,                                     30,  9 ; 12
 	map_const ROUTE_10_NORTH,                              10, 13 ; 13
 	map_const ROUTE_24,                                    11,  9 ; 14
@@ -308,7 +308,7 @@ ENDM
 	endgroup
 
 	newgroup VERMILION                                            ; 12
-	map_const ROUTE_6,                                     10,  9 ;  1
+	map_const ROUTE_6,                                     10, 13 ;  1
 	map_const ROUTE_11,                                    20,  9 ;  2
 	map_const VERMILION_CITY,                              20, 18 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
@@ -343,6 +343,7 @@ ENDM
 	map_const PEWTER_MART,                                  6,  4 ;  5
 	map_const PEWTER_POKECENTER_1F,                         6,  4 ;  6
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  7
+	map_const ROUTE_3_POKECENTER_1F,                        6,  4 ;  8
 	endgroup
 
 	newgroup FAST_SHIP                                            ; 15
@@ -375,13 +376,13 @@ ENDM
 	endgroup
 
 	newgroup FUCHSIA                                              ; 17
-	map_const ROUTE_12,                                    10, 27 ;  1
+	map_const ROUTE_12,                                    10, 31 ;  1
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
 	map_const ROUTE_14,                                    13, 18 ;  4
 	map_const ROUTE_15,                                    20,  9 ;  5
 	map_const ROUTE_16,                                    10, 12 ;  6
-	map_const ROUTE_17,                                    10, 45 ;  7
+	map_const ROUTE_17,                                    10, 49 ;  7
 	map_const ROUTE_18,                                    10,  9 ;  8
 	map_const FUCHSIA_CITY,                                20, 18 ;  9
 	map_const FUCHSIA_MART,                                 6,  4 ; 10
@@ -476,7 +477,7 @@ ENDM
 	endgroup
 
 	newgroup VIRIDIAN                                             ; 23
-	map_const ROUTE_2,                                     10, 27 ;  1
+	map_const ROUTE_2,                                     10, 33 ;  1
 	map_const ROUTE_22,                                    20,  9 ;  2
 	map_const ROUTE_26,                                    10, 54 ;  3	
 	map_const VIRIDIAN_CITY,                               20, 18 ;  4

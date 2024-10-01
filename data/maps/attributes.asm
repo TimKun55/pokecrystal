@@ -239,14 +239,14 @@ ENDM
 
 	map_attributes ViridianCity, VIRIDIAN_CITY, $2f, NORTH | SOUTH | WEST
 	connection north, Route2, ROUTE_2, 5
-	connection south, Route1, ROUTE_1, 9
+	connection south, Route1, ROUTE_1, 5
 	connection west, Route22, ROUTE_22, 4
 
 	map_attributes Route22, ROUTE_22, $45, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -4
 
 	map_attributes Route1, ROUTE_1, $2f, NORTH | SOUTH
-	connection north, ViridianCity, VIRIDIAN_CITY, -9
+	connection north, ViridianCity, VIRIDIAN_CITY, -5
 	connection south, PalletTown, PALLET_TOWN, 0
 
 	map_attributes PalletTown, PALLET_TOWN, $2f, NORTH | SOUTH
@@ -622,6 +622,7 @@ ENDM
 	map_attributes PewterMart, PEWTER_MART, $00, 0
 	map_attributes PewterPokecenter1F, PEWTER_POKECENTER_1F, $00, 0
 	map_attributes PewterSnoozeSpeechHouse, PEWTER_SNOOZE_SPEECH_HOUSE, $00, 0
+	map_attributes Route3Pokecenter1F, ROUTE_3_POKECENTER_1F, $00, 0
 	map_attributes OlivinePort, OLIVINE_PORT, $0a, 0
 	map_attributes VermilionPort, VERMILION_PORT, $0a, 0
 	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0

@@ -197,14 +197,14 @@ Route17_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 17, 82, ROUTE_17_ROUTE_18_GATE, 1
-	warp_event 17, 83, ROUTE_17_ROUTE_18_GATE, 2
+	warp_event 17, 90, ROUTE_17_ROUTE_18_GATE, 1
+	warp_event 17, 91, ROUTE_17_ROUTE_18_GATE, 2
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  8, 55, BGEVENT_ITEM, Route17HiddenMaxEther
-	bg_event  4, 81, BGEVENT_ITEM, Route17HiddenMaxElixer
+	bg_event  4, 89, BGEVENT_ITEM, Route17HiddenMaxElixer
 
 	def_object_events
 	object_event  4, 17, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerRiley, -1

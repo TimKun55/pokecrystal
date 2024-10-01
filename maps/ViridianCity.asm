@@ -222,8 +222,8 @@ ViridianCity_MapEvents:
 	warp_event 22, 19, TRAINER_HOUSE_1F, 1
 	warp_event 29, 19, VIRIDIAN_MART, 2
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
-	warp_event 27, 33, ROUTE_1_VIRIDIAN_GATE, 1
-	warp_event 28, 33, ROUTE_1_VIRIDIAN_GATE, 2
+	warp_event 19, 33, ROUTE_1_VIRIDIAN_GATE, 1
+	warp_event 20, 33, ROUTE_1_VIRIDIAN_GATE, 2
 
 	def_coord_events
 

@@ -315,6 +315,7 @@ MtSilverPokecenter1F_Blocks:
 
 ViridianPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
+Route3Pokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
 VermilionPokecenter1F_Blocks:
 Route10Pokecenter1F_Blocks:

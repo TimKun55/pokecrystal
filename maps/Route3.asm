@@ -8,6 +8,11 @@ Route3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .Flypoint
+
+.Flypoint:
+	setflag ENGINE_FLYPOINT_MT_MOON
+	return
 
 TrainerFirebreatherOtis:
 	trainer FIREBREATHER, OTIS, EVENT_BEAT_FIREBREATHER_OTIS, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
@@ -55,6 +60,9 @@ TrainerFirebreatherBurt:
 
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
+
+Route3MtMoonSign:
+	jumptext Route3MtMoonSignText
 
 FirebreatherOtisSeenText:
 	text "Ah! The weather's"
@@ -124,10 +132,17 @@ FirebreatherBurtAfterBattleText:
 	done
 
 Route3MtMoonSquareSignText:
-	text "Mt.Moon Square"
+	text "Mt. Moon Square"
 
 	para "Just go up the"
 	line "stairs."
+	done
+
+Route3MtMoonSignText:
+	text "Mt. Moon"
+	
+	para "Through to"
+	line "Cerulean City."
 	done
 
 Route3_MapEvents:
@@ -135,14 +150,16 @@ Route3_MapEvents:
 
 	def_warp_events
 	warp_event 52,  1, MOUNT_MOON_1F, 1
+	warp_event 47,  5, ROUTE_3_POKECENTER_1F, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
+	bg_event 51,  3, BGEVENT_READ, Route3MtMoonSign
 
 	def_object_events
 	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
 	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterWarren, -1
 	object_event 16,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJimmy, -1
-	object_event 49,  5, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
+	object_event 37,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
