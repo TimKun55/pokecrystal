@@ -100,6 +100,7 @@ TilesetJohtoAnim:
 TilesetJohto2Anim:
 TilesetJohto3Anim:
 TilesetJohto4Anim:
+TilesetJohtoRuinsAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

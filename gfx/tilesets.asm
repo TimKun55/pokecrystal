@@ -572,3 +572,18 @@ INCBIN "data/tilesets/johto_4_attributes.bin"
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto_2.2bpp.lz"
+
+
+SECTION "Tileset Data 21", ROMX
+
+TilesetJohtoRuinsGFX::
+INCBIN "gfx/tilesets/johto_ruins.2bpp.lz"
+
+TilesetJohtoRuinsMeta::
+INCBIN "data/tilesets/johto_ruins_metatiles.bin"
+
+TilesetJohtoRuinsColl::
+INCLUDE "data/tilesets/johto_ruins_collision.asm"
+
+TilesetJohtoRuinsAttr::
+INCBIN "data/tilesets/johto_ruins_attributes.bin"

@@ -54,4 +54,5 @@ Tilesets::
 	tileset TilesetKanto4
 	tileset TilesetKanto5
 	tileset TilesetKanto6
+	tileset TilesetJohtoRuins
 	assert_table_length NUM_TILESETS + 1
