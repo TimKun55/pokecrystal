@@ -51,6 +51,12 @@ RuinsOfAlphOutsideScientistScene2:
 	turnobject PLAYER, RIGHT
 	sjump RuinsOfAlphOutsideScientistSceneContinue
 
+RuinsOfAlphOutsideScientistScene3:
+	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT
+	turnobject PLAYER, RIGHT
+	applymovement PLAYER, RuinsOfAlphOutsidePlayerMovement
+	sjump RuinsOfAlphOutsideScientistSceneContinue
+
 RuinsOfAlphOutsideScientistScript:
 	faceplayer
 RuinsOfAlphOutsideScientistSceneContinue:
@@ -118,6 +124,10 @@ RuinsOfAlphSign:
 
 RuinsOfAlphResearchCenterSign:
 	jumptext RuinsOfAlphResearchCenterSignText
+
+RuinsOfAlphOutsidePlayerMovement:
+	step RIGHT
+	step_end
 
 RuinsOfAlphOutsideScientistWalkToLabMovement:
 	step RIGHT
@@ -272,29 +282,30 @@ RuinsOfAlphOutside_MapEvents:
 
 	def_warp_events
 	warp_event  2, 17, RUINS_OF_ALPH_HO_OH_CHAMBER, 1
-	warp_event 14,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1
-	warp_event  2, 29, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1
-	warp_event 16, 33, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1
-	warp_event 10, 13, RUINS_OF_ALPH_CAVE_ENTRANCE, 1
-	warp_event 17, 11, RUINS_OF_ALPH_RESEARCH_CENTER, 1
-	warp_event  6, 19, UNION_CAVE_B1F, 1
-	warp_event  6, 27, UNION_CAVE_B1F, 2
+	warp_event 15,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1
+	warp_event  4, 35, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1
+	warp_event 16, 39, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1
+	warp_event 11, 15, RUINS_OF_ALPH_CAVE_ENTRANCE, 1
+	warp_event 17, 13, RUINS_OF_ALPH_RESEARCH_CENTER, 1
+	warp_event  6, 21, UNION_CAVE_B1F, 1
+	warp_event  8, 31, UNION_CAVE_B1F, 2
 	warp_event  7,  5, ROUTE_36_RUINS_OF_ALPH_GATE, 3
-	warp_event 15, 20, ROUTE_32_RUINS_OF_ALPH_GATE, 1
-	warp_event 15, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2
+	warp_event 17, 26, ROUTE_32_RUINS_OF_ALPH_GATE, 1
+	warp_event 17, 27, ROUTE_32_RUINS_OF_ALPH_GATE, 2
 
 	def_coord_events
-	coord_event 11, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1
-	coord_event 10, 15, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2
+	coord_event 12, 16, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1
+	coord_event 11, 17, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2
+	coord_event 10, 17, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene3
 
 	def_bg_events
-	bg_event 16,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign
-	bg_event 12, 16, BGEVENT_READ, RuinsOfAlphSign
-	bg_event 18, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
+	bg_event 13,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign
+	bg_event 12, 18, BGEVENT_READ, RuinsOfAlphSign
+	bg_event 18, 14, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event  4, 20, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1
-	object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
-	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
-	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event  4, 22, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1
+	object_event 12, 17, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
+	object_event 15, 20, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
+	object_event 17, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
