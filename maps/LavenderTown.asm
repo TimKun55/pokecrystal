@@ -3,6 +3,8 @@
 	const LAVENDERTOWN_TEACHER
 	const LAVENDERTOWN_GRAMPS
 	const LAVENDERTOWN_SCHOOLBOY
+	const LAVENDERTOWN_OFFICER1
+	const LAVENDERTOWN_OFFICER2
 
 LavenderTown_MapScripts:
 	def_scene_scripts
@@ -25,6 +27,9 @@ LavenderTownGrampsScript:
 
 LavenderTownSchoolboyScript:
 	jumptextfaceplayer LavenderTownSchoolboyText
+
+LavenderTownOfficerScript:
+	jumptextfaceplayer LavenderTownOfficerText
 
 LavenderTownSign:
 	jumptext LavenderTownSignText
@@ -73,6 +78,16 @@ LavenderTownSchoolboyText:
 
 	para "Every trainer has"
 	line "to know that!"
+	done
+
+LavenderTownOfficerText:
+	text "I'm sorry, we're"
+	line "not letting anyone"
+	cont "through until the"
+	
+	para "incident at the"
+	line "Power Plant is"
+	cont "resolved."
 	done
 
 LavenderTownSignText:
@@ -131,4 +146,6 @@ LavenderTown_MapEvents:
 	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
 	object_event  2, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
 	object_event 15, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
-	object_event  6, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownSchoolboyScript, -1
+	object_event  6, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderTownSchoolboyScript, -1
+	object_event  9, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	object_event 10, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH

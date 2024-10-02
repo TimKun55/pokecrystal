@@ -157,6 +157,7 @@ FuchsiaGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_OFFICER
 	db SPRITE_LADY
 	db SPRITE_LAPRAS_SAFARI
 	db SPRITE_NIDOKING

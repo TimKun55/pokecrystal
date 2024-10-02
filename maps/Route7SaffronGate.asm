@@ -3,34 +3,49 @@
 
 Route7SaffronGate_MapScripts:
 	def_scene_scripts
+	scene_script Route7SaffronGateNoopScene, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK
 
 	def_callbacks
 
+Route7SaffronGateNoopScene:
+	end
+
 Route7SaffronGuardScript:
-	faceplayer
-	opentext
+	jumptextfaceplayer Route7SaffronGuardSeriousText
+
+Route7SaffronGatePowerPlantCheck:
 	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
-	writetext Route7SaffronGuardPowerPlantText
-	waitbutton
-	closetext
+	iffalse .NoPower
 	end
 
-.ReturnedPart:
-	writetext Route7SaffronGuardSeriousText
+.NoPower:
+	showemote EMOTE_SHOCK, ROUTE7SAFFRONGATE_OFFICER, 15
+	turnobject PLAYER, UP
+	opentext
+	writetext Route7SaffronGateCannotPassText
 	waitbutton
 	closetext
+	applymovement PLAYER, Route7SaffronGateCannotPassMovement
 	end
 
-Route7SaffronGuardPowerPlantText:
+Route7SaffronGateCannotPassText:
 	text "Did you hear about"
 	line "the accident at"
 	cont "the Power Plant?"
 
-	para "It's located in"
-	line "the East, close to"
-	cont "Lavender Town."
+	para "I'm under orders"
+	line "to not let anyone"
+	cont "through until"
+	
+	para "the problem is"
+	line "solved."
+	
+	para "Sorry, kid."
 	done
+
+Route7SaffronGateCannotPassMovement:
+	step RIGHT
+	step_end
 
 Route7SaffronGuardSeriousText:
 	text "I take my Guard"
@@ -53,6 +68,8 @@ Route7SaffronGate_MapEvents:
 	warp_event  9,  5, SAFFRON_CITY, 11
 
 	def_coord_events
+	coord_event  5,  4, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK, Route7SaffronGatePowerPlantCheck
+	coord_event  5,  5, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK, Route7SaffronGatePowerPlantCheck
 
 	def_bg_events
 
