@@ -134,7 +134,8 @@ CeladonGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_BIKER
 	db SPRITE_BUG_MANIAC
-	; 7 of max 9 walking sprites
+	db SPRITE_POKEFAN_M
+	; 8 of max 9 walking sprites
 	db SPRITE_POLIWRATH
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE

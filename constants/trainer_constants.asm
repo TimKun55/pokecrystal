@@ -200,6 +200,8 @@ DEF KRIS EQU __trainer_class__
 	const VANCE2
 	const VANCE3
 	const TREY
+	const TEDDY
+	const FRED
 
 	trainerclass LASS ; 19
 	const CARRIE
@@ -282,8 +284,8 @@ DEF KRIS EQU __trainer_class__
 	const JACLYN ; ; Olivine Gym
 	const BRENDA ; Route 26
 	const CASSIE
-	const CAROLINE ; unused
-	const CARLENE ; unused
+	const CAROLINE ; Route 2
+	const CARLENE ; Route 2
 	const JESSICA ; unused
 	const RACHAEL ; unused
 	const ANGELICA ; unused
@@ -539,6 +541,9 @@ DEF KRIS EQU __trainer_class__
 	const RILEY
 	const JOEL
 	const GLENN
+	const ORVILLE
+	const BERT
+	const MANNY
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -565,7 +570,7 @@ DEF KRIS EQU __trainer_class__
 	const FRITZ
 	const HORTON
 	const NEDD ; Mount Moon B2F
-	const IRWIN3 ; unused
+	const ANGUS ; Route 11
 	const IRWIN4 ; unused
 
 	trainerclass BLACKBELT_T ; 32
@@ -643,9 +648,9 @@ DEF KRIS EQU __trainer_class__
 	const TED
 	const TODD2
 	const TODD3
-	const THOMAS ; unused
-	const LEROY ; unused
-	const DAVID ; unused
+	const THOMAS ; Route 2
+	const LEROY ; Route 2
+	const DAVID ; Pewter Gym
 	const JOHN ; unused
 	const JERRY
 	const SPENCER
@@ -698,7 +703,7 @@ DEF KRIS EQU __trainer_class__
 	const BRANDON
 	const JEREMY
 	const COLIN
-	const DEREK2 ; unused
+	const CARLOS ; route 7
 	const DEREK3 ; unused
 	const ALEX
 	const REX

@@ -5,6 +5,9 @@
 	const ROUTE17_BIKER4
 	const ROUTE17_BIKER5
 	const ROUTE17_BIKER6
+	const ROUTE17_BIKER7
+	const ROUTE17_BIKER8
+	const ROUTE17_BIKER9
 
 Route17_MapScripts:
 	def_scene_scripts
@@ -15,7 +18,7 @@ Route17_MapScripts:
 Route17AlwaysOnBikeCallback:
 	setflag ENGINE_ALWAYS_ON_BIKE
 ;	readvar VAR_YCOORD
-;	ifgreater 81, .NoDownhill
+;	ifgreater 90, .NoDownhill
 	setflag ENGINE_DOWNHILL
 	endcallback
 
@@ -85,6 +88,39 @@ TrainerBikerKazu:
 	endifjustbattled
 	opentext
 	writetext BikerKazuAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerOrville:
+	trainer BIKER, ORVILLE, EVENT_BEAT_BIKER_ORVILLE, BikerOrvilleSeenText, BikerOrvilleBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BikerOrvilleAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerBert:
+	trainer BIKER, BERT, EVENT_BEAT_BIKER_BERT, BikerBertSeenText, BikerBertBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BikerBertAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerManny:
+	trainer BIKER, MANNY, EVENT_BEAT_BIKER_MANNY, BikerMannySeenText, BikerMannyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BikerMannyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -193,6 +229,51 @@ BikerKazuAfterBattleText:
 	line "off before."
 	done
 
+BikerOrvilleSeenText:
+	text "Let's ride!"
+	done
+
+BikerOrvilleBeatenText:
+	text "We rode!"
+	done
+
+BikerOrvilleAfterBattleText:
+	text "Nothing beats"
+	line "biking around!"
+	done
+
+BikerBertSeenText:
+	text "My legs are like"
+	line "granite!"
+	done
+
+BikerBertBeatenText:
+	text "Woah, stronger"
+	line "than granite?!"
+	done
+
+BikerBertAfterBattleText:
+	text "I train by riding"
+	line "up and down, each"
+	cont "and every day."
+	done
+
+BikerMannySeenText:
+	text "Vroom, Vroom!"
+	line "The Biker's Life"
+	cont "for me!"
+	done
+
+BikerMannyBeatenText:
+	text "Woah! Zoomed past!"
+	done
+
+BikerMannyAfterBattleText:
+	text "Man, I wish there"
+	line "was an engine, or"
+	cont "a bike #mon."
+	done
+
 Route17_MapEvents:
 	db 0, 0 ; filler
 
@@ -208,8 +289,12 @@ Route17_MapEvents:
 
 	def_object_events
 	object_event  4, 17, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerRiley, -1
-	object_event  6, 70, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBikerJoel, -1
+	object_event 18, 66, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBikerJoel, -1
 	object_event 16, 44, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerGlenn, -1
 	object_event  7, 80, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1
 	object_event  1, 33, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerBenny, -1
 	object_event 17, 12, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerKazu, -1
+	object_event 13, 27, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerOrville, -1
+	object_event  6, 47, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerBert, -1
+	object_event  3, 63, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerManny, -1
+

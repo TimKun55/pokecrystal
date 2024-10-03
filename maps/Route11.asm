@@ -3,6 +3,7 @@
 	const ROUTE11_YOUNGSTER2
 	const ROUTE11_YOUNGSTER3
 	const ROUTE11_YOUNGSTER4
+	const ROUTE11_SUPER_NERD
 	const ROUTE11_BIG_SNORLAX
 	const ROUTE11_FRUIT_TREE
 
@@ -51,6 +52,17 @@ TrainerPsychicFidel:
 	endifjustbattled
 	opentext
 	writetext PsychicFidelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerJugglerAngus:
+	trainer JUGGLER, ANGUS, EVENT_BEAT_JUGGLER_ANGUS, JugglerAngusSeenText, JugglerAngusBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext JugglerAngusAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -165,6 +177,20 @@ PsychicFidelAfterBattleText:
 	cont "in your #mon."
 	done
 
+JugglerAngusSeenText:
+	text "Round and round"
+	line "they go!"
+	done
+
+JugglerAngusBeatenText:
+	text "Oh, they stopped."
+	done
+
+JugglerAngusAfterBattleText:
+	text "I need more"
+	line "concentration…"
+	done
+
 Route11SnorlaxSleepingText:
 	text "Snorlax is snoring"
 	line "peacefully…"
@@ -208,5 +234,6 @@ Route11_MapEvents:
 	object_event 21,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJason, -1
 	object_event 30,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicHerman, -1
 	object_event  9,  5, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFidel, -1
+	object_event 11, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerAngus, -1
 	object_event  3,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11Snorlax, EVENT_ROUTE_11_SNORLAX
 	object_event 34, 13, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

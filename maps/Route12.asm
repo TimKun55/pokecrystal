@@ -3,6 +3,8 @@
 	const ROUTE12_FISHER2
 	const ROUTE12_FISHER3
 	const ROUTE12_FISHER4
+	const ROUTE12_BIRD_KEEPER1
+	const ROUTE12_BIRD_KEEPER2
 	const ROUTE12_POKE_BALL1
 	const ROUTE12_POKE_BALL2
 
@@ -51,6 +53,28 @@ TrainerFisherBarney:
 	endifjustbattled
 	opentext
 	writetext FisherBarneyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBirdKeeperTeddy:
+	trainer BIRD_KEEPER, TEDDY, EVENT_BEAT_BIRD_KEEPER_TEDDY, BirdKeeperTeddySeenText, BirdKeeperTeddyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperTeddyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBirdKeeperFred:
+	trainer BIRD_KEEPER, FRED, EVENT_BEAT_BIRD_KEEPER_FRED, BirdKeeperFredSeenText, BirdKeeperFredBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperFredAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -153,6 +177,43 @@ FisherKyleAfterBattleText:
 	cont "an angler like me."
 	done
 
+BirdKeeperTeddySeenText:
+	text "Check out my"
+	line "awesome birds!"
+	done
+
+BirdKeeperTeddyBeatenText:
+	text "My awesome birds!"
+	done
+
+BirdKeeperTeddyAfterBattleText:
+	text "No matter the time"
+	line "of day, I'm always"
+
+	para "looking out for"
+	line "bird #mon."
+	done
+
+BirdKeeperFredSeenText:
+	text "Do you know about"
+	line "the Society?"
+	done
+
+BirdKeeperFredBeatenText:
+	text "My membership!"
+	done
+
+BirdKeeperFredAfterBattleText:
+	text "I'm a member of"
+	line "the Avicultural"
+
+	para "Society in Saffron"
+	line "City!"
+	
+	para "I'm collecting"
+	line "data for them."
+	done
+
 Route12SignText:
 	text "Route 12"
 
@@ -185,5 +246,7 @@ Route12_MapEvents:
 	object_event 14, 31, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherStephen, -1
 	object_event 10, 46, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerFisherBarney, -1
 	object_event  5, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherKyle, -1
+	object_event 11, 25, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperTeddy, -1
+	object_event 15, 56, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperFred, -1
 	object_event  5, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Calcium, EVENT_ROUTE_12_CALCIUM
 	object_event  5, 59, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Nugget, EVENT_ROUTE_12_NUGGET

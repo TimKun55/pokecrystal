@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE7_BUG_MANIAC
+	const ROUTE7_POKEFAN_M
 
 Route7_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,17 @@ TrainerBugManiacEli:
 	endifjustbattled
 	opentext
 	writetext BugManiacEliAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanMCarlos:
+	trainer POKEFANM, CARLOS, EVENT_BEAT_POKEFANM_CARLOS, PokefanMCarlosSeenText, PokefanMCarlosBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokefanMCarlosAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -40,6 +52,23 @@ BugManiacEliAfterBattleText:
 	
 	para "have goals to"
 	line "work towards!"
+	done
+
+PokefanMCarlosSeenText:
+	text "Look at how cute"
+	line "my #mon are!"
+	done
+
+PokefanMCarlosBeatenText:
+	text "My cuties!"
+	done
+
+PokefanMCarlosAfterBattleText:
+	text "I should go to"
+	line "the Fan Club in"
+	
+	para "Vermilion and show"
+	line "off my #mon!"
 	done
 
 Route7UndergroundPathSignText:
@@ -80,3 +109,4 @@ Route7_MapEvents:
 
 	def_object_events
 	object_event  6,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1
+	object_event 15, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerPokefanMCarlos, -1

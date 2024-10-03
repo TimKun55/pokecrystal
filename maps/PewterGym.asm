@@ -1,7 +1,8 @@
 	object_const_def
 	const PEWTERGYM_BROCK
 	const PEWTERGYM_ONIX
-	const PEWTERGYM_YOUNGSTER
+	const PEWTERGYM_YOUNGSTER1
+	const PEWTERGYM_YOUNGSTER2
 	const PEWTERGYM_GYM_GUIDE
 
 PewterGym_MapScripts:
@@ -87,6 +88,17 @@ TrainerCamperJerry:
 	endifjustbattled
 	opentext
 	writetext CamperJerryAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperDavid:
+	trainer CAMPER, DAVID, EVENT_BEAT_CAMPER_DAVID, CamperDavidSeenText, CamperDavidBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CamperDavidAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -238,6 +250,20 @@ CamperJerryAfterBattleText:
 	line "seriously."
 	done
 
+CamperDavidSeenText:
+	text "We will rock you!"
+	done
+
+CamperDavidBeatenText:
+	text "You've got mud"
+	line "on your face."
+	done
+
+CamperDavidAfterBattleText:
+	text "I lost;"
+	line "big disgrace."
+	done
+
 PewterGymGuideText:
 	text "Yo! Champ in"
 	line "making! You're"
@@ -291,4 +317,5 @@ PewterGym_MapEvents:
 	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
 	object_event  4,  1, SPRITE_ONIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, PewterGymOnix, -1
 	object_event  2,  5, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
+	object_event  7,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperDavid, -1
 	object_event  7, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1
