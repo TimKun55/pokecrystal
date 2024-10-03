@@ -685,7 +685,6 @@ ForretressFrontpic:  INCBIN "gfx/pokemon/forretress/front.animated.2bpp.lz"
 DragonairFrontpic:   INCBIN "gfx/pokemon/dragonair/front.animated.2bpp.lz"
 MagnetonFrontpic:    INCBIN "gfx/pokemon/magneton/front.animated.2bpp.lz"
 DugtrioFrontpic:     INCBIN "gfx/pokemon/dugtrio/front.animated.2bpp.lz"
-CyndaquilFrontpic:   INCBIN "gfx/pokemon/cyndaquil/front.animated.2bpp.lz"
 
 
 SECTION "Pics 20", ROMX
@@ -712,6 +711,7 @@ JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 PorygonBackpic:      INCBIN "gfx/pokemon/porygon/back.2bpp.lz"
 VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 GloomFrontpic:       INCBIN "gfx/pokemon/gloom/front.animated.2bpp.lz"
+CyndaquilFrontpic:   INCBIN "gfx/pokemon/cyndaquil/front.animated.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 
