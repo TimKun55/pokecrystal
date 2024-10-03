@@ -1203,18 +1203,22 @@ LowerEVBerryEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
-
+	
+	ld a, MON_HAPPINESS
+    call GetPartyParamLocation
+	ld a, [hl]
+	inc a
+	push af
+;SetUpEVModifier
 	call RareCandy_StatBooster_GetParameters
-
 	call GetEVRelativePointer
-
     ld a, MON_EVS
     call GetPartyParamLocation
 	
 	add hl, bc
 	pop af
 	or [hl]
-    jp nc, NoEffectMessage
+    jp z, NoEffectMessage
 
 	ld a, [hl]
 	sub 10
@@ -1224,9 +1228,10 @@ LowerEVBerryEffect:
 .ev_value_ok
 	ld [hl], a
 	call UpdateStatsAfterItem
-
+	ld c, HAPPINESS_USEDEVBERRY
+	farcall ChangeHappiness
+; GetStatStringAndPlayFullHealSFX
     call GetEVRelativePointer
-
 	ld hl, StatStrings
 	add hl, bc
 	add hl, bc
@@ -1236,16 +1241,15 @@ LowerEVBerryEffect:
 	ld de, wStringBuffer2
 	ld bc, ITEM_NAME_LENGTH
 	call CopyBytes
-
 	call Play_SFX_FULL_HEAL
 	
 	ld hl, ItemHappinessRoseButStatFellText
 	call PrintText
-
-	ld c, HAPPINESS_USEDEVBERRY
-	farcall ChangeHappiness
-
 	jp UseDisposableItem
+
+ItemHappinessRoseButStatFellText:
+	text_far _ItemHappinessRoseButStatFellText
+	text_end
 
 VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1321,10 +1325,6 @@ ItemStatRoseText:
 	text_far _ItemStatRoseText
 	text_end
 
-ItemHappinessRoseButStatFellText:
-	text_far _ItemHappinessRoseButStatFellText
-	text_end
-
 StatStrings:
 	dw .health
 	dw .attack
@@ -1363,7 +1363,7 @@ EVItemPointerOffsets:
 	db CARBOS,  MON_SPD_EV - MON_EVS
 	db CALCIUM, MON_SAT_EV - MON_EVS
 	db ZINC,    MON_SDF_EV - MON_EVS
-	db POMEG_BERRY,  MON_HP_EV - MON_EVS
+	db POMEG_BERRY,   MON_HP_EV - MON_EVS
 	db KELPSY_BERRY, MON_ATK_EV - MON_EVS
 	db QUALOT_BERRY, MON_DEF_EV - MON_EVS
 	db HONDEW_BERRY, MON_SAT_EV - MON_EVS
