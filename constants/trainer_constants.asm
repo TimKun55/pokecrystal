@@ -429,8 +429,8 @@ DEF KRIS EQU __trainer_class__
 	const MATHEW
 	const HAL ; Route 20
 	const PATON ; Route 20
-	const DARYL ; unused
-	const WALTER ; unused
+	const DARYL ; Route 21
+	const WALTER ; Route 19
 	const TONY ; unused
 	const JEROME
 	const TUCKER
@@ -449,8 +449,8 @@ DEF KRIS EQU __trainer_class__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA ; unused
-	const JILL ; unused
+	const LISA ; Route 21
+	const JILL ; Route 19
 	const MARY ; unused
 	const KATIE ; unused
 	const DAWN

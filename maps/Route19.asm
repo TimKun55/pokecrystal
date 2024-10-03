@@ -1,8 +1,10 @@
 	object_const_def
-	const ROUTE19_SWIMMER_GIRL
+	const ROUTE19_SWIMMER_GIRL1
+	const ROUTE19_SWIMMER_GIRL2
 	const ROUTE19_SWIMMER_GUY1
 	const ROUTE19_SWIMMER_GUY2
 	const ROUTE19_SWIMMER_GUY3
+	const ROUTE19_SWIMMER_GUY4
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
 
@@ -31,6 +33,17 @@ TrainerSwimmerfDawn:
 	endifjustbattled
 	opentext
 	writetext SwimmerfDawnAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfJill:
+	trainer SWIMMERF, JILL, EVENT_BEAT_SWIMMERF_JILL, SwimmerfJillSeenText, SwimmerfJillBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmerfJillAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -64,6 +77,17 @@ TrainerSwimmermTucker:
 	endifjustbattled
 	opentext
 	writetext SwimmermTuckerAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermWalter:
+	trainer SWIMMERM, WALTER, EVENT_BEAT_SWIMMERM_WALTER, SwimmermWalterSeenText, SwimmermWalterBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmermWalterAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -145,6 +169,24 @@ SwimmermTuckerAfterBattleText:
 	cont "Fuchsia… Gasp…"
 	done
 
+SwimmermWalterSeenText:
+	text "I'm great at"
+	line "swimming, but how"
+
+	para "about we try"
+	line "a battle?"
+	done
+
+SwimmermWalterBeatenText:
+	text "Ahh, a defeat!"
+	done
+
+SwimmermWalterAfterBattleText:
+	text "One day…"
+	line "One day, I'll get"
+	cont "a date with Misty!"
+	done
+
 SwimmerfDawnSeenText:
 	text "I'm disgusted by"
 	line "wimpy people!"
@@ -166,6 +208,24 @@ SwimmerfDawnAfterBattleText:
 	line "man my boyfriend"
 
 	para "is! What a wimp!"
+	done
+
+SwimmerfJillSeenText:
+	text "I get up every day"
+	line "at 5am to train!"
+	done
+
+SwimmerfJillBeatenText:
+	text "I need to wake"
+	line "up earlier…"
+	done
+
+SwimmerfJillAfterBattleText:
+	text "If I get up at 5am"
+	line "and you beat me,"
+
+	para "what time do you"
+	line "wake up?!"
 	done
 
 SwimmermJeromeSeenText:
@@ -249,9 +309,11 @@ Route19_MapEvents:
 
 	def_object_events
 	object_event  9, 27, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerSwimmerfDawn, -1
-	object_event 15, 40, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermHarold, -1
+	object_event 15, 35, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfJill, -1
+	object_event  3, 38, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermHarold, -1
 	object_event 11, 17, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermJerome, -1
 	object_event  8, 27, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
+	object_event  3, 20, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermWalter, -1
 	object_event  9,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  3, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
 	object_event 13,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route19Rock, -1
