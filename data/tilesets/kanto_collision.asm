@@ -210,3 +210,6 @@
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; d1
 	tilecoll WALL, WALL, WALL, WALL ; d2
 	tilecoll WALL, WALL, WALL, WALL ; d3
+	tilecoll WALL, WALL, WALL, WALL ; d4
+	tilecoll WALL, WALL, WALL, WALL ; d5
+	tilecoll WALL, WALL, WALL, WALL ; d6
