@@ -213,3 +213,7 @@
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d4
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d5
 	tilecoll FLOOR, WALL, FLOOR, WALL ; d6
+	tilecoll WALL, WALL, WALL, WALL ; d7
+	tilecoll WALL, FLOOR, WALL, FLOOR ; d8
+	tilecoll WALL, WALL, WALL, WALL ; d9
+	tilecoll FLOOR, WALL, FLOOR, WALL ; da
