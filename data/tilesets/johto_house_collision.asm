@@ -77,7 +77,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4c
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 4d
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 4e
-	tilecoll WINDOW, WALL, WALL, WALL ; 4f
+	tilecoll WINDOW, TOWN_MAP, WALL, FLOOR ; 4f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 50
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 51
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 52
@@ -86,11 +86,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 56
 	tilecoll FLOOR, WALL, WALL, WALL ; 57
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 58
+	tilecoll WALL, FLOOR, WALL, WALL ; 58
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 59
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 5b
-	tilecoll WALL, WALL, WALL, WALL ; 5c
+	tilecoll WALL, FLOOR, WALL, WALL ; 5c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5d
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 5e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 5f
@@ -111,3 +111,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; 6e
 	tilecoll WALL, WINDOW, FLOOR, FLOOR ; 6f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 70
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 71
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 72

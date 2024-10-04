@@ -167,7 +167,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; a6
 	tilecoll WALL, WALL, WALL, FLOOR ; a7
 	tilecoll WALL, WALL, WALL, WALL ; a8
-	tilecoll WALL, WALL, WALL, WALL ; a9
+	tilecoll WALL, WALL, WALL, WARP_CARPET_DOWN ; a9
 	tilecoll WALL, WALL, WALL, WALL ; aa
 	tilecoll WALL, FLOOR, WALL, FLOOR ; ab
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ac

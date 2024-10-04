@@ -542,6 +542,7 @@ INCLUDE "maps/SeafoamIslandsB4F.asm"
 INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 INCLUDE "maps/SlowpokeWellEntrance.asm"
 INCLUDE "maps/MountMoonB1F.asm"
+INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
 
 
 ENDSECTION

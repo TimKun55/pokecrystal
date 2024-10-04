@@ -281,6 +281,7 @@ GoldenrodGroupSprites:
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
+	db SPRITE_FRUIT_TREE
 	db SPRITE_WHITNEY
 	db 0 ; end
 

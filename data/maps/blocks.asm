@@ -1075,4 +1075,7 @@ MountMoonB2F_Blocks:
 EarlsPokemonAcademyB1F_Blocks:
 	INCBIN "maps/EarlsPokemonAcademyB1F.ablk"
 
+GoldenrodFlowerShopGarden_Blocks:
+	INCBIN "maps/GoldenrodFlowerShopGarden.ablk"
+
 ENDSECTION

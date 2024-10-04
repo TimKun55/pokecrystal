@@ -205,7 +205,8 @@
 	const EVENT_UNION_CAVE_B2F_WOOPER_ENCOUNTERED
 	const EVENT_ROUTE_45_GLIGAR_ENCOUNTERED
 	const EVENT_GRAND_CHAMPION
-; Unused: next 50 events
+	const EVENT_FLOWER_SHOP_UNLOCKED_DOOR
+; Unused: next 49 events
 
 	const_next 250
 ; Kanto story events

@@ -7,10 +7,20 @@ GoldenrodFlowerShop_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, FlowerShopCheckUnlockedDoorCallback
+
+FlowerShopCheckUnlockedDoorCallback:
+	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
+	iffalse .LockDoor
+	endcallback
+
+.LockDoor
+	changeblock 6, 0, $72 ; locked door
+	endcallback
 
 FlowerShopTeacherScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .Lalala
+	iftrue .EVBerry
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle
 	checkevent EVENT_MET_FLORIA
@@ -28,6 +38,29 @@ FlowerShopTeacherScript:
 	closetext
 	setevent EVENT_FLORIA_AT_SUDOWOODO
 	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
+	end
+
+.EVBerry
+	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
+	iftrue .Lalala
+	faceplayer
+	opentext
+	writetext FlowerShopHiddenGardenText
+	waitbutton
+	closetext
+	applymovement PLAYER, FlowerShopPlayerMovement1
+	turnobject PLAYER, UP
+	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementToDoor
+	playsound SFX_TRANSACTION
+	changeblock 6, 0, $71 ; unlocked door
+	reloadmappart
+	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementFromDoor
+	opentext
+	writetext FlowerShopHiddenGardenUseText
+	waitbutton
+	closetext
+	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementLast
+	setevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	end
 
 .Lalala:
@@ -86,6 +119,37 @@ FlowerShopBellossomScript:
 	closetext
 	end
 
+FlowerShopPlayerMovement1:
+	step DOWN
+	step_end
+
+FlowerShopTeacherMovementToDoor:
+	step RIGHT
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+FlowerShopTeacherMovementFromDoor:
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+	
+FlowerShopTeacherMovementLast:
+	step LEFT
+	step_end
+
 GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 	text "Have you seen that"
 	line "wiggly tree that's"
@@ -126,6 +190,30 @@ GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	text "Don't do anything"
 	line "too dangerous!"
+	done
+
+FlowerShopHiddenGardenText:
+	text "You're such a"
+	line "helpful young"
+	
+	para "person, I'd like"
+	line "to reward you."
+	
+	para "I grow some very"
+	line "rare Berries in"
+	
+	para "my garden, feel"
+	line "free to pick them"
+	cont "when you want!"
+	
+	para "I'll unlock the"
+	line "door for you."
+	done
+
+FlowerShopHiddenGardenUseText:
+	text "I hope you find"
+	line "a good use for"
+	cont "them all!"
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
@@ -169,13 +257,14 @@ GoldenrodFlowerShop_MapEvents:
 	def_warp_events
 	warp_event  2,  7, GOLDENROD_CITY, 6
 	warp_event  3,  7, GOLDENROD_CITY, 6
+	warp_event  7,  0, GOLDENROD_FLOWER_SHOP_GARDEN, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
+	object_event  1,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
 	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
-	object_event  5,  1, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopBellossomScript, -1
+	object_event  6,  1, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopBellossomScript, -1
 	

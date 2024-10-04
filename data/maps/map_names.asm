@@ -339,6 +339,7 @@ Goldenrod_Map_Names: ;newgroup GOLDENROD									; 11
 	dw Goldenrod_Map_Name25 ; map_const GOLDENROD_HOME_DECOR_STORE_2F		; 25
 	dw Goldenrod_Map_Name26 ; map_const GOLDENROD_HOME_DECOR_STORE_3F		; 26
 	dw Goldenrod_Map_Name27 ; map_const GOLDENROD_HOME_DECOR_STORE_4F		; 27
+	dw Goldenrod_Map_Name28 ; map_const GOLDENROD_FLOWER_SHOP_GARDEN		; 28
 	assert_table_length NUM_GOLDENROD_MAPS
 
 Vermilion_Map_Names: ;newgroup VERMILION									; 12
@@ -1100,6 +1101,8 @@ Goldenrod_Map_Name26: ; map_const GOLDENROD_HOME_DECOR_STORE_3F ; 26
 	db "Gold.DecorStore 3F@"
 Goldenrod_Map_Name27: ; map_const GOLDENROD_HOME_DECOR_STORE_4F ; 27 
 	db "Gold.DecorStore 4F@"
+Goldenrod_Map_Name28: ; map_const GOLDENROD_FLOWER_SHOP_GARDEN ;  28
+	db "Flower Shop Garden@"
 
 Vermilion_Map_Name1: ; map_const ROUTE_6,;  1
 	db "Route 6@"
