@@ -137,7 +137,6 @@ RuinsOfAlphOutsideScientistWalkToLabMovement:
 	step UP
 	step UP
 	step RIGHT
-	step RIGHT
 	step UP
 	step UP
 	step_end
@@ -148,7 +147,7 @@ RuinsOfAlphOutsidePlayerEnterLabMovement:
 
 RuinsOfAlphOutsideScientistText:
 	text "Hm? That's a #-"
-	line "DEX, isn't it?"
+	line "Dex, isn't it?"
 	cont "May I see it?"
 
 	para "There are so many"
