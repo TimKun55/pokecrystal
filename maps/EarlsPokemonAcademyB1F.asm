@@ -58,15 +58,15 @@ EarlsPokemonAcademyCarla: ; Def
 	closetext
 	end
 
-EarlsPokemonAcademyKat: ; SpAtk
+EarlsPokemonAcademyCatt: ; SpAtk
 	faceplayer
 	opentext
-	writetext EarlsPokemonAcademyKatText
+	writetext EarlsPokemonAcademyCattText
 	yesorno
 	iffalse .NoBattle
 	closetext
 	winlosstext CooltrainerWinLossText, 0
-	loadtrainer COOLTRAINERF, KAT
+	loadtrainer COOLTRAINERF, CATT
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -185,7 +185,7 @@ EarlsPokemonAcademyCarlaText:
 	para "Want to battle?"
 	done
 
-EarlsPokemonAcademyKatText:
+EarlsPokemonAcademyCattText:
 	text "I specialise in"
 	line "training Special"
 	cont "Attack."
@@ -282,8 +282,8 @@ EarlsPokemonAcademyB1F_MapEvents:
 	def_object_events
 	object_event  1,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyTyler, -1
 	object_event 12,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademySteve, -1
-	object_event 11,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyJamie, -1
+	object_event 11,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyJamie, -1
 	object_event  4,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCarla, -1
-	object_event  9,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyKat, -1
-	object_event  2,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyPam, -1
+	object_event  9,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCatt, -1
+	object_event  2,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyPam, -1
 	object_event  6,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, EarlsPokemonAcademyTeacher, -1
