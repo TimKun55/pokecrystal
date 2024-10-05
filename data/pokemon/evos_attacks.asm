@@ -4303,6 +4303,7 @@ MismagiusEvosAttacks:
 	db 1, SHADOW_BALL
 	db 1, DARK_PULSE
 	db 1, DAZZLINGLEAM
+	db 1, PAIN_SPLIT
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
