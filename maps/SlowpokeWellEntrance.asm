@@ -43,7 +43,7 @@ SlowpokeWellEntrance_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 7, AZALEA_TOWN, 6
+	warp_event 11,  7, AZALEA_TOWN, 6
 	warp_event  7, 5, SLOWPOKE_WELL_B1F, 1
 
 	def_coord_events

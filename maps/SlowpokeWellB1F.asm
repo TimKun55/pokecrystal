@@ -288,7 +288,7 @@ SlowpokeWellB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 17, 15, SLOWPOKE_WELL_ENTRANCE, 2
+	warp_event 15, 15, SLOWPOKE_WELL_ENTRANCE, 2
 	warp_event  7, 11, SLOWPOKE_WELL_B2F, 1
 
 	def_coord_events

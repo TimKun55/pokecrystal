@@ -386,6 +386,7 @@ DungeonsGroupSprites:
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_PERSIAN
 	db SPRITE_LADY
+	db SPRITE_KURT
 	db SPRITE_POKE_BALL
 	db 0 ; end
 

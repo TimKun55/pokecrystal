@@ -161,7 +161,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; a0
 	tilecoll WALL, WALL, WALL, WALL ; a1
 	tilecoll WALL, WALL, WALL, WALL ; a2
-	tilecoll WALL, WALL, CAVE, WALL ; a3
+	tilecoll WALL, WALL, WALL, CAVE ; a3
 	tilecoll WALL, WALL, WALL, WALL ; a4
 	tilecoll WALL, WALL, WALL, WALL ; a5
 	tilecoll WALL, WALL, WALL, WALL ; a6
