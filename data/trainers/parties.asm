@@ -1214,12 +1214,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (15)
 	db "Tyler@", TRAINERTYPE_NORMAL
-	db 6, MACHOP
-	db 6, GROWLITHE
-	db 6, EKANS
-	db 6, TEDDIURSA
-	db 6, GOLDEEN
-	db 6, LARVITAR
+	db 5, GROWLITHE
+	db 5, GROWLITHE
+	db 5, EKANS
+	db 5, EKANS
+	db 5, TEDDIURSA
+	db 5, TEDDIURSA
 	db -1 ; end
 
 	; COOLTRAINERM (16)
@@ -1239,12 +1239,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (18)
 	db "Steve@", TRAINERTYPE_NORMAL
-	db 6, VENONAT
-	db 6, SEEL
-	db 6, DROWZEE
-	db 6, HOPPIP
-	db 6, LEDYBA
-	db 6, EEVEE
+	db 5, VENONAT
+	db 5, VENONAT
+	db 5, DROWZEE
+	db 5, DROWZEE
+	db 5, HOPPIP
+	db 5, HOPPIP
 	db -1 ; end
 
 	; COOLTRAINERM (19)
@@ -1261,12 +1261,12 @@ CooltrainerMGroup:
 	
 	; COOLTRAINERM (21)
 	db "Jamie@", TRAINERTYPE_NORMAL
-	db 6, PIDGEY
-	db 6, VULPIX
-	db 6, DIGLETT
-	db 6, AIPOM
-	db 6, DELIBIRD
-	db 6, MURKROW
+	db 5, PIDGEY
+	db 5, PIDGEY
+	db 5, VULPIX
+	db 5, VULPIX
+	db 5, DELIBIRD
+	db 5, DELIBIRD
 	db -1 ; end
 
 CooltrainerFGroup:
@@ -1402,32 +1402,32 @@ CooltrainerFGroup:
 	
 	; COOLTRAINERF (22)
 	db "Carla@", TRAINERTYPE_NORMAL
-	db 6, SHELLDER
-	db 6, SANDSHREW
-	db 6, CORSOLA
-	db 6, EXEGGCUTE
-	db 6, PINECO
-	db 6, TANGELA
+	db 5, SANDSHREW
+	db 5, SANDSHREW
+	db 5, CORSOLA
+	db 5, CORSOLA
+	db 5, EXEGGCUTE
+	db 5, EXEGGCUTE
 	db -1 ; end
 	
 	; COOLTRAINERF (23)
 	db "Catt@", TRAINERTYPE_NORMAL
-	db 6, PSYDUCK
-	db 6, NATU
-	db 6, HOUNDOUR
-	db 6, ODDISH
-	db 6, MAREEP
-	db 6, PORYGON
+	db 5, PSYDUCK
+	db 5, PSYDUCK
+	db 5, NATU
+	db 5, NATU
+	db 5, MAREEP
+	db 5, MAREEP
 	db -1 ; end
 
 	; COOLTRAINERF (24)
 	db "Pam@", TRAINERTYPE_NORMAL
-	db 6, SLOWPOKE
-	db 6, GRIMER
-	db 6, DITTO
-	db 6, WOOPER
-	db 6, DUNSPARCE
-	db 6, PHANPY
+	db 5, SLOWPOKE
+	db 5, SLOWPOKE
+	db 5, WOOPER
+	db 5, WOOPER
+	db 5, PHANPY
+	db 5, PHANPY
 	db -1 ; end
 
 BeautyGroup:
