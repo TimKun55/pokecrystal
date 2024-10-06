@@ -73,4 +73,5 @@ AnimBallObjGFX:
 	dbw PARK_BALL, 		AnimObjParkBallGFX
 	dbw DUSK_BALL,      AnimObjDuskBallGFX
 	dbw NET_BALL, 		AnimObjNetBallGFX
+	dbw PREMIER_BALL,   AnimObjPremierBallGFX
 	dbw -1, 			AnimObjPokeBallGFX ; failsafe

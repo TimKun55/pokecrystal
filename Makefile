@@ -283,6 +283,7 @@ gfx/battle_balls/love_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/park_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/dusk_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 gfx/battle_balls/net_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
+gfx/battle_balls/premier_ball.2bpp: tools/gfx += --remove-xflip --keep-whitespace
 
 gfx/player/ethan.2bpp: rgbgfx += --columns
 gfx/player/ethan_back.2bpp: rgbgfx += --columns

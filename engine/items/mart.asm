@@ -523,18 +523,13 @@ BuyMenuLoop:
 	call SpeechTextbox
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
-	jr z, .set_carry
-	cp A_BUTTON
-	jr z, .useless_pointer
-
-.useless_pointer
+	jp z, .set_carry
 	call MartAskPurchaseQuantity
 	jr c, .cancel
 	call MartConfirmPurchase
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	ld a, 3 ; useless load
 	call CompareMoney
 	jr c, .insufficient_funds
 	ld hl, wNumItems
@@ -553,11 +548,34 @@ BuyMenuLoop:
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call JoyWaitAorB
-
+	farcall CheckItemPocket
+	ld a, [wItemAttributeValue]
+	cp BALL
+	jr nz, .cancel
+	ld a, [wItemQuantityChange]
+	cp 10
+	jr c, .cancel
+	ld a, PREMIER_BALL
+	ld [wCurItem], a
+	ld a, [wItemQuantityChange]
+	ld c, 10
+	call SimpleDivide
+	ld a, b
+	ld [wItemQuantityChange], a
+	ld hl, wNumItems
+	call ReceiveItem
+	jr nc, .cancel
+	ld hl, .PremierBallText
+	call PrintText
+	call JoyWaitAorB
 .cancel
 	call SpeechTextbox
 	and a
 	ret
+
+.PremierBallText
+	text_far _MartPremierBallText
+	text_end
 
 .set_carry
 	scf

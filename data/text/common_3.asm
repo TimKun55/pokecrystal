@@ -1583,3 +1583,9 @@ _MumLostGearBookletText::
 	para "Come back again in"
 	line "a while."
 	prompt
+
+_MartPremierBallText::
+	text "You also get a"
+	line "Premier Ball as"
+	cont "an added bonus."
+	done

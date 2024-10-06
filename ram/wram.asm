@@ -3000,7 +3000,7 @@ endr
 wStoneTableAddress:: dw
 
 ;	ds 40
-	ds 10
+	ds 8
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0

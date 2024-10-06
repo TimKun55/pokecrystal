@@ -153,7 +153,7 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama25Desc
+	dw PremierBallDesc
 	dw TeruSama25Desc
 	dw TeruSama25Desc
 	dw SacredAshDesc
@@ -859,6 +859,10 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Boosts offense but"
 	next "causes confusion.@"
+
+PremierBallDesc:
+	db   "A rare, commemor-"
+	next "ative Ball.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

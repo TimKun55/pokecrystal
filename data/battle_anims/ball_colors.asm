@@ -56,6 +56,10 @@ BallColors:
 	db NET_BALL
 	RGB 06, 27, 27
 	RGB 14, 14, 14
+
+	db PREMIER_BALL
+	RGB 31, 31, 31
+	RGB 31, 00, 00
 	
 	db -1 ; end
 	RGB 31 , 31, 31
