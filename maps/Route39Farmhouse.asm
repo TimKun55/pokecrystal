@@ -1,4 +1,5 @@
-DEF ROUTE39FARMHOUSE_MILK_PRICE EQU 5500
+DEF ROUTE39FARMHOUSE_MILK_PRICE_SINGLE EQU 500
+DEF ROUTE39FARMHOUSE_MILK_PRICE_DOZEN EQU 6000
 
 	object_const_def
 	const ROUTE39FARMHOUSE_POKEFAN_M
@@ -25,19 +26,61 @@ FarmerMScript_SellMilk:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse FarmerMScript_NoSale
-	checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
-	ifequal HAVE_LESS, FarmerMScript_NoMoney
-	giveitem MOOMOO_MILK, 12
-	iffalse FarmerMScript_NoRoom
-	takemoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE
+
+.loop
+	writetext FarmerMText_WhatCanIGetcha
 	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Buy1Bottle
+	ifequal 2, .Buy1Dozen
+	sjump FarmerMScript_NoSale
+
+.Buy1Bottle:
+	checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE_SINGLE
+	ifequal HAVE_LESS, FarmerMText_NoMoney
+	verbosegiveitem MOOMOO_MILK
+	iffalse FarmerMScript_NoRoom
+	takemoney YOUR_MONEY, 500
 	waitsfx
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext FarmerMText_GotMilk
-	promptbutton
-	itemnotify
-	closetext
-	end
+	waitbutton
+	writetext FarmerMText_BuyMore
+	yesorno
+	iffalse FarmerMScript_NoSale
+	sjump .loop
+
+.Buy1Dozen:
+	checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE_DOZEN
+	ifequal HAVE_LESS, FarmerMText_NoMoney
+	verbosegiveitem MOOMOO_MILK, 13
+	iffalse FarmerMScript_NoRoom
+	takemoney YOUR_MONEY, 6000
+	waitsfx
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetext FarmerMText_GotMilk
+	waitbutton
+	writetext FarmerMText_BuyMore
+	yesorno
+	iffalse FarmerMScript_NoSale
+	sjump .loop
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 4, 18, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "1 Bottle:  ¥500@"
+	db "1 Dozen : ¥6000@"
+	db "Cancel@"
 
 FarmerMScript_NoMoney:
 	writetext FarmerMText_NoMoney
@@ -113,14 +156,22 @@ FarmerMText_BuyMilk:
 	para "Give it to #mon"
 	line "to restore HP!"
 
-	para "I'll sell ya"
-	line "a dozen fer"
-	cont "just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
+	para "I'll give ya some"
+	line "fer just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE_SINGLE}."
 	done
 
 FarmerMText_GotMilk:
 	text "Here ya go!"
 	line "Drink up'n enjoy!"
+	done
+
+FarmerMText_WhatCanIGetcha:
+	text "What can I getcha?"
+	done
+
+FarmerMText_BuyMore:
+	text "You fancy some"
+	line "more?"
 	done
 
 FarmerMText_NoMoney:
@@ -134,13 +185,9 @@ FarmerMText_NoRoom:
 	done
 
 FarmerMText_NoSale:
-	text "You don't want it?"
-	line "Come again, hear?"
-	done
-
-FarmerMText_Milking:
-	text "I best go do my"
-	line "milkin'."
+	text "You don't want"
+	line "any milk?"
+	cont "Come again, hear?"
 	done
 
 FarmerFText_InTrouble:
