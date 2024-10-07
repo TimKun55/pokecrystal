@@ -21,9 +21,9 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; WEEDLE
 	icon_pals BROWN,  GREEN  ; KAKUNA
 	icon_pals RED,    BLUE   ; BEEDRILL
-	icon_pals RED,    BROWN  ; PIDGEY
-	icon_pals RED,    BROWN  ; PIDGEOTTO
-	icon_pals RED,    GREEN  ; PIDGEOT
+	icon_pals BROWN,  GREEN  ; PIDGEY
+	icon_pals BROWN,  GREEN  ; PIDGEOTTO
+	icon_pals BROWN,  GREEN  ; PIDGEOT
 	icon_pals PURPLE, GRAY   ; RATTATA
 	icon_pals BROWN,  RED    ; RATICATE
 	icon_pals RED,    BROWN  ; SPEAROW
