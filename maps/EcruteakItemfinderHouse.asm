@@ -1,5 +1,6 @@
 	object_const_def
 	const ECRUTEAKITEMFINDERHOUSE_COOLTRAINER_M
+	const ECRUTEAKITEMFINDERHOUSE_BEAUTY
 	const ECRUTEAKITEMFINDERHOUSE_POKEDEX
 
 EcruteakItemfinderHouse_MapScripts:
@@ -48,6 +49,14 @@ EcruteakHistoryBook:
 
 .KeepReading:
 	writetext EcruteakThreeMonText
+	waitbutton
+	closetext
+	end
+
+Serena:
+	faceplayer
+	opentext
+	trade NPC_TRADE_SERENA
 	waitbutton
 	closetext
 	end
@@ -174,4 +183,5 @@ EcruteakItemfinderHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1
+	object_event  5,  4, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Serena, -1
 	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1

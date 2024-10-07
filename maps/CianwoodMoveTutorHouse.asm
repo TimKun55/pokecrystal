@@ -1,5 +1,6 @@
 	object_const_def
 	const CIANWOODMOVETUTORHOUSE_COOLTRAINER_F
+	const CIANWOODMOVETUTORHOUSE_YOUNGSTER
 
 CianwoodMoveTutorHouse_MapScripts:
 	def_scene_scripts
@@ -90,6 +91,14 @@ CianwoodMoveTutorScript:
 	db "Water Pulse@"
 	db "Cancel@"
 
+Kai:
+	faceplayer
+	opentext
+	trade NPC_TRADE_KAI
+	waitbutton
+	closetext
+	end
+
 CianwoodTutorIntro:
 	text "Hi there!"
 	line "For ¥8000, I can"
@@ -169,3 +178,4 @@ CianwoodMoveTutorHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMoveTutorScript, -1
+	object_event  5,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Kai, -1

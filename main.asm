@@ -488,7 +488,6 @@ INCLUDE "engine/battle/misc.asm"
 SECTION "bank3F", ROMX
 
 INCLUDE "engine/tilesets/tileset_anims.asm"
-INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mum_phone.asm"
 
 
@@ -517,6 +516,11 @@ SECTION "Title", ROMX
 
 INCLUDE "engine/movie/unused_title.asm"
 INCLUDE "engine/movie/title.asm"
+
+
+SECTION "bank44", ROMX
+
+INCLUDE "engine/events/npc_trade.asm"
 
 
 SECTION "mobile45", ROMX

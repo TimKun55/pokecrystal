@@ -4,15 +4,12 @@
 	const AZALEAPOKECENTER1F_GENTLEMAN
 	const AZALEAPOKECENTER1F_FISHING_GURU
 	const AZALEAPOKECENTER1F_POKEFAN_F
+	const AZALEAPOKECENTER1F_FISHER
 
 AzaleaPokecenter1F_MapScripts:
 	def_scene_scripts
-	scene_script AzaleaPokecenter1FNoopScene ; unusable
 
 	def_callbacks
-
-AzaleaPokecenter1FNoopScene:
-	end
 
 AzaleaPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -28,6 +25,14 @@ AzaleaPokecenter1FFishingGuruScript:
 
 AzaleaPokecenter1FPokefanFScript:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
+
+Stan:
+	faceplayer
+	opentext
+	trade NPC_TRADE_STAN
+	waitbutton
+	closetext
+	end
 
 AzaleaPokecenter1FGentlemanText:
 	text "Do your #mon"
@@ -92,3 +97,4 @@ AzaleaPokecenter1F_MapEvents:
 	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
 	object_event  9,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
+	object_event  8,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Stan, -1
