@@ -219,3 +219,4 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; da
 	tilecoll WATER, WATER, WATER, WATER ; db
 	tilecoll FLOOR, WALL, FLOOR, WALL ; dc
+	tilecoll WALL, WATER, WALL, WATER ; dd
