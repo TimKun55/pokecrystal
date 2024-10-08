@@ -376,7 +376,7 @@ SaffronCity_MapEvents:
 	coord_event 20,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
 
 	def_bg_events
-	bg_event  9, 31, BGEVENT_READ, SaffronCitySign
+	bg_event  8, 28, BGEVENT_READ, SaffronCitySign
 	bg_event 30,  7, BGEVENT_READ, SaffronGymSign
 	bg_event 22,  7, BGEVENT_READ, FightingDojoSign
 	bg_event 16, 25, BGEVENT_READ, SilphCoSign
