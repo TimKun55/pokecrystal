@@ -15,6 +15,16 @@ EarlsPokemonAcademy_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, EarlsPokemonAcademyStairsCallback
+
+EarlsPokemonAcademyStairsCallback:
+	checkevent EVENT_BEAT_FALKNER
+	iffalse .NoStairs
+	endcallback
+
+.NoStairs:
+	changeblock 16, 10, $3c ; no stairs
+	endcallback
 
 AcademyEarl:
 	applymovement EARLSPOKEMONACADEMY_EARL, AcademyEarlSpinMovement
@@ -145,7 +155,20 @@ TeacherEnomotoScript:
 	end
 
 AcademyReceptionistScript:
-	jumptextfaceplayer AcademyReceptionistText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_FALKNER
+	iffalse .NoStairsText
+	writetext AcademyReceptionistTextStairs
+	waitbutton
+	closetext
+	end
+
+.NoStairsText
+	writetext AcademyReceptionistTextNoStairs
+	waitbutton
+	closetext
+	end
 
 AcademyBlackboard:
 	opentext
@@ -645,7 +668,7 @@ TeacherEnomotoStrongerText:
 	line "good use!"
 	done
 
-AcademyReceptionistText:
+AcademyReceptionistTextStairs:
 	text "Welcome to Earl's"
 	line "Academy!"
 	
@@ -657,6 +680,31 @@ AcademyReceptionistText:
 	
 	para "Downstairs is the"
 	line "Advanced course."
+	done
+
+AcademyReceptionistTextNoStairs:
+	text "Welcome to Earl's"
+	line "Academy!"
+	
+	para "To the right is"
+	line "the theory course."
+	
+	para "To the left is"
+	line "the battle course."
+	
+	para "<……>"
+	line "<……>"
+	
+	para "There's another,"
+	line "secret, course"
+	
+	para "but you'll have to"
+	line "come back when"
+	
+	para "you have at least"
+	line "one Gym Badge."
+	
+	para "Shh!"
 	done
 
 EarlsPokemonAcademy_MapEvents:
