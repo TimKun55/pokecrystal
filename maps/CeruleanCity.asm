@@ -352,7 +352,7 @@ CeruleanCity_MapEvents:
 
 	def_warp_events
 	warp_event 15, 15, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
-	warp_event 27, 13, CERULEAN_POLICE_STATION, 1
+	warp_event 31, 13, CERULEAN_POLICE_STATION, 1
 	warp_event 15, 21, CERULEAN_TRADE_SPEECH_HOUSE, 1
 	warp_event 19, 21, CERULEAN_POKECENTER_1F, 1
 	warp_event 28, 21, CERULEAN_GYM, 1
@@ -367,8 +367,8 @@ CeruleanCity_MapEvents:
 	bg_event 28, 24, BGEVENT_READ, CeruleanCitySign
 	bg_event 26, 21, BGEVENT_READ, CeruleanGymSign
 	bg_event  9, 27, BGEVENT_READ, CeruleanBikeShopSign
-	bg_event 25, 13, BGEVENT_READ, CeruleanPoliceSign
-	bg_event 22,  6, BGEVENT_READ, CeruleanCapeSign
+	bg_event 29, 13, BGEVENT_READ, CeruleanPoliceSign
+	bg_event 22,  8, BGEVENT_READ, CeruleanCapeSign
 	bg_event 11, 27, BGEVENT_READ, CeruleanLockedDoor
 	bg_event 20, 21, BGEVENT_READ, CeruleanCityPokecenterSign
 	bg_event 20, 27, BGEVENT_READ, CeruleanCityMartSign
@@ -376,7 +376,7 @@ CeruleanCity_MapEvents:
 
 	def_object_events
 	object_event  9, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
-	object_event 22, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
+	object_event 23, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
 	object_event 29, 26, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event 30, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 15, 27, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityBirdKeeperScript, -1
