@@ -928,12 +928,6 @@ BattleTower1F_Blocks:
 BattleTowerBattleRoom_Blocks:
 	INCBIN "maps/BattleTowerBattleRoom.ablk"
 
-;MobileTradeRoom_Blocks:
-;	INCBIN "maps/MobileTradeRoom.ablk"
-
-;MobileBattleRoom_Blocks:
-;	INCBIN "maps/MobileBattleRoom.ablk"
-
 BattleTowerHallway_Blocks:
 	INCBIN "maps/BattleTowerHallway.ablk"
 
