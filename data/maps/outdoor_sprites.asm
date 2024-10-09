@@ -388,6 +388,7 @@ DungeonsGroupSprites:
 	db SPRITE_LADY
 	db SPRITE_KURT
 	db SPRITE_POKE_BALL
+	db SPRITE_ROCK
 	db 0 ; end
 
 FastShipGroupSprites:
