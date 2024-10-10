@@ -161,7 +161,7 @@ TrainerHikerMichael:
 	end
 
 TrainerHikerParry:
-	trainer HIKER, PARRY3, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
+	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParrySeenText, HikerParryBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
@@ -190,35 +190,26 @@ TrainerHikerParry:
 
 .WantsBattle:
 	scall Route45RematchM
-	winlosstext HikerParry3BeatenText, 0
-	readmem wParryFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
+	winlosstext HikerParryBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
-.Fight1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer HIKER, PARRY3
+	loadtrainer HIKER, PARRY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wParryFightCount, 1
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer HIKER, PARRY1
+	loadtrainer HIKER, PARRY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wParryFightCount, 2
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
 	end
 
 .LoadFight2:
-	loadtrainer HIKER, PARRY2
+	loadtrainer HIKER, PARRY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
@@ -376,12 +367,12 @@ HikerMichaelAfterBattleText:
 	para "I can't help it!"
 	done
 
-HikerParry3SeenText:
+HikerParrySeenText:
 	text "My #mon are"
 	line "power packed!"
 	done
 
-HikerParry3BeatenText:
+HikerParryBeatenText:
 	text "Wahahah! I'm the"
 	line "big loser!"
 	done

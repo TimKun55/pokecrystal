@@ -12,7 +12,7 @@ Route33LassScript:
 	jumptextfaceplayer Route33LassText
 
 TrainerHikerAnthony:
-	trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
+	trainer HIKER, ANTHONY1, EVENT_BEAT_HIKER_ANTHONY, HikerAnthonySeenText, HikerAnthonyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
@@ -25,7 +25,7 @@ TrainerHikerAnthony:
 	iftrue .NumberAccepted
 	checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
-	writetext HikerAnthony2AfterText
+	writetext HikerAnthonyAfterText
 	promptbutton
 	setevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
@@ -37,44 +37,31 @@ TrainerHikerAnthony:
 	askforphonenumber PHONE_HIKER_ANTHONY
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
+	gettrainername STRING_BUFFER_3, HIKER, ANTHONY1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
 .Rematch:
 	scall .RematchStd
-	winlosstext HikerAnthony2BeatenText, 0
-	readmem wAnthonyFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
+	winlosstext HikerAnthonyBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
-.Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
-.Fight2:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight2
-.Fight1:
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer HIKER, ANTHONY2
+	loadtrainer HIKER, ANTHONY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 1
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer HIKER, ANTHONY1
+	loadtrainer HIKER, ANTHONY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 2
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -82,7 +69,6 @@ TrainerHikerAnthony:
 	loadtrainer HIKER, ANTHONY3
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 3
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -90,7 +76,6 @@ TrainerHikerAnthony:
 	loadtrainer HIKER, ANTHONY4
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 4
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -141,7 +126,7 @@ Route33Sign:
 Route33FruitTree:
 	fruittree FRUITTREE_ROUTE_33
 
-HikerAnthony2SeenText:
+HikerAnthonySeenText:
 	text "I came through the"
 	line "tunnel, but I"
 
@@ -149,12 +134,12 @@ HikerAnthony2SeenText:
 	line "of energy left."
 	done
 
-HikerAnthony2BeatenText:
+HikerAnthonyBeatenText:
 	text "Whoa! You've got"
 	line "more zip than me!"
 	done
 
-HikerAnthony2AfterText:
+HikerAnthonyAfterText:
 	text "We Hikers are at"
 	line "our best in the"
 	cont "mountains."

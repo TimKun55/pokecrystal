@@ -84,21 +84,13 @@ TrainerCooltrainermGaven3:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainermGaven3BeatenText, 0
-	readmem wGavenFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
-.Fight1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
-.LoadFight0:
 	loadtrainer COOLTRAINERM, GAVEN3
 	startbattle
 	reloadmapafterbattle
-	loadmem wGavenFightCount, 1
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
 	end
 
@@ -106,7 +98,6 @@ TrainerCooltrainermGaven3:
 	loadtrainer COOLTRAINERM, GAVEN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wGavenFightCount, 2
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
 	end
 
@@ -156,8 +147,8 @@ TrainerCooltrainerfJoyce:
 	closetext
 	end
 
-TrainerBirdKeeperJose2:
-	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
+TrainerBirdKeeperJose:
+	trainer BIRD_KEEPER, JOSE1, EVENT_BEAT_BIRD_KEEPER_JOSE, BirdKeeperJoseSeenText, BirdKeeperJoseBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
@@ -170,7 +161,7 @@ TrainerBirdKeeperJose2:
 	iftrue .NumberAccepted
 	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
-	writetext BirdKeeperJose2AfterBattleText
+	writetext BirdKeeperJoseAfterBattleText
 	promptbutton
 	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
@@ -182,36 +173,27 @@ TrainerBirdKeeperJose2:
 	askforphonenumber PHONE_BIRDKEEPER_JOSE
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
+	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
 .WantsBattle:
 	scall .Rematch
-	winlosstext BirdKeeperJose2BeatenText, 0
-	readmem wJoseFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
+	winlosstext BirdKeeperJoseBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
-.Fight1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer BIRD_KEEPER, JOSE2
+	loadtrainer BIRD_KEEPER, JOSE1
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 1
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
+	loadtrainer BIRD_KEEPER, JOSE2
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 2
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
@@ -413,16 +395,16 @@ CooltrainerfJoyceAfterBattleText:
 	line "harder next time."
 	done
 
-BirdKeeperJose2SeenText:
+BirdKeeperJoseSeenText:
 	text "Tweet! Tweet!"
 	line "Tetweet!"
 	done
 
-BirdKeeperJose2BeatenText:
+BirdKeeperJoseBeatenText:
 	text "Tweet!"
 	done
 
-BirdKeeperJose2AfterBattleText:
+BirdKeeperJoseAfterBattleText:
 	text "Bird Keepers like"
 	line "me mimic bird"
 
@@ -561,7 +543,7 @@ Route26_MapEvents:
 	object_event 14,  24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermJake, -1
 	object_event 11,  82, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermGaven3, -1
 	object_event  9,  58, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJoyce, -1
-	object_event  5,   8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJose2, -1
+	object_event  5,   8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJose, -1
 	object_event 12,  72, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyBrenda, -1
 	object_event  8,  38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event  7, 45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacNeville, -1
