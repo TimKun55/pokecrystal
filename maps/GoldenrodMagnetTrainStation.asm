@@ -16,6 +16,14 @@ GoldenrodMagnetTrainStationOfficerScript:
 	opentext
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .MagnetTrainToSaffron
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .TrainHasntComeIn
+	writetext GoldenrodMagnetTrainStationOfficerNoPassText
+	waitbutton
+	closetext
+	end
+
+.TrainHasntComeIn:
 	writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
 	waitbutton
 	closetext
@@ -106,6 +114,20 @@ GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 	turn_head UP
 	step_end
 
+GoldenrodMagnetTrainStationOfficerNoPassText:
+	text "Hello there!"
+
+	para "May I see your"
+	line "rail pass, please?"
+
+	para "Oh, you don't"
+	line "have one?"
+	
+	para "I'm sorry, you"
+	line "need a rail pass"
+	cont "to ride the train."	
+	done
+
 GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
 	text "The train hasn't"
 	line "come in…"
@@ -115,6 +137,9 @@ GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
 	cont "my back!"
 
 	para "That won't work."
+	
+	para "I hope everything"
+	line "is OK in Saffron…"
 	done
 
 GoldenrodMagnetTrainStationOfficerAreYouComingAboardText:
