@@ -48,7 +48,7 @@ FlowerShopTeacherScript:
 	writetext FlowerShopHiddenGardenText
 	waitbutton
 	closetext
-	applymovement PLAYER, FlowerShopPlayerMovement1
+	applymovement PLAYER, FlowerShopPlayerMovement
 	turnobject PLAYER, UP
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementToDoor
 	playsound SFX_TRANSACTION
@@ -119,7 +119,7 @@ FlowerShopBellossomScript:
 	closetext
 	end
 
-FlowerShopPlayerMovement1:
+FlowerShopPlayerMovement:
 	step DOWN
 	step_end
 
@@ -264,7 +264,7 @@ GoldenrodFlowerShop_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  1,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
+	object_event  1,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
 	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
 	object_event  6,  1, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopBellossomScript, -1
 	
