@@ -4,6 +4,7 @@
 	const GOLDENRODPOKECENTER1F_GAMEBOY_KID
 	const GOLDENRODPOKECENTER1F_LASS
 	const GOLDENRODPOKECENTER1F_POKEFAN_F
+	const GOLDENRODPOKECENTER1F_ROCKER
 
 GoldenrodPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -55,6 +56,33 @@ GoldenrodPokecenter1FPokefanF:
 	waitbutton
 	closetext
 	end
+
+Aizen:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .WaterTrade
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .GrassTrade
+	trade NPC_TRADE_AIZEN2
+	waitbutton
+	closetext
+	end
+
+.WaterTrade
+	trade NPC_TRADE_AIZEN3
+	waitbutton
+	closetext
+	end
+
+.GrassTrade
+	trade NPC_TRADE_AIZEN1
+	waitbutton
+	closetext
+	end
+
+GoldenrodPokecenter1FVendingMachine:
+	jumpstd VendingMachineScript
 
 GoldenrodPokecenter1FGameboyKidText:
 	text "The Colosseum"
@@ -136,17 +164,22 @@ GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  7, GOLDENROD_CITY, 15
-	warp_event  6,  7, GOLDENROD_CITY, 15
+	warp_event  7,  7, GOLDENROD_CITY, 15
+	warp_event  8,  7, GOLDENROD_CITY, 15
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
+	bg_event  1,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
+	bg_event 14,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
+	bg_event 15,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
 
 	def_object_events
-	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1
-	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FChansey, -1
-	object_event  8,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1
-	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
-	object_event  9,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
+	object_event  7,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1
+	object_event  8,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FChansey, -1
+	object_event 10,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1
+	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
+	object_event 13,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
+	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Aizen, -1

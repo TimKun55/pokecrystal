@@ -615,6 +615,7 @@ GoldenrodCity_MapEvents:
 	bg_event 15,  7, BGEVENT_READ, GoldenrodCityNameRaterSign
 	bg_event 10,  6, BGEVENT_READ, GoldenrodCityUndergroundSignNorth
 	bg_event 14, 27, BGEVENT_READ, GoldenrodCityUndergroundSignSouth
+	bg_event 16, 27, BGEVENT_UP, GoldenrodCityPokecenterSign
 	bg_event 18, 27, BGEVENT_UP, GoldenrodCityPokecenterSign
 	bg_event 32,  6, BGEVENT_READ, GoldenrodCityFlowerShopSign
 
