@@ -18,13 +18,16 @@ DEF NPCTRADE_STRUCT_LENGTH EQU _RS
 	const NPC_TRADE_STAN   ;  1 ; AzaleaPokecenter1F
 	const NPC_TRADE_MIKE   ;  2	; GoldenrodDeptStore5F
 	const NPC_TRADE_JUNE   ;  3 ; GoldenrodUnderground
-	const NPC_TRADE_SERENA ;  4	; EcruteakItemfinderHouse
-	const NPC_TRADE_TIM    ;  5	; OlivineTimsHouse
-	const NPC_TRADE_KAI    ;  6	; CianwoodMoveTutorHouse
-	const NPC_TRADE_EMY    ;  7	; BlackthornEmysHouse
-	const NPC_TRADE_CHRIS  ;  8	; PewterPokecenter1F
-	const NPC_TRADE_KIM    ;  9	; Route14
-	const NPC_TRADE_FOREST ; 10	; PowerPlant
+	const NPC_TRADE_AIZEN1 ;  4 ; GoldenrodPokecenter1F(Grass)
+	const NPC_TRADE_AIZEN2 ;  5 ; GoldenrodPokecenter1F(Fire)
+	const NPC_TRADE_AIZEN3 ;  6 ; GoldenrodPokecenter1F(Water)
+	const NPC_TRADE_SERENA ;  7	; EcruteakItemfinderHouse
+	const NPC_TRADE_TIM    ;  8	; OlivineTimsHouse
+	const NPC_TRADE_KAI    ;  9	; CianwoodMoveTutorHouse
+	const NPC_TRADE_EMY    ; 10	; BlackthornEmysHouse
+	const NPC_TRADE_CHRIS  ; 11	; PewterPokecenter1F
+	const NPC_TRADE_KIM    ; 12	; Route14
+	const NPC_TRADE_FOREST ; 13	; PowerPlant
 DEF NUM_NPC_TRADES EQU const_value
 
 ; trade gender limits
