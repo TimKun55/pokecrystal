@@ -661,6 +661,8 @@ UnownYBackpic:       INCBIN "gfx/pokemon/unown_y/back.2bpp.lz"
 UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
+Lyra1Pic:            INCBIN "gfx/trainers/lyra1.2bpp.lz"
+Lyra2Pic:            INCBIN "gfx/trainers/lyra2.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX

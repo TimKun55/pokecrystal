@@ -77,4 +77,6 @@ TrainerPicPointers::
 	dba ProtonPic
 	dba PetrelPic
 	dba BugManiacPic
+	dba Lyra1Pic
+	dba Lyra2Pic
 	assert_table_length NUM_TRAINER_CLASSES

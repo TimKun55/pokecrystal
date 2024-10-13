@@ -77,4 +77,6 @@ TrainerGroups:
 	dba ProtonGroup
 	dba PetrelGroup
 	dba BugManiacGroup
+	dba Lyra1Group
+	dba Lyra2Group
 	assert_table_length NUM_TRAINER_CLASSES

@@ -78,4 +78,6 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; proton
 	db MUSIC_ROCKET_ENCOUNTER      ; petrel
 	db MUSIC_HIKER_ENCOUNTER  	   ; bug_maniac	
+	db MUSIC_LYRA_ENCOUNTER        ; lyra1
+	db MUSIC_LYRA_ENCOUNTER        ; lyra2
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -77,4 +77,6 @@ BTTrainerClassGenders:
 	db MALE   ; PROTON
 	db MALE   ; PETREL
 	db MALE   ; BUG_MANIAC
+	db FEMALE ; LYRA1
+	db FEMALE ; LYRA2
 	assert_table_length NUM_TRAINER_CLASSES

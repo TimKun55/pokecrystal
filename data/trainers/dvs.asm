@@ -75,5 +75,7 @@ TrainerClassDVs:
 	dn 14, 14, 14, 14 ; LORELEI
 	dn 12,  7, 14,  8 ; PROTON
 	dn  7, 14,  8, 10 ; PETREL
-	dn  9,  9,  9,  9 ; BUG_MANIAC 
+	dn  9,  9,  9,  9 ; BUG_MANIAC
+	dn 13, 13, 13, 13 ; LYRA1
+	dn 13, 13, 13, 13 ; LYRA2
 	assert_table_length NUM_TRAINER_CLASSES

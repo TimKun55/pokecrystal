@@ -25,6 +25,7 @@ DEF ETHAN EQU __trainer_class__
 	const PHONECONTACT_BILL
 	const PHONECONTACT_ELM
 	const PHONECONTACT_BUENA
+	const PHONECONTACT_LYRA
 DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 DEF KRIS EQU __trainer_class__
@@ -806,5 +807,24 @@ DEF KRIS EQU __trainer_class__
 	const MATT
 	const TOBI
 	const VAN
+
+	trainerclass LYRA1 ; 4b
+	const LYRA1_1_CHIKORITA
+	const LYRA1_1_CYNDAQUIL
+	const LYRA1_1_TOTODILE
+	const LYRA1_2_CHIKORITA
+	const LYRA1_2_CYNDAQUIL
+	const LYRA1_2_TOTODILE
+	const LYRA1_3_CHIKORITA
+	const LYRA1_3_CYNDAQUIL
+	const LYRA1_3_TOTODILE
+	const LYRA1_4_CHIKORITA
+	const LYRA1_4_CYNDAQUIL
+	const LYRA1_4_TOTODILE
+
+	trainerclass LYRA2 ; 4c
+	const LYRA2_CHIKORITA
+	const LYRA2_CYNDAQUIL
+	const LYRA2_TOTODILE
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
