@@ -654,6 +654,11 @@ InitializeEventsScript:
 	setevent EVENT_ROUTE_45_GLIGAR
 	setevent EVENT_GS_BALL_CHAMBER_GS_BALL
 	setevent EVENT_FUCHSIA_GYM_WEEZING
+	setevent EVENT_LYRA_IN_HER_ROOM
+	setevent EVENT_LYRA_NEW_BARK_TOWN
+	setevent EVENT_LYRA_ROUTE_29
+	setevent EVENT_LYRA_ROUTE_34
+	setevent EVENT_LYRA_ROUTE_42
 	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 

@@ -2,12 +2,15 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_RIVAL
+	const NEWBARKTOWN_LYRA
 	const NEWBARKTOWN_HOOTHOOT
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
 	scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU
-	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP
+	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_LYRA_LEAVE
+	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE
+	scene_script NewBarkTownNoop4Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
@@ -16,6 +19,12 @@ NewBarkTownNoop1Scene:
 	end
 
 NewBarkTownNoop2Scene:
+	end
+
+NewBarkTownNoop3Scene:
+	end
+
+NewBarkTownNoop4Scene:
 	end
 
 NewBarkTownFlypointCallback:
@@ -69,6 +78,89 @@ NewBarkTown_TeacherStopsYouScene2:
 	closetext
 	special RestartMapMusic
 	end
+
+NewBarkTown_LyraIntroScene:
+	appear NEWBARKTOWN_LYRA
+	special FadeOutMusic
+	applymovement NEWBARKTOWN_LYRA, MovementNewBarkTown_LyraIntro1
+	playmusic MUSIC_LYRA_ENCOUNTER
+	showemote EMOTE_SHOCK, NEWBARKTOWN_LYRA, 15
+	applymovement NEWBARKTOWN_LYRA, MovementNewBarkTown_LyraIntro2
+	turnobject PLAYER, LEFT
+	opentext
+	writetext NewBarkTownLyraIntroText
+	waitbutton
+	closetext
+	follow PLAYER, NEWBARKTOWN_LYRA
+	applymovement PLAYER, MovementNewBarkTown_Player
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	applymovement NEWBARKTOWN_LYRA, MovementNewBarkTown_LyraIntro3
+	playsound SFX_EXIT_BUILDING
+	disappear NEWBARKTOWN_LYRA
+	setscene SCENE_NEWBARKTOWN_NOOP
+	special FadeOutToWhite
+	pause 15
+	warpfacing UP, ELMS_LAB, 4, 11
+	end
+
+NewBarkTown_LyraFinalTrigger1:
+	moveobject NEWBARKTOWN_LYRA, 14, 11
+	sjump NewBarkTown_LyraFinalTrigger
+
+NewBarkTown_LyraFinalTrigger2:
+	moveobject NEWBARKTOWN_LYRA, 14, 12
+	sjump NewBarkTown_LyraFinalTrigger
+
+NewBarkTown_LyraFinalTrigger3:
+	moveobject NEWBARKTOWN_LYRA, 14, 13
+	sjump NewBarkTown_LyraFinalTrigger
+
+NewBarkTown_LyraFinalTrigger4:
+	moveobject NEWBARKTOWN_LYRA, 14, 14
+NewBarkTown_LyraFinalTrigger:
+	appear NEWBARKTOWN_LYRA
+	applymovement NEWBARKTOWN_LYRA, NewBarkTownLyraSaysGoodbyeMovement1
+	showemote EMOTE_SHOCK, NEWBARKTOWN_LYRA, 15
+	special FadeOutMusic
+	pause 15
+	applymovement NEWBARKTOWN_LYRA, NewBarkTownLyraSaysGoodbyeMovement2
+	turnobject PLAYER, LEFT
+	opentext
+	writetext NewBarkTownLyraGoodbyeText1
+	waitbutton
+	closetext
+	setevent EVENT_LYRA_NEW_BARK_TOWN
+	winlosstext NewBarkTownLyraGoodbyeTextWin, NewBarkTownLyraGoodbyeTextLoss
+	setlasttalked NEWBARKTOWN_LYRA
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .Chikorita
+	loadtrainer LYRA1, LYRA1_4_CHIKORITA
+	sjump .AfterBattle
+
+.Totodile:
+	loadtrainer LYRA1, LYRA1_4_CYNDAQUIL
+	sjump .AfterBattle
+
+.Chikorita:
+	loadtrainer LYRA1, LYRA1_4_TOTODILE
+.AfterBattle
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_LYRA_DEPARTURE
+	opentext
+	writetext NewBarkTownLyraGoodbyeText2
+	waitbutton
+	closetext
+	applymovement NEWBARKTOWN_LYRA, NewBarkTownLyraSaysGoodbyeMovement3
+	disappear NEWBARKTOWN_LYRA
+	setscene SCENE_NEWBARKTOWN_NOOP
+	playmapmusic
+	end	
 
 NewBarkTownTeacherScript:
 	faceplayer
@@ -211,6 +303,45 @@ NewBarkTown_RivalReturnsToTheShadowsMovement:
 	step RIGHT
 	step_end
 
+MovementNewBarkTown_LyraIntro1:
+	step RIGHT
+	step RIGHT
+	step_end
+
+MovementNewBarkTown_LyraIntro2:
+	step RIGHT
+	step UP
+	step UP
+	step RIGHT
+	step_end
+
+MovementNewBarkTown_Player:
+MovementNewBarkTown_LyraIntro3:
+	step UP
+	step_end
+
+NewBarkTownLyraSaysGoodbyeMovement1:
+	step UP
+	step UP
+	step_end
+
+NewBarkTownLyraSaysGoodbyeMovement2:
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step RIGHT
+	step_end
+
+NewBarkTownLyraSaysGoodbyeMovement3:
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
 Text_GearIsImpressive:
 	text "Wow, your #Gear"
 	line "is impressive!"
@@ -283,6 +414,95 @@ NewBarkTownRivalText2:
 	text "…What are you"
 	line "staring at?"
 	done
+
+NewBarkTownLyraIntroText:
+	text "Lyra: Oh, hello,"
+	line "<PLAYER>!"
+
+	para "I came by your"
+	line "house earlier,"
+
+	para "but you were"
+	line "still sleeping."
+
+	para "You know how I"
+	line "assist Prof.Elm"
+	cont "sometimes?"
+
+	para "He's starting new"
+	line "#mon research"
+
+	para "and would like us"
+	line "both to help."
+
+	para "Let's go and see"
+	line "what he wants!"
+	done
+
+NewBarkTownLyraGoodbyeText1:
+	text "Lyra: <PLAYER>!"
+
+	para "I heard that you"
+	line "have all the Gym"
+	cont "badges in Johto."
+
+	para "…You're really"
+	line "something,"
+	cont "<PLAYER>."
+
+	para "To think that we"
+	line "both started our"
+
+	para "journeys in this"
+	line "town…"
+
+	para "I do what I can"
+	line "to help the Prof-"
+	cont "essor, but I could"
+
+	para "never take on the"
+	line "League Champion."
+
+	para "…Before you go…"
+
+	para "How about one"
+	line "more battle?"
+
+	para "I want to see the"
+	line "kind of trainer"
+	cont "you've become!"
+	done
+
+NewBarkTownLyraGoodbyeTextWin:
+	text "You're as talented"
+	line "as I expected!"
+	done
+
+NewBarkTownLyraGoodbyeTextLoss:
+	text "I hope you didn't"
+	line "let me win…"
+	done
+
+NewBarkTownLyraGoodbyeText2:
+	text "…Thanks, <PLAYER>."
+
+	para "I can tell how"
+	line "much work and"
+
+	para "love you put into"
+	line "raising your"
+	cont "#mon."
+
+	para "…So, this is"
+	line "goodbye."
+
+	para "I know you can win"
+	line "at the #mon"
+	cont "League!"
+
+	para "You're going to be"
+	line "a great Champion!"
+	done
 	
 NewBarkTownHoothootText:
 	text "Hoothoot: Hoo!!"
@@ -325,6 +545,11 @@ NewBarkTown_MapEvents:
 	def_coord_events
 	coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
 	coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2
+	coord_event  6,  4, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_LyraIntroScene
+	coord_event 17,  6, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE, NewBarkTown_LyraFinalTrigger1
+	coord_event 17,  7, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE, NewBarkTown_LyraFinalTrigger2
+	coord_event 17,  8, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE, NewBarkTown_LyraFinalTrigger3
+	coord_event 17,  9, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE, NewBarkTown_LyraFinalTrigger4
 
 	def_bg_events
 	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
@@ -336,4 +561,5 @@ NewBarkTown_MapEvents:
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
-	object_event 14,  3, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkTownHoothootScript, -1
+	object_event  1,  6, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LYRA_NEW_BARK_TOWN
+	object_event 16,  3, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkTownHoothootScript, -1

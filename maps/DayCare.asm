@@ -1,12 +1,21 @@
 	object_const_def
 	const DAYCARE_GRAMPS
 	const DAYCARE_GRANNY
+	const DAYCARE_LYRA
 
 DayCare_MapScripts:
 	def_scene_scripts
+	scene_script DayCareNoop1Scene, SCENE_DAYCARE_NOOP
+	scene_script DayCareNoop2Scene, SCENE_DAYCARE_LYRA_AND_GRANNY
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback
+
+DayCareNoop1Scene:
+	end
+
+DayCareNoop2Scene:
+	end
 
 DayCareEggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -19,6 +28,63 @@ DayCareEggCheckCallback:
 	setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	endcallback
+
+DayCare_MeetGrandma:
+	follow DAYCARE_LYRA, PLAYER
+	applymovement DAYCARE_LYRA, DayCareLyraApproachesGrandma
+	stopfollow
+	turnobject PLAYER, UP
+	turnobject DAYCARE_GRANNY, DOWN
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .IntroduceFemale
+	writetext DayCareLyraHelloText1
+	sjump .Continue1
+.IntroduceFemale:
+	writetext DayCareLyraHelloText2
+.Continue1:
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, DAYCARE_LYRA, 15
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ProtestFemale
+	writetext DayCareLyraProtestText1
+	sjump .Continue2
+.ProtestFemale:
+	writetext DayCareLyraProtestText2
+.Continue2:
+	waitbutton
+	closetext
+	turnobject DAYCARE_LYRA, DOWN
+	opentext
+	writetext DayCareLyraGoodbyeText
+	waitbutton
+	closetext
+	applymovement DAYCARE_LYRA, DayCareLyraStartsToLeave
+	showemote EMOTE_SHOCK, DAYCARE_LYRA, 15
+	turnobject DAYCARE_LYRA, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext DayCareLyraForgotText
+	waitbutton
+	closetext
+	addcellnum PHONE_LYRA
+	opentext
+	writetext GotLyrasNumberText
+	playsound SFX_REGISTER_PHONE_NUMBER
+	waitsfx
+	waitbutton
+	closetext
+	turnobject DAYCARE_LYRA, UP
+	opentext
+	writetext DayCareLyraEmbarassedText
+	waitbutton
+	closetext
+	applymovement DAYCARE_LYRA, DayCareLyraLeaves
+	disappear DAYCARE_LYRA
+	setscene SCENE_DAYCARE_NOOP
+	end
 
 DayCareManScript_Inside:
 	faceplayer
@@ -77,7 +143,46 @@ DayCareLadyScript:
 	opentext
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
 	iftrue .HusbandWasLookingForYou
+	checkevent EVENT_LYRA_GAVE_AWAY_EGG
+	iffalse .NoLyrasEgg
+	checkevent EVENT_GOT_LYRAS_EGG
+	iftrue .NoLyrasEgg
+	writetext DayCareLadyText_GiveLyrasEgg
+	promptbutton
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .GiveCyndaquilEgg
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .GiveTotodileEgg
+	giveegg CHIKORITA, EGG_LEVEL
+	sjump .GotLyrasEgg
+
+.GiveCyndaquilEgg:
+	giveegg CYNDAQUIL, EGG_LEVEL
+	sjump .GotLyrasEgg
+
+.GiveTotodileEgg:
+	giveegg TOTODILE, EGG_LEVEL
+.GotLyrasEgg
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	farwritetext _ReceivedEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	writetext DayCareLadyText_DescribeLyrasEgg
+	waitbutton
+	closetext
+	setevent EVENT_GOT_LYRAS_EGG
+	end
+
+.NoLyrasEgg:
 	special DayCareLady
+	waitbutton
+	closetext
+	end
+
+.PartyFull:
+	opentext
+	writetext DayCareText_PartyFull
 	waitbutton
 	closetext
 	end
@@ -88,8 +193,139 @@ DayCareLadyScript:
 	closetext
 	end
 
+DayCareLyraApproachesGrandma:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+DayCareLyraStartsToLeave:
+	step RIGHT
+	step DOWN
+	step_end
+
+DayCareLyraLeaves:
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
 DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
+
+DayCareLyraHelloText1:
+	text "Lyra: Grandma!"
+
+	para "Let me introduce"
+	line "my friend."
+
+	para "This is <PLAYER>!"
+
+	para "Grandma: Ah ha."
+
+	para "This is your"
+	line "boy… friend."
+
+	para "I see. Hmm."
+	done
+
+DayCareLyraHelloText2:
+	text "Lyra: Grandma!"
+
+	para "Let me introduce"
+	line "my friend."
+
+	para "This is <PLAYER>!"
+
+	para "Grandma: Ah ha."
+
+	para "This is your"
+	line "girl… friend."
+
+	para "I see. Hmm."
+	done
+
+DayCareLyraProtestText1:
+	text "Lyra: What?"
+	line "Grandma…!"
+
+	para "What are you"
+	line "talking about?"
+
+	para "He just lives"
+	line "nearby…"
+
+	para "Grandma: Hahaha."
+	line "I know, I know."
+
+	para "You must be sure"
+	line "he's talented."
+
+	para "Right, <PLAYER>?"
+	line "Come and see us"
+	cont "anytime!"
+	done
+
+DayCareLyraProtestText2:
+	text "Lyra: What?"
+	line "Grandma…!"
+
+	para "What are you"
+	line "talking about?"
+
+	para "She just lives"
+	line "nearby…"
+
+	para "Grandma: Hahaha."
+	line "I know, I know."
+
+	para "You must be sure"
+	line "she's talented."
+
+	para "Right, <PLAYER>?"
+	line "Come and see us"
+	cont "anytime!"
+	done
+
+DayCareLyraGoodbyeText:
+	text "Lyra: Well, I'd"
+	line "better go now…"
+	cont "See ya!"
+	done
+
+DayCareLyraForgotText:
+	text "Lyra: Oh!"
+	line "I almost forgot!"
+
+	para "Here! This is my"
+	line "#gear number!"
+	done
+
+GotLyrasNumberText:
+	text "<PLAYER> got Lyra's"
+	line "phone number."
+	done
+
+DayCareLyraEmbarassedText:
+	text "Lyra: Grandma!"
+
+	para "Don't you say"
+	line "anything."
+
+	para "We're both train-"
+	line "ers, and we're"
+
+	para "supposed to ex-"
+	line "change numbers."
+	cont "That's all."
+	done
 
 Text_GrampsLookingForYou:
 	text "Gramps was looking"
@@ -162,6 +398,23 @@ TradedTicketForOddEggText:
 	cont "the Odd Egg!"
 	done
 
+DayCareLadyText_GiveLyrasEgg:
+	text "Hello, dear."
+
+	para "Lyra told me this"
+	line "Egg was a gift for"
+	cont "you. Here you go!"
+	done
+
+DayCareLadyText_DescribeLyrasEgg:
+	text "That Egg came from"
+	line "her first #mon."
+
+	para "She must really"
+	line "trust you as a"
+	cont "trainer."
+	done
+
 DayCareText_PartyFull:
 	text "You've no room for"
 	line "this."
@@ -184,3 +437,4 @@ DayCare_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
+	object_event  0,  5, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LYRA_DAYCARE

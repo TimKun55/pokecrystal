@@ -6,6 +6,7 @@
 	const ROUTE34_OFFICER
 	const ROUTE34_POKEFAN_M
 	const ROUTE34_GRAMPS
+	const ROUTE34_LYRA
 	const ROUTE34_DAY_CARE_MON_1
 	const ROUTE34_DAY_CARE_MON_2
 	const ROUTE34_COOLTRAINER_F1
@@ -16,9 +17,17 @@
 
 Route34_MapScripts:
 	def_scene_scripts
+	scene_script Route34Noop1Scene, SCENE_ROUTE34_NOOP
+	scene_script Route34Noop2Scene, SCENE_ROUTE34_LYRA_ENCOUNTER
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
+
+Route34Noop1Scene:
+	end
+
+Route34Noop2Scene:
+	end
 
 Route34EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -51,6 +60,105 @@ Route34EggCheckCallback:
 .HideMon2:
 	setevent EVENT_DAY_CARE_MON_2
 	endcallback
+
+Route34LyraTrigger1:
+	applymovement PLAYER, Route34PlayerMovement1
+	sjump Route34LyraTrigger2
+
+Route34LyraTrigger3:
+	applymovement PLAYER, Route34PlayerMovement2
+Route34LyraTrigger2:
+	turnobject PLAYER, UP
+	special FadeOutMusic
+	opentext
+	writetext Route34LyraText_Grandpa
+	waitbutton
+	closetext
+	playmusic MUSIC_LYRA_ENCOUNTER
+	appear ROUTE34_LYRA
+	turnobject ROUTE34_GRAMPS, UP
+	pause 10
+	applymovement ROUTE34_LYRA, Route34LyraMovementComesDown
+	turnobject ROUTE34_GRAMPS, LEFT
+	opentext
+	writetext Route34LyraGoodWorkText
+	waitbutton
+	showemote EMOTE_SHOCK, ROUTE34_LYRA, 15
+	pause 15
+	turnobject ROUTE34_LYRA, DOWN
+	writetext Route34LyraGreetingText
+	waitbutton
+	closetext
+	applymovement PLAYER, Route34PlayerMovement3
+	pause 10
+	turnobject ROUTE34_LYRA, RIGHT
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .IntroduceFemale
+	writetext Route34LyraIntroductionText1
+	sjump .Continue
+.IntroduceFemale:
+	writetext Route34LyraIntroductionText2
+.Continue:
+	waitbutton
+	turnobject ROUTE34_LYRA, DOWN
+	pause 10
+	writetext Route34LyraChallengeText
+	waitbutton
+	closetext
+	setevent EVENT_LYRA_ROUTE_34
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .Chikorita
+	winlosstext Route34LyraWinText, Route34LyraLossText
+	setlasttalked ROUTE34_LYRA
+	loadtrainer LYRA1, LYRA1_2_CHIKORITA
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_LYRA_DEPARTURE
+	sjump .AfterBattle
+
+.Totodile:
+	winlosstext Route34LyraWinText, Route34LyraLossText
+	setlasttalked ROUTE34_LYRA
+	loadtrainer LYRA1, LYRA1_2_CYNDAQUIL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_LYRA_DEPARTURE
+	sjump .AfterBattle
+
+.Chikorita:
+	winlosstext Route34LyraWinText, Route34LyraLossText
+	setlasttalked ROUTE34_LYRA
+	loadtrainer LYRA1, LYRA1_2_TOTODILE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_LYRA_DEPARTURE
+.AfterBattle
+	opentext
+	writetext Route34LyraFollowMeText
+	promptbutton
+	closetext
+	applymovement ROUTE34_GRAMPS, Route34GrampsMovementLeave
+	playsound SFX_EXIT_BUILDING
+	disappear ROUTE34_GRAMPS
+	follow ROUTE34_LYRA, PLAYER
+	applymovement ROUTE34_LYRA, Route34LyraMovementEntersDayCare
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear ROUTE34_LYRA
+	applymovement PLAYER, Route34PlayerMovement1
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	setscene SCENE_ROUTE34_NOOP
+	special FadeOutToWhite
+	pause 15
+	warpfacing RIGHT, DAY_CARE, 0, 4
+	end
 
 DayCareManScript_Outside:
 	faceplayer
@@ -470,6 +578,34 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	slow_step UP
 	slow_step UP
 	step_end
+
+Route34LyraMovementComesDown:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step_end
+
+Route34LyraMovementEntersDayCare:
+	step RIGHT
+	step RIGHT
+	step_end
+
+Route34PlayerMovement1:
+	step RIGHT
+	step_end
+
+Route34PlayerMovement2:
+	step LEFT
+	step_end
+
+Route34PlayerMovement3:
+	step UP
+	step_end
+
+Route34GrampsMovementLeave:
+	slow_step RIGHT
+	step_end
 	
 Route34LadyBea:
 	trainer LADY, BEA, EVENT_BEAT_LADY_BEA, LadyBeaSeenText, LadyBeaBeatenText, 0, .Script
@@ -481,6 +617,70 @@ Route34LadyBea:
 	waitbutton
 	closetext
 	end
+
+Route34LyraText_Grandpa:
+	text "Lyra: Grandpa!"
+	done
+
+Route34LyraGoodWorkText:
+	text "Lyra: Good work,"
+	line "Grandpa!"
+
+	para "The #mon you"
+	line "raised for me is"
+	cont "healthy as can be!"
+
+	para "You look fit,"
+	line "too!"
+	done
+
+Route34LyraGreetingText:
+	text "Lyra: Hi, <PLAYER>!"
+	done
+
+Route34LyraIntroductionText1:
+	text "This is <PLAYER>."
+	line "He's a trainer."
+
+	para "He's quite good at"
+	line "raising #mon."
+
+	para "Well, not as good"
+	line "as you, of course!"
+	done
+
+Route34LyraIntroductionText2:
+	text "This is <PLAYER>."
+	line "She's a trainer."
+
+	para "She's quite good at"
+	line "raising #mon."
+
+	para "Well, not as good"
+	line "as you, of course!"
+	done
+
+Route34LyraChallengeText:
+	text "<PLAYER>, why don't"
+	line "we show Grandpa"
+	cont "how good you are?"
+	done
+
+Route34LyraWinText:
+	text "You're even better"
+	line "than I thought!"
+	done
+
+Route34LyraLossText:
+	text "Well, you're still"
+	line "getting better…"
+	done
+
+Route34LyraFollowMeText:
+	text "Lyra: Let me"
+	line "introduce you to"
+	cont "Grandma, too!"
+	done
 
 YoungsterSamuelSeenText:
 	text "This is where I do"
@@ -760,6 +960,9 @@ Route34_MapEvents:
 	warp_event 13, 15, DAY_CARE, 3
 
 	def_coord_events
+	coord_event  8, 17, SCENE_ROUTE34_LYRA_ENCOUNTER, Route34LyraTrigger1
+	coord_event  9, 17, SCENE_ROUTE34_LYRA_ENCOUNTER, Route34LyraTrigger2
+	coord_event 10, 17, SCENE_ROUTE34_LYRA_ENCOUNTER, Route34LyraTrigger3
 
 	def_bg_events
 	bg_event 12,  6, BGEVENT_READ, Route34Sign
@@ -775,7 +978,7 @@ Route34_MapEvents:
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
 	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
 	object_event 18, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
-	object_event 15, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
+	object_event 10, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event 14, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event 17, 19, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
 	object_event 11, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1

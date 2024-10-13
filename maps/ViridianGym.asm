@@ -31,6 +31,7 @@ ViridianGymBlueScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	setevent EVENT_FINAL_BATTLE_WITH_LYRA
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext

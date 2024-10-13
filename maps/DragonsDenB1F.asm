@@ -79,6 +79,8 @@ DragonsDenB1F_ClairScene:
 	special RestartMapMusic
 	disappear DRAGONSDENB1F_CLAIR
 	setscene SCENE_DRAGONSDENB1F_NOOP
+	setmapscene NEW_BARK_TOWN, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE
+	clearevent EVENT_LYRA_IN_HER_ROOM
 	end
 
 TrainerCooltrainermDarin:

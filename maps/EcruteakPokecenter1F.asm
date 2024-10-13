@@ -41,9 +41,6 @@ EcruteakPokcenter1FBillMeetsPlayer:
 	opentext
 	writetext EcruteakPokecenter1F_BillText1
 	promptbutton
-	sjump .PointlessJump
-
-.PointlessJump:
 	writetext EcruteakPokecenter1F_BillText2
 	waitbutton
 	closetext
@@ -52,7 +49,6 @@ EcruteakPokcenter1FBillMeetsPlayer:
 	playsound SFX_EXIT_BUILDING
 	disappear ECRUTEAKPOKECENTER1F_BILL
 	clearevent EVENT_MET_BILL
-	setflag ENGINE_TIME_CAPSULE
 	setscene SCENE_ECRUTEAKPOKECENTER1F_NOOP
 	waitsfx
 	end

@@ -297,7 +297,8 @@
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_ETHER
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_PP_UP
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_STARDUST
-; Unused: next 64 events
+	const EVENT_FINAL_BATTLE_WITH_LYRA
+; Unused: next 63 events
 
 	const_next 400
 ; Kurt Apricorn events
@@ -560,8 +561,10 @@
 	const EVENT_FOUGHT_MEWTWO
 	const EVENT_GOT_SECRET_KEY
 	const EVENT_WALL_OPENED_IN_INNER_CHAMBER
+	const EVENT_LYRA_GAVE_AWAY_EGG
+	const EVENT_GOT_LYRAS_EGG
 		;add all gym leader and Kimono Girl rematch flags?
-; Unused: next 146 events
+; Unused: next 144 events
 
 	const_next 800
 ; Trainer flags
@@ -1469,7 +1472,14 @@
 	const EVENT_BUTTON_IN_CIANWOOD_GYM
 	const EVENT_CHAMPION_ROOM_DRAGONITE
 	const EVENT_FUCHSIA_GYM_WEEZING
-; Unused: next 94 events
+	const EVENT_LYRA_IN_HER_ROOM
+	const EVENT_LYRA_IN_ELMS_LAB
+	const EVENT_LYRA_NEW_BARK_TOWN
+	const EVENT_LYRA_ROUTE_29
+	const EVENT_LYRA_ROUTE_34
+	const EVENT_LYRA_DAYCARE
+	const EVENT_LYRA_ROUTE_42
+; Unused: next 87 events
 
 	const_next 1800
 ; Kanto people
@@ -1484,7 +1494,7 @@
 	const EVENT_VERMILION_FAN_CLUB_DOLL
 	const EVENT_BLUE_IN_CINNABAR
 	const EVENT_VIRIDIAN_GYM_BLUE
-	const_skip ; unused
+	const EVENT_INDIGO_PLATEAU_POKECENTER_LYRA
 	const EVENT_MT_MOON_SQUARE_ROCK
 	const EVENT_MT_MOON_SQUARE_CLEFAIRY
 	const EVENT_MT_MOON_RIVAL

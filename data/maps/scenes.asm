@@ -8,7 +8,7 @@ MapScenes::
 	scene_var POKECENTER_2F,                               wPokecenter2FSceneID
 	scene_var TRADE_CENTER,                                wTradeCenterSceneID
 	scene_var COLOSSEUM,                                   wColosseumSceneID
-;	scene_var TIME_CAPSULE,                                wTimeCapsuleSceneID
+	scene_var DAY_CARE,                                    wDayCareSceneID
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
 	scene_var CERULEAN_GYM,                                wCeruleanGymSceneID
 	scene_var ROUTE_25,                                    wRoute25SceneID
@@ -40,7 +40,7 @@ MapScenes::
 	scene_var GOLDENROD_MAGNET_TRAIN_STATION,              wGoldenrodMagnetTrainStationSceneID
 	scene_var CINNABAR_VOLCANO_1F,                         wCinnabarVolcano1FSceneID
 	scene_var OLIVINE_CITY,                                wOlivineCitySceneID
-	scene_var ROUTE_34,                                    wRoute34SceneID ; unused
+	scene_var ROUTE_34,                                    wRoute34SceneID
 	scene_var ROUTE_34_ILEX_FOREST_GATE,                   wRoute34IlexForestGateSceneID ; unused
 	scene_var ECRUTEAK_TIN_TOWER_ENTRANCE,                 wEcruteakTinTowerEntranceSceneID
 	scene_var WISE_TRIOS_ROOM,                             wWiseTriosRoomSceneID

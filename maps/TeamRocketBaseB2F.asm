@@ -288,10 +288,6 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
-	verbosegiveitem HM_WHIRLPOOL
-	setevent EVENT_GOT_HM06_WHIRLPOOL
-	writetext RocketBaseLanceWhirlpoolText
-	waitbutton
 	closetext
 	turnobject TEAMROCKETBASEB2F_LANCE, DOWN
 	opentext
@@ -725,35 +721,6 @@ RocketBaseLanceElectrodeDoneText:
 
 	para "on behalf of all"
 	line "the #mon."
-
-	para "Oh, yes. You"
-	line "should take this."
-
-	para "I found it here,"
-	line "but I don't have"
-	cont "any need for it."
-	done
-
-RocketBaseReceivedHM06Text: ; unreferenced
-	text "<PLAYER> received"
-	line "HM06."
-	done
-
-RocketBaseLanceWhirlpoolText:
-	text "That's Whirlpool."
-	line "Teach it to a"
-
-	para "#mon to get"
-	line "across wild water."
-
-	para "But keep this in"
-	line "mind."
-
-	para "You can use that"
-	line "out of battle only"
-
-	para "with the Badge"
-	line "from Mahogany Gym."
 	done
 
 RocketBaseLanceMonMasterText:

@@ -4,6 +4,7 @@
 	const INDIGOPLATEAUPOKECENTER1F_CLERK
 	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
 	const INDIGOPLATEAUPOKECENTER1F_RIVAL
+	const INDIGOPLATEAUPOKECENTER1F_LYRA
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
 	const INDIGOPLATEAUPOKECENTER1F_TUTOR
@@ -45,47 +46,34 @@ IndigoPlateauPokecenter1FPrepareElite4Callback:
 	endcallback
 
 PlateauRivalBattle1:
-	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
-	iffalse PlateauRivalScriptDone
-	checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
-	iftrue PlateauRivalScriptDone
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, PlateauRivalScriptDone
-	ifequal TUESDAY, PlateauRivalScriptDone
-	ifequal THURSDAY, PlateauRivalScriptDone
-	ifequal FRIDAY, PlateauRivalScriptDone
-	ifequal SATURDAY, PlateauRivalScriptDone
-	moveobject INDIGOPLATEAUPOKECENTER1F_RIVAL, 17, 9
-	appear INDIGOPLATEAUPOKECENTER1F_RIVAL
-	turnobject PLAYER, DOWN
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement1
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	turnobject PLAYER, RIGHT
-	sjump PlateauRivalBattleCommon
-
+	moveobject INDIGOPLATEAUPOKECENTER1F_RIVAL, 15, 9
+	moveobject INDIGOPLATEAUPOKECENTER1F_LYRA, 15, 9
 PlateauRivalBattle2:
+	checkevent EVENT_FINAL_BATTLE_WITH_LYRA
+	iftrue LyraFight
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .MaybeRivalFight
+	ifequal TUESDAY, MaybeLyraFight
+	ifequal WEDNESDAY, .MaybeRivalFight
+	ifequal THURSDAY, MaybeLyraFight
+	ifequal FRIDAY, .MaybeRivalFight
+	ifequal SATURDAY, MaybeLyraFight
+	end
+
+.MaybeRivalFight:
 	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	iffalse PlateauRivalScriptDone
 	checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
 	iftrue PlateauRivalScriptDone
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, PlateauRivalScriptDone
-	ifequal TUESDAY, PlateauRivalScriptDone
-	ifequal THURSDAY, PlateauRivalScriptDone
-	ifequal FRIDAY, PlateauRivalScriptDone
-	ifequal SATURDAY, PlateauRivalScriptDone
 	appear INDIGOPLATEAUPOKECENTER1F_RIVAL
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
-	applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement2
+	applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalApproachesMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	turnobject PLAYER, LEFT
-PlateauRivalBattleCommon:
+	faceobject INDIGOPLATEAUPOKECENTER1F_RIVAL, PLAYER
+	faceobject PLAYER, INDIGOPLATEAUPOKECENTER1F_RIVAL
 	opentext
 	writetext PlateauRivalText1
 	waitbutton
@@ -135,6 +123,73 @@ PlateauRivalPostBattle:
 	playmapmusic
 	setflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
 PlateauRivalScriptDone:
+	end
+
+MaybeLyraFight:
+	checkevent EVENT_GRAND_CHAMPION
+	iffalse PlateauLyraScriptDone
+	checkflag ENGINE_INDIGO_PLATEAU_LYRA_FIGHT
+	iftrue PlateauLyraScriptDone
+LyraFight:
+	appear INDIGOPLATEAUPOKECENTER1F_LYRA
+	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 15
+	special FadeOutMusic
+	pause 15
+	applymovement INDIGOPLATEAUPOKECENTER1F_LYRA, PlateauRivalApproachesMovement
+	faceobject INDIGOPLATEAUPOKECENTER1F_LYRA, PLAYER
+	faceobject PLAYER, INDIGOPLATEAUPOKECENTER1F_LYRA
+	opentext
+	writetext PlateauLyraText1
+	waitbutton
+	playmusic MUSIC_LYRA_ENCOUNTER
+	writetext PlateauLyraText2
+	waitbutton
+	closetext
+	setevent EVENT_INDIGO_PLATEAU_POKECENTER_LYRA
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .LyraTotodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .LyraChikorita
+	; Cyndaquil
+	winlosstext PlateauLyraWinText, PlateauLyraLoseText
+	setlasttalked INDIGOPLATEAUPOKECENTER1F_LYRA
+	loadtrainer LYRA2, LYRA2_CHIKORITA
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump LyraPostBattle
+
+.LyraTotodile:
+	winlosstext PlateauRivalWinText, PlateauRivalLoseText
+	setlasttalked INDIGOPLATEAUPOKECENTER1F_LYRA
+	loadtrainer LYRA2, LYRA2_CYNDAQUIL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump LyraPostBattle
+
+.LyraChikorita:
+	winlosstext PlateauRivalWinText, PlateauRivalLoseText
+	setlasttalked INDIGOPLATEAUPOKECENTER1F_LYRA
+	loadtrainer LYRA2, LYRA2_TOTODILE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+LyraPostBattle:
+	playmusic MUSIC_LYRA_DEPARTURE
+	opentext
+	writetext PlateauLyraText3
+	waitbutton
+	closetext
+	turnobject PLAYER, DOWN
+	applymovement INDIGOPLATEAUPOKECENTER1F_LYRA, PlateauRivalLeavesMovement
+	disappear INDIGOPLATEAUPOKECENTER1F_LYRA
+	setscene SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE
+	playmapmusic
+	setflag ENGINE_INDIGO_PLATEAU_LYRA_FIGHT
+	clearevent EVENT_FINAL_BATTLE_WITH_LYRA
+PlateauLyraScriptDone:
 	end
 
 IndigoPlateauPokecenter1FNurseScript:
@@ -233,22 +288,12 @@ IndigoPlateauPokecenter1FTutorScript:
 	closetext
 	end
 
-PlateauRivalMovement1:
+PlateauRivalApproachesMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step UP
-	turn_head LEFT
-	step_end
-
-PlateauRivalMovement2:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	turn_head RIGHT
 	step_end
 
 PlateauRivalLeavesMovement:
@@ -324,6 +369,69 @@ PlateauRivalLoseText:
 
 	para "I'm going to be"
 	line "the Champion!"
+	done
+
+PlateauLyraText1:
+	text "<PLAYER>!"
+
+	para "I've been travel-"
+	line "ing around Johto,"
+
+	para "earning badges and"
+	line "gaining strength."
+
+	para "You know what"
+	line "that's like,"
+	cont "<PLAYER>."
+
+	para "And now…"
+
+	para "Here I am, at the"
+	line "Indigo Plateau."
+
+	para "Do you know what"
+	line "this means?"
+
+	para "I get to challenge"
+	line "you, not only as"
+	cont "my friend, but"
+	done
+
+PlateauLyraText2:
+	text "as the #mon"
+	line "League Champion!"
+	done
+
+PlateauLyraWinText:
+	text "So you're still"
+	line "stronger than me…"
+	done
+
+PlateauLyraLoseText:
+	text "…I won?"
+	done
+
+PlateauLyraText3:
+	text "I'm not angry that"
+	line "I lost."
+
+	para "I got to explore"
+	line "Johto, meet new"
+	cont "people, raise my"
+
+	para "#mon to be"
+	line "stronger than I"
+
+	para "thought they could"
+	line "ever be…"
+
+	para "And I got to"
+	line "battle you at my"
+	cont "very best."
+
+	para "You beat me--now"
+	line "go beat the #-"
+	cont "mon League!"
 	done
 
 TeleportGuyText1:
@@ -449,6 +557,7 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  1,  9, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 13, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
 	object_event 14,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
+	object_event 14,  9, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_LYRA
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
 	object_event  5,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY
 	object_event  3,  7, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FTutorScript, -1

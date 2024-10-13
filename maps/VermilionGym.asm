@@ -37,6 +37,7 @@ VermilionGymSurgeScript:
 	writetext LtSurgeThunderBadgeText
 	waitbutton
 	closetext
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
 	readvar VAR_BADGES
 	ifequal 16, .afterbattle16
 	end
