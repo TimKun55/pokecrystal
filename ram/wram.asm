@@ -2834,17 +2834,17 @@ endr
 wOTPartyDataEnd::
 
 NEXTU
-; catch tutorial dude pack
-wDudeNumItems:: db
-wDudeItems:: ds 2 * 4 + 1
-wDudeNumMedicine::
+; catch tutorial lyra pack
+wLyraNumItems:: db
+wLyraItems:: ds 2 * 4 + 1
+wLyraNumMedicine::
 
-wDudeNumBerries::
-wDudeNumKeyItems:: db
-wDudeKeyItems:: ds 18 + 1
+wLyraNumBerries::
+wLyraNumKeyItems:: db
+wLyraKeyItems:: ds 18 + 1
 
-wDudeNumBalls:: db
-wDudeBalls:: ds 2 * 4 + 1
+wLyraNumBalls:: db
+wLyraBalls:: ds 2 * 4 + 1
 ENDU
 
 wOtherTrainerType:: db

@@ -4,7 +4,7 @@
 
 gfx/battle_anims/%.lz: LZFLAGS += --method 2 --align 4
 
-gfx/battle/dude.2bpp.lz: LZFLAGS += --align 4
+gfx/battle/lyra_back.2bpp.lz: LZFLAGS += --align 4
 
 gfx/diploma/diploma.2bpp.lz: LZFLAGS += --method 8 --align 1
 

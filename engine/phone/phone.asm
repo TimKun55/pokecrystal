@@ -615,6 +615,8 @@ CheckCanDeletePhoneNumber:
 	ret z
 	cp PHONECONTACT_ELM
 	ret z
+	cp PHONECONTACT_LYRA
+	ret z
 	ld c, $1
 	ret
 

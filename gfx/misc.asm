@@ -2,8 +2,8 @@ SECTION "Trainer Backpics", ROMX
 
 EthanBackpic::
 INCBIN "gfx/player/ethan_back.2bpp.lz"
-DudeBackpic::
-INCBIN "gfx/battle/dude.2bpp.lz"
+LyraBackpic::
+INCBIN "gfx/battle/lyra_back.2bpp.lz"
 
 
 SECTION "Shrink Pics", ROMX

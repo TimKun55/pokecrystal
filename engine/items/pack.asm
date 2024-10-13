@@ -1231,7 +1231,7 @@ TutorialPack:
 	ld a, [wInputType]
 	or a
 	jr z, .loop
-	farcall _DudeAutoInput_RightA
+	farcall _LyraAutoInput_RightA
 .loop
 	call .RunJumptable
 	call DepositSellTutorial_InterpretJoypad
@@ -1270,7 +1270,7 @@ TutorialPack:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
-	dbw 0, wDudeNumItems
+	dbw 0, wLyraNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
@@ -1290,7 +1290,7 @@ TutorialPack:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
-	dbw 0, wDudeNumKeyItems
+	dbw 0, wLyraNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
@@ -1319,7 +1319,7 @@ TutorialPack:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
-	dbw 0, wDudeNumBalls
+	dbw 0, wLyraNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
@@ -1339,7 +1339,7 @@ TutorialPack:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
-	dbw 0, wDudeNumBerries
+	dbw 0, wLyraNumBerries
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
@@ -1359,7 +1359,7 @@ TutorialPack:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
-	dbw 0, wDudeNumMedicine
+	dbw 0, wLyraNumMedicine
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
@@ -1420,11 +1420,11 @@ DrawPackGFX:
 	ld d, 0
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .male_dude
+	jr z, .Lyra
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr nz, .female
-.male_dude
+.Lyra
 	ld hl, PackGFXPointers
 	add hl, de
 	add hl, de

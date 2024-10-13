@@ -4975,9 +4975,9 @@ BattleMenu:
 	; Auto input: choose "ITEM"
 	ld a, [wInputType]
 	or a
-	jr z, .skip_dude_pack_select
-	farcall _DudeAutoInput_DownA
-.skip_dude_pack_select
+	jr z, .skip_lyra_pack_select
+	farcall _LyraAutoInput_DownA
+.skip_lyra_pack_select
 	call LoadBattleMenu2
 	ret c
 
@@ -9182,9 +9182,9 @@ InitBattleDisplay:
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
 
-; Special exception for Dude.
-	ld b, BANK(DudeBackpic)
-	ld hl, DudeBackpic
+; Special exception for Lyra.
+	ld b, BANK(LyraBackpic)
+	ld hl, LyraBackpic
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .Decompress

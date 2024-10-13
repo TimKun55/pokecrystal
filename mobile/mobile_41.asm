@@ -264,7 +264,7 @@ StubbedTrainerRankings_TMsHMsTaught:
 StubbedTrainerRankings_Battles:
 	ret
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
+	cp BATTLETYPE_TUTORIAL ; Exclude Lyra’s tutorial battle
 	ret z
 	ld hl, sTrainerRankingBattles
 	jp StubbedTrainerRankings_Increment3Byte
@@ -272,7 +272,7 @@ StubbedTrainerRankings_Battles:
 StubbedTrainerRankings_WildBattles:
 	ret
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
+	cp BATTLETYPE_TUTORIAL ; Exclude Lyra’s tutorial battle
 	ret z
 	ld hl, sTrainerRankingWildBattles
 	jp StubbedTrainerRankings_Increment3Byte

@@ -12,23 +12,23 @@ CatchTutorial::
 	jp hl
 
 .dw
-	dw .DudeTutorial
-	dw .DudeTutorial
-	dw .DudeTutorial
+	dw .LyraTutorial
+	dw .LyraTutorial
+	dw .LyraTutorial
 
-.DudeTutorial:
+.LyraTutorial:
 ; Back up your name to your Mum's name.
 	ld hl, wPlayerName
 	ld de, wMumsName
 	ld bc, NAME_LENGTH
 	call CopyBytes
-; Copy Dude's name to your name
-	ld hl, .Dude
+; Copy Lyra's name to your name
+	ld hl, .Lyra
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
 	call CopyBytes
 
-	call .LoadDudeData
+	call .LoadLyraData
 
 	xor a
 	ldh [hJoyDown], a
@@ -52,8 +52,8 @@ CatchTutorial::
 	call CopyBytes
 	ret
 
-.LoadDudeData:
-	ld hl, wDudeNumItems
+.LoadLyraData:
+	ld hl, wLyraNumItems
 	ld [hl], 1
 	inc hl
 	ld [hl], POTION
@@ -61,11 +61,11 @@ CatchTutorial::
 	ld [hl], 1
 	inc hl
 	ld [hl], -1
-	ld hl, wDudeNumKeyItems
+	ld hl, wLyraNumKeyItems
 	ld [hl], 0
 	inc hl
 	ld [hl], -1
-	ld hl, wDudeNumBalls
+	ld hl, wLyraNumBalls
 	ld a, 1
 	ld [hli], a
 	ld a, POKE_BALL
@@ -74,8 +74,8 @@ CatchTutorial::
 	ld [hl], -1
 	ret
 
-.Dude:
-	db "Dude@"
+.Lyra:
+	db "Lyra@"
 
 .AutoInput:
 	db NO_INPUT, $ff ; end

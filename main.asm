@@ -643,6 +643,17 @@ INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
 
+SECTION "New Phone Scripts", ROMX
+
+INCLUDE "engine/phone/scripts/lyra_callee.asm"
+
+
+
+SECTION "New Phone Text", ROMX
+
+INCLUDE "data/phone/text/lyra_callee.asm"
+
+
 SECTION "Miscellaneous Text", ROMX
 
 INCLUDE "data/items/names.asm"

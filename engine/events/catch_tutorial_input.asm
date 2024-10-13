@@ -1,35 +1,35 @@
-_DudeAutoInput_A::
-	ld hl, DudeAutoInput_A
-	jr _DudeAutoInput
+_LyraAutoInput_A::
+	ld hl, LyraAutoInput_A
+	jr _LyraAutoInput
 
-_DudeAutoInput_RightA:
-	ld hl, DudeAutoInput_RightA
-	jr _DudeAutoInput
+_LyraAutoInput_RightA:
+	ld hl, LyraAutoInput_RightA
+	jr _LyraAutoInput
 
-_DudeAutoInput_DownA:
-	ld hl, DudeAutoInput_DownA
-	jr _DudeAutoInput
+_LyraAutoInput_DownA:
+	ld hl, LyraAutoInput_DownA
+	jr _LyraAutoInput
 
-_DudeAutoInput:
-	ld a, BANK(DudeAutoInputs)
+_LyraAutoInput:
+	ld a, BANK(LyraAutoInputs)
 	call StartAutoInput
 	ret
 
-DudeAutoInputs: ; used only for BANK(DudeAutoInputs)
+LyraAutoInputs: ; used only for BANK(LyraAutoInputs)
 
-DudeAutoInput_A:
+LyraAutoInput_A:
 	db NO_INPUT, $50
 	db A_BUTTON, $00
 	db NO_INPUT, $ff ; end
 
-DudeAutoInput_RightA:
+LyraAutoInput_RightA:
 	db NO_INPUT, $08
 	db D_RIGHT,  $00
 	db NO_INPUT, $08
 	db A_BUTTON, $00
 	db NO_INPUT, $ff ; end
 
-DudeAutoInput_DownA:
+LyraAutoInput_DownA:
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
