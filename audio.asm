@@ -160,6 +160,8 @@ INCLUDE "audio/music/safarizone.asm"
 INCLUDE "audio/music/cinnabarisland.asm"
 INCLUDE "audio/music/abandonedship.asm"
 INCLUDE "audio/music/ceruleancave.asm"
+INCLUDE "audio/music/lyraencounter.asm"
+INCLUDE "audio/music/lyradeparture.asm"
 
 
 SECTION "Sound Effects", ROMX

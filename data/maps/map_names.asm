@@ -558,6 +558,8 @@ New_Bark_Map_Names: ; newgroup NEW_BARK
 	dw New_Bark_Map_Name8 ; map_const ELMS_HOUSE						;  8
 	dw New_Bark_Map_Name9 ; map_const ROUTE_27_SANDSTORM_HOUSE			;  9
 	dw New_Bark_Map_Name10 ; map_const ROUTE_29_ROUTE_46_GATE			; 10
+	dw New_Bark_Map_Name11 ; map_const LYRAS_HOUSE_1F                   ; 11
+	dw New_Bark_Map_Name12 ; map_const LYRAS_HOUSE_2F                   ; 12
 	assert_table_length NUM_NEW_BARK_MAPS
 
 
@@ -1446,6 +1448,10 @@ New_Bark_Map_Name9: ; map_const ROUTE_27_AERIAL_ACE_HOUSE ;  9
 	db "Route 27 House@"
 New_Bark_Map_Name10: ; map_const ROUTE_29_ROUTE_46_GATE ; 10
 	db "Route 29 Gate@"
+New_Bark_Map_Name11: ; map_const LYRAS_HOUSE_1F ; 11
+	db "Lyra's House 1F@"
+New_Bark_Map_Name12: ; map_const LYRAS_HOUSE_2F ; 12
+	db "Lyra's House 2F@"
 
 Saffron_Map_Name1: ; map_const SAFFRON_CITY ;  1
 	db "Saffron City@"

@@ -115,4 +115,6 @@ Music:
 	dba Music_CinnabarIsland
 	dba Music_AbandonedShip
 	dba Music_CeruleanCave
+	dba Music_LyraEncounter
+	dba Music_LyraDeparture
 	assert_table_length NUM_MUSIC_SONGS

@@ -1074,4 +1074,10 @@ GoldenrodFlowerShopGarden_Blocks:
 GoldenrodPokecenter1F_Blocks:
 	INCBIN "maps/GoldenrodPokecenter1F.ablk"
 
+LyrasHouse1F_Blocks:
+	INCBIN "maps/LyrasHouse1F.ablk"
+
+LyrasHouse2F_Blocks:
+	INCBIN "maps/LyrasHouse2F.ablk"
+
 ENDSECTION

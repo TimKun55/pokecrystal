@@ -726,6 +726,8 @@ ENDM
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
 	map_attributes PlayersNeighborsHouse, PLAYERS_NEIGHBORS_HOUSE, $00, 0
 	map_attributes ElmsHouse, ELMS_HOUSE, $00, 0
+	map_attributes LyrasHouse1F, LYRAS_HOUSE_1F, $00, 0
+	map_attributes LyrasHouse2F, LYRAS_HOUSE_2F, $00, 0
 	map_attributes Route26HealHouse, ROUTE_26_HEAL_HOUSE, $00, 0
 	map_attributes DayOfWeekSiblingsHouse, DAY_OF_WEEK_SIBLINGS_HOUSE, $00, 0
 	map_attributes Route27AerialAceHouse, ROUTE_27_AERIAL_ACE_HOUSE, $00, 0

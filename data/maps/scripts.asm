@@ -84,6 +84,7 @@ INCLUDE "maps/SafariZoneEastRestHouse.asm"
 INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/MountMoon1F.asm"
+INCLUDE "maps/LyrasHouse1F.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -543,6 +544,7 @@ INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 INCLUDE "maps/SlowpokeWellEntrance.asm"
 INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
+INCLUDE "maps/LyrasHouse2F.asm"
 
 
 ENDSECTION

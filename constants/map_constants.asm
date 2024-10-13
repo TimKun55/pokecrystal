@@ -508,6 +508,8 @@ ENDM
 	map_const ELMS_HOUSE,                                   4,  4 ;  8
 	map_const ROUTE_27_AERIAL_ACE_HOUSE,                    4,  4 ;  9
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 10
+	map_const LYRAS_HOUSE_1F,                               6,  4 ; 11
+	map_const LYRAS_HOUSE_2F,                               4,  3 ; 12
 	endgroup
 
 	newgroup SAFFRON                                              ; 25
