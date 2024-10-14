@@ -378,6 +378,7 @@ BattleAnim_ThrowPokeBall:
 
 .Click:
 	anim_obj BATTLE_ANIM_OBJ_ENCORE_STAR, 120, 52, $2c
+	anim_obj BATTLE_ANIM_OBJ_ENCORE_STAR, 136, 52, $2f
 	anim_obj BATTLE_ANIM_OBJ_ENCORE_STAR, 152, 52, $34
 	anim_sound 0, 1, SFX_PECK
 	anim_wait 4
