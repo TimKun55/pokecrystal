@@ -50,7 +50,13 @@ CianwoodCitySuicuneAndEusine:
 	pause 10
 	setscene SCENE_CIANWOODCITY_NOOP
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42
+	checkevent EVENT_GOT_HM06_WHIRLPOOL
+	iftrue .NoLyra
+	setmapscene ROUTE_42, SCENE_ROUTE42_LYRA
+	sjump .Continue
+.NoLyra
 	setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE
+.Continue
 	checkevent EVENT_FOUGHT_EUSINE
 	iftrue .Done
 	setevent EVENT_FOUGHT_EUSINE

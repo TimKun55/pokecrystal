@@ -224,15 +224,17 @@ MumWalksBackMovement:
 	step_end
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
+	text "Oh, <PLAYER>!"
+	line "You're awake."
+
+	para "Your friend Lyra"
+	line "was just here."
+
+	para "She said that our"
 	line "neighbor, Prof."
 
 	para "Elm, was looking"
 	line "for you."
-
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
 
 	para "Oh! I almost for-"
 	line "got! Your #mon"

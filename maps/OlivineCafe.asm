@@ -2,6 +2,7 @@
 	const OLIVINECAFE_SAILOR1
 	const OLIVINECAFE_FISHING_GURU
 	const OLIVINECAFE_SAILOR2
+	const OLIVINECAFE_LYRA
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
@@ -23,11 +24,46 @@ OlivineCafeStrengthSailorScript:
 	closetext
 	end
 
+OlivineCafeLyraScript:
+	faceplayer
+	opentext
+	writetext OlivineCafeLyraText1
+	promptbutton
+	verbosegiveitem AMULET_COIN
+	iffalse .LyraNoRoomForAmuletCoin
+	writetext OlivineCafeLyraText2
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifnotequal UP, .GoStraightDown
+	applymovement OLIVINECAFE_LYRA, OlivineCafeLyraLeavesRightMovement
+.GoStraightDown
+	applymovement OLIVINECAFE_LYRA, OlivineCafeLyraLeavesMovement
+	playsound SFX_EXIT_BUILDING
+	disappear OLIVINECAFE_LYRA
+	setevent EVENT_GOT_AMULET_COIN_FROM_LYRA
+	waitsfx
+	end
+
+.LyraNoRoomForAmuletCoin:
+	writetext NoRoomForAmuletCoinText
+	waitbutton
+	closetext
+	end
+
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
 
 OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
+
+OlivineCafeLyraLeavesRightMovement:
+	step RIGHT
+OlivineCafeLyraLeavesMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
 OlivineCafeStrengthSailorText:
 	text "Hah! Your #mon"
@@ -52,6 +88,47 @@ OlivineCafeStrengthSailorText_GotStrength:
 
 	para "I'm so proud of my"
 	line "buff bod!"
+	done
+
+OlivineCafeLyraText1:
+	text "Lyra: Hi, <PLAYER>!"
+	line "You should try the"
+
+	para "food here. It's"
+	line "really good!"
+
+	para "Although I don't"
+	line "want to eat too"
+	cont "much…"
+
+	para "Oh, that's right!"
+	line "I found an item"
+
+	para "that you might"
+	line "like. Here!"
+	done
+
+OlivineCafeLyraText2:
+	text "Isn't it pretty?"
+	line "And useful, too."
+
+	para "Well, I should"
+	line "get going."
+
+	para "I want to see the"
+	line "Yellow Forest in"
+
+	para "Cianwood before I"
+	line "go back home."
+
+	para "See you,"
+	line "<PLAYER>!"
+	done
+
+NoRoomForAmuletCoinText:
+	text "Aww, <PLAYER>,"
+	line "you'll need to"
+	cont "make some room."
 	done
 
 OlivineCafeFishingGuruText:
@@ -91,3 +168,4 @@ OlivineCafe_MapEvents:
 	object_event  6,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
 	object_event  9,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
 	object_event  8,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+	object_event  4,  4, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeLyraScript, EVENT_GOT_AMULET_COIN_FROM_LYRA

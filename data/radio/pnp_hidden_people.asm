@@ -23,4 +23,8 @@ PnP_HiddenPeople_BeatKanto:
 	db CAL
 	db RIVAL2
 	db RED
+	db AGATHA
+	db LORELEI
+	db LYRA1
+	db LYRA2
 	db -1

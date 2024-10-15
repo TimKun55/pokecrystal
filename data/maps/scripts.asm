@@ -67,6 +67,7 @@ INCLUDE "maps/SaffronOddishDollHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
 INCLUDE "maps/SeafoamGym.asm"
+INCLUDE "maps/PlayersNeighborsHouse.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -176,7 +177,6 @@ INCLUDE "maps/Route34.asm"
 INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
-INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
