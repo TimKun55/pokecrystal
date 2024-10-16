@@ -158,7 +158,7 @@ LavRadioTower1FSuperNerd2Text:
 	para "I am the super"
 	line "Music Director!"
 
-	para "Huh? Your #Gear"
+	para "Huh? Your #gear"
 	line "can't tune into my"
 
 	para "music programs."

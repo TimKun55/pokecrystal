@@ -48,7 +48,7 @@ GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore2FYoungsterText:
-	text "The #Gear can"
+	text "The #gear can"
 	line "store so many"
 	cont "phone numbers."
 

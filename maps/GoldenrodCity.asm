@@ -355,14 +355,14 @@ GoldenrodCityCooltrainerF2Text:
 	cont "paign right now."
 
 	para "They'll modify"
-	line "your #Gear,"
+	line "your #gear,"
 
 	para "so it can also"
 	line "serve as a radio."
 	done
 
 GoldenrodCityCooltrainerF2Text_GotRadioCard:
-	text "Oh, your #Gear"
+	text "Oh, your #gear"
 	line "works as a radio!"
 	done
 

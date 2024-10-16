@@ -197,7 +197,7 @@ Route11SnorlaxSleepingText:
 	done
 
 Route11RadioNearSnorlaxText:
-	text "The #Gear was"
+	text "The #gear was"
 	line "placed near the"
 	cont "sleeping Snorlax…"
 

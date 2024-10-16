@@ -72,7 +72,7 @@ GaveGoodRodText:
 	para "Different spots"
 	line "have similar fish."
 
-	para "The #Gear shows"
+	para "The #gear shows"
 	line "the fishing group"
 	cont "of where you are"
 	cont "currently."

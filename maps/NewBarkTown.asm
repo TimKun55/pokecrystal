@@ -343,7 +343,7 @@ NewBarkTownLyraSaysGoodbyeMovement3:
 	step_end
 
 Text_GearIsImpressive:
-	text "Wow, your #Gear"
+	text "Wow, your #gear"
 	line "is impressive!"
 
 	para "Did your mum get"
@@ -388,7 +388,7 @@ Text_TellMumIfLeaving:
 
 Text_CallMumOnGear:
 	text "Call your mum on"
-	line "your #Gear to"
+	line "your #gear to"
 
 	para "let her know how"
 	line "you're doing."

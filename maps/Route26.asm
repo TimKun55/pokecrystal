@@ -314,7 +314,7 @@ Route26Fisher2Text:
 	cont "Kanto."
 
 	para "Check your #-"
-	line "Gear Map and see."
+	line "gear Map and see."
 	done
 
 CooltrainermJakeSeenText:
