@@ -4368,7 +4368,7 @@ Lyra1Group:
 	db -1 ; end
 
 	; LYRA1 (5)
-	db "Lyra@", TRAINERTYPE_NORMAL
+	db "Lyra@", TRAINERTYPE_ITEM
 	db 16, PIDGEY,  NO_ITEM
 	db 17, SUNKERN, NO_ITEM
 	db 15, MAREEP,  NO_ITEM
@@ -4376,7 +4376,7 @@ Lyra1Group:
 	db -1 ; end
 
 	; LYRA1 (6)
-	db "Lyra@", TRAINERTYPE_NORMAL
+	db "Lyra@", TRAINERTYPE_ITEM
 	db 16, PIDGEY,    NO_ITEM
 	db 17, GROWLITHE, NO_ITEM
 	db 15, MAREEP,    NO_ITEM

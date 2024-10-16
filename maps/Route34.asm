@@ -17,8 +17,8 @@
 
 Route34_MapScripts:
 	def_scene_scripts
-	scene_script Route34Noop1Scene, SCENE_ROUTE34_NOOP
-	scene_script Route34Noop2Scene, SCENE_ROUTE34_LYRA_ENCOUNTER
+	scene_script Route34Noop1Scene, SCENE_ROUTE34_LYRA_ENCOUNTER
+	scene_script Route34Noop2Scene, SCENE_ROUTE34_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
@@ -69,11 +69,16 @@ Route34LyraTrigger3:
 	applymovement PLAYER, Route34PlayerMovement2
 Route34LyraTrigger2:
 	turnobject PLAYER, UP
+	moveobject ROUTE34_GRAMPS, 11, 15
+	playsound SFX_EXIT_BUILDING
+	appear ROUTE34_GRAMPS
+	applymovement ROUTE34_GRAMPS, Route34GrampsMovement
 	special FadeOutMusic
 	opentext
 	writetext Route34LyraText_Grandpa
 	waitbutton
 	closetext
+	showemote EMOTE_SHOCK, ROUTE34_GRAMPS, 15
 	playmusic MUSIC_LYRA_ENCOUNTER
 	appear ROUTE34_LYRA
 	turnobject ROUTE34_GRAMPS, UP
@@ -83,9 +88,11 @@ Route34LyraTrigger2:
 	opentext
 	writetext Route34LyraGoodWorkText
 	waitbutton
+	closetext
 	showemote EMOTE_SHOCK, ROUTE34_LYRA, 15
 	pause 15
 	turnobject ROUTE34_LYRA, DOWN
+	opentext
 	writetext Route34LyraGreetingText
 	waitbutton
 	closetext
@@ -169,16 +176,16 @@ DayCareManScript_Outside:
 	ifequal TRUE, .end_fail
 	clearflag ENGINE_DAY_CARE_MAN_HAS_EGG
 	readvar VAR_FACING
-	ifequal RIGHT, .walk_around_player
+	ifequal LEFT, .walk_around_player
 	applymovement ROUTE34_GRAMPS, Route34MovementData_DayCareManWalksBackInside
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	disappear ROUTE34_GRAMPS
 .end_fail
 	end
 
 .walk_around_player
 	applymovement ROUTE34_GRAMPS, Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	disappear ROUTE34_GRAMPS
 	end
 
@@ -566,17 +573,16 @@ Route34HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_34_HIDDEN_SUPER_POTION
 
 Route34MovementData_DayCareManWalksBackInside:
-	slow_step LEFT
-	slow_step LEFT
-	slow_step UP
+	slow_step RIGHT
 	step_end
 
 Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
-	slow_step DOWN
-	slow_step LEFT
-	slow_step LEFT
 	slow_step UP
-	slow_step UP
+	slow_step RIGHT
+	step_end
+
+Route34GrampsMovement:
+	slow_step LEFT
 	step_end
 
 Route34LyraMovementComesDown:
@@ -976,9 +982,10 @@ Route34_MapEvents:
 	object_event 15, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
 	object_event 16, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
-	object_event  9, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
+	object_event  9, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
 	object_event 18, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
-	object_event 10, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
+	object_event 10, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
+	object_event  8, 12, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LYRA_ROUTE_34
 	object_event 14, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event 17, 19, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
 	object_event 11, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1

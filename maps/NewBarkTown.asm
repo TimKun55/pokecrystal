@@ -8,9 +8,8 @@
 NewBarkTown_MapScripts:
 	def_scene_scripts
 	scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU
-	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_LYRA_LEAVE
-	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE
-	scene_script NewBarkTownNoop4Scene, SCENE_NEWBARKTOWN_NOOP
+	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_LYRA_FINAL_LEAVE
+	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
@@ -22,9 +21,6 @@ NewBarkTownNoop2Scene:
 	end
 
 NewBarkTownNoop3Scene:
-	end
-
-NewBarkTownNoop4Scene:
 	end
 
 NewBarkTownFlypointCallback:

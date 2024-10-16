@@ -5,16 +5,17 @@
 
 DayCare_MapScripts:
 	def_scene_scripts
-	scene_script DayCareNoop1Scene, SCENE_DAYCARE_NOOP
-	scene_script DayCareNoop2Scene, SCENE_DAYCARE_LYRA_AND_GRANNY
+	scene_script DayCareLyraAndGrannyScene, SCENE_DAYCARE_LYRA_AND_GRANNY
+	scene_script DayCareNoopScene,          SCENE_DAYCARE_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback
 
-DayCareNoop1Scene:
+DayCareLyraAndGrannyScene:
+	sdefer DayCare_MeetGrandma
 	end
 
-DayCareNoop2Scene:
+DayCareNoopScene:
 	end
 
 DayCareEggCheckCallback:
@@ -333,18 +334,18 @@ Text_GrampsLookingForYou:
 	done
 
 DayCareManText_GiveOddEgg:
-	text "I'm the Day-Care"
-	line "Man."
+	text "Hello <PLAYER>."
 
 	para "Do you know about"
 	line "Eggs?"
 
 	para "I was raising"
 	line "#mon with my"
-	cont "wife, you see."
-
-	para "We were shocked to"
-	line "find an Egg!"
+	cont "wife, you see,"
+	
+	para "and one day,"
+	line "We were shocked to"
+	cont "find an Egg!"
 
 	para "Since then, we"
 	line "raise #mon"

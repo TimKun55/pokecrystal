@@ -1682,14 +1682,14 @@ _DaycareDummyText::
 	done
 
 _DayCareManIntroText::
-	text "I'm the Day-Care"
-	line "Man. Want me to"
+	text "Hi <PLAYER>."
+	line "Want me to"
 	cont "raise a #mon?"
 	done
 
 _DayCareManIntroEggText::
-	text "I'm the Day-Care"
-	line "Man. Do you know"
+	text "Hi <PLAYER>."
+	line "Do you know"
 	cont "about Eggs?"
 
 	para "I was raising"
@@ -1707,16 +1707,15 @@ _DayCareManIntroEggText::
 	done
 
 _DayCareLadyIntroText::
-	text "I'm the Day-Care"
-	line "Lady."
+	text "Hello <PLAYER>."
 
 	para "Should I raise a"
 	line "#mon for you?"
 	done
 
 _DayCareLadyIntroEggText::
-	text "I'm the Day-Care"
-	line "Lady. Do you know"
+	text "Hello <PLAYER>."
+	line "Do you know"
 	cont "about Eggs?"
 
 	para "My husband and I"
@@ -1845,7 +1844,7 @@ _NotYetText::
 	done
 
 _FoundAnEggText::
-	text "Ah, it's you!"
+	text "Ah, <PLAYER>!"
 
 	para "We were raising"
 	line "your #mon, and"

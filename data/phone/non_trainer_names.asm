@@ -16,4 +16,4 @@ NonTrainerCallerNames:
 .elm:      db "Prof.Elm:@"
 .bikeshop: db "Bike Shop:@"
 .buena:    db "Buena:<LF>   Disc Jockey@"
-.lyra:     db "Lyra:<LF>   Trainer@"
+.lyra:     db "Lyra:<LF>   <PK><MN> Trainer@"
