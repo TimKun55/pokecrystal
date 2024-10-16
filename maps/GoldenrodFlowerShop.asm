@@ -51,15 +51,17 @@ FlowerShopTeacherScript:
 	applymovement PLAYER, FlowerShopPlayerMovement
 	turnobject PLAYER, UP
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementToDoor
-	playsound SFX_TRANSACTION
-	changeblock 6, 0, $71 ; unlocked door
-	reloadmappart
+	pause 15
+	playsound SFX_BUMP
+	pause 15
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementFromDoor
 	opentext
 	writetext FlowerShopHiddenGardenUseText
 	waitbutton
 	closetext
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementLast
+	changeblock 6, 0, $71 ; unlocked door
+	reloadmappart
 	setevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	end
 
