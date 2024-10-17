@@ -30,6 +30,8 @@ RadioTower1FReceptionistScript:
 RadioTower1FLuckyNumberManScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_LUCKY_NUMBER_SHOW
+	iftrue .GameOver
 	writetext RadioTower1FLuckyNumberManAskToPlayText
 	promptbutton
 	checkflag ENGINE_LUCKY_NUMBER_SHOW
@@ -37,8 +39,6 @@ RadioTower1FLuckyNumberManScript:
 	special ResetLuckyNumberShowFlag
 .skip
 	special PrintTodaysLuckyNumber
-	checkflag ENGINE_LUCKY_NUMBER_SHOW
-	iftrue .GameOver
 	writetext RadioTower1FLuckyNumberManThisWeeksIdIsText
 	promptbutton
 	closetext
