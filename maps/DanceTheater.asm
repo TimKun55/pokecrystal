@@ -72,6 +72,7 @@ TrainerKimonoGirlMiki:
 	
 TrainerKimonoGirlSakura:
 	faceplayer
+	playmusic MUSIC_KIMONO_ENCOUNTER
 	opentext
 	checkevent EVENT_BLUE_IN_CINNABAR
 	iftrue .SakuraRematch2

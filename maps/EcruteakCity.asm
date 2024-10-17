@@ -249,7 +249,7 @@ EcruteakCity_MapEvents:
 	warp_event 29, 33, ECRUTEAK_MART, 2
 	warp_event  6, 39, ECRUTEAK_GYM, 1
 	warp_event 13, 39, ECRUTEAK_ITEMFINDER_HOUSE, 1
-	warp_event  5, 13, BURNED_TOWER_1F, 1
+	warp_event  6, 13, BURNED_TOWER_1F, 1
 	warp_event 20,  4, WISE_TRIOS_ROOM, 1
 	warp_event 20,  5, WISE_TRIOS_ROOM, 2
 	warp_event 33, 13, TIN_TOWER_1F, 1
@@ -264,7 +264,7 @@ EcruteakCity_MapEvents:
 	bg_event 15, 33, BGEVENT_READ, EcruteakCitySign
 	bg_event  4, 39, BGEVENT_READ, EcruteakGymSign
 	bg_event 20, 33, BGEVENT_READ, EcruteakDanceTheaterSign
-	bg_event  6, 22, BGEVENT_READ, BurnedTowerSign
+	bg_event  8, 22, BGEVENT_READ, BurnedTowerSign
 	bg_event 24, 39, BGEVENT_READ, EcruteakCityPokecenterSign
 	bg_event 30, 33, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 34, 14, BGEVENT_READ, TinTowerSign
@@ -277,4 +277,4 @@ EcruteakCity_MapEvents:
 	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
 	object_event  7, 32, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 26, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
-	object_event  6, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event  8, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
