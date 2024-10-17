@@ -837,16 +837,13 @@ LeftoversDesc:
 	next "battle. (Hold)@"
 
 OldAmberDesc:
-	db   "Amber with genes"
-	next "of ancient #mon@"
+	db   "Fossilized resin"
+	next "containing DNA.@"
 
 DomeFossilDesc:
-	db   "Shell of ancient"
-	next "marine #mon.@"
-
 HelixFossilDesc:
-	db   "Seashell of ancie-"
-	next "nt marine #mon.@"
+	db   "A fossilized"
+	next "#mon shell.@"
 
 LeppaBerryDesc:
 	db   "A self-restore"
