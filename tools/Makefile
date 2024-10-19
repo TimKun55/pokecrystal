@@ -4,6 +4,7 @@ CC := gcc
 CFLAGS := -O3 -flto -std=c11 -Wall -Wextra -pedantic
 
 tools := \
+	gbcpal \
 	bpp2png \
 	lzcomp \
 	gfx \
