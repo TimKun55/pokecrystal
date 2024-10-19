@@ -1175,11 +1175,17 @@ This can occur if your party and current PC box are both full when you start the
 
 ### Moon Ball does not boost catch rate
 
+The Moon Ball checks the wrong memory address for the wrong item ID, so no Pokémon can receive the boost.
+
 **Fix:** Edit `MoonBallMultiplier` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
 
 ```diff
 -; BUG: Moon Ball does not boost catch rate (see docs/bugs_and_glitches.md)
- 	push bc
+  	inc hl
+-	inc hl
+-	inc hl
+
+	push bc
  	ld a, BANK("Evolutions and Attacks")
  	call GetFarByte
 -	cp MOON_STONE_RED ; BURN_HEAL
