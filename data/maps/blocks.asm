@@ -115,7 +115,7 @@ GoldenrodPPSpeechHouse_Blocks:
 GuideGentsHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
-BillsBrothersHouse_Blocks:
+BillsOlderSistersHouse_Blocks:
 LavenderSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 	INCBIN "maps/House2.ablk"

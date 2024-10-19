@@ -647,7 +647,7 @@ ENDM
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes FuchsiaMart, FUCHSIA_MART, $00, 0
 	map_attributes FuchsiaGym, FUCHSIA_GYM, $00, 0
-	map_attributes BillsBrothersHouse, BILLS_BROTHERS_HOUSE, $00, 0
+	map_attributes BillsOlderSistersHouse, BILLS_OLDER_SISTERS_HOUSE, $00, 0
 	map_attributes FuchsiaPokecenter1F, FUCHSIA_POKECENTER_1F, $00, 0
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
