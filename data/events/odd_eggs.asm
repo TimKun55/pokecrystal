@@ -40,7 +40,7 @@ OddEggs:
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, SURF, 0
 	dw 02048 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -62,7 +62,7 @@ OddEggs:
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, SURF, 0
 	dw 00256 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -84,7 +84,7 @@ OddEggs:
 	db NO_ITEM
 	db WATER_GUN, SUPERSONIC, LIGHT_SCREEN, 0
 	dw 04096 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -106,7 +106,7 @@ OddEggs:
 	db NO_ITEM
 	db WATER_GUN, SUPERSONIC, LIGHT_SCREEN, 0
 	dw 00768 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -128,7 +128,7 @@ OddEggs:
 	db NO_ITEM
 	db SCRATCH, POWDER_SNOW, DIZZY_PUNCH, 0
 	dw 04096 ; OT ID
-	dt 135 ; Exp
+	bigdt 135 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -150,7 +150,7 @@ OddEggs:
 	db NO_ITEM
 	db SCRATCH, POWDER_SNOW, DIZZY_PUNCH, 0
 	dw 00768 ; OT ID
-	dt 135 ; Exp
+	bigdt 135 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -172,7 +172,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, MUD_SLAP, ICICLE_SPEAR, 0
 	dw 03584 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -194,7 +194,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, MUD_SLAP, ICICLE_SPEAR, 0
 	dw 00512 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -216,7 +216,7 @@ OddEggs:
 	db NO_ITEM
 	db LEER, EMBER, ROAR, PURSUIT
 	dw 02560 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -238,7 +238,7 @@ OddEggs:
 	db NO_ITEM
 	db LEER, EMBER, ROAR, PURSUIT
 	dw 00512 ; OT ID
-	dt 156 ; Exp
+	bigdt 156 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -260,7 +260,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, GROWL, DIZZY_PUNCH, 0
 	dw 03072 ; OT ID
-	dt 100 ; Exp
+	bigdt 100 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -282,7 +282,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, GROWL, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
-	dt 100 ; Exp
+	bigdt 100 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 10, 10, 10, 10 ; DVs
@@ -304,7 +304,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, FOCUS_ENERGY, FORESIGHT, DIZZY_PUNCH
 	dw 02560 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 9, 10, 10, 10 ; DVs
@@ -326,7 +326,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, FOCUS_ENERGY, FORESIGHT, DIZZY_PUNCH
 	dw 00256 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs

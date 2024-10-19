@@ -1,7 +1,6 @@
 MACRO mumitem
 ; money to trigger, cost, kind, item
-	dt \1
-	dt \2
+	bigdt \1, \2
 	db \3, \4
 ENDM
 
@@ -26,4 +25,4 @@ MumItems_2:
 	mumitem 100000,  4000, MUM_DOLL, MAX_REVIVE
 .End
 
-	dt 0 ; unused
+	bigdt 0 ; unused
