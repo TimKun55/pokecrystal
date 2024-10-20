@@ -87,7 +87,7 @@ DEF MAIL_STRUCT_LENGTH_JP EQU $2a ; mailmsg_jp struct
 
 	const_next 10
 	const HELD_HEAL_POISON
-	const HELD_HEAL_FROSTBITE
+	const HELD_HEAL_FREEZE
 	const HELD_HEAL_BURN
 	const HELD_HEAL_SLEEP
 	const HELD_HEAL_PARALYZE

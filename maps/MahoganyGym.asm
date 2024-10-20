@@ -368,10 +368,9 @@ PryceNextTimeText:
 	done
 
 BoarderRonaldSeenText:
-	text "I'll show your"
-	line "#mon what it's"
-	cont "like to have"
-	cont "frostbite!"
+	text "I'll freeze your"
+	line "#mon, so you"
+	cont "can't do a thing!"
 	done
 
 BoarderRonaldBeatenText:
@@ -381,10 +380,10 @@ BoarderRonaldBeatenText:
 
 BoarderRonaldAfterBattleText:
 	text "I think there's a"
-	line "move a frostbitten"
+	line "move a #mon"
 
-	para "#mon can use to"
-	line "cure itself."
+	para "can use while it's"
+	line "frozen."
 	done
 
 BoarderBradSeenText:

@@ -320,7 +320,7 @@ AI_Items:
 	jp c, .Use
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
-	and SLP_MASK
+	and 1 << FRZ | SLP_MASK
 	jp z, .DontUse
 	jp .Use
 
