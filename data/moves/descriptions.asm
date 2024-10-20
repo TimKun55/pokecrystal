@@ -305,7 +305,7 @@ FirePunchDescription:
 
 IcePunchDescription:
 	db   "An icy punch. May"
-	line "cause freezing.@"
+	line "cause frostbite.@"
 
 ThunderpunchDescription:
 	db   "An electric punch."
@@ -507,11 +507,11 @@ SurfDescription:
 
 IceBeamDescription:
 	db   "Icy energy beam."
-	line "May freeze.@"
+	line "May frostbite.@"
 
 BlizzardDescription:
 	db   "Harsh blizzard."
-	line "May freeze.@"
+	line "May frostbite.@"
 
 PsybeamDescription:
 	db   "Peculiar ray."
@@ -862,8 +862,8 @@ ConversionDescription:
 	line "to a move's type.@"
 
 TriAttackDescription:
-	db   "3 Beams. May para,"
-	line "freeze or burn.@"
+	db   "3 Beams. May cause"
+	line "Par, Frb or Brn.@"
 
 SuperFangDescription:
 	db   "Cuts the foe's HP"
@@ -934,8 +934,8 @@ SpiteDescription:
 	line "foe's last move.@"
 
 PowderSnowDescription:
-	db   "Snowy gust."
-	line "May freeze.@"
+	db   "A Snowy gust. May"
+	line "cause frostbite.@"
 
 ProtectDescription:
 	db   "Foils attack that"
