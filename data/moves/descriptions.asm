@@ -315,9 +315,22 @@ ScratchDescription:
 	db   "Scratches with"
 	line "sharp claws.@"
 
+StompDescription:
+HeadbuttDescription:
+BiteDescription:
+BugBiteDescription:
+LowKickDescription:
+WaterfallDescription:
+RockSlideDescription:
+HyperFangDescription:
+StrengthDescription:
+BoneClubDescription:
+ZenHeadbuttDescription:
+IcicleCrashDescription:
+AirSlashDescription:
 DarkPulseDescription:
-	db   "A horrible aura."
-	line "May flinch.@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 FlameChargeDescription:
 	db   "Cloaks with flame"
@@ -366,10 +379,6 @@ VineWhipDescription:
 	db   "Whips the foe with"
 	line "slender vines.@"
 
-StompDescription:
-	db   "Stomps with a big"
-	line "foot. May flinch.@"
-
 DoubleKickDescription:
 	db   "A double kicking"
 	line "attack.@"
@@ -390,10 +399,6 @@ SandAttackDescription:
 	db   "Reduces Accuracy"
 	line "by throwing sand.@"
 
-HeadbuttDescription:
-	db   "Rams head hard."
-	line "May flinch.@"
-
 HornAttackDescription:
 	db   "An attack using a"
 	line "horn to jab.@"
@@ -403,16 +408,25 @@ FuryStrikesDescription:
 	line "2-5 times.@"
 
 WaterPulseDescription:
-	db   "Pulsing blast of"
-	line "water. May conf.@"
+PsybeamDescription:
+ConfusionDescription:
+DizzyPunchDescription:
+HurricaneDescription:
+	db   "An attack that may"
+	next "confuse the foe.@"
 
 TackleDescription:
 	db   "A full-body charge"
 	line "attack.@"
 
 BodySlamDescription:
-	db   "Full-body attack."
-	line "May paralyze.@"
+ThundershockDescription:
+ThunderboltDescription:
+ThunderDescription:
+LickDescription:
+SparkDescription:
+	db   "An attack that may"
+	next "cause paralysis.@"
 
 WrapDescription:
 	db   "Squeezes the foe"
@@ -433,8 +447,11 @@ TailWhipDescription:
 	line "Def ▼1.@"
 
 PoisonStingDescription:
-	db   "Stabs with barb."
-	line "May poison.@"
+SludgeBombDescription:
+PoisonJabDescription:
+GunkShotDescription:
+	db   "An attack that may"
+	next "poison the foe.@"
 
 SignalBeamDescription:
 	db   "Sinister light."
@@ -447,11 +464,6 @@ PinMissileDescription:
 LeerDescription:
 	db   "Intimidating look."
 	line "Def ▼1.@"
-
-BiteDescription:
-BugBiteDescription:
-	db   "Bites down hard."
-	line "May flinch.@"
 
 GrowlDescription:
 	db   "Growls cutely."
@@ -482,12 +494,14 @@ AcidDescription:
 	line "Def ▼1.@"
 
 EmberDescription:
-	db   "Small flames."
-	line "May burn.@"
-
 FlamethrowerDescription:
-	db   "Intense flames."
-	line "May burn.@"
+FireBlastDescription:
+ScaldDescription:
+FlameWheelDescription:
+HeatWaveDescription:
+SacredFireDescription:
+	db   "An attack that may"
+	next "inflict a burn.@"
 
 MistDescription:
 	db   "Prevents stat"
@@ -536,10 +550,6 @@ FocusBlastDescription:
 	db   "Fires focused pow-"
 	line "er. SpDef ▼1.@"
 
-LowKickDescription:
-	db   "A tripping kick."
-	line "May flinch.@"
-
 CounterDescription:
 	db   "Returns a physical"
 	line "hit by double.@"
@@ -548,10 +558,6 @@ SeismicTossDescription:
 NightShadeDescription:
 	db   "The user's level"
 	line "equals damage HP.@"
-
-StrengthDescription:
-	db   "A powerful attack."
-	line "May flinch.@"
 
 LeechSeedDescription:
 	db   "Steals HP from the"
@@ -591,22 +597,10 @@ SandTombDescription:
 	db   "Traps foe in vor-"
 	line "tex for 2-5 turns.@"
 
-ThundershockDescription:
-	db   "Small electric jo-"
-	line "lt. May paralyze.@"
-
-ThunderboltDescription:
-	db   "Strong electric b-"
-	line "olt. May paralyze.@"
-
 ThunderWaveDescription:
 GlareDescription:
 	db   "A move that may"
 	line "cause paralysis.@"
-
-ThunderDescription:
-	db   "Brutal lightning."
-	line "May paralyze.@"
 
 RockThrowDescription:
 	db   "Drops rocks on the"
@@ -623,10 +617,6 @@ DigDescription:
 ToxicDescription:
 	db   "A poison move with"
 	line "increasing damage.@"
-
-ConfusionDescription:
-	db   "Psychic force."
-	line "May confuse.@"
 
 PsychicMDescription:
 	db   "Powerful psychic"
@@ -727,17 +717,9 @@ MirrorMoveDescription:
 	db   "Counters with the"
 	line "same move.@"
 
-GunkShotDescription:
-	db   "Shoots filthy gar-"
-	line "bage. May poison.@"
-
 AcrobaticsDescription:
 	db   "Damage doubles if"
 	line "user has no item.@"
-
-LickDescription:
-	db   "Long tongue licks."
-	line "May paralyze.@"
 
 SmogDescription:
 	db   "Discharges filthy"
@@ -746,18 +728,6 @@ SmogDescription:
 SludgeDescription:
 	db   "Unsanitary sludge."
 	line "May poison.@"
-
-BoneClubDescription:
-	db   "Whacks with bone."
-	line "May flinch.@"
-
-FireBlastDescription:
-	db   "All-consuming fire"
-	line "May burn.@"
-
-WaterfallDescription:
-	db   "Aquatic charge."
-	line "May flinch.@"
 
 IcicleSpearDescription:
 	db   "Fires icy spikes"
@@ -791,21 +761,9 @@ ChargeBeamDescription:
 	db   "Electric charge."
 	line "SpAtk ▲1.@"
 
-HurricaneDescription:
-	db   "Wraps foe in fier-"
-	line "ce wind. May conf.@"
-
 TransformDescription:
 	db   "The user assumes"
 	line "the foe's guise.@"
-
-ScaldDescription:
-	db   "Shoots hot water."
-	line "May burn.@"
-
-DizzyPunchDescription:
-	db   "Rhythmic punch."
-	line "May confuse.@"
 
 SporeDescription:
 	db   "A move that"
@@ -823,10 +781,6 @@ AcidArmorDescription:
 	db   "Alters cellular"
 	line "structure. Def ▲2.@"
 
-ZenHeadbuttDescription:
-	db   "Focuses, rams head"
-	line "hard. May flinch.@"
-
 ExplosionDescription:
 	db   "Very powerful but"
 	line "makes user faint.@"
@@ -842,14 +796,6 @@ BulldozeDescription:
 RestDescription:
 	db   "Sleep for 2 turns"
 	line "to fully recover.@"
-
-RockSlideDescription:
-	db   "Huge boulders th-"
-	line "rown. May flinch.@"
-
-HyperFangDescription:
-	db   "Bites very hard."
-	line "May flinch.@"
 
 ConversionDescription:
 	db   "Change user's type"
@@ -895,10 +841,6 @@ NightmareDescription:
 	db   "A sleeper loses"
 	line "1/4 HP every turn.@"
 
-FlameWheelDescription:
-	db   "Covers in flames."
-	line "Thaws. May burn.@"
-
 SnoreDescription:
 	db   "An attack useable"
 	line "only while asleep.@"
@@ -927,10 +869,6 @@ SpiteDescription:
 	db   "Cuts the PP of the"
 	line "foe's last move.@"
 
-PowderSnowDescription:
-	db   "Snowy gust."
-	line "May freeze.@"
-
 ProtectDescription:
 	db   "Foils attack that"
 	line "turn. It may fail.@"
@@ -946,10 +884,6 @@ ScaryFaceDescription:
 BellyDrumDescription:
 	db   "Halves own HP;"
 	line "Atk ▲6.@"
-
-SludgeBombDescription:
-	db   "Filthy ball of sl-"
-	line "udge. May poison.@"
 
 MudSlapDescription:
 	db   "Blinds with mud."
@@ -975,21 +909,9 @@ DestinyBondDescription:
 	db   "The foe faints if"
 	line "the user does.@"
 
-IcicleCrashDescription:
-	db   "Drops large ici-"
-	line "cles. May flinch.@"
-
 IcyWindDescription:
 	db   "Gust of cold air."
 	line "Spd ▼1.@"
-
-HeatWaveDescription:
-	db   "Blasts hot air."
-	line "May burn.@"
-
-PoisonJabDescription:
-	db   "Stabbed with appe-"
-	line "ndage. May poison.@"
 
 LockOnDescription:
 	db   "Ensures the next"
@@ -1023,10 +945,6 @@ SwaggerDescription:
 RockBlastDescription:
 	db   "Hurls boulders to"
 	line "hit 2-5 times.@"
-
-SparkDescription:
-	db   "Electrified tackle"
-	line "May paralyze.@"
 
 FuryCutterDescription:
 	db   "Successive hits"
@@ -1071,10 +989,6 @@ SafeguardDescription:
 PainSplitDescription:
 	db   "Adds user & foe's"
 	line "HPs. Shares total.@"
-
-SacredFireDescription:
-	db   "Mystical fire."
-	line "Thaws. May burn.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1127,10 +1041,6 @@ VitalThrowDescription:
 HealinglightDescription:
 	db   "Restores HP depen-"
 	line "ding on weather.@"
-
-AirSlashDescription:
-	db   "Slices with an air"
-	line "blade. May flinch.@"
 
 RockTombDescription:
 	db   "Hurles boulders to"
