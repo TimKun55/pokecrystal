@@ -51,8 +51,6 @@ INCLUDE "maps/OlivineLighthouse3F.asm"
 INCLUDE "maps/OlivineLighthouse4F.asm"
 INCLUDE "maps/VermilionSailorsHouse.asm"
 INCLUDE "maps/FarawayIslandInside.asm"
-INCLUDE "maps/Route1ViridianGate.asm"
-INCLUDE "maps/Route2Gate.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -86,6 +84,10 @@ INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/MountMoon1F.asm"
 INCLUDE "maps/LyrasHouse1F.asm"
+INCLUDE "maps/Route1ViridianGate.asm"
+INCLUDE "maps/Route2Gate.asm"
+INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
+INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -540,10 +542,8 @@ INCLUDE "maps/SeafoamIslandsB1F.asm"
 INCLUDE "maps/SeafoamIslandsB2F.asm"
 INCLUDE "maps/SeafoamIslandsB3F.asm"
 INCLUDE "maps/SeafoamIslandsB4F.asm"
-INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 INCLUDE "maps/SlowpokeWellEntrance.asm"
 INCLUDE "maps/MountMoonB1F.asm"
-INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
 INCLUDE "maps/LyrasHouse2F.asm"
 
 

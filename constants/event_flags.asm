@@ -563,8 +563,9 @@
 	const EVENT_WALL_OPENED_IN_INNER_CHAMBER
 	const EVENT_LYRA_GAVE_AWAY_EGG
 	const EVENT_GOT_LYRAS_EGG
+	const EVENT_RESEARCH_CENTER_GS_BALL
 		;add all gym leader and Kimono Girl rematch flags?
-; Unused: next 144 events
+; Unused: next 143 events
 
 	const_next 800
 ; Trainer flags
@@ -1468,7 +1469,7 @@
 	const EVENT_UNION_CAVE_B2F_WOOPER
 	const EVENT_ROUTE_45_GLIGAR
 	const EVENT_GS_BALL_CHAMBER_UNOWN
-	const EVENT_GS_BALL_CHAMBER_GS_BALL
+	const EVENT_GS_BALL_CHAMBER_BALL_RELIC
 	const EVENT_BUTTON_IN_CIANWOOD_GYM
 	const EVENT_CHAMPION_ROOM_DRAGONITE
 	const EVENT_FUCHSIA_GYM_WEEZING
@@ -1480,7 +1481,8 @@
 	const EVENT_LYRA_DAYCARE
 	const EVENT_LYRA_ROUTE_42
 	const EVENT_GOT_AMULET_COIN_FROM_LYRA
-; Unused: next 86 events
+	const EVENT_RUINS_OF_ALPH_CAVE_ENTRANCE_SCIENTIST
+; Unused: next 85 events
 
 	const_next 1800
 ; Kanto people

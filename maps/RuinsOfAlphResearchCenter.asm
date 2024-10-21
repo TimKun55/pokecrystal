@@ -69,28 +69,43 @@ RuinsOfAlphResearchCenterScientist3Script:
 	end
 
 .CaveDoorOpen:
-	checkevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
-	iftrue .AlreadyOpened
+	checkitem GS_BALL
+	iftrue .GSBall
+	checkitem BALL_RELIC
+	iftrue .BallRelic
 	writetext RuinsOfAlphResearchCenterScientist3_AllUnown
 	waitbutton
 	closetext
-	pause 30
-	earthquake 50
-	playsound SFX_STRENGTH
-	showemote EMOTE_SHOCK, PLAYER, 15
-	showemote EMOTE_SHOCK, RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 15
-	pause 30
-	opentext
-	writetext RuinsOfAlphResearchCenterScientist3_GoCheck
-	waitbutton	
-	closetext
-	setevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
 	end
 
-.AlreadyOpened
-	writetext RuinsOfAlphResearchCenterScientist3_MoreToDiscover
+.GSBall:
+	writetext RuinsOfAlphResearchCenterScientist3_GSBall
 	waitbutton
 	closetext
+	end
+
+.BallRelic:
+	writetext RuinsOfAlphResearchCenterScientist3_BallRelic1
+	waitbutton
+	closetext
+	takeitem BALL_RELIC
+	turnobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, UP
+	playsound SFX_SWITCH_POKEMON
+	pause 30
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	pause 10
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	pause 10
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	pause 10
+	faceplayer
+	opentext
+	writetext RuinsOfAlphResearchCenterScientist3_BallRelic2
+	waitbutton
+	verbosegiveitem GS_BALL
+	closetext
+	setevent EVENT_RESEARCH_CENTER_GS_BALL
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	end
 
 RuinsOfAlphResearchCenterScientist1Script:
@@ -480,27 +495,57 @@ RuinsOfAlphResearchCenterScientist3Text:
 	done
 
 RuinsOfAlphResearchCenterScientist3_AllUnown:
-	text "You caught all the"
-	line "Unown variations?"
+	text "I still can't"
+	line "believe all the"
 
-	para "That's a great"
-	line "achievement!"
-
-	para "I can't believe"
-	line "you managed to-"
+	para "things we've dis-"
+	line "covered and learn-"
+	cont "ed about!"
+	
+	para "I love my job!"
 	done
 
-RuinsOfAlphResearchCenterScientist3_GoCheck:
-	text "Wha…What was that?"
+RuinsOfAlphResearchCenterScientist3_GSBall:
+	text "I wonder what you"
+	line "can use that"
+	cont "Ball for…?"
+	done
+
+RuinsOfAlphResearchCenterScientist3_BallRelic1:
+	text "<PLAYER>,"
+	line "you're back!"
+
+	para "What did you find?"
 	
-	para "Did something"
-	line "happen in the"
-	cont "Inner Chamber?"
+	para "This? It looks"
+	line "like a # Ball…"
 	
-	para "I work in a Lab"
-	line "not in the field!"
+	para "Let me clean"
+	line "it up a bit."
+	done
+
+RuinsOfAlphResearchCenterScientist3_BallRelic2:
+	text "This is definitely"
+	line "a # Ball, but"
 	
-	para "Can you go check?"
+	para "not like any I've"
+	line "ever seen."
+	
+	para "Look here, there's"
+	line "a 'G' and an 'S'…"
+	
+	para "Tell you what,"
+	line "why don't you take"
+	
+	para "this to Kurt in"
+	line "Azalea Town?"
+	
+	para "# Balls are his"
+	line "speciality."
+	
+	para "If anyone can"
+	line "help with this,"
+	cont "it's him."
 	done
 
 RuinsOfAlphResearchCenterScientist3_MoreToDiscover:

@@ -74,6 +74,7 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	playmusic MUSIC_SHOW_ME_AROUND
 	follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER
 	applymovement RUINSOFALPHOUTSIDE_SCIENTIST, RuinsOfAlphOutsideScientistWalkToLabMovement
+	playsound SFX_ENTER_DOOR
 	disappear RUINSOFALPHOUTSIDE_SCIENTIST
 	stopfollow
 	applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement

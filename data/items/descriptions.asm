@@ -154,7 +154,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw PremierBallDesc
-	dw TeruSama25Desc
+	dw BallRelicDesc
 	dw TeruSama25Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
@@ -860,6 +860,10 @@ BerserkGeneDesc:
 PremierBallDesc:
 	db   "A rare, commemor-"
 	next "ative Ball.@"
+
+BallRelicDesc:
+	db   "A ball covered in"
+	next "dirt and grime.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

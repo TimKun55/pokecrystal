@@ -3197,8 +3197,9 @@ wRoute5DisguisedSceneID::                         db
 wUndergroundPathSceneID::                         db
 wRuinsOfAlphGSBallChamberSceneID::                db
 wRoute7SaffronGateSceneID::                       db
+wRuinsOfAlphCaveEntranceSceneID::                 db
 
-	ds 39
+	ds 38
 
 ; fight counts
 

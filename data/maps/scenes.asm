@@ -94,4 +94,5 @@ MapScenes::
 	scene_var UNDERGROUND_PATH,                            wUndergroundPathSceneID
 	scene_var RUINS_OF_ALPH_GS_BALL_CHAMBER,               wRuinsOfAlphGSBallChamberSceneID
 	scene_var ROUTE_7_SAFFRON_GATE,                        wRoute7SaffronGateSceneID
+	scene_var RUINS_OF_ALPH_CAVE_ENTRANCE,                 wRuinsOfAlphCaveEntranceSceneID
 	db -1 ; end

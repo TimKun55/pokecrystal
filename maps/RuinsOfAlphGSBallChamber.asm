@@ -1,5 +1,4 @@
 	object_const_def
-	const RUINSOFALPHGSBALLCHAMBER_UNOWN
 	const RUINSOFALPHGSBALLCHAMBER_POKE_BALL
 
 RuinsOfAlphGSBallChamber_MapScripts:
@@ -23,6 +22,9 @@ GSBallAppearScene:
 	writetext StrangePresenceText
 	waitbutton
 	closetext
+	special FadeOutToBlack
+	pause 10
+	special FadeInFromBlack
 	pause 30
 	turnobject PLAYER, LEFT
 	pause 30
@@ -36,8 +38,7 @@ GSBallAppearScene:
 	applymovement PLAYER, GSBallChamberPlayerMovement2
 	cry UNOWN
 	special FadeOutToBlack
-	special ReloadSpritesNoPalettes
-	disappear RUINSOFALPHGSBALLCHAMBER_UNOWN
+	pause 10
 	special FadeInFromBlack
 	pause 30
 	applymovement PLAYER, GSBallChamberPlayerMovement3
@@ -46,15 +47,17 @@ GSBallAppearScene:
 	cry UNOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
 	turnobject PLAYER, DOWN
+	special FadeOutToBlack
 	appear RUINSOFALPHGSBALLCHAMBER_POKE_BALL
 	playsound SFX_SECOND_PART_OF_ITEMFINDER
 	waitsfx
+	special FadeInFromBlack
 	special RestartMapMusic
 	setscene SCENE_RUINSOFALPHGSBALLCHAMBER_NOOP
 	end
 
-RuinsOfAlphGSBallChamberGSBall:
-	itemball GS_BALL
+RuinsOfAlphGSBallChamberBallRelic:
+	itemball BALL_RELIC
 
 GSBallChamberPlayerMovement1:
 	slow_step UP
@@ -80,8 +83,8 @@ RuinsOfAlphGSBallChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3, 11, RUINS_OF_ALPH_INNER_CHAMBER, 10
-	warp_event  4, 11, RUINS_OF_ALPH_INNER_CHAMBER, 10
+	warp_event  3, 11, RUINS_OF_ALPH_CAVE_ENTRANCE, 4
+	warp_event  4, 11, RUINS_OF_ALPH_CAVE_ENTRANCE, 4
 
 	def_coord_events
 	coord_event 3, 8, SCENE_RUINSOFALPHGSBALLCHAMBER_GS_BALL, GSBallAppearScene
@@ -90,5 +93,4 @@ RuinsOfAlphGSBallChamber_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GS_BALL_CHAMBER_UNOWN
-	object_event  3,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphGSBallChamberGSBall, EVENT_GS_BALL_CHAMBER_GS_BALL
+	object_event  3,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphGSBallChamberBallRelic, EVENT_GS_BALL_CHAMBER_BALL_RELIC

@@ -153,7 +153,7 @@ ItemNames::
 	li "Dragon Scale"
 	li "Berserk Gene"
 	li "Premier Ball"
-	li "TERU-SAMA"
+	li "Ball Relic"
 	li "TERU-SAMA"
 	li "Sacred Ash"
 	li "Heavy Ball"
