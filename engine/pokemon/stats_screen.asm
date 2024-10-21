@@ -1233,7 +1233,7 @@ StatsScreen_GetAnimationParam:
 	call AddNTimes
 	ld b, h
 	ld c, l
-	jr .CheckEggFaintedFrzSlp
+	jr .CheckEggFaintedSlp
 
 .OTPartyMon:
 	xor a
@@ -1243,14 +1243,14 @@ StatsScreen_GetAnimationParam:
 .Buffermon
 .Tempmon:
 	ld bc, wTempMonSpecies
-	jr .CheckEggFaintedFrzSlp ; utterly pointless
+	jr .CheckEggFaintedSlp ; utterly pointless
 
-.CheckEggFaintedFrzSlp:
+.CheckEggFaintedSlp:
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .egg
-	call CheckFaintedFrzSlp
-	jr c, .FaintedFrzSlp
+	call CheckFaintedSlp
+	jr c, .FaintedSlp
 .egg
 	xor a
 	scf
@@ -1261,7 +1261,7 @@ StatsScreen_GetAnimationParam:
 	and a
 	ret
 
-.FaintedFrzSlp:
+.FaintedSlp:
 	xor a
 	ret
 
@@ -1476,21 +1476,21 @@ GetNicknamePointer:
 	ld a, [wCurPartyMon]
 	jp SkipNames
 
-CheckFaintedFrzSlp:
+CheckFaintedSlp:
 	ld hl, MON_HP
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jr z, .fainted_frz_slp
+	jr z, .fainted_slp
 	ld hl, MON_STATUS
 	add hl, bc
 	ld a, [hl]
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fainted_frz_slp
+	and SLP_MASK
+	jr nz, .fainted_slp
 	and a
 	ret
 
-.fainted_frz_slp
+.fainted_slp
 	scf
 	ret
 	

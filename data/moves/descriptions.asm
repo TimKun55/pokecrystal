@@ -305,7 +305,7 @@ FirePunchDescription:
 
 IcePunchDescription:
 	db   "An icy punch. May"
-	line "cause freezing.@"
+	next "cause frostbite.@"
 
 ThunderpunchDescription:
 	db   "An electric punch."
@@ -506,16 +506,10 @@ SurfDescription:
 	line "type attack.@"
 
 IceBeamDescription:
-	db   "Icy energy beam."
-	line "May freeze.@"
-
 BlizzardDescription:
-	db   "Harsh blizzard."
-	line "May freeze.@"
-
-PsybeamDescription:
-	db   "Peculiar ray."
-	line "May confuse.@"
+PowderSnowDescription:
+	db   "An attack that may"
+	next "cause frostbite.@"
 
 BubblebeamDescription:
 	db   "Forcefully sprays"
