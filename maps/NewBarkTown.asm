@@ -90,10 +90,10 @@ NewBarkTown_LyraIntroScene:
 	follow PLAYER, NEWBARKTOWN_LYRA
 	applymovement PLAYER, MovementNewBarkTown_Player
 	stopfollow
-	playsound SFX_EXIT_BUILDING
+	playsound SFX_ENTER_DOOR
 	disappear PLAYER
 	applymovement NEWBARKTOWN_LYRA, MovementNewBarkTown_LyraIntro3
-	playsound SFX_EXIT_BUILDING
+	playsound SFX_ENTER_DOOR
 	disappear NEWBARKTOWN_LYRA
 	setscene SCENE_NEWBARKTOWN_NOOP
 	special FadeOutToWhite
