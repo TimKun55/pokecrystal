@@ -37,8 +37,11 @@ OlivineCafeLyraScript:
 	readvar VAR_FACING
 	ifnotequal UP, .GoStraightDown
 	applymovement OLIVINECAFE_LYRA, OlivineCafeLyraLeavesRightMovement
+	sjump .FinalLyraExit
+	
 .GoStraightDown
 	applymovement OLIVINECAFE_LYRA, OlivineCafeLyraLeavesMovement
+.FinalLyraExit
 	playsound SFX_EXIT_BUILDING
 	disappear OLIVINECAFE_LYRA
 	setevent EVENT_GOT_AMULET_COIN_FROM_LYRA
@@ -59,6 +62,11 @@ OlivineCafeSailorScript:
 
 OlivineCafeLyraLeavesRightMovement:
 	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+	
 OlivineCafeLyraLeavesMovement:
 	step DOWN
 	step DOWN
@@ -115,11 +123,11 @@ OlivineCafeLyraText2:
 	para "Well, I should"
 	line "get going."
 
-	para "I want to see the"
-	line "Yellow Forest in"
+	para "I want to check"
+	line "out Whirl Islands"
 
-	para "Cianwood before I"
-	line "go back home."
+	para "near Cianwood"
+	line "before I go home."
 
 	para "See you,"
 	line "<PLAYER>!"
