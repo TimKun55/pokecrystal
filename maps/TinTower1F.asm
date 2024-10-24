@@ -235,37 +235,27 @@ TinTower1FPlayerEntersMovement:
 	step_end
 
 TinTower1FRaikouApproachesMovement:
-	set_sliding
 	fast_jump_step DOWN
-	remove_sliding
 	step_end
 
 TinTower1FRaikouLeavesMovement:
-	set_sliding
 	fast_jump_step DOWN
 	fast_jump_step RIGHT
 	fast_jump_step DOWN
-	remove_sliding
 	step_end
 
 TinTower1FEnteiApproachesMovement:
-	set_sliding
 	fast_jump_step DOWN
-	remove_sliding
 	step_end
 
 TinTower1FEnteiLeavesMovement:
-	set_sliding
 	fast_jump_step DOWN
 	fast_jump_step LEFT
 	fast_jump_step DOWN
-	remove_sliding
 	step_end
 
 TinTower1FSuicuneApproachesMovement:
-	set_sliding
 	fast_jump_step DOWN
-	remove_sliding
 	step_end
 
 TinTower1FPlayerBacksUpMovement:

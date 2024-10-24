@@ -35,7 +35,13 @@ Route42SuicuneScript:
 	applymovement ROUTE42_SUICUNE, Route42SuicuneMovement
 	disappear ROUTE42_SUICUNE
 	pause 10
+	checkevent EVENT_LYRA_ROUTE_42
+	iftrue .NoLyra
+	setscene SCENE_ROUTE42_LYRA
+	sjump .Finish
+.NoLyra
 	setscene SCENE_ROUTE42_NOOP
+.Finish
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	setmapscene ROUTE_36, SCENE_ROUTE36_SUICUNE
 	end
@@ -399,6 +405,19 @@ Route42LyraWhirlpoolText:
 	para "Teach it to a"
 	line "#mon to get"
 	cont "across wild water."
+	
+	para "You'll need it"
+	line "if you want to"
+	
+	para "explore the Whirl"
+	line "Islands!"
+	
+	para "I had a look"
+	line "around in there,"
+	
+	para "but there was a"
+	line "huge waterfall I"
+	cont "couldn't get past."
 
 	para "I should get"
 	line "going. It was"
@@ -538,4 +557,4 @@ Route42_MapEvents:
 	object_event  5, 12, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree4, -1
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION
-	object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
+	object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42

@@ -102,12 +102,12 @@ SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
 KrisSpriteGFX::                INCBIN "gfx/sprites/kris.2bpp"
 KrisBikeSpriteGFX::            INCBIN "gfx/sprites/kris_bike.2bpp"
 SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
-EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
-RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 
 
 SECTION "Sprites 3", ROMX
 
+EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
+RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 ClefairyWalkingSpriteGFX::     INCBIN "gfx/sprites/clefairy.2bpp"
 DragoniteSpriteGFX::           INCBIN "gfx/sprites/dragonite.2bpp"
 FarfetchdIlexSpriteGFX::       INCBIN "gfx/sprites/farfetch_d_ilex.2bpp"
