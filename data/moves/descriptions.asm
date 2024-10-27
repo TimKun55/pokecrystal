@@ -305,7 +305,7 @@ FirePunchDescription:
 
 IcePunchDescription:
 	db   "An icy punch. May"
-	next "cause frostbite.@"
+	line "cause frostbite.@"
 
 ThunderpunchDescription:
 	db   "An electric punch."
@@ -330,7 +330,7 @@ IcicleCrashDescription:
 AirSlashDescription:
 DarkPulseDescription:
 	db   "An attack that may"
-	next "cause flinching.@"
+	line "cause flinching.@"
 
 FlameChargeDescription:
 	db   "Cloaks with flame"
@@ -413,7 +413,7 @@ ConfusionDescription:
 DizzyPunchDescription:
 HurricaneDescription:
 	db   "An attack that may"
-	next "confuse the foe.@"
+	line "confuse the foe.@"
 
 TackleDescription:
 	db   "A full-body charge"
@@ -426,7 +426,7 @@ ThunderDescription:
 LickDescription:
 SparkDescription:
 	db   "An attack that may"
-	next "cause paralysis.@"
+	line "cause paralysis.@"
 
 WrapDescription:
 	db   "Squeezes the foe"
@@ -451,7 +451,7 @@ SludgeBombDescription:
 PoisonJabDescription:
 GunkShotDescription:
 	db   "An attack that may"
-	next "poison the foe.@"
+	line "poison the foe.@"
 
 SignalBeamDescription:
 	db   "Sinister light."
@@ -501,7 +501,7 @@ FlameWheelDescription:
 HeatWaveDescription:
 SacredFireDescription:
 	db   "An attack that may"
-	next "inflict a burn.@"
+	line "inflict a burn.@"
 
 MistDescription:
 	db   "Prevents stat"
@@ -523,7 +523,7 @@ IceBeamDescription:
 BlizzardDescription:
 PowderSnowDescription:
 	db   "An attack that may"
-	next "cause frostbite.@"
+	line "cause frostbite.@"
 
 BubblebeamDescription:
 	db   "Forcefully sprays"
