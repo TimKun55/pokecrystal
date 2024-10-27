@@ -36,11 +36,24 @@ SaffronGymSabrinaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MARSHBADGE
+	readvar VAR_BADGES
+	ifequal 9, .FirstBadge
+	ifequal 11, .Lyra3Badges
+	ifequal 13, .LyrasEgg
+	sjump .Finish
+.FirstBadge:
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
+	sjump .Finish
+.Lyra3Badges:
+	specialphonecall SPECIALCALL_LYRATHIRDBADGE
+	sjump .Finish
+.LyrasEgg:
+	specialphonecall SPECIALCALL_LYRASEGG
+.Finish
 	writetext SabrinaMarshBadgeText
 	waitbutton
 	closetext
 	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
@@ -49,10 +62,6 @@ SaffronGymSabrinaScript:
 	closetext
 	end
 
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	end
-	
 .SabrinaScript_Rematch
 	writetext SabrinaRematchIntroText
 	yesorno

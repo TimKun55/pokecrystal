@@ -81,20 +81,24 @@ CeruleanGymMistyScript:
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
+	ifequal 9, .FirstBadge
+	ifequal 11, .Lyra3Badges
+	ifequal 13, .LyrasEgg
+	sjump .FightDone
+.FirstBadge:
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
+	sjump .FightDone
+.Lyra3Badges:
+	specialphonecall SPECIALCALL_LYRATHIRDBADGE
+	sjump .FightDone
+.LyrasEgg:
+	specialphonecall SPECIALCALL_LYRASEGG
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton
 	closetext
 	end
 	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	writetext MistyFightDoneText
-	waitbutton
-	closetext
-	end
-
 .MistyScript_Rematch
 	writetext MistyRematchIntroText
 	yesorno

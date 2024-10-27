@@ -36,24 +36,30 @@ CeladonGymErikaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
+	readvar VAR_BADGES
+	ifequal 9, .FirstBadge
+	ifequal 11, .Lyra3Badges
+	ifequal 13, .LyrasEgg
+	sjump .FightDone
+.FirstBadge:
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
+	sjump .FightDone
+.Lyra3Badges:
+	specialphonecall SPECIALCALL_LYRATHIRDBADGE
+	sjump .FightDone
+.LyrasEgg:
+	specialphonecall SPECIALCALL_LYRASEGG
 .FightDone:
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN
 	iftrue .GotGigaDrain
 	writetext ErikaExplainTMText
 	promptbutton
 	verbosegiveitem TM_GIGA_DRAIN
-	iffalse .GotGigaDrain
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
 	waitbutton
 	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
-	end
-	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
 	end
 	
 .ErikaScript_Rematch

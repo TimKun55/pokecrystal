@@ -35,12 +35,18 @@ LyraPhoneCalleeScript:
 LyraPhoneCallerScript:
 	readvar VAR_SPECIALPHONECALL
 	ifequal SPECIALCALL_LYRAFIRSTBADGE, .firstbadge
+	ifequal SPECIALCALL_LYRATHIRDBADGE, .thirdbadge
 	ifequal SPECIALCALL_LYRASEGG, .lyrasegg
 	specialphonecall SPECIALCALL_NONE
 	sjump LyraPhoneCalleeScript
 
 .firstbadge
 	farwritetext LyraPhoneFirstBadgeText
+	specialphonecall SPECIALCALL_NONE
+	end
+
+.thirdbadge
+	farwritetext LyraPhoneThirdBadgeText
 	specialphonecall SPECIALCALL_NONE
 	end
 

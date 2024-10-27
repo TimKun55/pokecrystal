@@ -67,7 +67,6 @@ OlivineLighthouseJasmine:
 	closetext
 	setevent EVENT_JASMINE_RETURNED_TO_GYM
 	clearevent EVENT_OLIVINE_GYM_JASMINE
-	specialphonecall SPECIALCALL_LYRASEGG
 	readvar VAR_FACING
 	ifequal DOWN, .FacingDown
 	ifequal RIGHT, .FacingRight

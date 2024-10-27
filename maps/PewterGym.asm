@@ -31,11 +31,23 @@ PewterGymBrockScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
+	readvar VAR_BADGES
+	ifequal 9, .FirstBadge
+	ifequal 11, .Lyra3Badges
+	ifequal 13, .LyrasEgg
+	sjump .Finish
+.FirstBadge:
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
+	sjump .Finish
+.Lyra3Badges:
+	specialphonecall SPECIALCALL_LYRATHIRDBADGE
+	sjump .Finish
+.LyrasEgg:
+	specialphonecall SPECIALCALL_LYRASEGG
+.Finish:
 	writetext BrockBoulderBadgeText
 	waitbutton
 	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
@@ -44,10 +56,6 @@ PewterGymBrockScript:
 	closetext
 	end
 
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	end
-	
 .BrockScript_Rematch
 	writetext BrockRematchIntroText
 	yesorno
@@ -177,6 +185,14 @@ BrockBoulderBadgeText:
 	para "battling you, even"
 	line "though I am a bit"
 	cont "upset."
+	
+	para "The BoulderBadge"
+	line "shows your sturdy"
+	
+	para "commitment to"
+	line "raising #mon."
+	
+	para "Wear it proudly."
 	done
 
 BrockFightDoneText:

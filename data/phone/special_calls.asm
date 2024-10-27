@@ -18,4 +18,5 @@ SpecialPhoneCallList:
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_ELM,      ElmPhoneCallerScript
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_LYRA,     LyraPhoneCallerScript
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_LYRA,     LyraPhoneCallerScript
+	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_LYRA,     LyraPhoneCallerScript
 	assert_table_length NUM_SPECIALCALLS

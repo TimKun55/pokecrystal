@@ -54,6 +54,19 @@ FuchsiaGymJanineScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_SOULBADGE
+	readvar VAR_BADGES
+	ifequal 9, .FirstBadge
+	ifequal 11, .Lyra3Badges
+	ifequal 13, .LyrasEgg
+	sjump .FightDone
+.FirstBadge:
+	specialphonecall SPECIALCALL_LYRAFIRSTBADGE
+	sjump .FightDone
+.Lyra3Badges:
+	specialphonecall SPECIALCALL_LYRATHIRDBADGE
+	sjump .FightDone
+.LyrasEgg:
+	specialphonecall SPECIALCALL_LYRASEGG
 .FightDone:
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
@@ -66,12 +79,6 @@ FuchsiaGymJanineScript:
 	writetext JanineText_ApplyMyself
 	waitbutton
 	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
-	end
-
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
 	end
 
 .MoveForWeezing

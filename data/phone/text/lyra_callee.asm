@@ -58,6 +58,32 @@ LyraPhoneFirstBadgeText:
 	line "the League!"
 	done
 
+LyraPhoneThirdBadgeText:
+	text "<PLAYER>!!"
+
+	para "I just battled"
+	line "with Whitney!"
+
+	para "Why didn't you"
+	line "tell me how tough"
+	cont "she is?"
+
+	para "Her Miltank did a"
+	line "number on my team,"
+
+	para "but, somehow, we"
+	line "managed to win!"
+
+	para "I can definitely"
+	line "see how you got"
+	cont "so tough!"
+
+	para "I'm catching up,"
+	line "though!"
+	
+	para "See you soon!"
+	done
+
 LyraPhoneLyrasEggIntroText:
 	text "Hi, <PLAYER>!"
 

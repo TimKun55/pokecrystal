@@ -31,22 +31,17 @@ ViridianGymBlueScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	setevent EVENT_BEAT_KANTO_LEADERS
 	setevent EVENT_FINAL_BATTLE_WITH_LYRA
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
-	readvar VAR_BADGES
-	ifequal 16, .afterbattle16
 	end
 
 .FightDone:
 	writetext LeaderBlueEpilogueText
 	waitbutton
 	closetext
-	end
-	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
 	end
 	
 .BlueScript_Rematch

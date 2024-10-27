@@ -127,7 +127,8 @@ OlivineCafeLyraText2:
 	line "out Whirl Islands"
 
 	para "near Cianwood"
-	line "before I go home."
+	line "before I go back"
+	cont "to Ecruteak."
 
 	para "See you,"
 	line "<PLAYER>!"
