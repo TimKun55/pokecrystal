@@ -251,9 +251,9 @@ BattleTurn:
 	jr nz, .quit
 .skip_iteration
 	call ParsePlayerAction
-;	push af
-;	call ClearSprites
-;	pop af
+	push af
+	call ClearSprites
+	pop af
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
@@ -5477,7 +5477,7 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
-;	call GetWeatherImage
+	call GetWeatherImage
 	ld a, [wSwappingMove]
 	and a
 	jr z, .interpret_joypad
@@ -9331,8 +9331,10 @@ BattleStartMessage:
 	
 GetWeatherImage:
 	ld a, [wBattleWeather]
-	and a
-	ret z
+	ld de, ClearWeatherImage
+	lb bc, PAL_BATTLE_OB_BLUE, 4
+	cp WEATHER_NONE
+	jr z, .done
 	ld de, RainWeatherImage
 	lb bc, PAL_BATTLE_OB_BLUE, 4
 	cp WEATHER_RAIN
