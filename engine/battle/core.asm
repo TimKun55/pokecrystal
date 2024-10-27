@@ -5685,8 +5685,8 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 8 ; upper right corner of the textbox
-	ld b, 3 ; Box height
+	hlcoord 0, 7 ; upper right corner of the textbox
+	ld b, 4 ; Box height
 	ld c, 7 ; Box length
 	call Textbox
 	call MobileTextBorder
@@ -5735,6 +5735,7 @@ MoveInfoBox:
 	and PP_MASK
 	ld [wStringBuffer1], a
 	call .PrintPP
+	call GetWeatherImage
 
 	farcall UpdateMoveData
 	farcall LoadBattleCategoryAndTypePals
@@ -5753,7 +5754,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $55 
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
-	hlcoord 1, 13 ; placing the Type Tiles in  the MoveInfoBox
+	hlcoord 1, 11 ; placing the Type Tiles in  the MoveInfoBox
 	ld [hl], $55
 	inc hl
 	ld [hl], $56
@@ -5776,17 +5777,17 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 2, 14 ; placing the Category Tiles in the MoveInfoBox
+	hlcoord 6, 11 ; placing the Category Tiles in the MoveInfoBox
 	ld [hl], $59
 	inc hl
 	ld [hl], $5a
 
 ; print move BP (Base Power)
 	ld de, .power_string ; "BP"
-	hlcoord 1, 9
+	hlcoord 1, 8
 	call PlaceString
 
-	hlcoord 5, 9
+	hlcoord 5, 8
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr nz, .haspower
@@ -5801,12 +5802,12 @@ MoveInfoBox:
 	
 ; print move ACC
 .print_acc
-	hlcoord 1, 10
+	hlcoord 1, 9
 	ld de, .accuracy_string ; "Acc"
 	call PlaceString
-	hlcoord 4, 10
+	hlcoord 4, 9
 	ld [hl], "<%>"
-	hlcoord 5, 10
+	hlcoord 5, 9
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
 	call Adjust_Percent_Battle
 .print_num_acc
@@ -5816,12 +5817,12 @@ MoveInfoBox:
 	call PrintNum
 	
 ; Effect Chance
-	hlcoord 1, 11
+	hlcoord 1, 10
 	ld de, .EffectChance
 	call PlaceString
-	hlcoord 4, 11
+	hlcoord 4, 10
 	ld [hl], "<%>"
-	hlcoord 5, 11
+	hlcoord 5, 10
 	ld a, [wPlayerMoveStruct + MOVE_CHANCE]
 	call Adjust_Percent_Battle
 	and a
@@ -5846,19 +5847,19 @@ MoveInfoBox:
 	db "No use!@"
 
 .PrintPP:
-	hlcoord 3, 15
+	hlcoord 3, 13
 	ld [hl], " "
 	ld de, wStringBuffer1
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 2, 16
+	hlcoord 2, 14
 	ld [hl], "/"
 	inc hl
 	ld [hl], " "
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 1, 15
+	hlcoord 1, 13
 	ld a, "P"
 	ld [hli], a
 	ld [hl], a
@@ -9336,6 +9337,10 @@ GetWeatherImage:
 	lb bc, PAL_BATTLE_OB_BLUE, 4
 	cp WEATHER_RAIN
 	jr z, .done
+	ld de, HailWeatherImage
+	lb bc, PAL_BATTLE_OB_BLUE, 4
+	cp WEATHER_HAIL
+	jr z, .done
 	ld de, SunWeatherImage
 	ld b, PAL_BATTLE_OB_YELLOW
 	cp WEATHER_SUN
@@ -9371,7 +9376,7 @@ GetWeatherImage:
 .WeatherImageOAMData
 ; positions are backwards since
 ; we load them in reverse order
-	db $88, $1c ; y/x - bottom right
-	db $88, $14 ; y/x - bottom left
-	db $80, $1c ; y/x - top right
-	db $80, $14 ; y/x - top left
+	db $90, $1c ; y/x - bottom right
+	db $90, $14 ; y/x - bottom left
+	db $88, $1c ; y/x - top right
+	db $88, $14 ; y/x - top left
