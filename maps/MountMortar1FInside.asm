@@ -92,7 +92,7 @@ PokemaniacMillerAfterBattleText:
 	done
 
 SupernerdMarkusSeenText:
-	text "Hey! HUGH!"
+	text "Hey! Hugh!"
 	done
 
 SupernerdMarkusBeatenText:
