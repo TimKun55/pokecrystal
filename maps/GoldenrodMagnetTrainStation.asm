@@ -14,11 +14,19 @@ GoldenrodMagnetTrainStationNoopScene:
 GoldenrodMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	iffalse .RocketTakeover
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .MagnetTrainToSaffron
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .TrainHasntComeIn
 	writetext GoldenrodMagnetTrainStationOfficerNoPassText
+	waitbutton
+	closetext
+	end
+
+.RocketTakeover:
+	writetext GoldenrodMagnetTrainStationOfficerRocketTakeoverText
 	waitbutton
 	closetext
 	end
@@ -140,6 +148,16 @@ GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
 	
 	para "I hope everything"
 	line "is OK in Saffron…"
+	done
+
+GoldenrodMagnetTrainStationOfficerRocketTakeoverText:
+	text "I'm so sorry."
+	line "With Team Rocket"
+	cont "being active,"
+	
+	para "Saffron City is"
+	line "refusing to send"
+	cont "the Train over."
 	done
 
 GoldenrodMagnetTrainStationOfficerAreYouComingAboardText:

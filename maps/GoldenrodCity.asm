@@ -6,14 +6,13 @@
 	const GOLDENRODCITY_YOUNGSTER2
 	const GOLDENRODCITY_LASS
 	const GOLDENRODCITY_GRAMPS
+	const GOLDENRODCITY_MOVETUTOR
 	const GOLDENRODCITY_ROCKETSCOUT
 	const GOLDENRODCITY_ROCKET1
 	const GOLDENRODCITY_ROCKET2
 	const GOLDENRODCITY_ROCKET3
-	const GOLDENRODCITY_ROCKET4
-	const GOLDENRODCITY_ROCKET5
-	const GOLDENRODCITY_ROCKET6
-	const GOLDENRODCITY_MOVETUTOR
+	const GOLDENRODCITY_ROCKET_GIRL1
+	const GOLDENRODCITY_ROCKET_GIRL2
 
 GoldenrodCity_MapScripts:
 	def_scene_scripts
@@ -33,7 +32,7 @@ GoldenrodCityFlypointAndFloriaCallback:
 	endcallback
 
 GoldenrodCityMoveTutorCallback:
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_TEAM_ROCKET_DISBANDED
 	iffalse .MoveTutorDone
 	checkitem COIN_CASE
 	iffalse .MoveTutorDisappear
@@ -58,9 +57,13 @@ GoldenrodCityRocketTakeover:
 	endcallback
 
 .RocketTakeover:
-	changeblock 4, 12, $b7 ; rocket takeover1
-	changeblock 6, 12, $bb ; rocket takeover2
-	changeblock 8, 12, $bf ; rocket takeover2
+	changeblock 6,  4, $b7 ; rocket takeover
+	changeblock 6,  6, $bb ; rocket takeover
+	changeblock 6,  8, $bf ; rocket takeover	
+	changeblock 6, 10, $c3 ; rocket takeover
+	changeblock 4, 12, $c8 ; rocket takeover
+	changeblock 6, 12, $c9 ; rocket takeover
+	changeblock 8, 12, $ca ; rocket takeover
 	endcallback
 
 MoveTutorScript:
@@ -235,27 +238,33 @@ GoldenrodCityRocket2Script:
 GoldenrodCityRocket3Script:
 	jumptextfaceplayer GoldenrodCityRocket3Text
 
-GoldenrodCityRocket4Script:
-	jumptextfaceplayer GoldenrodCityRocket4Text
-
-GoldenrodCityRocket5Script:
+GoldenrodCityRocketGirl1Script:
 	faceplayer
 	opentext
-	writetext GoldenrodCityRocket5Text
+	writetext GoldenrodCityRocketGirl1Text
 	waitbutton
 	closetext
-	turnobject GOLDENRODCITY_ROCKET5, RIGHT
-	end
-
-GoldenrodCityRocket6Script:
-	faceplayer
-	opentext
-	writetext GoldenrodCityRocket6Text
-	waitbutton
-	closetext
+	readvar VAR_FACING
+	ifequal UP, .RocketGirlPushDown
+	ifequal LEFT, .RocketGirlPushRight
 	playsound SFX_TACKLE
-	applymovement PLAYER, GoldenrodCity_RocketPushesYou
+	applymovement PLAYER, GoldenrodCity_RocketGirlPushesYouLeft
+.finishRocketGirl
+	turnobject GOLDENRODCITY_ROCKET_GIRL1, UP
 	end
+	
+.RocketGirlPushDown
+	playsound SFX_TACKLE
+	applymovement PLAYER, GoldenrodCity_RocketGirlPushesYouDown
+	sjump .finishRocketGirl
+
+.RocketGirlPushRight
+	playsound SFX_TACKLE
+	applymovement PLAYER, GoldenrodCity_RocketGirlPushesYouRight
+	sjump .finishRocketGirl
+
+GoldenrodCityRocketGirl2Script:
+	jumptextfaceplayer GoldenrodCityRocketGirl2Text
 
 GoldenrodCityStationSign:
 	jumptext GoldenrodCityStationSignText
@@ -307,9 +316,21 @@ GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement:
 	step UP
 	step_end
 
-GoldenrodCity_RocketPushesYou:
+GoldenrodCity_RocketGirlPushesYouLeft:
 	fix_facing
-	jump_step LEFT
+	big_step LEFT
+	remove_fixed_facing
+	step_end
+
+GoldenrodCity_RocketGirlPushesYouDown:
+	fix_facing
+	big_step DOWN
+	remove_fixed_facing
+	step_end
+
+GoldenrodCity_RocketGirlPushesYouRight:
+	fix_facing
+	big_step RIGHT
 	remove_fixed_facing
 	step_end
 
@@ -424,15 +445,7 @@ GoldenrodCityRocket3Text:
 	line "money!"
 	done
 
-GoldenrodCityRocket4Text:
-	text "Our dream will"
-	line "soon come true…"
-
-	para "It was such a long"
-	line "struggle…"
-	done
-
-GoldenrodCityRocket5Text:
+GoldenrodCityRocketGirl1Text:
 	text "What? What do"
 	line "you want?"
 	
@@ -443,11 +456,9 @@ GoldenrodCityRocket5Text:
 	para "She's so tough…"
 	done
 
-GoldenrodCityRocket6Text:
-	text "We're on Gym"
-	line "Leader duty."
-	
-	para "Back off, kid!"
+GoldenrodCityRocketGirl2Text:
+	text "Hehe, this city"
+	line "belongs to us now!"
 	done
 
 GoldenrodCityStationSignText:
@@ -627,12 +638,10 @@ GoldenrodCity_MapEvents:
 	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster2Script, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 18,  9, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityLassScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event  7, 28, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS
+	object_event 18, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	object_event  5, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketScoutScript, EVENT_GOLDENROD_CITY_ROCKET_SCOUT
 	object_event 34, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket1Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	object_event 10, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
+	object_event  9, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	object_event 15, 23, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket3Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 26,  9, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 25,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 25,  9, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 26,  8, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 18, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
+	object_event 26,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketGirl1Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  8, 28, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketGirl2Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER

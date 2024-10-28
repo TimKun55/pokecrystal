@@ -170,9 +170,6 @@ INCLUDE "data/tilesets/johto_modern_collision.asm"
 TilesetTraditionalHouseGFX::
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
 
-TilesetTraditionalHouseMeta::
-INCBIN "data/tilesets/traditional_house_metatiles.bin"
-
 
 SECTION "Tileset Data 6", ROMX
 
@@ -370,6 +367,9 @@ INCLUDE "data/tilesets/johto_2_collision.asm"
 
 TilesetJohto2Attr::
 INCBIN "data/tilesets/johto_2_attributes.bin"
+
+TilesetTraditionalHouseMeta::
+INCBIN "data/tilesets/traditional_house_metatiles.bin"
 
 
 SECTION "Tileset Data 13", ROMX

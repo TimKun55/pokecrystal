@@ -401,7 +401,6 @@ INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/RedsHouse2F.asm"
 INCLUDE "maps/BluesHouse.asm"
-INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -431,6 +430,7 @@ INCLUDE "maps/PewterPokecenter1F.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 INCLUDE "maps/BlackthornMoveTutorHouse.asm"
 INCLUDE "maps/Route3Pokecenter1F.asm"
+INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 22", ROMX
