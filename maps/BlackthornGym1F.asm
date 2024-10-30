@@ -198,7 +198,11 @@ BlackthornGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, CLAIR, CLAIR1
+	readvar VAR_BADGES
+	ifgreater 15, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 ClairIntroText:
 	text "I am Clair."

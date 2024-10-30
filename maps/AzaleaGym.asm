@@ -210,7 +210,11 @@ AzaleaGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, BUGSY, BUGSY1
+	readvar VAR_BADGES
+	ifgreater 9, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 BugsyText_INeverLose:
 	text "I'm Bugsy!"

@@ -184,7 +184,11 @@ VioletGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, FALKNER, FALKNER1
+	readvar VAR_BADGES
+	ifgreater 8, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 FalknerIntroText:
 	text "I'm Falkner, the"

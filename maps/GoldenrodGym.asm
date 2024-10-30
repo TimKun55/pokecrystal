@@ -230,7 +230,11 @@ GoldenrodGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1
+	readvar VAR_BADGES
+	ifgreater 10, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 BridgetWalksUpMovement:
 	step LEFT

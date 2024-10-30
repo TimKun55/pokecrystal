@@ -211,7 +211,11 @@ MahoganyGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, PRYCE, PRYCE1
+	readvar VAR_BADGES
+	ifgreater 14, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 PryceText_Intro:
 	text "#mon have many"

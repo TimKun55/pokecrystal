@@ -170,7 +170,11 @@ OlivineGymStatue:
 	jumpstd GymStatue1Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, JASMINE, JASMINE1
+	readvar VAR_BADGES
+	ifgreater 13, .LyraToo
 	jumpstd GymStatue2Script
+.LyraToo
+	jumpstd GymStatue3Script
 
 Jasmine_SteelTypeIntro:
 	text "…Thank you for"
