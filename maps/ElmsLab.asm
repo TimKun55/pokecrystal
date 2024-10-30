@@ -1427,6 +1427,18 @@ ElmGiveTicketText1:
 	para "Now you can travel"
 	line "to Kanto and catch"
 	cont "#mon there!"
+	
+	para "You can also take"
+	line "on their Gyms."
+	
+	para "If you earn their"
+	line "eight badges, the"
+	
+	para "Elite Four will"
+	line "battle you with"
+	
+	para "all of their"
+	line "strength."	
 	done
 
 ElmGiveTicketText2:
@@ -1439,9 +1451,6 @@ ElmGiveTicketText2:
 	para "After all, you've"
 	line "traveled all over"
 	cont "with your #mon."
-
-	para "Give my regards to"
-	line "Prof.Oak in Kanto!"
 	done
 
 LyraAnnouncesGymChallengeText:

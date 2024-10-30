@@ -33,6 +33,7 @@ SwarmGrassWildMons:
 	db  8, TEDDIURSA,     3,   6
 	db  8, LARVITAR,      3,   7
 
+; Sentret swarm
 	map_id ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
