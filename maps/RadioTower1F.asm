@@ -332,11 +332,8 @@ RadioTower1FRadioCardWomanQuestion2Text:
 	text "Correct!"
 	line "Question 2:"
 
-	para "Is this statement"
-	line "correct?"
-
-	para "You can't buy a"
-	line "Berry at a Mart."
+	para "Nidorina can only"
+	line "be female. True?"
 	done
 
 RadioTower1FRadioCardWomanQuestion3Text:
@@ -351,11 +348,11 @@ RadioTower1FRadioCardWomanQuestion4Text:
 	text "So far so good!"
 	line "Question 4:"
 
-	para "Is Falkner the"
-	line "Violet Gym Leader"
+	para "Does Kurt the"
+	line "# Ball creator,"
 
-	para "who uses bird"
-	line "#mon?"
+	para "use apricots as"
+	line "ingredients?"
 	done
 
 RadioTower1FRadioCardWomanQuestion5Text:
