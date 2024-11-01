@@ -121,6 +121,7 @@ NewBarkTown_LyraFinalTrigger:
 	showemote EMOTE_SHOCK, NEWBARKTOWN_LYRA, 15
 	special FadeOutMusic
 	pause 15
+	playmusic MUSIC_LYRA_ENCOUNTER
 	applymovement NEWBARKTOWN_LYRA, NewBarkTownLyraSaysGoodbyeMovement2
 	turnobject PLAYER, LEFT
 	opentext

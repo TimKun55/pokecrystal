@@ -1420,7 +1420,7 @@ DrawPackGFX:
 	ld d, 0
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr nz, .female
+	jr z, .female
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr nz, .female
