@@ -478,7 +478,7 @@ ENDM
 	newgroup VIRIDIAN                                             ; 23
 	map_const ROUTE_2,                                     10, 33 ;  1
 	map_const ROUTE_22,                                    20,  9 ;  2
-	map_const ROUTE_26,                                    10, 54 ;  3	
+	map_const ROUTE_26,                                    11, 54 ;  3	
 	map_const VIRIDIAN_CITY,                               20, 18 ;  4
 	map_const VIRIDIAN_GYM,                                 5,  9 ;  5
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  6

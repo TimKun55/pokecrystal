@@ -53,8 +53,8 @@ TrainerCooltrainermJake:
 	closetext
 	end
 
-TrainerCooltrainermGaven3:
-	trainer COOLTRAINERM, GAVEN3, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
+TrainerCooltrainermGaven:
+	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGavenSeenText, CooltrainermGavenBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
@@ -77,32 +77,32 @@ TrainerCooltrainermGaven3:
 	askforphonenumber PHONE_COOLTRAINERM_GAVEN
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN3
+	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
 .WantsBattle:
 	scall .Rematch
-	winlosstext CooltrainermGaven3BeatenText, 0
+	winlosstext CooltrainermGavenBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
-	loadtrainer COOLTRAINERM, GAVEN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
 	loadtrainer COOLTRAINERM, GAVEN1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight1:
 	loadtrainer COOLTRAINERM, GAVEN2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	end
+
+.LoadFight2:
+	loadtrainer COOLTRAINERM, GAVEN3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
@@ -344,13 +344,13 @@ CooltrainermJakeAfterBattleText:
 	line "than Gym Leaders."
 	done
 
-CooltrainermGaven3SeenText:
+CooltrainermGavenSeenText:
 	text "By experiencing"
 	line "tough battles, you"
 	cont "gain power."
 	done
 
-CooltrainermGaven3BeatenText:
+CooltrainermGavenBeatenText:
 	text "Gaah! Life is even"
 	line "tougher!"
 	done
@@ -541,16 +541,16 @@ Route26_MapEvents:
 
 	def_object_events
 	object_event 14,  24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermJake, -1
-	object_event 11,  82, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermGaven3, -1
+	object_event 11,  82, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermGaven, -1
 	object_event  9,  58, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJoyce, -1
 	object_event  5,   8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJose, -1
 	object_event 12,  72, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyBrenda, -1
 	object_event  8,  38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
-	object_event  7, 45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacNeville, -1
+	object_event  7,  45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacNeville, -1
 	object_event  5,  90, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, Route26Fisher2Script, -1
 	object_event 12,  51, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9,  15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event  9,  96, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
-	object_event 12,  98, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
-	object_event 11, 100, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
-	object_event  8, 100, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26PPUp, EVENT_ROUTE_26_PP_UP
+	object_event 14, 98, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
+	object_event 13, 100, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1
+	object_event 10, 100, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26PPUp, EVENT_ROUTE_26_PP_UP

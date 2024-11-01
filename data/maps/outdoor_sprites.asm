@@ -206,6 +206,7 @@ CherrygroveGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; max 9 of 9 walking sprites
 	db SPRITE_BUG_MANIAC
+	db SPRITE_SCHOOLBOY
 	db SPRITE_RATTATA
 	db SPRITE_RATTATA_BACK
 	db SPRITE_POKE_BALL
