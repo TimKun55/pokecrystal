@@ -186,6 +186,8 @@ hFunctionTarget::
 hFunctionTargetLo:: db
 hFunctionTargetHi:: db
 
-	ds 14
+hDelayFrameLY:: db
+
+	ds 13
 
 ENDSECTION
