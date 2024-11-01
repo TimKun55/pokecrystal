@@ -117,9 +117,8 @@
 	const SPRITE_PETREL ; 78
 	const SPRITE_PROTON ; 79
 	const SPRITE_EUSINE ; 7a
-	const SPRITE_PRIMO ; 7b
-	const SPRITE_SCHOOLBOY ; 7c
-	const SPRITE_BIRD_KEEPER ; 7d
+	const SPRITE_SCHOOLBOY ; 7b
+	const SPRITE_BIRD_KEEPER ; 7c
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

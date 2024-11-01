@@ -122,7 +122,6 @@ OverworldSprites:
 	overworld_sprite PetrelSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ProtonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite PrimoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SchoolboySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BirdKeeperSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES
