@@ -370,13 +370,13 @@ Menu_WasButtonPressed:
 _2DMenuInterpretJoypad:
 	call GetMenuJoypad
 	bit A_BUTTON_F, a
-	jp nz, .a_b_start_select
+	jp nz, .a_start_select
 	bit B_BUTTON_F, a
-	jp nz, .a_b_start_select
+	jp nz, .b_button
 	bit SELECT_F, a
-	jp nz, .a_b_start_select
+	jp nz, .a_start_select
 	bit START_F, a
-	jp nz, .a_b_start_select
+	jp nz, .a_start_select
 	bit D_RIGHT_F, a
 	jr nz, .d_right
 	bit D_LEFT_F, a
@@ -488,9 +488,17 @@ _2DMenuInterpretJoypad:
 	xor a
 	ret
 
-.a_b_start_select
+.a_start_select
+.finish
 	xor a
 	ret
+
+.b_button
+	; Run is the bottom-right item
+	ld a, $2
+	ld [wMenuCursorX], a
+	ld [wMenuCursorY], a
+	jr .finish
 
 Move2DMenuCursor:
 	ld hl, wCursorCurrentTile
