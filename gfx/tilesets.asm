@@ -277,9 +277,6 @@ INCBIN "data/tilesets/kanto_house_attributes.bin"
 TilesetPokecenterAttr::
 INCBIN "data/tilesets/pokecenter_attributes.bin"
 
-TilesetGateAttr::
-INCBIN "data/tilesets/gate_attributes.bin"
-
 
 
 SECTION "Tileset Data 10", ROMX
@@ -370,6 +367,9 @@ INCBIN "data/tilesets/johto_2_attributes.bin"
 
 TilesetTraditionalHouseMeta::
 INCBIN "data/tilesets/traditional_house_metatiles.bin"
+
+TilesetGateAttr::
+INCBIN "data/tilesets/gate_attributes.bin"
 
 
 SECTION "Tileset Data 13", ROMX

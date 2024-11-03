@@ -660,6 +660,7 @@ InitializeEventsScript:
 	setevent EVENT_LYRA_ROUTE_29
 	setevent EVENT_LYRA_ROUTE_34
 	setevent EVENT_LYRA_ROUTE_42
+	setevent EVENT_INDIGO_PLATEAU_POKECENTER_LYRA
 	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 
