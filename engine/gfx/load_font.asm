@@ -84,9 +84,9 @@ LoadHPBar:
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 9
 	call Get2bppViaHDMA
-	ld de, MobilePhoneTilesGFX + 7 tiles ; mobile phone icon
+	ld de, ExpBarNameGFX ; exp bar label
 	ld hl, vTiles2 tile $5e
-	lb bc, BANK(MobilePhoneTilesGFX), 2
+	lb bc, BANK(ExpBarNameGFX), 2
 	call Get2bppViaHDMA
 	ret
 
@@ -111,6 +111,10 @@ StatsScreen_LoadFont:
 	ld de, FontBattleExtra + 17 tiles ; Starting at the 18th Tile of the FontBattleExtra PNG
 	ld hl, vTiles2 tile $71 ; loading that 18th Tile into Tile $71
 	lb bc, BANK(FontBattleExtra), 4 ; 4 Tiles, left arrow, ID + No. Tiles
+	call Get2bppViaHDMA
+	ld de, ExpBarNameGFX
+	ld hl, vTiles2 tile $73
+	lb bc, BANK(ExpBarNameGFX), 4
 	call Get2bppViaHDMA
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX

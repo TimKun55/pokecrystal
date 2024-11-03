@@ -158,18 +158,18 @@ _CGB_FinishBattleScreenLayout:
 
 ; flip reused tiles
 ; HUD vertical bar thingy
-	hlcoord 18, 10, wAttrmap
-	ld bc, 1
-	ld a, PAL_BATTLE_BG_PLAYER_HP
-	set 5, a ; flips tiles on x axis
-	call ByteFill
+;	hlcoord 18, 10, wAttrmap
+;	ld bc, 1
+;	ld a, PAL_BATTLE_BG_PLAYER_HP
+;	set 5, a ; flips tiles on x axis
+;	call ByteFill
 
 ; player exp
-	hlcoord 10, 11, wAttrmap
-	lb bc, 1, 8
-	ld a, PAL_BATTLE_BG_EXP
-	set 5, a ; flips tiles on x axis
-	call FillBoxCGB
+;	hlcoord 10, 11, wAttrmap
+;	lb bc, 1, 8
+;	ld a, PAL_BATTLE_BG_EXP
+;	set 5, a ; flips tiles on x axis
+;	call FillBoxCGB
 
 ; status icons
 	; enemy

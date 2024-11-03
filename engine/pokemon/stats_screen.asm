@@ -642,7 +642,7 @@ LoadPinkPage:
 	ld de, wExpToNextLevel
 	call PrintNum
 	ld de, .LevelUpStr
-	hlcoord 10, 12
+	hlcoord 11, 12
 	call PlaceString
 	ld de, .ToStr
 	hlcoord 14, 14
@@ -715,7 +715,7 @@ LoadPinkPage:
 	db "Level Up@"
 
 .ToStr:
-	db "To@"
+	db "to@"
 
 .PkrsStr:
 	db "#rus@"

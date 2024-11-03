@@ -7733,7 +7733,7 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 17, 11
+	hlcoord 10, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
@@ -7749,7 +7749,7 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 17, 11
+	hlcoord 10, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
@@ -7982,8 +7982,6 @@ FillInExpBar:
 	push hl
 	call CalcExpBar
 	pop hl
-	ld de, 7
-	add hl, de
 	jp PlaceExpBar
 
 CalcExpBar:
@@ -8050,7 +8048,8 @@ CalcExpBar:
 	ld [hld], a
 	xor a
 	ld [hl], a
-	ld a, 64
+; multiply by 64
+	ld a, $40
 	ldh [hMultiplier], a
 	call Multiply
 	pop af
@@ -8093,7 +8092,7 @@ PlaceExpBar:
 	jr c, .next
 	ld b, a
 	ld a, $6a ; full bar
-	ld [hld], a
+	ld [hli], a
 	dec c
 	jr z, .finish
 	jr .loop1
@@ -8119,7 +8118,7 @@ PlaceExpBar:
 	ld a, $62 ; empty bar
 
 .skip
-	ld [hld], a
+	ld [hli], a
 	ld a, $62 ; empty bar
 	dec c
 	jr nz, .loop2

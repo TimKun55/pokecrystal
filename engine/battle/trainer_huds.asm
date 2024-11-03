@@ -30,7 +30,7 @@ ShowPlayerMonsRemaining:
 	jp LoadTrainerHudOAM
 
 ShowOTTrainerMonsRemaining:
-	call DrawEnemyHUDBorder
+	call DrawEnemyPartyIconHUDBorder
 	ld hl, wOTPartyMon1HP
 	ld de, wOTPartyCount
 	call StageBallTilesData
@@ -109,9 +109,9 @@ DrawPlayerHUDBorder:
 	jr PlaceHUDBorderTiles
 
 .tiles
-	db $6d ; right side ; $7f (no vertical line)
-	db $77 ; bottom right ; 6b (hard end, like enemy HP)
-	db $6f ; bottom left
+	db $7f ; right side ; (no vertical line)
+	db $6b ; bottom right ; 6b (hard end, like enemy HP)
+	db $6d ; bottom left
 	db $62 ; bottom side
 .tiles_end
 
@@ -125,13 +125,13 @@ DrawPlayerPartyIconHUDBorder:
 	jr PlaceHUDBorderTiles
 
 .tiles
-	db $6d ; right side
-	db $5c ; bottom right
+	db $7f ; right side ; empty space
+	db $7f ; bottom right ; empty space
 	db $6f ; bottom left
 	db $62 ; bottom side
 .tiles_end
 
-DrawEnemyHUDBorder:
+DrawEnemyPartyIconHUDBorder:
 	ld hl, .tiles
 	ld de, wTrainerHUDTiles
 	ld bc, .tiles_end - .tiles
@@ -140,22 +140,26 @@ DrawEnemyHUDBorder:
 	ld de, 1 ; start on left
 	call PlaceHUDBorderTiles
 	ld a, [wBattleMode]
+	jr DrawEnemyHUDBorder
+
+.tiles
+	db $7f ; right side ; empty space
+	db $7f ; bottom right ; empty space
+	db $78 ; bottom right
+	db $62 ; bottom side
+.tiles_end
+
+DrawEnemyHUDBorder:
+	ld a, [wBattleMode]
 	dec a
 	ret nz
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	ret z
-	hlcoord 1, 1
+	hlcoord 1, 1 ; caught ball
 	ld [hl], $5d
 	ret
-
-.tiles
-	db $6d ; left side
-	db $74 ; bottom left
-	db $78 ; bottom right
-	db $62 ; bottom side
-.tiles_end
 
 PlaceHUDBorderTiles:
 	ld a, [wTrainerHUDTiles + 0]
