@@ -692,6 +692,14 @@ _AreYouABoyOrAreYouAGirlText::
 	line "Or are you a girl?"
 	done
 
+_SoYoureABoy::
+	text "So you're a boy?"
+	done
+
+_SoYoureAGirl::
+	text "So you're a girl?"
+	done
+
 Text_BattleEffectActivate::
 	text "<USER>'s"
 	line "@"

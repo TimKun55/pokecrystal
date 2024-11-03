@@ -48,6 +48,23 @@ NewGame_ClearTilemapEtc:
 	call ClearWindowData
 	ret
 
+InitCrystalData:
+	ld a, $1
+	ld [wd474], a
+	xor a
+	ld [wd473], a
+	ld [wPlayerGender], a
+	ld [wd475], a
+	ld [wd476], a
+	ld [wd477], a
+	ld [wd478], a
+	ld [wd002], a
+	ld [wd003], a
+	ld a, [wd479]
+	and %11111100
+	ld [wd479], a
+	ret
+
 MysteryGift:
 	call UpdateTime
 	farcall DoMysteryGiftIfDayHasPassed
@@ -63,7 +80,7 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
-	call PlayerProfileSetup
+	call InitCrystalData
 	call OakSpeech
 	call InitializeWorld
 
@@ -76,16 +93,6 @@ NewGame:
 	ld a, MAPSETUP_WARP
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
-
-PlayerProfileSetup:
-	farcall CheckMobileAdapterStatus
-	jr c, .ok
-	farcall InitGender
-	ret
-.ok
-	ld c, 0
-	farcall InitMobileProfile
-	ret
 
 if DEF(_DEBUG)
 DebugRoom: ; unreferenced
@@ -332,7 +339,6 @@ Continue:
 	ld a, HIGH(MUSIC_NONE)
 	ld [wMusicFadeID + 1], a
 	call ClearBGPalettes
-	call Continue_MobileAdapterMenu
 	call CloseWindow
 	call ClearTilemap
 	ld c, 20
@@ -365,33 +371,6 @@ PostCreditsSpawn:
 	ld [wSpawnAfterChampion], a
 	ld a, MAPSETUP_WARP
 	ldh [hMapEntryMethod], a
-	ret
-
-Continue_MobileAdapterMenu: ; unused
-	farcall CheckMobileAdapterStatus
-	ret nc
-	ld hl, wd479
-	bit 1, [hl]
-	ret nz
-	ld a, 5
-	ld [wMusicFade], a
-	ld a, LOW(MUSIC_MOBILE_ADAPTER_MENU)
-	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_MOBILE_ADAPTER_MENU)
-	ld [wMusicFadeID + 1], a
-	ld c, 20
-	call DelayFrames
-	ld c, $1
-	farcall InitMobileProfile ; mobile
-	farcall _SaveData
-	ld a, 8
-	ld [wMusicFade], a
-	ld a, LOW(MUSIC_NONE)
-	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_NONE)
-	ld [wMusicFadeID + 1], a
-	ld c, 35
-	call DelayFrames
 	ret
 
 ConfirmContinue:
@@ -656,20 +635,17 @@ OakSpeech:
 
 	ld hl, OakText5
 	call PrintText
-	call RotateThreePalettesRight
-	call ClearTilemap
 
-	xor a
-	ld [wCurPartySpecies], a
-	farcall DrawIntroPlayerPic
+	call InitGender
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	ld c, 10
+	call DelayFrames
 
 	ld hl, OakText6
 	call PrintText
+
 	call NamePlayer
+
 	ld hl, OakText7
 	call PrintText
 	ret
@@ -705,6 +681,73 @@ OakText6:
 
 OakText7:
 	text_far _OakText7
+	text_end
+
+InitGender:
+	call RotateThreePalettesRight
+	call ClearTilemap
+	call WaitBGMap2
+	call SetDefaultBGPAndOBP
+
+	ld hl, AreYouABoyOrAreYouAGirlText
+	call PrintText
+
+	ld hl, .MenuDataHeader
+	call LoadMenuHeader
+	call WaitBGMap2
+	call VerticalMenu
+	call CloseWindow
+	ld a, [wMenuCursorY]
+	dec a
+	ld [wPlayerGender], a
+
+	call ClearTilemap
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, SoYoureABoyText
+	ld a, [wPlayerGender]
+	and a
+	jr z, .boy
+	ld hl, SoYoureAGirlText
+.boy
+	call PrintText
+
+	call YesNoBox
+	jr c, InitGender
+	ret
+
+.MenuDataHeader:
+	db $40 ; flags
+	db 04, 06 ; start coords
+	db 09, 12 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2: 
+	db $a1 ; flags
+	db 2 ; items
+	db "Boy@"
+	db "Girl@"
+
+AreYouABoyOrAreYouAGirlText:
+	; Are you a boy? Or are you a girl?
+	text_far _AreYouABoyOrAreYouAGirlText
+	text_end
+
+SoYoureABoyText:
+	; So you're a boy?
+	text_far _SoYoureABoy
+	text_end
+
+SoYoureAGirlText:
+	; So you're a girl?
+	text_far _SoYoureAGirl
 	text_end
 
 NamePlayer:
