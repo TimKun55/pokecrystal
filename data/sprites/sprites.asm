@@ -104,7 +104,7 @@ OverworldSprites:
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_EMOTE
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite SuicuneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SuicuneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite EnteiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite DragoniteSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
