@@ -206,7 +206,8 @@
 	const EVENT_ROUTE_45_GLIGAR_ENCOUNTERED
 	const EVENT_GRAND_CHAMPION
 	const EVENT_FLOWER_SHOP_UNLOCKED_DOOR
-; Unused: next 49 events
+	const EVENT_GOT_POKEDEX_FROM_OAK
+; Unused: next 48 events
 
 	const_next 250
 ; Kanto story events

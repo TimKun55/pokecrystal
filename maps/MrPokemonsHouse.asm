@@ -1,6 +1,7 @@
 	object_const_def
 	const MRPOKEMONSHOUSE_GENTLEMAN
 	const MRPOKEMONSHOUSE_OAK
+	const MRPOKEMONSHOUSE_POKEDEX
 
 MrPokemonsHouse_MapScripts:
 	def_scene_scripts
@@ -87,8 +88,16 @@ MrPokemonsHouse_OakScript:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext MrPokemonsHouse_OakText1
-	promptbutton
-	waitsfx
+	waitbutton
+	closetext
+	turnobject MRPOKEMONSHOUSE_OAK, UP
+	pause 10
+	applymovement MRPOKEMONSHOUSE_POKEDEX, MrPokemonsHouse_OakTakesPokedex
+	disappear MRPOKEMONSHOUSE_POKEDEX
+	pause 10
+	turnobject MRPOKEMONSHOUSE_OAK, LEFT
+	pause 10
+	opentext
 	writetext MrPokemonsHouse_GetDexText
 	playsound SFX_ITEM
 	waitsfx
@@ -164,6 +173,12 @@ MrPokemonsHouse_OakWalksToPlayer:
 	step DOWN
 	step LEFT
 	step LEFT
+	step_end
+
+MrPokemonsHouse_OakTakesPokedex:
+	fix_facing
+	slide_step_down
+	remove_fixed_facing
 	step_end
 
 MrPokemonsHouse_OakExits:
@@ -404,3 +419,4 @@ MrPokemonsHouse_MapEvents:
 	def_object_events
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1
 	object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK
+	object_event  4,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOT_POKEDEX_FROM_OAK
