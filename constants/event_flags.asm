@@ -1644,7 +1644,9 @@
 	const EVENT_MOUNT_MOON_B2F_RARE_CANDY
 	const EVENT_MOUNT_MOON_B2F_MOON_STONE
 	const EVENT_ROUTE_6_MAX_POTION
-; Unused: next 95 events
+	const EVENT_VERMILION_GYM_SWITCH_1
+	const EVENT_VERMILION_GYM_SWITCH_2
+; Unused: next 93 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800
