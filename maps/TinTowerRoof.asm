@@ -92,6 +92,9 @@ TinTowerHoOh:
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	end
 
+HoOhStatueSign:
+	jumptext HoOhStatueSignText
+
 RainbowWingGlimmerText:
 	text "?!"
 	
@@ -111,6 +114,12 @@ HoOhText:
 	text "Shaoooh!"
 	done
 
+HoOhStatueSignText:
+	text "A statue dedicated"
+	line "to the Rainbow"
+	cont "#mon."
+	done
+
 TinTowerRoof_MapEvents:
 	db 0, 0 ; filler
 
@@ -124,6 +133,8 @@ TinTowerRoof_MapEvents:
 	coord_event  7, 12, SCENE_TINTOWERROOF_HO_OH_APPEAR, TinTowerRoofHoohAppear
 
 	def_bg_events
+	bg_event 6, 11, BGEVENT_READ, HoOhStatueSign
+	bg_event 7, 11, BGEVENT_READ, HoOhStatueSign
 
 	def_object_events
 	object_event  7,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
