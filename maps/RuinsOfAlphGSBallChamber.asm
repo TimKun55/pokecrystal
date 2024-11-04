@@ -93,4 +93,4 @@ RuinsOfAlphGSBallChamber_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphGSBallChamberBallRelic, EVENT_GS_BALL_CHAMBER_BALL_RELIC
+	object_event  3,  8, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphGSBallChamberBallRelic, EVENT_GS_BALL_CHAMBER_BALL_RELIC

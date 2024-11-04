@@ -80,4 +80,4 @@ DayOfWeekSiblingsHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1
+	object_event  3,  3, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1

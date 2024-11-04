@@ -90,8 +90,8 @@ OverworldSprites:
 	overworld_sprite N64SpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SudowoodoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite AmpharosSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite PokeBallSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite PokedexSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite BallBookPokedexSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LyraSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite VirtualBoySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite OldLinkReceptionistSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED

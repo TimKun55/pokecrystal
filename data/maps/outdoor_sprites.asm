@@ -47,7 +47,7 @@ CinnabarGroupSprites:
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SWIMMER_GUY
 	; max 8 of 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db 0 ; end
@@ -67,7 +67,7 @@ PewterGroupSprites:
 	db SPRITE_BEAUTY
 	; max 9 of 9 walking sprites
 	db SPRITE_BUG_MANIAC
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db 0 ; end
@@ -85,7 +85,7 @@ CeruleanGroupSprites:
 	db SPRITE_AGATHA
 	db SPRITE_SCHOOLBOY
 	; max 9 of 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_SLOWBRO
@@ -103,7 +103,7 @@ SaffronGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
 	; max 7 of 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db 0 ; end
 
 VermilionGroupSprites:
@@ -121,7 +121,7 @@ VermilionGroupSprites:
 	db SPRITE_LADY
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
@@ -137,7 +137,7 @@ CeladonGroupSprites:
 	db SPRITE_POKEFAN_M
 	; 8 of max 9 walking sprites
 	db SPRITE_POLIWRATH
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
@@ -156,7 +156,7 @@ FuchsiaGroupSprites:
 	db SPRITE_BIRD_KEEPER
 	db SPRITE_SWIMMER_GUY
 	; 9 of max 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_OFFICER
 	db SPRITE_LADY
@@ -179,7 +179,7 @@ IndigoGroupSprites:
 	db SPRITE_PRYCE
 	db SPRITE_CLAIR
 	; 8 of max 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_NOCTOWL
 	db SPRITE_SCYTHER
 	db SPRITE_MILTANK
@@ -209,7 +209,7 @@ CherrygroveGroupSprites:
 	db SPRITE_SCHOOLBOY
 	db SPRITE_RATTATA
 	db SPRITE_RATTATA_BACK
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_HOOTHOOT
 	db 0 ; end
@@ -226,7 +226,7 @@ VioletGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_BUG_CATCHER
 	; 9 of max 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
@@ -244,7 +244,7 @@ EcruteakGroupSprites:
 	db SPRITE_BUG_CATCHER
 	; 9 of max 9 walking sprites
 	db SPRITE_SUDOWOODO
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_BUG_MANIAC
 	db SPRITE_SUICUNE
@@ -283,7 +283,7 @@ GoldenrodGroupSprites:
 	db SPRITE_ROCKET_GIRL
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
@@ -329,7 +329,7 @@ MahoganyGroupSprites:
 	db SPRITE_BUG_MANIAC
 	db SPRITE_LADY
 	db SPRITE_FRUIT_TREE
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_SUICUNE
 	db 0 ; end
 
@@ -347,7 +347,7 @@ LakeOfRageGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db 0 ; end
 
 BlackthornGroupSprites:
@@ -364,14 +364,14 @@ BlackthornGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_SCHOOLBOY
 	db SPRITE_FRUIT_TREE
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_GLIGAR
 	db 0 ; end
 
 SilverGroupSprites:
 ; Route28, SilverCaveOutside
 	; 0 of max 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db 0 ; end
 
 DungeonsGroupSprites:
@@ -390,7 +390,7 @@ DungeonsGroupSprites:
 	db SPRITE_PERSIAN
 	db SPRITE_LADY
 	db SPRITE_KURT
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_ROCK
 	db 0 ; end
 
@@ -421,5 +421,5 @@ SafariGroupSprites:
 	db SPRITE_SCIENTIST
 	db SPRITE_COOLTRAINER_F
 	; 6 of max 9 walking sprites
-	db SPRITE_POKE_BALL
+	db SPRITE_BALL_BOOK_POKEDEX
 	db 0 ; end
