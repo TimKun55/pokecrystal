@@ -299,7 +299,8 @@
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_PP_UP
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_STARDUST
 	const EVENT_FINAL_BATTLE_WITH_LYRA
-; Unused: next 63 events
+	const EVENT_GOT_PREMIER_BALLS_FROM_SILPH
+; Unused: next 62 events
 
 	const_next 400
 ; Kurt Apricorn events
@@ -1647,7 +1648,8 @@
 	const EVENT_ROUTE_6_MAX_POTION
 	const EVENT_VERMILION_GYM_SWITCH_1
 	const EVENT_VERMILION_GYM_SWITCH_2
-; Unused: next 93 events
+	const EVENT_SILPHCO1F_EMPLOYEE
+; Unused: next 92 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800
