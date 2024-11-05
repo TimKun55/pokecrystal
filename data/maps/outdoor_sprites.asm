@@ -212,6 +212,7 @@ CherrygroveGroupSprites:
 	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_HOOTHOOT
+	db SPRITE_PIDGEY
 	db 0 ; end
 
 VioletGroupSprites:

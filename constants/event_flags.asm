@@ -1484,7 +1484,8 @@
 	const EVENT_LYRA_ROUTE_42
 	const EVENT_GOT_AMULET_COIN_FROM_LYRA
 	const EVENT_RUINS_OF_ALPH_CAVE_ENTRANCE_SCIENTIST
-; Unused: next 85 events
+	const EVENT_NEW_BARK_TOD_POKEMON
+; Unused: next 84 events
 
 	const_next 1800
 ; Kanto people
