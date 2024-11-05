@@ -56,10 +56,9 @@ MrFujisHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 MrFujisHouseSuperNerdText:
-	text "MR.FUJI does live"
+	text "Mr.Fuji does live"
 	line "here, but he's not"
-
-	para "home now."
+	cont "home now."
 
 	para "He should be at"
 	line "the Soul House."

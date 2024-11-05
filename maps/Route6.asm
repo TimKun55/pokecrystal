@@ -149,7 +149,7 @@ LadyLiaAfterBattleText:
 	
 	para "fairy-types are!"
 	
-	para "2 of my sisters"
+	para "Two of my sisters"
 	line "are doing the"
 	cont "same!"
 	done
