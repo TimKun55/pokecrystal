@@ -4620,8 +4620,8 @@ DrawPlayerHUD:
 
 	farcall DrawPlayerHUDBorder
 
-	hlcoord 18, 9
-	ld [hl], $73 ; vertical bar
+	hlcoord 19, 9
+	ld [hl], $7f ; vertical bar
 	call PrintPlayerHUD
 
 	; HP bar
@@ -4632,6 +4632,10 @@ DrawPlayerHUD:
 	predef DrawPlayerHP
 
 	; Exp bar
+	hlcoord 10, 11
+	ld [hl], $5e ; vertical bar
+	hlcoord 11, 11
+	ld [hl], $5f ; vertical bar
 	push de
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1Exp + 2
@@ -4639,7 +4643,7 @@ DrawPlayerHUD:
 	ld d, h
 	ld e, l
 
-	hlcoord 10, 11
+	hlcoord 12, 11
 	ld a, [wTempMonLevel]
 	ld b, a
 	call FillInExpBar
@@ -7733,7 +7737,7 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 10, 11
+	hlcoord 12, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
@@ -7749,7 +7753,7 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 10, 11
+	hlcoord 12, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
@@ -8048,8 +8052,8 @@ CalcExpBar:
 	ld [hld], a
 	xor a
 	ld [hl], a
-; multiply by 64
-	ld a, $40
+; multiply by (7 tiles * 8 px/tile) = 56 px
+	ld a, 56
 	ldh [hMultiplier], a
 	call Multiply
 	pop af
@@ -8079,13 +8083,13 @@ CalcExpBar:
 	call Divide
 	ldh a, [hQuotient + 3]
 	ld b, a
-	ld a, $40
+	ld a, 56
 	sub b
 	ld b, a
 	ret
 
 PlaceExpBar:
-	ld c, $8 ; number of tiles
+	ld c, 7 ; number of tiles
 .loop1
 	ld a, b
 	sub $8

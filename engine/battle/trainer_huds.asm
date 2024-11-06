@@ -104,7 +104,7 @@ DrawPlayerHUDBorder:
 	ld de, wTrainerHUDTiles
 	ld bc, .tiles_end - .tiles
 	call CopyBytes
-	hlcoord 18, 10
+	hlcoord 19, 10
 	ld de, -1 ; start on right
 	jr PlaceHUDBorderTiles
 

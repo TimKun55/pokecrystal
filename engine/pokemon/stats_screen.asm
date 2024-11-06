@@ -647,13 +647,15 @@ LoadPinkPage:
 	ld de, .ToStr
 	hlcoord 14, 14
 	call PlaceString
-	hlcoord 11, 16
+	hlcoord 12, 16
 	ld a, [wTempMonLevel]
 	ld b, a
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
 	hlcoord 10, 16
-	ld [hl], $40 ; left exp bar end cap
+	ld [hl], $73 ; left exp bar end cap
+	hlcoord 11, 16
+	ld [hl], $74 ; left exp bar end cap
 	hlcoord 19, 16
 	ld [hl], $41 ; right exp bar end cap
 	ret
