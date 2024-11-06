@@ -3,11 +3,15 @@
 
 Route7SaffronGate_MapScripts:
 	def_scene_scripts
-	scene_script Route7SaffronGateNoopScene, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK
-
+	scene_script Route7SaffronGateNoop1Scene, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK
+	scene_script Route7SaffronGateNoop2Scene, SCENE_ROUTE7SAFFRONGATE_NOOP
+	
 	def_callbacks
 
-Route7SaffronGateNoopScene:
+Route7SaffronGateNoop1Scene:
+	end
+
+Route7SaffronGateNoop2Scene:
 	end
 
 Route7SaffronGuardScript:
