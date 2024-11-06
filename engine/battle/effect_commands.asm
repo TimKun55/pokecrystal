@@ -2315,7 +2315,7 @@ BattleCommand_CheckFaint:
 	ldh a, [hBattleTurn]
 	and a
 	ld hl, wEnemyMonMaxHP + 1
-	bccoord 2, 2 ; hp bar
+	bccoord 1, 2 ; hp bar
 	ld a, 0
 	jr nz, .got_max_hp
 	ld hl, wBattleMonMaxHP + 1
@@ -3444,7 +3444,7 @@ endc
 	ld a, [hl]
 	ld [wHPBuffer3], a
 
-	hlcoord 2, 2
+	hlcoord 1, 2
 	xor a
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
@@ -3928,7 +3928,7 @@ SapHealth:
 	hlcoord 10, 9
 	ld a, $1
 	jr z, .hp_bar
-	hlcoord 2, 2
+	hlcoord 1, 2
 	xor a
 .hp_bar
 	ld [wWhichHPBar], a
@@ -5713,7 +5713,7 @@ BattleCommand_Recoil:
 	and a
 	ld a, 1
 	jr z, .animate_hp_bar
-	hlcoord 2, 2
+	hlcoord 1, 2
 	xor a
 .animate_hp_bar
 	ld [wWhichHPBar], a

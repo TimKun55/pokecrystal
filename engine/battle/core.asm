@@ -1986,7 +1986,7 @@ UpdateHPBar:
 	and a
 	ld a, 1
 	jr z, .ok
-	hlcoord 2, 2
+	hlcoord 1, 2
 	xor a
 .ok
 	push bc
@@ -4365,7 +4365,7 @@ HandleHPHealingItem:
 	ldh a, [hBattleTurn]
 	ld [wWhichHPBar], a
 	and a
-	hlcoord 2, 2
+	hlcoord 1, 2
 	jr z, .got_hp_bar_coords
 	hlcoord 10, 9
 
@@ -4790,7 +4790,7 @@ DrawEnemyHUD:
 	ld a, "♀"
 
 .got_gender
-	hlcoord 9, 1
+	hlcoord 7, 1
 	ld [hl], a
 ; Enemy Status Condition GFX
 	predef Enemy_LoadNonFaintStatus ; load Status Condition GFX Tiles
@@ -4802,7 +4802,7 @@ DrawEnemyHUD:
 	inc hl
 	ld [hl], $73 ; enemy status left half
 .status_done
-	hlcoord 6, 1 ; enemy's level
+	hlcoord 4, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
@@ -4869,7 +4869,7 @@ DrawEnemyHUD:
 .draw_bar
 	xor a
 	ld [wWhichHPBar], a
-	hlcoord 2, 2
+	hlcoord 1, 2
 	ld b, 0
 	call DrawBattleHPBar
 	ret
