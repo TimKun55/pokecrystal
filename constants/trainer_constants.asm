@@ -293,7 +293,7 @@ DEF KRIS EQU __trainer_class__
 	const KENDRA ; unused
 	const VERONICA ; unused
 	const JULIA
-	const THERESA ; unused
+	const THERESA ; Route 6
 	const VALERIE
 	const OLIVIA
 

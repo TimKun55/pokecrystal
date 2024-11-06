@@ -119,6 +119,7 @@ VermilionGroupSprites:
 	db SPRITE_BIRD_KEEPER
 	; 9 of max 9 walking sprites
 	db SPRITE_LADY
+	db SPRITE_BEAUTY
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
 	db SPRITE_BALL_BOOK_POKEDEX

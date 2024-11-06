@@ -5,6 +5,7 @@
 	const ROUTE6_LADY_LIA
 	const ROUTE6_GENTLEMAN
 	const ROUTE6_YOUNGSTER
+	const ROUTE6_BEAUTY
 	const ROUTE6_POKE_BALL
 
 Route6_MapScripts:
@@ -63,6 +64,17 @@ TrainerCamperDale:
 	endifjustbattled
 	opentext
 	writetext CamperDaleAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyTheresa:
+	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyTheresaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -183,6 +195,22 @@ CamperDaleAfterBattleText:
 	cont "Gym Leaders."
 	done
 
+BeautyTheresaSeenText:
+	text "How cute are your"
+	line "#mon? Mine are"
+	cont "gorgeous!"
+	done	
+
+BeautyTheresaBeatenText:
+	text "My beauties!"
+	done
+
+BeautyTheresaAfterBattleText:
+	text "I can't wait to"
+	line "add more beauties"
+	cont "to my team."
+	done
+
 Route6_MapEvents:
 	db 0, 0 ; filler
 
@@ -197,9 +225,10 @@ Route6_MapEvents:
 
 	def_object_events
 	object_event 17,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route6PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
-	object_event  9, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmRex, -1
-	object_event 10, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
-	object_event 13, 18, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyLia, -1
+	object_event  9, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmRex, -1
+	object_event 10, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
+	object_event  8, 18, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyLia, -1
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGentlemanVirgil, -1
-	object_event 18, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDale, -1
+	object_event 18, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDale, -1
+	object_event 16, 11, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyTheresa, -1
 	object_event  1, 11, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route6MaxPotion, EVENT_ROUTE_6_MAX_POTION

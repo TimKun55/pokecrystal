@@ -1523,7 +1523,9 @@ BeautyGroup:
 
 	; BEAUTY (15)
 	db "Theresa@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
+	db 50, TAUROS
+	db 52, RAPIDASH
+	db 52, SEADRA
 	db -1 ; end
 
 	; BEAUTY (16)
