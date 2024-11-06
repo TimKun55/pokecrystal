@@ -2725,15 +2725,15 @@ HikerGroup:
 
 	; HIKER (3)
 	db "Phillip@", TRAINERTYPE_NORMAL
-	db 25, GEODUDE
-	db 25, GEODUDE
+	db 24, GEODUDE
+	db 25, QUAGSIRE
 	db 26, GRAVELER
 	db -1 ; end
 
 	; HIKER (4)
 	db "Leonard@", TRAINERTYPE_NORMAL
-	db 25, GEODUDE
-	db 27, MACHOP
+	db 25, GRAVELER
+	db 27, MACHOKE
 	db -1 ; end
 
 	; HIKER (5)
@@ -2744,8 +2744,8 @@ HikerGroup:
 
 	; HIKER (6)
 	db "Benjamin@", TRAINERTYPE_NORMAL
-	db 31, DIGLETT
-	db 31, GEODUDE
+	db 31, GRAVELER
+	db 31, GLIGAR
 	db 32, DUGTRIO
 	db -1 ; end
 
@@ -4100,7 +4100,7 @@ ExBossGroup:
 LadyGroup:
 	; LADY (1)
 	db "Sue@", TRAINERTYPE_MOVES
-	db 8, CLEFAIRY,   TACKLE, CHARM, MIMIC, DISARM_VOICE
+	db 8, CLEFAIRY,   TACKLE, CHARM, SWEET_KISS, DISARM_VOICE
 	db 8, JIGGLYPUFF, TACKLE, CHARM, FEINT_ATTACK, DISARM_VOICE
 	db 8, TOGEPI,     TACKLE, CHARM, FUTURE_SIGHT, DISARM_VOICE
 	db -1 ; end
