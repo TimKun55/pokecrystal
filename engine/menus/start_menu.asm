@@ -197,39 +197,39 @@ StartMenu::
 .QuitString:     db "Quit@"
 
 .PokedexDesc:
-	db   "#mon"
-	next "database@"
+	db   " #mon"
+	next " database@"
 
 .PartyDesc:
-	db   "Party <PKMN>"
-	next "status@"
+	db   " Party <PKMN>"
+	next "  status@"
 
 .PackDesc:
-	db   "Contains"
-	next "items@"
+	db   " Contains"
+	next "  items@"
 
 .PokegearDesc:
-	db   "Trainer's"
+	db   " Trainer's"
 	next "key device@"
 
 .StatusDesc:
-	db   "Your own"
-	next "status@"
+	db   " Your own"
+	next "  status@"
 
 .SaveDesc:
 	db   "Save your"
-	next "progress@"
+	next " progress@"
 
 .OptionDesc:
-	db   "Change"
-	next "settings@"
+	db   "  Change"
+	next " settings@"
 
 .ExitDesc:
 	db   "Close this"
-	next "menu@"
+	next "   menu@"
 
 .QuitDesc:
-	db   "Quit and"
+	db   " Quit and"
 	next "be judged.@"
 
 .OpenMenu:
