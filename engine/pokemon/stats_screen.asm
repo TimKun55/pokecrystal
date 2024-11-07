@@ -653,11 +653,11 @@ LoadPinkPage:
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
 	hlcoord 10, 16
-	ld [hl], $73 ; left exp bar end cap
+	ld [hl], $73 ; left exp bar label
 	hlcoord 11, 16
-	ld [hl], $74 ; left exp bar end cap
+	ld [hl], $74 ; right exp bar label
 	hlcoord 19, 16
-	ld [hl], $41 ; right exp bar end cap
+	ld [hl], $41 ; exp bar end cap
 	ret
 
 .PrintNextLevel:

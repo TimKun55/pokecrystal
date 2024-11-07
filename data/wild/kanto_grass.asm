@@ -351,7 +351,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, PRIMEAPE,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, PERSIAN,       63,  66
 	db  8, DITTO,         63,  66
 	; day
@@ -360,7 +360,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, PRIMEAPE,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, PERSIAN,       63,  66
 	db  8, DITTO,         63,  66
 	; nite
@@ -369,7 +369,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, PRIMEAPE,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, PERSIAN,       63,  66
 	db  8, DITTO,         63,  66
 	end_grass_wildmons
@@ -382,7 +382,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, MAGNETON,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, ALAKAZAM,      63,  66
 	db  8, DITTO,         63,  66
 	; day
@@ -391,7 +391,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, MAGNETON,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, ALAKAZAM,      63,  66
 	db  8, DITTO,         63,  66
 	; nite
@@ -400,7 +400,7 @@ KantoGrassWildMons:
 	db 22, CROBAT,        63,  66
 	db 22, MAGNETON,      63,  66
 	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  66
+	db  8, WOBBUFFET,     63,  65
 	db  8, ALAKAZAM,      63,  66
 	db  8, DITTO,         63,  66
 	end_grass_wildmons
@@ -411,7 +411,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      63,  66
 	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  66
+	db 22, WOBBUFFET,     63,  65
 	db 10, MACHAMP,       63,  66
 	db  8, MAGNEZONE,     63,  66
 	db  8, ALAKAZAM,      63,  66
@@ -420,7 +420,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      63,  66
 	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  66
+	db 22, WOBBUFFET,     63,  65
 	db 10, MACHAMP,       63,  66
 	db  8, MAGNEZONE,     63,  66
 	db  8, ALAKAZAM,      63,  66
@@ -429,7 +429,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      63,  66
 	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  66
+	db 22, WOBBUFFET,     63,  65
 	db 10, MACHAMP,       63,  66
 	db  8, MAGNEZONE,     63,  66
 	db  8, ALAKAZAM,      63,  66
@@ -911,7 +911,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; day
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -920,7 +920,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; nite
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -929,7 +929,7 @@ KantoGrassWildMons:
 	db 10, VENOMOTH,      53,  55
 	db  8, QUAGSIRE,      56,  58
 	db  8, QUAGSIRE,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_14
@@ -942,7 +942,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; day
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -951,7 +951,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; nite
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -960,7 +960,7 @@ KantoGrassWildMons:
 	db 10, VENOMOTH,      53,  55
 	db  8, QUAGSIRE,      56,  58
 	db  8, QUAGSIRE,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_15
@@ -973,7 +973,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; day
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -982,7 +982,7 @@ KantoGrassWildMons:
 	db 10, SKIPLOOM,      53,  55
 	db  8, JUMPLUFF,      56,  58
 	db  8, JUMPLUFF,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	; nite
 	;   %, species,		 min, max
 	db 22, NIDORINO,      53,  55
@@ -991,7 +991,7 @@ KantoGrassWildMons:
 	db 10, VENOMOTH,      53,  55
 	db  8, QUAGSIRE,      56,  58
 	db  8, QUAGSIRE,      56,  58
-	db  8, CHANSEY,       56,  59
+	db  8, CHANSEY,       51,  52
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_16
@@ -1314,7 +1314,7 @@ KantoGrassWildMons:
 	db 10, RHYDON,        60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
 	db 23, EXEGGUTOR,     60,  62
@@ -1323,7 +1323,7 @@ KantoGrassWildMons:
 	db 10, RHYDON,        60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
 	db 23, EXEGGUTOR,     60,  62
@@ -1332,7 +1332,7 @@ KantoGrassWildMons:
 	db 10, RHYDON,        60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
 	def_grass_wildmons SAFARI_ZONE_EAST
@@ -1345,7 +1345,7 @@ KantoGrassWildMons:
 	db 10, KANGASKHAN,    60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
 	db 23, EXEGGUTOR,     60,  62
@@ -1354,7 +1354,7 @@ KantoGrassWildMons:
 	db 10, KANGASKHAN,    60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
 	db 23, EXEGGUTOR,     60,  62
@@ -1363,7 +1363,7 @@ KantoGrassWildMons:
 	db 10, KANGASKHAN,    60,  62
 	db  8, SCYTHER,       60,  62
 	db  8, PINSIR,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
 	def_grass_wildmons SAFARI_ZONE_NORTH
@@ -1376,7 +1376,7 @@ KantoGrassWildMons:
 	db 10, NIDOKING,      60,  62
 	db 10, NIDOQUEEN,     60,  62
 	db  9, TAUROS,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
 	db 22, EXEGGUTOR,     60,  62
@@ -1385,7 +1385,7 @@ KantoGrassWildMons:
 	db 10, NIDOKING,      60,  62
 	db 10, NIDOQUEEN,     60,  62
 	db  9, TAUROS,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
 	db 22, EXEGGUTOR,     60,  62
@@ -1394,7 +1394,7 @@ KantoGrassWildMons:
 	db 10, NIDOKING,      60,  62
 	db 10, NIDOQUEEN,     60,  62
 	db  9, TAUROS,        60,  62
-	db  5, BLISSEY,       60,  62
+	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
 	def_grass_wildmons SAFARI_ZONE_WEST
