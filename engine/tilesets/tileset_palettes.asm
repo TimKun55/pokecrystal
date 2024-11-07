@@ -60,7 +60,9 @@ LoadSpecialMapPalette:
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	cp TILESET_POKECENTER
-	jr z, .pokecenter
+	jr z, .pokecenter 
+	cp TILESET_RUINS_OF_ALPH
+	jr z, .ruins_of_alph
 	jr .do_nothing
 
 .battle_tower_inside
@@ -89,6 +91,11 @@ LoadSpecialMapPalette:
 	
 .pokecenter
 	call LoadPokeCenterPalette
+	scf
+	ret
+
+.ruins_of_alph
+	call LoadRuinsOfAlphPalette
 	scf
 	ret
 
@@ -188,6 +195,17 @@ LoadPokeCenterPalette:
 	
 PokeCenterPalette:
 INCLUDE "gfx/tilesets/pokecenter.pal"
+
+LoadRuinsOfAlphPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, RuinsOfAlphPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+RuinsOfAlphPalette:
+INCLUDE "gfx/tilesets/ruins_of_alph.pal"
 
 LoadGymPalette:
 	ld a, BANK(wBGPals1)

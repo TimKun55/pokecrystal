@@ -203,12 +203,6 @@ INCLUDE "data/tilesets/forest_collision.asm"
 TilesetFacilityMeta::
 INCBIN "data/tilesets/facility_metatiles.bin"
 
-TilesetHoOhWordRoomColl::
-TilesetKabutoWordRoomColl::
-TilesetOmanyteWordRoomColl::
-TilesetAerodactylWordRoomColl::
-INCLUDE "data/tilesets/beta_word_room_collision.asm"
-
 TilesetTrainStationMeta::
 INCBIN "data/tilesets/train_station_metatiles.bin"
 
@@ -223,6 +217,10 @@ TilesetAerodactylWordRoomGFX::
 INCBIN "gfx/tilesets/ruins_of_alph.2bpp.lz"
 
 TilesetRuinsOfAlphMeta::
+TilesetHoOhWordRoomMeta::
+TilesetKabutoWordRoomMeta::
+TilesetOmanyteWordRoomMeta::
+TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/ruins_of_alph_metatiles.bin"
 
 TilesetRuinsOfAlphColl::
@@ -237,23 +235,11 @@ INCBIN "gfx/tilesets/facility.2bpp.lz"
 TilesetCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
-TilesetCaveMeta::
-INCBIN "data/tilesets/cave_metatiles.bin"
-
 
 SECTION "Tileset Data 8", ROMX
 
-TilesetHoOhWordRoomMeta::
-INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
-
-TilesetKabutoWordRoomMeta::
-INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
-
-TilesetOmanyteWordRoomMeta::
-INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
-
-TilesetAerodactylWordRoomMeta::
-INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+TilesetCaveMeta::
+INCBIN "data/tilesets/cave_metatiles.bin"
 
 
 SECTION "Tileset Data 9", ROMX
@@ -324,6 +310,10 @@ TilesetCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin"
 
 TilesetRuinsOfAlphAttr::
+TilesetHoOhWordRoomAttr::
+TilesetKabutoWordRoomAttr::
+TilesetOmanyteWordRoomAttr::
+TilesetAerodactylWordRoomAttr::
 INCBIN "data/tilesets/ruins_of_alph_attributes.bin"
 
 TilesetRadioTowerAttr::
@@ -334,18 +324,6 @@ INCBIN "data/tilesets/underground_attributes.bin"
 
 TilesetForestAttr::
 INCBIN "data/tilesets/forest_attributes.bin"
-
-TilesetHoOhWordRoomAttr::
-INCBIN "data/tilesets/ho_oh_word_room_attributes.bin"
-
-TilesetKabutoWordRoomAttr::
-INCBIN "data/tilesets/kabuto_word_room_attributes.bin"
-
-TilesetOmanyteWordRoomAttr::
-INCBIN "data/tilesets/omanyte_word_room_attributes.bin"
-
-TilesetAerodactylWordRoomAttr::
-INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin"
 
 TilesetPlayersRoomColl::
 INCLUDE "data/tilesets/players_room_collision.asm"

@@ -41,10 +41,6 @@ Tilesets::
 	tileset TilesetIcePath
 	tileset TilesetDarkCave
 	tileset TilesetForest
-	tileset TilesetHoOhWordRoom
-	tileset TilesetKabutoWordRoom
-	tileset TilesetOmanyteWordRoom
-	tileset TilesetAerodactylWordRoom
 	tileset TilesetIndigo
 	tileset TilesetJohto2
 	tileset TilesetJohto3
