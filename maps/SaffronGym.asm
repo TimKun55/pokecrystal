@@ -11,6 +11,16 @@ SaffronGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, SaffronGymWarpTileCallback
+
+SaffronGymWarpTileCallback:
+	checkevent EVENT_BEAT_SABRINA
+	iffalse .NoWarp
+	endcallback
+
+.NoWarp
+	changeblock 10, 14, $4b ; no direct warp to Sabrina
+	endcallback
 
 SaffronGymSabrinaScript:
 	faceplayer
@@ -53,7 +63,6 @@ SaffronGymSabrinaScript:
 	writetext SabrinaMarshBadgeText
 	waitbutton
 	closetext
-	readvar VAR_BADGES
 	end
 
 .FightDone:
@@ -406,7 +415,8 @@ SaffronGym_MapEvents:
 	warp_event 15,  2, SAFFRON_GYM, 15
 	warp_event  0,  2, SAFFRON_GYM, 16
 	warp_event 11, 10, SAFFRON_GYM, 17
-	warp_event  8, 10, SAFFRON_GYM, 3
+	warp_event  8, 10, SAFFRON_GYM, 34
+	warp_event 11, 15, SAFFRON_GYM, 33
 
 	def_coord_events
 
