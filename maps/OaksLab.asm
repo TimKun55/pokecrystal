@@ -3,6 +3,7 @@
 	const OAKSLAB_SCIENTIST1
 	const OAKSLAB_SCIENTIST2
 	const OAKSLAB_SCIENTIST3
+	const OAKSLAB_POKEDEX
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -59,6 +60,9 @@ OaksAssistant2Script:
 OaksAssistant3Script:
 	jumptextfaceplayer OaksAssistant3Text
 
+OaksPokedexScript:
+	jumptextfaceplayer OaksPokedexText
+
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -67,9 +71,6 @@ OaksLabPoster1:
 
 OaksLabPoster2:
 	jumptext OaksLabPoster2Text
-
-OaksLabTrashcan:
-	jumptext OaksLabTrashcanText
 
 OaksLabPC:
 	jumptext OaksLabPCText
@@ -207,6 +208,14 @@ OaksAssistant3Text:
 	line "a live broadcast."
 	done
 
+OaksPokedexText:
+	text "This is Prof.Oak's"
+	line "#dex."
+	
+	para "Just like the"
+	line "one he gave me"
+	done
+
 OaksLabPoster1Text:
 	text "Press START to"
 	line "open the Menu."
@@ -218,11 +227,6 @@ OaksLabPoster2Text:
 
 	para "Use it in a timely"
 	line "manner."
-	done
-
-OaksLabTrashcanText:
-	text "There's nothing in"
-	line "here…"
 	done
 
 OaksLabPCText:
@@ -275,7 +279,6 @@ OaksLab_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  4,  0, BGEVENT_READ, OaksLabPoster1
 	bg_event  5,  0, BGEVENT_READ, OaksLabPoster2
-	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
 	bg_event  0,  1, BGEVENT_READ, OaksLabPC
 
 	def_object_events
@@ -283,3 +286,4 @@ OaksLab_MapEvents:
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
 	object_event  1,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant3Script, -1
+	object_event  2,  1, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OaksPokedexScript, -1
