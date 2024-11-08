@@ -192,7 +192,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	writetext LyraLovesPokemonText
+	writetext LyraNicknamedChikoritaText
 	waitbutton
 	closetext
 	applymovement ELMSLAB_LYRA, LyraAfterChikoritaMovement
@@ -236,7 +236,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	writetext LyraLovesPokemonText
+	writetext LyraNicknamedCyndaquilText
 	waitbutton
 	closetext
 	applymovement ELMSLAB_LYRA, LyraAfterCyndaquilMovement
@@ -278,7 +278,7 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	writetext LyraLovesPokemonText
+	writetext LyraNicknamedTotodileText
 	waitbutton
 	closetext
 	applymovement ELMSLAB_LYRA, LyraAfterTotodileMovement
@@ -1617,9 +1617,22 @@ LyraReceivedTotodileText:
 	line "Totodile!"
 	done
 
-LyraLovesPokemonText:
+LyraNicknamedChikoritaText:
 	text "Lyra: It's so"
-	line "cute!"
+	line "cute! I'll nick-"
+	cont "name it Chicory!"
+	done
+
+LyraNicknamedCyndaquilText:
+	text "Lyra: It's so"
+	line "cute! I'll nick-"
+	cont "name it Cinder!"
+	done
+
+LyraNicknamedTotodileText:
+	text "Lyra: It's so"
+	line "cute! I'll nick-"
+	cont "name it Toto!"
 	done
 
 ElmsLabLyraGoodChoiceText:
