@@ -548,6 +548,8 @@ FlyFunction_GetMonIcon:
 	call GetIcon_a
 
 	; Edit the OBJ 0 palette so that the cursor Pokémon has the right colors.
+	ld a, [wTempIconSpecies]
+	ld [wCurPartySpecies], a
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	call GetMenuMonIconPalette
