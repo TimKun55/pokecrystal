@@ -100,7 +100,6 @@ CeruleanCitySlowbro:
 	waitbutton
 	closepokepic
 	closetext
-	setscene SCENE_CERULEANCITY_DISGUISED
 	end
 
 CeruleanCityCooltrainerFScript:
