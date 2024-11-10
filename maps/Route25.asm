@@ -162,7 +162,7 @@ TrainerCooltrainermKevin:
 	iftrue .AfterNuggetBridge
 	writetext CooltrainermKevinNuggetText
 	promptbutton
-	verbosegiveitem NUGGET
+	verbosegiveitem BIG_NUGGET, 2
 	iffalse .NoRoomForNugget
 	setevent EVENT_CLEARED_NUGGET_BRIDGE
 .AfterNuggetBridge:
