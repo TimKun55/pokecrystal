@@ -10,6 +10,12 @@ NurseDayText:
 	cont "#mon Center."
 	done
 
+NurseEveText:
+	text "Good evening!"
+	line "Welcome to our"
+	cont "#mon Center."
+	done
+
 NurseNiteText:
 	text "Good evening!"
 	line "You're out late."
@@ -29,6 +35,14 @@ NurseMornChampText:
 NurseDayChampText:
 	text "Hello, Champion"
 	line "<PLAYER>!"
+	
+	para "Welcome to our"
+	line "#mon Center."
+	done
+
+NurseEveChampText:
+	text "Good evening,"
+	line "Champion <PLAYER>!"
 	
 	para "Welcome to our"
 	line "#mon Center."
@@ -56,6 +70,15 @@ NurseDayGrandChampText:
 	text "Hello, Grand"
 	line "Champion <PLAYER>!"
 	
+	para "Welcome to our"
+	line "#mon Center."
+	done
+
+NurseEveGrandChampText:
+	text "Good evening,"
+	line "Grand Champion"
+	cont "<PLAYER>!"
+
 	para "Welcome to our"
 	line "#mon Center."
 	done

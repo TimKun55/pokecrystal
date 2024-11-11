@@ -1,4 +1,12 @@
 LoadSpecialMapPalette:
+	call GetMapTimeOfDay
+	bit IN_DARKNESS_F, a
+	jr z, .not_dark
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_FLASH_F, a
+	jr z, .darkness
+
+.not_dark
     ld a, [wMapGroup]
     cp GROUP_SPROUT_TOWER_1F
     jr nz, .continue1
@@ -65,6 +73,11 @@ LoadSpecialMapPalette:
 	jr z, .ruins_of_alph
 	jr .do_nothing
 
+.darkness
+	call LoadDarknessPalette
+	scf
+	ret
+
 .battle_tower_inside
 	call LoadBattleTowerInsidePalette
 	scf
@@ -122,6 +135,16 @@ LoadSpecialMapPalette:
 .do_nothing
 	and a
 	ret
+
+LoadDarknessPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, DarknessPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+DarknessPalette:
+INCLUDE "gfx/tilesets/darkness.pal"
 
 LoadBattleTowerInsidePalette:
 	ld a, BANK(wBGPals1)
@@ -250,3 +273,30 @@ LoadSaffronGymPalette:
 	
 SaffronGymPalette:
 INCLUDE "gfx/tilesets/saffron_gym_palette.pal"
+
+LoadSpecialNPCPalette:
+	call GetMapTimeOfDay
+	bit IN_DARKNESS_F, a
+	jr z, .do_nothing
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_FLASH_F, a
+	jr nz, .do_nothing
+
+;darkness
+	call LoadNPCDarknessPalette
+	scf
+	ret
+
+.do_nothing
+	and a
+	ret
+
+LoadNPCDarknessPalette:
+	ld a, BANK(wOBPals1)
+	ld de, wOBPals1
+	ld hl, NPCDarknessPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+NPCDarknessPalette:
+INCLUDE "gfx/overworld/npc_sprites_darkness.pal"

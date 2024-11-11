@@ -5,6 +5,7 @@ LoadWildMonData:
 	xor a
 	ld [hli], a
 	ld [hli], a
+	ld [hli], a
 	ld [hl], a
 	jr .done_copy
 
@@ -14,6 +15,8 @@ LoadWildMonData:
 	ld de, wMornEncounterRate
 	ld bc, 3
 	call CopyBytes
+	ld a, [wNiteEncounterRate]
+	ld [wEveEncounterRate], a
 .done_copy
 	call _WaterWildmonLookup
 	ld a, 0
@@ -23,6 +26,13 @@ LoadWildMonData:
 	ld a, [hl]
 .no_copy
 	ld [wWaterEncounterRate], a
+	ret
+
+GetTimeOfDayNotEve:
+	ld a, [wTimeOfDay]
+	cp EVE_F
+	ret nz
+	ld a, NITE_F ; ld a, DAY_F to make evening use day encounters
 	ret
 
 FindNest:
@@ -264,7 +274,7 @@ ChooseWildEncounter:
 	jr z, .watermon
 	inc hl
 	inc hl
-	ld a, [wTimeOfDay]
+	call GetTimeOfDayNotEve
 	ld bc, NUM_GRASSMON * 4
 	call AddNTimes
 
@@ -751,7 +761,7 @@ RandomUnseenWildMon:
 	push hl
 	ld bc, 5 + 4 * 4 ; Location of the level of the 5th wild Pokemon in that map
 	add hl, bc
-	ld a, [wTimeOfDay]
+	call GetTimeOfDayNotEve
 	ld bc, NUM_GRASSMON * 4
 	call AddNTimes
 .randloop1
@@ -820,7 +830,7 @@ RandomPhoneWildMon:
 .ok
 	ld bc, 5 + 0 * 4
 	add hl, bc
-	ld a, [wTimeOfDay]
+	call GetTimeOfDayNotEve
 	inc a
 	ld bc, NUM_GRASSMON * 4
 .loop

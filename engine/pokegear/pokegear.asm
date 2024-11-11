@@ -634,6 +634,8 @@ Pokegear_UpdateClock:
 	jr z, .Morn
 	cp 1
 	jr z, .Day
+	cp EVE_F
+	jr z, .Eve
 	ld [hl], $6f ; nite icon
 	ld de, .NiteStr
 .got_tod		
@@ -667,11 +669,17 @@ Pokegear_UpdateClock:
 	ld [hl], $6e ; day icon
 	ld de, .DayStr
 	jr .got_tod
+.Eve
+	ld [hl], $6f ; nite icon
+	ld de, .EveStr
+	jr .got_tod
 
 .MornStr:
 	db "Morn@"
 .DayStr:
 	db "Day@"
+.EveStr:
+	db "Eve@"
 .NiteStr:
 	db "Nite@"
 	; db "NIGHT@"
