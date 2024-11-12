@@ -367,6 +367,9 @@ INCLUDE "data/tilesets/johto_3_collision.asm"
 TilesetIcePathAttr::
 INCBIN "data/tilesets/ice_path_attributes.bin"
 
+TilesetDarkCaveGFX::
+INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
+
 
 SECTION "Tileset Data 14", ROMX
 
@@ -471,9 +474,6 @@ SECTION "Tileset Data 18", ROMX
 
 TilesetForestGFX::
 INCBIN "gfx/tilesets/forest.2bpp.lz"
-
-TilesetDarkCaveGFX::
-INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
 
 TilesetTrainStationColl::
 INCLUDE "data/tilesets/train_station_collision.asm"

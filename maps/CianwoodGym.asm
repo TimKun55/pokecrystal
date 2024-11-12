@@ -18,10 +18,10 @@ CianwoodGymWaterfallButtonCallback:
 	endcallback	
 
 .NoWaterfall
-	changeblock 8,  4, $cc
-	changeblock 8,  6, $ce
-	changeblock 8,  8, $ce
-	changeblock 8, 10, $d0
+	changeblock 8,  4, $6c
+	changeblock 8,  6, $6e
+	changeblock 8,  8, $6e
+	changeblock 8, 10, $70
 	endcallback
 
 CianwoodGymChuckScript:

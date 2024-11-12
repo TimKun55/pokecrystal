@@ -145,7 +145,6 @@ TilesetEliteFourRoomAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetCaveAnim:
-TilesetDarkCaveAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -169,6 +168,29 @@ TilesetDarkCaveAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateLavaBubbleTile1
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetDarkCaveAnim:
+	dw vTiles2 tile $14, ReadTileToAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $40, ReadTileToAnimBuffer ; waterfall?
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $40, WriteTileFromAnimBuffer ; waterfall?
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
