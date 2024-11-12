@@ -1301,36 +1301,36 @@ _CGB_TrainerCardKanto:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	hlcoord 2, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 3, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $2 ; brock
 	call FillBoxCGB
-	hlcoord 6, 11, wAttrmap
-	lb bc, 2, 4	
+	hlcoord 7, 10, wAttrmap
+	lb bc, 3, 3	
 	ld a, $0 ; misty / ethan
 	call FillBoxCGB
-	hlcoord 10, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 11, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $3 ; lt.surge / erika
 	call FillBoxCGB
-	hlcoord 14, 11, wAttrmap
-	lb bc, 2, 4	
+	hlcoord 15, 10, wAttrmap
+	lb bc, 3, 3	
 	ld a, $3 ; erika / lt.surge
 	call FillBoxCGB
-	hlcoord 2, 14, wAttrmap
-	lb bc, 2, 4	
+	hlcoord 3, 13, wAttrmap
+	lb bc, 3, 3	
 	ld a, $4 ; janine
 	call FillBoxCGB
-	hlcoord 6, 14, wAttrmap
-	lb bc, 2, 4	
+	hlcoord 7, 13, wAttrmap
+	lb bc, 3, 3	
 	ld a, $5 ; sabrina
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 11, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $6 ; blaine
 	call FillBoxCGB
-	hlcoord 14, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 15, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $7 ; blue
 	call FillBoxCGB
 	; top-right corner still uses the border's palette
