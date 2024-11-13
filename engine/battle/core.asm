@@ -1981,7 +1981,7 @@ UpdateHPBarBattleHuds:
 	jp UpdateBattleHuds
 
 UpdateHPBar:
-	hlcoord 10, 9
+	hlcoord 11, 9
 	ldh a, [hBattleTurn]
 	and a
 	ld a, 1
@@ -4367,7 +4367,7 @@ HandleHPHealingItem:
 	and a
 	hlcoord 1, 2
 	jr z, .got_hp_bar_coords
-	hlcoord 10, 9
+	hlcoord 11, 9
 
 .got_hp_bar_coords
 	ld [wWhichHPBar], a
@@ -4625,7 +4625,7 @@ DrawPlayerHUD:
 	call PrintPlayerHUD
 
 	; HP bar
-	hlcoord 10, 9
+	hlcoord 11, 9
 	ld b, 1
 	xor a ; PARTYMON
 	ld [wMonType], a
@@ -4720,7 +4720,7 @@ PrintPlayerHUD:
 	ld a, "♀"
 
 .got_gender_char
-	hlcoord 17, 8 ; gender char
+	hlcoord 18, 8 ; gender char
 	ld [hl], a
 ; Player Mon Status Condition GFX
 	predef Player_LoadNonFaintStatus ; loads needed Status Conditon GFX into VRAM
@@ -4728,7 +4728,7 @@ PrintPlayerHUD:
 	and a 
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 ; place status tiles:
-	hlcoord 10, 8 ; status icon tile 1
+	hlcoord 11, 8 ; status icon tile 1
 	ld [hl], $70
 	inc hl
 	ld [hl], $71
@@ -4794,7 +4794,7 @@ DrawEnemyHUD:
 	ld a, "♀"
 
 .got_gender
-	hlcoord 7, 1
+	hlcoord 8, 1
 	ld [hl], a
 ; Enemy Status Condition GFX
 	predef Enemy_LoadNonFaintStatus ; load Status Condition GFX Tiles
