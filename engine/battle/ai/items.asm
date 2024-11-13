@@ -592,7 +592,7 @@ EnemyPotionContinue:
 
 EnemyPotionFinish:
 	call PrintText_UsedItemOn
-	hlcoord 2, 2
+	hlcoord 1, 2
 	xor a
 	ld [wWhichHPBar], a
 	call AIUsedItemSound
