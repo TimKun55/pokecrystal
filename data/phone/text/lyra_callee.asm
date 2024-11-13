@@ -59,10 +59,10 @@ LyraPhoneFirstBadgeText:
 	done
 
 LyraPhoneThirdBadgeText:
-	text "<PLAYER>!!"
+	text "Hi <PLAYER>!"
 
 	para "I just battled"
-	line "with Whitney!"
+	line "with Whitney."
 
 	para "Why didn't you"
 	line "tell me how tough"
@@ -76,10 +76,10 @@ LyraPhoneThirdBadgeText:
 
 	para "I can definitely"
 	line "see how you got"
-	cont "so tough!"
+	cont "so tough."
 
 	para "I'm catching up,"
-	line "though!"
+	line "to you though."
 	
 	para "See you soon!"
 	done
@@ -98,19 +98,19 @@ LyraPhoneLyrasEggIntroText:
 
 LyraPhoneLyrasEggChikoritaText:
 	text "I left my cute"
-	line "Bayleef at"
+	line "Chicory at"
 	cont "the Day-Care"
 	done
 
 LyraPhoneLyrasEggCyndaquilText:
 	text "I left my cute"
-	line "Quilava at"
+	line "Cinder at"
 	cont "the Day-Care"
 	done
 
 LyraPhoneLyrasEggTotodileText:
 	text "I left my cute"
-	line "Croconaw at"
+	line "Toto at"
 	cont "the Day-Care"
 	done
 
