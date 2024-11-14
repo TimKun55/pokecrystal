@@ -1332,7 +1332,7 @@ Celadon_Map_Name12: ; map_const CELADON_MANSION_3F ; 12
 Celadon_Map_Name13: ; map_const CELADON_MANSION_ROOF ; 13
 	db "Cel. Mansion Roof@"
 Celadon_Map_Name14: ; map_const CELADON_MANSION_ROOF_HOUSE ; 14
-	db "Celadon Mansion4F@"
+	db "Granny's House@"
 Celadon_Map_Name15: ; map_const CELADON_POKECENTER_1F ; 15
 	db "Celadon <PKMN> Center@"
 Celadon_Map_Name16: ; map_const CELADON_GAME_CORNER, 16
