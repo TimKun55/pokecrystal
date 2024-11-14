@@ -1,12 +1,12 @@
 	object_const_def
 	const CELADONHOMEDECORSTORE4F_CLERK1
 	const CELADONHOMEDECORSTORE4F_CLERK2
-	const CELADONHOMEDECORSTORE4F_POLIWAG
 	const CELADONHOMEDECORSTORE4F_DIGLETT
-	const CELADONHOMEDECORSTORE4F_STARYU
-	const CELADONHOMEDECORSTORE4F_MAGIKARP
 	const CELADONHOMEDECORSTORE4F_SHELLDER
 	const CELADONHOMEDECORSTORE4F_GRIMER
+	const CELADONHOMEDECORSTORE4F_UNOWN
+	const CELADONHOMEDECORSTORE4F_GENGAR
+	const CELADONHOMEDECORSTORE4F_SURFING_PIKACHU
 	
 CeladonHomeDecorStore4F_MapScripts:
 	def_scene_scripts
@@ -108,22 +108,22 @@ CeladonHomeDecorStore4FClerk2Script:
 	loadmenu .MoveMenuHeader2
 	verticalmenu
 	closewindow
-	ifequal 1, .UnownDoll
+	ifequal 1, .SnubbullDoll
 	ifequal 2, .GengarDoll
 	ifequal 3, .SurfPikachuDoll
 	sjump .Refused
 
-.UnownDoll:
+.SnubbullDoll:
 	checkmoney YOUR_MONEY, 25000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	checkevent EVENT_DECO_UNOWN_DOLL
+	checkevent EVENT_DECO_SNUBBULL_DOLL
 	iftrue .AlreadyBought
 	takemoney YOUR_MONEY, 25000
-	setevent EVENT_DECO_UNOWN_DOLL
-	writetext BoughtUnownDollText
+	setevent EVENT_DECO_SNUBBULL_DOLL
+	writetext BoughtSnubbullDollText
 	playsound SFX_TRANSACTION
 	waitbutton
-	writetext UnownDollSentText
+	writetext SnubbullDollSentText
 	waitbutton
 	jump .Start
 
@@ -180,7 +180,7 @@ CeladonHomeDecorStore4FClerk2Script:
 .MenuData2:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Unown      ¥25000@"
+	db "Snubbull   ¥25000@"
 	db "Gengar     ¥50000@"
 	db "Surf Pika  ¥90000@"
 	db "Cancel@"
@@ -194,8 +194,8 @@ CeladonHomeDecorStore4FShellderDollScript:
 CeladonHomeDecorStore4FGrimerDollScript:
 	jumptext CeladonHomeDecorStore4FGrimerDollText
 	
-CeladonHomeDecorStore4FUnownDollScript:
-	jumptext CeladonHomeDecorStore4FUnownDollText
+CeladonHomeDecorStore4FSnubbullDollScript:
+	jumptext CeladonHomeDecorStore4FSnubbullDollText
 	
 CeladonHomeDecorStore4FGengarDollScript:
 	jumptext CeladonHomeDecorStore4FGengarDollText
@@ -256,13 +256,13 @@ CeladonHomeDecorStore4FNextTimeText:
 	text "See you next time!"
 	done
 	
-BoughtUnownDollText:
+BoughtSnubbullDollText:
 	text "<PLAYER> bought"
-	line "Unown Doll."
+	line "Snubbull Doll."
 	done
 
-UnownDollSentText:
-	text "Unown Doll"
+SnubbullDollSentText:
+	text "Snubbull Doll"
 	line "was sent home."
 	done
 
@@ -303,8 +303,8 @@ CeladonHomeDecorStore4FGrimerDollText:
 	line "Grimer Doll!"
 	done
 
-CeladonHomeDecorStore4FUnownDollText:
-	text "An Unown Doll."
+CeladonHomeDecorStore4FSnubbullDollText:
+	text "A Snubbull Doll."
 	line "It's cute…?"
 	done
 
@@ -342,6 +342,6 @@ CeladonHomeDecorStore4F_MapEvents:
 	object_event  1,  5, SPRITE_DIGLETT, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FDiglettDollScript, -1
 	object_event  2,  4, SPRITE_SHELLDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FShellderDollScript, -1
 	object_event  3,  4, SPRITE_GRIMER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FGrimerDollScript, -1
-	object_event  4,  4, SPRITE_UNOWN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FUnownDollScript, -1
+	object_event  4,  4, SPRITE_SNUBBULL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FSnubbullDollScript, -1
 	object_event  5,  5, SPRITE_GENGAR, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FGengarDollScript, -1
 	object_event  3,  6, SPRITE_SURFING_PIKACHU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FSurfingPikachuDollScript, -1

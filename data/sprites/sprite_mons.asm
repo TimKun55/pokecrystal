@@ -78,9 +78,9 @@ SpriteMons:
 	db BELLOSSOM
 	db WOOPER
 	db SYLVEON
-	db UNOWN
+	db UNOWN_T
 	db STEELIX
-	db SCIZOR
+	db SNUBBULL
 	db SNEASEL
 	db TEDDIURSA
 	db SLUGMA
