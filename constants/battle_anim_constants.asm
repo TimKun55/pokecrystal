@@ -207,7 +207,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_BETA_PURSUIT        ; ad
 	const BATTLE_ANIM_OBJ_SHOOTING_SPARKLE    ; ae
 	const BATTLE_ANIM_OBJ_RAIN                ; af
-	const BATTLE_ANIM_OBJ_B0                  ; b0
+	const BATTLE_ANIM_OBJ_GROWING_BALL        ; b0
 	const BATTLE_ANIM_OBJ_PSYCH_UP            ; b1
 	const BATTLE_ANIM_OBJ_ANCIENTPOWER        ; b2
 	const BATTLE_ANIM_OBJ_AEROBLAST           ; b3
@@ -314,7 +314,6 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RAPID_SPIN                ; 48
 	const BATTLE_ANIM_FUNC_BETA_PURSUIT              ; 49
 	const BATTLE_ANIM_FUNC_RAIN_SANDSTORM            ; 4a
-	const BATTLE_ANIM_FUNC_BATTLE_ANIM_OBJ_B0        ; 4b
 	const BATTLE_ANIM_FUNC_PSYCH_UP                  ; 4c
 	const BATTLE_ANIM_FUNC_ANCIENT_POWER             ; 4d
 	const BATTLE_ANIM_FUNC_ICE_SPLASH                ; 4e
@@ -520,6 +519,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_SHRINKING_RING_SMALL  ; bf
 	const BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG    ; c0
 	const BATTLE_ANIM_FRAMESET_TINY_GLOW             ; c1
+	const BATTLE_ANIM_FRAMESET_GROWING_BALL          ; c2
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)

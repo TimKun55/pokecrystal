@@ -195,6 +195,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShrinkingRingSmall  ; BATTLE_ANIM_FRAMESET_SHRINKING_RING_SMALL
 	dw .Frameset_ShrinkingRingBig    ; BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG
 	dw .Frameset_TinyGlow            ; BATTLE_ANIM_FRAMESET_TINY_GLOW
+	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1323,3 +1324,24 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_54,  1
 	oamframe BATTLE_ANIM_OAMSET_55,  1
 	oamrestart
+
+.Frameset_GrowingBall:
+	oamframe BATTLE_ANIM_OAMSET_1F,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_1F,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_1F,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_55,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_1E,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_55,  2
+	oamframe BATTLE_ANIM_OAMSET_54,  2
+	oamframe BATTLE_ANIM_OAMSET_55,  2
+	oamdelete

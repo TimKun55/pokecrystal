@@ -89,7 +89,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RapidSpin
 	dw BattleAnimFunc_BetaPursuit
 	dw BattleAnimFunc_RainSandstorm
-	dw BattleAnimFunc_AnimObjB0
 	dw BattleAnimFunc_PsychUp
 	dw BattleAnimFunc_AncientPower
 	dw BattleAnimFunc_IceSplash
@@ -4070,39 +4069,6 @@ BattleAnimFunc_RainSandstorm:
 	ld a, [hl]
 	add $4
 	ld [hl], a
-	ret
-
-BattleAnimFunc_AnimObjB0: ; unused
-; Used by object BATTLE_ANIM_OBJ_B0, with itself is not used in any animation
-; Obj Param: Lower nybble is added to VAR1 while upper nybble is added to XCOORD
-	ld hl, BATTLEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld d, [hl]
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	ld e, [hl]
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	ld l, a
-	and $f0
-	ld h, a
-	swap a
-	or h
-	ld h, a
-	ld a, l
-	and $f
-	swap a
-	ld l, a
-	add hl, de
-	ld e, l
-	ld d, h
-	ld hl, BATTLEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	ld [hl], e
 	ret
 
 BattleAnimFunc_PsychUp:
