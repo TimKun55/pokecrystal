@@ -56,9 +56,6 @@ INCBIN "gfx/tilesets/mansion.2bpp.lz"
 TilesetMansionMeta::
 INCBIN "data/tilesets/mansion_metatiles.bin"
 
-TilesetMansionColl::
-INCLUDE "data/tilesets/mansion_collision.asm"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -169,6 +166,9 @@ INCLUDE "data/tilesets/johto_modern_collision.asm"
 
 TilesetTraditionalHouseGFX::
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
+
+TilesetMansionColl::
+INCLUDE "data/tilesets/mansion_collision.asm"
 
 
 SECTION "Tileset Data 6", ROMX
