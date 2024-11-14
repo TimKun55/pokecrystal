@@ -178,7 +178,7 @@ _CGB_FinishBattleScreenLayout:
 	ld a, $6
 	call FillBoxCGB
 	; player's
-	hlcoord 10, 8, wAttrmap
+	hlcoord 11, 8, wAttrmap
 	lb bc, 1, 2
 	ld a, $6
 	call FillBoxCGB
