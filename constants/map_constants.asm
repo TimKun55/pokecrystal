@@ -454,6 +454,8 @@ ENDM
 	map_const CELADON_HOME_DECOR_STORE_3F,                  5,  4 ; 23
 	map_const CELADON_HOME_DECOR_STORE_4F,                  5,  4 ; 24
 	map_const CELADON_CURSE_HOUSE,                          4,  4 ; 25
+	map_const CELADON_HOTEL_1F,                             9,  4 ; 26
+	map_const CELADON_HOTEL_POOL,                           7,  4 ; 27
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

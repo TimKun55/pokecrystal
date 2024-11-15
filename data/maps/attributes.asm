@@ -690,6 +690,8 @@ ENDM
 	map_attributes CeladonHomeDecorStore3F, CELADON_HOME_DECOR_STORE_3F, $00, 0
 	map_attributes CeladonHomeDecorStore4F, CELADON_HOME_DECOR_STORE_4F, $00, 0
 	map_attributes CeladonCurseHouse, CELADON_CURSE_HOUSE, $00, 0
+	map_attributes CeladonHotel1F, CELADON_HOTEL_1F, $00, 0
+	map_attributes CeladonHotelPool, CELADON_HOTEL_POOL, $00, 0
 	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
 	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0

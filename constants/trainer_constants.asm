@@ -432,7 +432,7 @@ DEF KRIS EQU __trainer_class__
 	const PATON ; Route 20
 	const DARYL ; Route 21
 	const WALTER ; Route 19
-	const TONY ; unused
+	const TONY ; Celadon Hotel Pool
 	const JEROME
 	const TUCKER
 	const RICK ; unused

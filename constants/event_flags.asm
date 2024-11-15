@@ -300,7 +300,8 @@
 	const EVENT_MOUNT_MOON_B2F_HIDDEN_STARDUST
 	const EVENT_FINAL_BATTLE_WITH_LYRA
 	const EVENT_GOT_PREMIER_BALLS_FROM_SILPH
-; Unused: next 62 events
+	const EVENT_CELADON_HOTEL_SCOPE_LENS
+; Unused: next 61 events
 
 	const_next 400
 ; Kurt Apricorn events

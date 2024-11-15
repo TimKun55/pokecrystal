@@ -444,6 +444,7 @@ INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
 INCLUDE "maps/Route12.asm"
+INCLUDE "maps/CeladonHotel1F.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -485,6 +486,7 @@ INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/MtSilverPokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
+INCLUDE "maps/CeladonHotelPool.asm"
 
 
 SECTION "Map Scripts 25", ROMX

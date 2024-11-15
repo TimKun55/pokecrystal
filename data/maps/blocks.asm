@@ -1080,4 +1080,10 @@ LyrasHouse1F_Blocks:
 LyrasHouse2F_Blocks:
 	INCBIN "maps/LyrasHouse2F.ablk"
 
+CeladonHotel1F_Blocks:
+	INCBIN "maps/CeladonHotel1F.ablk"
+
+CeladonHotelPool_Blocks:
+	INCBIN "maps/CeladonHotelPool.ablk"
+
 ENDSECTION

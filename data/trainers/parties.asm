@@ -2291,9 +2291,9 @@ SwimmerMGroup:
 
 	; SWIMMERM (13)
 	db "Tony@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 18, STARMIE
-	db 16, HORSEA
+	db 57, STARMIE
+	db 58, KINGLER
+	db 59, SEAKING
 	db -1 ; end
 
 	; SWIMMERM (14)
