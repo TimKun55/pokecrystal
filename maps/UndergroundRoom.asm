@@ -188,7 +188,8 @@ UndergroundRoomComputer:
 	jumptext UndergroundRoomComputerText
 	
 UndergroundArcherBeforeText:
-	text "Ariana, not now."
+	text "Archer: Ariana,"
+	line "not now."
 	
 	para "I'm so close to"
 	line "pinpointing his"
@@ -200,10 +201,10 @@ UndergroundArcherSeenText:
 	
 	para "It's you again."
 	line "Even after moving,"
-	cont "even after the"
 	
-	para "disguises and"
-	line "extra secret lair,"
+	para "even after the"
+	line "disguises and"
+	cont "extra secret lair,"
 	
 	para "you STILL found us"
 	line "… … …"
@@ -224,7 +225,7 @@ UndergroundArcherBeforeBattleText:
 	line "Not when I'm so"
 	
 	para "close to finding"
-	line "the Boss!!"
+	line "the Boss!"
 	done
 	
 UndergroundArcherWinLossText:
@@ -268,7 +269,7 @@ UndergroundArcherHereText:
 	done
 	
 UndergroundArcherShockText:
-	text "Archer:'Why'?"
+	text "Archer: Why?"
 	line "For you!"
 	
 	para "You taught us to"
@@ -312,7 +313,7 @@ UndergroundGiovanniStopText:
 
 UndergroundGiovanni1Text:
 	text "Giovanni: Your"
-	line "'hard work'?"
+	line "hard work?"
 	
 	para "I followed this"
 	line "child in here"
@@ -337,7 +338,7 @@ UndergroundGiovanni1Text:
 	cont "with good reason"
 	
 	para "and you wanted to"
-	line "rebuild it? WHY?"
+	line "rebuild it? Why?"
 	done
 
 UndergroundGiovanni2Text:
@@ -410,9 +411,9 @@ UndergroundPetrelSeenText:
 	cont "get in here?!"
 	
 	para "I left the"
-	line "door open?!"
+	line "door open?"
 	
-	para "Aah!!"
+	para "Aah!"
 	line "This is my fault!"
 	done
 
@@ -427,7 +428,7 @@ UndergroundPetrelAfterBattleText:
 	done
 	
 UndergroundProtonSeenText:
-	text "WHAT?! YOU?!"
+	text "WHAT? YOU?"
 	line "We were so careful"
 	cont "to make sure"
 	

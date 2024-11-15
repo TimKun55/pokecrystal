@@ -18,12 +18,7 @@ Route5Noop2Scene:
 	end
 
 Route5DisguisedScene1:
-	readvar VAR_FACING
-	ifequal RIGHT, .continueappear1
-	end
-	
-.continueappear1
-	moveobject ROUTE5_SUPER_NERD3,  9, 13
+	moveobject ROUTE5_SUPER_NERD3,  9, 15
 	appear ROUTE5_SUPER_NERD3
 	pause 5
 	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
@@ -42,6 +37,7 @@ Route5DisguisedScene1:
 	playsound SFX_ENTER_DOOR
 	disappear ROUTE5_SUPER_NERD3
 	turnobject PLAYER, RIGHT
+	pause 15
 	showemote EMOTE_QUESTION, PLAYER, 30
 	setscene SCENE_ROUTE5_NOOP
 	setmapscene UNDERGROUND_PATH, SCENE_UNDERGROUNDPATH_DOOR
@@ -53,7 +49,7 @@ Route5DisguisedScene2:
 	end
 	
 .continueappear2
-	moveobject ROUTE5_SUPER_NERD3,  9, 14
+	moveobject ROUTE5_SUPER_NERD3,  9, 16
 	appear ROUTE5_SUPER_NERD3
 	pause 5
 	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
@@ -72,6 +68,7 @@ Route5DisguisedScene2:
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE5_SUPER_NERD3
 	turnobject PLAYER, RIGHT
+	pause 15
 	showemote EMOTE_QUESTION, PLAYER, 30
 	setscene SCENE_ROUTE5_NOOP
 	setmapscene UNDERGROUND_PATH, SCENE_UNDERGROUNDPATH_DOOR
