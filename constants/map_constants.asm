@@ -456,6 +456,7 @@ ENDM
 	map_const CELADON_CURSE_HOUSE,                          4,  4 ; 25
 	map_const CELADON_HOTEL_1F,                             9,  4 ; 26
 	map_const CELADON_HOTEL_POOL,                           7,  4 ; 27
+	map_const EUSINES_HOUSE,                                4,  4 ; 28
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

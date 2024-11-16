@@ -357,7 +357,7 @@ SaffronCity_MapEvents:
 	warp_event 11, 31, SAFFRON_POKECENTER_1F, 1
 	warp_event 27, 31, MR_PSYCHICS_HOUSE, 1
 	warp_event  7,  5, SAFFRON_MAGNET_TRAIN_STATION, 2
-	warp_event 19, 25, SILPH_CO_1F, 1
+	warp_event 19, 23, SILPH_CO_1F, 1
 	warp_event 11, 13, COPYCATS_HOUSE_1F, 1
 	warp_event 17,  1, ROUTE_5_SAFFRON_GATE, 3
 	warp_event  0, 26, ROUTE_7_SAFFRON_GATE, 3
@@ -376,10 +376,10 @@ SaffronCity_MapEvents:
 	coord_event 20,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
 
 	def_bg_events
-	bg_event  8, 28, BGEVENT_READ, SaffronCitySign
+	bg_event  6, 28, BGEVENT_READ, SaffronCitySign
 	bg_event 30,  7, BGEVENT_READ, SaffronGymSign
 	bg_event 22,  7, BGEVENT_READ, FightingDojoSign
-	bg_event 16, 25, BGEVENT_READ, SilphCoSign
+	bg_event 18, 25, BGEVENT_READ, SilphCoSign
 	bg_event 25, 31, BGEVENT_READ, MrPsychicsHouseSign
 	bg_event  8,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
 	bg_event 12, 31, BGEVENT_READ, SaffronCityPokecenterSign
@@ -392,7 +392,7 @@ SaffronCity_MapEvents:
 	object_event 29,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
 	object_event 16, 27, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
 	object_event 30, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
-	object_event 23, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
+	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI

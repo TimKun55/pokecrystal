@@ -170,6 +170,7 @@ Route2NuggetHouse_Blocks:
 Route26HealHouse_Blocks:
 Route27AerialAceHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
+EusinesHouse_Blocks:
 	INCBIN "maps/KantoHouse4.ablk"
 	
 CharcoalKiln_Blocks:

@@ -502,6 +502,7 @@ Celadon_Map_Names: ;newgroup CELADON
 	dw Celadon_Map_Name25 ; map_const CELADON_CURSE_HOUSE       			; 25
 	dw Celadon_Map_Name26 ; map_const CELADON_HOTEL_1F                      ; 26
 	dw Celadon_Map_Name27 ; map_const CELADON_HOTEL_POOL                    ; 27
+	dw Celadon_Map_Name28 ; map_const EUSINES_HOUSE                         ; 28
 	assert_table_length NUM_CELADON_MAPS
 
 Cianwood_Map_Names: ;newgroup CIANWOOD
@@ -1360,7 +1361,9 @@ Celadon_Map_Name25: ; map_const CELADON_CURSE_HOUSE ; 25
 Celadon_Map_Name26: ; map_const CELADON_HOTEL_1F ; 26 
 	db "Celadon Hotel 1F@"
 Celadon_Map_Name27: ; map_const CELADON_HOTEL_POOL ; 27 
-	db "Celadon Hotel Pool@" 
+	db "Celadon Hotel Pool@"
+Celadon_Map_Name28: ; map_const EUSINES_HOUSE ; 28 
+	db "Eusine's House@"
 
 Cianwood_Map_Name1: ; map_const ROUTE_40,  1
 	db "Route 40@"
