@@ -216,3 +216,15 @@
 	tilecoll WALL, WALL, WALL, WALL ; d7
 	tilecoll WALL, FLOOR, WALL, FLOOR ; d8
 	tilecoll WALL, TALL_GRASS, WALL, TALL_GRASS ; d9
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; da
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; db
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; de
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; df
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e2
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; e3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e5

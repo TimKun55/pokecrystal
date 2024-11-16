@@ -203,3 +203,10 @@
 	tilecoll PUDDLE, PUDDLE, PUDDLE, HEADBUTT_TREE ; ca
 	tilecoll WARP_CARPET_LEFT, WALL, FLOOR, WALL ; cb
 	tilecoll WALL, WALL, WALL, WALL ; cc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ce
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d3
