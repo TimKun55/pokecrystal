@@ -275,12 +275,12 @@ ENDM
 	connection east, Route15, ROUTE_15, 9
 
 	map_attributes Route18, ROUTE_18, $25, WEST | EAST
-	connection west, Route17, ROUTE_17, -38
+	connection west, Route17, ROUTE_17, -42
 	connection east, FuchsiaCity, FUCHSIA_CITY, -7
 
 	map_attributes Route17, ROUTE_17, $25, NORTH | EAST
 	connection north, Route16, ROUTE_16, 0
-	connection east, Route18, ROUTE_18, 38
+	connection east, Route18, ROUTE_18, 42
 
 	map_attributes Route16, ROUTE_16, $2f, SOUTH | EAST
 	connection south, Route17, ROUTE_17, 0
