@@ -150,6 +150,8 @@ DayCareLadyScript:
 	iftrue .NoLyrasEgg
 	writetext DayCareLadyText_GiveLyrasEgg
 	promptbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
 	checkevent EVENT_GOT_TOTODILE_FROM_ELM
 	iftrue .GiveCyndaquilEgg
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
@@ -164,11 +166,11 @@ DayCareLadyScript:
 .GiveTotodileEgg:
 	giveegg TOTODILE, EGG_LEVEL
 .GotLyrasEgg
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	farwritetext _ReceivedEggText
-	playsound SFX_KEY_ITEM
 	waitsfx
+	writetext ReceivedLyrasEggText
+	playsound SFX_GET_EGG
+	waitsfx
+	promptbutton
 	writetext DayCareLadyText_DescribeLyrasEgg
 	waitbutton
 	closetext
@@ -405,6 +407,11 @@ DayCareLadyText_GiveLyrasEgg:
 	para "Lyra told me this"
 	line "Egg was a gift for"
 	cont "you. Here you go!"
+	done
+
+ReceivedLyrasEggText:
+	text "<PLAYER> received"
+	line "Lyra's Egg!"
 	done
 
 DayCareLadyText_DescribeLyrasEgg:
