@@ -379,10 +379,10 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 	
-	map_attributes Route23, ROUTE_23, $87, NORTH
+	map_attributes Route23, ROUTE_23, $47, NORTH
 	connection north, IndigoPlateau, INDIGO_PLATEAU, 0
 	
-	map_attributes IndigoPlateau, INDIGO_PLATEAU, $87, SOUTH
+	map_attributes IndigoPlateau, INDIGO_PLATEAU, $47, SOUTH
 	connection south, Route23, ROUTE_23, 0	
 
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
