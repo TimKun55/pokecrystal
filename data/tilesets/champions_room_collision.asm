@@ -12,7 +12,7 @@
 	tilecoll WALL, WALL, LADDER, LADDER ; 0b
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 0c
 	tilecoll WALL, WALL, WALL, WALL ; 0d
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 0e
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 0e
 	tilecoll WALL, WALL, WALL, WALL ; 0f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 10
 	tilecoll WALL, WALL, WALL, FLOOR ; 11
