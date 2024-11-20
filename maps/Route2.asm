@@ -151,11 +151,11 @@ Route2_MapEvents:
 
 	def_warp_events
 	warp_event 15, 18, ROUTE_2_NUGGET_HOUSE, 1
-	warp_event 15, 41, ROUTE_2_GATE, 3
-	warp_event 15, 37, ROUTE_2_GATE, 1
-	warp_event 16, 37, ROUTE_2_GATE, 2
+	warp_event 15, 39, ROUTE_2_GATE, 3
+	warp_event 15, 35, ROUTE_2_GATE, 1
+	warp_event 16, 35, ROUTE_2_GATE, 2
 	warp_event 12,  7, DIGLETTS_CAVE, 3
-	warp_event  3, 41, ROUTE_2_VIRIDIAN_FOREST_GATE, 1
+	warp_event  3, 43, ROUTE_2_VIRIDIAN_FOREST_GATE, 1
 	warp_event  1,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 3
 	warp_event  2,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 4
 
@@ -166,7 +166,7 @@ Route2_MapEvents:
 	bg_event 11,  9, BGEVENT_READ, Route2DiglettsCaveSign
 
 	def_object_events
-	object_event  7,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyCaroline, -1
+	object_event  7,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyCaroline, -1
 	object_event 11, 60, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyCarlene, -1
 	object_event  1, 48, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperThomas, -1
 	object_event 16, 50, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperLeroy, -1

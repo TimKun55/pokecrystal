@@ -401,7 +401,7 @@ ENDM
 
 	newgroup LAVENDER                                             ; 18
 	map_const ROUTE_8,                                     20,  9 ;  1
-	map_const ROUTE_10_SOUTH,                              10, 11 ;  2
+	map_const ROUTE_10_SOUTH,                              12, 11 ;  2
 	map_const LAVENDER_TOWN,                               10,  9 ;  3
 	map_const LAVENDER_POKECENTER_1F,                       6,  4 ;  4
 	map_const MR_FUJIS_HOUSE,                               5,  4 ;  5
