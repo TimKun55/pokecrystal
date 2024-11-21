@@ -1048,8 +1048,9 @@ LassGroup:
 	db -1 ; end
 
 	; LASS (12)
-	db "Connie@", TRAINERTYPE_NORMAL
-	db 35, AZUMARILL
+	db "Verity@", TRAINERTYPE_NORMAL
+	db 62, VILEPLUME
+	db 64, VICTREEBEL
 	db -1 ; end
 
 	; LASS (13)
@@ -1088,16 +1089,10 @@ LassGroup:
 	db 66, MAGNETON
 	db -1 ; end
 	
-	; LASS (18)
+	; LASS (19)
 	db "Mai@", TRAINERTYPE_MOVES
 	db 8, ODDISH,   ABSORB, GROWTH, ACID, SLEEP_POWDER
 	db 9, DROWZEE,	TACKLE, HYPNOSIS, DISABLE, CONFUSION
-	db -1 ; end
-
-	; LASS (19)
-	db "Verity@", TRAINERTYPE_NORMAL
-	db 62, VILEPLUME
-	db 64, VICTREEBEL
 	db -1 ; end
 
 JanineGroup:
