@@ -110,8 +110,8 @@ VictoryRoadGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 19,  7, ROUTE_22, 1
-	warp_event 19,  6, ROUTE_22, 2
+	warp_event 19,  6, ROUTE_22, 1
+	warp_event 19,  7, ROUTE_22, 2
 	warp_event  9,  0, ROUTE_23, 1
 	warp_event 10,  0, ROUTE_23, 2
 	warp_event  9, 17, ROUTE_26, 1
