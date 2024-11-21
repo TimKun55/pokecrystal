@@ -48,4 +48,4 @@ ViridianForestRoute2Gate_MapEvents:
 
 	def_object_events
 	object_event  9,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateOfficerScript, -1
-	object_event  9,  3, SPRITE_PARASECT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateParasectScript, -1
+	object_event  9,  3, SPRITE_PARASECT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateParasectScript, -1
