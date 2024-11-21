@@ -61,7 +61,7 @@ OaksAssistant3Script:
 	jumptextfaceplayer OaksAssistant3Text
 
 OaksPokedexScript:
-	jumptextfaceplayer OaksPokedexText
+	jumptext OaksPokedexText
 
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript

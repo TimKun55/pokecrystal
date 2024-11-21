@@ -136,7 +136,7 @@ CamperLeroyAfterBattleText:
 	done
 
 Route2SignText:
-	text "ROUTE 2"
+	text "Route 2"
 
 	para "Viridian City -"
 	line "Pewter City"
