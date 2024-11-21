@@ -199,8 +199,8 @@ VioletPokecenterElmsAideFavorText:
 	done
 
 VioletPokecenterElmsAideGiveEggText:
-	text "We discovered that"
-	line "a #mon will not"
+	text "We know that a"
+	line "#mon will not"
 
 	para "hatch until it"
 	line "grows in the Egg."
@@ -209,9 +209,9 @@ VioletPokecenterElmsAideGiveEggText:
 	line "with other active"
 	cont "#mon to hatch."
 
-	para "<PLAY_G>, you're"
-	line "the only person"
-	cont "we can rely on."
+	para "<PLAY_G>, we"
+	line "know we can rely"
+	cont "on you to help."
 
 	para "Please call Prof."
 	line "Elm when that Egg"

@@ -1045,11 +1045,12 @@ ElmText_MissionFromMrPokemon:
 	para "saying that this"
 	line "time it's real."
 
-	para "It is intriguing,"
-	line "but we're busy"
-
-	para "with our #mon"
-	line "research…"
+	para "It's probably ano-"
+	line "ther #mon Egg,"
+	
+	para "but we're still"
+	line "so busy with our"
+	cont "#mon research…"
 
 	para "Wait!"
 
@@ -1210,11 +1211,30 @@ ElmAfterTheftText3:
 	done
 
 ElmAfterTheftText4:
-	text "But… Is it a"
-	line "rare #mon Egg?"
+	text "But… This is just"
+	line "a #mon Egg?"
 
-	para "If it is, it is a"
-	line "great discovery!"
+	para "This Egg may be"
+	line "something I've"
+	cont "never seen…"
+	
+	para "Still, it's just"
+	line "an Egg."
+	
+	para "Mr.#mon is"
+	line "always fascinated"
+	cont "by Eggs."
+	
+	para "Well, since he"
+	line "gave it to us,"
+	
+	para "we might as well"
+	line "find out what"
+	cont "secret it holds."
+	
+	para "I'll keep it for a"
+	line "while to find out"
+	cont "about the Egg."
 	done
 
 ElmAfterTheftText5:
@@ -1361,7 +1381,7 @@ ElmGiveLuckyEggText2:
 	done
 
 ElmText_CallYou:
-	text "ELM: <PLAY_G>, I'll"
+	text "Elm: <PLAY_G>, I'll"
 	line "call you if any-"
 	cont "thing comes up."
 	done
@@ -1416,10 +1436,24 @@ ElmGiveMasterBallText2:
 ElmGiveTicketText1:
 	text "Elm: <PLAY_G>!"
 	line "There you are!"
-
-	para "I called because I"
-	line "have something for"
-	cont "you."
+	
+	para "Congratulations on"
+	line "becoming the"
+	cont "new Champion!"
+	
+	para "You did it!"
+	line "It seems like"
+	
+	para "you just started"
+	line "your journey and"
+	
+	para "now you're the"
+	line "Champ! I'm so"
+	cont "proud of you!"
+	
+	para "Oh, I called be-"
+	line "cause I have some-"
+	cont "thing for you."
 
 	para "See? It's an"
 	line "S.S.Ticket."
@@ -1438,7 +1472,11 @@ ElmGiveTicketText1:
 	line "battle you with"
 	
 	para "all of their"
-	line "strength."	
+	line "strength and"
+	
+	para "you will then"
+	line "become the Grand"
+	cont "Champion!"
 	done
 
 ElmGiveTicketText2:

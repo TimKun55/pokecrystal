@@ -214,6 +214,12 @@ MrPokemonIntroText3:
 
 	para "They gave me that"
 	line "Egg."
+	
+	para "They said they"
+	line "found it while"
+	
+	para "looking after a"
+	line "rare #mon."
 
 	para "I was intrigued,"
 	line "so I sent mail to"

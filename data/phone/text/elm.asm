@@ -204,7 +204,7 @@ ElmPhoneGotAholdOfSomethingNeatText:
 	para "I got ahold of"
 	line "something neat."
 
-	para "Swing by my LAB"
+	para "Swing by my Lab"
 	line "and pick it up!"
 
 	para "See you later!"
