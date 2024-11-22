@@ -4,14 +4,14 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! Found some"
-	line "@"
+	text "@"
 	text_ram wStringBuffer3
-	text "s!"
+	text "s"
+	line "are growing!"
 	done
 
 _ObtainedFruitText::
-	text "Obtained"
+	text "Obtained one"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
@@ -31,28 +31,16 @@ _ObtainedThreeFruitText::
 	text "s!"
 	done
 
-_ObtainedFourFruitText::
-	text "Obtained four"
-	line "@"
-	text_ram wStringBuffer3
-	text "s!"
-	done
-
-_ObtainedFiveFruitText::
-	text "Obtained five"
-	line "@"
-	text_ram wStringBuffer3
-	text "s!"
-	done
-
 _FruitPackIsFullText::
 	text "But the Pack is"
 	line "full…"
 	done
 
 _NothingHereText::
-	text "There's nothing"
-	line "here…"
+	text "Hmm, they don't"
+	line "seem ready to"
+	cont "be picked yet…"
+	done
 	done
 
 _WhichApricornText::
