@@ -41,6 +41,18 @@ _NothingHereText::
 	line "seem ready to"
 	cont "be picked yet…"
 	done
+
+_WantToUseMulchText::
+	text "Want to use"
+	line "some Mulch?"
+	done
+
+_UsedMulchText::
+	text "<PLAYER> used"
+	line "some Mulch!"
+
+	para "The tree was"
+	line "fertilized!"
 	done
 
 _WhichApricornText::

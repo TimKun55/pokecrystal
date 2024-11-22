@@ -167,8 +167,8 @@ ItemEffects:
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw PokeBallEffect      ; PREMIER_BALL
-	dw NoEffect            ; ITEM_9a
-	dw NoEffect            ; ITEM_9B
+	dw NoEffect            ; BALL_RELIC
+	dw NoEffect            ; MULCH
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL

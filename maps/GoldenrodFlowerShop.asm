@@ -42,7 +42,7 @@ FlowerShopTeacherScript:
 
 .EVBerry
 	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
-	iftrue .Lalala
+	iftrue .SellMulch
 	faceplayer
 	opentext
 	writetext FlowerShopHiddenGardenText
@@ -82,6 +82,73 @@ FlowerShopTeacherScript:
 .HaventMetFloria:
 	jumptextfaceplayer GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text
 
+.SellMulch:
+	faceplayer
+	opentext
+	writetext WouldYouLikeMulchText
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Buy1
+	ifequal 2, .Buy10
+	sjump .Refused
+
+.Buy1:
+	checkmoney YOUR_MONEY, 200
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem MULCH
+	iffalse .NoRoomForMulch
+	takemoney YOUR_MONEY, 200
+	sjump .Done
+
+.Buy10:
+	checkmoney YOUR_MONEY, 2000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem MULCH, 10
+	iffalse .NoRoomForMulch
+	takemoney YOUR_MONEY, 2000
+
+.Done:
+	special PlaceMoneyTopRight
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext BoughtMulchText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney:
+	writetext NotEnoughMulchMoneyText
+	waitbutton
+	closetext
+	end
+
+.Refused:
+	writetext DontBuyMulchText
+	waitbutton
+	closetext
+	end
+
+.NoRoomForMulch:
+	writetext NoRoomForMulchText
+	waitbutton
+	closetext
+	end
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 4, 18, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "× 1 Bag    ¥200@"
+	db "×10 Bags  ¥2000@"
+	db "Cancel@"
+
 FlowerShopFloriaScript:
 	faceplayer
 	opentext
@@ -104,7 +171,15 @@ FlowerShopFloriaScript:
 	end
 
 .FoughtSudowoodo:
+	checkitem MULCH
+	iftrue .MulchDescription
 	writetext GoldenrodFlowerShopFloriaItReallyWasAMonText
+	waitbutton
+	closetext
+	end
+
+.MulchDescription:
+	writetext DescribeMulchText
 	waitbutton
 	closetext
 	end
@@ -222,6 +297,45 @@ GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
 	text "Lalala lalalala."
 	line "Have plenty of"
 	cont "water, my lovely!"
+	done
+
+WouldYouLikeMulchText:
+	text "Care to buy some"
+	line "Mulch?"
+
+	para "It makes Berries"
+	line "grow faster!"
+	done
+
+BoughtMulchText:
+	text "Thank you!"
+	line "Please come again!"
+	done
+
+DontBuyMulchText:
+	text "Please come again!"
+	done
+
+NotEnoughMulchMoneyText:
+	text "Well… Excuse me,"
+	line "but you're short"
+	cont "of money."
+	done
+
+NoRoomForMulchText:
+	text "Oh no, your Bag"
+	line "is full!"
+	done
+
+DescribeMulchText:
+	text "Our Mulch is a"
+	line "mix of high-"
+
+	para "quality soil and"
+	line "#mon's … er…"
+
+	para "you know. It's"
+	line "full of nutrients!"
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:

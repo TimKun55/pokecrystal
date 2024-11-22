@@ -155,7 +155,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw PremierBallDesc
 	dw BallRelicDesc
-	dw TeruSama25Desc
+	dw MulchDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -864,6 +864,10 @@ PremierBallDesc:
 BallRelicDesc:
 	db   "A ball covered in"
 	next "dirt and grime.@"
+
+MulchDesc:
+	db   "Plant fertilizer"
+	next "for Berry trees.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

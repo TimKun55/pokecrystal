@@ -9,15 +9,15 @@ Route30BerryHouse_MapScripts:
 Route30BerryHousePokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_ORAN_BERRY_FROM_ROUTE_30_HOUSE
-	iftrue .GotOranBerry
+	checkevent EVENT_GOT_MULCH_FROM_ROUTE_30_HOUSE
+	iftrue .GotMulch
 	writetext Route30BerrySpeechHouseMonEatBerriesText
 	promptbutton
-	verbosegiveitem ORAN_BERRY, 3
+	verbosegiveitem MULCH, 3
 	iffalse .NoRoom
-	setevent EVENT_GOT_ORAN_BERRY_FROM_ROUTE_30_HOUSE
-.GotOranBerry:
-	writetext Route30BerrySpeechHouseCheckTreesText
+	setevent EVENT_GOT_MULCH_FROM_ROUTE_30_HOUSE
+.GotMulch:
+	writetext Route30BerrySpeechHouseMulchText
 	waitbutton
 .NoRoom:
 	closetext
@@ -30,22 +30,22 @@ Route30BerrySpeechHouseMonEatBerriesText:
 	text "You know, #mon"
 	line "eat Berries."
 
-	para "Well, my #mon"
-	line "got healthier by"
-	cont "eating a Berry."
+	para "They take time to"
+	line "grow back when"
+	cont "they're picked,"
+
+	para "but using Mulch"
+	line "on the soil really"
+	cont "speeds that up!"
 
 	para "Here. I'll share"
 	line "some with you!"
 	done
 
-Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "Berries. They just"
-	cont "drop right off."
-	
-	para "Though some can't"
-	line "be eaten, they're"
-	cont "still useful."
+Route30BerrySpeechHouseMulchText:
+	text "I buy top-quality"
+	line "Mulch in Goldenrod"
+	cont "City."
 	done
 
 Route30BerryHouse_MapEvents:

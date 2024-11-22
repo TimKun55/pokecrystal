@@ -160,7 +160,7 @@
 	const BERSERK_GENE ; 98
 	const PREMIER_BALL ; 99
 	const BALL_RELIC   ; 9a
-	const ITEM_9b      ; 9b
+	const MULCH        ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e

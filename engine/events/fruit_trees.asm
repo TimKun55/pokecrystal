@@ -10,6 +10,16 @@ FruitTreeScript::
 	iffalse .fruit
 	writetext NothingHereText
 	waitbutton
+	checkitem MULCH
+	iffalse .end
+	writetext WantToUseMulchText
+	yesorno
+	iffalse .end
+	takeitem MULCH
+	readmem wCurFruit
+	callasm FertilizedFruitTree
+	writetext UsedMulchText
+	waitbutton
 	sjump .end
 
 .fruit
@@ -94,6 +104,8 @@ endr
 	set DAILYFLAGS1_ALL_FRUIT_TREES_F, [hl]
 	ret
 
+FertilizedFruitTree:
+	ld b, RESET_FLAG
 GetFruitTreeFlag:
 	push hl
 	push de
@@ -147,6 +159,14 @@ FruitPackIsFullText:
 
 NothingHereText:
 	text_far _NothingHereText
+	text_end
+
+WantToUseMulchText:
+	text_far _WantToUseMulchText
+	text_end
+
+UsedMulchText:
+	text_far _UsedMulchText
 	text_end
 	
 DEF FRUIT_TREE_1_MIN EQU 1

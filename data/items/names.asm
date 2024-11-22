@@ -154,7 +154,7 @@ ItemNames::
 	li "Berserk Gene"
 	li "Premier Ball"
 	li "Ball Relic"
-	li "TERU-SAMA"
+	li "Mulch"
 	li "Sacred Ash"
 	li "Heavy Ball"
 	li "Flower Mail"

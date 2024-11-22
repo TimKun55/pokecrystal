@@ -5,7 +5,6 @@ INCLUDE "maps/GoldenrodBikeShop.asm"
 INCLUDE "maps/GoldenrodHappinessRater.asm"
 INCLUDE "maps/BillsFamilysHouse.asm"
 INCLUDE "maps/GoldenrodMagnetTrainStation.asm"
-INCLUDE "maps/GoldenrodFlowerShop.asm"
 INCLUDE "maps/GoldenrodPPSpeechHouse.asm"
 INCLUDE "maps/GoldenrodNameRater.asm"
 INCLUDE "maps/GoldenrodDeptStore1F.asm"
@@ -117,6 +116,7 @@ INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
 INCLUDE "maps/IlexForest.asm"
 INCLUDE "maps/MountMoonB2F.asm"
+INCLUDE "maps/GoldenrodFlowerShop.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -181,7 +181,6 @@ INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
-INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/Route27AerialAceHouse.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
 
@@ -211,6 +210,7 @@ INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 
 
 SECTION "Map Scripts 11", ROMX
