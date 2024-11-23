@@ -239,3 +239,11 @@
 	tilecoll WALL, WATER, WALL, WALL ; ee
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; ef
 	tilecoll WALL, WALL, WALL, WALL ; f0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f2
+	tilecoll FLOOR, WALL, FLOOR, WALL ; f3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f4
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; f5
+	tilecoll FLOOR, FLOOR, WALL, WARP_CARPET_DOWN ; f6
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL ; f7
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; f8

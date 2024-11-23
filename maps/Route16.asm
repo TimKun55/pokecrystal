@@ -37,6 +37,6 @@ Route16_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  5,  5, BGEVENT_READ, CyclingRoadSign
+	bg_event 11,  3, BGEVENT_READ, CyclingRoadSign
 
 	def_object_events

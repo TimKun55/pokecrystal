@@ -164,9 +164,6 @@ SaffronCityPokecenterSign:
 SaffronCityMartSign:
 	jumpstd MartSignScript
 	
-SaffronAviculturalSocietySign:
-	jumptext SaffronAviculturalSocietySignText
-
 SaffronDisguisedSlowMovementLeft:
 	slow_step LEFT 
 	step_end
@@ -341,12 +338,6 @@ SaffronCityMagnetTrainStationSignText:
 	cont "Station"
 	done
 
-SaffronAviculturalSocietySignText:
-	text "Saffron City"
-	line "Avicultural"
-	cont "Society"
-	done
-
 SaffronCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -366,7 +357,7 @@ SaffronCity_MapEvents:
 	warp_event 18, 37, ROUTE_6_SAFFRON_GATE, 2
 	warp_event 39, 26, ROUTE_8_SAFFRON_GATE, 1
 	warp_event 39, 27, ROUTE_8_SAFFRON_GATE, 2
-	warp_event 13,  7, SAFFRON_AVICULTURAL_SOCIETY_1F, 1
+	warp_event  7, 25, SAFFRON_AVICULTURAL_SOCIETY_1F, 1
 	warp_event 15, 31, SAFFRON_ODDISH_DOLL_HOUSE, 1
 
 	def_coord_events
@@ -384,7 +375,6 @@ SaffronCity_MapEvents:
 	bg_event  8,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
 	bg_event 12, 31, BGEVENT_READ, SaffronCityPokecenterSign
 	bg_event 28, 13, BGEVENT_READ, SaffronCityMartSign
-	bg_event 11,  7, BGEVENT_READ, SaffronAviculturalSocietySign
 
 	def_object_events
 	object_event  7, 15, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1
