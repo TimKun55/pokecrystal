@@ -43,6 +43,7 @@ AnimObjBulkUpGFX:    INCBIN "gfx/battle_anims/bulkup.2bpp.lz"
 AnimObjRingsGFX:     INCBIN "gfx/battle_anims/rings.2bpp.lz"
 AnimObjBigRingsGFX:  INCBIN "gfx/battle_anims/bigrings.2bpp.lz"
 AnimObjGlowGFX:      INCBIN "gfx/battle_anims/glow.2bpp.lz"
+AnimObjWaterBallGFX: INCBIN "gfx/battle_anims/waterball.2bpp.lz"
 
 
 SECTION "Battle Ball Icons", ROMX
