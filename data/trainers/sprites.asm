@@ -77,4 +77,5 @@ BTTrainerClassSprites:
 	db SPRITE_BUG_MANIAC
 	db SPRITE_LYRA
 	db SPRITE_LYRA
+	db SPRITE_BLAINE
 	assert_table_length NUM_TRAINER_CLASSES
