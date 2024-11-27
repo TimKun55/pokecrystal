@@ -6,41 +6,8 @@
 
 SaffronAviculturalSociety2F_MapScripts:
 	def_scene_scripts
-	scene_script SaffronAviculturalSociety2FNoop1Scene, SCENE_AVICULTURALSOCIETY2F_BADGE_CHECK
-	scene_script SaffronAviculturalSociety2FNoop2Scene, SCENE_AVICULTURALSOCIETY2F_NOOP
 
 	def_callbacks
-
-SaffronAviculturalSociety2FNoop1Scene:
-	end
-
-SaffronAviculturalSociety2FNoop2Scene:
-	end
-	
-AviculturalSociety2FBadgeCheckScript:
-	turnobject PLAYER, LEFT
-	sjump _AviculturalSociety2FBadgeCheckScript
-	
-AviculturalSociety2FBirdKeeper2Script:
-	faceplayer
-_AviculturalSociety2FBadgeCheckScript:
-	opentext
-	writetext AviculturalSociety2FBirdKeeper2Text
-	promptbutton
-	checkflag ENGINE_VOLCANOBADGE
-	iftrue .GoUp
-	writetext AviculturalSocietyBirdKeeper2NoEntryText
-	waitbutton
-	closetext
-	applymovement PLAYER, AviculturalSociety2FStepUpMovement
-	end
-	
-.GoUp:
-	writetext AviculturalSocietyBirdKeeper2YouMayPassText
-	waitbutton
-	closetext
-	setscene SCENE_AVICULTURALSOCIETY2F_NOOP
-	end
 
 AviculturalSociety2FBirdKeeper1Script:
 	faceplayer
@@ -157,6 +124,9 @@ AviculturalSocietyArticunoBookshelfText:
 	cont "the southern seas"
 	cont "of Kanto."
 	
+	para "Known to nest in"
+	line "Seafoam Islands."
+	
 	para "Articuno, also"
 	line "known as Furiizaa."
 	done
@@ -170,9 +140,12 @@ AviculturalSocietyZapdosBookshelfText:
 	line "abouts are unknown"
 	cont "but others have"
 
-	para "reported storms"
+	para "reported rain"
 	line "in the northern"
-	cont "parts of Kanto."
+	cont "parts of Kanto,"
+
+	para "around Cerulean"
+	line "City."
 
 	para "Zapdos, also"
 	line "known as Sandaa."
@@ -190,7 +163,11 @@ AviculturalSocietyMoltresBookshelfText:
 
 	para "reported increased"
 	line "temperatures in"
-	cont "south-east Kanto."
+	cont "south-east Kanto,"
+	
+	para "seeing something"
+	para "flying around the"
+	line "Cinnabar Volcano."
 
 	para "Moltres, also"
 	line "known as Faiyaa."
@@ -274,7 +251,6 @@ SaffronAviculturalSociety2F_MapEvents:
 	warp_event 11, 10, SAFFRON_AVICULTURAL_SOCIETY_3F, 1
 
 	def_coord_events
-	coord_event  7, 11, SCENE_AVICULTURALSOCIETY2F_BADGE_CHECK, AviculturalSociety2FBadgeCheckScript
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, AviculturalSocietyArticunoBookshelf
@@ -285,7 +261,6 @@ SaffronAviculturalSociety2F_MapEvents:
 	bg_event  6,  4, BGEVENT_READ, AviculturalSocietyBook
 
 	def_object_events
-	object_event  4,  4, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety2FBirdKeeper1Script, -1
-	object_event  6, 11, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety2FBirdKeeper2Script, -1	
+	object_event  4,  4, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety2FBirdKeeper1Script, -1	
 	object_event  7,  2, SPRITE_MURKROW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyMurkrowScript, -1
 	object_event  3,  7, SPRITE_SKARMORY, SPRITEMOVEDATA_POKEMON, 0, 1, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietySkarmoryScript, -1

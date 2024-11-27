@@ -95,3 +95,4 @@
 	tilecoll UP_WALL, UP_WALL, FLOOR, LADDER ; 5e
 	tilecoll FLOOR, WALL, LADDER, WALL ; 5f
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 60
+	tilecoll WATER, WALL, WALL, WALL ; 61

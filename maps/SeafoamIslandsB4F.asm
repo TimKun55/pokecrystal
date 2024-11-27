@@ -6,37 +6,78 @@
 
 SeafoamIslandsB4F_MapScripts:
 	def_scene_scripts
+	scene_script SeafoamIslandsB4FNoop1Scene, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY1
+	scene_script SeafoamIslandsB4FNoop2Scene, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2
+	scene_script SeafoamIslandsB4FNoop3Scene, SCENE_SEAFOAMISLANDSB4F_LORELEI
+	scene_script SeafoamIslandsB4FNoop4Scene, SCENE_SEAFOAMISLANDSB4F_NOOP
 
 	def_callbacks
 
+SeafoamIslandsB4FNoop1Scene:
+	end
+
+SeafoamIslandsB4FNoop2Scene:
+	end
+
+SeafoamIslandsB4FNoop3Scene:
+	end
+
+SeafoamIslandsB4FNoop4Scene:
+	end
+
+SeafoamIslandsB4FArticunoCry1:
+	pause 10
+	cry ARTICUNO
+	pause 10
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 10
+	turnobject PLAYER, LEFT
+	pause 15
+	turnobject PLAYER, DOWN
+	pause 15
+	turnobject PLAYER, RIGHT
+	pause 15
+	setscene SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2
+	end
+
+SeafoamIslandsB4FArticunoCry2:
+	pause 10
+	cry ARTICUNO
+	pause 10
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 10
+	turnobject PLAYER, LEFT
+	pause 15
+	setscene SCENE_SEAFOAMISLANDSB4F_LORELEI
+	end
+
 SeafoamIslandsB4FLorelei:
-	faceplayer
 	opentext
-	writetext GuardianLoreleiIntroText
+	writetext LoreleiWaitText
 	waitbutton
 	closetext
-	winlosstext GuardianLoreleiWinLossText, 0
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, RIGHT
+	pause 10
+	moveobject SEAFOAMISLANDSB4F_LORELEI, 35, 12
+	appear SEAFOAMISLANDSB4F_LORELEI
+	applymovement SEAFOAMISLANDSB4F_LORELEI, LoreleiBattleApproachMovement
+	opentext
+	writetext LoreleiIntroText
+	waitbutton
+	closetext
+	winlosstext LoreleiWinLossText, 0
 	loadtrainer LORELEI, LORELEI1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_LORELEI
 	opentext 
-	writetext GuardianLoreleiOutroText
+	writetext LoreleiOutroText
 	waitbutton
 	closetext
-	applymovement SEAFOAMISLANDSB4F_LORELEI, GuardianLoreleiExitMovement
+	applymovement SEAFOAMISLANDSB4F_LORELEI, LoreleiExitMovement
 	disappear SEAFOAMISLANDSB4F_LORELEI
-	pause 30
-	cry LAPRAS
-	pause 50
-	playsound SFX_THROW_BALL
-	pause 5
-	playsound SFX_BALL_POOF
-	pause 15
-	cry ARTICUNO
-	pause 15
-	playsound SFX_ESCAPE_ROPE
-	appear SEAFOAMISLANDSB4F_ARTICUNO
+	setscene SCENE_SEAFOAMISLANDSB4F_NOOP
 	end
 
 SeafoamIslandsB4FArticuno:
@@ -60,20 +101,23 @@ SeafoamIslandsB4FArticuno:
 	checkevent EVENT_FOUGHT_MOLTRES
 	iffalse .end
 	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
-	end
-	
 .end
 	end
 
-GuardianLoreleiExitMovement:
+LoreleiBattleApproachMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
 	step LEFT
-	step LEFT
+	step_end
+
+LoreleiExitMovement:
+	step RIGHT
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
 	step DOWN
 	step DOWN
 	step_end
@@ -84,37 +128,37 @@ SeafoamIslandsB4FUltraBall:
 SeafoamIslandsB4FZinc:
 	itemball ZINC
 
-GuardianLoreleiIntroText:
-	text "So, you're the"
-	line "newest challenger."
+LoreleiWaitText:
+	text "Wait right there,"
+	line "please!"
+	done
+
+LoreleiIntroText:
+	text "So, you think you"
+	line "can approach the"
+	cont "Legendary Bird?"
 	
 	para "You certainly look"
-	line "stronger than the"
-	cont "others, but"
+	line "like a strong"
+	cont "trainer, but"
 	
 	para "looks aren't"
 	line "everything."
 	
 	para "As a former Elite"
-	line "Four member and as"
-	
-	para "the Guardian of"
-	line "Articuno, let me"
+	line "Four member let me"
 	
 	para "warn you; you had"
 	line "best be prepared."
-	
-	para "Articuno, let's"
-	line "do this."
 	done
 	
-GuardianLoreleiWinLossText:
+LoreleiWinLossText:
 	text "Oh my!"
 	line "You truly"
 	cont "are strong."
 	done
 	
-GuardianLoreleiOutroText:
+LoreleiOutroText:
 	text "Very well done."
 	
 	para "I did not expect"
@@ -129,20 +173,22 @@ GuardianLoreleiOutroText:
 	line "gave us clear"
 	cont "instructions;"
 	
-	para "I'll now release"
-	line "Articuno back to"
+	para "We were to watch"
+	line "over the Birds"
 	
-	para "its nest, and you"
-	line "can try to"
-	cont "capture it."
+	para "until another"
+	line "powerful trainer"
+
+	para "rose up and"
+	line "came to find them."
+
+	para "Go. Challenge"
+	line "Articuno."
 	
 	para "Good luck."
 	
-	para "Come past the"
-	line "Society sometime,"
-	
-	para "I'd like to have"
-	line "a rematch."
+	para "I hope I get to"
+	line "see you again."
 	done
 
 ArticunoText:
@@ -161,11 +207,15 @@ SeafoamIslandsB4F_MapEvents:
 	warp_event 28, 15, SEAFOAM_ISLANDS_B3F, 10
 
 	def_coord_events
+	coord_event  7, 15, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY1, SeafoamIslandsB4FArticunoCry1
+	coord_event 35, 13, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2, SeafoamIslandsB4FArticunoCry2
+	coord_event 36, 13, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2, SeafoamIslandsB4FArticunoCry2
+	coord_event 33,  7, SCENE_SEAFOAMISLANDSB4F_LORELEI, SeafoamIslandsB4FLorelei
 
 	def_bg_events
 
 	def_object_events
-	object_event 35,  6, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamIslandsB4FLorelei, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event 39, 21, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LEGENDARY_GUARDIANS_ACTIVE
 	object_event 18, 15, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamIslandsB4FArticuno, EVENT_ARTICUNO_NEST_ARTICUNO
 	object_event 20,  3, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandsB4FUltraBall, EVENT_SEAFOAM_ISLANDS_B4F_ULTRA_BALL
 	object_event 30,  5, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandsB4FZinc, EVENT_SEAFOAM_ISLANDS_B4F_ZINC

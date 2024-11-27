@@ -236,7 +236,7 @@ ENDM
 	map_const ROUTE_24,                                    12,  9 ; 14
 	map_const ROUTE_25,                                    31, 10 ; 15
 	map_const CERULEAN_CITY,                               20, 18 ; 16
-	map_const ROUTE_4_ZAPDOS_NEST,                          9, 14 ; 17
+	map_const ROUTE_4_ZAPDOS_NEST,                         10, 14 ; 17
 	map_const CERULEAN_EMPTY_HOUSE,                         4,  4 ; 18
 	map_const CERULEAN_EMPTY_HOUSE_UNDERGROUND,            16,  4 ; 19
 	endgroup

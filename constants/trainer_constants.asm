@@ -200,7 +200,7 @@ DEF KRIS EQU __trainer_class__
 	const JOSE3
 	const VANCE2
 	const VANCE3
-	const TREY
+;	const TREY		; unused (I added?)
 	const TEDDY
 	const FRED
 
@@ -549,7 +549,6 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BLAINE ; 2e
 	const BLAINE1
 	const BLAINE2
-	const BLAINE3
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
@@ -826,5 +825,8 @@ DEF KRIS EQU __trainer_class__
 	const LYRA2_CHIKORITA
 	const LYRA2_CYNDAQUIL
 	const LYRA2_TOTODILE
+
+	trainerclass BLAINE_G ; 4d
+	const BLAINE_G1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

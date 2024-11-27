@@ -79,4 +79,5 @@ BTTrainerClassGenders:
 	db MALE   ; BUG_MANIAC
 	db FEMALE ; LYRA1
 	db FEMALE ; LYRA2
+	db MALE   ; BLAINE_G
 	assert_table_length NUM_TRAINER_CLASSES

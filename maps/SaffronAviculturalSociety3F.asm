@@ -39,15 +39,7 @@ AviculturalSocietyGrampsScript:
 	opentext
 	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	iftrue .GrampsEncounteredBirds
-	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iffalse .GrampsLuck
 	writetext AviculturalSocietyGrampsIntroText
-	waitbutton
-	closetext
-	end
-	
-.GrampsLuck
-	writetext AviculturalSocietyGrampsGoodLuckText
 	waitbutton
 	closetext
 	end
@@ -65,42 +57,6 @@ AviculturalSocietyGrampsScript:
 	closetext
 	end
 
-AviculturalSociety3FBirdKeeperScript:
-	faceplayer
-	opentext
-	checkevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	iffalse .GoodLuck
-	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
-	iftrue .EncounteredBirds
-	writetext AviculturalSocietyBirdKeeperIntroText
-	yesorno
-	iffalse .Refused
-	writetext AviculturalSocietyBirdKeeperBeginText
-	waitbutton
-	clearevent EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	setevent EVENT_CINNABAR_VOLCANO_1F_OFFICER
-	setmapscene CINNABAR_VOLCANO_1F, SCENE_CINNABARVOLCANO1F_NOOP
-	closetext
-	end
-	
-.GoodLuck
-	writetext AviculturalSocietyBirdKeeperGoodLuckText
-	waitbutton
-	closetext
-	end
-	
-.EncounteredBirds
-	writetext AviculturalSocietyBirdKeeperEncounteredBirdsText
-	waitbutton
-	closetext
-	end
-	
-.Refused
-	writetext AviculturalSocietyBirdKeeperRefusedText
-	waitbutton
-	closetext
-	end
-	
 AviculturalSocietyLoreleiScript:
 	faceplayer
 	opentext
@@ -175,7 +131,9 @@ AviculturalSocietyGrampsIntroText:
 	
 	para "or are you think-"
 	line "ing of challening"
-	cont "the Guardians?"
+	
+	para "the Guardians of"
+	line "the Birds?"
 	
 	para "Either way, I am"
 	line "impressed!"
@@ -212,26 +170,6 @@ AviculturalSocietyGrampsIntroText:
 	cont "life's work!"
 	done
 	
-AviculturalSocietyGrampsGoodLuckText:
-	text "Oh ho!"
-	line "I see that you're"
-	cont "taking on the"
-	cont "Guardians!"
-	
-	para "Very few have"
-	line "succeeded."
-	
-	para "I wish you the"
-	line "best of luck."
-	
-	para "Though, if you"
-	line "made it up here,"
-	
-	para "I'd say you are"
-	line "so skilled you"
-	cont "don't need luck!"
-	done
-	
 AviculturalSocietyGrampsYouDidItText:
 	text "Oh my!"
 	line "You've done it!"
@@ -262,74 +200,20 @@ AviculturalSocietyGrampsSilverWingText:
 	line "Lugia itself."
 	
 	para "Many have tried"
-	line "to find it, but"
+	line "to find Lugia,"
 	
-	para "without this,"
-	line "none have been"
-	cont "successful."
+	para "but without some-"
+	line "thing like this,"
+	
+	para "Lugia will not"
+	line "show itself to"
+	cont "just any trainer."
 	
 	para "Take this to"
 	line "Whirl Islands"
 	cont "and challenge"
 	cont "Lugia."
 	done	
-
-AviculturalSocietyBirdKeeperIntroText:
-	text "Welcome."
-
-	para "If you're here,"
-	line "you must want to"
-	cont "take on the"
-	cont "Guardians."
-	
-	para "You will need to" 
-	line "track down each"
-	cont "Guardian then try"
-	
-	para "defeat them"
-	line "in battle."
-	
-	para "If you manage to"
-	line "do so, you will"
-	cont "have a chance to"
-	
-	para "prove yourself to"
-	line "each mighty Bird."
-	
-	para "Will take on"
-	line "the challenge?"
-	done
-	
-AviculturalSocietyBirdKeeperGoodLuckText:
-	text "Good luck, and"
-	line "be well prepared."
-	done
-	
-AviculturalSocietyBirdKeeperEncounteredBirdsText:
-	text "You did it?!"
-	
-	para "You defeated the"
-	line "Guardians and"
-	cont "encountered the"
-	cont "Legendary Birds?"
-	
-	para "You're amazing!"
-	done
-
-AviculturalSocietyBirdKeeperRefusedText:
-	text "Hmm, this isn't"
-	line "for the faint"
-	cont "of heart."
-	done
-
-AviculturalSocietyBirdKeeperBeginText:
-	text "Very well."
-	
-	para "I'll let the"
-	line "Guardians know"
-	cont "and you can"
-	cont "seek them out."
-	done
 
 LoreleiRematchIntroText:
 	text "Ah, you're here."
@@ -455,7 +339,6 @@ SaffronAviculturalSociety3F_MapEvents:
 
 	def_object_events
 	object_event  6,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyGrampsScript, -1
-	object_event  8,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSociety3FBirdKeeperScript, -1
 	object_event  2,  1, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyLoreleiScript, EVENT_LORELEI_IN_SAFFRON
 	object_event 11,  1, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyAgathaScript, EVENT_AGATHA_IN_SAFFRON
 	object_event  5,  7, SPRITE_ARTICUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ArticunoStatueScript, -1

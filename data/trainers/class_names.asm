@@ -77,4 +77,5 @@ TrainerClassNames::
 	li "Bug Maniac"
 	li "<PKMN> Trainer"
 	li "<PKMN> Trainer"
+	li "Guardian"
 	assert_list_length NUM_TRAINER_CLASSES

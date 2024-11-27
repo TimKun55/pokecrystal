@@ -87,5 +87,6 @@ INCBIN "gfx/trainers/petrel.gbcpal", middle_colors
 INCBIN "gfx/trainers/bug_maniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/lyra1.gbcpal", middle_colors
 INCBIN "gfx/trainers/lyra2.gbcpal", middle_colors
+INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

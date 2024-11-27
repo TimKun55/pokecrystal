@@ -85,7 +85,6 @@ MapScenes::
 ;	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 ;	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var SAFFRON_AVICULTURAL_SOCIETY_1F,              wAviculturalSociety1FSceneID
-	scene_var SAFFRON_AVICULTURAL_SOCIETY_2F,              wAviculturalSociety2FSceneID
 	scene_var WHIRL_ISLAND_LUGIA_CHAMBER,                  wWhirlIslandLugiaChamberSceneID
 	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
 	scene_var SAFFRON_CITY,                                wSaffronCityDisguisedSceneID
@@ -95,4 +94,7 @@ MapScenes::
 	scene_var RUINS_OF_ALPH_GS_BALL_CHAMBER,               wRuinsOfAlphGSBallChamberSceneID
 	scene_var ROUTE_7_SAFFRON_GATE,                        wRoute7SaffronGateSceneID
 	scene_var RUINS_OF_ALPH_CAVE_ENTRANCE,                 wRuinsOfAlphCaveEntranceSceneID
+	scene_var ROUTE_4_ZAPDOS_NEST,                         wRoute4ZapdosNestSceneID
+	scene_var SEAFOAM_ISLANDS_B4F,                         wSeafoamIslandsB4FSceneID
+	scene_var CINNABAR_MOLTRES_NEST,                       wCinnabarMoltresNestID
 	db -1 ; end

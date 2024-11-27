@@ -28,6 +28,7 @@ MaleTrainers:
 	db SCIENTIST
 	db EX_BOSS
 	db BUG_MANIAC
+	db BLAINE_G
 .End
 
 FemaleTrainers:

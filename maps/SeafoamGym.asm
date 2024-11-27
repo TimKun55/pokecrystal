@@ -28,6 +28,8 @@ SeafoamGymBlaineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLAINE
+	setevent EVENT_BEAT_FIREBREATHER_DICK
+	setevent EVENT_BEAT_FIREBREATHER_NED
 	opentext
 	writetext ReceivedVolcanoBadgeText
 	playsound SFX_GET_BADGE
@@ -181,6 +183,10 @@ BlaineAfterBattleText:
 
 	para "going to win the"
 	line "next time."
+	
+	para "I expect I'll be"
+	line "seeing you again"
+	cont "nice and soon…"
 	done
 
 BlaineFightDoneText:

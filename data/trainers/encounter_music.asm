@@ -80,4 +80,5 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER  	   ; bug_maniac	
 	db MUSIC_LYRA_ENCOUNTER        ; lyra1
 	db MUSIC_LYRA_ENCOUNTER        ; lyra2
+	db MUSIC_OFFICER_ENCOUNTER     ; blaine_g
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -359,13 +359,13 @@ ENDM
 	connection west, PewterCity, PEWTER_CITY, -5
 	connection east, Route4, ROUTE_4, 0
 
-	map_attributes Route4, ROUTE_4, $45, SOUTH | WEST | EAST 
-	connection south, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 4
+	map_attributes Route4, ROUTE_4, $45, NORTH | WEST | EAST 
+	connection north, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 5
 	connection west, Route3, ROUTE_3, 0
 	connection east, CeruleanCity, CERULEAN_CITY, -5
 	
-	map_attributes Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, $45, NORTH
-	connection north, Route4, ROUTE_4, -4
+	map_attributes Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, $45, SOUTH
+	connection south, Route4, ROUTE_4, -5
 
 	map_attributes Route8, ROUTE_8, $45, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -11

@@ -79,4 +79,5 @@ TrainerPicPointers::
 	dba BugManiacPic
 	dba Lyra1Pic
 	dba Lyra2Pic
+	dba BlainePic
 	assert_table_length NUM_TRAINER_CLASSES

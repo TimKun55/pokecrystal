@@ -3189,7 +3189,6 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wAviculturalSociety1FSceneID::                    db
-wAviculturalSociety2FSceneID::                    db
 wWhirlIslandLugiaChamberSceneID::                 db
 wTinTowerRoofSceneID::                            db
 wSaffronCityDisguisedSceneID::                    db
@@ -3199,8 +3198,11 @@ wUndergroundPathSceneID::                         db
 wRuinsOfAlphGSBallChamberSceneID::                db
 wRoute7SaffronGateSceneID::                       db
 wRuinsOfAlphCaveEntranceSceneID::                 db
+wRoute4ZapdosNestSceneID::                        db
+wSeafoamIslandsB4FSceneID::                       db
+wCinnabarMoltresNestID::                          db
 
-	ds 38
+	ds 36
 
 ; fight counts
 

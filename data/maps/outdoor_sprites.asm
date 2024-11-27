@@ -91,6 +91,7 @@ CeruleanGroupSprites:
 	db SPRITE_SLOWBRO
 	db SPRITE_LADY
 	db SPRITE_ZAPDOS
+	db SPRITE_ROCK
 	db 0 ; end
 	
 SaffronGroupSprites:

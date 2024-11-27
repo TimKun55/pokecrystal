@@ -4,36 +4,44 @@
 
 CinnabarMoltresNest_MapScripts:
 	def_scene_scripts
+	scene_script CinnabarMoltresNestNoop1Scene, SCENE_CINNABARMOLTRESNEST_BLAINE
+	scene_script CinnabarMoltresNestNoop2Scene, SCENE_CINNABARMOLTRESNEST_NOOP
 
 	def_callbacks
-	
+
+CinnabarMoltresNestNoop1Scene:
+	end
+
+CinnabarMoltresNestNoop2Scene:
+	end
+
 CinnabarMoltresNestBlaine:
-	faceplayer
 	opentext
-	writetext GuardianBlaineIntroText
+	writetext MoltresNestBlaineStopText
 	waitbutton
 	closetext
-	winlosstext GuardianBlaineWinLossText, 0
-	loadtrainer BLAINE, BLAINE3
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	pause 10
+	moveobject CINNABARMOLTRESNEST_BLAINE, 7, 17
+	appear CINNABARMOLTRESNEST_BLAINE
+	applymovement CINNABARMOLTRESNEST_BLAINE, BlaineBattleApproachMovement
+	opentext
+	writetext MoltresNestBlaineIntroText
+	waitbutton
+	closetext
+	winlosstext MoltresNestBlaineWinLossText, 0
+	loadtrainer BLAINE_G, BLAINE_G1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_BLAINE
 	opentext 
-	writetext GuardianBlaineOutroText
+	writetext MoltresNestBlaineOutroText
 	waitbutton
 	closetext
-	cry MAGMAR
-	applymovement CINNABARMOLTRESNEST_BLAINE, GuardianBlaineExitMovement
-	pause 25
-	playsound SFX_THROW_BALL
-	pause 5
-	playsound SFX_BALL_POOF
-	pause 15
-	cry MOLTRES
-	pause 15
-	playsound SFX_ESCAPE_ROPE
+	applymovement CINNABARMOLTRESNEST_BLAINE, BlaineExitMovement
 	disappear CINNABARMOLTRESNEST_BLAINE
-	appear CINNABARMOLTRESNEST_MOLTRES
+	setscene SCENE_CINNABARMOLTRESNEST_NOOP
 	end
 
 CinnabarMoltresNestMoltres:
@@ -57,31 +65,32 @@ CinnabarMoltresNestMoltres:
 	checkevent EVENT_FOUGHT_ZAPDOS
 	iffalse .end
 	setevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
-	end
-	
 .end
 	end
 	
-GuardianBlaineExitMovement:
+BlaineBattleApproachMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-GuardianBlaineIntroText:
+BlaineExitMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+MoltresNestBlaineStopText:
+	text "Hey, <PLAYER>!"
+	line "Wait up!"
+	done
+
+MoltresNestBlaineIntroText:
 	text "Ohoho!"
-	line "We meet again!"
-	
-	para "As one of the"
-	line "Guardians I can't"
-	cont "let anyone get"
-	
-	para "their hands on"
-	line "Moltres. But"
-	
-	para "you're not just"
-	line "anyone, are ya?"
+	line "I knew you'd"
+	cont "come here!"
 	
 	para "I know you're"
 	line "strong, but are"
@@ -94,12 +103,12 @@ GuardianBlaineIntroText:
 	cont "Burn Heal!"
 	done
 	
-GuardianBlaineWinLossText:
+MoltresNestBlaineWinLossText:
 	text "Amazing."
 	line "Just amazing!"
 	done
 	
-GuardianBlaineOutroText:
+MoltresNestBlaineOutroText:
 	text "Ahahaha!"
 	
 	para "Kid! You did it!"
@@ -114,16 +123,20 @@ GuardianBlaineOutroText:
 	para "Red left clear"
 	line "instructions;"
 	
-	para "I'll now release"
-	line "Moltres and you"
+	para "If a challenger"
+	line "was able to make"
 	
-	para "can try to capture"
-	line "it. You've got"
-	cont "work cut out for"
+	para "it this far and"
+	line "defeat me,"
+	cont "the Guardian,"
+	
+	para "then that person"
+	line "can try to capture"
+	cont "the Bird."
+	
+	para "You've got your"
+	line "work cut out for"
 	cont "you, kid!"
-	
-	para "C'mon, Magmar!"
-	line "Let's go."
 	done
 
 MoltresText:
@@ -137,10 +150,11 @@ CinnabarMoltresNest_MapEvents:
 	warp_event  7, 17, CINNABAR_VOLCANO_2F, 6
 
 	def_coord_events
+	coord_event  7, 12, SCENE_CINNABARMOLTRESNEST_BLAINE, CinnabarMoltresNestBlaine
 
 	def_bg_events
 
 	def_object_events
-	object_event  7, 14, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestBlaine, EVENT_LEGENDARY_GUARDIANS_ACTIVE
+	object_event 13, 21, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LEGENDARY_GUARDIANS_ACTIVE
 	object_event  6,  7, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarMoltresNestMoltres, EVENT_MOLTRES_NEST_MOLTRES
 	

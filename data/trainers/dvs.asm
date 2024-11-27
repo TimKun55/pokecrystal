@@ -78,4 +78,5 @@ TrainerClassDVs:
 	dn  9,  9,  9,  9 ; BUG_MANIAC
 	dn 13, 13, 13, 13 ; LYRA1
 	dn 13, 13, 13, 13 ; LYRA2
+	dn 14, 14, 14, 14 ; BLAINE_G (Guardian)
 	assert_table_length NUM_TRAINER_CLASSES

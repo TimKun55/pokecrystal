@@ -29,6 +29,8 @@ CinnabarIslandBlue:
 	applymovement CINNABARISLAND_BLUE, CinnabarIslandBlueTeleport
 	disappear CINNABARISLAND_BLUE
 	clearevent EVENT_VIRIDIAN_GYM_BLUE
+	setevent EVENT_CINNABAR_VOLCANO_1F_OFFICER
+	setmapscene CINNABAR_VOLCANO_1F, SCENE_CINNABARVOLCANO1F_NOOP
 	end
 
 CinnabarIslandGymSign:
