@@ -17,12 +17,7 @@ SaffronPokecenter1FChansey:
 	jumpstd PokecenterChanseyScript
 
 SaffronPokecenter1FTeacherScript:
-	special CheckMobileAdapterStatusSpecial
-	iftrue .mobile
 	jumptextfaceplayer SaffronPokecenter1FTeacherText
-
-.mobile
-	jumptextfaceplayer SaffronPokecenter1FTeacherMobileText
 
 SaffronPokecenter1FFisherScript:
 	faceplayer
@@ -57,24 +52,6 @@ SaffronPokecenter1FTeacherText:
 	para "I can go to Johto"
 	line "without worrying,"
 	cont "then!"
-	done
-
-SaffronPokecenter1FTeacherMobileText:
-	text "What are Johto's"
-	line "#mon Centers"
-	cont "like?"
-
-	para "…Oh, I see."
-	line "So they let you"
-
-	para "link with people"
-	line "far away?"
-
-	para "Then I'll get my"
-	line "friend in Johto to"
-
-	para "catch a Marill and"
-	line "trade it to me!"
 	done
 
 SaffronPokecenter1FFisherText:
