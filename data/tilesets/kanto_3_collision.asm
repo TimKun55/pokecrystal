@@ -201,7 +201,7 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; c8
 	tilecoll FLOOR, WALL, WALL, WALL ; c9
 	tilecoll FLOOR, WALL, FLOOR, WALL ; ca
-	tilecoll WALL, WALL, WALL, WALL ; cb
+	tilecoll WALL, WALL, FLOOR, WALL ; cb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cc
 	tilecoll WALL, WALL, FLOOR, WALL ; cd
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; ce
