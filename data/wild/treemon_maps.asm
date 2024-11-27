@@ -50,6 +50,7 @@ RockMonMaps::
 	treemon_map ROUTE_26,                  TREEMON_SET_ROCK
 	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
 	treemon_map ROUTE_41,                  TREEMON_SET_ROCK
+	treemon_map RUINS_OF_ALPH_OUTSIDE,     TREEMON_SET_ROCK
 	treemon_map TOHJO_FALLS,               TREEMON_SET_ROCK
 	treemon_map VICTORY_ROAD_1F,           TREEMON_SET_ROCK
 	treemon_map VICTORY_ROAD_2F,           TREEMON_SET_ROCK

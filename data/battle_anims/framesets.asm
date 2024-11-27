@@ -196,7 +196,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShrinkingRingBig    ; BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG
 	dw .Frameset_TinyGlow            ; BATTLE_ANIM_FRAMESET_TINY_GLOW
 	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
-	dw .Frameset_WaterBall               ; BATTLE_ANIM_FRAMESET_WATER_BALL
+	dw .Frameset_WaterBall           ; BATTLE_ANIM_FRAMESET_WATER_BALL
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
