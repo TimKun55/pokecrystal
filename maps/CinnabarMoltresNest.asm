@@ -132,7 +132,7 @@ MoltresNestBlaineOutroText:
 	
 	para "then that person"
 	line "can try to capture"
-	cont "the Bird."
+	cont "Moltres."
 	
 	para "You've got your"
 	line "work cut out for"
