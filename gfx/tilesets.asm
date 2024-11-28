@@ -285,9 +285,6 @@ INCBIN "data/tilesets/elite_four_room_attributes.bin"
 TilesetTraditionalHouseAttr::
 INCBIN "data/tilesets/traditional_house_attributes.bin"
 
-TilesetTrainStationAttr::
-INCBIN "data/tilesets/train_station_attributes.bin"
-
 TilesetChampionsRoomAttr::
 INCBIN "data/tilesets/champions_room_attributes.bin"
 
@@ -565,3 +562,6 @@ INCLUDE "data/tilesets/johto_ruins_collision.asm"
 
 TilesetJohtoRuinsAttr::
 INCBIN "data/tilesets/johto_ruins_attributes.bin"
+
+TilesetTrainStationAttr::
+INCBIN "data/tilesets/train_station_attributes.bin"

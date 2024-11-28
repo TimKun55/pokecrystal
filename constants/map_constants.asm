@@ -483,7 +483,7 @@ ENDM
 	map_const ROUTE_22,                                    20,  9 ;  2
 	map_const ROUTE_26,                                    11, 54 ;  3	
 	map_const VIRIDIAN_CITY,                               20, 18 ;  4
-	map_const VIRIDIAN_GYM,                                 5,  9 ;  5
+	map_const VIRIDIAN_GYM,                                 7, 23 ;  5
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  6
 	map_const TRAINER_HOUSE_1F,                             5,  6 ;  7
 	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  8

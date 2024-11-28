@@ -48,7 +48,7 @@ LoadSpecialMapPalette:
     jr nz, .continue5
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
-    jp z, .gym_palette
+    jp z, .viridian_gym_palette
 
 .continue5
     cp GROUP_SAFFRON_CITY
@@ -114,6 +114,11 @@ LoadSpecialMapPalette:
 
 .gym_palette
 	call LoadGymPalette
+	scf
+	ret
+
+.viridian_gym_palette
+	call LoadViridianGymPalette
 	scf
 	ret
 
@@ -244,6 +249,17 @@ LoadCaveVolcanoPalette:
 	
 CaveVolcanoPalette:
 INCLUDE "gfx/tilesets/cavevolcano_palette.pal"
+
+LoadViridianGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, ViridianGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+ViridianGymPalette:
+INCLUDE "gfx/tilesets/viridian_gym_palette.pal"
 
 LoadSaffronGymPalette:
 	ld a, BANK(wBGPals1)

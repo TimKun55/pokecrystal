@@ -1,7 +1,12 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
 	const VIRIDIANGYM_ARCANINE
+	const VIRIDIANGYM_BEAUTY1
+	const VIRIDIANGYM_BEAUTY2
 	const VIRIDIANGYM_COOLTRAINERM
+	const VIRIDIANGYM_SUPERNERD
+	const VIRIDIANGYM_HEXMANIAC
+	const VIRIDIANGYM_POKEFANM
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -26,6 +31,10 @@ ViridianGymBlueScript:
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_BEAT_COOLTRAINERM_ERICK
 	setevent EVENT_BEAT_BEAUTY_JULIE
+	setevent EVENT_BEAT_BEAUTY_JESSICA
+	setevent EVENT_BEAT_SUPER_NERD_NORTON
+	setevent EVENT_BEAT_HEX_MANIAC_MARGRET
+	setevent EVENT_BEAT_POKEFANM_TERRY
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -95,6 +104,50 @@ TrainerBeautyJulie:
 	endifjustbattled
 	opentext
 	writetext BeautyJulieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyJessica:
+	trainer BEAUTY, JESSICA, EVENT_BEAT_BEAUTY_JESSICA, BeautyJessicaSeenText, BeautyJessicaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyJessicaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSuperNerdNorton:
+	trainer SUPER_NERD, NORTON, EVENT_BEAT_SUPER_NERD_NORTON, SuperNerdNortonSeenText, SuperNerdNortonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdNortonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerHexManiacMargret:
+	trainer HEX_MANIAC, MARGRET, EVENT_BEAT_HEX_MANIAC_MARGRET, HexManiacMargretSeenText, HexManiacMargretBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HexManiacMargretAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanMTerry:
+	trainer POKEFANM, TERRY, EVENT_BEAT_POKEFANM_TERRY, PokefanMTerrySeenText, PokefanMTerryBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokefanMTerryAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -257,11 +310,85 @@ BeautyJulieAfterBattleText:
 	line "Leader he"
 	cont "remodeled the Gym."
 	
-	para "It's much better"
-	line "without all those"
+	para "I don't know why"
+	line "he kept all the"
 	
-	para "dumb warp tiles"
-	line "around the place!"
+	para "spinning tiles,"
+	line "though…"
+	done
+
+BeautyJessicaSeenText:
+	text "Are you dizzy?"
+	done
+	
+BeautyJessicaBeatenText:
+	text "Round and round."
+	done
+	
+BeautyJessicaAfterBattleText:
+	text "Can I be honest?"
+	line "I'm not a fan of"
+	cont "all the spinning."
+	
+	para "It makes me feel"
+	line "sick!"
+	done
+
+SuperNerdNortonSeenText:
+	text "What do you think?"
+
+	para "You've never seen"
+	line "such a wonderful"
+	cont "Gym, have you?"
+	done
+	
+SuperNerdNortonBeatenText:
+	text "Whatever!"
+	done
+	
+SuperNerdNortonAfterBattleText:
+	text "There are many"
+	line "Gyms in the world,"
+
+	para "but I really like"
+	line "this one!"
+	done
+
+HexManiacMargretSeenText:
+	text "My dear!"
+	line "We must battle!"
+	done
+	
+HexManiacMargretBeatenText:
+	text "Unforseen!"
+	done
+	
+HexManiacMargretAfterBattleText:
+	text "Perhaps being"
+	line "dizzy has weakened"
+	cont "my Inner Eye."
+	done
+
+PokefanMTerrySeenText:
+	text "I'm so happy to be"
+	line "a Gym Trainer!"
+	
+	para "Let's see what"
+	line "you can do!"
+	done
+	
+PokefanMTerryBeatenText:
+	text "Aww, I lost?"
+	done
+	
+PokefanMTerryAfterBattleText:
+	text "I need more train-"
+	line "ing, but please"
+	cont "don't tell Blue."
+	
+	para "He has a crazy"
+	line "strict training"
+	cont "routine!"
 	done
 
 ViridianGymGuideText:
@@ -303,18 +430,22 @@ ViridianGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, VIRIDIAN_CITY, 1
-	warp_event  5, 17, VIRIDIAN_CITY, 1
+	warp_event  6, 45, VIRIDIAN_CITY, 1
+	warp_event  7, 45, VIRIDIAN_CITY, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 13, BGEVENT_READ, ViridianGymStatue
-	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
+	bg_event  4, 43, BGEVENT_READ, ViridianGymStatue
+	bg_event  9, 43, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  4,  3, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymArcanine, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  6, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulie, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerMErick, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  7,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  6,  2, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymArcanine, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3, 34, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyJulie, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  6,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyJessica, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerMErick, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  7, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdNorton, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  7,  8, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, TrainerHexManiacMargret, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  6, 35, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanMTerry, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  8, 43, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE

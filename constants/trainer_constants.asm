@@ -287,7 +287,7 @@ DEF KRIS EQU __trainer_class__
 	const CASSIE
 	const CAROLINE ; Route 2
 	const CARLENE ; Route 2
-	const JESSICA ; unused
+	const JESSICA ; Viridian Gym
 	const RACHAEL ; unused
 	const ANGELICA ; unused
 	const KENDRA ; unused
@@ -490,7 +490,7 @@ DEF KRIS EQU __trainer_class__
 	const SHAWN
 	const TERU
 	const RUSS ; Mount Moon B2F
-	const NORTON ; unused
+	const NORTON ; Viridian Gym
 	const HUGH
 	const MARKUS
 
@@ -681,7 +681,7 @@ DEF KRIS EQU __trainer_class__
 	const MARTHA
 	const GRACE
 	const BETHANY ; Mount Moon B2F
-	const MARGRET ; unused
+	const MARGRET ; Viridian Gym
 	const ETHEL ; unused
 	const REBECCA
 	const DORIS
@@ -704,7 +704,7 @@ DEF KRIS EQU __trainer_class__
 	const JEREMY
 	const COLIN
 	const CARLOS ; route 7
-	const DEREK3 ; unused
+	const TERRY ; Viridian Gym
 	const ALEX
 	const REX
 	const ALLAN

@@ -841,7 +841,7 @@
 	const EVENT_BEAT_POKEFANM_JEREMY
 	const EVENT_BEAT_POKEFANM_COLIN
 	const EVENT_BEAT_POKEFANM_CARLOS
-	const EVENT_BEAT_POKEFANM_DEREK3
+	const EVENT_BEAT_POKEFANM_TERRY
 	const EVENT_BEAT_POKEFANM_ALEX
 ; PokefanF
 	const EVENT_BEAT_POKEFANF_BEVERLY
@@ -1160,7 +1160,9 @@
 	const EVENT_BEAT_GUARDIAN_AGATHA
 ; Ex-Boss
 	const EVENT_BEAT_GIOVANNI
-; Unused: next 62 events
+; Extras (temp)
+	const EVENT_BEAT_SUPER_NERD_NORTON
+; Unused: next 61 events
 
 	const_next 1400
 ; Sprite visibility flags
