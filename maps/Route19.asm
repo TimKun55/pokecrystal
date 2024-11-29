@@ -7,22 +7,24 @@
 	const ROUTE19_SWIMMER_GUY4
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
+	const ROUTE19_SURFING_PIKACHU
+	const ROUTE19_ROCK1
+	const ROUTE19_ROCK2
+	const ROUTE19_ROCK3
 
 Route19_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, Route19ClearRocksCallback
+	callback MAPCALLBACK_TILES, Route19SurfingCompetitionOverCallback
 
-Route19ClearRocksCallback:
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
+Route19SurfingCompetitionOverCallback:
+	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
 	iftrue .Done
-	changeblock  6,  4, $0a ; rock
-	changeblock  8,  4, $0a ; rock
-	changeblock 10,  4, $0a ; rock
-	changeblock 12,  6, $0a ; rock
-	changeblock  4,  6, $0a ; rock
-	changeblock 10,  8, $0a ; rock
+	changeblock  6,  4, $e8 ; barrier
+	changeblock  8,  4, $e8 ; barrier
+	changeblock 10,  4, $e8 ; barrier
+	changeblock 12,  4, $e9 ; barrier
 .Done:
 	endcallback
 
@@ -95,15 +97,15 @@ TrainerSwimmermWalter:
 Route19Fisher1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
-	iftrue .RocksCleared
+	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
+	iftrue .CompetitionOver
 	writetext Route19Fisher1Text
 	waitbutton
 	closetext
 	end
 
-.RocksCleared:
-	writetext Route19Fisher1Text_RocksCleared
+.CompetitionOver:
+	writetext Route19Fisher1Text_CompetitionOver
 	waitbutton
 	closetext
 	end
@@ -111,15 +113,26 @@ Route19Fisher1Script:
 Route19Fisher2Script:
 	faceplayer
 	opentext
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
-	iftrue .RocksCleared
+	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
+	iftrue .CompetitionOver
 	writetext Route19Fisher2Text
 	waitbutton
 	closetext
 	end
 
-.RocksCleared:
-	writetext Route19Fisher2Text_RocksCleared
+.CompetitionOver:
+	writetext Route19Fisher2Text_CompetitionOver
+	waitbutton
+	closetext
+	end
+
+Route19SurfingPikachuScript:
+	faceplayer
+	opentext
+	writetext Route19SurfingPikachuText
+	waitbutton
+	cry PIKACHU
+	writetext Route19SurfingPikachuWinnerText
 	waitbutton
 	closetext
 	end
@@ -251,7 +264,7 @@ SwimmermJeromeAfterBattleText:
 Route19Fisher1Text:
 	text "Sorry. This road"
 	line "is closed for"
-	cont "construction."
+	cont "the Competition."
 
 	para "If you want to get"
 	line "to Cinnabar, you'd"
@@ -260,24 +273,34 @@ Route19Fisher1Text:
 	line "from Pallet Town."
 	done
 
-Route19Fisher1Text_RocksCleared:
-	text "I'm all sweaty."
-	line "Time for a swim!"
+Route19Fisher1Text_CompetitionOver:
+	text "That was such fun!"
+	line "Now I want to go"
+	cont "for a swim!"
 	done
 
 Route19Fisher2Text:
 	text "Who knows how long"
-	line "it would take to"
-	cont "move this boulder…"
+	line "the Surfing Comp-"
+	cont "etition will last…"
 	done
 
-Route19Fisher2Text_RocksCleared:
-	text "The roadwork is"
+Route19Fisher2Text_CompetitionOver:
+	text "The Competition is"
 	line "finally finished."
 
 	para "Now I can go"
 	line "fishing again."
 	done
+
+Route19SurfingPikachuText:
+	text "Pikachu: Chuu!!"
+	done
+
+Route19SurfingPikachuWinnerText:
+	text "He's wearing a"
+	line "Gold Medal!"
+	done 
 
 Route19SignText:
 	text "Route 19"
@@ -308,15 +331,15 @@ Route19_MapEvents:
 	bg_event 11,  1, BGEVENT_READ, CarefulSwimmingSign
 
 	def_object_events
-	object_event  9, 27, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerSwimmerfDawn, -1
+	object_event  9, 25, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerSwimmerfDawn, -1
 	object_event 15, 35, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfJill, -1
 	object_event  3, 38, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermHarold, -1
 	object_event 11, 17, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermJerome, -1
-	object_event  8, 27, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
+	object_event  8, 25, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
 	object_event  3, 20, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermWalter, -1
 	object_event  9,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  3, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
+	object_event 12, 30, SPRITE_SURFING_PIKACHU, SPRITEMOVEDATA_SWIM_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, Route19SurfingPikachuScript, -1
 	object_event 13,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route19Rock, -1
 	object_event 13,  2, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route19Rock, -1
 	object_event  5, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route19Rock, -1
-	

@@ -230,3 +230,5 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e5
 	tilecoll UP_WALL, UP_WALL, WALL, WALL ; e6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e7
+	tilecoll WALL, WALL, WALL, WALL ; e8
+	tilecoll WALL, WALL, FLOOR, FLOOR ; e9

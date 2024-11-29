@@ -9,38 +9,38 @@ Route19FuchsiaGate_MapScripts:
 Route19FuchsiaGateOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_CINNABAR_ROCKS_CLEARED
-	iftrue .RocksCleared
+	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
+	iftrue .CompetitionOver
 	writetext Route19FuchsiaGateOfficerText
 	waitbutton
 	closetext
 	end
 
-.RocksCleared:
-	writetext Route19FuchsiaGateOfficerText_RocksCleared
+.CompetitionOver:
+	writetext Route19FuchsiaGateOfficerText_CompetitionOver
 	waitbutton
 	closetext
 	end
 
 Route19FuchsiaGateOfficerText:
-	text "Cinnabar's volcano"
-	line "erupted."
-
-	para "It hurled boulders"
-	line "that cut off Route"
-	cont "19 indefinitely."
-
-	para "I wonder if the"
-	line "people of Cinnabar"
-	cont "are safe…"
+	text "Route 19 is closed"
+	line "due to the Surfing"
+	cont "Competition."
+	
+	para "If you want to"
+	line "visit Cinnabar and"
+	cont "Seafoam, please"
+	
+	para "travel there via"
+	line "Pallet Town."
 	done
 
-Route19FuchsiaGateOfficerText_RocksCleared:
-	text "No Cinnabar citi-"
-	line "zens were injured"
+Route19FuchsiaGateOfficerText_CompetitionOver:
+	text "The Competition is"
+	line "good fun, but can"
 
-	para "by the eruption."
-	line "That's great!"
+	para "cause some travel"
+	line "frustration."
 	done
 
 Route19FuchsiaGate_MapEvents:

@@ -143,6 +143,7 @@ INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
 INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
 INCLUDE "maps/Route17Route18Gate.asm"
+INCLUDE "maps/Route19FuchsiaGate.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -462,7 +463,6 @@ INCLUDE "maps/Route15.asm"
 INCLUDE "maps/VermilionCity.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
-INCLUDE "maps/Route19FuchsiaGate.asm"
 
 
 SECTION "Map Scripts 24", ROMX
