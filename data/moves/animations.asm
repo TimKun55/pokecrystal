@@ -3001,7 +3001,7 @@ BattleAnim_Growth:
 	anim_ret
 
 BattleAnim_WillOWisp:
-	anim_2gfx BATTLE_ANIM_GFX_EGG, BATTLE_ANIM_GFX_FIRE
+	anim_2gfx BATTLE_ANIM_GFX_GLOW, BATTLE_ANIM_GFX_FIRE
 	anim_bgp $1b
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj BATTLE_ANIM_OBJ_SHADOW_BALL, 64, 92, $2
