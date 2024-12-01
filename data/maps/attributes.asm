@@ -263,11 +263,11 @@ ENDM
 
 	map_attributes Route20, ROUTE_20, $25, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -3
-	connection east, Route19, ROUTE_19, -9
+	connection east, Route19, ROUTE_19, -13
 
 	map_attributes Route19, ROUTE_19, $25, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, 0
-	connection west, Route20, ROUTE_20, 9
+	connection west, Route20, ROUTE_20, 13
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $2f, SOUTH | WEST | EAST
 	connection south, Route19, ROUTE_19, 0

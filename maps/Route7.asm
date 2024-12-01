@@ -98,8 +98,8 @@ Route7_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15,  8, ROUTE_7_SAFFRON_GATE, 1
-	warp_event 15,  9, ROUTE_7_SAFFRON_GATE, 2
+	warp_event 17,  8, ROUTE_7_SAFFRON_GATE, 1
+	warp_event 17,  9, ROUTE_7_SAFFRON_GATE, 2
 
 	def_coord_events
 
@@ -109,3 +109,4 @@ Route7_MapEvents:
 
 	def_object_events
 	object_event  6,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1
+	object_event 17, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerPokefanMCarlos, -1

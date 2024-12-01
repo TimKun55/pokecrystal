@@ -203,3 +203,6 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL ; ca
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; cc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd
+	tilecoll WARP_CARPET_LEFT, FLOOR, WARP_CARPET_LEFT, FLOOR ; ce
+	tilecoll WALL, WALL, WALL, WALL ; cf

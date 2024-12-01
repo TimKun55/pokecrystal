@@ -309,7 +309,7 @@ ENDM
 	endgroup
 
 	newgroup VERMILION                                            ; 12
-	map_const ROUTE_6,                                     10, 13 ;  1
+	map_const ROUTE_6,                                     12, 13 ;  1
 	map_const ROUTE_11,                                    20,  9 ;  2
 	map_const VERMILION_CITY,                              20, 18 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
@@ -383,7 +383,7 @@ ENDM
 	map_const ROUTE_15,                                    20,  9 ;  5
 	map_const ROUTE_16,                                    10, 12 ;  6
 	map_const ROUTE_17,                                    10, 49 ;  7
-	map_const ROUTE_18,                                    10,  9 ;  8
+	map_const ROUTE_18,                                    11,  9 ;  8
 	map_const FUCHSIA_CITY,                                20, 18 ;  9
 	map_const FUCHSIA_MART,                                 6,  4 ; 10
 	map_const SAFARI_ZONE_FUCHSIA_GATE,                     5,  4 ; 11
@@ -428,7 +428,7 @@ ENDM
 	endgroup
 
 	newgroup CELADON                                              ; 21
-	map_const ROUTE_7,                                     10, 15 ;  1
+	map_const ROUTE_7,                                     11,  9 ;  1
 	map_const CELADON_CITY,                                20, 18 ;  2
 	map_const CELADON_DEPT_STORE_1F,                        8,  4 ;  3
 	map_const CELADON_DEPT_STORE_2F,                        8,  4 ;  4
