@@ -600,48 +600,6 @@ _PharmacyComeAgainText::
 	line "See you around."
 	done
 
-_BerryShop_IntroText::
-	text "Hello, sweetie!"
-
-	para "Would you like"
-	line "any Berries?"
-
-	para "We've been all"
-	line "gathering them"
-	cont "from all over!"
-	done
-
-_BerryShop_ComeAgainText::
-	text "Bye bye!"
-	done
-
-_BerryShop_HowManyText::
-	text "How many do you"
-	line "need?"
-	done
-
-_BerryShop_CostsThisMuchText::
-	text "That'll cost"
-	line "¥@"
-	text_decimal hMoneyTemp, 3, 6
-	text ". Is that OK?"
-	done
-
-_BerryShop_InsufficientFundsText::
-	text "Sorry, sweetheart,"
-	line "not enough money."
-	done
-
-_BerryShop_BagFullText::
-	text "Oh, your bag"
-	line "is full!"
-	done
-
-_BerryShop_HereYouGoText::
-	text "There you go,"
-	line "sweetheart!"
-	done
-
 _MadamItems_IntroText::
 	text "Hello there."
 

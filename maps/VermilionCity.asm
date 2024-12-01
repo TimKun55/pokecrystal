@@ -5,6 +5,14 @@
 	const VERMILIONCITY_SUPER_NERD
 	const VERMILIONCITY_POKEFAN_M
 	const VERMILIONCITY_TUTOR
+	const VERMILIONCITY_BEAUTY
+	const VERMILIONCITY_SNORLAX
+	const VERMILIONCITY_FRUIT_TREE1
+	const VERMILIONCITY_FRUIT_TREE2
+	const VERMILIONCITY_FRUIT_TREE3
+	const VERMILIONCITY_FRUIT_TREE4
+	const VERMILIONCITY_FRUIT_TREE5
+	const VERMILIONCITY_FRUIT_TREE6
 
 VermilionCity_MapScripts:
 	def_scene_scripts
@@ -125,6 +133,9 @@ VermilionCityTutorScript:
 	closetext
 	end
 
+VermilionCityBeautyScript:
+	jumptextfaceplayer VermilionCityBeautyText
+
 VermilionSnorlax:
 	end
 
@@ -148,6 +159,24 @@ VermilionCityMartSign:
 
 VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
+
+VermilionCityFruitTree1:
+	fruittree FRUITTREE_VERMILION_CITY_1
+
+VermilionCityFruitTree2:
+	fruittree FRUITTREE_VERMILION_CITY_2
+
+VermilionCityFruitTree3:
+	fruittree FRUITTREE_VERMILION_CITY_3
+
+VermilionCityFruitTree4:
+	fruittree FRUITTREE_VERMILION_CITY_4
+
+VermilionCityFruitTree5:
+	fruittree FRUITTREE_VERMILION_CITY_5
+
+VermilionCityFruitTree6:
+	fruittree FRUITTREE_VERMILION_CITY_6
 
 VermilionCityTeacherText:
 	text "Vermilion Port is"
@@ -306,6 +335,19 @@ VermilionCityTutorIncompatibleText:
 	cont "learn this move…"
 	done
 
+VermilionCityBeautyText:
+	text "Look at the pretty"
+	line "Berry Trees I've"
+	cont "been growing!"
+	
+	para "Aparently they're"
+	line "rare and useful to"
+	cont "trainers."
+	
+	para "Please feel free"
+	line "to help yourself."
+	done
+
 VermilionCitySignText:
 	text "Vermilion City"
 
@@ -338,7 +380,7 @@ VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 27,  7, VERMILION_FISHING_SPEECH_HOUSE, 1
+	warp_event 13,  5, VERMILION_FISHING_SPEECH_HOUSE, 1
 	warp_event  9,  5, VERMILION_POKECENTER_1F, 1
 	warp_event  5, 13, POKEMON_FAN_CLUB, 1
 	warp_event 11, 13, VERMILION_MAGNET_TRAIN_SPEECH_HOUSE, 1
@@ -347,7 +389,6 @@ VermilionCity_MapEvents:
 	warp_event  8, 20, VERMILION_GYM, 1
 	warp_event 19, 31, VERMILION_PORT_PASSAGE, 1
 	warp_event 20, 31, VERMILION_PORT_PASSAGE, 2
-	warp_event 13,  5, VERMILION_BERRY_MART, 1
 	warp_event  5,  5, VERMILION_SAILORS_HOUSE, 1
 
 	def_coord_events
@@ -359,13 +400,20 @@ VermilionCity_MapEvents:
 	bg_event 30, 17, BGEVENT_READ, VermilionCityPortSign
 	bg_event 10,  5, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 20, 13, BGEVENT_READ, VermilionCityMartSign
-	bg_event 32,  7, BGEVENT_ITEM, VermilionCityHiddenFullHeal
+	bg_event 34, 10, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 
 	def_object_events
 	object_event 15,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
-	object_event 20,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
-	object_event 22,  4, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
-	object_event 14, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
-	object_event 31, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
+	object_event 24, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
+	object_event 27, 11, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
+	object_event 16, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
+	object_event 29, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
 	object_event  4, 16, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionCityTutorScript, -1
+	object_event 22,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
 	object_event 43,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_ROUTE_11_SNORLAX
+	object_event 19,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree1, -1
+	object_event 21,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree2, -1
+	object_event 24,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree3, -1
+	object_event 26,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree4, -1
+	object_event 19,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree5, -1
+	object_event 26,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree6, -1

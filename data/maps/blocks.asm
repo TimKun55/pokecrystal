@@ -883,9 +883,6 @@ CopycatsHouse2F_Blocks:
 GoldenrodFlowerShop_Blocks:
 	INCBIN "maps/GoldenrodFlowerShop.ablk"
 	
-VermilionBerryMart_Blocks:
-	INCBIN "maps/VermilionBerryMart.ablk"
-
 MountMoonSquare_Blocks:
 	INCBIN "maps/MountMoonSquare.ablk"
 

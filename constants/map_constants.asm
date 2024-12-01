@@ -322,8 +322,7 @@ ENDM
 	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 11
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4 ; 13
-	map_const VERMILION_BERRY_MART,                         4,  4 ; 14
-	map_const VERMILION_SAILORS_HOUSE,                      4,  4 ; 15
+	map_const VERMILION_SAILORS_HOUSE,                      4,  4 ; 14
 	endgroup
 
 	newgroup PALLET                                               ; 13

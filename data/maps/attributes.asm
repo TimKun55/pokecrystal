@@ -606,7 +606,6 @@ ENDM
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
 	map_attributes VermilionMagnetTrainSpeechHouse, VERMILION_MAGNET_TRAIN_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionMart, VERMILION_MART, $00, 0
-	map_attributes VermilionBerryMart, VERMILION_BERRY_MART, $00, 0
 	map_attributes VermilionSailorsHouse, VERMILION_SAILORS_HOUSE, $00, 0
 	map_attributes VermilionDiglettsCaveSpeechHouse, VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionGym, VERMILION_GYM, $00, 0

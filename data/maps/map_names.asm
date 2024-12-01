@@ -357,8 +357,7 @@ Vermilion_Map_Names: ;newgroup VERMILION									; 12
 	dw Vermilion_Map_Name11 ; map_const ROUTE_6_SAFFRON_GATE				; 11
 	dw Vermilion_Map_Name12 ; map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE	; 12
 	dw Vermilion_Map_Name13 ; map_const ROUTE_11_ROUTE_12_GATE				; 13
-	dw Vermilion_Map_Name14 ; map_const VERMILION_BERRY_MART				; 14
-	dw Vermilion_Map_Name15 ; map_const VERMILION_SAILORS_HOUSE				; 15
+	dw Vermilion_Map_Name14 ; map_const VERMILION_SAILORS_HOUSE				; 14
 	assert_table_length NUM_VERMILION_MAPS
 
 Pallet_Map_Names: ;newgroup PALLET											; 13
@@ -1135,9 +1134,7 @@ Vermilion_Map_Name12: ; map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE ; 12
 	db "Route 6 Under.@"                                           
 Vermilion_Map_Name13: ; map_const ROUTE_11_ROUTE_12_GATE ; 13
 	db "Route 11 Gate.@" 
-Vermilion_Map_Name14: ; map_const VERMILION_BERRY_MART ; 14
-	db "Berry Mart.@"
-Vermilion_Map_Name15: ; map_const VERMILION_SAILORS_HOUSE ; 15
+Vermilion_Map_Name14: ; map_const VERMILION_SAILORS_HOUSE ; 14
 	db "Vermil Sailor Hse@" 
 
 Pallet_Map_Name1: ; map_const ROUTE_1,;  1

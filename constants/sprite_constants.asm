@@ -132,7 +132,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_PIDGEY ; 85         ; MrFujisHouse, VioletNicknameSpeechHouse
 	const SPRITE_PIDGEOT ; 86        ; SaffronAviculturalSociety1F
 	const SPRITE_RATTATA ; 87        ; Route30
-	const SPRITE_RATICATE ; 88       ; VermilionBerryMart, ViridianNicknameSpeechHouse
+	const SPRITE_RATICATE ; 88       ; ViridianNicknameSpeechHouse
 	const SPRITE_FEAROW ; 89         ; Route28SteelWingHouse, SaffronAviculturalSociety1F, ViridianNicknameSpeechHouse
 	const SPRITE_PIKACHU ; 8a        ; DOLL, MtSilverRoom3, PlayersHouse1F, PlayersNeighborsHouse
 	const SPRITE_RAICHU  ; 8b        ; VermilionGym

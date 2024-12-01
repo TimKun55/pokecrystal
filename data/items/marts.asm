@@ -23,7 +23,6 @@ Marts:
 	dw MartCerulean
 	dw MartLavender
 	dw MartVermilion
-	dw MartBerry
 	dw MartCeladon2F1
 	dw MartCeladon2F2
 	dw MartCeladon2F3
@@ -293,20 +292,6 @@ MartVermilion:
 	db AWAKENING
 	db BURN_HEAL
 	db LITEBLUEMAIL
-	db -1 ; end
-
-MartBerry:
-	db 10 ; # items
-	db ORAN_BERRY
-	db PECHA_BERRY
-	db CHERI_BERRY
-	db ASPEAR_BERRY
-	db RAWST_BERRY
-	db PERSIM_BERRY
-	db CHESTO_BERRY
-	db LUM_BERRY
-	db LEPPA_BERRY
-	db SITRUS_BERRY
 	db -1 ; end
 
 MartCeladon2F1:
