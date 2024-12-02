@@ -301,9 +301,9 @@ JohtoWaterWildMons:
 	def_water_wildmons MT_SILVER_OUTSIDE
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, LANTURN,       68,  70
-	db 20, POLITOED,      68,  70
-	db 20, KINGDRA,       68,  70
+	db 60, LANTURN,       63,  66
+	db 20, POLITOED,      63,  66
+	db 20, KINGDRA,       63,  66
 	end_water_wildmons
 
 	db -1 ; end

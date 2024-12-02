@@ -6,28 +6,28 @@ KantoGrassWildMons:
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, DIGLETT,       27,  30
-	db 22, DIGLETT,       30,  33
-	db 22, DIGLETT,       33,  37
-	db 10, DIGLETT,       37,  40
+	db 22, DIGLETT,       37,  40
+	db 22, DIGLETT,       40,  43
+	db 22, DIGLETT,       43,  47
+	db 10, DIGLETT,       47,  50
 	db  8, DUGTRIO,       43,  45
 	db  8, DUGTRIO,       45,  48
 	db  8, DUGTRIO,       47,  50
 	; day
 	;   %, species,		 min, max
-	db 22, DIGLETT,       27,  30
-	db 22, DIGLETT,       30,  33
-	db 22, DIGLETT,       33,  37
-	db 10, DIGLETT,       37,  40
+	db 22, DIGLETT,       37,  40
+	db 22, DIGLETT,       40,  43
+	db 22, DIGLETT,       43,  47
+	db 10, DIGLETT,       47,  50
 	db  8, DUGTRIO,       43,  45
 	db  8, DUGTRIO,       45,  48
 	db  8, DUGTRIO,       47,  50
 	; nite
 	;   %, species,		 min, max
-	db 22, DIGLETT,       27,  30
-	db 22, DIGLETT,       30,  33
-	db 22, DIGLETT,       33,  37
-	db 10, DIGLETT,       37,  40
+	db 22, DIGLETT,       37,  40
+	db 22, DIGLETT,       40,  43
+	db 22, DIGLETT,       43,  47
+	db 10, DIGLETT,       47,  50
 	db  8, DUGTRIO,       43,  45
 	db  8, DUGTRIO,       45,  48
 	db  8, DUGTRIO,       47,  50
@@ -37,124 +37,124 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, PARASECT,      57,  60
-	db  8, GOLEM,         57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, PARASECT,      55,  58
+	db  8, GOLEM,         55,  58
+	db  8, CLEFABLE,      55,  58
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, PARASECT,      57,  60
-	db  8, GOLEM,         57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, PARASECT,      55,  58
+	db  8, GOLEM,         55,  58
+	db  8, CLEFABLE,      55,  58
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, PARASECT,      57,  60
-	db  8, GOLEM,         57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, PARASECT,      55,  58
+	db  8, GOLEM,         55,  58
+	db  8, CLEFABLE,      55,  58
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 10, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 10, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 10, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 10, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 22, PARASECT,      57,  60
-	db 10, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
-	db  8, PARASECT,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 22, PARASECT,      55,  58
+	db 10, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
+	db  8, PARASECT,      55,  58
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_B2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, KABUTOPS,      57,  60
-	db  8, OMASTAR,       57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, KABUTOPS,      55,  58
+	db  8, OMASTAR,       55,  58
+	db  8, CLEFABLE,      55,  58
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, KABUTOPS,      57,  60
-	db  8, OMASTAR,       57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, KABUTOPS,      55,  58
+	db  8, OMASTAR,       55,  58
+	db  8, CLEFABLE,      55,  58
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      57,  60
-	db 22, GOLEM,         57,  60
-	db 22, SANDSLASH,     57,  60
-	db 10, CROBAT,        57,  60
-	db  8, KABUTOPS,      57,  60
-	db  8, OMASTAR,       57,  60
-	db  8, CLEFABLE,      57,  60
+	db 22, PARASECT,      55,  58
+	db 22, GOLEM,         55,  58
+	db 22, SANDSLASH,     55,  58
+	db 10, CROBAT,        55,  58
+	db  8, KABUTOPS,      55,  58
+	db  8, OMASTAR,       55,  58
+	db  8, CLEFABLE,      55,  58
 	end_grass_wildmons
 	
 	def_grass_wildmons VIRIDIAN_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PIKACHU,       57,  60
-	db 22, BUTTERFREE,    62,  65
-	db 22, BEEDRILL,      62,  65
-	db 10, LEDIAN,        62,  65
-	db  8, VENOMOTH,      62,  65
-	db  8, HERACROSS,     62,  65
-	db  8, FORRETRESS,    62,  65
+	db 22, PIKACHU,       52,  55
+	db 22, BUTTERFREE,    55,  58
+	db 22, BEEDRILL,      55,  58
+	db 10, LEDIAN,        55,  58
+	db  8, VENOMOTH,      55,  58
+	db  8, HERACROSS,     55,  58
+	db  8, FORRETRESS,    55,  58
 	; day
 	;   %, species,		 min, max
-	db 22, PIKACHU,       57,  60
-	db 22, BUTTERFREE,    62,  65
-	db 22, BEEDRILL,      62,  65
-	db 10, LEDIAN,        62,  65
-	db  8, VENOMOTH,      62,  65
-	db  8, HERACROSS,     62,  65
-	db  8, FORRETRESS,    62,  65
+	db 22, PIKACHU,       52,  55
+	db 22, BUTTERFREE,    55,  58
+	db 22, BEEDRILL,      55,  58
+	db 10, LEDIAN,        55,  58
+	db  8, VENOMOTH,      55,  58
+	db  8, HERACROSS,     55,  58
+	db  8, FORRETRESS,    55,  58
 	; nite
 	;   %, species,		 min, max
-	db 22, PIKACHU,       57,  60
-	db 22, BUTTERFREE,    62,  65
-	db 22, BEEDRILL,      62,  65
-	db 10, ARIADOS,       62,  65
-	db  8, VENOMOTH,      62,  65
-	db  8, HERACROSS,     62,  65
-	db  8, FORRETRESS,    62,  65
+	db 22, PIKACHU,       52,  55
+	db 22, BUTTERFREE,    55,  58
+	db 22, BEEDRILL,      55,  58
+	db 10, ARIADOS,       55,  58
+	db  8, VENOMOTH,      55,  58
+	db  8, HERACROSS,     55,  58
+	db  8, FORRETRESS,    55,  58
 	end_grass_wildmons
 	
 	def_grass_wildmons ROCK_TUNNEL_1F
@@ -347,93 +347,93 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, PRIMEAPE,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, PERSIAN,       63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, PRIMEAPE,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, PERSIAN,       60,  63
+	db  8, DITTO,         60,  63
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, PRIMEAPE,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, PERSIAN,       63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, PRIMEAPE,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, PERSIAN,       60,  63
+	db  8, DITTO,         60,  63
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, PRIMEAPE,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, PERSIAN,       63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, PRIMEAPE,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, PERSIAN,       60,  63
+	db  8, DITTO,         60,  63
 	end_grass_wildmons
 
 	def_grass_wildmons CERULEAN_CAVE_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, MAGNETON,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, MAGNETON,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, MAGNETON,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, MAGNETON,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, MAGNETON,      63,  66
-	db 10, ELECTRODE,     63,  66
-	db  8, WOBBUFFET,     63,  65
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, MAGNETON,      60,  63
+	db 10, ELECTRODE,     60,  63
+	db  8, WOBBUFFET,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	end_grass_wildmons
 
 	def_grass_wildmons CERULEAN_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  65
-	db 10, MACHAMP,       63,  66
-	db  8, MAGNEZONE,     63,  66
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, WOBBUFFET,     60,  63
+	db 10, MACHAMP,       60,  63
+	db  8, MAGNEZONE,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	; day
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  65
-	db 10, MACHAMP,       63,  66
-	db  8, MAGNEZONE,     63,  66
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, WOBBUFFET,     60,  63
+	db 10, MACHAMP,       60,  63
+	db  8, MAGNEZONE,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	; nite
 	;   %, species,		 min, max
-	db 22, PARASECT,      63,  66
-	db 22, CROBAT,        63,  66
-	db 22, WOBBUFFET,     63,  65
-	db 10, MACHAMP,       63,  66
-	db  8, MAGNEZONE,     63,  66
-	db  8, ALAKAZAM,      63,  66
-	db  8, DITTO,         63,  66
+	db 22, PARASECT,      60,  63
+	db 22, CROBAT,        60,  63
+	db 22, WOBBUFFET,     60,  63
+	db 10, MACHAMP,       60,  63
+	db  8, MAGNEZONE,     60,  63
+	db  8, ALAKAZAM,      60,  63
+	db  8, DITTO,         60,  63
 	end_grass_wildmons
 
 	def_grass_wildmons SEAFOAM_ISLANDS_B1F
@@ -565,61 +565,61 @@ KantoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, PIDGEOT,       55,  58
-	db 22, RATICATE,      59,  62
+	db 22, RATICATE,      58,  60
 	db 22, FURRET,        57,  60
-	db 10, PIDGEOT,       57,  60
-	db  8, FURRET,        59,  62
-	db  8, PIDGEOT,       59,  62
-	db  8, PIDGEOT,       59,  62
+	db 10, PIDGEOT,       55,  58
+	db  8, FURRET,        58,  60
+	db  8, PIDGEOT,       57,  60
+	db  8, PIDGEOT,       57,  60
 	; day
 	;   %, species,		 min, max
 	db 22, PIDGEOT,       55,  58
-	db 22, RATICATE,      59,  62
+	db 22, RATICATE,      58,  60
 	db 22, FURRET,        57,  60
-	db 10, PIDGEOT,       57,  60
-	db  8, FURRET,        59,  62
-	db  8, PIDGEOT,       59,  62
-	db  8, PIDGEOT,       59,  62
+	db 10, PIDGEOT,       55,  58
+	db  8, FURRET,        58,  60
+	db  8, PIDGEOT,       57,  60
+	db  8, PIDGEOT,       57,  60
 	; nite
 	;   %, species,		 min, max
 	db 22, NOCTOWL,       55,  58
-	db 22, RATICATE,      59,  62
-	db 22, RATICATE,      57,  60
-	db 10, NOCTOWL,       57,  60
-	db  8, RATICATE,      59,  62
-	db  8, NOCTOWL,       59,  62
-	db  8, NOCTOWL,       59,  62
+	db 22, RATICATE,      55,  58
+	db 22, RATICATE,      55,  58
+	db 10, NOCTOWL,       55,  58
+	db  8, RATICATE,      57,  60
+	db  8, NOCTOWL,       57,  60
+	db  8, NOCTOWL,       57,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        59,  62
-	db 22, FURRET,        59,  62
-	db 22, PIDGEOT,       59,  62
-	db 10, LEDIAN,        59,  62
-	db  8, NIDORINA,      59,  62
-	db  8, NIDORINO,      59,  62
-	db  8, RATICATE,      59,  62
+	db 22, FEAROW,        55,  58
+	db 22, FURRET,        55,  58
+	db 22, PIDGEOT,       55,  58
+	db 10, LEDIAN,        55,  58
+	db  8, NIDORINA,      57,  60
+	db  8, NIDORINO,      57,  60
+	db  8, RATICATE,      57,  60
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        59,  62
-	db 22, FURRET,        59,  62
-	db 22, PIDGEOT,       59,  62
-	db 10, LEDIAN,        59,  62
-	db  8, NIDORINA,      59,  62
-	db  8, NIDORINO,      59,  62
-	db  8, RATICATE,      59,  62
+	db 22, FEAROW,        55,  58
+	db 22, FURRET,        55,  58
+	db 22, PIDGEOT,       55,  58
+	db 10, LEDIAN,        55,  58
+	db  8, NIDORINA,      57,  60
+	db  8, NIDORINO,      57,  60
+	db  8, RATICATE,      57,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, FEAROW,        59,  62
-	db 22, FURRET,        59,  62
-	db 22, PIDGEOT,       59,  62
-	db 10, ARIADOS,       59,  62
-	db  8, NIDORINA,      59,  62
-	db  8, NIDORINO,      59,  62
-	db  8, RATICATE,      59,  62
+	db 22, FEAROW,        55,  58
+	db 22, FURRET,        55,  58
+	db 22, PIDGEOT,       55,  58
+	db 10, ARIADOS,       55,  58
+	db  8, NIDORINA,      57,  60
+	db  8, NIDORINO,      57,  60
+	db  8, RATICATE,      57,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
@@ -1032,49 +1032,49 @@ KantoGrassWildMons:
 	db 22, FEAROW,        57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, FEAROW,        60,  62
+	db 10, FEAROW,        58,  60
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
-	db  8, MUK,           69,  62
+	db  8, MUK,           58,  60
 	; day
 	;   %, species,		 min, max
 	db 22, FEAROW,        57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, FEAROW,        60,  62
+	db 10, FEAROW,        58,  60
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
-	db  8, MUK,           69,  62
+	db  8, MUK,           58,  60
 	; nite
 	;   %, species,		 min, max
 	db 22, FEAROW,        57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, HONCHKROW,     60,  62
+	db 10, HONCHKROW,     58,  60
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
-	db  8, MUK,           69,  62
+	db  8, MUK,           58,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        60,  62
+	db 22, FEAROW,        58,  60
 	db 22, GRIMER,        55,  57
 	db 22, GRIMER,        56,  58
 	db 10, GRIMER,        57,  59
 	db  8, GRIMER,        58,  60
-	db  8, MUK,           60,  62
+	db  8, MUK,           58,  60
 	db  8, SLUGMA,        55,  57
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        60,  62
+	db 22, FEAROW,        58,  60
 	db 22, GRIMER,        55,  57
 	db 22, GRIMER,        56,  58
 	db 10, GRIMER,        57,  59
 	db  8, GRIMER,        58,  60
-	db  8, MUK,           60,  62
+	db  8, MUK,           58,  60
 	db  8, SLUGMA,        55,  57
 	; nite
 	;   %, species,		 min, max
@@ -1083,7 +1083,7 @@ KantoGrassWildMons:
 	db 22, GRIMER,        56,  58
 	db 10, GRIMER,        57,  59
 	db  8, GRIMER,        58,  60
-	db  8, MUK,           60,  62
+	db  8, MUK,           58,  60
 	db  8, SLUGMA,        55,  57
 	end_grass_wildmons
 
@@ -1091,62 +1091,62 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, TANGELA,       59,  61
-	db 22, RATICATE,      59,  61
-	db 22, RATICATE,      60,  63
-	db 10, TANGELA,       63,  65
-	db  8, MR__MIME,      59,  61
-	db  8, MR__MIME,      60,  63
-	db  8, MR__MIME,      63,  65
+	db 22, TANGELA,       57,  58
+	db 22, RATICATE,      58,  60
+	db 22, RATICATE,      58,  60
+	db 10, TANGELA,       59,  60
+	db  8, MR__MIME,      57,  58
+	db  8, MR__MIME,      58,  59
+	db  8, MR__MIME,      59,  60
 	; day
 	;   %, species,		 min, max
-	db 22, TANGELA,       59,  61
-	db 22, RATICATE,      59,  61
-	db 22, RATICATE,      60,  63
-	db 10, TANGELA,       63,  65
-	db  8, MR__MIME,      59,  61
-	db  8, MR__MIME,      60,  63
-	db  8, MR__MIME,      63,  65
+	db 22, TANGELA,       57,  58
+	db 22, RATICATE,      58,  60
+	db 22, RATICATE,      58,  60
+	db 10, TANGELA,       59,  60
+	db  8, MR__MIME,      57,  58
+	db  8, MR__MIME,      58,  59
+	db  8, MR__MIME,      59,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, TANGELA,       59,  61
-	db 22, RATICATE,      59,  61
-	db 22, RATICATE,      60,  63
-	db 10, TANGELA,       63,  65
-	db  8, MR__MIME,      59,  61
-	db  8, MR__MIME,      60,  63
-	db  8, MR__MIME,      63,  65
+	db 22, TANGELA,       57,  58
+	db 22, RATICATE,      58,  60
+	db 22, RATICATE,      58,  60
+	db 10, TANGELA,       59,  60
+	db  8, MR__MIME,      57,  58
+	db  8, MR__MIME,      58,  59
+	db  8, MR__MIME,      59,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, RAPIDASH,      60,  63
-	db 22, DODRIO,        60,  63
-	db 22, FEAROW,        60,  63
-	db 10, DODRIO,        63,  65
-	db  8, WIGGLYTUFF,    63,  65
-	db  8, RAPIDASH,      63,  65
-	db  8, FEAROW,        63,  65
+	db 22, RAPIDASH,      57,  58
+	db 22, DODRIO,        57,  58
+	db 22, FEAROW,        57,  58
+	db 10, DODRIO,        58,  60
+	db  8, WIGGLYTUFF,    58,  60
+	db  8, RAPIDASH,      58,  60
+	db  8, FEAROW,        58,  60
 	; day
 	;   %, species,		 min, max
-	db 22, RAPIDASH,      60,  63
-	db 22, DODRIO,        60,  63
-	db 22, FEAROW,        60,  63
-	db 10, DODRIO,        63,  65
-	db  8, WIGGLYTUFF,    63,  65
-	db  8, RAPIDASH,      63,  65
-	db  8, FEAROW,        63,  65
+	db 22, RAPIDASH,      57,  58
+	db 22, DODRIO,        57,  58
+	db 22, FEAROW,        57,  58
+	db 10, DODRIO,        58,  60
+	db  8, WIGGLYTUFF,    58,  60
+	db  8, RAPIDASH,      58,  60
+	db  8, FEAROW,        58,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, RAPIDASH,      60,  63
-	db 22, DODRIO,        60,  63
-	db 22, FEAROW,        60,  63
-	db 10, DODRIO,        63,  65
-	db  8, WIGGLYTUFF,    63,  65
-	db  8, RAPIDASH,      63,  65
-	db  8, FEAROW,        63,  65
+	db 22, RAPIDASH,      57,  58
+	db 22, DODRIO,        57,  58
+	db 22, FEAROW,        57,  58
+	db 10, DODRIO,        58,  60
+	db  8, WIGGLYTUFF,    58,  60
+	db  8, RAPIDASH,      58,  60
+	db  8, FEAROW,        58,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_23
@@ -1277,61 +1277,61 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, HITMONLEE,     65,  68
-	db 22, HITMONCHAN,    65,  68
-	db 22, MACHAMP,       65,  68
-	db 10, ALAKAZAM,      65,  68
-	db  8, ARCANINE,      65,  68
-	db  8, NINETALES,     65,  68
-	db  8, RAICHU,        65,  68
+	db 22, HITMONLEE,     60,  63
+	db 22, HITMONCHAN,    60,  63
+	db 22, MACHAMP,       60,  63
+	db 10, ALAKAZAM,      60,  63
+	db  8, ARCANINE,      60,  63
+	db  8, NINETALES,     60,  63
+	db  8, RAICHU,        60,  63
 	; day
 	;   %, species,		 min, max
-	db 22, HITMONLEE,     65,  68
-	db 22, HITMONCHAN,    65,  68
-	db 22, MACHAMP,       65,  68
-	db 10, ALAKAZAM,      65,  68
-	db  8, ARCANINE,      65,  68
-	db  8, NINETALES,     65,  68
-	db  8, RAICHU,        65,  68
+	db 22, HITMONLEE,     60,  63
+	db 22, HITMONCHAN,    60,  63
+	db 22, MACHAMP,       60,  63
+	db 10, ALAKAZAM,      60,  63
+	db  8, ARCANINE,      60,  63
+	db  8, NINETALES,     60,  63
+	db  8, RAICHU,        60,  63
 	; nite
 	;   %, species,		 min, max
-	db 22, HITMONLEE,     65,  68
-	db 22, HITMONCHAN,    65,  68
-	db 22, MACHAMP,       65,  68
-	db 10, ALAKAZAM,      65,  68
-	db  8, ARCANINE,      65,  68
-	db  8, NINETALES,     65,  68
-	db  8, RAICHU,        65,  68
+	db 22, HITMONLEE,     60,  63
+	db 22, HITMONCHAN,    60,  63
+	db 22, MACHAMP,       60,  63
+	db 10, ALAKAZAM,      60,  63
+	db  8, ARCANINE,      60,  63
+	db  8, NINETALES,     60,  63
+	db  8, RAICHU,        60,  63
 	end_grass_wildmons
 	
 	def_grass_wildmons SAFARI_ZONE_HUB
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, NIDOQUEEN,     60,  62
-	db 23, NIDOKING,      60,  62
-	db 10, RHYDON,        60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, NIDOQUEEN,     58,  60
+	db 23, NIDOKING,      58,  60
+	db 10, RHYDON,        58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, NIDOQUEEN,     60,  62
-	db 23, NIDOKING,      60,  62
-	db 10, RHYDON,        60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, NIDOQUEEN,     58,  60
+	db 23, NIDOKING,      58,  60
+	db 10, RHYDON,        58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, NIDOQUEEN,     60,  62
-	db 23, NIDOKING,      60,  62
-	db 10, RHYDON,        60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, NIDOQUEEN,     58,  60
+	db 23, NIDOKING,      58,  60
+	db 10, RHYDON,        58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
@@ -1339,30 +1339,30 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, DODRIO,        60,  62
-	db 23, PARASECT,      60,  62
-	db 10, KANGASKHAN,    60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, DODRIO,        58,  60
+	db 23, PARASECT,      58,  60
+	db 10, KANGASKHAN,    58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, DODRIO,        60,  62
-	db 23, PARASECT,      60,  62
-	db 10, KANGASKHAN,    60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, DODRIO,        58,  60
+	db 23, PARASECT,      58,  60
+	db 10, KANGASKHAN,    58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
-	db 23, EXEGGUTOR,     60,  62
-	db 23, DODRIO,        60,  62
-	db 23, PARASECT,      60,  62
-	db 10, KANGASKHAN,    60,  62
-	db  8, SCYTHER,       60,  62
-	db  8, PINSIR,        60,  62
+	db 23, EXEGGUTOR,     58,  60
+	db 23, DODRIO,        58,  60
+	db 23, PARASECT,      58,  60
+	db 10, KANGASKHAN,    58,  60
+	db  8, SCYTHER,       58,  60
+	db  8, PINSIR,        58,  60
 	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
@@ -1370,30 +1370,30 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, PARASECT,      60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  9, TAUROS,        60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, PARASECT,      58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  9, TAUROS,        58,  60
 	db  5, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, PARASECT,      60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  9, TAUROS,        60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, PARASECT,      58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  9, TAUROS,        58,  60
 	db  5, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, PARASECT,      60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  9, TAUROS,        60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, PARASECT,      58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  9, TAUROS,        58,  60
 	db  5, BLISSEY,       50,  51
 	end_grass_wildmons
 	
@@ -1401,31 +1401,31 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, DODRIO,        60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  7, TAUROS,        60,  62
-	db  7, KANGASKHAN,    60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, DODRIO,        58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  7, TAUROS,        58,  60
+	db  7, KANGASKHAN,    58,  60
 	; day
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, DODRIO,        60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  7, TAUROS,        60,  62
-	db  7, KANGASKHAN,    60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, DODRIO,        58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  7, TAUROS,        58,  60
+	db  7, KANGASKHAN,    58,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, EXEGGUTOR,     60,  62
-	db 22, DODRIO,        60,  62
-	db 22, VENOMOTH,      60,  62
-	db 10, NIDOKING,      60,  62
-	db 10, NIDOQUEEN,     60,  62
-	db  7, TAUROS,        60,  62
-	db  7, KANGASKHAN,    60,  62
+	db 22, EXEGGUTOR,     58,  60
+	db 22, DODRIO,        58,  60
+	db 22, VENOMOTH,      58,  60
+	db 10, NIDOKING,      58,  60
+	db 10, NIDOQUEEN,     58,  60
+	db  7, TAUROS,        58,  60
+	db  7, KANGASKHAN,    58,  60
 	end_grass_wildmons
 
 	db -1 ; end

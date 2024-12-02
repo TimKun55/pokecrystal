@@ -1897,31 +1897,31 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, AMPHAROS,      68,  70
-	db 22, SUDOWOODO,     68,  70
-	db 22, SNORLAX,       68,  70
-	db 10, SKARMORY,      68,  70
-	db  8, HOUNDOOM,      68,  70
-	db  8, MAMOSWINE,     68,  70
-	db  8, BLISSEY,       68,  70
+	db 22, AMPHAROS,      63,  66
+	db 22, SUDOWOODO,     63,  66
+	db 22, SNORLAX,       63,  66
+	db 10, SKARMORY,      63,  66
+	db  8, HOUNDOOM,      63,  66
+	db  8, MAMOSWINE,     63,  66
+	db  8, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
-	db 22, AMPHAROS,      68,  70
-	db 22, SUDOWOODO,     68,  70
-	db 22, SNORLAX,       68,  70
-	db 10, SKARMORY,      68,  70
-	db  8, HOUNDOOM,      68,  70
-	db  8, MAMOSWINE,     68,  70
-	db  8, BLISSEY,       68,  70
+	db 22, AMPHAROS,      63,  66
+	db 22, SUDOWOODO,     63,  66
+	db 22, SNORLAX,       63,  66
+	db 10, SKARMORY,      63,  66
+	db  8, HOUNDOOM,      63,  66
+	db  8, MAMOSWINE,     63,  66
+	db  8, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
-	db 22, AMPHAROS,      68,  70
-	db 22, SUDOWOODO,     68,  70
-	db 22, SNORLAX,       68,  70
-	db 10, SKARMORY,      68,  70
-	db  8, HOUNDOOM,      68,  70
-	db  8, MAMOSWINE,     68,  70
-	db  8, BLISSEY,       68,  70
+	db 22, AMPHAROS,      63,  66
+	db 22, SUDOWOODO,     63,  66
+	db 22, SNORLAX,       63,  66
+	db 10, SKARMORY,      63,  66
+	db  8, HOUNDOOM,      63,  66
+	db  8, MAMOSWINE,     63,  66
+	db  8, BLISSEY,       50,  51
 	end_grass_wildmons
 
 	db -1 ; end

@@ -13,17 +13,17 @@ KantoWaterWildMons:
 	def_water_wildmons CERULEAN_CAVE_1F
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDUCK,       63,  66
-	db 20, OCTILLERY,     63,  66
-	db 20, STARMIE,       63,  66
+	db 60, GOLDUCK,       60,  63
+	db 20, OCTILLERY,     60,  63
+	db 20, STARMIE,       60,  63
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CAVE_B1F
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDUCK,       63,  66
-	db 20, OCTILLERY,     63,  66
-	db 20, STARMIE,       63,  66
+	db 60, GOLDUCK,       60,  63
+	db 20, OCTILLERY,     60,  63
+	db 20, STARMIE,       60,  63
 	end_water_wildmons
 
 	def_water_wildmons SEAFOAM_ISLANDS_B4F
@@ -126,8 +126,8 @@ KantoWaterWildMons:
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
 	db 60, POLIWHIRL,     57,  60
-	db 20, POLIWHIRL,     60,  63
-	db 20, POLIWRATH,     62,  65
+	db 20, POLIWHIRL,     57,  60
+	db 20, POLIWRATH,     57,  60
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_23
@@ -173,9 +173,9 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_28
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, SEADRA,        65,  68
-	db 20, CLOYSTER,      65,  68
-	db 20, LAPRAS,        65,  68
+	db 60, SEADRA,        60,  63
+	db 20, CLOYSTER,      60,  63
+	db 20, LAPRAS,        60,  63
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
@@ -183,7 +183,7 @@ KantoWaterWildMons:
 	;   %, species,		 min, max
 	db 60, TENTACOOL,     56,  58
 	db 20, TENTACOOL,     58,  60
-	db 20, TENTACRUEL,    60,  62
+	db 20, TENTACRUEL,    58,  60
 	end_water_wildmons
 
 	def_water_wildmons VIRIDIAN_CITY
@@ -191,7 +191,7 @@ KantoWaterWildMons:
 	;   %, species,		 min, max
 	db 60, POLIWAG,       56,  58
 	db 20, POLIWAG,       58,  60
-	db 20, POLIWHIRL,     60,  62
+	db 20, POLIWHIRL,     58,  60
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CITY
