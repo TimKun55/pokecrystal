@@ -493,10 +493,9 @@ ENDM
 	map_const ROUTE_2_VIRIDIAN_FOREST_GATE,                 5,  4 ; 13
 	map_const VIRIDIAN_FOREST_ROUTE_2_GATE,                 5,  4 ; 14
 	map_const VIRIDIAN_FOREST_HOUSE,                        4,  4 ; 15
-	map_const VIRIDIAN_FOREST_HOUSE_BF1,                    4,  4 ; 16
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 17
-	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 18
-	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 19
+	map_const VICTORY_ROAD_GATE,                           10,  9 ; 16
+	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 17
+	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 18
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24

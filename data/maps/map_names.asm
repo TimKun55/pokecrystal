@@ -541,10 +541,9 @@ Viridian_Map_Names: ;newgroup VIRIDIAN
 	dw Viridian_Map_Name13 ; map_const ROUTE_2_VIRIDIAN_FOREST_GATE		; 13
 	dw Viridian_Map_Name14 ; map_const VIRIDIAN_FOREST_ROUTE_2_GATE 	; 14
 	dw Viridian_Map_Name15 ; map_const VIRIDIAN_FOREST_HOUSE			; 15
-	dw Viridian_Map_Name16 ; map_const VIRIDIAN_FOREST_HOUSE_BF1		; 16
-	dw Viridian_Map_Name17 ; map_const VICTORY_ROAD_GATE				; 17
-	dw Viridian_Map_Name18 ; map_const ROUTE_26_HEAL_HOUSE				; 18
-	dw Viridian_Map_Name19 ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE		; 19
+	dw Viridian_Map_Name16 ; map_const VICTORY_ROAD_GATE				; 16
+	dw Viridian_Map_Name17 ; map_const ROUTE_26_HEAL_HOUSE				; 17
+	dw Viridian_Map_Name18 ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE		; 18
 	assert_table_length NUM_VIRIDIAN_MAPS
 
 	
@@ -1425,13 +1424,11 @@ Viridian_Map_Name14: ; map_const VIRIDIAN_FOREST_ROUTE_2_GATE ; 14
 	db "VF Route 2 Gate@"
 Viridian_Map_Name15: ; map_const VIRIDIAN_FOREST_HOUSE ; 15
 	db "Forest House@"
-Viridian_Map_Name16: ; map_const VIRIDIAN_FOREST_HOUSE_BF1 ; 16
-	db "Forest House BF1@"
-Viridian_Map_Name17: ; map_const VICTORY_ROAD_GATE, 17
+Viridian_Map_Name16: ; map_const VICTORY_ROAD_GATE, 17
 	db "Victory Road Gate@"
-Viridian_Map_Name18: ; map_const ROUTE_26_HEAL_HOUSE ; 18
+Viridian_Map_Name17: ; map_const ROUTE_26_HEAL_HOUSE ; 18
 	db "Route 26 House@"
-Viridian_Map_Name19: ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE ; 19
+Viridian_Map_Name18: ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE ; 19
 	db "Day Siblings House@"
 
 New_Bark_Map_Name1: ; map_const ROUTE_27,  1

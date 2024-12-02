@@ -719,7 +719,6 @@ ENDM
 	map_attributes Route2ViridianForestGate, ROUTE_2_VIRIDIAN_FOREST_GATE, $00, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $4d, 0
 	map_attributes ViridianForestHouse, VIRIDIAN_FOREST_HOUSE, $00, 0
-	map_attributes ViridianForestHouseBF1, VIRIDIAN_FOREST_HOUSE_BF1, $00, 0
 	map_attributes ViridianForestRoute2Gate, VIRIDIAN_FOREST_ROUTE_2_GATE, $00, 0	
 	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
 	map_attributes VictoryRoadGate, VICTORY_ROAD_GATE, $00, 0

@@ -1654,7 +1654,8 @@
 	const EVENT_VERMILION_GYM_SWITCH_1
 	const EVENT_VERMILION_GYM_SWITCH_2
 	const EVENT_SILPHCO1F_EMPLOYEE
-; Unused: next 92 events
+	const EVENT_GIOVANNI_AT_HOME
+; Unused: next 91 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

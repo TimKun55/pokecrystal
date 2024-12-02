@@ -1,12 +1,14 @@
 	object_const_def
 	const VIRIDIANFORESTHOUSE_ARIANA
+	const VIRIDIANFORESTHOUSE_GIOVANNI
+	const VIRIDIANFORESTHOUSE_BOOK
 
 ViridianForestHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, ViridianForestHouseArianaCallback
-	callback MAPCALLBACK_TILES, ViridianForestHouseStaircaseCallback
+	callback MAPCALLBACK_OBJECTS, ViridianForestHouseGiovanniCallback
 	
 ViridianForestHouseArianaCallback:
 	checkevent EVENT_BEAT_ARIANA_3
@@ -18,13 +20,16 @@ ViridianForestHouseArianaCallback:
 	appear VIRIDIANFORESTHOUSE_ARIANA
 	endcallback
 	
-ViridianForestHouseStaircaseCallback:
-	checkcode VAR_BADGES
-	if_equal 16, .ShowStairs
+ViridianForestHouseGiovanniCallback:
+	readvar VAR_BADGES
+	if_equal 16, .Appear
+	disappear VIRIDIANFORESTHOUSE_GIOVANNI
+	disappear VIRIDIANFORESTHOUSE_BOOK
 	endcallback
 
-.ShowStairs:
-	changeblock 6, 0, $89 ; stairs
+.Appear:
+	appear VIRIDIANFORESTHOUSE_GIOVANNI
+	appear VIRIDIANFORESTHOUSE_BOOK
 	endcallback
 
 ViridianForestHouseAriana:
@@ -38,6 +43,31 @@ ViridianForestHouseAriana:
 	turnobject VIRIDIANFORESTHOUSE_ARIANA, UP
 	end
 	
+ViridianForestHouseGiovanniScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_GIOVANNI
+	iftrue .GotSecretKey
+	writetext GiovanniText_1
+	waitbutton
+	closetext
+	winlosstext GiovanniText_AfterBattle, 0
+	loadtrainer EX_BOSS, GIOVANNI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GIOVANNI
+	opentext
+	writetext GiovanniSecretKeyText
+	promptbutton
+	verbosegiveitem SECRET_KEY
+	setevent EVENT_GOT_SECRET_KEY
+	writetext GiovanniSecretKeySpeech
+	waitbutton
+.GotSecretKey:
+	writetext GiovanniSecretKeyExplainText
+	waitbutton
+	closetext
+	end
 
 ViridianForestHouseBookshelfNotebook:
 	opentext
@@ -55,6 +85,9 @@ ViridianForestHouseBookshelfNotebook:
 .Done:
 	closetext
 	end
+
+ViridianForestHouseGiovannisNotebook:
+	jumptext ViridianForestHouseGiovannisNotebookText
 	
 ViridianForestHouseArianaText:
 	text "Oh, it's you,"
@@ -84,6 +117,106 @@ ViridianForestHouseArianaText:
 	
 	para "thing I have to"
 	line "do here first."
+	done
+
+GiovanniText_1:
+	text "So, you've found"
+	line "my hidden house."
+
+	para "I wanted to live"
+	line "a quiet life and"
+	cont "repent for all my"
+
+	para "past mistakes and"
+	line "failures but it"
+	cont "seems I had"
+	
+	para "some unfinished"
+	line "business."
+
+	para "Once again it"
+	line "is a child"
+
+	para "who has shown me"
+	line "the way and helped"
+	cont "me move forward."
+	
+	para "If it wasn't for"
+	line "you, I wouldn't"
+	cont "have found Archer"
+	
+	para "and the others and"
+	line "resolved the Team."
+
+	para "I know you are"
+	line "a very powerful"
+	cont "trainer."
+	
+	para "Please, battle me."
+	done
+
+GiovanniText_AfterBattle:
+	text "Hahaha! The youth"
+	line "of today really"
+	cont "are amazing!"
+	done
+	
+GiovanniSecretKeyText:
+	text "I think you might"
+	line "be able to use"
+	cont "this item."
+
+	para "Take this."
+	done
+
+Text_ReceivedSecretKey:
+	text "<PLAYER> received"
+	line "the Secret Key."
+	done
+	
+GiovanniSecretKeySpeech:
+	text "That's the Key"
+	line "to the secret"
+	cont "entrance to"
+
+	para "Cerulean Cave I"
+	line "had made."
+	done
+
+GiovanniSecretKeyExplainText:
+	text "There's an empty"
+	line "house in Cerulean."
+	
+	para "Use that Key on"
+	line "the bookshelf to"
+	
+	para "reveal the"
+	line "entrance."
+	
+	para "Seeing how you"
+	line "handle your"
+	cont "#mon it's clear"
+	
+	para "that you are a"
+	line "powerful and"
+	cont "capable trainer."
+	
+	para "I know I can"
+	line "trust you with"
+	cont "this item."
+	
+	para "With this, I feel"
+	line "like I am one step"
+	
+	para "closer to atoning"
+	line "for all my crimes."
+	
+	para "There is still"
+	line "much for me to do."
+	
+	para "But I know I,"
+	line "and the others,"
+	cont "can do it."
 	done
 
 ViridianForestHouseNotebookText:
@@ -152,18 +285,31 @@ ViridianForestHouseNotebookText3:
 	line "cursed with power."
 	done
 
+ViridianForestHouseGiovannisNotebookText:
+	text "Seems to be a list"
+	line "of trainer names."
+	
+	para "Almost all of the"
+	line "names have a tick"
+	cont "next to them."
+	
+	para "It's titled"
+	line "'Amends'"
+	done
+
 ViridianForestHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, VIRIDIAN_FOREST, 3
 	warp_event  3,  7, VIRIDIAN_FOREST, 3
-	warp_event  7,  1, VIRIDIAN_FOREST_HOUSE_BF1, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  1, BGEVENT_READ, ViridianForestHouseBookshelfNotebook
+	bg_event  7,  1, BGEVENT_READ, ViridianForestHouseBookshelfNotebook
 
 	def_object_events
 	object_event  3,  1, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseAriana, EVENT_REPENTING_ROCKETS	
+	object_event  5,  4, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseGiovanniScript, EVENT_GIOVANNI_AT_HOME
+	object_event  6,  7, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestHouseGiovannisNotebook, EVENT_GIOVANNI_AT_HOME

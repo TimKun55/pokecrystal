@@ -138,7 +138,7 @@
 	tilecoll WALL, WALL, BOOKSHELF, LADDER ; 89
 	tilecoll WALL, WINDOW, PC, FLOOR ; 8a
 	tilecoll WALL, WALL, WALL, WALL ; 8b
-	tilecoll WALL, WALL, BOOKSHELF, FLOOR ; 8c
+	tilecoll FLOOR, WALL, WALL, WALL ; 8c
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8e
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 8f

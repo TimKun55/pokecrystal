@@ -943,9 +943,6 @@ ViridianForest_Blocks:
 ViridianForestHouse_Blocks:
 	INCBIN "maps/ViridianForestHouse.ablk"
 
-ViridianForestHouseBF1_Blocks:
-	INCBIN "maps/ViridianForestHouseBF1.ablk"
-	
 IndigoPlateau_Blocks:
 	INCBIN "maps/IndigoPlateau.ablk"
 	

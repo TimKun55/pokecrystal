@@ -500,7 +500,6 @@ INCLUDE "maps/MahoganyMoveTutorHouse.asm"
 INCLUDE "maps/Route2ViridianForestGate.asm"
 INCLUDE "maps/ViridianForest.asm"
 INCLUDE "maps/ViridianForestHouse.asm"
-INCLUDE "maps/ViridianForestHouseBF1.asm"
 INCLUDE "maps/ViridianForestRoute2Gate.asm"
 INCLUDE "maps/CianwoodMoveTutorHouse.asm"
 
