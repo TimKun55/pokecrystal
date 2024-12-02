@@ -242,6 +242,24 @@ LeaderBlueAfterText:
 
 	para "Don't you forget"
 	line "it!"
+	
+	para "… … …"
+	
+	para "Oh, now that you"
+	line "have all 8 Kanto"
+	cont "Badges, if you"
+	
+	para "challenge the"
+	line "Elite Four again,"
+	
+	para "they'll use their"
+	line "full power."
+	
+	para "I doubt you can"
+	line "beat them, though."
+	
+	para "Also, go see"
+	line "Gramps in Pallet."
 	done
 
 LeaderBlueEpilogueText:
@@ -254,7 +272,7 @@ LeaderBlueEpilogueText:
 	
 BlueRematchIntroText:
 	text "Oh, <PLAYER>,"
-	line "you're back!"
+	line "you're back."
 	
 	para "Feel like having"
 	line "a rematch?"
@@ -268,10 +286,6 @@ BlueRematchAfterBattleText:
 	text "You're still strong"
 	line "but I'll beat you"
 	cont "next time."
-	
-	para "Feel free to"
-	line "come back for"
-	cont "a rematch!"
 	done
 	
 BlueNextTimeText:

@@ -136,11 +136,15 @@ OakOpenMtSilverText:
 	line "exception in your"
 	cont "case, <PLAY_G>."
 
-	para "Go up to Indigo"
-	line "Plateau. You can"
-
-	para "reach Mt.Silver"
-	line "from there."
+	para "Go west from"
+	line "Viridian City,"
+	
+	para "pass through the"
+	line "Victory Road Gate,"
+	
+	para "still heading west"
+	line "and you'll reach"
+	cont "Mt.Silver."
 	done
 
 OakNoKantoBadgesText:
@@ -211,9 +215,6 @@ OaksAssistant3Text:
 OaksPokedexText:
 	text "This is Prof.Oak's"
 	line "#dex."
-	
-	para "Just like the"
-	line "one he gave me"
 	done
 
 OaksLabPoster1Text:
