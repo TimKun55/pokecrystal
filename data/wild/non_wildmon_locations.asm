@@ -98,16 +98,16 @@ CelebiEvent_Str:
 	next "find the GS Ball."
 	next "Offer to Shrine.@"
 LugiaEvent_Str:
-	db 	 "Silver Wing, dull"
-	next "PEWTER sheen. Mis-"
-	next "placed as memento.@"
+	db 	 "Silver Wing, from"
+	next "elder after Three"
+	next "powerful Birds.@"
 HoOhEvent_Str:
-	db 	 "Rainbow Wing best-"
-	next "owed to Trainers"
-	next "after FOUR trials.@"
+	db 	 "Rainbow Wing given"
+	next "after Four trials"
+	next "and Three Beasts.@"
 ArticunoEvent_Str:
  	db 	 "Defeat a Prima."
- 	next "Nest is East."
+ 	next "Nest is South."
  	next "Lvl 70.@"
 ZapdosEvent_Str:
  	db 	 "Defeat a Veteran."
