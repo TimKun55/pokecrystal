@@ -25,10 +25,10 @@ DEF prob_total = 0
 	prob 12
 	prob 2
 ; Chansey
-	prob 12
+	prob 13
 	prob 2
 ; Tyrogue
-	prob 12
+	prob 13
 	prob 2
 	assert_table_length NUM_ODD_EggS
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
