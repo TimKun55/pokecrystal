@@ -241,6 +241,9 @@ SECTION "Tileset Data 8", ROMX
 TilesetCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin"
 
+TilesetDarkCaveAttr::
+INCBIN "data/tilesets/dark_cave_attributes.bin"
+
 
 SECTION "Tileset Data 9", ROMX
 
@@ -490,9 +493,6 @@ INCBIN "data/tilesets/dark_cave_metatiles.bin"
 
 TilesetDarkCaveColl::
 INCLUDE "data/tilesets/dark_cave_collision.asm"
-
-TilesetDarkCaveAttr::
-INCBIN "data/tilesets/dark_cave_attributes.bin"
 
 TilesetKanto5Meta::
 INCBIN "data/tilesets/kanto_5_metatiles.bin"

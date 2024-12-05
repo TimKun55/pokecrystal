@@ -90,6 +90,9 @@ Lugia:
 .nocatch
 	end
 
+LugiaStatueSign:
+	jumptext LugiaStatueSignText
+
 SilverWingGlimmerText:
 	text "?!"
 	
@@ -107,17 +110,25 @@ LugiaText:
 	text "Gyaaas!"
 	done
 
+LugiaStatueSignText:
+	text "A statue dedicated"
+	line "to the Diving"
+	cont "#mon."
+	done
+
 WhirlIslandLugiaChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 23, WHIRL_ISLAND_B2F, 3
+	warp_event  9, 21, WHIRL_ISLAND_B2F, 3
 
 	def_coord_events
-	coord_event  9, 19, SCENE_WHIRLISLANDLUGIACHAMBER_SILVER_WING_CHECK, WhirlIslandLugiaChamberSilverWingCheck
-	coord_event  9, 13, SCENE_WHIRLISLANDLUGIACHAMBER_LUGIA_APPEAR, WhirlIslandLugiaChamberLugiaAppear
+	coord_event  9, 17, SCENE_WHIRLISLANDLUGIACHAMBER_SILVER_WING_CHECK, WhirlIslandLugiaChamberSilverWingCheck
+	coord_event  9, 11, SCENE_WHIRLISLANDLUGIACHAMBER_LUGIA_APPEAR, WhirlIslandLugiaChamberLugiaAppear
 
 	def_bg_events
+	bg_event  8, 15, BGEVENT_READ, LugiaStatueSign
+	bg_event  9, 15, BGEVENT_READ, LugiaStatueSign
 
 	def_object_events
-	object_event  8,  7, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
+	object_event  8,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
