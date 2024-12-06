@@ -1401,6 +1401,8 @@ LoadTilesetGFX::
 	jr z, .load_roof
 	cp TILESET_JOHTO_4
 	jr z, .load_roof
+	cp TILESET_JOHTO_5
+	jr z, .load_roof
 	cp TILESET_JOHTO_MODERN
 	jr z, .load_roof
 	jr .skip_roof

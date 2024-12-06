@@ -279,36 +279,36 @@ VioletCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 17, VIOLET_MART, 2
-	warp_event 18, 17, VIOLET_GYM, 1
-	warp_event 30, 17, EARLS_POKEMON_ACADEMY, 1
-	warp_event  3, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
-	warp_event 31, 25, VIOLET_POKECENTER_1F, 1
-	warp_event 21, 29, VIOLET_KYLES_HOUSE, 1
-	warp_event 11, 23, VIOLET_PRIMOS_HOUSE, 1
+	warp_event  9, 21, VIOLET_MART, 2
+	warp_event 18, 21, VIOLET_GYM, 1
+	warp_event 30, 21, EARLS_POKEMON_ACADEMY, 1
+	warp_event  3, 19, VIOLET_NICKNAME_SPEECH_HOUSE, 1
+	warp_event 31, 29, VIOLET_POKECENTER_1F, 1
+	warp_event 21, 33, VIOLET_KYLES_HOUSE, 1
+	warp_event 11, 27, VIOLET_PRIMOS_HOUSE, 1
 	warp_event 23,  5, SPROUT_TOWER_1F, 1
-	warp_event 39, 24, ROUTE_31_VIOLET_GATE, 1
-	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
-	warp_event  0,  8, ROUTE_36_VIOLET_GATE, 3
-	warp_event  0,  9, ROUTE_36_VIOLET_GATE, 4
+	warp_event 39, 28, ROUTE_31_VIOLET_GATE, 1
+	warp_event 39, 29, ROUTE_31_VIOLET_GATE, 2
+	warp_event  0, 12, ROUTE_36_VIOLET_GATE, 3
+	warp_event  0, 13, ROUTE_36_VIOLET_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 20, BGEVENT_READ, VioletCitySign
-	bg_event 16, 17, BGEVENT_READ, VioletGymSign
+	bg_event 24, 24, BGEVENT_READ, VioletCitySign
+	bg_event 16, 21, BGEVENT_READ, VioletGymSign
 	bg_event 22,  6, BGEVENT_READ, SproutTowerSign
-	bg_event 27, 17, BGEVENT_READ, EarlsPokemonAcademySign
-	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
-	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event 27, 21, BGEVENT_READ, EarlsPokemonAcademySign
+	bg_event 32, 29, BGEVENT_READ, VioletCityPokecenterSign
+	bg_event 10, 21, BGEVENT_READ, VioletCityMartSign
+	bg_event 37, 18, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	def_object_events
-	object_event 14, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
-	object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1
-	object_event 25, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
-	object_event 21, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
-	object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
-	object_event 17, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
-	object_event  4,  1, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
-	object_event 35,  5, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event 14, 20, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
+	object_event 28, 32, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1
+	object_event 21, 24, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
+	object_event 22, 13, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
+	object_event  5, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
+	object_event 17, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
+	object_event 11,  5, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
+	object_event 36, 12, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY

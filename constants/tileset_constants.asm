@@ -40,6 +40,7 @@
 	const TILESET_KANTO_5              ; 27
 	const TILESET_KANTO_6              ; 28
 	const TILESET_JOHTO_RUINS          ; 29
+	const TILESET_JOHTO_5              ; 2a
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

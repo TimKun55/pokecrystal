@@ -244,6 +244,15 @@ INCBIN "data/tilesets/cave_metatiles.bin"
 TilesetDarkCaveAttr::
 INCBIN "data/tilesets/dark_cave_attributes.bin"
 
+TilesetJohto5Meta::
+INCBIN "data/tilesets/johto_5_metatiles.bin"
+
+TilesetJohto5Coll::
+INCLUDE "data/tilesets/johto_5_collision.asm"
+
+TilesetJohto5Attr::
+INCBIN "data/tilesets/johto_5_attributes.bin"
+
 
 SECTION "Tileset Data 9", ROMX
 
@@ -565,3 +574,6 @@ INCBIN "data/tilesets/johto_ruins_attributes.bin"
 
 TilesetTrainStationAttr::
 INCBIN "data/tilesets/train_station_attributes.bin"
+
+TilesetJohto5GFX::
+INCBIN "gfx/tilesets/johto_5.2bpp.lz"

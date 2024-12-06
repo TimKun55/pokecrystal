@@ -268,7 +268,7 @@ EcruteakCity_MapEvents:
 	bg_event 24, 39, BGEVENT_READ, EcruteakCityPokecenterSign
 	bg_event 30, 33, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 34, 14, BGEVENT_READ, TinTowerSign
-	bg_event 16, 22, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
+	bg_event 15, 20, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
 
 	def_object_events
 	object_event 18, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
