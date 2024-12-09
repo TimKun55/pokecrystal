@@ -309,8 +309,8 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS2_DAISYS_GROOMING_F                   ; 3
 	const DAILYFLAGS2_INDIGO_PLATEAU_RIVAL_FIGHT_F        ; 4
 	const DAILYFLAGS2_BUENAS_PASSWORD_F                   ; 5
-	const DAILYFLAGS2_MOVE_TUTOR_F                        ; 6
-	const DAILYFLAGS2_DAILY_UNUSED_1_F                    ; 7
+	const DAILYFLAGS2_DAILY_UNUSED_1_F                    ; 6
+	const DAILYFLAGS2_DAILY_UNUSED_2_F                    ; 7
 
 ; wSwarmFlags::
 	const_def
