@@ -36,7 +36,7 @@ MtSilverOutside_MapEvents:
 	def_bg_events
 	bg_event 24, 13, BGEVENT_READ, MtSilverPokecenterSign
 	bg_event 17,  7, BGEVENT_READ, MtSilverSign
-	bg_event 10, 19, BGEVENT_ITEM, MtSilverOutsideHiddenFullRestore
+	bg_event  9, 19, BGEVENT_ITEM, MtSilverOutsideHiddenFullRestore
 
 	def_object_events
 	object_event 30,  9, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtSilverOutsideBigNugget, EVENT_MT_SILVER_OUTSIDE_BIG_NUGGET
