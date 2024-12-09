@@ -1,8 +1,6 @@
 	object_const_def
 	const SAFFRONAVICULTURALSOCIETY3F_BIRD_KEEPER
 	const SAFFRONAVICULTURALSOCIETY3F_GRAMPS
-	const SAFFRONAVICULTURALSOCIETY3F_LORELEI
-	const SAFFRONAVICULTURALSOCIETY3F_AGATHA
 	const SAFFRONAVICULTURALSOCIETY3F_ARTICUNO_STATUE
 	const SAFFRONAVICULTURALSOCIETY3F_ZAPDOS_STATUE
 	const SAFFRONAVICULTURALSOCIETY3F_MOLTRES_STATUE
@@ -11,28 +9,6 @@ SaffronAviculturalSociety3F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, AviculturalSocietyLoreleiCallback
-	callback MAPCALLBACK_OBJECTS, AviculturalSocietyAgathaCallback
-
-AviculturalSocietyLoreleiCallback:
-	checkevent EVENT_BEAT_GUARDIAN_LORELEI
-	iftrue .Appear
-	disappear SAFFRONAVICULTURALSOCIETY3F_LORELEI
-	endcallback
-
-.Appear:
-	appear SAFFRONAVICULTURALSOCIETY3F_LORELEI
-	endcallback
-	
-AviculturalSocietyAgathaCallback:
-	checkevent EVENT_BEAT_GUARDIAN_AGATHA
-	iftrue .Appear
-	disappear SAFFRONAVICULTURALSOCIETY3F_AGATHA
-	endcallback
-
-.Appear:
-	appear SAFFRONAVICULTURALSOCIETY3F_AGATHA
-	endcallback
 
 AviculturalSocietyGrampsScript:
 	faceplayer
@@ -53,52 +29,6 @@ AviculturalSocietyGrampsScript:
 	setevent EVENT_GOT_SILVER_WING
 .GotSilverWing:
 	writetext AviculturalSocietyGrampsSilverWingText
-	waitbutton
-	closetext
-	end
-
-AviculturalSocietyLoreleiScript:
-	faceplayer
-	opentext
-	writetext LoreleiRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext LoreleiWinLossRematchText, 0
-	loadtrainer LORELEI, LORELEI2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext LoreleiRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-.EndRematch
-	writetext LoreleiNextTimeText
-	waitbutton
-	closetext
-	end
-
-AviculturalSocietyAgathaScript:
-	faceplayer
-	opentext
-	writetext AgathaRematchIntroText
-	yesorno
-	iffalse .EndRematch
-	closetext
-	winlosstext AgathaWinLossRematchText, 0
-	loadtrainer AGATHA, AGATHA2
-	startbattle
-	reloadmapafterbattle
-	opentext
-	writetext AgathaRematchAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-.EndRematch
-	writetext AgathaNextTimeText
 	waitbutton
 	closetext
 	end
@@ -215,64 +145,6 @@ AviculturalSocietyGrampsSilverWingText:
 	cont "Lugia."
 	done	
 
-LoreleiRematchIntroText:
-	text "Ah, you're here."
-	
-	para "Shall we have"
-	line "our rematch?"
-	done
-
-LoreleiWinLossRematchText:
-	text "Still powerful."
-	done
-
-LoreleiRematchAfterBattleText:
-	text "I'm happy to see"
-	line "you're still"
-	cont "training so"
-	cont "seriously."
-	done
-
-LoreleiNextTimeText:
-	text "Hmm, maybe"
-	line "next time, then."
-	done
-
-AgathaRematchIntroText:
-	text "Ah, you're here,"
-	line "<PLAYER>."
-	
-	para "Are you prepared"
-	line "for our rematch?"
-	done
-
-AgathaWinLossRematchText:
-	text "I lost again."
-	done
-
-AgathaRematchAfterBattleText:
-	text "It may sound odd,"
-	line "but I'm almost"
-	cont "glad I lost;"
-	
-	para "It shows you're"
-	line "continuing your"
-	cont "training."
-	
-	para "Unlike a certain"
-	line "Professor…"
-	
-	para "Anyway, keep"
-	line "it up."
-	done
-
-AgathaNextTimeText:
-	text "Oh?"
-	
-	para "It's OK to be"
-	line "afraid."
-	done
-
 ArticunoStatueText:
 	text "An extremely det-"
 	line "ailed statue of"
@@ -339,8 +211,6 @@ SaffronAviculturalSociety3F_MapEvents:
 
 	def_object_events
 	object_event  6,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyGrampsScript, -1
-	object_event  2,  1, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyLoreleiScript, EVENT_LORELEI_IN_SAFFRON
-	object_event 11,  1, SPRITE_AGATHA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyAgathaScript, EVENT_AGATHA_IN_SAFFRON
 	object_event  5,  7, SPRITE_ARTICUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ArticunoStatueScript, -1
 	object_event  7,  7, SPRITE_ZAPDOS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, ZapdosStatueScript, -1
 	object_event  9,  7, SPRITE_MOLTRES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, MoltresStatueScript, -1

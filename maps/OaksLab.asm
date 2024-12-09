@@ -9,6 +9,20 @@ OaksLab_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, OaksLabOakCallback
+
+OaksLabOakCallback:
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .OakInLab
+	readvar VAR_WEEKDAY
+	ifequal FRIDAY, .OakNotInLab
+.OakInLab:
+	appear OAKSLAB_OAK
+	endcallback
+
+.OakNotInLab:
+	disappear OAKSLAB_OAK
+	endcallback
 
 Oak:
 	faceplayer
@@ -145,6 +159,16 @@ OakOpenMtSilverText:
 	para "still heading west"
 	line "and you'll reach"
 	cont "Mt.Silver."
+	
+	para "Watching your"
+	line "amazing progress"
+	
+	para "makes me feel like"
+	line "getting out of the"
+	
+	para "Lab for a bit, and"
+	line "start up my"
+	cont "training again!"
 	done
 
 OakNoKantoBadgesText:
@@ -283,7 +307,7 @@ OaksLab_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, OaksLabPC
 
 	def_object_events
-	object_event  4,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Oak, -1
+	object_event  4,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Oak, EVENT_OAK_IN_LAB
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
 	object_event  1,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant3Script, -1

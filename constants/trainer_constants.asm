@@ -87,15 +87,15 @@ DEF KRIS EQU __trainer_class__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
+	const OAK
 
 	trainerclass WILL ; b
 	const WILL1
 	const WILL2
 
 	trainerclass CAL ; c
-	const CAL1 ; unused
+	const CAL1
 	const CAL2
-	const CAL3
 
 	trainerclass BRUNO ; d
 	const BRUNO1
