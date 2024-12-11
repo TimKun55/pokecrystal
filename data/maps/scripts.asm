@@ -261,14 +261,14 @@ INCLUDE "maps/IndigoPlateauPokecenter1F.asm"
 INCLUDE "maps/WillsRoom.asm"
 INCLUDE "maps/KogasRoom.asm"
 INCLUDE "maps/BrunosRoom.asm"
-INCLUDE "maps/KarensRoom.asm"
-INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
-INCLUDE "maps/FightingDojo.asm"
+INCLUDE "maps/SilphCo1F.asm"
 
 
 SECTION "Map Scripts 14", ROMX
 
+INCLUDE "maps/KarensRoom.asm"
+INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/CeruleanCity.asm"
 INCLUDE "maps/SproutTower1F.asm"
 INCLUDE "maps/SproutTower2F.asm"
@@ -284,7 +284,6 @@ INCLUDE "maps/TinTower8F.asm"
 INCLUDE "maps/TinTower9F.asm"
 INCLUDE "maps/BurnedTower1F.asm"
 INCLUDE "maps/BurnedTowerB1F.asm"
-INCLUDE "maps/SilphCo1F.asm"
 INCLUDE "maps/ViridianGym.asm"
 
 
@@ -356,6 +355,7 @@ INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
+INCLUDE "maps/FightingDojo.asm"
 
 
 SECTION "Map Scripts 18", ROMX

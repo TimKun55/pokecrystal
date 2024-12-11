@@ -110,7 +110,7 @@ DEF KRIS EQU __trainer_class__
 	const KOGA2
 
 	trainerclass CHAMPION ; 10
-	const LANCE
+	const LANCE1
 	const LANCE2
 
 	trainerclass BROCK ; 11

@@ -20,10 +20,29 @@ HallOfFameEnterScript:
 	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
 	stopfollow
 	turnobject PLAYER, RIGHT
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .FirstTimeChampion
+	readvar VAR_BADGES
+	ifequal 16, .GrandChampionHoF
+	opentext
+	writetext HallOfFame_LanceRegisterText
+	waitbutton
+	closetext
+	sjump .ContinueHoF
+
+.GrandChampionHoF
+	opentext
+	writetext HallOfFame_LanceGrandChampionText
+	waitbutton
+	closetext
+	sjump .ContinueHoF
+	
+.FirstTimeChampion
 	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
+.ContinueHoF
 	turnobject HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
 	setscene SCENE_HALLOFFAME_NOOP
@@ -113,6 +132,50 @@ HallOfFame_LanceText:
 
 	para "and your partners"
 	line "as Champions!"
+	done
+
+HallOfFame_LanceRegisterText:
+	text "As you know,"
+	line "this is where we"
+	cont "honor the League"
+
+	para "Champions for all"
+	line "eternity."
+
+	para "Their courageous"
+	line "#mon are also"
+	cont "inducted."
+
+	para "<PLAY_G>, allow me"
+	line "to register you"
+
+	para "and your partners"
+	line "as Champions!"
+	done
+
+HallOfFame_LanceGrandChampionText:
+	text "Grand Champion"
+	line "<PLAYER>."
+
+	para "As you know,"
+	line "this is where we"
+	cont "honor the League"
+
+	para "Champions for all"
+	line "eternity."
+
+	para "Their courageous"
+	line "#mon are also"
+	cont "inducted."
+	
+	para "It is with great"
+	line "pride that I"
+	
+	para "register you and"
+	line "your partners as"
+	cont "Grand Champions!"
+	
+	para "Congratulations!"
 	done
 
 HallOfFame_MapEvents:

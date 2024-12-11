@@ -41,26 +41,30 @@ BrunosRoomDoorLocksBehindYouScript:
 	waitsfx
 	end
 
-BrunoScript_Battle:
+BrunoBattle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
-	iftrue BrunoScript_AfterBattle
-	writetext BrunoScript_BrunoBeforeText
+	iftrue BrunoAfterBattle
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .BrunoGrandChampionMatch
+	readvar VAR_BADGES
+	ifequal 16, .Bruno16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BrunoChampionMatch
+	writetext BrunoBeforeText
 	waitbutton
 	closetext
-	winlosstext BrunoScript_BrunoBeatenText, 0
-	readvar VAR_BADGES
-	ifequal 16, .BrunoScript_16Badges
+	winlosstext BrunoBeatenText, 0
 	loadtrainer BRUNO, BRUNO1
 	startbattle
 	reloadmapafterbattle
-.AfterBattle:
-	setevent EVENT_BEAT_ELITE_4_BRUNO
 	opentext
-	writetext BrunoScript_BrunoDefeatText
+	writetext BrunoDefeatText
 	waitbutton
 	closetext
+.AfterBattle:
+	setevent EVENT_BEAT_ELITE_4_BRUNO
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
@@ -69,14 +73,68 @@ BrunoScript_Battle:
 	waitsfx
 	end
 
-.BrunoScript_16Badges:
+.BrunoChampionMatch:
+	writetext BrunoChampionMatchBeforeText
+	waitbutton
+	closetext
+	winlosstext BrunoChampionMatchBeatenText, 0
+	loadtrainer BRUNO, BRUNO1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BrunoChampionMatchDefeatText
+	waitbutton
+	closetext
+	sjump .AfterBattle
+
+.Bruno16Badges:
+	writetext Bruno16BadgesBeforeText
+	waitbutton
+	closetext
+	winlosstext Bruno16BadgesBeatenText, 0
 	loadtrainer BRUNO, BRUNO2
 	startbattle
 	reloadmapafterbattle
+	opentext
+	writetext Bruno16BadgesDefeatText
+	waitbutton
+	closetext
 	sjump .AfterBattle
 
-BrunoScript_AfterBattle:
-	writetext BrunoScript_BrunoDefeatText
+.BrunoGrandChampionMatch:
+	writetext BrunoGrandChampionBeforeText
+	waitbutton
+	closetext
+	winlosstext BrunoGrandChampionBeatenText, 0
+	loadtrainer BRUNO, BRUNO2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BrunoGrandChampionDefeatText
+	waitbutton
+	closetext
+	sjump .AfterBattle
+
+BrunoAfterBattle:
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .BrunoGrandChampionAfter
+	readvar VAR_BADGES
+	ifequal 16, .BrunoChampionMatchAfter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BrunoChampionMatchAfter
+	writetext BrunoDefeatText
+	waitbutton
+	closetext
+	end
+
+.BrunoGrandChampionAfter:
+	writetext BrunoGrandChampionDefeatText
+	waitbutton
+	closetext
+	end
+
+.BrunoChampionMatchAfter:
+	writetext BrunoChampionMatchDefeatText
 	waitbutton
 	closetext
 	end
@@ -100,7 +158,7 @@ BrunosRoom_EnterMovement:
 	step UP
 	step_end
 
-BrunoScript_BrunoBeforeText:
+BrunoBeforeText:
 	text "I am Bruno of the"
 	line "Elite Four."
 
@@ -130,18 +188,92 @@ BrunoScript_BrunoBeforeText:
 	para "Hoo hah!"
 	done
 
-BrunoScript_BrunoBeatenText:
+BrunoBeatenText:
 	text "Why? How could we"
 	line "lose?"
 	done
 
-BrunoScript_BrunoDefeatText:
+BrunoDefeatText:
 	text "Having lost, I"
 	line "have no right to"
 	cont "say anything…"
 
 	para "Go face your next"
 	line "challenge!"
+	done
+
+BrunoChampionMatchBeforeText:
+	text "You've returned,"
+	line "Champion <PLAYER>."
+	
+	para "Let's battle"
+	line "again!"
+
+	para "Hoo hah!"
+	done
+
+BrunoChampionMatchBeatenText:
+	text "We lost again!"
+	done
+
+BrunoChampionMatchDefeatText:
+	text "It's clear we need"
+	line "more training."
+	done
+
+Bruno16BadgesBeforeText:
+	text "Welcome back,"
+	line "Champion <PLAYER>."
+	
+	para "Oh, You have all"
+	line "8 Kanto Badges!"
+	
+	para "I need not hold"
+	line "back anymore!"
+	
+	para "Hoo hah!"
+	done
+
+Bruno16BadgesBeatenText:
+	text "Another defeat."
+	done
+
+Bruno16BadgesDefeatText:
+	text "You are quite the"
+	line "capable person."
+	
+	para "It's good to see"
+	line "one as young as"
+	
+	para "you devoted to"
+	line "their training."
+	
+	para "Go on. Show your"
+	line "progress to"
+	cont "the others."
+	done
+
+BrunoGrandChampionBeforeText:
+	text "Grand Champion,"
+	line "<PLAYER>."
+	
+	para "Welcome back."
+	
+	para "We shall have our"
+	line "greatest battle."
+	
+	para "Hoo hah!"
+	done
+
+BrunoGrandChampionBeatenText:
+	text "Hoo hahahaha!"
+	line "You're too good!"
+	done
+
+BrunoGrandChampionDefeatText:
+	text "I expected nothing"
+	line "less from one of"
+	cont "the best trainers!"
 	done
 	
 MachampText:
@@ -163,5 +295,5 @@ BrunosRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1
+	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoBattle, -1
 	object_event  4,  7, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, BrunosRoomMachamp, -1

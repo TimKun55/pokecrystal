@@ -41,26 +41,30 @@ WillsRoomDoorLocksBehindYouScript:
 	waitsfx
 	end
 
-WillScript_Battle:
+WillBattle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
-	iftrue WillScript_AfterBattle
-	writetext WillScript_WillBeforeText
+	iftrue WillAfterBattle
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .WillGrandChampionMatch
+	readvar VAR_BADGES
+	ifequal 16, .Will16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .WillChampionMatch
+	writetext WillBeforeText
 	waitbutton
 	closetext
-	winlosstext WillScript_WillBeatenText, 0
-	readvar VAR_BADGES
-	ifequal 16, .WillScript_16Badges	
+	winlosstext WillBeatenText, 0
 	loadtrainer WILL, WILL1
 	startbattle
 	reloadmapafterbattle
-.AfterBattle
-	setevent EVENT_BEAT_ELITE_4_WILL
 	opentext
-	writetext WillScript_WillDefeatText
+	writetext WillDefeatText
 	waitbutton
 	closetext
+.AfterBattle
+	setevent EVENT_BEAT_ELITE_4_WILL
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart
@@ -68,15 +72,69 @@ WillScript_Battle:
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	waitsfx
 	end
-	
-.WillScript_16Badges:
+
+.WillChampionMatch:
+	writetext WillChampionMatchBeforeText
+	waitbutton
+	closetext
+	winlosstext WillChampionMatchBeatenText, 0
+	loadtrainer WILL, WILL1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext WillChampionMatchDefeatText
+	waitbutton
+	closetext
+	sjump .AfterBattle
+
+.Will16Badges:
+	writetext Will16BadgesBeforeText
+	waitbutton
+	closetext
+	winlosstext Will16BadgesBeatenText, 0
 	loadtrainer WILL, WILL2
 	startbattle
 	reloadmapafterbattle
+	opentext
+	writetext Will16BadgesDefeatText
+	waitbutton
+	closetext
 	sjump .AfterBattle
 
-WillScript_AfterBattle:
-	writetext WillScript_WillDefeatText
+.WillGrandChampionMatch:
+	writetext WillGrandChampionBeforeText
+	waitbutton
+	closetext
+	winlosstext WillGrandChampionBeatenText, 0
+	loadtrainer WILL, WILL2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext WillGrandChampionDefeatText
+	waitbutton
+	closetext
+	sjump .AfterBattle
+
+WillAfterBattle:
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .WillGrandChampionAfter
+	readvar VAR_BADGES
+	ifequal 16, .WillChampionMatchAfter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .WillChampionMatchAfter
+	writetext WillDefeatText
+	waitbutton
+	closetext
+	end
+
+.WillGrandChampionAfter:
+	writetext WillGrandChampionDefeatText
+	waitbutton
+	closetext
+	end
+
+.WillChampionMatchAfter:
+	writetext WillChampionMatchDefeatText
 	waitbutton
 	closetext
 	end
@@ -100,7 +158,7 @@ WillsRoom_EnterMovement:
 	step UP
 	step_end
 
-WillScript_WillBeforeText:
+WillBeforeText:
 	text "Welcome to #mon"
 	line "League, <PLAYER>."
 
@@ -125,12 +183,12 @@ WillScript_WillBeforeText:
 	line "option!"
 	done
 
-WillScript_WillBeatenText:
+WillBeatenText:
 	text "I… I can't…"
 	line "believe it…"
 	done
 
-WillScript_WillDefeatText:
+WillDefeatText:
 	text "Even though I was"
 	line "defeated, I won't"
 	cont "change my course."
@@ -146,6 +204,80 @@ WillScript_WillDefeatText:
 
 	para "the true ferocity"
 	line "of the Elite Four."
+	done
+
+WillChampionMatchBeforeText:
+	text "Welcome back,"
+	line "Champion <PLAYER>."
+	
+	para "Here for another"
+	line "run through?"
+	
+	para "I'll gladly battle"
+	line "you again!"
+	done
+
+WillChampionMatchBeatenText:
+	text "Another loss!"
+	done
+
+WillChampionMatchDefeatText:
+	text "My #mon and I"
+	line "will keep aiming"
+	cont "for the top!"
+	done
+
+Will16BadgesBeforeText:
+	text "Welcome back,"
+	line "Champion <PLAYER>."
+	
+	para "Here for another"
+	line "run through?"
+	
+	para "You have all 8"
+	line "Kanto Badges, too?"
+	
+	para "Wow! I guess I'd"
+	line "better not hold"
+	cont "back anymore!"
+	
+	para "Let's go!"
+	done
+
+Will16BadgesBeatenText:
+	text "Yet another loss!"
+	done
+
+Will16BadgesDefeatText:
+	text "I can see why"
+	line "you were able to"
+	
+	para "collect all the"
+	line "Kanto Badges!"
+	
+	para "Go on and show"
+	line "your progress to"
+	cont "the others!"
+	done
+
+WillGrandChampionBeforeText:
+	text "Grand Champion,"
+	line "<PLAYER>!"
+	
+	para "It's an honour to"
+	line "battle you again!"
+	
+	para "Let's go!"
+	done
+
+WillGrandChampionBeatenText:
+	text "Ahh, another loss!"
+	done
+
+WillGrandChampionDefeatText:
+	text "You really have"
+	line "become one of the"
+	cont "best trainers!"
 	done
 	
 XatuText:
@@ -167,5 +299,5 @@ WillsRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
+	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WillBattle, -1
 	object_event  4,  7, SPRITE_XATU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WillsRoomXatu, -1

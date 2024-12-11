@@ -53,16 +53,51 @@ Script_ApproachLanceFromRight:
 LancesRoomLanceScript:
 	turnobject LANCESROOM_LANCE, LEFT
 	turnobject LANCESROOM_DRAGONITE, LEFT
-	opentext
+	opentext	
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .LanceGrandChampionMatch
+	readvar VAR_BADGES
+	ifequal 16, .Lance16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .LanceChampionMatch
 	writetext LanceBattleIntroText
 	waitbutton
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	readvar VAR_BADGES
-	ifequal 16, .LanceScript_16Badges
-	loadtrainer CHAMPION, LANCE
+	loadtrainer CHAMPION, LANCE1
 	startbattle	
+	dontrestartmapmusic
+	sjump .AfterBattle
+
+.LanceChampionMatch:
+	writetext LanceChampionBattleIntroText
+	waitbutton
+	closetext
+	winlosstext LanceChampionBattleWinText, 0
+	setlasttalked LANCESROOM_LANCE
+	loadtrainer CHAMPION, LANCE1
+	startbattle	
+	dontrestartmapmusic
+	sjump .AfterBattle
+
+.Lance16Badges:
+	writetext Lance16BadgesBattleIntroText
+	waitbutton
+	closetext
+	winlosstext LanceChampionBattleWinText, 0
+	loadtrainer CHAMPION, LANCE2
+	startbattle
+	dontrestartmapmusic
+	sjump .AfterBattle
+
+.LanceGrandChampionMatch:
+	writetext LanceGrandChampionBattleIntroText
+	waitbutton
+	closetext
+	winlosstext LanceChampionBattleWinText, 0
+	loadtrainer CHAMPION, LANCE2
+	startbattle
 	dontrestartmapmusic
 .AfterBattle:
 	disappear LANCESROOM_DRAGONITE
@@ -77,6 +112,60 @@ LancesRoomLanceScript:
 	reloadmappart
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .FirstTimeChampion
+	readvar VAR_BADGES
+	ifequal 16, .Champion16BadgesAfter
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .GrandChampionAfter
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	writetext LanceLetsRegister
+	waitbutton
+	closetext
+	follow LANCESROOM_LANCE, PLAYER
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear LANCESROOM_LANCE
+	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	warpfacing UP, HALL_OF_FAME, 4, 13
+	end
+
+.Champion16BadgesAfter:
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	writetext LanceGrandChampFirstTime
+	waitbutton
+	closetext
+	follow LANCESROOM_LANCE, PLAYER
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear LANCESROOM_LANCE
+	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	warpfacing UP, HALL_OF_FAME, 4, 13
+	end
+
+.GrandChampionAfter:
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	writetext LanceLetsRegisterGrandChamp
+	waitbutton
+	closetext
+	follow LANCESROOM_LANCE, PLAYER
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear LANCESROOM_LANCE
+	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
+	warpfacing UP, HALL_OF_FAME, 4, 13
+	end
+
+.FirstTimeChampion:
 	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
 	pause 30
 	showemote EMOTE_SHOCK, LANCESROOM_LANCE, 15
@@ -133,12 +222,6 @@ LancesRoomLanceScript:
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
-	
-.LanceScript_16Badges
-	loadtrainer CHAMPION, LANCE2
-	startbattle
-	dontrestartmapmusic
-	sjump .AfterBattle
 	
 LancesRoomDragoniteScript:
 	opentext
@@ -297,6 +380,108 @@ LanceBattleAfterText:
 
 	para "grow strong with"
 	line "your #mon."
+	done
+
+LanceChampionBattleIntroText:
+	text "Champion <PLAYER>,"
+	line "you're back!"
+	
+	para "Ready to test your"
+	line "skills again?"
+
+	para "I, Lance the drag-"
+	line "on master, accept"
+	cont "your challenge!"
+	done
+
+LanceChampionBattleWinText:
+	text "I've been bested"
+	line "again!"
+	done
+
+Lance16BadgesBattleIntroText:
+	text "Champion <PLAYER>,"
+	line "you're back!"
+	
+	para "So, you've been"
+	line "around Kanto and"
+	
+	para "collected all"
+	line "their Badges, too?"
+	
+	para "You really are"
+	line "something else!"
+	
+	para "This is great;"
+	line "I no longer need"
+	cont "to hold back."
+	
+	para "We can now have an"
+	line "all-out battle!"
+	
+	para "I, Lance the drag-"
+	line "on master, accept"
+	cont "your challenge!"
+	done
+
+LanceGrandChampionBattleIntroText:
+	text "Grand Champion"
+	line "<PLAYER>."
+	
+	para "Welcome back to"
+	line "the League."
+	
+	para "It is an honour"
+	line "to battle with"
+	cont "you once again."
+
+	para "You, as the Grand"
+	line "Champion of Johto"
+	cont "and Kanto."
+	
+	para "Me, as a former"
+	line "Elite Four member"
+	cont "and current Elite"
+	cont "Four Champion."
+	
+	para "I, Lance the drag-"
+	line "on master, accept"
+	cont "your challenge!"
+	done
+
+LanceLetsRegister:
+	text "<PLAYER>, let's"
+	line "get you guys"
+	cont "registered again."
+	done
+
+LanceGrandChampFirstTime:
+	text "<PLAYER>, you've"
+	line "collected all Johto"
+	cont "and Kanto Badges and"
+	
+	para "you have defeated"
+	line "me, the League"
+	cont "Champion."
+	
+	para "You have proven"
+	line "yourself over and"
+	cont "over, and it is my"
+	
+	para "pleasure to give"
+	line "you the title of"
+	cont "Grand Champion."
+	
+	para "Come on, let's"
+	line "register you guys."
+	done
+
+LanceLetsRegisterGrandChamp:
+	text "Well done, Grand"
+	line "Champ!"
+	
+	para "Come on, let's"
+	line "register you guys."
 	done
 
 LancesRoomMaryOhNoOakText:
