@@ -292,15 +292,32 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 
 ; wDailyFlags1::
 	const_def
-	const DAILYFLAGS1_KURT_MAKING_BALLS_F             ; 0
-	const DAILYFLAGS1_BUG_CONTEST_F                   ; 1
-	const DAILYFLAGS1_SWARM_F                         ; 2
-	const DAILYFLAGS1_INDIGO_PLATEAU_LYRA_FIGHT       ; 3
-	const DAILYFLAGS1_ALL_FRUIT_TREES_F               ; 4
-	const DAILYFLAGS1_GOT_SHUCKIE_TODAY_F             ; 5
-	const DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F ; 6
-	const DAILYFLAGS1_MT_MOON_SQUARE_CLEFAIRY_F       ; 7
-
+	const DAILYFLAGS1_KURT_MAKING_BALLS_F             ; 00
+	const DAILYFLAGS1_BUG_CONTEST_F                   ; 01
+	const DAILYFLAGS1_SWARM_F                         ; 02
+	const DAILYFLAGS1_INDIGO_PLATEAU_LYRA_FIGHT       ; 03
+	const DAILYFLAGS1_ALL_FRUIT_TREES_F               ; 04
+	const DAILYFLAGS1_GOT_SHUCKIE_TODAY_F             ; 05
+	const DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F ; 06
+	const DAILYFLAGS1_MT_MOON_SQUARE_CLEFAIRY_F       ; 07
+	; Gym Leader Rematches
+	const DAILYFLAGS_FALKNER_REMATCH                  ; 08
+	const DAILYFLAGS_BUGSY_REMATCH                    ; 09
+	const DAILYFLAGS_WHITNEY_REMATCH                  ; 0a
+	const DAILYFLAGS_MORTY_REMATCH                    ; 0b
+	const DAILYFLAGS_CHUCK_REMATCH                    ; 0c
+	const DAILYFLAGS_JASMINE_REMATCH                  ; 0d
+	const DAILYFLAGS_PRYCE_REMATCH                    ; 0e
+	const DAILYFLAGS_CLAIR_REMATCH                    ; 0f
+	const DAILYFLAGS_BROCK_REMATCH                    ; 10
+	const DAILYFLAGS_MISTY_REMATCH                    ; 11
+	const DAILYFLAGS_LTSURGE_REMATCH                  ; 12
+	const DAILYFLAGS_ERIKA_REMATCH                    ; 13
+	const DAILYFLAGS_JANINE_REMATCH                   ; 14
+	const DAILYFLAGS_SABRINA_REMATCH                  ; 15
+	const DAILYFLAGS_BLAINE_REMATCH                   ; 16
+	const DAILYFLAGS_BLUE_REMATCH                     ; 17
+	
 ; wDailyFlags2::
 	const_def
 	const DAILYFLAGS2_UNION_CAVE_LAPRAS_F                 ; 0

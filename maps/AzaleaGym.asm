@@ -63,6 +63,8 @@ AzaleaGymBugsyScript:
 	end
 	
 .BugsyScript_16Badges
+	checkflag ENGINE_DAILY_BUGSY_REMATCH
+	iftrue .skip_rematch
 	writetext Bugsy16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -71,6 +73,7 @@ AzaleaGymBugsyScript:
 	loadtrainer BUGSY, BUGSY3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_BUGSY_REMATCH
 	opentext
 	writetext Bugsy16AfterBattleText
 	waitbutton
@@ -78,6 +81,8 @@ AzaleaGymBugsyScript:
 	end
 
 .BugsyScript_Rematch
+	checkflag ENGINE_DAILY_BUGSY_REMATCH
+	iftrue .skip_rematch
 	writetext BugsyRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -86,8 +91,15 @@ AzaleaGymBugsyScript:
 	loadtrainer BUGSY, BUGSY2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_BUGSY_REMATCH
 	opentext
 	writetext BugsyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext BugsyComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -351,6 +363,12 @@ Bugsy16AfterBattleText:
 	para "Feel free to"
 	line "come back for"
 	cont "a rematch!"
+	done
+
+BugsyComeBackTomorrowText:
+	text "We just battled"
+	line "today, come back"
+	cont "tomorrow, ok?"
 	done
 	
 BugsyNextTimeText:

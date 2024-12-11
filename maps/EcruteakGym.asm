@@ -74,6 +74,8 @@ EcruteakGymMortyScript:
 	end
 	
 .MortyScript_16Badges
+	checkflag ENGINE_DAILY_MORTY_REMATCH
+	iftrue .skip_rematch
 	writetext Morty16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -82,6 +84,7 @@ EcruteakGymMortyScript:
 	loadtrainer MORTY, MORTY3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_MORTY_REMATCH
 	opentext
 	writetext Morty16AfterBattleText
 	waitbutton
@@ -89,6 +92,8 @@ EcruteakGymMortyScript:
 	end
 
 .MortyScript_Rematch
+	checkflag ENGINE_DAILY_MORTY_REMATCH
+	iftrue .skip_rematch
 	writetext MortyRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -97,8 +102,15 @@ EcruteakGymMortyScript:
 	loadtrainer MORTY, MORTY2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_MORTY_REMATCH
 	opentext
 	writetext MortyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext MortyComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -379,6 +391,12 @@ Morty16AfterBattleText:
 	para "Come back for"
 	line "a rematch when"
 	cont "you feel like it."
+	done
+
+MortyComeBackTomorrowText:
+	text "You should come"
+	line "back tomorrow for"
+	cont "a rematch."
 	done
 	
 MortyNextTimeText:

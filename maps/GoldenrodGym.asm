@@ -90,6 +90,8 @@ GoldenrodGymWhitneyScript:
 	end
 	
 .WhitneyScript_16Badges
+	checkflag ENGINE_DAILY_WHITNEY_REMATCH
+	iftrue .skip_rematch
 	opentext
 	writetext Whitney16IntroText
 	yesorno
@@ -99,6 +101,7 @@ GoldenrodGymWhitneyScript:
 	loadtrainer WHITNEY, WHITNEY3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_WHITNEY_REMATCH
 	opentext
 	writetext Whitney16AfterBattleText
 	waitbutton
@@ -106,6 +109,8 @@ GoldenrodGymWhitneyScript:
 	end
 
 .WhitneyScript_Rematch
+	checkflag ENGINE_DAILY_WHITNEY_REMATCH
+	iftrue .skip_rematch
 	opentext
 	writetext WhitneyRematchIntroText
 	yesorno
@@ -115,8 +120,15 @@ GoldenrodGymWhitneyScript:
 	loadtrainer WHITNEY, WHITNEY2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_WHITNEY_REMATCH
 	opentext
 	writetext WhitneyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext WhitneyComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -375,6 +387,12 @@ Whitney16AfterBattleText:
 	
 	para "Come back for"
 	line "a rematch soon!"
+	done
+
+WhitneyComeBackTomorrowText:
+	text "Hey, we just had"
+	line "a battle. Come"
+	cont "back tomorrow."
 	done
 	
 WhitneyNextTimeText:

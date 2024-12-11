@@ -114,6 +114,22 @@ EngineFlags:
 	engine_flag wDailyFlags1, DAILYFLAGS1_GOT_SHUCKIE_TODAY_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_MT_MOON_SQUARE_CLEFAIRY_F
+	engine_flag wDailyFlags1, DAILYFLAGS_FALKNER_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_BUGSY_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_WHITNEY_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_MORTY_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_CHUCK_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_JASMINE_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_PRYCE_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_CLAIR_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_BROCK_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_MISTY_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_LTSURGE_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_ERIKA_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_JANINE_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_SABRINA_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_BLAINE_REMATCH
+	engine_flag wDailyFlags1, DAILYFLAGS_BLUE_REMATCH
 
 	engine_flag wDailyFlags2, DAILYFLAGS2_UNION_CAVE_LAPRAS_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_GOLDENROD_UNDERGROUND_GOT_HAIRCUT_F

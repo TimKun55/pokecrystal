@@ -63,6 +63,8 @@ CeladonGymErikaScript:
 	end
 	
 .ErikaScript_Rematch
+	checkflag ENGINE_DAILY_ERIKA_REMATCH
+	iftrue .skip_rematch
 	writetext ErikaRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -71,12 +73,19 @@ CeladonGymErikaScript:
 	loadtrainer ERIKA, ERIKA2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_ERIKA_REMATCH
 	opentext
 	writetext ErikaRematchAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+.skip_rematch
+	writetext ErikaComeBackTomorrowText
+	waitbutton
+	closetext
+	end
+
 .EndRematch
 	writetext ErikaNextTimeText
 	waitbutton
@@ -257,7 +266,14 @@ ErikaRematchAfterBattleText:
 	line "a rematch"
 	cont "sometime."
 	done
-	
+
+ErikaComeBackTomorrowText:
+	text "Oh, I'm tired now"
+	line "but come back"
+	cont "tomorrow for a"
+	cont "rematch, ok?"
+	done
+
 ErikaNextTimeText:
 	text "Maybe next"
 	line "time, then."

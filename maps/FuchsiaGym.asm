@@ -87,6 +87,8 @@ FuchsiaGymJanineScript:
 	sjump .AppearWeezing
 	
 .JanineScript_Rematch
+	checkflag ENGINE_DAILY_JANINE_REMATCH
+	iftrue .skip_rematch
 	writetext JanineRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -95,12 +97,19 @@ FuchsiaGymJanineScript:
 	loadtrainer JANINE, JANINE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_JANINE_REMATCH
 	opentext
 	writetext JanineRematchAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+.skip_rematch
+	writetext JanineComeBackTomorrowText
+	waitbutton
+	closetext
+	end
+
 .EndRematch
 	writetext JanineNextTimeText
 	waitbutton
@@ -379,7 +388,13 @@ JanineRematchAfterBattleText:
 	line "a rematch"
 	cont "sometime!"
 	done
-	
+
+JanineComeBackTomorrowText:
+	text "Not now."
+	line "Come back tomorrow"
+	cont "for a rematch."
+	done
+
 JanineNextTimeText:
 	text "I'll be here."
 	done

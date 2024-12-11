@@ -65,6 +65,8 @@ SeafoamGymBlaineScript:
 	end
 	
 .BlaineScript_Rematch
+	checkflag ENGINE_DAILY_BLAINE_REMATCH
+	iftrue .skip_rematch
 	writetext BlaineRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -73,12 +75,19 @@ SeafoamGymBlaineScript:
 	loadtrainer BLAINE, BLAINE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_BLAINE_REMATCH
 	opentext
 	writetext BlaineRematchAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+.skip_rematch
+	writetext BlaineComeBackTomorrowText
+	waitbutton
+	closetext
+	end
+
 .EndRematch
 	writetext BlaineNextTimeText
 	waitbutton
@@ -218,7 +227,12 @@ BlaineRematchAfterBattleText:
 	line "a rematch"
 	cont "sometime!"
 	done
-	
+
+BlaineComeBackTomorrowText:
+	text "Let's have another"
+	line "battle tomorrow!"
+	done
+
 BlaineNextTimeText:
 	text "A shame!"
 	done

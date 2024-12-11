@@ -57,6 +57,8 @@ PewterGymBrockScript:
 	end
 
 .BrockScript_Rematch
+	checkflag ENGINE_DAILY_BROCK_REMATCH
+	iftrue .skip_rematch
 	writetext BrockRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -65,8 +67,15 @@ PewterGymBrockScript:
 	loadtrainer BROCK, BROCK2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_BROCK_REMATCH
 	opentext
 	writetext BrockRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext BrockComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -230,7 +239,13 @@ BrockRematchAfterBattleText:
 	line "a rematch"
 	cont "sometime!"
 	done
-	
+
+BrockComeBackTomorrowText:
+	text "Come back tomorrow"
+	line "and we'll battle"
+	cont "again."
+	done
+
 BrockNextTimeText:
 	text "No problem."
 	done

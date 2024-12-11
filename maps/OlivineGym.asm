@@ -58,6 +58,8 @@ OlivineGymJasmineScript:
 	end
 	
 .JasmineScript_16Badges
+	checkflag ENGINE_DAILY_JASMINE_REMATCH
+	iftrue .skip_rematch
 	writetext Jasmine16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -66,6 +68,7 @@ OlivineGymJasmineScript:
 	loadtrainer JASMINE, JASMINE3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_JASMINE_REMATCH
 	opentext
 	writetext Jasmine16AfterBattleText
 	waitbutton
@@ -73,6 +76,8 @@ OlivineGymJasmineScript:
 	end
 
 .JasmineScript_Rematch
+	checkflag ENGINE_DAILY_JASMINE_REMATCH
+	iftrue .skip_rematch
 	writetext JasmineRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -81,8 +86,15 @@ OlivineGymJasmineScript:
 	loadtrainer JASMINE, JASMINE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_JASMINE_REMATCH
 	opentext
 	writetext JasmineRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext JasmineComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -292,7 +304,13 @@ Jasmine16AfterBattleText:
 	line "come back for"
 	cont "a rematch!"
 	done
-	
+
+JasmineComeBackTomorrowText:
+	text "Please come back"
+	line "tomorrow for ano-"
+	cont "ther battle."
+	done
+
 JasmineNextTimeText:
 	text "You can come"
 	line "back anytime!"

@@ -14,8 +14,6 @@ VioletGym_MapScripts:
 VioletGymFalknerScript:
 	faceplayer
 	opentext
-;	checkevent EVENT_FALKNER_REMATCH
-;	iftrue .comebacktomorrow
 	readvar VAR_BADGES
 	ifequal 16, .FalknerScript_16Badges
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -61,22 +59,18 @@ VioletGymFalknerScript:
 	closetext
 	end
 
-;.comebacktomorrow
-;	writetext FalknerComeBackTomorrow
-;	waitbutton
-;	closetext
-;	end
-
 .FalknerScript_16Badges
+	checkflag ENGINE_DAILY_FALKNER_REMATCH
+	iftrue .skip_rematch
 	writetext Falkner16IntroText
 	yesorno
 	iffalse .EndRematch
 	closetext
-;	setevent EVENT_FALKNER_REMATCH
 	winlosstext FalknerWinLossRematchText, 0
 	loadtrainer FALKNER, FALKNER3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_FALKNER_REMATCH
 	opentext
 	writetext Falkner16AfterBattleText
 	waitbutton
@@ -84,17 +78,25 @@ VioletGymFalknerScript:
 	end
 
 .FalknerScript_Rematch
+	checkflag ENGINE_DAILY_FALKNER_REMATCH
+	iftrue .skip_rematch
 	writetext FalknerRematchIntroText
 	yesorno
 	iffalse .EndRematch
 	closetext
-;	setevent EVENT_FALKNER_REMATCH
 	winlosstext FalknerWinLossRematchText, 0
 	loadtrainer FALKNER, FALKNER2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_FALKNER_REMATCH
 	opentext
 	writetext FalknerRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext FalknerComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -329,7 +331,13 @@ Falkner16AfterBattleText:
 	line "come back tomorrow"
 	cont "for a rematch!"
 	done
-	
+
+FalknerComeBackTomorrowText:
+	text "We already battled"
+	line "today, but come"
+	cont "back tomorrow."
+	done
+
 FalknerNextTimeText:
 	text "Come back"
 	line "anytime!"

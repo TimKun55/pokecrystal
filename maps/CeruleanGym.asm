@@ -100,6 +100,8 @@ CeruleanGymMistyScript:
 	end
 	
 .MistyScript_Rematch
+	checkflag ENGINE_DAILY_MISTY_REMATCH
+	iftrue .skip_rematch
 	writetext MistyRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -108,8 +110,15 @@ CeruleanGymMistyScript:
 	loadtrainer MISTY, MISTY2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_MISTY_REMATCH
 	opentext
 	writetext MistyRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext MistyComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -356,7 +365,15 @@ MistyRematchAfterBattleText:
 	line "a rematch"
 	cont "sometime!"
 	done
+
+MistyComeBackTomorrowText:
+	text "I'm going to let"
+	line "my #mon rest."
 	
+	para "Come back for a"
+	line "rematch tomorrow."
+	done
+
 MistyNextTimeText:
 	text "Next time, then!"
 	done

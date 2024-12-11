@@ -72,6 +72,8 @@ SaffronGymSabrinaScript:
 	end
 
 .SabrinaScript_Rematch
+	checkflag ENGINE_DAILY_SABRINA_REMATCH
+	iftrue .skip_rematch
 	writetext SabrinaRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -80,12 +82,19 @@ SaffronGymSabrinaScript:
 	loadtrainer SABRINA, SABRINA2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_SABRINA_REMATCH
 	opentext
 	writetext SabrinaRematchAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+.skip_rematch
+	writetext SabrinaComeBackTomorrowText
+	waitbutton
+	closetext
+	end
+
 .EndRematch
 	writetext SabrinaNextTimeText
 	waitbutton
@@ -274,7 +283,13 @@ SabrinaRematchAfterBattleText:
 	line "came back for a"
 	cont "rematch sometime."
 	done
-	
+
+SabrinaComeBackTomorrowText:
+	text "Return tomorrow"
+	line "and we may battle"
+	cont "once more."
+	done
+
 SabrinaNextTimeText:
 	text "I see…"
 	done

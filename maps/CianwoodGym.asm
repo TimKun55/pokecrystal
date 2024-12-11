@@ -75,6 +75,8 @@ CianwoodGymChuckScript:
 	end
 
 .ChuckScript_16Badges
+	checkflag ENGINE_DAILY_CHUCK_REMATCH
+	iftrue .skip_rematch
 	writetext Chuck16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -83,6 +85,7 @@ CianwoodGymChuckScript:
 	loadtrainer CHUCK, CHUCK3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_CHUCK_REMATCH
 	opentext
 	writetext Chuck16AfterBattleText
 	waitbutton
@@ -90,6 +93,8 @@ CianwoodGymChuckScript:
 	end
 
 .ChuckScript_Rematch
+	checkflag ENGINE_DAILY_CHUCK_REMATCH
+	iftrue .skip_rematch
 	writetext ChuckRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -98,8 +103,15 @@ CianwoodGymChuckScript:
 	loadtrainer CHUCK, CHUCK2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_CHUCK_REMATCH
 	opentext
 	writetext ChuckRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext ChuckComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -382,7 +394,12 @@ Chuck16AfterBattleText:
 	line "come back for"
 	cont "another round!"
 	done
-	
+
+ChuckComeBackTomorrowText:
+	text "Come and train"
+	line "again tomorrow."
+	done
+
 ChuckNextTimeText:
 	text "Ahh, no problem."
 	line "Come back for"

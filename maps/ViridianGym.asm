@@ -54,6 +54,8 @@ ViridianGymBlueScript:
 	end
 	
 .BlueScript_Rematch
+	checkflag ENGINE_DAILY_BLUE_REMATCH
+	iftrue .skip_rematch
 	writetext BlueRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -62,8 +64,15 @@ ViridianGymBlueScript:
 	loadtrainer BLUE, BLUE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_BLUE_REMATCH
 	opentext
 	writetext BlueRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext BlueComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -287,7 +296,14 @@ BlueRematchAfterBattleText:
 	line "but I'll beat you"
 	cont "next time."
 	done
+
+BlueComeBackTomorrowText:
+	text "Another battle?"
 	
+	para "Sure, but come"
+	line "back tomorrow."
+	done
+
 BlueNextTimeText:
 	text "No? Well, come"
 	line "back when you're"

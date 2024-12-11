@@ -64,6 +64,8 @@ MahoganyGymPryceScript:
 	end
 	
 .PryceScript_16Badges
+	checkflag ENGINE_DAILY_PRYCE_REMATCH
+	iftrue .skip_rematch
 	writetext Pryce16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -72,6 +74,7 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_PRYCE_REMATCH
 	opentext
 	writetext Pryce16AfterBattleText
 	waitbutton
@@ -79,6 +82,8 @@ MahoganyGymPryceScript:
 	end
 
 .PryceScript_Rematch
+	checkflag ENGINE_DAILY_PRYCE_REMATCH
+	iftrue .skip_rematch
 	writetext PryceRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -87,8 +92,15 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_PRYCE_REMATCH
 	opentext
 	writetext PryceRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext PryceComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -363,6 +375,12 @@ Pryce16AfterBattleText:
 	para "Please, feel free"
 	line "to return for"
 	cont "a rematch."
+	done
+
+PryceComeBackTomorrowText:
+	text "Return tomorrow"
+	line "and we shall"
+	cont "battle again."
 	done
 	
 PryceNextTimeText:

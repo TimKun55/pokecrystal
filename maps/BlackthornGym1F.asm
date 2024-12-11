@@ -96,6 +96,8 @@ BlackthornGymClairScript:
 	end
 	
 .ClairScript_16Badges
+	checkflag ENGINE_DAILY_CLAIR_REMATCH
+	iftrue .skip_rematch
 	writetext Clair16IntroText
 	yesorno
 	iffalse .EndRematch
@@ -104,6 +106,7 @@ BlackthornGymClairScript:
 	loadtrainer CLAIR, CLAIR3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_CLAIR_REMATCH
 	opentext
 	writetext Clair16AfterBattleText
 	waitbutton
@@ -111,6 +114,8 @@ BlackthornGymClairScript:
 	end
 
 .ClairScript_Rematch
+	checkflag ENGINE_DAILY_CLAIR_REMATCH
+	iftrue .skip_rematch
 	writetext ClairRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -119,8 +124,15 @@ BlackthornGymClairScript:
 	loadtrainer CLAIR, CLAIR2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_CLAIR_REMATCH
 	opentext
 	writetext ClairRematchAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	writetext ClairComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -392,7 +404,13 @@ Clair16AfterBattleText:
 	line "come back for"
 	cont "a rematch."
 	done
-	
+
+ClairComeBackTomorrowText:
+	text "Come back tomorrow"
+	line "and we can have"
+	cont "another match."
+	done
+
 ClairNextTimeText:
 	text "I see."
 	done

@@ -81,6 +81,8 @@ VermilionGymSurgeScript:
 	end
 
 .SurgeScript_Rematch
+	checkflag ENGINE_DAILY_LTSURGE_REMATCH
+	iftrue .skip_rematch
 	writetext LtSurgeRematchIntroText
 	yesorno
 	iffalse .EndRematch
@@ -89,12 +91,19 @@ VermilionGymSurgeScript:
 	loadtrainer LT_SURGE, LT_SURGE2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_LTSURGE_REMATCH
 	opentext
 	writetext LtSurgeRematchAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+.skip_rematch
+	writetext LtSurgeComeBackTomorrowText
+	waitbutton
+	closetext
+	end
+
 .EndRematch
 	writetext LtSurgeNextTimeText
 	waitbutton
@@ -405,6 +414,12 @@ LtSurgeRematchAfterBattleText:
 	line "a rematch!"
 	done
 	
+LtSurgeComeBackTomorrowText:
+	text "Hey kid! Come"
+	line "back tomorrow, we"
+	cont "can battle again."
+	done
+
 LtSurgeNextTimeText:
 	text "Make sure to keep"
 	line "up your training."
