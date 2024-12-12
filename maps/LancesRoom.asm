@@ -112,13 +112,15 @@ LancesRoomLanceScript:
 	reloadmappart
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .FirstTimeChampion
-	readvar VAR_BADGES
-	ifequal 16, .Champion16BadgesAfter
 	checkevent EVENT_GRAND_CHAMPION
 	iftrue .GrandChampionAfter
+	readvar VAR_BADGES
+	ifequal 16, .Champion16BadgesAfter
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .FirstTimeChampion
 	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	turnobject PLAYER, UP
+	opentext
 	writetext LanceLetsRegister
 	waitbutton
 	closetext
@@ -130,11 +132,15 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
+	special FadeOutToWhite
+	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
 
 .Champion16BadgesAfter:
 	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	turnobject PLAYER, UP
+	opentext
 	writetext LanceGrandChampFirstTime
 	waitbutton
 	closetext
@@ -146,11 +152,15 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
+	special FadeOutToWhite
+	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
 
 .GrandChampionAfter:
 	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
+	turnobject PLAYER, UP
+	opentext
 	writetext LanceLetsRegisterGrandChamp
 	waitbutton
 	closetext
@@ -162,6 +172,8 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
+	special FadeOutToWhite
+	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
 
@@ -457,11 +469,12 @@ LanceLetsRegister:
 
 LanceGrandChampFirstTime:
 	text "<PLAYER>, you've"
-	line "collected all Johto"
-	cont "and Kanto Badges and"
+	line "collected all the"
+	cont "Johto and Kanto"
 	
-	para "you have defeated"
-	line "me, the League"
+	para "Badges, and you"
+	line "have defeated me,"
+	cont "the League"
 	cont "Champion."
 	
 	para "You have proven"
@@ -478,7 +491,7 @@ LanceGrandChampFirstTime:
 
 LanceLetsRegisterGrandChamp:
 	text "Well done, Grand"
-	line "Champ!"
+	line "Champion!"
 	
 	para "Come on, let's"
 	line "register you guys."
