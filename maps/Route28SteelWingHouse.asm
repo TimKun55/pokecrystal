@@ -1,6 +1,6 @@
 	object_const_def
 	const ROUTE28STEELWINGHOUSE_CELEBRITY
-	const ROUTE28STEELWINGHOUSE_FEAROW
+	const ROUTE28STEELWINGHOUSE_SKARMORY
 
 Route28SteelWingHouse_MapScripts:
 	def_scene_scripts
@@ -30,13 +30,13 @@ Celebrity:
 	closetext
 	end
 
-CelebritysFearow:
+CelebritysSkarmory:
 	opentext
-	writetext CelebritysFearowText
-	cry FEAROW
+	writetext CelebritysSkarmoryText
+	cry SKARMORY
 	waitbutton
 	refreshscreen
-	pokepic FEAROW
+	pokepic SKARMORY
 	waitbutton
 	closepokepic
 	closetext
@@ -68,8 +68,8 @@ CelebrityText2:
 	line "left alone…"
 	done
 
-CelebritysFearowText:
-	text "Fearow: Feero!"
+CelebritysSkarmoryText:
+	text "Skarmory: Skarr!"
 	done
 
 Route28SteelWingHouse_MapEvents:
@@ -87,4 +87,4 @@ Route28SteelWingHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Celebrity, -1
-	object_event  6,  5, SPRITE_FEAROW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CelebritysFearow, -1
+	object_event  6,  5, SPRITE_SKARMORY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, CelebritysSkarmory, -1

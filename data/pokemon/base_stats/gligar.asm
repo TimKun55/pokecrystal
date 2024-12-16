@@ -1,6 +1,6 @@
-	db GLIGAR ; 207
+	db GLIGAR ; 234
 
-	db  70,  90, 105,  85,  40,  80
+	db  65,  75, 105,  85,  35,  65
 	evs  0,   0,   1,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 

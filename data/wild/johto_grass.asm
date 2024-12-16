@@ -71,7 +71,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         28,  32
 	db 22, JUMPLUFF,      28,  32
 	db 22, LEDIAN,        28,  32
-	db 10, AIPOM,         28,  32
+	db 10, SUNFLORA,      28,  32
 	db  8, GLOOM,         28,  32 
 	db  8, JUMPLUFF,      28,  32 
 	db  8, EEVEE,         20,  32
@@ -80,7 +80,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         28,  32
 	db 22, JUMPLUFF,      28,  32
 	db 22, LEDIAN,        28,  32
-	db 10, AIPOM,         28,  32
+	db 10, SUNFLORA,      28,  32
 	db  8, GLOOM,         28,  32       
 	db  8, JUMPLUFF,      28,  32 
 	db  8, EEVEE,         20,  32
@@ -89,7 +89,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         28,  32
 	db 22, JUMPLUFF,      28,  32
 	db 22, LEDIAN,        28,  32
-	db 10, AIPOM,         28,  32
+	db 10, SUNFLORA,      28,  32
 	db  8, GLOOM,         28,  32       
 	db  8, JUMPLUFF,      28,  32 
 	db  8, EEVEE,         20,  32
@@ -102,7 +102,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         32,  36
 	db 22, JUMPLUFF,      32,  36
 	db 22, LEDIAN,        32,  36
-	db 10, AIPOM,         32,  36
+	db 10, SUNFLORA,      32,  36
 	db  8, GLOOM,         32,  36 
 	db  8, JUMPLUFF,      32,  36 
 	db  8, JOLTEON,       32,  36
@@ -111,7 +111,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         32,  36
 	db 22, JUMPLUFF,      32,  36
 	db 22, LEDIAN,        32,  36
-	db 10, AIPOM,         32,  36
+	db 10, SUNFLORA,      32,  36
 	db  8, GLOOM,         32,  36 
 	db  8, JUMPLUFF,      32,  36 
 	db  8, JOLTEON,       32,  36
@@ -120,7 +120,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         32,  36
 	db 22, JUMPLUFF,      32,  36
 	db 22, LEDIAN,        32,  36
-	db 10, AIPOM,         32,  36
+	db 10, SUNFLORA,      32,  36
 	db  8, GLOOM,         32,  36 
 	db  8, JUMPLUFF,      32,  36 
 	db  8, JOLTEON,       32,  36
@@ -133,7 +133,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         36,  40
 	db 22, JUMPLUFF,      36,  40
 	db 22, LEDIAN,        36,  40
-	db 10, AIPOM,         36,  40
+	db 10, SUNFLORA,      36,  40
 	db  8, GLOOM,         36,  40
 	db  8, JUMPLUFF,      36,  40
 	db  8, VAPOREON,      36,  40
@@ -142,7 +142,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         36,  40
 	db 22, JUMPLUFF,      36,  40
 	db 22, LEDIAN,        36,  40
-	db 10, AIPOM,         36,  40
+	db 10, SUNFLORA,      36,  40
 	db  8, GLOOM,         36,  40
 	db  8, JUMPLUFF,      36,  40
 	db  8, VAPOREON,      36,  40
@@ -151,7 +151,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         36,  40
 	db 22, JUMPLUFF,      36,  40
 	db 22, LEDIAN,        36,  40
-	db 10, AIPOM,         36,  40
+	db 10, SUNFLORA,      36,  40
 	db  8, GLOOM,         36,  40
 	db  8, JUMPLUFF,      36,  40
 	db  8, VAPOREON,      36,  40
@@ -164,7 +164,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         40,  44
 	db 22, JUMPLUFF,      40,  44
 	db 22, LEDIAN,        40,  44
-	db 10, AIPOM,         40,  44
+	db 10, SUNFLORA,      40,  44
 	db  8, GLOOM,         40,  44
 	db  8, JUMPLUFF,      40,  44
 	db  8, FLAREON,       40,  44
@@ -173,7 +173,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         40,  44
 	db 22, JUMPLUFF,      40,  44
 	db 22, LEDIAN,        40,  44
-	db 10, AIPOM,         40,  44
+	db 10, SUNFLORA,      40,  44
 	db  8, GLOOM,         40,  44
 	db  8, JUMPLUFF,      40,  44
 	db  8, FLAREON,       40,  44
@@ -182,7 +182,7 @@ JohtoGrassWildMons:
 	db 22, GLOOM,         40,  44
 	db 22, JUMPLUFF,      40,  44
 	db 22, LEDIAN,        40,  44
-	db 10, AIPOM,         40,  44
+	db 10, SUNFLORA,      40,  44
 	db  8, GLOOM,         40,  44
 	db  8, JUMPLUFF,      40,  44
 	db  8, FLAREON,       40,  44
@@ -909,7 +909,7 @@ JohtoGrassWildMons:
 	db 22, SWINUB,        35,  38
 	db 22, JYNX,          38,  40
 	db 10, DELIBIRD,      38,  40
-	db  8, SNEASEL,       38,  41
+	db  8, WEAVILE,       38,  41
 	db  8, PILOSWINE,     38,  41
 	db  8, JYNX,          38,  41
 	; day
@@ -918,7 +918,7 @@ JohtoGrassWildMons:
 	db 22, SWINUB,        35,  38
 	db 22, JYNX,          38,  40
 	db 10, DELIBIRD,      38,  40
-	db  8, SNEASEL,       38,  41
+	db  8, WEAVILE,       38,  41
 	db  8, PILOSWINE,     38,  41
 	db  8, JYNX,          38,  41
 	; nite
@@ -927,7 +927,7 @@ JohtoGrassWildMons:
 	db 22, SWINUB,        35,  38
 	db 22, JYNX,          38,  40
 	db 10, DELIBIRD,      38,  40
-	db  8, SNEASEL,       38,  41
+	db  8, WEAVILE,       38,  41
 	db  8, PILOSWINE,     38,  41
 	db  8, JYNX,          38,  41
 	end_grass_wildmons
@@ -1246,30 +1246,30 @@ JohtoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, MAGCARGO,      70,  73
+	db 22, WEAVILE,       70,  73
 	db 22, URSARING,      70,  73
-	db 22, CROBAT,        70,  73
-	db 10, AERODACTYL,    70,  73
+	db 22, MAMOSWINE,     70,  73
+	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, SCIZOR,        70,  73
+	db  8, AERODACTYL,    70,  73
 	db  8, TYRANITAR,     70,  73
 	; day
 	;   %, species,		 min, max
-	db 22, MAGCARGO,      70,  73
+	db 22, WEAVILE,       70,  73
 	db 22, URSARING,      70,  73
-	db 22, CROBAT,        70,  73
-	db 10, AERODACTYL,    70,  73
+	db 22, MAMOSWINE,     70,  73
+	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, SCIZOR,        70,  73
+	db  8, AERODACTYL,    70,  73
 	db  8, TYRANITAR,     70,  73
 	; nite
 	;   %, species,		 min, max
-	db 22, MAGCARGO,      70,  73
+	db 22, WEAVILE,       70,  73
 	db 22, URSARING,      70,  73
-	db 22, CROBAT,        70,  73
-	db 10, AERODACTYL,    70,  73
+	db 22, MAMOSWINE,     70,  73
+	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, SCIZOR,        70,  73
+	db  8, AERODACTYL,    70,  73
 	db  8, TYRANITAR,     70,  73
 	end_grass_wildmons
 
@@ -1526,19 +1526,19 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, RATTATA,        7,   9
-	db 22, SPEAROW,        7,   9
+	db 22, EKANS,          7,   9
 	db 22, GEODUDE,        7,   9
 	db 10, HOPPIP,         7,   9
-	db  8, EKANS,          8,  10
+	db  8, SUNKERN,        8,  10
 	db  8, HOPPIP,         8,  10
 	db  8, SUNKERN,        8,  11
 	; day
 	;   %, species,		 min, max
 	db 22, RATTATA,        7,   9
-	db 22, SPEAROW,        7,   9
+	db 22, EKANS,          7,   9
 	db 22, GEODUDE,        7,   9
 	db 10, HOPPIP,         7,   9
-	db  8, EKANS,          8,  10
+	db  8, SUNKERN,        8,  10
 	db  8, HOPPIP,         8,  10
 	db  8, SUNKERN,        8,  11
 	; nite
@@ -1557,30 +1557,30 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, SNUBBULL,      11,  14
-	db 22, AIPOM,         12,  15
+	db 22, MANKEY,        12,  15
 	db 22, ABRA,          11,  14
-	db 10, MANKEY,        11,  14
-	db  8, JIGGLYPUFF,    13,  16
-	db  8, MANKEY,        13,  16
-	db  8, DITTO,         11,  14
+	db 11, JIGGLYPUFF,    11,  14
+	db  5, PORYGON,       13,  16
+	db  9, MANKEY,        13,  16
+	db  9, DITTO,         11,  14
 	; day
 	;   %, species,		 min, max
 	db 22, SNUBBULL,      11,  14
-	db 22, AIPOM,         12,  15
+	db 22, MANKEY,        12,  15
 	db 22, ABRA,          11,  14
-	db 10, MANKEY,        11,  14
-	db  8, JIGGLYPUFF,    13,  16
-	db  8, MANKEY,        13,  16
-	db  8, DITTO,         11,  14
+	db 11, JIGGLYPUFF,    11,  14
+	db  5, PORYGON,       13,  16
+	db  9, MANKEY,        13,  16
+	db  9, DITTO,         11,  14
 	; nite
 	;   %, species,		 min, max
 	db 22, SNUBBULL,      11,  14
-	db 22, AIPOM,         12,  15
+	db 22, MANKEY,        12,  15
 	db 22, ABRA,          11,  14
-	db 10, MANKEY,        11,  14
-	db  8, JIGGLYPUFF,    13,  16
-	db  8, MANKEY,        13,  16
-	db  8, DITTO,         11,  14
+	db 11, JIGGLYPUFF,    11,  14
+	db  5, PORYGON,       13,  16
+	db  9, MANKEY,        13,  16
+	db  9, DITTO,         11,  14
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_35
@@ -1654,7 +1654,7 @@ JohtoGrassWildMons:
 	db 22, PIDGEY,        14,  17
 	db 10, GROWLITHE,     17,  20
 	db  8, PIDGEOTTO,     17,  20
-	db  8, STANTLER,      18,  20
+	db  8, GROWLITHE,     18,  20
 	db  8, LEDIAN,        18,  20
 	; day
 	;   %, species,		 min, max
@@ -1663,14 +1663,14 @@ JohtoGrassWildMons:
 	db 22, PIDGEY,        14,  17
 	db 10, GROWLITHE,     17,  20
 	db  8, PIDGEOTTO,     17,  20
-	db  8, STANTLER,      18,  20
+	db  8, GROWLITHE,     18,  20
 	db  8, LEDIAN,        18,  20
 	; nite
 	;   %, species,		 min, max
 	db 22, SPINARAK,      15,  17
-	db 22, STANTLER,      15,  18
+	db 22, GASTLY,        15,  18
 	db 22, HOOTHOOT,      14,  17
-	db 10, STANTLER,      17,  20
+	db 10, GASTLY,        17,  20
 	db  8, NOCTOWL,       17,  20
 	db  8, ARIADOS,       18,  20
 	db  8, ARIADOS,       18,  20
@@ -1747,7 +1747,7 @@ JohtoGrassWildMons:
 	db 22, ARBOK,         28,  30
 	db 10, RATICATE,      28,  30
 	db  8, GRANBULL,      28,  30
-	db  8, FEAROW,        28,  30
+	db  8, GRANBULL,      28,  30
 	db  8, ARBOK,         30,  32
 	; day
 	;   %, species,		 min, max
@@ -1756,7 +1756,7 @@ JohtoGrassWildMons:
 	db 22, ARBOK,         28,  30
 	db 10, RATICATE,      28,  30
 	db  8, GRANBULL,      28,  30
-	db  8, FEAROW,        28,  30
+	db  8, GRANBULL,      28,  30
 	db  8, ARBOK,         30,  32
 	; nite
 	;   %, species,		 min, max
@@ -1805,29 +1805,29 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, TANGELA,       34,  36
-	db 22, LICKITUNG,     33,  36
+	db 22, WEEPINBELL,    33,  36
 	db 22, JUMPLUFF,      33,  36
 	db 10, WEEPINBELL,    31,  34
 	db  8, GRANBULL,      30,  33
-	db  8, LICKITUNG,     30,  32
+	db  8, TANGELA,       30,  32
 	db  8, GRANBULL,      33,  36	
 	; day
 	;   %, species,		 min, max
 	db 22, TANGELA,       34,  36
-	db 22, LICKITUNG,     33,  36
+	db 22, WEEPINBELL,    33,  36
 	db 22, JUMPLUFF,      33,  36
 	db 10, WEEPINBELL,    31,  34
 	db  8, GRANBULL,      30,  33
-	db  8, LICKITUNG,     30,  32
+	db  8, TANGELA,       30,  32
 	db  8, GRANBULL,      33,  36
 	; nite
 	;   %, species,		 min, max
 	db 22, TANGELA,       34,  36
-	db 22, LICKITUNG,     33,  36
+	db 22, WEEPINBELL,    33,  36
 	db 22, JUMPLUFF,      33,  36
 	db 10, WEEPINBELL,    31,  34
 	db  8, GRANBULL,      30,  33
-	db  8, LICKITUNG,     30,  32
+	db  8, TANGELA,       30,  32
 	db  8, GRANBULL,      33,  36
 	end_grass_wildmons
 
@@ -1836,30 +1836,30 @@ JohtoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, SKARMORY,      33,  34
-	db 22, GRAVELER,      37,  40
+	db 22, DONPHAN,       37,  40
 	db 22, URSARING,      37,  40
-	db 10, SKARMORY,      35,  37
-	db  8, GLIGAR,        37,  40
-	db  8, DONPHAN,       37,  40
-	db  8, SKARMORY,      38,  40
+	db 11, GLIGAR,        35,  37
+	db  9, SKARMORY,      37,  40
+	db  9, GRAVELER,      37,  40
+	db  5, GLISCOR,       38,  40
 	; day
 	;   %, species,		 min, max
 	db 22, SKARMORY,      33,  34
-	db 22, GRAVELER,      37,  40
+	db 22, DONPHAN,       37,  40
 	db 22, URSARING,      37,  40
-	db 10, SKARMORY,      35,  37
-	db  8, GLIGAR,        37,  40
-	db  8, DONPHAN,       37,  40
-	db  8, SKARMORY,      38,  40
+	db 11, GLIGAR,        35,  37
+	db  9, SKARMORY,      37,  40
+	db  9, GRAVELER,      37,  40
+	db  5, GLISCOR,       38,  40
 	; nite
 	;   %, species,		 min, max
 	db 22, SKARMORY,      33,  34
-	db 22, GRAVELER,      37,  40
+	db 22, DONPHAN,       37,  40
 	db 22, URSARING,      37,  40
-	db 10, SKARMORY,      35,  37
-	db  8, GLIGAR,        37,  40
-	db  8, DONPHAN,       37,  40
-	db  8, SKARMORY,      38,  40
+	db 11, GLIGAR,        35,  37
+	db  9, SKARMORY,      37,  40
+	db  9, GRAVELER,      37,  40
+	db  5, GLISCOR,       38,  40
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
@@ -1869,7 +1869,7 @@ JohtoGrassWildMons:
 	db 22, GEODUDE,        2,   3
 	db 22, PHANPY,         2,   3
 	db 22, RATTATA,        2,   3
-	db 10, SPEAROW,        2,   4
+	db 10, SENTRET,        2,   4
 	db  8, RATTATA,        3,   4
 	db  8, PHANPY,         3,   4
 	db  8, GEODUDE,        3,   4
@@ -1878,7 +1878,7 @@ JohtoGrassWildMons:
 	db 22, GEODUDE,        2,   3
 	db 22, PHANPY,         2,   3
 	db 22, RATTATA,        2,   3
-	db 10, SPEAROW,        2,   4
+	db 10, SENTRET,        2,   4
 	db  8, RATTATA,        3,   4
 	db  8, PHANPY,         3,   4
 	db  8, GEODUDE,        3,   4
@@ -1887,7 +1887,7 @@ JohtoGrassWildMons:
 	db 22, GEODUDE,        2,   3
 	db 22, PHANPY,         2,   3
 	db 22, RATTATA,        2,   3
-	db 10, SPEAROW,        2,   4
+	db 10, SENTRET,        2,   4
 	db  8, RATTATA,        3,   4
 	db  8, PHANPY,         3,   4
 	db  8, GEODUDE,        3,   4
@@ -1900,27 +1900,27 @@ JohtoGrassWildMons:
 	db 22, AMPHAROS,      63,  66
 	db 22, SUDOWOODO,     63,  66
 	db 22, SNORLAX,       63,  66
-	db 10, SKARMORY,      63,  66
+	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
-	db  8, MAMOSWINE,     63,  66
+	db  8, TANGROWTH,     63,  66
 	db  8, BLISSEY,       50,  51
 	; day
 	;   %, species,		 min, max
 	db 22, AMPHAROS,      63,  66
 	db 22, SUDOWOODO,     63,  66
 	db 22, SNORLAX,       63,  66
-	db 10, SKARMORY,      63,  66
+	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
-	db  8, MAMOSWINE,     63,  66
+	db  8, TANGROWTH,     63,  66
 	db  8, BLISSEY,       50,  51
 	; nite
 	;   %, species,		 min, max
 	db 22, AMPHAROS,      63,  66
 	db 22, SUDOWOODO,     63,  66
 	db 22, SNORLAX,       63,  66
-	db 10, SKARMORY,      63,  66
+	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
-	db  8, MAMOSWINE,     63,  66
+	db  8, TANGROWTH,     63,  66
 	db  8, BLISSEY,       50,  51
 	end_grass_wildmons
 

@@ -1,4 +1,4 @@
-	db MISDREAVUS ; 233
+	db MISDREAVUS ; 199
 
 	db  65,  60,  60,  85,  85,  85
 	evs  0,   0,   0,   0,   0,   2

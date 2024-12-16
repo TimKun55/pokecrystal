@@ -1,4 +1,4 @@
-	db MISMAGIUS ; 234
+	db MISMAGIUS ; 200
 
 	db  60,  60,  60, 105, 105, 105
 	evs  0,   0,   0,   0,   1,   1

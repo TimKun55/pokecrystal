@@ -1,4 +1,4 @@
-	db CORSOLA ; 173
+	db CORSOLA ; 207
 
 	db  65,  65,  95,  35,  90,  95
 	evs  0,   0,   1,   0,   0,   1

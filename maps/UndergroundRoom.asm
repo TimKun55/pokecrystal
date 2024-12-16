@@ -1,6 +1,6 @@
 	object_const_def
 	const UNDERGROUNDROOM_ARCHER
-	const UNDERGROUNDROOM_SNEASEL
+	const UNDERGROUNDROOM_WEAVILE
 	const UNDERGROUNDROOM_ARIANA
 	const UNDERGROUNDROOM_PETREL
 	const UNDERGROUNDROOM_PROTON
@@ -28,7 +28,7 @@ UndergroundRoomArcherScript:
 	winlosstext UndergroundArcherWinLossText, 0
 	loadtrainer ARCHER, ARCHER2
 	startbattle
-	disappear UNDERGROUNDROOM_SNEASEL
+	disappear UNDERGROUNDROOM_WEAVILE
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ARCHER_2
 	opentext
@@ -172,13 +172,13 @@ UndergroundRoomPlayerMovement:
 	step LEFT
 	step_end
 
-UndergroundRoomSneasel:
+UndergroundRoomWeavile:
 	opentext
-	writetext SneaselText
-	cry SNEASEL
+	writetext WeavileText
+	cry WEAVILE
 	waitbutton
 	refreshscreen
-	pokepic SNEASEL
+	pokepic WEAVILE
 	waitbutton
 	closepokepic
 	closetext
@@ -480,8 +480,8 @@ UndergroundArianaAfterBattleText:
 	para "say anything else."
 	done
 	
-SneaselText:
-	text "Sneasel: Neeaa!!"
+WeavileText:
+	text "Weavile: Wea!"
 	done
 	
 UndergroundRoomComputerText:
@@ -506,7 +506,7 @@ UndergroundRoom_MapEvents:
 
 	def_object_events
 	object_event 13,  3, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UndergroundRoomArcherScript, EVENT_KANTO_ROCKET_DISBAND
-	object_event 12,  3, SPRITE_SNEASEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UndergroundRoomSneasel, EVENT_KANTO_ROCKET_DISBAND
+	object_event 12,  3, SPRITE_WEAVILE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, UndergroundRoomWeavile, EVENT_KANTO_ROCKET_DISBAND
 	object_event  4,  8, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, ExecutivePetrel, EVENT_KANTO_ROCKET_DISBAND
 	object_event  8, 10, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveProton, EVENT_KANTO_ROCKET_DISBAND
 	object_event  9, 10, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveAriana, EVENT_KANTO_ROCKET_DISBAND

@@ -1,4 +1,4 @@
-	db SMEARGLE ; 235
+	db SMEARGLE ; 236
 
 	db  55,  20,  35,  75,  20,  45
 	evs  0,   0,   0,   1,   0,   0

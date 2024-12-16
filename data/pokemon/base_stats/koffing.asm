@@ -1,4 +1,4 @@
-	db KOFFING ; 109
+	db KOFFING ; 108
 
 	db  40,  65,  95,  35,  60,  45
 	evs  0,   0,   1,   0,   0,   0

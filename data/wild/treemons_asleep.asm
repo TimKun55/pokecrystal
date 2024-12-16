@@ -7,11 +7,11 @@ AsleepTreeMonsNite:
 	db WEEDLE
 	db KAKUNA
 	db BEEDRILL
-	db SPEAROW
+	db PIDGEY
 	db EKANS
 	db EXEGGCUTE
 	db LEDYBA
-	db AIPOM
+	db MANKEY
 	db -1 ; end
 
 AsleepTreeMonsDay:

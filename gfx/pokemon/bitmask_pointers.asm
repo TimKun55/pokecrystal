@@ -20,8 +20,8 @@ BitmasksPointers:
 	dw PidgeotBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
-	dw SpearowBitmasks
-	dw FearowBitmasks
+	dw MarillBitmasks
+	dw AzumarillBitmasks
 	dw EkansBitmasks
 	dw ArbokBitmasks
 	dw PikachuBitmasks
@@ -107,7 +107,6 @@ BitmasksPointers:
 	dw MarowakBitmasks
 	dw HitmonleeBitmasks
 	dw HitmonchanBitmasks
-	dw LickitungBitmasks
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw RhyhornBitmasks
@@ -117,8 +116,9 @@ BitmasksPointers:
 	dw KangaskhanBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks
-	dw GoldeenBitmasks
-	dw SeakingBitmasks
+	dw TogepiBitmasks
+	dw TogeticBitmasks
+	dw TogekissBitmasks
 	dw StaryuBitmasks
 	dw StarmieBitmasks
 	dw MrMimeBitmasks
@@ -172,41 +172,41 @@ BitmasksPointers:
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
 	dw MagnezoneBitmasks
-	dw CorsolaBitmasks
-	dw TogepiBitmasks
-	dw TogeticBitmasks
-	dw TogekissBitmasks
+	dw RhyperiorBitmasks
+	dw TangrowthBitmasks
+	dw ElectivireBitmasks
+	dw MagmortarBitmasks
 	dw NatuBitmasks
 	dw XatuBitmasks
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
 	dw BellossomBitmasks
-	dw MarillBitmasks
-	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
+	dw SunkernBitmasks
+	dw SunfloraBitmasks	
 	dw HoppipBitmasks
 	dw SkiploomBitmasks
 	dw JumpluffBitmasks
-	dw AipomBitmasks
-	dw SunkernBitmasks
-	dw SunfloraBitmasks
 	dw YanmaBitmasks
+	dw YanmegaBitmasks
+	dw MurkrowBitmasks
+	dw HonchkrowBitmasks
 	dw WooperBitmasks
 	dw QuagsireBitmasks
 	dw EspeonBitmasks
 	dw UmbreonBitmasks
-	dw SylveonBitmasks
 	dw SlowkingBitmasks
-	dw StantlerBitmasks
+	dw MisdreavusBitmasks
+	dw MismagiusBitmasks
 	dw UnownBitmasks
 	dw WobbuffetBitmasks
 	dw GirafarigBitmasks
 	dw PinecoBitmasks
 	dw ForretressBitmasks
 	dw DunsparceBitmasks
-	dw GligarBitmasks
+	dw CorsolaBitmasks
 	dw SteelixBitmasks
 	dw SnubbullBitmasks
 	dw GranbullBitmasks
@@ -214,7 +214,7 @@ BitmasksPointers:
 	dw ScizorBitmasks
 	dw ShuckleBitmasks
 	dw HeracrossBitmasks
-	dw SneaselBitmasks
+	dw DelibirdBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw SlugmaBitmasks
@@ -224,22 +224,22 @@ BitmasksPointers:
 	dw MamoswineBitmasks
 	dw RemoraidBitmasks
 	dw OctilleryBitmasks
-	dw DelibirdBitmasks
-	dw MantineBitmasks
+	dw PhanpyBitmasks
+	dw DonphanBitmasks
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
 	dw KingdraBitmasks
-	dw PhanpyBitmasks
-	dw DonphanBitmasks
-	dw MisdreavusBitmasks
-	dw MismagiusBitmasks
+	dw MantineBitmasks
+	dw SneaselBitmasks
+	dw WeavileBitmasks
+	dw GligarBitmasks
+	dw GliscorBitmasks
 	dw SmeargleBitmasks
 	dw TyrogueBitmasks
 	dw HitmontopBitmasks
-	dw MurkrowBitmasks
-	dw HonchkrowBitmasks
 	dw Porygon2Bitmasks
+	dw PorygonZBitmasks
 	dw MiltankBitmasks
 	dw BlisseyBitmasks
 	dw RaikouBitmasks
@@ -251,5 +251,5 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
-	dw RaichuABitmasks
+	dw SylveonBitmasks
 	assert_table_length NUM_POKEMON

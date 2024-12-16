@@ -10,7 +10,7 @@ SpriteMons:
 	db PIDGEOT
 	db RATTATA
 	db RATICATE
-	db FEAROW
+	db FARFETCH_D
 	db PIKACHU
 	db RAICHU
 	db NIDORAN_F
@@ -46,7 +46,7 @@ SpriteMons:
 	db ONIX
 	db VOLTORB
 	db ELECTRODE
-	db HITMONLEE
+	db MAGMORTAR
 	db HITMONCHAN
 	db WEEZING
 	db CHANSEY
@@ -81,7 +81,7 @@ SpriteMons:
 	db UNOWN_T
 	db STEELIX
 	db SNUBBULL
-	db SNEASEL
+	db WEAVILE
 	db TEDDIURSA
 	db SLUGMA
 	db MAGCARGO

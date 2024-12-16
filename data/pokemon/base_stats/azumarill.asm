@@ -1,4 +1,4 @@
-	db AZUMARILL ; 184
+	db AZUMARILL ; 022
 
 	db 100,  75,  80,  50,  75,  80
 	evs  3,   0,   0,   0,   0,   0

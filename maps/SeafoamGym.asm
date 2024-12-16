@@ -1,6 +1,7 @@
 	object_const_def
 	const SEAFOAMGYM_BLAINE
 	const SEAFOAMGYM_MAGMAR
+	const SEAFOAMGYM_MAGMORTAR
 	const SEAFOAMGYM_FISHER1
 	const SEAFOAMGYM_FISHER2
 	const SEAFOAMGYM_GYM_GUIDE
@@ -101,6 +102,18 @@ SeafoamGymMagmar:
 	waitbutton
 	refreshscreen
 	pokepic MAGMAR
+	waitbutton
+	closepokepic
+	closetext
+	end
+
+SeafoamGymMagmortar:
+	opentext
+	writetext MagmortarText
+	cry MAGMORTAR
+	waitbutton
+	refreshscreen
+	pokepic MAGMORTAR
 	waitbutton
 	closepokepic
 	closetext
@@ -304,6 +317,10 @@ MagmarText:
 	line "MarMagmar!"
 	done
 
+MagmortarText:
+	text "Magmortar: Mooor!"
+	done
+
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -315,8 +332,9 @@ SeafoamGym_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  3, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
-	object_event  9,  3, SPRITE_MAGMAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymMagmar, -1
-	object_event  6, 11, SPRITE_FISHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherDick, -1
-	object_event 11,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherNed, -1
+	object_event  8,  3, SPRITE_BLAINE,    SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
+	object_event  9,  3, SPRITE_MAGMAR,    SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymMagmar, EVENT_SEAFOAM_GYM_MAGMAR
+	object_event  9,  3, SPRITE_MAGMORTAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymMagmortar, EVENT_SEAFOAM_GYM_MAGMORTAR
+	object_event  6, 11, SPRITE_FISHER,    SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherDick, -1
+	object_event 11,  9, SPRITE_FISHER,    SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherNed, -1
 	object_event  7, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, -1

@@ -1,4 +1,4 @@
-	db DONPHAN ; 232
+	db DONPHAN ; 226
 
 	db  90, 120, 120,  50,  60,  60
 	evs  0,   1,   1,   0,   0,   0

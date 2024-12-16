@@ -133,7 +133,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_PIDGEOT ; 86        ; SaffronAviculturalSociety1F
 	const SPRITE_RATTATA ; 87        ; Route30
 	const SPRITE_RATICATE ; 88       ; ViridianNicknameSpeechHouse
-	const SPRITE_FEAROW ; 89         ; Route28SteelWingHouse, SaffronAviculturalSociety1F, ViridianNicknameSpeechHouse
+	const SPRITE_FARFETCH_D ; 89     ; ViridianNicknameSpeechHouse
 	const SPRITE_PIKACHU ; 8a        ; DOLL, MtSilverRoom3, PlayersHouse1F, PlayersNeighborsHouse
 	const SPRITE_RAICHU  ; 8b        ; VermilionGym
 	const SPRITE_NIDORAN_F ; 8c      ; CeladonMansion1F
@@ -169,14 +169,14 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_ONIX ; aa           ; PewterGym
 	const SPRITE_VOLTORB ; ab        ; DOLL
 	const SPRITE_ELECTRODE ; ac      ; TeamRocketBaseB2F
-	const SPRITE_HITMONLEE ; ad      ; NONE
+	const SPRITE_MAGMORTAR ; ad      ; Seafoam Gym
 	const SPRITE_HITMONCHAN ; ae     ; NONE
 	const SPRITE_WEEZING ; af        ; FuchsiaGym
 	const SPRITE_CHANSEY ; b0        ; All PokeCenters
 	const SPRITE_KANGASKHAN ; b1     ; CeruleanTradeSpeechHouse
 	const SPRITE_STARMIE ; b2        ; CeruleanGym
 	const SPRITE_SCYTHER ; b3        ; AzaleaGym, Route23
-	const SPRITE_MAGMAR ; b4         ; CinnabarGym
+	const SPRITE_MAGMAR ; b4         ; Seafoam Gym
 	const SPRITE_PINSIR ; b5         ; FuchsiaCity
 	const SPRITE_TAUROS ; b6         ; FuchsiaCity
 	const SPRITE_MAGIKARP ; b7       ; DOLL, CeladonHomeDecorStore1F
@@ -204,13 +204,13 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN_T ; cd        ; RuinsOfAlphGSBallChamber
 	const SPRITE_STEELIX ; ce        ; OlivineGym, Route23 
 	const SPRITE_SNUBBULL ; cf       ; DOLL
-	const SPRITE_SNEASEL ; d0        ; UndergroundRoom
+	const SPRITE_WEAVILE ; d0        ; UndergroundRoom
 	const SPRITE_TEDDIURSA ; d1      ; DOLL
 	const SPRITE_SLUGMA ; d2         ; VioletPrimosHouse
 	const SPRITE_MAGCARGO ; d3       ; NONE
 	const SPRITE_PILOSWINE ; d4      ; MahoganyGym
 	const SPRITE_MAMOSWINE ; d5      ; MahoganyGym, Route23
-	const SPRITE_SKARMORY ; d6       ; SaffronAviculturalSociety2F
+	const SPRITE_SKARMORY ; d6       ; Route28SteelWingHouse, SaffronAviculturalSociety2F
 	const SPRITE_HOUNDOOM ; d7       ; KarensRoom
 	const SPRITE_KINGDRA ; d8        ; BlackthornGym1F, IndigoPlateau
 	const SPRITE_TYROGUE ; d9        ; NONE

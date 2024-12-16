@@ -1,4 +1,4 @@
-	db SUNFLORA ; 192
+	db SUNFLORA ; 186
 
 	db  80,  60,  85,  30, 105,  85
 	evs  0,   0,   0,   0,   2,   0

@@ -4,7 +4,6 @@
 	const SAFFRONAVICULTURALSOCIETY1F_BIRD_KEEPER2
 	const SAFFRONAVICULTURALSOCIETY1F_BIRD_KEEPER3
 	const SAFFRONAVICULTURALSOCIETY1F_PIDGEOT
-	const SAFFRONAVICULTURALSOCIETY1F_FEAROW
 	const SAFFRONAVICULTURALSOCIETY1F_DODRIO
 
 SaffronAviculturalSociety1F_MapScripts:
@@ -93,18 +92,6 @@ AviculturalSocietyDodrioScript:
 	closetext
 	end
 	
-AviculturalSocietyFearowScript:
-	opentext
-	writetext AviculturalSocietyFearowText
-	cry FEAROW
-	waitbutton
-	refreshscreen
-	pokepic FEAROW
-	waitbutton
-	closepokepic
-	closetext
-	end
-
 AviculturalSocietySign1:
 	jumptext AviculturalSocietySign1Text
 	
@@ -187,10 +174,6 @@ AviculturalSocietyDodrioText:
 	line "Dododo!"
 	done
 	
-AviculturalSocietyFearowText:
-	text "Fearow: Feeaar!"
-	done
-
 AviculturalSocietySign1Text:
 	text "Love birds?"
 	line "So do we!"
@@ -216,11 +199,6 @@ AviculturalSocietyBookshelf1Text:
 	line "found on Routes 1,"
 	cont "2, 13, 14,"
 	cont "15 and 25."
-	
-	para "Fearow can be"
-	line "found on Routes 2,"
-	cont "3, 4, 5, 7, 9, 16,"
-	cont "17, 18 and 22."
 	
 	para "Farfetch'd can be"
 	line "found in Johto on"
@@ -321,4 +299,3 @@ SaffronAviculturalSociety1F_MapEvents:
 	object_event  9,  1, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety1FBirdKeeper3Script, -1
 	object_event  1,  4, SPRITE_PIDGEOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyPidgeotScript, -1
 	object_event 11,  4, SPRITE_DODRIO, SPRITEMOVEDATA_POKEMON, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyDodrioScript, -1
-	object_event  4,  3, SPRITE_FEAROW, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyFearowScript, -1

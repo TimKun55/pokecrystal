@@ -1352,26 +1352,26 @@ BattleTowerMons:
 	bigdw 65 ; SDef
 	db "RINGUMA@@@@"
 
-	db FEAROW
-	db BRIGHTPOWDER
-	db MIRROR_MOVE, PURSUIT, PECK, SWIFT
+	db FARFETCH_D
+	db STICK
+	db SLASH, POISON_JAB, WING_ATTACK, SWORDS_DANCE
 	dw 0 ; OT ID
 	bigdt 27000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 6, 7, 7, 7 ; DVs
-	db 20, 20, 35, 20 ; PP
+	db 20, 20, 30, 30 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 96 ; HP
-	bigdw 96 ; Max HP
-	bigdw 75 ; Atk
-	bigdw 61 ; Def
-	bigdw 82 ; Spd
-	bigdw 58 ; SAtk
-	bigdw 58 ; SDef
+	bigdw 75 ; HP
+	bigdw 75 ; Max HP
+	bigdw 48 ; Atk
+	bigdw 43 ; Def
+	bigdw 56 ; Spd
+	bigdw 45 ; SAtk
+	bigdw 47 ; SDef
 	db "ONIDORIRU@@"
 
 	db PRIMEAPE
@@ -4409,26 +4409,26 @@ BattleTowerMons:
 	bigdw 218 ; SDef
 	db "HAGANE-RU@@"
 
-	db FEAROW
-	db KINGS_ROCK
-	db DRILL_PECK, STEEL_WING, HYPER_BEAM, MUD_SLAP
+	db FARFETCH_D
+	db SITRUS_BERRY
+	db ACROBATICS, SLASH, POISON_JAB, MUD_SLAP
 	dw 0 ; OT ID
 	bigdt 1000000 ; Exp
 	db 235, 224, 224, 235, 224, 224 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 15, 13, 12, 15 ; DVs
-	db 20, 25, 5, 10 ; PP
+	db 15, 20, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 324 ; HP
-	bigdw 324 ; Max HP
-	bigdw 270 ; Atk
-	bigdw 216 ; Def
-	bigdw 287 ; Spd
-	bigdw 212 ; SAtk
-	bigdw 212 ; SDef
+	bigdw 248 ; HP
+	bigdw 248 ; Max HP
+	bigdw 168 ; Atk
+	bigdw 144 ; Def
+	bigdw 159 ; Spd
+	bigdw 148 ; SAtk
+	bigdw 156 ; SDef
 	db "ONIDORIRU@@"
 
 	db MISDREAVUS

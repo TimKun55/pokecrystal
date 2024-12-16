@@ -39,8 +39,8 @@
 	const PIDGEOT    ; 12
 	const RATTATA    ; 13
 	const RATICATE   ; 14
-	const SPEAROW    ; 15
-	const FEAROW     ; 16
+	const MARILL     ; 15		; replaced Spearow
+	const AZUMARILL  ; 16		; replaced Fearow
 	const EKANS      ; 17
 	const ARBOK      ; 18
 	const PIKACHU    ; 19
@@ -126,18 +126,18 @@
 	const MAROWAK    ; 69
 	const HITMONLEE  ; 6a
 	const HITMONCHAN ; 6b
-	const LICKITUNG  ; 6c
-	const KOFFING    ; 6d
-	const WEEZING    ; 6e
-	const RHYHORN    ; 6f
-	const RHYDON     ; 70
-	const CHANSEY    ; 71
-	const TANGELA    ; 72
-	const KANGASKHAN ; 73
-	const HORSEA     ; 74
-	const SEADRA     ; 75
-	const GOLDEEN    ; 76
-	const SEAKING    ; 77
+	const KOFFING    ; 6c		; replaced Lickitung
+	const WEEZING    ; 6d		; moved Koffing
+	const RHYHORN    ; 6e		; moved Weezing
+	const RHYDON     ; 6f		; moved Rhyhorn
+	const CHANSEY    ; 70		; moved Rhydon
+	const TANGELA    ; 71		; moved Chansey
+	const KANGASKHAN ; 72		; moved Tangela
+	const HORSEA     ; 73		; moved Kangaskhan
+	const SEADRA     ; 74		; moved Horsea
+	const TOGEPI     ; 75		; moved Seadra
+	const TOGETIC    ; 76		; replaced Goldeen
+	const TOGEKISS   ; 77		; replaced Seaking
 	const STARYU     ; 78
 	const STARMIE    ; 79
 	const MR__MIME   ; 7a
@@ -191,42 +191,42 @@ DEF JOHTO_POKEMON EQU const_value
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const MAGNEZONE  ; ac 		; replaced Pichu
-	const CORSOLA    ; ad		; replaced Cleffa
-	const TOGEPI     ; ae		; replaced Igglybuff, moved Togepi
-	const TOGETIC    ; af		; replaced Togepi, moved Togetic
-	const TOGEKISS   ; b0		; replaced Togetic
+	const MAGNEZONE  ; ac 		; replaced Pichu		172
+	const RHYPERIOR  ; ad		; replaced Cleffa		173
+	const TANGROWTH  ; ae		; replaced Igglybuff	174
+	const ELECTIVIRE ; af		; moved Togepi			175
+	const MAGMORTAR  ; b0		; moved Togetic			176
 	const NATU       ; b1
 	const XATU       ; b2
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6
-	const MARILL     ; b7
-	const AZUMARILL  ; b8
-	const SUDOWOODO  ; b9
-	const POLITOED   ; ba
+	const SUDOWOODO  ; b7		; moved Marill			183
+	const POLITOED   ; b8		; moved Azumarill		184
+	const SUNKERN    ; b9		; moved Sudowoodo		185
+	const SUNFLORA   ; ba		; moved Politoed		186
 	const HOPPIP     ; bb
 	const SKIPLOOM   ; bc
 	const JUMPLUFF   ; bd
-	const AIPOM      ; be
-	const SUNKERN    ; bf
-	const SUNFLORA   ; c0
-	const YANMA      ; c1
+	const YANMA      ; be		; removed Aipom			190
+	const YANMEGA    ; bf		; moved Sunkern			191
+	const MURKROW    ; c0		; moved Sunflora		192
+	const HONCHKROW  ; c1		; moved Yanma			193
 	const WOOPER     ; c2
 	const QUAGSIRE   ; c3
 	const ESPEON     ; c4
 	const UMBREON    ; c5
-	const SYLVEON    ; c6		; replaced Murkrow - moved
-	const SLOWKING   ; c7
-	const STANTLER   ; c8		; replaced Misdreavus - moved
+	const SLOWKING   ; c6		; moved Murkrow			198
+	const MISDREAVUS ; c7		; moved Slowking		199
+	const MISMAGIUS  ; c8		; moved Misdreavus		200
 	const UNOWN      ; c9
 	const WOBBUFFET  ; ca
 	const GIRAFARIG  ; cb
 	const PINECO     ; cc
 	const FORRETRESS ; cd
 	const DUNSPARCE  ; ce
-	const GLIGAR     ; cf
+	const CORSOLA    ; cf		; moved Gligar			207
 	const STEELIX    ; d0
 	const SNUBBULL   ; d1
 	const GRANBULL   ; d2
@@ -234,32 +234,32 @@ DEF JOHTO_POKEMON EQU const_value
 	const SCIZOR     ; d4
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
-	const SNEASEL    ; d7
+	const DELIBIRD   ; d7		; moved Sneasel			215
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const SLUGMA     ; da
 	const MAGCARGO   ; db
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
-	const MAMOSWINE  ; de 	; replaced Corsola - moved
+	const MAMOSWINE  ; de 		; moved Corsola			222
 	const REMORAID   ; df
 	const OCTILLERY  ; e0
-	const DELIBIRD   ; e1
-	const MANTINE    ; e2
+	const PHANPY     ; e1		; moved Delibird		225
+	const DONPHAN    ; e2		; moved Mantine			226
 	const SKARMORY   ; e3
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
 	const KINGDRA    ; e6
-	const PHANPY     ; e7
-	const DONPHAN    ; e8
-	const MISDREAVUS ; e9		; replaced Porygon2 - moved
-	const MISMAGIUS  ; ea		; replaced Stantler - moved
-	const SMEARGLE   ; eb
-	const TYROGUE    ; ec
-	const HITMONTOP  ; ed
-	const MURKROW    ; ee		; replaced Smoochum
-	const HONCHKROW  ; ef		; replaced Elekid
-	const PORYGON2   ; f0		; replaced Magby
+	const MANTINE    ; e7		; moved Phanpy			231
+	const SNEASEL    ; e8		; moved Donphan			232
+	const WEAVILE    ; e9		; moved Porygon2		233
+	const GLIGAR     ; ea		; removed Stantler		234
+	const GLISCOR    ; eb		; moved Smeargle		235
+	const SMEARGLE   ; ec		; moved Tyrogue			236
+	const TYROGUE    ; ed		; moved Hitmontop		237
+	const HITMONTOP  ; ee		; replaced Smoochum		238
+	const PORYGON2   ; ef		; replaced Elekid		239
+	const PORYGON_Z  ; f0		; replaced Magby		240
 	const MILTANK    ; f1
 	const BLISSEY    ; f2
 	const RAIKOU     ; f3
@@ -271,7 +271,7 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
-	const RAICHU_A   ; fc
+	const SYLVEON    ; fc
 DEF NUM_POKEMON EQU const_value - 1
 	const EGG        ; fd
 

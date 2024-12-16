@@ -278,7 +278,6 @@ ROMX $6c
 	"Map Scripts 25"
 ROMX $6d
 	"Special Phone Text"
-	"Pics 24"
 ROMX $6e
 	"Pokedex Entries 065-128"
 ROMX $6f
@@ -322,6 +321,8 @@ ROMX $7e
 ROMX $7f
 	"Tileset Data 9"
 ROMX $80
+	"Pics 24"
+ROMX $81
 	"Mobile Adapter SDK Mail"
 WRAM0
 	"Stack"

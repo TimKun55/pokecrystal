@@ -133,28 +133,28 @@ KantoGrassWildMons:
 	db 22, PIKACHU,       52,  55
 	db 22, BUTTERFREE,    55,  58
 	db 22, BEEDRILL,      55,  58
-	db 10, LEDIAN,        55,  58
-	db  8, VENOMOTH,      55,  58
-	db  8, HERACROSS,     55,  58
-	db  8, FORRETRESS,    55,  58
+	db 11, VENOMOTH,      55,  58
+	db  9, HERACROSS,     55,  58
+	db  9, FORRETRESS,    55,  58
+	db  5, YANMEGA,       55,  58
 	; day
 	;   %, species,		 min, max
 	db 22, PIKACHU,       52,  55
 	db 22, BUTTERFREE,    55,  58
 	db 22, BEEDRILL,      55,  58
-	db 10, LEDIAN,        55,  58
-	db  8, VENOMOTH,      55,  58
-	db  8, HERACROSS,     55,  58
-	db  8, FORRETRESS,    55,  58
+	db 11, VENOMOTH,      55,  58
+	db  9, HERACROSS,     55,  58
+	db  9, FORRETRESS,    55,  58
+	db  5, YANMEGA,       55,  58
 	; nite
 	;   %, species,		 min, max
 	db 22, PIKACHU,       52,  55
 	db 22, BUTTERFREE,    55,  58
 	db 22, BEEDRILL,      55,  58
-	db 10, ARIADOS,       55,  58
-	db  8, VENOMOTH,      55,  58
-	db  8, HERACROSS,     55,  58
-	db  8, FORRETRESS,    55,  58
+	db 11, VENOMOTH,      55,  58
+	db  9, HERACROSS,     55,  58
+	db  9, FORRETRESS,    55,  58
+	db  5, YANMEGA,       55,  58
 	end_grass_wildmons
 	
 	def_grass_wildmons ROCK_TUNNEL_1F
@@ -349,7 +349,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      60,  63
 	db 22, CROBAT,        60,  63
-	db 22, PRIMEAPE,      60,  63
+	db 22, RHYPERIOR,     60,  63
 	db 10, ELECTRODE,     60,  63
 	db  8, WOBBUFFET,     60,  63
 	db  8, PERSIAN,       60,  63
@@ -358,7 +358,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      60,  63
 	db 22, CROBAT,        60,  63
-	db 22, PRIMEAPE,      60,  63
+	db 22, RHYPERIOR,     60,  63
 	db 10, ELECTRODE,     60,  63
 	db  8, WOBBUFFET,     60,  63
 	db  8, PERSIAN,       60,  63
@@ -367,7 +367,7 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, PARASECT,      60,  63
 	db 22, CROBAT,        60,  63
-	db 22, PRIMEAPE,      60,  63
+	db 22, RHYPERIOR,     60,  63
 	db 10, ELECTRODE,     60,  63
 	db  8, WOBBUFFET,     60,  63
 	db  8, PERSIAN,       60,  63
@@ -595,69 +595,69 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        55,  58
+	db 22, RATICATE,      55,  58
 	db 22, FURRET,        55,  58
 	db 22, PIDGEOT,       55,  58
-	db 10, LEDIAN,        55,  58
-	db  8, NIDORINA,      57,  60
-	db  8, NIDORINO,      57,  60
-	db  8, RATICATE,      57,  60
+	db 11, LEDIAN,        55,  58
+	db  9, NIDORINA,      57,  60
+	db  9, NIDORINO,      57,  60
+	db  5, YANMEGA,       57,  60
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        55,  58
+	db 22, RATICATE,      55,  58
 	db 22, FURRET,        55,  58
 	db 22, PIDGEOT,       55,  58
-	db 10, LEDIAN,        55,  58
-	db  8, NIDORINA,      57,  60
-	db  8, NIDORINO,      57,  60
-	db  8, RATICATE,      57,  60
+	db 11, LEDIAN,        55,  58
+	db  9, NIDORINA,      57,  60
+	db  9, NIDORINO,      57,  60
+	db  5, YANMEGA,       57,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, FEAROW,        55,  58
+	db 22, RATICATE,      55,  58
 	db 22, FURRET,        55,  58
 	db 22, PIDGEOT,       55,  58
-	db 10, ARIADOS,       55,  58
-	db  8, NIDORINA,      57,  60
-	db  8, NIDORINO,      57,  60
-	db  8, RATICATE,      57,  60
+	db 11, ARIADOS,       55,  58
+	db  9, NIDORINA,      57,  60
+	db  9, NIDORINO,      57,  60
+	db  5, YANMEGA,       57,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, CLEFAIRY,      57,  60
 	db  8, ARBOK,         57,  60
 	db  8, SANDSLASH,     57,  60
-	db  8, SANDSLASH,     57,  60
+	db  8, RATICATE,      57,  60
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, CLEFAIRY,      57,  60
 	db  8, ARBOK,         57,  60
 	db  8, SANDSLASH,     57,  60
-	db  8, SANDSLASH,     57,  60
+	db  8, RATICATE,      57,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, CLEFAIRY,      57,  60
 	db  8, ARBOK,         57,  60
 	db  8, SANDSLASH,     57,  60
-	db  8, SANDSLASH,     57,  60
+	db  8, RATICATE,      57,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, RATICATE,      57,  60
@@ -666,7 +666,7 @@ KantoGrassWildMons:
 	db  8, CLEFAIRY,      57,  60
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, RATICATE,      57,  60
@@ -675,7 +675,7 @@ KantoGrassWildMons:
 	db  8, CLEFAIRY,      57,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  60
+	db 22, SANDSLASH,     57,  60
 	db 22, RATICATE,      57,  60
 	db 22, ARBOK,         57,  60
 	db 10, RATICATE,      57,  60
@@ -689,30 +689,30 @@ KantoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, KADABRA,       48,  50
-	db 22, FEAROW,        48,  50
+	db 22, GLOOM,         48,  50
 	db 22, PIDGEOTTO,     48,  50
-	db 10, JIGGLYPUFF,    48,  50
-	db  8, KADABRA,       52,  55
-	db  8, FEAROW,        52,  55
-	db  8, PIDGEOTTO,     52,  55
+	db 11, JIGGLYPUFF,    48,  50
+	db  9, KADABRA,       52,  55
+	db  9, GLOOM,         52,  55
+	db  5, PORYGON2,      52,  55
 	; day
 	;   %, species,		 min, max
 	db 22, KADABRA,       48,  50
-	db 22, FEAROW,        48,  50
+	db 22, GLOOM,         48,  50
 	db 22, PIDGEOTTO,     48,  50
-	db 10, JIGGLYPUFF,    48,  50
-	db  8, KADABRA,       52,  55
-	db  8, FEAROW,        52,  55
-	db  8, PIDGEOTTO,     52,  55
+	db 11, JIGGLYPUFF,    48,  50
+	db  9, KADABRA,       52,  55
+	db  9, GLOOM,         52,  55
+	db  5, PORYGON2,      52,  55
 	; nite
 	;   %, species,		 min, max
 	db 22, KADABRA,       48,  50
 	db 22, PERSIAN,       48,  50
 	db 22, PIDGEOTTO,     48,  50
-	db 10, JIGGLYPUFF,    48,  50
-	db  8, KADABRA,       52,  55
-	db  8, PERSIAN,       52,  55
-	db  8, PIDGEOTTO,     52,  55
+	db 11, JIGGLYPUFF,    48,  50
+	db  9, KADABRA,       52,  55
+	db  9, PERSIAN,       52,  55
+	db  5, PORYGON2,      52,  55
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_6
@@ -722,28 +722,28 @@ KantoGrassWildMons:
 	db 22, KADABRA,       46,  48
 	db 22, PIDGEOTTO,     46,  48
 	db 22, MAGNETON,      46,  48
-	db 10, PERSIAN,       48,  50
-	db  8, WEEPINBELL,    46,  48
-	db  8, GLOOM,         46,  48
-	db  8, PERSIAN,       48,  50
+	db 11, PERSIAN,       48,  50
+	db  9, WEEPINBELL,    46,  48
+	db  9, GLOOM,         46,  48
+	db  5, PORYGON2,      48,  50
 	; day
 	;   %, species,		 min, max
 	db 22, KADABRA,       46,  48
 	db 22, PIDGEOTTO,     46,  48
 	db 22, MAGNETON,      46,  48
-	db 10, PERSIAN,       48,  50
-	db  8, WEEPINBELL,    46,  48
-	db  8, GLOOM,         46,  48
-	db  8, PERSIAN,       48,  50
+	db 11, PERSIAN,       48,  50
+	db  9, WEEPINBELL,    46,  48
+	db  9, GLOOM,         46,  48
+	db  5, PORYGON2,      48,  50
 	; nite
 	;   %, species,		 min, max
 	db 22, KADABRA,       46,  48
 	db 22, PIDGEOTTO,     46,  48
 	db 22, MAGNETON,      46,  48
-	db 10, PERSIAN,       48,  50
-	db  8, WEEPINBELL,    46,  48
-	db  8, GLOOM,         46,  48
-	db  8, PERSIAN,       48,  50
+	db 11, PERSIAN,       48,  50
+	db  9, WEEPINBELL,    46,  48
+	db  9, GLOOM,         46,  48
+	db  5, PORYGON2,      48,  50
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_7
@@ -751,30 +751,30 @@ KantoGrassWildMons:
 	; morn
 	;   %, species,		 min, max
 	db 22, RATICATE,      52,  55
-	db 22, FEAROW,        52,  55
-	db 22, JIGGLYPUFF,    52,  55
-	db 10, RATICATE,      52,  55
-	db  8, GRANBULL,      52,  55
-	db  8, PORYGON,       52,  55
-	db  8, PORYGON,       55,  57
+	db 22, GLOOM,         52,  55
+	db 22, WEEPINBELL,    52,  55
+	db 11, JIGGLYPUFF,    52,  55
+	db  9, GRANBULL,      52,  55
+	db  9, RATICATE,      52,  55
+	db  5, PORYGON2,      55,  57
 	; day
 	;   %, species,		 min, max
 	db 22, RATICATE,      52,  55
-	db 22, FEAROW,        52,  55
-	db 22, JIGGLYPUFF,    52,  55
-	db 10, RATICATE,      52,  55
-	db  8, GRANBULL,      52,  55
-	db  8, PORYGON,       52,  55
-	db  8, PORYGON,       55,  57
+	db 22, GLOOM,         52,  55
+	db 22, WEEPINBELL,    52,  55
+	db 11, JIGGLYPUFF,    52,  55
+	db  9, GRANBULL,      52,  55
+	db  9, RATICATE,      52,  55
+	db  5, PORYGON2,      55,  57
 	; nite
 	;   %, species,		 min, max
 	db 22, KADABRA,       52,  55
 	db 22, HONCHKROW,     52,  55
-	db 22, JIGGLYPUFF,    52,  55
-	db 10, PERSIAN,       52,  55
-	db  8, HOUNDOOM,      52,  55
-	db  8, PORYGON,       52,  55
-	db  8, PORYGON,       55,  57
+	db 22, VILEPLUME,     52,  55
+	db 11, JIGGLYPUFF,    52,  55
+	db  9, HOUNDOOM,      52,  55
+	db  9, PERSIAN,       52,  55
+	db  5, PORYGON2,      55,  57
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_8
@@ -784,28 +784,28 @@ KantoGrassWildMons:
 	db 22, VULPIX,        52,  55
 	db 22, PIDGEOTTO,     52,  55
 	db 22, KADABRA,       52,  55
-	db 10, GROWLITHE,     52,  55
-	db  8, JIGGLYPUFF,    52,  55
-	db  8, HAUNTER,       55,  57
-	db  8, KADABRA,       55,  57
+	db 11, GROWLITHE,     52,  55
+	db  9, JIGGLYPUFF,    52,  55
+	db  9, HAUNTER,       55,  57
+	db  5, PORYGON2,      55,  57
 	; day
 	;   %, species,		 min, max
 	db 22, VULPIX,        52,  55
 	db 22, PIDGEOTTO,     52,  55
 	db 22, KADABRA,       52,  55
-	db 10, GROWLITHE,     52,  55
-	db  8, JIGGLYPUFF,    52,  55
-	db  8, HAUNTER,       55,  57
-	db  8, KADABRA,       55,  57
+	db 11, GROWLITHE,     52,  55
+	db  9, JIGGLYPUFF,    52,  55
+	db  9, HAUNTER,       55,  57
+	db  5, PORYGON2,      55,  57
 	; nite
 	;   %, species,		 min, max
 	db 22, VULPIX,        52,  55
 	db 22, PIDGEOTTO,     52,  55
 	db 22, KADABRA,       52,  55
-	db 10, GROWLITHE,     52,  55
-	db  8, JIGGLYPUFF,    52,  55
-	db  8, HAUNTER,       55,  57
-	db  8, KADABRA,       55,  57
+	db 11, GROWLITHE,     52,  55
+	db  9, JIGGLYPUFF,    52,  55
+	db  9, HAUNTER,       55,  57
+	db  5, PORYGON2,      55,  57
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_9
@@ -815,18 +815,18 @@ KantoGrassWildMons:
 	db 22, NIDORINA,      53,  56
 	db 22, NIDORINO,      53,  56
 	db 22, RATICATE,      53,  56
-	db 10, FEAROW,        53,  56
+	db 10, POLIWHIRL,     53,  56
 	db  8, PRIMEAPE,      53,  56
-	db  8, FEAROW,        57,  59
+	db  8, POLIWHIRL,     57,  59
 	db  8, PRIMEAPE,      57,  59
 	; day
 	;   %, species,		 min, max
 	db 22, NIDORINA,      53,  56
 	db 22, NIDORINO,      53,  56
 	db 22, RATICATE,      53,  56
-	db 10, FEAROW,        53,  56
+	db 10, POLIWHIRL,     53,  56
 	db  8, PRIMEAPE,      53,  56
-	db  8, FEAROW,        57,  59
+	db  8, POLIWHIRL,     57,  59
 	db  8, PRIMEAPE,      57,  59
 	; nite
 	;   %, species,		 min, max
@@ -847,27 +847,27 @@ KantoGrassWildMons:
 	db 22, MAGNETON,      53,  56
 	db 22, ELECTABUZZ,    53,  56
 	db 10, AMPHAROS,      57,  59
-	db  8, ELECTRODE,     57,  59
-	db  8, MAGNEZONE,     57,  59
-	db  8, ELECTABUZZ,    57,  59
+	db  8, RAICHU,        57,  59
+	db  8, RAICHU,        57,  59
+	db  8, ELECTIVIRE,    57,  59
 	; day
 	;   %, species,		 min, max
 	db 22, ELECTRODE,     53,  56
 	db 22, MAGNETON,      53,  56
 	db 22, ELECTABUZZ,    53,  56
 	db 10, AMPHAROS,      57,  59
-	db  8, ELECTRODE,     57,  59
-	db  8, MAGNEZONE,     57,  59
-	db  8, ELECTABUZZ,    57,  59
+	db  8, RAICHU,        57,  59
+	db  8, RAICHU,        57,  59
+	db  8, ELECTIVIRE,    57,  59
 	; nite
 	;   %, species,		 min, max
 	db 22, ELECTRODE,     53,  56
 	db 22, VENOMOTH,      53,  56
 	db 22, ELECTABUZZ,    53,  56
 	db 10, AMPHAROS,      57,  59
-	db  8, ELECTRODE,     57,  59
-	db  8, MAGNEZONE,     57,  59
-	db  8, ELECTABUZZ,    57,  59
+	db  8, RAICHU,        57,  59
+	db  8, RAICHU,        57,  59
+	db  8, ELECTIVIRE,    57,  59
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_11
@@ -1002,8 +1002,8 @@ KantoGrassWildMons:
 	db 22, SLUGMA,        53,  55
 	db 22, GRIMER,        55,  57
 	db 10, MUK,           55,  57
-	db  8, FEAROW,        55,  57
-	db  8, FEAROW,        58,  60
+	db  8, WEEZING,       55,  57
+	db  8, WEEZING,       58,  60
 	db  8, MUK,           58,  60
 	; day
 	;   %, species,		 min, max
@@ -1011,8 +1011,8 @@ KantoGrassWildMons:
 	db 22, SLUGMA,        53,  55
 	db 22, GRIMER,        55,  57
 	db 10, MUK,           55,  57
-	db  8, FEAROW,        55,  57
-	db  8, FEAROW,        58,  60
+	db  8, WEEZING,       55,  57
+	db  8, WEEZING,       58,  60
 	db  8, MUK,           58,  60
 	; nite
 	;   %, species,		 min, max
@@ -1029,25 +1029,25 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  59
+	db 22, KOFFING,       57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, FEAROW,        58,  60
+	db 10, WEEZING,       58,  60
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
 	db  8, MUK,           58,  60
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  59
+	db 22, KOFFING,       57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
-	db 10, FEAROW,        58,  60
+	db 10, WEEZING,       58,  60
 	db  8, SLUGMA,        55,  57
 	db  8, MUK,           57,  59
 	db  8, MUK,           58,  60
 	; nite
 	;   %, species,		 min, max
-	db 22, FEAROW,        57,  59
+	db 22, KOFFING,       57,  59
 	db 22, SLUGMA,        55,  57
 	db 22, GRIMER,        55,  57
 	db 10, HONCHKROW,     58,  60
@@ -1060,7 +1060,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, FEAROW,        58,  60
+	db 22, KOFFING,       58,  60
 	db 22, GRIMER,        55,  57
 	db 22, GRIMER,        56,  58
 	db 10, GRIMER,        57,  59
@@ -1069,7 +1069,7 @@ KantoGrassWildMons:
 	db  8, SLUGMA,        55,  57
 	; day
 	;   %, species,		 min, max
-	db 22, FEAROW,        58,  60
+	db 22, KOFFING,       58,  60
 	db 22, GRIMER,        55,  57
 	db 22, GRIMER,        56,  58
 	db 10, GRIMER,        57,  59
@@ -1124,29 +1124,29 @@ KantoGrassWildMons:
 	;   %, species,		 min, max
 	db 22, RAPIDASH,      57,  58
 	db 22, DODRIO,        57,  58
-	db 22, FEAROW,        57,  58
+	db 22, PRIMEAPE,      57,  58
 	db 10, DODRIO,        58,  60
 	db  8, WIGGLYTUFF,    58,  60
 	db  8, RAPIDASH,      58,  60
-	db  8, FEAROW,        58,  60
+	db  8, PRIMEAPE,      58,  60
 	; day
 	;   %, species,		 min, max
 	db 22, RAPIDASH,      57,  58
 	db 22, DODRIO,        57,  58
-	db 22, FEAROW,        57,  58
+	db 22, PRIMEAPE,      57,  58
 	db 10, DODRIO,        58,  60
 	db  8, WIGGLYTUFF,    58,  60
 	db  8, RAPIDASH,      58,  60
-	db  8, FEAROW,        58,  60
+	db  8, PRIMEAPE,      58,  60
 	; nite
 	;   %, species,		 min, max
 	db 22, RAPIDASH,      57,  58
 	db 22, DODRIO,        57,  58
-	db 22, FEAROW,        57,  58
+	db 22, PRIMEAPE,      57,  58
 	db 10, DODRIO,        58,  60
 	db  8, WIGGLYTUFF,    58,  60
 	db  8, RAPIDASH,      58,  60
-	db  8, FEAROW,        58,  60
+	db  8, PRIMEAPE,      58,  60
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_23
@@ -1156,28 +1156,28 @@ KantoGrassWildMons:
 	db 22, NIDORINA,      40,  42
 	db 22, NIDORINO,      40,  42
 	db 22, PRIMEAPE,      40,  42
-	db 10, FEAROW,        40,  42
+	db 10, POLIWHIRL,     40,  42
 	db  8, SANDSLASH,     40,  42
 	db  8, SANDSLASH,     40,  42
-	db  8, FEAROW,        40,  42
+	db  8, DITTO,         40,  42
 	; day
 	;   %, species,		 min, max
 	db 22, NIDORINA,      40,  42
 	db 22, NIDORINO,      40,  42
 	db 22, PRIMEAPE,      40,  42
-	db 10, FEAROW,        40,  42
+	db 10, POLIWHIRL,     40,  42
 	db  8, SANDSLASH,     40,  42
 	db  8, SANDSLASH,     40,  42
-	db  8, FEAROW,        40,  42
+	db  8, DITTO,         40,  42
 	; nite
 	;   %, species,		 min, max
 	db 22, NIDORINA,      40,  42
 	db 22, NIDORINO,      40,  42
 	db 22, PRIMEAPE,      40,  42
-	db 10, FEAROW,        40,  42
+	db 10, POLIWHIRL,     40,  42
 	db  8, SANDSLASH,     40,  42
 	db  8, SANDSLASH,     40,  42
-	db  8, FEAROW,        40,  42
+	db  8, DITTO,         40,  42
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
@@ -1280,28 +1280,28 @@ KantoGrassWildMons:
 	db 22, HITMONLEE,     60,  63
 	db 22, HITMONCHAN,    60,  63
 	db 22, MACHAMP,       60,  63
-	db 10, ALAKAZAM,      60,  63
-	db  8, ARCANINE,      60,  63
-	db  8, NINETALES,     60,  63
-	db  8, RAICHU,        60,  63
+	db 11, ALAKAZAM,      60,  63
+	db  9, ARCANINE,      60,  63
+	db  9, NINETALES,     60,  63
+	db  5, PORYGON_Z,     60,  63
 	; day
 	;   %, species,		 min, max
 	db 22, HITMONLEE,     60,  63
 	db 22, HITMONCHAN,    60,  63
 	db 22, MACHAMP,       60,  63
-	db 10, ALAKAZAM,      60,  63
-	db  8, ARCANINE,      60,  63
-	db  8, NINETALES,     60,  63
-	db  8, RAICHU,        60,  63
+	db 11, ALAKAZAM,      60,  63
+	db  9, ARCANINE,      60,  63
+	db  9, NINETALES,     60,  63
+	db  5, PORYGON_Z,     60,  63
 	; nite
 	;   %, species,		 min, max
 	db 22, HITMONLEE,     60,  63
 	db 22, HITMONCHAN,    60,  63
 	db 22, MACHAMP,       60,  63
-	db 10, ALAKAZAM,      60,  63
-	db  8, ARCANINE,      60,  63
-	db  8, NINETALES,     60,  63
-	db  8, RAICHU,        60,  63
+	db 11, ALAKAZAM,      60,  63
+	db  9, ARCANINE,      60,  63
+	db  9, NINETALES,     60,  63
+	db  5, PORYGON_Z,     60,  63
 	end_grass_wildmons
 	
 	def_grass_wildmons SAFARI_ZONE_HUB

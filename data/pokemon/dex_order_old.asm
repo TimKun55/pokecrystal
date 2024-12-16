@@ -19,13 +19,12 @@ OldPokedexOrder:
 	db PIDGEOT    ; 12
 	db RATTATA    ; 13
 	db RATICATE   ; 14
-	db SPEAROW    ; 15
-	db FEAROW     ; 16
+	db MARILL     ; 15
+	db AZUMARILL  ; 16
 	db EKANS      ; 17
 	db ARBOK      ; 18
 	db PIKACHU    ; 19
 	db RAICHU     ; 1a
-	db RAICHU_A
 	db SANDSHREW  ; 1b
 	db SANDSLASH  ; 1c
 	db NIDORAN_F  ; 1d
@@ -107,7 +106,6 @@ OldPokedexOrder:
 	db MAROWAK    ; 69
 	db HITMONLEE  ; 6a
 	db HITMONCHAN ; 6b
-	db LICKITUNG  ; 6c
 	db KOFFING    ; 6d
 	db WEEZING    ; 6e
 	db RHYHORN    ; 6f
@@ -117,8 +115,9 @@ OldPokedexOrder:
 	db KANGASKHAN 
 	db HORSEA
 	db SEADRA
-	db GOLDEEN
-	db SEAKING
+	db TOGEPI
+	db TOGETIC 
+	db TOGEKISS  
 	db STARYU
 	db STARMIE
 	db MR__MIME
@@ -172,41 +171,41 @@ OldPokedexOrder:
 	db CHINCHOU
 	db LANTURN
 	db MAGNEZONE
-	db CORSOLA
-	db TOGEPI
-	db TOGETIC 
-	db TOGEKISS  
-	db NATU 
-	db XATU 
-	db MAREEP   
-	db FLAAFFY  
-	db AMPHAROS 
-	db BELLOSSOM 
-	db MARILL   
-	db AZUMARILL
+	db RHYPERIOR
+	db TANGROWTH
+	db ELECTIVIRE
+	db MAGMORTAR
+	db NATU
+	db XATU
+	db MAREEP
+	db FLAAFFY
+	db AMPHAROS
+	db BELLOSSOM
 	db SUDOWOODO
-	db POLITOED 
+	db POLITOED
+	db SUNKERN
+	db SUNFLORA 
 	db HOPPIP  
 	db SKIPLOOM 
 	db JUMPLUFF 
-	db AIPOM  
-	db SUNKERN
-	db SUNFLORA 
-	db YANMA   
+	db YANMA
+	db YANMEGA
+	db MURKROW
+	db HONCHKROW
 	db WOOPER  
 	db QUAGSIRE
 	db ESPEON  
 	db UMBREON
-	db SYLVEON 
 	db SLOWKING 
-	db STANTLER 
+	db MISDREAVUS
+	db MISMAGIUS
 	db UNOWN  
 	db WOBBUFFET 
 	db GIRAFARIG
 	db PINECO
 	db FORRETRESS
 	db DUNSPARCE
-	db GLIGAR
+	db CORSOLA
 	db STEELIX
 	db SNUBBULL
 	db GRANBULL
@@ -214,7 +213,7 @@ OldPokedexOrder:
 	db SCIZOR
 	db SHUCKLE 
 	db HERACROSS
-	db SNEASEL 
+	db DELIBIRD
 	db TEDDIURSA
 	db URSARING 
 	db SLUGMA 
@@ -224,22 +223,22 @@ OldPokedexOrder:
 	db MAMOSWINE
 	db REMORAID
 	db OCTILLERY 
-	db DELIBIRD 
-	db MANTINE 
+	db PHANPY
+	db DONPHAN
 	db SKARMORY
 	db HOUNDOUR
 	db HOUNDOOM
-	db KINGDRA
-	db PHANPY
-	db DONPHAN
-	db MISDREAVUS
-	db MISMAGIUS
+	db KINGDRA	
+	db MANTINE 
+	db SNEASEL 
+	db WEAVILE
+	db GLIGAR
+	db GLISCOR
 	db SMEARGLE 
 	db TYROGUE
 	db HITMONTOP
-	db MURKROW
-	db HONCHKROW
 	db PORYGON2
+	db PORYGON_Z
 	db MILTANK
 	db BLISSEY
 	db RAIKOU
@@ -251,3 +250,4 @@ OldPokedexOrder:
 	db LUGIA
 	db HO_OH
 	db CELEBI
+	db SYLVEON

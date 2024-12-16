@@ -26,8 +26,8 @@ MonMenuIconPals:
 	icon_pals BROWN,  YELLOW ; PIDGEOT
 	icon_pals PURPLE, BROWN  ; RATTATA
 	icon_pals BROWN,  RED    ; RATICATE
-	icon_pals BROWN,  YELLOW ; SPEAROW
-	icon_pals BROWN,  YELLOW ; FEAROW
+	icon_pals BLUE,   GREEN  ; MARILL			; replaced Spearow
+	icon_pals BLUE,   YELLOW ; AZUMARILL		; replaced Fearow
 	icon_pals PURPLE, GREEN  ; EKANS
 	icon_pals PURPLE, YELLOW ; ARBOK
 	icon_pals YELLOW, RED    ; PIKACHU
@@ -113,18 +113,18 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; MAROWAK
 	icon_pals BROWN,  GREEN  ; HITMONLEE
 	icon_pals BROWN,  BLUE   ; HITMONCHAN
-	icon_pals RED,    YELLOW ; LICKITUNG
-	icon_pals PURPLE, GRAY   ; KOFFING
-	icon_pals PURPLE, GRAY   ; WEEZING
-	icon_pals GRAY,   BROWN  ; RHYHORN
-	icon_pals GRAY,   YELLOW ; RHYDON
-	icon_pals PINK,   GREEN  ; CHANSEY
-	icon_pals BLUE,   GREEN  ; TANGELA
-	icon_pals BROWN,  GREEN  ; KANGASKHAN
-	icon_pals BLUE,   GRAY   ; HORSEA
-	icon_pals BLUE,   PURPLE ; SEADRA
-	icon_pals RED,    YELLOW ; GOLDEEN
-	icon_pals RED,    YELLOW ; SEAKING
+	icon_pals PURPLE, GRAY   ; KOFFING			; replaced Lickitung
+	icon_pals PURPLE, GRAY   ; WEEZING			; moved Koffing
+	icon_pals GRAY,   BROWN  ; RHYHORN			; moved Weezing
+	icon_pals GRAY,   YELLOW ; RHYDON			; moved Rhyhorn
+	icon_pals PINK,   GREEN  ; CHANSEY			; moved Rhydon
+	icon_pals BLUE,   GREEN  ; TANGELA			; moved Chansey
+	icon_pals BROWN,  GREEN  ; KANGASKHAN		; moved Tangela
+	icon_pals BLUE,   GRAY   ; HORSEA			; moved Kangaskhan
+	icon_pals BLUE,   PURPLE ; SEADRA			; moved Horsea
+	icon_pals RED,    BLUE   ; TOGEPI			; moved Seadra
+	icon_pals RED,    BLUE   ; TOGETIC			; replaced Goldeen
+	icon_pals RED,    BLUE   ; TOGEKISS			; replaced Seaking
 	icon_pals BROWN,  GRAY   ; STARYU
 	icon_pals PURPLE, BLUE   ; STARMIE
 	icon_pals RED,    GREEN  ; MR_MIME
@@ -177,42 +177,42 @@ MonMenuIconPals:
 	icon_pals PURPLE, PINK   ; CROBAT
 	icon_pals BLUE,   GRAY   ; CHINCHOU
 	icon_pals BLUE,   PURPLE ; LANTURN
-	icon_pals GRAY,   BROWN  ; MAGNEZONE		; replaced Pichu
-	icon_pals PINK,   BLUE   ; CORSOLA			; replaced Cleffa
-	icon_pals RED,    BLUE   ; TOGEPI			; replaced Igglybuff, moved Togepi
-	icon_pals RED,    BLUE   ; TOGETIC			; replaced Togepi, moved Togetic
-	icon_pals RED,    BLUE   ; TOGEKISS			; replaced Togetic
+	icon_pals GRAY,   BROWN  ; MAGNEZONE			; replaced Pichu
+	icon_pals GRAY,   RED    ; RHYPERIOR			; replaced Cleffa
+	icon_pals BLUE,   GREEN  ; TANGROWTH			; replaced Igglybuff
+	icon_pals YELLOW, BROWN  ; ELECTIVIRE			; replaced Togepi
+	icon_pals RED,    PINK   ; MAGMORTAR			; replaced Togetic
 	icon_pals GREEN,  GRAY   ; NATU
 	icon_pals GREEN,  GRAY   ; XATU
 	icon_pals BLUE,   PINK   ; MAREEP
 	icon_pals PINK,   PURPLE ; FLAAFFY
 	icon_pals YELLOW, PINK   ; AMPHAROS
 	icon_pals GREEN,  PURPLE ; BELLOSSOM
-	icon_pals BLUE,   GREEN  ; MARILL
-	icon_pals BLUE,   YELLOW ; AZUMARILL
-	icon_pals GREEN,  RED    ; SUDOWOODO
-	icon_pals GREEN,  PURPLE ; POLITOED
+	icon_pals GREEN,  RED    ; SUDOWOODO			; moved Marill
+	icon_pals GREEN,  PURPLE ; POLITOED				; moved Azumarill
+	icon_pals GREEN,  YELLOW ; SUNKERN				; moved Sudowoodo
+	icon_pals GREEN,  YELLOW ; SUNFLORA				; moved Politoed
 	icon_pals RED,    GREEN  ; HOPPIP
 	icon_pals GREEN,  PURPLE ; SKIPLOOM
 	icon_pals BLUE,   PINK   ; JUMPLUFF
-	icon_pals PURPLE, PINK   ; AIPOM
-	icon_pals GREEN,  YELLOW ; SUNKERN
-	icon_pals GREEN,  YELLOW ; SUNFLORA
-	icon_pals RED,    BLUE   ; YANMA
+	icon_pals RED,    BLUE   ; YANMA				; removed Aipom
+	icon_pals GREEN,  BLUE   ; YANMEGA				; removed Sunkern
+	icon_pals BLUE,   PURPLE ; MURKROW				; removed Sunflora
+	icon_pals BLUE,   PURPLE ; HONCHKROW			; removed Yanma
 	icon_pals BLUE,   PINK   ; WOOPER
 	icon_pals BLUE,   PINK   ; QUAGSIRE
 	icon_pals PURPLE, GREEN  ; ESPEON
 	icon_pals GRAY,   BLUE   ; UMBREON
-	icon_pals PINK,   BLUE   ; SYLVEON			; replaced Murkrow - moved
-	icon_pals PINK,   BLUE   ; SLOWKING
-	icon_pals BROWN,  GREEN  ; STANTLER			; replaced Misdreavus - moved
+	icon_pals PINK,   BLUE   ; SLOWKING				; moved Murkrow
+	icon_pals PURPLE, YELLOW ; MISDREAVUS			; moved Slowking
+	icon_pals PURPLE, YELLOW ; MISMAGIUS			; moved Misdreavus
 	icon_pals GRAY,   BLUE   ; UNOWN
 	icon_pals BLUE,   PURPLE ; WOBBUFFET
 	icon_pals RED,    BLUE   ; GIRAFARIG
 	icon_pals BLUE,   YELLOW ; PINECO
 	icon_pals GRAY,   YELLOW ; FORRETRESS
 	icon_pals BLUE,   PINK   ; DUNSPARCE
-	icon_pals PURPLE, BLUE   ; GLIGAR
+	icon_pals PINK,   BLUE   ; CORSOLA				; moved Gligar
 	icon_pals GRAY,   BROWN  ; STEELIX
 	icon_pals PINK,   GRAY   ; SNUBBULL
 	icon_pals PURPLE, BROWN  ; GRANBULL
@@ -220,32 +220,32 @@ MonMenuIconPals:
 	icon_pals RED,    GREEN  ; SCIZOR
 	icon_pals RED,    BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
-	icon_pals RED,    PINK   ; SNEASEL
+	icon_pals RED,    PURPLE ; DELIBIRD				; moved Sneasel
 	icon_pals BROWN,  GREEN  ; TEDDIURSA
 	icon_pals BROWN,  GREEN  ; URSARING
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals RED,    PURPLE ; MAGCARGO
 	icon_pals BROWN,  GRAY   ; SWINUB
 	icon_pals BROWN,  YELLOW ; PILOSWINE
-	icon_pals BROWN,  GREEN  ; MAMOSWINE
+	icon_pals BROWN,  GREEN  ; MAMOSWINE			; moved Corsola
 	icon_pals BLUE,   PURPLE ; REMORAID
 	icon_pals RED,    GREEN  ; OCTILLERY
-	icon_pals RED,    PURPLE ; DELIBIRD
-	icon_pals BLUE,   GRAY   ; MANTINE
+	icon_pals BLUE,   GRAY   ; PHANPY				; moved Delibird
+	icon_pals GRAY,   BROWN  ; DONPHAN				; moved Mantine
 	icon_pals GRAY,   BROWN  ; SKARMORY
 	icon_pals RED,    BLUE   ; HOUNDOUR
 	icon_pals RED,    BLUE   ; HOUNDOOM
 	icon_pals BLUE,   PURPLE ; KINGDRA
-	icon_pals BLUE,   GRAY   ; PHANPY
-	icon_pals GRAY,   BROWN  ; DONPHAN
-	icon_pals PURPLE, YELLOW ; MISDREAVUS		; replaced Porygon2 - moved
-	icon_pals PURPLE, YELLOW ; MISMAGIUS		; replaced Stantler - moved
-	icon_pals BROWN,  GREEN  ; SMEARGLE
-	icon_pals BROWN,  BLUE   ; TYROGUE
-	icon_pals BROWN,  PURPLE ; HITMONTOP
-	icon_pals BLUE,   PURPLE ; MURKROW			; replaced Smoochum
-	icon_pals BLUE,   PURPLE ; HONCHKROW		; replaced Elekid
-	icon_pals RED,    BLUE   ; PORYGON2			; replaced Magby
+	icon_pals BLUE,   GRAY   ; MANTINE				; moved Phanpy
+	icon_pals RED,    PINK   ; SNEASEL				; moved Donphan
+	icon_pals PURPLE, PINK   ; WEAVILE				; moved Porygon2
+	icon_pals PURPLE, BLUE   ; GLIGAR				; replaced Stantler
+	icon_pals PURPLE, BLUE   ; GLISCOR				; moved Smeargle
+	icon_pals BROWN,  GREEN  ; SMEARGLE				; moved Tyrogue
+	icon_pals BROWN,  BLUE   ; TYROGUE				; moved Hitmontop
+	icon_pals BROWN,  PURPLE ; HITMONTOP			; replaced Smoochum
+	icon_pals RED,    BLUE   ; PORYGON2				; replaced Elekid
+	icon_pals RED,    BLUE   ; PORYGON_Z			; replaced Magby
 	icon_pals PINK,   BLUE   ; MILTANK
 	icon_pals PINK,   PURPLE ; BLISSEY
 	icon_pals YELLOW, RED    ; RAIKOU
@@ -257,7 +257,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   RED    ; LUGIA
 	icon_pals RED,    BROWN  ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
-	icon_pals RED,    BROWN  ; RAICHU_A
+	icon_pals PINK,   BLUE   ; SYLVEON
 	assert_table_length NUM_POKEMON
 	icon_pals GREEN,  BLUE   ; EGG
 	assert_table_length EGG

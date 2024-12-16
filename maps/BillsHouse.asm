@@ -27,9 +27,9 @@ BillsGrandpa:
 	iftrue .ShowedStaryu
 	checkevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
 	iftrue .ShowedOddish
-	checkevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	iftrue .ShowedLickitung
-	writetext BillsGrandpaLickitungText
+	checkevent EVENT_SHOWED_KANGASKHAN_TO_BILLS_GRANDPA
+	iftrue .ShowedKangaskhan
+	writetext BillsGrandpaKangaskhanText
 	promptbutton
 	writetext BillsGrandpaAskToSeeMonText
 	yesorno
@@ -37,10 +37,10 @@ BillsGrandpa:
 	scall .ExcitedToSee
 	special BillsGrandfather
 	iffalse .SaidNo
-	ifnotequal LICKITUNG, .WrongPokemon
+	ifnotequal KANGASKHAN, .WrongPokemon
 	scall .CorrectPokemon
-	setevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	sjump .ShowedLickitung
+	setevent EVENT_SHOWED_KANGASKHAN_TO_BILLS_GRANDPA
+	sjump .ShowedKangaskhan
 
 .GotEverstone:
 	writetext BillsGrandpaOddishText
@@ -114,7 +114,7 @@ BillsGrandpa:
 	setevent EVENT_SHOWED_MAGNEMITE_TO_BILLS_GRANDPA
 	sjump .ShowedMagnemite
 
-.ShowedLickitung:
+.ShowedKangaskhan:
 	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 	iftrue .GotEverstone
 	scall .ReceiveItem
@@ -285,12 +285,13 @@ BillsGrandpaWrongPokemonText:
 	cont "told about."
 	done
 
-BillsGrandpaLickitungText:
+BillsGrandpaKangaskhanText:
 	text "My grandson Bill"
 	line "told me about a"
 
 	para "#mon that has a"
-	line "long tongue."
+	line "pouch for its"
+	cont "young."
 	done
 
 BillsGrandpaOddishText:

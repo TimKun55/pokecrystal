@@ -18,7 +18,7 @@ NPCTrades:
 	npctrade TRADE_DIALOGSET_GIRL,      MANTINE,    OCTILLERY,  "Okutank@@@@", $7a, $9f, KELPSY_BERRY, 09874, "Serena@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_HAPPY,     MILTANK,    SCIZOR,     "Hassam@@@@@", $fa, $86, SCOPE_LENS,   59189, "Tim@@@@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_NEWBIE,    LEDIAN,     FORRETRESS, "Foretos@@@@", $9f, $99, BERRY_JUICE,  62680, "Kai@@@@@@@@", TRADE_GENDER_EITHER
-	npctrade TRADE_DIALOGSET_GIRL,      SEAKING,    KINGDRA,    "Kaiba@@@@@@", $79, $9f, SITRUS_BERRY, 00283, "Emy@@@@@@@@", TRADE_GENDER_EITHER
+	npctrade TRADE_DIALOGSET_GIRL,      KINGLER,    KINGDRA,    "Kaiba@@@@@@", $79, $9f, SITRUS_BERRY, 00283, "Emy@@@@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_NEWBIE,    HAUNTER,    XATU,       "Natio@@@@@@", $6a, $bf, LEPPA_BERRY,  15616, "Chris@@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_GIRL,      PIDGEOT,    BLISSEY,    "Happinas@@@", $66, $6f, LUCKY_EGG,    26491, "Kim@@@@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_COLLECTOR, VILEPLUME,  NIDOKING,   "Nidoking@@@", $f9, $a6, LUM_BERRY,    50082, "Forest@@@@@", TRADE_GENDER_EITHER

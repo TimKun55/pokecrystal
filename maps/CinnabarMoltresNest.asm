@@ -35,6 +35,8 @@ CinnabarMoltresNestBlaine:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GUARDIAN_BLAINE
+	setevent EVENT_SEAFOAM_GYM_MAGMAR
+	clearevent EVENT_SEAFOAM_GYM_MAGMORTAR
 	opentext 
 	writetext MoltresNestBlaineOutroText
 	waitbutton

@@ -1,4 +1,4 @@
-	db CHANSEY ; 113
+	db CHANSEY ; 112
 
 	db 250,  05,  05,  50,  35, 105
 	evs  2,   0,   0,   0,   0,   0

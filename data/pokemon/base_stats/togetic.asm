@@ -1,4 +1,4 @@
-	db TOGETIC ; 175
+	db TOGETIC ; 118
 
 	db  55,  40,  85,  40,  80, 105
 	evs  0,   0,   0,   0,   0,   2

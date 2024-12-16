@@ -1,7 +1,7 @@
 	object_const_def
 	const VIRIDIANNICKNAMESPEECHHOUSE_POKEFAN_M
 	const VIRIDIANNICKNAMESPEECHHOUSE_LASS
-	const VIRIDIANNICKNAMESPEECHHOUSE_SPEARY
+	const VIRIDIANNICKNAMESPEECHHOUSE_KWAXS
 	const VIRIDIANNICKNAMESPEECHHOUSE_RATTEY
 
 ViridianNicknameSpeechHouse_MapScripts:
@@ -15,13 +15,13 @@ ViridianNicknameSpeechHousePokefanMScript:
 ViridianNicknameSpeechHouseLassScript:
 	jumptextfaceplayer ViridianNicknameSpeechHouseLassText
 
-Feary:
+Kwaxs:
 	opentext
-	writetext FearyText
-	cry FEAROW
+	writetext KwaxsText
+	cry FARFETCH_D
 	waitbutton
 	refreshscreen
-	pokepic FEAROW
+	pokepic FARFETCH_D
 	waitbutton
 	closepokepic
 	closetext
@@ -54,13 +54,13 @@ ViridianNicknameSpeechHousePokefanMText:
 	done
 
 ViridianNicknameSpeechHouseLassText:
-	text "They're Feary--"
-	line "a Fearow--and"
+	text "They're Kwaxs--"
+	line "a Farfetch'd--and"
 	cont "Rattey--a Rattata."
 	done
 
-FearyText:
-	text "Feary: Ch-chun!"
+KwaxsText:
+	text "Kwaxs: Farrfarr!"
 	done
 
 RatteyText:
@@ -81,5 +81,5 @@ ViridianNicknameSpeechHouse_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
 	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_FEAROW, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Feary, -1
-	object_event  6,  3, SPRITE_RATTATA, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
+	object_event  5,  2, SPRITE_FARFETCH_D, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Kwaxs, -1
+	object_event  6,  3, SPRITE_RATTATA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Rattey, -1

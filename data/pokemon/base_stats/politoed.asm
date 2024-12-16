@@ -1,4 +1,4 @@
-	db POLITOED ; 186
+	db POLITOED ; 184
 
 	db  90,  75,  75,  70,  90, 100
 	evs  0,   0,   0,   0,   0,   3

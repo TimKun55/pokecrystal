@@ -1,4 +1,4 @@
-	db DELIBIRD ; 225
+	db DELIBIRD ; 215
 
 	db  45,  55,  45,  75,  65,  45
 	evs  0,   0,   0,   1,   0,   0

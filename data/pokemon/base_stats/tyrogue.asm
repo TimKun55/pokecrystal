@@ -1,4 +1,4 @@
-	db TYROGUE ; 236
+	db TYROGUE ; 237
 
 	db  35,  35,  35,  35,  35,  35
 	evs  0,   1,   0,   0,   0,   0

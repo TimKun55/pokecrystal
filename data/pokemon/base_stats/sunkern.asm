@@ -1,4 +1,4 @@
-	db SUNKERN ; 191
+	db SUNKERN ; 185
 
 	db  30,  30,  30,  30,  30,  30
 	evs  0,   0,   0,   0,   1,   0

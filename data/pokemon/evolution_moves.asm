@@ -20,8 +20,8 @@ EvolutionMoves::
 	db NO_MOVE      ; PIDGEOT
 	db NO_MOVE      ; RATTATA
 	db SCARY_FACE   ; RATICATE
-	db NO_MOVE      ; SPEAROW
-	db NO_MOVE      ; FEAROW
+	db NO_MOVE      ; MARILL
+	db NO_MOVE      ; AZUMARILL
 	db NO_MOVE      ; EKANS
 	db CRUNCH       ; ARBOK
 	db NO_MOVE      ; PIKACHU
@@ -107,7 +107,6 @@ EvolutionMoves::
 	db NO_MOVE      ; MAROWAK
 	db DOUBLE_KICK  ; HITMONLEE
 	db GROWTH_PUNCH ; HITMONCHAN
-	db NO_MOVE      ; LICKITUNG
 	db NO_MOVE      ; KOFFING
 	db NO_MOVE      ; WEEZING
 	db NO_MOVE      ; RHYHORN
@@ -117,8 +116,9 @@ EvolutionMoves::
 	db NO_MOVE      ; KANGASKHAN
 	db NO_MOVE      ; HORSEA
 	db NO_MOVE      ; SEADRA
-	db NO_MOVE      ; GOLDEEN
-	db NO_MOVE      ; SEAKING
+	db NO_MOVE      ; TOGEPI
+	db WING_ATTACK  ; TOGETIC
+	db MOONBLAST    ; TOGEKISS
 	db NO_MOVE      ; STARYU
 	db PSYBEAM      ; STARMIE
 	db NO_MOVE      ; MRMIME
@@ -172,41 +172,41 @@ EvolutionMoves::
 	db NO_MOVE      ; CHINCHOU
 	db NO_MOVE      ; LANTURN
 	db THUNDERBOLT  ; MAGNEZONE
-	db NO_MOVE      ; CORSOLA
-	db NO_MOVE      ; TOGEPI
-	db WING_ATTACK  ; TOGETIC
-	db MOONBLAST    ; TOGEKISS
+	db ROCK_BLAST   ; RHYPERIOR
+	db NO_MOVE      ; TANGROWTH
+	db NO_MOVE      ; ELECTIVIRE
+	db NO_MOVE      ; MAGMORTAR
 	db NO_MOVE      ; NATU
 	db AIR_SLASH    ; XATU
 	db NO_MOVE      ; MAREEP
 	db NO_MOVE      ; FLAAFY
 	db THUNDERPUNCH ; AMPHAROS
 	db PETAL_DANCE  ; BELLOSSOM
-	db NO_MOVE      ; MARILL
-	db NO_MOVE      ; AZUMARILL
 	db NO_MOVE      ; SUDOWOODO
 	db SING         ; POLITOED
+	db NO_MOVE      ; SUNKERN
+	db EMBER        ; SUNFLORA	
 	db NO_MOVE      ; HOPPIP
 	db NO_MOVE      ; SKIPLOOM
 	db NO_MOVE      ; JUMPLUFF
-	db NO_MOVE      ; AIPOM
-	db NO_MOVE      ; SUNKERN
-	db EMBER        ; SUNFLORA
 	db NO_MOVE      ; YANMA
+	db DRAGONBREATH ; YANMEGA
+	db NO_MOVE      ; MURKROW
+	db NIGHT_SLASH  ; HONCHKROW
 	db NO_MOVE      ; WOOPER
 	db NO_MOVE      ; QUAGSIRE
 	db CONFUSION    ; ESPEON
 	db PURSUIT      ; UMBREON
-	db DISARM_VOICE ; SYLVEON
 	db HARDEN       ; SLOWKING
-	db NO_MOVE      ; STANTLER
+	db NO_MOVE      ; MISDREAVUS
+	db DRAIN_KISS   ; MISMAGIUS
 	db NO_MOVE      ; UNOWN
 	db NO_MOVE      ; WOBBUFFET
 	db NO_MOVE      ; GIRAFARIG
 	db NO_MOVE      ; PINECO
 	db FLASH_CANNON ; FORRETRESS
 	db NO_MOVE      ; DUNSPARCE
-	db NO_MOVE      ; GLIGAR
+	db NO_MOVE      ; CORSOLA
 	db IRON_TAIL    ; STEELIX
 	db NO_MOVE      ; SNUBBULL
 	db KARATE_CHOP  ; GRANBULL
@@ -214,7 +214,7 @@ EvolutionMoves::
 	db METAL_CLAW   ; SCIZOR
 	db NO_MOVE      ; SHUCKLE
 	db NO_MOVE      ; HERACROSS
-	db NO_MOVE      ; SNEASEL
+	db NO_MOVE      ; DELIBIRD
 	db NO_MOVE      ; TEDDIURSA
 	db MAGNITUDE    ; URSARING
 	db NO_MOVE      ; SLUGMA
@@ -224,22 +224,22 @@ EvolutionMoves::
 	db ICICLE_SPEAR ; MAMOSWINE
 	db NO_MOVE      ; REMORAID
 	db OCTAZOOKA    ; OCTILLERY
-	db NO_MOVE      ; DELIBIRD
-	db NO_MOVE      ; MANTINE
+	db NO_MOVE      ; PHANPY
+	db FURY_STRIKES ; DONPHAN
 	db NO_MOVE      ; SKARMORY
 	db NO_MOVE      ; HOUNDOUR
 	db NO_MOVE      ; HOUNDOOM
 	db DRAGONBREATH ; KINGDRA
-	db NO_MOVE      ; PHANPY
-	db FURY_STRIKES ; DONPHAN
-	db NO_MOVE      ; MISDREAVUS
-	db DRAIN_KISS   ; MISMAGIUS
+	db NO_MOVE      ; MANTINE
+	db NO_MOVE      ; SNEASEL
+	db NO_MOVE      ; WEAVILE
+	db NO_MOVE      ; GLIGAR
+	db NO_MOVE      ; GLISCOR
 	db NO_MOVE      ; SMEARGLE
 	db NO_MOVE      ; TYROGUE
 	db TRIPLE_KICK  ; HITMONTOP
-	db NO_MOVE      ; MURKROW
-	db NIGHT_SLASH  ; HONCHKROW
 	db NO_MOVE      ; PORYGON2
+	db NO_MOVE      ; PORYGON_Z
 	db NO_MOVE      ; MILTANK
 	db NO_MOVE      ; BLISSEY
 	db NO_MOVE      ; RAIKOU
@@ -251,5 +251,5 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HOOH
 	db NO_MOVE      ; CELEBI
-	db PSYCHIC_M    ; RAICHU_A
+	db DISARM_VOICE ; SYLVEON
 	assert_table_length NUM_POKEMON

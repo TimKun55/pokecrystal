@@ -5,7 +5,6 @@ AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
 	db ABRA
 	db AERODACTYL
-	db AIPOM
 	db ALAKAZAM
 	db AMPHAROS
 	db ARBOK
@@ -53,13 +52,13 @@ AlphabeticalPokedexOrder:
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ
+	db ELECTIVIRE
 	db ELECTRODE
 	db ENTEI
 	db ESPEON
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db FARFETCH_D
-	db FEAROW
 	db FERALIGATR
 	db FLAAFFY
 	db FLAREON
@@ -70,9 +69,9 @@ AlphabeticalPokedexOrder:
 	db GEODUDE
 	db GIRAFARIG
 	db GLIGAR
+	db GLISCOR
 	db GLOOM
 	db GOLBAT
-	db GOLDEEN
 	db GOLDUCK
 	db GOLEM
 	db GRANBULL
@@ -112,7 +111,6 @@ AlphabeticalPokedexOrder:
 	db LARVITAR
 	db LEDIAN
 	db LEDYBA
-	db LICKITUNG
 	db LUGIA
 	db MACHAMP
 	db MACHOKE
@@ -120,6 +118,7 @@ AlphabeticalPokedexOrder:
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
+	db MAGMORTAR
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
@@ -173,6 +172,7 @@ AlphabeticalPokedexOrder:
 	db PONYTA
 	db PORYGON
 	db PORYGON2
+	db PORYGON_Z
 	db PRIMEAPE
 	db PSYDUCK
 	db PUPITAR
@@ -180,7 +180,6 @@ AlphabeticalPokedexOrder:
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
-	db RAICHU_A
 	db RAIKOU
 	db RAPIDASH
 	db RATICATE
@@ -188,12 +187,12 @@ AlphabeticalPokedexOrder:
 	db REMORAID
 	db RHYDON
 	db RHYHORN
+	db RHYPERIOR
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
-	db SEAKING
 	db SEEL
 	db SENTRET
 	db SHELLDER
@@ -208,10 +207,8 @@ AlphabeticalPokedexOrder:
 	db SNEASEL
 	db SNORLAX
 	db SNUBBULL
-	db SPEAROW
 	db SPINARAK
 	db SQUIRTLE
-	db STANTLER
 	db STARMIE
 	db STARYU
 	db STEELIX
@@ -222,6 +219,7 @@ AlphabeticalPokedexOrder:
 	db SWINUB
 	db SYLVEON
 	db TANGELA
+	db TANGROWTH
 	db TAUROS
 	db TEDDIURSA
 	db TENTACOOL
@@ -245,6 +243,7 @@ AlphabeticalPokedexOrder:
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE
+	db WEAVILE
 	db WEEDLE
 	db WEEPINBELL
 	db WEEZING
@@ -253,6 +252,7 @@ AlphabeticalPokedexOrder:
 	db WOOPER
 	db XATU
 	db YANMA
+	db YANMEGA
 	db ZAPDOS
 	db ZUBAT
 	assert_table_length NUM_POKEMON

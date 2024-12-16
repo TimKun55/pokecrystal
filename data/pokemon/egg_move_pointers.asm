@@ -20,7 +20,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw RattataEggMoves
 	dw NoEggMoves
-	dw SpearowEggMoves
+	dw MarillEggMoves
 	dw NoEggMoves
 	dw EkansEggMoves
 	dw NoEggMoves
@@ -107,7 +107,6 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw LickitungEggMoves
 	dw KoffingEggMoves
 	dw NoEggMoves
 	dw RhyhornEggMoves
@@ -117,7 +116,8 @@ EggMovePointers::
 	dw KangaskhanEggMoves
 	dw HorseaEggMoves
 	dw NoEggMoves
-	dw GoldeenEggMoves
+	dw TogepiEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
@@ -172,8 +172,8 @@ EggMovePointers::
 	dw ChinchouEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw CorsolaEggMoves
-	dw TogepiEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NatuEggMoves
@@ -182,31 +182,31 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw MarillEggMoves
-	dw NoEggMoves
 	dw SudowoodoEggMoves
+	dw NoEggMoves
+	dw SunkernEggMoves
 	dw NoEggMoves
 	dw HoppipEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw AipomEggMoves
-	dw SunkernEggMoves
-	dw NoEggMoves
 	dw YanmaEggMoves
+	dw NoEggMoves
+	dw MurkrowEggMoves
+	dw NoEggMoves
 	dw WooperEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw MisdreavusEggMoves
 	dw NoEggMoves
-	dw StantlerEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw GirafarigEggMoves
 	dw PinecoEggMoves
 	dw NoEggMoves
 	dw DunsparceEggMoves
-	dw GligarEggMoves
+	dw CorsolaEggMoves
 	dw NoEggMoves
 	dw SnubbullEggMoves
 	dw NoEggMoves
@@ -214,7 +214,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw ShuckleEggMoves
 	dw HeracrossEggMoves
-	dw SneaselEggMoves
+	dw DelibirdEggMoves
 	dw TeddiursaEggMoves
 	dw NoEggMoves
 	dw SlugmaEggMoves
@@ -224,20 +224,20 @@ EggMovePointers::
 	dw NoEggMoves
 	dw RemoraidEggMoves
 	dw NoEggMoves
-	dw DelibirdEggMoves
-	dw MantineEggMoves
+	dw PhanpyEggMoves
+	dw NoEggMoves
 	dw SkarmoryEggMoves
 	dw HoundourEggMoves
 	dw NoEggMoves
+	dw NoEggMoves	
+	dw MantineEggMoves
+	dw SneaselEggMoves
 	dw NoEggMoves
-	dw PhanpyEggMoves
-	dw NoEggMoves
-	dw MisdreavusEggMoves
+	dw GligarEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw TyrogueEggMoves
 	dw NoEggMoves
-	dw MurkrowEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw MiltankEggMoves

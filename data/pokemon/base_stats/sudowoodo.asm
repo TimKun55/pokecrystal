@@ -1,4 +1,4 @@
-	db SUDOWOODO ; 185
+	db SUDOWOODO ; 183
 
 	db  70, 100, 115,  30,  30,  65
 	evs  0,   0,   2,   0,   0,   0

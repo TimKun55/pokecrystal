@@ -1,4 +1,4 @@
-	db KANGASKHAN ; 115
+	db KANGASKHAN ; 114
 
 	db 105,  95,  80,  90,  40,  80
 	evs  2,   0,   0,   0,   0,   0

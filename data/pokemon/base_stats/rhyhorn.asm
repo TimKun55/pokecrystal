@@ -1,4 +1,4 @@
-	db RHYHORN ; 111
+	db RHYHORN ; 110
 
 	db  80,  85,  95,  25,  30,  30
 	evs  0,   0,   1,   0,   0,   0

@@ -1,4 +1,4 @@
-	db HITMONTOP ; 237
+	db HITMONTOP ; 238
 
 	db  50,  95,  95,  70,  35, 110
 	evs  0,   0,   0,   0,   0,   2

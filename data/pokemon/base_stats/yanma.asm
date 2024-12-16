@@ -1,6 +1,6 @@
-	db YANMA ; 193
+	db YANMA ; 190
 
-	db  70,  82,  60,  95,  85,  60
+	db  65,  65,  55,  95,  75,  55
 	evs  0,   0,   0,   2,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 

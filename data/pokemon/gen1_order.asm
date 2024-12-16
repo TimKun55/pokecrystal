@@ -4,13 +4,13 @@ Pokered_MonIndices:
 	db KANGASKHAN
 	db NIDORAN_M
 	db CLEFAIRY
-	db SPEAROW
+	db RHYPERIOR
 	db VOLTORB
 	db NIDOKING
 	db SLOWBRO
 	db IVYSAUR
 	db EXEGGUTOR
-	db LICKITUNG
+	db YANMEGA
 	db EXEGGCUTE
 	db GRIMER
 	db GENGAR
@@ -34,7 +34,7 @@ Pokered_MonIndices:
 	db SHUCKLE ; MISSINGNO.
 	db GROWLITHE
 	db ONIX
-	db FEAROW
+	db TANGROWTH
 	db PIDGEY
 	db SLOWPOKE
 	db KADABRA
@@ -156,8 +156,8 @@ Pokered_MonIndices:
 	db VENUSAUR
 	db TENTACRUEL
 	db MURKROW ; MISSINGNO.
-	db GOLDEEN
-	db SEAKING
+	db GLISCOR
+	db WEAVILE
 	db HONCHKROW ; MISSINGNO.
 	db PORYGON2 ; MISSINGNO.
 	db MILTANK ; MISSINGNO.
@@ -229,7 +229,7 @@ Pokered_MonIndices:
 	db HOPPIP
 	db SKIPLOOM
 	db JUMPLUFF
-	db AIPOM
+	db PORYGON_Z
 	db SUNKERN
 	db SUNFLORA
 	db YANMA
@@ -239,7 +239,7 @@ Pokered_MonIndices:
 	db UMBREON
 	db SYLVEON
 	db SLOWKING
-	db STANTLER
+	db ELECTIVIRE
 	db UNOWN
 	db WOBBUFFET
 	db GIRAFARIG
@@ -253,5 +253,5 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
-	db RAICHU_A
+	db MAGMORTAR
 	assert_table_length NUM_POKEMON + 1

@@ -1,4 +1,4 @@
-	db MURKROW ; 238
+	db MURKROW ; 192
 
 	db  60,  85,  52,  91,  85,  52
 	evs  0,   0,   0,   1,   0,   0

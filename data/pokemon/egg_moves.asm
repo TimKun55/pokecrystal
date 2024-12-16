@@ -54,14 +54,16 @@ RattataEggMoves:
 	db REVERSAL
 	db -1 ; end
 
-SpearowEggMoves:
-	db FEINT_ATTACK
-	db FALSE_SWIPE
-	db SCARY_FACE
-	db QUICK_ATTACK
-	db TRI_ATTACK
-	db HEAT_WAVE
-	db HURRICANE
+MarillEggMoves:
+	db LIGHT_SCREEN
+	db PRESENT
+	db AMNESIA
+	db FUTURE_SIGHT
+	db BELLY_DRUM
+	db SUPERSONIC
+	db FORESIGHT
+	db DISARM_VOICE
+	db AQUA_JET
 	db -1 ; end
 
 EkansEggMoves:
@@ -374,13 +376,6 @@ CuboneEggMoves:
 	db IRON_BASH
 	db -1 ; end
 
-LickitungEggMoves:
-	db DIZZY_PUNCH
-	db MAGNITUDE
-	db MEGA_PUNCH
-	db SUBSTITUTE
-	db -1 ; end
-
 KoffingEggMoves:
 	db SCREECH
 	db PSYBEAM
@@ -432,12 +427,14 @@ HorseaEggMoves:
 	db SIGNAL_BEAM
 	db -1 ; end
 
-GoldeenEggMoves:
-	db PSYBEAM
-	db HAZE
-	db HYDRO_PUMP
-	db SIGNAL_BEAM
-	db SCALD
+TogepiEggMoves:
+	db PRESENT
+	db MIRROR_MOVE
+	db PECK
+	db FORESIGHT
+	db FUTURE_SIGHT
+	db NASTY_PLOT
+	db CALM_MIND
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -605,26 +602,6 @@ ChinchouEggMoves:
 	db WATER_PULSE
 	db -1 ; end
 	
-CorsolaEggMoves:
-	db ROCK_SLIDE
-	db SAFEGUARD
-	db SCREECH
-	db MIST
-	db AMNESIA
-	db ICICLE_SPEAR
-	db WATER_PULSE
-	db -1 ; end
-
-TogepiEggMoves:
-	db PRESENT
-	db MIRROR_MOVE
-	db PECK
-	db FORESIGHT
-	db FUTURE_SIGHT
-	db NASTY_PLOT
-	db CALM_MIND
-	db -1 ; end
-
 NatuEggMoves:
 	db HAZE
 	db DRILL_PECK
@@ -645,19 +622,13 @@ MareepEggMoves:
 	db DRAGON_PULSE
 	db -1 ; end
 
-MarillEggMoves:
-	db LIGHT_SCREEN
-	db PRESENT
-	db AMNESIA
-	db FUTURE_SIGHT
-	db BELLY_DRUM
-	db SUPERSONIC
-	db FORESIGHT
-	db DISARM_VOICE
-	db AQUA_JET
+SudowoodoEggMoves:
 	db -1 ; end
 
-SudowoodoEggMoves:
+SunkernEggMoves:
+	db STUN_SPORE
+	db POISONPOWDER
+	db SLEEP_POWDER
 	db -1 ; end
 
 HoppipEggMoves:
@@ -669,23 +640,6 @@ HoppipEggMoves:
 	db PAY_DAY
 	db -1 ; end
 
-AipomEggMoves:
-	db COUNTER
-	db SCREECH
-	db PURSUIT
-	db AGILITY
-	db SPITE
-	db SLAM
-	db DOUBLESLAP
-	db BEAT_UP
-	db -1 ; end
-	
-SunkernEggMoves:
-	db STUN_SPORE
-	db POISONPOWDER
-	db SLEEP_POWDER
-	db -1 ; end
-
 YanmaEggMoves:
 	db REVERSAL
 	db LEECH_LIFE
@@ -695,6 +649,14 @@ YanmaEggMoves:
 	db SIGNAL_BEAM
 	db -1 ; end
 
+MurkrowEggMoves:
+	db DRILL_PECK
+	db QUICK_ATTACK
+	db MIRROR_MOVE
+	db WING_ATTACK
+	db HURRICANE
+	db -1 ; end
+
 WooperEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
@@ -702,13 +664,12 @@ WooperEggMoves:
 	db GROWTH_PUNCH
 	db -1 ; end
 
-StantlerEggMoves:
-	db REFLECT
-	db SPITE
-	db DISABLE
-	db LIGHT_SCREEN
-	db BITE
-	db ZEN_HEADBUTT
+MisdreavusEggMoves:
+	db SCREECH
+	db DESTINY_BOND
+	db DRAIN_KISS
+	db NASTY_PLOT
+	db WILL_O_WISP
 	db -1 ; end
 
 GirafarigEggMoves:
@@ -735,10 +696,14 @@ DunsparceEggMoves:
 	db HEX
 	db -1 ; end
 
-GligarEggMoves:
-	db METAL_CLAW
-	db WING_ATTACK
-	db COUNTER
+CorsolaEggMoves:
+	db ROCK_SLIDE
+	db SAFEGUARD
+	db SCREECH
+	db MIST
+	db AMNESIA
+	db ICICLE_SPEAR
+	db WATER_PULSE
 	db -1 ; end
 
 SnubbullEggMoves:
@@ -776,14 +741,13 @@ HeracrossEggMoves:
 	db ROCK_BLAST
 	db -1 ; end
 
-SneaselEggMoves:
-	db COUNTER
-	db SPITE
-	db FORESIGHT
-	db REFLECT
-	db BITE
-	db HEALINGLIGHT
-	db IRON_BASH
+DelibirdEggMoves:
+	db AURORA_BEAM
+	db QUICK_ATTACK
+	db FUTURE_SIGHT
+	db SPLASH
+	db RAPID_SPIN
+	db HURRICANE
 	db -1 ; end
 
 TeddiursaEggMoves:
@@ -824,21 +788,12 @@ RemoraidEggMoves:
 	db SCALD
 	db -1 ; end
 
-DelibirdEggMoves:
-	db AURORA_BEAM
-	db QUICK_ATTACK
-	db FUTURE_SIGHT
-	db SPLASH
-	db RAPID_SPIN
-	db HURRICANE
-	db -1 ; end
-
-MantineEggMoves:
-	db TWISTER
-	db HYDRO_PUMP
-	db HAZE
-	db SLAM
-	db SCALD
+PhanpyEggMoves:
+	db FOCUS_ENERGY
+	db BODY_SLAM
+	db ANCIENTPOWER
+	db WATER_GUN
+	db PLAY_ROUGH
 	db -1 ; end
 
 SkarmoryEggMoves:
@@ -859,20 +814,28 @@ HoundourEggMoves:
 	db NASTY_PLOT
 	db -1 ; end
 
-PhanpyEggMoves:
-	db FOCUS_ENERGY
-	db BODY_SLAM
-	db ANCIENTPOWER
-	db WATER_GUN
-	db PLAY_ROUGH
+MantineEggMoves:
+	db TWISTER
+	db HYDRO_PUMP
+	db HAZE
+	db SLAM
+	db SCALD
 	db -1 ; end
 
-MisdreavusEggMoves:
-	db SCREECH
-	db DESTINY_BOND
-	db DRAIN_KISS
-	db NASTY_PLOT
-	db WILL_O_WISP
+SneaselEggMoves:
+	db COUNTER
+	db SPITE
+	db FORESIGHT
+	db REFLECT
+	db BITE
+	db HEALINGLIGHT
+	db IRON_BASH
+	db -1 ; end
+
+GligarEggMoves:
+	db METAL_CLAW
+	db WING_ATTACK
+	db COUNTER
 	db -1 ; end
 
 TyrogueEggMoves:
@@ -882,14 +845,6 @@ TyrogueEggMoves:
 	db LOCK_ON
 	db -1 ; end
 	
-MurkrowEggMoves:
-	db DRILL_PECK
-	db QUICK_ATTACK
-	db MIRROR_MOVE
-	db WING_ATTACK
-	db HURRICANE
-	db -1 ; end
-
 MiltankEggMoves:
 	db PRESENT
 	db REVERSAL

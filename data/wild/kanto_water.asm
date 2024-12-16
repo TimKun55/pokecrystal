@@ -7,7 +7,7 @@ KantoWaterWildMons:
 	;   %, species,		 min, max
 	db 60, STARYU,        31,  34
 	db 20, OCTILLERY,     31,  34
-	db 20, SEAKING,       31,  34
+	db 20, KINGLER,       31,  34
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CAVE_1F
@@ -45,9 +45,9 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_4
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDEEN,       54,  57
-	db 20, GOLDEEN,       54,  57
-	db 20, SEAKING,       58,  60
+	db 60, STARYU,        54,  57
+	db 20, STARYU,        54,  57
+	db 20, STARMIE,       58,  60
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_6
@@ -61,17 +61,17 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_9
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDEEN,       47,  49
-	db 20, GOLDEEN,       48,  50
-	db 20, SEAKING,       52,  55
+	db 60, KRABBY,        47,  49
+	db 20, KRABBY,        48,  50
+	db 20, KINGLER,       52,  55
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDEEN,       47,  49
-	db 20, GOLDEEN,       48,  50
-	db 20, SEAKING,       52,  55
+	db 60, KRABBY,        47,  49
+	db 20, KRABBY,        48,  50
+	db 20, KINGLER,       52,  55
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_12
@@ -133,9 +133,9 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_23
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, GOLDEEN,       40,  42
+	db 60, SEADRA,        40,  42
 	db 20, GOLDUCK,       40,  42
-	db 20, SEAKING,       40,  42
+	db 20, SLOWBRO,       40,  42
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_24
@@ -239,13 +239,13 @@ KantoWaterWildMons:
 	;   %, species,		 min, max
 	db 60, SLOWBRO,       57,  60
 	db 20, DRAGONITE,     57,  60
-	db 20, SEAKING,       57,  60
+	db 20, POLIWRATH,     57,  60
 	end_water_wildmons
 	
 	def_water_wildmons SAFARI_ZONE_EAST
 	db 6 percent ; encounter rate
 	;   %, species,		 min, max
-	db 60, SEAKING,       57,  60
+	db 60, POLIWRATH,     57,  60
 	db 20, DRAGONITE,     57,  60
 	db 20, SLOWBRO,       57,  60
 	end_water_wildmons
@@ -255,7 +255,7 @@ KantoWaterWildMons:
 	;   %, species,		 min, max
 	db 60, GOLDUCK,       57,  60
 	db 20, DRAGONITE,     57,  60
-	db 20, SEAKING,       57,  60
+	db 20, POLIWRATH,     57,  60
 	end_water_wildmons
 
 	def_water_wildmons SAFARI_ZONE_WEST

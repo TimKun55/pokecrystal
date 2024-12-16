@@ -20,9 +20,9 @@ PokemonNames::
 	db "Pidgeot@@@"
 	db "Rattata@@@"
 	db "Raticate@@"
-	db "Spearow@@@"
-	db "Fearow@@@@"
-	db "Ekans@@@@@"
+	db "Marill@@@@"		; replaced Spearow
+	db "Azumarill@"		; replaced Fearow
+	db "Ekans@@@@@"		
 	db "Arbok@@@@@"
 	db "Pikachu@@@"
 	db "Raichu@@@@"
@@ -107,18 +107,18 @@ PokemonNames::
 	db "Marowak@@@"
 	db "Hitmonlee@"
 	db "Hitmonchan"
-	db "Lickitung@"
-	db "Koffing@@@"
-	db "Weezing@@@"
-	db "Rhyhorn@@@"
-	db "Rhydon@@@@"
-	db "Chansey@@@"
-	db "Tangela@@@"
-	db "Kangaskhan"
-	db "Horsea@@@@"
-	db "Seadra@@@@"
-	db "Goldeen@@@"
-	db "Seaking@@@"
+	db "Koffing@@@"		; replaced Lickitung
+	db "Weezing@@@"		; moved Koffing
+	db "Rhyhorn@@@"		; moved Weezing
+	db "Rhydon@@@@"		; moved Rhyhorn
+	db "Chansey@@@"		; moved Rhydon
+	db "Tangela@@@"		; moved Chansey
+	db "Kangaskhan"		; moved Tangela
+	db "Horsea@@@@"		; moved Kangaskhan
+	db "Seadra@@@@"		; moved Horsea
+	db "Togepi@@@@"		; moved Seadra
+	db "Togetic@@@"		; replaced Goldeen
+	db "Togekiss@@"		; replaced Seaking
 	db "Staryu@@@@"
 	db "Starmie@@@"
 	db "Mr. Mime@@"
@@ -172,41 +172,41 @@ PokemonNames::
 	db "Chinchou@@"
 	db "Lanturn@@@"
 	db "Magnezone@"		; replaced Pichu					172
-	db "Corsola@@@"		; replaced Cleffa					173
-	db "Togepi@@@@"		; replaced Igglybuff, moved Togepi	174
-	db "Togetic@@@"		; replaced Togepi, moved Togetic	175
-	db "Togekiss@@"		; replaced Togetic					176
+	db "Rhyperior@"		; replaced Cleffa					173
+	db "Tangrowth@"		; replaced Igglybuff				174
+	db "Electivire"		; moved Togepi						175
+	db "Magmortar@"		; moved Togetic						176
 	db "Natu@@@@@@"
 	db "Xatu@@@@@@"
 	db "Mareep@@@@"
 	db "Flaaffy@@@"
 	db "Ampharos@@"
 	db "Bellossom@"
-	db "Marill@@@@"
-	db "Azumarill@"
-	db "Sudowoodo@"
-	db "Politoed@@"
+	db "Sudowoodo@"		; moved Marill
+	db "Politoed@@"		; moved Azumarill
+	db "Sunkern@@@"		; moved Sudowoodo
+	db "Sunflora@@"		; moved Politoed
 	db "Hoppip@@@@"
 	db "Skiploom@@"
 	db "Jumpluff@@"
-	db "Aipom@@@@@"
-	db "Sunkern@@@"
-	db "Sunflora@@"
-	db "Yanma@@@@@"
+	db "Yanma@@@@@"		; removed Aipom
+	db "Yanmega@@@"		; removed Sunkern
+	db "Murkrow@@@"		; removed Sunflora
+	db "Honchkrow@"		; removed Yanma
 	db "Wooper@@@@"
 	db "Quagsire@@"
 	db "Espeon@@@@"
 	db "Umbreon@@@"
-	db "Sylveon@@@"		; replaced Murkrow (moved)			198
-	db "Slowking@@"
-	db "Stantler@@"		; replaced Misdreavus (moved)		200
+	db "Slowking@@"		; moved Murkrow 		198
+	db "Misdreavus"		; moved Slowking 		199
+	db "Mismagius@"		; moved Misdreavus 		200
 	db "Unown@@@@@"
 	db "Wobbuffet@"
 	db "Girafarig@"
 	db "Pineco@@@@"
 	db "Forretress"
 	db "Dunsparce@"
-	db "Gligar@@@@"
+	db "Corsola@@@"		; moved Gligar
 	db "Steelix@@@"
 	db "Snubbull@@"
 	db "Granbull@@"
@@ -214,32 +214,32 @@ PokemonNames::
 	db "Scizor@@@@"
 	db "Shuckle@@@"
 	db "Heracross@"
-	db "Sneasel@@@"
+	db "Delibird@@"		; moved Sneasel
 	db "Teddiursa@"
 	db "Ursaring@@"
 	db "Slugma@@@@"
 	db "Magcargo@@"
 	db "Swinub@@@@"
 	db "Piloswine@"
-	db "Mamoswine@" 	; replaced Corsola (moved)			222
+	db "Mamoswine@" 	; moved Corsola 			222
 	db "Remoraid@@"
 	db "Octillery@"
-	db "Delibird@@"
-	db "Mantine@@@"
+	db "Phanpy@@@@"		; moved Delibird
+	db "Donphan@@@"		; moved Mantine
 	db "Skarmory@@"
 	db "Houndour@@"
 	db "Houndoom@@"
 	db "Kingdra@@@"
-	db "Phanpy@@@@"
-	db "Donphan@@@"
-	db "Misdreavus"		; replaced Porygon2 (moved)			233
-	db "Mismagius@"		; replaced Stantler (moved)			234
-	db "Smeargle@@"
-	db "Tyrogue@@@"
-	db "Hitmontop@"
-	db "Murkrow@@@"		; replaced Smoochum					238
-	db "Honchkrow@"		; replaced Elekid					239
-	db "Porygon2@@"		; replaced Magby					240
+	db "Mantine@@@"		; moved Phanpy
+	db "Sneasel@@@"		; moved Donphan
+	db "Weavile@@@"		; moved Porygon2 			233
+	db "Gligar@@@@"		; removed Stantler 			234
+	db "Gliscor@@@"		; moved Smeargle
+	db "Smeargle@@"		; moved Tyrogue
+	db "Tyrogue@@@"		; moved Hitmontop
+	db "Hitmontop@"		; replaced Smoochum					238
+	db "Porygon2@@"		; replaced Elekid					239
+	db "Porygon-Z@"		; replaced Magby					240
 	db "Miltank@@@"
 	db "Blissey@@@"
 	db "Raikou@@@@"
@@ -251,7 +251,7 @@ PokemonNames::
 	db "Lugia@@@@@"
 	db "Ho-Oh@@@@@"
 	db "Celebi@@@@"
-	db "Raichu@@@@"
+	db "Sylveon@@@"
 	assert_table_length NUM_POKEMON
 	db "EGG@@@@@@@"
 	assert_table_length EGG

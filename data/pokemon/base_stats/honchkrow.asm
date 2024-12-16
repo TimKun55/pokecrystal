@@ -1,4 +1,4 @@
-	db HONCHKROW ; 239
+	db HONCHKROW ; 193
 
 	db 100, 125,  52,  71, 105,  52
 	evs  0,   2,   0,   0,   0,   0
