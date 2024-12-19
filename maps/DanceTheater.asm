@@ -72,14 +72,16 @@ TrainerKimonoGirlMiki:
 	
 TrainerKimonoGirlSakura:
 	faceplayer
-	playmusic MUSIC_KIMONO_ENCOUNTER
-	opentext
+	checkflag ENGINE_DAILY_KIMONO_GIRL_SAKURA_REMATCH
+	iftrue .skip_rematch
 	checkevent EVENT_BLUE_IN_CINNABAR
 	iftrue .SakuraRematch2
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .SakuraRematch1
 	checkevent EVENT_BEAT_KIMONO_GIRL_SAKURA
 	iftrue .FightDone
+	playmusic MUSIC_KIMONO_ENCOUNTER
+	opentext
 	writetext KimonoGirlSakuraSeenText
 	waitbutton
 	closetext
@@ -88,14 +90,15 @@ TrainerKimonoGirlSakura:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_KIMONO_GIRL_SAKURA
-	opentext
 .FightDone
+	opentext
 	writetext KimonoGirlSakuraAfterBattleText
 	waitbutton
 	closetext
 	end
 	
 .SakuraRematch1
+	opentext
 	writetext SakuraRematchText
 	yesorno
 	iffalse .KimonoGirlSakuraNextTime
@@ -103,6 +106,7 @@ TrainerKimonoGirlSakura:
 	loadtrainer KIMONO_GIRL, SAKURA2
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_KIMONO_GIRL_SAKURA_REMATCH
 	opentext
 	writetext KimonoGirlSakuraNextTimeText
 	waitbutton
@@ -110,6 +114,7 @@ TrainerKimonoGirlSakura:
 	end
 	
 .SakuraRematch2
+	opentext
 	writetext SakuraRematchText
 	yesorno
 	iffalse .KimonoGirlSakuraNextTime
@@ -117,6 +122,7 @@ TrainerKimonoGirlSakura:
 	loadtrainer KIMONO_GIRL, SAKURA3
 	startbattle
 	reloadmapafterbattle
+	setflag ENGINE_DAILY_KIMONO_GIRL_SAKURA_REMATCH
 	opentext
 	writetext KimonoGirlSakuraNextTimeText
 	waitbutton
@@ -125,6 +131,13 @@ TrainerKimonoGirlSakura:
 
 .KimonoGirlSakuraNextTime
 	writetext SakuraMaybeNextTimeText
+	waitbutton
+	closetext
+	end
+
+.skip_rematch
+	opentext
+	writetext SakuraComeBackTomorrowText
 	waitbutton
 	closetext
 	end
@@ -344,6 +357,14 @@ SakuraRematchText:
 SakuraMaybeNextTimeText:
 	text "Oh, maybe next"
 	line "time, then."
+	done
+
+SakuraComeBackTomorrowText:
+	text "We've already had"
+	line "our battle today."
+	
+	para "Please come back"
+	line "again tomorrow."
 	done
 
 SurfGuyNeverLeftAScratchText:

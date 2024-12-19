@@ -106,7 +106,9 @@ CheckDailyResetTimer::
 	ret nc
 	xor a
 	ld hl, wDailyFlags1
+rept 5
 	ld [hli], a ; wDailyFlags1
+endr
 	ld [hli], a ; wDailyFlags2
 	ld [hli], a ; wSwarmFlags
 	ld [hl], a  ; wUnusedDailyFlag

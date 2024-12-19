@@ -317,6 +317,8 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS_SABRINA_REMATCH                  ; 15
 	const DAILYFLAGS_BLAINE_REMATCH                   ; 16
 	const DAILYFLAGS_BLUE_REMATCH                     ; 17
+	; Trainer rematch flags
+	const DAILYFLAGS_KIMONO_GIRL_SAKURA_REMATCH		  ; 18
 	
 ; wDailyFlags2::
 	const_def

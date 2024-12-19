@@ -3268,7 +3268,7 @@ wWhichMumItemSet:: db
 wMumItemTriggerBalance:: ds 3
 
 wDailyResetTimer:: dw
-wDailyFlags1:: ds 4
+wDailyFlags1:: ds 5
 wDailyFlags2:: db
 wSwarmFlags:: db
 wUnusedDailyFlag:: db
@@ -3276,7 +3276,7 @@ wTimerEventStartDay:: db
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
-	ds 2
+	ds 1
 
 wLuckyNumberDayTimer:: dw
 	ds 2
