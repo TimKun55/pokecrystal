@@ -562,6 +562,11 @@ LyraBattleScript:
 	turnobject ELMSLAB_LYRA, DOWN
 	playmusic MUSIC_LYRA_ENCOUNTER
 	opentext
+	writetext ElmsLabLyraPlayerWaitText
+	waitbutton
+	closetext
+	turnobject PLAYER, UP
+	opentext
 	writetext ElmsLabLyraChallengeText
 	waitbutton
 	closetext
@@ -1678,12 +1683,15 @@ ElmsLabLyraGoodChoiceText:
 	line "looks cute too!"
 	done
 
-ElmsLabLyraChallengeText:
+ElmsLabLyraPlayerWaitText:
 	text "Lyra: <PLAYER>!"
-	line "Let's get to know"
+	line "Wait up!"
+	done
 
-	para "our #mon with"
-	line "a battle!"
+ElmsLabLyraChallengeText:
+	text "Let's get to know"
+	line "our #mon with"
+	cont "a battle!"
 	done
 
 ElmsLabLyraWinText:
