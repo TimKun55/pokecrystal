@@ -7040,7 +7040,7 @@ _BattleRandom::
 	ld [wLinkBattleRNCount], a
 
 ; If we haven't hit the end yet, we're good
-	cp 10 - 1 ; Exclude last value. See the closing comment
+	cp SERIAL_RNS_LENGTH - 1 ; Exclude last value. See the closing comment
 	ld a, [hl]
 	pop bc
 	pop hl
@@ -7056,7 +7056,7 @@ _BattleRandom::
 	xor a
 	ld [wLinkBattleRNCount], a
 	ld hl, wLinkBattleRNs
-	ld b, 10 ; number of seeds
+	ld b, SERIAL_RNS_LENGTH ; number of seeds
 
 ; Generate next number in the sequence for each seed
 ; a[n+1] = (a[n] * 5 + 1) % 256
