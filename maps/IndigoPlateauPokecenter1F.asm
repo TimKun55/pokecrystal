@@ -274,6 +274,8 @@ IndigoPlateauPokecenter1FTutorScript:
  	writetext IndigoPlateauPokecenter1FGigaImpactPayment
 	takemoney YOUR_MONEY, 25000
  	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
  	sjump .TeachMove
 	
 .NotEnough:

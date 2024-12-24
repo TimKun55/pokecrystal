@@ -111,11 +111,11 @@ VermilionCityTutorScript:
 	end
 	
 .TeachMove
-	writetext VermilionCityTutorHurricaneClear
-	promptbutton
 	writetext VermilionCityTutorPayment
 	takemoney YOUR_MONEY, 20000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext VermilionCityTutorHurricaneTaught
 	waitbutton
 	closetext
@@ -303,10 +303,6 @@ VermilionCityTutorHurricaneRefused:
 	text "OK then."
 	done
 
-VermilionCityTutorHurricaneClear:
-	text_start
-	done
-	
 VermilionCityTutorPayment:
 	text "<PLAYER> gave the"
 	line "Tutor ¥20000."

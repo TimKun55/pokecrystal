@@ -122,9 +122,9 @@ EcruteakPokecenter1FTutor:
 	writetext EcruteakPokecenter1FTutorPayment
 	takemoney YOUR_MONEY, 4000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext EcruteakPokecenter1FTutorUseWisely
-	waitbutton
-	writetext EcruteakPokecenter1FFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -261,10 +261,8 @@ EcruteakPokecenter1FTutorUseWisely:
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."
-	done
 
-EcruteakPokecenter1FFarewellKidText:
-	text "Goodbye and"
+	para "Goodbye and"
 	line "good luck on"
 	cont "your journey."
 	done

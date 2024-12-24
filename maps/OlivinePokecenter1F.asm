@@ -89,9 +89,9 @@ OlivinePokecenter1FTutor:
 	writetext OlivinePokecenter1FTutorPayment
 	takemoney YOUR_MONEY, 6500
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext OlivinePokecenter1FTutorUseWisely
-	waitbutton
-	writetext OlivinePokecenter1FFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -182,10 +182,8 @@ OlivinePokecenter1FTutorUseWisely:
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."
-	done
 
-OlivinePokecenter1FFarewellKidText:
-	text "Goodbye and"
+	para "Goodbye and"
 	line "good luck on"
 	cont "your journey."
 	done

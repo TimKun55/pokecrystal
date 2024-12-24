@@ -3,6 +3,7 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_RIVAL
+	const OLIVINECITY_SAILOR3
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -87,6 +88,50 @@ OlivineCityStandingYoungsterScript:
 
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
+
+OlivineCitySailorTutorScript:
+	faceplayer
+	opentext
+	writetext OlivineCitySailorTutorAquaTailText
+	waitbutton
+	special PlaceMoneyTopRight
+	writetext OlivineCitySailorTutorAquaTailText2
+	waitbutton
+	checkmoney YOUR_MONEY, 3000
+	ifequal HAVE_LESS, .NotEnough
+	yesorno
+	iffalse .TutorRefused
+	setval AQUA_TAIL
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetext OlivineCitySailorTutorAquaTailRefused
+	waitbutton
+	closetext
+	end
+	
+.TeachMove
+	writetext OlivineCitySailorTutorPayment
+	takemoney YOUR_MONEY, 3000
+	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetext OlivineCitySailorTutorAquaTailTaught
+	waitbutton
+	closetext
+	end
+
+.NotEnough
+	writetext OlivineCitySailorTutorNotEnough
+	waitbutton
+	closetext
+	end
+	
+.Incompatible:
+	writetext OlivineCitySailorTutorIncompatibleText
+	waitbutton
+	closetext
+	end
 
 OlivineCitySign:
 	jumptext OlivineCitySignText
@@ -277,6 +322,59 @@ OlivineCityBattleTowerSignText:
 	line "Opening Now!"
 	done
 
+OlivineCitySailorTutorAquaTailText:
+	text "Ho, there, young"
+	line "trainer!"
+	
+	para "In my travels,"
+	line "I've come across"
+	
+	para "a useful water-"
+	line "type move that I"
+	
+	para "can teach to your"
+	line "#mon for a fee."
+	done
+
+OlivineCitySailorTutorAquaTailText2:
+	text "Should I teach"
+	line "Aqua Tail for"
+	cont "¥5,000?"
+	done
+
+OlivineCitySailorTutorAquaTailRefused:
+	text "Come back when"
+	line "you like."
+	done
+
+OlivineCitySailorTutorAquaTailClear:
+	text_start
+	done
+	
+OlivineCitySailorTutorPayment:
+	text "<PLAYER> gave the"
+	line "Tutor ¥5000."
+	done
+
+OlivineCitySailorTutorAquaTailTaught:
+	text "It does great"
+	line "damage and can"
+	
+	para "lower the target's"
+	line "defense stat!"
+	done
+	
+OlivineCitySailorTutorNotEnough:
+	text "Sorry, you can't"
+	line "afford it."
+	done
+	
+OlivineCitySailorTutorIncompatibleText:
+	text "I'm sorry, your"
+	line "#mon can't"
+	cont "learn this move…"
+	done
+
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -310,3 +408,4 @@ OlivineCity_MapEvents:
 	object_event 19, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event  6, 25, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailorTutorScript, -1

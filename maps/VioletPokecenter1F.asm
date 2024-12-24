@@ -136,9 +136,9 @@ VioletPokecenter1FTutor:
 	writetext VioletPokecenter1FTutorPayment
 	takemoney YOUR_MONEY, 2500
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext VioletPokecenter1FTutorUseWisely
-	waitbutton
-	writetext VioletPokecenter1FFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -286,10 +286,8 @@ VioletPokecenter1FTutorUseWisely:
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."
-	done
 
-VioletPokecenter1FFarewellKidText:
-	text "Goodbye and"
+	para "Goodbye and"
 	line "good luck on"
 	cont "your journey."
 	done

@@ -71,9 +71,9 @@ MahoganyMoveTutor1Script:
 	writetext MahoganyMoveTutor1Payment
 	takemoney YOUR_MONEY, 8000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext MahoganyMoveTutor1TutorUseWisely
-	waitbutton
-	writetext MahoganyMoveTutor1FarewellKidText
 	waitbutton
 	closetext
 	end
@@ -147,9 +147,9 @@ MahoganyMoveTutor2:
 	writetext MahoganyMoveTutorWeather1Payment
 	takemoney YOUR_MONEY, 2000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext MahoganyMoveTutorWeatherTutorUseWisely
-	waitbutton
-	writetext MahoganyMoveTutorWeatherGoodluckText
 	waitbutton
 	closetext
 	end
@@ -222,9 +222,9 @@ MahoganyMoveTutor3:
 	writetext MahoganyMoveTutorWeather2Payment
 	takemoney YOUR_MONEY, 1500
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext MahoganyMoveTutorWeatherTutorUseWisely
-	waitbutton
-	writetext MahoganyMoveTutorWeatherGoodluckText
 	waitbutton
 	closetext
 	end
@@ -293,10 +293,8 @@ MahoganyMoveTutor1TutorUseWisely:
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."
-	done
 
-MahoganyMoveTutor1FarewellKidText:
-	text "See ya and"
+	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
 	done
@@ -347,10 +345,8 @@ MahoganyMoveTutorWeatherTutorUseWisely:
 	
 	para "check out our"
 	line "bookshelf!"
-	done
 
-MahoganyMoveTutorWeatherGoodluckText:
-	text "Good luck"
+	para "Good luck"
 	line "out there!"
 	done
 

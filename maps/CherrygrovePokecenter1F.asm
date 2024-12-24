@@ -102,9 +102,9 @@ CherrygrovePokecenter1FTutorScript:
 	writetext CherrygrovePokecenter1FTutorPayment
 	takemoney YOUR_MONEY, 20000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext CherrygrovePokecenter1FTutorUseWisely
-	waitbutton
-	writetext CherrygrovePokecenter1FFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -203,10 +203,8 @@ CherrygrovePokecenter1FTutorUseWisely:
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle!"
-	done
 
-CherrygrovePokecenter1FFarewellKidText:
-	text "See ya and"
+	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
 	done

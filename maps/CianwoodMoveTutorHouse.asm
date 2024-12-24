@@ -70,9 +70,9 @@ CianwoodMoveTutorScript:
 	writetext CianwoodMoveTutorPayment
 	takemoney YOUR_MONEY, 8000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext CianwoodMoveTutorUseWisely
-	waitbutton
-	writetext CianwoodMoveTutorFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -147,10 +147,8 @@ CianwoodMoveTutorUseWisely:
 	para "about this move,"
 	line "you've made it as"
 	cont "a trainer."
-	done
 
-CianwoodMoveTutorFarewellKidText:
-	text "See ya and"
+	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
 	done

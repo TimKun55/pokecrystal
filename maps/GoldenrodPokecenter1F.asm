@@ -5,6 +5,7 @@
 	const GOLDENRODPOKECENTER1F_LASS
 	const GOLDENRODPOKECENTER1F_POKEFAN_F
 	const GOLDENRODPOKECENTER1F_ROCKER
+	const GOLDENRODPOKECENTER1F_BEAUTY
 
 GoldenrodPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -77,6 +78,50 @@ Aizen:
 
 .GrassTrade
 	trade NPC_TRADE_AIZEN1
+	waitbutton
+	closetext
+	end
+
+GoldenrodPokecenter1FMoveTutor:
+	faceplayer
+	opentext
+	writetext GoldenrodPokecenter1FMoveTutorIronDefenseText
+	waitbutton
+	special PlaceMoneyTopRight
+	writetext GoldenrodPokecenter1FMoveTutorIronDefenseText2
+	waitbutton
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, .NotEnough
+	yesorno
+	iffalse .TutorRefused
+	setval IRON_DEFENSE
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetext GoldenrodPokecenter1FMoveTutorIronDefenseRefused
+	waitbutton
+	closetext
+	end
+	
+.TeachMove
+	writetext GoldenrodPokecenter1FMoveTutorPayment
+	takemoney YOUR_MONEY, 2500
+	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetext GoldenrodPokecenter1FMoveTutorIronDefenseTaught
+	waitbutton
+	closetext
+	end
+
+.NotEnough
+	writetext GoldenrodPokecenter1FMoveTutorNotEnough
+	waitbutton
+	closetext
+	end
+	
+.Incompatible:
+	writetext GoldenrodPokecenter1FMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -160,6 +205,53 @@ GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText:
 	line "the Eon Mail."
 	done
 
+GoldenrodPokecenter1FMoveTutorIronDefenseText:
+	text "Hello!"
+	line "Are you a trainer?"
+	
+	para "Would you like me"
+	line "to teach your"
+	
+	para "#mon a useful"
+	line "defensive move"
+	
+	para "to defend against"
+	line "Physical attacks?"
+	done
+
+GoldenrodPokecenter1FMoveTutorIronDefenseText2:
+	text "I can teach your"
+	line "#mon how to use"
+
+	para "Iron Defense for"
+	cont "¥2,500?"
+	done
+
+GoldenrodPokecenter1FMoveTutorIronDefenseRefused:
+	text "No problem."
+	done
+
+GoldenrodPokecenter1FMoveTutorPayment:
+	text "<PLAYER> gave the"
+	line "Tutor ¥2500."
+	done
+
+GoldenrodPokecenter1FMoveTutorIronDefenseTaught:
+	text "Nothing like a"
+	line "solid defense!"
+	done
+	
+GoldenrodPokecenter1FMoveTutorNotEnough:
+	text "Sorry, you can't"
+	line "afford it."
+	done
+	
+GoldenrodPokecenter1FMoveTutorIncompatibleText:
+	text "I'm sorry, your"
+	line "#mon can't"
+	cont "learn this move…"
+	done
+
 GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -183,3 +275,4 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
 	object_event 13,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Aizen, -1
+	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FMoveTutor, -1

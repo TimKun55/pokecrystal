@@ -339,6 +339,8 @@ DEF MT01 EQU const_value
 	add_mt HAIL
 	add_mt PLAY_ROUGH
 	add_mt GIGA_IMPACT
+	add_mt IRON_DEFENSE
+	add_mt AQUA_TAIL
 	add_mt RAIN_DANCE
 	add_mt SUNNY_DAY
 	add_mt SANDSTORM

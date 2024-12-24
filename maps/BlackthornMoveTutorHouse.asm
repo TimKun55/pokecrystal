@@ -70,9 +70,9 @@ BlackthornMoveTutorScript:
 	writetext BlackthornMoveTutorPayment
 	takemoney YOUR_MONEY, 10000
 	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	writetext BlackthornMoveTutorUseWisely
-	waitbutton
-	writetext BlackthornMoveTutorFarewellKidText
 	waitbutton
 	closetext
 	end
@@ -139,10 +139,8 @@ BlackthornMoveTutorUseWisely:
 	para "about this move,"
 	line "you've made it as"
 	cont "a trainer."
-	done
 
-BlackthornMoveTutorFarewellKidText:
-	text "See ya and"
+	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
 	done
