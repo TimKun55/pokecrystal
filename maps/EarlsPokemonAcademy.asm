@@ -228,7 +228,7 @@ AcademyBlackboard:
 	db "Par@"
 	db "Slp@"
 	db "Brn@"
-	db "Frz@"
+	db "Frb@"
 	db "Quit@"
 
 AcademyNotebook:
