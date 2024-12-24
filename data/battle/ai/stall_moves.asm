@@ -27,8 +27,8 @@ StallMoves:
 	db AMNESIA
 	db TRANSFORM
 	db SPLASH
-	db ACID_ARMOR
 	db CONVERSION
 	db SUBSTITUTE
 	db FLAME_WHEEL
+	db IRON_DEFENSE
 	db -1 ; end

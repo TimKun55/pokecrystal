@@ -420,7 +420,6 @@ KangaskhanEggMoves:
 HorseaEggMoves:
 	db REVERSAL
 	db AURORA_BEAM
-	db OCTAZOOKA
 	db DISABLE
 	db SPLASH
 	db DRAGON_RAGE
@@ -694,6 +693,7 @@ DunsparceEggMoves:
 	db RAGE
 	db BIDE
 	db HEX
+	db AQUA_TAIL
 	db -1 ; end
 
 CorsolaEggMoves:
@@ -762,7 +762,6 @@ TeddiursaEggMoves:
 	db -1 ; end
 
 SlugmaEggMoves:
-	db ACID_ARMOR
 	db HEAT_WAVE
 	db CURSE
 	db SMOKESCREEN
@@ -780,7 +779,6 @@ SwinubEggMoves:
 
 RemoraidEggMoves:
 	db AURORA_BEAM
-	db OCTAZOOKA
 	db SUPERSONIC
 	db HAZE
 	db SCREECH
@@ -858,6 +856,7 @@ LarvitarEggMoves:
 	db FOCUS_ENERGY
 	db ANCIENTPOWER
 	db IRON_BASH
+	db IRON_DEFENSE
 	db -1 ; end
 	
 NoEggMoves:

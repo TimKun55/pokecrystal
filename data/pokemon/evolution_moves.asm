@@ -223,7 +223,7 @@ EvolutionMoves::
 	db FURY_STRIKES ; PILOSWINE
 	db ICICLE_SPEAR ; MAMOSWINE
 	db NO_MOVE      ; REMORAID
-	db OCTAZOOKA    ; OCTILLERY
+	db NO_MOVE      ; OCTILLERY
 	db NO_MOVE      ; PHANPY
 	db FURY_STRIKES ; DONPHAN
 	db NO_MOVE      ; SKARMORY
@@ -246,7 +246,7 @@ EvolutionMoves::
 	db NO_MOVE      ; ENTEI
 	db NO_MOVE      ; SUICUNE
 	db NO_MOVE      ; LARVITAR
-	db NO_MOVE      ; PUPITAR
+	db IRON_DEFENSE ; PUPITAR
 	db NO_MOVE      ; TYRANITAR
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HOOH

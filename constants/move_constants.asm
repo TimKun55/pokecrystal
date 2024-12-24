@@ -156,7 +156,7 @@
 	const FLASH        ; 94
 	const BUG_BITE     ; 95
 	const SPLASH       ; 96
-	const ACID_ARMOR   ; 97
+	const IRON_DEFENSE ; 97
 	const ZEN_HEADBUTT ; 98
 	const EXPLOSION    ; 99
 	const FLASH_CANNON ; 9a
@@ -195,7 +195,7 @@
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const MUD_SLAP     ; bd
-	const OCTAZOOKA    ; be
+	const AQUA_TAIL    ; be
 	const SPIKES       ; bf
 	const ZAP_CANNON   ; c0
 	const FORESIGHT    ; c1

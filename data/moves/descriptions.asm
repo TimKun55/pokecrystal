@@ -151,7 +151,7 @@ MoveDescriptions::
 	dw FlashDescription
 	dw BugBiteDescription
 	dw SplashDescription
-	dw AcidArmorDescription
+	dw IronDefenseDescription
 	dw ZenHeadbuttDescription
 	dw ExplosionDescription
 	dw FlashCannonDescription
@@ -190,7 +190,7 @@ MoveDescriptions::
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
-	dw OctazookaDescription
+	dw AquaTailDescription
 	dw SpikesDescription
 	dw ZapCannonDescription
 	dw ForesightDescription
@@ -777,9 +777,9 @@ SplashDescription:
 	db   "Has no effect"
 	line "whatsoever.@"
 
-AcidArmorDescription:
-	db   "Alters cellular"
-	line "structure. Def ▲2.@"
+IronDefenseDescription:
+	db   "Hardens body's"
+	line "surface. Def ▲2.@"
 
 ExplosionDescription:
 	db   "Very powerful but"
@@ -889,9 +889,9 @@ MudSlapDescription:
 	db   "Blinds with mud."
 	line "Acc ▼1.@"
 
-OctazookaDescription:
-	db   "Sprays ink in eyes"
-	line "or face. Acc ▼1.@"
+AquaTailDescription:
+	db   "Slams tail like a"
+	line "vicious wave.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
