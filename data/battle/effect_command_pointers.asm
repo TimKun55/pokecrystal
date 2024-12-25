@@ -93,7 +93,7 @@ BattleCommandPointers:
 	dw BattleCommand_BulkUp ; PerishSong
 	dw BattleCommand_StartSandstorm
 	dw BattleCommand_Endure
-	dw BattleCommand_CheckCurl
+	dw BattleCommand_CheckRollout
 	dw BattleCommand_RolloutPower
 	dw BattleCommand_HurricaneAccuracy
 	dw BattleCommand_FuryCutter

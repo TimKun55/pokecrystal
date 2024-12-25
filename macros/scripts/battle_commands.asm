@@ -93,7 +93,7 @@ ENDM
 	command bulkup                  ; 58
 	command startsandstorm          ; 59
 	command endure                  ; 5a
-	command checkcurl               ; 5b
+	command checkrollout            ; 5b
 	command rolloutpower            ; 5c
 	command hurricaneaccuracy       ; 5d
 	command furycutter              ; 5e
