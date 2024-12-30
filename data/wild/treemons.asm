@@ -16,7 +16,16 @@ RockSmashMons::
 	; broke off from the above table, for nayru's pokedex
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
-	dw TreeMonSet_Rock
+	dw TreeMonSet_RockJohto
+	dw TreeMonSet_RockDarkCave
+	dw TreeMonSet_RockRuins
+	dw TreeMonSet_RockBurnedTower
+	dw TreeMonSet_RockCianwood
+	dw TreeMonSet_RockTohjo
+	dw TreeMonSet_RockKantoEarly
+	dw TreeMonSet_RockVictoryRoad
+	dw TreeMonSet_RockKantoShore
+	dw TreeMonSet_RockKanto
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; Two tables each (common, rare).
@@ -136,8 +145,54 @@ TreeMonSet_Forest:
 ; can have as many entries as you want as long as the % adds up to 100
 ; feel free to add new rock smash sets
 
-TreeMonSet_Rock:
-	db 45, KRABBY,     15
-	db 45, GEODUDE,    15
+TreeMonSet_RockJohto:
+	db 85, GEODUDE,    30
+	db 15, GRAVELER,   35
+	db -1
+
+TreeMonSet_RockDarkCave:
+	db 90, GEODUDE,    15
+	db 10, DUNSPARCE,  15
+	db -1
+
+TreeMonSet_RockRuins:
+	db 90, GEODUDE,    15
 	db 10, SHUCKLE,    15
+	db -1
+
+TreeMonSet_RockBurnedTower:
+	db 80, GEODUDE,    15
+	db 20, SLUGMA,     15
+	db -1
+
+TreeMonSet_RockCianwood:
+	db 60, KRABBY,     20
+	db 30, CORSOLA,    20
+	db 10, SHUCKLE,    20
+	db -1
+
+TreeMonSet_RockTohjo:
+	db 60, KINGLER,    35
+	db 30, GRAVELER,   35
+	db 10, SHUCKLE,    35
+	db -1
+
+TreeMonSet_RockKantoEarly:
+	db 60, KINGLER,    35
+	db 40, GRAVELER,   35
+	db -1
+
+TreeMonSet_RockVictoryRoad:
+	db 90, GRAVELER,   37
+	db 10, GRAVELER,   40
+	db -1
+
+TreeMonSet_RockKantoShore:
+	db 90, KINGLER,    50
+	db 10, CORSOLA,    50
+	db -1
+
+TreeMonSet_RockKanto:
+	db 90, GRAVELER,   55
+	db 10, GOLEM,      55
 	db -1
