@@ -29,9 +29,9 @@ JohtoWaterWildMons:
 	def_water_wildmons UNION_CAVE_B2F
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
-	db 80, QUAGSIRE,      23,  25
-	db 10, OMANYTE,       18,  20
-	db 10, KABUTO,        18,  20
+	db 60, TENTACOOL,     20,  23
+	db 10, TENTACRUEL,    23,  25
+	db 30, QUAGSIRE,      23,  25
 	end_water_wildmons
 
 	def_water_wildmons SLOWPOKE_WELL_B1F

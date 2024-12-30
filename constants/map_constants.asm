@@ -163,7 +163,7 @@ ENDM
 	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 98
 	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
 	map_const MOUNT_MOON_B1F,                              18, 16 ; 100
-	map_const MOUNT_MOON_B2F,                              16, 17 ; 101
+	map_const MOUNT_MOON_B2F,                              16, 20 ; 101
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

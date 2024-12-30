@@ -1251,7 +1251,7 @@ JohtoGrassWildMons:
 	db 22, MAMOSWINE,     70,  73
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, AERODACTYL,    70,  73
+	db  8, HERACROSS,     70,  73
 	db  8, TYRANITAR,     70,  73
 	; day
 	;   %, species,		 min, max
@@ -1260,7 +1260,7 @@ JohtoGrassWildMons:
 	db 22, MAMOSWINE,     70,  73
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, AERODACTYL,    70,  73
+	db  8, HERACROSS,     70,  73
 	db  8, TYRANITAR,     70,  73
 	; nite
 	;   %, species,		 min, max
@@ -1269,7 +1269,7 @@ JohtoGrassWildMons:
 	db 22, MAMOSWINE,     70,  73
 	db 10, CROBAT,        70,  73
 	db  8, STEELIX,       70,  73
-	db  8, AERODACTYL,    70,  73
+	db  8, HERACROSS,     70,  73
 	db  8, TYRANITAR,     70,  73
 	end_grass_wildmons
 

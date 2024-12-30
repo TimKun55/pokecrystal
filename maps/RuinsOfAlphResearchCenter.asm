@@ -186,8 +186,6 @@ RuinsOfAlphResearchCenterComputer:
 RuinsOfAlphResearchCenterFossilScientist:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_SCIENTIST_OLD_AMBER
-	iftrue .GiveAerodactyl
 	checkevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
 	iftrue .GiveKabuto
 	checkevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
@@ -197,17 +195,13 @@ RuinsOfAlphResearchCenterFossilScientist:
 	checkitem HELIX_FOSSIL
 	iftrue .own_helix
 	checkitem DOME_FOSSIL
-	iftrue .own_dome
-	checkitem OLD_AMBER
-	iftrue IsOldAmber
+	iftrue IsDomeFossil
 	writetext FossilScientistNoFossilText
 	waitbutton
 	closetext
 	end
 
 .GiveOmanyte:
-
-	playsound SFX_FULL_HEAL
 	writetext FossilScientistDoneText
 	waitbutton
 	readvar VAR_PARTYCOUNT
@@ -215,7 +209,7 @@ RuinsOfAlphResearchCenterFossilScientist:
 	writetext ReceivedOmanyteText
 	playsound SFX_CAUGHT_MON
 	waitsfx	
-	givepoke OMANYTE, 30
+	givepoke OMANYTE, 20
 	writetext FossilScientistGoodCareText
 	waitbutton
 	closetext
@@ -230,26 +224,11 @@ RuinsOfAlphResearchCenterFossilScientist:
 	writetext ReceivedKabutoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke KABUTO, 30
+	givepoke KABUTO, 20
 	writetext FossilScientistGoodCareText
 	waitbutton
 	closetext
 	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
-	end
-
-.GiveAerodactyl:
-	writetext FossilScientistDoneText
-	waitbutton
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	writetext ReceivedAerodactylText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke AERODACTYL, 30
-	writetext FossilScientistGoodCareText
-	waitbutton
-	closetext
-	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
 	end
 
 .NoRoom:
@@ -261,54 +240,20 @@ RuinsOfAlphResearchCenterFossilScientist:
 .own_helix
 	checkitem DOME_FOSSIL
 	iftrue .own_helix_and_dome
-	checkitem OLD_AMBER
-	iftrue .ask_helix_amber
-	writetext FossilScientistIsHelixFossilText
-	yesorno
-	iftrue IsHelixFossil
-	jump .no_fossil
+	sjump IsHelixFossil
 
-.own_dome
-	checkitem OLD_AMBER
-	iftrue .ask_dome_amber
-	writetext FossilScientistIsDomeFossilText
-	yesorno
-	iftrue IsDomeFossil
-	jump .no_fossil
+;.own_dome
+;	writetext FossilScientistIsDomeFossilText
+;	yesorno
+;	iftrue IsDomeFossil
+;	jump .no_fossil
 
 .own_helix_and_dome
-	checkitem OLD_AMBER
-	iftrue .ask_helix_dome_amber
 	loadmenu HelixDomeMenuDataHeader
 	verticalmenu
 	closewindow
 	ifequal $1, IsHelixFossil
 	ifequal $2, IsDomeFossil
-	jump .no_fossil
-
-.ask_helix_amber
-	loadmenu HelixAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, IsHelixFossil
-	ifequal $2, IsOldAmber
-	jump .no_fossil
-
-.ask_dome_amber
-	loadmenu DomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, IsDomeFossil
-	ifequal $2, IsOldAmber
-	jump .no_fossil
-
-.ask_helix_dome_amber
-	loadmenu HelixDomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, IsHelixFossil
-	ifequal $2, IsDomeFossil
-	ifequal $3, IsOldAmber
 .no_fossil:
 	writetext FossilScientistNoFossilText
 	waitbutton
@@ -329,49 +274,6 @@ HelixDomeMenuDataHeader:
 	db "Dome Fossil@"
 	db "Cancel@"
 
-HelixAmberMenuDataHeader:
-	db $40 ; flags
-	db 04, 00 ; start coords
-	db 11, 15 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 3 ; items
-	db "Helix Fossil@"
-	db "Old Amber@"
-	db "Cancel@"
-
-DomeAmberMenuDataHeader:
-	db $40 ; flags
-	db 04, 00 ; start coords
-	db 11, 14 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 3 ; items
-	db "Dome Fossil@"
-	db "Old Amber@"
-	db "Cancel@"
-
-HelixDomeAmberMenuDataHeader:
-	db $40 ; flags
-	db 02, 00 ; start coords
-	db 11, 15 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 4 ; items
-	db "Helix Fossil@"
-	db "Dome Fossil@"
-	db "Old Amber@"
-	db "Cancel@"
-
 IsHelixFossil:
 	writetext FossilScientistIsHelixFossilText
 	yesorno
@@ -383,9 +285,18 @@ IsHelixFossil:
 	setevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
 	special FadeOutToBlack 
 	special ReloadSpritesNoPalettes
+	playsound SFX_BOOT_PC
+	waitsfx
+	pause 24
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	waitsfx
+	pause 24
 	playsound SFX_WARP_TO
 	waitsfx
-	pause 35
+	pause 24
+	playsound SFX_FULL_HEAL
+	waitsfx
+	pause 24
 	sjump RuinsOfAlphResearchCenterFossilScientist
 
 IsDomeFossil:
@@ -399,25 +310,18 @@ IsDomeFossil:
 	setevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
 	special FadeOutToBlack 
 	special ReloadSpritesNoPalettes
+	playsound SFX_BOOT_PC
+	waitsfx
+	pause 24
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	waitsfx
+	pause 24
 	playsound SFX_WARP_TO
 	waitsfx
-	pause 35
-	sjump RuinsOfAlphResearchCenterFossilScientist
-
-IsOldAmber:
-	writetext FossilScientistIsOldAmberText
-	yesorno
-	iffalse DeniedRessurection
-	writetext FossilScientistTimeText
-	waitbutton
-	closetext
-	takeitem OLD_AMBER
-	setevent EVENT_GAVE_SCIENTIST_OLD_AMBER
-	special FadeOutToBlack 
-	special ReloadSpritesNoPalettes
-	playsound SFX_WARP_TO
+	pause 24
+	playsound SFX_FULL_HEAL
 	waitsfx
-	pause 35
+	pause 24
 	sjump RuinsOfAlphResearchCenterFossilScientist
 
 DeniedRessurection:
@@ -641,24 +545,14 @@ RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 	done
 	
 FossilScientistIntroText:
-	text "Hiya!"
-
-	para "I am important"
-	line "doctor from Kanto!"
-	
-	para "Everyone here"
-	line "is studying"
-	cont "Unown, but"
-
-	para "I study rare"
-	line "#mon fossils!"
+	text "Hello again."
 
 	para "Do you have a"
 	line "fossil for me?"
 	done
 
 FossilScientistNoFossilText:
-	text "No fossils?"
+	text "Oh, you don't?"
 	line "Too bad!"
 	done
 
@@ -813,5 +707,5 @@ RuinsOfAlphResearchCenter_MapEvents:
 	object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1
 	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1
 	object_event  2,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist3Script, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	object_event  0,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterFossilScientist, -1
+	object_event  0,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterFossilScientist, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_FOSSIL_SCIENTIST
 	

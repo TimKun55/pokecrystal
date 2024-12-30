@@ -1,9 +1,10 @@
 	object_const_def
 	const RUINSOFALPHOUTSIDE_YOUNGSTER1
-	const RUINSOFALPHOUTSIDE_SCIENTIST
+	const RUINSOFALPHOUTSIDE_SCIENTIST1
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_SCIENTIST2
 	const RUINSOFALPHOUTSIDE_ROCK1
 	const RUINSOFALPHOUTSIDE_ROCK2
 	const RUINSOFALPHOUTSIDE_ROCK3
@@ -39,27 +40,27 @@ RuinsOfAlphOutsideScientistCallback:
 	sjump .NoScientist
 
 .YesScientist:
-	appear RUINSOFALPHOUTSIDE_SCIENTIST
+	appear RUINSOFALPHOUTSIDE_SCIENTIST1
 	setscene SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX
 	endcallback
 
 .NoScientist:
-	disappear RUINSOFALPHOUTSIDE_SCIENTIST
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST1
 	setscene SCENE_RUINSOFALPHOUTSIDE_NOOP
 	endcallback
 
 RuinsOfAlphOutsideScientistScene1:
-	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, UP
+	turnobject RUINSOFALPHOUTSIDE_SCIENTIST1, UP
 	turnobject PLAYER, DOWN
 	sjump RuinsOfAlphOutsideScientistSceneContinue
 
 RuinsOfAlphOutsideScientistScene2:
-	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT
+	turnobject RUINSOFALPHOUTSIDE_SCIENTIST1, LEFT
 	turnobject PLAYER, RIGHT
 	sjump RuinsOfAlphOutsideScientistSceneContinue
 
 RuinsOfAlphOutsideScientistScene3:
-	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT
+	turnobject RUINSOFALPHOUTSIDE_SCIENTIST1, LEFT
 	turnobject PLAYER, RIGHT
 	applymovement PLAYER, RuinsOfAlphOutsidePlayerMovement
 	sjump RuinsOfAlphOutsideScientistSceneContinue
@@ -72,10 +73,10 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	waitbutton
 	closetext
 	playmusic MUSIC_SHOW_ME_AROUND
-	follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER
-	applymovement RUINSOFALPHOUTSIDE_SCIENTIST, RuinsOfAlphOutsideScientistWalkToLabMovement
+	follow RUINSOFALPHOUTSIDE_SCIENTIST1, PLAYER
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST1, RuinsOfAlphOutsideScientistWalkToLabMovement
 	playsound SFX_ENTER_DOOR
-	disappear RUINSOFALPHOUTSIDE_SCIENTIST
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST1
 	stopfollow
 	applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement
 	setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX
@@ -111,6 +112,51 @@ RuinsOfAlphOutsideYoungster2Script:
 	waitbutton
 	closetext
 	turnobject RUINSOFALPHOUTSIDE_YOUNGSTER3, UP
+	end
+
+RuinsOfAlphOutsideFossilScientistScript:
+	faceplayer
+	opentext
+	writetext RuinsOfAlphOutsideFossilScientistFossilsText
+	yesorno
+	iffalse .Shame
+	writetext RuinsOfAlphOutsideFossilScientistTakeText
+	waitbutton
+	random 2
+	ifequal 0, .GiveHelix
+	verbosegiveitem DOME_FOSSIL
+	iffalse .BagFull
+.finishfossils:
+	writetext RuinsOfAlphOutsideFossilScientistReviveFossilText
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal LEFT, .Movement2
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST2, RuinsOfAlphOutsideFossilScientistMovement1
+	sjump .Finish
+
+.GiveHelix:
+	verbosegiveitem HELIX_FOSSIL
+	iffalse .BagFull
+	sjump .finishfossils
+
+.Shame:
+	writetext RuinsOfAlphOutsideFossilScientistThatsAShameText
+	waitbutton
+	closetext
+	end
+
+.BagFull:
+	writetext RuinsOfAlphOutsideFossilScientistFullBagText
+	waitbutton
+	closetext
+	end
+
+.Movement2:
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST2, RuinsOfAlphOutsideFossilScientistMovement2
+.Finish:
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST2
+	clearevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_FOSSIL_SCIENTIST
 	end
 
 TrainerPsychicNathan:
@@ -151,6 +197,26 @@ RuinsOfAlphOutsideScientistWalkToLabMovement:
 
 RuinsOfAlphOutsidePlayerEnterLabMovement:
 	step UP
+	step_end
+
+RuinsOfAlphOutsideFossilScientistMovement1:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+RuinsOfAlphOutsideFossilScientistMovement2:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 
 RuinsOfAlphOutsideRock:
@@ -287,6 +353,63 @@ RuinsOfAlphOutsideYoungster2Text:
 	line "message!"
 	done
 
+RuinsOfAlphOutsideFossilScientistFossilsText:
+	text "Hello! I'm a"
+	line "fossil scientist"
+	cont "from Kanto."
+	
+	para "I'm seeing if"
+	line "Johto has any"
+	cont "fossils like Kanto"
+	
+	para "does, but I"
+	line "haven't discovered"
+	cont "any so far."
+	
+	para "Are you interested"
+	line "in fossils?"
+	done
+
+RuinsOfAlphOutsideFossilScientistTakeText:
+	text "Amazing! Here, I"
+	line "have a spare one"
+	cont "you can have."
+	done
+
+RuinsOfAlphOutsideFossilScientistReviveFossilText:
+	text "We can learn so"
+	line "much from fossils."
+	
+	para "Though, as you're"
+	line "a trainer, I'm"
+	
+	para "sure you're more"
+	line "interested in the"
+	
+	para "second part of my"
+	line "research."
+	
+	para "I have a machine"
+	line "set up that can"
+	
+	para "revive that fossil"
+	line "into a #mon!"
+	
+	para "Come see me in the"
+	line "Research Center."
+	done
+
+RuinsOfAlphOutsideFossilScientistThatsAShameText:
+	text "That's a shame,"
+	line "but they're not"
+	cont "for everyone."
+	done
+
+RuinsOfAlphOutsideFossilScientistFullBagText:
+	text "Oh no!"
+	line "Your bag is full."
+	done
+
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -319,6 +442,7 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 15, 20, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 17, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFossilScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_FOSSIL_SCIENTIST
 	object_event  7, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideRock, -1
 	object_event  9,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideRock, -1
 	object_event 10, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideRock, -1

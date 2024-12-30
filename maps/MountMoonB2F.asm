@@ -4,6 +4,10 @@
 	const MOUNTMOONB2F_SUPER_NERD2
 	const MOUNTMOONB2F_HEX_MANIAC
 	const MOUNTMOONB2F_YOUNGSTER2
+	const MOUNTMOONB2F_HIKER
+	const MOUNTMOONB2F_OLD_AMBER
+	const MOUNTMOONB2F_DOME_FOSSIL
+	const MOUNTMOONB2F_HELIX_FOSSIL
 	const MOUNTMOONB2F_POKE_BALL1
 	const MOUNTMOONB2F_POKE_BALL2
 	const MOUNTMOONB2F_POKE_BALL3
@@ -13,6 +17,29 @@ MountMoonB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, MountMoonB2FCheckFossils
+
+MountMoonB2FCheckFossils:
+	checkflag ENGINE_DAILY_MOUNT_MOON_B2F_FOSSIL
+	iftrue .finishFossil
+	random 24
+	ifequal  8, .OldAmber
+	ifequal 16, .DomeFossil
+	ifequal 23, .HelixFossil
+	sjump .finishFossil
+
+.OldAmber
+	appear MOUNTMOONB2F_OLD_AMBER
+	sjump .finishFossil
+	
+.DomeFossil
+	appear MOUNTMOONB2F_DOME_FOSSIL
+	sjump .finishFossil
+
+.HelixFossil
+	appear MOUNTMOONB2F_HELIX_FOSSIL
+.finishFossil
+	endcallback
 
 TrainerSuperNerdRuss:
 	trainer SUPER_NERD, RUSS, EVENT_BEAT_SUPER_NERD_RUSS, SuperNerdRussSeenText, SuperNerdRussBeatenText, 0, .Script
@@ -65,6 +92,58 @@ TrainerCamperHarvey:
 	endifjustbattled
 	opentext
 	writetext CamperHarveyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+MountMoonB2FPaleontologist:
+	jumptextfaceplayer MountMoonB2FPaleontologistText
+
+MountMoonB2FOldAmber:
+	opentext
+	getitemname STRING_BUFFER_3, OLD_AMBER
+	writetext MountMoonB2FFoundFossilText
+	giveitem OLD_AMBER
+	iffalse MountMoonB2FNoRoomInBagForFossil
+	disappear MOUNTMOONB2F_OLD_AMBER
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	setflag ENGINE_DAILY_MOUNT_MOON_B2F_FOSSIL
+	end
+
+MountMoonB2FDomeFossil:
+	opentext
+	getitemname STRING_BUFFER_3, DOME_FOSSIL
+	writetext MountMoonB2FFoundFossilText
+	giveitem DOME_FOSSIL
+	iffalse MountMoonB2FNoRoomInBagForFossil
+	disappear MOUNTMOONB2F_DOME_FOSSIL
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	setflag ENGINE_DAILY_MOUNT_MOON_B2F_FOSSIL
+	end
+
+MountMoonB2FHelixFossil:
+	opentext
+	getitemname STRING_BUFFER_3, HELIX_FOSSIL
+	writetext MountMoonB2FFoundFossilText
+	giveitem HELIX_FOSSIL
+	iffalse MountMoonB2FNoRoomInBagForFossil
+	disappear MOUNTMOONB2F_HELIX_FOSSIL
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	setflag ENGINE_DAILY_MOUNT_MOON_B2F_FOSSIL
+	end
+
+MountMoonB2FNoRoomInBagForFossil:
+	opentext
+	writetext MountMoonB2FNoRoomInBagForFossilText
 	waitbutton
 	closetext
 	end
@@ -185,29 +264,58 @@ CamperHarveyAfterBattleText:
 	line "est combination."
 	done
 
+MountMoonB2FPaleontologistText:
+	text "I dig and I dig."
+	line "I discover and"
+	cont "I report."
+	
+	para "If you find any-"
+	line "thing laying"
+	
+	para "around, feel"
+	line "free to take it!"
+	done
+
+MountMoonB2FFoundFossilText:
+	text "<PLAYER> found"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+MountMoonB2FNoRoomInBagForFossilText:
+	text "But <PLAYER> can't"
+	line "carry any more"
+	cont "items."
+	done
+
 MountMoonB2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11, 25, MOUNT_MOON_B1F, 5
-	warp_event 21,  7, MOUNT_MOON_B1F, 6
-	warp_event 17, 15, MOUNT_MOON_B1F, 7
-	warp_event  3,  9, MOUNT_MOON_B1F, 8
+	warp_event 11, 31, MOUNT_MOON_B1F, 5
+	warp_event 21, 13, MOUNT_MOON_B1F, 6
+	warp_event 17, 21, MOUNT_MOON_B1F, 7
+	warp_event  3, 15, MOUNT_MOON_B1F, 8
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 28,  7, BGEVENT_ITEM, MountMoonB2FHiddenEther
-	bg_event 10, 30, BGEVENT_ITEM, MountMoonB2FHiddenPPUp
-	bg_event  7,  9, BGEVENT_ITEM, MountMoonB2FHiddenStardust
+	bg_event 28, 13, BGEVENT_ITEM, MountMoonB2FHiddenEther
+	bg_event 10, 36, BGEVENT_ITEM, MountMoonB2FHiddenPPUp
+	bg_event  7, 15, BGEVENT_ITEM, MountMoonB2FHiddenStardust
 
 	def_object_events
-	object_event 10,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdRuss, -1
-	object_event 24,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerYoungsterZak, -1
-	object_event 12, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerNedd, -1
-	object_event 29, 18, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHexManiacBethany, -1
-	object_event  4, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCamperHarvey, -1
-	object_event 22,  3, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FFullRestoreScript, EVENT_MOUNT_MOON_B2F_FULL_RESTORE
-	object_event 26, 11, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FZincScript, EVENT_MOUNT_MOON_B2F_ZINC
-	object_event 18, 21, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FRareCandyScript, EVENT_MOUNT_MOON_B2F_RARE_CANDY
-	object_event 11, 14, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FMoonStoneScript, EVENT_MOUNT_MOON_B2F_MOON_STONE
+	object_event 10, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdRuss, -1
+	object_event 24, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerYoungsterZak, -1
+	object_event 12, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerNedd, -1
+	object_event 29, 24, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHexManiacBethany, -1
+	object_event  4, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCamperHarvey, -1
+	object_event 12,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FPaleontologist, -1
+	object_event 10,  5, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FOldAmber, EVENT_MOUNT_MOON_B2F_OLD_AMBER
+	object_event 10,  2, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FDomeFossil, EVENT_MOUNT_MOON_B2F_DOME_FOSSIL
+	object_event 13,  7, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FHelixFossil, EVENT_MOUNT_MOON_B2F_HELIX_FOSSIL
+	object_event 22,  9, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FFullRestoreScript, EVENT_MOUNT_MOON_B2F_FULL_RESTORE
+	object_event 26, 17, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FZincScript, EVENT_MOUNT_MOON_B2F_ZINC
+	object_event 18, 27, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FRareCandyScript, EVENT_MOUNT_MOON_B2F_RARE_CANDY
+	object_event 11, 20, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FMoonStoneScript, EVENT_MOUNT_MOON_B2F_MOON_STONE

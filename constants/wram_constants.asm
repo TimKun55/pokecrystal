@@ -318,7 +318,7 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS_BLAINE_REMATCH                   ; 16
 	const DAILYFLAGS_BLUE_REMATCH                     ; 17
 	; Trainer rematch flags
-	const DAILYFLAGS_KIMONO_GIRL_SAKURA_REMATCH		  ; 18
+	const DAILYFLAGS_KIMONO_GIRL_SAKURA_REMATCH       ; 18
 	
 ; wDailyFlags2::
 	const_def
@@ -328,8 +328,8 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS2_DAISYS_GROOMING_F                   ; 3
 	const DAILYFLAGS2_INDIGO_PLATEAU_RIVAL_FIGHT_F        ; 4
 	const DAILYFLAGS2_BUENAS_PASSWORD_F                   ; 5
-	const DAILYFLAGS2_DAILY_UNUSED_1_F                    ; 6
-	const DAILYFLAGS2_DAILY_UNUSED_2_F                    ; 7
+	const DAILYFLAGS2_DAILY_MOUNT_MOON_B2F_FOSSIL         ; 6 
+	const DAILYFLAGS2_DAILY_UNUSED_1_F                    ; 7
 
 ; wSwarmFlags::
 	const_def

@@ -124,4 +124,5 @@ OverworldSprites:
 	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite SchoolboySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BirdKeeperSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite FossilsSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES

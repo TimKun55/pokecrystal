@@ -105,9 +105,6 @@ RockItemEncounter:
 	db 2, MAX_REVIVE
 	db 2, BIG_NUGGET
 	db 2, THICK_CLUB
-	db 4, HELIX_FOSSIL
-	db 4, DOME_FOSSIL
-	db 4, OLD_AMBER
 	db 9, NUGGET
 	db 9, STAR_PIECE
 	db 12, BIG_PEARL
@@ -116,5 +113,5 @@ RockItemEncounter:
 	db 24, SOFT_SAND
 	db 40, REVIVE
 	db 46, PEARL
-	db 55, NO_ITEM
+	db 67, NO_ITEM
 	db -1

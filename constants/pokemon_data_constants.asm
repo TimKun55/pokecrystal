@@ -239,7 +239,16 @@ DEF NUM_TREEMON_SETS EQU const_value
 ; rock smash groups, for Nayru's pokedex
 ; const TREEMON_SET_ROCK is originally within NUM_TREEMON_SETS
 	const_def
-	const TREEMON_SET_ROCK
+	const TREEMON_SET_ROCK_JOHTO
+	const TREEMON_SET_ROCK_DARK_CAVE
+	const TREEMON_SET_ROCK_RUINS
+	const TREEMON_SET_ROCK_BURNED_TOWER
+	const TREEMON_SET_ROCK_CIANWOOD
+	const TREEMON_SET_ROCK_TOHJO
+	const TREEMON_SET_ROCK_KANTO_EARLY
+	const TREEMON_SET_ROCK_VICTORY_ROAD
+	const TREEMON_SET_ROCK_KANTO_SHORE
+	const TREEMON_SET_ROCK_KANTO
 DEF NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
