@@ -21,11 +21,11 @@ PewterMuseum1FScientistScript:
 PewterMuseum1FFossilScientistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	checkevent EVENT_GAVE_PEWTER_SCIENTIST_OLD_AMBER
 	iftrue .GiveAerodactyl
-	checkevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	checkevent EVENT_GAVE_PEWTER_SCIENTIST_DOME_FOSSIL
 	iftrue .GiveKabuto
-	checkevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	checkevent EVENT_GAVE_PEWTER_SCIENTIST_HELIX_FOSSIL
 	iftrue .GiveOmanyte
 	writetext PewterMuseumFossilScientistIntroText
 	waitbutton
@@ -52,7 +52,7 @@ PewterMuseum1FFossilScientistScript:
 	writetext PewterMuseumFossilScientistGoodCareText
 	waitbutton
 	closetext
-	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	clearevent EVENT_GAVE_PEWTER_SCIENTIST_HELIX_FOSSIL
 	end
 
 .GiveKabuto:
@@ -67,7 +67,7 @@ PewterMuseum1FFossilScientistScript:
 	writetext PewterMuseumFossilScientistGoodCareText
 	waitbutton
 	closetext
-	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	clearevent EVENT_GAVE_PEWTER_SCIENTIST_DOME_FOSSIL
 	end
 
 .GiveAerodactyl:
@@ -82,7 +82,7 @@ PewterMuseum1FFossilScientistScript:
 	writetext PewterMuseumFossilScientistGoodCareText
 	waitbutton
 	closetext
-	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	clearevent EVENT_GAVE_PEWTER_SCIENTIST_OLD_AMBER
 	end
 
 .NoRoom:
@@ -207,7 +207,7 @@ PewterIsHelixFossil:
 	waitbutton
 	closetext
 	takeitem HELIX_FOSSIL
-	setevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	setevent EVENT_GAVE_PEWTER_SCIENTIST_HELIX_FOSSIL
 	turnobject PEWTERMUSEUM1F_SCIENTIST2, UP
 	pause 24
 	playsound SFX_BOOT_PC
@@ -232,7 +232,7 @@ PewterIsDomeFossil:
 	waitbutton
 	closetext
 	takeitem DOME_FOSSIL
-	setevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	setevent EVENT_GAVE_PEWTER_SCIENTIST_DOME_FOSSIL
 	turnobject PEWTERMUSEUM1F_SCIENTIST2, UP
 	pause 24
 	playsound SFX_BOOT_PC
@@ -257,7 +257,7 @@ PewterIsOldAmber:
 	waitbutton
 	closetext
 	takeitem OLD_AMBER
-	setevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	setevent EVENT_GAVE_PEWTER_SCIENTIST_OLD_AMBER
 	turnobject PEWTERMUSEUM1F_SCIENTIST2, UP
 	pause 24
 	playsound SFX_BOOT_PC

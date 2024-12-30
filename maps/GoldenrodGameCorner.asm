@@ -21,41 +21,93 @@ EXPORT GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	const GOLDENRODGAMECORNER_COOLTRAINER_F
 	const GOLDENRODGAMECORNER_GENTLEMAN
 	const GOLDENRODGAMECORNER_POKEFAN_M2
-	const GOLDENRODGAMECORNER_MOVETUTOR
+	const GOLDENRODGAMECORNER_PORYGONFAN
 
 GoldenrodGameCorner_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, GoldenrodGameCornerMoveTutorCallback
+	callback MAPCALLBACK_OBJECTS, GoldenrodGameCornerPorygonFanCallback
 
-GoldenrodGameCornerMoveTutorCallback:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .finish
+GoldenrodGameCornerPorygonFanCallback:
 	checkitem COIN_CASE
-	iffalse .move_tutor_inside
+	iffalse .PorygonFanDisappear
 	readvar VAR_WEEKDAY
-	ifequal MONDAY, .move_tutor_outside
-	ifequal WEDNESDAY, .move_tutor_outside
-	ifequal SATURDAY, .move_tutor_outside
-.move_tutor_inside
-	appear GOLDENRODGAMECORNER_MOVETUTOR
+	ifequal MONDAY, .PorygonFanDisappear
+	ifequal WEDNESDAY, .PorygonFanDisappear
+	ifequal SATURDAY, .PorygonFanDisappear
+	appear GOLDENRODGAMECORNER_PORYGONFAN
 	endcallback
 
-.move_tutor_outside
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .finish
-	disappear GOLDENRODGAMECORNER_MOVETUTOR
-.finish
+.PorygonFanDisappear
+	disappear GOLDENRODGAMECORNER_PORYGONFAN
 	endcallback
 
-MoveTutorInsideScript:
+GoldenrodGameCornerPorygonFanScript:
 	faceplayer
 	opentext
-	writetext MoveTutorInsideText
+	checkevent EVENT_GOLDENROD_GAME_CORNER_GOT_PORYGON
+	iftrue .LoveTravelText
+	writetext GoldenrodGameCornerPorygonFanRareMonText
+	yesorno
+	iffalse .Refused
+	special DisplayCoinCaseBalance
+	writetext GoldenrodGameCornerPorygonFanAsk6000CoinsOkayText
+	yesorno
+	iffalse .Refused2
+	checkcoins 6000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .partyfull
+	takecoins 6000
+	waitsfx
+	playsound SFX_TRANSACTION
+	special DisplayCoinCaseBalance
+	writetext GoldenrodGameCornerPlayerReceivedPorygonText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke PORYGON, 15
+	setevent EVENT_GOLDENROD_GAME_CORNER_GOT_PORYGON
+	writetext GoldenrodGameCornerPorygonFanEvolutionRumourText
 	waitbutton
 	closetext
-	turnobject GOLDENRODGAMECORNER_MOVETUTOR, RIGHT
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
+	end
+
+.Refused:
+	writetext GoldenrodGameCornerPorygonFanAwwButSoCoolText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
+	end
+
+.Refused2:
+	writetext GoldenrodGameCornerPorygonFanHmmTooBadText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
+	end
+
+.partyfull
+	writetext GoldenrodGameCornerPorygonFanNoRoomText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
+	end
+
+.NotEnoughMoney:
+	writetext GoldenrodGameCornerPorygonFanNotEnoughText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
+	end
+
+.LoveTravelText:
+	writetext GoldenrodGameCornerPorygonFanLoveTravelText
+	waitbutton
+	closetext
+	turnobject GOLDENRODGAMECORNER_PORYGONFAN, RIGHT
 	end
 
 GoldenrodGameCornerCoinVendorScript:
@@ -450,9 +502,77 @@ GoldenrodGameCornerPokefanM2Text:
 	line "Underground."
 	done
 
-MoveTutorInsideText:
-	text "Wahahah! The coins"
-	line "keep rolling in!"
+GoldenrodGameCornerPorygonFanRareMonText:
+	text "Hello there!"
+	
+	para "I'm from Kanto"
+	line "showing off rare"
+	cont "#mon."
+	
+	para "Oh! you're a"
+	line "trainer and"
+	cont "collecting badges?"
+	
+	para "Would you like to"
+	line "see this #mon"
+	cont "from Kanto?"
+	done
+
+GoldenrodGameCornerPorygonFanAsk6000CoinsOkayText:
+	text "If you'd like it,"
+	line "I can part with it"
+	cont "for 6,000 coins."
+	
+	para "Is that OK?"
+	done
+
+GoldenrodGameCornerPlayerReceivedPorygonText:
+	text "<PLAYER> received"
+	line "a Porygon."
+	done
+
+GoldenrodGameCornerPorygonFanLoveTravelText:
+	text "I love traveling"
+	line "between Johto and"
+	cont "Kanto."
+	
+	para "I get to show off"
+	line "some cool #mon"
+	
+	para "to people who have"
+	line "never seen them!"
+	done
+
+GoldenrodGameCornerPorygonFanEvolutionRumourText:
+	text "It's so cool!"
+	
+	para "I've also heard"
+	line "a rumour that"
+	cont "Porygon can evolve"
+	
+	para "but I've not seen"
+	line "it or know what"
+	cont "causes it."
+	done
+
+GoldenrodGameCornerPorygonFanAwwButSoCoolText:
+	text "Aww, but it's"
+	line "so cool…"
+	done
+
+GoldenrodGameCornerPorygonFanHmmTooBadText:
+	text "Hmm, too bad…"
+	done
+
+GoldenrodGameCornerPorygonFanNoRoomText:
+	text "Sorry, you don't"
+	line "have enough room"
+	cont "in your Party."
+	done
+
+GoldenrodGameCornerPorygonFanNotEnoughText:
+	text "Sorry, you don't"
+	line "have enough coins."
 	done
 
 GoldenrodGameCornerLeftTheirDrinkText:
@@ -516,4 +636,4 @@ GoldenrodGameCorner_MapEvents:
 	object_event 10,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCooltrainerFScript, -1
 	object_event  5, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerGentlemanScript, -1
 	object_event  2,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPokefanM2Script, -1
-	object_event 17, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorInsideScript, EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
+	object_event 10,  1, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPorygonFanScript, EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR

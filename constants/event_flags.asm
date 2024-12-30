@@ -136,7 +136,6 @@
 	const EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE
 	const EVENT_TIN_TOWER_5F_HIDDEN_CARBOS
 	const EVENT_BURNED_TOWER_1F_HIDDEN_ETHER
-	const EVENT_GAVE_SCIENTIST_OLD_AMBER
 	const EVENT_GAVE_SCIENTIST_DOME_FOSSIL
 	const EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
 	const EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
@@ -207,7 +206,7 @@
 	const EVENT_GRAND_CHAMPION
 	const EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	const EVENT_GOT_POKEDEX_FROM_OAK
-; Unused: next 48 events
+; Unused: next 49 events
 
 	const_next 250
 ; Kanto story events
@@ -301,7 +300,10 @@
 	const EVENT_FINAL_BATTLE_WITH_LYRA
 	const EVENT_GOT_PREMIER_BALLS_FROM_SILPH
 	const EVENT_CELADON_HOTEL_SCOPE_LENS
-; Unused: next 61 events
+	const EVENT_GAVE_PEWTER_SCIENTIST_OLD_AMBER
+	const EVENT_GAVE_PEWTER_SCIENTIST_DOME_FOSSIL
+	const EVENT_GAVE_PEWTER_SCIENTIST_HELIX_FOSSIL
+; Unused: next 58 events
 
 	const_next 400
 ; Kurt Apricorn events
@@ -314,11 +316,8 @@
 	const EVENT_GAVE_KURT_PNK_APRICORN
 ; Phone events
 	const EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_GOT_PROTEIN_FROM_HUEY
 	const EVENT_GOT_HP_UP_FROM_JOEY
 	const EVENT_GOT_CARBOS_FROM_VANCE
@@ -326,58 +325,31 @@
 	const EVENT_GOT_CALCIUM_FROM_ERIN
 	const EVENT_KENJI_ON_BREAK
 	const EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_BETH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_WADE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_TODD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_GINA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const_skip ; unused
-	const_skip ; unused
 	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_TULLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
 	const EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_PARRY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
 	const EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
 	const EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
-	const_skip ; unused
 ; Ruins of Alph puzzles
 	const EVENT_SOLVED_HO_OH_PUZZLE
 	const EVENT_SOLVED_KABUTO_PUZZLE
@@ -410,19 +382,14 @@
 	const EVENT_DECO_BULBASAUR_DOLL
 	const EVENT_DECO_CHARMANDER_DOLL
 	const EVENT_DECO_SQUIRTLE_DOLL
-	const EVENT_DECO_POLIWAG_DOLL ; removed
 	const EVENT_DECO_DIGLETT_DOLL
-	const EVENT_DECO_STARYU_DOLL ; removed
 	const EVENT_DECO_MAGIKARP_DOLL
 	const EVENT_DECO_ODDISH_DOLL
 	const EVENT_DECO_GENGAR_DOLL
 	const EVENT_DECO_SHELLDER_DOLL
 	const EVENT_DECO_GRIMER_DOLL
 	const EVENT_DECO_VOLTORB_DOLL
-	const EVENT_DECO_WEEDLE_DOLL ; removed
 	const EVENT_DECO_SNUBBULL_DOLL
-	const EVENT_DECO_GEODUDE_DOLL ; removed
-	const EVENT_DECO_MACHOP_DOLL ; removed
 	const EVENT_DECO_TENTACOOL_DOLL
 	const EVENT_DECO_CHIKORITA_DOLL
 	const EVENT_DECO_CYNDAQUIL_DOLL
@@ -567,8 +534,8 @@
 	const EVENT_LYRA_GAVE_AWAY_EGG
 	const EVENT_GOT_LYRAS_EGG
 	const EVENT_RESEARCH_CENTER_GS_BALL
-		;add all gym leader and Kimono Girl rematch flags?
-; Unused: next 143 events
+	const EVENT_GOLDENROD_GAME_CORNER_GOT_PORYGON
+; Unused: next 177 events
 
 	const_next 800
 ; Trainer flags
@@ -1042,6 +1009,7 @@
 	const EVENT_BEAT_SUPER_NERD_SHAWN
 	const EVENT_BEAT_SUPER_NERD_TERU
 	const EVENT_BEAT_SUPER_NERD_RUSS
+	const EVENT_BEAT_SUPER_NERD_NORTON
 ; Hex Maniac
 	const EVENT_BEAT_HEX_MANIAC_MARTHA
 	const EVENT_BEAT_HEX_MANIAC_GRACE
@@ -1160,8 +1128,6 @@
 	const EVENT_BEAT_GUARDIAN_AGATHA
 ; Ex-Boss
 	const EVENT_BEAT_GIOVANNI
-; Extras (temp)
-	const EVENT_BEAT_SUPER_NERD_NORTON
 ; Unused: next 61 events
 
 	const_next 1400
