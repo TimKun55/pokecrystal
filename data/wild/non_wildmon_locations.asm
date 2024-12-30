@@ -135,9 +135,9 @@ GiftMons::
 	specialencounter DRATINI, 	 EVENT_GOT_DRATINI, 							DRAGON_SHRINE, ExtremespeedDratini_Str
 	specialencounter EEVEE,	 	 EVENT_GOT_EEVEE, 								BILLS_FAMILYS_HOUSE, BillsEevee_Str
 	specialencounter TYROGUE, 	 EVENT_GOT_TYROGUE_FROM_KIYO, 					MOUNT_MORTAR_1F_OUTSIDE, TyrogueEvent_Str
-	specialencounter AERODACTYL, EVENT_GAVE_SCIENTIST_OLD_AMBER, 				PEWTER_MUESUM_1F, OldAmberEvent_Str
-	specialencounter KABUTO, 	 EVENT_GAVE_SCIENTIST_DOME_FOSSIL, 				PEWTER_MUESUM_1F, DomeFossil_Str
-	specialencounter OMANYTE, 	 EVENT_GAVE_SCIENTIST_HELIX_FOSSIL, 			PEWTER_MUESUM_1F, HelixFossil_Str
+	specialencounter AERODACTYL, EVENT_GAVE_PEWTER_SCIENTIST_OLD_AMBER, 		PEWTER_MUSEUM_1F, OldAmberEvent_Str
+	specialencounter KABUTO, 	 EVENT_GAVE_PEWTER_SCIENTIST_DOME_FOSSIL, 		PEWTER_MUSEUM_1F, DomeFossil_Str
+	specialencounter OMANYTE, 	 EVENT_GAVE_PEWTER_SCIENTIST_HELIX_FOSSIL, 		PEWTER_MUSEUM_1F, HelixFossil_Str
 	db -1
 
 ; GivePoke Dex Hints, max 18 chars per line
