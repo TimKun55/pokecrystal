@@ -24,6 +24,7 @@ OldPokedexOrder:
 	db EKANS      ; 17
 	db ARBOK      ; 18
 	db PIKACHU    ; 19
+	db PIKACHU_P
 	db RAICHU     ; 1a
 	db SANDSHREW  ; 1b
 	db SANDSLASH  ; 1c

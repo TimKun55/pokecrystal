@@ -91,7 +91,7 @@ SpriteMons:
 	db HOUNDOOM
 	db KINGDRA
 	db TYROGUE
-	db HITMONTOP
+	db PIKACHU_P
 	db MURKROW
 	db MILTANK
 	db BLISSEY

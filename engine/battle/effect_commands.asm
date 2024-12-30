@@ -2738,7 +2738,7 @@ LightBallBoost:
 	push bc
 	push de
 	ld b, PIKACHU
-	ld c, PIKACHU
+	ld c, PIKACHU_P
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
 	pop de

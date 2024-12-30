@@ -861,3 +861,13 @@ LarvitarEggMoves:
 	
 NoEggMoves:
 	db -1 ; end
+
+PikachuPEggMoves:
+	db REVERSAL
+	db PRESENT
+	db ENCORE
+	db DOUBLESLAP
+	db DISARM_VOICE
+	db BIDE
+	db NASTY_PLOT
+	db -1 ; end

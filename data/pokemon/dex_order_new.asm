@@ -21,6 +21,7 @@ NewPokedexOrder:
 	db SENTRET
 	db FURRET
 	db PIKACHU
+	db PIKACHU_P
 	db RAICHU
 	db CATERPIE
 	db METAPOD

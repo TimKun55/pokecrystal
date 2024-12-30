@@ -4689,3 +4689,23 @@ SylveonEvosAttacks:
 	db 47, LIGHT_SCREEN 
 	db 52, MOONBLAST
 	db 0 ; no more level-up moves
+
+PikachuPEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, THUNDERSHOCK
+	db 1, TAIL_WHIP
+	db 5, CHARM
+	db 7, THUNDER_WAVE
+	db 10, QUICK_ATTACK
+	db 14, DOUBLE_KICK
+	db 18, DOUBLE_TEAM
+	db 21, SLAM
+	db 24, SPARK
+	db 28, IRON_TAIL
+	db 32, EXTREMESPEED
+	db 36, THUNDERBOLT
+	db 40, SLAM
+	db 44, AGILITY
+	db 48, LIGHT_SCREEN
+	db 52, THUNDER
+	db 0 ; no more level-up moves
