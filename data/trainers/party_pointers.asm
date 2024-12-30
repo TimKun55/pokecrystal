@@ -80,4 +80,9 @@ TrainerGroups:
 	dba Lyra1Group
 	dba Lyra2Group
 	dba BlaineGGroup
+	dba AerodactylFossilGroup
+	dba KabutopsFossilGroup
+	dba OmastarFossilGroup
+	dba CuboneArmorGroup
+	dba MeteoriteGroup
 	assert_table_length NUM_TRAINER_CLASSES

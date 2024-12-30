@@ -829,4 +829,14 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BLAINE_G ; 4d
 	const BLAINE_G1
 
+	trainerclass AERODACTYL_FOSSIL ; 4e
+	
+	trainerclass KABUTOPS_FOSSIL ; 4f
+
+	trainerclass OMASTAR_FOSSIL ; 50
+
+	trainerclass CUBONE_ARMOR ; 51
+
+	trainerclass METEORITE ; 52
+
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

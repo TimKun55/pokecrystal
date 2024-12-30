@@ -4469,3 +4469,13 @@ BlaineGGroup:
 	db 68, RAPIDASH,   CHARCOAL,      POISON_JAB, MEGAHORN, FLAMETHROWER, EXTREMESPEED
 	db 68, MAGMORTAR,  MAGNET,        THUNDERPUNCH, CONFUSE_RAY, FLAMETHROWER, GUNK_SHOT
 	db -1 ; end
+
+AerodactylFossilGroup:
+
+KabutopsFossilGroup:
+
+OmastarFossilGroup:
+
+CuboneArmorGroup:
+
+MeteoriteGroup:

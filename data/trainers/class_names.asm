@@ -78,4 +78,9 @@ TrainerClassNames::
 	li "<PKMN> Trainer"
 	li "<PKMN> Trainer"
 	li "Guardian"
+	li "Fossil"
+	li "Fossil"
+	li "Fossil"
+	li "Armor"
+	li "Meteorite"
 	assert_list_length NUM_TRAINER_CLASSES

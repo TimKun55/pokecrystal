@@ -80,4 +80,9 @@ BTTrainerClassGenders:
 	db FEMALE ; LYRA1
 	db FEMALE ; LYRA2
 	db MALE   ; BLAINE_G
+	db MALE   ; AERODACTYL_FOSSIL
+	db MALE   ; KABUTOPS_FOSSIL
+	db MALE   ; OMASTAR_FOSSIL
+	db MALE   ; CUBONE_ARMOR
+	db MALE   ; METEORITE
 	assert_table_length NUM_TRAINER_CLASSES

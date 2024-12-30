@@ -80,4 +80,9 @@ TrainerPicPointers::
 	dba Lyra1Pic
 	dba Lyra2Pic
 	dba BlainePic
+	dba AerodactylFossilPic
+	dba KabutopsFossilPic
+	dba OmastarFossilPic
+	dba CuboneArmorPic
+	dba MeteoritePic
 	assert_table_length NUM_TRAINER_CLASSES

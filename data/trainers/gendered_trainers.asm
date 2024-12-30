@@ -29,6 +29,11 @@ MaleTrainers:
 	db EX_BOSS
 	db BUG_MANIAC
 	db BLAINE_G
+	db AERODACTYL_FOSSIL
+	db KABUTOPS_FOSSIL
+	db OMASTAR_FOSSIL
+	db CUBONE_ARMOR
+	db METEORITE
 .End
 
 FemaleTrainers:

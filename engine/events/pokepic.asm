@@ -14,6 +14,7 @@ Pokepic::
 	call GetBaseData
 	ld de, vTiles1
 	predef GetMonFrontpic
+_Displaypic:
 	ld a, [wMenuBorderTopCoord]
 	inc a
 	ld b, a
@@ -27,6 +28,22 @@ Pokepic::
 	predef PlaceGraphic
 	call WaitBGMap
 	ret
+
+Trainerpic::
+	ld hl, PokepicMenuHeader
+	call CopyMenuHeader
+	call MenuBox
+	call UpdateSprites
+	call ApplyTilemap
+	ld de, wBGPals1 palette PAL_BG_TEXT color 1
+	farcall LoadTrainerPalette
+	call UpdateTimePals
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wTrainerClass]
+	ld de, vTiles1
+	farcall GetTrainerPic
+	jr _Displaypic
 
 ClosePokepic::
 	ld hl, PokepicMenuHeader

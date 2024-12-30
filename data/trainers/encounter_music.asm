@@ -81,4 +81,9 @@ TrainerEncounterMusic::
 	db MUSIC_LYRA_ENCOUNTER        ; lyra1
 	db MUSIC_LYRA_ENCOUNTER        ; lyra2
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine_g
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; aerodactyl_fossil
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; kabutops_fossil
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; omastar_fossil
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; cubone_armor
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; meteorite
 	assert_table_length NUM_TRAINER_CLASSES + 1

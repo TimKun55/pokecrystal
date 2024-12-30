@@ -234,6 +234,7 @@ ScriptCommandTable:
 	dw Script_getname                    ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
+	dw Script_trainerpic                 ; aa
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2353,6 +2354,16 @@ Script_checkver_duplicate: ; unreferenced
 
 .gs_version:
 	db GS_VERSION
+
+Script_trainerpic:
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wTrainerClass], a
+	farcall Trainerpic
+	ret
 	
 AppendTMHMMoveName::
 ; a = item ID
