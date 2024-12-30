@@ -96,8 +96,7 @@ OlivineCitySailorTutorScript:
 	waitbutton
 	special PlaceMoneyTopRight
 	writetext OlivineCitySailorTutorAquaTailText2
-	waitbutton
-	checkmoney YOUR_MONEY, 3000
+	checkmoney YOUR_MONEY, 5000
 	ifequal HAVE_LESS, .NotEnough
 	yesorno
 	iffalse .TutorRefused
@@ -107,12 +106,12 @@ OlivineCitySailorTutorScript:
 .TutorRefused
 	writetext OlivineCitySailorTutorAquaTailRefused
 	waitbutton
-	closetext
+	closetext	
 	end
 	
 .TeachMove
 	writetext OlivineCitySailorTutorPayment
-	takemoney YOUR_MONEY, 3000
+	takemoney YOUR_MONEY, 5000
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
