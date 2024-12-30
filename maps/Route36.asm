@@ -77,6 +77,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	loadwildmon SUDOWOODO, 20
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
+	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_FOSSIL_SCIENTIST
 	ifequal DRAW, DidntCatchSudowoodo
 	disappear ROUTE36_SUDOWOODO
 	reloadmapafterbattle

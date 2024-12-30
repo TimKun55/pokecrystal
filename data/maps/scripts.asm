@@ -87,6 +87,8 @@ INCLUDE "maps/Route1ViridianGate.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
 INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
+INCLUDE "maps/Route37.asm"
+INCLUDE "maps/SaffronAviculturalSociety2F.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -116,7 +118,6 @@ INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
 INCLUDE "maps/IlexForest.asm"
 INCLUDE "maps/MountMoonB2F.asm"
-INCLUDE "maps/GoldenrodFlowerShop.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -172,6 +173,7 @@ INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm"
 INCLUDE "maps/MountMoonGiftShop.asm"
 INCLUDE "maps/TinTowerRoof.asm"
+INCLUDE "maps/GoldenrodFlowerShop.asm"
 
 
 SECTION "Map Scripts 9", ROMX
@@ -212,6 +214,7 @@ INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
+INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -453,7 +456,6 @@ SECTION "Map Scripts 23", ROMX
 INCLUDE "maps/NewBarkTown.asm"
 INCLUDE "maps/VioletCity.asm"
 INCLUDE "maps/OlivineCity.asm"
-INCLUDE "maps/Route37.asm"
 INCLUDE "maps/Route42.asm"
 INCLUDE "maps/Route46.asm"
 INCLUDE "maps/ViridianCity.asm"
@@ -524,8 +526,6 @@ INCLUDE "maps/SaffronAviculturalSociety1F.asm"
 
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/SaffronAviculturalSociety2F.asm"
-INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 INCLUDE "maps/Route36VioletGate.asm"
 INCLUDE "maps/GoldenrodHomeDecorStore1F.asm"
 INCLUDE "maps/GoldenrodHomeDecorStore2F.asm"
@@ -546,6 +546,8 @@ INCLUDE "maps/SeafoamIslandsB4F.asm"
 INCLUDE "maps/SlowpokeWellEntrance.asm"
 INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/LyrasHouse2F.asm"
+INCLUDE "maps/PewterMuseum1F.asm"
+INCLUDE "maps/PewterMuseum2F.asm"
 
 
 ENDSECTION

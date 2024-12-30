@@ -577,3 +577,15 @@ INCBIN "data/tilesets/train_station_attributes.bin"
 
 TilesetJohto5GFX::
 INCBIN "gfx/tilesets/johto_5.2bpp.lz"
+
+TilesetMuseumGFX::
+INCBIN "gfx/tilesets/museum.2bpp.lz"
+
+TilesetMuseumMeta::
+INCBIN "data/tilesets/museum_metatiles.bin"
+
+TilesetMuseumColl::
+INCLUDE "data/tilesets/museum_collision.asm"
+
+TilesetMuseumAttr::
+INCBIN "data/tilesets/museum_attributes.bin"

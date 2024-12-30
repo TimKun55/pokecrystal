@@ -133,6 +133,7 @@ PewterCity_MapEvents:
 	warp_event 21, 19, PEWTER_MART, 2
 	warp_event 13, 25, PEWTER_POKECENTER_1F, 1
 	warp_event  7, 28, PEWTER_SNOOZE_SPEECH_HOUSE, 1
+	warp_event 18,  6, PEWTER_MUSEUM_1F, 1
 
 	def_coord_events
 

@@ -373,14 +373,16 @@ Pallet_Map_Names: ;newgroup PALLET											; 13
 
 Pewter_Map_Names: ;newgroup PEWTER											; 14
 	table_width 2, Pewter_Map_Names
-	dw Pewter_Map_Name1 ; map_const ROUTE_3									;  1
-	dw Pewter_Map_Name2 ; map_const PEWTER_CITY								;  2
-	dw Pewter_Map_Name3 ; map_const PEWTER_NIDORAN_SPEECH_HOUSE				;  3
-	dw Pewter_Map_Name4 ; map_const PEWTER_GYM								;  4
-	dw Pewter_Map_Name5 ; map_const PEWTER_MART								;  5
-	dw Pewter_Map_Name6 ; map_const PEWTER_POKECENTER_1F					;  6
-	dw Pewter_Map_Name7 ; map_const PEWTER_SNOOZE_SPEECH_HOUSE				;  7
-	dw Pewter_Map_Name8 ; map_const ROUTE_3_POKECENTER_1F 					;  8
+	dw Pewter_Map_Name1  ; map_const ROUTE_3								;  1
+	dw Pewter_Map_Name2  ; map_const PEWTER_CITY							;  2
+	dw Pewter_Map_Name3  ; map_const PEWTER_NIDORAN_SPEECH_HOUSE			;  3
+	dw Pewter_Map_Name4  ; map_const PEWTER_GYM								;  4
+	dw Pewter_Map_Name5  ; map_const PEWTER_MART							;  5
+	dw Pewter_Map_Name6  ; map_const PEWTER_POKECENTER_1F					;  6
+	dw Pewter_Map_Name7  ; map_const PEWTER_SNOOZE_SPEECH_HOUSE				;  7
+	dw Pewter_Map_Name8  ; map_const ROUTE_3_POKECENTER_1F 					;  8
+	dw Pewter_Map_Name9  ; map_const PEWTER_MUSEUM_1F						;  9
+	dw Pewter_Map_Name10 ; map_const PEWTER_MUSEUM_2F						; 10
 	assert_table_length NUM_PEWTER_MAPS
 
 Fast_Ship_Map_Names: ;newgroup FAST_SHIP										; 15
@@ -1167,6 +1169,10 @@ Pewter_Map_Name7: ; map_const PEWTER_SNOOZE_SPEECH_HOUSE ;  7
 	db "Pewter House 2@"
 Pewter_Map_Name8: ; map_const ROUTE_3_POKECENTER_1F ;  8
 	db "Route 3 <PKMN> Cen.@" 
+Pewter_Map_Name9: ; map_const PEWTER_MUSEUM_1F ;  9
+	db "Pewter Museum 1F@" 
+Pewter_Map_Name10: ; map_const PEWTER_MUSEUM_2F ;  10
+	db "Pewter Museum 2F@" 
 
 Fast_Ship_Map_Name1: ; map_const OLIVINE_PORT,;  1
 	db "Olivine Marina@"

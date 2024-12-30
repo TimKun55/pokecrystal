@@ -1081,4 +1081,10 @@ CeladonHotel1F_Blocks:
 CeladonHotelPool_Blocks:
 	INCBIN "maps/CeladonHotelPool.ablk"
 
+PewterMuseum1F_Blocks:
+	INCBIN "maps/PewterMuseum1F.ablk"
+
+PewterMuseum2F_Blocks:
+	INCBIN "maps/PewterMuseum2F.ablk"
+
 ENDSECTION
