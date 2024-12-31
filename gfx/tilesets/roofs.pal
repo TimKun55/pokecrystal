@@ -104,9 +104,9 @@
 	RGB 20,19,19, 10,09,09 ; eve
 
 ; group 21 (Celadon)
-	RGB 19,31,15, 31,22,02 ; morn/day
-	RGB 12,13,09, 09,12,03 ; nite
-	RGB 11,19,02, 04,14,04 ; eve
+	RGB 21,28,22, 14,22,18 ; morn/day
+	RGB 04,09,06, 03,07,06 ; nite
+	RGB 19,20,17, 15,17,09 ; eve
 
 ; group 22 (Cianwood)
 	RGB 15,10,31, 07,05,15 ; morn/day
