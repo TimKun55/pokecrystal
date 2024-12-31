@@ -23,6 +23,9 @@ Tileset0Meta::
 TilesetJohtoMeta::
 INCBIN "data/tilesets/johto_metatiles.bin"
 
+TilesetIcePathColl::
+INCLUDE "data/tilesets/ice_path_collision.asm"
+
 
 SECTION "Tileset Data 2", ROMX
 
@@ -450,9 +453,6 @@ INCBIN "data/tilesets/forest_metatiles.bin"
 
 TilesetIcePathMeta::
 INCBIN "data/tilesets/ice_path_metatiles.bin"
-
-TilesetIcePathColl::
-INCLUDE "data/tilesets/ice_path_collision.asm"
 
 
 SECTION "Tileset Data 17", ROMX
