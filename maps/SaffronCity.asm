@@ -8,6 +8,8 @@
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
 	const SAFFRONCITY_COOLTRAINER_F2
+	const SAFFRONCITY_TEACHER
+	const SAFFRONCITY_YOUNGSTER3
 
 SaffronCity_MapScripts:
 	def_scene_scripts
@@ -139,6 +141,12 @@ SaffronCityYoungster2Script:
 
 SaffronCityLass2Script:
 	jumptextfaceplayer SaffronCityLass2Text
+
+SaffronCityTeacherScript:
+	jumptextfaceplayer SaffronCityTeacherText
+
+SaffronCityYoungster3Script:
+	jumptextfaceplayer SaffronCityYoungster3Text
 
 SaffronCitySign:
 	jumptext SaffronCitySignText
@@ -301,6 +309,24 @@ SaffronCityLass2Text:
 	cont "too."
 	done
 
+SaffronCityTeacherText:
+	text "I know it's conv-"
+	line "enient, but does"
+	
+	para "the Train have to"
+	line "travel quite"
+	cont "so fast…?"
+	done
+
+SaffronCityYoungster3Text:
+	text "I can't wait to"
+	line "ride the Train!"
+	
+	para "I think Mum is"
+	line "a little scared"
+	cont "of it, though."
+	done
+
 SaffronCitySignText:
 	text "Saffron City"
 
@@ -384,5 +410,7 @@ SaffronCity_MapEvents:
 	object_event 30, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
 	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
-	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 23, 24, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
+	object_event  3,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityTeacherScript, -1
+	object_event  3,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster3Script, -1
