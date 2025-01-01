@@ -62,21 +62,22 @@ Aizen:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .WaterTrade
+	iftrue .BulbasaurTrade
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .GrassTrade
+	iftrue .CharmanderTrade
+; SquirtleTrade
 	trade NPC_TRADE_AIZEN2
 	waitbutton
 	closetext
 	end
 
-.WaterTrade
+.BulbasaurTrade
 	trade NPC_TRADE_AIZEN3
 	waitbutton
 	closetext
 	end
 
-.GrassTrade
+.CharmanderTrade
 	trade NPC_TRADE_AIZEN1
 	waitbutton
 	closetext
