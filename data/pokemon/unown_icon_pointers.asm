@@ -28,4 +28,6 @@ UnownIconPointers:
 	dw UnownXIcon
 	dw UnownYIcon
 	dw UnownZIcon
+	dw UnownExclamationIcon
+	dw UnownQuestionIcon
 	assert_table_length NUM_UNOWN + 1

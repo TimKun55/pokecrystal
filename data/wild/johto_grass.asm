@@ -440,31 +440,31 @@ JohtoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 10, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 10, UNOWN,          8,   9
+	db  8, UNOWN,         10,  11
+	db  8, UNOWN,         12,  13
+	db  8, UNOWN,         14,  15
 	; day
 	;   %, species,		 min, max
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 10, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 10, UNOWN,          8,   9
+	db  8, UNOWN,         10,  11
+	db  8, UNOWN,         12,  13
+	db  8, UNOWN,         14,  15
 	; nite
 	;   %, species,		 min, max
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 22, UNOWN,          5,  15
-	db 10, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
-	db  8, UNOWN,          5,  15
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 22, UNOWN,          6,   7
+	db 10, UNOWN,          8,   9
+	db  8, UNOWN,         10,  11
+	db  8, UNOWN,         12,  13
+	db  8, UNOWN,         14,  15
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_1F

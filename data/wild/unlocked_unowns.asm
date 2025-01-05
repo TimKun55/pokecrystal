@@ -9,17 +9,17 @@ ENDM
 UnlockedUnownLetterSets:
 ; entries correspond to UNLOCKED_UNOWNS_* constants
 	table_width 2, UnlockedUnownLetterSets
-	dw .Set_A_K ; UNLOCKED_UNOWNS_A_TO_K_F
-	dw .Set_L_R ; UNLOCKED_UNOWNS_L_TO_R_F
-	dw .Set_S_W ; UNLOCKED_UNOWNS_S_TO_W_F
-	dw .Set_X_Z ; UNLOCKED_UNOWNS_X_TO_Z_F
+	dw .Set_A_G ; UNLOCKED_UNOWNS_A_TO_G_F
+	dw .Set_H_N ; UNLOCKED_UNOWNS_H_TO_N_F
+	dw .Set_O_U ; UNLOCKED_UNOWNS_O_TO_U_F
+	dw .Set_V_Question ; UNLOCKED_UNOWNS_V_TO_QUESTION_F
 	assert_table_length NUM_UNLOCKED_UNOWN_SETS
 
-.Set_A_K:
-	unown_set A, B, C, D, E, F, G, H, I, J, K
-.Set_L_R:
-	unown_set L, M, N, O, P, Q, R
-.Set_S_W:
-	unown_set S, T, U, V, W
-.Set_X_Z:
-	unown_set X, Y, Z
+.Set_A_G:
+	unown_set A, B, C, D, E, F, G
+.Set_H_N:
+	unown_set H, I, J, K, L, M, N
+.Set_O_U:
+	unown_set O, P, Q, R, S, T, U
+.Set_V_Question:
+	unown_set V, W, X, Y, Z, EXCLAMATION, QUESTION
