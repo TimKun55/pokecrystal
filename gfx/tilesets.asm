@@ -589,3 +589,18 @@ INCLUDE "data/tilesets/museum_collision.asm"
 
 TilesetMuseumAttr::
 INCBIN "data/tilesets/museum_attributes.bin"
+
+
+SECTION "Tileset Data 22", ROMX
+
+TilesetKanto7GFX::
+INCBIN "gfx/tilesets/kanto_7.2bpp.lz"
+
+TilesetKanto7Meta::
+INCBIN "data/tilesets/kanto_7_metatiles.bin"
+
+TilesetKanto7Coll::
+INCLUDE "data/tilesets/kanto_7_collision.asm"
+
+TilesetKanto7Attr::
+INCBIN "data/tilesets/kanto_7_attributes.bin"

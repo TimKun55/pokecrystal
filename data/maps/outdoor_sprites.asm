@@ -105,6 +105,7 @@ SaffronGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
 	; max 7 of 9 walking sprites
+	db SPRITE_TEACHER
 	db SPRITE_BALL_BOOK_POKEDEX
 	db 0 ; end
 

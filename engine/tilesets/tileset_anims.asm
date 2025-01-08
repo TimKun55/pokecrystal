@@ -40,6 +40,7 @@ TilesetKantoAnim:
 TilesetKanto3Anim:
 TilesetKanto5Anim:
 TilesetKanto6Anim:
+TilesetKanto7Anim:
 TilesetIndigoAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
