@@ -16,7 +16,7 @@ MonMenuOptionStrings:
 	li "Switch"
 	li "Item"
 	li "Cancel"
-	li "Move"
+	li "Moves"
 	li "Mail"
 	li "Error!"
 	assert_list_length NUM_MONMENUVALUES

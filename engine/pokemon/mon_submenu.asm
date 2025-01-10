@@ -262,15 +262,16 @@ BattleMonMenu:
 
 .MenuHeader:
 	db 0 ; flags
-	menu_coords 11, 11, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 11, 9, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
-	db 3 ; items
+	db 4 ; items
 	db "Switch@"
 	db "Stats@"
+	db "Moves@"
 	db "Cancel@"
 	
 CheckMonCanLearn_TM_HM:
