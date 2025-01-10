@@ -655,8 +655,9 @@ TeacherEnomotoTakeThisText:
 	done
 
 TeacherEnomotoStrongerText:
-	text "The Eviolite will"
-	line "increase the"
+	text "Enomoto: The"
+	line "Eviolite will"
+	cont "increase the"
 	cont "Defense stats of"
 
 	para "a #mon that"
