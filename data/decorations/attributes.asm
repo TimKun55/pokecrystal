@@ -27,7 +27,7 @@ DecorationAttributes:
 	decoration DECO_PLANT,   TOWN_MAP_POSTER, SET_UP_POSTER,     EVENT_DECO_POSTER_1,                $1f
 	decoration DECO_POSTER,  PIKACHU,         SET_UP_POSTER,     EVENT_DECO_POSTER_2,                $23
 	decoration DECO_POSTER,  CLEFAIRY,        SET_UP_POSTER,     EVENT_DECO_POSTER_3,                $24
-	decoration DECO_POSTER,  JIGGLYPUFF,      SET_UP_POSTER,     EVENT_DECO_POSTER_4,                $25
+	decoration DECO_POSTER,  MARILL,          SET_UP_POSTER,     EVENT_DECO_POSTER_4,                $25
 	decoration DECO_PLANT,   PUT_IT_AWAY,     PUT_AWAY_CONSOLE,  EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, 0
 	decoration DECO_PLANT,   FAMICOM,         SET_UP_CONSOLE,    EVENT_DECO_FAMICOM,                 SPRITE_FAMICOM
 	decoration DECO_PLANT,   SUPER_NES,       SET_UP_CONSOLE,    EVENT_DECO_SNES,                    SPRITE_SNES

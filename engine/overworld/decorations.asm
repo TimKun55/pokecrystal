@@ -261,7 +261,7 @@ FindOwnedPosters:
 	db DECO_TOWN_MAP ; 10
 	db DECO_PIKACHU_POSTER ; 11
 	db DECO_CLEFAIRY_POSTER ; 12
-	db DECO_JIGGLYPUFF_POSTER ; 13
+	db DECO_MARILL_POSTER ; 13
 	db -1
 
 DecoConsoleMenu:
@@ -1007,7 +1007,7 @@ DecorationDesc_PosterPointers:
 	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
 	dbw DECO_PIKACHU_POSTER, DecorationDesc_PikachuPoster
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
-	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_JigglypuffPoster
+	dbw DECO_MARILL_POSTER, DecorationDesc_MarillPoster
 	db -1
 
 DecorationDesc_TownMapPoster:
@@ -1036,11 +1036,11 @@ DecorationDesc_ClefairyPoster:
 	text_far _LookClefairyPosterText
 	text_end
 
-DecorationDesc_JigglypuffPoster:
-	jumptext .LookJigglypuffPosterText
+DecorationDesc_MarillPoster:
+	jumptext .LookMarillPosterText
 
-.LookJigglypuffPosterText:
-	text_far _LookJigglypuffPosterText
+.LookMarillPosterText:
+	text_far _LookMarillPosterText
 	text_end
 
 DecorationDesc_NullPoster:
