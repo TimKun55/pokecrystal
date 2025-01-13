@@ -119,7 +119,7 @@ ENDM
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $35, NORTH | SOUTH
 	connection north, Route35, ROUTE_35, 6
-	connection south, Route34, ROUTE_34, 6
+	connection south, Route34, ROUTE_34, 4
 
 	map_attributes OlivineCity, OLIVINE_CITY, $25, NORTH | WEST
 	connection north, Route39, ROUTE_39, 5
@@ -177,7 +177,7 @@ ENDM
 	connection west, AzaleaTown, AZALEA_TOWN, 0
 
 	map_attributes Route34, ROUTE_34, $05, NORTH | EAST
-	connection north, GoldenrodCity, GOLDENROD_CITY, -6
+	connection north, GoldenrodCity, GOLDENROD_CITY, -4
 	connection east, AzaleaTown, AZALEA_TOWN, 18
 
 	map_attributes Route35, ROUTE_35, $05, NORTH | SOUTH

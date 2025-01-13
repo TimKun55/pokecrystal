@@ -656,9 +656,11 @@ TeacherEnomotoTakeThisText:
 
 TeacherEnomotoStrongerText:
 	text "Enomoto: The"
-	line "Eviolite will"
-	cont "increase the"
-	cont "Defense stats of"
+	line "Eviolite will in-"
+	cont "crease the Defense"
+	
+	para "and Special"
+	line "Defense stats of" 
 
 	para "a #mon that"
 	line "can still evolve"

@@ -225,7 +225,7 @@ GoldenrodPokecenter1FMoveTutorIronDefenseText2:
 	line "#mon how to use"
 
 	para "Iron Defense for"
-	cont "¥2,500?"
+	line "¥2,500?"
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseRefused:

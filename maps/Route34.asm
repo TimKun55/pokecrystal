@@ -69,7 +69,7 @@ Route34LyraTrigger3:
 	applymovement PLAYER, Route34PlayerMovement2
 Route34LyraTrigger2:
 	turnobject PLAYER, UP
-	moveobject ROUTE34_GRAMPS, 11, 15
+	moveobject ROUTE34_GRAMPS, 15, 15
 	playsound SFX_EXIT_BUILDING
 	appear ROUTE34_GRAMPS
 	applymovement ROUTE34_GRAMPS, Route34GrampsMovement
