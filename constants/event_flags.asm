@@ -1631,7 +1631,8 @@
 	const EVENT_MOUNT_MOON_B2F_OLD_AMBER
 	const EVENT_MOUNT_MOON_B2F_DOME_FOSSIL
 	const EVENT_MOUNT_MOON_B2F_HELIX_FOSSIL
-; Unused: next 83 events
+	const EVENT_POWER_PLANT_ELECTRICITY
+; Unused: next 82 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800
