@@ -7,6 +7,10 @@
 	const POWERPLANT_MANAGER
 	const POWERPLANT_FOREST
 	const POWERPLANT_GIOVANNI
+	const POWERPLANT_ELECTRICITY_1
+	const POWERPLANT_ELECTRICITY_2
+	const POWERPLANT_ELECTRICITY_3
+	const POWERPLANT_ELECTRICITY_4
 
 PowerPlant_MapScripts:
 	def_scene_scripts
@@ -14,12 +18,24 @@ PowerPlant_MapScripts:
 	scene_script PowerPlantNoop2Scene, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, PowerPlantElectricityScript
 
 PowerPlantNoop1Scene:
 	end
 
 PowerPlantNoop2Scene:
 	end
+
+PowerPlantElectricityScript:
+	checkevent EVENT_RETURNED_MACHINE_PART
+	iftrue .end
+	disappear POWERPLANT_ELECTRICITY_1
+	disappear POWERPLANT_ELECTRICITY_2
+	disappear POWERPLANT_ELECTRICITY_3
+	disappear POWERPLANT_ELECTRICITY_4
+	changeblock 16,  2, $76 ; computer off
+.end
+	endcallback
 
 PowerPlantGuardPhoneScript:
 	playsound SFX_CALL
@@ -168,6 +184,27 @@ PowerPlantManager:
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 	setmapscene ROUTE_7_SAFFRON_GATE, SCENE_ROUTE7SAFFRONGATE_NOOP
+	appear POWERPLANT_ELECTRICITY_1
+	appear POWERPLANT_ELECTRICITY_2
+	appear POWERPLANT_ELECTRICITY_3
+	appear POWERPLANT_ELECTRICITY_4
+	changeblock 16,  2, $78 ; computer on
+	reloadmappart
+	writetext PowerPlantManagerGavePartText
+	promptbutton
+	closetext
+	turnobject POWERPLANT_MANAGER, UP
+	pause 24
+	playsound SFX_BUMP
+	pause 8
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
+	pause 24
+	playsound SFX_ZAP_CANNON
+	pause 24
+	playsound SFX_GET_COIN_FROM_SLOTS
+	pause 24
+	faceplayer
+	opentext
 .ReturnedMachinePart:
 	checkevent EVENT_GOT_TM07_ZAP_CANNON
 	iftrue .GotZapCannon
@@ -397,14 +434,20 @@ PowerPlantManagerThatsThePartText:
 	para "That's the missing"
 	line "Part from my be-"
 	cont "loved generator!"
-	cont "You found it?"
+	
+	para "You found it?"
+	line "Wahah! Thanks!"
+	done
+
+PowerPlantManagerGavePartText:
+	text "Returned the Part"
+	line "to the Manager."
 	done
 
 PowerPlantManagerTakeThisTMText:
-	text "Wahah! Thanks!"
-
-	para "Here! Take this TM"
-	line "as a reward!"
+	text "Manager: Here!"
+	line "Take this TM"
+	cont "as a reward!"
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
@@ -491,3 +534,7 @@ PowerPlant_MapEvents:
 	object_event 17,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
 	object_event  5,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
 	object_event  1, 15, SPRITE_GIOVANNI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantGiovanniScript, EVENT_POWER_PLANT_GIOVANNI
+	object_event 12,  1, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_ELECTRICITY
+	object_event 14,  1, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_ELECTRICITY
+	object_event 16,  1, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_ELECTRICITY
+	object_event 18,  1, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_ELECTRICITY

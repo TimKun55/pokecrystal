@@ -203,9 +203,6 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
 
-TilesetFacilityMeta::
-INCBIN "data/tilesets/facility_metatiles.bin"
-
 TilesetTrainStationMeta::
 INCBIN "data/tilesets/train_station_metatiles.bin"
 
@@ -237,6 +234,9 @@ INCBIN "gfx/tilesets/facility.2bpp.lz"
 
 TilesetCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
+
+TilesetFacilityMeta::
+INCBIN "data/tilesets/facility_metatiles.bin"
 
 
 SECTION "Tileset Data 8", ROMX
