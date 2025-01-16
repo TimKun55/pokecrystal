@@ -1285,6 +1285,7 @@ SetUpMoveScreenBG:
 	push bc
 	farcall CopyMonToTempMon
 	pop hl
+	hlcoord 5, 0
 	call PrintLevel
 	ld hl, wPlayerHPPal
 	call SetHPPal
