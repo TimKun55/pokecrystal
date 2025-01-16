@@ -68,7 +68,6 @@ Route29Tutorial2:
 	closetext
 	follow ROUTE29_LYRA, PLAYER
 	applymovement ROUTE29_LYRA, LyraMovementData2b
-	sjump Route29TutorialScript
 Route29TutorialScript:	
 	stopfollow
 	loadwildmon PIDGEY, 5
