@@ -951,6 +951,7 @@ ChooseMoveToDelete:
 	ld a, [hl]
 	push af
 	set NO_TEXT_SCROLL, [hl]
+	call ClearBGPalettes
 	farcall LoadPartyMenuGFX
 	call .ChooseMoveToDelete
 	pop bc
