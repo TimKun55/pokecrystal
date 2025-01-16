@@ -113,6 +113,9 @@ ElmCheckLuckyEgg:
 	setval TOGETIC
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
+	setval TOGEKISS
+	special FindPartyMonThatSpeciesYourTrainerID
+	iftrue ShowElmTogepiScript
 	writetext ElmThoughtEggHatchedText
 	waitbutton
 	closetext
