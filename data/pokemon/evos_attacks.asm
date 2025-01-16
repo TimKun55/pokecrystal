@@ -2116,10 +2116,10 @@ TogepiEvosAttacks:
 	db 18, DRAIN_KISS
 	db 22, METRONOME
 	db 26, FRESH_SNACK
-	db 31, DAZZLINGLEAM
-	db 38, SAFEGUARD
-	db 43, BODY_SLAM
-	db 47, MOONBLAST
+	db 30, DAZZLINGLEAM
+	db 34, SAFEGUARD
+	db 38, BODY_SLAM
+	db 42, MOONBLAST
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
@@ -2127,18 +2127,18 @@ TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, TACKLE
-	db 4, CHARM
+	db 5, CHARM
 	db 10, DISARM_VOICE
 	db 14, SWEET_KISS
 	db 18, DRAIN_KISS
 	db 22, METRONOME
 	db 26, FRESH_SNACK
-	db 31, DAZZLINGLEAM
-	db 38, WING_ATTACK
-	db 42, BODY_SLAM
-	db 47, ANCIENTPOWER
-	db 54, MOONBLAST
-	db 58, BATON_PASS
+	db 30, DAZZLINGLEAM
+	db 35, WING_ATTACK
+	db 40, BODY_SLAM
+	db 45, ANCIENTPOWER
+	db 50, MOONBLAST
+	db 55, BATON_PASS
 	db 0 ; no more level-up moves
 
 TogekissEvosAttacks:
