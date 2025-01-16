@@ -206,7 +206,7 @@ EcruteakCitySignText:
 EcruteakGymSignText:
 	text "Ecruteak City"
 	line "#mon Gym"
-	cont "LEADER: Morty"
+	cont "Leader: Morty"
 
 	para "The Mystic Seer of"
 	line "the Future"
