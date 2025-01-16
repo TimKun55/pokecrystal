@@ -150,13 +150,13 @@ PowerPlantGymGuide4Script:
 
 PowerPlantManager:
 	faceplayer
-	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
 	checkitem MACHINE_PART
 	iftrue .FoundMachinePart
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
 	iftrue .MetManager
+	opentext
 	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText
 	waitbutton
 	closetext
@@ -168,14 +168,18 @@ PowerPlantManager:
 	end
 
 .MetManager:
+	opentext
 	writetext PowerPlantManagerIWontForgiveCulpritText
 	waitbutton
 	closetext
 	end
 
 .FoundMachinePart:
+	showemote EMOTE_SHOCK, POWERPLANT_MANAGER, 15
+	opentext
 	writetext PowerPlantManagerThatsThePartText
 	promptbutton
+	closetext
 	takeitem MACHINE_PART
 	setevent EVENT_RETURNED_MACHINE_PART
 	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
@@ -190,6 +194,7 @@ PowerPlantManager:
 	appear POWERPLANT_ELECTRICITY_4
 	changeblock 16,  2, $78 ; computer on
 	reloadmappart
+	opentext
 	writetext PowerPlantManagerGavePartText
 	promptbutton
 	closetext
@@ -200,12 +205,10 @@ PowerPlantManager:
 	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	pause 24
 	playsound SFX_ZAP_CANNON
-	pause 24
-	playsound SFX_GET_COIN_FROM_SLOTS
-	pause 24
+	pause 32
 	faceplayer
-	opentext
 .ReturnedMachinePart:
+	opentext
 	checkevent EVENT_GOT_TM07_ZAP_CANNON
 	iftrue .GotZapCannon
 	writetext PowerPlantManagerTakeThisTMText
@@ -445,9 +448,15 @@ PowerPlantManagerGavePartText:
 	done
 
 PowerPlantManagerTakeThisTMText:
-	text "Manager: Here!"
-	line "Take this TM"
-	cont "as a reward!"
+	text "Manager: There!"
+	
+	para "Back up and work-"
+	line "ing again!"
+	
+	para "Here!"
+	
+	para "Take this TM"
+	line "as a reward!"
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
