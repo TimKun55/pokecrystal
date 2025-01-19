@@ -16,7 +16,7 @@ CreditsScript:
 	db CREDITS_WAIT, 1
 
 ; Update the banner.
-	db CREDITS_SCENE, 0 ; Pichu
+	db CREDITS_SCENE, 0 ; Bellossom
 
 	db             DIRECTOR, 1
 	db       SATOSHI_TAJIRI, 2
@@ -76,7 +76,7 @@ CreditsScript:
 	db CREDITS_WAIT, 1
 
 ; Update the banner.
-	db CREDITS_SCENE, 1 ; Smoochum
+	db CREDITS_SCENE, 1 ; Togepi
 
 	db      GRAPHICS_DESIGN, 0
 	db     HIRONOBU_YOSHIDA, 1
@@ -188,7 +188,7 @@ CreditsScript:
 	db CREDITS_WAIT, 1
 
 ; Update the banner.
-	db CREDITS_SCENE, 3 ; Igglybuff
+	db CREDITS_SCENE, 3 ; Sentret
 
 	db     US_VERSION_STAFF, 2
 

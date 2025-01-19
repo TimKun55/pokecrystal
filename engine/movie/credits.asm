@@ -573,25 +573,25 @@ Credits_LoadBorderGFX:
 	ret
 
 .Frames:
-	dw CreditsPichuGFX
-	dw CreditsPichuGFX     + 16 tiles
-	dw CreditsPichuGFX     + 32 tiles
-	dw CreditsPichuGFX     + 48 tiles
+	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX + 16 tiles
+	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX + 32 tiles
 
-	dw CreditsSmoochumGFX
-	dw CreditsSmoochumGFX  + 16 tiles
-	dw CreditsSmoochumGFX  + 32 tiles
-	dw CreditsSmoochumGFX  + 48 tiles
+	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX    + 16 tiles
+	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX    + 32 tiles
 
 	dw CreditsDittoGFX
 	dw CreditsDittoGFX     + 16 tiles
 	dw CreditsDittoGFX     + 32 tiles
 	dw CreditsDittoGFX     + 48 tiles
 
-	dw CreditsIgglybuffGFX
-	dw CreditsIgglybuffGFX + 16 tiles
-	dw CreditsIgglybuffGFX + 32 tiles
-	dw CreditsIgglybuffGFX + 48 tiles
+	dw CreditsSentretGFX
+	dw CreditsSentretGFX   + 16 tiles
+	dw CreditsSentretGFX   + 32 tiles
+	dw CreditsSentretGFX   + 48 tiles
 
 Credits_TheEnd:
 	ld a, $40
@@ -610,10 +610,10 @@ Credits_TheEnd:
 CreditsBorderGFX:    INCBIN "gfx/credits/border.2bpp"
 
 CreditsMonsGFX: ; used only for BANK(CreditsMonsGFX)
-CreditsPichuGFX:     INCBIN "gfx/credits/pichu.2bpp"
-CreditsSmoochumGFX:  INCBIN "gfx/credits/smoochum.2bpp"
+CreditsBellossomGFX: INCBIN "gfx/credits/bellossom.2bpp"
+CreditsTogepiGFX:    INCBIN "gfx/credits/togepi.2bpp"
 CreditsDittoGFX:     INCBIN "gfx/credits/ditto.2bpp"
-CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
+CreditsSentretGFX:   INCBIN "gfx/credits/sentret.2bpp"
 
 INCLUDE "data/credits_script.asm"
 INCLUDE "data/credits_strings.asm"
