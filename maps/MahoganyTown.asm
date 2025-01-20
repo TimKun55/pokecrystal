@@ -1,7 +1,7 @@
 DEF MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
 
 	object_const_def
-	const MAHOGANYTOWN_POKEFAN_M
+	const MAHOGANYTOWN_HIKER
 	const MAHOGANYTOWN_GRAMPS
 	const MAHOGANYTOWN_FISHER
 	const MAHOGANYTOWN_LASS
@@ -25,17 +25,17 @@ MahoganyTownFlypointCallback:
 	endcallback
 
 MahoganyTownTryARageCandyBarScript:
-	showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15
-	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantBlocksYouMovement
-	follow PLAYER, MAHOGANYTOWN_POKEFAN_M
+	showemote EMOTE_SHOCK, MAHOGANYTOWN_HIKER, 15
+	applymovement MAHOGANYTOWN_HIKER, MahoganyTownRageCandyBarMerchantBlocksYouMovement
+	follow PLAYER, MAHOGANYTOWN_HIKER
 	applymovement PLAYER, MahoganyTownPlayerStepLeftMovement
 	stopfollow
 	turnobject PLAYER, RIGHT
 	scall RageCandyBarMerchantScript
-	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantReturnsMovement
+	applymovement MAHOGANYTOWN_HIKER, MahoganyTownRageCandyBarMerchantReturnsMovement
 	end
 
-MahoganyTownPokefanMScript:
+MahoganyTownHikerScript:
 	faceplayer
 RageCandyBarMerchantScript:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
@@ -271,7 +271,7 @@ MahoganyTown_MapEvents:
 	bg_event  1,  5, BGEVENT_READ, MahoganyMoveTutorHouseSign
 
 	def_object_events
-	object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	object_event 19,  8, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownHikerScript, EVENT_MAHOGANY_TOWN_HIKER_BLOCKS_EAST
 	object_event  5,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1
-	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
+	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_FISHER_BLOCKS_GYM
 	object_event 14,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS

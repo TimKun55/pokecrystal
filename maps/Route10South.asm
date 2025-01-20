@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE10SOUTH_POKEFAN_M1
-	const ROUTE10SOUTH_POKEFAN_M2
+	const ROUTE10SOUTH_HIKER
+	const ROUTE10SOUTH_POKEFAN_M
 
 Route10South_MapScripts:
 	def_scene_scripts
@@ -85,5 +85,5 @@ Route10South_MapEvents:
 	bg_event  7,  5, BGEVENT_READ, Route10Sign
 
 	def_object_events
-	object_event 17,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerJim, -1
+	object_event 17,  5, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerHikerJim, -1
 	object_event 10, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmRobert, -1
