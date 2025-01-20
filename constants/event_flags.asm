@@ -535,7 +535,8 @@
 	const EVENT_GOT_LYRAS_EGG
 	const EVENT_RESEARCH_CENTER_GS_BALL
 	const EVENT_GOLDENROD_GAME_CORNER_GOT_PORYGON
-; Unused: next 177 events
+	const EVENT_DECO_RAICHU_DOLL
+; Unused: next 176 events
 
 	const_next 800
 ; Trainer flags

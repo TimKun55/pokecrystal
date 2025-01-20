@@ -137,7 +137,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_RATICATE ; 88       ; ViridianNicknameSpeechHouse
 	const SPRITE_FARFETCH_D ; 89     ; ViridianNicknameSpeechHouse
 	const SPRITE_PIKACHU ; 8a        ; DOLL, PlayersHouse1F, PlayersNeighborsHouse
-	const SPRITE_RAICHU  ; 8b        ; VermilionGym
+	const SPRITE_RAICHU  ; 8b        ; VermilionGym, DOLL
 	const SPRITE_NIDORAN_F ; 8c      ; CeladonMansion1F
 	const SPRITE_NIDOQUEEN ; 8d      ; FuchsiaCity
 	const SPRITE_NIDORAN_M ; 8e      ; PewterNidoranSpeechHouse

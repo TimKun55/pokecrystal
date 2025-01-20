@@ -13,7 +13,7 @@ MumItems_1:
 .End
 
 MumItems_2:
-	mumitem    900,   500, MUM_ITEM, SUPER_POTION
+	mumitem   1900,   500, MUM_ITEM, SUPER_POTION
 	mumitem   4000,   270, MUM_ITEM, REPEL
 	mumitem   7000,  1000, MUM_ITEM, HYPER_POTION
 	mumitem  10000,  2000, MUM_ITEM, MOON_STONE
@@ -21,8 +21,9 @@ MumItems_2:
 	mumitem  19000,  7600, MUM_ITEM, HP_UP
 	mumitem  30000, 11000, MUM_DOLL, DECO_SHELLDER_DOLL
 	mumitem  40000,  2500, MUM_ITEM, FULL_RESTORE
-	mumitem  50000,  8700, MUM_DOLL, PP_UP
-	mumitem 100000,  4000, MUM_DOLL, MAX_REVIVE
+	mumitem  50000,  8700, MUM_ITEM, PP_UP
+	mumitem 100000,  4000, MUM_ITEM, MAX_REVIVE
+	mumitem 200000, 70000, MUM_DOLL, DECO_RAICHU_DOLL
 .End
 
 	bigdt 0 ; unused
