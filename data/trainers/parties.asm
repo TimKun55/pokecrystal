@@ -3631,12 +3631,12 @@ SageGroup:
 	db -1 ; end
 
 	; SAGE (6)
-	db "Ping@", TRAINERTYPE_NORMAL
-	db 19, GASTLY
-	db 19, MISDREAVUS
-	db 19, UNOWN
-	db 19, MISDREAVUS
-	db 19, GASTLY
+	db "Ping@", TRAINERTYPE_DVS
+	db 19, GASTLY,      $88, $89
+	db 19, MISDREAVUS,  $88, $89
+	db 19, UNOWN,       $a9, $1e ; H form
+	db 19, MISDREAVUS,  $88, $89
+	db 19, GASTLY,      $88, $89
 	db -1 ; end
 
 	; SAGE (7)
@@ -3678,10 +3678,10 @@ SageGroup:
 
 HexManiacGroup:
 	; HEX_MANIAC (1)
-	db "Martha@", TRAINERTYPE_NORMAL
-	db 20, UNOWN
-	db 22, HAUNTER
-	db 22, MISDREAVUS
+	db "Martha@", TRAINERTYPE_DVS
+	db 20, UNOWN,      $7b, $ef ; Y form
+	db 22, HAUNTER,    $88, $89
+	db 22, MISDREAVUS, $88, $89
 	db -1 ; end
 
 	; HEX_MANIAC (2)
