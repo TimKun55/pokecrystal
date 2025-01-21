@@ -129,7 +129,7 @@ Route39BarnTwinMoomooIsSickText:
 	text "Moomoo is sick…"
 
 	para "She needs lots of"
-	line "Berries."
+	line "Oran Berries."
 	done
 
 Route39BarnTwinWereFeedingMoomooText:
@@ -150,8 +150,8 @@ MoomooHappyMooText:
 	done
 
 Route39BarnAskGiveBerryText:
-	text "Give a BERRY to"
-	line "Miltank?"
+	text "Give an Oran Berry"
+	line "to Miltank?"
 	done
 
 Route39BarnGaveBerryText:
@@ -176,7 +176,7 @@ Route39BarnTotallyHealthyText:
 
 Route39BarnNoBerriesText:
 	text "<PLAYER> has no"
-	line "Berries…"
+	line "Oran Berries…"
 	done
 
 Route39BarnRefusedBerryText:

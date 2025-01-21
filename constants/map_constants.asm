@@ -140,7 +140,7 @@ ENDM
 	map_const MT_SILVER_ROOM_2,                            15, 18 ; 75
 	map_const MT_SILVER_PEAK,                              10, 16 ; 76
 	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 77
-	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
+	map_const DARK_CAVE_VIOLET_ENTRANCE,                   22, 18 ; 78
 	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               19, 16 ; 79
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
