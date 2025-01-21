@@ -641,6 +641,45 @@ _MadamItems_HereYouGoText::
 	text "Here you are."
 	done
 
+_MarketShop_IntroText::
+	text "Welcome to the"
+	line "Olivine Market!"
+	
+	para "What can I get"
+	line "for you today?"
+	done
+
+_MarketShop_ComeAgainText::
+	text "Come back soon."
+	done
+
+_MarketShop_HowManyText::
+	text "How many would"
+	line "you like?"
+	done
+
+_MarketShop_CostsThisMuchText::
+	text "That will be"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text "."
+	done
+
+_MarketShop_InsufficientFundsText::
+	text "Oh."
+	line "It seems like you"
+	cont "can't afford that…"
+	done
+
+_MarketShop_BagFullText::
+	text "Your bag is full!"
+	done
+
+_MarketShop_HereYouGoText::
+	text "Here you go!"
+	line "Please come again!"
+	done
+
 _NothingToSellText::
 	text "You don't have"
 	line "anything to sell."

@@ -315,6 +315,7 @@ CianwoodGroupSprites:
 	db SPRITE_SCHOOLBOY
 	db SPRITE_BIRD_KEEPER
 	db SPRITE_BEAUTY
+	db SPRITE_CLERK
 	db SPRITE_SUICUNE
 	db 0 ; end
 

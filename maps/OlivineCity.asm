@@ -4,6 +4,9 @@
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_RIVAL
 	const OLIVINECITY_SAILOR3
+	const OLIVINECITY_CLERK1
+	const OLIVINECITY_CLERK2
+	const OLIVINECITY_CLERK3
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -12,6 +15,8 @@ OlivineCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, OlivineCityMarketPlacePeople
+	callback MAPCALLBACK_TILES, OlivineCityLighthouseNiteMarketPlaceStalls
 
 OlivineCityNoop1Scene:
 	end
@@ -21,6 +26,50 @@ OlivineCityNoop2Scene:
 
 OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
+	endcallback
+
+OlivineCityMarketPlacePeople:
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .MarketPlacePeopleAppear
+	ifequal SATURDAY, .MarketPlacePeopleAppear
+	ifequal SUNDAY, .MarketPlacePeopleAppear
+	disappear OLIVINECITY_CLERK1
+	disappear OLIVINECITY_CLERK2
+	disappear OLIVINECITY_CLERK3
+	clearevent EVENT_OLIVINE_MARKETPLACE
+	endcallback
+
+.MarketPlacePeopleAppear:
+	appear OLIVINECITY_CLERK1
+	appear OLIVINECITY_CLERK2
+	appear OLIVINECITY_CLERK3
+	setevent EVENT_OLIVINE_MARKETPLACE
+	endcallback
+
+OlivineCityLighthouseNiteMarketPlaceStalls:
+	checkevent EVENT_OLIVINE_MARKETPLACE
+	iftrue .MarketPlaceAppear
+.continuecheck
+	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	iffalse .end
+	checktime EVE
+	iftrue .LighthouseNite
+	checktime NITE
+	iftrue .LighthouseNite
+.end
+	endcallback
+
+.MarketPlaceAppear:
+	changeblock 10, 20, $d7 ; Market, small
+	changeblock 16, 18, $d8 ; Market, left-up
+	changeblock 16, 20, $d9 ; Market, left-down
+	changeblock 20, 18, $da ; Market, right-up
+	changeblock 20, 20, $db ; Market, right-down
+	sjump .continuecheck
+
+.LighthouseNite:
+	changeblock 30, 16, $d5 ; Lighthouse nite, left
+	changeblock 32, 16, $d6 ; Lighthouse nite, right
 	endcallback
 
 OlivineCityRivalSceneTop:
@@ -106,7 +155,7 @@ OlivineCitySailorTutorScript:
 .TutorRefused
 	writetext OlivineCitySailorTutorAquaTailRefused
 	waitbutton
-	closetext	
+	closetext
 	end
 	
 .TeachMove
@@ -129,6 +178,27 @@ OlivineCitySailorTutorScript:
 .Incompatible:
 	writetext OlivineCitySailorTutorIncompatibleText
 	waitbutton
+	closetext
+	end
+
+OlivineCityMarketPlaceClerk1:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_MARKET1, 0
+	closetext
+	end
+
+OlivineCityMarketPlaceClerk2:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_MARKET2, 0
+	closetext
+	end
+
+OlivineCityMarketPlaceClerk3:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_MARKET3, 0
 	closetext
 	end
 
@@ -398,13 +468,16 @@ OlivineCity_MapEvents:
 	bg_event 17, 25, BGEVENT_READ, OlivineCityPortSign
 	bg_event  8,  9, BGEVENT_READ, OlivineGymSign
 	bg_event 32, 26, BGEVENT_READ, OlivineLighthouseSign
-	bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign
+	bg_event  4, 24, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event 24, 21, BGEVENT_READ, OlivineCityMartSign
 
 	def_object_events
 	object_event 25, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 19, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
-	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	object_event 19, 23, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event  6, 25, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailorTutorScript, -1
+	object_event 10, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk1, EVENT_OLIVINE_MARKET_CLERK_1
+	object_event 16, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk2, EVENT_OLIVINE_MARKET_CLERK_2
+	object_event 21, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk3, EVENT_OLIVINE_MARKET_CLERK_3
