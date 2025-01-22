@@ -146,18 +146,18 @@ CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 21, 17, CINNABAR_POKECENTER_1F, 1
-	warp_event 10, 14, CINNABAR_VOLCANO_1F, 1
-	warp_event 23,  8, CINNABAR_ISLAND_RECOVERY_LAB, 1
+	warp_event  9, 17, CINNABAR_POKECENTER_1F, 1
+	warp_event 24, 13, CINNABAR_VOLCANO_1F, 1
+	warp_event 13, 16, CINNABAR_ISLAND_RECOVERY_LAB, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 22, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
-	bg_event 18, 16, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event 20, 12, BGEVENT_READ, CinnabarIslandSign
-	bg_event 22,  9, BGEVENT_READ, CinnabarRecoveryLabSign
-	bg_event 15, 12, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event 10, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
+	bg_event 19, 19, BGEVENT_READ, CinnabarIslandGymSign
+	bg_event 16, 18, BGEVENT_READ, CinnabarIslandSign
+	bg_event 12, 17, BGEVENT_READ, CinnabarRecoveryLabSign
+	bg_event 26, 15, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events
-	object_event 11, 16, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event 22, 14, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

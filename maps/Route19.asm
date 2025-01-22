@@ -21,10 +21,10 @@ Route19_MapScripts:
 Route19SurfingCompetitionOverCallback:
 	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
 	iftrue .Done
-	changeblock  6,  4, $e8 ; barrier
-	changeblock  8,  4, $e8 ; barrier
-	changeblock 10,  4, $e8 ; barrier
-	changeblock 12,  4, $e9 ; barrier
+	changeblock  6,  4, $c2 ; barrier
+	changeblock  8,  4, $c2 ; barrier
+	changeblock 10,  4, $c2 ; barrier
+	changeblock 12,  4, $c3 ; barrier
 .Done:
 	endcallback
 
