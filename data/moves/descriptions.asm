@@ -265,8 +265,8 @@ Move00Description:
 	db "?@"
 
 EnergyBallDescription:
-	db   "Power from nature."
-	line "Eff SpDef ▼1.@"
+	db   "Draws power from"
+	line "nature. SpDef ▼1.@"
 
 KarateChopDescription:
 RazorLeafDescription:
