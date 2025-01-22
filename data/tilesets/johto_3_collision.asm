@@ -218,3 +218,4 @@
 	tilecoll FLOOR, COUNTER, WALL, WALL ; d9
 	tilecoll WALL, WALL, WALL, FLOOR ; da
 	tilecoll COUNTER, FLOOR, WALL, WALL ; db
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc

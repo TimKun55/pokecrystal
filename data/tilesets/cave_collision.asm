@@ -222,3 +222,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; dd
 	tilecoll WALL, WALL, WALL, WALL ; de
 	tilecoll WALL, WALL, WALL, WALL ; df
+	tilecoll WALL, WALL, WALL, WALL ; e0
