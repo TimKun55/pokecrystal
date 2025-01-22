@@ -174,3 +174,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; ae
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; af
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b0
