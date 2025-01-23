@@ -891,7 +891,7 @@ MudSlapDescription:
 
 AquaTailDescription:
 	db   "Slams tail like a"
-	line "vicious wave.@"
+	line "wave. Def ▼1.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
