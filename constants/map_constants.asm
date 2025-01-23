@@ -471,7 +471,7 @@ ENDM
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
 	map_const CIANWOOD_BEASTS_HOUSE,                        4,  4 ;  9
 	map_const CIANWOOD_MOVE_TUTOR_HOUSE,                    4,  4 ; 10
-	map_const BATTLE_TOWER_1F,                              8,  5 ; 11
+	map_const BATTLE_TOWER_1F,                             11,  8 ; 11
 	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 12
 	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 13
 	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 14

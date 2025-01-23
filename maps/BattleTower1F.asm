@@ -4,6 +4,7 @@
 	const BATTLETOWER1F_COOLTRAINER_F
 	const BATTLETOWER1F_BUG_CATCHER
 	const BATTLETOWER1F_GRANNY
+	const BATTLETOWER1F_COOLTRAINER_M
 
 BattleTower1F_MapScripts:
 	def_scene_scripts
@@ -181,13 +182,13 @@ BattleTower_LeftWithoutSaving:
 	waitbutton
 	sjump Script_BattleTowerHopeToServeYouAgain
 
-BattleTower1FYoungsterScript:
+BattleTower1FCoolTrainerMScript:
 	faceplayer
 	opentext
-	writetext Text_BattleTowerYoungster
+	writetext Text_BattleTowerCooltrainerM
 	waitbutton
 	closetext
-	turnobject BATTLETOWER1F_YOUNGSTER, RIGHT
+	turnobject BATTLETOWER1F_COOLTRAINER_M, UP
 	end
 
 BattleTower1FCooltrainerFScript:
@@ -199,7 +200,16 @@ BattleTower1FBugCatcherScript:
 BattleTower1FGrannyScript:
 	jumptextfaceplayer Text_BattleTowerGranny
 
+BattleTower1FYoungsterScript:
+	jumptextfaceplayer Text_BattleTowerYoungster
+
+BattleTower1FTV:
+	jumptext BattleTower1FTVText
+
 MovementData_BattleTower1FWalkToElevator:
+	step UP
+	step UP
+	step UP
 	step UP
 	step UP
 	step UP
@@ -262,7 +272,6 @@ MovementData_BattleTowerBattleRoomOpponentWalksOut:
 
 MovementData_BattleTowerBattleRoomReceptionistWalksToPlayer:
 	slow_step RIGHT
-	slow_step RIGHT
 	slow_step UP
 	slow_step UP
 	step_end
@@ -270,7 +279,6 @@ MovementData_BattleTowerBattleRoomReceptionistWalksToPlayer:
 MovementData_BattleTowerBattleRoomReceptionistWalksAway:
 	slow_step DOWN
 	slow_step DOWN
-	slow_step LEFT
 	slow_step LEFT
 	turn_head RIGHT
 	step_end
@@ -591,22 +599,41 @@ Text_BattleTowerBugCatcher:
 	line "any fire #mon…"
 	done
 
+Text_BattleTowerCooltrainerM:
+	text "I love watching"
+	line "these battles."
+	
+	para "It's a great way"
+	line "to learn new"
+	cont "strategies."
+	done
+
+BattleTower1FTVText:
+	text "There's an intense"
+	line "battle on the TV."
+	done
+
 BattleTower1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  9, BATTLE_TOWER_OUTSIDE, 3
-	warp_event  8,  9, BATTLE_TOWER_OUTSIDE, 4
-	warp_event  7,  0, BATTLE_TOWER_ELEVATOR, 1
+	warp_event 10, 15, BATTLE_TOWER_OUTSIDE, 3
+	warp_event 11, 15, BATTLE_TOWER_OUTSIDE, 4
+	warp_event 10,  0, BATTLE_TOWER_ELEVATOR, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  6, BGEVENT_READ, BattleTower1FRulesSign
+	bg_event 11,  9, BGEVENT_READ, BattleTower1FRulesSign
+	bg_event  2,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event  3,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event 18,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event 19,  8, BGEVENT_UP, BattleTower1FTV
 
 	def_object_events
-	object_event  7,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionistScript, -1
-	object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BattleTower1FYoungsterScript, -1
-	object_event  4,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
-	object_event  1,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
-	object_event 14,  3, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event 10,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionistScript, -1
+	object_event 15, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BattleTower1FYoungsterScript, -1
+	object_event  6, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
+	object_event  2, 12, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
+	object_event 16, 11, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event 18, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCoolTrainerMScript, -1
