@@ -157,6 +157,11 @@ SECTION "Effect Command Pointers", ROMX
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
+SECTION "Type Matchups", ROMX
+
+INCLUDE "data/types/type_matchups.asm"
+
+
 SECTION "Enemy Trainers", ROMX
 
 INCLUDE "engine/battle/ai/items.asm"
