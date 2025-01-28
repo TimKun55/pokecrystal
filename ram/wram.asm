@@ -3108,7 +3108,9 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+wInverPoints:: db
+
+	ds 12
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -3208,6 +3210,8 @@ wRoute44RaikouSceneID::                           db
 wRoute43RaikouSceneID::                           db
 wRoute37EnteiSceneID::                            db
 wRoute30EnteiSceneID::                            db
+wEsrevniHall1FSceneID::                           db
+wEsrevniHallBattleRoomSceneID::                   db
 
 	ds 29
 

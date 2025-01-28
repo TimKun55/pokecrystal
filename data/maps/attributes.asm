@@ -609,6 +609,8 @@ ENDM
 	map_attributes VermilionSailorsHouse, VERMILION_SAILORS_HOUSE, $00, 0
 	map_attributes VermilionDiglettsCaveSpeechHouse, VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionGym, VERMILION_GYM, $00, 0
+	map_attributes EsrevniHall1F, ESREVNI_HALL_1F, $00, 0
+	map_attributes EsrevniHallBattleRoom, ESREVNI_HALL_BATTLE_ROOM, $00, 0
 	map_attributes Route6SaffronGate, ROUTE_6_SAFFRON_GATE, $00, 0
 	map_attributes Route6UndergroundPathEntrance, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route11Route12Gate, ROUTE_11_ROUTE_12_GATE, $00, 0

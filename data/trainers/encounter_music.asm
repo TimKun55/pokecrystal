@@ -81,6 +81,7 @@ TrainerEncounterMusic::
 	db MUSIC_LYRA_ENCOUNTER        ; lyra1
 	db MUSIC_LYRA_ENCOUNTER        ; lyra2
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine_g
+	db MUSIC_YOUNGSTER_ENCOUNTER   ; inver
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; aerodactyl_fossil
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; kabutops_fossil
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; omastar_fossil

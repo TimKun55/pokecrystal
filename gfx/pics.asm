@@ -749,3 +749,4 @@ UnownExclamationFrontpic: INCBIN "gfx/pokemon/unown_exclamation/front.animated.2
 UnownExclamationBackpic:  INCBIN "gfx/pokemon/unown_exclamation/back.2bpp.lz"
 UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.animated.2bpp.lz"
 UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
+InverPic:                 INCBIN "gfx/trainers/inver.2bpp.lz"

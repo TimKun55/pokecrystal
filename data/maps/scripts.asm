@@ -89,6 +89,7 @@ INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
 INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
 INCLUDE "maps/Route37.asm"
 INCLUDE "maps/SaffronAviculturalSociety2F.asm"
+INCLUDE "maps/FuchsiaCinnabarHouse1.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -415,8 +416,8 @@ INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
-INCLUDE "maps/FuchsiaCinnabarHouse1.asm"
 INCLUDE "maps/EusinesHouse.asm"
+INCLUDE "maps/EsrevniHallBattleRoom.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -549,5 +550,9 @@ INCLUDE "maps/LyrasHouse2F.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
 
+
+SECTION "Map Scripts 28", ROMX
+
+INCLUDE "maps/EsrevniHall1F.asm"
 
 ENDSECTION

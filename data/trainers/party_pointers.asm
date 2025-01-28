@@ -80,6 +80,7 @@ TrainerGroups:
 	dba Lyra1Group
 	dba Lyra2Group
 	dba BlaineGGroup
+	dba InverGroup
 	dba AerodactylFossilGroup
 	dba KabutopsFossilGroup
 	dba OmastarFossilGroup

@@ -88,6 +88,7 @@ INCBIN "gfx/trainers/bug_maniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/lyra1.gbcpal", middle_colors
 INCBIN "gfx/trainers/lyra2.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
+INCBIN "gfx/trainers/inver.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerodactyl_fossil.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabutops_fossil.gbcpal", middle_colors
 INCBIN "gfx/trainers/omastar_fossil.gbcpal", middle_colors

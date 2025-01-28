@@ -1087,4 +1087,10 @@ PewterMuseum1F_Blocks:
 PewterMuseum2F_Blocks:
 	INCBIN "maps/PewterMuseum2F.ablk"
 
+EsrevniHall1F_Blocks:
+	INCBIN "maps/EsrevniHall1F.ablk"
+
+EsrevniHallBattleRoom_Blocks:
+	INCBIN "maps/EsrevniHallBattleRoom.ablk"
+
 ENDSECTION

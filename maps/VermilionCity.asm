@@ -1,7 +1,6 @@
 	object_const_def
 	const VERMILIONCITY_TEACHER
 	const VERMILIONCITY_GRAMPS
-	const VERMILIONCITY_MACHOP
 	const VERMILIONCITY_SUPER_NERD
 	const VERMILIONCITY_POKEFAN_M
 	const VERMILIONCITY_TUTOR
@@ -19,33 +18,27 @@ VermilionCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, VermilionCityEsrevniHallOwnerCallback
 
 VermilionCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VERMILION
 	endcallback
 
+VermilionCityEsrevniHallOwnerCallback:
+	checkevent EVENT_RETURNED_MACHINE_PART
+	iffalse .OwnerAppear
+	disappear VERMILIONCITY_GRAMPS
+	endcallback
+
+.OwnerAppear
+	appear VERMILIONCITY_GRAMPS
+	endcallback
+
 VermilionCityTeacherScript:
 	jumptextfaceplayer VermilionCityTeacherText
 
-VermilionMachopOwner:
-	jumptextfaceplayer VermilionMachopOwnerText
-
-VermilionMachop:
-	opentext
-	writetext VermilionMachopText1
-	cry MACHOP
-	waitbutton
-	closetext
-	earthquake 30
-	opentext
-	writetext VermilionMachopText2
-	waitbutton
-	refreshscreen
-	pokepic MACHOP
-	waitbutton
-	closepokepic
-	closetext
-	end
+VermilionEsrevniHallOwner:
+	jumptextfaceplayer VermilionEsrevniHallOwnerText
 
 VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText
@@ -157,6 +150,21 @@ VermilionCityPokecenterSign:
 VermilionCityMartSign:
 	jumpstd MartSignScript
 
+EsrevniHallSign:
+	opentext
+	checkevent EVENT_RETURNED_MACHINE_PART
+	iffalse .HallOpeningSoon
+	writetext EsrevniHallSignText
+	waitbutton
+	closetext
+	end
+
+.HallOpeningSoon
+	writetext EsrevniHallOpeningSoonText
+	waitbutton
+	closetext
+	end
+
 VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
 
@@ -188,25 +196,15 @@ VermilionCityTeacherText:
 	cont "dock here."
 	done
 
-VermilionMachopOwnerText:
-	text "My #mon is"
-	line "preparing the land"
-	cont "for construction."
+VermilionEsrevniHallOwnerText:
+	text "It's happening!"
+	
+	para "After all these"
+	line "years, my project"
+	cont "has almost been"
+	cont "completed!"
 
-	para "But I have no"
-	line "money to start the"
-	cont "project…"
-	done
-
-VermilionMachopText1:
-	text "Machop: Guooh"
-	line "gogogoh!"
-	done
-
-VermilionMachopText2:
-	text "A Machop is growl-"
-	line "ing while stomping"
-	cont "the ground flat."
+	para "Just a bit more…"
 	done
 
 VermilionCitySuperNerdText:
@@ -372,6 +370,16 @@ VermilionCityPortSignText:
 	line "Entrance"
 	done
 
+EsrevniHallSignText:
+	text "Esrevni Hall"
+	done
+
+EsrevniHallOpeningSoonText:
+	text "Esrevni Hall"
+	
+	para "Opening soon."
+	done
+
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -386,6 +394,7 @@ VermilionCity_MapEvents:
 	warp_event 19, 31, VERMILION_PORT_PASSAGE, 1
 	warp_event 20, 31, VERMILION_PORT_PASSAGE, 2
 	warp_event  5,  5, VERMILION_SAILORS_HOUSE, 1
+	warp_event 26, 13, ESREVNI_HALL_1F, 1
 
 	def_coord_events
 
@@ -396,20 +405,20 @@ VermilionCity_MapEvents:
 	bg_event 26, 17, BGEVENT_READ, VermilionCityPortSign
 	bg_event 10,  5, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 20, 13, BGEVENT_READ, VermilionCityMartSign
+	bg_event 24, 13, BGEVENT_READ, EsrevniHallSign
 	bg_event 34, 10, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 
 	def_object_events
 	object_event 15,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
-	object_event 24, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
-	object_event 27, 11, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
+	object_event 26, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionEsrevniHallOwner, EVENT_VERMILION_CITY_ESREVNI_HALL_GRAMPS
 	object_event 16, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
-	object_event 29, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
+	object_event 17, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
 	object_event  4, 17, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionCityTutorScript, -1
-	object_event 22,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
+	object_event 23,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
 	object_event 43,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_ROUTE_11_SNORLAX
-	object_event 19,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree1, -1
-	object_event 21,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree2, -1
+	object_event 20,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree1, -1
+	object_event 22,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree2, -1
 	object_event 24,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree3, -1
 	object_event 26,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree4, -1
-	object_event 19,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree5, -1
+	object_event 20,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree5, -1
 	object_event 26,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree6, -1

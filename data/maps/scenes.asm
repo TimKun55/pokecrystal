@@ -102,4 +102,6 @@ MapScenes::
 	scene_var ROUTE_43,                                    wRoute43RaikouSceneID
 	scene_var ROUTE_37,                                    wRoute37EnteiSceneID
 	scene_var ROUTE_30,                                    wRoute30EnteiSceneID
+	scene_var ESREVNI_HALL_1F,                             wEsrevniHall1FSceneID
+	scene_var ESREVNI_HALL_BATTLE_ROOM,                    wEsrevniHallBattleRoomSceneID
 	db -1 ; end

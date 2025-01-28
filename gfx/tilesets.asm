@@ -167,9 +167,6 @@ INCBIN "data/tilesets/johto_modern_metatiles.bin"
 TilesetJohtoModernColl::
 INCLUDE "data/tilesets/johto_modern_collision.asm"
 
-TilesetTraditionalHouseGFX::
-INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
-
 TilesetMansionColl::
 INCLUDE "data/tilesets/mansion_collision.asm"
 
@@ -255,6 +252,9 @@ INCLUDE "data/tilesets/johto_5_collision.asm"
 
 TilesetJohto5Attr::
 INCBIN "data/tilesets/johto_5_attributes.bin"
+
+TilesetTraditionalHouseGFX::
+INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
 
 
 SECTION "Tileset Data 9", ROMX
@@ -530,9 +530,6 @@ INCBIN "data/tilesets/johto_4_metatiles.bin"
 TilesetJohto4GFX::
 INCBIN "gfx/tilesets/johto_4.2bpp.lz"
 
-TilesetKanto6Attr::
-INCBIN "data/tilesets/kanto_6_attributes.bin"
-
 
 SECTION "Tileset Data 20", ROMX
 
@@ -604,3 +601,6 @@ INCLUDE "data/tilesets/kanto_7_collision.asm"
 
 TilesetKanto7Attr::
 INCBIN "data/tilesets/kanto_7_attributes.bin"
+
+TilesetKanto6Attr::
+INCBIN "data/tilesets/kanto_6_attributes.bin"

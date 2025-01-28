@@ -80,6 +80,7 @@ TrainerPicPointers::
 	dba Lyra1Pic
 	dba Lyra2Pic
 	dba BlainePic
+	dba InverPic
 	dba AerodactylFossilPic
 	dba KabutopsFossilPic
 	dba OmastarFossilPic

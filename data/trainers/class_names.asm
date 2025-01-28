@@ -78,6 +78,7 @@ TrainerClassNames::
 	li "<PKMN> Trainer"
 	li "<PKMN> Trainer"
 	li "Guardian"
+	li "Proprietor"
 	li "Fossil"
 	li "Fossil"
 	li "Fossil"
