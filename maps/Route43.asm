@@ -8,12 +8,21 @@
 	const ROUTE43_LADY_KAI
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
+	const ROUTE43_RAIKOU
 
 Route43_MapScripts:
 	def_scene_scripts
+	scene_script Route43Noop1Scene, SCENE_ROUTE43_NOOP
+	scene_script Route43Noop2Scene, SCENE_ROUTE43_RAIKOU
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
+
+Route43Noop1Scene:
+	end
+
+Route43Noop2Scene:
+	end
 
 Route43CheckIfRocketsScene:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
@@ -24,6 +33,23 @@ Route43CheckIfRocketsScene:
 .NoRockets:
 	setmapscene ROUTE_43_GATE, SCENE_ROUTE43GATE_NOOP
 	endcallback
+
+Route43RaikouScript:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	applymovement PLAYER, Route43PlayerMovement
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE43_RAIKOU, 15
+	turnobject ROUTE43_RAIKOU, DOWN
+	playsound SFX_WARP_FROM
+	applymovement ROUTE43_RAIKOU, Route43RaikouMovement1
+	turnobject PLAYER, DOWN
+	applymovement ROUTE43_RAIKOU, Route43RaikouMovement2
+	disappear ROUTE43_RAIKOU
+	pause 10
+	setscene SCENE_ROUTE43_NOOP
+	clearevent EVENT_LAKE_OF_RAGE_RAIKOU
+	end
 
 TrainerCamperSpencer:
 	trainer CAMPER, SPENCER, EVENT_BEAT_CAMPER_SPENCER, CamperSpencerSeenText, CamperSpencerBeatenText, 0, .Script
@@ -308,6 +334,28 @@ Route43FruitTree:
 Route43MaxEther:
 	itemball MAX_ETHER
 
+Route43PlayerMovement:
+	slow_step UP
+	step_end
+
+Route43RaikouMovement1:
+	set_sliding
+	fast_jump_step DOWN
+	remove_sliding
+	step_end
+
+Route43RaikouMovement2:
+	set_sliding
+	fast_jump_step DOWN
+	fast_jump_step RIGHT
+	fast_jump_step RIGHT
+	fast_jump_step UP
+	fast_jump_step UP
+	fast_jump_step UP
+	fast_jump_step UP
+	remove_sliding
+	step_end
+
 PokemaniacBenSeenText:
 	text "I love #mon!"
 
@@ -515,6 +563,7 @@ Route43_MapEvents:
 	warp_event 18, 31, ROUTE_43_GATE, 2
 
 	def_coord_events
+	coord_event  5, 39, SCENE_ROUTE43_RAIKOU, Route43RaikouScript
 
 	def_bg_events
 	bg_event 13,  3, BGEVENT_READ, Route43Sign1
@@ -531,3 +580,4 @@ Route43_MapEvents:
 	object_event  9, 44, SPRITE_LADY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyKai, -1
 	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event 12, 32, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
+	object_event  5, 37, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_43

@@ -7,12 +7,25 @@
 	const ROUTE37_SUNNY
 	const ROUTE37_FRUIT_TREE2
 	const ROUTE37_FRUIT_TREE3
+	const ROUTE37_ENTEI
 
 Route37_MapScripts:
 	def_scene_scripts
+	scene_script Route37Noop1Scene, SCENE_ROUTE37_NOOP
+	scene_script Route37Noop2Scene, SCENE_ROUTE37_ENTEI1
+	scene_script Route37Noop3Scene, SCENE_ROUTE37_ENTEI2
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route37SunnyCallback
+
+Route37Noop1Scene:
+	end
+
+Route37Noop2Scene:
+	end
+
+Route37Noop3Scene:
+	end
 
 Route37SunnyCallback:
 	readvar VAR_WEEKDAY
@@ -23,6 +36,75 @@ Route37SunnyCallback:
 .SunnyAppears:
 	appear ROUTE37_SUNNY
 	endcallback
+
+Route37Entei1aScript:
+	readvar VAR_FACING
+	ifequal RIGHT, .Entei1aContinue
+	turnobject PLAYER, RIGHT
+.Entei1aContinue
+	turnobject ROUTE37_ENTEI, LEFT
+	showemote EMOTE_SHOCK, ROUTE37_ENTEI, 15
+	pause 15
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	sjump Route37Entei1bScript.Entei1Leave
+
+Route37Entei1bScript:
+	readvar VAR_FACING
+	ifequal UP, .Entei1bContinue
+	turnobject PLAYER, UP
+.Entei1bContinue
+	turnobject ROUTE37_ENTEI, DOWN
+	showemote EMOTE_SHOCK, ROUTE37_ENTEI, 15
+	pause 15
+	turnobject PLAYER, UP
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	applymovement PLAYER, Route37PlayerMovement1
+	turnobject PLAYER, RIGHT
+.Entei1Leave
+	playsound SFX_WARP_FROM
+	applymovement ROUTE37_ENTEI, Route37Entei1Movement
+	disappear ROUTE37_ENTEI
+	pause 10
+	setscene SCENE_ROUTE37_NOOP
+	clearevent EVENT_SAW_ENTEI_ON_ROUTE_30
+	setmapscene ROUTE_30, SCENE_ROUTE30_ENTEI
+	end
+
+Route37Entei2aScript:
+	readvar VAR_FACING
+	ifequal RIGHT, .Entei2aContinue
+	turnobject PLAYER, RIGHT
+.Entei2aContinue
+	turnobject ROUTE37_ENTEI, LEFT
+	showemote EMOTE_SHOCK, ROUTE37_ENTEI, 15
+	pause 15
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	applymovement PLAYER, Route37PlayerMovement2
+	turnobject PLAYER, UP
+	sjump Route37Entei2bScript.Entei2Leave
+
+Route37Entei2bScript:
+	readvar VAR_FACING
+	ifequal UP, .Entei2bContinue
+	turnobject PLAYER, UP
+.Entei2bContinue
+	turnobject ROUTE37_ENTEI, DOWN
+	showemote EMOTE_SHOCK, ROUTE37_ENTEI, 15
+	pause 15
+	turnobject PLAYER, UP
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+.Entei2Leave
+	playsound SFX_WARP_FROM
+	applymovement ROUTE37_ENTEI, Route37Entei2Movement
+	disappear ROUTE37_ENTEI
+	pause 10
+	setscene SCENE_ROUTE37_NOOP
+	clearevent EVENT_BURNED_TOWER_B1F_ENTEI
+	end
 
 TrainerTwinsAnnandanne1:
 	trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script
@@ -125,6 +207,31 @@ Route37BlkApricornTree:
 
 Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER
+
+Route37PlayerMovement1:
+	big_step LEFT
+	step_end
+
+Route37PlayerMovement2:
+	big_step DOWN
+	step_end
+
+Route37Entei1Movement:
+	set_sliding
+	fast_jump_step DOWN
+	fast_jump_step DOWN
+	fast_jump_step RIGHT
+	fast_jump_step DOWN
+	remove_sliding
+	step_end
+
+Route37Entei2Movement:
+	set_sliding
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	fast_jump_step UP
+	remove_sliding
+	step_end
 
 TwinsAnnandanne1SeenText:
 	text "Ann: Anne and I"
@@ -271,6 +378,10 @@ Route37_MapEvents:
 	def_warp_events
 
 	def_coord_events
+	coord_event 14,  2, SCENE_ROUTE37_ENTEI1, Route37Entei1aScript
+	coord_event 15,  3, SCENE_ROUTE37_ENTEI1, Route37Entei1bScript
+	coord_event 14,  2, SCENE_ROUTE37_ENTEI2, Route37Entei2aScript
+	coord_event 15,  3, SCENE_ROUTE37_ENTEI2, Route37Entei2bScript
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, Route37Sign
@@ -285,3 +396,4 @@ Route37_MapEvents:
 	object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
 	object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37BluApricornTree, -1
 	object_event 15,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37BlkApricornTree, -1
+	object_event 15,  2, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_ENTEI_ON_ROUTE_37

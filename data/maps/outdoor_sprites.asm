@@ -217,6 +217,7 @@ CherrygroveGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_HOOTHOOT
 	db SPRITE_PIDGEY
+	db SPRITE_ENTEI
 	db 0 ; end
 
 VioletGroupSprites:
@@ -254,6 +255,7 @@ EcruteakGroupSprites:
 	db SPRITE_BUG_MANIAC
 	db SPRITE_SUICUNE
 	db SPRITE_TWIN
+	db SPRITE_ENTEI
 	db 0 ; end
 
 AzaleaGroupSprites:
@@ -317,6 +319,7 @@ CianwoodGroupSprites:
 	db SPRITE_BEAUTY
 	db SPRITE_CLERK
 	db SPRITE_SUICUNE
+	db SPRITE_RAIKOU
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -337,6 +340,7 @@ MahoganyGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_SUICUNE
+	db SPRITE_RAIKOU
 	db 0 ; end
 
 LakeOfRageGroupSprites:
@@ -354,6 +358,7 @@ LakeOfRageGroupSprites:
 	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_BALL_BOOK_POKEDEX
+	db SPRITE_RAIKOU
 	db 0 ; end
 
 BlackthornGroupSprites:

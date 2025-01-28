@@ -11,11 +11,10 @@
 	const LAKEOFRAGE_WESLEY
 	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
+	const LAKEOFRAGE_RAIKOU
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
-	scene_script LakeOfRageNoop1Scene ; unusable
-	scene_script LakeOfRageNoop2Scene ; unusable
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, LakeOfRageFlypointCallback
@@ -99,8 +98,27 @@ RedGyarados:
 	waitsfx
 	itemnotify
 	closetext
-	setscene 0 ; Lake of Rage does not have a scene variable
 	appear LAKEOFRAGE_LANCE
+	end
+
+LakeOfRageRaikou:
+	cry RAIKOU
+	pause 20
+	loadwildmon RAIKOU, 40
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	startbattle
+	disappear LAKEOFRAGE_RAIKOU
+	reloadmapafterbattle
+	setmapscene ROUTE_38, SCENE_ROUTE38_NOOP
+	setevent EVENT_SAW_RAIKOU_ON_ROUTE_38
+	setmapscene ROUTE_44, SCENE_ROUTE44_NOOP
+	setevent EVENT_SAW_RAIKOU_ON_ROUTE_44
+	setmapscene ROUTE_43, SCENE_ROUTE43_NOOP
+	setevent EVENT_SAW_RAIKOU_ON_ROUTE_43
+	special CheckBattleCaughtResult
+	iffalse .nocatch
+	setflag ENGINE_PLAYER_CAUGHT_RAIKOU
+.nocatch
 	end
 
 LakeOfRageGrampsScript:
@@ -519,4 +537,5 @@ LakeOfRage_MapEvents:
 	object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	object_event  7, 10, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
-	object_event 33,  2, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMHeatWave, EVENT_LAKE_OF_RAGE_TM_HEAT_WAVE
+	object_event 31,  3, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMHeatWave, EVENT_LAKE_OF_RAGE_TM_HEAT_WAVE
+	object_event 25,  2, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LakeOfRageRaikou, EVENT_LAKE_OF_RAGE_RAIKOU

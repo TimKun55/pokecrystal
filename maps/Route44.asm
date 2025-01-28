@@ -12,11 +12,52 @@
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
 	const ROUTE44_POKE_BALL3
+	const ROUTE44_RAIKOU
 
 Route44_MapScripts:
 	def_scene_scripts
+	scene_script Route36Noop1Scene, SCENE_ROUTE44_NOOP
+	scene_script Route36Noop2Scene, SCENE_ROUTE44_RAIKOU
 
 	def_callbacks
+
+Route44Noop1Scene:
+	end
+
+Route44Noop2Scene:
+	end
+
+Route44Raikou1Script:
+	readvar VAR_FACING
+	ifequal UP, .Raikou1Continue
+	turnobject PLAYER, UP
+.Raikou1Continue
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE44_RAIKOU, 15
+	turnobject ROUTE44_RAIKOU, DOWN
+	pause 15
+	sjump Route44Raikou2Script.RaikouLeave
+
+Route44Raikou2Script:
+	readvar VAR_FACING
+	ifequal LEFT, .Raikou2Continue
+	turnobject PLAYER, LEFT
+.Raikou2Continue
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE44_RAIKOU, 15
+	turnobject ROUTE44_RAIKOU, DOWN
+	pause 15
+.RaikouLeave
+	playsound SFX_WARP_FROM
+	applymovement ROUTE44_RAIKOU, Route44RaikouMovement
+	disappear ROUTE44_RAIKOU
+	pause 10
+	setscene SCENE_ROUTE44_NOOP
+	clearevent EVENT_SAW_RAIKOU_ON_ROUTE_43
+	setmapscene ROUTE_43, SCENE_ROUTE43_RAIKOU
+	end
 
 TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
@@ -322,6 +363,15 @@ Route44MaxRepel:
 Route44HiddenElixer:
 	hiddenitem ELIXER, EVENT_ROUTE_44_HIDDEN_ELIXER
 
+Route44RaikouMovement:
+	set_sliding
+	fast_jump_step LEFT
+	fast_jump_step UP
+	fast_jump_step LEFT
+	fast_jump_step UP
+	remove_sliding
+	step_end
+
 FisherWilton1SeenText:
 	text "Aack! You made me"
 	line "lose a Poliwag!"
@@ -562,6 +612,8 @@ Route44_MapEvents:
 	warp_event 54,  7, ICE_PATH_1F, 1
 
 	def_coord_events
+	coord_event  8,  6, SCENE_ROUTE44_RAIKOU, Route44Raikou1Script
+	coord_event 10,  4, SCENE_ROUTE44_RAIKOU, Route44Raikou2Script
 
 	def_bg_events
 	bg_event 51,  7, BGEVENT_READ, Route44Sign1
@@ -571,14 +623,15 @@ Route44_MapEvents:
 	def_object_events
 	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
 	object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
-	object_event 10,  9, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
+	object_event 14, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
 	object_event 43,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
 	object_event 48,  6, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
 	object_event 41, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
 	object_event 31, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
 	object_event 50, 14, SPRITE_LADY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyAya, -1
-	object_event 15,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacKeiran, -1
+	object_event 18,  2, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacKeiran, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 	object_event 30,  8, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event  8,  4, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_38

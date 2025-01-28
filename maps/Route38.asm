@@ -7,11 +7,48 @@
 	const ROUTE38_FRUIT_TREE
 	const ROUTE38_BEAUTY2
 	const ROUTE38_LADY_KAT
+	const ROUTE38_RAIKOU
 
 Route38_MapScripts:
 	def_scene_scripts
+	scene_script Route38Noop1Scene, SCENE_ROUTE38_NOOP
+	scene_script Route38Noop2Scene, SCENE_ROUTE38_RAIKOU
 
 	def_callbacks
+
+Route38Noop1Scene:
+	end
+
+Route38Noop2Scene:
+	end
+
+Route38Raikou1aScript:
+	readvar VAR_FACING
+	ifequal DOWN, .Raikou1aContinue
+	turnobject PLAYER, DOWN
+.Raikou1aContinue
+	turnobject ROUTE38_RAIKOU, UP
+	sjump Route38Raikou1bScript.Route38RaikouLeave
+
+Route38Raikou1bScript:
+	readvar VAR_FACING
+	ifequal RIGHT, .Raikou1bContinue
+	turnobject PLAYER, RIGHT
+.Raikou1bContinue
+	turnobject ROUTE38_RAIKOU, LEFT
+.Route38RaikouLeave
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE38_RAIKOU, 15
+	pause 15
+	playsound SFX_WARP_FROM
+	applymovement ROUTE38_RAIKOU, Route38RaikouMovement
+	disappear ROUTE38_RAIKOU
+	pause 10
+	setscene SCENE_ROUTE38_NOOP
+	clearevent EVENT_SAW_RAIKOU_ON_ROUTE_44
+	setmapscene ROUTE_44, SCENE_ROUTE44_RAIKOU
+	end
 
 TrainerBirdKeeperToby:
 	trainer BIRD_KEEPER, TOBY, EVENT_BEAT_BIRD_KEEPER_TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
@@ -300,6 +337,15 @@ Route38TrainerTips:
 Route38FruitTree:
 	fruittree FRUITTREE_ROUTE_38
 
+Route38RaikouMovement:
+	set_sliding
+	fast_jump_step RIGHT
+	fast_jump_step RIGHT
+	fast_jump_step RIGHT
+	fast_jump_step RIGHT
+	remove_sliding
+	step_end
+
 BirdKeeperTobySeenText:
 	text "Fly high into the"
 	line "sky, my beloved"
@@ -479,6 +525,9 @@ Route38_MapEvents:
 	warp_event 35,  9, ROUTE_38_ECRUTEAK_GATE, 2
 
 	def_coord_events
+	coord_event  6, 11, SCENE_ROUTE38_RAIKOU, Route38Raikou1aScript
+	coord_event  5, 12, SCENE_ROUTE38_RAIKOU, Route38Raikou1bScript
+	coord_event  5, 14, SCENE_ROUTE38_RAIKOU, Route38Raikou1bScript
 
 	def_bg_events
 	bg_event 33,  7, BGEVENT_READ, Route38Sign
@@ -491,5 +540,6 @@ Route38_MapEvents:
 	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
-	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+	object_event 23, 12, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
 	object_event 31,  5, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyKat, -1
+	object_event  6, 13, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_38

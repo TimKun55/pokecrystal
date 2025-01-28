@@ -97,4 +97,9 @@ MapScenes::
 	scene_var ROUTE_4_ZAPDOS_NEST,                         wRoute4ZapdosNestSceneID
 	scene_var SEAFOAM_ISLANDS_B4F,                         wSeafoamIslandsB4FSceneID
 	scene_var CINNABAR_MOLTRES_NEST,                       wCinnabarMoltresNestID
+	scene_var ROUTE_38,                                    wRoute38RaikouSceneID
+	scene_var ROUTE_44,                                    wRoute44RaikouSceneID
+	scene_var ROUTE_43,                                    wRoute43RaikouSceneID
+	scene_var ROUTE_37,                                    wRoute37EnteiSceneID
+	scene_var ROUTE_30,                                    wRoute30EnteiSceneID
 	db -1 ; end

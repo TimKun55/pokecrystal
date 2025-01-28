@@ -10,11 +10,54 @@
 	const ROUTE30_FRUIT_TREE2
 	const ROUTE30_COOLTRAINER_F
 	const ROUTE30_POKE_BALL
+	const ROUTE30_ENTEI
 
 Route30_MapScripts:
 	def_scene_scripts
+	scene_script Route30Noop1Scene, SCENE_ROUTE30_NOOP
+	scene_script Route30Noop2Scene, SCENE_ROUTE30_ENTEI
 
 	def_callbacks
+
+Route30Noop1Scene:
+	end
+
+Route30Noop2Scene:
+	end
+
+Route30EnteiScript:
+	readvar VAR_FACING
+	ifequal UP, .EnteiReposition
+	sjump .Route30EnteiScriptCont
+
+.EnteiReposition	
+	turnobject PLAYER, RIGHT
+.Route30EnteiScriptCont
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE30_ENTEI, 15
+	pause 15
+	turnobject ROUTE30_ENTEI, LEFT
+	pause 15
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	applymovement PLAYER, Route30PlayerMovement
+	turnobject PLAYER, UP
+	playsound SFX_WARP_FROM
+	applymovement ROUTE30_ENTEI, Route30EnteiMovement
+	disappear ROUTE30_ENTEI
+	pause 10
+	setscene SCENE_ROUTE30_NOOP
+	checkevent EVENT_FOUGHT_SUICUNE
+	iffalse .EnteiLoop
+	clearevent EVENT_SAW_ENTEI_ON_ROUTE_37
+	setmapscene ROUTE_37, SCENE_ROUTE37_ENTEI2
+	end
+
+.EnteiLoop:
+	clearevent EVENT_SAW_ENTEI_ON_ROUTE_37
+	setmapscene ROUTE_37, SCENE_ROUTE37_ENTEI1
+	end
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
@@ -244,6 +287,20 @@ Route30_MikeysRattataAttacksMovement:
 	big_step UP
 	step_end
 
+Route30PlayerMovement:
+	big_step DOWN
+	step_end
+
+Route30EnteiMovement:
+	set_sliding
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	fast_jump_step UP
+	fast_jump_step UP
+	remove_sliding
+	step_end
+
 Text_UseTackle:
 	text "Go, Rattata!"
 
@@ -396,6 +453,7 @@ Route30_MapEvents:
 	warp_event 15,  5, MR_POKEMONS_HOUSE, 1
 
 	def_coord_events
+	coord_event 11,  2, SCENE_ROUTE30_ENTEI, Route30EnteiScript
 
 	def_bg_events
 	bg_event  9, 43, BGEVENT_READ, Route30Sign
@@ -416,3 +474,4 @@ Route30_MapEvents:
 	object_event 12,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
 	object_event  8, 35, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
+	object_event 13,  2, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_ENTEI_ON_ROUTE_30

@@ -3203,8 +3203,13 @@ wRuinsOfAlphCaveEntranceSceneID::                 db
 wRoute4ZapdosNestSceneID::                        db
 wSeafoamIslandsB4FSceneID::                       db
 wCinnabarMoltresNestID::                          db
+wRoute38RaikouSceneID::                           db
+wRoute44RaikouSceneID::                           db
+wRoute43RaikouSceneID::                           db
+wRoute37EnteiSceneID::                            db
+wRoute30EnteiSceneID::                            db
 
-	ds 36
+	ds 29
 
 ; fight counts
 
