@@ -1994,8 +1994,9 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
-	db EVOLVE_HELD_LEVEL, HARD_STONE, 50, RHYPERIOR
+	db EVOLVE_MOVE, ROCK_BLAST, RHYPERIOR
 	db 0 ; no more evolutions
+	db 1, ROCK_BLAST
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 6, HORN_ATTACK
@@ -2032,7 +2033,7 @@ ChanseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, TANGROWTH
+	db EVOLVE_MOVE, ANCIENTPOWER, TANGROWTH
 	db 0 ; no more evolutions
 	db 1, CONSTRICT
 	db 4, SLEEP_POWDER
@@ -3507,9 +3508,8 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	db EVOLVE_LEVEL, 35, YANMEGA
+	db EVOLVE_MOVE, ANCIENTPOWER, YANMEGA
 	db 0 ; no more evolutions
-	db 1, ANCIENTPOWER
 	db 1, TACKLE
 	db 1, LEECH_LIFE
 	db 6, QUICK_ATTACK
@@ -3520,11 +3520,12 @@ YanmaEvosAttacks:
 	db 24, PROTECT
 	db 28, TWISTER
 	db 32, WING_ATTACK
-	db 36, SILVER_WIND
-	db 40, AIR_SLASH
-	db 44, DRAGON_PULSE
-	db 48, BUG_BUZZ
-	db 52, HURRICANE
+	db 36, ANCIENTPOWER
+	db 40, SILVER_WIND
+	db 45, AIR_SLASH
+	db 48, DRAGON_PULSE
+	db 52, BUG_BUZZ
+	db 56, HURRICANE
 	db 0 ; no more level-up moves
 
 YanmegaEvosAttacks:
@@ -3540,11 +3541,12 @@ YanmegaEvosAttacks:
 	db 24, PROTECT
 	db 28, TWISTER
 	db 32, WING_ATTACK
-	db 39, SILVER_WIND
-	db 44, AIR_SLASH
-	db 49, DRAGON_PULSE
-	db 53, BUG_BUZZ
-	db 57, HURRICANE
+	db 36, ANCIENTPOWER
+	db 42, SILVER_WIND
+	db 47, AIR_SLASH
+	db 53, DRAGON_PULSE
+	db 58, BUG_BUZZ
+	db 64, HURRICANE
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -4077,7 +4079,7 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
-	db EVOLVE_LEVEL, 40, MAMOSWINE
+	db EVOLVE_MOVE, ANCIENTPOWER, MAMOSWINE
 	db 0 ; no more evolutions
 	db 1, ANCIENTPOWER
 	db 1, PECK
@@ -4708,4 +4710,5 @@ PikachuPEvosAttacks:
 	db 44, AGILITY
 	db 48, LIGHT_SCREEN
 	db 52, THUNDER
+	db 56, NASTY_PLOT
 	db 0 ; no more level-up moves
