@@ -66,8 +66,6 @@ TrainerLadyEva:
 	checkevent EVENT_BEAT_LADY_ZOE
 	iffalse .end
 	setevent EVENT_BEAT_LIA_ZOE_EVA
-	end
-	
 .end	
 	end
 

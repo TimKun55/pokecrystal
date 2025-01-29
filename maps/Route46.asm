@@ -161,8 +161,6 @@ TrainerLadyGia:
 	checkevent EVENT_BEAT_LADY_AYA
 	iffalse .end
 	setevent EVENT_BEAT_KAI_AYA_GIA
-	end
-
 .end
 	end
 

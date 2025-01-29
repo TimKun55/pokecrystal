@@ -13,8 +13,10 @@ CianwoodGym_MapScripts:
 	callback MAPCALLBACK_TILES, CianwoodGymWaterfallButtonCallback
 
 CianwoodGymWaterfallButtonCallback:
-	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	checkevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	iftrue .NoWaterfall
+	checkevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
+	iffalse .Button1NotPushed
 	endcallback	
 
 .NoWaterfall
@@ -22,6 +24,10 @@ CianwoodGymWaterfallButtonCallback:
 	changeblock 8,  6, $6e
 	changeblock 8,  8, $6e
 	changeblock 8, 10, $70
+	endcallback
+
+.Button1NotPushed
+	changeblock 6,  2, $8b
 	endcallback
 
 CianwoodGymChuckScript:
@@ -33,7 +39,7 @@ CianwoodGymChuckScript:
 	iftrue .ChuckScript_Rematch
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
-	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	checkevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	iffalse .ChuckWaterfallTraining
 	writetext ChuckIntroText
 	waitbutton
@@ -130,7 +136,7 @@ CianwoodGymChuckScript:
 	
 CianwoodGymPoliwrath:
 	opentext
-	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	checkevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	iffalse .PoliwrathWaterfallTraining
 	writetext PoliwrathText
 	cry POLIWRATH
@@ -203,9 +209,26 @@ TrainerBlackbeltLung:
 	closetext
 	end
 
-CianwoodWaterfallButton:
+CianwoodWaterfallButton1:
 	opentext
-	checkevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	checkevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
+	iftrue CianwoodWaterfallButton2.Pushed
+	writetext CianwoodGymButtonPressText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_MOVE_PUZZLE_PIECE
+	waitsfx
+	changeblock 6,  2, $79
+	reloadmappart
+	setevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
+	end
+
+CianwoodWaterfallButton2:
+	opentext
+	checkevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
+	iffalse .NotActive
+	checkevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	iftrue .Pushed
 	writetext CianwoodGymButtonPressText
 	waitbutton
@@ -213,16 +236,22 @@ CianwoodWaterfallButton:
 	pause 15
 	playsound SFX_STRENGTH
 	earthquake 50
-	changeblock 8,  4, $cc
-	changeblock 8,  6, $ce
-	changeblock 8,  8, $ce
-	changeblock 8, 10, $d0
+	changeblock 8,  4, $6c
+	changeblock 8,  6, $6e
+	changeblock 8,  8, $6e
+	changeblock 8, 10, $70
 	reloadmappart
-	setevent EVENT_BUTTON_IN_CIANWOOD_GYM
+	setevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	end
 
 .Pushed
 	writetext CianwoodGymButtonIsPressedText
+	waitbutton
+	closetext
+	end
+
+.NotActive
+	writetext CianwoodGymButtonNotActiveText
 	waitbutton
 	closetext
 	end
@@ -489,6 +518,11 @@ CianwoodGymButtonIsPressedText:
 	cont "pressed."
 	done
 
+CianwoodGymButtonNotActiveText:
+	text "The button doesn't"
+	line "seem to be active."
+	done
+
 WaterfallTrainingText:
 	text "They're so into"
 	line "their training,"
@@ -507,7 +541,8 @@ CianwoodGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  3, BGEVENT_READ, CianwoodWaterfallButton
+	bg_event 12,  3, BGEVENT_READ, CianwoodWaterfallButton1	
+	bg_event  6,  3, BGEVENT_READ, CianwoodWaterfallButton2	
 	bg_event  7, 15, BGEVENT_READ, CianwoodGymStatue
 	bg_event 10, 15, BGEVENT_READ, CianwoodGymStatue
 
@@ -516,5 +551,5 @@ CianwoodGym_MapEvents:
 	object_event  8, 10, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
 	object_event  3, 10, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
 	object_event 15,  8, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
-	object_event 11,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltNob, -1
+	object_event 11,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltNob, -1
 	object_event  5,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltLung, -1

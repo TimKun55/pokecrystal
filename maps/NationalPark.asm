@@ -288,8 +288,6 @@ NationalParkLadyMia:
 	checkevent EVENT_BEAT_LADY_BEA
 	iffalse .end
 	setevent EVENT_BEAT_SUE_BEA_MIA
-	end
-
 .end
 	end
 

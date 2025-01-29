@@ -139,8 +139,6 @@ CianwoodCityLadyMae:
 	checkevent EVENT_BEAT_LADY_ADA
 	iffalse .end
 	setevent EVENT_BEAT_KAT_ADA_MAE
-	end
-
 .end
 	end
 
