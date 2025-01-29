@@ -18,6 +18,9 @@ BlackthornMoveTutorScript:
 	writetext BlackthornAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext BlackthornMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext BlackthornMoveTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -32,30 +35,24 @@ BlackthornMoveTutorScript:
 	writetext BlackthornMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .SignalBeam:
 	setval SIGNAL_BEAM
 	writetext BlackthornMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .ZenHeadbutt:
 	setval ZEN_HEADBUTT
 	writetext BlackthornMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext BlackthornMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext BlackthornMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -114,11 +111,13 @@ BlackthornMoveTutorRefusalText:
 	cont "move!"
 	done
 
-BlackthornMoveTutorWhichMoveText:
+BlackthornMoveTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+BlackthornMoveTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -143,12 +142,6 @@ BlackthornMoveTutorUseWisely:
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
-	done
-
-BlackthornMoveTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
 	done
 
 BlackthornMoveTutorMoveText:

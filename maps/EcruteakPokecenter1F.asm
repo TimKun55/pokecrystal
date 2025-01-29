@@ -70,6 +70,9 @@ EcruteakPokecenter1FTutor:
 	writetext EcruteakPokecenter1FAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext EcruteakPokecenter1FTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext EcruteakPokecenter1FTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -84,30 +87,24 @@ EcruteakPokecenter1FTutor:
 	writetext EcruteakPokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .GrowthPunch:
 	setval GROWTH_PUNCH
 	writetext EcruteakPokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .FlameCharge:
 	setval FLAME_CHARGE
 	writetext EcruteakPokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext EcruteakPokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext EcruteakPokecenter1FTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -153,12 +150,12 @@ EcruteakPokecenter1FGymGuideScript:
 	jumptextfaceplayer EcruteakPokecenter1FGymGuideText
 
 EcruteakPokecenter1FBillMovement1:
-	step UP
-	step UP
-	step UP
-	step UP
 	step RIGHT
 	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -239,11 +236,13 @@ EcruteakPokecenter1FTutorRefusalText:
 	cont "move!"
 	done
 
-EcruteakPokecenter1FTutorWhichMoveText:
+EcruteakPokecenter1FTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+EcruteakPokecenter1FTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -267,12 +266,6 @@ EcruteakPokecenter1FTutorUseWisely:
 	cont "your journey."
 	done
 	
-EcruteakPokecenter1FTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 EcruteakPokecenter1FTutorMoveText:
 	text_start
 	done

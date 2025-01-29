@@ -122,6 +122,9 @@ EcruteakFairyFamilyHouseGrannyScript:
 	writetext UltimateFairyMoveText
 	yesorno
 	iffalse .TutorRefused
+	writetext UltimateFairyMoveWonderfullText
+	waitbutton
+.TutorLoop:
 	writetext UltimateFairyMoveWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -135,14 +138,14 @@ EcruteakFairyFamilyHouseGrannyScript:
 	writetext EcruteakFairyFamilyHouseGrannyMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .PlayRough:
 	setval PLAY_ROUGH
 	writetext EcruteakFairyFamilyHouseGrannyMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .TutorRefused
 	writetext UltimateFairyMoveRefusedText
@@ -150,12 +153,6 @@ EcruteakFairyFamilyHouseGrannyScript:
 	closetext
 	end
 	
-.Incompatible:
-	writetext EcruteakFairyFamilyHouseIncompatibleText
-	waitbutton
-	closetext
-	end
-
 .TeachMove
 	writetext UltimateFairyMoveTaughtText
 	waitbutton
@@ -364,18 +361,14 @@ UltimateFairyMoveText:
 	cont "strongest Fairy"
 	cont "moves?"
 	done
-	
-UltimateFairyMoveWhichMoveText:
-	text "Wonderful!"
 
-	para "Which move should"
-	line "I teach?"
+UltimateFairyMoveWonderfullText:
+	text "Wonderful!"
 	done
-	
-EcruteakFairyFamilyHouseIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
+
+UltimateFairyMoveWhichMoveText:
+	text "Which move should"
+	line "I teach?"
 	done
 	
 UltimateFairyMoveRefusedText:
@@ -383,10 +376,6 @@ UltimateFairyMoveRefusedText:
 	line "all your efforts?"
 	
 	para "Up to you, dear."
-	done
-
-MoonblastClear:
-	text_start
 	done
 
 UltimateFairyMoveTaughtText:

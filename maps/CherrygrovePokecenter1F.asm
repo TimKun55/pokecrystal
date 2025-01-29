@@ -50,6 +50,9 @@ CherrygrovePokecenter1FTutorScript:
 	writetext CherrygrovePokecenter1FAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext CherrygrovePokecenter1FTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext CherrygrovePokecenter1FTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -64,30 +67,24 @@ CherrygrovePokecenter1FTutorScript:
 	writetext CherrygrovePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .GunkShot:
 	setval GUNK_SHOT
 	writetext CherrygrovePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .FocusBlast:
 	setval FOCUS_BLAST
 	writetext CherrygrovePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext CherrygrovePokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext CherrygrovePokecenter1FTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -181,11 +178,13 @@ CherrygrovePokecenter1FTutorRefusalText:
 	cont "move!"
 	done
 
-CherrygrovePokecenter1FTutorWhichMoveText:
+CherrygrovePokecenter1FTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+CherrygrovePokecenter1FTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -207,12 +206,6 @@ CherrygrovePokecenter1FTutorUseWisely:
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
-	done
-
-CherrygrovePokecenter1FTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
 	done
 
 CherrygrovePokecenter1FTutorMoveText:

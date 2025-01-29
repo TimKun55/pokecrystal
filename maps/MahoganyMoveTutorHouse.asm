@@ -19,6 +19,9 @@ MahoganyMoveTutor1Script:
 	writetext AskTeachAMoveTextYesNo
 	yesorno
 	iffalse .Refused
+	writetext MahoganyMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext MahoganyMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -33,30 +36,24 @@ MahoganyMoveTutor1Script:
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .DarkPulse:
 	setval DARK_PULSE
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .AirSlash:
 	setval AIR_SLASH
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext MahoganyMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -103,6 +100,9 @@ MahoganyMoveTutor2:
 	writetext AskTeachAMoveTextYesNo
 	yesorno
 	iffalse .Refused
+	writetext MahoganyMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext MahoganyMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -116,23 +116,17 @@ MahoganyMoveTutor2:
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .Sandstorm:
 	setval SANDSTORM
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .Refused:
 	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext MahoganyMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -178,6 +172,9 @@ MahoganyMoveTutor3:
 	writetext AskTeachAMoveTextYesNo
 	yesorno
 	iffalse .Refused
+	writetext MahoganyMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext MahoganyMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -191,23 +188,17 @@ MahoganyMoveTutor3:
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .SunnyDay:
 	setval SUNNY_DAY
 	writetext MahoganyMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .Refused:
 	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext MahoganyMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -271,11 +262,13 @@ MahoganyMoveTutorRefusalText:
 	cont "move!"
 	done
 
-MahoganyMoveTutorWhichMoveShouldITeachText:
+MahoganyMoveTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+MahoganyMoveTutorWhichMoveShouldITeachText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -297,12 +290,6 @@ MahoganyMoveTutor1TutorUseWisely:
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
-	done
-
-MahoganyMoveTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
 	done
 
 MahoganyMoveTutorMoveText:

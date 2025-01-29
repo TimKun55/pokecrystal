@@ -175,12 +175,6 @@ OlivineCitySailorTutorScript:
 	closetext
 	end
 	
-.Incompatible:
-	writetext OlivineCitySailorTutorIncompatibleText
-	waitbutton
-	closetext
-	end
-
 OlivineCityMarketPlaceClerk1:
 	faceplayer
 	opentext
@@ -438,12 +432,6 @@ OlivineCitySailorTutorNotEnough:
 	line "afford it."
 	done
 	
-OlivineCitySailorTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 

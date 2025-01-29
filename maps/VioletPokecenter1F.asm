@@ -92,6 +92,9 @@ VioletPokecenter1FTutor:
 	writetext VioletPokecenter1FAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext VioletPokecenter1FTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext VioletPokecenter1FTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -105,23 +108,17 @@ VioletPokecenter1FTutor:
 	writetext VioletPokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .SandTomb:
 	setval SAND_TOMB
 	writetext VioletPokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext VioletPokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext VioletPokecenter1FTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -264,11 +261,13 @@ VioletPokecenter1FTutorRefusalText:
 	cont "move!"
 	done
 
-VioletPokecenter1FTutorWhichMoveText:
+VioletPokecenter1FTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+VioletPokecenter1FTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -292,12 +291,6 @@ VioletPokecenter1FTutorUseWisely:
 	cont "your journey."
 	done
 	
-VioletPokecenter1FTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 VioletPokecenter1FTutorMoveText:
 	text_start
 	done

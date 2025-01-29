@@ -120,12 +120,6 @@ VermilionCityTutorScript:
 	closetext
 	end
 	
-.Incompatible:
-	writetext VermilionCityTutorIncompatibleText
-	waitbutton
-	closetext
-	end
-
 VermilionCityBeautyScript:
 	jumptextfaceplayer VermilionCityBeautyText
 
@@ -323,12 +317,6 @@ VermilionCityTutorNotEnough:
 	line "afford it."
 	done
 	
-VermilionCityTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 VermilionCityBeautyText:
 	text "Look at the pretty"
 	line "Berry Trees I've"

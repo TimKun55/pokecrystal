@@ -18,6 +18,9 @@ CianwoodMoveTutorScript:
 	writetext CianwoodAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext CianwoodMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext CianwoodMoveTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -32,30 +35,24 @@ CianwoodMoveTutorScript:
 	writetext CianwoodMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .DrainPunch:
 	setval DRAIN_PUNCH
 	writetext CianwoodMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .WaterPulse:
 	setval WATER_PULSE
 	writetext CianwoodMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext CianwoodMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext CianwoodMoveTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -102,7 +99,7 @@ Kai:
 CianwoodTutorIntro:
 	text "Hi there!"
 	line "For ¥8000, I can"
-	para "teach your #mon"
+	cont "teach your #mon"
 
 	para "amazing moves if"
 	line "you'd like."
@@ -122,11 +119,13 @@ CianwoodMoveTutorRefusalText:
 	cont "move!"
 	done
 
-CianwoodMoveTutorWhichMoveText:
+CianwoodMoveTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+CianwoodMoveTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -151,12 +150,6 @@ CianwoodMoveTutorUseWisely:
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"
-	done
-
-CianwoodMoveTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
 	done
 
 CianwoodMoveTutorMoveText:

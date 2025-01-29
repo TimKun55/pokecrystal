@@ -121,12 +121,6 @@ GoldenrodPokecenter1FMoveTutor:
 	closetext
 	end
 	
-.Incompatible:
-	writetext GoldenrodPokecenter1FMoveTutorIncompatibleText
-	waitbutton
-	closetext
-	end
-
 GoldenrodPokecenter1FVendingMachine:
 	jumpstd VendingMachineScript
 
@@ -247,12 +241,6 @@ GoldenrodPokecenter1FMoveTutorNotEnough:
 	line "afford it."
 	done
 	
-GoldenrodPokecenter1FMoveTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 

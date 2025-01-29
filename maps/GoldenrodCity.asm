@@ -75,6 +75,9 @@ MoveTutorScript:
 	iffalse .Refused2
 	checkcoins 4000
 	ifequal HAVE_LESS, .NotEnoughMoney
+	writetext GoldenrodCityMoveTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -82,28 +85,28 @@ MoveTutorScript:
 	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
 	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
 	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
-	sjump .Incompatible
+	sjump .Refused
 
 .Flamethrower:
 	setval MT01_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .Thunderbolt:
 	setval MT02_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .IceBeam:
 	setval MT03_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -139,12 +142,6 @@ MoveTutorScript:
 	playsound SFX_TRANSACTION
 	special DisplayCoinCaseBalance
 	writetext GoldenrodCityMoveTutorFarewellKidText
-	waitbutton
-	closetext
-	end
-
-.Incompatible:
-	writetext GoldenrodCityMoveTutorBButText
 	waitbutton
 	closetext
 	end
@@ -521,11 +518,13 @@ GoldenrodCityMoveTutorAwwButTheyreAmazingText:
 	line "amazing…"
 	done
 
-GoldenrodCityMoveTutorWhichMoveShouldITeachText:
+GoldenrodCityMoveTutorWontRegretText:
 	text "Wahahah! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+GoldenrodCityMoveTutorWhichMoveShouldITeachText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -547,10 +546,6 @@ GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 GoldenrodCityMoveTutorFarewellKidText:
 	text "Wahahah!"
 	line "Farewell, kid!"
-	done
-
-GoldenrodCityMoveTutorBButText:
-	text "B-but…"
 	done
 
 GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:

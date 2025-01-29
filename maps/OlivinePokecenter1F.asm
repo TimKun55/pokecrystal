@@ -37,6 +37,9 @@ OlivinePokecenter1FTutor:
 	writetext OlivinePokecenter1FAskYesNo
 	yesorno
 	iffalse .Refused
+	writetext OlivinePokecenter1FTutorWontRegretText
+	waitbutton
+.TutorLoop:
 	writetext OlivinePokecenter1FTutorWhichMoveText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -51,30 +54,24 @@ OlivinePokecenter1FTutor:
 	writetext OlivinePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .SilverWind:
 	setval SILVER_WIND
 	writetext OlivinePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 
 .NightSlash:
 	setval NIGHT_SLASH
 	writetext OlivinePokecenter1FTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TutorLoop
 	
 .Refused:
 	writetext OlivinePokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
-	
-.Incompatible:
-	writetext OlivinePokecenter1FTutorIncompatibleText
 	waitbutton
 	closetext
 	end
@@ -160,11 +157,13 @@ OlivinePokecenter1FTutorRefusalText:
 	cont "move!"
 	done
 
-OlivinePokecenter1FTutorWhichMoveText:
+OlivinePokecenter1FTutorWontRegretText:
 	text "Great! You won't"
 	line "regret it!"
+	done
 
-	para "Which move should"
+OlivinePokecenter1FTutorWhichMoveText:
+	text "Which move should"
 	line "I teach?"
 	done
 
@@ -188,12 +187,6 @@ OlivinePokecenter1FTutorUseWisely:
 	cont "your journey."
 	done
 	
-OlivinePokecenter1FTutorIncompatibleText:
-	text "I'm sorry, your"
-	line "#mon can't"
-	cont "learn this move…"
-	done
-
 OlivinePokecenter1FTutorMoveText:
 	text_start
 	done
