@@ -8,7 +8,6 @@
 	const ESREVNIHALL1F_INVER
 	const ESREVNIHALL1F_BEAUTY
 	const ESREVNIHALL1F_COOLTRAINERF
-	const ESREVNIHALL1F_
 
 EsrevniHall1F_MapScripts:
 	def_scene_scripts
@@ -16,6 +15,7 @@ EsrevniHall1F_MapScripts:
 	scene_script EsrevniHall1FAfterBattleScene, SCENE_ESREVNIHALL1F_AFTERBATTLE
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, EsrevniHall1FReceptionistPlaceCallback
 
 EsrevniHall1FNoopScene:
 	end
@@ -23,6 +23,14 @@ EsrevniHall1FNoopScene:
 EsrevniHall1FAfterBattleScene:
 	sdefer EsrevniHall1FAfterBattleScript
 	end
+
+EsrevniHall1FReceptionistPlaceCallback:
+	checkevent EVENT_ESREVNI_HALL_AFTER_BATTLE
+	iffalse .end
+	moveobject ESREVNIHALL1F_RECEPTIONIST, 14,  8
+	clearevent EVENT_ESREVNI_HALL_AFTER_BATTLE
+.end
+	endcallback
 
 EsrevniHall1FAfterBattleScript:
 	opentext
@@ -32,12 +40,9 @@ EsrevniHall1FAfterBattleScript:
 	writetext EsrevniHall1FInverBattleAgainText
 	waitbutton
 	closetext
-	turnobject ESREVNIHALL1F_INVER, UP
-	applymovement ESREVNIHALL1F_RECEPTIONIST, EsrevniHall1FReceptionistMoveforInver1
-	turnobject ESREVNIHALL1F_RECEPTIONIST, LEFT
 	applymovement ESREVNIHALL1F_INVER, EsrevniHall1FInverLeaveMovement
 	disappear ESREVNIHALL1F_INVER
-	applymovement ESREVNIHALL1F_RECEPTIONIST, EsrevniHall1FReceptionistMoveforInver2
+	applymovement ESREVNIHALL1F_RECEPTIONIST, EsrevniHall1FReceptionistMoveforInver
 	setscene SCENE_ESREVNIHALL1F_NOOP
 	end
 
@@ -46,6 +51,7 @@ EsrevniHall1FAfterBattleScript:
 	waitbutton
 	giveitem FULL_RESTORE, 10
 	giveitem REVIVE, 10
+	iffalse .BagFull
 	writetext EsrevniHall1FPrizeText
 	playsound SFX_ITEM
 	waitsfx
@@ -56,6 +62,12 @@ EsrevniHall1FAfterBattleScript:
 	writemem wInverPoints
 	sjump .FinishInverScene
 
+.BagFull:
+	writetext EsrevniHall1FInverBagFullText
+	waitbutton
+	setevent EVENT_ESREVNI_HALL_PICK_UP_PRIZE
+	sjump .FinishInverScene
+
 EsrevniHall1FNurseScript:
 	jumpstd PokecenterNurseScript
 
@@ -64,6 +76,8 @@ EsrevniHall1FChansey:
 
 EsrevniHall1FReceptionistScript:
 	opentext
+	checkevent EVENT_ESREVNI_HALL_PICK_UP_PRIZE
+	iftrue .PickUpPrize
 	writetext EsrevniHall1FReceptionistWelcomeText
 	yesorno
 	iffalse .NoBattle
@@ -85,6 +99,21 @@ EsrevniHall1FReceptionistScript:
 	warpcheck
 	end
 
+.PickUpPrize:
+	writetext EsrevniHall1FReceptionistPickUpPrizeText
+	waitbutton
+	giveitem FULL_RESTORE, 10
+	giveitem REVIVE, 10
+	iffalse .BagFull
+	writetext EsrevniHall1FPrizeText
+	playsound SFX_ITEM
+	waitsfx
+	readmem wInverPoints
+	addval -7
+	writemem wInverPoints
+	clearevent EVENT_ESREVNI_HALL_PICK_UP_PRIZE
+	sjump .EndConversation
+
 .NoBattle:
 	writetext EsrevniHall1FReceptionistAskCurrentStreakText
 	yesorno
@@ -94,6 +123,9 @@ EsrevniHall1FReceptionistScript:
 	iffalse .EndConversation
 	sjump .EnterBattleRoom
 
+.BagFull:
+	writetext EsrevniHall1FReceptionistBagFullText
+	waitbutton
 .EndConversation:
 	writetext EsrevniHall1FReceptionistComeBackSoonText
 	waitbutton
@@ -154,12 +186,7 @@ EsrevniHall1FReceptionistMovement:
 	step RIGHT
 	step_end
 
-EsrevniHall1FReceptionistMoveforInver1:
-	step UP
-	step RIGHT
-	step_end
-
-EsrevniHall1FReceptionistMoveforInver2:
+EsrevniHall1FReceptionistMoveforInver:
 	step LEFT
 	step DOWN
 	step_end
@@ -198,6 +225,12 @@ EsrevniHall1FReceptionistGoodLuckText:
 	line "to you!"
 	done
 
+EsrevniHall1FReceptionistPickUpPrizeText:
+	text "Hello, there!"
+	line "I've been holding"
+	cont "on to your prizes."
+	done
+
 EsrevniHall1FReceptionistAskCurrentStreakText:
 	text "Would you like to"
 	line "know your current"
@@ -213,6 +246,15 @@ EsrevniHall1FReceptionistCurrentStreakText:
 	para "Would you like to"
 	line "enter the Battle"
 	cont "Room?"
+	done
+
+EsrevniHall1FReceptionistBagFullText:
+	text "Oh dear, your"
+	line "bag is full."
+	
+	para "I'll hold on to"
+	line "these until you've"
+	cont "made room."
 	done
 
 EsrevniHall1FReceptionistComeBackSoonText:
@@ -257,6 +299,15 @@ EsrevniHall1FPrizeText:
 	text "<PLAYER> recieved"
 	line "10 Revives and"
 	cont "10 Full Restores."
+	done
+
+EsrevniHall1FInverBagFullText:
+	text "Oh, your bag"
+	line "is full."
+	
+	para "I'll leave your"
+	line "prize here with"
+	cont "Sandra."
 	done
 
 EsrevniHall1FInverPrizeText:
@@ -332,18 +383,6 @@ EsrevniHallRulesText:
 	para "Other than that,"
 	line "these are regular"
 	cont "battles."
-	
-	para "Your #mon will"
-	line "earn Exp. Points"
-	cont "and you will"
-	
-	para "recieve money when"
-	line "you win each"
-	cont "battle."
-	
-	para "If you lose, you"
-	line "will lose money"
-	cont "and white out."
 	
 	para "Be careful, good"
 	line "luck and have fun!"

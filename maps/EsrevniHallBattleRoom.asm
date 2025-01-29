@@ -77,6 +77,7 @@ EsrevniHallBattleRoomScript:
 	readmem wInverPoints
 	addval 1
 	writemem wInverPoints
+	setevent EVENT_ESREVNI_HALL_AFTER_BATTLE
 	sjump .FinishInver
 
 .AfterLoss:
@@ -85,7 +86,8 @@ EsrevniHallBattleRoomScript:
 	writetext EsrevniHallBattleRoomInverPlayerLossText
 	promptbutton
 	closetext
-	setevent EVENT_ESREVNI_HALL_LOST
+	setevent EVENT_ESREVNI_HALL_AFTER_BATTLE
+	special HealParty
 .FinishInver
 	applymovement PLAYER, EsrevniHallBattleRoomPlayerExitMovement
 	setmapscene ESREVNI_HALL_1F, SCENE_ESREVNIHALL1F_AFTERBATTLE

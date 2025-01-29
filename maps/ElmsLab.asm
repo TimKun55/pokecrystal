@@ -632,6 +632,7 @@ LyraBattleScript:
 	applymovement ELMSLAB_LYRA, LyraLeavesMovement
 	disappear ELMSLAB_LYRA
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
+	special HealParty
 	playmapmusic
 	end
 
