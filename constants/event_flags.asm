@@ -206,8 +206,7 @@
 	const EVENT_GRAND_CHAMPION
 	const EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	const EVENT_GOT_POKEDEX_FROM_OAK
-	const EVENT_OLIVINE_MARKETPLACE
-; Unused: next 48 events
+; Unused: next 49 events
 
 	const_next 250
 ; Kanto story events
@@ -1472,7 +1471,8 @@
 	const EVENT_OLIVINE_MARKET_CLERK_2
 	const EVENT_OLIVINE_MARKET_CLERK_3
 	const EVENT_BUTTON_2_IN_CIANWOOD_GYM
-; Unused: next 70 events
+	const EVENT_OLIVINE_MARKET_CUSTOMERS
+; Unused: next 69 events
 
 	const_next 1800
 ; Kanto people

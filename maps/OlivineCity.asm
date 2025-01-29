@@ -7,6 +7,8 @@
 	const OLIVINECITY_CLERK1
 	const OLIVINECITY_CLERK2
 	const OLIVINECITY_CLERK3
+	const OLIVINECITY_POKEFAN_M
+	const OLIVINECITY_POKEFAN_F
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -36,19 +38,23 @@ OlivineCityMarketPlacePeople:
 	disappear OLIVINECITY_CLERK1
 	disappear OLIVINECITY_CLERK2
 	disappear OLIVINECITY_CLERK3
-	clearevent EVENT_OLIVINE_MARKETPLACE
+	disappear OLIVINECITY_POKEFAN_M
+	disappear OLIVINECITY_POKEFAN_F
 	endcallback
 
 .MarketPlacePeopleAppear:
 	appear OLIVINECITY_CLERK1
 	appear OLIVINECITY_CLERK2
 	appear OLIVINECITY_CLERK3
-	setevent EVENT_OLIVINE_MARKETPLACE
+	appear OLIVINECITY_POKEFAN_M
+	appear OLIVINECITY_POKEFAN_F
 	endcallback
 
 OlivineCityLighthouseNiteMarketPlaceStalls:
-	checkevent EVENT_OLIVINE_MARKETPLACE
-	iftrue .MarketPlaceAppear
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .MarketPlaceAppear
+	ifequal SATURDAY, .MarketPlaceAppear
+	ifequal SUNDAY, .MarketPlaceAppear
 .continuecheck
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .end
@@ -195,6 +201,12 @@ OlivineCityMarketPlaceClerk3:
 	pokemart MARTTYPE_MARKET3, 0
 	closetext
 	end
+
+OlivineCityMarketPlacePokefanM:
+	jumptextfaceplayer OlivineCityMarketPlacePokefanMText
+
+OlivineCityMarketPlacePokefanF:
+	jumptextfaceplayer OlivineCityMarketPlacePokefanFText
 
 OlivineCitySign:
 	jumptext OlivineCitySignText
@@ -353,6 +365,17 @@ OlivineCitySailor2Text:
 	cont "man down!…"
 	done
 
+OlivineCityMarketPlacePokefanMText:
+	text "I love it when"
+	line "it's Market Time!"
+	done
+
+OlivineCityMarketPlacePokefanFText:
+	text "I always make the"
+	line "journey here for"
+	cont "the Market!"
+	done
+
 OlivineCitySignText:
 	text "Olivine City"
 
@@ -469,3 +492,5 @@ OlivineCity_MapEvents:
 	object_event 10, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk1, EVENT_OLIVINE_MARKET_CLERK_1
 	object_event 16, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk2, EVENT_OLIVINE_MARKET_CLERK_2
 	object_event 21, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk3, EVENT_OLIVINE_MARKET_CLERK_3
+	object_event 11, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanM, EVENT_OLIVINE_MARKET_CUSTOMERS
+	object_event 15, 17, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanF, EVENT_OLIVINE_MARKET_CUSTOMERS
