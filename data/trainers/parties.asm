@@ -4373,90 +4373,90 @@ Lyra1Group:
 
 	; LYRA1 (7)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 31, PIDGEOTTO, "@",        SHARP_BEAK
-	db 30, GROWLITHE, "@",        CHARCOAL
-	db 31, AZUMARILL, "@",        MYSTIC_WATER
-	db 29, FLAAFFY,   "@",        MAGNET
+	db 31, PIDGEOTTO, "Flappy@",  SHARP_BEAK
+	db 30, GROWLITHE, "Wan@",     CHARCOAL
+	db 31, AZUMARILL, "Ruri@",    MYSTIC_WATER
+	db 29, FLAAFFY,   "Meep@",    MAGNET
 	db 31, BAYLEEF,   "Chicory@", SITRUS_BERRY
 	db -1 ; end
 
 	; LYRA1 (8)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 31, PIDGEOTTO, "@",        SHARP_BEAK
-	db 30, SUNFLORA,  "@",        MIRACLE_SEED
-	db 31, AZUMARILL, "@",        MYSTIC_WATER
-	db 29, FLAAFFY,   "@",        MAGNET
+	db 31, PIDGEOTTO, "Flappy@",  SHARP_BEAK
+	db 30, SUNFLORA,  "Sola@",    MIRACLE_SEED
+	db 31, AZUMARILL, "Ruri@",    MYSTIC_WATER
+	db 29, FLAAFFY,   "Meep@",    MAGNET
 	db 31, QUILAVA,   "Cinder@",  SITRUS_BERRY
 	db -1 ; end
 
 	; LYRA1 (9)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 31, PIDGEOTTO, "@",     SHARP_BEAK
-	db 30, SUNFLORA,  "@",     MIRACLE_SEED
-	db 31, GROWLITHE, "@",     CHARCOAL
-	db 29, FLAAFFY,   "@",     MAGNET
-	db 31, CROCONAW,  "Toto@", SITRUS_BERRY
+	db 31, PIDGEOTTO, "Flappy@", SHARP_BEAK
+	db 30, SUNFLORA,  "Sola@",   MIRACLE_SEED
+	db 31, GROWLITHE, "Wan@",    CHARCOAL
+	db 29, FLAAFFY,   "Meep@",   MAGNET
+	db 31, CROCONAW,  "Toto@",   SITRUS_BERRY
 	db -1 ; end
 
 	; LYRA1 (10)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 44, PIDGEOT,    "@",        SHARP_BEAK
-	db 43, GIRAFARIG,  "@",        TWISTEDSPOON
-	db 45, ARCANINE,   "@",        CHARCOAL
-	db 45, AZUMARILL,  "@",        MYSTIC_WATER
-	db 46, AMPHAROS,   "@",        MAGNET
+	db 44, PIDGEOT,    "Flappy@",  SHARP_BEAK
+	db 43, GIRAFARIG,  "Riki@",    TWISTEDSPOON
+	db 45, ARCANINE,   "Wan@",     CHARCOAL
+	db 45, AZUMARILL,  "Ruri@",    MYSTIC_WATER
+	db 46, AMPHAROS,   "Meep@",    MAGNET
 	db 47, MEGANIUM,   "Chicory",  SITRUS_BERRY
 	db -1 ; end
 
 	; LYRA1 (11)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 44, PIDGEOT,    "@",        SHARP_BEAK
-	db 43, GIRAFARIG,  "@",        TWISTEDSPOON
-	db 45, SUNFLORA,   "@",        MIRACLE_SEED
-	db 45, AZUMARILL,  "@",        MYSTIC_WATER
-	db 46, AMPHAROS,   "@",        MAGNET
+	db 44, PIDGEOT,    "Flappy@",  SHARP_BEAK
+	db 43, GIRAFARIG,  "Riki@",    TWISTEDSPOON
+	db 45, SUNFLORA,   "Sola@",    MIRACLE_SEED
+	db 45, AZUMARILL,  "Ruri@",    MYSTIC_WATER
+	db 46, AMPHAROS,   "Meep@",    MAGNET
 	db 47, TYPHLOSION, "Cinder@",  SITRUS_BERRY
 	db -1 ; end
 
 	; LYRA1 (12)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 44, PIDGEOT,    "@",     SHARP_BEAK
-	db 43, GIRAFARIG,  "@",     TWISTEDSPOON
-	db 45, SUNFLORA,   "@",     MIRACLE_SEED
-	db 45, ARCANINE,   "@",     CHARCOAL
-	db 46, AMPHAROS,   "@",     MAGNET
-	db 47, FERALIGATR, "Toto@", SITRUS_BERRY
+	db 44, PIDGEOT,    "Flappy@", SHARP_BEAK
+	db 43, GIRAFARIG,  "Riki@",   TWISTEDSPOON
+	db 45, SUNFLORA,   "Sola@",   MIRACLE_SEED
+	db 45, ARCANINE,   "Wan@",    CHARCOAL
+	db 46, AMPHAROS,   "Meep@",   MAGNET
+	db 47, FERALIGATR, "Toto@",   SITRUS_BERRY
 	db -1 ; end
 
 Lyra2Group:
 	; LYRA2 (1)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 69, PIDGEOT,   "@",       SHARP_BEAK
-	db 70, ARCANINE,  "@",       CHARCOAL
-	db 70, AZUMARILL, "@",       MYSTIC_WATER
-	db 71, AMPHAROS,  "@",       MAGNET
-	db 68, GIRAFARIG, "@",       TWISTEDSPOON
+	db 69, PIDGEOT,   "Flappy@", SHARP_BEAK
+	db 70, ARCANINE,  "Wan@",    CHARCOAL
+	db 70, AZUMARILL, "Ruri@",   MYSTIC_WATER
+	db 71, AMPHAROS,  "Meep@",   MAGNET
+	db 68, GIRAFARIG, "Riki@",   TWISTEDSPOON
 	db 72, MEGANIUM,  "Chicory", BERRY_JUICE
 	db -1 ; end
 
 	; LYRA2 (2)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 69, PIDGEOT,    "@",        SHARP_BEAK
-	db 70, SUNFLORA,   "@",        MIRACLE_SEED
-	db 70, AZUMARILL,  "@",        MYSTIC_WATER
-	db 71, AMPHAROS,   "@",        MAGNET
-	db 68, GIRAFARIG,  "@",        TWISTEDSPOON
-	db 72, TYPHLOSION, "Cinder@",  BERRY_JUICE
+	db 69, PIDGEOT,    "Flappy@", SHARP_BEAK
+	db 70, SUNFLORA,   "Sola@",   MIRACLE_SEED
+	db 70, AZUMARILL,  "Ruri@",   MYSTIC_WATER
+	db 71, AMPHAROS,   "Meep@",   MAGNET
+	db 68, GIRAFARIG,  "Riki@",   TWISTEDSPOON
+	db 72, TYPHLOSION, "Cinder@", BERRY_JUICE
 	db -1 ; end
 
 	; LYRA2 (3)
 	db "Lyra@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 69, PIDGEOT,    "@",     SHARP_BEAK
-	db 70, SUNFLORA,   "@",     MIRACLE_SEED
-	db 70, ARCANINE,   "@",     CHARCOAL
-	db 71, AMPHAROS,   "@",     MAGNET
-	db 68, GIRAFARIG,  "@",     TWISTEDSPOON
-	db 72, FERALIGATR, "Toto@", BERRY_JUICE
+	db 69, PIDGEOT,    "Flappy@", SHARP_BEAK
+	db 70, SUNFLORA,   "Sola@",   MIRACLE_SEED
+	db 70, ARCANINE,   "Wan@",    CHARCOAL
+	db 71, AMPHAROS,   "Meep@",   MAGNET
+	db 68, GIRAFARIG,  "Riki@",   TWISTEDSPOON
+	db 72, FERALIGATR, "Toto@",   BERRY_JUICE
 	db -1 ; end
 
 BlaineGGroup:
