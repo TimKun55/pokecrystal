@@ -51,6 +51,11 @@ GoldenrodGameCornerPorygonFanScript:
 	writetext GoldenrodGameCornerPorygonFanRareMonText
 	yesorno
 	iffalse .Refused
+	refreshscreen
+	pokepic PORYGON
+	cry PORYGON
+	waitbutton
+	closepokepic
 	special DisplayCoinCaseBalance
 	writetext GoldenrodGameCornerPorygonFanAsk6000CoinsOkayText
 	yesorno
