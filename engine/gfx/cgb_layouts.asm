@@ -55,6 +55,7 @@ CGBLayoutJumptable:
 	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
+	dw _CGB_TrainerCardJohto
 	dw _CGB_TrainerCardKanto
 	dw _CGB_PokedexUnownMode
 	dw _CGB_BillsPC
@@ -1149,6 +1150,72 @@ _CGB_TrainerCard:
 	ld a, FALKNER ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+
+	ld hl, MainCardPals
+	ld de, wBGPals1 palette 2
+	ld bc, 4 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	; fill screen with opposite-gender palette for the card border
+	hlcoord 0, 0, wAttrmap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; kris
+	jr z, .got_gender
+	ld a, $0 ; chris
+.got_gender
+	call ByteFill
+	; fill trainer sprite area with same-gender palette
+	hlcoord 14, 1, wAttrmap
+	lb bc, 7, 5
+	ld a, [wPlayerGender]
+	and a
+	ld a, $0 ; chris
+	jr z, .got_gender2
+	ld a, $1 ; kris
+.got_gender2
+	call FillBoxCGB
+
+	; fill badge area with region palette
+	hlcoord 0, 9, wAttrmap
+	lb bc, 9, 20
+	ld a, $2 
+	call FillBoxCGB
+
+	hlcoord 0, 12, wAttrmap
+	lb bc, 4, 4
+	ld a, $3 
+	call FillBoxCGB
+
+	hlcoord 4, 10, wAttrmap
+	lb bc, 4, 12
+	ld a, $5 
+	call FillBoxCGB
+
+	hlcoord 16, 12, wAttrmap
+	lb bc, 4, 4
+	ld a, $4 
+	call FillBoxCGB
+
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+MainCardPals:
+INCLUDE "gfx/trainer_card/main_card.pal"
+
+_CGB_TrainerCardJohto:
+	ld de, wBGPals1
+	xor a ; ETHAN
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, FALKNER ; KRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
 	ld a, BUGSY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
@@ -1161,12 +1228,19 @@ _CGB_TrainerCard:
 	ld a, CHUCK
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, JASMINE
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+;	ld a, JASMINE
+;	call GetTrainerPalettePointer
+;	call LoadPalette_White_Col1_Col2_Black
 	ld a, PRYCE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+
+	ld hl, JohtoCardPals
+	ld de, wBGPals1 palette 7
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
 	ld hl, .JohtoBadgePalettes
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
@@ -1179,7 +1253,7 @@ _CGB_TrainerCard:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender
-	ld a, $0 ; ethan
+	ld a, $0 ; chris
 .got_gender
 	call ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -1187,23 +1261,31 @@ _CGB_TrainerCard:
 	lb bc, 7, 5
 	ld a, [wPlayerGender]
 	and a
-	ld a, $0 ; ethan
+	ld a, $0 ; chris
 	jr z, .got_gender2
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
-	hlcoord 18, 1, wAttrmap
-	ld [hl], $1
-	hlcoord 3, 10, wAttrmap
+
+	; fill badge area with region palette
+	hlcoord 0, 9, wAttrmap
+	lb bc, 9, 20
+	ld a, $7 ; region colour
+	call FillBoxCGB	
+
+;	; top-right corner still uses the border's palette
+;	hlcoord 18, 1, wAttrmap
+;	ld [hl], $1
+
+	hlcoord 0, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $1 ; falkner
 	call FillBoxCGB
-	hlcoord 7, 10, wAttrmap
+	hlcoord 5, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $2 ; bugsy
 	call FillBoxCGB
-	hlcoord 11, 10, wAttrmap
+	hlcoord 10, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $3 ; whitney
 	call FillBoxCGB
@@ -1211,45 +1293,48 @@ _CGB_TrainerCard:
 	lb bc, 3, 3
 	ld a, $4 ; morty
 	call FillBoxCGB
-	hlcoord 3, 13, wAttrmap
+	hlcoord 0, 14, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; chuck
 	call FillBoxCGB
-	hlcoord 7, 13, wAttrmap
+	hlcoord 5, 14, wAttrmap
 	lb bc, 3, 3
-	ld a, $6 ; jasmine
+	ld a, $5 ; jasmine
 	call FillBoxCGB
-	hlcoord 11, 13, wAttrmap
+	hlcoord 10, 14, wAttrmap
 	lb bc, 3, 3
-	ld a, $7 ; pryce
+	ld a, $6 ; pryce
 	call FillBoxCGB
 	; clair uses kris's palette
-	ld a, [wPlayerGender]
-	and a
-	push af
-	jr z, .got_gender3
-	hlcoord 15, 13, wAttrmap
+;	ld a, [wPlayerGender]
+;	and a
+;	push af
+;	jr z, .got_gender3
+	hlcoord 15, 14, wAttrmap
 	lb bc, 3, 3
 	ld a, $1
 	call FillBoxCGB
-.got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
-.got_gender4
-	ld a, c
-	hlcoord 18, 1, wAttrmap
-	ld [hl], a
+;.got_gender3
+;	pop af
+;	ld c, $0
+;	jr nz, .got_gender4
+;	inc c
+;.got_gender4
+;	ld a, c
+;	hlcoord 18, 1, wAttrmap
+;	ld [hl], a
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
-	
+
 .JohtoBadgePalettes:
 INCLUDE "gfx/trainer_card/johto_badges.pal"
-	
+
+JohtoCardPals:
+INCLUDE "gfx/trainer_card/johto_card.pal"
+
 _CGB_TrainerCardKanto:
  	ld de, wBGPals1
 	xor a ; ETHAN & MISTY
@@ -1270,12 +1355,19 @@ _CGB_TrainerCardKanto:
 	ld a, SABRINA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BLAINE
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+;	ld a, BLAINE
+;	call GetTrainerPalettePointer
+;	call LoadPalette_White_Col1_Col2_Black
 	ld a, BLUE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+
+	ld hl, KantoCardPals
+	ld de, wBGPals1 palette 7
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	
 	ld hl, .KantoBadgePalettes
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
@@ -1301,15 +1393,21 @@ _CGB_TrainerCardKanto:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	hlcoord 3, 10, wAttrmap
+
+	hlcoord 0, 9, wAttrmap
+	lb bc, 9, 20
+	ld a, $7 ; 
+
+	call FillBoxCGB	
+	hlcoord 0, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $2 ; brock
 	call FillBoxCGB
-	hlcoord 7, 10, wAttrmap
+	hlcoord 5, 10, wAttrmap
 	lb bc, 3, 3	
 	ld a, $0 ; misty / ethan
 	call FillBoxCGB
-	hlcoord 11, 10, wAttrmap
+	hlcoord 10, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $3 ; lt.surge / erika
 	call FillBoxCGB
@@ -1317,21 +1415,21 @@ _CGB_TrainerCardKanto:
 	lb bc, 3, 3	
 	ld a, $3 ; erika / lt.surge
 	call FillBoxCGB
-	hlcoord 3, 13, wAttrmap
+	hlcoord 0, 14, wAttrmap
 	lb bc, 3, 3	
 	ld a, $4 ; janine
 	call FillBoxCGB
-	hlcoord 7, 13, wAttrmap
+	hlcoord 5, 14, wAttrmap
 	lb bc, 3, 3	
-	ld a, $5 ; sabrina
+	ld a, $5 ; sabrina / blaine
 	call FillBoxCGB
-	hlcoord 11, 13, wAttrmap
+	hlcoord 10, 14, wAttrmap
 	lb bc, 3, 3
-	ld a, $6 ; blaine
+	ld a, $5 ; blaine / sabrina
 	call FillBoxCGB
-	hlcoord 15, 13, wAttrmap
+	hlcoord 15, 14, wAttrmap
 	lb bc, 3, 3
-	ld a, $7 ; blue
+	ld a, $6 ; blue
 	call FillBoxCGB
 	; top-right corner still uses the border's palette
 	ld a, [wPlayerGender]
@@ -1350,6 +1448,9 @@ _CGB_TrainerCardKanto:
 
 .KantoBadgePalettes:
 INCLUDE "gfx/trainer_card/kanto_badges.pal"
+
+KantoCardPals:
+INCLUDE "gfx/trainer_card/kanto_card.pal"
 
 _CGB_MoveList:
 	ld de, wBGPals1
