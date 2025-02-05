@@ -121,6 +121,7 @@
 	const SPRITE_BIRD_KEEPER ; 75
 	const SPRITE_FOSSILS ; 76
 	const SPRITE_HIKER ; 77
+	const SPRITE_CRYSTAL_TROPHY ; 78
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

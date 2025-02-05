@@ -1376,18 +1376,6 @@ _PPRestoredText::
 	text "PP was restored."
 	prompt
 
-_SentTrophyHomeText::
-	text "There was a trophy"
-	line "inside!@"
-	sound_dex_fanfare_50_79
-	text_start
-
-	para "@"
-	text_ram wPlayerName
-	text " sent the"
-	line "trophy home."
-	prompt
-
 _ItemLooksBitterText::
 	text "It looks bitter…"
 	prompt

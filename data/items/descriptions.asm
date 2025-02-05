@@ -167,8 +167,8 @@ ItemDescriptions:
 	dw FriendBallDesc
 	dw MoonBallDesc
 	dw LoveBallDesc
-	dw NormalBoxDesc
-	dw GorgeousBoxDesc
+	dw TeruSama25Desc
+	dw TeruSama25Desc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
 	dw TeruSama25Desc
@@ -912,14 +912,6 @@ MoonBallDesc:
 LoveBallDesc:
 	db   "For catching the"
 	next "opposite gender.@"
-
-NormalBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
-
-GorgeousBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
 
 SunStoneDesc:
 	db   "Evolves certain"

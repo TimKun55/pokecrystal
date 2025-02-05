@@ -538,7 +538,8 @@
 	const EVENT_DECO_RAICHU_DOLL
 	const EVENT_ESREVNI_HALL_AFTER_BATTLE
 	const EVENT_ESREVNI_HALL_PICK_UP_PRIZE
-; Unused: next 174 events
+	const EVENT_DECO_CRYSTAL_TROPHY
+; Unused: next 173 events
 
 	const_next 800
 ; Trainer flags

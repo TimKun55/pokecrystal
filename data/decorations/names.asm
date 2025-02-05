@@ -13,6 +13,7 @@ DecorationNames:
 	li "Virtual Boy"
 	li "Gold Trophy"
 	li "Silver Trophy"
+	li "Crystal Trophy"
 	li "Surf Pikachu Doll"
 	li " Bed"
 	li " Carpet"
