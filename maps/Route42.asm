@@ -51,9 +51,13 @@ Route42LyraScript1:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	appear ROUTE42_LYRA
 	waitsfx
+	applymovement ROUTE42_LYRA, Route42LyraStepDown
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE42_LYRA, 15
+	pause 15
 	applymovement ROUTE42_LYRA, Route42LyraApproach1
 	sjump Route42LyraScript
 
@@ -62,9 +66,13 @@ Route42LyraScript2:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	appear ROUTE42_LYRA
 	waitsfx
+	applymovement ROUTE42_LYRA, Route42LyraStepDown
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE42_LYRA, 15
+	pause 15
 	applymovement ROUTE42_LYRA, Route42LyraApproach2
 	sjump Route42LyraScript
 
@@ -73,27 +81,38 @@ Route42LyraScript3:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	appear ROUTE42_LYRA
 	waitsfx
+	applymovement ROUTE42_LYRA, Route42LyraStepDown
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE42_LYRA, 15
+	pause 15
 	applymovement ROUTE42_LYRA, Route42LyraApproach3
 	sjump Route42LyraScript
 
 Route42LyraScript4:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	appear ROUTE42_LYRA
 	waitsfx
+	applymovement ROUTE42_LYRA, Route42LyraStepDown
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE42_LYRA, 15
+	pause 15
 	applymovement ROUTE42_LYRA, Route42LyraApproach4
 	sjump Route42LyraScript
 
 Route42LyraScript5:
 	turnobject PLAYER, UP
 	showemote EMOTE_SHOCK, PLAYER, 15
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	appear ROUTE42_LYRA
 	waitsfx
+	pause 15
+	showemote EMOTE_SHOCK, ROUTE42_LYRA, 15
+	pause 15
 	applymovement PLAYER, Route42PlayerStepsBack
 	applymovement ROUTE42_LYRA, Route42LyraStepDown
 
@@ -330,7 +349,6 @@ Route42LyraApproach3:
 Route42LyraApproach2:
 	step DOWN
 Route42LyraApproach1:
-	step DOWN
 	step RIGHT
 	step_end
 
