@@ -1343,7 +1343,7 @@ CopyMysteryGiftReceivedDecorationsToPC:
 .skip
 	inc c
 	ld a, c
-	cp NUM_NON_TROPHY_DECOS
+	cp NUM_DECOS
 	jr c, .loop
 	jp CloseSRAM
 

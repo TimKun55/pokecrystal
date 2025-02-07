@@ -95,8 +95,8 @@
 	const SPRITE_SNES ; 5b
 	const SPRITE_FAMICOM ; 5c
 	const SPRITE_FRUIT_TREE ; 5d
-	const SPRITE_GOLD_TROPHY ; 5e
-	const SPRITE_SILVER_TROPHY ; 5f
+	const SPRITE_TROPHY ; 5e
+	const SPRITE_HIKER ; 5f
 	const SPRITE_KRIS ; 60
 	const SPRITE_KRIS_BIKE ; 61
 	const SPRITE_SUICUNE ; 62
@@ -120,8 +120,6 @@
 	const SPRITE_SCHOOLBOY ; 74
 	const SPRITE_BIRD_KEEPER ; 75
 	const SPRITE_FOSSILS ; 76
-	const SPRITE_HIKER ; 77
-	const SPRITE_CRYSTAL_TROPHY ; 78
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

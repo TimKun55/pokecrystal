@@ -6,6 +6,9 @@
 	const PLAYERSHOUSE1F_MUM5
 	const PLAYERSHOUSE1F_POKEFAN_F
 	const PLAYERSHOUSE1F_PIKACHU
+	const PLAYERSHOUSE1F_SILVER_TROPHY
+	const PLAYERSHOUSE1F_GOLD_TROPHY
+	const PLAYERSHOUSE1F_CRYSTAL_TROPHY
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
@@ -195,6 +198,15 @@ NeighborPikachuScript:
 	closepokepic
 	closetext
 	end
+
+SilverTrophyScript:
+	jumptext SilverTrophyText
+
+GoldTrophyScript:
+	jumptext GoldTrophyText
+
+CrystalTrophyScript:
+	jumptext CrystalTrophyText
 
 PlayersHouse1FTVScript:
 	jumptext PlayersHouse1FTVText
@@ -400,6 +412,30 @@ PlayersHouse1FTVText:
 	line "rolling too!"
 	done
 
+SilverTrophyText:
+	text "A shining"
+	line "silver Trophy."
+	
+	para "Champion:"
+	line "<PLAYER>"
+	done
+
+GoldTrophyText:
+	text "A glittering"
+	line "gold Trophy."
+	
+	para "Grand Champion:"
+	line "<PLAYER>"
+	done
+
+CrystalTrophyText:
+	text "A sparkling"
+	line "crystal Trophy."
+	
+	para "The strongest:"
+	line "<PLAYER>"
+	done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -426,3 +462,6 @@ PlayersHouse1F_MapEvents:
 	object_event  1,  2, SPRITE_MUM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
 	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	object_event  5,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NeighborPikachuScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  4,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverTrophyScript, EVENT_PLAYERS_HOUSE_1F_SILVER_TROPHY
+	object_event  6,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldTrophyScript, EVENT_PLAYERS_HOUSE_1F_GOLD_TROPHY
+	object_event  5,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CrystalTrophyScript, EVENT_PLAYERS_HOUSE_1F_CRYSTAL_TROPHY

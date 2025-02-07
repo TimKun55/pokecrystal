@@ -14,12 +14,16 @@ Red:
 	writetext RedSeenText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_RED
+	iftrue .RedRematch
 	winlosstext RedWinLossText, RedWinLossText
 	loadtrainer RED, RED1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
+	setevent EVENT_BEAT_RED
+.FinishBattle:
 	opentext
 	writetext RedLeavesText
 	waitbutton
@@ -35,6 +39,15 @@ Red:
 	refreshscreen
 	credits
 	end
+
+.RedRematch:
+	winlosstext RedWinLossText, RedWinLossText
+	loadtrainer RED, RED2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	special FadeOutMusic
+	sjump .FinishBattle
 	
 MtSilverPeakPikachu:
 	opentext

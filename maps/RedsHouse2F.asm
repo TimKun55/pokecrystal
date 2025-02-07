@@ -1,7 +1,13 @@
+	object_const_def
+	const REDSHOUSE2F_CRYSTALTROPHY
+
 RedsHouse2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+RedsCrystalTrophyScript:
+	jumptext RedsCrystalTrophyText
 
 RedsHouse2FTVScript:
 	jumptext RedsHouse2FTVText
@@ -11,6 +17,14 @@ RedsHouse2FN64Script:
 
 RedsHouse2FPCScript:
 	jumptext RedsHouse2FPCText
+
+RedsCrystalTrophyText:
+	text "A very impressive"
+	line "trophy."
+	
+	para "There is no name"
+	line "engraved on it."
+	done
 
 RedsHouse2FTVText:
 	text "It's displaying"
@@ -46,3 +60,4 @@ RedsHouse2F_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, RedsHouse2FPCScript
 
 	def_object_events
+	object_event  2,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RedsCrystalTrophyScript, EVENT_REDS_HOUSE_2F_TROPHY

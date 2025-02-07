@@ -35,6 +35,7 @@ HallOfFameEnterScript:
 	writetext HallOfFame_LanceGrandChampionText
 	waitbutton
 	closetext
+	clearevent EVENT_PLAYERS_HOUSE_1F_GOLD_TROPHY
 	sjump .ContinueHoF
 	
 .FirstTimeChampion
@@ -42,6 +43,7 @@ HallOfFameEnterScript:
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
+	clearevent EVENT_PLAYERS_HOUSE_1F_SILVER_TROPHY
 .ContinueHoF
 	turnobject HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
