@@ -336,9 +336,10 @@ Route42SuicuneMovement:
 	fast_jump_step UP
 	fast_jump_step UP
 	fast_jump_step UP
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	fast_jump_step LEFT
 	remove_sliding
 	step_end
 
