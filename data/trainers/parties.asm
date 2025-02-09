@@ -4074,6 +4074,13 @@ GruntFGroup:
 	db 31, GLOOM,      ABSORB, SWEET_SCENT, STUN_SPORE, SLEEP_POWDER
 	db -1 ; end
 
+	; GRUNTF (6)
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 28, ZUBAT
+	db 29, GRIMER
+	db 30, RATICATE
+	db -1 ; end
+
 MysticalmanGroup:
 	; MYSTICALMAN (1)
 	db "Eusine@", TRAINERTYPE_MOVES

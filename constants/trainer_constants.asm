@@ -336,7 +336,7 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_18
 	const GRUNTM_19
 	const GRUNTM_20
-	const GRUNTM_21
+	const GRUNTM_21 ; unused - replaced with Female Grunt
 	const GRUNTM_22 ; unused
 	const GRUNTM_23 ; unused
 	const GRUNTM_24
@@ -757,6 +757,7 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	const GRUNTF_6 ; hideout. 2nd security
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE

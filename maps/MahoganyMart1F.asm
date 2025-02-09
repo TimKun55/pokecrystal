@@ -61,6 +61,7 @@ MahoganyMart1FBlackBeltScript:
 	end
 
 MahoganyMart1FLanceUncoversStaircaseScript:
+	turnobject MAHOGANYMART1F_BLACK_BELT, RIGHT
 	pause 15
 	cry DRAGONITE
 	pause 15
@@ -72,6 +73,7 @@ MahoganyMart1FLanceUncoversStaircaseScript:
 	applymovement MAHOGANYMART1F_DRAGONITE, MahoganyMart1FDragoniteTackleMovement
 	applymovement MAHOGANYMART1F_BLACK_BELT, MahoganyMart1FBlackBeltKnockedBackMovement
 	pause 30
+	playsound SFX_BALL_POOF
 	disappear MAHOGANYMART1F_DRAGONITE
 	pause 15
 	applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPlayerMovement
