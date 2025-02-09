@@ -405,7 +405,7 @@ PokemaniacRonSeenText:
 	cont "#mon!"
 
 	para "Darn it! My #-"
-	line "MON's great!"
+	line "mon's great!"
 	done
 
 PokemaniacRonBeatenText:

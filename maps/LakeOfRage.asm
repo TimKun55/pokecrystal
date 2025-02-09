@@ -366,7 +366,7 @@ LakeOfRageCooltrainerFText:
 	line "ceive me? I saw a"
 
 	para "red Gyarados in"
-	line "the LAKE…"
+	line "the Lake…"
 
 	para "But I thought"
 	line "Gyarados were"

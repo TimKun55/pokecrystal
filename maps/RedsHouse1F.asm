@@ -179,7 +179,7 @@ ReceivedCrystalTrophyText:
 	done
 
 CrystalTrophySentHomeText:
-	text "Crystal Trophy"
+	text "The Crystal Trophy"
 	line "was sent home."
 	done
 	
