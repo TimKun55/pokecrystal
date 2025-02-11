@@ -557,6 +557,12 @@ LancesRoomMaryNoInterviewText:
 	text "Mary: Oh, wait!"
 	line "We haven't done"
 	cont "the interview!"
+	
+	para "<PLAY_G>!"
+	
+	para "Come see me the"
+	line "next time you're"
+	cont "in Goldenrod City!"
 	done
 	
 DragoniteText:

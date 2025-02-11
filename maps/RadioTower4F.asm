@@ -18,6 +18,8 @@ RadioTower4FFisherScript:
 RadioTower4FDJMaryScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .InterviewPlayer
 	checkevent EVENT_GOT_POLKADOT_BOW_FROM_MARY
 	iftrue .GotPolkadotBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
@@ -42,6 +44,130 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_After
 	waitbutton
 .NoRoom:
+	closetext
+	end
+
+.InterviewPlayer
+	checkevent EVENT_MARY_INTERVIEW_AFTER_CHAMPION
+	iftrue .NextInterview2
+	writetext RadioTower4FDJMaryText_Interview1
+	waitbutton
+	closetext
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	readvar VAR_FACING
+	ifnotequal RIGHT, .DontNeedToMove1
+	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
+.DontNeedToMove1
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower4FDJMaryText_IntroducePlayer
+	waitbutton
+	writetext RadioTower4FDJMaryText_IntroduceInterview1
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	turnobject PLAYER, UP
+	writetext RadioTower4FDJMaryText_Interview1Questions
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	writetext RadioTower4FDJMaryText_RegularSchedule
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	writetext RadioTower4FDJMaryText_InterviewGift
+	promptbutton
+	writetext RadioTower4FPikachuDollReceivedText
+	waitbutton
+	playsound SFX_ITEM
+	waitsfx
+	setevent EVENT_DECO_PIKACHU_DOLL
+	writetext RadioTower4FPikachuDollSentHomeText
+	setevent EVENT_MARY_INTERVIEW_AFTER_CHAMPION
+	writetext RadioTower4FDJMaryText_TalkAgain
+	waitbutton
+	closetext
+	end
+
+.NextInterview2:
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iffalse .NoInterview
+	checkevent EVENT_MARY_INTERVIEW_AFTER_POWER_PLANT
+	iftrue .NextInterview3
+	writetext RadioTower4FDJMaryText_Interview2
+	waitbutton
+	closetext
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	readvar VAR_FACING
+	ifnotequal RIGHT, .DontNeedToMove2
+	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
+.DontNeedToMove2
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower4FDJMaryText_IntroducePlayer
+	waitbutton
+	writetext RadioTower4FDJMaryText_IntroduceInterview2
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	turnobject PLAYER, UP
+	writetext RadioTower4FDJMaryText_Interview2Questions
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	writetext RadioTower4FDJMaryText_RegularSchedule
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	writetext RadioTower4FDJMaryText_InterviewGift
+	promptbutton
+	writetext RadioTower4FMareepDollReceivedText
+	waitbutton
+	playsound SFX_ITEM
+	waitsfx
+	setevent EVENT_DECO_MAREEP_DOLL
+	writetext RadioTower4FMareepDollSentHomeText
+	setevent EVENT_MARY_INTERVIEW_AFTER_POWER_PLANT
+	writetext RadioTower4FDJMaryText_TalkAgain
+	waitbutton
+	closetext
+	end
+
+.NextInterview3:
+	checkevent EVENT_GRAND_CHAMPION
+	iffalse .NoInterview
+	checkevent EVENT_MARY_INTERVIEW_AFTER_GRAND_CHAMPION
+	iftrue .NoInterview
+	writetext RadioTower4FDJMaryText_Interview3
+	waitbutton
+	closetext
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	readvar VAR_FACING
+	ifnotequal RIGHT, .DontNeedToMove3
+	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
+.DontNeedToMove3
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower4FDJMaryText_IntroducePlayer
+	waitbutton
+	writetext RadioTower4FDJMaryText_IntroduceInterview3
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	turnobject PLAYER, UP
+	writetext RadioTower4FDJMaryText_Interview3Questions
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	writetext RadioTower4FDJMaryText_RegularSchedule
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	writetext RadioTower4FDJMaryText_InterviewGift
+	promptbutton
+	writetext RadioTower4FRaichuDollReceivedText
+	waitbutton
+	playsound SFX_ITEM
+	waitsfx
+	setevent EVENT_DECO_RAICHU_DOLL
+	writetext RadioTower4FRaichuDollSentHomeText
+	setevent EVENT_MARY_INTERVIEW_AFTER_GRAND_CHAMPION
+	writetext RadioTower4FDJMaryText_TalkAgain
+	waitbutton
+	closetext
+	end
+
+.NoInterview
+	writetext RadioTower4FDJMaryText_ThanksForInterview
+	waitbutton
 	closetext
 	end
 
@@ -107,6 +233,11 @@ RadioTower4FProductionSign:
 RadioTower4FStudio2Sign:
 	jumptext RadioTower4FStudio2SignText
 
+RadioTower4FPlayerWalksToMicrophoneMovement:
+	slow_step DOWN
+	slow_step RIGHT
+	step_end
+
 RadioTower4FFisherText:
 	text "I listened to the"
 	line "radio while I was"
@@ -146,6 +277,286 @@ RadioTower4FDJMaryText_After:
 
 	para "Oak's #mon Talk"
 	line "show."
+	done
+
+RadioTower4FDJMaryText_Interview1:
+	text "Oh, you're hear to"
+	line "discuss becoming"
+	cont "Champion after the"
+	cont "battle with Lance?"
+
+	para "Thanks so much for"
+	line "taking me up on my"
+	cont "offer!"
+	done
+
+RadioTower4FDJMaryText_Interview2:
+	text "Oh, you're hear to"
+	line "discuss restoring"
+	cont "power to Kanto and"
+	cont "helping with the"
+	cont "Magnet Train?"
+
+	para "Thanks so much!"
+	done
+
+RadioTower4FDJMaryText_Interview3:
+	text "Oh, you're hear to"
+	line "discuss becoming"
+	cont "Grand Champion"
+	cont "after earning the"
+	cont "Badges of Kanto?"
+
+	para "Thanks so much!"
+	done
+
+RadioTower4FDJMaryText_IntroducePlayer:
+	text "Listeners!"
+
+	para "In the studio, a"
+	line "very special guest"
+	cont "just dropped in!"
+	done
+
+RadioTower4FDJMaryText_IntroduceInterview1:
+	text "Please welcome"
+	line "<PLAYER>, who"
+	cont "recently defeated"
+	cont "Lance and became"
+	cont "the latest trainer"
+	cont "to become the"
+	cont "#mon Champion!"
+	done
+
+RadioTower4FDJMaryText_IntroduceInterview2:
+	text "Please welcome"
+	line "<PLAYER>, who"
+	cont "recently defeated"
+	cont "Team Rocket again"
+	cont "and helped restore"
+	cont "power to Kanto and"
+	cont "the Magnet Train!"
+	done
+
+RadioTower4FDJMaryText_IntroduceInterview3:
+	text "Please welcome"
+	line "<PLAYER>, who"
+	cont "recently defeated"
+	cont "the Gym Leaders of"
+	cont "Kanto, is our new"
+	cont "Grand Champion and"
+	cont "is one of the most"
+	cont "accomplished and"
+	cont "talented trainers!"
+	done
+
+RadioTower4FDJMaryText_Interview1Questions:
+	text "<PLAYER>, please"
+	line "give us some idea"
+	cont "of the struggles"
+	cont "you went through"
+	cont "to achieve this"
+	cont "accomplishment."
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Can you"
+	line "please elaborate?"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: So exciting!"
+
+	para "Well we've used up"
+	line "enough of the"
+	cont "Champion's time,"
+	cont "so that's all for"
+	cont "now."
+
+	para "Thanks for joining"
+	line "us today! Feel"
+	cont "free to drop in as"
+	cont "you achieve more!"
+	done
+
+RadioTower4FDJMaryText_Interview2Questions:
+	text "<PLAYER>, please"
+	line "give us some idea"
+	cont "of what it was"
+	cont "like facing down"
+	cont "Team Rocket again."
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Can you"
+	line "please elaborate?"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: The former"
+	line "Boss?!"
+	
+	para "<PLAYER>: … … …"
+
+	para "Mary: So exciting!"
+
+	para "And how did you"
+	line "help restore the"
+	cont "power in Kanto?"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Oh my!"
+	line "It was in the Gym,"
+	cont "you say?!"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Amazing!"
+
+	para "Well we've used up"
+	line "enough of your"
+	cont "time, so that's"
+	cont "all for now."
+
+	para "Thanks for joining"
+	line "us today! Feel"
+	cont "free to drop in as"
+	cont "you achieve even"
+	cont "more!"
+	done
+
+RadioTower4FDJMaryText_Interview3Questions:
+	text "<PLAYER>, please"
+	line "give us some idea"
+	cont "of what it was"
+	cont "like traveling"
+	cont "around Kanto!"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Wow!"
+	line "It was just laying"
+	cont "laying there?"
+	
+	para "What did you do?"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Interesting!"
+
+	para "And what about"
+	line "your defeat of the"
+	cont "Kanto Leaders?"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: She was on"
+	line "a date? Goodness!"
+
+	para "<PLAYER>: … … …"
+
+	para "Mary: Relocated"
+	line "because of the"
+	cont "Volcano?"
+	
+	para "Wow, the Kanto"
+	line "Leaders sure are"
+	cont "Interesting!"
+
+	para "Not only have you"
+	line "defeated them, but"
+	cont "you took on the"
+	cont "Elite Four and"
+	cont "Champion Lance"
+	cont "again and won!"
+	
+	para "You're such an"
+	line "amazing trainer!"
+	
+	para "Not only did you"
+	line "save us from Team"
+	cont "Rocket, you went"
+	cont "to Kanto and made"
+	cont "sure they were"
+	cont "gone for good!"
+	
+	para "All while on your"
+	line "own journey!"
+	
+	para "On behalf of the"
+	line "people of Johto"
+	cont "and I'm sure the"
+	cont "people of Kanto,"
+	cont "too; Thank you for"
+	cont "your services!"
+
+	para "Well we've used up"
+	line "enough of your"
+	cont "time, so that's"
+	cont "all for now."
+
+	para "Thanks for joining"
+	line "us today! Feel"
+	cont "free to drop in as"
+	cont "you achieve even"
+	cont "more!"
+	done
+
+RadioTower4FDJMaryText_RegularSchedule:
+	text "And now back to"
+	line "regular program!"
+	done
+
+RadioTower4FDJMaryText_InterviewGift:
+	text "And here's a very"
+	line "special thank you"
+	cont "for your time."
+	done
+	
+RadioTower4FPikachuDollReceivedText:
+	text "<PLAYER> received a"
+	line "Pikachu Doll."
+	done
+
+RadioTower4FMareepDollReceivedText:
+	text "<PLAYER> received a"
+	line "Mareep Doll."
+	done
+
+RadioTower4FRaichuDollReceivedText:
+	text "<PLAYER> received a"
+	line "Raichu Doll."
+	done
+
+RadioTower4FPikachuDollSentHomeText:
+	text "The Pikachu Doll"
+	line "was sent home."
+	done
+
+RadioTower4FMareepDollSentHomeText:
+	text "The Mareep Doll"
+	line "was sent home."
+	done
+
+RadioTower4FRaichuDollSentHomeText:
+	text "The Raichu Doll"
+	line "was sent home."
+	done
+
+RadioTower4FDJMaryText_TalkAgain:
+	text "I can't wait to"
+	line "talk to you again!"
+	done
+
+RadioTower4FDJMaryText_ThanksForInterview:
+	text "Thanks for the"
+	line "interview!"
+
+	para "And don't forget,"
+	line "my listeners are"
+	cont "eager to hear more"
+	cont "of your stories!"
 	done
 
 RadioTowerMeowthText:
@@ -265,7 +676,7 @@ RadioTower4F_MapEvents:
 
 	def_object_events
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
+	object_event 14,  5, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  1, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RadioTowerProton, EVENT_RADIO_TOWER_ROCKET_TAKEOVER

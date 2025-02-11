@@ -226,9 +226,6 @@ INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 TilesetBattleTowerOutsideGFX::
 INCBIN "gfx/tilesets/battle_tower_outside.2bpp.lz"
 
-TilesetFacilityGFX::
-INCBIN "gfx/tilesets/facility.2bpp.lz"
-
 TilesetCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
@@ -604,3 +601,6 @@ INCBIN "data/tilesets/kanto_7_attributes.bin"
 
 TilesetKanto6Attr::
 INCBIN "data/tilesets/kanto_6_attributes.bin"
+
+TilesetFacilityGFX::
+INCBIN "gfx/tilesets/facility.2bpp.lz"

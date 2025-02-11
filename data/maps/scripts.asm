@@ -59,7 +59,6 @@ INCLUDE "maps/NationalParkBugContest.asm"
 INCLUDE "maps/RadioTower1F.asm"
 INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
-INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronOddishDollHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
@@ -554,5 +553,6 @@ INCLUDE "maps/PewterMuseum2F.asm"
 SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/EsrevniHall1F.asm"
+INCLUDE "maps/RadioTower4F.asm"
 
 ENDSECTION
