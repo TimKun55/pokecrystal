@@ -153,12 +153,12 @@ RadioTower4FDJMaryScript:
 	turnobject RADIOTOWER4F_TEACHER, DOWN
 	writetext RadioTower4FDJMaryText_InterviewGift
 	promptbutton
-	writetext RadioTower4FRaichuDollReceivedText
+	writetext RadioTower4FTeddiursaDollReceivedText
 	waitbutton
 	playsound SFX_ITEM
 	waitsfx
-	setevent EVENT_DECO_RAICHU_DOLL
-	writetext RadioTower4FRaichuDollSentHomeText
+	setevent EVENT_DECO_TEDDIURSA_DOLL
+	writetext RadioTower4FTeddiursaDollSentHomeText
 	setevent EVENT_MARY_INTERVIEW_AFTER_GRAND_CHAMPION
 	writetext RadioTower4FDJMaryText_TalkAgain
 	waitbutton
@@ -524,9 +524,9 @@ RadioTower4FMareepDollReceivedText:
 	line "Mareep Doll."
 	done
 
-RadioTower4FRaichuDollReceivedText:
+RadioTower4FTeddiursaDollReceivedText:
 	text "<PLAYER> received a"
-	line "Raichu Doll."
+	line "Teddiursa Doll."
 	done
 
 RadioTower4FPikachuDollSentHomeText:
@@ -539,8 +539,8 @@ RadioTower4FMareepDollSentHomeText:
 	line "was sent home."
 	done
 
-RadioTower4FRaichuDollSentHomeText:
-	text "The Raichu Doll"
+RadioTower4FTeddiursaDollSentHomeText:
+	text "The Teddiursa Doll"
 	line "was sent home."
 	done
 
