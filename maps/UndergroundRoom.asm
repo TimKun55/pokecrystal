@@ -475,9 +475,9 @@ UndergroundArianaBeatenText:
 UndergroundArianaAfterBattleText:
 	text "By losing to you"
 	line "again, I've lost"
-	cont "the right to do or"
 	
-	para "say anything else."
+	para "the right to do or"
+	line "say anything else."
 	done
 	
 WeavileText:
@@ -488,8 +488,8 @@ UndergroundRoomComputerText:
 	text "Is this some kind"
 	line "of GPS system?"
 	
-	para "It seems to be"
-	line "showing the west"
+	para "This looks like"
+	line "the north-west"
 	cont "side of Kanto."
 	done
 
@@ -510,4 +510,4 @@ UndergroundRoom_MapEvents:
 	object_event  4,  8, SPRITE_PETREL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, ExecutivePetrel, EVENT_KANTO_ROCKET_DISBAND
 	object_event  8, 10, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveProton, EVENT_KANTO_ROCKET_DISBAND
 	object_event  9, 10, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, ExecutiveAriana, EVENT_KANTO_ROCKET_DISBAND
-	object_event 14, 19, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_KANTO_ROCKET_DISBAND
+	object_event 17, 15, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_KANTO_ROCKET_DISBAND

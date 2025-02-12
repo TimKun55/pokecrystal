@@ -155,7 +155,7 @@ ENDM
 	map_const VICTORY_ROAD_1F,                             14, 18 ; 90
 	map_const VICTORY_ROAD_2F,                             22, 11 ; 91
 	map_const VICTORY_ROAD_3F,                             23, 12 ; 92
-	map_const UNDERGROUND_ROOM,                             9, 10 ; 93
+	map_const UNDERGROUND_ROOM,                             9,  8 ; 93
 	map_const CERULEAN_CAVE_1F,                            17, 11 ; 94
 	map_const CERULEAN_CAVE_2F,                            17, 11 ; 95	
 	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 96
