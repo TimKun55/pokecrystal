@@ -228,8 +228,9 @@ Route37Entei1Movement:
 Route37Entei2Movement:
 	set_sliding
 	fast_jump_step LEFT
-	fast_jump_step LEFT
 	fast_jump_step UP
+	fast_jump_step LEFT
+	fast_jump_step LEFT
 	remove_sliding
 	step_end
 
