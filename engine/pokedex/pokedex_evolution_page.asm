@@ -204,6 +204,8 @@ ENDC
 	call z, EVO_happiness
 	cp EVOLVE_STAT
 	call z, EVO_stats
+	cp EVOLVE_MOVE
+	call z, EVO_move
 IF DEF(EVOLVE_HELD)	
 	cp EVOLVE_HELD
 	call z, EVO_held
@@ -535,6 +537,26 @@ EVO_stats:
 	db "ATK > DEF@"
 .atk_lt_def_text:
 	db "ATK < DEF@"
+
+EVO_move:
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	call EVO_inchlcoord
+	push af ; item index
+	ld de, .knowing_text
+	call PlaceString ; item:
+
+	pop af ; item index
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+
+	call EVO_inchlcoord
+	call PlaceString
+	call EVO_inchlcoord
+	ret
+
+.knowing_text:
+	db "Knowing@"
 
 IF DEF(EVOLVE_HELD)
 EVO_held:

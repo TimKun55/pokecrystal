@@ -751,7 +751,6 @@ Evos_Page:
 	ld hl, vTiles2 tile $62
 	lb bc, BANK(Pokedex_ExtraTiles), 31 ; 30 ; 10
 	call Request2bpp
-
 	call Pokedex_LoadInversedFont
 	ld a, $0
 	ldh [rVBK], a
@@ -1803,6 +1802,70 @@ Pokedex_DrawDexEntryScreenBG:
 		$77, $78, " ", \ ; AREA
 		$7d, $7e, \ ; EVO
 		$31, $7b, $7c, -1 ; PICS
+
+Pokedex_DrawNewDexEntryScreenBG:
+	hlcoord 0, 0
+	lb bc, 15, 18
+	call Pokedex_PlaceBorder
+	hlcoord 19, 0
+	ld [hl], $34
+	hlcoord 19, 1
+	ld a, " "
+	ld b, 15
+	call Pokedex_FillColumn
+	ld [hl], $39
+
+; clear the row for bottom menu
+	hlcoord 1, 17
+	ld bc, SCREEN_WIDTH - 2
+	ld a, " "
+	call ByteFill
+	ld c, 4
+	call DelayFrames
+; erase the bottom half of screen where info will go
+	lb bc, 8, SCREEN_WIDTH - 1 ; 8 tiles high, 19 tiles wide
+	hlcoord 1, 8 
+	call ClearBox
+; horizonal skinny line ending in the page num tab
+	hlcoord 1, 8
+	ld bc, 19
+	ld a, $55
+	call ByteFill
+; plain horizontal line
+	hlcoord 8, 5
+	ld a, $4e ; VRAM 1
+	ld bc, 12
+	call ByteFill
+; place species name
+	ld a, [wTempSpecies]
+	ld [wCurSpecies], a
+	farcall DisplayDexMonType_CustomGFX
+	call GetPokemonName
+	hlcoord 9, 3
+	call PlaceString ; mon species	
+; .print_dex_num ; Print dex number
+	hlcoord 10, 1
+	ld a, $5c ; No
+	ld [hli], a
+	ld a, $e8 ; .
+	ld [hli], a
+	ld de, wTempSpecies
+	call Pokedex_GetDexNumber
+	ld de, wUnusedBCDNumber
+
+	call GetPokemonNumber
+	hlcoord 12, 1
+	call PlaceString
+	call Pokedex_PlaceFrontpicTopLeftCorner
+; Check to see if we caught it.  Get out of here if we haven't.
+	ld a, [wTempSpecies]
+	dec a
+	call CheckCaughtMon
+	ret z
+; place Caught ball icon
+	hlcoord 16, 1
+	ld [hl], $4f ; pokeball icon
+	ret
 
 Pokedex_LoadTextboxSpaceGFX:
 	nop
@@ -3492,7 +3555,7 @@ _NewPokedexEntry:
 	call Pokedex_LoadAnyFootprint
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
-	call Pokedex_DrawDexEntryScreenBG
+	call Pokedex_DrawNewDexEntryScreenBG
 	call Pokedex_DrawFootprint
 	hlcoord 0, 17
 	ld [hl], $3b
