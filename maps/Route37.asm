@@ -61,7 +61,6 @@ Route37Entei1bScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	applymovement PLAYER, Route37PlayerMovement1
-	turnobject PLAYER, RIGHT
 .Entei1Leave
 	playsound SFX_WARP_FROM
 	applymovement ROUTE37_ENTEI, Route37Entei1Movement
@@ -83,7 +82,6 @@ Route37Entei2aScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	applymovement PLAYER, Route37PlayerMovement2
-	turnobject PLAYER, UP
 	sjump Route37Entei2bScript.Entei2Leave
 
 Route37Entei2bScript:
@@ -210,10 +208,12 @@ Route37HiddenEther:
 
 Route37PlayerMovement1:
 	big_step LEFT
+	turn_head RIGHT
 	step_end
 
 Route37PlayerMovement2:
 	big_step DOWN
+	turn_head UP
 	step_end
 
 Route37Entei1Movement:

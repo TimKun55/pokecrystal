@@ -102,6 +102,7 @@ RedGyarados:
 	end
 
 LakeOfRageRaikou:
+	faceplayer
 	cry RAIKOU
 	pause 20
 	loadwildmon RAIKOU, 40
@@ -109,6 +110,7 @@ LakeOfRageRaikou:
 	startbattle
 	disappear LAKEOFRAGE_RAIKOU
 	reloadmapafterbattle
+	setevent EVENT_FOUGHT_RAIKOU
 	setmapscene ROUTE_38, SCENE_ROUTE38_NOOP
 	setevent EVENT_SAW_RAIKOU_ON_ROUTE_38
 	setmapscene ROUTE_44, SCENE_ROUTE44_NOOP

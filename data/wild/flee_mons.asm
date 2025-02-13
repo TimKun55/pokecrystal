@@ -2,8 +2,6 @@ FleeMons:
 ; referenced by TryEnemyFlee and FastBallMultiplier
 
 SometimesFleeMons:
-	db RAIKOU
-	db ENTEI
 	db -1
 
 OftenFleeMons:

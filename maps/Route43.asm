@@ -34,17 +34,27 @@ Route43CheckIfRocketsScene:
 	setmapscene ROUTE_43_GATE, SCENE_ROUTE43GATE_NOOP
 	endcallback
 
-Route43RaikouScript:
+
+Route43RaikouScriptBottom:
+	turnobject PLAYER, UP
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
-	applymovement PLAYER, Route43PlayerMovement
-	pause 15
+	turnobject ROUTE43_RAIKOU, RIGHT
 	showemote EMOTE_SHOCK, ROUTE43_RAIKOU, 15
-	turnobject ROUTE43_RAIKOU, DOWN
+	pause 15
+	sjump Route43RaikouScriptTop.RaikouLeave
+
+Route43RaikouScriptTop:
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	turnobject ROUTE43_RAIKOU, RIGHT
+	showemote EMOTE_SHOCK, ROUTE43_RAIKOU, 15
+	pause 15
+	applymovement PLAYER, Route43PlayerMovement
+.RaikouLeave
 	playsound SFX_WARP_FROM
-	applymovement ROUTE43_RAIKOU, Route43RaikouMovement1
-	turnobject PLAYER, DOWN
-	applymovement ROUTE43_RAIKOU, Route43RaikouMovement2
+	applymovement ROUTE43_RAIKOU, Route43RaikouMovement
 	disappear ROUTE43_RAIKOU
 	pause 10
 	setscene SCENE_ROUTE43_NOOP
@@ -335,22 +345,15 @@ Route43MaxEther:
 	itemball MAX_ETHER
 
 Route43PlayerMovement:
-	slow_step UP
+	big_step DOWN
+	turn_head UP
 	step_end
 
-Route43RaikouMovement1:
+Route43RaikouMovement:
 	set_sliding
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-Route43RaikouMovement2:
-	set_sliding
-	fast_jump_step DOWN
 	fast_jump_step RIGHT
 	fast_jump_step RIGHT
-	fast_jump_step UP
-	fast_jump_step UP
+	fast_jump_step RIGHT
 	fast_jump_step UP
 	fast_jump_step UP
 	remove_sliding
@@ -563,7 +566,8 @@ Route43_MapEvents:
 	warp_event 18, 31, ROUTE_43_GATE, 2
 
 	def_coord_events
-	coord_event  5, 39, SCENE_ROUTE43_RAIKOU, Route43RaikouScript
+	coord_event  3, 29, SCENE_ROUTE43_RAIKOU, Route43RaikouScriptBottom
+	coord_event  4, 28, SCENE_ROUTE43_RAIKOU, Route43RaikouScriptTop
 
 	def_bg_events
 	bg_event 13,  3, BGEVENT_READ, Route43Sign1
@@ -575,9 +579,9 @@ Route43_MapEvents:
 	object_event 13, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacBrent, -1
 	object_event 14,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
 	object_event  4, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
-	object_event  9, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
+	object_event 18, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
 	object_event 13, 40, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
 	object_event  9, 44, SPRITE_LADY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerLadyKai, -1
 	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event 12, 32, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
-	object_event  5, 37, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_43
+	object_event  2, 28, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_43

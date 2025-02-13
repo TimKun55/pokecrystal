@@ -543,7 +543,9 @@
 	const EVENT_ESREVNI_HALL_PICK_UP_PRIZE
 	const EVENT_GOT_CRYSTAL_TROPHY
 	const EVENT_BEAT_RED
-; Unused: next 172 events
+	const EVENT_FOUGHT_RAIKOU
+	const EVENT_FOUGHT_ENTEI
+; Unused: next 170 events
 
 	const_next 800
 ; Trainer flags

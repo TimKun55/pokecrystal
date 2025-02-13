@@ -16,23 +16,8 @@ BeastHouseGrannyScript:
 	closetext
 	end
 	
-RaikouStatueScript:
-	opentext
-	writetext StatueText
-	waitbutton
-	setval RAIKOU
-	special ShowPokedexEntry
-	closetext
-	end
-
-EnteiStatueScript:
-	opentext
-	writetext StatueText
-	waitbutton
-	setval ENTEI
-	special ShowPokedexEntry
-	closetext
-	end
+StatueScript:
+	jumptext StatueText
 	
 GrannyBeastsText:
 	text "Hello, dear."
@@ -64,9 +49,6 @@ GrannyBeastsText:
 	
 	para "truly represent"
 	line "their majesty!"
-	
-	para "Please, check"
-	line "them out!"
 	done
 	
 StatueText:
@@ -88,5 +70,5 @@ CianwoodBeastsHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BeastHouseGrannyScript, -1
-	object_event  3,  1, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, RaikouStatueScript, -1
-	object_event  4,  1, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, EnteiStatueScript, -1
+	object_event  3,  1, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, StatueScript, -1
+	object_event  4,  1, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, StatueScript, -1

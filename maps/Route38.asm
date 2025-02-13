@@ -23,18 +23,14 @@ Route38Noop2Scene:
 	end
 
 Route38Raikou1aScript:
-	readvar VAR_FACING
-	ifequal DOWN, .Raikou1aContinue
 	turnobject PLAYER, DOWN
-.Raikou1aContinue
+	pause 15
 	turnobject ROUTE38_RAIKOU, UP
 	sjump Route38Raikou1bScript.Route38RaikouLeave
 
 Route38Raikou1bScript:
-	readvar VAR_FACING
-	ifequal RIGHT, .Raikou1bContinue
 	turnobject PLAYER, RIGHT
-.Raikou1bContinue
+	pause 15
 	turnobject ROUTE38_RAIKOU, LEFT
 .Route38RaikouLeave
 	showemote EMOTE_SHOCK, PLAYER, 15

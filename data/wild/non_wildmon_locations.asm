@@ -57,6 +57,8 @@ EventWildMons::
 	specialencounter SUDOWOODO, EVENT_FOUGHT_SUDOWOODO, 			ROUTE_36, SudowoodoEvent_Str
 	specialencounter GYARADOS, 	EVENT_LAKE_OF_RAGE_RED_GYARADOS, 	LAKE_OF_RAGE, ShinyGyarados_Str
 	specialencounter SNORLAX, 	EVENT_FOUGHT_SNORLAX, 				ROUTE_11, SnorlaxEvent_Str
+	specialencounter RAIKOU,	EVENT_FOUGHT_RAIKOU, 				LAKE_OF_RAGE, RaikouEvent_Str ; will not normally be seen by player w/o Dex Splash Page, may need new EVENT constant
+	specialencounter ENTEI, 	EVENT_FOUGHT_ENTEI, 				BURNED_TOWER_B1F, EnteiEvent_Str ; will not normally be seen by player w/o Dex Splash Page, may need new EVENT constant
 	specialencounter SUICUNE,	EVENT_FOUGHT_SUICUNE, 				TIN_TOWER_1F, SuicuneEvent_Str ; will not normally be seen by player w/o Dex Splash Page, may need new EVENT constant
 	specialencounter CELEBI, 	EVENT_CELEBI_FATEFUL_ENCOUNTER, 	ILEX_FOREST, CelebiEvent_Str ; will not normally be seen by player w/o Dex Splash Page, may need new EVENT constant
 	specialencounter LUGIA, 	EVENT_FOUGHT_LUGIA, 				WHIRL_ISLAND_LUGIA_CHAMBER, LugiaEvent_Str ; will not normally be seen by player w/o Dex Splash Page, may need new EVENT constant
@@ -89,6 +91,14 @@ SnorlaxEvent_Str:
 	db 	 "Guaranteed to be"
 	next "holding Leftovers."
 	next "Lvl 60.@"
+RaikouEvent_Str:
+	db 	 "After the Bell."
+	next "Rain and trees."
+	next "Lvl 40.@"
+EnteiEvent_Str:
+	db 	 "After the Bell."
+	next "Returns home."
+	next "Lvl 40.@"
 SuicuneEvent_Str:
 	db 	 "Clear Bell is the"
 	next "key to the hunt."

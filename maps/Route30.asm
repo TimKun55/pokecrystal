@@ -26,13 +26,7 @@ Route30Noop2Scene:
 	end
 
 Route30EnteiScript:
-	readvar VAR_FACING
-	ifequal UP, .EnteiReposition
-	sjump .Route30EnteiScriptCont
-
-.EnteiReposition	
 	turnobject PLAYER, RIGHT
-.Route30EnteiScriptCont
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	showemote EMOTE_SHOCK, ROUTE30_ENTEI, 15
@@ -42,7 +36,6 @@ Route30EnteiScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	applymovement PLAYER, Route30PlayerMovement
-	turnobject PLAYER, UP
 	playsound SFX_WARP_FROM
 	applymovement ROUTE30_ENTEI, Route30EnteiMovement
 	disappear ROUTE30_ENTEI
@@ -289,6 +282,7 @@ Route30_MikeysRattataAttacksMovement:
 
 Route30PlayerMovement:
 	big_step DOWN
+	turn_head UP
 	step_end
 
 Route30EnteiMovement:

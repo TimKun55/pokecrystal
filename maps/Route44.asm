@@ -28,10 +28,7 @@ Route44Noop2Scene:
 	end
 
 Route44Raikou1Script:
-	readvar VAR_FACING
-	ifequal UP, .Raikou1Continue
 	turnobject PLAYER, UP
-.Raikou1Continue
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	showemote EMOTE_SHOCK, ROUTE44_RAIKOU, 15
@@ -40,14 +37,11 @@ Route44Raikou1Script:
 	sjump Route44Raikou2Script.RaikouLeave
 
 Route44Raikou2Script:
-	readvar VAR_FACING
-	ifequal LEFT, .Raikou2Continue
 	turnobject PLAYER, LEFT
-.Raikou2Continue
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	showemote EMOTE_SHOCK, ROUTE44_RAIKOU, 15
-	turnobject ROUTE44_RAIKOU, DOWN
+	turnobject ROUTE44_RAIKOU, RIGHT
 	pause 15
 .RaikouLeave
 	playsound SFX_WARP_FROM
@@ -634,4 +628,4 @@ Route44_MapEvents:
 	object_event 30,  8, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
-	object_event  8,  4, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_44
+	object_event  8,  4, SPRITE_RAIKOU, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_RAIKOU_ON_ROUTE_44
