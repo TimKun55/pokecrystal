@@ -972,6 +972,7 @@ BirdKeeperGroup:
 LassGroup:
 	; LASS (1)
 	db "Carrie@", TRAINERTYPE_MOVES
+	db 18, EEVEE,      DOUBLE_KICK, SWIFT, QUICK_ATTACK, MUD_SLAP
 	db 20, GIRAFARIG,  PSYBEAM, STOMP, PURSUIT, TACKLE
 	db -1 ; end
 
@@ -2816,6 +2817,7 @@ HikerGroup:
 
 	; HIKER (18)
 	db "Daniel@", TRAINERTYPE_NORMAL
+	db 13, TYROGUE
 	db 13, ONIX
 	db -1 ; end
 

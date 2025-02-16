@@ -451,6 +451,10 @@ BoarderDouglasAfterBattleText:
 
 	para "to strengthen his"
 	line "mind and body."
+	
+	para "I think Cianwood's"
+	line "Chuck has started"
+	cont "doing the same."
 	done
 
 SkierRoxanneSeenText:

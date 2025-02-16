@@ -99,8 +99,7 @@ PewterMuseum2FGrampsText:
 	
 	para "the armor as a"
 	line "reminder of that"
-	
-	para "Cubone's kindness."
+	cont "Cubone's kindness."
 	
 	para "I donated the set"
 	line "to the Museum to"
