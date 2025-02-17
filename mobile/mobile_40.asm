@@ -6205,7 +6205,7 @@ Function102bac:
 	ld [wCurPartyMon], a
 	call LowVolume
 	call ClearSprites
-	farcall _MobileStatsScreenInit
+	farcall _MobileSummaryScreenInit
 	ld a, [wCurPartyMon]
 	inc a
 	ld [wMenuCursorY], a

@@ -146,7 +146,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_WATERFALL,   MonMenu_Waterfall
 	dbw MONMENUITEM_ROCKSMASH,   MonMenu_RockSmash
 	dbw MONMENUITEM_SWEETSCENT,  MonMenu_SweetScent
-	dbw MONMENUITEM_STATS,       OpenPartyStats
+	dbw MONMENUITEM_SUMMARY,     OpenPartyStats
 	dbw MONMENUITEM_SWITCH,      SwitchPartyMons
 	dbw MONMENUITEM_ITEM,        GiveTakePartyMonItem
 	dbw MONMENUITEM_CANCEL,      CancelPokemonAction
@@ -739,7 +739,7 @@ _OpenPartyStats:
 	call LoadStandardMenuHeader
 	call ClearSprites
 	call LowVolume
-	predef StatsScreenInit
+	predef SummaryScreenInit
 	call MaxVolume
 	call Call_ExitMenu
 	ld a, 0
@@ -1253,7 +1253,7 @@ SetUpMoveScreenBG:
 	call ClearSprites
 	xor a
 	ldh [hBGMapMode], a
-	farcall LoadStatsScreenPageTilesGFX
+	farcall LoadSummaryScreenPageTilesGFX
 	farcall ClearSpriteAnims2
 	ld a, [wCurPartyMon]
 	ld e, a

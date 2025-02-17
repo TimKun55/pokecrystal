@@ -51,9 +51,9 @@
 
 	charmap " ",         $7f ; gfx/frames/space.png
 
-	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
-	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
-	charmap "<DEX_⁂>",   $64 ; gfx/stats/stats_tiles.png, tile 14, VRAM0
+	; needed for SummaryScreen_PlaceShinyIcon and PrintPartyMonPage1
+	charmap "⁂",         $3f ; gfx/summary/summary_tiles.png, tile 14
+	charmap "<DEX_⁂>",   $64 ; gfx/summary/summary_tiles.png, tile 14, VRAM0
 
 ; Actual characters (from gfx/font/font.png)
 

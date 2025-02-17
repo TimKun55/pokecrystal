@@ -131,7 +131,7 @@ GetMonSubmenuItems:
 	call CanUseFreshSnack
 
 .skip_moves
-	ld a, MONMENUITEM_STATS
+	ld a, MONMENUITEM_SUMMARY
 	call AddMonMenuItem
 	ld a, MONMENUITEM_SWITCH
 	call AddMonMenuItem
@@ -165,7 +165,7 @@ GetMonSubmenuItems:
 	ret
 
 .egg
-	ld a, MONMENUITEM_STATS
+	ld a, MONMENUITEM_SUMMARY
 	call AddMonMenuItem
 	ld a, MONMENUITEM_SWITCH
 	call AddMonMenuItem
@@ -262,7 +262,7 @@ BattleMonMenu:
 
 .MenuHeader:
 	db 0 ; flags
-	menu_coords 11, 9, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 10, 9, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
@@ -270,7 +270,7 @@ BattleMonMenu:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
 	db 4 ; items
 	db "Switch@"
-	db "Stats@"
+	db "Summary@"
 	db "Moves@"
 	db "Cancel@"
 	

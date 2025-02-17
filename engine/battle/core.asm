@@ -5103,13 +5103,13 @@ BattleMenuPKMN_Loop:
 	jr c, .PressedB
 	call PlaceHollowCursor
 	ld a, [wMenuCursorY]
-	cp $1 ; SWITCH
+	cp $1 ; Switch
 	jp z, TryPlayerSwitch
-	cp $2 ; STATS
-	jr z, .Stats
-	cp $3 ; MOVES
+	cp $2 ; Summary
+	jr z, .Summary
+	cp $3 ; Moves
 	jr z, .Moves
-	cp $4 ; CANCEL
+	cp $4 ; Cancel
 	jr z, .Cancel
 	jr .loop
 
@@ -5118,8 +5118,8 @@ BattleMenuPKMN_Loop:
 	jr c, .Cancel
 	jr BattleMenuPKMN_Loop
 
-.Stats:
-	call Battle_StatsScreen
+.Summary:
+	call Battle_SummaryScreen
 	call CheckMobileBattleError
 	jr c, .Cancel
 	jp BattleMenuPKMN_ReturnFromStats
@@ -5154,7 +5154,7 @@ BattleMenuPKMN_Loop:
 	farcall MobileBattleMonMenu
 	ret
 
-Battle_StatsScreen:
+Battle_SummaryScreen:
 	call DisableLCD
 
 	ld hl, vTiles2 tile $31
@@ -5173,7 +5173,7 @@ Battle_StatsScreen:
 	call LowVolume
 	xor a ; PARTYMON
 	ld [wMonType], a
-	farcall BattleStatsScreenInit
+	farcall BattleSummaryScreenInit
 	call MaxVolume
 
 	call DisableLCD
@@ -8142,7 +8142,7 @@ PlaceExpBar:
 	hlcoord 9, 0 ; coord of HP bar label, usually 0,9
 	ld a, [hl]
 	ld b, $62
-	cp $e8 ; if we are in stats screen
+	cp $e8 ; if we are in summary screen
 	jr nz, .inbattle
 	ld b, $54
 .inbattle

@@ -1,9 +1,9 @@
-LinkMonStatsScreen:
+LinkMonSummaryScreen:
 	ld a, [wMenuCursorY]
 	dec a
 	ld [wCurPartyMon], a
 	call LowVolume
-	predef StatsScreenInit
+	predef SummaryScreenInit
 	ld a, [wCurPartyMon]
 	inc a
 	ld [wMenuCursorY], a

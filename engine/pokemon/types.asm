@@ -1,6 +1,6 @@
 PrintMonTypes:
 ; Print one or both types of [wCurSpecies]
-; on the stats screen at hl.
+; on the summary screen at hl.
 
 	push hl
 	call GetBaseData

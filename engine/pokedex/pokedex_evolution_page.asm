@@ -49,7 +49,7 @@ ENDC
 	call PlaceString
 
 	ld a, -1
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	call EVO_DrawSpriteBox
 
 	hlcoord 6, 2
@@ -67,7 +67,7 @@ IF EVO_HIDE_UNSEEN == TRUE
 ENDC
 
 	xor a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	
 	ld a, [wCurPartySpecies]
 	dec a
@@ -237,13 +237,13 @@ ENDC
 	inc hl ; if there's a next EVO entry, points to Evo +1 now
 	push af ; manner of next evo
 	ld a, c
-	ld [wStatsScreenFlags], a ; current page slot counter
+	ld [wSummaryScreenFlags], a ; current page slot counter
 	pop af ; manner of next evo 
 	and a ; checks if evo left in stage
 	jr z, .done_stage
 
 	push af
-	ld a, c ; ld a, [wStatsScreenFlags]
+	ld a, c ; ld a, [wSummaryScreenFlags]
 	cp 3
 	jp z, .exit_early_print_cont
 	pop af
@@ -321,17 +321,17 @@ ENDC
 	ld a, [wCurDamage]
 	and a
 	jr nz, .done_multi
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	cp 1
 	jr nz, .not_single
 .not_single
 	xor a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	ret
 .done_multi
 	ld a, b
 	inc a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	ld a, -1
 	ld [wCurDamage + 1], a
 
@@ -806,7 +806,7 @@ ENDC
 
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 .determine_mon_slot1:
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	ld b, $40
 	ld hl, vTiles2 tile $40
 	cp -1
@@ -823,7 +823,7 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ld hl, vTiles2 tile $58
 	ret
 .determine_mon_slot2:
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	ld b, $44
 	ld hl, vTiles2 tile $44
 	cp -1
@@ -841,7 +841,7 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	ret
 
 .determine_paladdr:
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	ld de, wBGPals1 palette 1 ; + 2
 	cp -1
 	ret z
@@ -888,7 +888,7 @@ EVO_place_Mon_Icon:
 	push bc
 	push de
 	push hl
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	inc a
 	ldh [hObjectStructIndex], a
 	ld hl, LoadMenuMonIcon
@@ -910,7 +910,7 @@ EVO_DrawSpriteBox:
 ; white rectangle/squares
 
 	call EVO_gethlcoord
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	cp -1
 	jr z, .stage1
 	cp 1
@@ -1083,7 +1083,7 @@ EVO_place_CaughtIcon:
 	and a
 	jr z, .done
 	call EVO_gethlcoord
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	cp -1
 	jr z, .stage1
 	cp 1

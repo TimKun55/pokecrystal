@@ -524,7 +524,7 @@ Pokedex_PrintBaseEVs:
 	call PlaceString
 	
 	ld a, $6
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	jp .prep_stack
 .start_print
 	ld a, [wBaseHPAtkDefSpdEVs]
@@ -604,7 +604,7 @@ Pokedex_PrintBaseEVs:
 	call PlaceString
 	call .dec_stack_count
 .ev_done
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	and a
 	ret z
 	call .dec_stack_count
@@ -641,9 +641,9 @@ Pokedex_PrintBaseEVs:
 	push hl
 	jp .start_print
 .dec_stack_count:
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	dec a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	ret
 ENDC
 

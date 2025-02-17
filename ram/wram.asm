@@ -1653,8 +1653,8 @@ wDebugTilesetRGBJumptableIndex:: db
 wDebugTilesetCurColor:: db
 
 NEXTU
-; stats screen
-wStatsScreenFlags:: db
+; summary screen
+wSummaryScreenFlags:: db
 
 NEXTU
 ; battle tower

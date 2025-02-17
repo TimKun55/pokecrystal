@@ -31,7 +31,7 @@ BlkPacket_Battle:
 	attr_blk_data %011, 2,2,0, 00,04, 08,11 ; player mon: pal 2
 	attr_blk_data %011, 3,3,0, 11,00, 19,07 ; enemy mon : pal 3
 
-BlkPacket_StatsScreen:
+BlkPacket_SummaryScreen:
 	attr_blk 1
 	attr_blk_data %111, 1,1,0, 00,01, 07,07 ; mon: pal 1
 	ds 8, 0

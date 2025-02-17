@@ -477,16 +477,16 @@ Pokedex_InitAnimatedMonIcon:
 	ld [wCurIcon], a
 	call GetMemIconGFX
 
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	cp 11
 	jr nz, .evo_page
 	ld a, -1
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	ld d, $88
 	ld e, $20
 	jr .setxdone
 .evo_page
-	ld a, [wStatsScreenFlags]
+	ld a, [wSummaryScreenFlags]
 	inc a
 ; y coord
 	ld c, 32
@@ -575,8 +575,8 @@ GetIconGFX:
 	ret
 
 HeldItemIcons:
-INCBIN "gfx/stats/mail.2bpp"
-INCBIN "gfx/stats/item.2bpp"
+INCBIN "gfx/summary/mail.2bpp"
+INCBIN "gfx/summary/item.2bpp"
 
 GetIcon_de:
 ; Load icon graphics into VRAM starting from tile de.

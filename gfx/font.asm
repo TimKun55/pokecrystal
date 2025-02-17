@@ -17,8 +17,8 @@ INCBIN "gfx/frames/8.1bpp"
 INCBIN "gfx/frames/9.1bpp"
 	assert_table_length NUM_FRAMES
 
-StatsScreenPageTilesGFX:
-INCBIN "gfx/stats/stats_tiles.2bpp"
+SummaryScreenPageTilesGFX:
+INCBIN "gfx/summary/summary_tiles.2bpp"
 
 EnemyHPBarBorderGFX:
 INCBIN "gfx/battle/enemy_hp_bar_border.1bpp"
@@ -33,7 +33,7 @@ TownMapGFX:
 INCBIN "gfx/pokegear/town_map.2bpp.lz"
 
 TextboxSpaceGFX:
-; StatsScreen_LoadTextboxSpaceGFX reads 2bpp; LoadFrame reads first half as 1bpp
+; SummaryScreen_LoadTextboxSpaceGFX reads 2bpp; LoadFrame reads first half as 1bpp
 INCBIN "gfx/font/space.2bpp"
 
 MobilePhoneTilesGFX:

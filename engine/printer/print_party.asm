@@ -148,9 +148,9 @@ PrintPartyMonPage1:
 	lb bc, BANK(GBPrinterLvIcon), 1
 	call Request1bpp
 
-	ld de, StatsScreenPageTilesGFX + 14 tiles ; shiny icon
+	ld de, SummaryScreenPageTilesGFX + 14 tiles ; shiny icon
 	ld hl, vTiles2 tile "⁂"
-	lb bc, BANK(StatsScreenPageTilesGFX), 1
+	lb bc, BANK(SummaryScreenPageTilesGFX), 1
 	call Get2bpp
 
 	xor a

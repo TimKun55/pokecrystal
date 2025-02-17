@@ -42,7 +42,7 @@ PredefPointers::
 	add_predef Unused_PlaceEnemyHPLevel
 	add_predef ListMovePP
 	add_predef GetGender
-	add_predef StatsScreenInit
+	add_predef SummaryScreenInit
 	add_predef DrawPlayerHP
 	add_predef DrawEnemyHP
 	add_predef PrintTempMonStats

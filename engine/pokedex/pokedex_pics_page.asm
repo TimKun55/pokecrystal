@@ -15,7 +15,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	ret
 
 .AnimateMon:
-	ld hl, wStatsScreenFlags
+	ld hl, wSummaryScreenFlags
 	set 5, [hl]
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
@@ -44,7 +44,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	ld d, $0
 	ld e, ANIM_MON_MENU
 	predef LoadMonAnimation
-	ld hl, wStatsScreenFlags
+	ld hl, wSummaryScreenFlags
 	set 6, [hl]
 	ret
 
@@ -72,7 +72,7 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	ret
 
 .Pokedex_WaitAnim:
-	ld hl, wStatsScreenFlags
+	ld hl, wSummaryScreenFlags
 	bit 6, [hl]
 	jr nz, .try_anim
 	bit 5, [hl]
@@ -82,11 +82,11 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 .try_anim
 	farcall SetUpPokeAnim
 	jr nc, .finish
-	ld hl, wStatsScreenFlags
+	ld hl, wSummaryScreenFlags
 	res 6, [hl]
 	ret
 .finish
-	ld hl, wStatsScreenFlags
+	ld hl, wSummaryScreenFlags
 	res 5, [hl]
 	farcall HDMATransferTilemapToWRAMBank3
 	ret
@@ -148,7 +148,7 @@ ENDC
 
 ; load the icon sprite
 	ld a, 11
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	xor a
 	ldh [hObjectStructIndex], a
 	ld hl, LoadMenuMonIcon

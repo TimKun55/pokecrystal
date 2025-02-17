@@ -15,7 +15,7 @@ Pokedex_DetailedArea:
 	ld [wCurDamage + 1], a
 	ld [wPokedexEvoStage2], a ; highest lvl
 	ld [wPokedexEvoStage3], a ; lowest lvl
-	ld [wStatsScreenFlags], a ; misc counters
+	ld [wSummaryScreenFlags], a ; misc counters
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_AREA_NONE
 	ret z

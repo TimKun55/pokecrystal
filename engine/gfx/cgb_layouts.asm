@@ -34,7 +34,7 @@ CGBLayoutJumptable:
 	dw _CGB_BattleGrayscale
 	dw _CGB_BattleColors
 	dw _CGB_PokegearPals
-	dw _CGB_StatsScreenHPPals
+	dw _CGB_SummaryScreenHPPals
 	dw _CGB_Pokedex
 	dw _CGB_Pokedex_EvoPage
 	dw _CGB_Pokedex_PicsPage
@@ -267,7 +267,7 @@ _CGB_PokegearPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_StatsScreenHPPals:
+_CGB_SummaryScreenHPPals:
 	ld de, wBGPals1
 	ld a, [wCurHPPal]
 	ld l, a
@@ -284,14 +284,14 @@ _CGB_StatsScreenHPPals:
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette, palette 2
 
-	ld hl, StatsScreenPagePals
+	ld hl, SummaryScreenPagePals
 	ld de, wBGPals1 palette 3 ; palettes 3 & 4
 	ld bc, 2 palettes ; pink, green, blue, ( and orange page) palettes
 	; NOTE: Won't hurt anything if you don't have a 4th stats page, just leave it
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	call LoadStatsScreenStatusIconPalette
+	call LoadSummaryScreenStatusIconPalette
 
 ; Load Pokemon's Type Palette(s)
 	call GetBaseData
@@ -356,11 +356,11 @@ _CGB_StatsScreenHPPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
-StatsScreenPagePals:
-INCLUDE "gfx/stats/pages.pal"
+SummaryScreenPagePals:
+INCLUDE "gfx/summary/pages.pal"
 
-StatsScreenPals:
-INCLUDE "gfx/stats/stats.pal"
+SummaryScreenPals:
+INCLUDE "gfx/summary/summary.pal"
 
 _CGB_Pokedex:
 	ld de, wBGPals1

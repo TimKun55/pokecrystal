@@ -1296,7 +1296,7 @@ LinkTradeOTPartymonMenuLoop:
 	ld [wInitListType], a
 	callfar InitList
 	ld hl, wOTPartyMon1Species
-	farcall LinkMonStatsScreen
+	farcall LinkMonSummaryScreen
 	jp LinkTradePartiesMenuMasterLoop
 
 .not_a_button
@@ -1485,7 +1485,7 @@ LinkTrade_TradeStatsMenu:
 	ld a, INIT_PLAYEROT_LIST
 	ld [wInitListType], a
 	callfar InitList
-	farcall LinkMonStatsScreen
+	farcall LinkMonSummaryScreen
 	call SafeLoadTempTilemapToTilemap
 	hlcoord 6, 1
 	lb bc, 6, 1

@@ -90,7 +90,7 @@ LoadHPBar:
 	call Get2bppViaHDMA
 	ret
 
-StatsScreen_LoadFont:
+SummaryScreen_LoadFont:
 	call _LoadFontsBattleExtra
 	ld de, EnemyHPBarBorderGFX
 	ld hl, vTiles2 tile $6c
@@ -116,9 +116,9 @@ StatsScreen_LoadFont:
 	ld hl, vTiles2 tile $73
 	lb bc, BANK(ExpBarNameGFX), 4
 	call Get2bppViaHDMA
-LoadStatsScreenPageTilesGFX:
-	ld de, StatsScreenPageTilesGFX
+LoadSummaryScreenPageTilesGFX:
+	ld de, SummaryScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(StatsScreenPageTilesGFX), 27 ; Loading More Tiles than in Vanilla
+	lb bc, BANK(SummaryScreenPageTilesGFX), 27 ; Loading More Tiles than in Vanilla
 	call Get2bppViaHDMA
 	ret

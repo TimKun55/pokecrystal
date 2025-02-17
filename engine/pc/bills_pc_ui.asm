@@ -166,9 +166,9 @@ BillsPC_LoadUI:
 	dec [hl]
 
 	; Shiny star
-	ld de, StatsScreenPageTilesGFX + 14 tiles
+	ld de, SummaryScreenPageTilesGFX + 14 tiles
 	ld hl, vTiles2 tile $43
-	lb bc, BANK(StatsScreenPageTilesGFX), 1
+	lb bc, BANK(SummaryScreenPageTilesGFX), 1
 	call Get2bpp
 
 	; Box frame tiles and Pokérus symbol
@@ -1542,7 +1542,7 @@ BillsPC_MenuStrings:
 	; pokémon management options
 	db "Withdraw@"
 	db "Deposit@"
-	db "Stats@"
+	db "Summary@"
 	db "Switch@"
 	db "Moves@"
 	db "Item@"
@@ -1564,7 +1564,7 @@ BillsPC_MenuJumptable:
 	dw DoNothing
 	dw BillsPC_Withdraw
 	dw BillsPC_Deposit
-	dw BillsPC_Stats
+	dw BillsPC_Summary
 	dw BillsPC_Switch
 	dw BillsPC_Moves
 	dw BillsPC_Item
@@ -1578,7 +1578,7 @@ BillsPC_MenuJumptable:
 	dw BillsPC_BagItem
 	dw BillsPC_GiveItem
 
-BillsPC_Stats:
+BillsPC_Summary:
 	call BillsPC_PrepareTransistion
 	ld a, BUFFERMON
 	ld [wMonType], a

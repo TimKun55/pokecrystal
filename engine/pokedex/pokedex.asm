@@ -637,7 +637,7 @@ Moves_Page:
 	ret
 
 Area_Page:
-	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wStatsScreenFlags
+	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wSummaryScreenFlags
 	push af
 	call Pokedex_GetSelectedMon
 	xor a
@@ -666,11 +666,11 @@ Area_Page:
 	farcall Pokedex_DetailedArea
 	call WaitBGMap
 	pop af
-	ld [wPrevDexEntryJumptableIndex], a ; same ram as wStatsScreenFlags
+	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ret
 
 Area_Page_map:
-	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wStatsScreenFlags
+	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wSummaryScreenFlags
 	push af
 	call LoadTilemapToTempTilemap
 	call Pokedex_BlackOutBG
@@ -704,11 +704,11 @@ Area_Page_map:
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
 	pop af
-	ld [wPrevDexEntryJumptableIndex], a ; same ram as wStatsScreenFlags
+	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ret
 
 Evos_Page:
-	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wStatsScreenFlags
+	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wSummaryScreenFlags
 	ld b, a
 	ld a, [wPokedexEntryType]
 	ld c, a
@@ -718,7 +718,7 @@ Evos_Page:
 	push de
 
 	xor a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	ld a, [wLastDexMode]
 	cp -1
 	jr z, .handle_recursed
@@ -781,7 +781,7 @@ Evos_Page:
 	ld a, [hl]
 	bit B_BUTTON_F, a
 	jr nz, .evo_exit
-	ld a, [wStatsScreenFlags] ; page/continue evo line flag
+	ld a, [wSummaryScreenFlags] ; page/continue evo line flag
 	and a
 	jr z, .no_second_page
 	ld hl, hJoyPressed
@@ -833,7 +833,7 @@ Evos_Page:
 	pop de
 	pop bc
 	ld a, b
-	ld [wPrevDexEntryJumptableIndex], a ; same ram as wStatsScreenFlags
+	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ld a, c
 	ld [wPokedexEntryType], a
 	ld a, d
@@ -871,7 +871,7 @@ Evos_Page:
 
 ; SpriteAnim:
 Pics_Page:
-	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wStatsScreenFlags
+	ld a, [wPrevDexEntryJumptableIndex] ; same ram as wSummaryScreenFlags
 	ld b, a
 	ld a, [wPokedexEntryType]
 	ld c, a
@@ -949,7 +949,7 @@ ENDC
 	call GetPokemonName
 	call PlaceString
 	xor a
-	ld [wStatsScreenFlags], a
+	ld [wSummaryScreenFlags], a
 	farcall Pokedex_PlaceAnimatedFrontpic
 	farcall Pokedex_PlaceBackPic
 	farcall Dex_Pics_DrawBorder	
@@ -988,7 +988,7 @@ ENDC
 	pop de
 	pop bc
 	ld a, b
-	ld [wPrevDexEntryJumptableIndex], a ; same ram as wStatsScreenFlags
+	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ld a, c
 	ld [wPokedexEntryType], a
 	ld a, d
@@ -1018,7 +1018,7 @@ ENDC
 	pop de
 	pop bc
 	ld a, b
-	ld [wPrevDexEntryJumptableIndex], a ; same ram as wStatsScreenFlags
+	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ld a, c
 	ld [wPokedexEntryType], a
 	ld a, d

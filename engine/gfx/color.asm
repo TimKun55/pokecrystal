@@ -314,7 +314,7 @@ LoadPlayerBattleCGBLayoutStatusIconPalette:
 .player_gotstatus
 	ld d, a
 	jp LoadPlayerStatusIconPalette
-LoadStatsScreenStatusIconPalette:
+LoadSummaryScreenStatusIconPalette:
 	ld de, wTempMonStatus
 	predef GetStatusConditionIndex
 	; index is in 'd'
@@ -648,10 +648,10 @@ ApplyHPBarPals:
 	call FillBoxCGB
 	ret
 
-LoadStatsScreenPals:
+LoadSummaryScreenPals:
 	call CheckCGB
 	ret z
-	ld hl, StatsScreenPals
+	ld hl, SummaryScreenPals
 	ld b, 0
 	add hl, bc
 	add hl, bc
@@ -659,7 +659,7 @@ LoadStatsScreenPals:
 	push af
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
-	ld a, [hli] ; byte 1 of the stats screen page color
+	ld a, [hli] ; byte 1 of the summary screen page color
 	ld [wBGPals1 palette 0], a ; into slot 1 byte 1 of pal 0
 	ld [wBGPals1 palette 2], a ; into slot 1 byte 1 of pal 2
 	ld [wBGPals1 palette 6], a ; into slot 1 byte 1 of pal 6
@@ -1712,10 +1712,10 @@ INCLUDE "data/maps/environment_colors.asm"
 INCLUDE "gfx/types_cats_status_pals.asm"
 
 PartyMenuBGMobilePalette:
-INCLUDE "gfx/stats/party_menu_bg_mobile.pal"
+INCLUDE "gfx/summary/party_menu_bg_mobile.pal"
 
 PartyMenuBGPalette:
-INCLUDE "gfx/stats/party_menu_bg.pal"
+INCLUDE "gfx/summary/party_menu_bg.pal"
 
 BillsPC_ThemePals:
 	table_width PAL_COLOR_SIZE * 4, BillsPC_ThemePals
@@ -1745,7 +1745,7 @@ DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
 
 PartyMenuOBPals:
-INCLUDE "gfx/stats/party_menu_ob.pal"
+INCLUDE "gfx/summary/party_menu_ob.pal"
 
 UnusedBattleObjectPals: ; unreferenced
 INCLUDE "gfx/battle_anims/unused_battle_anims.pal"

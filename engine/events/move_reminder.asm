@@ -382,7 +382,7 @@ ChooseMoveToLearn:
 	; This is used for displaying the symbol that
 	; appears before the Pokémon's level. Without
 	; it, an incorrect symbol will appear.
-	farcall LoadStatsScreenPageTilesGFX
+	farcall LoadSummaryScreenPageTilesGFX
 
 	; This displays the Pokémon's species
 	; name (not nickname) at the
