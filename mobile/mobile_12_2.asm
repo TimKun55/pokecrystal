@@ -638,7 +638,7 @@ MobileOnlyThreeMonMayEnterText:
 	text_end
 
 Function4ad56:
-	farcall OpenPartyStats
+	farcall OpenPartySummary
 	call WaitBGMap2
 	ret
 

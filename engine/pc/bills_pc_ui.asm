@@ -1582,7 +1582,7 @@ BillsPC_Summary:
 	call BillsPC_PrepareTransistion
 	ld a, BUFFERMON
 	ld [wMonType], a
-	newfarcall _OpenPartyStats
+	newfarcall _OpenPartySummary
 	jp BillsPC_ReturnFromTransistion
 
 BillsPC_CursorPick1:

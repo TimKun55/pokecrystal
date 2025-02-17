@@ -287,7 +287,7 @@ _CGB_SummaryScreenHPPals:
 	ld hl, SummaryScreenPagePals
 	ld de, wBGPals1 palette 3 ; palettes 3 & 4
 	ld bc, 2 palettes ; pink, green, blue, ( and orange page) palettes
-	; NOTE: Won't hurt anything if you don't have a 4th stats page, just leave it
+	; NOTE: Won't hurt anything if you don't have a 4th summary page, just leave it
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 

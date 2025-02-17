@@ -146,7 +146,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_WATERFALL,   MonMenu_Waterfall
 	dbw MONMENUITEM_ROCKSMASH,   MonMenu_RockSmash
 	dbw MONMENUITEM_SWEETSCENT,  MonMenu_SweetScent
-	dbw MONMENUITEM_SUMMARY,     OpenPartyStats
+	dbw MONMENUITEM_SUMMARY,     OpenPartySummary
 	dbw MONMENUITEM_SWITCH,      SwitchPartyMons
 	dbw MONMENUITEM_ITEM,        GiveTakePartyMonItem
 	dbw MONMENUITEM_CANCEL,      CancelPokemonAction
@@ -730,12 +730,12 @@ TakeMail:
 	text_far _MailSentToPCText
 	text_end
 
-OpenPartyStats:
+OpenPartySummary:
 ; PartyMon
 	xor a
 	ld [wMonType], a
 	; fallthrough
-_OpenPartyStats:
+_OpenPartySummary:
 	call LoadStandardMenuHeader
 	call ClearSprites
 	call LowVolume
