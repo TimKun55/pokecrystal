@@ -96,13 +96,13 @@ SummaryScreenMobile:
 	ret
 
 SummaryScreenPointerTable:
-	dw MonStatsInit       ; regular pokémon
-	dw EggStatsInit       ; egg
+	dw MonSummaryInit       ; regular pokémon
+	dw EggSummaryInit       ; egg
 	dw SummaryScreenWaitCry
-	dw EggStatsJoypad
+	dw EggSummaryJoypad
 	dw SummaryScreen_LoadPage
 	dw SummaryScreenWaitCry
-	dw MonStatsJoypad
+	dw MonSummaryJoypad
 	dw SummaryScreen_Exit
 
 SummaryScreen_WaitAnim:
@@ -137,7 +137,7 @@ SummaryScreen_Exit:
 	set 7, [hl]
 	ret
 
-MonStatsInit:
+MonSummaryInit:
 	ld hl, wSummaryScreenFlags
 	res 6, [hl]
 	call ClearBGPalettes
@@ -159,14 +159,14 @@ MonStatsInit:
 	call SummaryScreen_SetJumptableIndex
 	ret
 
-EggStatsInit:
+EggSummaryInit:
 	call EggSummaryScreen
 	ld a, [wJumptableIndex]
 	inc a
 	ld [wJumptableIndex], a
 	ret
 
-EggStatsJoypad:
+EggSummaryJoypad:
 	call SummaryScreen_GetJoypad
 	bit A_BUTTON_F, a
 	jr nz, .quit
@@ -224,7 +224,7 @@ SummaryScreen_LoadPage:
 	ld [wJumptableIndex], a
 	ret
 
-MonStatsJoypad:
+MonSummaryJoypad:
 	call SummaryScreen_GetJoypad
 	jr nc, .next
 	ld h, 0
@@ -439,7 +439,7 @@ SummaryScreen_InitUpperHalf:
 	farcall ComputeHPBarPixels
 	ld hl, wCurHPPal
 	call SetHPPal
-	ld b, SCGB_STATS_SCREEN_HP_PALS
+	ld b, SCGB_SUMMARY_SCREEN_HP_PALS
 	call GetSGBLayout
 	call DelayFrame
 	ret
@@ -1290,15 +1290,12 @@ SummaryScreen_LoadTextboxSpaceGFX:
 	pop hl
 	ret
 
-SummaryScreenSpaceGFX: ; unreferenced
-INCBIN "gfx/font/space.2bpp"
-
 EggSummaryScreen:
 	xor a
 	ldh [hBGMapMode], a
 	ld hl, wCurHPPal
 	call SetHPPal
-	ld b, SCGB_STATS_SCREEN_HP_PALS
+	ld b, SCGB_SUMMARY_SCREEN_HP_PALS
 	call GetSGBLayout
 	call SummaryScreen_PlaceHorizontalDivider
 	ld de, EggString
