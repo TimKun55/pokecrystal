@@ -91,6 +91,6 @@ CeladonHotelPool_MapEvents:
 
 	def_object_events
 	object_event 10,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonHotelPoolTwinScript, -1
-	object_event  3,  4, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SWIM_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSwimmerMTony, -1
+	object_event  3,  4, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SWIM_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSwimmerMTony, -1
 	object_event  5,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHotelPoolPokefanMScript, -1
 	object_event  7,  3, SPRITE_SURFING_PIKACHU, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, CeladonHotelPoolSurfingPikachuScript, -1
