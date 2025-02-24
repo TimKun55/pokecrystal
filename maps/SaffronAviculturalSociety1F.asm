@@ -277,8 +277,8 @@ SaffronAviculturalSociety1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  9, SAFFRON_CITY, 16
 	warp_event  5,  9, SAFFRON_CITY, 16
+	warp_event  6,  9, SAFFRON_CITY, 16
 	warp_event 11,  0, SAFFRON_AVICULTURAL_SOCIETY_2F, 1
 
 	def_coord_events
