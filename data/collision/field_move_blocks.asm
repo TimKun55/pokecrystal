@@ -81,6 +81,7 @@ CutTreeBlockPointers:
 WhirlpoolBlockPointers:
 	dbw TILESET_JOHTO,   .johto
 	dbw TILESET_JOHTO_3, .johto_3
+	dbw TILESET_JOHTO_4, .johto_4
 	db -1 ; end
 
 .johto:
@@ -92,4 +93,10 @@ WhirlpoolBlockPointers:
 .johto_3
 ; facing block, replacement block, animation
 	db $23, $26, 0
+	db -1 ; end
+
+.johto_4
+; facing block, replacement block, animation
+	db $bb, $25, 0
+	db $bd, $be, 0
 	db -1 ; end

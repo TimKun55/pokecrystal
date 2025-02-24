@@ -1,6 +1,11 @@
 	object_const_def
 	const MTSILVERPEAK_RED
 	const MTSILVERPEAK_PIKACHU
+	const MTSILVERPEAK_ROCK1
+	const MTSILVERPEAK_ROCK2
+	const MTSILVERPEAK_ROCK3
+	const MTSILVERPEAK_POKE_BALL1
+	const MTSILVERPEAK_POKE_BALL2
 
 MtSilverPeak_MapScripts:
 	def_scene_scripts
@@ -61,6 +66,15 @@ MtSilverPeakPikachu:
 	closetext
 	end
 
+MtSilverPeakRock:
+	jumpstd SmashRockScript
+
+MtSilverPeakMaxRevive:
+	itemball MAX_REVIVE
+
+MtSilverPeakMaxFullRestore:
+	itemball FULL_RESTORE
+
 RedSeenText:
 	text "<……>"
 	line "<……>"
@@ -83,12 +97,17 @@ MtSilverPeak_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 27, MT_SILVER_ROOM_2, 2
+	warp_event 15, 41, MT_SILVER_ROOM_2, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  9,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
-	object_event 10,  4, SPRITE_PIKACHU_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverPeakPikachu, EVENT_RED_IN_MT_SILVER
+	object_event 15,  9, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
+	object_event 16,  9, SPRITE_PIKACHU_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverPeakPikachu, EVENT_RED_IN_MT_SILVER
+	object_event 20, 40, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1
+	object_event 11, 41, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1
+	object_event 23, 31, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1
+	object_event 25, 36, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtSilverPeakMaxRevive, EVENT_MT_SILVER_PEAK_MAX_REVIVE
+	object_event  7, 31, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtSilverPeakMaxFullRestore, EVENT_MT_SILVER_PEAK_FULL_RESTORE

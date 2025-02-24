@@ -114,6 +114,14 @@ JohtoWaterWildMons:
 	db 20, POLITOED,      70,  72
 	end_water_wildmons
 
+	def_water_wildmons MT_SILVER_PEAK
+	db 2 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, SLOWKING,      70,  73
+	db 20, KINGDRA,       70,  73
+	db 20, POLITOED,      70,  73
+	end_water_wildmons
+
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
