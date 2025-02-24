@@ -213,7 +213,30 @@ PokemonJournalBillScript:
 	jumptext PokemonJournalBillText
 	
 BillsHousePCScript:
-	jumptext BillsHousePCText
+	opentext 
+	writetext BillsHousePCText1
+	waitbutton
+	refreshscreen
+	pokepic PORYGON
+	cry PORYGON
+	waitbutton
+	closepokepic
+	writetext BillsHousePCText2
+	waitbutton
+	refreshscreen
+	pokepic PORYGON2
+	cry PORYGON2
+	waitbutton
+	closepokepic
+	writetext BillsHousePCText3
+	waitbutton
+	refreshscreen
+	pokepic PORYGON_Z
+	cry PORYGON_Z
+	waitbutton
+	closepokepic
+	closetext
+	end
 
 BillsGrandpaIntroText:
 	text "Hm? You know Bill?"
@@ -378,10 +401,30 @@ PokemonJournalBillText:
 	line "Abra."
 	done
 	
-BillsHousePCText:
+BillsHousePCText1:
 	text "There's a spinning"
 	line "3D model of a"
 	cont "Porygon."
+	done
+
+BillsHousePCText2:	
+	text "The edges are"
+	line "slowly smoothing"
+	cont "out…"
+	
+	para "It's a spinning"
+	line "Porygon2!"
+	done
+
+BillsHousePCText3:
+	text "Wait."
+	
+	para "It looks like the"
+	line "model is starting"
+	cont "to glitch out…"
+	
+	para "Woah! It glitched"
+	line "into a Porygon-Z!"
 	done
 
 BillsHouse_MapEvents:
