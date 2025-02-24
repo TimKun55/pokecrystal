@@ -1,11 +1,11 @@
 	object_const_def
-	const DRAGONSDENB1F_POKE_BALL1
 	const DRAGONSDENB1F_CLAIR
 	const DRAGONSDENB1F_RIVAL
 	const DRAGONSDENB1F_COOLTRAINER_M
 	const DRAGONSDENB1F_COOLTRAINER_F
 	const DRAGONSDENB1F_TWIN1
 	const DRAGONSDENB1F_TWIN2
+	const DRAGONSDENB1F_POKE_BALL1
 	const DRAGONSDENB1F_POKE_BALL2
 	const DRAGONSDENB1F_POKE_BALL3
 
@@ -54,13 +54,8 @@ DragonsDenB1F_ClairScene:
 	opentext
 	writetext ClairText_GiveDragonbreathDragonDen
 	promptbutton
-	giveitem TM_DRAGONBREATH
+	verbosegiveitem TM_DRAGONBREATH
 	iffalse .BagFull
-	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
-	writetext Text_ReceivedTM24
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext ClairText_DescribeDragonbreathDragonDen
 	promptbutton
@@ -195,14 +190,9 @@ ClairText_GiveDragonbreathDragonDen:
 	line "my apology."
 	done
 
-Text_ReceivedTM24:
-	text "<PLAYER> received"
-	line "TM24."
-	done
-
 ClairText_DescribeDragonbreathDragonDen:
-	text "That contains"
-	line "DragonBreath."
+	text "Clair: That cont-"
+	line "ains DragonBreath."
 
 	para "No, it doesn't"
 	line "have anything to"
@@ -225,10 +215,10 @@ ClairText_NoRoom:
 	done
 
 ClairText_WhatsTheMatterDragonDen:
-	text "Clair: What's the"
-	line "matter? Aren't you"
+	text "What's the matter?"
+	line "Aren't you going"
 
-	para "going on to the"
+	para "on to the"
 	line "#mon League?"
 
 	para "Do you know how to"
@@ -388,25 +378,25 @@ DragonsDenB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 20,  3, DRAGONS_DEN_1F, 3
-	warp_event 19, 29, DRAGON_SHRINE, 1
+	warp_event 20,  5, DRAGONS_DEN_1F, 2
+	warp_event 19, 37, DRAGON_SHRINE, 1
 
 	def_coord_events
-	coord_event 19, 30, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene
+	coord_event 19, 38, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene
 
 	def_bg_events
-	bg_event 18, 24, BGEVENT_READ, DragonShrineSignpost
-	bg_event 33, 29, BGEVENT_ITEM, DragonsDenB1FHiddenRevive
-	bg_event 21, 17, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion
-	bg_event 12, 27, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
+	bg_event 18, 32, BGEVENT_READ, DragonShrineSignpost
+	bg_event 22, 37, BGEVENT_ITEM, DragonsDenB1FHiddenRevive
+	bg_event 19, 23, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion
+	bg_event 12, 35, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
-	object_event 35, 16, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFang, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
-	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
-	object_event 20, 23, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FRivalScript, EVENT_RIVAL_DRAGONS_DEN
-	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
-	object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
-	object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
-	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
-	object_event 30,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
-	object_event  5, 20, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER
+	object_event 14, 38, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
+	object_event 20, 31, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FRivalScript, EVENT_RIVAL_DRAGONS_DEN
+	object_event 20, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
+	object_event  8, 16, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
+	object_event  4, 25, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
+	object_event  4, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
+	object_event 35, 24, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FDragonFang, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
+	object_event 31, 14, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
+	object_event  5, 28, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER

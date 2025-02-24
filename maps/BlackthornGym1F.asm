@@ -30,10 +30,6 @@ BlackthornGym1FBouldersCallback:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
-	readvar VAR_BADGES
-	ifequal 16, .ClairScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .ClairScript_Rematch
 	checkflag ENGINE_RISINGBADGE
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
@@ -71,13 +67,8 @@ BlackthornGymClairScript:
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
 	promptbutton
-	giveitem TM_DRAGONBREATH
+	verbosegiveitem TM_DRAGONBREATH
 	iffalse .BagFull
-	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
-	writetext BlackthornGymText_ReceivedTM24
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymClairText_DescribeTM24
 	promptbutton
@@ -90,6 +81,10 @@ BlackthornGymClairScript:
 	end
 
 .GotTM24:
+	readvar VAR_BADGES
+	ifequal 16, .ClairScript_16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .ClairScript_Rematch
 	writetext BlackthornGymClairText_League
 	waitbutton
 	closetext
@@ -298,14 +293,9 @@ BlackthornGymClairText_YouKeptMeWaiting:
 	para "Here! Take this!"
 	done
 
-BlackthornGymText_ReceivedTM24:
-	text "<PLAYER> received"
-	line "TM24 DragonBreath."
-	done
-
 BlackthornGymClairText_DescribeTM24:
-	text "That contains"
-	line "DragonBreath."
+	text "Clair: That cont-"
+	line "ains DragonBreath."
 
 	para "No, it doesn't"
 	line "have anything to"
