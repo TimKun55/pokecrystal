@@ -214,7 +214,6 @@ INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
-INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -554,5 +553,6 @@ SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/EsrevniHall1F.asm"
 INCLUDE "maps/RadioTower4F.asm"
+INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 
 ENDSECTION

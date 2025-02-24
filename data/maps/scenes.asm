@@ -104,4 +104,5 @@ MapScenes::
 	scene_var ROUTE_30,                                    wRoute30EnteiSceneID
 	scene_var ESREVNI_HALL_1F,                             wEsrevniHall1FSceneID
 	scene_var ESREVNI_HALL_BATTLE_ROOM,                    wEsrevniHallBattleRoomSceneID
+	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	db -1 ; end

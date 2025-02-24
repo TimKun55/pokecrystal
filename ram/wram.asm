@@ -3212,8 +3212,9 @@ wRoute37EnteiSceneID::                            db
 wRoute30EnteiSceneID::                            db
 wEsrevniHall1FSceneID::                           db
 wEsrevniHallBattleRoomSceneID::                   db
+wIcePath1FSceneID::                               db
 
-	ds 29
+	ds 28
 
 ; fight counts
 
