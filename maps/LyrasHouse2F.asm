@@ -46,7 +46,7 @@ LyrasHouseLyraText:
 	done
 
 LyrasHousePidgeotText:
-	text "Pidgeot: Pijiii!"
+	text "Flappy: Pijiii!"
 	done
 
 PokemonJournalProfElmText:

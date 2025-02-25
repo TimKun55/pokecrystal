@@ -2758,7 +2758,7 @@ HikerGroup:
 
 	; HIKER (9)
 	db "Parry@", TRAINERTYPE_NORMAL
-	db 35, ONIX
+	db 40, ONIX
 	db -1 ; end
 
 	; HIKER (10)
