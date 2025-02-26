@@ -150,6 +150,9 @@ LoadMiscTiles:
 	ld c, EMOTE_SHADOW
 	farcall LoadEmote
 	call GetMapEnvironment
+	cp FOREST
+	jr z, .outdoor
+
 	call CheckOutdoorMap
 	jr z, .outdoor
  	ld c, EMOTE_BOULDER_DUST
