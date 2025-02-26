@@ -95,9 +95,6 @@ INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 TilesetGameCornerMeta::
 INCBIN "data/tilesets/game_corner_metatiles.bin"
 
-TilesetGameCornerColl::
-INCLUDE "data/tilesets/game_corner_collision.asm"
-
 
 SECTION "Tileset Data 4", ROMX
 
@@ -604,3 +601,6 @@ INCBIN "data/tilesets/kanto_6_attributes.bin"
 
 TilesetFacilityGFX::
 INCBIN "gfx/tilesets/facility.2bpp.lz"
+
+TilesetGameCornerColl::
+INCLUDE "data/tilesets/game_corner_collision.asm"
