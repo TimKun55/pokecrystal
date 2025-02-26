@@ -21,7 +21,7 @@ InitClock:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 	call ClearSprites
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	xor a
 	ldh [hBGMapMode], a

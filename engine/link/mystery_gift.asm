@@ -64,7 +64,7 @@ endc
 	call ClearTilemap
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	pop de
@@ -1724,7 +1724,7 @@ endr
 	call ClearTilemap
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	ret

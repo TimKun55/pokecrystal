@@ -70,7 +70,7 @@ PalPacket_SlotMachine:
 PalPacket_BetaTitleScreen:
 	sgb_pal_set BETA_LOGO_1, BETA_LOGO_2, DIPLOMA, RB_PURPLEMON
 
-PalPacket_Diploma:
+PalPacket_Generic:
 	sgb_pal_set DIPLOMA, ROUTES, ROUTES, ROUTES
 
 PalPacket_TradeTube:

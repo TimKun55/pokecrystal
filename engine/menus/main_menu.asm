@@ -28,7 +28,7 @@ MainMenu:
 	xor a
 	ld [wDisableTextAcceleration], a
 	call ClearTilemapEtc
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	ld hl, wGameTimerPaused

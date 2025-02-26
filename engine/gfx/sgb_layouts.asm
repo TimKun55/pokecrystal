@@ -300,7 +300,7 @@ SGBLayoutJumptable:
 
 .SGB_Diploma:
 .SGB_MysteryGift:
-	ld hl, PalPacket_Diploma
+	ld hl, PalPacket_Generic
 	ld de, BlkPacket_AllPal0
 	ret
 
@@ -327,7 +327,7 @@ endr
 .SGB_GSTitleScreen:
 	ld hl, PalPacket_GSTitleScreen
 	ld de, BlkPacket_GSTitleScreen
-	ld a, SCGB_DIPLOMA
+	ld a, SCGB_GENERIC
 	ld [wDefaultSGBLayout], a
 	ret
 
@@ -411,7 +411,7 @@ endr
 .SGB_TrainerCard:
 .SGB_TrainerCardJohto:
 .SGB_TrainerCardKanto:
-	ld hl, PalPacket_Diploma
+	ld hl, PalPacket_Generic
 	ld de, BlkPacket_AllPal0
 	ret
 

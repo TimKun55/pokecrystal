@@ -1015,7 +1015,7 @@ StartTitleScreen:
 	ldh [hWX], a
 	ld a, $90
 	ldh [hWY], a
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call UpdateTimePals
 	ld a, [wTitleScreenSelectedOption]

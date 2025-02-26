@@ -45,7 +45,7 @@ _Option:
 	inc a
 	ldh [hBGMapMode], a
 	call WaitBGMap
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 

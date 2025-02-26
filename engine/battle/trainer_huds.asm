@@ -254,7 +254,7 @@ _ShowLinkBattleParticipants:
 	ld [hli], a
 	ld [hl], "S"
 	farcall LinkBattle_TrainerHuds ; no need to farcall
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	ld a, $e4

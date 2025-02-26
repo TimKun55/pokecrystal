@@ -17,7 +17,7 @@ LoadMobileTradeBorderTilemap:
 
 TestMobileTradeBorderTilemap: ; unreferenced
 ; Loads the mobile trade border graphics and tilemap,
-; with a placeholder SCGB_DIPLOMA layout, and exits
+; with a placeholder SCGB_GENERIC layout, and exits
 ; after pressing A or B. Possibly used for testing.
 	call LoadStandardMenuHeader
 	call ClearBGPalettes
@@ -25,7 +25,7 @@ TestMobileTradeBorderTilemap: ; unreferenced
 	call ClearSprites
 	farcall __LoadTradeScreenBorderGFX ; useless to farcall
 	farcall LoadMobileTradeBorderTilemap ; useless to farcall
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap

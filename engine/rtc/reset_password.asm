@@ -1,6 +1,6 @@
 _ResetClock:
 	farcall BlankScreen
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra

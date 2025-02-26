@@ -19,16 +19,25 @@ PlaceDiplomaOnScreen:
 	hlcoord 2, 3
 	call PlaceString
 	ld de, .EmptyString
-	hlcoord 15, 3
+	hlcoord 16, 3
 	call PlaceString
 	ld de, wPlayerName
-	hlcoord 9, 3
+	hlcoord 10, 3
 	call PlaceString
-	ld de, .Certification
-	hlcoord 2, 6
+	ld de, .Certification1
+	hlcoord 4, 5
 	call PlaceString
-	ld de, .GameFreak
-	hlcoord 9, 12
+	ld de, .Certification2
+	hlcoord 3, 6
+	call PlaceString
+	ld de, .Certification3
+	hlcoord 3, 7
+	call PlaceString
+	ld de, .Certification4
+	hlcoord 4, 8
+	call PlaceString
+	ld de, .Congratulations
+	hlcoord 2, 10
 	call PlaceString
 	ld de, .PlayTime
 	hlcoord 10, 14
@@ -37,7 +46,7 @@ PlaceDiplomaOnScreen:
 	ld de, wGameTimeHours
 	lb bc, 2, 4
 	call PrintNum
-	ld [hl], $67 ; colon
+	ld [hl], $48 ; colon
 	inc hl
 	ld de, wGameTimeMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
@@ -51,19 +60,24 @@ PlaceDiplomaOnScreen:
 	ret
 
 .Player:
-	db "Player@"
+	db "Player:@"
 
 .EmptyString:
 	db "@"
 
-.Certification:
-	db   "Certified #dex"
-	next "completionist."
-	next "Congratulations!"
-	db   "@"
+.Certification1:
+	db "This document@"
+.Certification2:
+	db "certifies that@"
+.Certification3:
+	db "you've completed@"
+.Certification4:
+	db "the #dex.@"
+	
+.Congratulations:
+	db "Congratulations!@"
 
 .PlayTime: db "Play Time@"
-.GameFreak: db "Game Freak@"
 
 DiplomaGFX:
 INCBIN "gfx/diploma/diploma.2bpp.lz"

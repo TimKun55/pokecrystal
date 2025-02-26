@@ -8668,7 +8668,7 @@ _DisplayLinkRecord:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	call WaitBGMap2
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	ld c, 8

@@ -46,7 +46,7 @@ CGBLayoutJumptable:
 	dw _CGB_PartyMenu
 	dw _CGB_Evolution
 	dw _CGB_GSTitleScreen
-	dw _CGB_Unused0D
+	dw _CGB_Generic
 	dw _CGB_MoveList
 	dw _CGB_BetaPikachuMinigame
 	dw _CGB_PokedexSearchOption
@@ -962,13 +962,59 @@ _CGB_BetaPoker:
 _CGB_Diploma:
 	ld hl, DiplomaPalettes
 	ld de, wBGPals1
-	ld bc, 16 palettes
+	ld bc, 8 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld hl, PalPacket_Diploma + 1
-	call CopyFourPalettes
 	call WipeAttrmap
+	call ApplyAttrmap
+
+	hlcoord 2, 0, wAttrmap
+	lb bc, 2, 1
+	ld a, $1 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 17, 0, wAttrmap
+	lb bc, 2, 1
+	ld a, $1 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 3, 0, wAttrmap
+	lb bc, 2, 14
+	ld a, $2 
+	call FillBoxCGB
+	call ApplyAttrmap
+	
+	hlcoord 1, 12, wAttrmap
+	lb bc, 5, 9
+	ld a, $3 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 4, 14, wAttrmap
+	lb bc, 1, 3
+	ld a, $4 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 3, 15, wAttrmap
+	lb bc, 1, 5
+	ld a, $4 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 17, 15, wAttrmap
+	lb bc, 2, 2
+	ld a, $5 
+	call FillBoxCGB
+	call ApplyAttrmap
+
+	hlcoord 5, 17, wAttrmap
+	lb bc, 1, 10
+	ld a, $6 
+	call FillBoxCGB
 	call ApplyAttrmap
 	ret
 
@@ -1106,15 +1152,21 @@ _CGB_GSTitleScreen:
 	ld bc, 2 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
-	ld a, SCGB_DIPLOMA
+	ld a, SCGB_GENERIC
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_Unused0D:
-	ld hl, PalPacket_Diploma + 1
+_CGB_Generic:
+	ld hl, DiplomaPalettes
+	ld de, wBGPals1
+	ld bc, 16 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	ld hl, PalPacket_Generic + 1
 	call CopyFourPalettes
 	call WipeAttrmap
 	call ApplyAttrmap

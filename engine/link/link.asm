@@ -552,7 +552,7 @@ LinkTimeout:
 	call PrintTextboxTextAt
 	call RotateThreePalettesRight
 	call ClearScreen
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call WaitBGMap2
 	ret
@@ -1631,7 +1631,7 @@ LinkTradePartymonMenuCheckCancel:
 ExitLinkCommunications:
 	call RotateThreePalettesRight
 	call ClearScreen
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	call WaitBGMap2
 	xor a
@@ -1955,7 +1955,7 @@ LinkTrade:
 	call DelayFrames
 	call ClearTilemap
 	call LoadFontsBattleExtra
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_GENERIC
 	call GetSGBLayout
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
