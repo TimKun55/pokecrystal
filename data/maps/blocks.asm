@@ -1002,9 +1002,6 @@ CeladonHomeDecorStore4F_Blocks:
 MahoganyMoveTutorHouse_Blocks:
 	INCBIN "maps/MahoganyMoveTutorHouse.ablk"
 
-CinnabarIslandRecoveryLab_Blocks:
-	INCBIN "maps/CinnabarIslandRecoveryLab.ablk"
-
 VermilionSailorsHouse_Blocks:
 	INCBIN "maps/VermilionSailorsHouse.ablk"
 

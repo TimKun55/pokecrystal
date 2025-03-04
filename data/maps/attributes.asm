@@ -532,7 +532,6 @@ ENDM
 	map_attributes CinnabarVolcano1F, CINNABAR_VOLCANO_1F, $bd, 0
 	map_attributes CinnabarVolcano2F, CINNABAR_VOLCANO_2F, $bd, 0
 	map_attributes CinnabarMoltresNest, CINNABAR_MOLTRES_NEST, $00, 0
-	map_attributes CinnabarIslandRecoveryLab, CINNABAR_ISLAND_RECOVERY_LAB, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $bd, 0
 	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $bd, 0
 	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $01, 0

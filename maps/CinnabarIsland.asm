@@ -146,17 +146,15 @@ CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 17, CINNABAR_POKECENTER_1F, 1
+	warp_event 11, 17, CINNABAR_POKECENTER_1F, 1
 	warp_event 24, 13, CINNABAR_VOLCANO_1F, 1
-	warp_event 13, 16, CINNABAR_ISLAND_RECOVERY_LAB, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 10, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
+	bg_event 12, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
 	bg_event 19, 19, BGEVENT_READ, CinnabarIslandGymSign
 	bg_event 16, 18, BGEVENT_READ, CinnabarIslandSign
-	bg_event 12, 17, BGEVENT_READ, CinnabarRecoveryLabSign
 	bg_event 26, 15, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events

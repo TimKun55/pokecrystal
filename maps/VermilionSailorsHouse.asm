@@ -107,16 +107,19 @@ SailorSoBoredText:
 	done
 
 SailorWhatIsThatMapText:
-	text "Wait! That Map"
-	line "you have!"
+	text "There you are!"
 	
-	para "Can I see that?"
+	para "You have the Map"
+	line "with you, right?"
 	
-	para "I've never seen"
-	line "this before!"
+	para "May I see it"
+	line "again, please?"
 	
-	para "Is this a forgot-"
-	line "ten island?"
+	para "… … …"
+	
+	para "Yes, I'm sure."
+	line "This is this a"
+	cont "forgotten island!"
 	
 	para "Wow!"
 	done
@@ -148,4 +151,4 @@ VermilionSailorsHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, VermilionSailorsHouseSailorScript, -1
+	object_event  2,  4, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, VermilionSailorsHouseSailorScript, EVENT_VERMILION_SAILORS_HOUSE_SAILOR

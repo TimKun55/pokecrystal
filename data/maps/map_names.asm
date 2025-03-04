@@ -239,13 +239,12 @@ Cinnabar_Map_Names: ;newgroup CINNABAR										;  6
 	dw Cinnabar_Map_Name7 ; map_const CINNABAR_VOLCANO_1F					;  7
 	dw Cinnabar_Map_Name8 ; map_const CINNABAR_VOLCANO_2F					;  8
 	dw Cinnabar_Map_Name9 ; map_const CINNABAR_MOLTRES_NEST				    ;  9
-	dw Cinnabar_Map_Name10 ; map_const CINNABAR_ISLAND_RECOVERY_LAB      	; 10
-	dw Cinnabar_Map_Name11 ; map_const SEAFOAM_GYM							; 11
-	dw Cinnabar_Map_Name12 ; map_const SEAFOAM_ISLANDS_1F					; 12
-	dw Cinnabar_Map_Name13 ; map_const SEAFOAM_ISLANDS_B1F					; 13
-	dw Cinnabar_Map_Name14 ; map_const SEAFOAM_ISLANDS_B2F					; 14
-	dw Cinnabar_Map_Name15 ; map_const SEAFOAM_ISLANDS_B3F					; 15
-	dw Cinnabar_Map_Name16 ; map_const SEAFOAM_ISLANDS_B4F					; 16
+	dw Cinnabar_Map_Name10 ; map_const SEAFOAM_GYM							; 10
+	dw Cinnabar_Map_Name11 ; map_const SEAFOAM_ISLANDS_1F					; 11
+	dw Cinnabar_Map_Name12 ; map_const SEAFOAM_ISLANDS_B1F					; 12
+	dw Cinnabar_Map_Name13 ; map_const SEAFOAM_ISLANDS_B2F					; 13
+	dw Cinnabar_Map_Name14 ; map_const SEAFOAM_ISLANDS_B3F					; 14
+	dw Cinnabar_Map_Name15 ; map_const SEAFOAM_ISLANDS_B4F					; 15
 	assert_table_length NUM_CINNABAR_MAPS
 
 Cerulean_Map_Names: ;newgroup CERULEAN										;  7
@@ -943,19 +942,17 @@ Cinnabar_Map_Name8: ; map_const CINNABAR_VOLCANO_2F,;  8
 	db "Cinnabar Vol 2F@"
 Cinnabar_Map_Name9: ; map_const CINNABAR_MOLTRES_NEST,;  9
 	db "Moltres Nest@"
-Cinnabar_Map_Name10: ; map_const CINNABAR_ISLAND_RECOVERY_LAB,;  10
-	db "Cinnabar Rec. Lab@"
-Cinnabar_Map_Name11: ; map_const CINNABAR_GYM,; 11
+Cinnabar_Map_Name10: ; map_const CINNABAR_GYM,; 10
 	db "Cinnabar Gym@"
-Cinnabar_Map_Name12: ; map_const SEAFOAM_ISLANDS_1F,; 12
+Cinnabar_Map_Name11: ; map_const SEAFOAM_ISLANDS_1F,; 11
 	db "Seafoam Isl. 1F@"
-Cinnabar_Map_Name13: ; map_const SEAFOAM_ISLANDS_B1F,; 13
+Cinnabar_Map_Name12: ; map_const SEAFOAM_ISLANDS_B1F,; 12
 	db "Seafoam Isl. B1F@"
-Cinnabar_Map_Name14: ; map_const SEAFOAM_ISLANDS_B2F,; 14
+Cinnabar_Map_Name13: ; map_const SEAFOAM_ISLANDS_B2F,; 13
 	db "Seafoam Isl. B2F@"
-Cinnabar_Map_Name15: ; map_const SEAFOAM_ISLANDS_B3F,; 15
+Cinnabar_Map_Name14: ; map_const SEAFOAM_ISLANDS_B3F,; 14
 	db "Seafoam Isl. B3F@"
-Cinnabar_Map_Name16: ; map_const SEAFOAM_ISLANDS_B4F,; 16
+Cinnabar_Map_Name15: ; map_const SEAFOAM_ISLANDS_B4F,; 15
 	db "Seafoam Isl. B4F@"
 
 Cerulean_Map_Name1: ; map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE ;  1

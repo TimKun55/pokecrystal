@@ -10,9 +10,31 @@ FuchsiaCinnabarHouse1_MapScripts:
 FuchsiaCinnabarHouseSailor:
 	faceplayer
 	opentext
+	checkitem OLD_SEA_MAP
+	iftrue .HasOldSeaMap
 	writetext SailorMovedHereAfterEruptionText
 	waitbutton
 	closetext
+	end
+
+.HasOldSeaMap:
+	writetext SailorThatMapText
+	waitbutton
+	closetext
+	clearevent EVENT_VERMILION_SAILORS_HOUSE_SAILOR
+	readvar VAR_FACING
+	ifequal UP, .WalkAroundExit
+	applymovement FUCHSIACINNABARHOUSE1_SAILOR, FuchsiaCinnabarHouseSailorExitMovement
+	disappear FUCHSIACINNABARHOUSE1_SAILOR
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	end
+
+.WalkAroundExit:
+	applymovement FUCHSIACINNABARHOUSE1_SAILOR, FuchsiaCinnabarHouseSailorWalkAroundExitMovement
+	disappear FUCHSIACINNABARHOUSE1_SAILOR
+	playsound SFX_EXIT_BUILDING
+	waitsfx
 	end
 
 FuchsiaCinnabarHouseScientist:
@@ -23,17 +45,60 @@ FuchsiaCinnabarHouseScientist:
 	closetext
 	end
 
+FuchsiaCinnabarHouseSailorExitMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+FuchsiaCinnabarHouseSailorWalkAroundExitMovement:
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	step_end
+
 SailorMovedHereAfterEruptionText:
 	text "I used to live"
 	line "on Cinnabar but"
 	
-	para "had to move here"
+	para "had to move afer"
 	line "after the volcano"
 	cont "erupted."
 	
-	para "I haven't been out"
-	line "on the water since"
-	cont "then…"
+	para "I live in Vermilion"
+	line "now and have my"
+	cont "boat there, but I"
+	cont "haven't been out"
+	cont "on the water since"
+	cont "then."
+	
+	para "I have no reason"
+	line "go exploring…"
+	done
+
+SailorThatMapText:
+	text "!!"
+	
+	para "That Map in your"
+	line "pack…!"
+	
+	para "May I please"
+	line "see it?"
+	
+	para "… … …"
+	
+	para "Wow!"
+	
+	para "Listen, can you"
+	line "bring this Map"
+	cont "to my house in"
+	cont "Vermilion City?"
+	
+	para "I'll be waiting!"
 	done
 
 ScientistMovedHereAfterEruptionText:
@@ -44,43 +109,45 @@ ScientistMovedHereAfterEruptionText:
 	para "I hated the way"
 	line "they treated us"
 	cont "and their #mon"
-	
-	para "so I left and"
-	line "went into hiding."
+	cont "so I left and"
+	cont "went into hiding."
 	
 	para "I had to hide"
 	line "because I took a"
 	cont "very valuable Map"
-	
-	para "that they needed"
-	line "for one of their"
+	cont "that they needed"
+	cont "for one of their"
 	cont "schemes."
 	
+	para "I lost it at some"
+	line "point around"
+	cont "Vermilion, but I"
+	cont "don't know where."
+	
+	para "I was going to"
+	line "give it to my"
+	cont "Sailor friend and"
+	cont "we were going to"
+	cont "sail away."
+	
 	para "Once I heard that"
-	line "they had disbanded"
-	
-	para "I came out of"
-	line "hiding, started"
-	
-	para "working at the"
-	line "Cinnabar Lab and"
-	
-	para "donated the Map"
-	line "to them."
+	line "Team Rocket had"
+	cont "broken up, I came"
+	cont "out of hiding and"
+	cont "started working at"
+	cont "the Cinnabar Lab."
 	
 	para "Once the volcano"
 	line "erupted, though,"
+	cont "it was all over."
 	
-	para "it was all over."
-	
-	para "I lost the Map"
-	line "and my job."
+	para "I had lost the Map"
+	line "and then my job."
 	
 	para "I moved here and"
 	line "started helping"
-	
-	para "with the Safari"
-	line "Zone. It's fun!"
+	cont "with the Safari"
+	cont "Zone. It's fun!"
 	done
 
 FuchsiaCinnabarHouse1_MapEvents:
@@ -95,5 +162,5 @@ FuchsiaCinnabarHouse1_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaCinnabarHouseSailor, -1
+	object_event  2,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaCinnabarHouseSailor, EVENT_FUCHSIA_CINNABAR_HOUSE1_SAILOR
 	object_event  5,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCinnabarHouseScientist, -1

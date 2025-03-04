@@ -210,13 +210,12 @@ ENDM
 	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
 	map_const CINNABAR_MOLTRES_NEST,                        7, 11 ;  9
-	map_const CINNABAR_ISLAND_RECOVERY_LAB,                 4,  4 ; 10
-	map_const SEAFOAM_GYM,                                  9,  9 ; 11
-	map_const SEAFOAM_ISLANDS_1F,                          11,  5 ; 12
-	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 13
-	map_const SEAFOAM_ISLANDS_B2F,                         15, 10 ; 14
-	map_const SEAFOAM_ISLANDS_B3F,                         17, 10 ; 15
-	map_const SEAFOAM_ISLANDS_B4F,                         20, 11 ; 16
+	map_const SEAFOAM_GYM,                                  9,  9 ; 10
+	map_const SEAFOAM_ISLANDS_1F,                          11,  5 ; 11
+	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 12
+	map_const SEAFOAM_ISLANDS_B2F,                         15, 10 ; 13
+	map_const SEAFOAM_ISLANDS_B3F,                         17, 10 ; 14
+	map_const SEAFOAM_ISLANDS_B4F,                         20, 11 ; 15
 	endgroup
 
 	newgroup CERULEAN                                             ;  7
