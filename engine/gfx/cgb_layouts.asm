@@ -1162,6 +1162,7 @@ _CGB_GSTitleScreen:
 _CGB_Generic:
 	ld hl, DiplomaPalettes
 	ld de, wBGPals1
+	assert DiplomaPalettes + 8 palettes == PartyMenuOBPals
 	ld bc, 16 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
