@@ -825,8 +825,10 @@ VictoryRoadGate_Blocks:
 	INCBIN "maps/VictoryRoadGate.ablk"
 
 OlivinePortPassage_Blocks:
+	INCBIN "maps/OlivinePortPassage.ablk"
+
 VermilionPortPassage_Blocks:
-	INCBIN "maps/PortPassage.ablk"
+	INCBIN "maps/VermilionPortPassage.ablk"
 
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.ablk"

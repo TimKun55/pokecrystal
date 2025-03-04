@@ -3213,8 +3213,10 @@ wRoute30EnteiSceneID::                            db
 wEsrevniHall1FSceneID::                           db
 wEsrevniHallBattleRoomSceneID::                   db
 wIcePath1FSceneID::                               db
+wOlivinePortPassageSceneID::                      db
+wVermilionPortPassageSceneID::                    db
 
-	ds 28
+	ds 26
 
 ; fight counts
 

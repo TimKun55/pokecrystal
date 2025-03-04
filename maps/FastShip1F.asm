@@ -70,7 +70,7 @@ FastShip1FSailor1Script:
 	waitsfx
 	setevent EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
 	setmapscene VERMILION_PORT, SCENE_VERMILIONPORT_LEAVE_SHIP
-	warp VERMILION_PORT, 7, 17
+	warp VERMILION_PORT, 9, 21
 	end
 
 ._Olivine:
@@ -83,7 +83,7 @@ FastShip1FSailor1Script:
 	waitsfx
 	setevent EVENT_OLIVINE_PORT_SAILOR_AT_GANGWAY
 	setmapscene OLIVINE_PORT, SCENE_OLIVINEPORT_LEAVE_SHIP
-	warp OLIVINE_PORT, 7, 21
+	warp OLIVINE_PORT, 9, 23
 	end
 
 .LetThePlayerOut:

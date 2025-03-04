@@ -105,4 +105,6 @@ MapScenes::
 	scene_var ESREVNI_HALL_1F,                             wEsrevniHall1FSceneID
 	scene_var ESREVNI_HALL_BATTLE_ROOM,                    wEsrevniHallBattleRoomSceneID
 	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
+	scene_var OLIVINE_PORT_PASSAGE,                        wOlivinePortPassageSceneID
+	scene_var VERMILION_PORT_PASSAGE,                      wVermilionPortPassageSceneID
 	db -1 ; end

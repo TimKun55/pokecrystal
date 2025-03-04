@@ -190,27 +190,27 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; bd
 	tilecoll WALL, WALL, WALL, WALL ; be
 	tilecoll WALL, WALL, WALL, WALL ; bf
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c0
+	tilecoll FLOOR, FLOOR, PUDDLE, PUDDLE ; c0
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c2
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c3
+	tilecoll PUDDLE, FLOOR, PUDDLE, PUDDLE ; c2
+	tilecoll FLOOR, PUDDLE, PUDDLE, PUDDLE ; c3
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c4
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c5
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c7
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c8
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb
+	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; c6
+	tilecoll PUDDLE, PUDDLE, PUDDLE, FLOOR ; c7
+	tilecoll PUDDLE, PUDDLE, FLOOR, PUDDLE ; c8
+	tilecoll FLOOR, PUDDLE, FLOOR, FLOOR ; c9
+	tilecoll PUDDLE, PUDDLE, FLOOR, FLOOR ; ca
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; cb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cc
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ce
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; ce
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d0
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d1
+	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; d0
+	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; d1
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d2
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d3
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d4
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d3
+	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; d4
 	tilecoll WALL, WALL, WALL, WALL ; d5
 	tilecoll WALL, WALL, WALL, WALL ; d6
 	tilecoll FLOOR, WALL, COUNTER, COUNTER ; d7
@@ -219,3 +219,7 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; da
 	tilecoll COUNTER, FLOOR, WALL, WALL ; db
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
+	tilecoll WALL, WALL, DOOR, WALL ; dd
+	tilecoll WALL, WALL, WALL, WALL ; de
+	tilecoll WALL, WALL, WALL, WALL ; df
+	tilecoll WALL, WALL, WALL, DOOR ; e0

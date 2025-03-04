@@ -1,9 +1,7 @@
 	object_const_def
 	const OLIVINEPORT_SAILOR1
 	const OLIVINEPORT_SAILOR2
-	const OLIVINEPORT_SAILOR3
-	const OLIVINEPORT_FISHING_GURU1
-	const OLIVINEPORT_FISHING_GURU2
+	const OLIVINEPORT_FISHING_GURU
 	const OLIVINEPORT_YOUNGSTER
 	const OLIVINEPORT_COOLTRAINER_F
 
@@ -92,23 +90,12 @@ OlivinePortWalkUpToShipScript:
 	writetext OlivinePortAskBoardText
 	yesorno
 	iffalse OlivinePortNotRidingMoveAwayScript
-	writetext OlivinePortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext OlivinePortFlashTicketText
+	writetext OlivinePortStepThisWayText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	applymovement PLAYER, OlivinePortApproachFastShipFirstTimeMovement
 	sjump OlivinePortSailorAtGangwayScript
-
-.NoTicket:
-	writetext OlivinePortNoTicketText
-	waitbutton
-	closetext
-	applymovement PLAYER, OlivinePortCannotEnterFastShipMovement
-	end
 
 .NextShipMonday:
 	writetext OlivinePortMondayShipText
@@ -157,28 +144,12 @@ OlivinePortSailorAfterHOFScript:
 	writetext OlivinePortAskBoardText
 	yesorno
 	iffalse OlivinePortNotRidingScript
-	writetext OlivinePortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext OlivinePortFlashTicketText
+	writetext OlivinePortStepThisWayText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	readvar VAR_FACING
-	ifequal RIGHT, .Right
 	applymovement PLAYER, OlivinePortApproachFastShipAfterHOFMovement
 	sjump OlivinePortSailorAtGangwayScript
-
-.Right:
-	applymovement PLAYER, OlivinePortApproachFastShipAfterHOFRightMovement
-	sjump OlivinePortSailorAtGangwayScript
-
-.NoTicket:
-	writetext OlivinePortNoTicketText
-	waitbutton
-	closetext
-	end
 
 .NextShipMonday:
 	writetext OlivinePortMondayShipText
@@ -192,25 +163,13 @@ OlivinePortSailorAfterHOFScript:
 	closetext
 	end
 
-OlivinePortSailorBeforeHOFScript:
-	jumptextfaceplayer OlivinePortSailorBeforeHOFText
-
-OlivinePortFishingGuru1Script:
+OlivinePortFishingGuruScript:
 	faceplayer
 	opentext
-	writetext OlivinePortFishingGuru1Text
+	writetext OlivinePortFishingGuruText
 	waitbutton
 	closetext
-	turnobject OLIVINEPORT_FISHING_GURU1, UP
-	end
-
-OlivinePortFishingGuru2Script:
-	faceplayer
-	opentext
-	writetext OlivinePortFishingGuru2Text
-	waitbutton
-	closetext
-	turnobject OLIVINEPORT_FISHING_GURU2, UP
+	turnobject OLIVINEPORT_FISHING_GURU, UP
 	end
 
 OlivinePortYoungsterScript:
@@ -247,33 +206,10 @@ OlivinePortCannotEnterFastShipMovement:
 	turn_head LEFT
 	step_end
 
-OlivinePortApproachFastShipFirstTimeMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 OlivinePortApproachFastShipAfterHOFMovement:
 	step RIGHT
 	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
-OlivinePortApproachFastShipAfterHOFRightMovement:
-	step UP
-	step RIGHT
-	step RIGHT
-	step DOWN
+OlivinePortApproachFastShipFirstTimeMovement:
 	step DOWN
 	step DOWN
 	step DOWN
@@ -302,36 +238,16 @@ OlivinePortAskBoardText:
 	line "ing today?"
 	done
 
-OlivinePortAskTicketText:
-	text "May I see your"
-	line "S.S.Ticket?"
+OlivinePortStepThisWayText:
+	text "Wonderful."
+	line "Please head on"
+	cont "through and watch"
+	cont "your step."
 	done
 
 OlivinePortComeAgainText:
 	text "We hope to see you"
 	line "again!"
-	done
-
-OlivinePortFlashTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.Ticket."
-
-	para "That's it."
-	line "Thank you!"
-	done
-
-OlivinePortNoTicketText:
-	text "<PLAYER> tried to"
-	line "show the S.S."
-	cont "Ticket…"
-
-	para "…But no Ticket!"
-
-	para "Sorry!"
-	line "You may board only"
-
-	para "if you have an"
-	line "S.S.Ticket."
 	done
 
 OlivinePortMondayShipText:
@@ -344,15 +260,7 @@ OlivinePortFridayShipText:
 	line "sail next Friday."
 	done
 
-OlivinePortFishingGuru1Text:
-	text "Shellder are easy"
-	line "to catch here."
-
-	para "They're kind of"
-	line "rare elsewhere."
-	done
-
-OlivinePortFishingGuru2Text:
+OlivinePortFishingGuruText:
 	text "How many Rods do"
 	line "you have?"
 
@@ -374,32 +282,23 @@ OlivinePortCooltrainerFText:
 	para "I wish I could go…"
 	done
 
-OlivinePortSailorBeforeHOFText:
-	text "We don't want you"
-	line "to fall into the"
-
-	para "sea, so you're not"
-	line "allowed in."
-	done
-
 OlivinePort_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11,  5, OLIVINE_PORT_PASSAGE, 5
-	warp_event  7, 21, FAST_SHIP_1F, 1
+	warp_event  9,  5, OLIVINE_PORT_PASSAGE, 3
+	warp_event 10,  5, OLIVINE_PORT_PASSAGE, 4
+	warp_event  9, 23, FAST_SHIP_1F, 1
 
 	def_coord_events
-	coord_event  7, 13, SCENE_OLIVINEPORT_ASK_ENTER_SHIP, OlivinePortWalkUpToShipScript
+	coord_event  9, 15, SCENE_OLIVINEPORT_ASK_ENTER_SHIP, OlivinePortWalkUpToShipScript
 
 	def_bg_events
-	bg_event  1, 20, BGEVENT_ITEM, OlivinePortHiddenProtein
+	bg_event  2, 22, BGEVENT_ITEM, OlivinePortHiddenProtein
 
 	def_object_events
-	object_event  7, 21, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorAtGangwayScript, EVENT_OLIVINE_PORT_SAILOR_AT_GANGWAY
-	object_event  7, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorBeforeHOFScript, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	object_event  6, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorAfterHOFScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
-	object_event  4, 12, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortFishingGuru1Script, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	object_event 13, 12, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortFishingGuru2Script, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	object_event  4, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortYoungsterScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
-	object_event 11, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortCooltrainerFScript, EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
+	object_event  9, 23, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorAtGangwayScript, EVENT_OLIVINE_PORT_SAILOR_AT_GANGWAY
+	object_event  8, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortSailorAfterHOFScript, -1
+	object_event  3, 12, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortFishingGuruScript, -1
+	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortYoungsterScript, -1
+	object_event 12, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePortCooltrainerFScript, -1

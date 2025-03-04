@@ -168,8 +168,6 @@ INCLUDE "maps/FastShipCabins_NNW_NNE_NE.asm"
 INCLUDE "maps/FastShipCabins_SW_SSW_NW.asm"
 INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
 INCLUDE "maps/FastShipB1F.asm"
-INCLUDE "maps/OlivinePortPassage.asm"
-INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm"
 INCLUDE "maps/MountMoonGiftShop.asm"
 INCLUDE "maps/TinTowerRoof.asm"
@@ -554,5 +552,7 @@ SECTION "Map Scripts 28", ROMX
 INCLUDE "maps/EsrevniHall1F.asm"
 INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
+INCLUDE "maps/OlivinePortPassage.asm"
+INCLUDE "maps/VermilionPortPassage.asm"
 
 ENDSECTION

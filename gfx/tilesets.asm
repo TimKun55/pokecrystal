@@ -41,9 +41,6 @@ INCLUDE "data/tilesets/pokecenter_collision.asm"
 TilesetPortGFX::
 INCBIN "gfx/tilesets/port.2bpp.lz"
 
-TilesetPortMeta::
-INCBIN "data/tilesets/port_metatiles.bin"
-
 TilesetKantoHouseGFX::
 INCBIN "gfx/tilesets/kanto_house.2bpp.lz"
 
@@ -604,3 +601,6 @@ INCBIN "gfx/tilesets/facility.2bpp.lz"
 
 TilesetGameCornerColl::
 INCLUDE "data/tilesets/game_corner_collision.asm"
+
+TilesetPortMeta::
+INCBIN "data/tilesets/port_metatiles.bin"

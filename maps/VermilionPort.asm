@@ -93,23 +93,12 @@ VermilionPortWalkUpToShipScript:
 	writetext VermilionPortAskBoardingText
 	yesorno
 	iffalse VermilionPortNotRidingMoveAwayScript
-	writetext VermilionPortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext VermilionPortSSTicketText
+	writetext VermilionPortStepThisWayText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	applymovement PLAYER, VermilionPortApproachFastShipMovement
 	sjump VermilionPortSailorAtGangwayScript
-
-.NoTicket:
-	writetext VermilionPortNoTicketText
-	waitbutton
-	closetext
-	applymovement PLAYER, VermilionPortCannotEnterFastShipMovement
-	end
 
 .NextShipWednesday:
 	writetext VermilionPortSailMondayText
@@ -155,22 +144,12 @@ VermilionPortSailorScript:
 	writetext VermilionPortAskBoardingText
 	yesorno
 	iffalse VermilionPortNotRidingScript
-	writetext VermilionPortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext VermilionPortSSTicketText
+	writetext VermilionPortStepThisWayText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	applymovement PLAYER, VermilionPortApproachFastShipRightMovement
 	sjump VermilionPortSailorAtGangwayScript
-
-.NoTicket:
-	writetext VermilionPortNoTicketText
-	waitbutton
-	closetext
-	end
 
 .NextShipWednesday:
 	writetext VermilionPortSailMondayText
@@ -192,6 +171,23 @@ VermilionPortSuperNerdScript:
 	closetext
 	end
 
+VermilionPortTruck1:
+	jumptext VermilionPortTruckText
+
+VermilionPortTruck2:
+	checkevent EVENT_GOT_OLD_SEA_MAP
+	iftrue .GotMap
+	opentext
+	writetext VermilionPortTruckWaitText
+	waitbutton
+	verbosegiveitem OLD_SEA_MAP
+	closetext
+	setevent EVENT_GOT_OLD_SEA_MAP
+	end
+
+.GotMap:
+	jumptext VermilionPortTruckText
+
 VermilionPortHiddenIron:
 	hiddenitem IRON, EVENT_VERMILION_PORT_HIDDEN_IRON
 
@@ -208,16 +204,11 @@ VermilionPortCannotEnterFastShipMovement:
 	turn_head LEFT
 	step_end
 
-VermilionPortApproachFastShipMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 VermilionPortApproachFastShipRightMovement:
 	step RIGHT
+	step DOWN
+VermilionPortApproachFastShipMovement:
+	step DOWN
 	step DOWN
 	step DOWN
 	step DOWN
@@ -245,36 +236,16 @@ VermilionPortAskBoardingText:
 	line "ing today?"
 	done
 
-VermilionPortAskTicketText:
-	text "May I see your"
-	line "S.S.Ticket?"
+VermilionPortStepThisWayText:
+	text "Wonderful."
+	line "Please head on"
+	cont "through and watch"
+	cont "your step."
 	done
 
 VermilionPortComeAgainText:
 	text "We hope to see you"
 	line "again!"
-	done
-
-VermilionPortSSTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.Ticket."
-
-	para "That's it."
-	line "Thank you!"
-	done
-
-VermilionPortNoTicketText:
-	text "<PLAYER> tried to"
-	line "show the S.S."
-	cont "Ticket…"
-
-	para "…But no Ticket!"
-
-	para "Sorry!"
-	line "You may board only"
-
-	para "if you have an"
-	line "S.S.Ticket."
 	done
 
 VermilionPortSailMondayText:
@@ -296,20 +267,44 @@ VermilionPortSuperNerdText:
 	cont "there."
 	done
 
+VermilionPortTruckText:
+	text "It's an old truck."
+	
+	para "Looks like it"
+	line "hasn't been used"
+	cont "in a long time."
+	done
+
+VermilionPortTruckWaitText:
+	text "It's an old truck."
+	
+	para "Looks like it"
+	line "hasn't been used"
+	cont "in a long time."
+	
+	para "… … …"
+	
+	para "There's something"
+	line "under here…"
+	done
+
 VermilionPort_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
-	warp_event  7, 17, FAST_SHIP_1F, 1
+	warp_event  9,  5, VERMILION_PORT_PASSAGE, 3
+	warp_event 10,  5, VERMILION_PORT_PASSAGE, 4
+	warp_event  9, 21, FAST_SHIP_1F, 1
 
 	def_coord_events
-	coord_event  7, 11, SCENE_VERMILIONPORT_ASK_ENTER_SHIP, VermilionPortWalkUpToShipScript
+	coord_event  9, 13, SCENE_VERMILIONPORT_ASK_ENTER_SHIP, VermilionPortWalkUpToShipScript
 
 	def_bg_events
-	bg_event 16, 13, BGEVENT_ITEM, VermilionPortHiddenIron
+	bg_event 24,  8, BGEVENT_READ, VermilionPortTruck1
+	bg_event 25,  8, BGEVENT_READ, VermilionPortTruck2
+	bg_event 13, 20, BGEVENT_ITEM, VermilionPortHiddenIron
 
 	def_object_events
-	object_event  7, 17, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorAtGangwayScript, EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
-	object_event  6, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorScript, -1
-	object_event 11, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSuperNerdScript, -1
+	object_event  9, 21, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorAtGangwayScript, EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
+	object_event  8, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorScript, -1
+	object_event  6, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSuperNerdScript, -1
