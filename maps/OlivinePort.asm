@@ -71,7 +71,7 @@ OlivinePortAlreadyRodeScript:
 	end
 
 OlivinePortWalkUpToShipScript:
-	turnobject OLIVINEPORT_SAILOR2, RIGHT
+	turnobject OLIVINEPORT_SAILOR3, RIGHT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .skip
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
