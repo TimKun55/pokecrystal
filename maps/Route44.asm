@@ -16,8 +16,8 @@
 
 Route44_MapScripts:
 	def_scene_scripts
-	scene_script Route36Noop1Scene, SCENE_ROUTE44_NOOP
-	scene_script Route36Noop2Scene, SCENE_ROUTE44_RAIKOU
+	scene_script Route44Noop1Scene, SCENE_ROUTE44_NOOP
+	scene_script Route44Noop2Scene, SCENE_ROUTE44_RAIKOU
 
 	def_callbacks
 
