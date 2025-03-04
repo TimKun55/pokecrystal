@@ -1,12 +1,12 @@
-; Constants for momitem offsets (see data/items/mom_phone.asm)
+; Constants for momitem offsets (see data/items/mum_phone.asm)
 rsreset
-DEF MOMITEM_TRIGGER rb 3 ; 0
-DEF MOMITEM_COST    rb 3 ; 3
-DEF MOMITEM_KIND    rb   ; 6
-DEF MOMITEM_ITEM    rb   ; 7
-DEF MOMITEM_SIZE EQU _RS ; 8
+DEF MUMITEM_TRIGGER rb 3 ; 0
+DEF MUMITEM_COST    rb 3 ; 3
+DEF MUMITEM_KIND    rb   ; 6
+DEF MUMITEM_ITEM    rb   ; 7
+DEF MUMITEM_SIZE EQU _RS ; 8
 
-; momitem kind values
+; mumitem kind values
 	const_def 1
 	const MUM_ITEM
 	const MUM_DOLL
