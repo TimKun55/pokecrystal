@@ -216,18 +216,18 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; d7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d8
 	tilecoll WALL, TALL_GRASS, WALL, TALL_GRASS ; d9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; da
+	tilecoll FLOOR, FLOOR, PUDDLE, PUDDLE ; da
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; db
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dd
+	tilecoll PUDDLE, FLOOR, PUDDLE, PUDDLE ; dc
+	tilecoll FLOOR, PUDDLE, PUDDLE, PUDDLE ; dd
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; de
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; df
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e0
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e1
+	tilecoll WALL, FLOOR, PUDDLE, PUDDLE ; df
+	tilecoll PUDDLE, PUDDLE, FLOOR, FLOOR ; e0
+	tilecoll PUDDLE, PUDDLE, FLOOR, PUDDLE ; e1
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e2
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; e3
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e4
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e5
+	tilecoll PUDDLE, WALL, PUDDLE, PUDDLE ; e3
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; e4
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; e5
 	tilecoll WALL, WALL, WALL, FLOOR ; e6
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e7
 	tilecoll WALL, WALL, FLOOR, WALL ; e8
