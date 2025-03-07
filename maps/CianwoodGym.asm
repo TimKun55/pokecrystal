@@ -16,18 +16,20 @@ CianwoodGymWaterfallButtonCallback:
 	checkevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	iftrue .NoWaterfall
 	checkevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
-	iffalse .Button1NotPushed
+	iftrue .Button1Pushed
 	endcallback	
 
 .NoWaterfall
-	changeblock 8,  4, $6c
-	changeblock 8,  6, $6e
-	changeblock 8,  8, $6e
-	changeblock 8, 10, $70
+	changeblock 12,  2, $d7
+	changeblock  6,  2, $d3
+	changeblock  8,  4, $ca
+	changeblock  8,  6, $cb
+	changeblock  8,  8, $cb
+	changeblock  8, 10, $da
 	endcallback
 
-.Button1NotPushed
-	changeblock 6,  2, $8b
+.Button1Pushed
+	changeblock 12,  2, $d7
 	endcallback
 
 CianwoodGymChuckScript:
@@ -219,7 +221,7 @@ CianwoodWaterfallButton1:
 	pause 15
 	playsound SFX_MOVE_PUZZLE_PIECE
 	waitsfx
-	changeblock 6,  2, $79
+	changeblock 12,  2, $d7
 	reloadmappart
 	setevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
 	end
@@ -236,10 +238,11 @@ CianwoodWaterfallButton2:
 	pause 15
 	playsound SFX_STRENGTH
 	earthquake 50
-	changeblock 8,  4, $6c
-	changeblock 8,  6, $6e
-	changeblock 8,  8, $6e
-	changeblock 8, 10, $70
+	changeblock 6,  2, $d3
+	changeblock 8,  4, $ca
+	changeblock 8,  6, $cb
+	changeblock 8,  8, $cb
+	changeblock 8, 10, $da
 	reloadmappart
 	setevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	end
