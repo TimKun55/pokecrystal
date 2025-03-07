@@ -279,7 +279,7 @@ ENDM
 	newgroup GOLDENROD                                            ; 11
 	map_const ROUTE_34,                                    12, 27 ;  1
 	map_const GOLDENROD_CITY,                              21, 18 ;  2
-	map_const GOLDENROD_GYM,                               10,  9 ;  3
+	map_const GOLDENROD_GYM,                               10, 10 ;  3
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
@@ -340,7 +340,7 @@ ENDM
 	map_const ROUTE_3,                                     30,  9 ;  1
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
-	map_const PEWTER_GYM,                                   5,  7 ;  4
+	map_const PEWTER_GYM,                                   5, 11 ;  4
 	map_const PEWTER_MART,                                  6,  4 ;  5
 	map_const PEWTER_POKECENTER_1F,                         6,  4 ;  6
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  7

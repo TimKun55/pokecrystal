@@ -4,7 +4,7 @@ LoadSpecialMapPalette:
 	jr z, .not_dark
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_FLASH_F, a
-	jr z, .darkness
+	jp z, .darkness
 
 .not_dark
     ld a, [wMapGroup]
@@ -28,36 +28,43 @@ LoadSpecialMapPalette:
     jp z, .cavevolcano_palette
 
 .continue2
-	cp GROUP_FAST_SHIP_1F
+	cp GROUP_ROUTE_6
     jr nz, .continue3
+    ld a, [wMapNumber]
+    cp MAP_VERMILION_GYM
+    jp z, .gym_palette
+
+.continue3
+	cp GROUP_FAST_SHIP_1F
+    jr nz, .continue4
     ld a, [wMapNumber]
     cp MAP_FARAWAY_ISLAND_OUTSIDE
     jp z, .faraway_palette
 	cp MAP_FARAWAY_ISLAND_INSIDE
     jp z, .faraway_palette
 
-.continue3
+.continue4
     cp GROUP_CELADON_CITY
-    jr nz, .continue4
+    jr nz, .continue5
     ld a, [wMapNumber]
     cp MAP_CELADON_GYM
     jp z, .gym_palette
 
-.continue4
+.continue5
     cp GROUP_VIRIDIAN_CITY
-    jr nz, .continue5
+    jr nz, .continue6
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
     jp z, .viridian_gym_palette
 
-.continue5
+.continue6
     cp GROUP_SAFFRON_CITY
-    jr nz, .continue6
+    jr nz, .continue7
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
 
-.continue6
+.continue7
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside

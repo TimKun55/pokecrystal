@@ -89,9 +89,6 @@ INCLUDE "data/tilesets/mart_collision.asm"
 TilesetGameCornerGFX::
 INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 
-TilesetGameCornerMeta::
-INCBIN "data/tilesets/game_corner_metatiles.bin"
-
 
 SECTION "Tileset Data 4", ROMX
 
@@ -196,6 +193,9 @@ INCLUDE "data/tilesets/forest_collision.asm"
 
 TilesetTrainStationMeta::
 INCBIN "data/tilesets/train_station_metatiles.bin"
+
+TilesetGameCornerMeta::
+INCBIN "data/tilesets/game_corner_metatiles.bin"
 
 
 SECTION "Tileset Data 7", ROMX
