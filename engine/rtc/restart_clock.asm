@@ -37,8 +37,9 @@ ENDM
 
 RestartClock:
 ; If we're here, we had an RTC overflow.
-	ld hl, .ClockTimeMayBeWrongText
-	call PrintText
+;	ld hl, .ClockTimeMayBeWrongText
+;	call PrintText
+	farcall BlankScreen ; screen needs to be blank first
 	ld hl, wOptions
 	ld a, [hl]
 	push af
@@ -55,9 +56,9 @@ RestartClock:
 	ld c, a
 	ret
 
-.ClockTimeMayBeWrongText:
-	text_far _ClockTimeMayBeWrongText
-	text_end
+;.ClockTimeMayBeWrongText:
+;	text_far _ClockTimeMayBeWrongText
+;	text_end
 
 .ClockSetWithControlPadText:
 	text_far _ClockSetWithControlPadText
