@@ -3213,8 +3213,9 @@ wEsrevniHallBattleRoomSceneID::                   db
 wIcePath1FSceneID::                               db
 wOlivinePortPassageSceneID::                      db
 wVermilionPortPassageSceneID::                    db
+wAzaleaGymSceneID::                               db
 
-	ds 26
+	ds 25
 
 ; fight counts
 

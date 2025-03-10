@@ -120,6 +120,11 @@ AzaleaTownRivalBattleScript:
 	playmapmusic
 	end
 
+AzaleaTownResetGymLevers:
+	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
+	clearevent EVENT_AZALEA_GYM_RED_LEVER
+	end
+
 AzaleaTownRocket1Script:
 	jumptextfaceplayer AzaleaTownRocket1Text
 
@@ -519,6 +524,7 @@ AzaleaTown_MapEvents:
 	warp_event  2, 11, ILEX_FOREST_AZALEA_GATE, 4
 
 	def_coord_events
+	coord_event 10, 18, SCENE_AZALEATOWN_NOOP, AzaleaTownResetGymLevers
 	coord_event  5, 10, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene1
 	coord_event  5, 11, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene2
 	coord_event  9,  6, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL, AzaleaTownCelebiScene

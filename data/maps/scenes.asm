@@ -107,4 +107,5 @@ MapScenes::
 	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	scene_var OLIVINE_PORT_PASSAGE,                        wOlivinePortPassageSceneID
 	scene_var VERMILION_PORT_PASSAGE,                      wVermilionPortPassageSceneID
+	scene_var AZALEA_GYM,                                  wAzaleaGymSceneID
 	db -1 ; end

@@ -11,8 +11,33 @@
 
 AzaleaGym_MapScripts:
 	def_scene_scripts
+	scene_script AzaleaGymNoop1Scene, SCENE_AZALEAGYM_ROPE_WALKDEF
+	scene_script AzaleaGymNoop2Scene, SCENE_AZALEAGYM_ROPE_WALKABC
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, AzaleaGymRedBlueRopeActivationCallback
+
+AzaleaGymNoop1Scene:
+AzaleaGymNoop2Scene:
+	end
+
+AzaleaGymRedBlueRopeActivationCallback:
+	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
+	iffalse .endcallback
+	changeblock  2,  6, $90 ; deactivated blue lever
+	changeblock  8,  6, $8e ; deactivated blue lever
+	changeblock  8, 14, $8e ; deactivated blue lever
+	changeblock  6, 10, $96 ; deactivated blue rope
+	changeblock  8, 10, $97 ; deactivated blue rope
+	changeblock 10, 10, $98 ; deactivated blue rope
+	checkevent EVENT_AZALEA_GYM_RED_LEVER
+	iffalse .endcallback
+	changeblock  0, 14, $92 ; deactivated red lever
+	changeblock  2,  8, $93 ; deactivated red rope
+	changeblock  4,  8, $94 ; deactivated red rope
+	changeblock  6,  8, $95 ; deactivated red rope
+.endcallback:
+	endcallback
 
 AzaleaGymBugsyScript:
 	faceplayer
@@ -227,6 +252,442 @@ AzaleaGymStatue:
 	jumpstd GymStatue2Script
 .LyraToo
 	jumpstd GymStatue3Script
+
+AzaleaGymBlueLever:
+	opentext
+	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
+	iftrue .BlueReset
+	writetext AzaleaGymBlueLeverText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_STRENGTH
+	changeblock  2,  6, $90 ; deactivated blue lever
+	changeblock  8,  6, $8e ; deactivated blue lever
+	changeblock  8, 14, $8e ; deactivated blue lever
+	changeblock  6, 10, $96 ; deactivated blue rope
+	changeblock  8, 10, $97 ; deactivated blue rope
+	changeblock 10, 10, $98 ; deactivated blue rope
+	reloadmappart
+	setevent EVENT_AZALEA_GYM_BLUE_LEVER
+	end
+
+.BlueReset:
+	writetext AzaleaGymBlueLeverText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_STRENGTH
+	changeblock  2,  6, $8f ; activated blue lever
+	changeblock  8,  6, $8d ; activated blue lever
+	changeblock  8, 14, $8d ; activated blue lever
+	changeblock  6, 10, $82 ; activated blue rope
+	changeblock  8, 10, $83 ; activated blue rope
+	changeblock 10, 10, $84 ; activated blue rope
+	reloadmappart
+	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
+	end
+
+AzaleaGymRedLever:
+	opentext
+	checkevent EVENT_AZALEA_GYM_RED_LEVER
+	iftrue .RedReset
+	writetext AzaleaGymRedLeverText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_STRENGTH
+	changeblock  0, 14, $92 ; deactivated red lever
+	changeblock  2,  8, $93 ; deactivated red rope
+	changeblock  4,  8, $94 ; deactivated red rope
+	changeblock  6,  8, $95 ; deactivated red rope
+	reloadmappart
+	setevent EVENT_AZALEA_GYM_RED_LEVER
+	end
+
+.RedReset:
+	writetext AzaleaGymRedLeverText
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_STRENGTH
+	changeblock  0, 14, $91 ; activated red lever
+	changeblock  2,  8, $7c ; activated red rope
+	changeblock  4,  8, $7d ; activated red rope
+	changeblock  6,  8, $7e ; activated red rope
+	reloadmappart
+	clearevent EVENT_AZALEA_GYM_RED_LEVER
+	end
+
+AzaleaGymPit2SetUpScript:
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit1SetUpScript:
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit1AScript:
+	applymovement PLAYER, AzaleaGymPit1AMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit1BScript:
+	applymovement PLAYER, AzaleaGymPit1BMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit1CScript:
+	applymovement PLAYER, AzaleaGymPit1CMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit1DScript:
+	applymovement PLAYER, AzaleaGymPit1DMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit1EScript:
+	applymovement PLAYER, AzaleaGymPit1EMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit1FScript:
+	applymovement PLAYER, AzaleaGymPit1FMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit2AScript:
+	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
+	iftrue .Pit2ANoBlue
+	applymovement PLAYER, AzaleaGymPit2AMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+.Pit2ANoBlue:
+	applymovement PLAYER, AzaleaGymPit2ANoBlueMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit2BScript:
+	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
+	iftrue .Pit2BNoBlue
+	applymovement PLAYER, AzaleaGymPit2BMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+.Pit2BNoBlue:
+	applymovement PLAYER, AzaleaGymPit2BNoBlueMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit2CScript:
+	applymovement PLAYER, AzaleaGymPit2CMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKDEF
+	end
+
+AzaleaGymPit2DScript:
+	checkevent EVENT_AZALEA_GYM_RED_LEVER
+	iftrue .Pit2BNoRed
+	applymovement PLAYER, AzaleaGymPit2DMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+.Pit2BNoRed:
+	applymovement PLAYER, AzaleaGymPit2DNoRedMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit2EScript:
+	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
+	iftrue .Pit2ENoBlue
+	applymovement PLAYER, AzaleaGymPit2EMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+.Pit2ENoBlue:
+	applymovement PLAYER, AzaleaGymPit2ENoBlueMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+AzaleaGymPit1AMovement:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit1BMovement:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit1CMovement:
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit1DMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit1EMovement:
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit1FMovement:
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit2AMovement:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit2ANoBlueMovement:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit2BMovement:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit2BNoBlueMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit2CMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+AzaleaGymPit2DMovement:
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit2DNoRedMovement:
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit2EMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit2ENoBlueMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
 
 BugsyText_INeverLose:
 	text "I'm Bugsy!"
@@ -529,26 +990,57 @@ ScytherText:
 	line "Scytherrrr!"
 	done
 
+AzaleaGymBlueLeverText:
+	text "It's a blue lever."
+	
+	para "<PLAYER> pulled"
+	line "the lever."
+	done
+
+AzaleaGymRedLeverText:
+	text "It's a red lever."
+	
+	para "<PLAYER> pulled"
+	line "the lever."
+	done
+
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 15, AZALEA_TOWN, 5
-	warp_event  5, 15, AZALEA_TOWN, 5
+	warp_event  6, 31, AZALEA_TOWN, 5
+	warp_event  7, 31, AZALEA_TOWN, 5
 
 	def_coord_events
+	coord_event  2, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1DScript
+	coord_event  6, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1EScript
+	coord_event 11, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1FScript
+	coord_event  2, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1AScript
+	coord_event  6, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1BScript
+	coord_event 11, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1CScript
+	coord_event  2, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2DScript
+	coord_event  6, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2EScript
+	coord_event  2,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2AScript
+	coord_event  6,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2BScript
+	coord_event 11,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2CScript
+	coord_event  6, 14, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2SetUpScript
+	coord_event  6, 19, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1SetUpScript
 
 	def_bg_events
-	bg_event  3, 13, BGEVENT_READ, AzaleaGymStatue
-	bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue
+	bg_event  5, 29, BGEVENT_READ, AzaleaGymStatue
+	bg_event  8, 29, BGEVENT_READ, AzaleaGymStatue
+	bg_event  3,  6, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event  8,  7, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event  8, 15, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event  1, 14, BGEVENT_READ, AzaleaGymRedLever
 
 	def_object_events
-	object_event  5,  3, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
-	object_event  4,  3, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymScyther, -1
-	object_event  2,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
-	object_event  1,  9, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1
-	object_event  7,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1
-	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
-	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
-	object_event  8,  8, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacXander, -1
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1
+	object_event  7,  3, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
+	object_event  6,  3, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymScyther, -1
+	object_event  5, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherBenny, -1
+	object_event  2, 18, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherAl, -1
+	object_event 11,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJosh, -1
+	object_event  1,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
+	object_event  2,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
+	object_event 11, 18, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacXander, -1
+	object_event  9, 29, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1

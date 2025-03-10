@@ -92,9 +92,6 @@ INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 
 SECTION "Tileset Data 4", ROMX
 
-TilesetEliteFourRoomGFX::
-INCBIN "gfx/tilesets/elite_four_room.2bpp.lz"
-
 TilesetEliteFourRoomMeta::
 INCBIN "data/tilesets/elite_four_room_metatiles.bin"
 
@@ -284,9 +281,6 @@ INCBIN "data/tilesets/mansion_attributes.bin"
 
 TilesetGameCornerAttr::
 INCBIN "data/tilesets/game_corner_attributes.bin"
-
-TilesetEliteFourRoomAttr::
-INCBIN "data/tilesets/elite_four_room_attributes.bin"
 
 TilesetTraditionalHouseAttr::
 INCBIN "data/tilesets/traditional_house_attributes.bin"
@@ -604,3 +598,12 @@ INCLUDE "data/tilesets/game_corner_collision.asm"
 
 TilesetPortMeta::
 INCBIN "data/tilesets/port_metatiles.bin"
+
+
+SECTION "Tileset Data 23", ROMX
+
+TilesetEliteFourRoomGFX::
+INCBIN "gfx/tilesets/elite_four_room.2bpp.lz"
+
+TilesetEliteFourRoomAttr::
+INCBIN "data/tilesets/elite_four_room_attributes.bin"

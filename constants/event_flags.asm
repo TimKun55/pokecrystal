@@ -545,7 +545,9 @@
 	const EVENT_BEAT_RED
 	const EVENT_FOUGHT_RAIKOU
 	const EVENT_FOUGHT_ENTEI
-; Unused: next 170 events
+	const EVENT_AZALEA_GYM_BLUE_LEVER
+	const EVENT_AZALEA_GYM_RED_LEVER
+; Unused: next 168 events
 
 	const_next 800
 ; Trainer flags
