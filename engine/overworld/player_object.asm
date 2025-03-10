@@ -10,7 +10,7 @@ BlankScreen:
 	call ByteFill
 	hlcoord 0, 0, wAttrmap
 	ld bc, wAttrmapEnd - wAttrmap
-	ld a, $0
+	ld a, $7
 	call ByteFill
 	call WaitBGMap2
 	call SetDefaultBGPAndOBP

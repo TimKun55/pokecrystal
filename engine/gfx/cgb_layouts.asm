@@ -249,7 +249,7 @@ _CGB_PokegearPals:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld de, wBGPals1 palette 6
+	ld de, wBGPals1 palette 7
 	ld a, PREDEFPAL_POKEGEAR_TOD_ICONS
 	call GetPredefPal
 	call LoadHLPaletteIntoDE

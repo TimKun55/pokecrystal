@@ -2869,11 +2869,11 @@ TownMapPals:
 	push hl
 ; The palette map covers tiles $00 to $7e, $7f and above aren't available
 	cp $6d
-	jr z, .pal6
+	jr z, .pal7
 	cp $6e
-	jr z, .pal6
+	jr z, .pal7
 	cp $6f
-	jr z, .pal6
+	jr z, .pal7
 	cp $68
 	jr nc, .pal0
 
@@ -2903,8 +2903,8 @@ TownMapPals:
 	and PALETTE_MASK
 	jr .update
 
-.pal6
-	ld a, $6
+.pal7
+	ld a, $7
 	jr .update
 .pal0
 	xor a
