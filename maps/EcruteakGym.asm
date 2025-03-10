@@ -14,6 +14,7 @@ EcruteakGym_MapScripts:
 	scene_script EcruteakGymNoopScene,          SCENE_ECRUTEAKGYM_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, EcruteakGymLanternsCallback
 
 EcruteakGymForcedToLeaveScene:
 	sdefer EcruteakGymClosed
@@ -21,6 +22,62 @@ EcruteakGymForcedToLeaveScene:
 
 EcruteakGymNoopScene:
 	end
+
+EcruteakGymLanternsCallback:
+	checkevent EVENT_BEAT_MORTY
+	iftrue .AllLanternsOn
+	checkevent EVENT_BEAT_HEX_MANIAC_MARTHA
+	iftrue .MarthaLanternOff
+	checkevent EVENT_BEAT_SAGE_JEFFREY
+	iftrue .JeffreyLanternOff
+	checkevent EVENT_BEAT_HEX_MANIAC_GRACE
+	iftrue .GraceLanternOff
+	checkevent EVENT_BEAT_SAGE_PING
+	iftrue .PingLanternOff
+.AllLanternsOn
+	endcallback
+
+.MarthaLanternOff:
+	changeblock  4, 12, $a4 ; floor, wall, floor, floor (lantern out)
+	changeblock  2, 10, $b0 ; pit, floor, pit, floor (darkness creep)
+	changeblock  2, 12, $b1 ; pit, floor, pit, floor
+	changeblock  6, 12, $b2 ; pit, pit, floor, pit
+	changeblock  2, 14, $9c ; x4 pit
+	changeblock  4, 14, $9d ; floor, pit, floor, pit
+	changeblock  6, 14, $9d ; floor, pit, floor, pit
+	changeblock  4, 16, $a7 ; x3 floor, pit
+	changeblock  6, 16, $a1 ; floor, x3 pit
+	changeblock  4, 18, $ac ; pit, floor, pit, floor (darkness creep)
+	endcallback
+
+.JeffreyLanternOff:
+	changeblock  4, 18, $a5 ; floor, pit, floor, pit (darkness creep)
+	changeblock  4, 20, $a4 ; floor, wall, floor, floor (lantern)
+	changeblock  2, 22, $a3 ; x2 floor, x2 pit
+	changeblock  4, 22, $9e ; x4 floor
+	changeblock  6, 22, $a7 ; x3 floor, pit
+	changeblock  4, 24, $9c ; x4 pit
+	changeblock  6, 24, $9c ; x4 pit
+	changeblock  8, 22, $af ; x2 floor, x2 pit
+	endcallback
+
+.GraceLanternOff:
+	changeblock 10, 24, $a0 ; wall, floor, pit, floor (lantern)
+	changeblock 10, 26, $9f ; pit, floor, pit, floor (darkness creep)
+	changeblock 12, 24, $a1 ; floor, x3 pit
+	changeblock 10, 22, $a2 ; floor, floor, pit, floor
+	changeblock 12, 22, $9d ; floor, pit, floor, pit
+	changeblock  8, 22, $ae ; x2 floor, x2 pit (darkness creep)
+	endcallback
+
+.PingLanternOff:
+	changeblock 10, 28, $9e ; x4 floor (lantern)
+	changeblock  8, 28, $9e ; x4 floor
+	changeblock  8, 30, $9d ; floor, pit, floor, pit
+	changeblock  8, 32, $ac ; floor, pit, floor, pit (darkness creep)
+	changeblock 10, 30, $9c ; x4 pit
+	changeblock 10, 26, $ad ; pit, floor, pit, floor
+	endcallback
 
 EcruteakGymMortyScript:
 	faceplayer
@@ -39,6 +96,17 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
+	changeblock  4, 12, $96 ; floor, wall, floor, floor (lantern on)
+	changeblock  2, 10, $8b ; pit, floor, pit, floor (darkness creep)
+	changeblock  2, 12, $8b ; pit, floor, pit, floor
+	changeblock  6, 12, $95 ; pit, pit, floor, pit
+	changeblock  2, 14, $38 ; x4 pit
+	changeblock  4, 14, $8a ; floor, pit, floor, pit
+	changeblock  6, 14, $89 ; floor, pit, floor, pit
+	changeblock  4, 16, $93 ; x3 floor, pit
+	changeblock  6, 16, $94 ; floor, x3 pit
+	changeblock  4, 18, $89 ; pit, floor, pit, floor (darkness creep)
+	refreshmap
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
@@ -161,47 +229,203 @@ EcruteakGymClosed:
 	end
 
 TrainerSageJeffrey:
-	trainer SAGE, JEFFREY, EVENT_BEAT_SAGE_JEFFREY, SageJeffreySeenText, SageJeffreyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
 	writetext SageJeffreyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSagePing:
-	trainer SAGE, PING, EVENT_BEAT_SAGE_PING, SagePingSeenText, SagePingBeatenText, 0, .Script
+SageJeffreyCheck:
+	checkevent EVENT_BEAT_SAGE_JEFFREY
+	iftrue .End
+	playmusic MUSIC_SAGE_ENCOUNTER
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE1, 15
+	pause 15
+	applymovement ECRUTEAKGYM_SAGE1, JeffreyToPlayerMovement
+	opentext
+	writetext SageJeffreySeenText
+	waitbutton
+	closetext
+	winlosstext SageJeffreyBeatenText, 0
+	loadtrainer SAGE, JEFFREY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SAGE_JEFFREY
+	pause 20
+	special FadeOutToWhite
+	pause 10
+	changeblock  4, 20, $aa ; lantern out
+	reloadmappart
+	special FadeInFromWhite
+	pause 20
+	special FadeOutToBlack
+	pause 10
+	changeblock  4, 18, $a5 ; floor, pit, floor, pit (darkness creep)
+	changeblock  4, 20, $a4 ; floor, wall, floor, floor (lantern)
+	changeblock  2, 22, $a3 ; x2 floor, x2 pit
+	changeblock  4, 22, $9e ; x4 floor
+	changeblock  6, 22, $a7 ; x3 floor, pit
+	changeblock  4, 24, $9c ; x4 pit
+	changeblock  6, 24, $9c ; x4 pit
+	changeblock  8, 22, $af ; x2 floor, x2 pit (darkness creep)
+	; reload Grace's tiles
+	changeblock 10, 24, $91 ; wall, floor, pit, floor (lit lantern)
+	changeblock 10, 26, $8b ; pit, floor, pit, floor
+	changeblock 12, 24, $8c ; floor, x3 pit
+	changeblock 10, 22, $8d ; floor, floor, pit, floor
+	changeblock 12, 22, $89 ; floor, pit, floor, pit
+	reloadmappart
+	special FadeInFromBlack
+.End
+	end
 
-.Script:
-	endifjustbattled
+TrainerSagePing:
+	faceplayer
 	opentext
 	writetext SagePingAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHexManiacMartha:
-	trainer HEX_MANIAC, MARTHA, EVENT_BEAT_HEX_MANIAC_MARTHA, HexManiacMarthaSeenText, HexManiacMarthaBeatenText, 0, .Script
+SagePingCheck:
+	checkevent EVENT_BEAT_SAGE_PING
+	iftrue .End
+	playmusic MUSIC_SAGE_ENCOUNTER
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE2, 15
+	pause 15
+	opentext
+	writetext SagePingSeenText
+	waitbutton
+	closetext
+	winlosstext SagePingBeatenText, 0
+	loadtrainer SAGE, PING
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SAGE_PING
+	pause 20
+	special FadeOutToWhite
+	pause 10
+	changeblock 10, 28, $a8 ; lantern out
+	refreshmap
+	special FadeInFromWhite
+	pause 20
+	special FadeOutToBlack
+	pause 10
+	changeblock 10, 28, $9e ; x4 floor (lantern)
+	changeblock  8, 28, $9e ; x4 floor
+	changeblock  8, 30, $9d ; floor, pit, floor, pit
+	changeblock  8, 32, $ac ; floor, pit, floor, pit (darkness creep)
+	changeblock 10, 30, $9c ; x4 pit
+	changeblock 10, 26, $ad ; pit, floor, pit, floor
+	refreshmap
+	special FadeInFromBlack
+.End
+	end
 
-.Script:
-	endifjustbattled
+TrainerHexManiacMartha:
+	faceplayer
 	opentext
 	writetext HexManiacMarthaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerHexManiacGrace:
-	trainer HEX_MANIAC, GRACE, EVENT_BEAT_HEX_MANIAC_GRACE, HexManiacGraceSeenText, HexManiacGraceBeatenText, 0, .Script
+HexManiacMarthaCheck:
+	checkevent EVENT_BEAT_HEX_MANIAC_MARTHA
+	iftrue .End
+	playmusic MUSIC_SAGE_ENCOUNTER
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC1, 15
+	pause 15
+	applymovement ECRUTEAKGYM_HEX_MANIAC1, MarthaToPlayerMovement
+	opentext
+	writetext HexManiacMarthaSeenText
+	waitbutton
+	closetext
+	winlosstext HexManiacMarthaBeatenText, 0
+	loadtrainer HEX_MANIAC, MARTHA
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HEX_MANIAC_MARTHA
+	pause 20
+	special FadeOutToWhite
+	pause 10
+	changeblock 10, 24, $a9 ; lantern out
+	reloadmappart
+	special FadeInFromWhite
+	pause 20
+	special FadeOutToBlack
+	pause 10
+	changeblock  4, 12, $a4 ; floor, wall, floor, floor (lantern out)
+	changeblock  2, 10, $b0 ; pit, floor, pit, floor (darkness creep)
+	changeblock  2, 12, $b1 ; pit, floor, pit, floor
+	changeblock  6, 12, $b2 ; pit, pit, floor, pit
+	changeblock  2, 14, $9c ; x4 pit
+	changeblock  4, 14, $9d ; floor, pit, floor, pit
+	changeblock  6, 14, $9d ; floor, pit, floor, pit
+	changeblock  4, 16, $a7 ; x3 floor, pit
+	changeblock  6, 16, $a1 ; floor, x3 pit
+	changeblock  4, 18, $ac ; pit, floor, pit, floor (darkness creep)
+	; reload Jeffrey's tiles
+	changeblock  4, 20, $92 ; floor, wall, floor, floor (lantern)
+	changeblock  2, 22, $8e ; x2 floor, x2 pit
+	changeblock  4, 22, $09 ; x4 floor
+	changeblock  6, 22, $8f ; x3 floor, pit
+	changeblock  4, 24, $37 ; x4 pit
+	changeblock  6, 24, $39 ; x4 pit
+	changeblock  8, 22, $8e ; x2 floor, x2 pit (darkness creep)
+	reloadmappart
+	special FadeInFromBlack
+.End
+	end
 
-.Script:
-	endifjustbattled
+TrainerHexManiacGrace:
+	faceplayer
 	opentext
 	writetext HexManiacGraceAfterBattleText
 	waitbutton
 	closetext
+	end
+
+HexManiacGraceCheck:
+	checkevent EVENT_BEAT_HEX_MANIAC_GRACE
+	iftrue .End
+	playmusic MUSIC_SAGE_ENCOUNTER
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC2, 15
+	pause 15
+	opentext
+	writetext HexManiacGraceSeenText
+	waitbutton
+	closetext
+	winlosstext HexManiacGraceBeatenText, 0
+	loadtrainer HEX_MANIAC, GRACE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HEX_MANIAC_GRACE
+	pause 20
+	special FadeOutToWhite
+	pause 10
+	changeblock 10, 24, $a9 ; lantern
+	reloadmappart
+	special FadeInFromWhite
+	pause 20
+	special FadeOutToBlack
+	pause 10
+	changeblock 10, 24, $a0 ; wall, floor, pit, floor (lantern)
+	changeblock 10, 26, $9f ; pit, floor, pit, floor (darkness creep)
+	changeblock 12, 24, $a1 ; floor, x3 pit
+	changeblock 10, 22, $a2 ; floor, floor, pit, floor
+	changeblock 12, 22, $9d ; floor, pit, floor, pit
+	changeblock  8, 22, $ae ; x2 floor, x2 pit (darkness creep)
+	; reload Ping's tiles
+	changeblock 10, 28, $90 ; x4 floor (lit lantern)
+	changeblock  8, 28, $09 ; x4 floor
+	changeblock  8, 30, $8a ; floor, pit, floor, pit
+	changeblock  8, 32, $89 ; floor, pit, floor, pit (darkness creep)
+	changeblock 10, 30, $37 ; x4 pit
+	reloadmappart
+	special FadeInFromBlack
+.End
 	end
 
 EcruteakGymGuideScript:
@@ -244,6 +468,18 @@ EcruteakGymPlayerSlowStepDownMovement:
 
 EcruteakGymGrampsSlowStepDownMovement:
 	slow_step DOWN
+	step_end
+
+JeffreyToPlayerMovement:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+MarthaToPlayerMovement:
+	step DOWN
+	step DOWN
+	step DOWN
 	step_end
 
 MortyIntroText:
@@ -462,11 +698,12 @@ HexManiacMarthaAfterBattleText:
 	done
 
 HexManiacGraceSeenText:
-	text "Stumped by our in-"
-	line "visible floor?"
+	text "The light wards"
+	line "off the darkness."
 
-	para "Defeat me if you"
-	line "want a hint!"
+	para "But what happens"
+	line "when light goes"
+	cont "out?"
 	done
 
 HexManiacGraceBeatenText:
@@ -474,14 +711,9 @@ HexManiacGraceBeatenText:
 	done
 
 HexManiacGraceAfterBattleText:
-	text "Fine. I shall tell"
-	line "you the secret of"
-
-	para "the invisible"
-	line "floor."
-
-	para "The path is right"
-	line "before our eyes!"
+	text "Look at the path"
+	line "carefully before"
+	cont "the battles."
 	done
 
 EcruteakGymGuideText:
@@ -524,52 +756,103 @@ EcruteakGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, ECRUTEAK_CITY, 8
-	warp_event  5, 17, ECRUTEAK_CITY, 8
-	warp_event  4, 14, ECRUTEAK_GYM, 4
-	warp_event  2,  4, ECRUTEAK_GYM, 3
-	warp_event  3,  4, ECRUTEAK_GYM, 3
-	warp_event  4,  4, ECRUTEAK_GYM, 3
-	warp_event  4,  5, ECRUTEAK_GYM, 3
-	warp_event  6,  7, ECRUTEAK_GYM, 3
-	warp_event  7,  4, ECRUTEAK_GYM, 3
+	warp_event  8, 39, ECRUTEAK_CITY, 8
+	warp_event  9, 39, ECRUTEAK_CITY, 8
+	warp_event  8, 34, ECRUTEAK_GYM, 4
 	warp_event  2,  6, ECRUTEAK_GYM, 3
-	warp_event  3,  6, ECRUTEAK_GYM, 3
 	warp_event  4,  6, ECRUTEAK_GYM, 3
-	warp_event  5,  6, ECRUTEAK_GYM, 3
-	warp_event  7,  6, ECRUTEAK_GYM, 3
-	warp_event  7,  7, ECRUTEAK_GYM, 3
-	warp_event  4,  8, ECRUTEAK_GYM, 3
-	warp_event  5,  8, ECRUTEAK_GYM, 3
-	warp_event  6,  8, ECRUTEAK_GYM, 3
-	warp_event  7,  8, ECRUTEAK_GYM, 3
+	warp_event  2,  7, ECRUTEAK_GYM, 3
+	warp_event  4,  7, ECRUTEAK_GYM, 3
 	warp_event  2,  8, ECRUTEAK_GYM, 3
+	warp_event  4,  8, ECRUTEAK_GYM, 3
 	warp_event  2,  9, ECRUTEAK_GYM, 3
+	warp_event  4,  9, ECRUTEAK_GYM, 3
 	warp_event  2, 10, ECRUTEAK_GYM, 3
-	warp_event  2, 11, ECRUTEAK_GYM, 3
 	warp_event  4, 10, ECRUTEAK_GYM, 3
-	warp_event  5, 10, ECRUTEAK_GYM, 3
+	warp_event  2, 11, ECRUTEAK_GYM, 3
+	warp_event  4, 11, ECRUTEAK_GYM, 3
 	warp_event  2, 12, ECRUTEAK_GYM, 3
-	warp_event  3, 12, ECRUTEAK_GYM, 3
-	warp_event  4, 12, ECRUTEAK_GYM, 3
-	warp_event  5, 12, ECRUTEAK_GYM, 3
-	warp_event  7, 10, ECRUTEAK_GYM, 3
-	warp_event  7, 11, ECRUTEAK_GYM, 3
-	warp_event  7, 12, ECRUTEAK_GYM, 3
+	warp_event  6, 12, ECRUTEAK_GYM, 3
+	warp_event  2, 13, ECRUTEAK_GYM, 3
 	warp_event  7, 13, ECRUTEAK_GYM, 3
+	warp_event  3, 14, ECRUTEAK_GYM, 3
+	warp_event  5, 14, ECRUTEAK_GYM, 3
+	warp_event  7, 14, ECRUTEAK_GYM, 3
+	warp_event  3, 15, ECRUTEAK_GYM, 3
+	warp_event  5, 15, ECRUTEAK_GYM, 3
+	warp_event  7, 15, ECRUTEAK_GYM, 3
+	warp_event  3, 16, ECRUTEAK_GYM, 3
+	warp_event  7, 16, ECRUTEAK_GYM, 3
+	warp_event  3, 17, ECRUTEAK_GYM, 3
+	warp_event  5, 17, ECRUTEAK_GYM, 3
+	warp_event  6, 17, ECRUTEAK_GYM, 3
+	warp_event  3, 18, ECRUTEAK_GYM, 3
+	warp_event  5, 18, ECRUTEAK_GYM, 3
+	warp_event  3, 19, ECRUTEAK_GYM, 3
+	warp_event  5, 19, ECRUTEAK_GYM, 3
+	warp_event  3, 20, ECRUTEAK_GYM, 3
+	warp_event  5, 20, ECRUTEAK_GYM, 3
+	warp_event  2, 21, ECRUTEAK_GYM, 3
+	warp_event  3, 21, ECRUTEAK_GYM, 3
+	warp_event  6, 21, ECRUTEAK_GYM, 3
+	warp_event  7, 21, ECRUTEAK_GYM, 3
+	warp_event  8, 21, ECRUTEAK_GYM, 3
+	warp_event  9, 21, ECRUTEAK_GYM, 3
+	warp_event 10, 21, ECRUTEAK_GYM, 3
+	warp_event 11, 21, ECRUTEAK_GYM, 3
+	warp_event 12, 21, ECRUTEAK_GYM, 3
+	warp_event  1, 22, ECRUTEAK_GYM, 3
+	warp_event 13, 22, ECRUTEAK_GYM, 3
+	warp_event  2, 23, ECRUTEAK_GYM, 3
+	warp_event  3, 23, ECRUTEAK_GYM, 3
+	warp_event  7, 23, ECRUTEAK_GYM, 3
+	warp_event  8, 23, ECRUTEAK_GYM, 3
+	warp_event  9, 23, ECRUTEAK_GYM, 3
+	warp_event 10, 23, ECRUTEAK_GYM, 3
+	warp_event 13, 23, ECRUTEAK_GYM, 3
+	warp_event  4, 24, ECRUTEAK_GYM, 3
+	warp_event  5, 24, ECRUTEAK_GYM, 3
+	warp_event  6, 24, ECRUTEAK_GYM, 3
+	warp_event 13, 24, ECRUTEAK_GYM, 3
+	warp_event 10, 25, ECRUTEAK_GYM, 3
+	warp_event 12, 25, ECRUTEAK_GYM, 3
+	warp_event 10, 26, ECRUTEAK_GYM, 3
+	warp_event 12, 26, ECRUTEAK_GYM, 3
+	warp_event  8, 27, ECRUTEAK_GYM, 3
+	warp_event  9, 27, ECRUTEAK_GYM, 3	
+	warp_event 10, 27, ECRUTEAK_GYM, 3
+	warp_event 12, 27, ECRUTEAK_GYM, 3
+	warp_event  7, 28, ECRUTEAK_GYM, 3
+	warp_event 12, 28, ECRUTEAK_GYM, 3
+	warp_event  7, 29, ECRUTEAK_GYM, 3
+	warp_event 12, 29, ECRUTEAK_GYM, 3
+	warp_event  7, 30, ECRUTEAK_GYM, 3
+	warp_event  9, 30, ECRUTEAK_GYM, 3
+	warp_event 10, 30, ECRUTEAK_GYM, 3
+	warp_event 11, 30, ECRUTEAK_GYM, 3
+	warp_event  7, 31, ECRUTEAK_GYM, 3
+	warp_event  9, 31, ECRUTEAK_GYM, 3
+	warp_event  7, 32, ECRUTEAK_GYM, 3
+	warp_event  9, 32, ECRUTEAK_GYM, 3
+	warp_event  7, 33, ECRUTEAK_GYM, 3
+	warp_event  9, 33, ECRUTEAK_GYM, 3
 
 	def_coord_events
+	coord_event  8, 29, SCENE_ECRUTEAKGYM_NOOP, SagePingCheck
+	coord_event 11, 24, SCENE_ECRUTEAKGYM_NOOP, HexManiacGraceCheck
+	coord_event  6, 22, SCENE_ECRUTEAKGYM_NOOP, SageJeffreyCheck
+	coord_event  4, 16, SCENE_ECRUTEAKGYM_NOOP, HexManiacMarthaCheck
 
 	def_bg_events
-	bg_event  3, 15, BGEVENT_READ, EcruteakGymStatue
-	bg_event  6, 15, BGEVENT_READ, EcruteakGymStatue
+	bg_event  6, 37, BGEVENT_READ, EcruteakGymStatue
+	bg_event 11, 37, BGEVENT_READ, EcruteakGymStatue
 
 	def_object_events
-	object_event  5,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
-	object_event  4,  1, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengar, -1
-	object_event  2,  7, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
-	object_event  3, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
-	object_event  7,  5, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHexManiacMartha, -1
-	object_event  7,  9, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerHexManiacGrace, -1
-	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
-	object_event  4, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  3,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
+	object_event  2,  1, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengar, -1
+	object_event  2, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSageJeffrey, -1
+	object_event  9, 29, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSagePing, -1
+	object_event  4, 12, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacMartha, -1
+	object_event 11, 23, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacGrace, -1
+	object_event 10, 37, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
+	object_event  8, 36, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
