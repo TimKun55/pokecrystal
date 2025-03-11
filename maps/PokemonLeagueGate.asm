@@ -2,6 +2,7 @@
 	const POKEMONLEAGUEGATE_OFFICER
 	const POKEMONLEAGUEGATE_BLACK_BELT1
 	const POKEMONLEAGUEGATE_BLACK_BELT2
+	const POKEMONLEAGUEGATE_CLERK
 	const POKEMONLEAGUEGATE_COOLTRAINER_M
 	const POKEMONLEAGUEGATE_HIKER
 	const POKEMONLEAGUEGATE_BEAUTY
@@ -62,6 +63,19 @@ PokemonLeagueGateLeftBlackBeltScript:
 PokemonLeagueGateRightBlackBeltScript:
 	jumptextfaceplayer PokemonLeagueGateRightBlackBeltText
 
+PokemonLeagueGateClerkScript:
+	faceplayer
+	opentext
+	checkevent EVENT_LEAGUE_GATE_CLERK_INTRO
+	iftrue .SkipIntro
+	writetext PokemonLeagueGateClerkIntroText
+	waitbutton
+	setevent EVENT_LEAGUE_GATE_CLERK_INTRO
+.SkipIntro
+	pokemart MARTTYPE_STANDARD, MART_LEAGUE_GATE
+	closetext
+	end
+
 PokemonLeagueGateCooltrainerMScript:
 	jumptextfaceplayer PokemonLeagueGateCooltrainerMText
 
@@ -120,6 +134,29 @@ PokemonLeagueGateRightBlackBeltText:
 
 	para "scary, and they're"
 	line "ready for you!"
+	done
+
+PokemonLeagueGateClerkIntroText:
+	text "Hello there, young"
+	line "trainer!"
+	
+	para "Welcome to my"
+	line "store!"
+	
+	para "I sell items to"
+	line "those from Johto"
+	cont "as they've had to"
+	cont "come quite a long"
+	cont "way!"
+	
+	para "May I please see"
+	line "your Trainer Card?"
+	
+	para "……… ……… ……… ………"
+	
+	para "Very good!"
+	line "That all seems to"
+	cont "be in order!"
 	done
 
 PokemonLeagueGateCooltrainerMText:
@@ -185,7 +222,8 @@ PokemonLeagueGate_MapEvents:
 	object_event 18,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateOfficerScript, -1
 	object_event 17, 14, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER
 	object_event 22, 14, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateRightBlackBeltScript, EVENT_FOUGHT_SNORLAX
+	object_event 21, 21, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateClerkScript, -1
 	object_event 18, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateCooltrainerMScript, -1
 	object_event 21,  8, SPRITE_HIKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateHikerScript, -1
-	object_event 21, 19, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateBeautyScript, -1
+	object_event 21, 28, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateBeautyScript, -1
 	object_event 38, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueGateCooltrainerFScript, -1

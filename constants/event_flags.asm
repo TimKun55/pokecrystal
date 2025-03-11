@@ -547,7 +547,8 @@
 	const EVENT_FOUGHT_ENTEI
 	const EVENT_AZALEA_GYM_BLUE_LEVER
 	const EVENT_AZALEA_GYM_RED_LEVER
-; Unused: next 168 events
+	const EVENT_LEAGUE_GATE_CLERK_INTRO
+; Unused: next 167 events
 
 	const_next 800
 ; Trainer flags

@@ -18,6 +18,7 @@ Marts:
 	dw MartMahogany2
 	dw MartBlackthorn
 	dw MartBlackthornMadam
+	dw MartLeagueGate
 	dw MartViridian
 	dw MartPewter
 	dw MartCerulean
@@ -227,6 +228,14 @@ MartBlackthornMadam:
 	db METAL_COAT
 	db DRAGON_SCALE
 	db UP_GRADE
+	db -1 ; end
+
+MartLeagueGate:
+	db 4 ; # items
+	db HYPER_POTION
+	db FULL_HEAL
+	db REVIVE
+	db SUPER_REPEL
 	db -1 ; end
 
 MartViridian:
