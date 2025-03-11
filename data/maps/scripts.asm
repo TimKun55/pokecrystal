@@ -353,7 +353,7 @@ INCLUDE "maps/Route6UndergroundPathEntrance.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
-INCLUDE "maps/VictoryRoadGate.asm"
+INCLUDE "maps/PokemonLeagueGate.asm"
 INCLUDE "maps/FightingDojo.asm"
 
 

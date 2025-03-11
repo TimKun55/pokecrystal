@@ -658,8 +658,8 @@ Route23_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 139, VICTORY_ROAD_GATE, 3
-	warp_event  7, 139, VICTORY_ROAD_GATE, 4
+	warp_event  6, 139, POKEMON_LEAGUE_GATE, 3
+	warp_event  7, 139, POKEMON_LEAGUE_GATE, 4
 	warp_event  8,  41, VICTORY_ROAD_1F,  1
 	warp_event 10,  23, VICTORY_ROAD_3F, 10
 

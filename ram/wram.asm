@@ -3119,7 +3119,7 @@ wPowerPlantSceneID::                              db
 wCeruleanGymSceneID::                             db
 wRoute25SceneID::                                 db
 wTrainerHouseB1FSceneID::                         db
-wVictoryRoadGateSceneID::                         db
+wPokemonLeagueGateSceneID::                       db
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16GateSceneID::                             db
 wRoute17Route18GateSceneID::                      db

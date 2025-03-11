@@ -821,8 +821,8 @@ MountMoon1F_Blocks:
 MrPokemonsHouse_Blocks:
 	INCBIN "maps/MrPokemonsHouse.ablk"
 
-VictoryRoadGate_Blocks:
-	INCBIN "maps/VictoryRoadGate.ablk"
+PokemonLeagueGate_Blocks:
+	INCBIN "maps/PokemonLeagueGate.ablk"
 
 OlivinePortPassage_Blocks:
 	INCBIN "maps/OlivinePortPassage.ablk"

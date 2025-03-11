@@ -17,8 +17,8 @@ Route22_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  4, VICTORY_ROAD_GATE, 1
-	warp_event  4,  5, VICTORY_ROAD_GATE, 2
+	warp_event  4,  4, POKEMON_LEAGUE_GATE, 1
+	warp_event  4,  5, POKEMON_LEAGUE_GATE, 2
 
 	def_coord_events
 

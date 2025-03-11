@@ -525,7 +525,7 @@ Route26_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  5, VICTORY_ROAD_GATE, 5
+	warp_event  7,  5, POKEMON_LEAGUE_GATE, 5
 	warp_event 15, 51, ROUTE_26_HEAL_HOUSE, 1
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 	warp_event  4, 89, TOHJO_FALLS, 2
