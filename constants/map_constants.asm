@@ -187,7 +187,7 @@ ENDM
 	endgroup
 
 	newgroup BLACKTHORN                                           ;  5
-	map_const BLACKTHORN_GYM_1F,                            5,  9 ;  1
+	map_const BLACKTHORN_GYM_1F,                            5, 12 ;  1
 	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
 	map_const BLACKTHORN_DRAGON_SPEECH_HOUSE,               4,  4 ;  3
 	map_const BLACKTHORN_EMYS_HOUSE,                        4,  4 ;  4
