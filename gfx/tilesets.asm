@@ -191,9 +191,6 @@ INCLUDE "data/tilesets/forest_collision.asm"
 TilesetTrainStationMeta::
 INCBIN "data/tilesets/train_station_metatiles.bin"
 
-TilesetGameCornerMeta::
-INCBIN "data/tilesets/game_corner_metatiles.bin"
-
 
 SECTION "Tileset Data 7", ROMX
 
@@ -607,3 +604,6 @@ INCBIN "gfx/tilesets/elite_four_room.2bpp.lz"
 
 TilesetEliteFourRoomAttr::
 INCBIN "data/tilesets/elite_four_room_attributes.bin"
+
+TilesetGameCornerMeta::
+INCBIN "data/tilesets/game_corner_metatiles.bin"
