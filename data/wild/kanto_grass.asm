@@ -560,6 +560,68 @@ KantoGrassWildMons:
 	db  8, PSYDUCK,       54,  57
 	end_grass_wildmons
 
+	def_grass_wildmons CINNABAR_VOLCANO_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	end_grass_wildmons
+
+	def_grass_wildmons CINNABAR_VOLCANO_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	; day
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	; nite
+	;   %, species,		 min, max
+	db 22, SLUGMA,        54,  57
+	db 22, MAGMAR,        55,  58
+	db 22, GOLEM,         55,  58
+	db 11, MAGCARGO,      55,  58
+	db  9, MAGMAR,        54,  57
+	db  9, MAGCARGO,      55,  58
+	db  5, MAGMORTAR,     54,  57
+	end_grass_wildmons
+
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
