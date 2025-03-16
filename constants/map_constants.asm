@@ -448,7 +448,7 @@ ENDM
 	map_const CELADON_POKECENTER_1F,                        6,  4 ; 15
 	map_const CELADON_GAME_CORNER,                         10,  7 ; 16
 	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               4,  4 ; 17
-	map_const CELADON_GYM,                                  5,  9 ; 18
+	map_const CELADON_GYM,                                 15, 14 ; 18
 	map_const CELADON_CAFE,                                 6,  4 ; 19
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
 	map_const CELADON_HOME_DECOR_STORE_1F,                  5,  4 ; 21
