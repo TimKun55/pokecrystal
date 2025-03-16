@@ -157,6 +157,14 @@ SeafoamGymGuideScript:
 	closetext
 	end
 
+SeafoamGymStatue:
+	checkflag ENGINE_VOLCANOBADGE
+	iftrue .Beaten
+	jumpstd GymStatue1Script
+.Beaten:
+	gettrainername STRING_BUFFER_4, BLAINE, BLAINE1
+	jumpstd GymStatue2Script
+
 BlaineIntroText:
 	text "Blaine: Waaah!"
 
@@ -325,11 +333,13 @@ SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 15, SEAFOAM_ISLANDS_1F, 5
+	warp_event  9, 17, SEAFOAM_ISLANDS_1F, 5
 
 	def_coord_events
 
 	def_bg_events
+	bg_event  6, 15, BGEVENT_READ, SeafoamGymStatue
+	bg_event 11, 15, BGEVENT_READ, SeafoamGymStatue
 
 	def_object_events
 	object_event  8,  3, SPRITE_BLAINE,    SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1

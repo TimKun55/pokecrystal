@@ -210,7 +210,7 @@ ENDM
 	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
 	map_const CINNABAR_MOLTRES_NEST,                        7, 11 ;  9
-	map_const SEAFOAM_GYM,                                  9,  9 ; 10
+	map_const SEAFOAM_GYM,                                  9, 10 ; 10
 	map_const SEAFOAM_ISLANDS_1F,                          11,  5 ; 11
 	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 12
 	map_const SEAFOAM_ISLANDS_B2F,                         15, 10 ; 13
