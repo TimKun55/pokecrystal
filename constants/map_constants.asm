@@ -317,7 +317,7 @@ ENDM
 	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  7
 	map_const VERMILION_MART,                               6,  4 ;  8
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  9
-	map_const VERMILION_GYM,                                5,  9 ; 10
+	map_const VERMILION_GYM,                                5, 10 ; 10
 	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 11
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4 ; 13
@@ -519,7 +519,7 @@ ENDM
 	newgroup SAFFRON                                              ; 25
 	map_const SAFFRON_CITY,                                20, 20 ;  1
 	map_const FIGHTING_DOJO,                                5,  7 ;  2
-	map_const SAFFRON_GYM,                                 10,  9 ;  3
+	map_const SAFFRON_GYM,                                 13,  9 ;  3
 	map_const SAFFRON_MART,                                 6,  4 ;  4
 	map_const SAFFRON_POKECENTER_1F,                        6,  4 ;  5
 	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  6
