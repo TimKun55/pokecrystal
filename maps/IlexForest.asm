@@ -92,14 +92,12 @@ IlexForestPinecoShinyCallback:
 	iftrue .NoAppear
 	checkevent EVENT_GOT_DIPLOMA
 	iftrue .Appear
-	sjump .NoAppear
+.NoAppear
+	disappear ILEXFOREST_PINECO
+	endcallback
 
 .Appear
 	appear ILEXFOREST_PINECO
-	endcallback
-
-.NoAppear
-	disappear ILEXFOREST_PINECO
 	endcallback
 
 IlexForestCharcoalApprenticeScript:
