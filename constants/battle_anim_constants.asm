@@ -235,7 +235,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; c9
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_R       ; ca
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_B       ; cb
-	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; ce
+	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; cc
+	const BATTLE_ANIM_OBJ_KARATE_CHOP         ; cd
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -322,6 +323,8 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_COTTON                    ; 50
 	const BATTLE_ANIM_FUNC_ROCK_TOMB                 ; 51
 	const BATTLE_ANIM_FUNC_HURRICANE                 ; 52
+	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 53
+	const BATTLE_ANIM_FUNC_FALL_AND_STOP             ; 54
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -863,6 +866,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_BIG_RINGS  ; 2e
 	const BATTLE_ANIM_GFX_GLOW       ; 2f
 	const BATTLE_ANIM_GFX_WATER_BALL ; 30
+	const BATTLE_ANIM_GFX_CHOP       ; 31
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

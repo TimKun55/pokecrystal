@@ -44,6 +44,7 @@ AnimObjRingsGFX:     INCBIN "gfx/battle_anims/rings.2bpp.lz"
 AnimObjBigRingsGFX:  INCBIN "gfx/battle_anims/bigrings.2bpp.lz"
 AnimObjGlowGFX:      INCBIN "gfx/battle_anims/glow.2bpp.lz"
 AnimObjWaterBallGFX: INCBIN "gfx/battle_anims/waterball.2bpp.lz"
+AnimObjChopGFX:      INCBIN "gfx/battle_anims/chop.2bpp.lz"
 
 
 SECTION "Battle Ball Icons", ROMX
