@@ -177,3 +177,4 @@
 	tilecoll PIT, FLOOR, PIT, FLOOR ; b0
 	tilecoll PIT, FLOOR, PIT, FLOOR ; b1
 	tilecoll PIT, PIT, FLOOR, PIT ; b2
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; b3
