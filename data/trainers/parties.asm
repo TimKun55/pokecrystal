@@ -1078,9 +1078,8 @@ LassGroup:
 	
 	; LASS (18)
 	db "Sandy@", TRAINERTYPE_NORMAL
-	db 64, MAGCARGO
-	db 65, RAPIDASH
-	db 66, MAGNETON
+	db 56, SUNFLORA
+	db 57, VENUSAUR
 	db -1 ; end
 	
 	; LASS (19)

@@ -159,6 +159,17 @@ TrainerTwinsJoAndZoe2:
 	closetext
 	end
 
+TrainerLassSandy:
+	trainer LASS, SANDY, EVENT_BEAT_LASS_SANDY, LassSandySeenText, LassSandyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassSandyAfterBattleText
+	waitbutton
+	closetext
+	end
+
 CeladonGymStatue:
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .Beaten
@@ -356,7 +367,22 @@ TwinsJoAndZoe2AfterBattleText:
 	text "Erika is much,"
 	line "much stronger!"
 	done
-	
+
+LassSandySeenText:
+	text "Don't you just"
+	line "love this maze?"
+	done
+
+LassSandyBeatenText:
+	text "Oh, so rough!"
+	done
+
+LassSandyAfterBattleText:
+	text "Our gym is pretty"
+	line "but it's a lot of"
+	cont "work to maintain."
+	done
+
 BellossomText:
 	text "Bellossom: Som!!"
 	line "BellBell!"
@@ -379,7 +405,8 @@ CeladonGym_MapEvents:
 	object_event 15,  7, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymErikaScript, -1
 	object_event 14,  7, SPRITE_BELLOSSOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymBellossom, -1
 	object_event 22, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassMichelle, -1
-	object_event  6,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTanya, -1
+	object_event  5,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerTanya, -1
 	object_event 19,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
-	object_event  2,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
-	object_event  3,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1
+	object_event  1,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
+	object_event  2,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1
+	object_event  4, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLassSandy, -1

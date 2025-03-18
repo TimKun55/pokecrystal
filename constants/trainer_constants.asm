@@ -222,7 +222,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
-	const SANDY
+	const SANDY ; Cerulean Gym
 	const MAI
 
 	trainerclass JANINE ; 1a
