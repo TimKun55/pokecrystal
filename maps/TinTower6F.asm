@@ -13,12 +13,12 @@ TinTower6F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  9, TIN_TOWER_7F, 1
-	warp_event 11, 15, TIN_TOWER_5F, 1
+	warp_event  3, 11, TIN_TOWER_7F, 1
+	warp_event 11, 17, TIN_TOWER_5F, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  8,  8, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower6FMaxPotion, EVENT_TIN_TOWER_6F_MAX_POTION
+	object_event  8, 10, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower6FMaxPotion, EVENT_TIN_TOWER_6F_MAX_POTION

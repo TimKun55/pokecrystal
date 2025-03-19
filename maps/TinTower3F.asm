@@ -13,12 +13,12 @@ TinTower3F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 14, TIN_TOWER_2F, 1
-	warp_event 16,  2, TIN_TOWER_4F, 2
+	warp_event 10, 16, TIN_TOWER_2F, 1
+	warp_event 16,  4, TIN_TOWER_4F, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  3, 14, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower3FFullHeal, EVENT_TIN_TOWER_3F_FULL_HEAL
+	object_event  3, 16, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower3FFullHeal, EVENT_TIN_TOWER_3F_FULL_HEAL
