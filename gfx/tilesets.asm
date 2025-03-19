@@ -65,9 +65,6 @@ INCBIN "gfx/tilesets/tower.2bpp.lz"
 TilesetTowerMeta::
 INCBIN "data/tilesets/tower_metatiles.bin"
 
-TilesetTowerColl::
-INCLUDE "data/tilesets/tower_collision.asm"
-
 TilesetLabGFX::
 INCBIN "gfx/tilesets/lab.2bpp.lz"
 
@@ -607,3 +604,6 @@ INCBIN "data/tilesets/elite_four_room_attributes.bin"
 
 TilesetGameCornerMeta::
 INCBIN "data/tilesets/game_corner_metatiles.bin"
+
+TilesetTowerColl::
+INCLUDE "data/tilesets/tower_collision.asm"
