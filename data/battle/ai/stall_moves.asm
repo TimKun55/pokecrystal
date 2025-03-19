@@ -12,6 +12,7 @@ StallMoves:
 	db LEECH_SEED
 	db GROWTH
 	db STRING_SHOT
+	db BULK_UP
 	db AGILITY
 	db RAGE
 	db MIMIC
@@ -29,6 +30,8 @@ StallMoves:
 	db SPLASH
 	db CONVERSION
 	db SUBSTITUTE
-	db FLAME_WHEEL
+	db NASTY_PLOT
+	db BELLY_DRUM
 	db IRON_DEFENSE
+	db CALM_MIND
 	db -1 ; end

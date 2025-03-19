@@ -54,6 +54,11 @@ AI_Basic:
 	and a
 	jr nz, .discourage
 
+; Dismiss status moves if the player has a Substitute.
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
 ; Dismiss status moves if the player is Safeguarded.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
@@ -71,6 +76,8 @@ AI_Setup:
 
 ; 50% chance to greatly encourage stat-up moves during the first turn of enemy's Pokemon.
 ; 50% chance to greatly encourage stat-down moves during the first turn of player's Pokemon.
+; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
+; 100% chance to greatly discourage stat-down moves if the player has Mist or a Substitute up.
 ; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -113,6 +120,14 @@ AI_Setup:
 	jr .checkmove
 
 .statup
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr z, .statup_continue
+
+	call AICompareSpeed
+	jr c, .do_encourage
+
+.statup_continue
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .discourage
@@ -120,6 +135,14 @@ AI_Setup:
 	jr .encourage
 
 .statdown
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_MIST, a
+	jr nz, .do_discourage
+
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .do_discourage
+
 	ld a, [wPlayerTurnsTaken]
 	and a
 	jr nz, .discourage
@@ -128,6 +151,7 @@ AI_Setup:
 	call AI_50_50
 	jr c, .checkmove
 
+.do_encourage
 	dec [hl]
 	dec [hl]
 	jr .checkmove
@@ -136,6 +160,8 @@ AI_Setup:
 	call Random
 	cp 12 percent
 	jr c, .checkmove
+
+.do_discourage
 	inc [hl]
 	inc [hl]
 	jr .checkmove
@@ -152,12 +178,12 @@ AI_Types:
 	ld b, NUM_MOVES + 1
 .checkmove
 	dec b
-	ret z
+	jr z, .checkrain
 
 	inc hl
 	ld a, [de]
 	and a
-	ret z
+	jr z, .checkrain
 
 	inc de
 	call AIGetEnemyMove
@@ -232,6 +258,73 @@ AI_Types:
 	call AIDiscourageMove
 	jr .checkmove
 
+; Encourage moves in the Rain Dance list if it's raining.
+.checkrain
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr nz, .checksun
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove3
+	inc hl
+	dec c
+	jr z, .checksun
+
+	ld a, [de]
+	inc de
+	and a
+	jr z, .checksun
+
+	push hl
+	push de
+	push bc
+	ld hl, RainDanceMoves
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .checkmove3
+
+	dec [hl]
+	jr .checkmove3
+
+; Encourage moves in the Sunny Day list if it's sunny.
+.checksun
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove4
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+	ld hl, SunnyDayMoves
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .checkmove4
+
+	dec [hl]
+	jr .checkmove4
 
 AI_Offensive:
 ; Greatly discourage non-damaging moves.
@@ -2910,7 +3003,7 @@ AI_Aggressive:
 ; Nothing we can do if no attacks did damage.
 	ld a, c
 	and a
-	jr z, .done
+	ret z
 
 ; Discourage moves that do less damage unless they're reckless too.
 	ld hl, wEnemyAIMoveScores - 1
@@ -2920,7 +3013,7 @@ AI_Aggressive:
 	inc b
 	ld a, b
 	cp NUM_MOVES + 1
-	jr z, .done
+	ret z
 
 ; Ignore this move if it is the highest damaging one.
 	cp c
@@ -2938,7 +3031,7 @@ AI_Aggressive:
 	cp 2
 	jr c, .checkmove2
 
-; Ignore this move if it is reckless.
+; 50% chance to ignore this move if it is reckless.
 	push hl
 	push de
 	push bc
@@ -2949,14 +3042,17 @@ AI_Aggressive:
 	pop bc
 	pop de
 	pop hl
-	jr c, .checkmove2
+	jr c, .maybe_discourage
 
 ; If we made it this far, discourage this move.
+.discourage
 	inc [hl]
 	jr .checkmove2
 
-.done
-	ret
+.maybe_discourage
+	call AI_50_50
+	jr c, .discourage
+	jr .checkmove2
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
 
@@ -3044,8 +3140,8 @@ AI_Status:
 	jr z, .poisonimmunity
 	cp EFFECT_POISON
 	jr z, .poisonimmunity
-	cp EFFECT_SLEEP
-	jr z, .typeimmunity
+	cp EFFECT_LEECH_SEED
+	jr z, .leechseedimmunity
 	cp EFFECT_PARALYZE
 	jr z, .typeimmunity
 
@@ -3061,6 +3157,15 @@ AI_Status:
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
+	jr z, .immune
+	jr .typeimmunity
+
+.leechseedimmunity
+	ld a, [wBattleMonType1]
+	cp GRASS
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp GRASS
 	jr z, .immune
 
 .typeimmunity
@@ -3085,7 +3190,7 @@ AI_Status:
 
 AI_Risky:
 ; Use any move that will KO the target.
-; Risky moves will often be an exception (see below).
+; Explosion will often be an exception (see below).
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -3109,12 +3214,10 @@ AI_Risky:
 	and a
 	jr z, .nextmove
 
-; Don't use risky moves at max hp.
+; Don't use Explosion at max hp.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	ld de, 1
-	ld hl, RiskyEffects
-	call IsInArray
-	jr nc, .checkko
+	cp EFFECT_EXPLOSION
+	jr nz, .checkko
 
 	call AICheckEnemyMaxHP
 	jr c, .nextmove
@@ -3148,9 +3251,6 @@ endr
 	pop bc
 	pop de
 	jr .checkmove
-
-INCLUDE "data/battle/ai/risky_effects.asm"
-
 
 AI_None:
 	ret
