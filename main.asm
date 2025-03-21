@@ -84,6 +84,7 @@ INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
 INCLUDE "engine/pokemon/breeding.asm"
+INCLUDE "engine/events/prof_oaks_pc.asm"
 
 
 SECTION "Roofs", ROMX
@@ -110,7 +111,6 @@ INCLUDE "engine/pokemon/mon_submenu.asm"
 INCLUDE "engine/battle/menu.asm"
 INCLUDE "engine/items/buy_sell_toss.asm"
 INCLUDE "engine/menus/trainer_card.asm"
-INCLUDE "engine/events/prof_oaks_pc.asm"
 INCLUDE "engine/overworld/decorations.asm"
 INCLUDE "engine/pokemon/level_up_happiness.asm"
 INCLUDE "engine/battle/read_trainer_dvs.asm"
