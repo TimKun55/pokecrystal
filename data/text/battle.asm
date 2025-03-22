@@ -7,6 +7,12 @@ BattleText_PlayerPickedUpPayDayMoney:
 	text "!"
 	prompt
 
+BattleText_QuickClaw:
+	text "<USER>'s"
+	line "Quick Claw let it"
+	cont "move first!"
+	prompt
+
 WildPokemonAppearedText:
 	text "Wild @"
 	text_ram wEnemyMonNickname
