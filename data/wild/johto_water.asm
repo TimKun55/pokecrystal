@@ -154,6 +154,14 @@ JohtoWaterWildMons:
 	db 20, OCTILLERY,     23,  26
 	end_water_wildmons
 
+	def_water_wildmons ROUTE_27
+	db 6 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, TENTACOOL,     24,  26
+	db 20, TENTACOOL,     26,  28
+	db 20, TENTACRUEL,    29,  32
+	end_water_wildmons
+
 	def_water_wildmons ROUTE_30
 	db 2 percent ; encounter rate
 	;   %, species,		 min, max
