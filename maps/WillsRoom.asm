@@ -24,7 +24,7 @@ WillsRoomDoorsCallback:
 .KeepEntranceOpen:
 	checkevent EVENT_WILLS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $b3 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -66,7 +66,7 @@ WillBattle:
 .AfterBattle
 	setevent EVENT_BEAT_ELITE_4_WILL
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $b3 ; open door
 	reloadmappart
 	closetext
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN

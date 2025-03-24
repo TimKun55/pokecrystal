@@ -24,7 +24,7 @@ KogasRoomDoorsCallback:
 .KeepEntranceOpen:
 	checkevent EVENT_KOGAS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $b7 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -66,7 +66,7 @@ KogaBattle:
 .AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_KOGA
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
+	changeblock 4, 2, $b7 ; open door
 	reloadmappart
 	closetext
 	setevent EVENT_KOGAS_ROOM_EXIT_OPEN

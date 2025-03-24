@@ -35,7 +35,7 @@ LoadSpecialMapPalette:
     jp z, .gym_palette
 
 .continue3
-	cp GROUP_FAST_SHIP_1F
+	cp GROUP_OLIVINE_PORT
     jr nz, .continue4
     ld a, [wMapNumber]
     cp MAP_FARAWAY_ISLAND_OUTSIDE
@@ -44,27 +44,36 @@ LoadSpecialMapPalette:
     jp z, .faraway_palette
 
 .continue4
-    cp GROUP_CELADON_CITY
+    cp GROUP_ROUTE_23
     jr nz, .continue5
+    ld a, [wMapNumber]
+    cp MAP_WILLS_ROOM
+    jp z, .elite_four_palette
+    cp MAP_KARENS_ROOM
+    jp z, .elite_four_palette
+
+.continue5
+    cp GROUP_CELADON_CITY
+    jr nz, .continue6
     ld a, [wMapNumber]
     cp MAP_CELADON_GYM
     jp z, .gym_palette
 
-.continue5
+.continue6
     cp GROUP_VIRIDIAN_CITY
-    jr nz, .continue6
+    jr nz, .continue7
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
     jp z, .viridian_gym_palette
 
-.continue6
+.continue7
     cp GROUP_SAFFRON_CITY
-    jr nz, .continue7
+    jr nz, .continue8
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
 
-.continue7
+.continue8
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -141,6 +150,11 @@ LoadSpecialMapPalette:
 
 .cavevolcano_palette
 	call LoadCaveVolcanoPalette
+	scf
+	ret
+
+.elite_four_palette
+	call LoadEliteFourPalette
 	scf
 	ret
 
@@ -278,6 +292,17 @@ LoadSaffronGymPalette:
 	
 SaffronGymPalette:
 INCLUDE "gfx/tilesets/saffron_gym_palette.pal"
+
+LoadEliteFourPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, EliteFourPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+EliteFourPalette:
+INCLUDE "gfx/tilesets/elite_four_palette.pal"
 
 LoadSpecialNPCPalette:
 	call GetMapTimeOfDay
