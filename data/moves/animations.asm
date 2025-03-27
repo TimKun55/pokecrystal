@@ -4298,26 +4298,50 @@ BattleAnim_Present:
 	anim_ret
 
 BattleAnim_PlayRough:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_ANGELS
-	anim_sound 0, 0, SFX_KINESIS_2
-	anim_obj BATTLE_ANIM_OBJ_SWEET_KISS, 96, 40, $0	
-	anim_wait 20
-	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 48, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_1gfx BATTLE_ANIM_GFX_SPEED
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_3gfx BATTLE_ANIM_GFX_STARS, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_HEARTS
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $55, $2, $0
+.loop
+	anim_sound 0, 1, SFX_BONE_CLUB
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 128, 48, $28
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 48, $0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HEART_BURST, 144, 64, $5c
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 144, 64, $10
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 64, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_DOUBLESLAP
+	anim_obj BATTLE_ANIM_OBJ_HEART_BURST, 120, 52, $e8
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 120, 52, $9c
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 52, $0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 152, 48, $d0
+	anim_wait 3
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj BATTLE_ANIM_OBJ_HEART_BURST, 152, 48, $1c
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 152, 48, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_wait 8
-	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
-	anim_wait 1
-	anim_call BattleAnim_ShowMon_0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $50
+	anim_wait 3
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_HEART_BURST, 136, 56, $dc
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 128, 48, $90
+	anim_loop 2, .loop
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	
 	anim_ret
 
 BattleAnim_Safeguard:

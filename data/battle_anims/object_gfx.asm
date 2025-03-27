@@ -57,6 +57,8 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjGlowGFX
 	anim_obj_gfx 12, AnimObjWaterBallGFX
 	anim_obj_gfx  8, AnimObjChopGFX
+	anim_obj_gfx  5, AnimObjHeartsGFX
+ 	anim_obj_gfx  5, AnimObjStarsGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
 
 
