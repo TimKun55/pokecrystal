@@ -242,7 +242,7 @@ Pokedex_InitMainScreen:
 	ldh [hSCX], a
 
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
+	cp DEXMODE_NATIONAL
 	ld a, $4a
 	jr z, .okay
 	ld a, $47
@@ -1113,30 +1113,30 @@ Pokedex_UpdateOptionScreen:
 	db D_UP | D_DOWN, 4
 	dwcoord 2,  3 ; COLOR
 	dwcoord 2,  4 ; ABC
-	dwcoord 2,  5 ; NEW
-	dwcoord 2,  6 ; OLD
+	dwcoord 2,  5 ; JOHTO
+	dwcoord 2,  6 ; NATIONAL
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 5
 	dwcoord 2,  3 ; COLOR
 	dwcoord 2,  4 ; ABC
-	dwcoord 2,  5 ; NEW
-	dwcoord 2,  6 ; OLD
+	dwcoord 2,  5 ; JOHTO
+	dwcoord 2,  6 ; NATIONAL
 	dwcoord 2,  7 ; UNOWN
 
 .MenuActionJumptable:
 	dw .MenuAction_ColorOption
 	dw .MenuAction_ABCMode
-	dw .MenuAction_NewMode
-	dw .MenuAction_OldMode
+	dw .MenuAction_JohtoMode
+	dw .MenuAction_NationalMode
 	dw .MenuAction_UnownMode
 
-.MenuAction_NewMode:
-	ld b, DEXMODE_NEW
+.MenuAction_JohtoMode:
+	ld b, DEXMODE_JOHTO
 	jr .ChangeMode
 
-.MenuAction_OldMode:
-	ld b, DEXMODE_OLD
+.MenuAction_NationalMode:
+	ld b, DEXMODE_NATIONAL
 	jr .ChangeMode
 
 .MenuAction_ABCMode:
@@ -1908,10 +1908,10 @@ Pokedex_DrawOptionScreenBG:
 	ld de, .AtoZMode
 	call PlaceString
 	hlcoord 3, 5
-	ld de, .NewMode
+	ld de, .JohtoMode
 	call PlaceString
 	hlcoord 3, 6
-	ld de, .OldMode
+	ld de, .NationalMode
 	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
@@ -1924,11 +1924,11 @@ Pokedex_DrawOptionScreenBG:
 .Title:
 	db $3b, " Option ", $3c, -1
 
-.NewMode:
-	db "New #dex Mode@"
+.JohtoMode:
+	db "Johto Mode@"
 
-.OldMode:
-	db "Old #dex Mode@"
+.NationalMode:
+	db "National Mode@"
 
 .AtoZMode:
 	db "A to Z Mode@"
@@ -2356,7 +2356,7 @@ Pokedex_PrintListing:
 
 ; ; This check is completely useless.
 ; 	ld a, [wCurDexMode]
-; 	cp DEXMODE_OLD
+; 	cp DEXMODE_NATIONAL
 ; 	jr z, .okay
 ; 	ld c, 11
 ; 	jr .resume
@@ -2408,7 +2408,7 @@ Pokedex_PrintListing:
 ; Prints one entry in the list of Pokémon on the main Pokédex screen.
 	and a
 	ret z
-	call Pokedex_PrintNumberIfOldMode
+	call Pokedex_PrintNumberIfNationalMode
 	call Pokedex_PlaceDefaultStringIfNotSeen
 	ret c
 	call Pokedex_PlaceCaughtSymbolIfCaught
@@ -2418,9 +2418,9 @@ Pokedex_PrintListing:
 	call PlaceString
 	ret
 
-Pokedex_PrintNumberIfOldMode:
+Pokedex_PrintNumberIfNationalMode:
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
+	cp DEXMODE_NATIONAL
 	jr z, .printnum
 	ret
 
@@ -2446,7 +2446,7 @@ Pokedex_GetDexNumber:
 	ld a, [wTempSpecies] ;a = current mon (internal number)
 	ld b, a ;b = Needed mon (a and b must be matched)
 	ld c, 0 ;c = index
-	ld hl,OldPokedexOrder
+	ld hl,NationalPokedexOrder
 	
 .loop
 	inc c
@@ -2545,12 +2545,12 @@ Pokedex_OrderMonsByMode:
 	jp hl
 
 .Jumptable:
-	dw .NewMode
-	dw .OldMode
+	dw .JohtoMode
+	dw .NationalMode
 	dw Pokedex_ABCMode
 
-.NewMode:
-	ld de, NewPokedexOrder
+.JohtoMode:
+	ld de, JohtoPokedexOrder
 .do_dex
 	ld hl, wPokedexOrder
 	ld c, NUM_POKEMON
@@ -2563,8 +2563,8 @@ Pokedex_OrderMonsByMode:
 	call .FindLastSeen
 	ret
 
-.OldMode:
-	ld de, OldPokedexOrder
+.NationalMode:
+	ld de, NationalPokedexOrder
 	jr .do_dex
 
 .FindLastSeen:
@@ -2622,9 +2622,9 @@ Pokedex_ABCMode:
 
 INCLUDE "data/pokemon/dex_order_alpha.asm"
 
-INCLUDE "data/pokemon/dex_order_new.asm"
+INCLUDE "data/pokemon/dex_order_johto.asm"
 
-INCLUDE "data/pokemon/dex_order_old.asm"
+INCLUDE "data/pokemon/dex_order_national.asm"
 
 Pokedex_DisplayModeDescription:
 	xor a
@@ -2646,17 +2646,17 @@ Pokedex_DisplayModeDescription:
 .Modes:
 	dw .Color
 	dw .ABCMode
-	dw .NewMode
-	dw .OldMode
+	dw .JohtoMode
+	dw .NationalMode
 	dw .UnownMode
 
-.NewMode:
-	db   "<PK><MN> are listed by"
-	next "evolution type.@"	
+.JohtoMode:
+	db   "<PK><MN> are listed in"
+	next "regional order.@"	
 
-.OldMode:
-	db   "<PK><MN> are listed by"
-	next "official type.@"
+.NationalMode:
+	db   "<PK><MN> are listed in"
+	next "national order.@"
 
 .ABCMode:
 	db   "<PK><MN> are listed"
@@ -2896,13 +2896,13 @@ Pokedex_DisplayTypeNotFoundMessage:
 
 Pokedex_UpdateCursorOAM:
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	jp z, Pokedex_PutOldModeCursorOAM
-	call Pokedex_PutNewModeABCModeCursorOAM
+	cp DEXMODE_NATIONAL
+	jp z, Pokedex_PutNationalModeCursorOAM
+	call Pokedex_PutJohtoModeABCModeCursorOAM
 	call Pokedex_PutScrollbarOAM
 	ret
 
-Pokedex_PutOldModeCursorOAM:
+Pokedex_PutNationalModeCursorOAM:
 	ld hl, .CursorOAM
 	ld a, [wDexListingCursor]
 	or a
@@ -2968,7 +2968,7 @@ Pokedex_PutOldModeCursorOAM:
 	dbsprite 20,  4, -2,  0, $30, 7 | X_FLIP | Y_FLIP
 	db -1
 
-Pokedex_PutNewModeABCModeCursorOAM:
+Pokedex_PutJohtoModeABCModeCursorOAM:
 	ld hl, .CursorOAM
 	call Pokedex_LoadCursorOAM
 	ret
@@ -2998,8 +2998,8 @@ Pokedex_PutNewModeABCModeCursorOAM:
 
 Pokedex_UpdateSearchResultsCursorOAM:
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	jp z, Pokedex_PutOldModeCursorOAM
+	cp DEXMODE_NATIONAL
+	jp z, Pokedex_PutNationalModeCursorOAM
 	ld hl, .CursorOAM
 	call Pokedex_LoadCursorOAM
 	ret

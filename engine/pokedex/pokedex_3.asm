@@ -44,8 +44,8 @@ DrawPokedexListWindow:
 	hlcoord 5, 16
 	ld [hl], $40
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	jr z, .OldMode
+	cp DEXMODE_NATIONAL
+	jr z, .NationalMode
 ; scroll bar
 	hlcoord 11, 0
 	ld [hl], $50
@@ -56,7 +56,7 @@ DrawPokedexListWindow:
 	ld [hl], $52
 	jr .Done
 
-.OldMode:
+.NationalMode:
 ; no scroll bar
 	hlcoord 11, 0
 	ld [hl], $66

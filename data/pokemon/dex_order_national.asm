@@ -1,4 +1,4 @@
-OldPokedexOrder:
+NationalPokedexOrder:
 	db BULBASAUR  ; 01
 	db IVYSAUR    ; 02
 	db VENUSAUR   ; 03
