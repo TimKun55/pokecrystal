@@ -93,15 +93,16 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_CINNABAR_ISLAND   ; 58
 	const LANDMARK_ROUTE_21          ; 59
 	const LANDMARK_ROUTE_22          ; 5a
-	const LANDMARK_ROUTE_23          ; 5b
-	const LANDMARK_VICTORY_ROAD      ; 5c
-	const LANDMARK_INDIGO_PLATEAU    ; 5d
-	const LANDMARK_ROUTE_26          ; 5e
-	const LANDMARK_TOHJO_FALLS       ; 5f
-	const LANDMARK_ROUTE_28          ; 60
-	const LANDMARK_CERULEAN_CAVE     ; 61
-	const LANDMARK_FAST_SHIP         ; 62
-	const LANDMARK_FARAWAY_ISLAND    ; 63
+	const LANDMARK_TOHJO_FALLS       ; 5b
+	const LANDMARK_ROUTE_26          ; 5c
+	const LANDMARK_LEAGUE_GATE       ; 5d         
+	const LANDMARK_ROUTE_23          ; 5e
+	const LANDMARK_VICTORY_ROAD      ; 5f
+	const LANDMARK_INDIGO_PLATEAU    ; 60
+	const LANDMARK_ROUTE_28          ; 61
+	const LANDMARK_CERULEAN_CAVE     ; 62
+	const LANDMARK_FAST_SHIP         ; 63
+	const LANDMARK_FARAWAY_ISLAND    ; 64
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

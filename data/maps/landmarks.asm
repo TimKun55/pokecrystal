@@ -15,14 +15,14 @@ Landmarks:
 	landmark  88,  60, Route31Name
 	landmark  76,  60, VioletCityName
 	landmark  77,  58, SproutTowerName
-	landmark  76,  92, Route32Name
+	landmark  76,  88, Route32Name
 	landmark  68,  76, RuinsOfAlphName
-	landmark  76, 124, UnionCaveName
-	landmark  68, 124, Route33Name
-	landmark  60, 124, SlowpokeWellName
-	landmark  52, 124, AzaleaTownName
-	landmark  44, 124, IlexForestName
-	landmark  44, 108, Route34Name
+	landmark  76, 116, UnionCaveName
+	landmark  68, 116, Route33Name
+	landmark  60, 116, SlowpokeWellName
+	landmark  52, 116, AzaleaTownName
+	landmark  44, 116, IlexForestName
+	landmark  44, 104, Route34Name
 	landmark  44,  92, GoldenrodCityName
 	landmark  42,  92, RadioTowerName
 	landmark  44,  76, Route35Name
@@ -99,11 +99,12 @@ Landmarks:
 	landmark  52, 132, CinnabarIslandName
 	landmark  52, 120, Route21Name
 	landmark  40,  76, Route22Name
+	landmark  28, 100, TohjoFallsName
+	landmark  28,  88, Route26Name
+	landmark  28,  76, LeagueGateName
 	landmark  28,  60, Route23Name
 	landmark  28,  44, VictoryRoadName
 	landmark  28,  36, IndigoPlateauName
-	landmark  28,  88, Route26Name
-	landmark  28, 100, TohjoFallsName
 	landmark  16,  76, Route28Name
 	landmark 100,  44, CeruleanCaveName
 	landmark 140, 116, FastShipName
@@ -210,6 +211,7 @@ FarawayIslandName:   db "Faraway<BSP>Island@"
 ViridianForestName:  db "Viridian<BSP>Forest@"
 DiglettsCaveName:    db "Diglett's<BSP>Cave@"
 TohjoFallsName:      db "Tohjo Falls@"
+LeagueGateName:      db "League Gate@"
 UndergroundName:     db "Underground@"
 BattleTowerName:     db "Battle<BSP>Tower@"
 SpecialMapName:      db "Special@"

@@ -245,10 +245,10 @@ InitPokegearTilemap:
 	ld a, $5f
 	call ByteFill
 
-	ld de, PokeGear_TimeofDayIcons
-	ld hl, vTiles2 tile $6d
-	lb bc, BANK(PokeGear_TimeofDayIcons), 3
-	call Request2bpp
+;	ld de, PokeGear_TimeofDayIcons
+;	ld hl, vTiles2 tile $6d
+;	lb bc, BANK(PokeGear_TimeofDayIcons), 3
+;	call Request2bpp
 
 	ld a, [wPokegearCard]
 	maskbits NUM_POKEGEAR_CARDS
@@ -638,7 +638,7 @@ Pokegear_UpdateClock:
 	ld de, .FishGrpStr
 	call PlaceString
 .print_tod
-	hlcoord 10, 1 ; hlcoord 13, 6
+;	hlcoord 10, 1 ; hlcoord 13, 6
 	ld a, [wTimeOfDay]
 	and a
 	jr z, .Morn
@@ -646,41 +646,41 @@ Pokegear_UpdateClock:
 	jr z, .Day
 	cp EVE_F
 	jr z, .Eve
-	ld [hl], $6f ; nite icon
+;	ld [hl], $6f ; nite icon
 	ld de, .NiteStr
 .got_tod		
 	hlcoord 14, 6
 	; inc hl
 	call PlaceString
 
-	hlcoord 9, 0 ; hlcoord 11, 0
+	hlcoord 10, 0 ; hlcoord 11, 0
 	ld [hl], $40 ; round edge
 	inc hl
 	ld a, $7f
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	hlcoord 9, 2 ; hlcoord 11, 2
+	hlcoord 10, 2 ; hlcoord 11, 2
 	ld [hl], $42
 	inc hl
 	ld a, $7f
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	hlcoord 9, 1
+	hlcoord 10, 1
 	; ld [hli], a
 	ld [hl], a
 	ret
 .Morn
-	ld [hl], $6d ; morn icon
+;	ld [hl], $6d ; morn icon
 	ld de, .MornStr
 	jr .got_tod
 .Day
-	ld [hl], $6e ; day icon
+;	ld [hl], $6e ; day icon
 	ld de, .DayStr
 	jr .got_tod
 .Eve
-	ld [hl], $6f ; nite icon
+;	ld [hl], $6f ; nite icon
 	ld de, .EveStr
 	jr .got_tod
 
@@ -906,7 +906,7 @@ TownMap_GetKantoLandmarkLimits:
 
 .not_hof
 	ld d, LANDMARK_ROUTE_28
-	ld e, LANDMARK_VICTORY_ROAD
+	ld e, LANDMARK_TOHJO_FALLS
 	ret
 
 PokegearRadio_Init:
@@ -2996,9 +2996,6 @@ LoadTownMapGFX:
 	lb bc, BANK(TownMapGFX), $40
 	call DecompressRequest2bpp
 	ret
-
-PokeGear_TimeofDayIcons:
-INCBIN "gfx/pokegear/pokegear_timeofday_icons.2bpp"
 
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"

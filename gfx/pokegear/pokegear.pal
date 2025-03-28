@@ -1,40 +1,40 @@
-; border
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 00, 00, 00
-; earth
-	RGB 31, 31, 31
-	RGB 00, 31, 00
-	RGB 00, 15, 31
-	RGB 00, 00, 00
-; mountain
-	RGB 31, 31, 31
-	RGB 00, 31, 00
-	RGB 22, 10, 00
-	RGB 00, 00, 00
-; city (boy)
+; pgear
 	RGB 31, 31, 31
 	RGB 31, 15, 00
 	RGB 15, 07, 00
 	RGB 00, 00, 00
-; new city
-	RGB 31, 31, 31
-	RGB 00, 23, 00
-	RGB 31, 00, 00
-	RGB 00, 00, 00
-; water
-	RGB 31, 31, 31
-	RGB 00, 24, 31
-	RGB 00, 15, 31
-	RGB 00, 00, 00
-; extra1
-	RGB 22, 10, 00
+; earth
+	RGB 20, 15, 03
+	RGB 12, 25, 01
+	RGB 13, 12, 31
+	RGB 18, 19, 31
+; mountain
+	RGB 22, 31, 10
+	RGB 12, 25, 01
+	RGB 24, 18, 07
+	RGB 20, 15, 03
+; border
+	RGB 24, 18, 07
 	RGB 21, 21, 21
 	RGB 13, 13, 13
 	RGB 00, 00, 00
-; extra2
+; new city
+	RGB 31, 19, 24
+	RGB 12, 25, 01
+	RGB 30, 10, 06
+	RGB 00, 00, 00
+; water
+	RGB 27, 31, 27
+	RGB 03, 03, 10
+	RGB 13, 12, 31
+	RGB 18, 19, 31
+; cave
+	RGB 31, 31, 07
+	RGB 12, 25, 01
+	RGB 24, 18, 07
+	RGB 00, 00, 00
+; route
 	RGB 31, 31, 31
-	RGB 00, 31, 00
-	RGB 00, 23, 00
+	RGB 12, 25, 01
+	RGB 05, 14, 00
 	RGB 00, 00, 00

@@ -249,10 +249,10 @@ _CGB_PokegearPals:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld de, wBGPals1 palette 7
-	ld a, PREDEFPAL_POKEGEAR_TOD_ICONS
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
+;	ld de, wBGPals1 palette 7
+;	ld a, PREDEFPAL_POKEGEAR_TOD_ICONS
+;	call GetPredefPal
+;	call LoadHLPaletteIntoDE
 
 ; for johto map arrow on dex area map
 ;	hlcoord 18, 16, wAttrmap
