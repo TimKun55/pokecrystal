@@ -178,13 +178,13 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; b1
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b2
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b3
-	tilecoll FLOOR, FLOOR, WALL, WALL ; b4
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; b4
 	tilecoll FLOOR, WALL, WALL, WALL ; b5
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; b6
 	tilecoll WALL, WATER, WALL, WATER ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
-	tilecoll WALL, WALL, WALL, WALL ; ba
+	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR ; ba
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; bb
 	tilecoll WALL, DOOR, WALL, FLOOR ; bc
 	tilecoll WALL, WALL, FLOOR, FLOOR ; bd
