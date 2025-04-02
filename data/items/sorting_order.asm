@@ -204,9 +204,9 @@ ItemNameOrder:
 	; Permanent Key Items
  	; Items that are possibly frequently used
 	db BICYCLE      ; 07
+	db ITEMFINDER   ; 37
 	db COIN_CASE    ; 36
 	db DIPLOMA      ; 49
-	db ITEMFINDER   ; 37
 
 	; Rods
 	db OLD_ROD      ; 3a
