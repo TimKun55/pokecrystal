@@ -2658,7 +2658,7 @@ Pokedex_GetArea:
 	ld [hli], a
 	ld a, $49 ; part of SELECT >
 	ld [hli], a
-	ld a, $4a ; part of SELECT >
+	ld a, $43 ; part of SELECT >
 	ld [hli], a
 	ld a, $2b ; custom arrow cap + YOU
 	ld [hli], a ; $78

@@ -39,7 +39,7 @@
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
 	charmap "<LV>",      $6e
-	charmap "<DEX_LV>",  $5d
+	charmap "<DEX_LV>",  $5c
 	charmap "<DEX_LV_VRAM1>",$74
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $71

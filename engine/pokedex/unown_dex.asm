@@ -19,8 +19,8 @@ UpdateUnownDex:
 	ret
 
 PrintUnownWord:
-	hlcoord 4, 15
-	ld bc, 12
+	hlcoord 6, 15
+	ld bc, 10
 	ld a, " "
 	call ByteFill
 	ld a, [wDexCurUnownIndex]
@@ -37,7 +37,7 @@ PrintUnownWord:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	hlcoord 4, 15
+	hlcoord 6, 15
 .loop
 	ld a, [de]
 	cp -1

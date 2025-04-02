@@ -610,13 +610,14 @@ Handle_Button_Banner:
 	ld [hli], a
 	inc a ; $49, SELECT 2
 	ld [hli], a
-	inc a ; $4a, SELECT 3
+	ld a, $43 ; SELECT 3
 	ld [hli], a
-	ld a, $61 ; SHINY 1
+	inc a ; $44, SHINY 1
 	ld [hli], a
-	inc a ; $62, SHINY 2
+	ld a, $5f ; SHINY 2
 	ld [hli], a
-	ld [hl], $63 ; SHINY 2
+	inc a ; $60, SHINY 3
+	ld [hli], a
 	ret
 
 BaseStat_Page:
@@ -647,20 +648,20 @@ Area_Page:
 	; START > $41, $42, $43
 	; > MAP $5e, $5f, $60
 	hlcoord 2, 0
-	ld a, [hl]
-	cp $48 ; first tile of SELECT > SHINY
-	jr nz, .button_done
+;	ld a, [hl]
+;	cp $48 ; first tile of SELECT > SHINY
+;	jr nz, .button_done
 	ld a, $41 ; START #1
 	ld [hli], a
 	inc a ; $42, START #2
 	ld [hli], a
 	inc a ; $43, START #3
 	ld [hli], a
-	ld a, $5e ; MAP #1
+	ld a, $5d ; MAP #1
 	ld [hli], a
-	inc a ; $5f, MAP #2
+	inc a ; $5e, MAP #2
 	ld [hli], a
-	ld [hl], $60 ; MAP #3
+	ld [hl], $7f ; MAP #3
 .button_done	
 	farcall Pokedex_DetailedArea
 	call WaitBGMap
@@ -1672,7 +1673,7 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 5, 15
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 1, 17
+	hlcoord 0, 17
 	ld de, String_SELECT_OPTION
 	call Pokedex_PlaceString
 	hlcoord 8, 1
@@ -1699,10 +1700,10 @@ String_SEEN:
 String_OWN:
 	db "Own", -1
 String_SELECT_OPTION:
-	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > OPTION
+	db $32, $3b, $48, $49, $43, $4a, $4b, $4c, $56 ; SELECT > OPTION
 	; fallthrough
 String_START_SEARCH:
-	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $3c, $32, -1 ; START > SEARCH
+	db $32, $32, $3b, $41, $42, $43, $44, $45, $46, $47, -1 ; START > SEARCH
 
 Pokedex_DrawDexEntryScreenBG:
 	hlcoord 0, 0
@@ -1726,13 +1727,13 @@ Pokedex_DrawDexEntryScreenBG:
 	ld [hli], a
 	inc a ; $49, SELECT 2
 	ld [hli], a
-	inc a ; $4a, SELECT 3
+	ld a, $43 ; SELECT 3
 	ld [hli], a
-	ld a, $61 ; SHINY 1
+	inc a ; $44, SHINY 1
 	ld [hli], a
-	inc a ; $62, SHINY 2
+	ld a, $5f ; SHINY 2
 	ld [hli], a
-	inc a ; $63, SHINY 2
+	inc a ; $60, SHINY 3
 	ld [hli], a
 	ld [hl], $58 ; new curved text border, right
 ; clear the row for bottom menu
@@ -1765,7 +1766,7 @@ Pokedex_DrawDexEntryScreenBG:
 	call PlaceString ; mon species	
 ; .print_dex_num ; Print dex number
 	hlcoord 10, 1
-	ld a, $5c ; No
+	ld a, $4d ; No
 	ld [hli], a
 	ld a, $e8 ; .
 	ld [hli], a
@@ -1845,7 +1846,7 @@ Pokedex_DrawNewDexEntryScreenBG:
 	call PlaceString ; mon species	
 ; .print_dex_num ; Print dex number
 	hlcoord 10, 1
-	ld a, $5c ; No
+	ld a, $4d ; No
 	ld [hli], a
 	ld a, $e8 ; .
 	ld [hli], a
@@ -1898,7 +1899,7 @@ Pokedex_DrawOptionScreenBG:
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Pokedex_PlaceBorder
-	hlcoord 0, 1
+	hlcoord 5, 1
 	ld de, .Title
 	call Pokedex_PlaceString
 	hlcoord 3, 3
@@ -1944,7 +1945,7 @@ Pokedex_DrawColorScreenBG:
 	hlcoord 0, 2
 	lb bc, 14, 18
 	call Pokedex_PlaceBorder
-	hlcoord 0, 1
+	hlcoord 5, 1
 	ld de, .Title
 	call Pokedex_PlaceString
 	hlcoord 3, 3
@@ -2107,13 +2108,13 @@ Pokedex_DrawSearchScreenBG:
 	hlcoord 0, 2
 	lb bc, 14, 18
 	call Pokedex_PlaceBorder
-	hlcoord 0, 1
+	hlcoord 5, 1
 	ld de, .Title
 	call Pokedex_PlaceString
-	hlcoord 8, 4
+	hlcoord 9, 4
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
-	hlcoord 8, 6
+	hlcoord 9, 6
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
 	hlcoord 3, 4
@@ -2136,7 +2137,7 @@ Pokedex_DrawSearchScreenBG:
 	db   "@"
 
 .Menu:
-	db   "Begin Search!!"
+	db   "Begin Search!"
 	next "Cancel"
 	db   "@"
 
@@ -2202,9 +2203,9 @@ Pokedex_DrawUnownModeBG:
 	hlcoord 2, 14
 	lb bc, 1, 14
 	call Pokedex_PlaceBorder
-	hlcoord 2, 15
+	hlcoord 3, 15
 	ld [hl], $3d
-	hlcoord 17, 15
+	hlcoord 16, 15
 	ld [hl], $3e
 	hlcoord 6, 5
 	call Pokedex_PlaceFrontpicAtHL
@@ -2767,15 +2768,15 @@ Pokedex_NextSearchMonType:
 Pokedex_PlaceSearchScreenTypeStrings:
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 9, 3
+	hlcoord 10, 3
 	lb bc, 4, 8
 	ld a, " "
 	call Pokedex_FillBox
 	ld a, [wDexSearchMonType1]
-	hlcoord 9, 4
+	hlcoord 10, 4
 	call Pokedex_PlaceTypeString
 	ld a, [wDexSearchMonType2]
-	hlcoord 9, 6
+	hlcoord 10, 6
 	call Pokedex_PlaceTypeString
 	ld a, $1
 	ldh [hBGMapMode], a

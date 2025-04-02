@@ -174,21 +174,24 @@ Dex_Pics_DrawBorder:
 	ld [hli], a
 	ld a, $49 ; SELECT >
 	ld [hli], a
-	ld a, $4a ; SELECT >
+	ld a, $43 ; SELECT >
 	ld [hli], a
-	ld a, $61 ; > SHINY
+	ld a, $44 ; > SHINY
 	ld [hli], a
-	inc a ; ld a, $72 ; > SHINY
+	ld a, $5f ; SHINY 2
 	ld [hli], a
-	inc a ; ld a, $73 ; > SHINY
+	inc a ; $60, SHINY 3
 	ld [hli], a
 	ld a, $58 ; $3c ; text border right side of SELECT > SHINY
 	ld [hli], a
 
-IF USING_INCREASED_SPRITE_ANIMATION == FALSE
+;IF USING_INCREASED_SPRITE_ANIMATION == FALSE
 	ld a, $34
 	ld [hli], a
-ENDC
+
+	ld a, $34
+	ld [hli], a
+;ENDC
 
 	ld a, $57 ; $3b ; text border, left side of START > CRY
 	ld [hli], a	
@@ -200,23 +203,23 @@ ENDC
 	inc a ; ld a, $43 ; START >
 	ld [hli], a
 
-IF USING_INCREASED_SPRITE_ANIMATION == FALSE
-	ld a, $6e ; > CRY [VRAM 1] @ 15, 17
+;IF USING_INCREASED_SPRITE_ANIMATION == FALSE
+	ld a, $62 ; > CRY 
 	ld [hli], a
-	inc a ; ld a, $6f ; > CRY [VRAM 1] @ 14, 17
+	inc a ; ld a, $63 ; > CRY [VRAM 1] @ 14, 17
 	ld [hli], a
-ELSE
+;ELSE
 ; IF USING_INCREASED_SPRITE_ANIMATION == TRUE
 
 ; using expanded mon animation
-	ld a, $56 ; arrow cap
-	ld [hli], a
-	ld de, cry_text
-	call PlaceString
-	inc hl
-	inc hl
-	inc hl	
-ENDC
+;	ld a, $56 ; arrow cap
+;	ld [hli], a
+;	ld de, cry_text
+;	call PlaceString
+;	inc hl
+;	inc hl
+;	inc hl	
+;ENDC
 
 	ld a, $58 ; $3c ; curvest text border, right side of START > CRY
 	ld [hli], a
@@ -227,7 +230,7 @@ ENDC
 	dec a
 	call CheckCaughtMon
 	jr z, .caught_ball_done
-	hlcoord 5, 11
+	hlcoord 4, 11
 	ld [hl], $4f ; pokeball icon
 .caught_ball_done	
 	hlcoord 3, 11
