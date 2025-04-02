@@ -607,3 +607,15 @@ INCBIN "data/tilesets/game_corner_metatiles.bin"
 
 TilesetTowerColl::
 INCLUDE "data/tilesets/tower_collision.asm"
+
+TilesetDecoStoreGFX::
+INCBIN "gfx/tilesets/deco_store.2bpp.lz"
+
+TilesetDecoStoreAttr::
+INCBIN "data/tilesets/deco_store_attributes.bin"
+
+TilesetDecoStoreMeta::
+INCBIN "data/tilesets/deco_store_metatiles.bin"
+
+TilesetDecoStoreColl::
+INCLUDE "data/tilesets/deco_store_collision.asm"

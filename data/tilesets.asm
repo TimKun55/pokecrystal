@@ -54,4 +54,5 @@ Tilesets::
 	tileset TilesetJohto5
 	tileset TilesetMuseum
 	tileset TilesetKanto7
+	tileset TilesetDecoStore
 	assert_table_length NUM_TILESETS + 1
