@@ -1106,7 +1106,7 @@ BattleCommand_Critical:
 	cp FARFETCH_D
 	jr nz, .FocusEnergy
 	ld a, [hl]
-	cp STICK
+	cp LEEK
 	jr nz, .FocusEnergy
 
 ; +2 critical level

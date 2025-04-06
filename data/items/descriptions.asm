@@ -105,7 +105,7 @@ ItemDescriptions:
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
-	dw StickDesc
+	dw LeekDesc
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
@@ -668,9 +668,9 @@ PinkBowDesc:
 	db   "Powers up normal-"
 	next "type moves. (Hold)@"
 
-StickDesc:
-	db   "An ordinary stick."
-	next "Sell low.@"
+LeekDesc:
+	db   "A stick of leek."
+	next "For Farfetch'd.@"
 
 SmokeBallDesc:
 	db   "Escape from wild"

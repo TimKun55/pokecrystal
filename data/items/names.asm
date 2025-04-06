@@ -104,7 +104,7 @@ ItemNames::
 	li "BlackGlasses"
 	li "SlowpokeTail"
 	li "Pink Bow"
-	li "Stick"
+	li "Leek"
 	li "Smoke Ball"
 	li "NeverMeltIce"
 	li "Magnet"

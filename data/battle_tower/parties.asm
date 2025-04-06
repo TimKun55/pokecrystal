@@ -1353,7 +1353,7 @@ BattleTowerMons:
 	db "RINGUMA@@@@"
 
 	db FARFETCH_D
-	db STICK
+	db LEEK
 	db SLASH, POISON_JAB, WING_ATTACK, SWORDS_DANCE
 	dw 0 ; OT ID
 	bigdt 27000 ; Exp

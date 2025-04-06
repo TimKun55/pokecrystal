@@ -58,7 +58,7 @@ ItemNameOrder:
 	db SMOKE_BALL   ; 6a
 	db SOFT_SAND    ; 4c
 	db SPELL_TAG    ; 71
-	db STICK        ; 69
+	db LEEK         ; 69
 	db THICK_CLUB   ; 76
 	db TWISTEDSPOON ; 60
 

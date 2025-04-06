@@ -110,7 +110,7 @@
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
 	const PINK_BOW     ; 68
-	const STICK        ; 69
+	const LEEK         ; 69
 	const SMOKE_BALL   ; 6a
 	const NEVERMELTICE ; 6b
 	const MAGNET       ; 6c

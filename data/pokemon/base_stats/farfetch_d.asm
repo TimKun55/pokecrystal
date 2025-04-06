@@ -7,7 +7,7 @@
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
 	db 94 ; base exp
-	db NO_ITEM, STICK ; items
+	db NO_ITEM, LEEK ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/farfetch_d/front.dimensions"

@@ -85,7 +85,7 @@ Phone_WhosBragging_Male:
 	end
 
 .Jose:
-	farwritetext JoseMonsStickHasADeliciousAromaText
+	farwritetext JoseMonsLeekHasADeliciousAromaText
 	promptbutton
 	end
 
