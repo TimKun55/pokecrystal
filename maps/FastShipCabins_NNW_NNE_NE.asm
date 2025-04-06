@@ -102,6 +102,7 @@ FastShipLazySailorScript:
 	applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement1
 	playsound SFX_EXIT_BUILDING
 	disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
+	clearevent EVENT_FAST_SHIP_B1F_SAILOR_GENERATOR_ROOM
 	waitsfx
 	end
 
@@ -109,6 +110,7 @@ FastShipLazySailorScript:
 	applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement2
 	playsound SFX_EXIT_BUILDING
 	disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
+	clearevent EVENT_FAST_SHIP_B1F_SAILOR_GENERATOR_ROOM
 	waitsfx
 	end
 
@@ -118,12 +120,14 @@ FastShipCabins_NNW_NNE_NETrashcan:
 FastShipLazySailorLeavesMovement1:
 	step LEFT
 	step LEFT
+	step LEFT
 	step UP
 	step UP
 	step_end
 
 FastShipLazySailorLeavesMovement2:
 	step DOWN
+	step LEFT
 	step LEFT
 	step LEFT
 	step UP
@@ -268,15 +272,18 @@ FastShipCabins_NNW_NNE_NE_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  0, FAST_SHIP_1F, 2
-	warp_event  2, 12, FAST_SHIP_1F, 3
-	warp_event  2, 24, FAST_SHIP_1F, 4
+	warp_event  3,  0, FAST_SHIP_1F, 2
+	warp_event  3, 12, FAST_SHIP_1F, 3
+	warp_event  3, 24, FAST_SHIP_1F, 4
 
 	def_coord_events
 
 	def_bg_events
+	bg_event  7, -6, BGEVENT_READ, FastShipBed
+	bg_event  7, -6, BGEVENT_READ, FastShipBed
+	bg_event  7, -5, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 	bg_event  6, 13, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
-	bg_event  7, 19, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
+	bg_event  7,  7, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 	bg_event  7, 31, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 
 	def_object_events
@@ -284,6 +291,6 @@ FastShipCabins_NNW_NNE_NE_MapEvents:
 	object_event  1,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCarol, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	object_event  1,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacTravis, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
 	object_event  4, 17, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerHikerNoland, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	object_event  4, 26, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipLazySailorScript, EVENT_FAST_SHIP_CABINS_NNW_NNE_NE_SAILOR
+	object_event  6, 26, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipLazySailorScript, EVENT_FAST_SHIP_CABINS_NNW_NNE_NE_SAILOR
 	object_event  7, 30, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerGentlemanEdward, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	object_event  2, 30, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerBurglarCorey, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND

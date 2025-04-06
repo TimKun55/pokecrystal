@@ -118,8 +118,11 @@ FastShip1FSailor3Script:
 	jumptextfaceplayer FastShip1FSailor3Text
 
 WorriedGrandpaSceneRight:
-	moveobject FASTSHIP1F_GENTLEMAN, 20, 6
+	moveobject FASTSHIP1F_GENTLEMAN, 25, 6
+	sjump WorriedGrandpaSceneLeft
 
+WorriedGrandpaSceneMiddle:
+	moveobject FASTSHIP1F_GENTLEMAN, 24, 6
 WorriedGrandpaSceneLeft:
 	appear FASTSHIP1F_GENTLEMAN
 	applymovement FASTSHIP1F_GENTLEMAN, FastShip1F_GrandpaRunsInMovement
@@ -176,10 +179,7 @@ FastShip1F_GrandpaRunsOutMovement:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
+	big_step RIGHT
 	step_end
 
 FastShip1F_PlayerHitByGrandpaMovement:
@@ -279,27 +279,28 @@ FastShip1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 25,  1, FAST_SHIP_1F, -1
-	warp_event 27,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 1
-	warp_event 23,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 2
-	warp_event 19,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 3
-	warp_event 15,  8, FAST_SHIP_CABINS_SW_SSW_NW, 1
-	warp_event 15, 15, FAST_SHIP_CABINS_SW_SSW_NW, 2
-	warp_event 19, 15, FAST_SHIP_CABINS_SW_SSW_NW, 4
-	warp_event 23, 15, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 1
-	warp_event 27, 15, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 3
-	warp_event  3, 13, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 5
-	warp_event  6, 12, FAST_SHIP_B1F, 1
-	warp_event 30, 14, FAST_SHIP_B1F, 2
+	warp_event 29,  1, FAST_SHIP_1F, -1
+	warp_event 38,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 1
+	warp_event 34,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 2
+	warp_event 25,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 3
+	warp_event 21,  8, FAST_SHIP_CABINS_SW_SSW_NW, 1
+	warp_event 21,  5, FAST_SHIP_CABINS_SW_SSW_NW, 2
+	warp_event 25,  5, FAST_SHIP_CABINS_SW_SSW_NW, 4
+	warp_event 34,  5, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 1
+	warp_event 38,  5, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 3
+	warp_event  7,  9, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, 5
+	warp_event  3, 10, FAST_SHIP_B1F, 1
+	warp_event 29, 10, FAST_SHIP_B1F, 2
 
 	def_coord_events
-	coord_event 24,  6, SCENE_FASTSHIP1F_MEET_GRANDPA, WorriedGrandpaSceneLeft
-	coord_event 25,  6, SCENE_FASTSHIP1F_MEET_GRANDPA, WorriedGrandpaSceneRight
+	coord_event 28,  6, SCENE_FASTSHIP1F_MEET_GRANDPA, WorriedGrandpaSceneLeft
+	coord_event 29,  6, SCENE_FASTSHIP1F_MEET_GRANDPA, WorriedGrandpaSceneMiddle
+	coord_event 30,  6, SCENE_FASTSHIP1F_MEET_GRANDPA, WorriedGrandpaSceneRight
 
 	def_bg_events
 
 	def_object_events
-	object_event 25,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor1Script, -1
-	object_event 14,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor2Script, -1
-	object_event 22, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor3Script, -1
-	object_event 19,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FAST_SHIP_1F_GENTLEMAN
+	object_event 29,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor1Script, -1
+	object_event 20,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor2Script, -1
+	object_event 43,  7, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastShip1FSailor3Script, -1
+	object_event 23,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FAST_SHIP_1F_GENTLEMAN

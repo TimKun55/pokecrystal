@@ -25,24 +25,26 @@ FastShipB1FNoop1Scene:
 FastShipB1FNoop2Scene:
 	end
 
-FastShipB1FSailorBlocksLeft:
-	checkevent EVENT_FAST_SHIP_B1F_SAILOR_RIGHT
-	iftrue FastShipB1FAlreadyBlocked
-	applymovement FASTSHIPB1F_SAILOR2, FastShipB1FSailorBlocksLeftMovement
-	moveobject FASTSHIPB1F_SAILOR1, 30, 6
-	appear FASTSHIPB1F_SAILOR1
-	pause 5
-	disappear FASTSHIPB1F_SAILOR2
+FastShipB1FSailorBlocks:
+	showemote EMOTE_SHOCK, FASTSHIPB1F_SAILOR1, 15
+	pause 10
+	turnobject PLAYER, UP
+	opentext
+	checkevent EVENT_FAST_SHIP_INFORMED_ABOUT_LAZY_SAILOR
+	iffalse .FirstTimeStop
+	writetext FastShipB1FOnDutySailorFindBuddyText
+	waitbutton
+	closetext
+	applymovement PLAYER, FastShipB1FPlayerWalksRightMovement
 	end
 
-FastShipB1FSailorBlocksRight:
-	checkevent EVENT_FAST_SHIP_B1F_SAILOR_LEFT
-	iftrue FastShipB1FAlreadyBlocked
-	applymovement FASTSHIPB1F_SAILOR1, FastShipB1FSailorBlocksRightMovement
-	moveobject FASTSHIPB1F_SAILOR2, 31, 6
-	appear FASTSHIPB1F_SAILOR2
-	pause 5
-	disappear FASTSHIPB1F_SAILOR1
+.FirstTimeStop:
+	writetext FastShipB1FOnDutySailorText
+	waitbutton
+	closetext
+	setevent EVENT_FAST_SHIP_INFORMED_ABOUT_LAZY_SAILOR
+	clearevent EVENT_FAST_SHIP_CABINS_NNW_NNE_NE_SAILOR
+	applymovement PLAYER, FastShipB1FPlayerWalksRightMovement
 	end
 
 FastShipB1FAlreadyBlocked:
@@ -90,6 +92,9 @@ FastShipB1FSailorScript:
 	waitbutton
 	closetext
 	end
+
+FastShipB1FSailorGeneratorScript:
+	jumptextfaceplayer FastShipB1FSailorGeneratorText
 
 TrainerSailorJeff:
 	trainer SAILOR, JEFF, EVENT_BEAT_SAILOR_JEFF, SailorJeffSeenText, SailorJeffBeatenText, 0, .Script
@@ -204,18 +209,20 @@ TrainerSchoolboyRicky:
 FastShipB1FTrashcan:
 	jumpstd TrashCanScript
 
-FastShipB1FSailorBlocksRightMovement:
-	fix_facing
-	big_step RIGHT
-	remove_fixed_facing
-	turn_head DOWN
-	step_end
+FastShipB1FFridgeScript:
+	jumptext FastShipB1FFridgeText
 
-FastShipB1FSailorBlocksLeftMovement:
-	fix_facing
-	big_step LEFT
-	remove_fixed_facing
-	turn_head DOWN
+FastShipB1FSinkScript:
+	jumptext FastShipB1FSinkText
+
+FastShipB1FStoveScript:
+	jumptext FastShipB1FStoveText
+
+FastShipB1FGeneratorScript:
+	jumptext FastShipB1FGeneratorText
+
+FastShipB1FPlayerWalksRightMovement:
+	step RIGHT
 	step_end
 
 FastShipB1FOnDutySailorText:
@@ -223,13 +230,22 @@ FastShipB1FOnDutySailorText:
 	line "get you to look"
 	cont "for my buddy?"
 
-	para "He's goofing off"
+	para "He should be"
+	line "looking after the"
+	cont "generators but"
+
+	para "he's goofing off"
 	line "somewhere, that"
 	cont "lazy bum!"
 
 	para "I want to go find"
 	line "him, but I'm on"
 	cont "duty right now."
+	done
+
+FastShipB1FOnDutySailorFindBuddyText:
+	text "Were you able to"
+	line "find my buddy?"
 	done
 
 FastShipB1FOnDutySailorRefusedText:
@@ -256,11 +272,24 @@ FastShipB1FOnDutySailorSawLittleGirlText:
 
 FastShipB1FOnDutySailorDirectionsText:
 	text "The dining room is"
-	line "up ahead."
+	line "just behind you."
+	
+	para "The staff's sleep-"
+	line "ing quarters are"
+	cont "at the end of"
+	cont "the hall."
 
-	para "The stairs at the"
-	line "end lead to the"
-	cont "Captain's cabin."
+	para "The generator room"
+	line "and the stairs"
+	cont "that lead to the"
+	cont "Captain's cabin"
+	cont "are just up ahead."
+	done
+
+FastShipB1FSailorGeneratorText:
+	text "Everything is in"
+	line "perfect working"
+	cont "order!"
 	done
 
 SailorJeffSeenText:
@@ -446,30 +475,61 @@ SchoolboyRickyAfterBattleText:
 	cont "stone panels."
 	done
 
+FastShipB1FFridgeText:
+	text "It's full of"
+	line "delicious food!"
+	done
+
+FastShipB1FSinkText:
+	text "The sink is"
+	line "spotless!"
+	done
+
+FastShipB1FStoveText:
+	text "The stove is"
+	line "like new!"
+	done
+
+FastShipB1FGeneratorText:
+	text "The generator is"
+	line "making a lot of"
+	cont "noise!"
+	done	
+
 FastShipB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 11, FAST_SHIP_1F, 11
-	warp_event 31, 13, FAST_SHIP_1F, 12
+	warp_event  3, 13, FAST_SHIP_1F, 11
+	warp_event 27, 13, FAST_SHIP_1F, 12
 
 	def_coord_events
-	coord_event 30,  7, SCENE_FASTSHIPB1F_SAILOR_BLOCKS, FastShipB1FSailorBlocksLeft
-	coord_event 31,  7, SCENE_FASTSHIPB1F_SAILOR_BLOCKS, FastShipB1FSailorBlocksRight
+	coord_event 13,  3, SCENE_FASTSHIPB1F_SAILOR_BLOCKS, FastShipB1FSailorBlocks
 
 	def_bg_events
-	bg_event 27,  9, BGEVENT_READ, FastShipB1FTrashcan
+	bg_event 38,  6, BGEVENT_READ, FastShipB1FTrashcan
+	bg_event 15,  6, BGEVENT_READ, FastShipB1FFridgeScript
+	bg_event 16,  6, BGEVENT_READ, FastShipB1FSinkScript
+	bg_event 17,  6, BGEVENT_READ, FastShipB1FStoveScript
+	bg_event 22,  6, BGEVENT_READ, FastShipB1FSinkScript
+	bg_event 23,  6, BGEVENT_READ, FastShipB1FStoveScript
+	bg_event 24,  6, BGEVENT_READ, FastShipB1FFridgeScript
+	bg_event  3,  4, BGEVENT_READ, FastShipB1FGeneratorScript
+	bg_event  9,  4, BGEVENT_READ, FastShipB1FGeneratorScript
+	bg_event  3,  8, BGEVENT_READ, FastShipB1FGeneratorScript
+	bg_event  9,  8, BGEVENT_READ, FastShipB1FGeneratorScript
+	
 
 	def_object_events
-	object_event 30,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipB1FSailorScript, EVENT_FAST_SHIP_B1F_SAILOR_LEFT
-	object_event 31,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipB1FSailorScript, EVENT_FAST_SHIP_B1F_SAILOR_RIGHT
-	object_event  9, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorJeff, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	object_event  6,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerDebra, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	object_event 26,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerJugglerFritz, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	object_event 17,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSailorGarrett, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
-	object_event 25,  8, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherJonah, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
-	object_event 15, 11, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltWai, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
-	object_event 23,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSailorKenneth, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	object_event  9, 11, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerTeacherShirley, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	object_event 14,  9, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyNate, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	object_event 14, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyRicky, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event 13,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipB1FSailorScript, EVENT_FAST_SHIP_B1F_SAILOR_BLOCKING
+	object_event  6,  5, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FastShipB1FSailorGeneratorScript, EVENT_FAST_SHIP_B1F_SAILOR_GENERATOR_ROOM
+	object_event 17, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorJeff, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
+	object_event 18,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerDebra, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
+	object_event 36,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerJugglerFritz, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
+	object_event 27,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSailorGarrett, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event 32,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherJonah, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event 23, 11, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltWai, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event 35,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSailorKenneth, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event 17, 11, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerTeacherShirley, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event 22,  9, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyNate, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event 22, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyRicky, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND

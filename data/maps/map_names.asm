@@ -188,7 +188,8 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name98 ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE          ; 98
 	dw Dungeons_Map_Name99 ; map_const SLOWPOKE_WELL_ENTRANCE               ; 99
 	dw Dungeons_Map_Name100 ; map_const MOUNT_MOON_B1F                      ; 100
-	dw Dungeons_Map_Name101 ; map_const MOUNT_MOON_B2F                      ; 100
+	dw Dungeons_Map_Name101 ; map_const MOUNT_MOON_B2F                      ; 101
+	dw Dungeons_Map_Name102 ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR         ; 102
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -859,12 +860,14 @@ Dungeons_Map_Name97: ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,;  97
 	db "GS Ball Chamber@"
 Dungeons_Map_Name98: ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE,; 98
 	db "Ruins of Alph Cave@"
-Dungeons_Map_Name99: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
+Dungeons_Map_Name99: ; map_const SLOWPOKE_WELL_ENTRANCE,; 99
 	db "Slowpoke Well Ent.@"
-Dungeons_Map_Name100: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
+Dungeons_Map_Name100: ; map_const MT_MOON_B1F,; 100
 	db "Mt. Moon B1F@"
-Dungeons_Map_Name101: ; map_const SLOWPOKE_WELL_ENTRANCE,; 98
+Dungeons_Map_Name101: ; map_const MT_MOON_B2F,; 101
 	db "Mt. Moon B2F@"
+Dungeons_Map_Name102: ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR,; 102
+	db "Lighthouse Elev.@"
 
 Ecruteak_Map_Name1: ; map_const ROUTE_35,;  1
 	db "Route 35@"

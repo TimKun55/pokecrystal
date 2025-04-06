@@ -1092,4 +1092,7 @@ EsrevniHall1F_Blocks:
 EsrevniHallBattleRoom_Blocks:
 	INCBIN "maps/EsrevniHallBattleRoom.ablk"
 
+OlivineLighthouseElevator_Blocks:
+	INCBIN "maps/OlivineLighthouseElevator.ablk"
+
 ENDSECTION

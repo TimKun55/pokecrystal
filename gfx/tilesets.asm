@@ -179,9 +179,6 @@ INCLUDE "data/tilesets/johto_house_collision.asm"
 TilesetLighthouseMeta::
 INCBIN "data/tilesets/lighthouse_metatiles.bin"
 
-TilesetLighthouseColl::
-INCLUDE "data/tilesets/lighthouse_collision.asm"
-
 TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
 
@@ -619,3 +616,6 @@ INCBIN "data/tilesets/deco_store_metatiles.bin"
 
 TilesetDecoStoreColl::
 INCLUDE "data/tilesets/deco_store_collision.asm"
+
+TilesetLighthouseColl::
+INCLUDE "data/tilesets/lighthouse_collision.asm"

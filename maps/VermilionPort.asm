@@ -67,7 +67,7 @@ VermilionPortSailorAtGangwayScript:
 	setevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
 	appear VERMILIONPORT_SAILOR1
 	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_ENTER_SHIP
-	warp FAST_SHIP_1F, 25, 1
+	warp FAST_SHIP_1F, 29, 1
 	end
 
 VermilionPortAlreadyRodeScript:

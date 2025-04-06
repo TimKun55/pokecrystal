@@ -106,9 +106,9 @@ ENDM
 	map_const SLOWPOKE_WELL_B2F,                           10,  9 ; 41
 	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42
 	map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ; 43
-	map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ; 44
-	map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ; 45
-	map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ; 46
+	map_const OLIVINE_LIGHTHOUSE_3F,                        9,  9 ; 44
+	map_const OLIVINE_LIGHTHOUSE_4F,                        9,  9 ; 45
+	map_const OLIVINE_LIGHTHOUSE_5F,                        9,  9 ; 46
 	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ; 47
 	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ; 49
@@ -164,6 +164,7 @@ ENDM
 	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
 	map_const MOUNT_MOON_B1F,                              18, 16 ; 100
 	map_const MOUNT_MOON_B2F,                              16, 20 ; 101
+	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 102
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -352,11 +353,11 @@ ENDM
 	newgroup FAST_SHIP                                            ; 15
 	map_const OLIVINE_PORT,                                10, 15 ;  1
 	map_const VERMILION_PORT,                              16, 13 ;  2
-	map_const FAST_SHIP_1F,                                16,  9 ;  3
+	map_const FAST_SHIP_1F,                                24,  7 ;  3
 	map_const FAST_SHIP_CABINS_NNW_NNE_NE,                  4, 16 ;  4
 	map_const FAST_SHIP_CABINS_SW_SSW_NW,                   4, 16 ;  5
 	map_const FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN,       5, 17 ;  6
-	map_const FAST_SHIP_B1F,                               16,  8 ;  7
+	map_const FAST_SHIP_B1F,                               20,  8 ;  7
 	map_const OLIVINE_PORT_PASSAGE,                         5,  4 ;  8
 	map_const VERMILION_PORT_PASSAGE,                       5,  4 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10

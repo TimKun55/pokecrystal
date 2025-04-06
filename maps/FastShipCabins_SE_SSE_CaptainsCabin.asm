@@ -472,6 +472,8 @@ FastShipCabins_SE_SSE_CaptainsCabin_MapEvents:
 
 	def_bg_events
 	bg_event  4, 25, BGEVENT_READ, FastShipCaptainsCabinTrashcan
+	bg_event  7,  1, BGEVENT_READ, FastShipCaptainsCabinTrashcan
+	bg_event  3, 13, BGEVENT_READ, FastShipCaptainsCabinTrashcan
 
 	def_object_events
 	object_event  3, 25, SPRITE_CAPTAIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SSAquaCaptain, -1

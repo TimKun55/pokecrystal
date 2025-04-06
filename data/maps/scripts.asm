@@ -69,7 +69,6 @@ SECTION "Map Scripts 4", ROMX
 
 INCLUDE "maps/RadioTower5F.asm"
 INCLUDE "maps/OlivineLighthouse5F.asm"
-INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/GoldenrodPokecenter1F.asm"
 INCLUDE "maps/IlexForestAzaleaGate.asm"
 INCLUDE "maps/Route34IlexForestGate.asm"
@@ -553,5 +552,7 @@ INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
 INCLUDE "maps/VermilionPortPassage.asm"
+INCLUDE "maps/OlivineLighthouse6F.asm"
+INCLUDE "maps/OlivineLighthouseElevator.asm"
 
 ENDSECTION
