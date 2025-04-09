@@ -117,4 +117,5 @@ Music:
 	dba Music_CeruleanCave
 	dba Music_LyraEncounter
 	dba Music_LyraDeparture
+	dba Music_PokeMartHGSS
 	assert_table_length NUM_MUSIC_SONGS

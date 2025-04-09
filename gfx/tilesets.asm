@@ -80,9 +80,6 @@ INCBIN "gfx/tilesets/mart.2bpp.lz"
 TilesetMartMeta::
 INCBIN "data/tilesets/mart_metatiles.bin"
 
-TilesetMartColl::
-INCLUDE "data/tilesets/mart_collision.asm"
-
 TilesetGameCornerGFX::
 INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 
@@ -619,3 +616,6 @@ INCLUDE "data/tilesets/deco_store_collision.asm"
 
 TilesetLighthouseColl::
 INCLUDE "data/tilesets/lighthouse_collision.asm"
+
+TilesetMartColl::
+INCLUDE "data/tilesets/mart_collision.asm"

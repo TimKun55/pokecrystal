@@ -295,7 +295,7 @@ ENDM
 	map_const GOLDENROD_DEPT_STORE_5F,                      8,  4 ; 15
 	map_const GOLDENROD_DEPT_STORE_6F,                      8,  4 ; 16
 	map_const GOLDENROD_DEPT_STORE_ELEVATOR,                2,  2 ; 17
-	map_const GOLDENROD_DEPT_STORE_ROOF,                    8,  4 ; 18
+	map_const GOLDENROD_DEPT_STORE_ROOF,                    9,  7 ; 18
 	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
 	map_const GOLDENROD_POKECENTER_1F,                      8,  4 ; 20
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 21

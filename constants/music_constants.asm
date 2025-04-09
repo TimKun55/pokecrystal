@@ -115,6 +115,7 @@
 	const MUSIC_CERULEAN_CAVE                ; 6e
 	const MUSIC_LYRA_ENCOUNTER               ; 6f
 	const MUSIC_LYRA_DEPARTURE               ; 70
+	const MUSIC_POKEMART_HGSS                ; 71
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

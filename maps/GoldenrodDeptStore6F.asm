@@ -65,11 +65,11 @@ GoldenrodDeptStore6F_MapEvents:
 	def_bg_events
 	bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore6FDirectory
 	bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore6FElevatorButton
+	bg_event  6,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
+	bg_event  7,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
 	bg_event  8,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
 	bg_event  9,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
-	bg_event 10,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
-	bg_event 11,  1, BGEVENT_UP, GoldenrodDeptStore6FVendingMachine
 
 	def_object_events
-	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1
+	object_event  7,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1
 	object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1
