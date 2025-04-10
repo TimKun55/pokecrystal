@@ -288,9 +288,11 @@ FlowerShopHiddenGardenText:
 	done
 
 FlowerShopHiddenGardenUseText:
-	text "I hope you find"
-	line "a good use for"
-	cont "them all!"
+	text "I heard these are"
+	line "very useful if"
+	cont "you're taking the"
+	cont "Advanced Course at"
+	cont "Earl's Academy!"
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:

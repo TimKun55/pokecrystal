@@ -18,12 +18,12 @@ EarlsPokemonAcademy_MapScripts:
 	callback MAPCALLBACK_TILES, EarlsPokemonAcademyStairsCallback
 
 EarlsPokemonAcademyStairsCallback:
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_WHITNEY
 	iffalse .NoStairs
 	endcallback
 
 .NoStairs:
-	changeblock 16, 10, $3c ; no stairs
+	changeblock 16, 10, $21 ; no stairs
 	endcallback
 
 AcademyEarl:
@@ -157,7 +157,7 @@ TeacherEnomotoScript:
 AcademyReceptionistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_WHITNEY
 	iffalse .NoStairsText
 	writetext AcademyReceptionistTextStairs
 	waitbutton
@@ -696,18 +696,13 @@ AcademyReceptionistTextNoStairs:
 	line "the battle course."
 	
 	para "<……>"
-	line "<……>"
 	
 	para "There's another,"
-	line "secret, course"
-	
-	para "but you'll have to"
-	line "come back when"
-	
-	para "you have at least"
-	line "one Gym Badge."
-	
-	para "Shh!"
+	line "advanced, course"
+	cont "but you'll have to"
+	cont "come back when"
+	cont "you have a few"
+	cont "Gym Badges."
 	done
 
 EarlsPokemonAcademy_MapEvents:

@@ -267,23 +267,23 @@ EarlsPokemonAcademyB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7, 10, EARLS_POKEMON_ACADEMY, 3
+	warp_event  7, 13, EARLS_POKEMON_ACADEMY, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2,  0, BGEVENT_READ, AttackEVSign
-	bg_event  5,  0, BGEVENT_READ, DefenseEVSign
-	bg_event  8,  0, BGEVENT_READ, SpAttackEVSign
-	bg_event 11,  0, BGEVENT_READ, SpDefenseEVSign
-	bg_event  3,  4, BGEVENT_READ, HPEVSign
-	bg_event 10,  4, BGEVENT_READ, SpeedEVSign
+	bg_event  2,  1, BGEVENT_READ, AttackEVSign
+	bg_event  5,  1, BGEVENT_READ, DefenseEVSign
+	bg_event  8,  1, BGEVENT_READ, SpAttackEVSign
+	bg_event 11,  1, BGEVENT_READ, SpDefenseEVSign
+	bg_event  3,  7, BGEVENT_READ, HPEVSign
+	bg_event 10,  7, BGEVENT_READ, SpeedEVSign
 
 	def_object_events
-	object_event  1,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyTyler, -1
-	object_event 12,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademySteve, -1
-	object_event 11,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyJamie, -1
-	object_event  4,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCarla, -1
-	object_event  9,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCatt, -1
-	object_event  2,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyPam, -1
-	object_event  6,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, EarlsPokemonAcademyTeacher, -1
+	object_event  1,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyTyler, -1
+	object_event 12,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademySteve, -1
+	object_event 11,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyJamie, -1
+	object_event  4,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCarla, -1
+	object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyCatt, -1
+	object_event  2,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyPam, -1
+	object_event  6, 10, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, EarlsPokemonAcademyTeacher, -1

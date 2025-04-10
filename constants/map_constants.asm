@@ -274,7 +274,7 @@ ENDM
 	map_const ROUTE_32_POKECENTER_1F,                       6,  4 ; 11
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 12
 	map_const ROUTE_36_VIOLET_GATE,                         5,  4 ; 13
-	map_const EARLS_POKEMON_ACADEMY_B1F,                    7,  6 ; 14
+	map_const EARLS_POKEMON_ACADEMY_B1F,                    7,  7 ; 14
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11
