@@ -109,7 +109,7 @@ ENDM
 	map_const OLIVINE_LIGHTHOUSE_3F,                        9,  9 ; 44
 	map_const OLIVINE_LIGHTHOUSE_4F,                        9,  9 ; 45
 	map_const OLIVINE_LIGHTHOUSE_5F,                        9,  9 ; 46
-	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ; 47
+	map_const OLIVINE_LIGHTHOUSE_6F,                       10, 10 ; 47
 	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ; 49
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ; 50
