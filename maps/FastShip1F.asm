@@ -89,13 +89,19 @@ FastShip1FSailor1Script:
 .LetThePlayerOut:
 	readvar VAR_FACING
 	ifequal RIGHT, .YouAreFacingRight
+	ifequal LEFT, .YouAreFacingLeft
 	applymovement FASTSHIP1F_SAILOR1, FastShip1F_SailorStepAsideMovement
 	applymovement PLAYER, FastShip1F_PlayerLeavesShipMovement
 	end
 
 .YouAreFacingRight:
-	applymovement FASTSHIP1F_SAILOR1, FastShip1F_SailorStepAsideDownMovement
+	applymovement FASTSHIP1F_SAILOR1, FastShip1F_SailorStepAsideRightMovement
 	applymovement PLAYER, FastShip1F_PlayerLeavesShipRightMovement
+	end
+
+.YouAreFacingLeft:
+	applymovement FASTSHIP1F_SAILOR1, FastShip1F_SailorStepAsideMovement
+	applymovement PLAYER, FastShip1F_PlayerLeavesShipLeftMovement
 	end
 
 FastShip1FSailor2Script:
@@ -149,9 +155,9 @@ FastShip1F_SailorBlocksDoorMovement:
 	turn_head DOWN
 	step_end
 
-FastShip1F_SailorStepAsideDownMovement:
-	slow_step DOWN
-	turn_head UP
+FastShip1F_SailorStepAsideRightMovement:
+	slow_step RIGHT
+	turn_head LEFT
 	step_end
 
 FastShip1F_PlayerEntersShipMovement:
@@ -197,8 +203,13 @@ FastShip1F_PlayerLeavesShipRightMovement:
 	step UP
 	step_end
 
+FastShip1F_PlayerLeavesShipLeftMovement:
+	step LEFT
+	step UP
+	step_end
+
 FastShip1FSailor1Text_ToVermilion:
-	text "FAST SHIP S.S.AQUA"
+	text "Fast Ship S.S.Aqua"
 	line "is en route to"
 	cont "Vermilion City."
 
