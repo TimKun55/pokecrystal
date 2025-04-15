@@ -108,17 +108,9 @@ OlivinePokecenter1FTutor:
 	db "Cancel@"
 
 OlivinePokecenter1FFisherText:
-	text "The Sailor in the"
-	line "Olivine Cafe next"
-
-	para "door is really"
-	line "generous."
-
-	para "He taught my"
-	line "#mon Strength."
-
-	para "Now it can move"
-	line "big boulders."
+	text "I ate way too much"
+	line "in the Olivine Café"
+	cont "next door."
 	done
 
 OlivinePokecenter1FTeacherText:

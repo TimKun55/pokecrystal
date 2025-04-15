@@ -141,7 +141,7 @@ NoRoomForAmuletCoinText:
 	done
 
 OlivineCafeFishingGuruText:
-	text "Olivine Cafe's"
+	text "Olivine Café's"
 	line "menu is chock full"
 
 	para "of hearty fare for"
@@ -153,7 +153,7 @@ OlivineCafeSailorText:
 	line "into this town, I"
 
 	para "always visit the"
-	line "Olivine Cafe."
+	line "Olivine Café."
 
 	para "Everything on the"
 	line "menu makes me feel"
