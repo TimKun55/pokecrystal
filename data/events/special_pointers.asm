@@ -186,3 +186,4 @@ SpecialsPointers::
 
 	add_special MoveReminder
 	add_special RespawnOneOffs
+	add_special _VoltorbFlip

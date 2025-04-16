@@ -731,6 +731,11 @@ INCLUDE "engine/pokedex/new_pokedex_entry.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
 
 
+SECTION "Voltorb Flip", ROMX
+
+INCLUDE "engine/games/voltorb_flip.asm"
+
+
 SECTION "Map GroupNums Names", ROMX
 
 INCLUDE "data/maps/map_names.asm"

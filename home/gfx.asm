@@ -375,7 +375,7 @@ Get2bpp::
 	jp nz, Request2bpp
 	; fallthrough
 
-Copy2bpp:
+Copy2bpp::
 	call CheckGDMA
 	jp c, SafeHDMATransfer
 

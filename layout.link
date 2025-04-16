@@ -319,12 +319,14 @@ ROMX $7d
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
-	"Tileset Data 9"
+	"Voltorb Flip"
 ROMX $80
 	"Pics 24"
 ROMX $81
-	"Mobile Adapter SDK Mail"
+	"Tileset Data 9"
 ROMX $82
+	"Mobile Adapter SDK Mail"
+ROMX $83
 	"Mobile Adapter SDK"
 WRAM0
 	"Stack"
