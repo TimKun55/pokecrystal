@@ -267,9 +267,6 @@ INCBIN "data/tilesets/mart_attributes.bin"
 TilesetMansionAttr::
 INCBIN "data/tilesets/mansion_attributes.bin"
 
-TilesetGameCornerAttr::
-INCBIN "data/tilesets/game_corner_attributes.bin"
-
 TilesetTraditionalHouseAttr::
 INCBIN "data/tilesets/traditional_house_attributes.bin"
 
@@ -619,3 +616,6 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 
 TilesetMartColl::
 INCLUDE "data/tilesets/mart_collision.asm"
+
+TilesetGameCornerAttr::
+INCBIN "data/tilesets/game_corner_attributes.bin"
