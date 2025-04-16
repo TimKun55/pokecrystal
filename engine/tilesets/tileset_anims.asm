@@ -55,7 +55,6 @@ TilesetIndigoAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 	
-TilesetJohtoModernAnim:
 TilesetKanto2Anim:
 TilesetKanto4Anim:
 	dw vTiles2 tile $01, AnimateWaterTile
@@ -118,6 +117,17 @@ TilesetJohtoRuinsAnim:
 	dw WhirlpoolFrames2, AnimateWhirlpoolTile
 	dw WhirlpoolFrames3, AnimateWhirlpoolTile
 	dw WhirlpoolFrames4, AnimateWhirlpoolTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetJohtoModernAnim:
+	dw vTiles2 tile $01, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
