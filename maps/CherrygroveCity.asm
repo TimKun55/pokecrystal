@@ -358,6 +358,9 @@ GuideGentPokecenterText:
 
 	para "you better learn"
 	line "about them."
+	
+	para "Look for the red"
+	line "coloured roof."
 	done
 
 GuideGentMartText:
@@ -369,6 +372,9 @@ GuideGentMartText:
 
 	para "#mon and other"
 	line "useful items."
+
+	para "Look for the blue"
+	line "coloured roof."
 	done
 
 GuideGentRoute30Text:
