@@ -707,6 +707,7 @@ ENDM
 	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $00, 0
 	map_attributes CianwoodBeastsHouse, CIANWOOD_BEASTS_HOUSE, $00, 0
 	map_attributes CianwoodMoveTutorHouse, CIANWOOD_MOVE_TUTOR_HOUSE, $00, 0
+	map_attributes CianwoodPhotoStudio, CIANWOOD_PHOTO_STUDIO, $00, 0
 	map_attributes BattleTower1F, BATTLE_TOWER_1F, $00, 0
 	map_attributes BattleTowerBattleRoom, BATTLE_TOWER_BATTLE_ROOM, $00, 0
 	map_attributes BattleTowerElevator, BATTLE_TOWER_ELEVATOR, $00, 0

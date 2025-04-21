@@ -22,4 +22,5 @@ HappinessChanges:
 	db  +3,  +3,  +1 ; Grooming
 	db +10,  +6,  +4 ; Gained a level in the place where it was caught
 	db +10,  +5,  +2 ; EV lowering Berry
+	db  +6,  +4,  +2 ; Took a Photograph
 	assert_table_length NUM_HAPPINESS_CHANGES

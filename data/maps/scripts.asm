@@ -554,5 +554,6 @@ INCLUDE "maps/OlivinePortPassage.asm"
 INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/OlivineLighthouseElevator.asm"
+INCLUDE "maps/CianwoodPhotoStudio.asm"
 
 ENDSECTION

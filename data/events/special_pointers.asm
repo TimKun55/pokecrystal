@@ -121,6 +121,7 @@ SpecialsPointers::
 	add_special FadeOutMusic
 	add_special Diploma
 	add_special PrintDiploma
+	add_special CianwoodPhotograph
 
 ; Crystal only
 	add_special Function11ac3e

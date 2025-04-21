@@ -20,6 +20,10 @@ YoungerHaircutBrother:
 	ld hl, HappinessData_YoungerHaircutBrother
 	jr HaircutOrGrooming
 
+CianwoodPhotograph:
+	ld hl, HappinessData_CianwoodPhotograph
+	jr HaircutOrGrooming
+
 DaisysGrooming:
 	ld hl, HappinessData_DaisysGrooming
 	; fallthrough

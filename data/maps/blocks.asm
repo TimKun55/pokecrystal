@@ -131,6 +131,7 @@ ManiasHouse_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 CianwoodBeastsHouse_Blocks:
 CianwoodMoveTutorHouse_Blocks:
+CianwoodPhotoStudio_Blocks:
 	INCBIN "maps/JohtoHouse3.ablk"
 
 Route39Farmhouse_Blocks:

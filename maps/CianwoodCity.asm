@@ -401,15 +401,16 @@ CianwoodCity_MapEvents:
 	warp_event  8, 45, CIANWOOD_GYM, 1
 	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
 	warp_event 17, 47, CIANWOOD_PHARMACY, 1
-	warp_event 11, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
+	warp_event  7, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 17, CIANWOOD_BEASTS_HOUSE, 1
 	warp_event 19, 35, CIANWOOD_MOVE_TUTOR_HOUSE, 1
+	warp_event 13, 35, CIANWOOD_PHOTO_STUDIO, 1
 
 	def_coord_events
 	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
 
 	def_bg_events
-	bg_event 16, 32, BGEVENT_READ, CianwoodCitySign
+	bg_event 14, 38, BGEVENT_READ, CianwoodCitySign
 	bg_event  6, 45, BGEVENT_READ, CianwoodGymSign
 	bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 15, 47, BGEVENT_READ, CianwoodPharmacySign
@@ -417,8 +418,8 @@ CianwoodCity_MapEvents:
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
 	def_object_events
-	object_event 21, 37, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
-	object_event  8, 36, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
+	object_event 11, 39, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
+	object_event 21, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
