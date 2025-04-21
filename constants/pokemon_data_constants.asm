@@ -221,7 +221,7 @@ DEF NUM_ROAMMONS EQU 3 ; G/S is three, and wram still has 3 roamers
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_CITY
+	const TREEMON_SET_NONE
 	const TREEMON_SET_CANYON
 	const TREEMON_SET_TOWN
 	const TREEMON_SET_ROUTE
