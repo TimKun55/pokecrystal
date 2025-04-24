@@ -21,8 +21,8 @@ GoldenrodDeptStoreRoofCheckSaleChangeBlockCallback:
 	endcallback
 
 .SaleIsOn:
-	changeblock 0, 2, $3f ; cardboard boxes
-	changeblock 0, 4, $0f ; vendor booth
+	changeblock 0, 4, $3f ; cardboard boxes
+	changeblock 0, 6, $0f ; vendor booth
 	endcallback
 
 GoldenrodDeptStoreRoofCheckSaleChangeClerkCallback:
