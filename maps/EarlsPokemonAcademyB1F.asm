@@ -151,7 +151,26 @@ EarlsPokemonAcademyPam: ; HP
 	end
 
 EarlsPokemonAcademyTeacher:
-	jumptextfaceplayer EarlsPokemonAcademyTeacherText
+	faceplayer
+	opentext
+	checkevent EVENT_EARLS_ACADEMY_B1F_MACHO_BRACE
+	iftrue .MachoBraceExplain
+	writetext EarlsPokemonAcademyTeacherIntroText
+	waitbutton
+	verbosegiveitem MACHO_BRACE
+	iffalse .NoRoom
+	setevent EVENT_EARLS_ACADEMY_B1F_MACHO_BRACE
+.MachoBraceExplain:
+	writetext EarlsPokemonAcademyTeacherExplainText
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext EarlsPokemonAcademyTeacherNoRoomText
+	waitbutton
+	closetext
+	end
 
 AttackEVSign:
 	jumptext AttackEVSignText
@@ -228,7 +247,7 @@ CooltrainerTrainAnytimeText:
 	text "Come back anytime."
 	done
 
-EarlsPokemonAcademyTeacherText:
+EarlsPokemonAcademyTeacherIntroText:
 	text "Welcome to my"
 	line "Avanced course!"
 	
@@ -237,6 +256,29 @@ EarlsPokemonAcademyTeacherText:
 
 	para "become the strong-"
 	line "est they can be!"
+	
+	para "Here, this is for"
+	line "new students."
+	done
+
+EarlsPokemonAcademyTeacherExplainText:
+	text "Penny: The Macho"
+	line "Brace doubles the"
+	cont "amount of EVs"
+	cont "earned by the"
+	cont "#mon holding"
+	cont "it, but also"
+	cont "reduces its speed."
+	
+	para "It's a very useful"
+	line "item for training"
+	cont "I found while in"
+	cont "the Hoenn region."
+	done
+
+EarlsPokemonAcademyTeacherNoRoomText:
+	text "Oh, you have no"
+	line "room for this."
 	done
 
 AttackEVSignText:

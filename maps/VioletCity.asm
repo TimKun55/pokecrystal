@@ -24,11 +24,8 @@ VioletCityEarlScript:
 	opentext
 	writetext Text_EarlAsksIfYouBeatFalkner
 	yesorno
-	iffalse .FollowEarl
-	sjump .PointlessJump
-
-.PointlessJump:
-	writetext Text_VeryNiceIndeed
+	iftrue .FollowEarl
+	writetext Text_MoreTraining
 	waitbutton
 	closetext
 	end
@@ -43,7 +40,6 @@ VioletCityEarlScript:
 	turnobject PLAYER, UP
 	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
 	stopfollow
-	special RestartMapMusic
 	opentext
 	writetext Text_HereTeacherIAm
 	waitbutton
@@ -54,6 +50,7 @@ VioletCityEarlScript:
 	disappear VIOLETCITY_EARL
 	clearevent EVENT_EARLS_ACADEMY_EARL
 	waitsfx
+	special RestartMapMusic
 	end
 
 VioletCityLassScript:
@@ -99,8 +96,6 @@ VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
 
 VioletCityFollowEarl_MovementData:
-	big_step DOWN
-	big_step DOWN
 	turn_head DOWN
 	turn_head LEFT
 	turn_head UP
@@ -109,13 +104,6 @@ VioletCityFollowEarl_MovementData:
 	turn_head LEFT
 	turn_head UP
 	turn_head RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
 	turn_head RIGHT
@@ -140,6 +128,46 @@ VioletCityFollowEarl_MovementData:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	big_step UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	big_step DOWN
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -181,17 +209,22 @@ Text_EarlAsksIfYouBeatFalkner:
 	line "You are trainer?"
 
 	para "Battle Gym Leader,"
-	line "win you did?"
+	line "you want?"
 	done
 
-Text_VeryNiceIndeed:
-	text "Ooh, la la!"
-	line "Very indeed nice!"
+Text_MoreTraining:
+	text "Hmm, I see."
+	line "More training,"
+	cont "you need?"
+	
+	para "Try Sprout Tower,"
+	line "you should."
 	done
 
 Text_FollowEarl:
-	text "Is that so? Then"
-	line "study shall you!"
+	text "Is that so?"
+	line "Then study first"
+	cont "shall you!"
 	cont "Follow me!"
 	done
 
@@ -304,7 +337,7 @@ VioletCity_MapEvents:
 	bg_event 37, 20, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	def_object_events
-	object_event 14, 22, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
+	object_event 18, 24, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
 	object_event 29, 35, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1
 	object_event 21, 26, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
 	object_event 21, 13, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
