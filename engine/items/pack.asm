@@ -73,7 +73,7 @@ Pack:
 	xor a ; ITEM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -101,7 +101,7 @@ Pack:
 	ld a, KEY_ITEM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -129,7 +129,7 @@ Pack:
 	ld a, TM_HM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	xor a
 	ldh [hBGMapMode], a
 	call WaitBGMap_DrawPackGFX
@@ -223,7 +223,7 @@ Pack:
 	ld a, BALL_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -251,7 +251,7 @@ Pack:
 	ld a, BERRY_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -279,7 +279,7 @@ Pack:
 	ld a, MEDICINE_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -742,7 +742,7 @@ BattlePack:
 	xor a ; ITEM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -770,7 +770,7 @@ BattlePack:
 	ld a, KEY_ITEM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -798,7 +798,7 @@ BattlePack:
 	ld a, TM_HM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	xor a
 	ldh [hBGMapMode], a
 	call WaitBGMap_DrawPackGFX
@@ -821,7 +821,7 @@ BattlePack:
 	ld a, BALL_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -849,7 +849,7 @@ BattlePack:
 	ld a, BERRY_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -877,7 +877,7 @@ BattlePack:
 	ld a, MEDICINE_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	call Pack_JumptableNext
 	ret
@@ -1163,7 +1163,7 @@ DepositSellPack:
 InitPocket:
 	ld [wCurPocket], a
 	call ClearPocketList
-	call DrawPocketName
+;	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	ret
 
@@ -1445,8 +1445,8 @@ DrawPackGFX:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	ld hl, vTiles2 tile $50
-	lb bc, BANK(PackGFX), 15
+	ld hl, vTiles2 tile $27
+	lb bc, BANK(PackGFX), 25
 	call Request2bpp
 	ret
 
@@ -1455,12 +1455,12 @@ DrawPackGFX:
 	ret
 
 PackGFXPointers:
-	dw PackGFX + (15 tiles) * 1 ; ITEM_POCKET
-	dw PackGFX + (15 tiles) * 4 ; BALL_POCKET
-	dw PackGFX + (15 tiles) * 0 ; KEY_ITEM_POCKET
-	dw PackGFX + (15 tiles) * 3 ; TM_HM_POCKET
-	dw PackGFX + (15 tiles) * 5 ; BERRY_POCKET
-	dw PackGFX + (15 tiles) * 2 ; MEDICINE_POCKET
+	dw PackGFX + (25 tiles) * 1 ; ITEM_POCKET
+	dw PackGFX + (25 tiles) * 4 ; BALL_POCKET
+	dw PackGFX + (25 tiles) * 0 ; KEY_ITEM_POCKET
+	dw PackGFX + (25 tiles) * 3 ; TM_HM_POCKET
+	dw PackGFX + (25 tiles) * 5 ; BERRY_POCKET
+	dw PackGFX + (25 tiles) * 2 ; MEDICINE_POCKET
 
 Pack_InterpretJoypad:
 	ld hl, wMenuJoypad
@@ -1574,25 +1574,40 @@ Pack_InitGFX:
 	ld bc, $60 tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes
-; Background (blue if male, pink if female)
-	hlcoord 0, 1
-	ld bc, 11 * SCREEN_WIDTH
-	ld a, $24
-	call ByteFill
+
 ; This is where the items themselves will be listed.
 	hlcoord 5, 1
 	lb bc, 11, 15
 	call ClearBox
 ; ◀▶ POCKET       ▼▲ ITEMS
 	hlcoord 0, 0
-	ld a, $28
+	ld a, $00
 	ld c, SCREEN_WIDTH
 .loop
 	ld [hli], a
 	inc a
 	dec c
 	jr nz, .loop
-	call DrawPocketName
+
+; Background (blue if male, pink if female)
+	hlcoord 0, 1
+	ld de, .PackLeftSideTilemapString
+	ld bc, SCREEN_WIDTH - 5
+.loop2
+	ld a, [de]
+	and a
+	jr nz, .continue
+	add hl, bc
+	jr .next
+.continue
+	cp $ff
+	jr z, .ok
+	ld [hli], a
+.next
+	inc de
+	jr .loop2
+.ok
+;	call DrawPocketName
 	call PlacePackGFX
 ; Place the textbox for displaying the item description
 	hlcoord 0, SCREEN_HEIGHT - 4 - 2
@@ -1602,11 +1617,24 @@ Pack_InitGFX:
 	call DrawPackGFX
 	ret
 
+.PackLeftSideTilemapString:
+	db $17, $18, $18, $18, $19, 0 ; Top of pack image
+	db $27, $28, $29, $2a, $2b, 0 ; Pack name
+	db $2c, $2d, $2e, $2f, $30, 0 ; Pack pic
+	db $31, $32, $33, $34, $35, 0
+	db $36, $37, $38, $39, $3a, 0
+	db $3b, $3c, $3d, $3e, $3f, 0
+	db $1a, $1b, $1b, $1b, $1c, 0 ;	db $1a, $26, $26, $26, $1c, 0 ; Bottom of pack image, top of item image
+	db $14, $14, $14, $14, $14, 0 ;	db $15, $1d, $1e, $1f, $16, 0 ; Item image
+	db $14, $14, $14, $14, $14, 0 ;	db $15, $20, $21, $22, $16, 0
+	db $14, $14, $14, $14, $14, 0 ;	db $15, $23, $24, $25, $16, 0 
+	db $14, $14, $14, $14, $14, -1 ;	db $14, $1b, $1b, $1b, $14, -1
+
 PlacePackGFX:
-	hlcoord 0, 3
-	ld a, $50
+	hlcoord 0, 2
+	ld a, $27
 	ld de, SCREEN_WIDTH - 5
-	ld b, 3
+	ld b, 5
 .row
 	ld c, 5
 .column
@@ -1619,39 +1647,39 @@ PlacePackGFX:
 	jr nz, .row
 	ret
 
-DrawPocketName:
-	ld a, [wCurPocket]
-	; * 15
-	ld d, a
-	swap a
-	sub d
-	ld d, 0
-	ld e, a
-	ld hl, .tilemap
-	add hl, de
-	ld d, h
-	ld e, l
-	hlcoord 0, 7
-	ld c, 3
-.row
-	ld b, 5
-.col
-	ld a, [de]
-	inc de
-	ld [hli], a
-	dec b
-	jr nz, .col
-	ld a, c
-	ld c, SCREEN_WIDTH - 5
-	add hl, bc
-	ld c, a
-	dec c
-	jr nz, .row
-	ret
+;DrawPocketName:
+;	ld a, [wCurPocket]
+;	; * 15
+;	ld d, a
+;	swap a
+;	sub d
+;	ld d, 0
+;	ld e, a
+;	ld hl, .tilemap
+;	add hl, de
+;	ld d, h
+;	ld e, l
+;	hlcoord 0, 7
+;	ld c, 3
+;.row
+;	ld b, 5
+;.col
+;	ld a, [de]
+;	inc de
+;	ld [hli], a
+;	dec b
+;	jr nz, .col
+;	ld a, c
+;	ld c, SCREEN_WIDTH - 5
+;	add hl, bc
+;	ld c, a
+;	dec c
+;	jr nz, .row
+;	ret
 
-.tilemap: ; 5x12
+;.tilemap: ; 5x12
 ; the 5x3 pieces correspond to *_POCKET constants
-INCBIN "gfx/pack/pack_menu.tilemap"
+;INCBIN "gfx/pack/pack_menu.tilemap"
 
 Pack_GetItemName:
 	ld a, [wCurItem]

@@ -1625,30 +1625,44 @@ _CGB_PackPals:
 
 .got_gender
 	ld de, wBGPals1
-	ld bc, 6 palettes
+	ld bc, 4 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrmap
-	hlcoord 0, 0, wAttrmap
+
+	hlcoord 0, 0, wAttrmap ; ◀▶ POCKET
 	lb bc, 1, 10
-	ld a, $1
+	ld a, $0
 	call FillBoxCGB
-	hlcoord 10, 0, wAttrmap
+
+	hlcoord 10, 0, wAttrmap ; ▼▲ ITEMS
 	lb bc, 1, 10
 	ld a, $2
 	call FillBoxCGB
-	hlcoord 7, 2, wAttrmap
+
+	hlcoord 7, 2, wAttrmap ; red arrow
 	lb bc, 9, 1
-	ld a, $3
+	ld a, $1
 	call FillBoxCGB
-	hlcoord 0, 7, wAttrmap
-	lb bc, 3, 5
-	ld a, $4
+
+	hlcoord 0, 3, wAttrmap ; pocket picture
+	lb bc, 4, 5
+	ld a, $2
 	call FillBoxCGB
-	hlcoord 0, 3, wAttrmap
-	lb bc, 3, 5
-	ld a, $5
-	call FillBoxCGB
+
+;	hlcoord 1, 8, wAttrmap ; item icon
+;	lb bc, 3, 3
+;	ld a, $3
+;	call FillBoxWithByte
+
+;	hlcoord 0, 7, wAttrmap
+;	lb bc, 3, 5
+;	ld a, $4
+;	call FillBoxCGB
+;	hlcoord 0, 3, wAttrmap
+;	lb bc, 5, 5
+;	ld a, $5
+;	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
