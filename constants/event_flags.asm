@@ -549,6 +549,7 @@
 	const EVENT_AZALEA_GYM_RED_LEVER
 	const EVENT_LEAGUE_GATE_CLERK_INTRO
 ; Unused: next 167 events
+	const EVENT_EARLS_ACADEMY_B1F_MACHO_BRACE
 
 	const_next 800
 ; Trainer flags

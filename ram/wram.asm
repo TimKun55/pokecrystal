@@ -3001,7 +3001,10 @@ endr
 wStoneTableAddress:: dw
 
 ;	ds 40
-	ds 8
+	ds 6
+
+wPokerusBuffer::    db
+wMachoBraceBuffer:: db
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0

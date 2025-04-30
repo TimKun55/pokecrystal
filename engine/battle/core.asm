@@ -6816,6 +6816,7 @@ ApplyStatusEffectOnEnemyStats:
 ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
 	call ApplyPrzEffectOnSpeed
+	farcall MachoBraceEffectOnSpeed
 	call ApplyFrbEffectOnSpclAttack
 	jp ApplyBrnEffectOnAttack
 
@@ -7195,14 +7196,26 @@ GiveExperiencePoints:
 
 ; Give EVs
 ; e = 0 for no Pokérus, 1 for Pokérus
-	ld e, 0
 	ld hl, MON_POKERUS
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .no_pokerus
-	inc e
-.no_pokerus
+	; if z, then a == 0 already
+	jr z, .got_pokerus
+	ld a, 1
+.got_pokerus
+	ld [wPokerusBuffer], a
+	ld a, MON_ITEM
+	call GetPartyParamLocation
+	ld a, [hl]
+	cp MACHO_BRACE
+	jr nz, .no_macho_brace
+	ld a, 1
+	jr .got_macho_brace
+.no_macho_brace
+	ld a, 0
+.got_macho_brace
+	ld [wMachoBraceBuffer], a
 	ld hl, MON_EVS
 	add hl, bc
 	push bc
@@ -7216,6 +7229,10 @@ GiveExperiencePoints:
 	ld b, a
 	ld c, NUM_STATS ; six EVs
 .ev_loop
+	ld a, [wPokerusBuffer]
+	ld e, a
+	ld a, [wMachoBraceBuffer]
+	ld d, a
 	rlc b
 	rlc b
 	ld a, b
@@ -7224,6 +7241,10 @@ GiveExperiencePoints:
 	jr z, .no_pokerus_boost
 	add a
 .no_pokerus_boost
+	bit 0, d
+	jr z, .no_macho_brace_boost
+	add a
+.no_macho_brace_boost
 ; Make sure total EVs never surpass 510
 	push bc
 	push hl

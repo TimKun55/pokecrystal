@@ -42,6 +42,7 @@ ItemNameOrder:
 	db LIGHT_BALL   ; a3
 	db LUCKY_EGG    ; 7e
 	db LUCKY_PUNCH  ; 1e
+	db MACHO_BRACE  ; a7
 	db MAGNET       ; 6c
 	db METAL_COAT   ; 8f
 	db METAL_POWDER ; 23
@@ -238,7 +239,6 @@ ItemNameOrder:
 	; Unused Items
 	db TOWN_MAP     ; 06
 	db POKE_FLUTE   ; 38
-	db ITEM_A7      ; a7
 	db ITEM_A8      ; a8
 	db ITEM_AB      ; ab
 	db ITEM_B3      ; b3

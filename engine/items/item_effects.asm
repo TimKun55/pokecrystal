@@ -180,7 +180,7 @@ ItemEffects:
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
-	dw NoEffect            ; ITEM_A7
+	dw NoEffect            ; MACHO_BRACE
 	dw NoEffect            ; ITEM_A8
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW

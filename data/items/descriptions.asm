@@ -167,7 +167,7 @@ ItemDescriptions:
 	dw FriendBallDesc
 	dw MoonBallDesc
 	dw LoveBallDesc
-	dw TeruSama25Desc
+	dw MachoBraceDesc
 	dw TeruSama25Desc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
@@ -912,6 +912,10 @@ MoonBallDesc:
 LoveBallDesc:
 	db   "For catching the"
 	next "opposite gender.@"
+
+MachoBraceDesc:
+	db   "x2 EV gains, low-"
+	next "ers speed. (Hold)@"
 
 SunStoneDesc:
 	db   "Evolves certain"

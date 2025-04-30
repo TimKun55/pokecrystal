@@ -166,7 +166,7 @@ ItemNames::
 	li "Friend Ball"
 	li "Moon Ball"
 	li "Love Ball"
-	li "TERU-SAMA"
+	li "Macho Brace"
 	li "TERU-SAMA"
 	li "Sun Stone"
 	li "Polkadot Bow"

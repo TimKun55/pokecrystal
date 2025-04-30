@@ -172,7 +172,7 @@
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5
 	const LOVE_BALL    ; a6
-	const ITEM_A7      ; a7
+	const MACHO_BRACE  ; a7
 	const ITEM_A8      ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
