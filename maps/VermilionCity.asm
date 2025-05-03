@@ -18,13 +18,13 @@ VermilionCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, VermilionCityEsrevniHallOwnerCallback
+	callback MAPCALLBACK_OBJECTS, VermilionCityBattleHallOwnerCallback
 
 VermilionCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VERMILION
 	endcallback
 
-VermilionCityEsrevniHallOwnerCallback:
+VermilionCityBattleHallOwnerCallback:
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iffalse .OwnerAppear
 	disappear VERMILIONCITY_GRAMPS
@@ -37,8 +37,8 @@ VermilionCityEsrevniHallOwnerCallback:
 VermilionCityTeacherScript:
 	jumptextfaceplayer VermilionCityTeacherText
 
-VermilionEsrevniHallOwner:
-	jumptextfaceplayer VermilionEsrevniHallOwnerText
+VermilionBattleHallOwner:
+	jumptextfaceplayer VermilionBattleHallOwnerText
 
 VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText
@@ -144,17 +144,17 @@ VermilionCityPokecenterSign:
 VermilionCityMartSign:
 	jumpstd MartSignScript
 
-EsrevniHallSign:
+BattleHallSign:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iffalse .HallOpeningSoon
-	writetext EsrevniHallSignText
+	writetext BattleHallSignText
 	waitbutton
 	closetext
 	end
 
 .HallOpeningSoon
-	writetext EsrevniHallOpeningSoonText
+	writetext BattleHallOpeningSoonText
 	waitbutton
 	closetext
 	end
@@ -190,7 +190,7 @@ VermilionCityTeacherText:
 	cont "dock here."
 	done
 
-VermilionEsrevniHallOwnerText:
+VermilionBattleHallOwnerText:
 	text "It's happening!"
 	
 	para "After all these"
@@ -358,12 +358,12 @@ VermilionCityPortSignText:
 	line "Entrance"
 	done
 
-EsrevniHallSignText:
-	text "Esrevni Hall"
+BattleHallSignText:
+	text "Battle Hall"
 	done
 
-EsrevniHallOpeningSoonText:
-	text "Esrevni Hall"
+BattleHallOpeningSoonText:
+	text "Battle Hall"
 	
 	para "Opening soon."
 	done
@@ -382,7 +382,7 @@ VermilionCity_MapEvents:
 	warp_event 19, 31, VERMILION_PORT_PASSAGE, 1
 	warp_event 20, 31, VERMILION_PORT_PASSAGE, 2
 	warp_event  5,  5, VERMILION_SAILORS_HOUSE, 1
-	warp_event 26, 13, ESREVNI_HALL_1F, 1
+	warp_event 26, 13, BATTLE_HALL_1F, 1
 
 	def_coord_events
 
@@ -393,12 +393,12 @@ VermilionCity_MapEvents:
 	bg_event 26, 17, BGEVENT_READ, VermilionCityPortSign
 	bg_event 10,  5, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 20, 13, BGEVENT_READ, VermilionCityMartSign
-	bg_event 24, 13, BGEVENT_READ, EsrevniHallSign
+	bg_event 24, 13, BGEVENT_READ, BattleHallSign
 	bg_event 34, 10, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 
 	def_object_events
 	object_event 15,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
-	object_event 26, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionEsrevniHallOwner, EVENT_VERMILION_CITY_ESREVNI_HALL_GRAMPS
+	object_event 26, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionBattleHallOwner, EVENT_VERMILION_CITY_BATTLE_HALL_GRAMPS
 	object_event 16, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 17, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
 	object_event  4, 17, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionCityTutorScript, -1

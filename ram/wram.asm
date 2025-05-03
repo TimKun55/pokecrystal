@@ -3110,8 +3110,9 @@ wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
 wInverPoints:: db
+wThortonPoints:: db
 
-	ds 12
+	ds 11
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -3211,8 +3212,8 @@ wRoute44RaikouSceneID::                           db
 wRoute43RaikouSceneID::                           db
 wRoute37EnteiSceneID::                            db
 wRoute30EnteiSceneID::                            db
-wEsrevniHall1FSceneID::                           db
-wEsrevniHallBattleRoomSceneID::                   db
+wBattleHall1FSceneID::                            db
+wBattleHallBattleRoomSceneID::                    db
 wIcePath1FSceneID::                               db
 wOlivinePortPassageSceneID::                      db
 wVermilionPortPassageSceneID::                    db

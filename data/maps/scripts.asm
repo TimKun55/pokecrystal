@@ -250,7 +250,6 @@ INCLUDE "maps/BattleTowerBattleRoom.asm"
 INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
-INCLUDE "maps/BattleTowerOutside.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -411,7 +410,7 @@ INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/EusinesHouse.asm"
-INCLUDE "maps/EsrevniHallBattleRoom.asm"
+
 
 
 SECTION "Map Scripts 21", ROMX
@@ -547,7 +546,7 @@ INCLUDE "maps/PewterMuseum2F.asm"
 
 SECTION "Map Scripts 28", ROMX
 
-INCLUDE "maps/EsrevniHall1F.asm"
+INCLUDE "maps/BattleHall1F.asm"
 INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
@@ -555,5 +554,7 @@ INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/OlivineLighthouseElevator.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
+INCLUDE "maps/BattleTowerOutside.asm"
+INCLUDE "maps/BattleHallBattleRoom.asm"
 
 ENDSECTION

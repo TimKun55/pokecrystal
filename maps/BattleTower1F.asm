@@ -46,10 +46,10 @@ BattleTower1FRulesSign:
 	opentext
 	writetext Text_ReadBattleTowerRules
 	yesorno
-	iffalse .skip
+	iffalse .SkipRules
 	writetext Text_BattleTowerRules
 	waitbutton
-.skip:
+.SkipRules:
 	closetext
 	end
 
@@ -67,6 +67,16 @@ BattleTower1FReceptionistScript:
 
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
+	checkevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
+	iffalse .NoSettings
+	setval FALSE
+	special Menu_ChallengeExplanationCancel
+	ifequal 1, Script_ChooseChallenge
+	ifequal 2, Script_BattleTowerExplanation
+	ifequal 3, Script_BattleTowerSettings
+	sjump Script_BattleTowerHopeToServeYouAgain
+
+.NoSettings:
 	setval TRUE
 	special Menu_ChallengeExplanationCancel
 	ifequal 1, Script_ChooseChallenge
@@ -160,6 +170,35 @@ Script_WaitButton:
 	waitbutton
 	closetext
 	end
+
+Script_BattleTowerSettings:
+	writetext Text_BattleTower_AskTypesMode
+	special Menu_BattleTowerSettings
+	ifequal 1, .SetNormalMode
+	ifequal 2, .SetInverseMode
+	ifequal 3, .SetTypelessMode
+	sjump Script_BattleTowerHopeToServeYouAgain
+
+.SetNormalMode:
+	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	writetext Text_BattleTower_SetToNormalMode
+	promptbutton
+	sjump Script_Menu_ChallengeExplanationCancel
+
+.SetInverseMode:
+	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	setevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	writetext Text_BattleTower_SetToInverseMode
+	promptbutton
+	sjump Script_Menu_ChallengeExplanationCancel
+
+.SetTypelessMode:
+	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	writetext Text_BattleTower_SetToTypelessMode
+	promptbutton
+	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_AMonLevelExceeds:
 	writetext Text_AMonLevelExceeds
@@ -406,6 +445,26 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
 	line "hear about the"
 	cont "Battle Tower?"
+	done
+
+Text_BattleTower_AskTypesMode:
+	text "Challenge which"
+	line "kind of battles?"
+	done
+
+Text_BattleTower_SetToNormalMode:
+	text "Type matchups set"
+	line "to normal mode."
+	done
+
+Text_BattleTower_SetToInverseMode:
+	text "Type matchups set"
+	line "to inverse mode."
+	done
+
+Text_BattleTower_SetToTypelessMode:
+	text "Type matchups set"
+	line "to neutral mode."
 	done
 
 Text_CantBeRegistered:

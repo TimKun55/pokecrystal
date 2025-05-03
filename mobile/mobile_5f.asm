@@ -417,10 +417,10 @@ Function17d1f1:
 ; Parameter: [wScriptVar] = 0..1
 ;
 ; if [wScriptVar] == FALSE
-;    Show japanese menu options
+;    Show expanded menu with 4 options
 ;    - News - News - ??? - Cancel
 ; if [wScriptVar] == TRUE
-;    Show BattleTower-Menu with 3 options in english language
+;    Show BattleTower-Menu with 3 options
 ;    - Challenge - Explanation - Cancel
 Menu_ChallengeExplanationCancel:
 	ld a, [wScriptVar]
@@ -428,7 +428,7 @@ Menu_ChallengeExplanationCancel:
 	jr nz, .English
 	ld a, $4
 	ld [wScriptVar], a
-	ld hl, MenuHeader_17d26a ; Japanese Menu, where you can choose 'News' as an option
+	ld hl, MenuHeader_ChallengeExplanationSettingsCancel ; Show expanded menu with 4 options
 	jr .Load_Interpret
 
 .English:
@@ -467,20 +467,6 @@ Function17d246:
 	ld [wScriptVar], a
 	ret
 
-MenuHeader_17d26a:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 14, 9
-	dw MenuData_17d272
-	db 1 ; default option
-
-MenuData_17d272:
-	db STATICMENU_CURSOR | STATICMENU_WRAP ; flags
-	db 4
-	db "ニュース<WO>よみこむ@"
-	db "ニュース<WO>みる@"
-	db "せつめい@"
-	db "やめる@"
-
 MenuHeader_ChallengeExplanationCancel:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 14, 7
@@ -493,6 +479,41 @@ MenuData_ChallengeExplanationCancel:
 	db "Challenge@"
 	db "Explanation@"
 	db "Cancel@"
+
+MenuHeader_ChallengeExplanationSettingsCancel:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 14, 9
+	dw MenuData_ChallengeExplanationSettingsCancel
+	db 1 ; default option
+
+MenuData_ChallengeExplanationSettingsCancel:
+	db STATICMENU_CURSOR | STATICMENU_WRAP ; flags
+	db 4
+	db "Challenge@"
+	db "Explanation@"
+	db "Settings@"
+	db "Cancel@"
+
+Menu_BattleTowerSettings:
+	ld a, $4
+	ld [wScriptVar], a
+	ld hl, MenuHeader_NormalInverseNeutral
+	call LoadMenuHeader
+	call Function17d246
+	jp CloseWindow
+
+MenuHeader_NormalInverseNeutral:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, 7
+	dw MenuData_NormalInverseNeutral
+	db 1 ; default option
+
+MenuData_NormalInverseNeutral:
+	db STATICMENU_CURSOR | STATICMENU_WRAP ; flags
+	db 3
+	db "Normal Mode@"
+	db "Inverse Mode@"
+	db "Neutral Mode@"
 
 Function17d2b6:
 	call Function17d2c0
