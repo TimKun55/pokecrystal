@@ -1247,12 +1247,17 @@ BattleCommand_Stab:
 	and TYPE_MASK
 	ld b, a
 	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	jr z, .typeless
 	cp BATTLETYPE_INVERSE
 	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
+	jr .TypesLoop
+.typeless
+	ld hl, NoTypeMatchups
 
 .TypesLoop:
 	call GetNextTypeMatchupsByte
@@ -1379,12 +1384,18 @@ CheckTypeMatchup:
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
 	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	jr z, .typeless
 	cp BATTLETYPE_INVERSE
 	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
+	jr .TypesLoop
+.typeless
+	ld hl, NoTypeMatchups
+
 .TypesLoop:
 	call GetNextTypeMatchupsByte
 	inc hl

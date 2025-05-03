@@ -255,4 +255,7 @@ InverseTypeMatchups:
 	db FAIRY,        DRAGON,       NOT_VERY_EFFECTIVE
 	db FAIRY,        DARK,         NOT_VERY_EFFECTIVE
 	db FAIRY,        STEEL,        SUPER_EFFECTIVE
+	db NORMAL,       GHOST,        SUPER_EFFECTIVE
+	db FIGHTING,     GHOST,        SUPER_EFFECTIVE
+NoTypeMatchups:
 	db -1 ; end
