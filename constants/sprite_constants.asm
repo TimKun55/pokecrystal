@@ -120,6 +120,7 @@
 	const SPRITE_SCHOOLBOY ; 74
 	const SPRITE_BIRD_KEEPER ; 75
 	const SPRITE_FOSSILS ; 76
+	const SPRITE_THORTON ; 77
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

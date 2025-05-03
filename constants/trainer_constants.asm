@@ -836,15 +836,21 @@ DEF KRIS EQU __trainer_class__
 	const INVER_2
 	const INVER_3
 	const INVER_4
-
-	trainerclass AERODACTYL_FOSSIL ; 4f
 	
-	trainerclass KABUTOPS_FOSSIL ; 50
+	trainerclass THORTON ; 4f
+	const THORTON_1
+	const THORTON_2
+	const THORTON_3
+	const THORTON_4
 
-	trainerclass OMASTAR_FOSSIL ; 51
+	trainerclass AERODACTYL_FOSSIL ; 50
+	
+	trainerclass KABUTOPS_FOSSIL ; 51
 
-	trainerclass CUBONE_ARMOR ; 52
+	trainerclass OMASTAR_FOSSIL ; 52
 
-	trainerclass METEORITE ; 53
+	trainerclass CUBONE_ARMOR ; 53
+
+	trainerclass METEORITE ; 54
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
