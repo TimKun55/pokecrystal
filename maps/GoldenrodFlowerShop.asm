@@ -196,6 +196,21 @@ FlowerShopBellossomScript:
 	closetext
 	end
 
+FlowerShopDoor:
+	opentext
+	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
+	iffalse .LockedDoor
+	writetext OpenDoorText
+	waitbutton
+	closetext
+	end
+
+.LockedDoor:
+	writetext LockedDoorText
+	waitbutton
+	closetext
+	end
+
 FlowerShopPlayerMovement:
 	step DOWN
 	step_end
@@ -369,6 +384,16 @@ FlowerShopBellossomText:
 	line "Lossom!!"
 	done
 
+OpenDoorText:
+	text "The door is"
+	line "unlocked."
+	done
+
+LockedDoorText:
+	text "The door is"
+	line "locked."
+	done
+
 GoldenrodFlowerShop_MapEvents:
 	db 0, 0 ; filler
 
@@ -380,6 +405,7 @@ GoldenrodFlowerShop_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  7,  0, BGEVENT_READ, FlowerShopDoor
 
 	def_object_events
 	object_event  1,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
