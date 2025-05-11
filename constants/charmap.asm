@@ -124,6 +124,10 @@
 	charmap "│",         $bd
 	charmap "└",         $be
 	charmap "┘",         $bf
+
+	charmap "♪",         $c6
+	charmap "♥",         $c7
+	charmap "★",         $c8
 	
 	charmap ">",		 $ca
 	charmap "<",	     $cb

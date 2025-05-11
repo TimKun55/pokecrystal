@@ -54,34 +54,6 @@ MovePlayerPic:
 	pop hl
 	jr .loop
 
-ShowPlayerNamingChoices:
-	ld hl, EthanNameMenuHeader
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_header
-	ld hl, KrisNameMenuHeader
-.got_header
-	call LoadMenuHeader
-	call VerticalMenu
-	ld a, [wMenuCursorY]
-	dec a
-	call CopyNameFromMenu
-	call CloseWindow
-	ret
-
-INCLUDE "data/player_names.asm"
-
-GetPlayerNameArray: ; unreferenced
-	ld hl, wPlayerName
-	ld de, MalePlayerNameArray
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_array
-	ld de, FemalePlayerNameArray
-.got_array
-	call InitName
-	ret
-
 GetPlayerIcon:
 	ld de, EthanSpriteGFX
 	ld b, BANK(EthanSpriteGFX)

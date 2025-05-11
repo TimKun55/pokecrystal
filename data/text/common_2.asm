@@ -625,10 +625,6 @@ _AnEggCantHoldAnItemText::
 	line "an item."
 	prompt
 
-_PackNoItemText::
-	text "No items."
-	done
-
 _AskThrowAwayText::
 	text "Throw away how"
 	line "many?"
@@ -682,22 +678,13 @@ _PackEmptyText::
 	text_start
 	done
 
-_YouCantUseItInABattleText::
-	text "You can't use it"
-	line "in a battle."
-	prompt
-
 _AreYouABoyOrAreYouAGirlText::
 	text "Are you a boy?"
 	line "Or are you a girl?"
 	done
 
-_SoYoureABoy::
-	text "So you're a boy?"
-	done
-
-_SoYoureAGirl::
-	text "So you're a girl?"
+_SoThisIsYouText::
+	text "So this is you?"
 	done
 
 Text_BattleEffectActivate::

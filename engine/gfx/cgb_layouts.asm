@@ -66,6 +66,9 @@ CGBLayoutJumptable:
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
 	dw _CGB_Unused1E
+	dw _CGB_IntroPals
+	dw _CGB_IntroGenderPals
+	dw _CGB_NamingScreen
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1765,6 +1768,90 @@ _CGB_Unused1E:
 	call WipeAttrmap
 	call ApplyAttrmap
 	ret
+
+_CGB_IntroPals:
+	ld de, wBGPals1
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	call GetFrontpicPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld hl, IntroGradientPalette
+	ld de, wBGPals1 palette 1
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+
+	hlcoord 0, 0, wAttrmap
+	lb bc, 3, 20
+	ld a, $1
+	call FillBoxWithByte
+	call ApplyAttrmap
+	call ApplyPals
+	ret
+
+_CGB_IntroGenderPals:
+	ld de, wBGPals1
+	xor a ; ETHAN
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, FALKNER ; KRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld hl, IntroGradientPalette
+	ld de, wBGPals1 palette 2
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+
+	hlcoord 0, 0, wAttrmap
+	lb bc, 3, 20
+	ld a, $2
+	call FillBoxWithByte
+
+	hlcoord 13, 4, wAttrmap
+	lb bc, 8, 5
+	ld a, $1
+	call FillBoxWithByte
+
+	call ApplyAttrmap
+	call ApplyPals
+	ret
+
+IntroGradientPalette:
+INCLUDE "gfx/new_game/intro_gradient.pal"
+
+_CGB_NamingScreen:
+	ld hl, NamingScreenPalettes
+	ld de, wBGPals1
+	ld bc, 2 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+
+	hlcoord 0, 0, wAttrmap
+	lb bc, 6, 20
+	ld a, $1
+	call FillBoxWithByte
+
+	hlcoord 0, 15, wAttrmap
+	lb bc, 3, 20
+	ld a, $1
+	call FillBoxWithByte
+
+	call InitPartyMenuOBPals
+	call ApplyAttrmap
+	call ApplyPals
+	ret
+
+NamingScreenPalettes:
+INCLUDE "gfx/naming_screen/naming_screen.pal"
 
 _CGB_TradeTube:
 	ld hl, PalPacket_TradeTube + 1

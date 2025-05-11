@@ -1,3 +1,28 @@
+InitIntroGradient::
+	; top stripe
+	hlcoord 0, 0
+	ld bc, SCREEN_WIDTH
+	ld a, $70
+	call ByteFill
+	; middle stripe
+	; hlcoord 0, 1
+	ld bc, SCREEN_WIDTH
+	ld a, $71
+	call ByteFill
+	; bottom stripe
+	; hlcoord 0, 2
+	ld bc, SCREEN_WIDTH
+	ld a, $72
+	call ByteFill
+
+	ld de, .IntroGradientGFX
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(.IntroGradientGFX), 3
+	jp Get2bpp
+
+.IntroGradientGFX:
+INCBIN "gfx/new_game/intro_gradient.2bpp"
+
 Intro_MainMenu:
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -591,8 +616,9 @@ OakSpeech:
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_INTRO_PALS
 	call GetSGBLayout
+	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
 	ld hl, OakText1
@@ -612,9 +638,10 @@ OakSpeech:
 	ld [wTempMonDVs], a
 	ld [wTempMonDVs + 1], a
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_INTRO_PALS
 	call GetSGBLayout
-	call Intro_WipeInFrontpic
+	call InitIntroGradient
+	call Intro_RotatePalettesLeftFrontpic
 
 	ld hl, OakText2
 	call PrintText
@@ -629,8 +656,9 @@ OakSpeech:
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_INTRO_PALS
 	call GetSGBLayout
+	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
 	ld hl, OakText5
@@ -644,7 +672,13 @@ OakSpeech:
 	ld hl, OakText6
 	call PrintText
 
+	call ClearTilemap
+	call WaitBGMap2
+	call SetDefaultBGPAndOBP
+
 	call NamePlayer
+
+
 
 	ld hl, OakText7
 	call PrintText
@@ -689,6 +723,13 @@ InitGender:
 	call WaitBGMap2
 	call SetDefaultBGPAndOBP
 
+	call InitGenderGraphics
+
+	ld b, SCGB_INTRO_GENDER_PALS
+	call GetSGBLayout
+	call InitIntroGradient
+	call Intro_RotatePalettesLeftFrontpic
+
 	ld hl, AreYouABoyOrAreYouAGirlText
 	call PrintText
 
@@ -701,21 +742,20 @@ InitGender:
 	dec a
 	ld [wPlayerGender], a
 
+	call RotateThreePalettesRight
 	call ClearTilemap
+	call WaitBGMap2
+	call SetDefaultBGPAndOBP
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_INTRO_PALS
 	call GetSGBLayout
+	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, SoYoureABoyText
-	ld a, [wPlayerGender]
-	and a
-	jr z, .boy
-	ld hl, SoYoureAGirlText
-.boy
+	ld hl, SoThisIsYouText
 	call PrintText
 
 	call YesNoBox
@@ -740,35 +780,41 @@ AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText
 	text_end
 
-SoYoureABoyText:
-	; So you're a boy?
-	text_far _SoYoureABoy
+SoThisIsYouText:
+	; So this is you?
+	text_far _SoThisIsYouText
 	text_end
 
-SoYoureAGirlText:
-	; So you're a girl?
-	text_far _SoYoureAGirl
-	text_end
+InitGenderGraphics:
+	ld de, EthanCardPic
+	ld hl, vTiles2 tile $00
+	ld b, BANK(EthanCardPic)
+	ld c, 5 * 7
+	call Get2bpp
 
-NamePlayer:
-	farcall MovePlayerPicRight
-	farcall ShowPlayerNamingChoices
-	ld a, [wMenuCursorY]
-	dec a
-	jr z, .NewName
-	call StorePlayerName
-	farcall ApplyMonOrTrainerPals
-	farcall MovePlayerPicLeft
+	ld de, KrisCardPic
+	ld hl, vTiles2 tile $23
+	ld b, BANK(KrisCardPic)
+	ld c, 5 * 7
+	call Get2bpp
+
+	xor a
+	ldh [hGraphicStartTile], a
+	hlcoord 1, 4
+	lb bc, 5, 7
+	predef PlaceGraphic
+	ld a, $23
+	ldh [hGraphicStartTile], a
+	hlcoord 13, 4
+	lb bc, 5, 7
+	predef PlaceGraphic
 	ret
 
-.NewName:
+NamePlayer:
 	ld b, NAME_PLAYER
 	ld de, wPlayerName
 	farcall NamingScreen
-
-	call RotateThreePalettesRight
 	call ClearTilemap
-
 	call LoadFontsExtra
 	call WaitBGMap
 
@@ -776,8 +822,9 @@ NamePlayer:
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_INTRO_PALS
 	call GetSGBLayout
+	call InitIntroGradient
 	call RotateThreePalettesLeft
 
 	ld hl, wPlayerName
@@ -886,21 +933,6 @@ IntroFadePalettes:
 	dc 3, 3, 1, 0
 	dc 3, 2, 1, 0
 .End
-
-Intro_WipeInFrontpic:
-	ld a, $77
-	ldh [hWX], a
-	call DelayFrame
-	ld a, %11100100
-	call DmgToCgbBGPals
-.loop
-	call DelayFrame
-	ldh a, [hWX]
-	sub $8
-	cp -1
-	ret z
-	ldh [hWX], a
-	jr .loop
 
 Intro_PrepTrainerPic:
 	ld de, vTiles2
