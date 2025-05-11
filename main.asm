@@ -46,6 +46,7 @@ INCLUDE "engine/events/elevator.asm"
 
 SECTION "bank4", ROMX
 
+INCLUDE "engine/items/pack.asm"
 INCLUDE "engine/overworld/time.asm"
 INCLUDE "engine/items/tmhm2.asm"
 INCLUDE "engine/menus/naming_screen.asm"
@@ -733,7 +734,6 @@ INCLUDE "engine/pokedex/unown_dex.asm"
 SECTION "Voltorb Flip", ROMX
 
 INCLUDE "engine/games/voltorb_flip.asm"
-INCLUDE "engine/items/pack.asm"
 
 
 SECTION "Map GroupNums Names", ROMX
