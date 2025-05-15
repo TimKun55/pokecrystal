@@ -384,17 +384,71 @@ ReadMart:
 INCLUDE "data/items/bargain_shop.asm"
 
 BuyMenu:
-	call FadeToMenu
-	farcall BlankScreen
+	call BuyMenu_InitGFX
+.loop
+	call BuyMenuLoop ; menu loop
+	jr nc, .loop
+	call ReturnToMapWithSpeechTextbox
+	ret
+
+BuyMenu_InitGFX:
+	xor a
+	ldh [hBGMapMode], a
+
+	call ClearBGPalettes
+	call ClearTilemap
+	call ClearSprites
+	call DisableLCD
+
+	ld hl, MartMenuGFX
+	ld de, vTiles2 tile $10
+	ld bc, 14 tiles
+	ld a, BANK(MartMenuGFX)
+	call FarCopyBytes
+	
+	hlcoord 0, 3
+	ld de, .BuyLeftColumnTilemapString
+	ld bc, SCREEN_WIDTH - 5
+.loop
+	ld a, [de]
+	and a
+	jr nz, .continue
+	add hl, bc
+	jr .next
+.continue
+	cp $ff
+	jr z, .ok
+	ld [hli], a
+.next
+	inc de
+	jr .loop
+.ok
+	call EnableLCD
+	call WaitBGMap
+	ld b, SCGB_BUY_MENU
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP
+; Not graphics-related, but common to all BuyMenu_InitGFX callers
 	xor a
 	ld [wMenuScrollPositionBackup], a
 	ld a, 1
 	ld [wMenuCursorPositionBackup], a
-.loop
-	call BuyMenuLoop ; menu loop
-	jr nc, .loop
-	call CloseSubmenu
+	call DelayFrame
 	ret
+
+.BuyLeftColumnTilemapString:
+	db $10, $10, $10, $10, $10, 0 ; Background
+	db $10, $10, $10, $10, $10, 0
+	db $10, $10, $10, $10, $10, 0
+	db $10, $10, $10, $10, $10, 0
+	db $10, $10, $10, $10, $10, 0 ; 	db $10, $13, $13, $13, $10, 0 ; Item icon
+	db $10, $10, $10, $10, $10, 0 ; 	db $11, $15, $16, $17, $12, 0
+	db $10, $10, $10, $10, $10, 0 ; 	db $11, $18, $19, $1a, $12, 0
+	db $10, $10, $10, $10, $10, 0 ; 	db $11, $1b, $1c, $1d, $12, 0
+	db $10, $10, $10, $10, $10, -1 ; 	db $10, $14, $14, $14, $10, -1
+
+MartMenuGFX:
+INCBIN "gfx/mart/mart_menu.2bpp"
 
 LoadBuyMenuText:
 ; load text from a nested table
@@ -540,15 +594,7 @@ BuyMenuLoop:
 	call UpdateSprites
 	ld hl, MenuHeader_Buy
 	call CopyMenuHeader
-	ld a, [wMenuCursorPositionBackup]
-	ld [wMenuCursorPosition], a
-	ld a, [wMenuScrollPositionBackup]
-	ld [wMenuScrollPosition], a
-	call ScrollingMenu
-	ld a, [wMenuScrollPosition]
-	ld [wMenuScrollPositionBackup], a
-	ld a, [wMenuCursorY]
-	ld [wMenuCursorPositionBackup], a
+	call DoMartScrollingMenu
 	call SpeechTextbox
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
@@ -602,10 +648,6 @@ BuyMenuLoop:
 	and a
 	ret
 
-.PremierBallText
-	text_far _MartPremierBallText
-	text_end
-
 .set_carry
 	scf
 	ret
@@ -622,6 +664,22 @@ BuyMenuLoop:
 	call LoadBuyMenuText
 	call JoyWaitAorB
 	and a
+	ret
+
+.PremierBallText
+	text_far _MartPremierBallText
+	text_end
+
+DoMartScrollingMenu:
+	ld a, [wMenuCursorPositionBackup]
+	ld [wMenuCursorPosition], a
+	ld a, [wMenuScrollPositionBackup]
+	ld [wMenuScrollPosition], a
+	call ScrollingMenu
+	ld a, [wMenuScrollPosition]
+	ld [wMenuScrollPositionBackup], a
+	ld a, [wMenuCursorY]
+	ld [wMenuCursorPositionBackup], a
 	ret
 
 StandardMartAskPurchaseQuantity:
@@ -714,7 +772,7 @@ MartFinalPriceText:
 
 MenuHeader_Buy:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 1, 3, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 6, 3, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
@@ -739,7 +797,7 @@ MenuHeader_Buy:
 	ld d, h
 	ld e, l
 	pop hl
-	ld bc, SCREEN_WIDTH
+	ld bc, SCREEN_WIDTH - 4
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
 	call PrintBCDNumber

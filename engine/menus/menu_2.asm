@@ -52,13 +52,14 @@ PlaceItemInBagQuantity:
 	ld b, 1
 	ld c, 7
 	call Textbox
-	hlcoord 1, 1
-	ld de, InBagString
-	call PlaceString
 
 	ld a, [wMenuSelection]
 	cp -1
-	jr z, .no_selection
+	ret z
+
+	hlcoord 1, 1
+	ld de, InBagString
+	call PlaceString
 
 	hlcoord 5, 1
 	ld [hl], "×"
@@ -68,24 +69,8 @@ PlaceItemInBagQuantity:
 	call PrintNum
 	ret
 
-.no_selection
-	jr ClearItemInBagQuantityBox
-
 InBagString:
 	db "Bag@"
-
-ClearItemInBagQuantityBox:
-	hlcoord 0, 0
-	ld b, 3
-	ld c, 9
-	call ClearBox
-	hlcoord 1, 1
-	ld de, .BlankString
-	call PlaceString
-	ret
-
-.BlankString:
-	db "@"
 
 PlaceMoneyTopRight:
 	ld hl, MoneyTopRightMenuHeader

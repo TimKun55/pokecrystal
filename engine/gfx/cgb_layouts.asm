@@ -69,6 +69,7 @@ CGBLayoutJumptable:
 	dw _CGB_IntroPals
 	dw _CGB_IntroGenderPals
 	dw _CGB_NamingScreen
+	dw _CGB_BuyMenu
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1852,6 +1853,34 @@ _CGB_NamingScreen:
 
 NamingScreenPalettes:
 INCLUDE "gfx/naming_screen/naming_screen.pal"
+
+_CGB_BuyMenu:
+	ld hl, MartMenuPals
+.ok
+	ld de, wBGPals1
+	ld bc, 3 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+
+	hlcoord 6, 4, wAttrmap
+	lb bc, 7, 1
+	ld a, $2
+	call FillBoxWithByte
+
+;	hlcoord 1, 8, wAttrmap ; item icon
+;	lb bc, 3, 3
+;	ld a, $7
+;	call FillBoxWithByte
+
+	call InitPartyMenuOBPals
+	call ApplyAttrmap
+	call ApplyPals
+	ret
+
+MartMenuPals:
+INCLUDE "gfx/mart/mart.pal"
 
 _CGB_TradeTube:
 	ld hl, PalPacket_TradeTube + 1

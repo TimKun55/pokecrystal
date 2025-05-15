@@ -62,6 +62,7 @@ SGBLayoutJumptable:
 	dw .SGB_IntroPals
 	dw .SGB_IntroGenderPals
 	dw .SGB_NamingScreen
+	dw .SGB_BuyMenu
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
@@ -412,6 +413,7 @@ endr
 	ret
 
 .SGB_Unused0D:
+.SGB_BuyMenu:
 .SGB_TrainerCard:
 .SGB_TrainerCardJohto:
 .SGB_TrainerCardKanto:
