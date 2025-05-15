@@ -2,8 +2,11 @@ BuenaPrizeItems:
 	table_width 2, BuenaPrizeItems
 	db ULTRA_BALL,   2
 	db FULL_RESTORE, 2
+	db ELIXER,       2
+	db MAX_ELIXER,   3
 	db NUGGET,       3
-	db RARE_CANDY,   3
+	db RARE_CANDY,   4
+	db EVIOLITE,     5
 	db PROTEIN,      5
 	db IRON,         5
 	db CARBOS,       5
