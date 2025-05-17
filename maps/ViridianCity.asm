@@ -217,7 +217,7 @@ ViridianCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 30,  9, VIRIDIAN_GYM, 1
+	warp_event 30,  7, VIRIDIAN_GYM, 1
 	warp_event 23, 13, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1
 	warp_event 22, 19, TRAINER_HOUSE_1F, 1
 	warp_event 29, 19, VIRIDIAN_MART, 2
@@ -229,7 +229,7 @@ ViridianCity_MapEvents:
 
 	def_bg_events
 	bg_event 17, 15, BGEVENT_READ, ViridianCitySign
-	bg_event 28,  9, BGEVENT_READ, ViridianGymSign
+	bg_event 28,  7, BGEVENT_READ, ViridianGymSign
 	bg_event 17,  1, BGEVENT_READ, ViridianCityWelcomeSign
 	bg_event 20, 20, BGEVENT_READ, TrainerHouseSign
 	bg_event 24, 25, BGEVENT_READ, ViridianCityPokecenterSign
@@ -237,6 +237,6 @@ ViridianCity_MapEvents:
 
 	def_object_events
 	object_event 18,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
-	object_event 31, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
+	object_event 31,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
 	object_event 10, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
 	object_event 18, 26, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1

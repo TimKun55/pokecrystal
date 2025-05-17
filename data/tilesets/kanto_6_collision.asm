@@ -215,3 +215,5 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; d6
 	tilecoll WALL, FLOOR, WALL, WALL ; d7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d8
+	tilecoll WALL, HOP_DOWN, WALL, WALL ; d9
+	tilecoll HOP_DOWN, WALL, WALL, WALL ; da
