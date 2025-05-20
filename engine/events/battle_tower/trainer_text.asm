@@ -5,17 +5,17 @@ BattleTowerText::
 ; 3: Player won
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBT_OTTrainerClass)
+;	ld a, BANK(wBT_OTTrainerClass)
 	ldh [rSVBK], a
 if DEF(_CRYSTAL11)
-	ld hl, wBT_OTTrainerClass
+;	ld hl, wBT_OTTrainerClass
 else
 ; BUG: Instead of loading the trainer class,
 ; Crystal 1.0 loads the 6th character in the trainer's
 ; name, then uses it to get the trainer's gender.
 ; As a consequence, the enemy trainer's dialog will
 ; always be sampled from the female array.
-	ld hl, wBT_OTName + NAME_LENGTH_JAPANESE - 1
+;	ld hl, wBT_OTName + NAME_LENGTH_JAPANESE - 1
 endc
 	ld a, [hl]
 	dec a
@@ -52,11 +52,11 @@ endc
 	ld b, 0
 	dec c
 	jr nz, .restore
-	ld [wBT_TrainerTextIndex], a
+;	ld [wBT_TrainerTextIndex], a
 	jr .okay2
 
 .restore
-	ld a, [wBT_TrainerTextIndex]
+;	ld a, [wBT_TrainerTextIndex]
 
 .okay2
 	push af

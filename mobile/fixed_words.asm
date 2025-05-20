@@ -2992,7 +2992,7 @@ EZChat_GetSeenPokemonByKana:
 ; save the pointer to the next row
 	push hl
 ; add de to w3_d000
-	ld hl, w3_d000
+;	ld hl, w3_d000
 	add hl, de
 ; recover de from wcd2d (default: w5_d800)
 	ld a, [wcd2d]
@@ -3190,7 +3190,7 @@ EZChat_GetCategoryWordsByKana:
 	ld d, a
 
 	; add to w3_d000
-	ld hl, w3_d000
+;	ld hl, w3_d000
 	add hl, de
 
 	; copy from wcd2d and increment [wcd2d] in place
@@ -4072,7 +4072,7 @@ EZChat_SortedWords:
 ; These arrays are expanded dynamically to accomodate
 ; any Pokemon you've seen that starts with each kana.
 MACRO macro_11f23c
-	dw w3_d012 - w3_d000 + x, \1
+;	dw w3_d012 - w3_d000 + x, \1
 	DEF x += 2 * \1
 ENDM
 DEF x = 0

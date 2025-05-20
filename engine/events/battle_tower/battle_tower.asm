@@ -11,9 +11,10 @@ Function1700ba:
 	ret
 
 Function1700c4:
+; TODO: fix Battle Tower Code
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(w3_d202TrainerData) ; aka BANK(w3_dffc) and BANK(w3_d202Name)
+;	ld a, BANK(w3_d202TrainerData) ; aka BANK(w3_dffc) and BANK(w3_d202Name)
 	ldh [rSVBK], a
 
 	call Function17042c
@@ -24,11 +25,11 @@ Function1700c4:
 	ld [s5_be45], a
 	xor a
 	ld [s5_be46], a
-	ld hl, w3_dffc
+;	ld hl, w3_dffc
 	ld de, s5_aa41
 	ld bc, 4
 	call CopyBytes
-	ld hl, w3_d202Name
+;	ld hl, w3_d202Name
 	ld de, s5_aa8e
 	ld bc, BATTLETOWER_STREAK_LENGTH * $cc ; length of battle tower struct from japanese games?
 	call CopyBytes
@@ -43,7 +44,7 @@ Function1700c4:
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, w3_dffc
+;	ld hl, w3_dffc
 	ld bc, 4
 	call CopyBytes
 	call CloseSRAM
@@ -483,7 +484,7 @@ BT_ChrisName:
 	db "Chris@"
 
 Function17042c:
-	ld hl, w3_d202TrainerData
+;	ld hl, w3_d202TrainerData
 	ld a, BATTLETOWER_STREAK_LENGTH
 .loop
 	push af
@@ -550,10 +551,10 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 ; copy the BattleTower-Trainer data that lies at 'wBT_OTTrainer' to 'wBT_OTTemp'
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBT_OTTrainer)
+;	ld a, BANK(wBT_OTTrainer)
 	ldh [rSVBK], a
 
-	ld hl, wBT_OTTrainer
+;	ld hl, wBT_OTTrainer
 	ld de, wBT_OTTemp
 	ld bc, BATTLE_TOWER_STRUCT_LENGTH
 	call CopyBytes
@@ -1129,9 +1130,9 @@ SaveBattleTowerLevelGroup:
 	call OpenSRAM
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBTChoiceOfLvlGroup)
+;	ld a, BANK(wBTChoiceOfLvlGroup)
 	ldh [rSVBK], a
-	ld a, [wBTChoiceOfLvlGroup]
+;	ld a, [wBTChoiceOfLvlGroup]
 	ld [sBTChoiceOfLevelGroup], a
 	pop af
 	ldh [rSVBK], a
@@ -1143,10 +1144,10 @@ LoadBattleTowerLevelGroup: ; Load level group choice
 	call OpenSRAM
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBTChoiceOfLvlGroup)
+;	ld a, BANK(wBTChoiceOfLvlGroup)
 	ldh [rSVBK], a
-	ld a, [sBTChoiceOfLevelGroup]
-	ld [wBTChoiceOfLvlGroup], a
+;	ld a, [sBTChoiceOfLevelGroup]
+;	ld [wBTChoiceOfLvlGroup], a
 	pop af
 	ldh [rSVBK], a
 	call CloseSRAM
@@ -1312,9 +1313,9 @@ String_MysteryJP:
 BattleTowerAction_0F:
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(w3_d090)
+;	ld a, BANK(w3_d090)
 	ldh [rSVBK], a
-	ld a, [w3_d090]
+;	ld a, [w3_d090]
 	ld [wScriptVar], a
 	pop af
 	ldh [rSVBK], a
@@ -1533,9 +1534,9 @@ LoadOpponentTrainerAndPokemonWithOTSprite:
 	farcall LoadOpponentTrainerAndPokemon
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBT_OTTrainerClass)
+;	ld a, BANK(wBT_OTTrainerClass)
 	ldh [rSVBK], a
-	ld hl, wBT_OTTrainerClass
+;	ld hl, wBT_OTTrainerClass
 	ld a, [hl]
 	dec a
 	ld c, a

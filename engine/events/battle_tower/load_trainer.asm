@@ -1,23 +1,24 @@
 LoadOpponentTrainerAndPokemon:
+; TODO: Fix Battle Tower Code
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBT_OTTrainer)
+;	ld a, BANK(wBT_OTTrainer)
 	ldh [rSVBK], a
 
 	; Fill wBT_OTTrainer with zeros
 	xor a
-	ld hl, wBT_OTTrainer
+;	ld hl, wBT_OTTrainer
 	ld bc, BATTLE_TOWER_STRUCT_LENGTH
 	call ByteFill
 
 	; Write $ff into the Item-Slots
 	ld a, $ff
-	ld [wBT_OTMon1Item], a
-	ld [wBT_OTMon2Item], a
-	ld [wBT_OTMon3Item], a
+;	ld [wBT_OTMon1Item], a
+;	ld [wBT_OTMon2Item], a
+;	ld [wBT_OTMon3Item], a
 
 	; Set wBT_OTTrainer as start address to write the following data to
-	ld de, wBT_OTTrainer
+;	ld de, wBT_OTTrainer
 
 	ldh a, [hRandomAdd]
 	ld b, a
@@ -101,7 +102,7 @@ LoadRandomBattleTowerMon:
 .FindARandomBattleTowerMon:
 	; From Which LevelGroup are the mon loaded
 	; a = 1..10
-	ld a, [wBTChoiceOfLvlGroup]
+;	ld a, [wBTChoiceOfLvlGroup]
 	dec a
 	ld hl, BattleTowerMons
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
@@ -128,22 +129,22 @@ LoadRandomBattleTowerMon:
 	ld b, a
 	ld a, [hld]
 	ld c, a
-	ld a, [wBT_OTMon1]
+;	ld a, [wBT_OTMon1]
 	cp b
 	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon1Item]
+;	ld a, [wBT_OTMon1Item]
 	cp c
 	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon2]
+;	ld a, [wBT_OTMon2]
 	cp b
 	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon2Item]
+;	ld a, [wBT_OTMon2Item]
 	cp c
 	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon3]
+;	ld a, [wBT_OTMon3]
 	cp b
 	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon3Item]
+;	ld a, [wBT_OTMon3Item]
 	cp c
 	jr z, .FindARandomBattleTowerMon
 	ld a, [sBTMonPrevTrainer1]
@@ -198,11 +199,11 @@ LoadRandomBattleTowerMon:
 	ld [sBTMonPrevPrevTrainer2], a
 	ld a, [sBTMonPrevTrainer3]
 	ld [sBTMonPrevPrevTrainer3], a
-	ld a, [wBT_OTMon1]
+;	ld a, [wBT_OTMon1]
 	ld [sBTMonPrevTrainer1], a
-	ld a, [wBT_OTMon2]
+;	ld a, [wBT_OTMon2]
 	ld [sBTMonPrevTrainer2], a
-	ld a, [wBT_OTMon3]
+;	ld a, [wBT_OTMon3]
 	ld [sBTMonPrevTrainer3], a
 	call CloseSRAM
 	ret
