@@ -1791,12 +1791,7 @@ wGameTimerPaused::
 ; bit 7: something mobile
 	db
 
-wPalFadeMode::
-; bit 0-1: which (0: everything, 1: BG, 2: OBJ)
-; bit 2: perform a smooth dark flash
-; bit 3: partial fade (fade b of c frames)
-; bit 4: skip the last palette
-	db
+	ds 1
 
 wJoypadDisable::
 ; bits 4, 6, or 7 can be used to disable joypad input
@@ -3613,10 +3608,7 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-wPalFadeDelayFrames:: db
-wPalFadeDelay:: db
-
-	ds 104
+	ds 106
 
 	align 8
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX

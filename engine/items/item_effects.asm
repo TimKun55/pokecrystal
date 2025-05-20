@@ -596,8 +596,7 @@ PokeBallEffect:
 	ld b, NAME_MON
 	farcall NamingScreen
 
-	ld c, 15
-	call FadeToWhite
+	call RotateThreePalettesRight
 
 	call LoadStandardFont
 
@@ -691,8 +690,7 @@ PokeBallEffect:
 	ld hl, BallSentToPCText
 	call PrintText
 
-	ld c, 15
-	call FadeToWhite
+	call RotateThreePalettesRight
 	call LoadStandardFont
 	jr .return_from_capture
 

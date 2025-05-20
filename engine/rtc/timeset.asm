@@ -18,8 +18,7 @@ InitClock:
 	ld [wMusicFadeID + 1], a
 	ld c, 8
 	call DelayFrames
-	ld c, 31
-	call FadeToBlack
+	call RotateFourPalettesLeft
 	call ClearTilemap
 	call ClearSprites
 	ld b, SCGB_GENERIC
@@ -41,7 +40,7 @@ InitClock:
 	call Request1bpp
 	call .ClearScreen
 	call WaitBGMap
-	call SetDefaultBGPAndOBP
+	call RotateFourPalettesRight
 	ld hl, OakTimeWokeUpText
 	call PrintText
 	ld hl, wTimeSetBuffer

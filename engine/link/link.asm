@@ -550,8 +550,7 @@ LinkTimeout:
 	pop hl
 	bccoord 1, 14
 	call PrintTextboxTextAt
-	ld c, 15
-	call FadeToWhite
+	call RotateThreePalettesRight
 	call ClearScreen
 	ld b, SCGB_GENERIC
 	call GetSGBLayout
@@ -1630,8 +1629,7 @@ LinkTradePartymonMenuCheckCancel:
 	; fallthrough
 
 ExitLinkCommunications:
-	ld c, 15
-	call FadeToWhite
+	call RotateThreePalettesRight
 	call ClearScreen
 	ld b, SCGB_GENERIC
 	call GetSGBLayout
