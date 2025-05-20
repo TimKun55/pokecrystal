@@ -183,7 +183,7 @@ FadeMapMusicAndPalettes:
 	ld a, [wMusicFadeID + 1]
 	ld a, $4
 	ld [wMusicFade], a
-	call RotateThreePalettesRight
+	farcall FadeOutPalettes
 	ret
 
 ForceMapMusic:

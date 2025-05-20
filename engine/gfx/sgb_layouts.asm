@@ -63,6 +63,7 @@ SGBLayoutJumptable:
 	dw .SGB_IntroGenderPals
 	dw .SGB_NamingScreen
 	dw .SGB_BuyMenu
+	dw .SGB_Unused1E ; SCGB_PLAIN (not used)
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
