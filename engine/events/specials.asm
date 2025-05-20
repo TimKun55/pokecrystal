@@ -18,6 +18,12 @@ INCLUDE "data/events/special_pointers.asm"
 UnusedDummySpecial:
 	ret
 
+SetPlayerPalette:
+	ld a, [wScriptVar]
+	ld d, a
+	farcall _SetPlayerPalette
+	ret
+
 GameCornerPrizeMonCheckDex:
 	ld a, [wScriptVar]
 	dec a

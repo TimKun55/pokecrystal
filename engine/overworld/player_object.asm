@@ -29,20 +29,16 @@ SpawnPlayer:
 	call GetMapObject
 	ld hl, MAPOBJECT_PALETTE
 	add hl, bc
-	lb de, PAL_NPC_RED, OBJECTTYPE_SCRIPT
+	ln e, PAL_NPC_RED, OBJECTTYPE_SCRIPT
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .ok
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .ok
-	assert PAL_NPC_RED + 1 == PAL_NPC_BLUE
-	inc d
+	ln e, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT
 
 .ok
-	ld [hl], d
-	ld hl, MAPOBJECT_TYPE
-	add hl, bc
 	ld [hl], e
 	ld a, PLAYER_OBJECT
 	ldh [hMapObjectIndex], a
@@ -164,7 +160,6 @@ CopyObjectStruct::
 	ld hl, OBJECT_FLAGS2
 	add hl, de
 	set 5, [hl]
-	farcall CheckForUsedObjPals
 	ret
 
 CopyMapObjectToObjectStruct:
@@ -196,9 +191,10 @@ CopyMapObjectToObjectStruct:
 	ld hl, MAPOBJECT_PALETTE
 	add hl, bc
 	ld a, [hl]
-	and a
+	and MAPOBJECT_PALETTE_MASK
 	jr z, .skip_color_override
-	dec a
+	swap a
+	and PALETTE_MASK
 	ld [wTempObjectCopyPalette], a
 
 .skip_color_override
@@ -426,8 +422,9 @@ CopyTempObjectToObjectStruct:
 	call CopySpriteMovementData
 
 	ld a, [wTempObjectCopyPalette]
-	ld hl, OBJECT_PAL_INDEX
+	ld hl, OBJECT_PALETTE
 	add hl, de
+	or [hl]
 	ld [hl], a
 
 	ld a, [wTempObjectCopyY]
@@ -462,7 +459,6 @@ CopyTempObjectToObjectStruct:
 	add hl, de
 	ld [hl], a
 
-	farcall CheckForUsedObjPals
 	and a
 	ret
 

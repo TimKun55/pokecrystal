@@ -293,12 +293,22 @@ MagnetTrain_Jumptable:
 	ret
 
 .InitPlayerSpriteAnim:
-	ld hl, wPalFlags
-	set USE_DAYTIME_PAL_F, [hl]
 	ld d, (8 + 2) * TILE_WIDTH + 5
 	ld a, [wMagnetTrainPlayerSpriteInitX]
 	ld e, a
-	ld a, SPRITE_ANIM_OBJ_MAGNET_TRAIN
+	ld b, SPRITE_ANIM_OBJ_MAGNET_TRAIN_RED
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wPlayerGender)
+	ldh [rSVBK], a
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .got_gender
+	ld b, SPRITE_ANIM_OBJ_MAGNET_TRAIN_BLUE
+.got_gender
+	pop af
+	ldh [rSVBK], a
+	ld a, b
 	call InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
@@ -373,8 +383,6 @@ MagnetTrain_Jumptable:
 	ret
 
 .TrainArrived:
-	ld hl, wPalFlags
-	res USE_DAYTIME_PAL_F, [hl]
 	ld a, $80
 	ld [wJumptableIndex], a
 	ld de, SFX_TRAIN_ARRIVED
