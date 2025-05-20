@@ -108,7 +108,7 @@ AnimateHallOfFame:
 	call HOF_AnimatePlayerPic
 	ld a, $4
 	ld [wMusicFade], a
-	farcall FadeOutPalettes
+	call RotateThreePalettesRight
 	ld c, 8
 	call DelayFrames
 	ret
