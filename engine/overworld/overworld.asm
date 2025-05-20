@@ -12,8 +12,6 @@ _UpdatePlayerSprite::
 	ldh [hUsedSpriteIndex], a
 	ld a, [wUsedSprites + 1]
 	ldh [hUsedSpriteTile], a
-	call GetUsedSprite
-	ret
 
 _RefreshSprites: ; mobile
 	ld hl, wSpriteFlags
