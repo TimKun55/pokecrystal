@@ -11,8 +11,7 @@ hRTCHours::   db
 hRTCMinutes:: db
 hRTCSeconds:: db
 
-hMetatileCountWidth:: db
-hMetatileCountHeight:: db
+	ds 2
 
 hHours:: db
 	ds 1
@@ -21,11 +20,11 @@ hMinutes:: db
 hSeconds:: db
 	ds 1
 
+	ds 1
+
 hVBlankCounter:: db
 
-hMapBorderBlock:: db
-hMapWidthPlus6:: db
-hTilesetBlocksAddress:: db
+	ds 1
 
 hROMBank:: db
 hVBlank:: db
@@ -44,6 +43,8 @@ hJoyDown::        db
 hJoyLast::        db
 
 hInMenu:: db
+
+	ds 1
 
 hPrinter:: db
 hGraphicStartTile:: db

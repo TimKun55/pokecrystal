@@ -1,11 +1,13 @@
 _HandlePlayerStep::
 	ld a, [wPlayerStepFlags]
-	add a, a
-	jr c, .update_overworld_map ; starting step
-	add a, a
-	jr c, .update_player_coords ; finishing step
-	add a, a
-	jr c, .finish ; ongoing step
+	and a
+	ret z
+	bit PLAYERSTEP_START_F, a
+	jr nz, .update_overworld_map
+	bit PLAYERSTEP_STOP_F, a
+	jr nz, .update_player_coords
+	bit PLAYERSTEP_CONTINUE_F, a
+	jr nz, .finish
 	ret
 
 .update_overworld_map
@@ -123,25 +125,25 @@ UpdateOverworldMap:
 
 .step_down
 	call .ScrollOverworldMapDown
-	call _LoadOverworldTilemap
+	call LoadOverworldTilemap
 	call ScrollMapDown
 	ret
 
 .step_up
 	call .ScrollOverworldMapUp
-	call _LoadOverworldTilemap
+	call LoadOverworldTilemap
 	call ScrollMapUp
 	ret
 
 .step_left
 	call .ScrollOverworldMapLeft
-	call _LoadOverworldTilemap
+	call LoadOverworldTilemap
 	call ScrollMapLeft
 	ret
 
 .step_right
 	call .ScrollOverworldMapRight
-	call _LoadOverworldTilemap
+	call LoadOverworldTilemap
 	call ScrollMapRight
 	ret
 
