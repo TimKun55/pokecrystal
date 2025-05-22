@@ -369,7 +369,7 @@ DoPlayerMovement::
 	jr nz, .ExitWater
 
 	call .FastSurfCheck
-	jr z, .fast
+	jr z, .run
 	ld a, STEP_WALK
 	call .DoStep
 	scf
