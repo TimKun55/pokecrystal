@@ -82,6 +82,7 @@ BTTrainerClassGenders:
 	db MALE   ; BLAINE_G
 	db MALE   ; INVER
 	db MALE   ; THORTON
+	db FEMALE ; KRIS
 	db MALE   ; AERODACTYL_FOSSIL
 	db MALE   ; KABUTOPS_FOSSIL
 	db MALE   ; OMASTAR_FOSSIL

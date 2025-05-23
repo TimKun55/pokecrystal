@@ -80,6 +80,7 @@ TrainerClassNames::
 	li "Guardian"
 	li "Proprietor"
 	li "Specialist"
+	li "<PKMN> Trainer"
 	li "Fossil"
 	li "Fossil"
 	li "Fossil"

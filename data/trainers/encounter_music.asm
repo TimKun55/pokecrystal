@@ -83,6 +83,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine_g
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; inver
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; thorton
+	db MUSIC_HIKER_ENCOUNTER       ; kris
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; aerodactyl_fossil
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; kabutops_fossil
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; omastar_fossil

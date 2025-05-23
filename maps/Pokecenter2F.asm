@@ -92,10 +92,11 @@ LinkReceptionistScript_Trade:
 	iffalse .LinkedToFirstGen
 	special CheckBothSelectedSameRoom
 	iffalse .IncompatibleRooms
+	special CheckOtherPlayerGender
 	writetext Text_PleaseComeIn
 	waitbutton
 	closetext
-	scall Pokecenter2F_CheckGender
+	scall Pokecenter2F_EnterRoom
 	warpcheck
 	end
 
@@ -153,10 +154,11 @@ LinkReceptionistScript_Battle:
 	iffalse .LinkedToFirstGen
 	special CheckBothSelectedSameRoom
 	iffalse .IncompatibleRooms
+	special CheckOtherPlayerGender
 	writetext Text_PleaseComeIn
 	waitbutton
 	closetext
-	scall Pokecenter2F_CheckGender
+	scall Pokecenter2F_EnterRoom
 	warpcheck
 	end
 
@@ -205,38 +207,16 @@ Script_LeftCableColosseum:
 	setmapscene COLOSSEUM, SCENE_COLOSSEUM_INITIALIZE
 	end
 
-Pokecenter2F_CheckGender:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Female
+Pokecenter2F_EnterRoom:
 	applymovementlasttalked Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsUp
+	readmem wLinkOtherPlayerGender
+	iftrue .Female
+	variablesprite SPRITE_LINK_TRAINER, SPRITE_ETHAN
 	end
 
-.Female:
-	applymovementlasttalked Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight_2
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesTwoStepsUp
-	opentext
-	writetext Text_OhPleaseWait
-	waitbutton
-	closetext
-	applymovementlasttalked Pokecenter2FMovementData_ReceptionistLooksRight
-	turnobject PLAYER, LEFT
-	opentext
-	writetext Text_ChangeTheLook
-	waitbutton
-	closetext
-	playsound SFX_TINGLE
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_RED << 4)
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
-	setflag ENGINE_KRIS_IN_CABLE_CLUB
-	special UpdatePlayerSprite
-	opentext
-	writetext Text_LikeTheLook
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, PLAYER, 15
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesOneStepUp
+.Female
+	variablesprite SPRITE_LINK_TRAINER, SPRITE_KRIS
 	end
 
 Script_WalkOutOfLinkTradeRoom:

@@ -82,6 +82,7 @@ TrainerGroups:
 	dba BlaineGGroup
 	dba InverGroup
 	dba ThortonGroup
+	dba KrisGroup
 	dba AerodactylFossilGroup
 	dba KabutopsFossilGroup
 	dba OmastarFossilGroup

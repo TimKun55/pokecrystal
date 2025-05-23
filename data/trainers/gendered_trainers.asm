@@ -52,4 +52,5 @@ FemaleTrainers:
 	db LADY
 	db AGATHA
 	db LORELEI
+	db SPRITE_KRIS
 .End

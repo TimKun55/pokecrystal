@@ -4570,6 +4570,14 @@ ThortonGroup:
 	db 76, SNORLAX,    LEFTOVERS,     BODY_SLAM, EARTHQUAKE, FIRE_PUNCH, STRENGTH
 	db -1 ; end
 
+KrisGroup:
+	; KRIS (1)
+	db "Kris@", TRAINERTYPE_NORMAL
+	db 10, CYNDAQUIL
+	db 10, TOTODILE
+	db 10, CHIKORITA
+	db -1 ; end
+
 AerodactylFossilGroup:
 	db -1 ; end
 	

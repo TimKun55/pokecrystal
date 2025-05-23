@@ -82,6 +82,7 @@ TrainerPicPointers::
 	dba BlainePic
 	dba InverPic
 	dba ThortonPic
+	dba KrisPic
 	dba AerodactylFossilPic
 	dba KabutopsFossilPic
 	dba OmastarFossilPic
