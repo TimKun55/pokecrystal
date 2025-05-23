@@ -265,7 +265,10 @@ _CGB_PokegearPals:
 ;	set 5, a ; flip on y axis
 ;	call ByteFill
 
-	call ApplyAttrmap
+	ld hl, PokegearOBPals
+	ld de, wOBPals1
+	ld bc, 2 palettes
+	call FarCopyColorWRAM
 	call ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
@@ -1966,3 +1969,6 @@ GS_CGB_MysteryGift: ; unreferenced
 
 .MysteryGiftPalette:
 INCLUDE "gfx/mystery_gift/gs_mystery_gift.pal"
+
+PokegearOBPals:
+INCLUDE "gfx/icons/icons.pal" ; todo: replace this polished port
