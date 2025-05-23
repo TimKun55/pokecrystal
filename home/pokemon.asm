@@ -70,10 +70,7 @@ DrawBattleHPBar::
 	ld [hl], a
 
 .done
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 
 PrepMonFrontpic::
 	ld a, $1
@@ -149,10 +146,7 @@ _PlayMonCry::
 	call PlayCry
 
 .done
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 
 LoadCry::
 ; Load cry bc.
@@ -236,9 +230,9 @@ Print8BitNumLeftAlign::
 	jp PrintNum
 
 GetBaseData::
-	push bc
-	push de
 	push hl
+	push de
+	push bc
 	ldh a, [hROMBank]
 	push af
 	ld a, BANK(BaseData)
@@ -286,10 +280,7 @@ GetBaseData::
 
 	pop af
 	rst Bankswitch
-	pop hl
-	pop de
-	pop bc
-	ret
+	jp PopBCDEHL
 
 GetCurNickname::
 	ld a, [wCurPartyMon]

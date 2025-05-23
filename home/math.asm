@@ -43,10 +43,7 @@ Divide::
 	push de
 	push bc
 	homecall _Divide
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 
 Adjust_percent::
 ; in: a: value (x/256)
