@@ -731,6 +731,7 @@ FlyFunction:
 .FlyScript:
 	refreshmap
 	callasm HideSprites
+	callasm ClearSavedObjPals
 	callasm CopyBGGreenToOBPal7
 	special UpdateTimePals
 	callasm FlyFromAnim
