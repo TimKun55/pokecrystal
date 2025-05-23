@@ -792,3 +792,8 @@ SECTION "Dynamic Pals System", ROMX
 
 INCLUDE "engine/gfx/sprite_palettes.asm"
 INCLUDE "engine/gfx/dynamic_pals.asm"
+
+
+SECTION "Fade System", ROMX
+
+INCLUDE "engine/gfx/fade.asm"
