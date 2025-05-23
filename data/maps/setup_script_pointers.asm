@@ -52,3 +52,4 @@ MapSetupCommands:
 	add_mapsetup InitMapNameSign ; 2d
 	add_mapsetup DisableDynPalUpdates ; 2f
 	add_mapsetup EnableDynPalUpdates ; 30	
+	add_mapsetup FadeOutPalettes ; 31
