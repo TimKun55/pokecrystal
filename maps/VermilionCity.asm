@@ -38,7 +38,13 @@ VermilionCityTeacherScript:
 	jumptextfaceplayer VermilionCityTeacherText
 
 VermilionBattleHallOwner:
-	jumptextfaceplayer VermilionBattleHallOwnerText
+	faceplayer
+	opentext
+	writetext VermilionBattleHallOwnerText
+	waitbutton
+	closetext
+	turnobject VERMILIONCITY_GRAMPS, UP
+	end
 
 VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText
@@ -89,7 +95,6 @@ VermilionCityTutorScript:
 	waitbutton
 	special PlaceMoneyTopRight
 	writetext VermilionCityTutorHurricaneText2
-	waitbutton
 	checkmoney YOUR_MONEY, 20000
 	ifequal HAVE_LESS, .NotEnough
 	yesorno
@@ -199,6 +204,8 @@ VermilionBattleHallOwnerText:
 	cont "completed!"
 
 	para "Just a bit more…"
+	line "Once the power is"
+	cont "back on…"
 	done
 
 VermilionCitySuperNerdText:

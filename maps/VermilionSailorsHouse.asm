@@ -104,6 +104,16 @@ SailorSoBoredText:
 	
 	para "I've got nowhere"
 	line "new to sail…"
+	
+	para "Maybe I should"
+	line "give up sailing"
+	cont "for now…"
+	
+	para "… … …"
+	
+	para "I might visit"
+	line "my mate in"
+	cont "Fuchsia City…"
 	done
 
 SailorWhatIsThatMapText:
