@@ -38,6 +38,7 @@ MapSetupScript_Warp:
 	mapsetup LoadBlockData
 	mapsetup BufferScreen
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup LoadMapObjects
 	mapsetup EnableLCD
@@ -64,6 +65,7 @@ MapSetupScript_BadWarp:
 	mapsetup DisableLCD
 	mapsetup DisableDynPalUpdates
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup FadeOutMapMusic
 	mapsetup EnableLCD
@@ -87,6 +89,7 @@ MapSetupScript_Connection:
 	mapsetup LoadBlockData
 	mapsetup LoadMapTileset
 	mapsetup SaveScreen
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapObjects
 	mapsetup FadeToMapMusic
 	mapsetup LoadMapPalettes
@@ -112,6 +115,7 @@ MapSetupScript_Train:
 	mapsetup DisableLCD
 	mapsetup DisableDynPalUpdates
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup FadeOutMapMusic
 	mapsetup EnableLCD
@@ -135,6 +139,7 @@ MapSetupScript_ReloadMap:
 	mapsetup LoadBlockData
 	mapsetup LoadConnectionBlockData
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup EnableLCD
 	mapsetup LoadMapPalettes
@@ -155,6 +160,7 @@ MapSetupScript_LinkReturn:
 	mapsetup LoadBlockData
 	mapsetup BufferScreen
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup EnableLCD
 	mapsetup LoadMapPalettes
@@ -178,6 +184,7 @@ MapSetupScript_Continue:
 	mapsetup LoadConnectionBlockData
 	mapsetup BufferScreen
 	mapsetup LoadMapGraphics
+	mapsetup DecompressMetatiles
 	mapsetup LoadMapTimeOfDay
 	mapsetup EnableLCD
 	mapsetup LoadMapPalettes

@@ -17,7 +17,7 @@ asm_11800b:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .loop
 	call JoyTextDelay
@@ -57,7 +57,7 @@ Function11805f:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_11807d
 	call JoyTextDelay
@@ -94,7 +94,7 @@ Function1180b8:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_1180d1
 	call JoyTextDelay
@@ -147,7 +147,7 @@ Function118125:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .loop
 	call JoyTextDelay
@@ -233,7 +233,7 @@ Function1181da:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_1181f8
 	call JoyTextDelay
@@ -270,7 +270,7 @@ Function118233:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_11824c
 	call JoyTextDelay
@@ -306,7 +306,7 @@ Function118284:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_11829d
 	call JoyTextDelay
@@ -341,7 +341,7 @@ Function1182d5: ; unreferenced
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_1182ee
 	call JoyTextDelay
@@ -378,7 +378,7 @@ Function118329:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_118342
 	call JoyTextDelay
@@ -414,7 +414,7 @@ Function11837a:
 	ld [wc3f0], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_118393
 	call JoyTextDelay
@@ -444,7 +444,6 @@ BattleTowerRoomMenu_InitRAM:
 	di
 	ldh a, [rIE]
 	ld [wcd32], a
-	call DoubleSpeed
 	xor a
 	ldh [rIF], a
 	ld [wMobileErrorCodeBuffer], a
@@ -501,7 +500,6 @@ BattleTowerRoomMenu_Cleanup:
 	ldh [hMobileReceive], a
 	ldh [hMobile], a
 	ldh [hVBlank], a
-	call NormalSpeed
 	xor a
 	ldh [rIF], a
 	ld a, [wcd32]
@@ -901,7 +899,7 @@ Function11878d:
 	ld a, [wcd89]
 	and $1
 	jr z, .asm_1187a7
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 .asm_1187a7
 	jp BattleTowerRoomMenu_IncrementJumptable
@@ -1170,7 +1168,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4b], a
 	ld a, h
 	ld [wcd4c], a
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	call BattleTowerRoomMenu_IncrementJumptable
 
@@ -1282,7 +1280,7 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 
 .asm_118a30
 	ld a, [wcd4f]
-	ld [w3_d800], a
+	ld [wBTChoiceOfLvlGroup], a
 	jp BattleTowerRoomMenu_IncrementJumptable
 
 .b_button
@@ -1310,15 +1308,6 @@ Function118a54: ; unreferenced
 	ld de, wc3ec
 	ld bc, $0004
 	jp Function118ae4
-
-Function118a65: ; unreferenced
-	ld hl, BattleDownloadURL
-	ld de, wcc60
-	ld bc, $80
-	call CopyBytes
-	ld de, w3_d000
-	ld bc, $1000
-	jp Function118b10
 
 SetBattleDownloadURL:
 	ld hl, BattleDownloadURL
@@ -1577,7 +1566,7 @@ asm_118d9f:
 	ld [wcd3b], a
 
 .asm_118db7
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld a, LOW(wc608)
 	ld [hli], a
 	ld a, HIGH(wc608)
@@ -1598,8 +1587,8 @@ asm_118d9f:
 	call Function119ec2
 	ld a, $40
 	ld [wcd89], a
-	ld hl, w3_d800
-	ld de, w3_de00
+;	ld hl, w3_d800
+;	ld de, w3_de00
 	ld bc, $200
 	ld a, MOBILEAPI_16
 	jp Function119e2b
@@ -1728,7 +1717,7 @@ Function118e92:
 	ld de, wcc60
 	call Function1191ad
 	ret c
-	ld de, w3_d800
+;	ld de, w3_d800
 	ld bc, $0800
 	jp Function118b10
 
@@ -1854,7 +1843,7 @@ Function118f68:
 	ld a, $40
 	ld [wcd89], a
 	ld hl, wc346
-	ld de, w3_de00
+;	ld de, w3_de00
 	ld bc, $200
 	ld a, MOBILEAPI_16
 	jp Function119e2b
@@ -1934,7 +1923,7 @@ Function119009:
 	ld a, $40
 	ld [wcd89], a
 	ld hl, wc346
-	ld de, w3_d000
+;	ld de, w3_d000
 	ld bc, $1000
 	ld a, MOBILEAPI_16
 	jp Function119e2b
@@ -1947,7 +1936,7 @@ Function119054:
 	ld e, a
 	ld a, [wcd50]
 	ld d, a
-	ld a, [w3_d000]
+;	ld a, [w3_d000]
 	ld c, a
 	ld a, [w3_d000 + 1]
 	ld b, a
@@ -1959,7 +1948,7 @@ Function119054:
 	ld a, $6
 	ldh [rSVBK], a
 	ld hl, wd002
-	ld a, [w3_d000]
+;	ld a, [w3_d000]
 	ld c, a
 	ld a, [w3_d000 + 1]
 	ld b, a
@@ -1968,7 +1957,7 @@ Function119054:
 
 .asm_11908a
 	call CloseSRAM
-	ld a, $3 ; ???
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	ld a, BANK(s5_b1b3) ; aka BANK(s5_b1b4) and BANK(s5_aa7f) and BANK(s5_b2f3) and BANK(s5_b2f4)
 	call OpenSRAM
@@ -2468,7 +2457,7 @@ Function1193a0:
 	ld a, $40
 	ld [wcd89], a
 	ld hl, wc346
-	ld de, w3_de00
+;	ld de, w3_de00
 	ld bc, $200
 	ld a, MOBILEAPI_16
 	jp Function119e2b
@@ -3237,7 +3226,7 @@ Function11984e:
 	farcall MobileTradeAnimation_RetrieveGivemonFromGTS
 	call Function11a9ce
 	call RestartMapMusic
-	ld a, BANK("Battle Tower RAM")
+;	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	pop af
 	ld [wBattleTowerRoomMenuJumptableIndex], a
@@ -3261,7 +3250,7 @@ Function1198f7:
 	ret nz
 	ld hl, wc608 + 2
 	call Function119940
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld a, LOW(wc608)
 	ld [hli], a
 	ld a, HIGH(wc608)
@@ -3282,8 +3271,8 @@ Function1198f7:
 	call Function119ec2
 	ld a, $40
 	ld [wcd89], a
-	ld hl, w3_d800
-	ld de, w3_de00
+;	ld hl, w3_d800
+;	ld de, w3_de00
 	ld bc, $200
 	ld a, MOBILEAPI_16
 	jp Function119e2b
@@ -3598,7 +3587,7 @@ Function119b6b:
 	ld a, [w3_d100 + 1]
 	or b
 	jr z, .asm_119be3
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld de, w3_d100 + 2
 .asm_119b85
 	ld a, [de]
@@ -3702,14 +3691,14 @@ Function119b6b:
 	ld [s5_b090], a
 	ld a, [wcf65]
 	ld [s5_b091], a
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld de, s5_b023
 	ld bc, 105
 	call CopyBytes
 	ld a, $3
 	ld [s5_a800], a
 	call CloseSRAM
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld de, wc608
 	ld bc, 105
 	call CopyBytes
@@ -3751,7 +3740,7 @@ popc
 	ld [s5_a800], a
 	call CloseSRAM
 	xor a
-	ld [w3_d090], a
+;	ld [w3_d090], a
 	scf
 	ret
 
@@ -4310,10 +4299,10 @@ Function11a00e:
 	jp Function11a0ca
 
 .asm_11a039
-	ld a, BANK(w3_d800)
+;	ld a, BANK(w3_d800)
 	ldh [rSVBK], a
 	ld hl, wc608
-	ld de, w3_d800
+;	ld de, w3_d800
 	ld bc, 246
 	call CopyBytes
 	ld a, $1
@@ -4321,9 +4310,9 @@ Function11a00e:
 	call FadeToMenu
 	farcall Function11765d
 	call Function11a9ce
-	ld a, BANK(w3_d800)
+;	ld a, BANK(w3_d800)
 	ldh [rSVBK], a
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld de, wc608
 	ld bc, 246
 	call CopyBytes
@@ -5316,7 +5305,7 @@ Function11a90f:
 	ld [wc31e], a
 	ld hl, wc31a
 	inc [hl]
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 
 BattleTowerRoomMenu_WriteMessage_DoNothing:
@@ -7017,12 +7006,12 @@ Function11b570:
 	ret
 
 .SaveData:
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 
-	ld hl, w3_d800
+;	ld hl, w3_d800
 	ld de, wc608
-	ld bc, w3_d88f - w3_d800
+;	ld bc, w3_d88f - w3_d800
 	call CopyBytes
 
 	ld a, $1
@@ -7035,7 +7024,7 @@ Function11b570:
 	ld [de], a
 	inc de
 	ld hl, wc608
-	ld bc, w3_d88f - w3_d800
+;	ld bc, w3_d88f - w3_d800
 	call CopyBytes
 
 	push de
@@ -7131,7 +7120,7 @@ Function11b66d:
 	jr nz, .asm_11b6b0
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	ld a, [w3_d090]
 	ld b, a
@@ -7157,7 +7146,7 @@ Function11b66d:
 	ld a, $3
 	ldh [rSVBK], a
 	ld a, $2
-	ld [w3_d090], a
+;	ld [w3_d090], a
 	pop af
 	ldh [rSVBK], a
 

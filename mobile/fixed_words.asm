@@ -3004,7 +3004,7 @@ EZChat_GetSeenPokemonByKana:
 
 .loop1
 ; copy 2*bc bytes from 3:hl to 5:de
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	ld a, [hli]
 	push af
@@ -3014,7 +3014,7 @@ EZChat_GetSeenPokemonByKana:
 	ld [de], a
 	inc de
 
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 	ld a, [hli]
 	push af
@@ -3144,7 +3144,7 @@ EZChat_GetSeenPokemonByKana:
 EZChat_GetCategoryWordsByKana:
 	ldh a, [rSVBK]
 	push af
-	ld a, $3
+	ld a, BANK("Battle Tower RAM")
 	ldh [rSVBK], a
 
 	; load pointers

@@ -53,3 +53,4 @@ MapSetupCommands:
 	add_mapsetup DisableDynPalUpdates ; 2f
 	add_mapsetup EnableDynPalUpdates ; 30	
 	add_mapsetup FadeOutPalettes ; 31
+	add_mapsetup DecompressMetatiles ; 32
