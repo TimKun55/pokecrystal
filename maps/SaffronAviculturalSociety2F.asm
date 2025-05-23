@@ -263,4 +263,4 @@ SaffronAviculturalSociety2F_MapEvents:
 	def_object_events
 	object_event  4,  4, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSociety2FBirdKeeper1Script, -1	
 	object_event  7,  2, SPRITE_MURKROW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietyMurkrowScript, -1
-	object_event  3,  7, SPRITE_SKARMORY, SPRITEMOVEDATA_POKEMON, 0, 1, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, AviculturalSocietySkarmoryScript, -1
+	object_event  3,  7, SPRITE_SKARMORY, SPRITEMOVEDATA_POKEMON, 0, 1, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, AviculturalSocietySkarmoryScript, -1

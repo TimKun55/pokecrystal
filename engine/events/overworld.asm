@@ -320,6 +320,7 @@ Script_Cut:
 	end
 
 CutDownTreeOrGrass:
+	farcall CopyBGGreenToOBPal7
 	ld hl, wCutWhirlpoolOverworldBlockAddr
 	ld a, [hli]
 	ld h, [hl]
@@ -730,6 +731,7 @@ FlyFunction:
 .FlyScript:
 	refreshmap
 	callasm HideSprites
+	callasm CopyBGGreenToOBPal7
 	special UpdateTimePals
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
@@ -737,15 +739,16 @@ FlyFunction:
 	callasm SkipUpdateMapSprites
 	loadvar VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_FLY
+	callasm CopyBGGreenToOBPal7
 	callasm FlyToAnim
 	special WaitSFX
 	callasm .ReturnFromFly
 	end
 
 .ReturnFromFly:
-	ld e, PAL_OW_RED
-	farcall SetFirstOBJPalette
 	farcall RespawnPlayer
+	farcall ClearSavedObjPals
+	farcall CheckForUsedObjPals
 	call DelayFrame
 	call UpdatePlayerSprite
 	farcall LoadOverworldFont

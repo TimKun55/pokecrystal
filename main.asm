@@ -788,4 +788,7 @@ SECTION "VWF", ROMX
 INCLUDE "engine/gfx/vwf.asm"
 
 
-	ds $220
+SECTION "Dynamic Pals System", ROMX
+
+INCLUDE "engine/gfx/sprite_palettes.asm"
+INCLUDE "engine/gfx/dynamic_pals.asm"

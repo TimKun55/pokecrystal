@@ -22,6 +22,7 @@ BlindingFlash:
 	ret
 
 ShakeHeadbuttTree:
+	farcall CopyBGGreenToOBPal7
 	farcall ClearSpriteAnims
 	ld de, CutGrassGFX
 	ld hl, vTiles0 tile FIELDMOVE_GRASS
@@ -389,7 +390,8 @@ endr
 	ret
 
 FlyFunction_InitGFX:
-	callfar ClearSpriteAnims
+	farcall ClearSpriteAnims
+	call SetOWFlyMonColor
 	ld de, CutGrassGFX
 	ld hl, vTiles0 tile FIELDMOVE_GRASS
 	lb bc, BANK(CutGrassGFX), 4

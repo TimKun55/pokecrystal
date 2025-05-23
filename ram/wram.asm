@@ -131,7 +131,9 @@ wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
 
-	ds 3
+wPalFlags:: db
+
+	ds 2
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
@@ -2977,7 +2979,7 @@ wGameTimeMinutes:: db
 wGameTimeSeconds:: db
 wGameTimeFrames::  db
 
-	ds 2
+;	ds 2
 
 wCurDay:: db
 
@@ -3001,7 +3003,13 @@ endr
 wStoneTableAddress:: dw
 
 ;	ds 40
-	ds 6
+;	ds 6
+
+wUsedObjectPals:: db
+for n, 8
+wLoadedObjPal{d:n}:: db 
+endr
+wNeededPalIndex:: db
 
 wPokerusBuffer::    db
 wMachoBraceBuffer:: db
@@ -3025,7 +3033,7 @@ wTimeOfDayPalFlags:: db
 wTimeOfDayPalset:: db
 wCurTimeOfDay:: db
 
-	ds 1
+;	ds 1
 
 wSecretID:: dw
 wStatusFlags::
@@ -3102,9 +3110,9 @@ wRegisteredItem:: db
 wPlayerState:: db
 
 wHallOfFameCount:: db
-	ds 1
-wTradeFlags:: flag_array NUM_NPC_TRADES
 ;	ds 1
+wTradeFlags:: flag_array NUM_NPC_TRADES
+wEmotePal:: db
 wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
