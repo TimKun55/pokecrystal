@@ -447,9 +447,10 @@ ExplodingTrap22:
 	end
 
 VoltorbExplodingTrap:
-	special FadeOutToWhite
+	special FadeOutPalettes
+	special LoadMapPalettes
 	cry VOLTORB
-	special FadeInFromWhite
+	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon VOLTORB, 27
@@ -457,9 +458,10 @@ VoltorbExplodingTrap:
 	end
 
 GeodudeExplodingTrap:
-	special FadeOutToWhite
+	special FadeOutPalettes
+	special LoadMapPalettes
 	cry GEODUDE
-	special FadeInFromWhite
+	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon GEODUDE, 27
@@ -467,9 +469,10 @@ GeodudeExplodingTrap:
 	end
 
 KoffingExplodingTrap:
-	special FadeOutToWhite
+	special FadeOutPalettes
+	special LoadMapPalettes
 	cry KOFFING
-	special FadeInFromWhite
+	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon KOFFING, 27

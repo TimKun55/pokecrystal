@@ -98,7 +98,7 @@ BattleHallBattleRoomInverseScript:
 	applymovement PLAYER, BattleHallBattleRoomPlayerExitMovement
 	setmapscene BATTLE_HALL_1F, SCENE_BATTLEHALL1F_AFTERINVERBATTLE
 	clearevent EVENT_BATTLE_HALL_1F_INVER
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 30
 	warpfacing UP, BATTLE_HALL_1F, 12,  7
 	end
@@ -177,7 +177,7 @@ BattleHallBattleRoomTypelessScript:
 	applymovement PLAYER, BattleHallBattleRoomPlayerExitMovement
 	setmapscene BATTLE_HALL_1F, SCENE_BATTLEHALL1F_AFTERTHORTONBATTLE
 	clearevent EVENT_BATTLE_HALL_1F_THORTON
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 30
 	warpfacing UP, BATTLE_HALL_1F, 12,  7
 	end

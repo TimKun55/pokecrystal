@@ -23,7 +23,7 @@ ENDM
 MapSetupScript_Teleport:
 	mapsetup ResetPlayerObjectAction
 MapSetupScript_Fly:
-	mapsetup FadeOutToWhite
+	mapsetup FadeOutPalettes
 	mapsetup JumpRoamMons
 MapSetupScript_Warp:
 	mapsetup DisableLCD

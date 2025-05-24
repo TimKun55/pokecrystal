@@ -39,7 +39,7 @@ RedCredits::
 	ld [wMusicFadeID + 1], a
 	ld a, 10
 	ld [wMusicFade], a
-	farcall FadeOutToWhite
+	farcall FadeOutPalettes
 	xor a
 	ld [wStateFlags], a
 	ldh [hMapAnims], a

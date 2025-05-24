@@ -22,7 +22,7 @@ Script_Whiteout:
 	writetext .WhitedOutText
 .text_done
 	waitbutton
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 40
 	special HealParty
 	callasm GetWhiteoutSpawn

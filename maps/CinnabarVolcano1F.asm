@@ -18,7 +18,7 @@ CinnabarVolcano1FForcedToLeaveScene:
 	follow PLAYER, CINNABARVOLCANO1F_OFFICER
 	applymovement PLAYER, CinnabarVolcano1FPlayerSlowStepDownMovement
 	stopfollow
-	special FadeOutToWhite
+	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp CINNABAR_ISLAND, 10, 15

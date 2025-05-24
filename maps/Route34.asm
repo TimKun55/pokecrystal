@@ -162,7 +162,7 @@ Route34LyraTrigger2:
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
 	setscene SCENE_ROUTE34_NOOP
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing RIGHT, DAY_CARE, 0, 4
 	end

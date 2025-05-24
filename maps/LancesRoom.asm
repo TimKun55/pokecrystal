@@ -132,7 +132,7 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
@@ -152,7 +152,7 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
@@ -172,7 +172,7 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
@@ -230,7 +230,7 @@ LancesRoomLanceScript:
 	pause 30
 	closetext
 	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end

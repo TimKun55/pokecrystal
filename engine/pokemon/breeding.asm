@@ -681,6 +681,7 @@ EggHatch_AnimationSequence:
 	push af
 	ld de, MUSIC_NONE
 	call PlayMusic
+	farcall FadeOutPalettes
 	farcall BlankScreen
 	call DisableLCD
 	ld hl, EggHatchGFX

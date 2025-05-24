@@ -222,7 +222,7 @@ EcruteakGymClosed:
 	follow PLAYER, ECRUTEAKGYM_GRAMPS
 	applymovement PLAYER, EcruteakGymPlayerSlowStepDownMovement
 	stopfollow
-	special FadeOutToWhite
+	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp ECRUTEAK_CITY, 6, 40

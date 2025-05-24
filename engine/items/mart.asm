@@ -394,7 +394,8 @@ BuyMenu:
 BuyMenu_InitGFX:
 	xor a
 	ldh [hBGMapMode], a
-
+	farcall LoadOW_BGPal7
+	call FadePalettes
 	call ClearBGPalettes
 	call ClearTilemap
 	call ClearSprites

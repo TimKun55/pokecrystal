@@ -50,7 +50,7 @@ VermilionPortSailorAtGangwayScript:
 	waitsfx
 	applymovement PLAYER, VermilionPortEnterFastShipMovement
 	playsound SFX_EXIT_BUILDING
-	special FadeOutToWhite
+	special FadeOutPalettes
 	waitsfx
 	setevent EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	clearevent EVENT_FAST_SHIP_PASSENGERS_WESTBOUND

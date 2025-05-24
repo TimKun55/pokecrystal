@@ -99,7 +99,7 @@ NewBarkTown_LyraIntroScene:
 	playsound SFX_ENTER_DOOR
 	disappear NEWBARKTOWN_LYRA
 	setscene SCENE_NEWBARKTOWN_NOOP
-	special FadeOutToWhite
+	special FadeOutPalettes
 	pause 15
 	warpfacing UP, ELMS_LAB, 4, 11
 	end

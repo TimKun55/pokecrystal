@@ -57,7 +57,7 @@ VermilionSailorsHouseSailorScript:
 
 .Continue2
 	playsound SFX_EXIT_BUILDING
-	special FadeOutToWhite
+	special FadeOutPalettes
 	waitsfx
 	appear VERMILIONSAILORSHOUSE_SAILOR
 	warp FARAWAY_ISLAND_OUTSIDE, 11, 40

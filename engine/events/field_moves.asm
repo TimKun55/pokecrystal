@@ -10,7 +10,7 @@ PlayWhirlpoolSound:
 	ret
 
 BlindingFlash:
-	farcall FadeOutToWhite
+	farcall FadeOutPalettes
 	ld hl, wStatusFlags
 	set STATUSFLAGS_FLASH_F, [hl]
 	farcall ReplaceTimeOfDayPals

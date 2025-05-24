@@ -89,7 +89,7 @@ Route36NationalParkGateLeavingContestEarlyScript:
 	closetext
 	turnobject PLAYER, LEFT
 	playsound SFX_EXIT_BUILDING
-	special FadeOutToWhite
+	special FadeOutPalettes
 	waitsfx
 	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18
 	end
@@ -172,7 +172,7 @@ Route36OfficerScriptContest:
 	special GiveParkBalls
 	turnobject PLAYER, LEFT
 	playsound SFX_EXIT_BUILDING
-	special FadeOutToWhite
+	special FadeOutPalettes
 	waitsfx
 	special SelectRandomBugContestContestants
 	warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 35, 18

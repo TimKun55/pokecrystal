@@ -22,7 +22,7 @@ FarawayIslandSailorScript:
 	waitsfx
 	applymovement PLAYER, FarawayIslandEnterFastShipMovement
 	playsound SFX_EXIT_BUILDING
-	special FadeOutToWhite
+	special FadeOutPalettes
 	waitsfx
 	warp VERMILION_SAILORS_HOUSE,  0,  5
 	end
