@@ -62,7 +62,7 @@ Script_BattleRoomLoop:
 	special FadeOutToWhite
 	special LoadMapPalettes
 	pause 60
-	special FadeInFromWhite
+	special FadeInPalettes_EnableDynNoApply
 	special RestartMapMusic
 	opentext
 	writetext Text_NextUpOpponentNo

@@ -189,3 +189,4 @@ SpecialsPointers::
 	add_special RespawnOneOffs
 	add_special _VoltorbFlip
 	add_special Menu_BattleTowerSettings
+	add_special FadeInPalettes_EnableDynNoApply
