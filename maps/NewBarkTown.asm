@@ -540,7 +540,7 @@ NewBarkTown_MapEvents:
 	warp_event 15,  5, PLAYERS_HOUSE_1F, 1
 	warp_event  3, 12, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 10,  2, ELMS_HOUSE, 1
-	warp_event 11, 13, LYRAS_HOUSE_1F, 1
+	warp_event 11, 13, BURNED_TOWER_B1F, 1
 
 	def_coord_events
 	coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
