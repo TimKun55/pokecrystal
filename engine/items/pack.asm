@@ -1221,11 +1221,11 @@ TutorialPack:
 .dw
 ; entries correspond to *_POCKET constants
 	dw .Items
+	dw .Medicine
 	dw .Balls
 	dw .KeyItems
 	dw .TMHM
 	dw .Berries
-	dw .Medicine
 
 .Items:
 	xor a ; ITEM_POCKET

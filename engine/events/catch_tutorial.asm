@@ -54,28 +54,29 @@ CatchTutorial::
 
 .LoadLyraData:
 	ld hl, wLyraNumItems
-	ld [hl], 1
-	inc hl
-	ld [hl], POTION
-	inc hl
-	ld [hl], 1
-	inc hl
-	ld [hl], -1
-	ld hl, wLyraNumKeyItems
-	ld [hl], 0
-	inc hl
-	ld [hl], -1
+	ld de, .LyraItems
+	call .CopyLyraData
+	ld hl, wLyraNumMedicine
+	ld de, .LyraMedicine
+	call .CopyLyraData
 	ld hl, wLyraNumBalls
-	ld a, 1
+	ld de, .LyraBalls
+.CopyLyraData:
+	ld a, [de]
+	inc de
 	ld [hli], a
-	ld a, POKE_BALL
-	ld [hli], a
-	ld [hli], a
-	ld [hl], -1
+	cp -1
+	jr nz, .CopyLyraData
 	ret
 
 .Lyra:
 	db "Lyra@"
+.LyraItems:
+	db 2, REPEL, 1, MULCH, 3, -1
+.LyraMedicine:
+	db 3, POTION, 2, ANTIDOTE, 1, FRESH_WATER, 1, -1
+.LyraBalls:
+	db 2, POKE_BALL, 10, PREMIER_BALL, 1, -1
 
 .AutoInput:
 	db NO_INPUT, $ff ; end
