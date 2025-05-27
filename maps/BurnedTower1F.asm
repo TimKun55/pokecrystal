@@ -98,6 +98,7 @@ BurnedTowerRivalBattleScript:
 	closetext
 	setscene SCENE_BURNEDTOWER1F_NOOP
 	setevent EVENT_RIVAL_BURNED_TOWER
+	setevent EVENT_HOLE_IN_BURNED_TOWER	
 	special FadeOutMusic
 	pause 15
 	earthquake 50
@@ -114,7 +115,6 @@ BurnedTowerRivalBattleScript:
 	writetext BurnedTowerRival_AfterText2
 	waitbutton
 	closetext
-	setevent EVENT_HOLE_IN_BURNED_TOWER
 	pause 15
 	warpcheck
 	end

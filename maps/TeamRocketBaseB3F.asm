@@ -196,11 +196,11 @@ TeamRocketBaseB3FLockedDoor:
 .OpenSesame:
 	writetext TeamRocketBaseB3FLockedDoorOpenSesameText
 	waitbutton
+	closetext
+	setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
 	playsound SFX_ENTER_DOOR
 	changeblock 10, 8, $07 ; floor
 	reloadmappart
-	closetext
-	setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
 	waitsfx
 	end
 

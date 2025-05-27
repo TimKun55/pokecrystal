@@ -22,6 +22,7 @@ UndergroundPathHiddenDoorCallback:
 	endcallback
 
 UndergroundPathDoor:
+	setevent EVENT_UNDERGROUND_HIDDEN_ROOM
 	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	pause 15
 	turnobject PLAYER, DOWN
@@ -34,7 +35,6 @@ UndergroundPathDoor:
 	writetext SomethingOpenText
 	waitbutton
 	closetext
-	setevent EVENT_UNDERGROUND_HIDDEN_ROOM
 	setscene SCENE_UNDERGROUNDPATH_NOOP
 	end
 

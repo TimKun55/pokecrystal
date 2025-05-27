@@ -65,11 +65,10 @@ BrunoBattle:
 	closetext
 .AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_BRUNO
+	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $bc ; open door
 	reloadmappart
-	closetext
-	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 

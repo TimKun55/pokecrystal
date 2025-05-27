@@ -69,6 +69,7 @@ CaveEntranceScientistContinue:
 	writetext RuinsOfAlphCaveEntranceScientistAllUnownText
 	waitbutton
 	closetext
+	setevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
 	earthquake 30
 	changeblock 6, 0, $3e ; opened wall
 	reloadmappart
@@ -100,7 +101,6 @@ CaveEntranceScientistContinue:
 	playsound SFX_EXIT_BUILDING
 	disappear RUINSOFALPHCAVEENTRANCE_SCIENTIST
 	setscene SCENE_RUINSOFALPHCAVEENTRANCE_NOOP
-	setevent EVENT_WALL_OPENED_IN_INNER_CHAMBER
 	end
 	
 	

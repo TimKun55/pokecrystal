@@ -218,12 +218,12 @@ CianwoodWaterfallButton1:
 	writetext CianwoodGymButtonPressText
 	waitbutton
 	closetext
+	setevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
 	pause 15
 	playsound SFX_MOVE_PUZZLE_PIECE
-	waitsfx
 	changeblock 12,  2, $d7
 	reloadmappart
-	setevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
+	waitsfx
 	end
 
 CianwoodWaterfallButton2:
@@ -235,6 +235,7 @@ CianwoodWaterfallButton2:
 	writetext CianwoodGymButtonPressText
 	waitbutton
 	closetext
+	setevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
 	pause 15
 	playsound SFX_STRENGTH
 	earthquake 50
@@ -244,7 +245,7 @@ CianwoodWaterfallButton2:
 	changeblock 8,  8, $cb
 	changeblock 8, 10, $da
 	reloadmappart
-	setevent EVENT_BUTTON_2_IN_CIANWOOD_GYM
+	waitsfx
 	end
 
 .Pushed
@@ -544,8 +545,8 @@ CianwoodGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 12,  3, BGEVENT_READ, CianwoodWaterfallButton1	
-	bg_event  6,  3, BGEVENT_READ, CianwoodWaterfallButton2	
+	bg_event 12,  3, BGEVENT_READ, CianwoodWaterfallButton1
+	bg_event  6,  3, BGEVENT_READ, CianwoodWaterfallButton2
 	bg_event  7, 15, BGEVENT_READ, CianwoodGymStatue
 	bg_event 10, 15, BGEVENT_READ, CianwoodGymStatue
 

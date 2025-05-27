@@ -65,11 +65,10 @@ KarenBattle:
 	closetext
 .AfterBattle:
 	setevent EVENT_BEAT_ELITE_4_KAREN
+	setevent EVENT_KARENS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $c2 ; open door
 	reloadmappart
-	closetext
-	setevent EVENT_KARENS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 

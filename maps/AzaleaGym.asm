@@ -260,6 +260,7 @@ AzaleaGymBlueLever:
 	writetext AzaleaGymBlueLeverText
 	waitbutton
 	closetext
+	setevent EVENT_AZALEA_GYM_BLUE_LEVER	
 	pause 15
 	playsound SFX_STRENGTH
 	changeblock  2,  6, $90 ; deactivated blue lever
@@ -269,13 +270,13 @@ AzaleaGymBlueLever:
 	changeblock  8, 10, $97 ; deactivated blue rope
 	changeblock 10, 10, $98 ; deactivated blue rope
 	reloadmappart
-	setevent EVENT_AZALEA_GYM_BLUE_LEVER
 	end
 
 .BlueReset:
 	writetext AzaleaGymBlueLeverText
 	waitbutton
 	closetext
+	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
 	pause 15
 	playsound SFX_STRENGTH
 	changeblock  2,  6, $8f ; activated blue lever
@@ -285,7 +286,6 @@ AzaleaGymBlueLever:
 	changeblock  8, 10, $83 ; activated blue rope
 	changeblock 10, 10, $84 ; activated blue rope
 	reloadmappart
-	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
 	end
 
 AzaleaGymRedLever:
@@ -295,6 +295,7 @@ AzaleaGymRedLever:
 	writetext AzaleaGymRedLeverText
 	waitbutton
 	closetext
+	setevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
 	changeblock  0, 14, $92 ; deactivated red lever
@@ -302,13 +303,13 @@ AzaleaGymRedLever:
 	changeblock  4,  8, $94 ; deactivated red rope
 	changeblock  6,  8, $95 ; deactivated red rope
 	reloadmappart
-	setevent EVENT_AZALEA_GYM_RED_LEVER
 	end
 
 .RedReset:
 	writetext AzaleaGymRedLeverText
 	waitbutton
 	closetext
+	clearevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
 	changeblock  0, 14, $91 ; activated red lever
@@ -316,7 +317,6 @@ AzaleaGymRedLever:
 	changeblock  4,  8, $7d ; activated red rope
 	changeblock  6,  8, $7e ; activated red rope
 	reloadmappart
-	clearevent EVENT_AZALEA_GYM_RED_LEVER
 	end
 
 AzaleaGymPit2SetUpScript:

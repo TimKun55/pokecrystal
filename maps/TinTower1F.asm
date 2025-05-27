@@ -197,14 +197,13 @@ TinTower1FSage5Script:
 	promptbutton
 	verbosegiveitem RAINBOW_WING
 	closetext
+	setevent EVENT_GOT_RAINBOW_WING	
 	refreshscreen
 	earthquake 72
 	waitsfx
 	playsound SFX_STRENGTH
 	changeblock 10, 2, $20 ; stairs
 	reloadmappart
-	setevent EVENT_GOT_RAINBOW_WING
-	closetext
 	opentext
 .GotRainbowWing:
 	writetext TinTower1FSage5Text2

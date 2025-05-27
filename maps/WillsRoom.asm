@@ -65,11 +65,10 @@ WillBattle:
 	closetext
 .AfterBattle
 	setevent EVENT_BEAT_ELITE_4_WILL
+	setevent EVENT_WILLS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $b3 ; open door
 	reloadmappart
-	closetext
-	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 

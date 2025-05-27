@@ -327,11 +327,11 @@ TeamRocketBaseB2FLockedDoor:
 .KnowsPassword:
 	writetext RocketBaseDoorKnowPasswordText
 	waitbutton
+	closetext
+	setevent EVENT_OPENED_DOOR_TO_ROCKET_HIDEOUT_TRANSMITTER	
 	playsound SFX_ENTER_DOOR
 	changeblock 14, 12, $07 ; floor
 	reloadmappart
-	closetext
-	setevent EVENT_OPENED_DOOR_TO_ROCKET_HIDEOUT_TRANSMITTER
 	waitsfx
 	end
 

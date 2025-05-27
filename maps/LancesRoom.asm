@@ -107,11 +107,10 @@ LancesRoomLanceScript:
 	writetext LanceBattleAfterText
 	waitbutton
 	closetext
+	clearevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED	
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door
 	reloadmappart
-	closetext
-	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	checkevent EVENT_GRAND_CHAMPION
 	iftrue .GrandChampionAfter
 	readvar VAR_BADGES
