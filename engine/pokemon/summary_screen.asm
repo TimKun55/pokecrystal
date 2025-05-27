@@ -784,21 +784,14 @@ LoadBluePage:
 	ret
 
 .PlaceOTInfo:
-	ld de, IDNoString
+	ld de, OTString
 	hlcoord 1, 8
 	call PlaceString
-	ld de, OTString
-	hlcoord 1, 11
-	call PlaceString
-	hlcoord 1, 9
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
-	ld de, wTempMonID
-	call PrintNum
 	ld hl, .OTNamePointers
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 1, 12
+	hlcoord 1, 9
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -810,10 +803,19 @@ LoadBluePage:
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 12
+	hlcoord 9, 9
 	ld [hl], a
 .done
+	ld de, IDNoString
+	hlcoord 1, 10
+	call PlaceString
+	hlcoord 5, 10
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	ld de, wTempMonID
+	call PrintNum
+
 	call SummaryScreen_PrintHappiness
+	call StatsScreen_Print_HiddenPow_Info
 	ret
 
 .OTNamePointers:
@@ -824,32 +826,79 @@ LoadBluePage:
 	dw wBufferMonOT ; unused
 	dw wBufferMonOT
 
-IDNoString:
-	db "<ID>№.@"
-
 OTString:
 	db "OT:@"
 
+IDNoString:
+	db "<ID>№.@"
+
 SummaryScreen_PrintHappiness:
-	hlcoord 1, 16
+	hlcoord 1, 12
 	ld [hl], $34 ; heart icon
 	
-	hlcoord 3, 16
+	hlcoord 3, 12
 	lb bc, 1, 3
 	ld de, wTempMonHappiness
 	call PrintNum
-	ld de, .HappinessString
-	hlcoord 1, 14
-	call PlaceString
 	ld de, .outofMaxLoveString
-	hlcoord 6, 16
+	hlcoord 6, 12
 	call PlaceString
 	ret
-.HappinessString:
-	db "Happiness@"
 
 .outofMaxLoveString:
 	db "/255@"
+
+StatsScreen_Print_HiddenPow_Info:
+	ld de, HiddenPowerTypeString1
+	hlcoord 1, 14
+	call PlaceString
+
+	ld de, HiddenPowerTypeString2
+	hlcoord 4, 15
+	call PlaceString
+	
+	ld hl, wTempMonDVs
+	; Type:
+
+	; Def & 3
+	ld a, [hl]
+	and %0011
+	ld b, a
+
+	; + (Atk & 3) << 2
+	ld a, [hl]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+
+; Skip Normal
+	inc a
+
+; Skip Bird
+	cp BIRD
+	jr c, .done
+	inc a
+
+; Skip unused types
+	cp UNUSED_TYPES
+	jr c, .done
+	add UNUSED_TYPES_END - UNUSED_TYPES
+
+.done
+    ld [wNamedObjectIndex], a
+	farcall GetTypeName
+	ld de, wStringBuffer1
+	hlcoord 2, 17
+	call PlaceString
+	ret
+
+HiddenPowerTypeString1:
+	db "Hidden@"
+
+HiddenPowerTypeString2:
+	db "Power:@"
 
 LoadOrangePage:
 	call SummaryScreen_placeCaughtLevel
