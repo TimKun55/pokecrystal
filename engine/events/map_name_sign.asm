@@ -1,5 +1,12 @@
 DEF MAP_NAME_SIGN_START EQU $c0
 
+; wLandmarkSignTimer
+DEF MAPSIGNSTAGE_1_SLIDEOLD EQU $63
+DEF MAPSIGNSTAGE_2_LOADGFX  EQU $57
+DEF MAPSIGNSTAGE_3_SLIDEIN  EQU $54
+DEF MAPSIGNSTAGE_4_VISIBLE  EQU $48
+DEF MAPSIGNSTAGE_5_SLIDEOUT EQU $0c
+
 InitMapNameSign::
 	xor a
 	ldh [hBGMapMode], a
@@ -39,11 +46,39 @@ InitMapNameSign::
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
 
-; Display for 60 frames
-	ld a, 60
+; Landmark sign timer: descends $64-$00
+; $62-$57: Sliding out (old sign)
+; $56-$54: Loading new graphics
+; $53-$48: Sliding in
+; $47-$0c: Remains visible
+; $0b-$00: Sliding out
+	ld a, [wLandmarkSignTimer]
+	sub MAPSIGNSTAGE_2_LOADGFX
+	jr nc, .stage_1_sliding_out
+	add MAPSIGNSTAGE_2_LOADGFX
+	cp MAPSIGNSTAGE_5_SLIDEOUT
+	jr c, .stage_1_sliding_out
+	sub MAPSIGNSTAGE_4_VISIBLE
+	jr c, .stage_4_visible
+	cp MAPSIGNSTAGE_5_SLIDEOUT
+	jr c, .stage_3_sliding_in
+	; was in stage 2, loading new graphics; just reload them again
+	ld a, MAPSIGNSTAGE_2_LOADGFX
+	jr .value_ok
+
+.stage_1_sliding_out
+	add MAPSIGNSTAGE_2_LOADGFX
+	jr .value_ok
+
+.stage_3_sliding_in
+	cpl
+	add MAPSIGNSTAGE_1_SLIDEOLD + 1 ; a = MAPSIGNSTAGE_1_SLIDEOLD - a
+	jr .value_ok
+
+.stage_4_visible
+	ld a, MAPSIGNSTAGE_1_SLIDEOLD
+.value_ok
 	ld [wLandmarkSignTimer], a
-	call InitMapNameFrame
-	farcall HDMATransfer_OnlyTopFourRows
 	ret
 
 .dont_do_map_sign
@@ -96,39 +131,61 @@ InitMapNameSign::
 	ret
 
 PlaceMapNameSign::
+	; Sign is slightly delayed to move it away from the map connection setup
 	ld hl, wLandmarkSignTimer
 	ld a, [hl]
 	and a
-	jr z, .disappear
+	jr z, .stage_5_sliding_out
 	dec [hl]
-	cp 60
-	ret z
-	cp 59
-	jr nz, .already_initialized
+	sub MAPSIGNSTAGE_2_LOADGFX
+	jr nc, .stage_5_sliding_out
+	add MAPSIGNSTAGE_2_LOADGFX
+	cp MAPSIGNSTAGE_2_LOADGFX - 1
+	ret nc
+	sub MAPSIGNSTAGE_3_SLIDEIN
+	jr c, .graphics_ok
+	ret nz
+	push hl
 	call InitMapNameFrame
 	call PlaceMapNameCenterAlign
 	farcall HDMATransfer_OnlyTopFourRows
-.already_initialized
-	ld a, $80
-	ld a, $70
-	ldh [rWY], a
-	ldh [hWY], a
-	ret
+	pop hl
 
-.disappear
-	ld a, $90
+.graphics_ok
+	ld a, [hl]
+	cp MAPSIGNSTAGE_4_VISIBLE
+	jr nc, .stage_3_sliding_in
+	cp MAPSIGNSTAGE_5_SLIDEOUT
+	jr c, .stage_5_sliding_out
+	ld a, SCREEN_HEIGHT_PX - 3 * TILE_WIDTH
+	jr .got_value
+
+.stage_3_sliding_in
+	sub MAPSIGNSTAGE_4_VISIBLE
+	add a
+	add SCREEN_HEIGHT_PX - 3 * TILE_WIDTH
+	jr .got_value
+
+.stage_5_sliding_out
+	add a
+	cpl
+	add SCREEN_HEIGHT_PX + TILE_WIDTH + 1 ; a = SCREEN_HEIGHT_PX + TILE_WIDTH - a
+.got_value
 	ldh [rWY], a
 	ldh [hWY], a
-	ld a, RETI_INSTRUCTION
-	ld [hFunctionInstruction], a
-	xor a
+;	ld a, RETI_INSTRUCTION
+;	ld [hFunctionInstruction], a
+;	xor a
+;	ldh [hLCDCPointer], a
+;	ret
+	sub SCREEN_HEIGHT_PX
+	ret nz
 	ldh [hLCDCPointer], a
 	ret
 
 InitMapNameFrame:
-	hlcoord 0, 0
-	ld b, 2
-	ld c, 18
+	hlcoord 0, 0, wAttrmap
+	lb bc, 3, SCREEN_WIDTH
 	call InitMapSignAttrmap
 	call PlaceMapNameFrame
 	ret
@@ -143,7 +200,7 @@ PlaceMapNameCenterAlign:
 	srl a
 	ld b, 0
 	ld c, a
-	hlcoord 0, 2
+	hlcoord 0, 1
 	add hl, bc
 	ld de, wStringBuffer1
 	call PlaceString
@@ -166,23 +223,13 @@ PlaceMapNameCenterAlign:
 	ret
 
 InitMapSignAttrmap:
-	ld de, wAttrmap - wTilemap
-	add hl, de
-	inc b
-	inc b
-	inc c
-	inc c
 	ld a, PAL_BG_TEXT | PRIORITY
 .loop
 	push bc
-	push hl
 .inner_loop
 	ld [hli], a
 	dec c
 	jr nz, .inner_loop
-	pop hl
-	ld de, SCREEN_WIDTH
-	add hl, de
 	pop bc
 	dec b
 	jr nz, .loop
@@ -205,14 +252,6 @@ PlaceMapNameFrame:
 	; first line
 	call .FillMiddle
 	; right, first line
-	ld a, MAP_NAME_SIGN_START + 11
-	ld [hli], a
-	; left, second line
-	ld a, MAP_NAME_SIGN_START + 6
-	ld [hli], a
-	; second line
-	call .FillMiddle
-	; right, second line
 	ld a, MAP_NAME_SIGN_START + 12
 	ld [hli], a
 	; bottom left
