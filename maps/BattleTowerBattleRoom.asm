@@ -1,5 +1,5 @@
 	object_const_def
-	const BATTLETOWERBATTLEROOM_OPPONENT
+	const BATTLETOWERBATTLEROOM_YOUNGSTER
 	const BATTLETOWERBATTLEROOM_RECEPTIONIST
 
 BattleTowerBattleRoom_MapScripts:
@@ -10,7 +10,7 @@ BattleTowerBattleRoom_MapScripts:
 	def_callbacks
 
 BattleTowerBattleRoomEnterScene:
-	disappear BATTLETOWERBATTLEROOM_OPPONENT
+	disappear BATTLETOWERBATTLEROOM_YOUNGSTER
 	sdefer Script_BattleRoom
 	setscene SCENE_BATTLETOWERBATTLEROOM_NOOP
 	; fallthrough
@@ -21,13 +21,12 @@ Script_BattleRoom:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerWalksIn
 ; beat all 7 opponents in a row
 Script_BattleRoomLoop:
-	setval BATTLETOWERBATTLEROOM_OPPONENT
+	setval BATTLETOWERBATTLEROOM_YOUNGSTER
 	special LoadOpponentTrainerAndPokemonWithOTSprite
-	appear BATTLETOWERBATTLEROOM_OPPONENT
-	loadmem wObject1Palette, 1
+	appear BATTLETOWERBATTLEROOM_YOUNGSTER
 	warpsound
 	waitsfx
-	applymovement BATTLETOWERBATTLEROOM_OPPONENT, MovementData_BattleTowerBattleRoomOpponentWalksIn
+	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksIn
 	opentext
 	battletowertext BATTLETOWERTEXT_INTRO
 	promptbutton
@@ -49,9 +48,9 @@ Script_BattleRoomLoop:
 	ifnotequal $0, Script_FailedBattleTowerChallenge
 	readmem wNrOfBeatenBattleTowerTrainers
 	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
-	applymovement BATTLETOWERBATTLEROOM_OPPONENT, MovementData_BattleTowerBattleRoomOpponentWalksOut
+	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
 	warpsound
-	disappear BATTLETOWERBATTLEROOM_OPPONENT
+	disappear BATTLETOWERBATTLEROOM_YOUNGSTER
 	applymovement BATTLETOWERBATTLEROOM_RECEPTIONIST, MovementData_BattleTowerBattleRoomReceptionistWalksToPlayer
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist
 	opentext
@@ -137,5 +136,5 @@ BattleTowerBattleRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  0, SPRITE_BATTLE_TOWER_OPPONENT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BATTLE_TOWER_BATTLE_ROOM_OPPONENT
+	object_event  4,  0, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BATTLE_TOWER_BATTLE_ROOM_YOUNGSTER
 	object_event  2,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
