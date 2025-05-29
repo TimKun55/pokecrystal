@@ -52,7 +52,7 @@ SacredAshScript:
 rept 3
 	special FadeOutPalettes
 	special LoadMapPalettes
-	special FadeInPalettes_EnableDynNoApply
+	special FadeInFromWhite
 endr
 	waitsfx
 	opentext

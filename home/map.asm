@@ -1813,7 +1813,8 @@ FinishExitMenu::
 	call GetSGBLayout
 	farcall LoadOW_BGPal7
 	call WaitBGMap2
-	farcall FadeInPalettes_EnableDynNoApply
+	farcall FadeInFromWhite
+	farcall EnableDynPalUpdates
 	jp EnableSpriteUpdates
 
 ReturnToMapWithSpeechTextbox::

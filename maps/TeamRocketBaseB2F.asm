@@ -169,7 +169,7 @@ LanceHealsCommon:
 	special StubbedTrainerRankings_Healings
 	playsound SFX_FULL_HEAL
 	special HealParty
-	special FadeInPalettes_EnableDynNoApply
+	special FadeInFromWhite
 	opentext
 	writetext LanceHealsText2
 	waitbutton
