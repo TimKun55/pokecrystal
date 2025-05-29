@@ -18,7 +18,8 @@ BlindingFlash:
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
 	farcall LoadOW_BGPal7
-	jp FadeInPalettes_EnableDynNoApply
+	farcall FadeInFromWhite
+	ret
 
 ShakeHeadbuttTree:
 	farcall CopyBGGreenToOBPal7
