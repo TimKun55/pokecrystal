@@ -1563,7 +1563,7 @@ LoadOpponentTrainerAndPokemonWithOTSprite:
 	ld a, [wBTTempOTSprite]
 	call GetSpritePalette
 	ld [wNeededPalIndex], a
-	ld de, wOBPals1 palette 2
+	ld de, wOBPals1 palette 1
 	farcall CopySpritePal
 	ret
 

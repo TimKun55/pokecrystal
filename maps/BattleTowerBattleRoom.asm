@@ -96,6 +96,8 @@ Script_DontSaveAndEndTheSession:
 	iffalse Script_ContinueAndBattleNextOpponent
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
+	setval BATTLETOWERACTION_06
+	special BattleTowerAction
 	closetext
 	special FadeOutPalettes
 	warpfacing UP, BATTLE_TOWER_1F, 10, 10
@@ -136,4 +138,4 @@ BattleTowerBattleRoom_MapEvents:
 
 	def_object_events
 	object_event  4,  0, SPRITE_BATTLE_TOWER_OPPONENT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BATTLE_TOWER_BATTLE_ROOM_OPPONENT
-	object_event  1,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  2,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
