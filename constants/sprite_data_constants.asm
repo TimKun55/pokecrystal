@@ -38,7 +38,7 @@ ENDM
 	ow_npc_pal_const WHITE             ; 0b
 	ow_npc_pal_const BLACK             ; 0c
 	ow_npc_pal_const POKE_BALL         ; 0d (red)
-	ow_npc_pal_const TM_ITEM           ; 0e (blue)
+	ow_npc_pal_const DECO_ITEM         ; 0e (blue)
 	ow_npc_pal_const KEY_ITEM          ; 0f (green)
 DEF NUM_OW_TIME_OF_DAY_PALS EQU const_value
 	ow_npc_pal_const EMOTE_GRAY        ; 10
