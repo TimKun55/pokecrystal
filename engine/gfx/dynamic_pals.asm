@@ -113,17 +113,13 @@ MarkUsedPal:
 
 	; Pal is not already loaded, find a empty pal slot
 	ld a, [wUsedObjectPals]
-	inc a
-	jr nz, .some_available
-	ld b, 7
-	jr .unset_bit_found
-.some_available
-	dec a
-	ld b, -1
+	ld b, 0
 .bit_check_loop
-	inc b
+	bit 0, a
+	jr z, .unset_bit_found
 	rrca
-	jr c, .bit_check_loop
+	inc b
+	jr .bit_check_loop
 .unset_bit_found
 	ld a, b
 	pop bc
