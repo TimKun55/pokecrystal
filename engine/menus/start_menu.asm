@@ -140,8 +140,10 @@ StartMenu::
 	jr .ReturnEnd2
 
 .ReturnRedraw:
-	farcall ClearSavedObjPals
-	farcall DisableDynPalUpdates
+	call .Clear
+	jp .Reopen
+
+.Clear:
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
@@ -149,8 +151,9 @@ StartMenu::
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatus
 	call UpdateSprites
+	call GSReloadPalettes
 	call FinishExitMenu
-	jp .Reopen
+	ret
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
