@@ -51,4 +51,3 @@ MapSetupCommands:
 	add_mapsetup EnableTextAcceleration ; 2c
 	add_mapsetup InitMapNameSign ; 2d
 	add_mapsetup FadeOutPalettes ; 31
-	add_mapsetup DecompressMetatiles ; 32

@@ -3533,12 +3533,15 @@ w3_d4a2:: battle_tower_struct w3_d4a2
 w3_d582:: battle_tower_struct w3_d582
 w3_d662:: battle_tower_struct w3_d662
 
+UNION
 w3_d742:: battle_tower_struct w3_d742
 
-UNION
-;w3_d800:: ds BG_MAP_WIDTH * SCREEN_HEIGHT
+NEXTU
+	ds $be
+w3_d800:: ds BG_MAP_WIDTH * SCREEN_HEIGHT
 
 NEXTU
+	ds $be
 wBTChoiceOfLvlGroup:: db
 	ds $1
 w3_d802:: ds 12
@@ -3562,16 +3565,31 @@ w3_d8a2:: ds 1
 w3_d8a3:: ds 1
 ENDU
 
+	ds $1c0
+
+w3_dc00:: ds SCREEN_WIDTH * SCREEN_HEIGHT
+UNION
+w3_dd68:: ds SCREEN_WIDTH * SCREEN_HEIGHT
+
+	ds $11c
+
+w3_dfec:: ds $10
 w3_dffc:: ds 4
+NEXTU
+	ds $98
+w3_de00:: ds $200
+ENDU
 
-SECTION "Metatiles", WRAMX
 
-wDecompressedMetatiles:: ds 256 * 16
+SECTION "News Script RAM", WRAMX
+
+w4_d000:: ds $1000
 
 
-SECTION "Attributes", WRAMX
+SECTION "Surrounding Data", WRAMX
 
-wDecompressedAttributes:: ds 256 * 16
+wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
+wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 
 SECTION "GBC Video", WRAMX, ALIGN[8]

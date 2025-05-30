@@ -100,6 +100,7 @@ DisableMobile:
 	ldh [hMobile], a
 	xor a
 	ldh [hVBlank], a
+	call NormalSpeed
 	xor a
 	ldh [rIF], a
 	ld a, [wBGMapBuffer]
@@ -520,7 +521,15 @@ Function100393:
 
 Function10039c:
 	ld hl, wcc60
-;	ld de, w3_d000
+	ld de, w3_d000
+	ld bc, $54
+	ld a, $03
+	call FarCopyWRAM
+	ret
+
+Function1003ab: ; unreferenced
+	ld hl, w3_d000
+	ld de, wcc60
 	ld bc, $54
 	ld a, $03
 	call FarCopyWRAM
@@ -528,14 +537,14 @@ Function10039c:
 
 Function1003ba:
 	ld hl, wccb4
-;	ld de, w3_d080
+	ld de, w3_d080
 	ld bc, $54
 	ld a, $03
 	call FarCopyWRAM
 	ret
 
 Function1003c9:
-;	ld hl, w3_d080
+	ld hl, w3_d080
 	ld de, wccb4
 	ld bc, $54
 	ld a, $03
@@ -1429,22 +1438,22 @@ Function100902:
 
 Function100970:
 	hlcoord 0, 0
-;	ld de, w3_dc00
+	ld de, w3_dc00
 	call Function1009a5
 	hlcoord 0, 0, wAttrmap
-;	ld de, w3_dd68
+	ld de, w3_dd68
 	call Function1009a5
 	call Function1009d2
 	call Function1009ae
 	ret
 
 Function100989:
-;	ld hl, w3_dc00
+	ld hl, w3_dc00
 	decoord 0, 0
 	call Function1009a5
 	call Function1009ae
 	farcall HDMATransferTilemapAndAttrmap_Overworld
-;	ld hl, w3_dd68
+	ld hl, w3_dd68
 	decoord 0, 0, wAttrmap
 	call Function1009a5
 	ret
@@ -1458,10 +1467,10 @@ Function1009a5:
 Function1009ae:
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK("Battle Tower RAM")
+	ld a, $03
 	ldh [rSVBK], a
 
-;	ld hl, w3_d800
+	ld hl, w3_d800
 	decoord 0, 0, wAttrmap
 	ld c, SCREEN_WIDTH
 	ld b, SCREEN_HEIGHT
@@ -1486,7 +1495,7 @@ Function1009ae:
 Function1009d2:
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK("Battle Tower RAM")
+	ld a, $03
 	ldh [rSVBK], a
 
 	ldh a, [rVBK]
@@ -1494,7 +1503,7 @@ Function1009d2:
 	ld a, $01
 	ldh [rVBK], a
 
-;	ld hl, w3_d800
+	ld hl, w3_d800
 	debgcoord 0, 0
 	lb bc, $03, $24
 	call Get2bpp

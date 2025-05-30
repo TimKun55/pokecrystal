@@ -351,13 +351,11 @@ WRAMX 1
 	"Party"
 WRAMX 2
 	"Pic Animations"
-	"Battle Tower RAM"
+	"Surrounding Data"
 WRAMX 3
-	org $d000
-	"Metatiles"
+	"Battle Tower RAM"
 WRAMX 4
-	org $d000
-	"Attributes"
+	"News Script RAM"
 WRAMX 5
 	align 8
 	"GBC Video"
