@@ -167,6 +167,7 @@ SpecialsPointers::
 	add_special GiveDratini
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
+	add_special SetPlayerPalette
 	add_special UnusedBattleTowerDummySpecial2
 	add_special Mobile_SelectThreeMons
 	add_special Function1037eb
