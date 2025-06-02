@@ -37,6 +37,7 @@ InitPartyMenuLayout:
 LoadPartyMenuGFX:
 	call LoadStatusIconSet
 	call LoadFontsBattleExtra
+	call LoadExpBarGFX
 	callfar InitPartyMenuPalettes
 	callfar ClearSpriteAnims2
 	ret

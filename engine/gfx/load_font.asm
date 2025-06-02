@@ -48,6 +48,13 @@ _LoadFontsBattleExtra::
 	call Get2bppViaHDMA
 	jr LoadFrame
 
+_LoadExpBarGFX::
+	ld de, ExpBarGFX
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(ExpBarGFX), 15
+	call Get2bppViaHDMA
+	jr LoadFrame
+	
 LoadFrame:
 	ld a, [wTextboxFrame]
 	ld bc, TEXTBOX_FRAME_TILES * LEN_1BPP_TILE
@@ -72,50 +79,20 @@ LoadBattleFontsHPBar:
 	call LoadFrame
 
 LoadHPBar:
+	call _LoadExpBarGFX
 	ld de, EnemyHPBarBorderGFX
 	ld hl, vTiles2 tile $6c
 	lb bc, BANK(EnemyHPBarBorderGFX), 4
 	call Get1bppViaHDMA
-	ld de, HPExpBarBorderGFX + 1 * LEN_1BPP_TILE
-	ld hl, vTiles2 tile $74
-	lb bc, BANK(HPExpBarBorderGFX), 5
-	call Get1bppViaHDMA
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 9
-	call Get2bppViaHDMA
-	ld de, ExpBarNameGFX ; exp bar label
-	ld hl, vTiles2 tile $5e
-	lb bc, BANK(ExpBarNameGFX), 2
-	call Get2bppViaHDMA
 	ret
 
 SummaryScreen_LoadFont:
 	call _LoadFontsBattleExtra
+	call _LoadExpBarGFX
 	ld de, EnemyHPBarBorderGFX
 	ld hl, vTiles2 tile $6c
 	lb bc, BANK(EnemyHPBarBorderGFX), 4
 	call Get1bppViaHDMA
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $78
-	lb bc, BANK(HPExpBarBorderGFX), 1
-	call Get1bppViaHDMA
-	ld de, HPExpBarBorderGFX + 3 * LEN_1BPP_TILE
-	ld hl, vTiles2 tile $76
-	lb bc, BANK(HPExpBarBorderGFX), 2
-	call Get1bppViaHDMA
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	call Get2bppViaHDMA
-	ld de, FontBattleExtra + 17 tiles ; Starting at the 18th Tile of the FontBattleExtra PNG
-	ld hl, vTiles2 tile $71 ; loading that 18th Tile into Tile $71
-	lb bc, BANK(FontBattleExtra), 4 ; 4 Tiles, left arrow, ID + No. Tiles
-	call Get2bppViaHDMA
-	ld de, ExpBarNameGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(ExpBarNameGFX), 4
-	call Get2bppViaHDMA
 LoadSummaryScreenPageTilesGFX:
 	ld de, SummaryScreenPageTilesGFX
 	ld hl, vTiles2 tile $31

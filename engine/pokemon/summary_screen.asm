@@ -480,7 +480,7 @@ SummaryScreen_PlaceVerticalDivider: ; unreferenced
 SummaryScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $62 ; horizontal divider (empty HP/exp bar)
+	ld a, $6e ; horizontal divider
 .loop
 	ld [hli], a
 	dec b
@@ -561,8 +561,8 @@ LoadPinkPage:
 	hlcoord 0, 9
 	ld b, $0
 	predef DrawPlayerHP
-	hlcoord 8, 9
-	ld [hl], $41 ; right HP/exp bar end cap
+;	hlcoord 8, 9
+;	ld [hl], $41 ; right HP/exp bar end cap
 	ld de, .Status_Text ; string for "STATUS/"
 	hlcoord 0, 12
 	call PlaceString
@@ -653,11 +653,11 @@ LoadPinkPage:
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
 	hlcoord 10, 16
-	ld [hl], $73 ; left exp bar label
+	ld [hl], $70 ; left exp bar label
 	hlcoord 11, 16
-	ld [hl], $74 ; right exp bar label
+	ld [hl], $71 ; right exp bar label
 	hlcoord 19, 16
-	ld [hl], $41 ; exp bar end cap
+	ld [hl], $7b ; exp bar end cap
 	ret
 
 .PrintNextLevel:

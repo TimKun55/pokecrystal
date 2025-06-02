@@ -38,14 +38,10 @@
 
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
-	charmap "<LV>",      $6e
 	charmap "<DEX_LV>",  $5c
 	charmap "<DEX_LV_VRAM1>",$74
-	charmap "<DO>",      $70 ; hiragana small do, unused
-	charmap "◀",         $71
-	charmap "『",         $72 ; Japanese opening quote, unused
-	charmap "<ID>",      $73
-	charmap "№",         $74
+	charmap "<LV>",      $7c
+	charmap "◀",         $7e
 
 ; Actual characters (from other graphics files)
 

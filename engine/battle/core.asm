@@ -4668,9 +4668,9 @@ DrawPlayerHUD:
 
 	; Exp bar
 	hlcoord 10, 11
-	ld [hl], $5e ; vertical bar
+	ld [hl], $70 ; vertical bar
 	hlcoord 11, 11
-	ld [hl], $5f ; vertical bar
+	ld [hl], $71 ; vertical bar
 	push de
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1Exp + 2
@@ -4764,9 +4764,9 @@ PrintPlayerHUD:
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 ; place status tiles:
 	hlcoord 11, 8 ; status icon tile 1
-	ld [hl], $70
+	ld [hl], $5b
 	inc hl
-	ld [hl], $71
+	ld [hl], $5c
 .status_done
 	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
@@ -4837,9 +4837,9 @@ DrawEnemyHUD:
 	and a
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 	hlcoord 2, 1
-	ld [hl], $72 ; enemy status left half
+	ld [hl], $5d ; enemy status left half
 	inc hl
-	ld [hl], $73 ; enemy status left half
+	ld [hl], $5e ; enemy status right half
 .status_done
 	hlcoord 4, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
@@ -7041,20 +7041,6 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
-
 EmptyBattleTextbox:
 	ld hl, .empty
 	jp BattleTextbox
@@ -8201,7 +8187,7 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $6a ; full bar
+	ld a, $7a ; full bar
 	ld [hli], a
 	dec c
 	jr z, .finish
@@ -8214,10 +8200,10 @@ PlaceExpBar:
 	push af
 	hlcoord 9, 0 ; coord of HP bar label, usually 0,9
 	ld a, [hl]
-	ld b, $62
+	ld b, $72
 	cp $e8 ; if we are in summary screen
 	jr nz, .inbattle
-	ld b, $54
+	ld b, $72
 .inbattle
 	pop af
 	pop hl
@@ -8225,11 +8211,11 @@ PlaceExpBar:
 	jr .skip
 
 .loop2
-	ld a, $62 ; empty bar
+	ld a, $72 ; empty bar
 
 .skip
 	ld [hli], a
-	ld a, $62 ; empty bar
+	ld a, $72 ; empty bar
 	dec c
 	jr nz, .loop2
 

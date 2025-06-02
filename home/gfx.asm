@@ -112,6 +112,10 @@ LoadFontsBattleExtra::
 	farcall _LoadFontsBattleExtra
 	ret
 
+LoadExpBarGFX::
+	farcall _LoadExpBarGFX
+	ret
+
 LoadFontsExtra::
 	farcall _LoadFontsExtra1
 	farcall _LoadFontsExtra2

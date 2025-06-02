@@ -23,9 +23,6 @@ INCBIN "gfx/summary/summary_tiles.2bpp"
 EnemyHPBarBorderGFX:
 INCBIN "gfx/battle/enemy_hp_bar_border.1bpp"
 
-HPExpBarBorderGFX:
-INCBIN "gfx/battle/hp_exp_bar_border.1bpp"
-
 ExpBarGFX:
 INCBIN "gfx/battle/expbar.2bpp"
 
@@ -38,8 +35,5 @@ INCBIN "gfx/font/space.2bpp"
 
 MobilePhoneTilesGFX:
 INCBIN "gfx/mobile/phone_tiles.2bpp"
-
-ExpBarNameGFX:
-INCBIN "gfx/battle/expbarname.2bpp"
 
 INCLUDE "gfx/footprints.asm"

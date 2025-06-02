@@ -110,7 +110,7 @@ DrawPlayerHUDBorder:
 
 .tiles
 	db $7f ; right side ; (no vertical line)
-	db $6b ; bottom right ; 6b (hard end, like enemy HP)
+	db $7b ; bottom right ; 6b (exp bar cap)
 	db $6d ; bottom left
 	db $62 ; bottom side
 .tiles_end
@@ -127,8 +127,8 @@ DrawPlayerPartyIconHUDBorder:
 .tiles
 	db $7f ; right side ; empty space
 	db $7f ; bottom right ; empty space
-	db $6f ; bottom left
-	db $62 ; bottom side
+	db $6d ; arrow pointing to player
+	db $6e ; horizontal line
 .tiles_end
 
 DrawEnemyPartyIconHUDBorder:
@@ -145,8 +145,8 @@ DrawEnemyPartyIconHUDBorder:
 .tiles
 	db $7f ; right side ; empty space
 	db $7f ; bottom right ; empty space
-	db $78 ; bottom right
-	db $62 ; bottom side
+	db $6f ; arrow pointing to trainer
+	db $6e ; horizontal line
 .tiles_end
 
 DrawEnemyHUDBorder:
@@ -158,7 +158,7 @@ DrawEnemyHUDBorder:
 	call CheckCaughtMon
 	ret z
 	hlcoord 1, 1 ; caught ball
-	ld [hl], $5d
+	ld [hl], $7d
 	ret
 
 PlaceHUDBorderTiles:
