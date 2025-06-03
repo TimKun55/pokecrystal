@@ -27,7 +27,7 @@ AzaleaMartCooltrainerMText:
 	para "# Balls will"
 	line "have to do."
 
-	para "I wish KURT would"
+	para "I wish Kurt would"
 	line "make me some of"
 	cont "his custom Balls."
 	done

@@ -176,8 +176,8 @@ FightingDojoBlackBeltText:
 	para "We've set up a"
 	line "training routine"
 	
-	para "for helping #mon"
-	line "get stronger."
+	para "for helping #-"
+	line "mon get stronger."
 	done
 
 HPSpecialistText:
