@@ -4764,9 +4764,9 @@ PrintPlayerHUD:
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 ; place status tiles:
 	hlcoord 11, 8 ; status icon tile 1
-	ld [hl], $5b
-	inc hl
 	ld [hl], $5c
+	inc hl
+	ld [hl], $5d
 .status_done
 	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
@@ -4837,9 +4837,9 @@ DrawEnemyHUD:
 	and a
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 	hlcoord 2, 1
-	ld [hl], $5d ; enemy status left half
+	ld [hl], $5e ; enemy status left half
 	inc hl
-	ld [hl], $5e ; enemy status right half
+	ld [hl], $5f ; enemy status right half
 .status_done
 	hlcoord 4, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]

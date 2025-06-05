@@ -506,7 +506,7 @@ Player_LoadNonFaintStatus:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $5b
+	ld hl, vTiles2 tile $5c
 	lb bc, BANK(StatusIconGFX), 2
 	call Request2bpp
 	pop de ; status index, needs to be in 'd'
@@ -543,7 +543,7 @@ Enemy_LoadNonFaintStatus:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $5d
+	ld hl, vTiles2 tile $5e
 	lb bc, BANK(EnemyStatusIconGFX), 2
 	call Request2bpp
 
