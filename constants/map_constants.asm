@@ -115,7 +115,7 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ; 50
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ; 51
 	map_const ILEX_FOREST,                                 17, 28 ; 52
-	map_const GOLDENROD_UNDERGROUND,                       15, 18 ; 53
+	map_const GOLDENROD_UNDERGROUND,                       17, 18 ; 53
 	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ; 54
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
 	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
@@ -301,11 +301,11 @@ ENDM
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 21
 	map_const ROUTE_34_ILEX_FOREST_GATE,                    5,  4 ; 22
 	map_const DAY_CARE,                                     4,  4 ; 23
-	map_const GOLDENROD_HOME_DECOR_STORE_1F,                5,  4 ; 24
-	map_const GOLDENROD_HOME_DECOR_STORE_2F,                5,  4 ; 25
-	map_const GOLDENROD_HOME_DECOR_STORE_3F,                5,  4 ; 26
-	map_const GOLDENROD_HOME_DECOR_STORE_4F,                5,  4 ; 27
-	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 8,  7 ; 28
+	map_const GOLDENROD_HOME_DECO_STORE_1,                  4,  4 ; 24
+	map_const GOLDENROD_HOME_DECO_STORE_2,                  4,  4 ; 25
+	map_const GOLDENROD_HOME_DECO_STORE_3,                  4,  4 ; 26
+	map_const GOLDENROD_HOME_DECO_STORE_4,                  4,  4 ; 27
+	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 9,  6 ; 28
 	endgroup
 
 	newgroup VERMILION                                            ; 12

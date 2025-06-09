@@ -146,12 +146,6 @@ INCBIN "gfx/tilesets/johto_modern.2bpp.lz"
 TilesetJohtoModernMeta::
 INCBIN "data/tilesets/johto_modern_metatiles.bin"
 
-TilesetJohtoModernColl::
-INCLUDE "data/tilesets/johto_modern_collision.asm"
-
-TilesetMansionColl::
-INCLUDE "data/tilesets/mansion_collision.asm"
-
 
 SECTION "Tileset Data 6", ROMX
 
@@ -211,6 +205,9 @@ INCBIN "gfx/tilesets/cave.2bpp.lz"
 TilesetFacilityMeta::
 INCBIN "data/tilesets/facility_metatiles.bin"
 
+TilesetMansionColl::
+INCLUDE "data/tilesets/mansion_collision.asm"
+
 
 SECTION "Tileset Data 8", ROMX
 
@@ -253,7 +250,6 @@ INCBIN "data/tilesets/kanto_house_attributes.bin"
 
 TilesetPokecenterAttr::
 INCBIN "data/tilesets/pokecenter_attributes.bin"
-
 
 
 SECTION "Tileset Data 10", ROMX
@@ -312,6 +308,9 @@ INCLUDE "data/tilesets/players_room_collision.asm"
 
 TilesetCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
+
+TilesetJohtoModernColl::
+INCLUDE "data/tilesets/johto_modern_collision.asm"
 
 
 SECTION "Tileset Data 12", ROMX

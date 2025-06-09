@@ -398,8 +398,8 @@ GoldenrodFlowerShop_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, GOLDENROD_CITY, 6
-	warp_event  3,  7, GOLDENROD_CITY, 6
+	warp_event  2,  7, GOLDENROD_CITY, 7
+	warp_event  3,  7, GOLDENROD_CITY, 7
 	warp_event  7,  0, GOLDENROD_FLOWER_SHOP_GARDEN, 1
 
 	def_coord_events

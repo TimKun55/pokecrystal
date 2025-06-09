@@ -1,9 +1,9 @@
 	object_const_def
-	const GOLDENRODHOMEDECORSTORE4F_CLERK
-	const GOLDENRODHOMEDECORSTORE4F_BIG_SNORLAX
-	const GOLDENRODHOMEDECORSTORE4F_BIG_LAPRAS
+	const GOLDENRODHOMEDECOSTORE3_CLERK
+	const GOLDENRODHOMEDECOSTORE3_BIG_SNORLAX
+	const GOLDENRODHOMEDECOSTORE3_BIG_LAPRAS
 	
-GoldenrodHomeDecorStore4F_MapScripts:
+GoldenrodHomeDecoStore3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -22,6 +22,7 @@ BigLaprasDollScript:
 	setevent EVENT_DECO_BIG_LAPRAS_DOLL
 	writetext BoughtBigLaprasDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext BigLaprasDollSentText
 	waitbutton
@@ -61,6 +62,7 @@ BigSnorlaxDollScript:
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL
 	writetext BoughtBigSnorlaxDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext BigSnorlaxDollSentText
 	waitbutton
@@ -100,6 +102,7 @@ BigOnixDollScript:
 	setevent EVENT_DECO_BIG_ONIX_DOLL
 	writetext BoughtBigOnixDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext BigOnixDollSentText
 	waitbutton
@@ -127,9 +130,6 @@ BigOnixDollScript:
 	
 BigDollClerkScript:
 	jumptextfaceplayer BigDollClerkText
-	
-GoldenrodHomeDecorStore4FDirectory:
-	jumptext GoldenrodHomeDecorStore4FDirectoryText
 	
 BigDollClerkText:
 	text "Aren't our jumbo"
@@ -219,29 +219,22 @@ BigOnixDollText:
 	line "Onix Doll!"
 	done
 
-GoldenrodHomeDecorStore4FDirectoryText:
-	text "A Stuffed"
-	line "Companion!"
-
-	para "4F: Jumbo Dolls"
-	done
-
-GoldenrodHomeDecorStore4F_MapEvents:
+GoldenrodHomeDecoStore3_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  0, GOLDENROD_HOME_DECOR_STORE_3F, 2
+	warp_event  3,  7, GOLDENROD_UNDERGROUND, 11
+	warp_event  4,  7, GOLDENROD_UNDERGROUND, 12
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  0, BGEVENT_READ, GoldenrodHomeDecorStore4FDirectory
-	bg_event  2,  5, BGEVENT_READ, BigOnixDollScript
-	bg_event  3,  5, BGEVENT_READ, BigOnixDollScript
-	bg_event  2,  6, BGEVENT_READ, BigOnixDollScript
-	bg_event  3,  6, BGEVENT_READ, BigOnixDollScript
+	bg_event  0,  5, BGEVENT_READ, BigOnixDollScript
+	bg_event  1,  5, BGEVENT_READ, BigOnixDollScript
+	bg_event  0,  6, BGEVENT_READ, BigOnixDollScript
+	bg_event  1,  6, BGEVENT_READ, BigOnixDollScript
 
 	def_object_events
-	object_event  9,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BigDollClerkScript, -1
-	object_event  1,  3, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigSnorlaxDollScript, -1
-	object_event  4,  3, SPRITE_BIG_LAPRAS, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigLaprasDollScript, -1
+	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BigDollClerkScript, -1
+	object_event  1,  2, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigSnorlaxDollScript, -1
+	object_event  6,  5, SPRITE_BIG_LAPRAS, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigLaprasDollScript, -1

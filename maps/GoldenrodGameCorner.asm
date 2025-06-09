@@ -624,8 +624,8 @@ GoldenrodGameCorner_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 13, GOLDENROD_CITY, 10
-	warp_event 10, 13, GOLDENROD_CITY, 10
+	warp_event  9, 13, GOLDENROD_CITY, 12
+	warp_event 10, 13, GOLDENROD_CITY, 13
 
 	def_coord_events
 

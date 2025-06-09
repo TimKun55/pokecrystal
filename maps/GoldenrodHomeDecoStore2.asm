@@ -1,18 +1,18 @@
 	object_const_def
-	const GOLDENRODHOMEDECORSTORE3F_CLERK1
-	const GOLDENRODHOMEDECORSTORE3F_CLERK2
-	const GOLDENRODHOMEDECORSTORE3F_YOUNGSTER
-	const GOLDENRODHOMEDECORSTORE3F_BEAUTY
+	const GOLDENRODHOMEDECOSTORE2_CLERK1
+	const GOLDENRODHOMEDECOSTORE2_CLERK2
+	const GOLDENRODHOMEDECOSTORE2_YOUNGSTER
+	const GOLDENRODHOMEDECOSTORE2_BEAUTY
 
-GoldenrodHomeDecorStore3F_MapScripts:
+GoldenrodHomeDecoStore2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-GoldenrodHomeDecorStore3FClerk1Script:
+GoldenrodHomeDecoStore2Clerk1Script:
 	faceplayer
 	opentext
-	writetext GoldenrodHomeDecorStore3FClerk1Text
+	writetext GoldenrodHomeDecoStore2Clerk1Text
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MoveMenuHeader
@@ -32,6 +32,7 @@ GoldenrodHomeDecorStore3FClerk1Script:
 	setevent EVENT_DECO_CARPET_1
 	writetext BoughtRedCarpetText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext RedCarpetSentText
 	waitbutton
@@ -46,6 +47,7 @@ GoldenrodHomeDecorStore3FClerk1Script:
 	setevent EVENT_DECO_CARPET_3
 	writetext BoughtYellowCarpetText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext YellowCarpetSentText
 	waitbutton
@@ -60,23 +62,24 @@ GoldenrodHomeDecorStore3FClerk1Script:
 	setevent EVENT_DECO_CARPET_4
 	writetext BoughtGreenCarpetText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext GreenCarpetSentText
 	waitbutton
 	jump .Start
 
 .NotEnoughMoney:
-	writetext GoldenrodHomeDecorStore3FNoMoneyText
+	writetext GoldenrodHomeDecoStore2NoMoneyText
 	waitbutton
 	jump .Start
 
 .AlreadyBought:
-	writetext GoldenrodHomeDecorStore3FAlreadyBoughtText
+	writetext GoldenrodHomeDecoStore2AlreadyBoughtText
 	waitbutton
 	jump .Start
 	
 .Refused:
-	writetext GoldenrodHomeDecorStore3FNextTimeText
+	writetext GoldenrodHomeDecoStore2NextTimeText
 	waitbutton
 	closetext
 	end
@@ -95,13 +98,13 @@ GoldenrodHomeDecorStore3FClerk1Script:
 	db "Green C.  ¥45000@"
 	db "Cancel@"
 
-GoldenrodHomeDecorStore3FClerk2Script:
+GoldenrodHomeDecoStore2Clerk2Script:
 	checkevent EVENT_DECO_CARPET_2
 	iftrue .CarpetAlreadyPurchased
 	faceplayer
 	opentext
 	special PlaceMoneyTopRight
-	writetext GoldenrodHomeDecorStore3FClerk2SaleText
+	writetext GoldenrodHomeDecoStore2Clerk2SaleText
 	yesorno
 	iffalse .ClerkNoText
 	checkmoney YOUR_MONEY, 35000
@@ -110,57 +113,55 @@ GoldenrodHomeDecorStore3FClerk2Script:
 	setevent EVENT_DECO_CARPET_2
 	writetext BoughtBlueCarpetText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext BlueCarpetSentText
 	waitbutton
-	writetext GoldenrodHomeDecorStore3FClerk2YesText
+	writetext GoldenrodHomeDecoStore2Clerk2YesText
 	waitbutton
 	closetext
 	end
 	
 .CarpetAlreadyPurchased:
-	writetext GoldenrodHomeDecorStore3FClerk2Text
+	writetext GoldenrodHomeDecoStore2Clerk2Text
 	waitbutton
 	closetext
 	end
 
 .NotEnoughMoney:
-	writetext GoldenrodHomeDecorStore3FNoMoneyText
+	writetext GoldenrodHomeDecoStore2NoMoneyText
 	waitbutton
 	closetext
 	end
 	
 .ClerkNoText:
-	writetext GoldenrodHomeDecorStore3FClerk2NoText
+	writetext GoldenrodHomeDecoStore2Clerk2NoText
 	waitbutton
 	closetext
 	end
 
-GoldenrodHomeDecorStore3FYoungsterScript:
-	jumptextfaceplayer GoldenrodHomeDecorStore3FYoungsterText
+GoldenrodHomeDecoStore2YoungsterScript:
+	jumptextfaceplayer GoldenrodHomeDecoStore2YoungsterText
 	
-GoldenrodHomeDecorStore3FBeautyScript:
-	jumptextfaceplayer GoldenrodHomeDecorStore3FBeautyText
+GoldenrodHomeDecoStore2BeautyScript:
+	jumptextfaceplayer GoldenrodHomeDecoStore2BeautyText
 	
-GoldenrodHomeDecorStore3FDirectory:
-	jumptext GoldenrodHomeDecorStore3FDirectoryText
-
-GoldenrodHomeDecorStore3FClerk1Text:
+GoldenrodHomeDecoStore2Clerk1Text:
 	text "Welcome! Would"
 	line "you like a carpet?"
 	done
 	
-GoldenrodHomeDecorStore3FNextTimeText:
+GoldenrodHomeDecoStore2NextTimeText:
 	text "See you next time!"
 	done
 
-GoldenrodHomeDecorStore3FClerk2Text:
+GoldenrodHomeDecoStore2Clerk2Text:
 	text "Doesn't a carpet"
 	line "really tie your"
 	cont "room together?"
 	done
 
-GoldenrodHomeDecorStore3FClerk2SaleText:
+GoldenrodHomeDecoStore2Clerk2SaleText:
 	text "Our imported"
 	line "Royal Blue Carpet"
 
@@ -171,12 +172,12 @@ GoldenrodHomeDecorStore3FClerk2SaleText:
 	line "buy one?"
 	done
 
-GoldenrodHomeDecorStore3FClerk2YesText:
+GoldenrodHomeDecoStore2Clerk2YesText:
 	text "Thank you!"
 	line "Have a nice day!"
 	done
 
-GoldenrodHomeDecorStore3FClerk2NoText:
+GoldenrodHomeDecoStore2Clerk2NoText:
 	text "Have a nice day!"
 	done
 
@@ -220,47 +221,40 @@ GreenCarpetSentText:
 	line "was sent home."
 	done
 
-GoldenrodHomeDecorStore3FNoMoneyText:
+GoldenrodHomeDecoStore2NoMoneyText:
 	text "You can't afford"
 	line "that!"
 	done
 
-GoldenrodHomeDecorStore3FAlreadyBoughtText:
+GoldenrodHomeDecoStore2AlreadyBoughtText:
 	text "You already have"
 	line "that!"
 	done
 
-GoldenrodHomeDecorStore3FYoungsterText:
+GoldenrodHomeDecoStore2YoungsterText:
 	text "This carpet feels"
 	line "so plush!"
 	done
 
-GoldenrodHomeDecorStore3FBeautyText:
+GoldenrodHomeDecoStore2BeautyText:
 	text "Some of these"
 	line "carpets are im-"
 	cont "ported from Kalos!"
 	done
 
-GoldenrodHomeDecorStore3FDirectoryText:
-	text "Colorful Elegance"
-
-	para "3F: Carpets"
-	done
-
-GoldenrodHomeDecorStore3F_MapEvents:
+GoldenrodHomeDecoStore2_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  0, GOLDENROD_HOME_DECOR_STORE_2F, 2
-	warp_event  9,  0, GOLDENROD_HOME_DECOR_STORE_4F, 1
+	warp_event  3,  7, GOLDENROD_UNDERGROUND,  9
+	warp_event  4,  7, GOLDENROD_UNDERGROUND, 10
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  0, BGEVENT_READ, GoldenrodHomeDecorStore3FDirectory
 
 	def_object_events
-	object_event  7,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecorStore3FClerk1Script, -1
-	object_event  8,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecorStore3FClerk2Script, -1
-	object_event  3,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecorStore3FYoungsterScript, -1
-	object_event  9,  3, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecorStore3FBeautyScript, -1
+	object_event  2,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecoStore2Clerk1Script, -1
+	object_event  5,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecoStore2Clerk2Script, -1
+	object_event  1,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecoStore2YoungsterScript, -1
+	object_event  7,  3, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHomeDecoStore2BeautyScript, -1

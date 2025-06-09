@@ -335,10 +335,10 @@ Goldenrod_Map_Names: ;newgroup GOLDENROD									; 11
 	dw Goldenrod_Map_Name21 ; map_const ILEX_FOREST_AZALEA_GATE				; 21
 	dw Goldenrod_Map_Name22 ; map_const ROUTE_34_ILEX_FOREST_GATE			; 22
 	dw Goldenrod_Map_Name23 ; map_const DAY_CARE							; 23
-	dw Goldenrod_Map_Name24 ; map_const GOLDENROD_HOME_DECOR_STORE_1F		; 24
-	dw Goldenrod_Map_Name25 ; map_const GOLDENROD_HOME_DECOR_STORE_2F		; 25
-	dw Goldenrod_Map_Name26 ; map_const GOLDENROD_HOME_DECOR_STORE_3F		; 26
-	dw Goldenrod_Map_Name27 ; map_const GOLDENROD_HOME_DECOR_STORE_4F		; 27
+	dw Goldenrod_Map_Name24 ; map_const GOLDENROD_HOME_DECOR_STORE_1		; 24
+	dw Goldenrod_Map_Name25 ; map_const GOLDENROD_HOME_DECOR_STORE_2		; 25
+	dw Goldenrod_Map_Name26 ; map_const GOLDENROD_HOME_DECOR_STORE_3		; 26
+	dw Goldenrod_Map_Name27 ; map_const GOLDENROD_HOME_DECOR_STORE_4		; 27
 	dw Goldenrod_Map_Name28 ; map_const GOLDENROD_FLOWER_SHOP_GARDEN		; 28
 	assert_table_length NUM_GOLDENROD_MAPS
 
@@ -1101,14 +1101,14 @@ Goldenrod_Map_Name22: ; map_const ROUTE_34_ILEX_FOREST_GATE ; 22
 	db "Ilex Gate@"
 Goldenrod_Map_Name23: ; map_const DAY_CARE ; 23 
 	db "Johto DayCare@"
-Goldenrod_Map_Name24: ; map_const GOLDENROD_HOME_DECOR_STORE_1F ; 24 
-	db "Gold.DecorStore 1F@"
-Goldenrod_Map_Name25: ; map_const GOLDENROD_HOME_DECOR_STORE_2F ; 25 
-	db "Gold.DecorStore 2F@"
-Goldenrod_Map_Name26: ; map_const GOLDENROD_HOME_DECOR_STORE_3F ; 26 
-	db "Gold.DecorStore 3F@"
-Goldenrod_Map_Name27: ; map_const GOLDENROD_HOME_DECOR_STORE_4F ; 27 
-	db "Gold.DecorStore 4F@"
+Goldenrod_Map_Name24: ; map_const GOLDENROD_HOME_DECOR_STORE_1 ; 24 
+	db "Gold.DecorStore 1@"
+Goldenrod_Map_Name25: ; map_const GOLDENROD_HOME_DECOR_STORE_2 ; 25 
+	db "Gold.DecorStore 2@"
+Goldenrod_Map_Name26: ; map_const GOLDENROD_HOME_DECOR_STORE_3 ; 26 
+	db "Gold.DecorStore 3@"
+Goldenrod_Map_Name27: ; map_const GOLDENROD_HOME_DECOR_STORE_4 ;  27
+	db "Gold.DecorStore 4@"
 Goldenrod_Map_Name28: ; map_const GOLDENROD_FLOWER_SHOP_GARDEN ;  28
 	db "Flower Shop Garden@"
 

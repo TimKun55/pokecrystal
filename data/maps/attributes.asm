@@ -597,10 +597,10 @@ ENDM
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0
 	map_attributes Route34IlexForestGate, ROUTE_34_ILEX_FOREST_GATE, $00, 0
 	map_attributes DayCare, DAY_CARE, $00, 0
-	map_attributes GoldenrodHomeDecorStore1F, GOLDENROD_HOME_DECOR_STORE_1F, $00, 0
-	map_attributes GoldenrodHomeDecorStore2F, GOLDENROD_HOME_DECOR_STORE_2F, $00, 0
-	map_attributes GoldenrodHomeDecorStore3F, GOLDENROD_HOME_DECOR_STORE_3F, $00, 0
-	map_attributes GoldenrodHomeDecorStore4F, GOLDENROD_HOME_DECOR_STORE_4F, $00, 0
+	map_attributes GoldenrodHomeDecoStore1, GOLDENROD_HOME_DECO_STORE_1, $00, 0
+	map_attributes GoldenrodHomeDecoStore2, GOLDENROD_HOME_DECO_STORE_2, $00, 0
+	map_attributes GoldenrodHomeDecoStore3, GOLDENROD_HOME_DECO_STORE_3, $00, 0
+	map_attributes GoldenrodHomeDecoStore4, GOLDENROD_HOME_DECO_STORE_4, $00, 0
 	map_attributes VermilionFishingSpeechHouse, VERMILION_FISHING_SPEECH_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0

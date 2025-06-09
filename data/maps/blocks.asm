@@ -976,17 +976,17 @@ SaffronAviculturalSociety2F_Blocks:
 SaffronAviculturalSociety3F_Blocks:
 	INCBIN "maps/SaffronAviculturalSociety3F.ablk"
 
-GoldenrodHomeDecorStore1F_Blocks:
-	INCBIN "maps/GoldenrodHomeDecorStore1F.ablk"
+GoldenrodHomeDecoStore1_Blocks:
+	INCBIN "maps/GoldenrodHomeDecoStore1.ablk"
 	
-GoldenrodHomeDecorStore2F_Blocks:
-	INCBIN "maps/GoldenrodHomeDecorStore2F.ablk"
+GoldenrodHomeDecoStore2_Blocks:
+	INCBIN "maps/GoldenrodHomeDecoStore2.ablk"
 	
-GoldenrodHomeDecorStore3F_Blocks:
-	INCBIN "maps/GoldenrodHomeDecorStore3F.ablk"
+GoldenrodHomeDecoStore3_Blocks:
+	INCBIN "maps/GoldenrodHomeDecoStore3.ablk"
 
-GoldenrodHomeDecorStore4F_Blocks:
-	INCBIN "maps/GoldenrodHomeDecorStore4F.ablk"
+GoldenrodHomeDecoStore4_Blocks:
+	INCBIN "maps/GoldenrodHomeDecoStore4.ablk"
 
 CeladonHomeDecorStore1F_Blocks:
 	INCBIN "maps/CeladonHomeDecorStore1F.ablk"

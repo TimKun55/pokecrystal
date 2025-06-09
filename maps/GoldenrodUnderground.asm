@@ -42,12 +42,69 @@ GoldenrodUndergroundResetSwitchesCallback:
 	endcallback
 
 GoldenrodUndergroundCheckBasementKeyCallback:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .Monday
+	ifequal TUESDAY, .Tuesday
+	ifequal WEDNESDAY, .Wednesday
+	ifequal THURSDAY, .Thursday
+	ifequal FRIDAY, .Friday
+	ifequal SATURDAY, .Saturday
+; Sunday
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6b ; Open Shop (Younger Haircut Bro)
+	changeblock  8,  6,	$6b ; Open Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Monday:
+	checktime MORN
+	iffalse .NotMondayMorning
+	changeblock 20, 16, $6b ; Open Shop (Bargain)
+	changeblock 14, 16, $60 ; Locked Shop (Haircut Bros)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.NotMondayMorning:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $60 ; Locked Shop (Haircut Bros)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Tuesday:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6c ; Open Shop (Older Haircut Bro)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Wednesday:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6b ; Open Shop (Younger Haircut Bro)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Thursday:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6c ; Open Shop (Older Haircut Bro)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Friday:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6b ; Open Shop (Younger Haircut Bro)
+	changeblock  8,  6,	$60 ; Locked Shop (Bitter Herbs)
+	sjump .FinishBasementDoorCheck
+
+.Saturday:
+	changeblock 20, 16, $60 ; Locked Shop (Bargain)
+	changeblock 14, 16, $6c ; Open Shop (Older Haircut Bro)
+	changeblock  8,  6,	$6b ; Open Shop (Bitter Herbs)
+
+.FinishBasementDoorCheck
 	checkevent EVENT_USED_BASEMENT_KEY
 	iffalse .LockBasementDoor
 	endcallback
 
 .LockBasementDoor:
-	changeblock 18, 6, $3d ; locked door
+	changeblock 18, 6, $78 ; locked door
 	endcallback
 
 GoldenrodUndergroundCheckDayOfWeekCallback:
@@ -661,30 +718,38 @@ GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
-	warp_event  3, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4
-	warp_event 18,  6, GOLDENROD_UNDERGROUND, 4
-	warp_event 21, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event  3,  3, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
+	warp_event  3, 33, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4
+	warp_event 26, 27, GOLDENROD_UNDERGROUND, 4
+	warp_event 29,  7, GOLDENROD_UNDERGROUND, 3
+	warp_event 30,  7, GOLDENROD_UNDERGROUND, 3
+	warp_event 30,  3, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event  8, 27, GOLDENROD_HOME_DECO_STORE_1, 1
+	warp_event  9, 27, GOLDENROD_HOME_DECO_STORE_1, 2
+	warp_event 14, 27, GOLDENROD_HOME_DECO_STORE_2, 1
+	warp_event 15, 27, GOLDENROD_HOME_DECO_STORE_2, 2
+	warp_event  8, 17, GOLDENROD_HOME_DECO_STORE_3, 1 
+	warp_event  9, 17, GOLDENROD_HOME_DECO_STORE_3, 2
+	warp_event 14,  7, GOLDENROD_HOME_DECO_STORE_4, 1
+	warp_event 15,  7, GOLDENROD_HOME_DECO_STORE_4, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 18,  6, BGEVENT_READ, BasementDoorScript
-	bg_event 19,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign
-	bg_event  6, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal
-	bg_event  4, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion
+	bg_event 26, 27, BGEVENT_READ, BasementDoorScript
+	bg_event 27, 27, BGEVENT_READ, GoldenrodUndergroundNoEntrySign
+	bg_event  3, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal
+	bg_event 18, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion
 	bg_event 17,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote
 
 	def_object_events
-	object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1
-	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1
-	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
-	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
-	object_event  2, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, June, -1
-	object_event  7, 25, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
-	object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
-	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
-	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
-	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event  5, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1
+	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1
+	object_event  3, 23, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
+	object_event  1,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
+	object_event  1, 20, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, June, -1
+	object_event  1, 24, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
+	object_event 21, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
+	object_event 14, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	object_event 15, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	object_event  9,  7, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
