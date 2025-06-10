@@ -1,22 +1,23 @@
 	object_const_def
-	const CELADONHOMEDECORSTORE4F_CLERK1
-	const CELADONHOMEDECORSTORE4F_CLERK2
-	const CELADONHOMEDECORSTORE4F_DIGLETT
-	const CELADONHOMEDECORSTORE4F_SHELLDER
-	const CELADONHOMEDECORSTORE4F_GRIMER
-	const CELADONHOMEDECORSTORE4F_UNOWN
-	const CELADONHOMEDECORSTORE4F_GENGAR
-	const CELADONHOMEDECORSTORE4F_SURFING_PIKACHU
-	
-CeladonHomeDecorStore4F_MapScripts:
+	const CELADONHOMEDECOSTOREB1F_CLERK1
+	const CELADONHOMEDECOSTOREB1F_CLERK2
+	const CELADONHOMEDECOSTOREB1F_BEAUTY
+	const CELADONHOMEDECOSTOREB1F_DIGLETT
+	const CELADONHOMEDECOSTOREB1F_SHELLDER
+	const CELADONHOMEDECOSTOREB1F_GRIMER
+	const CELADONHOMEDECOSTOREB1F_SNUBBULL
+	const CELADONHOMEDECOSTOREB1F_GENGAR
+	const CELADONHOMEDECOSTOREB1F_SURFING_PIKACHU
+
+CeladonHomeDecoStoreB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeladonHomeDecorStore4FClerk1Script:
+CeladonHomeDecoStoreB1FClerk1Script:
 	faceplayer
 	opentext
-	writetext CeladonHomeDecorStore4FClerkText
+	writetext CeladonHomeDecoStoreB1FClerkText
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MoveMenuHeader1
@@ -36,6 +37,7 @@ CeladonHomeDecorStore4FClerk1Script:
 	setevent EVENT_DECO_DIGLETT_DOLL
 	writetext BoughtDiglettDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext DiglettDollSentText
 	waitbutton
@@ -50,6 +52,7 @@ CeladonHomeDecorStore4FClerk1Script:
 	setevent EVENT_DECO_SHELLDER_DOLL
 	writetext BoughtShellderDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext ShellderDollSentText
 	waitbutton
@@ -64,23 +67,24 @@ CeladonHomeDecorStore4FClerk1Script:
 	setevent EVENT_DECO_GRIMER_DOLL
 	writetext BoughtGrimerDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext GrimerDollSentText
 	waitbutton
 	jump .Start
 
 .NotEnoughMoney:
-	writetext CeladonHomeDecorStore4FNoMoneyText
+	writetext CeladonHomeDecoStoreB1FNoMoneyText
 	waitbutton
 	jump .Start
 
 .AlreadyBought:
-	writetext CeladonHomeDecorStore4FAlreadyBoughtText
+	writetext CeladonHomeDecoStoreB1FAlreadyBoughtText
 	waitbutton
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecorStore4FNextTimeText
+	writetext CeladonHomeDecoStoreB1FNextTimeText
 	waitbutton
 	closetext
 	end
@@ -98,11 +102,11 @@ CeladonHomeDecorStore4FClerk1Script:
 	db "Shellder   ¥14000@"
 	db "Grimer     ¥14000@"
 	db "Cancel@"
-	
-CeladonHomeDecorStore4FClerk2Script:
+
+CeladonHomeDecoStoreB1FClerk2Script:
 	faceplayer
 	opentext
-	writetext CeladonHomeDecorStore4FClerkText
+	writetext CeladonHomeDecoStoreB1FClerkText
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MoveMenuHeader2
@@ -122,6 +126,7 @@ CeladonHomeDecorStore4FClerk2Script:
 	setevent EVENT_DECO_SNUBBULL_DOLL
 	writetext BoughtSnubbullDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext SnubbullDollSentText
 	waitbutton
@@ -136,6 +141,7 @@ CeladonHomeDecorStore4FClerk2Script:
 	setevent EVENT_DECO_GENGAR_DOLL
 	writetext BoughtGengarDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext GengarDollSentText
 	waitbutton
@@ -150,23 +156,24 @@ CeladonHomeDecorStore4FClerk2Script:
 	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
 	writetext BoughtSurfPikachuDollText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext SurfPikachuDollSentText
 	waitbutton
 	jump .Start
 
 .NotEnoughMoney:
-	writetext CeladonHomeDecorStore4FNoMoneyText
+	writetext CeladonHomeDecoStoreB1FNoMoneyText
 	waitbutton
 	jump .Start
 
 .AlreadyBought:
-	writetext CeladonHomeDecorStore4FAlreadyBoughtText
+	writetext CeladonHomeDecoStoreB1FAlreadyBoughtText
 	waitbutton
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecorStore4FNextTimeText
+	writetext CeladonHomeDecoStoreB1FNextTimeText
 	waitbutton
 	closetext
 	end
@@ -184,29 +191,35 @@ CeladonHomeDecorStore4FClerk2Script:
 	db "Gengar     ¥50000@"
 	db "Surf Pika  ¥90000@"
 	db "Cancel@"
+	
+CeladonHomeDecoStoreB1FBeautyScript:
+	jumptextfaceplayer CeladonHomeDecoStoreB1FBeautyText
+	
+CeladonHomeDecoStoreB1FDiglettDollScript:
+	jumptext CeladonHomeDecoStoreB1FDiglettDollText
+	
+CeladonHomeDecoStoreB1FShellderDollScript:
+	jumptext CeladonHomeDecoStoreB1FShellderDollText
+	
+CeladonHomeDecoStoreB1FGrimerDollScript:
+	jumptext CeladonHomeDecoStoreB1FGrimerDollText
+	
+CeladonHomeDecoStoreB1FSnubbullDollScript:
+	jumptext CeladonHomeDecoStoreB1FSnubbullDollText
+	
+CeladonHomeDecoStoreB1FGengarDollScript:
+	jumptext CeladonHomeDecoStoreB1FGengarDollText
+	
+CeladonHomeDecoStoreB1FSurfingPikachuDollScript:
+	jumptext CeladonHomeDecoStoreB1FSurfingPikachuDollText
+	
+CeladonHomeDecoStoreB1FBeautyText:
+	text "I love the"
+	line "selection of dolls"
+	cont "they have here!"
+	done
 
-CeladonHomeDecorStore4FDiglettDollScript:
-	jumptext CeladonHomeDecorStore4FDiglettDollText
-	
-CeladonHomeDecorStore4FShellderDollScript:
-	jumptext CeladonHomeDecorStore4FShellderDollText
-	
-CeladonHomeDecorStore4FGrimerDollScript:
-	jumptext CeladonHomeDecorStore4FGrimerDollText
-	
-CeladonHomeDecorStore4FSnubbullDollScript:
-	jumptext CeladonHomeDecorStore4FSnubbullDollText
-	
-CeladonHomeDecorStore4FGengarDollScript:
-	jumptext CeladonHomeDecorStore4FGengarDollText
-	
-CeladonHomeDecorStore4FSurfingPikachuDollScript:
-	jumptext CeladonHomeDecorStore4FSurfingPikachuDollText
-	
-CeladonHomeDecorStore4FDirectory:
-	jumptext CeladonHomeDecorStore4FDirectoryText
-	
-CeladonHomeDecorStore4FClerkText:
+CeladonHomeDecoStoreB1FClerkText:
 	text "Hi there!"
 	line "Would you like"
 	cont "a cute doll?"
@@ -242,20 +255,6 @@ GrimerDollSentText:
 	line "was sent home."
 	done
 
-CeladonHomeDecorStore4FNoMoneyText:
-	text "You can't afford"
-	line "that!"
-	done
-
-CeladonHomeDecorStore4FAlreadyBoughtText:
-	text "You already have"
-	line "that!"
-	done
-	
-CeladonHomeDecorStore4FNextTimeText:
-	text "See you next time!"
-	done
-	
 BoughtSnubbullDollText:
 	text "<PLAYER> bought"
 	line "Snubbull Doll."
@@ -288,60 +287,68 @@ SurfPikachuDollSentText:
 	cont "sent home."
 	done
 
-CeladonHomeDecorStore4FDiglettDollText:
+CeladonHomeDecoStoreB1FNoMoneyText:
+	text "Sorry, you can't"
+	line "afford it!"
+	done
+
+CeladonHomeDecoStoreB1FAlreadyBoughtText:
+	text "You already have"
+	line "that!"
+	done
+
+CeladonHomeDecoStoreB1FNextTimeText:
+	text "See you next time!"
+	done
+
+CeladonHomeDecoStoreB1FDiglettDollText:
 	text "It's a cute"
 	line "Diglett Doll!"
 	done
 	
-CeladonHomeDecorStore4FShellderDollText:
+CeladonHomeDecoStoreB1FShellderDollText:
 	text "It's a cute"
 	line "Shellder Doll!"
 	done
 
-CeladonHomeDecorStore4FGrimerDollText:
+CeladonHomeDecoStoreB1FGrimerDollText:
 	text "It's a cute"
 	line "Grimer Doll!"
 	done
 
-CeladonHomeDecorStore4FSnubbullDollText:
+CeladonHomeDecoStoreB1FSnubbullDollText:
 	text "A Snubbull Doll."
 	line "It's cute…?"
 	done
 
-CeladonHomeDecorStore4FGengarDollText:
+CeladonHomeDecoStoreB1FGengarDollText:
 	text "A spooky"
 	line "Gengar Doll!"
 	done
 
-CeladonHomeDecorStore4FSurfingPikachuDollText:
+CeladonHomeDecoStoreB1FSurfingPikachuDollText:
 	text "A super cool Surf-"
 	line "ing Pikachu Doll!"
 	done
 
-CeladonHomeDecorStore4FDirectoryText:
-	text "Many Stuffed"
-	line "Companions!"
-
-	para "4F: Dolls"
-	done
-
-CeladonHomeDecorStore4F_MapEvents:
+CeladonHomeDecoStoreB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  0, CELADON_HOME_DECOR_STORE_3F, 2
+	warp_event  6,  0, CELADON_HOME_DECO_STORE_1F, 3
+	warp_event  5,  0, CELADON_HOME_DECO_STORE_B2F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  0, BGEVENT_READ, GoldenrodHomeDecorStore4FDirectory
 
 	def_object_events
-	object_event  5,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FClerk1Script, -1
-	object_event  9,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FClerk2Script, -1
-	object_event  1,  5, SPRITE_DIGLETT, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FDiglettDollScript, -1
-	object_event  2,  4, SPRITE_SHELLDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FShellderDollScript, -1
-	object_event  3,  4, SPRITE_GRIMER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FGrimerDollScript, -1
-	object_event  4,  4, SPRITE_SNUBBULL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FSnubbullDollScript, -1
-	object_event  5,  5, SPRITE_GENGAR, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FGengarDollScript, -1
-	object_event  3,  6, SPRITE_SURFING_PIKACHU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore4FSurfingPikachuDollScript, -1
+	object_event  3,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FClerk1Script, -1
+	object_event  8,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FClerk2Script, -1
+	object_event  2,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FBeautyScript, -1
+	object_event  2,  4, SPRITE_DIGLETT, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FDiglettDollScript, -1
+	object_event  3,  4, SPRITE_SHELLDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FShellderDollScript, -1
+	object_event  5,  6, SPRITE_GRIMER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FGrimerDollScript, -1
+	object_event  8,  4, SPRITE_SNUBBULL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FSnubbullDollScript, -1
+	object_event  9,  4, SPRITE_GENGAR, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FGengarDollScript, -1
+	object_event  6,  6, SPRITE_SURFING_PIKACHU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB1FSurfingPikachuDollScript, -1

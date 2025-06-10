@@ -498,14 +498,13 @@ Celadon_Map_Names: ;newgroup CELADON
 	dw Celadon_Map_Name18 ; map_const CELADON_GYM							; 18
 	dw Celadon_Map_Name19 ; map_const CELADON_CAFE							; 19
 	dw Celadon_Map_Name20 ; map_const ROUTE_7_SAFFRON_GATE					; 20
-	dw Celadon_Map_Name21 ; map_const CELADON_HOME_DECOR_STORE_1F			; 21
-	dw Celadon_Map_Name22 ; map_const CELADON_HOME_DECOR_STORE_2F			; 22
-	dw Celadon_Map_Name23 ; map_const CELADON_HOME_DECOR_STORE_3F			; 23
-	dw Celadon_Map_Name24 ; map_const CELADON_HOME_DECOR_STORE_4F			; 24
-	dw Celadon_Map_Name25 ; map_const CELADON_CURSE_HOUSE       			; 25
-	dw Celadon_Map_Name26 ; map_const CELADON_HOTEL_1F                      ; 26
-	dw Celadon_Map_Name27 ; map_const CELADON_HOTEL_POOL                    ; 27
-	dw Celadon_Map_Name28 ; map_const EUSINES_HOUSE                         ; 28
+	dw Celadon_Map_Name21 ; map_const CELADON_HOME_DECO_STORE_1F			; 21
+	dw Celadon_Map_Name22 ; map_const CELADON_HOME_DECO_STORE_B1F			; 22
+	dw Celadon_Map_Name23 ; map_const CELADON_HOME_DECO_STORE_B2F			; 23
+	dw Celadon_Map_Name24 ; map_const CELADON_CURSE_HOUSE       			; 24
+	dw Celadon_Map_Name25 ; map_const CELADON_HOTEL_1F                      ; 25
+	dw Celadon_Map_Name26 ; map_const CELADON_HOTEL_POOL                    ; 26
+	dw Celadon_Map_Name27 ; map_const EUSINES_HOUSE                         ; 27
 	assert_table_length NUM_CELADON_MAPS
 
 Cianwood_Map_Names: ;newgroup CIANWOOD
@@ -1357,21 +1356,19 @@ Celadon_Map_Name19: ; map_const CELADON_CAFE ; 19
 	db "Celadon Cafe@"
 Celadon_Map_Name20: ; map_const ROUTE_7_SAFFRON_GATE ; 20 
 	db "Route 7 Gate@"
-Celadon_Map_Name21: ; map_const ROUTE_7_SAFFRON_GATE ; 21 
-	db "Cel. DecorStore 1F@" 
-Celadon_Map_Name22: ; map_const ROUTE_7_SAFFRON_GATE ; 22 
-	db "Cel. DecorStore 2F@" 
-Celadon_Map_Name23: ; map_const ROUTE_7_SAFFRON_GATE ; 23 
-	db "Cel. DecorStore 3F@" 
-Celadon_Map_Name24: ; map_const ROUTE_7_SAFFRON_GATE ; 24 
-	db "Cel. DecorStore 4F@" 
-Celadon_Map_Name25: ; map_const CELADON_CURSE_HOUSE ; 25 
+Celadon_Map_Name21: ; map_const CELADON_HOME_DECO_STORE_1F ; 21 
+	db "Cel. DecoStore 1F@" 
+Celadon_Map_Name22: ; map_const CELADON_HOME_DECO_STORE_B1F ; 22 
+	db "Cel. DecoStore B1F@" 
+Celadon_Map_Name23: ; map_const CELADON_HOME_DECO_STORE_B2F ; 23 
+	db "Cel. DecoStore B2F@" 
+Celadon_Map_Name24: ; map_const CELADON_CURSE_HOUSE ; 25 
 	db "Celadon House@" 
-Celadon_Map_Name26: ; map_const CELADON_HOTEL_1F ; 26 
+Celadon_Map_Name25: ; map_const CELADON_HOTEL_1F ; 26 
 	db "Celadon Hotel 1F@"
-Celadon_Map_Name27: ; map_const CELADON_HOTEL_POOL ; 27 
+Celadon_Map_Name26: ; map_const CELADON_HOTEL_POOL ; 27 
 	db "Celadon Hotel Pool@"
-Celadon_Map_Name28: ; map_const EUSINES_HOUSE ; 28 
+Celadon_Map_Name27: ; map_const EUSINES_HOUSE ; 28 
 	db "Eusine's House@"
 
 Cianwood_Map_Name1: ; map_const ROUTE_40,  1

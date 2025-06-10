@@ -452,14 +452,13 @@ ENDM
 	map_const CELADON_GYM,                                 15, 14 ; 18
 	map_const CELADON_CAFE,                                 6,  4 ; 19
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
-	map_const CELADON_HOME_DECOR_STORE_1F,                  5,  4 ; 21
-	map_const CELADON_HOME_DECOR_STORE_2F,                  5,  4 ; 22
-	map_const CELADON_HOME_DECOR_STORE_3F,                  5,  4 ; 23
-	map_const CELADON_HOME_DECOR_STORE_4F,                  5,  4 ; 24
-	map_const CELADON_CURSE_HOUSE,                          4,  4 ; 25
-	map_const CELADON_HOTEL_1F,                             9,  4 ; 26
-	map_const CELADON_HOTEL_POOL,                           7,  4 ; 27
-	map_const EUSINES_HOUSE,                                4,  4 ; 28
+	map_const CELADON_HOME_DECO_STORE_1F,                   6,  4 ; 21
+	map_const CELADON_HOME_DECO_STORE_B1F,                  6,  4 ; 22
+	map_const CELADON_HOME_DECO_STORE_B2F,                  5,  3 ; 23
+	map_const CELADON_CURSE_HOUSE,                          4,  4 ; 24
+	map_const CELADON_HOTEL_1F,                             9,  4 ; 25
+	map_const CELADON_HOTEL_POOL,                           7,  4 ; 26
+	map_const EUSINES_HOUSE,                                4,  4 ; 27
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

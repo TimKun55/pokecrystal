@@ -24,8 +24,8 @@ Route5SaffronGate_MapEvents:
 	def_warp_events
 	warp_event  4,  0, ROUTE_5, 2
 	warp_event  5,  0, ROUTE_5, 3
-	warp_event  4,  7, SAFFRON_CITY, 9
-	warp_event  5,  7, SAFFRON_CITY, 9
+	warp_event  4,  7, SAFFRON_CITY, 11
+	warp_event  5,  7, SAFFRON_CITY, 11
 
 	def_coord_events
 

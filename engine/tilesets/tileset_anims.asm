@@ -38,9 +38,9 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetKantoAnim:
 TilesetKanto3Anim:
+TilesetKanto4Anim:
 TilesetKanto5Anim:
 TilesetKanto6Anim:
-TilesetKanto7Anim:
 TilesetIndigoAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -56,7 +56,7 @@ TilesetIndigoAnim:
 	dw NULL,  DoneTileAnimation
 	
 TilesetKanto2Anim:
-TilesetKanto4Anim:
+TilesetKanto7Anim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw vTiles2 tile $5f, AnimateFountainTile

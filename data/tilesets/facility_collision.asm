@@ -99,7 +99,7 @@
 	tilecoll WALL, WALL, COUNTER, FLOOR ; 62
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 63
 	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 64
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 65
+	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 65
 	tilecoll COUNTER, FLOOR, WALL, FLOOR ; 66
 	tilecoll WALL, WALL, WALL, WALL ; 67
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 68

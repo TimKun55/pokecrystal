@@ -688,10 +688,9 @@ ENDM
 	map_attributes CeladonGameCornerPrizeRoom, CELADON_GAME_CORNER_PRIZE_ROOM, $00, 0
 	map_attributes CeladonGym, CELADON_GYM, $00, 0
 	map_attributes CeladonCafe, CELADON_CAFE, $00, 0
-	map_attributes CeladonHomeDecorStore1F, CELADON_HOME_DECOR_STORE_1F, $00, 0
-	map_attributes CeladonHomeDecorStore2F, CELADON_HOME_DECOR_STORE_2F, $00, 0
-	map_attributes CeladonHomeDecorStore3F, CELADON_HOME_DECOR_STORE_3F, $00, 0
-	map_attributes CeladonHomeDecorStore4F, CELADON_HOME_DECOR_STORE_4F, $00, 0
+	map_attributes CeladonHomeDecoStore1F, CELADON_HOME_DECO_STORE_1F, $00, 0
+	map_attributes CeladonHomeDecoStoreB1F, CELADON_HOME_DECO_STORE_B1F, $00, 0
+	map_attributes CeladonHomeDecoStoreB2F, CELADON_HOME_DECO_STORE_B2F, $00, 0
 	map_attributes CeladonCurseHouse, CELADON_CURSE_HOUSE, $00, 0
 	map_attributes CeladonHotel1F, CELADON_HOTEL_1F, $00, 0
 	map_attributes CeladonHotelPool, CELADON_HOTEL_POOL, $00, 0

@@ -230,16 +230,18 @@ CeladonCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  9, CELADON_DEPT_STORE_1F, 1
+	warp_event  6,  9, CELADON_DEPT_STORE_1F, 1
+	warp_event  7,  9, CELADON_DEPT_STORE_1F, 2
 	warp_event 16,  9, CELADON_MANSION_1F, 1
 	warp_event 16,  3, CELADON_MANSION_1F, 3
-	warp_event 17,  3, CELADON_MANSION_1F, 3
 	warp_event 29,  9, CELADON_POKECENTER_1F, 1
-	warp_event 20, 17, CELADON_GAME_CORNER, 1
+	warp_event 18, 17, CELADON_GAME_CORNER, 1
+	warp_event 19, 17, CELADON_GAME_CORNER, 2
 	warp_event 23, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
+	warp_event 24, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 2
 	warp_event  6, 29, CELADON_GYM, 1
 	warp_event 25, 25, CELADON_CAFE, 1
-	warp_event  9,  9, CELADON_HOME_DECOR_STORE_1F, 1
+	warp_event 21, 25, CELADON_HOME_DECO_STORE_1F, 1
 	warp_event  0, 22, ROUTE_16_GATE, 3
 	warp_event  0, 23, ROUTE_16_GATE, 4
 	warp_event 29, 17, CELADON_CURSE_HOUSE, 1
@@ -251,10 +253,11 @@ CeladonCity_MapEvents:
 	def_bg_events
 	bg_event  6, 20, BGEVENT_READ, CeladonCitySign
 	bg_event  4, 29, BGEVENT_READ, CeladonGymSign
-	bg_event  5,  9, BGEVENT_READ, CeladonCityDeptStoreSign
+	bg_event  4,  9, BGEVENT_READ, CeladonCityDeptStoreSign
+	bg_event  9,  9, BGEVENT_READ, CeladonCityDeptStoreSign
 	bg_event 13,  9, BGEVENT_READ, CeladonCityMansionSign
-	bg_event 19, 19, BGEVENT_READ, CeladonCityGameCornerSign
-	bg_event 29, 19, BGEVENT_READ, CeladonCityTrainerTips
+	bg_event 20, 19, BGEVENT_READ, CeladonCityGameCornerSign
+	bg_event 32, 19, BGEVENT_READ, CeladonCityTrainerTips
 	bg_event 30,  9, BGEVENT_READ, CeladonCityPokecenterSign
 	bg_event 29, 25, BGEVENT_READ, CeladonCityHotelSign
 	bg_event 35,  8, BGEVENT_ITEM, CeladonCityHiddenPpUp

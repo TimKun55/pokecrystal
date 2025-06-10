@@ -568,9 +568,6 @@ INCBIN "data/tilesets/kanto_7_metatiles.bin"
 TilesetKanto7Coll::
 INCLUDE "data/tilesets/kanto_7_collision.asm"
 
-TilesetKanto7Attr::
-INCBIN "data/tilesets/kanto_7_attributes.bin"
-
 TilesetKanto6Attr::
 INCBIN "data/tilesets/kanto_6_attributes.bin"
 
@@ -618,3 +615,9 @@ INCLUDE "data/tilesets/mart_collision.asm"
 
 TilesetGameCornerAttr::
 INCBIN "data/tilesets/game_corner_attributes.bin"
+
+
+SECTION "Tileset Data 24", ROMX
+
+TilesetKanto7Attr::
+INCBIN "data/tilesets/kanto_7_attributes.bin"

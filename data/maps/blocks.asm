@@ -988,17 +988,14 @@ GoldenrodHomeDecoStore3_Blocks:
 GoldenrodHomeDecoStore4_Blocks:
 	INCBIN "maps/GoldenrodHomeDecoStore4.ablk"
 
-CeladonHomeDecorStore1F_Blocks:
-	INCBIN "maps/CeladonHomeDecorStore1F.ablk"
+CeladonHomeDecoStore1F_Blocks:
+	INCBIN "maps/CeladonHomeDecoStore1F.ablk"
 	
-CeladonHomeDecorStore2F_Blocks:
-	INCBIN "maps/CeladonHomeDecorStore2F.ablk"
+CeladonHomeDecoStoreB1F_Blocks:
+	INCBIN "maps/CeladonHomeDecoStoreB1F.ablk"
 	
-CeladonHomeDecorStore3F_Blocks:
-	INCBIN "maps/CeladonHomeDecorStore3F.ablk"
-
-CeladonHomeDecorStore4F_Blocks:
-	INCBIN "maps/CeladonHomeDecorStore4F.ablk"
+CeladonHomeDecoStoreB2F_Blocks:
+	INCBIN "maps/CeladonHomeDecoStoreB2F.ablk"
 
 MahoganyMoveTutorHouse_Blocks:
 	INCBIN "maps/MahoganyMoveTutorHouse.ablk"

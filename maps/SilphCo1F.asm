@@ -48,12 +48,14 @@ SilphCoEmployeeDay:
 	checkevent EVENT_GOT_PREMIER_BALLS_FROM_SILPH
 	iftrue .SilphCoEmployeeDayFamily
 	writetext SilphCoEmployeeDayBallFamilyText
-	promptbutton
+	waitbutton
 	giveitem PREMIER_BALL, 5
 	iffalse .BagFull
 	writetext SilphCoEmployeeDayGotBallText
 	playsound SFX_ITEM
 	waitsfx
+	writetext SilphCoEmployeeBallInBagText
+	waitbutton
 	setevent EVENT_GOT_PREMIER_BALLS_FROM_SILPH
 	writetext SilphCoEmployeeDayBallFavouriteText
 	waitbutton
@@ -205,15 +207,20 @@ SilphCoEmployeeDayGotBallText:
 	line "5 Premier Balls."
 	done
 
-SilphCoEmployeeDayBallFavouriteText:
-	text "They don't have any"
-	line "special effects"
+SilphCoEmployeeBallInBagText:
+	text "<PLAYER> put the"
+	line "Premier Balls in"
+	cont "the Ball Pocket."
+	done
 
-	para "like some other"
-	line "# balls, I just"
+SilphCoEmployeeDayBallFavouriteText:
+	text "Ron: They don't"
+	line "have any special"
+	cont "effects like some"
+	cont "other # balls,"
 	
-	para "like the way"
-	line "they look."
+	para "I just like the"
+	line "way they look."
 	done
 
 SilphCoEmployeeDayFamilyText:
@@ -246,8 +253,8 @@ SilphCo1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  8,  7, SAFFRON_CITY, 7
-	warp_event  9,  7, SAFFRON_CITY, 7
+	warp_event  8,  7, SAFFRON_CITY, 8
+	warp_event  9,  7, SAFFRON_CITY, 9
 
 	def_coord_events
 

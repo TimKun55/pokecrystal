@@ -64,8 +64,8 @@ Route16Gate_MapEvents:
 	def_warp_events
 	warp_event  0,  4, ROUTE_16, 2
 	warp_event  0,  5, ROUTE_16, 3
-	warp_event  9,  4, CELADON_CITY, 11
-	warp_event  9,  5, CELADON_CITY, 12
+	warp_event  9,  4, CELADON_CITY, 13
+	warp_event  9,  5, CELADON_CITY, 14
 
 	def_coord_events
 	coord_event  5,  4, SCENE_ROUTE16GATE_BICYCLE_CHECK, Route16GateBicycleCheck

@@ -1,17 +1,17 @@
 	object_const_def
-	const CELADONHOMEDECORSTORE2F_CLERK1
-	const CELADONHOMEDECORSTORE2F_CLERK2
-	const CELADONHOMEDECORSTORE2F_POKEFANF
+	const CELADONHOMEDECOSTORE1F_CLERK1
+	const CELADONHOMEDECOSTORE1F_CLERK2
+	const CELADONHOMEDECOSTORE1F_POKEFANF
 
-CeladonHomeDecorStore2F_MapScripts:
+CeladonHomeDecoStore1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-CeladonHomeDecorStore2FClerk1Script:
+	
+CeladonHomeDecoStore1FClerk1Script:
 	faceplayer
 	opentext
-	writetext CeladonHomeDecorStore2FClerk1Text
+	writetext CeladonHomeDecoStore1FClerk1Text
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MoveMenuHeader1
@@ -31,6 +31,7 @@ CeladonHomeDecorStore2FClerk1Script:
 	setevent EVENT_DECO_PLANT_1
 	writetext BoughtMagnaPlantText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext MagnaPlantSentText
 	waitbutton
@@ -45,6 +46,7 @@ CeladonHomeDecorStore2FClerk1Script:
 	setevent EVENT_DECO_PLANT_2
 	writetext BoughtTropicPlantText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext TropicPlantSentText
 	waitbutton
@@ -59,23 +61,24 @@ CeladonHomeDecorStore2FClerk1Script:
 	setevent EVENT_DECO_PLANT_3
 	writetext BoughtJumboPlantText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext JumboPlantSentText
 	waitbutton
 	jump .Start
 
 .NotEnoughMoney:
-	writetext CeladonHomeDecorStore2FNoMoneyText
+	writetext CeladonHomeDecoStore1FNoMoneyText
 	waitbutton
 	jump .Start
 
 .AlreadyBought:
-	writetext CeladonHomeDecorStore2FAlreadyBoughtText
+	writetext CeladonHomeDecoStore1FAlreadyBoughtText
 	waitbutton
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecorStore2FNextTimeText
+	writetext CeladonHomeDecoStore1FNextTimeText
 	waitbutton
 	closetext
 	end
@@ -94,10 +97,10 @@ CeladonHomeDecorStore2FClerk1Script:
 	db "Jumbo     ¥80000@"
 	db "Cancel@"
 
-CeladonHomeDecorStore2FClerk2Script:
+CeladonHomeDecoStore1FClerk2Script:
 	faceplayer
 	opentext
-	writetext CeladonHomeDecorStore2FClerk2Text
+	writetext CeladonHomeDecoStore1FClerk2Text
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MoveMenuHeader2
@@ -117,6 +120,7 @@ CeladonHomeDecorStore2FClerk2Script:
 	setevent EVENT_DECO_POSTER_2
 	writetext BoughtPikachuPosterText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext PikachuPosterSentText
 	waitbutton
@@ -131,6 +135,7 @@ CeladonHomeDecorStore2FClerk2Script:
 	setevent EVENT_DECO_POSTER_3
 	writetext BoughtClefairyPosterText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext ClefairyPosterSentText
 	waitbutton
@@ -145,23 +150,24 @@ CeladonHomeDecorStore2FClerk2Script:
 	setevent EVENT_DECO_POSTER_4
 	writetext BoughtMarillPosterText
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitbutton
 	writetext MarillPosterSentText
 	waitbutton
 	jump .Start
 
 .NotEnoughMoney:
-	writetext CeladonHomeDecorStore2FNoMoneyText
+	writetext CeladonHomeDecoStore1FNoMoneyText
 	waitbutton
 	jump .Start
 
 .AlreadyBought:
-	writetext CeladonHomeDecorStore2FAlreadyBoughtText
+	writetext CeladonHomeDecoStore1FAlreadyBoughtText
 	waitbutton
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecorStore2FNextTimeText
+	writetext CeladonHomeDecoStore1FNextTimeText
 	waitbutton
 	closetext
 	end
@@ -180,22 +186,28 @@ CeladonHomeDecorStore2FClerk2Script:
 	db "Marill    ¥40000@"
 	db "Cancel@"
 
-CeladonHomeDecorStore2FPokefanfScript:
-	jumptextfaceplayer CeladonHomeDecorStore2FPokefanfText
+CeladonHomeDecoStore1FPokefanfScript:
+	jumptextfaceplayer CeladonHomeDecoStore1FPokefanfText
 
-CeladonHomeDecorStore2FDirectory:
-	jumptext CeladonHomeDecorStore2FDirectoryText
-
-CeladonHomeDecorStore2FClefairyPoster:
-	jumptext CeladonHomeDecorStore2FClefairyPosterText
+CeladonHomeDecoStore1FClefairyPoster:
+	jumptext CeladonHomeDecoStore1FClefairyPosterText
 	
-CeladonHomeDecorStore2FMarillPoster:
-	jumptext CeladonHomeDecorStore2FMarillPosterText
+CeladonHomeDecoStore1FMarillPoster:
+	jumptext CeladonHomeDecoStore1FMarillPosterText
 
-CeladonHomeDecorStore2FPikachuPoster:
-	jumptext CeladonHomeDecorStore2FPikachuPosterText
+CeladonHomeDecoStore1FPikachuPoster:
+	jumptext CeladonHomeDecoStore1FPikachuPosterText
 
-CeladonHomeDecorStore2FClerk1Text:
+CeladonHomeDecoStore1FMagnaPlant:
+	jumptext CeladonHomeDecoStore1FMagnaText
+
+CeladonHomeDecoStore1FJumboPlant:
+	jumptext CeladonHomeDecoStore1FJumboPlantText
+
+CeladonHomeDecoStore1FTropicPlant:
+	jumptext CeladonHomeDecoStore1FTropicPlantText
+
+CeladonHomeDecoStore1FClerk1Text:
 	text "Welcome! Are you"
 	line "in the market for"
 	cont "a new plant?"
@@ -231,7 +243,7 @@ JumboPlantSentText:
 	line "was sent home."
 	done
 	
-CeladonHomeDecorStore2FClerk2Text:
+CeladonHomeDecoStore1FClerk2Text:
 	text "Welcome! Are you"
 	line "in the market for"
 	cont "a new poster?"
@@ -267,21 +279,21 @@ MarillPosterSentText:
 	line "was sent home."
 	done
 
-CeladonHomeDecorStore2FNoMoneyText:
+CeladonHomeDecoStore1FNoMoneyText:
 	text "You can't afford"
 	line "that!"
 	done
 
-CeladonHomeDecorStore2FAlreadyBoughtText:
+CeladonHomeDecoStore1FAlreadyBoughtText:
 	text "You already have"
 	line "that!"
 	done
 	
-CeladonHomeDecorStore2FNextTimeText:
+CeladonHomeDecoStore1FNextTimeText:
 	text "See you next time!"
 	done
 
-CeladonHomeDecorStore2FPokefanfText:
+CeladonHomeDecoStore1FPokefanfText:
 	text "My son's room is"
 	line "too dark and dank"
 	cont "so I'm getting him"
@@ -290,44 +302,62 @@ CeladonHomeDecorStore2FPokefanfText:
 	line "and plants."
 	done
 	
-CeladonHomeDecorStore2FDirectoryText:
-	text "Lush and Cute!"
-
-	para "2F: Plants"
-	line "    & Posters"
-	done
-	
-CeladonHomeDecorStore2FClefairyPosterText:
+CeladonHomeDecoStore1FClefairyPosterText:
 	text "A Clefairy Poster."
 	line "It's super cute!"
 	done
 
-CeladonHomeDecorStore2FMarillPosterText:
+CeladonHomeDecoStore1FMarillPosterText:
 	text "A Marill Poster."
 	line "It's so dynamic!"
 	done
 
-CeladonHomeDecorStore2FPikachuPosterText:
+CeladonHomeDecoStore1FPikachuPosterText:
 	text "A Pikachu Poster."
 	line "It's so cool!"
 	done
 
-CeladonHomeDecorStore2F_MapEvents:
-	db 0, 0 ; filler
+CeladonHomeDecoStore1FMagnaText:
+	text "It's a lush"
+	line "Magna Plant."
+	done
 
+CeladonHomeDecoStore1FJumboPlantText:
+	text "It's a huge"
+	line "Jumbo Plant."
+	done
+
+CeladonHomeDecoStore1FTropicPlantText:
+	text "It's a leafy"
+	line "Tropic Plant."
+	done
+
+CeladonHomeDecoStore1F_MapEvents:
+	db 0, 0 ; filler
+	
 	def_warp_events
-	warp_event  9,  0, CELADON_HOME_DECOR_STORE_1F, 3
-	warp_event  6,  0, CELADON_HOME_DECOR_STORE_3F, 1
+	warp_event  5,  7, CELADON_CITY, 12
+	warp_event  6,  7, CELADON_CITY, 12
+	warp_event  6,  0, CELADON_HOME_DECO_STORE_B1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  0, BGEVENT_READ, CeladonHomeDecorStore2FDirectory
-	bg_event  0,  5, BGEVENT_READ, CeladonHomeDecorStore2FClefairyPoster
-	bg_event  1,  5, BGEVENT_READ, CeladonHomeDecorStore2FMarillPoster
-	bg_event  2,  5, BGEVENT_READ, CeladonHomeDecorStore2FPikachuPoster
+	bg_event  1,  5, BGEVENT_READ, CeladonHomeDecoStore1FClefairyPoster
+	bg_event  2,  5, BGEVENT_READ, CeladonHomeDecoStore1FMarillPoster
+	bg_event  3,  5, BGEVENT_READ, CeladonHomeDecoStore1FPikachuPoster
+	bg_event  8,  4, BGEVENT_READ, CeladonHomeDecoStore1FMagnaPlant
+	bg_event  8,  5, BGEVENT_READ, CeladonHomeDecoStore1FMagnaPlant
+	bg_event  9,  4, BGEVENT_READ, CeladonHomeDecoStore1FMagnaPlant
+	bg_event  9,  5, BGEVENT_READ, CeladonHomeDecoStore1FMagnaPlant
+	bg_event  8,  6, BGEVENT_READ, CeladonHomeDecoStore1FJumboPlant
+	bg_event  8,  7, BGEVENT_READ, CeladonHomeDecoStore1FJumboPlant
+	bg_event 10,  6, BGEVENT_READ, CeladonHomeDecoStore1FTropicPlant
+	bg_event 11,  6, BGEVENT_READ, CeladonHomeDecoStore1FTropicPlant
 
 	def_object_events
-	object_event  9,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore2FClerk1Script, -1
-	object_event  3,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore2FClerk2Script, -1
-	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecorStore2FPokefanfScript, -1
+	object_event  9,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStore1FClerk1Script, -1
+	object_event  2,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStore1FClerk2Script, -1
+	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStore1FPokefanfScript, -1
+
+	

@@ -373,8 +373,10 @@ SaffronCity_MapEvents:
 	warp_event 27, 13, SAFFRON_MART, 2
 	warp_event 11, 31, SAFFRON_POKECENTER_1F, 1
 	warp_event 27, 31, MR_PSYCHICS_HOUSE, 1
+	warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 1	
 	warp_event  7,  5, SAFFRON_MAGNET_TRAIN_STATION, 2
 	warp_event 19, 23, SILPH_CO_1F, 1
+	warp_event 20, 23, SILPH_CO_1F, 2
 	warp_event 11, 13, COPYCATS_HOUSE_1F, 1
 	warp_event 17,  1, ROUTE_5_SAFFRON_GATE, 3
 	warp_event  0, 26, ROUTE_7_SAFFRON_GATE, 3
@@ -398,7 +400,7 @@ SaffronCity_MapEvents:
 	bg_event 22,  7, BGEVENT_READ, FightingDojoSign
 	bg_event 18, 25, BGEVENT_READ, SilphCoSign
 	bg_event 25, 31, BGEVENT_READ, MrPsychicsHouseSign
-	bg_event  8,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
+	bg_event  9,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
 	bg_event 12, 31, BGEVENT_READ, SaffronCityPokecenterSign
 	bg_event 28, 13, BGEVENT_READ, SaffronCityMartSign
 

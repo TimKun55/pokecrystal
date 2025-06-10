@@ -68,8 +68,8 @@ Route7SaffronGate_MapEvents:
 	def_warp_events
 	warp_event  0,  4, ROUTE_7, 1
 	warp_event  0,  5, ROUTE_7, 2
-	warp_event  9,  4, SAFFRON_CITY, 10
-	warp_event  9,  5, SAFFRON_CITY, 11
+	warp_event  9,  4, SAFFRON_CITY, 12
+	warp_event  9,  5, SAFFRON_CITY, 13
 
 	def_coord_events
 	coord_event  5,  4, SCENE_ROUTE7SAFFRONGATE_POWER_PLANT_CHECK, Route7SaffronGatePowerPlantCheck
