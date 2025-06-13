@@ -1323,26 +1323,46 @@ Script_UsedWhirlpool:
 	callasm GetPartyNickname
 	writetext UseWhirlpoolText
 	refreshmap
-	callasm DisappearWhirlpool
-	closetext
+	waitsfx
+	playsound SFX_SURF
+	readvar VAR_FACING
+	if_equal UP, .Up
+	if_equal DOWN, .Down
+	if_equal RIGHT, .Right
+	applymovement PLAYER, .LeftMovementData
 	end
 
-DisappearWhirlpool:
-	ld hl, wCutWhirlpoolOverworldBlockAddr
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wCutWhirlpoolReplacementBlock]
-	ld [hl], a
-	xor a
-	ldh [hBGMapMode], a
-	call LoadOverworldTilemapAndAttrmapPals
-	ld a, [wCutWhirlpoolAnimationType]
-	ld e, a
-	farcall PlayWhirlpoolSound
-	call BufferScreen
-	call GetMovementPermissions
-	ret
+.Up:
+	applymovement PLAYER, .UpMovementData
+	end
+
+.Right:
+	applymovement PLAYER, .RightMovementData
+	end
+
+.Down:
+	applymovement PLAYER, .DownMovementData
+	end
+
+.UpMovementData:
+	slow_step_up
+	slow_step_up
+	step_end
+
+.RightMovementData:
+	slow_step_right
+	slow_step_right
+	step_end
+
+.DownMovementData:
+	slow_step_down
+	slow_step_down
+	step_end
+
+.LeftMovementData:
+	slow_step_left
+	slow_step_left
+	step_end
 
 TryWhirlpoolOW::
 ; Step 1
