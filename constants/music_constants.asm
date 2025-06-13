@@ -116,6 +116,10 @@
 	const MUSIC_LYRA_ENCOUNTER               ; 6f
 	const MUSIC_LYRA_DEPARTURE               ; 70
 	const MUSIC_POKEMART_HGSS                ; 71
+	const MUSIC_BICYCLE_RB                   ; 72
+	const MUSIC_SURF_RBY                     ; 73
+	const MUSIC_CERULEAN_CITY                ; 74
+	const MUSIC_ROUTE_24                     ; 75
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

@@ -1877,7 +1877,18 @@ BikeFunction:
 	call PlayMusic
 	call DelayFrame
 	call MaxVolume
+
+	farcall RegionCheck
+	ld a, e
+	and a
+	jr nz, .kantobike
+
 	ld de, MUSIC_BICYCLE
+	jr .gotmusic
+
+.kantobike
+	ld de, MUSIC_BICYCLE_RB
+.gotmusic
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic

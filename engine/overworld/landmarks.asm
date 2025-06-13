@@ -45,7 +45,7 @@ GetLandmarkName::
 
 INCLUDE "data/maps/landmarks.asm"
 
-RegionCheck:
+RegionCheck::
 ; Checks if the player is in Kanto or Johto.
 ; If in Johto, returns 0 in e.
 ; If in Kanto, returns 1 in e.

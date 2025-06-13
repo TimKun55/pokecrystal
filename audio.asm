@@ -163,6 +163,10 @@ INCLUDE "audio/music/ceruleancave.asm"
 INCLUDE "audio/music/lyraencounter.asm"
 INCLUDE "audio/music/lyradeparture.asm"
 INCLUDE "audio/music/pokemarthgss.asm"
+INCLUDE "audio/music/bicyclerb.asm"
+INCLUDE "audio/music/surfingrby.asm"
+INCLUDE "audio/music/ceruleancity.asm"
+INCLUDE "audio/music/nuggetbridge.asm"
 
 
 SECTION "Sound Effects", ROMX

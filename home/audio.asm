@@ -392,7 +392,17 @@ SpecialMapMusic::
 	ret
 
 .surf
+	farcall RegionCheck
+	ld a, e
+	and a
+	jr nz, .kantosurf
+
 	ld de, MUSIC_SURF
+	jr .gotmusic
+	
+.kantosurf	
+	ld de, MUSIC_SURF_RBY
+.gotmusic	
 	scf
 	ret
 

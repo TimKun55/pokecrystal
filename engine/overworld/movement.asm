@@ -546,19 +546,19 @@ Movement_turn_in_right:
 
 Movement_turn_waterfall_down:
 	ld a, STEP_RUN << 2 | DOWN
-	jp TurningStep
+	jp SlideStep
 
 Movement_turn_waterfall_up:
 	ld a, STEP_RUN << 2 | UP
-	jp TurningStep
+	jp SlideStep
 
 Movement_turn_waterfall_left:
 	ld a, STEP_RUN << 2 | LEFT
-	jp TurningStep
+	jp SlideStep
 
 Movement_turn_waterfall_right:
 	ld a, STEP_RUN << 2 | RIGHT
-	jp TurningStep
+	jp SlideStep
 
 Movement_slow_slide_step_down:
 	ld a, STEP_SLOW << 2 | DOWN

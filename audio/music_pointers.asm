@@ -118,4 +118,8 @@ Music:
 	dba Music_LyraEncounter
 	dba Music_LyraDeparture
 	dba Music_PokeMartHGSS
+	dba Music_BicycleRB
+	dba Music_SurfingRBY
+	dba Music_CeruleanCityHGSS
+	dba Music_NuggetBridgeHGSS
 	assert_table_length NUM_MUSIC_SONGS
