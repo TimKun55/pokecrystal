@@ -7,9 +7,12 @@ RuinsOfAlphOmanyteChamber_MapScripts:
 	callback MAPCALLBACK_TILES, RuinsOfAlphOmanyteChamberHiddenDoorsCallback
 
 RuinsOfAlphOmanyteChamberCheckWallScene:
+	checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+	iffalse .end
 	special OmanyteChamber
 	checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	iftrue .OpenWall
+.end
 	end
 
 .OpenWall:
@@ -22,15 +25,16 @@ RuinsOfAlphOmanyteChamberNoopScene:
 RuinsOfAlphOmanyteChamberHiddenDoorsCallback:
 	checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	iftrue .WallOpen
-	changeblock 4, 0, $2e ; closed wall
-.WallOpen:
 	checkevent EVENT_SOLVED_OMANYTE_PUZZLE
-	iffalse .FloorClosed
+	iffalse .NormalWalls
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+.WallOpen:
 	endcallback
 
-.FloorClosed:
-	changeblock 2, 2, $01 ; left floor
-	changeblock 4, 2, $02 ; right floor
+.NormalWalls:
+	changeblock 2, 0, $06 ; left full wall
+	changeblock 4, 0, $07 ; right full wall
 	endcallback
 
 RuinsOfAlphOmanyteChamberWallOpenScript:
@@ -47,6 +51,8 @@ RuinsOfAlphOmanyteChamberWallOpenScript:
 	end
 
 RuinsOfAlphOmanyteChamberPuzzle:
+	checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+	iftrue .CompletedPuzzle
 	refreshscreen
 	setval UNOWNPUZZLE_OMANYTE
 	special UnownPuzzle
@@ -55,22 +61,48 @@ RuinsOfAlphOmanyteChamberPuzzle:
 	end
 
 .PuzzleComplete:
-	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	setevent EVENT_SOLVED_OMANYTE_PUZZLE
-	setflag ENGINE_UNLOCKED_UNOWNS_H_TO_N
-	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
-	earthquake 30
-	showemote EMOTE_SHOCK, PLAYER, 15
-	changeblock 2, 2, $18 ; left hole
-	changeblock 4, 2, $19 ; right hole
-	reloadmappart
-	playsound SFX_STRENGTH
-	earthquake 80
-	applymovement PLAYER, RuinsOfAlphOmanyteChamberSkyfallTopMovement
-	playsound SFX_KINESIS
+	special FadeOutMusic
+	pause 16
+	playsound SFX_INTRO_UNOWN_1
 	waitsfx
-	pause 20
-	warpcheck
+	pause 24
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	pause 16
+	turnobject PLAYER, RIGHT
+	pause 16
+	turnobject PLAYER, DOWN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	pause 16
+	playsound SFX_INTRO_UNOWN_3
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	playsound SFX_INTRO_UNOWN_1
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	pause 16
+	cry UNOWN
+	playsound SFX_STRENGTH
+	earthquake 30
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+	reloadmappart
+	pause 16
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special RestartMapMusic
+	end
+
+.CompletedPuzzle
+	opentext
+	writetext OmanytePuzzleCompletedText
+	waitbutton
+	closetext
 	end
 
 RuinsOfAlphOmanyteChamberAncientReplica:
@@ -81,41 +113,47 @@ RuinsOfAlphOmanyteChamberDescriptionSign:
 
 RuinsOfAlphOmanyteChamberWallPatternLeft:
 	opentext
-	writetext RuinsOfAlphOmanyteChamberWallPatternLeftText
+	checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+	iffalse .NoWords
+	writetext RuinsOfAlphOmanyteChamberWallPatternText
 	setval UNOWNWORDS_WATER
 	special DisplayUnownWords
 	closetext
 	end
 
+.NoWords
+	writetext RuinsOfAlphOmanyteChamberWallBreezeText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphOmanyteChamberWallPatternRight:
+	opentext
+	checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+	iffalse RuinsOfAlphOmanyteChamberWallPatternLeft.NoWords
 	checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	iftrue .WallOpen
-	opentext
-	writetext RuinsOfAlphOmanyteChamberWallPatternRightText
+	writetext RuinsOfAlphOmanyteChamberWallPatternText
 	setval UNOWNWORDS_WATER
 	special DisplayUnownWords
 	closetext
 	end
 
 .WallOpen:
-	opentext
 	writetext RuinsOfAlphOmanyteChamberWallHoleText
 	waitbutton
 	closetext
 	end
 
-RuinsOfAlphOmanyteChamberSkyfallTopMovement:
-	skyfall_top
-	step_end
-
-RuinsOfAlphOmanyteChamberWallPatternLeftText:
+RuinsOfAlphOmanyteChamberWallPatternText:
 	text "Patterns appeared"
 	line "on the walls…"
 	done
 
-RuinsOfAlphOmanyteChamberWallPatternRightText:
-	text "Patterns appeared"
-	line "on the walls…"
+RuinsOfAlphOmanyteChamberWallBreezeText:
+	text "There's a slight"
+	line "breeze coming from"
+	cont "somewhere…"
 	done
 
 RuinsOfAlphOmanyteChamberWallHoleText:
@@ -137,14 +175,18 @@ RuinsOfAlphOmanyteChamberDescriptionText:
 	line "its ten tentacles."
 	done
 
+OmanytePuzzleCompletedText:
+	text "The puzzle has"
+	line "already been"
+	cont "completed."
+	done
+
 RuinsOfAlphOmanyteChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 3
 	warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 3
-	warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 6
-	warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 7
 	warp_event  4,  0, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 1
 
 	def_coord_events

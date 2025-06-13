@@ -1,7 +1,28 @@
 RuinsOfAlphHoOhWordRoom_MapScripts:
 	def_scene_scripts
+	scene_script RuinsOfAlphHoOhWordRoomFirstVisitScene, SCENE_RUINSOFALPHHOOHWORDROOM_FIRST_VISIT
+	scene_script RuinsOfAlphHoOhWordRoomNoopScene,       SCENE_RUINSOFALPHHOOHWORDROOM_NOOP
 
 	def_callbacks
+
+RuinsOfAlphHoOhWordRoomFirstVisitScene:
+	pause 30
+	cry UNOWN
+	turnobject PLAYER, LEFT
+	pause 16
+	turnobject PLAYER, RIGHT
+	pause 16
+	turnobject PLAYER, DOWN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	pause 16
+	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
+	setflag ENGINE_UNLOCKED_UNOWNS_V_TO_QUESTION
+	setscene SCENE_RUINSOFALPHHOOHCHAMBER_NOOP
+	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
+	end
+
+RuinsOfAlphHoOhWordRoomNoopScene:
+	end
 
 RuinsOfAlphHoOhWordRoom_MapEvents:
 	db 0, 0 ; filler

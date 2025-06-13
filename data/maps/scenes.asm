@@ -108,4 +108,8 @@ MapScenes::
 	scene_var OLIVINE_PORT_PASSAGE,                        wOlivinePortPassageSceneID
 	scene_var VERMILION_PORT_PASSAGE,                      wVermilionPortPassageSceneID
 	scene_var AZALEA_GYM,                                  wAzaleaGymSceneID
+	scene_var RUINS_OF_ALPH_HO_OH_WORD_ROOM,               wRuinsOfAlphHoOhWordRoomSceneID
+	scene_var RUINS_OF_ALPH_KABUTO_WORD_ROOM,              wRuinsOfAlphKabutoWordRoomSceneID
+	scene_var RUINS_OF_ALPH_OMANYTE_WORD_ROOM,             wRuinsOfAlphOmanyteWordRoomSceneID
+	scene_var RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          wRuinsOfAlphAerodactylWordRoomSceneID
 	db -1 ; end

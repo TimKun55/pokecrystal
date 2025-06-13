@@ -7,9 +7,12 @@ RuinsOfAlphHoOhChamber_MapScripts:
 	callback MAPCALLBACK_TILES, RuinsOfAlphHoOhChamberHiddenDoorsCallback
 
 RuinsOfAlphHoOhChamberCheckWallScene:
+	checkevent EVENT_SOLVED_HO_OH_PUZZLE
+	iffalse .end
 	special HoOhChamber
 	checkevent EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	iftrue .OpenWall
+.end
 	end
 
 .OpenWall:
@@ -22,15 +25,16 @@ RuinsOfAlphHoOhChamberNoopScene:
 RuinsOfAlphHoOhChamberHiddenDoorsCallback:
 	checkevent EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	iftrue .WallOpen
-	changeblock 4, 0, $2e ; closed wall
-.WallOpen:
 	checkevent EVENT_SOLVED_HO_OH_PUZZLE
-	iffalse .FloorClosed
+	iffalse .NormalWalls
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+.WallOpen:
 	endcallback
 
-.FloorClosed:
-	changeblock 2, 2, $01 ; left floor
-	changeblock 4, 2, $02 ; right floor
+.NormalWalls:
+	changeblock 2, 0, $06 ; left full wall
+	changeblock 4, 0, $07 ; right full wall
 	endcallback
 
 RuinsOfAlphHoOhChamberWallOpenScript:
@@ -47,6 +51,8 @@ RuinsOfAlphHoOhChamberWallOpenScript:
 	end
 
 RuinsOfAlphHoOhChamberPuzzle:
+	checkevent EVENT_SOLVED_HO_OH_PUZZLE
+	iftrue .CompletedPuzzle
 	refreshscreen
 	setval UNOWNPUZZLE_HO_OH
 	special UnownPuzzle
@@ -55,22 +61,48 @@ RuinsOfAlphHoOhChamberPuzzle:
 	end
 
 .PuzzleComplete:
-	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	setevent EVENT_SOLVED_HO_OH_PUZZLE
-	setflag ENGINE_UNLOCKED_UNOWNS_V_TO_QUESTION
-	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
-	earthquake 30
-	showemote EMOTE_SHOCK, PLAYER, 15
-	changeblock 2, 2, $18 ; left hole
-	changeblock 4, 2, $19 ; right hole
-	reloadmappart
-	playsound SFX_STRENGTH
-	earthquake 80
-	applymovement PLAYER, RuinsOfAlphHoOhChamberSkyfallTopMovement
-	playsound SFX_KINESIS
+	special FadeOutMusic
+	pause 16
+	playsound SFX_INTRO_UNOWN_1
 	waitsfx
-	pause 20
-	warpcheck
+	pause 24
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	pause 16
+	turnobject PLAYER, RIGHT
+	pause 16
+	turnobject PLAYER, DOWN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	pause 16
+	playsound SFX_INTRO_UNOWN_3
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	playsound SFX_INTRO_UNOWN_1
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	pause 16
+	cry UNOWN
+	playsound SFX_STRENGTH
+	earthquake 30
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+	reloadmappart
+	pause 16
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special RestartMapMusic
+	end
+
+.CompletedPuzzle
+	opentext
+	writetext HoOhPuzzleCompletedText
+	waitbutton
+	closetext
 	end
 
 RuinsOfAlphHoOhChamberAncientReplica:
@@ -81,41 +113,47 @@ RuinsOfAlphHoOhChamberDescriptionSign:
 
 RuinsOfAlphHoOhChamberWallPatternLeft:
 	opentext
-	writetext RuinsOfAlphHoOhChamberWallPatternLeftText
-	setval UNOWNWORDS_HO_OH
+	checkevent EVENT_SOLVED_HO_OH_PUZZLE
+	iffalse .NoWords
+	writetext RuinsOfAlphHoOhChamberWallPatternText
+	setval UNOWNWORDS_SEED
 	special DisplayUnownWords
 	closetext
 	end
 
+.NoWords
+	writetext RuinsOfAlphHoOhChamberWallBreezeText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphHoOhChamberWallPatternRight:
+	opentext
+	checkevent EVENT_SOLVED_HO_OH_PUZZLE
+	iffalse RuinsOfAlphHoOhChamberWallPatternLeft.NoWords
 	checkevent EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	iftrue .WallOpen
-	opentext
-	writetext RuinsOfAlphHoOhChamberWallPatternRightText
-	setval UNOWNWORDS_HO_OH
+	writetext RuinsOfAlphHoOhChamberWallPatternText
+	setval UNOWNWORDS_SEED
 	special DisplayUnownWords
 	closetext
 	end
 
 .WallOpen:
-	opentext
 	writetext RuinsOfAlphHoOhChamberWallHoleText
 	waitbutton
 	closetext
 	end
 
-RuinsOfAlphHoOhChamberSkyfallTopMovement:
-	skyfall_top
-	step_end
-
-RuinsOfAlphHoOhChamberWallPatternLeftText:
+RuinsOfAlphHoOhChamberWallPatternText:
 	text "Patterns appeared"
 	line "on the walls…"
 	done
 
-RuinsOfAlphHoOhChamberWallPatternRightText:
-	text "Patterns appeared"
-	line "on the walls…"
+RuinsOfAlphHoOhChamberWallBreezeText:
+	text "There's a slight"
+	line "breeze coming from"
+	cont "somewhere…"
 	done
 
 RuinsOfAlphHoOhChamberWallHoleText:
@@ -137,14 +175,18 @@ RuinsOfAlphHoOhChamberDescriptionText:
 	line "wings."
 	done
 
+HoOhPuzzleCompletedText:
+	text "The puzzle has"
+	line "already been"
+	cont "completed."
+	done
+
 RuinsOfAlphHoOhChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 1
 	warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 1
-	warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 2
-	warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 3
 	warp_event  4,  0, RUINS_OF_ALPH_HO_OH_ITEM_ROOM, 1
 
 	def_coord_events

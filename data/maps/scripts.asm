@@ -40,15 +40,12 @@ INCLUDE "maps/RuinsOfAlphOmanyteWordRoom.asm"
 INCLUDE "maps/RuinsOfAlphAerodactylWordRoom.asm"
 INCLUDE "maps/UnionCave1F.asm"
 INCLUDE "maps/UnionCaveB1F.asm"
-INCLUDE "maps/UnionCaveB2F.asm"
 INCLUDE "maps/SlowpokeWellB1F.asm"
 INCLUDE "maps/SlowpokeWellB2F.asm"
 INCLUDE "maps/OlivineLighthouse1F.asm"
 INCLUDE "maps/OlivineLighthouse2F.asm"
 INCLUDE "maps/OlivineLighthouse3F.asm"
 INCLUDE "maps/OlivineLighthouse4F.asm"
-INCLUDE "maps/VermilionSailorsHouse.asm"
-INCLUDE "maps/FarawayIslandInside.asm"
 
 
 SECTION "Map Scripts 3", ROMX
@@ -63,6 +60,9 @@ INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
 INCLUDE "maps/SeafoamGym.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
+INCLUDE "maps/VermilionSailorsHouse.asm"
+INCLUDE "maps/FarawayIslandInside.asm"
+INCLUDE "maps/UnionCaveB2F.asm"
 
 
 SECTION "Map Scripts 4", ROMX

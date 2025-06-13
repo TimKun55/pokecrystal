@@ -159,7 +159,7 @@ ENDM
 	map_const CERULEAN_CAVE_1F,                            17, 11 ; 94
 	map_const CERULEAN_CAVE_2F,                            17, 11 ; 95	
 	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 96
-	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,                4,  6 ; 97
+	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,               10,  6 ; 97
 	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 98
 	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
 	map_const MOUNT_MOON_B1F,                              18, 16 ; 100

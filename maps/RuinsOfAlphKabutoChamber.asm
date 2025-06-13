@@ -11,8 +11,11 @@ RuinsOfAlphKabutoChamber_MapScripts:
 	callback MAPCALLBACK_TILES, RuinsOfAlphKabutoChamberHiddenDoorsCallback
 
 RuinsOfAlphKabutoChamberCheckWallScene:
+	checkevent EVENT_SOLVED_KABUTO_PUZZLE
+	iffalse .end
 	checkevent EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
 	iftrue .OpenWall
+.end
 	end
 
 .OpenWall:
@@ -25,15 +28,16 @@ RuinsOfAlphKabutoChamberNoopScene:
 RuinsOfAlphKabutoChamberHiddenDoorsCallback:
 	checkevent EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
 	iftrue .WallOpen
-	changeblock 4, 0, $2e ; closed wall
-.WallOpen:
 	checkevent EVENT_SOLVED_KABUTO_PUZZLE
-	iffalse .FloorClosed
+	iffalse .NormalWalls
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+.WallOpen:
 	endcallback
 
-.FloorClosed:
-	changeblock 2, 2, $01 ; left floor
-	changeblock 4, 2, $02 ; right floor
+.NormalWalls:
+	changeblock 2, 0, $06 ; left full wall
+	changeblock 4, 0, $07 ; right full wall
 	endcallback
 
 RuinsOfAlphKabutoChamberWallOpenScript:
@@ -50,9 +54,24 @@ RuinsOfAlphKabutoChamberWallOpenScript:
 	end
 
 RuinsOfAlphKabutoChamberReceptionistScript:
-	jumptextfaceplayer RuinsOfAlphKabutoChamberReceptionistText
+	faceplayer
+	opentext
+	checkevent EVENT_SOLVED_KABUTO_PUZZLE
+	iftrue .PuzzleSolved
+	writetext RuinsOfAlphKabutoChamberReceptionistText
+	waitbutton
+	closetext
+	end
+
+.PuzzleSolved
+	writetext RuinsOfAlphKabutoChamberReceptionistTremorText
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphKabutoChamberPuzzle:
+	checkevent EVENT_SOLVED_KABUTO_PUZZLE
+	iftrue .CompletedPuzzle
 	refreshscreen
 	setval UNOWNPUZZLE_KABUTO
 	special UnownPuzzle
@@ -61,23 +80,54 @@ RuinsOfAlphKabutoChamberPuzzle:
 	end
 
 .PuzzleComplete:
-	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	setevent EVENT_SOLVED_KABUTO_PUZZLE
-	setflag ENGINE_UNLOCKED_UNOWNS_A_TO_G
-	setevent EVENT_RUINS_OF_ALPH_KABUTO_CHAMBER_RECEPTIONIST
-	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
-	earthquake 30
-	showemote EMOTE_SHOCK, PLAYER, 15
-	changeblock 2, 2, $18 ; left hole
-	changeblock 4, 2, $19 ; right hole
-	reloadmappart
-	playsound SFX_STRENGTH
-	earthquake 80
-	applymovement PLAYER, RuinsOfAlphKabutoChamberSkyfallTopMovement
-	playsound SFX_KINESIS
+	special FadeOutMusic
+	pause 16
+	playsound SFX_INTRO_UNOWN_1
 	waitsfx
-	pause 20
-	warpcheck
+	pause 24
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	showemote EMOTE_QUESTION, RUINSOFALPHKABUTOCHAMBER_SCIENTIST, 15
+	showemote EMOTE_SHOCK, RUINSOFALPHKABUTOCHAMBER_RECEPTIONIST, 15
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	pause 16
+	turnobject PLAYER, RIGHT
+	pause 16
+	turnobject PLAYER, DOWN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	pause 16
+	playsound SFX_INTRO_UNOWN_3
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	playsound SFX_INTRO_UNOWN_1
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	pause 16
+	cry UNOWN
+	playsound SFX_STRENGTH
+	earthquake 30
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+	reloadmappart
+	pause 16
+	showemote EMOTE_SHOCK, RUINSOFALPHKABUTOCHAMBER_SCIENTIST, 15
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	showemote EMOTE_SHOCK, RUINSOFALPHKABUTOCHAMBER_RECEPTIONIST, 15
+	turnobject RUINSOFALPHKABUTOCHAMBER_RECEPTIONIST, UP
+	pause 16
+	special RestartMapMusic
+	end
+
+.CompletedPuzzle
+	opentext
+	writetext KabutoPuzzleCompletedText
+	waitbutton
+	closetext
 	end
 
 RuinsOfAlphKabutoChamberScientistScript:
@@ -90,7 +140,11 @@ RuinsOfAlphKabutoChamberScientistScript:
 	checkevent EVENT_SOLVED_KABUTO_PUZZLE
 	iffalse .PuzzleIncomplete
 	writetext RuinsOfAlphKabutoChamberScientistTremorText
-	promptbutton
+	waitbutton
+	closetext
+	turnobject RUINSOFALPHKABUTOCHAMBER_SCIENTIST, UP
+	end
+	
 .PuzzleIncomplete:
 	writetext RuinsOfAlphKabutoChamberScientistCrypticText
 	waitbutton
@@ -118,32 +172,37 @@ RuinsOfAlphKabutoChamberDescriptionSign:
 
 RuinsOfAlphKabutoChamberWallPatternLeft:
 	opentext
-	writetext RuinsOfAlphKabutoChamberWallPatternLeftText
+	checkevent EVENT_SOLVED_KABUTO_PUZZLE
+	iffalse .NoWords
+	writetext RuinsOfAlphKabutoChamberWallPatternText
 	setval UNOWNWORDS_ESCAPE
 	special DisplayUnownWords
 	closetext
 	end
 
+.NoWords
+	writetext RuinsOfAlphKabutoChamberWallBreezeText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphKabutoChamberWallPatternRight:
+	opentext
+	checkevent EVENT_SOLVED_KABUTO_PUZZLE
+	iffalse RuinsOfAlphKabutoChamberWallPatternLeft.NoWords
 	checkevent EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
 	iftrue .WallOpen
-	opentext
-	writetext RuinsOfAlphKabutoChamberWallPatternRightText
+	writetext RuinsOfAlphKabutoChamberWallPatternText
 	setval UNOWNWORDS_ESCAPE
 	special DisplayUnownWords
 	closetext
 	end
 
 .WallOpen:
-	opentext
 	writetext RuinsOfAlphKabutoChamberWallHoleText
 	waitbutton
 	closetext
 	end
-
-RuinsOfAlphKabutoChamberSkyfallTopMovement:
-	skyfall_top
-	step_end
 
 RuinsOfAlphKabutoChamberReceptionistText:
 	text "Welcome to this"
@@ -162,30 +221,33 @@ RuinsOfAlphKabutoChamberReceptionistText:
 	para "To the right is a"
 	line "description of the"
 	cont "#mon."
+	done
 
-	para "Scientists in the"
-	line "back are examining"
-
-	para "some newly found"
-	line "patterns."
+RuinsOfAlphKabutoChamberReceptionistTremorText:
+	text "Wha-What was that"
+	line "sudden shaking?"
+	
+	para "And those strange"
+	line "sounds?"
+	
+	para "And did the wall"
+	line "over there change?"
+	
+	para "This is all a bit"
+	line "too creepy for me!"
 	done
 
 RuinsOfAlphKabutoChamberScientistCrypticText:
-	text "Recently, strange,"
-	line "cryptic patterns"
-	cont "have appeared."
-
-	para "It's odd. They"
-	line "weren't here a"
-	cont "little while ago…"
-
-	para "You should take a"
-	line "look at the walls."
+	text "This part of the"
+	line "wall seems a bit"
+	cont "different than"
+	cont "the rest, but"
+	cont "I don't know why…"
 	done
 
 RuinsOfAlphKabutoChamberScientistHoleText:
-	text "Ah! Here's another"
-	line "huge hole!"
+	text "Ah! A huge hole"
+	line "appeared!"
 
 	para "It's big enough to"
 	line "go through!"
@@ -198,16 +260,24 @@ RuinsOfAlphKabutoChamberScientistTremorText:
 	para "But I'm more"
 	line "concerned about"
 	cont "this wall here…"
+	
+	para "Strange, cryptic"
+	line "patterns have"
+	cont "appeared!"
+	
+	para "What could this"
+	line "possibly mean…?"
 	done
 
-RuinsOfAlphKabutoChamberWallPatternLeftText:
+RuinsOfAlphKabutoChamberWallPatternText:
 	text "Patterns appeared"
 	line "on the walls…"
 	done
 
-RuinsOfAlphKabutoChamberWallPatternRightText:
-	text "Patterns appeared"
-	line "on the walls…"
+RuinsOfAlphKabutoChamberWallBreezeText:
+	text "There's a slight"
+	line "breeze coming from"
+	cont "somewhere…"
 	done
 
 RuinsOfAlphKabutoChamberWallHoleText:
@@ -229,14 +299,18 @@ RuinsOfAlphKabutoChamberDescriptionText:
 	line "scanned the area."
 	done
 
+KabutoPuzzleCompletedText:
+	text "The puzzle has"
+	line "already been"
+	cont "completed."
+	done
+
 RuinsOfAlphKabutoChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 2
 	warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 2
-	warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 4
-	warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 5
 	warp_event  4,  0, RUINS_OF_ALPH_KABUTO_ITEM_ROOM, 1
 
 	def_coord_events

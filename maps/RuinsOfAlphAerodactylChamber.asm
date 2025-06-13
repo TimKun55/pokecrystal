@@ -7,8 +7,11 @@ RuinsOfAlphAerodactylChamber_MapScripts:
 	callback MAPCALLBACK_TILES, RuinsOfAlphAerodactylChamberHiddenDoorsCallback
 
 RuinsOfAlphAerodactylChamberCheckWallScene:
+	checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+	iffalse .end
 	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
 	iftrue .OpenWall
+.end
 	end
 
 .OpenWall:
@@ -21,15 +24,16 @@ RuinsOfAlphAerodactylChamberNoopScene:
 RuinsOfAlphAerodactylChamberHiddenDoorsCallback:
 	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
 	iftrue .WallOpen
-	changeblock 4, 0, $2e ; closed wall
-.WallOpen:
 	checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
-	iffalse .FloorClosed
+	iffalse .NormalWalls
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+.WallOpen:
 	endcallback
 
-.FloorClosed:
-	changeblock 2, 2, $01 ; left floor
-	changeblock 4, 2, $02 ; right floor
+.NormalWalls:
+	changeblock 2, 0, $06 ; left full wall
+	changeblock 4, 0, $07 ; right full wall
 	endcallback
 
 RuinsOfAlphAerodactylChamberWallOpenScript:
@@ -46,6 +50,8 @@ RuinsOfAlphAerodactylChamberWallOpenScript:
 	end
 
 RuinsOfAlphAerodactylChamberPuzzle:
+	checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+	iftrue .CompletedPuzzle
 	refreshscreen
 	setval UNOWNPUZZLE_AERODACTYL
 	special UnownPuzzle
@@ -54,22 +60,48 @@ RuinsOfAlphAerodactylChamberPuzzle:
 	end
 
 .PuzzleComplete:
-	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	setevent EVENT_SOLVED_AERODACTYL_PUZZLE
-	setflag ENGINE_UNLOCKED_UNOWNS_O_TO_U
-	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
-	earthquake 30
-	showemote EMOTE_SHOCK, PLAYER, 15
-	changeblock 2, 2, $18 ; left hole
-	changeblock 4, 2, $19 ; right hole
-	reloadmappart
-	playsound SFX_STRENGTH
-	earthquake 80
-	applymovement PLAYER, RuinsOfAlphAerodactylChamberSkyfallTopMovement
-	playsound SFX_KINESIS
+	special FadeOutMusic
+	pause 16
+	playsound SFX_INTRO_UNOWN_1
 	waitsfx
-	pause 20
-	warpcheck
+	pause 24
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	pause 16
+	turnobject PLAYER, RIGHT
+	pause 16
+	turnobject PLAYER, DOWN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	pause 16
+	playsound SFX_INTRO_UNOWN_3
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	playsound SFX_INTRO_UNOWN_1
+	waitsfx
+	playsound SFX_INTRO_UNOWN_2
+	waitsfx
+	pause 16
+	cry UNOWN
+	playsound SFX_STRENGTH
+	earthquake 30
+	changeblock 2, 0, $2d ; left wall unown words
+	changeblock 4, 0, $2e ; right wall unown words
+	reloadmappart
+	pause 16
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, UP
+	special RestartMapMusic
+	end
+
+.CompletedPuzzle
+	opentext
+	writetext AerodactylPuzzleCompletedText
+	waitbutton
+	closetext
 	end
 
 RuinsOfAlphAerodactylChamberAncientReplica:
@@ -80,41 +112,47 @@ RuinsOfAlphAerodactylChamberDescriptionSign:
 
 RuinsOfAlphAerodactylChamberWallPatternLeft:
 	opentext
-	writetext RuinsOfAlphAerodactylChamberWallPatternLeftText
+	checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+	iffalse .NoWords
+	writetext RuinsOfAlphAerodactylChamberWallPatternText
 	setval UNOWNWORDS_LIGHT
 	special DisplayUnownWords
 	closetext
 	end
 
+.NoWords
+	writetext RuinsOfAlphAerodactylChamberWallBreezeText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphAerodactylChamberWallPatternRight:
+	opentext
+	checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+	iffalse RuinsOfAlphAerodactylChamberWallPatternLeft.NoWords
 	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
 	iftrue .WallOpen
-	opentext
-	writetext RuinsOfAlphAerodactylChamberWallPatternRightText
+	writetext RuinsOfAlphAerodactylChamberWallPatternText
 	setval UNOWNWORDS_LIGHT
 	special DisplayUnownWords
 	closetext
 	end
 
 .WallOpen:
-	opentext
 	writetext RuinsOfAlphAerodactylChamberWallHoleText
 	waitbutton
 	closetext
 	end
 
-RuinsOfAlphAerodactylChamberSkyfallTopMovement:
-	skyfall_top
-	step_end
-
-RuinsOfAlphAerodactylChamberWallPatternLeftText:
+RuinsOfAlphAerodactylChamberWallPatternText:
 	text "Patterns appeared"
 	line "on the walls…"
 	done
 
-RuinsOfAlphAerodactylChamberWallPatternRightText:
-	text "Patterns appeared"
-	line "on the walls…"
+RuinsOfAlphAerodactylChamberWallBreezeText:
+	text "There's a slight"
+	line "breeze coming from"
+	cont "somewhere…"
 	done
 
 RuinsOfAlphAerodactylChamberWallHoleText:
@@ -136,14 +174,18 @@ RuinsOfAlphAerodactylChamberDescriptionText:
 	line "fangs."
 	done
 
+AerodactylPuzzleCompletedText:
+	text "The puzzle has"
+	line "already been"
+	cont "completed."
+	done
+
 RuinsOfAlphAerodactylChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 4
 	warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 4
-	warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 8
-	warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 9
 	warp_event  4,  0, RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM, 1
 
 	def_coord_events

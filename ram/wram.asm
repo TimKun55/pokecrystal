@@ -3224,8 +3224,12 @@ wIcePath1FSceneID::                               db
 wOlivinePortPassageSceneID::                      db
 wVermilionPortPassageSceneID::                    db
 wAzaleaGymSceneID::                               db
+wRuinsOfAlphHoOhWordRoomSceneID::                 db
+wRuinsOfAlphKabutoWordRoomSceneID::               db
+wRuinsOfAlphOmanyteWordRoomSceneID::              db
+wRuinsOfAlphAerodactylWordRoomSceneID::           db
 
-	ds 25
+	ds 21
 
 ; fight counts
 
