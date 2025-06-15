@@ -266,10 +266,6 @@ CutFunction:
 	ld a, $80
 	ret
 
-UseCutText:
-	text_far _UseCutText
-	text_end
-
 CutNothingText:
 	text_far _CutNothingText
 	text_end
@@ -313,7 +309,7 @@ Script_CutFromMenu:
 
 Script_Cut:
 	callasm GetPartyNickname
-	writetext UseCutText
+	farwritetext _UseCutText
 	refreshmap
 	callasm CutDownTreeOrGrass
 	closetext
@@ -508,12 +504,16 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
-	writetext UsedSurfText ; "used SURF!"
+	farwritetext _UsedSurfText
 	waitbutton
 	closetext
 
-	callasm .stubbed_fn
-
+	setflag ENGINE_SURF_ACTIVE
+	clearflag ENGINE_HEADBUTT_ACTIVE
+	clearflag ENGINE_WHIRPOOL_ACTIVE
+	clearflag ENGINE_WATERFALL_ACTIVE
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
+AutoSurfScript:
 	readmem wSurfingPlayerState
 	writevar VAR_MOVEMENT
 
@@ -521,14 +521,6 @@ UsedSurfScript:
 	special PlayMapMusic
 	special SurfStartStep
 	end
-
-.stubbed_fn
-	farcall StubbedTrainerRankings_Surf
-	ret
-
-UsedSurfText:
-	text_far _UsedSurfText
-	text_end
 
 CantSurfText:
 	text_far _CantSurfText
@@ -650,6 +642,8 @@ TrySurfOW::
 	ret
 
 AskSurfScript:
+	checkflag ENGINE_SURF_ACTIVE
+	iftrue AutoSurfScript
 	opentext
 	writetext AskSurfText
 	yesorno
@@ -795,9 +789,16 @@ Script_WaterfallFromMenu:
 
 Script_UsedWaterfall:
 	callasm GetPartyNickname
-	writetext .UseWaterfallText
+	farwritetext _UseWaterfallText
 	waitbutton
 	closetext
+	setflag ENGINE_WATERFALL_ACTIVE
+	clearflag ENGINE_HEADBUTT_ACTIVE
+	clearflag ENGINE_SURF_ACTIVE
+	clearflag ENGINE_WHIRPOOL_ACTIVE
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
+Script_AutoWaterfall:
+	waitsfx
 	playsound SFX_BUBBLEBEAM
 .loop
 	applymovement PLAYER, .WaterfallStep
@@ -819,10 +820,6 @@ Script_UsedWaterfall:
 .WaterfallStep:
 	turn_waterfall UP
 	step_end
-
-.UseWaterfallText:
-	text_far _UseWaterfallText
-	text_end
 
 TryWaterfallOW::
 ; Step 1
@@ -871,6 +868,8 @@ Script_CantDoWaterfall:
 	text_end
 
 Script_AskWaterfall:
+	checkflag ENGINE_WATERFALL_ACTIVE
+	iftrue Script_AutoWaterfall
 	opentext
 	writetext .AskWaterfallText
 	yesorno
@@ -966,10 +965,6 @@ EscapeRopeOrDig:
 	ld a, $80
 	ret
 
-.UseDigText:
-	text_far _UseDigText
-	text_end
-
 .UseEscapeRopeText:
 	text_far _UseEscapeRopeText
 	text_end
@@ -987,7 +982,7 @@ EscapeRopeOrDig:
 .UsedDigScript:
 	refreshmap
 	special UpdateTimePals
-	writetext .UseDigText
+	farwritetext _UseDigText
 
 .UsedDigOrEscapeRopeScript:
 	waitbutton
@@ -1062,10 +1057,6 @@ TeleportFunction:
 	ld a, $80
 	ret
 
-.TeleportReturnText:
-	text_far _TeleportReturnText
-	text_end
-
 .CantUseTeleportText:
 	text_far _CantUseTeleportText
 	text_end
@@ -1073,7 +1064,7 @@ TeleportFunction:
 .TeleportScript:
 	refreshmap
 	special UpdateTimePals
-	writetext .TeleportReturnText
+	farwritetext _TeleportReturnText
 	pause 60
 	refreshmap
 	closetext
@@ -1281,10 +1272,6 @@ WhirlpoolFunction:
 	ld a, $80
 	ret
 
-UseWhirlpoolText:
-	text_far _UseWhirlpoolText
-	text_end
-
 TryWhirlpoolMenu:
 	call GetFacingTileCoord
 	ld c, a
@@ -1321,10 +1308,17 @@ Script_WhirlpoolFromMenu:
 
 Script_UsedWhirlpool:
 	callasm GetPartyNickname
-	writetext UseWhirlpoolText
+	farwritetext _UseWhirlpoolText
 	refreshmap
+
+	setflag ENGINE_WHIRPOOL_ACTIVE
+	clearflag ENGINE_HEADBUTT_ACTIVE
+	clearflag ENGINE_SURF_ACTIVE
+	clearflag ENGINE_WATERFALL_ACTIVE
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
+Script_AutoWhirlpool:
 	waitsfx
-	playsound SFX_SURF
+	playsound SFX_2_BOOPS
 	readvar VAR_FACING
 	if_equal UP, .Up
 	if_equal DOWN, .Down
@@ -1415,6 +1409,8 @@ Script_MightyWhirlpool:
 	text_end
 
 Script_AskWhirlpoolOW:
+	checkflag ENGINE_WHIRPOOL_ACTIVE
+	iftrue Script_AutoWhirlpool
 	opentext
 	writetext AskWhirlpoolText
 	yesorno
@@ -1447,23 +1443,21 @@ TryHeadbuttFromMenu:
 	ld a, $80
 	ret
 
-UseHeadbuttText:
-	text_far _UseHeadbuttText
-	text_end
-
-HeadbuttNothingText:
-	text_far _HeadbuttNothingText
-	text_end
-
 HeadbuttFromMenuScript:
 	refreshmap
 	special UpdateTimePals
 
 HeadbuttScript:
 	callasm GetPartyNickname
-	writetext UseHeadbuttText
+	farwritetext _UseHeadbuttText
 
-	refreshmap
+	setflag ENGINE_HEADBUTT_ACTIVE
+	clearflag ENGINE_SURF_ACTIVE
+	clearflag ENGINE_WHIRPOOL_ACTIVE
+	clearflag ENGINE_WATERFALL_ACTIVE
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
+AutoHeadbuttScript:
+	reanchormap
 	callasm ShakeHeadbuttTree
 
 	callasm TreeMonEncounter
@@ -1475,7 +1469,7 @@ HeadbuttScript:
 	end
 
 .no_battle
-	writetext HeadbuttNothingText
+	farwritetext _HeadbuttNothingText
 	waitbutton
 	closetext
 	end
@@ -1510,6 +1504,8 @@ TryHeadbuttOW::
 	ret
 
 AskHeadbuttScript:
+	checkflag ENGINE_HEADBUTT_ACTIVE
+	iftrue AutoHeadbuttScript
 	opentext
 	writetext AskHeadbuttText
 	yesorno
@@ -1574,7 +1570,14 @@ RockSmashScript:
 	callasm GetPartyNickname
 	writetext UseRockSmashText
 	closetext
-	special WaitSFX
+
+	setflag ENGINE_ROCK_SMASH_ACTIVE
+	clearflag ENGINE_HEADBUTT_ACTIVE
+	clearflag ENGINE_SURF_ACTIVE
+	clearflag ENGINE_WHIRPOOL_ACTIVE
+	clearflag ENGINE_WATERFALL_ACTIVE
+AutoRockSmashScript:
+	waitsfx
 	playsound SFX_STRENGTH
 	earthquake 84
 	applymovementlasttalked MovementData_RockSmash
@@ -1609,12 +1612,13 @@ AskRockSmashScript:
 	callasm HasRockSmash
 	ifequal 1, .no
 
+	checkflag ENGINE_ROCK_SMASH_ACTIVE
+	iftrue AutoRockSmashScript
 	opentext
 	writetext AskRockSmashText
 	yesorno
 	iftrue RockSmashScript
-	closetext
-	end
+
 .no
 	jumptext MaySmashText
 

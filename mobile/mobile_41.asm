@@ -337,11 +337,6 @@ StubbedTrainerRankings_Fly:
 	ld hl, sTrainerRankingFly
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Surf:
-	ret
-	ld hl, sTrainerRankingSurf
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_Waterfall:
 	ret
 	ld hl, sTrainerRankingWaterfall

@@ -131,6 +131,12 @@ EngineFlags:
 	engine_flag wDailyFlags1, DAILYFLAGS_BLAINE_REMATCH
 	engine_flag wDailyFlags1, DAILYFLAGS_BLUE_REMATCH
 	engine_flag wDailyFlags1, DAILYFLAGS_KIMONO_GIRL_SAKURA_REMATCH
+; Overworld states that get reset daily
+	engine_flag wDailyFlags1, DAILYFLAGS1_HEADBUTT_ACTIVE
+	engine_flag wDailyFlags1, DAILYFLAGS1_SURF_ACTIVE
+	engine_flag wDailyFlags1, DAILYFLAGS1_WHIRPOOL_ACTIVE
+	engine_flag wDailyFlags1, DAILYFLAGS1_WATERFALL_ACTIVE
+	engine_flag wDailyFlags1, DAILYFLAGS1_ROCK_SMASH_ACTIVE
 
 	engine_flag wDailyFlags2, DAILYFLAGS2_UNION_CAVE_LAPRAS_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_GOLDENROD_UNDERGROUND_GOT_HAIRCUT_F

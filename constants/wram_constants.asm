@@ -333,6 +333,12 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS_BLUE_REMATCH                     ; 17
 	; Trainer rematch flags
 	const DAILYFLAGS_KIMONO_GIRL_SAKURA_REMATCH       ; 18
+	; Overworld states that get reset daily
+	const DAILYFLAGS1_HEADBUTT_ACTIVE                 ; 19
+	const DAILYFLAGS1_SURF_ACTIVE                     ; 1a
+	const DAILYFLAGS1_WHIRPOOL_ACTIVE                 ; 1b
+	const DAILYFLAGS1_WATERFALL_ACTIVE                ; 1c
+	const DAILYFLAGS1_ROCK_SMASH_ACTIVE               ; 1d
 	
 ; wDailyFlags2::
 	const_def
