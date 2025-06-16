@@ -213,6 +213,16 @@ OW_GetNextEvoAttackByte:
 	inc hl
 	ret
 
+FieldMovePokepicScript:
+	readmem wOverworldMoveSpecies
+	reanchormap
+	pokepic 0
+	cry 0
+	waitsfx
+	closepokepic
+	refreshmap
+	end
+
 FieldMoveFailed:
 	ld hl, .CantUseItemText
 	call MenuTextboxBackup
@@ -308,9 +318,9 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	callasm GetPartyNickname
+	callasm PrepareOverworldMove
 	farwritetext _UseCutText
-	refreshmap
+	scall FieldMovePokepicScript
 	callasm CutDownTreeOrGrass
 	closetext
 	end
@@ -413,6 +423,9 @@ UseFlash:
 Script_UseFlash:
 	refreshmap
 	special UpdateTimePals
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
+	opentext
 	writetext UseFlashTextScript
 	callasm BlindingFlash
 	closetext
@@ -504,8 +517,10 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
+	callasm PrepareOverworldMove
 	farwritetext _UsedSurfText
 	waitbutton
+	scall FieldMovePokepicScript
 	closetext
 
 	setflag ENGINE_SURF_ACTIVE
@@ -513,7 +528,7 @@ UsedSurfScript:
 	clearflag ENGINE_WHIRPOOL_ACTIVE
 	clearflag ENGINE_WATERFALL_ACTIVE
 	clearflag ENGINE_ROCK_SMASH_ACTIVE
-AutoSurfScript:
+.finishsurf
 	readmem wSurfingPlayerState
 	writevar VAR_MOVEMENT
 
@@ -521,6 +536,12 @@ AutoSurfScript:
 	special PlayMapMusic
 	special SurfStartStep
 	end
+
+AutoSurfScript:
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
+	closetext
+	sjump UsedSurfScript.finishsurf
 
 CantSurfText:
 	text_far _CantSurfText
@@ -725,6 +746,10 @@ FlyFunction:
 	refreshmap
 	callasm HideSprites
 	special UpdateTimePals
+
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
+
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -788,16 +813,17 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
-	callasm GetPartyNickname
+	callasm PrepareOverworldMove
 	farwritetext _UseWaterfallText
 	waitbutton
+	scall FieldMovePokepicScript
 	closetext
 	setflag ENGINE_WATERFALL_ACTIVE
 	clearflag ENGINE_HEADBUTT_ACTIVE
 	clearflag ENGINE_SURF_ACTIVE
 	clearflag ENGINE_WHIRPOOL_ACTIVE
 	clearflag ENGINE_ROCK_SMASH_ACTIVE
-Script_AutoWaterfall:
+.finishwaterfall
 	waitsfx
 	playsound SFX_BUBBLEBEAM
 .loop
@@ -820,6 +846,12 @@ Script_AutoWaterfall:
 .WaterfallStep:
 	turn_waterfall UP
 	step_end
+
+Script_AutoWaterfall:
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
+	closetext
+	sjump Script_UsedWaterfall.finishwaterfall
 
 TryWaterfallOW::
 ; Step 1
@@ -982,6 +1014,8 @@ EscapeRopeOrDig:
 .UsedDigScript:
 	refreshmap
 	special UpdateTimePals
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
 	farwritetext _UseDigText
 
 .UsedDigOrEscapeRopeScript:
@@ -1064,8 +1098,10 @@ TeleportFunction:
 .TeleportScript:
 	refreshmap
 	special UpdateTimePals
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
 	farwritetext _TeleportReturnText
-	pause 60
+	pause 16
 	refreshmap
 	closetext
 	playsound SFX_WARP_TO
@@ -1121,13 +1157,14 @@ StrengthFunction:
 SetStrengthFlag:
 	ld hl, wBikeFlags
 	set BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
+PrepareOverworldMove:
 	ld a, [wCurPartyMon]
 	ld e, a
 	ld d, 0
 	ld hl, wPartySpecies
 	add hl, de
 	ld a, [hl]
-	ld [wStrengthSpecies], a
+	ld [wOverworldMoveSpecies], a
 	call GetPartyNickname
 	ret
 
@@ -1138,9 +1175,8 @@ Script_StrengthFromMenu:
 Script_UsedStrength:
 	callasm SetStrengthFlag
 	writetext .UseStrengthText
-	readmem wStrengthSpecies
-	cry 0 ; plays [wStrengthSpecies] cry
-	pause 3
+	waitbutton
+	scall FieldMovePokepicScript
 	writetext .MoveBoulderText
 	closetext
 	end
@@ -1307,16 +1343,17 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
-	callasm GetPartyNickname
+	callasm PrepareOverworldMove
 	farwritetext _UseWhirlpoolText
-	refreshmap
+	scall FieldMovePokepicScript
+	closetext
 
 	setflag ENGINE_WHIRPOOL_ACTIVE
 	clearflag ENGINE_HEADBUTT_ACTIVE
 	clearflag ENGINE_SURF_ACTIVE
 	clearflag ENGINE_WATERFALL_ACTIVE
 	clearflag ENGINE_ROCK_SMASH_ACTIVE
-Script_AutoWhirlpool:
+.finishwhirlpool
 	waitsfx
 	playsound SFX_2_BOOPS
 	readvar VAR_FACING
@@ -1357,6 +1394,12 @@ Script_AutoWhirlpool:
 	slow_step_left
 	slow_step_left
 	step_end
+
+Script_AutoWhirlpool:
+	callasm PrepareOverworldMove
+	scall FieldMovePokepicScript
+	closetext
+	sjump Script_UsedWhirlpool.finishwhirlpool
 
 TryWhirlpoolOW::
 ; Step 1
@@ -1448,15 +1491,16 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
-	callasm GetPartyNickname
+	callasm PrepareOverworldMove
 	farwritetext _UseHeadbuttText
+	scall FieldMovePokepicScript
 
 	setflag ENGINE_HEADBUTT_ACTIVE
 	clearflag ENGINE_SURF_ACTIVE
 	clearflag ENGINE_WHIRPOOL_ACTIVE
 	clearflag ENGINE_WATERFALL_ACTIVE
 	clearflag ENGINE_ROCK_SMASH_ACTIVE
-AutoHeadbuttScript:
+.finishheadbutt
 	reanchormap
 	callasm ShakeHeadbuttTree
 
@@ -1473,6 +1517,13 @@ AutoHeadbuttScript:
 	waitbutton
 	closetext
 	end
+
+AutoHeadbuttScript:
+	callasm PrepareOverworldMove
+	readmem wOverworldMoveSpecies
+	cry 0 ; plays [wOverworldMoveSpecies] cry
+	pause 3
+	sjump HeadbuttScript.finishheadbutt
 
 TryHeadbuttOW::
 ; Step 1
@@ -1567,8 +1618,9 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
-	callasm GetPartyNickname
-	writetext UseRockSmashText
+	callasm PrepareOverworldMove
+	farwritetext _UseRockSmashText
+	scall FieldMovePokepicScript
 	closetext
 
 	setflag ENGINE_ROCK_SMASH_ACTIVE
@@ -1576,7 +1628,7 @@ RockSmashScript:
 	clearflag ENGINE_SURF_ACTIVE
 	clearflag ENGINE_WHIRPOOL_ACTIVE
 	clearflag ENGINE_WATERFALL_ACTIVE
-AutoRockSmashScript:
+.finishrocksmash
 	waitsfx
 	playsound SFX_STRENGTH
 	earthquake 84
@@ -1600,13 +1652,16 @@ AutoRockSmashScript:
 .no_item
 	end
 
+AutoRockSmashScript:
+	callasm PrepareOverworldMove
+	readmem wOverworldMoveSpecies
+	cry 0 ; plays [wOverworldMoveSpecies] cry
+	pause 3
+	sjump RockSmashScript.finishrocksmash
+
 MovementData_RockSmash:
 	rock_smash 10
 	step_end
-
-UseRockSmashText:
-	text_far _UseRockSmashText
-	text_end
 
 AskRockSmashScript:
 	callasm HasRockSmash
@@ -2047,7 +2102,7 @@ TryCutOW::
 
 AskCutScript:
 	opentext
-	writetext AskCutText
+	farwritetext _AskCutText
 	yesorno
 	iffalse .declined
 	callasm .CheckMap
@@ -2064,10 +2119,6 @@ AskCutScript:
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
-
-AskCutText:
-	text_far _AskCutText
-	text_end
 
 CantCutScript:
 	jumptext CanCutText

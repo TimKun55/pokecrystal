@@ -8,7 +8,8 @@ SweetScentFromMenu:
 .SweetScent:
 	refreshmap
 	special UpdateTimePals
-	callasm GetPartyNickname
+	callasm PrepareOverworldMove
+	farscall FieldMovePokepicScript
 	writetext UseSweetScentText
 	waitbutton
 	callasm SweetScentEncounter
