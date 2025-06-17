@@ -95,9 +95,9 @@ BillsPC_LoadUI:
 	call LoadFontsExtra
 
 	; Load relevant parts from exp bar gfx
-	ld de, ExpBarGFX + $0c tiles
-	ld hl, vTiles2 tile $7c
-	lb bc, BANK(ExpBarGFX), 3
+	ld de, ExpBarGFX
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(ExpBarGFX), 5
 	call Get2bppViaHDMA
 
 	ld a, 1

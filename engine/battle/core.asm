@@ -4764,9 +4764,9 @@ PrintPlayerHUD:
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 ; place status tiles:
 	hlcoord 11, 8 ; status icon tile 1
-	ld [hl], $5c
+	ld [hl], $78
 	inc hl
-	ld [hl], $5d
+	ld [hl], $79
 .status_done
 	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
@@ -4837,9 +4837,9 @@ DrawEnemyHUD:
 	and a
 	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
 	hlcoord 2, 1
-	ld [hl], $5e ; enemy status left half
+	ld [hl], $7a ; enemy status left half
 	inc hl
-	ld [hl], $5f ; enemy status right half
+	ld [hl], $7b ; enemy status right half
 .status_done
 	hlcoord 4, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
@@ -8187,7 +8187,7 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $7a ; full bar
+	ld a, $6a ; full bar
 	ld [hli], a
 	dec c
 	jr z, .finish
@@ -8200,10 +8200,10 @@ PlaceExpBar:
 	push af
 	hlcoord 9, 0 ; coord of HP bar label, usually 0,9
 	ld a, [hl]
-	ld b, $72
+	ld b, $62
 	cp $e8 ; if we are in summary screen
 	jr nz, .inbattle
-	ld b, $72
+	ld b, $62
 .inbattle
 	pop af
 	pop hl
@@ -8211,11 +8211,11 @@ PlaceExpBar:
 	jr .skip
 
 .loop2
-	ld a, $72 ; empty bar
+	ld a, $62 ; empty bar
 
 .skip
 	ld [hli], a
-	ld a, $72 ; empty bar
+	ld a, $62 ; empty bar
 	dec c
 	jr nz, .loop2
 

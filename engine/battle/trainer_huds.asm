@@ -110,7 +110,7 @@ DrawPlayerHUDBorder:
 
 .tiles
 	db $7f ; right side ; (no vertical line)
-	db $7b ; bottom right ; 6b (exp bar cap)
+	db $6b ; bottom right ; (exp bar cap)
 	db $6d ; bottom left
 	db $62 ; bottom side
 .tiles_end
@@ -158,7 +158,7 @@ DrawEnemyHUDBorder:
 	call CheckCaughtMon
 	ret z
 	hlcoord 1, 1 ; caught ball
-	ld [hl], $7d
+	ld [hl], $73
 	ret
 
 PlaceHUDBorderTiles:

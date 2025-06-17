@@ -369,13 +369,13 @@ ChooseMoveToLearn:
 	call ClearBox
 
 	; This replaces the tile using the identifier
-	; of "$6e" with the fourteenth tile of the
+	; of "$72" with the fourteenth tile of the
 	; "FontBattleExtra gfx" font. Also, only 1
 	; tile will be loaded as loading the entire
 	; "FontBattleExtra gfx" font will overwrite
 	; the "UP" arrow in the menu.
 	ld de, FontBattleExtra + 14 tiles
-	ld hl, vTiles2 tile $6e
+	ld hl, vTiles2 tile $72
 	lb bc, BANK(FontBattleExtra), 1
 	call Get2bppViaHDMA
 

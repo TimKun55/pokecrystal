@@ -51,7 +51,7 @@ _LoadFontsBattleExtra::
 _LoadExpBarGFX::
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $70
-	lb bc, BANK(ExpBarGFX), 15
+	lb bc, BANK(ExpBarGFX), 5
 	call Get2bppViaHDMA
 	jr LoadFrame
 	

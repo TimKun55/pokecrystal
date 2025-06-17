@@ -657,7 +657,7 @@ LoadPinkPage:
 	hlcoord 11, 16
 	ld [hl], $71 ; right exp bar label
 	hlcoord 19, 16
-	ld [hl], $7b ; exp bar end cap
+	ld [hl], $6b ; exp bar end cap
 	ret
 
 .PrintNextLevel:
