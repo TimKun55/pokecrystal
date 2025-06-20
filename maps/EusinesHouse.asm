@@ -27,7 +27,7 @@ CeladonEusine:
 	waitbutton
 	closetext
 	readvar VAR_FACING
-	ifequal UP, .PathClear
+	ifnotequal UP, .PathClear
 	applymovement PLAYER, .PlayerStepsAsideMovement
 	turnobject PLAYER, RIGHT
 .PathClear:

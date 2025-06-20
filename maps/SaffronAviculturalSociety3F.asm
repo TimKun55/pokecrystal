@@ -177,7 +177,7 @@ AviculturalSociety3FBookshelf1Text:
 	para "As a result, it"
 	line "chooses to live"
 	cont "out of sight deep"
-	cont "under the sea.'"
+	cont "under the sea."
 	done
 
 AviculturalSociety3FBookshelf2Text:
