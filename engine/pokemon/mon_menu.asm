@@ -1283,6 +1283,20 @@ SetUpMoveScreenBG:
 	pop hl
 	hlcoord 5, 0
 	call PrintLevel
+	
+	ld a, TEMPMON
+	ld [wMonType], a
+	callfar GetGender
+	ld a, " "
+	jr c, .got_gender
+	ld a, "<MALE>"
+	jr nz, .got_gender
+	ld a, "<FEMALE>"
+
+.got_gender
+	hlcoord 9, 0
+	ld [hl], a
+
 	ld hl, wPlayerHPPal
 	call SetHPPal
 	ld b, SCGB_MOVE_LIST

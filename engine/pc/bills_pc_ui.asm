@@ -166,9 +166,15 @@ BillsPC_LoadUI:
 	dec [hl]
 
 	; Shiny star
-	ld de, SummaryScreenPageTilesGFX + 14 tiles
+	ld de, SummaryScreenPageTilesGFX + 26 tiles
 	ld hl, vTiles2 tile $43
 	lb bc, BANK(SummaryScreenPageTilesGFX), 1
+	call Get2bpp
+
+	; Gender symbols
+	ld de, SummaryScreenPageTilesGFX + 1 tiles
+	ld hl, vTiles2 tile $75
+	lb bc, BANK(SummaryScreenPageTilesGFX), 2
 	call Get2bpp
 
 	; Box frame tiles and Pokérus symbol
@@ -1187,10 +1193,10 @@ _GetCursorMon:
 	newfarcall GetGender
 	hlcoord 4, 8
 	jr c, .genderless
-	ld a, "♂"
+	ld a, "<MALE>"
 	jr nz, .male
 	; female
-	ld a, "♀"
+	ld a, "<FEMALE>"
 .male
 	ld [hl], a
 .genderless

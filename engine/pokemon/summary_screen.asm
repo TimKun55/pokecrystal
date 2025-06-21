@@ -340,9 +340,8 @@ SummaryScreen_JoypadAction:
 	jr .load_mon
 
 .a_button
-	ld a, c
-	cp ORANGE_PAGE ; last page
-	jr z, .b_button
+	ret
+	
 .d_right
 	inc c
 	ld a, ORANGE_PAGE ; last page
@@ -449,9 +448,9 @@ SummaryScreen_InitUpperHalf:
 	farcall GetGender
 	pop hl
 	ret c
-	ld a, "♂"
+	ld a, $32 ; "♂"
 	jr nz, .got_gender
-	ld a, "♀"
+	ld a, $33 ;  "♀"
 .got_gender
 	ld [hl], a
 	ret
@@ -578,8 +577,8 @@ LoadPinkPage:
 	ld a, b
 	and $f0
 	jr z, .NotImmuneToPkrs
-	hlcoord 19, 1
-	ld [hl], "." ; Pokérus immunity dot
+	hlcoord 2, 14
+	ld [hl], $36 ; Pokérus immunity face
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
@@ -609,9 +608,12 @@ LoadPinkPage:
 	
 	jr .done_status
 .HasPokerus:
-	ld de, .PkrsStr
 	hlcoord 1, 13
-	call PlaceString
+	ld [hl], $37 ; left pkrs label
+	hlcoord 2, 13
+	ld [hl], $38 ; middle pkrs label
+	hlcoord 3, 13
+	ld [hl], $39 ; right pkrs label
 	jr .NotImmuneToPkrs
 .StatusOK:
 	hlcoord 7, 12
@@ -718,9 +720,6 @@ LoadPinkPage:
 
 .ToStr:
 	db "to@"
-
-.PkrsStr:
-	db "#rus@"
 
 LoadGreenPage:
 	ld de, .Item
@@ -832,7 +831,7 @@ OTString:
 
 SummaryScreen_PrintHappiness:
 	hlcoord 1, 16
-	ld [hl], $34 ; heart icon
+	ld [hl], $35 ; heart icon
 	
 	hlcoord 3, 16
 	lb bc, 1, 3
@@ -1410,16 +1409,16 @@ SummaryScreen_AnimateEgg:
 
 SummaryScreen_LoadPageIndicators:
 	hlcoord 11, 5
-	ld a, $42 ; " " " "
+	ld a, $43 ; " " " "
 	call .load_square
 	hlcoord 13, 5
-	ld a, $36 ; first of 4 small square tiles
+	ld a, $3a ; first of 4 small square tiles
 	call .load_square
 	hlcoord 15, 5
-	ld a, $42 ; " " " "
+	ld a, $43 ; " " " "
 	call .load_square
 	hlcoord 17, 5
-	ld a, $36 ; " " " "
+	ld a, $3a ; " " " "
 	call .load_square
 	ld a, c
 	cp PINK_PAGE
@@ -1434,7 +1433,7 @@ SummaryScreen_LoadPageIndicators:
 	; must be ORANGE_PAGE
 	hlcoord 17, 5
 .load_highlighted_square
-	ld a, $3a ; first of 4 large square tiles
+	ld a, $3e ; first of 4 large square tiles
 .load_square
 	push bc
 	ld [hli], a
@@ -1449,7 +1448,7 @@ SummaryScreen_LoadPageIndicators:
 	pop bc
 	ret
 .load_highlighted_square_alt
-	ld a, $46 ; first of 4 large square tiles, alternate Gray pixels for use of 3rd color slot
+	ld a, $47 ; first of 4 large square tiles, alternate Gray pixels for use of 3rd color slot
 	jr .load_square
 
 CopyNickname:

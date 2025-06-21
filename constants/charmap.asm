@@ -48,8 +48,12 @@
 	charmap " ",         $7f ; gfx/frames/space.png
 
 	; needed for SummaryScreen_PlaceShinyIcon and PrintPartyMonPage1
-	charmap "⁂",         $3f ; gfx/summary/summary_tiles.png, tile 14
-	charmap "<DEX_⁂>",   $64 ; gfx/summary/summary_tiles.png, tile 14, VRAM0
+	charmap "⁂",         $34 ; gfx/summary/summary_tiles.png, tile 3
+	charmap "<DEX_⁂>",   $64 ; gfx/summary/summary_tiles.png, tile 3, VRAM0
+	
+	; from summary_tiles - coloured gender icons
+	charmap "<MALE>",     $75
+	charmap "<FEMALE>",   $76
 
 ; Actual characters (from gfx/font/font.png)
 

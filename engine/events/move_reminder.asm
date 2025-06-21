@@ -507,7 +507,7 @@ ChooseMoveToLearn:
 	; This prints the pp gfx before the move's pp.
 	ld bc, 6
 	add hl, bc
-	ld a, $3e
+	ld a, $42
 	ld [hli], a
 	ld [hl], a
 	ret

@@ -229,7 +229,7 @@ PlacePartyMonLevel:
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 8, 2
+	hlcoord 7, 2
 .loop
 	push bc
 	push hl
@@ -446,7 +446,7 @@ PlacePartyMonGender:
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 12, 2
+	hlcoord 10, 2
 .loop
 	push bc
 	push hl
@@ -480,13 +480,13 @@ PlacePartyMonGender:
 	ret
 
 .male
-	db "♂…Male@"
+	db "<MALE>@"
 
 .female
-	db "♀…Female@"
+	db "<FEMALE>@"
 
 .unknown
-	db "…Unknown@"
+	db " @"
 
 PlacePartyMonMobileBattleSelection:
 	ld a, [wPartyCount]

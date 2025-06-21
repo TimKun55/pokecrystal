@@ -53,6 +53,10 @@ _LoadExpBarGFX::
 	ld hl, vTiles2 tile $70
 	lb bc, BANK(ExpBarGFX), 5
 	call Get2bppViaHDMA
+	ld de, SummaryScreenPageTilesGFX + 1 tiles
+	ld hl, vTiles2 tile $75
+	lb bc, BANK(SummaryScreenPageTilesGFX), 3
+	call Get2bppViaHDMA
 	jr LoadFrame
 	
 LoadFrame:

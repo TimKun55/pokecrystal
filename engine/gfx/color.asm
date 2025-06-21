@@ -380,6 +380,13 @@ Unused_CheckShininess:
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
 	call CopyFourPalettes
+
+	ld hl, PartyMenuGenderPalette
+	ld de, wBGPals1 palette 0
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	
 	call InitPartyMenuOBPals
 	call WipeAttrmap
 	ret
@@ -1729,6 +1736,9 @@ INCLUDE "gfx/summary/party_menu_bg_mobile.pal"
 
 PartyMenuBGPalette:
 INCLUDE "gfx/summary/party_menu_bg.pal"
+
+PartyMenuGenderPalette:
+INCLUDE "gfx/summary/party_menu_gender.pal"
 
 BillsPC_ThemePals:
 	table_width PAL_COLOR_SIZE * 4, BillsPC_ThemePals

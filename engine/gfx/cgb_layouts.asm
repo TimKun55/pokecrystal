@@ -149,6 +149,9 @@ _CGB_FinishBattleScreenLayout:
 	hlcoord 1, 1, wAttrmap
 	ld a, PAL_BATTLE_BG_EXP
 	ld [hl], a
+	hlcoord 8, 1, wAttrmap
+	ld a, PAL_BATTLE_BG_EXP
+	ld [hl], a
 	hlcoord 10, 7, wAttrmap
 	lb bc, 5, 10
 	ld a, PAL_BATTLE_BG_PLAYER_HP
@@ -157,6 +160,9 @@ _CGB_FinishBattleScreenLayout:
 	lb bc, 1, 7
 	ld a, PAL_BATTLE_BG_EXP
 	call FillBoxCGB
+	hlcoord 18, 8, wAttrmap
+	ld a, PAL_BATTLE_BG_EXP
+	ld [hl], a
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
 	ld a, PAL_BATTLE_BG_TEXT
@@ -229,7 +235,7 @@ Mobile_InitPartyMenuBGPal7:
 
 InitPartyMenuBGPal0:
 	farcall Function100dc0
-	ld hl, PartyMenuBGPalette
+	ld hl, PartyMenuGenderPalette
 	jr nc, .not_mobile
 	ld hl, PartyMenuBGMobilePalette
 .not_mobile
@@ -299,6 +305,9 @@ _CGB_SummaryScreenHPPals:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
+	ld hl, ExpBarPalette
+	call LoadPalette_White_Col1_Col2_Black ; BG_5
+
 	call LoadSummaryScreenStatusIconPalette
 
 ; Load Pokemon's Type Palette(s)
@@ -345,6 +354,12 @@ _CGB_SummaryScreenHPPals:
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
 	ld a, $4 ; blue & orange box palette
 	call FillBoxCGB
+
+; gender icon
+	hlcoord 18, 0, wAttrmap
+	ld bc, 1
+	ld a, $5 ; gender palette
+	call ByteFill
 
 ; mon status
 	hlcoord 7, 12, wAttrmap
@@ -749,6 +764,15 @@ BillsPC_PreviewTheme:
 	ld de, wBGPals1 palette 3
 	ld c, 1 * 2
 	call LoadHLBytesIntoDE
+	
+	ld hl, ExpBarPalette
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld de, wBGPals1 palette 0 + 2 ; slot 2 of pal 0
+	ld c, 4 ; 2 colors (4 bytes)
+	call LoadCPaletteBytesFromHLIntoDE
+	
 	ld a, [wBillsPC_ApplyThemePals]
 	and a
 	jr nz, .apply_pals
@@ -1036,7 +1060,7 @@ _CGB_PartyMenu:
 	ld hl, PalPacket_PartyMenu + 1
 	call CopyFourPalettes
 	call InitPartyMenuBGPal0
-	call InitPartyMenuBGPal7
+	call InitPartyMenuBGPal7	
 	call InitPartyMenuOBPals
 	call InitPartyMenuStatusPals ; this is the new function added in engine\gfx\color.asm
 
@@ -1573,6 +1597,9 @@ _CGB_MoveList:
 	ld c, 2 ; 1 color (2 bytes)
 	call LoadCPaletteBytesFromHLIntoDE
 
+	ld hl, ExpBarPalette
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
+
 ; Type and Category tiles
 	hlcoord 11, 12, wAttrmap
 	ld bc, 8 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
@@ -1585,6 +1612,11 @@ _CGB_MoveList:
 	xor a ; pal 0, default palette
 	set 5, a ; flip on x axis
 	call ByteFill	
+
+	hlcoord 9, 0, wAttrmap
+	ld bc, 1
+	ld a, $3
+	call ByteFill
 	
 	call ApplyAttrmap
 	call ApplyPals
