@@ -1499,7 +1499,8 @@
 	const EVENT_MT_SILVER_PEAK_FULL_RESTORE
 	const EVENT_OLIVINE_LIGHTHOUSE_ELEVATOR_SAILOR
 	const EVENT_OLIVINE_LIGHTHOUSE_6F_VISITORS
-; Unused: next 61 events
+	const EVENT_ROUTE_39_FARM_MON
+; Unused: next 60 events
 
 	const_next 1800
 ; Kanto people

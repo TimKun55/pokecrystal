@@ -122,7 +122,7 @@ ENDM
 	connection south, Route34, ROUTE_34, 4
 
 	map_attributes OlivineCity, OLIVINE_CITY, $25, NORTH | WEST
-	connection north, Route39, ROUTE_39, 5
+	connection north, Route39, ROUTE_39, 4
 	connection west, Route40, ROUTE_40, 9
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, SOUTH | WEST | EAST
@@ -198,7 +198,7 @@ ENDM
 	connection east, EcruteakCity, ECRUTEAK_CITY, -11
 
 	map_attributes Route39, ROUTE_39, $05, SOUTH | EAST
-	connection south, OlivineCity, OLIVINE_CITY, -5
+	connection south, OlivineCity, OLIVINE_CITY, -4
 	connection east, Route38, ROUTE_38, 0
 
 	map_attributes Route40, ROUTE_40, $25, SOUTH | EAST

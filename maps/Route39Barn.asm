@@ -2,11 +2,32 @@
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
+	const ROUTE39BARN_MILTANK1
+	const ROUTE39BARN_MILTANK2
+	const ROUTE39BARN_MILTANK3
+	const ROUTE39BARN_MILTANK4
 
 Route39Barn_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route39BarnFarmPokemon
+
+Route39BarnFarmPokemon:
+	checktime NITE
+	iffalse .MiltankDisappear
+	appear ROUTE39BARN_MILTANK1
+	appear ROUTE39BARN_MILTANK2
+	appear ROUTE39BARN_MILTANK3
+	appear ROUTE39BARN_MILTANK4
+	endcallback	
+
+.MiltankDisappear
+	disappear ROUTE39BARN_MILTANK1
+	disappear ROUTE39BARN_MILTANK2
+	disappear ROUTE39BARN_MILTANK3
+	disappear ROUTE39BARN_MILTANK4
+	endcallback
 
 Route39BarnTwin1Script:
 	faceplayer
@@ -125,6 +146,18 @@ MoomooScript:
 	closetext
 	end
 
+Route39BarnMiltank:
+	opentext
+	writetext Route39BarnMiltankText
+	cry MILTANK
+	waitbutton
+	refreshscreen
+	pokepic MILTANK
+	waitbutton
+	closepokepic
+	closetext
+	end
+
 Route39BarnTwinMoomooIsSickText:
 	text "Moomoo is sick…"
 
@@ -186,18 +219,26 @@ Route39BarnRefusedBerryText:
 	para "Miltank looks sad."
 	done
 
+Route39BarnMiltankText:
+	text "Miltank: Mooo!"
+	done
+
 Route39Barn_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, ROUTE_39, 1
-	warp_event  4,  7, ROUTE_39, 1
+	warp_event  6,  7, ROUTE_39, 1
+	warp_event  7,  7, ROUTE_39, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
-	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
-	object_event  3,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  5,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
+	object_event  7,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
+	object_event  6,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  0,  2, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMiltank, EVENT_ROUTE_39_FARM_MON
+	object_event  2,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMiltank, EVENT_ROUTE_39_FARM_MON
+	object_event 11,  4, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMiltank, EVENT_ROUTE_39_FARM_MON
+	object_event 12,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMiltank, EVENT_ROUTE_39_FARM_MON

@@ -66,11 +66,9 @@ OlivineCityLighthouseNiteMarketPlaceStalls:
 	endcallback
 
 .MarketPlaceAppear:
-	changeblock 10, 20, $d7 ; Market, small
-	changeblock 16, 18, $d8 ; Market, left-up
-	changeblock 16, 20, $d9 ; Market, left-down
-	changeblock 20, 18, $da ; Market, right-up
-	changeblock 20, 20, $db ; Market, right-down
+	changeblock 10, 20, $d7 ; Market
+	changeblock 16, 20, $d7 ; Market
+	changeblock 20, 20, $d8 ; Market
 	sjump .continuecheck
 
 .LighthouseNite:
@@ -484,13 +482,13 @@ OlivineCity_MapEvents:
 	bg_event 24, 21, BGEVENT_READ, OlivineCityMartSign
 
 	def_object_events
-	object_event 25, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
+	object_event 25, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 19, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
-	object_event 19, 23, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	object_event 19, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event  6, 25, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailorTutorScript, -1
 	object_event 10, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk1, EVENT_OLIVINE_MARKET_CLERK_1
-	object_event 16, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk2, EVENT_OLIVINE_MARKET_CLERK_2
-	object_event 21, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk3, EVENT_OLIVINE_MARKET_CLERK_3
+	object_event 16, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk2, EVENT_OLIVINE_MARKET_CLERK_2
+	object_event 21, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk3, EVENT_OLIVINE_MARKET_CLERK_3
 	object_event 11, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanM, EVENT_OLIVINE_MARKET_CUSTOMERS
 	object_event 15, 17, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanF, EVENT_OLIVINE_MARKET_CUSTOMERS
