@@ -562,6 +562,7 @@ Route43_MapEvents:
 	warp_event  9, 51, ROUTE_43_MAHOGANY_GATE, 1
 	warp_event 10, 51, ROUTE_43_MAHOGANY_GATE, 2
 	warp_event 17, 35, ROUTE_43_GATE, 3
+	warp_event 18, 35, ROUTE_43_GATE, 4
 	warp_event 17, 31, ROUTE_43_GATE, 1
 	warp_event 18, 31, ROUTE_43_GATE, 2
 

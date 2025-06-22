@@ -450,6 +450,7 @@ Route35_MapEvents:
 	warp_event  9, 33, ROUTE_35_GOLDENROD_GATE, 1
 	warp_event 10, 33, ROUTE_35_GOLDENROD_GATE, 2
 	warp_event  3,  5, ROUTE_35_NATIONAL_PARK_GATE, 3
+	warp_event  4,  5, ROUTE_35_NATIONAL_PARK_GATE, 4
 
 	def_coord_events
 

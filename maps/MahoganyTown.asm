@@ -257,6 +257,7 @@ MahoganyTown_MapEvents:
 	warp_event  6, 13, MAHOGANY_GYM, 1
 	warp_event 15, 13, MAHOGANY_POKECENTER_1F, 1
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
+	warp_event 10,  1, ROUTE_43_MAHOGANY_GATE, 4
 	warp_event  3,  5, MAHOGANY_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events

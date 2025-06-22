@@ -377,6 +377,7 @@ Route29_MapEvents:
 
 	def_warp_events
 	warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3
+	warp_event 28,  1, ROUTE_29_ROUTE_46_GATE, 4	
 
 	def_coord_events
 	coord_event 53,  8, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1

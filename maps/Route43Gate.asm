@@ -244,10 +244,10 @@ Route43Gate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, ROUTE_43, 4
-	warp_event  5,  0, ROUTE_43, 5
+	warp_event  4,  0, ROUTE_43, 5
+	warp_event  5,  0, ROUTE_43, 6
 	warp_event  4,  7, ROUTE_43, 3
-	warp_event  5,  7, ROUTE_43, 3
+	warp_event  5,  7, ROUTE_43, 4
 
 	def_coord_events
 

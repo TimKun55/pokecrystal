@@ -328,6 +328,7 @@ Route40_MapEvents:
 
 	def_warp_events
 	warp_event  9,  5, ROUTE_40_BATTLE_TOWER_GATE, 1
+	warp_event 10,  5, ROUTE_40_BATTLE_TOWER_GATE, 2
 
 	def_coord_events
 
