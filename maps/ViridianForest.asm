@@ -19,7 +19,7 @@ ViridianForest_MapScripts:
 ViridianForestNoTreeCallBack:
 	checkevent EVENT_KANTO_ROCKET_DISBAND
 	iffalse .end
-	changeblock 6, 6, $59 ; cleared tree
+	changeblock 4, 6, $59 ; cleared tree
 .end
 	endcallback
 
@@ -239,7 +239,7 @@ ViridianForest_MapEvents:
 
 	def_object_events
 	object_event 39, 30, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherRob, -1
-	object_event 10, 16, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherEd, -1
+	object_event  8, 16, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherEd, -1
 	object_event 21,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDoug, -1
 	object_event 10, 33, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacMatt, -1
 	object_event 36, 10, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacTobi, -1
