@@ -83,6 +83,7 @@ Route1_MapEvents:
 
 	def_warp_events
 	warp_event  9,  1, ROUTE_1_VIRIDIAN_GATE, 3
+	warp_event 10,  1, ROUTE_1_VIRIDIAN_GATE, 4
 
 	def_coord_events
 

@@ -1,7 +1,8 @@
 	object_const_def
+	const ROUTE6_OFFICER1
+	const ROUTE6_OFFICER2
 	const ROUTE6_POKEFAN_M1
 	const ROUTE6_POKEFAN_M2
-	const ROUTE6_POKEFAN_M3
 	const ROUTE6_LADY_LIA
 	const ROUTE6_GENTLEMAN
 	const ROUTE6_YOUNGSTER
@@ -79,8 +80,8 @@ TrainerBeautyTheresa:
 	closetext
 	end
 
-Route6PokefanMScript:
-	jumptextfaceplayer Route6PokefanMText
+Route6OfficerScript:
+	jumptextfaceplayer Route6OfficerText
 
 Route6UndergroundPathSign:
 	jumptext Route6UndergroundPathSignText
@@ -88,7 +89,7 @@ Route6UndergroundPathSign:
 Route6MaxPotion:
 	itemball MAX_POTION
 
-Route6PokefanMText:
+Route6OfficerText:
 	text "The road is closed"
 	line "until the problem"
 
@@ -216,15 +217,18 @@ Route6_MapEvents:
 
 	def_warp_events
 	warp_event 19,  3, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 1
+	warp_event 20,  3, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 2
 	warp_event  7,  1, ROUTE_6_SAFFRON_GATE, 3
+	warp_event  8,  1, ROUTE_6_SAFFRON_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 20,  4, BGEVENT_READ, Route6UndergroundPathSign
+	bg_event 17,  3, BGEVENT_READ, Route6UndergroundPathSign
 
 	def_object_events
-	object_event 19,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route6PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	object_event 19,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event 20,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
 	object_event  9, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmRex, -1
 	object_event 10, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
 	object_event 12, 18, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerLadyLia, -1

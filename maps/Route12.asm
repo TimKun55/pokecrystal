@@ -231,13 +231,14 @@ Route12_MapEvents:
 	def_warp_events
 	warp_event  9, 41, ROUTE_12_SUPER_ROD_HOUSE, 1
 	warp_event  9,  3, ROUTE_12_LAVENDER_GATE, 3
+	warp_event 10,  3, ROUTE_12_LAVENDER_GATE, 4
 	warp_event  2, 34, ROUTE_11_ROUTE_12_GATE, 3
 	warp_event  2, 35, ROUTE_11_ROUTE_12_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 11, 35, BGEVENT_READ, Route12Sign
+	bg_event  9, 33, BGEVENT_READ, Route12Sign
 	bg_event 12, 15, BGEVENT_READ, FishingSpotSign
 	bg_event 15, 20, BGEVENT_ITEM, Route12HiddenElixer
 

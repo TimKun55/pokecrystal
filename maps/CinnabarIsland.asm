@@ -153,8 +153,8 @@ CinnabarIsland_MapEvents:
 
 	def_bg_events
 	bg_event 12, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
-	bg_event 19, 19, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event 16, 18, BGEVENT_READ, CinnabarIslandSign
+	bg_event 19, 18, BGEVENT_READ, CinnabarIslandGymSign
+	bg_event 14, 16, BGEVENT_READ, CinnabarIslandSign
 	bg_event 26, 15, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events

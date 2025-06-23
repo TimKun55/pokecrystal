@@ -93,6 +93,7 @@ CeruleanGroupSprites:
 	db SPRITE_LADY
 	db SPRITE_ZAPDOS
 	db SPRITE_ROCK
+	db SPRITE_OFFICER
 	db 0 ; end
 	
 SaffronGroupSprites:
@@ -125,6 +126,7 @@ VermilionGroupSprites:
 	db SPRITE_BEAUTY
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
+	db SPRITE_OFFICER
 	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
 	db 0 ; end

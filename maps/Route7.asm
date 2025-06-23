@@ -106,6 +106,7 @@ Route7_MapEvents:
 	def_bg_events
 	bg_event  4, 12, BGEVENT_READ, Route7UndergroundPathSign
 	bg_event  5, 11, BGEVENT_READ, Route7LockedDoor
+	bg_event  6, 11, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events
 	object_event  6,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1

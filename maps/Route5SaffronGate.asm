@@ -22,10 +22,10 @@ Route5SaffronGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, ROUTE_5, 2
-	warp_event  5,  0, ROUTE_5, 3
+	warp_event  4,  0, ROUTE_5, 3
+	warp_event  5,  0, ROUTE_5, 4
 	warp_event  4,  7, SAFFRON_CITY, 11
-	warp_event  5,  7, SAFFRON_CITY, 11
+	warp_event  5,  7, SAFFRON_CITY, 12
 
 	def_coord_events
 

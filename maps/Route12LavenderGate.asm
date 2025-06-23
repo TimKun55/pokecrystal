@@ -31,7 +31,7 @@ Route12LavenderGate_MapEvents:
 	warp_event  4,  0, LAVENDER_TOWN, 8
 	warp_event  5,  0, LAVENDER_TOWN, 9
 	warp_event  4,  7, ROUTE_12, 2
-	warp_event  5,  7, ROUTE_12, 2
+	warp_event  5,  7, ROUTE_12, 3
 
 	def_coord_events
 

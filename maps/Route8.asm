@@ -184,6 +184,7 @@ Route8_MapEvents:
 	def_bg_events
 	bg_event  7,  3, BGEVENT_READ, Route8UndergroundPathSign
 	bg_event  9,  3, BGEVENT_READ, Route8LockedDoor
+	bg_event 10,  3, BGEVENT_READ, Route8LockedDoor
 
 	def_object_events
 	object_event 10,  6, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1

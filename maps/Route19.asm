@@ -323,6 +323,7 @@ Route19_MapEvents:
 
 	def_warp_events
 	warp_event  7,  1, ROUTE_19_FUCHSIA_GATE, 3
+	warp_event  8,  1, ROUTE_19_FUCHSIA_GATE, 4
 
 	def_coord_events
 

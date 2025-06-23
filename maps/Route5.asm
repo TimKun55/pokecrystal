@@ -1,8 +1,9 @@
 	object_const_def
 	const ROUTE5_SUPER_NERD1
 	const ROUTE5_SUPER_NERD2
-	const ROUTE5_POKEFAN_M
 	const ROUTE5_SUPER_NERD3
+	const ROUTE5_OFFICER1
+	const ROUTE5_OFFICER2
 
 Route5_MapScripts:
 	def_scene_scripts
@@ -96,8 +97,8 @@ Route5SuperNerdJayScript:
 	closetext
 	end
 
-Route5PokefanMScript:
-	jumptextfaceplayer Route5PokefanMText
+Route5OfficerScript:
+	jumptextfaceplayer Route5OfficerText
 
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
@@ -180,7 +181,7 @@ SupernerdJayAfterBattleText:
 	para "Lies!"
 	done
 
-Route5PokefanMText:
+Route5OfficerText:
 	text "The Underground"
 	line "Path is closed"
 	cont "until the problem"
@@ -208,6 +209,7 @@ Route5_MapEvents:
 
 	def_warp_events
 	warp_event 15, 19, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
+	warp_event 16, 19, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 2
 	warp_event  9, 23, ROUTE_5_SAFFRON_GATE, 1
 	warp_event 10, 23, ROUTE_5_SAFFRON_GATE, 2
 	warp_event  9,  9, ROUTE_5_CLEANSE_TAG_HOUSE, 1
@@ -223,5 +225,6 @@ Route5_MapEvents:
 	def_object_events
 	object_event  1,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdGreggScript, -1
 	object_event 18, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdJayScript, -1
-	object_event 15, 20, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
 	object_event -3, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
+	object_event 15, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event 16, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH

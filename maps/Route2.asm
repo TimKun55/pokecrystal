@@ -152,10 +152,12 @@ Route2_MapEvents:
 	def_warp_events
 	warp_event 15, 18, ROUTE_2_NUGGET_HOUSE, 1
 	warp_event 15, 39, ROUTE_2_GATE, 3
+	warp_event 16, 39, ROUTE_2_GATE, 4
 	warp_event 15, 35, ROUTE_2_GATE, 1
 	warp_event 16, 35, ROUTE_2_GATE, 2
 	warp_event 12,  7, DIGLETTS_CAVE, 3
 	warp_event  3, 43, ROUTE_2_VIRIDIAN_FOREST_GATE, 1
+	warp_event  4, 43, ROUTE_2_VIRIDIAN_FOREST_GATE, 2
 	warp_event  1,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 3
 	warp_event  2,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 4
 

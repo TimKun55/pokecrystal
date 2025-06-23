@@ -225,7 +225,7 @@ ViridianForest_MapEvents:
 	warp_event 26, 39, ROUTE_2_VIRIDIAN_FOREST_GATE, 3
 	warp_event 27, 39, ROUTE_2_VIRIDIAN_FOREST_GATE, 4
 	warp_event 29, 21, VIRIDIAN_FOREST_HOUSE, 1
-	warp_event 10,  5, VIRIDIAN_FOREST_ROUTE_2_GATE, 1
+	warp_event  8,  5, VIRIDIAN_FOREST_ROUTE_2_GATE, 1
 
 	def_coord_events
 

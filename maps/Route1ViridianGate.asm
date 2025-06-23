@@ -39,7 +39,7 @@ Route1ViridianGate_MapEvents:
 	warp_event  4,  0, VIRIDIAN_CITY, 6
 	warp_event  5,  0, VIRIDIAN_CITY, 7
 	warp_event  4,  7, ROUTE_1, 1
-	warp_event  5,  7, ROUTE_1, 1
+	warp_event  5,  7, ROUTE_1, 2
 
 	def_coord_events
 
