@@ -202,7 +202,7 @@ Route35GoldenrodGate_MapEvents:
 	warp_event  4,  0, ROUTE_35, 1
 	warp_event  5,  0, ROUTE_35, 2
 	warp_event  4,  7, GOLDENROD_CITY, 16
-	warp_event  5,  7, GOLDENROD_CITY, 16
+	warp_event  5,  7, GOLDENROD_CITY, 17
 
 	def_coord_events
 

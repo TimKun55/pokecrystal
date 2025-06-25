@@ -245,8 +245,8 @@ GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  7, GOLDENROD_CITY, 19
-	warp_event  8,  7, GOLDENROD_CITY, 19
+	warp_event  7,  7, GOLDENROD_CITY, 20
+	warp_event  8,  7, GOLDENROD_CITY, 20
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events

@@ -226,6 +226,7 @@ ViridianForest_MapEvents:
 	warp_event 27, 39, ROUTE_2_VIRIDIAN_FOREST_GATE, 4
 	warp_event 29, 21, VIRIDIAN_FOREST_HOUSE, 1
 	warp_event  8,  5, VIRIDIAN_FOREST_ROUTE_2_GATE, 1
+	warp_event  9,  5, VIRIDIAN_FOREST_ROUTE_2_GATE, 1
 
 	def_coord_events
 
@@ -233,7 +234,7 @@ ViridianForest_MapEvents:
 	bg_event 31, 37, BGEVENT_READ, ViridianForest1Sign
 	bg_event 11,  7, BGEVENT_READ, ViridianForest2Sign
 	bg_event 27, 19, BGEVENT_ITEM, ViridianForestHiddenMaxEther
-	bg_event 29, 11, BGEVENT_ITEM, ViridianForestHiddenFullHeal
+	bg_event 28, 10, BGEVENT_ITEM, ViridianForestHiddenFullHeal
 	bg_event 26, 35, BGEVENT_ITEM, ViridianForestHiddenFullRestore
 	bg_event 40, 17, BGEVENT_ITEM, ViridianForestHiddenRevive
 
@@ -243,7 +244,7 @@ ViridianForest_MapEvents:
 	object_event 21,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDoug, -1
 	object_event 10, 33, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacMatt, -1
 	object_event 36, 10, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacTobi, -1
-	object_event 41,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestOfficerScript, -1
+	object_event 41,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestOfficerScript, -1
 	object_event  4, 27, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestDireHit, EVENT_VIRIDIAN_FOREST_DIRE_HIT
 	object_event 20, 28, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestMaxPotion, EVENT_VIRIDIAN_FOREST_MAX_POTION
 	object_event 43, 35, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestCarbos, EVENT_VIRIDIAN_FOREST_CARBOS

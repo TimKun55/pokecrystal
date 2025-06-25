@@ -994,6 +994,7 @@ IlexForest_MapEvents:
 
 	def_warp_events
 	warp_event  4,  7, ROUTE_34_ILEX_FOREST_GATE, 3
+	warp_event  5,  7, ROUTE_34_ILEX_FOREST_GATE, 4
 	warp_event  5, 52, ILEX_FOREST_AZALEA_GATE, 1
 	warp_event  5, 53, ILEX_FOREST_AZALEA_GATE, 2
 
@@ -1001,7 +1002,7 @@ IlexForest_MapEvents:
 
 	def_bg_events
 	bg_event  5, 19, BGEVENT_READ, IlexForestSignpost
-	bg_event 13,  9, BGEVENT_ITEM, IlexForestHiddenLeafStone
+	bg_event 12,  6, BGEVENT_ITEM, IlexForestHiddenLeafStone
 	bg_event 24, 16, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event 12, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event 11, 25, BGEVENT_UP, IlexForestShrineScript

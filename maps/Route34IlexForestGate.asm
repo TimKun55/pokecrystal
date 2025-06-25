@@ -145,7 +145,7 @@ Route34IlexForestGate_MapEvents:
 	warp_event  4,  0, ROUTE_34, 1
 	warp_event  5,  0, ROUTE_34, 2
 	warp_event  4,  7, ILEX_FOREST, 1
-	warp_event  5,  7, ILEX_FOREST, 1
+	warp_event  5,  7, ILEX_FOREST, 2
 
 	def_coord_events
 	coord_event  4,  7, SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS, Route34IlexForestGateCelebiEvent

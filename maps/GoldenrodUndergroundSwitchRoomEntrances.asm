@@ -937,11 +937,11 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1
 	warp_event 23, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 2
 	warp_event  5, 25, GOLDENROD_UNDERGROUND, 2
-	warp_event  4, 29, GOLDENROD_CITY, 18
-	warp_event  5, 29, GOLDENROD_CITY, 18
+	warp_event  4, 29, GOLDENROD_CITY, 19
+	warp_event  5, 29, GOLDENROD_CITY, 19
 	warp_event 21, 25, GOLDENROD_UNDERGROUND, 1
-	warp_event 20, 29, GOLDENROD_CITY, 17
-	warp_event 21, 29, GOLDENROD_CITY, 17
+	warp_event 20, 29, GOLDENROD_CITY, 18
+	warp_event 21, 29, GOLDENROD_CITY, 18
 
 	def_coord_events
 	coord_event 19,  4, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene1

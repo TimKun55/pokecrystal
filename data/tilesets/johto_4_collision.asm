@@ -185,7 +185,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b9
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; ba
-	tilecoll WATER, WATER, WHIRLPOOL, WATER ; bb
+	tilecoll WALL, WALL, WHIRLPOOL, WATER ; bb
 	tilecoll WATER, WATER, WATERFALL, WATERFALL ; bc
 	tilecoll WALL, WALL, WHIRLPOOL, WATER ; bd
 	tilecoll WALL, WALL, WATER, WATER ; be
