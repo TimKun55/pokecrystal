@@ -94,9 +94,7 @@ LugiaStatueSign:
 	jumptext LugiaStatueSignText
 
 SilverWingGlimmerText:
-	text "?!"
-	
-	para "The Silver Wing"
+	text "The Silver Wing"
 	line "is glowing!"
 	done
 	

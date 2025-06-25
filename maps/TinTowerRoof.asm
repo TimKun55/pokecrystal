@@ -96,9 +96,7 @@ HoOhStatueSign:
 	jumptext HoOhStatueSignText
 
 RainbowWingGlimmerText:
-	text "?!"
-	
-	para "The Rainbow Wing"
+	text "The Rainbow Wing"
 	line "is glowing!"
 	done
 	
