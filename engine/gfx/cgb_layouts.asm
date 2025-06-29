@@ -1236,11 +1236,11 @@ _CGB_TrainerCard:
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld hl, MainCardPals
-	ld de, wBGPals1 palette 2
-	ld bc, 4 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
+;	ld hl, MainCardPals
+;	ld de, wBGPals1 palette 7
+;	ld bc, 1 palettes
+;	ld a, BANK(wBGPals1)
+;	call FarCopyWRAM
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
@@ -1257,32 +1257,16 @@ _CGB_TrainerCard:
 	lb bc, 7, 5
 	ld a, [wPlayerGender]
 	and a
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 	jr z, .got_gender2
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
 
-	; fill badge area with region palette
-	hlcoord 0, 9, wAttrmap
-	lb bc, 9, 20
-	ld a, $2 
-	call FillBoxCGB
-
-	hlcoord 0, 12, wAttrmap
-	lb bc, 4, 4
-	ld a, $3 
-	call FillBoxCGB
-
-	hlcoord 4, 10, wAttrmap
-	lb bc, 4, 12
-	ld a, $5 
-	call FillBoxCGB
-
-	hlcoord 16, 12, wAttrmap
-	lb bc, 4, 4
-	ld a, $4 
-	call FillBoxCGB
+;	hlcoord 1, 8, wAttrmap
+;	lb bc, 1, SCREEN_WIDTH -2
+;	ld a, $7
+;	call FillBoxCGB
 
 	call ApplyAttrmap
 	call ApplyPals
@@ -1320,7 +1304,7 @@ _CGB_TrainerCardJohto:
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld hl, JohtoCardPals
+	ld hl, MainCardPals
 	ld de, wBGPals1 palette 7
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
@@ -1338,7 +1322,7 @@ _CGB_TrainerCardJohto:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 .got_gender
 	call ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -1346,31 +1330,26 @@ _CGB_TrainerCardJohto:
 	lb bc, 7, 5
 	ld a, [wPlayerGender]
 	and a
-	ld a, $0 ; chris
+	ld a, $0 ; ethan
 	jr z, .got_gender2
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
 
-	; fill badge area with region palette
-	hlcoord 0, 9, wAttrmap
-	lb bc, 9, 20
-	ld a, $7 ; region colour
-	call FillBoxCGB	
+;	hlcoord 1, 8, wAttrmap
+;	lb bc, 1, SCREEN_WIDTH -2
+;	ld a, $7
+;	call FillBoxCGB
 
-;	; top-right corner still uses the border's palette
-;	hlcoord 18, 1, wAttrmap
-;	ld [hl], $1
-
-	hlcoord 0, 10, wAttrmap
+	hlcoord 3, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $1 ; falkner
 	call FillBoxCGB
-	hlcoord 5, 10, wAttrmap
+	hlcoord 7, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $2 ; bugsy
 	call FillBoxCGB
-	hlcoord 10, 10, wAttrmap
+	hlcoord 11, 10, wAttrmap
 	lb bc, 3, 3
 	ld a, $3 ; whitney
 	call FillBoxCGB
@@ -1378,15 +1357,15 @@ _CGB_TrainerCardJohto:
 	lb bc, 3, 3
 	ld a, $4 ; morty
 	call FillBoxCGB
-	hlcoord 0, 14, wAttrmap
+	hlcoord 3, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; chuck
 	call FillBoxCGB
-	hlcoord 5, 14, wAttrmap
+	hlcoord 7, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; jasmine
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrmap
+	hlcoord 11, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $6 ; pryce
 	call FillBoxCGB
@@ -1395,7 +1374,7 @@ _CGB_TrainerCardJohto:
 ;	and a
 ;	push af
 ;	jr z, .got_gender3
-	hlcoord 15, 14, wAttrmap
+	hlcoord 15, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $1
 	call FillBoxCGB
@@ -1417,9 +1396,6 @@ _CGB_TrainerCardJohto:
 .JohtoBadgePalettes:
 INCLUDE "gfx/trainer_card/johto_badges.pal"
 
-JohtoCardPals:
-INCLUDE "gfx/trainer_card/johto_card.pal"
-
 _CGB_TrainerCardKanto:
  	ld de, wBGPals1
 	xor a ; ETHAN & MISTY
@@ -1428,16 +1404,16 @@ _CGB_TrainerCardKanto:
 	ld a, FALKNER ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BROCK
+	ld a, LT_SURGE ; ERIKA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, LT_SURGE ; ERIKA
+	ld a, SABRINA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, JANINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, SABRINA
+	ld a, BROCK
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 ;	ld a, BLAINE
@@ -1447,7 +1423,7 @@ _CGB_TrainerCardKanto:
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld hl, KantoCardPals
+	ld hl, MainCardPals
 	ld de, wBGPals1 palette 7
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
@@ -1479,40 +1455,40 @@ _CGB_TrainerCardKanto:
 .got_gender2
 	call FillBoxCGB
 
-	hlcoord 0, 9, wAttrmap
-	lb bc, 9, 20
-	ld a, $7 ; 
+;	hlcoord 1, 8, wAttrmap
+;	lb bc, 1, SCREEN_WIDTH -2
+;	ld a, $7
+;	call FillBoxCGB
 
-	call FillBoxCGB	
-	hlcoord 0, 10, wAttrmap
+	hlcoord 3, 10, wAttrmap ; 11, 10, wAttrmap
 	lb bc, 3, 3
-	ld a, $2 ; brock
+	ld a, $2 ; lt.surge / erika
 	call FillBoxCGB
-	hlcoord 5, 10, wAttrmap
+	hlcoord 7, 10, wAttrmap ; 7, 13, wAttrmap
+	lb bc, 3, 3	
+	ld a, $3 ; sabrina / blaine
+	call FillBoxCGB
+	hlcoord 11, 10, wAttrmap ; 7, 10, wAttrmap
 	lb bc, 3, 3	
 	ld a, $0 ; misty / ethan
 	call FillBoxCGB
-	hlcoord 10, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $3 ; lt.surge / erika
-	call FillBoxCGB
 	hlcoord 15, 10, wAttrmap
 	lb bc, 3, 3	
-	ld a, $3 ; erika / lt.surge
+	ld a, $2 ; erika / lt.surge
 	call FillBoxCGB
-	hlcoord 0, 14, wAttrmap
+	hlcoord 3, 13, wAttrmap
 	lb bc, 3, 3	
 	ld a, $4 ; janine
 	call FillBoxCGB
-	hlcoord 5, 14, wAttrmap
-	lb bc, 3, 3	
-	ld a, $5 ; sabrina / blaine
+	hlcoord 7, 13, wAttrmap
+	lb bc, 3, 3
+	ld a, $5 ; brock
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrmap
+	hlcoord 11, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; blaine / sabrina
 	call FillBoxCGB
-	hlcoord 15, 14, wAttrmap
+	hlcoord 15, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, $6 ; blue
 	call FillBoxCGB

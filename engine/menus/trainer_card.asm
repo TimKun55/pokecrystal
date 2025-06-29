@@ -46,12 +46,6 @@ TrainerCard:
 
 	farcall GetCardPic
 
-	ld hl, BadgeBorderGFX
-	ld de, vTiles2 tile $7c
-	ld bc, 2 tiles
-	ld a, BANK(BadgeBorderGFX)
-	call FarCopyBytes
-
 	call TrainerCard_PrintTopHalfOfCard
 
 	call EnableLCD
@@ -93,23 +87,15 @@ TrainerCard_Quit:
 
 TrainerCard_Page1_LoadGFX:
 	call ClearSprites
-	hlcoord 0, 9
-	ld d, 6
-	call TrainerCard_BadgeBorder
+	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
+
 	ld b, SCGB_TRAINER_CARD
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
-	ld de, TrainerCardExtraGFX
-	ld hl, vTiles2 tile $33
-	lb bc, BANK(TrainerCardExtraGFX), 32
-	call Request2bpp
-	ld de, TrainerCardLogoGFX
-	ld hl, vTiles2 tile $53
-	lb bc, BANK(TrainerCardLogoGFX), 36
-	call Request2bpp
-	call TrainerCard_BottomCard
+
+	call TrainerCard_Page1_PrintDexCaught_GameTime
 	call TrainerCard_IncrementJumptable
 	ret
 
@@ -128,16 +114,14 @@ TrainerCard_Page1_Joypad:
 
 TrainerCard_Page2_LoadGFX:
 	call ClearSprites
-	hlcoord 0, 9
-	ld d, 6
-	call TrainerCard_BadgeBorder
+	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
 	ld b, SCGB_TRAINER_CARD_JOHTO
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ld de, LeaderGFX
-	ld hl, vTiles2 tile $34
+	ld hl, vTiles2 tile $37
 	lb bc, BANK(LeaderGFX), 72
 	call Request2bpp
 	ld de, BadgeGFX
@@ -150,7 +134,6 @@ TrainerCard_Page2_LoadGFX:
 	ret
 
 TrainerCard_Page2_Joypad:
-	call TrainerCard_Page1_PrintGameTime
 	ld hl, TrainerCard_JohtoBadgesOAM
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
@@ -188,16 +171,14 @@ TrainerCard_Page2_Joypad:
 
 TrainerCard_Page3_LoadGFX:
 	call ClearSprites
-	hlcoord 0, 9
-	ld d, 6
-	call TrainerCard_BadgeBorder
+	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
 	ld b, SCGB_TRAINER_CARD_KANTO
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ld de, LeaderGFX2
-	ld hl, vTiles2 tile $34
+	ld hl, vTiles2 tile $37
 	lb bc, BANK(LeaderGFX2), 72
 	call Request2bpp
 	ld de, BadgeGFX2
@@ -210,7 +191,6 @@ TrainerCard_Page3_LoadGFX:
 	ret
 
 TrainerCard_Page3_Joypad:
-	call TrainerCard_Page1_PrintGameTime
 	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
@@ -236,43 +216,27 @@ TrainerCard_PrintTopHalfOfCard:
 	hlcoord 0, 0
 	ld d, 5
 	call TrainerCard_InitBorder
-	hlcoord 2, 1
-	ld de, .Name_Tilemap
+
+	hlcoord 3, 2
+	ld de, .Name
+	call PlaceString
+
+	hlcoord 3, 4
+	ld de, .ID_No
 	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 2, 2
-	ld de, .ID_Tilemap
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 2, 3
-	ld de, .Dex_Tilemap
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 2, 5
-	ld de, .Money_Tilemap
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 2, 7
-	ld de, .PlayTime_Tilemap
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 5, 1
+
+	hlcoord 8, 2
 	ld de, wPlayerName
 	call PlaceString
-	hlcoord 5, 2
+	hlcoord 6, 4
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	call PrintNum
 
-	ld hl, wPokedexCaught
-	ld b, wEndPokedexCaught - wPokedexCaught
-	call CountSetBits
-	ld de, wNumSetBits
-	hlcoord 5, 3
-	lb bc, 1, 3
-	call PrintNum
-
-	hlcoord 5, 5
+	hlcoord 3, 6
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 6
 	call PrintNum
-
-	call TrainerCard_Page1_PrintGameTime
 
 	hlcoord 14, 1
 	lb bc, 5, 7
@@ -281,95 +245,81 @@ TrainerCard_PrintTopHalfOfCard:
 	predef PlaceGraphic
 	ret
 
-.Name_Tilemap:
-	db $2b, $2d, $2c, -1 ; Name icon
+.Name:
+	db "Name/@"
 
-.ID_Tilemap:
-	db $2b, $2e, $2c, -1 ; ID icon
+.ID_No:
+	db $da, $db, $e8, -1 ; ID No.
 
-.Dex_Tilemap:
-	db $2b, $31, $2c, -1 ; Dex icon
-
-.Money_Tilemap:
-	db $2b, $2f, $2c, -1 ; Money icon
-
-.PlayTime_Tilemap:
-	db $2b, $30, $2c, -1 ; Time icon
-
-TrainerCard_BottomCard:
-	hlcoord 0, 12
-	ld de, .JohtoTop
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 0, 13
-	ld de, .JohtoTopMid
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 0, 14
-	ld de, .JohtoBottomMid
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 0, 15
-	ld de, .JohtoBottom
-	call TrainerCardSetup_PlaceTilemapString
-
-	hlcoord 4, 10
-	ld de, .TrainerCardLogoTop
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 4, 11
-	ld de, .TrainerCardLogoMid
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 4, 12
-	ld de, .TrainerCardLogoBottom
-	call TrainerCardSetup_PlaceTilemapString
-
-	hlcoord 16, 12
-	ld de, .KantoTop
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 16, 13
-	ld de, .KantoTopMid
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 16, 14
-	ld de, .KantoBottomMid
-	call TrainerCardSetup_PlaceTilemapString
-	hlcoord 16, 15
-	ld de, .KantoBottom
-	call TrainerCardSetup_PlaceTilemapString
-
-	hlcoord 7, 14
-	ld de, .Badges
-	call PlaceString
+TrainerCardSetup_ClearBottomHalf:
+	hlcoord 1, 9
+	lb bc, 8, 18
+	call ClearBox
 	ret
 
-.JohtoTop:
-	db $33, $34, $35, $36, -1
+TrainerCard_Page1_PrintDexCaught_GameTime:
+	hlcoord 2, 14
+	ld de, .PkmnTrainer
+	call PlaceString
 
-.JohtoTopMid:
-	db $37, $38, $39, $3a, -1
+	eventflagcheck EVENT_BEAT_ELITE_FOUR
+	jr z, .ContinueStrings
+	hlcoord 2, 14
+	lb bc, 1, 16
+	call ClearBox
+	hlcoord 2, 14
+	ld de, .Champion
+	call PlaceString
 
-.JohtoBottomMid:
-	db $3b, $3c, $3d, $3e, -1
+	eventflagcheck EVENT_GRAND_CHAMPION
+	jr z, .ContinueStrings
+	hlcoord 2, 14
+	lb bc, 1, 16
+	call ClearBox
+	hlcoord 2, 14
+	ld de, .GrandChamp
+	call PlaceString
 
-.JohtoBottom:
-	db $3f, $40, $41, $42, -1
+.ContinueStrings
+	hlcoord 2, 10
+	ld de, .Dex_PlayTime
+	call PlaceString
 
-.TrainerCardLogoTop:
-	db $53, $54, $55, $56, $57, $58, $59, $5a, $5b, $5c, $5d, $5e, -1
-	
-.TrainerCardLogoMid:
-	db $5f, $60, $61, $62, $63, $64, $65, $66, $67, $68, $69, $6a, -1
-	
-.TrainerCardLogoBottom:
-	db $6b, $6c, $6d, $6e, $6f, $70, $71, $72, $73, $74, $75, $76, -1
+	hlcoord 12, 16
+	ld de, .Badges
+	call PlaceString
 
-.KantoTop:
-	db $43, $44, $45, $46, -1
+	ld hl, wPokedexCaught
+	ld b, wEndPokedexCaught - wPokedexCaught
+	call CountSetBits
+	ld de, wNumSetBits
+	hlcoord 15, 10
+	lb bc, 1, 3
+	call PrintNum
 
-.KantoTopMid:
-	db $47, $48, $49, $4a, -1
+	call TrainerCard_Page1_PrintGameTime
 
-.KantoBottomMid:
-	db $4b, $4c, $4d, $4e, -1
+	ld a, [wStatusFlags] ; pokedex
+	bit 0, a
+	jr nz, .have_pokedex
+	hlcoord 2, 10
+	lb bc, 1, 16
+	call ClearBox
+.have_pokedex
+	ret
 
-.KantoBottom:
-	db $4f, $50, $51, $52, -1
+.PkmnTrainer:
+	db "   <PKMN> Trainer@"
+
+.Champion:
+	db "    Champion@"
+
+.GrandChamp:
+	db "Grand Champion@"
+
+.Dex_PlayTime:
+	db   "#dex"
+	next "Play Time@"
 
 .Badges:
 	db "Badges▶@"
@@ -377,22 +327,22 @@ TrainerCard_BottomCard:
 TrainerCard_Page2_3_InitObjectsAndStrings:
 	push hl
 
-	hlcoord 0, 10
-	ld a, $34
+	hlcoord 3, 10
+	ld a, $37
 	ld c, 4
 .loop
 	call TrainerCard_Page2_3_PlaceLeadersFaces
-rept 5
+rept 4
 	inc hl
 endr
 	dec c
 	jr nz, .loop
-	hlcoord 0, 14
-	ld a, $58
+	hlcoord 3, 13
+	ld a, $5b
 	ld c, 4
 .loop2
 	call TrainerCard_Page2_3_PlaceLeadersFaces
-rept 5
+rept 4
 	inc hl
 endr
 	dec c
@@ -415,140 +365,93 @@ TrainerCardSetup_PlaceTilemapString:
 TrainerCard_InitBorder:
 	ld a, $23
 	ld [hli], a
-	
 	ld e, SCREEN_WIDTH - 2
+	inc a ; top border
 .loop1
-	ld a, $24
 	ld [hli], a
 	dec e
 	jr nz, .loop1
-
-	ld a, $25
+	inc a ; top-right corner
 	ld [hli], a
 
-	ld a, $26
-	ld [hli], a
-	
-	ld e, SCREEN_WIDTH - 2
-	ld a, " "
+	ld bc, SCREEN_WIDTH - 2
+	ld e, SCREEN_HEIGHT - 2
+	inc a ; left border
 .loop2
 	ld [hli], a
+	add hl, bc
+	inc a ; right border
+	ld [hli], a
+	dec a ; left border again
 	dec e
 	jr nz, .loop2
 
-	ld a, $2a
+	inc a
+	inc a ; bottom-left corner
 	ld [hli], a
+	ld e, SCREEN_WIDTH - 2
+	inc a ; bottom border
 .loop3
-	ld a, $26
-	ld [hli], a
-
-	ld e, SCREEN_WIDTH - 2
-	ld a, " "
-.loop4
-	ld [hli], a
-	dec e
-	jr nz, .loop4
-
-	ld a, $2a
-	ld [hli], a
-
-	dec d
-	jr nz, .loop3
-
-	ld a, $26
-	ld [hli], a
-	
-	ld e, SCREEN_WIDTH - 2
-	ld a, " "
-.loop5
-	ld [hli], a
-	dec e
-	jr nz, .loop5
-
-	ld a, $2a
-	ld [hli], a
-
-	ld a, $27
-	ld [hli], a
-	
-	ld e, SCREEN_WIDTH - 2
-.loop7
-	ld a, $28
-	ld [hli], a
-	dec e
-	jr nz, .loop7
-
-	ld a, $29
-	ld [hli], a
-	ret
-
-TrainerCard_BadgeBorder:
-	ld e, SCREEN_WIDTH
-.loop1
-	ld a, $7c
-	ld [hli], a
-	dec e
-	jr nz, .loop1
-
-.loop2
-	ld e, SCREEN_WIDTH
-.loop3
-	ld a, " "
 	ld [hli], a
 	dec e
 	jr nz, .loop3
+	inc a ; bottom-right corner
+	ld [hl], a
 
-	dec d
-	jr nz, .loop2
+	hlcoord 1, 8
 
-	ld e, SCREEN_WIDTH
+	ld e, 6
 .loop4
-	ld a, " "
+	ld a, $2c
 	ld [hli], a
+	inc a ; $2d
+	ld [hli], a
+	inc a ; $2e
+	ld [hli], a
+	ld a, $2c - 1
 	dec e
 	jr nz, .loop4
 
-	ld e, SCREEN_WIDTH
-.loop5
-	ld a, $7d
-	ld [hli], a
-	dec e
-	jr nz, .loop5
+	hlcoord 0, 8
+	ld de, .LeftMiddle
+	call TrainerCardSetup_PlaceTilemapString
+
+	hlcoord 19, 8
+	ld de, .RightMiddle
+	call TrainerCardSetup_PlaceTilemapString
+
 	ret
+
+.LeftMiddle:
+	db $2b, -1
+
+.RightMiddle:
+	db $2f, -1
 
 TrainerCard_Page2_3_PlaceLeadersFaces:
 	push de
 	push hl
-;	ld [hli], a
-;	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
 	ld de, SCREEN_WIDTH - 3
+rept 3
+	ld [hli], a
+	inc a
+endr
 	add hl, de
+rept 3
 	ld [hli], a
 	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld de, SCREEN_WIDTH - 3
+endr
 	add hl, de
+rept 3
 	ld [hli], a
 	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
+endr
 	pop hl
 	pop de
 	ret
 
 TrainerCard_Page1_PrintGameTime:
-	hlcoord 5, 7
+	hlcoord 11, 12
 	ld de, wGameTimeHours
 	lb bc, 2, 4
 	call PrintNum
@@ -559,7 +462,7 @@ TrainerCard_Page1_PrintGameTime:
 	ldh a, [hVBlankCounter]
 	and $1f
 	ret nz
-	hlcoord 9, 7
+	hlcoord 15, 12
 	ld a, [hl]
 	xor " " ^ $32 ; alternate between space and small colon ($32) tiles
 	ld [hl], a
@@ -695,44 +598,44 @@ TrainerCard_JohtoBadgesOAM:
 	dw wJohtoBadges
 
 	; Zephyrbadge
-	db $64, $20, 0, 0, 0, 0
+	db $68, $16, 0, 0, 0, 0
 	db $00, $20, $24, $20 | (1 << 7)
 	db $00, $20, $24, $20 | (1 << 7)
 
 	; Hivebadge
-	db $64, $48, 1, 1, 1, 1
+	db $68, $36, 1, 1, 1, 1
 	db $04, $20, $24, $20 | (1 << 7)
 	db $04, $20, $24, $20 | (1 << 7)
 
 	; Plainbadge
-	db $64, $70, 2, 2, 2, 2
+	db $68, $56, 2, 2, 2, 2
 	db $08, $20, $24, $20 | (1 << 7)
 	db $08, $20, $24, $20 | (1 << 7)
 
 	; Fogbadge
 	; X-flips on alternate cycles.
-	db $64, $98, 3, 3, 3, 3
+	db $68, $76, 3, 3, 3, 3
 	db $0c, 		   $20, $24, $20 | (1 << 7)
 	db $0c | (1 << 7), $20, $24, $20 | (1 << 7)
 
 	; Mineralbadge
-	db $84, $48, 5, 5, 5, 5
+	db $80, $36, 5, 5, 5, 5
 	db $10, $20, $24, $20 | (1 << 7)
 	db $10, $20, $24, $20 | (1 << 7)
 
 	; Stormbadge
 	; X-flips on alternate cycles.
-	db $84, $20, 4, 4, 4, 4
+	db $80, $16, 4, 4, 4, 4
 	db $14, 		   $20, $24, $20 | (1 << 7)
 	db $14 | (1 << 7), $20, $24, $20 | (1 << 7)
 
 	; Glacierbadge
-	db $84, $70, 6, 6, 6, 6
+	db $80, $56, 6, 6, 6, 6
 	db $18, $20, $24, $20 | (1 << 7)
 	db $18, $20, $24, $20 | (1 << 7)
 
 	; Risingbadge
-	db $84, $98, 7, 7, 7, 7
+	db $80, $76, 7, 7, 7, 7
 	db $1c, $20, $24, $20 | (1 << 7)
 	db $1c, $20, $24, $20 | (1 << 7)
 	
@@ -745,44 +648,44 @@ TrainerCard_KantoBadgesOAM:
 
 	dw wKantoBadges
 
-	; Boulderbadge
-	db $64, $20, 0, 0, 0, 0
+	; Thunderbadge
+	db $68, $16, 0, 0, 0, 0
 	db $00, $20 | (1 << 7), $24, $20
 	db $00, $20 | (1 << 7), $24, $20
+
+	; Marshbadge
+	db $68, $36, 1, 1, 1, 1
+	db $04, $20 | (1 << 7), $24, $20
+	db $04, $20 | (1 << 7), $24, $20
 
 	; Cascadebadge
-	db $64, $48, 1, 1, 1, 1
-	db $04, $20 | (1 << 7), $24, $20
-	db $04, $20 | (1 << 7), $24, $20
-
-	; Thunderbadge
-	db $64, $70, 2, 2, 2, 2
+	db $68, $56, 2, 2, 2, 2
 	db $08, $20 | (1 << 7), $24, $20
 	db $08, $20 | (1 << 7), $24, $20
 
 	; Rainbowbadge
-	db $64, $98, 6, 2, 1, 3
+	db $68, $76, 6, 1, 2, 3
 	db $0c, $20 | (1 << 7), $24, $20
 	db $0c, $20 | (1 << 7), $24, $20
 
 	; Soulbadge
-	db $84, $20, 4, 4, 4, 4
+	db $80, $16, 4, 4, 4, 4
 	db $10, $20 | (1 << 7), $24, $20
 	db $10, $20 | (1 << 7), $24, $20
 
-	; Marshbadge
-	db $84, $48, 5, 5, 5, 5
+	; Boulderbadge
+	db $80, $36, 5, 5, 5, 5
 	db $14, $20 | (1 << 7), $24, $20
 	db $14, $20 | (1 << 7), $24, $20
 
 	; Volcanobadge
-	db $84, $70, 6, 6, 6, 6
+	db $80, $56, 6, 6, 6, 6
 	db $18, $20 | (1 << 7), $24, $20
 	db $18, $20 | (1 << 7), $24, $20
 
 	; Earthbadge
 	; X-flips on alternate cycles.
-	db $84, $98, 7, 7, 7, 7
+	db $80, $76, 7, 7, 7, 7
 	db $1c,            $20 | (1 << 7), $24, $20
 	db $1c | (1 << 7), $20 | (1 << 7), $24, $20
 
@@ -790,9 +693,3 @@ LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.2bpp"
 LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.2bpp"
 BadgeGFX:   INCBIN "gfx/trainer_card/johto_badges.2bpp"
 BadgeGFX2:  INCBIN "gfx/trainer_card/kanto_badges.2bpp"
-
-TrainerCardExtraGFX: INCBIN "gfx/trainer_card/trainer_card_extra.2bpp"
-
-BadgeBorderGFX: INCBIN "gfx/trainer_card/badge_border.2bpp"
-
-TrainerCardLogoGFX: INCBIN "gfx/trainer_card/trainer_card_gfx.2bpp"

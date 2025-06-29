@@ -36,6 +36,10 @@ HallOfFameEnterScript:
 	waitbutton
 	closetext
 	clearevent EVENT_PLAYERS_HOUSE_1F_GOLD_TROPHY
+	checkevent EVENT_GRAND_CHAMPION
+	iftrue .SkipGrandChamp
+	setevent EVENT_GRAND_CHAMPION
+.SkipGrandChamp:
 	sjump .ContinueHoF
 	
 .FirstTimeChampion
@@ -44,6 +48,9 @@ HallOfFameEnterScript:
 	waitbutton
 	closetext
 	clearevent EVENT_PLAYERS_HOUSE_1F_SILVER_TROPHY
+	setevent EVENT_BEAT_ELITE_FOUR
+	setevent EVENT_TELEPORT_GUY
+	setevent EVENT_RIVAL_SPROUT_TOWER
 .ContinueHoF
 	turnobject HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
@@ -51,19 +58,10 @@ HallOfFameEnterScript:
 	pause 15
 	setval HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
-	setevent EVENT_BEAT_ELITE_FOUR
-	setevent EVENT_TELEPORT_GUY
-	setevent EVENT_RIVAL_SPROUT_TOWER
 	clearevent EVENT_RED_IN_MT_SILVER
 	special RespawnOneOffs
 	setmapscene SPROUT_TOWER_3F, SCENE_SPROUTTOWER3F_NOOP
 	special HealParty
-	readvar VAR_BADGES
-	ifless 16, .SkipGrandChamp
-	checkevent EVENT_GRAND_CHAMPION
-	iftrue .SkipGrandChamp
-	setevent EVENT_GRAND_CHAMPION
-.SkipGrandChamp:
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
