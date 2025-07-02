@@ -35,7 +35,7 @@ SaffronCityDisguisedLeft:
 	end
 	
 .continueappear
-	moveobject SAFFRONCITY_COOLTRAINER_F2, 21,  8
+	moveobject SAFFRONCITY_COOLTRAINER_F2, 20,  8
 	appear SAFFRONCITY_COOLTRAINER_F2
 	pause 5
 	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
@@ -60,7 +60,7 @@ SaffronCityDisguisedRight:
 	end
 	
 .continueappear
-	moveobject SAFFRONCITY_COOLTRAINER_F2, 15,  8
+	moveobject SAFFRONCITY_COOLTRAINER_F2, 16,  8
 	appear SAFFRONCITY_COOLTRAINER_F2
 	pause 5
 	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
@@ -390,10 +390,10 @@ SaffronCity_MapEvents:
 	warp_event 15, 31, SAFFRON_ODDISH_DOLL_HOUSE, 1
 
 	def_coord_events
-	coord_event 15,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
-	coord_event 15,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
-	coord_event 20,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
-	coord_event 20,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
+	coord_event 14,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
+	coord_event 14,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
+	coord_event 21,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
+	coord_event 21,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
 
 	def_bg_events
 	bg_event  6, 28, BGEVENT_READ, SaffronCitySign
@@ -408,12 +408,12 @@ SaffronCity_MapEvents:
 	def_object_events
 	object_event  7, 15, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1
 	object_event  5, 32, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronCityPokefanMScript, -1
-	object_event 29,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
-	object_event 16, 27, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
+	object_event 17, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
+	object_event 16, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
 	object_event 30, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
 	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
-	object_event 23, 26, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 30, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
 	object_event  3,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityTeacherScript, -1
 	object_event  3,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster3Script, -1

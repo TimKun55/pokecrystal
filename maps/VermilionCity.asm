@@ -389,31 +389,31 @@ VermilionCity_MapEvents:
 	warp_event 19, 31, VERMILION_PORT_PASSAGE, 1
 	warp_event 20, 31, VERMILION_PORT_PASSAGE, 2
 	warp_event  5,  5, VERMILION_SAILORS_HOUSE, 1
-	warp_event 26, 13, BATTLE_HALL_1F, 1
+	warp_event 22,  5, BATTLE_HALL_1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 14, 11, BGEVENT_READ, VermilionCitySign
+	bg_event 18,  8, BGEVENT_READ, VermilionCitySign
 	bg_event  6, 20, BGEVENT_READ, VermilionGymSign
 	bg_event  8, 13, BGEVENT_READ, PokemonFanClubSign
 	bg_event 26, 17, BGEVENT_READ, VermilionCityPortSign
 	bg_event 10,  5, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 20, 13, BGEVENT_READ, VermilionCityMartSign
-	bg_event 24, 13, BGEVENT_READ, BattleHallSign
-	bg_event 34, 10, BGEVENT_ITEM, VermilionCityHiddenFullHeal
+	bg_event 20,  5, BGEVENT_READ, BattleHallSign
+	bg_event 34,  7, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 
 	def_object_events
-	object_event 15,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
-	object_event 26, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionBattleHallOwner, EVENT_VERMILION_CITY_BATTLE_HALL_GRAMPS
+	object_event 20,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
+	object_event 22,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionBattleHallOwner, EVENT_VERMILION_CITY_BATTLE_HALL_GRAMPS
 	object_event 16, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
-	object_event 17, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
+	object_event 14, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
 	object_event  4, 17, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionCityTutorScript, -1
-	object_event 23,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
+	object_event 25, 12, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
 	object_event 43,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_ROUTE_11_SNORLAX
-	object_event 20,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree1, -1
-	object_event 22,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree2, -1
-	object_event 24,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree3, -1
-	object_event 26,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree4, -1
-	object_event 20,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree5, -1
-	object_event 26,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree6, -1
+	object_event 23,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree1, -1
+	object_event 25,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree2, -1
+	object_event 26,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree3, -1
+	object_event 28,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree4, -1
+	object_event 23, 11, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree5, -1
+	object_event 28, 11, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityFruitTree6, -1

@@ -209,7 +209,7 @@ PokemonLeagueGate_MapEvents:
 	warp_event 19,  0, ROUTE_23, 1
 	warp_event 20,  0, ROUTE_23, 2
 	warp_event 19, 31, ROUTE_26, 1
-	warp_event 20, 31, ROUTE_26, 1
+	warp_event 20, 31, ROUTE_26, 2
 	warp_event  0, 14, ROUTE_28, 2
 	warp_event  0, 15, ROUTE_28, 3
 

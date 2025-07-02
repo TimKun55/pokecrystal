@@ -526,6 +526,7 @@ Route26_MapEvents:
 
 	def_warp_events
 	warp_event  7,  5, POKEMON_LEAGUE_GATE, 5
+	warp_event  8,  5, POKEMON_LEAGUE_GATE, 6	
 	warp_event 15, 51, ROUTE_26_HEAL_HOUSE, 1
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 	warp_event  4, 89, TOHJO_FALLS, 2
@@ -535,7 +536,7 @@ Route26_MapEvents:
 	coord_event  4, 90, SCENE_ROUTE26_FIRST_STEP_INTO_KANTO, FirstStepIntoKantoScene
 
 	def_bg_events
-	bg_event  8,  6, BGEVENT_READ, Route26Sign
+	bg_event  9,  7, BGEVENT_READ, Route26Sign
 	bg_event  6, 90, BGEVENT_READ, TohjoFallsKantoSign
 
 
