@@ -234,7 +234,7 @@ ViridianForest_MapEvents:
 	bg_event 31, 37, BGEVENT_READ, ViridianForest1Sign
 	bg_event 11,  7, BGEVENT_READ, ViridianForest2Sign
 	bg_event 27, 19, BGEVENT_ITEM, ViridianForestHiddenMaxEther
-	bg_event 28, 10, BGEVENT_ITEM, ViridianForestHiddenFullHeal
+	bg_event 29, 11, BGEVENT_ITEM, ViridianForestHiddenFullHeal
 	bg_event 26, 35, BGEVENT_ITEM, ViridianForestHiddenFullRestore
 	bg_event 40, 17, BGEVENT_ITEM, ViridianForestHiddenRevive
 
