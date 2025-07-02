@@ -55,7 +55,7 @@ UndergroundPath_MapEvents:
 	def_warp_events
 	warp_event  3,  2, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 3
 	warp_event  3, 24, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 3
-	warp_event  5, 12, UNDERGROUND_ROOM, 1
+	warp_event  5, 13, UNDERGROUND_ROOM, 1
 
 	def_coord_events
 	coord_event  1,  7, SCENE_UNDERGROUNDPATH_DOOR, UndergroundPathDoor
