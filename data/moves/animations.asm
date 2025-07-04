@@ -1943,23 +1943,20 @@ BattleAnim_SandTomb:
 
 BattleAnim_Growl:
 	anim_1gfx BATTLE_ANIM_GFX_NOISE
-	anim_battlergfx_2row
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_cry $0
 .loop
 	anim_call BattleAnimSub_Sound
 	anim_wait 16
 	anim_loop 3, .loop
-	anim_wait 9
-	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, BG_EFFECT_USER, $0
-	anim_wait 8
+	anim_wait 17
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $40
 	anim_wait 64
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
 	anim_wait 1
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 5
-	anim_incobj 10
+	anim_incobj 9
 	anim_wait 8
 	anim_ret
 
@@ -3507,7 +3504,6 @@ BattleAnim_Curse:
 
 .NotGhost:
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_USER, $40
 	anim_sound 0, 0, SFX_SHARPEN
 	anim_wait 64
@@ -3533,7 +3529,6 @@ BattleAnim_Curse:
 	anim_loop 3, .loop
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_NastyPlot:
@@ -3847,7 +3842,6 @@ BattleAnim_ZapCannon:
 
 BattleAnim_Foresight:
 	anim_1gfx BATTLE_ANIM_GFX_SHINE
-	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_sound 0, 1, SFX_FORESIGHT
 	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 132, 40, $0
@@ -3855,7 +3849,6 @@ BattleAnim_Foresight:
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $40
 	anim_wait 64
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
-	anim_call BattleAnim_ShowMon_1
 	anim_wait 8
 	anim_ret
 
