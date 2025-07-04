@@ -452,22 +452,40 @@ PlacePartyMonGender:
 	push hl
 	call PartyMenuCheckEgg
 	jr z, .next
-	ld [wCurPartySpecies], a
-	push hl
+
+	ld a, [wCurPartyMon]
+	push af
 	ld a, b
 	ld [wCurPartyMon], a
+	push hl
+	ld a, MON_SPECIES
+; GetPartyParamLocationAndValue
+	push bc
+	ld hl, wPartyMons
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wCurPartyMon]
+	pop bc
+	call GetPartyLocation
+	ld a, [hl]
+
+	ld [wCurPartySpecies], a
+
 	xor a
 	ld [wMonType], a
 	call GetGender
-	ld de, .unknown
+	ld a, " "
 	jr c, .got_gender
-	ld de, .male
+	ld a, "<MALE>"
 	jr nz, .got_gender
-	ld de, .female
+	inc a ; "<FEMALE>"
 
 .got_gender
 	pop hl
-	call PlaceString
+	ld [hli], a
+	pop af
+	ld [wCurPartyMon], a
 
 .next
 	pop hl
@@ -478,15 +496,6 @@ PlacePartyMonGender:
 	dec c
 	jr nz, .loop
 	ret
-
-.male
-	db "<MALE>@"
-
-.female
-	db "<FEMALE>@"
-
-.unknown
-	db " @"
 
 PlacePartyMonMobileBattleSelection:
 	ld a, [wPartyCount]
