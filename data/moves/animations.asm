@@ -3087,25 +3087,25 @@ BattleAnim_QuickAttack:
 	anim_ret
 
 BattleAnim_DisarmVoice:
-	anim_1gfx BATTLE_ANIM_GFX_NOISE
-	anim_battlergfx_2row
+	anim_2gfx BATTLE_ANIM_GFX_HEARTS, BATTLE_ANIM_GFX_PSYCHIC
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_cry $0
+	anim_battlergfx_2row
 .loop
-	anim_call BattleAnimSub_Sound
-	anim_wait 16
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_HEART, 64, 88, $4
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_HEART, 64, 80, $4
+	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_HEART, 64, 96, $4
+	anim_wait 6
 	anim_loop 3, .loop
-	anim_wait 9
-	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, BG_EFFECT_USER, $0
-	anim_wait 8
-	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $40
-	anim_wait 64
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
-	anim_wait 1
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 5
-	anim_incobj 10
-	anim_wait 8
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_DefenseCurl:

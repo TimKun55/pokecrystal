@@ -197,6 +197,7 @@ BattleAnimFrameData:
 	dw .Frameset_TinyGlow            ; BATTLE_ANIM_FRAMESET_TINY_GLOW
 	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
 	dw .Frameset_WaterBall           ; BATTLE_ANIM_FRAMESET_WATER_BALL
+	dw .Frameset_GrowingHeart        ; BATTLE_ANIM_FRAMESET_GROWING_HEART
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1297,6 +1298,11 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_54,  1
 	oamframe BATTLE_ANIM_OAMSET_55,  1
 	oamrestart
+
+.Frameset_GrowingHeart:
+	oamframe BATTLE_ANIM_OAMSET_0F,  6
+	oamframe BATTLE_ANIM_OAMSET_1B,  6
+	oamdelete
 
 .Frameset_GrowingBall:
 	oamframe BATTLE_ANIM_OAMSET_1F,  2
