@@ -851,9 +851,9 @@ SummaryScreen_PrintHappiness:
 	db "/255@"
 
 LoadOrangePage:
-	call SummaryScreen_placeCaughtLevel
 	call SummaryScreen_placeCaughtTime
 	call SummaryScreen_placeCaughtLocation
+	call SummaryScreen_placeCaughtLevel
 	call SummaryScreen_PrintDVs
 	call SummaryScreen_PrintEVs
 	ret
@@ -1083,21 +1083,38 @@ SummaryScreen_placeCaughtLocation:
 	ret	
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 2, 9
+	hlcoord 6, 8
 	call PlaceString
 	ret
 .MetAtMapString:
 	db "Met: @"
 .MetUnknownMapString:
-	db "Unknown@"
+	db "via Trade@"
 
 SummaryScreen_placeCaughtTime:
+	; caught level
+	ld a, [wTempMonCaughtLevel]
+	and CAUGHT_LEVEL_MASK	
+	and a
+	jr z, .unknown_time
+
+	; caught level
+	xor a
+	ld a, [wTempMonCaughtLevel]
+	and CAUGHT_LEVEL_MASK
+	and a
+	jr z, .printnoneegg
+	cp 1 ; egg level
+	jr z, .printegginfo
+
+.printnoneegg:
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
-	ret z ; no time
+;	ret z ; no time
 	rlca
 	rlca
 	dec a
+	maskbits NUM_DAYTIMES
 	ld hl, .times
 	call GetNthString
 	ld d, h
@@ -1107,22 +1124,52 @@ SummaryScreen_placeCaughtTime:
 	hlcoord 6, 8
 	call PlaceString
 	ret
+
+.printegginfo:
+	ld a, [wTempMonCaughtTime]
+	and CAUGHT_TIME_MASK
+	rlca
+	rlca
+	dec a
+	maskbits NUM_DAYTIMES
+	ld hl, .times
+	call GetNthString
+	ld d, h
+	ld e, l
+	call CopyName1
+	ld de, wStringBuffer2
+	hlcoord 10, 8
+	call PlaceString
+	ret
+
+.unknown_time:
+	ld de, .unknown_time_text
+	hlcoord 6, 8
+	call PlaceString
+	ret
+
 .times
 	db "Morn@"
 	db "Day@"
 	db "Nite@"
+	db "Eve@"
+
+.unknown_time_text
+	db "@"
 
 SummaryScreen_placeCaughtLevel:
 	; caught level
 	ld a, [wTempMonCaughtLevel]
 	and CAUGHT_LEVEL_MASK	
-;	and a
+	and a
 	jr z, .unknown_level
-	cp CAUGHT_EGG_LEVEL ; egg marker value
-	jr nz, .print
-	ld a, EGG_LEVEL ; egg hatch level
+;	cp CAUGHT_EGG_LEVEL ; egg marker value
+;	jr nz, .print
+;	ld a, EGG_LEVEL ; egg hatch level
+	cp 1 ; egg level
+	jr z, .printegg
 
-.print
+;.print
 	ld [wTextDecimalByte], a
 	hlcoord 12, 8
 	ld de, wTextDecimalByte
@@ -1132,13 +1179,23 @@ SummaryScreen_placeCaughtLevel:
 	ld [hl], "<LV>"
 	ret
 
+.printegg:
+	ld de, .HatchedString
+	hlcoord 1, 8
+	call PlaceString
+	ret
+
 .unknown_level
 	ld de, .MetUnknownLevelString
 	hlcoord 6, 8
 	call PlaceString
-	ret   
+	ret  
+
+.HatchedString:
+	db "Hatched:"
+
 .MetUnknownLevelString:
-	db "Trade@"
+	db "@"
 
 SummaryScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
