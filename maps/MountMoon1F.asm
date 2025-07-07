@@ -64,6 +64,7 @@ MountMoon1FRivalBattleScript:
 	sjump .FinishBattle
 
 .FinishBattle:
+	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext MountMoon1FRivalTextAfter

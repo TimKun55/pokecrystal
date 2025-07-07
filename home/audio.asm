@@ -352,7 +352,7 @@ PlayMapMusicBike::
 TryRestartMapMusic::
 	ld a, [wDontPlayMapMusicOnReload]
 	and a
-	jr z, RestartMapMusic
+	jr z, .restore
 	xor a
 	ld [wMapMusic], a
 	ld de, MUSIC_NONE
@@ -360,6 +360,10 @@ TryRestartMapMusic::
 	call DelayFrame
 	xor a
 	ld [wDontPlayMapMusicOnReload], a
+	ret
+
+.restore
+	farcall RestoreMusic
 	ret
 
 RestartMapMusic::

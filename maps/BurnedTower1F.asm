@@ -91,6 +91,7 @@ BurnedTowerRivalBattleScript:
 	sjump .returnfrombattle
 
 .returnfrombattle
+	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext BurnedTowerRival_AfterText1

@@ -28,6 +28,7 @@ SecurityCamera1a:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 19, 2
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -37,6 +38,7 @@ SecurityCamera1a:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 19, 2
 	appear TEAMROCKETBASEB1F_ROCKET_GIRL
@@ -53,6 +55,7 @@ SecurityCamera1b:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 19, 3
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -62,6 +65,7 @@ SecurityCamera1b:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 19, 3
 	appear TEAMROCKETBASEB1F_ROCKET_GIRL
@@ -78,6 +82,7 @@ SecurityCamera2a:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 4, 7
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -87,6 +92,7 @@ SecurityCamera2a:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 12, 5
@@ -104,6 +110,7 @@ SecurityCamera2b:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 4, 8
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -113,6 +120,7 @@ SecurityCamera2b:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 12, 5
@@ -130,6 +138,7 @@ SecurityCamera3a:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 19, 6
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -139,6 +148,7 @@ SecurityCamera3a:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 25, 11
@@ -156,6 +166,7 @@ SecurityCamera3b:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 19, 7
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -165,6 +176,7 @@ SecurityCamera3b:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 25, 12
@@ -182,6 +194,7 @@ SecurityCamera4:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 17, 16
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -191,6 +204,7 @@ SecurityCamera4:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 25, 11
@@ -208,6 +222,7 @@ SecurityCamera5:
 	checkevent EVENT_TEAM_ROCKET_BASE_POPULATION
 	iftrue NoSecurityCamera
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	moveobject TEAMROCKETBASEB1F_ROCKET1, 3, 16
 	appear TEAMROCKETBASEB1F_ROCKET1
@@ -217,6 +232,7 @@ SecurityCamera5:
 	ifequal TRUE, NoSecurityCamera
 	scall PlaySecurityCameraSounds
 	showemote EMOTE_SHOCK, PLAYER, 15
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject PLAYER, RIGHT
 	moveobject TEAMROCKETBASEB1F_ROCKET_GIRL, 14, 16

@@ -24,6 +24,7 @@ MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
 
 MainMenu:
+	farcall DeleteSavedMusic
 .loop
 	xor a
 	ld [wDisableTextAcceleration], a

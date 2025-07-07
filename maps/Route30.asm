@@ -54,6 +54,7 @@ Route30EnteiScript:
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
+	special SaveMusic
 	playmusic MUSIC_JOHTO_TRAINER_BATTLE
 	opentext
 	writetext Text_UseTackle
@@ -69,7 +70,7 @@ YoungsterJoey_ImportantBattleScript:
 	closetext
 	playsound SFX_TACKLE
 	applymovement ROUTE30_RATTATA1, Route30_MikeysRattataAttacksMovement
-	special RestartMapMusic
+	special RestoreMusic
 	end
 
 TrainerYoungsterJoey:

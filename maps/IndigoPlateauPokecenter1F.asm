@@ -111,6 +111,7 @@ PlateauRivalBattle2:
 	sjump PlateauRivalPostBattle
 
 PlateauRivalPostBattle:
+	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext PlateauRivalText2
@@ -177,6 +178,7 @@ LyraFight:
 	dontrestartmapmusic
 	reloadmapafterbattle
 LyraPostBattle:
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	opentext
 	writetext PlateauLyraText3

@@ -72,6 +72,7 @@ Route29TutorialScript:
 	stopfollow
 	loadwildmon PIDGEY, 5
 	catchtutorial BATTLETYPE_TUTORIAL
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	turnobject ROUTE29_LYRA, UP
 	opentext

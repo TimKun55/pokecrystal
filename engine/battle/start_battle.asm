@@ -34,6 +34,7 @@ PlayBattleMusic:
 	push de
 	push bc
 
+	farcall SaveMusic
 	xor a
 	ld [wMusicFade], a
 	ld de, MUSIC_NONE

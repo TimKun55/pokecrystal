@@ -95,6 +95,7 @@ EnterMap:
 	ldh [hMapEntryMethod], a
 	ld a, MAPSTATUS_HANDLE
 	ld [wMapStatus], a
+	farcall DeleteSavedMusic
 	ret
 
 HandleMap:
@@ -469,6 +470,9 @@ PlayTalkObject:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	pop de
+	push bc
+	call SFXDelay3
+	pop bc
 	ret
 
 TryObjectEvent:

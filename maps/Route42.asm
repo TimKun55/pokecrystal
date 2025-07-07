@@ -142,6 +142,7 @@ Route42LyraScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	opentext
 	writetext Route42LyraPresentText

@@ -355,11 +355,12 @@ ElmsLabHealingMachine:
 ElmsLabHealingMachine_HealParty:
 	special StubbedTrainerRankings_Healings
 	special HealParty
+	special SaveMusic
 	playmusic MUSIC_NONE
 	setval HEALMACHINE_ELMS_LAB
 	special HealMachineAnim
 	pause 30
-	special RestartMapMusic
+	special RestoreMusic
 	closetext
 	end
 
@@ -586,6 +587,7 @@ LyraBattleScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	iftrue .AfterYourDefeat
 	sjump .AfterVictorious
@@ -596,6 +598,7 @@ LyraBattleScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -606,6 +609,7 @@ LyraBattleScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat

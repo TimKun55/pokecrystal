@@ -3595,6 +3595,9 @@ SECTION "Surrounding Data", WRAMX
 wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
+SECTION "WRAM 4 RM", WRAMX[$d200], BANK [4]
+
+wSoundEngineBackup::
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
 

@@ -124,6 +124,7 @@ Route34LyraTrigger2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	sjump .AfterBattle
 
@@ -134,6 +135,7 @@ Route34LyraTrigger2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	sjump .AfterBattle
 
@@ -144,6 +146,7 @@ Route34LyraTrigger2:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 .AfterBattle
 	opentext

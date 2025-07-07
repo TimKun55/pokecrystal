@@ -191,3 +191,6 @@ SpecialsPointers::
 	add_special _VoltorbFlip
 	add_special Menu_BattleTowerSettings
 	add_special FadeOutPalettes
+	add_special SaveMusic
+	add_special RestoreMusic
+	add_special DeleteSavedMusic

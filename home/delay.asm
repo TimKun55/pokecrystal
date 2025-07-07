@@ -12,8 +12,10 @@ DelayFrame::
 	jr nz, .halt
 	ret
 
+SFXDelay3::
 Delay3::
 	ld c, 3
+SFXDelayFrames::
 DelayFrames::
 ; Wait c frames
 	call DelayFrame

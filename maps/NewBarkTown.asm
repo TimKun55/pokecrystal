@@ -151,6 +151,7 @@ NewBarkTown_LyraFinalTrigger:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
 	playmusic MUSIC_LYRA_DEPARTURE
 	opentext
 	writetext NewBarkTownLyraGoodbyeText2

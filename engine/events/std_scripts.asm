@@ -151,11 +151,12 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, LEFT
 	pause 10
 	special HealParty
+	special SaveMusic
 	playmusic MUSIC_NONE
 	setval HEALMACHINE_POKECENTER
 	special HealMachineAnim
 	pause 30
-	special RestartMapMusic
+	special RestoreMusic
 	turnobject LAST_TALKED, DOWN
 	pause 10
 

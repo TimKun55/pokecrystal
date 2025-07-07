@@ -150,6 +150,7 @@ CherrygroveRivalSceneNorth:
 	sjump .AfterYourDefeat
 
 .AfterVictorious:
+	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouWon
@@ -158,6 +159,7 @@ CherrygroveRivalSceneNorth:
 	sjump .FinishRival
 
 .AfterYourDefeat:
+	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost

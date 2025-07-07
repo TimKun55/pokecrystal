@@ -35,6 +35,7 @@ FakeDirectorScript:
 	writetext FakeDirectorTextBefore2
 	waitbutton
 	closetext
+	special SaveMusic
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	applymovement RADIOTOWER5F_FAKE_DIRECTOR, Movement_UnmaskSpin
 	faceplayer
