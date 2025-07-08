@@ -210,3 +210,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; d1
 	tilecoll WALL, WALL, WALL, WALL ; d2
 	tilecoll FLOOR, WALL, FLOOR, WALL ; d3
+	tilecoll WATER, WATER, WATER, WATER ; d4
+	tilecoll WATER, WATER, WATER, WATER ; d5
+	tilecoll WATER, WALL, WATER, WALL ; d6
+	tilecoll WALL, WALL, WALL, WALL ; d7
+	tilecoll WATER, WALL, WATER, WALL ; d8

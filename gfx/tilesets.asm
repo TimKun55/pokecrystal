@@ -23,9 +23,6 @@ Tileset0Meta::
 TilesetJohtoMeta::
 INCBIN "data/tilesets/johto_metatiles.bin"
 
-TilesetIcePathColl::
-INCLUDE "data/tilesets/ice_path_collision.asm"
-
 
 SECTION "Tileset Data 2", ROMX
 
@@ -55,6 +52,9 @@ INCBIN "gfx/tilesets/mansion.2bpp.lz"
 
 TilesetMansionMeta::
 INCBIN "data/tilesets/mansion_metatiles.bin"
+
+TilesetIcePathColl::
+INCLUDE "data/tilesets/ice_path_collision.asm"
 
 
 SECTION "Tileset Data 3", ROMX

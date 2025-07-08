@@ -101,7 +101,7 @@ ENDM
 	map_const RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          10,  7 ; 36
 	map_const UNION_CAVE_1F,                               13, 22 ; 37
 	map_const UNION_CAVE_B1F,                              10, 18 ; 38
-	map_const UNION_CAVE_B2F,                              10, 18 ; 39
+	map_const UNION_CAVE_B2F,                              12, 18 ; 39
 	map_const SLOWPOKE_WELL_B1F,                           10,  9 ; 40
 	map_const SLOWPOKE_WELL_B2F,                           10,  9 ; 41
 	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42

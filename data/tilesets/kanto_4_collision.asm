@@ -32,10 +32,10 @@
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
 	tilecoll WALL, WALL, WALL, WALL ; 21
-	tilecoll WALL, WALL, WALL, WALL ; 22
+	tilecoll WATER, WATER, WATER, WATER ; 22
 	tilecoll WATER, WATER, WATER, WATER ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24
-	tilecoll WALL, WALL, WALL, WALL ; 25
+	tilecoll WATER, WATER, WATER, WATER ; 25
 	tilecoll WALL, WALL, WALL, WALL ; 26
 	tilecoll WATER, WATER, WATER, WATER ; 27
 	tilecoll WALL, WALL, WALL, WALL ; 28
@@ -225,6 +225,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; e0
 	tilecoll WALL, WALL, WALL, WALL ; e1
 	tilecoll WALL, WALL, WALL, DOOR ; e2
-	tilecoll WALL, WALL, WALL, WALL ; e3
+	tilecoll WATER, WATER, WATER, WATER ; e3
 	tilecoll WALL, WALL, WALL, WALL ; e4
 	tilecoll WALL, WALL, WALL, WALL ; e5

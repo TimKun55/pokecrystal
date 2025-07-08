@@ -208,7 +208,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
 	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; d0
 	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; d1
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d2
+	tilecoll FLOOR, FLOOR, PUDDLE, PUDDLE ; d2
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; d3
 	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; d4
 	tilecoll WALL, WALL, WALL, WALL ; d5
@@ -235,3 +235,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ea
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; eb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ec
+	tilecoll WALL, WALL, WALL, WALL ; ed
+	tilecoll WALL, WALL, WALL, WALL ; ee
+	tilecoll WALL, WALL, WALL, WALL ; ef
+	tilecoll WALL, WALL, WALL, WALL ; f0
+	tilecoll WALL, WALL, WALL, WALL ; f1
+	tilecoll WALL, WALL, CAVE, WALL ; f2
+	tilecoll WALL, WALL, WALL, WALL ; f3
+	tilecoll WALL, WALL, WALL, WALL ; f4

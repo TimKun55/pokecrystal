@@ -232,3 +232,6 @@
 	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; e7
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e8
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e9
+	tilecoll WATER, WATER, WATER, WATER ; ea
+	tilecoll WATER, WATER, WATER, WATER ; eb
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ec

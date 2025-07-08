@@ -220,3 +220,5 @@
 	tilecoll WATER, WATER, WATER, WATER ; db
 	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; dc
 	tilecoll WALL, HEADBUTT_TREE, WALL, WALL ; dd
+	tilecoll WATER, WATER, WATER, WATER ; de
+	tilecoll WATER, WATER, WATER, WATER ; df
