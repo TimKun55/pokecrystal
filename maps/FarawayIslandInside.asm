@@ -44,12 +44,12 @@ FarawayIslandInside_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 19, FARAWAY_ISLAND_OUTSIDE, 1
-	warp_event 11, 19, FARAWAY_ISLAND_OUTSIDE, 2
+	warp_event 12, 18, FARAWAY_ISLAND_OUTSIDE, 1
+	warp_event 13, 18, FARAWAY_ISLAND_OUTSIDE, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event 11, 11, SPRITE_MEW, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FarawayIslandMew, EVENT_FARAWAY_ISLAND_MEW
+	object_event 13, 10, SPRITE_MEW, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FarawayIslandMew, EVENT_FARAWAY_ISLAND_MEW

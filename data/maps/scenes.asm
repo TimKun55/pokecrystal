@@ -112,4 +112,5 @@ MapScenes::
 	scene_var RUINS_OF_ALPH_KABUTO_WORD_ROOM,              wRuinsOfAlphKabutoWordRoomSceneID
 	scene_var RUINS_OF_ALPH_OMANYTE_WORD_ROOM,             wRuinsOfAlphOmanyteWordRoomSceneID
 	scene_var RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          wRuinsOfAlphAerodactylWordRoomSceneID
+	scene_var FARAWAY_ISLAND_OUTSIDE,                      wFarawayIslandOutsideSceneID
 	db -1 ; end

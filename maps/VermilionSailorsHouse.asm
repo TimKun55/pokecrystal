@@ -16,6 +16,14 @@ VermilionSailorsHouseSailorScript:
 	writetext SailorSoBoredText
 	waitbutton
 	closetext
+	readvar VAR_FACING
+	ifnotequal UP, .WayIsClear
+	applymovement PLAYER, PlayerOutOfWayMovement
+.WayIsClear:	
+	applymovement VERMILIONSAILORSHOUSE_SAILOR, BoredSailorLeavesMovement
+	disappear VERMILIONSAILORSHOUSE_SAILOR
+	playsound SFX_EXIT_BUILDING
+	waitsfx
 	end
 	
 .FirstSail
@@ -60,7 +68,7 @@ VermilionSailorsHouseSailorScript:
 	special FadeOutPalettes
 	waitsfx
 	appear VERMILIONSAILORSHOUSE_SAILOR
-	warp FARAWAY_ISLAND_OUTSIDE, 11, 40
+	warp FARAWAY_ISLAND_OUTSIDE, 12, 41
 	end
 
 .NotSailing
@@ -68,6 +76,17 @@ VermilionSailorsHouseSailorScript:
 	waitbutton
 	closetext
 	end
+
+PlayerOutOfWayMovement:
+	step LEFT
+	turn_head RIGHT
+	step_end
+
+BoredSailorLeavesMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
 SailorExitMove1:
 	step DOWN

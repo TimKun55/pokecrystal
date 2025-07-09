@@ -17,7 +17,6 @@ INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/CeladonCurseHouse.asm"
-INCLUDE "maps/FarawayIslandOutside.asm"
 INCLUDE "maps/EarlsPokemonAcademyB1F.asm"
 
 
@@ -555,5 +554,6 @@ INCLUDE "maps/OlivineLighthouseElevator.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
 INCLUDE "maps/BattleHallBattleRoom.asm"
+INCLUDE "maps/FarawayIslandOutside.asm"
 
 ENDSECTION

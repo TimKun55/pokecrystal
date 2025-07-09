@@ -3228,8 +3228,9 @@ wRuinsOfAlphHoOhWordRoomSceneID::                 db
 wRuinsOfAlphKabutoWordRoomSceneID::               db
 wRuinsOfAlphOmanyteWordRoomSceneID::              db
 wRuinsOfAlphAerodactylWordRoomSceneID::           db
+wFarawayIslandOutsideSceneID::                    db
 
-	ds 21
+	ds 20
 
 ; fight counts
 

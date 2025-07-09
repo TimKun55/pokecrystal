@@ -23,15 +23,10 @@ FuchsiaCinnabarHouseSailor:
 	closetext
 	clearevent EVENT_VERMILION_SAILORS_HOUSE_SAILOR
 	readvar VAR_FACING
-	ifequal UP, .WalkAroundExit
+	ifnotequal UP, .PathClear
+	applymovement PLAYER, PlayerMovement
+.PathClear:
 	applymovement FUCHSIACINNABARHOUSE1_SAILOR, FuchsiaCinnabarHouseSailorExitMovement
-	disappear FUCHSIACINNABARHOUSE1_SAILOR
-	playsound SFX_EXIT_BUILDING
-	waitsfx
-	end
-
-.WalkAroundExit:
-	applymovement FUCHSIACINNABARHOUSE1_SAILOR, FuchsiaCinnabarHouseSailorWalkAroundExitMovement
 	disappear FUCHSIACINNABARHOUSE1_SAILOR
 	playsound SFX_EXIT_BUILDING
 	waitsfx
@@ -40,24 +35,36 @@ FuchsiaCinnabarHouseSailor:
 FuchsiaCinnabarHouseScientist:
 	faceplayer
 	opentext
+	checkevent EVENT_READ_FARAWAY_ISLAND_SIGN
+	iftrue .IslandVisited
+	checkitem OLD_SEA_MAP
+	iftrue .MapFound
 	writetext ScientistMovedHereAfterEruptionText
 	waitbutton
 	closetext
 	end
 
+.MapFound:
+	writetext ScientistMapExcitedText
+	waitbutton
+	closetext
+	end
+
+.IslandVisited:
+	writetext ScientistVisitedIslandText
+	waitbutton
+	closetext
+	end	
+
+PlayerMovement:
+	step LEFT
+	turn_head RIGHT
+	step_end
+
 FuchsiaCinnabarHouseSailorExitMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step_end
-
-FuchsiaCinnabarHouseSailorWalkAroundExitMovement:
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step RIGHT
 	step DOWN
 	step_end
 
@@ -69,9 +76,10 @@ SailorMovedHereAfterEruptionText:
 	line "after the volcano"
 	cont "erupted."
 	
-	para "I live in Vermilion"
-	line "now and have my"
-	cont "boat there, but I"
+	para "I live over in"
+	line "Vermilion now and"
+	cont "have my boat"
+	cont "there, but I"
 	cont "haven't been out"
 	cont "on the water since"
 	cont "then."
@@ -81,7 +89,7 @@ SailorMovedHereAfterEruptionText:
 	done
 
 SailorThatMapText:
-	text "!!"
+	text "Wait!"
 	
 	para "That Map in your"
 	line "pack…!"
@@ -148,6 +156,35 @@ ScientistMovedHereAfterEruptionText:
 	line "started helping"
 	cont "with the Safari"
 	cont "Zone. It's fun!"
+	done
+
+ScientistMapExcitedText:
+	text "I can't belive you"
+	line "found that Map!"
+	
+	para "So it WAS in"
+	line "Vermilion City"
+	cont "but it was under"
+	cont "a truck?"
+	
+	para "How did it get"
+	line "there, though?"
+	done
+
+ScientistVisitedIslandText:
+	text "Hi <PLAYER>!"
+	
+	para "Good to see you"
+	line "again."
+	
+	para "Since visiting the"
+	line "Island, I keep"
+	cont "getting the urge"
+	cont "to go back!"
+	
+	para "I wonder if I can"
+	line "take some time off"
+	cont "of work…"
 	done
 
 FuchsiaCinnabarHouse1_MapEvents:

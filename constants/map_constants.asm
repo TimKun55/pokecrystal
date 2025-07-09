@@ -363,8 +363,8 @@ ENDM
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ; 11
 	map_const TIN_TOWER_ROOF,                               8, 11 ; 12
-	map_const FARAWAY_ISLAND_OUTSIDE,                      13, 24 ; 13
-	map_const FARAWAY_ISLAND_INSIDE,                       11, 11 ; 14
+	map_const FARAWAY_ISLAND_OUTSIDE,                      17, 23 ; 13
+	map_const FARAWAY_ISLAND_INSIDE,                       14, 12 ; 14
 	endgroup
 
 	newgroup INDIGO                                               ; 16
