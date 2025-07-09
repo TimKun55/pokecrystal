@@ -29,7 +29,6 @@ CeladonEusine:
 	readvar VAR_FACING
 	ifnotequal UP, .PathClear
 	applymovement PLAYER, .PlayerStepsAsideMovement
-	turnobject PLAYER, RIGHT
 .PathClear:
 	applymovement EUSINESHOUSE_EUSINE, .EusineLeavesMovement
 	disappear EUSINESHOUSE_EUSINE
@@ -39,6 +38,7 @@ CeladonEusine:
 
 .PlayerStepsAsideMovement:
 	step LEFT
+	turn_head RIGHT
 	step_end
 
 .EusineLeavesMovement:
