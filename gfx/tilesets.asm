@@ -621,3 +621,15 @@ SECTION "Tileset Data 24", ROMX
 
 TilesetKanto7Attr::
 INCBIN "data/tilesets/kanto_7_attributes.bin"
+
+TilesetFarawayGFX::
+INCBIN "gfx/tilesets/faraway.2bpp.lz"
+
+TilesetFarawayAttr::
+INCBIN "data/tilesets/faraway_attributes.bin"
+
+TilesetFarawayMeta::
+INCBIN "data/tilesets/faraway_metatiles.bin"
+
+TilesetFarawayColl::
+INCLUDE "data/tilesets/faraway_collision.asm"

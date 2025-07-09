@@ -55,4 +55,5 @@ Tilesets::
 	tileset TilesetMuseum
 	tileset TilesetKanto7
 	tileset TilesetDecoStore
+	tileset TilesetFaraway
 	assert_table_length NUM_TILESETS + 1

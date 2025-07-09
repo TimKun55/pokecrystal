@@ -257,6 +257,20 @@ TilesetBattleTowerOutsideAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetFarawayAnim:
+	dw FarawayWaterFrames1, AnimateFarawayWaterTiles
+	dw FarawayWaterFrames2, AnimateFarawayWaterTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:
@@ -481,6 +495,36 @@ AnimateWaterTile:
 
 .WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+
+AnimateFarawayWaterTiles:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+	ld l, e
+	ld h, d
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+
+	; period 8, offset to 1 tile (16 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 8
+	swap a
+
+	add [hl]
+	inc hl
+	ld h, [hl]
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
 
 ForestTreeLeftAnimation:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -1070,3 +1114,9 @@ WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
 WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
 WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
 WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
+
+FarawayWaterFrames1: dw vTiles2 tile $14, FarawayWaterTiles1
+FarawayWaterFrames2: dw vTiles2 tile $15, FarawayWaterTiles2
+
+FarawayWaterTiles1: INCBIN "gfx/tilesets/water/faraway_water_1.2bpp"
+FarawayWaterTiles2: INCBIN "gfx/tilesets/water/faraway_water_2.2bpp"
