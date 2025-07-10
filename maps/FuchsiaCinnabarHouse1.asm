@@ -21,6 +21,12 @@ FuchsiaCinnabarHouseSailor:
 	writetext SailorThatMapText
 	waitbutton
 	closetext
+	turnobject FUCHSIACINNABARHOUSE1_SAILOR, RIGHT
+	turnobject FUCHSIACINNABARHOUSE1_SCIENTIST, LEFT
+	opentext
+	writetext SailorLetScientistKnowText
+	waitbutton
+	closetext
 	clearevent EVENT_VERMILION_SAILORS_HOUSE_SAILOR
 	readvar VAR_FACING
 	ifnotequal UP, .PathClear
@@ -107,6 +113,15 @@ SailorThatMapText:
 	cont "Vermilion City?"
 	
 	para "I'll be waiting!"
+	done
+
+SailorLetScientistKnowText:
+	text "This is it!"
+	
+	para "I'll let you know"
+	line "when we're about"
+	cont "to leave for the"
+	cont "Island."
 	done
 
 ScientistMovedHereAfterEruptionText:

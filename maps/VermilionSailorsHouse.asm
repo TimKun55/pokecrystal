@@ -1,5 +1,6 @@
 	object_const_def
 	const VERMILIONSAILORSHOUSE_SAILOR
+	const VERMILIONSAILORSHOUSE_SCIENTIST
 
 VermilionSailorsHouse_MapScripts:
 	def_scene_scripts
@@ -37,6 +38,69 @@ VermilionSailorsHouseSailorScript:
 	writetext SailorLetsGoText
 	promptbutton
 	closetext
+	checkevent EVENT_FARAWAY_ISLAND_FIRST_TRIP
+	iftrue .NotFirstTime
+	opentext
+	writetext SailorCallScientist1Text
+	waitbutton
+	closetext
+	turnobject VERMILIONSAILORSHOUSE_SAILOR, RIGHT
+	pause 15
+	playsound SFX_CALL
+	waitsfx
+	playsound SFX_CALL
+	waitsfx
+	pause 15
+	opentext
+	writetext SailorCallScientist2Text
+	waitbutton
+	closetext
+	playsound SFX_HANG_UP
+	waitsfx
+	showemote EMOTE_QUESTION, VERMILIONSAILORSHOUSE_SAILOR, 15
+	faceplayer
+	opentext
+	writetext SailorCallScientist3Text
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_EXIT_BUILDING
+	appear VERMILIONSAILORSHOUSE_SCIENTIST
+	pause 15
+	showemote EMOTE_SHOCK, VERMILIONSAILORSHOUSE_SAILOR, 15
+	turnobject VERMILIONSAILORSHOUSE_SAILOR, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 15
+	readvar VAR_FACING	
+	ifnotequal UP, .NoMovement
+	turnobject PLAYER, DOWN
+	applymovement PLAYER, PlayerMoveForScientistMovement
+.NoMovement
+	turnobject PLAYER, DOWN
+	applymovement VERMILIONSAILORSHOUSE_SCIENTIST, ScientistWalksInMovement
+	opentext
+	writetext ScientistArrivalText
+	waitbutton
+	closetext
+	showemote EMOTE_HAPPY, VERMILIONSAILORSHOUSE_SAILOR, 15
+	opentext
+	writetext SailorWaitOnBoatText
+	waitbutton
+	closetext
+	applymovement VERMILIONSAILORSHOUSE_SCIENTIST, ScientistLeavesMovement
+	disappear VERMILIONSAILORSHOUSE_SCIENTIST
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_FARAWAY_ISLAND_FIRST_TRIP
+	faceplayer
+	follow VERMILIONSAILORSHOUSE_SAILOR, PLAYER
+	applymovement VERMILIONSAILORSHOUSE_SAILOR, SailorExitMove1
+	stopfollow
+	disappear VERMILIONSAILORSHOUSE_SAILOR
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	applymovement PLAYER, PlayerSingleStepExitMovement
+	sjump .Continue2
+
+.NotFirstTime:
 	readvar VAR_FACING
 	ifequal UP, .SailorLocation1
 	applymovement VERMILIONSAILORSHOUSE_SAILOR, SailorExitMove1
@@ -88,6 +152,8 @@ BoredSailorLeavesMovement:
 	step DOWN
 	step_end
 
+	step_end	
+
 SailorExitMove1:
 	step DOWN
 	step LEFT
@@ -102,9 +168,11 @@ SailorExitMove2:
 
 PlayerExitMove1:
 	step DOWN
+PlayerSingleStepExitMovement:
 	step LEFT
 	step_end
 
+ScientistLeavesMovement:
 PlayerExitMove2:
 	step LEFT
 	step LEFT
@@ -116,6 +184,10 @@ PlayerExitMove3:
 	step LEFT
 	step LEFT
 	step_end
+
+SetText:
+	text "SET."
+	done
 
 SailorSoBoredText:
 	text "I finally got a"
@@ -147,8 +219,17 @@ SailorWhatIsThatMapText:
 	para "… … …"
 	
 	para "Yes, I'm sure."
-	line "This is this a"
-	cont "forgotten island!"
+	line "This is the 'lost'"
+	cont "jungle island"
+	cont "that Team Rocket"
+	cont "were trying to"
+	cont "get to!"
+	
+	para "According to"
+	line "rumour, this is"
+	cont "where a Mythical"
+	cont "#mon was dis-"
+	cont "covered…"
 	
 	para "Wow!"
 	done
@@ -161,6 +242,48 @@ SailorShouldWeSailText:
 SailorLetsGoText:
 	text "Amazing!"
 	line "Let's go!"
+	done
+
+SailorCallScientist1Text:
+	text "Oh!"
+	
+	para "Hang on, I need"
+	line "to make a quick"
+	cont "phone call."
+	done
+
+SailorCallScientist2Text:
+	text "Hey, it's me!"
+	
+	para "We're about to"
+	line "set sail - how"
+	cont "fast can you"
+	cont "get here?"
+	
+	para "… … …"
+	done
+
+SailorCallScientist3Text:
+	text "He hung up…"
+	done
+
+ScientistArrivalText:
+	text "Scientist: I was"
+	line "already in town"
+	cont "doing some field"
+	cont "research."
+	
+	para "But that can all"
+	line "wait - let's go"
+	cont "right now!"
+	done
+
+SailorWaitOnBoatText:
+	text "Sailor: Amazing"
+	line "timing, mate!"
+	
+	para "Go on and get"
+	line "settled in."
 	done
 
 SailorMorePreparedText:
@@ -181,3 +304,4 @@ VermilionSailorsHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, VermilionSailorsHouseSailorScript, EVENT_VERMILION_SAILORS_HOUSE_SAILOR
+	object_event  2,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_VERMILION_SAILORS_HOUSE_SCIENTIST

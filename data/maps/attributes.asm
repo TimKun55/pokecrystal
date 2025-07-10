@@ -639,8 +639,8 @@ ENDM
 	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $00, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
-	map_attributes FarawayIslandOutside, FARAWAY_ISLAND_OUTSIDE, $40, 0
-	map_attributes FarawayIslandInside, FARAWAY_ISLAND_INSIDE, $6f, 0	
+	map_attributes FarawayIslandOutside, FARAWAY_ISLAND_OUTSIDE, $06, 0
+	map_attributes FarawayIslandInside, FARAWAY_ISLAND_INSIDE, $17, 0	
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
 	map_attributes KogasRoom, KOGAS_ROOM, $00, 0

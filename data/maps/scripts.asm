@@ -59,7 +59,6 @@ INCLUDE "maps/CeruleanEmptyHouse.asm"
 INCLUDE "maps/CeruleanEmptyHouseUnderground.asm"
 INCLUDE "maps/SeafoamGym.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
-INCLUDE "maps/VermilionSailorsHouse.asm"
 INCLUDE "maps/FarawayIslandInside.asm"
 INCLUDE "maps/UnionCaveB2F.asm"
 
@@ -115,6 +114,7 @@ INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
 INCLUDE "maps/IlexForest.asm"
 INCLUDE "maps/MountMoonB2F.asm"
+INCLUDE "maps/VermilionSailorsHouse.asm"
 
 
 SECTION "Map Scripts 7", ROMX
