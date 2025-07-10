@@ -152,6 +152,14 @@ BoredSailorLeavesMovement:
 	step DOWN
 	step_end
 
+ScientistWalksInMovement:
+	step UP
+	step UP
+	step_end
+
+PlayerMoveForScientistMovement:
+	step LEFT
+	step UP
 	step_end	
 
 SailorExitMove1:
