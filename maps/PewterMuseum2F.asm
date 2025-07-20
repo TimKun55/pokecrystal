@@ -158,8 +158,8 @@ PewterMuseum2F_MapEvents:
 
 	def_bg_events
 	bg_event  3,  6, BGEVENT_READ, PewterMuseum2FMoonStoneSignpostScript
-	bg_event 13,  6, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
-	bg_event 13,  2, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
+	bg_event 13,  2, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
+	bg_event 13,  6, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
 
 
 	def_object_events

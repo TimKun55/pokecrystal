@@ -68,9 +68,9 @@ Route2FruitTree:
 	fruittree FRUITTREE_ROUTE_2
 
 BeautyCarolineSeenText:
-	text "I wanted to visit"
+	text "I love visiting"
 	line "the Museum, but"
-	cont "it's closed!"
+	cont "I need a break."
 	
 	para "Let's battle to"
 	line "pass the time."
@@ -81,9 +81,9 @@ BeautyCarolineBeatenText:
 	done
 
 BeautyCarolineAfterBattleText:
-	text "I really hope they"
-	line "open the Museum"
-	cont "again soon."
+	text "I wonder if the"
+	line "Museum will get"
+	cont "new exhibits?"
 	done
 
 BeautyCarleneSeenText:
