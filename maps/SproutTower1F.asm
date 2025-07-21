@@ -77,8 +77,8 @@ SproutTower1FSage2Text:
 	done
 
 SproutTower1FGrannyText:
-	text "A Bellsprout over"
-	line "100 feet tall…"
+	text "A 30 meter tall"
+	line "Bellsprout…"
 
 	para "People say that it"
 	line "became the center"
