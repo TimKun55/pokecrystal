@@ -379,7 +379,6 @@ _2DMenuInterpretJoypad:
 	jr nz, .d_up
 	bit D_DOWN_F, a
 	jr nz, .d_down
-.done:
 	and a
 	ret
 
@@ -488,10 +487,6 @@ _2DMenuInterpretJoypad:
 	ret
 
 .b_button
-	ld a, [wBattleMode]
-	dec a
-	jp nz, .done
-
 	ld a, $2
 	ld [wMenuCursorX], a
 	ld [wMenuCursorY], a
