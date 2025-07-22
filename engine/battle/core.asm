@@ -4944,8 +4944,9 @@ BattleMenu:
 	call UpdateBattleHuds
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
-	call GetWeatherImage
 .ok
+
+	call GetWeatherImage
 
 .loop
 	ld a, [wBattleType]
@@ -5525,7 +5526,6 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
-	call GetWeatherImage
 	ld a, [wSwappingMove]
 	and a
 	jr z, .interpret_joypad
@@ -5735,7 +5735,7 @@ MoveInfoBox:
 
 	hlcoord 0, 7 ; upper right corner of the textbox
 	ld b, 4 ; Box height
-	ld c, 7 ; Box length
+	ld c, 8 ; Box length
 	call Textbox
 	call MobileTextBorder
 
@@ -5783,7 +5783,6 @@ MoveInfoBox:
 	and PP_MASK
 	ld [wStringBuffer1], a
 	call .PrintPP
-	call GetWeatherImage
 
 	farcall UpdateMoveData
 	farcall LoadBattleCategoryAndTypePals
@@ -5802,7 +5801,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $55 
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
-	hlcoord 1, 11 ; placing the Type Tiles in  the MoveInfoBox
+	hlcoord 2, 11 ; placing the Type Tiles in  the MoveInfoBox
 	ld [hl], $55
 	inc hl
 	ld [hl], $56
@@ -5825,7 +5824,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 6, 11 ; placing the Category Tiles in the MoveInfoBox
+	hlcoord 7, 11 ; placing the Category Tiles in the MoveInfoBox
 	ld [hl], $59
 	inc hl
 	ld [hl], $5a
@@ -5836,13 +5835,44 @@ MoveInfoBox:
 	call PlaceString
 
 	hlcoord 5, 8
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_COUNTER
+	jr z, .has_variable_power
+	cp EFFECT_LEVEL_DAMAGE
+	jr z, .has_variable_power
+	cp EFFECT_SUPER_FANG
+	jr z, .has_variable_power
+	cp EFFECT_REVERSAL
+	jr z, .has_variable_power
+	cp EFFECT_RETURN
+	jr z, .has_variable_power
+	cp EFFECT_PRESENT
+	jr z, .has_variable_power
+	cp EFFECT_MAGNITUDE
+	jr z, .has_variable_power
+	cp EFFECT_MIRROR_COAT
+	jr z, .has_variable_power
+
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .haspower
-	ld de, .nopower_string ; "---"
+	cp 2
+	jr c, .nopower
+	; MOVE_POWER is 2 or higher
+
+	; code for moves with power 2+
+	jr .haspower
+
+.has_variable_power:
+	ld de, .place_var_string
 	call PlaceString
 	jr .print_acc
-.haspower	
+
+.nopower:
+	ld de, .nopower_string
+	call PlaceString
+	jr .print_acc
+
+.haspower:	
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
@@ -5853,8 +5883,6 @@ MoveInfoBox:
 	hlcoord 1, 9
 	ld de, .accuracy_string ; "Acc"
 	call PlaceString
-	hlcoord 4, 9
-	ld [hl], "<%>"
 	hlcoord 5, 9
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
 	call Adjust_Percent_Battle
@@ -5863,13 +5891,13 @@ MoveInfoBox:
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
+	hlcoord 8, 9
+	ld [hl], "<%>"
 	
 ; Effect Chance
 	hlcoord 1, 10
 	ld de, .EffectChance
 	call PlaceString
-	hlcoord 4, 10
-	ld [hl], "<%>"
 	hlcoord 5, 10
 	ld a, [wPlayerMoveStruct + MOVE_CHANCE]
 	call Adjust_Percent_Battle
@@ -5913,13 +5941,15 @@ MoveInfoBox:
 	ld [hl], a
 	ret
 .power_string:
-	db "Pow@"
+	db "Pow<COLON>@"
 .nopower_string:
 	db "---@"
+.place_var_string:
+	db "Var@"
 .accuracy_string:
-	db "Acc@"
+	db "Acc<COLON>@"
 .EffectChance:
-	db "Eff@"
+	db "Eff<COLON>@"
 
 Adjust_Percent_Battle:
 	ldh [hMultiplicand + 2], a
