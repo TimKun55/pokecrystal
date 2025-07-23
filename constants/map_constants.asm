@@ -146,7 +146,7 @@ ENDM
 	map_const DRAGONS_DEN_B1F,                             20, 22 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
 	map_const TOHJO_FALLS,                                 21, 17 ; 83
-	map_const DIGLETTS_CAVE,                               10, 18 ; 84
+	map_const DIGLETTS_CAVE,                               18, 21 ; 84
 	map_const VIRIDIAN_FOREST,                             24, 22 ; 85
 	map_const MOUNT_MOON_1F,                               15, 13 ; 86
 	map_const UNDERGROUND_PATH,                             3, 14 ; 87
