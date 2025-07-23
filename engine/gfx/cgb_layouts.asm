@@ -1236,11 +1236,11 @@ _CGB_TrainerCard:
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-;	ld hl, MainCardPals
-;	ld de, wBGPals1 palette 7
-;	ld bc, 1 palettes
-;	ld a, BANK(wBGPals1)
-;	call FarCopyWRAM
+	ld hl, MainCardPals
+	ld de, wBGPals1 palette 2
+	ld bc, 3 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
@@ -1263,10 +1263,15 @@ _CGB_TrainerCard:
 .got_gender2
 	call FillBoxCGB
 
-;	hlcoord 1, 8, wAttrmap
-;	lb bc, 1, SCREEN_WIDTH -2
-;	ld a, $7
-;	call FillBoxCGB
+	hlcoord 2, 15, wAttrmap
+	lb bc, 2, 2
+	ld a, $2
+	call FillBoxCGB
+
+	hlcoord 5, 15, wAttrmap
+	lb bc, 2, 2
+	ld a, $3
+	call FillBoxCGB
 
 	call ApplyAttrmap
 	call ApplyPals

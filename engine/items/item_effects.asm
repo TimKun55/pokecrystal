@@ -81,7 +81,7 @@ ItemEffects:
 	dw RestorePPEffect     ; ELIXER
 	dw NoEffect            ; RED_SCALE
 	dw NoEffect            ; SECRETPOTION
-	dw NoEffect            ; S_S_TICKET
+	dw NoEffect            ; ITEM_44
 	dw NoEffect            ; MYSTERY_EGG
 	dw NoEffect            ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
@@ -147,7 +147,7 @@ ItemEffects:
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
-	dw NoEffect            ; PASS
+	dw NoEffect            ; ITEM_86
 	dw NoEffect            ; EVIOLITE
 	dw LowerEVBerryEffect  ; QUALOT_BERRY
 	dw VitaminEffect       ; ZINC

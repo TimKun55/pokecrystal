@@ -95,6 +95,11 @@ TrainerCard_Page1_LoadGFX:
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 
+	ld de, TicketsGFX
+	ld hl, vTiles2 tile $37
+	lb bc, BANK(TicketsGFX), 8
+	call Request2bpp
+
 	call TrainerCard_Page1_PrintDexCaught_GameTime
 	call TrainerCard_IncrementJumptable
 	ret
@@ -217,17 +222,50 @@ TrainerCard_PrintTopHalfOfCard:
 	ld d, 5
 	call TrainerCard_InitBorder
 
+	eventflagcheck EVENT_GRAND_CHAMPION
+	jr z, .ChampionString
+	hlcoord 3, 1
+	ld de, .Grand
+	call PlaceString
+	hlcoord 4, 2
+	ld de, .Champion
+	call PlaceString
+	jr .ContinueStrings
+
+.ChampionString
+	eventflagcheck EVENT_BEAT_ELITE_FOUR
+	jr z, .PkmnTrainerString
 	hlcoord 3, 2
-	ld de, .Name
+	lb bc, 2, 8
+	call ClearBox
+	hlcoord 2, 1
+	ld de, .League
+	call PlaceString
+	hlcoord 4, 2
+	ld de, .Champion
+	call PlaceString
+	jr .ContinueStrings
+
+.PkmnTrainerString
+	hlcoord 3, 1
+	lb bc, 2, 8
+	call ClearBox
+	hlcoord 2, 1
+	ld de, .PkmnTrainer1
+	call PlaceString
+	hlcoord 4, 2
+	ld de, .PkmnTrainer2
+	call PlaceString
+
+.ContinueStrings
+	hlcoord 3, 3
+	ld de, wPlayerName
 	call PlaceString
 
 	hlcoord 3, 4
 	ld de, .ID_No
 	call TrainerCardSetup_PlaceTilemapString
 
-	hlcoord 8, 2
-	ld de, wPlayerName
-	call PlaceString
 	hlcoord 6, 4
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
@@ -245,8 +283,20 @@ TrainerCard_PrintTopHalfOfCard:
 	predef PlaceGraphic
 	ret
 
-.Name:
-	db "Name/@"
+.PkmnTrainer1:
+	db "Pokémon@"
+
+.PkmnTrainer2:
+	db "Trainer@"
+
+.League:
+	db "League@"
+
+.Champion:
+	db "Champion@"
+
+.Grand:
+	db "Grand"
 
 .ID_No:
 	db $da, $db, $e8, -1 ; ID No.
@@ -258,29 +308,6 @@ TrainerCardSetup_ClearBottomHalf:
 	ret
 
 TrainerCard_Page1_PrintDexCaught_GameTime:
-	hlcoord 2, 14
-	ld de, .PkmnTrainer
-	call PlaceString
-
-	eventflagcheck EVENT_BEAT_ELITE_FOUR
-	jr z, .ContinueStrings
-	hlcoord 2, 14
-	lb bc, 1, 16
-	call ClearBox
-	hlcoord 2, 14
-	ld de, .Champion
-	call PlaceString
-
-	eventflagcheck EVENT_GRAND_CHAMPION
-	jr z, .ContinueStrings
-	hlcoord 2, 14
-	lb bc, 1, 16
-	call ClearBox
-	hlcoord 2, 14
-	ld de, .GrandChamp
-	call PlaceString
-
-.ContinueStrings
 	hlcoord 2, 10
 	ld de, .Dex_PlayTime
 	call PlaceString
@@ -306,16 +333,25 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	lb bc, 1, 16
 	call ClearBox
 .have_pokedex
+	eventflagcheck EVENT_GOT_SS_TICKET_FROM_ELM
+	jr z, .CheckTrainPass
+	hlcoord 2, 15
+	ld de, .SSTicketTop
+	call TrainerCardSetup_PlaceTilemapString
+	hlcoord 2, 16
+	ld de, .SSTicketBottom
+	call TrainerCardSetup_PlaceTilemapString
+.CheckTrainPass
+	eventflagcheck EVENT_GOT_PASS_FROM_COPYCAT
+	jr z, .Finish
+	hlcoord 5, 15
+	ld de, .TrainTicketTop
+	call TrainerCardSetup_PlaceTilemapString
+	hlcoord 5, 16
+	ld de, .TrainTicketBottom
+	call TrainerCardSetup_PlaceTilemapString
+.Finish
 	ret
-
-.PkmnTrainer:
-	db "   <PKMN> Trainer@"
-
-.Champion:
-	db "    Champion@"
-
-.GrandChamp:
-	db "Grand Champion@"
 
 .Dex_PlayTime:
 	db   "#dex"
@@ -323,6 +359,18 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 
 .Badges:
 	db "Badges▶@"
+
+.SSTicketTop:
+	db $37, $38, -1
+
+.SSTicketBottom:
+	db $3b, $3c, -1
+
+.TrainTicketTop:
+	db $39, $3a, -1
+
+.TrainTicketBottom:
+	db $3d, $3e, -1
 
 TrainerCard_Page2_3_InitObjectsAndStrings:
 	push hl
@@ -464,7 +512,7 @@ TrainerCard_Page1_PrintGameTime:
 	ret nz
 	hlcoord 15, 12
 	ld a, [hl]
-	xor " " ^ $32 ; alternate between space and small colon ($32) tiles
+	xor " " ^ $30 ; alternate between space and small colon ($30) tiles
 	ld [hl], a
 	ret
 
@@ -693,3 +741,4 @@ LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.2bpp"
 LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.2bpp"
 BadgeGFX:   INCBIN "gfx/trainer_card/johto_badges.2bpp"
 BadgeGFX2:  INCBIN "gfx/trainer_card/kanto_badges.2bpp"
+TicketsGFX: INCBIN "gfx/trainer_card/tickets.2bpp"

@@ -73,7 +73,7 @@
 	const ELIXER       ; 41
 	const RED_SCALE    ; 42
 	const SECRETPOTION ; 43
-	const S_S_TICKET   ; 44
+	const ITEM_44      ; 44
 	const MYSTERY_EGG  ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
@@ -139,7 +139,7 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const PASS         ; 86
+	const ITEM_86      ; 86
 	const EVIOLITE     ; 87
 	const QUALOT_BERRY ; 88
 	const ZINC         ; 89

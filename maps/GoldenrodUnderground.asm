@@ -446,6 +446,7 @@ BasementDoorScript::
 	waitbutton
 	closetext
 	setevent EVENT_USED_BASEMENT_KEY	
+	takeitem BASEMENT_KEY
 	changeblock 18, 6, $2e ; unlocked door
 	reloadmappart
 	end
@@ -587,6 +588,9 @@ GoldenrodUndergroundTheDoorIsOpenText:
 GoldenrodUndergroundBasementKeyOpenedDoorText:
 	text "The Basement Key"
 	line "opened the door."
+	
+	para "The Key got stuck"
+	line "in the lock."
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:

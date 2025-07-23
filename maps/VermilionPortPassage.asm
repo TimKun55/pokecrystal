@@ -38,7 +38,7 @@ _VermilionPortPassageTicketCheckScript:
 	iffalse VermilionPortPassageNotRidingScript
 	writetext VermilionPortPassageAskTicketText
 	promptbutton
-	checkitem S_S_TICKET
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iffalse .NoTicket
 	writetext VermilionPortPassageFlashTicketText
 	waitbutton
@@ -101,8 +101,8 @@ VermilionPortPassageComeAgainText:
 	done
 
 VermilionPortPassageFlashTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.Ticket."
+	text "<PLAYER> showed"
+	line "the Trainer Card."
 
 	para "That's it."
 	line "Thank you!"

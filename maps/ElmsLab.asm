@@ -458,7 +458,6 @@ ElmGiveMasterBallScript:
 ElmGiveTicketScript:
 	writetext ElmGiveTicketText1
 	promptbutton
-	verbosegiveitem S_S_TICKET
 	writetext ElmGiveTicketText2
 	waitbutton
 	closetext
@@ -1469,7 +1468,9 @@ ElmGiveTicketText1:
 	cont "thing for you."
 
 	para "See? It's an"
-	line "S.S.Ticket."
+	line "S.S.Ticket"
+	cont "symbol for your"
+	cont "Trainer Card."
 
 	para "Now you can travel"
 	line "to Kanto and catch"

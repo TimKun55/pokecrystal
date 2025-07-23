@@ -119,8 +119,6 @@ Copycat:
 .GivePass:
 	writetext CopycatText_GivePass
 	promptbutton
-	verbosegiveitem PASS
-	iffalse .Cancel
 	setevent EVENT_GOT_PASS_FROM_COPYCAT
 	writetext CopycatText_ExplainPass
 	waitbutton
@@ -166,7 +164,6 @@ Copycat:
 	opentext
 	writetext CopycatText_ItsAScream
 	waitbutton
-.Cancel:
 	closetext
 	end
 
@@ -264,6 +261,10 @@ CopycatText_GivePass:
 	text "OK. Here's the"
 	line "Magnet Train Pass"
 	cont "like I promised!"
+	
+	para "It becomes part"
+	line "of your Trainer"
+	cont "Card!"
 	done
 
 CopycatText_ExplainPass:

@@ -219,12 +219,10 @@ ItemNameOrder:
 	db CLEAR_BELL   ; 46
 	db GS_BALL      ; 73
 	db OLD_SEA_MAP  ; b0
-	db PASS         ; 86
 	db SILVER_WING  ; 47
 	db RAINBOW_WING ; b2
 	db SECRET_KEY   ; 2d
 	db SQUIRTBOTTLE ; af
-	db S_S_TICKET   ; 44
 
 	; Temporary Key Items
 	db BALL_RELIC   ; 9a
@@ -239,6 +237,8 @@ ItemNameOrder:
 	; Unused Items
 	db TOWN_MAP     ; 06
 	db POKE_FLUTE   ; 38
+	db ITEM_44      ; 44
+	db ITEM_86      ; 86
 	db ITEM_A8      ; a8
 	db ITEM_AB      ; ab
 	db ITEM_B3      ; b3

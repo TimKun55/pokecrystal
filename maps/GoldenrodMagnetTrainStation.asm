@@ -41,8 +41,8 @@ GoldenrodMagnetTrainStationOfficerScript:
 	writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
-	iffalse .PassNotInBag
+	checkevent EVENT_GOT_PASS_FROM_COPYCAT
+	iffalse .NoPass
 	writetext GoldenrodMagnetTrainStationOfficerRightThisWayText
 	waitbutton
 	closetext
@@ -60,7 +60,7 @@ GoldenrodMagnetTrainStationOfficerScript:
 	turn_head DOWN
 	step_end
 
-.PassNotInBag:
+.NoPass:
 	writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
 	waitbutton
 	closetext

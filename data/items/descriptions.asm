@@ -68,7 +68,7 @@ ItemDescriptions:
 	dw ElixerDesc
 	dw RedScaleDesc
 	dw SecretPotionDesc
-	dw SSTicketDesc
+	dw TeruSama25Desc
 	dw MysteryEggDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
@@ -134,7 +134,7 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw PassDesc
+	dw TeruSama25Desc
 	dw EvioliteDesc
 	dw QualotBerryDesc
 	dw ZincDesc
@@ -525,10 +525,6 @@ SecretPotionDesc:
 	db   "Fully heals any"
 	next "#mon.@"
 
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S. Aqua.@"
-
 MysteryEggDesc:
 	db   "An Egg obtained"
 	next "from Mr.#mon.@"
@@ -783,10 +779,6 @@ StarPieceDesc:
 BasementKeyDesc:
 	db   "Opens certain"
 	next "locked doors.@"
-
-PassDesc:
-	db   "A ticket for the"
-	next "Magnet Train.@"
 
 EvioliteDesc:
 	db   "Ups Defenses if"

@@ -38,7 +38,7 @@ _OlivinePortPassageTicketCheckScript:
 	iffalse OlivinePortPassageNotRidingScript
 	writetext OlivinePortPassageAskTicketText
 	promptbutton
-	checkitem S_S_TICKET
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iffalse .NoTicket
 	writetext OlivinePortPassageFlashTicketText
 	waitbutton
@@ -101,8 +101,8 @@ OlivinePortPassageComeAgainText:
 	done
 
 OlivinePortPassageFlashTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.Ticket."
+	text "<PLAYER> showed"
+	line "the Trainer Card."
 
 	para "That's it."
 	line "Thank you!"
