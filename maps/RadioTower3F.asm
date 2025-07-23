@@ -161,6 +161,7 @@ CardKeySlotScript::
 	writetext InsertedTheCardKeyText
 	waitbutton
 	setevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
+	takeitem CARD_KEY
 	playsound SFX_ENTER_DOOR
 	changeblock 14, 2, $2a ; open shutter
 	changeblock 14, 4, $01 ; floor
