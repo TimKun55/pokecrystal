@@ -5912,6 +5912,8 @@ MoveInfoBox:
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
+	hlcoord 8, 10
+	ld [hl], "<%>"
 .effect_chance_done
 ; set battle CGB layout	
 	ld b, SCGB_BATTLE_COLORS
