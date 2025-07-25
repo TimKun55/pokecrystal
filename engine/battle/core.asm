@@ -8557,6 +8557,7 @@ FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
 	ret
 
 ExitBattle:
+	farcall UpdatePartyStats
 	call .HandleEndOfBattle
 	call CleanUpBattleRAM
 	ret

@@ -1,5 +1,96 @@
 DEF RANDY_OT_ID EQU 01001
 
+UpdatePartyStats::
+	ld a, -1
+	ld c, -1
+	ld hl, wPartySpecies - 1
+
+.party_loop
+	inc c
+	inc hl
+	ld a, [hl]
+	and a
+	ret z ; end loop.
+
+	cp -1
+	ret z ; end loop.
+
+	cp EGG
+	jr z, .party_loop ; next iteration.
+
+	push bc
+	push hl
+
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData ; doesn't clobber BC.
+
+	ld a, c
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld hl, wPartyMon1Level
+	call AddNTimes
+	ld a, [hl]
+	ld [wCurPartyLevel], a	
+
+	ld de, MON_MAXHP - MON_LEVEL
+	add hl, de
+	ld d, h
+	ld e, l
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	dec hl
+	push bc ; We save the current Max HP value (little-endian).
+
+	ld bc, (MON_EVS - 1) - MON_MAXHP ; This also set B to non-zero.
+	add hl, bc
+
+	call CalcMonStats ; B needs to be != 0 for the Effort Values to be accounted. Doesn't clobber HL.
+	pop bc ; We retrieve the previous max HP value (little-endian).
+
+	; When the Pokémon gains Max HP, we want it current HP to increase by the same amount.
+	ld a, c
+	cpl
+	ld c, a
+	ld a, b
+	cpl
+	ld b, a
+	inc bc ; BC = -previous Max HP (little-endian).
+	
+	ld de, MON_MAXHP - (MON_EVS - 1) ; This also set B to non-zero.
+	add hl, de ; HL points to the current Max HP address.
+	ld d, h
+	ld e, l
+	dec de ; DE points to the current Cur HP + 1 address.
+
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a ; HL contains the current value Max HP value (little endian).
+	add hl, bc ; HL contains the Max HP gain (little endian).
+
+	ld b, h
+	ld c, l ; BC contains the Max HP gain (little endian).
+
+	ld h, d
+	ld l, e ; HL points to the Cur HP + 1 address.
+	
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a ; HL contains the current Cur HP value (little endian).
+	add hl, bc ; HL contains the updated Cur HP value (little endian).
+	ld b, h
+	ld a, l ; BA contains the updated Cur HP value (little endian).
+
+	ld h, d
+	ld l, e ; HL points to the Cur HP + 1 address.
+
+	ld [hld], a
+	ld [hl], b ; The Cur HP value has been written into the Pokémon's data structure (big-endian).
+	
+	pop hl
+	pop bc
+	jr .party_loop
+
 TryAddMonToParty:
 ; Check if to copy wild mon or generate a new one
 	; Whose is it?
