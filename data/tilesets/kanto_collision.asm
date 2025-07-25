@@ -240,3 +240,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ef
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; f0
 	tilecoll WATER, WATER, WATER, WATER ; f1
+	tilecoll WATER, WATER, WATER, WATER ; f2

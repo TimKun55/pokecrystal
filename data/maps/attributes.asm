@@ -318,7 +318,7 @@ ENDM
 	map_attributes LavenderTown, LAVENDER_TOWN, $45, NORTH | SOUTH | WEST
 	connection north, Route10South, ROUTE_10_SOUTH, -1
 	connection south, Route12, ROUTE_12, 0
-	connection west, Route8, ROUTE_8, 0
+	connection west, Route8, ROUTE_8, 1
 
 	map_attributes VermilionCity, VERMILION_CITY, $25, NORTH | EAST
 	connection north, Route6, ROUTE_6, 5
@@ -369,7 +369,7 @@ ENDM
 
 	map_attributes Route8, ROUTE_8, $45, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -11
-	connection east, LavenderTown, LAVENDER_TOWN, 0
+	connection east, LavenderTown, LAVENDER_TOWN, -1
 
 	map_attributes Route10North, ROUTE_10_NORTH, $45, NORTH | SOUTH
 	connection north, Route9, ROUTE_9, -20

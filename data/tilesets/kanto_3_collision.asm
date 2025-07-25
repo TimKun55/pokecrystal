@@ -208,3 +208,6 @@
 	tilecoll WATER, WATER, WATER, WATER ; cf
 	tilecoll WATER, WATER, WATER, WATER ; d0
 	tilecoll WATER, WATER, WATER, WATER ; d1
+	tilecoll FLOOR, WALL, FLOOR, WALL ; d2
+	tilecoll FLOOR, WALL, FLOOR, WALL ; d3
+	tilecoll WALL, WALL, WALL, FLOOR ; d4

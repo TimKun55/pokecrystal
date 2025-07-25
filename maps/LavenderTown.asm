@@ -122,30 +122,30 @@ LavenderTown_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  5, LAVENDER_POKECENTER_1F, 1
-	warp_event  5,  9, MR_FUJIS_HOUSE, 1
-	warp_event  3, 13, LAVENDER_SPEECH_HOUSE, 1
-	warp_event  7, 13, LAVENDER_NAME_RATER, 1
-	warp_event  1,  5, LAVENDER_MART, 2
-	warp_event 14, 11, SOUL_HOUSE, 1
-	warp_event 14,  5, LAV_RADIO_TOWER_1F, 1
-	warp_event  9, 17, ROUTE_12_LAVENDER_GATE, 1
-	warp_event 10, 17, ROUTE_12_LAVENDER_GATE, 2
+	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
+	warp_event  7, 10, MR_FUJIS_HOUSE, 1
+	warp_event  5, 15, LAVENDER_SPEECH_HOUSE, 1
+	warp_event  9, 15, LAVENDER_NAME_RATER, 1
+	warp_event  7,  5, LAVENDER_MART, 2
+	warp_event 16, 13, SOUL_HOUSE, 1
+	warp_event 16,  7, LAV_RADIO_TOWER_1F, 1
+	warp_event  9, 19, ROUTE_12_LAVENDER_GATE, 1
+	warp_event 10, 19, ROUTE_12_LAVENDER_GATE, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  8, BGEVENT_READ, LavenderTownSign
-	bg_event 11,  5, BGEVENT_READ, KantoRadioStationSign
-	bg_event  3,  9, BGEVENT_READ, VolunteerPokemonHouseSign
-	bg_event 14, 13, BGEVENT_READ, SoulHouseSign
-	bg_event  6,  5, BGEVENT_READ, LavenderPokecenterSignText
-	bg_event  2,  5, BGEVENT_READ, LavenderMartSignText
+	bg_event 11, 10, BGEVENT_READ, LavenderTownSign
+	bg_event 13,  7, BGEVENT_READ, KantoRadioStationSign
+	bg_event  5, 10, BGEVENT_READ, VolunteerPokemonHouseSign
+	bg_event 16, 15, BGEVENT_READ, SoulHouseSign
+	bg_event  4,  5, BGEVENT_READ, LavenderPokecenterSignText
+	bg_event  8,  5, BGEVENT_READ, LavenderMartSignText
 
 	def_object_events
-	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
-	object_event  2, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
-	object_event 15, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
-	object_event  6, 11, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderTownSchoolboyScript, -1
-	object_event  9, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
-	object_event 10, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event 15,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
+	object_event  4, 17, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
+	object_event 17, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
+	object_event  8, 12, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderTownSchoolboyScript, -1
+	object_event  9, 18, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event 10, 18, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownOfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH

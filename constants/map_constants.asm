@@ -231,8 +231,8 @@ ENDM
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_4,                                     20,  9 ; 10
 	map_const ROUTE_5,                                     10, 13 ; 11
-	map_const ROUTE_9,                                     30,  9 ; 12
-	map_const ROUTE_10_NORTH,                              10, 13 ; 13
+	map_const ROUTE_9,                                     31,  9 ; 12
+	map_const ROUTE_10_NORTH,                              11, 13 ; 13
 	map_const ROUTE_24,                                    12,  9 ; 14
 	map_const ROUTE_25,                                    32, 10 ; 15
 	map_const CERULEAN_CITY,                               20, 18 ; 16
@@ -404,8 +404,8 @@ ENDM
 
 	newgroup LAVENDER                                             ; 18
 	map_const ROUTE_8,                                     20,  9 ;  1
-	map_const ROUTE_10_SOUTH,                              12, 11 ;  2
-	map_const LAVENDER_TOWN,                               10,  9 ;  3
+	map_const ROUTE_10_SOUTH,                              12, 10 ;  2
+	map_const LAVENDER_TOWN,                               12, 10 ;  3
 	map_const LAVENDER_POKECENTER_1F,                       6,  4 ;  4
 	map_const MR_FUJIS_HOUSE,                               5,  4 ;  5
 	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  6
