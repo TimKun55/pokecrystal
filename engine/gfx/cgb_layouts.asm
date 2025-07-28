@@ -1646,19 +1646,19 @@ _CGB_PackPals:
 
 .got_gender
 	ld de, wBGPals1
-	ld bc, 4 palettes
+	ld bc, 5 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrmap
 
-	hlcoord 0, 0, wAttrmap ; ◀▶ POCKET
+	hlcoord 0, 0, wAttrmap ; ◀▶ Pocket ▼▲ Items
 	lb bc, 1, 10
-	ld a, $0
+	ld a, $3
 	call FillBoxCGB
 
-	hlcoord 10, 0, wAttrmap ; ▼▲ ITEMS
+	hlcoord 10, 0, wAttrmap ; SEL Move STA Sort
 	lb bc, 1, 10
-	ld a, $2
+	ld a, $4
 	call FillBoxCGB
 
 	hlcoord 7, 2, wAttrmap ; red arrow
