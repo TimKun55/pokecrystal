@@ -218,8 +218,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; d9
 	tilecoll WALL, WALL, WALL, WALL ; da
 	tilecoll WALL, WALL, WALL, WALL ; db
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
-	tilecoll WALL, WALL, DOOR, DOOR ; dd
+	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; dc
+	tilecoll WALL, HEADBUTT_TREE, WALL, WALL ; dd
 	tilecoll WALL, WALL, WALL, DOOR ; de
 	tilecoll WALL, WALL, DOOR, WALL ; df
 	tilecoll WALL, WALL, WALL, FLOOR ; e0
@@ -243,3 +243,5 @@
 	tilecoll WALL, WALL, CAVE, WALL ; f2
 	tilecoll WALL, WALL, WALL, WALL ; f3
 	tilecoll WALL, WALL, WALL, WALL ; f4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f5
+	tilecoll WALL, WALL, DOOR, DOOR ; f6
