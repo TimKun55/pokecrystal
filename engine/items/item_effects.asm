@@ -19,7 +19,7 @@ ItemEffects:
 	dw NoEffect            ; BRIGHTPOWDER
 	dw PokeBallEffect      ; GREAT_BALL
 	dw PokeBallEffect      ; POKE_BALL
-	dw TownMapEffect       ; TOWN_MAP
+	dw NoEffect            ; ITEM_06
 	dw BicycleEffect       ; BICYCLE
 	dw EvoStoneEffect      ; MOON_STONE
 	dw StatusHealingEffect ; ANTIDOTE
@@ -69,7 +69,7 @@ ItemEffects:
 	dw XItemEffect         ; X_SP_ATK
 	dw CoinCaseEffect      ; COIN_CASE
 	dw ItemfinderEffect    ; ITEMFINDER
-	dw PokeFluteEffect     ; POKE_FLUTE
+	dw NoEffect            ; ITEM_38
 	dw NoEffect            ; EXP_SHARE
 	dw OldRodEffect        ; OLD_ROD
 	dw GoodRodEffect       ; GOOD_ROD
@@ -1152,10 +1152,6 @@ AskGiveNicknameText:
 
 ReturnToBattle_UseBall:
 	farcall _ReturnToBattle_UseBall
-	ret
-
-TownMapEffect:
-	farcall PokegearMap
 	ret
 
 DiplomaEffect:
@@ -2274,96 +2270,6 @@ XItemEffect:
 	ret
 
 INCLUDE "data/items/x_stats.asm"
-
-PokeFluteEffect:
-	ld a, [wBattleMode]
-	and a
-	jr nz, .in_battle
-	; overworld flute code was dummied out here
-
-.in_battle
-	xor a
-	ld [wPokeFluteCuredSleep], a
-
-	ld b, ~SLP_MASK
-
-	ld hl, wPartyMon1Status
-	call .CureSleep
-
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jr z, .skip_otrainer
-	ld hl, wOTPartyMon1Status
-	call .CureSleep
-.skip_otrainer
-
-	ld hl, wBattleMonStatus
-	ld a, [hl]
-	and b
-	ld [hl], a
-	ld hl, wEnemyMonStatus
-	ld a, [hl]
-	and b
-	ld [hl], a
-
-	ld a, [wPokeFluteCuredSleep]
-	and a
-	ld hl, .PlayedFluteText
-	jp z, PrintText
-	ld hl, .PlayedTheFlute
-	call PrintText
-
-	ld a, [wLowHealthAlarm]
-	and 1 << DANGER_ON_F
-	jr nz, .dummy
-	; more code was dummied out here
-.dummy
-	ld hl, .FluteWakeUpText
-	jp PrintText
-
-.CureSleep:
-	ld de, PARTYMON_STRUCT_LENGTH
-	ld c, PARTY_LENGTH
-.loop
-	ld a, [hl]
-	push af
-	and SLP_MASK
-	jr z, .not_asleep
-	ld a, TRUE
-	ld [wPokeFluteCuredSleep], a
-.not_asleep
-	pop af
-	and b
-	ld [hl], a
-	add hl, de
-	dec c
-	jr nz, .loop
-	ret
-
-.PlayedFluteText:
-	text_far _PlayedFluteText
-	text_end
-
-.FluteWakeUpText:
-	text_far _FluteWakeUpText
-	text_end
-
-.PlayedTheFlute:
-	; played the # FLUTE.@ @
-	text_far Text_PlayedPokeFlute
-	text_asm
-	ld a, [wBattleMode]
-	and a
-	jr nz, .battle
-
-	push de
-	ld de, SFX_POKEFLUTE
-	call WaitPlaySFX
-	call WaitSFX
-	pop de
-
-.battle
-	jp PokeFluteTerminator
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

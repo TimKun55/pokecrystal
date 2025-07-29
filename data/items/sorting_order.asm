@@ -235,8 +235,8 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db TOWN_MAP     ; 06
-	db POKE_FLUTE   ; 38
+	db ITEM_06      ; 06
+	db ITEM_38      ; 38
 	db ITEM_44      ; 44
 	db ITEM_86      ; 86
 	db ITEM_A8      ; a8

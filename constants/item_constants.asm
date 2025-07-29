@@ -11,7 +11,7 @@
 	const BRIGHTPOWDER ; 03
 	const GREAT_BALL   ; 04
 	const POKE_BALL    ; 05
-	const TOWN_MAP     ; 06
+	const ITEM_06      ; 06
 	const BICYCLE      ; 07
 	const MOON_STONE   ; 08
 	const ANTIDOTE     ; 09
@@ -61,7 +61,7 @@
 	const X_SP_ATK     ; 35
 	const COIN_CASE    ; 36
 	const ITEMFINDER   ; 37
-	const POKE_FLUTE   ; 38
+	const ITEM_38      ; 38
 	const EXP_SHARE    ; 39
 	const OLD_ROD      ; 3a
 	const GOOD_ROD     ; 3b

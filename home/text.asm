@@ -642,13 +642,6 @@ PlaceFarString::
 	rst Bankswitch
 	ret
 
-PokeFluteTerminator::
-	ld hl, .stop
-	ret
-
-.stop:
-	text_end
-
 PrintTextboxTextAt::
 	ld a, [wTextboxFlags]
 	push af
