@@ -6,7 +6,7 @@ ItemDescriptions:
 	dw BrightpowderDesc
 	dw GreatBallDesc
 	dw PokeBallDesc
-	dw TeruSama1Desc
+	dw LifeOrbDesc
 	dw BicycleDesc
 	dw MoonStoneDesc
 	dw AntidoteDesc
@@ -56,7 +56,7 @@ ItemDescriptions:
 	dw XSpAtkDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
-	dw TeruSama5Desc
+	dw ChoiceBandDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -68,7 +68,7 @@ ItemDescriptions:
 	dw ElixerDesc
 	dw RedScaleDesc
 	dw SecretPotionDesc
-	dw TeruSama25Desc
+	dw ChoiceSpecsDesc
 	dw MysteryEggDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
@@ -279,8 +279,9 @@ PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #mon.@"
 
-TeruSama1Desc:
-	db   "?@"
+LifeOrbDesc:
+	db   "Convert HP to"
+	next "boost power.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -478,8 +479,9 @@ ItemfinderDesc:
 	db   "Checks for unseen"
 	next "items in the area.@"
 
-TeruSama5Desc:
-	db   "?@"
+ChoiceBandDesc:
+	db   "Boosts Attack, but"
+	next "allows one move.@"
 
 ExpShareDesc:
 	db   "Shares battle Exp."
@@ -524,6 +526,10 @@ RedScaleDesc:
 SecretPotionDesc:
 	db   "Fully heals any"
 	next "#mon.@"
+
+ChoiceSpecsDesc:
+	db   "Boosts Sp.Atk, but"
+	next "allows one move.@"
 
 MysteryEggDesc:
 	db   "An Egg obtained"

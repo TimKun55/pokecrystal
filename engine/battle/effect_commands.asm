@@ -908,6 +908,29 @@ CheckUserIsCharging:
 	ret
 
 BattleCommand_DoTurn:
+; DevNote - lock into choice item move here
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BAND
+	jr z, .lock
+	cp HELD_CHOICE_SPECS
+	jr z, .lock
+	jr .continue
+.lock
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_ENCORED, [hl]
+    ldh a, [hBattleTurn]
+  	and a
+  	jr nz, .enemy
+	ld a, 255
+	ld [wPlayerEncoreCount], a
+	jr .continue
+.enemy
+	ld a, 255
+	ld [wEnemyEncoreCount], a
+.continue
+
 	call CheckUserIsCharging
 	ret nz
 
@@ -2321,7 +2344,22 @@ BattleCommand_SuperEffectiveText:
 	jp StdBattleTextbox
 
 BattleCommand_CheckFaint:
-; Faint the opponent if its HP reached zero and faint the user along with it if it used Destiny Bond. Ends the move effect if the opponent faints.
+; DevNote - right here we first apply life orb recoil
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_LIFE_ORB
+	pop hl
+	jr nz, .noLifeOrb
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+	ld hl, BattleText_UserLostSomeOfItsHP
+	call StdBattleTextbox
+
+.noLifeOrb
+; Faint the opponent if its HP reached zero 
+; and faint the user along with it if it used Destiny Bond.
+; Ends the move effect if the opponent faints.
 
 	ld hl, wEnemyMonHP
 	ldh a, [hBattleTurn]
@@ -3075,6 +3113,51 @@ ConfusionDamageCalc:
 	call Divide
 
 .DoneItem:
+
+; DevNote - Life Orb - x1.3 damage but take recoil (dealt with in CheckFaint)
+    push hl
+    call GetUserItem
+	ld a, b
+	cp HELD_LIFE_ORB
+	pop hl
+	jr nz, .choiceBand
+    ld a, 13
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.choiceBand
+; DevNote - choice band - x1.5 physical damage but permanent encore
+	push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BAND
+	pop hl
+	jr nz, .choiceSpecs
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr nc, .choiceSpecs
+	call FiftyPercentBoost
+
+.choiceSpecs
+; DevNote - choice specs - x1.5 special damage but permanent encore
+	push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_SPECS
+	pop hl
+	jr nz, .continue
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr c, .continue
+	call FiftyPercentBoost
+
+.continue
 ; Critical hits
 	call .CriticalMultiplier
 
@@ -3182,6 +3265,16 @@ DEF DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	ldh [hQuotient + 2], a
 	ldh [hQuotient + 3], a
 
+	ret
+
+FiftyPercentBoost:
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
 	ret
 
 INCLUDE "data/types/type_boost_items.asm"

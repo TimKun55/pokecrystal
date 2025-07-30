@@ -89,6 +89,30 @@ BattleCommand_Thief:
 	ld [de], a
 
 .stole
+	ld a, [wNamedObjectIndex]
+	cp CHOICE_BAND
+	jr z, .handle_choice_item
+	cp CHOICE_SPECS
+	jr nz, .not_choice_item
+
+.handle_choice_item
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stole_player_choice_item
+
+; Player stole enemy's Choice item
+	ld hl, wEnemySubStatus5
+	res SUBSTATUS_ENCORED, [hl]
+	call SetEnemyTurn
+	jr .continue
+
+.enemy_stole_player_choice_item
+	ld hl, wPlayerSubStatus5
+	res SUBSTATUS_ENCORED, [hl]
+	call SetPlayerTurn
+
+.continue
+.not_choice_item
 	call GetItemName
 	ld hl, StoleText
 	jp StdBattleTextbox

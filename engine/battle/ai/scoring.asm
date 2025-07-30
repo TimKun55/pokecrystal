@@ -1031,6 +1031,10 @@ AI_Smart_ForceSwitch:
 
 AI_Smart_Heal:
 AI_Smart_HealWeather:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
@@ -1049,6 +1053,13 @@ AI_Smart_HealWeather:
 	dec [hl]
 	dec [hl]
 	ret
+
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Toxic:
 AI_Smart_LeechSeed:
@@ -1263,6 +1274,10 @@ AI_Smart_SpeedDownHit:
 	ret
 
 AI_Smart_Substitute:
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, AIDiscourageMove
+
 ; Dismiss this move if enemy's HP is below 50%.
 
 	call AICheckEnemyHalfHP
@@ -2017,6 +2032,10 @@ AI_Smart_Foresight:
 	ret
 
 AI_Smart_Sandstorm:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
 	ld a, [wBattleMonType1]
 	push hl
@@ -2058,6 +2077,10 @@ AI_Smart_Sandstorm:
 	db -1 ; end
 	
 AI_Smart_Hail:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; Greatly discourage this move if the player is immune to Hail damage.
 	ld a, [wBattleMonType1]
 	cp ICE
@@ -2362,6 +2385,10 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, AIBadWeatherType
+
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
 	ld a, [wBattleMonType1]
@@ -2383,6 +2410,10 @@ AI_Smart_RainDance:
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, AIBadWeatherType
+
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Fire-type.
 	ld a, [wBattleMonType1]
@@ -3289,4 +3320,26 @@ AI_80_20:
 AI_50_50:
 	call Random
 	cp 50 percent + 1
+	ret
+
+DoesEnemyHaveChoiceItem:
+	push hl
+	push de
+	ld a, [wEnemyMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_CHOICE_BAND
+	jr z, .yes
+	cp HELD_CHOICE_SPECS
+	jr z, .yes
+	pop de
+	pop hl
+	xor a
+	ret
+.yes
+	pop de
+	pop hl
+	scf
 	ret

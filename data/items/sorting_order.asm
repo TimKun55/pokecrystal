@@ -31,6 +31,8 @@ ItemNameOrder:
 	db BLACKGLASSES ; 66
 	db BRIGHTPOWDER ; 03
 	db CHARCOAL     ; 8a
+	db CHOICE_BAND  ; 38
+	db CHOICE_SPECS ; 44
 	db CLEANSE_TAG  ; 5e
 	db DRAGON_FANG  ; 90
 	db EVERSTONE    ; 70
@@ -39,6 +41,7 @@ ItemNameOrder:
 	db HARD_STONE   ; 7d
 	db KINGS_ROCK   ; 52
 	db LEFTOVERS    ; 92
+	db LIFE_ORB     ; 06
 	db LIGHT_BALL   ; a3
 	db LUCKY_EGG    ; 7e
 	db LUCKY_PUNCH  ; 1e
@@ -235,9 +238,6 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db ITEM_06      ; 06
-	db ITEM_38      ; 38
-	db ITEM_44      ; 44
 	db ITEM_86      ; 86
 	db ITEM_A8      ; a8
 	db ITEM_AB      ; ab

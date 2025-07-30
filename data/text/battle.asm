@@ -977,11 +977,9 @@ MirrorMoveFailedText:
 	prompt
 
 StoleText:
-	text "<USER>"
-	line "stole @"
 	text_ram wStringBuffer1
-	text_start
-	cont "from its foe!"
+	text " was"
+	line "stolen!"
 	prompt
 
 CantEscapeNowText:
@@ -1092,6 +1090,11 @@ BellyDrumText:
 	text "<USER>"
 	line "cut its HP and"
 	cont "maximized Attack!"
+	prompt
+
+BattleText_UserLostSomeOfItsHP:
+	text "<USER>"
+	line "lost a bit of HP!"
 	prompt
 
 CopiedStatsText:
