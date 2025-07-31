@@ -28,11 +28,10 @@ OlivineMarket2Data:
 	db -1
 
 OlivineMarket3Data:
-	db 6
+	db 5
 	dbw FRESH_WATER,   400
 	dbw SODA_POP,      600
 	dbw LEMONADE,      700
 	dbw QUICK_CLAW,   1200
 	dbw EVIOLITE,     2500
-	dbw SCOPE_LENS,   2500
 	db -1
