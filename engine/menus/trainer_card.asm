@@ -309,7 +309,7 @@ TrainerCardSetup_ClearBottomHalf:
 
 TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 2, 10
-	ld de, .Dex_PlayTime
+	ld de, .Dex_PlayTime_BP
 	call PlaceString
 
 	hlcoord 12, 16
@@ -326,6 +326,11 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 
 	call TrainerCard_Page1_PrintGameTime
 
+	ld de, wBattlePoints
+	hlcoord 15, 14
+	lb bc, 1, 3
+	call PrintNum
+
 	ld a, [wStatusFlags] ; pokedex
 	bit 0, a
 	jr nz, .have_pokedex
@@ -333,6 +338,14 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	lb bc, 1, 16
 	call ClearBox
 .have_pokedex
+	ld de, EVENT_EARNED_FIRST_BATTLE_POINTS
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	jr nz, .have_bp
+	hlcoord 2, 14
+	lb bc, 1, 16
+	call ClearBox
+.have_bp
 	eventflagcheck EVENT_GOT_SS_TICKET_FROM_ELM
 	jr z, .CheckTrainPass
 	hlcoord 2, 15
@@ -353,9 +366,10 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 .Finish
 	ret
 
-.Dex_PlayTime:
+.Dex_PlayTime_BP:
 	db   "#dex"
-	next "Play Time@"
+	next "Play Time"
+	next "Battle Points@"
 
 .Badges:
 	db "Badges▶@"

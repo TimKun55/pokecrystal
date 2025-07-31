@@ -226,6 +226,8 @@ _ResetWRAM:
 	ld [wCoins], a
 	ld [wCoins + 1], a
 
+	ld [wBattlePoints], a
+
 if START_MONEY >= $10000
 	ld a, HIGH(START_MONEY >> 8)
 endc

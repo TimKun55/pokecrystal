@@ -3115,10 +3115,12 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
+wBattlePoints:: dw
+
 wInverPoints:: db
 wThortonPoints:: db
 
-	ds 11
+	ds 9
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
