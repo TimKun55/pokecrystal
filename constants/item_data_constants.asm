@@ -121,6 +121,8 @@ DEF MAIL_STRUCT_LENGTH_JP EQU $2a ; mailmsg_jp struct
 	const HELD_METAL_POWDER
 	const HELD_EVIOLITE
 	const HELD_MACHO_BRACE
+	const HELD_MUSCLE_BAND
+	const HELD_WISE_GLASSES
 
 	const_next 50
 	const HELD_NORMAL_BOOST

@@ -50,6 +50,7 @@ ItemNameOrder:
 	db METAL_COAT   ; 8f
 	db METAL_POWDER ; 23
 	db MIRACLE_SEED ; 75
+	db MUSCLE_BAND  ; 86
 	db MYSTIC_WATER ; 5f
 	db NEVERMELTICE ; 6b
 	db PINK_BOW     ; 68
@@ -65,6 +66,7 @@ ItemNameOrder:
 	db LEEK         ; 69
 	db THICK_CLUB   ; 76
 	db TWISTEDSPOON ; 60
+	db WISE_GLASSES ; a8
 
 	; Evolution Items
 	db DRAGON_SCALE ; 97
@@ -238,8 +240,6 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db ITEM_86      ; 86
-	db ITEM_A8      ; a8
 	db ITEM_AB      ; ab
 	db ITEM_B3      ; b3
 	db ITEM_BE      ; be

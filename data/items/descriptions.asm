@@ -134,7 +134,7 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw TeruSama25Desc
+	dw MuscleBandDesc
 	dw EvioliteDesc
 	dw QualotBerryDesc
 	dw ZincDesc
@@ -168,7 +168,7 @@ ItemDescriptions:
 	dw MoonBallDesc
 	dw LoveBallDesc
 	dw MachoBraceDesc
-	dw TeruSama25Desc
+	dw WiseGlassesDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
 	dw TeruSama25Desc
@@ -786,6 +786,10 @@ BasementKeyDesc:
 	db   "Opens certain"
 	next "locked doors.@"
 
+MuscleBandDesc:
+	db   "Powers up physical"
+	next "moves. (Hold)@"
+
 EvioliteDesc:
 	db   "Ups Defenses if"
 	next "#mon evolves.@"
@@ -914,6 +918,10 @@ LoveBallDesc:
 MachoBraceDesc:
 	db   "x2 EV gains, low-"
 	next "ers speed. (Hold)@"
+
+WiseGlassesDesc:
+	db   "Powers up special"
+	next "moves. (Hold)@"
 
 SunStoneDesc:
 	db   "Evolves certain"

@@ -139,7 +139,7 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const ITEM_86      ; 86
+	const MUSCLE_BAND  ; 86
 	const EVIOLITE     ; 87
 	const QUALOT_BERRY ; 88
 	const ZINC         ; 89
@@ -173,7 +173,7 @@
 	const MOON_BALL    ; a5
 	const LOVE_BALL    ; a6
 	const MACHO_BRACE  ; a7
-	const ITEM_A8      ; a8
+	const WISE_GLASSES ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
 	const ITEM_AB      ; ab
