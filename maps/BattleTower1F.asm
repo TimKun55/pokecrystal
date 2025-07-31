@@ -679,20 +679,22 @@ BattleTower1F_MapEvents:
 	warp_event 10, 15, BATTLE_TOWER_OUTSIDE, 3
 	warp_event 11, 15, BATTLE_TOWER_OUTSIDE, 4
 	warp_event 10,  0, BATTLE_TOWER_ELEVATOR, 1
+	warp_event  1,  7, BATTLE_TOWER_2F, 1
+	warp_event 20,  7, BATTLE_TOWER_2F, 2
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 11,  9, BGEVENT_READ, BattleTower1FRulesSign
-	bg_event  2,  8, BGEVENT_UP, BattleTower1FTV
-	bg_event  3,  8, BGEVENT_UP, BattleTower1FTV
-	bg_event 18,  8, BGEVENT_UP, BattleTower1FTV
-	bg_event 19,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event  4,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event  5,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event 16,  8, BGEVENT_UP, BattleTower1FTV
+	bg_event 17,  8, BGEVENT_UP, BattleTower1FTV
 
 	def_object_events
 	object_event 10,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionistScript, -1
 	object_event 15, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BattleTower1FYoungsterScript, -1
-	object_event  6, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
-	object_event  2, 12, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
-	object_event 16, 11, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
-	object_event 18, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCoolTrainerMScript, -1
+	object_event  6, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
+	object_event  3, 12, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
+	object_event 16, 12, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event 17, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCoolTrainerMScript, -1

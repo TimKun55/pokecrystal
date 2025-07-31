@@ -520,12 +520,13 @@ Cianwood_Map_Names: ;newgroup CIANWOOD
 	dw Cianwood_Map_Name9 ; map_const CIANWOOD_BEASTS_HOUSE					;  9
 	dw Cianwood_Map_Name10 ; map_const CIANWOOD_MOVE_TUTOR_HOUSE			; 10
 	dw Cianwood_Map_Name11 ; map_const BATTLE_TOWER_1F						; 11
-	dw Cianwood_Map_Name12 ; map_const BATTLE_TOWER_BATTLE_ROOM				; 12
-	dw Cianwood_Map_Name13 ; map_const BATTLE_TOWER_ELEVATOR				; 13
-	dw Cianwood_Map_Name14 ; map_const BATTLE_TOWER_HALLWAY					; 14
-	dw Cianwood_Map_Name15 ; map_const ROUTE_40_BATTLE_TOWER_GATE			; 15
-	dw Cianwood_Map_Name16 ; map_const BATTLE_TOWER_OUTSIDE					; 16
-	dw Cianwood_Map_Name17 ; map_const CIANWOOD_PHOTO_STUDIO				; 16
+	dw Cianwood_Map_Name12 ; map_const BATTLE_TOWER_2F						; 12
+	dw Cianwood_Map_Name13 ; map_const BATTLE_TOWER_BATTLE_ROOM				; 13
+	dw Cianwood_Map_Name14 ; map_const BATTLE_TOWER_ELEVATOR				; 14
+	dw Cianwood_Map_Name15 ; map_const BATTLE_TOWER_HALLWAY					; 15
+	dw Cianwood_Map_Name16 ; map_const ROUTE_40_BATTLE_TOWER_GATE			; 16
+	dw Cianwood_Map_Name17 ; map_const BATTLE_TOWER_OUTSIDE					; 17
+	dw Cianwood_Map_Name18 ; map_const CIANWOOD_PHOTO_STUDIO				; 18
 	assert_table_length NUM_CIANWOOD_MAPS
 
 Viridian_Map_Names: ;newgroup VIRIDIAN 
@@ -1393,17 +1394,19 @@ Cianwood_Map_Name10: ; map_const CIANWOOD_MOVE_TUTOR_HOUSE ; 10
 	db "Cianwood Tutor@"
 Cianwood_Map_Name11: ; map_const BATTLE_TOWER_1F ; 11
 	db "Battle Tower 1F@"
-Cianwood_Map_Name12: ; map_const BATTLE_TOWER_BATTLE_ROOM ; 12
+Cianwood_Map_Name12: ; map_const BATTLE_TOWER_1F ; 12
+	db "Battle Tower 2F@"
+Cianwood_Map_Name13: ; map_const BATTLE_TOWER_BATTLE_ROOM ; 13
 	db "Battle Tower Room@"
-Cianwood_Map_Name13: ; map_const BATTLE_TOWER_ELEVATOR ; 13
+Cianwood_Map_Name14: ; map_const BATTLE_TOWER_ELEVATOR ; 14
 	db "Battle Tower Lift@"
-Cianwood_Map_Name14: ; map_const BATTLE_TOWER_HALLWAY, ; 14
+Cianwood_Map_Name15: ; map_const BATTLE_TOWER_HALLWAY, ; 15
 	db "Battle Tower Hall@"
-Cianwood_Map_Name15: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 15
+Cianwood_Map_Name16: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 16
 	db "Route 40 Gate@"
-Cianwood_Map_Name16: ; map_const BATTLE_TOWER_OUTSIDE ; 16
+Cianwood_Map_Name17: ; map_const BATTLE_TOWER_OUTSIDE ; 17
 	db "Battle Tower@"
-Cianwood_Map_Name17: ; map_const CIANWOOD_PHOTO_STUDIO ; 17
+Cianwood_Map_Name18: ; map_const CIANWOOD_PHOTO_STUDIO ; 18
 	db "Photo Studio@"
 
 Viridian_Map_Name1: ; map_const ROUTE_2,;  1

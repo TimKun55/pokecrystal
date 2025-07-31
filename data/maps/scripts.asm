@@ -239,7 +239,6 @@ INCLUDE "maps/OlivineMart.asm"
 INCLUDE "maps/Route38EcruteakGate.asm"
 INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
-INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/CianwoodGym.asm"
 INCLUDE "maps/CianwoodPokecenter1F.asm"
 INCLUDE "maps/CianwoodPharmacy.asm"
@@ -411,7 +410,6 @@ INCLUDE "maps/Route25.asm"
 INCLUDE "maps/EusinesHouse.asm"
 
 
-
 SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/CianwoodCity.asm"
@@ -540,6 +538,7 @@ INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/LyrasHouse2F.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
+INCLUDE "maps/ManiasHouse.asm"
 
 
 SECTION "Map Scripts 28", ROMX
@@ -555,5 +554,10 @@ INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
 INCLUDE "maps/BattleHallBattleRoom.asm"
 INCLUDE "maps/FarawayIslandOutside.asm"
+
+
+SECTION "Map Scripts 29", ROMX
+
+INCLUDE "maps/BattleTower2F.asm"
 
 ENDSECTION

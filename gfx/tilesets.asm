@@ -131,15 +131,6 @@ INCBIN "data/tilesets/battle_tower_inside_metatiles.bin"
 TilesetBattleTowerInsideColl::
 INCLUDE "data/tilesets/battle_tower_inside_collision.asm"
 
-TilesetGateGFX::
-INCBIN "gfx/tilesets/gate.2bpp.lz"
-
-TilesetGateMeta::
-INCBIN "data/tilesets/gate_metatiles.bin"
-
-TilesetGateColl::
-INCLUDE "data/tilesets/gate_collision.asm"
-
 TilesetJohtoModernGFX::
 INCBIN "gfx/tilesets/johto_modern.2bpp.lz"
 
@@ -633,3 +624,12 @@ INCBIN "data/tilesets/faraway_metatiles.bin"
 
 TilesetFarawayColl::
 INCLUDE "data/tilesets/faraway_collision.asm"
+
+TilesetGateGFX::
+INCBIN "gfx/tilesets/gate.2bpp.lz"
+
+TilesetGateMeta::
+INCBIN "data/tilesets/gate_metatiles.bin"
+
+TilesetGateColl::
+INCLUDE "data/tilesets/gate_collision.asm"

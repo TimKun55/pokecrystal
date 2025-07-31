@@ -1093,4 +1093,7 @@ BattleHallBattleRoom_Blocks:
 OlivineLighthouseElevator_Blocks:
 	INCBIN "maps/OlivineLighthouseElevator.ablk"
 
+BattleTower2F_Blocks:
+	INCBIN "maps/BattleTower2F.ablk"
+
 ENDSECTION

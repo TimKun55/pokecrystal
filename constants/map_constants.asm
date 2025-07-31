@@ -473,12 +473,13 @@ ENDM
 	map_const CIANWOOD_BEASTS_HOUSE,                        4,  4 ;  9
 	map_const CIANWOOD_MOVE_TUTOR_HOUSE,                    4,  4 ; 10
 	map_const BATTLE_TOWER_1F,                             11,  8 ; 11
-	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 12
-	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 13
-	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 14
-	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 15
-	map_const BATTLE_TOWER_OUTSIDE,                        10, 13 ; 16
-	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ; 17
+	map_const BATTLE_TOWER_2F,                             11,  5 ; 12
+	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 13
+	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 14
+	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 15
+	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 16
+	map_const BATTLE_TOWER_OUTSIDE,                        10, 13 ; 17
+	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ; 18
 	endgroup
 
 	newgroup VIRIDIAN                                             ; 23
