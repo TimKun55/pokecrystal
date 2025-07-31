@@ -109,6 +109,32 @@ MoneyBottomLeftMenuHeader:
 	dw NULL
 	db 1 ; default option
 
+PlaceBPTopRight:
+	ld hl, BPTopRightMenuHeader
+	call CopyMenuHeader
+; PlaceBPTextbox
+	call MenuBox
+	call MenuBoxCoord2Tile
+	ld de, SCREEN_WIDTH + 1
+	add hl, de
+	hlcoord 14, 1
+	ld de, .BP
+	call PlaceString
+	hlcoord 17, 1
+	ld de, wBattlePoints
+	lb bc, 1, 2
+	call PrintNum
+	ret
+
+.BP:
+	db   "BP<COLON>@"
+
+BPTopRightMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 13, 0, SCREEN_WIDTH - 1, 2
+	dw NULL
+	db 1 ; default option
+
 DisplayCoinCaseBalance:
 	; Place a text box of size 1x7 at 11, 0.
 	hlcoord 11, 0

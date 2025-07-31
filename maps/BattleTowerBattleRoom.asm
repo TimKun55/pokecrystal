@@ -111,10 +111,9 @@ Script_FailedBattleTowerChallenge:
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
 	opentext
-	writetext Text_ThanksForVisiting
+	writetext Text_LostChallenge
 	waitbutton
-	closetext
-	end
+	sjump Script_ConsolationPrize
 
 Script_BeatenAllTrainers:
 	pause 60
@@ -123,6 +122,7 @@ Script_BeatenAllTrainers:
 Script_BeatenAllTrainers2:
 	opentext
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
+	waitbutton
 	sjump Script_GivePlayerHisPrize
 
 BattleTowerBattleRoom_MapEvents:

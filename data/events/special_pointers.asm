@@ -194,3 +194,4 @@ SpecialsPointers::
 	add_special SaveMusic
 	add_special RestoreMusic
 	add_special DeleteSavedMusic
+	add_special PlaceBPTopRight

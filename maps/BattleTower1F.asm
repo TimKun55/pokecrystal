@@ -60,10 +60,20 @@ BattleTower1FReceptionistScript:
 	opentext
 	writetext Text_BattleTowerWelcomesYou
 	promptbutton
+	readmem wBattlePoints
+	ifequal 50, .ReceptionistMaxPoints
 	setval BATTLETOWERACTION_CHECK_EXPLANATION_READ ; if new save file: bit 1, [sBattleTowerSaveFileFlags]
 	special BattleTowerAction
 	ifnotequal $0, Script_Menu_ChallengeExplanationCancel
 	sjump Script_BattleTowerIntroductionYesNo
+
+.ReceptionistMaxPoints
+	writetext Text_Oh
+	promptbutton
+	writetext Text_PlayerHasMaxPoints
+	waitbutton
+	closetext
+	end
 
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
@@ -132,22 +142,47 @@ Script_WalkToBattleTowerElevator:
 Script_GivePlayerHisPrize:
 	setval BATTLETOWERACTION_1C
 	special BattleTowerAction
-	setval BATTLETOWERACTION_GIVEREWARD
-	special BattleTowerAction
-	ifequal POTION, Script_YourPackIsStuffedFull
-	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
-	giveitem ITEM_FROM_MEM, 5
-	writetext Text_PlayerGotFive
+	checkevent EVENT_EARNED_FIRST_BATTLE_POINTS
+	iftrue .ContinuePrize
+	setevent EVENT_EARNED_FIRST_BATTLE_POINTS
+	writetext Text_BattlePointsUnlocked
+	promptbutton
+.ContinuePrize
+	readmem wBattlePoints
+	addval 7
+	writemem wBattlePoints
+	writetext Text_PlayerGot7BattlePoints
+	waitbutton
+	playsound SFX_TRANSACTION
+	readmem wBattlePoints
+	ifgreater 50, .MaxPoints
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
-	closetext
-	end
+	sjump Script_BattleTowerHopeToServeYouAgain
 
-Script_YourPackIsStuffedFull:
-	writetext Text_YourPackIsStuffedFull
+.MaxPoints
+	readmem wBattlePoints
+	setval 50
+	writemem wBattlePoints
+	writetext Text_PlayerHasMaxPoints
 	waitbutton
-	closetext
-	end
+	sjump Script_BattleTowerHopeToServeYouAgain
+
+Script_ConsolationPrize:
+	checkevent EVENT_EARNED_FIRST_BATTLE_POINTS
+	iftrue .ContinueScript_ConsolationPrize
+	setevent EVENT_EARNED_FIRST_BATTLE_POINTS
+	writetext Text_BattlePointsUnlocked
+	promptbutton
+.ContinueScript_ConsolationPrize
+	writetext Text_PlayerGot2BattlePoints
+	waitbutton
+	playsound SFX_TRANSACTION
+	readmem wBattlePoints
+	addval 2
+	writemem wBattlePoints
+	ifgreater 50, Script_GivePlayerHisPrize.MaxPoints
+	sjump Script_BattleTowerHopeToServeYouAgain
 
 Script_BattleTowerIntroductionYesNo:
 	writetext Text_WouldYouLikeToHearAboutTheBattleTower
@@ -410,25 +445,48 @@ Text_CongratulationsYouveBeatenAllTheTrainers:
 
 	para "For that, you get"
 	line "this great prize!"
-
-	para ""
 	done
 
-Text_PlayerGotFive:
-	text "<PLAYER> got five"
-	line "@"
-	text_ram wStringBuffer4
-	text "!@"
-	sound_item
-	text_promptbutton
-	text_end
+Text_BattlePointsUnlocked:
+	text "If you'll let me"
+	line "see you Trainer"
+	cont "Card, I can update"
+	cont "it to show your"
+	cont "Battle Points."
+	done	
 
-Text_YourPackIsStuffedFull:
-	text "Oops, your Pack is"
-	line "stuffed full."
+Text_PlayerGot7BattlePoints:
+	text "<PLAYER> got seven"
+	line "Battle Points!"
+	done
 
-	para "Please make room"
-	line "and come back."
+Text_LostChallenge:
+	text "Oh, unfortunately"
+	line "you've lost this"
+	cont "challenge."
+	
+	para "Based on your"
+	line "performance, you"
+	cont "have earned some"
+	cont "Battle Points."
+	done
+
+Text_PlayerGot2BattlePoints:
+	text "<PLAYER> got two"
+	line "Battle Points!"
+	done
+
+Text_Oh:
+	text "Oh dear!"
+	done
+
+Text_PlayerHasMaxPoints:
+	text "Your Points are"
+	line "maxed out."
+	
+	para "Please, spend them"
+	line "before trying to"
+	cont "earn more."
 	done
 
 Text_WeHopeToServeYouAgain:
