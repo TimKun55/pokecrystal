@@ -198,39 +198,39 @@ StartMenu::
 
 .PokedexDesc:
 	db   " #mon"
-	next " database@"
+	line "database@"
 
 .PartyDesc:
 	db   " Party <PKMN>"
-	next "  status@"
+	line " status@"
 
 .PackDesc:
 	db   " Contains"
-	next "  items@"
+	line " items@"
 
 .PokegearDesc:
 	db   " Trainer's"
-	next "key device@"
+	line " device@"
 
 .StatusDesc:
 	db   " Your own"
-	next "  status@"
+	line " status@"
 
 .SaveDesc:
-	db   "Save your"
-	next " progress@"
+	db   " Save your"
+	line "progress@"
 
 .OptionDesc:
 	db   "  Change"
-	next " settings@"
+	line "settings@"
 
 .ExitDesc:
-	db   "Close this"
-	next "   menu@"
+	db   " Close the"
+	line "  menu@"
 
 .QuitDesc:
 	db   " Quit and"
-	next "be judged.@"
+	line "be judged@"
 
 .OpenMenu:
 	ld a, [wMenuSelection]
@@ -367,17 +367,17 @@ endr
 	call .IsMenuAccountOn
 	ret z
 	call ._DrawMenuAccount
-	decoord 0, 14
+	decoord 0, 15
 	jp .MenuDesc
 
 ._DrawMenuAccount:
 	call .IsMenuAccountOn
 	ret z
-	hlcoord 0, 13
-	lb bc, 5, 10
+	hlcoord 0, 14
+	lb bc, 4, 10
 	call ClearBox
-	hlcoord 0, 13
-	ld b, 3
+	hlcoord 0, 14
+	ld b, 4
 	ld c, 8
 	jp TextboxPalette
 
