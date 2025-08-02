@@ -38,6 +38,7 @@ PewterMuseum1FFossilScientistScript:
 	writetext PewterMuseumFossilScientistNoFossilText
 	waitbutton
 	closetext
+	turnobject PEWTERMUSEUM1F_SCIENTIST2, RIGHT
 	end
 
 .GiveOmanyte:
