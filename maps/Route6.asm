@@ -224,7 +224,7 @@ Route6_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 17,  3, BGEVENT_READ, Route6UndergroundPathSign
+	bg_event 21,  4, BGEVENT_READ, Route6UndergroundPathSign
 
 	def_object_events
 	object_event 19,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH

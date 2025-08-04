@@ -215,3 +215,8 @@
 	tilecoll WATER, WALL, WATER, WALL ; d6
 	tilecoll WALL, WALL, WALL, WALL ; d7
 	tilecoll WATER, WALL, WATER, WALL ; d8
+	tilecoll WALL, WALL, WALL, WALL ; d9
+	tilecoll WALL, WALL, WALL, WALL ; da
+	tilecoll WALL, WALL, WALL, WALL ; db
+	tilecoll WALL, WALL, CAVE, WALL ; dc
+	tilecoll WALL, WALL, WALL, WALL ; dd

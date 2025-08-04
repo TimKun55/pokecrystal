@@ -227,3 +227,9 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; e2
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e4
+	tilecoll WALL, WALL, WALL, WALL ; e5
+	tilecoll WALL, WALL, WALL, WALL ; e6
+	tilecoll WALL, WALL, CAVE, WALL ; e7
+	tilecoll WALL, WALL, WALL, WALL ; e8
+	tilecoll WALL, FLOOR, WALL, FLOOR ; e9
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ea
