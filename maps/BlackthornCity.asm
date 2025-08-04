@@ -344,7 +344,8 @@ BlackthornCity_MapEvents:
 	def_bg_events
 	bg_event 33, 23, BGEVENT_READ, BlackthornCitySign
 	bg_event 16, 11, BGEVENT_READ, BlackthornGymSign
-	bg_event 21,  3, BGEVENT_READ, DragonDensSign
+	bg_event 18,  2, BGEVENT_READ, DragonDensSign
+	bg_event 23,  2, BGEVENT_READ, DragonDensSign
 	bg_event 11, 23, BGEVENT_READ, BlackthornCityTrainerTips
 	bg_event 16, 29, BGEVENT_READ, BlackthornCityMartSign
 	bg_event 22, 29, BGEVENT_READ, BlackthornCityPokecenterSign
