@@ -391,7 +391,7 @@ DungeonsGroupSprites:
 ; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
-	db SPRITE_TEACHER
+	db SPRITE_MARY
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKER

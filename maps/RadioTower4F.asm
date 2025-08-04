@@ -1,6 +1,6 @@
 	object_const_def
 	const RADIOTOWER4F_FISHER
-	const RADIOTOWER4F_TEACHER
+	const RADIOTOWER4F_MARY
 	const RADIOTOWER4F_MEOWTH
 	const RADIOTOWER4F_ROCKET1
 	const RADIOTOWER4F_ROCKET2
@@ -53,7 +53,7 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_Interview1
 	waitbutton
 	closetext
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	readvar VAR_FACING
 	ifnotequal RIGHT, .DontNeedToMove1
 	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
@@ -63,26 +63,29 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_IntroducePlayer
 	waitbutton
 	writetext RadioTower4FDJMaryText_IntroduceInterview1
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	waitbutton
+	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
 	writetext RadioTower4FDJMaryText_Interview1Questions
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	pause 15
+	turnobject RADIOTOWER4F_MARY, DOWN
 	writetext RadioTower4FDJMaryText_InterviewGift
 	promptbutton
 	writetext RadioTower4FPikachuDollReceivedText
-	waitbutton
 	playsound SFX_ITEM
 	waitsfx
 	setevent EVENT_DECO_PIKACHU_DOLL
 	writetext RadioTower4FPikachuDollSentHomeText
+	promptbutton
 	setevent EVENT_MARY_INTERVIEW_AFTER_CHAMPION
 	writetext RadioTower4FDJMaryText_TalkAgain
 	waitbutton
 	closetext
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	end
 
 .NextInterview2:
@@ -93,7 +96,7 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_Interview2
 	waitbutton
 	closetext
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	readvar VAR_FACING
 	ifnotequal RIGHT, .DontNeedToMove2
 	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
@@ -103,26 +106,29 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_IntroducePlayer
 	waitbutton
 	writetext RadioTower4FDJMaryText_IntroduceInterview2
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	waitbutton
+	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
 	writetext RadioTower4FDJMaryText_Interview2Questions
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	pause 15
+	turnobject RADIOTOWER4F_MARY, DOWN
 	writetext RadioTower4FDJMaryText_InterviewGift
 	promptbutton
 	writetext RadioTower4FMareepDollReceivedText
-	waitbutton
 	playsound SFX_ITEM
 	waitsfx
 	setevent EVENT_DECO_MAREEP_DOLL
 	writetext RadioTower4FMareepDollSentHomeText
+	promptbutton
 	setevent EVENT_MARY_INTERVIEW_AFTER_POWER_PLANT
 	writetext RadioTower4FDJMaryText_TalkAgain
 	waitbutton
 	closetext
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	end
 
 .NextInterview3:
@@ -133,7 +139,7 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_Interview3
 	waitbutton
 	closetext
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	readvar VAR_FACING
 	ifnotequal RIGHT, .DontNeedToMove3
 	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
@@ -143,26 +149,29 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_IntroducePlayer
 	waitbutton
 	writetext RadioTower4FDJMaryText_IntroduceInterview3
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	waitbutton
+	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
 	writetext RadioTower4FDJMaryText_Interview3Questions
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
 	waitbutton
-	turnobject RADIOTOWER4F_TEACHER, DOWN
+	pause 15
+	turnobject RADIOTOWER4F_MARY, DOWN
 	writetext RadioTower4FDJMaryText_InterviewGift
 	promptbutton
 	writetext RadioTower4FTeddiursaDollReceivedText
-	waitbutton
 	playsound SFX_ITEM
 	waitsfx
 	setevent EVENT_DECO_TEDDIURSA_DOLL
 	writetext RadioTower4FTeddiursaDollSentHomeText
+	promptbutton
 	setevent EVENT_MARY_INTERVIEW_AFTER_GRAND_CHAMPION
 	writetext RadioTower4FDJMaryText_TalkAgain
 	waitbutton
 	closetext
+	turnobject RADIOTOWER4F_MARY, RIGHT
 	end
 
 .NoInterview
@@ -504,8 +513,9 @@ RadioTower4FDJMaryText_Interview3Questions:
 	done
 
 RadioTower4FDJMaryText_RegularSchedule:
-	text "And now back to"
-	line "regular program!"
+	text "And now, back"
+	line "to our regular"
+	cont "program!"
 	done
 
 RadioTower4FDJMaryText_InterviewGift:
@@ -545,8 +555,9 @@ RadioTower4FTeddiursaDollSentHomeText:
 	done
 
 RadioTower4FDJMaryText_TalkAgain:
-	text "I can't wait to"
-	line "talk to you again!"
+	text "Mary: I can't"
+	line "wait to talk to"
+	cont "you again!"
 	done
 
 RadioTower4FDJMaryText_ThanksForInterview:
@@ -676,7 +687,7 @@ RadioTower4F_MapEvents:
 
 	def_object_events
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	object_event 14,  5, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
+	object_event 14,  5, SPRITE_MARY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  1, SPRITE_PROTON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, RadioTowerProton, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
