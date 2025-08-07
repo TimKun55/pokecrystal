@@ -385,21 +385,22 @@ ENDM
 	map_const ROUTE_13,                                    30,  9 ;  3
 	map_const ROUTE_14,                                    13, 18 ;  4
 	map_const ROUTE_15,                                    20,  9 ;  5
-	map_const ROUTE_16,                                    10, 12 ;  6
-	map_const ROUTE_17,                                    10, 49 ;  7
-	map_const ROUTE_18,                                    11,  9 ;  8
-	map_const FUCHSIA_CITY,                                20, 18 ;  9
-	map_const FUCHSIA_MART,                                 6,  4 ; 10
-	map_const SAFARI_ZONE_FUCHSIA_GATE,                     5,  4 ; 11
-	map_const FUCHSIA_GYM,                                  5,  9 ; 12
-	map_const BILLS_OLDER_SISTERS_HOUSE,                    4,  4 ; 13
-	map_const FUCHSIA_POKECENTER_1F,                        6,  4 ; 14
-	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 15
-	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 16
-	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 17
-	map_const ROUTE_16_GATE,                                5,  4 ; 18
-	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 19
-	map_const FUCHSIA_CINNABAR_HOUSE_1,                     4,  4 ; 20
+	map_const ROUTE_16,                                    10, 15 ;  6
+	map_const ROUTE_17,                                    10, 41 ;  7
+	map_const ROUTE_18_WEST,                               12,  7 ;  8
+	map_const ROUTE_18_EAST,                               11,  9 ;  9	
+	map_const FUCHSIA_CITY,                                20, 18 ; 10
+	map_const FUCHSIA_MART,                                 6,  4 ; 11
+	map_const SAFARI_ZONE_FUCHSIA_GATE,                     5,  4 ; 12
+	map_const FUCHSIA_GYM,                                  5,  9 ; 13
+	map_const BILLS_OLDER_SISTERS_HOUSE,                    4,  4 ; 14
+	map_const FUCHSIA_POKECENTER_1F,                        6,  4 ; 15
+	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 16
+	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 17
+	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 18
+	map_const ROUTE_16_GATE,                                5,  4 ; 19
+	map_const ROUTE_18_EAST_WEST_GATE,                      5,  4 ; 20
+	map_const FUCHSIA_CINNABAR_HOUSE_1,                     4,  4 ; 21
 	endgroup
 
 	newgroup LAVENDER                                             ; 18
@@ -433,7 +434,7 @@ ENDM
 
 	newgroup CELADON                                              ; 21
 	map_const ROUTE_7,                                     11,  9 ;  1
-	map_const CELADON_CITY,                                20, 18 ;  2
+	map_const CELADON_CITY,                                22, 18 ;  2
 	map_const CELADON_DEPT_STORE_1F,                        8,  4 ;  3
 	map_const CELADON_DEPT_STORE_2F,                        8,  4 ;  4
 	map_const CELADON_DEPT_STORE_3F,                        8,  4 ;  5

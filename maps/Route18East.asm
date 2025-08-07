@@ -2,7 +2,7 @@
 	const ROUTE18_BIRD_KEEPER1
 	const ROUTE18_BIRD_KEEPER2
 
-Route18_MapScripts:
+Route18East_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -75,12 +75,12 @@ Route18SignText:
 	line "Fuchsia City"
 	done
 
-Route18_MapEvents:
+Route18East_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  6, ROUTE_17_ROUTE_18_GATE, 3
-	warp_event  2,  7, ROUTE_17_ROUTE_18_GATE, 4
+	warp_event  2,  6, ROUTE_18_EAST_WEST_GATE, 3
+	warp_event  2,  7, ROUTE_18_EAST_WEST_GATE, 4
 
 	def_coord_events
 

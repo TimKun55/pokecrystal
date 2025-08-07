@@ -427,19 +427,20 @@ Fuchsia_Map_Names: ;newgroup FUCHSIA										; 17
 	dw Fuchsia_Map_Name5 ; map_const ROUTE_15								;  5
 	dw Fuchsia_Map_Name6 ; map_const ROUTE_16								;  6
 	dw Fuchsia_Map_Name7 ; map_const ROUTE_17								;  7
-	dw Fuchsia_Map_Name8 ; map_const ROUTE_18								;  8
-	dw Fuchsia_Map_Name9 ; map_const FUCHSIA_CITY							;  9
-	dw Fuchsia_Map_Name10 ; map_const FUCHSIA_MART							; 10
-	dw Fuchsia_Map_Name11 ; map_const SAFARI_ZONE_FUCHSIA_GATE				; 11
-	dw Fuchsia_Map_Name12 ; map_const FUCHSIA_GYM							; 12
-	dw Fuchsia_Map_Name13 ; map_const BILLS_OLDER_SISTERS_HOUSE				; 13
-	dw Fuchsia_Map_Name14 ; map_const FUCHSIA_POKECENTER_1F					; 14
-	dw Fuchsia_Map_Name15 ; map_const SAFARI_ZONE_WARDENS_HOME				; 15
-	dw Fuchsia_Map_Name16 ; map_const ROUTE_15_FUCHSIA_GATE					; 16
-	dw Fuchsia_Map_Name17 ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE			; 17
-	dw Fuchsia_Map_Name18 ; map_const ROUTE_16_GATE							; 18
-	dw Fuchsia_Map_Name19 ; map_const ROUTE_17_ROUTE_18_GATE				; 19
-	dw Fuchsia_Map_Name20 ; map_const FUCHSIA_CINNABAR_HOUSE_1				; 20
+	dw Fuchsia_Map_Name8 ; map_const ROUTE_18_WEST							;  8
+	dw Fuchsia_Map_Name9 ; map_const ROUTE_18_EAST							;  9
+	dw Fuchsia_Map_Name10 ; map_const FUCHSIA_CITY							; 10
+	dw Fuchsia_Map_Name11 ; map_const FUCHSIA_MART							; 11
+	dw Fuchsia_Map_Name12 ; map_const SAFARI_ZONE_FUCHSIA_GATE				; 12
+	dw Fuchsia_Map_Name13 ; map_const FUCHSIA_GYM							; 13
+	dw Fuchsia_Map_Name14 ; map_const BILLS_OLDER_SISTERS_HOUSE				; 14
+	dw Fuchsia_Map_Name15 ; map_const FUCHSIA_POKECENTER_1F					; 15
+	dw Fuchsia_Map_Name16 ; map_const SAFARI_ZONE_WARDENS_HOME				; 16
+	dw Fuchsia_Map_Name17 ; map_const ROUTE_15_FUCHSIA_GATE					; 17
+	dw Fuchsia_Map_Name18 ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE			; 18
+	dw Fuchsia_Map_Name19 ; map_const ROUTE_16_GATE							; 19
+	dw Fuchsia_Map_Name20 ; map_const ROUTE_18_EAST_WEST_GATE				; 20
+	dw Fuchsia_Map_Name21 ; map_const FUCHSIA_CINNABAR_HOUSE_1				; 21
 	assert_table_length NUM_FUCHSIA_MAPS
 
 Lavender_Map_Names: ;newgroup LAVENDER										; 18
@@ -1243,31 +1244,32 @@ Fuchsia_Map_Name6: ; map_const ROUTE_16							;  6
 	db "Route 16@"
 Fuchsia_Map_Name7: ; map_const ROUTE_17							;  7
 	db "Route 17@"
-Fuchsia_Map_Name8: ; map_const ROUTE_18							;  8
+Fuchsia_Map_Name8: ; map_const ROUTE_18_WEST					;  8
+Fuchsia_Map_Name9: ; map_const ROUTE_18_EAST					;  9
 	db "Route 18@"
-Fuchsia_Map_Name9: ; map_const FUCHSIA_CITY						;  9
+Fuchsia_Map_Name10: ; map_const FUCHSIA_CITY					; 10
 	db "Fuchsia City@"
-Fuchsia_Map_Name10: ; map_const FUCHSIA_MART 					; 10
+Fuchsia_Map_Name11: ; map_const FUCHSIA_MART 					; 11
 	db "Fuchsia <POKE>Mart@"
-Fuchsia_Map_Name11: ; map_const SAFARI_ZONE_FUCHSIA_GATE 		; 11
+Fuchsia_Map_Name12: ; map_const SAFARI_ZONE_FUCHSIA_GATE 		; 12
 	db "Safari Zone Gate@"
-Fuchsia_Map_Name12: ; map_const FUCHSIA_GYM 					; 12
+Fuchsia_Map_Name13: ; map_const FUCHSIA_GYM 					; 13
 	db "Fuchsia Gym@"
-Fuchsia_Map_Name13: ; map_const BILLS_OLDER_SISTERS_HOUSE 		; 13
+Fuchsia_Map_Name14: ; map_const BILLS_OLDER_SISTERS_HOUSE 		; 14
 	db "Bill's Sis' House@"
-Fuchsia_Map_Name14: ; map_const FUCHSIA_POKECENTER_1F 			; 14
+Fuchsia_Map_Name15: ; map_const FUCHSIA_POKECENTER_1F 			; 15
 	db "Fuchsia <PKMN> Center@"
-Fuchsia_Map_Name15: ; map_const SAFARI_ZONE_WARDENS_HOME 		; 15
+Fuchsia_Map_Name16: ; map_const SAFARI_ZONE_WARDENS_HOME 		; 16
 	db "Warden's House@" 
-Fuchsia_Map_Name16: ; map_const ROUTE_15_FUCHSIA_GATE 			; 16
+Fuchsia_Map_Name17: ; map_const ROUTE_15_FUCHSIA_GATE 			; 17
 	db "Route 15 Gate@"
-Fuchsia_Map_Name17: ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE 	; 17
+Fuchsia_Map_Name18: ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE 	; 18
 	db "Route 16 House@"
-Fuchsia_Map_Name18: ; map_const ROUTE_16_GATE 					; 18
+Fuchsia_Map_Name19: ; map_const ROUTE_16_GATE 					; 19
 	db "Route 16 Gate@"
-Fuchsia_Map_Name19: ; map_const ROUTE_17_ROUTE_18_GATE 			; 19
-	db "Route 17 Gate@"
-Fuchsia_Map_Name20: ; map_const FUCHSIA_CINNABAR_HOUSE_1 		; 20
+Fuchsia_Map_Name20: ; map_const ROUTE_18_EAST_WEST_GATE			; 20
+	db "Route 18 Gate@"
+Fuchsia_Map_Name21: ; map_const FUCHSIA_CINNABAR_HOUSE_1 		; 21
 	db "Fuchsia House@"
 
 Lavender_Map_Name1: ; map_const ROUTE_8,;  1

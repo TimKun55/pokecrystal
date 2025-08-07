@@ -3134,7 +3134,7 @@ wTrainerHouseB1FSceneID::                         db
 wPokemonLeagueGateSceneID::                       db
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16GateSceneID::                             db
-wRoute17Route18GateSceneID::                      db
+wRoute18EastWestGateSceneID::                     db
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db
 wKogasRoomSceneID::                               db

@@ -252,7 +252,7 @@ Route15FuchsiaGate_Blocks:
 Route8SaffronGate_Blocks:
 Route16Gate_Blocks:
 Route7SaffronGate_Blocks:
-Route17Route18Gate_Blocks:
+Route18EastWestGate_Blocks:
 Route31VioletGate_Blocks:
 Route11Route12Gate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
@@ -487,8 +487,11 @@ Route7_Blocks:
 Route16_Blocks:
 	INCBIN "maps/Route16.ablk"
 
-Route18_Blocks:
-	INCBIN "maps/Route18.ablk"
+Route18East_Blocks:
+	INCBIN "maps/Route18East.ablk"
+
+Route18West_Blocks:
+	INCBIN "maps/Route18West.ablk"
 
 GoldenrodUnderground_Blocks:
 	INCBIN "maps/GoldenrodUnderground.ablk"

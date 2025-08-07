@@ -1118,7 +1118,7 @@ KantoGrassWildMons:
 	db  8, MUK,           58,  60
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_18
+	def_grass_wildmons ROUTE_18_EAST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	;   %, species,		 min, max

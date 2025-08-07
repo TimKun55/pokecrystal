@@ -230,45 +230,45 @@ CeladonCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  9, CELADON_DEPT_STORE_1F, 1
-	warp_event  7,  9, CELADON_DEPT_STORE_1F, 2
-	warp_event 16,  9, CELADON_MANSION_1F, 1
+	warp_event 10,  9, CELADON_DEPT_STORE_1F, 1
+	warp_event 11,  9, CELADON_DEPT_STORE_1F, 2
+	warp_event 20,  9, CELADON_MANSION_1F, 1
 	warp_event 16,  3, CELADON_MANSION_1F, 3
-	warp_event 29,  9, CELADON_POKECENTER_1F, 1
-	warp_event 18, 17, CELADON_GAME_CORNER, 1
-	warp_event 19, 17, CELADON_GAME_CORNER, 2
-	warp_event 23, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
-	warp_event 24, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 2
-	warp_event  6, 29, CELADON_GYM, 1
-	warp_event 25, 25, CELADON_CAFE, 1
-	warp_event 21, 25, CELADON_HOME_DECO_STORE_1F, 1
+	warp_event 33,  9, CELADON_POKECENTER_1F, 1
+	warp_event 22, 17, CELADON_GAME_CORNER, 1
+	warp_event 23, 17, CELADON_GAME_CORNER, 2
+	warp_event 27, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
+	warp_event 28, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 2
+	warp_event 10, 29, CELADON_GYM, 1
+	warp_event 29, 25, CELADON_CAFE, 1
+	warp_event 25, 25, CELADON_HOME_DECO_STORE_1F, 1
 	warp_event  0, 22, ROUTE_16_GATE, 3
 	warp_event  0, 23, ROUTE_16_GATE, 4
-	warp_event 29, 17, CELADON_CURSE_HOUSE, 1
-	warp_event 32, 25, CELADON_HOTEL_1F, 1
-	warp_event 25,  9, EUSINES_HOUSE, 1
+	warp_event 33, 17, CELADON_CURSE_HOUSE, 1
+	warp_event 36, 25, CELADON_HOTEL_1F, 1
+	warp_event 29,  9, EUSINES_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  6, 20, BGEVENT_READ, CeladonCitySign
-	bg_event  4, 29, BGEVENT_READ, CeladonGymSign
-	bg_event  4,  9, BGEVENT_READ, CeladonCityDeptStoreSign
-	bg_event  9,  9, BGEVENT_READ, CeladonCityDeptStoreSign
-	bg_event 13,  9, BGEVENT_READ, CeladonCityMansionSign
-	bg_event 20, 19, BGEVENT_READ, CeladonCityGameCornerSign
-	bg_event 32, 19, BGEVENT_READ, CeladonCityTrainerTips
-	bg_event 30,  9, BGEVENT_READ, CeladonCityPokecenterSign
-	bg_event 29, 25, BGEVENT_READ, CeladonCityHotelSign
-	bg_event 35,  8, BGEVENT_ITEM, CeladonCityHiddenPpUp
+	bg_event 10, 20, BGEVENT_READ, CeladonCitySign
+	bg_event  8, 29, BGEVENT_READ, CeladonGymSign
+	bg_event  8,  9, BGEVENT_READ, CeladonCityDeptStoreSign
+	bg_event 13,  9, BGEVENT_READ, CeladonCityDeptStoreSign
+	bg_event 17,  9, BGEVENT_READ, CeladonCityMansionSign
+	bg_event 24, 19, BGEVENT_READ, CeladonCityGameCornerSign
+	bg_event 36, 19, BGEVENT_READ, CeladonCityTrainerTips
+	bg_event 34,  9, BGEVENT_READ, CeladonCityPokecenterSign
+	bg_event 33, 25, BGEVENT_READ, CeladonCityHotelSign
+	bg_event 39,  8, BGEVENT_ITEM, CeladonCityHiddenPpUp
 
 	def_object_events
-	object_event 22, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
-	object_event 23, 12, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
-	object_event 30, 20, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
-	object_event 14, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
-	object_event  8, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
-	object_event 18, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
-	object_event 18, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
-	object_event  6, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, -1
-	object_event  8, 21, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLassScript, -1
+	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
+	object_event 27, 12, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
+	object_event 34, 20, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
+	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
+	object_event 12, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
+	object_event 22, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
+	object_event 22, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
+	object_event 10, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, -1
+	object_event 12, 21, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLassScript, -1
