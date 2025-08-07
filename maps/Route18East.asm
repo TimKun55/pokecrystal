@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE18_BIRD_KEEPER1
-	const ROUTE18_BIRD_KEEPER2
+	const ROUTE18E_BIRD_KEEPER1
+	const ROUTE18E_BIRD_KEEPER2
 
 Route18East_MapScripts:
 	def_scene_scripts
