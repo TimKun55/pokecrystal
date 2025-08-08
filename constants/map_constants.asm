@@ -206,7 +206,7 @@ ENDM
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
 	map_const ROUTE_19,                                    10, 22 ;  3
 	map_const ROUTE_20,                                    35,  9 ;  4
-	map_const ROUTE_21,                                    10, 23 ;  5
+	map_const ROUTE_21,                                    10, 27 ;  5
 	map_const CINNABAR_ISLAND,                             14, 12 ;  6
 	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
@@ -380,7 +380,7 @@ ENDM
 	endgroup
 
 	newgroup FUCHSIA                                              ; 17
-	map_const ROUTE_12,                                    10, 31 ;  1
+	map_const ROUTE_12,                                    10, 35 ;  1
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
 	map_const ROUTE_14,                                    13, 18 ;  4
