@@ -202,7 +202,7 @@ NewBarkGroupSprites:
 CherrygroveGroupSprites:
 ; Route30, Route31, CherrygroveCity
 	db SPRITE_RIVAL
-	db SPRITE_TEACHER
+	db SPRITE_MARY
 	db SPRITE_FISHER
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_YOUNGSTER

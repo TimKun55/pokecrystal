@@ -235,3 +235,6 @@
 	tilecoll WATER, WATER, WATER, WATER ; ea
 	tilecoll WATER, WATER, WATER, WATER ; eb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ec
+	tilecoll WALL, WALL, WALL, WALL ; ed
+	tilecoll WALL, WALL, WALL, WALL ; ee
+	tilecoll WALL, WALL, WALL, WALL ; ef
