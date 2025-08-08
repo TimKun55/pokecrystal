@@ -212,8 +212,8 @@ GoldenrodMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  8, 17, GOLDENROD_CITY, 5
-	warp_event  9, 17, GOLDENROD_CITY, 6
+	warp_event  8, 21, GOLDENROD_CITY, 5
+	warp_event  9, 21, GOLDENROD_CITY, 6
 	warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 4
 	warp_event 11,  5, SAFFRON_MAGNET_TRAIN_STATION, 3
 
@@ -221,11 +221,11 @@ GoldenrodMagnetTrainStation_MapEvents:
 	coord_event 11,  6, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON, Script_ArriveFromSaffron
 
 	def_bg_events
-	bg_event  4, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
-	bg_event  5, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
-	bg_event  6, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
-	bg_event  7, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  4, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  5, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  6, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  7, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
 
 	def_object_events
 	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
-	object_event 10, 13, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	object_event 11, 16, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
