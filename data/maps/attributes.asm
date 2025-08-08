@@ -231,7 +231,7 @@ ENDM
 
 	map_attributes PewterCity, PEWTER_CITY, $45, SOUTH | EAST
 	connection south, Route2, ROUTE_2, 5
-	connection east, Route3, ROUTE_3, 5
+	connection east, Route3, ROUTE_3, 4
 
 	map_attributes Route2, ROUTE_2, $2f, NORTH | SOUTH
 	connection north, PewterCity, PEWTER_CITY, -5
@@ -345,11 +345,11 @@ ENDM
 	map_attributes CeruleanCity, CERULEAN_CITY, $2f, NORTH | SOUTH | WEST | EAST
 	connection north, Route24, ROUTE_24, 5
 	connection south, Route5, ROUTE_5, 5
-	connection west, Route4, ROUTE_4, 5
+	connection west, Route4, ROUTE_4, 4
 	connection east, Route9, ROUTE_9, 9
 
 	map_attributes Route9, ROUTE_9, $45, SOUTH | WEST
-	connection south, Route10North, ROUTE_10_NORTH, 20
+	connection south, Route10North, ROUTE_10_NORTH, 21
 	connection west, CeruleanCity, CERULEAN_CITY, -9
 
 	map_attributes Route24, ROUTE_24, $45, NORTH | SOUTH
@@ -360,13 +360,13 @@ ENDM
 	connection south, Route24, ROUTE_24, 0
 
 	map_attributes Route3, ROUTE_3, $45, WEST | EAST
-	connection west, PewterCity, PEWTER_CITY, -5
+	connection west, PewterCity, PEWTER_CITY, -4
 	connection east, Route4, ROUTE_4, 0
 
 	map_attributes Route4, ROUTE_4, $45, NORTH | WEST | EAST 
 	connection north, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 5
 	connection west, Route3, ROUTE_3, 0
-	connection east, CeruleanCity, CERULEAN_CITY, -5
+	connection east, CeruleanCity, CERULEAN_CITY, -4
 	
 	map_attributes Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, $45, SOUTH
 	connection south, Route4, ROUTE_4, -5
@@ -376,7 +376,7 @@ ENDM
 	connection east, LavenderTown, LAVENDER_TOWN, -1
 
 	map_attributes Route10North, ROUTE_10_NORTH, $45, NORTH | SOUTH
-	connection north, Route9, ROUTE_9, -20
+	connection north, Route9, ROUTE_9, -21
 	connection south, Route10South, ROUTE_10_SOUTH, 0
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $45, NORTH | SOUTH

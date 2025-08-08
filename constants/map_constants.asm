@@ -229,14 +229,14 @@ ENDM
 	map_const ROUTE_10_POKECENTER_1F,                       6,  4 ;  7
 	map_const POWER_PLANT,                                 10,  9 ;  8
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
-	map_const ROUTE_4,                                     20,  9 ; 10
+	map_const ROUTE_4,                                     20, 10 ; 10
 	map_const ROUTE_5,                                     10, 13 ; 11
-	map_const ROUTE_9,                                     31,  9 ; 12
+	map_const ROUTE_9,                                     32,  9 ; 12
 	map_const ROUTE_10_NORTH,                              11, 13 ; 13
 	map_const ROUTE_24,                                    12,  9 ; 14
 	map_const ROUTE_25,                                    32, 10 ; 15
 	map_const CERULEAN_CITY,                               20, 18 ; 16
-	map_const ROUTE_4_ZAPDOS_NEST,                         10, 14 ; 17
+	map_const ROUTE_4_ZAPDOS_NEST,                         10, 13 ; 17
 	map_const CERULEAN_EMPTY_HOUSE,                         4,  4 ; 18
 	map_const CERULEAN_EMPTY_HOUSE_UNDERGROUND,            16,  4 ; 19
 	endgroup
@@ -338,7 +338,7 @@ ENDM
 	endgroup
 
 	newgroup PEWTER                                               ; 14
-	map_const ROUTE_3,                                     30,  9 ;  1
+	map_const ROUTE_3,                                     29, 10 ;  1
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const PEWTER_GYM,                                   5, 11 ;  4
