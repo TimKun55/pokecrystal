@@ -305,7 +305,7 @@ ENDM
 	map_const GOLDENROD_HOME_DECO_STORE_2,                  4,  4 ; 25
 	map_const GOLDENROD_HOME_DECO_STORE_3,                  4,  4 ; 26
 	map_const GOLDENROD_HOME_DECO_STORE_4,                  4,  4 ; 27
-	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 9,  6 ; 28
+	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 8,  8 ; 28
 	endgroup
 
 	newgroup VERMILION                                            ; 12
