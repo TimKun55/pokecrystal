@@ -57,13 +57,13 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_String
 	dw BattleAnimFunc_Paralyzed
 	dw BattleAnimFunc_SpiralDescent
-	dw BattleAnimFunc_PoisonGas
+	dw BattleAnimFunc_Attract
 	dw BattleAnimFunc_Horn
 	dw BattleAnimFunc_Needle
 	dw BattleAnimFunc_PetalDance
 	dw BattleAnimFunc_ThiefPayday
 	dw BattleAnimFunc_AbsorbCircle
-	dw BattleAnimFunc_Bonemerang
+	dw BattleAnimFunc_FallAndStop
 	dw BattleAnimFunc_Shiny
 	dw BattleAnimFunc_GrowthSwordsDance
 	dw BattleAnimFunc_SmokeFlameWheel
@@ -76,7 +76,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_Agility
 	dw BattleAnimFunc_SacredFire
 	dw BattleAnimFunc_SafeguardProtect
-	dw BattleAnimFunc_LockOnMindReader
+	dw BattleAnimFunc_LockOn
 	dw BattleAnimFunc_Spikes
 	dw BattleAnimFunc_HealBellNotes
 	dw BattleAnimFunc_BatonPass
@@ -89,7 +89,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RapidSpin
 	dw BattleAnimFunc_BetaPursuit
 	dw BattleAnimFunc_RainSandstorm
-	dw BattleAnimFunc_PsychUp
+	dw BattleAnimFunc_NastyPlot
 	dw BattleAnimFunc_AncientPower
 	dw BattleAnimFunc_IceSplash
 	dw BattleAnimFunc_RockSmash
@@ -97,7 +97,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RockTomb
 	dw BattleAnimFunc_Hurricane
 	dw BattleAnimFunc_RadialMoveOut
-	dw BattleAnimFunc_FallAndStop
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -2799,7 +2798,7 @@ BattleAnimFunc_PetalDance:
 	call DeinitBattleAnimation
 	ret
 
-BattleAnimFunc_PoisonGas:
+BattleAnimFunc_Attract:
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -3261,48 +3260,6 @@ BattleAnimFunc_Conversion:
 	call DeinitBattleAnimation
 	ret
 
-BattleAnimFunc_Bonemerang:
-; Boomerang-like movement from user to target
-; Obj Param: Defines position to start at in the circle
-	call BattleAnim_AnonJumptable
-.anon_dw
-	dw .zero
-	dw .one
-
-.zero:
-	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_YCOORD
-	add hl, bc
-	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_VAR2
-	add hl, bc
-	ld [hl], a
-.one:
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	ld d, $30
-	call BattleAnim_Sine
-	ld hl, BATTLEANIMSTRUCT_VAR2
-	add hl, bc
-	add [hl]
-	ld hl, BATTLEANIMSTRUCT_YCOORD
-	add hl, bc
-	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	add $8
-	ld d, $30
-	call BattleAnim_Cosine
-	ld hl, BATTLEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	inc [hl]
-	ret
-
 BattleAnimFunc_Shiny:
 ; Puts object in a circle formation of radius $10. Also used by Flash and Light Screen
 ; Obj Param: Defines where the object starts in the circle
@@ -3607,7 +3564,7 @@ BattleAnimFunc_SafeguardProtect:
 	inc [hl]
 	ret
 
-BattleAnimFunc_LockOnMindReader:
+BattleAnimFunc_LockOn:
 ; Moves objects towards a center position
 ; Obj Param: Used to define object angle from 0 to 3. Lower nybble defines how much to increase from base frameset while upper nybble defines angle of movement. The object moves for $28 frames, then waits for $10 frames and disappears
 	call BattleAnim_AnonJumptable
@@ -4058,7 +4015,7 @@ BattleAnimFunc_RainSandstorm:
 	ld [hl], a
 	ret
 
-BattleAnimFunc_PsychUp:
+BattleAnimFunc_NastyPlot:
 ; Object moves in a circle
 ; Obj Param: Defines starting position in the circle
 	ld d, $18
