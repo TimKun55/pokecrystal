@@ -143,7 +143,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_SHINY               ; 6d
 	const BATTLE_ANIM_OBJ_DRAGON_PULSE        ; 6e
 	const BATTLE_ANIM_OBJ_LICK                ; 6f
-	const BATTLE_ANIM_OBJ_POISON_POWDER       ; 70
+	const BATTLE_ANIM_OBJ_SHOOTING_HEART      ; 70 ; POISON_POWDER
 	const BATTLE_ANIM_OBJ_DRAIN               ; 71
 	const BATTLE_ANIM_OBJ_GROWTH              ; 72
 	const BATTLE_ANIM_OBJ_ICE_SPLASH          ; 73 ; CONVERSION2
@@ -229,7 +229,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; c3
 	const BATTLE_ANIM_OBJ_HEART_BURST         ; c4
 	const BATTLE_ANIM_OBJ_STAR_BURST          ; c5
-	const BATTLE_ANIM_OBJ_SHOOTING_HEART      ; c6
+	const BATTLE_ANIM_OBJ_WHIRLPOOL           ; c6
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -509,6 +509,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_HAIL                  ; b9
 	const BATTLE_ANIM_FRAMESET_GROWING_BALL          ; ba
 	const BATTLE_ANIM_FRAMESET_WATER_BALL            ; bb
+	const BATTLE_ANIM_FRAMESET_GROWING_BUBBLE        ; bc
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -845,6 +846,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_CHOP       ; 31
 	const BATTLE_ANIM_GFX_HEARTS     ; 32
  	const BATTLE_ANIM_GFX_STARS      ; 33
+	const BATTLE_ANIM_GFX_BEAM_AURORA ; 34
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -890,16 +892,25 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 ; custom bg/obj palettes (see gfx/battle_anims/custom.pal)
 ; the first 6 matches PAL_BATTLE_OB_GRAY/YELLOW/...
 	const_def
-	const PAL_BTLCUSTOM_GRAY     ; 0
-	const PAL_BTLCUSTOM_YELLOW   ; 1
-	const PAL_BTLCUSTOM_RED      ; 2
-	const PAL_BTLCUSTOM_GREEN    ; 3
-	const PAL_BTLCUSTOM_BLUE     ; 4
-	const PAL_BTLCUSTOM_BROWN    ; 5
-	const PAL_BTLCUSTOM_METALLIC ; 6
-	const PAL_BTLCUSTOM_PURPLE   ; 7
-	const PAL_BTLCUSTOM_ICE      ; 8
-	const PAL_BTLCUSTOM_FIRE     ; 9
+	const PAL_BTLCUSTOM_GRAY         ; 00
+	const PAL_BTLCUSTOM_YELLOW       ; 01
+	const PAL_BTLCUSTOM_RED          ; 02
+	const PAL_BTLCUSTOM_GREEN        ; 03
+	const PAL_BTLCUSTOM_BLUE         ; 04
+	const PAL_BTLCUSTOM_BROWN        ; 05
+	const PAL_BTLCUSTOM_METALLIC     ; 06
+	const PAL_BTLCUSTOM_PURPLE       ; 07
+	const PAL_BTLCUSTOM_ICE          ; 08
+	const PAL_BTLCUSTOM_FIRE         ; 09
+	const PAL_BTLCUSTOM_AURORA       ; 0a
+	const PAL_BTLCUSTOM_DRAGONBREATH ; 0b
+	const PAL_BTLCUSTOM_DRAGON_RAGE  ; 0c
+	const PAL_BTLCUSTOM_LIME         ; 0d
+	const PAL_BTLCUSTOM_PINK         ; 0e
+	const PAL_BTLCUSTOM_SHADOW_BALL  ; 0f
+	const PAL_BTLCUSTOM_WATER        ; 10
+	const PAL_BTLCUSTOM_BUBBLE       ; 11
+	const PAL_BTLCUSTOM_PEACH        ; 12	
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
