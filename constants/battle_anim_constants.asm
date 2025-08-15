@@ -230,6 +230,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HEART_BURST         ; c4
 	const BATTLE_ANIM_OBJ_STAR_BURST          ; c5
 	const BATTLE_ANIM_OBJ_WHIRLPOOL           ; c6
+	const BATTLE_ANIM_OBJ_FOCUS_BLAST         ; c7
+	const BATTLE_ANIM_OBJ_HEAT_WAVE           ; c8
+	const BATTLE_ANIM_OBJ_PETAL_DANCE_IMPACT  ; c9
+	const BATTLE_ANIM_OBJ_GUNK_SHOT           ; ca
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -837,16 +841,18 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_PLAYERHEAD ; 28
 	const BATTLE_ANIM_GFX_ENEMYFEET   ; 29
 	const BATTLE_ANIM_GFX_ICICLECRASH ; 2a
-	const BATTLE_ANIM_GFX_HURRICANE  ; 2b
-	const BATTLE_ANIM_GFX_BULK_UP    ; 2c
-	const BATTLE_ANIM_GFX_RINGS      ; 2d
-	const BATTLE_ANIM_GFX_BIG_RINGS  ; 2e
-	const BATTLE_ANIM_GFX_GLOW       ; 2f
-	const BATTLE_ANIM_GFX_WATER_BALL ; 30
-	const BATTLE_ANIM_GFX_CHOP       ; 31
-	const BATTLE_ANIM_GFX_HEARTS     ; 32
- 	const BATTLE_ANIM_GFX_STARS      ; 33
+	const BATTLE_ANIM_GFX_HURRICANE   ; 2b
+	const BATTLE_ANIM_GFX_BULK_UP     ; 2c
+	const BATTLE_ANIM_GFX_RINGS       ; 2d
+	const BATTLE_ANIM_GFX_BIG_RINGS   ; 2e
+	const BATTLE_ANIM_GFX_GLOW        ; 2f
+	const BATTLE_ANIM_GFX_WATER_BALL  ; 30
+	const BATTLE_ANIM_GFX_CHOP        ; 31
+	const BATTLE_ANIM_GFX_HEARTS      ; 32
+ 	const BATTLE_ANIM_GFX_STARS       ; 33
 	const BATTLE_ANIM_GFX_BEAM_AURORA ; 34
+	const BATTLE_ANIM_GFX_FOCUS_BLAST ; 35
+	const BATTLE_ANIM_GFX_PETALS      ; 36
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -905,12 +911,12 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_AURORA       ; 0a
 	const PAL_BTLCUSTOM_DRAGONBREATH ; 0b
 	const PAL_BTLCUSTOM_DRAGON_RAGE  ; 0c
-	const PAL_BTLCUSTOM_LIME         ; 0d
-	const PAL_BTLCUSTOM_PINK         ; 0e
-	const PAL_BTLCUSTOM_SHADOW_BALL  ; 0f
-	const PAL_BTLCUSTOM_WATER        ; 10
-	const PAL_BTLCUSTOM_BUBBLE       ; 11
-	const PAL_BTLCUSTOM_PEACH        ; 12	
+	const PAL_BTLCUSTOM_PINK         ; 0d
+	const PAL_BTLCUSTOM_SHADOW_BALL  ; 0e
+	const PAL_BTLCUSTOM_WATER        ; 0f
+	const PAL_BTLCUSTOM_BUBBLE       ; 10
+	const PAL_BTLCUSTOM_PEACH        ; 11	
+	const PAL_BTLCUSTOM_ACID         ; 12
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

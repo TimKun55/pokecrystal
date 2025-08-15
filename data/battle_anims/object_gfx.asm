@@ -60,6 +60,8 @@ AnimObjGFX:
 	anim_obj_gfx  5, AnimObjHeartsGFX
  	anim_obj_gfx  5, AnimObjStarsGFX
 	anim_obj_gfx 10, AnimObjBeamAuroraGFX
+	anim_obj_gfx 16, AnimObjFocusBlastGFX
+	anim_obj_gfx  4, AnimObjPetalsGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
 
 
