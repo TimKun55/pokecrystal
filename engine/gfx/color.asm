@@ -187,23 +187,7 @@ InitPartyMenuStatusPals:
 	add hl, bc
 	ld de, wBGPals1 palette 5 + 4 ; Color 3 of Palette 5 (Dark Gray Pixels)
 	ld bc, 2 ; 1 Color (2 bytes)
-	call FarCopyColorWRAM
-	
-	; put white (7fff) into the slot 4 of pals 4, 5, 6
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld a, $FF
-	ld [wBGPals1 palette 4 + 6], a ; pal 4, slot 4, byte 1
-	ld [wBGPals1 palette 5 + 6], a ; pal 5, slot 4, byte 1
-	ld [wBGPals1 palette 6 + 6], a ; pal 6, slot 4, byte 1
-	ld [wBGPals1 palette 4 + 7], a ; pal 4, slot 4, byte 2
-	ld [wBGPals1 palette 5 + 7], a ; pal 5, slot 4, byte 2
-	ld [wBGPals1 palette 6 + 7], a ; pal 6, slot 4, byte 2
-	pop af
-	ldh [rSVBK], a
-	ret
+	jp FarCopyColorWRAM
 
 LoadBattleCategoryAndTypePals:
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
@@ -318,23 +302,8 @@ LoadSummaryScreenStatusIconPalette:
 	ld de, wTempMonStatus
 	predef GetStatusConditionIndex
 	; index is in 'd'
-	jr LoadPlayerStatusIconPalette.phase2 ; do not load the white pal in slot 4 of pal 6
 LoadPlayerStatusIconPalette:
 	; given: Status condition index in 'd'
-	
-	; load single white color in slot 4 of palette 6
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld hl, wBGPals1 palette 6 + 6 ; slot 4 of pal 6
-	ld a, $FF
-	ld [hli], a
-	ld [hl], a
-	pop af
-	ldh [rSVBK], a
-	; done loading white color directly into slot 4 of pal 6
-.phase2 
 	ld hl, StatusIconPals
 	ld c, d
 	ld b, 0

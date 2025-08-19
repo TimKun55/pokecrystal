@@ -501,13 +501,13 @@ Player_LoadNonFaintStatus:
 .player_loadgfx
 	push af ; status index
 ; Load Player Status Tiles GFX into VRAM
-	ld hl, StatusIconGFX
+	ld hl, StatusIconBattleGFX
 	ld bc, 2 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $78
-	lb bc, BANK(StatusIconGFX), 2
+	lb bc, BANK(StatusIconBattleGFX), 2
 	call Request2bpp
 	pop de ; status index, needs to be in 'd'
 	push de ; status condition index

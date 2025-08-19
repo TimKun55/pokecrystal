@@ -873,33 +873,33 @@ LoadStatusIconSet:
 	push hl
 	; status index in a
 	ld a, $1 ; PSN Index
-	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
+	ld hl, StatusIconBattleGFX ; Uses the Light Gray pixels, aka Pal Color 2
 	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $50 ; Destination Tile address
-	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconBattleGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $2 ; PAR Index
-	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
+	ld hl, StatusIconBattleGFX ; Uses the Light Gray pixels, aka Pal Color 2
 	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $52
-	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconBattleGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $3 ; SLP
-	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
+	ld hl, StatusIconBattleGFX ; Uses the Light Gray pixels, aka Pal Color 2
 	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $54
-	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconBattleGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $4 ; BRN
@@ -923,13 +923,13 @@ LoadStatusIconSet:
 	call Request2bpp
 
 	ld a, $6 ; FNT Index
-	ld hl, StatusIconGFX ; FNT is only in the Player's set of Icons aka gfx\battle\status.png
+	ld hl, StatusIconBattleGFX ; FNT is only in the Player's set of Icons aka gfx\battle\status.png
 	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $5a
-	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconBattleGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 	pop hl
 	pop bc
