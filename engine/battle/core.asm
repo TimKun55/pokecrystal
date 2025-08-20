@@ -2289,6 +2289,12 @@ FaintYourPokemon:
 
 FaintEnemyPokemon:
 	call WaitSFX
+
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wTempEnemyMonSpecies]
+	call PlayStereoCry
+
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call EnemyMonFaintedAnimation
