@@ -150,27 +150,27 @@ Route2_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15, 20, ROUTE_2_NUGGET_HOUSE, 1
-	warp_event 15, 43, ROUTE_2_GATE, 3
-	warp_event 16, 43, ROUTE_2_GATE, 4
-	warp_event 15, 39, ROUTE_2_GATE, 1
-	warp_event 16, 39, ROUTE_2_GATE, 2
-	warp_event 12,  7, DIGLETTS_CAVE, 3
-	warp_event  3, 43, ROUTE_2_VIRIDIAN_FOREST_GATE, 1
-	warp_event  4, 43, ROUTE_2_VIRIDIAN_FOREST_GATE, 2
-	warp_event  1,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 3
-	warp_event  2,  9, VIRIDIAN_FOREST_ROUTE_2_GATE, 4
+	warp_event 15, 22, ROUTE_2_NUGGET_HOUSE, 1
+	warp_event 15, 45, ROUTE_2_GATE, 3
+	warp_event 16, 45, ROUTE_2_GATE, 4
+	warp_event 15, 41, ROUTE_2_GATE, 1
+	warp_event 16, 41, ROUTE_2_GATE, 2
+	warp_event 12,  9, DIGLETTS_CAVE, 3
+	warp_event  3, 45, ROUTE_2_VIRIDIAN_FOREST_GATE, 1
+	warp_event  4, 45, ROUTE_2_VIRIDIAN_FOREST_GATE, 2
+	warp_event  1, 11, VIRIDIAN_FOREST_ROUTE_2_GATE, 3
+	warp_event  2, 11, VIRIDIAN_FOREST_ROUTE_2_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 10, 58, BGEVENT_READ, Route2Sign
-	bg_event 14,  8, BGEVENT_READ, Route2DiglettsCaveSign
+	bg_event  6, 64, BGEVENT_READ, Route2Sign
+	bg_event 14, 10, BGEVENT_READ, Route2DiglettsCaveSign
 
 	def_object_events
-	object_event  7,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyCaroline, -1
-	object_event 11, 60, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBeautyCarlene, -1
-	object_event  1, 48, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperThomas, -1
-	object_event 16, 50, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperLeroy, -1
-	object_event 14, 54, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
-	object_event 18, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	object_event  7,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyCaroline, -1
+	object_event 11, 64, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBeautyCarlene, -1
+	object_event  1, 52, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperThomas, -1
+	object_event 16, 54, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperLeroy, -1
+	object_event 13, 61, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
+	object_event 18, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1

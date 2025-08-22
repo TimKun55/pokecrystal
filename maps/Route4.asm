@@ -2,7 +2,8 @@
 	const ROUTE4_YOUNGSTER
 	const ROUTE4_LASS1
 	const ROUTE4_LASS2
-	const ROUTE4_POKE_BALL
+	const ROUTE4_POKE_BALL1
+	const ROUTE4_POKE_BALL2
 
 Route4_MapScripts:
 	def_scene_scripts
@@ -13,7 +14,7 @@ Route4_MapScripts:
 Route4EasyAccessCallback:
 	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	iffalse .done
-	changeblock 30,  8, $1f
+	changeblock 56, 11, $1f
 .done:
 	endcallback
 
@@ -55,6 +56,9 @@ MtMoonSquareSign:
 
 Route4HPUp:
 	itemball HP_UP
+
+Route4FullRestore:
+	itemball FULL_RESTORE
 
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
@@ -135,11 +139,12 @@ Route4_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  5, BGEVENT_READ, MtMoonSquareSign
-	bg_event 10,  5, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event  5,  5, BGEVENT_READ, MtMoonSquareSign
+	bg_event 25,  5, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	def_object_events
-	object_event 16,  8, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	object_event  7,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event 21,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event 26,  5, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event 39,  5, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
+	object_event 11,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
+	object_event 30,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
+	object_event 55,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event 20, 17, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4FullRestore, EVENT_ROUTE_4_FULL_RESTORE

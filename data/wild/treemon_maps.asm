@@ -45,6 +45,7 @@ RockMonMaps::
 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK_CIANWOOD
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, TREEMON_SET_ROCK_DARK_CAVE
 	treemon_map ICE_PATH_B3F,              TREEMON_SET_ROCK_JOHTO
+	treemon_map ROUTE_3,                   TREEMON_SET_ROCK_KANTO
 	treemon_map ROUTE_4_ZAPDOS_NEST,       TREEMON_SET_ROCK_KANTO
 	treemon_map ROUTE_19,                  TREEMON_SET_ROCK_KANTO_SHORE
 	treemon_map ROUTE_26,                  TREEMON_SET_ROCK_KANTO_EARLY
@@ -52,8 +53,8 @@ RockMonMaps::
 	treemon_map ROUTE_41,                  TREEMON_SET_ROCK_CIANWOOD
 	treemon_map RUINS_OF_ALPH_OUTSIDE,     TREEMON_SET_ROCK_RUINS
 	treemon_map TOHJO_FALLS,               TREEMON_SET_ROCK_TOHJO
+	treemon_map VERMILION_CITY,            TREEMON_SET_ROCK_VERMILION
 	treemon_map VICTORY_ROAD_1F,           TREEMON_SET_ROCK_VICTORY_ROAD
 	treemon_map VICTORY_ROAD_2F,           TREEMON_SET_ROCK_VICTORY_ROAD
 	treemon_map VICTORY_ROAD_3F,           TREEMON_SET_ROCK_VICTORY_ROAD
-
 	db -1

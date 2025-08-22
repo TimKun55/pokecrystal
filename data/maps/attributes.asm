@@ -263,11 +263,11 @@ ENDM
 
 	map_attributes Route20, ROUTE_20, $25, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -3
-	connection east, Route19, ROUTE_19, -13
+	connection east, Route19, ROUTE_19, -18
 
 	map_attributes Route19, ROUTE_19, $25, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, 0
-	connection west, Route20, ROUTE_20, 13
+	connection west, Route20, ROUTE_20, 18
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $2f, SOUTH | WEST | EAST
 	connection south, Route19, ROUTE_19, 0
@@ -292,19 +292,19 @@ ENDM
 
 	map_attributes CeladonCity, CELADON_CITY, $2f, WEST | EAST
 	connection west, Route16, ROUTE_16, 10
-	connection east, Route7, ROUTE_7, 5
+	connection east, Route7, ROUTE_7, 3
 
 	map_attributes Route7, ROUTE_7, $2f, WEST | EAST
-	connection west, CeladonCity, CELADON_CITY, -5
+	connection west, CeladonCity, CELADON_CITY, -3
 	connection east, SaffronCity, SAFFRON_CITY, -9
 
 	map_attributes Route15, ROUTE_15, $2f, WEST | EAST
 	connection west, FuchsiaCity, FUCHSIA_CITY, -9
-	connection east, Route14, ROUTE_14, -9
+	connection east, Route14, ROUTE_14, -11
 
 	map_attributes Route14, ROUTE_14, $25, NORTH | WEST
 	connection north, Route13, ROUTE_13, 0
-	connection west, Route15, ROUTE_15, 9
+	connection west, Route15, ROUTE_15, 11
 	
 	map_attributes Route13, ROUTE_13, $25, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, 20
@@ -364,12 +364,12 @@ ENDM
 	connection east, Route4, ROUTE_4, 0
 
 	map_attributes Route4, ROUTE_4, $45, NORTH | WEST | EAST 
-	connection north, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 5
+	connection north, Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, 13
 	connection west, Route3, ROUTE_3, 0
 	connection east, CeruleanCity, CERULEAN_CITY, -4
 	
 	map_attributes Route4ZapdosNest, ROUTE_4_ZAPDOS_NEST, $45, SOUTH
-	connection south, Route4, ROUTE_4, -5
+	connection south, Route4, ROUTE_4, -13
 
 	map_attributes Route8, ROUTE_8, $45, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -11

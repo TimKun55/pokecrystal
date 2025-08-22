@@ -204,9 +204,9 @@ ENDM
 	newgroup CINNABAR                                             ;  6
 	map_const CINNABAR_POKECENTER_1F,                       6,  4 ;  1
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
-	map_const ROUTE_19,                                    10, 22 ;  3
-	map_const ROUTE_20,                                    35,  9 ;  4
-	map_const ROUTE_21,                                    10, 27 ;  5
+	map_const ROUTE_19,                                    10, 27 ;  3
+	map_const ROUTE_20,                                    50,  9 ;  4
+	map_const ROUTE_21,                                    10, 39 ;  5
 	map_const CINNABAR_ISLAND,                             14, 12 ;  6
 	map_const CINNABAR_VOLCANO_1F,                         10,  9 ;  7
 	map_const CINNABAR_VOLCANO_2F,                         19, 14 ;  8
@@ -229,10 +229,10 @@ ENDM
 	map_const ROUTE_10_POKECENTER_1F,                       6,  4 ;  7
 	map_const POWER_PLANT,                                 10,  9 ;  8
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
-	map_const ROUTE_4,                                     20, 10 ; 10
-	map_const ROUTE_5,                                     10, 13 ; 11
-	map_const ROUTE_9,                                     32,  9 ; 12
-	map_const ROUTE_10_NORTH,                              11, 13 ; 13
+	map_const ROUTE_4,                                     34, 10 ; 10
+	map_const ROUTE_5,                                     10, 22 ; 11
+	map_const ROUTE_9,                                     32, 11 ; 12
+	map_const ROUTE_10_NORTH,                              11, 22 ; 13
 	map_const ROUTE_24,                                    12,  9 ; 14
 	map_const ROUTE_25,                                    32, 10 ; 15
 	map_const CERULEAN_CITY,                               20, 18 ; 16
@@ -311,7 +311,7 @@ ENDM
 	newgroup VERMILION                                            ; 12
 	map_const ROUTE_6,                                     12, 13 ;  1
 	map_const ROUTE_11,                                    20,  9 ;  2
-	map_const VERMILION_CITY,                              20, 18 ;  3
+	map_const VERMILION_CITY,                              20, 19 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
 	map_const VERMILION_POKECENTER_1F,                      6,  4 ;  5
 	map_const POKEMON_FAN_CLUB,                             5,  4 ;  6
@@ -329,7 +329,7 @@ ENDM
 
 	newgroup PALLET                                               ; 13
 	map_const ROUTE_1,                                     11, 18 ;  1
-	map_const PALLET_TOWN,                                 10,  9 ;  2
+	map_const PALLET_TOWN,                                 10, 10 ;  2
 	map_const REDS_HOUSE_1F,                                4,  4 ;  3
 	map_const REDS_HOUSE_2F,                                4,  4 ;  4
 	map_const BLUES_HOUSE,                                  4,  4 ;  5
@@ -338,7 +338,7 @@ ENDM
 	endgroup
 
 	newgroup PEWTER                                               ; 14
-	map_const ROUTE_3,                                     29, 10 ;  1
+	map_const ROUTE_3,                                     35, 10 ;  1
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const PEWTER_GYM,                                   5, 11 ;  4
@@ -383,8 +383,8 @@ ENDM
 	map_const ROUTE_12,                                    10, 35 ;  1
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
-	map_const ROUTE_14,                                    13, 18 ;  4
-	map_const ROUTE_15,                                    20,  9 ;  5
+	map_const ROUTE_14,                                    13, 20 ;  4
+	map_const ROUTE_15,                                    25,  9 ;  5
 	map_const ROUTE_16,                                    10, 15 ;  6
 	map_const ROUTE_17,                                    10, 41 ;  7
 	map_const ROUTE_18_WEST,                               12,  7 ;  8
@@ -433,7 +433,7 @@ ENDM
 	endgroup
 
 	newgroup CELADON                                              ; 21
-	map_const ROUTE_7,                                     11,  9 ;  1
+	map_const ROUTE_7,                                     16,  9 ;  1
 	map_const CELADON_CITY,                                22, 18 ;  2
 	map_const CELADON_DEPT_STORE_1F,                        8,  4 ;  3
 	map_const CELADON_DEPT_STORE_2F,                        8,  4 ;  4
@@ -484,7 +484,7 @@ ENDM
 	endgroup
 
 	newgroup VIRIDIAN                                             ; 23
-	map_const ROUTE_2,                                     10, 33 ;  1
+	map_const ROUTE_2,                                     10, 36 ;  1
 	map_const ROUTE_22,                                    20,  9 ;  2
 	map_const ROUTE_26,                                    11, 54 ;  3	
 	map_const VIRIDIAN_CITY,                               20, 18 ;  4

@@ -26,6 +26,7 @@ RockSmashMons::
 	dw TreeMonSet_RockVictoryRoad
 	dw TreeMonSet_RockKantoShore
 	dw TreeMonSet_RockKanto
+	dw TreeMonSet_RockVermilion
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; Two tables each (common, rare).
@@ -197,4 +198,9 @@ TreeMonSet_RockKantoShore:
 TreeMonSet_RockKanto:
 	db 90, GRAVELER,   55
 	db 10, GOLEM,      55
+	db -1
+
+TreeMonSet_RockVermilion:
+	db 60, KINGLER,    55
+	db 40, GRAVELER,   55
 	db -1

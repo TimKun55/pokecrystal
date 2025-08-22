@@ -8,6 +8,7 @@
 	const ROUTE6_YOUNGSTER
 	const ROUTE6_BEAUTY
 	const ROUTE6_POKE_BALL
+	const ROUTE6_FRUIT_TREE
 
 Route6_MapScripts:
 	def_scene_scripts
@@ -85,6 +86,9 @@ Route6OfficerScript:
 
 Route6UndergroundPathSign:
 	jumptext Route6UndergroundPathSignText
+
+Route6QualotTree:
+	fruittree FRUITTREE_ROUTE_6_QUALOT
 
 Route6MaxPotion:
 	itemball MAX_POTION
@@ -236,3 +240,4 @@ Route6_MapEvents:
 	object_event 20, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDale, -1
 	object_event 17, 11, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBeautyTheresa, -1
 	object_event  1, 11, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route6MaxPotion, EVENT_ROUTE_6_MAX_POTION
+	object_event  0, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6QualotTree, -1

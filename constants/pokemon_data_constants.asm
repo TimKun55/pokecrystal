@@ -250,6 +250,7 @@ DEF NUM_TREEMON_SETS EQU const_value
 	const TREEMON_SET_ROCK_VICTORY_ROAD
 	const TREEMON_SET_ROCK_KANTO_SHORE
 	const TREEMON_SET_ROCK_KANTO
+	const TREEMON_SET_ROCK_VERMILION
 DEF NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)

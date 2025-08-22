@@ -129,6 +129,7 @@ VermilionGroupSprites:
 	db SPRITE_OFFICER
 	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_FRUIT_TREE
+	db SPRITE_ROCK
 	db 0 ; end
 
 CeladonGroupSprites:

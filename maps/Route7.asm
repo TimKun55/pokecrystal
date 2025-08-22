@@ -1,6 +1,7 @@
 	object_const_def
 	const ROUTE7_BUG_MANIAC
 	const ROUTE7_POKEFAN_M
+	const ROUTE7_FRUIT_TREE
 
 Route7_MapScripts:
 	def_scene_scripts
@@ -34,6 +35,9 @@ Route7UndergroundPathSign:
 
 Route7LockedDoor:
 	jumptext Route7LockedDoorText
+
+Route7PomegTree:
+	fruittree FRUITTREE_ROUTE_7_POMEG
 
 BugManiacEliSeenText:
 	text "I've been training"
@@ -98,8 +102,8 @@ Route7_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 17,  8, ROUTE_7_SAFFRON_GATE, 1
-	warp_event 17,  9, ROUTE_7_SAFFRON_GATE, 2
+	warp_event 27,  8, ROUTE_7_SAFFRON_GATE, 1
+	warp_event 27,  9, ROUTE_7_SAFFRON_GATE, 2
 
 	def_coord_events
 
@@ -109,5 +113,6 @@ Route7_MapEvents:
 	bg_event  6, 11, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events
-	object_event  6,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1
-	object_event 17, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerPokefanMCarlos, -1
+	object_event  8,  8, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1
+	object_event 24, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerPokefanMCarlos, -1
+	object_event 10, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7PomegTree, -1

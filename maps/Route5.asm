@@ -19,7 +19,7 @@ Route5Noop2Scene:
 	end
 
 Route5DisguisedScene1:
-	moveobject ROUTE5_SUPER_NERD3,  9, 15
+	moveobject ROUTE5_SUPER_NERD3,  9, 33
 	appear ROUTE5_SUPER_NERD3
 	pause 5
 	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
@@ -50,7 +50,7 @@ Route5DisguisedScene2:
 	end
 	
 .continueappear2
-	moveobject ROUTE5_SUPER_NERD3,  9, 16
+	moveobject ROUTE5_SUPER_NERD3,  9, 34
 	appear ROUTE5_SUPER_NERD3
 	pause 5
 	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
@@ -208,23 +208,23 @@ Route5_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15, 19, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
-	warp_event 16, 19, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 2
-	warp_event  9, 23, ROUTE_5_SAFFRON_GATE, 1
-	warp_event 10, 23, ROUTE_5_SAFFRON_GATE, 2
-	warp_event  9,  9, ROUTE_5_CLEANSE_TAG_HOUSE, 1
+	warp_event 15, 37, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
+	warp_event 16, 37, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 2
+	warp_event  9, 41, ROUTE_5_SAFFRON_GATE, 1
+	warp_event 10, 41, ROUTE_5_SAFFRON_GATE, 2
+	warp_event  9, 23, ROUTE_5_CLEANSE_TAG_HOUSE, 1
 
 	def_coord_events
-	coord_event 12, 20, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene1
-	coord_event 12, 21, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene2
+	coord_event 12, 38, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene1
+	coord_event 12, 39, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene2
 
 	def_bg_events
-	bg_event 13, 19, BGEVENT_READ, Route5UndergroundPathSign
-	bg_event  9,  9, BGEVENT_READ, HouseForSaleSign
+	bg_event 13, 37, BGEVENT_READ, Route5UndergroundPathSign
+	bg_event  9, 23, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
-	object_event  1,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdGreggScript, -1
-	object_event 18, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdJayScript, -1
-	object_event -3, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
-	object_event 15, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
-	object_event 16, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event  1, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdGreggScript, -1
+	object_event 18, 22, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdJayScript, -1
+	object_event -3, 43, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
+	object_event 15, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
+	object_event 16, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH

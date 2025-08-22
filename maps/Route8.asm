@@ -72,8 +72,11 @@ Route8LockedDoor:
 Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
 
-Route8FruitTree:
-	fruittree FRUITTREE_ROUTE_8
+Route8CheriTree:
+	fruittree FRUITTREE_ROUTE_8_CHERI
+
+Route8HondewTree:
+	fruittree FRUITTREE_ROUTE_8_HONDEW
 
 BikerDwayneSeenText:
 	text "We're the Kanto"
@@ -192,4 +195,5 @@ Route8_MapEvents:
 	object_event 10, 10, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerBikerZeke, -1
 	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
 	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
-	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8CheriTree, -1
+	object_event  7, 12, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8HondewTree, -1

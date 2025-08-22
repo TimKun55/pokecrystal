@@ -142,7 +142,7 @@ MountMoonB2FHelixFossil:
 	end
 
 MountMoonB2FNoRoomInBagForFossil:
-	opentext
+	waitbutton
 	writetext MountMoonB2FNoRoomInBagForFossilText
 	waitbutton
 	closetext

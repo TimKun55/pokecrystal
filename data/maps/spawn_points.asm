@@ -11,10 +11,10 @@ SpawnPoints:
 	spawn PLAYERS_HOUSE_2F,            3,  3
 	spawn VIRIDIAN_POKECENTER_1F,      5,  3
 
-	spawn PALLET_TOWN,                 5,  6
+	spawn PALLET_TOWN,                 5,  8
 	spawn VIRIDIAN_CITY,              23, 26
 	spawn PEWTER_CITY,                13, 26
-	spawn ROUTE_3,                    45,  8
+	spawn ROUTE_3,                    57,  6
 	spawn CERULEAN_CITY,              19, 20
 	spawn ROUTE_10_NORTH,              9,  4
 	spawn VERMILION_CITY,              9,  6

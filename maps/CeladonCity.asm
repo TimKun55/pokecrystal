@@ -8,6 +8,8 @@
 	const CELADONCITY_YOUNGSTER2
 	const CELADONCITY_TEACHER2
 	const CELADONCITY_LASS
+	const CELADONCITY_FRUIT_TREE1
+	const CELADONCITY_FRUIT_TREE2
 
 CeladonCity_MapScripts:
 	def_scene_scripts
@@ -78,6 +80,12 @@ CeladonCityPokecenterSign:
 
 CeladonCityHotelSign:
 	jumptext CeladonCityHotelSignText
+
+CeladonCityGrepaTree:
+	fruittree FRUITTREE_CELADON_CITY_GREPA
+
+CeladonCityTamatoTree:
+	fruittree FRUITTREE_CELADON_CITY_TAMATO
 
 CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
@@ -272,3 +280,5 @@ CeladonCity_MapEvents:
 	object_event 22, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
 	object_event 10, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, -1
 	object_event 12, 21, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLassScript, -1
+	object_event 34, 31, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCityGrepaTree, -1
+	object_event 36, 31, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCityTamatoTree, -1
