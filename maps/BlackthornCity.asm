@@ -146,8 +146,8 @@ BlackthornCityMadamItemsSign:
 BlackthornCityMoveTutorSign:
 	jumptext BlackthornMoveTutorSignText
 	
-BlackthornCityFruitTree:
-	fruittree FRUITTREE_BLACKTHORN_CITY
+BlackthornCitySitrusTree:
+	fruittree FRUITTREE_BLACKTHORN_CITY_SITRUS
 
 Text_ClairIsOut:
 	text "I am sorry."
@@ -362,4 +362,4 @@ BlackthornCity_MapEvents:
 	object_event 15, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
 	object_event 20, 15, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
-	object_event 12, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornCityFruitTree, -1
+	object_event 12, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornCitySitrusTree, -1

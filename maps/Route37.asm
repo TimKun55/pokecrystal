@@ -195,13 +195,13 @@ Route37Sign:
 	jumptext Route37SignText
 
 Route37RedApricornTree:
-	fruittree FRUITTREE_ROUTE_37_1
+	fruittree FRUITTREE_ROUTE_37_RED_APRICORN
 
 Route37BluApricornTree:
-	fruittree FRUITTREE_ROUTE_37_2
+	fruittree FRUITTREE_ROUTE_37_BLU_APRICORN
 
 Route37BlkApricornTree:
-	fruittree FRUITTREE_ROUTE_37_3
+	fruittree FRUITTREE_ROUTE_37_BLK_APRICORN
 
 Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER

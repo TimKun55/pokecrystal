@@ -50,11 +50,11 @@ PewterCityPokecenterSign:
 PewterCityMartSign:
 	jumpstd MartSignScript
 
-PewterCityFruitTree1:
-	fruittree FRUITTREE_PEWTER_CITY_1
+PewterCityRawstTree:
+	fruittree FRUITTREE_PEWTER_CITY_RAWST
 
-PewterCityFruitTree2:
-	fruittree FRUITTREE_PEWTER_CITY_2
+PewterCityChestoTree:
+	fruittree FRUITTREE_PEWTER_CITY_CHESTO
 
 PewterCityCooltrainerFText:
 	text "Have you visited"
@@ -150,5 +150,5 @@ PewterCity_MapEvents:
 	object_event 30, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
 	object_event 15, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterCityBugCatcherScript, -1
 	object_event 28, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
-	object_event 31,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
-	object_event 26,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
+	object_event 31,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityRawstTree, -1
+	object_event 26,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityChestoTree, -1

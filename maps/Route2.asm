@@ -64,8 +64,8 @@ Route2DiglettsCaveSign:
 Route2Elixer:
 	itemball ELIXER
 
-Route2FruitTree:
-	fruittree FRUITTREE_ROUTE_2
+Route2PechaTree:
+	fruittree FRUITTREE_ROUTE_2_PECHA
 
 BeautyCarolineSeenText:
 	text "I love visiting"
@@ -173,4 +173,4 @@ Route2_MapEvents:
 	object_event  1, 52, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperThomas, -1
 	object_event 16, 54, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperLeroy, -1
 	object_event 13, 61, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
-	object_event 18, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	object_event 18, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2PechaTree, -1

@@ -123,8 +123,8 @@ TrainerHikerAnthony:
 Route33Sign:
 	jumptext Route33SignText
 
-Route33FruitTree:
-	fruittree FRUITTREE_ROUTE_33
+Route33PechaTree:
+	fruittree FRUITTREE_ROUTE_33_PECHA
 
 HikerAnthonySeenText:
 	text "I came through the"
@@ -190,4 +190,4 @@ Route33_MapEvents:
 	def_object_events
 	object_event  6, 13, SPRITE_HIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1
 	object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1
-	object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1
+	object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33PechaTree, -1

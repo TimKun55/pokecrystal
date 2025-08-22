@@ -248,7 +248,7 @@ AzaleaTownMartSign:
 	jumpstd MartSignScript
 
 WhiteApricornTree:
-	fruittree FRUITTREE_AZALEA_TOWN
+	fruittree FRUITTREE_AZALEA_TOWN_WHT_APRICORN
 
 AzaleaTownHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL
