@@ -323,8 +323,6 @@ ENDM
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4 ; 13
 	map_const VERMILION_SAILORS_HOUSE,                      4,  4 ; 14
-	map_const BATTLE_HALL_1F,                              13,  7 ; 15
-	map_const BATTLE_HALL_BATTLE_ROOM,                      5,  9 ; 16	
 	endgroup
 
 	newgroup PALLET                                               ; 13

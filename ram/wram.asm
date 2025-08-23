@@ -3117,10 +3117,7 @@ wFarfetchdPosition:: db
 
 wBattlePoints:: dw
 
-wInverPoints:: db
-wThortonPoints:: db
-
-	ds 9
+	ds 11
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -3220,8 +3217,6 @@ wRoute44RaikouSceneID::                           db
 wRoute43RaikouSceneID::                           db
 wRoute37EnteiSceneID::                            db
 wRoute30EnteiSceneID::                            db
-wBattleHall1FSceneID::                            db
-wBattleHallBattleRoomSceneID::                    db
 wIcePath1FSceneID::                               db
 wOlivinePortPassageSceneID::                      db
 wVermilionPortPassageSceneID::                    db
@@ -3232,7 +3227,7 @@ wRuinsOfAlphOmanyteWordRoomSceneID::              db
 wRuinsOfAlphAerodactylWordRoomSceneID::           db
 wFarawayIslandOutsideSceneID::                    db
 
-	ds 20
+	ds 22
 
 ; fight counts
 

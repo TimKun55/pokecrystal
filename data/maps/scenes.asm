@@ -102,8 +102,6 @@ MapScenes::
 	scene_var ROUTE_43,                                    wRoute43RaikouSceneID
 	scene_var ROUTE_37,                                    wRoute37EnteiSceneID
 	scene_var ROUTE_30,                                    wRoute30EnteiSceneID
-	scene_var BATTLE_HALL_1F,                              wBattleHall1FSceneID
-	scene_var BATTLE_HALL_BATTLE_ROOM,                     wBattleHallBattleRoomSceneID
 	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	scene_var OLIVINE_PORT_PASSAGE,                        wOlivinePortPassageSceneID
 	scene_var VERMILION_PORT_PASSAGE,                      wVermilionPortPassageSceneID

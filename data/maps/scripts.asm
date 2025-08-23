@@ -223,7 +223,6 @@ INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
-INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/ViridianMart.asm"
 
 
@@ -544,7 +543,6 @@ INCLUDE "maps/ManiasHouse.asm"
 
 SECTION "Map Scripts 28", ROMX
 
-INCLUDE "maps/BattleHall1F.asm"
 INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/SaffronAviculturalSociety3F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
@@ -553,8 +551,8 @@ INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/OlivineLighthouseElevator.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
-INCLUDE "maps/BattleHallBattleRoom.asm"
 INCLUDE "maps/FarawayIslandOutside.asm"
+INCLUDE "maps/TrainerHouseB1F.asm"
 
 
 SECTION "Map Scripts 29", ROMX

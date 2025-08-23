@@ -4,11 +4,27 @@
 	const TRAINERHOUSE1F_COOLTRAINER_F
 	const TRAINERHOUSE1F_YOUNGSTER
 	const TRAINERHOUSE1F_GENTLEMAN
+	const TRAINERHOUSE1F_SCIENTIST
 
 TrainerHouse1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .TrainerHouse1FScientistCallback
+
+.TrainerHouse1FScientistCallback:
+	checkevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
+	iftrue .DisappearScientist
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .BattleTowerScout
+	ifequal THURSDAY, .BattleTowerScout
+.DisappearScientist:
+	disappear TRAINERHOUSE1F_SCIENTIST
+	endcallback
+
+.BattleTowerScout:
+	appear TRAINERHOUSE1F_SCIENTIST
+	endcallback
 
 TrainerHouse1FReceptionistScript:
 	jumptextfaceplayer TrainerHouse1FReceptionistText
@@ -24,6 +40,27 @@ TrainerHouse1FYoungsterScript:
 
 TrainerHouse1FGentlemanScript:
 	jumptextfaceplayer TrainerHouse1FGentlemanText
+
+TrainerHouse1FScientistScript:
+	faceplayer
+	opentext
+	writetext TrainerHouse1FScientistGreetingText
+	waitbutton
+	checkevent EVENT_BEAT_INVER_FIRST_TIME
+	iffalse .NotUnlocked
+	checkevent EVENT_BEAT_THORTON_FIRST_TIME
+	iffalse .NotUnlocked
+	writetext TrainerHouse1FScientistUnlockedModesText
+	waitbutton
+	closetext
+	setevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
+	end
+
+.NotUnlocked:
+	writetext TrainerHouse1FScientistGoodluckText
+	waitbutton
+	closetext
+	end
 
 TrainerHouseSign1:
 	jumptext TrainerHouseSign1Text
@@ -101,6 +138,46 @@ TrainerHouse1FGentlemanText:
 	cont "battles."
 	done
 
+TrainerHouse1FScientistGreetingText:
+	text "Hello."
+	line "I'm from Johto's"
+	cont "Battle Tower."
+	
+	para "I'm observing the"
+	line "types of battles"
+	cont "being offered here"
+	cont "and if it would"
+	cont "be worth intro-"
+	cont "ducing them at"
+	cont "the Battle Tower."
+	done
+
+TrainerHouse1FScientistUnlockedModesText:
+	text "Hello!"
+	
+	para "You've defeated"
+	line "both Thorton and"
+	cont "Inver!"
+
+	para "I hope you don't"
+	line "mind, I was watch-"
+	cont "ing your battles"
+	cont "and I think we can"
+	cont "implement Typeless"
+	cont "and Inverse bat-"
+	cont "tles at the"
+	cont "Battle Tower!"
+	
+	para "Look forward to"
+	line "challenging them!"
+	done
+
+TrainerHouse1FScientistGoodluckText:
+	text "Good luck down"
+	line "there and be"
+	cont "prepared!"
+	done
+
 TrainerHouseSign1Text:
 	text "Practice battles"
 	line "are held in the"
@@ -141,18 +218,19 @@ TrainerHouse1F_MapEvents:
 	def_warp_events
 	warp_event  4, 11, VIRIDIAN_CITY, 3
 	warp_event  5, 11, VIRIDIAN_CITY, 3
-	warp_event  8,  2, TRAINER_HOUSE_B1F, 1
+	warp_event  9,  0, TRAINER_HOUSE_B1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  0, BGEVENT_READ, TrainerHouseSign1
-	bg_event  9,  0, BGEVENT_READ, TrainerHouseSign2
+	bg_event  3,  0, BGEVENT_READ, TrainerHouseSign1
+	bg_event  7,  0, BGEVENT_READ, TrainerHouseSign2
 	bg_event  4,  6, BGEVENT_READ, TrainerHouseIllegibleBook
 
 	def_object_events
 	object_event  0, 10, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FReceptionistScript, -1
 	object_event  8, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FCooltrainerMScript, -1
-	object_event  5,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FCooltrainerFScript, -1
+	object_event  5,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FCooltrainerFScript, -1
 	object_event  5,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FYoungsterScript, -1
 	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FGentlemanScript, -1
+	object_event  8,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FScientistScript, EVENT_TRAINER_HALL_1F_SCIENTIST

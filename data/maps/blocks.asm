@@ -1087,12 +1087,6 @@ PewterMuseum1F_Blocks:
 PewterMuseum2F_Blocks:
 	INCBIN "maps/PewterMuseum2F.ablk"
 
-BattleHall1F_Blocks:
-	INCBIN "maps/BattleHall1F.ablk"
-
-BattleHallBattleRoom_Blocks:
-	INCBIN "maps/BattleHallBattleRoom.ablk"
-
 OlivineLighthouseElevator_Blocks:
 	INCBIN "maps/OlivineLighthouseElevator.ablk"
 
