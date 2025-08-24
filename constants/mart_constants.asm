@@ -6,9 +6,6 @@
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
 	const MARTTYPE_MADAMITEMS
-	const MARTTYPE_MARKET1
-	const MARTTYPE_MARKET2
-	const MARTTYPE_MARKET3
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def

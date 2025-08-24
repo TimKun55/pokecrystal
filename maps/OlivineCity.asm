@@ -4,11 +4,6 @@
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_RIVAL
 	const OLIVINECITY_SAILOR3
-	const OLIVINECITY_CLERK1
-	const OLIVINECITY_CLERK2
-	const OLIVINECITY_CLERK3
-	const OLIVINECITY_POKEFAN_M
-	const OLIVINECITY_POKEFAN_F
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -17,8 +12,7 @@ OlivineCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, OlivineCityMarketPlacePeople
-	callback MAPCALLBACK_TILES, OlivineCityLighthouseNiteMarketPlaceStalls
+	callback MAPCALLBACK_TILES, OlivineCityLighthouseNite
 
 OlivineCityNoop1Scene:
 	end
@@ -30,32 +24,7 @@ OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
 	endcallback
 
-OlivineCityMarketPlacePeople:
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MarketPlacePeopleAppear
-	ifequal SATURDAY, .MarketPlacePeopleAppear
-	ifequal SUNDAY, .MarketPlacePeopleAppear
-	disappear OLIVINECITY_CLERK1
-	disappear OLIVINECITY_CLERK2
-	disappear OLIVINECITY_CLERK3
-	disappear OLIVINECITY_POKEFAN_M
-	disappear OLIVINECITY_POKEFAN_F
-	endcallback
-
-.MarketPlacePeopleAppear:
-	appear OLIVINECITY_CLERK1
-	appear OLIVINECITY_CLERK2
-	appear OLIVINECITY_CLERK3
-	appear OLIVINECITY_POKEFAN_M
-	appear OLIVINECITY_POKEFAN_F
-	endcallback
-
-OlivineCityLighthouseNiteMarketPlaceStalls:
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MarketPlaceAppear
-	ifequal SATURDAY, .MarketPlaceAppear
-	ifequal SUNDAY, .MarketPlaceAppear
-.continuecheck
+OlivineCityLighthouseNite:
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .end
 	checktime EVE
@@ -64,12 +33,6 @@ OlivineCityLighthouseNiteMarketPlaceStalls:
 	iftrue .LighthouseNite
 .end
 	endcallback
-
-.MarketPlaceAppear:
-	changeblock 10, 20, $d7 ; Market
-	changeblock 16, 20, $d7 ; Market
-	changeblock 20, 20, $d8 ; Market
-	sjump .continuecheck
 
 .LighthouseNite:
 	changeblock 30, 16, $d5 ; Lighthouse nite, left
@@ -179,27 +142,6 @@ OlivineCitySailorTutorScript:
 	closetext
 	end
 	
-OlivineCityMarketPlaceClerk1:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_MARKET1, 0
-	closetext
-	end
-
-OlivineCityMarketPlaceClerk2:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_MARKET2, 0
-	closetext
-	end
-
-OlivineCityMarketPlaceClerk3:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_MARKET3, 0
-	closetext
-	end
-
 OlivineCityMarketPlacePokefanM:
 	jumptextfaceplayer OlivineCityMarketPlacePokefanMText
 
@@ -487,8 +429,3 @@ OlivineCity_MapEvents:
 	object_event 19, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event  6, 25, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailorTutorScript, -1
-	object_event 10, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk1, EVENT_OLIVINE_MARKET_CLERK_1
-	object_event 16, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk2, EVENT_OLIVINE_MARKET_CLERK_2
-	object_event 21, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlaceClerk3, EVENT_OLIVINE_MARKET_CLERK_3
-	object_event 11, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanM, EVENT_OLIVINE_MARKET_CUSTOMERS
-	object_event 15, 17, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OlivineCityMarketPlacePokefanF, EVENT_OLIVINE_MARKET_CUSTOMERS

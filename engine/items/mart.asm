@@ -23,9 +23,6 @@ OpenMartDialog::
 	dw Pharmacist
 	dw RooftopSale
 	dw MadamItems
-	dw MarketShop1
-	dw MarketShop2
-	dw MarketShop3
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -83,42 +80,6 @@ MadamItems:
 	call MartTextbox
 	call BuyMenu
 	ld hl, MadamItemsComeAgainText
-	jp MartTextbox
-
-MarketShop1:
-	ld b, BANK(BargainShopData)
-	ld de, OlivineMarket1Data
-	call LoadMartPointer
-	call ReadMart
-	call LoadStandardMenuHeader
-	ld hl, MarketShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, MarketShop_ComeAgain
-	jp MartTextbox
-
-MarketShop2:
-	ld b, BANK(BargainShopData)
-	ld de, OlivineMarket2Data
-	call LoadMartPointer
-	call ReadMart
-	call LoadStandardMenuHeader
-	ld hl, MarketShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, MarketShop_ComeAgain
-	jp MartTextbox
-
-MarketShop3:
-	ld b, BANK(BargainShopData)
-	ld de, OlivineMarket3Data
-	call LoadMartPointer
-	call ReadMart
-	call LoadStandardMenuHeader
-	ld hl, MarketShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, MarketShop_ComeAgain
 	jp MartTextbox
 
 RooftopSale:
@@ -540,7 +501,6 @@ GetMartDialogGroup:
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .MadamItemsPointers, 0
-	dwb .MarketShopPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -580,14 +540,6 @@ GetMartDialogGroup:
 	dw MadamItemsInsufficientFundsText
 	dw MadamItemsBagFullText
 	dw MadamItemsHereYouGoText
-	dw BuyMenuLoop
-
-.MarketShopPointers:
-	dw MarketShop_HowMany
-	dw MarketShop_CostsThisMuch
-	dw MarketShop_InsufficientFunds
-	dw MarketShop_BagFull
-	dw MarketShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -974,34 +926,6 @@ MadamItemsBagFullText:
 
 MadamItemsHereYouGoText:
 	text_far _MadamItems_HereYouGoText
-	text_end
-
-MarketShop_Intro:
-	text_far _MarketShop_IntroText
-	text_end
-
-MarketShop_ComeAgain:
-	text_far _MarketShop_ComeAgainText
-	text_end
-
-MarketShop_HowMany:
-	text_far _MarketShop_HowManyText
-	text_end
-
-MarketShop_CostsThisMuch:
-	text_far _MarketShop_CostsThisMuchText
-	text_end
-
-MarketShop_InsufficientFunds:
-	text_far _MarketShop_InsufficientFundsText
-	text_end
-
-MarketShop_BagFull:
-	text_far _MarketShop_BagFullText
-	text_end
-
-MarketShop_HereYouGo:
-	text_far _MarketShop_HereYouGoText
 	text_end
 
 SellMenu:
