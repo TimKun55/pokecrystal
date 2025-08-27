@@ -10,11 +10,11 @@ DEF MAPSIGNSTAGE_5_SLIDEOUT EQU $0c
 InitMapNameSign::
 	xor a
 	ldh [hBGMapMode], a
-	farcall .inefficient_farcall ; this is a waste of 6 ROM bytes and 6 stack bytes
-	ret
+;	farcall .inefficient_farcall ; this is a waste of 6 ROM bytes and 6 stack bytes
+;	ret
 
 ; should have just been a fallthrough
-.inefficient_farcall
+;.inefficient_farcall
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]

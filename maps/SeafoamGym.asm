@@ -170,21 +170,18 @@ BlaineIntroText:
 
 	para "My original Gym"
 	line "was burned down"
-
-	para "because of the"
-	line "eruption."
+	cont "because of the"
+	cont "eruption."
 
 	para "But I will not"
 	line "give up!"
 
 	para "Take a look at"
 	line "this cave; we"
-	
-	para "have turned it"
-	line "into a Gym, and"
-
-	para "I'm still acting"
-	line "as Gym Leader!"
+	cont "have turned it"
+	cont "into a Gym, and"
+	cont "I'm still acting"
+	cont "as Gym Leader!"
 
 	para "If you can beat"
 	line "me, I'll give you"
@@ -210,9 +207,8 @@ ReceivedVolcanoBadgeText:
 BlaineAfterBattleText:
 	text "Blaine: I did lose"
 	line "this time, but I'm"
-
-	para "going to win the"
-	line "next time."
+	cont "going to win the"
+	cont "next time."
 	
 	para "I expect I'll be"
 	line "seeing you again"
@@ -222,9 +218,8 @@ BlaineAfterBattleText:
 BlaineFightDoneText:
 	text "Blaine: My fire"
 	line "#mon will be"
-
-	para "even stronger."
-	line "Just you watch!"
+	cont "even stronger."
+	cont "Just you watch!"
 	done
 	
 BlaineRematchIntroText:
@@ -270,9 +265,8 @@ FirebreatherDickBeatenText:
 FirebreatherDickAfterBattleText:
 	text "We've been working"
 	line "hard on getting"
-	
-	para "the Gym back up"
-	line "and running."
+	cont "the Gym back up"
+	cont "and running."
 	done
 
 FirebreatherNedSeenText:
@@ -298,9 +292,8 @@ SeafoamGymGuideText:
 	
 	para "It's not much at"
 	line "the moment, but"
-	
-	para "we've been working"
-	line "hard to rebuild."
+	cont "we've been working"
+	cont "hard to rebuild."
 	
 	para "Blaine really"
 	line "keeps us fired up!"
@@ -309,12 +302,10 @@ SeafoamGymGuideText:
 SeafoamGymGuideWinText:
 	text "The Gym Leader"
 	line "rebuilding his Gym"
-
-	para "and the Trainer"
-	line "from Johto who has"
-
-	para "come to challenge"
-	line "that Gym Leader…"
+	cont "and the Trainer"
+	cont "from Johto who has"
+	cont "come to challenge"
+	cont "that Gym Leader…"
 
 	para "I have witnessed"
 	line "a hot battle!"

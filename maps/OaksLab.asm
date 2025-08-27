@@ -90,7 +90,7 @@ OaksLabPC:
 	jumptext OaksLabPCText
 
 OakWelcomeKantoText:
-	text "OAK: Ah, <PLAY_G>!"
+	text "Oak: Ah, <PLAY_G>!"
 	line "It's good of you"
 
 	para "to come all this"
@@ -129,45 +129,37 @@ OakOpenMtSilverText:
 
 	para "Tell you what,"
 	line "<PLAY_G>. I'll make"
-
-	para "arrangements so"
-	line "that you can go to"
+	cont "arrangements so"
+	cont "that you can go to"
 	cont "Mt.Silver."
 
 	para "Mt.Silver is a big"
 	line "mountain that is"
-
-	para "home to many wild"
-	line "#mon."
+	cont "home to many wild"
+	cont "#mon."
 
 	para "It's too dangerous"
 	line "for your average"
-
-	para "trainer, so it's"
-	line "off limits. But"
-
-	para "we can make an"
-	line "exception in your"
+	cont "trainer, so it's"
+	cont "off limits. But"
+	cont "we can make an"
+	cont "exception in your"
 	cont "case, <PLAY_G>."
 
 	para "Go west from"
 	line "Viridian City,"
-	
-	para "pass through the"
-	line "Victory Road Gate,"
-	
-	para "still heading west"
-	line "and you'll reach"
+	cont "pass through the"
+	cont "Victory Road Gate,"
+	cont "still heading west"
+	cont "and you'll reach"
 	cont "Mt.Silver."
 	
 	para "Watching your"
 	line "amazing progress"
-	
-	para "makes me feel like"
-	line "getting out of the"
-	
-	para "Lab for a bit, and"
-	line "start up my"
+	cont "makes me feel like"
+	cont "getting out of the"
+	cont "Lab for a bit, and"
+	cont "start up my"
 	cont "training again!"
 	done
 
@@ -178,9 +170,8 @@ OakNoKantoBadgesText:
 
 	para "The Gym Leaders in"
 	line "Kanto are as tough"
-
-	para "as any you battled"
-	line "in Johto."
+	cont "as any you battled"
+	cont "in Johto."
 
 	para "I recommend that"
 	line "you challenge"
@@ -194,8 +185,7 @@ OakYesKantoBadgesText:
 
 	para "I imagine that"
 	line "it's hard, but the"
-
-	para "experience is sure"
+	cont "experience is sure"
 	line "to help you."
 
 	para "Come see me when"
@@ -211,9 +201,8 @@ OakYesKantoBadgesText:
 OaksAssistant1Text:
 	text "The Prof's #mon"
 	line "Talk radio program"
-
-	para "isn't aired here"
-	line "in Kanto."
+	cont "isn't aired here"
+	cont "in Kanto."
 
 	para "It's a shame--I'd"
 	line "like to hear it."
@@ -223,17 +212,15 @@ OaksAssistant2Text:
 	text "Thanks to your"
 	line "work on the #-"
 	cont "dex, the Prof's"
-
-	para "research is coming"
-	line "along great."
+	cont "research is coming"
+	cont "along great."
 	done
 
 OaksAssistant3Text:
 	text "Don't tell anyone,"
 	line "but Prof.Oak's"
-
-	para "#mon Talk isn't"
-	line "a live broadcast."
+	cont "#mon Talk isn't"
+	cont "a live broadcast."
 	done
 
 OaksPokedexText:
@@ -269,9 +256,8 @@ OaksLabPCText:
 
 	para "I heard rumors"
 	line "that <PLAY_G> is"
-
-	para "getting quite a"
-	line "reputation."
+	cont "getting quite a"
+	cont "reputation."
 
 	para "I'm delighted to"
 	line "hear that."

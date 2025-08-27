@@ -57,42 +57,36 @@ CinnabarIslandBlueText:
 
 	para "I was once the"
 	line "Champion, although"
-
-	para "it was for only a"
-	line "short time…"
+	cont "it was for only a"
+	cont "short time…"
 
 	para "That meddling Red"
 	line "did me in…"
 
 	para "Anyway, what do"
 	line "you want? You want"
-
-	para "to challenge me or"
-	line "something?"
+	cont "to challenge me or"
+	cont "something?"
 
 	para "…I hate to say"
 	line "it, but I'm not in"
-
-	para "the mood for a"
-	line "battle now."
+	cont "the mood for a"
+	cont "battle now."
 
 	para "Take a good look"
 	line "around you…"
 
 	para "A volcano erupts,"
 	line "and just like"
-
-	para "that, a whole town"
-	line "disappears."
+	cont "that, a whole town"
+	cont "disappears."
 
 	para "We can go on win-"
 	line "ning and losing in"
-
-	para "#mon. But if"
-	line "nature so much as"
-
-	para "twitches, we can"
-	line "lose in a second."
+	cont "#mon. But if"
+	cont "nature so much as"
+	cont "twitches, we can"
+	cont "lose in a second."
 
 	para "…"
 

@@ -435,7 +435,7 @@ TrainerHouseB1FAgathaBeatenText:
 TrainerHouseB1FAgathaAfterText:
 	text "Agatha: It may"
 	line "sound odd, but"
-	cont " I'm almost glad"
+	cont "I'm almost glad"
 	cont "I lost."
 	
 	para "It shows you're"
