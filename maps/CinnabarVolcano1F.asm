@@ -21,7 +21,7 @@ CinnabarVolcano1FForcedToLeaveScene:
 	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
-	warp CINNABAR_ISLAND, 10, 15
+	warp CINNABAR_ISLAND, 24, 14
 	end
 
 CinnabarVolcano1FNoopScene:

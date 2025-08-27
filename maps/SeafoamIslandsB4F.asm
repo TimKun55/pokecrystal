@@ -1,5 +1,6 @@
 	object_const_def
 	const SEAFOAMISLANDSB4F_LORELEI
+	const SEAFOAMISLANDSB4F_LAPRAS
 	const SEAFOAMISLANDSB4F_ARTICUNO
 	const SEAFOAMISLANDSB4F_POKE_BALL1
 	const SEAFOAMISLANDSB4F_POKE_BALL2
@@ -38,6 +39,7 @@ SeafoamIslandsB4FArticunoCry1:
 	turnobject PLAYER, RIGHT
 	pause 15
 	setscene SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2
+	appear SEAFOAMISLANDSB4F_LORELEI
 	end
 
 SeafoamIslandsB4FArticunoCry2:
@@ -51,34 +53,54 @@ SeafoamIslandsB4FArticunoCry2:
 	setscene SCENE_SEAFOAMISLANDSB4F_LORELEI
 	end
 
-SeafoamIslandsB4FLorelei:
+SeafoamIslandsB4FLoreleiBattle:
+	pause 15
+	applymovement PLAYER, PlayerApproachLoreleiMovement
+	pause 10
+	showemote EMOTE_SHOCK, SEAFOAMISLANDSB4F_LORELEI, 15
+	turnobject SEAFOAMISLANDSB4F_LORELEI, DOWN
+	pause 10
+	checkevent EVENT_GUARDIAN_LORELEI_INTRO
+	iftrue .SkipLoreleiIntro
 	opentext
-	writetext LoreleiWaitText
+	writetext LoreleiChallengerText
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, RIGHT
-	pause 10
-	moveobject SEAFOAMISLANDSB4F_LORELEI, 35, 12
-	appear SEAFOAMISLANDSB4F_LORELEI
 	applymovement SEAFOAMISLANDSB4F_LORELEI, LoreleiBattleApproachMovement
 	opentext
 	writetext LoreleiIntroText
 	waitbutton
 	closetext
+	setevent EVENT_GUARDIAN_LORELEI_INTRO
+.ContinueBattleScript
 	winlosstext LoreleiWinLossText, 0
 	loadtrainer LORELEI, LORELEI1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_GUARDIAN_LORELEI
 	opentext 
 	writetext LoreleiOutroText
 	waitbutton
 	closetext
 	applymovement SEAFOAMISLANDSB4F_LORELEI, LoreleiExitMovement
 	disappear SEAFOAMISLANDSB4F_LORELEI
+	appear SEAFOAMISLANDSB4F_LAPRAS
+	turnobject SEAFOAMISLANDSB4F_LAPRAS, DOWN
+	pause 10
+	cry LAPRAS
+	pause 10	
+	applymovement SEAFOAMISLANDSB4F_LAPRAS, LaprasExitMovement
+	disappear SEAFOAMISLANDSB4F_LAPRAS
 	setscene SCENE_SEAFOAMISLANDSB4F_NOOP
+	setevent EVENT_BEAT_GUARDIAN_LORELEI
 	end
+
+.SkipLoreleiIntro:
+	applymovement SEAFOAMISLANDSB4F_LORELEI, LoreleiBattleApproachMovement
+	opentext
+	writetext LoreleiReturnChallengeText
+	waitbutton
+	closetext
+	sjump .ContinueBattleScript
 
 SeafoamIslandsB4FArticuno:
 	opentext
@@ -104,22 +126,31 @@ SeafoamIslandsB4FArticuno:
 .end
 	end
 
+PlayerApproachLoreleiMovement:
+	slow_step UP
+	slow_step UP
+	step_end
+
 LoreleiBattleApproachMovement:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step LEFT
+	slow_step DOWN
 	step_end
 
 LoreleiExitMovement:
 	step RIGHT
 	step DOWN
 	step DOWN
+	step LEFT
 	step DOWN
 	step DOWN
-	step DOWN
+	slow_step DOWN
+	step_end
+
+LaprasExitMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 SeafoamIslandsB4FUltraBall:
@@ -128,30 +159,31 @@ SeafoamIslandsB4FUltraBall:
 SeafoamIslandsB4FZinc:
 	itemball ZINC
 
-LoreleiWaitText:
-	text "Wait right there,"
-	line "please!"
+LoreleiChallengerText:
+	text "???: Oh!"
+	line "And who are you?"
 	done
 
 LoreleiIntroText:
-	text "So, you think you"
-	line "can approach the"
-	cont "Legendary Bird?"
+	text "My name is Lorelei"
+	line "and I have been"
+	cont "tasked with watch-"
+	cont "ing over the"
+	cont "Legendary Bird,"
+	cont "Articuno."
 	
 	para "You certainly look"
 	line "like a strong"
 	cont "trainer, but"
-	
-	para "looks aren't"
-	line "everything."
+	cont "looks aren't"
+	cont "everything."
 	
 	para "As a former Elite"
 	line "Four member let me"
-	
-	para "warn you; you had"
-	line "best be prepared."
+	cont "warn you; you had"
+	cont "best be prepared."
 	done
-	
+
 LoreleiWinLossText:
 	text "Oh my!"
 	line "You truly"
@@ -164,9 +196,8 @@ LoreleiOutroText:
 	para "I did not expect"
 	line "to be bested but"
 	cont "there is only"
-	
-	para "pride in seeing"
-	line "new, powerful"
+	cont "pride in seeing"
+	cont "new, powerful"
 	cont "trainers emerging."
 	
 	para "The last Champion"
@@ -175,12 +206,10 @@ LoreleiOutroText:
 	
 	para "We were to watch"
 	line "over the Birds"
-	
-	para "until another"
-	line "powerful trainer"
-
-	para "rose up and"
-	line "came to find them."
+	cont "until another"
+	cont "powerful trainer"
+	cont "rose up and"
+	cont "came to find them."
 
 	para "Go. Challenge"
 	line "Articuno."
@@ -189,6 +218,13 @@ LoreleiOutroText:
 	
 	para "I hope I get to"
 	line "see you again."
+	done
+
+LoreleiReturnChallengeText:
+	text "Back again?"
+	
+	para "I'm always happy"
+	line "to battle!"
 	done
 
 ArticunoText:
@@ -203,20 +239,20 @@ SeafoamIslandsB4F_MapEvents:
 	warp_event 23,  3, SEAFOAM_ISLANDS_B3F,  6
 	warp_event 20,  9, SEAFOAM_ISLANDS_B3F,  7
 	warp_event  6, 13, SEAFOAM_ISLANDS_B3F,  8
-	warp_event 36, 15, SEAFOAM_ISLANDS_B3F,  9
-	warp_event 28, 15, SEAFOAM_ISLANDS_B3F, 10
+	warp_event 36, 17, SEAFOAM_ISLANDS_B3F,  9
+	warp_event 28, 13, SEAFOAM_ISLANDS_B3F, 10
 
 	def_coord_events
 	coord_event  7, 15, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY1, SeafoamIslandsB4FArticunoCry1
-	coord_event 35, 13, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2, SeafoamIslandsB4FArticunoCry2
-	coord_event 36, 13, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2, SeafoamIslandsB4FArticunoCry2
-	coord_event 33,  7, SCENE_SEAFOAMISLANDSB4F_LORELEI, SeafoamIslandsB4FLorelei
+	coord_event 27, 21, SCENE_SEAFOAMISLANDSB4F_ARTICUNO_CRY2, SeafoamIslandsB4FArticunoCry2
+	coord_event 19, 18, SCENE_SEAFOAMISLANDSB4F_LORELEI, SeafoamIslandsB4FLoreleiBattle
 
 	def_bg_events
 
 	def_object_events
-	object_event 39, 21, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LEGENDARY_GUARDIANS_ACTIVE
-	object_event 18, 15, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamIslandsB4FArticuno, EVENT_ARTICUNO_NEST_ARTICUNO
+	object_event 19, 14, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_ISLANDS_B4F_LORELEI
+	object_event 19, 20, SPRITE_LAPRAS_SAFARI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LORELEI_LAPRAS
+	object_event 18, 14, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamIslandsB4FArticuno, EVENT_ARTICUNO_NEST_ARTICUNO
 	object_event 20,  3, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandsB4FUltraBall, EVENT_SEAFOAM_ISLANDS_B4F_ULTRA_BALL
 	object_event 30,  5, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandsB4FZinc, EVENT_SEAFOAM_ISLANDS_B4F_ZINC
 	
