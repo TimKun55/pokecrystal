@@ -208,15 +208,15 @@ TilesetDarkCaveAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetIcePathAnim:
-	dw vTiles2 tile $35, ReadTileToAnimBuffer
+	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $35, WriteTileFromAnimBuffer
+	dw vTiles2 tile $14, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $31, ReadTileToAnimBuffer
+	dw vTiles2 tile $35, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -224,7 +224,7 @@ TilesetIcePathAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $31, WriteTileFromAnimBuffer
+	dw vTiles2 tile $35, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
