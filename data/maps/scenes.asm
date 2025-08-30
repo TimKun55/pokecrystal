@@ -88,9 +88,9 @@ MapScenes::
 	scene_var WHIRL_ISLAND_LUGIA_CHAMBER,                  wWhirlIslandLugiaChamberSceneID
 	scene_var TIN_TOWER_ROOF,                              wTinTowerRoofSceneID
 	scene_var SAFFRON_CITY,                                wSaffronCityDisguisedSceneID
-	scene_var CERULEAN_CITY,                               wCeruleanCityDisguisedSceneID
-	scene_var ROUTE_5,                                     wRoute5DisguisedSceneID
-	scene_var UNDERGROUND_PATH,                            wUndergroundPathSceneID
+	scene_var CELADON_CITY,                                wCeladonCityDisguisedSceneID
+	scene_var ROUTE_7,                                     wRoute7DisguisedSceneID
+	scene_var ROCKET_UNDERGROUND_TUNNEL,                   wRocketUndergroundTunnelSceneID
 	scene_var RUINS_OF_ALPH_GS_BALL_CHAMBER,               wRuinsOfAlphGSBallChamberSceneID
 	scene_var ROUTE_7_SAFFRON_GATE,                        wRoute7SaffronGateSceneID
 	scene_var RUINS_OF_ALPH_CAVE_ENTRANCE,                 wRuinsOfAlphCaveEntranceSceneID

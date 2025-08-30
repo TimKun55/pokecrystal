@@ -3203,9 +3203,9 @@ wAviculturalSociety1FSceneID::                    db
 wWhirlIslandLugiaChamberSceneID::                 db
 wTinTowerRoofSceneID::                            db
 wSaffronCityDisguisedSceneID::                    db
-wCeruleanCityDisguisedSceneID::                   db
-wRoute5DisguisedSceneID::                         db
-wUndergroundPathSceneID::                         db
+wCeladonCityDisguisedSceneID::                    db
+wRoute7DisguisedSceneID::                         db
+wRocketUndergroundTunnelSceneID::                 db
 wRuinsOfAlphGSBallChamberSceneID::                db
 wRoute7SaffronGateSceneID::                       db
 wRuinsOfAlphCaveEntranceSceneID::                 db

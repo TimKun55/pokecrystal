@@ -29,54 +29,58 @@ SaffronCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	endcallback
 	
-SaffronCityDisguisedLeft:
+SaffronCityDisguisedTop:
 	readvar VAR_FACING
-	ifequal LEFT, .continueappear
-	end
-	
-.continueappear
-	moveobject SAFFRONCITY_COOLTRAINER_F2, 20,  8
+	ifnotequal RIGHT, .end
+	moveobject SAFFRONCITY_COOLTRAINER_F2,  9, 27
 	appear SAFFRONCITY_COOLTRAINER_F2
 	pause 5
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
 	pause 10
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
 	pause 10
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementLeft
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, RIGHT
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
+	pause 10
+	showemote EMOTE_QUESTION, PLAYER, 15
 	pause 5
 	showemote EMOTE_SHOCK, SAFFRONCITY_COOLTRAINER_F2, 15
+	pause 5
 	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedFastMovement
+	playsound SFX_EXIT_BUILDING
 	disappear SAFFRONCITY_COOLTRAINER_F2
+	turnobject PLAYER, LEFT
+	pause 15
 	showemote EMOTE_QUESTION, PLAYER, 30
 	setscene SCENE_SAFFRONCITY_NOOP
-	setmapscene ROUTE_5, SCENE_ROUTE5_DISGUISED
+	setmapscene ROUTE_7, SCENE_ROUTE7_DISGUISED
+.end
 	end
 
-SaffronCityDisguisedRight:
+SaffronCityDisguisedBottom:
 	readvar VAR_FACING
-	ifequal RIGHT, .continueappear
-	end
-	
-.continueappear
-	moveobject SAFFRONCITY_COOLTRAINER_F2, 16,  8
+	ifnotequal RIGHT, .end
+	moveobject SAFFRONCITY_COOLTRAINER_F2,  9, 26
 	appear SAFFRONCITY_COOLTRAINER_F2
 	pause 5
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
 	pause 10
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
 	pause 10
-	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovementRight
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, LEFT
+	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedSlowMovement
+	pause 10
+	showemote EMOTE_QUESTION, PLAYER, 15
 	pause 5
 	showemote EMOTE_SHOCK, SAFFRONCITY_COOLTRAINER_F2, 15
+	pause 5
 	applymovement SAFFRONCITY_COOLTRAINER_F2, SaffronDisguisedFastMovement
+	playsound SFX_EXIT_BUILDING
 	disappear SAFFRONCITY_COOLTRAINER_F2
+	turnobject PLAYER, LEFT
+	pause 15
 	showemote EMOTE_QUESTION, PLAYER, 30
 	setscene SCENE_SAFFRONCITY_NOOP
-	setmapscene ROUTE_5, SCENE_ROUTE5_DISGUISED
+	setmapscene ROUTE_7, SCENE_ROUTE7_DISGUISED
+.end
 	end
 
 SaffronCityLass1Script:
@@ -172,20 +176,17 @@ SaffronCityPokecenterSign:
 SaffronCityMartSign:
 	jumpstd MartSignScript
 	
-SaffronDisguisedSlowMovementLeft:
+SaffronDisguisedSlowMovement:
 	slow_step LEFT 
 	step_end
 
-SaffronDisguisedSlowMovementRight:
-	slow_step RIGHT 
-	step_end
-
 SaffronDisguisedFastMovement:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
 	step_end
 
 SaffronCityLass1Text:
@@ -390,10 +391,8 @@ SaffronCity_MapEvents:
 	warp_event 15, 31, SAFFRON_ODDISH_DOLL_HOUSE, 1
 
 	def_coord_events
-	coord_event 14,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
-	coord_event 14,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedLeft
-	coord_event 21,  8, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
-	coord_event 21,  9, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedRight
+	coord_event  3, 26, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedTop
+	coord_event  3, 27, SCENE_SAFFRONCITY_DISGUISED, SaffronCityDisguisedBottom
 
 	def_bg_events
 	bg_event  6, 28, BGEVENT_READ, SaffronCitySign
@@ -414,6 +413,6 @@ SaffronCity_MapEvents:
 	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 30, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
-	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
+	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKETS_IN_KANTO
 	object_event  3,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityTeacherScript, -1
 	object_event  3,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster3Script, -1

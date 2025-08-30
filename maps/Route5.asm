@@ -7,73 +7,8 @@
 
 Route5_MapScripts:
 	def_scene_scripts
-	scene_script Route5Noop1Scene, SCENE_ROUTE5_NOOP
-	scene_script Route5Noop2Scene, SCENE_ROUTE5_DISGUISED
 
 	def_callbacks
-
-Route5Noop1Scene:
-	end
-
-Route5Noop2Scene:
-	end
-
-Route5DisguisedScene1:
-	moveobject ROUTE5_SUPER_NERD3,  9, 33
-	appear ROUTE5_SUPER_NERD3
-	pause 5
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
-	playsound SFX_TACKLE
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunsIntoYouMovement
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, LEFT
-	showemote EMOTE_QUESTION, ROUTE5_SUPER_NERD3, 15
-	pause 15
-	showemote EMOTE_SHOCK, ROUTE5_SUPER_NERD3, 15
-	turnobject ROUTE5_SUPER_NERD3, UP
-	pause 15
-	turnobject ROUTE5_SUPER_NERD3, DOWN
-	pause 15
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedFast1Movement
-	playsound SFX_ENTER_DOOR
-	disappear ROUTE5_SUPER_NERD3
-	turnobject PLAYER, RIGHT
-	pause 15
-	showemote EMOTE_QUESTION, PLAYER, 30
-	setscene SCENE_ROUTE5_NOOP
-	setmapscene UNDERGROUND_PATH, SCENE_UNDERGROUNDPATH_DOOR
-	end
-
-Route5DisguisedScene2:
-	readvar VAR_FACING
-	ifequal RIGHT, .continueappear2
-	end
-	
-.continueappear2
-	moveobject ROUTE5_SUPER_NERD3,  9, 34
-	appear ROUTE5_SUPER_NERD3
-	pause 5
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunDownMovement
-	playsound SFX_TACKLE
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedRunsIntoYouMovement
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, LEFT
-	showemote EMOTE_QUESTION, ROUTE5_SUPER_NERD3, 15
-	pause 15
-	showemote EMOTE_SHOCK, ROUTE5_SUPER_NERD3, 15
-	turnobject ROUTE5_SUPER_NERD3, UP
-	pause 15
-	turnobject ROUTE5_SUPER_NERD3, DOWN
-	pause 15
-	applymovement ROUTE5_SUPER_NERD3, Route5DisguisedFast2Movement
-	playsound SFX_EXIT_BUILDING
-	disappear ROUTE5_SUPER_NERD3
-	turnobject PLAYER, RIGHT
-	pause 15
-	showemote EMOTE_QUESTION, PLAYER, 30
-	setscene SCENE_ROUTE5_NOOP
-	setmapscene UNDERGROUND_PATH, SCENE_UNDERGROUNDPATH_DOOR
-	end
 
 Route5SuperNerdGreggScript:
 	trainer SUPER_NERD, GREGG, EVENT_BEAT_SUPER_NERD_GREGG, SupernerdGreggSeenText, SupernerdGreggBeatenText, 0, .Script
@@ -215,8 +150,6 @@ Route5_MapEvents:
 	warp_event  9, 23, ROUTE_5_CLEANSE_TAG_HOUSE, 1
 
 	def_coord_events
-	coord_event 12, 38, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene1
-	coord_event 12, 39, SCENE_ROUTE5_DISGUISED, Route5DisguisedScene2
 
 	def_bg_events
 	bg_event 13, 37, BGEVENT_READ, Route5UndergroundPathSign
@@ -225,6 +158,5 @@ Route5_MapEvents:
 	def_object_events
 	object_event  1, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdGreggScript, -1
 	object_event 18, 22, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdJayScript, -1
-	object_event -3, 43, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI
 	object_event 15, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH
 	object_event 16, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5OfficerScript, EVENT_ROUTE_5_6_OFFICER_BLOCKS_UNDERGROUND_PATH

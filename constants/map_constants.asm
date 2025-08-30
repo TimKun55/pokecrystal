@@ -155,16 +155,15 @@ ENDM
 	map_const VICTORY_ROAD_1F,                             14, 18 ; 90
 	map_const VICTORY_ROAD_2F,                             22, 11 ; 91
 	map_const VICTORY_ROAD_3F,                             23, 12 ; 92
-	map_const UNDERGROUND_ROOM,                             9,  8 ; 93
-	map_const CERULEAN_CAVE_1F,                            17, 11 ; 94
-	map_const CERULEAN_CAVE_2F,                            17, 11 ; 95	
-	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 96
-	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,               10,  6 ; 97
-	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 98
-	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 99
-	map_const MOUNT_MOON_B1F,                              18, 16 ; 100
-	map_const MOUNT_MOON_B2F,                              16, 20 ; 101
-	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 102
+	map_const CERULEAN_CAVE_1F,                            17, 11 ; 93
+	map_const CERULEAN_CAVE_2F,                            17, 11 ; 94	
+	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 95
+	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,               10,  6 ; 96
+	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 97
+	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 98
+	map_const MOUNT_MOON_B1F,                              18, 16 ; 99
+	map_const MOUNT_MOON_B2F,                              16, 20 ; 100
+	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 101
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -458,6 +457,9 @@ ENDM
 	map_const CELADON_HOTEL_1F,                             9,  4 ; 25
 	map_const CELADON_HOTEL_POOL,                           7,  4 ; 26
 	map_const EUSINES_HOUSE,                                4,  4 ; 27
+	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 28
+	map_const ROCKET_UNDERGROUND_TUNNEL,                   16,  7 ; 29
+	map_const CELADON_ROCKET_HIDEOUT_B4F,                  13, 14 ; 30	
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

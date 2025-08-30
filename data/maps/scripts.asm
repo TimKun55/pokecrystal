@@ -467,7 +467,6 @@ INCLUDE "maps/Route18East.asm"
 INCLUDE "maps/Route18West.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
-INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/LavenderTown.asm"
 INCLUDE "maps/Route6.asm"
@@ -508,7 +507,6 @@ INCLUDE "maps/EcruteakFairyFamilyHouse.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
-INCLUDE "maps/UndergroundRoom.asm"
 INCLUDE "maps/VioletPrimosHouse.asm"
 INCLUDE "maps/Route4ZapdosNest.asm"
 INCLUDE "maps/SeafoamIslands1F.asm"
@@ -553,10 +551,14 @@ INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
 INCLUDE "maps/FarawayIslandOutside.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"
+INCLUDE "maps/Route7.asm"
 
 
 SECTION "Map Scripts 29", ROMX
 
 INCLUDE "maps/BattleTower2F.asm"
+INCLUDE "maps/Route7UndergroundPathEntrance.asm"
+INCLUDE "maps/RocketUndergroundTunnel.asm"
+INCLUDE "maps/CeladonRocketHideoutB4F.asm"
 
 ENDSECTION

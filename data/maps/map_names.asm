@@ -180,16 +180,15 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	dw Dungeons_Map_Name90 ; map_const VICTORY_ROAD_1F  	                ; 90
 	dw Dungeons_Map_Name91 ; map_const VICTORY_ROAD_2F						; 91
 	dw Dungeons_Map_Name92 ; map_const VICTORY_ROAD_3F						; 92
-	dw Dungeons_Map_Name93 ; map_const UNDERGROUND_ROOM						; 93
-	dw Dungeons_Map_Name94 ; map_const CERULEAN_CAVE_1F						; 94
-	dw Dungeons_Map_Name95 ; map_const CERULEAN_CAVE_2F                     ; 95
-	dw Dungeons_Map_Name96 ; map_const CERULEAN_CAVE_B1F                    ; 96
-	dw Dungeons_Map_Name97 ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER        ; 97
-	dw Dungeons_Map_Name98 ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE          ; 98
-	dw Dungeons_Map_Name99 ; map_const SLOWPOKE_WELL_ENTRANCE               ; 99
-	dw Dungeons_Map_Name100 ; map_const MOUNT_MOON_B1F                      ; 100
-	dw Dungeons_Map_Name101 ; map_const MOUNT_MOON_B2F                      ; 101
-	dw Dungeons_Map_Name102 ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR         ; 102
+	dw Dungeons_Map_Name93 ; map_const CERULEAN_CAVE_1F						; 93
+	dw Dungeons_Map_Name94 ; map_const CERULEAN_CAVE_2F						; 94
+	dw Dungeons_Map_Name95 ; map_const CERULEAN_CAVE_B1F                    ; 95
+	dw Dungeons_Map_Name96 ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER        ; 96
+	dw Dungeons_Map_Name97 ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE          ; 97
+	dw Dungeons_Map_Name98 ; map_const SLOWPOKE_WELL_ENTRANCE               ; 98
+	dw Dungeons_Map_Name99 ; map_const MOUNT_MOON_B1F                       ; 99
+	dw Dungeons_Map_Name100 ; map_const MOUNT_MOON_B2F                      ; 100
+	dw Dungeons_Map_Name101 ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR         ; 101
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -504,6 +503,9 @@ Celadon_Map_Names: ;newgroup CELADON
 	dw Celadon_Map_Name25 ; map_const CELADON_HOTEL_1F                      ; 25
 	dw Celadon_Map_Name26 ; map_const CELADON_HOTEL_POOL                    ; 26
 	dw Celadon_Map_Name27 ; map_const EUSINES_HOUSE                         ; 27
+	dw Celadon_Map_Name28 ; map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE     ; 28
+	dw Celadon_Map_Name29 ; map_const ROCKET_UNDERGROUND_TUNNEL             ; 29
+	dw Celadon_Map_Name30 ; map_const CELADON_ROCKET_HIDEOUT_B4F            ; 30
 	assert_table_length NUM_CELADON_MAPS
 
 Cianwood_Map_Names: ;newgroup CIANWOOD
@@ -848,25 +850,23 @@ Dungeons_Map_Name91: ; map_const VICTORY_ROAD_2F,;  91
 	db "Victory Road 2F@"
 Dungeons_Map_Name92: ; map_const VICTORY_ROAD_3F,;  92
 	db "Victory Road 3F@"
-Dungeons_Map_Name93: ; map_const UNDERGROUND_ROOM,;  93
-	db "Underground Room@"
-Dungeons_Map_Name94: ; map_const CERULEAN_CAVE_1F,;  94
+Dungeons_Map_Name93: ; map_const CERULEAN_CAVE_1F,;  93
 	db "Cerulean Cave 1F@"
-Dungeons_Map_Name95: ; map_const CERULEAN_CAVE_2F,;  95
+Dungeons_Map_Name94: ; map_const CERULEAN_CAVE_2F ;  94
 	db "Cerulean Cave 2F@"
-Dungeons_Map_Name96: ; map_const CERULEAN_CAVE_B1F,;  96
+Dungeons_Map_Name95: ; map_const CERULEAN_CAVE_B1F ;  95
 	db "Cerulean Cave B1F@"
-Dungeons_Map_Name97: ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,;  97
+Dungeons_Map_Name96: ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER ;  96
 	db "GS Ball Chamber@"
-Dungeons_Map_Name98: ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE,; 98
+Dungeons_Map_Name97: ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE ;  97
 	db "Ruins of Alph Cave@"
-Dungeons_Map_Name99: ; map_const SLOWPOKE_WELL_ENTRANCE,; 99
+Dungeons_Map_Name98: ; map_const SLOWPOKE_WELL_ENTRANCE ; 98
 	db "Slowpoke Well Ent.@"
-Dungeons_Map_Name100: ; map_const MT_MOON_B1F,; 100
+Dungeons_Map_Name99: ; map_const MT_MOON_B1F ; 99
 	db "Mt. Moon B1F@"
-Dungeons_Map_Name101: ; map_const MT_MOON_B2F,; 101
+Dungeons_Map_Name100: ; map_const MT_MOON_B2F ; 100
 	db "Mt. Moon B2F@"
-Dungeons_Map_Name102: ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR,; 102
+Dungeons_Map_Name101: ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR ; 101
 	db "Lighthouse Elev.@"
 
 Ecruteak_Map_Name1: ; map_const ROUTE_35,;  1
@@ -995,7 +995,7 @@ Cerulean_Map_Name17: ; map_const ROUTE_4_ZAPDOS_NEST,;  16
 Cerulean_Map_Name18: ; map_const CERULEAN_EMPTY_HOUSE,;  18
 	db "Cerulean House@"
 Cerulean_Map_Name19: ; map_const CERULEAN_EMPTY_HOUSE_UNDERGROUND,;  19
-	db "Cerulean Undergrnd@"
+	db "???@"
 
 Azalea_Map_Name1: ; map_const AZALEA_POKECENTER_1F ;  1
 	db "Azalea <PKMN> Center@"
@@ -1134,7 +1134,7 @@ Vermilion_Map_Name10: ; map_const VERMILION_GYM ; 10
 Vermilion_Map_Name11: ; map_const ROUTE_6_SAFFRON_GATE ; 11
 	db "Route 6 Gate@"
 Vermilion_Map_Name12: ; map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE ; 12
-	db "Route 6 Under.@"                                           
+	db "Route 6 Undergrnd@"                                           
 Vermilion_Map_Name13: ; map_const ROUTE_11_ROUTE_12_GATE ; 13
 	db "Route 11 Gate.@" 
 Vermilion_Map_Name14: ; map_const VERMILION_SAILORS_HOUSE ; 14
@@ -1359,14 +1359,20 @@ Celadon_Map_Name22: ; map_const CELADON_HOME_DECO_STORE_B1F ; 22
 	db "Cel. DecoStore B1F@" 
 Celadon_Map_Name23: ; map_const CELADON_HOME_DECO_STORE_B2F ; 23 
 	db "Cel. DecoStore B2F@" 
-Celadon_Map_Name24: ; map_const CELADON_CURSE_HOUSE ; 25 
+Celadon_Map_Name24: ; map_const CELADON_CURSE_HOUSE ; 24 
 	db "Celadon House@" 
-Celadon_Map_Name25: ; map_const CELADON_HOTEL_1F ; 26 
+Celadon_Map_Name25: ; map_const CELADON_HOTEL_1F ; 25 
 	db "Celadon Hotel 1F@"
-Celadon_Map_Name26: ; map_const CELADON_HOTEL_POOL ; 27 
+Celadon_Map_Name26: ; map_const CELADON_HOTEL_POOL ; 26 
 	db "Celadon Hotel Pool@"
-Celadon_Map_Name27: ; map_const EUSINES_HOUSE ; 28 
+Celadon_Map_Name27: ; map_const EUSINES_HOUSE ; 27 
 	db "Eusine's House@"
+Celadon_Map_Name28: ; map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE ; 28
+	db "Route 7 Undergrnd@"
+Celadon_Map_Name29: ; map_const ROCKET_UNDERGROUND_TUNNEL ; 29
+	db "???@"
+Celadon_Map_Name30: ; map_const CELADON_ROCKET_HIDEOUT_B4F ; 30
+	db "???@"
 
 Cianwood_Map_Name1: ; map_const ROUTE_40,  1
 	db "Route 40@"

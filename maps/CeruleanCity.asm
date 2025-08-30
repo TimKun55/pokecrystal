@@ -9,8 +9,6 @@
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
-	scene_script CeruleanCityNoop1Scene, SCENE_CERULEANCITY_NOOP
-	scene_script CeruleanCityNoop2Scene, SCENE_CERULEANCITY_DISGUISED
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
@@ -24,52 +22,6 @@ CeruleanCityNoop2Scene:
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
-
-CeruleanCityDisguisedLeft:
-	readvar VAR_FACING
-	ifequal UP, .continueappearleft
-	end
-	
-.continueappearleft
-	moveobject CERULEANCITY_COOLTRAINER_M2, 21, 29
-	appear CERULEANCITY_COOLTRAINER_M2
-	pause 5
-	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedMovement
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, DOWN
-	pause 15
-	turnobject CERULEANCITY_COOLTRAINER_M2, UP
-	pause 15
-	showemote EMOTE_SHOCK, CERULEANCITY_COOLTRAINER_M2, 15
-	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedFastMovement
-	disappear CERULEANCITY_COOLTRAINER_M2
-	showemote EMOTE_QUESTION, PLAYER, 30
-	setscene SCENE_CERULEANCITY_NOOP
-	setmapscene SAFFRON_CITY, SCENE_SAFFRONCITY_DISGUISED
-	end
-
-CeruleanCityDisguisedRight:
-	readvar VAR_FACING
-	ifequal UP, .continueappearright
-	end
-	
-.continueappearright
-	moveobject CERULEANCITY_COOLTRAINER_M2, 22, 29
-	appear CERULEANCITY_COOLTRAINER_M2
-	pause 5
-	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedMovement
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, DOWN
-	pause 15
-	turnobject CERULEANCITY_COOLTRAINER_M2, UP
-	pause 15
-	showemote EMOTE_SHOCK, CERULEANCITY_COOLTRAINER_M2, 15
-	applymovement CERULEANCITY_COOLTRAINER_M2, CeruleanDisguisedFastMovement
-	disappear CERULEANCITY_COOLTRAINER_M2
-	showemote EMOTE_QUESTION, PLAYER, 30
-	setscene SCENE_CERULEANCITY_NOOP
-	setmapscene SAFFRON_CITY, SCENE_SAFFRONCITY_DISGUISED
-	end
 
 CeruleanCityCooltrainerMScript:
 	faceplayer
@@ -202,20 +154,6 @@ CeruleanCityPokecenterSign:
 
 CeruleanCityMartSign:
 	jumpstd MartSignScript
-
-CeruleanDisguisedMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
-CeruleanDisguisedFastMovement:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
 
 CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
@@ -359,8 +297,6 @@ CeruleanCity_MapEvents:
 	warp_event 11, 13, CERULEAN_EMPTY_HOUSE, 1
 
 	def_coord_events
-	coord_event 26, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguisedLeft
-	coord_event 27, 27, SCENE_CERULEANCITY_DISGUISED, CeruleanCityDisguisedRight
 
 	def_bg_events
 	bg_event 18, 22, BGEVENT_READ, CeruleanCitySign
@@ -380,4 +316,3 @@ CeruleanCity_MapEvents:
 	object_event 30, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 15, 24, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityBirdKeeperScript, -1
 	object_event 10, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
-	object_event 39,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_POWER_PLANT_GIOVANNI

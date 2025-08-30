@@ -496,7 +496,6 @@ ENDM
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $bd, 0
 	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $bd, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
-	map_attributes UndergroundRoom, UNDERGROUND_ROOM, $bd, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $01, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $01, 0
 	map_attributes SafariZoneFuchsiaGate, SAFARI_ZONE_FUCHSIA_GATE, $00, 0
@@ -697,6 +696,9 @@ ENDM
 	map_attributes CeladonHotel1F, CELADON_HOTEL_1F, $00, 0
 	map_attributes CeladonHotelPool, CELADON_HOTEL_POOL, $00, 0
 	map_attributes EusinesHouse, EUSINES_HOUSE, $00, 0
+	map_attributes Route7UndergroundPathEntrance, ROUTE_7_UNDERGROUND_PATH_ENTRANCE, $00, 0
+	map_attributes RocketUndergroundTunnel, ROCKET_UNDERGROUND_TUNNEL, $bd, 0
+	map_attributes CeladonRocketHideoutB4F, CELADON_ROCKET_HIDEOUT_B4F, $00, 0
 	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
 	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0

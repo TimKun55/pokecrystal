@@ -964,9 +964,6 @@ SeafoamGym_Blocks:
 CinnabarMoltresNest_Blocks:
 	INCBIN "maps/CinnabarMoltresNest.ablk"
 
-UndergroundRoom_Blocks:
-	INCBIN "maps/UndergroundRoom.ablk"
-	
 Route4ZapdosNest_Blocks:
 	INCBIN "maps/Route4ZapdosNest.ablk"
 
@@ -1092,5 +1089,14 @@ OlivineLighthouseElevator_Blocks:
 
 BattleTower2F_Blocks:
 	INCBIN "maps/BattleTower2F.ablk"
+
+Route7UndergroundPathEntrance_Blocks:
+	INCBIN "maps/Route7UndergroundPathEntrance.ablk"
+
+RocketUndergroundTunnel_Blocks:
+	INCBIN "maps/RocketUndergroundTunnel.ablk"
+
+CeladonRocketHideoutB4F_Blocks:
+	INCBIN "maps/CeladonRocketHideoutB4F.ablk"
 
 ENDSECTION
