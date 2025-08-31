@@ -5,6 +5,9 @@
 	const PEWTERMUSEUM1F_SCIENTIST2
 	const PEWTERMUSEUM1F_GRAMPS
 	const PEWTERMUSEUM1F_SCHOOLBOY
+	const PEWTERMUSEUM1F_OLD_AMBER
+	const PEWTERMUSEUM1F_DOME_FOSSIL
+	const PEWTERMUSEUM1F_HELIX_FOSSIL
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
@@ -575,7 +578,7 @@ PewterMuseum1F_MapEvents:
 	def_warp_events
 	warp_event 10, 19, PEWTER_CITY, 6
 	warp_event 11, 19, PEWTER_CITY, 6
-	warp_event  3, 11, PEWTER_MUSEUM_2F, 1
+	warp_event  2,  6, PEWTER_MUSEUM_2F, 1
 
 	def_coord_events
 
@@ -585,12 +588,7 @@ PewterMuseum1F_MapEvents:
 	bg_event 11, 10, BGEVENT_READ, AerodactylFossilScript
 	bg_event 16,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
 	bg_event 17,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
-	bg_event 20,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
-	bg_event 21,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
 	bg_event 24,  1, BGEVENT_READ, PewterMuseum1FMachineScript
-	bg_event 21,  7, BGEVENT_READ, PewterMuseum1FOldAmberScript
-	bg_event 20,  7, BGEVENT_READ, PewterMuseum1FDomeFossilScript
-	bg_event 22,  7, BGEVENT_READ, PewterMuseum1FHelixFossilScript
 	bg_event  8, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
 	bg_event  9, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
 	bg_event 12, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
@@ -603,3 +601,6 @@ PewterMuseum1F_MapEvents:
 	object_event 24,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FFossilScientistScript, -1
 	object_event  7,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGrampsScript, -1
 	object_event 14,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FYoungsterScript, -1
+	object_event 19,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FOldAmberScript, -1
+	object_event 20,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FDomeFossilScript, -1
+	object_event 21,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FHelixFossilScript, -1

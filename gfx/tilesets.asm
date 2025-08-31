@@ -544,9 +544,6 @@ INCBIN "data/tilesets/museum_metatiles.bin"
 TilesetMuseumColl::
 INCLUDE "data/tilesets/museum_collision.asm"
 
-TilesetMuseumAttr::
-INCBIN "data/tilesets/museum_attributes.bin"
-
 
 SECTION "Tileset Data 22", ROMX
 
@@ -633,3 +630,9 @@ INCBIN "data/tilesets/gate_metatiles.bin"
 
 TilesetGateColl::
 INCLUDE "data/tilesets/gate_collision.asm"
+
+
+SECTION "Tileset Data 25", ROMX
+
+TilesetMuseumAttr::
+INCBIN "data/tilesets/museum_attributes.bin"

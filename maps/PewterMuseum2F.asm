@@ -152,19 +152,19 @@ PewterMuseum2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  7, PEWTER_MUSEUM_1F, 3
+	warp_event  2,  2, PEWTER_MUSEUM_1F, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  6, BGEVENT_READ, PewterMuseum2FMoonStoneSignpostScript
+	bg_event 12,  9, BGEVENT_READ, PewterMuseum2FMoonStoneSignpostScript
 	bg_event 13,  2, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
-	bg_event 13,  6, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
+	bg_event  3,  9, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
 
 
 	def_object_events
-	object_event  7,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FScientistScript, -1
-	object_event  2,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FTeacherScript, -1
-	object_event  1,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FYoungsterScript, -1
-	object_event 14,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
+	object_event  9,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FScientistScript, -1
+	object_event 11, 10, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FTeacherScript, -1
+	object_event 10, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FYoungsterScript, -1
+	object_event  4, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
 	object_event  6,  1, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrannyScript, -1
