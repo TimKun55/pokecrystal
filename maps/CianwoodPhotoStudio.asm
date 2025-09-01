@@ -78,7 +78,7 @@ CianwoodPhotoStudioFishingGuruText_Question:
 CianwoodPhotoStudioFishingGuruText_Yes:
 	text "OK! Big smile now!"
 
-	para "Which #MON"
+	para "Which #mon"
 	line "should I photo-"
 	cont "graph?"
 	done

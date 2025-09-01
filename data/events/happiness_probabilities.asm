@@ -13,5 +13,5 @@ HappinessData_DaisysGrooming:
 	db -1,             2, HAPPINESS_GROOMING ; 50% chance
 
 HappinessData_CianwoodPhotograph:
-	db 50 percent,     2, HAPPINESS_GROOMING ; 50% chance
-	db -1,             2, HAPPINESS_GROOMING ; 50% chance
+	db 50 percent,     2, HAPPINESS_PHOTOGRAPH ; 50% chance
+	db -1,             2, HAPPINESS_PHOTOGRAPH ; 50% chance
