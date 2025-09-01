@@ -4001,6 +4001,7 @@ BattleAnim_PoisonJab:
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 148, 72, $0
 	anim_wait 8
 	anim_loop 3, .loop
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
 	anim_ret
 
 BattleAnim_LockOn:
