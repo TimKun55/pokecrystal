@@ -73,9 +73,9 @@ GoldenrodMagnetTrainStationOfficerScript:
 	end
 
 Script_ArriveFromSaffron:
-	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement
+	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerArriveFromSaffronDoorMovement
 	applymovement PLAYER, GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement
-	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement
+	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerReturnToBoardingGateArriveMovement
 	opentext
 	writetext GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText
 	waitbutton
@@ -95,8 +95,21 @@ GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement:
 	turn_head LEFT
 	step_end
 
+GoldenrodMagnetTrainStationOfficerArriveFromSaffronDoorMovement:
+	step UP
+	step UP
+	step LEFT
+	turn_head RIGHT
+	step_end
+
 GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement:
 	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+GoldenrodMagnetTrainStationOfficerReturnToBoardingGateArriveMovement:
+	step RIGHT
 	step DOWN
 	step DOWN
 	step_end
@@ -113,9 +126,9 @@ GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement:
 	step_end
 
 GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
-	step LEFT
-	step LEFT
 	step DOWN
+	step LEFT
+	step LEFT
 	step DOWN
 	step DOWN
 	step DOWN
