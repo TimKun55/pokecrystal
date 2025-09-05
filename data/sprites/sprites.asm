@@ -86,7 +86,7 @@ OverworldSprites:
 	overworld_sprite EthanSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RattataBackSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite N64SpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SudowoodoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite AmpharosSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
