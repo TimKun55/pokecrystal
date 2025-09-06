@@ -24,16 +24,10 @@ CeladonHotel1FGentlemanScript:
 	iffalse .NoRoom
 	setevent EVENT_CELADON_HOTEL_SCOPE_LENS
 .NoItem
-	writetext CeladonHotel1FGentlemanLensAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHotel1FGentlemanLensAfterText
 
 .NoRoom
-	writetext CeladonHotel1FGentlemanNoRoomText
-	waitbutton
-	closetext
-	end	
+	writetextend CeladonHotel1FGentlemanNoRoomText
 
 CeladonHotel1FBeautyScript:
 	jumptextfaceplayer CeladonHotel1FBeautyText
@@ -93,9 +87,8 @@ CeladonHotel1FGentlemanLensBeforeText:
 	
 	para "I don't battle"
 	line "anymore, but I"
-	
-	para "think you may get"
-	line "some good use"
+	cont "think you may get"
+	cont "some good use"
 	cont "out of this."
 	done
 
@@ -108,9 +101,8 @@ CeladonHotel1FGentlemanLensAfterText:
 	para "Very useful if the"
 	line "opponent has"
 	cont "raised their stats"
-	
-	para "because critical"
-	line "hits ignore stat"
+	cont "because critical"
+	cont "hits ignore stat"
 	cont "boosts."
 	done
 

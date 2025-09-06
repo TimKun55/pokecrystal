@@ -14,11 +14,9 @@ CeruleanGym_MapScripts:
 
 	def_callbacks
 
-CeruleanGymNoopScene:
-	end
-
 CeruleanGymGruntRunsOutScene:
 	sdefer CeruleanGymGruntRunsOutScript
+CeruleanGymNoopScene:	
 	end
 
 CeruleanGymGruntRunsOutScript:
@@ -94,10 +92,7 @@ CeruleanGymMistyScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 .FightDone:
-	writetext MistyFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend MistyFightDoneText
 	
 .MistyScript_Rematch
 	checkflag ENGINE_DAILY_MISTY_REMATCH
@@ -112,22 +107,13 @@ CeruleanGymMistyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MISTY_REMATCH
 	opentext
-	writetext MistyRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend MistyRematchAfterBattleText
 
 .skip_rematch
-	writetext MistyComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend MistyComeBackTomorrowText
 	
 .EndRematch
-	writetext MistyNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend MistyNextTimeText
 	
 CeruleanGymStarmie:
 	opentext
@@ -146,49 +132,31 @@ TrainerSwimmerfDiana:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfDianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfDianaAfterBattleText
 
 TrainerSwimmerfBriana:
 	trainer SWIMMERF, BRIANA, EVENT_BEAT_SWIMMERF_BRIANA, SwimmerfBrianaSeenText, SwimmerfBrianaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfBrianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfBrianaAfterBattleText
 
 TrainerSwimmermParker:
 	trainer SWIMMERM, PARKER, EVENT_BEAT_SWIMMERM_PARKER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermParkerAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermParkerAfterBattleText
 
 CeruleanGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_MISTY
 	iftrue .CeruleanGymGuideWinScript
-	writetext CeruleanGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanGymGuideText
 
 .CeruleanGymGuideWinScript:
-	writetext CeruleanGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanGymGuideWinText
 
 CeruleanGymHiddenMachinePart:
 	hiddenitem MACHINE_PART, EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
@@ -197,19 +165,13 @@ CeruleanGymStatue1:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	iffalse CeruleanGymStatue
 	opentext
-	writetext CeruleanGymNote1Text
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanGymNote1Text
 
 CeruleanGymStatue2:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	iffalse CeruleanGymStatue
 	opentext
-	writetext CeruleanGymNote2Text
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanGymNote2Text
 
 CeruleanGymStatue:
 	checkflag ENGINE_CASCADEBADGE
@@ -303,9 +265,8 @@ MistyIntroText:
 
 	para "You may have a"
 	line "lot of Johto Gym"
-
-	para "Badges, but you'd"
-	line "better not take me"
+	cont "Badges, but you'd"
+	cont "better not take me"
 	cont "too lightly."
 
 	para "My water-type"
@@ -336,9 +297,8 @@ MistyFightDoneText:
 
 	para "I'm going to"
 	line "travel one day, so"
-
-	para "I can battle some"
-	line "skilled trainers."
+	cont "I can battle some"
+	cont "skilled trainers."
 	done
 	
 MistyRematchIntroText:
@@ -441,9 +401,8 @@ CeruleanGymGuideText:
 
 	para "Since Misty was"
 	line "away, I went out"
-
-	para "for some fun too."
-	line "He-he-he."
+	cont "for some fun too."
+	cont "He-he-he."
 	done
 
 CeruleanGymGuideWinText:

@@ -35,9 +35,8 @@ CeladonDeptStore1FReceptionistText:
 CeladonDeptStore1FGentlemanText:
 	text "This Dept.Store is"
 	line "part of the same"
-
-	para "chain as the one"
-	line "in Goldenrod City."
+	cont "chain as the one"
+	cont "in Goldenrod City."
 
 	para "They were both"
 	line "renovated at the"

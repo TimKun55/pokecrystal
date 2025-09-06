@@ -25,11 +25,9 @@ AzaleaTown_MapScripts:
 	callback MAPCALLBACK_OBJECTS, AzaleaTownProtonCallback
 
 AzaleaTownNoop1Scene:
-	end
-
+	; fallthrough
 AzaleaTownNoop2Scene:
-	end
-
+	; fallthrough
 AzaleaTownNoop3Scene:
 	end
 
@@ -133,20 +131,12 @@ AzaleaTownRocket2Script:
 	jumptextfaceplayer AzaleaTownRocket2Text
 
 AzaleaTownGrampsScript:
-	faceplayer
-	opentext
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
 	iftrue .ClearedWell
-	writetext AzaleaTownGrampsTextBefore
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AzaleaTownGrampsTextBefore
 
 .ClearedWell:
-	writetext AzaleaTownGrampsTextAfter
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AzaleaTownGrampsTextAfter
 
 AzaleaTownTeacherScript:
 	jumptextfaceplayer AzaleaTownTeacherText
@@ -160,15 +150,6 @@ AzaleaTownSlowpokeScript:
 	pause 60
 	writetext AzaleaTownSlowpokeText2
 	cry SLOWPOKE
-	waitbutton
-	closetext
-	end
-
-UnusedWoosterScript: ; unreferenced
-	faceplayer
-	opentext
-	writetext WoosterText
-	cry QUAGSIRE
 	waitbutton
 	closetext
 	end
@@ -209,10 +190,7 @@ AzaleaTownProtonScript:
 	closetext
 	turnobject AZALEATOWN_PROTON, UP
 	opentext
-	writetext AzaleaTownProton2Text
-	waitbutton
-	closetext
-	end
+	writetextend AzaleaTownProton2Text
 
 AzaleaTownProtonSlowpokeScript:
 	opentext
@@ -423,10 +401,6 @@ AzaleaTownSlowpokeText2:
 	text "<……> <……>Yawn?"
 	done
 	
-WoosterText: ; unused
-	text "Wooster: Gugyoo…"
-	done
-
 AzaleaTownKurtText1:
 	text "Ilex Forest is"
 	line "restless!"

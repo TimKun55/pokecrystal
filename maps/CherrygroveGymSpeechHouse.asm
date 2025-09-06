@@ -19,15 +19,13 @@ CherrygroveGymSpeechHouseBookshelf:
 CherrygroveGymSpeechHousePokefanMText:
 	text "You're trying to"
 	line "see how good you"
-
-	para "are as a #mon"
-	line "trainer?"
+	cont "are as a #mon"
+	cont "trainer?"
 
 	para "You better visit"
 	line "the #mon Gyms"
-
-	para "all over Johto and"
-	line "collect Badges."
+	cont "all over Johto and"
+	cont "collect Badges."
 	done
 
 CherrygroveGymSpeechHouseBugCatcherText:
@@ -37,9 +35,8 @@ CherrygroveGymSpeechHouseBugCatcherText:
 
 	para "I make my #mon"
 	line "battle with my"
-
-	para "friend's to make"
-	line "them tougher!"
+	cont "friend's to make"
+	cont "them tougher!"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:

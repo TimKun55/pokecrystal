@@ -70,10 +70,7 @@ CianwoodGymChuckScript:
 	verbosegiveitem TM_DYNAMICPUNCH
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
-	writetext ChuckExplainTMText
-	waitbutton
-	closetext
-	end
+	writetextend ChuckExplainTMText
 
 .AlreadyGotTM:
 	writetext ChuckAfterText
@@ -95,10 +92,7 @@ CianwoodGymChuckScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_CHUCK_REMATCH
 	opentext
-	writetext Chuck16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Chuck16AfterBattleText
 
 .ChuckScript_Rematch
 	checkflag ENGINE_DAILY_CHUCK_REMATCH
@@ -113,28 +107,16 @@ CianwoodGymChuckScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_CHUCK_REMATCH
 	opentext
-	writetext ChuckRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ChuckRematchAfterBattleText
 
 .skip_rematch
-	writetext ChuckComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend ChuckComeBackTomorrowText
 
 .EndRematch
-	writetext ChuckNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend ChuckNextTimeText
 
 .ChuckWaterfallTraining
-	writetext WaterfallTrainingText
-	waitbutton
-	closetext
-	end
+	writetextend WaterfallTrainingText
 	
 CianwoodGymPoliwrath:
 	opentext
@@ -151,10 +133,7 @@ CianwoodGymPoliwrath:
 	end
 
 .PoliwrathWaterfallTraining
-	writetext WaterfallTrainingText
-	waitbutton
-	closetext
-	end
+	writetextend WaterfallTrainingText
 
 CianwoodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -172,44 +151,28 @@ TrainerBlackbeltYoshi:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BlackbeltYoshiAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BlackbeltYoshiAfterText
 
 TrainerBlackbeltLao:
 	trainer BLACKBELT_T, LAO, EVENT_BEAT_BLACKBELT_LAO, BlackbeltLaoSeenText, BlackbeltLaoBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BlackbeltLaoAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BlackbeltLaoAfterText
 
 TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BlackbeltNobAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BlackbeltNobAfterText
 
 TrainerBlackbeltLung:
 	trainer BLACKBELT_T, LUNG, EVENT_BEAT_BLACKBELT_LUNG, BlackbeltLungSeenText, BlackbeltLungBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BlackbeltLungAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BlackbeltLungAfterText
 
 CianwoodWaterfallButton1:
 	opentext
@@ -249,16 +212,10 @@ CianwoodWaterfallButton2:
 	end
 
 .Pushed
-	writetext CianwoodGymButtonIsPressedText
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodGymButtonIsPressedText
 
 .NotActive
-	writetext CianwoodGymButtonNotActiveText
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodGymButtonNotActiveText
 
 CianwoodGymStatue:
 	checkflag ENGINE_STORMBADGE
@@ -326,15 +283,13 @@ GetStormBadgeText:
 ChuckExplainBadgeText:
 	text "The StormBadge"
 	line "makes all #mon"
-
-	para "up to L70 obey,"
-	line "even traded ones."
+	cont "up to L70 obey,"
+	cont "even traded ones."
 
 	para "It also lets your"
 	line "#mon use Fly"
-
-	para "when you're not in"
-	line "a battle."
+	cont "when you're not in"
+	cont "a battle."
 
 	para "Here, take this"
 	line "too!"
@@ -346,9 +301,8 @@ ChuckExplainTMText:
 
 	para "It doesn't always"
 	line "hit, but when it"
-
-	para "does, it causes"
-	line "confusion!"
+	cont "does, it causes"
+	cont "confusion!"
 	done
 
 ChuckAfterText:
@@ -530,9 +484,8 @@ CianwoodGymButtonNotActiveText:
 WaterfallTrainingText:
 	text "They're so into"
 	line "their training,"
-	
-	para "they don't seem"
-	line "to notice you."
+	cont "they don't seem"
+	cont "to notice you."
 	done
 
 CianwoodGym_MapEvents:

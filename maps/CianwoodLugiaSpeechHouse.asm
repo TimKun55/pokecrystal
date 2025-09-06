@@ -37,9 +37,8 @@ CianwoodLugiaSpeechHouseTeacherText:
 CianwoodLugiaSpeechHouseLassText:
 	text "I heard that you"
 	line "can only see it if"
-
-	para "you have a Silver"
-	line "Wing."
+	cont "you have a Silver"
+	cont "Wing."
 
 	para "It must have the"
 	line "same scent as the"
@@ -49,9 +48,8 @@ CianwoodLugiaSpeechHouseLassText:
 CianwoodLugiaSpeechHouseTwinText:
 	text "I've heard that"
 	line "the whirlpools"
-
-	para "around the islands"
-	line "are caused by the"
+	cont "around the islands"
+	cont "are caused by the"
 	cont "sea creature."
 
 	para "You might need a"

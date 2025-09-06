@@ -136,9 +136,8 @@ GrannyWatchingStreamText:
 	
 	para "Good luck out"
 	line "there, dear and"
-	
-	para "remember to ask"
-	line "yourself the"
+	cont "remember to ask"
+	cont "yourself the"
 	cont "three questions:"
 	
 	para "'What is because"
@@ -153,9 +152,8 @@ GrannyWatchingStreamText:
 	para "If you can answer"
 	line "those questions"
 	cont "honestly, you can"
-	
-	para "get through"
-	line "anything in life."
+	cont "get through"
+	cont "anything in life."
 	
 	para "I love you very"
 	line "much, dear."

@@ -82,10 +82,7 @@ CeladonHomeDecoStoreB2FClerk1Script:
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecoStoreB2FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB2FNextTimeText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -120,29 +117,17 @@ CeladonHomeDecoStoreB2FVirtualBoyScript:
 	waitbutton
 	writetext VirtualBoySentText
 	waitbutton
-	writetext CeladonHomeDecoStoreB2FClerkYesText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB2FClerkYesText
 	
 .VirtualBoyAlreadyPurchased:
 	opentext
-	writetext CeladonHomeDecoStoreB2FVirtualBoyText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB2FVirtualBoyText
 
 .NotEnoughMoney:
-	writetext CeladonHomeDecoStoreB2FNoMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB2FNoMoneyText
 	
 .ClerkNoText:
-	writetext CeladonHomeDecoStoreB2FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB2FNextTimeText
 
 CeladonHomeDecoStoreB2FYoungsterScript:
 	jumptextfaceplayer CeladonHomeDecoStoreB2FYoungsterText
@@ -175,9 +160,8 @@ CeladonHomeDecoStoreB2FClerk2Text:
 CeladonHomeDecoStoreB2FClerkSaleText:
 	text "Clerk: Our very"
 	line "rare Virtual Boy"
-
-	para "is on sale right"
-	line "now for ¥230,000."
+	cont "is on sale right"
+	cont "now for ¥230,000."
 
 	para "Would you like to"
 	line "buy one?"

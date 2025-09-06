@@ -25,22 +25,13 @@ EcruteakFairyFamilyHouseMumScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 .TutorRefused
-	writetext DisarmVoiceRefused
-	waitbutton
-	closetext
-	end
+	writetextend DisarmVoiceRefused
 
 .TeachMove
-	writetext DisarmVoiceTaught
-	waitbutton
-	closetext
-	end
+	writetextend DisarmVoiceTaught
 	
 .NoMoves
-	writetext MumNoMoves
-	waitbutton
-	closetext
-	end
+	writetextend MumNoMoves
 	
 EcruteakFairyFamilyHouseDadScript:
 	faceplayer
@@ -58,22 +49,13 @@ EcruteakFairyFamilyHouseDadScript:
 	ifequal FALSE, .TeachMove
 	
 .TutorRefused
-	writetext DrainKissRefused
-	waitbutton
-	closetext
-	end
+	writetextend DrainKissRefused
 
 .TeachMove
-	writetext DrainKissTaught
-	waitbutton
-	closetext
-	end
+	writetextend DrainKissTaught
 	
 .NoMoves
-	writetext DadNoMoves
-	waitbutton
-	closetext
-	end
+	writetextend DadNoMoves
 
 EcruteakFairyFamilyHouseGrampsScript:
 	faceplayer
@@ -91,32 +73,20 @@ EcruteakFairyFamilyHouseGrampsScript:
 	ifequal FALSE, .TeachMove
 	
 .TutorRefused
-	writetext DazzlingleamRefused
-	waitbutton
-	closetext
-	end
+	writetextend DazzlingleamRefused
 
 .TeachMove
-	writetext DazzlingleamTaught
-	waitbutton
-	closetext
-	end
+	writetextend DazzlingleamTaught
 	
 .NoMoves
-	writetext GrampsNoMoves
-	waitbutton
-	closetext
-	end
+	writetextend GrampsNoMoves
 	
 EcruteakFairyFamilyHouseGrannyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_LIA_ZOE_EVA
 	iftrue .GrannyTeachMove
-	writetext FairyGrannyWelcomeText
-	waitbutton
-	closetext
-	end
+	writetextend FairyGrannyWelcomeText
 
 .GrannyTeachMove
 	writetext UltimateFairyMoveText
@@ -148,16 +118,10 @@ EcruteakFairyFamilyHouseGrannyScript:
 	sjump .TutorLoop
 	
 .TutorRefused
-	writetext UltimateFairyMoveRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend UltimateFairyMoveRefusedText
 	
 .TeachMove
-	writetext UltimateFairyMoveTaughtText
-	waitbutton
-	closetext
-	end
+	writetextend UltimateFairyMoveTaughtText
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -188,20 +152,18 @@ FairyMumWelcomeText:
 	text "Welcome! If you're"
 	line "visiting us, you"
 	cont "must be interested"
+	cont "in fairy-types!"
 	
-	para "in fairy-types!"
-	line "Have you been"
-	cont "battling my"
-	
-	para "daughters?"
+	para "Have you been"
+	line "battling my"	
+	cont "daughters?"
 	done
 
 DisarmVoiceText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
 	cont "#mon to use"
-	
-	para "Disarm Voice?"
+	cont "Disarm Voice?"
 	done
 	
 MumNoMoves:
@@ -233,20 +195,18 @@ FairyDadWelcomeText:
 	text "Hello! If you're"
 	line "visiting us, you"
 	cont "must be interested"
-	
-	para "in fairy-types!"
-	line "Have you been"
-	cont "battling my"
-	
-	para "daughters?"
+	cont "in fairy-types!"
+
+	para "Have you been"
+	line "battling my"
+	cont "daughters?"
 	done
 
 DrainKissText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
 	cont "#mon to use"
-	
-	para "Drain Kiss?"
+	cont "Drain Kiss?"
 	done
 	
 DadNoMoves:
@@ -277,9 +237,8 @@ FairyGrampsWelcomeText:
 	text "Hello there,"
 	line "young'un! If you're"
 	cont "visiting us, you"
-	
-	para "must be interested"
-	line "in fairy-types!"
+	cont "must be interested"
+	cont "in fairy-types!"
 	
 	para "Have you been"
 	line "battling my"
@@ -290,8 +249,7 @@ DazzlingleamText:
 	text "Ooh, you have!"
 	line "Shall I teach your"
 	cont "#mon to use"
-	
-	para "DazzlinGleam?"
+	cont "DazzlinGleam?"
 	done
 	
 GrampsNoMoves:
@@ -320,15 +278,14 @@ DazzlingleamTaught:
 
 FairyGrannyWelcomeText:
 	text "Hello there, dear!"
-	line "My family and I"
-	cont "recently moved"
-
-	para "from the Hoenn"
-	line "Region and we've"
+	
+	para "My family and I"
+	line "recently moved"
+	cont "from the Hoenn"
+	cont "Region and we've"
 	cont "been looking for"
-
-	para "an excuse to teach"
-	line "trainers about the"
+	cont "an excuse to teach"
+	cont "trainers about the"
 	cont "fairy-type!"
 
 	para "My granddaughters"
@@ -336,19 +293,16 @@ FairyGrannyWelcomeText:
 	
 	para "If you can"
 	line "find, battle and"
-
-	para "defeat them,"
-	line "we will gladly"
+	cont "defeat them,"
+	cont "we will gladly"
 	cont "teach your"
-	
-	para "#mon some fairy"
-	line "-type moves!"
+	cont "#mon some fairy"
+	cont "-type moves!"
 	
 	para "Defeat them all"
 	line "and I will teach"
 	cont "you the ultimate"
-	
-	para "fairy-type moves!"
+	cont "fairy-type moves!"
 	done
 
 UltimateFairyMoveText:

@@ -25,10 +25,7 @@ CianwoodPharmacist:
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
-	writetext PharmacistDescribeSecretpotionText
-	waitbutton
-	closetext
-	end
+	writetextend PharmacistDescribeSecretpotionText
 
 .Mart:
 	pokemart MARTTYPE_PHARMACY, MART_CIANWOOD

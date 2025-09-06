@@ -14,11 +14,7 @@ TrainerSwimmerMTony:
 
 .Script
 	endifjustbattled
-	opentext
-	writetext SwimmerMTonyAfterText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerMTonyAfterText
 
 CeladonHotelPoolTwinScript:
 	jumptextfaceplayer CeladonHotelPoolTwinText

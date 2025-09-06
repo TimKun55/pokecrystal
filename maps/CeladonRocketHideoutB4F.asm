@@ -90,33 +90,21 @@ ExecutivePetrel:
 	
 .Script:
 	endifjustbattled
-	opentext
-	writetext CeladonRocketHideoutB4FPetrelAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CeladonRocketHideoutB4FPetrelAfterBattleText
 	
 ExecutiveProton:
 	trainer PROTON, PROTON3, EVENT_BEAT_PROTON_3, CeladonRocketHideoutB4FProtonSeenText, CeladonRocketHideoutB4FProtonBeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
-	opentext
-	writetext CeladonRocketHideoutB4FProtonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CeladonRocketHideoutB4FProtonAfterBattleText
 	
 ExecutiveAriana:
 	trainer ARIANA, ARIANA3, EVENT_BEAT_ARIANA_3, CeladonRocketHideoutB4FArianaSeenText, CeladonRocketHideoutB4FArianaBeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
-	opentext
-	writetext CeladonRocketHideoutB4FArianaAfterBattleText
-	waitbutton
-	closetext
-	end	
+	jumptext CeladonRocketHideoutB4FArianaAfterBattleText
 
 CeladonRocketHideoutB4FGiovanniEnterMovement:
 	step UP

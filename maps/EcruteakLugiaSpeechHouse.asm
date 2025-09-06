@@ -22,9 +22,8 @@ EcruteakLugiaSpeechHouseGrampsText:
 
 	para "The sky suddenly"
 	line "turned black. A"
-
-	para "giant flying #-"
-	line "mon was blocking"
+	cont "giant flying #-"
+	cont "mon was blocking"
 	cont "out the sun."
 
 	para "I wonder what that"

@@ -52,16 +52,10 @@ BlackthornMoveTutorScript:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext BlackthornMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornMoveTutorRefusalText
 	
 .NotEnough:
-	writetext BlackthornMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornMoveTutorNotEnough
 
 .TeachMove:
 	writetext BlackthornMoveTutorPayment
@@ -69,10 +63,7 @@ BlackthornMoveTutorScript:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext BlackthornMoveTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornMoveTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -92,9 +83,8 @@ BlackthornAskTeachAMoveText:
 	text "Hi there!"
 	line "For ¥10,000, I can"
 	cont "teach your #mon"
-
-	para "amazing moves if"
-	line "you'd like."
+	cont "amazing moves if"
+	cont "you'd like."
 	done
 	
 BlackthornAskYesNo:
@@ -105,9 +95,8 @@ BlackthornAskYesNo:
 BlackthornMoveTutorRefusalText:
 	text "Come back here"
 	line "if you want to"
-	
-	para "teach your"
-	line "#mon a new"
+	cont "teach your"
+	cont "#mon a new"
 	cont "move!"
 	done
 
@@ -132,14 +121,7 @@ BlackthornMoveTutorNotEnough:
 	done
 
 BlackthornMoveTutorUseWisely:
-	text "If you understand"
-	line "what's so amazing"
-
-	para "about this move,"
-	line "you've made it as"
-	cont "a trainer."
-
-	para "See ya and"
+	text "See ya and"
 	line "good luck on"
 	cont "your journey!"
 	done

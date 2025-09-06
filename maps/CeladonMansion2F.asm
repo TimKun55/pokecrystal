@@ -27,15 +27,13 @@ CeladonMansion2FComputerText:
 
 	para "I think you'll be"
 	line "surprised at how"
-
-	para "much things have"
-	line "changed here."
+	cont "much things have"
+	cont "changed here."
 
 	para "You'll also see"
 	line "many #mon that"
-
-	para "aren't native to"
-	line "Johto."
+	cont "aren't native to"
+	cont "Johto."
 
 	para "To the Producer"
 

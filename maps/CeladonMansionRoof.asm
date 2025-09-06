@@ -18,9 +18,8 @@ CeladonMansionRoofFisherText:
 
 	para "I'd say the only"
 	line "thing that loves"
-
-	para "heights as much as"
-	line "me is smoke!"
+	cont "heights as much as"
+	cont "me is smoke!"
 	done
 
 CeladonMansionRoofGraffitiText:

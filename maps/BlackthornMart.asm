@@ -23,15 +23,13 @@ BlackthornMartBlackBeltScript:
 BlackthornMartCooltrainerMText:
 	text "You can't buy Max"
 	line "Revive, but it"
-
-	para "fully restores a"
-	line "fainted #mon."
+	cont "fully restores a"
+	cont "fainted #mon."
 
 	para "Beware--it won't"
 	line "restore PP, the"
-
-	para "Power Points"
-	line "needed for moves."
+	cont "Power Points"
+	cont "needed for moves."
 	done
 
 BlackthornMartBlackBeltText:

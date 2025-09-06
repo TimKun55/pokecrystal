@@ -53,16 +53,10 @@ EusinesHouseGrampsScript:
 	opentext
 	checkevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	iftrue .EusineOutLooking
-	writetext EusinesHouseGrampsText1
-	waitbutton
-	closetext
-	end
+	writetextend EusinesHouseGrampsText1
 
 .EusineOutLooking:
-	writetext EusinesHouseGrampsText2
-	waitbutton
-	closetext
-	end
+	writetextend EusinesHouseGrampsText2
 
 CeladonEusineText1:
 	text "Eusine: Hi!"
@@ -80,16 +74,14 @@ EusineLeavesCeladonText:
 
 	para "There have been"
 	line "fresh rumors of a"
-
-	para "rainbow-colored"
-	line "#mon appearing"
+	cont "rainbow-colored"
+	cont "#mon appearing"
 	cont "at Tin Tower."
 
 	para "I've just had my"
 	line "party healed, so"
-
-	para "now I'm headed to"
-	line "Ecruteak."
+	cont "now I'm headed to"
+	cont "Ecruteak."
 
 	para "I'll be seeing"
 	line "you, <PLAYER>!"
@@ -126,9 +118,8 @@ EusinesHouseGrampsText1:
 EusinesHouseGrampsText2:
 	text "My grandson Eusine"
 	line "is in Johto,"
-
-	para "searching far and"
-	line "wide for Suicune."
+	cont "searching far and"
+	cont "wide for Suicune."
 
 	para "I taught him all"
 	line "about the legend-"

@@ -22,20 +22,14 @@ ElmsLab_MapScripts:
 
 ElmsLabMeetElmScene:
 	sdefer ElmsLabWalkUpToElmScript
-	end
-
 ElmsLabNoop1Scene:
-	end
-
+	; fallthrough
 ElmsLabNoop2Scene:
-	end
-
+	; fallthrough
 ElmsLabNoop3Scene:
-	end
-
+	; fallthrough
 ElmsLabNoop4Scene:
-	end
-
+	; fallthrough
 ElmsLabNoop5Scene:
 	end
 
@@ -116,10 +110,7 @@ ElmCheckLuckyEgg:
 	setval TOGEKISS
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	writetext ElmThoughtEggHatchedText
-	waitbutton
-	closetext
-	end
+	writetextend ElmThoughtEggHatchedText
 
 ElmEggHatchedScript:
 	setval TOGEPI
@@ -146,10 +137,7 @@ ElmCheckGotEggAgain:
 	iftrue ElmAfterTheftScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue ElmDescribesMrPokemonScript
-	writetext ElmText_LetYourMonBattleIt
-	waitbutton
-	closetext
-	end
+	writetextend ElmText_LetYourMonBattleIt
 
 LabTryToLeaveScript:
 	turnobject ELMSLAB_ELM, DOWN
@@ -289,10 +277,7 @@ ChikoritaPokeBallScript:
 	sjump ElmDirectionsScript
 
 DidntChooseStarterScript:
-	writetext DidntChooseStarterText
-	waitbutton
-	closetext
-	end
+	writetextend DidntChooseStarterText
 
 ElmDirectionsScript:
 	turnobject PLAYER, UP
@@ -324,26 +309,17 @@ ElmDirectionsScript:
 	end
 
 ElmDescribesMrPokemonScript:
-	writetext ElmDescribesMrPokemonText
-	waitbutton
-	closetext
-	end
+	writetextend ElmDescribesMrPokemonText
 
 LookAtElmPokeBallScript:
 	opentext
-	writetext ElmPokeBallText
-	waitbutton
-	closetext
-	end
+	writetextend ElmPokeBallText
 
 ElmsLabHealingMachine:
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .CanHeal
-	writetext ElmsLabHealingMachineText1
-	waitbutton
-	closetext
-	end
+	writetextend ElmsLabHealingMachineText1
 
 .CanHeal:
 	writetext ElmsLabHealingMachineText2
@@ -391,28 +367,16 @@ ElmAfterTheftScript:
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
-	writetext ElmAfterTheftText6
-	waitbutton
-	closetext
-	end
+	writetextend ElmAfterTheftText6
 
 ElmStudyingEggScript:
-	writetext ElmStudyingEggText
-	waitbutton
-	closetext
-	end
+	writetextend ElmStudyingEggText
 
 ElmAideHasEggScript:
-	writetext ElmAideHasEggText
-	waitbutton
-	closetext
-	end
+	writetextend ElmAideHasEggText
 
 ElmWaitingEggHatchScript:
-	writetext ElmWaitingEggHatchText
-	waitbutton
-	closetext
-	end
+	writetextend ElmWaitingEggHatchText
 
 ShowElmTogepiScript:
 	writetext ShowElmTogepiText1
@@ -430,11 +394,8 @@ ElmGiveLuckyEggScript:
 	promptbutton
 	verbosegiveitem LUCKY_EGG
 	iffalse ElmScript_NoRoomForLuckyEgg
-	writetext ElmGiveLuckyEggText2
-	waitbutton
-	closetext
-	setevent EVENT_GOT_LUCKY_EGG_FROM_ELM
-	end
+	setevent EVENT_GOT_LUCKY_EGG_FROM_ELM	
+	writetextend ElmGiveLuckyEggText2
 
 ElmScript_CallYou:
 	writetext ElmText_CallYou
@@ -658,11 +619,8 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	writetext AideText_AlwaysBusy
-	waitbutton
-	closetext
 	setscene SCENE_ELMSLAB_NOOP
-	end
+	writetextend AideText_AlwaysBusy
 
 ElmsAideScript:
 	faceplayer
@@ -673,28 +631,16 @@ ElmsAideScript:
 	iftrue AideScript_ExplainBalls
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue AideScript_TheftTestimony
-	writetext AideText_AlwaysBusy
-	waitbutton
-	closetext
-	end
+	writetextend AideText_AlwaysBusy
 
 AideScript_TheftTestimony:
-	writetext AideText_TheftTestimony
-	waitbutton
-	closetext
-	end
+	writetextend AideText_TheftTestimony
 
 AideScript_ExplainBalls:
-	writetext AideText_ExplainBalls
-	waitbutton
-	closetext
-	end
+	writetextend AideText_ExplainBalls
 
 AideScript_AfterTheft:
-	writetext AideText_AfterTheft
-	waitbutton
-	closetext
-	end
+	writetextend AideText_AfterTheft
 
 MeetCopScript2:
 	applymovement PLAYER, MeetCopScript2_StepLeft
@@ -759,16 +705,10 @@ ElmsLabWindow:
 	sjump .Normal
 
 .BreakIn:
-	writetext ElmsLabWindowText2
-	waitbutton
-	closetext
-	end
+	writetextend ElmsLabWindowText2
 
 .Normal:
-	writetext ElmsLabWindowText1
-	waitbutton
-	closetext
-	end
+	writetextend ElmsLabWindowText1
 
 ElmsLabTravelTip1:
 	jumptext ElmsLabTravelTip1Text
@@ -983,23 +923,20 @@ ElmText_Intro:
 
 	para "I'm writing a"
 	line "paper that I want"
-
-	para "to present at a"
-	line "conference."
+	cont "to present at a"
+	cont "conference."
 
 	para "But there are some"
 	line "things I don't"
-
-	para "quite understand"
-	line "yet."
+	cont "quite understand"
+	cont "yet."
 
 	para "So!"
 
 	para "I'd like you both"
 	line "to raise a #mon"
-
-	para "that I recently"
-	line "caught."
+	cont "that I recently"
+	cont "caught."
 	done
 
 ElmText_Accepted:
@@ -1017,12 +954,10 @@ ElmText_Refused:
 ElmText_ResearchAmbitions:
 	text "When I announce my"
 	line "findings, I'm sure"
-
-	para "we'll delve a bit"
-	line "deeper into the"
-
-	para "many mysteries of"
-	line "#mon."
+	cont "we'll delve a bit"
+	cont "deeper into the"
+	cont "many mysteries of"
+	cont "#mon."
 
 	para "You can count on"
 	line "it!"
@@ -1047,21 +982,18 @@ ElmText_MissionFromMrPokemon:
 
 	para "He keeps finding"
 	line "weird things and"
-
-	para "raving about his"
-	line "discoveries."
+	cont "raving about his"
+	cont "discoveries."
 
 	para "Anyway, I just got"
 	line "an e-mail from him"
-
-	para "saying that this"
-	line "time it's real."
+	cont "saying that this"
+	cont "time it's real."
 
 	para "It's probably ano-"
 	line "ther #mon Egg,"
-	
-	para "but we're still"
-	line "so busy with our"
+	cont "but we're still"
+	cont "so busy with our"
 	cont "#mon research…"
 
 	para "Wait!"
@@ -1075,9 +1007,8 @@ ElmText_MissionFromMrPokemon:
 ElmText_ChooseAPokemon:
 	text "I want you to"
 	line "raise one of the"
-
-	para "#mon contained"
-	line "in these Balls."
+	cont "#mon contained"
+	cont "in these Balls."
 
 	para "You'll be that"
 	line "#mon's first"
@@ -1139,29 +1070,25 @@ ReceivedStarterText:
 ElmDirectionsText1:
 	text "Mr.#mon lives a"
 	line "little bit beyond"
-
-	para "Cherrygrove, the"
-	line "next city over."
+	cont "Cherrygrove, the"
+	cont "next city over."
 
 	para "It's almost a"
 	line "direct route"
-
-	para "there, so you"
-	line "can't miss it."
+	cont "there, so you"
+	cont "can't miss it."
 
 	para "But just in case,"
 	line "here's my phone"
-
-	para "number. Call me if"
-	line "anything comes up!"
+	cont "number. Call me if"
+	cont "anything comes up!"
 	done
 
 ElmDirectionsText2:
 	text "If your #mon is"
 	line "hurt, you should"
-
-	para "heal it with this"
-	line "machine."
+	cont "heal it with this"
+	cont "machine."
 
 	para "Feel free to use"
 	line "it anytime."
@@ -1239,9 +1166,8 @@ ElmAfterTheftText4:
 	
 	para "Well, since he"
 	line "gave it to us,"
-	
-	para "we might as well"
-	line "find out what"
+	cont "we might as well"
+	cont "find out what"
 	cont "secret it holds."
 	
 	para "I'll keep it for a"
@@ -1270,9 +1196,8 @@ ElmAfterTheftText5:
 
 	para "Wow, <PLAY_G>. You"
 	line "may have what it"
-
-	para "takes to become"
-	line "the Champion."
+	cont "takes to become"
+	cont "the Champion."
 
 	para "You seem to be"
 	line "getting on great"
@@ -1290,9 +1215,8 @@ ElmAfterTheftText5:
 ElmAfterTheftText6:
 	text "…<PLAY_G>. The"
 	line "road to the"
-
-	para "championship will"
-	line "be a long one."
+	cont "championship will"
+	cont "be a long one."
 
 	para "Before you leave,"
 	line "make sure that you"
@@ -1302,9 +1226,8 @@ ElmAfterTheftText6:
 ElmStudyingEggText:
 	text "Elm: Don't give"
 	line "up! I'll call if"
-
-	para "I learn anything"
-	line "about that Egg!"
+	cont "I learn anything"
+	cont "about that Egg!"
 	done
 
 ElmAideHasEggText:
@@ -1314,9 +1237,8 @@ ElmAideHasEggText:
 
 	para "He should have met"
 	line "you with the Egg"
-
-	para "at Violet City's"
-	line "#mon Center."
+	cont "at Violet City's"
+	cont "#mon Center."
 
 	para "You must have just"
 	line "missed him. Try to"
@@ -1365,9 +1287,8 @@ ShowElmTogepiText3:
 ElmGiveLuckyEggText1:
 	text "Thanks, <PLAY_G>!"
 	line "You're helping"
-
-	para "unravel #mon"
-	line "mysteries for us!"
+	cont "unravel #mon"
+	cont "mysteries for us!"
 
 	para "I want you to have"
 	line "this as a token of"
@@ -1380,12 +1301,10 @@ ElmGiveLuckyEggText2:
 
 	para "It's a rare item"
 	line "that wild Chansey"
-
-	para "can hold that"
-	line "boosts the Exp"
-
-	para "of the #mon"
-	line "holding it!"
+	cont "can hold that"
+	cont "boosts the Exp"
+	cont "of the #mon"
+	cont "holding it!"
 
 	para "Give it to a #-"
 	line "mon you want to"
@@ -1407,17 +1326,15 @@ AideText_AfterTheft:
 
 	para "They say a #mon"
 	line "raised by a bad"
-
-	para "person turns bad"
-	line "itself."
+	cont "person turns bad"
+	cont "itself."
 	done
 
 ElmGiveMasterBallText1:
 	text "Elm: Hi, <PLAY_G>!"
 	line "Thanks to you, my"
-
-	para "research is going"
-	line "great!"
+	cont "research is going"
+	cont "great!"
 
 	para "Take this as a"
 	line "token of my"
@@ -1430,9 +1347,8 @@ ElmGiveMasterBallText2:
 
 	para "It's the ultimate"
 	line "Ball! It'll catch"
-
-	para "any #mon with-"
-	line "out fail."
+	cont "any #mon with-"
+	cont "out fail."
 
 	para "It's given only to"
 	line "recognized #mon"
@@ -1440,9 +1356,8 @@ ElmGiveMasterBallText2:
 
 	para "I think you can"
 	line "make much better"
-
-	para "use of it than I"
-	line "can, <PLAY_G>!"
+	cont "use of it than I"
+	cont "can, <PLAY_G>!"
 	done
 
 ElmGiveTicketText1:
@@ -1455,12 +1370,10 @@ ElmGiveTicketText1:
 	
 	para "You did it!"
 	line "It seems like"
-	
-	para "you just started"
-	line "your journey and"
-	
-	para "now you're the"
-	line "Champ! I'm so"
+	cont "you just started"
+	cont "your journey and"
+	cont "now you're the"
+	cont "Champ! I'm so"
 	cont "proud of you!"
 	
 	para "Oh, I called be-"
@@ -1481,15 +1394,12 @@ ElmGiveTicketText1:
 	
 	para "If you earn their"
 	line "eight badges, the"
-	
-	para "Elite Four will"
-	line "battle you with"
-	
-	para "all of their"
-	line "strength and"
-	
-	para "you will then"
-	line "become the Grand"
+	cont "Elite Four will"
+	cont "battle you with"
+	cont "all of their"
+	cont "strength and"
+	cont "you will then"
+	cont "become the Grand"
 	cont "Champion!"
 	done
 
@@ -1532,9 +1442,8 @@ LyraAnnouncesGymChallengeText:
 
 	para "I'm going to"
 	line "challenge all the"
-
-	para "Gyms in Johto and"
-	line "make it to the"
+	cont "Gyms in Johto and"
+	cont "make it to the"
 	cont "#mon League!"
 
 	para "Wish me luck!"
@@ -1544,9 +1453,8 @@ LyraAnnouncesGymChallengeText:
 ElmAfterTicketText:
 	text "Elm: Well then,"
 	line "<PLAYER>, you both"
-
-	para "have your own"
-	line "journeys now."
+	cont "have your own"
+	cont "journeys now."
 
 	para "I wonder if she'll"
 	line "reach the League"
@@ -1588,9 +1496,8 @@ AideText_TheftTestimony:
 
 	para "They say a #mon"
 	line "raised by a bad"
-
-	para "person turns bad"
-	line "itself."
+	cont "person turns bad"
+	cont "itself."
 	done
 
 AideText_GiveYouBalls:
@@ -1616,9 +1523,8 @@ ElmsLabOfficerText1:
 
 	para "Rule number one!"
 	line "“The criminal will"
-
-	para "always return to"
-	line "the scene of the"
+	cont "always return to"
+	cont "the scene of the"
 	cont "crime…”"
 
 	para "Oh my… So you're"
@@ -1808,9 +1714,8 @@ ElmsLabTravelTip4Text:
 
 	para "Check your #mon"
 	line "moves. Press the"
-
-	para "A Button to switch"
-	line "moves."
+	cont "A Button to switch"
+	cont "moves."
 	done
 
 ElmsLabTrashcanText:

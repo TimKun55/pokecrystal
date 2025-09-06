@@ -24,16 +24,10 @@ EarlsPokemonAcademyTyler:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademyCarla: ; Def
 	faceplayer
@@ -47,16 +41,10 @@ EarlsPokemonAcademyCarla: ; Def
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademyCatt: ; SpAtk
 	faceplayer
@@ -70,16 +58,10 @@ EarlsPokemonAcademyCatt: ; SpAtk
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademySteve: ; SpDef
 	faceplayer
@@ -93,16 +75,10 @@ EarlsPokemonAcademySteve: ; SpDef
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademyJamie: ; Speed
 	faceplayer
@@ -116,16 +92,10 @@ EarlsPokemonAcademyJamie: ; Speed
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademyPam: ; HP
 	faceplayer
@@ -139,16 +109,10 @@ EarlsPokemonAcademyPam: ; HP
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext CooltrainerAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerAfterBattleText
 
 .NoBattle
-	writetext CooltrainerTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerTrainAnytimeText
 
 EarlsPokemonAcademyTeacher:
 	faceplayer
@@ -161,16 +125,10 @@ EarlsPokemonAcademyTeacher:
 	iffalse .NoRoom
 	setevent EVENT_EARLS_ACADEMY_B1F_MACHO_BRACE
 .MachoBraceExplain:
-	writetext EarlsPokemonAcademyTeacherExplainText
-	waitbutton
-	closetext
-	end
+	writetextend EarlsPokemonAcademyTeacherExplainText
 
 .NoRoom:
-	writetext EarlsPokemonAcademyTeacherNoRoomText
-	waitbutton
-	closetext
-	end
+	writetextend EarlsPokemonAcademyTeacherNoRoomText
 
 AttackEVSign:
 	jumptext AttackEVSignText
@@ -253,9 +211,8 @@ EarlsPokemonAcademyTeacherIntroText:
 	
 	para "Train here, and"
 	line "watch your #mon"
-
-	para "become the strong-"
-	line "est they can be!"
+	cont "become the strong-"
+	cont "est they can be!"
 	
 	para "Here, this is for"
 	line "new students."

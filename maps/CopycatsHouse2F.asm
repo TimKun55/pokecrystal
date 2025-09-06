@@ -70,10 +70,7 @@ Copycat:
 	variablesprite SPRITE_COPYCAT, SPRITE_LASS
 	special LoadUsedSpritesGFX
 	opentext
-	writetext CopycatText_QuickMimicking
-	waitbutton
-	closetext
-	end
+	writetextend CopycatText_QuickMimicking
 
 .TalkAboutLostItem:
 	opentext
@@ -98,12 +95,9 @@ Copycat:
 	faceplayer
 	variablesprite SPRITE_COPYCAT, SPRITE_LASS
 	special LoadUsedSpritesGFX
-	opentext
-	writetext CopycatText_Worried
-	waitbutton
-	closetext
 	setevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
-	end
+	opentext
+	writetextend CopycatText_Worried
 
 .ReturnLostItem:
 	opentext
@@ -120,10 +114,7 @@ Copycat:
 	writetext CopycatText_GivePass
 	promptbutton
 	setevent EVENT_GOT_PASS_FROM_COPYCAT
-	writetext CopycatText_ExplainPass
-	waitbutton
-	closetext
-	end
+	writetextend CopycatText_ExplainPass
 
 .GotPass:
 	checkflag ENGINE_PLAYER_IS_FEMALE
@@ -162,20 +153,14 @@ Copycat:
 	variablesprite SPRITE_COPYCAT, SPRITE_LASS
 	special LoadUsedSpritesGFX
 	opentext
-	writetext CopycatText_ItsAScream
-	waitbutton
-	closetext
-	end
+	writetextend CopycatText_ItsAScream
 
 CopycatsDodrio:
 	opentext
 	writetext CopycatsDodrioText1
 	cry DODRIO
 	promptbutton
-	writetext CopycatsDodrioText2
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsDodrioText2
 
 CopycatsHouse2FDoll:
 	jumptext CopycatsHouse2FDollText
@@ -252,9 +237,8 @@ CopycatText_GiveDoll:
 
 	para "See the tear where"
 	line "the right leg is"
-
-	para "sewn on? That's"
-	line "proof!"
+	cont "sewn on? That's"
+	cont "proof!"
 	done
 
 CopycatText_GivePass:
@@ -274,9 +258,8 @@ CopycatText_ExplainPass:
 
 	para "The rail company"
 	line "man gave me that"
-
-	para "when they tore"
-	line "down our old house"
+	cont "when they tore"
+	cont "down our old house"
 	cont "for the Station."
 	done
 
@@ -315,9 +298,8 @@ CopycatText_Female_2:
 
 	para "<PLAYER>: You'll"
 	line "really give me a"
-
-	para "rail Pass if I"
-	line "find it for you?"
+	cont "rail Pass if I"
+	cont "find it for you?"
 
 	para "<PLAYER>: Sure,"
 	line "I'll look for it!"
@@ -335,9 +317,8 @@ CopycatText_Female_3:
 
 	para "<PLAYER>: Is it"
 	line "really that fun to"
-
-	para "copy what I say"
-	line "and do?"
+	cont "copy what I say"
+	cont "and do?"
 	done
 
 CopycatsDodrioText1:
@@ -347,9 +328,8 @@ CopycatsDodrioText1:
 CopycatsDodrioText2:
 	text "MIRROR, MIRROR ON"
 	line "THE WALL, WHO'S"
-
-	para "THE FAIREST ONE OF"
-	line "ALL?"
+	cont "THE FAIREST ONE OF"
+	cont "ALL?"
 	done
 
 CopycatsHouse2FDollText:

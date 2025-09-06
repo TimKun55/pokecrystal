@@ -25,80 +25,50 @@ SwarmGrampsScript:
 .dunsparce
 	setflag ENGINE_SWARM
 	swarm DARK_CAVE_VIOLET_ENTRANCE
-	writetext SwarmDunsparceText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmDunsparceText
 
 .yanma
 	setflag ENGINE_SWARM
 	swarm ROUTE_35
-	writetext SwarmYanmaText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmYanmaText
 
 .qwilfish
 	setflag ENGINE_SWARM
 	swarm ROUTE_32
-	writetext SwarmQwilfishText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmQwilfishText
 	
 .heracross
 	setflag ENGINE_SWARM
 	swarm ILEX_FOREST
-	writetext SwarmHeracrossText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmHeracrossText
 	
 .mareep
 	setflag ENGINE_SWARM
 	swarm ROUTE_36
-	writetext SwarmMareepText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmMareepText
 
 .sentret
 	setflag ENGINE_SWARM
 	swarm ROUTE_29
-	writetext SwarmSentretText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmSentretText
 
 .miltank
 	setflag ENGINE_SWARM
 	swarm ROUTE_38
-	writetext SwarmMiltankText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmMiltankText
 
 .mantine
 	setflag ENGINE_SWARM
 	swarm ROUTE_41
-	writetext SwarmMantineText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmMantineText
 
 .girafarig
 	setflag ENGINE_SWARM
 	swarm ROUTE_43
-	writetext SwarmGirafarigText
-	waitbutton
-	closetext
-	end
+	writetextend SwarmGirafarigText
 
 .skiprandomswarm
-	writetext SkipSwarmText
-	waitbutton
-	closetext
-	end
+	writetextend SkipSwarmText
 
 SwarmDunsparceText:
 	text "Let me see…"

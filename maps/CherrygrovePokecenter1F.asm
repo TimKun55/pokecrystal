@@ -28,16 +28,10 @@ CherrygrovePokecenter1FTeacherScript:
 	opentext
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .CommCenterOpen
-	writetext CherrygrovePokecenter1FTeacherText
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FTeacherText
 
 .CommCenterOpen:
-	writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FTeacherText_CommCenterOpen
 	
 CherrygrovePokecenter1FTutorScript:
 	faceplayer
@@ -84,16 +78,10 @@ CherrygrovePokecenter1FTutorScript:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext CherrygrovePokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FTutorRefusalText
 	
 .NotEnough:
-	writetext CherrygrovePokecenter1FTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FTutorNotEnough
 
 .TeachMove:
 	writetext CherrygrovePokecenter1FTutorPayment
@@ -101,10 +89,7 @@ CherrygrovePokecenter1FTutorScript:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext CherrygrovePokecenter1FTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend CherrygrovePokecenter1FTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -123,9 +108,8 @@ CherrygrovePokecenter1FTutorScript:
 CherrygrovePokecenter1FFisherText:
 	text "It's great. I can"
 	line "store any number"
-
-	para "of #mon, and"
-	line "it's all free."
+	cont "of #mon, and"
+	cont "it's all free."
 	done
 
 CherrygrovePokecenter1FGentlemanText:
@@ -159,9 +143,8 @@ CherrygrovePokecenter1FTutorIntro:
 	para "For ¥20,000,"
 	line "I can teach your"
 	cont "#mon an"
-
-	para "amazing move if"
-	line "you'd like."
+	cont "amazing move if"
+	cont "you'd like."
 	done
 	
 CherrygrovePokecenter1FAskYesNo:
@@ -172,10 +155,9 @@ CherrygrovePokecenter1FAskYesNo:
 CherrygrovePokecenter1FTutorRefusalText:
 	text "Come back here"
 	line "if you want to"
-	
-	para "teach your"
-	line "#mon a new"
-	cont "move!"
+	cont "teach your"
+	cont "#mon a new"
+	cont "move."
 	done
 
 CherrygrovePokecenter1FTutorWontRegretText:

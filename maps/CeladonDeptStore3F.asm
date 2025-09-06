@@ -50,9 +50,8 @@ CeladonDeptStore3FDirectory:
 CeladonDeptStore3FYoungsterText:
 	text "I can't decide"
 	line "which #mon I"
-
-	para "should use this TM"
-	line "on…"
+	cont "should use this TM"
+	cont "on…"
 	
 	para "Lucky for me,"
 	line "it's reusable!"
@@ -61,9 +60,8 @@ CeladonDeptStore3FYoungsterText:
 CeladonDeptStore3FGameboyKid1Text:
 	text "Uh-oh! I traded my"
 	line "#mon without"
-
-	para "removing the Up-"
-	line "Grade from it."
+	cont "removing the Up-"
+	cont "Grade from it."
 	done
 
 CeladonDeptStore3FGameboyKid2Text:
@@ -72,9 +70,8 @@ CeladonDeptStore3FGameboyKid2Text:
 
 	para "I'm no good at the"
 	line "slots, so I could"
-
-	para "never get enough"
-	line "coins…"
+	cont "never get enough"
+	cont "coins…"
 
 	para "…Huh?"
 

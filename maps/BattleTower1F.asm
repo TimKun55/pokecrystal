@@ -70,10 +70,7 @@ BattleTower1FReceptionistScript:
 .ReceptionistMaxPoints
 	writetext Text_Oh
 	promptbutton
-	writetext Text_PlayerHasMaxPoints
-	waitbutton
-	closetext
-	end
+	writetextend Text_PlayerHasMaxPoints
 
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
@@ -196,10 +193,7 @@ Script_BattleTowerSkipExplanation:
 	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_BattleTowerHopeToServeYouAgain:
-	writetext Text_WeHopeToServeYouAgain
-	waitbutton
-	closetext
-	end
+	writetextend Text_WeHopeToServeYouAgain
 
 Script_WaitButton:
 	waitbutton

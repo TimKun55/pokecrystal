@@ -18,9 +18,7 @@ EcruteakGym_MapScripts:
 
 EcruteakGymForcedToLeaveScene:
 	sdefer EcruteakGymClosed
-	end
-
-EcruteakGymNoopScene:
+EcruteakGymNoopScene:	
 	end
 
 EcruteakGymLanternsCallback:
@@ -129,10 +127,7 @@ EcruteakGymMortyScript:
 	verbosegiveitem TM_SHADOW_BALL
 	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
-	writetext MortyText_ShadowBallSpeech
-	waitbutton
-	closetext
-	end
+	writetextend MortyText_ShadowBallSpeech
 
 .GotShadowBall:
 	writetext MortyFightDoneText
@@ -154,10 +149,7 @@ EcruteakGymMortyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MORTY_REMATCH
 	opentext
-	writetext Morty16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Morty16AfterBattleText
 
 .MortyScript_Rematch
 	checkflag ENGINE_DAILY_MORTY_REMATCH
@@ -172,22 +164,13 @@ EcruteakGymMortyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MORTY_REMATCH
 	opentext
-	writetext MortyRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend MortyRematchAfterBattleText
 
 .skip_rematch
-	writetext MortyComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend MortyComeBackTomorrowText
 
 .EndRematch
-	writetext MortyNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend MortyNextTimeText
 
 EcruteakGymGengar:
 	opentext
@@ -229,12 +212,7 @@ EcruteakGymClosed:
 	end
 
 TrainerSageJeffrey:
-	faceplayer
-	opentext
-	writetext SageJeffreyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SageJeffreyAfterBattleText
 
 SageJeffreyCheck:
 	checkevent EVENT_BEAT_SAGE_JEFFREY
@@ -281,12 +259,7 @@ SageJeffreyCheck:
 	end
 
 TrainerSagePing:
-	faceplayer
-	opentext
-	writetext SagePingAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SagePingAfterBattleText
 
 SagePingCheck:
 	checkevent EVENT_BEAT_SAGE_PING
@@ -324,12 +297,7 @@ SagePingCheck:
 	end
 
 TrainerHexManiacMartha:
-	faceplayer
-	opentext
-	writetext HexManiacMarthaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer HexManiacMarthaAfterBattleText
 
 HexManiacMarthaCheck:
 	checkevent EVENT_BEAT_HEX_MANIAC_MARTHA
@@ -380,12 +348,7 @@ HexManiacMarthaCheck:
 	end
 
 TrainerHexManiacGrace:
-	faceplayer
-	opentext
-	writetext HexManiacGraceAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer HexManiacGraceAfterBattleText
 
 HexManiacGraceCheck:
 	checkevent EVENT_BEAT_HEX_MANIAC_GRACE
@@ -433,16 +396,10 @@ EcruteakGymGuideScript:
 	opentext
 	checkevent EVENT_BEAT_MORTY
 	iftrue .EcruteakGymGuideWinScript
-	writetext EcruteakGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakGymGuideText
 
 .EcruteakGymGuideWinScript:
-	writetext EcruteakGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakGymGuideWinText
 
 EcruteakGymStatue:
 	checkflag ENGINE_FOGBADGE
@@ -492,18 +449,15 @@ MortyIntroText:
 
 	para "It's said that a"
 	line "rainbow-colored"
-
-	para "#mon will come"
-	line "down to appear"
-
-	para "before a truly"
-	line "powerful trainer."
+	cont "#mon will come"
+	cont "down to appear"
+	cont "before a truly"
+	cont "powerful trainer."
 
 	para "I believed that"
 	line "tale, so I have"
-
-	para "secretly trained"
-	line "here all my life."
+	cont "secretly trained"
+	cont "here all my life."
 
 	para "As a result, I can"
 	line "now see what"
@@ -513,9 +467,8 @@ MortyIntroText:
 
 	para "With a little"
 	line "more, I could see"
-
-	para "a future in which"
-	line "I meet the #mon"
+	cont "a future in which"
+	cont "I meet the #mon"
 	cont "of rainbow colors."
 
 	para "You're going to"
@@ -539,15 +492,13 @@ Text_ReceivedFogBadge:
 MortyText_FogBadgeSpeech:
 	text "By having the Fog-"
 	line "Badge, #mon up"
-
-	para "to L50 will obey"
-	line "you."
+	cont "to L50 will obey"
+	cont "you."
 
 	para "Also, #mon that"
 	line "know Surf will be"
-
-	para "able to use that"
-	line "move anytime."
+	cont "able to use that"
+	cont "move anytime."
 
 	para "I want you to have"
 	line "this too."
@@ -556,9 +507,8 @@ MortyText_FogBadgeSpeech:
 MortyText_ShadowBallSpeech:
 	text "It's Shadow Ball."
 	line "It causes damage"
-
-	para "and may reduce"
-	line "Sp.Def."
+	cont "and may reduce"
+	cont "Sp.Def."
 
 	para "Use it if it"
 	line "appeals to you."
@@ -594,9 +544,8 @@ MortyWinLossRematchText:
 MortyRematchAfterBattleText:
 	text "That was a great"
 	line "battle, but just"
-	
-	para "wait, I'm going to"
-	line "get even stronger."
+	cont "wait, I'm going to"
+	cont "get even stronger."
 	
 	para "Come back for"
 	line "a rematch when"
@@ -650,9 +599,8 @@ SageJeffreySeenText:
 
 	para "Then spring came"
 	line "again. We have"
-
-	para "lived together"
-	line "for a long time."
+	cont "lived together"
+	cont "for a long time."
 	done
 
 SageJeffreyBeatenText:
@@ -723,9 +671,8 @@ EcruteakGymGuideText:
 
 	para "If you win, they"
 	line "may tell you some"
-
-	para "deep secrets about"
-	line "Ecruteak."
+	cont "deep secrets about"
+	cont "Ecruteak."
 	done
 
 EcruteakGymGuideWinText:

@@ -37,18 +37,10 @@ GameFreakGameDesignerScript:
 	end
 
 .GotDiploma
-	writetext GameFreakGameDesignerGotDiplomaText
-	waitbutton
-	closetext
-	end
+	writetextend GameFreakGameDesignerGotDiplomaText
 
 GameFreakGraphicArtistScript:
-	faceplayer
-	opentext
-	writetext GameFreakGraphicArtistText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GameFreakGraphicArtistText
 
 GameFreakProgrammerScript:
 	jumptextfaceplayer GameFreakProgrammerText
@@ -142,9 +134,8 @@ CeladonMansion3FDrawingText:
 CeladonMansion3FGameProgramText:
 	text "It's the game"
 	line "program. Messing"
-
-	para "with it could put"
-	line "a bug in the game!"
+	cont "with it could put"
+	cont "a bug in the game!"
 	done
 
 CeladonMansion3FReferenceMaterialText:

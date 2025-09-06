@@ -37,9 +37,8 @@ CeladonPokecenter1FCooltrainerFText:
 CeladonPokecenter1FPharmacistText:
 	text "Team Rocket's"
 	line "hideout is in the"
-
-	para "basement of the"
-	line "Game Corner."
+	cont "basement of the"
+	cont "Game Corner."
 
 	para "Oh, wait. That was"
 	line "three years ago."

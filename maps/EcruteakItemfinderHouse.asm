@@ -21,16 +21,10 @@ EcruteakItemfinderGuy:
 	verbosegiveitem ITEMFINDER
 	setevent EVENT_GOT_ITEMFINDER
 .itemfinder:
-	writetext ItemfinderExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend ItemfinderExplanationText
 
 .no:
-	writetext EcruteakItemfinderToEachHisOwnText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakItemfinderToEachHisOwnText
 
 EcruteakHistoryBook:
 	opentext
@@ -48,10 +42,7 @@ EcruteakHistoryBook:
 	end
 
 .KeepReading:
-	writetext EcruteakThreeMonText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakThreeMonText
 
 Serena:
 	faceplayer
@@ -80,9 +71,8 @@ EcruteakItemfinderAdventureText:
 EcruteakItemfinderTrueSpiritText:
 	text "Good! You under-"
 	line "stand the true"
-
-	para "spirit of adven-"
-	line "ture."
+	cont "spirit of adven-"
+	cont "ture."
 
 	para "I like that! Take"
 	line "this with you."
@@ -91,27 +81,23 @@ EcruteakItemfinderTrueSpiritText:
 ItemfinderExplanationText:
 	text "There are many"
 	line "items lying about"
-
-	para "that aren't ob-"
-	line "vious."
+	cont "that aren't ob-"
+	cont "vious."
 
 	para "Use Itemfinder to"
 	line "check if there is"
-
-	para "an item on the"
-	line "ground near you."
+	cont "an item on the"
+	cont "ground near you."
 
 	para "It doesn't show"
 	line "the exact spot,"
-
-	para "so you'll have to"
-	line "look yourself."
+	cont "so you'll have to"
+	cont "look yourself."
 
 	para "Oh yeah--I heard"
 	line "there are items"
-
-	para "in Ecruteak's"
-	line "Burned Tower."
+	cont "in Ecruteak's"
+	cont "Burned Tower."
 	done
 
 EcruteakItemfinderToEachHisOwnText:
@@ -148,15 +134,13 @@ EcruteakTwoTowersText:
 EcruteakThreeMonText:
 	text "Ecruteak was also"
 	line "home to three"
-
-	para "#mon that raced"
-	line "around the town."
+	cont "#mon that raced"
+	cont "around the town."
 
 	para "They were said to"
 	line "have been born of"
-
-	para "water, lightning"
-	line "and fire."
+	cont "water, lightning"
+	cont "and fire."
 
 	para "But they could not"
 	line "contain their"
@@ -164,9 +148,8 @@ EcruteakThreeMonText:
 
 	para "So they say the"
 	line "three ran like the"
-
-	para "wind off into the"
-	line "grassland."
+	cont "wind off into the"
+	cont "grassland."
 	done
 
 EcruteakItemfinderHouse_MapEvents:

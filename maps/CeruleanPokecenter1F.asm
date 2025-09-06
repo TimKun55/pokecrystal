@@ -24,24 +24,22 @@ CeruleanPokecenter1FGymGuideScript:
 CeruleanPokecenter1FSuperNerdText:
 	text "For battles, I'd"
 	line "much rather use"
-
-	para "#mon I've been"
-	line "raising, even if"
-
-	para "they're weaker"
-	line "than some newly"
+	cont "#mon I've been"
+	cont "raising, even if"
+	cont "they're weaker"
+	cont "than some newly"
 	cont "caught #mon."
 	done
 
 CeruleanPokecenter1FGymGuideText:
 	text "The Magnet Train"
 	line "travels at over"
-
-	para "550km/h. It goes"
-	line "between Kanto and"
-
-	para "Johto in almost no"
-	line "time at all."
+	cont "550km/h."
+	
+	para "It goes between"
+	line "Kanto and Johto"
+	cont "in almost no time"
+	cont "at all."
 
 	para "It really makes"
 	line "Johto accessible."

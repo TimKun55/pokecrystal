@@ -19,8 +19,7 @@ BurnedTowerB1F_MapScripts:
 	callback MAPCALLBACK_TILES, BurnedTowerB1FLadderCallback
 
 BurnedTowerB1FNoop1Scene:
-	end
-
+	; fallthrough
 BurnedTowerB1FNoop2Scene:
 	end
 
@@ -208,15 +207,13 @@ BurnedTowerB1FEusineText:
 
 	para "Suicune raced by"
 	line "like a blur, right"
-
-	para "in front of my"
-	line "eyes!"
+	cont "in front of my"
+	cont "eyes!"
 
 	para "For ten years I"
 	line "chased Suicune,"
-
-	para "and I finally got"
-	line "to see it."
+	cont "and I finally got"
+	cont "to see it."
 
 	para "I'm all choked up!"
 
@@ -227,12 +224,10 @@ BurnedTowerB1FEusineText:
 
 	para "I heard that the"
 	line "legendary #mon"
-
-	para "of Ecruteak test"
-	line "chosen humans by"
-
-	para "allowing them to"
-	line "get close."
+	cont "of Ecruteak test"
+	cont "chosen humans by"
+	cont "allowing them to"
+	cont "get close."
 
 	para "I'm going to track"
 	line "Suicune."

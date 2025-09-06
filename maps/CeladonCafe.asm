@@ -11,12 +11,7 @@ CeladonCafe_MapScripts:
 	def_callbacks
 
 CeladonCafeChef:
-	faceplayer
-	opentext
-	writetext ChefText_Eatathon
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer ChefText_Eatathon
 
 CeladonCafeFisher1:
 	opentext
@@ -108,10 +103,7 @@ CeladonCafeTrashcan:
 	getitemname STRING_BUFFER_3, LEFTOVERS
 	writetext FoundLeftoversText
 	promptbutton
-	writetext NoRoomForLeftoversText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForLeftoversText
 
 .TrashEmpty:
 	jumpstd TrashCanScript
@@ -167,9 +159,8 @@ TeacherText_CrunchCrunch:
 TeacherText_NoCoinCase:
 	text "Nobody here will"
 	line "give you a Coin"
-
-	para "Case. You should"
-	line "look in Johto."
+	cont "Case. You should"
+	cont "look in Johto."
 	done
 
 TeacherText_KeepEating:
@@ -188,9 +179,8 @@ EatathonContestPosterText:
 
 	para "A battle without"
 	line "end! The biggest"
-
-	para "muncher gets it"
-	line "all for free!"
+	cont "muncher gets it"
+	cont "all for free!"
 	done
 
 FoundLeftoversText:

@@ -11,10 +11,7 @@ DaisyScript:
 	opentext
 	readvar VAR_HOUR
 	ifequal 15, .ThreePM
-	writetext DaisyHelloText
-	waitbutton
-	closetext
-	end
+	writetextend DaisyHelloText
 
 .ThreePM:
 	checkflag ENGINE_DAISYS_GROOMING
@@ -41,41 +38,27 @@ DaisyScript:
 	writetext GroomedMonLooksContentText
 	special PlayCurMonCry
 	promptbutton
-	writetext DaisyAllDoneText
-	waitbutton
-	closetext
-	end
+	writetextend DaisyAllDoneText
 
 .AlreadyGroomedMon:
-	writetext DaisyAlreadyGroomedText
-	waitbutton
-	closetext
-	end
+	writetextend DaisyAlreadyGroomedText
 
 .Refused:
-	writetext DaisyRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend DaisyRefusedText
 
 .CantGroomEgg:
-	writetext DaisyCantGroomEggText
-	waitbutton
-	closetext
-	end
+	writetextend DaisyCantGroomEggText
 
 DaisyHelloText:
 	text "Daisy: Hi! My kid"
 	line "brother is the Gym"
-
-	para "Leader in Viridian"
-	line "City."
+	cont "Leader in Viridian"
+	cont "City."
 
 	para "But he goes out"
 	line "of town so often,"
-
-	para "it causes problems"
-	line "for the trainers."
+	cont "it causes problems"
+	cont "for the trainers."
 	done
 
 DaisyOfferGroomingText:
@@ -124,17 +107,15 @@ DaisyAllDoneText:
 DaisyAlreadyGroomedText:
 	text "Daisy: I always"
 	line "have tea around"
-
-	para "this time. Come"
-	line "join me."
+	cont "this time. Come"
+	cont "join me."
 	done
 
 DaisyRefusedText:
 	text "Daisy: You don't"
 	line "want to have one"
-
-	para "groomed? OK, we'll"
-	line "just have tea."
+	cont "groomed? OK, we'll"
+	cont "just have tea."
 	done
 
 DaisyCantGroomEggText:

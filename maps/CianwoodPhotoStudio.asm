@@ -37,34 +37,19 @@ CianwoodPhotoStudioFishingGuruScript:
 	writetext PhotoStudioPrestoText
 	special PlayCurMonCry
 	waitbutton
-	writetext PhotoStudioComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend PhotoStudioComeAgainText
 
 .Refused:
-	writetext CianwoodPhotoStudioFishingGuruText_No
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodPhotoStudioFishingGuruText_No
 
 .AlreadyDone
-	writetext PhotoStudioAlreadyDoneText
-	waitbutton
-	closetext
-	end
+	writetextend PhotoStudioAlreadyDoneText
 
 .NoPicture:
-	writetext PhotoStudioNoPictureText
-	waitbutton
-	closetext
-	end
+	writetextend PhotoStudioNoPictureText
 
 .EggPicture:
-	writetext PhotoStudioEggPictureText
-    waitbutton
-	closetext
-	end
+	writetextend PhotoStudioEggPictureText
 
 CianwoodPhotoStudioFishingGuruText_Question:
 	text "You have magnifi-"

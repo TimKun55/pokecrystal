@@ -15,22 +15,13 @@ CharcoalKilnBoss:
 	iftrue .GotCut
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
 	iftrue .SavedSlowpoke
-	writetext CharcoalKilnBossText1
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnBossText1
 
 .SavedSlowpoke:
-	writetext CharcoalKilnBossText2
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnBossText2
 
 .GotCut:
-	writetext CharcoalKilnBossText3
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnBossText3
 
 CharcoalKilnApprentice:
 	faceplayer
@@ -39,10 +30,7 @@ CharcoalKilnApprentice:
 	iftrue .YoureTheCoolest
 	checkevent EVENT_GOT_HM01_CUT
 	iftrue .Thanks
-	writetext CharcoalKilnApprenticeText1
-	waitbutton
-	closetext
-	end
+	writetextend CharcoalKilnApprenticeText1
 
 .Thanks:
 	writetext CharcoalKilnApprenticeText2
@@ -108,9 +96,8 @@ CharcoalKilnBossText2:
 CharcoalKilnBossText3:
 	text "You chased off"
 	line "Team Rocket and"
-
-	para "went to Ilex"
-	line "Forest alone?"
+	cont "went to Ilex"
+	cont "Forest alone?"
 
 	para "That takes guts!"
 	line "I like that. Come"

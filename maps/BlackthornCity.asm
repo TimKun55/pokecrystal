@@ -38,22 +38,13 @@ BlackthornSuperNerdScript:
 	iftrue .BeatClair
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
-	writetext Text_ClairIsOut
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsOut
 
 .ClearedRadioTower:
-	writetext Text_ClairIsIn
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsIn
 
 .BeatClair:
-	writetext Text_ClairIsBeaten
-	waitbutton
-	closetext
-	end
+	writetextend Text_ClairIsBeaten
 
 BlackthornGramps1Script:
 	jumptextfaceplayer BlackthornGrampsRefusesEntryText
@@ -66,16 +57,10 @@ BlackthornBlackBeltScript:
 	opentext
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
-	writetext BlackBeltText_WeirdRadio
-	waitbutton
-	closetext
-	end
+	writetextend BlackBeltText_WeirdRadio
 
 .ClearedRadioTower:
-	writetext BlackBeltText_VoicesInMyHead
-	waitbutton
-	closetext
-	end
+	writetextend BlackBeltText_VoicesInMyHead
 
 BlackthornCooltrainerF1Script:
 	jumptextfaceplayer BlackthornCooltrainerF1Text
@@ -104,10 +89,7 @@ SantosScript:
 	verbosegiveitem SPELL_TAG
 	iffalse .Done
 	setevent EVENT_GOT_SPELL_TAG_FROM_SANTOS
-	writetext SantosGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SantosGaveGiftText
 
 .Saturday:
 	writetext SantosSaturdayText
@@ -117,10 +99,7 @@ SantosScript:
 	end
 
 .NotSaturday:
-	writetext SantosNotSaturdayText
-	waitbutton
-	closetext
-	end
+	writetextend SantosNotSaturdayText
 
 BlackthornCitySign:
 	jumptext BlackthornCitySignText
@@ -154,9 +133,8 @@ Text_ClairIsOut:
 
 	para "Clair, our Gym"
 	line "Leader, entered"
-
-	para "the Dragon's Den"
-	line "behind the Gym."
+	cont "the Dragon's Den"
+	cont "behind the Gym."
 
 	para "I have no idea"
 	line "when our Leader"
@@ -170,9 +148,8 @@ Text_ClairIsIn:
 
 	para "However, it would"
 	line "be impossible for"
-
-	para "a run-of-the-mill"
-	line "trainer to win."
+	cont "a run-of-the-mill"
+	cont "trainer to win."
 	done
 
 Text_ClairIsBeaten:
@@ -183,17 +160,16 @@ Text_ClairIsBeaten:
 
 	para "I've never heard"
 	line "of her losing to"
-
-	para "anyone other than"
-	line "Lance."
+	cont "anyone other than"
+	cont "Lance."
 	done
 
 BlackthornGrampsRefusesEntryText:
 	text "No. Only chosen"
 	line "trainers may train"
-
-	para "here."
-	line "Please leave."
+	cont "here."
+	
+	para "Please leave."
 	done
 
 BlackthornGrampsGrantsEntryText:

@@ -18,8 +18,7 @@ DragonsDenB1F_MapScripts:
 	callback MAPCALLBACK_NEWMAP, DragonsDenB1FCheckRivalCallback
 
 DragonsDenB1FNoop1Scene:
-	end
-
+	; fallthrough
 DragonsDenB1FNoop2Scene:
 	end
 
@@ -84,44 +83,28 @@ TrainerCooltrainermDarin:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermDarinAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermDarinAfterBattleText
 
 TrainerCooltrainerfCara:
 	trainer COOLTRAINERF, CARA, EVENT_BEAT_COOLTRAINERF_CARA, CooltrainerfCaraSeenText, CooltrainerfCaraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfCaraAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfCaraAfterBattleText
 
 TrainerTwinsLeaandpia1:
 	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpia1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsLeaandpia1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsLeaandpia1AfterBattleText
 
 TrainerTwinsLeaandpia2:
 	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpia2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsLeaandpia2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsLeaandpia2AfterBattleText
 
 DragonsDenB1FDragonFang:
 	itemball DRAGON_FANG
@@ -209,9 +192,8 @@ ClairText_NoRoom:
 
 	para "I'm going back to"
 	line "the Gym, so make"
-
-	para "room, then come"
-	line "see me there."
+	cont "room, then come"
+	cont "see me there."
 	done
 
 ClairText_WhatsTheMatterDragonDen:
@@ -239,9 +221,8 @@ ClairText_WhatsTheMatterDragonDen:
 
 	para "If you do, I'll"
 	line "feel even worse"
-
-	para "about having lost"
-	line "to you!"
+	cont "about having lost"
+	cont "to you!"
 
 	para "Give it everything"
 	line "you've got."
@@ -252,9 +233,8 @@ DragonShrineSignpostText:
 
 	para "A shrine honoring"
 	line "the dragon #mon"
-
-	para "said to have lived"
-	line "in Dragon's Den."
+	cont "said to have lived"
+	cont "in Dragon's Den."
 	done
 
 RivalText_Training1:
@@ -272,9 +252,8 @@ RivalText_Training1:
 
 	para "I have to be dis-"
 	line "ciplined to become"
-
-	para "the greatest #-"
-	line "mon trainer…"
+	cont "the greatest #-"
+	cont "mon trainer…"
 	done
 
 RivalText_Training2:
@@ -318,18 +297,15 @@ CooltrainerfCaraBeatenText:
 CooltrainerfCaraAfterBattleText:
 	text "Soon I'm going to"
 	line "get permission"
-
-	para "from our Master to"
-	line "use dragons."
+	cont "from our Master to"
+	cont "use dragons."
 
 	para "When I do, I'm"
 	line "going to become an"
-
-	para "admirable dragon"
-	line "trainer and gain"
-
-	para "our Master's"
-	line "approval."
+	cont "admirable dragon"
+	cont "trainer and gain"
+	cont "our Master's"
+	cont "approval."
 	done
 
 TwinsLeaandpia1SeenText:

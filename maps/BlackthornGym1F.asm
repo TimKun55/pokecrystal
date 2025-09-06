@@ -42,10 +42,6 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CLAIR
-	opentext
-	writetext ClairText_GoToDragonsDen
-	waitbutton
-	closetext
 	setevent EVENT_BEAT_COOLTRAINERM_PAUL
 	setevent EVENT_BEAT_COOLTRAINERM_CODY
 	setevent EVENT_BEAT_COOLTRAINERM_MIKE
@@ -54,13 +50,11 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	end
+	opentext
+	writetextend ClairText_GoToDragonsDen
 
 .FightDone:
-	writetext ClairText_TooMuchToExpect
-	waitbutton
-	closetext
-	end
+	writetextend ClairText_TooMuchToExpect
 
 .AlreadyGotBadge:
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
@@ -75,20 +69,14 @@ BlackthornGymClairScript:
 	sjump .GotTM24
 
 .BagFull:
-	writetext BlackthornGymClairText_BagFull
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymClairText_BagFull
 
 .GotTM24:
 	readvar VAR_BADGES
 	ifequal 16, .ClairScript_16Badges
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .ClairScript_Rematch
-	writetext BlackthornGymClairText_League
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymClairText_League
 	
 .ClairScript_16Badges
 	checkflag ENGINE_DAILY_CLAIR_REMATCH
@@ -103,10 +91,7 @@ BlackthornGymClairScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_CLAIR_REMATCH
 	opentext
-	writetext Clair16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Clair16AfterBattleText
 
 .ClairScript_Rematch
 	checkflag ENGINE_DAILY_CLAIR_REMATCH
@@ -121,22 +106,13 @@ BlackthornGymClairScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_CLAIR_REMATCH
 	opentext
-	writetext ClairRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ClairRematchAfterBattleText
 
 .skip_rematch
-	writetext ClairComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend ClairComeBackTomorrowText
 
 .EndRematch
-	writetext ClairNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend ClairNextTimeText
 	
 BlackthornGymKingdra:
 	opentext
@@ -155,49 +131,31 @@ TrainerCooltrainermPaul:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermPaulAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermPaulAfterBattleText
 
 TrainerCooltrainermMike:
 	trainer COOLTRAINERM, MIKE, EVENT_BEAT_COOLTRAINERM_MIKE, CooltrainermMikeSeenText, CooltrainermMikeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermMikeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermMikeAfterBattleText
 
 TrainerCooltrainerfLola:
 	trainer COOLTRAINERF, LOLA, EVENT_BEAT_COOLTRAINERF_LOLA, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfLolaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfLolaAfterBattleText
 
 BlackthornGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .BlackthornGymGuideWinScript
-	writetext BlackthornGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend BlackthornGymGuideText
 
 .BlackthornGymGuideWinScript:
-	writetext BlackthornGymGuideWinText
-	waitbutton
-	closetext
-	end
+	jumptext BlackthornGymGuideWinText
 
 BlackthornGymStatue:
 	checkflag ENGINE_RISINGBADGE
@@ -219,9 +177,8 @@ ClairIntroText:
 
 	para "I can hold my own"
 	line "against even the"
-
-	para "#mon League's"
-	line "Elite Four."
+	cont "#mon League's"
+	cont "Elite Four."
 
 	para "Do you still want"
 	line "to take me on?"
@@ -231,9 +188,8 @@ ClairIntroText:
 
 	para "As a Gym Leader,"
 	line "I will use my full"
-
-	para "power against any"
-	line "opponent!"
+	cont "power against any"
+	cont "opponent!"
 	done
 
 ClairWinText:
@@ -250,9 +206,8 @@ ClairText_GoToDragonsDen:
 
 	para "I may have lost,"
 	line "but you're still"
-
-	para "not ready for the"
-	line "#mon League."
+	cont "not ready for the"
+	cont "#mon League."
 
 	para "I know. You should"
 	line "take the dragon"
@@ -264,18 +219,16 @@ ClairText_GoToDragonsDen:
 
 	para "There is a small"
 	line "shrine at its"
-
-	para "center."
-	line "Go there."
+	cont "center."
+	
+	para "Go there."
 
 	para "If you can prove"
 	line "that you've lost"
-
-	para "your lazy ideals,"
-	line "I will recognize"
-
-	para "you as a trainer"
-	line "worthy of a Gym"
+	cont "your lazy ideals,"
+	cont "I will recognize"
+	cont "you as a trainer"
+	cont "worthy of a Gym"
 	cont "Badge!"
 	done
 
@@ -334,9 +287,8 @@ BlackthornGymClairText_League:
 
 	para "If you do, I'll"
 	line "feel even worse"
-
-	para "about having lost"
-	line "to you!"
+	cont "about having lost"
+	cont "to you!"
 
 	para "Give it every-"
 	line "thing you've got."
@@ -421,9 +373,8 @@ CooltrainermPaulBeatenText:
 CooltrainermPaulAfterBattleText:
 	text "Lance told you"
 	line "that he'd like to"
-
-	para "see you again?"
-	line "Not a chance!"
+	cont "see you again?"
+	cont "Not a chance!"
 	done
 
 CooltrainermMikeSeenText:
@@ -453,9 +404,8 @@ CooltrainerfLolaSeenText:
 
 	para "If you're not"
 	line "serious, you won't"
-
-	para "be able to beat"
-	line "them."
+	cont "be able to beat"
+	cont "them."
 	done
 
 CooltrainerfLolaBeatenText:
@@ -474,9 +424,8 @@ BlackthornGymGuideText:
 
 	para "It's been a long"
 	line "journey, but we"
-
-	para "are almost done!"
-	line "Count on me!"
+	cont "are almost done!"
+	cont "Count on me!"
 
 	para "Clair uses the"
 	line "mythical and sac-"
@@ -488,9 +437,8 @@ BlackthornGymGuideText:
 
 	para "But you know,"
 	line "they're supposed"
-
-	para "to be weak against"
-	line "ice-type moves."
+	cont "to be weak against"
+	cont "ice-type moves."
 	done
 
 BlackthornGymGuideWinText:

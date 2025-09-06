@@ -31,44 +31,28 @@ TrainerKimonoGirlSayo:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext KimonoGirlSayoAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext KimonoGirlSayoAfterBattleText
 
 TrainerKimonoGirlZuki:
 	trainer KIMONO_GIRL, ZUKI, EVENT_BEAT_KIMONO_GIRL_ZUKI, KimonoGirlZukiSeenText, KimonoGirlZukiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext KimonoGirlZukiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext KimonoGirlZukiAfterBattleText
 
 TrainerKimonoGirlKuni:
 	trainer KIMONO_GIRL, KUNI, EVENT_BEAT_KIMONO_GIRL_KUNI, KimonoGirlKuniSeenText, KimonoGirlKuniBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext KimonoGirlKuniAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext KimonoGirlKuniAfterBattleText
 
 TrainerKimonoGirlMiki:
 	trainer KIMONO_GIRL, MIKI, EVENT_BEAT_KIMONO_GIRL_MIKI, KimonoGirlMikiSeenText, KimonoGirlMikiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext KimonoGirlMikiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext KimonoGirlMikiAfterBattleText
 	
 TrainerKimonoGirlSakura:
 	faceplayer
@@ -92,10 +76,7 @@ TrainerKimonoGirlSakura:
 	setevent EVENT_BEAT_KIMONO_GIRL_SAKURA
 .FightDone
 	opentext
-	writetext KimonoGirlSakuraAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend KimonoGirlSakuraAfterBattleText
 	
 .SakuraRematch1
 	opentext
@@ -108,10 +89,7 @@ TrainerKimonoGirlSakura:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_KIMONO_GIRL_SAKURA_REMATCH
 	opentext
-	writetext KimonoGirlSakuraNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend KimonoGirlSakuraNextTimeText
 	
 .SakuraRematch2
 	opentext
@@ -124,23 +102,14 @@ TrainerKimonoGirlSakura:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_KIMONO_GIRL_SAKURA_REMATCH
 	opentext
-	writetext KimonoGirlSakuraNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend KimonoGirlSakuraNextTimeText
 
 .KimonoGirlSakuraNextTime
-	writetext SakuraMaybeNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend SakuraMaybeNextTimeText
 
 .skip_rematch
 	opentext
-	writetext SakuraComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend SakuraComeBackTomorrowText
 
 DanceTheaterSurfGuy:
 	faceplayer
@@ -166,32 +135,20 @@ DanceTheaterSurfGuy:
 .KimonoGirlsUndefeated:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .PlayerIsFemale
-	writetext SurfGuyLadGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyLadGiftText
 
 .PlayerIsFemale:
-	writetext SurfGuyLassieGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyLassieGiftText
 
 .GetSurf:
 	writetext SurfGuyLikeADanceText
 	promptbutton
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
-	writetext SurfGuySurfExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuySurfExplanationText
 
 SurfGuyAlreadyGaveSurf:
-	writetext SurfGuyElegantKimonoGirlsText
-	waitbutton
-	closetext
-	end
+	writetextend SurfGuyElegantKimonoGirlsText
 
 DanceTheaterRhydon:
 	faceplayer
@@ -248,9 +205,8 @@ KimonoGirlSayoBeatenText:
 KimonoGirlSayoAfterBattleText:
 	text "Rhythm is impor-"
 	line "tant for both"
-
-	para "dancing and #-"
-	line "mon."
+	cont "dancing and #-"
+	cont "mon."
 	done
 
 KimonoGirlZukiSeenText:
@@ -286,9 +242,8 @@ KimonoGirlKuniBeatenText:
 KimonoGirlKuniAfterBattleText:
 	text "I trained a lot,"
 	line "so I thought I was"
-
-	para "a capable trainer."
-	line "I guess I'm not."
+	cont "a capable trainer."
+	cont "I guess I'm not."
 	done
 
 KimonoGirlMikiSeenText:
@@ -305,9 +260,8 @@ KimonoGirlMikiBeatenText:
 KimonoGirlMikiAfterBattleText:
 	text "I can keep dancing"
 	line "because there are"
-
-	para "people who enjoy"
-	line "what I do."
+	cont "people who enjoy"
+	cont "what I do."
 
 	para "My #mon keep my"
 	line "spirits up too."
@@ -370,32 +324,28 @@ SakuraComeBackTomorrowText:
 SurfGuyNeverLeftAScratchText:
 	text "Not only are the"
 	line "Kimono Girls great"
-
-	para "dancers, they're"
-	line "also skilled at"
+	cont "dancers, they're"
+	cont "also skilled at"
 	cont "#mon."
 
 	para "I always challenge"
 	line "them, but I've"
-
-	para "never even left a"
-	line "scratch…"
+	cont "never even left a"
+	cont "scratch…"
 	done
 
 SurfGuyLadGiftText:
 	text "Lad! If you can"
 	line "defeat all the"
-
-	para "Kimono Girls, I'll"
-	line "give you a gift."
+	cont "Kimono Girls, I'll"
+	cont "give you a gift."
 	done
 
 SurfGuyLassieGiftText:
 	text "Lassie, if you can"
 	line "defeat all the"
-
-	para "Kimono Girls, I'll"
-	line "give you a gift."
+	cont "Kimono Girls, I'll"
+	cont "give you a gift."
 	done
 
 SurfGuyLikeADanceText:
@@ -454,9 +404,8 @@ DanceTheaterGrannyText:
 
 	para "And they have to"
 	line "learn to follow"
-
-	para "customs before ap-"
-	line "pearing in public."
+	cont "customs before ap-"
+	cont "pearing in public."
 
 	para "But if you love"
 	line "something, any-"

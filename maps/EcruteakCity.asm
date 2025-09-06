@@ -34,32 +34,20 @@ EcruteakCityLass2Script:
 	opentext
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iftrue .ReleasedBeasts
-	writetext EcruteakCityLass2Text
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityLass2Text
 
 .ReleasedBeasts:
-	writetext EcruteakCityLass2Text_ReleasedBeasts
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityLass2Text_ReleasedBeasts
 
 EcruteakCityFisherScript:
 	faceplayer
 	opentext
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iftrue .JasmineReturned
-	writetext EcruteakCityFisherText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityFisherText
 
 .JasmineReturned:
-	writetext EcruteakCityFisherText_JasmineReturned
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakCityFisherText_JasmineReturned
 
 EcruteakCitySchoolboyScript:
 	jumptextfaceplayer EcruteakCitySchoolboyText
@@ -99,24 +87,21 @@ EcruteakCityGramps1Text:
 EcruteakCityGramps2Text:
 	text "Ah, child."
 	line "Have you learned"
-
-	para "to dance like the"
-	line "Kimono Girls?"
+	cont "to dance like the"
+	cont "Kimono Girls?"
 
 	para "If you go to their"
 	line "Dance Theater, an"
-
-	para "odd old man will"
-	line "give you something"
+	cont "odd old man will"
+	cont "give you something"
 	cont "nice, I hear."
 	done
 
 EcruteakCityLass1Text:
 	text "I'm going to prac-"
 	line "tice at the Dance"
-
-	para "Theater. Care to"
-	line "join me?"
+	cont "Theater. Care to"
+	cont "join me?"
 	done
 
 EcruteakCityLass2Text:
@@ -142,9 +127,8 @@ EcruteakCityFisherText:
 
 	para "The #mon that"
 	line "serves as the"
-
-	para "beacon fell ill."
-	line "Sounds like they"
+	cont "beacon fell ill."
+	cont "Sounds like they"
 	cont "are in trouble."
 	done
 
@@ -161,9 +145,8 @@ EcruteakCityFisherText_JasmineReturned:
 EcruteakCitySchoolboyText:
 	text "I hear #mon are"
 	line "rampaging at the"
-
-	para "Lake Of Rage. I'd"
-	line "like to see that."
+	cont "Lake Of Rage. I'd"
+	cont "like to see that."
 	done
 
 EcruteakCityGramps3Text:
@@ -172,15 +155,13 @@ EcruteakCityGramps3Text:
 
 	para "This tower burned"
 	line "in a fire. Three"
-
-	para "nameless #mon"
-	line "perished in it."
+	cont "nameless #mon"
+	cont "perished in it."
 
 	para "A rainbow-colored"
 	line "#mon descended"
-
-	para "from the sky and"
-	line "resurrected them…"
+	cont "from the sky and"
+	cont "resurrected them…"
 
 	para "It's a legend that"
 	line "has been passed"

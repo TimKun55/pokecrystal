@@ -9,12 +9,7 @@ CianwoodBeastsHouse_MapScripts:
 	def_callbacks
 
 BeastHouseGrannyScript:
-	faceplayer
-	opentext
-	writetext GrannyBeastsText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GrannyBeastsText
 	
 StatueScript:
 	jumptext StatueText
@@ -31,24 +26,21 @@ GrannyBeastsText:
 	para "Years ago when I"
 	line "was a young girl"
 	cont "on my journey, I"
-	
-	para "encountered both"
-	line "Raikou and Entei."
+	cont "encountered both"
+	cont "Raikou and Entei."
 	
 	para "To witness such"
 	line "amazing creatures"
 	cont "up close, it was"
-	
-	para "scary, but the"
-	line "highlight of my"
+	cont "scary, but the"
+	cont "highlight of my"
 	cont "journey."
 	
 	para "I've spent years"
 	line "trying to create"
 	cont "monuments that"
-	
-	para "truly represent"
-	line "their majesty!"
+	cont "truly represent"
+	cont "their majesty!"
 	done
 	
 StatueText:

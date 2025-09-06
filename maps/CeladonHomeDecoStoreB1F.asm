@@ -84,10 +84,7 @@ CeladonHomeDecoStoreB1FClerk1Script:
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecoStoreB1FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB1FNextTimeText
 
 .MoveMenuHeader1:
 	db MENU_BACKUP_TILES ; flags
@@ -173,10 +170,7 @@ CeladonHomeDecoStoreB1FClerk2Script:
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecoStoreB1FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStoreB1FNextTimeText
 
 .MoveMenuHeader2:
 	db MENU_BACKUP_TILES ; flags

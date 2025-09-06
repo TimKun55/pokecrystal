@@ -9,10 +9,7 @@ EmptyHouseBookshelf:
 	opentext
 	checkitem SECRET_KEY
 	iftrue .hiddenstairs
-	writetext BookshelfText
-	waitbutton
-	closetext
-	end
+	writetextend BookshelfText
 
 .hiddenstairs
 	writetext BookshelfHiddenHoleText
@@ -21,18 +18,15 @@ EmptyHouseBookshelf:
 	iffalse .DidntUseKey
 	writetext UsedKeyText
 	waitbutton
+	closetext	
 	playsound SFX_FAINT
 	changeblock 6, 0, $9a ; stairs
 	reloadmappart
-	closetext
 	waitsfx
 	end
 
 .DidntUseKey
-	writetext DidntUseKeyText
-	waitbutton
-	closetext
-	end
+	writetextend DidntUseKeyText
 
 BookshelfText:
 	text "It's full of"

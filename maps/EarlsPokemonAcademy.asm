@@ -40,16 +40,10 @@ AcademyEarl:
 	writetext AcademyEarlTeachMoreText
 	yesorno
 	iffalse .Done
-	writetext AcademyEarlTeachHowToRaiseWellText
-	waitbutton
-	closetext
-	end
+	writetextend AcademyEarlTeachHowToRaiseWellText
 
 .Done:
-	writetext AcademyEarlNoMoreToTeachText
-	waitbutton
-	closetext
-	end
+	writetextend AcademyEarlNoMoreToTeachText
 
 EarlsPokemonAcademyYoungster1Script:
 	jumptextfaceplayer EarlsPokemonAcademyYoungster1Text
@@ -80,33 +74,21 @@ TrainerYoungsterGabe:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterGabeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterGabeAfterBattleText
 
 TrainerBugCatcherJon:
 	trainer BUG_CATCHER, JON, EVENT_BEAT_BUG_CATCHER_JON, BugCatcherJonSeenText, BugCatcherJonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherJonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherJonAfterBattleText
 	
 TrainerLassMai:
 	trainer LASS, MAI, EVENT_BEAT_LASS_MAI, LassMaiSeenText, LassMaiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassMaiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassMaiAfterBattleText
 	
 TeacherEnomotoScript:
 	faceplayer
@@ -137,38 +119,23 @@ TeacherEnomotoScript:
 	verbosegiveitem EVIOLITE
 	setevent EVENT_GOT_EVIOLITE
 .FightDone
-	writetext TeacherEnomotoStrongerText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherEnomotoStrongerText
 
 .EnomotoEnd
-	writetext TeacherEnomotoEndText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherEnomotoEndText
 
 .battlemore
-	writetext TeacherEnomotoBattleMoreText
-	waitbutton
-	closetext
-	end
+	writetextend TeacherEnomotoBattleMoreText
 
 AcademyReceptionistScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_WHITNEY
 	iffalse .NoStairsText
-	writetext AcademyReceptionistTextStairs
-	waitbutton
-	closetext
-	end
+	writetextend AcademyReceptionistTextStairs
 
 .NoStairsText
-	writetext AcademyReceptionistTextNoStairs
-	waitbutton
-	closetext
-	end
+	writetextend AcademyReceptionistTextNoStairs
 
 AcademyBlackboard:
 	opentext
@@ -249,11 +216,7 @@ AcademyNotebook:
 	end
 
 AcademyBookshelf:
-	opentext
-	writetext AcademyBookshelfText
-	waitbutton
-	closetext
-	end
+	jumptext AcademyBookshelfText
 
 AcademyVendingMachine:
 	jumpstd VendingMachineScript
@@ -317,9 +280,8 @@ AcademyEarlTeachHowToRaiseWellText:
 
 	para "If #mon come"
 	line "out in battle even"
-
-	para "briefly, some Exp."
-	line "Points it gets."
+	cont "briefly, some Exp."
+	cont "Points it gets."
 
 	para "At top of list put"
 	line "weak #mon."
@@ -380,9 +342,8 @@ EarlsPokemonAcademyYoungster2Text:
 AcademyBlackboardText:
 	text "The blackboard"
 	line "describes #mon"
-
-	para "status changes in"
-	line "battle."
+	cont "status changes in"
+	cont "battle."
 	done
 
 AcademyPoisonText:
@@ -392,9 +353,8 @@ AcademyPoisonText:
 
 	para "Poison lingers"
 	line "after the battle,"
-
-	para "and HP is lost as"
-	line "you walk."
+	cont "and HP is lost as"
+	cont "you walk."
 
 	para "To cure it, use an"
 	line "Antidote."
@@ -492,15 +452,13 @@ AcademyNotebookText2:
 AcademyNotebookText3:
 	text "People who catch"
 	line "and use #mon"
-
-	para "in battle are"
-	line "#mon trainers."
+	cont "in battle are"
+	cont "#mon trainers."
 
 	para "They are expected"
 	line "to visit #mon"
-
-	para "Gyms and defeat"
-	line "other trainers."
+	cont "Gyms and defeat"
+	cont "other trainers."
 
 	para "The next page"
 	line "is… Blank!"
@@ -517,17 +475,15 @@ AcademyBookshelfText:
 	para "Your #mon"
 	line "don't need to"
 	cont "learn HMs or"
-	
-	para "certain TMs to"
-	line "use them in"
+	cont "certain TMs to"
+	cont "use them in"
 	cont "the overworld."
 	
 	para "As long as you"
 	line "have the TM or HM,"
 	cont "a #mon who CAN"
-	
-	para "learn the move"
-	line "and the correct"
+	cont "learn the move"
+	cont "and the correct"
 	cont "Badge (for HMs)"
 	
 	para "your #mon will"
@@ -595,8 +551,7 @@ LassMaiAfterBattleText:
 	text "Most moves that"
 	line "put a #mon"
 	cont "to sleep are"
-
-	para "not very accurate."
+	cont "not very accurate."
 
 	para "But there is ONE"
 	line "move that has"
@@ -612,9 +567,8 @@ TeacherEnomotoIntroText:
 
 	para "I've been hired"
 	line "by Earl to teach"
-
-	para "the practical"
-	line "side of status"
+	cont "the practical"
+	cont "side of status"
 	cont "conditions."
 
 	para "Are you ready"
@@ -658,12 +612,10 @@ TeacherEnomotoStrongerText:
 	text "Enomoto: The"
 	line "Eviolite will in-"
 	cont "crease the Defense"
-	
-	para "and Special"
-	line "Defense stats of" 
-
-	para "a #mon that"
-	line "can still evolve"
+	cont "and Special"
+	cont "Defense stats of" 
+	cont "a #mon that"
+	cont "can still evolve"
 	cont "by 50 percent"
 	cont "each."
 

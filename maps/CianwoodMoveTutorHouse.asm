@@ -52,16 +52,10 @@ CianwoodMoveTutorScript:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext CianwoodMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodMoveTutorRefusalText
 	
 .NotEnough:
-	writetext CianwoodMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodMoveTutorNotEnough
 
 .TeachMove:
 	writetext CianwoodMoveTutorPayment
@@ -69,10 +63,7 @@ CianwoodMoveTutorScript:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext CianwoodMoveTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend CianwoodMoveTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -140,13 +131,6 @@ CianwoodMoveTutorNotEnough:
 	done
 
 CianwoodMoveTutorUseWisely:
-	text "If you understand"
-	line "what's so amazing"
-
-	para "about this move,"
-	line "you've made it as"
-	cont "a trainer."
-
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"

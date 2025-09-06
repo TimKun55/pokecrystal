@@ -13,9 +13,7 @@ DayCare_MapScripts:
 
 DayCareLyraAndGrannyScene:
 	sdefer DayCare_MeetGrandma
-	end
-
-DayCareNoopScene:
+DayCareNoopScene:	
 	end
 
 DayCareEggCheckCallback:
@@ -112,10 +110,7 @@ DayCareManScript_Inside:
 
 .PartyFull:
 	opentext
-	writetext DayCareText_PartyFull
-	waitbutton
-	closetext
-	end
+	writetextend DayCareText_PartyFull
 
 .AlreadyHaveOddEgg:
 	special DayCareMan
@@ -185,16 +180,10 @@ DayCareLadyScript:
 
 .PartyFull:
 	opentext
-	writetext DayCareText_PartyFull
-	waitbutton
-	closetext
-	end
+	writetextend DayCareText_PartyFull
 
 .HusbandWasLookingForYou:
-	writetext Text_GrampsLookingForYou
-	waitbutton
-	closetext
-	end
+	writetextend Text_GrampsLookingForYou
 
 DayCareLyraApproachesGrandma:
 	step RIGHT
@@ -324,9 +313,8 @@ DayCareLyraEmbarassedText:
 
 	para "We're both train-"
 	line "ers, and we're"
-
-	para "supposed to ex-"
-	line "change numbers."
+	cont "supposed to ex-"
+	cont "change numbers."
 	cont "That's all."
 	done
 
@@ -344,9 +332,8 @@ DayCareManText_GiveOddEgg:
 	para "I was raising"
 	line "#mon with my"
 	cont "wife, you see,"
-	
-	para "and one day,"
-	line "We were shocked to"
+	cont "and one day,"
+	cont "We were shocked to"
 	cont "find an Egg!"
 
 	para "Since then, we"
@@ -359,9 +346,8 @@ DayCareManText_GiveOddEgg:
 	para "You know, your"
 	line "#dex shows Egg"
 	cont "groups, and how"
-
-	para "long they take to"
-	line "hatch!"
+	cont "long they take to"
+	cont "hatch!"
 
 	para "Well, wouldn't you"
 	line "like this Egg?"
@@ -382,9 +368,8 @@ DayCareText_DescribeOddEgg:
 	
 	para "If you find an Egg"
 	line "Ticket, bring it"
-	
-	para "to me, and you'll"
-	line "get another EGG."
+	cont "to me, and you'll"
+	cont "get another EGG."
 	done
 
 EggTicketText:

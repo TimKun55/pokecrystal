@@ -167,43 +167,25 @@ BillsGrandpa:
 	end
 
 .ExcitedToSee:
-	writetext BillsGrandpaExcitedToSeeText
-	promptbutton
-	end
+	writetextend BillsGrandpaExcitedToSeeText
 
 .SaidNo:
-	writetext BillsGrandpaYouDontHaveItTextText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaYouDontHaveItTextText
 
 .CorrectPokemon:
-	writetext BillsGrandpaShownPokemonText
-	promptbutton
-	end
+	writetextend BillsGrandpaShownPokemonText
 
 .ReceiveItem:
-	writetext BillsGrandpaTokenOfAppreciationText
-	promptbutton
-	end
+	writetextend BillsGrandpaTokenOfAppreciationText
 
 .JustShowedSomething:
-	writetext BillsGrandpaComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaComeAgainText
 
 .GotThunderstone:
-	writetext BillsGrandpaShownAllThePokemonText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaShownAllThePokemonText
 
 .WrongPokemon:
-	writetext BillsGrandpaWrongPokemonText
-	waitbutton
-	closetext
-	end
+	writetextend BillsGrandpaWrongPokemonText
 
 .BagFull:
 	closetext

@@ -13,8 +13,7 @@ EcruteakTinTowerEntrance_MapScripts:
 	callback MAPCALLBACK_OBJECTS, EcruteakTinTowerEntranceInitializeSagesCallback
 
 EcruteakTinTowerEntranceNoop1Scene:
-	end
-
+	; fallthrough
 EcruteakTinTowerEntranceNoop2Scene:
 	end
 
@@ -61,8 +60,6 @@ EcruteakTinTowerEntranceSageBlocksRight:
 	pause 5
 	callasm UpdateSprites
 	disappear ECRUTEAKTINTOWERENTRANCE_SAGE1
-	end
-
 EcruteakTinTowerEntranceAlreadyBlocked:
 	end
 
@@ -73,16 +70,10 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .CheckForClearBell
 	checkflag ENGINE_FOGBADGE
 	iftrue .BlockPassage_GotFogBadge
-	writetext EcruteakTinTowerEntranceSageText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText
 
 .BlockPassage_GotFogBadge:
-	writetext EcruteakTinTowerEntranceSageText_GotFogBadge
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_GotFogBadge
 
 .CheckForClearBell:
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
@@ -91,10 +82,7 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .RangClearBell
 	checkitem CLEAR_BELL
 	iftrue .GotClearBell
-	writetext EcruteakTinTowerEntranceSageText_NoClearBell
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_NoClearBell
 
 .GotClearBell:
 	writetext EcruteakTinTowerEntranceSageText_HearsClearBell
@@ -107,32 +95,20 @@ EcruteakTinTowerEntranceSageScript:
 	end
 
 .AllowedThrough:
-	writetext EcruteakTinTowerEntranceSageText_PleaseDoGoOn
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_PleaseDoGoOn
 
 .RangClearBell:
-	writetext EcruteakTinTowerEntranceSageText_HeardClearBell
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceSageText_HeardClearBell
 
 EcruteakTinTowerEntranceWanderingSageScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_CLEAR_BELL
 	iftrue .GotClearBell
-	writetext EcruteakTinTowerEntranceWanderingSageText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceWanderingSageText
 
 .GotClearBell:
-	writetext EcruteakTinTowerEntranceWanderingSageText_GotClearBell
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakTinTowerEntranceWanderingSageText_GotClearBell
 
 EcruteakTinTowerEntranceGrampsScript:
 	jumptextfaceplayer EcruteakTinTowerEntranceGrampsText
@@ -154,9 +130,8 @@ EcruteakTinTowerEntranceSageBlocksRightMovement:
 EcruteakTinTowerEntranceSageText:
 	text "Tin Tower is off"
 	line "limits to anyone"
-
-	para "without Ecruteak"
-	line "Gym's Badge."
+	cont "without Ecruteak"
+	cont "Gym's Badge."
 
 	para "Sorry, but you'll"
 	line "have to leave."
@@ -165,9 +140,8 @@ EcruteakTinTowerEntranceSageText:
 EcruteakTinTowerEntranceSageText_GotFogBadge:
 	text "Tin Tower is off"
 	line "limits to anyone"
-
-	para "without Ecruteak"
-	line "Gym's Badge."
+	cont "without Ecruteak"
+	cont "Gym's Badge."
 
 	para "Ah!"
 
@@ -189,9 +163,8 @@ EcruteakTinTowerEntranceSageText_NoClearBell:
 
 	para "The Wise Trio say"
 	line "things that are so"
-
-	para "very difficult to"
-	line "understand…"
+	cont "very difficult to"
+	cont "understand…"
 	done
 
 EcruteakTinTowerEntranceSageText_HearsClearBell:
@@ -249,9 +222,8 @@ EcruteakTinTowerEntranceSageText_HeardClearBell:
 EcruteakTinTowerEntranceWanderingSageText:
 	text "The Tin Tower"
 	line "ahead is a nine-"
-
-	para "tier tower of"
-	line "divine beauty."
+	cont "tier tower of"
+	cont "divine beauty."
 
 	para "It soothes the"
 	line "soul of all who"
@@ -261,9 +233,8 @@ EcruteakTinTowerEntranceWanderingSageText:
 EcruteakTinTowerEntranceWanderingSageText_GotClearBell:
 	text "The Tin Tower"
 	line "shook! A #mon"
-
-	para "must have returned"
-	line "to the top!"
+	cont "must have returned"
+	cont "to the top!"
 	done
 
 EcruteakTinTowerEntranceGrampsText:
@@ -272,9 +243,8 @@ EcruteakTinTowerEntranceGrampsText:
 
 	para "But when one"
 	line "burned down, both"
-
-	para "#mon flew away,"
-	line "never to return."
+	cont "#mon flew away,"
+	cont "never to return."
 	done
 
 EcruteakTinTowerEntrance_MapEvents:

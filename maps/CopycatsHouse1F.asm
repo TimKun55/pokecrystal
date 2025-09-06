@@ -16,16 +16,10 @@ CopycatsHouse1FPokefanFScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext CopycatsHouse1FPokefanFText
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanFText
 
 .ReturnedMachinePart:
-	writetext CopycatsHouse1FPokefanFText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend CopycatsHouse1FPokefanFText_ReturnedMachinePart
 
 CopycatsHouse1FBlisseyScript:
 	opentext
@@ -45,9 +39,8 @@ CopycatsHouse1FPokefanMText:
 
 	para "Her mimicry has"
 	line "earned her the"
-
-	para "nickname Copycat"
-	line "around here."
+	cont "nickname Copycat"
+	cont "around here."
 	done
 
 CopycatsHouse1FPokefanFText:
@@ -61,9 +54,8 @@ CopycatsHouse1FPokefanFText:
 CopycatsHouse1FPokefanFText_ReturnedMachinePart:
 	text "She recently lost"
 	line "the # Doll that"
-
-	para "a boy gave her"
-	line "three years ago."
+	cont "a boy gave her"
+	cont "three years ago."
 
 	para "Ever since then,"
 	line "she's gotten even"

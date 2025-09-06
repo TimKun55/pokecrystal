@@ -37,23 +37,14 @@ BattleTower2FClerk1:
 	verbosegiveitem CHOICE_BAND
 	iffalse .NoRoom
 .ComeAgain:
-	writetext ComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend ComeAgainText
 
 .NotEnoughPoints:
-	writetext NotEnoughPointsText
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughPointsText
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_1_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -89,11 +80,8 @@ BattleTower2FClerk2:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_2_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -129,11 +117,8 @@ BattleTower2FClerk3:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_3_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -169,11 +154,8 @@ BattleTower2FClerk4:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_4_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -209,11 +191,8 @@ BattleTower2FClerk5:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_5_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -255,11 +234,8 @@ BattleTower2FClerk6:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_6_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -301,11 +277,8 @@ BattleTower2FClerk7:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_7_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText
@@ -347,11 +320,8 @@ BattleTower2FClerk8:
 	sjump BattleTower2FClerk1.ComeAgain
 
 .NoRoom:
-	writetext NotEnoughtRoomText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_2F_CLERK_6_HAS_ITEM
-	end
+	writetextend NotEnoughtRoomText
 
 .TryGiveItem:
 	writetext TryGiveItemText

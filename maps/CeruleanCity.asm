@@ -14,8 +14,7 @@ CeruleanCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
 CeruleanCityNoop1Scene:
-	end
-
+	; fallthrough
 CeruleanCityNoop2Scene:
 	end
 
@@ -28,16 +27,10 @@ CeruleanCityCooltrainerMScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext CeruleanCityCooltrainerMText1
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityCooltrainerMText1
 
 .ReturnedMachinePart:
-	writetext CeruleanCityCooltrainerMText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityCooltrainerMText2
 
 CeruleanCitySuperNerdScript:
 	jumptextfaceplayer CeruleanCitySuperNerdText
@@ -71,10 +64,7 @@ CeruleanCityCooltrainerFScript:
 	waitbutton
 	closetext
 	opentext
-	writetext CeruleanCityCooltrainerFText3
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityCooltrainerFText3
 
 CeruleanCityBirdKeeperScript:
 	faceplayer
@@ -84,16 +74,10 @@ CeruleanCityBirdKeeperScript:
 	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	iftrue .MetCeruleanRocket
 .ReturnedMachinePart:
-	writetext CeruleanCityBirdKeeperText
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityBirdKeeperText
 
 .MetCeruleanRocket:
-	writetext CeruleanCityBirdKeeperRocketTipText
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityBirdKeeperRocketTipText
 
 CeruleanCityYoungsterScript:
 	faceplayer
@@ -126,10 +110,7 @@ CeruleanCityYoungsterScript:
 	showemote EMOTE_SHOCK, CERULEANCITY_YOUNGSTER, 15
 	turnobject CERULEANCITY_YOUNGSTER, LEFT
 	opentext
-	writetext CeruleanCityYoungsterText2
-	waitbutton
-	closetext
-	end
+	writetextend CeruleanCityYoungsterText2
 
 CeruleanCitySign:
 	jumptext CeruleanCitySignText
@@ -164,9 +145,8 @@ CeruleanCityCooltrainerMText1:
 
 	para "It's near the end"
 	line "of Route 9, the"
-
-	para "road that heads"
-	line "east from here."
+	cont "road that heads"
+	cont "east from here."
 
 	para "I think there was"
 	line "an accident of"
@@ -186,9 +166,9 @@ CeruleanCityCooltrainerMText2:
 CeruleanCitySuperNerdText:
 	text "The Cape in the"
 	line "north is a good"
-
-	para "place for dates."
-	line "Girls like it!"
+	cont "place for dates."
+	
+	para "Girls like it!"
 	done
 
 CeruleanCitySlowbroText:
@@ -225,9 +205,8 @@ CeruleanCityBirdKeeperRocketTipText:
 CeruleanCityYoungsterText1:
 	text "There used to be a"
 	line "cave here that had"
-
-	para "horribly powerful"
-	line "#mon in it."
+	cont "horribly powerful"
+	cont "#mon in it."
 	done
 
 CeruleanCityYoungsterText2:
@@ -268,9 +247,8 @@ CeruleanPoliceSignText:
 
 	para "Stamp out thievery"
 	line "and make the city"
-
-	para "a friendlier, more"
-	line "cheerful place!"
+	cont "a friendlier, more"
+	cont "cheerful place!"
 
 	para "Cerulean Police"
 	done

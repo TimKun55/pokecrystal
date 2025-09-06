@@ -15,10 +15,7 @@ CeladonCurseHousePharmacistScript:
 	promptbutton
 	checktime NITE
 	iftrue .Night
-	writetext CeladonCurseHousePharmacistNotNightText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonCurseHousePharmacistNotNightText
 
 .Night:
 	writetext CeladonCurseHousePharmacistStoryText
@@ -41,9 +38,8 @@ CeladonCurseHousePharmacistIntroText:
 CeladonCurseHousePharmacistNotNightText:
 	text "Then again, it's"
 	line "not as scary while"
-
-	para "it's still light"
-	line "outside."
+	cont "it's still light"
+	cont "outside."
 
 	para "Come back after"
 	line "sunset, OK?"
@@ -52,39 +48,34 @@ CeladonCurseHousePharmacistNotNightText:
 CeladonCurseHousePharmacistStoryText:
 	text "Once upon a time,"
 	line "there was a little"
-
-	para "boy who was given"
-	line "a new Bicycle…"
+	cont "boy who was given"
+	cont "a new Bicycle…"
 
 	para "He wanted to try"
 	line "it right away…"
 
 	para "He was having so"
 	line "much fun that he"
-
-	para "didn't notice the"
-	line "sun had set…"
+	cont "didn't notice the"
+	cont "sun had set…"
 
 	para "While riding home"
 	line "in the pitch-black"
-
-	para "night, the bike"
-	line "suddenly slowed!"
+	cont "night, the bike"
+	cont "suddenly slowed!"
 
 	para "The pedals became"
 	line "heavy!"
 
 	para "When he stopped"
 	line "pedaling, the bike"
-
-	para "began slipping"
-	line "backwards!"
+	cont "began slipping"
+	cont "backwards!"
 
 	para "It was as if the"
 	line "bike were cursed"
-
-	para "and trying to drag"
-	line "him into oblivion!"
+	cont "and trying to drag"
+	cont "him into oblivion!"
 
 	para "…"
 
@@ -109,9 +100,8 @@ CeladonCurseHousePharmacistCurseText:
 
 	para "It's a terrifying"
 	line "move that slowly"
-
-	para "whittles down the"
-	line "victim's HP."
+	cont "whittles down the"
+	cont "victim's HP."
 	done
 
 CeladonCurseHouse_MapEvents:

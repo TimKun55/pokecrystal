@@ -21,8 +21,7 @@ CeladonCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, CeladonCityFlypointCallback
 
 CeladonCityNoop1Scene:
-	end
-
+	; fallthrough
 CeladonCityNoop2Scene:
 	end
 
@@ -208,9 +207,8 @@ CeladonCityTeacher1Text:
 
 	para "I've got to work"
 	line "hard to make more"
-
-	para "money so I can"
-	line "keep playing…"
+	cont "money so I can"
+	cont "keep playing…"
 	done
 
 CeladonCityGramps1Text:
@@ -219,9 +217,8 @@ CeladonCityGramps1Text:
 
 	para "See that pond out"
 	line "in front of the"
-
-	para "house? Grimer live"
-	line "there now."
+	cont "house? Grimer live"
+	cont "there now."
 
 	para "Where did they"
 	line "come from? This is"
@@ -230,10 +227,10 @@ CeladonCityGramps1Text:
 
 CeladonCityGramps2Text:
 	text "Nihihi! This Gym"
-	line "is great! Only"
+	line "is great!"
 
-	para "girls are allowed"
-	line "here!"
+	para "Only girls are"
+	line "allowed here!"
 	done
 
 CeladonCityYoungster1Text:
@@ -258,15 +255,13 @@ CeladonCityYoungster2Text:
 CeladonCityTeacher2Text:
 	text "Celadon Dept.Store"
 	line "has the biggest"
-
-	para "and best selection"
-	line "of merchandise."
+	cont "and best selection"
+	cont "of merchandise."
 
 	para "If you can't get"
 	line "it there, you"
-
-	para "can't get it any-"
-	line "where."
+	cont "can't get it any-"
+	cont "where."
 
 	para "Gee… I sound like"
 	line "a sales clerk."
@@ -275,9 +270,8 @@ CeladonCityTeacher2Text:
 CeladonCityLassText:
 	text "Looking at the"
 	line "ground while I was"
-
-	para "walking made me"
-	line "dizzy."
+	cont "walking made me"
+	cont "dizzy."
 	done
 
 CeladonCitySignText:
@@ -317,9 +311,8 @@ CeladonCityTrainerTipsText:
 
 	para "Guard Spec."
 	line "protects #mon"
-
-	para "from having their"
-	line "stats lowered!"
+	cont "from having their"
+	cont "stats lowered!"
 
 	para "Get your items at"
 	line "Celadon Dept."

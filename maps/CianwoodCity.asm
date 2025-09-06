@@ -22,8 +22,7 @@ CianwoodCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, CianwoodCityFlypointAndSuicuneCallback
 
 CianwoodCityNoop1Scene:
-	end
-
+	; fallthrough
 CianwoodCityNoop2Scene:
 	end
 
@@ -97,10 +96,7 @@ CianwoodCityChucksWife:
 	promptbutton
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .BeatChuck
-	writetext ChucksWifeBeatChuckText
-	waitbutton
-	closetext
-	end
+	writetextend ChucksWifeBeatChuckText
 
 .BeatChuck:
 	writetext ChucksWifeGiveHMText
@@ -204,9 +200,8 @@ ChucksWifeEasierToFlyText:
 
 	para "It would be much"
 	line "easier if your"
-
-	para "#mon knew how"
-	line "to Fly…"
+	cont "#mon knew how"
+	cont "to Fly…"
 	done
 
 ChucksWifeBeatChuckText:
@@ -236,9 +231,8 @@ ChucksWifeFlySpeechText:
 
 	para "You will be able"
 	line "to Fly instantly"
-
-	para "to anywhere you "
-	line "have visited."
+	cont "to anywhere you "
+	cont "have visited."
 	done
 
 ChucksWifeChubbyText:
@@ -254,9 +248,8 @@ ChucksWifeChubbyText:
 CianwoodCityYoungsterText:
 	text "If you use Fly,"
 	line "you can get back"
-
-	para "to Olivine in-"
-	line "stantly."
+	cont "to Olivine in-"
+	cont "stantly."
 	done
 
 CianwoodCityPokefanMText:
@@ -275,9 +268,8 @@ CianwoodCityPokefanMText:
 CianwoodCityLassText:
 	text "Chuck, the Gym"
 	line "Leader, spars with"
-
-	para "his fighting #-"
-	line "mon."
+	cont "his fighting #-"
+	cont "mon."
 	done
 
 EusineSuicuneText:
@@ -289,9 +281,8 @@ EusineSuicuneText:
 
 	para "I only caught a"
 	line "quick glimpse, but"
-
-	para "I thought I saw"
-	line "Suicune running on"
+	cont "I thought I saw"
+	cont "Suicune running on"
 	cont "the waves."
 
 	para "Suicune is beau-"
@@ -299,9 +290,8 @@ EusineSuicuneText:
 
 	para "And it races"
 	line "through towns and"
-
-	para "roads at simply"
-	line "awesome speeds."
+	cont "roads at simply"
+	cont "awesome speeds."
 
 	para "It's wonderful…"
 
@@ -345,10 +335,11 @@ EusineAfterText:
 LadyMaeSeenText:
 	text "Hello there."
 	line "I'm taking a quick"
-	cont "break here. Those"
-	
-	para "Whirl Islands are"
-	line "pretty cool!"
+	cont "break here."
+
+	para "Those Whirl"
+	line "Islands are"
+	cont "pretty cool!"
 	
 	para "Wait, you're a"
 	line "trainer?"

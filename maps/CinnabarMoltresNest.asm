@@ -11,11 +11,9 @@ CinnabarMoltresNest_MapScripts:
 	def_callbacks
 
 CinnabarMoltresNestNoop1Scene:
-	end
-
+	; fallthrough
 CinnabarMoltresNestNoop2Scene:
-	end
-
+	; fallthrough
 CinnabarMoltresNestNoop3Scene:
 	end
 

@@ -78,10 +78,7 @@ CeladonHomeDecoStore1FClerk1Script:
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecoStore1FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStore1FNextTimeText
 
 .MoveMenuHeader1:
 	db MENU_BACKUP_TILES ; flags
@@ -167,10 +164,7 @@ CeladonHomeDecoStore1FClerk2Script:
 	jump .Start
 	
 .Refused:
-	writetext CeladonHomeDecoStore1FNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonHomeDecoStore1FNextTimeText
 
 .MoveMenuHeader2:
 	db MENU_BACKUP_TILES ; flags
@@ -297,9 +291,8 @@ CeladonHomeDecoStore1FPokefanfText:
 	text "My son's room is"
 	line "too dark and dank"
 	cont "so I'm getting him"
-
-	para "some new posters"
-	line "and plants."
+	cont "some new posters"
+	cont "and plants."
 	done
 	
 CeladonHomeDecoStore1FClefairyPosterText:

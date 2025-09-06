@@ -182,22 +182,13 @@ CeladonGameCorner_alreadyhavedoll:
 	sjump CeladonGameCorner_dollloop
 
 CeladonGameCorner_notenoughcoins:
-	writetext CeladonGameCorner_NotEnoughCoinsText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonGameCorner_NotEnoughCoinsText
 
 CeladonGameCorner_CancelPurchaseScript:
-	writetext CeladonGameCorner_ComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonGameCorner_ComeAgainText
 
 CeladonGameCorner_NoCoinCase:
-	writetext CeladonGameCorner_NoCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonGameCorner_NoCoinCaseText
 
 CeladonGameCorner_DollMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -213,11 +204,8 @@ CeladonGameCorner_DollMenuHeader:
 	db "Eevee      {d:CELADONGAMECORNER_EEVEE_DOLL_COINS}@"
 	db "Cancel@"
 
-CeladonGameCornerPoster1Script:
-	jumptext CeladonGameCornerPoster1Text
-
-CeladonGameCornerPoster2Script:
-	jumptext CeladonGameCornerPoster2Text
+CeladonGameCornerPosterScript:
+	jumptext CeladonGameCornerPosterText
 
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
@@ -239,10 +227,7 @@ CeladonGameCornerVoltorbFlipScript:
 	opentext
 	checkitem COIN_CASE
 	iftrue .CeladonGameCornerWanttoPlayVoltorbFlip
-	writetext CeladonGameCornerNoCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonGameCornerNoCoinCaseText
 
 .CeladonGameCornerWanttoPlayVoltorbFlip
 	special DisplayCoinCaseBalance
@@ -280,9 +265,8 @@ CeladonGameCornerReceptionistText:
 
 	para "You may exchange"
 	line "your coins for"
-
-	para "fabulous prizes"
-	line "next door."
+	cont "fabulous prizes"
+	cont "next door."
 	done
 
 CeladonGameCornerPokefanMText:
@@ -297,9 +281,8 @@ CeladonGameCornerTeacherText:
 
 	para "It cleaned me out"
 	line "yesterday, so it"
-
-	para "should pay out"
-	line "today."
+	cont "should pay out"
+	cont "today."
 	done
 
 CeladonGameCornerFishingGuruText:
@@ -326,9 +309,8 @@ CeladonGameCornerFisherText2:
 
 	para "It makes me feel"
 	line "good to do nice"
-
-	para "things for other"
-	line "people!"
+	cont "things for other"
+	cont "people!"
 	done
 
 CeladonGameCornerFisherNoCoinCaseText:
@@ -367,21 +349,11 @@ CeladonGymGuideText:
 CeladonGameCornerGrampsText:
 	text "Hmmm… The odds are"
 	line "surely better for"
-
-	para "Pikachu's line,"
-	line "but… What to do?"
+	cont "Pikachu's line,"
+	cont "but… What to do?"
 	done
 
-CeladonGameCornerPoster1Text:
-	text "Hey!"
-
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
-	done
-
-CeladonGameCornerPoster2Text:
+CeladonGameCornerPosterText:
 	text "Hey!"
 
 	para "Underneath this"
@@ -506,8 +478,8 @@ CeladonGameCorner_MapEvents:
 	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
-	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster2Script
+	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPosterScript
+	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 
 	def_object_events
 	object_event  5,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerClerkScript, -1

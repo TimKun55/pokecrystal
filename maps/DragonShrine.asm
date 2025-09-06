@@ -13,9 +13,7 @@ DragonShrine_MapScripts:
 
 DragonShrineTakeTestScene:
 	sdefer DragonShrineTakeTestScript
-	end
-
-DragonShrineNoopScene:
+DragonShrineNoopScene:	
 	end
 
 DragonShrineTakeTestScript:
@@ -200,10 +198,7 @@ DragonShrineElder1Script:
 	iffalse .GiveDratini
 	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	iftrue .BeatRivalInMtMoon
-	writetext DragonShrineClairsGrandfatherText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineClairsGrandfatherText
 
 .GiveDratini:
 	writetext DragonShrineTakeThisDratiniText
@@ -218,50 +213,25 @@ DragonShrineElder1Script:
 	special GiveDratini
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineSymbolicDragonText
 
 .PartyFull:
-	writetext DragonShrinePartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrinePartyFullText
 
 .BeatRivalInMtMoon:
-	writetext DragonShrineRivalIsInTrainingText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineRivalIsInTrainingText
 
 .DontGiveDratiniYet:
-	writetext DragonShrineComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineComeAgainText
 
 .ReceivedDratini:
-	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
+	writetextend DragonShrineSymbolicDragonText
 
 DragonShrineElder2Script:
-	faceplayer
-	opentext
-	writetext DragonShrineElder2Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer DragonShrineElder2Text
 
 DragonShrineElder3Script:
-	faceplayer
-	opentext
-	writetext DragonShrineElder3Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer DragonShrineElder3Text
 
 DragonShrineQuestion1_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -483,9 +453,8 @@ DragonShrineElderScoldsClairText:
 
 	para "Reflect upon what"
 	line "it is that you"
-
-	para "lack and this"
-	line "child has."
+	cont "lack and this"
+	cont "child has."
 	done
 
 DragonShrineComeAgainText:
@@ -505,9 +474,8 @@ DragonShrineTakeThisDratiniText:
 
 	para "Take this Dratini"
 	line "as proof that I"
-
-	para "have recognized"
-	line "your worth."
+	cont "have recognized"
+	cont "your worth."
 	done
 
 DragonShrinePlayerReceivedDratiniText:
@@ -527,17 +495,15 @@ DragonShrineSymbolicDragonText:
 
 	para "You have shown"
 	line "that you can be"
-
-	para "entrusted with"
-	line "one."
+	cont "entrusted with"
+	cont "one."
 	done
 
 DragonShrineClairsGrandfatherText:
 	text "Clair appears to"
 	line "have learned an"
-
-	para "invaluable lesson"
-	line "from you."
+	cont "invaluable lesson"
+	cont "from you."
 
 	para "I thank you as her"
 	line "grandfather."
@@ -550,9 +516,8 @@ DragonShrineRivalIsInTrainingText:
 
 	para "He is much like"
 	line "Clair when she was"
-
-	para "younger. It is a"
-	line "little worrisome…"
+	cont "younger. It is a"
+	cont "little worrisome…"
 	done
 
 DragonShrineWrongAnswerText1:
@@ -572,9 +537,8 @@ DragonShrineRightAnswerText:
 DragonShrineElder2Text:
 	text "It's been quite"
 	line "some time since a"
-
-	para "trainer has gained"
-	line "our Master's rare"
+	cont "trainer has gained"
+	cont "our Master's rare"
 	cont "approval."
 
 	para "In fact, not since"
@@ -636,19 +600,16 @@ DragonShrinePlayerReceivedRisingBadgeText:
 DragonShrineRisingBadgeExplanationText:
 	text "The RisingBadge"
 	line "will enable your"
-
-	para "#mon to use the"
-	line "move for climbing"
+	cont "#mon to use the"
+	cont "move for climbing"
 	cont "waterfalls."
 
 	para "Also, all #mon"
 	line "will recognize you"
-
-	para "as a trainer and"
-	line "obey your every"
-
-	para "command without"
-	line "question."
+	cont "as a trainer and"
+	cont "obey your every"
+	cont "command without"
+	cont "question."
 	done
 
 DragonShrineSpeechlessText:

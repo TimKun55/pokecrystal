@@ -36,9 +36,8 @@ CeladonDeptStore4FSuperNerdText:
 CeladonDeptStore4FYoungsterText:
 	text "This is the only"
 	line "place where you"
-
-	para "can buy Lovely"
-	line "Mail."
+	cont "can buy Lovely"
+	cont "Mail."
 	done
 
 CeladonDeptStore4FDirectoryText:

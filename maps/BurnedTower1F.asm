@@ -16,11 +16,9 @@ BurnedTower1F_MapScripts:
 
 BurnedTower1FMeetEusineScene:
 	sdefer BurnedTower1FMeetEusineScript
-	end
-
+	; fallthrough
 BurnedTower1FNoop1Scene:
-	end
-
+	; fallthrough
 BurnedTower1FNoop2Scene:
 	end
 
@@ -165,18 +163,16 @@ BurnedTowerRival_BeforeText:
 
 	para "I came looking for"
 	line "some legendary"
-
-	para "#mon that they"
-	line "say roosts here."
+	cont "#mon that they"
+	cont "say roosts here."
 
 	para "But there's"
 	line "nothing here!"
 
 	para "Nothing after all"
 	line "the trouble of"
-
-	para "coming to this"
-	line "dump? No way!"
+	cont "coming to this"
+	cont "dump? No way!"
 
 	para "It's all your"
 	line "fault!"
@@ -197,9 +193,8 @@ BurnedTowerRival_AfterText1:
 
 	para "You would never be"
 	line "able to catch a"
-
-	para "legendary #mon"
-	line "anyway."
+	cont "legendary #mon"
+	cont "anyway."
 	done
 
 BurnedTowerRival_LossText:
@@ -239,9 +234,8 @@ BurnedTower1FEusineIntroText:
 
 	para "I heard rumors"
 	line "that Suicune is in"
-
-	para "this Burned Tower,"
-	line "so I came to look."
+	cont "this Burned Tower,"
+	cont "so I came to look."
 
 	para "But where exactly"
 	line "could it be?"
@@ -250,9 +244,8 @@ BurnedTower1FEusineIntroText:
 BurnedTower1FEusineText:
 	text "Eusine: I heard"
 	line "that Suicune is in"
-
-	para "this Burned Tower,"
-	line "so I came to look."
+	cont "this Burned Tower,"
+	cont "so I came to look."
 
 	para "But where exactly"
 	line "could it be?"
@@ -261,19 +254,16 @@ BurnedTower1FEusineText:
 BurnedTower1FMortyText:
 	text "Morty: Ecruteak's"
 	line "Gym Leader has to"
-
-	para "study what are"
-	line "said to be the"
-
-	para "legendary #mon"
-	line "--Suicune, Entei"
+	cont "study what are"
+	cont "said to be the"
+	cont "legendary #mon"
+	cont "--Suicune, Entei"
 	cont "and Raikou."
 
 	para "Eusine is here, so"
 	line "I've decided to"
-
-	para "investigate the"
-	line "Tower with him."
+	cont "investigate the"
+	cont "Tower with him."
 	done
 
 BurnedTower1F_MapEvents:

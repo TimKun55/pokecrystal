@@ -101,28 +101,16 @@ CeladonPrizeRoom_alreadyhavetm:
 	sjump CeladonPrizeRoom_tmcounterloop
 
 CeladonPrizeRoom_notenoughcoins:
-	writetext CeladonPrizeRoom_NotEnoughCoinsText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPrizeRoom_NotEnoughCoinsText
 
 CeladonPrizeRoom_notenoughroom:
-	writetext CeladonPrizeRoom_NotEnoughRoomText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPrizeRoom_NotEnoughRoomText
 
 CeladonPrizeRoom_CancelPurchaseScript:
-	writetext CeladonPrizeRoom_ComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPrizeRoom_ComeAgainText
 
 CeladonPrizeRoom_NoCoinCase:
-	writetext CeladonPrizeRoom_NoCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend CeladonPrizeRoom_NoCoinCaseText
 
 CeladonPrizeRoom_TMMenuHeader:
 	db MENU_BACKUP_TILES ; flags

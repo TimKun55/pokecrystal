@@ -26,44 +26,26 @@ BillScript:
 	waitsfx
 	givepoke EEVEE, 20
 	setevent EVENT_GOT_EEVEE
-	writetext BillEeveeMayEvolveText
-	waitbutton
-	closetext
-	end
+	writetextend BillEeveeMayEvolveText
 
 .NoRoom:
-	writetext BillPartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend BillPartyFullText
 
 .Refused:
-	writetext BillNoEeveeText
-	waitbutton
-	closetext
-	end
+	writetextend BillNoEeveeText
 
 .GotEevee:
-	writetext BillPopWontWorkText
-	waitbutton
-	closetext
-	end
+	writetextend BillPopWontWorkText
 
 BillsMumScript:
 	faceplayer
 	opentext
 	checkevent EVENT_MET_BILL
 	iffalse .HaventMetBill
-	writetext BillsMumText_BeforeEcruteak
-	waitbutton
-	closetext
-	end
+	writetextend BillsMumText_BeforeEcruteak
 
 .HaventMetBill:
-	writetext BillsMumText_AfterEcruteak
-	waitbutton
-	closetext
-	end
+	writetextend BillsMumText_AfterEcruteak
 
 BillsYoungerSisterScript:
 	faceplayer
@@ -81,16 +63,10 @@ BillsYoungerSisterScript:
 	waitsfx
 	promptbutton
 .GotBillsNumber:
-	writetext BillsYoungerSisterStorageSystemText
-	waitbutton
-	closetext
-	end
+	writetextend BillsYoungerSisterStorageSystemText
 
 .Refused:
-	writetext BillsYoungerSisterRefusedNumberText
-	waitbutton
-	closetext
-	end
+	writetextend BillsYoungerSisterRefusedNumberText
 
 .NoRoom:
 	writetext BillsYoungerSisterPhoneFullText

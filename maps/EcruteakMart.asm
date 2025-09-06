@@ -43,9 +43,8 @@ EcruteakMartSuperNerdText:
 EcruteakMartGrannyText:
 	text "If you use Revive,"
 	line "a #mon that's"
-
-	para "fainted will wake"
-	line "right up."
+	cont "fainted will wake"
+	cont "right up."
 	done
 
 EcruteakMart_MapEvents:

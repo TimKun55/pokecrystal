@@ -14,8 +14,7 @@ CherrygroveCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, CherrygroveCityFlypointCallback
 
 CherrygroveCityNoop1Scene:
-	end
-
+	; fallthrough
 CherrygroveCityNoop2Scene:
 	end
 
@@ -29,8 +28,6 @@ CherrygroveCityGuideGent:
 	writetext GuideGentIntroText
 	yesorno
 	iffalse .No
-	sjump .Yes
-.Yes:
 	writetext GuideGentTourText1
 	waitbutton
 	closetext
@@ -93,10 +90,7 @@ CherrygroveCityGuideGent:
 	db "Map Card@"
 
 .No:
-	writetext GuideGentNoText
-	waitbutton
-	closetext
-	end
+	writetextend GuideGentNoText
 
 CherrygroveRivalSceneSouth:
 	moveobject CHERRYGROVECITY_RIVAL, 39, 7
@@ -181,32 +175,20 @@ CherrygroveTeacherScript:
 	opentext
 	checkflag ENGINE_MAP_CARD
 	iftrue .HaveMapCard
-	writetext CherrygroveTeacherText_NoMapCard
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveTeacherText_NoMapCard
 
 .HaveMapCard:
-	writetext CherrygroveTeacherText_HaveMapCard
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveTeacherText_HaveMapCard
 
 CherrygroveYoungsterScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_POKEDEX
 	iftrue .HavePokedex
-	writetext CherrygroveYoungsterText_NoPokedex
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveYoungsterText_NoPokedex
 
 .HavePokedex:
-	writetext CherrygroveYoungsterText_HavePokedex
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveYoungsterText_HavePokedex
 
 MysticWaterGuy:
 	faceplayer
@@ -351,15 +333,13 @@ GuideGentTourText1:
 GuideGentPokecenterText:
 	text "This is a #mon"
 	line "Center. They heal"
-
-	para "your #mon in no"
-	line "time at all."
+	cont "your #mon in no"
+	cont "time at all."
 
 	para "You'll be relying"
 	line "on them a lot, so"
-
-	para "you better learn"
-	line "about them."
+	cont "you better learn"
+	cont "about them."
 	
 	para "Look for the red"
 	line "coloured roof."
@@ -371,9 +351,8 @@ GuideGentMartText:
 
 	para "They sell Balls"
 	line "for catching wild"
-
-	para "#mon and other"
-	line "useful items."
+	cont "#mon and other"
+	cont "useful items."
 
 	para "Look for the blue"
 	line "coloured roof."
@@ -385,9 +364,8 @@ GuideGentRoute30Text:
 
 	para "Trainers will be"
 	line "battling their"
-
-	para "prized #mon"
-	line "there."
+	cont "prized #mon"
+	cont "there."
 	done
 
 GuideGentSeaText:

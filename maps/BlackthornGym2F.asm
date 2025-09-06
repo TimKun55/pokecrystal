@@ -58,22 +58,14 @@ TrainerCooltrainermCody:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermCodyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermCodyAfterBattleText
 
 TrainerCooltrainerfFran:
 	trainer COOLTRAINERF, FRAN, EVENT_BEAT_COOLTRAINERF_FRAN, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfFranAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfFranAfterBattleText
 
 CooltrainermCodySeenText:
 	text "It's not as if we"
@@ -89,12 +81,10 @@ CooltrainermCodyBeatenText:
 CooltrainermCodyAfterBattleText:
 	text "Members of our"
 	line "dragon-user clan"
-
-	para "can use dragon"
-	line "#mon only after"
-
-	para "our Master allows"
-	line "it."
+	cont "can use dragon"
+	cont "#mon only after"
+	cont "our Master allows"
+	cont "it."
 	done
 
 CooltrainerfFranSeenText:

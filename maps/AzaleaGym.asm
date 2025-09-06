@@ -75,10 +75,7 @@ AzaleaGymBugsyScript:
 	verbosegiveitem TM_FURY_CUTTER
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
-	writetext BugsyText_FuryCutterSpeech
-	waitbutton
-	closetext
-	end
+	writetextend BugsyText_FuryCutterSpeech
 
 .GotFuryCutter:
 	writetext BugsyText_BugMonsAreDeep
@@ -100,10 +97,7 @@ AzaleaGymBugsyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_BUGSY_REMATCH
 	opentext
-	writetext Bugsy16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Bugsy16AfterBattleText
 
 .BugsyScript_Rematch
 	checkflag ENGINE_DAILY_BUGSY_REMATCH
@@ -118,22 +112,13 @@ AzaleaGymBugsyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_BUGSY_REMATCH
 	opentext
-	writetext BugsyRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BugsyRematchAfterBattleText
 
 .skip_rematch
-	writetext BugsyComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend BugsyComeBackTomorrowText
 
 .EndRematch
-	writetext BugsyNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend BugsyNextTimeText
 
 AzaleaGymScyther:
 	opentext
@@ -163,83 +148,52 @@ TrainerTwinsAmyandmay1:
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext TwinsAmyandmay1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsAmyandmay1AfterBattleText
 
 TrainerTwinsAmyandmay2:
 	trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext TwinsAmyandmay2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsAmyandmay2AfterBattleText
 
 TrainerBugCatcherBenny:
 	trainer BUG_CATCHER, BUG_CATCHER_BENNY, EVENT_BEAT_BUG_CATCHER_BENNY, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext BugCatcherBennyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherBennyAfterBattleText
 
 TrainerBugCatcherAl:
 	trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext BugCatcherAlAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherAlAfterBattleText
 
 TrainerBugCatcherJosh:
 	trainer BUG_CATCHER, JOSH, EVENT_BEAT_BUG_CATCHER_JOSH, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext BugCatcherJoshAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherJoshAfterBattleText
 	
 TrainerBugManiacXander:
 	trainer BUG_MANIAC, XANDER, EVENT_BEAT_BUG_MANIAC_XANDER, BugManiacXanderSeenText, BugManiacXanderBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
-	opentext
-	writetext BugManiacXanderAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacXanderAfterBattleText
 
 AzaleaGymGuideScript:
 	faceplayer
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .AzaleaGymGuideWinScript
 	opentext
-	writetext AzaleaGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend AzaleaGymGuideText
 
 .AzaleaGymGuideWinScript:
-	opentext
-	writetext AzaleaGymGuideWinText
-	waitbutton
-	closetext
-	end
+	jumptext AzaleaGymGuideWinText
 
 AzaleaGymStatue:
 	checkflag ENGINE_HIVEBADGE

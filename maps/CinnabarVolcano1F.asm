@@ -22,8 +22,6 @@ CinnabarVolcano1FForcedToLeaveScene:
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp CINNABAR_ISLAND, 24, 14
-	end
-
 CinnabarVolcano1FNoopScene:
 	end
 

@@ -16,8 +16,6 @@ EcruteakPokecenter1F_MapScripts:
 
 EcruteakPokecenter1FMeetBillScene:
 	sdefer EcruteakPokcenter1FBillMeetsPlayer
-	end
-
 EcruteakPokecenter1FNoopScene:
 	end
 
@@ -104,16 +102,10 @@ EcruteakPokecenter1FTutor:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext EcruteakPokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakPokecenter1FTutorRefusalText
 	
 .NotEnough:
-	writetext EcruteakPokecenter1FTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakPokecenter1FTutorNotEnough
 
 .TeachMove:
 	writetext EcruteakPokecenter1FTutorPayment
@@ -121,10 +113,7 @@ EcruteakPokecenter1FTutor:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext EcruteakPokecenter1FTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend EcruteakPokecenter1FTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -191,16 +180,14 @@ EcruteakPokecenter1F_BillText2:
 	
 	para "You probably know"
 	line "them as the"
-	
-	para "Move Deleter and"
-	line "Move Relearner."
+	cont "Move Deleter and"
+	cont "Move Relearner."
 
 	para "Whenever I'm in"
 	line "Goldenrod to see"
 	cont "family, I make"
-	
-	para "sure to come to"
-	line "Ecruteak, too!"
+	cont "sure to come to"
+	cont "Ecruteak, too!"
 
 	para "Anyway, I should"
 	line "head back to"
@@ -217,9 +204,8 @@ EcruteakPokecenter1FTutorIntro:
 	para "For ¥4000,"
 	line "I can teach your"
 	cont "#mon a pretty"
-
-	para "useful move if"
-	line "you'd like."
+	cont "useful move if"
+	cont "you'd like."
 	done
 	
 EcruteakPokecenter1FAskYesNo:
@@ -230,9 +216,8 @@ EcruteakPokecenter1FAskYesNo:
 EcruteakPokecenter1FTutorRefusalText:
 	text "Come back here"
 	line "if you want to"
-	
-	para "teach your"
-	line "#mon a new"
+	cont "teach your"
+	cont "#mon a new"
 	cont "move!"
 	done
 
@@ -273,21 +258,19 @@ EcruteakPokecenter1FTutorMoveText:
 EcruteakPokecenter1FPokefanMText:
 	text "The way the Kimono"
 	line "Girls dance is"
-
-	para "marvelous. Just"
-	line "like the way they"
+	cont "marvelous. Just"
+	cont "like the way they"
 	cont "use their #mon."
 	done
 
 EcruteakPokecenter1FPokefanMTextMobile:
 	text "You must be hoping"
 	line "to battle more"
-
-	para "people, right?"
-	line "There's apparently"
-
-	para "some place where"
-	line "trainers gather."
+	cont "people, right?"
+	
+	para "There's apparently"
+	line "some place where"
+	cont "trainers gather."
 
 	para "Where, you ask?"
 

@@ -26,16 +26,10 @@ CherrygroveMartCooltrainerMScript:
 	opentext
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .PokeBallsInStock
-	writetext CherrygroveMartCooltrainerMText
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveMartCooltrainerMText
 
 .PokeBallsInStock:
-	writetext CherrygroveMartCooltrainerMText_PokeBallsInStock
-	waitbutton
-	closetext
-	end
+	writetextend CherrygroveMartCooltrainerMText_PokeBallsInStock
 
 CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
@@ -57,9 +51,8 @@ CherrygroveMartCooltrainerMText_PokeBallsInStock:
 CherrygroveMartYoungsterText:
 	text "When I was walking"
 	line "in the grass, a"
-
-	para "bug #mon poi-"
-	line "soned my #mon!"
+	cont "bug #mon poi-"
+	cont "soned my #mon!"
 
 	para "I just kept going"
 	line "and my #mon"

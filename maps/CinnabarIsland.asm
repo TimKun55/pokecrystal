@@ -16,10 +16,7 @@ CinnabarIslandBlue:
 	opentext
 	readvar VAR_BADGES
 	ifequal 15, .BlueBacktoGym
-	writetext CinnabarIslandBlueText
-	waitbutton
-	closetext	
-	end
+	writetextend CinnabarIslandBlueText
 	
 .BlueBacktoGym
 	writetext CinnabarIslandBlue2Text
@@ -41,9 +38,6 @@ CinnabarIslandSign:
 
 CinnabarIslandPokecenterSign:
 	jumpstd PokecenterSignScript
-
-CinnabarRecoveryLabSign:
-	jumptext CinnabarRecoveryLabSignText
 
 CinnabarIslandHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
@@ -130,11 +124,6 @@ CinnabarIslandSignText:
 	para "The Fiery Town of"
 	line "Burning Desire"
 	done
-
-CinnabarRecoveryLabSignText:
-	text "Cinnabar"
-	line "Recovery Lab"
-	done	
 
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler

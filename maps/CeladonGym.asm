@@ -57,10 +57,7 @@ CeladonGymErikaScript:
 	verbosegiveitem TM_GIGA_DRAIN
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 .GotGigaDrain:
-	writetext ErikaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaAfterBattleText
 	
 .ErikaScript_Rematch
 	checkflag ENGINE_DAILY_ERIKA_REMATCH
@@ -75,22 +72,13 @@ CeladonGymErikaScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_ERIKA_REMATCH
 	opentext
-	writetext ErikaRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaRematchAfterBattleText
 
 .skip_rematch
-	writetext ErikaComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaComeBackTomorrowText
 
 .EndRematch
-	writetext ErikaNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend ErikaNextTimeText
 	
 CeladonGymBellossom:
 	opentext
@@ -109,66 +97,42 @@ TrainerLassMichelle:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassMichelleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassMichelleAfterBattleText
 
 TrainerPicnickerTanya:
 	trainer PICNICKER, TANYA, EVENT_BEAT_PICNICKER_TANYA, PicnickerTanyaSeenText, PicnickerTanyaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerTanyaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerTanyaAfterBattleText
 
 TrainerBeautyJulia:
 	trainer BEAUTY, JULIA, EVENT_BEAT_BEAUTY_JULIA, BeautyJuliaSeenText, BeautyJuliaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyJuliaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyJuliaAfterBattleText
 
 TrainerTwinsJoAndZoe1:
 	trainer TWINS, JOANDZOE1, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe1SeenText, TwinsJoAndZoe1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsJoAndZoe1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsJoAndZoe1AfterBattleText
 
 TrainerTwinsJoAndZoe2:
 	trainer TWINS, JOANDZOE2, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe2SeenText, TwinsJoAndZoe2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsJoAndZoe2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsJoAndZoe2AfterBattleText
 
 TrainerLassSandy:
 	trainer LASS, SANDY, EVENT_BEAT_LASS_SANDY, LassSandySeenText, LassSandyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassSandyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassSandyAfterBattleText
 
 CeladonGymStatue:
 	checkflag ENGINE_RAINBOWBADGE
@@ -181,9 +145,8 @@ CeladonGymStatue:
 ErikaBeforeBattleText:
 	text "Erika: Hello…"
 	line "Lovely weather,"
-
-	para "isn't it?"
-	line "It's so pleasant…"
+	cont "isn't it?"
+	cont "It's so pleasant…"
 
 	para "…I'm afraid I may"
 	line "doze off…"
@@ -198,9 +161,8 @@ ErikaBeforeBattleText:
 
 	para "Oh. I'm sorry, I"
 	line "didn't realize"
-
-	para "that you wished to"
-	line "challenge me."
+	cont "that you wished to"
+	cont "challenge me."
 
 	para "Very well, but I"
 	line "shall not lose."
@@ -234,8 +196,7 @@ ErikaExplainTMText:
 
 	para "It is a wonderful"
 	line "move that drains"
-
-	para "half the damage it"
+	cont "half the damage it"
 	line "inflicts to heal"
 	cont "your #mon."
 
@@ -250,9 +211,8 @@ ErikaAfterBattleText:
 
 	para "But knowing that"
 	line "there are strong"
-
-	para "trainers spurs me"
-	line "to do better…"
+	cont "trainers spurs me"
+	cont "to do better…"
 	done
 	
 ErikaRematchIntroText:
@@ -318,9 +278,8 @@ PicnickerTanyaBeatenText:
 PicnickerTanyaAfterBattleText:
 	text "Oh, look at all"
 	line "your Badges. No"
-
-	para "wonder I couldn't"
-	line "win!"
+	cont "wonder I couldn't"
+	cont "win!"
 	done
 
 BeautyJuliaSeenText:
