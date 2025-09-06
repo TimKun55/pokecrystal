@@ -235,6 +235,7 @@ ScriptCommandTable:
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
+	dw Script_writetextend               ; ab
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -285,6 +286,17 @@ Script_memcallasm:
 	rst FarCall
 	ret
 
+Script_writetextend:
+	ld a, [wScriptBank]
+	ld [wScriptTextBank], a
+	call GetScriptByte
+	ld [wScriptTextAddr], a
+	call GetScriptByte
+	ld [wScriptTextAddr + 1], a
+	ld b, BANK(WriteTextWaitButtonClosetextEnd)
+	ld hl, WriteTextWaitButtonClosetextEnd
+	jp ScriptJump
+
 Script_jumptextfaceplayer:
 	ld a, [wScriptBank]
 	ld [wScriptTextBank], a
@@ -311,6 +323,7 @@ JumpTextFacePlayerScript:
 	faceplayer
 JumpTextScript:
 	opentext
+WriteTextWaitButtonClosetextEnd:
 	repeattext -1, -1
 	waitbutton
 	closetext

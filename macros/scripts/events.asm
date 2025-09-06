@@ -1069,4 +1069,10 @@ MACRO trainerpic
 	db \1 ; trainer
 ENDM
 
+	const writetextend_command ; $ab
+MACRO writetextend
+	db writetextend_command
+	dw \1 ; text_pointer
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value
