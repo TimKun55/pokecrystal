@@ -266,9 +266,6 @@ INCBIN "data/tilesets/lighthouse_attributes.bin"
 TilesetPlayersRoomAttr::
 INCBIN "data/tilesets/players_room_attributes.bin"
 
-TilesetPokeComCenterAttr::
-INCBIN "data/tilesets/pokecom_center_attributes.bin"
-
 TilesetBattleTowerInsideAttr::
 INCBIN "data/tilesets/battle_tower_inside_attributes.bin"
 

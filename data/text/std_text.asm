@@ -143,21 +143,6 @@ NursePokerusText:
 	line "Center."
 	done
 
-PokeComNursePokerusText:
-	text "Your #mon"
-	line "appear to be"
-
-	para "infected by tiny"
-	line "life forms."
-
-	para "Your #mon are"
-	line "healthy and seem"
-	cont "to be fine."
-
-	para "But we can't tell"
-	line "you anything more."
-	done
-
 DifficultBookshelfText:
 	text "It's full of"
 	line "difficult books."
