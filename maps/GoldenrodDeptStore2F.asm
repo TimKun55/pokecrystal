@@ -68,9 +68,8 @@ GoldenrodDeptStore2FCooltrainerFText:
 GoldenrodDeptStore2FGentlemanText:
 	text "This Dept.Store"
 	line "makes me realize"
-
-	para "that Goldenrod is"
-	line "a big city."
+	cont "that Goldenrod is"
+	cont "a big city."
 
 	para "The selection here"
 	line "is unmatched any-"

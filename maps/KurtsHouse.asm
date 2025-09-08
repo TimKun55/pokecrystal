@@ -118,10 +118,7 @@ Kurt1:
 	end
 
 .IMakeBallsFromApricorns:
-	writetext KurtsHouseKurtBallsFromApricornsText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseKurtBallsFromApricornsText
 
 .AskApricorn:
 	writetext KurtsHouseKurtAskYouHaveAnApricornText
@@ -177,10 +174,7 @@ Kurt1:
 	end
 
 .Cancel:
-	writetext KurtsHouseKurtThatsALetdownText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseKurtThatsALetdownText
 
 ._ThatTurnedOutGreat:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
@@ -279,10 +273,7 @@ Kurt1:
 	iffalse .NotMakingBalls
 	writetext KurtsHouseKurtImCheckingItNowText
 	waitbutton
-	writetext KurtsHouseKurtAhHaISeeText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseKurtAhHaISeeText
 
 .NotMakingBalls:
 	writetext KurtsHouseKurtThisBallStartedToShakeText
@@ -340,10 +331,7 @@ KurtScript_ImCheckingItNow:
 	writetext KurtsHouseKurtImCheckingItNowText
 	waitbutton
 	turnobject KURTSHOUSE_KURT2, UP
-	writetext KurtsHouseKurtAhHaISeeText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsHouseKurtAhHaISeeText
 
 KurtsGranddaughter1:
 	faceplayer
@@ -360,31 +348,19 @@ KurtsGranddaughter1:
 	checkevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET
 	iftrue .Lonely
 	opentext
-	writetext KurtsGranddaughterSlowpokeGoneText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsGranddaughterSlowpokeGoneText
 
 .SlowpokeBack:
 	opentext
-	writetext KurtsGranddaughterSlowpokeBackText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsGranddaughterSlowpokeBackText
 
 .Lonely:
 	opentext
-	writetext KurtsGranddaughterLonelyText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsGranddaughterLonelyText
 
 .Dad:
 	opentext
-	writetext KurtsGranddaughterDadText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsGranddaughterDadText
 
 KurtsGranddaughter2:
 	faceplayer
@@ -407,10 +383,7 @@ KurtsGranddaughter2Subscript:
 
 KurtsGranddaughterFunScript:
 	opentext
-	writetext KurtsGranddaughterFunText
-	waitbutton
-	closetext
-	end
+	writetextend KurtsGranddaughterFunText
 
 KurtsHouseSlowpoke:
 	opentext
@@ -470,15 +443,13 @@ KurtsHouseKurtMakingBallsMustWaitText:
 
 	para "Do you know Team"
 	line "Rocket? Ah, don't"
-
-	para "worry. I'll tell"
-	line "you anyhow."
+	cont "worry. I'll tell"
+	cont "you anyhow."
 
 	para "Team Rocket's an"
 	line "evil gang that"
-
-	para "uses #mon for"
-	line "their dirty work."
+	cont "uses #mon for"
+	cont "their dirty work."
 
 	para "They're supposed"
 	line "to have disbanded"
@@ -486,9 +457,8 @@ KurtsHouseKurtMakingBallsMustWaitText:
 
 	para "Anyway, they're at"
 	line "the Well, cutting"
-
-	para "off SlowpokeTails"
-	line "for sale!"
+	cont "off SlowpokeTails"
+	cont "for sale!"
 
 	para "So I'm going to"
 	line "go give them a"
@@ -510,9 +480,8 @@ KurtsHouseKurtHonoredToMakeBallsText:
 
 	para "I would be honored"
 	line "to make Balls for"
-
-	para "a trainer like"
-	line "you."
+	cont "a trainer like"
+	cont "you."
 
 	para "This is all I have"
 	line "now, but take it."
@@ -565,9 +534,8 @@ KurtsHouseKurtTurnedOutGreatText:
 KurtsHouseKurtGranddaughterHelpingWorkFasterText:
 	text "Kurt: Now that my"
 	line "granddaughter is"
-
-	para "helping me, I can"
-	line "work much faster."
+	cont "helping me, I can"
+	cont "work much faster."
 	done
 
 KurtsHouseKurtWhatIsThatText:
@@ -578,9 +546,8 @@ KurtsHouseKurtWhatIsThatText:
 
 	para "It looks a lot"
 	line "like a # Ball,"
-
-	para "but it appears to"
-	line "be something else."
+	cont "but it appears to"
+	cont "be something else."
 
 	para "Let me check it"
 	line "for you."
@@ -610,9 +577,8 @@ KurtsHouseKurtThisBallStartedToShakeText:
 KurtsGranddaughterSlowpokeGoneText:
 	text "The Slowpoke are"
 	line "gone… Were they"
-
-	para "taken away by bad"
-	line "people?"
+	cont "taken away by bad"
+	cont "people?"
 	done
 
 KurtsGranddaughterLonelyText:
@@ -623,9 +589,8 @@ KurtsGranddaughterLonelyText:
 KurtsGranddaughterSlowpokeBackText:
 	text "The Slowpoke my"
 	line "dad gave me came"
-
-	para "back! Its Tail is"
-	line "growing back too!"
+	cont "back! Its Tail is"
+	cont "growing back too!"
 	done
 
 KurtsGranddaughterDadText:

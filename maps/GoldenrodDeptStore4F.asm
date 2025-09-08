@@ -54,18 +54,17 @@ GoldenrodDeptStore4FBugCatcherText:
 GoldenrodDeptStore4FGameboyKidText:
 	text "Some #mon"
 	line "evolve only by"
-
-	para "having high"
-	line "friendship,"
+	cont "having high"
+	cont "friendship,"
 
 	para "using an evolution"
 	line "stone on them,"
 
 	para "or leveling up"
 	line "while holding a"
-
-	para "certain item!"
-	line "Pretty cool, hey?"
+	cont "certain item!"
+	
+	para "Pretty cool, hey?"
 
 	para "Your #dex shows"
 	line "how #mon really"

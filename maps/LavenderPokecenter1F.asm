@@ -27,24 +27,19 @@ LavenderPokecenter1FYoungsterScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext LavenderPokecenter1FYoungsterText
-	waitbutton
-	closetext
-	end
+	writetextend LavenderPokecenter1FYoungsterText
 
 .ReturnedMachinePart:
-	writetext LavenderPokecenter1FYoungsterText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend LavenderPokecenter1FYoungsterText_ReturnedMachinePart
 
 LavenderPokecenter1FGentlemanText:
 	text "To the north of"
 	line "Lavender is Rock"
+	cont "Tunnel."
 
-	para "Tunnel. Go through"
-	line "it to get to the"
-	cont "Power Plant."
+	para "Go through it to"
+	line "get to the Power"
+	cont "Plant."
 	done
 
 LavenderPokecenter1FTeacherText:
@@ -60,9 +55,8 @@ LavenderPokecenter1FTeacherText:
 LavenderPokecenter1FYoungsterText:
 	text "If the Power Plant"
 	line "isn't running, the"
-
-	para "Magnet Train won't"
-	line "run either…"
+	cont "Magnet Train won't"
+	cont "run either…"
 
 	para "It also means the"
 	line "Radio Station"
@@ -76,9 +70,8 @@ LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
 
 	para "He said they're"
 	line "back on the air"
-
-	para "because the Power"
-	line "Plant is running"
+	cont "because the Power"
+	cont "Plant is running"
 	cont "smoothly again."
 	done
 

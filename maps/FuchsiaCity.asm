@@ -130,27 +130,25 @@ FuchsiaCityAspearTree:
 FuchsiaCityBirdKeeperText:
 	text "One of the Elite"
 	line "Four used to be"
-
-	para "the Leader of"
-	line "Fuchsia's Gym."
+	cont "the Leader of"
+	cont "Fuchsia's Gym."
 	done
 
 FuchsiaCityPokefanMText:
 	text "Koga's daughter"
 	line "succeeded him as"
-
-	para "the Gym Leader"
-	line "after he joined"
+	cont "the Gym Leader"
+	cont "after he joined"
 	cont "the Elite Four."
 	done
 
 FuchsiaCityTeacherText:
 	text "The Safari Zone"
-	line "has reopened. It's"
-	cont "very good"
-
-	para "considering it's"
-	line "Fuchsia's main"
+	line "has reopened."
+	
+	para "It's very good"
+	line "considering it's"
+	cont "Fuchsia's main"
 	cont "attraction."
 	done
 	

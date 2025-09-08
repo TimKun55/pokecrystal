@@ -23,26 +23,23 @@ LavenderMartRockerScript:
 LavenderMartHikerText:
 	text "Repel is a neces-"
 	line "sity if you are"
-
-	para "going to explore a"
-	line "cave."
+	cont "going to explore a"
+	cont "cave."
 
 	para "Even though I like"
 	line "exploring, I still"
-
-	para "haven't made it to"
-	line "all the caves."
+	cont "haven't made it to"
+	cont "all the caves."
 	done
 
 LavenderMartRockerText:
 	text "I heard about a"
 	line "craftsman who"
-
-	para "makes custom Balls"
+	cont "makes custom Balls"
 	line "in the Johto town"
+	cont "of Azalea."
 
-	para "of Azalea. I wish"
-	line "I had some."
+	para "I wish I had some."
 	done
 
 LavenderMart_MapEvents:

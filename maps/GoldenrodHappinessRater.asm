@@ -22,40 +22,22 @@ GoldenrodHappinessRaterTeacherScript:
 	sjump .LooksMean
 
 .LovesYouALot:
-	writetext GoldenrodHappinessRatingText_LovesYouALot
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_LovesYouALot
 
 .ReallyTrustsYou:
-	writetext GoldenrodHappinessRatingText_ReallyTrustsYou
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_ReallyTrustsYou
 
 .SortOfHappy:
-	writetext GoldenrodHappinessRatingText_SortOfHappy
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_SortOfHappy
 
 .QuiteCute:
-	writetext GoldenrodHappinessRatingText_QuiteCute
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_QuiteCute
 
 .NotUsedToYou:
-	writetext GoldenrodHappinessRatingText_NotUsedToYou
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_NotUsedToYou
 
 .LooksMean:
-	writetext GoldenrodHappinessRatingText_LooksMean
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHappinessRatingText_LooksMean
 
 GoldenrodHappinessRaterPokefanMScript:
 	jumptextfaceplayer GoldenrodHappinessRaterPokefanMText
@@ -72,9 +54,8 @@ HappinessRatersHouseRadio:
 GoldenrodHappinessRaterTeacherText:
 	text "If you treat your"
 	line "#mon nicely,"
-
-	para "they will love you"
-	line "in return."
+	cont "they will love you"
+	cont "in return."
 
 	para "Oh? Let me see"
 	line "your @"
@@ -119,9 +100,8 @@ GoldenrodHappinessRatingText_LooksMean:
 GoldenrodHappinessRaterPokefanMText:
 	text "I keep losing in"
 	line "battles, and my"
-
-	para "#mon end up"
-	line "fainting…"
+	cont "#mon end up"
+	cont "fainting…"
 
 	para "Maybe that's why"
 	line "my #mon don't"

@@ -65,9 +65,8 @@ LavenderTownTeacherText:
 LavenderTownGrampsText:
 	text "People come from"
 	line "all over to pay"
-
-	para "their respects to"
-	line "the departed souls"
+	cont "their respects to"
+	cont "the departed souls"
 	cont "of #mon."
 	done
 
@@ -84,9 +83,8 @@ LavenderTownOfficerText:
 	text "I'm sorry, we're"
 	line "not letting anyone"
 	cont "through until the"
-	
-	para "incident at the"
-	line "Power Plant is"
+	cont "incident at the"
+	cont "Power Plant is"
 	cont "resolved."
 	done
 

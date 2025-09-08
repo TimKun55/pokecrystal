@@ -82,10 +82,7 @@ GoldenrodHomeDecoStore1Clerk1Script:
 	jump .Start
 	
 .Refused:
-	writetext GoldenrodHomeDecoStore1NextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore1NextTimeText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -171,10 +168,7 @@ GoldenrodHomeDecoStore1Clerk2Script:
 	jump .Start
 	
 .Refused:
-	writetext GoldenrodHomeDecoStore1NextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore1NextTimeText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -320,9 +314,8 @@ GoldenrodHomeDecoStore1TotodileDollText:
 GoldenrodHomeDecoStore1BugManiacText:
 	text "This store opened"
 	line "recently, but they"
-
-	para "don't have any"
-	line "Bug #mon Dolls."
+	cont "don't have any"
+	cont "Bug #mon Dolls."
 	done
 
 GoldenrodHomeDecoStore1PokefanfText:

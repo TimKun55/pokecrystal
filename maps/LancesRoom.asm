@@ -14,8 +14,6 @@ LancesRoom_MapScripts:
 
 LancesRoomLockDoorScene:
 	sdefer LancesRoomDoorLocksBehindYouScript
-	end
-
 LancesRoomNoopScene:
 	end
 
@@ -332,24 +330,21 @@ LanceBattleIntroText:
 
 	para "I knew that you,"
 	line "with your skills,"
-
-	para "would eventually"
-	line "reach me here."
+	cont "would eventually"
+	cont "reach me here."
 
 	para "There's no need"
 	line "for words now."
 
 	para "We will battle to"
 	line "determine who is"
-
-	para "the stronger of"
-	line "the two of us."
+	cont "the stronger of"
+	cont "the two of us."
 
 	para "As the most power-"
 	line "ful trainer and as"
-
-	para "the #mon League"
-	line "Champion…"
+	cont "the #mon League"
+	cont "Champion…"
 
 	para "I, Lance the drag-"
 	line "on master, accept"
@@ -368,9 +363,8 @@ LanceBattleWinText:
 
 	para "Happy that I"
 	line "witnessed the rise"
-
-	para "of a great new"
-	line "Champion!"
+	cont "of a great new"
+	cont "Champion!"
 	done
 
 LanceBattleAfterText:
@@ -382,15 +376,13 @@ LanceBattleAfterText:
 
 	para "Your #mon have"
 	line "responded to your"
-
-	para "strong and up-"
-	line "standing nature."
+	cont "strong and up-"
+	cont "standing nature."
 
 	para "As a trainer, you"
 	line "will continue to"
-
-	para "grow strong with"
-	line "your #mon."
+	cont "grow strong with"
+	cont "your #mon."
 	done
 
 LanceChampionBattleIntroText:
@@ -416,9 +408,8 @@ Lance16BadgesBattleIntroText:
 	
 	para "So, you've been"
 	line "around Kanto and"
-	
-	para "collected all"
-	line "their Badges, too?"
+	cont "collected all"
+	cont "their Badges, too?"
 	
 	para "You really are"
 	line "something else!"
@@ -470,18 +461,16 @@ LanceGrandChampFirstTime:
 	text "<PLAYER>, you've"
 	line "collected all the"
 	cont "Johto and Kanto"
-	
-	para "Badges, and you"
-	line "have defeated me,"
+	cont "Badges, and you"
+	cont "have defeated me,"
 	cont "the League"
 	cont "Champion."
 	
 	para "You have proven"
 	line "yourself over and"
 	cont "over, and it is my"
-	
-	para "pleasure to give"
-	line "you the title of"
+	cont "pleasure to give"
+	cont "you the title of"
 	cont "Grand Champion."
 	
 	para "Come on, let's"
@@ -520,18 +509,16 @@ LancesRoomOakCongratulationsText:
 
 	para "Your dedication,"
 	line "trust and love for"
-
-	para "your #mon made"
-	line "this happen."
+	cont "your #mon made"
+	cont "this happen."
 
 	para "Your #mon were"
 	line "outstanding too."
 
 	para "Because they be-"
 	line "lieved in you as a"
-
-	para "trainer, they per-"
-	line "severed."
+	cont "trainer, they per-"
+	cont "severed."
 
 	para "Congratulations,"
 	line "<PLAY_G>!"

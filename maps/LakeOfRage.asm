@@ -21,8 +21,6 @@ LakeOfRage_MapScripts:
 	callback MAPCALLBACK_OBJECTS, LakeOfRageWesleyCallback
 
 LakeOfRageNoop1Scene:
-	end
-
 LakeOfRageNoop2Scene:
 	end
 
@@ -63,11 +61,8 @@ LakeOfRageLanceScript:
 	end
 
 .RefusedToHelp:
-	writetext LakeOfRageLanceRefusedText
-	waitbutton
-	closetext
 	setevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE
-	end
+	writetextend LakeOfRageLanceRefusedText
 
 .AskAgainForHelp:
 	faceplayer
@@ -128,16 +123,10 @@ LakeOfRageGrampsScript:
 	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .ClearedRocketHideout
-	writetext LakeOfRageGrampsText
-	waitbutton
-	closetext
-	end
+	writetextend LakeOfRageGrampsText
 
 .ClearedRocketHideout:
-	writetext LakeOfRageGrampsText_ClearedRocketHideout
-	waitbutton
-	closetext
-	end
+	writetextend LakeOfRageGrampsText_ClearedRocketHideout
 
 LakeOfRageSuperNerdScript:
 	jumptextfaceplayer LakeOfRageSuperNerdText
@@ -168,44 +157,28 @@ TrainerFisherAndre:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherAndreAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherAndreAfterBattleText
 
 TrainerFisherRaymond:
 	trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherRaymondAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherRaymondAfterBattleText
 
 TrainerCooltrainermAaron:
 	trainer COOLTRAINERM, AARON, EVENT_BEAT_COOLTRAINERM_AARON, CooltrainermAaronSeenText, CooltrainermAaronBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermAaronAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermAaronAfterBattleText
 
 TrainerCooltrainerfLois:
 	trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfLoisAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfLoisAfterBattleText
 
 WesleyScript:
 	faceplayer
@@ -225,10 +198,7 @@ WesleyScript:
 	verbosegiveitem BLACKBELT_I
 	iffalse WesleyDoneScript
 	setevent EVENT_GOT_BLACKBELT_FROM_WESLEY
-	writetext WesleyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend WesleyGaveGiftText
 
 WesleyWednesdayScript:
 	writetext WesleyWednesdayText
@@ -238,10 +208,7 @@ WesleyDoneScript:
 	end
 
 WesleyNotWednesdayScript:
-	writetext WesleyNotWednesdayText
-	waitbutton
-	closetext
-	end
+	writetextend WesleyNotWednesdayText
 
 LakeOfRageElixer:
 	itemball ELIXER
@@ -291,9 +258,8 @@ LakeOfRageLanceIntroText:
 
 	para "I can tell that"
 	line "you're a trainer"
-
-	para "with considerable"
-	line "skill."
+	cont "with considerable"
+	cont "skill."
 
 	para "If you don't mind,"
 	line "could you help me"
@@ -305,15 +271,13 @@ LakeOfRageLanceRadioSignalText:
 
 	para "It seems that the"
 	line "Lake's Magikarp"
-
-	para "are being forced"
-	line "to evolve."
+	cont "are being forced"
+	cont "to evolve."
 
 	para "A mysterious radio"
 	line "broadcast coming"
-
-	para "from Mahogany is"
-	line "the cause."
+	cont "from Mahogany is"
+	cont "the cause."
 
 	para "I'll be waiting"
 	line "for you, <PLAY_G>."
@@ -358,17 +322,15 @@ LakeOfRageSuperNerdText:
 
 	para "I wonder if there"
 	line "is any connection"
-
-	para "to their mass out-"
-	line "break now?"
+	cont "to their mass out-"
+	cont "break now?"
 	done
 
 LakeOfRageCooltrainerFText:
 	text "Did my eyes de-"
 	line "ceive me? I saw a"
-
-	para "red Gyarados in"
-	line "the Lake…"
+	cont "red Gyarados in"
+	cont "the Lake…"
 
 	para "But I thought"
 	line "Gyarados were"
@@ -384,9 +346,8 @@ FisherAndreSeenText:
 FisherAndreBeatenText:
 	text "I might be an ex-"
 	line "pert angler, but"
-
-	para "I stink as a #-"
-	line "mon trainer…"
+	cont "I stink as a #-"
+	cont "mon trainer…"
 	done
 
 FisherAndreAfterBattleText:
@@ -398,9 +359,8 @@ FisherAndreAfterBattleText:
 FisherRaymondSeenText:
 	text "No matter what I"
 	line "do, all I catch"
-
-	para "are the same #-"
-	line "mon…"
+	cont "are the same #-"
+	cont "mon…"
 	done
 
 FisherRaymondBeatenText:
@@ -416,9 +376,8 @@ FisherRaymondAfterBattleText:
 CooltrainermAaronSeenText:
 	text "If a trainer spots"
 	line "another trainer,"
-
-	para "he has to make a"
-	line "challenge."
+	cont "he has to make a"
+	cont "challenge."
 
 	para "That is our"
 	line "destiny."
@@ -432,9 +391,8 @@ CooltrainermAaronBeatenText:
 CooltrainermAaronAfterBattleText:
 	text "#mon and their"
 	line "trainer become"
-
-	para "powerful through"
-	line "constant battling."
+	cont "powerful through"
+	cont "constant battling."
 	done
 
 CooltrainerfLoisSeenText:
@@ -466,9 +424,8 @@ MeetWesleyText:
 
 	para "Seeing as how it's"
 	line "Wednesday today,"
-
-	para "I'm Wesley of"
-	line "Wednesday."
+	cont "I'm Wesley of"
+	cont "Wednesday."
 	done
 
 WesleyGivesGiftText:
@@ -486,9 +443,8 @@ WesleyGaveGiftText:
 WesleyWednesdayText:
 	text "Wesley: Since you"
 	line "found me, you must"
-
-	para "have met my broth-"
-	line "ers and sisters."
+	cont "have met my broth-"
+	cont "ers and sisters."
 
 	para "Or did you just"
 	line "get lucky?"

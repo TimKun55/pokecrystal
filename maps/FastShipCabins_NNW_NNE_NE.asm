@@ -17,66 +17,42 @@ TrainerCooltrainermSean:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermSeanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermSeanAfterBattleText
 
 TrainerCooltrainerfCarol:
 	trainer COOLTRAINERF, CAROL, EVENT_BEAT_COOLTRAINERF_CAROL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfCarolAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfCarolAfterBattleText
 
 TrainerPokemaniacTravis:
 	trainer POKEMANIAC, TRAVIS, EVENT_BEAT_POKEMANIAC_TRAVIS, PokemaniacTravisSeenText, PokemaniacTravisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacTravisAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacTravisAfterBattleText
 
 TrainerHikerNoland:
 	trainer HIKER, NOLAND, EVENT_BEAT_HIKER_NOLAND, HikerNolandSeenText, HikerNolandBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerNolandAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerNolandAfterBattleText
 
 TrainerGentlemanEdward:
 	trainer GENTLEMAN, EDWARD, EVENT_BEAT_GENTLEMAN_EDWARD, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GentlemanEdwardAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GentlemanEdwardAfterBattleText
 
 TrainerBurglarCorey:
 	trainer BURGLAR, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BurglarCoreyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BurglarCoreyAfterBattleText
 
 FastShipLazySailorScript:
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -147,9 +123,8 @@ CooltrainermSeanBeatenText:
 CooltrainermSeanAfterBattleText:
 	text "Trainers from"
 	line "Johto can battle"
-
-	para "with Kanto Gym"
-	line "Leaders."
+	cont "with Kanto Gym"
+	cont "Leaders."
 	done
 
 CooltrainerfCarolSeenText:
@@ -199,9 +174,8 @@ HikerNolandBeatenText:
 HikerNolandAfterBattleText:
 	text "I wonder if there"
 	line "are any mountains"
-
-	para "worth climbing in"
-	line "Kanto?"
+	cont "worth climbing in"
+	cont "Kanto?"
 	done
 
 SailorStanlySeenText:
@@ -245,9 +219,8 @@ GentlemanEdwardBeatenText:
 GentlemanEdwardAfterBattleText:
 	text "I give up."
 	line "You don't have to"
-
-	para "look. Just forget"
-	line "about it!"
+	cont "look. Just forget"
+	cont "about it!"
 	done
 
 BurglarCoreySeenText:
@@ -279,9 +252,6 @@ FastShipCabins_NNW_NNE_NE_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7, -6, BGEVENT_READ, FastShipBed
-	bg_event  7, -6, BGEVENT_READ, FastShipBed
-	bg_event  7, -5, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 	bg_event  6, 13, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 	bg_event  7,  7, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan
 	bg_event  7, 31, BGEVENT_READ, FastShipCabins_NNW_NNE_NETrashcan

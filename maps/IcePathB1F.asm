@@ -46,10 +46,7 @@ IcePathB1FSetUpStoneTableCallback:
 	pause 30
 	scall .BoulderFallsThrough
 	opentext
-	writetext IcePathBoulderFellThroughText
-	waitbutton
-	closetext
-	end
+	writetextend IcePathBoulderFellThroughText
 
 .BoulderFallsThrough:
 	playsound SFX_STRENGTH

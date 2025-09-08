@@ -174,44 +174,28 @@ TrainerSupernerdEric:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdEricAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdEricAfterBattleText
 
 TrainerSupernerdTeru:
 	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdTeruAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdTeruAfterBattleText
 
 TrainerPokemaniacIssac:
 	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacIssacAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacIssacAfterBattleText
 
 TrainerPokemaniacDonald:
 	trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacDonaldAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacDonaldAfterBattleText
 
 BitterMerchantScript:
 	opentext
@@ -307,22 +291,13 @@ OlderHaircutBrotherScript:
 	sjump EitherHaircutBrotherScript_MuchHappier
 
 .Refused:
-	writetext GoldenrodUndergroundOlderHaircutBrotherThatsAShameText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundOlderHaircutBrotherThatsAShameText
 
 .NotEnoughMoney:
-	writetext GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText
 
 .AlreadyGotHaircut:
-	writetext GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText
 
 YoungerHaircutBrotherScript:
 	opentext
@@ -391,22 +366,13 @@ YoungerHaircutBrotherScript:
 	sjump EitherHaircutBrotherScript_MuchHappier
 
 .Refused:
-	writetext GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText
 
 .NotEnoughMoney:
-	writetext GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText
 
 .AlreadyGotHaircut:
-	writetext GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText
 
 EitherHaircutBrotherScript_SlightlyHappier:
 	writetext HaircutBrosText_SlightlyHappier
@@ -435,10 +401,7 @@ BasementDoorScript::
 	iftrue .Open
 	checkitem BASEMENT_KEY
 	iftrue .Unlock
-	writetext GoldenrodUndergroundTheDoorsLockedText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundTheDoorsLockedText
 
 .Unlock:
 	playsound SFX_TRANSACTION
@@ -452,16 +415,10 @@ BasementDoorScript::
 	end
 
 .Open:
-	writetext GoldenrodUndergroundTheDoorIsOpenText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundTheDoorIsOpenText
 
 GoldenrodUndergroundScript_ShopClosed:
-	writetext GoldenrodUndergroundWeAreNotOpenTodayText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodUndergroundWeAreNotOpenTodayText
 
 June:
 	faceplayer
@@ -513,9 +470,8 @@ SupernerdTeruSeenText:
 
 	para "If you know your"
 	line "type advantages,"
-
-	para "you'll do better"
-	line "in battle."
+	cont "you'll do better"
+	cont "in battle."
 	done
 
 SupernerdTeruBeatenText:
@@ -545,9 +501,8 @@ PokemaniacIssacBeatenText:
 PokemaniacIssacAfterBattleText:
 	text "Your #mon will"
 	line "like you more if"
-
-	para "you give them"
-	line "haircuts."
+	cont "you give them"
+	cont "haircuts."
 	done
 
 PokemaniacDonaldSeenText:

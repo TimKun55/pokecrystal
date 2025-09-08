@@ -68,10 +68,7 @@ FlowerShopTeacherScript:
 .Lalala:
 	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
 	opentext
-	writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText
 
 .GotSquirtbottle:
 	jumptextfaceplayer GoldenrodFlowerShopTeacherDontDoAnythingDangerousText
@@ -113,28 +110,16 @@ FlowerShopTeacherScript:
 	special PlaceMoneyTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
-	writetext BoughtMulchText
-	waitbutton
-	closetext
-	end
+	writetextend BoughtMulchText
 
 .NotEnoughMoney:
-	writetext NotEnoughMulchMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend NotEnoughMulchMoneyText
 
 .Refused:
-	writetext DontBuyMulchText
-	waitbutton
-	closetext
-	end
+	writetextend DontBuyMulchText
 
 .NoRoomForMulch:
-	writetext NoRoomForMulchText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForMulchText
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -165,24 +150,15 @@ FlowerShopFloriaScript:
 	end
 
 .GotSquirtbottle:
-	writetext GoldenrodFlowerShopFloriaYouBeatWhitneyText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodFlowerShopFloriaYouBeatWhitneyText
 
 .FoughtSudowoodo:
 	checkitem MULCH
 	iftrue .MulchDescription
-	writetext GoldenrodFlowerShopFloriaItReallyWasAMonText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodFlowerShopFloriaItReallyWasAMonText
 
 .MulchDescription:
-	writetext DescribeMulchText
-	waitbutton
-	closetext
-	end
+	writetextend DescribeMulchText
 
 FlowerShopBellossomScript:
 	opentext
@@ -200,16 +176,10 @@ FlowerShopDoor:
 	opentext
 	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	iffalse .LockedDoor
-	writetext OpenDoorText
-	waitbutton
-	closetext
-	end
+	writetextend OpenDoorText
 
 .LockedDoor:
-	writetext LockedDoorText
-	waitbutton
-	closetext
-	end
+	writetextend LockedDoorText
 
 FlowerShopPlayerMovement:
 	step DOWN
@@ -245,15 +215,13 @@ FlowerShopTeacherMovementLast:
 GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 	text "Have you seen that"
 	line "wiggly tree that's"
-
-	para "growing on Route"
-	line "36?"
+	cont "growing on Route"
+	cont "36?"
 
 	para "My little sister"
 	line "got all excited"
-
-	para "and went to see"
-	line "it…"
+	cont "and went to see"
+	cont "it…"
 
 	para "I'm worried… Isn't"
 	line "it dangerous?"
@@ -262,12 +230,11 @@ GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText:
 	text "Do you want to"
 	line "borrow the water"
-
-	para "bottle too?"
-	line "I don't want you"
-
-	para "doing anything"
-	line "dangerous with it."
+	cont "bottle too?"
+	
+	para "I don't want you"
+	line "doing anything"
+	cont "dangerous with it."
 	done
 
 GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
@@ -287,15 +254,13 @@ GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 FlowerShopHiddenGardenText:
 	text "You're such a"
 	line "helpful young"
-	
-	para "person, I'd like"
-	line "to reward you."
+	cont "person, I'd like"
+	cont "to reward you."
 	
 	para "I grow some very"
 	line "rare Berries in"
-	
-	para "my garden, feel"
-	line "free to pick them"
+	cont "my garden, feel"
+	cont "free to pick them"
 	cont "when you want!"
 	
 	para "I'll unlock the"
@@ -347,26 +312,22 @@ NoRoomForMulchText:
 DescribeMulchText:
 	text "Our Mulch is a"
 	line "mix of high-"
-
-	para "quality soil and"
-	line "#mon's … er…"
-
-	para "you know. It's"
-	line "full of nutrients!"
+	cont "quality soil and"
+	cont "#mon's … er…"
+	cont "you know. It's"
+	cont "full of nutrients!"
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
 	text "When I told my sis"
 	line "about the jiggly"
-
-	para "tree, she told me"
-	line "it's dangerous."
+	cont "tree, she told me"
+	cont "it's dangerous."
 
 	para "If I beat Whitney,"
 	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
+	cont "lend me her water"
+	cont "bottle…"
 	done
 
 GoldenrodFlowerShopFloriaYouBeatWhitneyText:

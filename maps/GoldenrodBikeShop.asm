@@ -32,22 +32,13 @@ GoldenrodBikeShopClerkScript:
 	setflag ENGINE_BIKE_SHOP_CALL_ENABLED
 	setevent EVENT_GOT_BICYCLE
 .GotBicycle:
-	writetext GoldenrodBikeShopClerkFirstRateBikesText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodBikeShopClerkFirstRateBikesText
 
 .SoBusy
-	writetext GoldenrodBikeShopClerkSoBusyText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodBikeShopClerkSoBusyText
 
 .Refused:
-	writetext GoldenrodBikeShopClerkRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodBikeShopClerkRefusedText
 
 GoldenrodBikeShopYoungsterScript:
 	jumptextfaceplayer GoldenrodBikeShopYoungsterText
@@ -70,9 +61,9 @@ GoldenrodBikeShopBicycle:
 GoldenrodBikeShopClerkIntroText:
 	text "…sigh… I moved"
 	line "here, but I can't"
-
-	para "sell my Bicycles."
-	line "Why is that?"
+	cont "sell my Bicycles."
+	
+	para "Why is that?"
 
 	para "Could you ride a"
 	line "Bicycle and adver-"
@@ -84,9 +75,8 @@ GoldenrodBikeShopClerkAgreedText:
 
 	para "Give me your name"
 	line "and phone number,"
-
-	para "and I'll loan you"
-	line "a Bicycle."
+	cont "and I'll loan you"
+	cont "a Bicycle."
 	done
 
 BorrowedABicycleText:
@@ -97,9 +87,8 @@ BorrowedABicycleText:
 GoldenrodBikeShopClerkFirstRateBikesText:
 	text "My Bicycles are"
 	line "first-rate! You"
-
-	para "can ride them"
-	line "anywhere."
+	cont "can ride them"
+	cont "anywhere."
 	done
 
 GoldenrodBikeShopClerkSoBusyText:
@@ -110,9 +99,8 @@ GoldenrodBikeShopClerkSoBusyText:
 	
 	para "This is all thanks"
 	line "to you - we've"
-	
-	para "been selling so"
-	line "many bikes."
+	cont "been selling so"
+	cont "many bikes."
 	
 	para "Thank you so much!"
 	done
@@ -161,9 +149,8 @@ GoldenrodBikeShopRockerText:
 GoldenrodBikeShopTeacherText:
 	text "I needed to get my"
 	line "kid a new bike"
-	
-	para "and this place is"
-	line "just perfect."
+	cont "and this place is"
+	cont "just perfect."
 	done
 
 GoldenrodBikeShopBicycleText:

@@ -20,18 +20,17 @@ HallOfFameEnterScript:
 	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
 	stopfollow
 	turnobject PLAYER, RIGHT
+	opentext
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .FirstTimeChampion
 	readvar VAR_BADGES
 	ifequal 16, .GrandChampionHoF
-	opentext
 	writetext HallOfFame_LanceRegisterText
 	waitbutton
 	closetext
 	sjump .ContinueHoF
 
 .GrandChampionHoF
-	opentext
 	writetext HallOfFame_LanceGrandChampionText
 	waitbutton
 	closetext
@@ -43,7 +42,6 @@ HallOfFameEnterScript:
 	sjump .ContinueHoF
 	
 .FirstTimeChampion
-	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
@@ -103,42 +101,35 @@ HallOfFame_LanceText:
 
 	para "Here today, we"
 	line "witnessed the rise"
-
-	para "of a new League"
-	line "Champion--a"
-
-	para "trainer who feels"
-	line "compassion for,"
-
-	para "and trust toward,"
-	line "all #mon."
+	cont "of a new League"
+	cont "Champion--a"
+	cont "trainer who feels"
+	cont "compassion for,"
+	cont "and trust toward,"
+	cont "all #mon."
 
 	para "A trainer who"
 	line "succeeded through"
-
-	para "perseverance and"
-	line "determination."
+	cont "perseverance and"
+	cont "determination."
 
 	para "The new League"
 	line "Champion who has"
-
-	para "all the makings"
-	line "of greatness!"
+	cont "all the makings"
+	cont "of greatness!"
 
 	para "<PLAY_G>, allow me"
 	line "to register you"
-
-	para "and your partners"
-	line "as Champions!"
+	cont "and your partners"
+	cont "as Champions!"
 	done
 
 HallOfFame_LanceRegisterText:
 	text "As you know,"
 	line "this is where we"
 	cont "honor the League"
-
-	para "Champions for all"
-	line "eternity."
+	cont "Champions for all"
+	cont "eternity."
 
 	para "Their courageous"
 	line "#mon are also"
@@ -146,9 +137,8 @@ HallOfFame_LanceRegisterText:
 
 	para "<PLAY_G>, allow me"
 	line "to register you"
-
-	para "and your partners"
-	line "as Champions!"
+	cont "and your partners"
+	cont "as Champions!"
 	done
 
 HallOfFame_LanceGrandChampionText:
@@ -158,9 +148,8 @@ HallOfFame_LanceGrandChampionText:
 	para "As you know,"
 	line "this is where we"
 	cont "honor the League"
-
-	para "Champions for all"
-	line "eternity."
+	cont "Champions for all"
+	cont "eternity."
 
 	para "Their courageous"
 	line "#mon are also"
@@ -168,9 +157,8 @@ HallOfFame_LanceGrandChampionText:
 	
 	para "It is with great"
 	line "pride that I"
-	
-	para "register you and"
-	line "your partners as"
+	cont "register you and"
+	cont "your partners as"
 	cont "Grand Champions!"
 	
 	para "Congratulations!"

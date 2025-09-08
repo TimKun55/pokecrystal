@@ -20,22 +20,13 @@ GoldenrodMagnetTrainStationOfficerScript:
 	iftrue .MagnetTrainToSaffron
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .TrainHasntComeIn
-	writetext GoldenrodMagnetTrainStationOfficerNoPassText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerNoPassText
 
 .RocketTakeover:
-	writetext GoldenrodMagnetTrainStationOfficerRocketTakeoverText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerRocketTakeoverText
 
 .TrainHasntComeIn:
-	writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
 
 .MagnetTrainToSaffron:
 	writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText
@@ -61,26 +52,17 @@ GoldenrodMagnetTrainStationOfficerScript:
 	step_end
 
 .NoPass:
-	writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
 
 .DecidedNotToRide:
-	writetext GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText
 
 Script_ArriveFromSaffron:
 	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerArriveFromSaffronDoorMovement
 	applymovement PLAYER, GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement
 	applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerReturnToBoardingGateArriveMovement
 	opentext
-	writetext GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText
 	
 GoldenrodMagnetTrainStationVendingMachine:
 	jumpstd VendingMachineScript
@@ -212,9 +194,8 @@ GoldenrodMagnetTrainStationGentlemanText:
 
 	para "My dream was to"
 	line "build a train that"
-
-	para "is faster than any"
-	line "#mon."
+	cont "is faster than any"
+	cont "#mon."
 
 	para "It really brings"
 	line "Johto much closer"

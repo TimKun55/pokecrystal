@@ -53,10 +53,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	end
 
 .SomewhatHappy:
-	writetext GoldenrodDeptStore5FReceptionistItsAdorableText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodDeptStore5FReceptionistItsAdorableText
 
 .NotVeryHappy:
 	writetext GoldenrodDeptStore5FReceptionistItLooksEvilText
@@ -65,17 +62,10 @@ GoldenrodDeptStore5FReceptionistScript:
 	end
 	
 .AlreadyGotTM:
-	writetext GoldenrodDeptStore5FAlreadyGotTMText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodDeptStore5FAlreadyGotTMText
 
 .EventIsOver:
-	writetext GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText
-	waitbutton
-.Done:
-	closetext
-	end
+	writetextend GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText
 
 GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText
@@ -128,9 +118,8 @@ GoldenrodDeptStore5FReceptionistItLooksEvilText:
 GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText:
 	text "There are sure to"
 	line "be TMs that are"
-
-	para "just perfect for"
-	line "your #mon."
+	cont "just perfect for"
+	cont "your #mon."
 	done
 	
 GoldenrodDeptStore5FAlreadyGotTMText:
@@ -168,9 +157,8 @@ GoldenrodDeptStore5FPokefanMText:
 
 	para "The name is a re-"
 	line "flection of the"
-
-	para "original trainer's"
-	line "feelings for it."
+	cont "original trainer's"
+	cont "feelings for it."
 	done
 
 GoldenrodDeptStore5FDirectoryText:

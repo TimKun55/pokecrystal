@@ -23,9 +23,8 @@ FuchsiaMartCooltrainerFScript:
 FuchsiaMartFisherText:
 	text "I was hoping to"
 	line "buy some Safari"
-
-	para "Zone souvenirs,"
-	line "but they don't"
+	cont "Zone souvenirs,"
+	cont "but they don't"
 	cont "have any…"
 	done
 

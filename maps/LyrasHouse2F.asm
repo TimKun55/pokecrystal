@@ -40,9 +40,8 @@ LyrasHouseLyraText:
 
 	para "Hmm… My #mon"
 	line "may be putting"
-
-	para "on some weight"
-	line "lately…"
+	cont "on some weight"
+	cont "lately…"
 	done
 
 LyrasHousePidgeotText:

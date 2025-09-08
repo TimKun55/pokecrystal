@@ -17,24 +17,15 @@ MagikarpLengthRaterScript:
 	iftrue .ClearedRocketHideout
 	checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
 	iftrue .ExplainedHistory
-	writetext MagikarpLengthRaterText_LakeOfRageHistory
-	waitbutton
-	closetext
 	setevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
-	end
+	writetextend MagikarpLengthRaterText_LakeOfRageHistory
 
 .ExplainedHistory:
-	writetext MagikarpLengthRaterText_MenInBlack
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_MenInBlack
 
 .ClearedRocketHideout:
-	writetext MagikarpLengthRaterText_WorldsLargestMagikarp
-	waitbutton
-	closetext
 	setevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP
-	end
+	writetextend MagikarpLengthRaterText_WorldsLargestMagikarp
 
 .AskedForMagikarp:
 	setval MAGIKARP
@@ -54,11 +45,8 @@ MagikarpLengthRaterScript:
 	promptbutton
 	verbosegiveitem ELIXER
 	iffalse .NoRoom
-	writetext MagikarpLengthRaterText_Bonus
-	waitbutton
-	closetext
-	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
-	end
+	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY	
+	writetextend MagikarpLengthRaterText_Bonus
 
 .NoRoom:
 	closetext
@@ -66,22 +54,13 @@ MagikarpLengthRaterScript:
 	end
 
 .TooShort:
-	writetext MagikarpLengthRaterText_TooShort
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_TooShort
 
 .NotMagikarp:
-	writetext MagikarpLengthRaterText_NotMagikarp
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_NotMagikarp
 
 .Refused:
-	writetext MagikarpLengthRaterText_Refused
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpLengthRaterText_Refused
 
 MagikarpHouseBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -89,27 +68,23 @@ MagikarpHouseBookshelf:
 MagikarpLengthRaterText_LakeOfRageHistory:
 	text "Lake Of Rage is"
 	line "actually a crater"
-
-	para "made by rampaging"
-	line "Gyarados."
+	cont "made by rampaging"
+	cont "Gyarados."
 
 	para "The crater filled"
 	line "up with rainwater"
-
-	para "and the Lake was"
-	line "formed."
+	cont "and the Lake was"
+	cont "formed."
 
 	para "That's the story"
 	line "passed on from my"
-
-	para "Grandpa's great-"
-	line "great-grandpa."
+	cont "Grandpa's great-"
+	cont "great-grandpa."
 
 	para "It used to be that"
 	line "you could catch"
-
-	para "lively Magikarp"
-	line "there, but…"
+	cont "lively Magikarp"
+	cont "there, but…"
 
 	para "I don't understand"
 	line "what's happening."
@@ -118,9 +93,8 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 MagikarpLengthRaterText_MenInBlack:
 	text "The Lake hasn't"
 	line "been normal since"
-
-	para "those men wearing"
-	line "black arrived."
+	cont "those men wearing"
+	cont "black arrived."
 	done
 
 MagikarpLengthRaterText_WorldsLargestMagikarp:
@@ -142,10 +116,10 @@ MagikarpLengthRaterText_WorldsLargestMagikarp:
 
 MagikarpLengthRaterText_YouHaveAMagikarp:
 	text "Ah, you have a"
-	line "Magikarp! Let's"
+	line "Magikarp!"
 
-	para "see how big that"
-	line "baby is."
+	para "Let's see how big"
+	line "that baby is."
 	done
 
 MagikarpLengthRaterText_Memento:
@@ -173,9 +147,8 @@ MagikarpLengthRaterText_TooShort:
 
 	para "…I wish I could"
 	line "say that, but I've"
-
-	para "seen a bigger one"
-	line "before."
+	cont "seen a bigger one"
+	cont "before."
 	done
 
 MagikarpLengthRaterText_NotMagikarp:
@@ -186,9 +159,8 @@ MagikarpLengthRaterText_NotMagikarp:
 MagikarpLengthRaterText_Refused:
 	text "Oh… So you didn't"
 	line "get one good"
-
-	para "enough to show me?"
-	line "Maybe next time."
+	cont "enough to show me?"
+	cont "Maybe next time."
 	done
 
 LakeOfRageMagikarpHouseUnusedRecordText:

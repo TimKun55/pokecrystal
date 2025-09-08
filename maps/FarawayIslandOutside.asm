@@ -15,14 +15,8 @@ FarawayIslandOutside_MapScripts:
 	callback MAPCALLBACK_OBJECTS, FarawayIslandOutsideScientistCallback
 
 FarawayIslandOutsideNoop1Scene:
-	end
-
 FarawayIslandOutsideNoop2Scene:
-	end
-
 FarawayIslandOutsideNoop3Scene:
-	end
-
 FarawayIslandOutsideNoop4Scene:
 	end
 
@@ -111,10 +105,7 @@ FarawayIslandSailorScript:
 	end
 
 .LetMeKnow:
-	writetext WhenToLeaveText
-	waitbutton
-	closetext
-	end
+	writetextend WhenToLeaveText
 
 FarawayIslandSign:
 	opentext
@@ -125,10 +116,7 @@ FarawayIslandSign:
 	appear FARAWAYISLANDOUTSIDE_SCIENTIST2
 	setscene SCENE_FARAWAYISLANDOUTSIDE_CHASE_MEW1
 .DontSetEvent
-	writetext FarawayIslandSignText
-	waitbutton
-	closetext
-	end
+	writetextend FarawayIslandSignText
 
 PlayerSlowStepUpMovement:
 	slow_step UP

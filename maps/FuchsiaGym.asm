@@ -76,10 +76,7 @@ FuchsiaGymJanineScript:
 	iffalse .AfterTM
 	setevent EVENT_GOT_TM06_TOXIC
 .AfterTM:
-	writetext JanineText_ApplyMyself
-	waitbutton
-	closetext
-	end
+	writetextend JanineText_ApplyMyself
 
 .MoveForWeezing
 	applymovement PLAYER, PlayerMoveForWeezing
@@ -99,22 +96,13 @@ FuchsiaGymJanineScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_JANINE_REMATCH
 	opentext
-	writetext JanineRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend JanineRematchAfterBattleText
 
 .skip_rematch
-	writetext JanineComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend JanineComeBackTomorrowText
 
 .EndRematch
-	writetext JanineNextTimeText
-	waitbutton
-	closetext
-	end	
+	writetextend JanineNextTimeText
 	
 FuchsiaGymWeezing:
 	opentext
@@ -157,10 +145,7 @@ LassAliceScript:
 	end
 
 .AliceAfterScript:
-	writetext LassAliceAfterText
-	waitbutton
-	closetext
-	end
+	writetextend LassAliceAfterText
 
 LassLindaScript:
 	checkevent EVENT_BEAT_LASS_LINDA
@@ -191,10 +176,7 @@ LassLindaScript:
 	end
 
 .LindaAfterScript:
-	writetext LassLindaAfterText
-	waitbutton
-	closetext
-	end
+	writetextend LassLindaAfterText
 
 PicnickerCindyScript:
 	checkevent EVENT_BEAT_PICNICKER_CINDY
@@ -225,10 +207,7 @@ PicnickerCindyScript:
 	end
 
 .CindyAfterScript:
-	writetext PicnickerCindyAfterText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerCindyAfterText
 
 CamperBarryScript:
 	checkevent EVENT_BEAT_CAMPER_BARRY
@@ -259,26 +238,17 @@ CamperBarryScript:
 	end
 
 .BarryAfterScript:
-	writetext CamperBarryAfterText
-	waitbutton
-	closetext
-	end
+	writetextend CamperBarryAfterText
 
 FuchsiaGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_JANINE
 	iftrue .FuchsiaGymGuideWinScript
-	writetext FuchsiaGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymGuideText
 
 .FuchsiaGymGuideWinScript:
-	writetext FuchsiaGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend FuchsiaGymGuideWinText
 
 FuchsiaGymStatue:
 	checkflag ENGINE_SOULBADGE
@@ -346,17 +316,15 @@ JanineText_ToxicSpeech:
 
 	para "It's Toxic, a pow-"
 	line "erful poison that"
-
-	para "steadily saps the"
-	line "victim's HP."
+	cont "steadily saps the"
+	cont "victim's HP."
 	done
 
 JanineText_ApplyMyself:
 	text "Janine: I'm going"
 	line "to really apply"
-
-	para "myself and improve"
-	line "my skills."
+	cont "myself and improve"
+	cont "my skills."
 
 	para "I want to become"
 	line "better than both"
@@ -380,9 +348,8 @@ JanineWinLossRematchText:
 JanineRematchAfterBattleText:
 	text "I'm going to keep"
 	line "training so I can"
-	
-	para "surpass both you"
-	line "and my father!"
+	cont "surpass both you"
+	cont "and my father!"
 	
 	para "Come back for"
 	line "a rematch"

@@ -7,12 +7,8 @@
 
 FuchsiaPokecenter1F_MapScripts:
 	def_scene_scripts
-	scene_script FuchsiaPokeCenter1FNoopScene ; unusable
 
 	def_callbacks
-
-FuchsiaPokeCenter1FNoopScene:
-	end
 
 FuchsiaPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript

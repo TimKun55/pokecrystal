@@ -12,8 +12,6 @@ KarensRoom_MapScripts:
 
 KarensRoomLockDoorScene:
 	sdefer KarensRoomDoorLocksBehindYouScript
-	end
-
 KarensRoomNoopScene:
 	end
 
@@ -121,22 +119,13 @@ KarenAfterBattle:
 	ifequal 16, .KarenChampionMatchAfter
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .KarenChampionMatchAfter
-	writetext KarenDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KarenDefeatText
 
 .KarenGrandChampionAfter:
-	writetext KarenGrandChampionDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KarenGrandChampionDefeatText
 
 .KarenChampionMatchAfter:
-	writetext KarenChampionMatchDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KarenChampionMatchDefeatText
 
 KarensRoomHoundoom:
 	opentext
@@ -169,9 +158,8 @@ KarenBeforeText:
 
 	para "I find their wild,"
 	line "tough image to be"
-
-	para "so appealing. And"
-	line "they're so strong."
+	cont "so appealing. And"
+	cont "they're so strong."
 
 	para "Think you can take"
 	line "them? Just try to"
@@ -197,9 +185,8 @@ KarenDefeatText:
 
 	para "Truly skilled"
 	line "trainers should"
-
-	para "try to win with"
-	line "their favorites."
+	cont "try to win with"
+	cont "their favorites."
 
 	para "I like your style."
 	line "You understand"
@@ -251,9 +238,8 @@ Karen16BadgesBeatenText:
 Karen16BadgesDefeatText:
 	text "I can see why"
 	line "you were able to"
-	
-	para "collect all the"
-	line "Kanto Badges."
+	cont "collect all the"
+	cont "Kanto Badges."
 	
 	para "Go on, he's"
 	line "waiting for you."

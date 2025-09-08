@@ -15,8 +15,6 @@ GoldenrodGym_MapScripts:
 	def_callbacks
 
 GoldenrodGymNoop1Scene:
-	end
-
 GoldenrodGymNoop2Scene:
 	end
 
@@ -47,10 +45,7 @@ GoldenrodGymWhitneyScript:
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
 	opentext
-	writetext WhitneyYouMeanieText
-	waitbutton
-	closetext
-	end
+	writetextend WhitneyYouMeanieText
 
 .StoppedCrying:
 	checkevent EVENT_GOT_TM45_ATTRACT
@@ -76,10 +71,7 @@ GoldenrodGymWhitneyScript:
 	verbosegiveitem TM_ATTRACT
 	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT
-	writetext WhitneyAttractText
-	waitbutton
-	closetext
-	end
+	writetextend WhitneyAttractText
 
 .GotAttract:
 	opentext
@@ -103,10 +95,7 @@ GoldenrodGymWhitneyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_WHITNEY_REMATCH
 	opentext
-	writetext Whitney16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Whitney16AfterBattleText
 
 .WhitneyScript_Rematch
 	checkflag ENGINE_DAILY_WHITNEY_REMATCH
@@ -122,22 +111,13 @@ GoldenrodGymWhitneyScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_WHITNEY_REMATCH
 	opentext
-	writetext WhitneyRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend WhitneyRematchAfterBattleText
 
 .skip_rematch
-	writetext WhitneyComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend WhitneyComeBackTomorrowText
 
 .EndRematch
-	writetext WhitneyNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend WhitneyNextTimeText
 	
 GoldenrodGymMiltank:
 	opentext
@@ -167,11 +147,7 @@ TrainerLassCarrie:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassCarrieAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassCarrieAfterBattleText
 
 WhitneyCriesScript:
 	showemote EMOTE_SHOCK, GOLDENRODGYM_LASS2, 15
@@ -191,50 +167,31 @@ TrainerLassBridget:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassBridgetAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassBridgetAfterBattleText
 
 TrainerBeautyVictoria:
 	trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyVictoriaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyVictoriaAfterBattleText
 
 TrainerBeautySamantha:
 	trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautySamanthaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautySamanthaAfterBattleText
 
 GoldenrodGymGuideScript:
 	faceplayer
+	opentext	
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .GoldenrodGymGuideWinScript
-	opentext
-	writetext GoldenrodGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGymGuideText
 
 .GoldenrodGymGuideWinScript:
-	opentext
-	writetext GoldenrodGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGymGuideWinText
 
 GoldenrodGymStatue:
 	checkflag ENGINE_PLAINBADGE
@@ -312,9 +269,8 @@ PlayerReceivedPlainBadgeText:
 WhitneyPlainBadgeText:
 	text "The PlainBadge"
 	line "lets your #mon"
-
-	para "use Strength out"
-	line "of battle."
+	cont "use Strength out"
+	cont "of battle."
 
 	para "Oh, you can have"
 	line "this too!"
@@ -323,9 +279,8 @@ WhitneyPlainBadgeText:
 WhitneyAttractText:
 	text "It's Attract!"
 	line "It makes full use"
-
-	para "of a #mon's"
-	line "charm."
+	cont "of a #mon's"
+	cont "charm."
 
 	para "Isn't it just per-"
 	line "fect for a cutie"
@@ -357,8 +312,7 @@ WhitneyWinLossRematchText:
 WhitneyRematchAfterBattleText:
 	text "I'm going to get"
 	line "even stronger,"
-	
-	para "Just you watch!"
+	cont "Just you watch!"
 	
 	para "Feel free to"
 	line "come back for"
@@ -403,9 +357,8 @@ WhitneyNextTimeText:
 LassCarrieSeenText:
 	text "Don't let my"
 	line "#mon's cute"
-
-	para "looks fool you."
-	line "They can whip you!"
+	cont "looks fool you."
+	cont "They can whip you!"
 	done
 
 LassCarrieBeatenText:
@@ -438,9 +391,8 @@ LassBridgetAfterBattleText:
 
 	para "I'm okay! If I"
 	line "lose, I'll just"
-
-	para "try harder next"
-	line "time!"
+	cont "try harder next"
+	cont "time!"
 	done
 
 BridgetWhitneyCriesText:
@@ -449,14 +401,13 @@ BridgetWhitneyCriesText:
 
 	para "It's OK. She'll"
 	line "stop soon. She"
-
-	para "always cries when"
-	line "she loses."
+	cont "always cries when"
+	cont "she loses."
 	done
 
 BeautyVictoriaSeenText:
 	text "Oh, you are a cute"
-	line "little trainer! "
+	line "little trainer!"
 
 	para "I like you, but I"
 	line "won't hold back!"
@@ -469,7 +420,7 @@ BeautyVictoriaBeatenText:
 
 BeautyVictoriaAfterBattleText:
 	text "Wow, you must be"
-	line "good to beat me!"
+	line "good to beat me."
 	cont "Keep it up!"
 	done
 

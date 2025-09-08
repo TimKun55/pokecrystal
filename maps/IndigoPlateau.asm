@@ -63,15 +63,13 @@ Route23ClairBeforeText:
 	para "I know we just"
 	line "battled, but the"
 	cont "others wanted to"
-	
-	para "do an old-school"
-	line "Leader send-off."
+	cont "do an old-school"
+	cont "Leader send-off."
 	
 	para "So, as the final"
 	line "obstacle between"
-	
-	para "you and the"
-	line "League, I"
+	cont "you and the"
+	cont "League, I"
 	cont "challenge you."
 	done
 
@@ -84,17 +82,16 @@ Route23ClairAfterText:
 	text "In the short time"
 	line "since we battled"
 	cont "you've become"
-
-	para "even stronger."
-	line "The Master was"
-	cont "correct."
+	cont "even stronger."
+	
+	para "The Master was"
+	line "correct."
 	
 	para "Go. You've beaten"
 	line "us all twice; the"
 	cont "League had better"
-	
-	para "not underestimate"
-	line "you and your"
+	cont "not underestimate"
+	cont "you and your"
 	cont "#mon!"
 	done
 

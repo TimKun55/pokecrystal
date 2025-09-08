@@ -24,6 +24,7 @@ GoldenrodDeptStoreElevatorScript:
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
+.Done:
 	end
 
 .BoxLayout1:
@@ -36,9 +37,6 @@ GoldenrodDeptStoreElevatorScript:
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
-	end
-
-.Done:
 	end
 
 GoldenrodDeptStoreElevatorData:

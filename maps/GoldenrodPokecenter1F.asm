@@ -40,23 +40,14 @@ GoldenrodPokecenter1FPokefanF:
 	waitbutton
 	verbosegiveitem REVIVE
 	iffalse .NoRoom
-	writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
 
 .NoEonMail:
-	writetext GoldenrodPokecenter1FPokefanFTooBadText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFTooBadText
 
 .NoRoom:
 	giveitem EON_MAIL
-	writetext GoldenrodPokecenter1FPokefanFAnotherTimeThenText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FPokefanFAnotherTimeThenText
 
 Aizen:
 	faceplayer
@@ -99,10 +90,7 @@ GoldenrodPokecenter1FMoveTutor:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 .TutorRefused
-	writetext GoldenrodPokecenter1FMoveTutorIronDefenseRefused
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FMoveTutorIronDefenseRefused
 	
 .TeachMove
 	writetext GoldenrodPokecenter1FMoveTutorPayment
@@ -110,16 +98,10 @@ GoldenrodPokecenter1FMoveTutor:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext GoldenrodPokecenter1FMoveTutorIronDefenseTaught
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FMoveTutorIronDefenseTaught
 
 .NotEnough
-	writetext GoldenrodPokecenter1FMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodPokecenter1FMoveTutorNotEnough
 	
 GoldenrodPokecenter1FVendingMachine:
 	jumpstd VendingMachineScript
@@ -131,9 +113,8 @@ GoldenrodPokecenter1FGameboyKidText:
 
 	para "Battle records are"
 	line "posted on the"
-
-	para "wall, so I can't"
-	line "afford to lose."
+	cont "wall, so I can't"
+	cont "afford to lose."
 	done
 
 GoldenrodPokecenter1FLassText:
@@ -147,9 +128,8 @@ GoldenrodPokecenter1FLassText:
 
 	para "I don't think"
 	line "there is a single"
-
-	para "#mon that is"
-	line "the toughest."
+	cont "#mon that is"
+	cont "the toughest."
 	done
 
 GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
@@ -158,7 +138,7 @@ GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
 
 	para "Oh! Do you happen"
 	line "to have something"
-	cont "named Eon Mail"
+	cont "named Eon Mail?"
 
 	para "My daughter is"
 	line "after one."
@@ -206,20 +186,17 @@ GoldenrodPokecenter1FMoveTutorIronDefenseText:
 	
 	para "Would you like me"
 	line "to teach your"
-	
-	para "#mon a useful"
-	line "defensive move"
-	
-	para "to defend against"
-	line "Physical attacks?"
+	cont "#mon a useful"
+	cont "defensive move"
+	cont "to defend against"
+	cont "Physical attacks?"
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseText2:
 	text "I can teach your"
 	line "#mon how to use"
-
-	para "Iron Defense for"
-	line "¥2,500?"
+	cont "Iron Defense for"
+	cont "¥2,500?"
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseRefused:

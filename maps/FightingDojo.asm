@@ -28,16 +28,10 @@ FightingDojoHPBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoAttackBlackBelt:
 	faceplayer
@@ -51,16 +45,10 @@ FightingDojoAttackBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoDefenseBlackBelt:
 	faceplayer
@@ -74,16 +62,10 @@ FightingDojoDefenseBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoSpAtkBlackBelt:
 	faceplayer
@@ -97,16 +79,10 @@ FightingDojoSpAtkBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoSpDefBlackBelt:
 	faceplayer
@@ -120,16 +96,10 @@ FightingDojoSpDefBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoSpeedBlackBelt:
 	faceplayer
@@ -143,16 +113,10 @@ FightingDojoSpeedBlackBelt:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext BlackbeltAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltAfterBattleText
 
 .NoBattle
-	writetext BlackbeltTrainAnytimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltTrainAnytimeText
 
 FightingDojoSign1:
 	jumptext FightingDojoSign1Text
@@ -168,16 +132,14 @@ FightingDojoBlackBeltText:
 
 	para "Karate King, the"
 	line "Fighting Dojo's"
-
-	para "master, is in a"
-	line "cave in Johto for"
+	cont "master, is in a"
+	cont "cave in Johto for"
 	cont "training."
 	
 	para "We've set up a"
 	line "training routine"
-	
-	para "for helping #-"
-	line "mon get stronger."
+	cont "for helping #-"
+	cont "mon get stronger."
 	done
 
 HPSpecialistText:

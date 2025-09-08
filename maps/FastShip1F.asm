@@ -12,13 +12,9 @@ FastShip1F_MapScripts:
 
 	def_callbacks
 
-FastShip1FNoop1Scene:
-	end
-
 FastShip1FEnterShipScene:
 	sdefer FastShip1FEnterShipScript
-	end
-
+FastShip1FNoop1Scene:
 FastShip1FNoop2Scene:
 	end
 
@@ -47,16 +43,10 @@ FastShip1FSailor1Script:
 	iftrue .Arrived
 	checkevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
 	iftrue .Olivine
-	writetext FastShip1FSailor1Text_ToVermilion
-	waitbutton
-	closetext
-	end
+	writetextend FastShip1FSailor1Text_ToVermilion
 
 .Olivine:
-	writetext FastShip1FSailor1Text_ToOlivine
-	waitbutton
-	closetext
-	end
+	writetextend FastShip1FSailor1Text_ToOlivine
 
 .Arrived:
 	checkevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
@@ -109,16 +99,10 @@ FastShip1FSailor2Script:
 	opentext
 	checkevent EVENT_FAST_SHIP_FIRST_TIME
 	iftrue .Vermilion
-	writetext FastShip1FSailor2Text_FirstTime
-	waitbutton
-	closetext
-	end
+	writetextend FastShip1FSailor2Text_FirstTime
 
 .Vermilion:
-	writetext FastShip1FSailor2Text
-	waitbutton
-	closetext
-	end
+	writetextend FastShip1FSailor2Text
 
 FastShip1FSailor3Script:
 	jumptextfaceplayer FastShip1FSailor3Text
@@ -269,9 +253,8 @@ FastShip1FGrandpaText:
 
 	para "She's just a wee"
 	line "girl. If you see"
-
-	para "her, please let me"
-	line "know!"
+	cont "her, please let me"
+	cont "know!"
 	done
 
 FastShip1FSailor1Text_InOlivine:

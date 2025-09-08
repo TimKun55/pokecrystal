@@ -12,8 +12,6 @@ IcePath1F_MapScripts:
 	def_callbacks
 
 IcePath1FNoop1Scene:
-	end
-
 IcePath1FNoop2Scene:
 	end
 
@@ -91,26 +89,23 @@ IcePathLanceCongratulationsText:
 	para "I want you to have"
 	line "this as a 'thank"
 	cont "you' on behalf of"
-	
-	para "myself and the"
-	line "people of Johto."
+	cont "myself and the"
+	cont "people of Johto."
 	done
 
 IcePathLanceWaterfallText:
 	text "Lance: My Gyarados"
 	line "loves using it and"
 	cont "I'm sure you'll"
-	
-	para "find it useful"
-	line "while on your"
+	cont "find it useful"
+	cont "while on your"
 	cont "journey."
 	
 	para "Be sure to earn"
 	line "the Rising Badge"
 	cont "in Blackthorn to"
-	
-	para "use Waterfall out-"
-	line "side of battle."
+	cont "use Waterfall out-"
+	cont "side of battle."
 	
 	para "Hopefully she won't"
 	line "make things too"
@@ -125,7 +120,6 @@ IcePathLanceWaterfallText:
 	para "I'm sure I'll see"
 	line "you soon!"
 	done
-	
 
 IcePath1F_MapEvents:
 	db 0, 0 ; filler

@@ -20,8 +20,6 @@ FastShipB1F_MapScripts:
 	def_callbacks
 
 FastShipB1FNoop1Scene:
-	end
-
 FastShipB1FNoop2Scene:
 	end
 
@@ -47,9 +45,6 @@ FastShipB1FSailorBlocks:
 	applymovement PLAYER, FastShipB1FPlayerWalksRightMovement
 	end
 
-FastShipB1FAlreadyBlocked:
-	end
-
 FastShipB1FSailorScript:
 	faceplayer
 	opentext
@@ -67,10 +62,7 @@ FastShipB1FSailorScript:
 	end
 
 .AlreadyInformed:
-	writetext FastShipB1FOnDutySailorRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend FastShipB1FOnDutySailorRefusedText
 
 .LazySailor:
 	writetext FastShipB1FOnDutySailorThanksText
@@ -82,16 +74,10 @@ FastShipB1FSailorScript:
 
 .NotFoundGirl:
 	promptbutton
-	writetext FastShipB1FOnDutySailorSawLittleGirlText
-	waitbutton
-	closetext
-	end
+	writetextend FastShipB1FOnDutySailorSawLittleGirlText
 
 .FirstTime:
-	writetext FastShipB1FOnDutySailorDirectionsText
-	waitbutton
-	closetext
-	end
+	writetextend FastShipB1FOnDutySailorDirectionsText
 
 FastShipB1FSailorGeneratorScript:
 	jumptextfaceplayer FastShipB1FSailorGeneratorText
@@ -101,110 +87,70 @@ TrainerSailorJeff:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorJeffAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorJeffAfterBattleText
 
 TrainerPicnickerDebra:
 	trainer PICNICKER, DEBRA, EVENT_BEAT_PICNICKER_DEBRA, PicnickerDebraSeenText, PicnickerDebraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerDebraAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerDebraAfterBattleText
 
 TrainerJugglerFritz:
 	trainer JUGGLER, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext JugglerFritzAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext JugglerFritzAfterBattleText
 
 TrainerSailorGarrett:
 	trainer SAILOR, GARRETT, EVENT_BEAT_SAILOR_GARRETT, SailorGarrettSeenText, SailorGarrettBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorGarrettAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorGarrettAfterBattleText
 
 TrainerFisherJonah:
 	trainer FISHER, JONAH, EVENT_BEAT_FISHER_JONAH, FisherJonahSeenText, FisherJonahBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherJonahAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherJonahAfterBattleText
 
 TrainerBlackbeltWai:
 	trainer BLACKBELT_T, WAI, EVENT_BEAT_BLACKBELT_WAI, BlackbeltWaiSeenText, BlackbeltWaiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BlackbeltWaiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BlackbeltWaiAfterBattleText
 
 TrainerSailorKenneth:
 	trainer SAILOR, KENNETH, EVENT_BEAT_SAILOR_KENNETH, SailorKennethSeenText, SailorKennethBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorKennethAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorKennethAfterBattleText
 
 TrainerTeacherShirley:
 	trainer TEACHER, SHIRLEY, EVENT_BEAT_TEACHER_SHIRLEY, TeacherShirleySeenText, TeacherShirleyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TeacherShirleyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TeacherShirleyAfterBattleText
 
 TrainerSchoolboyNate:
 	trainer SCHOOLBOY, NATE, EVENT_BEAT_SCHOOLBOY_NATE, SchoolboyNateSeenText, SchoolboyNateBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SchoolboyNateAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SchoolboyNateAfterBattleText
 
 TrainerSchoolboyRicky:
 	trainer SCHOOLBOY, RICKY, EVENT_BEAT_SCHOOLBOY_RICKY, SchoolboyRickySeenText, SchoolboyRickyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SchoolboyRickyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SchoolboyRickyAfterBattleText
 
 FastShipB1FTrashcan:
 	jumpstd TrashCanScript
@@ -233,9 +179,8 @@ FastShipB1FOnDutySailorText:
 	para "He should be"
 	line "looking after the"
 	cont "generators but"
-
-	para "he's goofing off"
-	line "somewhere, that"
+	cont "he's goofing off"
+	cont "somewhere, that"
 	cont "lazy bum!"
 
 	para "I want to go find"
@@ -258,9 +203,8 @@ FastShipB1FOnDutySailorRefusedText:
 FastShipB1FOnDutySailorThanksText:
 	text "Thanks, kid!"
 	line "I chewed him out"
-
-	para "good so he'll quit"
-	line "slacking off!"
+	cont "good so he'll quit"
+	cont "slacking off!"
 	done
 
 FastShipB1FOnDutySailorSawLittleGirlText:
@@ -322,9 +266,8 @@ PicnickerDebraBeatenText:
 PicnickerDebraAfterBattleText:
 	text "Saffron, Celadon…"
 	line "I hear there are"
-
-	para "many big cities"
-	line "in Kanto."
+	cont "many big cities"
+	cont "in Kanto."
 	done
 
 JugglerFritzSeenText:
@@ -340,9 +283,8 @@ JugglerFritzBeatenText:
 JugglerFritzAfterBattleText:
 	text "No more ships for"
 	line "me. Next time,"
-
-	para "I'm taking the"
-	line "Magnet Train."
+	cont "I'm taking the"
+	cont "Magnet Train."
 	done
 
 SailorGarrettSeenText:
@@ -358,9 +300,8 @@ SailorGarrettBeatenText:
 SailorGarrettAfterBattleText:
 	text "We get different"
 	line "passengers from"
-
-	para "Vermilion City to"
-	line "Olivine City."
+	cont "Vermilion City to"
+	cont "Olivine City."
 	done
 
 FisherJonahSeenText:
@@ -385,9 +326,8 @@ FisherJonahAfterBattleText:
 BlackbeltWaiSeenText:
 	text "I'm building up my"
 	line "legs by bracing"
-
-	para "against the ship's"
-	line "rocking!"
+	cont "against the ship's"
+	cont "rocking!"
 	done
 
 BlackbeltWaiBeatenText:
@@ -420,10 +360,10 @@ SailorKennethBeatenText:
 
 SailorKennethAfterBattleText:
 	text "Eight Badges!"
-	line "They must prove"
-
-	para "that you've beaten"
-	line "Gym Leaders."
+	
+	para "They must prove"
+	line "that you've beaten"
+	cont "Gym Leaders."
 
 	para "No wonder you're"
 	line "so good!"

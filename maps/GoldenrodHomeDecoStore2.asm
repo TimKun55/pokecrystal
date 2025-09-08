@@ -79,10 +79,7 @@ GoldenrodHomeDecoStore2Clerk1Script:
 	jump .Start
 	
 .Refused:
-	writetext GoldenrodHomeDecoStore2NextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore2NextTimeText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -117,28 +114,16 @@ GoldenrodHomeDecoStore2Clerk2Script:
 	waitbutton
 	writetext BlueCarpetSentText
 	waitbutton
-	writetext GoldenrodHomeDecoStore2Clerk2YesText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore2Clerk2YesText
 	
 .CarpetAlreadyPurchased:
-	writetext GoldenrodHomeDecoStore2Clerk2Text
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore2Clerk2Text
 
 .NotEnoughMoney:
-	writetext GoldenrodHomeDecoStore2NoMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore2NoMoneyText
 	
 .ClerkNoText:
-	writetext GoldenrodHomeDecoStore2Clerk2NoText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore2Clerk2NoText
 
 GoldenrodHomeDecoStore2YoungsterScript:
 	jumptextfaceplayer GoldenrodHomeDecoStore2YoungsterText
@@ -164,9 +149,8 @@ GoldenrodHomeDecoStore2Clerk2Text:
 GoldenrodHomeDecoStore2Clerk2SaleText:
 	text "Our imported"
 	line "Royal Blue Carpet"
-
-	para "is on sale right"
-	line "now for ¥35,000."
+	cont "is on sale right"
+	cont "now for ¥35,000."
 
 	para "Would you like to"
 	line "buy one?"

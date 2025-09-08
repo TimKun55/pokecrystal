@@ -36,15 +36,14 @@ HiddenPowerGuyText1:
 
 	para "Here I have medi-"
 	line "tated. Inside me,"
-
-	para "a new power has"
-	line "been awakened."
+	cont "a new power has"
+	cont "been awakened."
 
 	para "Let me share my"
 	line "power with your"
-
-	para "#mon."
-	line "Take this, child."
+	cont "#mon."
+	
+	para "Take this, child."
 	done
 
 HiddenPowerGuyText2:

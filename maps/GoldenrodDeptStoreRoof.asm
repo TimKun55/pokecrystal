@@ -97,9 +97,8 @@ GoldenrodDeptStoreRoofPokefanFText:
 
 	para "I sometimes come"
 	line "up to the rooftop"
-
-	para "to take a break"
-	line "from shopping."
+	cont "to take a break"
+	cont "from shopping."
 	done
 
 GoldenrodDeptStoreRoofFisherText:
@@ -109,9 +108,8 @@ GoldenrodDeptStoreRoofFisherText:
 
 	para "I'm going to be"
 	line "back every day to"
-
-	para "collect all the"
-	line "dolls!"
+	cont "collect all the"
+	cont "dolls!"
 	done
 
 GoldenrodDeptStoreRoofTwinText:
@@ -132,9 +130,8 @@ GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
 GoldenrodDeptStoreRoofPokefanMText:
 	text "There's something"
 	line "I really want, but"
-
-	para "I don't have the"
-	line "necessary cash…"
+	cont "I don't have the"
+	cont "necessary cash…"
 
 	para "Maybe I'll sell"
 	line "off the Berries"
@@ -152,9 +149,8 @@ GoldenrodDeptStoreRoofTeacherText:
 GoldenrodDeptStoreRoofBugCatcherText:
 	text "My #mon always"
 	line "get paralyzed or"
-
-	para "poisoned when the"
-	line "chips are down…"
+	cont "poisoned when the"
+	cont "chips are down…"
 
 	para "So I came to buy"
 	line "some Full Heal."
@@ -166,9 +162,8 @@ GoldenrodDeptStoreRoofBugCatcherText:
 Binoculars1Text:
 	text "These binoculars"
 	line "let me see far"
-
-	para "away. Maybe I can"
-	line "see my own house."
+	cont "away. Maybe I can"
+	cont "see my own house."
 
 	para "Is it the one with"
 	line "the green roof?"

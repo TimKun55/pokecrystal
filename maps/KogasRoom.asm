@@ -12,9 +12,7 @@ KogasRoom_MapScripts:
 
 KogasRoomLockDoorScene:
 	sdefer KogasRoomDoorLocksBehindYouScript
-	end
-
-KogasRoomNoopScene:
+KogasRoomNoopScene:	
 	end
 
 KogasRoomDoorsCallback:
@@ -121,22 +119,13 @@ KogaAfterBattle:
 	ifequal 16, .KogaChampionMatchAfter
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .KogaChampionMatchAfter
-	writetext KogaDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KogaDefeatText
 
 .KogaGrandChampionAfter:
-	writetext KogaGrandChampionDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KogaGrandChampionDefeatText
 
 .KogaChampionMatchAfter:
-	writetext KogaChampionMatchDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend KogaChampionMatchDefeatText
 	
 KogasRoomCrobat:
 	opentext
@@ -181,9 +170,8 @@ KogaBeforeText:
 
 	para "#mon is not"
 	line "merely about brute"
-
-	para "force--you shall"
-	line "see soon enough!"
+	cont "force--you shall"
+	cont "see soon enough!"
 	done
 
 KogaBeatenText:
@@ -255,9 +243,8 @@ Koga16BadgesBeatenText:
 Koga16BadgesDefeatText:
 	text "So this is how"
 	line "you defeated my"
-	
-	para "Janine and the"
-	line "others."
+	cont "Janine and the"
+	cont "others."
 	
 	para "Most impressive."
 	

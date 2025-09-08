@@ -12,10 +12,7 @@ FuchsiaCinnabarHouseSailor:
 	opentext
 	checkitem OLD_SEA_MAP
 	iftrue .HasOldSeaMap
-	writetext SailorMovedHereAfterEruptionText
-	waitbutton
-	closetext
-	end
+	writetextend SailorMovedHereAfterEruptionText
 
 .HasOldSeaMap:
 	writetext SailorThatMapText
@@ -45,22 +42,13 @@ FuchsiaCinnabarHouseScientist:
 	iftrue .IslandVisited
 	checkitem OLD_SEA_MAP
 	iftrue .MapFound
-	writetext ScientistMovedHereAfterEruptionText
-	waitbutton
-	closetext
-	end
+	writetextend ScientistMovedHereAfterEruptionText
 
 .MapFound:
-	writetext ScientistMapExcitedText
-	waitbutton
-	closetext
-	end
+	writetextend ScientistMapExcitedText
 
 .IslandVisited:
-	writetext ScientistVisitedIslandText
-	waitbutton
-	closetext
-	end	
+	writetextend ScientistVisitedIslandText
 
 PlayerMovement:
 	step LEFT
@@ -77,9 +65,8 @@ FuchsiaCinnabarHouseSailorExitMovement:
 SailorMovedHereAfterEruptionText:
 	text "I used to live"
 	line "on Cinnabar but"
-	
-	para "had to move afer"
-	line "after the volcano"
+	cont "had to move afer"
+	cont "after the volcano"
 	cont "erupted."
 	
 	para "I live over in"

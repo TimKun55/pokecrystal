@@ -14,44 +14,28 @@ TrainerFirebreatherLyle:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FirebreatherLyleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FirebreatherLyleAfterBattleText
 
 TrainerBugCatcherKen:
 	trainer BUG_CATCHER, KEN, EVENT_BEAT_BUG_CATCHER_KEN, BugCatcherKenSeenText, BugCatcherKenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherKenAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherKenAfterBattleText
 
 TrainerBeautyCassie:
 	trainer BEAUTY, CASSIE, EVENT_BEAT_BEAUTY_CASSIE, BeautyCassieSeenText, BeautyCassieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyCassieAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyCassieAfterBattleText
 
 TrainerGuitaristClyde:
 	trainer GUITARIST, CLYDE, EVENT_BEAT_GUITARIST_CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GuitaristClydeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GuitaristClydeAfterBattleText
 
 FastShipBed:
 	opentext
@@ -161,9 +145,8 @@ BeautyCassieAfterBattleText:
 GuitaristClydeSeenText:
 	text "I'm going to audi-"
 	line "tion my songs at"
-
-	para "Goldenrod's Radio"
-	line "Station."
+	cont "Goldenrod's Radio"
+	cont "Station."
 	done
 
 GuitaristClydeBeatenText:
@@ -174,9 +157,8 @@ GuitaristClydeBeatenText:
 GuitaristClydeAfterBattleText:
 	text "Speaking of the"
 	line "Radio Station,"
-
-	para "what's today's lucky"
-	line "number?"
+	cont "what's today's lucky"
+	cont "number?"
 	done
 
 FastShipBedText1:

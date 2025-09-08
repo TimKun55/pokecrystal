@@ -82,10 +82,7 @@ GoldenrodHomeDecoStore4ClerkScript:
 	jump .Start
 	
 .Refused:
-	writetext GoldenrodHomeDecoStore4NextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodHomeDecoStore4NextTimeText
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -102,9 +99,9 @@ GoldenrodHomeDecoStore4ClerkScript:
 	db "Cancel@"
 
 GoldenrodHomeDecoStore4MagikarpDollScript:
+	opentext
 	checkevent EVENT_DECO_MAGIKARP_DOLL
 	iftrue .MagikarpDollPurchased 
-	opentext
 	writetext ClerkSellMagikarpDollText
 	special PlaceMoneyTopRight
 	yesorno
@@ -117,34 +114,21 @@ GoldenrodHomeDecoStore4MagikarpDollScript:
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
 	waitbutton
-	writetext MagikarpDollSentText
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpDollSentText
 
 .NotEnoughMoney:
-	writetext DollClerkNoMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend DollClerkNoMoneyText
 
 .RefusePurchase
-	writetext DollClerkNoSaleText
-	waitbutton
-	closetext
-	end
+	writetextend DollClerkNoSaleText
 
 .MagikarpDollPurchased:
-	opentext
-	writetext MagikarpDollText
-	waitbutton
-	closetext
-	end
+	writetextend MagikarpDollText
 	
 GoldenrodHomeDecoStore4JigglypuffDollScript:
+	opentext
 	checkevent EVENT_DECO_JIGGLYPUFF_DOLL
 	iftrue .JigglypuffDollPurchased 
-	opentext
 	writetext ClerkSellJigglypuffDollText
 	special PlaceMoneyTopRight
 	yesorno
@@ -163,23 +147,13 @@ GoldenrodHomeDecoStore4JigglypuffDollScript:
 	end
 
 .NotEnoughMoney:
-	writetext DollClerkNoMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend DollClerkNoMoneyText
 
 .RefusePurchase
-	writetext DollClerkNoSaleText
-	waitbutton
-	closetext
-	end
+	writetextend DollClerkNoSaleText
 
 .JigglypuffDollPurchased:
-	opentext
-	writetext JigglypuffDollText
-	waitbutton
-	closetext
-	end
+	writetextend JigglypuffDollText
 
 GoldenrodHomeDecoStore4TwinScript:
 	jumptextfaceplayer GoldenrodHomeDecoStore4TwinText
@@ -303,9 +277,8 @@ DollClerkNoMoneyText:
 GoldenrodHomeDecoStore4TwinText:
 	text "All these dolls"
 	line "are so cute,"
-	
-	para "but I can't afford"
-	line "any of them!"
+	cont "but I can't afford"
+	cont "any of them!"
 	done
 
 GoldenrodHomeDecoStore4BulbasaurDollText:

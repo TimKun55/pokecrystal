@@ -83,9 +83,8 @@ GoldenrodDeptStoreB1FBlackBelt1Text:
 
 	para "Our policy is to"
 	line "work behind the"
-
-	para "scenes where no"
-	line "one can see us!"
+	cont "scenes where no"
+	cont "one can see us!"
 	done
 
 GoldenrodDeptStoreB1FBlackBelt2Text:

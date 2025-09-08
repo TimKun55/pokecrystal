@@ -13,22 +13,13 @@ LyrasDadScript:
 	iffalse .LyraInside
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .LyraTraining
-	writetext LyrasDadHelpingText
-	waitbutton
-	closetext
-	end
+	writetextend LyrasDadHelpingText
 
 .LyraInside
-	writetext LyrasDadInsideText
-	waitbutton
-	closetext
-	end
+	writetextend LyrasDadInsideText
 
 .LyraTraining
-	writetext LyrasDadTrainingText
-	waitbutton
-	closetext
-	end
+	writetextend LyrasDadTrainingText
 
 LyrasFridgeScript:
 	jumptext LyrasFridgeText
@@ -90,9 +81,8 @@ LyrasStoveText:
 LyrasTVText:
 	text "There's a movie on"
 	line "TV: A girl with"
-
-	para "her hair in pig-"
-	line "tails is walking"
+	cont "her hair in pig-"
+	cont "tails is walking"
 	cont "up a brick road."
 
 	para "I'd better get"

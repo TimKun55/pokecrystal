@@ -105,16 +105,10 @@ IlexForestCharcoalApprenticeScript:
 	opentext
 	checkevent EVENT_HERDED_FARFETCHD
 	iftrue .DoneFarfetchd
-	writetext IlexForestApprenticeIntroText
-	waitbutton
-	closetext
-	end
+	writetextend IlexForestApprenticeIntroText
 
 .DoneFarfetchd:
-	writetext IlexForestApprenticeAfterText
-	waitbutton
-	closetext
-	end
+	writetextend IlexForestApprenticeAfterText
 
 IlexForestFarfetchdScript:
 	readmem wFarfetchdPosition
@@ -367,22 +361,16 @@ IlexForestCharcoalMasterScript:
 	promptbutton
 	verbosegiveitem HM_CUT
 	setevent EVENT_GOT_HM01_CUT
-	writetext Text_CharcoalMasterOutro
-	waitbutton
-	closetext
 	setevent EVENT_ILEX_FOREST_FARFETCHD
 	setevent EVENT_ILEX_FOREST_APPRENTICE
 	setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	clearevent EVENT_CHARCOAL_KILN_FARFETCH_D
 	clearevent EVENT_CHARCOAL_KILN_APPRENTICE
-	clearevent EVENT_CHARCOAL_KILN_BOSS
-	end
+	clearevent EVENT_CHARCOAL_KILN_BOSS	
+	writetextend Text_CharcoalMasterOutro
 
 .AlreadyGotCut:
-	writetext Text_CharcoalMasterTalkAfter
-	waitbutton
-	closetext
-	end
+	writetextend Text_CharcoalMasterTalkAfter
 
 IlexForestHeadbuttGuyScript:
 	faceplayer
@@ -416,22 +404,14 @@ TrainerBugCatcherWayne:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherWayneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherWayneAfterBattleText
 	
 TrainerBugManiacBobby:
 	trainer BUG_MANIAC, BOBBY, EVENT_BEAT_BUG_MANIAC_BOBBY, BugManiacBobbySeenText, BugManiacBobbyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacBobbyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacBobbyAfterBattleText
 
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
@@ -778,9 +758,8 @@ IlexForestApprenticeIntroText:
 
 	para "The Farfetch'd"
 	line "that Cuts trees"
-
-	para "for charcoal took"
-	line "off on me."
+	cont "for charcoal took"
+	cont "off on me."
 
 	para "I can't go looking"
 	line "for it here in the"
@@ -817,9 +796,8 @@ Text_CharcoalMasterIntro:
 
 	para "Without it, we"
 	line "wouldn't be able"
-
-	para "to Cut trees for"
-	line "charcoal."
+	cont "to Cut trees for"
+	cont "charcoal."
 
 	para "Thanks, kid!"
 
@@ -833,23 +811,20 @@ Text_CharcoalMasterIntro:
 Text_CharcoalMasterOutro:
 	text "That's the Cut HM."
 	line "Teach that to a"
-
-	para "#mon to clear"
-	line "small trees."
+	cont "#mon to clear"
+	cont "small trees."
 
 	para "Of course, you"
 	line "have to have the"
-
-	para "Gym Badge from"
-	line "Azalea to use it."
+	cont "Gym Badge from"
+	cont "Azalea to use it."
 	done
 
 Text_CharcoalMasterTalkAfter:
 	text "Do you want to"
 	line "apprentice as a"
-
-	para "charcoal maker"
-	line "with me?"
+	cont "charcoal maker"
+	cont "with me?"
 
 	para "You'll be first-"
 	line "rate in ten years!"
@@ -881,9 +856,8 @@ Text_IlexForestLass:
 IlexForestSignpostText:
 	text "Ilex Forest is"
 	line "so overgrown with"
-
-	para "trees that you"
-	line "can't see the sky."
+	cont "trees that you"
+	cont "can't see the sky."
 
 	para "Please watch out"
 	line "for items that may"
@@ -911,9 +885,8 @@ Text_ShrineCelebiEvent:
 
 	para "It's a hole."
 	line "It looks like the"
-
-	para "GS Ball would fit"
-	line "inside it."
+	cont "GS Ball would fit"
+	cont "inside it."
 
 	para "Want to put the GS"
 	line "Ball here?"
@@ -960,9 +933,8 @@ BugCatcherWayneBeatenText:
 BugCatcherWayneAfterBattleText:
 	text "A #mon I've"
 	line "never seen before"
-
-	para "fell out of the"
-	line "tree when I used"
+	cont "fell out of the"
+	cont "tree when I used"
 	cont "Headbutt."
 
 	para "I ought to use"
@@ -984,9 +956,8 @@ BugManiacBobbyBeatenText:
 BugManiacBobbyAfterBattleText:
 	text "Wow, yeah you"
 	line "definitely beat"
-	
-	para "Bugsy with that"
-	line "kind of power!"
+	cont "Bugsy with that"
+	cont "kind of power!"
 	done
 
 IlexForest_MapEvents:

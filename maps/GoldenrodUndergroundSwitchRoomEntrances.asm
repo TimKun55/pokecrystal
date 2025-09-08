@@ -54,8 +54,6 @@ GoldenrodUndergroundSwitchRoomEntrances_MapScripts:
 	callback MAPCALLBACK_TILES, GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback
 
 GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene:
-	end
-
 GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene:
 	end
 
@@ -201,76 +199,49 @@ UndergroundRivalBattleScript:
 	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
-	writetext UndergroundRivalAfterText
-	waitbutton
-	closetext
-	end
+	writetextend UndergroundRivalAfterText
 
 TrainerGruntM11:
 	trainer GRUNTM, GRUNTM_11, EVENT_BEAT_ROCKET_GRUNTM_11, GruntM11SeenText, GruntM11BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM11AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM11AfterBattleText
 
 TrainerGruntM25:
 	trainer GRUNTM, GRUNTM_25, EVENT_BEAT_ROCKET_GRUNTM_25, GruntM25SeenText, GruntM25BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM25AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM25AfterBattleText
 
 TrainerBurglarDuncan:
 	trainer BURGLAR, DUNCAN, EVENT_BEAT_BURGLAR_DUNCAN, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BurglarDuncanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BurglarDuncanAfterBattleText
 
 TrainerBurglarEddie:
 	trainer BURGLAR, EDDIE, EVENT_BEAT_BURGLAR_EDDIE, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BurglarEddieAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BurglarEddieAfterBattleText
 
 TrainerGruntM13:
 	trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM13AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM13AfterBattleText
 
 TrainerGruntF3:
 	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntF3AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntF3AfterBattleText
 
 Switch1Script:
 	opentext
@@ -674,9 +645,8 @@ UndergroundRivalBeforeText:
 
 	para "I don't need you"
 	line "underfoot while I"
-
-	para "take care of Team"
-	line "Rocket."
+	cont "take care of Team"
+	cont "Rocket."
 
 	para "…Wait a second."
 	line "You beat me be-"
@@ -787,9 +757,8 @@ GruntM11BeatenText:
 GruntM11AfterBattleText:
 	text "I'm confused too…"
 	line "The switch on the"
-
-	para "end is the one to"
-	line "press first, but…"
+	cont "end is the one to"
+	cont "press first, but…"
 	done
 
 GruntM25SeenText:

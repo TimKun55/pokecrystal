@@ -123,16 +123,10 @@ MoveTutorScript:
 	db "Cancel@"
 
 .Refused:
-	writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityMoveTutorAwwButTheyreAmazingText
 
 .Refused2:
-	writetext GoldenrodCityMoveTutorHmTooBadText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityMoveTutorHmTooBadText
 
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
@@ -141,16 +135,10 @@ MoveTutorScript:
 	waitsfx
 	playsound SFX_TRANSACTION
 	special DisplayCoinCaseBalance
-	writetext GoldenrodCityMoveTutorFarewellKidText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityMoveTutorFarewellKidText
 
 .NotEnoughMoney:
-	writetext GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText
 
 GoldenrodCityPokefanMScript:
 	jumptextfaceplayer GoldenrodCityPokefanMText
@@ -163,32 +151,20 @@ GoldenrodCityCooltrainerF1Script:
 	opentext
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
-	writetext GoldenrodCityCooltrainerF1Text
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityCooltrainerF1Text
 
 .ClearedRadioTower:
-	writetext GoldenrodCityCooltrainerF1Text_ClearedRadioTower
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityCooltrainerF1Text_ClearedRadioTower
 
 GoldenrodCityCooltrainerF2Script:
 	faceplayer
 	opentext
 	checkflag ENGINE_RADIO_CARD
 	iftrue .GotRadioCard
-	writetext GoldenrodCityCooltrainerF2Text
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityCooltrainerF2Text
 
 .GotRadioCard:
-	writetext GoldenrodCityCooltrainerF2Text_GotRadioCard
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodCityCooltrainerF2Text_GotRadioCard
 
 GoldenrodCityYoungster2Script:
 	jumptextfaceplayer GoldenrodCityYoungster2Text
@@ -304,33 +280,29 @@ GoldenrodCity_RocketGirlPushesYouRight:
 GoldenrodCityPokefanMText:
 	text "They built the new"
 	line "Radio Tower to"
-
-	para "replace the old,"
-	line "creaky one."
+	cont "replace the old,"
+	cont "creaky one."
 	done
 
 GoldenrodCityYoungster1Text:
 	text "I know there's a"
 	line "new Bike Shop, but"
-
-	para "I can't find it"
-	line "anywhere."
+	cont "I can't find it"
+	cont "anywhere."
 	done
 
 GoldenrodCityCooltrainerF1Text:
 	text "Is that man in"
 	line "black dressed up"
-
-	para "like a Team Rocket"
-	line "member? How silly!"
+	cont "like a Team Rocket"
+	cont "member? How silly!"
 	done
 
 GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
 	text "Was that man in"
 	line "black really part"
-
-	para "of Team Rocket? I"
-	line "can't believe it!"
+	cont "of Team Rocket? I"
+	cont "can't believe it!"
 	done
 
 GoldenrodCityCooltrainerF2Text:
@@ -344,9 +316,8 @@ GoldenrodCityCooltrainerF2Text:
 
 	para "They'll modify"
 	line "your #gear,"
-
-	para "so it can also"
-	line "serve as a radio."
+	cont "so it can also"
+	cont "serve as a radio."
 	done
 
 GoldenrodCityCooltrainerF2Text_GotRadioCard:
@@ -359,9 +330,8 @@ GoldenrodCityYoungster2Text:
 
 	para "I got in trouble"
 	line "for playing in the"
-
-	para "basement of the"
-	line "Dept.Store."
+	cont "basement of the"
+	cont "Dept.Store."
 	done
 
 GoldenrodCityLassText:
@@ -376,9 +346,8 @@ GoldenrodCityLassText:
 GoldenrodCityGrampsText:
 	text "Whew! This is one"
 	line "big town. I don't"
-
-	para "know where any-"
-	line "thing is."
+	cont "know where any-"
+	cont "thing is."
 	done
 
 GoldenrodCityRocketScoutText1:
@@ -407,9 +376,8 @@ GoldenrodCityRocket2Text:
 GoldenrodCityRocket3Text:
 	text "#mon? They're"
 	line "nothing more than"
-
-	para "tools for making"
-	line "money!"
+	cont "tools for making"
+	cont "money!"
 	done
 
 GoldenrodCityRocketGirl1Text:
@@ -500,9 +468,8 @@ GoldenrodCityFlowerShopSignText:
 GoldenrodCityMoveTutorAskTeachAMoveText:
 	text "I can teach your"
 	line "#mon amazing"
-
-	para "moves if you'd"
-	line "like."
+	cont "moves if you'd"
+	cont "like."
 
 	para "Should I teach a"
 	line "new move?"
@@ -537,9 +504,8 @@ GoldenrodCityMoveTutorHmTooBadText:
 GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	text "If you understand"
 	line "what's so amazing"
-
-	para "about this move,"
-	line "you've made it as"
+	cont "about this move,"
+	cont "you've made it as"
 	cont "a trainer."
 	done
 

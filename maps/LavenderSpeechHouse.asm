@@ -15,15 +15,13 @@ LavenderSpeechHouseBookshelf:
 LavenderSpeechHousePokefanFText:
 	text "Lavender is a"
 	line "tiny, quiet town"
-
-	para "at the foot of the"
-	line "mountains."
+	cont "at the foot of the"
+	cont "mountains."
 
 	para "It's gotten a bit"
 	line "busier since the"
-
-	para "Radio Tower was"
-	line "built."
+	cont "Radio Tower was"
+	cont "built."
 	done
 
 LavenderSpeechHouse_MapEvents:

@@ -193,28 +193,16 @@ GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript:
 	sjump GoldenrodGameCornerTMVendor_LoopScript
 
 GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript:
-	writetext GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
 
 GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript:
-	writetext GoldenrodGameCornerPrizeVendorNoMoreRoomText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNoMoreRoomText
 
 GoldenrodGameCornerPrizeVendor_CancelPurchaseScript:
-	writetext GoldenrodGameCornerPrizeVendorQuitText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorQuitText
 
 GoldenrodGameCornerPrizeVendor_NoCoinCaseScript:
-	writetext GoldenrodGameCornerPrizeVendorNoCoinCaseText
-	waitbutton
-	closetext
-	end
+	writetextend GoldenrodGameCornerPrizeVendorNoCoinCaseText
 
 GoldenrodGameCornerTMVendorMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -467,9 +455,8 @@ GoldenrodGameCornerPrizeVendorNoCoinCaseText:
 GoldenrodGameCornerPharmacistText:
 	text "I always play this"
 	line "slot machine. It"
-
-	para "pays out more than"
-	line "others, I think."
+	cont "pays out more than"
+	cont "others, I think."
 	done
 
 GoldenrodGameCornerPokefanM1Text:
@@ -493,9 +480,8 @@ GoldenrodGameCornerPokefanFText:
 
 	para "I prefer it over"
 	line "the slots because"
-
-	para "it's easier to"
-	line "figure the odds."
+	cont "it's easier to"
+	cont "figure the odds."
 
 	para "But the payout is"
 	line "much lower."
@@ -512,23 +498,20 @@ GoldenrodGameCornerGentlemanText:
 
 	para "It was hard to get"
 	line "enough coins for"
-
-	para "it, but it was"
-	line "worth it."
+	cont "it, but it was"
+	cont "worth it."
 	done
 
 GoldenrodGameCornerPokefanM2Text:
 	text "I couldn't win at"
 	line "the slots, and I"
-
-	para "blew it on card"
-	line "flipping…"
+	cont "blew it on card"
+	cont "flipping…"
 
 	para "I got so furious,"
 	line "I tossed out my"
-
-	para "Coin Case in the"
-	line "Underground."
+	cont "Coin Case in the"
+	cont "Underground."
 	done
 
 GoldenrodGameCornerPorygonFanRareMonText:
@@ -567,9 +550,8 @@ GoldenrodGameCornerPorygonFanLoveTravelText:
 	
 	para "I get to show off"
 	line "some cool #mon"
-	
-	para "to people who have"
-	line "never seen them!"
+	cont "to people who have"
+	cont "never seen them!"
 	done
 
 GoldenrodGameCornerPorygonFanEvolutionRumourText:
@@ -578,9 +560,8 @@ GoldenrodGameCornerPorygonFanEvolutionRumourText:
 	para "I've also heard"
 	line "a rumour that"
 	cont "Porygon can evolve"
-	
-	para "but I've not seen"
-	line "it or know what"
+	cont "but I've not seen"
+	cont "it or know what"
 	cont "causes it."
 	done
 

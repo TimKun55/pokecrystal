@@ -225,10 +225,7 @@ TeleportGuyScript:
 	end
 
 .No:
-	writetext TeleportGuyNoText
-	waitbutton
-	closetext
-	end
+	writetextend TeleportGuyNoText
 
 AbraScript:
 	opentext
@@ -255,10 +252,7 @@ IndigoPlateauPokecenter1FTutorScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 .TutorRefused
-	writetext IndigoPlateauPokecenter1FTutorRefused
-	waitbutton
-	closetext
-	end
+	writetextend IndigoPlateauPokecenter1FTutorRefused
 	
 .payfortutor
 	special PlaceMoneyTopRight
@@ -281,16 +275,10 @@ IndigoPlateauPokecenter1FTutorScript:
  	sjump .TeachMove
 	
 .NotEnough:
-	writetext IndigoPlateauPokecenter1FGigaImpactNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend IndigoPlateauPokecenter1FGigaImpactNotEnough
 
 .TeachMove
-	writetext IndigoPlateauPokecenter1FGigaImpactTaught
-	waitbutton
-	closetext
-	end
+	writetextend IndigoPlateauPokecenter1FGigaImpactTaught
 
 PlateauRivalApproachesMovement:
 	step UP
@@ -330,18 +318,16 @@ PlateauRivalText1:
 
 	para "You're going to"
 	line "take the #mon"
-
-	para "League challenge"
-	line "now?"
+	cont "League challenge"
+	cont "now?"
 
 	para "That's not going"
 	line "to happen."
 
 	para "My super-well-"
 	line "trained #mon"
-
-	para "are going to pound"
-	line "you."
+	cont "are going to pound"
+	cont "you."
 
 	para "<PLAYER>!"
 	line "I challenge you!"
@@ -370,9 +356,8 @@ PlateauRivalLoseText:
 
 	para "Whew…"
 	line "With my partners,"
-
-	para "I'm going to be"
-	line "the Champion!"
+	cont "I'm going to be"
+	cont "the Champion!"
 	done
 
 PlateauLyraText1:
@@ -380,9 +365,8 @@ PlateauLyraText1:
 
 	para "I've been travel-"
 	line "ing around Johto,"
-
-	para "earning badges and"
-	line "gaining strength."
+	cont "earning badges and"
+	cont "gaining strength."
 
 	para "You know what"
 	line "that's like,"
@@ -422,12 +406,10 @@ PlateauLyraText3:
 	para "I got to explore"
 	line "Johto, meet new"
 	cont "people, raise my"
-
-	para "#mon to be"
-	line "stronger than I"
-
-	para "thought they could"
-	line "ever be…"
+	cont "#mon to be"
+	cont "stronger than I"
+	cont "thought they could"
+	cont "ever be…"
 
 	para "And I got to"
 	line "battle you at my"
