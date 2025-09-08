@@ -18,84 +18,34 @@ NationalParkBugContest_MapScripts:
 	def_callbacks
 
 BugCatchingContestant1AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant1AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant1AText
 
 BugCatchingContestant2AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant2AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant2AText
 
 BugCatchingContestant3AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant3AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant3AText
 
 BugCatchingContestant4AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant4AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant4AText
 
 BugCatchingContestant5AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant5AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant5AText
 
 BugCatchingContestant6AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant6AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant6AText
 
 BugCatchingContestant7AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant7AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant7AText
 
 BugCatchingContestant8AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant8AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant8AText
 
 BugCatchingContestant9AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant9AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant9AText
 
 BugCatchingContestant10AScript:
-	faceplayer
-	opentext
-	writetext BugCatchingContestant10AText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer BugCatchingContestant10AText
 
 NationalParkBugContestRelaxationSquareSign:
 	jumptext NationalParkBugContestRelaxationSquareText
@@ -153,9 +103,8 @@ BugCatchingContestant5AText:
 BugCatchingContestant6AText:
 	text "Barry: You should"
 	line "weaken bug #mon"
-
-	para "first, then throw"
-	line "a Ball."
+	cont "first, then throw"
+	cont "a Ball."
 	done
 
 BugCatchingContestant7AText:
@@ -169,9 +118,8 @@ BugCatchingContestant7AText:
 BugCatchingContestant8AText:
 	text "Josh: I've been"
 	line "collecting bug"
-
-	para "#mon since I"
-	line "was just a baby."
+	cont "#mon since I"
+	cont "was just a baby."
 
 	para "There's no way I'm"
 	line "going to lose!"
@@ -180,9 +128,8 @@ BugCatchingContestant8AText:
 BugCatchingContestant9AText:
 	text "Samuel: If you've"
 	line "got the time to"
-
-	para "chat, go find some"
-	line "bug #mon."
+	cont "chat, go find some"
+	cont "bug #mon."
 	done
 
 BugCatchingContestant10AText:
@@ -215,8 +162,7 @@ NationalParkBugContestTrainerTipsText:
 
 	para "Visit the Mahogany"
 	line "Bakery for items"
-	
-	para "to power up your"
+	cont "to power up your"
 	cont "#mon in battle."
 	done
 

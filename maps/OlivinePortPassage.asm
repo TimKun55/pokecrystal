@@ -10,8 +10,6 @@ OlivinePortPassage_MapScripts:
 	def_callbacks
 
 OlivinePortPassageNoop1Scene:
-	end
-
 OlivinePortPassageNoop2Scene:
 	end
 
@@ -29,10 +27,10 @@ OlivinePortPassageTicketCheckScript:
 
 OlivinePortPassageSailorScript:
 	faceplayer
+	opentext	
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iftrue _OlivinePortPassageTicketCheckScript.GoOnThrough
 _OlivinePortPassageTicketCheckScript:
-	opentext
 	writetext OlivinePortPassageAskBoardText
 	yesorno
 	iffalse OlivinePortPassageNotRidingScript
@@ -56,11 +54,7 @@ _OlivinePortPassageTicketCheckScript:
 	end
 
 .GoOnThrough:
-	opentext
-	writetext OlivinePortPassageGoOnThroughText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortPassageGoOnThroughText
 
 .OlivinePortPassagePlayerStepsBack:
 	applymovement PLAYER, OlivinePortPassagePlayerStepsBackMovement
@@ -131,9 +125,8 @@ OlivinePortPassageNoTicketText:
 OlivinePortPassagePokefanMText:
 	text "Fast Ship S.S.Aqua"
 	line "sails to Kanto on"
-
-	para "Mondays and Fri-"
-	line "days."
+	cont "Mondays and Fri-"
+	cont "days."
 	done
 
 YoungsterTake:

@@ -18,11 +18,7 @@ NewBarkTown_MapScripts:
 	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
 
 NewBarkTownNoop1Scene:
-	end
-
 NewBarkTownNoop2Scene:
-	end
-
 NewBarkTownNoop3Scene:
 	end
 
@@ -172,28 +168,16 @@ NewBarkTownTeacherScript:
 	iftrue .TellMumYoureLeaving
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .MonIsAdorable
-	writetext Text_GearIsImpressive
-	waitbutton
-	closetext
-	end
+	writetextend Text_GearIsImpressive
 
 .MonIsAdorable:
-	writetext Text_YourMonIsAdorable
-	waitbutton
-	closetext
-	end
+	writetextend Text_YourMonIsAdorable
 
 .TellMumYoureLeaving:
-	writetext Text_TellMumIfLeaving
-	waitbutton
-	closetext
-	end
+	writetextend Text_TellMumIfLeaving
 
 .CallMum:
-	writetext Text_CallMumOnGear
-	waitbutton
-	closetext
-	end
+	writetextend Text_CallMumOnGear
 
 NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
@@ -367,9 +351,8 @@ Text_ItsDangerousToGoAlone:
 
 	para "Wild #mon"
 	line "jump out of the"
-
-	para "grass on the way"
-	line "to the next town."
+	cont "grass on the way"
+	cont "to the next town."
 	done
 
 Text_YourMonIsAdorable:
@@ -390,9 +373,8 @@ Text_TellMumIfLeaving:
 Text_CallMumOnGear:
 	text "Call your mum on"
 	line "your #gear to"
-
-	para "let her know how"
-	line "you're doing."
+	cont "let her know how"
+	cont "you're doing."
 	done
 
 Text_ElmDiscoveredNewMon:
@@ -422,9 +404,8 @@ NewBarkTownLyraIntroText:
 
 	para "I came by your"
 	line "house earlier,"
-
-	para "but you were"
-	line "still sleeping."
+	cont "but you were"
+	cont "still sleeping."
 
 	para "You know how I"
 	line "assist Prof.Elm"
@@ -432,9 +413,8 @@ NewBarkTownLyraIntroText:
 
 	para "He's starting new"
 	line "#mon research"
-
-	para "and would like us"
-	line "both to help."
+	cont "and would like us"
+	cont "both to help."
 
 	para "Let's go and see"
 	line "what he wants!"
@@ -453,16 +433,14 @@ NewBarkTownLyraGoodbyeText1:
 
 	para "To think that we"
 	line "both started our"
-
-	para "journeys in this"
-	line "town…"
+	cont "journeys in this"
+	cont "town…"
 
 	para "I do what I can"
 	line "to help the Prof-"
 	cont "essor, but I could"
-
-	para "never take on the"
-	line "League Champion."
+	cont "never take on the"
+	cont "League Champion."
 
 	para "…Before you go…"
 
@@ -489,9 +467,8 @@ NewBarkTownLyraGoodbyeText2:
 
 	para "I can tell how"
 	line "much work and"
-
-	para "love you put into"
-	line "raising your"
+	cont "love you put into"
+	cont "raising your"
 	cont "#mon."
 
 	para "…So, this is"

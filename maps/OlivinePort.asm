@@ -12,11 +12,9 @@ OlivinePort_MapScripts:
 
 	def_callbacks
 
-OlivinePortNoopScene:
-	end
-
 OlivinePortLeaveShipScene:
 	sdefer OlivinePortLeaveShipScript
+OlivinePortNoopScene:	
 	end
 
 OlivinePortLeaveShipScript:
@@ -65,10 +63,7 @@ OlivinePortSailorAtGangwayScript:
 	end
 
 OlivinePortAlreadyRodeScript:
-	writetext OlivinePortCantBoardText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortCantBoardText
 
 OlivinePortWalkUpToShipScript:
 	turnobject OLIVINEPORT_SAILOR2, RIGHT
@@ -115,10 +110,7 @@ OlivinePortWalkUpToShipScript:
 	end
 
 OlivinePortNotRidingScript:
-	writetext OlivinePortComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortComeAgainText
 
 OlivinePortNotRidingMoveAwayScript:
 	writetext OlivinePortComeAgainText
@@ -152,16 +144,10 @@ OlivinePortSailorAfterHOFScript:
 	sjump OlivinePortSailorAtGangwayScript
 
 .NextShipMonday:
-	writetext OlivinePortMondayShipText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortMondayShipText
 
 .NextShipFriday:
-	writetext OlivinePortFridayShipText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePortFridayShipText
 
 OlivinePortFishingGuruScript:
 	faceplayer

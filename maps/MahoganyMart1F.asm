@@ -39,26 +39,17 @@ MahoganyMart1FPharmacistScript:
 	end
 
 .LanceEntered:
-	writetext MahoganyMart1FPharmacistText_LanceEntered
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMart1FPharmacistText_LanceEntered
 
 MahoganyMart1FBlackBeltScript:
 	faceplayer
 	opentext
 	checkevent EVENT_DECIDED_TO_HELP_LANCE
 	iftrue .LanceEntered
-	writetext MahoganyMart1FBlackBeltText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMart1FBlackBeltText
 
 .LanceEntered:
-	writetext MahoganyMart1FBlackBeltText_LanceEntered
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMart1FBlackBeltText_LanceEntered
 
 MahoganyMart1FLanceUncoversStaircaseScript:
 	turnobject MAHOGANYMART1F_BLACK_BELT, RIGHT
@@ -171,9 +162,8 @@ MahoganyMart1FBlackBeltText:
 
 	para "Magikarp are just"
 	line "worthless, but"
-
-	para "Gyarados are big"
-	line "moneymakers."
+	cont "Gyarados are big"
+	cont "moneymakers."
 	done
 
 MahoganyMart1FBlackBeltText_LanceEntered:
@@ -207,9 +197,8 @@ MahoganyMart1FLanceStairsText:
 MahoganyMart1FLanceSplitUpText:
 	text "Lance: <PLAY_G>, we"
 	line "should split up to"
-
-	para "check this place."
-	line "I'll go first."
+	cont "check this place."
+	cont "I'll go first."
 	done
 
 MahoganyMart1F_MapEvents:

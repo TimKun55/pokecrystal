@@ -24,21 +24,15 @@ RadioTower4FDJMaryScript:
 	iftrue .GotPolkadotBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRockets
-	writetext RadioTower4FDJMaryText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower4FDJMaryText
 
 .ClearedRockets:
 	writetext RadioTower4FDJMaryText_ClearedRockets
 	promptbutton
 	verbosegiveitem POLKADOT_BOW
 	iffalse .NoRoom
-	writetext RadioTower4FDJMaryText_GivePinkBow
-	waitbutton
-	closetext
-	setevent EVENT_GOT_POLKADOT_BOW_FROM_MARY
-	end
+	setevent EVENT_GOT_POLKADOT_BOW_FROM_MARY	
+	writetextend RadioTower4FDJMaryText_GivePinkBow
 
 .GotPolkadotBow:
 	writetext RadioTower4FDJMaryText_After
@@ -175,10 +169,7 @@ RadioTower4FDJMaryScript:
 	end
 
 .NoInterview
-	writetext RadioTower4FDJMaryText_ThanksForInterview
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower4FDJMaryText_ThanksForInterview
 
 RadioTowerMeowth:
 	opentext
@@ -197,44 +188,28 @@ TrainerGruntM10:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM10AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM10AfterBattleText
 
 RadioTowerProton:
 	trainer PROTON, PROTON2, EVENT_BEAT_PROTON_2, RadioTowerProtonSeenText, RadioTowerProtonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext RadioTowerProtonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext RadioTowerProtonAfterBattleText
 
 TrainerGruntF4:
 	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntF4AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntF4AfterBattleText
 
 TrainerScientistRich:
 	trainer SCIENTIST, RICH, EVENT_BEAT_SCIENTIST_RICH, ScientistRichSeenText, ScientistRichBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext ScientistRichAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext ScientistRichAfterBattleText
 
 RadioTower4FProductionSign:
 	jumptext RadioTower4FProductionSignText
@@ -275,17 +250,15 @@ RadioTower4FDJMaryText_ClearedRockets:
 RadioTower4FDJMaryText_GivePinkBow:
 	text "Mary: It's just"
 	line "right for #mon"
-
-	para "that know normal-"
-	line "type moves."
+	cont "that know normal-"
+	cont "type moves."
 	done
 
 RadioTower4FDJMaryText_After:
 	text "Mary: Please tune"
 	line "into me on Prof."
-
-	para "Oak's #mon Talk"
-	line "show."
+	cont "Oak's #mon Talk"
+	cont "show."
 	done
 
 RadioTower4FDJMaryText_Interview1:
@@ -334,7 +307,8 @@ RadioTower4FDJMaryText_IntroduceInterview1:
 	cont "Lance and became"
 	cont "the latest trainer"
 	cont "to become the"
-	cont "#mon Champion!"
+	cont "#mon League"
+	cont "Champion!"
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview2:
@@ -596,8 +570,7 @@ RadioTowerProtonSeenText:
 	text "You!! I haven't"
 	line "forgotten the way"
 	cont "you humiliated"
-	
-	para "us at the Well!"
+	cont "us at the Well!"
 
 	para "You're not taking"
 	line "another step!"
@@ -623,9 +596,8 @@ GruntF4SeenText:
 
 	para "I'll think my"
 	line "#mon are cute--"
-
-	para "after they beat"
-	line "yours!"
+	cont "after they beat"
+	cont "yours!"
 	done
 
 GruntF4BeatenText:

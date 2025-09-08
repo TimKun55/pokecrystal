@@ -16,8 +16,6 @@ PokemonLeagueGate_MapScripts:
 	def_callbacks
 
 PokemonLeagueGateNoop1Scene:
-	end
-
 PokemonLeagueGateNoop2Scene:
 	end
 
@@ -131,9 +129,8 @@ PokemonLeagueGateRightBlackBeltText:
 
 	para "The Elite Four are"
 	line "so strong it's"
-
-	para "scary, and they're"
-	line "ready for you!"
+	cont "scary, and they're"
+	cont "ready for you!"
 	done
 
 PokemonLeagueGateClerkIntroText:
@@ -162,9 +159,8 @@ PokemonLeagueGateClerkIntroText:
 PokemonLeagueGateCooltrainerMText:
 	text "I tried to sneak"
 	line "past the guard"
-	
-	para "but I couldn't get"
-	line "past with only"
+	cont "but I couldn't get"
+	cont "past with only"
 	cont "7 badges!"
 	done
 

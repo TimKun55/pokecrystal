@@ -46,55 +46,35 @@ TrainerSuperNerdRuss:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SuperNerdRussAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SuperNerdRussAfterBattleText
 
 TrainerYoungsterZak:
 	trainer YOUNGSTER, ZAK, EVENT_BEAT_YOUNGSTER_ZAK, YoungsterZakSeenText, YoungsterZakBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterZakAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterZakAfterBattleText
 
 TrainerJugglerNedd:
 	trainer JUGGLER, NEDD, EVENT_BEAT_JUGGLER_NEDD, JugglerNeddSeenText, JugglerNeddBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext JugglerNeddAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext JugglerNeddAfterBattleText
 
 TrainerHexManiacBethany:
 	trainer HEX_MANIAC, BETHANY, EVENT_BEAT_HEX_MANIAC_BETHANY, HexManiacBethanySeenText, HexManiacBethanyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HexManiacBethanyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HexManiacBethanyAfterBattleText
 
 TrainerCamperHarvey:
 	trainer CAMPER, HARVEY, EVENT_BEAT_CAMPER_HARVEY, CamperHarveySeenText, CamperHarveyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperHarveyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperHarveyAfterBattleText
 
 MountMoonB2FPaleontologist:
 	jumptextfaceplayer MountMoonB2FPaleontologistText
@@ -143,10 +123,7 @@ MountMoonB2FHelixFossil:
 
 MountMoonB2FNoRoomInBagForFossil:
 	waitbutton
-	writetext MountMoonB2FNoRoomInBagForFossilText
-	waitbutton
-	closetext
-	end
+	writetextend MountMoonB2FNoRoomInBagForFossilText
 
 MountMoonB2FFullRestoreScript:
 	itemball FULL_RESTORE
@@ -201,9 +178,8 @@ YoungsterZakBeatenText:
 YoungsterZakAfterBattleText:
 	text "With that team of"
 	line "#mon, you must"
-
-	para "have explored a"
-	line "lot of places."
+	cont "have explored a"
+	cont "lot of places."
 
 	para "Getting lost must"
 	line "be pretty normal"
@@ -229,9 +205,8 @@ JugglerNeddAfterBattleText:
 HexManiacBethanySeenText:
 	text "Mirror, mirror,"
 	line "on the wall,"
-
-	para "who will throw"
-	line "their # Ball?"
+	cont "who will throw"
+	cont "their # Ball?"
 	done
 
 HexManiacBethanyBeatenText:
@@ -241,9 +216,8 @@ HexManiacBethanyBeatenText:
 HexManiacBethanyAfterBattleText:
 	text "Magic mirror,"
 	line "great and wise,"
-
-	para "failed to see my"
-	line "swift demise."
+	cont "failed to see my"
+	cont "swift demise."
 	done
 
 CamperHarveySeenText:
@@ -271,9 +245,8 @@ MountMoonB2FPaleontologistText:
 	
 	para "If you find any-"
 	line "thing laying"
-	
-	para "around, feel"
-	line "free to take it!"
+	cont "around, feel"
+	cont "free to take it!"
 	done
 
 MountMoonB2FFoundFossilText:

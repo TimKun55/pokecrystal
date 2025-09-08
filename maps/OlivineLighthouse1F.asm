@@ -54,9 +54,8 @@ OlivineLighthouse1FSailorText:
 OlivineLighthouse1FPokefanFText:
 	text "In the past, #-"
 	line "mon used to light"
-
-	para "the sea around"
-	line "Olivine at night."
+	cont "the sea around"
+	cont "Olivine at night."
 
 	para "The Lighthouse was"
 	line "made in honor of"
@@ -78,7 +77,6 @@ OlivineLighthouse1FPokefanMText:
 	text "Oh, sweetie, I'm"
 	line "really not good"
 	cont "with heights…"
-
 
 	para "Where's your"
 	line "mother…?"

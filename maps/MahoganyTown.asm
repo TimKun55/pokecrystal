@@ -15,8 +15,6 @@ MahoganyTown_MapScripts:
 	callback MAPCALLBACK_NEWMAP, MahoganyTownFlypointCallback
 
 MahoganyTownNoop1Scene:
-	end
-
 MahoganyTownNoop2Scene:
 	end
 
@@ -38,20 +36,16 @@ MahoganyTownTryARageCandyBarScript:
 MahoganyTownHikerScript:
 	faceplayer
 RageCandyBarMerchantScript:
+	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .ClearedRocketHideout
 	scall .SellRageCandyBars
 	end
 
 .ClearedRocketHideout:
-	opentext
-	writetext RageCandyBarMerchantSoldOutText
-	waitbutton
-	closetext
-	end
+	writetextend RageCandyBarMerchantSoldOutText
 
 .SellRageCandyBars:
-	opentext
 	writetext RageCandyBarMerchantTryOneText
 	special PlaceMoneyTopRight
 	yesorno
@@ -64,44 +58,26 @@ RageCandyBarMerchantScript:
 	playsound SFX_TRANSACTION
 	takemoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE
 	special PlaceMoneyTopRight
-	writetext RageCandyBarMerchantSavorItText
-	waitbutton
-	closetext
-	end
+	writetextend RageCandyBarMerchantSavorItText
 
 .NotEnoughMoney:
-	writetext RageCandyBarMerchantNotEnoughMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend RageCandyBarMerchantNotEnoughMoneyText
 
 .Refused:
-	writetext RageCandyBarMerchantRefusedText
-	waitbutton
-	closetext
-	end
+	writetextend RageCandyBarMerchantRefusedText
 
 .NoRoom:
-	writetext RageCandyBarMerchantNoRoomText
-	waitbutton
-	closetext
-	end
+	writetextend RageCandyBarMerchantNoRoomText
 
 MahoganyTownGrampsScript:
 	faceplayer
 	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .ClearedRocketHideout
-	writetext MahoganyTownGrampsText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyTownGrampsText
 
 .ClearedRocketHideout:
-	writetext MahoganyTownGrampsText_ClearedRocketHideout
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyTownGrampsText_ClearedRocketHideout
 
 MahoganyTownFisherScript:
 	jumptextfaceplayer MahoganyTownFisherText
@@ -147,9 +123,8 @@ RageCandyBarMerchantTryOneText:
 
 	para "Since you're new,"
 	line "you should try a"
-
-	para "yummy RageCandy-"
-	line "Bar!"
+	cont "yummy RageCandy-"
+	cont "Bar!"
 
 	para "Right now, it can"
 	line "be yours for just"
@@ -202,23 +177,20 @@ MahoganyTownGrampsText_ClearedRocketHideout:
 MahoganyTownFisherText:
 	text "Since you came"
 	line "this far, take the"
-
-	para "time to do some"
-	line "sightseeing."
+	cont "time to do some"
+	cont "sightseeing."
 
 	para "You should head"
 	line "north and check"
-
-	para "out Lake Of Rage"
-	line "right now."
+	cont "out Lake Of Rage"
+	cont "right now."
 	done
 
 MahoganyTownLassText:
 	text "Visit Grandma's"
 	line "shop. She sells"
-
-	para "stuff that nobody"
-	line "else has."
+	cont "stuff that nobody"
+	cont "else has."
 	done
 
 MahoganyTownSignText:

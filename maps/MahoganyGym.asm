@@ -51,10 +51,7 @@ MahoganyGymPryceScript:
 	verbosegiveitem TM_ICY_WIND
 	iffalse .MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
-	writetext PryceText_IcyWindSpeech
-	waitbutton
-	closetext
-	end
+	writetextend PryceText_IcyWindSpeech
 
 .PryceScript_Defeat:
 	writetext PryceText_CherishYourPokemon
@@ -76,10 +73,7 @@ MahoganyGymPryceScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_PRYCE_REMATCH
 	opentext
-	writetext Pryce16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Pryce16AfterBattleText
 
 .PryceScript_Rematch
 	checkflag ENGINE_DAILY_PRYCE_REMATCH
@@ -94,22 +88,13 @@ MahoganyGymPryceScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_PRYCE_REMATCH
 	opentext
-	writetext PryceRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PryceRematchAfterBattleText
 
 .skip_rematch
-	writetext PryceComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend PryceComeBackTomorrowText
 
 .EndRematch
-	writetext PryceNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend PryceNextTimeText
 
 MahoganyGymPiloswine:
 	opentext
@@ -151,71 +136,45 @@ TrainerSkierRoxanne:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SkierRoxanneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SkierRoxanneAfterBattleText
 
 TrainerSkierClarissa:
 	trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SkierClarissaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SkierClarissaAfterBattleText
 
 TrainerBoarderRonald:
 	trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BoarderRonaldAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BoarderRonaldAfterBattleText
 
 TrainerBoarderBrad:
 	trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BoarderBradAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BoarderBradAfterBattleText
 
 TrainerBoarderDouglas:
 	trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BoarderDouglasAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BoarderDouglasAfterBattleText
 
 MahoganyGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .MahoganyGymGuideWinScript
-	writetext MahoganyGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyGymGuideText
 
 .MahoganyGymGuideWinScript:
-	writetext MahoganyGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyGymGuideWinText
 
 MahoganyGymStatue:
 	checkflag ENGINE_GLACIERBADGE
@@ -232,9 +191,8 @@ MahoganyGymStatue:
 PryceText_Intro:
 	text "#mon have many"
 	line "experiences in"
-
-	para "their lives, just "
-	line "like we do. "
+	cont "their lives, just "
+	cont "like we do. "
 
 	para "I, too, have seen"
 	line "and suffered much"
@@ -246,18 +204,16 @@ PryceText_Intro:
 
 	para "I have been with"
 	line "#mon since"
-
-	para "before you were"
-	line "born."
+	cont "before you were"
+	cont "born."
 
 	para "I do not lose"
 	line "easily."
 
 	para "I, Pryce--the"
 	line "winter trainer--"
-
-	para "shall demonstrate"
-	line "my power!"
+	cont "shall demonstrate"
+	cont "my power!"
 	done
 
 PryceText_Impressed:
@@ -266,9 +222,8 @@ PryceText_Impressed:
 
 	para "With your strong"
 	line "will, I know you"
-
-	para "will overcome all"
-	line "life's obstacles."
+	cont "will overcome all"
+	cont "life's obstacles."
 
 	para "You are worthy of"
 	line "this Badge!"
@@ -282,8 +237,7 @@ Text_ReceivedGlacierBadge:
 PryceText_GlacierBadgeSpeech:
 	text "The GlacierBadge"
 	line "will let your"
-
-	para "#mon use Whirl-"
+	cont "#mon use Whirl-"
 	line "pool to get across"
 	cont "real whirlpools."
 
@@ -310,9 +264,8 @@ PryceText_CherishYourPokemon:
 
 	para "You and your #-"
 	line "mon will be to-"
-
-	para "gether for many"
-	line "years to come."
+	cont "gether for many"
+	cont "years to come."
 
 	para "Cherish your time"
 	line "together!"
@@ -404,9 +357,8 @@ BoarderRonaldBeatenText:
 BoarderRonaldAfterBattleText:
 	text "I think there's a"
 	line "move a frostbitten"
-
-	para "can use while it's"
-	line "frozen."
+	cont "can use while it's"
+	cont "frozen."
 	done
 
 BoarderBradSeenText:
@@ -448,9 +400,8 @@ BoarderDouglasAfterBattleText:
 
 	para "He meditates under"
 	line "a waterfall daily"
-
-	para "to strengthen his"
-	line "mind and body."
+	cont "to strengthen his"
+	cont "mind and body."
 	
 	para "I think Cianwood's"
 	line "Chuck has started"
@@ -460,9 +411,8 @@ BoarderDouglasAfterBattleText:
 SkierRoxanneSeenText:
 	text "To get to Pryce,"
 	line "our Gym Leader,"
-
-	para "you need to think"
-	line "before you skate."
+	cont "you need to think"
+	cont "before you skate."
 	done
 
 SkierRoxanneBeatenText:
@@ -473,9 +423,8 @@ SkierRoxanneBeatenText:
 SkierRoxanneAfterBattleText:
 	text "If you don't skate"
 	line "with precision,"
-
-	para "you won't get far"
-	line "in this Gym."
+	cont "you won't get far"
+	cont "in this Gym."
 	done
 
 SkierClarissaSeenText:
@@ -497,21 +446,18 @@ SkierClarissaAfterBattleText:
 MahoganyGymGuideText:
 	text "Pryce is a veteran"
 	line "who has trained"
-
-	para "#mon for some"
-	line "50 years."
+	cont "#mon for some"
+	cont "50 years."
 
 	para "He's said to be"
 	line "good at freezing"
-
-	para "opponents with"
-	line "ice-type moves."
+	cont "opponents with"
+	cont "ice-type moves."
 
 	para "That means you"
 	line "should melt him"
-
-	para "with your burning"
-	line "ambition!"
+	cont "with your burning"
+	cont "ambition!"
 	done
 
 MahoganyGymGuideWinText:
@@ -521,9 +467,8 @@ MahoganyGymGuideWinText:
 
 	para "That was a hot"
 	line "battle that"
-
-	para "bridged the gen-"
-	line "eration gap!"
+	cont "bridged the gen-"
+	cont "eration gap!"
 	done
 
 PiloswineText:
@@ -532,7 +477,7 @@ PiloswineText:
 	done
 	
 MamoswineText:
-	text "MAMOSWINE: Mooo!"
+	text "Mamoswine: Mooo!"
 	line "Mammooo!"
 	done
 

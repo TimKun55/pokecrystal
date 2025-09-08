@@ -15,16 +15,10 @@ MahoganyRedGyaradosSpeechHouseTeacherScript:
 	opentext
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue .RocketsInRadioTower
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyRedGyaradosSpeechHouseTeacherText
 
 .RocketsInRadioTower:
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower
 
 MahoganyRedGyaradosSpeechHouseBlackBeltText:
 	text "I heard that a red"
@@ -33,9 +27,8 @@ MahoganyRedGyaradosSpeechHouseBlackBeltText:
 
 	para "That's odd, since"
 	line "even ordinary"
-
-	para "Gyarados are rare"
-	line "in that lake…"
+	cont "Gyarados are rare"
+	cont "in that lake…"
 	done
 
 MahoganyRedGyaradosSpeechHouseTeacherText:
@@ -47,9 +40,9 @@ MahoganyRedGyaradosSpeechHouseTeacherText:
 MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
 	text "I've been hearing"
 	line "laughter on the"
-
-	para "radio…"
-	line "It's creepy."
+	cont "radio…"
+	
+	para "It's creepy."
 	done
 
 MahoganyRedGyaradosSpeechHouse_MapEvents:

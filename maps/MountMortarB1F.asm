@@ -40,16 +40,10 @@ MountMortarB1FKiyoScript:
 	givepoke TYROGUE, 10
 	setevent EVENT_GOT_TYROGUE_FROM_KIYO
 .GotTyrogue:
-	writetext MountMortarB1FKiyoGotTyrogueText
-	waitbutton
-	closetext
-	end
+	writetextend MountMortarB1FKiyoGotTyrogueText
 
 .NoRoom:
-	writetext MountMortarB1FKiyoFullPartyText
-	waitbutton
-	closetext
-	end
+	writetextend MountMortarB1FKiyoFullPartyText
 
 MountMortarB1FBoulder:
 	jumpstd StrengthBoulderScript
@@ -103,9 +97,8 @@ MountMortarB1FTyrogueRewardText:
 
 	para "As proof that you"
 	line "defeated me, I'll"
-
-	para "give you a rare"
-	line "fighting #mon."
+	cont "give you a rare"
+	cont "fighting #mon."
 	done
 
 MountMortarB1FReceiveMonText:

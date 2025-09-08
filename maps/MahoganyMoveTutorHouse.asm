@@ -53,16 +53,10 @@ MahoganyMoveTutor1Script:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorRefusalText
 	
 .NotEnough:
-	writetext MahoganyMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorNotEnough
 
 .TeachMove:
 	writetext MahoganyMoveTutor1Payment
@@ -70,10 +64,7 @@ MahoganyMoveTutor1Script:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext MahoganyMoveTutor1TutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutor1TutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -126,16 +117,10 @@ MahoganyMoveTutor2:
 	sjump .TutorLoop
 
 .Refused:
-	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorRefusalText
 	
 .NotEnough:
-	writetext MahoganyMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorNotEnough
 
 .TeachMove:
 	writetext MahoganyMoveTutorWeather1Payment
@@ -143,10 +128,7 @@ MahoganyMoveTutor2:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext MahoganyMoveTutorWeatherTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorWeatherTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -198,16 +180,10 @@ MahoganyMoveTutor3:
 	sjump .TutorLoop
 
 .Refused:
-	writetext MahoganyMoveTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorRefusalText
 	
 .NotEnough:
-	writetext MahoganyMoveTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorNotEnough
 
 .TeachMove:
 	writetext MahoganyMoveTutorWeather2Payment
@@ -215,10 +191,7 @@ MahoganyMoveTutor3:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext MahoganyMoveTutorWeatherTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend MahoganyMoveTutorWeatherTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -241,11 +214,11 @@ TutorHouseBookshelfRight:
 
 AskTeachAMove1Text:
 	text "Hi there!"
-	line "For ¥8,000, I can"
-	cont "teach your #mon"
-
-	para "amazing moves if"
-	line "you'd like."
+	
+	para "For ¥8,000, I can"
+	line "teach your #mon"
+	cont "amazing moves if"
+	cont "you'd like."
 	done
 	
 AskTeachAMoveTextYesNo:
@@ -256,9 +229,8 @@ AskTeachAMoveTextYesNo:
 MahoganyMoveTutorRefusalText:
 	text "Come back if"
 	line "you want to"
-	
-	para "teach your"
-	line "#mon a new"
+	cont "teach your"
+	cont "#mon a new"
 	cont "move!"
 	done
 
@@ -329,9 +301,8 @@ MahoganyMoveTutorWeatherTutorUseWisely:
 	text "If you'd like to"
 	line "learn more about"
 	cont "these moves,"
-	
-	para "check out our"
-	line "bookshelf!"
+	cont "check out our"
+	cont "bookshelf!"
 
 	para "Good luck"
 	line "out there!"
@@ -342,20 +313,20 @@ TutorHouseBookshelfLeftText:
 	line "Water moves stron-"
 	cont "ger and Fire moves"
 	cont "weaker."
-	
+
 	para "It also gives"
 	line "Thunder full"
 	cont "accuracy, as well"
 	cont "as Hurricane."
-	
+
 	para "It also weakens"
 	line "Solarbeam."
-	
+
 	para "Sunny Day makes"
 	line "Fire moves stron-"
 	cont "get and Water"
 	cont "moves weaker."
-	
+
 	para "Solarbeam fires"
 	line "off without a"
 	cont "charge up turn."
@@ -364,29 +335,25 @@ TutorHouseBookshelfLeftText:
 TutorHouseBookshelfRightText:
 	text "Sandstorm damages"
 	line "all Types each"
-	
-	para "turn except for"
-	line "Ground, Rock"
+	cont "turn except for"
+	cont "Ground, Rock"
 	cont "and Steel Types."
-	
+
 	para "Increases the"
 	line "Special Defense of"
-	
-	para "Rock Types by"
-	line "1.5x while active."
+	cont "Rock Types by"
+	cont "1.5x while active."
 
 	para "Hail damages all"
 	line "Types each turn"
-	
-	para "except for"
-	line "Ice Types."
-	
+	cont "except for"
+	cont "Ice Types."
+
 	para "Increases the"
 	line "Defense of"
-	
-	para "Ice Types by"
-	line "1.5x while active."
-	
+	cont "Ice Types by"
+	cont "1.5x while active."
+
 	para "It also weakens"
 	line "Solarbeam."
 	done

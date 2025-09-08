@@ -28,10 +28,7 @@ OlivineLighthouseJasmine:
 	promptbutton
 	setevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 .ExplainedSickness:
-	writetext JasmineGetSomeMedicineText
-	waitbutton
-	closetext
-	end
+	writetextend JasmineGetSomeMedicineText
 
 .BroughtSecretpotion:
 	writetext JasmineCureAmphyText
@@ -96,10 +93,7 @@ OlivineLighthouseJasmine:
 	pause 15
 	turnobject OLIVINELIGHTHOUSE6F_AMPHAROS, LEFT
 	opentext
-	writetext JasmineAmphyHangOnText
-	waitbutton
-	closetext
-	end
+	writetextend JasmineAmphyHangOnText
 
 OlivineLighthouseAmphy:
 	faceplayer
@@ -110,10 +104,7 @@ OlivineLighthouseAmphy:
 	setval AMPHAROS
 	special PlaySlowCry
 	promptbutton
-	writetext AmphyBreathingLaboredText
-	waitbutton
-	closetext
-	end
+	writetextend AmphyBreathingLaboredText
 
 .HealthyNow:
 	writetext AmphyPaluPaluluText
@@ -231,9 +222,8 @@ OlivineLighthouse6FElevatorSailorMovement:
 JasmineCianwoodPharmacyText:
 	text "Jasmine: … This"
 	line "#mon always"
-
-	para "kept the sea lit"
-	line "at night."
+	cont "kept the sea lit"
+	cont "at night."
 
 	para "…But it suddenly"
 	line "got sick… It's"
@@ -241,9 +231,8 @@ JasmineCianwoodPharmacyText:
 
 	para "…I understand"
 	line "that there is a"
-
-	para "wonderful Pharmacy"
-	line "in Cianwood…"
+	cont "wonderful Pharmacy"
+	cont "in Cianwood…"
 
 	para "But that's across"
 	line "the sea…"
@@ -401,9 +390,8 @@ BinocularsLeft3Text:
 BinocularsRight1Text:
 	text "These binoculars"
 	line "let me see far"
-
-	para "away. I can see"
-	line "the Tin Tower!"
+	cont "away. I can see"
+	cont "the Tin Tower!"
 	done
 
 BinocularsRight2Text:

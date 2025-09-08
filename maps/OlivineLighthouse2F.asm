@@ -12,11 +12,7 @@ TrainerGentlemanAlfred:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GentlemanAlfredAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GentlemanAlfredAfterBattleText
 
 TrainerSailorHuey:
 	trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script
@@ -166,9 +162,8 @@ GentlemanAlfredAfterBattleText:
 
 	para "But I hear that"
 	line "it's sick now and"
-
-	para "can't be cured by"
-	line "ordinary medicine."
+	cont "can't be cured by"
+	cont "ordinary medicine."
 	done
 
 SailorHueyGiveProteinText:

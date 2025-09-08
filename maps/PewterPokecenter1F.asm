@@ -46,9 +46,8 @@ Chris:
 PewterPokecenter1FTeacherText:
 	text "…Yeah, and the"
 	line "Gym in Cinnabar's"
-
-	para "been moved. I"
-	line "was really amazed."
+	cont "been moved. I"
+	cont "was really amazed."
 
 	para "…Yes? I'm on the"
 	line "phone. Go away!"
@@ -62,15 +61,13 @@ PewterJigglypuffText:
 PewterPokecenter1FBugCatcherText:
 	text "Most #mon get"
 	line "drowsy if they"
-
-	para "hear a Jigglypuff"
-	line "singing."
+	cont "hear a Jigglypuff"
+	cont "singing."
 
 	para "There are several"
 	line "moves that can be"
-
-	para "used only while a"
-	line "#mon is asleep."
+	cont "used only while a"
+	cont "#mon is asleep."
 	done
 
 PewterPokecenter1F_MapEvents:

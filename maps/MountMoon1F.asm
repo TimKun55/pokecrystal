@@ -17,8 +17,6 @@ MountMoon1F_MapScripts:
 
 MountMoon1FRivalEncounterScene:
 	sdefer MountMoon1FRivalBattleScript
-	end
-
 MountMoon1FNoopScene:
 	end
 
@@ -82,55 +80,35 @@ TrainerBugManiacVan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacVanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacVanAfterBattleText
 
 TrainerLassVerity:
 	trainer LASS, VERITY, EVENT_BEAT_LASS_VERITY, LassVeritySeenText, LassVerityBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassVerityAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassVerityAfterBattleText
 
 TrainerSuperNerdDave:
 	trainer SUPER_NERD, DAVE, EVENT_BEAT_SUPER_NERD_DAVE, SuperNerdDaveSeenText, SuperNerdDaveBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SuperNerdDaveAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SuperNerdDaveAfterBattleText
 
 TrainerHikerDan:
 	trainer HIKER, DAN, EVENT_BEAT_HIKER_DAN, HikerDanSeenText, HikerDanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerDanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerDanAfterBattleText
 
 TrainerHikerMicky:
 	trainer HIKER, MICKY, EVENT_BEAT_HIKER_MICKY, HikerMickySeenText, HikerMickyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerMickyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerMickyAfterBattleText
 
 MountMoon1FRivalMovementBefore:
 	step DOWN
@@ -168,9 +146,8 @@ MountMoon1FRivalTextBefore:
 
 	para "…Since I lost to"
 	line "you, I thought"
-
-	para "about what I was"
-	line "lacking with my"
+	cont "about what I was"
+	cont "lacking with my"
 	cont "#mon…"
 
 	para "And we came up"
@@ -185,9 +162,8 @@ MountMoon1FRivalTextWin:
 
 	para "I thought I raised"
 	line "my #mon to be"
-
-	para "the best they"
-	line "could be…"
+	cont "the best they"
+	cont "could be…"
 
 	para "…But it still "
 	line "wasn't enough…"
@@ -214,9 +190,8 @@ MountMoon1FRivalTextAfter:
 
 	para "One of these days"
 	line "I'm going to prove"
-
-	para "how good I am by"
-	line "beating you."
+	cont "how good I am by"
+	cont "beating you."
 	done
 
 MountMoon1FRivalTextLoss:
@@ -227,9 +202,8 @@ MountMoon1FRivalTextLoss:
 
 	para "With my #mon,"
 	line "I'm going to beat"
-
-	para "the Champion and"
-	line "become the world's"
+	cont "the Champion and"
+	cont "become the world's"
 	cont "greatest trainer."
 	done
 

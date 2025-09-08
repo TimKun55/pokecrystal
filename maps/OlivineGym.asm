@@ -45,10 +45,7 @@ OlivineGymJasmineScript:
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
-	writetext Jasmine_IronTailSpeech
-	waitbutton
-	closetext
-	end
+	writetextend Jasmine_IronTailSpeech
 
 .GotIronTail:
 	writetext Jasmine_GoodLuck
@@ -70,10 +67,7 @@ OlivineGymJasmineScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_JASMINE_REMATCH
 	opentext
-	writetext Jasmine16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Jasmine16AfterBattleText
 
 .JasmineScript_Rematch
 	checkflag ENGINE_DAILY_JASMINE_REMATCH
@@ -88,44 +82,27 @@ OlivineGymJasmineScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_JASMINE_REMATCH
 	opentext
-	writetext JasmineRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend JasmineRematchAfterBattleText
 
 .skip_rematch
-	writetext JasmineComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend JasmineComeBackTomorrowText
 
 .EndRematch
-	writetext JasmineNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend JasmineNextTimeText
 
 TrainerCooltrainerMAndy:
 	trainer COOLTRAINERM, ANDY, EVENT_BEAT_COOLTRAINERM_ANDY, CooltrainerMAndySeenText, CooltrainerMAndyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerMAndyAfterText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerMAndyAfterText
 
 TrainerBeautyJaclyn:
 	trainer BEAUTY, JACLYN, EVENT_BEAT_BEAUTY_JACLYN, BeautyJaclynSeenText, BeautyJaclynBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyJaclynAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyJaclynAfterText
 	
 OlivineGymSteelix:
 	opentext
@@ -152,29 +129,18 @@ OlivineGymActivateRockets:
 
 OlivineGymGuideScript:
 	faceplayer
+	opentext	
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .OlivineGymGuideWinScript
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .OlivineGymGuidePreScript
-	opentext
-	writetext OlivineGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGymGuideText
 
 .OlivineGymGuideWinScript:
-	opentext
-	writetext OlivineGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGymGuideWinText
 
 .OlivineGymGuidePreScript:
-	opentext
-	writetext OlivineGymGuidePreText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineGymGuidePreText
 
 OlivineGymStatue:
 	checkflag ENGINE_MINERALBADGE
@@ -195,9 +161,8 @@ Jasmine_SteelTypeIntro:
 
 	para "But this is dif-"
 	line "ferent. Please"
-
-	para "allow me to intro-"
-	line "duce myself."
+	cont "allow me to intro-"
+	cont "duce myself."
 
 	para "I am Jasmine, a"
 	line "Gym Leader. I use"
@@ -216,15 +181,13 @@ Jasmine_SteelTypeIntro:
 Jasmine_BetterTrainer:
 	text "…You are a better"
 	line "trainer than me,"
-
-	para "in both skill and"
-	line "kindness."
+	cont "in both skill and"
+	cont "kindness."
 
 	para "In accordance with"
 	line "League rules, I"
-
-	para "confer upon you"
-	line "this Badge."
+	cont "confer upon you"
+	cont "this Badge."
 	done
 
 Text_ReceivedMineralBadge:
@@ -269,11 +232,12 @@ JasmineRematchAfterBattleText:
 	cont "things like this!"
 	
 	para "Keep training"
-	line "without giving up,"
+	line "without giving up."
 	
-	para "I'll do the same,"
-	line "and be sure"
-	cont "to back for" 
+	para "I'll do the same."
+	
+	para "And be sure"
+	line "to back for" 
 	cont "a rematch!"
 	done
 	
@@ -284,7 +248,7 @@ Jasmine16IntroText:
 	
 	para "You've beaten all"
 	line "the Kanto Gym"
-	cont "Leaders!"
+	cont "Leaders."
 	
 	para "I'm going to use"
 	line "my strongest team"
@@ -298,11 +262,11 @@ Jasmine16AfterBattleText:
 	line "strongest steel!"
 	
 	para "You're as strong"
-	line "as you are kind!"
+	line "as you are kind."
 	
 	para "Feel free to"
 	line "come back for"
-	cont "a rematch!"
+	cont "a rematch."
 	done
 
 JasmineComeBackTomorrowText:
@@ -313,7 +277,7 @@ JasmineComeBackTomorrowText:
 
 JasmineNextTimeText:
 	text "You can come"
-	line "back anytime!"
+	line "back anytime."
 	done
 
 CooltrainerMAndySeenText:
@@ -347,9 +311,8 @@ BeautyJaclynBeatenText:
 BeautyJaclynAfterText:
 	text "Jasmine used to"
 	line "be a rock-type"
-	
-	para "trainer and trai-"	
-	line "ned with Brock."
+	cont "trainer and trai-"	
+	cont "ned with Brock."
 	
 	para "I'm glad she"
 	line "became a steel"

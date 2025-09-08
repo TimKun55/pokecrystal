@@ -44,9 +44,8 @@ PalletTownFisherText:
 
 	para "Not only can you"
 	line "store #mon in"
-	
-	para "PCs, but you can"
-	line "store items, too!"
+	cont "PCs, but you can"
+	cont "store items, too!"
 	done
 
 PalletTownSignText:

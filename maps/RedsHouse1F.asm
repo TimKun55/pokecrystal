@@ -14,11 +14,8 @@ RedsMum:
 	opentext
 	checkevent EVENT_MET_REDS_MUM
 	iftrue .MetAlready
-	writetext RedsMumText1
-	waitbutton
-	closetext
-	setevent EVENT_MET_REDS_MUM
-	end
+	setevent EVENT_MET_REDS_MUM	
+	writetextend RedsMumText1
 
 .MetAlready:
 	checkevent EVENT_BEAT_RED
@@ -71,10 +68,7 @@ RedsMum:
 	end
 
 .RedsMumFinish:
-	writetext RedsMumText2
-	waitbutton
-	closetext
-	end
+	writetextend RedsMumText2
 
 RedsHouse1FTV:
 	jumptext RedsHouse1FTVText
@@ -112,25 +106,22 @@ RedsMumText1:
 
 	para "He hasn't called"
 	line "either, so I have"
-
-	para "no idea where he"
-	line "is or what he's"
+	cont "no idea where he"
+	cont "is or what he's"
 	cont "been doing."
 
 	para "They say that no"
 	line "word is proof that"
-
-	para "he's doing fine,"
-	line "but I do worry"
+	cont "he's doing fine,"
+	cont "but I do worry"
 	cont "about him."
 	done
 
 RedsMumText2:
 	text "I worry about Red"
 	line "getting hurt or"
-
-	para "sick, but he's"
-	line "growing up."
+	cont "sick, but he's"
+	cont "growing up."
 
 	para "I'm proud that he "
 	line "is doing what he"
@@ -143,9 +134,8 @@ RedsMumSomethingForPlayerText:
 	para "Red stopped by"
 	line "and said he had"
 	cont "a fantastic"
-	
-	para "battle with a"
-	line "talented trainer."
+	cont "battle with a"
+	cont "talented trainer."
 	
 	para "That was you,"
 	line "wasn't it?"

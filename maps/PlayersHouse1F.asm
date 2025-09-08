@@ -129,22 +129,13 @@ MumScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .GotAPokemon
-	writetext HurryUpElmIsWaitingText
-	waitbutton
-	closetext
-	end
+	writetextend HurryUpElmIsWaitingText
 
 .GotAPokemon:
-	writetext SoWhatWasProfElmsErrandText
-	waitbutton
-	closetext
-	end
+	writetextend SoWhatWasProfElmsErrandText
 
 .FirstTimeBanking:
-	writetext ImBehindYouText
-	waitbutton
-	closetext
-	end
+	writetextend ImBehindYouText
 
 .GaveMysteryEgg:
 	setevent EVENT_FIRST_TIME_BANKING_WITH_MUM
@@ -245,15 +236,13 @@ ElmsLookingForYouText:
 
 	para "She said that our"
 	line "neighbor, Prof."
-
-	para "Elm, was looking"
-	line "for you."
+	cont "Elm, was looking"
+	cont "for you."
 
 	para "Oh! I almost for-"
 	line "got! Your #mon"
-
-	para "Gear is back from"
-	line "the repair shop."
+	cont "Gear is back from"
+	cont "the repair shop."
 
 	para "Here you go!"
 	done
@@ -281,9 +270,8 @@ IsItDSTText:
 ComeHomeForDSTText:
 	text "Come home to"
 	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time."
+	cont "for Daylight"
+	cont "Saving Time."
 
 	para "By the way, do you"
 	line "know how to use"
@@ -368,9 +356,8 @@ NeighborText:
 
 	para "My daughter is"
 	line "adamant about"
-
-	para "becoming Prof."
-	line "Elm's assistant."
+	cont "becoming Prof."
+	cont "Elm's assistant."
 
 	para "She really loves"
 	line "#mon!"
@@ -404,9 +391,8 @@ PlayersHouse1FFridgeText:
 PlayersHouse1FTVText:
 	text "There's a movie on"
 	line "TV: Stars dot the"
-
-	para "sky as two boys"
-	line "ride on a train…"
+	cont "sky as two boys"
+	cont "ride on a train…"
 
 	para "I'd better get"
 	line "rolling too!"

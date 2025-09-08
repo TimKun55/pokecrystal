@@ -14,33 +14,21 @@ TrainerBirdKeeperTheo:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperTheoAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperTheoAfterBattleText
 
 TrainerGentlemanPreston:
 	trainer GENTLEMAN, PRESTON, EVENT_BEAT_GENTLEMAN_PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GentlemanPrestonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GentlemanPrestonAfterBattleText
 
 TrainerSailorTerrell:
 	trainer SAILOR, TERRELL, EVENT_BEAT_SAILOR_TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorTerrellAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorTerrellAfterBattleText
 
 OlivineLighthouse3FEther:
 	itemball ETHER
@@ -48,9 +36,8 @@ OlivineLighthouse3FEther:
 BirdKeeperTheoSeenText:
 	text "Why are you here?"
 	line "Are you just going"
-
-	para "to gawk? I suggest"
-	line "that you leave!"
+	cont "to gawk? I suggest"
+	cont "that you leave!"
 	done
 
 BirdKeeperTheoBeatenText:
@@ -64,9 +51,8 @@ BirdKeeperTheoAfterBattleText:
 
 	para "I want to visit"
 	line "the sick #mon,"
-
-	para "but I can't get up"
-	line "there…"
+	cont "but I can't get up"
+	cont "there…"
 	done
 
 SailorTerrellSeenText:
@@ -87,9 +73,8 @@ SailorTerrellAfterBattleText:
 
 	para "The Gym Leader's"
 	line "#mon type has"
-
-	para "changed without me"
-	line "noticing."
+	cont "changed without me"
+	cont "noticing."
 	done
 
 GentlemanPrestonSeenText:

@@ -15,11 +15,7 @@ RadioTower5F_MapScripts:
 	def_callbacks
 
 RadioTower5FNoop1Scene:
-	end
-
 RadioTower5FNoop2Scene:
-	end
-
 RadioTower5FNoop3Scene:
 	end
 
@@ -60,31 +56,17 @@ FakeDirectorScript:
 	end
 
 RadioTower5FPetrel:
-	faceplayer
-	opentext
-	writetext PetrelTextAfter
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PetrelTextAfter
 
 Director:
-	faceplayer
-	opentext
-	writetext RadioTower5FDirectorText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer RadioTower5FDirectorText
 
 RadioTower5FAriana:
 	trainer ARIANA, ARIANA2, EVENT_BEAT_ARIANA_2, ArianaSeenText, ArianaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext ArianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext ArianaAfterBattleText
 
 RadioTower5FArcherScript:
 	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
@@ -229,9 +211,8 @@ FakeDirectorTextBefore2:
 FakeDirectorTextBefore3:
 	text "I pretended to be"
 	line "the real thing to"
-
-	para "prepare for our"
-	line "takeover."
+	cont "prepare for our"
+	cont "takeover."
 
 	para "Do you want to"
 	line "know where we hid"
@@ -250,9 +231,8 @@ FakeDirectorWinText:
 PetrelTextAfter:
 	text "We stashed the"
 	line "real Director in"
-
-	para "the Underground"
-	line "Warehouse."
+	cont "the Underground"
+	cont "Warehouse."
 
 	para "It's at the far"
 	line "end of the Under-"
@@ -284,9 +264,8 @@ ArianaAfterBattleText:
 
 	para "A brat like you"
 	line "won't appreciate"
-
-	para "the magnificence"
-	line "of Team Rocket."
+	cont "the magnificence"
+	cont "of Team Rocket."
 
 	para "That's too bad."
 	line "I really admire"
@@ -302,16 +281,14 @@ ArcherBeforeText:
 
 	para "We intend to take"
 	line "over this Radio"
-
-	para "Station and an-"
-	line "nounce our come-"
+	cont "Station and an-"
+	cont "nounce our come-"
 	cont "back."
 
 	para "That should bring"
 	line "our boss Giovanni"
-
-	para "back from his solo"
-	line "training."
+	cont "back from his solo"
+	cont "training."
 
 	para "We are going to"
 	line "regain our former"
@@ -338,9 +315,8 @@ ArcherAfterText:
 
 	para "Like Giovanni did"
 	line "before me, I will"
-
-	para "disband Team"
-	line "Rocket here today."
+	cont "disband Team"
+	cont "Rocket here today."
 
 	para "Farewell."
 	done
@@ -351,9 +327,8 @@ RadioTower5FDirectorThankYouText:
 
 	para "Your courageous"
 	line "actions have saved"
-
-	para "#mon nation-"
-	line "wide."
+	cont "#mon nation-"
+	cont "wide."
 
 	para "I know it's not"
 	line "much, but please"
@@ -378,17 +353,15 @@ RadioTower5FDirectorDescribeClearBellText:
 
 	para "I heard that all"
 	line "sorts of #mon"
-
-	para "lived in Goldenrod"
-	line "in the past."
+	cont "lived in Goldenrod"
+	cont "in the past."
 
 	para "Perhaps…"
 
 	para "That bell has some"
 	line "connection to the"
-
-	para "Tin Tower in"
-	line "Ecruteak City…"
+	cont "Tin Tower in"
+	cont "Ecruteak City…"
 
 	para "Ah!"
 
@@ -403,9 +376,8 @@ RadioTower5FDirectorDescribeClearBellText:
 
 	para "I have no idea"
 	line "what is happening,"
-
-	para "but you might look"
-	line "into it."
+	cont "but you might look"
+	cont "into it."
 
 	para "OK, I better go to"
 	line "my Office."
@@ -420,9 +392,8 @@ RadioTower5FDirectorText:
 
 	para "I built this Radio"
 	line "Tower so I could"
-
-	para "express my love"
-	line "of #mon."
+	cont "express my love"
+	cont "of #mon."
 
 	para "It would be nice"
 	line "if people enjoyed"

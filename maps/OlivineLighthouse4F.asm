@@ -12,22 +12,14 @@ TrainerLassConnie:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassConnie1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassConnie1AfterBattleText
 
 TrainerSailorKent:
 	trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorKentAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorKentAfterBattleText
 
 SailorKentSeenText:
 	text "Jasmine must be"
@@ -46,9 +38,8 @@ SailorKentBeatenText:
 SailorKentAfterBattleText:
 	text "Speaking of sick,"
 	line "I've heard there's"
-
-	para "a good Pharmacy in"
-	line "Cianwood."
+	cont "a good Pharmacy in"
+	cont "Cianwood."
 	done
 
 LassConnie1SeenText:
@@ -74,9 +65,8 @@ LassConnie1AfterBattleText:
 
 	para "I'll pray for the"
 	line "#mon here, so"
-
-	para "Jasmine can come"
-	line "back to the Gym."
+	cont "Jasmine can come"
+	cont "back to the Gym."
 	done
 
 OlivineLighthouse4F_MapEvents:

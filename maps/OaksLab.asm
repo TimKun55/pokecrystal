@@ -44,10 +44,7 @@ Oak:
 	writetext OakLabDexCheckText
 	waitbutton
 	special ProfOaksPCBoot
-	writetext OakLabGoodbyeText
-	waitbutton
-	closetext
-	end
+	writetextend OakLabGoodbyeText
 
 .OpenMtSilver:
 	writetext OakOpenMtSilverText
@@ -98,9 +95,8 @@ OakWelcomeKantoText:
 
 	para "What do you think"
 	line "of the trainers"
-
-	para "out here?"
-	line "Pretty tough, huh?"
+	cont "out here?"
+	cont "Pretty tough, huh?"
 	done
 
 OakLabDexCheckText:

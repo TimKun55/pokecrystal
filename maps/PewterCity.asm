@@ -22,12 +22,7 @@ PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
 
 PewterCityGrampsScript:
-	faceplayer
-	opentext
-	writetext PewterCityGrampsText
-	promptbutton
-	closetext
-	end
+	jumptextfaceplayer PewterCityGrampsText
 
 PewterCitySign:
 	jumptext PewterCitySignText
@@ -80,9 +75,8 @@ PewterCityGrampsText:
 
 	para "Did you come via"
 	line "the Magnet Train,"
-
-	para "the S.S.Aqua or"
-	line "from Route 22?"
+	cont "the S.S.Aqua or"
+	cont "from Route 22?"
 
 	para "It's amazing how"
 	line "connected we are!"
@@ -103,12 +97,8 @@ PewterGymSignText:
 	done
 
 PewterMuseumSignText:
-	text "There's a notice"
-	line "here…"
-
-	para "Pewter Museum Of"
-	line "Science is closed"
-	cont "for renovations…"
+	text "Pewter Museum"
+	line "of Science."
 	done
 
 PewterCityMtMoonGiftShopSignText:

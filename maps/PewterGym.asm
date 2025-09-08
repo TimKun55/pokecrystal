@@ -45,16 +45,10 @@ PewterGymBrockScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 .Finish:
-	writetext BrockBoulderBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend BrockBoulderBadgeText
 
 .FightDone:
-	writetext BrockFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend BrockFightDoneText
 
 .BrockScript_Rematch
 	checkflag ENGINE_DAILY_BROCK_REMATCH
@@ -69,22 +63,13 @@ PewterGymBrockScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_BROCK_REMATCH
 	opentext
-	writetext BrockRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BrockRematchAfterBattleText
 
 .skip_rematch
-	writetext BrockComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend BrockComeBackTomorrowText
 	
 .EndRematch
-	writetext BrockNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend BrockNextTimeText
 
 PewterGymOnix:
 	opentext
@@ -103,38 +88,24 @@ TrainerCamperJerry:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperJerryAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperJerryAfterBattleText
 
 TrainerCamperDavid:
 	trainer CAMPER, DAVID, EVENT_BEAT_CAMPER_DAVID, CamperDavidSeenText, CamperDavidBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperDavidAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperDavidAfterBattleText
 
 PewterGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BROCK
 	iftrue .PewterGymGuideWinScript
-	writetext PewterGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend PewterGymGuideText
 
 .PewterGymGuideWinScript:
-	writetext PewterGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend PewterGymGuideWinText
 
 PewterGymStatue:
 	checkflag ENGINE_BOULDERBADGE
@@ -147,9 +118,8 @@ PewterGymStatue:
 BrockIntroText:
 	text "Brock: Wow, it's"
 	line "not often that we"
-
-	para "get a challenger"
-	line "from Johto."
+	cont "get a challenger"
+	cont "from Johto."
 
 	para "I'm Brock, the"
 	line "Pewter Gym Leader."
@@ -159,12 +129,11 @@ BrockIntroText:
 
 	para "My #mon are im-"
 	line "pervious to most"
-
-	para "physical attacks."
-	line "You'll have a hard"
-
-	para "time inflicting"
-	line "any damage."
+	cont "physical attacks."
+	
+	para "You'll have a hard"
+	line "time inflicting"
+	cont "any damage."
 
 	para "Come on!"
 	done
@@ -190,16 +159,14 @@ ReceivedBoulderBadgeText:
 BrockBoulderBadgeText:
 	text "Brock: <PLAY_G>,"
 	line "thanks. I enjoyed"
-
-	para "battling you, even"
-	line "though I am a bit"
+	cont "battling you, even"
+	cont "though I am a bit"
 	cont "upset."
 	
 	para "The BoulderBadge"
 	line "shows your sturdy"
-	
-	para "commitment to"
-	line "raising #mon."
+	cont "commitment to"
+	cont "raising #mon."
 	
 	para "Wear it proudly."
 	done
@@ -260,9 +227,8 @@ CamperJerrySeenText:
 
 	para "Battles could end"
 	line "up going a long"
-
-	para "time. Are you"
-	line "ready for this?"
+	cont "time. Are you"
+	cont "ready for this?"
 	done
 
 CamperJerryBeatenText:
@@ -272,13 +238,13 @@ CamperJerryBeatenText:
 
 CamperJerryAfterBattleText:
 	text "Hey, you! Trainer"
-	line "from Johto! Brock"
+	line "from Johto!"
+	
+	para "Brock is tough."
 
-	para "is tough. He'll"
-	line "punish you if you"
-
-	para "don't take him"
-	line "seriously."
+	para "He'll punish you"
+	line "if you dont' take"
+	cont "him seriously."
 	done
 
 CamperDavidSeenText:
@@ -298,32 +264,28 @@ CamperDavidAfterBattleText:
 PewterGymGuideText:
 	text "Yo! Champ in"
 	line "making! You're"
-
-	para "really rocking."
-	line "Are you battling"
-
-	para "the Gym Leaders of"
-	line "Kanto?"
+	cont "really rocking."
+	
+	para "Are you battling"
+	line "the Gym Leaders of"
+	cont "Kanto?"
 
 	para "They're strong and"
 	line "dedicated people,"
-
-	para "just like Johto's"
-	line "Gym Leaders."
+	cont "just like Johto's"
+	cont "Gym Leaders."
 	done
 
 PewterGymGuideWinText:
 	text "Yo! Champ in"
 	line "making! That Gym"
-
-	para "didn't give you"
-	line "much trouble."
+	cont "didn't give you"
+	cont "much trouble."
 
 	para "The way you took"
 	line "charge was really"
-
-	para "inspiring. I mean"
-	line "that seriously."
+	cont "inspiring. I mean"
+	cont "that seriously."
 	done
 	
 OnixText:

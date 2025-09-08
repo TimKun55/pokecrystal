@@ -26,9 +26,8 @@ PewterMartYoungsterText:
 
 	para "I raised it from a"
 	line "Magikarp. I can't"
-
-	para "believe how strong"
-	line "it has become."
+	cont "believe how strong"
+	cont "it has become."
 	done
 
 PewterMartSuperNerdText:
@@ -38,9 +37,8 @@ PewterMartSuperNerdText:
 
 	para "He was saying the"
 	line "Magikarp from the"
-
-	para "Lake Of Rage were"
-	line "excellent."
+	cont "Lake Of Rage were"
+	cont "excellent."
 	done
 
 PewterMart_MapEvents:

@@ -21,8 +21,6 @@ PowerPlant_MapScripts:
 	callback MAPCALLBACK_OBJECTS, PowerPlantElectricityScript
 
 PowerPlantNoop1Scene:
-	end
-
 PowerPlantNoop2Scene:
 	end
 
@@ -67,86 +65,53 @@ PowerPlantOfficerScript:
 	iftrue .ReturnedMachinePart
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
 	iftrue .MetManager
-	writetext PowerPlantOfficer1AThiefBrokeInText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantOfficer1AThiefBrokeInText
 
 .MetManager:
-	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantOfficer1CouldIAskForYourCooperationText
 
 .ReturnedMachinePart:
-	writetext PowerPlantOfficer1HaveToBeefUpSecurityText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantOfficer1HaveToBeefUpSecurityText
 
 PowerPlantGymGuide1Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide1SomeoneStoleAPartText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide1SomeoneStoleAPartText
 
 .ReturnedMachinePart:
-	writetext PowerPlantGymGuide1GeneratorUpAndRunningText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide1GeneratorUpAndRunningText
 
 PowerPlantGymGuide2Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide2PowerPlantUpAndRunningText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide2PowerPlantUpAndRunningText
 
 .ReturnedMachinePart:
-	writetext PowerPlantGymGuide2GeneratorIsRunningAgainText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide2GeneratorIsRunningAgainText
 
 PowerPlantOfficer2Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext PowerPlantOfficer2ManagerHasBeenSadAndFuriousText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantOfficer2ManagerHasBeenSadAndFuriousText
 
 .ReturnedMachinePart:
-	writetext PowerPlantOfficer2ManagerHasBeenCheerfulText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantOfficer2ManagerHasBeenCheerfulText
 
 PowerPlantGymGuide4Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide4MagnetTrainConsumesElectricityText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide4MagnetTrainConsumesElectricityText
 
 .ReturnedMachinePart:
-	writetext PowerPlantGymGuide4WeCanGetMagnetTrainRunningText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGymGuide4WeCanGetMagnetTrainRunningText
 
 PowerPlantManager:
 	faceplayer
@@ -169,10 +134,7 @@ PowerPlantManager:
 
 .MetManager:
 	opentext
-	writetext PowerPlantManagerIWontForgiveCulpritText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantManagerIWontForgiveCulpritText
 
 .FoundMachinePart:
 	showemote EMOTE_SHOCK, POWERPLANT_MANAGER, 15
@@ -223,10 +185,7 @@ PowerPlantManager:
 	end
 
 .GotZapCannon:
-	writetext PowerPlantManagerMyBelovedGeneratorText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantManagerMyBelovedGeneratorText
 
 Forest:
 	faceplayer
@@ -241,10 +200,7 @@ PowerPlantGiovanniScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .GiovanniExit
-	writetext PowerPlantGiovanniSearchingText
-	waitbutton
-	closetext
-	end
+	writetextend PowerPlantGiovanniSearchingText
 	
 .GiovanniExit
 	setevent EVENT_ROCKETS_IN_KANTO
@@ -309,9 +265,8 @@ PowerPlantOfficer1CeruleanShadyCharacterText:
 
 	para "It appears that a"
 	line "shady character"
-
-	para "has been loitering"
-	line "around."
+	cont "has been loitering"
+	cont "around."
 	done
 
 PowerPlantOfficer1CouldIAskForYourCooperationText:
@@ -328,9 +283,8 @@ PowerPlantOfficer1HaveToBeefUpSecurityText:
 PowerPlantGymGuide1SomeoneStoleAPartText:
 	text "Someone made off"
 	line "with a part that's"
-
-	para "essential for the"
-	line "generator."
+	cont "essential for the"
+	cont "generator."
 
 	para "Without it, the"
 	line "new generator's"
@@ -339,10 +293,10 @@ PowerPlantGymGuide1SomeoneStoleAPartText:
 
 PowerPlantGymGuide1GeneratorUpAndRunningText:
 	text "The generator's up"
-	line "and running. It's"
+	line "and running."
 
-	para "making electricity"
-	line "to spare."
+	para "It's making elec-"
+	line "tricity to spare."
 	done
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
@@ -352,9 +306,8 @@ PowerPlantGymGuide2PowerPlantUpAndRunningText:
 
 	para "We got it back up"
 	line "and running to"
-
-	para "provide power to"
-	line "the Magnet Train."
+	cont "provide power to"
+	cont "the Magnet Train."
 	done
 
 PowerPlantGymGuide2GeneratorIsRunningAgainText:
@@ -377,9 +330,8 @@ PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
 PowerPlantOfficer2ManagerHasBeenCheerfulText:
 	text "Since the gener-"
 	line "ator's been fixed,"
-
-	para "the Manager has"
-	line "been cheerful."
+	cont "the Manager has"
+	cont "been cheerful."
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
@@ -395,9 +347,8 @@ PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
 PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
 	text "All right! We can"
 	line "finally get the"
-
-	para "Magnet Train"
-	line "running again."
+	cont "Magnet Train"
+	cont "running again."
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
@@ -413,9 +364,8 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 
 	para "If I catch him,"
 	line "he's going to get"
-
-	para "a taste of my Zap"
-	line "Cannon!"
+	cont "a taste of my Zap"
+	cont "Cannon!"
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
@@ -424,9 +374,8 @@ PowerPlantManagerIWontForgiveCulpritText:
 
 	para "The culprit can"
 	line "cry and apologize,"
-
-	para "but I'll still"
-	line "hammer him!"
+	cont "but I'll still"
+	cont "hammer him!"
 
 	para "Gahahahah!"
 	done
@@ -468,9 +417,8 @@ PowerPlantManagerTM07IsZapCannonText:
 
 	para "It's not what any-"
 	line "one would consider"
-
-	para "accurate, but it"
-	line "packs a wallop!"
+	cont "accurate, but it"
+	cont "packs a wallop!"
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:
@@ -485,21 +433,18 @@ PowerPlantGiovanniSearchingText:
 	text "???: I heard a"
 	line "rumour that Team"
 	cont "Rocket had been"
-	
-	para "spotted here, and"
-	line "stole something,"
-	
-	para "so I came to"
-	line "search for them."
+	cont "spotted here and"
+	cont "stole something,"
+	cont "so I came to"
+	cont "search for them."
 	done
 	
 PowerPlantGiovanniLeavingText:
 	text "???: You found the"
 	line "Rocket member,"
 	cont "defeated him, and"
-	
-	para "retrieved what was"
-	line "stolen from here?"
+	cont "retrieved what was"
+	cont "stolen from here?"
 	
 	para "I'm very impressed"
 	line "that one your age"

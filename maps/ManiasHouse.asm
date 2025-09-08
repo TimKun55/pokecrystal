@@ -31,22 +31,13 @@ ManiaScript:
 .alreadyhaveshuckie
 	checkflag ENGINE_GOT_SHUCKIE_TODAY
 	iffalse .returnshuckie
-	writetext ManiaText_TakeCareOfShuckle
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_TakeCareOfShuckle
 
 .partyfull
-	writetext ManiaText_PartyFull
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_PartyFull
 
 .refusetotakeshuckie
-	writetext ManiaText_IfHeComesBack
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_IfHeComesBack
 
 .returnshuckie
 	writetext ManiaText_CanIHaveMyMonBack
@@ -58,45 +49,29 @@ ManiaScript:
 	ifequal SHUCKIE_HAPPY, .superhappy
 	ifequal SHUCKIE_FAINTED, .default_postevent
 	; SHUCKIE_RETURNED
-	writetext ManiaText_ThankYou
-	waitbutton
-	closetext
 	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	end
+	writetextend ManiaText_ThankYou
 
 .wrong
-	writetext ManiaText_ShuckleNotThere
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_ShuckleNotThere
 
 .superhappy
-	writetext ManiaText_ShuckleLikesYou
-	waitbutton
-	closetext
 	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	end
+	writetextend ManiaText_ShuckleLikesYou
 
 .refused
-	writetext ManiaText_SameAsBeingRobbed
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_SameAsBeingRobbed
 
 .default_postevent
-	writetext ManiaText_HappinessSpeech
-	waitbutton
-	closetext
-	end
+	writetextend ManiaText_HappinessSpeech
 
 ManiaText_AskLookAfterShuckle:
 	text "I, I'm in shock!"
 
 	para "A guy about your"
 	line "age with piercing"
-
-	para "eyes and long hair"
-	line "came in."
+	cont "eyes and long hair"
+	cont "came in."
 
 	para "He scared me into"
 	line "giving him my"
@@ -108,9 +83,8 @@ ManiaText_AskLookAfterShuckle:
 
 	para "You look strong."
 	line "Could you look"
-
-	para "after my #mon"
-	line "for a while?"
+	cont "after my #mon"
+	cont "for a while?"
 	done
 
 ManiaText_TakeCareOfShuckle:
@@ -175,17 +149,15 @@ ManiaText_SameAsBeingRobbed:
 ManiaText_HappinessSpeech:
 	text "For #mon, hap-"
 	line "piness is being"
-
-	para "with a person who"
-	line "treats them well."
+	cont "with a person who"
+	cont "treats them well."
 	done
 
 ManiaText_ShuckleIsYourLastMon:
 	text "If I take my #-"
 	line "mon back, what are"
-
-	para "you going to use"
-	line "in battle?"
+	cont "you going to use"
+	cont "in battle?"
 	done
 
 ManiasHouse_MapEvents:

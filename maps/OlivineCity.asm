@@ -15,8 +15,6 @@ OlivineCity_MapScripts:
 	callback MAPCALLBACK_TILES, OlivineCityLighthouseNite
 
 OlivineCityNoop1Scene:
-	end
-
 OlivineCityNoop2Scene:
 	end
 
@@ -91,16 +89,10 @@ OlivineCityStandingYoungsterScript:
 	opentext
 	random 2
 	ifequal 0, .FiftyFifty
-	writetext OlivineCityStandingYoungsterPokegearText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCityStandingYoungsterPokegearText
 
 .FiftyFifty:
-	writetext OlivineCityStandingYoungsterPokedexText
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCityStandingYoungsterPokedexText
 
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
@@ -120,10 +112,7 @@ OlivineCitySailorTutorScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 .TutorRefused
-	writetext OlivineCitySailorTutorAquaTailRefused
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCitySailorTutorAquaTailRefused
 	
 .TeachMove
 	writetext OlivineCitySailorTutorPayment
@@ -131,16 +120,10 @@ OlivineCitySailorTutorScript:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext OlivineCitySailorTutorAquaTailTaught
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCitySailorTutorAquaTailTaught
 
 .NotEnough
-	writetext OlivineCitySailorTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCitySailorTutorNotEnough
 	
 OlivineCityMarketPlacePokefanM:
 	jumptextfaceplayer OlivineCityMarketPlacePokefanMText
@@ -228,21 +211,18 @@ OlivineCityRivalText:
 
 	para "There's no need to"
 	line "panic. I don't"
-
-	para "bother with wimps"
-	line "like you."
+	cont "bother with wimps"
+	cont "like you."
 
 	para "Speaking of weak-"
 	line "lings, the city's"
-
-	para "Gym Leader isn't"
-	line "here."
+	cont "Gym Leader isn't"
+	cont "here."
 
 	para "Supposedly taking"
 	line "care of a sick"
-
-	para "#mon at the"
-	line "Lighthouse."
+	cont "#mon at the"
+	cont "Lighthouse."
 
 	para "Humph! Boo-hoo!"
 	line "Just let sick"
@@ -268,15 +248,13 @@ OlivineCitySailor1Text:
 
 	para "But in the pitch-"
 	line "black of night,"
-
-	para "the sea is even"
-	line "more treacherous!"
+	cont "the sea is even"
+	cont "more treacherous!"
 
 	para "Without the beacon"
 	line "of the Lighthouse"
-
-	para "to guide it, no"
-	line "ship can sail."
+	cont "to guide it, no"
+	cont "ship can sail."
 	done
 
 OlivineCityStandingYoungsterPokegearText:
@@ -354,12 +332,10 @@ OlivineCitySailorTutorAquaTailText:
 	
 	para "In my travels,"
 	line "I've come across"
-	
-	para "a useful water-"
-	line "type move that I"
-	
-	para "can teach to your"
-	line "#mon for a fee."
+	cont "a useful water-"
+	cont "type move that I"
+	cont "can teach to your"
+	cont "#mon for a fee."
 	done
 
 OlivineCitySailorTutorAquaTailText2:
@@ -385,9 +361,8 @@ OlivineCitySailorTutorPayment:
 OlivineCitySailorTutorAquaTailTaught:
 	text "It does great"
 	line "damage and can"
-	
-	para "lower the target's"
-	line "defense stat!"
+	cont "lower the target's"
+	cont "defense stat!"
 	done
 	
 OlivineCitySailorTutorNotEnough:

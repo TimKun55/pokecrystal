@@ -71,9 +71,8 @@ MrFujisHouseLassText:
 
 	para "Grandpa takes in"
 	line "the poor homeless"
-
-	para "#mon and takes"
-	line "care of them."
+	cont "#mon and takes"
+	cont "care of them."
 	done
 
 MrFujisPsyduckText:

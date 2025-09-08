@@ -43,16 +43,10 @@ RadioTower3FGymGuideScript:
 	opentext
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .NoRockets
-	writetext RadioTower3FGymGuideText_Rockets
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower3FGymGuideText_Rockets
 
 .NoRockets:
-	writetext RadioTower3FGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower3FGymGuideText
 
 RadioTower3FCooltrainerFScript:
 	faceplayer
@@ -63,27 +57,18 @@ RadioTower3FCooltrainerFScript:
 	iftrue .NoRockets
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
 	iftrue .UsedCardKey
-	writetext RadioTower3FCooltrainerFPleaseSaveDirectorText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower3FCooltrainerFPleaseSaveDirectorText
 
 .UsedCardKey:
-	writetext RadioTower3FCooltrainerFIsDirectorSafeText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower3FCooltrainerFIsDirectorSafeText
 
 .NoRockets:
 	writetext RadioTower3FCooltrainerFYoureMyHeroText
 	promptbutton
 	verbosegiveitem EGG_TICKET
 	iffalse .NoRoom
-	writetext RadioTower3FCooltrainerFEggTicketText
-	waitbutton
-	closetext
-	setevent EVENT_GOT_EGG_TICKET_FROM_RADIO_TOWER
-	end
+	setevent EVENT_GOT_EGG_TICKET_FROM_RADIO_TOWER	
+	writetextend RadioTower3FCooltrainerFEggTicketText
 
 .GotEggTicket:
 	writetext RadioTower3FCooltrainerFYouWereMarvelousText
@@ -97,44 +82,28 @@ TrainerGruntM7:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM7AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM7AfterBattleText
 
 TrainerGruntM8:
 	trainer GRUNTM, GRUNTM_8, EVENT_BEAT_ROCKET_GRUNTM_8, GruntM8SeenText, GruntM8BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM8AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM8AfterBattleText
 
 TrainerGruntM9:
 	trainer GRUNTM, GRUNTM_9, EVENT_BEAT_ROCKET_GRUNTM_9, GruntM9SeenText, GruntM9BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM9AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM9AfterBattleText
 
 TrainerScientistMarc:
 	trainer SCIENTIST, MARC, EVENT_BEAT_SCIENTIST_MARC, ScientistMarcSeenText, ScientistMarcBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext ScientistMarcAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext ScientistMarcAfterBattleText
 	
 RadioTower3FPetrelScript:
 	faceplayer
@@ -179,9 +148,8 @@ RadioTower3FPokemonMusicSign:
 RadioTower3FSuperNerdText:
 	text "We have recordings"
 	line "of the cries of"
-
-	para "all #mon that"
-	line "have been found."
+	cont "all #mon that"
+	cont "have been found."
 
 	para "We must have about"
 	line "200 kinds."
@@ -194,17 +162,15 @@ RadioTower3FGymGuideText_Rockets:
 
 	para "It's terrible how"
 	line "Team Rocket is"
-
-	para "trying to control"
-	line "#mon."
+	cont "trying to control"
+	cont "#mon."
 	done
 
 RadioTower3FGymGuideText:
 	text "We run 24 hours a"
 	line "day to broadcast"
-
-	para "entertaining pro-"
-	line "grams."
+	cont "entertaining pro-"
+	cont "grams."
 
 	para "I'll do my best to"
 	line "run around the"
@@ -333,10 +299,9 @@ RadioTower3FPetrelText:
 	text "I came here to"
 	line "apologise to"
 	cont "everyone, but"
-	
-	para "no one wants to"
-	line "talk to me."
-	
+	cont "no one wants to"
+	cont "talk to me."
+
 	para "I get it,"
 	line "but still…"
 	done

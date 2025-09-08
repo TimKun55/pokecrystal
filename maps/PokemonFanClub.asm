@@ -29,16 +29,10 @@ PokemonFanClubChairmanScript:
 	verbosegiveitem RARE_CANDY, 10
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext PokemonFanClubChairmanItsARareCandyText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubChairmanItsARareCandyText
 
 .HeardSpeech:
-	writetext PokemonFanClubChairmanMoreTalesToTellText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubChairmanMoreTalesToTellText
 
 .NotListening:
 	writetext PokemonFanClubChairmanHowDisappointingText
@@ -57,10 +51,7 @@ PokemonFanClubClefairyGuyScript:
 	iftrue .GotLostItem
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .FoundClefairyDoll
-	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubClefairyGuyClefairyIsSoAdorableText
 
 .FoundClefairyDoll:
 	writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
@@ -87,16 +78,10 @@ PokemonFanClubClefairyGuyScript:
 	end
 
 .GotLostItem:
-	writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubClefairyGuyGoingToGetARealClefairyText
 
 .NoRoom:
-	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
-	waitbutton
-	closetext
-	end
+	writetextend PokemonFanClubClefairyGuyPackIsJammedFullText
 
 PokemonFanClubTeacherScript:
 	jumptextfaceplayer PokemonFanClubTeacherText
@@ -150,8 +135,9 @@ PokemonFanClubChairmanRapidashText:
 	line "smart… unbearably…"
 	cont "plus… amazing… oh…"
 	cont "you think so?…"
-	cont "Too much… wild…"
-	cont "beautiful… kindly…"
+	
+	para "Too much… wild…"
+	line "beautiful… kindly…"
 	cont "love it!"
 
 	para "Hug it… when…"
@@ -160,8 +146,9 @@ PokemonFanClubChairmanRapidashText:
 	cont "spectacular…"
 	cont "ravishing… simply"
 	cont "divine…"
-	cont "Oops! Look at the"
-	cont "time! I've kept"
+	
+	para "Oops! Look at the"
+	line "time! I've kept"
 	cont "you too long!"
 	done
 
@@ -178,9 +165,8 @@ PokemonFanClubChairmanItsARareCandyText:
 
 	para "I prefer making my"
 	line "#mon stronger"
-
-	para "by battling, so"
-	line "you can have it."
+	cont "by battling, so"
+	cont "you can have it."
 	done
 
 PokemonFanClubChairmanMoreTalesToTellText:
@@ -210,42 +196,38 @@ PokemonFanClubReceptionistText:
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
 	text "I love the way"
 	line "Clefairy waggles"
-
-	para "its finger when"
-	line "it's trying to use"
-
-	para "Metronome."
-	line "It's so adorable!"
+	cont "its finger when"
+	cont "it's trying to use"
+	cont "Metronome."
+	
+	para "It's so adorable!"
 	done
 
 PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
 	text "I love Clefairy,"
 	line "but I could never"
-
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# Doll that I"
-	line "found."
+	cont "catch one."
+	
+	para "So I'm making do"
+	line "with a # Doll"
+	cont "that I found."
 	done
 
 PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	text "Oh, I see now. The"
 	line "girl who lost this"
-
-	para "# Doll is sad…"
+	cont "# Doll is sad…"
 
 	para "OK. Could you take"
 	line "this # Doll"
-
-	para "back to that poor"
-	line "little girl?"
+	cont "back to that poor"
+	cont "little girl?"
 
 	para "I'll befriend a"
 	line "real Clefairy on"
-
-	para "my own one day."
-	line "No worries!"
+	cont "my own one day."
+	
+	para "No worries!"
 	done
 
 PokemonFanClubPlayerReceivedDollText:
@@ -256,9 +238,8 @@ PokemonFanClubPlayerReceivedDollText:
 PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	text "You watch. I'm"
 	line "going to get a"
-
-	para "real Clefairy as"
-	line "my friend."
+	cont "real Clefairy as"
+	cont "my friend."
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:

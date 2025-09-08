@@ -26,16 +26,10 @@ RadioTower2FTeacherScript:
 	opentext
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue .Rockets
-	writetext RadioTower2FTeacherText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower2FTeacherText
 
 .Rockets:
-	writetext RadioTower2FTeacherText_Rockets
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower2FTeacherText_Rockets
 
 RadioTowerJigglypuff:
 	opentext
@@ -60,44 +54,28 @@ TrainerGruntM4:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM4AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM4AfterBattleText
 
 TrainerGruntM5:
 	trainer GRUNTM, GRUNTM_5, EVENT_BEAT_ROCKET_GRUNTM_5, GruntM5SeenText, GruntM5BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM5AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM5AfterBattleText
 
 TrainerGruntM6:
 	trainer GRUNTM, GRUNTM_6, EVENT_BEAT_ROCKET_GRUNTM_6, GruntM6SeenText, GruntM6BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM6AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM6AfterBattleText
 
 TrainerGruntF2:
 	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, GruntF2SeenText, GruntF2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntF2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntF2AfterBattleText
 
 Buena:
 	faceplayer
@@ -247,10 +225,7 @@ Buena:
 	end
 
 .MidRocketTakeover:
-	writetext RadioTower2FBuenaPasswordIsHelpText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower2FBuenaPasswordIsHelpText
 
 .NoBlueCard:
 	writetext RadioTower2FBuenaNoBlueCardText
@@ -480,9 +455,8 @@ GruntF2SeenText:
 
 	para "How boring."
 	line "It was far too"
-
-	para "easy to take over"
-	line "this place!"
+	cont "easy to take over"
+	cont "this place!"
 
 	para "Come on, keep me"
 	line "amused!"
@@ -507,18 +481,15 @@ RadioTower2FBuenaShowIntroductionText:
 
 	para "If you can tell me"
 	line "the password from"
-
-	para "the program, you"
-	line "will earn points."
+	cont "the program, you"
+	cont "will earn points."
 
 	para "Save up those"
 	line "points and trade"
-
-	para "them to that sweet"
-	line "young lady over"
-
-	para "there for some"
-	line "choice prizes!"
+	cont "them to that sweet"
+	cont "young lady over"
+	cont "there for some"
+	cont "choice prizes!"
 
 	para "Here you go!"
 
@@ -559,9 +530,8 @@ RadioTower2FBuenaEveryoneSayPasswordText:
 
 	para "I want to hear you"
 	line "shout out today's"
-
-	para "password for"
-	line "<PLAY_G>!"
+	cont "password for"
+	cont "<PLAY_G>!"
 	done
 
 RadioTower2FBuenaComeBackAfterListeningText:
@@ -602,9 +572,8 @@ RadioTower2FBuenaCorrectAnswerWeekendText:
 
 	para "Because it's the"
 	line "weekend, you've"
-	
-	para "earned 3 points!"
-	line "Congrats!"
+	cont "earned 3 points!"
+	cont "Congrats!"
 	done
 
 RadioTower2FBuenaCorrectAnswerFriMonText:
@@ -635,9 +604,9 @@ RadioTower2FBuenaThanksForComingText:
 
 	para "I hope all you"
 	line "listeners will"
-
-	para "come too!"
-	line "I'll be waiting!"
+	cont "come too!"
+	
+	para "I'll be waiting!"
 	done
 
 RadioTower2FBuenaPasswordIsHelpText:
@@ -658,9 +627,8 @@ RadioTower2FBuenaCardIsFullText:
 RadioTower2FBuenaTuneInAfterFiveText:
 	text "Buena: Tune in to"
 	line "Password every"
-
-	para "night from five"
-	line "to midnight!"
+	cont "night from five"
+	cont "to midnight!"
 
 	para "Tune in, then drop"
 	line "in for a visit!"
@@ -700,9 +668,8 @@ RadioTower2FBuenaOfferPhoneNumberText:
 RadioTower2FBuenaOfferNumberAgainText:
 	text "Buena: <PLAY_G>,"
 	line "do you want to"
-
-	para "register my phone"
-	line "number?"
+	cont "register my phone"
+	cont "number?"
 	done
 
 RadioTower2FRegisteredBuenasNumberText:
@@ -724,17 +691,15 @@ RadioTower2FBuenaSadRejectedText:
 RadioTower2FBuenaYourPhoneIsFullText:
 	text "Buena: <PLAY_G>,"
 	line "your phone list"
-
-	para "has no room left"
-	line "for me…"
+	cont "has no room left"
+	cont "for me…"
 	done
 
 RadioTower2FBuenaReceptionistPointsForPrizesText:
 	text "You can cash in"
 	line "your saved points"
-
-	para "for a lovely prize"
-	line "of your choice!"
+	cont "for a lovely prize"
+	cont "of your choice!"
 	done
 
 RadioTower2FBuenaReceptionistNoCardText:

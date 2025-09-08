@@ -179,11 +179,7 @@ TrainerPokefanmWilliam:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmWilliamAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmWilliamAfterBattleText
 
 TrainerPokefanfBeverly1:
 	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
@@ -268,11 +264,7 @@ TrainerLassKrise:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassKriseAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassKriseAfterBattleText
 	
 NationalParkLadyMia:
 	trainer LADY, MIA, EVENT_BEAT_LADY_MIA, LadyMiaSeenText, LadyMiaBeatenText, 0, .Script
@@ -315,9 +307,8 @@ NationalParkLassText:
 
 	para "I printed out my"
 	line "favorites from my"
-
-	para "#dex and stuck"
-	line "them on my bag."
+	cont "#dex and stuck"
+	cont "them on my bag."
 	done
 
 NationalParkPokefanFText:
@@ -332,18 +323,16 @@ NationalParkTeacher1Text:
 
 	para "…Oops, I have to"
 	line "quit thinking like"
-
-	para "a teacher all the"
-	line "time."
+	cont "a teacher all the"
+	cont "time."
 
 	para "You must be a"
 	line "#mon trainer."
 
 	para "Since you're work-"
 	line "ing so hard, I"
-
-	para "want you to have"
-	line "this."
+	cont "want you to have"
+	cont "this."
 	done
 
 NationalParkTeacher1Text_GotQuickClaw:
@@ -370,9 +359,8 @@ NationalParkYoungster2Text:
 NationalParkTeacher2Text:
 	text "I take walks in"
 	line "the Park, but I"
-
-	para "never go into the"
-	line "grass."
+	cont "never go into the"
+	cont "grass."
 
 	para "Trainers always"
 	line "want to battle…"
@@ -458,9 +446,8 @@ PokefanmWilliamBeatenText:
 PokefanmWilliamAfterBattleText:
 	text "I lost the battle,"
 	line "but my #mon win"
-
-	para "the prize for"
-	line "being most lovely."
+	cont "the prize for"
+	cont "being most lovely."
 	done
 
 PokefanFBeverlyMarillFriendText:
@@ -490,9 +477,8 @@ LadyMiaBeatenText:
 LadyMiaAfterBattleText:
 	text "You battle like a"
 	line "pro! You should"
-	
-	para "visit the family"
-	line "home in Ecruteak."
+	cont "visit the family"
+	cont "home in Ecruteak."
 	
 	para "They would love"
 	line "to meet you."
@@ -536,9 +522,8 @@ NationalParkTrainerTipsText:
 
 	para "Visit the Mahogany"
 	line "Bakery for items"
-	
-	para "to power up your"
-	line "#mon in battle."
+	cont "to power up your"
+	cont "#mon in battle."
 	done
 
 NationalPark_MapEvents:

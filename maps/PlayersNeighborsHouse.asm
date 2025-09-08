@@ -95,9 +95,8 @@ PlayersNeighborsDaughterText:
 PlayersNeighborText:
 	text "My daughter is"
 	line "adamant about"
-
-	para "becoming Prof."
-	line "Elm's assistant."
+	cont "becoming Prof."
+	cont "Elm's assistant."
 
 	para "She really loves"
 	line "#mon!"

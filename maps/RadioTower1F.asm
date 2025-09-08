@@ -16,16 +16,10 @@ RadioTower1FReceptionistScript:
 	opentext
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue .Rockets
-	writetext RadioTower1FReceptionistWelcomeText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FReceptionistWelcomeText
 
 .Rockets:
-	writetext RadioTower1FReceptionistNoToursText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FReceptionistNoToursText
 
 RadioTower1FLuckyNumberManScript:
 	faceplayer
@@ -61,10 +55,7 @@ RadioTower1FLuckyNumberManScript:
 	sjump .FirstPlace ; all digits match
 
 .GameOver:
-	writetext RadioTower1FLuckyNumberManComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FLuckyNumberManComeAgainText
 
 .FirstPlace:
 	writetext RadioTower1FLuckyNumberManPerfectMatchText
@@ -100,16 +91,10 @@ RadioTower1FLuckyNumberManScript:
 	sjump .GameOver
 
 .NoPrize:
-	writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
 
 .BagFull:
-	writetext RadioTower1FLuckyNumberManNoRoomForYourPrizeText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FLuckyNumberManNoRoomForYourPrizeText
 
 RadioTower1FRadioCardWomanScript:
 	faceplayer
@@ -152,10 +137,7 @@ RadioTower1FRadioCardWomanScript:
 	promptbutton
 	setflag ENGINE_RADIO_CARD
 .GotCard:
-	writetext RadioTower1FRadioCardWomanTuneInText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FRadioCardWomanTuneInText
 
 .RadioCardText:
 	db "Radio Card@"
@@ -166,16 +148,10 @@ RadioTower1FRadioCardWomanScript:
 
 .WrongAnswer:
 	playsound SFX_WRONG
-	writetext RadioTower1FRadioCardWomanWrongAnswerText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FRadioCardWomanWrongAnswerText
 
 .NoQuiz:
-	writetext RadioTower1FRadioCardWomanNotTakingQuizText
-	waitbutton
-	closetext
-	end
+	writetextend RadioTower1FRadioCardWomanNotTakingQuizText
 
 RadioTower1FLassScript:
 	jumptextfaceplayer RadioTower1FLassText
@@ -188,11 +164,7 @@ TrainerGruntM3:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM3AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM3AfterBattleText
 
 RadioTower1FDirectory:
 	jumptext RadioTower1FDirectoryText
@@ -312,9 +284,8 @@ RadioTower1FRadioCardWomanOfferQuizText:
 
 	para "Slide it into your"
 	line "#gear to play"
-
-	para "the radio anytime,"
-	line "anywhere."
+	cont "the radio anytime,"
+	cont "anywhere."
 
 	para "Would you like to"
 	line "take the quiz?"
@@ -389,9 +360,9 @@ RadioTower1FRadioCardWomanTuneInText:
 RadioTower1FRadioCardWomanWrongAnswerText:
 	text "Oh, dear."
 	line "Sorry, but you"
-
-	para "got it wrong."
-	line "Please try again!"
+	cont "got it wrong."
+	
+	para "Please try again!"
 	done
 
 RadioTower1FRadioCardWomanNotTakingQuizText:
@@ -424,9 +395,8 @@ GruntM3SeenText:
 
 	para "Now everyone will"
 	line "get to experience"
-
-	para "the true terror of"
-	line "Team Rocket!"
+	cont "the true terror of"
+	cont "Team Rocket!"
 
 	para "We'll show you"
 	line "how scary we are!"

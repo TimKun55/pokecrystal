@@ -49,9 +49,8 @@ MahoganyPokecenter1FYoungsterText:
 MahoganyPokecenter1FCooltrainerFText:
 	text "#mon do become"
 	line "stronger when they"
-
-	para "evolve, but they"
-	line "also learn moves"
+	cont "evolve, but they"
+	cont "also learn moves"
 	cont "more slowly."
 	done
 

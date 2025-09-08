@@ -19,10 +19,7 @@ OlivineCafeStrengthSailorScript:
 	verbosegiveitem HM_STRENGTH
 	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
-	writetext OlivineCafeStrengthSailorText_GotStrength
-	waitbutton
-	closetext
-	end
+	writetextend OlivineCafeStrengthSailorText_GotStrength
 
 OlivineCafeLyraScript:
 	faceplayer
@@ -49,10 +46,7 @@ OlivineCafeLyraScript:
 	end
 
 .LyraNoRoomForAmuletCoin:
-	writetext NoRoomForAmuletCoinText
-	waitbutton
-	closetext
-	end
+	writetextend NoRoomForAmuletCoinText
 
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
@@ -90,9 +84,8 @@ OlivineCafeStrengthSailorText:
 OlivineCafeStrengthSailorText_GotStrength:
 	text "On the sea, the"
 	line "only thing you can"
-
-	para "count on is your"
-	line "own good self!"
+	cont "count on is your"
+	cont "own good self!"
 
 	para "I'm so proud of my"
 	line "buff bod!"
@@ -101,9 +94,8 @@ OlivineCafeStrengthSailorText_GotStrength:
 OlivineCafeLyraText1:
 	text "Lyra: Hi, <PLAYER>!"
 	line "You should try the"
-
-	para "food here. It's"
-	line "really good!"
+	cont "food here. It's"
+	cont "really good!"
 
 	para "Although I don't"
 	line "want to eat too"
@@ -111,9 +103,8 @@ OlivineCafeLyraText1:
 
 	para "Oh, that's right!"
 	line "I found an item"
-
-	para "that you might"
-	line "like. Here!"
+	cont "that you might"
+	cont "like. Here!"
 	done
 
 OlivineCafeLyraText2:
@@ -125,9 +116,8 @@ OlivineCafeLyraText2:
 
 	para "I want to check"
 	line "out Whirl Islands"
-
-	para "near Cianwood"
-	line "before I go back"
+	cont "near Cianwood"
+	cont "before I go back"
 	cont "to Ecruteak."
 
 	para "See you,"
@@ -143,23 +133,20 @@ NoRoomForAmuletCoinText:
 OlivineCafeFishingGuruText:
 	text "Olivine Café's"
 	line "menu is chock full"
-
-	para "of hearty fare for"
-	line "beefy Sailors!"
+	cont "of hearty fare for"
+	cont "beefy Sailors!"
 	done
 
 OlivineCafeSailorText:
 	text "Whenever I roll"
 	line "into this town, I"
-
-	para "always visit the"
-	line "Olivine Café."
+	cont "always visit the"
+	cont "Olivine Café."
 
 	para "Everything on the"
 	line "menu makes me feel"
-
-	para "stronger. I can't"
-	line "stop eating!"
+	cont "stronger. I can't"
+	cont "stop eating!"
 	done
 
 OlivineCafe_MapEvents:

@@ -20,15 +20,13 @@ MtSilverPokecenter1FGrannyScript:
 MtSilverPokecenter1FGrannyText:
 	text "Trainers who seek"
 	line "power climb Mt."
-
-	para "Silver despite its"
-	line "many dangers…"
+	cont "Silver despite its"
+	cont "many dangers…"
 
 	para "With their trusted"
 	line "#mon, they must"
-
-	para "feel they can go"
-	line "anywhere…"
+	cont "feel they can go"
+	cont "anywhere…"
 	done
 
 MtSilverPokecenter1F_MapEvents:

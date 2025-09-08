@@ -36,28 +36,16 @@ MountMoonGiftShopClefairyDollScript:
 	writetext BoughtClefairyDollText
 	playsound SFX_TRANSACTION
 	waitbutton
-	writetext ClefairyDollSentText
-	waitbutton
-	closetext
-	end
+	writetextend ClefairyDollSentText
 
 .NotEnoughMoney:
-	writetext ClefairyDollNoMoneyText
-	waitbutton
-	closetext
-	end
+	writetextend ClefairyDollNoMoneyText
 
 .RefusePurchase
-	writetext ClefairyDollNoSaleText
-	waitbutton
-	closetext
-	end
+	writetextend ClefairyDollNoSaleText
 	
 .ClefairyDollPurchased:
-	writetext ClefairyDollText
-	waitbutton
-	closetext
-	end
+	writetextend ClefairyDollText
 
 MountMoonGiftShopLassText:
 	text "When the sun goes"

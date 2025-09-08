@@ -14,7 +14,6 @@ PewterMuseum1F_MapScripts:
 
 	def_callbacks
 
-
 PewterMuseum1FReceptionistScript:
 	jumptextfaceplayer PewterMuseum1FReceptionistText
 
@@ -90,10 +89,7 @@ PewterMuseum1FFossilScientistScript:
 	end
 
 .NoRoom:
-	writetext PewterMuseumFossilScientistPartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend PewterMuseumFossilScientistPartyFullText
 
 .own_helix
 	checkitem DOME_FOSSIL
@@ -141,10 +137,7 @@ PewterMuseum1FFossilScientistScript:
 	ifequal $2, PewterIsDomeFossil
 	ifequal $3, PewterIsOldAmber
 .no_fossil:
-	writetext PewterMuseumFossilScientistNoFossilText
-	waitbutton
-	closetext
-	end
+	writetextend PewterMuseumFossilScientistNoFossilText
 
 PewterHelixDomeMenuDataHeader:
 	db $40 ; flags
@@ -279,10 +272,7 @@ PewterIsOldAmber:
 	sjump PewterMuseum1FFossilScientistScript
 
 PewterDeniedRessurection:
-	writetext PewterMuseumFossilScientistNoFossilText
-	waitbutton
-	closetext
-	end
+	writetextend PewterMuseumFossilScientistNoFossilText
 
 AerodactylFossilScript:
 	opentext
@@ -348,17 +338,15 @@ PewterMuseum1FReceptionistText:
 	
 	para "We've just re-"
 	line "opened after"
-
-	para "renovations"
-	line "and entry is free!"
+	cont "renovations"
+	cont "and entry is free!"
 	done
 
 PewterMuseum1FScientistText:
 	text "We are proud of"
 	line "three fossils of"
-
-	para "rare, prehistoric"
-	line "#mon."
+	cont "rare, prehistoric"
+	cont "#mon."
 
 	para "I helped assemble"
 	line "them!"
@@ -369,9 +357,8 @@ PewterMuseumFossilScientistIntroText:
 
 	para "Did you know that"
 	line "you can extract"
-	
-	para "#mon from"
-	line "fossils?"
+	cont "#mon from"
+	cont "fossils?"
 
 	para "Do you have a"
 	line "fossil for me?"
@@ -499,9 +486,8 @@ PewterMuseum1FOldAmberText:
 	text "A piece of amber"
 	line "that still con-"
 	cont "tains the genetic"
-	
-	para "material of a"
-	line "prehistoric"
+	cont "material of a"
+	cont "prehistoric"
 	cont "#mon."
 
 	para "It's clear with a"

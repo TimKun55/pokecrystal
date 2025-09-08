@@ -20,22 +20,14 @@ TrainerPokemaniacMiller:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacMillerAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacMillerAfterBattleText
 
 TrainerSupernerdMarkus:
 	trainer SUPER_NERD, MARKUS, EVENT_BEAT_SUPER_NERD_MARKUS, SupernerdMarkusSeenText, SupernerdMarkusBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdMarkusAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdMarkusAfterBattleText
 
 MountMortar1FBoulder:
 	jumpstd StrengthBoulderScript
@@ -77,18 +69,16 @@ PokemaniacMillerBeatenText:
 PokemaniacMillerAfterBattleText:
 	text "A while back, this"
 	line "karate dude wanted"
-
-	para "to battle. He was"
-	line "ridiculously good."
+	cont "to battle. He was"
+	cont "ridiculously good."
 
 	para "He just thrashed"
 	line "us silly."
 
 	para "He went in deeper"
 	line "saying it was for"
-
-	para "his training. I"
-	line "wonder how he is?"
+	cont "his training. I"
+	cont "wonder how he is?"
 	done
 
 SupernerdMarkusSeenText:
@@ -103,15 +93,13 @@ SupernerdMarkusBeatenText:
 SupernerdMarkusAfterBattleText:
 	text "I came to explore"
 	line "Mt.Mortar, but I"
-
-	para "got separated from"
-	line "my partner…"
+	cont "got separated from"
+	cont "my partner…"
 
 	para "Did you run into a"
 	line "trainer who uses a"
-
-	para "Seadra that knows"
-	line "Waterfall?"
+	cont "Seadra that knows"
+	cont "Waterfall?"
 	done
 
 MountMortar1FInside_MapEvents:

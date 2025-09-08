@@ -76,36 +76,31 @@ PewterMuseum2FYoungsterText:
 PewterMuseum2FGrampsText:
 	text "This set of armor"
 	line "has been passed"
-	
-	para "down for generat-"
-	line "ions in my family."
-	
+	cont "down for generat-"
+	cont "ions in my family."
+
 	para "Legend has it this"
 	line "Cubone saved my"
-	
-	para "ancestors from"
-	line "danger."
-	
+	cont "ancestors from"
+	cont "danger."
+
 	para "The Cubone lived"
 	line "with the family"
-	
-	para "for many, many"
-	line "years before pass-"
+	cont "for many, many"
+	cont "years before pass-"
 	cont "ing away peace-"
 	cont "fully."
-	
+
 	para "Since then, my"
 	line "family passed down"
-	
-	para "the armor as a"
-	line "reminder of that"
+	cont "the armor as a"
+	cont "reminder of that"
 	cont "Cubone's kindness."
-	
+
 	para "I donated the set"
 	line "to the Museum to"
-	
-	para "show others the"
-	line "amazing kindness"
+	cont "show others the"
+	cont "amazing kindness"
 	cont "of #mon."
 	done
 
@@ -113,14 +108,13 @@ PewterMuseum2FGrannyText:
 	text "I still remember"
 	line "the day the shut-"
 	cont "tle was launched."
-	
+
 	para "Such an amazing"
 	line "achievement that"
-	
-	para "inspired so many"
-	line "people around the"
+	cont "inspired so many"
+	cont "people around the"
 	cont "world."
-	
+
 	para "How fast time"
 	line "passes…"
 	done
@@ -132,20 +126,19 @@ PewterMuseum2FMoonStoneSignpostText:
 
 PewterMuseum2FCuboneArmorText:
 	text "Cubone Armor"
-	
+
 	para "The armor of a"
 	line "heroic Cubone."
 	done
 
 PewterMuseum2FSpaceShuttleSignpostText:
 	text "Space Shuttle"
-	
+
 	para "A model of the"
 	line "first shuttle"
 	cont "sent into space"
-	
-	para "by the Hoenn Moss-"
-	line "deep Space Center."
+	cont "by the Hoenn Moss-"
+	cont "deep Space Center."
 	done
 
 PewterMuseum2F_MapEvents:

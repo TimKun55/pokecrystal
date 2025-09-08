@@ -71,16 +71,10 @@ OlivinePokecenter1FTutor:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext OlivinePokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePokecenter1FTutorRefusalText
 	
 .NotEnough:
-	writetext OlivinePokecenter1FTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePokecenter1FTutorNotEnough
 
 .TeachMove:
 	writetext OlivinePokecenter1FTutorPayment
@@ -88,10 +82,7 @@ OlivinePokecenter1FTutor:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext OlivinePokecenter1FTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend OlivinePokecenter1FTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -130,9 +121,8 @@ OlivinePokecenter1FTutorIntro:
 	para "For ¥6,500,"
 	line "I can teach your"
 	cont "#mon a pretty"
-
-	para "useful move if"
-	line "you'd like."
+	cont "useful move if"
+	cont "you'd like."
 	done
 	
 OlivinePokecenter1FAskYesNo:

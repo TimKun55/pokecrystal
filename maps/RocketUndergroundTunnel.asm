@@ -9,8 +9,6 @@ RocketUndergroundTunnel_MapScripts:
 	def_callbacks
 
 RocketUndergroundTunnelNoop1Scene:
-	end
-
 RocketUndergroundTunnelNoop2Scene:
 	end
 

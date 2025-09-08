@@ -17,11 +17,7 @@ TrainerSupernerdHugh:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdHughAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdHughAfterBattleText
 
 MountMortar2FInsideMaxPotion:
 	itemball MAX_POTION
@@ -59,9 +55,8 @@ SupernerdHughAfterBattleText:
 
 	para "Have you seen a"
 	line "trainer who has a"
-
-	para "Slowpoke that can"
-	line "use Strength?"
+	cont "Slowpoke that can"
+	cont "use Strength?"
 	done
 
 MountMortar2FInside_MapEvents:

@@ -12,8 +12,6 @@ MrPokemonsHouse_MapScripts:
 
 MrPokemonsHouseMeetMrPokemonScene:
 	sdefer MrPokemonsHouseMrPokemonEventScript
-	end
-
 MrPokemonsHouseNoopScene:
 	end
 
@@ -55,16 +53,10 @@ MrPokemonsHouse_MrPokemonScript:
 	iftrue .RedScale
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .AlwaysNewDiscoveries
-	writetext MrPokemonText_ImDependingOnYou
-	waitbutton
-	closetext
-	end
+	writetextend MrPokemonText_ImDependingOnYou
 
 .AlwaysNewDiscoveries:
-	writetext MrPokemonText_AlwaysNewDiscoveries
-	waitbutton
-	closetext
-	end
+	writetextend MrPokemonText_AlwaysNewDiscoveries
 
 .RedScale:
 	writetext MrPokemonText_GimmeTheScale
@@ -218,9 +210,8 @@ MrPokemonIntroText3:
 	
 	para "They said they"
 	line "found it while"
-	
-	para "looking after a"
-	line "rare #mon."
+	cont "looking after a"
+	cont "rare #mon."
 
 	para "I was intrigued,"
 	line "so I sent mail to"
@@ -259,9 +250,8 @@ MrPokemonText_ImDependingOnYou:
 MrPokemonText_AlwaysNewDiscoveries:
 	text "Life is delight-"
 	line "ful! Always, new"
-
-	para "discoveries to be"
-	line "made!"
+	cont "discoveries to be"
+	cont "made!"
 	done
 
 MrPokemonsHouse_OakText1:
@@ -277,9 +267,8 @@ MrPokemonsHouse_OakText1:
 
 	para "I heard you were"
 	line "running an errand"
-
-	para "for Prof.Elm, so I"
-	line "waited here."
+	cont "for Prof.Elm, so I"
+	cont "waited here."
 
 	para "Oh! What's this?"
 	line "A rare #mon!"
@@ -290,21 +279,18 @@ MrPokemonsHouse_OakText1:
 
 	para "I understand why"
 	line "Prof.Elm gave you"
-
-	para "a #mon for this"
-	line "errand."
+	cont "a #mon for this"
+	cont "errand."
 
 	para "To researchers"
 	line "like Prof.Elm and"
-
-	para "I, #mon are our"
-	line "friends."
+	cont "I, #mon are our"
+	cont "friends."
 
 	para "He saw that you"
 	line "would treat your"
-
-	para "#mon with love"
-	line "and care."
+	cont "#mon with love"
+	cont "and care."
 
 	para "…Ah!"
 
@@ -320,9 +306,8 @@ MrPokemonsHouse_OakText1:
 
 	para "It automatically"
 	line "records data on"
-
-	para "#mon you've"
-	line "seen or caught."
+	cont "#mon you've"
+	cont "seen or caught."
 
 	para "It's a hi-tech"
 	line "encyclopedia!"
@@ -341,9 +326,8 @@ MrPokemonsHouse_GetDexText:
 MrPokemonsHouse_OakText2:
 	text "Go meet many kinds"
 	line "of #mon and"
-
-	para "complete that"
-	line "#dex!"
+	cont "complete that"
+	cont "#dex!"
 
 	para "But I've stayed"
 	line "too long."
