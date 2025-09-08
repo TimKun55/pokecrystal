@@ -12,9 +12,8 @@ Route5UndergroundPathEntranceTeacherScript:
 Route5UndergroundPathEntranceTeacherText:
 	text "Many cities in"
 	line "Johto have long"
-
-	para "histories. I'd"
-	line "love to visit!"
+	cont "histories. I'd"
+	cont "love to visit!"
 	done
 
 Route5UndergroundPathEntrance_MapEvents:

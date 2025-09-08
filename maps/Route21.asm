@@ -15,55 +15,35 @@ TrainerSwimmermSeth:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermSethAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermSethAfterBattleText
 
 TrainerSwimmerfNikki:
 	trainer SWIMMERF, NIKKI, EVENT_BEAT_SWIMMERF_NIKKI, SwimmerfNikkiSeenText, SwimmerfNikkiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfNikkiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfNikkiAfterBattleText
 
 TrainerSwimmermDaryl:
 	trainer SWIMMERM, DARYL, EVENT_BEAT_SWIMMERM_DARYL, SwimmermDarylSeenText, SwimmermDarylBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermDarylAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermDarylAfterBattleText
 
 TrainerSwimmerfLisa:
 	trainer SWIMMERF, LISA, EVENT_BEAT_SWIMMERF_LISA, SwimmerfLisaSeenText, SwimmerfLisaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfLisaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfLisaAfterBattleText
 
 TrainerFisherArnold:
 	trainer FISHER, ARNOLD, EVENT_BEAT_FISHER_ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherArnoldAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherArnoldAfterBattleText
 
 SwimmermSethSeenText:
 	text "Land ho! Gotta"

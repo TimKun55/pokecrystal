@@ -12,9 +12,8 @@ Route15FuchsiaGateOfficerScript:
 Route15FuchsiaGateOfficerText:
 	text "You're working on"
 	line "a #dex? That's"
-
-	para "really something."
-	line "Don't give up!"
+	cont "really something."
+	cont "Don't give up!"
 	done
 
 Route15FuchsiaGate_MapEvents:

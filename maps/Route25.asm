@@ -19,8 +19,6 @@ Route25_MapScripts:
 	def_callbacks
 
 Route25Noop1Scene:
-	end
-
 Route25Noop2Scene:
 	end
 
@@ -81,77 +79,49 @@ TrainerSchoolboyDudley:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SchoolboyDudleyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SchoolboyDudleyAfterBattleText
 
 TrainerLassEllen:
 	trainer LASS, ELLEN, EVENT_BEAT_LASS_ELLEN, LassEllenSeenText, LassEllenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassEllenAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassEllenAfterBattleText
 
 TrainerSchoolboyJoe:
 	trainer SCHOOLBOY, JOE, EVENT_BEAT_SCHOOLBOY_JOE, SchoolboyJoeSeenText, SchoolboyJoeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SchoolboyJoeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SchoolboyJoeAfterBattleText
 
 TrainerLassLaura:
 	trainer LASS, LAURA, EVENT_BEAT_LASS_LAURA, LassLauraSeenText, LassLauraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassLauraAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassLauraAfterBattleText
 
 TrainerCamperLloyd:
 	trainer CAMPER, LLOYD, EVENT_BEAT_CAMPER_LLOYD, CamperLloydSeenText, CamperLloydBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperLloydAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperLloydAfterBattleText
 
 TrainerLassShannon:
 	trainer LASS, SHANNON, EVENT_BEAT_LASS_SHANNON, LassShannonSeenText, LassShannonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LassShannonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LassShannonAfterBattleText
 
 TrainerSupernerdPat:
 	trainer SUPER_NERD, PAT, EVENT_BEAT_SUPER_NERD_PAT, SupernerdPatSeenText, SupernerdPatBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdPatAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdPatAfterBattleText
 
 TrainerCooltrainermKevin:
 	faceplayer
@@ -238,9 +208,8 @@ Route25MistyLeavesMovement:
 Route25MistyDateText:
 	text "Misty: Aww! Why"
 	line "did you have to"
-
-	para "show up and bug us"
-	line "now?"
+	cont "show up and bug us"
+	cont "now?"
 
 	para "Do you know what"
 	line "they call people"
@@ -367,9 +336,8 @@ SupernerdPatSeenText:
 
 	para "I waited here to"
 	line "beat you when you"
-
-	para "were tired out by"
-	line "all the battles."
+	cont "were tired out by"
+	cont "all the battles."
 	done
 
 SupernerdPatBeatenText:
@@ -385,9 +353,8 @@ SupernerdPatAfterBattleText:
 CooltrainermKevinNuggetText:
 	text "You took on one"
 	line "more battle than"
-
-	para "you expected, but"
-	line "you won anyway."
+	cont "you expected, but"
+	cont "you won anyway."
 
 	para "As promised, you"
 	line "win a prize."
@@ -396,9 +363,8 @@ CooltrainermKevinNuggetText:
 CooltrainermKevinSeenText:
 	text "But after seeing"
 	line "how you battle, I"
-
-	para "want to see how"
-	line "I'll fare."
+	cont "want to see how"
+	cont "I'll fare."
 
 	para "How about it? Let"
 	line "me take you on."

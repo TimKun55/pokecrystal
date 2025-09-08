@@ -20,55 +20,35 @@ TrainerSwimmerfNicole:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfNicoleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfNicoleAfterBattleText
 
 TrainerSwimmerfLori:
 	trainer SWIMMERF, LORI, EVENT_BEAT_SWIMMERF_LORI, SwimmerfLoriSeenText, SwimmerfLoriBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfLoriAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfLoriAfterBattleText
 
 TrainerSwimmermCameron:
 	trainer SWIMMERM, CAMERON, EVENT_BEAT_SWIMMERM_CAMERON, SwimmermCameronSeenText, SwimmermCameronBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermCameronAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermCameronAfterBattleText
 
 TrainerSwimmermHal:
 	trainer SWIMMERM, HAL, EVENT_BEAT_SWIMMERM_HAL, SwimmermHalSeenText, SwimmermHalBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermHalAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermHalAfterBattleText
 
 TrainerSwimmermPaton:
 	trainer SWIMMERM, PATON, EVENT_BEAT_SWIMMERM_PATON, SwimmermPatonSeenText, SwimmermPatonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermPatonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermPatonAfterBattleText
 
 SeafoamIslandsSign:
 	jumptext SeafoamIslandsSignText
@@ -93,9 +73,8 @@ SwimmerfNicoleAfterBattleText:
 SwimmerfLoriSeenText:
 	text "What an impressive"
 	line "collection of Gym"
-
-	para "Badges. We should"
-	line "battle!"
+	cont "Badges. We should"
+	cont "battle!"
 	done
 
 SwimmerfLoriBeatenText:
@@ -111,9 +90,8 @@ SwimmerfLoriAfterBattleText:
 SwimmermCameronSeenText:
 	text "I guess it's im-"
 	line "possible to swim"
-
-	para "all the way to"
-	line "Johto."
+	cont "all the way to"
+	cont "Johto."
 	done
 
 SwimmermCameronBeatenText:
@@ -142,17 +120,15 @@ SwimmermHalBeatenText:
 SwimmermHalAfterBattleText:
 	text "I've gotta do a"
 	line "lot more training;"
-
-	para "for #mon and"
-	line "for swimming."
+	cont "for #mon and"
+	cont "for swimming."
 	done
 
 SwimmermPatonSeenText:
 	text "I swam out here"
 	line "to explore the"
-
-	para "Seafoam Islands"
-	line "but got lost"
+	cont "Seafoam Islands"
+	cont "but got lost"
 	cont "in there."
 	done
 
@@ -164,9 +140,8 @@ SwimmermPatonBeatenText:
 SwimmermPatonAfterBattleText:
 	text "I want to explore"
 	line "more but I have a"
-
-	para "bad sense of"
-	line "direction…"
+	cont "bad sense of"
+	cont "direction…"
 	done
 
 SeafoamIslandsSignText:

@@ -43,9 +43,8 @@ Route16GateOfficerText:
 
 	para "It's a great sort"
 	line "of feeling that"
-
-	para "you can't get from"
-	line "a ship or train."
+	cont "you can't get from"
+	cont "a ship or train."
 	done
 
 Route16GateCannotPassText:
@@ -53,9 +52,8 @@ Route16GateCannotPassText:
 
 	para "You can't go out"
 	line "on the Cycling"
-
-	para "Road without a"
-	line "Bicycle."
+	cont "Road without a"
+	cont "Bicycle."
 	done
 
 Route16Gate_MapEvents:

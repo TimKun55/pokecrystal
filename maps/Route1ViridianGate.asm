@@ -7,12 +7,7 @@ Route1ViridianGate_MapScripts:
 	def_callbacks
 
 Route1ViridianGuardScript:
-	faceplayer
-	opentext
-	writetext Route1ViridianGuardText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route1ViridianGuardText
 
 Route1ViridianGuardText:
 	text "Welcome to"
@@ -27,9 +22,8 @@ Route1ViridianGuardText:
 
 	para "Head west for the"
 	line "#mon League,"
-
-	para "Mt.Silver and"
-	line "Johto."
+	cont "Mt.Silver and"
+	cont "Johto."
 	done
 
 Route1ViridianGate_MapEvents:

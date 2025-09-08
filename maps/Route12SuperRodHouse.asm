@@ -20,10 +20,7 @@ Route12SuperRodHouseFishingGuruScript:
 	iffalse .NoRoom
 	setevent EVENT_GOT_SUPER_ROD
 .GotSuperRod:
-	writetext GaveSuperRodText
-	waitbutton
-	closetext
-	end
+	writetextend GaveSuperRodText
 
 .Refused:
 	writetext DontWantSuperRodText
@@ -63,9 +60,8 @@ GaveSuperRodText:
 
 	para "Remember--you can"
 	line "catch different"
-
-	para "#mon using"
-	line "different Rods."
+	cont "#mon using"
+	cont "different Rods."
 	done
 
 DontWantSuperRodText:

@@ -14,11 +14,7 @@ Route7_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route7UndergroundPathOpenScript
 
 Route7Noop1Scene:
-	end
-
 Route7Noop2Scene:
-	end
-
 Route7Noop3Scene:
 	end
 
@@ -100,22 +96,14 @@ TrainerBugManiacEli:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacEliAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacEliAfterBattleText
 
 TrainerPokefanMCarlos:
 	trainer POKEFANM, CARLOS, EVENT_BEAT_POKEFANM_CARLOS, PokefanMCarlosSeenText, PokefanMCarlosBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanMCarlosAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanMCarlosAfterBattleText
 
 Route7UndergroundPathSign:
 	jumptext Route7UndergroundPathSignText
@@ -176,9 +164,8 @@ BugManiacEliBeatenText:
 BugManiacEliAfterBattleText:
 	text "Back to training I"
 	line "go! It's good to"
-	
-	para "have goals to"
-	line "work towards!"
+	cont "have goals to"
+	cont "work towards!"
 	done
 
 PokefanMCarlosSeenText:
@@ -193,9 +180,8 @@ PokefanMCarlosBeatenText:
 PokefanMCarlosAfterBattleText:
 	text "I should go to"
 	line "the Fan Club in"
-	
-	para "Vermilion and show"
-	line "off my #mon!"
+	cont "Vermilion and show"
+	cont "off my #mon!"
 	done
 
 Route7DisguisedScreamText:
@@ -207,9 +193,8 @@ Route7UndergroundPathSignText:
 
 	para "… Uncouth trainers"
 	line "have been holding"
-
-	para "battles in the"
-	line "Underground Path."
+	cont "battles in the"
+	cont "Underground Path."
 
 	para "Because of rising"
 	line "complaints by lo-"

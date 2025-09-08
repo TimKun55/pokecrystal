@@ -13,22 +13,14 @@ TrainerSchoolboyDanny:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SchoolboyDannyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SchoolboyDannyAfterBattleText
 
 TrainerCooltrainerfQuinn:
 	trainer COOLTRAINERF, QUINN, EVENT_BEAT_COOLTRAINERF_QUINN, CooltrainerfQuinnSeenText, CooltrainerfQuinnBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfQuinnAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfQuinnAfterBattleText
 
 Route1Sign:
 	jumptext Route1SignText
@@ -50,9 +42,8 @@ SchoolboyDannyBeatenText:
 SchoolboyDannyAfterBattleText:
 	text "For trainers, it's"
 	line "a given that we'll"
-
-	para "battle whenever we"
-	line "meet."
+	cont "battle whenever we"
+	cont "meet."
 	done
 
 CooltrainerfQuinnSeenText:

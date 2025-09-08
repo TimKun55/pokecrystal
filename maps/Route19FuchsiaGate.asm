@@ -11,16 +11,10 @@ Route19FuchsiaGateOfficerScript:
 	opentext
 	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
 	iftrue .CompetitionOver
-	writetext Route19FuchsiaGateOfficerText
-	waitbutton
-	closetext
-	end
+	writetextend Route19FuchsiaGateOfficerText
 
 .CompetitionOver:
-	writetext Route19FuchsiaGateOfficerText_CompetitionOver
-	waitbutton
-	closetext
-	end
+	writetextend Route19FuchsiaGateOfficerText_CompetitionOver
 
 Route19FuchsiaGateOfficerText:
 	text "Route 19 is closed"
@@ -30,17 +24,15 @@ Route19FuchsiaGateOfficerText:
 	para "If you want to"
 	line "visit Cinnabar and"
 	cont "Seafoam, please"
-	
-	para "travel there via"
-	line "Pallet Town."
+	cont "travel there via"
+	cont "Pallet Town."
 	done
 
 Route19FuchsiaGateOfficerText_CompetitionOver:
 	text "The Competition is"
 	line "good fun, but can"
-
-	para "cause some travel"
-	line "frustration."
+	cont "cause some travel"
+	cont "frustration."
 	done
 
 Route19FuchsiaGate_MapEvents:

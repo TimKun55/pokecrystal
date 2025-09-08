@@ -15,22 +15,14 @@ Route5SuperNerdGreggScript:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdGreggAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdGreggAfterBattleText
 
 Route5SuperNerdJayScript:
 	trainer SUPER_NERD, JAY, EVENT_BEAT_SUPER_NERD_JAY, SupernerdJaySeenText, SupernerdJayBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdJayAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdJayAfterBattleText
 
 Route5OfficerScript:
 	jumptextfaceplayer Route5OfficerText
@@ -120,9 +112,8 @@ Route5OfficerText:
 	text "The Underground"
 	line "Path is closed"
 	cont "until the problem"
-
-	para "at the Power Plant"
-	line "is solved."
+	cont "at the Power Plant"
+	cont "is solved."
 	done
 
 Route5UndergroundPathSignText:

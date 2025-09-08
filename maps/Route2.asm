@@ -16,44 +16,28 @@ TrainerBeautyCaroline:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyCarolineAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyCarolineAfterBattleText
 
 TrainerBeautyCarlene:
 	trainer BEAUTY, CARLENE, EVENT_BEAT_BEAUTY_CARLENE, BeautyCarleneSeenText, BeautyCarleneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyCarleneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyCarleneAfterBattleText
 
 TrainerCamperThomas:
 	trainer CAMPER, THOMAS, EVENT_BEAT_CAMPER_THOMAS, CamperThomasSeenText, CamperThomasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperThomasAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperThomasAfterBattleText
 
 TrainerCamperLeroy:
 	trainer CAMPER, LEROY, EVENT_BEAT_CAMPER_LEROY, CamperLeroySeenText, CamperLeroyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperLeroyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperLeroyAfterBattleText
 
 Route2Sign:
 	jumptext Route2SignText

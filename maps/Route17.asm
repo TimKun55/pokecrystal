@@ -24,99 +24,63 @@ TrainerBikerCharles:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerCharlesAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerCharlesAfterBattleText
 
 TrainerBikerRiley:
 	trainer BIKER, RILEY, EVENT_BEAT_BIKER_RILEY, BikerRileySeenText, BikerRileyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerRileyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerRileyAfterBattleText
 
 TrainerBikerJoel:
 	trainer BIKER, JOEL, EVENT_BEAT_BIKER_JOEL, BikerJoelSeenText, BikerJoelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerJoelAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerJoelAfterBattleText
 
 TrainerBikerGlenn:
 	trainer BIKER, GLENN, EVENT_BEAT_BIKER_GLENN, BikerGlennSeenText, BikerGlennBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerGlennAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerGlennAfterBattleText
 
 TrainerBikerBenny:
 	trainer BIKER, BIKER_BENNY, EVENT_BEAT_BIKER_BENNY, BikerBennySeenText, BikerBennyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerBennyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerBennyAfterBattleText
 
 TrainerBikerKazu:
 	trainer BIKER, KAZU, EVENT_BEAT_BIKER_KAZU, BikerKazuSeenText, BikerKazuBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerKazuAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerKazuAfterBattleText
 
 TrainerBikerOrville:
 	trainer BIKER, ORVILLE, EVENT_BEAT_BIKER_ORVILLE, BikerOrvilleSeenText, BikerOrvilleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerOrvilleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerOrvilleAfterBattleText
 
 TrainerBikerBert:
 	trainer BIKER, BERT, EVENT_BEAT_BIKER_BERT, BikerBertSeenText, BikerBertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerBertAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerBertAfterBattleText
 
 TrainerBikerManny:
 	trainer BIKER, MANNY, EVENT_BEAT_BIKER_MANNY, BikerMannySeenText, BikerMannyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerMannyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerMannyAfterBattleText
 
 Route17HiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_ROUTE_17_HIDDEN_MAX_ETHER

@@ -18,66 +18,42 @@ TrainerFisherKyle:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherKyleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherKyleAfterBattleText
 
 TrainerFisherMartin:
 	trainer FISHER, MARTIN, EVENT_BEAT_FISHER_MARTIN, FisherMartinSeenText, FisherMartinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherMartinAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherMartinAfterBattleText
 
 TrainerFisherStephen:
 	trainer FISHER, STEPHEN, EVENT_BEAT_FISHER_STEPHEN, FisherStephenSeenText, FisherStephenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherStephenAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherStephenAfterBattleText
 
 TrainerFisherBarney:
 	trainer FISHER, BARNEY, EVENT_BEAT_FISHER_BARNEY, FisherBarneySeenText, FisherBarneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherBarneyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherBarneyAfterBattleText
 
 TrainerBirdKeeperTeddy:
 	trainer BIRD_KEEPER, TEDDY, EVENT_BEAT_BIRD_KEEPER_TEDDY, BirdKeeperTeddySeenText, BirdKeeperTeddyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperTeddyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperTeddyAfterBattleText
 
 TrainerBirdKeeperFred:
 	trainer BIRD_KEEPER, FRED, EVENT_BEAT_BIRD_KEEPER_FRED, BirdKeeperFredSeenText, BirdKeeperFredBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperFredAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperFredAfterBattleText
 
 Route12Sign:
 	jumptext Route12SignText
@@ -124,9 +100,8 @@ FisherStephenBeatenText:
 FisherStephenAfterBattleText:
 	text "Have you checked"
 	line "out Kanto's radio"
-
-	para "programs? We get a"
-	line "good variety here."
+	cont "programs? We get a"
+	cont "good variety here."
 	done
 
 FisherBarneySeenText:
@@ -143,18 +118,15 @@ FisherBarneyBeatenText:
 FisherBarneyAfterBattleText:
 	text "I think electric-"
 	line "ity is the most"
-
-	para "important thing in"
+	cont "important thing in"
 	line "our daily lives."
 
 	para "If it weren't,"
 	line "people wouldn't"
-
-	para "have made such a"
-	line "fuss when the"
-
-	para "Power Plant went"
-	line "out of commission."
+	cont "have made such a"
+	cont "fuss when the"
+	cont "Power Plant went"
+	cont "out of commission."
 	done
 
 FisherKyleSeenText:
@@ -189,9 +161,8 @@ BirdKeeperTeddyBeatenText:
 BirdKeeperTeddyAfterBattleText:
 	text "No matter the time"
 	line "of day, I'm always"
-
-	para "looking out for"
-	line "bird #mon."
+	cont "looking out for"
+	cont "bird #mon."
 	done
 
 BirdKeeperFredSeenText:
@@ -206,9 +177,8 @@ BirdKeeperFredBeatenText:
 BirdKeeperFredAfterBattleText:
 	text "I'm a member of"
 	line "the Avicultural"
-
-	para "Society in Saffron"
-	line "City!"
+	cont "Society in Saffron"
+	cont "City!"
 	
 	para "I'm collecting"
 	line "data for them."

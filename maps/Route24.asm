@@ -67,9 +67,8 @@ Route24RocketSeenText:
 
 	para "Think I did, if"
 	line "stop the energy,"
-
-	para "be big panic for"
-	line "here people!"
+	cont "be big panic for"
+	cont "here people!"
 
 	para "Secret it is my"
 	line "mission, so tell"
@@ -77,9 +76,8 @@ Route24RocketSeenText:
 
 	para "But! If win you do"
 	line "versus me, a man I"
-
-	para "be and mine secret"
-	line "to you I tell."
+	cont "be and mine secret"
+	cont "to you I tell."
 
 	para "Hey, kid! Battle"
 	line "begin we do!"
@@ -101,15 +99,13 @@ Route24RocketAfterBattleText:
 
 	para "Machine Part steal"
 	line "by me, hide it I"
-
-	para "did in Gym of the"
-	line "Cerulean."
+	cont "did in Gym of the"
+	cont "Cerulean."
 
 	para "Inside water put"
 	line "it I did. Look for"
-
-	para "in water center of"
-	line "Gym at."
+	cont "in water center of"
+	cont "Gym at."
 
 	para "But you forget me"
 	line "not!"
@@ -119,9 +115,8 @@ Route24RocketAfterBattleText:
 
 	para "Come from Johto"
 	line "will they, mine"
-
-	para "friends, yes. Will"
-	line "revenge they are."
+	cont "friends, yes. Will"
+	cont "revenge they are."
 	done
 
 Route24RocketDisappearsText:
@@ -129,9 +124,8 @@ Route24RocketDisappearsText:
 
 	para "You say what? Team"
 	line "Rocket bye-bye a"
-
-	para "go-go? Broken it"
-	line "is says you?"
+	cont "go-go? Broken it"
+	cont "is says you?"
 
 	para "Oh, no! Should I"
 	line "do what now on"

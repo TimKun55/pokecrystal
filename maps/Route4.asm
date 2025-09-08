@@ -23,33 +23,21 @@ TrainerBirdKeeperHank:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperHankAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperHankAfterBattleText
 
 TrainerPicnickerHope:
 	trainer PICNICKER, HOPE, EVENT_BEAT_PICNICKER_HOPE, PicnickerHopeSeenText, PicnickerHopeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerHopeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerHopeAfterBattleText
 
 TrainerPicnickerSharon:
 	trainer PICNICKER, SHARON, EVENT_BEAT_PICNICKER_SHARON, PicnickerSharonSeenText, PicnickerSharonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerSharonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerSharonAfterBattleText
 
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText
@@ -77,11 +65,9 @@ BirdKeeperHankBeatenText:
 BirdKeeperHankAfterBattleText:
 	text "If you have a"
 	line "specific #mon"
-
-	para "that you want to"
+	cont "that you want to"
 	line "raise, put it out"
-
-	para "first, then switch"
+	cont "first, then switch"
 	line "it right away."
 
 	para "That's how to do"

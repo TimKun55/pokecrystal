@@ -313,21 +313,18 @@ Route23FalknerBeforeText:
 	para "Clair told us that"
 	line "you had earned"
 	cont "your final badge"
-	
-	para "and that you"
-	line "were on your way"
-	cont "to the #mon"
+	cont "and were on your"
+	cont "way to the #mon"
+	cont "League!"
 
-	para "League! So, we"
-	line "decided to wait"
-	cont "for you here!"
+	para "So, we decided to"
+	line "wait for you here!"
 	
 	para "It's been a long"
 	line "time since we"
 	cont "last battled and"
-
-	para "I'd love to see"
-	line "how much stronger"
+	cont "I'd love to see"
+	cont "how much stronger"
 	cont "you are now!"
 	
 	para "Let's battle!"
@@ -342,18 +339,17 @@ Route23FalknerAfterText:
 	text "Seeing how strong"
 	line "you've become"
 	cont "makes me want to"
-
-	para "become a better"
-	line "trainer and"
+	cont "become a better"
+	cont "trainer and"
 	cont "Gym Leader."
 	
 	para "I'm going to keep"
 	line "training hard and"
 	cont "make sure I win"
-	
-	para "next time."
-	line "Good luck at the"
-	cont "League!"
+	cont "next time."
+
+	para "Good luck at the"
+	line "League!"
 	
 	para "And good luck"
 	line "with everyone"
@@ -372,16 +368,14 @@ Route23NoctowlText:
 Route23BugsyBeforeText:
 	text "Hey <PLAYER>!"
 	line "Did Falkner tell"
-	
-	para "you we all wanna"
-	line "battle you?"
+	cont "you we all wanna"
+	cont "battle you?"
 
 	para "Haha, it's funny"
 	line "how much of an"
 	cont "impression you"
-	
-	para "left on us! We all"
-	line "want to go another"
+	cont "left on us! We all"
+	cont "want to go another"
 	cont "round with you!"
 
 	para "Let's do this!"
@@ -396,13 +390,13 @@ Route23BugsyAfterText:
 	text "Man, I still have"
 	line "a long way to go"
 	cont "both with my"
+	cont "research and my"
+	cont "battling."
 
-	para "research and my"
-	line "battling. I'd"
-	cont "better get"
-	
-	para "back to it!"
-	line "Good luck!"
+	para "I'd better get"
+	line "back to it!"
+
+	para "Good luck!"
 	done
 
 Route23BugsyVictoryText:
@@ -421,9 +415,8 @@ Route23WhitneyBeforeText:
 	
 	para "It's been a long"
 	line "time since we've"
-	
-	para "battled and I'm"
-	line "much better now!"
+	cont "battled and I'm"
+	cont "much better now!"
 	
 	para "Wanna see?"
 	done
@@ -463,15 +456,13 @@ Route23MortyBeforeText:
 	para "Neither have I."
 	line "I am still in"
 	cont "pursuit of the"
-	
-	para "rainbow-colored"
-	line "#mon."
+	cont "rainbow-colored"
+	cont "#mon."
 	
 	para "My defeat at your"
 	line "hands only pushed"
-	
-	para "me harder to get"
-	line "stronger."
+	cont "me harder to get"
+	cont "stronger."
 	
 	para "This is the"
 	line "result of all"
@@ -487,9 +478,8 @@ Route23MortyAfterText:
 	text "One day I'll be"
 	line "strong enough to"
 	cont "encounter that"
-
-	para "rainbow-colored"
-	line "#mon."
+	cont "rainbow-colored"
+	cont "#mon."
 	
 	para "But, you are"
 	line "strong enough for"
@@ -583,9 +573,8 @@ Route23JasmineAfterText:
 	para "I'm glad we got"
 	line "the chance to"
 	cont "battle again and"
-	
-	para "I'll never forget"
-	line "how you helped"
+	cont "I'll never forget"
+	cont "how you helped"
 	cont "Amphy that time."
 	
 	para "Go and show the"
@@ -628,9 +617,8 @@ Route23PryceAfterText:
 	para "It's been a very"
 	line "long time since we"
 	cont "Leaders saw a"
-	
-	para "trainer off to"
-	line "the League."
+	cont "trainer off to"
+	cont "the League."
 	
 	para "Go and show them"
 	line "your power."

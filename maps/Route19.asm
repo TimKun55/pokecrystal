@@ -33,98 +33,62 @@ TrainerSwimmerfDawn:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfDawnAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfDawnAfterBattleText
 
 TrainerSwimmerfJill:
 	trainer SWIMMERF, JILL, EVENT_BEAT_SWIMMERF_JILL, SwimmerfJillSeenText, SwimmerfJillBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfJillAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfJillAfterBattleText
 
 TrainerSwimmermHarold:
 	trainer SWIMMERM, HAROLD, EVENT_BEAT_SWIMMERM_HAROLD, SwimmermHaroldSeenText, SwimmermHaroldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermHaroldAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermHaroldAfterBattleText
 
 TrainerSwimmermJerome:
 	trainer SWIMMERM, JEROME, EVENT_BEAT_SWIMMERM_JEROME, SwimmermJeromeSeenText, SwimmermJeromeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermJeromeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermJeromeAfterBattleText
 
 TrainerSwimmermTucker:
 	trainer SWIMMERM, TUCKER, EVENT_BEAT_SWIMMERM_TUCKER, SwimmermTuckerSeenText, SwimmermTuckerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermTuckerAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermTuckerAfterBattleText
 
 TrainerSwimmermWalter:
 	trainer SWIMMERM, WALTER, EVENT_BEAT_SWIMMERM_WALTER, SwimmermWalterSeenText, SwimmermWalterBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermWalterAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermWalterAfterBattleText
 
 Route19Fisher1Script:
 	faceplayer
 	opentext
 	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
 	iftrue .CompetitionOver
-	writetext Route19Fisher1Text
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher1Text
 
 .CompetitionOver:
-	writetext Route19Fisher1Text_CompetitionOver
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher1Text_CompetitionOver
 
 Route19Fisher2Script:
 	faceplayer
 	opentext
 	checkevent EVENT_CINNABAR_SURFING_COMPETITION_OVER
 	iftrue .CompetitionOver
-	writetext Route19Fisher2Text
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher2Text
 
 .CompetitionOver:
-	writetext Route19Fisher2Text_CompetitionOver
-	waitbutton
-	closetext
-	end
+	writetextend Route19Fisher2Text_CompetitionOver
 
 Route19SurfingPikachuScript:
 	faceplayer
@@ -159,17 +123,15 @@ SwimmermHaroldBeatenText:
 SwimmermHaroldAfterBattleText:
 	text "At night, the sea"
 	line "turns black. It"
-
-	para "feels like it will"
-	line "swallow you up."
+	cont "feels like it will"
+	cont "swallow you up."
 	done
 
 SwimmermTuckerSeenText:
 	text "Pant, pant…"
 	line "Just… a little…"
-
-	para "farther… to…"
-	line "Fuchsia…"
+	cont "farther… to…"
+	cont "Fuchsia…"
 	done
 
 SwimmermTuckerBeatenText:
@@ -185,9 +147,8 @@ SwimmermTuckerAfterBattleText:
 SwimmermWalterSeenText:
 	text "I'm great at"
 	line "swimming, but how"
-
-	para "about we try"
-	line "a battle?"
+	cont "about we try"
+	cont "a battle?"
 	done
 
 SwimmermWalterBeatenText:
@@ -213,14 +174,12 @@ SwimmerfDawnBeatenText:
 SwimmerfDawnAfterBattleText:
 	text "It's a quick swim"
 	line "between Fuchsia"
-
-	para "and Seafoam Is-"
-	line "lands…"
+	cont "and Seafoam Is-"
+	cont "lands…"
 
 	para "Sheesh, some big"
 	line "man my boyfriend"
-
-	para "is! What a wimp!"
+	cont "is! What a wimp!"
 	done
 
 SwimmerfJillSeenText:
@@ -236,9 +195,8 @@ SwimmerfJillBeatenText:
 SwimmerfJillAfterBattleText:
 	text "If I get up at 5am"
 	line "and you beat me,"
-
-	para "what time do you"
-	line "wake up?!"
+	cont "what time do you"
+	cont "wake up?!"
 	done
 
 SwimmermJeromeSeenText:
@@ -268,9 +226,8 @@ Route19Fisher1Text:
 
 	para "If you want to get"
 	line "to Cinnabar, you'd"
-
-	para "better go south"
-	line "from Pallet Town."
+	cont "better go south"
+	cont "from Pallet Town."
 	done
 
 Route19Fisher1Text_CompetitionOver:

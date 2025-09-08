@@ -13,9 +13,8 @@ Route11Route12GateOfficerText:
 	text "Diglett's Cave is"
 	line "a super convenient"
 	cont "shortcut between"
-
-	para "Vermilion City"
-	line "and Pewter City."
+	cont "Vermilion City"
+	cont "and Pewter City."
 	done
 
 Route11Route12Gate_MapEvents:

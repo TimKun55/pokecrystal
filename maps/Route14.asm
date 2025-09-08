@@ -24,33 +24,21 @@ TrainerPokefanmCarter:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmCarterAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmCarterAfterBattleText
 
 TrainerBirdKeeperRoy:
 	trainer BIRD_KEEPER, ROY, EVENT_BEAT_BIRD_KEEPER_ROY, BirdKeeperRoySeenText, BirdKeeperRoyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperRoyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperRoyAfterBattleText
 
 TrainerPokefanmTrevor:
 	trainer POKEFANM, TREVOR, EVENT_BEAT_POKEFANM_TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmTrevorAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmTrevorAfterBattleText
 	
 TrainerLadyEva:
 	trainer LADY, EVA, EVENT_BEAT_LADY_EVA, LadyEvaSeenText, LadyEvaBeatenText, 0, .Script
@@ -84,9 +72,8 @@ Route14Togekiss:
 PokefanmCarterSeenText:
 	text "Let me tell you,"
 	line "I had a hard time"
-
-	para "catching my prized"
-	line "#mon."
+	cont "catching my prized"
+	cont "#mon."
 	done
 
 PokefanmCarterBeatenText:
@@ -115,9 +102,8 @@ BirdKeeperRoyBeatenText:
 BirdKeeperRoyAfterBattleText:
 	text "You have #mon"
 	line "that know the HM"
-
-	para "move Fly, don't"
-	line "you? I envy you."
+	cont "move Fly, don't"
+	cont "you? I envy you."
 	done
 
 PokefanmTrevorSeenText:
@@ -125,9 +111,8 @@ PokefanmTrevorSeenText:
 
 	para "#mon get more"
 	line "friendly if you"
-
-	para "train them in a"
-	line "place that they"
+	cont "train them in a"
+	cont "place that they"
 	cont "remember."
 	done
 
@@ -139,9 +124,8 @@ PokefanmTrevorBeatenText:
 PokefanmTrevorAfterBattleText:
 	text "If only there were"
 	line "an easy way to"
-
-	para "identify where I"
-	line "got my #mon…"
+	cont "identify where I"
+	cont "got my #mon…"
 	done
 	
 LadyEvaSeenText:
@@ -152,9 +136,9 @@ LadyEvaSeenText:
 	para "My sisters have"
 	line "told me all about"
 	cont "you, and I'm quite"
+	cont "keen to battle!"
 	
-	para "keen to battle!"
-	line "Hope you're ready!"
+	para "Hope you're ready!"
 	done
 	
 LadyEvaBeatenText:
@@ -166,13 +150,11 @@ LadyEvaAfterBattleText:
 	text "I thought I would"
 	line "apply to be a Gym"
 	cont "Leader for the"
-	
-	para "fairy-type but"
-	line "you've shown me"
+	cont "fairy-type but"
+	cont "you've shown me"
 	cont "I've still got"
-	
-	para "room for"
-	line "improvement!"
+	cont "room for"
+	cont "improvement!"
 	
 	para "If you've beaten"
 	line "Lia and Zoe, go"

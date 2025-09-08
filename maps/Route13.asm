@@ -15,55 +15,35 @@ TrainerPokefanmAlex:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmAlexAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmAlexAfterBattleText
 
 TrainerPokefanmJoshua:
 	trainer POKEFANM, JOSHUA, EVENT_BEAT_POKEFANM_JOSHUA, PokefanmJoshuaSeenText, PokefanmJoshuaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmJoshuaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmJoshuaAfterBattleText
 
 TrainerBirdKeeperPerry:
 	trainer BIRD_KEEPER, PERRY, EVENT_BEAT_BIRD_KEEPER_PERRY, BirdKeeperPerrySeenText, BirdKeeperPerryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperPerryAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperPerryAfterBattleText
 
 TrainerBirdKeeperBret:
 	trainer BIRD_KEEPER, BRET, EVENT_BEAT_BIRD_KEEPER_BRET, BirdKeeperBretSeenText, BirdKeeperBretBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperBretAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperBretAfterBattleText
 
 TrainerHikerKenny:
 	trainer HIKER, KENNY, EVENT_BEAT_HIKER_KENNY, HikerKennySeenText, HikerKennyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerKennyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerKennyAfterBattleText
 
 Route13TrainerTips:
 	jumptext Route13TrainerTipsText
@@ -106,9 +86,8 @@ PokefanmJoshuaBeatenText:
 PokefanmJoshuaAfterBattleText:
 	text "You look like you"
 	line "have many #mon,"
-
-	para "but Pikachu is"
-	line "still the best."
+	cont "but Pikachu is"
+	cont "still the best."
 	done
 
 BirdKeeperPerrySeenText:
@@ -131,9 +110,8 @@ BirdKeeperPerryAfterBattleText:
 BirdKeeperBretSeenText:
 	text "Check out my #-"
 	line "mon. Just look at"
-
-	para "their coloring and"
-	line "their plumage."
+	cont "their coloring and"
+	cont "their plumage."
 	done
 
 BirdKeeperBretBeatenText:

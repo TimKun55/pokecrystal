@@ -32,9 +32,8 @@ Route3Pokecenter1FFisherText:
 Route3Pokecenter1FCooltrainerMText:
 	text "I'm glad we can"
 	line "use the Square as"
-
-	para "a short-cut to get"
-	line "through Mt.Moon."
+	cont "a short-cut to get"
+	cont "through Mt.Moon."
 	done
 	
 Route3Pokecenter1F_MapEvents:

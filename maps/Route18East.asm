@@ -12,22 +12,14 @@ TrainerBirdKeeperBoris:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperBorisAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperBorisAfterBattleText
 
 TrainerBirdKeeperBob:
 	trainer BIRD_KEEPER, BOB, EVENT_BEAT_BIRD_KEEPER_BOB, BirdKeeperBobSeenText, BirdKeeperBobBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperBobAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperBobAfterBattleText
 
 Route18Sign:
 	jumptext Route18SignText
@@ -35,9 +27,8 @@ Route18Sign:
 BirdKeeperBorisSeenText:
 	text "If you're looking"
 	line "for #mon, you"
-
-	para "have to look in"
-	line "the tall grass."
+	cont "have to look in"
+	cont "the tall grass."
 	done
 
 BirdKeeperBorisBeatenText:
@@ -63,9 +54,8 @@ BirdKeeperBobBeatenText:
 BirdKeeperBobAfterBattleText:
 	text "If you don't have"
 	line "a Bicycle, you're"
-
-	para "not allowed to use"
-	line "the shortcut."
+	cont "not allowed to use"
+	cont "the shortcut."
 	done
 
 Route18SignText:

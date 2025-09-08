@@ -17,11 +17,7 @@ Route4ZapdosNest_MapScripts:
 	def_callbacks
 
 Route4ZapdosNestNoop1Scene:
-	end
-
 Route4ZapdosNestNoop2Scene:
-	end
-
 Route4ZapdosNestNoop3Scene:
 	end
 

@@ -17,77 +17,49 @@ TrainerCamperDean:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperDeanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperDeanAfterBattleText
 
 TrainerPicnickerHeidi:
 	trainer PICNICKER, HEIDI, EVENT_BEAT_PICNICKER_HEIDI, PicnickerHeidiSeenText, PicnickerHeidiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerHeidiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerHeidiAfterBattleText
 
 TrainerCamperSid:
 	trainer CAMPER, SID, EVENT_BEAT_CAMPER_SID, CamperSidSeenText, CamperSidBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperSidAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperSidAfterBattleText
 
 TrainerPicnickerEdna:
 	trainer PICNICKER, EDNA, EVENT_BEAT_PICNICKER_EDNA, PicnickerEdnaSeenText, PicnickerEdnaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerEdnaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerEdnaAfterBattleText
 
 TrainerHikerTim:
 	trainer HIKER, TIM, EVENT_BEAT_HIKER_TIM, HikerTimSeenText, HikerTimBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerTimAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerTimAfterBattleText
 
 TrainerHikerSidney:
 	trainer HIKER, SIDNEY, EVENT_BEAT_HIKER_SIDNEY, HikerSidneySeenText, HikerSidneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerSidneyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerSidneyAfterBattleText
 	
 TrainerLadyZoe:
 	trainer LADY, ZOE, EVENT_BEAT_LADY_ZOE, LadyZoeSeenText, LadyZoeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyZoeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyZoeAfterBattleText
 
 Route9Sign:
 	jumptext Route9SignText
@@ -107,9 +79,8 @@ CamperDeanBeatenText:
 CamperDeanAfterBattleText:
 	text "My #mon were"
 	line "hurt before even"
-
-	para "entering Rock"
-	line "Tunnel."
+	cont "entering Rock"
+	cont "Tunnel."
 
 	para "I'd better take"
 	line "them to a #mon"
@@ -131,9 +102,8 @@ PicnickerHeidiBeatenText:
 PicnickerHeidiAfterBattleText:
 	text "We bake lots of"
 	line "goodies and share"
-
-	para "them all around."
-	line "They're delicious!"
+	cont "them all around."
+	cont "They're delicious!"
 	done
 
 CamperSidSeenText:
@@ -165,9 +135,8 @@ PicnickerEdnaBeatenText:
 PicnickerEdnaAfterBattleText:
 	text "Conserving energy"
 	line "is important, but"
-
-	para "the environment is"
-	line "even more vital."
+	cont "the environment is"
+	cont "even more vital."
 	done
 
 HikerTimSeenText:

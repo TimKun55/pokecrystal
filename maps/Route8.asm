@@ -16,55 +16,35 @@ TrainerBikerDwayne:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerDwayneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerDwayneAfterBattleText
 
 TrainerBikerHarris:
 	trainer BIKER, HARRIS, EVENT_BEAT_BIKER_HARRIS, BikerHarrisSeenText, BikerHarrisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerHarrisAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerHarrisAfterBattleText
 
 TrainerBikerZeke:
 	trainer BIKER, ZEKE, EVENT_BEAT_BIKER_ZEKE, BikerZekeSeenText, BikerZekeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BikerZekeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BikerZekeAfterBattleText
 
 TrainerSupernerdSam:
 	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdSamAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdSamAfterBattleText
 
 TrainerSupernerdTom:
 	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SupernerdTomSeenText, SupernerdTomBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SupernerdTomAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SupernerdTomAfterBattleText
 
 Route8LockedDoor:
 	jumptext Route8LockedDoorText
@@ -100,9 +80,8 @@ BikerDwayneAfterBattleText:
 BikerHarrisSeenText:
 	text "The cops shut down"
 	line "our Underground"
-
-	para "Path! That really"
-	line "fries me!"
+	cont "Path! That really"
+	cont "fries me!"
 	done
 
 BikerHarrisBeatenText:
@@ -159,9 +138,8 @@ SupernerdTomBeatenText:
 SupernerdTomAfterBattleText:
 	text "Gym Badges not"
 	line "only look great"
-	
-	para "but help out of"
-	line "battle, too."
+	cont "but help out of"
+	cont "battle, too."
 	done
 
 Route8LockedDoorText:

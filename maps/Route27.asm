@@ -20,11 +20,7 @@ TrainerPsychicGilbert:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicGilbertAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicGilbertAfterBattleText
 
 TrainerCooltrainerfBeth1:
 	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
@@ -114,33 +110,21 @@ TrainerPsychicRichard:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicRichardAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicRichardAfterBattleText
 
 TrainerCooltrainermBlake:
 	trainer COOLTRAINERM, BLAKE, EVENT_BEAT_COOLTRAINERM_BLAKE, CooltrainermBlakeSeenText, CooltrainermBlakeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermBlakeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermBlakeAfterBattleText
 
 TrainerCooltrainermBrian:
 	trainer COOLTRAINERM, BRIAN, EVENT_BEAT_COOLTRAINERM_BRIAN, CooltrainermBrianSeenText, CooltrainermBrianBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermBrianAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermBrianAfterBattleText
 
 TrainerCooltrainerfReena:
 	trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script
@@ -230,11 +214,7 @@ TrainerCooltrainerfMegan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfMeganAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfMeganAfterBattleText
 
 TohjoFallsJohtoSign:
 	jumptext TohjoFallsJohtoSignText
@@ -284,9 +264,8 @@ CooltrainermBlakeBeatenText:
 CooltrainermBlakeAfterBattleText:
 	text "If you prevail on"
 	line "this harsh trek,"
-
-	para "the truth will be"
-	line "revealed!"
+	cont "the truth will be"
+	cont "revealed!"
 
 	para "Heh, sorry, I just"
 	line "wanted to say"
@@ -311,9 +290,8 @@ CooltrainermBrianAfterBattleText:
 CooltrainerfReenaSeenText:
 	text "You shouldn't"
 	line "underestimate the"
-
-	para "wild #mon in"
-	line "these parts."
+	cont "wild #mon in"
+	cont "these parts."
 	done
 
 CooltrainerfReenaBeatenText:
@@ -324,9 +302,8 @@ CooltrainerfReenaBeatenText:
 CooltrainerfReenaAfterBattleText:
 	text "You're just a kid,"
 	line "but you're not to"
-
-	para "be underestimated"
-	line "either."
+	cont "be underestimated"
+	cont "either."
 	done
 
 CooltrainerfMeganSeenText:

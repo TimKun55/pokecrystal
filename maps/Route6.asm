@@ -20,66 +20,42 @@ TrainerPokefanmRex:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmRexAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmRexAfterBattleText
 
 TrainerPokefanmAllan:
 	trainer POKEFANM, ALLAN, EVENT_BEAT_POKEFANM_ALLAN, PokefanmAllanSeenText, PokefanmAllanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmAllanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmAllanAfterBattleText
 	
 TrainerLadyLia:
 	trainer LADY, LIA, EVENT_BEAT_LADY_LIA, LadyLiaSeenText, LadyLiaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyLiaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyLiaAfterBattleText
 
 TrainerGentlemanVirgil:
 	trainer GENTLEMAN, VIRGIL, EVENT_BEAT_GENTLEMAN_VIRGIL, GentlemanVirgilSeenText, GentlemanVirgilBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GentlemanVirgilAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GentlemanVirgilAfterBattleText
 
 TrainerCamperDale:
 	trainer CAMPER, DALE, EVENT_BEAT_CAMPER_DALE, CamperDaleSeenText, CamperDaleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperDaleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperDaleAfterBattleText
 
 TrainerBeautyTheresa:
 	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyTheresaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyTheresaAfterBattleText
 
 Route6OfficerScript:
 	jumptextfaceplayer Route6OfficerText
@@ -96,9 +72,8 @@ Route6MaxPotion:
 Route6OfficerText:
 	text "The road is closed"
 	line "until the problem"
-
-	para "at the Power Plant"
-	line "is solved."
+	cont "at the Power Plant"
+	cont "is solved."
 	done
 
 Route6UndergroundPathSignText:
@@ -151,7 +126,7 @@ LadyLiaSeenText:
 	line "the Johto Gym"
 	cont "Leaders?! Wow!"
 	
-	para "We just HAVE TO"
+	para "We just have to"
 	line "battle!"
 	done
 
@@ -163,8 +138,7 @@ LadyLiaAfterBattleText:
 	text "I'm trying to show"
 	line "the people of"
 	cont "Kanto how useful"
-	
-	para "fairy-types are!"
+	cont "fairy-types are!"
 	
 	para "Two of my sisters"
 	line "are doing the"

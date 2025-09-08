@@ -15,16 +15,10 @@ Route6SaffronGuardScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedPart
-	writetext Route6SaffronGuardWelcomeText
-	waitbutton
-	closetext
-	end
+	writetextend Route6SaffronGuardWelcomeText
 
 .ReturnedPart:
-	writetext Route6SaffronGuardMagnetTrainText
-	waitbutton
-	closetext
-	end
+	writetextend Route6SaffronGuardMagnetTrainText
 
 Route6SaffronGuardWelcomeText:
 	text "Welcome to Saffron"
@@ -33,26 +27,22 @@ Route6SaffronGuardWelcomeText:
 
 	para "…That's what I'd"
 	line "normally say, but"
-
-	para "the Magnet Train"
-	line "isn't running now."
+	cont "the Magnet Train"
+	cont "isn't running now."
 
 	para "It's not getting"
 	line "any electricity"
-
-	para "because there's"
-	line "something wrong"
-
-	para "with the Power"
-	line "Plant."
+	cont "because there's"
+	cont "something wrong"
+	cont "with the Power"
+	cont "Plant."
 	done
 
 Route6SaffronGuardMagnetTrainText:
 	text "The Magnet Train"
 	line "is one of the most"
-
-	para "famous things"
-	line "about Saffron."
+	cont "famous things"
+	cont "about Saffron."
 	done
 
 Route6SaffronGate_MapEvents:

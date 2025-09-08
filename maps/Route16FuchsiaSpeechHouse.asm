@@ -15,9 +15,8 @@ Route16FuchsiaSpeechHouseBookshelf:
 Route16FuchsiaSpeechHouseSuperNerdText:
 	text "If you cruise down"
 	line "Cycling Road, you"
-
-	para "will end up in"
-	line "Fuchsia City."
+	cont "will end up in"
+	cont "Fuchsia City."
 	done
 
 Route16FuchsiaSpeechHouse_MapEvents:

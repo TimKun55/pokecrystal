@@ -31,10 +31,7 @@ AerialAceHouseWoman:
 	end
 
 .Disloyal:
-	writetext AerialAceHouseWomanDisloyalText
-	waitbutton
-	closetext
-	end
+	writetextend AerialAceHouseWomanDisloyalText
 
 AerialAceHouseBookshelf:
 	jumpstd MagazineBookshelfScript
@@ -42,8 +39,7 @@ AerialAceHouseBookshelf:
 AerialAceHouseWomanText1:
 	text "Where are you off"
 	line "to with #mon?"
-
-	para "#mon League?"
+	cont "#mon League?"
 
 	para "Are your #mon"
 	line "loyal enough for"
@@ -79,9 +75,8 @@ AerialAceHouseAerialAceDescription:
 AerialAceHouseWomanDisloyalText:
 	text "If it doesn't come"
 	line "to trust you some"
-
-	para "more, it could be"
-	line "tough going."
+	cont "more, it could be"
+	cont "tough going."
 
 	para "Trust is the tie"
 	line "that binds #mon"

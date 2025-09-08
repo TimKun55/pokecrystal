@@ -9,8 +9,6 @@ Route7SaffronGate_MapScripts:
 	def_callbacks
 
 Route7SaffronGateNoop1Scene:
-	end
-
 Route7SaffronGateNoop2Scene:
 	end
 
@@ -32,6 +30,10 @@ Route7SaffronGatePowerPlantCheck:
 	applymovement PLAYER, Route7SaffronGateCannotPassMovement
 	end
 
+Route7SaffronGateCannotPassMovement:
+	step RIGHT
+	step_end
+
 Route7SaffronGateCannotPassText:
 	text "Did you hear about"
 	line "the accident at"
@@ -40,16 +42,11 @@ Route7SaffronGateCannotPassText:
 	para "I'm under orders"
 	line "to not let anyone"
 	cont "through until"
-	
-	para "the problem is"
-	line "solved."
+	cont "the problem is"
+	cont "solved."
 	
 	para "Sorry, kid."
 	done
-
-Route7SaffronGateCannotPassMovement:
-	step RIGHT
-	step_end
 
 Route7SaffronGuardSeriousText:
 	text "I take my Guard"

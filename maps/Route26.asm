@@ -21,8 +21,6 @@ Route26_MapScripts:
 	def_callbacks
 	
 Route26Noop1Scene:
-	end
-
 Route26Noop2Scene:
 	end
 	
@@ -47,11 +45,7 @@ TrainerCooltrainermJake:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermJakeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermJakeAfterBattleText
 
 TrainerCooltrainermGaven:
 	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGavenSeenText, CooltrainermGavenBeatenText, 0, .Script
@@ -141,11 +135,7 @@ TrainerCooltrainerfJoyce:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfJoyceAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfJoyceAfterBattleText
 
 TrainerBirdKeeperJose:
 	trainer BIRD_KEEPER, JOSE1, EVENT_BEAT_BIRD_KEEPER_JOSE, BirdKeeperJoseSeenText, BirdKeeperJoseBeatenText, 0, .Script
@@ -255,33 +245,21 @@ TrainerBeautyBrenda:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyBrendaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyBrendaAfterBattleText
 
 TrainerFisherScott:
 	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherScottAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherScottAfterBattleText
 
 TrainerBugManiacNeville:
 	trainer BUG_MANIAC, NEVILLE, EVENT_BEAT_BUG_MANIAC_NEVILLE, BugManiacNevilleSeenText, BugManiacNevilleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacNevilleAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacNevilleAfterBattleText
 
 Route26Rock:
 	jumpstd SmashRockScript
@@ -320,9 +298,8 @@ Route26Fisher2Text:
 CooltrainermJakeSeenText:
 	text "I'm making my"
 	line "final preparations"
-
-	para "for the #mon"
-	line "League."
+	cont "for the #mon"
+	cont "League."
 	done
 
 CooltrainermJakeBeatenText:
@@ -339,9 +316,8 @@ CooltrainermJakeAfterBattleText:
 
 	para "I hear that the"
 	line "League's Elite"
-
-	para "Four are tougher"
-	line "than Gym Leaders."
+	cont "Four are tougher"
+	cont "than Gym Leaders."
 	done
 
 CooltrainermGavenSeenText:
@@ -358,9 +334,8 @@ CooltrainermGavenBeatenText:
 CooltrainermGavenAfterText:
 	text "To get to #mon"
 	line "League, you have"
-
-	para "to get through"
-	line "Victory Road."
+	cont "to get through"
+	cont "Victory Road."
 
 	para "But Victory Road"
 	line "is tough."
@@ -387,9 +362,8 @@ CooltrainerfJoyceBeatenText:
 CooltrainerfJoyceAfterBattleText:
 	text "I've defeated"
 	line "eight Gym Leaders,"
-
-	para "so I was feeling"
-	line "confident."
+	cont "so I was feeling"
+	cont "confident."
 
 	para "I'll have to try"
 	line "harder next time."
@@ -407,9 +381,8 @@ BirdKeeperJoseBeatenText:
 BirdKeeperJoseAfterBattleText:
 	text "Bird Keepers like"
 	line "me mimic bird"
-
-	para "whistles to com-"
-	line "mand #mon."
+	cont "whistles to com-"
+	cont "mand #mon."
 	done
 
 PsychicRichardSeenText:
@@ -419,9 +392,8 @@ PsychicRichardSeenText:
 
 	para "But you're not"
 	line "satisfied by just"
-
-	para "collecting them,"
-	line "right?"
+	cont "collecting them,"
+	cont "right?"
 	done
 
 PsychicRichardBeatenText:
@@ -452,9 +424,8 @@ BeautyBrendaBeatenText:
 BeautyBrendaAfterBattleText:
 	text "After a bit more"
 	line "training, I'm"
-
-	para "going to challenge"
-	line "them, too!"
+	cont "going to challenge"
+	cont "them, too!"
 	done
 
 FisherScottSeenText:
@@ -474,9 +445,8 @@ FisherScottBeatenText:
 FisherScottAfterBattleText:
 	text "Just like in fish-"
 	line "ing, it's all over"
-
-	para "in #mon if you"
-	line "give up."
+	cont "in #mon if you"
+	cont "give up."
 	done
 
 BugManiacNevilleSeenText:

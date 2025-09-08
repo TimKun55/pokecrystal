@@ -24,16 +24,10 @@ Route10Pokecenter1FGymGuideScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext Route10Pokecenter1FGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend Route10Pokecenter1FGymGuideText
 
 .ReturnedMachinePart:
-	writetext Route10Pokecenter1FGymGuideText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend Route10Pokecenter1FGymGuideText_ReturnedMachinePart
 
 Route10Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText
@@ -49,23 +43,20 @@ Route10Pokecenter1FGentlemanText:
 Route10Pokecenter1FGymGuideText:
 	text "The Power Plant's"
 	line "Manager is looking"
-
-	para "for a strong #-"
-	line "mon trainer."
+	cont "for a strong #-"
+	cont "mon trainer."
 
 	para "He needs help"
 	line "getting back"
-
-	para "something that"
-	line "was stolen."
+	cont "something that"
+	cont "was stolen."
 	done
 
 Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
 	text "I hear Team Rocket"
 	line "got back together"
-
-	para "in Johto but fell"
-	line "apart right away."
+	cont "in Johto but fell"
+	cont "apart right away."
 
 	para "I didn't know any-"
 	line "thing about that."
@@ -74,9 +65,8 @@ Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
 Route10Pokecenter1FCooltrainerFText:
 	text "When you go out-"
 	line "side, you can see"
-
-	para "the roof of a big"
-	line "building."
+	cont "the roof of a big"
+	cont "building."
 
 	para "That's the Power"
 	line "Plant."
