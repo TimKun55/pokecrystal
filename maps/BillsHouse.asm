@@ -167,16 +167,22 @@ BillsGrandpa:
 	end
 
 .ExcitedToSee:
-	writetextend BillsGrandpaExcitedToSeeText
+	writetext BillsGrandpaExcitedToSeeText
+	promptbutton
+	end
 
 .SaidNo:
 	writetextend BillsGrandpaYouDontHaveItTextText
 
 .CorrectPokemon:
-	writetextend BillsGrandpaShownPokemonText
+	writetext BillsGrandpaShownPokemonText
+	promptbutton
+	end
 
 .ReceiveItem:
-	writetextend BillsGrandpaTokenOfAppreciationText
+	writetext BillsGrandpaTokenOfAppreciationText
+	promptbutton
+	end
 
 .JustShowedSomething:
 	writetextend BillsGrandpaComeAgainText
