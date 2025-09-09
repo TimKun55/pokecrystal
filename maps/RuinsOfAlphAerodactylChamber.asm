@@ -99,10 +99,7 @@ RuinsOfAlphAerodactylChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetext AerodactylPuzzleCompletedText
-	waitbutton
-	closetext
-	end
+	writetextend AerodactylPuzzleCompletedText
 
 RuinsOfAlphAerodactylChamberAncientReplica:
 	jumptext RuinsOfAlphAerodactylChamberAncientReplicaText
@@ -121,10 +118,7 @@ RuinsOfAlphAerodactylChamberWallPatternLeft:
 	end
 
 .NoWords
-	writetext RuinsOfAlphAerodactylChamberWallBreezeText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphAerodactylChamberWallBreezeText
 
 RuinsOfAlphAerodactylChamberWallPatternRight:
 	opentext
@@ -139,10 +133,7 @@ RuinsOfAlphAerodactylChamberWallPatternRight:
 	end
 
 .WallOpen:
-	writetext RuinsOfAlphAerodactylChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphAerodactylChamberWallHoleText
 
 RuinsOfAlphAerodactylChamberWallPatternText:
 	text "Patterns appeared"
@@ -169,9 +160,8 @@ RuinsOfAlphAerodactylChamberAncientReplicaText:
 RuinsOfAlphAerodactylChamberDescriptionText:
 	text "This flying #-"
 	line "mon attacked its"
-
-	para "prey with saw-like"
-	line "fangs."
+	cont "prey with saw-like"
+	cont "fangs."
 	done
 
 AerodactylPuzzleCompletedText:

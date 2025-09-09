@@ -12,8 +12,6 @@ TradeCenter_MapScripts:
 
 TradeCenterInitializeScene:
 	sdefer TradeCenterInitializeAndPreparePokecenter2FScript
-	end
-
 TradeCenterNoopScene:
 	end
 

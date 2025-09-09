@@ -15,8 +15,6 @@ WiseTriosRoom_MapScripts:
 	callback MAPCALLBACK_OBJECTS, WiseTriosRoomWiseTrioCallback
 
 WiseTriosRoomNoop1Scene:
-	end
-
 WiseTriosRoomNoop2Scene:
 	end
 
@@ -71,20 +69,14 @@ TrainerSageGaku:
 
 .Script:
 	opentext
-	writetext SageGakuAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageGakuAfterBattleText
 
 TrainerSageMasa:
 	trainer SAGE, MASA, EVENT_BEAT_SAGE_MASA, SageMasaSeenText, SageMasaBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SageMasaAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageMasaAfterBattleText
 
 TrainerSageKoji:
 	trainer SAGE, KOJI, EVENT_BEAT_SAGE_KOJI, SageKojiSeenText, SageKojiBeatenText, 0, .Script
@@ -108,10 +100,7 @@ TrainerSageKoji:
 
 .KojiAllowsPassage:
 	opentext
-	writetext SageKojiAfterBattleFinalText
-	waitbutton
-	closetext
-	end
+	writetextend SageKojiAfterBattleFinalText
 
 WiseTriosRoomSageBlocksPlayerMovement:
 	step LEFT
@@ -142,57 +131,47 @@ WiseTriosRoomSage1Text:
 WiseTriosRoomSage2Text:
 	text "We train at the"
 	line "Burned Tower, but"
-
-	para "we've never heard"
-	line "of a hole opening"
+	cont "we've never heard"
+	cont "of a hole opening"
 
 	para "up there before."
 	line "It must have been"
-
-	para "deliberately made"
-	line "by someone."
+	cont "deliberately made"
+	cont "by someone."
 	done
 
 WiseTriosRoomSage3BlocksExitText:
 	text "Tin Tower may be"
 	line "entered by those"
-
-	para "bearing Ecruteak's"
-	line "Gym Badge."
+	cont "bearing Ecruteak's"
+	cont "Gym Badge."
 
 	para "However, now that"
 	line "Suicune, Raikou"
-
-	para "and Entei have"
-	line "arisen, I ask you"
-
-	para "to refrain from"
-	line "entering!"
+	cont "and Entei have"
+	cont "arisen, I ask you"
+	cont "to refrain from"
+	cont "entering!"
 	done
 
 WiseTriosRoomSage3Text:
 	text "We, the Wise Trio,"
 	line "are the protectors"
-
-	para "of the legendary"
-	line "#mon."
+	cont "of the legendary"
+	cont "#mon."
 	done
 
 SageGakuSeenText:
 	text "Legend has it that"
 	line "upon the emergence"
-
-	para "of a trainer who"
-	line "has the ability to"
-
-	para "touch the souls of"
-	line "#mon, a #mon"
-
-	para "will come forth to"
-	line "put that trainer"
-
-	para "to test at the Tin"
-	line "Tower."
+	cont "of a trainer who"
+	cont "has the ability to"
+	cont "touch the souls of"
+	cont "#mon, a #mon"
+	cont "will come forth to"
+	cont "put that trainer"
+	cont "to test at the Tin"
+	cont "Tower."
 
 	para "The legend has"
 	line "come true!"
@@ -203,9 +182,8 @@ SageGakuSeenText:
 
 	para "We, the Wise Trio,"
 	line "shall test your"
-
-	para "worthiness to go"
-	line "inside!"
+	cont "worthiness to go"
+	cont "inside!"
 	done
 
 SageGakuBeatenText:
@@ -216,9 +194,8 @@ SageGakuBeatenText:
 SageGakuAfterBattleText:
 	text "Ah, so it is you"
 	line "who claim to have"
-
-	para "seen Suicune,"
-	line "Entei and Raikou"
+	cont "seen Suicune,"
+	cont "Entei and Raikou"
 	cont "while they slept?"
 
 	para "Unbelievable!"
@@ -248,35 +225,29 @@ SageMasaAfterBattleText:
 
 	para "The Brass Tower,"
 	line "which was said to"
-
-	para "awaken #mon,"
-	line "and the Tin Tower,"
-
-	para "where #mon were"
-	line "said to rest."
+	cont "awaken #mon,"
+	cont "and the Tin Tower,"
+	cont "where #mon were"
+	cont "said to rest."
 
 	para "The view from the"
 	line "tops of the Towers"
-
-	para "must have been"
-	line "magnificent."
+	cont "must have been"
+	cont "magnificent."
 
 	para "At the time, an"
 	line "immense, silver-"
-
-	para "colored #mon"
-	line "was said to make"
-
-	para "its roost atop the"
-	line "Brass Tower."
+	cont "colored #mon"
+	cont "was said to make"
+	cont "its roost atop the"
+	cont "Brass Tower."
 
 	para "However…"
 
 	para "About 150 years"
 	line "ago, a lightning"
-
-	para "bolt struck one of"
-	line "the Towers."
+	cont "bolt struck one of"
+	cont "the Towers."
 
 	para "It was engulfed in"
 	line "flames that raged"
@@ -304,28 +275,24 @@ SageKojiBeatenText:
 SageKojiAfterBattleQuestionText:
 	text "You… Are you the"
 	line "trainer who is"
-
-	para "awaited by the"
-	line "legendary #mon?"
+	cont "awaited by the"
+	cont "legendary #mon?"
 	done
 
 SageKojiAfterBattleSpeechText:
 	text "I see…"
 
 	para "We, the Wise Trio,"
-	line "have been given "
-
-	para "the responsibility"
-	line "of protecting the"
-
-	para "legendary #mon."
-	line "We are to allow"
-
-	para "passage only to"
-	line "those people who"
-
-	para "possess the power"
-	line "and soul of truth."
+	line "have been given"
+	cont "the responsibility"
+	cont "of protecting the"
+	cont "legendary #mon."
+	
+	para "We are to allow"
+	line "passage only to"
+	cont "those people who"
+	cont "possess the power"
+	cont "and soul of truth."
 
 	para "Please, do go on"
 	line "and enter the Tin"

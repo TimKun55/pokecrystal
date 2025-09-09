@@ -27,9 +27,8 @@ SlowpokeWellEntranceKurtText:
 
 	para "Rats! If I were"
 	line "fit, my #mon"
-
-	para "would've punished"
-	line "them…"
+	cont "would've punished"
+	cont "them…"
 
 	para "Ah, it can't be"
 	line "helped."

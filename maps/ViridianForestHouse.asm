@@ -64,10 +64,7 @@ ViridianForestHouseGiovanniScript:
 	writetext GiovanniSecretKeySpeech
 	waitbutton
 .GotSecretKey:
-	writetext GiovanniSecretKeyExplainText
-	waitbutton
-	closetext
-	end
+	writetextend GiovanniSecretKeyExplainText
 
 ViridianForestHouseBookshelfNotebook:
 	opentext
@@ -92,31 +89,29 @@ ViridianForestHouseGiovannisNotebook:
 ViridianForestHouseArianaText:
 	text "Oh, it's you,"
 	line "<PLAY_G>."
-	
+
 	para "Archer said you'd"
 	line "eventually find"
 	cont "this place."
-	
+
 	para "Giovanni explained"
 	line "everything to us."
-	
+
 	para "It's been an"
 	line "adjustment, but"
 	cont "the others have"
-	
-	para "already started"
-	line "to try and make"
+	cont "already started"
+	cont "to try and make"
 	cont "things right."
-	
+
 	para "It's going to be"
 	line "a lot of work, but"
 	cont "we're prepared."
-	
+
 	para "I'll set out soon"
 	line "but I have some-"
-	
-	para "thing I have to"
-	line "do here first."
+	cont "thing I have to"
+	cont "do here first."
 	done
 
 GiovanniText_1:
@@ -126,32 +121,28 @@ GiovanniText_1:
 	para "I wanted to live"
 	line "a quiet life and"
 	cont "repent for all my"
-
-	para "past mistakes and"
-	line "failures but it"
+	cont "past mistakes and"
+	cont "failures but it"
 	cont "seems I had"
-	
-	para "some unfinished"
-	line "business."
+	cont "some unfinished"
+	cont "business."
 
 	para "Once again it"
 	line "is a child"
-
-	para "who has shown me"
-	line "the way and helped"
+	cont "who has shown me"
+	cont "the way and helped"
 	cont "me move forward."
-	
+
 	para "If it wasn't for"
 	line "you, I wouldn't"
 	cont "have found Archer"
-	
-	para "and the others and"
-	line "resolved the Team."
+	cont "and the others and"
+	cont "resolved the Team."
 
 	para "I know you are"
 	line "a very powerful"
 	cont "trainer."
-	
+
 	para "Please, battle me."
 	done
 
@@ -160,7 +151,7 @@ GiovanniText_AfterBattle:
 	line "of today really"
 	cont "are amazing!"
 	done
-	
+
 GiovanniSecretKeyText:
 	text "I think you might"
 	line "be able to use"
@@ -173,32 +164,29 @@ Text_ReceivedSecretKey:
 	text "<PLAYER> received"
 	line "the Secret Key."
 	done
-	
+
 GiovanniSecretKeySpeech:
 	text "That's the Key"
 	line "to the secret"
 	cont "entrance to"
-
-	para "Cerulean Cave I"
-	line "had made."
+	cont "Cerulean Cave I"
+	cont "had made."
 	done
 
 GiovanniSecretKeyExplainText:
 	text "There's an empty"
 	line "house in Cerulean."
-	
+
 	para "Use that Key on"
 	line "the bookshelf to"
-	
-	para "reveal the"
-	line "entrance."
+	cont "reveal the"
+	cont "entrance."
 	
 	para "Seeing how you"
 	line "handle your"
 	cont "#mon it's clear"
-	
-	para "that you are a"
-	line "powerful and"
+	cont "that you are a"
+	cont "powerful and"
 	cont "capable trainer."
 	
 	para "I know I can"
@@ -207,13 +195,12 @@ GiovanniSecretKeyExplainText:
 	
 	para "With this, I feel"
 	line "like I am one step"
-	
-	para "closer to atoning"
-	line "for all my crimes."
-	
+	cont "closer to atoning"
+	cont "for all my crimes."
+
 	para "There is still"
 	line "much for me to do."
-	
+
 	para "But I know I,"
 	line "and the others,"
 	cont "can do it."
@@ -225,9 +212,8 @@ ViridianForestHouseNotebookText:
 
 	para "Thwarted by a mere"
 	line "child, I went into"
-
-	para "hiding to bide my"
-	line "time and regroup."
+	cont "hiding to bide my"
+	cont "time and regroup."
 
 	para "Keep reading?"
 	done
@@ -236,9 +222,8 @@ ViridianForestHouseNotebookText1:
 	text "Using the DNA"
 	line "sample we had"
 	cont "collected, I used"
-
-	para "it to flush"
-	line "out our escaped"
+	cont "it to flush"
+	cont "out our escaped"
 	cont "experiment."
 
 	para "Keep reading?"
@@ -247,13 +232,13 @@ ViridianForestHouseNotebookText1:
 ViridianForestHouseNotebookText2:
 	text "I succeeded and"
 	line "tracked down our"
+	cont "failed creation in"
+	cont "the Cerulean"
+	cont "Cave."
 
-	para "failed creation in"
-	line "the Cerulean"
-	cont "Cave. Mewtwo's"
-
-	para "strength was far"
-	line "beyond what I had"
+	para "Mewtwo's strength"
+	line "was far beyond"
+	cont "what I had"
 	cont "anticipated."
 
 	para "Keep reading?"
@@ -263,23 +248,18 @@ ViridianForestHouseNotebookText3:
 	text "Our battle was"
 	line "intense and I"
 	cont "barely managed to"
-
-	para "escape with my"
-	line "life."
+	cont "escape with my"
+	cont "life."
 	
 	para "To prevent others"
 	line "from finding it"
-	
-	para "I ordered the"
-	line "entrance destoyed"
-	
-	para "and a secret one"
-	line "created, so, one"
-	
-	para "day, a powerful"
-	line "trainer could do"
-	
-	para "what I couldn't."
+	cont "I ordered the"
+	cont "entrance destoyed"
+	cont "and a secret one"
+	cont "created, so, one"
+	cont "day, a powerful"
+	cont "trainer could do"
+	cont "what I couldn't."
 
 	para "That being is"
 	line "cursed with power."
@@ -288,11 +268,11 @@ ViridianForestHouseNotebookText3:
 ViridianForestHouseGiovannisNotebookText:
 	text "Seems to be a list"
 	line "of trainer names."
-	
+
 	para "Almost all of the"
 	line "names have a tick"
 	cont "next to them."
-	
+
 	para "It's titled"
 	line "'Amends'"
 	done

@@ -25,14 +25,8 @@ TeamRocketBaseB2F_MapScripts:
 	callback MAPCALLBACK_TILES, TeamRocketBaseB2FTransmitterDoorCallback
 
 TeamRocketBaseB2FNoop1Scene:
-	end
-
 TeamRocketBaseB2FNoop2Scene:
-	end
-
 TeamRocketBaseB2FNoop3Scene:
-	end
-
 TeamRocketBaseB2FNoop4Scene:
 	end
 
@@ -192,33 +186,21 @@ TrainerGruntM17:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM17AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM17AfterBattleText
 
 TrainerGruntM18:
 	trainer GRUNTM, GRUNTM_18, EVENT_BEAT_ROCKET_GRUNTM_18, GruntM18SeenText, GruntM18BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM18AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM18AfterBattleText
 
 TrainerGruntM19:
 	trainer GRUNTM, GRUNTM_19, EVENT_BEAT_ROCKET_GRUNTM_19, GruntM19SeenText, GruntM19BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM19AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM19AfterBattleText
 
 RocketElectrode1:
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE1, 15
@@ -319,10 +301,7 @@ TeamRocketBaseB2FLockedDoor:
 	opentext
 	checkevent EVENT_LEARNED_HAIL_GIOVANNI
 	iftrue .KnowsPassword
-	writetext RocketBaseDoorNoPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend RocketBaseDoorNoPasswordText
 
 .KnowsPassword:
 	writetext RocketBaseDoorKnowPasswordText
@@ -339,16 +318,10 @@ TeamRocketBaseB2FTransmitterScript:
 	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .Deactivated
-	writetext RocketBaseB2FTransmitterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketBaseB2FTransmitterText
 
 .Deactivated:
-	writetext RocketBaseB2FDeactivateTransmitterText
-	waitbutton
-	closetext
-	end
+	writetextend RocketBaseB2FDeactivateTransmitterText
 
 TeamRocketBaseB2FTMThief:
 	itemball TM_THIEF
@@ -358,16 +331,10 @@ TeamRocketBaseB2FHiddenFullHeal:
 
 RocketBaseLanceLeavesAfterHealMovement:
 	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
 RocketBaseLanceLeavesAfterHealRightMovement:
 	step RIGHT
 	step RIGHT
+RocketBaseLanceApproachesArianaMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -422,16 +389,7 @@ ArianaFacesPlayerMovement:
 	turn_head LEFT
 	step_end
 
-RocketBaseLanceApproachesArianaMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
 ArianaBattlesPlayerMovement:
-	big_step LEFT
-	step_end
-
 RocketBaseGruntBattlesLanceMovement:
 	big_step LEFT
 	step_end
@@ -573,9 +531,8 @@ ArianaThrashText:
 
 	para "However strong you"
 	line "may be, you can't"
-
-	para "take both of us at"
-	line "the same time."
+	cont "take both of us at"
+	cont "the same time."
 
 	para "Sorry, baby. Now"
 	line "get ready to be"
@@ -597,12 +554,10 @@ ArianaDontMeddleText:
 
 	para "As the interim"
 	line "boss in place of"
-
-	para "Giovanni, I'll"
-	line "show you how wrong"
-
-	para "it is to meddle"
-	line "with Team Rocket!"
+	cont "Giovanni, I'll"
+	cont "show you how wrong"
+	cont "it is to meddle"
+	cont "with Team Rocket!"
 	done
 
 ArianaWinText:
@@ -613,9 +568,8 @@ ArianaWinText:
 
 	para "If you were to"
 	line "join Team Rocket,"
-
-	para "you could become"
-	line "an Executive."
+	cont "you could become"
+	cont "an Executive."
 	done
 
 ArianaRetreatText:
@@ -636,9 +590,8 @@ ArianaRetreatText:
 
 	para "You'll come to"
 	line "appreciate Team"
-
-	para "Rocket's true"
-	line "power soon enough."
+	cont "Rocket's true"
+	cont "power soon enough."
 
 	para "Enjoy yourself"
 	line "while you can…"
@@ -655,23 +608,20 @@ RocketBaseLancePostBattleText:
 
 	para "But I'm concerned"
 	line "about the young"
-
-	para "guy I battled in"
-	line "the process…"
+	cont "guy I battled in"
+	cont "the process…"
 	done
 
 RocketBaseLancePowerOffText:
 	text "Sorry, <PLAY_G>."
 	line "I saw how well you"
-
-	para "were doing, so I"
-	line "just hung back."
+	cont "were doing, so I"
+	cont "just hung back."
 
 	para "Now all there is"
 	line "left to do is to"
-
-	para "turn off that odd"
-	line "radio signal."
+	cont "turn off that odd"
+	cont "radio signal."
 	done
 
 RockerBaseLanceElectrodeFaintText:
@@ -684,21 +634,18 @@ RockerBaseLanceElectrodeFaintText:
 
 	para "We have no choice."
 	line "We have to make"
-
-	para "all the Electrode"
-	line "faint."
+	cont "all the Electrode"
+	cont "faint."
 
 	para "That should stop"
 	line "this machine from"
-
-	para "transmitting that"
-	line "strange signal."
+	cont "transmitting that"
+	cont "strange signal."
 
 	para "It's no fault of"
 	line "the #mon, so it"
-
-	para "makes me feel"
-	line "guilty."
+	cont "makes me feel"
+	cont "guilty."
 
 	para "<PLAY_G>, let's"
 	line "split the job."
@@ -719,9 +666,8 @@ RocketBaseLanceElectrodeDoneText:
 
 	para "You're the hero!"
 	line "Let me thank you"
-
-	para "on behalf of all"
-	line "the #mon."
+	cont "on behalf of all"
+	cont "the #mon."
 	done
 
 RocketBaseLanceMonMasterText:
@@ -729,9 +675,8 @@ RocketBaseLanceMonMasterText:
 
 	para "The journey to be-"
 	line "coming the #mon"
-
-	para "Master is long and"
-	line "difficult."
+	cont "Master is long and"
+	cont "difficult."
 
 	para "Knowing that, will"
 	line "you keep going?"
@@ -743,12 +688,10 @@ RocketBaseLanceMonMasterText:
 
 	para "If you would give"
 	line "up that easily,"
-
-	para "you would have"
-	line "never chased that"
-
-	para "dream in the first"
-	line "place."
+	cont "you would have"
+	cont "never chased that"
+	cont "dream in the first"
+	cont "place."
 
 	para "I look forward to"
 	line "seeing you again!"
@@ -778,9 +721,8 @@ GruntM17SeenText:
 
 	para "Well, duh."
 	line "It has to have a"
-
-	para "password that only"
-	line "Team Rocket knows."
+	cont "password that only"
+	cont "Team Rocket knows."
 	done
 
 GruntM17BeatenText:
@@ -799,9 +741,8 @@ GruntM17AfterBattleText:
 GruntM18SeenText:
 	text "Oh, a kid? I don't"
 	line "really like this,"
-
-	para "but eliminate you"
-	line "I must."
+	cont "but eliminate you"
+	cont "I must."
 	done
 
 GruntM18BeatenText:
@@ -815,12 +756,10 @@ GruntM18AfterBattleText:
 
 	para "When we were ab-"
 	line "ducting #mon,"
-
-	para "this kid with long"
-	line "red hair and mean-"
-
-	para "looking eyes just"
-	line "creamed me…"
+	cont "this kid with long"
+	cont "red hair and mean-"
+	cont "looking eyes just"
+	cont "creamed me…"
 	done
 
 GruntM19SeenText:
@@ -861,9 +800,8 @@ RocketBaseDoorKnowPasswordText:
 RocketBaseB2FTransmitterText:
 	text "It's the radio"
 	line "transmitter that's"
-
-	para "sending the"
-	line "sinister signal."
+	cont "sending the"
+	cont "sinister signal."
 
 	para "It's working at"
 	line "full capacity."
@@ -872,9 +810,8 @@ RocketBaseB2FTransmitterText:
 RocketBaseB2FDeactivateTransmitterText:
 	text "The radio trans-"
 	line "mitter has finally"
-
-	para "stopped its evil"
-	line "broadcast."
+	cont "stopped its evil"
+	cont "broadcast."
 	done
 
 TeamRocketBaseB2F_MapEvents:

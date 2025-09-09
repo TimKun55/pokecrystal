@@ -42,16 +42,10 @@ ViridianGymBlueScript:
 	setflag ENGINE_EARTHBADGE
 	setevent EVENT_BEAT_KANTO_LEADERS
 	setevent EVENT_FINAL_BATTLE_WITH_LYRA
-	writetext LeaderBlueAfterText
-	waitbutton
-	closetext
-	end
+	writetextend LeaderBlueAfterText
 
 .FightDone:
-	writetext LeaderBlueEpilogueText
-	waitbutton
-	closetext
-	end
+	writetextend LeaderBlueEpilogueText
 	
 .BlueScript_Rematch
 	checkflag ENGINE_DAILY_BLUE_REMATCH
@@ -66,22 +60,13 @@ ViridianGymBlueScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_BLUE_REMATCH
 	opentext
-	writetext BlueRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlueRematchAfterBattleText
 
 .skip_rematch
-	writetext BlueComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend BlueComeBackTomorrowText
 	
 .EndRematch
-	writetext BlueNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlueNextTimeText
 	
 ViridianGymArcanine:
 	opentext
@@ -100,82 +85,52 @@ TrainerCooltrainerMErick:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerMErickAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerMErickAfterBattleText
 	
 TrainerBeautyJulie:
 	trainer BEAUTY, JULIE, EVENT_BEAT_BEAUTY_JULIE, BeautyJulieSeenText, BeautyJulieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyJulieAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyJulieAfterBattleText
 
 TrainerBeautyJessica:
 	trainer BEAUTY, JESSICA, EVENT_BEAT_BEAUTY_JESSICA, BeautyJessicaSeenText, BeautyJessicaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BeautyJessicaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyJessicaAfterBattleText
 
 TrainerSuperNerdNorton:
 	trainer SUPER_NERD, NORTON, EVENT_BEAT_SUPER_NERD_NORTON, SuperNerdNortonSeenText, SuperNerdNortonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SuperNerdNortonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SuperNerdNortonAfterBattleText
 
 TrainerHexManiacMargret:
 	trainer HEX_MANIAC, MARGRET, EVENT_BEAT_HEX_MANIAC_MARGRET, HexManiacMargretSeenText, HexManiacMargretBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HexManiacMargretAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HexManiacMargretAfterBattleText
 
 TrainerPokefanMTerry:
 	trainer POKEFANM, TERRY, EVENT_BEAT_POKEFANM_TERRY, PokefanMTerrySeenText, PokefanMTerryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanMTerryAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanMTerryAfterBattleText
 
 ViridianGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BLUE
 	iftrue .ViridianGymGuideWinScript
-	writetext ViridianGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianGymGuideText
 
 .ViridianGymGuideWinScript:
-	writetext ViridianGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianGymGuideWinText
 
 ViridianGymStatue:
 	checkflag ENGINE_EARTHBADGE
@@ -192,9 +147,8 @@ LeaderBlueBeforeText:
 
 	para "I wasn't in the"
 	line "mood at Cinnabar,"
-
-	para "but now I'm ready"
-	line "to battle you."
+	cont "but now I'm ready"
+	cont "to battle you."
 
 	para "…"
 
@@ -211,9 +165,8 @@ LeaderBlueBeforeText:
 
 	para "I'll know if you"
 	line "are good or not by"
-
-	para "battling you right"
-	line "now."
+	cont "battling you right"
+	cont "now."
 
 	para "Ready, Johto"
 	line "Champ?"
@@ -242,31 +195,28 @@ LeaderBlueAfterText:
 
 	para "All right, I was"
 	line "wrong. You're the"
-
-	para "real deal. You are"
-	line "a good trainer."
+	cont "real deal. You are"
+	cont "a good trainer."
 
 	para "But I'm going to"
 	line "beat you someday."
 
 	para "Don't you forget"
 	line "it!"
-	
+
 	para "… … …"
-	
+
 	para "Oh, now that you"
 	line "have all 8 Kanto"
 	cont "Badges, if you"
-	
-	para "challenge the"
-	line "Elite Four again,"
-	
-	para "they'll use their"
-	line "full power."
-	
+	cont "challenge the"
+	cont "Elite Four again,"
+	cont "they'll use their"
+	cont "full power."
+
 	para "I doubt you can"
 	line "beat them, though."
-	
+
 	para "Also, go see"
 	line "Gramps in Pallet."
 	done
@@ -278,11 +228,11 @@ LeaderBlueEpilogueText:
 	line "lose until I beat"
 	cont "you. Got it?"
 	done
-	
+
 BlueRematchIntroText:
 	text "Oh, <PLAYER>,"
 	line "you're back."
-	
+
 	para "Feel like having"
 	line "a rematch?"
 	done
@@ -299,7 +249,7 @@ BlueRematchAfterBattleText:
 
 BlueComeBackTomorrowText:
 	text "Another battle?"
-	
+
 	para "Sure, but come"
 	line "back tomorrow."
 	done
@@ -309,17 +259,17 @@ BlueNextTimeText:
 	line "back when you're"
 	cont "feeling it."
 	done
-	
+
 CooltrainerMErickSeenText:
 	text "Wow, you made it"
 	line "to our Gym!"
 	cont "You must be good!"
 	done
-	
+
 CooltrainerMErickBeatenText:
 	text "Yep! Too good!"
 	done
-	
+
 CooltrainerMErickAfterBattleText:
 	text "This used to be"
 	line "a ground-type Gym."
@@ -330,36 +280,36 @@ BeautyJulieSeenText:
 	line "But are you"
 	cont "strong, too?"
 	done
-	
+
 BeautyJulieBeatenText:
 	text "Cute and strong!"
 	done
-	
+
 BeautyJulieAfterBattleText:
 	text "When Blue became"
 	line "Leader he"
 	cont "remodeled the Gym."
-	
+
 	para "I don't know why"
 	line "he kept all the"
-	
-	para "spinning tiles,"
-	line "though…"
+	cont "spinning tiles,"
+	cont "though…"
 	done
 
 BeautyJessicaSeenText:
 	text "Are you dizzy?"
 	done
-	
+
 BeautyJessicaBeatenText:
 	text "Round and round."
 	done
-	
+
 BeautyJessicaAfterBattleText:
 	text "Can I be honest?"
-	line "I'm not a fan of"
-	cont "all the spinning."
-	
+
+	para "I'm not a fan of"
+	line "all the spinning."
+
 	para "It makes me feel"
 	line "sick!"
 	done
@@ -371,7 +321,7 @@ SuperNerdNortonSeenText:
 	line "such a wonderful"
 	cont "Gym, have you?"
 	done
-	
+
 SuperNerdNortonBeatenText:
 	text "Whatever!"
 	done
@@ -379,20 +329,19 @@ SuperNerdNortonBeatenText:
 SuperNerdNortonAfterBattleText:
 	text "There are many"
 	line "Gyms in the world,"
-
-	para "but I really like"
-	line "this one!"
+	cont "but I really like"
+	cont "this one!"
 	done
 
 HexManiacMargretSeenText:
 	text "My dear!"
 	line "We must battle!"
 	done
-	
+
 HexManiacMargretBeatenText:
 	text "Unforseen!"
 	done
-	
+
 HexManiacMargretAfterBattleText:
 	text "Perhaps being"
 	line "dizzy has weakened"
@@ -402,20 +351,20 @@ HexManiacMargretAfterBattleText:
 PokefanMTerrySeenText:
 	text "I'm so happy to be"
 	line "a Gym Trainer!"
-	
+
 	para "Let's see what"
 	line "you can do!"
 	done
-	
+
 PokefanMTerryBeatenText:
 	text "Aww, I lost?"
 	done
-	
+
 PokefanMTerryAfterBattleText:
 	text "I need more train-"
 	line "ing, but please"
 	cont "don't tell Blue."
-	
+
 	para "He has a crazy"
 	line "strict training"
 	cont "routine!"
@@ -431,9 +380,8 @@ ViridianGymGuideText:
 
 	para "The Gym Leader is"
 	line "a guy who battled"
-
-	para "the Champion three"
-	line "years ago."
+	cont "the Champion three"
+	cont "years ago."
 
 	para "He's no pushover."
 

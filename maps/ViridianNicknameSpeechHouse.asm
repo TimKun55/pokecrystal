@@ -42,15 +42,13 @@ Rattey:
 ViridianNicknameSpeechHousePokefanMText:
 	text "Do you put a lot"
 	line "of thought into"
-
-	para "naming your"
-	line "#mon?"
+	cont "naming your"
+	cont "#mon?"
 
 	para "Giving them good"
 	line "nicknames adds to"
-
-	para "the fun of trading"
-	line "with others."
+	cont "the fun of trading"
+	cont "with others."
 	done
 
 ViridianNicknameSpeechHouseLassText:

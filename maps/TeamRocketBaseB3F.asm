@@ -26,14 +26,8 @@ TeamRocketBaseB3F_MapScripts:
 
 TeamRocketBaseB3FLanceGetsPasswordScene:
 	sdefer LanceGetPasswordScript
-	end
-
 TeamRocketBaseB3FNoop1Scene:
-	end
-
 TeamRocketBaseB3FNoop2Scene:
-	end
-
 TeamRocketBaseB3FNoop3Scene:
 	end
 
@@ -135,46 +129,30 @@ SlowpokeTailGrunt:
 
 GruntF5Script:
 	endifjustbattled
-	opentext
-	writetext GruntF5AfterBattleText
-	waitbutton
-	closetext
 	setevent EVENT_LEARNED_SLOWPOKETAIL
-	end
+	jumptext GruntF5AfterBattleText
 
 RaticateTailGrunt:
 	trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script
 
 GruntM28Script:
 	endifjustbattled
-	opentext
-	writetext GruntM28AfterBattleText
-	waitbutton
-	closetext
 	setevent EVENT_LEARNED_RATICATE_TAIL
-	end
+	jumptext GruntM28AfterBattleText
 
 TrainerScientistRoss:
 	trainer SCIENTIST, ROSS, EVENT_BEAT_SCIENTIST_ROSS, ScientistRossSeenText, ScientistRossBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext ScientistRossAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext ScientistRossAfterBattleText
 
 TrainerScientistMitch:
 	trainer SCIENTIST, MITCH, EVENT_BEAT_SCIENTIST_MITCH, ScientistMitchSeenText, ScientistMitchBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext ScientistMitchAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext ScientistMitchAfterBattleText
 
 TeamRocketBaseB3FLockedDoor:
 	conditional_event EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE, .Script
@@ -188,10 +166,7 @@ TeamRocketBaseB3FLockedDoor:
 	sjump .OpenSesame
 
 .NeedsPassword:
-	writetext TeamRocketBaseB3FLockedDoorNeedsPasswordText
-	waitbutton
-	closetext
-	end
+	writetextend TeamRocketBaseB3FLockedDoorNeedsPasswordText
 
 .OpenSesame:
 	writetext TeamRocketBaseB3FLockedDoorOpenSesameText
@@ -324,9 +299,8 @@ RocketBaseRivalShovesPlayerMovement:
 LanceGetPasswordText:
 	text "Lance: It takes"
 	line "two passwords to"
-
-	para "get into the"
-	line "boss's quarters."
+	cont "get into the"
+	cont "boss's quarters."
 
 	para "Those passwords"
 	line "are known only to"
@@ -351,33 +325,29 @@ RocketBaseRivalText:
 
 	para "Didn't I tell you"
 	line "that I was going"
-
-	para "to destroy Team"
-	line "Rocket?"
+	cont "to destroy Team"
+	cont "Rocket?"
 
 	para "…Tell me, who was"
 	line "the guy in the"
-
-	para "cape who used"
-	line "dragon #mon?"
+	cont "cape who used"
+	cont "dragon #mon?"
 
 	para "My #mon were no"
 	line "match at all."
 
 	para "I don't care that"
 	line "I lost. I can beat"
-
-	para "him by getting"
-	line "stronger #mon."
+	cont "him by getting"
+	cont "stronger #mon."
 
 	para "It's what he said"
 	line "that bothers me…"
 
 	para "He told me that"
 	line "I don't love and"
-
-	para "trust my #mon"
-	line "enough."
+	cont "trust my #mon"
+	cont "enough."
 
 	para "I'm furious that I"
 	line "lost to a bleeding"
@@ -391,21 +361,18 @@ RocketBaseRivalText:
 PetrelBeforeText:
 	text "What? Who are you?"
 	line "This is the office"
-
-	para "of our leader,"
-	line "Giovanni."
+	cont "of our leader,"
+	cont "Giovanni."
 
 	para "Since disbanding"
 	line "Team Rocket three"
-
-	para "years ago, he has"
-	line "been in training."
+	cont "years ago, he has"
+	cont "been in training."
 
 	para "But we're certain"
 	line "he will be back"
-
-	para "some day to assume"
-	line "command again."
+	cont "some day to assume"
+	cont "command again."
 
 	para "That's why we're"
 	line "standing guard."
@@ -477,9 +444,8 @@ GruntM28SeenText:
 
 	para "If you can beat"
 	line "me, I'll tell you"
-
-	para "a password to the"
-	line "boss's room!"
+	cont "a password to the"
+	cont "boss's room!"
 	done
 
 GruntM28BeatenText:
@@ -500,9 +466,8 @@ GruntM28AfterBattleText:
 ScientistRossSeenText:
 	text "I used to work for"
 	line "Silph, but now I"
-
-	para "run research for"
-	line "Team Rocket."
+	cont "run research for"
+	cont "Team Rocket."
 
 	para "A meddlesome child"
 	line "like you needs to"
@@ -524,9 +489,8 @@ ScientistRossAfterBattleText:
 
 	para "My promotion is"
 	line "assured. This loss"
-
-	para "means absolutely"
-	line "nothing."
+	cont "means absolutely"
+	cont "nothing."
 	done
 
 ScientistMitchSeenText:
@@ -544,9 +508,8 @@ ScientistMitchBeatenText:
 ScientistMitchAfterBattleText:
 	text "If we turn up the"
 	line "power of our radio"
-
-	para "signal for broad-"
-	line "cast nationwide…"
+	cont "signal for broad-"
+	cont "cast nationwide…"
 
 	para "The very thought"
 	line "excites me!"

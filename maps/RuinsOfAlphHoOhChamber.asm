@@ -17,8 +17,6 @@ RuinsOfAlphHoOhChamberCheckWallScene:
 
 .OpenWall:
 	sdefer RuinsOfAlphHoOhChamberWallOpenScript
-	end
-
 RuinsOfAlphHoOhChamberNoopScene:
 	end
 
@@ -100,10 +98,7 @@ RuinsOfAlphHoOhChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetext HoOhPuzzleCompletedText
-	waitbutton
-	closetext
-	end
+	writetextend HoOhPuzzleCompletedText
 
 RuinsOfAlphHoOhChamberAncientReplica:
 	jumptext RuinsOfAlphHoOhChamberAncientReplicaText
@@ -122,10 +117,7 @@ RuinsOfAlphHoOhChamberWallPatternLeft:
 	end
 
 .NoWords
-	writetext RuinsOfAlphHoOhChamberWallBreezeText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphHoOhChamberWallBreezeText
 
 RuinsOfAlphHoOhChamberWallPatternRight:
 	opentext
@@ -140,10 +132,7 @@ RuinsOfAlphHoOhChamberWallPatternRight:
 	end
 
 .WallOpen:
-	writetext RuinsOfAlphHoOhChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphHoOhChamberWallHoleText
 
 RuinsOfAlphHoOhChamberWallPatternText:
 	text "Patterns appeared"
@@ -170,9 +159,8 @@ RuinsOfAlphHoOhChamberAncientReplicaText:
 RuinsOfAlphHoOhChamberDescriptionText:
 	text "A #mon that"
 	line "flew gracefully on"
-
-	para "rainbow-colored"
-	line "wings."
+	cont "rainbow-colored"
+	cont "wings."
 	done
 
 HoOhPuzzleCompletedText:

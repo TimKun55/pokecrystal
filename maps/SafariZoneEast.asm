@@ -29,9 +29,8 @@ SafariZoneEastTrainerTipsSign:
 SafariZoneEastCooltrainer_fText:
 	text "Trying to find"
 	line "some rare #mon"
-	
-	para "but I keep finding"
-	line "the same 3 over"
+	cont "but I keep finding"
+	cont "the same 3 over"
 	cont "and over!"
 	done
 	

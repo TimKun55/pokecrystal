@@ -15,8 +15,6 @@ SproutTower3F_MapScripts:
 	def_callbacks
 
 SproutTower3FNoop1Scene:
-	end
-
 SproutTower3FNoop2Scene:
 	end
 
@@ -79,49 +77,31 @@ SageLiScript:
 	verbosegiveitem HM_FLASH
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
-	writetext SageLiFlashExplanationText
-	waitbutton
-	closetext
-	end
+	writetextend SageLiFlashExplanationText
 
 .GotFlash:
-	writetext SageLiAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SageLiAfterBattleText
 
 TrainerSageJin:
 	trainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SageJinAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SageJinAfterBattleText
 
 TrainerSageTroy:
 	trainer SAGE, TROY, EVENT_BEAT_SAGE_TROY, SageTroySeenText, SageTroyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SageTroyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SageTroyAfterBattleText
 
 TrainerSageNeal:
 	trainer SAGE, NEAL, EVENT_BEAT_SAGE_NEAL, SageNealSeenText, SageNealBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SageNealAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SageNealAfterBattleText
 
 SproutTower3FPainting:
 	jumptext SproutTower3FPaintingText
@@ -161,9 +141,8 @@ SproutTowerElderLecturesRivalText:
 
 	para "But let me say"
 	line "this: You should"
-
-	para "treat your"
-	line "#mon better."
+	cont "treat your"
+	cont "#mon better."
 
 	para "The way you battle"
 	line "is far too harsh."
@@ -185,9 +164,8 @@ SproutTowerRivalOnlyCareAboutStrongText:
 
 	para "I'd never lose to"
 	line "fools who babble"
-
-	para "about being nice"
-	line "to #mon."
+	cont "about being nice"
+	cont "to #mon."
 
 	para "I only care about"
 	line "strong #mon"
@@ -212,18 +190,16 @@ SageLiSeenText:
 
 	para "People and #mon"
 	line "test their bonds"
-
-	para "to build a bright"
-	line "future together."
+	cont "to build a bright"
+	cont "future together."
 
 	para "I am the final"
 	line "test."
 
 	para "Allow me to check"
 	line "the ties between"
-
-	para "your #mon and"
-	line "you!"
+	cont "your #mon and"
+	cont "you!"
 	done
 
 SageLiBeatenText:
@@ -233,9 +209,8 @@ SageLiBeatenText:
 SageLiTakeThisFlashText:
 	text "You and your #-"
 	line "mon should have"
-
-	para "no problem using"
-	line "this move."
+	cont "no problem using"
+	cont "this move."
 
 	para "Take this Flash"
 	line "HM."
@@ -248,9 +223,8 @@ SageLiFlashExplanationText:
 
 	para "But to use it out"
 	line "of battle, you"
-
-	para "need the Badge"
-	line "from Violet's Gym."
+	cont "need the Badge"
+	cont "from Violet's Gym."
 	done
 
 SageLiAfterBattleText:
@@ -277,9 +251,8 @@ SageJinAfterBattleText:
 
 	para "No, wait. As the"
 	line "trainer grows"
-
-	para "stronger, so do"
-	line "the #mon."
+	cont "stronger, so do"
+	cont "the #mon."
 	done
 
 SageTroySeenText:

@@ -22,8 +22,6 @@ RuinsOfAlphOutside_MapScripts:
 	callback MAPCALLBACK_OBJECTS, RuinsOfAlphOutsideScientistCallback
 
 RuinsOfAlphOutsideNoop1Scene:
-	end
-
 RuinsOfAlphOutsideNoop2Scene:
 	end
 
@@ -92,18 +90,12 @@ RuinsOfAlphOutsideFisherScript:
 	writetext RuinsOfAlphOutsideFisherText1
 	promptbutton
 .Next:
-	writetext RuinsOfAlphOutsideFisherText2
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOutsideFisherText2
 
 RuinsOfAlphOutsideYoungster1Script:
 	faceplayer
 	opentext
-	writetext RuinsOfAlphOutsideYoungster1Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOutsideYoungster1Text
 
 RuinsOfAlphOutsideYoungster2Script:
 	faceplayer
@@ -141,16 +133,10 @@ RuinsOfAlphOutsideFossilScientistScript:
 	sjump .finishfossils
 
 .Shame:
-	writetext RuinsOfAlphOutsideFossilScientistThatsAShameText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOutsideFossilScientistThatsAShameText
 
 .BagFull:
-	writetext RuinsOfAlphOutsideFossilScientistFullBagText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOutsideFossilScientistFullBagText
 
 .Movement2:
 	applymovement RUINSOFALPHOUTSIDE_SCIENTIST2, RuinsOfAlphOutsideFossilScientistMovement2
@@ -164,11 +150,7 @@ TrainerPsychicNathan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicNathanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicNathanAfterBattleText
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
@@ -237,9 +219,8 @@ RuinsOfAlphOutsideScientistText:
 
 	para "It looks like the"
 	line "strange writing on"
-
-	para "the walls of the"
-	line "Ruins."
+	cont "the walls of the"
+	cont "Ruins."
 
 	para "If those drawings"
 	line "are really #-"
@@ -260,9 +241,8 @@ SuperNerdStanSeenText:
 SuperNerdStanBeatenText:
 	text "Sorry…"
 	line "I'm frustrated by"
-
-	para "our lack of real"
-	line "understanding…"
+	cont "our lack of real"
+	cont "understanding…"
 	done
 
 SuperNerdStanAfterBattleText:
@@ -317,9 +297,8 @@ RuinsOfAlphResearchCenterSignText:
 RuinsOfAlphOutsideFisherText1:
 	text "While exploring"
 	line "the Ruins, we"
-
-	para "suddenly noticed"
-	line "an odd presence."
+	cont "suddenly noticed"
+	cont "an odd presence."
 
 	para "We all got scared"
 	line "and ran away."
@@ -338,9 +317,8 @@ RuinsOfAlphOutsideFisherText2:
 RuinsOfAlphOutsideYoungster1Text:
 	text "There are many"
 	line "kinds of Unown, so"
-
-	para "we use them for"
-	line "our secret codes."
+	cont "we use them for"
+	cont "our secret codes."
 	done
 
 RuinsOfAlphOutsideYoungster2Text:
@@ -361,9 +339,8 @@ RuinsOfAlphOutsideFossilScientistFossilsText:
 	para "I'm seeing if"
 	line "Johto has any"
 	cont "fossils like Kanto"
-	
-	para "does, but I"
-	line "haven't discovered"
+	cont "does, but I"
+	cont "haven't discovered"
 	cont "any so far."
 	
 	para "Are you interested"
@@ -379,22 +356,19 @@ RuinsOfAlphOutsideFossilScientistTakeText:
 RuinsOfAlphOutsideFossilScientistReviveFossilText:
 	text "We can learn so"
 	line "much from fossils."
-	
+
 	para "Though, as you're"
 	line "a trainer, I'm"
-	
-	para "sure you're more"
-	line "interested in the"
-	
-	para "second part of my"
-	line "research."
-	
+	cont "sure you're more"
+	cont "interested in the"
+	cont "second part of my"
+	cont "research."
+
 	para "I have a machine"
 	line "set up that can"
-	
-	para "revive that fossil"
-	line "into a #mon!"
-	
+	cont "revive that fossil"
+	cont "into a #mon!"
+
 	para "Come see me in the"
 	line "Research Center."
 	done

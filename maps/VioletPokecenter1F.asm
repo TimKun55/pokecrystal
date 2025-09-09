@@ -65,17 +65,11 @@ VioletPokecenter1F_ElmsAideScript:
 	end
 
 .PartyFull:
-	writetext VioletCityElmsAideFullPartyText
-	waitbutton
-	closetext
-	end
+	writetextend VioletCityElmsAideFullPartyText
 
 .RefusedEgg:
-	writetext VioletPokecenterElmsAideRefuseText
-	waitbutton
-	closetext
 	setevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
-	end
+	writetextend VioletPokecenterElmsAideRefuseText
 
 .SecondTimeAsking:
 	writetext VioletPokecenterElmsAideAskEggText
@@ -118,16 +112,10 @@ VioletPokecenter1FTutor:
 	sjump .TutorLoop
 	
 .Refused:
-	writetext VioletPokecenter1FTutorRefusalText
-	waitbutton
-	closetext
-	end
+	writetextend VioletPokecenter1FTutorRefusalText
 	
 .NotEnough:
-	writetext VioletPokecenter1FTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend VioletPokecenter1FTutorNotEnough
 
 .TeachMove:
 	writetext VioletPokecenter1FTutorPayment
@@ -135,10 +123,7 @@ VioletPokecenter1FTutor:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext VioletPokecenter1FTutorUseWisely
-	waitbutton
-	closetext
-	end
+	writetextend VioletPokecenter1FTutorUseWisely
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -198,9 +183,8 @@ VioletPokecenterElmsAideFavorText:
 VioletPokecenterElmsAideGiveEggText:
 	text "We know that a"
 	line "#mon will not"
-
-	para "hatch until it"
-	line "grows in the Egg."
+	cont "hatch until it"
+	cont "grows in the Egg."
 
 	para "It also has to be"
 	line "with other active"
@@ -242,11 +226,10 @@ VioletPokecenter1FTutorIntro:
 	para "For ¥2,500,"
 	line "I can teach your"
 	cont "#mon a pretty"
-
-	para "useful move if"
-	line "you'd like."
+	cont "useful move if"
+	cont "you'd like."
 	done
-	
+
 VioletPokecenter1FAskYesNo:
 	text "Should I teach"
 	line "them a move?"
@@ -255,9 +238,8 @@ VioletPokecenter1FAskYesNo:
 VioletPokecenter1FTutorRefusalText:
 	text "Come back here"
 	line "if you want to"
-	
-	para "teach your"
-	line "#mon a new"
+	cont "teach your"
+	cont "#mon a new"
 	cont "move!"
 	done
 
@@ -275,7 +257,7 @@ VioletPokecenter1FTutorPayment:
 	text "<PLAYER> gave the"
 	line "Tutor ¥2,500."
 	done
-	
+
 VioletPokecenter1FTutorNotEnough:
 	text "I'm sorry, you"
 	line "can't afford it."
@@ -290,7 +272,7 @@ VioletPokecenter1FTutorUseWisely:
 	line "good luck on"
 	cont "your journey."
 	done
-	
+
 VioletPokecenter1FTutorMoveText:
 	text_start
 	done
@@ -317,15 +299,13 @@ VioletPokecenter1FGentlemanText:
 VioletPokecenter1FYoungsterText:
 	text "#mon are smart."
 	line "They won't obey a"
-
-	para "trainer they don't"
-	line "respect."
+	cont "trainer they don't"
+	cont "respect."
 
 	para "Without the right"
 	line "Gym Badges, they"
-
-	para "will just do as"
-	line "they please."
+	cont "will just do as"
+	cont "they please."
 	done
 
 VioletPokecenter1F_MapEvents:

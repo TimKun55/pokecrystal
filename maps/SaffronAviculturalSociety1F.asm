@@ -14,8 +14,6 @@ SaffronAviculturalSociety1F_MapScripts:
 	def_callbacks
 
 SaffronAviculturalSociety1FNoop1Scene:
-	end
-
 SaffronAviculturalSociety1FNoop2Scene:
 	end
 	
@@ -45,28 +43,13 @@ _AviculturalSociety1FCheckScript:
 	end
 
 AviculturalSocietyReceptionistScript:
-	faceplayer
-	opentext
-	writetext AviculturalSocietyReceptionistText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AviculturalSocietyReceptionistText
 
 AviculturalSociety1FBirdKeeper1Script:
-	faceplayer
-	opentext
-	writetext AviculturalSociety1FBirdKeeper1Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AviculturalSociety1FBirdKeeper1Text
 
 AviculturalSociety1FBirdKeeper2Script:
-	faceplayer
-	opentext
-	writetext AviculturalSociety1FBirdKeeper2Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AviculturalSociety1FBirdKeeper2Text
 	
 AviculturalSocietyPidgeotScript:
 	opentext
@@ -191,19 +174,18 @@ AviculturalSocietySign2Text:
 AviculturalSocietyBookshelf1Text:
 	text "All these books"
 	line "seem to be about"
-	
-	para "bird #mon and"
-	line "their habitats!"
-	
+	cont "bird #mon and"
+	cont "their habitats!"
+
 	para "Pidgeot can be"
 	line "found on Routes 1,"
 	cont "2, 13, 14,"
 	cont "15 and 25."
-	
+
 	para "Farfetch'd can be"
 	line "found in Johto on"
 	cont "Route 43."
-	
+
 	para "Dodrio can be"
 	line "found on Routes"
 	cont "22, 26, the Safari"
@@ -213,65 +195,62 @@ AviculturalSocietyBookshelf1Text:
 AviculturalSocietyBookshelf2Text:
 	text "All these books"
 	line "seem to be about"
-	
-	para "bird #mon and"
-	line "their habitats!"
-	
+	cont "bird #mon and"
+	cont "their habitats!"
+
 	para "Noctowl can be"
 	line "found on Routes 1,"
 	cont "13, 14, 15,"
 	cont "37, 42 and 43."
-	
+
 	para "Togekiss can be"
 	line "found deep in"
 	cont "Whirl Islands."
-	
+
 	para "Xatu can be found"
 	line "in Tin Tower."
-	
+
 	para "Murkrow can be"
 	line "found on Routes 7,"
 	cont "16, 17, Burned"
 	cont "Tower, 38 and 39."
-	
+
 	para "Honchkrow can be"
 	line "found on Routes 7,"
 	cont "16 and 17."
-	
+
 	para "Delibird can be"
 	line "found in the"
 	cont "Ice Path and"
 	cont "Dark Cave."
-	
+
 	para "Skarmory can be"
 	line "found on Route 45."
 	done
-	
+
 AviculturalSocietyBook1Text:
 	text "There are many"
 	line "Flying Type"
 	cont "#mon but not"
-	
-	para "all of them are"
-	line "birds."
-	
+	cont "all of them are"
+	cont "birds."
+
 	para "However Kanto has"
 	line "3 Legendary bird"
 	cont "#mon."
 	done
-	
+
 AviculturalSocietyBook2Text:
 	text "There are many"
 	line "Flying Type"
 	cont "#mon but not"
-	
-	para "all of them are"
-	line "birds."
-	
+	cont "all of them are"
+	cont "birds."
+
 	para "However Johto has"
 	line "2 Legendary bird"
 	cont "#mon."
-	done 
+	done
 
 SaffronAviculturalSociety1F_MapEvents:
 	db 0, 0 ; filler

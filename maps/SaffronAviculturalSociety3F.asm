@@ -15,10 +15,7 @@ AviculturalSocietyGrampsScript:
 	opentext
 	checkevent EVENT_ENCOUNTERED_LEGENDARY_BIRDS
 	iftrue .GrampsEncounteredBirds
-	writetext AviculturalSocietyGrampsIntroText
-	waitbutton
-	closetext
-	end
+	writetextend AviculturalSocietyGrampsIntroText
 	
 .GrampsEncounteredBirds
 	checkevent EVENT_GOT_SILVER_WING
@@ -28,10 +25,7 @@ AviculturalSocietyGrampsScript:
 	verbosegiveitem SILVER_WING
 	setevent EVENT_GOT_SILVER_WING
 .GotSilverWing:
-	writetext AviculturalSocietyGrampsSilverWingText
-	waitbutton
-	closetext
-	end
+	writetextend AviculturalSocietyGrampsSilverWingText
 
 ArticunoStatueScript:
 	jumptext ArticunoStatueText
@@ -50,100 +44,91 @@ AviculturalSociety3FBookshelf2:
 	
 AviculturalSocietyGrampsIntroText:
 	text "Hello there."
-	
+
 	para "It's not often we"
 	line "get someone of"
 	cont "your age up here."
-	
+
 	para "Have you come to"
 	line "learn more about"
 	cont "the great Legends"
-	
-	para "or are you think-"
-	line "ing of challening"
-	
-	para "the Guardians of"
-	line "the Birds?"
-	
+	cont "or are you think-"
+	cont "ing of challening"
+	cont "the Guardians of"
+	cont "the Birds?"
+
 	para "Either way, I am"
 	line "impressed!"
-	
+
 	para "I'm the founder of"
 	line "the Avicultural"
 	cont "Society."
-	
+
 	para "You might not"
 	line "believe it, but my"
 	cont "family is deeply"
-	
-	para "connected to the"
-	line "great Lugia."
-	
+	cont "connected to the"
+	cont "great Lugia."
+
 	para "Others have family"
 	line "or friends who" 
-	
-	para "have spotted the"
-	line "Legendary Birds."
-	
+	cont "have spotted the"
+	cont "Legendary Birds."
+
 	para "So I set out,"
 	line "found as many"
 	cont "of them as I could"
-	
-	para "and formed this"
-	line "Society to have"
+	cont "and formed this"
+	cont "Society to have"
 	cont "all the data"
 	cont "in one place."
-	
+
 	para "It has taken"
 	line "many years, but"
 	cont "I'm proud of my"
 	cont "life's work!"
 	done
-	
+
 AviculturalSocietyGrampsYouDidItText:
 	text "Oh my!"
 	line "You've done it!"
-	
+
 	para "I can not tell"
 	line "you the pride I"
 	cont "feel seeing a new"
-	
-	para "Successor emerging"
-	line "before us!"
-	
+	cont "Successor emerging"
+	cont "before us!"
+
 	para "You have proved"
 	line "yourself many"
 	cont "times. I will"
-	
-	para "not ask for a"
-	line "battle, don't"
+	cont "not ask for a"
+	cont "battle, don't"
 	cont "worry. Ho ho ho."
-	
+
 	para "Please, take this."
 	done
-	
+
 AviculturalSocietyGrampsSilverWingText:
 	text "That is the"
 	line "Silver Wing."
-	
+
 	para "A feather from"
 	line "Lugia itself."
-	
+
 	para "Many have tried"
 	line "to find Lugia,"
-	
-	para "but without some-"
-	line "thing like this,"
-	
-	para "Lugia will not"
-	line "show itself to"
+	cont "but without some-"
+	cont "thing like this,"
+	cont "Lugia will not"
+	cont "show itself to"
 	cont "just any trainer."
-	
+
 	para "Take this to"
 	line "Whirl Islands"
 	cont "and challenge"
 	cont "Lugia."
-	done	
+	done
 
 ArticunoStatueText:
 	text "An extremely det-"
@@ -168,12 +153,11 @@ AviculturalSociety3FBookshelf1Text:
 	line "a light fluttering"
 	cont "of its wings can"
 	cont "blow apart houses"
-	
-	para "and flaps of its"
-	line "wings are said to"
+	cont "and flaps of its"
+	cont "wings are said to"
 	cont "cause storms"
 	cont "lasting 40 days."
-	
+
 	para "As a result, it"
 	line "chooses to live"
 	cont "out of sight deep"
@@ -184,17 +168,16 @@ AviculturalSociety3FBookshelf2Text:
 	text "Said to be the"
 	line "leader of the"
 	cont "Legendary Birds."
-	
+
 	para "Should they find"
 	line "themselves in a"
 	cont "rage, Lugia will"
-
-	para "appear to calm"
-	line "them with its"
+	cont "appear to calm"
+	cont "them with its"
 	cont "high intelligence"
 	cont "and power."
 	done
-	
+
 SaffronAviculturalSociety3F_MapEvents:
 	db 0, 0 ; filler
 

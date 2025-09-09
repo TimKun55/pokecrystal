@@ -65,16 +65,10 @@ VermilionGymSurgeScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 .Finish:
-	writetext LtSurgeThunderBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeThunderBadgeText
 
 .FightDone:
-	writetext LtSurgeFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeFightDoneText
 	
 .afterbattle16
 	setevent EVENT_BEAT_KANTO_LEADERS
@@ -93,22 +87,13 @@ VermilionGymSurgeScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_LTSURGE_REMATCH
 	opentext
-	writetext LtSurgeRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeRematchAfterBattleText
 
 .skip_rematch
-	writetext LtSurgeComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeComeBackTomorrowText
 
 .EndRematch
-	writetext LtSurgeNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend LtSurgeNextTimeText
 
 VermilionGymRaichu:
 	opentext
@@ -127,49 +112,31 @@ TrainerGentlemanGregory:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GentlemanGregoryAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GentlemanGregoryAfterBattleText
 
 TrainerGuitaristVincent:
 	trainer GUITARIST, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GuitaristVincentAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GuitaristVincentAfterBattleText
 
 TrainerJugglerHorton:
 	trainer JUGGLER, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext JugglerHortonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext JugglerHortonAfterBattleText
 
 VermilionGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_LTSURGE
 	iftrue .VermilionGymGuideWinScript
-	writetext VermilionGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionGymGuideText
 
 .VermilionGymGuideWinScript:
-	writetext VermilionGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionGymGuideWinText
 
 VermilionGymTrashCanScript:
 	checkevent EVENT_VERMILION_GYM_SWITCH_2
@@ -344,9 +311,8 @@ LtSurgeIntroText:
 
 	para "I have to hand it"
 	line "to you. It may not"
-
-	para "be very smart to"
-	line "challenge me, but"
+	cont "be very smart to"
+	cont "challenge me, but"
 	cont "it takes guts!"
 
 	para "When it comes to"
@@ -395,7 +361,7 @@ LtSurgeFightDoneText:
 LtSurgeRematchIntroText:
 	text "Hey kid!"
 	line "You're back!"
-	
+
 	para "We going"
 	line "another round?"
 	done
@@ -403,17 +369,17 @@ LtSurgeRematchIntroText:
 LtSurgeWinLossRematchText:
 	text "Haha, shocking!"
 	done
-	
+
 LtSurgeRematchAfterBattleText:
 	text "I still need"
 	line "to work on"
 	cont "closing the gap"
 	cont "between us."
-	
+
 	para "Come back for"
 	line "a rematch!"
 	done
-	
+
 LtSurgeComeBackTomorrowText:
 	text "Hey kid! Come"
 	line "back tomorrow, we"
@@ -442,17 +408,15 @@ GentlemanGregoryBeatenText:
 GentlemanGregoryAfterBattleText:
 	text "When I was still"
 	line "in the army, Lt."
-
-	para "Surge saved my"
-	line "life."
+	cont "Surge saved my"
+	cont "life."
 	done
 
 GuitaristVincentSeenText:
 	text "Lt.Surge recog-"
 	line "nized my potential"
-
-	para "with electric"
-	line "#mon."
+	cont "with electric"
+	cont "#mon."
 
 	para "Think you can beat"
 	line "me?"
@@ -465,9 +429,8 @@ GuitaristVincentBeatenText:
 GuitaristVincentAfterBattleText:
 	text "If the Gym's traps"
 	line "were working, you"
-
-	para "would have been"
-	line "toast…"
+	cont "would have been"
+	cont "toast…"
 	done
 
 JugglerHortonSeenText:
@@ -484,9 +447,9 @@ JugglerHortonBeatenText:
 JugglerHortonAfterBattleText:
 	text "Don't get too com-"
 	line "fortable about"
-
-	para "beating me…"
-	line "Lt.Surge is tough."
+	cont "beating me…"
+	
+	para "Lt.Surge is tough."
 	done
 
 VermilionGymFoundSwitchText:
@@ -527,15 +490,13 @@ VermilionGymGuideText:
 
 	para "Lt.Surge is very"
 	line "cautious. He has"
-
-	para "traps set all over"
-	line "the Gym."
+	cont "traps set all over"
+	cont "the Gym."
 
 	para "Why lucky, you may"
 	line "ask? Because you"
-
-	para "can train yourself"
-	line "better that way!"
+	cont "can train yourself"
+	cont "better that way!"
 
 	para "Make up your mind"
 	line "and take on Surge!"

@@ -19,8 +19,6 @@ RuinsOfAlphAerodactylWordRoomFirstVisitScene:
 	setflag ENGINE_UNLOCKED_UNOWNS_O_TO_U
 	setscene SCENE_RUINSOFALPHAERODACTYLWORDROOM_NOOP
 	setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
-	end
-
 RuinsOfAlphAerodactylWordRoomNoopScene:
 	end
 

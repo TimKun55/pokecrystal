@@ -10,8 +10,6 @@ VermilionPortPassage_MapScripts:
 	def_callbacks
 
 VermilionPortPassageNoop1Scene:
-	end
-
 VermilionPortPassageNoop2Scene:
 	end
 
@@ -57,10 +55,7 @@ _VermilionPortPassageTicketCheckScript:
 
 .GoOnThrough:
 	opentext
-	writetext VermilionPortPassageGoOnThroughText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPortPassageGoOnThroughText
 
 .VermilionPortPassagePlayerStepsBack:
 	applymovement PLAYER, VermilionPortPassagePlayerStepsBackMovement
@@ -123,9 +118,8 @@ VermilionPortPassageNoTicketText:
 
 	para "Sailor: Sorry!"
 	line "You may board only"
-
-	para "if you have an"
-	line "S.S.Ticket."
+	cont "if you have an"
+	cont "S.S.Ticket."
 	done
 
 VermilionPortPassageTeacherText:

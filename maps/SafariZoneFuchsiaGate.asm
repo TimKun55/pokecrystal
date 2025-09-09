@@ -15,7 +15,7 @@ SafariZoneFuchsiaGateOfficerText:
 
 	para "It's free entry"
 	line "but be careful."
-	
+
 	para "You'll find some"
 	line "rare, but strong"
 	cont "#mon out there!"

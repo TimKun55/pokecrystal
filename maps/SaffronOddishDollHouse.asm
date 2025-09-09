@@ -11,10 +11,7 @@ SaffronOddishDollHousePokefanFScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext PokefanFWantToGoShoppingText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanFWantToGoShoppingText
 
 .ReturnedMachinePart:
 	checkevent EVENT_DECO_ODDISH_DOLL
@@ -28,10 +25,7 @@ SaffronOddishDollHousePokefanFScript:
 	writetext OddishDollSentText
 	waitbutton
 .LotsOfShopping
-	writetext SaffronOddishDollHousePokefanF_ShoppingText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronOddishDollHousePokefanF_ShoppingText
 
 PokefanFWantToGoShoppingText:
 	text "I really wish the"

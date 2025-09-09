@@ -39,9 +39,8 @@ SafariZoneNorthTrainerTips3Sign:
 SafariZoneNorthFisherText:
 	text "If you throw your"
 	line "emotions into"
-
-	para "training, you'll"
-	line "become strong!"
+	cont "training, you'll"
+	cont "become strong!"
 	done
 	
 SafariZoneNorthScientistText:

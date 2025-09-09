@@ -15,14 +15,8 @@ SeafoamIslandsB4F_MapScripts:
 	def_callbacks
 
 SeafoamIslandsB4FNoop1Scene:
-	end
-
 SeafoamIslandsB4FNoop2Scene:
-	end
-
 SeafoamIslandsB4FNoop3Scene:
-	end
-
 SeafoamIslandsB4FNoop4Scene:
 	end
 
@@ -171,13 +165,13 @@ LoreleiIntroText:
 	cont "ing over the"
 	cont "Legendary Bird,"
 	cont "Articuno."
-	
+
 	para "You certainly look"
 	line "like a strong"
 	cont "trainer, but"
 	cont "looks aren't"
 	cont "everything."
-	
+
 	para "As a former Elite"
 	line "Four member let me"
 	cont "warn you; you had"
@@ -189,21 +183,21 @@ LoreleiWinLossText:
 	line "You truly"
 	cont "are strong."
 	done
-	
+
 LoreleiOutroText:
 	text "Very well done."
-	
+
 	para "I did not expect"
 	line "to be bested but"
 	cont "there is only"
 	cont "pride in seeing"
 	cont "new, powerful"
 	cont "trainers emerging."
-	
+
 	para "The last Champion"
 	line "gave us clear"
 	cont "instructions;"
-	
+
 	para "We were to watch"
 	line "over the Birds"
 	cont "until another"
@@ -213,16 +207,16 @@ LoreleiOutroText:
 
 	para "Go. Challenge"
 	line "Articuno."
-	
+
 	para "Good luck."
-	
+
 	para "I hope I get to"
 	line "see you again."
 	done
 
 LoreleiReturnChallengeText:
 	text "Back again?"
-	
+
 	para "I'm always happy"
 	line "to battle!"
 	done

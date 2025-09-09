@@ -27,9 +27,8 @@ FishingDudeText:
 
 	para "If you don't mind,"
 	line "could you show him"
-
-	para "any Magikarp you"
-	line "catch?"
+	cont "any Magikarp you"
+	cont "catch?"
 
 	para "Who knows, you may"
 	line "catch the Magikarp"

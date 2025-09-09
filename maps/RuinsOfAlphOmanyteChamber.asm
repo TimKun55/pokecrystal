@@ -17,8 +17,6 @@ RuinsOfAlphOmanyteChamberCheckWallScene:
 
 .OpenWall:
 	sdefer RuinsOfAlphOmanyteChamberWallOpenScript
-	end
-
 RuinsOfAlphOmanyteChamberNoopScene:
 	end
 
@@ -100,10 +98,7 @@ RuinsOfAlphOmanyteChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetext OmanytePuzzleCompletedText
-	waitbutton
-	closetext
-	end
+	writetextend OmanytePuzzleCompletedText
 
 RuinsOfAlphOmanyteChamberAncientReplica:
 	jumptext RuinsOfAlphOmanyteChamberAncientReplicaText
@@ -122,10 +117,7 @@ RuinsOfAlphOmanyteChamberWallPatternLeft:
 	end
 
 .NoWords
-	writetext RuinsOfAlphOmanyteChamberWallBreezeText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOmanyteChamberWallBreezeText
 
 RuinsOfAlphOmanyteChamberWallPatternRight:
 	opentext
@@ -140,10 +132,7 @@ RuinsOfAlphOmanyteChamberWallPatternRight:
 	end
 
 .WallOpen:
-	writetext RuinsOfAlphOmanyteChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphOmanyteChamberWallHoleText
 
 RuinsOfAlphOmanyteChamberWallPatternText:
 	text "Patterns appeared"
@@ -170,9 +159,8 @@ RuinsOfAlphOmanyteChamberAncientReplicaText:
 RuinsOfAlphOmanyteChamberDescriptionText:
 	text "This #mon"
 	line "drifted in the"
-
-	para "sea by twisting"
-	line "its ten tentacles."
+	cont "sea by twisting"
+	cont "its ten tentacles."
 	done
 
 OmanytePuzzleCompletedText:

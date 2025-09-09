@@ -11,16 +11,11 @@ WardensGranddaughter:
 	opentext
 	checkevent EVENT_TALKED_TO_WARDENS_GRANDDAUGHTER
 	iftrue .AlreadyMet
-	writetext WardensGranddaughterText1
-	waitbutton
-	closetext
 	setevent EVENT_TALKED_TO_WARDENS_GRANDDAUGHTER
-	end
+	writetextend WardensGranddaughterText1
+
 .AlreadyMet:
-	writetext WardensGranddaughterText2
-	waitbutton
-	closetext
-	end
+	writetextend WardensGranddaughterText2
 
 WardenPhoto:
 	jumptext WardenPhotoText
@@ -40,9 +35,8 @@ WardensGranddaughterText1:
 
 	para "He decided to go"
 	line "on a vacation and"
-
-	para "took off overseas"
-	line "all by himself."
+	cont "took off overseas"
+	cont "all by himself."
 
 	para "He quit running"
 	line "Safari Zone just"
@@ -52,30 +46,28 @@ WardensGranddaughterText1:
 WardensGranddaughterText2:
 	text "Many people were"
 	line "sad that the"
+	cont "Safari Zone had"
+	cont "closed down."
 
-	para "Safari Zone closed"
-	line "down, so it's a"
-	cont "good thing my Dad"
-	
-	para "was able to step"
-	line "in and keep it"
-	cont "open for everyone!"
+	para "It's a good thing"
+	line "my Dad was able to"
+	cont "step in and keep"
+	cont "it open for every-"
+	cont "one!"
 	done
 
 WardenPhotoText:
 	text "It's a photo of a"
 	line "grinning old man"
-
-	para "who's surrounded"
-	line "by #mon."
+	cont "who's surrounded"
+	cont "by #mon."
 	done
 
 SafariZonePhotoText:
 	text "It's a photo of a"
 	line "huge grassy plain"
-
-	para "with rare #mon"
-	line "frolicking in it."
+	cont "with rare #mon"
+	cont "frolicking in it."
 	done
 
 SafariZoneWardensHome_MapEvents:

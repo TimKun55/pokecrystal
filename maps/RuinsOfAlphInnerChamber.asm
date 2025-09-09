@@ -10,11 +10,9 @@ RuinsOfAlphInnerChamber_MapScripts:
 
 	def_callbacks
 
-RuinsOfAlphInnerChamberNoopScene:
-	end
-
 RuinsOfAlphInnerChamberStrangePresenceScene:
 	sdefer RuinsOfAlphInnerChamberStrangePresenceScript
+RuinsOfAlphInnerChamberNoopScene:
 	end
 
 RuinsOfAlphInnerChamberStrangePresenceScript:

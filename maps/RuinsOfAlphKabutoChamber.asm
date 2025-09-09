@@ -20,10 +20,8 @@ RuinsOfAlphKabutoChamberCheckWallScene:
 
 .OpenWall:
 	sdefer RuinsOfAlphKabutoChamberWallOpenScript
-	end
-
 RuinsOfAlphKabutoChamberNoopScene:
-	end
+	end	
 
 RuinsOfAlphKabutoChamberHiddenDoorsCallback:
 	checkevent EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
@@ -58,16 +56,10 @@ RuinsOfAlphKabutoChamberReceptionistScript:
 	opentext
 	checkevent EVENT_SOLVED_KABUTO_PUZZLE
 	iftrue .PuzzleSolved
-	writetext RuinsOfAlphKabutoChamberReceptionistText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphKabutoChamberReceptionistText
 
 .PuzzleSolved
-	writetext RuinsOfAlphKabutoChamberReceptionistTremorText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphKabutoChamberReceptionistTremorText
 
 RuinsOfAlphKabutoChamberPuzzle:
 	checkevent EVENT_SOLVED_KABUTO_PUZZLE
@@ -125,10 +117,7 @@ RuinsOfAlphKabutoChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetext KabutoPuzzleCompletedText
-	waitbutton
-	closetext
-	end
+	writetextend KabutoPuzzleCompletedText
 
 RuinsOfAlphKabutoChamberScientistScript:
 	faceplayer
@@ -153,16 +142,10 @@ RuinsOfAlphKabutoChamberScientistScript:
 	end
 
 .WallOpen:
-	writetext RuinsOfAlphKabutoChamberScientistHoleText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphKabutoChamberScientistHoleText
 
 .AllUnownCaught:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
 
 RuinsOfAlphKabutoChamberAncientReplica:
 	jumptext RuinsOfAlphKabutoChamberAncientReplicaText
@@ -181,10 +164,7 @@ RuinsOfAlphKabutoChamberWallPatternLeft:
 	end
 
 .NoWords
-	writetext RuinsOfAlphKabutoChamberWallBreezeText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphKabutoChamberWallBreezeText
 
 RuinsOfAlphKabutoChamberWallPatternRight:
 	opentext
@@ -199,10 +179,7 @@ RuinsOfAlphKabutoChamberWallPatternRight:
 	end
 
 .WallOpen:
-	writetext RuinsOfAlphKabutoChamberWallHoleText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphKabutoChamberWallHoleText
 
 RuinsOfAlphKabutoChamberReceptionistText:
 	text "Welcome to this"
@@ -210,9 +187,8 @@ RuinsOfAlphKabutoChamberReceptionistText:
 
 	para "There are sliding"
 	line "panels that depict"
-
-	para "a #mon drawn by"
-	line "the ancients."
+	cont "a #mon drawn by"
+	cont "the ancients."
 
 	para "Slide the panels"
 	line "around to form the"

@@ -11,8 +11,6 @@ RuinsOfAlphCaveEntrance_MapScripts:
 	callback MAPCALLBACK_OBJECTS, RuinsOfAlphCaveEntranceScientistCallback
 
 RuinsOfAlphCaveEntranceNoop1Scene:
-	end
-
 RuinsOfAlphCaveEntranceNoop2Scene:
 	end	
 
@@ -102,9 +100,6 @@ CaveEntranceScientistContinue:
 	disappear RUINSOFALPHCAVEENTRANCE_SCIENTIST
 	setscene SCENE_RUINSOFALPHCAVEENTRANCE_NOOP
 	end
-	
-	
-	
 
 RuinsOfAlphCaveEntranceScientistEnterMovement:
 	step UP
@@ -118,45 +113,41 @@ RuinsOfAlphCaveEntranceScientistAllUnownText:
 	text "<PLAYER>!"
 	line "I've been tracking"
 	cont "your progress"
-	
-	para "finding all of"
-	line "the Unown!"
-	
+	cont "finding all of"
+	cont "the Unown!"
+
 	para "According to the"
 	line "data I received"
-	
-	para "from your Unown"
-	line "Dex, it seems like"
-	
-	para "you've found all"
-	line "of them!"
-	
+	cont "from your Unown"
+	cont "Dex, it seems like"
+	cont "you've found all"
+	cont "of them!"
+
 	para "This is a truly"
 	line "amazing feat!"
-	
+
 	para "There's still some"
 	line "untranslated text"
-	
-	para "I could use your"
-	line "help decoding."
-	
+	cont "I could use your"
+	cont "help decoding."
+
 	para "Let's go!"
 	done
 
 RuinsOfAlphCaveEntranceScientistGoCheckText:
 	text "Wha…"
 	line "What was that?"
-	
+
 	para "Wait!"
 	line "Did a door just"
 	cont "open back there?!"
-	
+
 	para "I… I work in a Lab"
 	line "not in the field!"
-	
+
 	para "Can you go see"
 	line "what happened?"
-	
+
 	para "Oh, wait!"
 	line "Can I borrow your"
 	cont "#dex quickly?"
@@ -164,17 +155,17 @@ RuinsOfAlphCaveEntranceScientistGoCheckText:
 
 RuinsOfAlphCaveEntranceScientistDownloadedText:
 	text "There!"
-	
+
 	para "I just downloaded"
 	line "the data from your"
 	cont "Unown Dex."
-	
+
 	para "I'll translate,"
 	line "you explore."
-	
+
 	para "It's a winning"
 	line "combo, right?"
-	
+
 	para "Stay safe and"
 	line "see you soon!"
 	done

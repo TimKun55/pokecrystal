@@ -12,8 +12,6 @@ WillsRoom_MapScripts:
 
 WillsRoomLockDoorScene:
 	sdefer WillsRoomDoorLocksBehindYouScript
-	end
-
 WillsRoomNoopScene:
 	end
 
@@ -121,22 +119,13 @@ WillAfterBattle:
 	ifequal 16, .WillChampionMatchAfter
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .WillChampionMatchAfter
-	writetext WillDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend WillDefeatText
 
 .WillGrandChampionAfter:
-	writetext WillGrandChampionDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend WillGrandChampionDefeatText
 
 .WillChampionMatchAfter:
-	writetext WillChampionMatchDefeatText
-	waitbutton
-	closetext
-	end
+	writetextend WillChampionMatchDefeatText
 	
 WillsRoomXatu:
 	opentext
@@ -167,9 +156,8 @@ WillBeforeText:
 
 	para "I have trained all"
 	line "around the world,"
-
-	para "making my psychic"
-	line "#mon powerful."
+	cont "making my psychic"
+	cont "#mon powerful."
 
 	para "And, at last, I've"
 	line "been accepted into"
@@ -194,24 +182,22 @@ WillDefeatText:
 
 	para "I will continue"
 	line "battling until I"
-
-	para "stand above all"
-	line "trainers!"
+	cont "stand above all"
+	cont "trainers!"
 
 	para "Now, <PLAYER>, move"
 	line "on and experience"
-
-	para "the true ferocity"
-	line "of the Elite Four."
+	cont "the true ferocity"
+	cont "of the Elite Four."
 	done
 
 WillChampionMatchBeforeText:
 	text "Welcome back,"
 	line "Champion <PLAYER>."
-	
+
 	para "Here for another"
 	line "run through?"
-	
+
 	para "I'll gladly battle"
 	line "you again!"
 	done
@@ -229,17 +215,17 @@ WillChampionMatchDefeatText:
 Will16BadgesBeforeText:
 	text "Welcome back,"
 	line "Champion <PLAYER>."
-	
+
 	para "Here for another"
 	line "run through?"
-	
+
 	para "You have all 8"
 	line "Kanto Badges, too?"
-	
+
 	para "Wow! I guess I'd"
 	line "better not hold"
 	cont "back anymore!"
-	
+
 	para "Let's go!"
 	done
 
@@ -250,10 +236,9 @@ Will16BadgesBeatenText:
 Will16BadgesDefeatText:
 	text "I can see why"
 	line "you were able to"
-	
-	para "collect all the"
-	line "Kanto Badges!"
-	
+	cont "collect all the"
+	cont "Kanto Badges!"
+
 	para "Go on and show"
 	line "your progress to"
 	cont "the others!"
@@ -262,10 +247,10 @@ Will16BadgesDefeatText:
 WillGrandChampionBeforeText:
 	text "Grand Champion,"
 	line "<PLAYER>!"
-	
+
 	para "It's an honour to"
 	line "battle you again!"
-	
+
 	para "Let's go!"
 	done
 
@@ -278,7 +263,7 @@ WillGrandChampionDefeatText:
 	line "become one of the"
 	cont "best trainers!"
 	done
-	
+
 XatuText:
 	text "Xatu: Xaa!!"
 	line "Xatuuu!"

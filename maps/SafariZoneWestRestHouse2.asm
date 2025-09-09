@@ -16,11 +16,11 @@ SafariZoneWestRestHouse2FisherText:
 	text "Hi there!"
 	line "As a reward for"
 	cont "reaching this"
-	
-	para "Rest House, have"
-	line "this HM as a"
-	cont "reward…"
-	cont "… … …"
+	cont "Rest House, have"
+	cont "this HM as a"
+	cont "reward!"
+
+	para "… … …"
 	
 	para "Wait, you've"
 	line "already got one?"

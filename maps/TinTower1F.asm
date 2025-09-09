@@ -21,8 +21,6 @@ TinTower1F_MapScripts:
 
 TinTower1FSuicuneBattleScene:
 	sdefer TinTower1FSuicuneBattleScript
-	end
-
 TinTower1FNoopScene:
 	end
 
@@ -206,16 +204,10 @@ TinTower1FSage5Script:
 	reloadmappart
 	opentext
 .GotRainbowWing:
-	writetext TinTower1FSage5Text2
-	waitbutton
-	closetext
-	end
+	writetextend TinTower1FSage5Text2
 
 .FoughtHoOh:
-	writetext TinTower1FSage5Text3
-	waitbutton
-	closetext
-	end
+	writetextend TinTower1FSage5Text3
 
 TinTower1FSage6Script:
 	checkevent EVENT_FOUGHT_HO_OH
@@ -310,21 +302,18 @@ TinTower1FEusineSuicuneText:
 
 	para "Suicune was tough,"
 	line "but you were even"
-
-	para "more incredible,"
-	line "<PLAYER>."
+	cont "more incredible,"
+	cont "<PLAYER>."
 
 	para "I heard Suicune's"
 	line "mystic power"
-
-	para "summons a rainbow-"
-	line "colored #mon."
+	cont "summons a rainbow-"
+	cont "colored #mon."
 
 	para "Maybe, just maybe,"
 	line "what went on today"
-
-	para "will cause that"
-	line "#mon to appear."
+	cont "will cause that"
+	cont "#mon to appear."
 
 	para "I'm going to study"
 	line "the legends more."
@@ -342,29 +331,24 @@ TinTower1FSage1Text:
 
 	para "When the souls of"
 	line "#mon and humans"
-
-	para "commune, from the"
-	line "heavens descends a"
-
-	para "#mon of rainbow"
-	line "colors…"
+	cont "commune, from the"
+	cont "heavens descends a"
+	cont "#mon of rainbow"
+	cont "colors…"
 
 	para "Could it mean the"
 	line "legendary #mon"
-
-	para "are testing us"
-	line "humans?"
+	cont "are testing us"
+	cont "humans?"
 	done
 
 TinTower1FSage2Text:
 	text "When the Brass"
 	line "Tower burned down,"
-
-	para "three nameless"
-	line "#mon were said"
-
-	para "to have perished."
-	line "It was tragic."
+	cont "three nameless"
+	cont "#mon were said"
+	cont "to have perished."
+	cont "It was tragic."
 
 	para "However…"
 
@@ -375,9 +359,8 @@ TinTower1FSage2Text:
 
 	para "Ho-Oh descended"
 	line "from the sky and"
-
-	para "gave new life to"
-	line "the three #mon."
+	cont "gave new life to"
+	cont "the three #mon."
 
 	para "They are…"
 
@@ -391,26 +374,22 @@ TinTower1FSage2Text:
 TinTower1FSage3Text:
 	text "The two Towers are"
 	line "said to have been"
-
-	para "built to foster"
-	line "friendship and"
-
-	para "hope between #-"
-	line "mon and people."
+	cont "built to foster"
+	cont "friendship and"
+	cont "hope between #-"
+	cont "mon and people."
 
 	para "That was 700 years"
 	line "ago, but the ideal"
-
-	para "still remains"
-	line "important today."
+	cont "still remains"
+	cont "important today."
 	done
 
 TinTower1FSage4Text1:
 	text "Use the Rainbow"
 	line "Wing to try and"
-
-	para "summon Ho-Oh here,"
-	line "to the Tin Tower!"
+	cont "summon Ho-Oh here,"
+	cont "to the Tin Tower!"
 	done
 
 TinTower1FSage5Text1:
@@ -436,9 +415,8 @@ TinTower1FEusineHoOhText:
 
 	para "I knew you'd get"
 	line "to see the #mon"
-
-	para "of rainbow colors,"
-	line "<PLAYER>."
+	cont "of rainbow colors,"
+	cont "<PLAYER>."
 
 	para "It happened just"
 	line "as I envisioned."
@@ -448,17 +426,15 @@ TinTower1FEusineHoOhText:
 
 	para "I'm going to keep"
 	line "studying #mon"
-
-	para "to become a famous"
-	line "#Maniac!"
+	cont "to become a famous"
+	cont "#Maniac!"
 	done
 
 TinTower1FSage4Text2:
 	text "The legendary"
 	line "#mon are said"
-
-	para "to embody three"
-	line "powers…"
+	cont "to embody three"
+	cont "powers…"
 
 	para "The lightning that"
 	line "struck the Tower."
@@ -485,30 +461,26 @@ TinTower1FSage5Text3:
 
 	para "The legendary"
 	line "#mon, knowing"
-
-	para "their own power,"
-	line "fled, ignoring the"
+	cont "their own power,"
+	cont "fled, ignoring the"
 	cont "frightened people."
 	done
 
 TinTower1FSage6Text2:
 	text "Of the legendary"
 	line "#mon, Suicune"
-
-	para "is said to be the"
-	line "closest to Ho-Oh."
+	cont "is said to be the"
+	cont "closest to Ho-Oh."
 
 	para "I hear there may"
 	line "also be a link to"
-
-	para "#mon known as"
-	line "Unown."
+	cont "#mon known as"
+	cont "Unown."
 
 	para "The #mon Unown"
 	line "must be sharing a"
-
-	para "cooperative bond"
-	line "with Suicune."
+	cont "cooperative bond"
+	cont "with Suicune."
 	done
 
 TinTower1F_MapEvents:

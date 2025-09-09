@@ -27,42 +27,33 @@ SoulHouseGrannyScript:
 	promptbutton
 	verbosegiveitem TM_HEX
 	iffalse .NoRoom
-	writetext SoulHouseGrannyOldHexText
-	waitbutton
-	closetext
 	setevent EVENT_GOT_TM_HEX
-	end	
+	writetextend SoulHouseGrannyOldHexText
 
 .NoRoom:
 	closetext
 	end	
 	
 .GotTM11
-	writetext SoulHouseGrannyText
-	waitbutton
-	closetext
-	end
+	writetextend SoulHouseGrannyText
 	
 MrFujiText:
 	text "Mr.Fuji: Welcome."
 
 	para "Hmm… You appear to"
 	line "be raising your"
-
-	para "#mon in a kind"
-	line "and loving manner."
+	cont "#mon in a kind"
+	cont "and loving manner."
 
 	para "#mon lovers"
 	line "come here to pay"
-
-	para "their respects to"
-	line "departed #mon."
+	cont "their respects to"
+	cont "departed #mon."
 
 	para "Please offer con-"
 	line "dolences for the"
-
-	para "souls of the de-"
-	line "parted #mon."
+	cont "souls of the de-"
+	cont "parted #mon."
 
 	para "I'm sure that will"
 	line "make them happy."
@@ -88,11 +79,11 @@ SoulHouseGrannyOldTrainerText:
 	text "My #mon and"
 	line "I trained all"
 	cont "the time."
-	
+
 	para "This was part of"
 	line "our favourite"
 	cont "stratergy."
-	
+
 	para "You can"
 	line "have this."
 	done
@@ -100,9 +91,8 @@ SoulHouseGrannyOldTrainerText:
 SoulHouseGrannyOldHexText:
 	text "Hex can do some"
 	line "nasty damage if"
-	
-	para "the opponent has a"
-	line "status condition"
+	cont "the opponent has a"
+	cont "status condition"
 	cont "like Psn or Brn."
 	done
 

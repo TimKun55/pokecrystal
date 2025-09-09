@@ -47,9 +47,8 @@ SafariZoneWestLassText:
 	text "I've been here"
 	line "so many times"
 	cont "but I still can't"
-	
-	para "seem to catch"
-	line "a Tauros!"
+	cont "seem to catch"
+	cont "a Tauros!"
 	done
 
 SafariZoneWestAreaSignText:
@@ -66,10 +65,9 @@ SafariZoneWestTrainerTips1SignText:
 
 	para "Fire-type #mon"
 	line "cannot be burnt,"
-
-	para "and ice-type #-"
-	line "mon can't be"
-	cont "frozen solid."
+	cont "and ice-type #-"
+	cont "mon can't have"
+	cont "frostbite."
 	done
 
 SafariZoneWestTrainerTips2SignText:
@@ -77,12 +75,10 @@ SafariZoneWestTrainerTips2SignText:
 
 	para "In a Sandstorm,"
 	line "rock-type #mon"
-
-	para "get a boost to"
-	line "their Sp.Def and"
-	
-	para "in Hail, ice-type"
-	line "#mon get a"
+	cont "get a boost to"
+	cont "their Sp.Def and"
+	cont "in Hail, ice-type"
+	cont "#mon get a"
 	cont "Def boost."
 	done
 

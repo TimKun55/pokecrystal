@@ -12,11 +12,11 @@ RuinsOfAlphResearchCenter_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, RuinsOfAlphResearchCenterScientistCallback
 
-RuinsOfAlphResearchCenterNoopScene:
-	end
+
 
 RuinsOfAlphResearchCenterGetUnownDexScene:
 	sdefer RuinsOfAlphResearchCenterGetUnownDexScript
+RuinsOfAlphResearchCenterNoopScene:
 	end
 
 RuinsOfAlphResearchCenterScientistCallback:
@@ -63,26 +63,17 @@ RuinsOfAlphResearchCenterScientist3Script:
 	opentext
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .CaveDoorOpen
-	writetext RuinsOfAlphResearchCenterScientist3Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist3Text
 
 .CaveDoorOpen:
 	checkitem GS_BALL
 	iftrue .GSBall
 	checkitem BALL_RELIC
 	iftrue .BallRelic
-	writetext RuinsOfAlphResearchCenterScientist3_AllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist3_AllUnown
 
 .GSBall:
-	writetext RuinsOfAlphResearchCenterScientist3_GSBall
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist3_GSBall
 
 .BallRelic:
 	writetext RuinsOfAlphResearchCenterScientist3_BallRelic1
@@ -117,22 +108,13 @@ RuinsOfAlphResearchCenterScientist1Script:
 	iftrue .GotUnownDex
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	iftrue .UnownAppeared
-	writetext RuinsOfAlphResearchCenterScientist1Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text
 
 .UnownAppeared:
-	writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
 
 .GotUnownDex:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotUnownDex
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist1Text_GotUnownDex
 
 .GotAllUnown:
 	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
@@ -148,22 +130,13 @@ RuinsOfAlphResearchCenterScientist2Script:
 	ifequal NUM_UNOWN, .GotAllUnown
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	iftrue .UnownAppeared
-	writetext RuinsOfAlphResearchCenterScientist2Text
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist2Text
 
 .UnownAppeared:
-	writetext RuinsOfAlphResearchCenterScientist2Text_UnownAppeared
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist2Text_UnownAppeared
 
 .GotAllUnown:
-	writetext RuinsOfAlphResearchCenterScientist2Text_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterScientist2Text_GotAllUnown
 
 RuinsOfAlphResearchCenterComputer:
 	opentext
@@ -172,16 +145,10 @@ RuinsOfAlphResearchCenterComputer:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .GotAllUnown
 .SkipChecking:
-	writetext RuinsOfAlphResearchCenterComputerText
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterComputerText
 
 .GotAllUnown:
-	writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterComputerText_GotAllUnown
 	
 RuinsOfAlphResearchCenterFossilScientist:
 	faceplayer
@@ -196,10 +163,7 @@ RuinsOfAlphResearchCenterFossilScientist:
 	iftrue .own_helix
 	checkitem DOME_FOSSIL
 	iftrue IsDomeFossil
-	writetext FossilScientistNoFossilText
-	waitbutton
-	closetext
-	end
+	writetextend FossilScientistNoFossilText
 
 .GiveOmanyte:
 	writetext FossilScientistDoneText
@@ -232,21 +196,12 @@ RuinsOfAlphResearchCenterFossilScientist:
 	end
 
 .NoRoom:
-	writetext FossilScientistPartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend FossilScientistPartyFullText
 
 .own_helix
 	checkitem DOME_FOSSIL
 	iftrue .own_helix_and_dome
 	sjump IsHelixFossil
-
-;.own_dome
-;	writetext FossilScientistIsDomeFossilText
-;	yesorno
-;	iftrue IsDomeFossil
-;	jump .no_fossil
 
 .own_helix_and_dome
 	loadmenu HelixDomeMenuDataHeader
@@ -325,10 +280,7 @@ IsDomeFossil:
 	sjump RuinsOfAlphResearchCenterFossilScientist
 
 DeniedRessurection:
-	writetext FossilScientistNoFossilText
-	waitbutton
-	closetext
-	end
+	writetextend FossilScientistNoFossilText
 
 RuinsOfAlphResearchCenterPrinter:
 	opentext
@@ -337,10 +289,7 @@ RuinsOfAlphResearchCenterPrinter:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .PrinterAvailable
 .SkipChecking:
-	writetext RuinsOfAlphResearchCenterPrinterText_DoesntWork
-	waitbutton
-	closetext
-	end
+	writetextend RuinsOfAlphResearchCenterPrinterText_DoesntWork
 
 .PrinterAvailable:
 	writetext RuinsOfAlphResearchCenterUnownPrinterText
@@ -375,9 +324,8 @@ RuinsOfAlphResearchCenterModifiedDexText:
 
 	para "I added an"
 	line "optional #dex"
-
-	para "to store Unown"
-	line "data."
+	cont "to store Unown"
+	cont "data."
 
 	para "It records them in"
 	line "the sequence that"
@@ -401,9 +349,8 @@ RuinsOfAlphResearchCenterScientist3Text:
 RuinsOfAlphResearchCenterScientist3_AllUnown:
 	text "I still can't"
 	line "believe all the"
-
-	para "things we've dis-"
-	line "covered and learn-"
+	cont "things we've dis-"
+	cont "covered and learn-"
 	cont "ed about!"
 	
 	para "I love my job!"
@@ -431,22 +378,20 @@ RuinsOfAlphResearchCenterScientist3_BallRelic1:
 RuinsOfAlphResearchCenterScientist3_BallRelic2:
 	text "This is definitely"
 	line "a # Ball, but"
-	
-	para "not like any I've"
-	line "ever seen."
-	
+	cont "not like any I've"
+	cont "ever seen."
+
 	para "Look here, there's"
 	line "a 'G' and an 'S'…"
-	
+
 	para "Tell you what,"
 	line "why don't you take"
-	
-	para "this to Kurt in"
-	line "Azalea Town?"
-	
+	cont "this to Kurt in"
+	cont "Azalea Town?"
+
 	para "# Balls are his"
 	line "speciality."
-	
+
 	para "If anyone can"
 	line "help with this,"
 	cont "it's him."
@@ -456,9 +401,8 @@ RuinsOfAlphResearchCenterScientist3_MoreToDiscover:
 	text "No matter how much"
 	line "we learn and dis-"
 	cont "cover, there's"
-	
-	para "always more to"
-	line "learn and find."
+	cont "always more to"
+	cont "learn and find."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:
@@ -491,23 +435,20 @@ RuinsOfAlphResearchCenterScientist1Text_UnownAppeared:
 RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	text "Our investigation,"
 	line "with your help, is"
-
-	para "giving us insight"
-	line "into the Ruins."
+	cont "giving us insight"
+	cont "into the Ruins."
 
 	para "The Ruins appear"
 	line "to have been built"
-
-	para "as a habitat for"
-	line "#mon."
+	cont "as a habitat for"
+	cont "#mon."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text:
 	text "There are odd pat-"
 	line "terns drawn on the"
-
-	para "walls of the"
-	line "Ruins."
+	cont "walls of the"
+	cont "Ruins."
 
 	para "They must be the"
 	line "keys for unravel-"
@@ -522,9 +463,8 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 
 	para "They appear to be"
 	line "very much like the"
-
-	para "drawings on the"
-	line "walls there."
+	cont "drawings on the"
+	cont "walls there."
 
 	para "Hmm…"
 
@@ -536,9 +476,8 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 	text "Why did those"
 	line "ancient patterns"
-
-	para "appear on the wall"
-	line "now?"
+	cont "appear on the wall"
+	cont "now?"
 
 	para "The mystery"
 	line "deepens…"

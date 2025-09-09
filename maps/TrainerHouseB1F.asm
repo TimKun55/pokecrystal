@@ -350,9 +350,8 @@ TrainerHouseB1FGoRightInText:
 TrainerHouseB1FPleaseComeAgainText:
 	text "Sorry. Only those"
 	line "trainers who will"
-
-	para "be battling are"
-	line "allowed to go in."
+	cont "be battling are"
+	cont "allowed to go in."
 	done
 
 TrainerHouseB1FCalBeatenText:
@@ -370,7 +369,7 @@ TrainerHouseB1FInverBeforeText:
 	text "Inver: How wonder-"
 	line "ful to have ano-"
 	cont "ther challenger."
-	
+
 	para "Let's begin."
 	done
 
@@ -386,27 +385,27 @@ TrainerHouseB1FInverAfterText:
 
 TrainerHouseB1FThortonBeforeText:
 	text "Bzweeeeep!"
-	
+
 	para "Thorton: Sorry,"
 	line "don't mind me."
-	
+
 	para "I'm using an"
 	line "invention of mine."
-	
+
 	para "It's my data-"
 	line "analysing machine."
-	
+
 	para "It's calculating"
 	line "your chance of"
 	cont "winning."
-	
+
 	para "Oh!"
-	
+
 	para "Interesting."
-	
+
 	para "Oh, don't worry"
 	line "about that number."
-	
+
 	para "Let's get going!"
 	done
 
@@ -424,7 +423,7 @@ TrainerHouseB1FThortonAfterText:
 TrainerHouseB1FAgathaBeforeText:
 	text "Agatha: Ah, you're"
 	line "here, <PLAYER>."
-	
+
 	para "Time to battle."
 	done
 
@@ -437,14 +436,14 @@ TrainerHouseB1FAgathaAfterText:
 	line "sound odd, but"
 	cont "I'm almost glad"
 	cont "I lost."
-	
+
 	para "It shows you're"
 	line "continuing your"
 	cont "training."
-	
+
 	para "Unlike a certain"
 	line "Professor…"
-	
+
 	para "Anyway, keep"
 	line "it up."
 	done
@@ -452,7 +451,7 @@ TrainerHouseB1FAgathaAfterText:
 TrainerHouseB1FLoreleiBeforeText:
 	text "Lorelei: Ah,"
 	line "you're here."
-	
+
 	para "Let's battle."
 	done
 
@@ -469,7 +468,7 @@ TrainerHouseB1FLoreleiAfterText:
 
 TrainerHouseB1FOakBeforeText:
 	text "Oak: <PLAYER>!"
-	
+
 	para "Time to test"
 	line "my training!"
 	done
@@ -482,7 +481,7 @@ TrainerHouseB1FOakAfterText:
 	text "Oak: I'm glad"
 	line "I decided to start"
 	cont "battling again."
-	
+
 	para "It's so much fun!"
 	done
 

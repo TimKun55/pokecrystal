@@ -21,16 +21,10 @@ ViridianPokecenter1FCooltrainerMScript:
 	opentext
 	checkevent EVENT_BLUE_IN_CINNABAR
 	iftrue .BlueReturned
-	writetext ViridianPokecenter1FCooltrainerMText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FCooltrainerMText
 
 .BlueReturned:
-	writetext ViridianPokecenter1FCooltrainerMText_BlueReturned
-	waitbutton
-	closetext
-	end
+	writetextend ViridianPokecenter1FCooltrainerMText_BlueReturned
 
 ViridianPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer ViridianPokecenter1FCooltrainerFText
@@ -41,29 +35,26 @@ ViridianPokecenter1FBugCatcherScript:
 ViridianPokecenter1FCooltrainerMText:
 	text "Where in the world"
 	line "is Viridian's Gym"
-
-	para "Leader? I wanted"
-	line "to challenge him."
+	cont "Leader? I wanted"
+	cont "to challenge him."
 	done
 
 ViridianPokecenter1FCooltrainerMText_BlueReturned:
 	text "The Viridian Gym"
 	line "was drastically"
 	cont "remodeled when the"
-
-	para "current Leader"
-	line "took over."
+	cont "current Leader"
+	cont "took over."
 	done
 
 ViridianPokecenter1FCooltrainerFText:
 	text "I heard that"
 	line "Blaine, the Leader"
 	cont "of Cinnabar Gym"
-
-	para "rebuilt the Gym"
-	line "inside of Seafoam"
+	cont "rebuilt the Gym"
+	cont "inside of Seafoam"
 	cont "Islands."
-	
+
 	para "Is that safe?"
 	done
 

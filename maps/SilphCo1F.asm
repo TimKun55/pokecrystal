@@ -57,22 +57,13 @@ SilphCoEmployeeDay:
 	writetext SilphCoEmployeeBallInBagText
 	waitbutton
 	setevent EVENT_GOT_PREMIER_BALLS_FROM_SILPH
-	writetext SilphCoEmployeeDayBallFavouriteText
-	waitbutton
-	closetext
-	end
+	writetextend SilphCoEmployeeDayBallFavouriteText
 	
 .SilphCoEmployeeDayFamily:
-	writetext SilphCoEmployeeDayFamilyText
-	waitbutton
-	closetext
-	end
+	writetextend SilphCoEmployeeDayFamilyText
 
 .BagFull
-	writetext SilphCoEmployeeDayBagFullText
-	waitbutton
-	closetext
-	end
+	writetextend SilphCoEmployeeDayBagFullText
 
 SilphCoEmployee1Night:
 	jumptextfaceplayer SilphCoEmployee1NightText
@@ -111,11 +102,11 @@ SilphCoOfficerText_GotUpGrade:
 	para "It's not for sale"
 	line "anywhere in Kanto"
 	cont "just yet."
-	
+
 	para "Though I believe"
 	line "Madam Items in"
 	cont "Blackthorn City"
-	
+
 	para "has been supplied"
 	line "with some stock."
 	done
@@ -124,7 +115,7 @@ SilphCoDisplayCaseText:
 	text "There are some"
 	line "old products on"
 	cont "display."
-	
+
 	para "Looks like a"
 	line "# Ball, and a"
 	cont "pair of goggles."
@@ -134,7 +125,7 @@ SilphCoScientistMornText:
 	text "Good morning."
 	line "I work up on the"
 	cont "11th floor."
-	
+
 	para "The elevator isn't"
 	line "working, so I've"
 	cont "got to climb all"
@@ -144,17 +135,14 @@ SilphCoScientistMornText:
 SilphCoEmployeeMornText:
 	text "We had to find and"
 	line "reinstall all of"
-	
-	para "the old teleport"
-	line "pads because the"
-	
-	para "elevator is out"
-	line "of order, but"
-	
-	para "using them makes"
-	line "most of the other"
+	cont "the old teleport"
+	cont "pads because the"
+	cont "elevator is out"
+	cont "of order, but"
+	cont "using them makes"
+	cont "most of the other"
 	cont "employees sick."
-	
+
 	para "Why is no one fix-"
 	line "ing the elevator?"
 	done
@@ -165,12 +153,10 @@ SilphCoGentlemanDayText:
 
 	para "Some have been"
 	line "discontinued, but"
-
-	para "others are so pop-"
-	line "ular that they"
-
-	para "haven't changed in"
-	line "over 20 years!"
+	cont "others are so pop-"
+	cont "ular that they"
+	cont "haven't changed in"
+	cont "over 20 years!"
 	done
 
 SilphCoEmployeeDayBallFamilyText:
@@ -181,9 +167,8 @@ SilphCoEmployeeDayBallFamilyText:
 	para "My father Kurt is"
 	line "teaching my daugh-"
 	cont "ter how to make"
-
-	para "Apricorn Balls"
-	line "while I'm busy"
+	cont "Apricorn Balls"
+	cont "while I'm busy"
 	cont "working here."
 
 	para "You helped them"
@@ -218,9 +203,8 @@ SilphCoEmployeeDayBallFavouriteText:
 	line "have any special"
 	cont "effects like some"
 	cont "other # balls,"
-	
-	para "I just like the"
-	line "way they look."
+	cont "I just like the"
+	cont "way they look."
 	done
 
 SilphCoEmployeeDayFamilyText:
@@ -233,7 +217,7 @@ SilphCoEmployee1NightText:
 	text "We recently part-"
 	line "nered with Devon"
 	cont "Corp. in Hoenn."
-	
+
 	para "We've been making"
 	line "lots of new"
 	cont "products!"
@@ -242,10 +226,10 @@ SilphCoEmployee1NightText:
 SilphCoEmployee2NightText:
 	text "Man, I hate the"
 	line "night shift."
-	
+
 	para "I can barely keep"
 	line "my eyes open…"
-	
+
 	para "…… yawn ……"
 	done
 

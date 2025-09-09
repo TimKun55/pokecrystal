@@ -136,10 +136,7 @@ VermilionSailorsHouseSailorScript:
 	end
 
 .NotSailing
-	writetext SailorMorePreparedText
-	waitbutton
-	closetext
-	end
+	writetextend SailorMorePreparedText
 
 PlayerOutOfWayMovement:
 	step LEFT
@@ -193,23 +190,18 @@ PlayerExitMove3:
 	step LEFT
 	step_end
 
-SetText:
-	text "SET."
-	done
-
 SailorSoBoredText:
 	text "I finally got a"
 	line "new ship, but"
-	
-	para "I've got nowhere"
-	line "new to sail…"
-	
+	cont "I've got nowhere"
+	cont "new to sail…"
+
 	para "Maybe I should"
 	line "give up sailing"
 	cont "for now…"
-	
+
 	para "… … …"
-	
+
 	para "I might visit"
 	line "my mate in"
 	cont "Fuchsia City…"
@@ -217,28 +209,28 @@ SailorSoBoredText:
 
 SailorWhatIsThatMapText:
 	text "There you are!"
-	
+
 	para "You have the Map"
 	line "with you, right?"
-	
+
 	para "May I see it"
 	line "again, please?"
-	
+
 	para "… … …"
-	
+
 	para "Yes, I'm sure."
 	line "This is the 'lost'"
 	cont "jungle island"
 	cont "that Team Rocket"
 	cont "were trying to"
 	cont "get to!"
-	
+
 	para "According to"
 	line "rumour, this is"
 	cont "where a Mythical"
 	cont "#mon was dis-"
 	cont "covered…"
-	
+
 	para "Wow!"
 	done
 
@@ -254,7 +246,7 @@ SailorLetsGoText:
 
 SailorCallScientist1Text:
 	text "Oh!"
-	
+
 	para "Hang on, I need"
 	line "to make a quick"
 	cont "phone call."
@@ -262,12 +254,12 @@ SailorCallScientist1Text:
 
 SailorCallScientist2Text:
 	text "Hey, it's me!"
-	
+
 	para "We're about to"
 	line "set sail - how"
 	cont "fast can you"
 	cont "get here?"
-	
+
 	para "… … …"
 	done
 
@@ -280,7 +272,7 @@ ScientistArrivalText:
 	line "already in town"
 	cont "doing some field"
 	cont "research."
-	
+
 	para "But that can all"
 	line "wait - let's go"
 	cont "right now!"
@@ -289,7 +281,7 @@ ScientistArrivalText:
 SailorWaitOnBoatText:
 	text "Sailor: Amazing"
 	line "timing, mate!"
-	
+
 	para "Go on and get"
 	line "settled in."
 	done

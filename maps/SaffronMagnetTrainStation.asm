@@ -18,10 +18,7 @@ SaffronMagnetTrainStationOfficerScript:
 	opentext
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .MagnetTrainToGoldenrod
-	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationOfficerTrainIsntOperatingText
 
 .MagnetTrainToGoldenrod:
 	writetext SaffronMagnetTrainStationOfficerAreYouComingOnBoardText
@@ -47,42 +44,27 @@ SaffronMagnetTrainStationOfficerScript:
 	step_end
 
 .NoPass:
-	writetext SaffronMagnetTrainStationOfficerYouDontHaveAPassText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationOfficerYouDontHaveAPassText
 
 .DecidedNotToRide:
-	writetext SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText
 
 Script_ArriveFromGoldenrod:
 	applymovement SAFFRONMAGNETTRAINSTATION_OFFICER, SaffronMagnetTrainStationOfficerApproachFromGoldenrodMovement
 	applymovement PLAYER, SaffronMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement
 	applymovement SAFFRONMAGNETTRAINSTATION_OFFICER, SaffronMagnetTrainStationOfficerReturnToBoardingGateArriveMovement
 	opentext
-	writetext SaffronMagnetTrainStationOfficerArrivedInSaffronText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationOfficerArrivedInSaffronText
 
 SaffronMagnetTrainStationGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext SaffronMagnetTrainStationGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationGymGuideText
 
 .ReturnedMachinePart:
-	writetext SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart
 
 SaffronMagnetTrainStationTeacherScript:
 	jumptextfaceplayer SaffronMagnetTrainStationTeacherText
@@ -183,12 +165,10 @@ SaffronMagnetTrainStationOfficerArrivedInSaffronText:
 SaffronMagnetTrainStationGymGuideText:
 	text "The Magnet Train"
 	line "is a super-modern"
-
-	para "rail liner that"
-	line "uses electricity"
-
-	para "and magnets to"
-	line "attain incredible"
+	cont "rail liner that"
+	cont "uses electricity"
+	cont "and magnets to"
+	cont "attain incredible"
 	cont "speed."
 
 	para "However, if there"
@@ -201,17 +181,15 @@ SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart:
 
 	para "How many times"
 	line "have I gone back"
-
-	para "and forth between"
-	line "Kanto and Johto?"
+	cont "and forth between"
+	cont "Kanto and Johto?"
 	done
 
 SaffronMagnetTrainStationTeacherText:
 	text "Before the Magnet"
 	line "Train Station was"
-
-	para "built, there was a"
-	line "house there."
+	cont "built, there was a"
+	cont "house there."
 
 	para "A little girl"
 	line "named Copycat used"
@@ -220,13 +198,14 @@ SaffronMagnetTrainStationTeacherText:
 
 SaffronMagnetTrainStationLassText:
 	text "Hi. Do you have a"
-	line "rail Pass? I have"
+	line "rail Pass?"
 
-	para "one. All the peo-"
-	line "ple in Saffron who"
+	para "I have one."
 
-	para "ride the Magnet"
-	line "Train have Passes."
+	para "All the people"
+	line "in Saffron who"
+	cont "ride the Magnet"
+	cont "Train have Passes."
 	done
 	
 SaffronMagnetTrainStation_MapEvents:

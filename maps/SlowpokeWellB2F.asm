@@ -22,10 +22,7 @@ SlowpokeWellB2FGymGuideScript:
 	end
 
 .GotKingsRock:
-	writetext SlowpokeWellB2FGymGuideText_GotKingsRock
-	waitbutton
-	closetext
-	end
+	writetextend SlowpokeWellB2FGymGuideText_GotKingsRock
 
 SlowpokeWellB2FWaterStone:
 	itemball WATER_STONE
@@ -41,9 +38,8 @@ SlowpokeWellB2FGymGuideText:
 
 	para "A Slowpoke with a"
 	line "King's Rock often"
-
-	para "gets bitten by a"
-	line "Shellder."
+	cont "gets bitten by a"
+	cont "Shellder."
 
 	para "Here, I'll share a"
 	line "King's Rock with"

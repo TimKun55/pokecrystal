@@ -40,10 +40,7 @@ VermilionCityMachop:
 	closetext
 	earthquake 30
 	opentext
-	writetext VermilionCityMachopText2
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityMachopText2
 
 VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText
@@ -57,22 +54,13 @@ VermilionGymBadgeGuy:
 	ifequal NUM_BADGES, .AllBadges
 	ifgreater 13, .MostBadges
 	ifgreater 9, .SomeBadges
-	writetext VermilionCityBadgeGuyTrainerText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityBadgeGuyTrainerText
 
 .SomeBadges:
-	writetext VermilionCityBadgeGuySomeBadgesText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityBadgeGuySomeBadgesText
 
 .MostBadges:
-	writetext VermilionCityBadgeGuyMostBadgesText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityBadgeGuyMostBadgesText
 
 .AllBadges:
 	writetext VermilionCityBadgeGuyAllBadgesText
@@ -102,10 +90,7 @@ VermilionCityTutorScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 .TutorRefused
-	writetext VermilionCityTutorHurricaneRefused
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityTutorHurricaneRefused
 	
 .TeachMove
 	writetext VermilionCityTutorPayment
@@ -113,16 +98,10 @@ VermilionCityTutorScript:
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetext VermilionCityTutorHurricaneTaught
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityTutorHurricaneTaught
 
 .NotEnough
-	writetext VermilionCityTutorNotEnough
-	waitbutton
-	closetext
-	end
+	writetextend VermilionCityTutorNotEnough
 	
 VermilionSnorlax:
 	end
@@ -215,9 +194,8 @@ VermilionCityBadgeGuySomeBadgesText:
 VermilionCityBadgeGuyMostBadgesText:
 	text "I guess you'll be"
 	line "finished with your"
-
-	para "conquest of Kanto"
-	line "Gyms soon."
+	cont "conquest of Kanto"
+	cont "Gyms soon."
 
 	para "Let me know if"
 	line "you get all eight"
@@ -237,9 +215,8 @@ VermilionCityBadgeGuyAllBadgesText:
 VermilionCityBadgeGuyBattleEdgeText:
 	text "Having a variety"
 	line "of #mon types"
-
-	para "should give you an"
-	line "edge in battle."
+	cont "should give you an"
+	cont "edge in battle."
 
 	para "I'm sure the Kanto"
 	line "Gym Badges will"
@@ -266,9 +243,8 @@ VermilionCityTutorHurricaneText:
 VermilionCityTutorHurricaneText2:
 	text "Would you like me"
 	line "to teach your"
-
-	para "#mon to use"
-	line "Hurricane for"
+	cont "#mon to use"
+	cont "Hurricane for"
 	cont "¥20,000?"
 	done
 
@@ -285,9 +261,8 @@ VermilionCityTutorHurricaneTaught:
 	text "It's a very"
 	line "powerful move that"
 	cont "hits hard, and can"
-	
-	para "even confuse the"
-	line "foe, if it hits!"
+	cont "even confuse the"
+	cont "foe, if it hits!"
 
 	para "It's deadly in"
 	line "the rain, too!"

@@ -19,11 +19,7 @@ TrainerGruntM29:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM29AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM29AfterBattleText
 
 SlowpokeWellProton:
 	trainer PROTON, PROTON1, EVENT_BEAT_PROTON_1, SlowpokeWellProtonSeenText, SlowpokeWellProtonBeatenText, 0, .Script
@@ -72,22 +68,14 @@ TrainerGruntM2:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntM2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntM2AfterBattleText
 
 TrainerGruntF1:
 	trainer GRUNTF, GRUNTF_1, EVENT_BEAT_ROCKET_GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext GruntF1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext GruntF1AfterBattleText
 
 SlowpokeWellB1FSlowpokeWithMailScript:
 	faceplayer
@@ -100,10 +88,7 @@ SlowpokeWellB1FSlowpokeWithMailScript:
 	end
 
 .ReadMail:
-	writetext SlowpokeWellB1FSlowpokeMailText
-	waitbutton
-	closetext
-	end
+	writetextend SlowpokeWellB1FSlowpokeMailText
 
 SlowpokeWellB1FTaillessSlowpokeScript:
 	faceplayer
@@ -153,9 +138,8 @@ KurtLeaveSlowpokeWellText:
 GruntM29SeenText:
 	text "Darn! I was stand-"
 	line "ing guard up top"
-
-	para "when some old coot"
-	line "yelled at me."
+	cont "when some old coot"
+	cont "yelled at me."
 
 	para "He startled me so"
 	line "much that I fell"
@@ -174,18 +158,16 @@ GruntM29BeatenText:
 GruntM29AfterBattleText:
 	text "Sure, we've been"
 	line "hacking the tails"
-
-	para "off Slowpoke and"
-	line "selling them."
+	cont "off Slowpoke and"
+	cont "selling them."
 
 	para "Everything we do"
 	line "is for profit."
 
 	para "That's right!"
 	line "We're Team Rocket,"
-
-	para "and we'll do any-"
-	line "thing for money!"
+	cont "and we'll do any-"
+	cont "thing for money!"
 	done
 
 SlowpokeWellProtonSeenText:
@@ -272,9 +254,8 @@ SlowpokeWellB1FSlowpokeMailText:
 
 	para "Be good and look"
 	line "after the house"
-
-	para "with Grandpa and"
-	line "Slowpoke."
+	cont "with Grandpa and"
+	cont "Slowpoke."
 
 	para "Love, Dad"
 	done

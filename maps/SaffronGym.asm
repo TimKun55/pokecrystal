@@ -60,16 +60,10 @@ SaffronGymSabrinaScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 .Finish
-	writetext SabrinaMarshBadgeText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaMarshBadgeText
 
 .FightDone:
-	writetext SabrinaFightDoneText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaFightDoneText
 
 .SabrinaScript_Rematch
 	checkflag ENGINE_DAILY_SABRINA_REMATCH
@@ -84,22 +78,13 @@ SaffronGymSabrinaScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_SABRINA_REMATCH
 	opentext
-	writetext SabrinaRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaRematchAfterBattleText
 
 .skip_rematch
-	writetext SabrinaComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaComeBackTomorrowText
 
 .EndRematch
-	writetext SabrinaNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend SabrinaNextTimeText
 
 SaffronGymAlakazam:
 	opentext
@@ -118,60 +103,38 @@ TrainerHexManiacRebecca:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HexManiacRebeccaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HexManiacRebeccaAfterBattleText
 
 TrainerPsychicFranklin:
 	trainer PSYCHIC_T, FRANKLIN, EVENT_BEAT_PSYCHIC_FRANKLIN, PsychicFranklinSeenText, PsychicFranklinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicFranklinAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicFranklinAfterBattleText
 
 TrainerHexManiacDoris:
 	trainer HEX_MANIAC, DORIS, EVENT_BEAT_HEX_MANIAC_DORIS, HexManiacDorisSeenText, HexManiacDorisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HexManiacDorisAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HexManiacDorisAfterBattleText
 
 TrainerPsychicJared:
 	trainer PSYCHIC_T, JARED, EVENT_BEAT_PSYCHIC_JARED, PsychicJaredSeenText, PsychicJaredBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicJaredAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicJaredAfterBattleText
 
 SaffronGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_SABRINA
 	iftrue .SaffronGymGuideWinScript
-	writetext SaffronGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronGymGuideText
 
 .SaffronGymGuideWinScript:
-	writetext SaffronGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronGymGuideWinText
 
 SaffronGymStatue:
 	checkflag ENGINE_MARSHBADGE
@@ -194,12 +157,10 @@ SabrinaIntroText:
 
 	para "I don't enjoy bat-"
 	line "tling, but it's my"
-
-	para "duty as a Leader"
-	line "to confer Badges"
-
-	para "on anyone who has"
-	line "proven him- or"
+	cont "duty as a Leader"
+	cont "to confer Badges"
+	cont "on anyone who has"
+	cont "proven him- or"
 	cont "herself worthy."
 
 	para "Since you wish it,"
@@ -216,9 +177,8 @@ SabrinaWinLossText:
 
 	para "Maybe it isn't"
 	line "possible to fully"
-
-	para "predict what the"
-	line "future holds…"
+	cont "predict what the"
+	cont "future holds…"
 
 	para "OK, you win. You"
 	line "earned yourself"
@@ -233,9 +193,8 @@ ReceivedMarshBadgeText:
 SabrinaMarshBadgeText:
 	text "Sabrina: The"
 	line "MarshBadge draws"
-
-	para "out your sub-"
-	line "liminal powers…"
+	cont "out your sub-"
+	cont "liminal powers…"
 
 	para "Although I failed"
 	line "to accurately pre-"
@@ -251,34 +210,32 @@ SabrinaMarshBadgeText:
 SabrinaFightDoneText:
 	text "Sabrina: Your love"
 	line "for your #mon"
-
-	para "overwhelmed my"
-	line "psychic power…"
+	cont "overwhelmed my"
+	cont "psychic power…"
 
 	para "The power of love,"
 	line "I think, is also a"
-
-	para "kind of psychic"
-	line "power…"
+	cont "kind of psychic"
+	cont "power…"
 	done
 
 SabrinaRematchIntroText:
 	text "<PLAYER>."
 	line "I had a feeling"
 	cont "you would be back."
-	
+
 	para "You're here for"
 	line "a rematch, yes?"
 	done
-	
+
 SabrinaWinLossRematchText:
 	text "I see…"
 	done
-	
+
 SabrinaRematchAfterBattleText:
 	text "Your powers are"
 	line "growing well."
-	
+
 	para "I would like it if"
 	line "came back for a"
 	cont "rematch sometime."
@@ -359,9 +316,8 @@ PsychicJaredBeatenText:
 PsychicJaredAfterBattleText:
 	text "Karate King, the"
 	line "master of the"
-
-	para "Fighting Dojo, was"
-	line "just destroyed by"
+	cont "Fighting Dojo, was"
+	cont "just destroyed by"
 	cont "Sabrina."
 	done
 
@@ -371,12 +327,10 @@ SaffronGymGuideText:
 
 	para "A trainer as"
 	line "skilled as you"
-
-	para "doesn't need to be"
-	line "told how to deal"
-
-	para "with psychic-type"
-	line "#mon, right?"
+	cont "doesn't need to be"
+	cont "told how to deal"
+	cont "with psychic-type"
+	cont "#mon, right?"
 
 	para "I expect great"
 	line "things from you!"

@@ -28,55 +28,35 @@ TrainerBugCatcherRob:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherRobAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherRobAfterBattleText
 
 TrainerBugCatcherEd:
 	trainer BUG_CATCHER, ED, EVENT_BEAT_BUG_CATCHER_ED, BugCatcherEdSeenText, BugCatcherEdBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherEdAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherEdAfterBattleText
 
 TrainerBugCatcherDoug:
 	trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherDougAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherDougAfterBattleText
 	
 TrainerBugManiacMatt:
 	trainer BUG_MANIAC, MATT, EVENT_BEAT_BUG_MANIAC_MATT, BugManiacMattSeenText, BugManiacMattBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacMattAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacMattAfterBattleText
 	
 TrainerBugManiacTobi:
 	trainer BUG_MANIAC, TOBI, EVENT_BEAT_BUG_MANIAC_TOBI, BugManiacTobiSeenText, BugManiacTobiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacTobiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacTobiAfterBattleText
 	
 ViridianForestOfficerScript:
 	jumptextfaceplayer ViridianForestOfficerText
@@ -127,9 +107,8 @@ BugCatcherRobAfterBattleText:
 BugCatcherEdSeenText:
 	text "If you walk in"
 	line "tall grass wearing"
-
-	para "shorts, do you get"
-	line "nicks and cuts?"
+	cont "shorts, do you get"
+	cont "nicks and cuts?"
 	done
 
 BugCatcherEdBeatenText:
@@ -154,9 +133,8 @@ BugCatcherDougBeatenText:
 BugCatcherDougAfterBattleText:
 	text "Bug #mon squish"
 	line "like plush toys"
-
-	para "when you squeeze"
-	line "their bellies."
+	cont "when you squeeze"
+	cont "their bellies."
 
 	para "I love how they"
 	line "feel!"
@@ -183,8 +161,7 @@ BugManiacTobiSeenText:
 	text "I've been trying"
 	line "to beat Brock for"
 	cont "ages, and I think"
-	
-	para "I'm finally ready!"
+	cont "I'm finally ready!"
 	done
 
 BugManiacTobiBeatenText:
@@ -195,20 +172,19 @@ BugManiacTobiBeatenText:
 BugManiacTobiAfterBattleText:
 	text "I love my #mon"
 	line "but their types"
-
-	para "are a bad matchup"
-	line "for Brock."
+	cont "are a bad matchup"
+	cont "for Brock."
 	done
-	
+
 ViridianForestOfficerText:
 	text "We had a tip that"
 	line "there's a house"
 	cont "hidden close by."
-	
+
 	para "Apparently it's a"
 	line "hideout for an ex-"
 	cont "mob boss..."
-	done 
+	done
 
 ViridianForest1SignText:
 	text "Viridian Forest"

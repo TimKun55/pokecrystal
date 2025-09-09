@@ -9,8 +9,6 @@ RuinsOfAlphGSBallChamber_MapScripts:
 	def_callbacks
 
 RuinsOfAlphGSBallChamberGSBallScene:
-	end
-
 RuinsOfAlphGSBallChamberGSBallNoopScene:
 	end
 

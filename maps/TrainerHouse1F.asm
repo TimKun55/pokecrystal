@@ -50,17 +50,11 @@ TrainerHouse1FScientistScript:
 	iffalse .NotUnlocked
 	checkevent EVENT_BEAT_THORTON_FIRST_TIME
 	iffalse .NotUnlocked
-	writetext TrainerHouse1FScientistUnlockedModesText
-	waitbutton
-	closetext
 	setevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
-	end
+	writetextend TrainerHouse1FScientistUnlockedModesText
 
 .NotUnlocked:
-	writetext TrainerHouse1FScientistGoodluckText
-	waitbutton
-	closetext
-	end
+	writetextend TrainerHouse1FScientistGoodluckText
 
 TrainerHouseSign1:
 	jumptext TrainerHouseSign1Text
@@ -74,18 +68,16 @@ TrainerHouseIllegibleBook:
 TrainerHouse1FReceptionistText:
 	text "Welcome to Trainer"
 	line "House, the newest"
-
-	para "and most happening"
-	line "place in Viridian."
+	cont "and most happening"
+	cont "place in Viridian."
 
 	para "We're open to"
 	line "trainers only."
 
 	para "You can battle"
 	line "against the best"
-
-	para "of the best right"
-	line "downstairs."
+	cont "of the best right"
+	cont "downstairs."
 	done
 
 TrainerHouse1FCooltrainerMText:
@@ -95,12 +87,10 @@ TrainerHouse1FCooltrainerMText:
 
 	para "They built this"
 	line "place because so"
-
-	para "many trainers pass"
-	line "through on their"
-
-	para "way up to Indigo"
-	line "Plateau."
+	cont "many trainers pass"
+	cont "through on their"
+	cont "way up to Indigo"
+	cont "Plateau."
 	done
 
 TrainerHouse1FCooltrainerFText:
@@ -110,26 +100,22 @@ TrainerHouse1FCooltrainerFText:
 
 	para "I would love to"
 	line "see how well a"
-
-	para "trainer from Johto"
-	line "battles."
+	cont "trainer from Johto"
+	cont "battles."
 	done
 
 TrainerHouse1FYoungsterText:
 	text "I guess you can't"
 	line "become the Champ"
-
-	para "unless you go all"
-	line "over the place and"
-
-	para "battle all kinds"
-	line "of people."
+	cont "unless you go all"
+	cont "over the place and"
+	cont "battle all kinds"
+	cont "of people."
 
 	para "The Champion from"
 	line "Pallet traveled to"
-
-	para "all the cities and"
-	line "towns in Kanto."
+	cont "all the cities and"
+	cont "towns in Kanto."
 	done
 
 TrainerHouse1FGentlemanText:
@@ -142,7 +128,7 @@ TrainerHouse1FScientistGreetingText:
 	text "Hello."
 	line "I'm from Johto's"
 	cont "Battle Tower."
-	
+
 	para "I'm observing the"
 	line "types of battles"
 	cont "being offered here"
@@ -154,7 +140,7 @@ TrainerHouse1FScientistGreetingText:
 
 TrainerHouse1FScientistUnlockedModesText:
 	text "Hello!"
-	
+
 	para "You've defeated"
 	line "both Thorton and"
 	cont "Inver!"
@@ -167,7 +153,7 @@ TrainerHouse1FScientistUnlockedModesText:
 	cont "and Inverse bat-"
 	cont "tles at the"
 	cont "Battle Tower!"
-	
+
 	para "Look forward to"
 	line "challenging them!"
 	done
@@ -181,9 +167,8 @@ TrainerHouse1FScientistGoodluckText:
 TrainerHouseSign1Text:
 	text "Practice battles"
 	line "are held in the"
-
-	para "Training Hall"
-	line "downstairs."
+	cont "Training Hall"
+	cont "downstairs."
 
 	para "Skilled trainers"
 	line "are invited to"
@@ -193,12 +178,11 @@ TrainerHouseSign1Text:
 TrainerHouseSign2Text:
 	text "There are no rules"
 	line "or regulations for"
-
-	para "practice matches."
-	line "Just like in field"
-
-	para "battles, anything"
-	line "goes!"
+	cont "practice matches."
+	
+	para "Just like in field"
+	line "battles, anything"
+	cont "goes!"
 	done
 
 TrainerHouseIllegibleText:

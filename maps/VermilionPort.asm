@@ -11,11 +11,9 @@ VermilionPort_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionPortFlypointCallback
 
-VermilionPortNoopScene:
-	end
-
 VermilionPortLeaveShipScene:
 	sdefer VermilionPortLeaveShipScript
+VermilionPortNoopScene:
 	end
 
 VermilionPortFlypointCallback:
@@ -71,10 +69,7 @@ VermilionPortSailorAtGangwayScript:
 	end
 
 VermilionPortAlreadyRodeScript:
-	writetext VermilionPortCantBoardText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPortCantBoardText
 
 VermilionPortWalkUpToShipScript:
 	turnobject VERMILIONPORT_SAILOR2, RIGHT
@@ -118,10 +113,7 @@ VermilionPortWalkUpToShipScript:
 	end
 
 VermilionPortNotRidingScript:
-	writetext VermilionPortComeAgainText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPortComeAgainText
 
 VermilionPortNotRidingMoveAwayScript:
 	writetext VermilionPortComeAgainText
@@ -152,24 +144,13 @@ VermilionPortSailorScript:
 	sjump VermilionPortSailorAtGangwayScript
 
 .NextShipWednesday:
-	writetext VermilionPortSailMondayText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPortSailMondayText
 
 .NextShipSunday:
-	writetext VermilionPortSailSundayText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPortSailSundayText
 
 VermilionPortSuperNerdScript:
-	faceplayer
-	opentext
-	writetext VermilionPortSuperNerdText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer VermilionPortSuperNerdText
 
 VermilionPortTruck1:
 	jumptext VermilionPortTruckText

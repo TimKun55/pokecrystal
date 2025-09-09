@@ -25,10 +25,7 @@ VioletCityEarlScript:
 	writetext Text_EarlAsksIfYouBeatFalkner
 	yesorno
 	iftrue .FollowEarl
-	writetext Text_MoreTraining
-	waitbutton
-	closetext
-	end
+	writetextend Text_MoreTraining
 
 .FollowEarl:
 	writetext Text_FollowEarl
@@ -216,7 +213,7 @@ Text_MoreTraining:
 	text "Hmm, I see."
 	line "More training,"
 	cont "you need?"
-	
+
 	para "Try Sprout Tower,"
 	line "you should."
 	done
@@ -241,9 +238,8 @@ VioletCityLassText:
 
 	para "They said normal-"
 	line "type #mon moves"
-
-	para "had no effect on"
-	line "ghosts."
+	cont "had no effect on"
+	cont "ghosts."
 	done
 
 VioletCitySuperNerdText:
@@ -252,23 +248,20 @@ VioletCitySuperNerdText:
 
 	para "If you beat the"
 	line "Gym Leader,"
-
-	para "you'll be ready"
-	line "for prime time!"
+	cont "you'll be ready"
+	cont "for prime time!"
 	done
 
 VioletCityGrampsText:
 	text "Falkner, from the"
 	line "Violet #mon"
-
-	para "Gym, is a fine"
-	line "trainer!"
+	cont "Gym, is a fine"
+	cont "trainer!"
 
 	para "He inherited his"
 	line "father's gym and"
-
-	para "has done a great"
-	line "job with it."
+	cont "has done a great"
+	cont "job with it."
 	done
 
 VioletCityYoungsterText:

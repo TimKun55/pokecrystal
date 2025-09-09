@@ -18,8 +18,6 @@ VictoryRoad3F_MapScripts:
 	def_callbacks
 
 VictoryRoad3FNoop1Scene:
-	end
-
 VictoryRoad3FNoop2Scene:
 	end
 
@@ -93,10 +91,7 @@ VictoryRoad3FRivalNext:
 	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
-	writetext VictoryRoadRivalAfterText
-	waitbutton
-	closetext
-	end
+	writetextend VictoryRoadRivalAfterText
 
 VictoryRoad3FUltraBall:
 	itemball ULTRA_BALL
@@ -166,28 +161,27 @@ VictoryRoadRivalBeforeText:
 
 	para "But did you"
 	line "notice…?"
-	
+
 	para "You didn't see any"
 	line "real trainers on"
 	cont "the way, did you?"
-	
+
 	para "Man, they were"
 	line "all spineless!"
-	
+
 	para "Well, the fact"
 	line "that you have"
-	
-	para "come this far"
-	line "means you're not"
+	cont "come this far"
+	cont "means you're not"
 	cont "one of them."
 
 	para "But!"
-	
+
 	para "Your journey"
 	line "ends here!"
 
 	para "Because…"
-	
+
 	para "right here,"
 	line "right now…"
 
@@ -205,23 +199,21 @@ VictoryRoadRivalDefeatText:
 
 	para "I'm beginning to"
 	line "understand what"
-
-	para "that dragon master"
-	line "said to me…"
+	cont "that dragon master"
+	cont "said to me…"
 	done
 
 VictoryRoadRivalAfterText:
 	text "…… …… ……"
-	
+
 	para "I haven't given up"
 	line "on becoming the"
 	cont "greatest trainer…"
 
 	para "I'm going to find"
 	line "out why I can't"
-
-	para "win and become"
-	line "stronger…"
+	cont "win and become"
+	cont "stronger…"
 
 	para "When I do, I will"
 	line "challenge you."

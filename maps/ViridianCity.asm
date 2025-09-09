@@ -20,32 +20,20 @@ ViridianCityCoffeeGramps:
 	writetext ViridianCityCoffeeGrampsQuestionText
 	yesorno
 	iffalse .no
-	writetext ViridianCityCoffeeGrampsBelievedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityCoffeeGrampsBelievedText
 
 .no:
-	writetext ViridianCityCoffeeGrampsDoubtedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityCoffeeGrampsDoubtedText
 
 ViridianCityGrampsNearGym:
 	faceplayer
 	opentext
 	checkevent EVENT_BLUE_IN_CINNABAR
 	iftrue .BlueReturned
-	writetext ViridianCityGrampsNearGymText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityGrampsNearGymText
 
 .BlueReturned:
-	writetext ViridianCityGrampsNearGymBlueReturnedText
-	waitbutton
-	closetext
-	end
+	writetextend ViridianCityGrampsNearGymBlueReturnedText
 
 ViridianCityDreamEaterFisher:
 	faceplayer
@@ -88,9 +76,8 @@ ViridianCityMartSign:
 ViridianCityCoffeeGrampsQuestionText:
 	text "Hey, kid! I just"
 	line "had a double shot"
-
-	para "of espresso, and"
-	line "I am wired!"
+	cont "of espresso, and"
+	cont "I am wired!"
 
 	para "I need to talk to"
 	line "someone, so you'll"
@@ -98,9 +85,8 @@ ViridianCityCoffeeGrampsQuestionText:
 
 	para "I might not look"
 	line "like much now, but"
-
-	para "I was an expert at"
-	line "catching #mon."
+	cont "I was an expert at"
+	cont "catching #mon."
 
 	para "Do you believe me?"
 	done
@@ -108,9 +94,8 @@ ViridianCityCoffeeGrampsQuestionText:
 ViridianCityCoffeeGrampsBelievedText:
 	text "Good, good. Yes, I"
 	line "was something out"
-
-	para "of the ordinary,"
-	line "let me tell you!"
+	cont "of the ordinary,"
+	cont "let me tell you!"
 	done
 
 ViridianCityCoffeeGrampsDoubtedText:
@@ -119,9 +104,8 @@ ViridianCityCoffeeGrampsDoubtedText:
 
 	para "If I were just a"
 	line "bit younger, I'd"
-
-	para "show you a thing"
-	line "or two. Humph!"
+	cont "show you a thing"
+	cont "or two. Humph!"
 	done
 
 ViridianCityGrampsNearGymText:
@@ -131,9 +115,8 @@ ViridianCityGrampsNearGymText:
 
 	para "A young man from"
 	line "Pallet became the"
-
-	para "Leader, but he's"
-	line "often away."
+	cont "Leader, but he's"
+	cont "often away."
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:
@@ -152,9 +135,8 @@ ViridianCityDreamEaterFisherText:
 
 	para "…I had this dream"
 	line "about a Drowzee"
-
-	para "eating my dream."
-	line "Weird, huh?"
+	cont "eating my dream."
+	cont "Weird, huh?"
 
 	para "Huh?"
 	line "What's this?"
@@ -177,9 +159,8 @@ ViridianCityDreamEaterFisherGotDreamEaterText:
 ViridianCityYoungsterText:
 	text "I heard that there"
 	line "are many items on"
-
-	para "the ground in"
-	line "Viridian Forest."
+	cont "the ground in"
+	cont "Viridian Forest."
 	done
 
 ViridianCitySignText:

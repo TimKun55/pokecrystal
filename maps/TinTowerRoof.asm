@@ -11,11 +11,7 @@ TinTowerRoof_MapScripts:
 	callback MAPCALLBACK_OBJECTS, TinTowerRoofHoOhCallback
 
 TinTowerRoofNoop1Scene:
-	end
-
 TinTowerRoofNoop2Scene:
-	end
-
 TinTowerRoofNoop3Scene:
 	end
 
@@ -30,8 +26,6 @@ TinTowerRoofRainbowWingCheck:
 	waitbutton
 	closetext
 	setscene SCENE_TINTOWERROOF_HO_OH_APPEAR
-	end
-	
 .NoWing
 	end
 	
@@ -52,8 +46,6 @@ TinTowerRoofHoohAppear:
 	waitbutton
 	closetext
 	setscene SCENE_WHIRLISLANDLUGIACHAMBER_NOOP
-	end
-
 .NoWing
 	end
 

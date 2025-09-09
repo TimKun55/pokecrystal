@@ -31,34 +31,19 @@ PrimosHousePrimoScript:
 	waitsfx
 	givepoke SLUGMA, 10
 	setevent EVENT_GOT_SLUGMA
-	writetext PrimoSlugmaComeInHandyText
-	waitbutton
-	closetext
-	end
+	writetextend PrimoSlugmaComeInHandyText
 
 .NoRoom:
-	writetext PrimoPartyFullText
-	waitbutton
-	closetext
-	end
+	writetextend PrimoPartyFullText
 
 .Refused:
-	writetext PrimoNoSlugmaText
-	waitbutton
-	closetext
-	end
+	writetextend PrimoNoSlugmaText
 
 .GotSlugma:
-	writetext PrimoLoveJohtoText
-	waitbutton
-	closetext
-	end
+	writetextend PrimoLoveJohtoText
 	
 .BeatFalkner
-	writetext PrimoBeatFalknerText
-	waitbutton
-	closetext
-	end
+	writetextend PrimoBeatFalknerText
 	
 PrimosHouseMareepScript:
 	opentext
@@ -115,7 +100,7 @@ PrimoBeatFalknerText:
 	text "Hmm, you don't"
 	line "seem to have any"
 	cont "Gym Badges."
-	
+
 	para "Defeat Falkner and"
 	line "I'll have some-"
 	cont "thing for you!"
@@ -133,9 +118,8 @@ PrimoAmazingText:
 	text "Amazing!"
 	line "Slugma isn't easy"
 	cont "to raise but"
-
-	para "it can be very"
-	line "useful with the"
+	cont "it can be very"
+	cont "useful with the"
 	cont "right team."
 	done
 
@@ -148,9 +132,8 @@ PrimoSlugmaComeInHandyText:
 	text "As a fire-type,"
 	line "Slugma will"
 	cont "definitely come"
-	
-	para "in handy in the"
-	line "Azalea Gym!"
+	cont "in handy in the"
+	cont "Azalea Gym!"
 	done
 
 PrimoPartyFullText:
@@ -171,11 +154,11 @@ PrimoLoveJohtoText:
 	text "Moving here from"
 	line "Viridian City was"
 	cont "a bit hectic!"
-	
+
 	para "But I absolutely"
 	line "love Johto!"
 	done
-	
+
 PrimosHouseMareepText:
 	text "Mareep: Meep!"
 	done

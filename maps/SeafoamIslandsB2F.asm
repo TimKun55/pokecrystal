@@ -14,33 +14,21 @@ TrainerSkierCady:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SkierCadyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SkierCadyAfterBattleText
 
 TrainerBoarderShaun:
 	trainer BOARDER, SHAUN, EVENT_BEAT_BOARDER_SHAUN, BoarderShaunSeenText, BoarderShaunBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BoarderShaunAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BoarderShaunAfterBattleText
 
 TrainerBoarderBryce:
 	trainer BOARDER, BRYCE, EVENT_BEAT_BOARDER_BRYCE, BoarderBryceSeenText, BoarderBryceBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BoarderBryceAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BoarderBryceAfterBattleText
 
 SeafoamIslandsB2FWaterStone:
 	itemball WATER_STONE

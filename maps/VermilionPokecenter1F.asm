@@ -21,16 +21,10 @@ VermilionPokecenter1FFishingGuruScript:
 	opentext
 	checkevent EVENT_FOUGHT_SNORLAX
 	iftrue .FoughtSnorlax
-	writetext VermilionPokecenter1FFishingGuruText
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPokecenter1FFishingGuruText
 
 .FoughtSnorlax:
-	writetext VermilionPokecenter1FFishingGuruText_FoughtSnorlax
-	waitbutton
-	closetext
-	end
+	writetextend VermilionPokecenter1FFishingGuruText_FoughtSnorlax
 
 VermilionPokecenter1FSailorScript:
 	jumptextfaceplayer VermilionPokecenter1FSailorText
@@ -45,17 +39,15 @@ VermilionPokecenter1FFishingGuruText:
 
 	para "It's a fantastic"
 	line "opportunity to get"
-
-	para "it, but how do you"
-	line "wake it up?"
+	cont "it, but how do you"
+	cont "wake it up?"
 	done
 
 VermilionPokecenter1FFishingGuruText_FoughtSnorlax:
 	text "There used to be a"
 	line "sleeping #mon"
-
-	para "lying in front of"
-	line "Diglett's Cave."
+	cont "lying in front of"
+	cont "Diglett's Cave."
 
 	para "But it seems to"
 	line "have disappeared."
@@ -64,9 +56,8 @@ VermilionPokecenter1FFishingGuruText_FoughtSnorlax:
 VermilionPokecenter1FSailorText:
 	text "The Fast Ship is a"
 	line "great place to"
-
-	para "meet and battle"
-	line "trainers."
+	cont "meet and battle"
+	cont "trainers."
 	done
 
 VermilionPokecenter1FBugCatcherText:

@@ -50,20 +50,10 @@ SeafoamGymBlaineScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 .Finish:
-	writetext BlaineAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineAfterBattleText
 
 .FightDone:
-	writetext BlaineFightDoneText
-	waitbutton
-	closetext
-	end
-	
-.afterbattle16
-	setevent EVENT_BEAT_KANTO_LEADERS
-	end
+	writetextend BlaineFightDoneText
 	
 .BlaineScript_Rematch
 	checkflag ENGINE_DAILY_BLAINE_REMATCH
@@ -78,22 +68,13 @@ SeafoamGymBlaineScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_BLAINE_REMATCH
 	opentext
-	writetext BlaineRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineRematchAfterBattleText
 
 .skip_rematch
-	writetext BlaineComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineComeBackTomorrowText
 
 .EndRematch
-	writetext BlaineNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend BlaineNextTimeText
 	
 SeafoamGymMagmar:
 	opentext
@@ -124,38 +105,24 @@ TrainerFirebreatherDick:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FirebreatherDickAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FirebreatherDickAfterBattleText
 
 TrainerFirebreatherNed:
 	trainer FIREBREATHER, NED, EVENT_BEAT_FIREBREATHER_NED, FirebreatherNedSeenText, FirebreatherNedBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FirebreatherNedAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FirebreatherNedAfterBattleText
 
 SeafoamGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_BLAINE
 	iftrue .SeafoamGymGuideWinScript
-	writetext SeafoamGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend SeafoamGymGuideText
 
 .SeafoamGymGuideWinScript:
-	writetext SeafoamGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend SeafoamGymGuideWinText
 
 SeafoamGymStatue:
 	checkflag ENGINE_VOLCANOBADGE

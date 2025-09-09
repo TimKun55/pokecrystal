@@ -10,12 +10,7 @@ SaffronAviculturalSociety2F_MapScripts:
 	def_callbacks
 
 AviculturalSociety2FBirdKeeper1Script:
-	faceplayer
-	opentext
-	writetext AviculturalSocietyBirdKeeper1Text
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer AviculturalSocietyBirdKeeper1Text
 
 AviculturalSocietyMurkrowScript:
 	opentext
@@ -67,11 +62,10 @@ AviculturalSocietyBirdKeeper1Text:
 	text "We've gathered as"
 	line "much information"
 	cont "about the"
-	
-	para "Legendary Bird"
-	line "#mon as we"
+	cont "Legendary Bird"
+	cont "#mon as we"
 	cont "possibly could."
-	
+
 	para "They're such maje-"
 	line "stic and powerful"
 	cont "creatures."
@@ -81,9 +75,8 @@ AviculturalSociety2FBirdKeeper2Text:
 	text "You've done well"
 	line "to make it up"
 	cont "here, but to go"
-	
-	para "to the top floor"
-	line "you'll need to"
+	cont "to the top floor"
+	cont "you'll need to"
 	cont "have defeated"
 	cont "Blaine in battle."
 	done
@@ -96,15 +89,15 @@ AviculturalSocietyBirdKeeper2NoEntryText:
 AviculturalSocietyBirdKeeper2YouMayPassText:
 	text "You've defeated"
 	line "Blaine?"
-	
+
 	para "Please go on up."
-	done 
+	done
 
 AviculturalSocietyMurkrowText:
 	text "Murkrow: Row!"
 	line "Krow! Mur!"
 	done
-	
+
 AviculturalSocietySkarmoryText:
 	text "Skarmory: Skaaaar!"
 	done
@@ -118,9 +111,8 @@ AviculturalSocietyArticunoBookshelfText:
 	para "Its current where-"
 	line "abouts are unknown"
 	cont "but others have"
-	
-	para "reported colder"
-	line "temperatures in"
+	cont "reported colder"
+	cont "temperatures in"
 	cont "the southern seas"
 	cont "of Kanto."
 	
@@ -139,13 +131,11 @@ AviculturalSocietyZapdosBookshelfText:
 	para "Its current where-"
 	line "abouts are unknown"
 	cont "but others have"
-
-	para "reported rain"
-	line "in the northern"
+	cont "reported rain"
+	cont "in the northern"
 	cont "parts of Kanto,"
-
-	para "around Cerulean"
-	line "City."
+	cont "around Cerulean"
+	cont "City."
 
 	para "Zapdos, also"
 	line "known as Sandaa."
@@ -160,14 +150,12 @@ AviculturalSocietyMoltresBookshelfText:
 	para "Its current where-"
 	line "abouts are unknown"
 	cont "but others have"
-
-	para "reported increased"
-	line "temperatures in"
+	cont "reported increased"
+	cont "temperatures in"
 	cont "south-east Kanto,"
-	
-	para "seeing something"
-	para "flying around the"
-	line "Cinnabar Volcano."
+	cont "seeing something"
+	cont "flying around the"
+	cont "Cinnabar Volcano."
 
 	para "Moltres, also"
 	line "known as Faiyaa."
@@ -219,20 +207,17 @@ AviculturalSocietyBookText:
 	text "The 3 Legendary"
 	line "Birds were caught"
 	cont "by one powerful"
-	
-	para "trainer who became"
-	line "the Champion."
+	cont "trainer who became"
+	cont "the Champion."
 	
 	para "However, the"
 	line "trainer wanted to"
 	cont "continue on their"
-	
-	para "journey and chose"
-	line "3 poweful Guardian"
+	cont "journey and chose"
+	cont "3 poweful Guardian"
 	cont "trainers to watch" 
-	
-	para "over and protect"
-	line "the Birds."
+	cont "over and protect"
+	cont "the Birds."
 	
 	para "Many have tried"
 	line "to challenge them"

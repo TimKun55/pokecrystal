@@ -25,9 +25,8 @@ VioletKylesHousePokefanMText:
 
 	para "But if you don't"
 	line "have the right Gym"
-
-	para "Badge, they may"
-	line "disobey you."
+	cont "Badge, they may"
+	cont "disobey you."
 	done
 
 VioletKylesHouse_MapEvents:

@@ -47,10 +47,7 @@ VioletGymFalknerScript:
 	verbosegiveitem TM_MUD_SLAP
 	iffalse .NoRoomForMudSlap
 	setevent EVENT_GOT_TM31_MUD_SLAP
-	writetext FalknerTMMudSlapText
-	waitbutton
-	closetext
-	end
+	writetextend FalknerTMMudSlapText
 
 .SpeechAfterTM:
 	writetext FalknerFightDoneText
@@ -72,10 +69,7 @@ VioletGymFalknerScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_FALKNER_REMATCH
 	opentext
-	writetext Falkner16AfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Falkner16AfterBattleText
 
 .FalknerScript_Rematch
 	checkflag ENGINE_DAILY_FALKNER_REMATCH
@@ -90,22 +84,13 @@ VioletGymFalknerScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_FALKNER_REMATCH
 	opentext
-	writetext FalknerRematchAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend FalknerRematchAfterBattleText
 
 .skip_rematch
-	writetext FalknerComeBackTomorrowText
-	waitbutton
-	closetext
-	end
+	writetextend FalknerComeBackTomorrowText
 
 .EndRematch
-	writetext FalknerNextTimeText
-	waitbutton
-	closetext
-	end
+	writetextend FalknerNextTimeText
 
 VioletGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -123,38 +108,24 @@ TrainerBirdKeeperRod:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperRodAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperRodAfterBattleText
 
 TrainerBirdKeeperAbe:
 	trainer BIRD_KEEPER, ABE, EVENT_BEAT_BIRD_KEEPER_ABE, BirdKeeperAbeSeenText, BirdKeeperAbeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperAbeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperAbeAfterBattleText
 
 VioletGymGuideScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .VioletGymGuideWinScript
-	writetext VioletGymGuideText
-	waitbutton
-	closetext
-	end
+	writetextend VioletGymGuideText
 
 .VioletGymGuideWinScript:
-	writetext VioletGymGuideWinText
-	waitbutton
-	closetext
-	end
+	writetextend VioletGymGuideWinText
 
 VioletGymHoothoot:
 	opentext
@@ -199,9 +170,8 @@ FalknerIntroText:
 
 	para "People say you can"
 	line "clip flying-type"
-
-	para "#mon's wings"
-	line "with a jolt of"
+	cont "#mon's wings"
+	cont "with a jolt of"
 	cont "electricity…"
 
 	para "I won't allow such"
@@ -210,9 +180,8 @@ FalknerIntroText:
 
 	para "I'll show you the"
 	line "real power of the"
-
-	para "magnificent bird"
-	line "#mon!"
+	cont "magnificent bird"
+	cont "#mon!"
 	done
 
 FalknerWinLossText:
@@ -237,9 +206,8 @@ FalknerZephyrBadgeText:
 	text "The ZephyrBadge"
 	line "will enable"
 	cont "#mon to use"
-
-	para "Flash, if they"
-	line "have it, anytime."
+	cont "Flash, if they"
+	cont "have it, anytime."
 
 	para "Here--take this"
 	line "too."
@@ -248,9 +216,8 @@ FalknerZephyrBadgeText:
 FalknerTMMudSlapText:
 	text "By using a TM, a"
 	line "#mon will"
-
-	para "instantly learn a"
-	line "new move."
+	cont "instantly learn a"
+	cont "new move."
 
 	para "A TM can be used"
 	line "as many times as"
@@ -261,9 +228,8 @@ FalknerTMMudSlapText:
 
 	para "It reduces the"
 	line "enemy's accuracy"
-
-	para "while it causes"
-	line "damage."
+	cont "while it causes"
+	cont "damage."
 
 	para "In other words, it"
 	line "is both defensive"
@@ -281,52 +247,51 @@ FalknerFightDoneText:
 
 	para "I'm going to train"
 	line "harder to become"
-
-	para "the greatest bird"
-	line "master!"
+	cont "the greatest bird"
+	cont "master!"
 	done
-	
+
 FalknerRematchIntroText:
 	text "<PLAYER>!"
 	line "You're back!"
-	
+
 	para "Feel like having"
 	line "a rematch?"
 	done
-	
+
 FalknerWinLossRematchText:
 	text "Soaring high!"
 	done
-	
+
 FalknerRematchAfterBattleText:
 	text "You're as strong"
 	line "as ever!"
-	
+
 	para "Feel free to"
 	line "come back tomorrow"
 	cont "for a rematch!"
 	done
-	
+
 Falkner16IntroText:
 	text "<PLAYER>!"
 	line "You did it!"
-	
+
 	para "You've beaten all"
 	line "the Kanto Gym"
 	cont "Leaders!"
-	
+
 	para "I can finally use"
 	line "my strongest team"
 	cont "against you!"
-	
+
 	para "Want a rematch?"
 	done
-	
+
 Falkner16AfterBattleText:
 	text "Wow!"
 	line "That was an"
 	cont "amazing battle!"
-	
+
 	para "Feel free to"
 	line "come back tomorrow"
 	cont "for a rematch!"
@@ -346,9 +311,8 @@ FalknerNextTimeText:
 FalknerComeBackTomorrow:
 	text "Battle again?"
 	line "Haha, we need a"
-	
-	para "rest! Come back"
-	line "tomorrow!"
+	cont "rest! Come back"
+	cont "tomorrow!"
 	done
 
 BirdKeeperRodSeenText:
@@ -357,9 +321,8 @@ BirdKeeperRodSeenText:
 
 	para "Those here are"
 	line "training night and"
-
-	para "day to become bird"
-	line "#mon masters."
+	cont "day to become bird"
+	cont "#mon masters."
 
 	para "Come on!"
 	done
@@ -401,26 +364,23 @@ VioletGymGuideText:
 
 	para "Believe me!"
 	line "If you believe, a"
-
-	para "championship dream"
-	line "can come true."
+	cont "championship dream"
+	cont "can come true."
 
 	para "You believe?"
 	line "Then listen."
 
 	para "The grass-type is"
 	line "weak against the"
-
-	para "flying-type. Keep"
-	line "this in mind."
+	cont "flying-type. Keep"
+	cont "this in mind."
 	done
 
 VioletGymGuideWinText:
 	text "Nice battle! Keep"
 	line "it up, and you'll"
-
-	para "be the Champ in no"
-	line "time at all!"
+	cont "be the Champ in no"
+	cont "time at all!"
 	done
 	
 HoothootText:

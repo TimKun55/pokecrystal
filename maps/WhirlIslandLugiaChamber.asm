@@ -11,11 +11,7 @@ WhirlIslandLugiaChamber_MapScripts:
 	callback MAPCALLBACK_OBJECTS, WhirlIslandLugiaChamberLugiaCallback
 
 WhirlIslandLugiaChamberNoop1Scene:
-	end
-
 WhirlIslandLugiaChamberNoop2Scene:
-	end
-
 WhirlIslandLugiaChamberNoop3Scene:
 	end
 
@@ -30,8 +26,6 @@ WhirlIslandLugiaChamberSilverWingCheck:
 	waitbutton
 	closetext
 	setscene SCENE_WHIRLISLANDLUGIACHAMBER_LUGIA_APPEAR
-	end
-	
 .NoWing
 	end
 	
@@ -51,8 +45,6 @@ WhirlIslandLugiaChamberLugiaAppear:
 	waitbutton
 	closetext
 	setscene SCENE_WHIRLISLANDLUGIACHAMBER_NOOP
-	end
-
 .NoWing
 	end
 
@@ -97,13 +89,13 @@ SilverWingGlimmerText:
 	text "The Silver Wing"
 	line "is glowing!"
 	done
-	
+
 WaterfallBurstText:
 	text "Something just"
 	line "burst out of the"
 	cont "giant waterfall!"
 	done
-	
+
 LugiaText:
 	text "Gyaaas!"
 	done

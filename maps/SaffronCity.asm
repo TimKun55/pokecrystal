@@ -20,8 +20,6 @@ SaffronCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, SaffronCityFlypointCallback
 
 SaffronCityNoop1Scene:
-	end
-
 SaffronCityNoop2Scene:
 	end
 
@@ -88,32 +86,20 @@ SaffronCityLass1Script:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext SaffronCityLass1Text
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityLass1Text
 
 .ReturnedMachinePart:
-	writetext SaffronCityLass1Text_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityLass1Text_ReturnedMachinePart
 
 SaffronCityPokefanMScript:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext SaffronCityPokefanMText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityPokefanMText
 
 .ReturnedMachinePart:
-	writetext SaffronCityPokefanMText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityPokefanMText_ReturnedMachinePart
 
 SaffronCityCooltrainerMScript:
 	jumptextfaceplayer SaffronCityCooltrainerMText
@@ -126,16 +112,10 @@ SaffronCityFisherScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetext SaffronCityFisherText
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityFisherText
 
 .ReturnedMachinePart:
-	writetext SaffronCityFisherText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	writetextend SaffronCityFisherText_ReturnedMachinePart
 
 SaffronCityYoungster1Script:
 	jumptextfaceplayer SaffronCityYoungster1Text
@@ -192,15 +172,13 @@ SaffronDisguisedFastMovement:
 SaffronCityLass1Text:
 	text "A little girl who"
 	line "is an expert at"
-
-	para "mimicking people"
-	line "lives here."
+	cont "mimicking people"
+	cont "lives here."
 
 	para "She even mimics"
 	line "the people she's"
-
-	para "conversing with."
-	line "It's confusing."
+	cont "conversing with."
+	cont "It's confusing."
 	done
 
 SaffronCityLass1Text_ReturnedMachinePart:
@@ -237,9 +215,8 @@ SaffronCityCooltrainerMText:
 
 	para "It turns out, I"
 	line "stumbled into the"
-
-	para "unused Gym next"
-	line "door."
+	cont "former Gym next"
+	cont "door."
 
 	para "Boy, I was pretty"
 	line "embarrassed."
@@ -252,9 +229,8 @@ SaffronCityCooltrainerFText:
 
 	para "In the past, Team"
 	line "Rocket wanted the"
-
-	para "company because of"
-	line "that."
+	cont "company because of"
+	cont "that."
 	done
 
 SaffronCityFisherText:
@@ -281,20 +257,17 @@ SaffronCityFisherText_ReturnedMachinePart:
 SaffronCityYoungster1Text:
 	text "Going into an"
 	line "alley for the"
-
-	para "first time makes"
-	line "me sorta anxious."
+	cont "first time makes"
+	cont "me sorta anxious."
 	done
 
 SaffronCityYoungster2Text:
 	text "There's a place"
 	line "called Trainer"
-
-	para "House in Viridian"
-	line "where trainers"
-
-	para "gather from all"
-	line "over the place."
+	cont "House in Viridian"
+	cont "where trainers"
+	cont "gather from all"
+	cont "over the place."
 	done
 
 SaffronCityLass2Text:
@@ -304,25 +277,23 @@ SaffronCityLass2Text:
 
 	para "It's nice to hear"
 	line "praise for your"
-
-	para "city, but it's a"
-	line "bit embarrassing"
+	cont "city, but it's a"
+	cont "bit embarrassing"
 	cont "too."
 	done
 
 SaffronCityTeacherText:
 	text "I know it's conv-"
 	line "enient, but does"
-	
-	para "the Train have to"
-	line "travel quite"
+	cont "the Train have to"
+	cont "travel quite"
 	cont "so fast…?"
 	done
 
 SaffronCityYoungster3Text:
 	text "I can't wait to"
 	line "ride the Train!"
-	
+
 	para "I think Mum is"
 	line "a little scared"
 	cont "of it, though."
