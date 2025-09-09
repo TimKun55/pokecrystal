@@ -32,22 +32,13 @@ RandyScript:
 	givepokemail GiftFarfetchdMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
-	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
-	waitbutton
-	closetext
-	end
+	writetextend Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
 
 .partyfull
-	writetext Route35GoldenrodGateRandyCantCarryAnotherMonText
-	waitbutton
-	closetext
-	end
+	writetextend Route35GoldenrodGateRandyCantCarryAnotherMonText
 
 .refused
-	writetext Route35GoldenrodGateRandyOhNeverMindThenText
-	waitbutton
-	closetext
-	end
+	writetextend Route35GoldenrodGateRandyOhNeverMindThenText
 
 .questcomplete
 	writetext Route35GoldenrodGateRandySomethingForYourTroubleText
@@ -80,16 +71,10 @@ Route35GoldenrodGatePokefanFScript:
 	opentext
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .FoughtSudowoodo
-	writetext Route35GoldenrodGatePokefanFText
-	waitbutton
-	closetext
-	end
+	writetextend Route35GoldenrodGatePokefanFText
 
 .FoughtSudowoodo
-	writetext Route35GoldenrodGatePokefanFText_FoughtSudowoodo
-	waitbutton
-	closetext
-	end
+	writetextend Route35GoldenrodGatePokefanFText_FoughtSudowoodo
 
 Route35GoldenrodGateFisherScript:
 	jumptextfaceplayer Route35GoldenrodGateFisherText
@@ -170,9 +155,8 @@ Route35GoldenrodGatePokefanFText:
 
 	para "I heard it became"
 	line "wild when someone"
-
-	para "watered it with a"
-	line "SquirtBottle."
+	cont "watered it with a"
+	cont "SquirtBottle."
 	done
 
 Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
@@ -184,15 +168,13 @@ Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
 Route35GoldenrodGateFisherText:
 	text "I wonder how many"
 	line "kinds of #mon"
-
-	para "there are in the"
-	line "world."
+	cont "there are in the"
+	cont "world."
 
 	para "Three years ago,"
 	line "Prof.Oak said that"
-
-	para "there were 150"
-	line "different kinds."
+	cont "there were 150"
+	cont "different kinds."
 	done
 
 Route35GoldenrodGate_MapEvents:

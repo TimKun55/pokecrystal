@@ -22,14 +22,10 @@ Route36NationalParkGate_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route36NationalParkGateCheckIfContestRunningCallback
 	callback MAPCALLBACK_OBJECTS, Route36NationalParkGateCheckIfContestAvailableCallback
 
-Route36NationalParkGateNoop1Scene:
-	end
-
-Route36NationalParkGateNoop2Scene:
-	end
-
 Route36NationalParkGateLeaveContestEarlyScene:
 	sdefer Route36NationalParkGateLeavingContestEarlyScript
+Route36NationalParkGateNoop1Scene:
+Route36NationalParkGateNoop2Scene:
 	end
 
 Route36NationalParkGateCheckIfContestRunningCallback:
@@ -201,34 +197,19 @@ Route36OfficerScriptContest:
 	sjump .ResumeStartingContest
 
 .DecidedNotToJoinContest:
-	writetext Route36NationalParkGateOfficer1TakePartInFutureText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1TakePartInFutureText
 
 .RefusedToLeaveMons:
-	writetext Route36NationalParkGateOfficer1ChooseMonAndComeBackText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1ChooseMonAndComeBackText
 
 .FirstMonIsFainted:
-	writetext Route36NationalParkGateOfficer1FirstMonCantBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1FirstMonCantBattleText
 
 .BoxFull:
-	writetext Route36NationalParkGateOfficer1MakeRoomText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1MakeRoomText
 
 .FirstMonIsEgg:
-	writetext Route36NationalParkGateOfficer1EggAsFirstMonText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1EggAsFirstMonText
 
 Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
@@ -239,10 +220,7 @@ Route36Officer_ContestHasConcluded:
 	iftrue .SitrusBerry
 	checkevent EVENT_CONTEST_OFFICER_HAS_ORAN_BERRY
 	iftrue .OranBerry
-	writetext Route36NationalParkGateOfficer1ContestIsOverText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1ContestIsOverText
 
 .Sunstone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
@@ -281,10 +259,7 @@ Route36Officer_ContestHasConcluded:
 	end
 
 .BagFull:
-	writetext Route36NationalParkGateOfficer1WellHoldPrizeText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1WellHoldPrizeText
 
 _ContestNotOn:
 	jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
@@ -294,10 +269,7 @@ Route36NationalParkGateOfficerScript:
 	opentext
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route36Officer_ContestHasConcluded
-	writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
-	waitbutton
-	closetext
-	end
+	writetextend Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 
 Route36ParkGate_DayToText:
 	jumpstd DayToTextScript
@@ -308,160 +280,100 @@ BugCatchingContestant1BScript:
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant1BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant1BText
 
 .StillCompeting:
-	writetext BugCatchingContestant1BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant1BStillCompetingText
 
 BugCatchingContestant2BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant2BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant2BText
 
 .StillCompeting:
-	writetext BugCatchingContestant2BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant2BStillCompetingText
 
 BugCatchingContestant3BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant3BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant3BText
 
 .StillCompeting:
-	writetext BugCatchingContestant3BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant3BStillCompetingText
 
 BugCatchingContestant4BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant4BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant4BText
 
 .StillCompeting:
-	writetext BugCatchingContestant4BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant4BStillCompetingText
 
 BugCatchingContestant5BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant5BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant5BText
 
 .StillCompeting:
-	writetext BugCatchingContestant5BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant5BStillCompetingText
 
 BugCatchingContestant6BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant6BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant6BText
 
 .StillCompeting:
-	writetext BugCatchingContestant6BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant6BStillCompetingText
 
 BugCatchingContestant7BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant7BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant7BText
 
 .StillCompeting:
-	writetext BugCatchingContestant7BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant7BStillCompetingText
 
 BugCatchingContestant8BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant8BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant8BText
 
 .StillCompeting:
-	writetext BugCatchingContestant8BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant8BStillCompetingText
 
 BugCatchingContestant9BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant9BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant9BText
 
 .StillCompeting:
-	writetext BugCatchingContestant9BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant9BStillCompetingText
 
 BugCatchingContestant10BScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant10BText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant10BText
 
 .StillCompeting:
-	writetext BugCatchingContestant10BStillCompetingText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatchingContestant10BStillCompetingText
 
 Route36NationalParkGatePlayerWaitWithContestantsMovement:
 	big_step DOWN
@@ -474,18 +386,16 @@ Route36NationalParkGateOfficer1AskToParticipateText:
 	text_ram wStringBuffer3
 	text "."
 	line "That means the"
-
-	para "Bug-Catching Con-"
-	line "test is on today."
+	cont "Bug-Catching Con-"
+	cont "test is on today."
 
 	para "The rules are sim-"
 	line "ple."
 
 	para "Using one of your"
 	line "#mon, catch a"
-
-	para "bug #mon to be"
-	line "judged."
+	cont "bug #mon to be"
+	cont "judged."
 
 	para "Would you like to"
 	line "give it a try?"
@@ -521,9 +431,8 @@ Route36NationalParkGateOfficer1ExplainsRulesText:
 
 	para "Go out and catch"
 	line "the strongest bug"
-
-	para "#mon you can"
-	line "find!"
+	cont "#mon you can"
+	cont "find!"
 	done
 
 Route36NationalParkGateOfficer1AskToUseFirstMonText:
@@ -536,9 +445,8 @@ Route36NationalParkGateOfficer1AskToUseFirstMonText:
 	line "@"
 	text_ram wStringBuffer3
 	text ", the"
-
-	para "first #mon in"
-	line "your party."
+	cont "first #mon in"
+	cont "your party."
 
 	para "Is that OK with"
 	line "you?"
@@ -559,9 +467,8 @@ Route36NationalParkGatePlayersMonLeftWithHelperText:
 Route36NationalParkGateOfficer1ChooseMonAndComeBackText:
 	text "Please choose the"
 	line "#mon to be used"
-
-	para "in the Contest,"
-	line "then come see me."
+	cont "in the Contest,"
+	cont "then come see me."
 	done
 
 Route36NationalParkGateOfficer1TakePartInFutureText:
@@ -573,23 +480,20 @@ Route36NationalParkGateOfficer1TakePartInFutureText:
 Route36NationalParkGateOfficer1FirstMonCantBattleText:
 	text "Uh-oh…"
 	line "The first #mon"
-
-	para "in your party"
-	line "can't battle."
+	cont "in your party"
+	cont "can't battle."
 
 	para "Please switch it"
 	line "with the #mon"
-
-	para "you want to use,"
-	line "then come see me."
+	cont "you want to use,"
+	cont "then come see me."
 	done
 
 Route36NationalParkGateOfficer1MakeRoomText:
 	text "Uh-oh…"
 	line "Both your party"
-
-	para "and your PC Box"
-	line "are full."
+	cont "and your PC Box"
+	cont "are full."
 
 	para "You have no room"
 	line "to put the bug"
@@ -597,23 +501,20 @@ Route36NationalParkGateOfficer1MakeRoomText:
 
 	para "Please make room"
 	line "in your party or"
-
-	para "your PC Box, then"
-	line "come see me."
+	cont "your PC Box, then"
+	cont "come see me."
 	done
 
 Route36NationalParkGateOfficer1EggAsFirstMonText:
 	text "Uh-oh…"
 	line "You have an Egg as"
-
-	para "the first #mon"
-	line "in your party."
+	cont "the first #mon"
+	cont "in your party."
 
 	para "Please switch it"
 	line "with the #mon"
-
-	para "you want to use,"
-	line "then come see me."
+	cont "you want to use,"
+	cont "then come see me."
 	done
 
 Route36NationalParkGateOfficer1WantToFinishText:
@@ -629,9 +530,8 @@ Route36NationalParkGateOfficer1WantToFinishText:
 Route36NationalParkGateOfficer1WaitHereForAnnouncementText:
 	text "OK. Please wait"
 	line "here for the"
-
-	para "announcement of"
-	line "the winners."
+	cont "announcement of"
+	cont "the winners."
 	done
 
 Route36NationalParkGateOfficer1OkGoFinishText:
@@ -643,9 +543,8 @@ Route36NationalParkGateOfficer1OkGoFinishText:
 Route36NationalParkGateOfficer1ContestIsOverText:
 	text "Today's Contest is"
 	line "over. We hope you"
-
-	para "will participate"
-	line "in the future."
+	cont "will participate"
+	cont "in the future."
 	done
 
 Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
@@ -689,9 +588,8 @@ BugCatchingContestant3BText:
 BugCatchingContestant3BStillCompetingText:
 	text "Nick: Maybe you"
 	line "get a higher score"
-
-	para "for a #mon of"
-	line "an unusual color."
+	cont "for a #mon of"
+	cont "an unusual color."
 	done
 
 BugCatchingContestant4BText:
@@ -703,9 +601,8 @@ BugCatchingContestant4BText:
 BugCatchingContestant4BStillCompetingText:
 	text "William: Well, I'm"
 	line "satisfied because"
-
-	para "I caught a #mon"
-	line "that I wanted."
+	cont "I caught a #mon"
+	cont "that I wanted."
 	done
 
 BugCatchingContestant5BText:
@@ -729,9 +626,8 @@ BugCatchingContestant6BText:
 BugCatchingContestant6BStillCompetingText:
 	text "Barry: It's easier"
 	line "to win if you get"
-
-	para "a high-level bug"
-	line "#mon."
+	cont "a high-level bug"
+	cont "#mon."
 
 	para "But I think they"
 	line "also consider some"

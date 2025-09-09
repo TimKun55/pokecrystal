@@ -13,14 +13,10 @@ Route35NationalParkGate_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route35NationalParkGateCheckIfContestRunningCallback
 	callback MAPCALLBACK_OBJECTS, Route35NationalParkGateCheckIfContestAvailableCallback
 
-Route35NationalParkGateNoop1Scene:
-	end
-
-Route35NationalParkGateNoop2Scene:
-	end
-
 Route35NationalParkGateLeaveContestEarlyScene:
 	sdefer Route35NationalParkGateLeavingContestEarlyScript
+Route35NationalParkGateNoop1Scene:
+Route35NationalParkGateNoop2Scene:
 	end
 
 Route35NationalParkGateCheckIfContestRunningCallback:
@@ -149,40 +145,22 @@ Route35NationalParkGate_LessThanFullParty:
 	sjump Route35NationalParkGate_OkayToProceed
 
 Route35NationalParkGate_DeclinedToParticipate:
-	writetext Route35NationalParkGateOfficer1TakePartInFutureText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1TakePartInFutureText
 
 Route35NationalParkGate_DeclinedToLeaveMonsBehind:
-	writetext Route35NationalParkGateOfficer1ChooseMonAndComeBackText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1ChooseMonAndComeBackText
 
 Route35NationalParkGate_FirstMonIsFainted:
-	writetext Route35NationalParkGateOfficer1FirstMonCantBattleText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1FirstMonCantBattleText
 
 Route35NationalParkGate_NoRoomInBox:
-	writetext Route35NationalParkGateOfficer1MakeRoomText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1MakeRoomText
 
 Route35NationalParkGate_FirstMonIsEgg:
-	writetext Route35NationalParkGateOfficer1EggAsFirstMonText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1EggAsFirstMonText
 
 Route35NationalParkGate_ContestIsOver:
-	writetext Route35NationalParkGateOfficer1ContestIsOverText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1ContestIsOverText
 
 Route35NationalParkGate_NoContestToday:
 	jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText
@@ -192,10 +170,7 @@ Route35NationalParkGateOfficerScript:
 	opentext
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route35NationalParkGate_ContestIsOver
-	writetext Route35NationalParkGateOfficer1WeHoldContestsText
-	waitbutton
-	closetext
-	end
+	writetextend Route35NationalParkGateOfficer1WeHoldContestsText
 
 Route35NationalParkGateYoungsterScript:
 	jumptextfaceplayer Route35NationalParkGateYoungsterText
@@ -227,18 +202,16 @@ Route35NationalParkGateOfficer1AskToParticipateText:
 	text_ram wStringBuffer3
 	text "."
 	line "That means the"
-
-	para "Bug-Catching Con-"
-	line "test is on today."
+	cont "Bug-Catching Con-"
+	cont "test is on today."
 
 	para "The rules are sim-"
 	line "ple."
 
 	para "Using one of your"
 	line "#mon, catch a"
-
-	para "bug #mon to be"
-	line "judged."
+	cont "bug #mon to be"
+	cont "judged."
 
 	para "Would you like to"
 	line "give it a try?"
@@ -274,9 +247,8 @@ Route35NationalParkGateOfficer1ExplainsRulesText:
 
 	para "Go out and catch"
 	line "the strongest bug"
-
-	para "#mon you can"
-	line "find!"
+	cont "#mon you can"
+	cont "find!"
 	done
 
 Route35NationalParkGateOfficer1AskToUseFirstMonText:
@@ -289,9 +261,8 @@ Route35NationalParkGateOfficer1AskToUseFirstMonText:
 	line "@"
 	text_ram wStringBuffer3
 	text ", the"
-
-	para "first #mon in"
-	line "your party."
+	cont "first #mon in"
+	cont "your party."
 
 	para "Is that OK with"
 	line "you?"
@@ -312,9 +283,8 @@ Route35NationalParkGatePlayersMonLeftWithHelperText:
 Route35NationalParkGateOfficer1ChooseMonAndComeBackText:
 	text "Please choose the"
 	line "#mon to be used"
-
-	para "in the Contest,"
-	line "then come see me."
+	cont "in the Contest,"
+	cont "then come see me."
 	done
 
 Route35NationalParkGateOfficer1TakePartInFutureText:
@@ -326,23 +296,20 @@ Route35NationalParkGateOfficer1TakePartInFutureText:
 Route35NationalParkGateOfficer1FirstMonCantBattleText:
 	text "Uh-oh…"
 	line "The first #mon"
-
-	para "in your party"
-	line "can't battle."
+	cont "in your party"
+	cont "can't battle."
 
 	para "Please switch it"
 	line "with the #mon"
-
-	para "you want to use,"
-	line "then come see me."
+	cont "you want to use,"
+	cont "then come see me."
 	done
 
 Route35NationalParkGateOfficer1MakeRoomText:
 	text "Uh-oh…"
 	line "Both your party"
-
-	para "and your PC Box"
-	line "are full."
+	cont "and your PC Box"
+	cont "are full."
 
 	para "You have no room"
 	line "to put the bug"
@@ -350,23 +317,20 @@ Route35NationalParkGateOfficer1MakeRoomText:
 
 	para "Please make room"
 	line "in your party or"
-
-	para "your PC Box, then"
-	line "come see me."
+	cont "your PC Box, then"
+	cont "come see me."
 	done
 
 Route35NationalParkGateOfficer1EggAsFirstMonText:
 	text "Uh-oh…"
 	line "You have an Egg as"
-
-	para "the first #mon"
-	line "in your party."
+	cont "the first #mon"
+	cont "in your party."
 
 	para "Please switch it"
 	line "with the #mon"
-
-	para "you want to use,"
-	line "then come see me."
+	cont "you want to use,"
+	cont "then come see me."
 	done
 
 Route35NationalParkGateOfficer1WantToFinishText:
@@ -382,9 +346,8 @@ Route35NationalParkGateOfficer1WantToFinishText:
 Route35NationalParkGateOfficer1WaitAtNorthGateText:
 	text "OK. Please wait at"
 	line "the North Gate for"
-
-	para "the announcement"
-	line "of the winners."
+	cont "the announcement"
+	cont "of the winners."
 	done
 
 Route35NationalParkGateOfficer1OkGoFinishText:
@@ -396,17 +359,15 @@ Route35NationalParkGateOfficer1OkGoFinishText:
 Route35NationalParkGateOfficer1ContestIsOverText:
 	text "Today's Contest is"
 	line "over. We hope you"
-
-	para "will participate"
-	line "in the future."
+	cont "will participate"
+	cont "in the future."
 	done
 
 Route35NationalParkGateOfficer1WeHoldContestsText:
 	text "We hold Contests"
 	line "regularly in the"
-
-	para "Park. You should"
-	line "give it a shot."
+	cont "Park. You should"
+	cont "give it a shot."
 	done
 
 Route35NationalParkGateYoungsterText:
@@ -418,21 +379,18 @@ Route35NationalParkGateYoungsterText:
 BugCatchingContestExplanationText:
 	text "The Bug-Catching"
 	line "Contest is held on"
-
-	para "Tuesday, Thursday"
-	line "and Saturday."
+	cont "Tuesday, Thursday"
+	cont "and Saturday."
 
 	para "Not only do you"
 	line "earn a prize just"
+	cont "for participating,"
 
-	para "for participating,"
-	line "you also get to"
-
-	para "keep the bug"
-	line "#mon you may"
-
-	para "have at the end of"
-	line "the contest."
+	para "you also get to"
+	line "keep the bug"
+	cont "#mon you may"
+	cont "have at the end of"
+	cont "the contest."
 	done
 
 Route35NationalParkGate_MapEvents:

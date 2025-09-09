@@ -21,11 +21,7 @@ TrainerBirdKeeperBryan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperBryanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperBryanAfterBattleText
 
 TrainerJugglerIrwin:
 	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
@@ -86,44 +82,28 @@ TrainerCamperIvan:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperIvanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperIvanAfterBattleText
 
 TrainerCamperElliot:
 	trainer CAMPER, ELLIOT, EVENT_BEAT_CAMPER_ELLIOT, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperElliotAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperElliotAfterBattleText
 
 TrainerPicnickerBrooke:
 	trainer PICNICKER, BROOKE, EVENT_BEAT_PICNICKER_BROOKE, PicnickerBrookeSeenText, PicnickerBrookeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerBrookeAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerBrookeAfterBattleText
 
 TrainerPicnickerKim:
 	trainer PICNICKER, KIM, EVENT_BEAT_PICNICKER_KIM, PicnickerKimSeenText, PicnickerKimBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PicnickerKimAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PicnickerKimAfterBattleText
 
 TrainerBugCatcherArnie:
 	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_ARNIE, BugCatcherArnieSeenText, BugCatcherArnieBeatenText, 0, .Script
@@ -201,21 +181,14 @@ TrainerBugCatcherArnie:
 	end
 
 .YanmaSwarming:
-	writetext BugCatcherArnieYanmaText
-	waitbutton
-	closetext
-	end
+	writetextend BugCatcherArnieYanmaText
 
 TrainerFirebreatherWalt:
 	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FirebreatherWaltAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FirebreatherWaltAfterBattleText
 
 TrainerOfficerDirk:
 	faceplayer
@@ -237,16 +210,10 @@ TrainerOfficerDirk:
 	end
 
 .AfterBattle:
-	writetext OfficerDirkAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerDirkAfterBattleText
 
 .NotNight:
-	writetext OfficerDirkPrettyToughText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerDirkPrettyToughText
 
 Route35Sign:
 	jumptext Route35SignText
@@ -260,9 +227,8 @@ Route35LeppaTree:
 CamperIvanSeenText:
 	text "I've been getting"
 	line "#mon data off"
-
-	para "my radio. I think"
-	line "I'm good."
+	cont "my radio. I think"
+	cont "I'm good."
 	done
 
 CamperIvanBeatenText:
@@ -384,9 +350,8 @@ BugCatcherArnieBeatenText:
 BugCatcherArnieAfterBattleText:
 	text "My Venonat won me"
 	line "the Bug-Catching"
-
-	para "Contest at the"
-	line "National Park."
+	cont "Contest at the"
+	cont "National Park."
 	done
 
 BugCatcherArnieYanmaText:

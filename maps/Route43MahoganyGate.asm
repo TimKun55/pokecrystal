@@ -11,23 +11,16 @@ Route43MahoganyGateOfficer:
 	opentext
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .RocketsCleared
-	writetext Route43MahoganyGateOfficerText
-	waitbutton
-	closetext
-	end
+	writetextend Route43MahoganyGateOfficerText
 
 .RocketsCleared:
-	writetext Route43MahoganyGateOfficerRocketsClearedText
-	waitbutton
-	closetext
-	end
+	writetextend Route43MahoganyGateOfficerRocketsClearedText
 
 Route43MahoganyGateOfficerText:
 	text "Only people headed"
 	line "up to Lake Of Rage"
-
-	para "have been through"
-	line "here lately."
+	cont "have been through"
+	cont "here lately."
 	done
 
 Route43MahoganyGateOfficerRocketsClearedText:

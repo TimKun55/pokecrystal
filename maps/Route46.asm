@@ -17,11 +17,7 @@ TrainerCamperTed:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperTedAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperTedAfterBattleText
 
 TrainerPicnickerErin1:
 	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
@@ -141,11 +137,7 @@ TrainerHikerBailey:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerBaileyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerBaileyAfterBattleText
 	
 TrainerLadyGia:
 	trainer LADY, GIA, EVENT_BEAT_LADY_GIA, LadyGiaSeenText, LadyGiaBeatenText, 0, .Script
@@ -245,10 +237,11 @@ PicnickerErin2BeatenText:
 
 	para "Anyway, thanks for"
 	line "battling me again"
+	cont "and again."
 
-	para "and again. Here's"
-	line "that present from"
-	cont "the other time."
+	para "Here's that pres-"
+	line "ent from the other"
+	cont "time."
 	done
 	
 LadyGiaSeenText:
@@ -258,9 +251,8 @@ LadyGiaSeenText:
 	
 	para "I'm getting bored"
 	line "though. Wanna see"
-	
-	para "my cute Fairy"
-	line "#mon?"
+	cont "my cute Fairy"
+	cont "#mon?"
 	done
 
 LadyGiaBeatenText:
@@ -269,11 +261,10 @@ LadyGiaBeatenText:
 
 LadyGiaAfterBattleText:
 	text "You're powerful!"
-	line "You should"
-	cont "talk to my"
 	
-	para "Gramps in"
-	line "Ecruteak."
+	para "You should talk"
+	line "to my Gramps in"
+	cont "Ecruteak."
 	done
 
 Route46SignText:

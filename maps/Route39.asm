@@ -86,10 +86,7 @@ TrainerPokefanmDerek:
 	sjump .PackFull
 
 .WantsPikachu:
-	writetext PokefanMDerekPikachuIsItText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanMDerekPikachuIsItText
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
@@ -128,33 +125,21 @@ TrainerPokefanfRuth:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanfRuthAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanfRuthAfterBattleText
 
 TrainerSailorEugene:
 	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SailorEugeneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorEugeneAfterBattleText
 
 TrainerPsychicNorman:
 	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicNormanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicNormanAfterBattleText
 
 TrainerPokefanfJaime:
 	faceplayer
@@ -175,27 +160,17 @@ TrainerPokefanfJaime:
 	end
 
 .Beaten:
-	writetext PokefanfJaimeAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanfJaimeAfterBattleText
 
 .NotNight:
-	writetext PokefanfJaimeHopeItGetsDarkText
-	waitbutton
-	closetext
-	end
+	writetextend PokefanfJaimeHopeItGetsDarkText
 
 TrainerBugManiacPete:
 	trainer BUG_MANIAC, PETE, EVENT_BEAT_BUG_MANIAC_PETE, BugManiacPeteSeenText, BugManiacPeteBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacPeteAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacPeteAfterBattleText
 
 Route39Sign:
 	jumptext Route39SignText
@@ -255,9 +230,8 @@ PokefanMDerekText_NotBragging:
 
 	para "We # Fans have"
 	line "a policy of not"
-
-	para "listening to other"
-	line "people brag!"
+	cont "listening to other"
+	cont "people brag!"
 	done
 
 PokefanfRuthSeenText:
@@ -347,15 +321,13 @@ PokefanfJaimeAfterBattleText:
 
 	para "I'm not sure why,"
 	line "but it seems to"
-
-	para "like it when I"
-	line "train here."
+	cont "like it when I"
+	cont "train here."
 
 	para "It seems to become"
 	line "friendlier by"
-
-	para "training here than"
-	line "anywhere else."
+	cont "training here than"
+	cont "anywhere else."
 	done
 
 Route39SignText:

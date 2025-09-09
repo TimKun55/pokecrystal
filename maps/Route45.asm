@@ -79,16 +79,10 @@ TrainerBlackbeltKenji:
 	sjump Route45NumberAcceptedM
 
 .Morning:
-	writetext BlackbeltKenjiMorningText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltKenjiMorningText
 
 .Night:
-	writetext BlackbeltKenjiNightText
-	waitbutton
-	closetext
-	end
+	writetextend BlackbeltKenjiNightText
 
 .NoRoom:
 	sjump Route45PackFullM
@@ -143,22 +137,14 @@ TrainerHikerErik:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerErikAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerErikAfterBattleText
 
 TrainerHikerMichael:
 	trainer HIKER, MICHAEL, EVENT_BEAT_HIKER_MICHAEL, HikerMichaelSeenText, HikerMichaelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerMichaelAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerMichaelAfterBattleText
 
 TrainerHikerParry:
 	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParrySeenText, HikerParryBeatenText, 0, .Script
@@ -241,33 +227,21 @@ TrainerHikerTimothy:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerTimothyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerTimothyAfterBattleText
 
 TrainerCooltrainermRyan:
 	trainer COOLTRAINERM, RYAN, EVENT_BEAT_COOLTRAINERM_RYAN, CooltrainermRyanSeenText, CooltrainermRyanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermRyanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermRyanAfterBattleText
 
 TrainerCooltrainerfKelly:
 	trainer COOLTRAINERF, KELLY, EVENT_BEAT_COOLTRAINERF_KELLY, CooltrainerfKellySeenText, CooltrainerfKellyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfKellyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfKellyAfterBattleText
 
 TrainerCamperQuentin:
 	faceplayer
@@ -286,10 +260,7 @@ TrainerCamperQuentin:
 	end
 
 .Defeated:
-	writetext CamperQuentinAfterBattleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperQuentinAfterBattleText
 
 Route45Gligar:
 	cry GLIGAR
@@ -338,9 +309,8 @@ HikerErikBeatenText:
 HikerErikAfterBattleText:
 	text "I'll head back to"
 	line "Blackthorn's Ice"
-
-	para "Path and train"
-	line "some more."
+	cont "Path and train"
+	cont "some more."
 	done
 
 HikerMichaelSeenText:
@@ -407,9 +377,8 @@ HikerTimothyBeatenText:
 HikerTimothyAfterBattleText:
 	text "The best thing to"
 	line "ever happen to me"
-
-	para "was discovering"
-	line "#mon."
+	cont "was discovering"
+	cont "#mon."
 	done
 
 HikerParryGivesIronText:
@@ -420,9 +389,8 @@ HikerParryGivesIronText:
 
 	para "Oh, and take this"
 	line "--it's the gift"
-
-	para "you couldn't take"
-	line "when we last met."
+	cont "you couldn't take"
+	cont "when we last met."
 	done
 
 BlackbeltKenjiSeenText:
@@ -455,9 +423,8 @@ BlackbeltKenjiMorningText:
 BlackbeltKenjiNightText:
 	text "We had plenty of"
 	line "rest at lunch, so"
-
-	para "now we're all"
-	line "ready to go again!"
+	cont "now we're all"
+	cont "ready to go again!"
 
 	para "We're going to"
 	line "train again!"

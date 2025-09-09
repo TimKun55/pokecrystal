@@ -24,8 +24,6 @@ Route34_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
 
 Route34Noop1Scene:
-	end
-
 Route34Noop2Scene:
 	end
 
@@ -280,10 +278,7 @@ TrainerCamperTodd1:
 	end
 
 .SaleIsOn:
-	writetext CamperToddSaleText
-	waitbutton
-	closetext
-	end
+	writetextend CamperToddSaleText
 
 .AskNumber:
 	jumpstd AskNumber1MScript
@@ -455,49 +450,31 @@ OfficerKeithScript:
 	end
 
 .AfterScript:
-	writetext OfficerKeithAfterText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerKeithAfterText
 
 .NoFight:
-	writetext OfficerKeithDaytimeText
-	waitbutton
-	closetext
-	end
+	writetextend OfficerKeithDaytimeText
 
 TrainerYoungsterSamuel:
 	trainer YOUNGSTER, SAMUEL, EVENT_BEAT_YOUNGSTER_SAMUEL, YoungsterSamuelSeenText, YoungsterSamuelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterSamuelAfterText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterSamuelAfterText
 
 TrainerYoungsterIan:
 	trainer YOUNGSTER, IAN, EVENT_BEAT_YOUNGSTER_IAN, YoungsterIanSeenText, YoungsterIanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterIanAfterText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterIanAfterText
 
 TrainerPokefanmBrandon:
 	trainer POKEFANM, BRANDON, EVENT_BEAT_POKEFANM_BRANDON, PokefanmBrandonSeenText, PokefanmBrandonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokefanmBrandonAfterText
-	waitbutton
-	closetext
-	end
+	jumptext PokefanmBrandonAfterText
 
 TrainerCooltrainerfIrene:
 	trainer COOLTRAINERF, IRENE, EVENT_BEAT_COOLTRAINERF_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
@@ -507,16 +484,10 @@ TrainerCooltrainerfIrene:
 	opentext
 	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
 	iftrue .GotSoftSand
-	writetext CooltrainerfIreneAfterText1
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfIreneAfterText1
 
 .GotSoftSand:
-	writetext CooltrainerfIreneAfterText2
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfIreneAfterText2
 
 TrainerCooltrainerfJenn:
 	trainer COOLTRAINERF, JENN, EVENT_BEAT_COOLTRAINERF_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
@@ -526,16 +497,10 @@ TrainerCooltrainerfJenn:
 	opentext
 	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
 	iftrue .GotSoftSand
-	writetext CooltrainerfJennAfterText1
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfJennAfterText1
 
 .GotSoftSand:
-	writetext CooltrainerfJennAfterText2
-	waitbutton
-	closetext
-	end
+	writetextend CooltrainerfJennAfterText2
 
 TrainerCooltrainerfKate:
 	trainer COOLTRAINERF, KATE, EVENT_BEAT_COOLTRAINERF_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
@@ -621,11 +586,7 @@ Route34LadyBea:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyBeaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyBeaAfterBattleText
 
 Route34LyraText_Grandpa:
 	text "Lyra: Grandpa!"
@@ -742,9 +703,8 @@ CamperTodd1BeatenText:
 CamperTodd1AfterText:
 	text "Maybe I should"
 	line "take one to a Day-"
-
-	para "Care. Or maybe use"
-	line "some items…"
+	cont "Care. Or maybe use"
+	cont "some items…"
 	done
 
 CamperToddSaleText:
@@ -787,9 +747,8 @@ OfficerKeithWinText:
 OfficerKeithAfterText:
 	text "Yep, I see nothing"
 	line "wrong today. You"
-
-	para "be good and stay"
-	line "out of trouble."
+	cont "be good and stay"
+	cont "out of trouble."
 	done
 
 OfficerKeithDaytimeText:
@@ -894,9 +853,8 @@ CooltrainerfKateAfterText:
 
 	para "We never expected"
 	line "anyone to find us"
-
-	para "here. You sure"
-	line "startled us."
+	cont "here. You sure"
+	cont "startled us."
 	done
 	
 LadyBeaSeenText:
@@ -918,10 +876,11 @@ LadyBeaAfterBattleText:
 	text "You may have"
 	line "defeated me, but"
 	cont "my sisters will"
+	cont "definitely want to"
+	cont "battle you!"
 	
-	para "definitely want to"
-	line "battle you! See if"
-	cont "you can find them!"
+	para "See if you can"
+	cont "find them!"
 	done
 
 Route34IlexForestSignText:

@@ -19,8 +19,6 @@ Route43_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
 
 Route43Noop1Scene:
-	end
-
 Route43Noop2Scene:
 	end
 
@@ -66,22 +64,14 @@ TrainerCamperSpencer:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperSpencerAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CamperSpencerAfterBattleText
 
 TrainerPokemaniacBen:
 	trainer POKEMANIAC, BEN, EVENT_BEAT_POKEMANIAC_BEN, PokemaniacBenSeenText, PokemaniacBenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacBenAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacBenAfterBattleText
 
 TrainerPokemaniacBrent:
 	trainer POKEMANIAC, BRENT1, EVENT_BEAT_POKEMANIAC_BRENT, PokemaniacBrentSeenText, PokemaniacBrentBeatenText, 0, .Script
@@ -180,22 +170,14 @@ TrainerPokemaniacRon:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacRonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacRonAfterBattleText
 
 TrainerFisherMarvin:
 	trainer FISHER, MARVIN, EVENT_BEAT_FISHER_MARVIN, FisherMarvinSeenText, FisherMarvinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherMarvinAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherMarvinAfterBattleText
 
 TrainerPicnickerTiffany:
 	trainer PICNICKER, TIFFANY1, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
@@ -277,10 +259,7 @@ TrainerPicnickerTiffany:
 	sjump .PackFull
 
 .NoClefairy:
-	writetext PicnickerTiffanyClefairyText
-	waitbutton
-	closetext
-	end
+	writetextend PicnickerTiffanyClefairyText
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
@@ -323,11 +302,7 @@ TrainerLadyKai:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyKaiAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyKaiAfterBattleText
 
 Route43Sign1:
 	jumptext Route43Sign1Text
@@ -364,9 +339,8 @@ PokemaniacBenSeenText:
 
 	para "That's why I"
 	line "started--and why"
-
-	para "I'll keep on col-"
-	line "lecting #mon!"
+	cont "I'll keep on col-"
+	cont "lecting #mon!"
 	done
 
 PokemaniacBenBeatenText:
@@ -419,9 +393,8 @@ PokemaniacRonBeatenText:
 PokemaniacRonAfterBattleText:
 	text "It's okay for"
 	line "people to like"
-
-	para "different types"
-	line "of #mon."
+	cont "different types"
+	cont "of #mon."
 
 	para "#mon isn't just"
 	line "about having the"
@@ -446,9 +419,8 @@ FisherMarvinBeatenText:
 FisherMarvinAfterBattleText:
 	text "Kurt's Lure Ball"
 	line "is the best for"
-
-	para "catching hooked"
-	line "#mon."
+	cont "catching hooked"
+	cont "#mon."
 
 	para "It's much more"
 	line "effective than a"
@@ -513,10 +485,10 @@ LadyKaiAfterBattleText:
 	text "That was fun!"
 	line "Are you the one"
 	cont "who's been taking"
+	cont "on my sisters?"
 	
-	para "on my sisters?"
-	line "You're pretty"
-	cont "good!"
+	para "You're pretty"
+	line "good!"
 	done
 
 Route43Sign1Text:
@@ -538,21 +510,18 @@ Route43TrainerTipsText:
 
 	para "All #mon have"
 	line "pros and cons"
-
-	para "depending on their"
-	line "types."
+	cont "depending on their"
+	cont "types."
 
 	para "If their types"
 	line "differ, a higher-"
-
-	para "level #mon may"
-	line "lose in battle."
+	cont "level #mon may"
+	cont "lose in battle."
 
 	para "Learn which types"
 	line "are strong and"
-
-	para "weak against your"
-	line "#mon's type."
+	cont "weak against your"
+	cont "#mon's type."
 	done
 
 Route43_MapEvents:

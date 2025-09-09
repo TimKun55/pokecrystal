@@ -17,8 +17,6 @@ Route38_MapScripts:
 	def_callbacks
 
 Route38Noop1Scene:
-	end
-
 Route38Noop2Scene:
 	end
 
@@ -51,22 +49,14 @@ TrainerBirdKeeperToby:
 
 .Script
 	endifjustbattled
-	opentext
-	writetext BirdKeeperTobyAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperTobyAfterBattleText
 
 TrainerSailorHarry:
 	trainer SAILOR, HARRY, EVENT_BEAT_SAILOR_HARRY, SailorHarrySeenText, SailorHarryBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
-	opentext
-	writetext SailorHarryAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SailorHarryAfterBattleText
 
 TrainerLassDana1:
 	trainer LASS, DANA1, EVENT_BEAT_LASS_DANA, LassDana1SeenText, LassDana1BeatenText, 0, .Script
@@ -296,33 +286,21 @@ TrainerBeautyValerie:
 
 .Script
 	endifjustbattled
-	opentext
-	writetext BeautyValerieAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyValerieAfterBattleText
 
 TrainerBeautyOlivia:
 	trainer BEAUTY, OLIVIA, EVENT_BEAT_BEAUTY_OLIVIA, BeautyOliviaSeenText, BeautyOliviaBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
-	opentext
-	writetext BeautyOliviaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BeautyOliviaAfterBattleText
 	
 TrainerLadyKat:
 	trainer LADY, KAT, EVENT_BEAT_LADY_KAT, LadyKatSeenText, LadyKatBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyKatAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyKatAfterBattleText
 
 Route38Sign:
 	jumptext Route38SignText
@@ -356,9 +334,8 @@ BirdKeeperTobyBeatenText:
 BirdKeeperTobyAfterBattleText:
 	text "I plan to train in"
 	line "Cianwood City to"
-
-	para "teach my #mon"
-	line "how to Fly."
+	cont "teach my #mon"
+	cont "how to Fly."
 	done
 
 SchoolboyChad1SeenText:
@@ -375,9 +352,8 @@ SchoolboyChad1BeatenText:
 SchoolboyChadSoManyTestsText:
 	text "I have to take so"
 	line "many tests, I"
-
-	para "don't have much"
-	line "time for #mon."
+	cont "don't have much"
+	cont "time for #mon."
 
 	para "So when I do get"
 	line "to play, I really"
@@ -429,9 +405,8 @@ BeautyValerieAfterBattleText:
 SailorHarrySeenText:
 	text "I've been over-"
 	line "seas, so I know"
-
-	para "about all sorts of"
-	line "#mon!"
+	cont "about all sorts of"
+	cont "#mon!"
 	done
 
 SailorHarryBeatenText:
@@ -442,9 +417,8 @@ SailorHarryBeatenText:
 SailorHarryAfterBattleText:
 	text "All kinds of peo-"
 	line "ple around the"
-
-	para "world live happily"
-	line "with #mon."
+	cont "world live happily"
+	cont "with #mon."
 	done
 
 BeautyOliviaSeenText:
@@ -461,12 +435,11 @@ BeautyOliviaBeatenText:
 BeautyOliviaAfterBattleText:
 	text "Moomoo Milk is"
 	line "good for beauty"
+	cont "and health!"
 
-	para "and health, but"
-	line "inconveniently,"
-
-	para "they only sell a"
-	line "bottle at a time."
+	para "I usually buy a"
+	line "dozen bottles"
+	cont "at a time."
 	done
 	
 LadyKatSeenText:

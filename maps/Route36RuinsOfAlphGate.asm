@@ -27,9 +27,8 @@ Route36RuinsOfAlphGateGrampsText:
 
 	para "That may explain"
 	line "why fewer people"
-
-	para "are visiting the"
-	line "Ruins Of Alph."
+	cont "are visiting the"
+	cont "Ruins Of Alph."
 	done
 
 Route36RuinsOfAlphGate_MapEvents:

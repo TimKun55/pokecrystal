@@ -19,11 +19,7 @@ Route37_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route37SunnyCallback
 
 Route37Noop1Scene:
-	end
-
 Route37Noop2Scene:
-	end
-
 Route37Noop3Scene:
 	end
 
@@ -109,44 +105,28 @@ TrainerTwinsAnnandanne1:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsAnnandanne1AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsAnnandanne1AfterBattleText
 
 TrainerTwinsAnnandanne2:
 	trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext TwinsAnnandanne2AfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext TwinsAnnandanne2AfterBattleText
 
 TrainerPsychicGreg:
 	trainer PSYCHIC_T, GREG, EVENT_BEAT_PSYCHIC_GREG, PsychicGregSeenText, PsychicGregBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicGregAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicGregAfterBattleText
 
 TrainerBugManiacCarl:
 	trainer BUG_MANIAC, CARL, EVENT_BEAT_BUG_MANIAC_CARL, BugManiacCarlSeenText, BugManiacCarlBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacCarlAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacCarlAfterBattleText
 
 SunnyScript:
 	faceplayer
@@ -173,10 +153,7 @@ SunnyScript:
 	verbosegiveitem MAGNET
 	iffalse SunnyDoneScript
 	setevent EVENT_GOT_MAGNET_FROM_SUNNY
-	writetext SunnyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend SunnyGaveGiftText
 
 SunnySundayScript:
 	writetext SunnySundayText
@@ -186,10 +163,7 @@ SunnyDoneScript:
 	end
 
 SunnyNotSundayScript:
-	writetext SunnyNotSundayText
-	waitbutton
-	closetext
-	end
+	writetextend SunnyNotSundayText
 
 Route37Sign:
 	jumptext Route37SignText
@@ -248,9 +222,8 @@ TwinsAnnandanne1BeatenText:
 TwinsAnnandanne1AfterBattleText:
 	text "Ann: I can tell"
 	line "what my sister and"
-
-	para "my #mon are"
-	line "thinking."
+	cont "my #mon are"
+	cont "thinking."
 	done
 
 TwinsAnnandanne2SeenText:
@@ -343,9 +316,8 @@ SunnyGaveGiftText:
 
 	para "A #mon that"
 	line "knows electric"
-
-	para "moves should hold"
-	line "it."
+	cont "moves should hold"
+	cont "it."
 
 	para "My sis Monica said"
 	line "it powers up"

@@ -24,17 +24,15 @@ Route40BattleTowerGateRockerText:
 
 	para "This is a secret,"
 	line "but if you win a"
-
-	para "whole lot, you can"
-	line "win special gifts."
+	cont "whole lot, you can"
+	cont "win special gifts."
 	done
 
 Route40BattleTowerGateTwinText:
 	text "The levels of the"
 	line "#mon I want to"
-
-	para "use are all"
-	line "different."
+	cont "use are all"
+	cont "different."
 
 	para "I have to go train"
 	line "them now!"

@@ -24,11 +24,7 @@ Route32_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route32FriedaCallback
 
 Route32Noop1Scene:
-	end
-
 Route32Noop2Scene:
-	end
-
 Route32Noop3Scene:
 	end
 
@@ -52,10 +48,7 @@ Route32BirdKeeperContinueScene:
 	iffalse .DontHaveZephyrBadge
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue .GiveMiracleSeed
-	writetext Route32BirdKeeperText_AideIsWaiting
-	waitbutton
-	closetext
-	end
+	writetextend Route32BirdKeeperText_AideIsWaiting
 
 .GiveMiracleSeed:
 	writetext Route32BirdKeeperText_HaveThisSeed
@@ -66,10 +59,7 @@ Route32BirdKeeperContinueScene:
 	sjump .GotMiracleSeed
 
 .DontHaveZephyrBadge:
-	writetext Route32BirdKeeperText_VioletGym
-	waitbutton
-	closetext
-	end
+	writetextend Route32BirdKeeperText_VioletGym
 
 .GotMiracleSeed:
 	writetext Route32BirdKeeperText_ExperiencesShouldBeUseful
@@ -124,38 +114,24 @@ _OfferToSellSlowpokeTail:
 	writetext Text_MillionDollarSlowpokeTail
 	yesorno
 	iffalse .refused
-	writetext Text_ThoughtKidsWereLoaded
-	waitbutton
-	closetext
-	end
+	writetextend Text_ThoughtKidsWereLoaded
 
 .refused
-	writetext Text_RefusedToBuySlowpokeTail
-	waitbutton
-	closetext
-	end
+	writetextend Text_RefusedToBuySlowpokeTail
 
 TrainerCamperRoland:
 	trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CamperRolandAfterText
-	waitbutton
-	closetext
-	end
+	jumptext CamperRolandAfterText
 
 TrainerFisherJustin:
 	trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherJustinAfterText
-	waitbutton
-	closetext
-	end
+	jumptext FisherJustinAfterText
 
 TrainerFisherRalph1:
 	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
@@ -263,11 +239,7 @@ TrainerFisherHenry:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherHenryAfterText
-	waitbutton
-	closetext
-	end
+	jumptext FisherHenryAfterText
 
 TrainerPicnickerLiz1:
 	trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
@@ -375,33 +347,21 @@ TrainerYoungsterAlbert:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterAlbertAfterText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterAlbertAfterText
 
 TrainerYoungsterGordon:
 	trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterGordonAfterText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterGordonAfterText
 
 TrainerBirdKeeperPeter:
 	trainer BIRD_KEEPER, PETER, EVENT_BEAT_BIRD_KEEPER_PETER, BirdKeeperPeterSeenText, BirdKeeperPeterBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BirdKeeperPeterAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BirdKeeperPeterAfterText
 
 FriedaScript:
 	faceplayer
@@ -421,10 +381,7 @@ FriedaScript:
 	verbosegiveitem POISON_BARB
 	iffalse .Done
 	setevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
-	writetext FriedaGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend FriedaGaveGiftText
 
 .Friday:
 	writetext FriedaFridayText
@@ -434,10 +391,7 @@ FriedaScript:
 	end
 
 .NotFriday:
-	writetext FriedaNotFridayText
-	waitbutton
-	closetext
-	end
+	writetextend FriedaNotFridayText
 
 Route32GreatBall:
 	itemball GREAT_BALL
@@ -484,15 +438,13 @@ Route32BirdKeeperText_WhatsTheHurry:
 Route32BirdKeeperText_AideIsWaiting:
 	text "<PLAYER>, right?"
 	line "Some guy wearing"
-
-	para "glasses was look-"
-	line "ing for you."
+	cont "glasses was look-"
+	cont "ing for you."
 
 	para "See for yourself."
 	line "He's waiting for"
-
-	para "you at the #mon"
-	line "Center."
+	cont "you at the #mon"
+	cont "Center."
 	done
 
 Route32BirdKeeperText_VioletGym:
@@ -514,15 +466,13 @@ Route32BirdKeeperText_HaveThisSeed:
 
 	para "It must be from"
 	line "the training you"
-
-	para "gave them around"
-	line "Violet City."
+	cont "gave them around"
+	cont "Violet City."
 
 	para "The training at"
 	line "the Gym must have"
-
-	para "been especially"
-	line "helpful."
+	cont "been especially"
+	cont "helpful."
 
 	para "As a souvenir of"
 	line "Violet City, take"
@@ -536,9 +486,8 @@ Route32BirdKeeperText_HaveThisSeed:
 Route32BirdKeeperText_ExperiencesShouldBeUseful:
 	text "Your experiences"
 	line "in Violet City"
-
-	para "should be useful"
-	line "for your journey."
+	cont "should be useful"
+	cont "for your journey."
 	done
 
 Text_MillionDollarSlowpokeTail:
@@ -579,9 +528,8 @@ FisherJustinBeatenText:
 FisherJustinAfterText:
 	text "Calm, collected…"
 	line "The essence of"
-
-	para "fishing and #-"
-	line "mon is the same."
+	cont "fishing and #-"
+	cont "mon is the same."
 	done
 
 FisherRalph1SeenText:
@@ -609,12 +557,11 @@ FisherRalphAfterText:
 FisherRalphSwarmText:
 	text "One, two, three…"
 	line "Muahahaha, what a"
-
-	para "great haul!"
-	line "I'm done! Go ahead"
-
-	para "and catch as many"
-	line "as you can, kid!"
+	cont "great haul!"
+	
+	para "I'm done! Go ahead"
+	line "and catch as many"
+	cont "as you can, kid!"
 	done
 
 FisherHenrySeenText:
@@ -629,9 +576,8 @@ FisherHenryBeatenText:
 FisherHenryAfterText:
 	text "Freshly caught"
 	line "#mon are no"
-
-	para "match for properly"
-	line "raised ones."
+	cont "match for properly"
+	cont "raised ones."
 	done
 
 YoungsterAlbertSeenText:
@@ -726,7 +672,7 @@ BirdKeeperPeterBeatenText:
 
 BirdKeeperPeterAfterText:
 	text "I should train"
-	line "again at the GYM"
+	line "again at the Gym"
 	cont "in Violet City."
 	done
 

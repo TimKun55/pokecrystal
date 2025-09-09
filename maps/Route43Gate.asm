@@ -15,8 +15,6 @@ Route43Gate_MapScripts:
 
 Route43GateRocketShakedownScene:
 	sdefer Route43GateRocketTakeoverScript
-	end
-
 Route43GateNoopScene:
 	end
 
@@ -216,9 +214,8 @@ RocketText_MakingABundle:
 
 	para "Everyone wants to"
 	line "see what's going"
-
-	para "on up at Lake Of"
-	line "Rage."
+	cont "on up at Lake Of"
+	cont "Rage."
 	done
 
 OfficerText_FoundTM:

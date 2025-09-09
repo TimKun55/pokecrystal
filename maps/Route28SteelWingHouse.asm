@@ -4,12 +4,8 @@
 
 Route28SteelWingHouse_MapScripts:
 	def_scene_scripts
-	scene_script Route28SteelWingHouseNoopScene ; unusable
 
 	def_callbacks
-
-Route28SteelWingHouseNoopScene:
-	end
 
 Celebrity:
 	faceplayer
@@ -25,10 +21,7 @@ Celebrity:
 	closetext
 	end
 .AlreadyGotItem:
-	writetext CelebrityText2
-	waitbutton
-	closetext
-	end
+	writetextend CelebrityText2
 
 CelebritysSkarmory:
 	opentext

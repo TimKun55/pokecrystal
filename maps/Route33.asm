@@ -87,10 +87,7 @@ TrainerHikerAnthony:
 	end
 
 .Swarm:
-	writetext HikerAnthonyDunsparceText
-	waitbutton
-	closetext
-	end
+	writetextend HikerAnthonyDunsparceText
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
@@ -129,9 +126,8 @@ Route33PechaTree:
 HikerAnthonySeenText:
 	text "I came through the"
 	line "tunnel, but I"
-
-	para "still have plenty"
-	line "of energy left."
+	cont "still have plenty"
+	cont "of energy left."
 	done
 
 HikerAnthonyBeatenText:
@@ -167,9 +163,8 @@ Route33LassText:
 
 	para "I got too tired to"
 	line "explore the whole"
-
-	para "thing, so I came"
-	line "outside."
+	cont "thing, so I came"
+	cont "outside."
 	done
 
 Route33SignText:

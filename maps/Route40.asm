@@ -35,55 +35,35 @@ TrainerSwimmerfElaine:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfElaineAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfElaineAfterBattleText
 
 TrainerSwimmerfPaula:
 	trainer SWIMMERF, PAULA, EVENT_BEAT_SWIMMERF_PAULA, SwimmerfPaulaSeenText, SwimmerfPaulaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmerfPaulaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmerfPaulaAfterBattleText
 
 TrainerSwimmermSimon:
 	trainer SWIMMERM, SIMON, EVENT_BEAT_SWIMMERM_SIMON, SwimmermSimonSeenText, SwimmermSimonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermSimonAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermSimonAfterBattleText
 
 TrainerSwimmermRandall:
 	trainer SWIMMERM, RANDALL, EVENT_BEAT_SWIMMERM_RANDALL, SwimmermRandallSeenText, SwimmermRandallBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext SwimmermRandallAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext SwimmermRandallAfterBattleText
 	
 TrainerLadyAda:
 	trainer LADY, ADA, EVENT_BEAT_LADY_ADA, LadyAdaSeenText, LadyAdaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyAdaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyAdaAfterBattleText
 
 Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
@@ -115,10 +95,7 @@ MonicaScript:
 	verbosegiveitem SHARP_BEAK
 	iffalse .done
 	setevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
-	writetext MonicaGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend MonicaGaveGiftText
 
 .Monday:
 	writetext MonicaMondayText
@@ -128,10 +105,7 @@ MonicaScript:
 	end
 
 .NotMonday:
-	writetext MonicaNotMondayText
-	waitbutton
-	closetext
-	end
+	writetextend MonicaNotMondayText
 
 Route40Sign:
 	jumptext Route40SignText
@@ -182,9 +156,8 @@ LadyAdaSeenText:
 	text "Hello!"
 	line "Are you the strong"
 	cont "trainer my sisters"
-	
-	para "told me about?"
-	line "Let's battle!"
+	cont "told me about?"
+	cont "Let's battle!"
 	done
 
 LadyAdaBeatenText:
@@ -237,9 +210,8 @@ SwimmerfPaulaAfterBattleText:
 Route40Lass1Text:
 	text "Although you can't"
 	line "see it from here,"
-
-	para "Cianwood is across"
-	line "the sea."
+	cont "Cianwood is across"
+	cont "the sea."
 	done
 
 Route40PokefanMText:
@@ -252,9 +224,8 @@ Route40PokefanMText:
 Route40Lass2Text:
 	text "I came to Olivine"
 	line "by ship to see the"
-
-	para "sights and soak up"
-	line "the atmosphere."
+	cont "sights and soak up"
+	cont "the atmosphere."
 
 	para "Being a port, it"
 	line "feels so different"
@@ -267,15 +238,13 @@ Route40StandingYoungsterText:
 
 	para "I think a lot of"
 	line "tough trainers"
-
-	para "have gathered"
-	line "there already."
+	cont "have gathered"
+	cont "there already."
 
 	para "But since you have"
 	line "so many Badges,"
-
-	para "you shouldn't do"
-	line "badly at all."
+	cont "you shouldn't do"
+	cont "badly at all."
 	done
 
 MeetMonicaText:
@@ -294,17 +263,15 @@ MonicaGivesGiftText:
 MonicaGaveGiftText:
 	text "Monica: It's an"
 	line "item that raises"
-
-	para "the power of fly-"
-	line "ing-type moves."
+	cont "the power of fly-"
+	cont "ing-type moves."
 	done
 
 MonicaMondayText:
 	text "Monica: My broth-"
 	line "ers and sisters"
-
-	para "are all over the"
-	line "place."
+	cont "are all over the"
+	cont "place."
 
 	para "See if you could"
 	line "find them all!"

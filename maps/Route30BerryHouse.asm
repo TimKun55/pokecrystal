@@ -33,9 +33,8 @@ Route30BerrySpeechHouseMonEatBerriesText:
 	para "They take time to"
 	line "grow back when"
 	cont "they're picked,"
-
-	para "but using Mulch"
-	line "on the soil really"
+	cont "but using Mulch"
+	cont "on the soil really"
 	cont "speeds that up!"
 
 	para "Here. I'll share"

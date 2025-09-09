@@ -20,8 +20,6 @@ Route30_MapScripts:
 	def_callbacks
 
 Route30Noop1Scene:
-	end
-
 Route30Noop2Scene:
 	end
 
@@ -209,38 +207,24 @@ TrainerYoungsterMikey:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext YoungsterMikeyAfterText
-	waitbutton
-	closetext
-	end
+	jumptext YoungsterMikeyAfterText
 
 TrainerBugCatcherDon:
 	trainer BUG_CATCHER, DON, EVENT_BEAT_BUG_CATCHER_DON, BugCatcherDonSeenText, BugCatcherDonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugCatcherDonAfterText
-	waitbutton
-	closetext
-	end
+	jumptext BugCatcherDonAfterText
 
 Route30YoungsterScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .CompletedEggQuest
-	writetext Route30YoungsterText_DirectionsToMrPokemonsHouse
-	waitbutton
-	closetext
-	end
+	writetextend Route30YoungsterText_DirectionsToMrPokemonsHouse
 
 .CompletedEggQuest:
-	writetext Route30YoungsterText_EveryoneIsBattling
-	waitbutton
-	closetext
-	end
+	writetextend Route30YoungsterText_EveryoneIsBattling
 
 Route30CooltrainerFScript:
 	jumptextfaceplayer Route30CooltrainerFText
@@ -326,9 +310,8 @@ YoungsterJoey1BeatenText:
 YoungsterJoey1AfterText:
 	text "Do I have to have"
 	line "more #mon in"
-
-	para "order to battle"
-	line "better?"
+	cont "order to battle"
+	cont "better?"
 
 	para "No! I'm sticking"
 	line "with this one no"

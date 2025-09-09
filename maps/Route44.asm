@@ -22,8 +22,6 @@ Route44_MapScripts:
 	def_callbacks
 
 Route44Noop1Scene:
-	end
-
 Route44Noop2Scene:
 	end
 
@@ -179,11 +177,7 @@ TrainerPsychicPhil:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicPhilAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicPhilAfterBattleText
 
 TrainerFisherWilton1:
 	trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
@@ -275,66 +269,42 @@ TrainerFisherEdgar:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext FisherEdgarAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext FisherEdgarAfterBattleText
 
 TrainerCooltrainerfCybil:
 	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainerfCybilAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainerfCybilAfterBattleText
 
 TrainerPokemaniacZach:
 	trainer POKEMANIAC, ZACH, EVENT_BEAT_POKEMANIAC_ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacZachAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacZachAfterBattleText
 
 TrainerCooltrainermAllen:
 	trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext CooltrainermAllenAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext CooltrainermAllenAfterBattleText
 	
 TrainerLadyAya:
 	trainer LADY, AYA, EVENT_BEAT_LADY_AYA, LadyAyaSeenText, LadyAyaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadyAyaAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadyAyaAfterBattleText
 
 TrainerBugManiacKeiran:
 	trainer BUG_MANIAC, KEIRAN, EVENT_BEAT_BUG_MANIAC_KEIRAN, BugManiacKeiranSeenText, BugManiacKeiranBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext BugManiacKeiranAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext BugManiacKeiranAfterBattleText
 
 Route44Sign1:
 	jumptext Route44Sign1Text
@@ -428,9 +398,8 @@ BirdKeeperVance1BeatenText:
 BirdKeeperVanceLegendaryBirdsText:
 	text "Articuno, Zapdos"
 	line "and Moltres are"
-
-	para "the three legend-"
-	line "ary bird #mon."
+	cont "the three legend-"
+	cont "ary bird #mon."
 
 	para "I heard there are"
 	line "other legendary"
@@ -443,9 +412,8 @@ BirdKeeperVance2BeatenText:
 
 	para "Oh yeah, here you"
 	line "go. It's that gift"
-
-	para "I couldn't give"
-	line "you last time."
+	cont "I couldn't give"
+	cont "you last time."
 	done
 
 PsychicPhilSeenText:
@@ -478,9 +446,8 @@ PokemaniacZachBeatenText:
 PokemaniacZachAfterBattleText:
 	text "If a #mon has"
 	line "different colors"
-
-	para "from usual, it's"
-	line "more valuable."
+	cont "from usual, it's"
+	cont "more valuable."
 
 	para "What? You mean"
 	line "that's not true?"
@@ -510,9 +477,8 @@ CooltrainermAllenAfterBattleText:
 
 	para "I wonder if"
 	line "Ecruteak Gym's"
-
-	para "Morty is still in"
-	line "training?"
+	cont "Morty is still in"
+	cont "training?"
 
 	para "He really hammered"
 	line "me."
@@ -545,9 +511,8 @@ LadyAyaSeenText:
 	text "Umm, sorry if I'm"
 	line "wrong, but are you"
 	cont "that strong"
-	
-	para "trainer my sisters"
-	line "told me about?"
+	cont "trainer my sisters"
+	cont "told me about?"
 	
 	para "Could we battle,"
 	line "please?"
@@ -569,9 +534,8 @@ LadyAyaAfterBattleText:
 BugManiacKeiranSeenText:
 	text "Most people give"
 	line "up on bug #mon"
-	
-	para "but they're still"
-	line "strong in battle!"
+	cont "but they're still"
+	cont "strong in battle!"
 	done
 
 BugManiacKeiranBeatenText:
@@ -583,9 +547,8 @@ BugManiacKeiranAfterBattleText:
 	text "Good luck on your"
 	line "journey and make"
 	cont "sure not to"
-	
-	para "underestimate"
-	line "Bug #mon!"
+	cont "underestimate"
+	cont "Bug #mon!"
 	done
 
 Route44Sign1Text:

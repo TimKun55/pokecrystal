@@ -17,8 +17,6 @@ Route29_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route29TuscanyCallback
 
 Route29Noop1Scene:
-	end
-
 Route29Noop2Scene:
 	end
 
@@ -116,16 +114,10 @@ Route29CooltrainerMScript:
 	checktime EVE | NITE
 	iftrue .nite
 .day_morn
-	writetext Route29CooltrainerMText_WaitingForNight
-	waitbutton
-	closetext
-	end
+	writetextend Route29CooltrainerMText_WaitingForNight
 
 .nite
-	writetext Route29CooltrainerMText_WaitingForMorning
-	waitbutton
-	closetext
-	end
+	writetextend Route29CooltrainerMText_WaitingForMorning
 
 TuscanyScript:
 	faceplayer
@@ -145,10 +137,7 @@ TuscanyScript:
 	verbosegiveitem PINK_BOW
 	iffalse TuscanyDoneScript
 	setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY
-	writetext TuscanyGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend TuscanyGaveGiftText
 
 TuscanyTuesdayScript:
 	writetext TuscanyTuesdayText
@@ -158,10 +147,7 @@ TuscanyDoneScript:
 	end
 
 TuscanyNotTuesdayScript:
-	writetext TuscanyNotTuesdayText
-	waitbutton
-	closetext
-	end
+	writetextend TuscanyNotTuesdayText
 
 Route29Sign1:
 	jumptext Route29Sign1Text
@@ -222,9 +208,8 @@ CatchingTutorialIntroText:
 
 	para "You can catch wild"
 	line "#mon with #"
-
-	para "Balls. Follow me"
-	line "and I'll show you!"
+	cont "Balls. Follow me"
+	cont "and I'll show you!"
 	done
 
 CatchingTutorialDebriefText:
@@ -265,9 +250,8 @@ Route29YoungsterText:
 
 	para "If they're weak"
 	line "and not ready for"
-
-	para "battle, keep out"
-	line "of the grass."
+	cont "battle, keep out"
+	cont "of the grass."
 	done
 
 Route29TeacherText:
@@ -277,42 +261,37 @@ Route29TeacherText:
 
 	para "But you can go to"
 	line "New Bark without"
-
-	para "walking through"
-	line "the grass."
+	cont "walking through"
+	cont "the grass."
 	done
 
 Route29FisherText:
 	text "I wanted to take a"
 	line "break, so I saved"
-
-	para "to record my"
-	line "progress."
+	cont "to record my"
+	cont "progress."
 	done
 
 Route29CooltrainerMText_WaitingForNight:
 	text "I'm waiting for"
 	line "#mon that"
-
-	para "appear only in"
-	line "the evening or"
+	cont "appear only in"
+	cont "the evening or"
 	cont "at night."
 	done
 
 Route29CooltrainerMText_WaitingForMorning:
 	text "I'm waiting for"
 	line "#mon that"
-
-	para "appear only in the"
-	line "morning."
+	cont "appear only in the"
+	cont "morning."
 	done
 
 MeetTuscanyText:
 	text "Tuscany: I do be-"
 	line "lieve that this is"
-
-	para "the first time"
-	line "we've met?"
+	cont "the first time"
+	cont "we've met?"
 
 	para "Please allow me to"
 	line "introduce myself."
@@ -324,9 +303,8 @@ MeetTuscanyText:
 TuscanyGivesGiftText:
 	text "By way of intro-"
 	line "duction, please"
-
-	para "accept this gift,"
-	line "a Pink Bow."
+	cont "accept this gift,"
+	cont "a Pink Bow."
 	done
 
 TuscanyGaveGiftText:

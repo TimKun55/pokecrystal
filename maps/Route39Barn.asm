@@ -94,26 +94,17 @@ MoomooScript:
 	ifequal 3, .ThreeBerries
 	ifequal 5, .FiveBerries
 	ifequal 7, .SevenBerries
-	writetext Route39BarnGaveBerryText
-	waitbutton
-	closetext
-	end
+	writetextend Route39BarnGaveBerryText
 
 .ThreeBerries:
 	writetext Route39BarnGaveBerryText
 	promptbutton
-	writetext Route39BarnLittleHealthierText
-	waitbutton
-	closetext
-	end
+	writetextend Route39BarnLittleHealthierText
 
 .FiveBerries:
 	writetext Route39BarnGaveBerryText
 	promptbutton
-	writetext Route39BarnQuiteHealthyText
-	waitbutton
-	closetext
-	end
+	writetextend Route39BarnQuiteHealthyText
 
 .SevenBerries:
 	playmusic MUSIC_HEAL
@@ -121,23 +112,14 @@ MoomooScript:
 	pause 60
 	promptbutton
 	special RestartMapMusic
-	writetext Route39BarnTotallyHealthyText
-	waitbutton
-	closetext
 	setevent EVENT_HEALED_MOOMOO
-	end
+	writetextend Route39BarnTotallyHealthyText
 
 .NoBerriesInBag:
-	writetext Route39BarnNoBerriesText
-	waitbutton
-	closetext
-	end
+	writetextend Route39BarnNoBerriesText
 
 .Refused:
-	writetext Route39BarnRefusedBerryText
-	waitbutton
-	closetext
-	end
+	writetextend Route39BarnRefusedBerryText
 
 .HappyCow:
 	writetext MoomooHappyMooText

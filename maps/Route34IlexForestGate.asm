@@ -97,9 +97,8 @@ Route34IlexForestGateTeacherText:
 
 	para "It must be hard if"
 	line "#mon won't"
-
-	para "appear. Try using"
-	line "this TM."
+	cont "appear. Try using"
+	cont "this TM."
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:

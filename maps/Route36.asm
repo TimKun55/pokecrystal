@@ -18,8 +18,6 @@ Route36_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
 
 Route36Noop1Scene:
-	end
-
 Route36Noop2Scene:
 	end
 
@@ -50,7 +48,6 @@ Route36SuicuneScript:
 SudowoodoScript:
 	checkitem SQUIRTBOTTLE
 	iftrue .Fight
-
 	waitsfx
 	playsound SFX_SANDSTORM
 	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
@@ -116,10 +113,7 @@ Route36FloriaScript:
 	end
 
 .SecondTimeTalking:
-	writetext FloriaText2
-	waitbutton
-	closetext
-	end
+	writetextend FloriaText2
 
 Route36RockSmashGuyScript:
 	faceplayer
@@ -128,10 +122,7 @@ Route36RockSmashGuyScript:
 	iftrue .AlreadyGotRockSmash
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
-	writetext RockSmashGuyText1
-	waitbutton
-	closetext
-	end
+	writetextend RockSmashGuyText1
 
 .ClearedSudowoodo:
 	writetext RockSmashGuyText2
@@ -151,16 +142,10 @@ Route36LassScript:
 	opentext
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
-	writetext Route36LassText
-	waitbutton
-	closetext
-	end
+	writetextend Route36LassText
 
 .ClearedSudowoodo:
-	writetext Route36LassText_ClearedSudowoodo
-	waitbutton
-	closetext
-	end
+	writetextend Route36LassText_ClearedSudowoodo
 
 TrainerSchoolboyAlan1:
 	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script
@@ -289,11 +274,7 @@ TrainerPsychicMark:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PsychicMarkAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PsychicMarkAfterBattleText
 
 ArthurScript:
 	faceplayer
@@ -313,10 +294,7 @@ ArthurScript:
 	verbosegiveitem HARD_STONE
 	iffalse .BagFull
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
-	writetext ArthurGaveGiftText
-	waitbutton
-	closetext
-	end
+	writetextend ArthurGaveGiftText
 
 .AlreadyGotStone:
 	writetext ArthurThursdayText
@@ -326,10 +304,7 @@ ArthurScript:
 	end
 
 ArthurNotThursdayScript:
-	writetext ArthurNotThursdayText
-	waitbutton
-	closetext
-	end
+	writetextend ArthurNotThursdayText
 
 Route36Sign:
 	jumptext Route36SignText
@@ -416,18 +391,16 @@ FloriaText1:
 
 	para "When I sprinkled"
 	line "water on that"
-
-	para "wiggly tree, it"
-	line "jumped right up!"
+	cont "wiggly tree, it"
+	cont "jumped right up!"
 
 	para "It just has to be"
 	line "a #mon."
 
 	para "I bet it would be"
 	line "shocked out of its"
-
-	para "disguise if you"
-	line "soaked it!"
+	cont "disguise if you"
+	cont "soaked it!"
 
 	para "I know! I'll tell"
 	line "my sis and borrow"
@@ -437,15 +410,13 @@ FloriaText1:
 FloriaText2:
 	text "When I told my sis"
 	line "about the jiggly"
-
-	para "tree, she said"
-	line "it's dangerous."
+	cont "tree, she said"
+	cont "it's dangerous."
 
 	para "If I beat Whitney,"
 	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
+	cont "lend me her water"
+	cont "bottle…"
 	done
 
 RockSmashGuyText1:
@@ -453,9 +424,8 @@ RockSmashGuyText1:
 
 	para "I was going to"
 	line "snap that tree"
-
-	para "with my straight-"
-	line "arm punch."
+	cont "with my straight-"
+	cont "arm punch."
 
 	para "But I couldn't!"
 	line "I'm a failure!"
@@ -476,9 +446,8 @@ RockSmashGuyText3:
 
 	para "You can shatter"
 	line "rocks with just a"
-
-	para "single well-aimed"
-	line "smack."
+	cont "single well-aimed"
+	cont "smack."
 
 	para "If any rocks are"
 	line "in your way, just"
@@ -518,9 +487,8 @@ PsychicMarkBeatenText:
 PsychicMarkAfterBattleText:
 	text "I'd be strong if"
 	line "only I could tell"
-
-	para "what my opponent"
-	line "was thinking."
+	cont "what my opponent"
+	cont "was thinking."
 	done
 
 SchoolboyAlan1SeenText:
@@ -559,9 +527,8 @@ ArthurGivesGiftText:
 ArthurGaveGiftText:
 	text "Arthur: A #mon"
 	line "that uses rock-"
-
-	para "type moves should"
-	line "hold on to that."
+	cont "type moves should"
+	cont "hold on to that."
 
 	para "It pumps up rock-"
 	line "type attacks."
@@ -570,9 +537,8 @@ ArthurGaveGiftText:
 ArthurThursdayText:
 	text "Arthur: I'm Arthur"
 	line "of Thursday. I'm"
-
-	para "the second son out"
-	line "of seven children."
+	cont "the second son out"
+	cont "of seven children."
 	done
 
 ArthurNotThursdayText:
@@ -602,9 +568,8 @@ Route36TrainerTips1Text:
 
 	para "However, differ-"
 	line "ences will become"
-
-	para "pronounced as the"
-	line "#mon grow."
+	cont "pronounced as the"
+	cont "#mon grow."
 	done
 
 Route36TrainerTips2Text:
@@ -616,9 +581,8 @@ Route36TrainerTips2Text:
 
 	para "It is convenient"
 	line "for exploring"
-
-	para "caves and other"
-	line "landmarks."
+	cont "caves and other"
+	cont "landmarks."
 	done
 
 Route36_MapEvents:

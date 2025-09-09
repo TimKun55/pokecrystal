@@ -15,11 +15,8 @@ PokefanM_DairyFarmer:
 	opentext
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue FarmerMScript_SellMilk
-	writetext FarmerMText_SickCow
-	waitbutton
-	closetext
-	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
-	end
+	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO	
+	writetextend FarmerMText_SickCow
 
 FarmerMScript_SellMilk:
 	writetext FarmerMText_BuyMilk
@@ -83,22 +80,13 @@ FarmerMScript_SellMilk:
 	db "Cancel@"
 
 FarmerMScript_NoMoney:
-	writetext FarmerMText_NoMoney
-	waitbutton
-	closetext
-	end
+	writetextend FarmerMText_NoMoney
 
 FarmerMScript_NoRoom:
-	writetext FarmerMText_NoRoom
-	waitbutton
-	closetext
-	end
+	writetextend FarmerMText_NoRoom
 
 FarmerMScript_NoSale:
-	writetext FarmerMText_NoSale
-	waitbutton
-	closetext
-	end
+	writetextend FarmerMText_NoSale
 
 PokefanF_SnoreFarmer:
 	faceplayer
@@ -107,10 +95,7 @@ PokefanF_SnoreFarmer:
 	iftrue FarmerFScript_GotSnore
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue FarmerFScript_GiveSnore
-	writetext FarmerFText_InTrouble
-	waitbutton
-	closetext
-	end
+	writetextend FarmerFText_InTrouble
 
 FarmerFScript_GiveSnore:
 	writetext FarmerFText_HealedMiltank
@@ -141,9 +126,8 @@ FarmerMText_SickCow:
 
 	para "It'll give me lots"
 	line "o' milk if'n I"
-
-	para "feed it lots o'"
-	line "Berries, I reckon."
+	cont "feed it lots o'"
+	cont "Berries, I reckon."
 	done
 
 FarmerMText_BuyMilk:
@@ -196,9 +180,8 @@ FarmerFText_InTrouble:
 
 	para "So if our own"
 	line "Miltank won't give"
-
-	para "us any milk, we're"
-	line "in trouble."
+	cont "us any milk, we're"
+	cont "in trouble."
 	done
 
 FarmerFText_HealedMiltank:
@@ -218,9 +201,8 @@ FarmerFText_SnoreSpeech:
 
 	para "It's a rare move"
 	line "that only works"
-
-	para "while the #mon"
-	line "is asleep."
+	cont "while the #mon"
+	cont "is asleep."
 
 	para "You best think how"
 	line "you ought to use"

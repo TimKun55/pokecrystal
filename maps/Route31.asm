@@ -171,10 +171,7 @@ Route31MailRecipientScript:
 	iftrue .DescribeNightmare
 	checkevent EVENT_GOT_KENYA
 	iftrue .TryGiveKenya
-	writetext Text_Route31SleepyMan
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31SleepyMan
 
 .TryGiveKenya:
 	writetext Text_Route31SleepyManGotMail
@@ -201,28 +198,16 @@ Route31MailRecipientScript:
 	end
 
 .WrongMail:
-	writetext Text_Route31WrongMail
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31WrongMail
 
 .NoMail:
-	writetext Text_Route31MissingMail
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31MissingMail
 
 .Refused:
-	writetext Text_Route31DeclinedToHandOverMail
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31DeclinedToHandOverMail
 
 .LastMon:
-	writetext Text_Route31CantTakeLastMon
-	waitbutton
-	closetext
-	end
+	writetextend Text_Route31CantTakeLastMon
 
 ReceivedFarfetchdMailText:
 	db   "Dark Cave leads"
@@ -270,9 +255,8 @@ BugCatcherWade1BeatenText:
 BugCatcherWade1AfterText:
 	text "You can catch"
 	line "#mon even if"
-
-	para "you have six with"
-	line "you."
+	cont "you have six with"
+	cont "you."
 
 	para "If you catch one,"
 	line "it'll go to your"
@@ -338,9 +322,8 @@ Text_Route31DescribeNightmare:
 
 	para "It's a wicked move"
 	line "that steadily cuts"
-
-	para "the HP of a sleep-"
-	line "ing enemy."
+	cont "the HP of a sleep-"
+	cont "ing enemy."
 
 	para "Ooooh…"
 	line "That's scary…"
@@ -370,9 +353,8 @@ Text_Route31DeclinedToHandOverMail:
 Text_Route31CantTakeLastMon:
 	text "If I take that"
 	line "#mon from you,"
-
-	para "what are you going"
-	line "to use in battle?"
+	cont "what are you going"
+	cont "to use in battle?"
 	done
 
 Route31YoungsterText:

@@ -20,11 +20,7 @@ Route42_MapScripts:
 	def_callbacks
 
 Route42Noop1Scene:
-	end
-
 Route42Noop2Scene:
-	end
-
 Route42Noop3Scene:
 	end
 
@@ -282,22 +278,14 @@ TrainerPokemaniacShane:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext PokemaniacShaneAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext PokemaniacShaneAfterBattleText
 
 TrainerHikerBenjamin:
 	trainer HIKER, BENJAMIN, EVENT_BEAT_HIKER_BENJAMIN, HikerBenjaminSeenText, HikerBenjaminBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext HikerBenjaminAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext HikerBenjaminAfterBattleText
 
 Route42Sign1:
 	jumptext Route42Sign1Text
@@ -377,16 +365,14 @@ Route42LyraGreetingText:
 
 	para "What a coinci-"
 	line "dence. I was just"
-
-	para "studying the eff-"
-	line "ects of weather"
+	cont "studying the eff-"
+	cont "ects of weather"
 	cont "on wild #mon."
 
 	para "So you're heading"
 	line "to Mahogany Town"
-
-	para "for another Gym"
-	line "badge?"
+	cont "for another Gym"
+	cont "badge?"
 
 	para "Then I have a"
 	line "present for you!"
@@ -428,22 +414,19 @@ Route42LyraWhirlpoolText:
 	
 	para "You'll need it"
 	line "if you want to"
-	
-	para "explore the Whirl"
-	line "Islands!"
+	cont "explore the Whirl"
+	cont "Islands!"
 	
 	para "I had a look"
 	line "around in there,"
-	
-	para "but there was a"
-	line "huge waterfall I"
+	cont "but there was a"
+	cont "huge waterfall I"
 	cont "couldn't get past."
 
 	para "I should get"
 	line "going. It was"
-
-	para "nice seeing you,"
-	line "<PLAYER>!"
+	cont "nice seeing you,"
+	cont "<PLAYER>!"
 
 	para "Bye now!"
 	done
@@ -462,9 +445,8 @@ FisherTullyBeatenText:
 FisherTullyAfterBattleText:
 	text "I want to become"
 	line "the trainer Champ"
-
-	para "using the #mon"
-	line "I caught."
+	cont "using the #mon"
+	cont "I caught."
 
 	para "That's the best"
 	line "part of fishing!"
@@ -483,9 +465,8 @@ HikerBenjaminBeatenText:
 HikerBenjaminAfterBattleText:
 	text "Losing feels in-"
 	line "significant if you"
-
-	para "look up at the big"
-	line "sky!"
+	cont "look up at the big"
+	cont "sky!"
 	done
 
 PokemaniacShaneSeenText:

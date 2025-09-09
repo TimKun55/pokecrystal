@@ -12,9 +12,8 @@ Route36VioletGateOfficerScript:
 Route36VioletGateOfficerText:
 	text "The Ruins Of Alph,"
 	line "Sprout Tower,"
-
-	para "Tin Tower and"
-	line "the Burned Tower."
+	cont "Tin Tower and"
+	cont "the Burned Tower."
 
 	para "There's so much to"
 	line "see and experience"

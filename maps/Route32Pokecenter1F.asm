@@ -27,23 +27,14 @@ Route32Pokecenter1FFishingGuruScript:
 	writetext Route32Pokecenter1FFishingGuruText_Yes
 	promptbutton
 	verbosegiveitem OLD_ROD
-	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
-	waitbutton
-	closetext
-	setevent EVENT_GOT_OLD_ROD
-	end
+	setevent EVENT_GOT_OLD_ROD	
+	writetextend Route32Pokecenter1FFishingGuruText_GiveOldRod
 
 .Refused:
-	writetext Route32Pokecenter1FFishingGuruText_No
-	waitbutton
-	closetext
-	end
+	writetextend Route32Pokecenter1FFishingGuruText_No
 
 .GotOldRod:
-	writetext Route32Pokecenter1FFishingGuruText_After
-	waitbutton
-	closetext
-	end
+	writetextend Route32Pokecenter1FFishingGuruText_After
 
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
@@ -53,11 +44,7 @@ Route32Pokecenter1FLadySue:
 
 .Script:
 	endifjustbattled
-	opentext
-	writetext LadySueAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptext LadySueAfterBattleText
 
 Route32Pokecenter1FFishingGuruText_Question:
 	text "This is a great"
@@ -84,9 +71,8 @@ Route32Pokecenter1FFishingGuruText_GiveOldRod:
 
 	para "If there's water,"
 	line "be it the sea or a"
-
-	para "stream, try out"
-	line "your Rod."
+	cont "stream, try out"
+	cont "your Rod."
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
@@ -127,10 +113,10 @@ LadySueAfterBattleText:
 	text "That was fun!"
 	line "You should see if"
 	cont "you can find all"
-	
-	para "my sisters!"
-	line "I'm sure they'd"
-	cont "like to battle!"
+	cont "my sisters!"
+		
+	para "I'm sure they'd"
+	line "like to battle!"
 	done
 	
 Route32Pokecenter1F_MapEvents:
