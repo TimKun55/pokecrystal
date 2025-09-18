@@ -35,7 +35,7 @@ PalPacket_GSIntroShellderLapras:
 	sgb_pal_set GS_INTRO_SHELLDER_LAPRAS, ROUTES, ROUTES, ROUTES
 
 PalPacket_BetaIntroLapras: ; unreferenced
-	sgb_pal_set BETA_INTRO_LAPRAS, ROUTES, ROUTES, ROUTES
+	sgb_pal_set POKEDEX_GRAY, ROUTES, ROUTES, ROUTES
 
 PalPacket_GSIntroJigglypuffPikachu:
 	sgb_pal_set GS_INTRO_JIGGLYPUFF_PIKACHU_BG, GS_INTRO_JIGGLYPUFF_PIKACHU_OB, ROUTES, ROUTES
@@ -68,7 +68,7 @@ PalPacket_SlotMachine:
 	sgb_pal_set SLOT_MACHINE_0, SLOT_MACHINE_1, SLOT_MACHINE_2, SLOT_MACHINE_3
 
 PalPacket_BetaTitleScreen:
-	sgb_pal_set BETA_LOGO_1, BETA_LOGO_2, DIPLOMA, RB_PURPLEMON
+	sgb_pal_set POKEDEX_BLUE, POKEDEX_BROWN, DIPLOMA, RB_PURPLEMON
 
 PalPacket_Generic:
 	sgb_pal_set DIPLOMA, ROUTES, ROUTES, ROUTES

@@ -164,12 +164,26 @@ ENDC
 
 Dex_Pics_DrawBorder:
 	hlcoord 0, 0
-	ld a, $34 ; $39 ; $32 ; color block, bottom left corner
-	ld bc, SCREEN_WIDTH
-	call ByteFill
-	hlcoord 1, 0
-	ld a, $57 ; $3b ; text border, left side of SELECT > SHINY
+
+	hlcoord 0, 0
+	lb bc, 16, 18
+	call Pokedex_Pics_Page_PlaceBorder
+
+	hlcoord 10, 14
+	; hlcoord 10, 17
+	ld a, $41 ; START >
 	ld [hli], a
+	inc a ; ld a, $42 ; START >
+	ld [hli], a
+	inc a ; ld a, $43 ; START >
+	ld [hli], a
+;IF USING_INCREASED_SPRITE_ANIMATION == FALSE
+	ld a, $62 ; > CRY 
+	ld [hli], a
+	inc a ; ld a, $63 ; > CRY [VRAM 1] @ 14, 17
+	ld [hli], a
+
+	hlcoord 10, 16
 	ld a, $48 ; SELECT >
 	ld [hli], a
 	ld a, $49 ; SELECT >
@@ -182,58 +196,15 @@ Dex_Pics_DrawBorder:
 	ld [hli], a
 	inc a ; $60, SHINY 3
 	ld [hli], a
-	ld a, $58 ; $3c ; text border right side of SELECT > SHINY
-	ld [hli], a
-
-;IF USING_INCREASED_SPRITE_ANIMATION == FALSE
-	ld a, $34
-	ld [hli], a
-
-	ld a, $34
-	ld [hli], a
-;ENDC
-
-	ld a, $57 ; $3b ; text border, left side of START > CRY
-	ld [hli], a	
-	; hlcoord 10, 17
-	ld a, $41 ; START >
-	ld [hli], a
-	inc a ; ld a, $42 ; START >
-	ld [hli], a
-	inc a ; ld a, $43 ; START >
-	ld [hli], a
-
-;IF USING_INCREASED_SPRITE_ANIMATION == FALSE
-	ld a, $62 ; > CRY 
-	ld [hli], a
-	inc a ; ld a, $63 ; > CRY [VRAM 1] @ 14, 17
-	ld [hli], a
-;ELSE
-; IF USING_INCREASED_SPRITE_ANIMATION == TRUE
-
-; using expanded mon animation
-;	ld a, $56 ; arrow cap
-;	ld [hli], a
-;	ld de, cry_text
-;	call PlaceString
-;	inc hl
-;	inc hl
-;	inc hl	
-;ENDC
-
-	ld a, $58 ; $3c ; curvest text border, right side of START > CRY
-	ld [hli], a
-	ld a, $34 ; $39 ; $32 ; color block
-	ld [hl], a
 
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
 	jr z, .caught_ball_done
-	hlcoord 4, 11
+	hlcoord 6, 10
 	ld [hl], $4f ; pokeball icon
 .caught_ball_done	
-	hlcoord 3, 11
+	hlcoord 4, 11
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
@@ -243,43 +214,60 @@ Dex_Pics_DrawBorder:
 	ld [hl], " "
 .shiny_done
 ; SELECT > SHINY START > CRY
-	hlcoord 0, 17
-	ld a, $39
-	ld bc, SCREEN_WIDTH - 1
-	call ByteFill
 	
 ; up/down arrows	
-	hlcoord 19, 0
+	hlcoord 18, 0
 	ld [hl], $3f
 	; inc hl
 	; ld [hl], $72
-	hlcoord 19, 17
+	hlcoord 18, 17
 	ld [hl], $40
-
-; ribbons for name/caught/shiny
-	; above species name
-	hlcoord 0, 10
-	ld bc, SCREEN_WIDTH
-	ld a, $39
-	call ByteFill
-	hlcoord 0, 11
-	ld [hl], $32 ; color block
-	inc hl
-	ld [hl], $3b ; curved text border left side
-	hlcoord 17, 11
-	ld [hl], $3c ; curved text border right side side
-	inc hl
-	ld a, $32 ; color block
-	ld [hli], a
-	ld [hl], a
-	; border under species name
-	hlcoord 0, 12
-	ld bc, SCREEN_WIDTH
-	ld a, $34
-	call ByteFill
 	ret
 
 IF USING_INCREASED_SPRITE_ANIMATION == TRUE
 cry_text:
 	db "Cry@"
 ENDC
+
+Pokedex_Pics_Page_PlaceBorder:
+	push hl
+	ld a, $33
+	ld [hli], a
+	ld d, $34
+	call .FillRow
+	ld a, $35
+	ld [hl], a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+.loop
+	push hl
+	ld a, $36
+	ld [hli], a
+	ld d, $7f
+	call .FillRow
+	ld a, $37
+	ld [hl], a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+	dec b
+	jr nz, .loop
+	ld a, $38
+	ld [hli], a
+	ld d, $39
+	call .FillRow
+	ld a, $3a
+	ld [hl], a
+	ret
+
+.FillRow:
+	ld e, c
+.row_loop
+	ld a, e
+	and a
+	ret z
+	ld a, d
+	ld [hli], a
+	dec e
+	jr .row_loop

@@ -690,10 +690,10 @@ _CGB_Pokedex_PicsPage:
 	call FillBoxCGB
 
 ; page/up down arrows
-	hlcoord 9, 0, wAttrmap
-	ld [hl], 0 ; remove VRAM 1 bit
-	hlcoord 19, 0, wAttrmap
-	ld [hl], 0 ; remove VRAM 1 bit
+;	hlcoord 9, 0, wAttrmap
+;	ld [hl], 0 ; remove VRAM 1 bit
+;	hlcoord 19, 0, wAttrmap
+;	ld [hl], 0 ; remove VRAM 1 bit
 
 ; animated icon, upper right corner fix
 	hlcoord 4, 13, wAttrmap
@@ -735,7 +735,7 @@ CheckPokedexColor:
 	ld a, [wCurPokedexColor]
 	cp DEXCOLOR_BLUE
 	jr nz, .Purple
-	ld a, PREDEFPAL_TRADE_TUBE
+	ld a, PREDEFPAL_POKEDEX_BLUE
 	ret
 
 .Purple
@@ -747,7 +747,7 @@ CheckPokedexColor:
 .Brown
 	cp DEXCOLOR_BROWN
 	jr nz, .Green
-	ld a, PREDEFPAL_RB_BROWNMON
+	ld a, PREDEFPAL_POKEDEX_BROWN
 	ret
 
 .Green
@@ -777,7 +777,7 @@ CheckPokedexColor:
 .Gray
 	cp DEXCOLOR_GRAY
 	jr nz, .Red
-	ld a, PREDEFPAL_CGB_BADGE
+	ld a, PREDEFPAL_POKEDEX_GRAY
 	ret
 
 .Red

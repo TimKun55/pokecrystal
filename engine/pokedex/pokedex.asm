@@ -370,9 +370,9 @@ Pokedex_UpdateDexEntryScreen:
 	and A_BUTTON
 	jr nz, .do_menu_action
 	ld a, [hl] ;
-	and START ;
-	jp nz, Area_Page_map ; .toCry ;
-	ld a, [hl]
+;	and START ;
+;	jp nz, Area_Page_map ; .toCry ;
+;	ld a, [hl]
 	and SELECT ;
 	call nz, Pokedex_toggle_shininess_Entry
 	call Pokedex_NextOrPreviousDexEntry
@@ -430,7 +430,7 @@ Pokedex_toggle_shininess_Pics:
 	call Pokedex_GetSGBLayout
 
 	; add or remove shiny icon
-	hlcoord 3, 11 ; 1, 9 ; 9, 7 ; 0, 9
+	hlcoord 4, 11 ; 1, 9 ; 9, 7 ; 0, 9
 	ld a, [hl]
 	cp "<DEX_⁂>"
 	jr z, .shinyicon_set
@@ -474,17 +474,17 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
 
-	ld a, [wPokedexEntryType]
-	cp DEXENTRY_PICS
-	jr c, .not_area
-	; find first area entry or none?
-	xor a
-	ld [wPokedexEntryPageNum], a
-	ld a, DEXENTRY_PICS
-	ld [wPokedexEntryType], a
-	call Area_Page
-	jr .cont
-.not_area
+;	ld a, [wPokedexEntryType]
+;	cp DEXENTRY_PICS
+;	jr c, .not_area
+;	; find first area entry or none?
+;	xor a
+;	ld [wPokedexEntryPageNum], a
+;	ld a, DEXENTRY_PICS
+;	ld [wPokedexEntryType], a
+;	call Area_Page
+;	jr .cont
+;.not_area
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_PICS
 	jr nz, .evo
@@ -596,7 +596,7 @@ DexEntryScreen_MenuActionJumptable:
 	dw Pokedex_Page
 	dw BaseStat_Page
 	dw Moves_Page
-	dw Area_Page
+	dw Area_Page_map	;	dw Area_Page
 	dw Evos_Page
 	dw Pics_Page ; .SpriteAnim
 
@@ -944,6 +944,21 @@ ENDC
 	lb bc, SCREEN_HEIGHT, SCREEN_WIDTH
 	call ClearBox	
 
+	farcall Dex_Pics_DrawBorder
+
+	hlcoord 8, 10
+	ld a, $4d ; No
+	ld [hli], a
+	ld a, $e8 ; .
+	ld [hli], a
+	ld de, wTempSpecies
+	call Pokedex_GetDexNumber
+	ld de, wUnusedBCDNumber
+
+	call GetPokemonNumber
+	hlcoord 10, 10
+	call PlaceString
+
 	hlcoord 6, 11 ; 2, 11 ; 1, 9
 	call GetPokemonName
 	call PlaceString
@@ -951,7 +966,6 @@ ENDC
 	ld [wSummaryScreenFlags], a
 	farcall Pokedex_PlaceAnimatedFrontpic
 	farcall Pokedex_PlaceBackPic
-	farcall Dex_Pics_DrawBorder	
 	call WaitBGMap
 	farcall Pokedex_place_Mon_Icon
 	callfar PlaySpriteAnimations
@@ -1112,18 +1126,18 @@ Pokedex_UpdateOptionScreen:
 
 .NoUnownModeArrowCursorData:
 	db D_UP | D_DOWN, 4
-	dwcoord 2,  3 ; COLOR
-	dwcoord 2,  4 ; ABC
-	dwcoord 2,  5 ; JOHTO
-	dwcoord 2,  6 ; NATIONAL
+	dwcoord 2,  5 ; COLOR
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  7 ; JOHTO
+	dwcoord 2,  8 ; NATIONAL
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 5
-	dwcoord 2,  3 ; COLOR
-	dwcoord 2,  4 ; ABC
-	dwcoord 2,  5 ; JOHTO
-	dwcoord 2,  6 ; NATIONAL
-	dwcoord 2,  7 ; UNOWN
+	dwcoord 2,  5 ; COLOR
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  7 ; JOHTO
+	dwcoord 2,  8 ; NATIONAL
+	dwcoord 2,  9 ; UNOWN
 
 .MenuActionJumptable:
 	dw .MenuAction_ColorOption
@@ -1224,8 +1238,8 @@ Pokedex_UpdateSearchScreen:
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 4
-	dwcoord 2, 4  ; TYPE 1
-	dwcoord 2, 6  ; TYPE 2
+	dwcoord 2, 5  ; TYPE 1
+	dwcoord 2, 7  ; TYPE 2
 	dwcoord 2, 13 ; BEGIN SEARCH
 	dwcoord 2, 15 ; CANCEL
 
@@ -1650,27 +1664,27 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 0, 0
 	lb bc, 7, 7
 	call Pokedex_PlaceBorder
-	hlcoord 0, 9
-	lb bc, 6, 7
+	hlcoord 1, 10
+	lb bc, 5, 5
 	call Pokedex_PlaceBorder
-	hlcoord 1, 11
+	hlcoord 3, 11
 	ld de, String_SEEN
 	call Pokedex_PlaceString
 	ld hl, wPokedexSeen
 	ld b, wEndPokedexSeen - wPokedexSeen
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 5, 12
+	hlcoord 3, 12
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 1, 14
+	hlcoord 3, 14
 	ld de, String_OWN
 	call Pokedex_PlaceString
 	ld hl, wPokedexCaught
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 5, 15
+	hlcoord 3, 15
 	lb bc, 1, 3
 	call PrintNum
 	hlcoord 0, 17
@@ -1678,18 +1692,18 @@ Pokedex_DrawMainScreenBG:
 	call Pokedex_PlaceString
 	hlcoord 8, 1
 	ld b, 7
-	ld a, $5a
+	ld a, $54
 	call Pokedex_FillColumn
-	hlcoord 8, 10
-	ld b, 6
-	ld a, $5a
+	hlcoord 8, 9
+	ld b, 7
+	ld a, $54
 	call Pokedex_FillColumn
 	hlcoord 8, 0
 	ld [hl], $59
 	hlcoord 8, 8
 	ld [hl], $53
-	hlcoord 8, 9
-	ld [hl], $54
+;	hlcoord 8, 9
+;	ld [hl], $54
 	hlcoord 8, 16
 	ld [hl], $5b
 	call Pokedex_PlaceFrontpicTopLeftCorner
@@ -1893,37 +1907,40 @@ Pokedex_LoadTextboxSpaceGFX:
 
 Pokedex_DrawOptionScreenBG:
 	call Pokedex_FillBackgroundColor2
-	hlcoord 0, 2
-	lb bc, 8, 18
+	hlcoord 0, 0
+	lb bc, 1, 18
+	call Pokedex_PlaceBorder
+	hlcoord 0, 3
+	lb bc, 7, 18
 	call Pokedex_PlaceBorder
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Pokedex_PlaceBorder
-	hlcoord 5, 1
+	hlcoord 7, 1
 	ld de, .Title
-	call Pokedex_PlaceString
-	hlcoord 3, 3
-	ld de, .Color
-	call PlaceString	
-	hlcoord 3, 4	
-	ld de, .AtoZMode
 	call PlaceString
 	hlcoord 3, 5
+	ld de, .Color
+	call PlaceString	
+	hlcoord 3, 6	
+	ld de, .AtoZMode
+	call PlaceString
+	hlcoord 3, 7
 	ld de, .JohtoMode
 	call PlaceString
-	hlcoord 3, 6
+	hlcoord 3, 8
 	ld de, .NationalMode
 	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
 	ret z
-	hlcoord 3, 7
+	hlcoord 3, 9
 	ld de, .UnownMode
 	call PlaceString
 	ret
 
 .Title:
-	db $3b, " Option ", $3c, -1
+	db "Option@"
 
 .JohtoMode:
 	db "Johto Mode@"
@@ -1942,42 +1959,45 @@ Pokedex_DrawOptionScreenBG:
 
 Pokedex_DrawColorScreenBG:
 	call Pokedex_FillBackgroundColor2
-	hlcoord 0, 2
-	lb bc, 14, 18
+	hlcoord 0, 0
+	lb bc, 1, 18
 	call Pokedex_PlaceBorder
-	hlcoord 5, 1
+	hlcoord 0, 3
+	lb bc, 11, 18
+	call Pokedex_PlaceBorder
+	hlcoord 6, 1
 	ld de, .Title
-	call Pokedex_PlaceString
-	hlcoord 3, 3
+	call PlaceString
+	hlcoord 6, 5
 	ld de, .Red
 	call Pokedex_PlaceString	
-	hlcoord 3, 4
+	hlcoord 6, 6
 	ld de, .Blue
 	call Pokedex_PlaceString
-	hlcoord 3, 5
+	hlcoord 6, 7
 	ld de, .Purple
 	call Pokedex_PlaceString
-	hlcoord 3, 6
+	hlcoord 6, 8
 	ld de, .Brown
 	call Pokedex_PlaceString
-	hlcoord 3, 7
+	hlcoord 6, 9
 	ld de, .Green
 	call Pokedex_PlaceString
-	hlcoord 3, 8
+	hlcoord 6, 10
 	ld de, .Pink
 	call Pokedex_PlaceString
-	hlcoord 3, 9
+	hlcoord 6, 11
 	ld de, .Yellow
 	call Pokedex_PlaceString
-	hlcoord 3, 10
+	hlcoord 6, 12
 	ld de, .Cyan
 	call Pokedex_PlaceString
-	hlcoord 3, 11
+	hlcoord 6, 13
 	ld de, .Gray
 	jp Pokedex_PlaceString
 
  .Title:
-	db $3b, "Colours ", $3c, -1
+	db "Colours@"
 
  .Red
 	db "Red    ", $4f, -1
@@ -2020,15 +2040,15 @@ Pokedex_DrawColorScreenBG:
 	
  .ArrowCursorData:
 	db D_UP | D_DOWN, 9
-	dwcoord 2,  3  ; Red
-	dwcoord 2,  4  ; Blue
-	dwcoord 2,  5  ; Purple
-	dwcoord 2,  6  ; Brown
-	dwcoord 2,  7  ; Green
-	dwcoord 2,  8  ; Pink
-	dwcoord 2,  9  ; Yellow	
-	dwcoord 2,  10 ; Cyan
-	dwcoord 2,  11 ; Gray
+	dwcoord 5,  5  ; Red
+	dwcoord 5,  6  ; Blue
+	dwcoord 5,  7  ; Purple
+	dwcoord 5,  8  ; Brown
+	dwcoord 5,  9  ; Green
+	dwcoord 5,  10 ; Pink
+	dwcoord 5,  11 ; Yellow	
+	dwcoord 5,  12 ; Cyan
+	dwcoord 5,  13 ; Gray
 	
  .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -2105,19 +2125,22 @@ Pokedex_DrawColorScreenBG:
 	ret
 Pokedex_DrawSearchScreenBG:
 	call Pokedex_FillBackgroundColor2
-	hlcoord 0, 2
-	lb bc, 14, 18
+	hlcoord 0, 0
+	lb bc, 1, 18
 	call Pokedex_PlaceBorder
-	hlcoord 5, 1
+	hlcoord 0, 3
+	lb bc, 13, 18
+	call Pokedex_PlaceBorder
+	hlcoord 7, 1
 	ld de, .Title
-	call Pokedex_PlaceString
-	hlcoord 9, 4
+	call PlaceString
+	hlcoord 9, 5
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
-	hlcoord 9, 6
+	hlcoord 9, 7
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
-	hlcoord 3, 4
+	hlcoord 3, 5
 	ld de, .Types
 	call PlaceString
 	hlcoord 3, 13
@@ -2126,7 +2149,7 @@ Pokedex_DrawSearchScreenBG:
 	ret
 
 .Title:
-	db $3b, " Search ", $3c, -1
+	db "Search@"
 
 .TypeLeftRightArrows:
 	db $3d, "        ", $3e, -1
@@ -2160,14 +2183,14 @@ Pokedex_DrawSearchResultsScreenBG:
 	ld [hl], $59
 	hlcoord 8, 1
 	ld b, 7
-	ld a, $5a
+	ld a, $54
 	call Pokedex_FillColumn
 	hlcoord 8, 8
 	ld [hl], $53
 	hlcoord 8, 9
-	ld [hl], $69
+	ld [hl], $54
 	hlcoord 8, 10
-	ld [hl], $6a
+	ld [hl], $5b
 	call Pokedex_PlaceFrontpicTopLeftCorner
 	ret
 
@@ -2768,15 +2791,15 @@ Pokedex_NextSearchMonType:
 Pokedex_PlaceSearchScreenTypeStrings:
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 10, 3
+	hlcoord 10, 4
 	lb bc, 4, 8
 	ld a, " "
 	call Pokedex_FillBox
 	ld a, [wDexSearchMonType1]
-	hlcoord 10, 4
+	hlcoord 10, 5
 	call Pokedex_PlaceTypeString
 	ld a, [wDexSearchMonType2]
-	hlcoord 10, 6
+	hlcoord 10, 7
 	call Pokedex_PlaceTypeString
 	ld a, $1
 	ldh [hBGMapMode], a
