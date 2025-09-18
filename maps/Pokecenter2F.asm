@@ -7,13 +7,15 @@
 
 Pokecenter2F_MapScripts:
 	def_scene_scripts
-	scene_script Pokecenter2FLeaveTradeCenterScene,      SCENE_POKECENTER2F_LEAVE_TRADE_CENTER
-	scene_script Pokecenter2FLeaveColosseumScene,        SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+	scene_script Pokecenter2FNoopScene,               SCENE_POKECENTER2F_NOOP
+	scene_script Pokecenter2FLeaveTradeCenterScene,   SCENE_POKECENTER2F_LEAVE_TRADE_CENTER
+	scene_script Pokecenter2FLeaveColosseumScene,     SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 
 	def_callbacks
 
 Pokecenter2FLeaveTradeCenterScene:
 	sdefer Script_LeftCableTradeCenter
+Pokecenter2FNoopScene:
 	end
 
 Pokecenter2FLeaveColosseumScene:
@@ -170,12 +172,14 @@ Script_LeftCableTradeCenter:
 	special WaitForOtherPlayerToExit
 	scall Script_WalkOutOfLinkTradeRoom
 	setmapscene TRADE_CENTER, SCENE_TRADECENTER_INITIALIZE
+	setscene SCENE_POKECENTER2F_NOOP
 	end
 
 Script_LeftCableColosseum:
 	special WaitForOtherPlayerToExit
 	scall Script_WalkOutOfLinkBattleRoom
 	setmapscene COLOSSEUM, SCENE_COLOSSEUM_INITIALIZE
+	setscene SCENE_POKECENTER2F_NOOP
 	end
 
 Pokecenter2F_EnterRoom:
