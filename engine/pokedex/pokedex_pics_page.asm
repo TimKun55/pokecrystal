@@ -164,10 +164,20 @@ ENDC
 
 Dex_Pics_DrawBorder:
 	hlcoord 0, 0
-
-	hlcoord 0, 0
 	lb bc, 16, 18
 	call Pokedex_Pics_Page_PlaceBorder
+
+	hlcoord 1, 1
+	lb bc, 7, 7
+	call Pokedex_Pics_Page_PlaceInBorder
+
+	hlcoord 11, 1
+	lb bc, 6, 6
+	call Pokedex_Pics_Page_PlaceInBorder
+
+	hlcoord 1, 13
+	lb bc, 2, 2
+	call Pokedex_Pics_Page_PlaceInBorder
 
 	hlcoord 10, 14
 	; hlcoord 10, 17
@@ -258,6 +268,50 @@ Pokedex_Pics_Page_PlaceBorder:
 	ld d, $39
 	call .FillRow
 	ld a, $3a
+	ld [hl], a
+	ret
+
+.FillRow:
+	ld e, c
+.row_loop
+	ld a, e
+	and a
+	ret z
+	ld a, d
+	ld [hli], a
+	dec e
+	jr .row_loop
+
+
+Pokedex_Pics_Page_PlaceInBorder:
+	push hl
+	ld a, $75
+	ld [hli], a
+	ld d, $76
+	call .FillRow
+	ld a, $77
+	ld [hl], a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+.loop
+	push hl
+	ld a, $78
+	ld [hli], a
+	ld d, $7f
+	call .FillRow
+	ld a, $79
+	ld [hl], a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+	dec b
+	jr nz, .loop
+	ld a, $7a
+	ld [hli], a
+	ld d, $7b
+	call .FillRow
+	ld a, $7c
 	ld [hl], a
 	ret
 

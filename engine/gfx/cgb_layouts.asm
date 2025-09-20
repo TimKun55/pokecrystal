@@ -684,37 +684,10 @@ _CGB_Pokedex_PicsPage:
 	call FillBoxCGB
 
 ; sprite box border
-	hlcoord 1, 13, wAttrmap
-	lb bc, 4, 4
+	hlcoord 2, 14, wAttrmap
+	lb bc, 2, 2
 	ld a, 0 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
-
-; page/up down arrows
-;	hlcoord 9, 0, wAttrmap
-;	ld [hl], 0 ; remove VRAM 1 bit
-;	hlcoord 19, 0, wAttrmap
-;	ld [hl], 0 ; remove VRAM 1 bit
-
-; animated icon, upper right corner fix
-	hlcoord 4, 13, wAttrmap
-	ld [hl], 0 | X_FLIP | VRAM_BANK_1
-; animated icon, lower right corner fix
-	hlcoord 4, 16, wAttrmap
-	ld [hl], 0 | X_FLIP | Y_FLIP | VRAM_BANK_1
-; animated icon, lower left corner fix
-	hlcoord 1, 16, wAttrmap
-	ld [hl], 0 | Y_FLIP | VRAM_BANK_1		
-; sprite border right side
-	hlcoord 4, 14, wAttrmap
-	ld [hl], 0 | X_FLIP | VRAM_BANK_1
-	hlcoord 4, 15, wAttrmap
-	ld [hl], 0 | X_FLIP | VRAM_BANK_1
-; page bottom border row, bottom of sprite border	
-	hlcoord 2, 16, wAttrmap
-	ld bc, 2
-	ld a, 0 | Y_FLIP | VRAM_BANK_1
-	call ByteFill
-
 
 IF USING_INCREASED_SPRITE_ANIMATION == FALSE
 ; > CRY, set VRAM	
@@ -900,7 +873,7 @@ _CGB_PokedexUnownMode:
 	call GetMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap
-	hlcoord 7, 5, wAttrmap
+	hlcoord 6, 7, wAttrmap
 	lb bc, 7, 7
 	ld a, $1 ; mon palette
 	call FillBoxCGB

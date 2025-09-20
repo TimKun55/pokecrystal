@@ -749,7 +749,7 @@ Evos_Page:
 	ldh [rVBK], a
 	ld de, Pokedex_ExtraTiles ; tile 19
 	ld hl, vTiles2 tile $62
-	lb bc, BANK(Pokedex_ExtraTiles), 31 ; 30 ; 10
+	lb bc, BANK(Pokedex_ExtraTiles), 27 ; 30 ; 10
 	call Request2bpp
 	call Pokedex_LoadInversedFont
 	ld a, $0
@@ -907,29 +907,15 @@ Pics_Page:
 	ld a, $90
 	ldh [hWY], a
 
-IF USING_INCREASED_SPRITE_ANIMATION == FALSE
-	ld a, $1
-	ldh [rVBK], a ; Switch to VRAM 1
-
-; Load skinny side color border
-	ld de, Pokedex_ExtraTiles tile 37
-	ld hl, vTiles2 tile $7e ; same as EVO page
-	lb bc, BANK(Pokedex_ExtraTiles), 1
-	call Request2bpp
 	ld de, Pokedex_ExtraTiles tile 19
-	ld hl, vTiles2 tile $6e
-	lb bc, BANK(Pokedex_ExtraTiles), 2
-	call Request2bpp	
-
-; 1x1 inner corner and x1 white + x1 black vertical + horiz line
-	ld de, Pokedex_ExtraTiles tile 21
-	ld hl, vTiles2 tile $70
-	lb bc, BANK(Pokedex_ExtraTiles), 8
+	ld hl, vTiles2 tile $6d
+	lb bc, BANK(Pokedex_ExtraTiles), 11
 	call Request2bpp
-	
-	ld a, $0
-	ldh [rVBK], a
-ENDC
+
+	ld de, Pokedex_PicsPageBorderTiles
+	ld hl, vTiles2 tile $75
+	lb bc, BANK(Pokedex_PicsPageBorderTiles), 8
+	call Request2bpp
 
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -1015,9 +1001,10 @@ ENDC
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
+	call Pokedex_LoadPageNums
+	call Pokedex_LoadAllGFX
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawFootprint
-	call Pokedex_LoadPageNums
 	ld a, $90
 	ldh [hWY], a
 	ld a, POKEDEX_SCX
@@ -2220,17 +2207,23 @@ Pokedex_PlaceSearchResultsTypeStrings:
 
 Pokedex_DrawUnownModeBG:
 	call Pokedex_FillBackgroundColor2
-	hlcoord 2, 1
-	lb bc, 10, 14
-	call Pokedex_PlaceBorder
-	hlcoord 2, 14
+	hlcoord 2, 0
 	lb bc, 1, 14
 	call Pokedex_PlaceBorder
-	hlcoord 3, 15
+	hlcoord 2, 3
+	lb bc, 10, 14
+	call Pokedex_PlaceBorder
+	hlcoord 2, 15
+	lb bc, 1, 14
+	call Pokedex_PlaceBorder
+	hlcoord 5, 1
+	ld de, .UnownMode
+	call Pokedex_PlaceString
+	hlcoord 3, 16
 	ld [hl], $3d
-	hlcoord 16, 15
+	hlcoord 16, 16
 	ld [hl], $3e
-	hlcoord 6, 5
+	hlcoord 6, 7
 	call Pokedex_PlaceFrontpicAtHL
 	ld de, 0
 	ld b, 0
@@ -2261,37 +2254,40 @@ endr
 	ld [wDexUnownCount], a
 	ret
 
+.UnownMode
+	db $54, $4d, $4e, $56, $4d, $7f, $4c, $4e, $43, $44, -1 ; "Unown Mode"
+
 UnownModeLetterAndCursorCoords:
 ; entries correspond to Unown forms
 ;           letter, cursor
-	dwcoord   4,11,   3,11 ; A
-	dwcoord   4,10,   3,10 ; B
-	dwcoord   4, 9,   3, 9 ; C
-	dwcoord   4, 8,   3, 8 ; D
-	dwcoord   4, 7,   3, 7 ; E
-	dwcoord   4, 6,   3, 6 ; F
-	dwcoord   4, 5,   3, 5 ; G
-	dwcoord   4, 4,   3, 4 ; H
-	dwcoord   4, 3,   3, 2 ; I
-	dwcoord   5, 3,   5, 2 ; J
-	dwcoord   6, 3,   6, 2 ; K
-	dwcoord   7, 3,   7, 2 ; L
-	dwcoord   8, 3,   8, 2 ; M
-	dwcoord   9, 3,   9, 2 ; N
-	dwcoord  10, 3,  10, 2 ; O
-	dwcoord  11, 3,  11, 2 ; P
-	dwcoord  12, 3,  12, 2 ; Q
-	dwcoord  13, 3,  13, 2 ; R
-	dwcoord  14, 3,  14, 2 ; S
-	dwcoord  15, 3,  16, 2 ; T
-	dwcoord  15, 4,  16, 4 ; U
-	dwcoord  15, 5,  16, 5 ; V
-	dwcoord  15, 6,  16, 6 ; W
-	dwcoord  15, 7,  16, 7 ; X
-	dwcoord  15, 8,  16, 8 ; Y
-	dwcoord  15, 9,  16, 9 ; Z
-	dwcoord  15,10,  16,10 ; !
-	dwcoord  15,11,  16,11 ; ?
+	dwcoord   4,13,   3,13 ; A
+	dwcoord   4,12,   3,12 ; B
+	dwcoord   4,11,   3,11 ; C
+	dwcoord   4,10,   3,10 ; D
+	dwcoord   4, 9,   3, 9 ; E
+	dwcoord   4, 8,   3, 8 ; F
+	dwcoord   4, 7,   3, 7 ; G
+	dwcoord   4, 6,   3, 6 ; H
+	dwcoord   4, 5,   3, 4 ; I
+	dwcoord   5, 5,   5, 4 ; J
+	dwcoord   6, 5,   6, 4 ; K
+	dwcoord   7, 5,   7, 4 ; L
+	dwcoord   8, 5,   8, 4 ; M
+	dwcoord   9, 5,   9, 4 ; N
+	dwcoord  10, 5,  10, 4 ; O
+	dwcoord  11, 5,  11, 4 ; P
+	dwcoord  12, 5,  12, 4 ; Q
+	dwcoord  13, 5,  13, 4 ; R
+	dwcoord  14, 5,  14, 4 ; S
+	dwcoord  15, 5,  16, 4 ; T
+	dwcoord  15, 6,  16, 6 ; U
+	dwcoord  15, 7,  16, 7 ; V
+	dwcoord  15, 8,  16, 8 ; W
+	dwcoord  15, 9,  16, 9 ; X
+	dwcoord  15,10,  16,10 ; Y
+	dwcoord  15,11,  16,11 ; Z
+	dwcoord  15,12,  16,12 ; !
+	dwcoord  15,13,  16,13 ; ?
 
 Pokedex_FillBackgroundColor2:
 	hlcoord 0, 0

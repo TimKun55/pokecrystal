@@ -930,11 +930,11 @@ EVO_DrawSpriteBox:
 	hlcoord 1, 1
 .start
 ; top left corner
-	ld [hl], $7a ; 3x1 corner, VRAM1
+	ld [hl], $75 ; 3x1 corner, VRAM1
 	push hl
 	inc hl
 ; top border
-	ld a, $79 ; VRAM1
+	ld a, $76 ; VRAM1
 	ld bc, 2
 	push hl
 	call ByteFill
@@ -942,7 +942,7 @@ EVO_DrawSpriteBox:
 ; top right corner
 	inc hl
 	inc hl	
-	ld [hl], $7b ; VRAM1
+	ld [hl], $77 ; VRAM1
 
 	pop hl
 	ld bc, SCREEN_WIDTH
@@ -951,7 +951,7 @@ EVO_DrawSpriteBox:
 ; left side	
 	push hl
 	lb bc, 2, 1
-	ld a, $7c ; VRAM1
+	ld a, $78 ; VRAM1
 	call FillBoxWithByte
 	pop hl
 	inc hl
@@ -965,7 +965,7 @@ EVO_DrawSpriteBox:
 	inc hl
 	inc hl
 	lb bc, 2, 1
-	ld a, $7d ; VRAM1
+	ld a, $79 ; VRAM1
 	call FillBoxWithByte
 
 ; bottom left corner
@@ -973,10 +973,10 @@ EVO_DrawSpriteBox:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	add hl, bc
-	ld [hl], $7a ; VRAM1
+	ld [hl], $75 ; VRAM1
 ; bottom border
 	inc hl
-	ld a, $79 ; VRAM1
+	ld a, $76 ; VRAM1
 	ld bc, 2
 	push hl
 	call ByteFill
@@ -984,7 +984,7 @@ EVO_DrawSpriteBox:
 ; bottom right corner
 	inc hl
 	inc hl
-	ld [hl], $7b ; VRAM1
+	ld [hl], $77 ; VRAM1
 .notslot4
 	pop af
 	pop bc
