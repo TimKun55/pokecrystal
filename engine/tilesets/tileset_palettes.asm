@@ -69,6 +69,8 @@ LoadSpecialMapPalette:
     jp z, .gym_palette
     cp MAP_CELADON_GYM
     jp z, .gym_palette
+    cp MAP_CELADON_HOTEL_POOL
+    jp z, .cerulean_gym_palette
 
 .continue7
     cp GROUP_VIRIDIAN_CITY
@@ -85,6 +87,13 @@ LoadSpecialMapPalette:
     jp z, .saffron_gym_palette
 
 .continue9
+    cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE
+    jr nz, .continue10
+    ld a, [wMapNumber]
+    cp MAP_CERULEAN_GYM
+    jp z, .cerulean_gym_palette
+
+.continue10
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -158,6 +167,11 @@ LoadSpecialMapPalette:
 
 .saffron_gym_palette
 	call LoadSaffronGymPalette
+	scf
+	ret
+
+.cerulean_gym_palette
+	call LoadCeruleanGymPalette
 	scf
 	ret
 
@@ -321,6 +335,17 @@ LoadSaffronGymPalette:
 	
 SaffronGymPalette:
 INCLUDE "gfx/tilesets/saffron_gym_palette.pal"
+
+LoadCeruleanGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CeruleanGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+CeruleanGymPalette:
+INCLUDE "gfx/tilesets/cerulean_gym_palette.pal"
 
 LoadEliteFourPalette:
 	ld a, BANK(wBGPals1)

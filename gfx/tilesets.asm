@@ -562,9 +562,6 @@ INCBIN "gfx/tilesets/facility.2bpp.lz"
 TilesetGameCornerColl::
 INCLUDE "data/tilesets/game_corner_collision.asm"
 
-TilesetPortMeta::
-INCBIN "data/tilesets/port_metatiles.bin"
-
 
 SECTION "Tileset Data 23", ROMX
 
@@ -633,3 +630,6 @@ SECTION "Tileset Data 25", ROMX
 
 TilesetMuseumAttr::
 INCBIN "data/tilesets/museum_attributes.bin"
+
+TilesetPortMeta::
+INCBIN "data/tilesets/port_metatiles.bin"
