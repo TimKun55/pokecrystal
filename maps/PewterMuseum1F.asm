@@ -328,6 +328,12 @@ PewterMuseum1FBookshelfScript:
 PewterMuseum1FMachineScript:
 	jumptext PewterMuseum1FMachineText
 
+PewterMuseum1FFossilDeptScript:
+	jumptext PewterMuseum1FFossilDeptText
+
+PewterMuseum1FSpaceDeptScript:
+	jumptext PewterMuseum1FSpaceDeptText
+
 PewterMuseum1FVendingMachine:
 	jumpstd VendingMachineScript
 
@@ -558,35 +564,52 @@ PewterMuseum1FMachineText:
 	line "touch it!"
 	done
 
+PewterMuseum1FFossilDeptText:
+	text "Pewter Museum"
+	line "Fossil Department"
+	done
+
+PewterMuseum1FSpaceDeptText:
+	text "Upstairs for"
+	line "Pewter Museum"
+	cont "Space Department"
+	done
+
 PewterMuseum1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 19, PEWTER_CITY, 6
-	warp_event 11, 19, PEWTER_CITY, 6
-	warp_event  2,  6, PEWTER_MUSEUM_2F, 1
+	warp_event 12, 19, PEWTER_CITY, 6
+	warp_event 13, 19, PEWTER_CITY, 6
+	warp_event  2,  7, PEWTER_MUSEUM_2F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  7, BGEVENT_READ, KabutopsFossilScript
-	bg_event 12,  7, BGEVENT_READ, OmastarFossilScript
-	bg_event 11, 10, BGEVENT_READ, AerodactylFossilScript
-	bg_event 16,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
-	bg_event 17,  1, BGEVENT_READ, PewterMuseum1FBookshelfScript
-	bg_event 24,  1, BGEVENT_READ, PewterMuseum1FMachineScript
-	bg_event  8, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
-	bg_event  9, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
-	bg_event 12, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
-	bg_event 13, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
+	bg_event  9,  6, BGEVENT_READ, KabutopsFossilScript
+	bg_event 15,  6, BGEVENT_READ, OmastarFossilScript
+	bg_event 12,  9, BGEVENT_READ, AerodactylFossilScript
+	bg_event  8,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
+	bg_event  9,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
+	bg_event 16,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
+	bg_event 17,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
+	bg_event 28,  5, BGEVENT_READ, PewterMuseum1FMachineScript
+	bg_event  4,  7, BGEVENT_READ, PewterMuseum1FSpaceDeptScript
+	bg_event  5,  7, BGEVENT_READ, PewterMuseum1FSpaceDeptScript
+	bg_event 20,  7, BGEVENT_READ, PewterMuseum1FFossilDeptScript
+	bg_event 21,  7, BGEVENT_READ, PewterMuseum1FFossilDeptScript
+	bg_event 10, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
+	bg_event 11, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
+	bg_event 14, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
+	bg_event 15, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
 
 	def_object_events
-	object_event 13, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
-	object_event  8, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
-	object_event 21,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
-	object_event 24,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FFossilScientistScript, -1
-	object_event  7,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGrampsScript, -1
-	object_event 14,  7, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FYoungsterScript, -1
-	object_event 19,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FOldAmberScript, -1
-	object_event 20,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FDomeFossilScript, -1
-	object_event 21,  1, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FHelixFossilScript, -1
+	object_event 15, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
+	object_event 10, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
+	object_event 24,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
+	object_event 28,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FFossilScientistScript, -1
+	object_event  8,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGrampsScript, -1
+	object_event 19, 10, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FYoungsterScript, -1
+	object_event 23,  5, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FOldAmberScript, -1
+	object_event 24,  5, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FDomeFossilScript, -1
+	object_event 25,  5, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FHelixFossilScript, -1

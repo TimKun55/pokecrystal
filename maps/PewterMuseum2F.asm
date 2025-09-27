@@ -50,6 +50,12 @@ PewterMuseum2FCuboneArmorScript:
 	closepokepic
 	end
 
+PewterMuseum2FSpaceDeptScript:
+	jumptext PewterMuseum2FSpaceDeptText
+
+PewterMuseum2FBookshelfScript:
+	jumptext PewterMuseum2FBookshelfText
+
 PewterMuseum2FScientistText:
 	text "Meteorites struck"
 	line "Mt.Moon near"
@@ -141,23 +147,42 @@ PewterMuseum2FSpaceShuttleSignpostText:
 	cont "deep Space Center."
 	done
 
+PewterMuseum2FSpaceDeptText:
+	text "Pewter Museum"
+	line "Space Department"
+	done
+
+PewterMuseum2FBookshelfText:
+	text "Thick and well-"
+	line "read books!"
+
+	para "Astrological Man-"
+	line "ual, Space Explor-"
+	cont "ation, Rocks from"
+	cont "Outer Space…"
+	done
+
 PewterMuseum2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  2, PEWTER_MUSEUM_1F, 3
+	warp_event  4,  4, PEWTER_MUSEUM_1F, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 12,  9, BGEVENT_READ, PewterMuseum2FMoonStoneSignpostScript
-	bg_event 13,  2, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
-	bg_event  3,  9, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
+	bg_event 14, 11, BGEVENT_READ, PewterMuseum2FMoonStoneSignpostScript
+	bg_event 17,  4, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
+	bg_event  4, 11, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
+	bg_event  8,  5, BGEVENT_READ, PewterMuseum2FSpaceDeptScript
+	bg_event  9,  5, BGEVENT_READ, PewterMuseum2FSpaceDeptScript
+	bg_event 10,  3, BGEVENT_READ, PewterMuseum2FBookshelfScript
+	bg_event 11,  3, BGEVENT_READ, PewterMuseum2FBookshelfScript
 
 
 	def_object_events
-	object_event  9,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FScientistScript, -1
-	object_event 11, 10, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FTeacherScript, -1
-	object_event 10, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FYoungsterScript, -1
-	object_event  4, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
-	object_event  6,  1, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrannyScript, -1
+	object_event 11,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FScientistScript, -1
+	object_event 16, 12, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FTeacherScript, -1
+	object_event 15, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FYoungsterScript, -1
+	object_event  3, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
+	object_event 12,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrannyScript, -1

@@ -109,6 +109,8 @@ LoadSpecialMapPalette:
 	jr z, .mart
 	cp TILESET_RUINS_OF_ALPH
 	jr z, .ruins_of_alph
+	cp TILESET_MUSEUM
+	jr z, .museum
 	jr .do_nothing
 
 .darkness
@@ -154,6 +156,11 @@ LoadSpecialMapPalette:
 	call LoadRuinsOfAlphPalette
 	scf
 	ret
+
+.museum
+	call LoadMuseumPalette
+	scf
+	ret	
 
 .gym_palette
 	call LoadGymPalette
@@ -280,6 +287,17 @@ LoadRuinsOfAlphPalette:
 	
 RuinsOfAlphPalette:
 INCLUDE "gfx/tilesets/ruins_of_alph.pal"
+
+LoadMuseumPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MuseumPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+MuseumPalette:
+INCLUDE "gfx/tilesets/museum.pal"
 
 LoadGymPalette:
 	ld a, BANK(wBGPals1)
