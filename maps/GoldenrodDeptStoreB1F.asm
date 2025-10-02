@@ -21,9 +21,9 @@ GoldenRodDeptStoreB1FClearBoxesCallback:
 	sjump .Continue
 
 .GotCardKey:
+	changeblock 14, 4, $20 ; right end wall
 	changeblock 16, 4, $0d ; floor
-	sjump .Continue
-
+	changeblock 18, 4, $4a ; left end wall
 .Continue:
 	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	iftrue .Layout2
@@ -64,6 +64,9 @@ GoldenrodDeptStoreB1FMachokeScript:
 	closepokepic
 	closetext
 	end
+
+GoldenrodDeptStoreB1FElevatorButton:
+	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStoreB1FEther:
 	itemball ETHER
@@ -116,11 +119,11 @@ GoldenrodDeptStoreB1F_MapEvents:
 	def_warp_events
 	warp_event 17,  2, GOLDENROD_UNDERGROUND_WAREHOUSE, 3
 	warp_event  9,  4, GOLDENROD_DEPT_STORE_ELEVATOR, 1
-	warp_event 10,  4, GOLDENROD_DEPT_STORE_ELEVATOR, 2
 
 	def_coord_events
 
 	def_bg_events
+	bg_event 10,  4, BGEVENT_READ, GoldenrodDeptStoreB1FElevatorButton
 
 	def_object_events
 	object_event 10, 15, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodDeptStoreB1FEther, EVENT_GOLDENROD_DEPT_STORE_B1F_ETHER
