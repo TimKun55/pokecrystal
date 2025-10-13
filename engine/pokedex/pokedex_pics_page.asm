@@ -101,9 +101,9 @@ Pokedex_PlaceBackPic:
 	call GetBaseData
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
-	ld de, vTiles0 tile $c0
+	ld de, vTiles0 tile $d0
 	predef GetMonBackpic
-	ld a, $c0
+	ld a, $d0
 	ldh [hGraphicStartTile], a
 	lb bc, 6, 6
 	hlcoord 12, 2
