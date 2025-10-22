@@ -1,86 +1,56 @@
 NurseMornText:
 	text "Good morning!"
-	line "Welcome to our"
-	cont "#mon Center."
 	done
 
 NurseDayText:
 	text "Hello!"
-	line "Welcome to our"
-	cont "#mon Center."
 	done
 
 NurseEveText:
 	text "Good evening!"
-	line "Welcome to our"
-	cont "#mon Center."
 	done
 
 NurseNiteText:
 	text "Good evening!"
 	line "You're out late."
-
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseMornChampText:
 	text "Good morning,"
 	line "Champion <PLAYER>!"
-	
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseDayChampText:
 	text "Hello, Champion"
 	line "<PLAYER>!"
-	
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseEveChampText:
 	text "Good evening,"
 	line "Champion <PLAYER>!"
-	
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseNiteChampText:
 	text "Good evening,"
 	line "Champion <PLAYER>!"
 	cont "You're out late."
-
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseMornGrandChampText:
 	text "Good morning,"
 	line "Grand Champion"
 	cont "<PLAYER>!"
-	
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseDayGrandChampText:
 	text "Hello, Grand"
 	line "Champion <PLAYER>!"
-	
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseEveGrandChampText:
 	text "Good evening,"
 	line "Grand Champion"
 	cont "<PLAYER>!"
-
-	para "Welcome to our"
-	line "#mon Center."
 	done
 
 NurseNiteGrandChampText:
@@ -88,17 +58,24 @@ NurseNiteGrandChampText:
 	line "Grand Champion"
 	cont "<PLAYER>!"
 	cont "You're out late."
+	done
 
-	para "Welcome to our"
-	line "#mon Center."
+NurseCenterWelcomeText:
+	text "Is this your"
+	line "first visit to a"
+	cont "#mon Center?"
+
+	para "Welcome!"
+
+	para "If your #mon"
+	line "are injured, we"
+	cont "can heal them back"
+	cont "to perfect health,"
+	cont "free of charge."
 	done
 
 NurseAskHealText:
-	text "We can heal your"
-	line "#mon to perfect"
-	cont "health."
-
-	para "Shall we heal your"
+	text "Shall we heal your"
 	line "#mon?"
 	done
 
@@ -116,21 +93,15 @@ NurseReturnPokemonText:
 	done
 
 NurseGoodbyeText:
-	text "We hope to see you"
-	line "again."
-	done
-
-; not used
-	text "We hope to see you"
-	line "again."
+	text "Please, come back"
+	line "again any time!"
 	done
 
 NursePokerusText:
 	text "Your #mon"
 	line "appear to be"
-
-	para "infected by tiny"
-	line "life forms."
+	cont "infected by tiny"
+	cont "life forms."
 
 	para "Your #mon are"
 	line "healthy and seem"
@@ -138,9 +109,8 @@ NursePokerusText:
 
 	para "But we can't tell"
 	line "you anything more"
-
-	para "at a #mon"
-	line "Center."
+	cont "at a #mon"
+	cont "Center."
 	done
 
 DifficultBookshelfText:
@@ -238,26 +208,9 @@ HomepageText:
 	line "updated…"
 	done
 
-; not used
-	text "#mon Radio!"
-
-	para "Call in with your"
-	line "requests now!"
-	done
-
 TrashCanText:
 	text "There's nothing in"
 	line "here…"
-	done
-
-; not used
-	text "A #mon may be"
-	line "able to move this."
-	done
-
-; not used
-	text "Maybe a #mon"
-	line "can break this."
 	done
 
 PokeCenterSignText:
@@ -324,17 +277,16 @@ ContestResults_DidNotWinText:
 ContestResults_ReturnPartyText:
 	text "We'll return the"
 	line "#mon we kept"
-
-	para "for you."
-	line "Here you go!"
+	cont "for you."
+	
+	para "Here you go!"
 	done
 
 ContestResults_PartyFullText:
 	text "Your party's full,"
 	line "so the #mon was"
-
-	para "sent to your Box"
-	line "in Bill's PC."
+	cont "sent to your Box"
+	cont "in Bill's PC."
 	done
 
 GymStatue_CityGymText:
@@ -418,9 +370,8 @@ BugContestPrizeNoRoomText:
 
 	para "We'll keep this"
 	line "for you today, so"
-
-	para "come back when you"
-	line "make room for it."
+	cont "come back when you"
+	cont "make room for it."
 	done
 
 HappinessText3:
@@ -432,9 +383,8 @@ HappinessText3:
 HappinessText2:
 	text "#mon get more"
 	line "friendly if you"
-
-	para "spend time with"
-	line "them."
+	cont "spend time with"
+	cont "them."
 	done
 
 HappinessText1:

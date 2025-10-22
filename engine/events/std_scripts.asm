@@ -131,16 +131,23 @@ PokecenterNurseScript:
 	farwritetext NurseNiteText
 	promptbutton
 	sjump .ok
+
 .nite_grandchamp
 	farwritetext NurseNiteGrandChampText
 	promptbutton
 	sjump .ok
+
 .nite_champion
 	farwritetext NurseNiteChampText
 	promptbutton
-	sjump .ok
-
 .ok
+	checkevent EVENT_WELCOMED_TO_POKE_CENTER
+	iftrue .ContinueNurse
+	farwritetext NurseCenterWelcomeText
+	promptbutton
+	setevent EVENT_WELCOMED_TO_POKE_CENTER
+
+.ContinueNurse
 	farwritetext NurseAskHealText
 	yesorno
 	iffalse .done
