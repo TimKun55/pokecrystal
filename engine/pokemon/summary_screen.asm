@@ -397,31 +397,48 @@ SummaryScreen_InitUpperHalf:
 	ld a, [wBaseDexNo]
 	ld [wTextDecimalByte], a
 	ld [wCurSpecies], a
-	hlcoord 8, 0
-	ld [hl], "№"
-	inc hl
-	ld [hl], "."
-	inc hl
-	hlcoord 10, 0
-	call GetPokemonNumber
-	call PlaceString
-	hlcoord 14, 0
+
+	hlcoord 1, 8
 	call PrintLevel
+
 	ld hl, .NicknamePointers
 	call GetNicknamePointer
 	call CopyNickname
-	hlcoord 8, 2
+	hlcoord 1, 0
 	call PlaceString
-	hlcoord 18, 0
+
+	hlcoord 5, 8
 	call .PlaceGenderChar
-	hlcoord 9, 4
-	ld a, "/"
+
+	ld a, [wTempMonPokerusStatus]
+	ld a, [wMonType]
+	cp BOXMON
+	jr z, .done_status
+
+	ld de, wTempMonStatus
+	predef GetStatusConditionIndex
+	ld a, d
+	and a
+	jr z, .done_status
+
+	; status index in a
+	ld hl, SummaryStatusIconGFX
+	ld bc, 2 * LEN_2BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $50
+	lb bc, BANK(SummaryStatusIconGFX), 2
+	call Request2bpp
+
+	hlcoord 12, 0
+	ld a, $50 ; status tile first half
 	ld [hli], a
-	ld a, [wBaseDexNo]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	call PlaceString
-	call SummaryScreen_PlaceHorizontalDivider
+	inc a ; status tile 2nd half
+	ld [hl], a
+	
+.done_status
+	call SummaryScreen_PlacePageBorder
 	call SummaryScreen_PlacePageSwitchArrows
 	call SummaryScreen_PlaceShinyIcon
 	ret
@@ -487,17 +504,66 @@ SummaryScreen_PlaceHorizontalDivider:
 	ret
 
 SummaryScreen_PlacePageSwitchArrows:
-	hlcoord 10, 6
-	ld [hl], "◀"
-	hlcoord 19, 6
-	ld [hl], "▶"
+	hlcoord 14, 0
+	ld [hl], $40 ; left arrow
+	inc hl
+	ld [hl], $43 ; "page"
+	inc hl
+	ld [hl], $44 ; "page"
+	inc hl
+	ld [hl], $45 ; "page"
+	inc hl
+	ld [hl], $46 ; "page"
+	inc hl
+	ld [hl], $41 ; right arrow
+	ret
+
+SummaryScreen_PlacePageBorder:
+	hlcoord 0, 9
+	ld b, 7
+	ld a, $3a ; horizontal divider
+.loop1
+	ld [hli], a
+	dec b
+	jr nz, .loop1
+
+	hlcoord 7, 9
+	ld a, $3b
+	ld [hli], a
+	inc a
+	ld [hl], a
+
+	hlcoord 7, 1
+	ld a, $3d
+	ld [hli], a
+	inc a
+	ld [hl], a
+
+	hlcoord 8, 1
+	ld b, 12
+	ld a, $3a ; horizontal divider
+.loop2
+	ld [hli], a
+	dec b
+	jr nz, .loop2
+
+
+	hlcoord 7, 2
+	ld de, SCREEN_WIDTH
+	ld b, 7
+	ld a, $3c ; vertical divider
+.vertical_divider
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .vertical_divider
 	ret
 
 SummaryScreen_PlaceShinyIcon:
 	ld bc, wTempMonDVs
 	farcall CheckShininess
 	ret nc
-	hlcoord 19, 0
+	hlcoord 6, 8
 	ld [hl], "⁂"
 	ret
 
@@ -525,8 +591,12 @@ SummaryScreen_LoadGFX:
 	maskbits NUM_STAT_PAGES
 	ld c, a
 	call SummaryScreen_LoadPageIndicators
-	hlcoord 0, 8
-	lb bc, 10, 20
+	hlcoord 8, 2
+	lb bc, 8, 12
+	call ClearBox
+
+	hlcoord 0, 10
+	lb bc, 8, 20
 	call ClearBox
 	ret
 
@@ -557,97 +627,38 @@ SummaryScreen_LoadGFX:
 	assert_table_length NUM_STAT_PAGES
 
 LoadPinkPage:
-	hlcoord 0, 9
-	ld b, $0
-	predef DrawPlayerHP
-;	hlcoord 8, 9
-;	ld [hl], $41 ; right HP/exp bar end cap
-	ld de, .Status_Text ; string for "STATUS/"
-	hlcoord 0, 12
+	hlcoord 11, 2
+	ld [hl], "№"
+	inc hl
+	ld [hl], "."
+	inc hl
+	hlcoord 13, 2
+	call GetPokemonNumber
 	call PlaceString
-	ld de, .Type_Text ; string for "TYPE/"
-	hlcoord 0, 14
+
+	hlcoord 9, 4
+	ld a, [wBaseDexNo]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
 	call PlaceString
+
 	call PrintMonTypeTiles ; custom GFX function
+	call PlaceOTInfo
 
-	ld a, [wTempMonPokerusStatus]
-	ld b, a
-	and $f
-	jr nz, .HasPokerus
-	ld a, b
-	and $f0
-	jr z, .NotImmuneToPkrs
-	hlcoord 2, 14
-	ld [hl], $36 ; Pokérus immunity face
-.NotImmuneToPkrs:
-	ld a, [wMonType]
-	cp BOXMON
-	jr z, .done_status
-
-	ld de, wTempMonStatus
-	predef GetStatusConditionIndex
-	ld a, d
-	and a
-	jr z, .StatusOK
-
-	; status index in a
-	ld hl, StatusIconGFX
-	ld bc, 2 * LEN_2BPP_TILE
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, vTiles2 tile $50
-	lb bc, BANK(StatusIconGFX), 2
-	call Request2bpp
-
-	hlcoord 7, 12
-	ld a, $50 ; status tile first half
-	ld [hli], a
-	inc a ; status tile 2nd half
-	ld [hl], a
-	
-	jr .done_status
-.HasPokerus:
-	hlcoord 1, 13
-	ld [hl], $37 ; left pkrs label
-	hlcoord 2, 13
-	ld [hl], $38 ; middle pkrs label
-	hlcoord 3, 13
-	ld [hl], $39 ; right pkrs label
-	jr .NotImmuneToPkrs
-.StatusOK:
-	hlcoord 7, 12
-	ld de, .OK_str
-	call PlaceString
-.done_status
-	hlcoord 9, 8
-	ld de, SCREEN_WIDTH
-	ld b, 10
-	ld a, $31 ; vertical divider
-.vertical_divider
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .vertical_divider
 	ld de, .ExpPointStr
-	hlcoord 10, 9
+	hlcoord 1, 11
 	call PlaceString
-	hlcoord 17, 14
-	call .PrintNextLevel
-	hlcoord 13, 10
+	hlcoord 12, 12
 	lb bc, 3, 7
 	ld de, wTempMonExp
 	call PrintNum
 	call .CalcExpToNextLevel
-	hlcoord 13, 13
+	hlcoord 12, 15
 	lb bc, 3, 7
 	ld de, wExpToNextLevel
 	call PrintNum
-	ld de, .LevelUpStr
-	hlcoord 11, 12
-	call PlaceString
-	ld de, .ToStr
-	hlcoord 14, 14
+	ld de, .ToNextLvStr
+	hlcoord 1, 14
 	call PlaceString
 	hlcoord 12, 16
 	ld a, [wTempMonLevel]
@@ -660,6 +671,26 @@ LoadPinkPage:
 	ld [hl], $71 ; right exp bar label
 	hlcoord 19, 16
 	ld [hl], $6b ; exp bar end cap
+; Pokerus check
+	ld a, [wTempMonPokerusStatus]
+	ld b, a
+	and $f
+	jr nz, .HasPokerus
+	ld a, b
+	and $f0
+	jr z, .done_pokerus
+	hlcoord 9, 2
+	ld [hl], $36 ; Pokérus immunity face
+	jr .done_pokerus
+
+.HasPokerus:
+	hlcoord 8, 2
+	ld [hl], $37 ; left pkrs label
+	hlcoord 9, 2
+	ld [hl], $38 ; middle pkrs label
+	hlcoord 10, 2
+	ld [hl], $39 ; right pkrs label
+.done_pokerus
 	ret
 
 .PrintNextLevel:
@@ -705,41 +736,76 @@ LoadPinkPage:
 	ld [hl], a
 	ret
 
-.Status_Text:
-	db   "Status/@"
-.Type_Text:
-	db   "Type/@"
-.OK_str:
-	db "OK @"
-
 .ExpPointStr:
 	db "Exp Points@"
 
-.LevelUpStr:
-	db "Level Up@"
+.ToNextLvStr:
+	db "To Next Lv@"
 
-.ToStr:
-	db "to@"
+PlaceOTInfo:
+	ld de, OTString
+	hlcoord 9, 8
+	call PlaceString
+	ld de, IDNoString
+	hlcoord 9, 9
+	call PlaceString
+
+	hlcoord 13, 9
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	ld de, wTempMonID
+	call PrintNum
+	ld hl, .OTNamePointers
+	call GetNicknamePointer
+	call CopyNickname
+	farcall CorrectNickErrors
+	hlcoord 12, 8
+	call PlaceString
+	ld a, [wTempMonCaughtGender]
+	and a
+	jr z, .done
+	cp $7f
+	jr z, .done
+	and CAUGHT_GENDER_MASK
+	ld a, $32 ; "♂"
+	jr z, .got_gender
+	ld a, $33 ; "♀"
+.got_gender
+	hlcoord 19, 9
+	ld [hl], a
+.done
+	ret
+
+.OTNamePointers:
+	dw wPartyMonOTs
+	dw wOTPartyMonOTs
+	dw wBufferMonOT ; unused
+	dw wBufferMonOT ; unused
+	dw wBufferMonOT ; unused
+	dw wBufferMonOT
+
+IDNoString:
+	db "<ID>№.@"
+
+OTString:
+	db "OT:@"
 
 LoadGreenPage:
 	ld de, .Item
-	hlcoord 0, 8
+	hlcoord 8, 4
 	call PlaceString
 	call .GetItemName
-	hlcoord 8, 8
+	hlcoord 8, 6
 	call PlaceString
-	ld de, .Move
-	hlcoord 0, 10
-	call PlaceString
+
 	ld hl, wTempMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
 	ld bc, NUM_MOVES
 	call CopyBytes
-	hlcoord 8, 10
+	hlcoord 1, 10
 	ld a, SCREEN_WIDTH * 2
 	ld [wListMovesLineSpacing], a
 	predef ListMoves
-	hlcoord 12, 11
+	hlcoord 11, 11
 	ld a, SCREEN_WIDTH * 2
 	ld [wListMovesLineSpacing], a
 	predef ListMovePP
@@ -758,155 +824,208 @@ LoadGreenPage:
 	ret
 
 .Item:
-	db "Item@"
+	db "Held Item@"
 
 .ThreeDashes:
-	db "---@"
-
-.Move:
-	db "Move@"
+	db "     ---@"
 
 LoadBluePage:
-	call .PlaceOTInfo
-	hlcoord 10, 8
-	ld de, SCREEN_WIDTH
-	ld b, 10
-	ld a, $31 ; vertical divider
-.vertical_divider
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .vertical_divider
-	hlcoord 11, 8
-	ld bc, 6
-	predef PrintTempMonStats
-	ret
-
-.PlaceOTInfo:
-	ld de, IDNoString
-	hlcoord 1, 8
+	hlcoord 8, 2
+	ld de, .HPString
 	call PlaceString
-	ld de, OTString
-	hlcoord 1, 11
+
+	hlcoord 11, 3
+	ld b, $0
+	call SummaryScreenDrawPlayerHP
+	hlcoord 19, 3
+	ld [hl], $6b ; right HP/exp bar end cap
+
+	hlcoord 8, 4
+	ld de, .AttackString
 	call PlaceString
-	hlcoord 1, 9
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
-	ld de, wTempMonID
-	call PrintNum
-	ld hl, .OTNamePointers
-	call GetNicknamePointer
-	call CopyNickname
-	farcall CorrectNickErrors
-	hlcoord 1, 12
+	hlcoord 8, 5
+	ld de, .DefenseString
 	call PlaceString
-	ld a, [wTempMonCaughtGender]
-	and a
-	jr z, .done
-	cp $7f
-	jr z, .done
-	and CAUGHT_GENDER_MASK
-	ld a, "♂"
-	jr z, .got_gender
-	ld a, "♀"
-.got_gender
-	hlcoord 9, 12
-	ld [hl], a
-.done
-	call SummaryScreen_PrintHappiness
-	ret
-
-.OTNamePointers:
-	dw wPartyMonOTs
-	dw wOTPartyMonOTs
-	dw wBufferMonOT ; unused
-	dw wBufferMonOT ; unused
-	dw wBufferMonOT ; unused
-	dw wBufferMonOT
-
-IDNoString:
-	db "<ID>№.@"
-
-OTString:
-	db "OT:@"
-
-SummaryScreen_PrintHappiness:
-	hlcoord 1, 16
-	ld [hl], $35 ; heart icon
-	
-	hlcoord 3, 16
-	lb bc, 1, 3
-	ld de, wTempMonHappiness
-	call PrintNum
-	ld de, .HappinessString
-	hlcoord 1, 14
+	hlcoord 8, 6
+	ld de, .SpAttackString
 	call PlaceString
-	ld de, .outofMaxLoveString
-	hlcoord 6, 16
+	hlcoord 8, 7
+	ld de, .SpDefenseString
 	call PlaceString
-	ret
-.HappinessString:
-	db "Happiness@"
+	hlcoord 8, 8
+	ld de, .SpeedString
+	call PlaceString
 
-.outofMaxLoveString:
-	db "/255@"
+	hlcoord 17, 4
+	ld de, wTempMonAttack
+	call .PrintTempMonStats
+	hlcoord 17, 5
+	ld de, wTempMonDefense
+	call .PrintTempMonStats
+	hlcoord 17, 6
+	ld de, wTempMonSpclAtk
+	call .PrintTempMonStats
+	hlcoord 17, 7
+	ld de, wTempMonSpclDef
+	call .PrintTempMonStats
+	hlcoord 17, 8
+	ld de, wTempMonSpeed
+	call .PrintTempMonStats
 
-LoadOrangePage:
-	call SummaryScreen_placeCaughtTime
-	call SummaryScreen_placeCaughtLocation
-	call SummaryScreen_placeCaughtLevel
 	call SummaryScreen_PrintDVs
 	call SummaryScreen_PrintEVs
 	ret
 
+.HPString:
+	db "HP@"
+
+.AttackString:
+	db "Attack@"
+
+.DefenseString:
+	db "Defense@"
+
+.SpAttackString:
+	db "Spcl.Atk@"
+
+.SpDefenseString:
+	db "Spcl.Def@"
+
+.SpeedString:
+	db "Speed@"
+
+.PrintTempMonStats:
+	lb bc, 2, 3
+	call PrintNum
+	ret
+
+SummaryScreenDrawPlayerHP:
+	ld a, $1
+	ld [wWhichHPBar], a
+	push hl
+	push bc
+	; box mons have full HP
+	ld a, [wMonType]
+	cp BOXMON
+	jr z, .at_least_1_hp
+
+	ld a, [wTempMonHP]
+	ld b, a
+	ld a, [wTempMonHP + 1]
+	ld c, a
+
+; Any HP?
+	or b
+	jr nz, .at_least_1_hp
+
+	xor a
+	ld c, a
+	ld e, a
+	ld a, 6
+	ld d, a
+	jp .fainted
+
+.at_least_1_hp
+	ld a, [wTempMonMaxHP]
+	ld d, a
+	ld a, [wTempMonMaxHP + 1]
+	ld e, a
+	ld a, [wMonType]
+	cp BOXMON
+	jr nz, .not_boxmon
+
+	ld b, d
+	ld c, e
+
+.not_boxmon
+	predef ComputeHPBarPixels
+	ld a, 6
+	ld d, a
+	ld c, a
+
+.fainted
+	ld a, c
+	pop bc
+	ld c, a
+	pop hl
+	push de
+	push hl
+	push hl
+	call DrawBattleHPBar
+	pop hl
+
+; Print HP
+	bccoord 2, -1, 0
+	add hl, bc
+	ld de, wTempMonHP
+	ld a, [wMonType]
+	cp BOXMON
+	jr nz, .not_boxmon_2
+	ld de, wTempMonMaxHP
+.not_boxmon_2
+	lb bc, 2, 3
+	call PrintNum
+
+	ld a, "/"
+	ld [hli], a
+
+; Print max HP
+	ld de, wTempMonMaxHP
+	lb bc, 2, 3
+	call PrintNum
+	pop hl
+	pop de
+	ret
+
 SummaryScreen_PrintEVs:
-	hlcoord 13, 11
+	hlcoord 13, 10
 	ld de, .EVNamestring
 	call PlaceString
 	
-	hlcoord 11, 12
+	hlcoord 11, 11
 	ld de, .EVHPstring
 	call PlaceString
-	hlcoord 15, 12
+	hlcoord 15, 11
 	lb bc, 1, 3
 	ld de, wTempMonHPEV
 	call PrintNum
 
-	hlcoord 11, 13
+	hlcoord 11, 12
 	ld de, .EVAtkstring
 	call PlaceString
-	hlcoord 15, 13
+	hlcoord 15, 12
 	lb bc, 1, 3
 	ld de, wTempMonAtkEV
 	call PrintNum
 
-	hlcoord 11, 14
+	hlcoord 11, 13
 	ld de, .EVDefstring
 	call PlaceString
-	hlcoord 15, 14
+	hlcoord 15, 13
 	lb bc, 1, 3
 	ld de, wTempMonDefEV
 	call PrintNum
 
-	hlcoord 11, 15
+	hlcoord 11, 14
 	ld de, .EVSpAstring
 	call PlaceString
-	hlcoord 15, 15
+	hlcoord 15, 14
 	lb bc, 1, 3
 	ld de, wTempMonSpclAtkEV
 	call PrintNum
 
-	hlcoord 11, 16
+	hlcoord 11, 15
 	ld de, .EVSpDstring
 	call PlaceString
-	hlcoord 15, 16
+	hlcoord 15, 15
 	lb bc, 1, 3
 	ld de, wTempMonSpclDefEV
 	call PrintNum
 
-	hlcoord 11, 17
+	hlcoord 11, 16
 	ld de, .EVSpestring
 	call PlaceString
-	hlcoord 15, 17
+	hlcoord 15, 16
 	lb bc, 1, 3
 	ld de, wTempMonSpdEV
 	call PrintNum
@@ -927,22 +1046,22 @@ SummaryScreen_PrintEVs:
 	db "Spe:@"	
 
 SummaryScreen_PrintDVs:
-	hlcoord 4, 11
+	hlcoord 4, 10
 	ld de, .DVNamestring
 	call PlaceString
-	hlcoord 2, 12
+	hlcoord 2, 11
 	ld de, .DVHPstring
 	call PlaceString
-	hlcoord 2, 13
+	hlcoord 2, 12
 	ld de, .DVAtkstring
 	call PlaceString
-	hlcoord 2, 14
+	hlcoord 2, 13
 	ld de, .DVDefstring
 	call PlaceString
-	hlcoord 2, 15
+	hlcoord 2, 14
 	ld de, .DVSpcstring
 	call PlaceString
-	hlcoord 2, 16
+	hlcoord 2, 15
 	ld de, .DVSpestring
 	call PlaceString
 
@@ -965,7 +1084,7 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 13
+	hlcoord 6, 12
 	call PrintNum
 
 	; DEF DV
@@ -985,7 +1104,7 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 14
+	hlcoord 6, 13
 	call PrintNum
 
 	; SPE DV
@@ -1006,7 +1125,7 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 16 ; 1, 5, 9, 13
+	hlcoord 6, 15 ; 1, 5, 9, 13
 	call PrintNum
 
 	; SPC DV
@@ -1026,7 +1145,7 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 15
+	hlcoord 6, 14
 	call PrintNum
 	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
 	; call PrintNum
@@ -1047,7 +1166,7 @@ SummaryScreen_PrintDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 12 ; 1, 4, 7, 10, 13 
+	hlcoord 6, 11 ; 1, 4, 7, 10, 13 
 	call PrintNum
 	ret
 
@@ -1064,9 +1183,41 @@ SummaryScreen_PrintDVs:
 .DVSpestring:
 	db "Spe:@"
 
+LoadOrangePage:
+	call SummaryScreen_PrintHappiness
+
+	call SummaryScreen_placeCaughtTime
+	call SummaryScreen_placeCaughtLocation
+	call SummaryScreen_placeCaughtLevel
+	ret
+
+SummaryScreen_PrintHappiness:
+	hlcoord 8, 6
+	ld [hl], $35 ; heart icon
+	hlcoord 18, 6
+	ld [hl], $35 ; heart icon
+	
+	hlcoord 10, 6
+	lb bc, 1, 3
+	ld de, wTempMonHappiness
+	call PrintNum
+	ld de, .HappinessString
+	hlcoord 9, 4
+	call PlaceString
+	ld de, .outofMaxLoveString
+	hlcoord 13, 6
+	call PlaceString
+	ret
+
+.HappinessString:
+	db "Happiness@"
+
+.outofMaxLoveString:
+	db "/255@"
+
 SummaryScreen_placeCaughtLocation:
 	ld de, .MetAtMapString
-	hlcoord 1, 8
+	hlcoord 3, 11
 	call PlaceString
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
@@ -1078,12 +1229,12 @@ SummaryScreen_placeCaughtLocation:
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-	hlcoord 2, 9
+	hlcoord 3, 13
 	call PlaceString
 	ret	
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 6, 8
+	hlcoord 8, 11
 	call PlaceString
 	ret
 .MetAtMapString:
@@ -1121,7 +1272,7 @@ SummaryScreen_placeCaughtTime:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 6, 8
+	hlcoord 8, 11
 	call PlaceString
 	ret
 
@@ -1138,13 +1289,13 @@ SummaryScreen_placeCaughtTime:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 10, 8
+	hlcoord 12, 11
 	call PlaceString
 	ret
 
 .unknown_time:
 	ld de, .unknown_time_text
-	hlcoord 6, 8
+	hlcoord 8, 11
 	call PlaceString
 	ret
 
@@ -1171,23 +1322,23 @@ SummaryScreen_placeCaughtLevel:
 
 ;.print
 	ld [wTextDecimalByte], a
-	hlcoord 12, 8
+	hlcoord 14, 11
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	hlcoord 11, 8
+	hlcoord 13, 11
 	ld [hl], "<LV>"
 	ret
 
 .printegg:
 	ld de, .HatchedString
-	hlcoord 1, 8
+	hlcoord 3, 11
 	call PlaceString
 	ret
 
 .unknown_level
 	ld de, .MetUnknownLevelString
-	hlcoord 6, 8
+	hlcoord 13, 11
 	call PlaceString
 	ret  
 
@@ -1229,14 +1380,14 @@ SummaryScreen_PlaceFrontpic:
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr z, .unown
-	hlcoord 0, 0
+	hlcoord 0, 1
 	call PrepMonFrontpic
 	ret
 
 .unown
 	xor a
 	ld [wBoxAlignment], a
-	hlcoord 0, 0
+	hlcoord 0, 1
 	call _PrepMonFrontpic
 	ret
 
@@ -1262,7 +1413,7 @@ SummaryScreen_PlaceFrontpic:
 	call SummaryScreen_LoadTextboxSpaceGFX
 	ld de, vTiles2 tile $00
 	predef GetAnimatedFrontpic
-	hlcoord 0, 0
+	hlcoord 0, 1
 	ld d, $0
 	ld e, ANIM_MON_MENU
 	predef LoadMonAnimation
@@ -1398,7 +1549,7 @@ endc
 	set 5, [hl]
 	call SetDefaultBGPAndOBP
 	call DelayFrame
-	hlcoord 0, 0
+	hlcoord 0, 1
 	call PrepMonFrontpic
 	farcall HDMATransferTilemapToWRAMBank3
 	call SummaryScreen_AnimateEgg
@@ -1457,7 +1608,7 @@ SummaryScreen_AnimateEgg:
 	ld de, vTiles2 tile $00
 	predef GetAnimatedFrontpic
 	pop de
-	hlcoord 0, 0
+	hlcoord 0, 1
 	ld d, $0
 	predef LoadMonAnimation
 	ld hl, wSummaryScreenFlags
@@ -1465,47 +1616,36 @@ SummaryScreen_AnimateEgg:
 	ret
 
 SummaryScreen_LoadPageIndicators:
-	hlcoord 11, 5
-	ld a, $43 ; " " " "
+	hlcoord 15, 1
+	ld [hl], $3f ; not selected tab
 	call .load_square
-	hlcoord 13, 5
-	ld a, $3a ; first of 4 small square tiles
+	hlcoord 16, 1
+	ld [hl], $3f ; not selected tab
 	call .load_square
-	hlcoord 15, 5
-	ld a, $43 ; " " " "
+	hlcoord 17, 1
+	ld [hl], $3f ; not selected tab
 	call .load_square
-	hlcoord 17, 5
-	ld a, $3a ; " " " "
+	hlcoord 18, 1
+	ld [hl], $3f ; not selected tab
 	call .load_square
 	ld a, c
 	cp PINK_PAGE
-	hlcoord 11, 5
+	hlcoord 15, 1
 	jr z, .load_highlighted_square_alt
 	cp GREEN_PAGE
-	hlcoord 13, 5
+	hlcoord 16, 1
 	jr z, .load_highlighted_square
 	cp BLUE_PAGE
-	hlcoord 15, 5
+	hlcoord 17, 1
 	jr z, .load_highlighted_square_alt
 	; must be ORANGE_PAGE
-	hlcoord 17, 5
+	hlcoord 18, 1
 .load_highlighted_square
-	ld a, $3e ; first of 4 large square tiles
+	ld [hl], $3e ; selected tab (light grey)
 .load_square
-	push bc
-	ld [hli], a
-	inc a
-	ld [hld], a
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	inc a
-	ld [hli], a
-	inc a
-	ld [hl], a
-	pop bc
 	ret
 .load_highlighted_square_alt
-	ld a, $47 ; first of 4 large square tiles, alternate Gray pixels for use of 3rd color slot
+	ld [hl], $3e ; selected tab (dark grey)
 	jr .load_square
 
 CopyNickname:
@@ -1565,7 +1705,7 @@ PrintMonTypeTiles:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx\summary\types_light.png)
-	hlcoord 5, 14
+	hlcoord 10, 6
 	ld [hl], $4c
 	inc hl
 	ld [hl], $4d
@@ -1595,7 +1735,7 @@ PrintMonTypeTiles:
 	call Request2bpp
 	
 ; place Type 2 GFX
-	hlcoord 5, 15
+	hlcoord 14, 6
 	ld [hl], $5c
 	inc hl
 	ld [hl], $5d

@@ -356,13 +356,6 @@ _CGB_SummaryScreenHPPals:
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette, palette 2
 
-	ld hl, SummaryScreenPagePals
-	ld de, wBGPals1 palette 3 ; palettes 3 & 4
-	ld bc, 2 palettes ; pink, green, blue, ( and orange page) palettes
-	; NOTE: Won't hurt anything if you don't have a 4th summary page, just leave it
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; BG_5
 
@@ -393,52 +386,81 @@ _CGB_SummaryScreenHPPals:
 	call WipeAttrmap
 
 	hlcoord 0, 0, wAttrmap
-	lb bc, 8, SCREEN_WIDTH
+	lb bc, 9, 7
 	ld a, $1 ; mon palette
 	call FillBoxCGB
+
+	hlcoord 7, 0, wAttrmap
+	lb bc, 1, 13
+	ld a, $1 ; mon palette
+	call FillBoxCGB
+
+	hlcoord 7, 2, wAttrmap
+	lb bc, 7, 1
+	ld a, $4 ; 
+	call FillBoxCGB
+
+	hlcoord 0, 9, wAttrmap
+	ld bc, 8
+	ld a, $4 ; 
+	call ByteFill
+
+	hlcoord 7, 1, wAttrmap
+	ld bc, 13
+	ld a, $4 ; 
+	call ByteFill
 
 	hlcoord 12, 16, wAttrmap
 	ld bc, 8
 	ld a, $2 ; exp palette
 	call ByteFill
 	
-; page indicator boxes
-	hlcoord 11, 5, wAttrmap
-	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
-	ld a, $3 ; pink & green page palette 
-	call FillBoxCGB
-
-	hlcoord 15, 5, wAttrmap
-	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
-	ld a, $4 ; blue & orange box palette
-	call FillBoxCGB
-
 ; gender icon
-	hlcoord 18, 0, wAttrmap
-	ld bc, 1
-	ld a, $5 ; gender palette
-	call ByteFill
+	hlcoord 5, 8, wAttrmap
+	lb bc, 1, 2 ; 1 Tile in HEIGHT, 2 Tiles in WIDTH
+	ld a, $3 ; gender palette
+	call FillBoxCGB
 
 ; mon status
-	hlcoord 7, 12, wAttrmap
+	hlcoord 12, 0, wAttrmap
 	lb bc, 1, 2 ; 1 Tile in HEIGHT, 2 Tiles in WIDTH 
 	ld a, $6 ; mon base type light/dark pals
 	call FillBoxCGB
 
 ; mon type(s) 
-	hlcoord 5, 14, wAttrmap
-	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
+	hlcoord 10, 6, wAttrmap
+	lb bc, 1, 8 ; 1 Tile in HEIGHT, 8 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
 	call FillBoxCGB
+
+; trainer gender icon
+	hlcoord 19, 9, wAttrmap
+	ld bc, 1
+	ld a, $2 ; gender palette
+	call ByteFill
+
+; pokerus icons
+	hlcoord 8, 2, wAttrmap
+	lb bc, 1, 3
+	ld a, $2 ; gender palette
+	call FillBoxCGB
+
+; Friendship Hearts
+	hlcoord 8, 6, wAttrmap
+	ld bc, 1
+	ld a, $2 ; gender palette
+	call ByteFill
+
+	hlcoord 18, 6, wAttrmap
+	ld bc, 1
+	ld a, $2 ; gender palette
+	call ByteFill
 
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
-
-SummaryScreenPagePals:
-INCLUDE "gfx/summary/pages.pal"
 
 SummaryScreenPals:
 INCLUDE "gfx/summary/summary.pal"

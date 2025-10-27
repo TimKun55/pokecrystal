@@ -7,6 +7,9 @@ INCBIN "gfx/battle/categories.2bpp"
 StatusIconGFX:
 INCBIN "gfx/battle/status.2bpp"
 
+SummaryStatusIconGFX:
+INCBIN "gfx/battle/status_summary.2bpp"
+
 StatusIconBattleGFX:
 INCBIN "gfx/battle/status_battle.2bpp"
 

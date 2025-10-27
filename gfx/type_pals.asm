@@ -34,6 +34,6 @@ TypeIconPals:
 ; DARK
 	RGB 15, 11, 09
 ; FAIRY
-	RGB 31, 20, 29
+	RGB 31, 18, 31
 ; UNKNOWN T
 	RGB 13, 19, 19
