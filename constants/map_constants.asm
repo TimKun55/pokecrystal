@@ -229,7 +229,7 @@ ENDM
 	map_const POWER_PLANT,                                 10,  9 ;  8
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_4,                                     34, 10 ; 10
-	map_const ROUTE_5,                                     10, 22 ; 11
+	map_const ROUTE_5,                                     14, 22 ; 11
 	map_const ROUTE_9,                                     32, 11 ; 12
 	map_const ROUTE_10_NORTH,                              11, 22 ; 13
 	map_const ROUTE_24,                                    12,  9 ; 14
@@ -308,8 +308,8 @@ ENDM
 	endgroup
 
 	newgroup VERMILION                                            ; 12
-	map_const ROUTE_6,                                     12, 13 ;  1
-	map_const ROUTE_11,                                    20,  9 ;  2
+	map_const ROUTE_6,                                     15, 13 ;  1
+	map_const ROUTE_11,                                    20, 11 ;  2
 	map_const VERMILION_CITY,                              20, 19 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
 	map_const VERMILION_POKECENTER_1F,                      6,  4 ;  5
@@ -381,11 +381,11 @@ ENDM
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ;  2
 	map_const ROUTE_13,                                    30,  9 ;  3
 	map_const ROUTE_14,                                    13, 20 ;  4
-	map_const ROUTE_15,                                    25,  9 ;  5
-	map_const ROUTE_16,                                    10, 15 ;  6
+	map_const ROUTE_15,                                    25, 10 ;  5
+	map_const ROUTE_16,                                    10, 16 ;  6
 	map_const ROUTE_17,                                    10, 41 ;  7
 	map_const ROUTE_18_WEST,                               12,  7 ;  8
-	map_const ROUTE_18_EAST,                               11,  9 ;  9	
+	map_const ROUTE_18_EAST,                               11, 10 ;  9	
 	map_const FUCHSIA_CITY,                                20, 18 ; 10
 	map_const FUCHSIA_MART,                                 6,  4 ; 11
 	map_const SAFARI_ZONE_FUCHSIA_GATE,                     5,  4 ; 12
