@@ -21,8 +21,8 @@ Route7Noop3Scene:
 Route7UndergroundPathOpenScript:
 	checkevent EVENT_ROUTE_7_UNDERGROUND_PATH_DOORS_OPEN
 	iftrue .end
-	changeblock  4, 10, $e4 ; closed gate doors
-	changeblock  6, 10, $e7 ; closed gate doors
+	changeblock  4, 10, $9f ; closed gate doors
+	changeblock  6, 10, $a3 ; closed gate doors
 .end
 	endcallback
 

@@ -56,4 +56,5 @@ Tilesets::
 	tileset TilesetKanto7
 	tileset TilesetDecoStore
 	tileset TilesetFaraway
+	tileset TilesetKanto8
 	assert_table_length NUM_TILESETS + 1

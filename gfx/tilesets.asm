@@ -633,3 +633,15 @@ INCBIN "data/tilesets/museum_attributes.bin"
 
 TilesetPortMeta::
 INCBIN "data/tilesets/port_metatiles.bin"
+
+TilesetKanto8GFX::
+INCBIN "gfx/tilesets/kanto_8.2bpp.lz"
+
+TilesetKanto8Meta::
+INCBIN "data/tilesets/kanto_8_metatiles.bin"
+
+TilesetKanto8Coll::
+INCLUDE "data/tilesets/kanto_8_collision.asm"
+
+TilesetKanto8Attr::
+INCBIN "data/tilesets/kanto_8_attributes.bin"
