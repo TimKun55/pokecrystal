@@ -438,7 +438,7 @@ Route30_MapEvents:
 	bg_event 13, 29, BGEVENT_READ, MrPokemonsHouseDirectionsSign
 	bg_event 13,  5, BGEVENT_READ, MrPokemonsHouseSign
 	bg_event  3, 23, BGEVENT_READ, Route30TrainerTips
-	bg_event 11, 10, BGEVENT_ITEM, Route30HiddenPotion
+	bg_event 11,  9, BGEVENT_ITEM, Route30HiddenPotion
 
 	def_object_events
 	object_event  5, 26, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YoungsterJoey_ImportantBattleScript, EVENT_ROUTE_30_BATTLE

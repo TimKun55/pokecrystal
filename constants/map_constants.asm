@@ -46,8 +46,8 @@ ENDM
 	map_const ROUTE_38_ECRUTEAK_GATE,                       5,  4 ;  8
 	map_const ROUTE_39_BARN,                                7,  4 ;  9
 	map_const ROUTE_39_FARMHOUSE,                           4,  4 ; 10
-	map_const ROUTE_38,                                    20,  9 ; 11
-	map_const ROUTE_39,                                    11, 18 ; 12
+	map_const ROUTE_38,                                    20, 10 ; 11
+	map_const ROUTE_39,                                    11, 19 ; 12
 	map_const OLIVINE_CITY,                                20, 18 ; 13
 	endgroup
 
@@ -56,7 +56,7 @@ ENDM
 	map_const MAHOGANY_GYM,                                 5,  9 ;  2
 	map_const MAHOGANY_POKECENTER_1F,                       6,  4 ;  3
 	map_const ROUTE_42_ECRUTEAK_GATE,                       5,  4 ;  4
-	map_const ROUTE_42,                                    30,  9 ;  5
+	map_const ROUTE_42,                                    30, 10 ;  5
 	map_const ROUTE_44,                                    30,  9 ;  6
 	map_const MAHOGANY_TOWN,                               10,  9 ;  7
 	map_const MAHOGANY_MOVE_TUTOR_HOUSE,                    4,  4 ;  8
@@ -84,7 +84,7 @@ ENDM
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20
 	map_const RADIO_TOWER_5F,                               9,  4 ; 21
-	map_const RUINS_OF_ALPH_OUTSIDE,                       12, 21 ; 22
+	map_const RUINS_OF_ALPH_OUTSIDE,                       13, 22 ; 22
 	map_const RUINS_OF_ALPH_HO_OH_CHAMBER,                  4,  5 ; 23
 	map_const RUINS_OF_ALPH_KABUTO_CHAMBER,                 4,  5 ; 24
 	map_const RUINS_OF_ALPH_OMANYTE_CHAMBER,                4,  5 ; 25
@@ -505,9 +505,9 @@ ENDM
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
-	map_const ROUTE_27,                                    40,  9 ;  1
-	map_const ROUTE_29,                                    30,  9 ;  2
-	map_const NEW_BARK_TOWN,                               10,  9 ;  3
+	map_const ROUTE_27,                                    40, 10 ;  1
+	map_const ROUTE_29,                                    30, 11 ;  2
+	map_const NEW_BARK_TOWN,                               10, 10 ;  3
 	map_const ELMS_LAB,                                     5,  6 ;  4
 	map_const PLAYERS_HOUSE_1F,                             6,  4 ;  5
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  6

@@ -127,7 +127,7 @@ ENDM
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, SOUTH | WEST | EAST
 	connection south, Route37, ROUTE_37, 5
-	connection west, Route38, ROUTE_38, 11
+	connection west, Route38, ROUTE_38, 10
 	connection east, Route42, ROUTE_42, 15
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $45, NORTH | WEST | EAST
@@ -195,7 +195,7 @@ ENDM
 
 	map_attributes Route38, ROUTE_38, $05, WEST | EAST
 	connection west, Route39, ROUTE_39, 0
-	connection east, EcruteakCity, ECRUTEAK_CITY, -11
+	connection east, EcruteakCity, ECRUTEAK_CITY, -10
 
 	map_attributes Route39, ROUTE_39, $05, SOUTH | EAST
 	connection south, OlivineCity, OLIVINE_CITY, -4
