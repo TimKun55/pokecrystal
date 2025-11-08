@@ -645,3 +645,15 @@ INCLUDE "data/tilesets/kanto_8_collision.asm"
 
 TilesetKanto8Attr::
 INCBIN "data/tilesets/kanto_8_attributes.bin"
+
+TilesetJohtoPeakGFX::
+INCBIN "gfx/tilesets/johto_peak.2bpp.lz"
+
+TilesetJohtoPeakMeta::
+INCBIN "data/tilesets/johto_peak_metatiles.bin"
+
+TilesetJohtoPeakColl::
+INCLUDE "data/tilesets/johto_peak_collision.asm"
+
+TilesetJohtoPeakAttr::
+INCBIN "data/tilesets/johto_peak_attributes.bin"

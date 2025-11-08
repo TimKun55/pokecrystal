@@ -100,9 +100,9 @@ TilesetForestAnim:
 TilesetJohtoAnim:
 TilesetJohto2Anim:
 TilesetJohto3Anim:
-TilesetJohto4Anim:
 TilesetJohto5Anim:
 TilesetJohtoRuinsAnim:
+TilesetJohtoPeakAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -122,6 +122,7 @@ TilesetJohtoRuinsAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetJohto4Anim:
 TilesetJohtoModernAnim:
 	dw vTiles2 tile $01, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
