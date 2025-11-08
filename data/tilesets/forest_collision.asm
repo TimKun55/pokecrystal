@@ -68,8 +68,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, HEADBUTT_TREE ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44
 	tilecoll WALL, WALL, WALL, WALL ; 45
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 46
-	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 47
+	tilecoll WATER, WATER, WATER, WATER ; 46
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 47
 	tilecoll WALL, WALL, WALL, WALL ; 48
 	tilecoll WALL, WALL, WALL, WALL ; 49
 	tilecoll WALL, WALL, WALL, WALL ; 4a
@@ -110,5 +110,3 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 6d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 6e
 	tilecoll WALL, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 6f
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 70
-	tilecoll WATER, WATER, WATER, WATER ; 71
