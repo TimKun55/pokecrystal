@@ -301,7 +301,7 @@ Route41_MapEvents:
 	warp_event 12, 17, WHIRL_ISLAND_NW, 1
 	warp_event 36, 19, WHIRL_ISLAND_NE, 1
 	warp_event 12, 37, WHIRL_ISLAND_SW, 1
-	warp_event 36, 45, WHIRL_ISLAND_SE, 1
+	warp_event 36, 43, WHIRL_ISLAND_SE, 1
 
 	def_coord_events
 
@@ -316,6 +316,6 @@ Route41_MapEvents:
 	object_event 19, 46, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmermMathew, -1
 	object_event 13,  5, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKaylee, -1
 	object_event 23, 19, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfSusie, -1
-	object_event 27, 34, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
+	object_event 25, 39, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
 	object_event 44, 28, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfKara, -1
 	object_event  9, 50, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfWendy, -1

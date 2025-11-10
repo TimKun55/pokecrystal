@@ -244,3 +244,4 @@
 	tilecoll WATER, WATER, WATER, WATER ; f3
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; f4
 	tilecoll WALL, WALL, FLOOR, FLOOR ; f5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f6
