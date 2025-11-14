@@ -31,6 +31,7 @@ OutdoorSprites:
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
 	dw SafariGroupSprites
+	dw BattleTowerGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
 ; PalletTown and Route21 are connected
@@ -302,7 +303,7 @@ GoldenrodGroupSprites:
 OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
 CianwoodGroupSprites:
-; Route40, Route41, CianwoodCity, BattleTowerOutside
+; Route40, Route41, CianwoodCity
 	db SPRITE_RIVAL
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
@@ -437,4 +438,13 @@ SafariGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; 5 of max 9 walking sprites
 	db SPRITE_BALL_BOOK_POKEDEX
+	db 0 ; end
+
+BattleTowerGroupSprites:
+; BattleTowerOutside
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_SAILOR
+	db SPRITE_POKEFAN_F
+	; 4 of max 9 walking sprites
 	db 0 ; end

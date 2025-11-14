@@ -473,14 +473,7 @@ ENDM
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
 	map_const CIANWOOD_BEASTS_HOUSE,                        4,  4 ;  9
 	map_const CIANWOOD_MOVE_TUTOR_HOUSE,                    4,  4 ; 10
-	map_const BATTLE_TOWER_1F,                             11,  8 ; 11
-	map_const BATTLE_TOWER_2F,                             11,  5 ; 12
-	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 13
-	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 14
-	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 15
-	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 16
-	map_const BATTLE_TOWER_OUTSIDE,                        10, 13 ; 17
-	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ; 18
+	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ; 11
 	endgroup
 
 	newgroup VIRIDIAN                                             ; 23
@@ -565,4 +558,14 @@ ENDM
 	map_const SAFARI_ZONE_WEST_REST_HOUSE_2,                4,  4 ;  9
 	endgroup
 
-DEF NUM_MAP_GROUPS EQU const_value ; 27
+	newgroup BATTLE_TOWER										  ; 28
+	map_const BATTLE_TOWER_OUTSIDE,                        11, 13 ;  1
+	map_const BATTLE_TOWER_1F,                             11,  8 ;  2
+	map_const BATTLE_TOWER_2F,                             11,  5 ;  3
+	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ;  4
+	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ;  5
+	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ;  6
+	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ;  7
+	endgroup
+
+DEF NUM_MAP_GROUPS EQU const_value ; 28

@@ -27,6 +27,7 @@ MapGroupNum_Names::
 	dw Saffron_Map_Names
 	dw Cherrygrove_Map_Names
 	dw Safari_Map_Names
+	dw Battle_Tower_Map_Names
 	assert_table_length NUM_MAP_GROUPS
 
 GetMapGroupNum_Name::
@@ -520,14 +521,7 @@ Cianwood_Map_Names: ;newgroup CIANWOOD
 	dw Cianwood_Map_Name8 ; map_const CIANWOOD_LUGIA_SPEECH_HOUSE			;  8
 	dw Cianwood_Map_Name9 ; map_const CIANWOOD_BEASTS_HOUSE					;  9
 	dw Cianwood_Map_Name10 ; map_const CIANWOOD_MOVE_TUTOR_HOUSE			; 10
-	dw Cianwood_Map_Name11 ; map_const BATTLE_TOWER_1F						; 11
-	dw Cianwood_Map_Name12 ; map_const BATTLE_TOWER_2F						; 12
-	dw Cianwood_Map_Name13 ; map_const BATTLE_TOWER_BATTLE_ROOM				; 13
-	dw Cianwood_Map_Name14 ; map_const BATTLE_TOWER_ELEVATOR				; 14
-	dw Cianwood_Map_Name15 ; map_const BATTLE_TOWER_HALLWAY					; 15
-	dw Cianwood_Map_Name16 ; map_const ROUTE_40_BATTLE_TOWER_GATE			; 16
-	dw Cianwood_Map_Name17 ; map_const BATTLE_TOWER_OUTSIDE					; 17
-	dw Cianwood_Map_Name18 ; map_const CIANWOOD_PHOTO_STUDIO				; 18
+	dw Cianwood_Map_Name11 ; map_const CIANWOOD_PHOTO_STUDIO				; 11
 	assert_table_length NUM_CIANWOOD_MAPS
 
 Viridian_Map_Names: ;newgroup VIRIDIAN 
@@ -620,6 +614,18 @@ Safari_Map_Names:
 	dw Safari_Map_Name8 ; map_const SAFARI_ZONE_WEST_REST_HOUSE_1 	;  8
 	dw Safari_Map_Name9 ; map_const SAFARI_ZONE_WEST_REST_HOUSE_2 	;  9
 	assert_table_length NUM_SAFARI_MAPS
+
+	; BATTLE_TOWER, 28
+Battle_Tower_Map_Names:
+	table_width 2, Battle_Tower_Map_Names
+	dw Battle_Tower_Map_Name1 ; map_const BATTLE_TOWER_OUTSIDE		 ;  1
+	dw Battle_Tower_Map_Name2 ; map_const BATTLE_TOWER_1F			 ;  2
+	dw Battle_Tower_Map_Name3 ; map_const BATTLE_TOWER_2F			 ;  3
+	dw Battle_Tower_Map_Name4 ; map_const BATTLE_TOWER_BATTLE_ROOM	 ;  4
+	dw Battle_Tower_Map_Name5 ; map_const BATTLE_TOWER_ELEVATOR		 ;  5
+	dw Battle_Tower_Map_Name6 ; map_const BATTLE_TOWER_HALLWAY		 ;  6
+	dw Battle_Tower_Map_Name7 ; map_const ROUTE_40_BATTLE_TOWER_GATE ;  7
+	assert_table_length NUM_BATTLE_TOWER_MAPS
 
 ; MAX LENGTH: 17
 Olivine_Map_Name1: ; map_const OLIVINE_POKECENTER_1F 					;  1
@@ -1394,21 +1400,7 @@ Cianwood_Map_Name9: ; map_const CIANWOOD_BEASTS_HOUSE ;  9
 	db "Beasts House@"
 Cianwood_Map_Name10: ; map_const CIANWOOD_MOVE_TUTOR_HOUSE ; 10
 	db "Cianwood Tutor@"
-Cianwood_Map_Name11: ; map_const BATTLE_TOWER_1F ; 11
-	db "Battle Tower 1F@"
-Cianwood_Map_Name12: ; map_const BATTLE_TOWER_1F ; 12
-	db "Battle Tower 2F@"
-Cianwood_Map_Name13: ; map_const BATTLE_TOWER_BATTLE_ROOM ; 13
-	db "Battle Tower Room@"
-Cianwood_Map_Name14: ; map_const BATTLE_TOWER_ELEVATOR ; 14
-	db "Battle Tower Lift@"
-Cianwood_Map_Name15: ; map_const BATTLE_TOWER_HALLWAY, ; 15
-	db "Battle Tower Hall@"
-Cianwood_Map_Name16: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 16
-	db "Route 40 Gate@"
-Cianwood_Map_Name17: ; map_const BATTLE_TOWER_OUTSIDE ; 17
-	db "Battle Tower@"
-Cianwood_Map_Name18: ; map_const CIANWOOD_PHOTO_STUDIO ; 18
+Cianwood_Map_Name11: ; map_const CIANWOOD_PHOTO_STUDIO ; 11
 	db "Photo Studio@"
 
 Viridian_Map_Name1: ; map_const ROUTE_2,;  1
@@ -1549,3 +1541,18 @@ Safari_Map_Name8: ; map_const SAFARI_ZONE_WEST_REST_HOUSE_1 ;  8
 	db "West Rest House 1@"
 Safari_Map_Name9: ; map_const SAFARI_ZONE_WEST_REST_HOUSE_2 ;  9
 	db "West Rest House 2@"
+
+Battle_Tower_Map_Name1: ; map_const BATTLE_TOWER_OUTSIDE ; 1
+	db "Battle Tower@"
+Battle_Tower_Map_Name2: ; map_const BATTLE_TOWER_1F ; 2
+	db "Battle Tower 1F@"
+Battle_Tower_Map_Name3: ; map_const BATTLE_TOWER_1F ; 3
+	db "Battle Tower 2F@"
+Battle_Tower_Map_Name4: ; map_const BATTLE_TOWER_BATTLE_ROOM ; 4
+	db "Battle Tower Room@"
+Battle_Tower_Map_Name5: ; map_const BATTLE_TOWER_ELEVATOR ; 5
+	db "Battle Tower Lift@"
+Battle_Tower_Map_Name6: ; map_const BATTLE_TOWER_HALLWAY, ; 6
+	db "Battle Tower Hall@"
+Battle_Tower_Map_Name7: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 7
+	db "Route 40 Gate@"

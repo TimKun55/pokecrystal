@@ -39,6 +39,7 @@ MapGroupRoofs:
 	db -1              ; 25
 	db -1              ; 26 (Cherrygrove)
 	db -1              ; 27 (Safari Zone)
+	db -1              ; 28 (Battle Tower)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:
