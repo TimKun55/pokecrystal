@@ -430,7 +430,7 @@ EVO_item:
 	call EVO_inchlcoord
 	ret
 .item_text:
-	db "Item@"
+	db "Use:@"
 
 EVO_trade:
 	ld a, BANK("Evolutions and Attacks")
@@ -556,7 +556,7 @@ EVO_move:
 	ret
 
 .knowing_text:
-	db "Knowing@"
+	db "<DEX_LV_VRAM1> Knowing@"
 
 IF DEF(EVOLVE_HELD)
 EVO_held:

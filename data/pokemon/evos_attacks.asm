@@ -1069,7 +1069,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_HELD_LEVEL, KINGS_ROCK, 35, POLITOED
+	db EVOLVE_ITEM, KINGS_ROCK, POLITOED
 	db 0 ; no more evolutions
 	db 1, SWEET_KISS
 	db 1, TACKLE
@@ -1386,7 +1386,7 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 32, SLOWBRO
-	db EVOLVE_HELD_LEVEL, KINGS_ROCK, 32, SLOWKING
+	db EVOLVE_ITEM, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1699,7 +1699,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_HELD_LEVEL, METAL_COAT, 34, STEELIX
+	db EVOLVE_ITEM, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
@@ -2089,7 +2089,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	db EVOLVE_HELD_LEVEL, DRAGON_SCALE, 42, KINGDRA
+	db EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 4, SMOKESCREEN
@@ -2203,7 +2203,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 	
 ScytherEvosAttacks:
-	db EVOLVE_HELD_LEVEL, METAL_COAT, 34, SCIZOR
+	db EVOLVE_ITEM, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2468,7 +2468,7 @@ FlareonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	db EVOLVE_HELD_LEVEL, UP_GRADE, 30, PORYGON2
+	db EVOLVE_LEVEL, 30, PORYGON2
 	db 0 ; no more evolutions
 	db 1, FLASH_CANNON
 	db 1, CONVERSION
@@ -2477,10 +2477,10 @@ PorygonEvosAttacks:
 	db 10, CONFUSION
 	db 14, AGILITY
 	db 17, RECOVER
-	db 21, PSYBEAM
-	db 25, SIGNAL_BEAM
+	db 21, CHARGE_BEAM
+	db 25, PSYBEAM
 	db 28, BARRIER
-	db 31, CHARGE_BEAM
+	db 31, SIGNAL_BEAM
 	db 35, AURORA_BEAM
 	db 38, THUNDERBOLT
 	db 41, TRI_ATTACK
@@ -4424,7 +4424,7 @@ HitmontopEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
-	db EVOLVE_HELD_LEVEL, UP_GRADE, 45, PORYGON_Z
+	db EVOLVE_ITEM, UP_GRADE, PORYGON_Z
 	db 0 ; no more evolutions
 	db 1, FLASH_CANNON
 	db 1, CONVERSION
@@ -4433,15 +4433,16 @@ Porygon2EvosAttacks:
 	db 10, CONFUSION
 	db 14, AGILITY
 	db 17, RECOVER
-	db 21, PSYBEAM
-	db 25, SIGNAL_BEAM
+	db 21, CHARGE_BEAM
+	db 25, PSYBEAM
 	db 28, BARRIER
-	db 34, CHARGE_BEAM
+	db 34, SIGNAL_BEAM
 	db 39, AURORA_BEAM
 	db 43, THUNDERBOLT
 	db 48, TRI_ATTACK
 	db 52, LOCK_ON
 	db 57, ZAP_CANNON
+	db 61, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 PorygonZEvosAttacks:
@@ -4453,15 +4454,16 @@ PorygonZEvosAttacks:
 	db 10, CONFUSION
 	db 14, AGILITY
 	db 17, RECOVER
-	db 21, PSYBEAM
-	db 25, SIGNAL_BEAM
+	db 21, CHARGE_BEAM
+	db 25, PSYBEAM
 	db 28, BARRIER
-	db 34, CHARGE_BEAM
+	db 34, SIGNAL_BEAM
 	db 39, AURORA_BEAM
 	db 43, THUNDERBOLT
 	db 51, TRI_ATTACK
 	db 56, LOCK_ON
 	db 62, ZAP_CANNON
+	db 66, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:

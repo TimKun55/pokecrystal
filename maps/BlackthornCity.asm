@@ -291,9 +291,8 @@ BlackthornCityTrainerTipsText:
 MadamItemsSignText:
 	text "Madam Items"
 	
-	para "For all your held"
-	line "item evolution"
-	cont "needs!"
+	para "For your evolution"
+	line "item needs!"
 	done
 	
 BlackthornMoveTutorSignText:

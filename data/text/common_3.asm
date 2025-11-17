@@ -605,11 +605,7 @@ _MadamItems_IntroText::
 
 	para "I sell items that"
 	line "can help certain"
-	cont "#mon evolve"
-	
-	para "when they hold"
-	line "them and reach a"
-	cont "particular level."
+	cont "#mon evolve."
 	done
 
 _MadamItems_ComeAgainText::

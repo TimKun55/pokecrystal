@@ -362,7 +362,6 @@ INCLUDE "maps/BlackthornDragonSpeechHouse.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
 INCLUDE "maps/BlackthornMart.asm"
 INCLUDE "maps/BlackthornPokecenter1F.asm"
-INCLUDE "maps/MadamItemsHouse.asm"
 INCLUDE "maps/FuchsiaMart.asm"
 INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/BillsOlderSistersHouse.asm"
@@ -395,6 +394,7 @@ INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/RedsHouse2F.asm"
 INCLUDE "maps/BluesHouse.asm"
+INCLUDE "maps/MadamItemsHouse.asm"
 
 
 SECTION "Map Scripts 20", ROMX

@@ -123,7 +123,6 @@ ViridianNicknameSpeechHouse_Blocks:
 MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
-MadamItemsHouse_Blocks:
 BlackthornMoveTutorHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
 GoldenrodNameRater_Blocks:
@@ -1098,5 +1097,8 @@ RocketUndergroundTunnel_Blocks:
 
 CeladonRocketHideoutB4F_Blocks:
 	INCBIN "maps/CeladonRocketHideoutB4F.ablk"
+
+MadamItemsHouse_Blocks:
+	INCBIN "maps/MadamItemsHouse.ablk"
 
 ENDSECTION
