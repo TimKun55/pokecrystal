@@ -109,9 +109,10 @@ DoMove:
 CheckTurn:
 BattleCommand_CheckTurn:
 ; Repurposed as hardcoded turn handling. Useless as a command.
-; Move $ff immediately ends the turn.
+
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	assert CANNOT_MOVE == $ff
 	inc a
 	jp z, EndTurn
 
