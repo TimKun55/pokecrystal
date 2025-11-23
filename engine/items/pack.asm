@@ -1248,7 +1248,7 @@ TutorialPack:
 	dbw 0, wLyraNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .KeyItems:
 	ld a, KEY_ITEM_POCKET
@@ -1271,7 +1271,7 @@ TutorialPack:
 	dbw 0, wLyraNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .TMHM:
 	ld a, TM_HM_POCKET
@@ -1303,7 +1303,7 @@ TutorialPack:
 	dbw 0, wLyraNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .Berries:
 	ld a, BERRY_POCKET
@@ -1326,7 +1326,7 @@ TutorialPack:
 	dbw 0, wLyraNumBerries
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .Medicine:
 	ld a, MEDICINE_POCKET
@@ -1349,7 +1349,7 @@ TutorialPack:
 	dbw 0, wLyraNumMedicine
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .DisplayPocket:
 	push hl
@@ -1596,11 +1596,11 @@ Pack_InitGFX:
 	db $31, $32, $33, $34, $35, 0
 	db $36, $37, $38, $39, $3a, 0
 	db $3b, $3c, $3d, $3e, $3f, 0
-	db $1a, $1b, $1b, $1b, $1c, 0 ;	db $1a, $26, $26, $26, $1c, 0 ; Bottom of pack image, top of item image
-	db $14, $14, $14, $14, $14, 0 ;	db $15, $1d, $1e, $1f, $16, 0 ; Item image
-	db $14, $14, $14, $14, $14, 0 ;	db $15, $20, $21, $22, $16, 0
-	db $14, $14, $14, $14, $14, 0 ;	db $15, $23, $24, $25, $16, 0 
-	db $14, $14, $14, $14, $14, -1 ;	db $14, $1b, $1b, $1b, $14, -1
+	db $1a, $26, $26, $26, $1c, 0 ; Bottom of pack image, top of item image
+	db $15, $1d, $1e, $1f, $16, 0 ; Item image
+	db $15, $20, $21, $22, $16, 0
+	db $15, $23, $24, $25, $16, 0 
+	db $14, $1b, $1b, $1b, $14, -1
 
 PlacePackGFX:
 	hlcoord 0, 2
@@ -1690,7 +1690,7 @@ ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 	
 BerryPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1708,7 +1708,7 @@ BerryPocketMenuHeader:
 	dbw 0, wNumBerries
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_BerryPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1723,7 +1723,7 @@ PC_Mart_BerryPocketMenuHeader:
 	dbw 0, wNumBerries
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_ItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1738,7 +1738,7 @@ PC_Mart_ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1756,7 +1756,7 @@ KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1771,7 +1771,7 @@ PC_Mart_KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 	
 MedicinePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1789,7 +1789,7 @@ MedicinePocketMenuHeader:
 	dbw 0, wNumMedicines
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_MedicinePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1804,7 +1804,7 @@ PC_Mart_MedicinePocketMenuHeader:
 	dbw 0, wNumMedicines
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1822,7 +1822,7 @@ BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1837,7 +1837,7 @@ PC_Mart_BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 Text_SortItems:
 	text "Sorting items…"

@@ -1606,10 +1606,10 @@ _CGB_PackPals:
 	ld a, $2
 	call FillBoxCGB
 
-;	hlcoord 1, 8, wAttrmap ; item icon
-;	lb bc, 3, 3
-;	ld a, $3
-;	call FillBoxWithByte
+	hlcoord 1, 8, wAttrmap ; item icon
+	lb bc, 3, 3
+	ld a, $7
+	call FillBoxWithByte
 
 ;	hlcoord 0, 7, wAttrmap
 ;	lb bc, 3, 5
@@ -1891,19 +1891,27 @@ _CGB_MysteryGift:
 .MysteryGiftPalettes:
 INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 
-GS_CGB_MysteryGift: ; unreferenced
-	ld hl, .MysteryGiftPalette
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	call ApplyAttrmap
+LoadItemIconPalette:
+	ld a, [wCurItem]
+LoadItemIconPaletteFromA:
+	ld bc, ItemIconPalettes
+LoadIconPalette:
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, bc
+LoadIconPaletteFromHL:
+	ld de, wBGPals1 palette 7 + 2
+	ld bc, 4
+	call FarCopyColorWRAM
+	ld hl, BlackColor
+	ld bc, 2
+	call FarCopyColorWRAM
 	ret
-
-.MysteryGiftPalette:
-INCLUDE "gfx/mystery_gift/gs_mystery_gift.pal"
+	
+BlackColor:
+	RGB 00, 00, 00
 
 _CGB_Plain:
 	ld b, 8

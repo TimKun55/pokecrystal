@@ -793,3 +793,8 @@ INCLUDE "engine/gfx/vwf.asm"
 SECTION "Fade System", ROMX
 
 INCLUDE "engine/gfx/fade.asm"
+
+
+SECTION "Item Icons", ROMX
+
+INCLUDE "gfx/items.asm"

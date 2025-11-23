@@ -1306,6 +1306,9 @@ INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"
 
+ItemIconPalettes:
+INCLUDE "gfx/items/items.pal"
+
 LoadMapPals:
 	farcall LoadSpecialMapPalette
 	jr c, .got_pals
