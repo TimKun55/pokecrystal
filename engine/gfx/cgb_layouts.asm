@@ -1136,24 +1136,6 @@ _CGB_Evolution:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_GSTitleScreen:
-	ld hl, UnusedGSTitleBGPals
-	ld de, wBGPals1
-	ld bc, 5 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ld hl, UnusedGSTitleOBPals
-	ld de, wOBPals1
-	ld bc, 2 palettes
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-	ld a, SCGB_GENERIC
-	ld [wDefaultSGBLayout], a
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
 _CGB_Generic:
 	ld hl, DiplomaPalettes
 	ld de, wBGPals1
@@ -1562,16 +1544,6 @@ _CGB_MoveList:
 	ld a, $3
 	call ByteFill
 	
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_BetaPikachuMinigame:
-	ld hl, PalPacket_BetaPikachuMinigame + 1
-	call CopyFourPalettes
-	call WipeAttrmap
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE

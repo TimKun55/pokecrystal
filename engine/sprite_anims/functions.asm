@@ -18,11 +18,8 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_PartyMon
 	dw SpriteAnimFunc_PartyMonSwitch
 	dw SpriteAnimFunc_PartyMonSelected
-	dw SpriteAnimFunc_GSTitleTrail
 	dw SpriteAnimFunc_NamingScreenCursor
 	dw SpriteAnimFunc_GameFreakLogo
-	dw SpriteAnimFunc_GSGameFreakLogoStar
-	dw SpriteAnimFunc_GSGameFreakLogoSparkle
 	dw SpriteAnimFunc_SlotsGolem
 	dw SpriteAnimFunc_SlotsChansey
 	dw SpriteAnimFunc_SlotsChanseyEgg
@@ -39,7 +36,6 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_FlyFrom
 	dw SpriteAnimFunc_FlyLeaf
 	dw SpriteAnimFunc_FlyTo
-	dw SpriteAnimFunc_GSIntroHoOhLugia
 	dw SpriteAnimFunc_EZChatCursor
 	dw SpriteAnimFunc_MobileTradeSentPulse
 	dw SpriteAnimFunc_MobileTradeOTPulse
@@ -136,87 +132,6 @@ SpriteAnimFunc_PartyMonSelected:
 	ld [hl], 8 * 3
 	ret
 
-SpriteAnimFunc_GSTitleTrail:
-	call AnimSeqs_AnonJumptable
-	jp hl
-.anon_dw
-	dw .zero
-	dw .one
-
-.zero
-	call AnimSeqs_IncAnonJumptableIndex
-
-	ld hl, SPRITEANIMSTRUCT_INDEX
-	add hl, bc
-	ld a, [hl]
-
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	and $3
-	ld [hl], a
-	inc [hl]
-	swap a
-
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld [hl], a
-
-.one
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld a, [hl]
-	cp $a4
-	jr nc, .delete
-
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	add 4
-
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld [hl], a
-
-	ld hl, SPRITEANIMSTRUCT_YCOORD
-	add hl, bc
-	inc [hl]
-
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	ld a, [hl]
-	sla a
-	sla a
-
-	ld d, 2
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	add 3
-	ld [hl], a
-	call AnimSeqs_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
-.delete
-	call DeinitializeSprite
-	ret
-
-SpriteAnimFunc_GSIntroHoOhLugia:
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	inc a
-	ld [hl], a
-	ld d, 2
-	call AnimSeqs_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
 SpriteAnimFunc_NamingScreenCursor:
 	callfar NamingScreen_AnimateCursor
 	ret
@@ -227,134 +142,6 @@ SpriteAnimFunc_MailCursor:
 
 SpriteAnimFunc_GameFreakLogo:
 	callfar GameFreakLogoSpriteAnim
-	ret
-
-SpriteAnimFunc_GSGameFreakLogoStar:
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr z, .delete
-
-	dec [hl]
-	dec [hl]
-	ld d, a
-	and $1f
-	jr nz, .stay
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	dec [hl]
-
-.stay
-	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	ld a, [hl]
-	push af
-	push de
-	call AnimSeqs_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	pop de
-	pop af
-	call AnimSeqs_Cosine
-
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	ld a, [hl]
-
-	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	ret
-
-.delete
-	ld a, 1
-	ld [wIntroSceneFrameCounter], a
-	call DeinitializeSprite
-	ret
-
-SpriteAnimFunc_GSGameFreakLogoSparkle:
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hli]
-	or [hl]
-	jr z, .delete
-
-	ld hl, SPRITEANIMSTRUCT_VAR4
-	add hl, bc
-	ld d, [hl]
-
-	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	ld a, [hl]
-	push af
-	push de
-	call AnimSeqs_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	pop de
-	pop af
-	call AnimSeqs_Cosine
-
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-
-	ld hl, SPRITEANIMSTRUCT_VAR3
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	add hl, de
-	ld e, l
-	ld d, h
-
-	ld hl, SPRITEANIMSTRUCT_VAR3
-	add hl, bc
-	ld [hl], e
-	inc hl
-	ld [hl], d
-
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, -$10
-	add hl, de
-	ld e, l
-	ld d, h
-
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld [hl], e
-	inc hl
-	ld [hl], d
-
-	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	ld a, [hl]
-	xor $20
-	ld [hl], a
-	ret
-
-.delete
-	call DeinitializeSprite
 	ret
 
 SpriteAnimFunc_SlotsGolem:
