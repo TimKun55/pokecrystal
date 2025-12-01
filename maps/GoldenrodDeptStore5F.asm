@@ -127,20 +127,6 @@ GoldenrodDeptStore5FAlreadyGotTMText:
 	line "have this TM…"
 	done
 
-GoldenrodDeptStore5FCarrieMysteryGiftExplanationText:
-	text "Mystery Gift."
-
-	para "With just a"
-	line "little beep, you"
-	cont "get a gift."
-	done
-
-GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText:
-	text "The Mystery Gift"
-	line "option requires a"
-	cont "Game Boy Color."
-	done
-
 GoldenrodDeptStore5FLassText:
 	text "On Sundays, a lady"
 	line "comes to check out"
@@ -162,10 +148,10 @@ GoldenrodDeptStore5FPokefanMText:
 	done
 
 GoldenrodDeptStore5FDirectoryText:
-	text "Customize Your"
-	line "#mon"
+	text "Make Your #mon"
+	line "Stronger!"
 
-	para "5F TM Corner"
+	para "5F Stone Emporium"
 	done
 
 GoldenrodDeptStore5F_MapEvents:
@@ -184,7 +170,7 @@ GoldenrodDeptStore5F_MapEvents:
 
 	def_object_events
 	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FClerkScript, -1
-	object_event  4,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FLassScript, -1
+	object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FLassScript, -1
 	object_event  6,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Mike, -1
 	object_event 11,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FPokefanMScript, -1
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

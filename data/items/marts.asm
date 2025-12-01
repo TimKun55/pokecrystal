@@ -8,7 +8,6 @@ Marts:
 	dw MartCianwood
 	dw MartGoldenrod2F1
 	dw MartGoldenrod2F2
-	dw MartGoldenrod2F3
 	dw MartGoldenrod3F
 	dw MartGoldenrod4F
 	dw MartGoldenrod5F
@@ -26,7 +25,6 @@ Marts:
 	dw MartVermilion
 	dw MartCeladon2F1
 	dw MartCeladon2F2
-	dw MartCeladon2F3
 	dw MartCeladon3F
 	dw MartCeladon4F
 	dw MartCeladon5F1
@@ -118,15 +116,6 @@ MartGoldenrod2F2:
 	db MORPH_MAIL
 	db -1 ; end
 
-MartGoldenrod2F3:
-	db 5 ; # items
-	db FIRE_STONE
-	db WATER_STONE
-	db LEAF_STONE
-	db THUNDERSTONE
-	db SUN_STONE
-	db -1 ; end
-
 MartGoldenrod3F:
 	db 8 ; # items
 	db X_SPEED
@@ -151,11 +140,11 @@ MartGoldenrod4F:
 
 MartGoldenrod5F:
 	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_MEGA_DRAIN
-	db TM_SLUDGE
+	db FIRE_STONE
+	db WATER_STONE
+	db LEAF_STONE
+	db THUNDERSTONE
+	db SUN_STONE
 	db -1 ; end
 
 MartOlivine:
@@ -329,22 +318,13 @@ MartCeladon2F2:
 	db PARLYZ_HEAL
 	db -1 ; end
 
-MartCeladon2F3:
+MartCeladon3F:
 	db 5 ; # items
 	db FIRE_STONE
 	db WATER_STONE
 	db LEAF_STONE
 	db THUNDERSTONE
 	db MOON_STONE
-	db -1 ; end
-
-MartCeladon3F:
-	db 5 ; # items
-	db TM_CALM_MIND
-	db TM_PROTECT
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
 	db -1 ; end
 
 MartCeladon4F:

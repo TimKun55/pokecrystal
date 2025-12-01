@@ -49,19 +49,23 @@ CeladonDeptStore3FDirectory:
 
 CeladonDeptStore3FYoungsterText:
 	text "I can't decide"
-	line "which #mon I"
-	cont "should use this TM"
-	cont "on…"
+	line "if I should use"
+	cont "this Stone on"
+	cont "my #mon or not."
 	
-	para "Lucky for me,"
-	line "it's reusable!"
+	para "It will become"
+	line "stronger, but will"
+	cont "also stop learning"
+	cont "level-up moves…"
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
-	text "Uh-oh! I traded my"
-	line "#mon without"
-	cont "removing the Up-"
-	cont "Grade from it."
+	text "Yeah! I'm finally"
+	line "getting a Scyther!"
+
+	para "I could never find"
+	line "one in the Safari"
+	cont "Zone…"
 	done
 
 CeladonDeptStore3FGameboyKid2Text:
@@ -72,21 +76,16 @@ CeladonDeptStore3FGameboyKid2Text:
 	line "slots, so I could"
 	cont "never get enough"
 	cont "coins…"
-
-	para "…Huh?"
-
-	para "The traded Porygon"
-	line "turned into a dif-"
-	cont "ferent #mon!"
 	done
 
 CeladonDeptStore3FSuperNerdText:
-	text "The TM Shop sells"
-	line "some rare moves."
+	text "The Stone Emporium"
+	line "sells almost every"
+	cont "evolution stone!"
 	done
 
 CeladonDeptStore3FDirectoryText:
-	text "3F: TM Shop"
+	text "3F: Stone Emporium"
 
 	para "Make Your #mon"
 	line "Stronger!"

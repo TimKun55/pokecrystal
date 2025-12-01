@@ -68,7 +68,7 @@ GoldenrodDeptStore1FDirectoryText:
 
 	para "4F Medicine Box"
 
-	para "5F TM Corner"
+	para "5F Stone Emporium"
 
 	para "6F Tranquil Square"
 

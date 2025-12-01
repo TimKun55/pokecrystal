@@ -9,7 +9,7 @@ CeladonDeptStore6F_MapScripts:
 	callback MAPCALLBACK_TILES, CeladonDeptStore6FHideRooftopStairsCallback
 
 CeladonDeptStore6FHideRooftopStairsCallback:
-	changeblock 12, 0, $03 ; wall
+	changeblock 12, 0, $09 ; wall
 	endcallback
 
 CeladonDeptStore6FSuperNerdScript:

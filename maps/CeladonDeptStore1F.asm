@@ -60,7 +60,7 @@ CeladonDeptStore1FDirectoryText:
 	para "2F: Trainer's"
 	line "    Market"
 
-	para "3F: TM Shop"
+	para "3F: Stone Emporium"
 
 	para "4F: Wiseman Gifts"
 
