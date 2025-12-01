@@ -1,5 +1,6 @@
 	object_const_def
 	const SLOWPOKEWELLENTRANCE_KURT
+	const SLOWPOKEWELLENTRANCE_POKE_BALL
 
 SlowpokeWellEntrance_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,9 @@ SlowpokeWellEntrance_MapScripts:
 
 SlowpokeWellEntranceKurtScript:
 	jumptextfaceplayer SlowpokeWellEntranceKurtText
+
+SlowpokeWellEntranceTMMegaDrain:
+	itemball TM_MEGA_DRAIN
 
 SlowpokeWellEntranceKurtText:
 	text "Kurt: Hey there,"
@@ -51,3 +55,4 @@ SlowpokeWellEntrance_MapEvents:
 
 	def_object_events
 	object_event 8, 10, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellEntranceKurtScript, EVENT_SLOWPOKE_WELL_KURT
+	object_event 6, 15, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellEntranceTMMegaDrain, EVENT_SLOWPOKE_WELL_ENTRANCE_TM_MEGA_DRAIN

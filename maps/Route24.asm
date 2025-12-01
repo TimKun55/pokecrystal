@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE24_ROCKET
+	const ROUTE24_POKE_BALL
 
 Route24_MapScripts:
 	def_scene_scripts
@@ -37,6 +38,9 @@ Route24RocketScript:
 	disappear ROUTE24_ROCKET
 	playmapmusic
 	end
+
+Route24TMProtect:
+	itemball TM_PROTECT
 
 RocketExitMove1:
 	step DOWN
@@ -143,3 +147,4 @@ Route24_MapEvents:
 
 	def_object_events
 	object_event 10,  7, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_ROUTE_24_ROCKET
+	object_event 17,  8, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route24TMProtect, EVENT_ROUTE_24_TM_PROTECT

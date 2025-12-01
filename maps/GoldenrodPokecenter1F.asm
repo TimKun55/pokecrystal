@@ -1,3 +1,7 @@
+DEF GOLDENRODPOKECENTER1F_TM33_COINS      EQU 3000
+DEF GOLDENRODPOKECENTER1F_TM41_COINS      EQU 3000
+DEF GOLDENRODPOKECENTER1F_TM48_COINS      EQU 3000
+
 	object_const_def
 	const GOLDENRODPOKECENTER1F_NURSE
 	const GOLDENRODPOKECENTER1F_CHANSEY
@@ -6,6 +10,7 @@
 	const GOLDENRODPOKECENTER1F_POKEFAN_F
 	const GOLDENRODPOKECENTER1F_ROCKER
 	const GOLDENRODPOKECENTER1F_BEAUTY
+	const GOLDENRODPOKECENTER1F_BLACK_BELT
 
 GoldenrodPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -102,6 +107,101 @@ GoldenrodPokecenter1FMoveTutor:
 
 .NotEnough
 	writetextend GoldenrodPokecenter1FMoveTutorNotEnough
+
+GoldenrodPokecenter1FTMVendorScript:
+	faceplayer
+	opentext
+	writetext GoldenrodPokecenter1FTMVendorIntroText
+	waitbutton
+	checkitem COIN_CASE
+	iffalse GoldenrodPokecenter1FTMVendor_NoCoinCaseScript
+	writetext GoldenrodPokecenter1FTMVendorWhichTMText
+GoldenrodPokecenter1FTMVendor_LoopScript:
+	special DisplayCoinCaseBalance
+	loadmenu GoldenrodPokecenter1FTMVendorMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .IcePunch
+	ifequal 2, .ThunderPunch
+	ifequal 3, .FirePunch
+	sjump GoldenrodPokecenter1FTMVendor_CancelPurchaseScript
+
+.IcePunch:
+	checkitem TM_ICE_PUNCH
+	iftrue GoldenrodPokecenter1FTMVendor_AlreadyHaveTMScript
+	checkcoins GOLDENRODPOKECENTER1F_TM33_COINS
+	ifequal HAVE_LESS, GoldenrodPokecenter1FTMVendor_NotEnoughCoinsScript
+	writetext GoldenrodPokecenter1FTMVendorConfirmTM33Text
+	yesorno
+	iffalse GoldenrodPokecenter1FTMVendor_CancelPurchaseScript
+	giveitem TM_ICE_PUNCH
+	iffalse GoldenrodPokecenter1FTMMonVendor_NoRoomForTMScript
+	takecoins GOLDENRODPOKECENTER1F_TM33_COINS
+	sjump GoldenrodPokecenter1FTMVendor_FinishScript
+
+.ThunderPunch:
+	checkitem TM_THUNDERPUNCH
+	iftrue GoldenrodPokecenter1FTMVendor_AlreadyHaveTMScript
+	checkcoins GOLDENRODPOKECENTER1F_TM41_COINS
+	ifequal HAVE_LESS, GoldenrodPokecenter1FTMVendor_NotEnoughCoinsScript
+	writetext GoldenrodPokecenter1FTMVendorConfirmTM41Text
+	yesorno
+	iffalse GoldenrodPokecenter1FTMVendor_CancelPurchaseScript
+	giveitem TM_THUNDERPUNCH
+	iffalse GoldenrodPokecenter1FTMMonVendor_NoRoomForTMScript
+	takecoins GOLDENRODPOKECENTER1F_TM41_COINS
+	sjump GoldenrodPokecenter1FTMVendor_FinishScript
+
+.FirePunch:
+	checkitem TM_FIRE_PUNCH
+	iftrue GoldenrodPokecenter1FTMVendor_AlreadyHaveTMScript
+	checkcoins GOLDENRODPOKECENTER1F_TM48_COINS
+	ifequal HAVE_LESS, GoldenrodPokecenter1FTMVendor_NotEnoughCoinsScript
+	writetext GoldenrodPokecenter1FTMVendorConfirmTM48Text
+	yesorno
+	iffalse GoldenrodPokecenter1FTMVendor_CancelPurchaseScript
+	giveitem TM_FIRE_PUNCH
+	iffalse GoldenrodPokecenter1FTMMonVendor_NoRoomForTMScript
+	takecoins GOLDENRODPOKECENTER1F_TM48_COINS
+	sjump GoldenrodPokecenter1FTMVendor_FinishScript
+
+GoldenrodPokecenter1FTMVendor_FinishScript:
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodPokecenter1FTMVendorHereYouGoText
+	waitbutton
+	sjump GoldenrodPokecenter1FTMVendor_LoopScript
+	
+GoldenrodPokecenter1FTMVendor_AlreadyHaveTMScript:
+	writetext GoldenrodPokecenter1FTMVendorAlreadyHaveTMText
+	waitbutton
+	sjump GoldenrodPokecenter1FTMVendor_LoopScript
+
+GoldenrodPokecenter1FTMVendor_NotEnoughCoinsScript:
+	writetextend GoldenrodPokecenter1FTMVendorNeedMoreCoinsText
+
+GoldenrodPokecenter1FTMMonVendor_NoRoomForTMScript:
+	writetextend GoldenrodPokecenter1FTMVendorNoMoreRoomText
+
+GoldenrodPokecenter1FTMVendor_CancelPurchaseScript:
+	writetextend GoldenrodPokecenter1FTMVendorQuitText
+
+GoldenrodPokecenter1FTMVendor_NoCoinCaseScript:
+	writetextend GoldenrodPokecenter1FTMVendorNoCoinCaseText
+
+GoldenrodPokecenter1FTMVendorMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "TM33    3000@"
+	db "TM41    3000@"
+	db "TM48    3000@"
+	db "Cancel@"
 	
 GoldenrodPokecenter1FVendingMachine:
 	jumpstd VendingMachineScript
@@ -217,7 +317,72 @@ GoldenrodPokecenter1FMoveTutorNotEnough:
 	text "Sorry, you can't"
 	line "afford it."
 	done
+
+GoldenrodPokecenter1FTMVendorIntroText:
+	text "Hello there!"
+
+	para "I've mastered the"
+	line "three Elemental"
+	cont "Punches!"
 	
+	para "For some coins, I"
+	line "can give you the"
+	cont "TMs for them."
+	done
+
+GoldenrodPokecenter1FTMVendorWhichTMText:
+	text "Which TM would"
+	line "you like?"
+	done
+
+GoldenrodPokecenter1FTMVendorConfirmTM33Text:
+	text "TM33 Ice Punch."
+	line "Is that right?"
+	done
+
+GoldenrodPokecenter1FTMVendorConfirmTM41Text:
+	text "TM41 ThunderPunch."
+	line "Is that right?"
+	done
+
+GoldenrodPokecenter1FTMVendorConfirmTM48Text:
+	text "TM41 Fire Punch."
+	line "Is that right?"
+	done
+
+GoldenrodPokecenter1FTMVendorHereYouGoText:
+	text "Here you go!"
+	
+	para "Punch your way to"
+	line "absolute victory!"
+	done
+	
+GoldenrodPokecenter1FTMVendorAlreadyHaveTMText:
+	text "But you already"
+	line "have that TM!"
+	done
+
+GoldenrodPokecenter1FTMVendorNeedMoreCoinsText:
+	text "Hmm, you'll need"
+	line "more coins."
+	done
+
+GoldenrodPokecenter1FTMVendorNoMoreRoomText:
+	text "Sorry. You can't"
+	line "carry any more."
+	done
+
+GoldenrodPokecenter1FTMVendorQuitText:
+	text "OK. Save those"
+	line "coins and come"
+	cont "again."
+	done
+
+GoldenrodPokecenter1FTMVendorNoCoinCaseText:
+	text "Oi! You don't have"
+	line "a Coin Case."
+	done
+
 GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -242,3 +407,4 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event 13,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Aizen, -1
 	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FMoveTutor, -1
+	object_event 15,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FTMVendorScript, -1
