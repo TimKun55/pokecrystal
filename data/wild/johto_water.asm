@@ -82,6 +82,14 @@ JohtoWaterWildMons:
 	db 20, QUAGSIRE,      23,  26
 	end_water_wildmons
 
+	def_water_wildmons WHIRL_ISLAND_SE
+	db 4 percent ; encounter rate
+	;   %, species,		 min, max
+	db 60, TENTACOOL,     28,  30
+	db 20, HORSEA,        28,  30
+	db 20, REMORAID,      28,  30
+	end_water_wildmons
+
 	def_water_wildmons WHIRL_ISLAND_SW
 	db 4 percent ; encounter rate
 	;   %, species,		 min, max
