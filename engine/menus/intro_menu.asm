@@ -683,8 +683,6 @@ OakSpeech:
 
 	call NamePlayer
 
-
-
 	ld hl, OakText7
 	call PrintText
 	ret

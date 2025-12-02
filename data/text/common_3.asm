@@ -205,19 +205,10 @@ _SaveFileCorruptedText::
 	line "corrupted!"
 	prompt
 
-_WindowAreaExceededErrorText:: ; unreferenced
-	text "The window save"
-	line "area was exceeded."
-	done
-
 _WindowPoppingErrorText::
 	text "No windows avail-"
 	line "able for popping."
 	done
-
-_CorruptedEventText:: ; unreferenced
-	text "Corrupted event!"
-	prompt
 
 _ObjectEventText::
 	text "Object event"
