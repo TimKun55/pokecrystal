@@ -14,7 +14,6 @@ INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
-INCLUDE "data/pokemon/unused_pic_banks.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
 
 
