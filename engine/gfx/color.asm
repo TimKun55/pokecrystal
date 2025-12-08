@@ -1302,6 +1302,9 @@ INCLUDE "gfx/battle/hp_bar.pal"
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
 
+EggSummaryPals:
+INCLUDE "gfx/summary/egg_summary.pal"
+
 INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"

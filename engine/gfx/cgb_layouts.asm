@@ -66,6 +66,7 @@ CGBLayoutJumptable:
 	dw _CGB_NamingScreen
 	dw _CGB_BuyMenu
 	dw _CGB_Plain
+	dw _CGB_EggSummaryScreen
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1927,3 +1928,48 @@ INCLUDE "gfx/diploma/plain.pal" ; todo: replace this polished port
 
 PokegearOBPals:
 INCLUDE "gfx/icons/icons.pal" ; todo: replace this polished port
+
+_CGB_EggSummaryScreen:
+	ld de, wBGPals1
+	ld a, [wCurHPPal]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld bc, HPBarPals
+	add hl, bc
+	call LoadPalette_White_Col1_Col2_Black ; hp palette, palette 0
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	call GetPlayerOrMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black ; mon palette, palette 1
+
+	ld hl, EggSummaryPals
+	ld de, wBGPals1 palette 2
+	ld bc, 2 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+	call ApplyAttrmap
+
+	hlcoord 0, 0, wAttrmap
+	lb bc, 9, 7
+	ld a, $1 ; mon palette
+	call FillBoxCGB
+
+	hlcoord 8, 0, wAttrmap
+	lb bc, 9, 12
+	ld a, $2 
+	call FillBoxCGB
+
+	hlcoord 0, 9, wAttrmap
+	lb bc, 1, 20
+	ld a, $3 
+	call FillBoxCGB
+
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret

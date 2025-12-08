@@ -100,6 +100,6 @@ SummaryScreen_LoadFont:
 LoadSummaryScreenPageTilesGFX:
 	ld de, SummaryScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(SummaryScreenPageTilesGFX), 27 ; Loading More Tiles than in Vanilla
+	lb bc, BANK(SummaryScreenPageTilesGFX), 32 ; Loading More Tiles than in Vanilla
 	call Get2bppViaHDMA
 	ret

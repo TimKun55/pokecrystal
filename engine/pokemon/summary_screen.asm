@@ -547,11 +547,58 @@ SummaryScreen_PlacePageBorder:
 	dec b
 	jr nz, .loop2
 
-
 	hlcoord 7, 2
 	ld de, SCREEN_WIDTH
 	ld b, 7
 	ld a, $3c ; vertical divider
+.vertical_divider
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .vertical_divider
+	ret
+
+EggSummaryScreen_PlacePageBorder:
+	hlcoord 0, 9
+	ld b, SCREEN_WIDTH
+	ld a, $47 ; horizontal divider
+.loop1
+	ld [hli], a
+	dec b
+	jr nz, .loop1
+
+	hlcoord 8, 0
+	ld a, $49
+	ld [hli], a
+	inc a
+	ld [hl], a
+
+	hlcoord 8, 8
+	ld a, $4a
+	ld [hli], a
+	inc a
+	ld [hl], a
+
+	hlcoord 9, 0
+	ld b, 11
+	ld a, $47 ; horizontal divider
+.loop2
+	ld [hli], a
+	dec b
+	jr nz, .loop2
+
+	hlcoord 9, 8
+	ld b, 11
+	ld a, $4b ; horizontal divider
+.loop3
+	ld [hli], a
+	dec b
+	jr nz, .loop3
+
+	hlcoord 8, 1
+	ld de, SCREEN_WIDTH
+	ld b, 7
+	ld a, $48 ; vertical divider
 .vertical_divider
 	ld [hl], a
 	add hl, de
@@ -1502,24 +1549,39 @@ EggSummaryScreen:
 	ldh [hBGMapMode], a
 	ld hl, wCurHPPal
 	call SetHPPal
-	ld b, SCGB_SUMMARY_SCREEN_HP_PALS
+	ld b, SCGB_EGG_SUMMARY_SCREEN
 	call GetSGBLayout
-	call SummaryScreen_PlaceHorizontalDivider
+	call EggSummaryScreen_PlacePageBorder
 	ld de, EggString
-	hlcoord 8, 1
+	hlcoord 2, 0
+	call PlaceString
+
+	hlcoord 11, 2
+	ld [hl], "№"
+	inc hl
+	ld [hl], "."
+
+	ld de, ThreeQMarkString
+	hlcoord 13, 2
+	call PlaceString
+
+	ld de, OTString
+	hlcoord 10, 4
 	call PlaceString
 	ld de, IDNoString
-	hlcoord 8, 3
-	call PlaceString
-	ld de, OTString
-	hlcoord 8, 5
+	hlcoord 10, 6
 	call PlaceString
 	ld de, FiveQMarkString
-	hlcoord 11, 3
+	hlcoord 13, 4
 	call PlaceString
 	ld de, FiveQMarkString
-	hlcoord 11, 5
+	hlcoord 13, 6
 	call PlaceString
+	
+	ld de, EggWatchString
+	hlcoord 3, 10
+	call PlaceString
+
 if DEF(_DEBUG)
 	ld de, .PushStartString
 	hlcoord 8, 17
@@ -1533,17 +1595,17 @@ if DEF(_DEBUG)
 endc
 	ld a, [wTempMonHappiness] ; egg status
 	ld de, EggSoonString
-	cp $6
+	cp $2
 	jr c, .picked
 	ld de, EggCloseString
-	cp $b
+	cp $5
 	jr c, .picked
 	ld de, EggMoreTimeString
-	cp $29
+	cp $12
 	jr c, .picked
 	ld de, EggALotMoreTimeString
 .picked
-	hlcoord 1, 9
+	hlcoord 1, 12
 	call PlaceString
 	ld hl, wSummaryScreenFlags
 	set 5, [hl]
@@ -1567,16 +1629,21 @@ EggString:
 FiveQMarkString:
 	db "?????@"
 
+ThreeQMarkString:
+	db "???@"
+
+EggWatchString:
+	db "- Egg Watch -@"
+
 EggSoonString:
 	db   "It's making sounds"
 	next "inside. It's going"
 	next "to hatch soon!@"
 
 EggCloseString:
-	db   "It moves around"
-	next "inside sometimes."
-	next "It must be close"
-	next "to hatching.@"
+	db   "It sometimes moves"
+	next "around. It must be"
+	next "close to hatching.@"
 
 EggMoreTimeString:
 	db   "Wonder what's"

@@ -59,6 +59,7 @@ SGBLayoutJumptable:
 	dw .SGB_NamingScreen
 	dw .SGB_BuyMenu
 	dw .SGB_Unused1E ; SCGB_PLAIN (not used)
+	dw .SGB_Egg_Summary_Screen
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
@@ -367,6 +368,7 @@ SGBLayoutJumptable:
 .SGB_TrainerCard:
 .SGB_TrainerCardJohto:
 .SGB_TrainerCardKanto:
+.SGB_Egg_Summary_Screen:
 	ld hl, PalPacket_Generic
 	ld de, BlkPacket_AllPal0
 	ret
