@@ -4886,6 +4886,12 @@ BurnOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	ld de, ANIM_BRN
+	call PlayOpponentBattleAnim
+	call RefreshBattleHuds
 	jp UpdateOpponentInParty
 
 BattleCommand_RaiseSubNoAnim:
