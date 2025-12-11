@@ -33,7 +33,7 @@
 	tilecoll BUOY, BUOY, BUOY, WATER ; 20
 	tilecoll BUOY, BUOY, WATER, WATER ; 21
 	tilecoll BUOY, BUOY, WATER, BUOY ; 22
-	tilecoll WHIRLPOOL, BUOY, WATER, BUOY ; 23
+	tilecoll WALL, FLOOR, WALL, WALL ; 23
 	tilecoll BUOY, WATER, BUOY, WATER ; 24
 	tilecoll WATER, WATER, WATER, WATER ; 25
 	tilecoll WATER, BUOY, WATER, BUOY ; 26

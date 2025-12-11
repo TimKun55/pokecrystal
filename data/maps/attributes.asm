@@ -106,7 +106,7 @@ ENDM
 	connection east, Route29, ROUTE_29, 0
 
 	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
-	connection south, Route32, ROUTE_32, 3
+	connection south, Route32, ROUTE_32, 0
 	connection west, Route36, ROUTE_36, 3
 	connection east, Route31, ROUTE_31, 12
 
@@ -169,7 +169,7 @@ ENDM
 	connection west, VioletCity, VIOLET_CITY, -12
 
 	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
-	connection north, VioletCity, VIOLET_CITY, -3
+	connection north, VioletCity, VIOLET_CITY, 0
 	connection south, Route33, ROUTE_33, 0
 
 	map_attributes Route33, ROUTE_33, $05, NORTH | WEST
