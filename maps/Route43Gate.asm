@@ -58,11 +58,11 @@ RocketScript_TollSouth:
 RocketScript_YoureBrokeSouth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
-	sjump RocketScript_ShakeDownSouth
-
+	; fallthrough
 RocketScript_ShakeDownSouth:
 	promptbutton
 	closetext
+	playsound SFX_TRANSACTION
 	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassSouth
 	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassSouth
 	setscene SCENE_ROUTE43GATE_NOOP
@@ -90,11 +90,11 @@ RocketScript_TollNorth:
 RocketScript_YoureBrokeNorth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
-	sjump RocketScript_ShakeDownNorth
-
+	; fallthrough
 RocketScript_ShakeDownNorth:
 	promptbutton
 	closetext
+	playsound SFX_TRANSACTION
 	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassNorth
 	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassNorth
 	setscene SCENE_ROUTE43GATE_NOOP
@@ -132,12 +132,10 @@ Rocket1Script_BlocksYouSouth:
 	big_step UP
 	big_step UP
 	big_step RIGHT
-	big_step RIGHT
 	turn_head UP
 	step_end
 
 Rocket1Script_LetsYouPassSouth:
-	big_step LEFT
 	big_step LEFT
 	big_step DOWN
 	big_step DOWN
@@ -147,12 +145,10 @@ Rocket1Script_BlocksYouNorth:
 	big_step DOWN
 	big_step DOWN
 	big_step RIGHT
-	big_step RIGHT
 	turn_head DOWN
 	step_end
 
 Rocket1Script_LetsYouPassNorth:
-	big_step LEFT
 	big_step LEFT
 	big_step UP
 	big_step UP
@@ -163,12 +159,10 @@ Rocket2Script_BlocksYouSouth:
 	big_step UP
 	big_step UP
 	big_step LEFT
-	big_step LEFT
 	turn_head UP
 	step_end
 
 Rocket2Script_LetsYouPassSouth:
-	big_step RIGHT
 	big_step RIGHT
 	big_step DOWN
 	big_step DOWN
@@ -179,12 +173,10 @@ Rocket2Script_BlocksYouNorth:
 	big_step DOWN
 	big_step DOWN
 	big_step LEFT
-	big_step LEFT
 	turn_head DOWN
 	step_end
 
 Rocket2Script_LetsYouPassNorth:
-	big_step RIGHT
 	big_step RIGHT
 	big_step UP
 	big_step UP
@@ -241,10 +233,10 @@ Route43Gate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, ROUTE_43, 5
-	warp_event  5,  0, ROUTE_43, 6
-	warp_event  4,  7, ROUTE_43, 3
-	warp_event  5,  7, ROUTE_43, 4
+	warp_event  3,  0, ROUTE_43, 5
+	warp_event  4,  0, ROUTE_43, 6
+	warp_event  3,  7, ROUTE_43, 3
+	warp_event  4,  7, ROUTE_43, 4
 
 	def_coord_events
 
@@ -253,4 +245,4 @@ Route43Gate_MapEvents:
 	def_object_events
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerScript_GuardWithSludgeBomb, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS
-	object_event  7,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS
+	object_event  5,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS

@@ -27,14 +27,14 @@ Route2Gate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, ROUTE_2, 4
-	warp_event  5,  0, ROUTE_2, 5
-	warp_event  4,  7, ROUTE_2, 2
-	warp_event  5,  7, ROUTE_2, 3
+	warp_event  3,  0, ROUTE_2, 4
+	warp_event  4,  0, ROUTE_2, 5
+	warp_event  3,  7, ROUTE_2, 2
+	warp_event  4,  7, ROUTE_2, 3
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route2GateScientistScript, -1
+	object_event  5,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route2GateScientistScript, -1

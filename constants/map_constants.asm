@@ -181,7 +181,7 @@ ENDM
 	map_const ECRUTEAK_CITY,                               20, 24 ; 12
 	map_const ECRUTEAK_FAIRY_FAMILY_HOUSE,                  4,  4 ; 13
 	map_const ECRUTEAK_SWARM_HOUSE,                         4,  4 ; 14 	
-	map_const ROUTE_35_GOLDENROD_GATE,                      5,  4 ; 15
+	map_const ROUTE_35_GOLDENROD_GATE,                      4,  4 ; 15
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
 	endgroup
@@ -202,7 +202,7 @@ ENDM
 
 	newgroup CINNABAR                                             ;  6
 	map_const CINNABAR_POKECENTER_1F,                       6,  4 ;  1
-	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
+	map_const ROUTE_19_FUCHSIA_GATE,                        4,  4 ;  2
 	map_const ROUTE_19,                                    10, 27 ;  3
 	map_const ROUTE_20,                                    50,  9 ;  4
 	map_const ROUTE_21,                                    10, 39 ;  5
@@ -253,8 +253,8 @@ ENDM
 	newgroup LAKE_OF_RAGE                                         ;  9
 	map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE,              4,  4 ;  1
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,                  4,  4 ;  2
-	map_const ROUTE_43_MAHOGANY_GATE,                       5,  4 ;  3
-	map_const ROUTE_43_GATE,                                5,  4 ;  4
+	map_const ROUTE_43_MAHOGANY_GATE,                       4,  4 ;  3
+	map_const ROUTE_43_GATE,                                4,  4 ;  4
 	map_const ROUTE_43,                                    10, 27 ;  5
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
 	endgroup
@@ -271,7 +271,7 @@ ENDM
 	map_const VIOLET_PRIMOS_HOUSE,                          4,  4 ;  9
 	map_const ROUTE_32_RUINS_OF_ALPH_GATE,                  5,  4 ; 10
 	map_const ROUTE_32_POKECENTER_1F,                       6,  4 ; 11
-	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 12
+	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  4,  4 ; 12
 	map_const ROUTE_36_VIOLET_GATE,                         5,  4 ; 13
 	map_const EARLS_POKEMON_ACADEMY_B1F,                    7,  7 ; 14
 	endgroup
@@ -298,7 +298,7 @@ ENDM
 	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
 	map_const GOLDENROD_POKECENTER_1F,                      8,  4 ; 20
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 21
-	map_const ROUTE_34_ILEX_FOREST_GATE,                    5,  4 ; 22
+	map_const ROUTE_34_ILEX_FOREST_GATE,                    4,  4 ; 22
 	map_const DAY_CARE,                                     4,  4 ; 23
 	map_const GOLDENROD_HOME_DECO_STORE_1,                  4,  4 ; 24
 	map_const GOLDENROD_HOME_DECO_STORE_2,                  4,  4 ; 25
@@ -318,7 +318,7 @@ ENDM
 	map_const VERMILION_MART,                               6,  4 ;  8
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  9
 	map_const VERMILION_GYM,                                5, 10 ; 10
-	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 11
+	map_const ROUTE_6_SAFFRON_GATE,                         4,  4 ; 11
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4 ; 13
 	map_const VERMILION_SAILORS_HOUSE,                      4,  4 ; 14
@@ -331,7 +331,7 @@ ENDM
 	map_const REDS_HOUSE_2F,                                4,  4 ;  4
 	map_const BLUES_HOUSE,                                  4,  4 ;  5
 	map_const OAKS_LAB,                                     5,  6 ;  6
-	map_const ROUTE_1_VIRIDIAN_GATE,                        5,  4 ;  7
+	map_const ROUTE_1_VIRIDIAN_GATE,                        4,  4 ;  7
 	endgroup
 
 	newgroup PEWTER                                               ; 14
@@ -411,7 +411,7 @@ ENDM
 	map_const LAVENDER_MART,                                6,  4 ;  8
 	map_const SOUL_HOUSE,                                   5,  5 ;  9
 	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 10
-	map_const ROUTE_12_LAVENDER_GATE,                       5,  4 ; 11
+	map_const ROUTE_12_LAVENDER_GATE,                       4,  4 ; 11
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 12
 	endgroup
 
@@ -488,9 +488,9 @@ ENDM
 	map_const VIRIDIAN_MART,                                6,  4 ;  9
 	map_const VIRIDIAN_POKECENTER_1F,                       6,  4 ; 10
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 11
-	map_const ROUTE_2_GATE,                                 5,  4 ; 12
-	map_const ROUTE_2_VIRIDIAN_FOREST_GATE,                 5,  4 ; 13
-	map_const VIRIDIAN_FOREST_ROUTE_2_GATE,                 5,  4 ; 14
+	map_const ROUTE_2_GATE,                                 4,  4 ; 12
+	map_const ROUTE_2_VIRIDIAN_FOREST_GATE,                 4,  4 ; 13
+	map_const VIRIDIAN_FOREST_ROUTE_2_GATE,                 4,  4 ; 14
 	map_const VIRIDIAN_FOREST_HOUSE,                        4,  4 ; 15
 	map_const POKEMON_LEAGUE_GATE,                         21, 16 ; 16
 	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 17
@@ -507,7 +507,7 @@ ENDM
 	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  7
 	map_const ELMS_HOUSE,                                   4,  4 ;  8
 	map_const ROUTE_27_AERIAL_ACE_HOUSE,                    4,  4 ;  9
-	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 10
+	map_const ROUTE_29_ROUTE_46_GATE,                       4,  4 ; 10
 	map_const LYRAS_HOUSE_1F,                               6,  4 ; 11
 	map_const LYRAS_HOUSE_2F,                               4,  3 ; 12
 	endgroup
@@ -524,7 +524,7 @@ ENDM
 	map_const COPYCATS_HOUSE_1F,                            4,  4 ;  9
 	map_const COPYCATS_HOUSE_2F,                            4,  3 ; 10
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 11
-	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ; 12
+	map_const ROUTE_5_SAFFRON_GATE,                         4,  4 ; 12
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 13
 	map_const SAFFRON_AVICULTURAL_SOCIETY_1F,               6,  5 ; 14
 	map_const SAFFRON_AVICULTURAL_SOCIETY_2F,               6,  6 ; 15
@@ -565,7 +565,7 @@ ENDM
 	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ;  4
 	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ;  5
 	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ;  6
-	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ;  7
+	map_const ROUTE_40_BATTLE_TOWER_GATE,                   4,  4 ;  7
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 28

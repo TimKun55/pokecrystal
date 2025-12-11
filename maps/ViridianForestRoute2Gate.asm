@@ -37,15 +37,15 @@ ViridianForestRoute2Gate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  7, VIRIDIAN_FOREST,  4
-	warp_event  5,  7, VIRIDIAN_FOREST,  5
-	warp_event  4,  0, ROUTE_2,  9
-	warp_event  5,  0, ROUTE_2, 10
+	warp_event  3,  7, VIRIDIAN_FOREST,  4
+	warp_event  4,  7, VIRIDIAN_FOREST,  5
+	warp_event  3,  0, ROUTE_2,  9
+	warp_event  4,  0, ROUTE_2, 10
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  9,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateOfficerScript, -1
-	object_event  9,  3, SPRITE_PARASECT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateParasectScript, -1
+	object_event  7,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateOfficerScript, -1
+	object_event  7,  3, SPRITE_PARASECT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianForestRoute2GateParasectScript, -1

@@ -128,3 +128,5 @@
 	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 7f
 	tilecoll FLOOR, FLOOR, COUNTER, WALL ; 80
 	tilecoll FLOOR, FLOOR, WALL, COUNTER ; 81
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 82
+	tilecoll DOOR, WALL, FLOOR, FLOOR ; 83
