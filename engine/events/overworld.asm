@@ -385,6 +385,32 @@ CheckOverworldTileArrays:
 
 INCLUDE "data/collision/field_move_blocks.asm"
 
+TryFlashOW::
+	ld a, [wTimeOfDayPalset]
+	cp DARKNESS_PALSET
+	jr nz, .quit
+
+    ld b, CHECK_FLAG
+    ld de, ENGINE_ZEPHYRBADGE
+    farcall EngineFlagAction
+    ld a, c
+    and a
+    jr z, .quit
+
+    ld d, FLASH
+    call CheckPartyCanLearnMove
+    and a
+    jr nz, .quit
+
+.yes
+	ld a, BANK(Script_UseFlash)
+	ld hl, Script_UseFlash
+	jp CallScript
+
+.quit
+	xor a
+	ret
+
 FlashFunction:
 	call .CheckUseFlash
 	and $7f
@@ -421,7 +447,7 @@ UseFlash:
 	jp QueueScript
 
 Script_UseFlash:
-	refreshmap
+	reanchormap
 	special UpdateTimePals
 	callasm PrepareOverworldMove
 	scall FieldMovePokepicScript
