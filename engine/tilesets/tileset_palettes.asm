@@ -73,27 +73,34 @@ LoadSpecialMapPalette:
     jp z, .cerulean_gym_palette
 
 .continue7
-    cp GROUP_VIRIDIAN_CITY
+    cp GROUP_MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
     jr nz, .continue8
+    ld a, [wMapNumber]
+    cp MAP_MAHOGANY_GYM
+    jp z, .mahogany_gym_palette
+
+.continue8
+    cp GROUP_VIRIDIAN_CITY
+    jr nz, .continue9
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
     jp z, .viridian_gym_palette
 
-.continue8
+.continue9
     cp GROUP_SAFFRON_CITY
-    jr nz, .continue9
+    jr nz, .continue10
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
 
-.continue9
+.continue10
     cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE
-    jr nz, .continue10
+    jr nz, .continue11
     ld a, [wMapNumber]
     cp MAP_CERULEAN_GYM
     jp z, .cerulean_gym_palette
 
-.continue10
+.continue11
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -169,6 +176,11 @@ LoadSpecialMapPalette:
 
 .viridian_gym_palette
 	call LoadViridianGymPalette
+	scf
+	ret
+
+.mahogany_gym_palette
+	call LoadMahoganyGymPalette
 	scf
 	ret
 
@@ -342,6 +354,17 @@ LoadViridianGymPalette:
 	
 ViridianGymPalette:
 INCLUDE "gfx/tilesets/viridian_gym_palette.pal"
+
+LoadMahoganyGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MahoganyGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+MahoganyGymPalette:
+INCLUDE "gfx/tilesets/mahogany_gym_palette.pal"
 
 LoadSaffronGymPalette:
 	ld a, BANK(wBGPals1)
