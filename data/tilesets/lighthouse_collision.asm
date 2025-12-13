@@ -208,34 +208,36 @@
 	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; cf
 	tilecoll WALL, WALL, WALL, WALL ; d0
 	tilecoll WALL, WALL, WALL, WALL ; d1
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; d2
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; d3
-	tilecoll WALL, FLOOR, WALL, FLOOR ; d4
-	tilecoll FLOOR, WALL, FLOOR, WALL ; d5
-	tilecoll WALL, WALL, WALL, FLOOR ; d6
-	tilecoll WALL, WALL, FLOOR, WALL ; d7
-	tilecoll WALL, FLOOR, WALL, WALL ; d8
-	tilecoll FLOOR, WALL, WALL, WALL ; d9
-	tilecoll WALL, FLOOR, WALL, WALL ; da
-	tilecoll FLOOR, WALL, WALL, WALL ; db
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; dc
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; dd
-	tilecoll WALL, WALL, WALL, FLOOR ; de
-	tilecoll WALL, WALL, FLOOR, WALL ; df
+	tilecoll WALL, FLOOR, WALL, FLOOR ; d2
+	tilecoll FLOOR, WALL, FLOOR, WALL ; d3
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; d4
+	tilecoll FLOOR, FLOOR, WALL, WALL ; d5
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; d6
+	tilecoll FLOOR, WALL, WALL, FLOOR ; d7
+	tilecoll WALL, FLOOR, WALL, FLOOR ; d8
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; d9
+	tilecoll FLOOR, WALL, FLOOR, WALL ; da
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; db
+	tilecoll WALL, FLOOR, FLOOR, WALL ; dc
+	tilecoll WALL, WALL, WALL, WALL ; dd
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; de
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; df
 	tilecoll WALL, WALL, WALL, WALL ; e0
 	tilecoll WALL, WALL, WALL, WALL ; e1
 	tilecoll WALL, WALL, WALL, WALL ; e2
 	tilecoll WALL, WALL, WALL, WALL ; e3
-	tilecoll FLOOR, WALL, FLOOR, STAIRCASE ; e4
-	tilecoll FLOOR, FLOOR, WALL, WALL ; e5
+	tilecoll WALL, WALL, WALL, STAIRCASE ; e4
+	tilecoll WALL, WALL, WALL, WALL ; e5
 	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; e6
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; e7
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ea
-	tilecoll WALL, WALL, WALL, FLOOR ; eb
-	tilecoll WALL, WALL, FLOOR, WALL ; ec
+	tilecoll WALL, WALL, WALL, WALL ; eb
+	tilecoll WALL, WALL, WALL, WALL ; ec
 	tilecoll WALL, WALL, WALL, WALL ; ed
 	tilecoll WALL, WALL, WALL, WALL ; ee
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; ef
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; f0
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; f1
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; f2
