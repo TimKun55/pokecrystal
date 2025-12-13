@@ -8,8 +8,15 @@ LoadSpecialMapPalette:
 
 .not_dark
     ld a, [wMapGroup]
-    cp GROUP_SPROUT_TOWER_1F
+    cp GROUP_MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
     jr nz, .continue1
+    ld a, [wMapNumber]
+    cp MAP_MAHOGANY_GYM
+    jp z, .mahogany_gym_palette
+
+.continue1
+    cp GROUP_SPROUT_TOWER_1F
+    jr nz, .continue2
     ld a, [wMapNumber]
     cp MAP_CERULEAN_CAVE_1F
     jp z, .cavevolcano_palette
@@ -18,50 +25,50 @@ LoadSpecialMapPalette:
     cp MAP_CERULEAN_CAVE_B1F
     jp z, .cavevolcano_palette
 
-.continue1
+.continue2
 	cp GROUP_CINNABAR_POKECENTER_1F
-    jr nz, .continue2
+    jr nz, .continue3
     ld a, [wMapNumber]
     cp MAP_CINNABAR_VOLCANO_1F
     jp z, .cavevolcano_palette
     cp MAP_CINNABAR_VOLCANO_2F
     jp z, .cavevolcano_palette
 
-.continue2
+.continue3
 	cp GROUP_ROUTE_34
-    jr nz, .continue3
+    jr nz, .continue4
     ld a, [wMapNumber]
     cp MAP_GOLDENROD_GAME_CORNER
     jp z, .gym_palette
 
-.continue3
+.continue4
 	cp GROUP_ROUTE_6
-    jr nz, .continue4
+    jr nz, .continue5
     ld a, [wMapNumber]
     cp MAP_VERMILION_GYM
     jp z, .gym_palette
 
-.continue4
+.continue5
 	cp GROUP_OLIVINE_PORT
-    jr nz, .continue5
+    jr nz, .continue6
     ld a, [wMapNumber]
     cp MAP_FARAWAY_ISLAND_OUTSIDE
     jp z, .faraway_palette
 	cp MAP_FARAWAY_ISLAND_INSIDE
     jp z, .faraway_palette
 
-.continue5
+.continue6
     cp GROUP_ROUTE_23
-    jr nz, .continue6
+    jr nz, .continue7
     ld a, [wMapNumber]
     cp MAP_WILLS_ROOM
     jp z, .elite_four_palette
     cp MAP_KARENS_ROOM
     jp z, .elite_four_palette
 
-.continue6
+.continue7
     cp GROUP_CELADON_CITY
-    jr nz, .continue7
+    jr nz, .continue8
     ld a, [wMapNumber]
     cp MAP_CELADON_GAME_CORNER
     jp z, .gym_palette
@@ -71,13 +78,6 @@ LoadSpecialMapPalette:
     jp z, .gym_palette
     cp MAP_CELADON_HOTEL_POOL
     jp z, .cerulean_gym_palette
-
-.continue7
-    cp GROUP_MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
-    jr nz, .continue8
-    ld a, [wMapNumber]
-    cp MAP_MAHOGANY_GYM
-    jp z, .mahogany_gym_palette
 
 .continue8
     cp GROUP_VIRIDIAN_CITY
