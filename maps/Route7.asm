@@ -82,12 +82,13 @@ Route7ClosedDoorScene:
 	pause 10
 	applymovement PLAYER, Route7PlayerStepsBackMovement
 	pause 10
-	changeblock  4, 10, $e4 ; closed gate doors
-	changeblock  6, 10, $e7 ; closed gate doors
+	changeblock  4, 10, $9f ; closed gate doors
+	changeblock  6, 10, $a3 ; closed gate doors
 	refreshscreen
 	playsound SFX_ENTER_DOOR
 	pause 15
 	setscene SCENE_ROUTE7_NOOP
+	closetext
 .end
 	end
 
