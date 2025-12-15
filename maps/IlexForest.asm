@@ -17,10 +17,21 @@ IlexForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback
-	callback MAPCALLBACK_OBJECTS, IlexForestPinecoShinyCallback
+	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdPinecoCallback
 
-IlexForestFarfetchdCallback:
+IlexForestFarfetchdPinecoCallback:
+	checkevent EVENT_ILEX_FOREST_PINECO_ENCOUNTERED
+	iftrue .DisappearPineco
+	checkevent EVENT_GOT_DIPLOMA
+	iftrue .AppearPineco
+
+.DisappearPineco:
+	disappear ILEXFOREST_PINECO
+	sjump .FarfetchdCheck
+
+.AppearPineco:
+	appear ILEXFOREST_PINECO
+.FarfetchdCheck:
 	checkevent EVENT_GOT_HM01_CUT
 	iftrue .Static
 	readmem wFarfetchdPosition
@@ -85,19 +96,6 @@ IlexForestFarfetchdCallback:
 .PositionTen:
 	moveobject ILEXFOREST_FARFETCHD, 8, 38
 	appear ILEXFOREST_FARFETCHD
-	endcallback
-
-IlexForestPinecoShinyCallback:
-	checkevent EVENT_ILEX_FOREST_PINECO_ENCOUNTERED
-	iftrue .NoAppear
-	checkevent EVENT_GOT_DIPLOMA
-	iftrue .Appear
-.NoAppear
-	disappear ILEXFOREST_PINECO
-	endcallback
-
-.Appear
-	appear ILEXFOREST_PINECO
 	endcallback
 
 IlexForestCharcoalApprenticeScript:

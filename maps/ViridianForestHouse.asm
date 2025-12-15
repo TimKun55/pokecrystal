@@ -7,27 +7,24 @@ ViridianForestHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, ViridianForestHouseArianaCallback
-	callback MAPCALLBACK_OBJECTS, ViridianForestHouseGiovanniCallback
+	callback MAPCALLBACK_OBJECTS, ViridianForestHouseArianaGiovanniCallback
 	
-ViridianForestHouseArianaCallback:
+ViridianForestHouseArianaGiovanniCallback:
 	checkevent EVENT_BEAT_ARIANA_3
-	iftrue .Appear
+	iftrue .AppearAriana
 	disappear VIRIDIANFORESTHOUSE_ARIANA
-	endcallback
+	sjump .GiovanniCheck
 
-.Appear:
+.AppearAriana:
 	appear VIRIDIANFORESTHOUSE_ARIANA
-	endcallback
-	
-ViridianForestHouseGiovanniCallback:
+.GiovanniCheck:
 	readvar VAR_BADGES
-	if_equal 16, .Appear
+	if_equal 16, .AppearGiovanni
 	disappear VIRIDIANFORESTHOUSE_GIOVANNI
 	disappear VIRIDIANFORESTHOUSE_BOOK
 	endcallback
 
-.Appear:
+.AppearGiovanni:
 	appear VIRIDIANFORESTHOUSE_GIOVANNI
 	appear VIRIDIANFORESTHOUSE_BOOK
 	endcallback

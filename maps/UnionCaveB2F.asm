@@ -11,34 +11,31 @@ UnionCaveB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
-	callback MAPCALLBACK_OBJECTS, UnionCaveB2FWooperShinyCallback
+	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasWooperCallback
 
-UnionCaveB2FLaprasCallback:
+UnionCaveB2FLaprasWooperCallback:
 	checkflag ENGINE_UNION_CAVE_LAPRAS
-	iftrue .NoAppear
+	iftrue .DisappearLapras
 	readvar VAR_WEEKDAY
-	ifequal FRIDAY, .Appear
-.NoAppear:
+	ifequal FRIDAY, .AppearLapras
+.DisappearLapras:
 	disappear UNIONCAVEB2F_LAPRAS
-	endcallback
+	sjump .WooperCheck
 
-.Appear:
+.AppearLapras:
 	appear UNIONCAVEB2F_LAPRAS
-	endcallback
-
-UnionCaveB2FWooperShinyCallback:
+.WooperCheck:
 	checkevent EVENT_UNION_CAVE_B2F_WOOPER_ENCOUNTERED
-	iftrue .NoAppear
+	iftrue .DisappearWooper
 	checkevent EVENT_GOT_DIPLOMA
-	iftrue .Appear
-	sjump .NoAppear
+	iftrue .AppearWooper
+	sjump .DisappearWooper
 
-.Appear
+.AppearWooper:
 	appear UNIONCAVEB2F_WOOPER
 	endcallback
 
-.NoAppear
+.DisappearWooper:
 	disappear UNIONCAVEB2F_WOOPER
 	endcallback
 
