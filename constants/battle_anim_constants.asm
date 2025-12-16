@@ -101,7 +101,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_SONICBOOM_JP        ; 43
 	const BATTLE_ANIM_OBJ_WARP                ; 44
 	const BATTLE_ANIM_OBJ_ABSORB              ; 45
-	const BATTLE_ANIM_OBJ_EGG                 ; 46
+	const BATTLE_ANIM_OBJ_MOONBLAST           ; 46 ; EGG
 	const BATTLE_ANIM_OBJ_FOCUS               ; 47
 	const BATTLE_ANIM_OBJ_BIND1               ; 48
 	const BATTLE_ANIM_OBJ_BIND2               ; 49
@@ -189,7 +189,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_DESTINY_BOND        ; 9b
 	const BATTLE_ANIM_OBJ_MORNING_SUN         ; 9c
 	const BATTLE_ANIM_OBJ_GLIMMER             ; 9d
-	const BATTLE_ANIM_OBJ_MOONLIGHT           ; 9e
+	const BATTLE_ANIM_OBJ_MOONLIGHT           ; 9e ; now unused
 	const BATTLE_ANIM_OBJ_HIDDEN_POWER        ; 9f
 	const BATTLE_ANIM_OBJ_CROSS_CHOP1         ; a0
 	const BATTLE_ANIM_OBJ_CROSS_CHOP2         ; a1
@@ -236,7 +236,6 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_GUNK_SHOT           ; ca
 	const BATTLE_ANIM_OBJ_MOON
 	const BATTLE_ANIM_OBJ_MOON_CHARGE
-	const BATTLE_ANIM_OBJ_MOONBLAST
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -271,7 +270,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RAZOR_WIND                ; 1a
 	const BATTLE_ANIM_FUNC_KICK                      ; 1b
 	const BATTLE_ANIM_FUNC_ABSORB                    ; 1c
-	const BATTLE_ANIM_FUNC_EGG                       ; 1d
+;	const BATTLE_ANIM_FUNC_EGG                       ; 1d
 	const BATTLE_ANIM_FUNC_MOVE_UP                   ; 1e
 	const BATTLE_ANIM_FUNC_WRAP                      ; 1f
 	const BATTLE_ANIM_FUNC_LEECH_SEED                ; 20
@@ -406,10 +405,10 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_SONICBOOM_JP          ; 4a
 	const BATTLE_ANIM_FRAMESET_WARP                  ; 4b
 	const BATTLE_ANIM_FRAMESET_CHARGE_ORB_2          ; 4c
-	const BATTLE_ANIM_FRAMESET_EGG                   ; 4d
-	const BATTLE_ANIM_FRAMESET_EGG_WOBBLE            ; 4e
-	const BATTLE_ANIM_FRAMESET_EGG_CRACKED_TOP       ; 4f
-	const BATTLE_ANIM_FRAMESET_EGG_CRACKED_BOTTOM    ; 50
+	const BATTLE_ANIM_FRAMESET_GROWING_BALL          ; 4d ; EGG
+	const BATTLE_ANIM_FRAMESET_WATER_BALL            ; 4e ; EGG_WOBBLE
+	const BATTLE_ANIM_FRAMESET_GROWING_BUBBLE        ; 4f ; EGG_CRACKED_TOP
+	const BATTLE_ANIM_FRAMESET_MOONBLAST             ; 50 ; EGG_CRACKED_BOTTOM
 	const BATTLE_ANIM_FRAMESET_FOCUS                 ; 51
 	const BATTLE_ANIM_FRAMESET_BIND_1                ; 52
 	const BATTLE_ANIM_FRAMESET_BIND_2                ; 53
@@ -515,10 +514,6 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW        ; b7
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW       ; b8
 	const BATTLE_ANIM_FRAMESET_HAIL                  ; b9
-	const BATTLE_ANIM_FRAMESET_GROWING_BALL          ; ba
-	const BATTLE_ANIM_FRAMESET_WATER_BALL            ; bb
-	const BATTLE_ANIM_FRAMESET_GROWING_BUBBLE        ; bc
-	const BATTLE_ANIM_FRAMESET_MOONBLAST
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -924,6 +919,8 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_PEACH        ; 11	
 	const PAL_BTLCUSTOM_ACID         ; 12
 	const PAL_BTLCUSTOM_BULK_UP      ; 13
+	const PAL_BTLCUSTOM_MOON         ; 14
+	const PAL_BTLCUSTOM_MOONSHINE    ; 15
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

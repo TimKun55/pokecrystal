@@ -78,10 +78,10 @@ BattleAnimFrameData:
 	dw .Frameset_SonicboomJP         ; BATTLE_ANIM_FRAMESET_SONICBOOM_JP
 	dw .Frameset_Warp                ; BATTLE_ANIM_FRAMESET_WARP
 	dw .Frameset_ChargeOrb2          ; BATTLE_ANIM_FRAMESET_CHARGE_ORB_2
-	dw .Frameset_Egg                 ; BATTLE_ANIM_FRAMESET_EGG
-	dw .Frameset_EggWobble           ; BATTLE_ANIM_FRAMESET_EGG_WOBBLE
-	dw .Frameset_EggCrackedTop       ; BATTLE_ANIM_FRAMESET_EGG_CRACKED_TOP
-	dw .Frameset_EggCrackedBottom    ; BATTLE_ANIM_FRAMESET_EGG_CRACKED_BOTTOM
+	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
+	dw .Frameset_WaterBall           ; BATTLE_ANIM_FRAMESET_WATER_BALL
+	dw .Frameset_GrowingBubble       ; BATTLE_ANIM_FRAMESET_GROWING_BUBBLE
+	dw .Frameset_Moonblast           ; BATTLE_ANIM_FRAMESET_MOONBLAST
 	dw .Frameset_Focus               ; BATTLE_ANIM_FRAMESET_FOCUS
 	dw .Frameset_Bind1               ; BATTLE_ANIM_FRAMESET_BIND_1
 	dw .Frameset_Bind2               ; BATTLE_ANIM_FRAMESET_BIND_2
@@ -187,10 +187,6 @@ BattleAnimFrameData:
 	dw .Frameset_EnemyFeet2Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
 	dw .Frameset_PlayerHead2Row      ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
-	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
-	dw .Frameset_WaterBall           ; BATTLE_ANIM_FRAMESET_WATER_BALL
-	dw .Frameset_GrowingBubble       ; BATTLE_ANIM_FRAMESET_GROWING_BUBBLE
-	dw .Frameset_Moonblast           ; BATTLE_ANIM_FRAMESET_MOONBLAST
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -715,35 +711,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_5C,  2
 	oamdelete
 
-.Frameset_Egg:
-	oamframe BATTLE_ANIM_OAMSET_0A, 10
-	oamframe BATTLE_ANIM_OAMSET_0B,  3, OAM_X_FLIP
-	oamframe BATTLE_ANIM_OAMSET_5D,  3, OAM_X_FLIP
-	oamframe BATTLE_ANIM_OAMSET_0B,  3, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_0A,  2, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_0B,  1, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_5D,  1
-	oamframe BATTLE_ANIM_OAMSET_0B,  1
-	oamrestart
-
-.Frameset_EggWobble:
-	oamframe BATTLE_ANIM_OAMSET_0A,  3
-	oamframe BATTLE_ANIM_OAMSET_0B,  7, OAM_X_FLIP
-	oamframe BATTLE_ANIM_OAMSET_0A,  7
-	oamframe BATTLE_ANIM_OAMSET_0B,  7
-	oamframe BATTLE_ANIM_OAMSET_0A,  3
-	oamrestart
-
-.Frameset_EggCrackedTop:
-	oamframe BATTLE_ANIM_OAMSET_5E, 32
-	oamframe BATTLE_ANIM_OAMSET_5E, 32
-	oamdelete
-
-.Frameset_EggCrackedBottom:
-	oamframe BATTLE_ANIM_OAMSET_5F, 32
-	oamframe BATTLE_ANIM_OAMSET_5F, 32
-	oamdelete
-
 .Frameset_Focus:
 	oamframe BATTLE_ANIM_OAMSET_60,  8
 	oamend
@@ -997,6 +964,7 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_A2,  1
 	oamdelete
 
+.Frameset_Moonblast:
 .Frameset_SeismicToss:
 	oamframe BATTLE_ANIM_OAMSET_A3,  8
 	oamend
@@ -1285,7 +1253,3 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_7F,  2
 	oamframe BATTLE_ANIM_OAMSET_01,  2 ; HIT
 	oamrestart
-
-.Frameset_Moonblast:
-	oamframe BATTLE_ANIM_OAMSET_54,  40
-	oamend
