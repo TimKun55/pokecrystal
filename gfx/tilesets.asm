@@ -53,9 +53,6 @@ INCBIN "gfx/tilesets/mansion.2bpp.lz"
 TilesetMansionMeta::
 INCBIN "data/tilesets/mansion_metatiles.bin"
 
-TilesetIcePathColl::
-INCLUDE "data/tilesets/ice_path_collision.asm"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -657,3 +654,6 @@ INCBIN "data/tilesets/johto_peak_attributes.bin"
 
 TilesetParkColl::
 INCLUDE "data/tilesets/park_collision.asm"
+
+TilesetIcePathColl::
+INCLUDE "data/tilesets/ice_path_collision.asm"
