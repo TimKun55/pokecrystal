@@ -56,7 +56,8 @@ SafariZoneNorthAreaSignText:
 	done
 
 SafariZoneNorthRestHouseSignText:
-	text "Rest House"
+	text "North Area"
+	line "Rest House"
 	done
 
 SafariZoneNorthTrainerTips1SignText:

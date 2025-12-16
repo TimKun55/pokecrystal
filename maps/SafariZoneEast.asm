@@ -40,7 +40,8 @@ SafariZoneEastAreaSignText:
 	done
 	
 SafariZoneEastRestHouseSignText:
-	text "Rest House"
+	text "East Area"
+	line "Rest House"
 	done
 	
 SafariZoneEastTrainerTipsSignText:

@@ -21,11 +21,12 @@ SafariZoneHubRestHouseSign:
 	
 SafariZoneHubAreaSignText:
 	text "Safari Zone"
-	line "Center Area"
+	line "Central Area"
 	done
 
 SafariZoneHubRestHouseSignText:
-	text "Rest House"
+	text "Central Area"
+	line "Rest House"
 	done
 
 SafariZoneHub_MapEvents:

@@ -134,9 +134,9 @@
 	RGB 25,10,20, 25,03,16 ; eve
 	
 ; group 27 (Safari Zone)
-	RGB 21,21,21, 11,11,11 ; morn/day
-	RGB 21,21,21, 17,08,07 ; nite
-	RGB 20,19,19, 10,09,09 ; eve
+	RGB 27,25,16, 11,20,13 ; morn/day
+	RGB 15,12,05, 05,12,07 ; nite
+	RGB 30,23,13, 21,20,13 ; eve
 
 ; group 28 (Battle Tower)
 	RGB 19,26,31, 18,20,27 ; morn/day

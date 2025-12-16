@@ -98,9 +98,6 @@ INCBIN "gfx/tilesets/park.2bpp.lz"
 TilesetParkMeta::
 INCBIN "data/tilesets/park_metatiles.bin"
 
-TilesetParkColl::
-INCLUDE "data/tilesets/park_collision.asm"
-
 TilesetRadioTowerGFX::
 INCBIN "gfx/tilesets/radio_tower.2bpp.lz"
 
@@ -657,3 +654,6 @@ INCLUDE "data/tilesets/johto_peak_collision.asm"
 
 TilesetJohtoPeakAttr::
 INCBIN "data/tilesets/johto_peak_attributes.bin"
+
+TilesetParkColl::
+INCLUDE "data/tilesets/park_collision.asm"

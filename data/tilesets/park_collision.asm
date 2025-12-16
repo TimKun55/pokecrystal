@@ -161,3 +161,14 @@
 	tilecoll FLOOR, LONG_GRASS, FLOOR, LONG_GRASS ; a0
 	tilecoll LONG_GRASS, LONG_GRASS, FLOOR, LONG_GRASS ; a1
 	tilecoll LONG_GRASS, LONG_GRASS, LONG_GRASS, FLOOR ; a2
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a3
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a4
+	tilecoll WALL, WALL, WALL, WALL ; a5
+	tilecoll WALL, WALL, WALL, WALL ; a6
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; a7
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; a8
+	tilecoll WALL, WALL, WALL, WALL ; a9
+	tilecoll WALL, WALL, WALL, WALL ; aa
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; ab
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ac
+	tilecoll WALL, WALL, WALL, FLOOR ; ad
