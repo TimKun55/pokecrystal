@@ -97,6 +97,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RockTomb
 	dw BattleAnimFunc_Hurricane
 	dw BattleAnimFunc_RadialMoveOut
+	dw BattleAnimFunc_Moon
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -3324,6 +3325,7 @@ BattleAnimFunc_GrowthSwordsDance:
 	dec [hl]
 	ret
 
+BattleAnimFunc_Moon:
 BattleAnimFunc_StrengthSeismicToss:
 ; Moves object up for $e0 frames, then shakes it vertically and throws it at the target. Uses anim_incobj to move to final phase
 ; Obj Param: Defined but not used

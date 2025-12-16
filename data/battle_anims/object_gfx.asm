@@ -62,8 +62,8 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjBeamAuroraGFX
 	anim_obj_gfx 16, AnimObjFocusBlastGFX
 	anim_obj_gfx  4, AnimObjPetalsGFX
+	anim_obj_gfx 16, AnimObjMoonGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
-
 
 AnimBallObjGFX:
 	dbw POKE_BALL, 		AnimObjPokeBallGFX

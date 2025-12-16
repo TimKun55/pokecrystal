@@ -50,6 +50,7 @@ AnimObjStarsGFX:     INCBIN "gfx/battle_anims/stars.2bpp.lz"
 AnimObjBeamAuroraGFX: INCBIN "gfx/battle_anims/beamaurora.2bpp.lz"
 AnimObjFocusBlastGFX: INCBIN "gfx/battle_anims/focusblast.2bpp.lz"
 AnimObjPetalsGFX::    INCBIN "gfx/battle_anims/petals.2bpp.lz"
+AnimObjMoonGFX::     INCBIN "gfx/battle_anims/moon.2bpp.lz"
 
 
 SECTION "Battle Ball Icons", ROMX
