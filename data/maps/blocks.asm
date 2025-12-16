@@ -182,7 +182,6 @@ CianwoodPharmacy_Blocks:
 BluesHouse_Blocks:
 	INCBIN "maps/BluesHouse.ablk"
 
-SafariZoneFuchsiaGate_Blocks:
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
@@ -1100,5 +1099,8 @@ CeladonRocketHideoutB4F_Blocks:
 
 MadamItemsHouse_Blocks:
 	INCBIN "maps/MadamItemsHouse.ablk"
+
+SafariZoneFuchsiaGate_Blocks:
+	INCBIN "maps/SafariZoneFuchsiaGate.ablk"
 
 ENDSECTION
