@@ -18,8 +18,8 @@ Route28_MapEvents:
 
 	def_warp_events
 	warp_event 11,  5, ROUTE_28_STEEL_WING_HOUSE, 1
-	warp_event 35,  6, POKEMON_LEAGUE_GATE, 6
-	warp_event 35,  7, POKEMON_LEAGUE_GATE, 7
+	warp_event 35,  6, POKEMON_LEAGUE_GATE, 7
+	warp_event 35,  7, POKEMON_LEAGUE_GATE, 8
 
 	def_coord_events
 
