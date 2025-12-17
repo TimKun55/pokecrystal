@@ -11,7 +11,7 @@ Route7_MapScripts:
 	scene_script Route7Noop3Scene, SCENE_ROUTE7_CLOSE_DOORS
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route7UndergroundPathOpenScript
+	callback MAPCALLBACK_TILES, Route7UndergroundPathOpenScript
 
 Route7Noop1Scene:
 Route7Noop2Scene:
@@ -20,10 +20,14 @@ Route7Noop3Scene:
 
 Route7UndergroundPathOpenScript:
 	checkevent EVENT_ROUTE_7_UNDERGROUND_PATH_DOORS_OPEN
-	iftrue .end
-	changeblock  4, 10, $9f ; closed gate doors
-	changeblock  6, 10, $a3 ; closed gate doors
-.end
+	iftrue .open
+	changeblock  4, 10, $9f ; closed gate door (Left)
+	changeblock  6, 10, $a3 ; closed gate door (Right)
+	endcallback
+	
+.open
+	changeblock  4, 10, $10 ; open gate door (Left)
+	changeblock  6, 10, $11 ; open gate door (Right)
 	endcallback
 
 Route7DisguisedScene:
@@ -186,7 +190,7 @@ PokefanMCarlosAfterBattleText:
 	done
 
 Route7DisguisedScreamText:
-	text "Ahh!!"
+	text "???: Ahh!!"
 	done
 
 Route7UndergroundPathSignText:
