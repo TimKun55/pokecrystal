@@ -349,10 +349,7 @@ BattleAnim_ThrowPokeBall:
 	anim_incobj 2
 	anim_wait 32
 	anim_sound 0, 1, SFX_BALL_BOUNCE
-	anim_wait 32
-	anim_wait 32
-	anim_wait 32
-	anim_wait 8
+	anim_wait 104
 	anim_setvar $0
 .Loop:
 	anim_wait 48
@@ -551,7 +548,6 @@ BattleAnim_InWhirlpool:
 	anim_wait 6
 	anim_loop 6, .loop
 	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
-	anim_wait 1
 	anim_ret
 
 BattleAnim_HitConfusion:
@@ -3206,8 +3202,7 @@ BattleAnim_BulkUp:
 	anim_wait 32
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
 	anim_sound 0, 0, SFX_HORN_ATTACK
-	anim_wait 16
-	anim_wait 8
+	anim_wait 24
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
 	anim_sound 0, 0, SFX_HORN_ATTACK
 	anim_wait 24
@@ -4250,8 +4245,7 @@ BattleAnim_Attract:
 	anim_obj BATTLE_ANIM_OBJ_ATTRACT, 44, 80, $2
 	anim_wait 8
 	anim_loop 5, .loop
-	anim_wait 128
-	anim_wait 64
+	anim_wait 192
 	anim_ret
 
 BattleAnim_SleepTalk:
