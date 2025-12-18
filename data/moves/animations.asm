@@ -1280,8 +1280,7 @@ BattleAnim_Thunder:
 	anim_ret
 
 BattleAnim_Dazzlingleam:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PINK
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_SPEED
+	anim_1gfx BATTLE_ANIM_GFX_SPEED
 	anim_sound 0, 0, SFX_SWEET_KISS
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, BG_EFFECT_USER, $0
@@ -1291,24 +1290,10 @@ BattleAnim_Dazzlingleam:
 	anim_bgp $1b
 	anim_sound 0, 1, SFX_FLASH
 	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $0
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $8
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $10
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $18
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $20
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $28
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $30
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $38
-	anim_wait 24
+	anim_call BattleAnim_Flash.start
 	anim_1gfx BATTLE_ANIM_GFX_SHINE
 .loop
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PINK
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 136, 40, $0
 	anim_wait 5
@@ -1491,7 +1476,6 @@ BattleAnim_Poisonpowder:
 	anim_jump BattleAnim_StunSpore
 BattleAnim_SleepPowder:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
-	anim_jump BattleAnim_StunSpore
 BattleAnim_StunSpore:
 	anim_1gfx BATTLE_ANIM_GFX_POWDER
 .loop
@@ -1512,6 +1496,7 @@ BattleAnim_StunSpore:
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 96
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_ret
 
 BattleAnim_Spore:
@@ -2780,6 +2765,7 @@ BattleAnim_Flash:
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_FLASH
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $6, $20
+.start
 	anim_wait 4
 	anim_obj BATTLE_ANIM_OBJ_FLASH, 136, 56, $0
 	anim_wait 4
