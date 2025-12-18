@@ -601,7 +601,15 @@ BattleAnim_EnergyBall:
 	anim_3gfx BATTLE_ANIM_GFX_CHARGE, BATTLE_ANIM_GFX_EGG, BATTLE_ANIM_GFX_EXPLOSION
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, BG_EFFECT_USER, $40
 	anim_sound 6, 3, SFX_GIGA_DRAIN
-	anim_call BattleAnim_AbsorbChargeStub
+	anim_obj BATTLE_ANIM_OBJ_ABSORB_CENTER, 48, 84, $0
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $0
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $8
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $10
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $18
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $20
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $28
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $30
+	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $38
 	anim_wait 64
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
 	anim_wait 64
@@ -613,18 +621,6 @@ BattleAnim_EnergyBall:
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION2, 136, 56, $0
 	anim_wait 16
-	anim_ret
-
-BattleAnim_AbsorbChargeStub:
-	anim_obj BATTLE_ANIM_OBJ_ABSORB_CENTER, 48, 84, $0
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $0
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $8
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $10
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $18
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $20
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $28
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $30
-	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $38
 	anim_ret
 
 BattleAnim_KarateChop:
@@ -1214,15 +1210,22 @@ BattleAnim_RazorLeaf:
 BattleAnim_Solarbeam:
 	anim_if_param_equal $0, .FireSolarBeam
 	; charge turn
-	anim_1gfx BATTLE_ANIM_GFX_CHARGE
-	anim_sound 0, 0, SFX_CHARGE
-	anim_call BattleAnim_AbsorbChargeStub
-	anim_wait 104
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
-	anim_wait 64
-	anim_ret
+	anim_2gfx BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_SPEED
+	anim_sound 0, 0, SFX_MORNING_SUN
+.loop
+	anim_obj BATTLE_ANIM_OBJ_MORNING_SUN, 16, 48, $88
+	anim_wait 6
+	anim_loop 5, .loop
+	anim_wait 24
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_jump BattleAnim_FocusEnergyStub
 
 .FireSolarBeam
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PEACH
+	anim_1gfx BATTLE_ANIM_GFX_SHINE
+	anim_call BattleAnimSub_Glimmer2
+	anim_wait 12
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
 	anim_1gfx BATTLE_ANIM_GFX_BEAM
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_jump BattleAnimSub_Beam
