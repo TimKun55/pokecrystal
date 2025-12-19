@@ -1235,23 +1235,24 @@ BattleAnim_Thunderpunch:
 
 BattleAnim_Thundershock:
 	anim_2gfx BATTLE_ANIM_GFX_LIGHTNING, BATTLE_ANIM_GFX_EXPLOSION
-	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_BALL, 136, 56, $2
+	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_CORE, 136, 56, $2
 	anim_wait 16
 	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_SPARKS_CIRCLE, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
 	anim_wait 96
 	anim_ret
 
 BattleAnim_Thunderbolt:
 	anim_2gfx BATTLE_ANIM_GFX_LIGHTNING, BATTLE_ANIM_GFX_EXPLOSION
-	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 132, 52, $2
 	anim_wait 16
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS, 132, 52, $0
+.loop
+	anim_sound 0, 1, SFX_THUNDERBOLT
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $7, $6
 	anim_wait 64
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_wait 64
+	anim_loop 2, .loop
 	anim_ret
 
 BattleAnim_ThunderWave:
@@ -2046,6 +2047,7 @@ BattleAnim_Leer:
 	anim_jump BattleAnimSub_EyeBeams
 
 BattleAnim_Reflect:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_REFLECT
 	anim_1gfx BATTLE_ANIM_GFX_REFLECT
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
@@ -2056,9 +2058,11 @@ BattleAnim_Reflect:
 	anim_sound 0, 0, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
 	anim_wait 64
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_ret
 
 BattleAnim_LightScreen:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIGHTSCREEN
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_REFLECT
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 0, 0, SFX_FLASH
@@ -2081,6 +2085,7 @@ BattleAnim_LightScreen:
 	anim_wait 4
 	anim_obj BATTLE_ANIM_OBJ_SHINY, 72, 80, $38
 	anim_wait 64
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_ret
 
 BattleAnim_Amnesia:
@@ -2536,7 +2541,7 @@ BattleAnim_ChargeBeam:
 	anim_incobj 5
 	anim_wait 32
 	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS, 136, 56, $0
 	anim_wait 32
 	anim_ret
 
@@ -3862,16 +3867,19 @@ BattleAnim_Spikes:
 
 BattleAnim_ZapCannon:
 	anim_2gfx BATTLE_ANIM_GFX_LIGHTNING, BATTLE_ANIM_GFX_EXPLOSION
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LIGHTSCREEN
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ZAP_CANNON
 	anim_bgp $1b
-	anim_obp0 $30
 	anim_sound 6, 2, SFX_ZAP_CANNON
 	anim_obj BATTLE_ANIM_OBJ_ZAP_CANNON, 64, 92, $2
 	anim_wait 40
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 1, SFX_THUNDERBOLT
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 132, 52, $2
 	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
-	anim_wait 128
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS, 132, 52, $0
+	anim_wait 80
 	anim_ret
 
 BattleAnim_Foresight:
@@ -4162,8 +4170,8 @@ BattleAnim_Spark:
 	anim_incobj 2
 	anim_wait 1
 	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
-	anim_obj BATTLE_ANIM_OBJ_SPARKS_CIRCLE, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
+	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
 	anim_wait 32
 	anim_ret
 

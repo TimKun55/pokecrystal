@@ -82,6 +82,21 @@ if !DEF(MONOCHROME)
 	RGB 10, 19, 31
 	RGB 31, 18, 27
 	RGB 31, 24, 28
+; zap_cannon
+	RGB 31, 31, 31
+	RGB 31, 31, 07
+	RGB 31, 16, 01
+	RGB 07, 27, 27
+; lightscreen
+	RGB 31, 31, 31
+	RGB 19, 31, 31
+	RGB 06, 21, 19
+	RGB 00, 00, 00
+; reflect
+	RGB 31, 31, 31
+	RGB 31, 23, 30
+	RGB 06, 16, 31
+	RGB 00, 00, 00
 else
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 	MONOCHROME_RGB_FOUR
