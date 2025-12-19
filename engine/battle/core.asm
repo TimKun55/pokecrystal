@@ -2891,6 +2891,14 @@ SelectBattleMon:
 	farcall Mobile_PartyMenuSelect
 	ret
 
+BattleMenuPKMN_ReturnFromSummary_Forced:
+	call Battle_SummaryScreen
+	call ExitMenu
+	call LoadStandardMenuHeader
+	call ClearBGPalettes
+.setup
+	call SetUpBattlePartyMenu_Loop
+	; fallthrough
 PickPartyMonInBattle:
 .loop
 	ld a, PARTYMENUACTION_SWITCH ; Which PKMN?
@@ -2900,8 +2908,30 @@ PickPartyMonInBattle:
 	ret c
 	call CheckIfCurPartyMonIsFitToFight
 	jr z, .loop
-	xor a
-	ret
+
+.submenu_loop
+	farcall FreezeMonIcons
+	farcall BattleMonMenu
+	jr c, BattleMenuPKMN_ReturnFromSummary_Forced.setup
+
+	call PlaceHollowCursor
+	ld a, [wMenuCursorY]
+	cp $1 ; SWITCH
+	ret z ; No need for xor a.
+	
+	cp $2 ; Stats
+	jr z, BattleMenuPKMN_ReturnFromSummary_Forced
+
+	cp $3 ; Moves
+	jr z, .check_moves
+
+	cp $4 ; Cancel
+	jr z, BattleMenuPKMN_ReturnFromSummary_Forced.setup
+	jr .submenu_loop
+
+.check_moves
+	farcall ManagePokemonMoves
+	jr BattleMenuPKMN_ReturnFromSummary_Forced.setup
 
 SwitchMonAlreadyOut:
 	ld hl, wCurBattleMon
@@ -6773,17 +6803,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -8079,38 +8098,6 @@ TextJump_ComeBack: ; unreferenced
 ComeBackText:
 	text_far _ComeBackText
 	text_end
-
-HandleSafariAngerEatingStatus: ; unreferenced
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl
-	assert wSafariMonEating - 1 == wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call SafeLoadTempTilemapToTilemap
-	pop hl
-	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
