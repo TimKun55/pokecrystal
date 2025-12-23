@@ -139,6 +139,6 @@
 	RGB 30,23,13, 21,20,13 ; eve
 
 ; group 28 (Battle Tower)
-	RGB 19,26,31, 18,20,27 ; morn/day
+	RGB 17,24,30, 13,17,27 ; morn/day
 	RGB 07,11,22, 03,07,16 ; nite
 	RGB 22,20,28, 14,12,29 ; eve
