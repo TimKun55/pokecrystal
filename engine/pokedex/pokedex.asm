@@ -3186,7 +3186,7 @@ Pokedex_MoveArrowCursor:
 
 .update_cursor_pos
 	call Pokedex_GetArrowCursorPos
-	ld [hl], "▶"
+	ld [hl], "DEX_▶"
 	ld a, 12
 	ld [wDexArrowCursorDelayCounter], a
 	xor a
@@ -3233,7 +3233,7 @@ Pokedex_BlinkArrowCursor:
 
 .blink_on
 	call Pokedex_GetArrowCursorPos
-	ld [hl], "▶"
+	ld [hl], "DEX_▶"
 	ret
 
 Pokedex_ArrowCursorDelay:

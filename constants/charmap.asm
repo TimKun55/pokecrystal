@@ -42,6 +42,7 @@
 	charmap "<DEX_LV_VRAM1>",$74
 	charmap "<LV>",      $72
 	charmap "◀",         $74
+	charmap "DEX_▶",     $5a
 
 ; Actual characters (from other graphics files)
 
