@@ -4,6 +4,7 @@
 	const ROUTE36_SUDOWOODO
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
+	const ROUTE36_SUPER_NERD
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
@@ -276,6 +277,13 @@ TrainerPsychicMark:
 	endifjustbattled
 	jumptext PsychicMarkAfterBattleText
 
+TrainerSuperNerdGrant:
+	trainer SUPER_NERD, GRANT, EVENT_BEAT_SUPER_NERD_GRANT, SuperNerdGrantSeenText, SuperNerdGrantBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	jumptext SuperNerdGrantAfterBattleText
+
 ArthurScript:
 	faceplayer
 	opentext
@@ -491,6 +499,30 @@ PsychicMarkAfterBattleText:
 	cont "was thinking."
 	done
 
+SuperNerdGrantSeenText:
+	text "I managed to find"
+	line "some fossils and"
+	cont "was able to revive"
+	cont "them into #mon!"
+	done
+
+SuperNerdGrantBeatenText:
+	text "Hmm, maybe I"
+	line "should stick to"
+	cont "finding fossils."
+	done
+
+SuperNerdGrantAfterBattleText:
+	text "It's so amazing"
+	line "that we have the"
+	cont "technology to turn"
+	cont "fossils back into"
+	cont "#mon."
+	
+	para "I guess life will"
+	line "always find a way."
+	done
+
 SchoolboyAlan1SeenText:
 	text "Thanks to my stud-"
 	line "ies, I'm ready for"
@@ -612,6 +644,7 @@ Route36_MapEvents:
 	object_event 35,  9, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 50,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
+	object_event 32,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdGrant, -1
 	object_event 21,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RawstTree, -1
 	object_event 46,  6, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 34, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO

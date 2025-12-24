@@ -1161,7 +1161,9 @@
 	const EVENT_BEAT_GUARDIAN_AGATHA
 ; Ex-Boss
 	const EVENT_BEAT_GIOVANNI
-; Unused: next 61 events
+; need to move after
+	const EVENT_BEAT_SUPER_NERD_GRANT
+; Unused: next 60 events
 
 	const_next 1400
 ; Sprite visibility flags

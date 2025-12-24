@@ -2063,7 +2063,7 @@ FisherGroup:
 	; FISHER (5)
 	db "Henry@", TRAINERTYPE_NORMAL
 	db 10, POLIWAG
-	db 10, POLIWAG
+	db 10, CHINCHOU
 	db -1 ; end
 
 	; FISHER (6)
@@ -2230,7 +2230,7 @@ SwimmerMGroup:
 	db "George@", TRAINERTYPE_NORMAL
 	db 22, TENTACOOL
 	db 23, TENTACOOL
-	db 23, TENTACOOL
+	db 23, CHINCHOU
 	db 25, STARYU
 	db 23, TENTACOOL
 	db 25, REMORAID
@@ -2472,6 +2472,7 @@ SailorGroup:
 
 	; SAILOR (3)
 	db "Terrell@", TRAINERTYPE_NORMAL
+	db 24, CHINCHOU
 	db 26, POLIWHIRL
 	db -1 ; end
 
@@ -2624,6 +2625,12 @@ SuperNerdGroup:
 	; SUPER_NERD (14)
 	db "Markus@", TRAINERTYPE_MOVES
 	db 30, SLOWPOKE,   PSYBEAM, SCALD, HEADBUTT, STRENGTH
+	db -1 ; end
+
+	; SUPER_NERD (15)
+	db "Grant@", TRAINERTYPE_NORMAL
+	db 18, KABUTO
+	db 18, OMANYTE
 	db -1 ; end
 
 Rival2Group:

@@ -493,6 +493,7 @@ DEF KRIS EQU __trainer_class__
 	const NORTON ; Viridian Gym
 	const HUGH
 	const MARKUS
+	const GRANT
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
