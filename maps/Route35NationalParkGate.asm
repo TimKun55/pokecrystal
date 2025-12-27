@@ -70,7 +70,7 @@ Route35NationalParkGateLeavingContestEarlyScript:
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	waitsfx
-	warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47
+	warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 12, 47
 	end
 
 Route35OfficerScriptContest:
