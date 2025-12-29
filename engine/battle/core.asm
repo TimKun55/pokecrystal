@@ -4689,7 +4689,7 @@ DrawPlayerHUD:
 	lb bc, 5, 11
 	call ClearBox
 
-	farcall DrawPlayerHUDBorder
+;	farcall DrawPlayerHUDBorder
 
 	hlcoord 19, 9
 	ld [hl], $7f ; vertical bar
@@ -4707,6 +4707,8 @@ DrawPlayerHUD:
 	ld [hl], $70 ; vertical bar
 	hlcoord 11, 11
 	ld [hl], $71 ; vertical bar
+	hlcoord 19, 11
+	ld [hl], $6b ; bar end
 	push de
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1Exp + 2

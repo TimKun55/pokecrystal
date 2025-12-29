@@ -99,21 +99,21 @@ StageBallTilesData:
 	add hl, bc
 	ret
 
-DrawPlayerHUDBorder:
-	ld hl, .tiles
-	ld de, wTrainerHUDTiles
-	ld bc, .tiles_end - .tiles
-	call CopyBytes
-	hlcoord 19, 10
-	ld de, -1 ; start on right
-	jr PlaceHUDBorderTiles
-
-.tiles
-	db $7f ; right side ; (no vertical line)
-	db $6b ; bottom right ; (exp bar cap)
-	db $6d ; bottom left
-	db $62 ; bottom side
-.tiles_end
+;DrawPlayerHUDBorder:
+;	ld hl, .tiles
+;	ld de, wTrainerHUDTiles
+;	ld bc, .tiles_end - .tiles
+;	call CopyBytes
+;	hlcoord 19, 10
+;	ld de, -1 ; start on right
+;	jr PlaceHUDBorderTiles
+;
+;.tiles
+;	db $7f ; right side ; (no vertical line)
+;	db $6b ; bottom right ; (exp bar cap)
+;	db $6d ; bottom left
+;	db $62 ; bottom side
+;.tiles_end
 
 DrawPlayerPartyIconHUDBorder:
 	ld hl, .tiles
