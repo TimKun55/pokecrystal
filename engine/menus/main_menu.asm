@@ -53,7 +53,7 @@ MainMenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 16, 7
+	menu_coords 4, 3, 15, 9
 	dw .MenuData
 	db 1 ; default option
 
@@ -285,8 +285,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	and %10000000 ; Day count exceeded 16383
 	jr nz, .TimeFail
 	hlcoord 0, 14
-	ld b, 2
-	ld c, 18
+	lb bc, 2, 18
 	call Textbox
 	ret
 
@@ -304,9 +303,9 @@ MainMenu_PrintCurrentTimeAndDay:
 	call UpdateTime
 	call GetWeekday
 	ld b, a
-	decoord 1, 15
+	decoord 2, 15
 	call .PrintDayOfWeek
-	decoord 4, 16
+	decoord 9, 16
 	ldh a, [hHours]
 	ld c, a
 	farcall PrintHour
@@ -321,7 +320,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	db "min.@"
 
 .PrintTimeNotSet:
-	hlcoord 1, 14
+	hlcoord 3, 15
 	ld de, .TimeNotSetString
 	call PlaceString
 	ret

@@ -454,18 +454,24 @@ DisplaySaveInfoOnContinue:
 	call CheckRTCStatus
 	and %10000000
 	jr z, .clock_ok
-	lb de, 4, 8
+	lb de, 2, 2
 	call DisplayContinueDataWithRTCError
 	ret
 
 .clock_ok
-	lb de, 4, 8
+	lb de, 2, 2
 	call DisplayNormalContinueData
 	ret
 
 DisplaySaveInfoOnSave:
 	lb de, 4, 0
-	jr DisplayNormalContinueData
+;DisplaySaveData
+	call Continue_LoadSaveMenuHeader
+	call Continue_DisplayBadgesDexPlayerNameSave
+	call Continue_PrintGameTime
+	call LoadFontsExtra
+	call UpdateSprites
+	ret
 
 DisplayNormalContinueData:
 	call Continue_LoadMenuHeader
@@ -500,6 +506,50 @@ Continue_LoadMenuHeader:
 
 .MenuHeader_Dex:
 	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, 13
+	dw .MenuData_Dex
+	db 1 ; default option
+
+.MenuData_Dex:
+	db 0 ; flags
+	db 6 ; items
+	db "Player@"
+	db "Time@"
+	db "Badges@"
+	db "#dex:@"
+	db "     Seen@"
+	db "   Caught@"
+
+.MenuHeader_NoDex:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, 7
+	dw .MenuData_NoDex
+	db 1 ; default option
+
+.MenuData_NoDex:
+	db 0 ; flags
+	db 3 ; items
+	db "Player <PLAYER>@"
+	db "Time@"
+	db "Badges@"
+
+Continue_LoadSaveMenuHeader:
+	xor a
+	ldh [hBGMapMode], a
+	ld hl, .MenuHeader_Save_Dex
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_POKEDEX_F, a
+	jr nz, .show_menu_save
+	ld hl, .MenuHeader_Save_NoDex
+
+.show_menu_save
+	call _OffsetMenuHeader
+	call MenuBox
+	call PlaceVerticalMenuItems
+	ret
+
+.MenuHeader_Save_Dex:
+	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 15, 9
 	dw .MenuData_Dex
 	db 1 ; default option
@@ -508,35 +558,43 @@ Continue_LoadMenuHeader:
 	db 0 ; flags
 	db 4 ; items
 	db "Player@"
+	db "Time@"
 	db "Badges@"
 	db "#dex@"
-	db "Time@"
 
-.MenuHeader_NoDex:
+.MenuHeader_Save_NoDex:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 9
-	dw .MenuData_NoDex
+	menu_coords 0, 0, 15, 7
+	dw .MenuData_Save_NoDex
 	db 1 ; default option
 
-.MenuData_NoDex:
+.MenuData_Save_NoDex:
 	db 0 ; flags
-	db 4 ; items
+	db 3 ; items
 	db "Player <PLAYER>@"
-	db "Badges@"
-	db " @"
 	db "Time@"
+	db "Badges@"
 
 Continue_DisplayBadgesDexPlayerName:
 	call MenuBoxCoord2Tile
+; Badges
 	push hl
-	decoord 13, 4, 0
+	decoord 13, 6, 0
 	add hl, de
 	call Continue_DisplayBadgeCount
+; Pokedex (seen)
 	pop hl
 	push hl
-	decoord 12, 6, 0
+	decoord 12, 10, 0
+	add hl, de
+	call Continue_DisplayPokedexNumSeen
+; Pokedex (caught)
+	pop hl
+	push hl
+	decoord 12, 12, 0
 	add hl, de
 	call Continue_DisplayPokedexNumCaught
+; Player's Name
 	pop hl
 	push hl
 	decoord 8, 2, 0
@@ -549,14 +607,37 @@ Continue_DisplayBadgesDexPlayerName:
 .Player:
 	db "<PLAYER>@"
 
+Continue_DisplayBadgesDexPlayerNameSave:
+	call MenuBoxCoord2Tile
+; Badges
+	push hl
+	decoord 13, 6, 0
+	add hl, de
+	call Continue_DisplayBadgeCount
+; Pokedex (caught)
+	pop hl
+	push hl
+	decoord 12, 8, 0
+	add hl, de
+	call Continue_DisplayPokedexNumCaught
+; Player's Name
+	pop hl
+	push hl
+	decoord 8, 2, 0
+	add hl, de
+	ld de, Continue_DisplayBadgesDexPlayerName.Player
+	call PlaceString
+	pop hl
+	ret
+
 Continue_PrintGameTime:
-	decoord 9, 8, 0
+	decoord 9, 4, 0
 	add hl, de
 	call Continue_DisplayGameTime
 	ret
 
 Continue_UnknownGameTime:
-	decoord 9, 8, 0
+	decoord 9, 4, 0
 	add hl, de
 	ld de, .three_question_marks
 	call PlaceString
@@ -573,6 +654,23 @@ Continue_DisplayBadgeCount:
 	pop hl
 	ld de, wNumSetBits
 	lb bc, 1, 2
+	jp PrintNum
+
+Continue_DisplayPokedexNumSeen:
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_POKEDEX_F, a
+	ret z
+	push hl
+	ld hl, wPokedexSeen
+if NUM_POKEMON % 8
+	ld b, NUM_POKEMON / 8 + 1
+else
+	ld b, NUM_POKEMON / 8
+endc
+	call CountSetBits
+	pop hl
+	ld de, wNumSetBits
+	lb bc, 1, 3
 	jp PrintNum
 
 Continue_DisplayPokedexNumCaught:
