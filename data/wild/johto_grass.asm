@@ -1903,7 +1903,7 @@ JohtoGrassWildMons:
 	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
 	db  8, TANGROWTH,     63,  66
-	db  8, BLISSEY,       50,  51
+	db  8, BLISSEY,       63,  66
 	; day
 	;   %, species,		 min, max
 	db 22, AMPHAROS,      63,  66
@@ -1912,7 +1912,7 @@ JohtoGrassWildMons:
 	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
 	db  8, TANGROWTH,     63,  66
-	db  8, BLISSEY,       50,  51
+	db  8, BLISSEY,       63,  66
 	; nite
 	;   %, species,		 min, max
 	db 22, AMPHAROS,      63,  66
@@ -1921,7 +1921,7 @@ JohtoGrassWildMons:
 	db 10, GLISCOR,       63,  66
 	db  8, HOUNDOOM,      63,  66
 	db  8, TANGROWTH,     63,  66
-	db  8, BLISSEY,       50,  51
+	db  8, BLISSEY,       63,  66
 	end_grass_wildmons
 
 	db -1 ; end

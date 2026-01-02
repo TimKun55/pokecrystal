@@ -93,10 +93,10 @@
 	RGB 12,07,17, 08,06,10 ; nite
 	RGB 20,11,23, 13,03,23 ; eve
 
-; group 19 (Silver Cave)
-	RGB 21,21,25, 16,16,16 ; morn/day
-	RGB 13,13,13, 07,07,07 ; nite
-	RGB 08,18,22, 08,10,19 ; eve
+; group 19 (MtSilver)
+	RGB 14,23,14, 12,17,14 ; morn/day
+	RGB 10,12,10, 02,08,02 ; nite
+	RGB 16,19,05, 10,14,10 ; eve
 
 ; group 20 (Cable Club)
 	RGB 21,21,21, 11,11,11 ; morn/day

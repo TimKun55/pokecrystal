@@ -138,32 +138,32 @@ ENDM
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                   9, 13 ; 73
 	map_const MT_SILVER_ROOM_1,                            10, 18 ; 74
 	map_const MT_SILVER_ROOM_2,                            15, 18 ; 75
-	map_const MT_SILVER_PEAK,                              16, 23 ; 76
-	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 77
-	map_const DARK_CAVE_VIOLET_ENTRANCE,                   22, 18 ; 78
-	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               19, 16 ; 79
-	map_const DRAGONS_DEN_1F,                               5,  4 ; 80
-	map_const DRAGONS_DEN_B1F,                             20, 22 ; 81
-	map_const DRAGON_SHRINE,                                5,  5 ; 82
-	map_const TOHJO_FALLS,                                 21, 17 ; 83
-	map_const DIGLETTS_CAVE,                               18, 21 ; 84
-	map_const VIRIDIAN_FOREST,                             24, 22 ; 85
-	map_const MOUNT_MOON_1F,                               15, 13 ; 86
-	map_const UNDERGROUND_PATH,                             3, 14 ; 87
-	map_const ROCK_TUNNEL_1F,                              15, 14 ; 88
-	map_const ROCK_TUNNEL_B1F,                             15, 14 ; 89	
-	map_const VICTORY_ROAD_1F,                             14, 18 ; 90
-	map_const VICTORY_ROAD_2F,                             22, 11 ; 91
-	map_const VICTORY_ROAD_3F,                             23, 12 ; 92
-	map_const CERULEAN_CAVE_1F,                            17, 11 ; 93
-	map_const CERULEAN_CAVE_2F,                            17, 11 ; 94	
-	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 95
-	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,               10,  6 ; 96
-	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 97
-	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 98
-	map_const MOUNT_MOON_B1F,                              18, 16 ; 99
-	map_const MOUNT_MOON_B2F,                              16, 20 ; 100
-	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 101
+
+	map_const MT_SILVER_ITEM_ROOMS,                        10,  9 ; 76
+	map_const DARK_CAVE_VIOLET_ENTRANCE,                   22, 18 ; 77
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               19, 16 ; 78
+	map_const DRAGONS_DEN_1F,                               5,  4 ; 79
+	map_const DRAGONS_DEN_B1F,                             20, 22 ; 80
+	map_const DRAGON_SHRINE,                                5,  5 ; 81
+	map_const TOHJO_FALLS,                                 21, 17 ; 82
+	map_const DIGLETTS_CAVE,                               18, 21 ; 83
+	map_const VIRIDIAN_FOREST,                             24, 22 ; 84
+	map_const MOUNT_MOON_1F,                               15, 13 ; 85
+	map_const UNDERGROUND_PATH,                             3, 14 ; 86
+	map_const ROCK_TUNNEL_1F,                              15, 14 ; 87
+	map_const ROCK_TUNNEL_B1F,                             15, 14 ; 88	
+	map_const VICTORY_ROAD_1F,                             14, 18 ; 89
+	map_const VICTORY_ROAD_2F,                             22, 11 ; 90
+	map_const VICTORY_ROAD_3F,                             23, 12 ; 91
+	map_const CERULEAN_CAVE_1F,                            17, 11 ; 92
+	map_const CERULEAN_CAVE_2F,                            17, 11 ; 93	
+	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 94
+	map_const RUINS_OF_ALPH_GS_BALL_CHAMBER,               10,  6 ; 95
+	map_const RUINS_OF_ALPH_CAVE_ENTRANCE,                  6,  5 ; 96
+	map_const SLOWPOKE_WELL_ENTRANCE,                       8,  9 ; 97
+	map_const MOUNT_MOON_B1F,                              18, 16 ; 98
+	map_const MOUNT_MOON_B2F,                              16, 20 ; 99
+	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 100
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -418,8 +418,9 @@ ENDM
 	newgroup SILVER                                               ; 19
 	map_const ROUTE_28,                                    21,  9 ;  1
 	map_const MT_SILVER_OUTSIDE,                           20, 15 ;  2
-	map_const MT_SILVER_POKECENTER_1F,                      6,  4 ;  3
-	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
+	map_const MT_SILVER_PEAK,                              16, 27 ;  3
+	map_const MT_SILVER_POKECENTER_1F,                      6,  4 ;  4
+	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  5
 	endgroup
 
 	newgroup CABLE_CLUB                                           ; 20
