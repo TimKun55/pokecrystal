@@ -49,6 +49,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_PcQuick
 	dw SpriteAnimFunc_PcMode
 	dw SpriteAnimFunc_PcPack
+	dw SpriteAnimFunc_Cover
 	assert_table_length NUM_SPRITE_ANIM_FUNCS
 
 SpriteAnimFunc_Null:
@@ -823,3 +824,11 @@ SpriteAnimFunc_PcPack:
 	add hl, bc
 	ld [hl], a
 	ret
+
+SpriteAnimFunc_Cover:
+	ld a, 69
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	cp [hl]
+	ret nz
+	jp DeinitializeSprite

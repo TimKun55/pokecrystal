@@ -1122,7 +1122,12 @@ wMysteryGiftPartnerBackupItem:: db
 	ds 1
 wMysteryGiftPartnerDataEnd::
 
-	ds 60
+	ds 48
+
+wSlotsWhichSpecialAnim:: ds 1
+; i don't feel like getting the actual length :(
+SlotMachine_LCDCallback:: ds 16
+SlotMachine_VBlankCallback:: ds 1
 
 wMysteryGiftPlayerData::
 wMysteryGiftPlayerGameVersion:: db
@@ -1605,7 +1610,7 @@ NEXTU
 ; slot machine
 wSlotsDelay:: db
 	ds 1
-wUnusedSlotReelIconDelay:: db
+wSlotReelIconDelay:: db
 
 NEXTU
 ; card flip

@@ -69,6 +69,8 @@ SpriteAnimFrameData:
 	dw .Frameset_PCMode
 	dw .Frameset_PCMode2
 	dw .Frameset_PCPack
+	dw .Frameset_SlotsCoverWhite
+	dw .Frameset_SlotsCoverGreen
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -498,3 +500,11 @@ SpriteAnimFrameData:
 .Frameset_PCPack:
 	oamframe SPRITE_ANIM_OAMSET_PC_PACK, 32
 	oamrestart
+
+.Frameset_SlotsCoverWhite:
+	oamframe SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE, 1
+	oamend
+
+.Frameset_SlotsCoverGreen:
+	oamframe SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN, 1
+	oamend

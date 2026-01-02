@@ -188,6 +188,12 @@ hFunctionTargetHi:: db
 
 hDelayFrameLY:: db
 
-	ds 13
+hVBlankHookFunction::
+	ds 1	; $00 [nop] (nothing)
+			; $c3 [jp]
+			; $c9 [ret]
+	dw
+
+	ds 10
 
 ENDSECTION
