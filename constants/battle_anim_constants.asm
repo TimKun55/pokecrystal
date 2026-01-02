@@ -236,6 +236,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_GUNK_SHOT           ; ca
 	const BATTLE_ANIM_OBJ_MOON
 	const BATTLE_ANIM_OBJ_MOON_CHARGE
+	const BATTLE_ANIM_OBJ_STAT_UP
+	const BATTLE_ANIM_OBJ_STAT_DOWN
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -324,6 +326,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_HURRICANE                 ; 52
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 53
 	const BATTLE_ANIM_FUNC_MOON
+	const BATTLE_ANIM_FUNC_STRAIGHT_DESCENT
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)

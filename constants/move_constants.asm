@@ -291,6 +291,8 @@ DEF CANNOT_MOVE EQU $ff
 	const ANIM_SHAKE             ; 114
 	const ANIM_HIT_CONFUSION     ; 115
 	const ANIM_IN_HAIL           ; 116
+	const ANIM_STAT_UP           ; 117
+	const ANIM_STAT_DOWN         ; 118
 DEF NUM_BATTLE_ANIMS EQU const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS

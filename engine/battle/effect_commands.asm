@@ -4534,6 +4534,18 @@ BattleCommand_StatUpMessage:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+
+	; don't play damage sfx when animation goes off
+	push af
+	xor a
+	ld [wNumHits], a
+	call Call_PlayBattleAnim_OnlyIfVisible
+	pop af
+
+	; play animation after every stat up
+	ld de, ANIM_STAT_UP
+	farcall Call_PlayBattleAnim	
+
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -4564,6 +4576,18 @@ BattleCommand_StatDownMessage:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+
+	; don't play damage sfx when animation goes off
+	push af
+	xor a
+	ld [wNumHits], a
+	call Call_PlayBattleAnim_OnlyIfVisible
+	pop af
+
+	; play animation after every stat down
+	ld de, ANIM_STAT_DOWN
+	farcall Call_PlayBattleAnim	
+
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a

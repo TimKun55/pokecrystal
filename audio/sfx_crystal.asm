@@ -294,3 +294,62 @@ Sfx_Puddle_Ch5:
 	square_note 15, 9, 8, 1792
 	pitch_sweep 0, 8
 	sound_ret
+
+Sfx_StatUp:
+	channel_count 1
+	channel 5, .Ch5
+
+.Ch5:
+	square_note 1, 14, 8, 1900
+	square_note 1, 14, 8, 1700
+	square_note 1, 14, 8, 1910
+	square_note 1, 14, 8, 1710
+	square_note 1, 14, 8, 1920
+	square_note 1, 14, 8, 1720
+	square_note 1, 14, 8, 1930
+	square_note 1, 14, 8, 1730
+	square_note 1, 14, 8, 1940
+	square_note 1, 14, 8, 1740
+	square_note 1, 14, 8, 1950
+	square_note 1, 14, 8, 1750
+	square_note 1, 14, 8, 1960
+	square_note 1, 14, 8, 1760
+	square_note 1, 14, 8, 1970
+	square_note 1, 14, 8, 1770
+	square_note 1, 14, 8, 1980
+	square_note 1, 14, 8, 1780
+	square_note 1, 14, 8, 1990
+	square_note 1, 14, 8, 1790
+	square_note 1, 14, 8, 2000
+	square_note 1, 14, 8, 1800
+	sound_ret
+
+
+Sfx_StatDown:
+	channel_count 1
+	channel 5, .Ch5
+
+.Ch5:
+	square_note 1, 14, 8, 2000
+	square_note 1, 14, 8, 1800
+	square_note 1, 14, 8, 1990
+	square_note 1, 14, 8, 1790
+	square_note 1, 14, 8, 1980
+	square_note 1, 14, 8, 1780
+	square_note 1, 14, 8, 1970
+	square_note 1, 14, 8, 1770
+	square_note 1, 14, 8, 1960
+	square_note 1, 14, 8, 1760
+	square_note 1, 14, 8, 1950
+	square_note 1, 14, 8, 1750
+	square_note 1, 14, 8, 1940
+	square_note 1, 14, 8, 1740
+	square_note 1, 14, 8, 1930
+	square_note 1, 14, 8, 1730
+	square_note 1, 14, 8, 1920
+	square_note 1, 14, 8, 1720
+	square_note 1, 14, 8, 1910
+	square_note 1, 14, 8, 1710
+	square_note 1, 14, 8, 1900
+	square_note 1, 14, 8, 1700
+	sound_ret
