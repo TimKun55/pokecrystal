@@ -283,6 +283,8 @@ BattleAnimations::
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_InHail
+	dw BattleAnim_StatUp
+	dw BattleAnim_StatDown
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_Miss:
@@ -591,6 +593,58 @@ BattleAnim_Wobble:
 BattleAnim_Shake:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $40
 	anim_wait 40
+	anim_ret
+
+BattleAnim_StatUp:
+	anim_1gfx BATTLE_ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_sound 0, 0, SFX_STAT_UP
+.loop
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   5, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   4, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   6, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   3, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   7, 4,  13, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   2, 4,  13, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   8, 4,  13, 6, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_StatDown:
+	anim_1gfx BATTLE_ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_sound 0, 0, SFX_STAT_DOWN
+.loop
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 5, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 4, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 6, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 3, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 7, 4,  7, 6, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 2, 4,  7, 6, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 8, 4,  7, 6, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_EnergyBall:

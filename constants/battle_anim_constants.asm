@@ -234,8 +234,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HEAT_WAVE           ; c8
 	const BATTLE_ANIM_OBJ_PETAL_DANCE_IMPACT  ; c9
 	const BATTLE_ANIM_OBJ_GUNK_SHOT           ; ca
-	const BATTLE_ANIM_OBJ_MOON
-	const BATTLE_ANIM_OBJ_MOON_CHARGE
+	const BATTLE_ANIM_OBJ_MOON                ; cb
+	const BATTLE_ANIM_OBJ_MOON_CHARGE         ; cc
+	const BATTLE_ANIM_OBJ_STAT_UP             ; cd
+	const BATTLE_ANIM_OBJ_STAT_DOWN           ; ce
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -323,7 +325,8 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_ROCK_TOMB                 ; 51
 	const BATTLE_ANIM_FUNC_HURRICANE                 ; 52
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 53
-	const BATTLE_ANIM_FUNC_MOON
+	const BATTLE_ANIM_FUNC_MOON                      ; 54
+	const BATTLE_ANIM_FUNC_STRAIGHT_DESCENT          ; 55
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -853,7 +856,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_BEAM_AURORA ; 34
 	const BATTLE_ANIM_GFX_FOCUS_BLAST ; 35
 	const BATTLE_ANIM_GFX_PETALS      ; 36
-	const BATTLE_ANIM_GFX_MOON
+	const BATTLE_ANIM_GFX_MOON        ; 37
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

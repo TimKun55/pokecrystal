@@ -97,6 +97,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_Hurricane
 	dw BattleAnimFunc_RadialMoveOut
 	dw BattleAnimFunc_Moon
+	dw BattleAnimFunc_StraightDescent
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -4113,3 +4114,20 @@ BattleAnim_AbsCosinePrecise: ; unreferenced
 
 BattleAnimSineWave:
 	sine_table 32
+
+BattleAnimFunc_StraightDescent:
+; Reverse 1E
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp $28
+	jp nc, DeinitBattleAnimation
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld d, [hl]
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	add d
+	ld [hl], a
+	ret

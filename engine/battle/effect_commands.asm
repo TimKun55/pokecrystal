@@ -2037,11 +2037,11 @@ BattleCommand_StatDownAnim:
 	and a
 	jp nz, BattleCommand_MoveDelay
 
-	ldh a, [hBattleTurn]
-	and a
-	ld a, BATTLEANIM_ENEMY_STAT_DOWN
-	jr z, BattleCommand_StatUpDownAnim
-	ld a, BATTLEANIM_WOBBLE
+;	ldh a, [hBattleTurn]
+;	and a
+;	ld a, BATTLEANIM_ENEMY_STAT_DOWN
+;	jr z, BattleCommand_StatUpDownAnim
+;	ld a, BATTLEANIM_WOBBLE
 
 	; fallthrough
 
@@ -4534,6 +4534,11 @@ BattleCommand_StatUpMessage:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+
+	; play animation after every stat up
+	ld de, ANIM_STAT_UP
+	farcall Call_PlayBattleAnim	
+
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -4564,6 +4569,13 @@ BattleCommand_StatDownMessage:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
+
+	; play animation after every stat down
+	call BattleCommand_SwitchTurn
+	ld de, ANIM_STAT_DOWN
+	farcall Call_PlayBattleAnim
+	call BattleCommand_SwitchTurn
+
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a

@@ -211,4 +211,6 @@ SFX:
 	dba Sfx_Twinkle
 	dba Sfx_Puddle
 	dba Sfx_Thunderbolt
+	dba Sfx_StatUp
+	dba Sfx_StatDown
 	assert_table_length NUM_SFX

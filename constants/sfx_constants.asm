@@ -210,4 +210,6 @@
 	const SFX_TWINKLE                     ; ce
 	const SFX_PUDDLE                      ; cf
 	const SFX_THUNDERBOLT                 ; d0
+	const SFX_STAT_UP                     ; d1
+	const SFX_STAT_DOWN                   ; d2
 DEF NUM_SFX EQU const_value
