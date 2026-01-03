@@ -187,7 +187,7 @@ Moves:
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,		100, 15,   0
 	move FLAME_WHEEL,  EFFECT_DEFROST_BURN_HIT,   60, FIRE,         PHYSICAL,	100, 25,  20
 	move SNORE,        EFFECT_SNORE,              60, NORMAL,       SPECIAL,	100, 15,  30
-	move CURSE,        EFFECT_CURSE,               0, CURSE_TYPE,   STATUS,		100, 10,   0
+	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,		100, 10,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,         STATUS,		100, 30,   0
 	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,         STATUS,		 85, 15,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,       SPECIAL,	 95,  5,   0
