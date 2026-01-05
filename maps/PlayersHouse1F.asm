@@ -5,39 +5,32 @@
 	const PLAYERSHOUSE1F_MUM4
 	const PLAYERSHOUSE1F_MUM5
 	const PLAYERSHOUSE1F_POKEFAN_F
-	const PLAYERSHOUSE1F_PIKACHU
 	const PLAYERSHOUSE1F_SILVER_TROPHY
 	const PLAYERSHOUSE1F_GOLD_TROPHY
 	const PLAYERSHOUSE1F_CRYSTAL_TROPHY
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
-	scene_script PlayersHouse1FNoop1Scene, SCENE_PLAYERSHOUSE1F_MEET_MUM
-	scene_script PlayersHouse1FNoop2Scene, SCENE_PLAYERSHOUSE1F_NOOP
+	scene_script PlayersHouse1FMeetMumScene, SCENE_PLAYERSHOUSE1F_MEET_MUM
+	scene_script PlayersHouse1FNoopScene, SCENE_PLAYERSHOUSE1F_NOOP
 
 	def_callbacks
 
-PlayersHouse1FNoop1Scene:
+PlayersHouse1FMeetMumScene:
+	sdefer PlayersHouse1FMumIntro
+PlayersHouse1FNoopScene:
 	end
 
-PlayersHouse1FNoop2Scene:
-	end
-
-MeetMumLeftScript:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-
-MeetMumRightScript:
+PlayersHouse1FMumIntro:
+	applymovement PLAYER, PlayerStepsDownMovement
 	playmusic MUSIC_MUM
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MUM1, 15
-	turnobject PLAYER, LEFT
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .OnRight
-	applymovement PLAYERSHOUSE1F_MUM1, MumTurnsTowardPlayerMovement
-	sjump MeetMumScript
-
-.OnRight:
-	applymovement PLAYERSHOUSE1F_MUM1, MumWalksToPlayerMovement
-MeetMumScript:
+	turnobject PLAYERSHOUSE1F_MUM1, UP
+	opentext
+	writetext PlayerFinallyAwakeText
+	waitbutton
+	closetext
+	applymovement PLAYER, PlayerWalksTowardMumMovement
 	opentext
 	writetext ElmsLookingForYouText
 	promptbutton
@@ -67,46 +60,13 @@ MeetMumScript:
 	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
-	yesorno
-	iffalse .ExplainPhone
-	sjump .KnowPhone
-
-.KnowPhone:
-	writetext KnowTheInstructionsText
 	promptbutton
-	sjump .FinishPhone
-
-.ExplainPhone:
-	writetext DontKnowTheInstructionsText
-	promptbutton
-	writetext InstructionsNextText
+	writetext RunningShoesText
 	waitbutton
-	sjump .FinishPhone
-
-.FinishPhone:
 	closetext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .FromRight
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .FromLeft
-	sjump .Finish
-
-.FromRight:
-	applymovement PLAYERSHOUSE1F_MUM1, MumTurnsBackMovement
-	sjump .Finish
-
-.FromLeft:
-	applymovement PLAYERSHOUSE1F_MUM1, MumWalksBackMovement
-	sjump .Finish
-
-.Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MUM1, LEFT
 	end
-
-MeetMumTalkedScript:
-	playmusic MUSIC_MUM
-	sjump MeetMumScript
 
 PokegearName:
 	db "#gear@"
@@ -117,9 +77,6 @@ PlayersHouse1FReceiveItemStd:
 
 MumScript:
 	faceplayer
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	checkscene
-	iffalse MeetMumTalkedScript ; SCENE_PLAYERSHOUSE1F_MEET_MUM
 	opentext
 	checkevent EVENT_FIRST_TIME_BANKING_WITH_MUM
 	iftrue .FirstTimeBanking
@@ -178,18 +135,6 @@ NeighborScript:
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
 	end
 	
-NeighborPikachuScript:
-	opentext
-	writetext NeighborPikachuText
-	cry PIKACHU
-	waitbutton
-	refreshscreen
-	pokepic PIKACHU
-	waitbutton
-	closepokepic
-	closetext
-	end
-
 SilverTrophyScript:
 	jumptext SilverTrophyText
 
@@ -211,27 +156,26 @@ PlayersHouse1FSinkScript:
 PlayersHouse1FFridgeScript:
 	jumptext PlayersHouse1FFridgeText
 
-MumTurnsTowardPlayerMovement:
-	turn_head RIGHT
+PlayerStepsDownMovement:
+	step DOWN
 	step_end
 
-MumWalksToPlayerMovement:
-	slow_step RIGHT
+PlayerWalksTowardMumMovement:
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	turn_head DOWN
 	step_end
 
-MumTurnsBackMovement:
-	turn_head LEFT
-	step_end
-
-MumWalksBackMovement:
-	slow_step LEFT
-	step_end
+PlayerFinallyAwakeText:
+	text "Mum: Oh, <PLAYER>!"
+	line "You're finally"
+	cont "awake, dear."
+	done
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>!"
-	line "You're awake."
-
-	para "Your friend Lyra"
+	text "Your friend Lyra"
 	line "was just here."
 
 	para "She said that our"
@@ -248,8 +192,8 @@ ElmsLookingForYouText:
 	done
 
 MumGivesPokegearText:
-	text "#mon Gear, or"
-	line "just #gear."
+	text "Mum: #mon Gear,"
+	line "or just #gear."
 
 	para "It's essential if"
 	line "you want to be a"
@@ -272,35 +216,22 @@ ComeHomeForDSTText:
 	line "adjust your clock"
 	cont "for Daylight"
 	cont "Saving Time."
-
-	para "By the way, do you"
-	line "know how to use"
-	cont "the Phone?"
 	done
 
-KnowTheInstructionsText:
-	text "That's my kid!"
-	line "So tech savvy!"
-	done
+RunningShoesText:
+	text "Also, don't forget"
+	line "about your new"
+	cont "Running Shoes."
 
-DontKnowTheInstructionsText:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #gear"
-	line "on and select the"
-	cont "Phone icon."
+	para "Do you remember"
+	line "the instructions?"
 	
-	para "Phone numbers are"
-	line "stored in memory."
+	para "“Press the B but-"
+	line "ton while walking"
+	cont "to start running.”"
 
-	para "Just choose a name"
-	line "you want to call."
-	done
-
-InstructionsNextText:
-	text "Phones really are"
-	line "so convenient."
+	para "They should put a"
+	line "zip in your step!"
 	done
 
 HurryUpElmIsWaitingText:
@@ -431,8 +362,6 @@ PlayersHouse1F_MapEvents:
 	warp_event 11,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
-	coord_event 10,  4, SCENE_PLAYERSHOUSE1F_MEET_MUM, MeetMumLeftScript
-	coord_event 11,  4, SCENE_PLAYERSHOUSE1F_MEET_MUM, MeetMumRightScript
 
 	def_bg_events
 	bg_event  3,  1, BGEVENT_READ, PlayersHouse1FStoveScript
@@ -447,7 +376,6 @@ PlayersHouse1F_MapEvents:
 	object_event  6,  3, SPRITE_MUM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, EVE, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
 	object_event  1,  2, SPRITE_MUM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MumScript, EVENT_PLAYERS_HOUSE_MUM_2
 	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
-	object_event  5,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NeighborPikachuScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
-	object_event  4,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverTrophyScript, EVENT_PLAYERS_HOUSE_1F_SILVER_TROPHY
-	object_event  6,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldTrophyScript, EVENT_PLAYERS_HOUSE_1F_GOLD_TROPHY
-	object_event  5,  7, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CrystalTrophyScript, EVENT_PLAYERS_HOUSE_1F_CRYSTAL_TROPHY
+	object_event  7,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverTrophyScript, EVENT_PLAYERS_HOUSE_1F_SILVER_TROPHY
+	object_event  9,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldTrophyScript, EVENT_PLAYERS_HOUSE_1F_GOLD_TROPHY
+	object_event  8,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CrystalTrophyScript, EVENT_PLAYERS_HOUSE_1F_CRYSTAL_TROPHY
