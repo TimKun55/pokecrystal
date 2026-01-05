@@ -166,7 +166,7 @@ BillsPC_LoadUI:
 	dec [hl]
 
 	; Shiny star
-	ld de, SummaryScreenPageTilesGFX + 26 tiles
+	ld de, SummaryScreenPageTilesGFX + 3 tiles
 	ld hl, vTiles2 tile $43
 	lb bc, BANK(SummaryScreenPageTilesGFX), 1
 	call Get2bpp
