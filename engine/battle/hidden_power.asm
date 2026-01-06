@@ -32,17 +32,16 @@ HiddenPowerDamage:
 	inc a
 
 ; Skip Bird
-	cp BIRD
-	jr c, .done
-	inc a
-
+;	cp BIRD
+;	jr c, .done
+;	inc a
+;
 ; Skip unused types
-	cp UNUSED_TYPES
-	jr c, .done
-	add UNUSED_TYPES_END - UNUSED_TYPES
-
+;	cp UNUSED_TYPES
+;	jr c, .done
+;	add UNUSED_TYPES_END - UNUSED_TYPES
+;
 .done
-
 ; Overwrite the current move type.
 	push af
 	ld a, BATTLE_VARS_MOVE_TYPE

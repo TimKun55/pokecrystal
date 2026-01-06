@@ -45,8 +45,8 @@ BattleCommand_Conversion:
 	ld a, [hl]
 	cp -1
 	jr z, .fail
-	cp CURSE_TYPE
-	jr z, .next
+;	cp CURSE_TYPE
+;	jr z, .next
 	ld a, [de]
 	cp [hl]
 	jr z, .next
@@ -74,8 +74,8 @@ BattleCommand_Conversion:
 	ld a, [hl]
 	cp -1
 	jr z, .loop3
-	cp CURSE_TYPE
-	jr z, .loop3
+;	cp CURSE_TYPE
+;	jr z, .loop3
 	ld a, [de]
 	cp [hl]
 	jr z, .loop3
