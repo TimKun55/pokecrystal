@@ -4,21 +4,34 @@ CeruleanEmptyHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, CeruleanEmptyHouseStaircaseCallback
+
+CeruleanEmptyHouseStaircaseCallback:
+	checkevent EVENT_UNCOVERED_STAIRCASE_IN_CERULEAN_EMPTY_HOUSE
+	iffalse .HideStairs
+	endcallback
+
+.HideStairs:
+	changeblock 6, 0, $99 ; Bookshelf, no stairs
+	endcallback
 
 EmptyHouseBookshelf:
 	opentext
+	checkevent EVENT_UNCOVERED_STAIRCASE_IN_CERULEAN_EMPTY_HOUSE
+	iftrue .keystuck
 	checkitem SECRET_KEY
 	iftrue .hiddenstairs
 	writetextend BookshelfText
 
 .hiddenstairs
 	writetext BookshelfHiddenHoleText
-	promptbutton
 	yesorno
 	iffalse .DidntUseKey
 	writetext UsedKeyText
 	waitbutton
-	closetext	
+	closetext
+	takeitem SECRET_KEY
+	setevent EVENT_UNCOVERED_STAIRCASE_IN_CERULEAN_EMPTY_HOUSE
 	playsound SFX_FAINT
 	changeblock 6, 0, $9a ; stairs
 	reloadmappart
@@ -27,6 +40,9 @@ EmptyHouseBookshelf:
 
 .DidntUseKey
 	writetextend DidntUseKeyText
+
+.keystuck
+	writetextend KeyStuckInBookText
 
 BookshelfText:
 	text "It's full of"
@@ -41,18 +57,30 @@ BookshelfHiddenHoleText:
 	
 	para "There's a hole"
 	line "in the spine of"
-	cont "one of them…"
+	cont "one of them."
+	
+	para "It looks like"
+	line "a keyhole…"
 	
 	para "Try using the"
 	line "Secret Key?"
 	done
 
 UsedKeyText:
-	text "KER-CHUNK"
+	text "KER-CHUNK!"
+	
+	para "The key got stuck"
+	line "in the hole."
 	done
 
 DidntUseKeyText:
 	text "Better not."
+	done
+
+KeyStuckInBookText:
+	text "The Secret Key is"
+	line "stuck inside one"
+	cont "of the books."
 	done
 
 CeruleanEmptyHouse_MapEvents:
