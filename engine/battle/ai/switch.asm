@@ -206,7 +206,7 @@ CheckAbleToSwitch:
 
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
-	cp 10
+	cp BASE_AI_SWITCH_SCORE
 	ret nc
 
 	ld a, b
@@ -218,7 +218,7 @@ CheckAbleToSwitch:
 	ld c, $10
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
-	cp 10
+	cp BASE_AI_SWITCH_SCORE
 	jr nc, .okay
 	ld c, $20
 
@@ -231,7 +231,7 @@ CheckAbleToSwitch:
 .no_last_counter_move
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
-	cp 10
+	cp BASE_AI_SWITCH_SCORE
 	ret nc
 
 	call FindAliveEnemyMons
@@ -435,7 +435,7 @@ FindEnemyMonsWithASuperEffectiveMove:
 
 	; if immune or not very effective: continue
 	ld a, [wTypeMatchup]
-	cp 10
+	cp EFFECTIVE
 	jr c, .nope
 
 	; if neutral: load 1 and continue
@@ -535,7 +535,7 @@ FindEnemyMonsThatResistPlayer:
 	ld hl, wBaseType
 	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
-	cp 10 + 1
+	cp EFFECTIVE + 1
 	jr nc, .dont_choose_mon
 	ld a, [wBattleMonType2]
 
