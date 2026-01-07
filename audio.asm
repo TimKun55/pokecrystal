@@ -167,6 +167,7 @@ INCLUDE "audio/music/bicyclerb.asm"
 INCLUDE "audio/music/surfingrby.asm"
 INCLUDE "audio/music/ceruleancity.asm"
 INCLUDE "audio/music/nuggetbridge.asm"
+INCLUDE "audio/music/cianwoodcity.asm"
 
 
 SECTION "Sound Effects", ROMX

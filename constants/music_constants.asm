@@ -120,6 +120,7 @@
 	const MUSIC_SURF_RBY                     ; 73
 	const MUSIC_CERULEAN_CITY                ; 74
 	const MUSIC_ROUTE_24                     ; 75
+	const MUSIC_CIANWOOD_CITY                ; 76
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
