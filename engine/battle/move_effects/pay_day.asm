@@ -1,17 +1,16 @@
 BattleCommand_PayDay:
-	xor a
-	ld hl, wStringBuffer1
-	ld [hli], a
-
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonLevel]
 	jr z, .ok
 	ld a, [wEnemyMonLevel]
 .ok
-
-	add a
+	push bc
+	ld c, a
+	ld b, 5
+.loop
 	ld hl, wPayDayMoney + 2
+	ld a, c
 	add [hl]
 	ld [hld], a
 	jr nc, .done
@@ -20,5 +19,9 @@ BattleCommand_PayDay:
 	jr nz, .done
 	inc [hl]
 .done
+	dec b
+	jr nz, .loop
+	pop bc
+
 	ld hl, CoinsScatteredText
 	jp StdBattleTextbox
