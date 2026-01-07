@@ -80,8 +80,6 @@ INCLUDE "engine/events/money.asm"
 INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mum.asm"
 INCLUDE "engine/events/daycare.asm"
-INCLUDE "engine/events/print_unown.asm"
-INCLUDE "engine/events/print_photo.asm"
 INCLUDE "engine/pokemon/breeding.asm"
 INCLUDE "engine/events/prof_oaks_pc.asm"
 
@@ -292,8 +290,6 @@ INCLUDE "engine/events/sacred_ash.asm"
 
 SECTION "bank21", ROMX
 
-INCLUDE "engine/printer/printer_serial.asm"
-INCLUDE "engine/printer/printer.asm"
 INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 INCLUDE "engine/events/basement_key.asm"
@@ -463,7 +459,6 @@ INCLUDE "gfx/pokemon/unown_frames.asm"
 
 SECTION "bank38", ROMX
 
-INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
@@ -670,9 +665,8 @@ SECTION "Pokemon Base Stats", ROMX
 INCLUDE "data/pokemon/base_stats.asm"
 
 
-SECTION "Print Party", ROMX
+SECTION "Rangi GFX", ROMX
 
-INCLUDE "engine/printer/print_party.asm"
 INCLUDE "gfx/rangi_gfx.asm"
 
 

@@ -10,10 +10,6 @@ Serial::
 	and a
 	jr nz, .mobile
 
-	ld a, [wPrinterConnectionOpen]
-	bit 0, a
-	jr nz, .printer
-
 	ldh a, [hSerialConnectionStatus]
 	inc a ; is it equal to CONNECTION_NOT_ESTABLISHED?
 	jr z, .establish_connection
@@ -36,10 +32,6 @@ Serial::
 
 .mobile
 	call MobileReceive
-	jr .end
-
-.printer
-	call PrinterReceive
 	jr .end
 
 .establish_connection
