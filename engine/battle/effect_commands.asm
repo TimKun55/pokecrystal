@@ -4572,6 +4572,8 @@ BattleCommand_StatDownMessage:
 
 	; play animation after every stat down
 	call BattleCommand_SwitchTurn
+	xor a
+	ld [wNumHits], a
 	ld de, ANIM_STAT_DOWN
 	farcall Call_PlayBattleAnim
 	call BattleCommand_SwitchTurn
