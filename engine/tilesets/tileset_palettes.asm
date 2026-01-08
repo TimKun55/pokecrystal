@@ -35,40 +35,47 @@ LoadSpecialMapPalette:
     jp z, .cavevolcano_palette
 
 .continue3
-	cp GROUP_ROUTE_34
+	cp GROUP_AZALEA_POKECENTER_1F
     jr nz, .continue4
+    ld a, [wMapNumber]
+    cp MAP_CHARCOAL_KILN
+    jp z, .charcoalkiln_palette
+
+.continue4
+	cp GROUP_ROUTE_34
+    jr nz, .continue5
     ld a, [wMapNumber]
     cp MAP_GOLDENROD_GAME_CORNER
     jp z, .gym_palette
 
-.continue4
+.continue5
 	cp GROUP_ROUTE_6
-    jr nz, .continue5
+    jr nz, .continue6
     ld a, [wMapNumber]
     cp MAP_VERMILION_GYM
     jp z, .gym_palette
 
-.continue5
+.continue6
 	cp GROUP_OLIVINE_PORT
-    jr nz, .continue6
+    jr nz, .continue7
     ld a, [wMapNumber]
     cp MAP_FARAWAY_ISLAND_OUTSIDE
     jp z, .faraway_palette
 	cp MAP_FARAWAY_ISLAND_INSIDE
     jp z, .faraway_palette
 
-.continue6
+.continue7
     cp GROUP_ROUTE_23
-    jr nz, .continue7
+    jr nz, .continue8
     ld a, [wMapNumber]
     cp MAP_WILLS_ROOM
     jp z, .elite_four_palette
     cp MAP_KARENS_ROOM
     jp z, .elite_four_palette
 
-.continue7
+.continue8
     cp GROUP_CELADON_CITY
-    jr nz, .continue8
+    jr nz, .continue9
     ld a, [wMapNumber]
     cp MAP_CELADON_GAME_CORNER
     jp z, .gym_palette
@@ -79,28 +86,28 @@ LoadSpecialMapPalette:
     cp MAP_CELADON_HOTEL_POOL
     jp z, .cerulean_gym_palette
 
-.continue8
+.continue9
     cp GROUP_VIRIDIAN_CITY
-    jr nz, .continue9
+    jr nz, .continue10
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
     jp z, .viridian_gym_palette
 
-.continue9
+.continue10
     cp GROUP_SAFFRON_CITY
-    jr nz, .continue10
+    jr nz, .continue11
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
 
-.continue10
+.continue11
     cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE
-    jr nz, .continue11
+    jr nz, .continue12
     ld a, [wMapNumber]
     cp MAP_CERULEAN_GYM
     jp z, .cerulean_gym_palette
 
-.continue11
+.continue12
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -201,6 +208,11 @@ LoadSpecialMapPalette:
 
 .cavevolcano_palette
 	call LoadCaveVolcanoPalette
+	scf
+	ret
+
+.charcoalkiln_palette
+	call LoadCharcoalKilnPalette
 	scf
 	ret
 
@@ -343,6 +355,17 @@ LoadCaveVolcanoPalette:
 	
 CaveVolcanoPalette:
 INCLUDE "gfx/tilesets/cavevolcano_palette.pal"
+
+LoadCharcoalKilnPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CharcoalKilnPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+CharcoalKilnPalette:
+INCLUDE "gfx/tilesets/charcoalkiln_palette.pal"
 
 LoadViridianGymPalette:
 	ld a, BANK(wBGPals1)

@@ -288,6 +288,16 @@ TilesetFarawayAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetTraditionalHouseAnim:
+	dw vTiles2 tile $58, AnimateFireLeftTile
+	dw vTiles2 tile $59, AnimateFireRightTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:
@@ -297,7 +307,6 @@ TilesetFacilityAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
 TilesetGameCornerAnim:
-TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
 TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
@@ -836,6 +845,66 @@ LavaBubbleTileFrames:
 	INCBIN "gfx/tilesets/lava/2.2bpp"
 	INCBIN "gfx/tilesets/lava/3.2bpp"
 	INCBIN "gfx/tilesets/lava/4.2bpp"
+
+AnimateFireLeftTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .FireLeftTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.FireLeftTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.FireLeftTileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.FireLeftTileFrames:
+	INCBIN "gfx/tilesets/fire/fire_left.2bpp"
+
+AnimateFireRightTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .FireRightTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.FireRightTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.FireRightTileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.FireRightTileFrames:
+	INCBIN "gfx/tilesets/fire/fire_right.2bpp"
 
 AnimateTowerPillarTile:
 ; Input de points to the destination in VRAM, then the source tile frames
