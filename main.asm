@@ -175,6 +175,10 @@ SECTION "Battle Core", ROMX
 INCLUDE "engine/battle/core.asm"
 
 
+SECTION "Battle Core 2", ROMX
+
+INCLUDE "engine/battle/core2.asm"
+
 SECTION "Overworld Wildmon Data", ROMX
 
 INCLUDE "engine/overworld/wildmons.asm"
