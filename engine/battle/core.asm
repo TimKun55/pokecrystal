@@ -7170,7 +7170,6 @@ GiveExperiencePoints:
 	ld c, a
 	ld a, [wTempLevel]
 	ld b, a
-	call ClearSprites
 
 .level_loop
 	inc b

@@ -475,7 +475,7 @@ WriteDownOldStatsForGainCalculation::
 
 	ld a, [hl]
 	ld [wTempMonLevelUpStatGain + 3], a ; Special def.
-
+	ret
 
 GetWeatherImage:
 	ld a, [wBattleWeather]
