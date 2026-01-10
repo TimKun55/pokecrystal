@@ -3236,7 +3236,10 @@ wFarawayIslandOutsideSceneID::                    db
 
 ; fight counts
 
-	ds 28
+	ds 21
+
+wTempMonLevelUpStatGain:: ds NUM_BATTLE_STATS
+wTempMonStatGainDisplay:: db
 
 ;	ds 100
 

@@ -39,7 +39,7 @@ PredefPointers::
 	add_predef TradeAnimation
 	add_predef CopyMonToTempMon
 	add_predef ListMoves
-	add_predef Unused_PlaceEnemyHPLevel
+	add_predef PrintTempMonLevelUpStats
 	add_predef ListMovePP
 	add_predef GetGender
 	add_predef SummaryScreenInit

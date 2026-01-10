@@ -82,6 +82,76 @@ DrawHP:
 	pop de
 	ret
 
+PrintTempMonLevelUpStats:
+	push hl
+	call PrintTempMonStats
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	lb bc, 1, 2 ; Parameters for PrintNum. "Print c digits of the b-byte value from de to hl."
+	ld a, [wTempMonLevelUpStatGain + 0]
+	ld e, a
+	ld a, [wTempMonAttack + 1] ; Big-endian.
+	call .PrintStatGain
+
+	ld a, [wTempMonLevelUpStatGain + 1]
+	ld e, a
+	ld a, [wTempMonDefense + 1] ; Big-endian.
+	call .PrintStatGain
+
+	ld a, [wTempMonLevelUpStatGain + 2]
+	ld e, a
+	ld a, [wTempMonSpclAtk + 1] ; Big-endian.
+	call .PrintStatGain
+
+	ld a, [wTempMonLevelUpStatGain + 3]
+	ld e, a
+	ld a, [wTempMonSpclDef + 1] ; Big-endian.
+	call .PrintStatGain
+
+	ld a, [wTempMonLevelUpStatGain + 4]
+	ld e, a
+	ld a, [wTempMonSpeed + 1] ; Big-endian.
+	; fallthrough
+	
+.PrintStatGain:
+	sub e ; Note: the amount of stat gain always fits within 1 byte during normal gameplay.
+	ld [wTempMonStatGainDisplay], a
+
+	inc hl
+	inc hl
+	inc hl
+	ld [hl], "→"
+	dec hl
+	dec hl
+	dec hl
+
+	push hl
+	cp 100
+	jr c, .ValueCapped
+
+	ld c, 3
+
+.ValueCapped
+	ld de, wTempMonStatGainDisplay
+	call PrintNum
+	ld c, 2
+	pop hl
+
+	push hl
+	ld a, [wTempMonStatGainDisplay]
+	cp 10
+	jr c, .OneDigit
+
+	dec hl ; If there are 2 digits, we shift the "+" sign to the left, so it overlaps the leading 0.
+.OneDigit
+	ld [hl], "+"
+	pop hl
+
+	ld de, SCREEN_WIDTH * 2
+	add hl, de
+	ret
+
 PrintTempMonStats:
 ; Print wTempMon's stats at hl, with spacing bc.
 	push bc

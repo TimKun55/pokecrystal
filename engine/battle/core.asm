@@ -7064,6 +7064,15 @@ GiveExperiencePoints:
 	ld hl, MON_EVS - 1
 	add hl, bc
 	push bc
+	push de
+	push hl
+	ld hl, 0
+	add hl, de
+	ld a, BANK(WriteDownOldStatsForGainCalculation)
+	ld de, WriteDownOldStatsForGainCalculation
+	call FarCall_de
+	pop hl
+	pop de
 	ld b, TRUE
 	predef CalcMonStats
 	pop bc
@@ -7147,9 +7156,9 @@ GiveExperiencePoints:
 	call Textbox
 	hlcoord 11, 1
 	ld bc, 4
-	predef PrintTempMonStats
-	ld c, 30
-	call DelayFrames
+	predef PrintTempMonLevelUpStats
+;	ld c, 30
+;	call DelayFrames
 	call WaitPressAorB_BlinkCursor
 	call SafeLoadTempTilemapToTilemap
 	xor a ; PARTYMON
@@ -7161,6 +7170,7 @@ GiveExperiencePoints:
 	ld c, a
 	ld a, [wTempLevel]
 	ld b, a
+	call ClearSprites
 
 .level_loop
 	inc b
