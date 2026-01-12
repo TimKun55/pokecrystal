@@ -893,7 +893,7 @@ EVO_place_Mon_Icon:
 	ldh [hObjectStructIndex], a
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)
-	ld e, MONICON_UNUSED
+	ld e, MONICON_DEX
 	rst FarCall
 	
 	pop hl
