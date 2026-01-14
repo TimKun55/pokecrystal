@@ -218,7 +218,8 @@
 	const EVENT_BATTLE_TOWER_2F_CLERK_6_HAS_ITEM
 	const EVENT_BATTLE_TOWER_2F_CLERK_7_HAS_ITEM
 	const EVENT_BATTLE_TOWER_2F_CLERK_8_HAS_ITEM
-; Unused: next 37 events
+	const EVENT_CHERRYGROVE_CITY_HIDDEN_MAX_REVIVE
+; Unused: next 36 events
 
 	const_next 250
 ; Kanto story events

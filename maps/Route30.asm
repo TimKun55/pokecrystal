@@ -428,7 +428,7 @@ Route30_MapEvents:
 
 	def_warp_events
 	warp_event  7, 39, ROUTE_30_BERRY_HOUSE, 1
-	warp_event 15,  5, MR_POKEMONS_HOUSE, 1
+	warp_event 17,  5, MR_POKEMONS_HOUSE, 1
 
 	def_coord_events
 	coord_event 11,  2, SCENE_ROUTE30_ENTEI, Route30EnteiScript
@@ -436,7 +436,7 @@ Route30_MapEvents:
 	def_bg_events
 	bg_event  9, 43, BGEVENT_READ, Route30Sign
 	bg_event 13, 29, BGEVENT_READ, MrPokemonsHouseDirectionsSign
-	bg_event 13,  5, BGEVENT_READ, MrPokemonsHouseSign
+	bg_event 15,  5, BGEVENT_READ, MrPokemonsHouseSign
 	bg_event  3, 23, BGEVENT_READ, Route30TrainerTips
 	bg_event 11,  9, BGEVENT_ITEM, Route30HiddenPotion
 
@@ -449,7 +449,7 @@ Route30_MapEvents:
 	object_event  5, 24, SPRITE_RATTATA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 25, SPRITE_RATTATA_BACK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30OranTree, -1
-	object_event 12,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30PechaTree, -1
+	object_event 14,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30PechaTree, -1
 	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
 	object_event  8, 35, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
 	object_event 13,  2, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_ENTEI_ON_ROUTE_30

@@ -219,6 +219,9 @@ CherrygroveCityPokecenterSign:
 CherrygroveCityMartSign:
 	jumpstd MartSignScript
 
+CherrygroveCityHiddenMaxRevive:
+	hiddenitem MAX_REVIVE, EVENT_CHERRYGROVE_CITY_HIDDEN_MAX_REVIVE
+
 GuideGentMovement1:
 	step LEFT
 	step LEFT
@@ -547,6 +550,7 @@ CherrygroveCity_MapEvents:
 	bg_event 23, 10, BGEVENT_READ, GuideGentsHouseSign
 	bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign
 	bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign
+	bg_event 36,  3, BGEVENT_ITEM, CherrygroveCityHiddenMaxRevive
 
 	def_object_events
 	object_event 32,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE

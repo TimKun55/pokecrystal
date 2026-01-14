@@ -500,7 +500,7 @@ ENDM
 
 	newgroup NEW_BARK                                             ; 24
 	map_const ROUTE_27,                                    40, 10 ;  1
-	map_const ROUTE_29,                                    30, 11 ;  2
+	map_const ROUTE_29,                                    29, 11 ;  2
 	map_const NEW_BARK_TOWN,                               10, 10 ;  3
 	map_const ELMS_LAB,                                     5,  6 ;  4
 	map_const PLAYERS_HOUSE_1F,                             6,  4 ;  5
@@ -534,9 +534,9 @@ ENDM
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26
-	map_const ROUTE_30,                                    11, 27 ;  1
+	map_const ROUTE_30,                                    14, 27 ;  1
 	map_const ROUTE_31,                                    20,  9 ;  2
-	map_const CHERRYGROVE_CITY,                            20, 10 ;  3
+	map_const CHERRYGROVE_CITY,                            21, 10 ;  3
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    6,  4 ;  5
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  6

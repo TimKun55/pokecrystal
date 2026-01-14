@@ -156,7 +156,7 @@ ENDM
 	connection west, MtSilverOutside, MT_SILVER_OUTSIDE, -6
 
 	map_attributes Route29, ROUTE_29, $05, NORTH | WEST | EAST
-	connection north, Route46, ROUTE_46, 10
+	connection north, Route46, ROUTE_46, 9
 	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0
 
@@ -226,7 +226,7 @@ ENDM
 	connection west, Route46, ROUTE_46, 36
 
 	map_attributes Route46, ROUTE_46, $05, SOUTH | EAST
-	connection south, Route29, ROUTE_29, -10
+	connection south, Route29, ROUTE_29, -9
 	connection east, Route45, ROUTE_45, -36
 
 	map_attributes PewterCity, PEWTER_CITY, $45, SOUTH | EAST
