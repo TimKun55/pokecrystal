@@ -184,8 +184,8 @@
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; b7
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b8
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b9
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; ba
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; bb
+	tilecoll WALL, FLOOR, WALL, FLOOR ; ba
+	tilecoll FLOOR, WALL, FLOOR, WALL ; bb
 	tilecoll WALL, FLOOR, WALL, FLOOR ; bc
 	tilecoll FLOOR, WALL, FLOOR, WALL ; bd
 	tilecoll WALL, FLOOR, WALL, FLOOR ; be
