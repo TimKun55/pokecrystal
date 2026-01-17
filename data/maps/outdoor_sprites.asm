@@ -388,7 +388,7 @@ SilverGroupSprites:
 ; Route28, MtSilverOutside, MtSilverPeak
 	db SPRITE_RED
 	; 1 of max 9 walking sprites
-	db SPRITE_PIKACHU_P
+	db SPRITE_PIKACHU
 	db SPRITE_BALL_BOOK_POKEDEX
 	db SPRITE_ROCK
 	db 0 ; end

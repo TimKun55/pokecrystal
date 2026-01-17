@@ -250,5 +250,4 @@ NationalPokedexOrder:
 	db LUGIA
 	db HO_OH
 	db CELEBI
-	db PIKACHU_P
 	db SYLVEON

@@ -274,5 +274,4 @@
 	const ICON_HO_OH       ; HO_OH
 	const ICON_CELEBI      ; CELEBI
 	const ICON_SYLVEON     ; SYLVEON
-	const ICON_PIKACHU_P   ; PIKACHU_P
 	const ICON_EGG         ; EGG

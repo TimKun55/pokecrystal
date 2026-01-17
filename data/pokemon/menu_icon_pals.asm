@@ -258,7 +258,6 @@ MonMenuIconPals:
 	icon_pals RED,    BROWN  ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
 	icon_pals PINK,   BLUE   ; SYLVEON
-	icon_pals YELLOW, RED    ; PIKACHU_P
 	assert_table_length NUM_POKEMON
 	icon_pals GREEN,  BLUE   ; EGG
 	assert_table_length EGG

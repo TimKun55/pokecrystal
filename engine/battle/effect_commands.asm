@@ -2793,7 +2793,7 @@ LightBallBoost:
 ; If the attacking monster is Pikachu and it's holding a Light Ball, double it.
 	push bc
 	push de
-	lb bc, PIKACHU, PIKACHU_P
+	lb bc, PIKACHU, PIKACHU
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
 	pop de

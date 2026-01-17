@@ -254,5 +254,4 @@ Pokered_MonIndices:
 	db WOBBUFFET
 	db WOBBUFFET
 	db MAGMORTAR
-	db PIKACHU_P
 	assert_table_length NUM_POKEMON + 1

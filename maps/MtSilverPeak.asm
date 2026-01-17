@@ -57,10 +57,10 @@ Red:
 MtSilverPeakPikachu:
 	opentext
 	writetext PikachuText
-	cry PIKACHU_P
+	cry PIKACHU
 	waitbutton
 	refreshscreen
-	pokepic PIKACHU_P
+	pokepic PIKACHU
 	waitbutton
 	closepokepic
 	closetext
@@ -105,7 +105,7 @@ MtSilverPeak_MapEvents:
 
 	def_object_events
 	object_event 15,  9, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
-	object_event 16,  9, SPRITE_PIKACHU_P, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverPeakPikachu, EVENT_RED_IN_MT_SILVER
+	object_event 16,  9, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MtSilverPeakPikachu, EVENT_RED_IN_MT_SILVER
 	object_event 21, 44, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1
 	object_event  8, 46, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1
 	object_event 20, 45, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtSilverPeakRock, -1

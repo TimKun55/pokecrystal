@@ -510,8 +510,6 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba SylveonFrontpic
 	dba SylveonBackpic
-	dba PikachuPFrontpic
-	dba PikachuPBackpic
 	assert_table_length NUM_POKEMON
 	dba EggPic
 	dbw -1, -1 ; unused

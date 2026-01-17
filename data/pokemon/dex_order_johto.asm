@@ -20,7 +20,6 @@ JohtoPokedexOrder:
 	db RATICATE
 	db SENTRET
 	db FURRET
-	db PIKACHU_P
 	db PIKACHU
 	db RAICHU
 	db CATERPIE

@@ -252,5 +252,4 @@ EvolutionMoves::
 	db NO_MOVE      ; HOOH
 	db NO_MOVE      ; CELEBI
 	db DISARM_VOICE ; SYLVEON
-	db NO_MOVE      ; PIKACHU_P
 	assert_table_length NUM_POKEMON
