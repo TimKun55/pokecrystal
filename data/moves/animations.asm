@@ -2029,14 +2029,6 @@ BattleAnim_Growl:
 	anim_wait 16
 	anim_loop 3, .loop
 	anim_wait 17
-	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $40
-	anim_wait 64
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
-	anim_wait 1
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 5
-	anim_incobj 9
-	anim_wait 8
 	anim_ret
 
 BattleAnim_Roar:
