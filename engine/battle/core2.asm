@@ -12,7 +12,7 @@ HandleLeftovers:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .DoEnemyFirst:
 	call SetEnemyTurn
@@ -48,9 +48,9 @@ HandleLeftovers:
 	ret z
 
 .restore
-	call GetSixteenthMaxHP
-	call SwitchTurnCore
-	call RestoreHP
+	farcall GetSixteenthMaxHP
+	farcall SwitchTurnCore
+	farcall RestoreHP
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
 
