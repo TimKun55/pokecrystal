@@ -453,6 +453,65 @@ HandleFutureSight:
 	call UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
 
+CheckRedsPikachu:
+;CheckBoostingAbilities:
+	call HandleRedsPikachuOffenses
+	call HandleRedsPikachuDefenses
+	ret
+
+HandleRedsPikachuOffenses:
+	; Only apply on enemy turn (Red's side)
+	ldh a, [hBattleTurn]
+	and a
+	ret z              ; enemy's turn → return
+
+	; Check trainer is Red
+	ld a, [wOtherTrainerClass]
+	cp RED
+	ret nz
+
+	; Check species is Pikachu
+	ld a, [wEnemyMonSpecies]
+	cp PIKACHU
+	ret nz
+
+; boost by 50%
+	ld a, 50
+	add 100
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	jp Divide
+
+HandleRedsPikachuDefenses:
+	; this only applies when it's the player's turn
+	ldh a, [hBattleTurn]
+	and a
+	ret nz              ; player turn → return
+
+	; Check trainer is Red
+	ld a, [wOtherTrainerClass]
+	cp RED
+	ret nz
+
+	; Check species is Pikachu
+	ld a, [wEnemyMonSpecies]
+	cp PIKACHU
+	ret nz
+
+; boost by 50%
+	ld a, 50
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 4
+	jp Divide
+
 WriteDownOldStatsForGainCalculation::
 	inc hl ; Max HP.
 	inc hl ; Max HP + 1.
