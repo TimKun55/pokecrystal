@@ -1,37 +1,38 @@
-DEF NUM_ODD_EggS EQU 14
+DEF NUM_ODD_EGGS EQU 14
 
-MACRO prob
-	DEF prob_total += \1
-	dw prob_total * $ffff / 100
+DEF odd_egg_prob_total = 0
+
+MACRO odd_egg_prob
+	DEF odd_egg_prob_total += \1
+	dw odd_egg_prob_total * $ffff / 100
 ENDM
 
 OddEggProbabilities:
 ; entries correspond to OddEggs (below)
 	table_width 2, OddEggProbabilities
-DEF prob_total = 0
 ; Pikachu
-	prob 12
-	prob 2
+	odd_egg_prob 12
+	odd_egg_prob  2
 ; Chinchou
-	prob 12
-	prob 2
+	odd_egg_prob 12
+	odd_egg_prob  2
 ; Sneasel
-	prob 12
-	prob 2
+	odd_egg_prob 12
+	odd_egg_prob  2
 ; Swinub
-	prob 12
-	prob 2
+	odd_egg_prob 12
+	odd_egg_prob  2
 ; Houndour
-	prob 12
-	prob 2
+	odd_egg_prob 12
+	odd_egg_prob  2
 ; Chansey
-	prob 13
-	prob 2
+	odd_egg_prob 13
+	odd_egg_prob  2
 ; Tyrogue
-	prob 13
-	prob 2
-	assert_table_length NUM_ODD_EggS
-	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
+	odd_egg_prob 13
+	odd_egg_prob  2
+	assert_table_length NUM_ODD_EGGS
+	assert odd_egg_prob_total == 100, "OddEggProbabilities sum to {d:odd_egg_prob_total}%, not 100%!"
 
 OddEggs:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, OddEggs
@@ -344,4 +345,4 @@ OddEggs:
 	bigdw 9 ; SDef
 	db "Egg@@@@@@@@"
 
-	assert_table_length NUM_ODD_EggS
+	assert_table_length NUM_ODD_EGGS
