@@ -4727,6 +4727,7 @@ BattleAnim_RockTomb:
 
 BattleAnim_HiddenPower:
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
+	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
@@ -4742,6 +4743,7 @@ BattleAnim_HiddenPower:
 	anim_wait 8
 	anim_loop 12, .loop
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 	anim_incobj 2
 	anim_incobj 3
@@ -4779,6 +4781,7 @@ BattleAnim_CrossChop:
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 150, 38, $0
  	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 120, 38, $0
  	anim_wait 32
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BLUE
 	anim_ret
 
 BattleAnim_Twister:
