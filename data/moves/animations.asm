@@ -4102,6 +4102,8 @@ BattleAnim_Outrage:
 	anim_wait 6
 	anim_loop 2, .loop2
 	anim_wait 16
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_RED
 	anim_ret
 
 BattleAnim_Sandstorm:
