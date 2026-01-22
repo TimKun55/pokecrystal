@@ -238,6 +238,9 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_MOON_CHARGE         ; cc
 	const BATTLE_ANIM_OBJ_STAT_UP             ; cd
 	const BATTLE_ANIM_OBJ_STAT_DOWN           ; ce
+	const BATTLE_ANIM_OBJ_SWIRL_SHORT         ; cf
+	const BATTLE_ANIM_OBJ_VORTEX              ; d0
+	const BATTLE_ANIM_OBJ_RADIAL_FLAME        ; d1
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -272,7 +275,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RAZOR_WIND                ; 1a
 	const BATTLE_ANIM_FUNC_KICK                      ; 1b
 	const BATTLE_ANIM_FUNC_ABSORB                    ; 1c
-;	const BATTLE_ANIM_FUNC_EGG                       ; 1d
+	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT_SLOW      ; 1d ; BATTLE_ANIM_FUNC_EGG
 	const BATTLE_ANIM_FUNC_MOVE_UP                   ; 1e
 	const BATTLE_ANIM_FUNC_WRAP                      ; 1f
 	const BATTLE_ANIM_FUNC_LEECH_SEED                ; 20
@@ -517,6 +520,8 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW        ; b7
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW       ; b8
 	const BATTLE_ANIM_FRAMESET_HAIL                  ; b9
+	const BATTLE_ANIM_FRAMESET_SWIRL_SHORT           ; ba
+	const BATTLE_ANIM_FRAMESET_VORTEX                ; bb  
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -737,6 +742,12 @@ DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 	const BATTLE_ANIM_OAMSET_D6
 	const BATTLE_ANIM_OAMSET_D7
 	const BATTLE_ANIM_OAMSET_HAIL
+	const BATTLE_ANIM_OAMSET_D9
+	const BATTLE_ANIM_OAMSET_DA
+	const BATTLE_ANIM_OAMSET_DB
+	const BATTLE_ANIM_OAMSET_DC
+	const BATTLE_ANIM_OAMSET_DD
+	const BATTLE_ANIM_OAMSET_DE
 DEF NUM_BATTLE_ANIM_OAMSETS EQU const_value
 
 assert NUM_BATTLE_ANIM_OAMSETS <= FIRST_OAM_CMD, \
@@ -857,6 +868,8 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_FOCUS_BLAST ; 35
 	const BATTLE_ANIM_GFX_PETALS      ; 36
 	const BATTLE_ANIM_GFX_MOON        ; 37
+	const BATTLE_ANIM_GFX_SWIRL       ; 38
+	const BATTLE_ANIM_GFX_VORTEX      ; 39
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

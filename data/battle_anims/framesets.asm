@@ -187,6 +187,8 @@ BattleAnimFrameData:
 	dw .Frameset_EnemyFeet2Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
 	dw .Frameset_PlayerHead2Row      ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
+	dw .Frameset_SwirlShort          ; BATTLE_ANIM_FRAMESET_SWIRL_SHORT
+	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -322,6 +324,7 @@ BattleAnimFrameData:
 	oamend
 
 .Frameset_PokeBall4:
+.Frameset_DragonRage:
 	oamframe BATTLE_ANIM_OAMSET_0A,  8
 	oamend
 
@@ -331,10 +334,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_0A,  7
 	oamframe BATTLE_ANIM_OAMSET_0B,  7, OAM_X_FLIP
 	oamframe BATTLE_ANIM_OAMSET_0A,  7
-	oamend
-
-.Frameset_DragonRage:
-	oamframe BATTLE_ANIM_OAMSET_0A,  8
 	oamend
 
 .Frameset_Flamethrower:
@@ -391,6 +390,7 @@ BattleAnimFrameData:
 	oamrestart
 
 .Frameset_RazorLeaf1:
+.Frameset_ConfuseRay2:
 	oamframe BATTLE_ANIM_OAMSET_14,  8
 	oamend
 
@@ -431,10 +431,13 @@ BattleAnimFrameData:
 	oamdelete
 
 .Frameset_BigRock:
+.Frameset_MusicNote1:
+.Frameset_MetronomeHand:
 	oamframe BATTLE_ANIM_OAMSET_1B,  8
 	oamend
 
 .Frameset_SmallRock:
+.Frameset_Conversion:
 	oamframe BATTLE_ANIM_OAMSET_0F,  8
 	oamend
 
@@ -486,10 +489,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_22,  8
 	oamend
 
-.Frameset_MusicNote1:
-	oamframe BATTLE_ANIM_OAMSET_1B,  8
-	oamend
-
 .Frameset_MusicNote2:
 	oamframe BATTLE_ANIM_OAMSET_23,  8
 	oamend
@@ -499,6 +498,7 @@ BattleAnimFrameData:
 	oamend
 
 .Frameset_WaterGun1:
+.Frameset_Amnesia2:
 	oamframe BATTLE_ANIM_OAMSET_25,  8
 	oamend
 
@@ -635,7 +635,8 @@ BattleAnimFrameData:
 
 .Frameset_ChargeOrb2:
 	oamframe BATTLE_ANIM_OAMSET_20,  8
-	oamframe BATTLE_ANIM_OAMSET_1F,  8
+	oamframe BATTLE_ANIM_OAMSET_1F,  8 ; fallthrough
+.Frameset_Needle:
 	oamframe BATTLE_ANIM_OAMSET_1E,  8
 	oamend
 
@@ -762,10 +763,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_75,  4
 	oamrestart
 
-.Frameset_ConfuseRay2:
-	oamframe BATTLE_ANIM_OAMSET_14,  8
-	oamend
-
 .Frameset_Sparkle:
 	oamframe BATTLE_ANIM_OAMSET_74,  3
 	oamframe BATTLE_ANIM_OAMSET_14,  3
@@ -814,10 +811,6 @@ BattleAnimFrameData:
 
 .Frameset_Amnesia1:
 	oamframe BATTLE_ANIM_OAMSET_7F,  8
-	oamend
-
-.Frameset_Amnesia2:
-	oamframe BATTLE_ANIM_OAMSET_25,  8
 	oamend
 
 .Frameset_Amnesia3:
@@ -895,25 +888,18 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_93,  8
 	oamend
 
-.Frameset_Needle:
-	oamframe BATTLE_ANIM_OAMSET_1E,  8
-	oamend
-
 .Frameset_Flower:
 	oamframe BATTLE_ANIM_OAMSET_1B,  7
 	oamframe BATTLE_ANIM_OAMSET_94,  7
 	oamrestart
 
 .Frameset_BarrageBall:
+.Frameset_Heart:
 	oamframe BATTLE_ANIM_OAMSET_95,  8
 	oamend
 
 .Frameset_PayDay:
 	oamframe BATTLE_ANIM_OAMSET_96,  8
-	oamend
-
-.Frameset_Heart:
-	oamframe BATTLE_ANIM_OAMSET_95,  8
 	oamend
 
 .Frameset_SpinningBone:
@@ -948,10 +934,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_9F,  8
 	oamend
 
-.Frameset_Conversion:
-	oamframe BATTLE_ANIM_OAMSET_0F,  8
-	oamend
-
 .Frameset_Sword:
 	oamframe BATTLE_ANIM_OAMSET_6B, 24
 	oamdelete
@@ -977,10 +959,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_AA,  4, OAM_X_FLIP
 	oamframe BATTLE_ANIM_OAMSET_A9,  4, OAM_X_FLIP
 	oamrestart
-
-.Frameset_MetronomeHand:
-	oamframe BATTLE_ANIM_OAMSET_1B,  8
-	oamend
 
 .Frameset_Agility:
 	oamframe BATTLE_ANIM_OAMSET_AC,  8
@@ -1252,4 +1230,22 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_1B,  2
 	oamframe BATTLE_ANIM_OAMSET_7F,  2
 	oamframe BATTLE_ANIM_OAMSET_01,  2 ; HIT
+	oamrestart
+
+.Frameset_SwirlShort:
+	oamframe BATTLE_ANIM_OAMSET_CD,  1
+	oamframe BATTLE_ANIM_OAMSET_D9,  1
+	oamframe BATTLE_ANIM_OAMSET_CE,  1
+	oamframe BATTLE_ANIM_OAMSET_DA,  1
+	oamframe BATTLE_ANIM_OAMSET_CD,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLE_ANIM_OAMSET_D9,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLE_ANIM_OAMSET_CE,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLE_ANIM_OAMSET_DA,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamdelete
+
+.Frameset_Vortex:
+	oamframe BATTLE_ANIM_OAMSET_DB,  1
+	oamframe BATTLE_ANIM_OAMSET_DC,  1
+	oamframe BATTLE_ANIM_OAMSET_DD,  1
+	oamframe BATTLE_ANIM_OAMSET_DE,  1
 	oamrestart

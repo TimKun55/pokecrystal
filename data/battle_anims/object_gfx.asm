@@ -63,6 +63,8 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjFocusBlastGFX
 	anim_obj_gfx  4, AnimObjPetalsGFX
 	anim_obj_gfx 16, AnimObjMoonGFX
+	anim_obj_gfx 24, AnimObjSwirlGFX
+	anim_obj_gfx 32, AnimObjVortexGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
 
 AnimBallObjGFX:
