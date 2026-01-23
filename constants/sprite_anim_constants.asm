@@ -43,7 +43,7 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_SLOTS_EGG                 ; 08
 	const SPRITE_ANIM_OBJ_COMPOSE_MAIL_CURSOR       ; 09
 	const SPRITE_ANIM_OBJ_RED_WALK                  ; 0a
-	const SPRITE_ANIM_OBJ_UNUSED_CURSOR             ; 0b
+           ; 0b
 	const SPRITE_ANIM_OBJ_MEMORY_GAME_CURSOR        ; 0c
 	const SPRITE_ANIM_OBJ_POKEGEAR_ARROW            ; 0d
 	const SPRITE_ANIM_OBJ_TRADE_POKE_BALL           ; 0e
@@ -96,7 +96,7 @@ DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 	const SPRITE_ANIM_FUNC_SLOTS_CHANSEY             ; 0a
 	const SPRITE_ANIM_FUNC_SLOTS_EGG                 ; 0b
 	const SPRITE_ANIM_FUNC_MAIL_CURSOR               ; 0c
-	const SPRITE_ANIM_FUNC_UNUSED_CURSOR             ; 0d
+          ; 0d
 	const SPRITE_ANIM_FUNC_MEMORY_GAME_CURSOR        ; 0e
 	const SPRITE_ANIM_FUNC_POKEGEAR_ARROW            ; 0f
 	const SPRITE_ANIM_FUNC_TRADE_POKE_BALL           ; 10

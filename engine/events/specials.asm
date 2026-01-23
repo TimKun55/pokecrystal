@@ -218,7 +218,7 @@ _VoltorbFlip:
 	ld hl, VoltorbFlip
 	jr StartGameCornerGame
 
-UnusedMemoryGame:
+MemoryGame:
 	call CheckCoinsAndCoinCase
 	ret c
 	ld a, BANK(_MemoryGame)
