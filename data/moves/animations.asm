@@ -2410,16 +2410,21 @@ BattleAnim_FlashCannon:
 	anim_2gfx BATTLE_ANIM_GFX_GLOW, BATTLE_ANIM_GFX_CHARGE
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $2, $0
-	anim_obj BATTLE_ANIM_OBJ_GRAY_GLOW, 48, 96, $0
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+BattleAnim_CannonSub:
+	anim_obj BATTLE_ANIM_OBJ_SMALL_GLOW, 48, 96, $0
 .loop
 	anim_sound 0, 1, SFX_AEROBLAST
-	anim_obj BATTLE_ANIM_OBJ_FLASH_CANNON, 64, 88, $4
+	anim_obj BATTLE_ANIM_OBJ_DRAGON_PULSE, 64, 88, $4
 	anim_wait 4
 	anim_loop 16, .loop
 	anim_incobj 1
 	anim_wait 16
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
 	anim_wait 4
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BLUE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_ret
 
 BattleAnim_WaterPulse:
@@ -3523,17 +3528,7 @@ BattleAnim_DragonPulse:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $55, $1, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
-	anim_obj BATTLE_ANIM_OBJ_SMALL_GLOW, 48, 96, $0
-.loop
-	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj BATTLE_ANIM_OBJ_DRAGON_PULSE, 64, 88, $4
-	anim_wait 4
-	anim_loop 16, .loop
-	anim_incobj 1
-	anim_wait 16
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
-	anim_wait 4
-	anim_ret
+	anim_jump BattleAnim_CannonSub
 
 BattleAnim_Nightmare:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_PURPLE

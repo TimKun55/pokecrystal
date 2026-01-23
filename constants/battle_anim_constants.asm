@@ -222,8 +222,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HAIL                ; bc
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_SMALL ; bd
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_BIG  ; be
-	const BATTLE_ANIM_OBJ_GRAY_GLOW           ; bf
-	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; c0
+;	const BATTLE_ANIM_OBJ_GRAY_GLOW           ; bf
+;	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; c0
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_R       ; c1
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_B       ; c2
 	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; c3
