@@ -355,12 +355,19 @@ AzaleaGymPit2DScript:
 AzaleaGymPit2EScript:
 	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
 	iftrue .Pit2ENoBlue
+	checkevent EVENT_AZALEA_GYM_RED_LEVER
+	iftrue .Pit2ENoRed
 	applymovement PLAYER, AzaleaGymPit2EMovement
 	setscene SCENE_AZALEAGYM_ROPE_WALKABC
 	end
 
 .Pit2ENoBlue:
 	applymovement PLAYER, AzaleaGymPit2ENoBlueMovement
+	setscene SCENE_AZALEAGYM_ROPE_WALKABC
+	end
+
+.Pit2ENoRed
+	applymovement PLAYER, AzaleaGymPit2ENoRedMovement
 	setscene SCENE_AZALEAGYM_ROPE_WALKABC
 	end
 
@@ -638,6 +645,25 @@ AzaleaGymPit2ENoBlueMovement:
 	step RIGHT
 	step UP
 	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+AzaleaGymPit2ENoRedMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step UP
 	step UP
 	step UP
