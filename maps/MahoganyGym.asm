@@ -49,16 +49,11 @@ MahoganyGymPryceScript:
 	writetext PryceText_GlacierBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_ICY_WIND
-	iffalse .MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetextend PryceText_IcyWindSpeech
 
 .PryceScript_Defeat:
-	writetext PryceText_CherishYourPokemon
-	waitbutton
-.MahoganyGym_NoRoomForIcyWind:
-	closetext
-	end
+	writetextend PryceText_CherishYourPokemon
 	
 .PryceScript_16Badges
 	checkflag ENGINE_DAILY_PRYCE_REMATCH
@@ -246,8 +241,8 @@ PryceText_GlacierBadgeSpeech:
 	done
 
 PryceText_IcyWindSpeech:
-	text "That TM contains"
-	line "Icy Wind."
+	text "Pryce: That TM "
+	line "contains Icy Wind."
 
 	para "It inflicts damage"
 	line "and lowers speed."

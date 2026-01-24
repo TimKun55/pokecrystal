@@ -43,16 +43,11 @@ OlivineGymJasmineScript:
 	writetext Jasmine_BadgeSpeech
 	promptbutton
 	verbosegiveitem TM_IRON_TAIL
-	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetextend Jasmine_IronTailSpeech
 
 .GotIronTail:
-	writetext Jasmine_GoodLuck
-	waitbutton
-.NoRoomForIronTail:
-	closetext
-	end
+	writetextend Jasmine_GoodLuck
 	
 .JasmineScript_16Badges
 	checkflag ENGINE_DAILY_JASMINE_REMATCH
@@ -201,9 +196,9 @@ Jasmine_BadgeSpeech:
 	done
 
 Jasmine_IronTailSpeech:
-	text "…You could use"
-	line "that TM to teach"
-	cont "Iron Tail."
+	text "Jasmine:…You could"
+	line "use that TM to"
+	cont "teach Iron Tail."
 	done
 
 Jasmine_GoodLuck:

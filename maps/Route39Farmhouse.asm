@@ -101,14 +101,9 @@ FarmerFScript_GiveSnore:
 	writetext FarmerFText_HealedMiltank
 	promptbutton
 	verbosegiveitem TM_SNORE
-	iffalse FarmerFScript_NoRoomForSnore
 	setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
 FarmerFScript_GotSnore:
-	writetext FarmerFText_SnoreSpeech
-	waitbutton
-FarmerFScript_NoRoomForSnore:
-	closetext
-	end
+	writetextend FarmerFText_SnoreSpeech
 
 FarmhouseBookshelf:
 	jumpstd PictureBookshelfScript

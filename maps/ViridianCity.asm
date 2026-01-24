@@ -43,14 +43,9 @@ ViridianCityDreamEaterFisher:
 	writetext ViridianCityDreamEaterFisherText
 	promptbutton
 	verbosegiveitem TM_DREAM_EATER
-	iffalse .NoRoomForDreamEater
 	setevent EVENT_GOT_TM42_DREAM_EATER
 .GotDreamEater:
-	writetext ViridianCityDreamEaterFisherGotDreamEaterText
-	waitbutton
-.NoRoomForDreamEater:
-	closetext
-	end
+	writetextend ViridianCityDreamEaterFisherGotDreamEaterText
 
 ViridianCityYoungsterScript:
 	jumptextfaceplayer ViridianCityYoungsterText

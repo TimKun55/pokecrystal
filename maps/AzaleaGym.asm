@@ -73,16 +73,11 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_HiveBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_FURY_CUTTER
-	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetextend BugsyText_FuryCutterSpeech
 
 .GotFuryCutter:
-	writetext BugsyText_BugMonsAreDeep
-	waitbutton
-.NoRoomForFuryCutter:
-	closetext
-	end
+	writetextend BugsyText_BugMonsAreDeep
 	
 .BugsyScript_16Badges
 	checkflag ENGINE_DAILY_BUGSY_REMATCH
@@ -726,8 +721,8 @@ BugsyText_HiveBadgeSpeech:
 	done
 
 BugsyText_FuryCutterSpeech:
-	text "TM49 contains"
-	line "Fury Cutter."
+	text "Bugsy: TM49 con-"
+	line "tains Fury Cutter."
 
 	para "If you don't miss,"
 	line "it gets stronger"

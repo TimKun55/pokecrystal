@@ -129,14 +129,9 @@ Route36RockSmashGuyScript:
 	writetext RockSmashGuyText2
 	promptbutton
 	verbosegiveitem TM_ROCK_SMASH
-	iffalse .NoRoomForTM
 	setevent EVENT_GOT_TM08_ROCK_SMASH
 .AlreadyGotRockSmash:
-	writetext RockSmashGuyText3
-	waitbutton
-.NoRoomForTM:
-	closetext
-	end
+	writetextend RockSmashGuyText3
 
 Route36LassScript:
 	faceplayer

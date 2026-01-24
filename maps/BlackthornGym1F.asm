@@ -30,8 +30,10 @@ BlackthornGym1FBouldersCallback:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_RISINGBADGE
-	iftrue .AlreadyGotBadge
+	readvar VAR_BADGES
+	ifequal 16, .ClairScript_16Badges
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .ClairScript_Rematch
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .FightDone
 	writetext ClairIntroText
@@ -54,28 +56,11 @@ BlackthornGymClairScript:
 	writetextend ClairText_GoToDragonsDen
 
 .FightDone:
+	checkevent EVENT_GOT_TM24_DRAGONBREATH
+	iftrue .AlreadyGotTM24
 	writetextend ClairText_TooMuchToExpect
 
-.AlreadyGotBadge:
-	checkevent EVENT_GOT_TM24_DRAGONBREATH
-	iftrue .GotTM24
-	writetext BlackthornGymClairText_YouKeptMeWaiting
-	promptbutton
-	verbosegiveitem TM_DRAGONBREATH
-	iffalse .BagFull
-	setevent EVENT_GOT_TM24_DRAGONBREATH
-	writetext BlackthornGymClairText_DescribeTM24
-	promptbutton
-	sjump .GotTM24
-
-.BagFull:
-	writetextend BlackthornGymClairText_BagFull
-
-.GotTM24:
-	readvar VAR_BADGES
-	ifequal 16, .ClairScript_16Badges
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .ClairScript_Rematch
+.AlreadyGotTM24:
 	writetextend BlackthornGymClairText_League
 	
 .ClairScript_16Badges
@@ -257,11 +242,6 @@ BlackthornGymClairText_DescribeTM24:
 	para "If you don't want"
 	line "it, you don't have"
 	cont "to take it."
-	done
-
-BlackthornGymClairText_BagFull:
-	text "What is this? You"
-	line "don't have room?"
 	done
 
 BlackthornGymClairText_League:

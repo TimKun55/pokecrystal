@@ -125,16 +125,11 @@ EcruteakGymMortyScript:
 	writetext MortyText_FogBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_SHADOW_BALL
-	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetextend MortyText_ShadowBallSpeech
 
 .GotShadowBall:
-	writetext MortyFightDoneText
-	waitbutton
-.NoRoomForShadowBall:
-	closetext
-	end
+	writetextend MortyFightDoneText
 	
 .MortyScript_16Badges
 	checkflag ENGINE_DAILY_MORTY_REMATCH
@@ -505,10 +500,12 @@ MortyText_FogBadgeSpeech:
 	done
 
 MortyText_ShadowBallSpeech:
-	text "It's Shadow Ball."
-	line "It causes damage"
-	cont "and may reduce"
-	cont "Sp.Def."
+	text "Morty: It's"
+	line "Shadow Ball."
+
+	para "It causes damage"
+	line "and may reduce"
+	cont "the foe's Sp.Def."
 
 	para "Use it if it"
 	line "appeals to you."

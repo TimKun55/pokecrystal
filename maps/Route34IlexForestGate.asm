@@ -51,14 +51,9 @@ Route34IlexForestGateTeacherScript:
 	writetext Route34IlexForestGateTeacherText
 	promptbutton
 	verbosegiveitem TM_SWEET_SCENT
-	iffalse .NoRoom
 	setevent EVENT_GOT_TM12_SWEET_SCENT
 .GotSweetScent:
-	writetext Route34IlexForestGateTeacher_GotSweetScent
-	waitbutton
-.NoRoom:
-	closetext
-	end
+	writetextend Route34IlexForestGateTeacher_GotSweetScent
 
 .ForestIsRestless:
 	writetext Route34IlexForestGateTeacher_ForestIsRestless

@@ -48,11 +48,11 @@ GoldenrodGymWhitneyScript:
 	writetextend WhitneyYouMeanieText
 
 .StoppedCrying:
+	opentext
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
-	opentext
 	writetext WhitneyWhatDoYouWantText
 	promptbutton
 	waitsfx
@@ -65,21 +65,14 @@ GoldenrodGymWhitneyScript:
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
 .GotPlainBadge:
-	opentext
 	writetext WhitneyPlainBadgeText
 	promptbutton
 	verbosegiveitem TM_ATTRACT
-	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetextend WhitneyAttractText
 
 .GotAttract:
-	opentext
-	writetext WhitneyGoodCryText
-	waitbutton
-.NoRoomForAttract:
-	closetext
-	end
+	writetextend WhitneyGoodCryText
 	
 .WhitneyScript_16Badges
 	checkflag ENGINE_DAILY_WHITNEY_REMATCH
@@ -277,9 +270,11 @@ WhitneyPlainBadgeText:
 	done
 
 WhitneyAttractText:
-	text "It's Attract!"
-	line "It makes full use"
-	cont "of a #mon's"
+	text "Whitney: It's the"
+	line "move Attract!"
+
+	para "It makes full use"
+	line "of a #mon's"
 	cont "charm."
 
 	para "Isn't it just per-"

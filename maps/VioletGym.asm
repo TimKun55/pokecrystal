@@ -45,16 +45,11 @@ VioletGymFalknerScript:
 	writetext FalknerZephyrBadgeText
 	promptbutton
 	verbosegiveitem TM_MUD_SLAP
-	iffalse .NoRoomForMudSlap
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetextend FalknerTMMudSlapText
 
 .SpeechAfterTM:
-	writetext FalknerFightDoneText
-	waitbutton
-.NoRoomForMudSlap:
-	closetext
-	end
+	writetextend FalknerFightDoneText
 
 .FalknerScript_16Badges
 	checkflag ENGINE_DAILY_FALKNER_REMATCH
@@ -214,10 +209,10 @@ FalknerZephyrBadgeText:
 	done
 
 FalknerTMMudSlapText:
-	text "By using a TM, a"
-	line "#mon will"
-	cont "instantly learn a"
-	cont "new move."
+	text "Falkner: By using"
+	line "a TM, a #mon"
+	cont "will instantly"
+	cont "learn a new move."
 
 	para "A TM can be used"
 	line "as many times as"

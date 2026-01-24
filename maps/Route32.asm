@@ -92,14 +92,9 @@ Route32RoarTMGuyScript:
 	writetext Text_RoarIntro
 	promptbutton
 	verbosegiveitem TM_ROAR
-	iffalse .Finish
 	setevent EVENT_GOT_TM05_ROAR
 .AlreadyHaveRoar:
-	writetext Text_RoarOutro
-	waitbutton
-.Finish:
-	closetext
-	end
+	writetextend Text_RoarOutro
 
 Route32WannaBuyASlowpokeTailScript:
 	turnobject ROUTE32_FISHER4, DOWN

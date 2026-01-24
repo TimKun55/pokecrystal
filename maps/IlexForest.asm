@@ -378,14 +378,9 @@ IlexForestHeadbuttGuyScript:
 	writetext Text_HeadbuttIntro
 	promptbutton
 	verbosegiveitem TM_HEADBUTT
-	iffalse .BagFull
 	setevent EVENT_GOT_TM02_HEADBUTT
 .AlreadyGotHeadbutt:
-	writetext Text_HeadbuttOutro
-	waitbutton
-.BagFull:
-	closetext
-	end
+	writetextend Text_HeadbuttOutro
 
 IlexForestPineco:
 	cry PINECO

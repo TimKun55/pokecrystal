@@ -21,14 +21,9 @@ AerialAceHouseWoman:
 	writetext AerialAceHouseWomanLoyalText
 	promptbutton
 	verbosegiveitem TM_AERIAL_ACE
-	iffalse .Done
 	setevent EVENT_GOT_TM37_AERIAL_ACE
 .AlreadyGotItem:
-	writetext AerialAceHouseAerialAceDescription
-	waitbutton
-.Done:
-	closetext
-	end
+	writetextend AerialAceHouseAerialAceDescription
 
 .Disloyal:
 	writetextend AerialAceHouseWomanDisloyalText

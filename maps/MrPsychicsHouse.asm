@@ -14,13 +14,8 @@ MrPsychic:
 	writetext MrPsychicText1
 	promptbutton
 	verbosegiveitem TM_PSYCHIC_M
-	iffalse .Done
 .AlreadyGotItem:
-	writetext MrPsychicText2
-	waitbutton
-.Done:
-	closetext
-	end
+	writetextend MrPsychicText2
 
 MrPsychicsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -38,7 +33,8 @@ MrPsychicText1:
 	done
 
 MrPsychicText2:
-	text "TM29 is Psychic."
+	text "Mr Psychic: TM29"
+	line "is Psychic."
 
 	para "It may lower the"
 	line "target's Sp.Def."

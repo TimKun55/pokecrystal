@@ -188,14 +188,9 @@ Route31MailRecipientScript:
 	promptbutton
 	setevent EVENT_GAVE_KENYA
 	verbosegiveitem TM_NIGHTMARE
-	iffalse .NoRoomForItems
 	setevent EVENT_GOT_TM50_NIGHTMARE
 .DescribeNightmare:
-	writetext Text_Route31DescribeNightmare
-	waitbutton
-.NoRoomForItems:
-	closetext
-	end
+	writetextend Text_Route31DescribeNightmare
 
 .WrongMail:
 	writetextend Text_Route31WrongMail

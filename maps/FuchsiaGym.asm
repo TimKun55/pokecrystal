@@ -73,7 +73,6 @@ FuchsiaGymJanineScript:
 	writetext JanineText_ToxicSpeech
 	promptbutton
 	verbosegiveitem TM_TOXIC
-	iffalse .AfterTM
 	setevent EVENT_GOT_TM06_TOXIC
 .AfterTM:
 	writetextend JanineText_ApplyMyself
@@ -314,7 +313,7 @@ JanineText_ToxicSpeech:
 	line "tough! I have a"
 	cont "special gift!"
 
-	para "It's Toxic, a pow-"
+	para "It's Toxic; a pow-"
 	line "erful poison that"
 	cont "steadily saps the"
 	cont "victim's HP."

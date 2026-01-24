@@ -26,14 +26,9 @@ SoulHouseGrannyScript:
 	writetext SoulHouseGrannyOldTrainerText
 	promptbutton
 	verbosegiveitem TM_HEX
-	iffalse .NoRoom
 	setevent EVENT_GOT_TM_HEX
 	writetextend SoulHouseGrannyOldHexText
 
-.NoRoom:
-	closetext
-	end	
-	
 .GotTM11
 	writetextend SoulHouseGrannyText
 	

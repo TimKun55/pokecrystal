@@ -68,16 +68,11 @@ CianwoodGymChuckScript:
 	writetext ChuckExplainBadgeText
 	promptbutton
 	verbosegiveitem TM_DYNAMICPUNCH
-	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetextend ChuckExplainTMText
 
 .AlreadyGotTM:
-	writetext ChuckAfterText
-	waitbutton
-.BagFull:
-	closetext
-	end
+	writetextend ChuckAfterText
 
 .ChuckScript_16Badges
 	checkflag ENGINE_DAILY_CHUCK_REMATCH
@@ -296,8 +291,8 @@ ChuckExplainBadgeText:
 	done
 
 ChuckExplainTMText:
-	text "That is Dynamic-"
-	line "Punch."
+	text "Chuck: That is"
+	line "DynamicPunch."
 
 	para "It doesn't always"
 	line "hit, but when it"

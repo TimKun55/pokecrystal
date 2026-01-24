@@ -21,14 +21,9 @@ CeladonCurseHousePharmacistScript:
 	writetext CeladonCurseHousePharmacistStoryText
 	promptbutton
 	verbosegiveitem TM_CURSE
-	iffalse .NoRoom
 	setevent EVENT_GOT_TM03_CURSE
 .GotCurse:
-	writetext CeladonCurseHousePharmacistCurseText
-	waitbutton
-.NoRoom:
-	closetext
-	end
+	writetextend CeladonCurseHousePharmacistCurseText
 
 CeladonCurseHousePharmacistIntroText:
 	text "Let me recount a"
