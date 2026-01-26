@@ -423,7 +423,7 @@ SummaryScreen_InitUpperHalf:
 
 	; status index in a
 	ld hl, SummaryStatusIconGFX
-	ld bc, 2 * LEN_2BPP_TILE
+	ld bc, 2 * TILE_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -1763,7 +1763,7 @@ PrintMonTypeTiles:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeLightIconGFX ; from gfx\summary\types_light.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 tiles wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -1793,7 +1793,7 @@ PrintMonTypeTiles:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeDarkIconGFX ; from gfx\summary\types_dark.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 Tiles Wide
 	call AddNTimes ; type index needs to be in 'a'
 	ld d, h
 	ld e, l

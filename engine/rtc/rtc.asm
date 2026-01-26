@@ -1,24 +1,24 @@
 StopRTC: ; unreferenced
-	ld a, SRAM_ENABLE
-	ld [MBC3SRamEnable], a
+	ld a, RAMG_SRAM_ENABLE
+	ld [rRAMG], a
 	call LatchClock
-	ld a, RTC_DH
-	ld [MBC3SRamBank], a
-	ld a, [MBC3RTC]
-	set 6, a ; halt
-	ld [MBC3RTC], a
+	ld a, RAMB_RTC_DH
+	ld [rRAMB], a
+	ld a, [rRTCREG]
+	set B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	ld [rRTCREG], a
 	call CloseSRAM
 	ret
 
 StartRTC:
-	ld a, SRAM_ENABLE
-	ld [MBC3SRamEnable], a
+	ld a, RAMG_SRAM_ENABLE
+	ld [rRAMG], a
 	call LatchClock
-	ld a, RTC_DH
-	ld [MBC3SRamBank], a
-	ld a, [MBC3RTC]
-	res 6, a ; halt
-	ld [MBC3RTC], a
+	ld a, RAMB_RTC_DH
+	ld [rRAMB], a
+	ld a, [rRTCREG]
+	res B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	ld [rRTCREG], a
 	call CloseSRAM
 	ret
 
@@ -75,15 +75,15 @@ StageRTCTimeForSave:
 	ret
 
 SaveRTC:
-	ld a, SRAM_ENABLE
-	ld [MBC3SRamEnable], a
+	ld a, RAMG_SRAM_ENABLE
+	ld [rRAMG], a
 	call LatchClock
-	ld hl, MBC3RTC
-	ld a, RTC_DH
-	ld [MBC3SRamBank], a
-	res 7, [hl]
+	ld hl, rRTCREG
+	ld a, RAMB_RTC_DH
+	ld [rRAMB], a
+	res B_RAMB_RTC_DH_CARRY, [hl] ; 7, [hl]
 	ld a, BANK(sRTCStatusFlags)
-	ld [MBC3SRamBank], a
+	ld [rRAMB], a
 	xor a
 	ld [sRTCStatusFlags], a
 	call CloseSRAM
@@ -104,9 +104,9 @@ StartClock::
 
 _FixDays:
 	ld hl, hRTCDayHi
-	bit 7, [hl]
+	bit B_RAMB_RTC_DH_CARRY, [hl] ; 7, [hl]
 	jr nz, .set_bit_7
-	bit 6, [hl]
+	bit B_RAMB_RTC_DH_HALT, [hl] ; 6, [hl]
 	jr nz, .set_bit_7
 	xor a
 	ret

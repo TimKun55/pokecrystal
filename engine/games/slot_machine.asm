@@ -122,7 +122,7 @@ _SlotMachine:
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	ret
 
 ; no, the LOAD section directive does not work here
@@ -130,22 +130,22 @@ _SlotMachine:
 ; just does a unaccounted bankswitch to the payload
 	push af
 	ld a, BANK(.LCDCallbackPayload)
-	ld [MBC3RomBank], a
+	ld [rROMB0], a
 	jp .LCDCallbackPayload
 .LCDCallbackPoint_JumpBack:
 	ldh a, [hROMBank]
-	ld [MBC3RomBank], a
+	ld [rROMB0], a
 	pop af
 	reti
 ; vblank hook does not need to save registers
 ; since it runs INSIDE vblank
 .LCDCallbackPoint_VblankHook:
 	ld a, BANK(.VBlankHookPayload)
-	ld [MBC3RomBank], a
+	ld [rROMB0], a
 	jp .VBlankHookPayload
 .LCDCallbackPoint_VblankHook_JumpBack:
 	ldh a, [hROMBank]
-	ld [MBC3RomBank], a
+	ld [rROMB0], a
 	rst Bankswitch
 	ret
 .LCDCallbackPoint_End:
@@ -176,7 +176,7 @@ _SlotMachine:
 
 .bgp2light
 ; bgp2 second color
-	ld a, 18 | 1 << rBGPI_AUTO_INCREMENT
+	ld a, 18 | BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld a, $8e
 	ldh [rBGPD], a
@@ -186,7 +186,7 @@ _SlotMachine:
 
 .bgp1light
 ; bgp1 second color
-	ld a, 10 | 1 << rBGPI_AUTO_INCREMENT
+	ld a, 10 | BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld a, $8e
 	ldh [rBGPD], a
@@ -196,14 +196,14 @@ _SlotMachine:
 
 .initial_color
 ; bgp2 second color
-	ld a, 18 | 1 << rBGPI_AUTO_INCREMENT
+	ld a, 18 | BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld a, $c5
 	ldh [rBGPD], a
 	ld a, $6d
 	ldh [rBGPD], a
 ; bgp1 second color
-	ld a, 10 | 1 << rBGPI_AUTO_INCREMENT
+	ld a, 10 | BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld a, $88
 	ldh [rBGPD], a
@@ -263,7 +263,7 @@ _SlotMachine:
 	ld a, [hl]
 	ld e, a
 MACRO applybcpal
-	ld a, (\1*8) + (\2*2) | 1 << rBGPI_AUTO_INCREMENT
+	ld a, (\1*8) + (\2*2) | BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld a, b
 	ldh [rBGPD], a
@@ -548,7 +548,7 @@ ENDM
 	call CopyBytes
 
 	ld hl, rLCDC
-	set rLCDC_SPRITE_SIZE, [hl] ; 8x16
+	set B_LCDC_OBJ_SIZE, [hl] ; 8x16
 	call EnableLCD
 	ld hl, wSlots
 	ld bc, wSlotsEnd - wSlots
@@ -754,7 +754,7 @@ AnimateSlotReelIcon:
 	and $7
 	ret nz
 	ld hl, wShadowOAMSprite16TileID
-	ld c, NUM_SPRITE_OAM_STRUCTS - 16
+	ld c, OAM_COUNT - 16
 .loop
 	ld a, [hl]
 	ld b, a
@@ -766,7 +766,7 @@ AnimateSlotReelIcon:
 	ld [hl], a ; tile id
 .next
 	inc hl
-rept SPRITEOAMSTRUCT_LENGTH - 1
+rept OBJ_SIZE - 1
 	inc hl
 endr
 	dec c
@@ -777,7 +777,7 @@ ResetSlotReelIcon:
 ; d = which slot reel icon to reset,
 ;     refer to wSlotMatched values
 	ld hl, wShadowOAMSprite16TileID
-	ld c, NUM_SPRITE_OAM_STRUCTS - 16
+	ld c, OAM_COUNT - 16
 .loop
 	ld a, [hl]
 	ld b, a
@@ -792,7 +792,7 @@ ResetSlotReelIcon:
 	ld [hl], a ; tile id
 .next
 	inc hl
-rept SPRITEOAMSTRUCT_LENGTH - 1
+rept OBJ_SIZE - 1
 	inc hl
 endr
 	dec c
@@ -1361,7 +1361,7 @@ Slots_UpdateReelPositionAndOAM:
 	ld a, [de]
 	ld [hli], a ; tile id
 	call GetSlotIconPalette
-	set OAM_PRIORITY, a
+	set B_OAM_PRIO, a
 	ld [hli], a ; attributes
 
 	ld a, [wCurReelYCoord]
@@ -1374,7 +1374,7 @@ Slots_UpdateReelPositionAndOAM:
 	inc a
 	ld [hli], a ; tile id
 	call GetSlotIconPalette
-	set OAM_PRIORITY, a
+	set B_OAM_PRIO, a
 	ld [hli], a ; attributes
 	inc de
 	ld a, [wCurReelYCoord]

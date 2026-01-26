@@ -107,15 +107,15 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
-	dba Music_LugiaBattle
-	dba Music_HoOhBattle
-	dba Music_KantoLegendBattle
-	dba Music_SafariZone
-	dba Music_CinnabarIsland
-	dba Music_AbandonedShip
-	dba Music_CeruleanCave
-	dba Music_LyraEncounter
-	dba Music_LyraDeparture
+	dba Music_LugiaBattleHGSS
+	dba Music_HoOhBattleHGSS
+	dba Music_KantoLegendBattleXY
+	dba Music_SafariZoneGateHGSS
+	dba Music_CinnabarIslandHGSS
+	dba Music_AbandonedShipRSE
+	dba Music_CeruleanCaveRBY
+	dba Music_LyraEncounterHGSS
+	dba Music_LyraDepartureHGSS
 	dba Music_PokeMartHGSS
 	dba Music_BicycleRB
 	dba Music_SurfingRBY

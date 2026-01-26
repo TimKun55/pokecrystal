@@ -5,7 +5,7 @@ TrainerPalettes:
 ; Each .gbcpal is generated from the corresponding .png, and
 ; only the middle two colors are included, not black or white.
 
-	table_width PAL_COLOR_SIZE * 2, TrainerPalettes
+	table_width COLOR_SIZE  * 2, TrainerPalettes
 
 PlayerPalette: ; Ethan uses the same colors as Cal
 LyraPalette:

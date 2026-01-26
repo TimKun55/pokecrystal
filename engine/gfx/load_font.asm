@@ -21,15 +21,15 @@ _LoadStandardFont::
 	ld hl, vTiles1
 	lb bc, BANK(Font), 32 ; "A" to "]"
 	call Get1bppViaHDMA
-	ld de, Font + 32 * LEN_1BPP_TILE
+	ld de, Font + 32 * TILE_1BPP_SIZE
 	ld hl, vTiles1 tile $20
 	lb bc, BANK(Font), 26 ; "a" to "z" (skip "┌" to "┘")
 	call Get1bppViaHDMA
-	ld de, Font + 64 * LEN_1BPP_TILE
+	ld de, Font + 64 * TILE_1BPP_SIZE
 	ld hl, vTiles1 tile $40
 	lb bc, BANK(Font), 32 ; $c0 to "←"
 	call Get1bppViaHDMA
-	ld de, Font + 96 * LEN_1BPP_TILE
+	ld de, Font + 96 * TILE_1BPP_SIZE
 	ld hl, vTiles1 tile $60
 	lb bc, BANK(Font), 32 ; "'" to "9"
 	call Get1bppViaHDMA
@@ -61,7 +61,7 @@ _LoadExpBarGFX::
 	
 LoadFrame:
 	ld a, [wTextboxFrame]
-	ld bc, TEXTBOX_FRAME_TILES * LEN_1BPP_TILE
+	ld bc, TEXTBOX_FRAME_TILES * TILE_1BPP_SIZE
 	ld hl, Frames
 	call AddNTimes
 	ld d, h

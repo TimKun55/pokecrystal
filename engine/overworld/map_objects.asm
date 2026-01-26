@@ -2409,7 +2409,7 @@ CheckObjectCoveredByTextbox:
 	srl a
 	cp SCREEN_WIDTH
 	jr c, .ok3
-	sub BG_MAP_WIDTH
+	sub TILEMAP_WIDTH
 .ok3
 	ldh [hCurSpriteXCoord], a
 
@@ -2442,7 +2442,7 @@ CheckObjectCoveredByTextbox:
 	srl a
 	cp SCREEN_HEIGHT
 	jr c, .ok6
-	sub BG_MAP_HEIGHT
+	sub TILEMAP_HEIGHT
 .ok6
 	ldh [hCurSpriteYCoord], a
 
@@ -2574,13 +2574,13 @@ _SetPlayerPalette:
 	ret z
 	ld a, d
 	swap a
-	and PALETTE_MASK
+	and OAM_PALETTE
 	ld d, a
 	ld bc, wPlayerStruct
 	ld hl, OBJECT_PALETTE
 	add hl, bc
 	ld a, [hl]
-	and ~PALETTE_MASK
+	and ~OAM_PALETTE
 	or d
 	ld [hl], a
 	ret
@@ -2796,16 +2796,16 @@ _UpdateSprites::
 .fill
 	ld a, [wStateFlags]
 	bit LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
-	ld b, NUM_SPRITE_OAM_STRUCTS * SPRITEOAMSTRUCT_LENGTH
+	ld b, OAM_SIZE
 	jr z, .ok
-	ld b, (NUM_SPRITE_OAM_STRUCTS - 12) * SPRITEOAMSTRUCT_LENGTH
+	ld b, (OAM_COUNT - 12) * OBJ_SIZE
 .ok
 	ldh a, [hUsedSpriteIndex]
 	cp b
 	ret nc
 	ld l, a
 	ld h, HIGH(wShadowOAM)
-	ld de, SPRITEOAMSTRUCT_LENGTH
+	ld de, OBJ_SIZE
 	ld a, b
 	ld c, SCREEN_HEIGHT_PX + 2 * TILE_WIDTH
 .loop
@@ -2950,30 +2950,30 @@ InitSprites:
 	xor a
 	bit 7, [hl]
 	jr nz, .not_vram1
-	or VRAM_BANK_1
+	or OAM_BANK1
 .not_vram1
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	ld e, [hl]
 	bit OBJ_FLAGS2_7, e
 	jr z, .not_priority
-	or PRIORITY
+	or OAM_PRIO
 .not_priority
 	bit USE_OBP1_F, e
 	jr z, .not_obp_num
-	or OBP_NUM
+	or OAM_PAL1
 .not_obp_num
 	ld hl, OBJECT_PALETTE
 	add hl, bc
 	ld d, a
 	ld a, [hl]
-	and PALETTE_MASK
+	and OAM_PALETTE
 	or d
 	ld d, a
 	xor a
 	bit OVERHEAD_F, e
 	jr z, .not_overhead
-	or PRIORITY
+	or OAM_PRIO
 .not_overhead
 	ldh [hCurSpriteOAMFlags], a
 	ld hl, OBJECT_SPRITE_X
@@ -3049,7 +3049,7 @@ InitSprites:
 	ldh a, [hCurSpriteOAMFlags]
 	or e
 .nope2
-	and OBP_NUM | X_FLIP | Y_FLIP | PRIORITY
+	and OAM_PAL1 | OAM_XFLIP | OAM_YFLIP | OAM_PRIO
 	or d
 	ld [bc], a ; attributes
 	inc c

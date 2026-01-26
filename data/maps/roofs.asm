@@ -44,7 +44,7 @@ MapGroupRoofs:
 
 Roofs:
 ; entries correspond to ROOF_* constants
-	table_width ROOF_LENGTH * LEN_2BPP_TILE, Roofs
+	table_width ROOF_LENGTH * TILE_SIZE, Roofs
 INCBIN "gfx/tilesets/roofs/violet.2bpp"
 INCBIN "gfx/tilesets/roofs/olivine.2bpp"
 INCBIN "gfx/tilesets/roofs/goldenrod.2bpp"

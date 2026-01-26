@@ -442,21 +442,21 @@ TradeAnim_InitTubeAnim:
 	ld a, 1
 	ldh [rVBK], a
 	hlbgcoord 12, 14
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 15
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 16
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 17
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	xor a
 	ldh [rVBK], a
 .from_player
@@ -1366,7 +1366,7 @@ TradeAnim_Wait80Frames:
 
 TradeAnim_BlankTilemap:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	call ByteFill
 	ret

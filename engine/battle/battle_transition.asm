@@ -22,7 +22,7 @@ DoBattleTransition:
 	ld a, [hl]
 	push af
 	vc_hook Reduce_battle_transition_flashing
-	ld [hl], $1
+	ld [hl], VBLANK_CUTSCENE
 
 .loop
 	ld a, [wJumptableIndex]
@@ -33,10 +33,10 @@ DoBattleTransition:
 	jr .loop
 
 .done
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wBGPals1
 	ld bc, 8 palettes
@@ -44,7 +44,7 @@ DoBattleTransition:
 	call ByteFill
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld a, %11111111
 	ld [wBGP], a
@@ -59,7 +59,7 @@ DoBattleTransition:
 	ldh [hSCY], a
 
 	ld a, $1 ; unnecessary bankswitch?
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	pop af
 	vc_hook Stop_reducing_battle_transition_flashing
 	ldh [hVBlank], a
@@ -125,10 +125,10 @@ LoadTrainerBattlePokeballTiles:
 	ret
 
 ConvertTrainerBattlePokeballTilesTo2bpp:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push hl
 	ld hl, wDecompressScratch
 	ld bc, $28 tiles
@@ -147,7 +147,7 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 	ld c, $28
 	call Request2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 TrainerBattlePokeballTiles:
@@ -336,7 +336,7 @@ StartTrainerBattle_SetUpForWavyOutro:
 	vc_hook Stop_reducing_battle_transition_flashing_WavyOutro
 	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call StartTrainerBattle_NextScene
 
 	ld a, JP_INSTRUCTION
@@ -396,7 +396,7 @@ StartTrainerBattle_SetUpForSpinOutro:
 	vc_hook Stop_reducing_battle_transition_flashing_SpinOutro
 	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call StartTrainerBattle_NextScene
 	xor a
 	ld [wBattleTransitionCounter], a
@@ -539,7 +539,7 @@ StartTrainerBattle_SetUpForRandomScatterOutro:
 	vc_hook Stop_reducing_battle_transition_flashing_ScatterOutro
 	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call StartTrainerBattle_NextScene
 	ld a, $10
 	ld [wBattleTransitionCounter], a
@@ -614,7 +614,7 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hBGMapMode], a
 
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	inc b
 	inc c
 	jr .enter_loop_midway
@@ -752,10 +752,10 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr nz, .not_dark
 	ld hl, .darkpals
 .not_dark
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call .copypals
 	push hl
 	ld de, wBGPals1 palette PAL_BG_TEXT
@@ -766,7 +766,7 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ld bc, 1 palettes
 	call CopyBytes
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
@@ -877,10 +877,10 @@ opt b.X ; . = 0, X = 1
 popo
 
 WipeLYOverrides:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wLYOverrides
 	call .wipe
@@ -888,7 +888,7 @@ WipeLYOverrides:
 	call .wipe
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .wipe

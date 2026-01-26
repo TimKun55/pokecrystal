@@ -28,7 +28,7 @@ _TitleScreen:
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
-	ld bc, 20 * BG_MAP_WIDTH
+	ld bc, 20 * TILEMAP_WIDTH
 	xor a
 	call ByteFill
 
@@ -38,7 +38,7 @@ _TitleScreen:
 
 ; line 0 (copyright)
 	hlbgcoord 0, 0, vBGMap1
-	ld bc, BG_MAP_WIDTH
+	ld bc, TILEMAP_WIDTH
 	ld a, 7 ; palette
 	call ByteFill
 
@@ -46,43 +46,45 @@ _TitleScreen:
 
 ; Apply logo gradient:
 
-; lines 3-4
+; lines 3-6
 	hlbgcoord 0, 3
-	ld bc, 2 * BG_MAP_WIDTH
+	ld bc, 4 * TILEMAP_WIDTH
 	ld a, 2
 	call ByteFill
-; line 5
-	hlbgcoord 0, 5
-	ld bc, BG_MAP_WIDTH
+; line 7-9
+	hlbgcoord 0, 7
+	ld bc, 3 * TILEMAP_WIDTH
 	ld a, 3
 	call ByteFill
-; line 6
-	hlbgcoord 0, 6
-	ld bc, BG_MAP_WIDTH
-	ld a, 4
-	call ByteFill
-; line 7
-	hlbgcoord 0, 7
-	ld bc, BG_MAP_WIDTH
-	ld a, 5
-	call ByteFill
-; lines 8-9
-	hlbgcoord 0, 8
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 6
-	call ByteFill
 
-; 'CRYSTAL VERSION'
-	hlbgcoord 4, 9
-	ld bc, 13 ; length of version text
+; 'TIM'S CRYSTAL'
+	hlbgcoord 6, 9
+	ld bc, 9 ; length of version text
 	ld a, 1
 	call ByteFill
 
 ; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
-	call ByteFill
+;	hlbgcoord 0, 12
+;	ld bc, 6 * TILEMAP_WIDTH ; the rest of the screen
+;	ld a, 0 | OAM_BANK1
+;	call ByteFill
+
+	hlbgcoord 6, 12
+	lb bc, 6, 8
+	ld a, 4 | OAM_BANK1
+.row
+	push bc
+	push hl
+.col
+	ld [hli], a
+	dec c
+	jr nz, .col
+	pop hl
+	ld bc, TILEMAP_WIDTH
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .row
 
 ; Back to VRAM bank 0
 	ld a, 0
@@ -93,6 +95,11 @@ _TitleScreen:
 	ld de, vTiles1
 	call Decompress
 
+; Decompress Unowns
+	ld hl, TitleUnownGFX
+	ld de, vTiles2 tile $1A
+	call Decompress
+
 ; Decompress background crystal
 	ld hl, TitleCrystalGFX
 	ld de, vTiles0
@@ -100,7 +107,7 @@ _TitleScreen:
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
-	ld bc, 64 * BG_MAP_WIDTH
+	ld bc, 64 * TILEMAP_WIDTH
 	ld a, " "
 	call ByteFill
 
@@ -118,18 +125,42 @@ _TitleScreen:
 	ld e, 16
 	call DrawTitleGraphic
 
+; Draw Unowns
+	hlcoord 1, 11
+	lb bc, 2, 2
+	lb de, $1a, 2
+	call DrawTitleGraphic
+	hlcoord 2, 14
+	lb bc, 2, 2
+	lb de, $1e, 2
+	call DrawTitleGraphic
+	hlcoord 17, 11
+	lb bc, 3, 2
+	lb de, $22, 2
+	call DrawTitleGraphic
+	hlcoord 16, 14
+	lb bc, 2, 2
+	lb de, $28, 2
+	call DrawTitleGraphic
+	hlcoord 18, 14
+	ld [hl], $2c
+	hlcoord 5, 11
+	ld [hl], $2d
+	hlcoord 15, 11
+	ld [hl], $2e
+
 ; Initialize running Suicune?
 	ld d, $0
 	call LoadSuicuneFrame
 
 ; Initialize background crystal
-	call InitializeBackground
+	call InitializeCrystalSprites
 
 ; Update palette colors
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, TitleScreenPalettes
 	ld de, wBGPals1
@@ -142,14 +173,14 @@ _TitleScreen:
 	call CopyBytes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; LY/SCX trickery starts here
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; Make alternating lines come in from opposite sides
 
@@ -180,7 +211,7 @@ _TitleScreen:
 	ldh [hLCDCPointer], a
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; Reset audio
 	call ChannelsOff
@@ -188,7 +219,7 @@ _TitleScreen:
 
 ; Set sprite size to 8x16
 	ldh a, [rLCDC]
-	set rLCDC_SPRITE_SIZE, a
+	set B_LCDC_OBJ_SIZE, a
 	ldh [rLCDC], a
 
 	ld a, +112
@@ -303,41 +334,70 @@ DrawTitleGraphic:
 	jr nz, .bgrows
 	ret
 
-InitializeBackground:
+InitializeCrystalSprites:
 	ld hl, wShadowOAMSprite00
-	ld d, -$22
-	ld e, $0
-	ld c, 5
+	lb de, -$22, $00 ; initial top-left Y coord, top-left tile ID
+	ld c, 5 ; column height
 .loop
 	push bc
-	call .InitColumn
+	call .InitRow
 	pop bc
-	ld a, $10
+	ld a, $10 ; increment Y coord
 	add d
 	ld d, a
 	dec c
 	jr nz, .loop
+
+	; set palettes for crystal sprites besides #0
+	ld a, 0 | OAM_PRIO
+	ld [wShadowOAMSprite00Attributes], a
+	ld [wShadowOAMSprite01Attributes], a
+	ld [wShadowOAMSprite02Attributes], a
+	ld [wShadowOAMSprite06Attributes], a
+	ld [wShadowOAMSprite21Attributes], a
+	ld [wShadowOAMSprite24Attributes], a
+	ld [wShadowOAMSprite25Attributes], a
+	ld [wShadowOAMSprite26Attributes], a
+	ld a, 2 | OAM_PRIO
+	ld [wShadowOAMSprite07Attributes], a
+	ld [wShadowOAMSprite19Attributes], a
+	ld [wShadowOAMSprite20Attributes], a
+	inc a ; 3 | OAM_PRIO
+	ld [wShadowOAMSprite08Attributes], a
+
+	; create overlapping sprites
+	ld hl, .OverlappingSprites
+	ld de, wShadowOAMSprite30
+	ld bc, 6 * OBJ_SIZE
+	call CopyBytes
 	ret
 
-.InitColumn:
-	ld c, $6
-	ld b, $40
+.InitRow:
+	lb bc, $40, $6 ; left X coord, row width
 .loop2
 	ld a, d
-	ld [hli], a ; y
+	ld [hli], a ; y coord
 	ld a, b
-	ld [hli], a ; x
-	add $8
+	ld [hli], a ; x coord
+	add $8 ; increment X coord
 	ld b, a
 	ld a, e
 	ld [hli], a ; tile id
+	inc e ; increment tile ID
 	inc e
-	inc e
-	ld a, 0 | PRIORITY
+	ld a, 1 | OAM_PRIO
 	ld [hli], a ; attributes
 	dec c
 	jr nz, .loop2
 	ret
+
+.OverlappingSprites:
+	db -$12, $40, $3c, 1 | OAM_PRIO
+	db -$12, $48, $3e, 4 | OAM_PRIO
+	db  $1e, $40, $40, 1 | OAM_PRIO
+	db  $1d, $48, $42, 1 | OAM_PRIO
+	db  $1e, $50, $44, 1 | OAM_PRIO
+	db  $0e, $60, $46, 0 | OAM_PRIO
 
 AnimateTitleCrystal:
 ; Move the title screen crystal downward until it's fully visible
@@ -349,13 +409,13 @@ AnimateTitleCrystal:
 	cp 6 + 2 * TILE_WIDTH
 	ret z
 
-; Move all 30 parts of the crystal down by 2
-	ld c, 30
+; Move all 36 parts of the crystal down by 2
+	ld c, 36
 .loop
 	ld a, [hl]
 	add 2
 	ld [hli], a ; y
-rept SPRITEOAMSTRUCT_LENGTH - 1
+rept OBJ_SIZE - 1
 	inc hl
 endr
 	dec c
@@ -365,6 +425,9 @@ endr
 
 TitleSuicuneGFX:
 INCBIN "gfx/title/suicune.2bpp.lz"
+
+TitleUnownGFX:
+INCBIN "gfx/title/unowns.2bpp.lz"
 
 TitleLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"
