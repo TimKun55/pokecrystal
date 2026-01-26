@@ -152,7 +152,6 @@ INCLUDE "audio/music/titlescreen.asm"
 
 SECTION "New Songs", ROMX
 
-INCLUDE "audio/music/pokemonmart.asm"
 INCLUDE "audio/music/lugiabattle.asm"
 INCLUDE "audio/music/hoohbattle.asm"
 INCLUDE "audio/music/kantolegendbattle.asm"
