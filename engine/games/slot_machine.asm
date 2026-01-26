@@ -881,7 +881,7 @@ SlotsAction_WaitStart:
 SlotsAction_WaitReel1:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel1
@@ -901,7 +901,7 @@ SlotsAction_WaitStopReel1:
 SlotsAction_WaitReel2:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel2
@@ -921,7 +921,7 @@ SlotsAction_WaitStopReel2:
 SlotsAction_WaitReel3:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel3

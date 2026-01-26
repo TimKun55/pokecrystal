@@ -19,16 +19,16 @@ LyraAutoInputs: ; used only for BANK(LyraAutoInputs)
 
 LyraAutoInput_A:
 	db NO_INPUT, $50
-	db A_BUTTON, $00
+	db PAD_A, $00
 	db NO_INPUT, $ff ; end
 
 LyraAutoInput_RightA:
 	db NO_INPUT, $08
-	db D_RIGHT,  $00
+	db PAD_RIGHT,  $00
 	db NO_INPUT, $08
-	db D_RIGHT,  $00
+	db PAD_RIGHT,  $00
 	db NO_INPUT, $08
-	db A_BUTTON, $00
+	db PAD_A, $00
 	db NO_INPUT, $ff ; end
 
 LyraAutoInput_DownA:
@@ -36,10 +36,10 @@ LyraAutoInput_DownA:
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
-	db D_DOWN,   $00
+	db PAD_DOWN,   $00
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
 	db NO_INPUT, $fe
-	db A_BUTTON, $00
+	db PAD_A, $00
 	db NO_INPUT, $ff ; end

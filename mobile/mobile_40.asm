@@ -1518,8 +1518,8 @@ Function1009d2:
 
 Function1009f3:
 	ldh a, [hJoyDown]
-	and SELECT + A_BUTTON
-	cp SELECT + A_BUTTON
+	and PAD_SELECT + PAD_A
+	cp PAD_SELECT + PAD_A
 	jr nz, .select_a
 	ld hl, wcd2a
 	set 4, [hl]
@@ -1799,13 +1799,13 @@ Mobile_MoveSelectionScreen:
 	jr c, .b_button
 	ld a, [wMenuJoypadFilter]
 	and c
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jp nz, .d_up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jp nz, .d_down
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .a_button
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .b_button
 	jr .loop
 
@@ -1911,7 +1911,7 @@ Function100c98:
 	db -1, 1 ; rows, columns
 	db $a0, $00 ; flags
 	dn 2, 0 ; cursor offsets
-	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
+	db PAD_UP | PAD_DOWN | PAD_A | PAD_B ; accepted buttons
 
 Mobile_PartyMenuSelect:
 	call Function100dd8
@@ -3020,8 +3020,8 @@ asm_101416:
 Function101418:
 	call GetJoypad
 	ldh a, [hJoyDown]
-	and SELECT + A_BUTTON
-	cp SELECT + A_BUTTON
+	and PAD_SELECT + PAD_A
+	cp PAD_SELECT + PAD_A
 	jr z, .asm_101425
 	xor a
 	ret
@@ -3115,7 +3115,7 @@ Function1014a6:
 Function1014b7:
 	call GetJoypad
 	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .asm_1014c5
 	ld hl, wcd42
 	dec [hl]
@@ -5265,7 +5265,7 @@ Function1024de:
 	dec [hl]
 	jr z, .asm_1024e9
 	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	ret z
 
 .asm_1024e9
@@ -5425,11 +5425,11 @@ Function1025ff:
 	ld a, [wMenuJoypadFilter]
 	and c
 	ret z
-	bit A_BUTTON_F, c
+	bit B_PAD_A, c
 	jr nz, .a_button
-	bit D_UP_F, c
+	bit B_PAD_UP, c
 	jr nz, .d_up
-	bit D_DOWN_F, c
+	bit B_PAD_DOWN, c
 	jr nz, .d_down
 	ret
 
@@ -5485,11 +5485,11 @@ Function10266b:
 	ld a, [wMenuJoypadFilter]
 	and c
 	ret z
-	bit A_BUTTON_F, c
+	bit B_PAD_A, c
 	jr nz, .a_button
-	bit D_DOWN_F, c
+	bit B_PAD_DOWN, c
 	jr nz, .d_down
-	bit D_UP_F, c
+	bit B_PAD_UP, c
 	jr nz, .d_up
 	ret
 
@@ -5554,11 +5554,11 @@ Function1026de:
 
 Function1026f3:
 	ldh a, [hJoyPressed]
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .asm_102723
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr nz, .asm_102712
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .asm_102702
 	ret
 
@@ -5638,11 +5638,11 @@ Function102775:
 
 Function10278c:
 	ldh a, [hJoyPressed]
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, asm_1027c6
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, asm_1027e2
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .asm_10279b
 	ret
 
@@ -5663,11 +5663,11 @@ Function1027a0:
 
 Function1027b7:
 	ldh a, [hJoyPressed]
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, asm_1027d1
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, asm_1027e2
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, Function102770
 	ret
 
@@ -6167,7 +6167,7 @@ MenuData_102b73:
 	db -1, 1 ; rows, columns
 	db $a0, $00 ; flags
 	dn 1, 0 ; cursor offset
-	db D_UP | D_DOWN | A_BUTTON ; accepted buttons
+	db PAD_UP | PAD_DOWN | PAD_A ; accepted buttons
 
 Function102b7b:
 	xor a
@@ -6187,7 +6187,7 @@ MenuData_102b94:
 	db 255, 1 ; rows, columns
 	db $a0, $00 ; flags
 	dn 1, 0 ; cursor offset
-	db D_UP | D_DOWN | A_BUTTON ; accepted buttons
+	db PAD_UP | PAD_DOWN | PAD_A ; accepted buttons
 
 Function102b9c:
 	ld a, [wcd4d]
@@ -7022,17 +7022,17 @@ Function10339a:
 Function1033af:
 	call GetJoypad
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .left
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .right
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .b
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .a
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr nz, .up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .down
 	ret
 

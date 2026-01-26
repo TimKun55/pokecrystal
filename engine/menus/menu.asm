@@ -88,7 +88,7 @@ Mobile_GetMenuSelection:
 	bit 1, a
 	jr z, .skip
 	call GetMenuJoypad
-	bit SELECT_F, a
+	bit B_PAD_SELECT, a
 	jr nz, .quit
 
 .skip
@@ -96,7 +96,7 @@ Mobile_GetMenuSelection:
 	bit 0, a
 	jr nz, .skip2
 	call GetMenuJoypad
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .quit
 
 .skip2
@@ -245,14 +245,14 @@ Init2DMenuCursorPosition:
 
 .InitFlags_c:
 	ld hl, wMenuDataFlags
-	ld a, A_BUTTON
+	ld a, PAD_A
 	bit 0, [hl]
 	jr nz, .skip
-	or B_BUTTON
+	or PAD_B
 .skip
 	bit 1, [hl]
 	jr z, .skip2
-	or SELECT
+	or PAD_SELECT
 .skip2
 	ld [wMenuJoypadFilter], a
 	ret
@@ -382,21 +382,21 @@ Menu_WasButtonPressed:
 
 _2DMenuInterpretJoypad:
 	call GetMenuJoypad
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jp nz, .a_b_start_select
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jp nz, .a_b_start_select
-	bit SELECT_F, a
+	bit B_PAD_SELECT, a
 	jp nz, .a_b_start_select
-	bit START_F, a
+	bit B_PAD_START, a
 	jp nz, .a_b_start_select
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .d_right
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .d_left
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr nz, .d_up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .d_down
 	and a
 	ret
@@ -788,10 +788,10 @@ _InitVerticalMenuCursor::
 	ln a, 2, 0
 	ld [hli], a
 ; wMenuJoypadFilter
-	ld a, A_BUTTON
-	bit 0, b
+	ld a, PAD_A
+	bit 0, [hl]
 	jr nz, .skip_bit_1
-	add B_BUTTON
+	add PAD_B
 .skip_bit_1
 	ld [hli], a
 ; wMenuCursorY
