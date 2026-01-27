@@ -1238,7 +1238,7 @@ MoveScreen2DMenuData:
 	db 3, 1 ; rows, columns
 	db $40, $00 ; flags
 	dn 2, 0 ; cursor offsets
-	db PAD_UP | PAD_DOWN | PAD_LEFT | PAD_RIGHT | PAD_A | PAD_B ; accepted buttons
+	db PAD_CTRL_PAD | PAD_A | PAD_B ; accepted buttons
 
 String_MoveWhere:
 	db "Select a move<NEXT>to swap places.@"
