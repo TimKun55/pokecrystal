@@ -80,14 +80,14 @@ PrintMagikarpLength:
 	ld de, wMagikarpLength
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	ld [hl], "."
+	ld [hl], '.'
 	inc hl
 	ld de, wMagikarpLength + 1
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	ld [hl], "<BOLD_m>"
+	ld [hl], '<BOLD_m>'
 	inc hl
-	ld [hl], "@"
+	ld [hl], '@'
 	ret
 
 CalcMagikarpLength:

@@ -526,7 +526,7 @@ TrainerCard_Page1_PrintGameTime:
 	ret nz
 	hlcoord 15, 12
 	ld a, [hl]
-	xor " " ^ $30 ; alternate between space and small colon ($30) tiles
+	xor ' ' ^ $30 ; alternate between space and small colon ($30) tiles
 	ld [hl], a
 	ret
 

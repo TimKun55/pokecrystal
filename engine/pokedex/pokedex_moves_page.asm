@@ -155,7 +155,7 @@ Pokedex_Print_NextLvlMoves:
 	ld [wTextDecimalByte], a
 	hlcoord 2, 9
 	call DexEntry_adjusthlcoord
-	ld [hl], "<DEX_LV>"
+	ld [hl], '<DEX_LV>'
 	hlcoord 3, 9
 	call DexEntry_adjusthlcoord
 	ld de, wTextDecimalByte
@@ -254,7 +254,7 @@ Pokedex_PrintFieldMoves:
 	push bc
 	hlcoord 3, 9
 	call DexEntry_adjusthlcoord
-	ld [hl], "<DEX_LV>"
+	ld [hl], '<DEX_LV>'
 	inc hl
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	ld a, e
@@ -317,7 +317,7 @@ Pokedex_PrintFieldMoves:
 	push de
 	hlcoord 3, 9
 	call DexEntry_adjusthlcoord
-	ld [hl], "<DEX_LV>"
+	ld [hl], '<DEX_LV>'
 	inc hl
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	ld a, e

@@ -1,6 +1,6 @@
 ClearBox::
 ; Fill a c*b box at hl with blank tiles.
-	ld a, " "
+	ld a, ' '
 	; fallthrough
 
 FillBoxWithByte::
@@ -23,7 +23,7 @@ ClearTilemap::
 ; Fill wTilemap with blank tiles.
 
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, wTilemapEnd - wTilemap
 	call ByteFill
 
@@ -201,7 +201,7 @@ PlaceString::
 
 PlaceNextChar::
 	ld a, [de]
-	cp "@"
+	cp '@'
 	jr nz, CheckDict
 	ld b, h
 	ld c, l
@@ -214,7 +214,6 @@ NextChar::
 
 CheckDict::
 MACRO dict
-	assert CHARLEN(\1) == 1
 	if \1 == 0
 		and a
 	else
@@ -233,42 +232,42 @@ MACRO dict
 	endc
 ENDM
 
-	dict "<MOBILE>",  MobileScriptChar
-	dict "<LINE>",    LineChar
-	dict "<NEXT>",    NextLineChar
-	dict "<CR>",      CarriageReturnChar
-	dict "<NULL>",    NullChar
-	dict "<SCROLL>",  _ContTextNoPause
-	dict "<_CONT>",   _ContText
-	dict "<PARA>",    Paragraph
-	dict "<MUM>",     PrintMumsName
-	dict "<PLAYER>",  PrintPlayerName
-	dict "<RIVAL>",   PrintRivalName
-	dict "<ROUTE>",   PlaceJPRoute
-	dict "<WATASHI>", PlaceWatashi
-	dict "<KOKO_WA>", PlaceKokoWa
-	dict "<RED>",     PrintRedsName
-	dict "<GREEN>",   PrintGreensName
-	dict "#",         PlacePOKe
-	dict "<PC>",      PCChar
-	dict "<ROCKET>",  RocketChar
-	dict "<TM>",      TMChar
-	dict "<TRAINER>", TrainerChar
-	dict "<KOUGEKI>", PlaceKougeki
-	dict "<LF>",      LineFeedChar
-	dict "<CONT>",    ContText
-	dict "<……>",      SixDotsChar
-	dict "<DONE>",    DoneText
-	dict "<PROMPT>",  PromptText
-	dict "<PKMN>",    PlacePKMN
-	dict "<POKE>",    PlacePOKE
-	dict "<WBR>",     NextChar
-	dict "<BSP>",     " "
-	dict "<DEXEND>",  PlaceDexEnd
-	dict "<TARGET>",  PlaceMoveTargetsName
-	dict "<USER>",    PlaceMoveUsersName
-	dict "<ENEMY>",   PlaceEnemysName
-	dict "<PLAY_G>",  PlaceGenderedPlayerName
+	dict '<MOBILE>',  MobileScriptChar
+	dict '<LINE>',    LineChar
+	dict '<NEXT>',    NextLineChar
+	dict '<CR>',      CarriageReturnChar
+	dict '<NULL>',    NullChar
+	dict '<SCROLL>',  _ContTextNoPause
+	dict '<_CONT>',   _ContText
+	dict '<PARA>',    Paragraph
+	dict '<MUM>',     PrintMumsName
+	dict '<PLAYER>',  PrintPlayerName
+	dict '<RIVAL>',   PrintRivalName
+	dict '<ROUTE>',   PlaceJPRoute
+	dict '<WATASHI>', PlaceWatashi
+	dict '<KOKO_WA>', PlaceKokoWa
+	dict '<RED>',     PrintRedsName
+	dict '<GREEN>',   PrintGreensName
+	dict '#',         PlacePOKe
+	dict '<PC>',      PCChar
+	dict '<ROCKET>',  RocketChar
+	dict '<TM>',      TMChar
+	dict '<TRAINER>', TrainerChar
+	dict '<KOUGEKI>', PlaceKougeki
+	dict '<LF>',      LineFeedChar
+	dict '<CONT>',    ContText
+	dict '<……>',      SixDotsChar
+	dict '<DONE>',    DoneText
+	dict '<PROMPT>',  PromptText
+	dict '<PKMN>',    PlacePKMN
+	dict '<POKE>',    PlacePOKE
+	dict '<WBR>',     NextChar
+	dict '<BSP>',     ' '
+	dict '<DEXEND>',  PlaceDexEnd
+	dict '<TARGET>',  PlaceMoveTargetsName
+	dict '<USER>',    PlaceMoveUsersName
+	dict '<ENEMY>',   PlaceEnemysName
+	dict '<PLAY_G>',  PlaceGenderedPlayerName
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -533,7 +532,7 @@ ContText::
 PlaceDexEnd::
 ; Ends a Pokédex entry in Gen 1.
 ; Dex entries are now regular strings.
-	ld [hl], "."
+	ld [hl], '.'
 	pop hl
 	ret
 
@@ -565,7 +564,7 @@ DoneText::
 	text_end
 
 NullChar::
-	ld a, "?"
+	ld a, '?'
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -595,7 +594,7 @@ TextScroll::
 	jr nz, .col
 
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
-	ld a, " "
+	ld a, ' '
 	ld bc, TEXTBOX_INNERW
 	call ByteFill
 	ld c, 5
@@ -620,7 +619,7 @@ Diacritic::
 	ret
 
 LoadBlinkingCursor::
-	ld a, "▼"
+	ld a, '▼'
 	ldcoord_a 18, 17
 	ret
 
@@ -936,7 +935,7 @@ TextCommand_DOTS::
 
 .loop
 	push de
-	ld a, "…"
+	ld a, '…'
 	ld [hli], a
 	call GetJoypad
 	ldh a, [hJoyDown]

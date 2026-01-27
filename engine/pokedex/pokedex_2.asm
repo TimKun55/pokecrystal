@@ -161,10 +161,10 @@ DisplayDexEntry:
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .next
 .not_shiny
-	ld [hl], " "	
+	ld [hl], ' '	
 .next
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
@@ -192,7 +192,7 @@ DisplayDexEntry:
 
     push bc
     hlcoord 9, 6
-    ld a, " "
+    ld a, ' '
     ld bc, 11
     call ByteFill
     pop bc
@@ -302,7 +302,7 @@ GetDexEntryPagePointer:
 	ld a, b
 	call GetFarByte
 	inc hl
-	cp "@"
+	cp '@'
 	jr nz, .loop1
 ; skip height and weight
 rept 4
@@ -317,7 +317,7 @@ endr
 	ld a, b
 	call GetFarByte
 	inc hl
-	cp "@"
+	cp '@'
 	jr nz, .loop2
 .done
 	ld d, h
@@ -408,7 +408,7 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ELSE
 ; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
 	hlcoord 14, 4
-	ld [hl], "/"
+	ld [hl], '/'
 	inc hl
 	call DEX_NO_CUSTOM_GFX_PrintType_Short
 ENDC
@@ -534,11 +534,11 @@ Print_Category_text:
 	push bc
 	push hl ; bottom str ptr
     hlcoord 9, 6
-    ld a, " "
+    ld a, ' '
     ld bc, 11
     call ByteFill
     hlcoord 9, 7
-    ld a, " "
+    ld a, ' '
     ld bc, 9
     call ByteFill  
 
@@ -560,6 +560,6 @@ UncaughtMon_Info_Erase_PageNum:
 	call ByteFill
 	hlcoord 18, 7
 	ld bc, 2
-	ld a, " " ; category box border
+	ld a, ' ' ; category box border
 	call ByteFill	
 	ret

@@ -1322,7 +1322,7 @@ LinkTradeOTPartymonMenuLoop:
 	push bc
 	ld bc, NAME_LENGTH
 	add hl, bc
-	ld [hl], " "
+	ld [hl], ' '
 	pop bc
 	pop hl
 	ld a, [wPartyCount]
@@ -1383,7 +1383,7 @@ LinkTradePartymonMenuLoop:
 	push bc
 	ld bc, NAME_LENGTH
 	add hl, bc
-	ld [hl], " "
+	ld [hl], ' '
 	pop bc
 	pop hl
 	ld a, 1
@@ -1403,7 +1403,7 @@ LinkTradePartymonMenuLoop:
 	push bc
 	ld bc, NAME_LENGTH
 	add hl, bc
-	ld [hl], " "
+	ld [hl], ' '
 	pop bc
 	pop hl
 	jp LinkTradePartymonMenuCheckCancel
@@ -1428,7 +1428,7 @@ LinkTrade_TradeStatsMenu:
 	farcall Link_WaitBGMap
 
 .joy_loop
-	ld a, " "
+	ld a, ' '
 	ldcoord_a 11, 16
 	ld a, PAD_A | PAD_B | PAD_RIGHT
 	ld [wMenuJoypadFilter], a
@@ -1460,7 +1460,7 @@ LinkTrade_TradeStatsMenu:
 	jp LinkTrade_PlayerPartyMenu
 
 .d_right
-	ld a, " "
+	ld a, ' '
 	ldcoord_a 1, 16
 	ld a, PAD_A | PAD_B | PAD_LEFT
 	ld [wMenuJoypadFilter], a
@@ -1497,11 +1497,11 @@ LinkTrade_TradeStatsMenu:
 	call SafeLoadTempTilemapToTilemap
 	hlcoord 6, 1
 	lb bc, 6, 1
-	ld a, " "
+	ld a, ' '
 	call LinkEngine_FillBox
 	hlcoord 17, 1
 	lb bc, 6, 1
-	ld a, " "
+	ld a, ' '
 	call LinkEngine_FillBox
 	jp LinkTrade_PlayerPartyMenu
 
@@ -1594,14 +1594,14 @@ LinkTradeOTPartymonMenuCheckCancel:
 	push bc
 	ld bc, NAME_LENGTH
 	add hl, bc
-	ld [hl], " "
+	ld [hl], ' '
 	pop bc
 	pop hl
 	; fallthrough
 
 LinkTradePartymonMenuCheckCancel:
 .loop1
-	ld a, "▶"
+	ld a, '▶'
 	ldcoord_a 9, 17
 .loop2
 	call JoyTextDelay
@@ -1611,7 +1611,7 @@ LinkTradePartymonMenuCheckCancel:
 	bit B_PAD_A, a
 	jr nz, .a_button
 	push af
-	ld a, " "
+	ld a, ' '
 	ldcoord_a 9, 17
 	pop af
 	bit B_PAD_UP, a
@@ -1626,7 +1626,7 @@ LinkTradePartymonMenuCheckCancel:
 	jp LinkTrade_PlayerPartyMenu
 
 .a_button
-	ld a, "▷"
+	ld a, '▷'
 	ldcoord_a 9, 17
 	ld a, $f
 	ld [wPlayerLinkAction], a
@@ -1663,7 +1663,7 @@ GSPlaceTradeScreenFooter: ; unreferenced
 	call ByteFill
 ; Clear out area for cancel string
 	hlcoord 1, 16
-	ld a, " "
+	ld a, ' '
 	ld bc, SCREEN_WIDTH - 2
 	call ByteFill
 ; Place the string
@@ -1680,7 +1680,7 @@ LinkTradePlaceArrow:
 	hlcoord 6, 9
 	ld bc, SCREEN_WIDTH
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 	ret
 
 LinkEngine_FillBox:

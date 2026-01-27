@@ -413,12 +413,12 @@ Pokedex_toggle_shininess_Entry:
 	; add or remove shiny icon
 	hlcoord 8, 1
 	ld a, [hl]
-	cp "<DEX_⁂>"
+	cp '<DEX_⁂>'
 	jr z, .shinyicon_set
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .done
 .shinyicon_set
-	ld [hl], " "
+	ld [hl], ' '
 .done	
 	call Pokedex_toggle_shininess2
 	ret
@@ -432,12 +432,12 @@ Pokedex_toggle_shininess_Pics:
 	; add or remove shiny icon
 	hlcoord 4, 11 ; 1, 9 ; 9, 7 ; 0, 9
 	ld a, [hl]
-	cp "<DEX_⁂>"
+	cp '<DEX_⁂>'
 	jr z, .shinyicon_set
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .done
 .shinyicon_set
-	ld [hl], " "
+	ld [hl], ' '
 .done	
 	call Pokedex_toggle_shininess2
 	ret
@@ -558,10 +558,10 @@ Pokedex_ReinitDexEntryScreen:
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .shiny_done
 .not_shiny
-	ld [hl], " "
+	ld [hl], ' '
 .shiny_done
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
@@ -847,10 +847,10 @@ Evos_Page:
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .shiny_done
 .not_shiny
-	ld [hl], " "
+	ld [hl], ' '
 .shiny_done	
 	call WaitBGMap
 	ret
@@ -1032,10 +1032,10 @@ Pics_Page:
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
+	ld [hl], '<DEX_⁂>'
 	jr .shiny_done
 .not_shiny
-	ld [hl], " "
+	ld [hl], ' '
 .shiny_done	
 	call WaitBGMap
 	ret
@@ -1454,7 +1454,7 @@ Pokedex_UnownModeHandleDPadInput:
 	ret
 
 Pokedex_UnownModeEraseCursor:
-	ld c, " "
+	ld c, ' '
 	jr Pokedex_UnownModeUpdateCursorGfx
 
 Pokedex_UnownModePlaceCursor:
@@ -1713,7 +1713,7 @@ Pokedex_DrawDexEntryScreenBG:
 	hlcoord 19, 0
 	ld [hl], $34
 	hlcoord 19, 1
-	ld a, " "
+	ld a, ' '
 	ld b, 15
 	call Pokedex_FillColumn
 	ld [hl], $39
@@ -1740,7 +1740,7 @@ Pokedex_DrawDexEntryScreenBG:
 ; clear the row for bottom menu
 	hlcoord 1, 17
 	ld bc, SCREEN_WIDTH - 2
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	ld c, 4
 	call DelayFrames
@@ -1812,7 +1812,7 @@ Pokedex_DrawNewDexEntryScreenBG:
 	hlcoord 19, 0
 	ld [hl], $34
 	hlcoord 19, 1
-	ld a, " "
+	ld a, ' '
 	ld b, 15
 	call Pokedex_FillColumn
 	ld [hl], $39
@@ -1820,7 +1820,7 @@ Pokedex_DrawNewDexEntryScreenBG:
 ; clear the row for bottom menu
 	hlcoord 1, 17
 	ld bc, SCREEN_WIDTH - 2
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	ld c, 4
 	call DelayFrames
@@ -1882,7 +1882,7 @@ Pokedex_LoadTextboxSpaceGFX:
 	ldh [rVBK], a
 	ld de, TextboxSpaceGFX
 	lb bc, BANK(TextboxSpaceGFX), 1
-	ld hl, vTiles2 tile " "
+	ld hl, vTiles2 tile ' '
 	call Get2bpp
 	pop af
 	ldh [rVBK], a
@@ -2201,7 +2201,7 @@ Pokedex_PlaceSearchResultsTypeStrings:
 	hlcoord 2, 15
 	call Pokedex_PlaceTypeString
 	hlcoord 1, 15
-	ld [hl], "/"
+	ld [hl], '/'
 .done
 	ret
 
@@ -2392,7 +2392,7 @@ Pokedex_PrintListing:
 	add a
 	inc a
 	ld b, a
-	ld a, " "
+	ld a, ' '
 	call Pokedex_FillBox
 
 ; Load de with wPokedexOrder + [wDexListingScrollOffset]
@@ -2789,7 +2789,7 @@ Pokedex_PlaceSearchScreenTypeStrings:
 	ldh [hBGMapMode], a
 	hlcoord 10, 4
 	lb bc, 4, 8
-	ld a, " "
+	ld a, ' '
 	call Pokedex_FillBox
 	ld a, [wDexSearchMonType1]
 	hlcoord 10, 5
@@ -3170,7 +3170,7 @@ Pokedex_MoveArrowCursor:
 	and a
 	jr z, .no_action
 	call Pokedex_GetArrowCursorPos
-	ld [hl], " "
+	ld [hl], ' '
 	ld hl, wDexArrowCursorPosIndex
 	dec [hl]
 	jr .update_cursor_pos
@@ -3180,13 +3180,13 @@ Pokedex_MoveArrowCursor:
 	cp c
 	jr nc, .no_action
 	call Pokedex_GetArrowCursorPos
-	ld [hl], " "
+	ld [hl], ' '
 	ld hl, wDexArrowCursorPosIndex
 	inc [hl]
 
 .update_cursor_pos
 	call Pokedex_GetArrowCursorPos
-	ld [hl], "DEX_▶"
+	ld [hl], 'DEX_▶'
 	ld a, 12
 	ld [wDexArrowCursorDelayCounter], a
 	xor a
@@ -3200,7 +3200,7 @@ Pokedex_MoveArrowCursor:
 
 .select
 	call Pokedex_GetArrowCursorPos
-	ld [hl], " "
+	ld [hl], ' '
 	ld a, [wDexArrowCursorPosIndex]
 	cp c
 	jr c, .update
@@ -3228,12 +3228,12 @@ Pokedex_BlinkArrowCursor:
 	and $8
 	jr z, .blink_on
 	call Pokedex_GetArrowCursorPos
-	ld [hl], " "
+	ld [hl], ' '
 	ret
 
 .blink_on
 	call Pokedex_GetArrowCursorPos
-	ld [hl], "DEX_▶"
+	ld [hl], 'DEX_▶'
 	ret
 
 Pokedex_ArrowCursorDelay:
@@ -3581,7 +3581,7 @@ _NewPokedexEntry:
 	ld [hl], $3b
 	inc hl
 	ld bc, 19
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	farcall DisplayDexEntry
 	call EnableLCD

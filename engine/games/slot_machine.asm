@@ -506,7 +506,7 @@ ENDM
 	call DisableLCD
 	hlbgcoord 0, 0
 	ld bc, vBGMap1 - vBGMap0
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	ld b, SCGB_SLOT_MACHINE
 	call GetSGBLayout
@@ -731,13 +731,13 @@ DebugPrintSlotBias: ; unreferenced
 	daa
 	ld e, a
 	and $f
-	add "0"
+	add '0'
 	hlcoord 1, 0
 	ld [hl], a
 	ld a, e
 	swap a
 	and $f
-	add "0"
+	add '0'
 	hlcoord 0, 0
 	ld [hl], a
 	ret
@@ -2463,7 +2463,7 @@ Slots_PayoutText:
 	inc a
 	ldcoord_a 3, 14
 	hlcoord 18, 17
-	ld [hl], "▼"
+	ld [hl], '▼'
 	ld hl, .SlotsLinedUpText
 rept 4
 	inc bc

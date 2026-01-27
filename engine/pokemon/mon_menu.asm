@@ -176,7 +176,7 @@ SwitchPartyMons:
 	ld a, [wSwitchMon]
 	dec a
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame
@@ -370,7 +370,7 @@ SwapPartyItem:
 	ld a, [wSwitchMon]
 	dec a
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame
@@ -1055,7 +1055,7 @@ MoveScreenLoop:
 	jp .joy_loop
 
 .moving_move
-	ld a, " "
+	ld a, ' '
 	hlcoord 1, 12
 	ld bc, 5
 	call ByteFill
@@ -1287,11 +1287,11 @@ SetUpMoveScreenBG:
 	ld a, TEMPMON
 	ld [wMonType], a
 	callfar GetGender
-	ld a, " "
+	ld a, ' '
 	jr c, .got_gender
-	ld a, "<MALE>"
+	ld a, '<MALE>'
 	jr nz, .got_gender
-	ld a, "<FEMALE>"
+	ld a, '<FEMALE>'
 
 .got_gender
 	hlcoord 9, 0
@@ -1417,7 +1417,7 @@ PlaceMoveData:
 	ld de, String_MoveAcc ; string for "Acc"
 	call PlaceString
 	hlcoord 9, 13
-	ld [hl], "<%>"
+	ld [hl], '<%>'
 
 	; getting the actual Move's accuracy
 	ld a, [wCurSpecies]
@@ -1456,7 +1456,7 @@ PlaceMoveData:
 	ld de, String_MoveChance ; string for "Eff"
 	call PlaceString
 	hlcoord 18, 13
-	ld [hl], "<%>"
+	ld [hl], '<%>'
 .no_efct_chance
 
 ; Print Pow Num
@@ -1534,7 +1534,7 @@ PlaceMoveScreenLeftArrow:
 
 .legal
 	hlcoord 16, 0
-	ld [hl], "▶"
+	ld [hl], '▶'
 	ret
 
 PlaceMoveScreenRightArrow:
@@ -1565,5 +1565,5 @@ PlaceMoveScreenRightArrow:
 
 .legal
 	hlcoord 18, 0
-	ld [hl], "▶"
+	ld [hl], '▶'
 	ret

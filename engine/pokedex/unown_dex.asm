@@ -21,7 +21,7 @@ UpdateUnownDex:
 PrintUnownWord:
 	hlcoord 6, 16
 	ld bc, 10
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	ld a, [wDexCurUnownIndex]
 	ld e, a

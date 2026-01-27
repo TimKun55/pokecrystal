@@ -465,9 +465,9 @@ SummaryScreen_InitUpperHalf:
 	farcall GetGender
 	pop hl
 	ret c
-	ld a, $32 ; "♂"
+	ld a, $32 ; '♂'
 	jr nz, .got_gender
-	ld a, $33 ;  "♀"
+	ld a, $33 ;  '♀'
 .got_gender
 	ld [hl], a
 	ret
@@ -611,7 +611,7 @@ SummaryScreen_PlaceShinyIcon:
 	farcall CheckShininess
 	ret nc
 	hlcoord 6, 8
-	ld [hl], "⁂"
+	ld [hl], '⁂'
 	ret
 
 SummaryScreen_LoadGFX:
@@ -675,9 +675,9 @@ SummaryScreen_LoadGFX:
 
 LoadPinkPage:
 	hlcoord 11, 2
-	ld [hl], "№"
+	ld [hl], '№'
 	inc hl
-	ld [hl], "."
+	ld [hl], '.'
 	inc hl
 	hlcoord 13, 2
 	call GetPokemonNumber
@@ -813,9 +813,9 @@ PlaceOTInfo:
 	cp $7f
 	jr z, .done
 	and CAUGHT_GENDER_MASK
-	ld a, $32 ; "♂"
+	ld a, $32 ; '♂'
 	jr z, .got_gender
-	ld a, $33 ; "♀"
+	ld a, $33 ; '♀'
 .got_gender
 	hlcoord 19, 9
 	ld [hl], a
@@ -1013,7 +1013,7 @@ SummaryScreenDrawPlayerHP:
 	lb bc, 2, 3
 	call PrintNum
 
-	ld a, "/"
+	ld a, '/'
 	ld [hli], a
 
 ; Print max HP
@@ -1374,7 +1374,7 @@ SummaryScreen_placeCaughtLevel:
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
 	hlcoord 13, 11
-	ld [hl], "<LV>"
+	ld [hl], '<LV>'
 	ret
 
 .printegg:
@@ -1534,7 +1534,7 @@ SummaryScreen_LoadTextboxSpaceGFX:
 	ldh [rVBK], a
 	ld de, TextboxSpaceGFX
 	lb bc, BANK(TextboxSpaceGFX), 1
-	ld hl, vTiles2 tile " "
+	ld hl, vTiles2 tile ' '
 	call Get2bpp
 	pop af
 	ldh [rVBK], a
@@ -1557,9 +1557,9 @@ EggSummaryScreen:
 	call PlaceString
 
 	hlcoord 11, 2
-	ld [hl], "№"
+	ld [hl], '№'
 	inc hl
-	ld [hl], "."
+	ld [hl], '.'
 
 	ld de, ThreeQMarkString
 	hlcoord 13, 2

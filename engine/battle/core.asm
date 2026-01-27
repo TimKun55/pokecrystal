@@ -4357,11 +4357,11 @@ PrintPlayerHUD:
 	ld a, TEMPMON
 	ld [wMonType], a
 	callfar GetGender
-	ld a, " "
+	ld a, ' '
 	jr c, .got_gender_char
-	ld a, "<MALE>"
+	ld a, '<MALE>'
 	jr nz, .got_gender_char
-	ld a, "<FEMALE>"
+	ld a, '<FEMALE>'
 
 .got_gender_char
 	hlcoord 18, 8 ; gender char
@@ -4430,11 +4430,11 @@ DrawEnemyHUD:
 	ld a, TEMPMON
 	ld [wMonType], a
 	callfar GetGender
-	ld a, " "
+	ld a, ' '
 	jr c, .got_gender
-	ld a, "<MALE>"
+	ld a, '<MALE>'
 	jr nz, .got_gender
-	ld a, "<FEMALE>"
+	ld a, '<FEMALE>'
 
 .got_gender
 	hlcoord 8, 1
@@ -5032,7 +5032,7 @@ MoveSelectionScreen:
 	call Textbox
 	
 ; removes vertical line in move selection box in battle
-	ld a, " "
+	ld a, ' '
 	hlcoord 4, 13
 	ld [hl], a
 	hlcoord 4, 14
@@ -5041,7 +5041,7 @@ MoveSelectionScreen:
 	ld [hl], a
 	hlcoord 4, 16
 	ld [hl], a
-	ld a, "─"
+	ld a, '─'
 	hlcoord 4, 17
 	ld [hl], a
 
@@ -5124,7 +5124,7 @@ MoveSelectionScreen:
 	ld bc, SCREEN_WIDTH
 	dec a
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 
 .interpret_joypad
 	ld a, $1
@@ -5483,7 +5483,7 @@ MoveInfoBox:
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
 	hlcoord 8, 9
-	ld [hl], "<%>"
+	ld [hl], '<%>'
 	
 ; Effect Chance
 	hlcoord 1, 10
@@ -5504,7 +5504,7 @@ MoveInfoBox:
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
 	hlcoord 8, 10
-	ld [hl], "<%>"
+	ld [hl], '<%>'
 .effect_chance_done
 ; set battle CGB layout	
 	ld b, SCGB_BATTLE_COLORS
@@ -5517,19 +5517,19 @@ MoveInfoBox:
 
 .PrintPP:
 	hlcoord 3, 13
-	ld [hl], " "
+	ld [hl], ' '
 	ld de, wStringBuffer1
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 2, 14
-	ld [hl], "/"
+	ld [hl], '/'
 	inc hl
-	ld [hl], " "
+	ld [hl], ' '
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 1, 13
-	ld a, "P"
+	ld a, 'P'
 	ld [hli], a
 	ld [hl], a
 	ret
@@ -6252,7 +6252,7 @@ LoadEnemyMon:
 	ld bc, MON_NAME_LENGTH
 	call AddNTimes
 	ld a, [hl]
-	cp "@"
+	cp '@'
 	jr nz, .got_nickname
 .no_nickname
 	call GetPokemonName
@@ -8349,7 +8349,7 @@ ReadAndPrintLinkBattleRecord:
 	ld de, wLinkBattleRecordName
 	ld bc, NAME_LENGTH - 1
 	call CopyBytes
-	ld a, "@"
+	ld a, '@'
 	ld [de], a
 	inc de ; wLinkBattleRecordWins
 	ld bc, 6
@@ -8815,7 +8815,7 @@ InitBattleDisplay:
 
 	ld hl, wDecompressScratch
 	ld bc, TILEMAP_AREA
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 
 	ld de, wDecompressScratch

@@ -37,7 +37,7 @@ PlaceMenuItemQuantity:
 	jr nz, .done
 	ld de, $15
 	add hl, de
-	ld [hl], "×"
+	ld [hl], '×'
 	inc hl
 	ld de, wMenuSelectionQuantity
 	lb bc, 1, 2
@@ -62,7 +62,7 @@ PlaceItemInBagQuantity:
 	call PlaceString
 
 	hlcoord 5, 1
-	ld [hl], "×"
+	ld [hl], '×'
 	inc hl
 	ld de, wMenuSelectionQuantity
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
