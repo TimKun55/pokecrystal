@@ -57,7 +57,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db PIKACHU
 	db NO_ITEM
@@ -79,7 +79,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db CHINCHOU
 	db NO_ITEM
@@ -101,7 +101,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 10 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db CHINCHOU
 	db NO_ITEM
@@ -123,7 +123,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 11 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db SNEASEL
 	db NO_ITEM
@@ -145,7 +145,7 @@ OddEggs:
 	bigdw 6 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 7 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db SNEASEL
 	db NO_ITEM
@@ -167,7 +167,7 @@ OddEggs:
 	bigdw 7 ; Spd
 	bigdw 10 ; SAtk
 	bigdw 8 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db SWINUB
 	db NO_ITEM
@@ -189,7 +189,7 @@ OddEggs:
 	bigdw 11 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db SWINUB
 	db NO_ITEM
@@ -211,7 +211,7 @@ OddEggs:
 	bigdw 12 ; Spd
 	bigdw 14 ; SAtk
 	bigdw 12 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db HOUNDOUR
 	db NO_ITEM
@@ -233,7 +233,7 @@ OddEggs:
 	bigdw 13 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 10 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db HOUNDOUR
 	db NO_ITEM
@@ -255,7 +255,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 13 ; SAtk
 	bigdw 11 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db CHANSEY
 	db NO_ITEM
@@ -277,7 +277,7 @@ OddEggs:
 	bigdw 14 ; Spd
 	bigdw 11 ; SAtk
 	bigdw 10 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db CHANSEY
 	db NO_ITEM
@@ -299,7 +299,7 @@ OddEggs:
 	bigdw 15 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 11 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db TYROGUE
 	db NO_ITEM
@@ -321,7 +321,7 @@ OddEggs:
 	bigdw 8 ; Spd
 	bigdw 8 ; SAtk
 	bigdw 8 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db TYROGUE
 	db NO_ITEM
@@ -343,6 +343,6 @@ OddEggs:
 	bigdw 9 ; Spd
 	bigdw 9 ; SAtk
 	bigdw 9 ; SDef
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	assert_table_length NUM_ODD_EGGS

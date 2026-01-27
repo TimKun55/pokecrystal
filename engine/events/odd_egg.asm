@@ -91,6 +91,6 @@ _GiveOddEgg:
 	ret
 
 .Odd:
-	db "Odd@@@@@@@@@"
+	dname "Odd", MON_NAME_LENGTH + 1
 
 INCLUDE "data/events/odd_eggs.asm"

@@ -1,79 +1,83 @@
+MACRO bt_trainer
+	dname \2 ; name
+	db \1 ; class
+ENDM
+
 BattleTowerTrainers:
 ; The trainer class is not used in Crystal 1.0 due to a bug.
 ; Instead, the sixth character in the trainer's name is used.
 ; See BattleTowerText in engine/events/battle_tower/trainer_text.asm.
 	table_width (NAME_LENGTH - 1) + 1, BattleTowerTrainers
-	; name, class
-	db "Hanson@@@@", FISHER
-	db "Sawyer@@@@", POKEMANIAC
-	db "Masuda@@@@", GUITARIST
-	db "Nickel@@@@", SCIENTIST
-	db "Olson@@@@@", POKEFANM
-	db "Zaborowski", LASS
-	db "Wright@@@@", YOUNGSTER
-	db "Alexander@", HIKER
-	db "Kawakami@@", TEACHER
-	db "Bickett@@@", POKEFANM
-	db "Saito@@@@@", KIMONO_GIRL
-	db "Crawford@@", BOARDER
-	db "Diaz@@@@@@", PICNICKER
-	db "Erickson@@", BIKER
-	db "Fairfield@", JUGGLER
-	db "Hunter@@@@", POKEFANF
-	db "Hill@@@@@@", FIREBREATHER
-	db "Javier@@@@", SWIMMERF
-	db "Kaufman@@@", SWIMMERM
-	db "Lancaster@", SKIER
-	db "McMahill@@", CAMPER
+	bt_trainer FISHER,       "Hanson"
+	bt_trainer POKEMANIAC,   "Sawyer"
+	bt_trainer GUITARIST,    "Masuda"
+	bt_trainer SCIENTIST,    "Nickel"
+	bt_trainer POKEFANM,     "Olson"
+	bt_trainer LASS,         "Zaborowski"
+	bt_trainer YOUNGSTER,    "Wright"
+	bt_trainer HIKER,        "Alexander"
+	bt_trainer TEACHER,      "Kawakami"
+	bt_trainer POKEFANM,     "Bickett"
+	bt_trainer KIMONO_GIRL,  "Saito"
+	bt_trainer BOARDER,      "Crawford"
+	bt_trainer PICNICKER,    "Diaz"
+	bt_trainer BIKER,        "Erickson"
+	bt_trainer JUGGLER,      "Fairfield"
+	bt_trainer POKEFANF,     "Hunter"
+	bt_trainer FIREBREATHER, "Hill"
+	bt_trainer SWIMMERF,     "Javier"
+	bt_trainer SWIMMERM,     "Kaufman"
+	bt_trainer SKIER,        "Lancaster"
+	bt_trainer CAMPER,       "McMahill"
 	assert_table_length BATTLETOWER_NUM_UNIQUE_MON
 ; The following can only be sampled in Crystal 1.1.
-	db "Obrien@@@@", GENTLEMAN
-	db "Frost@@@@@", BEAUTY
-	db "Morse@@@@@", SUPER_NERD
-	db "Yufune@@@@", BLACKBELT_T
-	db "Rajan@@@@@", COOLTRAINERF
-	db "Rodriguez@", OFFICER
-	db "Santiago@@", PSYCHIC_T
-	db "Stock@@@@@", POKEFANM
-	db "Thurman@@@", SCIENTIST
-	db "Valentino@", BEAUTY
-	db "Wagner@@@@", CAMPER
-	db "Yates@@@@@", BIRD_KEEPER
-	db "Andrews@@@", PICNICKER
-	db "Bahn@@@@@@", POKEMANIAC
-	db "Mori@@@@@@", SCIENTIST
-	db "Buckman@@@", SAGE
-	db "Cobb@@@@@@", SCHOOLBOY
-	db "Hughes@@@@", FISHER
-	db "Arita@@@@@", KIMONO_GIRL
-	db "Easton@@@@", PSYCHIC_T
-	db "Freeman@@@", CAMPER
-	db "Giese@@@@@", LASS
-	db "Hatcher@@@", GENTLEMAN
-	db "Jackson@@@", POKEFANF
-	db "Kahn@@@@@@", POKEMANIAC
-	db "Leong@@@@@", YOUNGSTER
-	db "Marino@@@@", TEACHER
-	db "Newman@@@@", SAILOR
-	db "Nguyen@@@@", BLACKBELT_T
-	db "Ogden@@@@@", SUPER_NERD
-	db "Park@@@@@@", COOLTRAINERF
-	db "Raine@@@@@", SWIMMERM
-	db "Sells@@@@@", BIRD_KEEPER
-	db "Rockwell@@", BOARDER
-	db "Thornton@@", LASS
-	db "Turner@@@@", OFFICER
-	db "Van Dyke@@", SKIER
-	db "Walker@@@@", SCHOOLBOY
-	db "Meyer@@@@@", SWIMMERF
-	db "Johnson@@@", YOUNGSTER
-	db "Adams@@@@@", GUITARIST
-	db "Smith@@@@@", BUG_CATCHER
-	db "Tajiri@@@@", BUG_CATCHER
-	db "Baker@@@@@", POKEMANIAC
-	db "Collins@@@", SCIENTIST
-	db "Smart@@@@@", SUPER_NERD
-	db "Dykstra@@@", SWIMMERF
-	db "Eaton@@@@@", BIKER
-	db "Wong@@@@@@", FIREBREATHER
+	bt_trainer GENTLEMAN,    "Obrien"
+	bt_trainer BEAUTY,       "Frost"
+	bt_trainer SUPER_NERD,   "Morse"
+	bt_trainer BLACKBELT_T,  "Yufune"
+	bt_trainer COOLTRAINERF, "Rajan"
+	bt_trainer OFFICER,      "Rodriguez"
+	bt_trainer PSYCHIC_T,    "Santiago"
+	bt_trainer POKEFANM,     "Stock"
+	bt_trainer SCIENTIST,    "Thurman"
+	bt_trainer BEAUTY,       "Valentino"
+	bt_trainer CAMPER,       "Wagner"
+	bt_trainer BIRD_KEEPER,  "Yates"
+	bt_trainer PICNICKER,    "Andrews"
+	bt_trainer POKEMANIAC,   "Bahn"
+	bt_trainer SCIENTIST,    "Mori"
+	bt_trainer SAGE,         "Buckman"
+	bt_trainer SCHOOLBOY,    "Cobb"
+	bt_trainer FISHER,       "Hughes"
+	bt_trainer KIMONO_GIRL,  "Arita"
+	bt_trainer PSYCHIC_T,    "Easton"
+	bt_trainer CAMPER,       "Freeman"
+	bt_trainer LASS,         "Giese"
+	bt_trainer GENTLEMAN,    "Hatcher"
+	bt_trainer POKEFANF,     "Jackson"
+	bt_trainer POKEMANIAC,   "Kahn"
+	bt_trainer YOUNGSTER,    "Leong"
+	bt_trainer TEACHER,      "Marino"
+	bt_trainer SAILOR,       "Newman"
+	bt_trainer BLACKBELT_T,  "Nguyen"
+	bt_trainer SUPER_NERD,   "Ogden"
+	bt_trainer COOLTRAINERF, "Park"
+	bt_trainer SWIMMERM,     "Raine"
+	bt_trainer BIRD_KEEPER,  "Sells"
+	bt_trainer BOARDER,      "Rockwell"
+	bt_trainer LASS,         "Thornton"
+	bt_trainer OFFICER,      "Turner"
+	bt_trainer SKIER,        "Van Dyke"
+	bt_trainer SCHOOLBOY,    "Walker"
+	bt_trainer SWIMMERF,     "Meyer"
+	bt_trainer YOUNGSTER,    "Johnson"
+	bt_trainer GUITARIST,    "Adams"
+	bt_trainer BUG_CATCHER,  "Smith"
+	bt_trainer BUG_CATCHER,  "Tajiri"
+	bt_trainer POKEMANIAC,   "Baker"
+	bt_trainer SCIENTIST,    "Collins"
+	bt_trainer SUPER_NERD,   "Smart"
+	bt_trainer SWIMMERF,     "Dykstra"
+	bt_trainer BIKER,        "Eaton"
+	bt_trainer FIREBREATHER, "Wong"
 	assert_table_length BATTLETOWER_NUM_UNIQUE_TRAINERS
