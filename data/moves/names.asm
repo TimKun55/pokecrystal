@@ -1,5 +1,5 @@
 MoveNames::
-	list_start MoveNames
+	list_start
 	li "Energy Ball"
 	li "Karate Chop"
 	li "Double Slap"

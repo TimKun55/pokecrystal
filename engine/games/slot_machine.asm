@@ -1400,7 +1400,7 @@ GetSlotIconPalette:
 	ret
 
 .data:
-	table_width 1, GetSlotIconPalette.data
+	table_width 1
 	db 3 ; SLOTS_SEVEN
 	db 3 ; SLOTS_BAR
 	db 2 ; SLOTS_CHERRY
@@ -2392,7 +2392,7 @@ Slots_GetPayout:
 	ret
 
 .PayoutTable:
-	table_width 2, Slots_GetPayout.PayoutTable
+	table_width 2
 	dw 700 ; SLOTS_SEVEN
 	dw 150 ; SLOTS_BAR
 	dw  18 ; SLOTS_CHERRY
@@ -2442,7 +2442,7 @@ Slots_PayoutText:
 	ret
 
 .PayoutStrings:
-	table_width 6, Slots_PayoutText.PayoutStrings
+	table_width 6
 	dbw "700@", .LinedUpSevens      ; SLOTS_SEVEN
 	dbw "150@", .LinedUpPokeballs   ; SLOTS_BAR
 	dbw "18@@", .LinedUpMonOrCherry ; SLOTS_CHERRY

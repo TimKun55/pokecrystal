@@ -1352,7 +1352,7 @@ DebugRoom_BoxStructStrings:
 .SendBox:   db "SEND BOX@"
 
 ;DebugRoom_BoxAddresses:
-;	table_width 3, DebugRoom_BoxAddresses
+;	table_width 3
 ;for n, 1, NUM_BOXES + 1
 ;	dba sBox{d:n}
 ;endr

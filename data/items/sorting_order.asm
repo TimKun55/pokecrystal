@@ -1,5 +1,5 @@
 ItemNameOrder:
- 	table_width 1, ItemNameOrder
+ 	table_width 1
 
 	db NO_ITEM      ; 00
 

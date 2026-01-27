@@ -9,7 +9,7 @@ ENDM
 
 OddEggProbabilities:
 ; entries correspond to OddEggs (below)
-	table_width 2, OddEggProbabilities
+	table_width 2
 ; Pikachu
 	odd_egg_prob 12
 	odd_egg_prob  2
@@ -35,7 +35,7 @@ OddEggProbabilities:
 	assert odd_egg_prob_total == 100, "OddEggProbabilities sum to {d:odd_egg_prob_total}%, not 100%!"
 
 OddEggs:
-	table_width NICKNAMED_MON_STRUCT_LENGTH, OddEggs
+	table_width NICKNAMED_MON_STRUCT_LENGTH
 
 	db PIKACHU
 	db NO_ITEM

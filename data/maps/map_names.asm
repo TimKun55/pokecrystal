@@ -1,5 +1,5 @@
 MapGroupNum_Names::
-	table_width 2, MapGroupNum_Names
+	table_width 2
 	dw Olivine_Map_Names
 	dw Mahogany_Map_Names
 	dw Dungeons_Map_Names
@@ -59,7 +59,7 @@ GetMapGroupNum_Name::
 
 
 Olivine_Map_Names: ;newgroup OLIVINE 									;  1
-	table_width 2, Olivine_Map_Names
+	table_width 2
 	dw Olivine_Map_Name1 ; map_const OLIVINE_POKECENTER_1F 				;  1
 	dw Olivine_Map_Name2 ; map_const OLIVINE_GYM 						;  2
 	dw Olivine_Map_Name3 ; map_const OLIVINE_TIMS_HOUSE 				;  3
@@ -76,7 +76,7 @@ Olivine_Map_Names: ;newgroup OLIVINE 									;  1
 	assert_table_length NUM_OLIVINE_MAPS
 
 Mahogany_Map_Names: ;newgroup MAHOGANY										;  2
-	table_width 2, Mahogany_Map_Names                                    
+	table_width 2
 	dw Mahogany_Map_Name1 ; map_const MAHOGANY_RED_GYARADOS_SPEECH_HOUSE	;  1
 	dw Mahogany_Map_Name2 ; map_const MAHOGANY_GYM 							;  2
 	dw Mahogany_Map_Name3 ; map_const MAHOGANY_POKECENTER_1F 				;  3
@@ -88,7 +88,7 @@ Mahogany_Map_Names: ;newgroup MAHOGANY										;  2
 	assert_table_length NUM_MAHOGANY_MAPS
 	
 Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
-	table_width 2, Dungeons_Map_Names
+	table_width 2
 	dw Dungeons_Map_Name1 ; map_const SPROUT_TOWER_1F,						;  1
 	dw Dungeons_Map_Name2 ; map_const SPROUT_TOWER_2F, 						;  2
 	dw Dungeons_Map_Name3 ; map_const SPROUT_TOWER_3F, 						;  3
@@ -193,7 +193,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS										;  3
 	
 
 Ecruteak_Map_Names: ;newgroup ECRUTEAK										;  4
-	table_width 2, Ecruteak_Map_Names
+	table_width 2
 	dw Ecruteak_Map_Name1 ; map_const ROUTE_35                              ;  1
 	dw Ecruteak_Map_Name2 ; map_const ROUTE_36                              ;  2
 	dw Ecruteak_Map_Name3 ; map_const ROUTE_37                              ;  3
@@ -214,7 +214,7 @@ Ecruteak_Map_Names: ;newgroup ECRUTEAK										;  4
 	assert_table_length NUM_ECRUTEAK_MAPS
 
 Blackthorn_Map_Names: ;newgroup BLACKTHORN									;  5
-	table_width 2, Blackthorn_Map_Names
+	table_width 2
 	dw Blackthorn_Map_Name1 ; map_const BLACKTHORN_GYM_1F 					;  1
 	dw Blackthorn_Map_Name2 ; map_const BLACKTHORN_GYM_2F 					;  2
 	dw Blackthorn_Map_Name3 ; map_const BLACKTHORN_DRAGON_SPEECH_HOUSE 		;  3
@@ -229,7 +229,7 @@ Blackthorn_Map_Names: ;newgroup BLACKTHORN									;  5
 	assert_table_length NUM_BLACKTHORN_MAPS
 
 Cinnabar_Map_Names: ;newgroup CINNABAR										;  6
-	table_width 2, Cinnabar_Map_Names
+	table_width 2
 	dw Cinnabar_Map_Name1 ; map_const CINNABAR_POKECENTER_1F				;  1
 	dw Cinnabar_Map_Name2 ; map_const ROUTE_19_FUCHSIA_GATE					;  2
 	dw Cinnabar_Map_Name3 ; map_const ROUTE_19								;  3
@@ -248,7 +248,7 @@ Cinnabar_Map_Names: ;newgroup CINNABAR										;  6
 	assert_table_length NUM_CINNABAR_MAPS
 
 Cerulean_Map_Names: ;newgroup CERULEAN										;  7
-	table_width 2, Cerulean_Map_Names
+	table_width 2
 	dw Cerulean_Map_Name1 ; map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE		;  1
 	dw Cerulean_Map_Name2 ; map_const CERULEAN_POLICE_STATION				;  2
 	dw Cerulean_Map_Name3 ; map_const CERULEAN_TRADE_SPEECH_HOUSE			;  3
@@ -271,7 +271,7 @@ Cerulean_Map_Names: ;newgroup CERULEAN										;  7
 	assert_table_length NUM_CERULEAN_MAPS
 
 Azalea_Map_Names: ;newgroup AZALEA											;  8
-	table_width 2, Azalea_Map_Names
+	table_width 2
 	dw Azalea_Map_Name1 ; map_const AZALEA_POKECENTER_1F					;  1
 	dw Azalea_Map_Name2 ; map_const CHARCOAL_KILN							;  2
 	dw Azalea_Map_Name3 ; map_const AZALEA_MART								;  3
@@ -282,7 +282,7 @@ Azalea_Map_Names: ;newgroup AZALEA											;  8
 	assert_table_length NUM_AZALEA_MAPS
 
 Lake_of_Rage_Map_Names: ;newgroup LAKE_OF_RAGE								;  9
-	table_width 2, Lake_of_Rage_Map_Names
+	table_width 2
 	dw Lake_of_Rage_Map_Name1 ; map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE	;  1
 	dw Lake_of_Rage_Map_Name2 ; map_const LAKE_OF_RAGE_MAGIKARP_HOUSE		;  2
 	dw Lake_of_Rage_Map_Name3 ; map_const ROUTE_43_MAHOGANY_GATE			;  3
@@ -292,7 +292,7 @@ Lake_of_Rage_Map_Names: ;newgroup LAKE_OF_RAGE								;  9
 	assert_table_length NUM_LAKE_OF_RAGE_MAPS
 
 Violet_Map_Names: ;newgroup VIOLET											; 10
-	table_width 2, Violet_Map_Names
+	table_width 2
 	dw Violet_Map_Name1 ; map_const ROUTE_32								;  1
 	dw Violet_Map_Name2 ; map_const VIOLET_CITY								;  2
 	dw Violet_Map_Name3 ; map_const VIOLET_MART								;  3
@@ -310,7 +310,7 @@ Violet_Map_Names: ;newgroup VIOLET											; 10
 	assert_table_length NUM_VIOLET_MAPS
 
 Goldenrod_Map_Names: ;newgroup GOLDENROD									; 11
-	table_width 2, Goldenrod_Map_Names
+	table_width 2
 	dw Goldenrod_Map_Name1 ; map_const ROUTE_34								;  1
 	dw Goldenrod_Map_Name2 ; map_const GOLDENROD_CITY						;  2
 	dw Goldenrod_Map_Name3 ; map_const GOLDENROD_GYM						;  3
@@ -342,7 +342,7 @@ Goldenrod_Map_Names: ;newgroup GOLDENROD									; 11
 	assert_table_length NUM_GOLDENROD_MAPS
 
 Vermilion_Map_Names: ;newgroup VERMILION									; 12
-	table_width 2, Vermilion_Map_Names
+	table_width 2
 	dw Vermilion_Map_Name1 ; map_const ROUTE_6								;  1
 	dw Vermilion_Map_Name2 ; map_const ROUTE_11								;  2
 	dw Vermilion_Map_Name3 ; map_const VERMILION_CITY						;  3
@@ -360,7 +360,7 @@ Vermilion_Map_Names: ;newgroup VERMILION									; 12
 	assert_table_length NUM_VERMILION_MAPS
 
 Pallet_Map_Names: ;newgroup PALLET											; 13
-	table_width 2, Pallet_Map_Names
+	table_width 2
 	dw Pallet_Map_Name1 ; map_const ROUTE_1									;  1
 	dw Pallet_Map_Name2 ; map_const PALLET_TOWN								;  2
 	dw Pallet_Map_Name3 ; map_const REDS_HOUSE_1F							;  3
@@ -371,7 +371,7 @@ Pallet_Map_Names: ;newgroup PALLET											; 13
 	assert_table_length NUM_PALLET_MAPS
 
 Pewter_Map_Names: ;newgroup PEWTER											; 14
-	table_width 2, Pewter_Map_Names
+	table_width 2
 	dw Pewter_Map_Name1  ; map_const ROUTE_3								;  1
 	dw Pewter_Map_Name2  ; map_const PEWTER_CITY							;  2
 	dw Pewter_Map_Name3  ; map_const PEWTER_NIDORAN_SPEECH_HOUSE			;  3
@@ -385,7 +385,7 @@ Pewter_Map_Names: ;newgroup PEWTER											; 14
 	assert_table_length NUM_PEWTER_MAPS
 
 Fast_Ship_Map_Names: ;newgroup FAST_SHIP										; 15
-	table_width 2, Fast_Ship_Map_Names
+	table_width 2
 	dw Fast_Ship_Map_Name1 ; map_const OLIVINE_PORT								;  1
 	dw Fast_Ship_Map_Name2 ; map_const VERMILION_PORT							;  2
 	dw Fast_Ship_Map_Name3 ; map_const FAST_SHIP_1F								;  3
@@ -403,7 +403,7 @@ Fast_Ship_Map_Names: ;newgroup FAST_SHIP										; 15
 	assert_table_length NUM_FAST_SHIP_MAPS
 
 Indigo_Map_Names: ;newgroup INDIGO											; 16
-	table_width 2, Indigo_Map_Names
+	table_width 2
 	dw Indigo_Map_Name1 ; map_const ROUTE_23								;  1
 	dw Indigo_Map_Name2 ; map_const INDIGO_PLATEAU_POKECENTER_1F			;  2
 	dw Indigo_Map_Name3 ; map_const WILLS_ROOM								;  3
@@ -416,7 +416,7 @@ Indigo_Map_Names: ;newgroup INDIGO											; 16
 	assert_table_length NUM_INDIGO_MAPS
 
 Fuchsia_Map_Names: ;newgroup FUCHSIA										; 17
-	table_width 2, Fuchsia_Map_Names
+	table_width 2
 	dw Fuchsia_Map_Name1 ; map_const ROUTE_12								;  1
 	dw Fuchsia_Map_Name2 ; map_const ROUTE_12_SUPER_ROD_HOUSE				;  2
 	dw Fuchsia_Map_Name3 ; map_const ROUTE_13								;  3
@@ -441,7 +441,7 @@ Fuchsia_Map_Names: ;newgroup FUCHSIA										; 17
 	assert_table_length NUM_FUCHSIA_MAPS
 
 Lavender_Map_Names: ;newgroup LAVENDER										; 18
-	table_width 2, Lavender_Map_Names
+	table_width 2
 	dw Lavender_Map_Name1 ; map_const ROUTE_8								;  1
 	dw Lavender_Map_Name2 ; map_const ROUTE_10_SOUTH						;  2
 	dw Lavender_Map_Name3 ; map_const LAVENDER_TOWN							;  3
@@ -456,8 +456,8 @@ Lavender_Map_Names: ;newgroup LAVENDER										; 18
 	dw Lavender_Map_Name12 ; map_const ROUTE_8_SAFFRON_GATE					; 12
 	assert_table_length NUM_LAVENDER_MAPS
 
-Silver_Map_Names: ;newgroup SILVER
-	table_width 2, Silver_Map_Names											; 19
+Silver_Map_Names: ;newgroup SILVER											; 19
+	table_width 2
 	dw Silver_Map_Name1 ; map_const ROUTE_28,								;  1
 	dw Silver_Map_Name2 ; map_const MT_SILVER_OUTSIDE,						;  2
 	dw Silver_Map_Name3 ; map_const MT_SILVER_POKECENTER_1F					;  3
@@ -465,8 +465,8 @@ Silver_Map_Names: ;newgroup SILVER
 	dw Silver_Map_Name4 ; map_const MT_SILVER_PEAK,                         ;  5
 	assert_table_length NUM_SILVER_MAPS
 
-Cable_Club_Map_Names: ;newgroup CABLE_CLUB
-	table_width 2, Cable_Club_Map_Names										; 20
+Cable_Club_Map_Names: ;newgroup CABLE_CLUB									; 20
+	table_width 2
 	dw Cable_Club_Map_Name1 ; map_const POKECENTER_2F						;  1
 	dw Cable_Club_Map_Name2 ; map_const TRADE_CENTER						;  2
 	dw Cable_Club_Map_Name3 ; map_const COLOSSEUM							;  3
@@ -475,8 +475,8 @@ Cable_Club_Map_Names: ;newgroup CABLE_CLUB
 ;	dw Cable_Club_Map_Name6 ; map_const MOBILE_BATTLE_ROOM					;  6
 	assert_table_length NUM_CABLE_CLUB_MAPS
 
-Celadon_Map_Names: ;newgroup CELADON
-	table_width 2, Celadon_Map_Names										; 21
+Celadon_Map_Names: ;newgroup CELADON										; 21
+	table_width 2
 	dw Celadon_Map_Name1 ; map_const ROUTE_7								;  1
 	dw Celadon_Map_Name2 ; map_const CELADON_CITY							;  2
 	dw Celadon_Map_Name3 ; map_const CELADON_DEPT_STORE_1F					;  3
@@ -509,8 +509,8 @@ Celadon_Map_Names: ;newgroup CELADON
 	dw Celadon_Map_Name30 ; map_const CELADON_ROCKET_HIDEOUT_B4F            ; 30
 	assert_table_length NUM_CELADON_MAPS
 
-Cianwood_Map_Names: ;newgroup CIANWOOD
-	table_width 2, Cianwood_Map_Names										; 22
+Cianwood_Map_Names: ;newgroup CIANWOOD										; 22
+	table_width 2
 	dw Cianwood_Map_Name1 ; map_const ROUTE_40								;  1
 	dw Cianwood_Map_Name2 ; map_const ROUTE_41								;  2
 	dw Cianwood_Map_Name3 ; map_const CIANWOOD_CITY							;  3
@@ -524,8 +524,8 @@ Cianwood_Map_Names: ;newgroup CIANWOOD
 	dw Cianwood_Map_Name11 ; map_const CIANWOOD_PHOTO_STUDIO				; 11
 	assert_table_length NUM_CIANWOOD_MAPS
 
-Viridian_Map_Names: ;newgroup VIRIDIAN 
-	table_width 2, Viridian_Map_Names									; 23
+Viridian_Map_Names: ;newgroup VIRIDIAN 									; 23
+	table_width 2
 	dw Viridian_Map_Name1 ; map_const ROUTE_2,                          ;  1
 	dw Viridian_Map_Name2 ; map_const ROUTE_22,                         ;  2
 	dw Viridian_Map_Name3 ; map_const ROUTE_26,							;  3
@@ -547,8 +547,8 @@ Viridian_Map_Names: ;newgroup VIRIDIAN
 	assert_table_length NUM_VIRIDIAN_MAPS
 
 	
-New_Bark_Map_Names: ; newgroup NEW_BARK
-	table_width 2, New_Bark_Map_Names									; 24
+New_Bark_Map_Names: ; newgroup NEW_BARK									; 24
+	table_width 2
 	dw New_Bark_Map_Name1 ; map_const ROUTE_27							;  1
 	dw New_Bark_Map_Name2 ; map_const ROUTE_29							;  2
 	dw New_Bark_Map_Name3 ; map_const NEW_BARK_TOWN						;  3
@@ -564,8 +564,8 @@ New_Bark_Map_Names: ; newgroup NEW_BARK
 	assert_table_length NUM_NEW_BARK_MAPS
 
 
-Saffron_Map_Names: 	; newgroup SAFFRON
-	table_width 2, Saffron_Map_Names									; 25
+Saffron_Map_Names: 	; newgroup SAFFRON									; 25
+	table_width 2
 	dw Saffron_Map_Name1 ; map_const SAFFRON_CITY						;  1
 	dw Saffron_Map_Name2 ; map_const FIGHTING_DOJO						;  2
 	dw Saffron_Map_Name3 ; map_const SAFFRON_GYM						;  3
@@ -587,7 +587,7 @@ Saffron_Map_Names: 	; newgroup SAFFRON
 
 	; CHERRYGROVE, 26
 Cherrygrove_Map_Names:
-	table_width 2, Cherrygrove_Map_Names
+	table_width 2
 	dw Cherrygrove_Map_Name1 ; map_const ROUTE_30                            ;  1
 	dw Cherrygrove_Map_Name2 ; map_const ROUTE_31                            ;  2
 	dw Cherrygrove_Map_Name3 ; map_const CHERRYGROVE_CITY                    ;  3
@@ -603,7 +603,7 @@ Cherrygrove_Map_Names:
 	
 	; SAFARI, 27
 Safari_Map_Names:
-	table_width 2, Safari_Map_Names
+	table_width 2
 	dw Safari_Map_Name1 ; map_const SAFARI_ZONE_HUB					;  1
 	dw Safari_Map_Name2 ; map_const SAFARI_ZONE_EAST				;  2
 	dw Safari_Map_Name3 ; map_const SAFARI_ZONE_NORTH 				;  3
@@ -617,7 +617,7 @@ Safari_Map_Names:
 
 	; BATTLE_TOWER, 28
 Battle_Tower_Map_Names:
-	table_width 2, Battle_Tower_Map_Names
+	table_width 2
 	dw Battle_Tower_Map_Name1 ; map_const BATTLE_TOWER_OUTSIDE		 ;  1
 	dw Battle_Tower_Map_Name2 ; map_const BATTLE_TOWER_1F			 ;  2
 	dw Battle_Tower_Map_Name3 ; map_const BATTLE_TOWER_2F			 ;  3

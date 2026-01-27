@@ -13,7 +13,7 @@ ENDM
 
 Moves:
 ; entries correspond to move ids (see constants/move_constants.asm)
-	table_width MOVE_LENGTH, Moves
+	table_width MOVE_LENGTH
 	move ENERGY_BALL,  EFFECT_SP_DEF_DOWN_HIT,    90, GRASS,        SPECIAL, 	100, 10,  20
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,     PHYSICAL,	100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, NORMAL,       PHYSICAL,	 85, 10,   0

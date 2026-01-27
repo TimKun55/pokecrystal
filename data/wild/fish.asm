@@ -8,7 +8,7 @@ ENDM
 
 FishGroups:
 ; entries correspond to FISHGROUP_* constants
-	table_width FISHGROUP_DATA_LENGTH, FishGroups
+	table_width FISHGROUP_DATA_LENGTH
 	fishgroup 50 percent + 1, .Shore_Old,            .Shore_Good,            .Shore_Super
 	fishgroup 50 percent + 1, .Ocean_Old,            .Ocean_Good,            .Ocean_Super
 	fishgroup 50 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super
@@ -233,7 +233,7 @@ TimeFishGroups:
 	db TENTACOOL,  40,  TENTACOOL,  40 ; 21
 
 FishGroups_Names::
-	table_width 2, FishGroups_Names
+	table_width 2
 	dw Group1_Name
 	dw Group2_Name
 	dw Group3_Name

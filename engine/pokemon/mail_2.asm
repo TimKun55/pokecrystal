@@ -118,7 +118,7 @@ ReadAnyMail:
 
 MailGFXPointers:
 ; entries correspond to *MAIL_INDEX constants
-	table_width 3, MailGFXPointers
+	table_width 3
 	dbw FLOWER_MAIL,  LoadFlowerMailGFX
 	dbw SURF_MAIL,    LoadSurfMailGFX
 	dbw LITEBLUEMAIL, LoadLiteBlueMailGFX

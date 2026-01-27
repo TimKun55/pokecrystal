@@ -1,6 +1,6 @@
 TreeMons::
 ; entries correspond to TREEMON_SET_* constants
-	table_width 2, TreeMons
+	table_width 2
 	dw TreeMonSet_None
 	dw TreeMonSet_Canyon
 	dw TreeMonSet_Town
@@ -15,7 +15,7 @@ TreeMons::
 RockSmashMons::
 	; broke off from the above table, for nayru's pokedex
 	; delineation was needed because there is no 'rare' table for rocksmash
-	table_width 2, RockSmashMons
+	table_width 2
 	dw TreeMonSet_RockJohto
 	dw TreeMonSet_RockDarkCave
 	dw TreeMonSet_RockRuins

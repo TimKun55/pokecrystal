@@ -1283,7 +1283,7 @@ INCLUDE "gfx/sgb/pal_packets.asm"
 INCLUDE "data/sgb_ctrl_packets.asm"
 
 PredefPals:
-	table_width PAL_SIZE, PredefPals
+	table_width PAL_SIZE
 INCLUDE "gfx/sgb/predef.pal"
 	assert_table_length NUM_PREDEF_PALS
 
@@ -1496,7 +1496,7 @@ PartyMenuGenderPalette:
 INCLUDE "gfx/summary/party_menu_gender.pal"
 
 BillsPC_ThemePals:
-	table_width COLOR_SIZE * 4, BillsPC_ThemePals
+	table_width COLOR_SIZE * 4
 INCLUDE "gfx/pc/themes.pal"
 	assert_table_length NUM_BILLS_PC_THEMES
 
@@ -1515,7 +1515,7 @@ MapObjectPals::
 INCLUDE "gfx/overworld/npc_sprites.pal"
 
 RoofPals:
-	table_width COLOR_SIZE * 3 * 2, RoofPals
+	table_width COLOR_SIZE * 3 * 2
 INCLUDE "gfx/tilesets/roofs.pal"
 	assert_table_length NUM_MAP_GROUPS + 1
 

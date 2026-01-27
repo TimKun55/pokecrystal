@@ -1,7 +1,7 @@
 ; Every Pokémon sorted in Johto Pokédex Order.
 
 JohtoPokedexOrder:
-	table_width 1, JohtoPokedexOrder
+	table_width 1
 	db CHIKORITA
 	db BAYLEEF
 	db MEGANIUM
