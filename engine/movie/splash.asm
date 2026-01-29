@@ -68,10 +68,10 @@ GameFreakPresentsInit:
 	lb bc, BANK(GameFreakLogoGFX), 28
 	call Get1bpp
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, GameFreakDittoGFX
 	ld de, wDecompressScratch
@@ -89,7 +89,7 @@ GameFreakPresentsInit:
 	call Request2bpp
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	farcall ClearSpriteAnims
 	depixel 10, 11, 4, 0
@@ -323,16 +323,16 @@ GameFreakLogo_Transform:
 	ld hl, GameFreakDittoPaletteFade
 	add hl, de
 	add hl, de
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wOBPals2)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [hli]
 	ld [wOBPals2 + 12], a
 	ld a, [hli]
 	ld [wOBPals2 + 13], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret

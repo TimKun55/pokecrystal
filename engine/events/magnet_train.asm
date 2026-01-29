@@ -14,10 +14,10 @@ MagnetTrain:
 
 .continue
 	ld h, a
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wMagnetTrain)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld a, h
 	ld [wMagnetTrainDirection], a
@@ -38,7 +38,7 @@ MagnetTrain:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], VBLANK_CUTSCENE
+	ld [hl], 1
 .loop
 	ld a, [wJumptableIndex]
 	and a
@@ -82,7 +82,7 @@ MagnetTrain:
 	ldh [hBGMapMode], a
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 MagnetTrain_UpdateLYOverrides:
@@ -131,13 +131,13 @@ MagnetTrain_LoadGFX_PlayMusic:
 	ldh [hSCY], a
 
 	; Load the player sprite's standing frames
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wPlayerGender)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	farcall GetPlayerIcon
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, vTiles0
 	ld c, 4
 	call Request2bpp
@@ -170,7 +170,7 @@ DrawMagnetTrain:
 	xor a
 .loop
 	call GetMagnetTrainBGTiles
-	ld b, TILEMAP_WIDTH / 2
+	ld b, BG_MAP_WIDTH / 2
 	call .FillAlt
 	inc a
 	cp SCREEN_HEIGHT
@@ -249,19 +249,19 @@ SetMagnetTrainPals:
 
 	; bushes
 	hlbgcoord 0, 0
-	ld bc, 4 * TILEMAP_WIDTH
+	ld bc, 4 * BG_MAP_WIDTH
 	ld a, PAL_BG_GREEN
 	call ByteFill
 
 	; train
 	hlbgcoord 0, 4
-	ld bc, 10 * TILEMAP_WIDTH
+	ld bc, 10 * BG_MAP_WIDTH
 	xor a ; PAL_BG_GRAY
 	call ByteFill
 
 	; more bushes
 	hlbgcoord 0, 14
-	ld bc, 4 * TILEMAP_WIDTH
+	ld bc, 4 * BG_MAP_WIDTH
 	ld a, PAL_BG_GREEN
 	call ByteFill
 
@@ -297,17 +297,17 @@ MagnetTrain_Jumptable:
 	ld a, [wMagnetTrainPlayerSpriteInitX]
 	ld e, a
 	ld b, SPRITE_ANIM_OBJ_MAGNET_TRAIN_RED
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wPlayerGender)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .got_gender
 	ld b, SPRITE_ANIM_OBJ_MAGNET_TRAIN_BLUE
 .got_gender
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, b
 	call InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
@@ -396,10 +396,10 @@ MagnetTrain_Jumptable_FirstRunThrough:
 	call PushLYOverrides
 	call DelayFrame
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wEnvironment)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wTimeOfDayPal]
 	push af
 	ld a, [wEnvironment]
@@ -426,7 +426,7 @@ MagnetTrain_Jumptable_FirstRunThrough:
 	pop af
 	ld [wTimeOfDayPal], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 MagnetTrainTilemap:

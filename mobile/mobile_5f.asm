@@ -33,7 +33,7 @@ Function17c000:
 	pop hl
 
 	push bc
-	ld bc, TILEMAP_WIDTH * 2
+	ld bc, BG_MAP_WIDTH * 2
 	add hl, bc
 	pop bc
 
@@ -41,11 +41,11 @@ Function17c000:
 	dec a
 	jr nz, .y
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, HaveWantPals
 	ld de, wBGPals1
@@ -53,7 +53,7 @@ Function17c000:
 	call CopyBytes
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, MobileSelectGFX
 	ld de, vTiles0 tile $30
@@ -544,14 +544,14 @@ Function17d2ce:
 	ret c
 	call SpeechTextbox
 	call FadeToMenu
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17d370
 	call Function17d45a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld de, MUSIC_MOBILE_CENTER
 	ld a, e
 	ld [wMapMusic], a
@@ -695,17 +695,17 @@ Function17d405:
 	xor a
 	ldh [rVBK], a
 	call EnableLCD
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, PokemonNewsPalettes
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	call CopyBytes
 	call SetDefaultBGPAndOBP
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Function17d45a:
@@ -959,13 +959,13 @@ Function17d5c4:
 
 Function17d5f6:
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc608
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	call CopyBytes
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Function17d60b:
@@ -1347,7 +1347,7 @@ Function17d85d:
 	cp $c0
 	jr c, .asm_17d89b
 	ld a, [wcd4f]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17d8a1
 
 .asm_17d89b
@@ -1375,7 +1375,7 @@ Function17d85d:
 	cp $c0
 	jr c, .asm_17d8c2
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17d878
 
 .asm_17d8c2
@@ -1386,13 +1386,13 @@ Function17d85d:
 	call HlToCrashCheckPointer
 	push bc
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc608
 	ld de, wBGPals1
 	ld b, $0
 	call CopyBytes
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17e32b
 	pop bc
 	ld a, c
@@ -1453,10 +1453,10 @@ Function17d93a:
 	call CopyBytes
 	call HlToCrashCheckPointer
 	call Function17e32b
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wc70c]
 	call Function17e6de
 	ld a, [wc70a]
@@ -1477,7 +1477,7 @@ Function17d93a:
 	ld d, h
 	farcall HOF_AnimateFrontpic
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17e349
 	ret
 
@@ -1488,10 +1488,10 @@ Function17d98b:
 	call CopyBytes
 	call HlToCrashCheckPointer
 	call Function17e32b
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wc70b]
 	call Function17e6de
 	ld a, [wc70a]
@@ -1513,7 +1513,7 @@ Function17d98b:
 	ld bc, $707
 	predef PlaceGraphic
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17e349
 	ret
 
@@ -1528,7 +1528,7 @@ Function17d9e3:
 	cp $c0
 	jr c, .asm_17da01
 	ld a, [wc70c]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17da07
 
 .asm_17da01
@@ -1553,7 +1553,7 @@ Function17d9e3:
 	cp $c0
 	jr c, .asm_17da2d
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17da30
 
 .asm_17da2d
@@ -1573,7 +1573,7 @@ Function17da31:
 	cp $c0
 	jr c, .asm_17da4f
 	ld a, [wc70a]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17da55
 
 .asm_17da4f
@@ -1613,7 +1613,7 @@ Function17da31:
 	cp $c0
 	jr c, .asm_17da88
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17da8b
 
 .asm_17da88
@@ -1846,10 +1846,10 @@ Function17dc1f:
 	ld bc, $6
 	call CopyBytes
 	call Function17e32b
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc688
 	ld a, $40
 	ld [wc708], a
@@ -1877,7 +1877,7 @@ Function17dc1f:
 .asm_17dc6e
 	call CloseWindow
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wMenuCursorY]
 	cp $1
 	jr nz, .asm_17dc85
@@ -1918,7 +1918,7 @@ Function17dca9:
 
 Function17dcaf:
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wBGPals1
 	ld de, 1 palettes
 	ld c, 8
@@ -1934,7 +1934,7 @@ Function17dcaf:
 	jr nz, .asm_17dcbb
 ;	call RotateThreePalettesRight
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Function17dccf:
@@ -2034,7 +2034,7 @@ Function17dd49:
 	cp $c0
 	jr c, .sram
 	ld a, [wc708]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .got_bank
 
 .sram
@@ -2055,7 +2055,7 @@ Function17dd49:
 	cp $c0
 	jr c, .close_sram
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .exited_bank
 
 .close_sram
@@ -2110,7 +2110,7 @@ Function17ddcd:
 	cp $c0
 	jr c, .asm_17dde7
 	ld a, [wc708]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17dded
 
 .asm_17dde7
@@ -2131,7 +2131,7 @@ Function17ddcd:
 	cp $c0
 	jr c, .asm_17de0c
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17de0f
 
 .asm_17de0c
@@ -2268,10 +2268,10 @@ Function17ded9:
 	ld bc, $1f
 	call CopyBytes
 	call Function17e32b
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurPartySpecies], a
@@ -2476,7 +2476,7 @@ asm_17e0ee:
 	ld h, [hl]
 	ld l, a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	push hl
 	call Function17e349
 	pop hl
@@ -2488,10 +2488,10 @@ Function17e0fd:
 	ld de, wc708
 	ld bc, $6
 	call CopyBytes
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurItem], a
@@ -2512,7 +2512,7 @@ Function17e0fd:
 	ld h, a
 	ld l, b
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17e40f
 	ret
 
@@ -2524,10 +2524,10 @@ Function17e165:
 	ld de, wc708
 	ld bc, $5
 	call CopyBytes
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurItem], a
@@ -2551,7 +2551,7 @@ Function17e165:
 	ld h, a
 	ld l, b
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function17e40f
 	ret
 
@@ -2564,7 +2564,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1bb
 	ld a, [wc708]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17e1c1
 
 .asm_17e1bb
@@ -2585,7 +2585,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1e2
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17e1e5
 
 .asm_17e1e2
@@ -2596,7 +2596,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1f3
 	ld a, [wc70c]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17e1f9
 
 .asm_17e1f3
@@ -2617,7 +2617,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e21a
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17e21d
 
 .asm_17e21a
@@ -2826,16 +2826,16 @@ Function17e349:
 MACRO inc_crash_check_pointer_farcall
 	call IncCrashCheckPointer
 	call HlToCrashCheckPointer ; redundant
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	rept _NARG
 		farcall \1
 		shift
 	endr
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 ENDM
 
@@ -3743,7 +3743,7 @@ Function17f1d0:
 	add hl, de
 	ld a, [hl]
 	ld a, BANK(wNamedObjectIndex)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
 	pop hl
@@ -3753,7 +3753,7 @@ Function17f1d0:
 	ld a, b
 	ld [wcd53], a
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wcd54]
 	call Function17f50f
 	pop de
@@ -3862,7 +3862,7 @@ Function17f27b:
 	add hl, de
 	ld a, [hl]
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	pop hl
@@ -3872,7 +3872,7 @@ Function17f27b:
 	ld a, b
 	ld [wcd53], a
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wcd54]
 	call Function17f50f
 	pop de
@@ -3919,13 +3919,13 @@ MobileScript_PlayerName:
 	push hl
 	push bc
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wPlayerName
 	ld de, wc608
 	ld bc, NAME_LENGTH_JAPANESE
 	call CopyBytes
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	pop hl
 	ld de, wc608
 	call PlaceString
@@ -4167,7 +4167,7 @@ Function17f44f:
 	cp $c0
 	jr c, .asm_17f488
 	ld a, [wcd54]
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17f48e
 
 .asm_17f488
@@ -4188,7 +4188,7 @@ Function17f44f:
 	cp $c0
 	jr c, .asm_17f4af
 	ld a, $4
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jr .asm_17f4b7
 
 .asm_17f4af
@@ -4303,15 +4303,15 @@ BattleTowerMobileError:
 	call FadeToMenu
 	xor a
 	ld [wc303], a
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	call DisplayMobileError
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call ExitAllMenus
 	ret
 
@@ -4403,11 +4403,11 @@ Function17f5e4:
 	ld [wMusicFadeID + 1], a
 	ld a, ' '
 	hlcoord 0, 0
-	ld bc, SCREEN_AREA
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	ld a, $6
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_AREA
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	hlcoord 2, 1
 	ld b, $1

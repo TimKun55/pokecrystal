@@ -13,11 +13,11 @@ VBlank::
 	push hl
 
 	ldh a, [hVBlank]
-	maskbits NUM_VBLANK_HANDLERS
+	and 7
 
 	ld e, a
 	ld d, 0
-	ld hl, VBlankHandlers
+	ld hl, .VBlanks
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -34,20 +34,17 @@ VBlank::
 	pop af
 	reti
 
-VBlankHandlers:
-; entries correspond to VBLANK_* constants (see constants/wram_constants.asm)
-	table_width 2
-	dw VBlank_Normal
-	dw VBlank_Cutscene
-	dw VBlank_SoundOnly
-	dw VBlank_CutsceneCGB
-	dw VBlank_Serial
-	dw VBlank_Credits
-	dw VBlank_DMATransfer
-	dw VBlank_Normal ; unused
-	assert_table_length NUM_VBLANK_HANDLERS
+.VBlanks:
+	dw VBlank0
+	dw VBlank1
+	dw VBlank2
+	dw VBlank3
+	dw VBlank4
+	dw VBlank5
+	dw VBlank6
+	dw VBlank7
 
-VBlank_Normal::
+VBlank0::
 ; normal operation
 
 ; rng
@@ -144,7 +141,7 @@ VBlank_Normal::
 
 	ret
 
-VBlank_SoundOnly::
+VBlank2::
 ; sound only
 
 	ldh a, [hROMBank]
@@ -161,7 +158,7 @@ VBlank_SoundOnly::
 	ld [wVBlankOccurred], a
 	ret
 
-VBlank_Cutscene::
+VBlank1::
 ; scx, scy
 ; palettes
 ; bg map
@@ -196,13 +193,13 @@ VBlank_Cutscene::
 	xor a
 	ldh [rIF], a
 	; enable lcd stat
-	ld a, IE_STAT
+	ld a, 1 << LCD_STAT
 	ldh [rIE], a
 	; rerequest serial int if applicable (still disabled)
 	; request lcd stat
 	ld a, b
-	and IF_SERIAL
-	or IF_STAT
+	and 1 << SERIAL
+	or 1 << LCD_STAT
 	ldh [rIF], a
 
 	ei
@@ -245,7 +242,7 @@ UpdatePals::
 	and a
 	ret
 
-VBlank_CutsceneCGB::
+VBlank3::
 ; scx, scy
 ; palettes
 ; bg map
@@ -279,9 +276,8 @@ VBlank_CutsceneCGB::
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, IE_STAT
+	ld a, 1 << LCD_STAT
 	ldh [rIE], a
-	assert IE_STAT == IF_STAT
 	ldh [rIF], a
 
 	ei
@@ -310,7 +306,7 @@ VBlank_CutsceneCGB::
 	ldh [rIF], a
 	ret
 
-VBlank_Serial::
+VBlank4::
 ; bg map
 ; tiles
 ; oam
@@ -341,7 +337,7 @@ VBlank_Serial::
 	rst Bankswitch
 	ret
 
-VBlank_Credits::
+VBlank5::
 ; scx
 ; palettes
 ; bg map
@@ -369,10 +365,9 @@ VBlank_Credits::
 
 	xor a
 	ldh [rIF], a
-	ld a, IE_STAT
+	ld a, 1 << LCD_STAT
 	ldh [rIE], a
 	; request lcd stat
-	assert IE_STAT == IF_STAT
 	ldh [rIF], a
 
 	ei
@@ -390,7 +385,7 @@ VBlank_Credits::
 	ldh [rIE], a
 	ret
 
-VBlank_DMATransfer::
+VBlank6::
 ; palettes
 ; tiles
 ; dma transfer

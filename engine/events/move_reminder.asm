@@ -592,7 +592,7 @@ ChooseMoveToLearn:
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette
 	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
-	ld bc, 4 * TILE_1BPP_SIZE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
+	ld bc, 4 * LEN_1BPP_TILE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
 	call AddNTimes ; increments pointer based on Type Index
 	ld d, h
 	ld e, l ; de is the source Pointer

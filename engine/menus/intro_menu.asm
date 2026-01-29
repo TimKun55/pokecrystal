@@ -1125,10 +1125,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -1140,10 +1140,10 @@ StartTitleScreen:
 	call ClearBGPalettes
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, rLCDC
-	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
+	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
 	call ClearScreen
 	call WaitBGMap2
 	ld a, RETI_INSTRUCTION

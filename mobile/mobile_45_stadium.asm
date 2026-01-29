@@ -14,10 +14,10 @@ Function11765d:
 
 Function11766b:
 	call Function117699
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call Function1176ee
 	ld a, $5
 	call OpenSRAM
@@ -30,7 +30,7 @@ Function11766b:
 	call CopyBytes
 	call CloseSRAM
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Function117699:
@@ -669,10 +669,10 @@ Function117bb6:
 	ret
 
 .asm_117be7
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [wcd89]
 	and $1
 	jr nz, .asm_117c16
@@ -697,19 +697,19 @@ Function117bb6:
 
 .asm_117c16
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, $d3
 	ld [wMobileErrorCodeBuffer], a
 	jr .asm_117bd0
 
 .asm_117c20
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	farcall Function172eb9
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, $7
 	call OpenSRAM
 	ld hl, w3_d002
@@ -718,7 +718,7 @@ Function117bb6:
 	call CopyBytes
 	call CloseSRAM
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	jp MobileStudium_JumptableIncrement
 
 Function117c4a:
@@ -729,10 +729,10 @@ Function117c4a:
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld hl, MobileStadiumSuccessText
 	call PrintText
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wBGPals1
 	ld de, 1 palettes
 	ld c, 8
@@ -748,7 +748,7 @@ Function117c4a:
 	jr nz, .loop
 ;	call RotateThreePalettesRight
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, $80
 	ld [wJumptableIndex], a
 	ret

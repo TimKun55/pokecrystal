@@ -26,9 +26,9 @@ _SwitchPartyMons:
 	call ByteFill
 	pop af
 	ld hl, wShadowOAMSprite00
-	ld bc, 4 * OBJ_SIZE
+	ld bc, 4 * SPRITEOAMSTRUCT_LENGTH
 	call AddNTimes
-	ld de, OBJ_SIZE
+	ld de, SPRITEOAMSTRUCT_LENGTH
 	ld c, 4
 .gfx_loop
 	ld [hl], SCREEN_WIDTH_PX ; y (off-screen)

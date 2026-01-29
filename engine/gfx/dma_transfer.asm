@@ -116,16 +116,16 @@ Function1040d4: ; unreferenced
 	ld a, $1
 	ldh [rVBK], a
 	ld a, BANK(w3_d800)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld de, w3_d800
 	ldh a, [hBGMapAddress + 1]
-	ldh [rVDMA_SRC_HIGH], a
+	ldh [rHDMA1], a
 	ldh a, [hBGMapAddress]
-	ldh [rVDMA_SRC_LOW], a
+	ldh [rHDMA2], a
 	ld a, d
-	ldh [rVDMA_DEST_HIGH], a
+	ldh [rHDMA3], a
 	ld a, e
-	ldh [rVDMA_DEST_LOW], a
+	ldh [rHDMA4], a
 	ld a, $23
 	ldh [hDMATransfer], a
 	call WaitDMATransfer
@@ -139,7 +139,7 @@ Function1040fb: ; unreferenced
 	ld a, $1
 	ldh [rVBK], a
 	ld a, BANK(w3_d800)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, w3_d800
 	call HDMATransferToWRAMBank3
 	ret
@@ -210,10 +210,10 @@ CallInSafeGFXMode:
 	xor a
 	ldh [hBGMapMode], a
 	ldh [hMapAnims], a
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wScratchTilemap)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ldh a, [rVBK]
 	push af
 
@@ -222,7 +222,7 @@ CallInSafeGFXMode:
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	pop af
 	ldh [hMapAnims], a
 	pop af
@@ -278,19 +278,19 @@ HDMATransfer_NoDI:
 	ld e, a
 	ld c, 2 * SCREEN_HEIGHT
 
-	; [rVDMA_SRC_HIGH, rVDMA_SRC_LOW] = hl & $fff0
+	; [rHDMA1, rHDMA2] = hl & $fff0
 	ld a, h
-	ldh [rVDMA_SRC_HIGH], a
+	ldh [rHDMA1], a
 	ld a, l
 	and $f0
-	ldh [rVDMA_SRC_LOW], a
-	; [rVDMA_DEST_HIGH, rVDMA_DEST_LOW] = de & $1ff0
+	ldh [rHDMA2], a
+	; [rHDMA3, rHDMA4] = de & $1ff0
 	ld a, d
 	and $1f
-	ldh [rVDMA_DEST_HIGH], a
+	ldh [rHDMA3], a
 	ld a, e
 	and $f0
-	ldh [rVDMA_DEST_LOW], a
+	ldh [rHDMA4], a
 	; b = c | %10000000
 	ld a, c
 	dec c
@@ -308,11 +308,11 @@ HDMATransfer_NoDI:
 	; while not [rSTAT] & 3: pass
 .loop2
 	ldh a, [rSTAT]
-	and STAT_MODE
+	and $3
 	jr z, .loop2
 	; load the 5th byte of HDMA
 	ld a, b
-	ldh [rVDMA_LEN], a
+	ldh [rHDMA5], a
 	; wait until rLY advances (c + 1) times
 	ldh a, [rLY]
 	inc c
@@ -323,7 +323,7 @@ HDMATransfer_NoDI:
 	ld a, [hl]
 	dec c
 	jr nz, .loop3
-	ld hl, rVDMA_LEN
+	ld hl, rHDMA5
 	res 7, [hl]
 	ret
 
@@ -335,19 +335,19 @@ HDMATransfer_WaitForScanline128:
 	ld b, $7f
 _continue_HDMATransfer:
 ; a lot of waiting around for hardware registers
-	; [rVDMA_SRC_HIGH, rVDMA_SRC_LOW] = hl & $fff0
+	; [rHDMA1, rHDMA2] = hl & $fff0
 	ld a, h
-	ldh [rVDMA_SRC_HIGH], a
+	ldh [rHDMA1], a
 	ld a, l
 	and $f0 ; high nybble
-	ldh [rVDMA_SRC_LOW], a
-	; [rVDMA_DEST_HIGH, rVDMA_DEST_LOW] = de & $1ff0
+	ldh [rHDMA2], a
+	; [rHDMA3, rHDMA4] = de & $1ff0
 	ld a, d
 	and $1f ; lower 5 bits
-	ldh [rVDMA_DEST_HIGH], a
+	ldh [rHDMA3], a
 	ld a, e
 	and $f0 ; high nybble
-	ldh [rVDMA_DEST_LOW], a
+	ldh [rHDMA4], a
 	; e = c | %10000000
 	ld a, c
 	dec c
@@ -367,16 +367,16 @@ _continue_HDMATransfer:
 	; while [rSTAT] & 3: pass
 .rstat_loop_1
 	ldh a, [rSTAT]
-	and STAT_MODE
+	and $3
 	jr nz, .rstat_loop_1
 	; while not [rSTAT] & 3: pass
 .rstat_loop_2
 	ldh a, [rSTAT]
-	and STAT_MODE
+	and $3
 	jr z, .rstat_loop_2
 	; load the 5th byte of HDMA
 	ld a, e
-	ldh [rVDMA_LEN], a
+	ldh [rHDMA5], a
 	; wait until rLY advances (c + 1) times
 	ldh a, [rLY]
 	inc c
@@ -387,7 +387,7 @@ _continue_HDMATransfer:
 	ld a, [hl]
 	dec c
 	jr nz, .final_ly_loop
-	ld hl, rVDMA_LEN
+	ld hl, rHDMA5
 	res 7, [hl]
 	ei
 
@@ -395,14 +395,14 @@ _continue_HDMATransfer:
 
 _LoadHDMAParameters:
 	ld a, h
-	ldh [rVDMA_SRC_HIGH], a
+	ldh [rHDMA1], a
 	ld a, l
-	ldh [rVDMA_SRC_LOW], a
+	ldh [rHDMA2], a
 	ldh a, [hBGMapAddress + 1]
 	and $1f
-	ldh [rVDMA_DEST_HIGH], a
+	ldh [rHDMA3], a
 	ldh a, [hBGMapAddress]
-	ldh [rVDMA_DEST_LOW], a
+	ldh [rHDMA4], a
 	ret
 
 PadTilemapForHDMATransfer:
@@ -435,7 +435,7 @@ PadMapForHDMATransfer:
 
 ; load the original padding value of c into hl for 32 - 20 = 12 rows
 	ldh a, [hMapObjectIndex]
-	ld b, TILEMAP_WIDTH - SCREEN_WIDTH
+	ld b, BG_MAP_WIDTH - SCREEN_WIDTH
 .loop3
 	ld [hli], a
 	dec b
@@ -452,10 +452,10 @@ PadMapForHDMATransfer:
 HDMATransfer2bpp::
 	; 2bpp when [rLCDC] & $80
 	; switch to WRAM bank 6
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wScratchTilemap)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	push bc
 	push hl
@@ -490,7 +490,7 @@ HDMATransfer2bpp::
 
 	; restore the previous bank
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 HDMATransfer1bpp::
@@ -520,10 +520,10 @@ HDMATransfer1bpp::
 	jr .loop
 
 .bankswitch
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wScratchTilemap)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	push bc
 	push hl
@@ -554,7 +554,7 @@ HDMATransfer1bpp::
 	call HDMATransfer_WaitForScanline128
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 HDMATransfer_OnlyTopFourRows:
@@ -593,7 +593,7 @@ HDMATransfer_OnlyTopFourRows:
 	dec c
 	jr nz, .inner_loop
 	ld a, l
-	add TILEMAP_WIDTH - SCREEN_WIDTH
+	add BG_MAP_WIDTH - SCREEN_WIDTH
 	ld l, a
 	ld a, h
 	adc 0

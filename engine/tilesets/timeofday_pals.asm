@@ -43,14 +43,14 @@ _TimeOfDayPals::
 	ld hl, wBGPals1 palette PAL_BG_TEXT
 
 ; save wram bank
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	ld b, a
 
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; push palette
-	ld c, PAL_COLORS
+	ld c, NUM_PAL_COLORS
 .push
 	ld d, [hl]
 	inc hl
@@ -62,7 +62,7 @@ _TimeOfDayPals::
 
 ; restore wram bank
 	ld a, b
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; update sgb pals
 	ld b, SCGB_MAPPALS
@@ -72,14 +72,14 @@ _TimeOfDayPals::
 	ld hl, wOBPals1 - 1 ; last byte in wBGPals1
 
 ; save wram bank
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	ld d, a
 
 	ld a, BANK(wOBPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; pop palette
-	ld e, PAL_COLORS
+	ld e, NUM_PAL_COLORS
 .pop
 	pop bc
 	ld [hl], c
@@ -91,7 +91,7 @@ _TimeOfDayPals::
 
 ; restore wram bank
 	ld a, d
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; update palettes
 	call _UpdateTimePals
@@ -169,10 +169,10 @@ FadeOutToBlack:
 
 FillWhiteBGColor:
 ; Copy white palette of wBGPals1 Pal0 into white palette of wBGPals1 Pal1-Pal6
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, wBGPals1
 	ld a, [hli]
@@ -193,7 +193,7 @@ endr
 	jr nz, .loop
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 ReplaceTimeOfDayPals:

@@ -2426,7 +2426,7 @@ BattleAnimFunc_String:
 	; Obj Param 0 flips when used by enemy
 	ld hl, BATTLEANIMSTRUCT_OAMFLAGS
 	add hl, bc
-	set B_OAM_YFLIP, [hl]
+	set OAM_Y_FLIP, [hl]
 .not_param_zero
 	add BATTLE_ANIM_FRAMESET_STRING_SHOT_1 ; BATTLE_ANIM_FRAMESET_STRING_SHOT_2 BATTLE_ANIM_FRAMESET_STRING_SHOT_3
 	call ReinitBattleAnimFrameset

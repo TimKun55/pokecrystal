@@ -54,14 +54,14 @@ _BillsPC:
 	; Disable hblank before restoring blockdata, since blockdata and hblank pals
 	; overlap.
 	ld hl, rIE
-	res B_IE_STAT, [hl]
+	res LCD_STAT, [hl]
 	ld a, RETI_INSTRUCTION
 	ld [hFunctionInstruction], a
 	ld a, LOW(LCDGeneric)
 	ldh [hFunctionTargetLo], a
 	ld a, HIGH(LCDGeneric)
 	ldh [hFunctionTargetHi], a
-	set B_IE_STAT, [hl]
+	set LCD_STAT, [hl]
 
 ;	; Restore regular speed.
 ;	ldh a, [rIE]
@@ -236,7 +236,7 @@ UseBillsPC:
 	; Item name is in vbk1
 	hlcoord 10, 2, wAttrmap ; Cursor's item
 	ld bc, 10
-	ld a, OAM_BANK1
+	ld a, VRAM_BANK_1
 	push bc
 	call ByteFill
 	pop bc
@@ -299,13 +299,13 @@ UseBillsPC:
 	; Party
 	hlcoord 1, 11
 	lb bc, 3, 2
-	lb de, $80, 2 | OAM_BANK1
+	lb de, $80, 2 | VRAM_BANK_1
 	call .WriteIconTilemap
 
 	; Storage
 	hlcoord 8, 7
 	lb bc, 5, 4
-	lb de, $98, 4 | OAM_BANK1
+	lb de, $98, 4 | VRAM_BANK_1
 	call .WriteIconTilemap
 
 	; Update attribute map data
@@ -314,14 +314,14 @@ UseBillsPC:
 
 	; Set up for HBlank palette switching
 	ld hl, rIE
-	res B_IE_STAT, [hl]
+	res LCD_STAT, [hl]
 	ld a, LOW(LCDBillsPC1)
 	ldh [hFunctionTargetLo], a
 	ld a, HIGH(LCDBillsPC1)
 	ldh [hFunctionTargetHi], a
 	ld a, JP_INSTRUCTION
 	ld [hFunctionInstruction], a
-	set B_IE_STAT, [hl]
+	set LCD_STAT, [hl]
 
 	; Display data about current Pokémon pointed to by cursor
 	call GetCursorMon
@@ -354,9 +354,9 @@ UseBillsPC:
 	db $31, $7f, $31 ; middle
 	db $33, $32, $33 ; bottom
 .BoxAttr:
-	db 1, 1, 1 | OAM_XFLIP ; top
-	db 1, 2 | OAM_BANK1, 1 | OAM_XFLIP ; middle
-	db 1 | OAM_YFLIP, 1 | OAM_YFLIP, 1 | OAM_XFLIP | OAM_YFLIP ; bottom
+	db 1, 1, 1 | X_FLIP ; top
+	db 1, 2 | VRAM_BANK_1, 1 | X_FLIP ; middle
+	db 1 | Y_FLIP, 1 | Y_FLIP, 1 | X_FLIP | Y_FLIP ; bottom
 
 .SpecialRow:
 ; Draws a nonstandard box outline
@@ -1053,7 +1053,7 @@ _GetCursorMon:
 	jr nc, .delay_loop
 
 	ld a, [wAttrmap]
-	and OAM_BANK1
+	and VRAM_BANK_1
 	pop hl
 	push af
 	ld a, 0
@@ -1111,7 +1111,7 @@ _GetCursorMon:
 	pop af
 	ld a, 2
 	jr nz, .got_new_tile_bank
-	ld a, 2 | OAM_BANK1
+	ld a, 2 | VRAM_BANK_1
 .got_new_tile_bank
 	hlcoord 0, 0, wAttrmap
 	lb bc, 7, 7
@@ -1146,7 +1146,7 @@ _GetCursorMon:
 	ld [hli], a
 	ld a, $20
 	ld [hli], a
-	ld [hl], OAM_BANK1
+	ld [hl], VRAM_BANK_1
 .item_icon_done
 
 	ld b, 0
@@ -2140,7 +2140,7 @@ BillsPC_PrepareTransistion:
 
 	; Disable hblank interrupt.
 	ld hl, rIE
-	res B_IE_STAT, [hl]
+	res LCD_STAT, [hl]
 
 	jp ClearSprites
 
@@ -2353,7 +2353,7 @@ BillsPC_MoveItem:
 	ld [hli], a
 	ld a, $06
 	ld [hli], a
-	ld [hl], OAM_BANK1 | PAL_PC_CURSOR_MODE2
+	ld [hl], VRAM_BANK_1 | PAL_PC_CURSOR_MODE2
 
 	; Load held item name
 	ld hl, vTiles5 tile $3b
@@ -3453,7 +3453,7 @@ BillsPC_RestoreUI:
 	call SafeCopyTilemapAtOnce
 
 	ld hl, rIE
-	set B_IE_STAT, [hl]
+	set LCD_STAT, [hl]
 
 	ld a, 1
 	ldh [hBGMapMode], a

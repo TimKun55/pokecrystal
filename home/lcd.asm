@@ -25,7 +25,7 @@ LCDBillsPC1::
 	; Write boxmon palettes
 	push af
 	ldh a, [rSTAT]
-	bit B_STAT_LYCF, a
+	bit rSTAT_LYC_CMP, a
 	jr z, .donepc
 	push hl
 	push bc
@@ -194,7 +194,7 @@ DisableLCD::
 
 ; Don't need to do anything if the LCD is already off
 	ldh a, [rLCDC]
-	bit B_LCDC_ENABLE, a
+	bit rLCDC_ENABLE, a
 	ret z
 
 	xor a
@@ -202,8 +202,8 @@ DisableLCD::
 	ldh a, [rIE]
 	ld b, a
 
-; Disable B_IE_VBLANK
-	res B_IE_VBLANK, a
+; Disable VBlank
+	res VBLANK, a
 	ldh [rIE], a
 
 .wait
@@ -213,7 +213,7 @@ DisableLCD::
 	jr nz, .wait
 
 	ldh a, [rLCDC]
-	and ~LCDC_ON
+	and ~(1 << rLCDC_ENABLE)
 	ldh [rLCDC], a
 
 	xor a
@@ -224,6 +224,6 @@ DisableLCD::
 
 EnableLCD::
 	ldh a, [rLCDC]
-	set B_LCDC_ENABLE, a
+	set rLCDC_ENABLE, a
 	ldh [rLCDC], a
 	ret

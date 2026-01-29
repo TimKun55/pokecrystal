@@ -3,9 +3,9 @@
 LatchClock::
 ; latch clock counter data
 	ld a, 0
-	ld [rRTCLATCH], a
+	ld [MBC3LatchClock], a
 	ld a, 1
-	ld [rRTCLATCH], a
+	ld [MBC3LatchClock], a
 	ret
 
 UpdateTime::
@@ -19,35 +19,35 @@ GetClock::
 ; store clock data in hRTCDayHi-hRTCSeconds
 
 ; enable clock r/w
-	ld a, RAMG_SRAM_ENABLE
-	ld [rRAMG], a
+	ld a, SRAM_ENABLE
+	ld [MBC3SRamEnable], a
 
 ; clock data is 'backwards' in hram
 
 	call LatchClock
-	ld hl, rRAMB
-	ld de, rRTCREG
+	ld hl, MBC3SRamBank
+	ld de, MBC3RTC
 
-	ld [hl], RAMB_RTC_S
+	ld [hl], RTC_S
 	ld a, [de]
 	maskbits 60
 	ldh [hRTCSeconds], a
 
-	ld [hl], RAMB_RTC_M
+	ld [hl], RTC_M
 	ld a, [de]
 	maskbits 60
 	ldh [hRTCMinutes], a
 
-	ld [hl], RAMB_RTC_H
+	ld [hl], RTC_H
 	ld a, [de]
 	maskbits 24
 	ldh [hRTCHours], a
 
-	ld [hl], RAMB_RTC_DL
+	ld [hl], RTC_DL
 	ld a, [de]
 	ldh [hRTCDayLo], a
 
-	ld [hl], RAMB_RTC_DH
+	ld [hl], RTC_DH
 	ld a, [de]
 	ldh [hRTCDayHi], a
 
@@ -202,43 +202,43 @@ SetClock::
 ; set clock data from hram
 
 ; enable clock r/w
-	ld a, RAMG_SRAM_ENABLE
-	ld [rRAMG], a
+	ld a, SRAM_ENABLE
+	ld [MBC3SRamEnable], a
 
 ; set clock data
 ; stored 'backwards' in hram
 
 	call LatchClock
-	ld hl, rRAMB
-	ld de, rRTCREG
+	ld hl, MBC3SRamBank
+	ld de, MBC3RTC
 
 ; seems to be a halt check that got partially commented out
 ; this block is totally pointless
-	ld [hl], RAMB_RTC_DH
+	ld [hl], RTC_DH
 	ld a, [de]
-	bit B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	bit 6, a ; halt
 	ld [de], a
 
 ; seconds
-	ld [hl], RAMB_RTC_S
+	ld [hl], RTC_S
 	ldh a, [hRTCSeconds]
 	ld [de], a
 ; minutes
-	ld [hl], RAMB_RTC_M
+	ld [hl], RTC_M
 	ldh a, [hRTCMinutes]
 	ld [de], a
 ; hours
-	ld [hl], RAMB_RTC_H
+	ld [hl], RTC_H
 	ldh a, [hRTCHours]
 	ld [de], a
 ; day lo
-	ld [hl], RAMB_RTC_DL
+	ld [hl], RTC_DL
 	ldh a, [hRTCDayLo]
 	ld [de], a
 ; day hi
-	ld [hl], RAMB_RTC_DH
+	ld [hl], RTC_DH
 	ldh a, [hRTCDayHi]
-	res B_RAMB_RTC_DH_HALT, a ; 6, a ; make sure timer is active
+	res 6, a ; make sure timer is active
 	ld [de], a
 
 ; cleanup

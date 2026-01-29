@@ -8,7 +8,7 @@ DMATransfer::
 	ret z
 
 ; Start transfer
-	ldh [rVDMA_LEN], a
+	ldh [rHDMA5], a
 
 ; Execution is halted until the transfer is complete.
 
@@ -168,7 +168,7 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 .attr_bottom
 	coord sp, 0, 2 * THIRD_HEIGHT, wAttrmap
 
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, 2 * THIRD_HEIGHT * BG_MAP_WIDTH
 	add hl, de
 
 ; Next time: top third
@@ -178,7 +178,7 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 .attr_middle
 	coord sp, 0, THIRD_HEIGHT, wAttrmap
 
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, THIRD_HEIGHT * BG_MAP_WIDTH
 	add hl, de
 
 ; Next time: bottom third
@@ -211,7 +211,7 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 .tiles_bottom
 	coord sp, 0, 2 * THIRD_HEIGHT
 
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, 2 * THIRD_HEIGHT * BG_MAP_WIDTH
 	add hl, de
 
 ; Next time: top third
@@ -221,7 +221,7 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 .tiles_middle
 	coord sp, 0, THIRD_HEIGHT
 
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, THIRD_HEIGHT * BG_MAP_WIDTH
 	add hl, de
 
 ; Next time: bottom third
@@ -243,7 +243,7 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 	ld a, THIRD_HEIGHT
 
 ; Discrepancy between wTilemap and BGMap
-	ld bc, TILEMAP_WIDTH - (SCREEN_WIDTH - 1)
+	ld bc, BG_MAP_WIDTH - (SCREEN_WIDTH - 1)
 
 .row
 ; Copy a row of 20 tiles
@@ -437,10 +437,10 @@ AnimateTileset::
 	ld a, BANK(_AnimateTileset)
 	rst Bankswitch
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTilesetAnim)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ldh a, [rVBK]
 	push af
@@ -452,7 +452,7 @@ AnimateTileset::
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	pop af
 	rst Bankswitch
 	ret

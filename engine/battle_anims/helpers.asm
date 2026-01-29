@@ -37,14 +37,14 @@ GetBattleAnimFrame:
 	push af
 	ld a, [hl]
 	push hl
-	and ~(OAM_YFLIP << 1 | OAM_XFLIP << 1)
+	and ~(Y_FLIP << 1 | X_FLIP << 1)
 	ld hl, BATTLEANIMSTRUCT_DURATION
 	add hl, bc
 	ld [hl], a
 	pop hl
 .okay
 	ld a, [hl]
-	and OAM_YFLIP << 1 | OAM_XFLIP << 1 ; The << 1 is compensated in the "oamframe" macro
+	and Y_FLIP << 1 | X_FLIP << 1 ; The << 1 is compensated in the "oamframe" macro
 	srl a
 	ld [wBattleAnimTempFrameOAMFlags], a
 	pop af
@@ -143,7 +143,7 @@ LoadBattleAnimGFX:
 	jr z, .palette_done
 	inc a
 	jr z, .palette_done
-rept COLOR_SIZE * 2
+rept PAL_COLOR_SIZE * 2
 	inc hl
 endr
 	jr .palette_loop
@@ -153,12 +153,12 @@ endr
 	ld [rSVBK], a
 	; load the RGB colors into the middle two colors of PAL_BATTLE_OB_RED
 	ld de, wOBPals2 palette PAL_BATTLE_OB_RED color 1
-	ld bc, COLOR_SIZE * 2
+	ld bc, PAL_COLOR_SIZE * 2
 	call CopyBytes
 	; load white background in PAL_BATTLE_OG_GREEN
 	ld hl, WhitePalette
 	ld de, wOBPals2 palette PAL_BATTLE_OB_GREEN color 1
-	ld bc, COLOR_SIZE
+	ld bc, PAL_COLOR_SIZE
 	call CopyBytes
 	; apply the updated colors to the palette RAM
 	ld a, $1

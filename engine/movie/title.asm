@@ -28,7 +28,7 @@ _TitleScreen:
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
-	ld bc, SCREEN_WIDTH * TILEMAP_WIDTH
+	ld bc, 20 * BG_MAP_WIDTH
 	xor a
 	call ByteFill
 
@@ -38,7 +38,7 @@ _TitleScreen:
 
 ; line 0 (copyright)
 	hlbgcoord 0, 0, vBGMap1
-	ld bc, TILEMAP_WIDTH
+	ld bc, BG_MAP_WIDTH
 	ld a, 7 ; palette
 	call ByteFill
 
@@ -48,12 +48,12 @@ _TitleScreen:
 
 ; lines 3-6
 	hlbgcoord 0, 3
-	ld bc, 4 * TILEMAP_WIDTH
+	ld bc, 4 * BG_MAP_WIDTH
 	ld a, 2
 	call ByteFill
 ; line 7-9
 	hlbgcoord 0, 7
-	ld bc, 3 * TILEMAP_WIDTH
+	ld bc, 3 * BG_MAP_WIDTH
 	ld a, 3
 	call ByteFill
 
@@ -85,7 +85,7 @@ _TitleScreen:
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
-	ld bc, 64 * TILEMAP_WIDTH
+	ld bc, 64 * BG_MAP_WIDTH
 	ld a, ' '
 	call ByteFill
 
@@ -111,10 +111,10 @@ _TitleScreen:
 	call InitializeBackground
 
 ; Update palette colors
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, TitleScreenPalettes
 	ld de, wBGPals1
@@ -127,14 +127,14 @@ _TitleScreen:
 	call CopyBytes
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; LY/SCX trickery starts here
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; Make alternating lines come in from opposite sides
 
@@ -165,7 +165,7 @@ _TitleScreen:
 	ldh [hLCDCPointer], a
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; Reset audio
 	call ChannelsOff
@@ -173,7 +173,7 @@ _TitleScreen:
 
 ; Set sprite size to 8x16
 	ldh a, [rLCDC]
-	set B_LCDC_OBJ_SIZE, a
+	set rLCDC_SPRITE_SIZE, a
 	ldh [rLCDC], a
 
 	ld a, +112
@@ -303,7 +303,7 @@ InitializeBackground:
 	jr nz, .loop
 
 	; set palettes for crystal sprites besides #0
-	ld a, 0 | OAM_PRIO
+	ld a, 0 | PRIORITY
 	ld [wShadowOAMSprite00Attributes], a
 	ld [wShadowOAMSprite01Attributes], a
 	ld [wShadowOAMSprite02Attributes], a
@@ -312,17 +312,17 @@ InitializeBackground:
 	ld [wShadowOAMSprite24Attributes], a
 	ld [wShadowOAMSprite25Attributes], a
 	ld [wShadowOAMSprite26Attributes], a
-	ld a, 2 | OAM_PRIO
+	ld a, 2 | PRIORITY
 	ld [wShadowOAMSprite07Attributes], a
 	ld [wShadowOAMSprite19Attributes], a
 	ld [wShadowOAMSprite20Attributes], a
-	inc a ; 3 | OAM_PRIO
+	inc a ; 3 | PRIORITY
 	ld [wShadowOAMSprite08Attributes], a
 
 	; create overlapping sprites
 	ld hl, .OverlappingSprites
 	ld de, wShadowOAMSprite30
-	ld bc, 6 * OBJ_SIZE
+	ld bc, 6 * SPRITEOAMSTRUCT_LENGTH
 	call CopyBytes
 	ret
 
@@ -340,19 +340,19 @@ InitializeBackground:
 	ld [hli], a ; tile id
 	inc e ; increment tile ID
 	inc e
-	ld a, 1 | OAM_PRIO
+	ld a, 1 | PRIORITY
 	ld [hli], a ; attributes
 	dec c
 	jr nz, .loop2
 	ret
 
 .OverlappingSprites:
-	db -$12, $40, $3c, 1 | OAM_PRIO
-	db -$12, $48, $3e, 4 | OAM_PRIO
-	db  $1e, $40, $40, 1 | OAM_PRIO
-	db  $1d, $48, $42, 1 | OAM_PRIO
-	db  $1e, $50, $44, 1 | OAM_PRIO
-	db  $0e, $60, $46, 0 | OAM_PRIO
+	db -$12, $40, $3c, 1 | PRIORITY
+	db -$12, $48, $3e, 4 | PRIORITY
+	db  $1e, $40, $40, 1 | PRIORITY
+	db  $1d, $48, $42, 1 | PRIORITY
+	db  $1e, $50, $44, 1 | PRIORITY
+	db  $0e, $60, $46, 0 | PRIORITY
 
 AnimateTitleCrystal:
 ; Move the title screen crystal downward until it's fully visible
@@ -370,7 +370,7 @@ AnimateTitleCrystal:
 	ld a, [hl]
 	add 2
 	ld [hli], a ; y
-rept OBJ_SIZE - 1
+rept SPRITEOAMSTRUCT_LENGTH - 1
 	inc hl
 endr
 	dec c

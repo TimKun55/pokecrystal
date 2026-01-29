@@ -218,10 +218,10 @@ GetLengthOfWordAtC608:
 	jr .loop
 
 CopyMobileEZChatToC608:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, '@'
 	ld hl, wc608
 	ld bc, NAME_LENGTH
@@ -256,7 +256,7 @@ CopyMobileEZChatToC608:
 	call CopyBytes
 	ld de, wc608
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 .get_name
@@ -279,13 +279,13 @@ Function11c1ab:
 
 Function11c1b9:
 	call .InitKanaMode
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call EZChat_MasterLoop
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 .InitKanaMode:
@@ -323,16 +323,16 @@ Function11c1b9:
 	farcall ClearSpriteAnims
 	farcall LoadPokemonData
 	farcall Pokedex_ABCMode
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wc6d0
 	ld de, wLYOverrides
 	ld bc, $100
 	call CopyBytes
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call EZChat_GetCategoryWordsByKana
 	call EZChat_GetSeenPokemonByKana
 	ret
@@ -2854,16 +2854,16 @@ AnimateEZChatCursor:
 	ret
 
 Function11d323:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, Palette_11d33a
 	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Palette_11d33a:
@@ -2948,7 +2948,7 @@ Palette_11d33a:
 	RGB 00, 00, 00
 
 EZChat_GetSeenPokemonByKana:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld hl, wc648
 	ld a, LOW(w5_d800)
@@ -3005,21 +3005,21 @@ EZChat_GetSeenPokemonByKana:
 .loop1
 ; copy 2*bc bytes from 3:hl to 5:de
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [hli]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	pop af
 	ld [de], a
 	inc de
 
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, [hli]
 	push af
 	ld a, $5
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	pop af
 	ld [de], a
 	inc de
@@ -3121,7 +3121,7 @@ EZChat_GetSeenPokemonByKana:
 
 .ExitMasterLoop:
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 .CheckSeenMon:
@@ -3129,11 +3129,11 @@ EZChat_GetSeenPokemonByKana:
 	push bc
 	push de
 	dec a
-	ld hl, rWBK
+	ld hl, rSVBK
 	ld e, $1
 	ld [hl], e
 	call CheckSeenMon
-	ld hl, rWBK
+	ld hl, rSVBK
 	ld e, $5
 	ld [hl], e
 	pop de
@@ -3142,10 +3142,10 @@ EZChat_GetSeenPokemonByKana:
 	ret
 
 EZChat_GetCategoryWordsByKana:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	; load pointers
 	ld hl, MobileEZChatCategoryPointers
@@ -3222,7 +3222,7 @@ EZChat_GetCategoryWordsByKana:
 	dec a
 	jr nz, .loop1
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 INCLUDE "data/pokemon/ezchat_order.asm"

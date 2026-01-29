@@ -8,10 +8,10 @@ Credits::
 .okay
 	ld [wJumptableIndex], a
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wGBCPalettes)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	call ClearBGPalettes
 	call ClearTilemap
@@ -77,7 +77,7 @@ Credits::
 	call SetDefaultBGPAndOBP
 	ldh a, [hVBlank]
 	push af
-	ld a, VBLANK_CREDITS
+	ld a, $5
 	ldh [hVBlank], a
 	ldh a, [hInMenu]
 	push af	
@@ -110,7 +110,7 @@ Credits::
 	pop af
 	ldh [hVBlank], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 Credits_HandleAButton:
@@ -408,7 +408,7 @@ ConstructCreditsTilemap:
 
 	ld a, $28
 	hlcoord 0, 0
-	ld bc, SCREEN_AREA
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	call ByteFill
 
 	ld a, $7f

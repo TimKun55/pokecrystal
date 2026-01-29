@@ -31,7 +31,7 @@ UnusedTitleScreen: ; unreferenced
 
 	ld hl, UnusedTitleBG_Tilemap
 	debgcoord 0, 0
-	ld bc, TILEMAP_AREA
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 .copy
 	ld a, 0
 	ldh [rVBK], a
@@ -49,21 +49,21 @@ UnusedTitleScreen: ; unreferenced
 
 	ld hl, UnusedTitleFG_OAM
 	ld de, wShadowOAMSprite00
-	ld bc, OAM_SIZE
+	ld bc, SPRITEOAMSTRUCT_LENGTH * NUM_SPRITE_OAM_STRUCTS
 	call CopyBytes
 
 	call EnableLCD
 	ldh a, [rLCDC]
-	set B_LCDC_OBJS, a
-	set B_LCDC_OBJ_SIZE, a
+	set rLCDC_SPRITES_ENABLE, a
+	set rLCDC_SPRITE_SIZE, a
 	ldh [rLCDC], a
 
 	call DelayFrame
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, UnusedTitleBG_Palettes
 	ld de, wBGPals1
@@ -86,7 +86,7 @@ UnusedTitleScreen: ; unreferenced
 	call CopyBytes
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a

@@ -145,7 +145,7 @@ FarCopyRadioText::
 	ld d, a
 	ld a, [hli]
 	ldh [hROMBank], a
-	ld [rROMB0], a
+	ld [MBC3RomBank], a
 	ld a, e
 	ld l, a
 	ld a, d
@@ -155,7 +155,7 @@ FarCopyRadioText::
 	call CopyBytes
 	pop af
 	ldh [hROMBank], a
-	ld [rROMB0], a
+	ld [MBC3RomBank], a
 	ret
 
 MobileTextBorder::
@@ -257,6 +257,6 @@ PushLYOverrides::
 	ld a, HIGH(wLYOverrides)
 	ld [wRequested2bppDest + 1], a
 
-	ld a, (wLYOverridesEnd - wLYOverrides) / TILE_SIZE
+	ld a, (wLYOverridesEnd - wLYOverrides) / LEN_2BPP_TILE
 	ld [wRequested2bppSize], a
 	ret

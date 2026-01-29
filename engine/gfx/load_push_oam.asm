@@ -19,7 +19,7 @@ hTransferShadowOAM::
 	ld a, HIGH(wShadowOAM)
 	ldh [rDMA], a
 	; wait for DMA to finish
-	ld a, OAM_COUNT
+	ld a, NUM_SPRITE_OAM_STRUCTS
 .wait
 	dec a
 	jr nz, .wait

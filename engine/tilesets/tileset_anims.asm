@@ -367,7 +367,7 @@ ScrollTileUpDown: ; unreferenced
 ScrollTileLeft:
 	ld h, d
 	ld l, e
-	ld c, TILE_SIZE / 4
+	ld c, LEN_2BPP_TILE / 4
 .loop
 rept 4
 	ld a, [hl]
@@ -381,7 +381,7 @@ endr
 ScrollTileRight:
 	ld h, d
 	ld l, e
-	ld c, TILE_SIZE / 4
+	ld c, LEN_2BPP_TILE / 4
 .loop
 rept 4
 	ld a, [hl]
@@ -398,9 +398,9 @@ ScrollTileUp:
 	ld d, [hl]
 	inc hl
 	ld e, [hl]
-	ld bc, TILE_SIZE - 2
+	ld bc, LEN_2BPP_TILE - 2
 	add hl, bc
-	ld a, TILE_SIZE / 4
+	ld a, LEN_2BPP_TILE / 4
 .loop
 	ld c, [hl]
 	ld [hl], e
@@ -421,14 +421,14 @@ ScrollTileUp:
 ScrollTileDown:
 	ld h, d
 	ld l, e
-	ld de, TILE_SIZE - 2
+	ld de, LEN_2BPP_TILE - 2
 	push hl
 	add hl, de
 	ld d, [hl]
 	inc hl
 	ld e, [hl]
 	pop hl
-	ld a, TILE_SIZE / 4
+	ld a, LEN_2BPP_TILE / 4
 .loop
 	ld b, [hl]
 	ld [hl], d
@@ -1040,7 +1040,7 @@ WriteTile:
 	ld [hl], e
 	inc hl
 	ld [hl], d
-rept (TILE_SIZE - 2) / 2
+rept (LEN_2BPP_TILE - 2) / 2
 	pop de
 	inc hl
 	ld [hl], e
@@ -1074,13 +1074,13 @@ AnimateWaterPalette:
 	ret nz
 
 ; Ready for BGPD input
-	ld a, BGPI_AUTOINC palette PAL_BG_WATER color 0
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_WATER color 0
 	ldh [rBGPI], a
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; A cycle of 4 colors (0 1 2 1), updating every other tick
 	ld a, l
@@ -1116,7 +1116,7 @@ AnimateWaterPalette:
 
 .end
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 FlickeringCaveEntrancePalette:
@@ -1135,13 +1135,13 @@ FlickeringCaveEntrancePalette:
 	cp DARKNESS_PALSET
 	ret nz
 
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 ; Ready for BGPD input
-	ld a, BGPI_AUTOINC palette PAL_BG_YELLOW color 0
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW color 0
 	ldh [rBGPI], a
 
 ; A cycle of 2 colors (0 2), updating every other vblank
@@ -1165,7 +1165,7 @@ FlickeringCaveEntrancePalette:
 	ldh [rBGPD], a
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 TowerPillarTilePointer1:  dw vTiles2 tile $2d, TowerPillarTile1

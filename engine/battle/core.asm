@@ -5385,7 +5385,7 @@ MoveInfoBox:
 	farcall GetMonTypeIndex
 	ld a, c ; Type Index
 	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
-	ld bc, 4 * TILE_1BPP_SIZE ; Type GFX is 4 Tiles Wide
+	ld bc, 4 * LEN_1BPP_TILE ; Type GFX is 4 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -7921,11 +7921,11 @@ BattleIntro:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
 	ld hl, rLCDC
-	res B_LCDC_WIN_MAP, [hl] ; select vBGMap0/vBGMap2
+	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
 	call InitBattleDisplay
 	call BattleStartMessage
 	ld hl, rLCDC
-	set B_LCDC_WIN_MAP, [hl] ; select vBGMap1/vBGMap3
+	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
 	xor a
 	ldh [hBGMapMode], a
 	call EmptyBattleTextbox
@@ -7961,10 +7961,10 @@ InitEnemy:
 	jp InitEnemyWildmon ; wild
 
 BackUpBGMap2:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wDecompressScratch
 	ld bc, $40 tiles ; vBGMap3 - vBGMap2
 	ld a, $2
@@ -7980,7 +7980,7 @@ BackUpBGMap2:
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 InitEnemyTrainer:
@@ -8314,7 +8314,7 @@ _DisplayLinkRecord:
 	call CloseSRAM
 	hlcoord 0, 0, wAttrmap
 	xor a
-	ld bc, SCREEN_AREA
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	call WaitBGMap2
 	ld b, SCGB_GENERIC
@@ -8808,23 +8808,23 @@ InitBattleDisplay:
 	ret
 
 .BlankBGMap:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 
 	ld hl, wDecompressScratch
-	ld bc, TILEMAP_AREA
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 	ld a, ' '
 	call ByteFill
 
 	ld de, wDecompressScratch
 	hlbgcoord 0, 0
-	lb bc, BANK(@), TILEMAP_AREA / TILE_SIZE
+	lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
 	call Request2bpp
 
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 .InitBackPic:
@@ -8833,10 +8833,10 @@ InitBattleDisplay:
 	ret
 
 CopyBackpic:
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, vTiles0
 	ld de, vTiles2 tile $31
 	ldh a, [hROMBank]
@@ -8844,7 +8844,7 @@ CopyBackpic:
 	ld c, 7 * 7
 	call Get2bpp
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call .LoadTrainerBackpicAsOAM
 	ld a, $31
 	ldh [hGraphicStartTile], a

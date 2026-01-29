@@ -3,10 +3,10 @@ BattleTowerText::
 ; 1: Intro text
 ; 2: Player lost
 ; 3: Player won
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 if DEF(_CRYSTAL11)
 	ld hl, wBT_OTTrainerClass
 else
@@ -79,7 +79,7 @@ endc
 	ld h, a
 	bccoord 1, 14
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	call PrintTextboxTextAt
 	ret
 

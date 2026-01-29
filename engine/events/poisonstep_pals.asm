@@ -24,10 +24,10 @@ LoadPoisonBGPals:
 	ret
 
 .cgb
-	ldh a, [rWBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals2)
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld hl, wBGPals2
 	ld c, 4 palettes
 .loop
@@ -38,7 +38,7 @@ LoadPoisonBGPals:
 	dec c
 	jr nz, .loop
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ld c, 4

@@ -338,7 +338,7 @@ ENDC
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; load the tiles
 	ld hl, TypeLightIconGFX
-	ld bc, 4 * TILE_SIZE
+	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -384,7 +384,7 @@ ENDC
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
-	ld bc, 4 * TILE_SIZE
+	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l

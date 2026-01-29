@@ -27,11 +27,11 @@ AskSerial::
 	ldh [rSB], a
 
 ; switch to internal clock
-	ld a, SC_INTERNAL
+	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
 	ldh [rSC], a
 
 ; start transfer
-	ld a, SC_START | SC_INTERNAL
+	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
 	ldh [rSC], a
 
 	ret
