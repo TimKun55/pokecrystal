@@ -247,9 +247,9 @@ MainMenuJoypadLoop:
 	ld [w2DMenuFlags1], a
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b_button
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a_button
 	jr .loop
 

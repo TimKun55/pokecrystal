@@ -454,7 +454,7 @@ OWPlayerInput:
 
 CheckAPressOW:
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	ret z
 	call TryObjectEvent
 	ret c
@@ -762,10 +762,10 @@ CheckMenuOW:
 	ldh [hUnusedByte], a
 	ldh a, [hJoyPressed]
 
-	bit B_PAD_SELECT, a
+	bit SELECT_F, a
 	jr nz, .Select
 
-	bit B_PAD_START, a
+	bit START_F, a
 	jr z, .NoMenu
 
 	ld a, BANK(StartMenuScript)

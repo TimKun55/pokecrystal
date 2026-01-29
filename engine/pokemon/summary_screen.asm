@@ -168,13 +168,13 @@ EggSummaryInit:
 
 EggSummaryJoypad:
 	call SummaryScreen_GetJoypad
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .quit
 if DEF(_DEBUG)
-	cp PAD_START
+	cp START
 	jr z, .hatch
 endc
-	and PAD_DOWN | PAD_UP | PAD_A | PAD_B
+	and D_DOWN | D_UP | A_BUTTON | B_BUTTON
 	jp SummaryScreen_JoypadAction
 
 .quit
@@ -232,7 +232,7 @@ MonSummaryJoypad:
 	ret
 
 .next
-	and PAD_DOWN | PAD_UP | PAD_LEFT | PAD_RIGHT | PAD_A | PAD_B
+	and D_DOWN | D_UP | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON
 	jp SummaryScreen_JoypadAction
 
 SummaryScreenWaitCry:
@@ -281,17 +281,17 @@ SummaryScreen_JoypadAction:
 	maskbits NUM_STAT_PAGES
 	ld c, a
 	pop af
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jp nz, .b_button
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .d_left
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr nz, .d_right
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .a_button
-	bit B_PAD_UP, a
+	bit D_UP_F, a
 	jr nz, .d_up
-	bit B_PAD_DOWN, a
+	bit D_DOWN_F, a
 	jr nz, .d_down
 	jr .done
 

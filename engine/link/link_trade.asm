@@ -189,10 +189,10 @@ LinkTradeMenu:
 	push bc
 	push af
 	ldh a, [hJoyLast]
-	and PAD_CTRL_PAD
+	and D_PAD
 	ld b, a
 	ldh a, [hJoyPressed]
-	and PAD_BUTTONS
+	and BUTTONS
 	or b
 	ld b, a
 	pop af

@@ -1561,15 +1561,15 @@ String_89a53:
 
 Function89a57:
 	call JoyTextDelay_ForcehJoyDown ; joypad
-	bit B_PAD_UP, c
+	bit D_UP_F, c
 	jr nz, .d_up
-	bit B_PAD_DOWN, c
+	bit D_DOWN_F, c
 	jr nz, .d_down
-	bit B_PAD_A, c
+	bit A_BUTTON_F, c
 	jr nz, .a_b_button
-	bit B_PAD_B, c
+	bit B_BUTTON_F, c
 	jr nz, .a_b_button
-	bit B_PAD_START, c
+	bit START_F, c
 	jr nz, .start_button
 	scf
 	ret
@@ -1926,33 +1926,33 @@ Function89c67:
 ; menu scrolling?
 	call JoyTextDelay_ForcehJoyDown ; joypad
 	ld b, $0
-	bit B_PAD_A, c
+	bit A_BUTTON_F, c
 	jr z, .not_a_button
 	ld b, $1
 	and a
 	ret
 
 .not_a_button
-	bit B_PAD_B, c
+	bit B_BUTTON_F, c
 	jr z, .not_b_button
 	scf
 	ret
 
 .not_b_button
 	xor a
-	bit B_PAD_UP, c
+	bit D_UP_F, c
 	jr z, .not_d_up
 	ld a, $1
 .not_d_up
-	bit B_PAD_DOWN, c
+	bit D_DOWN_F, c
 	jr z, .not_d_down
 	ld a, $2
 .not_d_down
-	bit B_PAD_LEFT, c
+	bit D_LEFT_F, c
 	jr z, .not_d_left
 	ld a, $3
 .not_d_left
-	bit B_PAD_RIGHT, c
+	bit D_RIGHT_F, c
 	jr z, .not_d_right
 	ld a, $4
 .not_d_right
@@ -2136,9 +2136,9 @@ Function89dab:
 	ld hl, wMenuJoypadFilter
 	and [hl]
 	ret z
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .asm_89dc7
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .asm_89dd9
 	xor a
 	ret
@@ -2943,9 +2943,9 @@ Function8a383:
 	ld hl, wMenuJoypadFilter
 	and [hl]
 	ret z
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .asm_8a399
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .asm_8a39e
 	xor a
 	ret
@@ -3664,7 +3664,7 @@ Function8a930:
 .asm_8a943
 	call Function8b7bd
 	ld a, [wMenuJoypad]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .asm_8a953
 	ld a, c
 	and a
@@ -3945,11 +3945,11 @@ Function8ab3b:
 
 .JoypadLoop:
 	call JoyTextDelay_ForcehJoyDown
-	bit B_PAD_A, c
+	bit A_BUTTON_F, c
 	jr nz, .a_b_button
-	bit B_PAD_B, c
+	bit B_BUTTON_F, c
 	jr nz, .a_b_button
-	bit B_PAD_START, c
+	bit START_F, c
 	jr z, .JoypadLoop
 	call PlayClickSFX
 	call Function89d0d

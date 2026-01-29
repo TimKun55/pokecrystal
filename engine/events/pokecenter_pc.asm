@@ -628,21 +628,21 @@ PCItemsJoypad:
 	and a
 	jr nz, .moving_stuff_around
 	ld a, [wMenuJoypad]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b_1
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a_1
-	cp PAD_SELECT
+	cp SELECT
 	jr z, .select_1
 	jr .next
 
 .moving_stuff_around
 	ld a, [wMenuJoypad]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b_2
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a_select_2
-	cp PAD_SELECT
+	cp SELECT
 	jr z, .a_select_2
 	jr .next
 

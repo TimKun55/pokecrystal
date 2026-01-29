@@ -729,11 +729,11 @@ Function11c53d:
 	ld de, hJoypadPressed
 
 	ld a, [de]
-	and PAD_START
+	and START
 	jr nz, .start
 
 	ld a, [de]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .select
 
 	ld a, [de]
@@ -741,25 +741,25 @@ Function11c53d:
 	jr nz, .b
 
 	ld a, [de]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a
 
 	ld de, hJoyLast
 
 	ld a, [de]
-	and PAD_UP
+	and D_UP
 	jr nz, .up
 
 	ld a, [de]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .down
 
 	ld a, [de]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 
 	ld a, [de]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 
 	ret
@@ -937,16 +937,16 @@ Function11c675:
 	ld hl, wMobileCommsJumptableIndex
 	ld de, hJoypadPressed
 	ld a, [de]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a
 	ld a, [de]
 	and B_BUTTON
 	jr nz, .b
 	ld a, [de]
-	and PAD_START
+	and START
 	jr nz, .start
 	ld a, [de]
-	and PAD_SELECT
+	and SELECT
 	jr z, .select
 
 	ld a, [wcd26]
@@ -989,16 +989,16 @@ Function11c675:
 .select
 	ld de, hJoyLast
 	ld a, [de]
-	and PAD_UP
+	and D_UP
 	jr nz, .asm_11c708
 	ld a, [de]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .asm_11c731
 	ld a, [de]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .asm_11c746
 	ld a, [de]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .asm_11c755
 	ret
 
@@ -1936,16 +1936,16 @@ Function11cd54:
 	ld hl, wcd2c
 	ld de, hJoypadPressed
 	ld a, [de]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .asm_11cd6f
 	ld a, [de]
 	and B_BUTTON
 	jr nz, .asm_11cd73
 	ld a, [de]
-	and PAD_UP
+	and D_UP
 	jr nz, .asm_11cd8b
 	ld a, [de]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .asm_11cd94
 	ret
 
@@ -2041,13 +2041,13 @@ Function11ce2b:
 
 	ld de, hJoypadPressed
 	ld a, [de]
-	and PAD_START
+	and START
 	jr nz, .start
 	ld a, [de]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .select
 	ld a, [de]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a
 	ld a, [de]
 	and B_BUTTON
@@ -2055,16 +2055,16 @@ Function11ce2b:
 
 	ld de, hJoyLast
 	ld a, [de]
-	and PAD_UP
+	and D_UP
 	jr nz, .up
 	ld a, [de]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .down
 	ld a, [de]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [de]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 
 	ret

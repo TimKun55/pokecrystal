@@ -969,9 +969,9 @@ ChooseMoveToDelete:
 
 .loop
 	call ScrollingMenuJoypad
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jp nz, .b_button
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jp nz, .a_button
 
 .enter_loop
@@ -1002,7 +1002,7 @@ DeleteMoveScreen2DMenuData:
 	db 3, 1 ; rows, columns
 	db $40, $00 ; flags
 	dn 2, 0 ; cursor offset
-	db PAD_UP | PAD_DOWN | PAD_A | PAD_B ; accepted buttons
+	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
 
 ManagePokemonMoves:
 	ld a, [wCurPartySpecies]
@@ -1238,7 +1238,7 @@ MoveScreen2DMenuData:
 	db 3, 1 ; rows, columns
 	db $40, $00 ; flags
 	dn 2, 0 ; cursor offsets
-	db PAD_UP | PAD_DOWN | PAD_LEFT | PAD_RIGHT | PAD_A | PAD_B ; accepted buttons
+	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
 
 String_MoveWhere:
 	db "Select a move<NEXT>to swap places.@"

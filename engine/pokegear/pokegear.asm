@@ -463,18 +463,18 @@ PokegearClock_Joypad:
 	call .UpdateClock
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_B ; Pressing B exits Pokégear
+	and B_BUTTON ; Pressing B exits Pokégear
 	jr nz, .quit
 
 	ld a, [hl]
- 	and PAD_A
+ 	and A_BUTTON
  	jr nz, .clockreset
 
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	ret z
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_MAP_CARD_F, a
@@ -742,13 +742,13 @@ PokegearMap_JohtoMap:
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .cancel
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	call .DPad
 	ret
@@ -925,13 +925,13 @@ PokegearRadio_Init:
 PokegearRadio_Joypad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .cancel
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT ; act like you have no phone and no map going left, takes to clock
+	and D_RIGHT ; act like you have no phone and no map going left, takes to clock
 	; jr nz, .right	
 	jr nz, .no_map
 	ld a, [wPokegearRadioChannelAddr]
@@ -989,17 +989,17 @@ PokegearPhone_Init:
 PokegearPhone_Joypad:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .b
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 	call PokegearPhone_GetDPad
 	ret
@@ -1119,7 +1119,7 @@ PokegearPhone_MakePhoneCall:
 
 PokegearPhone_FinishPhoneCall:
 	ldh a, [hJoyPressed]
-	and PAD_A | PAD_B
+	and A_BUTTON | B_BUTTON
 	ret z
 	farcall HangUp
 	ld a, POKEGEARSTATE_PHONEJOYPAD
@@ -1329,7 +1329,7 @@ PokegearPhoneContactSubmenu:
 	and D_DOWN
 	jr nz, .d_down
 	ld a, [hl]
-	and PAD_A | PAD_B
+	and A_BUTTON | B_BUTTON
 	jr nz, .a_b
 	call DelayFrame
 	jr .loop
@@ -1362,7 +1362,7 @@ PokegearPhoneContactSubmenu:
 	ldh [hBGMapMode], a
 	pop hl
 	ldh a, [hJoyPressed]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .Cancel
 	ld a, [wPokegearPhoneSubmenuCursor]
 	ld e, a
@@ -2013,7 +2013,7 @@ _TownMap:
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	ret nz
 
 	ld hl, hJoyLast
@@ -2114,7 +2114,7 @@ PlayRadio:
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and PAD_A | PAD_B
+	and A_BUTTON | B_BUTTON
 	jr nz, .stop
 	ld a, [wPokegearRadioChannelAddr]
 	ld l, a
@@ -2229,10 +2229,10 @@ _FlyMap:
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .pressedB
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .pressedA
 	call .HandleDPad
 	call GetMapCursorCoordinates
@@ -2554,12 +2554,12 @@ Pokedex_GetArea:
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .b
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a
 	ldh a, [hJoypadDown]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .select
 	call .LeftRightInput
 	call .BlinkNestIcons
@@ -2582,10 +2582,10 @@ Pokedex_GetArea:
 
 .LeftRightInput:
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 	ret
 
@@ -3054,10 +3054,10 @@ EntireFlyMap: ; unreferenced
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .pressedB
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .pressedA
 	call .HandleDPad
 	call GetMapCursorCoordinates
@@ -3095,10 +3095,10 @@ EntireFlyMap: ; unreferenced
 .HandleDPad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_DOWN | PAD_RIGHT
+	and D_DOWN | D_RIGHT
 	jr nz, .ScrollNext
 	ld a, [hl]
-	and D_UP | PAD_LEFT
+	and D_UP | D_LEFT
 	jr nz, .ScrollPrev
 	ret
 

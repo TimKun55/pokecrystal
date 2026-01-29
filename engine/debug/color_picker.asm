@@ -240,10 +240,10 @@ DebugColorMain:
 	jr nc, .no_start_select
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .NextMon
 	ld a, [hl]
-	and PAD_START
+	and START
 	jr nz, .PreviousMon
 
 .no_start_select
@@ -546,10 +546,10 @@ DebugColor_PrintHexColor:
 
 DebugColor_Joypad:
 	ldh a, [hJoyLast]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .tmhm
 	ldh a, [hJoyLast]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .toggle_shiny
 
 	ld a, [wDebugColorRGBJumptableIndex]
@@ -598,13 +598,13 @@ DebugColor_Joypad:
 DebugColor_SelectColorBox:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugColor_NextRGBColor
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .light
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .dark
 	ret
 
@@ -625,10 +625,10 @@ DebugColor_SelectColorBox:
 DebugColor_ChangeRedValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugColor_NextRGBColor
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugColor_PreviousRGBColor
 	ld hl, wDebugRedChannel
 	jr DebugColor_UpdateRGBColor
@@ -636,10 +636,10 @@ DebugColor_ChangeRedValue:
 DebugColor_ChangeGreenValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugColor_NextRGBColor
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugColor_PreviousRGBColor
 	ld hl, wDebugGreenChannel
 	jr DebugColor_UpdateRGBColor
@@ -647,17 +647,17 @@ DebugColor_ChangeGreenValue:
 DebugColor_ChangeBlueValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugColor_PreviousRGBColor
 	ld hl, wDebugBlueChannel
 	; fallthrough
 
 DebugColor_UpdateRGBColor:
 	ldh a, [hJoyLast]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .increment
 	ldh a, [hJoyLast]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .decrement
 	ret
 
@@ -708,7 +708,7 @@ DebugColor_InitTMHM:
 DebugColor_TMHMJoypad:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .cancel
 	call .scroll
 	ret
@@ -726,10 +726,10 @@ DebugColor_TMHMJoypad:
 .scroll:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .down
 	ret
 
@@ -1188,10 +1188,10 @@ DebugTileset_LoadPalettes:
 DebugColorMain2: ; unreferenced
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .next_palette
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .cancel
 	call DebugTileset_Joypad
 	ret
@@ -1306,13 +1306,13 @@ DebugTileset_Joypad:
 DebugTileset_SelectColorBox:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugTileset_NextRGBColor
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .right
 	ret
 
@@ -1341,10 +1341,10 @@ DebugTileset_SelectColorBox:
 DebugTileset_ChangeRedValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugTileset_NextRGBColor
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugTileset_PreviousRGBColor
 	ld hl, wDebugRedChannel
 	jr DebugTileset_UpdateRGBColor
@@ -1352,10 +1352,10 @@ DebugTileset_ChangeRedValue:
 DebugTileset_ChangeGreenValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, DebugTileset_NextRGBColor
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugTileset_PreviousRGBColor
 	ld hl, wDebugGreenChannel
 	jr DebugTileset_UpdateRGBColor
@@ -1363,17 +1363,17 @@ DebugTileset_ChangeGreenValue:
 DebugTileset_ChangeBlueValue:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, DebugTileset_PreviousRGBColor
 	ld hl, wDebugBlueChannel
 	; fallthrough
 
 DebugTileset_UpdateRGBColor:
 	ldh a, [hJoyLast]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .increment
 	ldh a, [hJoyLast]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .decrement
 	ret
 

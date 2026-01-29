@@ -171,7 +171,7 @@ _CardFlip:
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .next
 	ld de, SFX_KINESIS
 	call PlaySFX
@@ -222,7 +222,7 @@ _CardFlip:
 .betloop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .betdone
 	call ChooseCard_HandleJoypad
 	call CardFlip_UpdateCursorOAM
@@ -1167,16 +1167,16 @@ PlaceOAMCardBorder:
 ChooseCard_HandleJoypad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jp nz, .d_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jp nz, .d_right
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jp nz, .d_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jp nz, .d_down
 	ret
 

@@ -126,29 +126,29 @@ Function117764:
 	ld [wcd24], a
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_SELECT
+	and SELECT
 	jr nz, Function117764_select
 	ld a, [hl]
-	and PAD_START
+	and START
 	jr nz, Function117764_start
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jp nz, Function117764_a_button
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, Function117764_b_button
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, Function117764_d_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, Function117764_d_down
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jp nz, Function117764_d_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jp nz, Function117764_d_right
 	ret
 
@@ -341,13 +341,13 @@ Function1178aa:
 
 Function1178e8:
 	ldh a, [hJoyPressed]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b_button
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a_button
-	cp PAD_DOWN
+	cp D_DOWN
 	jr z, .d_down
-	cp PAD_UP
+	cp D_UP
 	ret nz
 	ld a, [wcd4e]
 	and a
@@ -591,13 +591,13 @@ Function117b31:
 
 Function117b4f:
 	ldh a, [hJoyPressed]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b_button
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a_button
-	cp PAD_DOWN
+	cp D_DOWN
 	jr z, .d_down
-	cp PAD_UP
+	cp D_UP
 	ret nz
 	ld a, [wcf64]
 	and a

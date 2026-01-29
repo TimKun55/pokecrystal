@@ -65,7 +65,7 @@ ReadAnyMail:
 .loop
 	call GetJoypad
 	ldh a, [hJoyPressed]
-	and PAD_A | PAD_B | PAD_START
+	and A_BUTTON | B_BUTTON | START
 	jr z, .loop
 	and NO_INPUT
 	ret

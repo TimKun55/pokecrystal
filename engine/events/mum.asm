@@ -451,10 +451,10 @@ Mum_WithdrawDepositMenuJoypad:
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .pressedB
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .pressedA
 	call .dpadaction
 	xor a
@@ -492,16 +492,16 @@ Mum_WithdrawDepositMenuJoypad:
 .dpadaction
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .incrementdigit
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .decrementdigit
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .movecursorleft
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .movecursorright
 	and a
 	ret

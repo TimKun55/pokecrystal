@@ -134,15 +134,15 @@ InitClock:
 
 SetHour:
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .Confirm
 
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .down
 	call DelayFrame
 	and a
@@ -225,14 +225,14 @@ DisplayHoursMinutesWithMinString: ; unreferenced
 
 SetMinutes:
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a_button
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a
@@ -447,7 +447,7 @@ SetDayOfWeek:
 
 .GetJoypadAction:
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	jr z, .not_A
 	scf
 	ret
@@ -455,10 +455,10 @@ SetDayOfWeek:
 .not_A
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a

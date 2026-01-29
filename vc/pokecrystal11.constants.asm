@@ -9,15 +9,15 @@ ENDM
 	vc_const SCREEN_HEIGHT_PX
 
 ; [print forbid 2]
-	vc_const PAD_A
+	vc_const A_BUTTON
 ; [print forbid 3]
 	vc_const MAPGROUP_CIANWOOD
 	vc_const MAP_CIANWOOD_PHOTO_STUDIO
 ; [print forbid 5]
 	vc_const NO_INPUT
-	vc_const PAD_B
-	vc_const PAD_UP
-	vc_const PAD_DOWN
+	vc_const B_BUTTON
+	vc_const D_UP
+	vc_const D_DOWN
 
 ; [FPA 001 Begin]
 	vc_const FISSURE

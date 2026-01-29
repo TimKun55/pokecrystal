@@ -50,9 +50,9 @@ MonMenuLoop:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	ldh a, [hJoyPressed]
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .select
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .cancel
 	jr .loop
 
@@ -248,7 +248,7 @@ BattleMonMenu:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	ldh a, [hJoyPressed]
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr z, .clear_carry
 	ret z
 

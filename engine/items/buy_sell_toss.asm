@@ -83,17 +83,17 @@ Toss_Sell_Loop:
 
 BuySellToss_InterpretJoypad:
 	call JoyTextDelay_ForcehJoyDown ; get joypad
-	bit B_PAD_B, c
+	bit B_BUTTON_F, c
 	jr nz, .b
-	bit B_PAD_A, c
+	bit A_BUTTON_F, c
 	jr nz, .a
-	bit B_PAD_DOWN, c
+	bit D_DOWN_F, c
 	jr nz, .down
-	bit B_PAD_UP, c
+	bit D_UP_F, c
 	jr nz, .up
-	bit B_PAD_LEFT, c
+	bit D_LEFT_F, c
 	jr nz, .left
-	bit B_PAD_RIGHT, c
+	bit D_RIGHT_F, c
 	jr nz, .right
 	and a
 	ret

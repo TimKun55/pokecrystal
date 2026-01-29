@@ -1142,16 +1142,16 @@ InitPocket:
 DepositSellTutorial_InterpretJoypad:
 	ld hl, wMenuJoypad
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a_button
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .b_button
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .d_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .d_right
 	scf
 	ret
@@ -1440,22 +1440,22 @@ Pack_InterpretJoypad:
 	and a
 	jp nz, .switching_item
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .a_button
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .b_button
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .d_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .d_right
 	ld a, [hl]
-	and PAD_SELECT
+	and SELECT
 	jr nz, .select
 	ld a, [hl]
-	and PAD_START
+	and START
 	jr nz, .start
 	scf
 	ret
@@ -1516,10 +1516,10 @@ Pack_InterpretJoypad:
 
 .switching_item
 	ld a, [hl]
-	and PAD_A | PAD_SELECT
+	and A_BUTTON | SELECT
 	jr nz, .place_insert
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jr nz, .end_switch
 	scf
 	ret

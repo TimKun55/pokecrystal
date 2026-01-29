@@ -43,9 +43,9 @@ Function49f16:
 	push bc
 
 .check_buttons
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .a_button
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .b_button
 	jr .next
 
@@ -142,11 +142,11 @@ MobileMenu_InitMenuBuffers:
 	ld [hli], a
 	ld a, $20 ; w2DMenuCursorOffsets
 	ld [hli], a
-	; could have done "ld a, PAD_A | PAD_UP | PAD_DOWN | PAD_B" instead
-	ld a, PAD_A
-	add PAD_UP
-	add PAD_DOWN
-	add PAD_B
+	; could have done "ld a, A_BUTTON | D_UP | D_DOWN | B_BUTTON" instead
+	ld a, A_BUTTON
+	add D_UP
+	add D_DOWN
+	add B_BUTTON
 	ld [hli], a ; wMenuJoypadFilter
 	ld a, 1
 	ld [hli], a ; wMenuCursorY, wMenuCursorX
@@ -392,7 +392,7 @@ Function4a28a:
 	push af
 	call PlayClickSFX
 	pop af
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .quit
 	ld a, [wMenuCursorY]
 	cp $2
@@ -419,7 +419,7 @@ Function4a28a:
 	ld hl, DeletePassword_YesNo_MenuHeader
 	call LoadMenuHeader
 	call VerticalMenu
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .dont_delete_password
 	ld a, [wMenuCursorY]
 	cp $2

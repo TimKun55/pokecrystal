@@ -115,7 +115,7 @@ Credits::
 
 Credits_HandleAButton:
 	ldh a, [hJoypadDown]
-	and PAD_A
+	and A_BUTTON
 	ret z
 	ld a, [wJumptableIndex]
 	bit 7, a
@@ -123,7 +123,7 @@ Credits_HandleAButton:
 
 Credits_HandleBButton:
 	ldh a, [hJoypadDown]
-	and PAD_B
+	and B_BUTTON
 	ret z
 	ld a, [wJumptableIndex]
 	bit 6, a

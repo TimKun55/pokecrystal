@@ -176,23 +176,23 @@ UnownPuzzleJumptable:
 
 .Function:
 	ldh a, [hJoyPressed]
-	and PAD_START
+	and START
 	jp nz, UnownPuzzle_Quit
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	jp nz, UnownPuzzle_A
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .d_down
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .d_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .d_right
 	ret
 

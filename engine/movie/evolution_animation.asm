@@ -240,7 +240,7 @@ EvolutionAnimation:
 	call JoyTextDelay
 	ldh a, [hJoyDown]
 	pop bc
-	and PAD_B
+	and B_BUTTON
 	jr nz, .pressed_b
 .loop3
 	dec c

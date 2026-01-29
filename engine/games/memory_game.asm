@@ -722,19 +722,19 @@ MemoryGame_InterpretJoypad_AnimateCursor:
 	call JoyTextDelay
 	ld hl, hJoypadPressed
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .pressed_a
 	ld a, [hl]
-	and PAD_LEFT
+	and D_LEFT
 	jr nz, .pressed_left
 	ld a, [hl]
-	and PAD_RIGHT
+	and D_RIGHT
 	jr nz, .pressed_right
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, .pressed_up
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, .pressed_down
 	ret
 

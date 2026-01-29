@@ -156,13 +156,13 @@ Function8b3dd:
 	ld a, c
 	pop bc
 	pop de
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jr nz, .a_button
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jr nz, .b_button
-	bit B_PAD_UP, a
+	bit D_UP_F, a
 	jr nz, .d_up
-	bit B_PAD_DOWN, a
+	bit D_DOWN_F, a
 	jr nz, .d_down
 	and a
 	ret
@@ -800,15 +800,15 @@ Function8b7bd:
 	call ScrollingMenu
 	call Mobile_DisableSpriteUpdates
 	ld a, [wMenuJoypad]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .asm_8b823
-	cp PAD_LEFT
+	cp D_LEFT
 	jr nz, .asm_8b813
 	call Function8b832
 	jr .asm_8b7ea
 
 .asm_8b813
-	cp PAD_RIGHT
+	cp D_RIGHT
 	jr nz, .asm_8b81c
 	call Function8b83e
 	jr .asm_8b7ea

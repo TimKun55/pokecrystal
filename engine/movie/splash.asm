@@ -42,7 +42,7 @@ SplashScreen:
 .joy_loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and PAD_BUTTONS
+	and BUTTONS
 	jr nz, .pressed_button
 	ld a, [wJumptableIndex]
 	bit 7, a

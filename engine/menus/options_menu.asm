@@ -52,7 +52,7 @@ _Option:
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and PAD_START | PAD_B
+	and START | B_BUTTON
 	jr nz, .ExitOptions
 	call OptionsControl
 	jr c, .dpad
@@ -110,9 +110,9 @@ GetOptionPointer:
 Options_TextSpeed:
 	call GetTextSpeed
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	ld a, c ; right pressed
 	cp OPT_TEXT_SPEED_NONE
@@ -200,9 +200,9 @@ GetTextSpeed:
 Options_BattleScene:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit BATTLE_SCENE, [hl]
 	jr nz, .ToggleOn
@@ -239,9 +239,9 @@ Options_BattleScene:
 Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit BATTLE_SHIFT, [hl]
 	jr nz, .ToggleShift
@@ -277,9 +277,9 @@ Options_BattleStyle:
 Options_Sound:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit STEREO, [hl]
 	jr nz, .SetMono
@@ -322,9 +322,9 @@ Options_Sound:
 Options_MenuAccount:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit MENU_ACCOUNT, [hl]
 	jr nz, .ToggleOff
@@ -360,9 +360,9 @@ Options_MenuAccount:
 Options_Frame:
 	ld hl, wTextboxFrame
 	ldh a, [hJoyPressed]
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jr nz, .LeftPressed
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jr nz, .RightPressed
 	and a
 	ret
@@ -395,7 +395,7 @@ UpdateFrame:
 
 Options_Done:
 	ldh a, [hJoyPressed]
-	and PAD_A
+	and A_BUTTON
 	jr nz, .Exit
 	and a
 	ret
@@ -407,9 +407,9 @@ Options_Done:
 OptionsControl:
 	ld hl, wJumptableIndex
 	ldh a, [hJoyLast]
-	cp PAD_DOWN
+	cp D_DOWN
 	jr z, .DownPressed
-	cp PAD_UP
+	cp D_UP
 	jr z, .UpPressed
 	and a
 	ret

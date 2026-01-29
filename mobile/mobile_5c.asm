@@ -515,16 +515,16 @@ Function171b4b:
 Function171b85:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jp nz, Function171b9f
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jp nz, Function171bbd
 	ld a, [hl]
-	and PAD_UP
+	and D_UP
 	jr nz, asm_171ba5
 	ld a, [hl]
-	and PAD_DOWN
+	and D_DOWN
 	jr nz, asm_171baf
 	ret
 
@@ -562,10 +562,10 @@ Function171bbd:
 Function171bcc:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and PAD_B
+	and B_BUTTON
 	jp nz, Function171bdc
 	ld a, [hl]
-	and PAD_A
+	and A_BUTTON
 	jp nz, Function171beb
 	ret
 

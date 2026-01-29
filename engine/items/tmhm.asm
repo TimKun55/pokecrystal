@@ -205,7 +205,7 @@ TMHM_PocketLoop:
 	ld [w2DMenuFlags2], a
 	ld a, $20
 	ld [w2DMenuCursorOffsets], a
-	ld a, PAD_A | PAD_B | PAD_UP | PAD_DOWN | PAD_LEFT | PAD_RIGHT
+	ld a, A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT
 	ld [wMenuJoypadFilter], a
 	ld a, [wTMHMPocketCursor]
 	inc a
@@ -228,13 +228,13 @@ TMHM_JoypadLoop:
 	jp nz, TMHM_ScrollPocket
 	ld a, b
 	ld [wMenuJoypad], a
-	bit B_PAD_A, a
+	bit A_BUTTON_F, a
 	jp nz, TMHM_ChooseTMorHM
-	bit B_PAD_B, a
+	bit B_BUTTON_F, a
 	jp nz, TMHM_ExitPack
-	bit B_PAD_RIGHT, a
+	bit D_RIGHT_F, a
 	jp nz, TMHM_ExitPocket
-	bit B_PAD_LEFT, a
+	bit D_LEFT_F, a
 	jp nz, TMHM_ExitPocket
 TMHM_ShowTMMoveDescription:
 	call TMHM_CheckHoveringOverCancel
@@ -289,7 +289,7 @@ TMHM_CheckHoveringOverCancel:
 TMHM_ExitPack:
 	call TMHM_PlaySFX_ReadText2
 _TMHM_ExitPack:
-	ld a, PAD_B
+	ld a, B_BUTTON
 	ld [wMenuJoypad], a
 	and a
 	ret
@@ -300,8 +300,8 @@ TMHM_ExitPocket:
 
 TMHM_ScrollPocket:
 	ld a, b
-	bit B_PAD_DOWN, a
-	jr nz, .down
+	bit 7, a
+	jr nz, .skip
 	ld hl, wTMHMPocketScrollPosition
 	ld a, [hl]
 	and a
@@ -310,7 +310,7 @@ TMHM_ScrollPocket:
 	call TMHM_DisplayPocketItems
 	jp TMHM_ShowTMMoveDescription
 
-.down
+.skip
 	call TMHM_GetCurrentPocketPosition
 	ld b, 5
 .loop

@@ -405,9 +405,9 @@ ConfirmContinue:
 	call DelayFrame
 	call GetJoypad
 	ld hl, hJoyPressed
-	bit B_PAD_A, [hl]
+	bit A_BUTTON_F, [hl]
 	jr nz, .PressA
-	bit B_PAD_B, [hl]
+	bit B_BUTTON_F, [hl]
 	jr z, .loop
 	scf
 	ret
@@ -1314,19 +1314,19 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
-	and PAD_UP + PAD_B + PAD_SELECT
-	cp  PAD_UP + PAD_B + PAD_SELECT
+	and D_UP + B_BUTTON + SELECT
+	cp  D_UP + B_BUTTON + SELECT
 	jr z, .delete_save_data
 
 ; Press Down + B + Select to initiate the sequence.
 	ld a, [hl]
-	and PAD_DOWN + PAD_B + PAD_SELECT
-	cp  PAD_DOWN + PAD_B + PAD_SELECT
+	and D_DOWN + B_BUTTON + SELECT
+	cp  D_DOWN + B_BUTTON + SELECT
 	jr z, .reset_clock
 
 ; Press Start or A to start the game.
 	ld a, [hl]
-	and PAD_START | PAD_A
+	and START | A_BUTTON
 	jr nz, .incave
 	ret
 

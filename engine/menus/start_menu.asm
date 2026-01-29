@@ -104,9 +104,9 @@ StartMenu::
 	call .PrintMenuAccount
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
-	cp PAD_B
+	cp B_BUTTON
 	jr z, .b
-	cp PAD_A
+	cp A_BUTTON
 	jr z, .a
 	jr .loop
 .a
