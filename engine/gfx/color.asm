@@ -926,32 +926,32 @@ _PushSGBPals:
 	ld b, a
 .loop
 	push bc
-	xor a ; JOYP_SGB_START
+	xor a
 	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
+	ld a, $30
 	ldh [rJOYP], a
-	ld b, JOYP_SGB_ONE
+	ld b, $10
 .loop2
-	ld e, 8
+	ld e, $8
 	ld a, [hli]
 	ld d, a
 .loop3
 	bit 0, d
-	ld a, JOYP_SGB_ONE
+	ld a, $10
 	jr nz, .okay
-	ld a, JOYP_SGB_ZERO
+	ld a, $20
 .okay
 	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
+	ld a, $30
 	ldh [rJOYP], a
 	rr d
 	dec e
 	jr nz, .loop3
 	dec b
 	jr nz, .loop2
-	ld a, JOYP_SGB_ZERO
+	ld a, $20
 	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
+	ld a, $30
 	ldh [rJOYP], a
 	call SGBDelayCycles
 	pop bc
@@ -1105,24 +1105,24 @@ PushSGBBorderPalsAndWait:
 	and JOYP_SGB_MLT_REQ
 	cp JOYP_SGB_MLT_REQ
 	jr nz, .carry
-	ld a, JOYP_SGB_ZERO
+	ld a, $20
 	ldh [rJOYP], a
 	ldh a, [rJOYP]
 	ldh a, [rJOYP]
 	call SGBDelayCycles
 	call SGBDelayCycles
-	ld a, JOYP_SGB_FINISH
+	ld a, $30
 	ldh [rJOYP], a
 	call SGBDelayCycles
 	call SGBDelayCycles
-	ld a, JOYP_SGB_ONE
+	ld a, $10
 	ldh [rJOYP], a
 rept 6
 	ldh a, [rJOYP]
 endr
 	call SGBDelayCycles
 	call SGBDelayCycles
-	ld a, JOYP_SGB_FINISH
+	ld a, $30
 	ldh [rJOYP], a
 	ldh a, [rJOYP]
 	ldh a, [rJOYP]
