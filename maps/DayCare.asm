@@ -369,7 +369,7 @@ DayCareText_DescribeOddEgg:
 	para "If you find an Egg"
 	line "Ticket, bring it"
 	cont "to me, and you'll"
-	cont "get another EGG."
+	cont "get another Egg."
 	done
 
 EggTicketText:

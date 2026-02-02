@@ -151,7 +151,7 @@ Route34LyraTrigger2:
 	writetext Route34LyraFollowMeText
 	promptbutton
 	closetext
-	applymovement ROUTE34_GRAMPS, Route34GrampsMovementLeave
+	applymovement ROUTE34_GRAMPS, Route34MovementData_DayCareManWalksBackInside
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE34_GRAMPS
 	follow ROUTE34_LYRA, PLAYER
@@ -562,9 +562,6 @@ Route34LyraMovementComesDown:
 
 Route34LyraMovementEntersDayCare:
 	step RIGHT
-	step RIGHT
-	step_end
-
 Route34PlayerMovement1:
 	step RIGHT
 	step_end
@@ -577,10 +574,6 @@ Route34PlayerMovement3:
 	step UP
 	step_end
 
-Route34GrampsMovementLeave:
-	slow_step RIGHT
-	step_end
-	
 Route34LadyBea:
 	trainer LADY, BEA, EVENT_BEAT_LADY_BEA, LadyBeaSeenText, LadyBeaBeatenText, 0, .Script
 
@@ -880,7 +873,7 @@ LadyBeaAfterBattleText:
 	cont "battle you!"
 	
 	para "See if you can"
-	cont "find them!"
+	line "find them!"
 	done
 
 Route34IlexForestSignText:
