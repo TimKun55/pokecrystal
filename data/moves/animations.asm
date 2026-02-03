@@ -597,8 +597,8 @@ BattleAnim_Shake:
 
 BattleAnim_StatUp:
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_USER, $40
+	anim_obp0 $30
 	anim_sound 0, 0, SFX_STAT_UP
 .loop
 	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   5, 4,  13, 6, $6
@@ -615,16 +615,15 @@ BattleAnim_StatUp:
 	anim_wait 2
 	anim_obj BATTLE_ANIM_OBJ_STAT_UP,   8, 4,  13, 6, $8
 	anim_wait 2
-	anim_loop 3, .loop
+	anim_loop 2, .loop
 	anim_wait 8
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
-	anim_call BattleAnim_ShowMon_0
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
 	anim_ret
 
 BattleAnim_StatDown:
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, BG_EFFECT_USER, $40
+	anim_obp0 $30
 	anim_sound 0, 0, SFX_STAT_DOWN
 .loop
 	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 5, 4,  7, 6, $6
@@ -641,10 +640,9 @@ BattleAnim_StatDown:
 	anim_wait 2
 	anim_obj BATTLE_ANIM_OBJ_STAT_DOWN, 8, 4,  7, 6, $8
 	anim_wait 2
-	anim_loop 3, .loop
+	anim_loop 2, .loop
 	anim_wait 8
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
-	anim_call BattleAnim_ShowMon_0
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
 	anim_ret
 
 BattleAnim_EnergyBall:
