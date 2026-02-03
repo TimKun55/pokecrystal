@@ -18,6 +18,10 @@ LoadSpecialMapPalette:
     cp GROUP_SPROUT_TOWER_1F
     jr nz, .continue2
     ld a, [wMapNumber]
+    cp MAP_ILEX_FOREST
+    jp z, .forest_palette
+    cp MAP_VIRIDIAN_FOREST
+    jp z, .forest_palette
     cp MAP_CERULEAN_CAVE_1F
     jp z, .cavevolcano_palette
 	cp MAP_CERULEAN_CAVE_2F
@@ -211,6 +215,11 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.forest_palette
+	call LoadForestPalette
+	scf
+	ret
+
 .charcoalkiln_palette
 	call LoadCharcoalKilnPalette
 	scf
@@ -355,6 +364,17 @@ LoadCaveVolcanoPalette:
 	
 CaveVolcanoPalette:
 INCLUDE "gfx/tilesets/cavevolcano_palette.pal"
+
+LoadForestPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, ForestPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+ForestPalette:
+INCLUDE "gfx/tilesets/forest_palette.pal"
 
 LoadCharcoalKilnPalette:
 	ld a, BANK(wBGPals1)
