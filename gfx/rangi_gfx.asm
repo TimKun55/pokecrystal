@@ -21,3 +21,6 @@ TypeLightIconGFX::
 
 TypeDarkIconGFX::
 	INCBIN "gfx/pokedex/types_dark.2bpp"
+
+TypeLightIcon2GFX::
+INCBIN "gfx/battle/types_light_2.2bpp"

@@ -1494,6 +1494,12 @@ _CGB_MoveList:
 	ld c, 4 ; 2 colors (4 bytes)
 	call LoadCPaletteBytesFromHLIntoDE
 
+	ld de, wBGPals1 palette 2 + 6
+	call LoadSingleBlackPal
+
+	ld hl, ExpBarPalette
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
+
 ; Type Icon Pals
 	ld hl, Moves + MOVE_TYPE
 	ld a, [wCurSpecies]
@@ -1511,17 +1517,26 @@ _CGB_MoveList:
 	ld c, a
 	ld b, 0
 	add hl, bc
-	ld de, wBGPals1 palette 2 + 6 ; slot 4 of palette 2
+	ld de, wBGPals1 palette 4 + 2 ; slot 2 of palette 4
 	ld c, 2 ; 1 color (2 bytes)
 	call LoadCPaletteBytesFromHLIntoDE
 
-	ld hl, ExpBarPalette
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
-
-; Type and Category tiles
-	hlcoord 11, 12, wAttrmap
-	ld bc, 8 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
+; Category tiles
+	hlcoord 16, 12, wAttrmap
+	ld bc, 2 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
 	ld a, $2 ; Palette 2
+	call ByteFill
+
+; Type tiles
+	hlcoord 11, 12, wAttrmap
+	ld bc, 4 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
+	ld a, $4 ; Palette 4
+	call ByteFill
+
+; Gender tile
+	hlcoord 17, 1, wAttrmap
+	ld bc, 1 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
+	ld a, $3 ; Palette 3
 	call ByteFill
 	
 ; fix left menu arrow, since we dont have left facing arrow
