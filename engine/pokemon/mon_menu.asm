@@ -1395,14 +1395,14 @@ PlaceMoveData:
 	ld a, c
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette
-	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
-	ld bc, 4 * LEN_1BPP_TILE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
+	ld hl, TypeLightIcon2GFX
+	ld bc, 4 tiles
 	call AddNTimes ; increments pointer based on Type Index
 	ld d, h
 	ld e, l ; de is the source Pointer
 	ld hl, vTiles2 tile $5b ; $5b is destination Tile for first Type Tile
-	lb bc, BANK(TypeIconGFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
-	call Request1bpp
+	lb bc, BANK(TypeLightIcon2GFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
+	call Request2bpp
 	hlcoord 11, 12
 	ld a, $5b ; first Type Tile
 	ld [hli], a
