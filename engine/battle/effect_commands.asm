@@ -305,6 +305,9 @@ BattleCommand_CheckTurn:
 	cp 25 percent
 	ret nc
 
+	ld de, ANIM_PAR
+	call FarPlayBattleAnimation
+
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
 	call CantMove
@@ -535,6 +538,9 @@ CheckEnemyTurn:
 	call BattleRandom
 	cp 25 percent
 	ret nc
+
+	ld de, ANIM_PAR
+	call FarPlayBattleAnimation
 
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox

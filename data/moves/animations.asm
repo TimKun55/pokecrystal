@@ -505,7 +505,7 @@ BattleAnim_Par:
 	anim_sound 0, 0, SFX_THUNDERSHOCK
 	anim_obj BATTLE_ANIM_OBJ_PARALYZED, 20, 88, $42
 	anim_obj BATTLE_ANIM_OBJ_PARALYZED, 76, 88, $c2
-	anim_wait 128
+	anim_wait 112
 	anim_ret
 
 BattleAnim_InLove:
@@ -3461,14 +3461,19 @@ BattleAnim_Slam:
 	anim_ret
 
 BattleAnim_Disable:
-	anim_2gfx BATTLE_ANIM_GFX_LIGHTNING, BATTLE_ANIM_GFX_STATUS
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_obj BATTLE_ANIM_OBJ_DISABLE, 132, 56, $0
-	anim_wait 16
+	anim_2gfx BATTLE_ANIM_GFX_LIGHTNING, BATTLE_ANIM_GFX_SHINE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE	
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PURPLE
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_FORESIGHT
+	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 72, 72, $0
+	anim_wait 24
 	anim_sound 0, 1, SFX_BIND
-	anim_obj BATTLE_ANIM_OBJ_PARALYZED, 104, 56, $42
-	anim_obj BATTLE_ANIM_OBJ_PARALYZED, 160, 56, $c2
-	anim_wait 96
+	anim_obj BATTLE_ANIM_OBJ_DISABLE, 132, 56, $0
+	anim_wait 64
+	anim_incobj 1
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_ret
 
 BattleAnim_TailWhip:
