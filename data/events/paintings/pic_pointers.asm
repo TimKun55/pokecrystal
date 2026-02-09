@@ -3,9 +3,13 @@ PaintingPicPointers::
 	dba HoOhPaintingPic
 	dba LugiaPaintingPic
 	dba BellTowerPaintingPic
-	dba AerodactylFossilPaintingPic
-	dba OmastarFossilPaintingPic
-	dba KabutopsFossilPaintingPic
-	dba CuboneArmorPaintingPic
-	dba MeteoritePaintingPic
+	dba AerodactylFossilPic
+	dba OmastarFossilPic
+	dba KabutopsFossilPic
+	dba CuboneArmorPic
+	dba MeteoritePic
+	dba KabutoPuzzlePic
+	dba OmanytePuzzlePic
+	dba AerodactylPuzzlePic
+	dba HoOhPuzzlePic
 	assert_table_length NUM_PAINTINGS

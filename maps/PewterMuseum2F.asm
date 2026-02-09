@@ -31,7 +31,7 @@ PewterMuseum2FMoonStoneSignpostScript:
 	waitbutton
 	closetext
 	refreshscreen
-	paintingpic METEORITE_PAINTING
+	paintingpic METEORITE
 	waitbutton
 	closepaintingpic
 	end
@@ -45,7 +45,7 @@ PewterMuseum2FCuboneArmorScript:
 	waitbutton
 	closetext
 	refreshscreen
-	paintingpic CUBONE_ARMOR_PAINTING
+	paintingpic CUBONE_ARMOR
 	waitbutton
 	closepaintingpic
 	end

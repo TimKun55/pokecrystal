@@ -280,7 +280,7 @@ AerodactylFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	paintingpic AERODACTYL_FOSSIL_PAINTING
+	paintingpic AERODACTYL_FOSSIL
 	waitbutton
 	closepaintingpic
 	end
@@ -291,7 +291,7 @@ KabutopsFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	paintingpic KABUTOPS_FOSSIL_PAINTING
+	paintingpic KABUTOPS_FOSSIL
 	waitbutton
 	closepaintingpic
 	end
@@ -302,7 +302,7 @@ OmastarFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	paintingpic OMASTAR_FOSSIL_PAINTING
+	paintingpic OMASTAR_FOSSIL
 	waitbutton
 	closepaintingpic
 	end

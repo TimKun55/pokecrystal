@@ -98,7 +98,14 @@ RuinsOfAlphHoOhChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetextend HoOhPuzzleCompletedText
+	writetext HoOhPuzzleCompletedText
+	waitbutton
+	closetext
+	refreshscreen
+	paintingpic HO_OH_PUZZLE
+	waitbutton
+	closepaintingpic
+	end
 
 RuinsOfAlphHoOhChamberAncientReplica:
 	jumptext RuinsOfAlphHoOhChamberAncientReplicaText

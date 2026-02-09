@@ -98,7 +98,14 @@ RuinsOfAlphOmanyteChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetextend OmanytePuzzleCompletedText
+	writetext OmanytePuzzleCompletedText
+	waitbutton
+	closetext
+	refreshscreen
+	paintingpic OMANYTE_PUZZLE
+	waitbutton
+	closepaintingpic
+	end
 
 RuinsOfAlphOmanyteChamberAncientReplica:
 	jumptext RuinsOfAlphOmanyteChamberAncientReplicaText

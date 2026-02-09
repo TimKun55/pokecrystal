@@ -117,7 +117,14 @@ RuinsOfAlphKabutoChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetextend KabutoPuzzleCompletedText
+	writetext KabutoPuzzleCompletedText
+	waitbutton
+	closetext
+	refreshscreen
+	paintingpic KABUTO_PUZZLE
+	waitbutton
+	closepaintingpic
+	end
 
 RuinsOfAlphKabutoChamberScientistScript:
 	faceplayer

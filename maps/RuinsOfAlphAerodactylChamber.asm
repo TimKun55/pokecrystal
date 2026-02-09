@@ -99,7 +99,14 @@ RuinsOfAlphAerodactylChamberPuzzle:
 
 .CompletedPuzzle
 	opentext
-	writetextend AerodactylPuzzleCompletedText
+	writetext AerodactylPuzzleCompletedText
+	waitbutton
+	closetext
+	refreshscreen
+	paintingpic AERODACTYL_PUZZLE
+	waitbutton
+	closepaintingpic
+	end
 
 RuinsOfAlphAerodactylChamberAncientReplica:
 	jumptext RuinsOfAlphAerodactylChamberAncientReplicaText
