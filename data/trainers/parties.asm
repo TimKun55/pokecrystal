@@ -4584,18 +4584,3 @@ KrisGroup:
 	db 10, TOTODILE
 	db 10, CHIKORITA
 	db -1 ; end
-
-AerodactylFossilGroup:
-	db -1 ; end
-	
-KabutopsFossilGroup:
-	db -1 ; end
-	
-OmastarFossilGroup:
-	db -1 ; end
-	
-CuboneArmorGroup:
-	db -1 ; end
-	
-MeteoriteGroup:
-	db -1 ; end

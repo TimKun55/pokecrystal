@@ -82,9 +82,4 @@ TrainerClassDVs:
 	dn 14, 14, 14, 14 ; INVER
 	dn 14, 14, 14, 14 ; THORTON
 	dn 13, 12, 13, 13 ; KRIS
-	dn  0,  0,  0,  0 ; AERODACTYL_FOSSIL
-	dn  0,  0,  0,  0 ; KABUTOPS_FOSSIL	
-	dn  0,  0,  0,  0 ; OMASTAR_FOSSIL
-	dn  0,  0,  0,  0 ; CUBONE_ARMOR
-	dn  0,  0,  0,  0 ; METEORITE
 	assert_table_length NUM_TRAINER_CLASSES

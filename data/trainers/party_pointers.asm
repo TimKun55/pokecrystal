@@ -83,9 +83,4 @@ TrainerGroups:
 	dba InverGroup
 	dba ThortonGroup
 	dba KrisGroup
-	dba AerodactylFossilGroup
-	dba KabutopsFossilGroup
-	dba OmastarFossilGroup
-	dba CuboneArmorGroup
-	dba MeteoriteGroup
 	assert_table_length NUM_TRAINER_CLASSES

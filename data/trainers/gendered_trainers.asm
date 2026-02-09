@@ -31,11 +31,6 @@ MaleTrainers:
 	db BLAINE_G
 	db INVER
 	db THORTON
-	db AERODACTYL_FOSSIL
-	db KABUTOPS_FOSSIL
-	db OMASTAR_FOSSIL
-	db CUBONE_ARMOR
-	db METEORITE
 .End
 
 FemaleTrainers:

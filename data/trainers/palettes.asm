@@ -91,10 +91,5 @@ INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
 INCBIN "gfx/trainers/inver.gbcpal", middle_colors
 INCBIN "gfx/trainers/thorton.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
-INCBIN "gfx/trainers/aerodactyl_fossil.gbcpal", middle_colors
-INCBIN "gfx/trainers/kabutops_fossil.gbcpal", middle_colors
-INCBIN "gfx/trainers/omastar_fossil.gbcpal", middle_colors
-INCBIN "gfx/trainers/cubone_armor.gbcpal", middle_colors
-INCBIN "gfx/trainers/meteorite.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -86,6 +86,20 @@ ClosePokepic::
 	call LoadStandardFont
 	ret
 
+ClosePaintingpic::
+	ld hl, PaintingpicMenuHeader
+	call CopyMenuHeader
+	call ClearMenuBoxInterior
+	call WaitBGMap
+	call GetMemSGBLayout
+	xor a
+	ldh [hBGMapMode], a
+	call LoadOverworldTilemapAndAttrmapPals
+	call CopyTilemapAtOnce
+	call UpdateSprites
+	call LoadStandardFont
+	ret
+
 PokepicMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 6, 4, 14, 13

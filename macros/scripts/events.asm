@@ -1081,4 +1081,9 @@ MACRO paintingpic
 	db \1 ; painting
 ENDM
 
+	const closepaintingpic_command ; $ad
+MACRO closepaintingpic
+	db closepaintingpic_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

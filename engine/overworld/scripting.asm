@@ -237,6 +237,7 @@ ScriptCommandTable:
 	dw Script_trainerpic                 ; aa
 	dw Script_writetextend               ; ab
 	dw Script_paintingpic                ; ac
+	dw Script_closepaintingpic           ; ad
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2413,4 +2414,8 @@ Script_paintingpic:
 .ok
 	ld [wTrainerClass], a
 	farcall Paintingpic
+	ret
+
+Script_closepaintingpic:
+	farcall ClosePaintingpic
 	ret

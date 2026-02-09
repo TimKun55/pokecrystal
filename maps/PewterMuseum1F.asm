@@ -280,9 +280,9 @@ AerodactylFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	trainerpic AERODACTYL_FOSSIL
+	paintingpic AERODACTYL_FOSSIL_PAINTING
 	waitbutton
-	closepokepic
+	closepaintingpic
 	end
 
 KabutopsFossilScript:
@@ -291,9 +291,9 @@ KabutopsFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	trainerpic KABUTOPS_FOSSIL
+	paintingpic KABUTOPS_FOSSIL_PAINTING
 	waitbutton
-	closepokepic
+	closepaintingpic
 	end
 
 OmastarFossilScript:
@@ -302,9 +302,9 @@ OmastarFossilScript:
 	waitbutton
 	closetext
 	refreshscreen
-	trainerpic OMASTAR_FOSSIL
+	paintingpic OMASTAR_FOSSIL_PAINTING
 	waitbutton
-	closepokepic
+	closepaintingpic
 	end
 
 PewterMuseum1FGrampsScript:

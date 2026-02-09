@@ -83,9 +83,4 @@ BTTrainerClassGenders:
 	db MALE   ; INVER
 	db MALE   ; THORTON
 	db FEMALE ; KRIS
-	db MALE   ; AERODACTYL_FOSSIL
-	db MALE   ; KABUTOPS_FOSSIL
-	db MALE   ; OMASTAR_FOSSIL
-	db MALE   ; CUBONE_ARMOR
-	db MALE   ; METEORITE
 	assert_table_length NUM_TRAINER_CLASSES

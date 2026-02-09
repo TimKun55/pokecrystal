@@ -84,9 +84,4 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; inver
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; thorton
 	db MUSIC_HIKER_ENCOUNTER       ; kris
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; aerodactyl_fossil
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; kabutops_fossil
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; omastar_fossil
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; cubone_armor
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; meteorite
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -847,14 +847,4 @@ DEF KRIS EQU __trainer_class__
 	trainerclass LINK_KRIS ; 50
 	const LINK_KRIS1
 
-	trainerclass AERODACTYL_FOSSIL ; 51
-	
-	trainerclass KABUTOPS_FOSSIL ; 52
-
-	trainerclass OMASTAR_FOSSIL ; 53
-
-	trainerclass CUBONE_ARMOR ; 54
-
-	trainerclass METEORITE ; 55
-
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
