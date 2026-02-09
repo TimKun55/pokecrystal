@@ -48,9 +48,20 @@ Trainerpic::
 Paintingpic::
 	farcall LoadPaintingPalette
 	call UpdateTimePals
-	ld hl, PokepicMenuHeader
+	ld de, PaintingFrameGFX
+	ld hl, vTiles0 tile ('┌' - 3)
+	lb bc, BANK(PaintingFrameGFX), 9
+	call Get2bpp
+	ld hl, PaintingpicMenuHeader
 	call CopyMenuHeader
 	call MenuBox
+	hlcoord 9, 12
+	ld a, '┌' - 3
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
 	call UpdateSprites
 	call ApplyTilemap
 	ld de, wBGPals1 palette PAL_BG_TEXT color 1
@@ -59,7 +70,7 @@ Paintingpic::
 	ld a, [wTrainerClass]
 	ld de, vTiles1
 	farcall GetPaintingPic
-	jr _Displaypic
+	jp _Displaypic
 
 ClosePokepic::
 	ld hl, PokepicMenuHeader
@@ -80,3 +91,12 @@ PokepicMenuHeader:
 	menu_coords 6, 4, 14, 13
 	dw NULL
 	db 1 ; default option
+
+PaintingpicMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 6, 4, 14, 12
+	dw NULL
+	db 1 ; default option
+
+PaintingFrameGFX:
+INCBIN "gfx/frames/painting.2bpp"
