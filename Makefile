@@ -341,6 +341,8 @@ gfx/sprites/big_onix.2bpp: tools/gfx += --remove-whitespace --remove-xflip
 
 gfx/battle/lyra_back.2bpp: RGBGFXFLAGS += --columns
 
+gfx/paintings/%.2bpp: RGBGFXFLAGS += --columns
+
 gfx/font/unused_bold_font.1bpp: tools/gfx += --trim-whitespace
 
 gfx/sgb/sgb_border.2bpp: tools/gfx += --trim-whitespace

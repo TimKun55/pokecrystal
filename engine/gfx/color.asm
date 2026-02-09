@@ -879,6 +879,16 @@ GetTrainerPalettePointer:
 	add hl, bc
 	ret
 
+GetPaintingPalettePointer:
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld bc, PaintingPalettes
+	add hl, bc
+	ret
+
 GetMonPalettePointer:
 	call _GetMonPalettePointer
 	ret
@@ -1309,6 +1319,8 @@ INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"
 
+INCLUDE "data/events/paintings/palettes.asm"
+
 LoadMapPals:
 	farcall LoadSpecialMapPalette
 	jr c, .got_pals
@@ -1550,4 +1562,14 @@ LoadTrainerPalette:
 	; load palette into de (set by caller)
 	ld bc, PAL_COLOR_SIZE * 2
 	ld a, BANK(wBGPals1)
+	jp FarCopyWRAM
+
+LoadPaintingPalette:
+	ld a, [wTrainerClass]
+	; hl = palette
+	call GetPaintingPalettePointer
+	; load palette into de (set by caller)
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1 palette PAL_BG_TEXT
+	ld bc, 8
 	jp FarCopyWRAM

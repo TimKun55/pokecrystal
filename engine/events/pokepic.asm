@@ -45,6 +45,22 @@ Trainerpic::
 	farcall GetTrainerPic
 	jr _Displaypic
 
+Paintingpic::
+	farcall LoadPaintingPalette
+	call UpdateTimePals
+	ld hl, PokepicMenuHeader
+	call CopyMenuHeader
+	call MenuBox
+	call UpdateSprites
+	call ApplyTilemap
+	ld de, wBGPals1 palette PAL_BG_TEXT color 1
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wTrainerClass]
+	ld de, vTiles1
+	farcall GetPaintingPic
+	jr _Displaypic
+
 ClosePokepic::
 	ld hl, PokepicMenuHeader
 	call CopyMenuHeader

@@ -236,6 +236,7 @@ ScriptCommandTable:
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
 	dw Script_writetextend               ; ab
+	dw Script_paintingpic                ; ac
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2403,3 +2404,13 @@ AppendTMHMMoveName::
 	inc hl
 	ld de, wStringBuffer1
 	jp CopyName2
+
+Script_paintingpic:
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wTrainerClass], a
+	farcall Paintingpic
+	ret

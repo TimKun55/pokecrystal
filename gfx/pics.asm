@@ -17,6 +17,11 @@ SECTION "Trainer Pic Pointers", ROMX
 INCLUDE "data/trainers/pic_pointers.asm"
 
 
+SECTION "Painting Pic Pointers", ROMX
+
+INCLUDE "data/events/paintings/pic_pointers.asm"
+
+
 SECTION "Pics 1", ROMX
 
 HoOhFrontpic:        INCBIN "gfx/pokemon/ho_oh/front.animated.2bpp.lz"
@@ -746,8 +751,13 @@ UnownExclamationFrontpic: INCBIN "gfx/pokemon/unown_exclamation/front.animated.2
 UnownExclamationBackpic:  INCBIN "gfx/pokemon/unown_exclamation/back.2bpp.lz"
 UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.animated.2bpp.lz"
 UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
-
 PersianFrontpic:          INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
 ThortonPic:               INCBIN "gfx/trainers/thorton.2bpp.lz"
 KrisPic:                  INCBIN "gfx/trainers/kris.2bpp.lz"
 MagnezoneFrontpic:   INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
+
+SECTION "Painting Pics", ROMX
+
+HoOhPaintingPic:          INCBIN "gfx/paintings/ho_oh_painting.2bpp.lz"
+LugiaPaintingPic:         INCBIN "gfx/paintings/lugia_painting.2bpp.lz"
+BellTowerPaintingPic:     INCBIN "gfx/paintings/bell_tower_painting.2bpp.lz"

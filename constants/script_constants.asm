@@ -329,3 +329,12 @@ DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
 	const REVIVE_OLD_AMBER    ; 1
 	const REVIVE_DOME_FOSSIL  ; 2
 	const REVIVE_HELIX_FOSSIL ; 3
+
+; paintingpic arguments
+; PaintingPicPointers indexes (see data/events/paintings/pic_pointers.asm)
+; PaintingPalettes indexes (see data/events/paintings/palettes.asm)
+	const_def
+	const HO_OH_PAINTING
+	const LUGIA_PAINTING
+	const BELL_TOWER_PAINTING
+DEF NUM_PAINTINGS EQU const_value

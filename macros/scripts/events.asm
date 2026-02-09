@@ -1075,4 +1075,10 @@ MACRO writetextend
 	dw \1 ; text_pointer
 ENDM
 
+	const paintingpic_command ; $ac
+MACRO paintingpic
+	db paintingpic_command
+	db \1 ; painting
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value
