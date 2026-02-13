@@ -426,7 +426,6 @@ ENDM
 	map_const POKECENTER_2F,                                8,  4 ;  1
 	map_const TRADE_CENTER,                                 5,  4 ;  2
 	map_const COLOSSEUM,                                    5,  4 ;  3
-;	map_const TIME_CAPSULE,                                 5,  4 ;  4
 	endgroup
 
 	newgroup CELADON                                              ; 21
