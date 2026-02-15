@@ -321,7 +321,7 @@ VioletCity_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 26, BGEVENT_READ, VioletCitySign
+	bg_event 22, 26, BGEVENT_READ, VioletCitySign
 	bg_event 16, 23, BGEVENT_READ, VioletGymSign
 	bg_event 25,  6, BGEVENT_READ, SproutTowerSign
 	bg_event 27, 23, BGEVENT_READ, EarlsPokemonAcademySign
