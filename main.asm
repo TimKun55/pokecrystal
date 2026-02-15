@@ -781,6 +781,11 @@ SECTION "Prism tilemap copy functions", ROMX
 INCLUDE "engine/gfx/copy_tilemap_at_once.asm"
 
 
+SECTION "Type Chart", ROMX
+
+INCLUDE "engine/items/type_chart.asm"
+
+
 SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"

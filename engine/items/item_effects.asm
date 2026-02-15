@@ -184,7 +184,7 @@ ItemEffects:
 	dw NoEffect            ; ITEM_A8
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; ITEM_AB
+	dw TypeChartEffect     ; TYPE_CHART
 	dw EvoStoneEffect      ; UP_GRADE
 	dw RestoreHPEffect     ; ORAN_BERRY
 	dw RestoreHPEffect     ; SITRUS_BERRY
@@ -2295,6 +2295,17 @@ CoinCaseEffect:
 .CoinCaseCountText:
 	text_far _CoinCaseCountText
 	text_end
+
+TypeChartEffect:
+	call FadeToMenu
+	farcall _TypeChart
+	call Call_ExitMenu
+	xor a
+	ldh [hBGMapMode], a
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
+ 	ret
 
 OldRodEffect:
 	ld e, $0

@@ -171,7 +171,7 @@ ItemDescriptions:
 	dw WiseGlassesDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama25Desc
+	dw TypeChartDesc
 	dw UpGradeDesc
 	dw OranBerryDesc
 	dw SitrusBerryDesc
@@ -930,6 +930,10 @@ SunStoneDesc:
 PolkadotBowDesc:
 	db   "Powers up fairy-"
 	next "type moves. (Hold)@"
+
+TypeChartDesc:
+	db   "Summarises all"
+	next "type interactions.@"
 
 UpGradeDesc:
 	db   "A mysterious box"

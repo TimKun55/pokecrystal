@@ -170,7 +170,7 @@ ItemNames::
 	li "Wise Glasses"
 	li "Sun Stone"
 	li "Polkadot Bow"
-	li "TERU-SAMA"
+	li "Type Chart"
 	li "Up-Grade"
 	li "Oran Berry"
 	li "Sitrus Berry"

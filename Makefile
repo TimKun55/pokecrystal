@@ -343,6 +343,10 @@ gfx/battle/lyra_back.2bpp: RGBGFXFLAGS += --columns
 
 gfx/paintings/%.2bpp: RGBGFXFLAGS += --columns
 
+gfx/type_chart/bg.2bpp: tools/gfx += --remove-duplicates --remove-xflip --remove-yflip
+gfx/type_chart/bg0.2bpp: gfx/type_chart/bg.2bpp.vram1p gfx/type_chart/bg.2bpp.vram0p ; cat $^ > $@
+gfx/type_chart/ob.2bpp: tools/gfx += --interleave --png=$<
+
 gfx/font/unused_bold_font.1bpp: tools/gfx += --trim-whitespace
 
 gfx/sgb/sgb_border.2bpp: tools/gfx += --trim-whitespace
@@ -376,6 +380,15 @@ gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 %.gbcpal: %.png
 	$(RGBGFX) -p $@ $<
 	tools/gbcpal $(tools/gbcpal) $@ $@ || $$($(RM) $@ && false)
+
+%.2bpp.vram0p: %.2bpp
+	tools/sub_2bpp.sh $< 127 > $@
+
+%.2bpp.vram1p: %.2bpp
+	tools/sub_2bpp.sh $< 127 128 > $@
+
+%.2bpp.vram2p: %.2bpp
+	tools/sub_2bpp.sh $< 255 128 > $@
 
 %.dimensions: %.png
 	tools/png_dimensions $< $@

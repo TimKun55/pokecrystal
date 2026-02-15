@@ -211,6 +211,7 @@ ItemNameOrder:
  	; Items that are possibly frequently used
 	db BICYCLE      ; 07
 	db ITEMFINDER   ; 37
+	db TYPE_CHART   ; ab
 	db COIN_CASE    ; 36
 	db DIPLOMA      ; 49
 
@@ -240,7 +241,6 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db ITEM_AB      ; ab
 	db ITEM_B3      ; b3
 	db ITEM_BE      ; be
 	db ITEM_BF      ; bf
