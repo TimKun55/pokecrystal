@@ -533,7 +533,7 @@ ENDM
 
 	newgroup CHERRYGROVE                                          ; 26
 	map_const ROUTE_30,                                    14, 27 ;  1
-	map_const ROUTE_31,                                    20,  9 ;  2
+	map_const ROUTE_31,                                    21,  9 ;  2
 	map_const CHERRYGROVE_CITY,                            21, 10 ;  3
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    6,  4 ;  5
