@@ -349,7 +349,7 @@ CeladonGymGuideText:
 CeladonGameCornerGrampsText:
 	text "Hmmm… The odds are"
 	line "surely better for"
-	cont "Pikachu's line,"
+	cont "Wooper's line,"
 	cont "but… What to do?"
 	done
 
