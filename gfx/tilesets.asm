@@ -228,7 +228,7 @@ TilesetBattleTowerOutsideAttr::
 INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
 
 TilesetJohtoHouseAttr::
-INCBIN "data/tilesets/Johto_house_attributes.bin"
+INCBIN "data/tilesets/johto_house_attributes.bin"
 
 TilesetKantoHouseAttr::
 INCBIN "data/tilesets/kanto_house_attributes.bin"
