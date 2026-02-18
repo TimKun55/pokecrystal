@@ -371,6 +371,9 @@ Menu_WasButtonPressed:
 	callfar PlaySpriteAnimationsAndDelayFrame
 
 .skip_to_joypad
+	ldh a, [hJoyPressed]
+	cp SELECT
+	jr z, _TrainerBattleInfo
 	call JoyTextDelay
 	call GetMenuJoypad
 	and a
@@ -378,6 +381,25 @@ Menu_WasButtonPressed:
 	vc_hook Forbid_printing_photo_studio
 	scf
 	vc_hook Forbid_printing_PC_Box
+	ret
+
+_TrainerBattleInfo:
+	farcall LoadFontsBattleExtra
+	call FadeToMenu
+	farcall BlankScreen
+	farcall LoadOW_BGPal7
+	call FadePalettes
+	farcall TrainerBattleInfo
+; return to battle on exit
+	call ClearPalettes
+	call _LoadBattleFontsHPBar
+	farcall GetBattleMonBackpic
+	farcall GetEnemyMonFrontpic
+	call ExitMenu
+	call WaitBGMap
+	farcall FinishBattleAnim
+	call LoadTilemapToTempTilemap
+	farcall GetWeatherImage
 	ret
 
 _2DMenuInterpretJoypad:
