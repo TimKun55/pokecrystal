@@ -4536,6 +4536,7 @@ UpdateHPPal:
 
 BattleMenu:
 	xor a
+	ld [wCurrentBattleWindow], a
 	ldh [hBGMapMode], a
 	call LoadTempTilemapToTilemap
 
@@ -4585,6 +4586,9 @@ BattleMenu:
 	jr .loop
 
 BattleMenu_Fight:
+	ld a, 1
+	ld [wCurrentBattleWindow], a
+	call ClearSprites
 	xor a
 	ld [wNumFleeAttempts], a
 	call SafeLoadTempTilemapToTilemap
@@ -4633,6 +4637,8 @@ BattleMenu_Pack:
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
 
+	ld a, 2
+	ld [wCurrentBattleWindow], a
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
@@ -4717,7 +4723,11 @@ BattleMenu_Pack:
 	ret
 
 BattleMenu_PKMN:
+	ld a, 3
+	ld [wCurrentBattleWindow], a
 	call LoadStandardMenuHeader
+	; fallthrough
+
 BattleMenuPKMN_ReturnFromStats:
 	call ExitMenu
 	call LoadStandardMenuHeader
@@ -4978,6 +4988,8 @@ PassedBattleMonEntrance:
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
 	ld a, $3
+	inc a
+	ld [wCurrentBattleWindow], a
 	ld [wMenuCursorY], a
 	ld hl, wBattleMonSpeed
 	ld de, wEnemyMonSpeed
