@@ -373,7 +373,7 @@ Menu_WasButtonPressed:
 .skip_to_joypad
 	ldh a, [hJoyPressed]
 	cp SELECT
-	jr z, _TrainerBattleInfo
+	call z, _TrainerBattleInfo
 	call JoyTextDelay
 	call GetMenuJoypad
 	and a
@@ -384,6 +384,11 @@ Menu_WasButtonPressed:
 	ret
 
 _TrainerBattleInfo:
+	; only do this on the main menu of a battle
+	ld a, [wCurrentBattleWindow]
+	and a
+	ret nz
+
 	farcall LoadFontsBattleExtra
 	call FadeToMenu
 	farcall BlankScreen
@@ -391,14 +396,16 @@ _TrainerBattleInfo:
 	call FadePalettes
 	farcall TrainerBattleInfo
 ; return to battle on exit
+	call ClearSprites
 	call ClearPalettes
-	call _LoadBattleFontsHPBar
+	call DelayFrame
+	farcall _LoadHPBar
+	call CloseWindow
 	farcall GetBattleMonBackpic
-	farcall GetEnemyMonFrontpic
-	call ExitMenu
 	call WaitBGMap
-	farcall FinishBattleAnim
 	call LoadTilemapToTempTilemap
+	call GetMemSGBLayout
+	call SetDefaultBGPAndOBP
 	farcall GetWeatherImage
 	ret
 

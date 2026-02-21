@@ -490,9 +490,15 @@ wCurEnemyMoveNum:: db
 wEnemyHPAtTimeOfPlayerSwitch:: dw
 wPayDayMoney:: ds 3
 
+wCurrentBattleWindow:: db
+; 0 - Main menu
+; 1 - Selecting move
+; 2 - BackPack
+; 3 - Party
+; 4 - Run
+
 wSafariMonAngerCount:: db ; unreferenced
 wSafariMonEating:: db
-	ds 1
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db
 
