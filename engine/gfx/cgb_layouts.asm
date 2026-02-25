@@ -178,7 +178,7 @@ _CGB_BattleColors:
 	
 	call LoadPlayerBattleCGBLayoutStatusIconPalette
 	call LoadEnemyBattleCGBLayoutStatusIconPalette
-	
+
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals

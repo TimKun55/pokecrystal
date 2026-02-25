@@ -4548,7 +4548,6 @@ BattleMenu:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 .ok
-
 	farcall GetWeatherImage
 
 .loop

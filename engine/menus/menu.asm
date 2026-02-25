@@ -389,19 +389,26 @@ _TrainerBattleInfo:
 	and a
 	ret nz
 
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
+
 	farcall LoadFontsBattleExtra
 	call FadeToMenu
 	farcall BlankScreen
-	farcall LoadOW_BGPal7
+	farcall LoadBattleInfoBoxPals
 	call FadePalettes
 	farcall TrainerBattleInfo
 ; return to battle on exit
+	ld de, SFX_BUMP
+	call PlaySFX
+
 	call ClearSprites
 	call ClearPalettes
 	call DelayFrame
 	farcall _LoadHPBar
 	call CloseWindow
 	farcall GetBattleMonBackpic
+	farcall GetEnemyMonFrontpic
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout

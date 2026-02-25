@@ -24,3 +24,6 @@ TypeDarkIconGFX::
 
 TypeLightIcon2GFX::
 INCBIN "gfx/battle/types_light_2.2bpp"
+
+TypeDarkIcon2GFX::
+INCBIN "gfx/battle/types_dark_2.2bpp"

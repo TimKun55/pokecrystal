@@ -591,6 +591,8 @@ GetWeatherImage:
 	db $88, $14 ; y/x - top left
 
 TrainerBattleInfo:
+	call LoadBattleBoxArrowsGFX
+
 	farcall EmptyBattleTextbox
 ;	call .BlankBGMap
 	call ClearSprites
@@ -625,27 +627,29 @@ TrainerBattleInfo:
 	ret
 
 StatChangesInfoBox:
-	hlcoord 0, 0 ; player
+	hlcoord 0, 2 ; player text box
 	lb bc, 14, 8
 	call Textbox
 
-	hlcoord 10, 0 ; enemy
-	lb bc, 14, 8
-	call Textbox
-	
-	hlcoord 1, 0
+	hlcoord 1, 2
 	ld de, MainText.player
 	call PlaceString
+
+	hlcoord 10, 2 ; enemy text box
+	lb bc, 14, 8
+	call Textbox
+
+	hlcoord 11, 2
+	ld de, MainText.enemy
+	call PlaceString
+	
 	ld de, StatTexts.attack
-	lb bc, 1, 2
+	lb bc, 1, 4
 	ld hl, wPlayerStatLevels
 	call StatChangesInfoBoxLoop
 	
-	hlcoord 11, 0
-	ld de, MainText.enemy
-	call PlaceString
 	ld de, StatTexts.attack
-	lb bc, 11, 2
+	lb bc, 11, 4
 	ld hl, wEnemyStatLevels
 	; fallthrough
 	
@@ -653,7 +657,7 @@ StatChangesInfoBoxLoop:
 	push hl
 	call CoordsBCtoHL
 	ld a, c
-	cp 16
+	cp 18
 	jr nc, .finish
 	push bc
 	call PlaceString
@@ -688,7 +692,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .lowered
 	jr z, .same
-	ld a, '▲'
+	ld a, $10 ; red ▲
 	ld [de], a
 	inc de
 	ld a, c
@@ -701,7 +705,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	xor a
 	jr .insert
 .lowered
-	ld a, '▼'
+	ld a, $11 ; blue ▼
 	ld [de], a
 	inc de
 	ld a, 7
@@ -729,35 +733,40 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	ret
 
 StatsInfoBox:
-	hlcoord 0, 0 ; player
+	hlcoord 0, 2 ; player text box
 	lb bc, 14, 8
 	call Textbox
 
-	hlcoord 10, 0 ; enemy
-	lb bc, 14, 8
-	call Textbox
-
-	hlcoord 1, 0
+	hlcoord 1, 2
 	ld de, MainText.player
 	call PlaceString
+
+	hlcoord 10, 2 ; enemy text box
+	lb bc, 14, 8
+	call Textbox
+
+	hlcoord 11, 2
+	ld de, MainText.enemy
+	call PlaceString
+
 	ld de, StatTexts
-	lb bc, 1, 2
+	lb bc, 1, 6
 	ld hl, wBattleMonMaxHP
 	call StatsInfoBoxLoop
 	
-	hlcoord 11, 0
-	ld de, MainText.enemy
-	call PlaceString
 	ld de, StatTexts
-	lb bc, 11, 2
+	lb bc, 11, 6
 	ld hl, wEnemyMonMaxHP
-	jp StatsInfoBoxLoop
+	call StatsInfoBoxLoop
+
+	call PlayerTypeIcons
+	jp EnemyTypeIcons
 
 StatsInfoBoxLoop:
 	push hl
 	call CoordsBCtoHL
 	ld a, c
-	cp 14
+	cp 18
 	jr nc, .finish
 	push bc
 	call PlaceString
@@ -791,19 +800,27 @@ StatsInfoBoxLoop:
 	ret
 
 FieldStatusPagesLayout:
-	hlcoord 0, 0 ; weather text box
+	hlcoord 0, 14 ; weather text box
 	lb bc, 2, 18
 	call Textbox
 
-	hlcoord 0, 4 ; player
+	hlcoord 0, 2 ; player text box
 	lb bc, 10, 8
 	call Textbox
 
-	hlcoord 10, 4 ; enemy
+	hlcoord 1, 2
+	ld de, MainText.player
+	call PlaceString
+
+	hlcoord 10, 2 ; enemy text box
 	lb bc, 10, 8
 	call Textbox
+
+	hlcoord 11, 2
+	ld de, MainText.enemy
+	call PlaceString
 .weather
-	hlcoord 6, 0
+	hlcoord 6, 14
 	ld de, FieldTexts.weather
 	call PlaceString
 	ld a, [wBattleWeather]
@@ -821,10 +838,8 @@ FieldStatusPagesLayout:
 	jr z, .done
 	ld de, FieldTexts.none
 .done
-	hlcoord 1, 1
+	hlcoord 1, 15
 	call PlaceString
-
-	call GetWeatherImage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_NONE
@@ -836,7 +851,7 @@ FieldStatusPagesLayout:
 	jr nc, .not_1_turn
 	ld de, wWeatherCount
 	ld hl, FieldTexts.infinite
-	lb bc, 1, 1
+	lb bc, 1, 15
 	call FieldInfoBoxPlaceElement
 	ld a, [wWeatherCount]
 	cp 1
@@ -844,15 +859,9 @@ FieldStatusPagesLayout:
 	jr nz, .not_1_turn
 	ld de, FieldTexts.turnleft
 .not_1_turn
-	hlcoord 2, 2
+	hlcoord 2, 16
 	call PlaceString
 .skip_weather_turns
-	hlcoord 1, 4
-	ld de, MainText.player
-	call PlaceString	
-	hlcoord 11, 4
-	ld de, MainText.enemy
-	call PlaceString
 	lb bc, 1, 5
 	ret
 
@@ -860,7 +869,7 @@ FieldInfoBox1:
 	call FieldStatusPagesLayout
 
 ; spikes
-	lb bc, 1, 5
+	lb bc, 1, 3
 	ld de, FieldTexts.spikes
 	call FieldInfoBox1Spikes
 
@@ -869,13 +878,13 @@ FieldInfoBox1:
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	jr z, .enemy_confuse
-	lb bc, 1, 7
+	lb bc, 1, 5
 	call FieldInfoBoxStatus
 .enemy_confuse
 	ld a, [wEnemySubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	jr z, .player_encore
-	lb bc, 11, 7
+	lb bc, 11, 5
 	call FieldInfoBoxStatus
 
 ; encored
@@ -884,13 +893,13 @@ FieldInfoBox1:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_ENCORED, a
 	jr z, .enemy_encore
-	lb bc, 1, 9
+	lb bc, 1, 7
 	call FieldInfoBoxStatus
 .enemy_encore
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_ENCORED, a
 	jr z, .player_disable
-	lb bc, 11, 9
+	lb bc, 11, 7
 	call FieldInfoBoxStatus
 
 ; disabled
@@ -899,13 +908,13 @@ FieldInfoBox1:
 	ld a, [wDisabledMove]
 	and a
 	jr z, .enemy_disable
-	lb bc, 1, 11
+	lb bc, 1, 9
 	call FieldInfoBoxStatus
 .enemy_disable
 	ld a, [wEnemyDisabledMove]
 	and a
 	jr z, .player_toxic
-	lb bc, 11, 11
+	lb bc, 11, 9
 	call FieldInfoBoxStatus
 
 ; toxic
@@ -913,14 +922,14 @@ FieldInfoBox1:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr z, .enemy_toxic
-	lb bc, 1, 13
+	lb bc, 1, 11
 	ld de, wPlayerToxicCount
 	call FieldInfoBox1Toxic
 .enemy_toxic
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	ret z
-	lb bc, 11, 13
+	lb bc, 11, 11
 	ld de, wEnemyToxicCount
 	jp FieldInfoBox1Toxic
 
@@ -928,15 +937,15 @@ FieldInfoBox2:
 	call FieldStatusPagesLayout
 
 ; safeguard
-	lb bc, 1, 6
+	lb bc, 1, 4
 	call FieldInfoBox2Safeguard
 
 .handle_reflect
 ; reflect
-	lb bc, 1, 9
+	lb bc, 1, 7
 	call FieldInfoBox2Reflect
 ; light screen
-	lb bc, 1, 12
+	lb bc, 1, 10
 	jp FieldInfoBox2LScreen
 
 FieldInfoBox2Reflect: ; input: bc -> coords
@@ -1073,12 +1082,12 @@ MainText:
 .page1:
 	db "◀ Page 1/4 ▶@"
 .page1_content:
-	db "Stat Changes  @"
+	db " Stat Changes @"
 
 .page2:
 	db "◀ Page 2/4 ▶@"
 .page2_content:
-	db "Actual Stats  @"
+	db " Actual Stats @"
 
 .page3:
 	db "◀ Page 3/4 ▶@"
@@ -1304,7 +1313,11 @@ DecreasePage:
 ; Update text for each page
 ; ========================
 UpdatePageText:
-	hlcoord 4, 17
+	hlcoord 0, -1
+	lb bc, 1, 18
+	call Textbox
+
+	hlcoord 4, 1
 	ld a, [wTrainerInfoPage]
 
 	cp 1
@@ -1337,7 +1350,7 @@ UpdatePageText:
 	call PlaceString
 	ld de, MainText.page4_content
 .done
-	hlcoord 4, 16
+	hlcoord 3, 0
 	jp PlaceString
 
 CoordsBCtoHL:
@@ -1373,3 +1386,127 @@ HLMultiply:
 	add hl, bc
 	pop bc
 	ret
+
+PlayerTypeIcons:
+; loading in player type tiles
+	call GetBaseData
+	ld a, [wBattleMonType1]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+	ld a, c
+	ld hl, TypeLightIcon2GFX ; from gfx/battle/types_light_2.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $00
+	lb bc, BANK(TypeLightIcon2GFX), 4 ; Bank in 'c', Number of Tiles in 'c'
+	call Request2bpp
+
+; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
+	hlcoord 3, 4
+	ld [hl], $00
+	inc hl
+	ld [hl], $01
+	inc hl
+	ld [hl], $02
+	inc hl
+	ld [hl], $03
+	inc hl
+	ld a, [wBattleMonType1]
+	ld b, a
+	ld a, [wBattleMonType2]
+	cp b
+	ret z; Pokemon only has one Type
+
+	; Load Type2 GFX
+	; 2nd Type
+	ld c, a ; Pokemon's second type
+	farcall GetMonTypeIndex
+	ld a, c
+	ld hl, TypeDarkIcon2GFX ; from gfx/battle/types_dark_2.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
+	call AddNTimes ; type index needs to be in 'a'
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $04
+	lb bc, BANK(TypeDarkIcon2GFX), 4 ; Bank in 'c', Number of Tiles in 'c'
+	call Request2bpp
+
+; place Type 2 GFX
+	hlcoord 3, 5
+	ld [hl], $04
+	inc hl
+	ld [hl], $05
+	inc hl
+	ld [hl], $06
+	inc hl
+	ld [hl], $07
+	ret
+
+EnemyTypeIcons:
+; loading in enemy type tiles
+	call GetBaseData
+	ld a, [wEnemyMonType1]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+	ld a, c
+	ld hl, TypeLightIcon2GFX ; from gfx/battle/types_light_2.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $08
+	lb bc, BANK(TypeLightIcon2GFX), 4 ; Bank in 'c', Number of Tiles in 'c'
+	call Request2bpp
+
+; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
+	hlcoord 13, 4
+	ld [hl], $08
+	inc hl
+	ld [hl], $09
+	inc hl
+	ld [hl], $0a
+	inc hl
+	ld [hl], $0b
+	inc hl
+	ld a, [wEnemyMonType1]
+	ld b, a
+	ld a, [wEnemyMonType2]
+	cp b
+	ret z; Pokemon only has one Type
+
+	; Load Type2 GFX
+	; 2nd Type
+	ld c, a ; Pokemon's second type
+	farcall GetMonTypeIndex
+	ld a, c
+	ld hl, TypeDarkIcon2GFX ; from gfx/battle/types_dark_2.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
+	call AddNTimes ; type index needs to be in 'a'
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $0c
+	lb bc, BANK(TypeDarkIcon2GFX), 4 ; Bank in 'c', Number of Tiles in 'c'
+	call Request2bpp
+	
+; place Type 2 GFX
+	hlcoord 13, 5
+	ld [hl], $0c
+	inc hl
+	ld [hl], $0d
+	inc hl
+	ld [hl], $0e
+	inc hl
+	ld [hl], $0f
+	ret
+
+LoadBattleBoxArrowsGFX:
+	ld hl, BattleBoxArrowsGFX
+	ld de, vTiles2 tile $10
+	lb bc, BANK(BattleBoxArrowsGFX), 2
+	call DecompressRequest2bpp
+	ret
+
+BattleBoxArrowsGFX:
+INCBIN "gfx/battle/battle_box_stat_arrows.2bpp.lz"

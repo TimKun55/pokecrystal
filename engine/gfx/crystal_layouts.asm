@@ -123,6 +123,76 @@ LoadOW_BGPal7::
 Palette_TextBG7:
 INCLUDE "gfx/font/bg_text.pal"
 
+LoadBattleInfoBoxPals::
+	ld hl, BattleTextBoxPalettes
+	ld de, wBGPals1 palette 5
+	ld bc, 3 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyColorWRAM
+
+; Load Player Pokemon's Type Palette(s)
+	ld de, wBGPals1 palette 5
+	call GetBaseData
+	ld a, [wBattleMonType1]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 1st type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 5 + 2 ; slot 2 of pal 5, byte 1
+	farcall LoadMonBaseTypePal	
+
+	ld a, [wBattleMonType1]
+	ld b, a
+	ld a, [wBattleMonType2]
+	cp b
+	jr z, .player_palettes_done
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 2nd type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 5 + 4 ; slot 3 of pal 5, byte 1
+	farcall LoadMonBaseTypePal
+.player_palettes_done
+
+; Load Enemy Pokemon's Type Palette(s)
+	ld de, wBGPals1 palette 6
+	call GetBaseData
+	ld a, [wEnemyMonType1]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 1st type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6, byte 1
+	farcall LoadMonBaseTypePal	
+
+	ld a, [wEnemyMonType1]
+	ld b, a
+	ld a, [wEnemyMonType2]
+	cp b
+	jr z, .enemy_palettes_done
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 2nd type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6, byte 1
+	farcall LoadMonBaseTypePal
+.enemy_palettes_done
+
+	hlcoord 3, 4, wAttrmap
+	lb bc, 2, 4 ; height, width
+	ld a, $5 ; player type icon palette
+	call Crystal_FillBoxCGB
+
+	hlcoord 13, 4, wAttrmap
+	lb bc, 2, 4 ; height, width
+	ld a, $6 ; enemy type icon palette
+	call Crystal_FillBoxCGB
+	call WaitBGMap2
+	ret
+
+BattleTextBoxPalettes:
+INCLUDE "gfx/battle/battle_info_box.pal"
+
 Function49420::
 	ld hl, MansionPalette palette 8
 	ld de, wBGPals1 palette PAL_BG_ROOF
