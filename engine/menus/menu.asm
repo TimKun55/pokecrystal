@@ -392,6 +392,10 @@ _TrainerBattleInfo:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 
+	ld hl, wOptions
+	set NO_TEXT_SCROLL, [hl]
+	push hl
+
 	farcall LoadFontsBattleExtra
 	call FadeToMenu
 	farcall BlankScreen
@@ -402,6 +406,8 @@ _TrainerBattleInfo:
 	ld de, SFX_BUMP
 	call PlaySFX
 
+	pop hl
+	res NO_TEXT_SCROLL, [hl]
 	call ClearSprites
 	call ClearPalettes
 	call DelayFrame
