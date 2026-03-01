@@ -632,7 +632,6 @@ TrainerBattleInfo:
 	call LoadBattleBoxArrowsGFX
 
 	farcall EmptyBattleTextbox
-;	call .BlankBGMap
 	call ClearSprites
 	push hl
 	push de
@@ -643,26 +642,6 @@ TrainerBattleInfo:
 	call StatChangesInfoBox
 	call WaitButtonInfoTrainer
 	jp PopBCDEHL
-
-.BlankBGMap:
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
-
-	ld hl, wDecompressScratch
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-	ld a, ' '
-	call ByteFill
-
-	ld de, wDecompressScratch
-	hlbgcoord 0, 0
-	lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
-	call Request2bpp
-
-	pop af
-	ldh [rSVBK], a
-	ret
 
 StatChangesInfoBox:
 	hlcoord 0, 2 ; player text box
@@ -951,39 +930,53 @@ FieldInfoBox1:
 .enemy_disable
 	ld a, [wEnemyDisabledMove]
 	and a
-	jr z, .player_toxic
+	jr z, .leech_seed
 	lb bc, 11, 9
 	call FieldInfoBoxStatus
 
-; toxic
-.player_toxic
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr z, .enemy_toxic
+; leech seed
+.leech_seed
+	ld de, FieldTexts.leech_seed
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_LEECH_SEED, a
+	jr z, .enemy_leech_seed
 	lb bc, 1, 11
-	ld de, wPlayerToxicCount
-	call FieldInfoBox1Toxic
-.enemy_toxic
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
+	call FieldInfoBoxStatus
+.enemy_leech_seed
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_LEECH_SEED, a
 	ret z
 	lb bc, 11, 11
-	ld de, wEnemyToxicCount
-	jp FieldInfoBox1Toxic
+	jp FieldInfoBoxStatus
 
 FieldInfoBox2:
 	call FieldStatusPagesLayout
 
+; toxic
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr z, .enemy_toxic
+	lb bc, 1, 3
+	ld de, wPlayerToxicCount
+	call FieldInfoBox2Toxic
+.enemy_toxic
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	ret z
+	lb bc, 11, 3
+	ld de, wEnemyToxicCount
+	call FieldInfoBox2Toxic
+
 ; safeguard
-	lb bc, 1, 4
+	lb bc, 1, 7
 	call FieldInfoBox2Safeguard
 
 .handle_reflect
 ; reflect
-	lb bc, 1, 7
+	lb bc, 1, 9
 	call FieldInfoBox2Reflect
 ; light screen
-	lb bc, 1, 10
+	lb bc, 1, 11
 	jp FieldInfoBox2LScreen
 
 FieldInfoBox2Reflect: ; input: bc -> coords
@@ -1073,7 +1066,7 @@ FieldInfoBoxStatus: ; input: bc -> coords, de -> text
 	pop de
 	ret
 	
-FieldInfoBox1Toxic: ; input: bc -> coords , de -> count
+FieldInfoBox2Toxic: ; input: bc -> coords , de -> count
 	ld hl, FieldTexts.toxic
 	push hl
 	push bc
@@ -1189,6 +1182,9 @@ FieldTexts:
 	
 .spikes:
 	db "Spikes@"
+
+.leech_seed:
+	db "Seeded@"
 
 .toxic:
 	db "Toxic@"
