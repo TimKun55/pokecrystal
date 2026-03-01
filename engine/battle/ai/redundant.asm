@@ -49,11 +49,6 @@ AI_Redundant:
 	bit SCREENS_LIGHT_SCREEN, a
 	ret
 
-.Mist:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_MIST, a
-	ret
-
 .FocusEnergy:
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_FOCUS_ENERGY, a
@@ -149,6 +144,11 @@ AI_Redundant:
 .Safeguard:
 	ld a, [wEnemyScreens]
 	bit SCREENS_SAFEGUARD, a
+	ret
+
+.Mist:
+	ld a, [wEnemyScreens]
+	bit SCREENS_MIST, a
 	ret
 
 .RainDance:

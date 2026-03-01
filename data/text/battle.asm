@@ -127,6 +127,11 @@ BattleText_SafeguardFaded:
 	line "Safeguard faded!"
 	prompt
 
+BattleText_MistFaded:
+	text "<USER>'s"
+	line "Mist cleared!"
+	prompt
+
 BattleText_MonsLightScreenFell:
 	text_ram wStringBuffer1
 	text " #mon's"

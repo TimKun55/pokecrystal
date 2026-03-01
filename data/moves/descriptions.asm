@@ -504,8 +504,8 @@ SacredFireDescription:
 	line "inflict a burn.@"
 
 MistDescription:
-	db   "Prevents stat"
-	line "reduction.@"
+	db   "5 Turns: Prevents"
+	line "stat reduction.@"
 
 WaterGunDescription:
 	db   "Squirts water to"
@@ -983,7 +983,7 @@ PlayRoughDescription:
 	line "target. Atk ▼1@"
 
 SafeguardDescription:
-	db   "Prevents all"
+	db   "5 Turns: Prevents"
 	line "status problems.@"
 
 PainSplitDescription:

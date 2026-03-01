@@ -4578,9 +4578,16 @@ CheckMist:
 	ret
 
 .check_mist
-	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-	call GetBattleVar
-	bit SUBSTATUS_MIST, a
+	push hl
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld hl, wPlayerScreens
+
+.got_turn
+	bit SCREENS_MIST, [hl]
+	pop hl
 	ret
 
 BattleCommand_StatUpMessage:

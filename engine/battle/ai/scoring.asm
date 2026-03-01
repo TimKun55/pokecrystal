@@ -64,6 +64,11 @@ AI_Basic:
 	bit SCREENS_SAFEGUARD, a
 	jr z, .checkmove
 
+; Dismiss Mist if it's already active.
+	ld a, [wPlayerScreens]
+	bit SCREENS_MIST, a
+	jp z, .checkmove
+
 .discourage
 	call AIDiscourageMove
 	jr .checkmove
@@ -135,8 +140,8 @@ AI_Setup:
 	jr .encourage
 
 .statdown
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_MIST, a
+	ld a, [wPlayerScreens]
+	bit SCREENS_MIST, a
 	jr nz, .do_discourage
 
 	ld a, [wPlayerSubStatus4]

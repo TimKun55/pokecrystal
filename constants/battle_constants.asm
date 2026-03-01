@@ -198,7 +198,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerSubStatus4 or wEnemySubStatus4 bit flags
 	const_def
 	const SUBSTATUS_X_ACCURACY
-	const SUBSTATUS_MIST
+	const_skip
 	const SUBSTATUS_FOCUS_ENERGY
 	const_skip
 	const SUBSTATUS_SUBSTITUTE
@@ -220,7 +220,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerScreens or wEnemyScreens bit flags
 	const_def
 	const SCREENS_SPIKES
-	const_skip
+	const SCREENS_MIST
 	const SCREENS_SAFEGUARD
 	const SCREENS_LIGHT_SCREEN
 	const SCREENS_REFLECT

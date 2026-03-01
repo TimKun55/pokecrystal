@@ -2234,9 +2234,9 @@ PokeDollEffect:
 
 GuardSpecEffect:
 	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_MIST, [hl]
+	bit SCREENS_MIST, [hl]
 	jp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_MIST, [hl]
+	set SCREENS_MIST, [hl]
 	jp UseItemText
 
 DireHitEffect:

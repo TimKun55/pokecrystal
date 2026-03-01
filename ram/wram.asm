@@ -532,14 +532,14 @@ wEnemyScreens::
 	db
 
 wPlayerSafeguardCount:: db
+wPlayerMistCount:: db
 wPlayerLightScreenCount:: db
 wPlayerReflectCount:: db
-	ds 1
 
 wEnemySafeguardCount:: db
+wEnemyMistCount:: db
 wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
-	ds 1
 
 	ds 1
 

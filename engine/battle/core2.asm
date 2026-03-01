@@ -2,6 +2,7 @@ Core2_NewTurnEndEffects:
 	call HandleLeftovers
 	call HandleLeppaberry
 	call HandleSafeguard
+	call HandleMist
 	call HandleScreens
 	ret
 
@@ -227,6 +228,43 @@ HandleSafeguard:
 .print
 	ldh [hBattleTurn], a
 	ld hl, BattleText_SafeguardFaded
+	jp StdBattleTextbox
+
+HandleMist:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player1
+	call .CheckPlayer
+	jr .CheckEnemy
+
+.player1
+	call .CheckEnemy
+.CheckPlayer:
+	ld a, [wPlayerScreens]
+	bit SCREENS_MIST, a
+	ret z
+	ld hl, wPlayerMistCount
+	dec [hl]
+	ret nz
+	res SCREENS_MIST, a
+	ld [wPlayerScreens], a
+	xor a
+	jr .print
+
+.CheckEnemy:
+	ld a, [wEnemyScreens]
+	bit SCREENS_MIST, a
+	ret z
+	ld hl, wEnemyMistCount
+	dec [hl]
+	ret nz
+	res SCREENS_MIST, a
+	ld [wEnemyScreens], a
+	ld a, $1
+
+.print
+	ldh [hBattleTurn], a
+	ld hl, BattleText_MistFaded
 	jp StdBattleTextbox
 
 HandleScreens:
