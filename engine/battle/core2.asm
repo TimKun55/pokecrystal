@@ -962,10 +962,15 @@ FieldInfoBox2:
 .enemy_toxic
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
-	ret z
+	jr z, .check_mist
 	lb bc, 11, 3
 	ld de, wEnemyToxicCount
 	call FieldInfoBox2Toxic
+
+.check_mist
+; mist
+    lb bc, 1, 5
+    call FieldInfoBox2Mist
 
 ; safeguard
 	lb bc, 1, 7
@@ -1038,6 +1043,26 @@ FieldInfoBox1Spikes: ; input: bc -> coords
 	ld b, a
 	call CoordsBCtoHL
 	jp PlaceString
+
+FieldInfoBox2Mist:
+	ld hl, wPlayerScreens
+	ld de, wPlayerMistCount
+	bit 1, [hl]
+	jr z, .enemy
+	ld hl, FieldTexts.mist
+	push bc
+	call FieldInfoBoxPlaceElement
+	pop bc
+.enemy
+	ld hl, wEnemyScreens
+	ld de, wEnemyMistCount
+	bit 1, [hl]
+	ret z
+	ld a, b
+	add 10
+	ld b, a
+	ld hl, FieldTexts.mist
+	jp FieldInfoBoxPlaceElement
 
 FieldInfoBox2Safeguard:
 	ld hl, wPlayerScreens
@@ -1197,6 +1222,9 @@ FieldTexts:
 
 .safeguard:
 	db "S.Guard@"
+
+.mist:
+	db "Mist@"
 
 .confused:
 	db "Confused@"
