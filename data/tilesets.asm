@@ -58,4 +58,5 @@ Tilesets::
 	tileset TilesetFaraway
 	tileset TilesetKanto8
 	tileset TilesetJohtoPeak
+	tileset TilesetGymJohto
 	assert_table_length NUM_TILESETS + 1

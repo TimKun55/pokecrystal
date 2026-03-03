@@ -657,3 +657,18 @@ INCLUDE "data/tilesets/park_collision.asm"
 
 TilesetIcePathColl::
 INCLUDE "data/tilesets/ice_path_collision.asm"
+
+
+SECTION "Tileset Data 26", ROMX
+
+TilesetGymJohtoGFX::
+INCBIN "gfx/tilesets/gym_johto.2bpp.lz"
+
+TilesetGymJohtoMeta::
+INCBIN "data/tilesets/gym_johto_metatiles.bin"
+
+TilesetGymJohtoColl::
+INCLUDE "data/tilesets/gym_johto_collision.asm"
+
+TilesetGymJohtoAttr::
+INCBIN "data/tilesets/gym_johto_attributes.bin"

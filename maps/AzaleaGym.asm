@@ -24,18 +24,18 @@ AzaleaGymNoop2Scene:
 AzaleaGymRedBlueRopeActivationCallback:
 	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
 	iffalse .endcallback
-	changeblock  2,  6, $90 ; deactivated blue lever
-	changeblock  8,  6, $8e ; deactivated blue lever
-	changeblock  8, 14, $8e ; deactivated blue lever
-	changeblock  6, 10, $96 ; deactivated blue rope
-	changeblock  8, 10, $97 ; deactivated blue rope
-	changeblock 10, 10, $98 ; deactivated blue rope
+	changeblock  4,  6, $48 ; deactivated blue button
+	changeblock 10,  6, $44 ; deactivated blue button
+	changeblock 10, 14, $44 ; deactivated blue button
+	changeblock  8, 10, $40 ; deactivated blue rope
+	changeblock 10, 10, $41 ; deactivated blue rope
+	changeblock 12, 10, $42 ; deactivated blue rope
 	checkevent EVENT_AZALEA_GYM_RED_LEVER
 	iffalse .endcallback
-	changeblock  0, 14, $92 ; deactivated red lever
-	changeblock  2,  8, $93 ; deactivated red rope
-	changeblock  4,  8, $94 ; deactivated red rope
-	changeblock  6,  8, $95 ; deactivated red rope
+	changeblock  2, 14, $46 ; deactivated red button
+	changeblock  4,  8, $3d ; deactivated red rope
+	changeblock  6,  8, $3e ; deactivated red rope
+	changeblock  8,  8, $3f ; deactivated red rope
 .endcallback:
 	endcallback
 
@@ -202,69 +202,69 @@ AzaleaGymStatue:
 .LyraToo
 	jumpstd GymStatue3Script
 
-AzaleaGymBlueLever:
+AzaleaGymBlueButton:
 	opentext
 	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
 	iftrue .BlueReset
-	writetext AzaleaGymBlueLeverText
+	writetext AzaleaGymBlueButtonText
 	waitbutton
 	closetext
 	setevent EVENT_AZALEA_GYM_BLUE_LEVER	
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  2,  6, $90 ; deactivated blue lever
-	changeblock  8,  6, $8e ; deactivated blue lever
-	changeblock  8, 14, $8e ; deactivated blue lever
-	changeblock  6, 10, $96 ; deactivated blue rope
-	changeblock  8, 10, $97 ; deactivated blue rope
-	changeblock 10, 10, $98 ; deactivated blue rope
+	changeblock  4,  6, $48 ; deactivated blue button
+	changeblock 10,  6, $44 ; deactivated blue button
+	changeblock 10, 14, $44 ; deactivated blue button
+	changeblock  8, 10, $40 ; deactivated blue rope
+	changeblock 10, 10, $41 ; deactivated blue rope
+	changeblock 12, 10, $42 ; deactivated blue rope
 	reloadmappart
 	end
 
 .BlueReset:
-	writetext AzaleaGymBlueLeverText
+	writetext AzaleaGymBlueButtonText
 	waitbutton
 	closetext
 	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  2,  6, $8f ; activated blue lever
-	changeblock  8,  6, $8d ; activated blue lever
-	changeblock  8, 14, $8d ; activated blue lever
-	changeblock  6, 10, $82 ; activated blue rope
-	changeblock  8, 10, $83 ; activated blue rope
-	changeblock 10, 10, $84 ; activated blue rope
+	changeblock  4,  6, $47 ; activated blue button
+	changeblock 10,  6, $43 ; activated blue button
+	changeblock 10, 14, $43 ; activated blue button
+	changeblock  8, 10, $37 ; activated blue rope
+	changeblock 10, 10, $38 ; activated blue rope
+	changeblock 12, 10, $39 ; activated blue rope
 	reloadmappart
 	end
 
-AzaleaGymRedLever:
+AzaleaGymRedButton:
 	opentext
 	checkevent EVENT_AZALEA_GYM_RED_LEVER
 	iftrue .RedReset
-	writetext AzaleaGymRedLeverText
+	writetext AzaleaGymRedButtonText
 	waitbutton
 	closetext
 	setevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  0, 14, $92 ; deactivated red lever
-	changeblock  2,  8, $93 ; deactivated red rope
-	changeblock  4,  8, $94 ; deactivated red rope
-	changeblock  6,  8, $95 ; deactivated red rope
+	changeblock  2, 14, $46 ; deactivated red button
+	changeblock  4,  8, $3d ; deactivated red rope
+	changeblock  6,  8, $3e ; deactivated red rope
+	changeblock  8,  8, $3f ; deactivated red rope
 	reloadmappart
 	end
 
 .RedReset:
-	writetext AzaleaGymRedLeverText
+	writetext AzaleaGymRedButtonText
 	waitbutton
 	closetext
 	clearevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  0, 14, $91 ; activated red lever
-	changeblock  2,  8, $7c ; activated red rope
-	changeblock  4,  8, $7d ; activated red rope
-	changeblock  6,  8, $7e ; activated red rope
+	changeblock  2, 14, $45 ; activated red button
+	changeblock  4,  8, $33 ; activated red rope
+	changeblock  6,  8, $34 ; activated red rope
+	changeblock  8,  8, $35 ; activated red rope
 	reloadmappart
 	end
 
@@ -965,57 +965,57 @@ ScytherText:
 	line "Scytherrrr!"
 	done
 
-AzaleaGymBlueLeverText:
-	text "It's a blue lever."
+AzaleaGymBlueButtonText:
+	text "It's a blue button."
 	
-	para "<PLAYER> pulled"
-	line "the lever."
+	para "<PLAYER> pushed"
+	line "the button."
 	done
 
-AzaleaGymRedLeverText:
-	text "It's a red lever."
+AzaleaGymRedButtonText:
+	text "It's a red button."
 	
-	para "<PLAYER> pulled"
-	line "the lever."
+	para "<PLAYER> pushed"
+	line "the button."
 	done
 
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 31, AZALEA_TOWN, 5
-	warp_event  7, 31, AZALEA_TOWN, 5
+	warp_event  8, 31, AZALEA_TOWN, 5
+	warp_event  9, 31, AZALEA_TOWN, 5
 
 	def_coord_events
-	coord_event  2, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1DScript
-	coord_event  6, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1EScript
-	coord_event 11, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1FScript
-	coord_event  2, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1AScript
-	coord_event  6, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1BScript
-	coord_event 11, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1CScript
-	coord_event  2, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2DScript
-	coord_event  6, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2EScript
-	coord_event  2,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2AScript
-	coord_event  6,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2BScript
-	coord_event 11,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2CScript
-	coord_event  6, 14, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2SetUpScript
-	coord_event  6, 19, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1SetUpScript
+	coord_event  4, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1DScript
+	coord_event  8, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1EScript
+	coord_event 13, 25, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1FScript
+	coord_event  4, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1AScript
+	coord_event  8, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1BScript
+	coord_event 13, 20, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit1CScript
+	coord_event  4, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2DScript
+	coord_event  8, 13, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit2EScript
+	coord_event  4,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2AScript
+	coord_event  8,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2BScript
+	coord_event 13,  8, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2CScript
+	coord_event  8, 14, SCENE_AZALEAGYM_ROPE_WALKABC, AzaleaGymPit2SetUpScript
+	coord_event  8, 19, SCENE_AZALEAGYM_ROPE_WALKDEF, AzaleaGymPit1SetUpScript
 
 	def_bg_events
-	bg_event  5, 29, BGEVENT_READ, AzaleaGymStatue
-	bg_event  8, 29, BGEVENT_READ, AzaleaGymStatue
-	bg_event  3,  6, BGEVENT_READ, AzaleaGymBlueLever
-	bg_event  8,  7, BGEVENT_READ, AzaleaGymBlueLever
-	bg_event  8, 15, BGEVENT_READ, AzaleaGymBlueLever
-	bg_event  1, 14, BGEVENT_READ, AzaleaGymRedLever
+	bg_event  7, 29, BGEVENT_READ, AzaleaGymStatue
+	bg_event 10, 29, BGEVENT_READ, AzaleaGymStatue
+	bg_event  5,  6, BGEVENT_READ, AzaleaGymBlueButton
+	bg_event 10,  7, BGEVENT_READ, AzaleaGymBlueButton
+	bg_event 10, 15, BGEVENT_READ, AzaleaGymBlueButton
+	bg_event  3, 14, BGEVENT_READ, AzaleaGymRedButton
 
 	def_object_events
-	object_event  7,  3, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
-	object_event  6,  3, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymScyther, -1
-	object_event  5, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherBenny, -1
-	object_event  2, 18, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherAl, -1
-	object_event 11,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJosh, -1
-	object_event  1,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
-	object_event  2,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
-	object_event 11, 18, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacXander, -1
-	object_event  9, 29, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1
+	object_event  8,  4, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
+	object_event  9,  4, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymScyther, -1
+	object_event  7, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherBenny, -1
+	object_event  4, 18, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherAl, -1
+	object_event 13,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherJosh, -1
+	object_event  3,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
+	object_event  4,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
+	object_event 13, 18, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacXander, -1
+	object_event 11, 29, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1

@@ -298,6 +298,20 @@ TilesetTraditionalHouseAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetGymJohtoAnim:
+	dw vTiles2 tile $55, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $56, ReadTileToAnimBuffer ; waterfall
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $56, WriteTileFromAnimBuffer ; waterfall
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:

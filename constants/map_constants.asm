@@ -37,7 +37,7 @@ ENDM
 
 	newgroup OLIVINE                                              ;  1
 	map_const OLIVINE_POKECENTER_1F,                        6,  4 ;  1
-	map_const OLIVINE_GYM,                                  5,  8 ;  2
+	map_const OLIVINE_GYM,                                  7,  9 ;  2
 	map_const OLIVINE_TIMS_HOUSE,                           4,  4 ;  3
 	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,              4,  4 ;  4
 	map_const OLIVINE_GOOD_ROD_HOUSE,                       4,  4 ;  5
@@ -244,7 +244,7 @@ ENDM
 	map_const CHARCOAL_KILN,                                5,  4 ;  2
 	map_const AZALEA_MART,                                  6,  4 ;  3
 	map_const KURTS_HOUSE,                                  8,  4 ;  4
-	map_const AZALEA_GYM,                                   7, 16 ;  5
+	map_const AZALEA_GYM,                                   9, 16 ;  5
 	map_const ROUTE_33,                                    10, 10 ;  6
 	map_const AZALEA_TOWN,                                 20, 10 ;  7
 	endgroup
@@ -278,7 +278,7 @@ ENDM
 	newgroup GOLDENROD                                            ; 11
 	map_const ROUTE_34,                                    12, 27 ;  1
 	map_const GOLDENROD_CITY,                              21, 18 ;  2
-	map_const GOLDENROD_GYM,                               10, 10 ;  3
+	map_const GOLDENROD_GYM,                               12, 10 ;  3
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6

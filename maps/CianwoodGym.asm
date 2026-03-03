@@ -20,12 +20,12 @@ CianwoodGymWaterfallButtonCallback:
 	endcallback	
 
 .NoWaterfall
-	changeblock 12,  2, $d7
-	changeblock  6,  2, $d3
-	changeblock  8,  4, $ca
-	changeblock  8,  6, $cb
-	changeblock  8,  8, $cb
-	changeblock  8, 10, $da
+	changeblock 12,  2, $9e ; right button off
+	changeblock  6,  2, $9d ; left button off
+	changeblock  8,  4, $a9 ; closed waterfall top
+	changeblock  8,  6, $9c ; wall
+	changeblock  8,  8, $9c ; wall
+	changeblock  8, 10, $af ; wet floor
 	endcallback
 
 .Button1Pushed
@@ -179,7 +179,7 @@ CianwoodWaterfallButton1:
 	setevent EVENT_BUTTON_1_IN_CIANWOOD_GYM
 	pause 15
 	playsound SFX_MOVE_PUZZLE_PIECE
-	changeblock 12,  2, $d7
+	changeblock 12,  2, $9e ; right button off
 	reloadmappart
 	waitsfx
 	end
@@ -197,11 +197,11 @@ CianwoodWaterfallButton2:
 	pause 15
 	playsound SFX_STRENGTH
 	earthquake 50
-	changeblock 6,  2, $d3
-	changeblock 8,  4, $ca
-	changeblock 8,  6, $cb
-	changeblock 8,  8, $cb
-	changeblock 8, 10, $da
+	changeblock 6,  2, $9d ; left button off
+	changeblock 8,  4, $a9 ; closed waterfall top
+	changeblock 8,  6, $9c ; wall
+	changeblock 8,  8, $9c ; wall
+	changeblock 8, 10, $af ; wet floor
 	reloadmappart
 	waitsfx
 	end
@@ -499,8 +499,8 @@ CianwoodGym_MapEvents:
 	bg_event 10, 15, BGEVENT_READ, CianwoodGymStatue
 
 	def_object_events
-	object_event  9, 10, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
-	object_event  8, 10, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
+	object_event  8, 10, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
+	object_event  9, 10, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymPoliwrath, -1
 	object_event  3, 10, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltYoshi, -1
 	object_event 15,  8, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltLao, -1
 	object_event 11,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltNob, -1

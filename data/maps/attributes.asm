@@ -704,7 +704,7 @@ ENDM
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
 	map_attributes Route18EastWestGate, ROUTE_18_EAST_WEST_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
-	map_attributes CianwoodGym, CIANWOOD_GYM, $db, 0
+	map_attributes CianwoodGym, CIANWOOD_GYM, $00, 0
 	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0
 	map_attributes CianwoodPharmacy, CIANWOOD_PHARMACY, $00, 0
 	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $00, 0
