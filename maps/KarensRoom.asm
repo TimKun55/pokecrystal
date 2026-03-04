@@ -18,11 +18,11 @@ KarensRoomNoopScene:
 KarensRoomDoorsCallback:
 	checkevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 .KeepEntranceOpen:
 	checkevent EVENT_KARENS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $c2 ; open door
+	changeblock 4, 2, $41 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -31,7 +31,7 @@ KarensRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 	reloadmappart
 	closetext
 	setscene SCENE_KARENSROOM_NOOP
@@ -65,7 +65,7 @@ KarenBattle:
 	setevent EVENT_BEAT_ELITE_4_KAREN
 	setevent EVENT_KARENS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $c2 ; open door
+	changeblock 4, 2, $41 ; open door
 	reloadmappart
 	waitsfx
 	end
