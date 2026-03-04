@@ -19,11 +19,11 @@ BrunosRoomNoopScene:
 BrunosRoomDoorsCallback:
 	checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 .KeepEntranceOpen:
 	checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $bc ; open door
+	changeblock 4, 2, $49 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -32,7 +32,7 @@ BrunosRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 	reloadmappart
 	closetext
 	setscene SCENE_BRUNOSROOM_NOOP
@@ -66,7 +66,7 @@ BrunoBattle:
 	setevent EVENT_BEAT_ELITE_4_BRUNO
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $bc ; open door
+	changeblock 4, 2, $49 ; open door
 	reloadmappart
 	waitsfx
 	end

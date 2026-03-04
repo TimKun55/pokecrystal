@@ -18,11 +18,11 @@ WillsRoomNoopScene:
 WillsRoomDoorsCallback:
 	checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 .KeepEntranceOpen:
 	checkevent EVENT_WILLS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $b3 ; open door
+	changeblock 4, 2, $32 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -31,7 +31,7 @@ WillsRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $2a ; wall
+	changeblock 4, 14, $30 ; wall
 	reloadmappart
 	closetext
 	setscene SCENE_WILLSROOM_NOOP
@@ -65,7 +65,7 @@ WillBattle:
 	setevent EVENT_BEAT_ELITE_4_WILL
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $b3 ; open door
+	changeblock 4, 2, $32 ; open door
 	reloadmappart
 	waitsfx
 	end

@@ -15,15 +15,15 @@ BlackthornGym1F_MapScripts:
 BlackthornGym1FBouldersCallback:
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1
 	iffalse .skip1
-	changeblock 8, 4, $3b ; fallen boulder 2
+	changeblock 8, 4, $20 ; fallen boulder 2
 .skip1
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_2
 	iffalse .skip2
-	changeblock 2, 6, $3a ; fallen boulder 1
+	changeblock 2, 6, $1e ; fallen boulder 1
 .skip2
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_3
 	iffalse .skip3
-	changeblock 8, 8, $ab ; fallen boulder 3
+	changeblock 8, 8, $24 ; fallen boulder 3
 .skip3
 	endcallback
 
@@ -443,24 +443,24 @@ BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 23, BLACKTHORN_CITY, 1
-	warp_event  5, 23, BLACKTHORN_CITY, 1
-	warp_event  1,  9, BLACKTHORN_GYM_2F, 1
-	warp_event  7, 11, BLACKTHORN_GYM_2F, 2
-	warp_event  2,  8, BLACKTHORN_GYM_2F, 3
-	warp_event  7,  9, BLACKTHORN_GYM_2F, 4
-	warp_event  9,  5, BLACKTHORN_GYM_2F, 5
+	warp_event  6, 25, BLACKTHORN_CITY, 1
+	warp_event  7, 25, BLACKTHORN_CITY, 1
+	warp_event  3, 11, BLACKTHORN_GYM_2F, 1
+	warp_event  9, 13, BLACKTHORN_GYM_2F, 2
+	warp_event  4, 10, BLACKTHORN_GYM_2F, 3
+	warp_event  9, 11, BLACKTHORN_GYM_2F, 4
+	warp_event 11,  7, BLACKTHORN_GYM_2F, 5
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2, 21, BGEVENT_READ, BlackthornGymStatue
-	bg_event  7, 21, BGEVENT_READ, BlackthornGymStatue
+	bg_event  4, 23, BGEVENT_READ, BlackthornGymStatue
+	bg_event  9, 23, BGEVENT_READ, BlackthornGymStatue
 
 	def_object_events
-	object_event  5,  2, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1
-	object_event  4,  2, SPRITE_KINGDRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymKingdra, -1
-	object_event  6,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1
-	object_event  1, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
-	object_event  9,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
-	object_event  6, 21, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
+	object_event  6,  4, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1
+	object_event  7,  4, SPRITE_KINGDRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymKingdra, -1
+	object_event  8, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1
+	object_event  3, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
+	object_event 11,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
+	object_event  8, 23, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1

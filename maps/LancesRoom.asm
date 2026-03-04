@@ -20,7 +20,7 @@ LancesRoomNoopScene:
 LancesRoomDoorsCallback:
 	checkevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 22, $34 ; wall
+	changeblock 4, 22, $1e ; wall
 .KeepEntranceOpen:
 	checkevent EVENT_LANCES_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
