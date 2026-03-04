@@ -83,11 +83,11 @@ INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 
 SECTION "Tileset Data 4", ROMX
 
-TilesetEliteFourRoomMeta::
-INCBIN "data/tilesets/elite_four_room_metatiles.bin"
+TilesetEFourChampionRoomMeta::
+INCBIN "data/tilesets/e_four_champion_room_metatiles.bin"
 
-TilesetEliteFourRoomColl::
-INCLUDE "data/tilesets/elite_four_room_collision.asm"
+TilesetEFourChampionRoomColl::
+INCLUDE "data/tilesets/e_four_champion_room_collision.asm"
 
 TilesetParkGFX::
 INCBIN "gfx/tilesets/park.2bpp.lz"
@@ -133,15 +133,6 @@ INCBIN "data/tilesets/johto_modern_metatiles.bin"
 
 
 SECTION "Tileset Data 6", ROMX
-
-TilesetChampionsRoomGFX::
-INCBIN "gfx/tilesets/champions_room.2bpp.lz"
-
-TilesetChampionsRoomMeta::
-INCBIN "data/tilesets/champions_room_metatiles.bin"
-
-TilesetChampionsRoomColl::
-INCLUDE "data/tilesets/champions_room_collision.asm"
 
 TilesetJohtoHouseGFX::
 INCBIN "gfx/tilesets/johto_house.2bpp.lz"
@@ -250,9 +241,6 @@ INCBIN "data/tilesets/mansion_attributes.bin"
 
 TilesetTraditionalHouseAttr::
 INCBIN "data/tilesets/traditional_house_attributes.bin"
-
-TilesetChampionsRoomAttr::
-INCBIN "data/tilesets/champions_room_attributes.bin"
 
 TilesetLighthouseAttr::
 INCBIN "data/tilesets/lighthouse_attributes.bin"
@@ -559,11 +547,11 @@ INCLUDE "data/tilesets/game_corner_collision.asm"
 
 SECTION "Tileset Data 23", ROMX
 
-TilesetEliteFourRoomGFX::
-INCBIN "gfx/tilesets/elite_four_room.2bpp.lz"
+TilesetEFourChampionRoomGFX::
+INCBIN "gfx/tilesets/e_four_champion_room.2bpp.lz"
 
-TilesetEliteFourRoomAttr::
-INCBIN "data/tilesets/elite_four_room_attributes.bin"
+TilesetEFourChampionRoomAttr::
+INCBIN "data/tilesets/e_four_champion_room_attributes.bin"
 
 TilesetGameCornerMeta::
 INCBIN "data/tilesets/game_corner_metatiles.bin"

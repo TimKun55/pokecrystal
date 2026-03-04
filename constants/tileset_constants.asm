@@ -14,40 +14,39 @@
 	const TILESET_MART                 ; 0c
 	const TILESET_MANSION              ; 0d
 	const TILESET_GAME_CORNER          ; 0e
-	const TILESET_ELITE_FOUR_ROOM      ; 0f
+	const TILESET_E_FOUR_CHAMPION_ROOM ; 0f
 	const TILESET_TRADITIONAL_HOUSE    ; 10
 	const TILESET_TRAIN_STATION        ; 11
-	const TILESET_CHAMPIONS_ROOM       ; 12
-	const TILESET_LIGHTHOUSE           ; 13
-	const TILESET_PLAYERS_ROOM         ; 14
-	const TILESET_BATTLE_TOWER_INSIDE  ; 16
-	const TILESET_TOWER                ; 17
-	const TILESET_CAVE                 ; 18
-	const TILESET_PARK                 ; 19
-	const TILESET_RUINS_OF_ALPH        ; 1a
-	const TILESET_RADIO_TOWER          ; 1b
-	const TILESET_UNDERGROUND          ; 1c
-	const TILESET_ICE_PATH             ; 1d
-	const TILESET_DARK_CAVE            ; 1e
-	const TILESET_FOREST               ; 1f
-	const TILESET_INDIGO               ; 20
-	const TILESET_JOHTO_2              ; 21
-	const TILESET_JOHTO_3              ; 22
-	const TILESET_JOHTO_4              ; 23
-	const TILESET_KANTO_2              ; 24
-	const TILESET_KANTO_3              ; 25
-	const TILESET_KANTO_4              ; 26
-	const TILESET_KANTO_5              ; 27
-	const TILESET_KANTO_6              ; 28
-	const TILESET_JOHTO_RUINS          ; 29
-	const TILESET_JOHTO_5              ; 2a
-	const TILESET_MUSEUM               ; 2b
-	const TILESET_KANTO_7              ; 2c
-	const TILESET_DECO_STORE           ; 2d
-	const TILESET_FARAWAY              ; 2e
-	const TILESET_KANTO_8              ; 2f
-	const TILESET_JOHTO_PEAK           ; 30
-	const TILESET_GYM_JOHTO            ; 31
+	const TILESET_LIGHTHOUSE           ; 12
+	const TILESET_PLAYERS_ROOM         ; 13
+	const TILESET_BATTLE_TOWER_INSIDE  ; 14
+	const TILESET_TOWER                ; 15
+	const TILESET_CAVE                 ; 16
+	const TILESET_PARK                 ; 17
+	const TILESET_RUINS_OF_ALPH        ; 18
+	const TILESET_RADIO_TOWER          ; 19
+	const TILESET_UNDERGROUND          ; 1a
+	const TILESET_ICE_PATH             ; 1b
+	const TILESET_DARK_CAVE            ; 1c
+	const TILESET_FOREST               ; 1d
+	const TILESET_INDIGO               ; 1e
+	const TILESET_JOHTO_2              ; 1f
+	const TILESET_JOHTO_3              ; 20
+	const TILESET_JOHTO_4              ; 21
+	const TILESET_KANTO_2              ; 22
+	const TILESET_KANTO_3              ; 23
+	const TILESET_KANTO_4              ; 24
+	const TILESET_KANTO_5              ; 25
+	const TILESET_KANTO_6              ; 26
+	const TILESET_JOHTO_RUINS          ; 27
+	const TILESET_JOHTO_5              ; 28
+	const TILESET_MUSEUM               ; 29
+	const TILESET_KANTO_7              ; 2a
+	const TILESET_DECO_STORE           ; 2b
+	const TILESET_FARAWAY              ; 2c
+	const TILESET_KANTO_8              ; 2d
+	const TILESET_JOHTO_PEAK           ; 2e
+	const TILESET_GYM_JOHTO            ; 2f
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

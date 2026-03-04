@@ -25,10 +25,9 @@ Tilesets::
 	tileset TilesetMart
 	tileset TilesetMansion
 	tileset TilesetGameCorner
-	tileset TilesetEliteFourRoom
+	tileset TilesetEFourChampionRoom
 	tileset TilesetTraditionalHouse
 	tileset TilesetTrainStation
-	tileset TilesetChampionsRoom
 	tileset TilesetLighthouse
 	tileset TilesetPlayersRoom
 	tileset TilesetBattleTowerInside

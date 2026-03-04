@@ -163,7 +163,7 @@ TilesetPortAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-TilesetEliteFourRoomAnim:
+TilesetEFourChampionRoomAnim:
 	dw NULL,  AnimateLavaBubbleTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -322,7 +322,6 @@ TilesetMartAnim:
 TilesetMansionAnim:
 TilesetGameCornerAnim:
 TilesetTrainStationAnim:
-TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
 TilesetPlayersRoomAnim:
 TilesetBattleTowerInsideAnim:
