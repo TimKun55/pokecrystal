@@ -660,3 +660,19 @@ INCLUDE "data/tilesets/gym_johto_collision.asm"
 
 TilesetGymJohtoAttr::
 INCBIN "data/tilesets/gym_johto_attributes.bin"
+
+
+SECTION "Tileset Data 27", ROMX
+
+
+TilesetGymKantoGFX::
+INCBIN "gfx/tilesets/gym_kanto.2bpp.lz"
+
+TilesetGymKantoMeta::
+INCBIN "data/tilesets/gym_kanto_metatiles.bin"
+
+TilesetGymKantoColl::
+INCLUDE "data/tilesets/gym_kanto_collision.asm"
+
+TilesetGymKantoAttr::
+INCBIN "data/tilesets/gym_kanto_attributes.bin"

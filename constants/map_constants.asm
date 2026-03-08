@@ -222,7 +222,7 @@ ENDM
 	map_const CERULEAN_POLICE_STATION,                      4,  4 ;  2
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const CERULEAN_POKECENTER_1F,                       6,  4 ;  4
-	map_const CERULEAN_GYM,                                 8, 10 ;  5
+	map_const CERULEAN_GYM,                                10, 10 ;  5
 	map_const CERULEAN_MART,                                6,  4 ;  6
 	map_const ROUTE_10_POKECENTER_1F,                       6,  4 ;  7
 	map_const POWER_PLANT,                                 10,  9 ;  8
@@ -316,7 +316,7 @@ ENDM
 	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  7
 	map_const VERMILION_MART,                               6,  4 ;  8
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  9
-	map_const VERMILION_GYM,                                5, 10 ; 10
+	map_const VERMILION_GYM,                                7, 10 ; 10
 	map_const ROUTE_6_SAFFRON_GATE,                         4,  4 ; 11
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4 ; 13
@@ -337,7 +337,7 @@ ENDM
 	map_const ROUTE_3,                                     35, 10 ;  1
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
-	map_const PEWTER_GYM,                                   5, 11 ;  4
+	map_const PEWTER_GYM,                                   7, 11 ;  4
 	map_const PEWTER_MART,                                  6,  4 ;  5
 	map_const PEWTER_POKECENTER_1F,                         6,  4 ;  6
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  7
@@ -388,7 +388,7 @@ ENDM
 	map_const FUCHSIA_CITY,                                20, 18 ; 10
 	map_const FUCHSIA_MART,                                 6,  4 ; 11
 	map_const SAFARI_ZONE_FUCHSIA_GATE,                     6,  4 ; 12
-	map_const FUCHSIA_GYM,                                  5,  9 ; 13
+	map_const FUCHSIA_GYM,                                  7, 10 ; 13
 	map_const BILLS_OLDER_SISTERS_HOUSE,                    4,  4 ; 14
 	map_const FUCHSIA_POKECENTER_1F,                        6,  4 ; 15
 	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 16
@@ -446,7 +446,7 @@ ENDM
 	map_const CELADON_POKECENTER_1F,                        6,  4 ; 15
 	map_const CELADON_GAME_CORNER,                         10,  7 ; 16
 	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               4,  4 ; 17
-	map_const CELADON_GYM,                                 15, 14 ; 18
+	map_const CELADON_GYM,                                 17, 14 ; 18
 	map_const CELADON_CAFE,                                 6,  4 ; 19
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
 	map_const CELADON_HOME_DECO_STORE_1F,                   6,  4 ; 21

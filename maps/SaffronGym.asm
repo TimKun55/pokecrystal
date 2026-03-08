@@ -19,7 +19,7 @@ SaffronGymWarpTileCallback:
 	endcallback
 
 .NoWarp
-	changeblock 10, 14, $3d ; no direct warp to Sabrina
+	changeblock 10, 14, $a0 ; no direct warp to Sabrina
 	endcallback
 
 SaffronGymSabrinaScript:

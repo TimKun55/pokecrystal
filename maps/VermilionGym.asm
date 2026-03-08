@@ -529,38 +529,38 @@ VermilionGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 19, VERMILION_CITY, 7
-	warp_event  5, 19, VERMILION_CITY, 7
+	warp_event  6, 19, VERMILION_CITY, 7
+	warp_event  7, 19, VERMILION_CITY, 7
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  1, 10, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  3, 10, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  5, 10, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  7, 10, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  9, 10, BGEVENT_READ, VermilionGymTrashCanScript
-	bg_event  1, 12, BGEVENT_READ, VermilionGymTrashCanScript
+	bg_event 11, 10, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  3, 12, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  5, 12, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  7, 12, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  9, 12, BGEVENT_READ, VermilionGymTrashCanScript
-	bg_event  1, 14, BGEVENT_READ, VermilionGymTrashCanScript
+	bg_event 11, 12, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  3, 14, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  5, 14, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  7, 14, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  9, 14, BGEVENT_READ, VermilionGymTrashCanScript
-	bg_event  2, 17, BGEVENT_READ, VermilionGymStatue
-	bg_event  7, 17, BGEVENT_READ, VermilionGymStatue
+	bg_event 11, 14, BGEVENT_READ, VermilionGymTrashCanScript
+	bg_event  4, 17, BGEVENT_READ, VermilionGymStatue
+	bg_event  9, 17, BGEVENT_READ, VermilionGymStatue
 
 	def_object_events
-	object_event  4,  8, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_1
-	object_event  5,  8, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_1
-	object_event  4,  7, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_2
-	object_event  5,  7, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_2
-	object_event  5,  3, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
-	object_event  4,  3, SPRITE_RAICHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymRaichu, -1
-	object_event  8, 11, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanGregory, -1
-	object_event  4, 10, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristVincent, -1
-	object_event  0, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerJugglerHorton, -1
-	object_event  6, 17, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, VermilionGymGuideScript, -1
+	object_event  6,  8, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_1
+	object_event  7,  8, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_1
+	object_event  6,  7, SPRITE_ELECTRIC_FENCE_LEFT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_2
+	object_event  7,  7, SPRITE_ELECTRIC_FENCE_RIGHT, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionGymElectricFenceScript, EVENT_VERMILION_GYM_SWITCH_2
+	object_event  6,  3, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
+	object_event  7,  3, SPRITE_RAICHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymRaichu, -1
+	object_event 10, 11, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanGregory, -1
+	object_event  6, 10, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristVincent, -1
+	object_event  2, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerJugglerHorton, -1
+	object_event  8, 17, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, VermilionGymGuideScript, -1

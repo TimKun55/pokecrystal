@@ -24,11 +24,13 @@ FuchsiaGymJanineScript:
 	closetext
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	readvar VAR_FACING
-	ifequal RIGHT, .MoveForWeezing
+	ifequal LEFT, .MoveForWeezing
 .AppearWeezing
-	turnobject FUCHSIAGYM_JANINE, LEFT
-	refreshscreen
+	turnobject FUCHSIAGYM_JANINE, RIGHT
+	playsound SFX_THROW_BALL
+	waitsfx
 	appear FUCHSIAGYM_WEEZING
+	refreshscreen
 	cry WEEZING
 	faceplayer
 	opentext
@@ -275,7 +277,7 @@ Movement_NinjaSpin:
 
 PlayerMoveForWeezing:
 	step DOWN
-	step RIGHT
+	step LEFT
 	step_end
 
 JanineText_DisappointYou:
@@ -467,20 +469,20 @@ FuchsiaGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, FUCHSIA_CITY, 2
-	warp_event  5, 17, FUCHSIA_CITY, 2
+	warp_event  6, 19, FUCHSIA_CITY, 2
+	warp_event  7, 19, FUCHSIA_CITY, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2, 15, BGEVENT_READ, FuchsiaGymStatue
-	bg_event  7, 15, BGEVENT_READ, FuchsiaGymStatue
+	bg_event  4, 17, BGEVENT_READ, FuchsiaGymStatue
+	bg_event  9, 17, BGEVENT_READ, FuchsiaGymStatue
 
 	def_object_events
-	object_event  5,  9, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
-	object_event  4,  9, SPRITE_WEEZING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymWeezing, EVENT_FUCHSIA_GYM_WEEZING
-	object_event  5,  7, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
-	object_event  5, 13, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
-	object_event  9,  4, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1
-	object_event  4,  2, SPRITE_FUCHSIA_GYM_4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CamperBarryScript, -1
-	object_event  6, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymGuideScript, -1
+	object_event  6, 11, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
+	object_event  7, 11, SPRITE_WEEZING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymWeezing, EVENT_FUCHSIA_GYM_WEEZING
+	object_event  7,  9, SPRITE_FUCHSIA_GYM_1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassAliceScript, -1
+	object_event  7, 15, SPRITE_FUCHSIA_GYM_2, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, LassLindaScript, -1
+	object_event 11,  6, SPRITE_FUCHSIA_GYM_3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PicnickerCindyScript, -1
+	object_event  6,  4, SPRITE_FUCHSIA_GYM_4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CamperBarryScript, -1
+	object_event  8, 17, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymGuideScript, -1

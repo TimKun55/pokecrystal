@@ -312,6 +312,7 @@ TilesetGymJohtoAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetGymKantoAnim:
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:
