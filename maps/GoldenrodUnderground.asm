@@ -8,17 +8,18 @@ DEF GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
 	const GOLDENRODUNDERGROUND_SUPER_NERD4
 	const GOLDENRODUNDERGROUND_BEAUTY
 	const GOLDENRODUNDERGROUND_POKE_BALL
-	const GOLDENRODUNDERGROUND_GRAMPS
+	const GOLDENRODUNDERGROUND_GRAMPS1
 	const GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_GRANNY
+	const GOLDENRODUNDERGROUND_GRAMPS2
 
 GoldenrodUnderground_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, GoldenrodUndergroundResetSwitchesCallback
-	callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBasementKeyCallback
+	callback MAPCALLBACK_TILES, GoldenrodUndergroundShopsBasementKeyCallback
 	callback MAPCALLBACK_OBJECTS, GoldenrodUndergroundCheckDayOfWeekCallback
 
 GoldenrodUndergroundResetSwitchesCallback:
@@ -41,7 +42,7 @@ GoldenrodUndergroundResetSwitchesCallback:
 	writemem wUndergroundSwitchPositions
 	endcallback
 
-GoldenrodUndergroundCheckBasementKeyCallback:
+GoldenrodUndergroundShopsBasementKeyCallback:
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .Monday
 	ifequal TUESDAY, .Tuesday
@@ -104,7 +105,7 @@ GoldenrodUndergroundCheckBasementKeyCallback:
 	endcallback
 
 .LockBasementDoor:
-	changeblock 18, 6, $78 ; locked door
+	changeblock 26, 26, $78 ; locked door
 	endcallback
 
 GoldenrodUndergroundCheckDayOfWeekCallback:
@@ -115,19 +116,18 @@ GoldenrodUndergroundCheckDayOfWeekCallback:
 	ifequal THURSDAY, .Thursday
 	ifequal FRIDAY, .Friday
 	ifequal SATURDAY, .Saturday
-
 ; Sunday
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	appear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
 .Monday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	checktime MORN
 	iffalse .NotMondayMorning
-	appear GOLDENRODUNDERGROUND_GRAMPS
+	appear GOLDENRODUNDERGROUND_GRAMPS1
 .NotMondayMorning:
 	disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
@@ -135,35 +135,35 @@ GoldenrodUndergroundCheckDayOfWeekCallback:
 	endcallback
 
 .Tuesday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
 .Wednesday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
 .Thursday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
 .Friday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
 .Saturday:
-	disappear GOLDENRODUNDERGROUND_GRAMPS
+	disappear GOLDENRODUNDERGROUND_GRAMPS1
 	appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	appear GOLDENRODUNDERGROUND_GRANNY
@@ -267,8 +267,7 @@ OlderHaircutBrotherScript:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	sjump .then
-
+	; fallthrough
 .then
 	takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE
 	special PlaceMoneyTopRight
@@ -342,8 +341,7 @@ YoungerHaircutBrotherScript:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	sjump .then
-
+	; fallthrough
 .then
 	takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE
 	special PlaceMoneyTopRight
@@ -427,6 +425,9 @@ June:
 	waitbutton
 	closetext
 	end
+
+GoldenrodUndergroundGrampsScript:
+	jumptextfaceplayer GoldenrodUndergroundGrampsText
 
 GoldenrodUndergroundCoinCase:
 	itemball COIN_CASE
@@ -668,6 +669,24 @@ GoldenrodUndergroundWeAreNotOpenTodayText:
 	line "today."
 	done
 
+GoldenrodUndergroundGrampsText:
+	text "Hehehe…"
+	
+	para "To get through,"
+	line "3-2-1."
+	
+	para "To collect things,"
+	line "2-1-2-3."
+	
+	para "Collect and fight,"
+	line "1-3-1-2."
+	
+	para "What is this"
+	line "all for?"
+	
+	para "Hehehe…"
+	done
+
 GoldenrodUndergroundNoEntryText:
 	text "NO ENTRY BEYOND"
 	line "THIS POINT"
@@ -677,12 +696,12 @@ GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  3, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
-	warp_event  3, 33, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4
+	warp_event  3,  3, GOLDENROD_UNDERGROUND_ENTRANCES, 1
+	warp_event  3, 33, GOLDENROD_UNDERGROUND_ENTRANCES, 4
 	warp_event 26, 27, GOLDENROD_UNDERGROUND, 4
 	warp_event 29,  7, GOLDENROD_UNDERGROUND, 3
 	warp_event 30,  7, GOLDENROD_UNDERGROUND, 3
-	warp_event 30,  3, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event 30,  3, GOLDENROD_UNDERGROUND_SWITCH_ROOM, 1
 	warp_event  8, 27, GOLDENROD_HOME_DECO_STORE_1, 1
 	warp_event  9, 27, GOLDENROD_HOME_DECO_STORE_1, 2
 	warp_event 14, 27, GOLDENROD_HOME_DECO_STORE_2, 1
@@ -712,3 +731,4 @@ GoldenrodUnderground_MapEvents:
 	object_event 14, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
 	object_event 15, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  9,  7, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event 19,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundGrampsScript, -1

@@ -116,7 +116,7 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ; 51
 	map_const ILEX_FOREST,                                 17, 28 ; 52
 	map_const GOLDENROD_UNDERGROUND,                       17, 18 ; 53
-	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ; 54
+	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM,           14,  7 ; 54
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
 	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
@@ -163,6 +163,7 @@ ENDM
 	map_const MOUNT_MOON_B1F,                              18, 16 ; 98
 	map_const MOUNT_MOON_B2F,                              16, 20 ; 99
 	map_const OLIVINE_LIGHTHOUSE_ELEVATOR,                  2,  2 ; 100
+	map_const GOLDENROD_UNDERGROUND_ENTRANCES,              5, 12 ; 101
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

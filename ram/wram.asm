@@ -3199,7 +3199,7 @@ wMahoganyMart1FSceneID::                          db
 wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
 wTeamRocketBaseB3FSceneID::                       db
-wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
+wGoldenrodUndergroundSwitchRoomSceneID::          db
 wCeruleanCaveB1FMewtwoSceneID::                   db
 wVictoryRoad3FSceneID::                           db
 wDragonsDenB1FSceneID::                           db

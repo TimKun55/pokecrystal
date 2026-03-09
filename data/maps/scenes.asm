@@ -72,7 +72,7 @@ MapScenes::
 	scene_var TEAM_ROCKET_BASE_B1F,                        wTeamRocketBaseB1FSceneID
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
 	scene_var TEAM_ROCKET_BASE_B3F,                        wTeamRocketBaseB3FSceneID
-	scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, wGoldenrodUndergroundSwitchRoomEntrancesSceneID
+	scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM,           wGoldenrodUndergroundSwitchRoomSceneID
 	scene_var CERULEAN_CAVE_B1F,                           wCeruleanCaveB1FMewtwoSceneID
 	scene_var VICTORY_ROAD_3F,                             wVictoryRoad3FSceneID
 	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID

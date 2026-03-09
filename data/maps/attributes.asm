@@ -447,7 +447,8 @@ ENDM
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $00, 0
 	map_attributes IlexForest, ILEX_FOREST, $29, 0
 	map_attributes GoldenrodUnderground, GOLDENROD_UNDERGROUND, $00, 0
-	map_attributes GoldenrodUndergroundSwitchRoomEntrances, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, $00, 0
+	map_attributes GoldenrodUndergroundEntrances, GOLDENROD_UNDERGROUND_ENTRANCES, $00, 0
+	map_attributes GoldenrodUndergroundSwitchRoom, GOLDENROD_UNDERGROUND_SWITCH_ROOM, $00, 0
 	map_attributes GoldenrodDeptStoreB1F, GOLDENROD_DEPT_STORE_B1F, $00, 0
 	map_attributes GoldenrodUndergroundWarehouse, GOLDENROD_UNDERGROUND_WAREHOUSE, $00, 0
 	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $01, 0

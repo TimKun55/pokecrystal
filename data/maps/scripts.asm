@@ -183,7 +183,8 @@ SECTION "Map Scripts 10", ROMX
 
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/GoldenrodUnderground.asm"
-INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"
+INCLUDE "maps/GoldenrodUndergroundEntrances.asm"
+INCLUDE "maps/GoldenrodUndergroundSwitchRoom.asm"
 INCLUDE "maps/GoldenrodDeptStoreB1F.asm"
 INCLUDE "maps/GoldenrodUndergroundWarehouse.asm"
 INCLUDE "maps/MountMortar1FOutside.asm"

@@ -164,7 +164,7 @@ Dungeons_Map_Names:
 	dw Dungeons_Map_Name51  ; map_const TEAM_ROCKET_BASE_B3F
 	dw Dungeons_Map_Name52  ; map_const ILEX_FOREST
 	dw Dungeons_Map_Name53  ; map_const GOLDENROD_UNDERGROUND
-	dw Dungeons_Map_Name54  ; map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
+	dw Dungeons_Map_Name54  ; map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM
 	dw Dungeons_Map_Name55  ; map_const GOLDENROD_DEPT_STORE_B1F
 	dw Dungeons_Map_Name56  ; map_const GOLDENROD_UNDERGROUND_WAREHOUSE
 	dw Dungeons_Map_Name57  ; map_const MOUNT_MORTAR_1F_OUTSIDE
@@ -186,31 +186,32 @@ Dungeons_Map_Names:
 	dw Dungeons_Map_Name73  ; map_const WHIRL_ISLAND_LUGIA_CHAMBER
 	dw Dungeons_Map_Name74  ; map_const MT_SILVER_ROOM_1
 	dw Dungeons_Map_Name75  ; map_const MT_SILVER_ROOM_2
-	dw Dungeons_Map_Name77  ; map_const MT_SILVER_ITEM_ROOMS
-	dw Dungeons_Map_Name78  ; map_const DARK_CAVE_VIOLET_ENTRANCE
-	dw Dungeons_Map_Name79  ; map_const DARK_CAVE_BLACKTHORN_ENTRANCE
-	dw Dungeons_Map_Name80  ; map_const DRAGONS_DEN_1F
-	dw Dungeons_Map_Name81  ; map_const DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name82  ; map_const DRAGON_SHRINE
-	dw Dungeons_Map_Name83  ; map_const TOHJO_FALLS
-	dw Dungeons_Map_Name84  ; map_const DIGLETTS_CAVE
-	dw Dungeons_Map_Name85  ; map_const VIRIDIAN_FOREST
-	dw Dungeons_Map_Name86  ; map_const MOUNT_MOON_1F
-	dw Dungeons_Map_Name87  ; map_const UNDERGROUND_PATH
-	dw Dungeons_Map_Name88  ; map_const ROCK_TUNNEL_1F
-	dw Dungeons_Map_Name89  ; map_const ROCK_TUNNEL_B1F
-	dw Dungeons_Map_Name90  ; map_const VICTORY_ROAD_1F
-	dw Dungeons_Map_Name91  ; map_const VICTORY_ROAD_2F
-	dw Dungeons_Map_Name92  ; map_const VICTORY_ROAD_3F
-	dw Dungeons_Map_Name93  ; map_const CERULEAN_CAVE_1F
-	dw Dungeons_Map_Name94  ; map_const CERULEAN_CAVE_2F
-	dw Dungeons_Map_Name95  ; map_const CERULEAN_CAVE_B1F
-	dw Dungeons_Map_Name96  ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER
-	dw Dungeons_Map_Name97  ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE
-	dw Dungeons_Map_Name98  ; map_const SLOWPOKE_WELL_ENTRANCE
-	dw Dungeons_Map_Name99  ; map_const MOUNT_MOON_B1F
-	dw Dungeons_Map_Name100 ; map_const MOUNT_MOON_B2F
-	dw Dungeons_Map_Name101 ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR
+	dw Dungeons_Map_Name76  ; map_const MT_SILVER_ITEM_ROOMS
+	dw Dungeons_Map_Name77  ; map_const DARK_CAVE_VIOLET_ENTRANCE
+	dw Dungeons_Map_Name78  ; map_const DARK_CAVE_BLACKTHORN_ENTRANCE
+	dw Dungeons_Map_Name79  ; map_const DRAGONS_DEN_1F
+	dw Dungeons_Map_Name80  ; map_const DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name81  ; map_const DRAGON_SHRINE
+	dw Dungeons_Map_Name82  ; map_const TOHJO_FALLS
+	dw Dungeons_Map_Name83  ; map_const DIGLETTS_CAVE
+	dw Dungeons_Map_Name84  ; map_const VIRIDIAN_FOREST
+	dw Dungeons_Map_Name85  ; map_const MOUNT_MOON_1F
+	dw Dungeons_Map_Name86  ; map_const UNDERGROUND_PATH
+	dw Dungeons_Map_Name87  ; map_const ROCK_TUNNEL_1F
+	dw Dungeons_Map_Name88  ; map_const ROCK_TUNNEL_B1F
+	dw Dungeons_Map_Name89  ; map_const VICTORY_ROAD_1F
+	dw Dungeons_Map_Name90  ; map_const VICTORY_ROAD_2F
+	dw Dungeons_Map_Name91  ; map_const VICTORY_ROAD_3F
+	dw Dungeons_Map_Name92  ; map_const CERULEAN_CAVE_1F
+	dw Dungeons_Map_Name93  ; map_const CERULEAN_CAVE_2F
+	dw Dungeons_Map_Name94  ; map_const CERULEAN_CAVE_B1F
+	dw Dungeons_Map_Name95  ; map_const RUINS_OF_ALPH_GS_BALL_CHAMBER
+	dw Dungeons_Map_Name96  ; map_const RUINS_OF_ALPH_CAVE_ENTRANCE
+	dw Dungeons_Map_Name97  ; map_const SLOWPOKE_WELL_ENTRANCE
+	dw Dungeons_Map_Name98  ; map_const MOUNT_MOON_B1F
+	dw Dungeons_Map_Name99  ; map_const MOUNT_MOON_B2F
+	dw Dungeons_Map_Name100 ; map_const OLIVINE_LIGHTHOUSE_ELEVATOR
+	dw Dungeons_Map_Name101 ; map_const GOLDENROD_UNDERGROUND_ENTRANCES
 	assert_table_length NUM_DUNGEONS_MAPS
 
 Dungeons_Map_Name1:   db "Sprout Tower 1F@"
@@ -288,31 +289,32 @@ Dungeons_Map_Name72:  db "Whirl Islands B2F@"
 Dungeons_Map_Name73:  db "Whirl Chamber@"
 Dungeons_Map_Name74:  db "Mt. Silver R1@"
 Dungeons_Map_Name75:  db "Mt. Silver R2@"
-Dungeons_Map_Name77:  db "Mt. Silver Room@"
-Dungeons_Map_Name78:  db "Dark Cave, West@"	
-Dungeons_Map_Name79:  db "Dark Cave, East@"
-Dungeons_Map_Name80:  db "Dragons Den 1F@"
-Dungeons_Map_Name81:  db "Dragons Den B1@"
-Dungeons_Map_Name82:  db "Dragon Shrine@"
-Dungeons_Map_Name83:  db "Tohjo Falls@"
-Dungeons_Map_Name84:  db "Diglett's Cave@"
-Dungeons_Map_Name85:  db "Viridian Forest@"
-Dungeons_Map_Name86:  db "Mt. Moon 1F@"	
-Dungeons_Map_Name87:  db "Underground Path@"
-Dungeons_Map_Name88:  db "Rock Tunnel 1F@"
-Dungeons_Map_Name89:  db "Rock Tunnel B1F@"
-Dungeons_Map_Name90:  db "Victory Road 1F@"
-Dungeons_Map_Name91:  db "Victory Road 2F@"
-Dungeons_Map_Name92:  db "Victory Road 3F@"
-Dungeons_Map_Name93:  db "Cerulean Cave 1F@"
-Dungeons_Map_Name94:  db "Cerulean Cave 2F@"
-Dungeons_Map_Name95:  db "Cerulean Cave B1F@"
-Dungeons_Map_Name96:  db "GS Ball Chamber@"
-Dungeons_Map_Name97:  db "Ruins of Alph Cave@"
-Dungeons_Map_Name98:  db "Slowpoke Well Ent.@"
-Dungeons_Map_Name99:  db "Mt. Moon B1F@"
-Dungeons_Map_Name100: db "Mt. Moon B2F@"
-Dungeons_Map_Name101: db "Lighthouse Elev.@"
+Dungeons_Map_Name76:  db "Mt. Silver Room@"
+Dungeons_Map_Name77:  db "Dark Cave, West@"	
+Dungeons_Map_Name78:  db "Dark Cave, East@"
+Dungeons_Map_Name79:  db "Dragons Den 1F@"
+Dungeons_Map_Name80:  db "Dragons Den B1@"
+Dungeons_Map_Name81:  db "Dragon Shrine@"
+Dungeons_Map_Name82:  db "Tohjo Falls@"
+Dungeons_Map_Name83:  db "Diglett's Cave@"
+Dungeons_Map_Name84:  db "Viridian Forest@"
+Dungeons_Map_Name85:  db "Mt. Moon 1F@"	
+Dungeons_Map_Name86:  db "Underground Path@"
+Dungeons_Map_Name87:  db "Rock Tunnel 1F@"
+Dungeons_Map_Name88:  db "Rock Tunnel B1F@"
+Dungeons_Map_Name89:  db "Victory Road 1F@"
+Dungeons_Map_Name90:  db "Victory Road 2F@"
+Dungeons_Map_Name91:  db "Victory Road 3F@"
+Dungeons_Map_Name92:  db "Cerulean Cave 1F@"
+Dungeons_Map_Name93:  db "Cerulean Cave 2F@"
+Dungeons_Map_Name94:  db "Cerulean Cave B1F@"
+Dungeons_Map_Name95:  db "GS Ball Chamber@"
+Dungeons_Map_Name96:  db "Ruins of Alph Cave@"
+Dungeons_Map_Name97:  db "Slowpoke Well Ent.@"
+Dungeons_Map_Name98:  db "Mt. Moon B1F@"
+Dungeons_Map_Name99:  db "Mt. Moon B2F@"
+Dungeons_Map_Name100: db "Lighthouse Elev.@"
+Dungeons_Map_Name101: db "Gold. Underground@"
 
 Ecruteak_Map_Names:
 	table_width 2

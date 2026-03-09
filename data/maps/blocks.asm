@@ -494,8 +494,11 @@ Route18West_Blocks:
 GoldenrodUnderground_Blocks:
 	INCBIN "maps/GoldenrodUnderground.ablk"
 
-GoldenrodUndergroundSwitchRoomEntrances_Blocks:
-	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.ablk"
+GoldenrodUndergroundEntrances_Blocks:
+	INCBIN "maps/GoldenrodUndergroundEntrances.ablk"
+
+GoldenrodUndergroundSwitchRoom_Blocks:
+	INCBIN "maps/GoldenrodUndergroundSwitchRoom.ablk"
 
 GoldenrodDeptStoreB1F_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreB1F.ablk"
