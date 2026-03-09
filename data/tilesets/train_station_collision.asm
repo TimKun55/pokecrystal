@@ -32,54 +32,54 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 1f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 20
 	tilecoll WALL, WALL, WALL, WALL ; 21
-	tilecoll WALL, WALL, WALL, WALL ; 22
-	tilecoll WALL, WALL, WALL, WALL ; 23
-	tilecoll WALL, WALL, WALL, FLOOR ; 24
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 25
-	tilecoll WALL, WALL, FLOOR, WALL ; 26
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 27
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 28
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 29
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 2a
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 2b
-	tilecoll WALL, FLOOR, WALL, WALL ; 2c
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 2d
-	tilecoll FLOOR, WALL, WALL, WALL ; 2e
-	tilecoll WALL, WALL, WALL, WALL ; 2f
-	tilecoll WALL, WALL, WALL, FLOOR ; 30
-	tilecoll WALL, WALL, FLOOR, WALL ; 31
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 32
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 22
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 23
+	tilecoll FLOOR, HOP_DOWN, WALL, WALL ; 24
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 25
+	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 26
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 27
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 28
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 29
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2a
+	tilecoll WALL, WALL, WALL, WALL ; 2b
+	tilecoll WALL, WALL, WALL, WALL ; 2c
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 2d
+	tilecoll WALL, WALL, WALL, WALL ; 2e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 30
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 31
+	tilecoll WALL, WALL, WALL, WALL ; 32
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 33
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 34
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 35
+	tilecoll WALL, WALL, WALL, FLOOR ; 34
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 35
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 36
-	tilecoll WALL, WALL, WALL, WALL ; 37
-	tilecoll HOP_RIGHT, WALL, WALL, WALL ; 38
-	tilecoll WALL, HOP_LEFT, WALL, WALL ; 39
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 3a
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 3b
-	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 3c
-	tilecoll HOP_RIGHT, WALL, WALL, WALL ; 3d
+	tilecoll WALL, WALL, FLOOR, WALL ; 37
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 38
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 39
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 3a
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 3b
+	tilecoll WALL, WALL, WALL, WALL ; 3c
+	tilecoll WALL, WALL, WALL, WALL ; 3d
 	tilecoll WALL, WALL, WALL, WALL ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
-	tilecoll WALL, WALL, WALL, WALL ; 40
-	tilecoll WALL, WALL, WALL, WALL ; 41
-	tilecoll WALL, WALL, WALL, WALL ; 42
-	tilecoll WALL, WALL, WALL, WALL ; 43
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 44
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 45
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 46
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 47
-	tilecoll WALL, WALL, WALL, WALL ; 48
-	tilecoll WALL, WALL, WALL, WALL ; 49
-	tilecoll WALL, WALL, WALL, FLOOR ; 4a
-	tilecoll WALL, WALL, FLOOR, WALL ; 4b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4d
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4e
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 4f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 50
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 51
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 40
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 41
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 42
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 43
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 44
+	tilecoll WALL, WALL, WALL, WALL ; 45
+	tilecoll STOP_SPIN, STOP_SPIN, FLOOR, FLOOR ; 46
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 47
+	tilecoll SPIN_RIGHT, SPIN_RIGHT, FLOOR, FLOOR ; 48
+	tilecoll SPIN_RIGHT, SPIN_RIGHT, FLOOR, FLOOR ; 49
+	tilecoll SPIN_LEFT, SPIN_LEFT, FLOOR, FLOOR ; 4a
+	tilecoll SPIN_LEFT, SPIN_LEFT, FLOOR, FLOOR ; 4b
+	tilecoll FLOOR, FLOOR, SPIN_LEFT, FLOOR ; 4c
+	tilecoll SPIN_RIGHT, FLOOR, FLOOR, SPIN_DOWN ; 4d
+	tilecoll STOP_SPIN, STOP_SPIN, FLOOR, FLOOR ; 4e
+	tilecoll FLOOR, SPIN_UP, SPIN_UP, FLOOR ; 4f
+	tilecoll STOP_SPIN, FLOOR, FLOOR, SPIN_DOWN ; 50
+	tilecoll FLOOR, SPIN_LEFT, SPIN_DOWN, FLOOR ; 51
 	tilecoll SPIN_DOWN, SPIN_LEFT, SPIN_DOWN, SPIN_DOWN ; 52
 	tilecoll SPIN_LEFT, SPIN_LEFT, SPIN_LEFT, SPIN_LEFT ; 53
 	tilecoll STOP_SPIN, STOP_SPIN, SPIN_LEFT, SPIN_LEFT ; 54
@@ -120,40 +120,3 @@
 	tilecoll FLOOR, SPIN_DOWN, SPIN_UP, SPIN_DOWN ; 77
 	tilecoll SPIN_LEFT, FLOOR, FLOOR, SPIN_LEFT ; 78
 	tilecoll FLOOR, SPIN_LEFT, SPIN_LEFT, SPIN_UP ; 79
-	tilecoll STOP_SPIN, FLOOR, FLOOR, SPIN_DOWN ; 7a
-	tilecoll FLOOR, SPIN_LEFT, SPIN_DOWN, FLOOR ; 7b
-	tilecoll FLOOR, FLOOR, SPIN_LEFT, FLOOR ; 7c
-	tilecoll SPIN_RIGHT, FLOOR, FLOOR, SPIN_DOWN ; 7d
-	tilecoll STOP_SPIN, STOP_SPIN, FLOOR, FLOOR ; 7e
-	tilecoll FLOOR, SPIN_UP, SPIN_UP, FLOOR ; 7f
-	tilecoll SPIN_RIGHT, SPIN_RIGHT, FLOOR, FLOOR ; 80
-	tilecoll SPIN_RIGHT, SPIN_RIGHT, FLOOR, FLOOR ; 81
-	tilecoll SPIN_LEFT, SPIN_LEFT, FLOOR, FLOOR ; 82
-	tilecoll SPIN_LEFT, SPIN_LEFT, FLOOR, FLOOR ; 83
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 84
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 85
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 86
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 87
-	tilecoll STOP_SPIN, STOP_SPIN, FLOOR, FLOOR ; 88
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 89
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 8b
-	tilecoll WALL, WALL, WALL, WALL ; 8c
-	tilecoll WALL, WALL, WALL, WALL ; 8d
-	tilecoll WALL, WALL, WALL, WALL ; 8e
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8f
-	tilecoll WALL, WALL, WALL, WALL ; 90
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 91
-	tilecoll WALL, WALL, WALL, WALL ; 92
-	tilecoll WALL, WALL, WALL, WALL ; 93
-	tilecoll WALL, WALL, WALL, WALL ; 94
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 95
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 96
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 97
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 9a
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 9b
-	tilecoll FLOOR, HOP_DOWN, WALL, WALL ; 9c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
-	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 9e
