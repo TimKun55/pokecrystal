@@ -1,12 +1,12 @@
 	db MAMOSWINE ; 222
 
 	db 110, 130,  80,  80,  70,  60
-	evs  1,   0,   0,   0,   0,   0
+	evs  0,   3,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, GROUND ; type
 	db 50 ; catch rate
-	db 207 ; base exp
+	db 239 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
