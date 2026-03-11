@@ -46,5 +46,5 @@ SafariZoneWestRestHouse2_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, SafariZoneWestRestHouse2PokemonJournalScript
 
 	def_object_events
-	object_event  3,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneWestRestHouse2Fisher, -1
+	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneWestRestHouse2Fisher, -1
 	

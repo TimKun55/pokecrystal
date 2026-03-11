@@ -1,5 +1,6 @@
 	object_const_def
 	const SAFARIZONEHUBRESTHOUSE_SCIENTIST
+	const SAFARIZONEHUBRESTHOUSE_LASS
 
 SafariZoneHubRestHouse_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,9 @@ SafariZoneHubRestHouse_MapScripts:
 
 SafariZoneHubRestHouseScientistScript:
 	jumptextfaceplayer SafariZoneHubRestHouseScientistText
+
+SafariZoneHubRestHouseLassScript:
+	jumptextfaceplayer SafariZoneHubRestHouseLassText
 
 SafariZoneHubRestHouseJournalScript:
 	jumptext SafariZoneHubRestHouseJournalText
@@ -20,6 +24,11 @@ SafariZoneHubRestHouseScientistText:
 	para "Check out my notes"
 	line "on the shelves"
 	cont "over there!"
+	done
+
+SafariZoneHubRestHouseLassText:
+	text "Where did my boy-"
+	line "friend go?"
 	done
 
 SafariZoneHubRestHouseJournalText:
@@ -50,8 +59,11 @@ SafariZoneHubRestHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, SafariZoneHubRestHouseJournalScript
+	bg_event  1,  1, BGEVENT_READ, SafariZoneHubRestHouseJournalScript	
 	bg_event  6,  1, BGEVENT_READ, SafariZoneHubRestHouseJournalScript
 	bg_event  7,  1, BGEVENT_READ, SafariZoneHubRestHouseJournalScript
 
 	def_object_events
 	object_event  2,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneHubRestHouseScientistScript, -1
+	object_event  6,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneHubRestHouseLassScript, -1

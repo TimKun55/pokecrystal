@@ -1,5 +1,7 @@
 	object_const_def
 	const SAFARIZONEEASTRESTHOUSE_SCIENTIST
+	const SAFARIZONEEASTRESTHOUSE_HIKER
+	const SAFARIZONEEASTRESTHOUSE_SUPER_NERD
 
 SafariZoneEastRestHouse_MapScripts:
 	def_scene_scripts
@@ -8,6 +10,12 @@ SafariZoneEastRestHouse_MapScripts:
 	
 SafariZoneEastRestHouseScientistScript:
 	jumptextfaceplayer SafariZoneEastRestHouseScientistText
+
+SafariZoneEastRestHouseHikerScript:
+	jumptextfaceplayer SafariZoneEastRestHouseHikerText
+
+SafariZoneEastRestHouseSuperNerdScript:
+	jumptextfaceplayer SafariZoneEastRestHouseSuperNerdText
 
 SafariZoneEastRestHouseJournalScript:
 	jumptext SafariZoneEastRestHouseJournalText
@@ -23,6 +31,20 @@ SafariZoneEastRestHouseScientistText:
 	line "my work on the"
 	cont "shelves over there"
 	cont "if you want."
+	done
+
+SafariZoneEastRestHouseSuperNerdText:
+	text "I caught a"
+	line "Kangaskhan!"
+	
+	para "That makes this"
+	line "all worthwhile."
+	done
+
+SafariZoneEastRestHouseHikerText:
+	text "Whew!"
+	line "I'm tired from"
+	cont "all the fun."
 	done
 
 SafariZoneEastRestHouseJournalText:
@@ -52,8 +74,12 @@ SafariZoneEastRestHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, SafariZoneEastRestHouseJournalScript
+	bg_event  1,  1, BGEVENT_READ, SafariZoneEastRestHouseJournalScript
 	bg_event  6,  1, BGEVENT_READ, SafariZoneEastRestHouseJournalScript
 	bg_event  7,  1, BGEVENT_READ, SafariZoneEastRestHouseJournalScript
 
 	def_object_events
 	object_event  5,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneEastRestHouseScientistScript, -1
+	object_event  2,  1, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneEastRestHouseHikerScript, -1
+	object_event  3,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneEastRestHouseSuperNerdScript, -1
