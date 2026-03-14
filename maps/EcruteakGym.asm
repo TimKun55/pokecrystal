@@ -213,7 +213,7 @@ SageJeffreyCheck:
 	checkevent EVENT_BEAT_SAGE_JEFFREY
 	iftrue .End
 	playmusic MUSIC_SAGE_ENCOUNTER
-	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE1, 15
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE1, 30
 	pause 15
 	applymovement ECRUTEAKGYM_SAGE1, JeffreyToPlayerMovement
 	opentext
@@ -261,7 +261,7 @@ SagePingCheck:
 	checkevent EVENT_BEAT_SAGE_PING
 	iftrue .End
 	playmusic MUSIC_SAGE_ENCOUNTER
-	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE2, 15
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE2, 30
 	pause 15
 	opentext
 	writetext SagePingSeenText
@@ -300,7 +300,7 @@ HexManiacMarthaCheck:
 	checkevent EVENT_BEAT_HEX_MANIAC_MARTHA
 	iftrue .End
 	playmusic MUSIC_SAGE_ENCOUNTER
-	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC1, 15
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC1, 30
 	pause 15
 	applymovement ECRUTEAKGYM_HEX_MANIAC1, MarthaToPlayerMovement
 	opentext
@@ -352,7 +352,7 @@ HexManiacGraceCheck:
 	checkevent EVENT_BEAT_HEX_MANIAC_GRACE
 	iftrue .End
 	playmusic MUSIC_SAGE_ENCOUNTER
-	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC2, 15
+	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC2, 30
 	pause 15
 	opentext
 	writetext HexManiacGraceSeenText
