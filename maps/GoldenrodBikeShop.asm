@@ -59,9 +59,10 @@ GoldenrodBikeShopBicycle:
 	jumptext GoldenrodBikeShopBicycleText
 
 GoldenrodBikeShopClerkIntroText:
-	text "…sigh… I moved"
-	line "here, but I can't"
-	cont "sell my Bicycles."
+	text "Owner: …sigh…"
+	line "I moved here,"
+	cont "but I can't sell"
+	cont "my Bicycles."
 	
 	para "Why is that?"
 
@@ -85,14 +86,14 @@ BorrowedABicycleText:
 	done
 
 GoldenrodBikeShopClerkFirstRateBikesText:
-	text "My Bicycles are"
-	line "first-rate! You"
-	cont "can ride them"
-	cont "anywhere."
+	text "Owner: My Bicycles"
+	line "are first-rate!"
+	cont "You can ride"
+	cont "them anywhere."
 	done
 
 GoldenrodBikeShopClerkSoBusyText:
-	text "<PLAYER>!"
+	text "Owner: <PLAYER>!"
 	
 	para "Look at how busy"
 	line "it is in here!"
