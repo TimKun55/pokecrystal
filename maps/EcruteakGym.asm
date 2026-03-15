@@ -263,6 +263,7 @@ SagePingCheck:
 	playmusic MUSIC_SAGE_ENCOUNTER
 	showemote EMOTE_SHOCK, ECRUTEAKGYM_SAGE2, 30
 	pause 15
+	turnobject PLAYER, RIGHT
 	opentext
 	writetext SagePingSeenText
 	waitbutton
