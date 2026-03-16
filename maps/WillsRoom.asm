@@ -18,11 +18,12 @@ WillsRoomNoopScene:
 WillsRoomDoorsCallback:
 	checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $30 ; wall
-.KeepEntranceOpen:
+	changeblock 6, 16, $4b ; closed door behind
+	changeblock 6, 18, $47 ; stairs with door shadow
+	.KeepEntranceOpen:
 	checkevent EVENT_WILLS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $32 ; open door
+	changeblock 6, 4, $3c ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -31,7 +32,8 @@ WillsRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $30 ; wall
+	changeblock 6, 16, $4b ; closed door behind
+	changeblock 6, 18, $47 ; stairs with door shadow
 	reloadmappart
 	closetext
 	setscene SCENE_WILLSROOM_NOOP
@@ -65,7 +67,7 @@ WillBattle:
 	setevent EVENT_BEAT_ELITE_4_WILL
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $32 ; open door
+	changeblock 6, 4, $3c ; open door
 	reloadmappart
 	waitsfx
 	end
@@ -273,15 +275,15 @@ WillsRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, INDIGO_PLATEAU_POKECENTER_1F, 4
-	warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 5
-	warp_event  4,  2, KOGAS_ROOM, 1
-	warp_event  5,  2, KOGAS_ROOM, 2
+	warp_event  6, 19, INDIGO_PLATEAU_POKECENTER_1F, 4
+	warp_event  7, 19, INDIGO_PLATEAU_POKECENTER_1F, 5
+	warp_event  6,  4, KOGAS_ROOM, 1
+	warp_event  7,  4, KOGAS_ROOM, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  4,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WillBattle, -1
-	object_event  5,  7, SPRITE_XATU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WillsRoomXatu, -1
+	object_event  6,  9, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WillBattle, -1
+	object_event  7,  9, SPRITE_XATU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WillsRoomXatu, -1

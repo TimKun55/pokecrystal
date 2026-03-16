@@ -18,11 +18,12 @@ KarensRoomNoopScene:
 KarensRoomDoorsCallback:
 	checkevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $30 ; wall
+	changeblock 6, 16, $59 ; closed door behind
+	changeblock 6, 18, $65 ; warp carpet with door shadow
 .KeepEntranceOpen:
 	checkevent EVENT_KARENS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $41 ; open door
+	changeblock 6, 4, $51 ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -31,7 +32,8 @@ KarensRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $30 ; wall
+	changeblock 6, 16, $59 ; closed door behind
+	changeblock 6, 18, $65 ; warp carpet with door shadow
 	reloadmappart
 	closetext
 	setscene SCENE_KARENSROOM_NOOP
@@ -65,7 +67,7 @@ KarenBattle:
 	setevent EVENT_BEAT_ELITE_4_KAREN
 	setevent EVENT_KARENS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $41 ; open door
+	changeblock 6, 4, $51 ; open door
 	reloadmappart
 	waitsfx
 	end
@@ -279,15 +281,15 @@ KarensRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, BRUNOS_ROOM, 3
-	warp_event  5, 17, BRUNOS_ROOM, 4
-	warp_event  4,  2, LANCES_ROOM, 1
-	warp_event  5,  2, LANCES_ROOM, 2
+	warp_event  6, 19, BRUNOS_ROOM, 3
+	warp_event  7, 19, BRUNOS_ROOM, 4
+	warp_event  6,  4, LANCES_ROOM, 1
+	warp_event  7,  4, LANCES_ROOM, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  4,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KarenBattle, -1
-	object_event  5,  7, SPRITE_HOUNDOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarensRoomHoundoom, -1
+	object_event  6,  9, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KarenBattle, -1
+	object_event  7,  9, SPRITE_HOUNDOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarensRoomHoundoom, -1

@@ -164,6 +164,10 @@ TilesetPortAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetEFourChampionRoomAnim:
+	dw NULL,  AnimateKarenStar1Tile
+	dw NULL,  AnimateKarenStar2Tile
+	dw NULL,  AnimateKarenStar3Tile
+	dw NULL,  AnimateKarenStar4Tile
 	dw NULL,  AnimateLavaBubbleTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -289,8 +293,8 @@ TilesetFarawayAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetTraditionalHouseAnim:
-	dw vTiles2 tile $58, AnimateFireLeftTile
-	dw vTiles2 tile $59, AnimateFireRightTile
+	dw FireFrames1, AnimateWhirlpoolTile
+	dw FireFrames2, AnimateWhirlpoolTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -801,6 +805,124 @@ AnimateFlower2Tile:
 	INCBIN "gfx/tilesets/flower_2/dmg_2.2bpp"
 	INCBIN "gfx/tilesets/flower_2/cgb_2.2bpp"
 
+AnimateKarenStar1Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; Offset by 2 frames from AnimateKarenStar2Tile
+	srl a
+	inc a
+	inc a
+	and %011
+
+; hl = StarTileFrames + a * 16
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, StarTileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $5b (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $0f
+	jp WriteTile
+
+AnimateKarenStar2Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = StarTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, StarTileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $38 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $2f
+	jp WriteTile
+
+StarTileFrames:
+INCBIN "gfx/tilesets/stars/star_1.2bpp"
+INCBIN "gfx/tilesets/stars/star_2.2bpp"
+INCBIN "gfx/tilesets/stars/star_3.2bpp"
+INCBIN "gfx/tilesets/stars/star_4.2bpp"
+
+AnimateKarenStar3Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; Offset by 2 frames from AnimateKarenStar4Tile
+	srl a
+	inc a
+	inc a
+	and %011
+
+; hl = StarTile2Frames + a * 16
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, StarTile2Frames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $5b (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $1f
+	jp WriteTile
+
+AnimateKarenStar4Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = StarTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, StarTile2Frames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $38 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $3f
+	jp WriteTile
+
+StarTile2Frames:
+INCBIN "gfx/tilesets/stars/star_5.2bpp"
+INCBIN "gfx/tilesets/stars/star_6.2bpp"
+INCBIN "gfx/tilesets/stars/star_7.2bpp"
+INCBIN "gfx/tilesets/stars/star_8.2bpp"
+
 AnimateLavaBubbleTile1:
 ; Save the stack pointer in bc for WriteTile to restore
 	ld hl, sp+0
@@ -859,66 +981,6 @@ LavaBubbleTileFrames:
 	INCBIN "gfx/tilesets/lava/2.2bpp"
 	INCBIN "gfx/tilesets/lava/3.2bpp"
 	INCBIN "gfx/tilesets/lava/4.2bpp"
-
-AnimateFireLeftTile:
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; A cycle of 4 frames, updating every other tick
-	ld a, [wTileAnimationTimer]
-	and %110
-
-; hl = .FireLeftTileFrames + a * 8
-; (a was pre-multiplied by 2 from 'and %110')
-	add a
-	add a
-	add a
-	add LOW(.FireLeftTileFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(.FireLeftTileFrames)
-	ld h, a
-
-; Write the tile graphic from hl (now sp) to de (now hl)
-	ld sp, hl
-	ld l, e
-	ld h, d
-	jp WriteTile
-
-.FireLeftTileFrames:
-	INCBIN "gfx/tilesets/fire/fire_left.2bpp"
-
-AnimateFireRightTile:
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; A cycle of 4 frames, updating every other tick
-	ld a, [wTileAnimationTimer]
-	and %110
-
-; hl = .FireRightTileFrames + a * 8
-; (a was pre-multiplied by 2 from 'and %110')
-	add a
-	add a
-	add a
-	add LOW(.FireRightTileFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(.FireRightTileFrames)
-	ld h, a
-
-; Write the tile graphic from hl (now sp) to de (now hl)
-	ld sp, hl
-	ld l, e
-	ld h, d
-	jp WriteTile
-
-.FireRightTileFrames:
-	INCBIN "gfx/tilesets/fire/fire_right.2bpp"
 
 AnimateTowerPillarTile:
 ; Input de points to the destination in VRAM, then the source tile frames
@@ -1213,6 +1275,12 @@ WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
 WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
 WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
 WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
+
+FireFrames1: dw vTiles2 tile $58, FireTiles1
+FireFrames2: dw vTiles2 tile $59, FireTiles2
+
+FireTiles1: INCBIN "gfx/tilesets/fire/fire_left.2bpp"
+FireTiles2: INCBIN "gfx/tilesets/fire/fire_right.2bpp"
 
 FarawayWaterFrames1: dw vTiles2 tile $14, FarawayWaterTiles1
 FarawayWaterFrames2: dw vTiles2 tile $15, FarawayWaterTiles2

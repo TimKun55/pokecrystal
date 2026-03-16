@@ -19,11 +19,12 @@ BrunosRoomNoopScene:
 BrunosRoomDoorsCallback:
 	checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $30 ; wall
+	changeblock 6, 16, $78 ; closed door behind
+	changeblock 6, 18, $79 ; warp carpet with door shadow
 .KeepEntranceOpen:
 	checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 2, $49 ; open door
+	changeblock 6, 4, $6c ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -32,7 +33,8 @@ BrunosRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 14, $30 ; wall
+	changeblock 6, 16, $78 ; closed door behind
+	changeblock 6, 18, $79 ; warp carpet with door shadow
 	reloadmappart
 	closetext
 	setscene SCENE_BRUNOSROOM_NOOP
@@ -66,7 +68,7 @@ BrunoBattle:
 	setevent EVENT_BEAT_ELITE_4_BRUNO
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $49 ; open door
+	changeblock 6, 4, $6c ; open door
 	reloadmappart
 	waitsfx
 	end
@@ -283,15 +285,15 @@ BrunosRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, KOGAS_ROOM, 3
-	warp_event  5, 17, KOGAS_ROOM, 4
-	warp_event  4,  2, KARENS_ROOM, 1
-	warp_event  5,  2, KARENS_ROOM, 2
+	warp_event  6, 19, KOGAS_ROOM, 3
+	warp_event  7, 19, KOGAS_ROOM, 4
+	warp_event  6,  4, KARENS_ROOM, 1
+	warp_event  7,  4, KARENS_ROOM, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  4,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoBattle, -1
-	object_event  5,  7, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, BrunosRoomMachamp, -1
+	object_event  6,  9, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoBattle, -1
+	object_event  7,  9, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, BrunosRoomMachamp, -1

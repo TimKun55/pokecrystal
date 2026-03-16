@@ -20,11 +20,11 @@ LancesRoomNoopScene:
 LancesRoomDoorsCallback:
 	checkevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
-	changeblock 4, 22, $7c ; wall
+	changeblock 4, 22, $98 ; closed door behind
 .KeepEntranceOpen:
 	checkevent EVENT_LANCES_ROOM_EXIT_OPEN
 	iffalse .KeepExitClosed
-	changeblock 4, 0, $7b ; open door
+	changeblock 4, 0, $9a ; open door
 .KeepExitClosed:
 	endcallback
 
@@ -33,7 +33,7 @@ LancesRoomDoorLocksBehindYouScript:
 	refreshscreen $86
 	playsound SFX_STRENGTH
 	earthquake 80
-	changeblock 4, 22, $7c ; wall
+	changeblock 4, 22, $98 ; closed door behind
 	reloadmappart
 	closetext
 	setscene SCENE_LANCESROOM_APPROACH_LANCE
@@ -107,7 +107,7 @@ LancesRoomLanceScript:
 	closetext
 	clearevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED	
 	playsound SFX_ENTER_DOOR
-	changeblock 4, 0, $7b ; open door
+	changeblock 4, 0, $9a ; open door
 	reloadmappart
 	checkevent EVENT_GRAND_CHAMPION
 	iftrue .GrandChampionAfter
