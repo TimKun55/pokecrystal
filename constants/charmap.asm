@@ -126,10 +126,13 @@
 	charmap "└",         $be
 	charmap "┘",         $bf
 
-	charmap "♪",         $c6
-	charmap "♥",         $c7
-	charmap "★",         $c8
-	
+	charmap "♪",         $c5
+	charmap "♥",         $c6
+	charmap "★",         $c7
+
+	charmap "<HALF>",    $c8
+	charmap "<QUARTER>", $c9
+
 	charmap ">",		 $ca
 	charmap "<",	     $cb
 	charmap "=",         $cc
