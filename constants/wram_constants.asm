@@ -80,6 +80,14 @@ DEF GBPRINTER_NORMAL   EQU $40
 DEF GBPRINTER_DARKER   EQU $60
 DEF GBPRINTER_DARKEST  EQU $7f
 
+; wFontType::
+	const_def
+	const FONT_NORMAL ; 0
+	const FONT_SERIF  ; 1
+	const FONT_MICR   ; 2
+	const FONT_SMALL  ; 3
+DEF NUM_FONTS EQU const_value
+
 ; wOptions2::
 	const_def
 	const MENU_ACCOUNT ; 0

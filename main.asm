@@ -479,11 +479,8 @@ INCLUDE "engine/events/bug_contest/display_stats.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
-INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
 
@@ -504,7 +501,6 @@ SECTION "bank41", ROMX
 INCLUDE "engine/gfx/dma_transfer.asm"
 INCLUDE "gfx/emotes.asm"
 INCLUDE "engine/overworld/warp_connection.asm"
-INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/battle/used_move_text.asm"
 INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/gfx/load_overworld_font.asm"
@@ -649,6 +645,13 @@ SECTION "New Phone Scripts", ROMX
 
 INCLUDE "engine/phone/scripts/lyra_callee.asm"
 
+
+SECTION "Temp", ROMX
+
+INCLUDE "engine/events/magikarp.asm"
+INCLUDE "engine/link/mystery_gift.asm"
+INCLUDE "engine/link/time_capsule.asm"
+INCLUDE "engine/link/time_capsule_2.asm"
 
 
 SECTION "New Phone Text", ROMX

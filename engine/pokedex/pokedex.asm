@@ -3462,9 +3462,29 @@ Pokedex_LoadInversedFont:
 	ld a, 1
 	ldh [rVBK], a
 	ld hl, vTiles1
-	lb bc, BANK(FontInversed), 128 ; $80 tiles
-	ld de, FontInversed
-	ld a, BANK(FontInversed)
+	lb bc, BANK(FontNormalInversed), 128 ; $80 tiles
+
+	ld a, [wFontType]
+	cp FONT_SERIF
+	jr z, .font_serif
+	cp FONT_MICR
+	jr z, .font_micr
+	cp FONT_SMALL
+	jr z, .font_small
+
+; .font_1
+	ld de, FontNormalInversed
+	jr .finish
+.font_serif
+	ld de, FontSerifInversed
+	jr .finish
+.font_micr
+	ld de, FontMicrInversed
+	jr .finish
+.font_small
+	ld de, FontSmallInversed
+.finish
+	ld a, BANK(FontNormalInversed) ; they're all in the same bank
 	call Get1bpp
 
 	ld hl, vTiles0 tile $bb

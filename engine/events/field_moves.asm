@@ -68,9 +68,27 @@ ShakeHeadbuttTree:
 	ld bc, wShadowOAMEnd - wShadowOAMSprite36
 	xor a
 	call ByteFill
-	ld de, Font
+	ld a, [wFontType]
+	cp FONT_SERIF
+	jr z, .font_serif
+	cp FONT_MICR
+	jr z, .font_micr
+	cp FONT_SMALL
+	jr z, .font_small
+; .font_normal
+	ld de, FontNormal
+	jr .finish
+.font_serif
+	ld de, FontSerif
+	jr .finish
+.font_micr
+	ld de, FontMicr
+	jr .finish
+.font_small
+	ld de, FontSmall
+.finish
 	ld hl, vTiles1
-	lb bc, BANK(Font), 12
+	lb bc, BANK(Fonts), 12
 	call Get1bpp
 	call UpdatePlayerSprite
 	ret

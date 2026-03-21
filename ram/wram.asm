@@ -1868,10 +1868,13 @@ wGBPrinterBrightness::
 ;   darker:   $60
 ;   darkest:  $7F
 	db
+wFontType::
+; bits 0-1: font 0-3
+	db
 wOptions2::
 ; bit 1: menu account off/on
 	db
-	ds 2
+	ds 1
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since

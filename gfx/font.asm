@@ -1,5 +1,16 @@
-Font:
-INCBIN "gfx/font/font.1bpp"
+Fonts: ; used only for BANK(Fonts)
+
+FontNormal:
+INCBIN "gfx/font/normal.1bpp"
+
+FontSerif:
+INCBIN "gfx/font/serif.1bpp"
+
+FontMicr:
+INCBIN "gfx/font/micr.1bpp"
+
+FontSmall:
+INCBIN "gfx/font/small.1bpp"
 
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"

@@ -6,7 +6,8 @@
 	const OPT_SOUND         ; 3
 	const OPT_MENU_ACCOUNT  ; 4
 	const OPT_FRAME         ; 5
-	const OPT_CANCEL        ; 6
+	const OPT_FONT          ; 6
+	const OPT_CANCEL        ; 7
 DEF NUM_OPTIONS EQU const_value ; 8
 
 _Option:
@@ -39,6 +40,7 @@ _Option:
 	dec c
 	jr nz, .print_text_loop
 	call UpdateFrame ; display the frame type
+	call UpdateFont
 
 	xor a
 	ld [wJumptableIndex], a
@@ -86,6 +88,8 @@ StringOptions:
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
+	db "Font<LF>"
+	db "        :Font<LF>"
 	db "Done@"
 
 GetOptionPointer:
@@ -99,6 +103,7 @@ GetOptionPointer:
 	dw Options_Sound
 	dw Options_MenuAccount
 	dw Options_Frame
+	dw Options_Font
 	dw Options_Done
 
 	const_def
@@ -390,6 +395,44 @@ UpdateFrame:
 	add '1'
 	ld [hl], a
 	call LoadFontsExtra
+	and a
+	ret
+
+Options_Font:
+	ld hl, wFontType
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr nz, .RightPressed
+	and a
+	ret
+
+.RightPressed:
+	ld a, [hl]
+	inc a
+	cp NUM_FONTS
+	jr nz, .Save
+	xor a
+	jr .Save
+
+.LeftPressed:
+	ld a, [hl]
+	dec a
+	cp -1
+	jr nz, .Save
+	ld a, NUM_FONTS - 1
+
+.Save:
+	maskbits NUM_FONTS
+	ld [hl], a
+	; fallthrough
+UpdateFont:
+	ld a, [wFontType]
+	hlcoord 16, 15
+	add '1'
+	ld [hl], a
+	call LoadStandardFont
 	and a
 	ret
 
