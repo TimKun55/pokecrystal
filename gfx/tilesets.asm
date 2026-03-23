@@ -50,9 +50,6 @@ INCLUDE "data/tilesets/kanto_house_collision.asm"
 TilesetMansionGFX::
 INCBIN "gfx/tilesets/mansion.2bpp.lz"
 
-TilesetMansionMeta::
-INCBIN "data/tilesets/mansion_metatiles.bin"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -183,6 +180,9 @@ INCBIN "data/tilesets/facility_metatiles.bin"
 
 TilesetMansionColl::
 INCLUDE "data/tilesets/mansion_collision.asm"
+
+TilesetMansionMeta::
+INCBIN "data/tilesets/mansion_metatiles.bin"
 
 
 SECTION "Tileset Data 8", ROMX

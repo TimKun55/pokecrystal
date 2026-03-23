@@ -31,7 +31,7 @@ PowerPlantElectricityScript:
 	disappear POWERPLANT_ELECTRICITY_2
 	disappear POWERPLANT_ELECTRICITY_3
 	disappear POWERPLANT_ELECTRICITY_4
-	changeblock 16,  2, $76 ; computer off
+	changeblock 16,  2, $18 ; computer off
 .end
 	endcallback
 
@@ -154,7 +154,7 @@ PowerPlantManager:
 	appear POWERPLANT_ELECTRICITY_2
 	appear POWERPLANT_ELECTRICITY_3
 	appear POWERPLANT_ELECTRICITY_4
-	changeblock 16,  2, $78 ; computer on
+	changeblock 16,  2, $19 ; computer on
 	reloadmappart
 	opentext
 	writetext PowerPlantManagerGavePartText

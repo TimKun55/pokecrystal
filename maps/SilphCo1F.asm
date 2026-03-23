@@ -74,6 +74,12 @@ SilphCoEmployee2Night:
 SilphCoDisplayCase:
 	jumptext SilphCoDisplayCaseText
 
+SilphCoElevator:
+	jumptext SilphCoElevatorText
+
+SilphCoElevatorSign:
+	jumptext SilphCoElevatorSignText
+
 SilphCoVendingMachine:
 	jumpstd VendingMachineScript
 
@@ -121,30 +127,45 @@ SilphCoDisplayCaseText:
 	cont "pair of goggles."
 	done
 
+SilphCoElevatorText:
+	text "…… ……"
+
+	para "There's no"
+	line "response…"
+	done
+
+SilphCoElevatorSignText:
+	text "Scan employee"
+	line "I.D. for elevator"
+	cont "access."
+	done
+
 SilphCoScientistMornText:
 	text "Good morning."
 	line "I work up on the"
 	cont "11th floor."
 
-	para "The elevator isn't"
-	line "working, so I've"
+	para "I forgot my I.D."
+	line "upstairs, so I've"
 	cont "got to climb all"
 	cont "those stairs…"
 	done
 
 SilphCoEmployeeMornText:
-	text "We had to find and"
-	line "reinstall all of"
-	cont "the old teleport"
-	cont "pads because the"
-	cont "elevator is out"
-	cont "of order, but"
-	cont "using them makes"
-	cont "most of the other"
-	cont "employees sick."
+	text "We used to have"
+	line "teleport pads"
+	cont "installed to help"
+	cont "us get around"
+	cont "faster."
 
-	para "Why is no one fix-"
-	line "ing the elevator?"
+	para "The problem was"
+	line "that they weren't"
+	cont "programmed well"
+	cont "and took us to"
+	cont "random floors!"
+	
+	para "Was a total"
+	line "nightmare!"
 	done
 
 SilphCoGentlemanDayText:
@@ -237,25 +258,31 @@ SilphCo1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  8,  7, SAFFRON_CITY, 8
-	warp_event  9,  7, SAFFRON_CITY, 9
+	warp_event 10, 11, SAFFRON_CITY, 8
+	warp_event 11, 11, SAFFRON_CITY, 9
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  1, BGEVENT_READ, SilphCoDisplayCase
-	bg_event  7,  1, BGEVENT_READ, SilphCoDisplayCase
-	bg_event  4,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event  5,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event 12,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event 13,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event 14,  0, BGEVENT_READ, SilphCoElevator
+	bg_event 15,  0, BGEVENT_READ, SilphCoElevatorSign
+	bg_event  2,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event  3,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event  6,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event  7,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event 10,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event 11,  1, BGEVENT_UP, SilphCoVendingMachine
+	bg_event  3,  4, BGEVENT_UP, SilphCoDisplayCase
+	bg_event  4,  4, BGEVENT_UP, SilphCoDisplayCase
+	bg_event 17,  4, BGEVENT_UP, SilphCoDisplayCase
+	bg_event 18,  4, BGEVENT_UP, SilphCoDisplayCase
 
 	def_object_events
-	object_event  1,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
-	object_event 15,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
-	object_event 13,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, SilphCoScientistMorn, EVENT_SILPHCO1F_EMPLOYEE
-	object_event  3,  6, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, MORN, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeMorn, EVENT_SILPHCO1F_EMPLOYEE
-	object_event  7,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, SilphCoGentlemanDay, EVENT_SILPHCO1F_EMPLOYEE
-	object_event 13,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeDay, EVENT_SILPHCO1F_EMPLOYEE
-	object_event 10,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee1Night, EVENT_SILPHCO1F_EMPLOYEE
-	object_event 15,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee2Night, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 10,  7, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
+	object_event 19,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
+	object_event 19, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, SilphCoScientistMorn, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  3,  7, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, MORN, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeMorn, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  4,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, SilphCoGentlemanDay, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 16,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeDay, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  5, 10, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee1Night, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 18,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee2Night, EVENT_SILPHCO1F_EMPLOYEE
