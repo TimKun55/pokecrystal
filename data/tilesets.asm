@@ -5,7 +5,7 @@ ENDM
 
 ; Associated data:
 ; - The *GFX, *Meta, *Coll and *Attr are defined in gfx/tilesets.asm
-; - The *Anim are defined in engine/tilesets/tileset_anims.asm
+; - The *Anim are defined in data/tileset_anims.asm
 
 Tilesets::
 ; entries correspond to TILESET_* constants (see constants/tileset_constants.asm)
