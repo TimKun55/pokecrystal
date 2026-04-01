@@ -179,7 +179,6 @@ SnubbullFrontpic:    INCBIN "gfx/pokemon/snubbull/front.animated.2bpp.lz"
 GranbullFrontpic:    INCBIN "gfx/pokemon/granbull/front.animated.2bpp.lz"
 MiltankFrontpic:     INCBIN "gfx/pokemon/miltank/front.animated.2bpp.lz"
 HaunterFrontpic:     INCBIN "gfx/pokemon/haunter/front.animated.2bpp.lz"
-SunfloraFrontpic:    INCBIN "gfx/pokemon/sunflora/front.animated.2bpp.lz"
 UmbreonFrontpic:     INCBIN "gfx/pokemon/umbreon/front.animated.2bpp.lz"
 ChikoritaFrontpic:   INCBIN "gfx/pokemon/chikorita/front.animated.2bpp.lz"
 GliscorFrontpic:     INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
@@ -299,7 +298,6 @@ SECTION "Pics 12", ROMX
 
 VenusaurBackpic:     INCBIN "gfx/pokemon/venusaur/back.2bpp.lz"
 MoltresBackpic:      INCBIN "gfx/pokemon/moltres/back.2bpp.lz"
-SunfloraBackpic:     INCBIN "gfx/pokemon/sunflora/back.2bpp.lz"
 PhanpyFrontpic:      INCBIN "gfx/pokemon/phanpy/front.animated.2bpp.lz"
 RhydonBackpic:       INCBIN "gfx/pokemon/rhydon/back.2bpp.lz"
 LarvitarFrontpic:    INCBIN "gfx/pokemon/larvitar/front.animated.2bpp.lz"
@@ -749,7 +747,9 @@ UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
 PersianFrontpic:          INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
 ThortonPic:               INCBIN "gfx/trainers/thorton.2bpp.lz"
 KrisPic:                  INCBIN "gfx/trainers/kris.2bpp.lz"
-MagnezoneFrontpic:   INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
+MagnezoneFrontpic:        INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
+SunfloraFrontpic:         INCBIN "gfx/pokemon/sunflora/front.animated.2bpp.lz"
+SunfloraBackpic:          INCBIN "gfx/pokemon/sunflora/back.2bpp.lz"
 
 SECTION "Painting Pics", ROMX
 
