@@ -111,4 +111,6 @@ MapScenes::
 	scene_var RUINS_OF_ALPH_OMANYTE_WORD_ROOM,             wRuinsOfAlphOmanyteWordRoomSceneID
 	scene_var RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          wRuinsOfAlphAerodactylWordRoomSceneID
 	scene_var FARAWAY_ISLAND_OUTSIDE,                      wFarawayIslandOutsideSceneID
+	scene_var SILPH_CO_3F,                                 wSilphCo3FSceneID
+	scene_var SILPH_CO_ELEVATOR,                           wSilphCoElevatorSceneID
 	db -1 ; end

@@ -59,4 +59,5 @@ Tilesets::
 	tileset TilesetJohtoPeak
 	tileset TilesetGymJohto
 	tileset TilesetGymKanto
+	tileset TilesetOGOverworld
 	assert_table_length NUM_TILESETS + 1

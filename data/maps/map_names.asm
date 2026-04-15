@@ -997,15 +997,17 @@ Saffron_Map_Names:
 	dw Saffron_Map_Name6  ; map_const MR_PSYCHICS_HOUSE
 	dw Saffron_Map_Name7  ; map_const SAFFRON_MAGNET_TRAIN_STATION
 	dw Saffron_Map_Name8  ; map_const SILPH_CO_1F
-	dw Saffron_Map_Name9  ; map_const COPYCATS_HOUSE_1F
-	dw Saffron_Map_Name10 ; map_const COPYCATS_HOUSE_2F
-	dw Saffron_Map_Name11 ; map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	dw Saffron_Map_Name12 ; map_const ROUTE_5_SAFFRON_GATE
-	dw Saffron_Map_Name13 ; map_const ROUTE_5_CLEANSE_TAG_HOUSE
-	dw Saffron_Map_Name14 ; map_const SAFFRON_AVICULTURAL_SOCIETY_1F
-	dw Saffron_Map_Name15 ; map_const SAFFRON_AVICULTURAL_SOCIETY_2F
-	dw Saffron_Map_Name16 ; map_const SAFFRON_AVICULTURAL_SOCIETY_3F
-	dw Saffron_Map_Name17 ; map_const SAFFRON_ODDISH_DOLL_HOUSE
+	dw Saffron_Map_Name9  ; map_const SILPH_CO_3F
+	dw Saffron_Map_Name10 ; map_const SILPH_CO_ELEVATOR
+	dw Saffron_Map_Name11 ; map_const COPYCATS_HOUSE_1F
+	dw Saffron_Map_Name12 ; map_const COPYCATS_HOUSE_2F
+	dw Saffron_Map_Name13 ; map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE
+	dw Saffron_Map_Name14 ; map_const ROUTE_5_SAFFRON_GATE
+	dw Saffron_Map_Name15 ; map_const ROUTE_5_CLEANSE_TAG_HOUSE
+	dw Saffron_Map_Name16 ; map_const SAFFRON_AVICULTURAL_SOCIETY_1F
+	dw Saffron_Map_Name17 ; map_const SAFFRON_AVICULTURAL_SOCIETY_2F
+	dw Saffron_Map_Name18 ; map_const SAFFRON_AVICULTURAL_SOCIETY_3F
+	dw Saffron_Map_Name19 ; map_const SAFFRON_ODDISH_DOLL_HOUSE
 	assert_table_length NUM_SAFFRON_MAPS
 
 Saffron_Map_Name1:  db "Saffron City@"
@@ -1015,16 +1017,18 @@ Saffron_Map_Name4:  db "Saffron <POKE>Mart@"
 Saffron_Map_Name5:  db "Saffron <PKMN> Center@"
 Saffron_Map_Name6:  db "Mr.Psychics House@"
 Saffron_Map_Name7:  db "Saffron Station@"
-Saffron_Map_Name8:  db "Silph Co.@"
-Saffron_Map_Name9:  db "Copycat House 1F@"
-Saffron_Map_Name10: db "Copycat House 2F@"
-Saffron_Map_Name11: db "Route 5 Undergrnd@"
-Saffron_Map_Name12: db "Route 5 Gate@"
-Saffron_Map_Name13: db "Route 5 House@"
-Saffron_Map_Name14: db "Avicultural Soc.1F@"
-Saffron_Map_Name15: db "Avicultural Soc.2F@"
-Saffron_Map_Name16: db "Avicultural Soc.3F@"
-Saffron_Map_Name17: db "Saffron House@"
+Saffron_Map_Name8:  db "Silph Co. 1F@"
+Saffron_Map_Name9:  db "Silph Co. 3F"
+Saffron_Map_Name10: db "Silph Co. Elevator@"
+Saffron_Map_Name11: db "Copycat House 1F@"
+Saffron_Map_Name12: db "Copycat House 2F@"
+Saffron_Map_Name13: db "Route 5 Undergrnd@"
+Saffron_Map_Name14: db "Route 5 Gate@"
+Saffron_Map_Name15: db "Route 5 House@"
+Saffron_Map_Name16: db "Avicultural Soc.1F@"
+Saffron_Map_Name17: db "Avicultural Soc.2F@"
+Saffron_Map_Name18: db "Avicultural Soc.3F@"
+Saffron_Map_Name19: db "Saffron House@"
 
 Cherrygrove_Map_Names:
 	table_width 2

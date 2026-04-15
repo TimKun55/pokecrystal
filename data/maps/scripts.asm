@@ -253,7 +253,6 @@ INCLUDE "maps/WillsRoom.asm"
 INCLUDE "maps/KogasRoom.asm"
 INCLUDE "maps/BrunosRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
-INCLUDE "maps/SilphCo1F.asm"
 
 
 SECTION "Map Scripts 14", ROMX
@@ -561,5 +560,8 @@ INCLUDE "maps/SafariZoneEastRestHouse.asm"
 INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/SafariZoneNorthRestHouse.asm"
+INCLUDE "maps/SilphCo1F.asm"
+INCLUDE "maps/SilphCo3F.asm"
+INCLUDE "maps/SilphCoElevator.asm"
 
 ENDSECTION

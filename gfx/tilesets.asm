@@ -676,3 +676,15 @@ INCLUDE "data/tilesets/gym_kanto_collision.asm"
 
 TilesetGymKantoAttr::
 INCBIN "data/tilesets/gym_kanto_attributes.bin"
+
+TilesetOGOverworldGFX::
+INCBIN "gfx/tilesets/og_overworld.2bpp.lz"
+
+TilesetOGOverworldMeta::
+INCBIN "data/tilesets/og_overworld_metatiles.bin"
+
+TilesetOGOverworldColl::
+INCLUDE "data/tilesets/og_overworld_collision.asm"
+
+TilesetOGOverworldAttr::
+INCBIN "data/tilesets/og_overworld_attributes.bin"

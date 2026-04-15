@@ -1106,4 +1106,10 @@ MadamItemsHouse_Blocks:
 SafariZoneFuchsiaGate_Blocks:
 	INCBIN "maps/SafariZoneFuchsiaGate.ablk"
 
+SilphCo3F_Blocks:
+	INCBIN "maps/SilphCo3F.ablk"
+
+SilphCoElevator_Blocks:
+	INCBIN "maps/SilphCoElevator.ablk"
+
 ENDSECTION

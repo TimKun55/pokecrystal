@@ -3241,8 +3241,10 @@ wRuinsOfAlphKabutoWordRoomSceneID::               db
 wRuinsOfAlphOmanyteWordRoomSceneID::              db
 wRuinsOfAlphAerodactylWordRoomSceneID::           db
 wFarawayIslandOutsideSceneID::                    db
+wSilphCo3FSceneID::                               db
+wSilphCoElevatorSceneID::                         db
 
-	ds 22
+	ds 20
 
 ; fight counts
 

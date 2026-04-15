@@ -264,6 +264,7 @@ TilesetTowerAnim:
 	tileframe DoneTileAnimation
 
 TilesetBattleTowerOutsideAnim:
+TilesetOGOverworldAnim:
 	tileframe AnimateWaterTile,				vTiles2 tile $01
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation

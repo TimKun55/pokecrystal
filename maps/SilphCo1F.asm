@@ -1,12 +1,13 @@
 	object_const_def
 	const SILPHCO1F_RECEPTIONIST
 	const SILPHCO1F_OFFICER
-	const SILPHCO1F_SCIENTIST
+	const SILPHCO1F_SCIENTIST1
 	const SILPHCO1F_CLERK1
 	const SILPHCO1F_GENTLEMAN
 	const SILPHCO1F_CLERK2
 	const SILPHCO1F_CLERK3
 	const SILPHCO1F_CLERK4
+	const SILPHCO1F_SCIENTIST2
 
 SilphCo1F_MapScripts:
 	def_scene_scripts
@@ -65,6 +66,51 @@ SilphCoEmployeeDay:
 .BagFull
 	writetextend SilphCoEmployeeDayBagFullText
 
+SilphCo1FPorygonScientist:
+	faceplayer
+	opentext
+	checkevent EVENT_SILPH_CO_PLAYER_RETURNING
+	iftrue .Returning
+	checkevent EVENT_SILPH_CO_SCIENTIST_INTRO_TEXT
+	iftrue .SkipIntro
+	writetext SilphCo1FPorygonScientistIntroText
+	waitbutton
+	setevent EVENT_SILPH_CO_SCIENTIST_INTRO_TEXT
+.SkipIntro
+	writetext SilphCo1FPorygonScientistHelpUsText
+	yesorno
+	iffalse .RefusedToHelp
+	writetext SilphCo1FPorygonScientistExcitedText
+	waitbutton
+	closetext
+	setevent EVENT_SILPH_CO_PLAYER_RETURNING
+	sjump .GetOnElevator
+
+.Returning
+	writetext SilphCo1FPorygonScientistReturningText
+	yesorno
+	iffalse .RefusedToHelp
+	writetext SilphCo1FPorygonScientistLetsGoText
+	waitbutton
+	closetext
+.GetOnElevator
+	follow SILPHCO1F_SCIENTIST2, PLAYER
+	applymovement SILPHCO1F_SCIENTIST2, SilphCo1FPorygonScientistWalkMovement
+	playsound SFX_ENTER_DOOR
+	disappear SILPHCO1F_SCIENTIST2
+	stopfollow
+	applymovement PLAYER, SilphCo1FStepUpMovement
+	playsound SFX_ENTER_DOOR
+	disappear PLAYER
+	special FadeOutPalettes
+	pause 15
+	setevent EVENT_SILPH_CO_ELEVATOR_UP
+	warpfacing UP, SILPH_CO_ELEVATOR, 2, 3
+	end
+
+.RefusedToHelp:
+	writetextend SilphCo1FPorygonScientistDisappointedText
+
 SilphCoEmployee1Night:
 	jumptextfaceplayer SilphCoEmployee1NightText
 
@@ -82,6 +128,16 @@ SilphCoElevatorSign:
 
 SilphCoVendingMachine:
 	jumpstd VendingMachineScript
+
+SilphCo1FPorygonScientistWalkMovement:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+SilphCo1FStepUpMovement:
+	step UP
+	step_end
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
@@ -138,6 +194,82 @@ SilphCoElevatorSignText:
 	text "Scan employee"
 	line "I.D. for elevator"
 	cont "access."
+	done
+
+SilphCo1FPorygonScientistIntroText:
+	text "Hello there!"
+	
+	para "Are you a trainer?"
+	
+	para "You are? That's"
+	line "wonderful!"
+	
+	para "My department on"
+	line "on 3F is looking"
+	cont "for a trainer to"
+	cont "help us out with"
+	cont "our Porygon Farm."
+	
+	para "We've been having"
+	line "some glitches in"
+	cont "our system lately"
+	cont "and the Porygon"
+	cont "have started"
+	cont "fighting us."
+	
+	para "We're scientists,"
+	line "not trainers!"
+
+	para "We know they're"
+	line "just scared."
+	
+	para "We really want to"
+	line "help them…"
+	
+	para "Be aware, though,"
+	line "we would need to"
+	cont "digitize your body"
+	cont "as Porygon live in"
+	cont "a virtual world."
+	done
+
+SilphCo1FPorygonScientistHelpUsText:
+	text "Are you able to"
+	line "help us out?"
+	done
+
+SilphCo1FPorygonScientistExcitedText:
+	text "You will?"
+	line "Amazing! Thank"
+	cont "you!"
+	
+	para "Please follow me"
+	line "closely as the"
+	cont "general public are"
+	cont "not allowed to go"
+	cont "upstairs."
+	done
+
+SilphCo1FPorygonScientistReturningText:
+	text "<PLAYER>!"
+	
+	para "Want to go back"
+	line "to 3F?"
+	done
+
+SilphCo1FPorygonScientistLetsGoText:
+	text "Follow me, then!"
+	done
+
+SilphCo1FPorygonScientistDisappointedText:
+	text "Oh…"
+	
+	para "No, I understand."
+	
+	para "It's a lot to ask."
+	
+	para "Thank you for"
+	line "your time."
 	done
 
 SilphCoScientistMornText:
@@ -280,3 +412,4 @@ SilphCo1F_MapEvents:
 	object_event 15,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeDay, EVENT_SILPHCO1F_EMPLOYEE
 	object_event  5,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee1Night, EVENT_SILPHCO1F_EMPLOYEE
 	object_event 18,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee2Night, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 10,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilphCo1FPorygonScientist, -1

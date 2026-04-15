@@ -48,6 +48,7 @@
 	const TILESET_JOHTO_PEAK           ; 2e
 	const TILESET_GYM_JOHTO            ; 2f
 	const TILESET_GYM_KANTO            ; 30
+	const TILESET_OG_OVERWORLD         ; 31
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

@@ -105,6 +105,8 @@ LoadSpecialMapPalette:
     jp z, .saffron_gym_palette
 	cp MAP_SILPH_CO_1F
     jp z, .silph_co_palette
+	cp MAP_SILPH_CO_3F
+    jp z, .silph_co_palette
 
 .continue11
     cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE

@@ -521,15 +521,17 @@ ENDM
 	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  6
 	map_const SAFFRON_MAGNET_TRAIN_STATION,                10,  9 ;  7
 	map_const SILPH_CO_1F,                                 11,  6 ;  8
-	map_const COPYCATS_HOUSE_1F,                            4,  4 ;  9
-	map_const COPYCATS_HOUSE_2F,                            4,  3 ; 10
-	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 11
-	map_const ROUTE_5_SAFFRON_GATE,                         4,  4 ; 12
-	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 13
-	map_const SAFFRON_AVICULTURAL_SOCIETY_1F,               6,  5 ; 14
-	map_const SAFFRON_AVICULTURAL_SOCIETY_2F,               6,  6 ; 15
-	map_const SAFFRON_AVICULTURAL_SOCIETY_3F,               7,  8 ; 16	
-	map_const SAFFRON_ODDISH_DOLL_HOUSE,                    4,  4 ; 17
+	map_const SILPH_CO_3F,                                 11,  7 ;  9
+	map_const SILPH_CO_ELEVATOR,                            2,  2 ; 10
+	map_const COPYCATS_HOUSE_1F,                            4,  4 ; 11
+	map_const COPYCATS_HOUSE_2F,                            4,  3 ; 12
+	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
+	map_const ROUTE_5_SAFFRON_GATE,                         4,  4 ; 14
+	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
+	map_const SAFFRON_AVICULTURAL_SOCIETY_1F,               6,  5 ; 16
+	map_const SAFFRON_AVICULTURAL_SOCIETY_2F,               6,  6 ; 17
+	map_const SAFFRON_AVICULTURAL_SOCIETY_3F,               7,  8 ; 18	
+	map_const SAFFRON_ODDISH_DOLL_HOUSE,                    4,  4 ; 19
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26

@@ -754,6 +754,8 @@ ENDM
 	map_attributes SaffronAviculturalSociety3F, SAFFRON_AVICULTURAL_SOCIETY_3F, $00, 0
 	map_attributes SaffronOddishDollHouse, SAFFRON_ODDISH_DOLL_HOUSE, $00, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $00, 0
+	map_attributes SilphCo3F, SILPH_CO_3F, $00, 0
+	map_attributes SilphCoElevator, SILPH_CO_ELEVATOR, $00, 0
 	map_attributes CopycatsHouse1F, COPYCATS_HOUSE_1F, $00, 0
 	map_attributes CopycatsHouse2F, COPYCATS_HOUSE_2F, $00, 0
 	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
