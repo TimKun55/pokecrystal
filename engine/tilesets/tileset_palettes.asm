@@ -103,6 +103,8 @@ LoadSpecialMapPalette:
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
+	cp MAP_SILPH_CO_1F
+    jp z, .silph_co_palette
 
 .continue11
     cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE
@@ -197,6 +199,11 @@ LoadSpecialMapPalette:
 
 .saffron_gym_palette
 	call LoadSaffronGymPalette
+	scf
+	ret
+
+.silph_co_palette
+	call LoadSilphCoPalette
 	scf
 	ret
 
@@ -419,6 +426,17 @@ LoadSaffronGymPalette:
 	
 SaffronGymPalette:
 INCLUDE "gfx/tilesets/saffron_gym_palette.pal"
+
+LoadSilphCoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SilphCoPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+SilphCoPalette:
+INCLUDE "gfx/tilesets/silph_co_palette.pal"
 
 LoadCeruleanGymPalette:
 	ld a, BANK(wBGPals1)

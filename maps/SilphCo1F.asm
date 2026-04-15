@@ -16,18 +16,18 @@ SilphCo1F_MapScripts:
 SilphCoReceptionistScript:
 	jumptextfaceplayer SilphCoReceptionistText
 
-SilphCoOfficerScript:
+SilphCo1FOfficerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_UP_GRADE
 	iftrue .GotUpGrade
-	writetext SilphCoOfficerText
+	writetext SilphCo1FOfficerText
 	promptbutton
 	verbosegiveitem UP_GRADE
 	iffalse .NoRoom
 	setevent EVENT_GOT_UP_GRADE
 .GotUpGrade:
-	writetext SilphCoOfficerText_GotUpGrade
+	writetext SilphCo1FOfficerText_GotUpGrade
 	waitbutton
 .NoRoom:
 	closetext
@@ -89,7 +89,7 @@ SilphCoReceptionistText:
 	cont "Office Building."
 	done
 
-SilphCoOfficerText:
+SilphCo1FOfficerText:
 	text "Only employees are"
 	line "permitted to go"
 	cont "upstairs."
@@ -101,7 +101,7 @@ SilphCoOfficerText:
 	line "little souvenir."
 	done
 
-SilphCoOfficerText_GotUpGrade:
+SilphCo1FOfficerText_GotUpGrade:
 	text "It's Silph Co.'s"
 	line "latest product."
 
@@ -266,23 +266,17 @@ SilphCo1F_MapEvents:
 	def_bg_events
 	bg_event 14,  0, BGEVENT_READ, SilphCoElevator
 	bg_event 15,  0, BGEVENT_READ, SilphCoElevatorSign
-	bg_event  2,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event  3,  1, BGEVENT_UP, SilphCoVendingMachine
 	bg_event  6,  1, BGEVENT_UP, SilphCoVendingMachine
 	bg_event  7,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event 10,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event 11,  1, BGEVENT_UP, SilphCoVendingMachine
-	bg_event  3,  4, BGEVENT_UP, SilphCoDisplayCase
-	bg_event  4,  4, BGEVENT_UP, SilphCoDisplayCase
 	bg_event 17,  4, BGEVENT_UP, SilphCoDisplayCase
 	bg_event 18,  4, BGEVENT_UP, SilphCoDisplayCase
 
 	def_object_events
-	object_event 10,  7, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
-	object_event 19,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
-	object_event 19, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, SilphCoScientistMorn, EVENT_SILPHCO1F_EMPLOYEE
-	object_event  3,  7, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, MORN, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeMorn, EVENT_SILPHCO1F_EMPLOYEE
-	object_event  4,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, SilphCoGentlemanDay, EVENT_SILPHCO1F_EMPLOYEE
-	object_event 16,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeDay, EVENT_SILPHCO1F_EMPLOYEE
-	object_event  5, 10, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee1Night, EVENT_SILPHCO1F_EMPLOYEE
-	object_event 18,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee2Night, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  3,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
+	object_event 17,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo1FOfficerScript, -1
+	object_event 20,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, SilphCoScientistMorn, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  1,  9, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, MORN, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeMorn, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  8,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, SilphCoGentlemanDay, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 15,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCoEmployeeDay, EVENT_SILPHCO1F_EMPLOYEE
+	object_event  5,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee1Night, EVENT_SILPHCO1F_EMPLOYEE
+	object_event 18,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, EVE | NITE, 0, OBJECTTYPE_SCRIPT, 0, SilphCoEmployee2Night, EVENT_SILPHCO1F_EMPLOYEE

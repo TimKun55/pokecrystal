@@ -313,13 +313,24 @@ TilesetGymJohtoAnim:
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
+TilesetFacilityAnim:
+	tileframe AnimateWaterTile,				vTiles2 tile $61
+	tileframe WaitTileAnimation
+	tileframe AnimateFountainTile,			vTiles2 tile $6f
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
 TilesetGymKantoAnim:
 TilesetJohtoHouseAnim:
 TilesetKantoHouseAnim:
 TilesetPokecenterAnim:
 TilesetGateAnim:
 TilesetLabAnim:
-TilesetFacilityAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
 TilesetGameCornerAnim:
