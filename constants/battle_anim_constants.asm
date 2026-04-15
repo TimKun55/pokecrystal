@@ -523,7 +523,8 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW       ; b8
 	const BATTLE_ANIM_FRAMESET_HAIL                  ; b9
 	const BATTLE_ANIM_FRAMESET_SWIRL_SHORT           ; ba
-	const BATTLE_ANIM_FRAMESET_VORTEX                ; bb  
+	const BATTLE_ANIM_FRAMESET_VORTEX                ; bb
+	const BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT     ; bc
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)

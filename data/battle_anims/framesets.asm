@@ -189,6 +189,7 @@ BattleAnimFrameData:
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
 	dw .Frameset_SwirlShort          ; BATTLE_ANIM_FRAMESET_SWIRL_SHORT
 	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
+	dw .Frameset_FireBlastImpact         ; BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1249,3 +1250,11 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_DD,  1
 	oamframe BATTLE_ANIM_OAMSET_DE,  1
 	oamrestart
+
+.Frameset_FireBlastImpact:
+	oamframe BATTLE_ANIM_OAMSET_0F,  3
+	oamframe BATTLE_ANIM_OAMSET_0E,  2
+	oamframe BATTLE_ANIM_OAMSET_0A,  3
+	oamframe BATTLE_ANIM_OAMSET_0E,  4
+	oamframe BATTLE_ANIM_OAMSET_0A,  4
+	oamdelete
