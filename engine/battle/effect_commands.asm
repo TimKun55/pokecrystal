@@ -1992,11 +1992,12 @@ BattleCommand_MoveAnimNoSub:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
-	jr z, .triplekick
+	jr z, .continue
+	cp EFFECT_MAGNITUDE
+	jr z, .continue
 	xor a
 	ld [wBattleAnimParam], a
-
-.triplekick
+.continue
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld e, a
