@@ -16,6 +16,9 @@ ElmsSon:
 ElmsHousePC:
 	jumptext ElmsHousePCText
 
+ElmsHouseFridge:
+	jumptext ElmsHouseFridgeText
+
 ElmsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -81,7 +84,7 @@ ElmsHouse_MapEvents:
 
 	def_bg_events
 	bg_event  6,  1, BGEVENT_READ, ElmsHousePC
-	bg_event  0,  1, BGEVENT_READ, ElmsHouseFridgeText
+	bg_event  0,  1, BGEVENT_READ, ElmsHouseFridge
 	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
 
 	def_object_events
