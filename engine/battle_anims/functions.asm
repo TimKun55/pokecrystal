@@ -99,6 +99,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RadialMoveOut
 	dw BattleAnimFunc_Moon
 	dw BattleAnimFunc_StraightDescent
+	dw BattleAnimFunc_Flamethrower
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -3935,5 +3936,64 @@ BattleAnimFunc_StraightDescent:
 	add hl, bc
 	ld a, [hl]
 	add d
+	ld [hl], a
+	ret
+
+BattleAnimFunc_Flamethrower:
+	call BattleAnim_AnonJumptable
+
+	dw .init
+	dw .run
+
+.init
+; Set the particle's starting Y phase based on BattleAnimVar
+	ld a, [wBattleAnimVar]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], a
+	call BattleAnim_IncAnonJumptableIndex
+
+; If it's the opponent's turn, adjust the X here... (necessary?)
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .run
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld a, [hl]
+	adc -10
+	ld [hl], a
+
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	adc -16
+	ld [hl], a
+
+.run
+; Modified BattleAnimFunc_MoveWaveToTarget.
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $88
+	jp nc, DeinitBattleAnimation
+	add 4
+	ld [hl], a
+
+	ld hl, BATTLEANIMSTRUCT_YCOORD
+	add hl, bc
+	ld a, [hl]
+	sbc 2
+	ld [hl], a
+
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	inc [hl]
+	inc [hl]
+	ld a, [hl]
+	ld d, $10
+	call BattleAnim_Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	adc 8
 	ld [hl], a
 	ret

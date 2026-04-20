@@ -332,6 +332,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 53
 	const BATTLE_ANIM_FUNC_MOON                      ; 54
 	const BATTLE_ANIM_FUNC_STRAIGHT_DESCENT          ; 55
+	const BATTLE_ANIM_FUNC_FLAMETHROWER              ; 56          
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
