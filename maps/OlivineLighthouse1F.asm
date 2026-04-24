@@ -87,7 +87,7 @@ OlivineLighthouse1F_MapEvents:
 
 	def_warp_events
 	warp_event  9, 17, OLIVINE_CITY, 8
-	warp_event 10, 17, OLIVINE_CITY, 8
+	warp_event 10, 17, OLIVINE_CITY, 9
 	warp_event  7,  2, OLIVINE_LIGHTHOUSE_2F, 1
 	warp_event  9,  3, OLIVINE_LIGHTHOUSE_ELEVATOR, 1
 

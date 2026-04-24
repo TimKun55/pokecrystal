@@ -33,8 +33,8 @@ OlivineCityLighthouseNite:
 	endcallback
 
 .LighthouseNite:
-	changeblock 30, 16, $d5 ; Lighthouse nite, left
-	changeblock 32, 16, $d6 ; Lighthouse nite, right
+	changeblock 30, 16, $be ; Lighthouse nite, left
+	changeblock 32, 16, $bf ; Lighthouse nite, right
 	endcallback
 
 OlivineCityRivalSceneTop:
@@ -382,6 +382,7 @@ OlivineCity_MapEvents:
 	warp_event  7, 21, OLIVINE_CAFE, 1
 	warp_event 23, 21, OLIVINE_MART, 2
 	warp_event 31, 21, OLIVINE_LIGHTHOUSE_1F, 1
+	warp_event 32, 21, OLIVINE_LIGHTHOUSE_1F, 2
 	warp_event 19, 31, OLIVINE_PORT_PASSAGE, 1
 	warp_event 20, 31, OLIVINE_PORT_PASSAGE, 2
 
@@ -393,7 +394,7 @@ OlivineCity_MapEvents:
 	bg_event 16,  8, BGEVENT_READ, OlivineCitySign
 	bg_event 17, 25, BGEVENT_READ, OlivineCityPortSign
 	bg_event  8,  9, BGEVENT_READ, OlivineGymSign
-	bg_event 32, 26, BGEVENT_READ, OlivineLighthouseSign
+	bg_event 33, 26, BGEVENT_READ, OlivineLighthouseSign
 	bg_event  4, 24, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event 24, 21, BGEVENT_READ, OlivineCityMartSign

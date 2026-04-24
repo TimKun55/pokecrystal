@@ -137,8 +137,8 @@ OlivinePortPassage_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, OLIVINE_CITY,  9
-	warp_event  5,  0, OLIVINE_CITY, 10
+	warp_event  4,  0, OLIVINE_CITY, 10
+	warp_event  5,  0, OLIVINE_CITY, 11
 	warp_event  4,  7, OLIVINE_PORT, 1
 	warp_event  5,  7, OLIVINE_PORT, 2
 
