@@ -261,6 +261,7 @@ EcruteakGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_TWIN
 	db SPRITE_ENTEI
+	db SPRITE_HIKER
 	db 0 ; end
 
 AzaleaGroupSprites:

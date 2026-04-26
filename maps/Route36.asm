@@ -8,6 +8,7 @@
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
+	const ROUTE36_HIKER
 	const ROUTE36_SUICUNE
 
 Route36_MapScripts:
@@ -16,13 +17,22 @@ Route36_MapScripts:
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
+	callback MAPCALLBACK_OBJECTS, Route36HikerArthurCallback
+	callback MAPCALLBACK_TILES, Route36TileCallback
 
 Route36Noop1Scene:
 Route36Noop2Scene:
 	end
 
-Route36ArthurCallback:
+Route36HikerArthurCallback:
+	checkevent EVENT_RELEASED_THE_BEASTS
+	iffalse .NoHiker
+	appear ROUTE36_HIKER
+	sjump .CheckArthur
+
+.NoHiker
+	disappear ROUTE36_HIKER
+.CheckArthur
 	readvar VAR_WEEKDAY
 	ifequal THURSDAY, .ArthurAppears
 	disappear ROUTE36_ARTHUR
@@ -30,6 +40,20 @@ Route36ArthurCallback:
 
 .ArthurAppears:
 	appear ROUTE36_ARTHUR
+	endcallback
+
+Route36TileCallback:
+	checkevent EVENT_RELEASED_THE_BEASTS
+	iffalse .NarrowRoad
+	endcallback
+
+.NarrowRoad
+	changeblock 32,  6, $32 ; top 2 and bottom right headbutt tree
+	changeblock 32,  8, $3d ; top right headbutt tree
+	changeblock 34,  8, $31 ; top 2 headbutt trees
+	changeblock 36,  8, $31 ; top 2 headbutt trees
+	changeblock 38,  8, $31 ; top 2 headbutt trees
+	changeblock 34, 10, $34 ; left 3 headbutt trees
 	endcallback
 
 Route36SuicuneScript:
@@ -309,6 +333,9 @@ ArthurScript:
 ArthurNotThursdayScript:
 	writetextend ArthurNotThursdayText
 
+Route36HikerScript:
+	jumptextfaceplayer Route36HikerText
+
 Route36Sign:
 	jumptext Route36SignText
 
@@ -574,6 +601,19 @@ ArthurNotThursdayText:
 	cont "disappointing."
 	done
 
+Route36HikerText:
+	text "Whew!"
+	
+	para "I'm tired from"
+	line "clearin' all"
+	cont "those trees."
+	
+	para "Can't have this"
+	line "here road getting"
+	cont "blocked again,"
+	cont "after all!"
+	done
+
 Route36SignText:
 	text "Route 36"
 	done
@@ -643,4 +683,5 @@ Route36_MapEvents:
 	object_event 21,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RawstTree, -1
 	object_event 46,  6, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 34, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
+	object_event 32,  9, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36HikerScript, EVENT_HIKER_ON_ROUTE_36
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
