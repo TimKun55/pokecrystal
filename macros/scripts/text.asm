@@ -160,6 +160,23 @@ MACRO text_far
 	db BANK(\1)
 ENDM
 
+	const TX_NAMETAG
+MACRO ntag ;text_nametag
+	db TX_NAMETAG
+	db \1
+	db "@"
+ENDM
+
+;UsageExampleText:
+;	ntag "SUPERNERD:"
+;	text "Did you check out"
+;	line "the MUSEUM?@" <- @ terminator before new ntag
+;	text_promptbutton   <- promptbutton before new ntag
+;
+;	ntag "NEW SPEAKER:"
+;	text "text test"
+;	done
+
 DEF NUM_TEXT_CMDS EQU const_value
 
 	const_next $50

@@ -704,6 +704,7 @@ TextCommands::
 	dw TextCommand_STRINGBUFFER  ; TX_STRINGBUFFER
 	dw TextCommand_DAY           ; TX_DAY
 	dw TextCommand_FAR           ; TX_FAR
+	dw TextCommand_NAMETAG       ; TX_NAMETAG ; ntag
 	assert_table_length NUM_TEXT_CMDS
 
 TextCommand_START::
@@ -717,6 +718,38 @@ TextCommand_START::
 	ld l, e
 	inc hl
 	ret
+
+TextCommand_NAMETAG::
+; target the top border of the textbox
+    ld d, h
+    ld e, l
+    hlcoord TEXTBOX_INNERX, TEXTBOX_Y
+; clear possible existing nametag
+    push hl
+    ld a, '─'
+    ld b, SCREEN_WIDTH - 2 ; adjust this if you change TEXTBOX_INNERX above
+.loop
+    ld [hli], a
+    dec b
+    jr nz, .loop
+; print nametag
+	ld hl, wTextboxFlags
+	ld a, [hl]
+	res TEXT_DELAY_F, [hl]
+	pop hl
+	push af
+    call PlaceString
+	pop af
+	ld [wTextboxFlags], a
+    inc de
+; clear the textbox and prep for printing `text`
+    push de
+    hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+    lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
+    call ClearBox
+    pop hl ;de into hl
+    bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
+    ret
 
 TextCommand_RAM::
 ; write text from a ram address (little endian)
