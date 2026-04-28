@@ -310,12 +310,14 @@ NoRoomForMulchText:
 	done
 
 DescribeMulchText:
-	text "Our Mulch is a"
-	line "mix of high-"
-	cont "quality soil and"
-	cont "#mon's … er…"
-	cont "you know. It's"
-	cont "full of nutrients!"
+	ntag "Floria"
+	text "Our Mulch is a mix"
+	line "of high-quality"
+	cont "soil and #mon's"
+	cont "… er … you know."
+
+	para "It's full of"
+	line "nutrients!"
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
@@ -336,13 +338,14 @@ GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	done
 
 GoldenrodFlowerShopFloriaItReallyWasAMonText:
+	ntag "Floria"
 	text "So it really was a"
 	line "#mon!"
 	done
 	
 FlowerShopBellossomText:
-	text "Bellossom: Bel!"
-	line "Lossom!!"
+	ntag "Bellossom"
+	text "Bel! Loslos!"
 	done
 
 OpenDoorText:

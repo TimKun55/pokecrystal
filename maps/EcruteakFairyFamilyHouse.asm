@@ -341,8 +341,8 @@ EcruteakFairyFamilyHouseGrannyMoveText:
 	done
 	
 FairySylveonText:
-	text "Sylveon: Syl!"
-	line "Veon! Syl!"
+	ntag "Sylveon"
+	text "Syl! Veon! Syl!"
 	done
 
 EcruteakFairyFamilyHouse_MapEvents:

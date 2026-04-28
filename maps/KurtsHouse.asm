@@ -409,16 +409,9 @@ KurtsHouseBookshelf:
 KurtsHouseRadio:
 	jumpstd Radio2Script
 
-KurtsHouseKurtExitHouseMovement:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
 KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	big_step RIGHT
+KurtsHouseKurtExitHouseMovement:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
@@ -427,11 +420,13 @@ KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	step_end
 	
 KurtsHouseKurtGetStartedText:
-	text "Kurt: I'll get"
-	line "started right now!"
+	ntag "Kurt"
+	text "I'll get started"
+	line "right now!"
 	done
 
 KurtsHouseKurtMakingBallsMustWaitText:
+	ntag "Kurt"
 	text "Hm? Who are you?"
 
 	para "<PLAYER>, eh? You"
@@ -470,7 +465,8 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	done
 
 KurtsHouseKurtHonoredToMakeBallsText:
-	text "Kurt: Hi, <PLAYER>!"
+	ntag "Kurt"
+	text "Hi, <PLAYER>!"
 
 	para "You handled your-"
 	line "self like a real"
@@ -488,8 +484,9 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
-	text "Kurt: I make Balls"
-	line "from Apricorns."
+	ntag "Kurt"
+	text "I make Balls from"
+	line "Apricorns."
 
 	para "Collect them from"
 	line "trees and bring"
@@ -500,7 +497,8 @@ KurtsHouseKurtBallsFromApricornsText:
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
-	text "Kurt: You have an"
+	ntag "Kurt"
+	text "You have an"
 	line "Apricorn for me?"
 
 	para "Fine! I'll turn it"
@@ -508,37 +506,43 @@ KurtsHouseKurtAskYouHaveAnApricornText:
 	done
 
 KurtsHouseKurtThatsALetdownText:
-	text "Kurt: Oh…"
+	ntag "Kurt"
+	text "Oh…"
 	line "That's a letdown."
 	done
 
 KurtsHouseKurtDontBotherMeText:
-	text "Kurt: I'm working!"
+	ntag "Kurt"
+	text "I'm working!"
 	line "Don't bother me!"
 	done
 
 KurtsHouseKurtJustFinishedYourBallText:
-	text "Kurt: Ah, <PLAYER>!"
+	ntag "Kurt"
+	text "Ah, <PLAYER>!"
 	line "I just finished"
 	cont "your Ball. Here!"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
-	text "Kurt: That turned"
-	line "out great."
+	ntag "Kurt"
+	text "That turned out"
+	line "great."
 
 	para "Try catching"
 	line "#mon with it."
 	done
 
 KurtsHouseKurtGranddaughterHelpingWorkFasterText:
-	text "Kurt: Now that my"
+	ntag "Kurt"
+	text "Now that my"
 	line "granddaughter is"
 	cont "helping me, I can"
 	cont "work much faster."
 	done
 
 KurtsHouseKurtWhatIsThatText:
+	ntag "Kurt"
 	text "Wh-what is that?"
 
 	para "I've never seen"
@@ -554,16 +558,19 @@ KurtsHouseKurtWhatIsThatText:
 	done
 
 KurtsHouseKurtImCheckingItNowText:
+	ntag "Kurt"
 	text "I'm checking it"
 	line "now."
 	done
 
 KurtsHouseKurtAhHaISeeText:
+	ntag "Kurt"
 	text "Ah-ha! I see!"
 	line "So…"
 	done
 
 KurtsHouseKurtThisBallStartedToShakeText:
+	ntag "Kurt"
 	text "<PLAYER>!"
 
 	para "This Ball started"
@@ -626,7 +633,8 @@ KurtsGranddaughterGSBallText:
 	done
 
 KurtsHouseSlowpokeText:
-	text "Slowpoke: …"
+	ntag "Slowpoke"
+	text "…"
 	line "Yawn?"
 	done
 

@@ -691,28 +691,31 @@ Text_RoarOutro:
 	done
 
 MeetFriedaText:
-	text "Frieda: Yahoo!"
+	text "Yahoo!"
 	line "It's Friday!"
 
 	para "I'm Frieda of"
-	line "Friday!"
+	line "Friday!@"
+	text_promptbutton
 
-	para "Nice to meet you!"
+	ntag "Frieda"
+	text "Nice to meet you!"
 	done
 
 FriedaGivesGiftText:
+	ntag "Frieda"
 	text "Here's a Poison"
 	line "Barb for you!"
 	done
 
 FriedaGaveGiftText:
-	text "Frieda: Give it to"
-	line "a #mon that has"
+	ntag "Frieda"
+	text "Give it to a"
+	line "#mon that has"
 	cont "poison-type moves."
 
 	para "Oh!"
-
-	para "It's wicked!"
+	line "It's wicked!"
 
 	para "You'll be shocked"
 	line "how good it makes"
@@ -720,8 +723,9 @@ FriedaGaveGiftText:
 	done
 
 FriedaFridayText:
-	text "Frieda: Hiya! What"
-	line "day do you like?"
+	ntag "Frieda"
+	text "Hiya! What day"
+	line "do you like?"
 
 	para "I love Friday. No"
 	line "doubt about it!"
@@ -731,8 +735,9 @@ FriedaFridayText:
 	done
 
 FriedaNotFridayText:
-	text "Frieda: Isn't it"
-	line "Friday today?"
+	ntag "Frieda"
+	text "Isn't it Friday"
+	line "today?"
 
 	para "It's so boring"
 	line "when it's not!"

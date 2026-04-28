@@ -165,9 +165,8 @@ EcruteakCityGramps3Text:
 
 	para "It's a legend that"
 	line "has been passed"
-
-	para "down by Ecruteak"
-	line "Gym Leaders."
+	cont "down by Ecruteak"
+	cont "Gym Leaders."
 
 	para "Me?"
 

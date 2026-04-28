@@ -582,11 +582,13 @@ Route34LadyBea:
 	jumptext LadyBeaAfterBattleText
 
 Route34LyraText_Grandpa:
-	text "Lyra: Grandpa!"
+	ntag "???"
+	text "Grandpa!"
 	done
 
 Route34LyraGoodWorkText:
-	text "Lyra: Good work,"
+	ntag "Lyra"
+	text "Good work,"
 	line "Grandpa!"
 
 	para "The #mon you"
@@ -598,10 +600,12 @@ Route34LyraGoodWorkText:
 	done
 
 Route34LyraGreetingText:
-	text "Lyra: Hi, <PLAYER>!"
+	ntag "Lyra"
+	text "Hi, <PLAYER>!"
 	done
 
 Route34LyraIntroductionText1:
+	ntag "Lyra"
 	text "This is <PLAYER>."
 	line "He's a trainer."
 
@@ -613,6 +617,7 @@ Route34LyraIntroductionText1:
 	done
 
 Route34LyraIntroductionText2:
+	ntag "Lyra"
 	text "This is <PLAYER>."
 	line "She's a trainer."
 
@@ -624,25 +629,29 @@ Route34LyraIntroductionText2:
 	done
 
 Route34LyraChallengeText:
+	ntag "Lyra"
 	text "<PLAYER>, why don't"
 	line "we show Grandpa"
 	cont "how good you are?"
 	done
 
 Route34LyraWinText:
+	ntag "Lyra"
 	text "You're even better"
 	line "than I thought!"
 	done
 
 Route34LyraLossText:
+	ntag "Lyra"
 	text "Well, you're still"
 	line "getting better…"
 	done
 
 Route34LyraFollowMeText:
-	text "Lyra: Let me"
-	line "introduce you to"
-	cont "Grandma, too!"
+	ntag "Lyra"
+	text "Let me introduce"
+	line "you to Grandma,"
+	cont "too!"
 	done
 
 YoungsterSamuelSeenText:

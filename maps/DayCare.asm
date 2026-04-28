@@ -110,7 +110,7 @@ DayCareManScript_Inside:
 
 .PartyFull:
 	opentext
-	writetextend DayCareText_PartyFull
+	writetextend DayCareManText_PartyFull
 
 .AlreadyHaveOddEgg:
 	special DayCareMan
@@ -180,7 +180,7 @@ DayCareLadyScript:
 
 .PartyFull:
 	opentext
-	writetextend DayCareText_PartyFull
+	writetextend DayCareLadyText_PartyFull
 
 .HusbandWasLookingForYou:
 	writetextend Text_GrampsLookingForYou
@@ -213,14 +213,17 @@ DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
 
 DayCareLyraHelloText1:
-	text "Lyra: Grandma!"
+	ntag "Lyra"
+	text "Grandma!"
 
 	para "Let me introduce"
 	line "my friend."
 
-	para "This is <PLAYER>!"
+	para "This is <PLAYER>!@"
+	text_promptbutton
 
-	para "Grandma: Ah ha."
+	ntag "Grandma"
+	text "Ah ha."
 
 	para "This is your"
 	line "boy… friend."
@@ -229,14 +232,17 @@ DayCareLyraHelloText1:
 	done
 
 DayCareLyraHelloText2:
-	text "Lyra: Grandma!"
+	ntag "Lyra"
+	text "Grandma!"
 
 	para "Let me introduce"
 	line "my friend."
 
-	para "This is <PLAYER>!"
+	para "This is <PLAYER>!@"
+	text_promptbutton
 
-	para "Grandma: Ah ha."
+	ntag "Grandma"
+	text "Ah ha."
 
 	para "This is your"
 	line "girl… friend."
@@ -245,16 +251,19 @@ DayCareLyraHelloText2:
 	done
 
 DayCareLyraProtestText1:
-	text "Lyra: What?"
+	ntag "Lyra"
+	text "What?"
 	line "Grandma…!"
 
 	para "What are you"
 	line "talking about?"
 
 	para "He just lives"
-	line "nearby…"
+	line "nearby…@"
+	text_promptbutton
 
-	para "Grandma: Hahaha."
+	ntag "Grandma"
+	text "Hahaha."
 	line "I know, I know."
 
 	para "You must be sure"
@@ -266,16 +275,19 @@ DayCareLyraProtestText1:
 	done
 
 DayCareLyraProtestText2:
-	text "Lyra: What?"
+	ntag "Lyra"
+	text "What?"
 	line "Grandma…!"
 
 	para "What are you"
 	line "talking about?"
 
 	para "She just lives"
-	line "nearby…"
+	line "nearby…@"
+	text_promptbutton
 
-	para "Grandma: Hahaha."
+	ntag "Grandma"
+	text "Hahaha."
 	line "I know, I know."
 
 	para "You must be sure"
@@ -287,13 +299,15 @@ DayCareLyraProtestText2:
 	done
 
 DayCareLyraGoodbyeText:
-	text "Lyra: Well, I'd"
-	line "better go now…"
+	ntag "Lyra"
+	text "Well, I'd better"
+	line "go now…"
 	cont "See ya!"
 	done
 
 DayCareLyraForgotText:
-	text "Lyra: Oh!"
+	ntag "Lyra"
+	text "Oh!"
 	line "I almost forgot!"
 
 	para "Here! This is my"
@@ -306,7 +320,8 @@ GotLyrasNumberText:
 	done
 
 DayCareLyraEmbarassedText:
-	text "Lyra: Grandma!"
+	ntag "Lyra"
+	text "Grandma!"
 
 	para "Don't you say"
 	line "anything."
@@ -319,11 +334,13 @@ DayCareLyraEmbarassedText:
 	done
 
 Text_GrampsLookingForYou:
+	ntag "Grandma"
 	text "Gramps was looking"
 	line "for you."
 	done
 
 DayCareManText_GiveOddEgg:
+	ntag "Gramps"
 	text "Hello <PLAYER>."
 
 	para "Do you know about"
@@ -362,6 +379,7 @@ DayCareText_GotOddEgg:
 	done
 
 DayCareText_DescribeOddEgg:
+	ntag "Gramps"
 	text "We've been raising"
 	line "special #mon"
 	cont "for a promotion."
@@ -373,6 +391,7 @@ DayCareText_DescribeOddEgg:
 	done
 
 EggTicketText:
+	ntag "Gramps"
 	text "Oh! You've got"
 	line "an Egg Ticket!"
 	
@@ -387,6 +406,7 @@ TradedTicketForOddEggText:
 	done
 
 DayCareLadyText_GiveLyrasEgg:
+	ntag "Grandma"
 	text "Hello, dear."
 
 	para "Lyra told me this"
@@ -400,6 +420,7 @@ ReceivedLyrasEggText:
 	done
 
 DayCareLadyText_DescribeLyrasEgg:
+	ntag "Grandma"
 	text "That Egg came from"
 	line "her first #mon."
 
@@ -408,7 +429,14 @@ DayCareLadyText_DescribeLyrasEgg:
 	cont "trainer."
 	done
 
-DayCareText_PartyFull:
+DayCareManText_PartyFull:
+	ntag "Gramps"
+	text "You've no room for"
+	line "this."
+	done
+
+DayCareLadyText_PartyFull:
+	ntag "Grandma"
 	text "You've no room for"
 	line "this."
 	done

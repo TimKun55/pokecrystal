@@ -83,18 +83,18 @@ BillsHouseRadio:
 	jumpstd Radio2Script
 
 BillTakeThisEeveeText:
-	text "Bill: Hi, <PLAYER>!"
-	line "On my way back"
-	cont "from Ecruteak"
+	ntag "Bill"
+	text "Hi, <PLAYER>!"
 
-	para "this Eevee decided"
-	line "to follow me!"
+	para "On my way back"
+	line "from Ecruteak"
+	cont "this Eevee decided"
+	cont "to follow me!"
 
 	para "I don't like"
 	line "being outside"
-
-	para "but someone should"
-	line "take care of it."
+	cont "but someone should"
+	cont "take care of it."
 
 	para "Can I count on you"
 	line "to play with it,"
@@ -102,7 +102,8 @@ BillTakeThisEeveeText:
 	done
 
 BillImCountingOnYouText:
-	text "Bill: I knew you'd"
+	ntag "Bill"
+	text "I knew you'd"
 	line "come through!"
 
 	para "Way to go! You're"
@@ -121,30 +122,34 @@ ReceivedEeveeText:
 	done
 
 BillEeveeMayEvolveText:
-	text "Bill: Prof.Elm"
-	line "claims Eevee may"
-
-	para "evolve in new and"
-	line "unknown ways."
+	ntag "Bill"
+	text "Prof.Elm claims"
+	line "Eevee may evolve"
+	cont "in new and"
+	cont "unknown ways."
 	done
 
 BillPartyFullText:
+	ntag "Bill"
 	text "Whoa, wait. You"
 	line "can't carry any"
 	cont "more #mon."
 	done
 
 BillNoEeveeText:
+	ntag "Bill"
 	text "Oh… Now what to"
 	line "do?"
 	done
 
 BillPopWontWorkText:
-	text "Bill: My pop, he"
-	line "won't work. All he"
+	ntag "Bill"
+	text "My pop, he"
+	line "won't work."
 
-	para "does is goof off"
-	line "all day long."
+	para "All he does is"
+	line "goof off all day"
+	cont "long."
 
 	para "He's getting to be"
 	line "a real headache…"
@@ -157,26 +162,23 @@ BillsMumText_BeforeEcruteak:
 
 	para "He just got called"
 	line "to the #mon"
-
-	para "Center in Ecruteak"
-	line "City."
+	cont "Center in Ecruteak"
+	cont "City."
 
 	para "My husband went"
 	line "off to the Game"
-
-	para "Corner without"
-	line "being called…"
+	cont "Corner without"
+	cont "being called…"
 	done
 
 BillsMumText_AfterEcruteak:
 	text "My husband was"
 	line "once known as a"
+	cont "#Maniac."
 
-	para "#Maniac."
-	line "Bill must have"
-
-	para "taken after his"
-	line "father."
+	para "Bill must have"
+	line "taken after his"
+	cont "father."
 	done
 
 BillsYoungerSisterUsefulNumberText:
@@ -210,9 +212,8 @@ BillsYoungerSisterPhoneFullText:
 BillsYoungerSisterStorageSystemText:
 	text "My big brother"
 	line "Bill made the PC"
-
-	para "#mon storage"
-	line "system."
+	cont "#mon storage"
+	cont "system."
 	done
 
 BillsFamilysHouse_MapEvents:

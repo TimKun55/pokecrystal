@@ -209,6 +209,7 @@ BridgetWalksAwayMovement:
 	step_end
 
 WhitneyBeforeText:
+	ntag "Whitney"
 	text "Hi! I'm Whitney!"
 
 	para "Everyone was into"
@@ -224,6 +225,7 @@ WhitneyBeforeText:
 	done
 
 WhitneyShouldntBeSoSeriousText:
+	ntag "Whitney"
 	text "Sob…"
 
 	para "…Waaaaaaah!"
@@ -235,6 +237,7 @@ WhitneyShouldntBeSoSeriousText:
 	done
 
 WhitneyYouMeanieText:
+	ntag "Whitney"
 	text "Waaaaah!"
 
 	para "Waaaaah!"
@@ -244,6 +247,7 @@ WhitneyYouMeanieText:
 	done
 
 WhitneyWhatDoYouWantText:
+	ntag "Whitney"
 	text "…Sniff…"
 
 	para "What? What do you"
@@ -260,6 +264,7 @@ PlayerReceivedPlainBadgeText:
 	done
 
 WhitneyPlainBadgeText:
+	ntag "Whitney"
 	text "The PlainBadge"
 	line "lets your #mon"
 	cont "use Strength out"
@@ -270,8 +275,9 @@ WhitneyPlainBadgeText:
 	done
 
 WhitneyAttractText:
-	text "Whitney: It's the"
-	line "move Attract!"
+	ntag "Whitney"
+	text "It's the move"
+	line "Attract!"
 
 	para "It makes full use"
 	line "of a #mon's"
@@ -283,6 +289,7 @@ WhitneyAttractText:
 	done
 
 WhitneyGoodCryText:
+	ntag "Whitney"
 	text "Ah, that was a"
 	line "good cry!"
 
@@ -291,6 +298,7 @@ WhitneyGoodCryText:
 	done
 
 WhitneyRematchIntroText:
+	ntag "Whitney"
 	text "Oh, hi <PLAYER>!"
 	line "Good to see"
 	cont "you again."
@@ -300,11 +308,13 @@ WhitneyRematchIntroText:
 	done
 	
 WhitneyWinLossRematchText:
+	ntag "Whitney"
 	text "You really"
 	line "are strong!"
 	done
 	
 WhitneyRematchAfterBattleText:
+	ntag "Whitney"
 	text "I'm going to get"
 	line "even stronger,"
 	cont "Just you watch!"
@@ -315,6 +325,7 @@ WhitneyRematchAfterBattleText:
 	done
 	
 Whitney16IntroText:
+	ntag "Whitney"
 	text "Wow, <PLAYER>!"
 	line "You did it!"
 	
@@ -330,6 +341,7 @@ Whitney16IntroText:
 	done
 	
 Whitney16AfterBattleText:
+	ntag "Whitney"
 	text "Wow!"
 	line "That was an"
 	cont "amazing battle!"
@@ -339,12 +351,14 @@ Whitney16AfterBattleText:
 	done
 
 WhitneyComeBackTomorrowText:
+	ntag "Whitney"
 	text "Hey, we just had"
 	line "a battle. Come"
 	cont "back tomorrow."
 	done
 	
 WhitneyNextTimeText:
+	ntag "Whitney"
 	text "Aww, well come"
 	line "back soon."
 	done
@@ -456,7 +470,8 @@ GoldenrodGymGuideWinText:
 	done
 	
 MiltankText:
-	text "Miltank: Mooo!!"
+	ntag "Miltank"
+	text "Mooo!!"
 	done
 
 GoldenrodGym_MapEvents:

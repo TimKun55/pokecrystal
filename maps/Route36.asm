@@ -414,6 +414,7 @@ SudowoodoAttackedText:
 	done
 
 FloriaText1:
+	ntag "Floria"
 	text "I'm the Flower"
 	line "Shop's Floria!"
 
@@ -438,6 +439,7 @@ FloriaText1:
 	done
 
 FloriaText2:
+	ntag "Floria"
 	text "When I told my sis"
 	line "about the jiggly"
 	cont "tree, she said"
@@ -566,38 +568,42 @@ SchoolboyAlanBooksText:
 	done
 
 MeetArthurText:
-	text "Arthur: Who are"
-	line "you?"
-
-	para "I'm Arthur of"
+	ntag "Arthur"
+	text "I'm Arthur of"
 	line "Thursday."
+
+	para "Who are you?"
 	done
 
 ArthurGivesGiftText:
+	ntag "Arthur"
 	text "Here. You can have"
 	line "this."
 	done
 
 ArthurGaveGiftText:
-	text "Arthur: A #mon"
-	line "that uses rock-"
-	cont "type moves should"
-	cont "hold on to that."
+	ntag "Arthur"
+	text "A #mon that"
+	line "uses rock-type"
+	cont "moves should hold"
+	cont "on to that."
 
 	para "It pumps up rock-"
 	line "type attacks."
 	done
 
 ArthurThursdayText:
-	text "Arthur: I'm Arthur"
-	line "of Thursday. I'm"
+	ntag "Arthur"
+	text "I'm Arthur of"
+	line "Thursday. I'm"
 	cont "the second son out"
 	cont "of seven children."
 	done
 
 ArthurNotThursdayText:
-	text "Arthur: Today's"
-	line "not Thursday. How"
+	ntag "Arthur"
+	text "Today's not"
+	line "Thursday. How"
 	cont "disappointing."
 	done
 

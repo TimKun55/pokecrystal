@@ -169,12 +169,14 @@ PlayerWalksTowardMumMovement:
 	step_end
 
 PlayerFinallyAwakeText:
-	text "Mum: Oh, <PLAYER>!"
+	ntag "Mum"
+	text "Oh, <PLAYER>!"
 	line "You're finally"
 	cont "awake, dear."
 	done
 
 ElmsLookingForYouText:
+	ntag "Mum"
 	text "Your friend Lyra"
 	line "was just here."
 
@@ -192,7 +194,8 @@ ElmsLookingForYouText:
 	done
 
 MumGivesPokegearText:
-	text "Mum: #mon Gear,"
+	ntag "Mum"
+	text "#mon Gear,"
 	line "or just #gear."
 
 	para "It's essential if"
@@ -207,11 +210,13 @@ MumGivesPokegearText:
 	done
 
 IsItDSTText:
+	ntag "Mum"
 	text "Is it Daylight"
 	line "Saving Time now?"
 	done
 
 ComeHomeForDSTText:
+	ntag "Mum"
 	text "Come home to"
 	line "adjust your clock"
 	cont "for Daylight"
@@ -219,6 +224,7 @@ ComeHomeForDSTText:
 	done
 
 RunningShoesText:
+	ntag "Mum"
 	text "Also, don't forget"
 	line "about your new"
 	cont "Running Shoes."
@@ -235,6 +241,7 @@ RunningShoesText:
 	done
 
 HurryUpElmIsWaitingText:
+	ntag "Mum"
 	text "Prof.Elm is wait-"
 	line "ing for you."
 
@@ -242,6 +249,7 @@ HurryUpElmIsWaitingText:
 	done
 
 SoWhatWasProfElmsErrandText:
+	ntag "Mum"
 	text "So, what was Prof."
 	line "Elm's errand?"
 
@@ -256,6 +264,7 @@ SoWhatWasProfElmsErrandText:
 	done
 
 ImBehindYouText:
+	ntag "Mum"
 	text "<PLAYER>, do it!"
 
 	para "I'm behind you all"
@@ -292,10 +301,6 @@ NeighborText:
 
 	para "She really loves"
 	line "#mon!"
-	done
-	
-NeighborPikachuText:
-	text "Pikachu: Pika! Pi!"
 	done
 
 PlayersHouse1FStoveText:

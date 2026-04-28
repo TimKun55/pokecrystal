@@ -778,7 +778,8 @@ Text_ItsTheMissingPokemon:
 	done
 
 Text_Kwaaaa:
-	text "Farfetch'd: Kwaa!"
+	ntag "Farfetch'd"
+	text "Kwaa!"
 	done
 
 Text_CharcoalMasterIntro:
@@ -891,6 +892,7 @@ Text_InsertGSBall:
 	done
 
 Text_KurtCaughtCelebi:
+	ntag "Kurt"
 	text "Whew, wasn't that"
 	line "something!"
 

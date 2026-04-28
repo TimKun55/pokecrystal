@@ -200,8 +200,9 @@ BurnedTowerB1FEusineMovement1:
 	step_end
 
 BurnedTowerB1FEusineText:
-	text "Eusine: I dug a"
-	line "hole here, too…"
+	ntag "Eusine"
+	text "I dug a hole"
+	line "here, too…"
 
 	para "I was shocked!"
 

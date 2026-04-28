@@ -265,6 +265,7 @@ AzaleaTownPlayerLeavesKurtsHouseMovement:
 	step_end
 
 AzaleaTownRivalBeforeText:
+	ntag "<RIVAL>"
 	text "…Tell me some-"
 	line "thing."
 
@@ -282,6 +283,7 @@ AzaleaTownRivalBeforeText:
 	done
 
 AzaleaTownRivalWinText:
+	ntag "<RIVAL>"
 	text "… Humph! Useless"
 	line "#mon!"
 
@@ -293,6 +295,7 @@ AzaleaTownRivalWinText:
 	done
 
 AzaleaTownRivalAfterText:
+	ntag "<RIVAL>"
 	text "I hate the weak."
 
 	para "#mon, trainers."
@@ -323,6 +326,7 @@ AzaleaTownRivalAfterText:
 	done
 
 AzaleaTownRivalLossText:
+	ntag "<RIVAL>"
 	text "…Humph! I knew"
 	line "you were lying."
 	done
@@ -392,16 +396,21 @@ AzaleaTownYoungsterText:
 	done
 
 AzaleaTownSlowpokeText1:
-	text "Slowpoke: …"
+	ntag "Slowpoke"
+	text "<……>"
+	
+	para "<……> <……>"
 
 	para "<……> <……> <……>"
 	done
 
 AzaleaTownSlowpokeText2:
+	ntag "Slowpoke"
 	text "<……> <……>Yawn?"
 	done
 	
 AzaleaTownKurtText1:
+	ntag "Kurt"
 	text "Ilex Forest is"
 	line "restless!"
 
@@ -409,17 +418,20 @@ AzaleaTownKurtText1:
 	done
 
 AzaleaTownKurtText2:
+	ntag "Kurt"
 	text "<PLAYER>, here's"
 	line "your GS Ball back!"
 	done
 
 AzaleaTownKurtText3:
+	ntag "Kurt"
 	text "Could you go see"
 	line "why Ilex Forest is"
 	cont "so restless?"
 	done
 	
 AzaleaTownProton1Text:
+	ntag "Proton"
 	text "I came back here"
 	line "to apologise for"
 	
@@ -431,6 +443,7 @@ AzaleaTownProton1Text:
 	done
 	
 AzaleaTownProton2Text:
+	ntag "Proton"
 	text "I'm so sorry"
 	line "little guy."
 	done

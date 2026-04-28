@@ -119,9 +119,6 @@ SproutTower3FPlayerApproachesRivalMovement:
 	step UP
 	step UP
 	step UP
-	step UP
-	step_end
-
 SproutTower3FRivalApproachesElderMovement:
 	step UP
 	step_end
@@ -132,8 +129,9 @@ SproutTower3FRivalLeavesElderMovement:
 	step_end
 
 SproutTowerElderLecturesRivalText:
-	text "Elder: You are in-"
-	line "deed skilled as a"
+	ntag "Elder"
+	text "You are indeed"
+	line "skilled as a"
 	cont "trainer."
 
 	para "As promised, here"
@@ -152,6 +150,7 @@ SproutTowerElderLecturesRivalText:
 	done
 
 SproutTowerRivalOnlyCareAboutStrongText:
+	ntag "<RIVAL>"
 	text "…"
 	line "…Humph!"
 
@@ -182,6 +181,7 @@ SproutTowerRivalUsedEscapeRopeText:
 	done
 
 SageLiSeenText:
+	ntag "Elder"
 	text "So good of you to"
 	line "come here!"
 
@@ -203,10 +203,12 @@ SageLiSeenText:
 	done
 
 SageLiBeatenText:
+	ntag "Elder Li"
 	text "Ah, excellent!"
 	done
 
 SageLiTakeThisFlashText:
+	ntag "Elder Li"
 	text "You and your #-"
 	line "mon should have"
 	cont "no problem using"
@@ -217,6 +219,7 @@ SageLiTakeThisFlashText:
 	done
 
 SageLiFlashExplanationText:
+	ntag "Elder Li"
 	text "Flash illuminates"
 	line "even the darkest"
 	cont "of all places."
@@ -228,6 +231,7 @@ SageLiFlashExplanationText:
 	done
 
 SageLiAfterBattleText:
+	ntag "Elder Li"
 	text "I hope you learn"
 	line "and grow from your"
 	cont "journey."

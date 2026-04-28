@@ -291,7 +291,8 @@ TinTower1FSage3EntersMovement:
 	step_end
 
 TinTower1FEusineSuicuneText:
-	text "Eusine: Awesome!"
+	ntag "Eusine"
+	text "Awesome!"
 	line "Too awesome, even!"
 
 	para "I've never seen a"
@@ -411,6 +412,7 @@ TinTower1FSage6Text1:
 	done
 
 TinTower1FEusineHoOhText:
+	ntag "Eusine"
 	text "I knew it."
 
 	para "I knew you'd get"

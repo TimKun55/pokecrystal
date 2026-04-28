@@ -159,6 +159,7 @@ VioletGymStatue:
 	jumpstd GymStatue3Script
 
 FalknerIntroText:
+	ntag "Falkner"
 	text "I'm Falkner, the"
 	line "Violet #mon Gym"
 	cont "leader!"
@@ -180,6 +181,7 @@ FalknerIntroText:
 	done
 
 FalknerWinLossText:
+	ntag "Falkner"
 	text "…Darn! My dad's"
 	line "cherished bird"
 	cont "#mon…"
@@ -198,6 +200,7 @@ ReceivedZephyrBadgeText:
 	done
 
 FalknerZephyrBadgeText:
+	ntag "Falkner"
 	text "The ZephyrBadge"
 	line "will enable"
 	cont "#mon to use"
@@ -209,10 +212,11 @@ FalknerZephyrBadgeText:
 	done
 
 FalknerTMMudSlapText:
-	text "Falkner: By using"
-	line "a TM, a #mon"
-	cont "will instantly"
-	cont "learn a new move."
+	ntag "Falkner"
+	text "By using a TM,"
+	line "a #mon will"
+	cont "instantly learn"
+	cont "a new move."
 
 	para "A TM can be used"
 	line "as many times as"
@@ -232,6 +236,7 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
+	ntag "Falkner"
 	text "There are #mon"
 	line "Gyms in cities and"
 	cont "towns ahead."
@@ -247,6 +252,7 @@ FalknerFightDoneText:
 	done
 
 FalknerRematchIntroText:
+	ntag "Falkner"
 	text "<PLAYER>!"
 	line "You're back!"
 
@@ -255,10 +261,12 @@ FalknerRematchIntroText:
 	done
 
 FalknerWinLossRematchText:
+	ntag "Falkner"
 	text "Soaring high!"
 	done
 
 FalknerRematchAfterBattleText:
+	ntag "Falkner"
 	text "You're as strong"
 	line "as ever!"
 
@@ -268,6 +276,7 @@ FalknerRematchAfterBattleText:
 	done
 
 Falkner16IntroText:
+	ntag "Falkner"
 	text "<PLAYER>!"
 	line "You did it!"
 
@@ -283,6 +292,7 @@ Falkner16IntroText:
 	done
 
 Falkner16AfterBattleText:
+	ntag "Falkner"
 	text "Wow!"
 	line "That was an"
 	cont "amazing battle!"
@@ -293,17 +303,20 @@ Falkner16AfterBattleText:
 	done
 
 FalknerComeBackTomorrowText:
+	ntag "Falkner"
 	text "We already battled"
 	line "today, but come"
 	cont "back tomorrow."
 	done
 
 FalknerNextTimeText:
+	ntag "Falkner"
 	text "Come back"
 	line "anytime!"
 	done
 
 FalknerComeBackTomorrow:
+	ntag "Falkner"
 	text "Battle again?"
 	line "Haha, we need a"
 	cont "rest! Come back"
@@ -379,13 +392,13 @@ VioletGymGuideWinText:
 	done
 	
 HoothootText:
-	text "Hoothoot: Hoo!!"
-	line "Hoohoo!"
+	ntag "Hoothoot"
+	text "Hoo!! Hoohoo!"
 	done
 	
 NoctowlText:
-	text "Noctowl: Noc!!"
-	line "Towwwwl!"
+	ntag "Noctowl"
+	text "Noc!! Towwwwl!"
 	done
 
 VioletGym_MapEvents:

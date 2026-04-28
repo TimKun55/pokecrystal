@@ -142,15 +142,8 @@ SunnyScript:
 	promptbutton
 	setevent EVENT_MET_SUNNY_OF_SUNDAY
 .MetSunny:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Kris
-	writetext SunnyGivesGiftText1
+	writetext SunnyGivesGiftText
 	promptbutton
-	sjump .next
-.Kris:
-	writetext SunnyGivesGiftText2
-	promptbutton
-.next
 	verbosegiveitem MAGNET
 	iffalse SunnyDoneScript
 	setevent EVENT_GOT_MAGNET_FROM_SUNNY
@@ -287,27 +280,24 @@ BugManiacCarlAfterBattleText:
 	done
 
 MeetSunnyText:
-	text "Sunny: Hi!"
+	ntag "Sunny"
+	text "Hi!"
 
 	para "I'm Sunny of Sun-"
 	line "day, meaning it's"
 	cont "Sunday today!"
 	done
 
-SunnyGivesGiftText1:
-	text "I was told to give"
-	line "you this if I saw"
-	cont "you!"
-	done
-
-SunnyGivesGiftText2:
+SunnyGivesGiftText:
+	ntag "Sunny"
 	text "I was told to give"
 	line "you this if I saw"
 	cont "you!"
 	done
 
 SunnyGaveGiftText:
-	text "Sunny: That thing…"
+	ntag "Sunny"
+	text "That thing…"
 
 	para "Um…"
 
@@ -329,8 +319,9 @@ SunnyGaveGiftText:
 	done
 
 SunnySundayText:
-	text "Sunny: My sisters"
-	line "and brothers are"
+	ntag "Sunny"
+	text "My sisters and"
+	line "brothers are"
 	cont "Monica, Tuscany,"
 	cont "Wesley, Arthur,"
 	cont "Frieda and Santos."
@@ -340,7 +331,8 @@ SunnySundayText:
 	done
 
 SunnyNotSundayText:
-	text "Sunny: Isn't today"
+	ntag "Sunny"
+	text "Isn't today"
 	line "Sunday?"
 	cont "Um… I forgot!"
 	done

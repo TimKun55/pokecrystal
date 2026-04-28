@@ -18,6 +18,7 @@ INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/CeladonCurseHouse.asm"
 INCLUDE "maps/EarlsPokemonAcademyB1F.asm"
+INCLUDE "maps/Route31VioletGate.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -371,8 +372,6 @@ INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
 INCLUDE "maps/GuideGentsHouse.asm"
 INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
 INCLUDE "maps/Route30BerryHouse.asm"
-INCLUDE "maps/MrPokemonsHouse.asm"
-INCLUDE "maps/Route31VioletGate.asm"
 
 
 SECTION "Map Scripts 19", ROMX
@@ -561,5 +560,6 @@ INCLUDE "maps/SafariZoneEastRestHouse.asm"
 INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/SafariZoneNorthRestHouse.asm"
+INCLUDE "maps/MrPokemonsHouse.asm"
 
 ENDSECTION

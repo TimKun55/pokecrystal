@@ -108,10 +108,6 @@ WiseTriosRoomSageBlocksPlayerMovement:
 	step_end
 
 WiseTriosRoomSageReturnsMovement:
-	step RIGHT
-	step DOWN
-	step_end
-
 WiseTriosRoomSageAllowsPassageMovement:
 	step RIGHT
 	step DOWN

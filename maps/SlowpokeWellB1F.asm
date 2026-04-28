@@ -124,7 +124,8 @@ KurtSlowpokeWellVictoryMovementData:
 	step_end
 
 KurtLeaveSlowpokeWellText:
-	text "Kurt: Way to go,"
+	ntag "Kurt"
+	text "Way to go,"
 	line "<PLAYER>!"
 
 	para "Team Rocket has"
@@ -179,12 +180,14 @@ SlowpokeWellProtonSeenText:
 	done
 
 SlowpokeWellProtonBeatenText:
+	ntag "Proton"
 	text "You did OK today,"
 	line "but wait till next"
 	cont "time!"
 	done
 
 SlowpokeWellProtonWhenTalkText:
+	ntag "Proton"
 	text "Yeah, Team Rocket"
 	line "was broken up"
 	cont "three years ago."

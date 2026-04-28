@@ -14,7 +14,8 @@ SlowpokeWellEntranceTMMegaDrain:
 	itemball TM_MEGA_DRAIN
 
 SlowpokeWellEntranceKurtText:
-	text "Kurt: Hey there,"
+	ntag "Kurt"
+	text "Hey there,"
 	line "<PLAYER>!"
 
 	para "The guard up top"

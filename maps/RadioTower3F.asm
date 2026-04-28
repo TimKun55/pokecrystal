@@ -296,6 +296,7 @@ ScientistMarcAfterBattleText:
 	done
 	
 RadioTower3FPetrelText:
+	ntag "Petrel"
 	text "I came here to"
 	line "apologise to"
 	cont "everyone, but"

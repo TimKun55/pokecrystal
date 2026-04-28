@@ -248,10 +248,10 @@ GoldenrodCityNameRaterSign:
 	jumptext GoldenrodCityNameRaterSignText
 
 GoldenrodCityUndergroundSignNorth:
-	jumptext GoldenrodCityUndergroundSignNorthText
+	jumptext GoldenrodCityUndergroundSignText
 
 GoldenrodCityUndergroundSignSouth:
-	jumptext GoldenrodCityUndergroundSignSouthText
+	jumptext GoldenrodCityUndergroundSignText
 
 GoldenrodCityPokecenterSign:
 	jumpstd PokecenterSignScript
@@ -450,12 +450,7 @@ GoldenrodCityNameRaterSignText:
 	line "Nicknames Rated"
 	done
 
-GoldenrodCityUndergroundSignNorthText:
-	text "Underground"
-	line "Entrance"
-	done
-
-GoldenrodCityUndergroundSignSouthText:
+GoldenrodCityUndergroundSignText:
 	text "Underground"
 	line "Entrance"
 	done

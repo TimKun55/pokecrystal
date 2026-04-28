@@ -386,6 +386,7 @@ Text_ElmDiscoveredNewMon:
 	done
 
 NewBarkTownRivalText1:
+	ntag "???"
 	text "<……>"
 
 	para "So this is the"
@@ -394,12 +395,14 @@ NewBarkTownRivalText1:
 	done
 
 NewBarkTownRivalText2:
+	ntag "???"
 	text "…What are you"
 	line "staring at?"
 	done
 
 NewBarkTownLyraIntroText:
-	text "Lyra: Oh, hello,"
+	ntag "Lyra"
+	text "Oh, hello,"
 	line "<PLAYER>!"
 
 	para "I came by your"
@@ -421,7 +424,8 @@ NewBarkTownLyraIntroText:
 	done
 
 NewBarkTownLyraGoodbyeText1:
-	text "Lyra: <PLAYER>!"
+	ntag "Lyra"
+	text "<PLAYER>!"
 
 	para "I heard that you"
 	line "have all the Gym"
@@ -453,16 +457,19 @@ NewBarkTownLyraGoodbyeText1:
 	done
 
 NewBarkTownLyraGoodbyeTextWin:
+	ntag "Lyra"
 	text "You're as talented"
 	line "as I expected!"
 	done
 
 NewBarkTownLyraGoodbyeTextLoss:
+	ntag "Lyra"
 	text "I hope you didn't"
 	line "let me win…"
 	done
 
 NewBarkTownLyraGoodbyeText2:
+	ntag "Lyra"
 	text "…Thanks, <PLAYER>."
 
 	para "I can tell how"
@@ -483,11 +490,13 @@ NewBarkTownLyraGoodbyeText2:
 	done
 	
 NewBarkTownHoothootText:
-	text "Hoothoot: Hoo!!"
+	ntag "Hoothoot"
+	text "Hoo!!"
 	done
 
 NewBarkTownPidgeyText:
-	text "Pidgey: Pipipi!"
+	ntag "Pidgey"
+	text "Pipipi!"
 	done
 
 NewBarkTownSignText:

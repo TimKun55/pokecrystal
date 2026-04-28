@@ -134,7 +134,8 @@ CharcoalKilnApprenticeText3:
 	done
 
 FarfetchdText:
-	text "Farfetch'd: Kwaa!"
+	ntag "Farfetch'd"
+	text "Kwaa!"
 	done
 
 CharcoalKiln_MapEvents:

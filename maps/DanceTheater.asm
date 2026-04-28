@@ -376,8 +376,8 @@ SurfGuyElegantKimonoGirlsText:
 	done
 
 DanceTheaterRhydonText:
-	text "Rhydon: Gugooh"
-	line "gugogooh!"
+	ntag "Rhydon"
+	text "Gugooh gugogooh!"
 	done
 
 DanceTheaterCooltrainerMText:

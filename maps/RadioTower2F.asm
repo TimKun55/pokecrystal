@@ -365,8 +365,8 @@ RadioTower2FTeacherText_Rockets:
 	done
 
 RadioTowerJigglypuffText:
-	text "Jigglypuff:"
-	line "Jiggly…"
+	ntag "Jigglypuff"
+	text "Jiggly…"
 	done
 
 RadioTower2FBlackBelt1Text:
@@ -472,8 +472,8 @@ GruntF2AfterBattleText:
 	done
 
 RadioTower2FBuenaShowIntroductionText:
-	text "Buena: Hi! I'm"
-	line "Buena!"
+	ntag "Buena"
+	text "Hi! I'm Buena!"
 
 	para "Do you know about"
 	line "a radio program"
@@ -498,12 +498,14 @@ RadioTower2FBuenaShowIntroductionText:
 	done
 
 RadioTower2FBuenaTuneInToMyShowText:
-	text "Buena: Tune in to"
-	line "my Password Show!"
+	ntag "Buena"
+	text "Tune in to my"
+	line "Password Show!"
 	done
 
 RadioTower2FBuenaDoYouKnowPasswordText:
-	text "Buena: Hi!"
+	ntag "Buena"
+	text "Hi!"
 	line "Did you tune in to"
 	cont "my radio show?"
 
@@ -512,7 +514,8 @@ RadioTower2FBuenaDoYouKnowPasswordText:
 	done
 
 RadioTower2FBuenaJoinTheShowText:
-	text "Buena: Oh, wow!"
+	ntag "Buena"
+	text "Oh, wow!"
 	line "Thank you!"
 
 	para "What was your name"
@@ -525,8 +528,8 @@ RadioTower2FBuenaJoinTheShowText:
 	done
 
 RadioTower2FBuenaEveryoneSayPasswordText:
-	text "Buena: Everyone"
-	line "ready?"
+	ntag "Buena"
+	text "Everyone ready?"
 
 	para "I want to hear you"
 	line "shout out today's"
@@ -535,15 +538,17 @@ RadioTower2FBuenaEveryoneSayPasswordText:
 	done
 
 RadioTower2FBuenaComeBackAfterListeningText:
-	text "Buena: Come back"
-	line "after you listen"
+	ntag "Buena"
+	text "Come back after"
+	line "you listen to my"
+	cont "show, OK?"
 
-	para "to my show, OK?"
-	line "Catch ya later!"
+	para "Catch ya later!"
 	done
 
 RadioTower2FBuenaAlreadyPlayedText:
-	text "Buena: Sorry…"
+	ntag "Buena"
+	text "Sorry…"
 
 	para "You get just one"
 	line "chance each day."
@@ -553,7 +558,8 @@ RadioTower2FBuenaAlreadyPlayedText:
 	done
 
 RadioTower2FBuenaCorrectAnswerText:
-	text "Buena: YIPPEE!"
+	ntag "Buena"
+	text "YIPPEE!"
 	line "That's right!"
 
 	para "You did tune in!"
@@ -564,7 +570,8 @@ RadioTower2FBuenaCorrectAnswerText:
 	done
 
 RadioTower2FBuenaCorrectAnswerWeekendText:
-	text "Buena: YIPPEE!"
+	ntag "Buena"
+	text "YIPPEE!"
 	line "That's right!"
 
 	para "You did tune in!"
@@ -577,7 +584,8 @@ RadioTower2FBuenaCorrectAnswerWeekendText:
 	done
 
 RadioTower2FBuenaCorrectAnswerFriMonText:
-	text "Buena: YIPPEE!"
+	ntag "Buena"
+	text "YIPPEE!"
 	line "That's right!"
 
 	para "You did tune in!"
@@ -588,7 +596,8 @@ RadioTower2FBuenaCorrectAnswerFriMonText:
 	done
 
 RadioTower2FBuenaDidYouForgetText:
-	text "Buena: Aww…"
+	ntag "Buena"
+	text "Aww…"
 	line "That's not it…"
 
 	para "Did you forget the"
@@ -596,11 +605,12 @@ RadioTower2FBuenaDidYouForgetText:
 	done
 
 RadioTower2FBuenaThanksForComingText:
-	text "Buena: Yup! Our"
-	line "contestant was"
+	ntag "Buena"
+	text "Yup!"
+	line "Our contestant was"
+	cont "<PLAY_G>."
 
-	para "<PLAY_G>."
-	line "Thanks for coming!"
+	para "Thanks for coming!"
 
 	para "I hope all you"
 	line "listeners will"
@@ -610,22 +620,25 @@ RadioTower2FBuenaThanksForComingText:
 	done
 
 RadioTower2FBuenaPasswordIsHelpText:
-	text "Buena: Huh?"
+	ntag "Buena"
+	text "Huh?"
 	line "Today's password?"
 
 	para "Help, of course!"
 	done
 
 RadioTower2FBuenaCardIsFullText:
-	text "Buena: Your Blue"
-	line "Card's full."
+	ntag "Buena"
+	text "Your Blue Card"
+	line "is full."
 
 	para "Trade it in for a"
 	line "fabulous prize!"
 	done
 
 RadioTower2FBuenaTuneInAfterFiveText:
-	text "Buena: Tune in to"
+	ntag "Buena"
+	text "Tune in to"
 	line "Password every"
 	cont "night from five"
 	cont "to midnight!"
@@ -635,9 +648,10 @@ RadioTower2FBuenaTuneInAfterFiveText:
 	done
 
 RadioTower2FBuenaNoBlueCardText:
-	text "Buena: Oh? You"
-	line "forgot to bring"
-	cont "your Blue Card?"
+	ntag "Buena"
+	text "Oh? You forgot"
+	line "to bring your"
+	cont "Blue Card?"
 
 	para "I can't give you"
 	line "points if you"
@@ -645,11 +659,12 @@ RadioTower2FBuenaNoBlueCardText:
 	done
 
 RadioTower2FBuenaOfferPhoneNumberText:
-	text "Buena: Oh! Your"
-	line "Blue Card reached"
+	ntag "Buena"
+	text "Oh! Your Blue Card"
+	line "reached {d:BLUE_CARD_POINT_CAP}"
+	cont "points today!"
 
-	para "{d:BLUE_CARD_POINT_CAP} points today!"
-	line "That's so wild!"
+	para "That's so wild!"
 
 	para "Hmm… There isn't a"
 	line "prize for hitting"
@@ -666,10 +681,10 @@ RadioTower2FBuenaOfferPhoneNumberText:
 	done
 
 RadioTower2FBuenaOfferNumberAgainText:
-	text "Buena: <PLAY_G>,"
-	line "do you want to"
-	cont "register my phone"
-	cont "number?"
+	ntag "Buena"
+	text "<PLAY_G>, do you"
+	line "want to register"
+	cont "my phone number?"
 	done
 
 RadioTower2FRegisteredBuenasNumberText:
@@ -678,21 +693,22 @@ RadioTower2FRegisteredBuenasNumberText:
 	done
 
 RadioTower2FBuenaCallMeText:
-	text "Buena: I look"
-	line "forward to hearing"
-	cont "from you!"
+	ntag "Buena"
+	text "I look forward to"
+	line "hearing from you!"
 	done
 
 RadioTower2FBuenaSadRejectedText:
-	text "Buena: Aww… It's a"
+	ntag "Buena"
+	text "Aww… It's a"
 	line "special prize…"
 	done
 
 RadioTower2FBuenaYourPhoneIsFullText:
-	text "Buena: <PLAY_G>,"
-	line "your phone list"
-	cont "has no room left"
-	cont "for me…"
+	ntag "Buena"
+	text "<PLAY_G>, your"
+	line "phone list has no"
+	cont "room left for me…"
 	done
 
 RadioTower2FBuenaReceptionistPointsForPrizesText:

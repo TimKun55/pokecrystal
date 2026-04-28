@@ -238,6 +238,7 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
+	ntag "Earl"
 	text "Earl, I am!"
 
 	para "Wonderful are"
@@ -253,6 +254,7 @@ AcademyEarlIntroText:
 	done
 
 AcademyEarlTeachHowToWinText:
+	ntag "Earl"
 	text "Good! Teach you,"
 	line "I will!"
 
@@ -269,12 +271,14 @@ AcademyEarlTeachHowToWinText:
 	done
 
 AcademyEarlTeachMoreText:
+	ntag "Earl"
 	text "So, want to know"
 	line "how to raise"
 	cont "#mon well?"
 	done
 
 AcademyEarlTeachHowToRaiseWellText:
+	ntag "Earl"
 	text "Fine! Teach you,"
 	line "I will!"
 
@@ -295,6 +299,7 @@ AcademyEarlTeachHowToRaiseWellText:
 	done
 
 AcademyEarlNoMoreToTeachText:
+	ntag "Earl"
 	text "Oh! Smart student"
 	line "you are! Nothing"
 	cont "more do I teach!"
@@ -560,10 +565,11 @@ LassMaiAfterBattleText:
 	done
 	
 TeacherEnomotoIntroText:
-	text "Welcome to my"
-	line "Battle Course!"
+	ntag "Enomoto"
+	text "I'm Enomoto."
 
-	para "I'm Enomoto."
+	para "Welcome to my"
+	line "Battle Course!"
 
 	para "I've been hired"
 	line "by Earl to teach"
@@ -576,18 +582,21 @@ TeacherEnomotoIntroText:
 	done
 
 TeacherEnomotoEndText:
+	ntag "Enomoto"
 	text "Hmm, best to make"
 	line "sure you're fully"
 	cont "prepared."
 	done
 
 TeacherEnomotoBattleMoreText:
+	ntag "Enomoto"
 	text "Hmm, I think you"
 	line "need to battle the"
 	cont "others first."
 	done
 
 TeacherEnomotoLetsBattleText:
+	ntag "Enomoto"
 	text "You seem well"
 	line "prepared."
 
@@ -595,12 +604,14 @@ TeacherEnomotoLetsBattleText:
 	done
 
 EnomotoText_WellDone:
+	ntag "Enomoto"
 	text "Oh, my!"
 	line "You've done"
 	cont "very well!"
 	done
 
 TeacherEnomotoTakeThisText:
+	ntag "Enomoto"
 	text "As a reward,"
 	line "take this item"
 	
@@ -609,15 +620,15 @@ TeacherEnomotoTakeThisText:
 	done
 
 TeacherEnomotoStrongerText:
-	text "Enomoto: The"
-	line "Eviolite will in-"
-	cont "crease the Defense"
-	cont "and Special"
-	cont "Defense stats of" 
-	cont "a #mon that"
-	cont "can still evolve"
-	cont "by 50 percent"
-	cont "each."
+	ntag "Enomoto"
+	text "The Eviolite will"
+	line "increase the"
+	cont "Defense and"
+	cont "Special Defense"
+	cont "stats of a #mon" 
+	cont "that can still"
+	cont "evolve by 50"
+	cont "percent each."
 
 	para "Put it to"
 	line "good use!"

@@ -157,6 +157,7 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerRival_BeforeText:
+	ntag "<RIVAL>"
 	text "<……> <……> <……>"
 
 	para "…Oh, it's you."
@@ -179,6 +180,7 @@ BurnedTowerRival_BeforeText:
 	done
 
 BurnedTowerRival_WinText:
+	ntag "<RIVAL>"
 	text "…Humph!"
 
 	para "This is why I hate"
@@ -189,6 +191,7 @@ BurnedTowerRival_WinText:
 	done
 
 BurnedTowerRival_AfterText1:
+	ntag "<RIVAL>"
 	text "…Aw, whatever."
 
 	para "You would never be"
@@ -198,6 +201,7 @@ BurnedTowerRival_AfterText1:
 	done
 
 BurnedTowerRival_LossText:
+	ntag "<RIVAL>"
 	text "…Humph!"
 
 	para "This is why I hate"
@@ -208,6 +212,7 @@ BurnedTowerRival_LossText:
 	done
 
 BurnedTowerRival_AfterText2:
+	ntag "<RIVAL>"
 	text "Humph!"
 
 	para "What are you doing"
@@ -220,8 +225,8 @@ BurnedTowerRival_AfterText2:
 	done
 
 BurnedTower1FEusineIntroText:
-	text "Eusine: My name's"
-	line "Eusine."
+	ntag "Eusine"
+	text "My name's Eusine."
 
 	para "I'm on the trail"
 	line "of a #mon named"
@@ -242,8 +247,9 @@ BurnedTower1FEusineIntroText:
 	done
 
 BurnedTower1FEusineText:
-	text "Eusine: I heard"
-	line "that Suicune is in"
+	ntag "Eusine"
+	text "I heard that"
+	line "Suicune is in"
 	cont "this Burned Tower,"
 	cont "so I came to look."
 
@@ -252,18 +258,30 @@ BurnedTower1FEusineText:
 	done
 
 BurnedTower1FMortyText:
-	text "Morty: Ecruteak's"
-	line "Gym Leader has to"
-	cont "study what are"
-	cont "said to be the"
-	cont "legendary #mon"
-	cont "--Suicune, Entei"
+	ntag "Morty"
+	text "My name is Morty."
+
+	para "I am Ecruteak's"
+	line "Gym Leader."
+	
+	para "Because my old"
+	line "friend is here on"
+	cont "the trail of"
+	cont "Suicune, I decided"
+	cont "to investigate the"
+	cont "Burned Tower."
+
+	para "Ecruteak has a"
+	line "legend about these"
+	cont "legendary #mon:"
+	cont "Suicune, Entei"
 	cont "and Raikou."
 
-	para "Eusine is here, so"
-	line "I've decided to"
-	cont "investigate the"
-	cont "Tower with him."
+	para "As the Gym Leader"
+	line "of Ecruteak, I"
+	cont "must have a proper"
+	cont "understanding"
+	cont "of it."
 	done
 
 BurnedTower1F_MapEvents:

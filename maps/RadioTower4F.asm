@@ -60,7 +60,13 @@ RadioTower4FDJMaryScript:
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
-	writetext RadioTower4FDJMaryText_Interview1Questions
+	writetext RadioTower4FDJMaryText_Interview1Start
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_PleaseElaborateText
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview1Finish
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
@@ -103,7 +109,27 @@ RadioTower4FDJMaryScript:
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
-	writetext RadioTower4FDJMaryText_Interview2Questions
+	writetext RadioTower4FDJMaryText_Interview2Start
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_PleaseElaborateText
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview2FormerBoss
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview2RestorePower
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview2InTheGym
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview2Finish
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
@@ -146,7 +172,23 @@ RadioTower4FDJMaryScript:
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, DOWN
 	turnobject PLAYER, UP
-	writetext RadioTower4FDJMaryText_Interview3Questions
+	writetext RadioTower4FDJMaryText_Interview3Start
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview3Snorlax
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview3DefeatLeaders
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview3OnADate
+	waitbutton
+	writetext RadioTower4FDJMaryInterview_PlayerResponse
+	waitbutton
+	writetext RadioTower4FDJMaryText_Interview3End
 	waitbutton
 	turnobject RADIOTOWER4F_MARY, RIGHT
 	writetext RadioTower4FDJMaryText_RegularSchedule
@@ -232,36 +274,40 @@ RadioTower4FFisherText:
 	done
 
 RadioTower4FDJMaryText:
-	text "Mary: Why? Why do"
-	line "I have to suffer"
-	cont "through this?"
+	ntag "Mary"
+	text "Why? Why do I have"
+	line "to suffer through"
+	cont "this?"
 
 	para "Meowth, help me!"
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
-	text "Mary: Oh! You're"
-	line "my little savior!"
+	ntag "Mary"
+	text "Oh! You're my"
+	line "little savior!"
 
 	para "Will you take this"
 	line "as my thanks?"
 	done
 
 RadioTower4FDJMaryText_GivePinkBow:
-	text "Mary: It's just"
-	line "right for #mon"
-	cont "that know normal-"
-	cont "type moves."
+	ntag "Mary"
+	text "It's just right"
+	line "for #mon that"
+	cont "know normal-type"
+	cont "moves."
 	done
 
 RadioTower4FDJMaryText_After:
-	text "Mary: Please tune"
-	line "into me on Prof."
-	cont "Oak's #mon Talk"
-	cont "show."
+	ntag "Mary"
+	text "Please tune into"
+	line "me on Prof.Oak's"
+	cont "#mon Talk show."
 	done
 
 RadioTower4FDJMaryText_Interview1:
+	ntag "Mary"
 	text "Oh, you're hear to"
 	line "discuss becoming"
 	cont "Champion after the"
@@ -273,6 +319,7 @@ RadioTower4FDJMaryText_Interview1:
 	done
 
 RadioTower4FDJMaryText_Interview2:
+	ntag "Mary"
 	text "Oh, you're hear to"
 	line "discuss restoring"
 	cont "power to Kanto and"
@@ -283,6 +330,7 @@ RadioTower4FDJMaryText_Interview2:
 	done
 
 RadioTower4FDJMaryText_Interview3:
+	ntag "Mary"
 	text "Oh, you're hear to"
 	line "discuss becoming"
 	cont "Grand Champion"
@@ -293,6 +341,7 @@ RadioTower4FDJMaryText_Interview3:
 	done
 
 RadioTower4FDJMaryText_IntroducePlayer:
+	ntag "Mary"
 	text "Listeners!"
 
 	para "In the studio, a"
@@ -301,6 +350,7 @@ RadioTower4FDJMaryText_IntroducePlayer:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview1:
+	ntag "Mary"
 	text "Please welcome"
 	line "<PLAYER>, who"
 	cont "recently defeated"
@@ -312,6 +362,7 @@ RadioTower4FDJMaryText_IntroduceInterview1:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview2:
+	ntag "Mary"
 	text "Please welcome"
 	line "<PLAYER>, who"
 	cont "recently defeated"
@@ -322,33 +373,40 @@ RadioTower4FDJMaryText_IntroduceInterview2:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview3:
+	ntag "Mary"
 	text "Please welcome"
-	line "<PLAYER>, who"
-	cont "recently defeated"
-	cont "the Gym Leaders of"
-	cont "Kanto, is our new"
-	cont "Grand Champion and"
-	cont "is one of the most"
+	line "<PLAYER>."
+	
+	para "They recently def-"
+	cont "eated the Gym"
+	cont "Leaders of Kanto,"
+
+	para "is our new Grand"
+	line "Champion and is"
+	cont "one of the most"
 	cont "accomplished and"
 	cont "talented trainers!"
 	done
 
-RadioTower4FDJMaryText_Interview1Questions:
+RadioTower4FDJMaryText_Interview1Start:
+	ntag "Mary"
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of the struggles"
 	cont "you went through"
 	cont "to achieve this"
 	cont "accomplishment."
+	done
 
-	para "<PLAYER>: … … …"
+RadioTower4FDJMaryText_PleaseElaborateText:
+	ntag "Mary"
+	text "Can you please"
+	line "elaborate?"
+	done
 
-	para "Mary: Can you"
-	line "please elaborate?"
-
-	para "<PLAYER>: … … …"
-
-	para "Mary: So exciting!"
+RadioTower4FDJMaryText_Interview1Finish:
+	ntag "Mary"
+	text "So exciting!"
 
 	para "Well we've used up"
 	line "enough of the"
@@ -362,40 +420,39 @@ RadioTower4FDJMaryText_Interview1Questions:
 	cont "you achieve more!"
 	done
 
-RadioTower4FDJMaryText_Interview2Questions:
+RadioTower4FDJMaryText_Interview2Start:
+	ntag "Mary"
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of what it was"
 	cont "like facing down"
 	cont "Team Rocket again."
-
-	para "<PLAYER>: … … …"
-
-	para "Mary: Can you"
-	line "please elaborate?"
-
-	para "<PLAYER>: … … …"
-
-	para "Mary: The former"
-	line "Boss?!"
+	done
 	
-	para "<PLAYER>: … … …"
+RadioTower4FDJMaryText_Interview2FormerBoss:
+	ntag "Mary"
+	text "The former Boss?!"
+	done
 
-	para "Mary: So exciting!"
+RadioTower4FDJMaryText_Interview2RestorePower:
+	ntag "Mary"
+	text "So exciting!"
 
 	para "And how did you"
 	line "help restore the"
 	cont "power in Kanto?"
+	done
 
-	para "<PLAYER>: … … …"
-
-	para "Mary: Oh my!"
+RadioTower4FDJMaryText_Interview2InTheGym:
+	ntag "Mary"
+	text "Oh my!"
 	line "It was in the Gym,"
 	cont "you say?!"
+	done
 
-	para "<PLAYER>: … … …"
-
-	para "Mary: Amazing!"
+RadioTower4FDJMaryText_Interview2Finish:
+	ntag "Mary"
+	text "Amazing!"
 
 	para "Well we've used up"
 	line "enough of your"
@@ -409,43 +466,47 @@ RadioTower4FDJMaryText_Interview2Questions:
 	cont "more!"
 	done
 
-RadioTower4FDJMaryText_Interview3Questions:
+RadioTower4FDJMaryText_Interview3Start:
+	ntag "Mary"
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of what it was"
 	cont "like traveling"
 	cont "around Kanto!"
+	done
 
-	para "<PLAYER>: … … …"
-
-	para "Mary: Wow!"
+RadioTower4FDJMaryText_Interview3Snorlax:
+	ntag "Mary"
+	text "Wow!"
 	line "It was just laying"
-	cont "laying there?"
+	cont "there, sleeping?"
 	
 	para "What did you do?"
+	done
 
-	para "<PLAYER>: … … …"
-
-	para "Mary: Interesting!"
+RadioTower4FDJMaryText_Interview3DefeatLeaders:
+	ntag "Mary"
+	text "Interesting!"
 
 	para "And what about"
 	line "your defeat of the"
 	cont "Kanto Leaders?"
+	done
 
-	para "<PLAYER>: … … …"
+RadioTower4FDJMaryText_Interview3OnADate:
+	ntag "Mary"
+	text "She was on a date?"
+	line "Goodness!"
+	done
 
-	para "Mary: She was on"
-	line "a date? Goodness!"
-
-	para "<PLAYER>: … … …"
-
-	para "Mary: Relocated"
-	line "because of the"
-	cont "Volcano?"
+RadioTower4FDJMaryText_Interview3End:
+	ntag "Mary"
+	text "Relocated because"
+	line "of the Volcano?"
 	
 	para "Wow, the Kanto"
 	line "Leaders sure are"
-	cont "Interesting!"
+	cont "interesting."
 
 	para "Not only have you"
 	line "defeated them, but"
@@ -462,10 +523,10 @@ RadioTower4FDJMaryText_Interview3Questions:
 	cont "Rocket, you went"
 	cont "to Kanto and made"
 	cont "sure they were"
-	cont "gone for good!"
+	cont "gone for good."
 	
 	para "All while on your"
-	line "own journey!"
+	line "own journey."
 	
 	para "On behalf of the"
 	line "people of Johto"
@@ -487,12 +548,14 @@ RadioTower4FDJMaryText_Interview3Questions:
 	done
 
 RadioTower4FDJMaryText_RegularSchedule:
+	ntag "Mary"
 	text "And now, back"
 	line "to our regular"
 	cont "program!"
 	done
 
 RadioTower4FDJMaryText_InterviewGift:
+	ntag "Mary"
 	text "And here's a very"
 	line "special thank you"
 	cont "for your time."
@@ -529,12 +592,13 @@ RadioTower4FTeddiursaDollSentHomeText:
 	done
 
 RadioTower4FDJMaryText_TalkAgain:
-	text "Mary: I can't"
-	line "wait to talk to"
-	cont "you again!"
+	ntag "Mary"
+	text "I can't wait to"
+	line "talk to you again!"
 	done
 
 RadioTower4FDJMaryText_ThanksForInterview:
+	ntag "Mary"
 	text "Thanks for the"
 	line "interview!"
 
@@ -544,8 +608,14 @@ RadioTower4FDJMaryText_ThanksForInterview:
 	cont "of your stories!"
 	done
 
+RadioTower4FDJMaryInterview_PlayerResponse:
+	ntag "<PLAYER>"
+	text "… … …@"
+	done
+
 RadioTowerMeowthText:
-	text "Meowth: Meowth…"
+	ntag "Meowth"
+	text "Nyaa…"
 	done
 
 GruntM10SeenText:
@@ -567,6 +637,7 @@ GruntM10AfterBattleText:
 	done
 
 RadioTowerProtonSeenText:
+	ntag "Proton"
 	text "You!! I haven't"
 	line "forgotten the way"
 	cont "you humiliated"
@@ -577,10 +648,12 @@ RadioTowerProtonSeenText:
 	done
 
 RadioTowerProtonBeatenText:
+	ntag "Proton"
 	text "Humiliation again!"
 	done
 
 RadioTowerProtonAfterBattleText:
+	ntag "Proton"
 	text "You've earned my"
 	line "respect, so here's"
 	cont "some advice."

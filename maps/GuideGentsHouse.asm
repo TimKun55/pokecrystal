@@ -10,6 +10,7 @@ GuideGentsHouseGuideGent:
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseGuideGentText:
+	ntag "Guide Gent"
 	text "When I was a wee"
 	line "lad, I was a hot-"
 	cont "shot trainer!"

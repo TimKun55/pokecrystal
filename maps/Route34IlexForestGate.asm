@@ -115,7 +115,8 @@ Route34IlexForestGateTeacher_ForestIsRestless:
 	done
 
 Route34IlexForestGateButterfreeText:
-	text "Butterfree: Freeh!"
+	ntag "Butterfree"
+	text "Freeh!"
 	done
 
 Route34IlexForestGateLassText:

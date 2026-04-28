@@ -628,7 +628,7 @@ ElmsAideScript:
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue AideScript_AfterTheft
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue AideScript_ExplainBalls
+	iftrue AideScript_EggText
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue AideScript_TheftTestimony
 	writetextend AideText_AlwaysBusy
@@ -636,8 +636,8 @@ ElmsAideScript:
 AideScript_TheftTestimony:
 	writetextend AideText_TheftTestimony
 
-AideScript_ExplainBalls:
-	writetextend AideText_ExplainBalls
+AideScript_EggText:
+	writetextend AideText_EggText
 
 AideScript_AfterTheft:
 	writetextend AideText_AfterTheft
@@ -910,7 +910,8 @@ AfterChikoritaMovement:
 	step_end
 
 ElmText_Intro:
-	text "Elm: <PLAY_G>!"
+	ntag "Elm"
+	text "<PLAY_G>!"
 	line "There you are!"
 	
 	para "Hello to you too,"
@@ -940,6 +941,7 @@ ElmText_Intro:
 	done
 
 ElmText_Accepted:
+	ntag "Elm"
 	text "Thanks, <PLAY_G>!"
 
 	para "You're a great"
@@ -947,11 +949,13 @@ ElmText_Accepted:
 	done
 
 ElmText_Refused:
+	ntag "Elm"
 	text "But… Please, I"
 	line "need your help!"
 	done
 
 ElmText_ResearchAmbitions:
+	ntag "Elm"
 	text "When I announce my"
 	line "findings, I'm sure"
 	cont "we'll delve a bit"
@@ -964,6 +968,7 @@ ElmText_ResearchAmbitions:
 	done
 
 ElmText_GotAnEmail:
+	ntag "Elm"
 	text "Oh, hey! I got an"
 	line "e-mail!"
 
@@ -974,6 +979,7 @@ ElmText_GotAnEmail:
 	done
 
 ElmText_MissionFromMrPokemon:
+	ntag "Elm"
 	text "Hey, listen."
 
 	para "I have an acquain-"
@@ -1005,6 +1011,7 @@ ElmText_MissionFromMrPokemon:
 	done
 
 ElmText_ChooseAPokemon:
+	ntag "Elm"
 	text "I want you to"
 	line "raise one of the"
 	cont "#mon contained"
@@ -1018,36 +1025,42 @@ ElmText_ChooseAPokemon:
 	done
 
 ElmText_LetYourMonBattleIt:
+	ntag "Elm"
 	text "If a wild #mon"
 	line "appears, let your"
 	cont "#mon battle it!"
 	done
 
 LabWhereGoingText:
-	text "Elm: Wait! Where"
-	line "are you going?"
+	ntag "Elm"
+	text "Wait! Where are"
+	line "you going?"
 	done
 
 TakeCyndaquilText:
-	text "Elm: You'll take"
+	ntag "Elm"
+	text "You'll take"
 	line "Cyndaquil, the"
 	cont "fire #mon?"
 	done
 
 TakeTotodileText:
-	text "Elm: Do you want"
+	ntag "Elm"
+	text "Do you want"
 	line "Totodile, the"
 	cont "water #mon?"
 	done
 
 TakeChikoritaText:
-	text "Elm: So, you like"
+	ntag "Elm"
+	text "So, you like"
 	line "Chikorita, the"
 	cont "grass #mon?"
 	done
 
 DidntChooseStarterText:
-	text "Elm: Think it over"
+	ntag "Elm"
+	text "Think it over"
 	line "carefully."
 
 	para "Your partner is"
@@ -1055,9 +1068,9 @@ DidntChooseStarterText:
 	done
 
 ChoseStarterText:
-	text "Elm: I think"
-	line "that's a great"
-	cont "#mon too!"
+	ntag "Elm"
+	text "I think that's a"
+	line "great #mon too!"
 	done
 
 ReceivedStarterText:
@@ -1068,6 +1081,7 @@ ReceivedStarterText:
 	done
 
 ElmDirectionsText1:
+	ntag "Elm"
 	text "Mr.#mon lives a"
 	line "little bit beyond"
 	cont "Cherrygrove, the"
@@ -1085,6 +1099,7 @@ ElmDirectionsText1:
 	done
 
 ElmDirectionsText2:
+	ntag "Elm"
 	text "If your #mon is"
 	line "hurt, you should"
 	cont "heal it with this"
@@ -1095,6 +1110,7 @@ ElmDirectionsText2:
 	done
 
 ElmDirectionsText3:
+	ntag "Elm"
 	text "<PLAY_G>, I'm"
 	line "counting on you!"
 	done
@@ -1105,6 +1121,7 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
+	ntag "Elm"
 	text "Mr.#mon goes"
 	line "everywhere and"
 	cont "finds rarities."
@@ -1131,7 +1148,8 @@ ElmsLabHealingMachineText2:
 	done
 
 ElmAfterTheftText1:
-	text "Elm: <PLAY_G>, this"
+	ntag "Elm"
+	text "<PLAY_G>, this"
 	line "is terrible…"
 
 	para "Oh, yes, what was"
@@ -1146,10 +1164,12 @@ ElmAfterTheftText2:
 	done
 
 ElmAfterTheftText3:
-	text "Elm: This?"
+	ntag "Elm"
+	text "This?"
 	done
 
 ElmAfterTheftText4:
+	ntag "Elm"
 	text "But… This is just"
 	line "a #mon Egg?"
 
@@ -1176,7 +1196,8 @@ ElmAfterTheftText4:
 	done
 
 ElmAfterTheftText5:
-	text "Elm: What?!?"
+	ntag "Elm"
+	text "What?!?"
 
 	para "Prof.Oak gave you"
 	line "a #dex?"
@@ -1213,6 +1234,7 @@ ElmAfterTheftText5:
 	done
 
 ElmAfterTheftText6:
+	ntag "Elm"
 	text "…<PLAY_G>. The"
 	line "road to the"
 	cont "championship will"
@@ -1224,14 +1246,16 @@ ElmAfterTheftText6:
 	done
 
 ElmStudyingEggText:
-	text "Elm: Don't give"
-	line "up! I'll call if"
+	ntag "Elm"
+	text "Don't give up!"
+	line "I'll call if"
 	cont "I learn anything"
 	cont "about that Egg!"
 	done
 
 ElmAideHasEggText:
-	text "Elm: <PLAY_G>?"
+	ntag "Elm"
+	text "<PLAY_G>?"
 	line "Didn't you meet my"
 	cont "assistant?"
 
@@ -1246,11 +1270,13 @@ ElmAideHasEggText:
 	done
 
 ElmWaitingEggHatchText:
-	text "Elm: Hey, has that"
+	ntag "Elm"
+	text "Hey, has that"
 	line "Egg changed any?"
 	done
 
 ElmThoughtEggHatchedText:
+	ntag "Elm"
 	text "<PLAY_G>? I thought"
 	line "the Egg hatched."
 
@@ -1259,16 +1285,19 @@ ElmThoughtEggHatchedText:
 	done
 
 ShowElmTogepiText1:
-	text "Elm: <PLAY_G>, you"
+	ntag "Elm"
+	text "<PLAY_G>, you"
 	line "look great!"
 	done
 
 ShowElmTogepiText2:
+	ntag "Elm"
 	text "What?"
 	line "That #mon!?!"
 	done
 
 ShowElmTogepiText3:
+	ntag "Elm"
 	text "The Egg hatched!"
 	line "So, Togepi exclus-"
 	cont "ively hatches from"
@@ -1285,6 +1314,7 @@ ShowElmTogepiText3:
 	done
 
 ElmGiveLuckyEggText1:
+	ntag "Elm"
 	text "Thanks, <PLAY_G>!"
 	line "You're helping"
 	cont "unravel #mon"
@@ -1296,6 +1326,7 @@ ElmGiveLuckyEggText1:
 	done
 	
 ElmGiveLuckyEggText2:
+	ntag "Elm"
 	text "That's a"
 	line "Lucky Egg."
 
@@ -1312,7 +1343,8 @@ ElmGiveLuckyEggText2:
 	done
 
 ElmText_CallYou:
-	text "Elm: <PLAY_G>, I'll"
+	ntag "Elm"
+	text "<PLAY_G>, I'll"
 	line "call you if any-"
 	cont "thing comes up."
 	done
@@ -1331,7 +1363,8 @@ AideText_AfterTheft:
 	done
 
 ElmGiveMasterBallText1:
-	text "Elm: Hi, <PLAY_G>!"
+	ntag "Elm"
+	text "Hi, <PLAY_G>!"
 	line "Thanks to you, my"
 	cont "research is going"
 	cont "great!"
@@ -1342,6 +1375,7 @@ ElmGiveMasterBallText1:
 	done
 
 ElmGiveMasterBallText2:
+	ntag "Elm"
 	text "The Master Ball is"
 	line "the best!"
 
@@ -1361,7 +1395,8 @@ ElmGiveMasterBallText2:
 	done
 
 ElmGiveTicketText1:
-	text "Elm: <PLAY_G>!"
+	ntag "Elm"
+	text "<PLAY_G>!"
 	line "There you are!"
 	
 	para "Congratulations on"
@@ -1397,13 +1432,14 @@ ElmGiveTicketText1:
 	cont "Elite Four will"
 	cont "battle you with"
 	cont "all of their"
-	cont "strength and"
-	cont "you will then"
-	cont "become the Grand"
-	cont "Champion!"
+	cont "strength and you"
+	cont "will then become"
+	cont "the Grand Champion"
+	cont "if you beat them!"
 	done
 
 ElmGiveTicketText2:
+	ntag "Elm"
 	text "The ship departs"
 	line "from Olivine City."
 
@@ -1416,8 +1452,9 @@ ElmGiveTicketText2:
 	done
 
 LyraAnnouncesGymChallengeText:
-	text "Lyra: There you"
-	line "are, <PLAYER>!"
+	ntag "Lyra"
+	text "There you are,"
+	line "<PLAYER>!"
 
 	para "I saw your battle"
 	line "with the Champion"
@@ -1451,7 +1488,8 @@ LyraAnnouncesGymChallengeText:
 	done
 
 ElmAfterTicketText:
-	text "Elm: Well then,"
+	ntag "Elm"
+	text "Well then,"
 	line "<PLAYER>, you both"
 	cont "have your own"
 	cont "journeys now."
@@ -1465,18 +1503,21 @@ ElmAfterTicketText:
 	done
 
 AideText_GiveYouPotion:
+	ntag "Elm's Aide"
 	text "<PLAY_G>, I want"
 	line "you to have this"
 	cont "for your errand."
 	done
 
 AideText_AlwaysBusy:
+	ntag "Elm's Aide"
 	text "There are only two"
 	line "of us, so we're"
 	cont "always busy."
 	done
 
 AideText_TheftTestimony:
+	ntag "Elm's Aide"
 	text "There was a loud"
 	line "noise outside…"
 
@@ -1500,24 +1541,15 @@ AideText_TheftTestimony:
 	cont "itself."
 	done
 
-AideText_GiveYouBalls:
-	text "<PLAY_G>!"
-
-	para "Use these on your"
-	line "#dex quest!"
-	done
-
-AideText_ExplainBalls:
-	text "To add to your"
-	line "#dex, you have"
-	cont "to catch #mon."
-
-	para "Throw # Balls"
-	line "at wild #mon"
-	cont "to get them."
+AideText_EggText:
+	ntag "Elm's Aide"
+	text "I wonder what"
+	line "will hatch from"
+	cont "that Egg?"
 	done
 
 ElmsLabOfficerText1:
+	ntag "Officer"
 	text "I heard a #mon"
 	line "was stolen here."
 
@@ -1532,6 +1564,7 @@ ElmsLabOfficerText1:
 	done
 
 ElmsLabOfficerText2:
+	ntag "Officer"
 	text "What?"
 
 	para "You battled a"
@@ -1542,6 +1575,7 @@ ElmsLabOfficerText2:
 	done
 
 ElmsLabOfficerText3:
+	ntag "Officer"
 	text "OK! So <RIVAL>"
 	line "was his name."
 
@@ -1550,14 +1584,16 @@ ElmsLabOfficerText3:
 	done
 
 ElmsLabLyraWhichPokemonText:
+	ntag "Lyra"
 	text "Which #mon are"
 	line "you going to pick,"
 	cont "<PLAYER>?"
 	done
 
 LyraChoosesStarterText:
-	text "Lyra: Then I'll"
-	line "pick this one!"
+	ntag "Lyra"
+	text "Then I'll pick"
+	line "this one!"
 	done
 
 LyraReceivedChikoritaText:
@@ -1576,61 +1612,72 @@ LyraReceivedTotodileText:
 	done
 
 LyraNicknamedChikoritaText:
-	text "Lyra: It's so"
-	line "cute! I'll nick-"
-	cont "name it Chicory!"
+	ntag "Lyra"
+	text "It's so cute!"
+	line "I'll nickname it"
+	cont "Chicory!"
 	done
 
 LyraNicknamedCyndaquilText:
-	text "Lyra: It's so"
-	line "cute! I'll nick-"
-	cont "name it Cinder!"
+	ntag "Lyra"
+	text "It's so cute!"
+	line "I'll nickname it"
+	cont "Cinder!"
 	done
 
 LyraNicknamedTotodileText:
-	text "Lyra: It's so"
-	line "cute! I'll nick-"
-	cont "name it Toto!"
+	ntag "Lyra"
+	text "It's so cute!"
+	line "I'll nickname it"
+	cont "Toto!"
 	done
 
 ElmsLabLyraGoodChoiceText:
+	ntag "Lyra"
 	text "Your #mon"
 	line "looks cute too!"
 	done
 
 ElmsLabLyraPlayerWaitText:
-	text "Lyra: <PLAYER>!"
+	ntag "Lyra"
+	text "<PLAYER>!"
 	line "Wait up!"
 	done
 
 ElmsLabLyraChallengeText:
+	ntag "Lyra"
 	text "Let's get to know"
 	line "our #mon with"
 	cont "a battle!"
 	done
 
 ElmsLabLyraWinText:
+	ntag "Lyra"
 	text "Good job,"
 	line "<PLAYER>!"
 	done
 
 ElmsLabLyraLossText:
+	ntag "Lyra"
 	text "Yay! I won!"
 	done
 
 ElmsLabLyraText_YouWon:
 ElmsLabLyraText_YouLost:
+	ntag "Lyra"
 	text "That was an"
 	line "exciting battle!"
 	done
 
 ElmsLabLyraThankYouText:
+	ntag "Lyra"
 	text "Thank you for the"
 	line "#mon, Prof."
 	cont "Elm."
 	done
 
 ElmsLabLyraSeeYouText:
+	ntag "Lyra"
 	text "<PLAYER>, I'll"
 	line "see you later!"
 
@@ -1639,7 +1686,8 @@ ElmsLabLyraSeeYouText:
 	done
 
 ElmsLabLyraTheftInnocentText:
-	text "Lyra: Hold on!"
+	ntag "Lyra"
+	text "Hold on!"
 	line "<PLAYER> has noth-"
 	cont "ing to do with it!"
 
@@ -1649,10 +1697,11 @@ ElmsLabLyraTheftInnocentText:
 	done
 
 ElmsLabLyraTheftGoodbyeText:
-	text "Lyra: <PLAYER>,"
-	line "I'm glad he under-"
+	ntag "Lyra"
+	text "<PLAYER>, I'm"
+	line "glad he understood"
 
-	para "stood that you're"
+	para "that you're"
 	line "innocent."
 
 	para "I hope he makes"

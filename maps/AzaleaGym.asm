@@ -665,17 +665,16 @@ AzaleaGymPit2ENoRedMovement:
 	step_end
 
 BugsyText_INeverLose:
+	ntag "Bugsy"
 	text "I'm Bugsy!"
 	line "I never lose when"
-
-	para "it comes to bug"
-	line "#mon."
+	cont "it comes to bug"
+	cont "#mon."
 
 	para "My research is"
 	line "going to make me"
-
-	para "the authority on"
-	line "bug #mon!"
+	cont "the authority on"
+	cont "bug #mon!"
 
 	para "Let me demonstrate"
 	line "what I've learned"
@@ -683,6 +682,7 @@ BugsyText_INeverLose:
 	done
 
 BugsyText_ResearchIncomplete:
+	ntag "Bugsy"
 	text "Whoa, amazing!"
 	line "You're an expert"
 	cont "on #mon!"
@@ -700,29 +700,29 @@ Text_ReceivedHiveBadge:
 	done
 
 BugsyText_HiveBadgeSpeech:
+	ntag "Bugsy"
 	text "Do you know the"
 	line "benefits of the"
 	cont "HiveBadge?"
 
 	para "If you have it,"
 	line "#mon up to L30"
+	cont "will obey you,"
+	cont "even traded ones."
 
-	para "will obey you,"
-	line "even traded ones."
-
-	para "#mon that know"
-	line "Cut will be able"
-
-	para "to use it outside"
-	line "of battle too."
+	para "#mon will be"
+	line "able to use Cut"
+	cont "outside of battle"
+	cont "too."
 
 	para "Here, I also want"
 	line "you to have this."
 	done
 
 BugsyText_FuryCutterSpeech:
-	text "Bugsy: TM49 con-"
-	line "tains Fury Cutter."
+	ntag "Bugsy"
+	text "TM49 contains"
+	line "Fury Cutter."
 
 	para "If you don't miss,"
 	line "it gets stronger"
@@ -737,17 +737,18 @@ BugsyText_FuryCutterSpeech:
 	done
 
 BugsyText_BugMonsAreDeep:
+	ntag "Bugsy"
 	text "Bug #mon are"
 	line "deep. There are"
-
-	para "many mysteries to"
-	line "be explored."
+	cont "many mysteries to"
+	cont "be explored."
 
 	para "Study your favor-"
 	line "ites thoroughly."
 	done
 	
 BugsyRematchIntroText:
+	ntag "Bugsy"
 	text "Oh, <PLAYER>!"
 	line "You're here!"
 	
@@ -756,11 +757,13 @@ BugsyRematchIntroText:
 	done
 	
 BugsyWinLossRematchText:
+	ntag "Bugsy"
 	text "Aww, that's the"
 	line "end of it…"
 	done
 	
 BugsyRematchAfterBattleText:
+	ntag "Bugsy"
 	text "Woah, I thought"
 	line "I had done enough"
 	cont "research!"
@@ -773,6 +776,7 @@ BugsyRematchAfterBattleText:
 	done
 	
 Bugsy16IntroText:
+	ntag "Bugsy"
 	text "It's <PLAYER>!"
 	
 	para "You've been doing"
@@ -792,6 +796,7 @@ Bugsy16IntroText:
 	done
 	
 Bugsy16AfterBattleText:
+	ntag "Bugsy"
 	text "Wow!"
 	line "I learned a lot"
 	cont "from that battle!"
@@ -802,12 +807,14 @@ Bugsy16AfterBattleText:
 	done
 
 BugsyComeBackTomorrowText:
+	ntag "Bugsy"
 	text "We just battled"
 	line "today, come back"
 	cont "tomorrow, ok?"
 	done
 	
 BugsyNextTimeText:
+	ntag "Bugsy"
 	text "You can come"
 	line "back anytime!"
 	done
@@ -931,9 +938,8 @@ AzaleaGymGuideText:
 
 	para "Bugsy's young, but"
 	line "his knowledge of"
-
-	para "bug #mon is for"
-	line "real."
+	cont "bug #mon is for"
+	cont "real."
 
 	para "It's going to be"
 	line "tough without my"
@@ -951,9 +957,8 @@ AzaleaGymGuideText:
 AzaleaGymGuideWinText:
 	text "Well done! That"
 	line "was a great clash"
-
-	para "of talented young"
-	line "trainers."
+	cont "of talented young"
+	cont "trainers."
 
 	para "With people like"
 	line "you, the future of"
@@ -961,8 +966,8 @@ AzaleaGymGuideWinText:
 	done
 	
 ScytherText:
-	text "Scyther: Scyth!"
-	line "Scytherrrr!"
+	ntag "Scyther"
+	text "Scyth! Scytherrr!"
 	done
 
 AzaleaGymBlueButtonText:

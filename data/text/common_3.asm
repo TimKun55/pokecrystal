@@ -1,9 +1,11 @@
 _OakText6::
+	ntag "Prof.Oak"
 	text "Now, what did you"
 	line "say your name was?"
 	prompt
 
 _OakText7::
+	ntag "Prof.Oak"
 	text "<PLAYER>, are you"
 	line "ready?"
 

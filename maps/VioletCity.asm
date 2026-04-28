@@ -222,10 +222,11 @@ Text_FollowEarl:
 	text "Is that so?"
 	line "Then study first"
 	cont "shall you!"
-	cont "Follow me!"
+	cont "Follow Earl!"
 	done
 
 Text_HereTeacherIAm:
+	ntag "Earl"
 	text "Here, teacher I"
 	line "am. Good it is"
 	cont "you study here!"

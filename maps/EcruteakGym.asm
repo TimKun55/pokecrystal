@@ -440,6 +440,7 @@ MarthaToPlayerMovement:
 	step_end
 
 MortyIntroText:
+	ntag "Morty"
 	text "Good of you to"
 	line "have come."
 
@@ -477,6 +478,7 @@ MortyIntroText:
 	done
 
 MortyWinLossText:
+	ntag "Morty"
 	text "I'm not good"
 	line "enough yet…"
 
@@ -490,6 +492,7 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
+	ntag "Morty"
 	text "By having the Fog-"
 	line "Badge, #mon up"
 	cont "to L50 will obey"
@@ -505,8 +508,8 @@ MortyText_FogBadgeSpeech:
 	done
 
 MortyText_ShadowBallSpeech:
-	text "Morty: It's"
-	line "Shadow Ball."
+	ntag "Morty"
+	text "It's Shadow Ball."
 
 	para "It causes damage"
 	line "and may reduce"
@@ -517,6 +520,7 @@ MortyText_ShadowBallSpeech:
 	done
 
 MortyFightDoneText:
+	ntag "Morty"
 	text "I see…"
 
 	para "Your journey has"
@@ -532,6 +536,7 @@ MortyFightDoneText:
 	done
 	
 MortyRematchIntroText:
+	ntag "Morty"
 	text "Hello, <PLAYER>!"
 	line "Welcome back."
 	
@@ -540,10 +545,12 @@ MortyRematchIntroText:
 	done
 	
 MortyWinLossRematchText:
+	ntag "Morty"
 	text "Still so strong."
 	done
 	
 MortyRematchAfterBattleText:
+	ntag "Morty"
 	text "That was a great"
 	line "battle, but just"
 	cont "wait, I'm going to"
@@ -555,6 +562,7 @@ MortyRematchAfterBattleText:
 	done
 	
 Morty16IntroText:
+	ntag "Morty"
 	text "<PLAYER>."
 	line "You've done it."
 	
@@ -570,6 +578,7 @@ Morty16IntroText:
 	done
 	
 Morty16AfterBattleText:
+	ntag "Morty"
 	text "Impressive."
 	line "I didn't think our"
 	cont "potentials are so"
@@ -581,12 +590,14 @@ Morty16AfterBattleText:
 	done
 
 MortyComeBackTomorrowText:
+	ntag "Morty"
 	text "You should come"
 	line "back tomorrow for"
 	cont "a rematch."
 	done
 	
 MortyNextTimeText:
+	ntag "Morty"
 	text "No problem."
 	line "Come back if you'd"
 	cont "like a rematch."
@@ -697,8 +708,8 @@ EcruteakGymClosedText:
 	done
 	
 GengarText:
-	text "Gengar: Gen!!"
-	line "GengarGen!"
+	ntag "Gengar"
+	text "Gen! GengarGen!"
 	done
 
 EcruteakGym_MapEvents:

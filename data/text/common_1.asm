@@ -238,6 +238,7 @@ _OakTimeNappedText::
 	done
 
 _OakTimeWhatDayIsItText::
+	ntag "Mum"
 	text "What day is it?"
 	done
 

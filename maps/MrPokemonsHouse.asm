@@ -182,6 +182,7 @@ MrPokemonsHouse_OakExits:
 	step_end
 
 MrPokemonIntroText1:
+	ntag "Mr.#mon"
 	text "Hello, hello! You"
 	line "must be <PLAY_G>."
 
@@ -190,6 +191,7 @@ MrPokemonIntroText1:
 	done
 
 MrPokemonIntroText2:
+	ntag "Mr.#mon"
 	text "This is what I"
 	line "want Prof.Elm to"
 	cont "examine."
@@ -201,6 +203,7 @@ MrPokemonsHouse_GotEggText:
 	done
 
 MrPokemonIntroText3:
+	ntag "Mr.#mon"
 	text "I know a couple"
 	line "who run a #mon"
 	cont "Day-Care service."
@@ -223,17 +226,20 @@ MrPokemonIntroText3:
 	done
 
 MrPokemonIntroText4:
+	ntag "Mr.#mon"
 	text "Even Prof.Oak here"
 	line "recognizes that."
 	done
 
 MrPokemonIntroText5:
+	ntag "Mr.#mon"
 	text "If my assumption"
 	line "is correct, Prof."
 	cont "Elm will know it."
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
+	ntag "Mr.#mon"
 	text "You are returning"
 	line "to Prof.Elm?"
 
@@ -243,11 +249,13 @@ MrPokemonsHouse_MrPokemonHealText:
 	done
 
 MrPokemonText_ImDependingOnYou:
+	ntag "Mr.#mon"
 	text "I'm depending on"
 	line "you!"
 	done
 
 MrPokemonText_AlwaysNewDiscoveries:
+	ntag "Mr.#mon"
 	text "Life is delight-"
 	line "ful! Always, new"
 	cont "discoveries to be"
@@ -255,8 +263,9 @@ MrPokemonText_AlwaysNewDiscoveries:
 	done
 
 MrPokemonsHouse_OakText1:
-	text "Oak: Aha! So"
-	line "you're <PLAY_G>!"
+	ntag "Prof.Oak"
+	text "Aha! So you're"
+	line "<PLAY_G>!"
 
 	para "I'm Oak! A #mon"
 	line "researcher."
@@ -324,6 +333,7 @@ MrPokemonsHouse_GetDexText:
 	done
 
 MrPokemonsHouse_OakText2:
+	ntag "Prof.Oak"
 	text "Go meet many kinds"
 	line "of #mon and"
 	cont "complete that"
@@ -341,6 +351,7 @@ MrPokemonsHouse_OakText2:
 	done
 
 MrPokemonText_GimmeTheScale:
+	ntag "Mr.#mon"
 	text "Hm? That Scale!"
 	line "What's that?"
 	cont "A red Gyarados?"
@@ -357,6 +368,7 @@ MrPokemonText_GimmeTheScale:
 	done
 
 MrPokemonText_Disappointed:
+	ntag "Mr.#mon"
 	text "That's disappoint-"
 	line "ing. That happens"
 	cont "to be very rare."

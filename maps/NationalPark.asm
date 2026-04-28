@@ -367,7 +367,8 @@ NationalParkTeacher2Text:
 	done
 
 NationalParkPersianText:
-	text "Persian: Fufushaa!"
+	ntag "Persian"
+	text "Fufushaa!"
 	done
 
 NationalParkGameboyKidText:
@@ -520,10 +521,10 @@ NationalParkBattleNoticeText:
 NationalParkTrainerTipsText:
 	text "Trainer Tips"
 
-	para "Visit the Mahogany"
-	line "Bakery for items"
-	cont "to power up your"
-	cont "#mon in battle."
+	para "Visit Route 39's"
+	line "Moomoo Farm for"
+	cont "some delicious"
+	cont "Moomoo Milk."
 	done
 
 NationalPark_MapEvents:

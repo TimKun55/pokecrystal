@@ -492,6 +492,7 @@ UndergroundRivalRetreatMovement2:
 	step_end
 
 UndergroundRivalBeforeText:
+	ntag "<RIVAL>"
 	text "Hold it!"
 
 	para "I saw you, so I"
@@ -514,6 +515,7 @@ UndergroundRivalBeforeText:
 	done
 
 UndergroundRivalWinText:
+	ntag "<RIVAL>"
 	text "…Why…"
 	line "Why do I lose?"
 
@@ -527,6 +529,7 @@ UndergroundRivalWinText:
 	done
 
 UndergroundRivalAfterText:
+	ntag "<RIVAL>"
 	text "…I don't under-"
 	line "stand…"
 
@@ -563,6 +566,7 @@ UndergroundRivalAfterText:
 	done
 
 UndergroundRivalLossText:
+	ntag "<RIVAL>"
 	text "Humph. This is my"
 	line "real power, wimp."
 

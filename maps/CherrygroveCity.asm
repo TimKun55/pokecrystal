@@ -118,8 +118,7 @@ CherrygroveRivalSceneNorth:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump .AfterBattle
 
 .Totodile:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
@@ -129,8 +128,7 @@ CherrygroveRivalSceneNorth:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump .AfterBattle
 
 .Chikorita:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
@@ -140,26 +138,13 @@ CherrygroveRivalSceneNorth:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
-
-.AfterVictorious:
+.AfterBattle:
 	special DeleteSavedMusic
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
-	writetext CherrygroveRivalText_YouWon
+	writetext CherrygroveRivalText_AfterBattle
 	waitbutton
 	closetext
-	sjump .FinishRival
-
-.AfterYourDefeat:
-	special DeleteSavedMusic
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext CherrygroveRivalText_YouLost
-	waitbutton
-	closetext
-.FinishRival:
 	playsound SFX_TACKLE
 	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
 	turnobject PLAYER, LEFT
@@ -315,6 +300,7 @@ CherrygroveCity_RivalExitsStageLeft:
 	step_end
 
 GuideGentIntroText:
+	ntag "Guide Gent"
 	text "You're a rookie"
 	line "trainer, aren't"
 	cont "you? I can tell!"
@@ -329,11 +315,13 @@ GuideGentIntroText:
 	done
 
 GuideGentTourText1:
+	ntag "Guide Gent"
 	text "OK, then!"
 	line "Follow me!"
 	done
 
 GuideGentPokecenterText:
+	ntag "Guide Gent"
 	text "This is a #mon"
 	line "Center. They heal"
 	cont "your #mon in no"
@@ -349,6 +337,7 @@ GuideGentPokecenterText:
 	done
 
 GuideGentMartText:
+	ntag "Guide Gent"
 	text "This is a #mon"
 	line "Mart."
 
@@ -362,6 +351,7 @@ GuideGentMartText:
 	done
 
 GuideGentRoute30Text:
+	ntag "Guide Gent"
 	text "Route 30 is out"
 	line "this way."
 
@@ -372,6 +362,7 @@ GuideGentRoute30Text:
 	done
 
 GuideGentSeaText:
+	ntag "Guide Gent"
 	text "This is the sea,"
 	line "as you can see."
 
@@ -381,6 +372,7 @@ GuideGentSeaText:
 	done
 
 GuideGentGiftText:
+	ntag "Guide Gent"
 	text "Here…"
 
 	para "It's my house!"
@@ -397,6 +389,7 @@ GotMapCardText:
 	done
 
 GuideGentPokegearText:
+	ntag "Guide Gent"
 	text "#gear becomes"
 	line "more useful as you"
 	cont "add Cards."
@@ -406,6 +399,7 @@ GuideGentPokegearText:
 	done
 
 GuideGentNoText:
+	ntag "Guide Gent"
 	text "Oh… It's something"
 	line "I enjoy doing…"
 
@@ -414,6 +408,7 @@ GuideGentNoText:
 	done
 
 CherrygroveRivalText_Seen:
+	ntag "???"
 	text "<……> <……> <……>"
 
 	para "You got a #mon"
@@ -435,32 +430,22 @@ CherrygroveRivalText_Seen:
 	done
 
 RivalCherrygroveWinText:
+	ntag "???"
 	text "Humph. Are you"
 	line "happy you won?"
 	done
 
-CherrygroveRivalText_YouLost:
-	text "Oh no! You saw my"
-	line "Trainer Card!"
-	cont "Give that back!"
-	
-	para "<……> <……> <……>"
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #mon"
-	cont "trainer."
-	done
-
 RivalCherrygroveLossText:
+	ntag "???"
 	text "Humph. That was a"
 	line "waste of time."
 	done
 
-CherrygroveRivalText_YouWon:
+CherrygroveRivalText_AfterBattle:
+	ntag "???"
 	text "Oh no! You saw my"
 	line "Trainer Card!"
-	cont "Give that back!!"
+	cont "Give that back!"
 	
 	para "<……> <……> <……>"
 
