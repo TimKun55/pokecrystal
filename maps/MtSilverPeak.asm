@@ -16,11 +16,11 @@ Red:
 	special FadeOutMusic
 	faceplayer
 	opentext
-	writetext RedSeenText
-	waitbutton
-	closetext
 	checkevent EVENT_BEAT_RED
 	iftrue .RedRematch
+	writetext RedNoNtagText
+	waitbutton
+	closetext
 	winlosstext RedWinLossText, RedWinLossText
 	loadtrainer RED, RED1
 	startbattle
@@ -30,7 +30,7 @@ Red:
 	setevent EVENT_BEAT_RED
 .FinishBattle:
 	opentext
-	writetext RedLeavesText
+	writetext RedNtagText
 	waitbutton
 	closetext
 	special FadeOutToBlack
@@ -46,6 +46,9 @@ Red:
 	end
 
 .RedRematch:
+	writetext RedNtagText
+	waitbutton
+	closetext
 	winlosstext RedWinLossText, RedWinLossText
 	loadtrainer RED, RED2
 	startbattle
@@ -75,22 +78,25 @@ MtSilverPeakMaxRevive:
 MtSilverPeakMaxFullRestore:
 	itemball FULL_RESTORE
 
-RedSeenText:
+RedNoNtagText:
 	text "<……>"
 	line "<……>"
 	done
 
 RedWinLossText:
+	ntag "Red"
 	text "…"
 	done
 
-RedLeavesText:
+RedNtagText:
+	ntag "Red"
 	text "<……>"
 	line "<……>"
 	done
 	
 PikachuText:
-	text "Pikachu: Piii!!"
+	ntag "Pikachu"
+	text "Piii!"
 	done
 
 MtSilverPeak_MapEvents:

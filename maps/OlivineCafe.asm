@@ -56,11 +56,6 @@ OlivineCafeSailorScript:
 
 OlivineCafeLyraLeavesRightMovement:
 	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-	
 OlivineCafeLyraLeavesMovement:
 	step DOWN
 	step DOWN
@@ -92,7 +87,8 @@ OlivineCafeStrengthSailorText_GotStrength:
 	done
 
 OlivineCafeLyraText1:
-	text "Lyra: Hi, <PLAYER>!"
+	ntag "Lyra"
+	text "Hi, <PLAYER>!"
 	line "You should try the"
 	cont "food here. It's"
 	cont "really good!"
@@ -108,6 +104,7 @@ OlivineCafeLyraText1:
 	done
 
 OlivineCafeLyraText2:
+	ntag "Lyra"
 	text "Isn't it pretty?"
 	line "And useful, too."
 
@@ -125,6 +122,7 @@ OlivineCafeLyraText2:
 	done
 
 NoRoomForAmuletCoinText:
+	ntag "Lyra"
 	text "Aww, <PLAYER>,"
 	line "you'll need to"
 	cont "make some room."

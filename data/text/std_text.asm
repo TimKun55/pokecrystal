@@ -429,7 +429,7 @@ RegisteredNumber2Text:
 
 PokeCenterChanseyText:
 	ntag "Chansey"
-	text "Chansey!!"
+	text "Chansey!"
 	done
 
 VendingMachineText:

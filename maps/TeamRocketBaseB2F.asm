@@ -540,6 +540,7 @@ ArianaThrashText:
 	done
 
 RocketBaseLanceShareFunText:
+	ntag "Lance"
 	text "Hey! Don't be so"
 	line "selfish. Spread"
 	cont "the fun around."
@@ -600,11 +601,11 @@ ArianaRetreatText:
 	done
 
 RocketBaseLancePostBattleText:
-	text "Lance: That did"
-	line "it. We defeated"
+	ntag "Lance"
+	text "That did it."
 
-	para "all the Rockets"
-	line "here."
+	para "We defeated all"
+	line "the Rockets here."
 
 	para "But I'm concerned"
 	line "about the young"
@@ -613,6 +614,7 @@ RocketBaseLancePostBattleText:
 	done
 
 RocketBaseLancePowerOffText:
+	ntag "Lance"
 	text "Sorry, <PLAY_G>."
 	line "I saw how well you"
 	cont "were doing, so I"
@@ -625,6 +627,7 @@ RocketBaseLancePowerOffText:
 	done
 
 RockerBaseLanceElectrodeFaintText:
+	ntag "Lance"
 	text "It's this machine"
 	line "that's causing all"
 	cont "the problems."
@@ -652,13 +655,15 @@ RockerBaseLanceElectrodeFaintText:
 	done
 
 RocketBaseLancesSideText:
-	text "Lance: Leave this"
-	line "side to me."
+	ntag "Lance"
+	text "Leave this side"
+	line "to me."
 	done
 
 RocketBaseLanceElectrodeDoneText:
-	text "Lance: That odd"
-	line "signal has finally"
+	ntag "Lance"
+	text "That odd signal"
+	line "has finally"
 	cont "stopped."
 
 	para "The Lake should be"
@@ -671,6 +676,7 @@ RocketBaseLanceElectrodeDoneText:
 	done
 
 RocketBaseLanceMonMasterText:
+	ntag "Lance"
 	text "<PLAY_G>…"
 
 	para "The journey to be-"
@@ -698,8 +704,8 @@ RocketBaseLanceMonMasterText:
 	done
 
 LanceHealsText1:
-	text "Lance: Are you all"
-	line "right?"
+	ntag "Lance"
+	text "Are you all right?"
 
 	para "Your #mon are"
 	line "hurt and tired."
@@ -710,9 +716,10 @@ LanceHealsText1:
 	done
 
 LanceHealsText2:
-	text "Lance: <PLAY_G>,"
-	line "let's give it our"
-	cont "best for #mon."
+	ntag "Lance"
+	text "<PLAY_G>, let's"
+	line "give it our best"
+	cont "for #mon."
 	done
 
 GruntM17SeenText:

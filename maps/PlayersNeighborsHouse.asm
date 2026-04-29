@@ -106,7 +106,7 @@ PlayersNeighborText:
 	
 PlayersNeighborMagnemiteText:
 	ntag "Magnemite"
-	text "Mag! MiteMagne!!"
+	text "Mag! MiteMagne!"
 	done
 
 PlayersNeighborPikachuText:

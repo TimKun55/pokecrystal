@@ -365,7 +365,8 @@ Route42LyraLeave:
 	step_end
 
 Route42LyraGreetingText:
-	text "Lyra: Hi, <PLAYER>!"
+	ntag "Lyra"
+	text "Hi, <PLAYER>!"
 
 	para "What a coinci-"
 	line "dence. I was just"
@@ -386,17 +387,20 @@ Route42LyraGreetingText:
 	done
 
 Route42LyraWinText:
+	ntag "Lyra"
 	text "You've earned this"
 	line "gift!"
 	done
 
 Route42LyraLossText:
+	ntag "Lyra"
 	text "Better luck next"
 	line "time…"
 	done
 
 Route42LyraPresentText:
-	text "Lyra: Wow, you're"
+	ntag "Lyra"
+	text "Wow, you're"
 	line "getting really"
 	cont "strong, <PLAYER>!"
 
@@ -409,8 +413,8 @@ Route42LyraPresentText:
 	done
 
 Route42LyraWhirlpoolText:
-	text "Lyra: That's"
-	line "Whirlpool."
+	ntag "Lyra"
+	text "That's Whirlpool."
 
 	para "Teach it to a"
 	line "#mon to get"

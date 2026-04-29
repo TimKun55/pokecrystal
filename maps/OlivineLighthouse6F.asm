@@ -220,10 +220,15 @@ OlivineLighthouse6FElevatorSailorMovement:
 	step_end
 
 JasmineCianwoodPharmacyText:
-	text "Jasmine: … This"
-	line "#mon always"
-	cont "kept the sea lit"
-	cont "at night."
+	text " … oh, hello.@"
+	text_promptbutton
+
+	ntag "Jasmine"
+	text "I'm Jasmine … "
+
+	para " … This #mon"
+	line "always kept the"
+	cont "sea lit at night."
 
 	para "…But it suddenly"
 	line "got sick… It's"
@@ -242,14 +247,16 @@ JasmineCianwoodPharmacyText:
 	done
 
 JasmineGetSomeMedicineText:
+	ntag "Jasmine"
 	text "…May I ask you to"
 	line "get some medicine"
 	cont "for me? Please?"
 	done
 
 JasmineCureAmphyText:
-	text "Jasmine: …Will"
-	line "that medicine cure"
+	ntag "Jasmine"
+	text " …Will that"
+	line "medicine cure"
 	cont "Amphy?"
 	done
 
@@ -260,9 +267,9 @@ PlayerHandedSecretpotionText:
 	done
 
 JasmineDontBeOffendedText:
-	text "Jasmine: …Um,"
-	line "please don't be"
-	cont "offended…"
+	ntag "Jasmine"
+	text " …Um, please don't"
+	line "be offended…"
 
 	para "…Amphy will not"
 	line "take anything from"
@@ -270,15 +277,17 @@ JasmineDontBeOffendedText:
 	done
 
 JasmineAmphyHowAreYouFeelingText:
-	text "Jasmine: …"
+	ntag "Jasmine"
+	text " …"
 
 	para "Amphy, how are you"
 	line "feeling?"
 	done
 
 JasmineThankYouText:
-	text "Jasmine: …Oh, I'm"
-	line "so relieved…"
+	ntag "Jasmine"
+	text " …Oh, I'm so"
+	line "relieved…"
 
 	para "This is just so"
 	line "wonderful…"
@@ -291,15 +300,18 @@ JasmineThankYouText:
 	done
 
 JasmineISeeText:
-	text "Jasmine: …I see…"
+	ntag "Jasmine"
+	text " …I see…"
 	done
 
 JasmineAmphyHangOnText:
+	ntag "Jasmine"
 	text "…Amphy, hang on!"
 	done
 
 AmphyPalPalooText:
-	text "Amphy: …"
+	ntag "Amphy"
+	text " …"
 	line "…Pa… paloo…"
 	done
 
@@ -309,8 +321,8 @@ AmphyBreathingLaboredText:
 	done
 
 AmphyPaluPaluluText:
-	text "Amphy: Palu!"
-	line "Palulu!"
+	ntag "Amphy"
+	text "Palu! Palulu!"
 	done
 
 ElevatorSailorFixedText:

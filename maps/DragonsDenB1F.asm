@@ -154,20 +154,23 @@ MovementDragonsDen_ClairWalksAway:
 	step_end
 
 ClairText_Wait:
+	ntag "???"
 	text "Wait!"
 	done
 
 ClairText_GiveDragonbreathDragonDen:
-	text "Clair: I'm sorry"
-	line "about this."
+	ntag "Clair"
+	text "I'm sorry about"
+	line "this."
 
 	para "Here, take this as"
 	line "my apology."
 	done
 
 ClairText_DescribeDragonbreathDragonDen:
-	text "Clair: That cont-"
-	line "ains DragonBreath."
+	ntag "Clair"
+	text "That contains"
+	line "DragonBreath."
 
 	para "No, it doesn't"
 	line "have anything to"
@@ -179,6 +182,7 @@ ClairText_DescribeDragonbreathDragonDen:
 	done
 
 ClairText_WhatsTheMatterDragonDen:
+	ntag "Clair"
 	text "What's the matter?"
 	line "Aren't you going"
 
@@ -220,6 +224,7 @@ DragonShrineSignpostText:
 	done
 
 RivalText_Training1:
+	ntag "<RIVAL>"
 	text "…"
 	line "What? <PLAYER>?"
 
@@ -239,6 +244,7 @@ RivalText_Training1:
 	done
 
 RivalText_Training2:
+	ntag "<RIVAL>"
 	text "…"
 
 	para "Whew…"
@@ -317,19 +323,6 @@ TwinsLeaandpia2AfterBattleText:
 
 	para "Master will be"
 	line "angry with you."
-	done
-
-Text_FoundDragonFang:
-	text "<PLAYER> found"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
-	done
-
-Text_NoRoomForDragonFang:
-	text "But <PLAYER> can't"
-	line "carry any more"
-	cont "items."
 	done
 
 DragonsDenB1F_MapEvents:

@@ -491,7 +491,7 @@ NewBarkTownLyraGoodbyeText2:
 	
 NewBarkTownHoothootText:
 	ntag "Hoothoot"
-	text "Hoo!!"
+	text "Hoo!"
 	done
 
 NewBarkTownPidgeyText:

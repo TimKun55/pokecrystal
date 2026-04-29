@@ -155,6 +155,7 @@ BlackthornGymStatue:
 	jumpstd GymStatue3Script
 
 ClairIntroText:
+	ntag "Clair"
 	text "I am Clair."
 
 	para "The world's best"
@@ -178,6 +179,7 @@ ClairIntroText:
 	done
 
 ClairWinText:
+	ntag "Clair"
 	text "I lost?"
 
 	para "I don't believe"
@@ -186,6 +188,7 @@ ClairWinText:
 	done
 
 ClairText_GoToDragonsDen:
+	ntag "Clair"
 	text "I won't admit"
 	line "this."
 
@@ -218,6 +221,7 @@ ClairText_GoToDragonsDen:
 	done
 
 ClairText_TooMuchToExpect:
+	ntag "Clair"
 	text "What's the matter?"
 
 	para "Is it too much to"
@@ -225,6 +229,7 @@ ClairText_TooMuchToExpect:
 	done
 
 BlackthornGymClairText_YouKeptMeWaiting:
+	ntag "Clair"
 	text "You've kept me"
 	line "waiting!"
 
@@ -232,8 +237,9 @@ BlackthornGymClairText_YouKeptMeWaiting:
 	done
 
 BlackthornGymClairText_DescribeTM24:
-	text "Clair: That cont-"
-	line "ains DragonBreath."
+	ntag "Clair"
+	text "That contains"
+	line "DragonBreath."
 
 	para "No, it doesn't"
 	line "have anything to"
@@ -245,6 +251,7 @@ BlackthornGymClairText_DescribeTM24:
 	done
 
 BlackthornGymClairText_League:
+	ntag "Clair"
 	text "What's the matter?"
 
 	para "Aren't you headed"
@@ -275,6 +282,7 @@ BlackthornGymClairText_League:
 	done
 	
 ClairRematchIntroText:
+	ntag "Clair"
 	text "<PLAYER>."
 	line "You're here."
 	
@@ -283,10 +291,12 @@ ClairRematchIntroText:
 	done
 	
 ClairWinLossRematchText:
+	ntag "Clair"
 	text "Its over…"
 	done
 	
 ClairRematchAfterBattleText:
+	ntag "Clair"
 	text "You haven't been"
 	line "slacking off."
 	cont "Good."
@@ -297,6 +307,7 @@ ClairRematchAfterBattleText:
 	done
 	
 Clair16IntroText:
+	ntag "Clair"
 	text "<PLAYER>."
 	line "You've done it."
 	
@@ -316,6 +327,7 @@ Clair16IntroText:
 	done
 	
 Clair16AfterBattleText:
+	ntag "Clair"
 	text "Well, that's it."
 	line "My #mon and I"
 	cont "gave it our all."
@@ -328,12 +340,14 @@ Clair16AfterBattleText:
 	done
 
 ClairComeBackTomorrowText:
+	ntag "Clair"
 	text "Come back tomorrow"
 	line "and we can have"
 	cont "another match."
 	done
 
 ClairNextTimeText:
+	ntag "Clair"
 	text "I see."
 	done
 
@@ -435,8 +449,8 @@ BlackthornGymGuideWinText:
 	done
 
 KingdraText:
-	text "Kingdra: Dra!!"
-	line "DraKingdra!"
+	ntag "Kingdra"
+	text "Dra! DraKingdra!"
 	done
 
 BlackthornGym1F_MapEvents:

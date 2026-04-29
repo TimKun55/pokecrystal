@@ -273,8 +273,8 @@ CianwoodCityLassText:
 	done
 
 EusineSuicuneText:
-	text "Eusine: Yo,"
-	line "<PLAYER>."
+	ntag "Eusine"
+	text "Yo, <PLAYER>."
 
 	para "Wasn't that"
 	line "Suicune just now?"
@@ -309,11 +309,13 @@ EusineSuicuneText:
 	done
 
 EusineBeatenText:
+	ntag "Eusine"
 	text "I hate to admit"
 	line "it, but you win."
 	done
 
 EusineAfterText:
+	ntag "Eusine"
 	text "You're amazing,"
 	line "<PLAYER>!"
 

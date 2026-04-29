@@ -184,6 +184,7 @@ MahoganyGymStatue:
 	jumpstd GymStatue3Script
 
 PryceText_Intro:
+	ntag "Pryce"
 	text "#mon have many"
 	line "experiences in"
 	cont "their lives, just "
@@ -212,6 +213,7 @@ PryceText_Intro:
 	done
 
 PryceText_Impressed:
+	ntag "Pryce"
 	text "Ah, I am impressed"
 	line "by your prowess."
 
@@ -230,6 +232,7 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
+	ntag "Pryce"
 	text "The GlacierBadge"
 	line "will let your"
 	cont "#mon use Whirl-"
@@ -241,8 +244,9 @@ PryceText_GlacierBadgeSpeech:
 	done
 
 PryceText_IcyWindSpeech:
-	text "Pryce: That TM "
-	line "contains Icy Wind."
+	ntag "Pryce"
+	text "That TM contains"
+	line "Icy Wind."
 
 	para "It inflicts damage"
 	line "and lowers speed."
@@ -253,6 +257,7 @@ PryceText_IcyWindSpeech:
 	done
 
 PryceText_CherishYourPokemon:
+	ntag "Pryce"
 	text "When the ice and"
 	line "snow melt, spring"
 	cont "arrives."
@@ -267,6 +272,7 @@ PryceText_CherishYourPokemon:
 	done
 
 PryceRematchIntroText:
+	ntag "Pryce"
 	text "<PLAYER>."
 	line "You've returned."
 	
@@ -275,12 +281,14 @@ PryceRematchIntroText:
 	done
 	
 PryceWinLossRematchText:
+	ntag "Pryce"
 	text "Hmm."
 	line "Seems as if my"
 	cont "luck has run out."
 	done
 	
 PryceRematchAfterBattleText:
+	ntag "Pryce"
 	text "A wonderful"
 	line "battle."
 	
@@ -290,6 +298,7 @@ PryceRematchAfterBattleText:
 	done
 	
 Pryce16IntroText:
+	ntag "Pryce"
 	text "<PLAYER>."
 	line "You have done it."
 	
@@ -315,6 +324,7 @@ Pryce16IntroText:
 	done
 	
 Pryce16AfterBattleText:
+	ntag "Pryce"
 	text "As your elder, it"
 	line "makes me truly"
 	cont "happy to see"
@@ -326,12 +336,14 @@ Pryce16AfterBattleText:
 	done
 
 PryceComeBackTomorrowText:
+	ntag "Pryce"
 	text "Return tomorrow"
 	line "and we shall"
 	cont "battle again."
 	done
 	
 PryceNextTimeText:
+	ntag "Pryce"
 	text "I understand."
 	line "Come back when"
 	cont "you're able."
@@ -467,13 +479,13 @@ MahoganyGymGuideWinText:
 	done
 
 PiloswineText:
-	text "Piloswine: Lo!!"
-	line "PiloPilo!"
+	ntag "Piloswine"
+	text "Lo! PiloPilo!"
 	done
 	
 MamoswineText:
-	text "Mamoswine: Mooo!"
-	line "Mammooo!"
+	ntag "Mamoswine"
+	text "Mooo! Mammooo!"
 	done
 
 MahoganyGym_MapEvents:

@@ -314,6 +314,7 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	done
 
 PlateauRivalText1:
+	ntag "<RIVAL>"
 	text "Hold it."
 
 	para "You're going to"
@@ -334,12 +335,14 @@ PlateauRivalText1:
 	done
 
 PlateauRivalWinText:
+	ntag "<RIVAL>"
 	text "…"
 
 	para "OK--I lost…"
 	done
 
 PlateauRivalText2:
+	ntag "<RIVAL>"
 	text "…Darn… I still"
 	line "can't win…"
 
@@ -352,6 +355,7 @@ PlateauRivalText2:
 	done
 
 PlateauRivalLoseText:
+	ntag "<RIVAL>"
 	text "…"
 
 	para "Whew…"
@@ -361,6 +365,7 @@ PlateauRivalLoseText:
 	done
 
 PlateauLyraText1:
+	ntag "Lyra"
 	text "<PLAYER>!"
 
 	para "I've been travel-"
@@ -386,20 +391,24 @@ PlateauLyraText1:
 	done
 
 PlateauLyraText2:
+	ntag "Lyra"
 	text "as the #mon"
 	line "League Champion!"
 	done
 
 PlateauLyraWinText:
+	ntag "Lyra"
 	text "So you're still"
 	line "stronger than me…"
 	done
 
 PlateauLyraLoseText:
+	ntag "Lyra"
 	text "…I won?"
 	done
 
 PlateauLyraText3:
+	ntag "Lyra"
 	text "I'm not angry that"
 	line "I lost."
 
@@ -451,7 +460,8 @@ TeleportGuyNoText:
 	done
 
 AbraText:
-	text "Abra: Aabraa…"
+	ntag "Abra"
+	text "Aabraa…"
 	done
 	
 IndigoPlateauPokecenter1FTutorIntroText:

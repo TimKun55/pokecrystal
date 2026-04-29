@@ -77,6 +77,7 @@ OlivinePortPassagePlayerStepsBackMovement:
 	step_end
 
 OlivinePortPassageAskBoardText:
+	ntag "Sailor"
 	text "Welcome to Fast"
 	line "Ship S.S.Aqua."
 
@@ -85,24 +86,29 @@ OlivinePortPassageAskBoardText:
 	done
 
 OlivinePortPassageAskTicketText:
+	ntag "Sailor"
 	text "May I see your"
 	line "S.S.Ticket?"
 	done
 
 OlivinePortPassageComeAgainText:
+	ntag "Sailor"
 	text "We hope to see you"
 	line "again!"
 	done
 
 OlivinePortPassageFlashTicketText:
 	text "<PLAYER> showed"
-	line "the Trainer Card."
+	line "the Trainer Card.@"
+	text_promptbutton
 
-	para "That's it."
+	ntag "Sailor"
+	text "That's it."
 	line "Thank you!"
 	done
 
 OlivinePortPassageGoOnThroughText:
+	ntag "Sailor"
 	text "I've seen your"
 	line "Ticket. Please, go"
 	cont "on through."
@@ -113,9 +119,11 @@ OlivinePortPassageNoTicketText:
 	line "show the S.S."
 	cont "Ticket…"
 
-	para "…But no Ticket!"
+	para "…But no Ticket!@"
+	text_promptbutton
 
-	para "Sailor: Sorry!"
+	ntag "Sailor"
+	para "Sorry!"
 	line "You may board only"
 
 	para "if you have an"
@@ -127,10 +135,6 @@ OlivinePortPassagePokefanMText:
 	line "sails to Kanto on"
 	cont "Mondays and Fri-"
 	cont "days."
-	done
-
-YoungsterTake:
-	text "Hi! Take this."
 	done
 
 OlivinePortPassage_MapEvents:

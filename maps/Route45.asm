@@ -474,15 +474,6 @@ CooltrainerfKellyAfterBattleText:
 	cont "to harm #mon."
 	done
 
-Route45DummyText:
-	text "I'm really, really"
-	line "tough!"
-
-	para "Is there anywhere"
-	line "I can prove how"
-	cont "tough I really am?"
-	done
-
 CamperQuentinSeenText:
 	text "I'm really, really"
 	line "tough!"

@@ -152,9 +152,11 @@ KogaBeforeText:
 	text "Fwahahahaha!"
 
 	para "I am Koga of the"
-	line "Elite Four."
+	line "Elite Four.@"
+	text_promptbutton
 
-	para "I live in shadows,"
+	ntag "Koga"
+	text "I live in shadows,"
 	line "a ninja!"
 
 	para "My intricate style"
@@ -177,12 +179,14 @@ KogaBeforeText:
 	done
 
 KogaBeatenText:
+	ntag "Koga"
 	text "Ah!"
 	line "You have proven"
 	cont "your worth!"
 	done
 
 KogaDefeatText:
+	ntag "Koga"
 	text "I subjected you to"
 	line "everything I could"
 	cont "muster."
@@ -197,6 +201,7 @@ KogaDefeatText:
 	done
 
 KogaChampionMatchBeforeText:
+	ntag "Koga"
 	text "Champion <PLAYER>,"
 	line "welcome back."
 	
@@ -207,17 +212,20 @@ KogaChampionMatchBeforeText:
 	done
 
 KogaChampionMatchBeatenText:
+	ntag "Koga"
 	text "A disappointing"
 	line "but not unexpected"
 	cont "outcome."
 	done
 
 KogaChampionMatchDefeatText:
+	ntag "Koga"
 	text "I shall continue"
 	line "to hone my skills."
 	done
 
 Koga16BadgesBeforeText:
+	ntag "Koga"
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 	
@@ -239,10 +247,12 @@ Koga16BadgesBeforeText:
 	done
 
 Koga16BadgesBeatenText:
+	ntag "Koga"
 	text "Such power."
 	done
 
 Koga16BadgesDefeatText:
+	ntag "Koga"
 	text "So this is how"
 	line "you defeated my"
 	cont "Janine and the"
@@ -256,6 +266,7 @@ Koga16BadgesDefeatText:
 	done
 
 KogaGrandChampionBeforeText:
+	ntag "Koga"
 	text "Grand Champion,"
 	line "<PLAYER>."
 	
@@ -266,17 +277,20 @@ KogaGrandChampionBeforeText:
 	done
 
 KogaGrandChampionBeatenText:
+	ntag "Koga"
 	text "Hmm, another loss."
 	done
 
 KogaGrandChampionDefeatText:
+	ntag "Koga"
 	text "You truly have"
 	line "become one of the"
 	cont "best trainers."
 	done
 
 CrobatText:
-	text "Crobat: Skreee!!"
+	ntag "Crobat"
+	text "Skreee!"
 	done
 
 KogasRoom_MapEvents:

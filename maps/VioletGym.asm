@@ -393,12 +393,12 @@ VioletGymGuideWinText:
 	
 HoothootText:
 	ntag "Hoothoot"
-	text "Hoo!! Hoohoo!"
+	text "Hoo! Hoohoo!"
 	done
 	
 NoctowlText:
 	ntag "Noctowl"
-	text "Noc!! Towwwwl!"
+	text "Noc! Towwwwl!"
 	done
 
 VioletGym_MapEvents:

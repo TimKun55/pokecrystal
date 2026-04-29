@@ -38,7 +38,8 @@ BlackthornDragonSpeechHouseGrannyText:
 	done
 
 BlackthornDragonSpeechHouseDratiniText:
-	text "Dratini: Draa!"
+	ntag "Dratini"
+	text "Draa!"
 	done
 
 BlackthornDragonSpeechHouse_MapEvents:

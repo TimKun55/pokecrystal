@@ -323,8 +323,9 @@ LancesRoomMovementData_MaryRunsBackAndForth:
 	step_end
 
 LanceBattleIntroText:
-	text "Lance: I've been"
-	line "waiting for you."
+	ntag "Lance"
+	text "I've been waiting"
+	line "for you."
 
 	para "<PLAY_G>!"
 
@@ -352,6 +353,7 @@ LanceBattleIntroText:
 	done
 
 LanceBattleWinText:
+	ntag "Lance"
 	text "…It's over."
 
 	para "But it's an odd"
@@ -368,6 +370,7 @@ LanceBattleWinText:
 	done
 
 LanceBattleAfterText:
+	ntag "Lance"
 	text "…Whew."
 
 	para "You have become"
@@ -386,6 +389,7 @@ LanceBattleAfterText:
 	done
 
 LanceChampionBattleIntroText:
+	ntag "Lance"
 	text "Champion <PLAYER>,"
 	line "you're back!"
 	
@@ -398,11 +402,13 @@ LanceChampionBattleIntroText:
 	done
 
 LanceChampionBattleWinText:
+	ntag "Lance"
 	text "I've been bested"
 	line "again!"
 	done
 
 Lance16BadgesBattleIntroText:
+	ntag "Lance"
 	text "Champion <PLAYER>,"
 	line "you're back!"
 	
@@ -427,6 +433,7 @@ Lance16BadgesBattleIntroText:
 	done
 
 LanceGrandChampionBattleIntroText:
+	ntag "Lance"
 	text "Grand Champion"
 	line "<PLAYER>."
 	
@@ -452,12 +459,14 @@ LanceGrandChampionBattleIntroText:
 	done
 
 LanceLetsRegister:
+	ntag "Lance"
 	text "<PLAYER>, let's"
 	line "get you guys"
 	cont "registered again."
 	done
 
 LanceGrandChampFirstTime:
+	ntag "Lance"
 	text "<PLAYER>, you've"
 	line "collected all the"
 	cont "Johto and Kanto"
@@ -478,6 +487,7 @@ LanceGrandChampFirstTime:
 	done
 
 LanceLetsRegisterGrandChamp:
+	ntag "Lance"
 	text "Well done, Grand"
 	line "Champion!"
 	
@@ -486,7 +496,8 @@ LanceLetsRegisterGrandChamp:
 	done
 
 LancesRoomMaryOhNoOakText:
-	text "Mary: Oh, no!"
+	ntag "Mary"
+	text "Oh, no!"
 	line "It's all over!"
 
 	para "Prof.Oak, if you"
@@ -494,8 +505,8 @@ LancesRoomMaryOhNoOakText:
 	done
 
 LancesRoomOakCongratulationsText:
-	text "Prof.Oak: Ah,"
-	line "<PLAY_G>!"
+	ntag "Prof.Oak"
+	text "Ah, <PLAY_G>!"
 
 	para "It's been a long"
 	line "while."
@@ -525,22 +536,25 @@ LancesRoomOakCongratulationsText:
 	done
 
 LancesRoomMaryInterviewText:
-	text "Mary: Let's inter-"
-	line "view the brand new"
+	ntag "Mary"
+	text "Let's interview"
+	line "the brand new"
 	cont "Champion!"
 	done
 
 LancesRoomNoisyText:
-	text "Lance: This is"
-	line "getting to be a"
-	cont "bit too noisy…"
+	ntag "Lance"
+	text "This is getting"
+	line "to be a bit too"
+	cont "noisy…"
 
 	para "<PLAY_G>, could you"
 	line "come with me?"
 	done
 
 LancesRoomMaryNoInterviewText:
-	text "Mary: Oh, wait!"
+	ntag "Mary"
+	text "Oh, wait!"
 	line "We haven't done"
 	cont "the interview!"
 	
@@ -552,7 +566,8 @@ LancesRoomMaryNoInterviewText:
 	done
 	
 DragoniteText:
-	text "Dragonite: Drago!"
+	ntag "Dragonite"
+	text "Drago!"
 	done
 
 LancesRoom_MapEvents:

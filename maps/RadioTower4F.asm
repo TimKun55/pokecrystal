@@ -638,7 +638,7 @@ GruntM10AfterBattleText:
 
 RadioTowerProtonSeenText:
 	ntag "Proton"
-	text "You!! I haven't"
+	text "You! I haven't"
 	line "forgotten the way"
 	cont "you humiliated"
 	cont "us at the Well!"

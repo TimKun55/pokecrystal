@@ -254,7 +254,6 @@ INCLUDE "maps/WillsRoom.asm"
 INCLUDE "maps/KogasRoom.asm"
 INCLUDE "maps/BrunosRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
-INCLUDE "maps/SilphCo1F.asm"
 
 
 SECTION "Map Scripts 14", ROMX
@@ -552,6 +551,7 @@ INCLUDE "maps/Route7.asm"
 
 SECTION "Map Scripts 29", ROMX
 
+INCLUDE "maps/SilphCo1F.asm"
 INCLUDE "maps/BattleTower2F.asm"
 INCLUDE "maps/Route7UndergroundPathEntrance.asm"
 INCLUDE "maps/RocketUndergroundTunnel.asm"

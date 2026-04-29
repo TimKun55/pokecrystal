@@ -471,7 +471,7 @@ GoldenrodGymGuideWinText:
 	
 MiltankText:
 	ntag "Miltank"
-	text "Mooo!!"
+	text "Mooo!"
 	done
 
 GoldenrodGym_MapEvents:

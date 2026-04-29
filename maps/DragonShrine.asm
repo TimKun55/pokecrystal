@@ -558,6 +558,7 @@ DragonShrineElder3Text:
 	done
 
 DragonShrineClairYouPassedText:
+	ntag "Clair"
 	text "So how did it go?"
 
 	para "I guess there's no"
@@ -571,10 +572,12 @@ DragonShrineClairYouPassedText:
 	done
 
 DragonShrineClairThatCantBeText:
+	ntag "Clair"
 	text "That can't be!"
 	done
 
 DragonShrineClairYoureLyingText:
+	ntag "Clair"
 	text "You're lying!"
 
 	para "Even I haven't"
@@ -582,10 +585,12 @@ DragonShrineClairYoureLyingText:
 	done
 
 DragonShrineIUnderstandText:
+	ntag "Clair"
 	text "I-I understand…"
 	done
 
 DragonShrineHereRisingBadgeText:
+	ntag "Clair"
 	text "Here, this is the"
 	line "RisingBadge…"
 
@@ -598,6 +603,7 @@ DragonShrinePlayerReceivedRisingBadgeText:
 	done
 
 DragonShrineRisingBadgeExplanationText:
+	ntag "Clair"
 	text "The RisingBadge"
 	line "will enable your"
 	cont "#mon to use the"
@@ -613,6 +619,7 @@ DragonShrineRisingBadgeExplanationText:
 	done
 
 DragonShrineSpeechlessText:
+	ntag "Clair"
 	text "<……><……><……><……><……><……>"
 	done
 

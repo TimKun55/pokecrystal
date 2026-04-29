@@ -36,11 +36,12 @@ CianwoodPharmacyShelf:
 	jumptext CianwoodPharmacyShelfScript
 
 PharmacistGiveSecretpotionText:
+	ntag "Pharmacist"
 	text "Your #mon ap-"
 	line "pear to be fine."
 
-	para "Is something wor- "
-	line "rying you?"
+	para "Is something"
+	line "worrying you?"
 
 	para "…"
 
@@ -60,6 +61,7 @@ ReceivedSecretpotionText:
 	done
 
 PharmacistDescribeSecretpotionText:
+	ntag "Pharmacist"
 	text "My SecretPotion is"
 	line "a tad too strong."
 

@@ -67,10 +67,12 @@ MountMortarB1FHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
 
 MountMortarB1FKiyoIntroText:
-	text "Hey!"
+	text "Hey!@"
+	text_promptbutton
 
-	para "I am the Karate"
-	line "King!"
+	ntag "Kiyo"
+	para "I am Kiyo the"
+	line "Karate King!"
 
 	para "I train alone here"
 	line "in the dark!"
@@ -82,11 +84,13 @@ MountMortarB1FKiyoIntroText:
 	done
 
 MountMortarB1FKiyoWinText:
+	ntag "Kiyo"
 	text "Waaaarggh!"
 	line "I'm beaten!"
 	done
 
 MountMortarB1FTyrogueRewardText:
+	ntag "Kiyo"
 	text "I… I'm crushed…"
 
 	para "My training is"
@@ -107,6 +111,7 @@ MountMortarB1FReceiveMonText:
 	done
 
 MountMortarB1FKiyoGotTyrogueText:
+	ntag "Kiyo"
 	text "Tyrogue is a"
 	line "fighting-type."
 
@@ -121,6 +126,7 @@ MountMortarB1FKiyoGotTyrogueText:
 	done
 
 MountMortarB1FKiyoFullPartyText:
+	ntag "Kiyo"
 	text "You have no room"
 	line "in your party!"
 	done

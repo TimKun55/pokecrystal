@@ -142,9 +142,6 @@ MahoganyMart1FLanceApproachPharmacistMovement:
 MahoganyMart1FLanceApproachHiddenStairsMovement:
 	slow_step UP
 	slow_step RIGHT
-	slow_step RIGHT
-	step_end
-
 MahoganyMart1FLanceGoDownStairsMovement:
 	slow_step RIGHT
 	step_end
@@ -174,11 +171,13 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 	done
 
 MahoganyMart1FLanceDragoniteOutrageText:
-	text "Lance: Dragonite,"
+	ntag "Lance"
+	text "Dragonite,"
 	line "Outrage!"
 	done
 
 MahoganyMart1FLanceRadioText:
+	ntag "Lance"
 	text "What took you,"
 	line "<PLAY_G>?"
 
@@ -190,12 +189,14 @@ MahoganyMart1FLanceRadioText:
 	done
 
 MahoganyMart1FLanceStairsText:
+	ntag "Lance"
 	text "The stairs are"
 	line "right here."
 	done
 
 MahoganyMart1FLanceSplitUpText:
-	text "Lance: <PLAY_G>, we"
+	ntag "Lance"
+	text "<PLAY_G>, we"
 	line "should split up to"
 	cont "check this place."
 	cont "I'll go first."

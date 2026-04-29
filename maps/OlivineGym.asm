@@ -150,16 +150,17 @@ OlivineGymStatue:
 	jumpstd GymStatue3Script
 
 Jasmine_SteelTypeIntro:
-	text "…Thank you for"
+	ntag "Jasmine"
+	text "Thank you for"
 	line "your help at the"
 	cont "Lighthouse…"
 
 	para "But this is dif-"
 	line "ferent. Please"
-	cont "allow me to intro-"
-	cont "duce myself."
+	cont "allow me to re-"
+	cont "introduce myself."
 
-	para "I am Jasmine, a"
+	text "I am Jasmine, a"
 	line "Gym Leader. I use"
 	cont "the steel-type."
 
@@ -174,6 +175,7 @@ Jasmine_SteelTypeIntro:
 	done
 
 Jasmine_BetterTrainer:
+	ntag "Jasmine"
 	text "…You are a better"
 	line "trainer than me,"
 	cont "in both skill and"
@@ -191,25 +193,29 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
+	ntag "Jasmine"
 	text "…Um… Please take"
 	line "this too…"
 	done
 
 Jasmine_IronTailSpeech:
-	text "Jasmine:…You could"
-	line "use that TM to"
-	cont "teach Iron Tail."
+	ntag "Jasmine"
+	text "…You could use"
+	line "that TM to teach"
+	cont "Iron Tail."
 	done
 
 Jasmine_GoodLuck:
+	ntag "Jasmine"
 	text "Um… I don't know"
 	line "how to say this,"
 	cont "but good luck…"
 	done
 	
 JasmineRematchIntroText:
-	text "Oh, <PLAYER>!"
-	line "Hello, good to"
+	ntag "Jasmine"
+	text "Oh, <PLAYER>,"
+	line "hello, good to"
 	cont "see you again."
 	
 	para "Feel like having"
@@ -217,10 +223,12 @@ JasmineRematchIntroText:
 	done
 	
 JasmineWinLossRematchText:
+	ntag "Jasmine"
 	text "Well done…"
 	done
 	
 JasmineRematchAfterBattleText:
+	ntag "Jasmine"
 	text "Properly tempered"
 	line "steel won't be"
 	cont "made rusty by"
@@ -237,6 +245,7 @@ JasmineRematchAfterBattleText:
 	done
 	
 Jasmine16IntroText:
+	ntag "Jasmine"
 	text "<PLAYER>!"
 	line "You're back, and"
 	cont "you've done it!"
@@ -247,12 +256,13 @@ Jasmine16IntroText:
 	
 	para "I'm going to use"
 	line "my strongest team"
-	cont "against you!"
+	cont "against you."
 	
 	para "Want a rematch?"
 	done
 	
 Jasmine16AfterBattleText:
+	ntag "Jasmine"
 	text "As strong as the"
 	line "strongest steel!"
 	
@@ -265,12 +275,14 @@ Jasmine16AfterBattleText:
 	done
 
 JasmineComeBackTomorrowText:
+	ntag "Jasmine"
 	text "Please come back"
 	line "tomorrow for ano-"
 	cont "ther battle."
 	done
 
 JasmineNextTimeText:
+	ntag "Jasmine"
 	text "You can come"
 	line "back anytime."
 	done
@@ -351,8 +363,8 @@ OlivineGymGuidePreText:
 	done
 	
 SteelixText:
-	text "Steelix: Stee!!"
-	line "LixSteelix!"
+	ntag "Steelix"
+	text "Stee! LixSteel!"
 	done
 
 OlivineGym_MapEvents:

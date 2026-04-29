@@ -225,6 +225,7 @@ CianwoodGymStatue:
 	jumpstd GymStatue3Script
 
 ChuckIntroText:
+	ntag "Chuck"
 	text "Ooomph!"
 
 	para "The pounding"
@@ -262,6 +263,7 @@ ChuckIntroText:
 	done
 
 ChuckLossText:
+	ntag "Chuck"
 	text "Wha? Huh?"
 	line "I lost?"
 
@@ -276,6 +278,7 @@ GetStormBadgeText:
 	done
 
 ChuckExplainBadgeText:
+	ntag "Chuck"
 	text "The StormBadge"
 	line "makes all #mon"
 	cont "up to L70 obey,"
@@ -291,7 +294,8 @@ ChuckExplainBadgeText:
 	done
 
 ChuckExplainTMText:
-	text "Chuck: That is"
+	ntag "Chuck"
+	text "That is"
 	line "DynamicPunch."
 
 	para "It doesn't always"
@@ -301,6 +305,7 @@ ChuckExplainTMText:
 	done
 
 ChuckAfterText:
+	ntag "Chuck"
 	text "WAHAHAH! I enjoyed"
 	line "battling you!"
 
@@ -313,6 +318,7 @@ ChuckAfterText:
 	done
 
 ChuckRematchIntroText:
+	ntag "Chuck"
 	text "WAHAHAHAHA!"
 	
 	para "Good to see you"
@@ -323,12 +329,14 @@ ChuckRematchIntroText:
 	done
 	
 ChuckWinLossRematchText:
+	ntag "Chuck"
 	text "WAHAHAH!" 
 	line "Smashed like"
 	cont "a rock!"
 	done
 	
 ChuckRematchAfterBattleText:
+	ntag "Chuck"
 	text "Even after 24 hour"
 	line "training, I still"
 	cont "can't win!"
@@ -348,6 +356,7 @@ ChuckRematchAfterBattleText:
 	done
 	
 Chuck16IntroText:
+	ntag "Chuck"
 	text "<PLAYER>!"
 	line "You've done it!"
 	
@@ -364,6 +373,7 @@ Chuck16IntroText:
 	done
 	
 Chuck16AfterBattleText:
+	ntag "Chuck"
 	text "WAHAHAHAHA!"
 	line "That was an"
 	cont "amazing battle!"
@@ -378,11 +388,13 @@ Chuck16AfterBattleText:
 	done
 
 ChuckComeBackTomorrowText:
+	ntag "Chuck"
 	text "Come and train"
 	line "again tomorrow."
 	done
 
 ChuckNextTimeText:
+	ntag "Chuck"
 	text "Ahh, no problem."
 	line "Come back for"
 	cont "another round!"
@@ -454,7 +466,8 @@ BlackbeltLungAfterText:
 	done
 	
 PoliwrathText:
-	text "Poliwrath: Poli!!"
+	ntag "Poliwrath"
+	text "Poli!"
 	done
 
 CianwoodGymButtonPressText:

@@ -244,8 +244,11 @@ LakeOfRageLanceIntroText:
 	line "because of the"
 	cont "rumors?"
 
-	para "You're <PLAYER>?"
-	line "I'm Lance, a"
+	para "You're <PLAYER>?@"
+	text_promptbutton
+
+	ntag "Lance"
+	text "I'm Lance, a"
 	cont "trainer like you."
 
 	para "I heard some ru-"
@@ -267,7 +270,8 @@ LakeOfRageLanceIntroText:
 	done
 
 LakeOfRageLanceRadioSignalText:
-	text "Lance: Excellent!"
+	ntag "Lance"
+	text "Excellent!"
 
 	para "It seems that the"
 	line "Lake's Magikarp"
@@ -284,18 +288,21 @@ LakeOfRageLanceRadioSignalText:
 	done
 
 LakeOfRageLanceRefusedText:
+	ntag "Lance"
 	text "Oh… Well, if you"
 	line "change your mind,"
 	cont "please help me."
 	done
 
 LakeOfRageLanceAskHelpText:
-	text "Lance: Hm? Are you"
-	line "going to help me?"
+	ntag "Lance"
+	text "Hm? Are you going"
+	line "to help me?"
 	done
 
 LakeOfRageGyaradosCryText:
-	text "Gyarados: Gyashaa!"
+	ntag "Gyarados"
+	text "Gyashaa!"
 	done
 
 LakeOfRageGotRedScaleText:
@@ -419,7 +426,8 @@ CooltrainerfLoisAfterBattleText:
 	done
 
 MeetWesleyText:
-	text "Wesley: Well, how"
+	ntag "Wesley"
+	text "Well, how"
 	line "do you do?"
 
 	para "Seeing as how it's"
@@ -429,30 +437,34 @@ MeetWesleyText:
 	done
 
 WesleyGivesGiftText:
+	ntag "Wesley"
 	text "Pleased to meet"
 	line "you. Please take a"
 	cont "souvenir."
 	done
 
 WesleyGaveGiftText:
-	text "Wesley: Blackbelt"
-	line "beefs up the power"
-	cont "of fighting moves."
+	ntag "Wesley"
+	text "Blackbelt beefs"
+	line "up the power of"
+	cont "fighting moves."
 	done
 
 WesleyWednesdayText:
-	text "Wesley: Since you"
-	line "found me, you must"
-	cont "have met my broth-"
-	cont "ers and sisters."
+	ntag "Wesley"
+	text "Since you found"
+	line "me, you must have"
+	cont "met my brothers"
+	cont "and sisters."
 
 	para "Or did you just"
 	line "get lucky?"
 	done
 
 WesleyNotWednesdayText:
-	text "Wesley: Today's"
-	line "not Wednesday."
+	ntag "Wesley"
+	text "Today's not"
+	line "Wednesday."
 	cont "That's too bad."
 	done
 

@@ -248,39 +248,43 @@ Route40StandingYoungsterText:
 	done
 
 MeetMonicaText:
-	text "Monica: Glad to"
-	line "meet you. I'm"
+	ntag "Monica"
+	text "I'm Monica of"
+	line "Monday."
 
-	para "Monica of Monday."
+	para "Glad to meet you."
 	done
 
 MonicaGivesGiftText:
+	ntag "Monica"
 	text "As a token of our"
 	line "friendship, I have"
 	cont "a gift for you!"
 	done
 
 MonicaGaveGiftText:
-	text "Monica: It's an"
-	line "item that raises"
-	cont "the power of fly-"
-	cont "ing-type moves."
+	ntag "Monica"
+	text "It's an item that"
+	line "raises the power"
+	cont "of flying-type"
+	cont "moves."
 	done
 
 MonicaMondayText:
-	text "Monica: My broth-"
-	line "ers and sisters"
-	cont "are all over the"
-	cont "place."
+	ntag "Monica"
+	text "My brothers and"
+	line "sisters are all"
+	cont "over the place."
 
 	para "See if you could"
 	line "find them all!"
 	done
 
 MonicaNotMondayText:
-	text "Monica: I don't"
-	line "think today is"
-	cont "Monday. How sad…"
+	ntag "Monica"
+	text "I don't think"
+	line "today is Monday."
+	cont "How sad…"
 	done
 
 Route40SignText:

@@ -125,12 +125,6 @@ OlivineCitySailorTutorScript:
 .NotEnough
 	writetextend OlivineCitySailorTutorNotEnough
 	
-OlivineCityMarketPlacePokefanM:
-	jumptextfaceplayer OlivineCityMarketPlacePokefanMText
-
-OlivineCityMarketPlacePokefanF:
-	jumptextfaceplayer OlivineCityMarketPlacePokefanFText
-
 OlivineCitySign:
 	jumptext OlivineCitySignText
 
@@ -205,6 +199,7 @@ OlivineCityPlayerStepsAsideBottomMovement:
 	step_end
 
 OlivineCityRivalText:
+	ntag "<RIVAL>"
 	text "…"
 
 	para "You again?"
@@ -281,17 +276,6 @@ OlivineCitySailor2Text:
 	para "Sing with me! "
 	line "Yo-ho! Blow the"
 	cont "man down!…"
-	done
-
-OlivineCityMarketPlacePokefanMText:
-	text "I love it when"
-	line "it's Market Time!"
-	done
-
-OlivineCityMarketPlacePokefanFText:
-	text "I always make the"
-	line "journey here for"
-	cont "the Market!"
 	done
 
 OlivineCitySignText:

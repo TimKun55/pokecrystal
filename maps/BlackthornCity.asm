@@ -209,20 +209,24 @@ BlackthornYoungsterText:
 	done
 
 MeetSantosText:
-	text "Santos: …"
+	text " …"
 
-	para "It's Saturday…"
+	para "It's Saturday…@"
+	text_promptbutton
 
-	para "I'm Santos of"
+	ntag "Santos"
+	text "I'm Santos of"
 	line "Saturday…"
 	done
 
 SantosGivesGiftText:
+	ntag "Santos"
 	text "You can have this…"
 	done
 
 SantosGaveGiftText:
-	text "Santos: …"
+	ntag "Santos"
+	text " …"
 
 	para "Spell Tag…"
 
@@ -234,7 +238,8 @@ SantosGaveGiftText:
 	done
 
 SantosSaturdayText:
-	text "Santos: …"
+	ntag "Santos"
+	text " …"
 
 	para "See you again on"
 	line "another Saturday…"
@@ -244,8 +249,9 @@ SantosSaturdayText:
 	done
 
 SantosNotSaturdayText:
-	text "Santos: Today's"
-	line "not Saturday…"
+	ntag "Santos"
+	text "Today's not"
+	line "Saturday…"
 	done
 
 BlackthornCooltrainerF2Text:
