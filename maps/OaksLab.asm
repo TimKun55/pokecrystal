@@ -87,7 +87,8 @@ OaksLabPC:
 	jumptext OaksLabPCText
 
 OakWelcomeKantoText:
-	text "Oak: Ah, <PLAY_G>!"
+	ntag "Prof.Oak"
+	text "Ah, <PLAY_G>!"
 	line "It's good of you"
 
 	para "to come all this"
@@ -100,6 +101,7 @@ OakWelcomeKantoText:
 	done
 
 OakLabDexCheckText:
+	ntag "Prof.Oak"
 	text "How is your #-"
 	line "dex coming?"
 
@@ -113,7 +115,8 @@ OakLabGoodbyeText:
 	done
 
 OakOpenMtSilverText:
-	text "Oak: Wow! That's"
+	ntag "Prof.Oak"
+	text "Wow! That's"
 	line "excellent!"
 
 	para "You collected the"
@@ -137,8 +140,9 @@ OakOpenMtSilverText:
 	para "It's too dangerous"
 	line "for your average"
 	cont "trainer, so it's"
-	cont "off limits. But"
-	cont "we can make an"
+	cont "off limits."
+	
+	para "But we can make an"
 	cont "exception in your"
 	cont "case, <PLAY_G>."
 
@@ -160,9 +164,10 @@ OakOpenMtSilverText:
 	done
 
 OakNoKantoBadgesText:
-	text "Oak: Hmm? You're"
-	line "not collecting"
-	cont "Kanto Gym Badges?"
+	ntag "Prof.Oak"
+	text "Hmm? You're not"
+	line "collecting Kanto"
+	cont "Gym Badges?"
 
 	para "The Gym Leaders in"
 	line "Kanto are as tough"
@@ -175,7 +180,8 @@ OakNoKantoBadgesText:
 	done
 
 OakYesKantoBadgesText:
-	text "Oak: Ah, you're"
+	ntag "Prof.Oak"
+	text "Ah, you're"
 	line "collecting Kanto"
 	cont "Gym Badges."
 

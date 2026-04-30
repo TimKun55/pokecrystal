@@ -160,8 +160,8 @@ CeladonRocketHideoutB4FElevator:
 	jumptext CeladonRocketHideoutB4FElevatorText
 
 CeladonRocketHideoutB4FArcherBeforeText:
-	text "Archer: Ariana,"
-	line "not now."
+	ntag "Archer"
+	text "Ariana, not now."
 	
 	para "I'm so close to"
 	line "pinpointing his"
@@ -169,6 +169,7 @@ CeladonRocketHideoutB4FArcherBeforeText:
 	done	
 	
 CeladonRocketHideoutB4FArcherSeenText:
+	ntag "Archer"
 	text "You."
 	
 	para "It's you again."
@@ -187,6 +188,7 @@ CeladonRocketHideoutB4FArcherSeenText:
 	done
 
 CeladonRocketHideoutB4FArcherBeforeBattleText:
+	ntag "Archer"
 	text "And to think"
 	line "you've gotten past"
 	cont "the others…"
@@ -198,6 +200,7 @@ CeladonRocketHideoutB4FArcherBeforeBattleText:
 	done
 	
 CeladonRocketHideoutB4FArcherWinLossText:
+	ntag "Archer"
 	text "NO!"
 	
 	para "No, no, no, no!"
@@ -205,6 +208,7 @@ CeladonRocketHideoutB4FArcherWinLossText:
 	done
 	
 CeladonRocketHideoutB4FArcherAfterBattleText:
+	ntag "Archer"
 	text "How are you this"
 	line "powerful of a"
 	cont "trainer?!"
@@ -221,10 +225,12 @@ CeladonRocketHideoutB4FArcherAfterBattleText:
 	done
 	
 CeladonRocketHideoutB4FArcherBossText:
-	text "Archer: Boss?!"
+	ntag "Archer"
+	text "Boss?!"
 	done
 	
 CeladonRocketHideoutB4FArcherHereText:
+	ntag "Archer"
 	text "Its…its you…"
 	
 	para "You're here…"
@@ -236,7 +242,8 @@ CeladonRocketHideoutB4FArcherHereText:
 	done
 	
 CeladonRocketHideoutB4FArcherShockText:
-	text "Archer: Why?"
+	ntag "Archer"
+	text "Why?"
 	line "For you!"
 	
 	para "You taught us to"
@@ -266,18 +273,20 @@ CeladonRocketHideoutB4FArcherShockText:
 	done
 	
 CeladonRocketHideoutB4FArcherFarewellText:
+	ntag "Archer"
 	text "………Goodbye,"
 	line "<PLAY_G>."
 	done
 	
 CeladonRocketHideoutB4FGiovanniStopText:
-	text "???: Archer."
+	ntag "???"
+	text "Archer."
 	line "Stop this."
 	done
 
 CeladonRocketHideoutB4FGiovanni1Text:
-	text "Giovanni: Your"
-	line "hard work?"
+	ntag "Giovanni"
+	text "Your hard work?"
 	
 	para "I followed this"
 	line "child in here"
@@ -302,7 +311,8 @@ CeladonRocketHideoutB4FGiovanni1Text:
 	done
 
 CeladonRocketHideoutB4FGiovanni2Text:
-	text "Giovanni: I see."
+	ntag "Giovanni"
+	text "I see."
 	
 	para "I should have"
 	line "told you in"
@@ -340,6 +350,7 @@ CeladonRocketHideoutB4FGiovanni2Text:
 	done
 	
 CeladonRocketHideoutB4FGiovanni3Text:
+	ntag "Giovanni"
 	text "I need to give"
 	line "you my deepest"
 	cont "thanks."
@@ -363,6 +374,7 @@ CeladonRocketHideoutB4FGiovanni3Text:
 	done
 	
 CeladonRocketHideoutB4FPetrelSeenText:
+	ntag "Petrel"
 	text "Wait, you?!"
 	line "How did you even"
 	cont "get in here?!"
@@ -375,16 +387,19 @@ CeladonRocketHideoutB4FPetrelSeenText:
 	done
 
 CeladonRocketHideoutB4FPetrelBeatenText:
+	ntag "Petrel"
 	text "… again?"
 	done
 
 CeladonRocketHideoutB4FPetrelAfterBattleText:
+	ntag "Petrel"
 	text "All we wanted was"
 	line "to find Giovanni…"
 	cont "this time…"
 	done
 	
 CeladonRocketHideoutB4FProtonSeenText:
+	ntag "Proton"
 	text "What? You?"
 	line "We were so careful"
 	cont "to make sure"
@@ -402,16 +417,19 @@ CeladonRocketHideoutB4FProtonSeenText:
 	done
 
 CeladonRocketHideoutB4FProtonBeatenText:
+	ntag "Proton"
 	text "Argh!!"
 	done
 
 CeladonRocketHideoutB4FProtonAfterBattleText:
+	ntag "Proton"
 	text "Why? Why do you"
 	line "keep messing up"
 	cont "our plans?!"
 	done
 	
 CeladonRocketHideoutB4FArianaSeenText:
+	ntag "Ariana"
 	text "Of all the people"
 	line "to find us, of"
 	cont "course it's you."
@@ -426,10 +444,12 @@ CeladonRocketHideoutB4FArianaSeenText:
 	done
 
 CeladonRocketHideoutB4FArianaBeatenText:
+	ntag "Ariana"
 	text "………"
 	done
 
 CeladonRocketHideoutB4FArianaAfterBattleText:
+	ntag "Ariana"
 	text "By losing to you"
 	line "again, I've lost"
 	
@@ -438,7 +458,8 @@ CeladonRocketHideoutB4FArianaAfterBattleText:
 	done
 	
 WeavileText:
-	text "Weavile: Wea!"
+	ntag "Weavile"
+	text "Wea!"
 	done
 	
 CeladonRocketHideoutB4FComputerText:

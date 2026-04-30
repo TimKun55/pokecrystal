@@ -27,7 +27,8 @@ PewterNidoranSpeechHouseSuperNerdText:
 	done
 
 PewterNidoranText:
-	text "Nidoran♂: Gau gau!"
+	ntag "Nidoran♂"
+	text "Gau gau!"
 	done
 
 PewterNidoranSpeechHouse_MapEvents:

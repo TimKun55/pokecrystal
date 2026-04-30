@@ -30,9 +30,6 @@ Route5OfficerScript:
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
 
-HouseForSaleSign:
-	jumptext HouseForSaleSignText
-
 Route5DisguisedRunDownMovement:
 	big_step DOWN
 	big_step DOWN
@@ -123,13 +120,6 @@ Route5UndergroundPathSignText:
 	line "Vermilion City"
 	done
 
-HouseForSaleSignText:
-	text "What's this?"
-
-	para "House for Sale…"
-	line "Nobody lives here."
-	done
-
 Route5_MapEvents:
 	db 0, 0 ; filler
 
@@ -144,7 +134,6 @@ Route5_MapEvents:
 
 	def_bg_events
 	bg_event 17, 37, BGEVENT_READ, Route5UndergroundPathSign
-	bg_event 13, 23, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
 	object_event  5, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, Route5SuperNerdGreggScript, -1

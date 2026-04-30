@@ -101,6 +101,7 @@ TowerShookText:
 	done
 
 HoOhText:
+	ntag "Ho-Oh"
 	text "Shaoooh!"
 	done
 

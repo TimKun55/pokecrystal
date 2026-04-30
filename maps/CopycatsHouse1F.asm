@@ -63,7 +63,8 @@ CopycatsHouse1FPokefanFText_ReturnedMachinePart:
 	done
 
 CopycatsHouse1FBlisseyText:
-	text "Blissey: Bliisii!"
+	ntag "Blissey"
+	text "Bliisii!"
 	done
 
 CopycatsHouse1F_MapEvents:

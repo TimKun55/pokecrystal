@@ -347,9 +347,9 @@ PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "Manager: I, I, I'm"
-	line "ready to blast"
-	cont "someone!"
+	ntag "Manager"
+	text "I, I, I'm ready"
+	line "to blast someone!"
 
 	para "Who would dare"
 	line "ruin my generator?"
@@ -364,8 +364,9 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
-	text "Manager: I won't"
-	line "forgive him!"
+	ntag "Manager"
+	text "I won't forgive"
+	line "him!"
 
 	para "The culprit can"
 	line "cry and apologize,"
@@ -376,7 +377,8 @@ PowerPlantManagerIWontForgiveCulpritText:
 	done
 
 PowerPlantManagerThatsThePartText:
-	text "Manager: Ah! Yeah!"
+	ntag "Manager"
+	text "Ah! Yeah!"
 
 	para "That's the missing"
 	line "Part from my be-"
@@ -392,7 +394,8 @@ PowerPlantManagerGavePartText:
 	done
 
 PowerPlantManagerTakeThisTMText:
-	text "Manager: There!"
+	ntag "Manager"
+	text "There!"
 	
 	para "Back up and work-"
 	line "ing again!"
@@ -404,8 +407,9 @@ PowerPlantManagerTakeThisTMText:
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	text "Manager: TM07 is"
-	line "my Zap Cannon."
+	ntag "Manager"
+	text "TM07 is my"
+	line "Zap Cannon."
 
 	para "It's a powerful"
 	line "technique!"
@@ -417,25 +421,28 @@ PowerPlantManagerTM07IsZapCannonText:
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:
-	text "Manager: My be-"
-	line "loved generator!"
+	ntag "Manager"
+	text "My beloved"
+	line "generator!"
 
 	para "Keep pumping the"
 	line "electricity out!"
 	done
 	
 PowerPlantGiovanniSearchingText:
-	text "???: I heard a"
-	line "rumour that Team"
-	cont "Rocket had been"
-	cont "spotted here and"
-	cont "stole something,"
-	cont "so I came to"
-	cont "search for them."
+	ntag "???"
+	text "I heard a rumour"
+	line "that Team Rocket"
+	cont "had been spotted"
+	cont "here and stole"
+	cont "something, so I"
+	cont "came to search"
+	cont "for them."
 	done
 	
 PowerPlantGiovanniLeavingText:
-	text "???: You found the"
+	ntag "???"
+	text "You found the"
 	line "Rocket member,"
 	cont "defeated him, and"
 	cont "retrieved what was"

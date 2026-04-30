@@ -143,7 +143,8 @@ CeladonGymStatue:
 	jumpstd GymStatue2Script
 
 ErikaBeforeBattleText:
-	text "Erika: Hello…"
+	ntag "Erika"
+	text "Hello…"
 	line "Lovely weather,"
 	cont "isn't it?"
 	cont "It's so pleasant…"
@@ -169,7 +170,8 @@ ErikaBeforeBattleText:
 	done
 
 ErikaBeatenText:
-	text "Erika: Oh!"
+	ntag "Erika"
+	text "Oh!"
 	line "I concede defeat…"
 
 	para "You are remarkably"
@@ -185,7 +187,8 @@ PlayerReceivedRainbowBadgeText:
 	done
 
 ErikaExplainTMText:
-	text "Erika: That was a"
+	ntag "Erika"
+	text "That was a"
 	line "delightful match."
 
 	para "I felt inspired."
@@ -205,9 +208,9 @@ ErikaExplainTMText:
 	done
 
 ErikaAfterBattleText:
-	text "Erika: Losing"
-	line "leaves a bitter"
-	cont "aftertaste…"
+	ntag "Erika"
+	text "Losing leaves a"
+	line "bitter aftertaste…"
 
 	para "But knowing that"
 	line "there are strong"
@@ -216,6 +219,7 @@ ErikaAfterBattleText:
 	done
 	
 ErikaRematchIntroText:
+	ntag "Erika"
 	text "Oh, <PLAYER>."
 	line "So good to see"
 	cont "you again."
@@ -225,11 +229,13 @@ ErikaRematchIntroText:
 	done
 	
 ErikaWinLossRematchText:
+	ntag "Erika"
 	text "You have grown"
 	line "even stronger!"
 	done
 	
 ErikaRematchAfterBattleText:
+	ntag "Erika"
 	text "You seem to be"
 	line "flourishing!"
 	
@@ -239,6 +245,7 @@ ErikaRematchAfterBattleText:
 	done
 
 ErikaComeBackTomorrowText:
+	ntag "Erika"
 	text "Oh, I'm tired now"
 	line "but come back"
 	cont "tomorrow for a"
@@ -246,6 +253,7 @@ ErikaComeBackTomorrowText:
 	done
 
 ErikaNextTimeText:
+	ntag "Erika"
 	text "Maybe next"
 	line "time, then."
 	done
@@ -343,8 +351,8 @@ LassSandyAfterBattleText:
 	done
 
 BellossomText:
-	text "Bellossom: Som!!"
-	line "BellBell!"
+	ntag "Bellossom"
+	text "Som! BellBell!"
 	done
 
 CeladonGym_MapEvents:

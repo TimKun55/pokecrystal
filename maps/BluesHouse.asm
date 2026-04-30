@@ -50,10 +50,10 @@ DaisyScript:
 	writetextend DaisyCantGroomEggText
 
 DaisyHelloText:
-	text "Daisy: Hi! My kid"
-	line "brother is the Gym"
-	cont "Leader in Viridian"
-	cont "City."
+	ntag "Daisy"
+	text "Hi! My kid brother"
+	line "is the Gym Leader"
+	cont "in Viridian City."
 
 	para "But he goes out"
 	line "of town so often,"
@@ -62,9 +62,10 @@ DaisyHelloText:
 	done
 
 DaisyOfferGroomingText:
-	text "Daisy: Hi! Good"
-	line "timing. I'm about"
-	cont "to have some tea."
+	ntag "Daisy"
+	text "Hi! Good timing."
+	line "I'm about to have"
+	cont "some tea."
 
 	para "Would you like to"
 	line "join me?"
@@ -77,14 +78,16 @@ DaisyOfferGroomingText:
 	done
 
 DaisyWhichMonText:
-	text "Daisy: Which one"
-	line "should I groom?"
+	ntag "Daisy"
+	text "Which one should"
+	line "I groom?"
 	done
 
 DaisyAlrightText:
-	text "Daisy: OK, I'll"
-	line "get it looking"
-	cont "nice in no time."
+	ntag "Daisy"
+	text "OK, I'll get them"
+	line "looking nice in"
+	cont "no time."
 	done
 
 GroomedMonLooksContentText:
@@ -94,8 +97,9 @@ GroomedMonLooksContentText:
 	done
 
 DaisyAllDoneText:
-	text "Daisy: There you"
-	line "go! All done."
+	ntag "Daisy"
+	text "There you go!"
+	line "All done."
 
 	para "See? Doesn't it"
 	line "look nice?"
@@ -105,21 +109,23 @@ DaisyAllDoneText:
 	done
 
 DaisyAlreadyGroomedText:
-	text "Daisy: I always"
-	line "have tea around"
-	cont "this time. Come"
-	cont "join me."
+	ntag "Daisy"
+	text "I always have tea"
+	line "around this time."
+	cont "Come join me."
 	done
 
 DaisyRefusedText:
-	text "Daisy: You don't"
-	line "want to have one"
-	cont "groomed? OK, we'll"
-	cont "just have tea."
+	ntag "Daisy"
+	text "You don't want to"
+	line "have one groomed?"
+	cont "OK, we'll just"
+	cont "have tea."
 	done
 
 DaisyCantGroomEggText:
-	text "Daisy: Oh, sorry."
+	ntag "Daisy"
+	text "Oh, sorry."
 	line "I honestly can't"
 	cont "groom an Egg."
 	done

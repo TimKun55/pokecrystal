@@ -134,12 +134,6 @@ CeladonCityHotelSign:
 CeladonDisguisedLeftMovement:
 	step RIGHT
 	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
 CeladonDisguisedRightMovement:
 	step RIGHT
 	step RIGHT
@@ -198,7 +192,8 @@ CeladonCityFisherText:
 	done
 
 CeladonCityPoliwrathText:
-	text "Poliwrath: Croak!"
+	ntag "Poliwrath"
+	text "Croak!"
 	done
 
 CeladonCityTeacher1Text:

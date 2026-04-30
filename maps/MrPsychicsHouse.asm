@@ -21,6 +21,7 @@ MrPsychicsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 MrPsychicText1:
+	ntag "Mr Psychic"
 	text "…"
 
 	para "…"
@@ -33,8 +34,8 @@ MrPsychicText1:
 	done
 
 MrPsychicText2:
-	text "Mr Psychic: TM29"
-	line "is Psychic."
+	ntag "Mr Psychic"
+	text "TM29 is Psychic."
 
 	para "It may lower the"
 	line "target's Sp.Def."

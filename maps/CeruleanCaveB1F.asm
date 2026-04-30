@@ -68,7 +68,8 @@ SomethingPowerfulText:
 	done
 
 MewtwoText:
-	text "Mewtwo: Twoooooo!"
+	ntag "Mewtwo"
+	text "Twoooooo!"
 	done
 
 CeruleanCaveB1F_MapEvents:

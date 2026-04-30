@@ -66,17 +66,18 @@ CeladonMansionManagerText:
 	done
 
 CeladonMansion1FMeowthText:
-	text "Meowth: Meow!"
+	ntag "Meowth"
+	text "Meow!"
 	done
 
 CeladonMansion1FClefairyText:
-	text "Clefairy: Clef"
-	line "cleff!"
+	ntag "Clefairy"
+	text "Clef cleff!"
 	done
 
 CeladonMansion1FNidoranFText:
-	text "Nidoran♀: Kya"
-	line "kyaoo!"
+	ntag "Nidoran♀"
+	text "Kya kyaoo!"
 	done
 
 CeladonMansionManagersSuiteSignText:

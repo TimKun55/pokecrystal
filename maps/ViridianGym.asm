@@ -142,8 +142,9 @@ ViridianGymStatue:
 	jumpstd GymStatue2Script
 
 LeaderBlueBeforeText:
-	text "Blue: Yo! Finally"
-	line "got here, huh?"
+	ntag "Blue"
+	text "Yo! Finally got"
+	line "here, huh?"
 
 	para "I wasn't in the"
 	line "mood at Cinnabar,"
@@ -173,7 +174,8 @@ LeaderBlueBeforeText:
 	done
 
 LeaderBlueWinText:
-	text "Blue: What?"
+	ntag "Blue"
+	text "What?"
 
 	para "How the heck did I"
 	line "lose to you?"
@@ -191,7 +193,8 @@ Text_ReceivedEarthBadge:
 	done
 
 LeaderBlueAfterText:
-	text "Blue: …"
+	ntag "Blue"
+	text " …"
 
 	para "All right, I was"
 	line "wrong. You're the"
@@ -222,7 +225,8 @@ LeaderBlueAfterText:
 	done
 
 LeaderBlueEpilogueText:
-	text "Blue: Listen, you."
+	ntag "Blue"
+	text "Listen, you."
 
 	para "You'd better not"
 	line "lose until I beat"
@@ -230,6 +234,7 @@ LeaderBlueEpilogueText:
 	done
 
 BlueRematchIntroText:
+	ntag "Blue"
 	text "Oh, <PLAYER>,"
 	line "you're back."
 
@@ -238,16 +243,19 @@ BlueRematchIntroText:
 	done
 	
 BlueWinLossRematchText:
+	ntag "Blue"
 	text "Ahh, lost again?"
 	done
 	
 BlueRematchAfterBattleText:
+	ntag "Blue"
 	text "You're still strong"
 	line "but I'll beat you"
 	cont "next time."
 	done
 
 BlueComeBackTomorrowText:
+	ntag "Blue"
 	text "Another battle?"
 
 	para "Sure, but come"
@@ -255,6 +263,7 @@ BlueComeBackTomorrowText:
 	done
 
 BlueNextTimeText:
+	ntag "Blue"
 	text "No? Well, come"
 	line "back when you're"
 	cont "feeling it."
@@ -401,7 +410,8 @@ ViridianGymGuideWinText:
 	done
 
 ArcanineText:
-	text "Arcanine: Awooo!!"
+	ntag "Arcanine"
+	text "Awooo!!"
 	done
 
 ViridianGym_MapEvents:

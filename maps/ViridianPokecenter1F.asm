@@ -50,12 +50,10 @@ ViridianPokecenter1FCooltrainerMText_BlueReturned:
 ViridianPokecenter1FCooltrainerFText:
 	text "I heard that"
 	line "Blaine, the Leader"
-	cont "of Cinnabar Gym"
-	cont "rebuilt the Gym"
+	cont "of Cinnabar Gym,"
+	cont "rebuilt his Gym"
 	cont "inside of Seafoam"
 	cont "Islands."
-
-	para "Is that safe?"
 	done
 
 ViridianPokecenter1FBugCatcherText:

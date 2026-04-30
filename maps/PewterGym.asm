@@ -116,10 +116,11 @@ PewterGymStatue:
 	jumpstd GymStatue2Script
 
 BrockIntroText:
-	text "Brock: Wow, it's"
-	line "not often that we"
-	cont "get a challenger"
-	cont "from Johto."
+	ntag "Brock"
+	text "Wow, it's not"
+	line "often that we get"
+	cont "a challenger from"
+	cont "Johto."
 
 	para "I'm Brock, the"
 	line "Pewter Gym Leader."
@@ -139,10 +140,11 @@ BrockIntroText:
 	done
 
 BrockWinLossText:
-	text "Brock: Your #-"
-	line "mon's powerful at-"
-	cont "tacks overcame my"
-	cont "rock-hard defense…"
+	ntag "Brock"
+	text "Your #mon's"
+	line "powerful attacks"
+	cont "overcame my rock-"
+	cont "hard defence…"
 
 	para "You're stronger"
 	line "than I expected…"
@@ -157,11 +159,11 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockBoulderBadgeText:
-	text "Brock: <PLAY_G>,"
-	line "thanks. I enjoyed"
-	cont "battling you, even"
-	cont "though I am a bit"
-	cont "upset."
+	ntag "Brock"
+	text "<PLAY_G>, thanks."
+	line "I enjoyed battling"
+	cont "you, even though I"
+	cont "am a bit upset."
 	
 	para "The BoulderBadge"
 	line "shows your sturdy"
@@ -172,8 +174,8 @@ BrockBoulderBadgeText:
 	done
 
 BrockFightDoneText:
-	text "Brock: The world"
-	line "is huge."
+	ntag "Brock"
+	text "The world is huge."
 
 	para "There are still"
 	line "many strong"
@@ -186,6 +188,7 @@ BrockFightDoneText:
 	done
 	
 BrockRematchIntroText:
+	ntag "Brock"
 	text "<PLAYER>!"
 	line "Good to see"
 	cont "you again."
@@ -195,10 +198,12 @@ BrockRematchIntroText:
 	done
 	
 BrockWinLossRematchText:
+	ntag "Brock"
 	text "All rocked out!"
 	done
 	
 BrockRematchAfterBattleText:
+	ntag "Brock"
 	text "You're still"
 	line "so strong!"
 	
@@ -208,12 +213,14 @@ BrockRematchAfterBattleText:
 	done
 
 BrockComeBackTomorrowText:
+	ntag "Brock"
 	text "Come back tomorrow"
 	line "and we'll battle"
 	cont "again."
 	done
 
 BrockNextTimeText:
+	ntag "Brock"
 	text "No problem."
 	done
 
@@ -289,8 +296,8 @@ PewterGymGuideWinText:
 	done
 	
 OnixText:
-	text "Onix: Nix!!"
-	line "Onixnix!"
+	ntag "Onix"
+	text "Nix! Onixnix!"
 	done
 
 PewterGym_MapEvents:

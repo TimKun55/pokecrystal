@@ -259,9 +259,9 @@ CeruleanGymNote2Text:
 	done
 
 MistyIntroText:
-	text "Misty: I was ex-"
-	line "pecting you, you"
-	cont "pest!"
+	ntag "Misty"
+	text "I was expecting"
+	line "you, you pest!"
 
 	para "You may have a"
 	line "lot of Johto Gym"
@@ -274,8 +274,9 @@ MistyIntroText:
 	done
 
 MistyWinLossText:
-	text "Misty: You really"
-	line "are good…"
+	ntag "Misty"
+	text "You really are"
+	line "good…"
 
 	para "I'll admit that"
 	line "you are skilled…"
@@ -290,10 +291,12 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	text "Misty: Are there"
-	line "many strong train-"
-	cont "ers in Johto? Like"
-	cont "you, I mean."
+	ntag "Misty"
+	text "Are there many"
+	line "strong trainers"
+	cont "in Johto?"
+	
+	para "Like you, I mean."
 
 	para "I'm going to"
 	line "travel one day, so"
@@ -302,6 +305,7 @@ MistyFightDoneText:
 	done
 	
 MistyRematchIntroText:
+	ntag "Misty"
 	text "Oh, it's you"
 	line "<PLAYER>."
 	
@@ -310,11 +314,13 @@ MistyRematchIntroText:
 	done
 	
 MistyWinLossRematchText:
+	ntag "Misty"
 	text "Looks like this"
 	line "is it…"
 	done
 	
 MistyRematchAfterBattleText:
+	ntag "Misty"
 	text "Wow!"
 	
 	para "You are getting"
@@ -327,6 +333,7 @@ MistyRematchAfterBattleText:
 	done
 
 MistyComeBackTomorrowText:
+	ntag "Misty"
 	text "I'm going to let"
 	line "my #mon rest."
 	
@@ -335,6 +342,7 @@ MistyComeBackTomorrowText:
 	done
 
 MistyNextTimeText:
+	ntag "Misty"
 	text "Next time, then!"
 	done
 
@@ -415,8 +423,8 @@ CeruleanGymGuideWinText:
 	done
 	
 StarmieText:
-	text "Starmie: Staaar!!"
-	line "Mieeeee!"
+	ntag "Starmie"
+	text "Staaar! Mieeeee!"
 	done
 
 CeruleanGym_MapEvents:

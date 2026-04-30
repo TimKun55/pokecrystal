@@ -190,7 +190,8 @@ PokefanMCarlosAfterBattleText:
 	done
 
 Route7DisguisedScreamText:
-	text "???: Ahh!!"
+	ntag "???"
+	text "Ahh!"
 	done
 
 Route7UndergroundPathSignText:

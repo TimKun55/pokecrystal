@@ -181,18 +181,24 @@ CopycatSpinAroundMovementData:
 	step_end
 
 CopycatText_Male_1:
-	text "<PLAYER>: Hi! Do"
-	line "you like #mon?"
+	ntag "<PLAYER>"
+	text "Hi! Do you like"
+	line "#mon?@"
+	text_promptbutton
 
-	para "<PLAYER>: Uh, no, I"
-	line "just asked you."
+	ntag "<PLAYER>"
+	text "Uh, no, I just"
+	line "asked you.@"
+	text_promptbutton
 
-	para "<PLAYER>: Huh?"
+	ntag "<PLAYER>"
+	text "Huh?"
 	line "You're strange!"
 	done
 
 CopycatText_QuickMimicking:
-	text "Copycat: Hmm?"
+	ntag "Copycat"
+	text "Hmm?"
 	line "Quit mimicking?"
 
 	para "But that's my"
@@ -200,18 +206,22 @@ CopycatText_QuickMimicking:
 	done
 
 CopycatText_Male_2:
-	text "<PLAYER>: Hi!"
+	ntag "<PLAYER>"
+	text "Hi!"
 	line "I heard that you"
+	cont "lost your favorite"
+	cont "# Doll.@"
+	text_promptbutton
 
-	para "lost your favorite"
-	line "# Doll."
-
-	para "<PLAYER>: If I find"
+	ntag "<PLAYER>"
+	text "<PLAYER>: If I find"
 	line "it, you'll give me"
-	cont "a rail Pass?"
+	cont "a rail Pass?@"
+	text_promptbutton
 
-	para "<PLAYER>: I'll go"
-	line "find it for you."
+	ntag "<PLAYER>"
+	text "I'll go find it"
+	line "for you."
 
 	para "You think you lost"
 	line "it when you went"
@@ -219,7 +229,8 @@ CopycatText_Male_2:
 	done
 
 CopycatText_Worried:
-	text "Copycat: Pardon?"
+	ntag "Copycat"
+	text "Pardon?"
 
 	para "I shouldn't decide"
 	line "what you should"
@@ -231,7 +242,8 @@ CopycatText_Worried:
 	done
 
 CopycatText_GiveDoll:
-	text "Copycat: Yay!"
+	ntag "Copycat"
+	text "Yay!"
 	line "That's my Clefairy"
 	cont "# Doll!"
 
@@ -242,6 +254,7 @@ CopycatText_GiveDoll:
 	done
 
 CopycatText_GivePass:
+	ntag "Copycat"
 	text "OK. Here's the"
 	line "Magnet Train Pass"
 	cont "like I promised!"
@@ -252,9 +265,10 @@ CopycatText_GivePass:
 	done
 
 CopycatText_ExplainPass:
-	text "Copycat: That's"
-	line "the Pass for the"
-	cont "Magnet Train."
+	ntag "Copycat"
+	text "That's the Pass "
+	line "for the Magnet"
+	cont "Train."
 
 	para "The rail company"
 	line "man gave me that"
@@ -264,45 +278,60 @@ CopycatText_ExplainPass:
 	done
 
 CopycatText_Male_3:
-	text "<PLAYER>: Hi!"
+	ntag "<PLAYER>"
+	text "Hi!"
 	line "Thanks a lot for"
-	cont "the rail Pass!"
+	cont "the rail Pass!@"
+	text_promptbutton
 
-	para "<PLAYER>: Pardon?"
+	ntag "<PLAYER>"
+	text "Pardon?@"
+	text_promptbutton
 
-	para "<PLAYER>: Is it"
-	line "that fun to mimic"
-	cont "my every move?"
+	ntag "<PLAYER>"
+	text "Is it that fun to"
+	line "mimic my every"
+	cont "move?"
 	done
 
 CopycatText_ItsAScream:
-	text "Copycat: You bet!"
+	ntag "Copycat"
+	text "You bet!"
 	line "It's a scream!"
 	done
 
 CopycatText_Female_1:
-	text "<PLAYER>: Hi. You"
-	line "must like #mon."
+	ntag "<PLAYER>"
+	text "Hi. You must like"
+	line "#mon.@"
+	text_promptbutton
 
-	para "<PLAYER>: No, not"
-	line "me. I asked you."
+	ntag "<PLAYER>"
+	text "No, not me."
+	line "I asked you.@"
+	text_promptbutton
 
-	para "<PLAYER>: Pardon?"
+	ntag "<PLAYER>"
+	text "Pardon?"
 	line "You're weird!"
 	done
 
 CopycatText_Female_2:
-	text "<PLAYER>: Hi. Did"
-	line "you really lose"
-	cont "your # Doll?"
+	ntag "<PLAYER>"
+	text "Hi. Did you really"
+	line "lose your #"
+	cont "Doll?@"
+	text_promptbutton
 
-	para "<PLAYER>: You'll"
-	line "really give me a"
-	cont "rail Pass if I"
-	cont "find it for you?"
+	ntag "<PLAYER>"
+	text "You'll really give"
+	line "me a rail Pass if"
+	cont "I find it for you?@"
+	text_promptbutton
 
-	para "<PLAYER>: Sure,"
-	line "I'll look for it!"
+	ntag "<PLAYER>"
+	para "Sure, I'll look"
+	line "for it!@"
 
 	para "You think you lost"
 	line "it when you were"
@@ -310,22 +339,28 @@ CopycatText_Female_2:
 	done
 
 CopycatText_Female_3:
-	text "<PLAYER>: Thank you"
-	line "for the rail Pass!"
+	ntag "<PLAYER>"
+	text "Thank you for the"
+	line "rail Pass!@"
+	text_promptbutton
 
-	para "<PLAYER>: …Pardon?"
+	ntag "<PLAYER>"
+	para " …Pardon?@"
+	text_promptbutton
 
-	para "<PLAYER>: Is it"
-	line "really that fun to"
-	cont "copy what I say"
-	cont "and do?"
+	ntag "<PLAYER>"
+	para "Is it really that"
+	line "fun to copy what"
+	cont "I say and do?"
 	done
 
 CopycatsDodrioText1:
-	text "Dodrio: Gii giii!"
+	ntag "Dodrio"
+	text "Gii giii!"
 	done
 
 CopycatsDodrioText2:
+	ntag "Dodrio"
 	text "MIRROR, MIRROR ON"
 	line "THE WALL, WHO'S"
 	cont "THE FAIREST ONE OF"

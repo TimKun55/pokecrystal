@@ -206,10 +206,10 @@ Route25MistyLeavesMovement:
 	step_end
 
 Route25MistyDateText:
-	text "Misty: Aww! Why"
-	line "did you have to"
-	cont "show up and bug us"
-	cont "now?"
+	ntag "Misty"
+	text "Aww! Why did you"
+	line "have to show up"
+	cont "and bug us now?"
 
 	para "Do you know what"
 	line "they call people"

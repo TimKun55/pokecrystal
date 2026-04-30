@@ -29,7 +29,8 @@ ViridianForestRoute2GateOfficerText:
 	done
 	
 ViridianForestRoute2GateParasectText:
-	text "Parasect: Parasss!"
+	ntag "Parasect"
+	text "Parasss!"
 	done
 
 

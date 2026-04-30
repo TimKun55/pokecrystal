@@ -145,8 +145,9 @@ SaffronGymStatue:
 	jumpstd GymStatue2Script
 
 SabrinaIntroText:
-	text "Sabrina: I knew"
-	line "you were coming…"
+	ntag "Sabrina"
+	text "I knew you were"
+	line "coming…"
 
 	para "Three years ago I"
 	line "had a vision of"
@@ -169,8 +170,8 @@ SabrinaIntroText:
 	done
 
 SabrinaWinLossText:
-	text "Sabrina: Your"
-	line "power…"
+	ntag "Sabrina"
+	text "Your power…"
 
 	para "It far exceeds"
 	line "what I foresaw…"
@@ -191,10 +192,10 @@ ReceivedMarshBadgeText:
 	done
 
 SabrinaMarshBadgeText:
-	text "Sabrina: The"
-	line "MarshBadge draws"
-	cont "out your sub-"
-	cont "liminal powers…"
+	ntag "Sabrina"
+	text "The MarshBadge"
+	line "draws out your"
+	cont "subliminal powers…"
 
 	para "Although I failed"
 	line "to accurately pre-"
@@ -208,10 +209,11 @@ SabrinaMarshBadgeText:
 	done
 
 SabrinaFightDoneText:
-	text "Sabrina: Your love"
-	line "for your #mon"
-	cont "overwhelmed my"
-	cont "psychic power…"
+	ntag "Sabrina"
+	text "Your love for your"
+	line "#mon over-"
+	cont "whelmed my psychic"
+	cont "power…"
 
 	para "The power of love,"
 	line "I think, is also a"
@@ -220,6 +222,7 @@ SabrinaFightDoneText:
 	done
 
 SabrinaRematchIntroText:
+	ntag "Sabrina"
 	text "<PLAYER>."
 	line "I had a feeling"
 	cont "you would be back."
@@ -229,10 +232,12 @@ SabrinaRematchIntroText:
 	done
 
 SabrinaWinLossRematchText:
+	ntag "Sabrina"
 	text "I see…"
 	done
 
 SabrinaRematchAfterBattleText:
+	ntag "Sabrina"
 	text "Your powers are"
 	line "growing well."
 
@@ -242,12 +247,14 @@ SabrinaRematchAfterBattleText:
 	done
 
 SabrinaComeBackTomorrowText:
+	ntag "Sabrina"
 	text "Return tomorrow"
 	line "and we may battle"
 	cont "once more."
 	done
 
 SabrinaNextTimeText:
+	ntag "Sabrina"
 	text "I see…"
 	done
 
@@ -344,8 +351,8 @@ SaffronGymGuideWinText:
 	done
 	
 AlakazamText:
-	text "Alakazam: Zaam!!"
-	line "Kazaa!"
+	ntag "Alakazam"
+	text "Zaam! Kazaa!"
 	done
 
 SaffronGym_MapEvents:

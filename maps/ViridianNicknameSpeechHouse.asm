@@ -58,11 +58,13 @@ ViridianNicknameSpeechHouseLassText:
 	done
 
 KwaxsText:
-	text "Kwaxs: Farrfarr!"
+	ntag "Kwaxs"
+	text "Farrfarr!"
 	done
 
 RatteyText:
-	text "Rattey: Kikiii!"
+	ntag "Rattey"
+	text "Kikiii!"
 	done
 
 ViridianNicknameSpeechHouse_MapEvents:

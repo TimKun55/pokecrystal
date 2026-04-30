@@ -76,15 +76,18 @@ MrFujisHouseLassText:
 	done
 
 MrFujisPsyduckText:
-	text "Psyduck: Gu-guwa?"
+	ntag "Psyduck"
+	text "Gu-guwa?"
 	done
 
 MrFujisNidorinoText:
-	text "Nidorino: Gyun!"
+	ntag "Nidorino"
+	text "Gyun!"
 	done
 
 MrFujisPidgeyText:
-	text "Pidgey: Pijji!"
+	ntag "Pidgey"
+	text "Pijji!"
 	done
 
 MrFujisHouse_MapEvents:

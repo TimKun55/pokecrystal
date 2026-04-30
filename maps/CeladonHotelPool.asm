@@ -71,7 +71,8 @@ CeladonHotelPoolPokefanMText:
 	done
 
 SurfingPikachuText:
-	text "Pikachu: Pikapi!"
+	ntag "Pikachu"
+	text "Pikapi!"
 	done
 
 CeladonHotelPool_MapEvents:

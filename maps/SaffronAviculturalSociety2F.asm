@@ -94,12 +94,13 @@ AviculturalSocietyBirdKeeper2YouMayPassText:
 	done
 
 AviculturalSocietyMurkrowText:
-	text "Murkrow: Row!"
-	line "Krow! Mur!"
+	ntag "Murkrow"
+	text "Row! Krow! Mur!"
 	done
 
 AviculturalSocietySkarmoryText:
-	text "Skarmory: Skaaaar!"
+	ntag "Skarmory"
+	text "Skaaaar!"
 	done
 
 AviculturalSocietyArticunoBookshelfText:

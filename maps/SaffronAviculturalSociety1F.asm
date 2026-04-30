@@ -149,12 +149,13 @@ AviculturalSocietyBirdKeeper3YouMayPassText:
 	done
 
 AviculturalSocietyPidgeotText:
-	text "Pidgeot: Geot!"
+	ntag "Pidgeot"
+	text "Geot!"
 	done
 	
 AviculturalSocietyDodrioText:
-	text "Dodrio: Drio!"
-	line "Dododo!"
+	ntag "Dodrio"
+	text "Drio! Dododo!"
 	done
 	
 AviculturalSocietySign1Text:

@@ -61,11 +61,8 @@ TrainerBugManiacTobi:
 ViridianForestOfficerScript:
 	jumptextfaceplayer ViridianForestOfficerText
 
-ViridianForest1Sign:
-	jumptext ViridianForest1SignText
-
-ViridianForest2Sign:
-	jumptext ViridianForest2SignText
+ViridianForestSign:
+	jumptext ViridianForestSignText
 
 ViridianForestDireHit:
 	itemball DIRE_HIT
@@ -186,11 +183,7 @@ ViridianForestOfficerText:
 	cont "mob boss..."
 	done
 
-ViridianForest1SignText:
-	text "Viridian Forest"
-	done
-
-ViridianForest2SignText:
+ViridianForestSignText:
 	text "Viridian Forest"
 	done
 
@@ -207,8 +200,8 @@ ViridianForest_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 31, 37, BGEVENT_READ, ViridianForest1Sign
-	bg_event 11,  7, BGEVENT_READ, ViridianForest2Sign
+	bg_event 31, 37, BGEVENT_READ, ViridianForestSign
+	bg_event 11,  7, BGEVENT_READ, ViridianForestSign
 	bg_event 27, 19, BGEVENT_ITEM, ViridianForestHiddenMaxEther
 	bg_event 29, 11, BGEVENT_ITEM, ViridianForestHiddenFullHeal
 	bg_event 26, 35, BGEVENT_ITEM, ViridianForestHiddenFullRestore

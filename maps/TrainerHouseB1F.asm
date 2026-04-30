@@ -355,39 +355,46 @@ TrainerHouseB1FPleaseComeAgainText:
 	done
 
 TrainerHouseB1FCalBeatenText:
+	ntag "Cal"
 	text "I lost…"
 	line "Darn…"
 	done
 
 TrainerHouseB1FCalBeforeText:
-	text "Cal: I traveled"
-	line "here just so I"
-	cont "could battle you."
+	ntag "Cal"
+	text "I traveled here"
+	line "just so I could"
+	cont "battle you."
 	done
 
 TrainerHouseB1FInverBeforeText:
-	text "Inver: How wonder-"
-	line "ful to have ano-"
-	cont "ther challenger."
+	ntag "Inver"
+	text "How wonderful to"
+	line "have another"
+	cont "challenger."
 
 	para "Let's begin."
 	done
 
 TrainerHouseB1FInverBeatenText:
+	ntag "Inver"
 	text "A wonderful job."
 	done
 
 TrainerHouseB1FInverAfterText:
-	text "Inver: I look for-"
-	line "ward to battling"
-	cont "you again."
+	ntag "Inver"
+	text "I look forward"
+	line "to battling you"
+	cont "again."
 	done
 
 TrainerHouseB1FThortonBeforeText:
-	text "Bzweeeeep!"
+	text "Bzweeeeep!@"
+	text_promptbutton
 
-	para "Thorton: Sorry,"
-	line "don't mind me."
+	ntag "Thorton"
+	text "Sorry, don't"
+	line "mind me."
 
 	para "I'm using an"
 	line "invention of mine."
@@ -410,32 +417,36 @@ TrainerHouseB1FThortonBeforeText:
 	done
 
 TrainerHouseB1FThortonBeatenText:
+	ntag "Thorton"
 	text "Woah! You sure"
 	line "showed me!"
 	done
 
 TrainerHouseB1FThortonAfterText:
-	text "Thorton: I can't"
-	line "wait to gather"
-	cont "even more data."
+	ntag "Thorton"
+	text "I can't wait to"
+	line "gather even more"
+	cont "data."
 	done
 
 TrainerHouseB1FAgathaBeforeText:
-	text "Agatha: Ah, you're"
-	line "here, <PLAYER>."
+	ntag "Agatha"
+	text "Ah, you're here,"
+	line "<PLAYER>."
 
 	para "Time to battle."
 	done
 
 TrainerHouseB1FAgathaBeatenText:
+	ntag "Agatha"
 	text "I lost again."
 	done
 
 TrainerHouseB1FAgathaAfterText:
-	text "Agatha: It may"
-	line "sound odd, but"
-	cont "I'm almost glad"
-	cont "I lost."
+	ntag "Agatha"
+	text "It may sound odd,"
+	line "but I'm almost"
+	cont "glad I lost."
 
 	para "It shows you're"
 	line "continuing your"
@@ -449,38 +460,42 @@ TrainerHouseB1FAgathaAfterText:
 	done
 
 TrainerHouseB1FLoreleiBeforeText:
-	text "Lorelei: Ah,"
-	line "you're here."
+	ntag "Lorelei"
+	text "Ah, you're here."
 
 	para "Let's battle."
 	done
 
 TrainerHouseB1FLoreleiBeatenText:
+	ntag "Lorelei"
 	text "Still powerful."
 	done
 
 TrainerHouseB1FLoreleiAfterText:
-	text "Lorelei: I'm happy"
-	line "to see you're"
-	cont "still training"
-	cont "so seriously."
+	ntag "Lorelei"
+	text "I'm happy to see"
+	line "you're training so"
+	cont "seriously."
 	done
 
 TrainerHouseB1FOakBeforeText:
-	text "Oak: <PLAYER>!"
+	ntag "Prof.Oak"
+	text "<PLAYER>!"
 
 	para "Time to test"
 	line "my training!"
 	done
 
 TrainerHouseB1FOakBeatenText:
+	ntag "Prof.Oak"
 	text "Wow, that was fun!"
 	done
 
 TrainerHouseB1FOakAfterText:
-	text "Oak: I'm glad"
-	line "I decided to start"
-	cont "battling again."
+	ntag "Prof.Oak"
+	text "I'm glad I decided"
+	line "to start battling"
+	cont "again."
 
 	para "It's so much fun!"
 	done

@@ -29,7 +29,8 @@ Route2ViridianForestGateOfficerText:
 	done
 	
 Route2ViridianForestGateBeedrillText:
-	text "Beedrill: Beeeeee!"
+	ntag "Beedrill"
+	text "Beeeeee!"
 	done
 
 

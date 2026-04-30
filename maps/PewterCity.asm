@@ -79,7 +79,7 @@ PewterCityGrampsText:
 	cont "from Route 22?"
 
 	para "It's amazing how"
-	line "connected we are!"
+	line "connected we are."
 	done
 
 PewterCitySignText:

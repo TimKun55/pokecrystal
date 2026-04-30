@@ -129,16 +129,17 @@ AgathaLeaveMovement:
 	step_end
 
 AgathaChallengerText:
-	text "???: Well,"
-	line "well, well."
+	ntag "???"
+	text "Well, well, well."
 	
 	para "A challenger,"
 	line "perhaps?"
 	done
 
 AgathaIntroText:
-	text "???: So, you think"
-	line "you can battle a"
+	ntag "???"
+	text "So, you think you"
+	line "can battle a"
 	cont "Legendary Bird?"
 
 	para "……"
@@ -153,9 +154,11 @@ AgathaIntroText:
 	
 	para "It's not often I"
 	line "get to meet one"
-	cont "like you."
+	cont "like you.@"
+	text_promptbutton
 
-	para "My name is Agatha."
+	ntag "Agatha"
+	text "My name is Agatha."
 	
 	para "As a former Elite"
 	line "Four member, I"
@@ -174,6 +177,7 @@ AgathaIntroText:
 	done
 
 AgathaReturnChallengeText:
+	ntag "Agatha"
 	text "Back again, eh?"
 	
 	para "Hehe, I like your"
@@ -181,12 +185,14 @@ AgathaReturnChallengeText:
 	done
 	
 AgathaWinLossText:
+	ntag "Agatha"
 	text "Well, well, well."
 	line "You really know"
 	cont "what you're doing."
 	done
 	
 AgathaOutroText:
+	ntag "Agatha"
 	text "You've done well,"
 	line "young challenger."
 	
@@ -224,7 +230,8 @@ AgathaOutroText:
 	done
 
 ZapdosText:
-	text "Zapdos: Gshya!"
+	ntag "Zapdos"
+	text "Gshya!"
 	done
 
 Route4ZapdosNest_MapEvents:

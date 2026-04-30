@@ -139,6 +139,7 @@ MountMoon1FHiddenBigNugget:
 	hiddenitem BIG_NUGGET, EVENT_MT_MOON_1F_HIDDEN_BIG_NUGGET
 
 MountMoon1FRivalTextBefore:
+	ntag "<RIVAL>"
 	text "<……> <……> <……>"
 
 	para "It's been a while,"
@@ -158,6 +159,7 @@ MountMoon1FRivalTextBefore:
 	done
 
 MountMoon1FRivalTextWin:
+	ntag "<RIVAL>"
 	text "<……> <……> <……>"
 
 	para "I thought I raised"
@@ -170,6 +172,7 @@ MountMoon1FRivalTextWin:
 	done
 
 MountMoon1FRivalTextAfter:
+	ntag "<RIVAL>"
 	text "<……> <……> <……>"
 
 	para "…You won, fair"
@@ -195,6 +198,7 @@ MountMoon1FRivalTextAfter:
 	done
 
 MountMoon1FRivalTextLoss:
+	ntag "<RIVAL>"
 	text "<……> <……> <……>"
 
 	para "I've repaid my"
