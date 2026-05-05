@@ -351,6 +351,7 @@ FisherAndreSeenText:
 	done
 
 FisherAndreBeatenText:
+	ntag "Andre"
 	text "I might be an ex-"
 	line "pert angler, but"
 	cont "I stink as a #-"
@@ -358,6 +359,7 @@ FisherAndreBeatenText:
 	done
 
 FisherAndreAfterBattleText:
+	ntag "Andre"
 	text "I won't lose as an"
 	line "angler! I catch"
 	cont "#mon all day."
@@ -371,11 +373,13 @@ FisherRaymondSeenText:
 	done
 
 FisherRaymondBeatenText:
+	ntag "Raymond"
 	text "My line's all"
 	line "tangled up…"
 	done
 
 FisherRaymondAfterBattleText:
+	ntag "Raymond"
 	text "Why can't I catch"
 	line "any good #mon?"
 	done
@@ -391,11 +395,13 @@ CooltrainermAaronSeenText:
 	done
 
 CooltrainermAaronBeatenText:
+	ntag "Aaron"
 	text "Whew…"
 	line "Good battle."
 	done
 
 CooltrainermAaronAfterBattleText:
+	ntag "Aaron"
 	text "#mon and their"
 	line "trainer become"
 	cont "powerful through"
@@ -416,10 +422,12 @@ CooltrainerfLoisSeenText:
 	done
 
 CooltrainerfLoisBeatenText:
+	ntag "Lois"
 	text "Good going!"
 	done
 
 CooltrainerfLoisAfterBattleText:
+	ntag "Lois"
 	text "Come to think of"
 	line "it, I've seen a"
 	cont "pink Butterfree."

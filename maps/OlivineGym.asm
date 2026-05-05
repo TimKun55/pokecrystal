@@ -296,10 +296,12 @@ CooltrainerMAndySeenText:
 	done	
 
 CooltrainerMAndyBeatenText:
+	ntag "Andy"
 	text "Yup! Definitely."
 	done
 
 CooltrainerMAndyAfterText:
+	ntag "Andy"
 	text "I wanted to help"
 	line "but none of my"
 	cont "#mon can Surf."
@@ -312,10 +314,12 @@ BeautyJaclynSeenText:
 	done	
 
 BeautyJaclynBeatenText:
+	ntag "Jaclyn"
 	text "I was blinded!"
 	done
 
 BeautyJaclynAfterText:
+	ntag "Jaclyn"
 	text "Jasmine used to"
 	line "be a rock-type"
 	cont "trainer and trai-"	

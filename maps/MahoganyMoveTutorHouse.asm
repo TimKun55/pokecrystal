@@ -213,6 +213,7 @@ TutorHouseBookshelfRight:
 	jumptext TutorHouseBookshelfRightText
 
 AskTeachAMove1Text:
+	ntag "Move Tutor"
 	text "Hi there!"
 	
 	para "For ¥8,000, I can"
@@ -222,11 +223,13 @@ AskTeachAMove1Text:
 	done
 	
 AskTeachAMoveTextYesNo:
+	ntag "Move Tutor"
 	text "Should I teach"
 	line "them a move?"
 	done
 
 MahoganyMoveTutorRefusalText:
+	ntag "Move Tutor"
 	text "Come back if"
 	line "you want to"
 	cont "teach your"
@@ -235,11 +238,13 @@ MahoganyMoveTutorRefusalText:
 	done
 
 MahoganyMoveTutorWontRegretText:
+	ntag "Move Tutor"
 	text "Great! You won't"
 	line "regret it!"
 	done
 
 MahoganyMoveTutorWhichMoveShouldITeachText:
+	ntag "Move Tutor"
 	text "Which move should"
 	line "I teach?"
 	done
@@ -250,11 +255,13 @@ MahoganyMoveTutor1Payment:
 	done
 	
 MahoganyMoveTutorNotEnough:
+	ntag "Move Tutor"
 	text "Ooh, sorry, you"
 	line "don't have enough…"
 	done
 
 MahoganyMoveTutor1TutorUseWisely:
+	ntag "Move Tutor"
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."
@@ -269,6 +276,7 @@ MahoganyMoveTutorMoveText:
 	done
 
 AskTeachAMoveWeather1Text:
+	ntag "Move Tutor"
 	text "Hi there!"
 	line "How's the weather?"
 	
@@ -279,6 +287,7 @@ AskTeachAMoveWeather1Text:
 	done
 
 AskTeachAMoveWeather2Text:
+	ntag "Move Tutor"
 	text "Hi there!"
 	line "How's the weather?"
 	
@@ -298,6 +307,7 @@ MahoganyMoveTutorWeather2Payment:
 	done
 
 MahoganyMoveTutorWeatherTutorUseWisely:
+	ntag "Move Tutor"
 	text "If you'd like to"
 	line "learn more about"
 	cont "these moves,"

@@ -446,11 +446,13 @@ FisherTullySeenText:
 	done
 
 FisherTullyBeatenText:
+	ntag "Tully"
 	text "What? That's not"
 	line "right."
 	done
 
 FisherTullyAfterBattleText:
+	ntag "Tully"
 	text "I want to become"
 	line "the trainer Champ"
 	cont "using the #mon"
@@ -467,10 +469,12 @@ HikerBenjaminSeenText:
 	done
 
 HikerBenjaminBeatenText:
+	ntag "Benjamin"
 	text "Gahahah!"
 	done
 
 HikerBenjaminAfterBattleText:
+	ntag "Benjamin"
 	text "Losing feels in-"
 	line "significant if you"
 	cont "look up at the big"
@@ -486,11 +490,13 @@ PokemaniacShaneSeenText:
 	done
 
 PokemaniacShaneBeatenText:
+	ntag "Shane"
 	text "I should have used"
 	line "my Moon Stone…"
 	done
 
 PokemaniacShaneAfterBattleText:
+	ntag "Shane"
 	text "You're working on"
 	line "a #dex?"
 

@@ -1,9 +1,9 @@
 ReenaAskNumber1Text:
+	ntag "Reena"
 	text "Not bad…"
 	line "It's something to"
-
-	para "beat me, even by"
-	line "an unlikely fluke…"
+	cont "beat me, even by"
+	cont "an unlikely fluke…"
 
 	para "I like you! Give"
 	line "me your number!"
@@ -13,6 +13,7 @@ ReenaAskNumber1Text:
 	done
 
 ReenaAskNumber2Text:
+	ntag "Reena"
 	text "Give me your phone"
 	line "number!"
 
@@ -22,6 +23,7 @@ ReenaAskNumber2Text:
 	done
 
 ReenaNumberAcceptedText:
+	ntag "Reena"
 	text "Don't be too proud"
 	line "about beating me!"
 
@@ -29,17 +31,20 @@ ReenaNumberAcceptedText:
 	done
 
 ReenaNumberDeclinedText:
+	ntag "Reena"
 	text "I don't believe"
 	line "it! You're going"
 	cont "to regret this!"
 	done
 
 ReenaPhoneFullText:
+	ntag "Reena"
 	text "What? Your phone"
 	line "list has no room!"
 	done
 
 ReenaRematchText:
+	ntag "Reena"
 	text "What took you?"
 	line "Start right away!"
 	done

@@ -1,4 +1,5 @@
 ChadAskNumber1Text:
+	ntag "Chad"
 	text "Huh? Is that thing"
 	line "a #dex? Have"
 	cont "you met Prof.Oak?"
@@ -8,9 +9,8 @@ ChadAskNumber1Text:
 
 	para "I have a dream of"
 	line "becoming a #mon"
-
-	para "researcher like"
-	line "Prof.Oak."
+	cont "researcher like"
+	cont "Prof.Oak."
 
 	para "May I please have"
 	line "your phone number?"
@@ -23,6 +23,7 @@ ChadAskNumber1Text:
 	done
 
 ChadAskNumber2Text:
+	ntag "Chad"
 	text "May I please have"
 	line "your phone number?"
 
@@ -34,23 +35,27 @@ ChadAskNumber2Text:
 	done
 
 ChadNumberAcceptedText:
+	ntag "Chad"
 	text "You must listen to"
 	line "Prof.Oak's #mon"
 	cont "Talk, right?"
 	done
 
 ChadNumberDeclinedText:
+	ntag "Chad"
 	text "Oh… I wish I had a"
 	line "chance to meet"
 	cont "Prof.Oak…"
 	done
 
 ChadPhoneFullText:
+	ntag "Chad"
 	text "Your phone list is"
 	line "completely full!"
 	done
 
 ChadRematchText:
+	ntag "Chad"
 	text "I've been waiting!"
 	line "Let's battle now!"
 	done

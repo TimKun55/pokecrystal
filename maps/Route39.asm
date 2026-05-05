@@ -163,7 +163,12 @@ TrainerPokefanfJaime:
 	writetextend PokefanfJaimeAfterBattleText
 
 .NotNight:
+	checkevent EVENT_BEAT_POKEFANF_JAIME
+	iftrue .NotNightBeaten
 	writetextend PokefanfJaimeHopeItGetsDarkText
+
+.NotNightBeaten:
+	writetextend PokefanfJaimeBeatenHopeItGetsDarkText
 
 TrainerBugManiacPete:
 	trainer BUG_MANIAC, PETE, EVENT_BEAT_BUG_MANIAC_PETE, BugManiacPeteSeenText, BugManiacPeteBeatenText, 0, .Script
@@ -201,10 +206,12 @@ SailorEugeneSeenText:
 	done
 
 SailorEugeneBeatenText:
+	ntag "Eugene"
 	text "Awaaargh!"
 	done
 
 SailorEugeneAfterBattleText:
+	ntag "Eugene"
 	text "My #mon were"
 	line "caught and raised"
 	cont "overseas."
@@ -221,11 +228,13 @@ PokefanmDerekSeenText:
 	done
 
 PokefanmDerekBeatenText:
+	ntag "Derek"
 	text "I had no time to"
 	line "show off Pikachu…"
 	done
 
 PokefanMDerekText_NotBragging:
+	ntag "Derek"
 	text "I'm not listening"
 	line "to your bragging!"
 
@@ -245,11 +254,13 @@ PokefanfRuthSeenText:
 	done
 
 PokefanfRuthBeatenText:
+	ntag "Ruth"
 	text "I don't mind"
 	line "losing."
 	done
 
 PokefanfRuthAfterBattleText:
+	ntag "Ruth"
 	text "Do you know about"
 	line "baby #mon?"
 
@@ -258,6 +269,7 @@ PokefanfRuthAfterBattleText:
 	done
 
 PokefanMDerekPikachuIsItText:
+	ntag "Derek"
 	text "Pikachu is it!"
 	line "Don't you agree?"
 	done
@@ -269,11 +281,13 @@ PsychicNormanSeenText:
 	done
 
 PsychicNormanBeatenText:
+	ntag "Norman"
 	text "Ooh, your #mon"
 	line "have potential."
 	done
 
 PsychicNormanAfterBattleText:
+	ntag "Norman"
 	text "You know how #-"
 	line "mon have different"
 	cont "abilities?"
@@ -290,15 +304,23 @@ BugManiacPeteSeenText:
 	done
 
 BugManiacPeteBeatenText:
+	ntag "Pete"
 	text "Oh, I lost?"
 	done
 
 BugManiacPeteAfterBattleText:
+	ntag "Pete"
 	text "You're really"
 	line "good at this!"
 	done
 
 PokefanfJaimeHopeItGetsDarkText:
+	text "Ufufufu… I hope it"
+	line "gets dark soon."
+	done
+
+PokefanfJaimeBeatenHopeItGetsDarkText:
+	ntag "Jaime"
 	text "Ufufufu… I hope it"
 	line "gets dark soon."
 	done
@@ -311,11 +333,13 @@ PokefanfJaimeSeenText:
 	done
 
 PokefanfJaimeBeatenText:
+	ntag "Jaime"
 	text "Oh, how disap-"
 	line "pointing…"
 	done
 
 PokefanfJaimeAfterBattleText:
+	ntag "Jaime"
 	text "I met my Meowth at"
 	line "night, right here"
 	cont "on Route 39."

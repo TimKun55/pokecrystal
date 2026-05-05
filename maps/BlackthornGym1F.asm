@@ -360,11 +360,13 @@ CooltrainermPaulSeenText:
 	done
 
 CooltrainermPaulBeatenText:
+	ntag "Paul"
 	text "My dragon #mon"
 	line "lost?"
 	done
 
 CooltrainermPaulAfterBattleText:
+	ntag "Paul"
 	text "Lance told you"
 	line "that he'd like to"
 	cont "see you again?"
@@ -378,10 +380,12 @@ CooltrainermMikeSeenText:
 	done
 
 CooltrainermMikeBeatenText:
+	ntag "Mike"
 	text "That's odd."
 	done
 
 CooltrainermMikeAfterBattleText:
+	ntag "Mike"
 	text "I know my short-"
 	line "comings now."
 
@@ -403,10 +407,12 @@ CooltrainerfLolaSeenText:
 	done
 
 CooltrainerfLolaBeatenText:
+	ntag "Lola"
 	text "Way to go!"
 	done
 
 CooltrainerfLolaAfterBattleText:
+	ntag "Lola"
 	text "Dragons are weak"
 	line "against dragon-"
 	cont "type moves."

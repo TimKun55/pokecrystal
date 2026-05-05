@@ -141,6 +141,7 @@ SailorHueySeenText:
 	done
 
 SailorHueyBeatenText:
+	ntag "Huey"
 	text "Urf!"
 	line "I lose!"
 	done
@@ -151,11 +152,13 @@ GentlemanAlfredSeenText:
 	done
 
 GentlemanAlfredBeatenText:
+	ntag "Alfred"
 	text "Ah! I can see that"
 	line "you're serious."
 	done
 
 GentlemanAlfredAfterBattleText:
+	ntag "Alfred"
 	text "Up top is a #-"
 	line "mon that keeps the"
 	cont "Lighthouse lit."
@@ -167,6 +170,7 @@ GentlemanAlfredAfterBattleText:
 	done
 
 SailorHueyGiveProteinText:
+	ntag "Huey"
 	text "Man! You're as"
 	line "tough as ever!"
 

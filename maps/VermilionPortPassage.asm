@@ -125,8 +125,9 @@ VermilionPortPassageNoTicketText:
 
 	ntag "Sailor"
 	text "Sorry!"
-	line "You may board only"
-	cont "if you have an"
+	
+	para "You may board only"
+	line "if you have an"
 	cont "S.S.Ticket."
 	done
 

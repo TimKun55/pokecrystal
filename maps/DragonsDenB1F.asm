@@ -85,14 +85,14 @@ TrainerCooltrainerfCara:
 	jumptext CooltrainerfCaraAfterBattleText
 
 TrainerTwinsLeaandpia1:
-	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpia1BeatenText, 0, .Script
+	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpiaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	jumptext TwinsLeaandpia1AfterBattleText
 
 TrainerTwinsLeaandpia2:
-	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpia2BeatenText, 0, .Script
+	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpiaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -259,10 +259,12 @@ CooltrainermDarinSeenText:
 	done
 
 CooltrainermDarinBeatenText:
+	ntag "Darin"
 	text "S-strong!"
 	done
 
 CooltrainermDarinAfterBattleText:
+	ntag "Darin"
 	text "The Shrine ahead"
 	line "is home to the"
 
@@ -279,10 +281,12 @@ CooltrainerfCaraSeenText:
 	done
 
 CooltrainerfCaraBeatenText:
+	ntag "Cara"
 	text "Oh yikes, I lost!"
 	done
 
 CooltrainerfCaraAfterBattleText:
+	ntag "Cara"
 	text "Soon I'm going to"
 	line "get permission"
 	cont "from our Master to"
@@ -301,11 +305,14 @@ TwinsLeaandpia1SeenText:
 	line "don't know."
 	done
 
-TwinsLeaandpia1BeatenText:
-	text "Ouchies."
+TwinsLeaandpiaBeatenText:
+	ntag "Lea & Pia"
+	text "Ouchies!"
+	line "Meanie!"
 	done
 
 TwinsLeaandpia1AfterBattleText:
+	ntag "Lea"
 	text "It was like having"
 	line "to battle Lance."
 	done
@@ -314,11 +321,8 @@ TwinsLeaandpia2SeenText:
 	text "Who are you?"
 	done
 
-TwinsLeaandpia2BeatenText:
-	text "Meanie."
-	done
-
 TwinsLeaandpia2AfterBattleText:
+	ntag "Pia"
 	text "We'll tell on you."
 
 	para "Master will be"

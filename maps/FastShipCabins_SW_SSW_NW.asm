@@ -93,11 +93,13 @@ FirebreatherLyleSeenText:
 	done
 
 FirebreatherLyleBeatenText:
+	ntag "Lyle"
 	text "Fizzle… The"
 	line "flame's tiny…"
 	done
 
 FirebreatherLyleAfterBattleText:
+	ntag "Lyle"
 	text "I guess fire is"
 	line "weak on the sea."
 
@@ -112,11 +114,13 @@ BugCatcherKenSeenText:
 	done
 
 BugCatcherKenBeatenText:
+	ntag "Ken"
 	text "Ooh, wow."
 	line "You're tough!"
 	done
 
 BugCatcherKenAfterBattleText:
+	ntag "Ken"
 	text "You can find lots"
 	line "of #mon in the"
 	cont "trees of Johto!"
@@ -129,10 +133,12 @@ BeautyCassieSeenText:
 	done
 
 BeautyCassieBeatenText:
+	ntag "Cassie"
 	text "My heart weeps…"
 	done
 
 BeautyCassieAfterBattleText:
+	ntag "Cassie"
 	text "A voyage is best"
 	line "for getting over"
 	cont "a broken heart."
@@ -150,11 +156,13 @@ GuitaristClydeSeenText:
 	done
 
 GuitaristClydeBeatenText:
+	ntag "Clyde"
 	text "Yowza!"
 	line "Total distortion!"
 	done
 
 GuitaristClydeAfterBattleText:
+	ntag "Clyde"
 	text "Speaking of the"
 	line "Radio Station,"
 	cont "what's today's lucky"

@@ -88,6 +88,7 @@ Kai:
 	end
 
 CianwoodTutorIntro:
+	ntag "Move Tutor"
 	text "Hi there!"
 	line "For ¥8000, I can"
 	cont "teach your #mon"
@@ -97,11 +98,13 @@ CianwoodTutorIntro:
 	done
 	
 CianwoodAskYesNo:
+	ntag "Move Tutor"
 	text "Should I teach"
 	line "them a move?"
 	done
 
 CianwoodMoveTutorRefusalText:
+	ntag "Move Tutor"
 	text "Come back here"
 	line "if you want to"
 	
@@ -111,11 +114,13 @@ CianwoodMoveTutorRefusalText:
 	done
 
 CianwoodMoveTutorWontRegretText:
+	ntag "Move Tutor"
 	text "Great! You won't"
 	line "regret it!"
 	done
 
 CianwoodMoveTutorWhichMoveText:
+	ntag "Move Tutor"
 	text "Which move should"
 	line "I teach?"
 	done
@@ -126,11 +131,13 @@ CianwoodMoveTutorPayment:
 	done
 	
 CianwoodMoveTutorNotEnough:
+	ntag "Move Tutor"
 	text "Ooh, sorry, you"
 	line "don't have enough…"
 	done
 
 CianwoodMoveTutorUseWisely:
+	ntag "Move Tutor"
 	para "See ya and"
 	line "good luck on"
 	cont "your journey!"

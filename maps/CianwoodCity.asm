@@ -349,10 +349,12 @@ LadyMaeSeenText:
 	done
 
 LadyMaeBeatenText:
+	ntag "Mae"
 	text "Wow!"
 	done
 
 LadyMaeAfterBattleText:
+	ntag "Mae"
 	text "You're powerful!"
 	line "You should talk to"
 	cont "my Dad in"

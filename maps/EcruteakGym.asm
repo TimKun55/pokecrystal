@@ -617,11 +617,13 @@ SageJeffreySeenText:
 	done
 
 SageJeffreyBeatenText:
+	ntag "Jeffrey"
 	text "Wins and losses, I"
 	line "experienced both."
 	done
 
 SageJeffreyAfterBattleText:
+	ntag "Jeffrey"
 	text "Where did #mon"
 	line "come from?"
 	done
@@ -633,10 +635,12 @@ SagePingSeenText:
 	done
 
 SagePingBeatenText:
+	ntag "Ping"
 	text "Ah! Well done!"
 	done
 
 SagePingAfterBattleText:
+	ntag "Ping"
 	text "We use only ghost-"
 	line "type #mon."
 
@@ -650,10 +654,12 @@ HexManiacMarthaSeenText:
 	done
 
 HexManiacMarthaBeatenText:
+	ntag "Martha"
 	text "I, I, I lost!"
 	done
 
 HexManiacMarthaAfterBattleText:
+	ntag "Martha"
 	text "The one who wants"
 	line "to win most--will!"
 	done
@@ -668,10 +674,12 @@ HexManiacGraceSeenText:
 	done
 
 HexManiacGraceBeatenText:
+	ntag "Grace"
 	text "Wha-what?"
 	done
 
 HexManiacGraceAfterBattleText:
+	ntag "Grace"
 	text "Look at the path"
 	line "carefully before"
 	cont "the battles."

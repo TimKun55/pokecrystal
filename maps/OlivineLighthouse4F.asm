@@ -8,11 +8,11 @@ OlivineLighthouse4F_MapScripts:
 	def_callbacks
 
 TrainerLassConnie:
-	trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script
+	trainer LASS, CONNIE, EVENT_BEAT_LASS_CONNIE, LassConnieSeenText, LassConnieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
-	jumptext LassConnie1AfterBattleText
+	jumptext LassConnieAfterBattleText
 
 TrainerSailorKent:
 	trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script
@@ -31,18 +31,20 @@ SailorKentSeenText:
 	done
 
 SailorKentBeatenText:
+	ntag "Kent"
 	text "I can't manage a"
 	line "smile either…"
 	done
 
 SailorKentAfterBattleText:
+	ntag "Kent"
 	text "Speaking of sick,"
 	line "I've heard there's"
 	cont "a good Pharmacy in"
 	cont "Cianwood."
 	done
 
-LassConnie1SeenText:
+LassConnieSeenText:
 	text "Jasmine is this"
 	line "city's Gym Leader."
 
@@ -53,11 +55,13 @@ LassConnie1SeenText:
 	line "get in my way!"
 	done
 
-LassConnie1BeatenText:
+LassConnieBeatenText:
+	ntag "Connie"
 	text "Aaack! My #mon!"
 	done
 
-LassConnie1AfterBattleText:
+LassConnieAfterBattleText:
+	ntag "Connie"
 	text "Right. Anybody"
 	line "would be worried"
 	cont "if his or her own"

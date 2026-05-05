@@ -1,29 +1,31 @@
 ParryAskNumber1Text:
+	ntag "Parry"
 	text "Sheesh, the way"
 	line "you attacked! That"
-
-	para "was something! We"
-	line "should meet again!"
+	cont "was something! We"
+	cont "should meet again!"
 
 	para "How about giving"
 	line "me your number?"
 	done
 
 ParryAskNumber2Text:
+	ntag "Parry"
 	text "So you want to"
 	line "register my phone"
-
-	para "number for a re-"
-	line "match, huh?"
+	cont "number for a re-"
+	cont "match, huh?"
 	done
 
 ParryNumberAcceptedText:
+	ntag "Parry"
 	text "I'll call you"
 	line "whenever I feel"
 	cont "like battling!"
 	done
 
 ParryNumberDeclinedText:
+	ntag "Parry"
 	text "No? That's fine."
 
 	para "A definite no is"
@@ -35,12 +37,14 @@ ParryNumberDeclinedText:
 	done
 
 ParryPhoneFullText:
+	ntag "Parry"
 	text "Oh? There's no"
 	line "room to register"
 	cont "my phone number."
 	done
 
 ParryRematchText:
+	ntag "Parry"
 	text "Hey, here comes"
 	line "the kid! Let's go!"
 
@@ -50,6 +54,7 @@ ParryRematchText:
 	done
 
 ParryPackFullText:
+	ntag "Parry"
 	text "Your Pack looks"
 	line "stuffed full!"
 
@@ -58,6 +63,7 @@ ParryPackFullText:
 	done
 
 ParryRematchGiftText:
+	ntag "Parry"
 	text "Well, you're"
 	line "special all right."
 
@@ -67,7 +73,7 @@ ParryRematchGiftText:
 
 	para "I want you to work"
 	line "and succeed for"
-
-	para "the both of us."
-	line "So take this, OK?"
+	cont "the both of us."
+	
+	para "So take this, OK?"
 	done

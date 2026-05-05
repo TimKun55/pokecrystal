@@ -98,11 +98,13 @@ SwimmermCharlieSeenText:
 	done
 
 SwimmermCharlieBeatenText:
+	ntag "Charlie"
 	text "Yikes! I've got"
 	line "prune skin!"
 	done
 
 SwimmermCharlieAfterBattleText:
+	ntag "Charlie"
 	text "Isn't it relaxing"
 	line "just floating like"
 	cont "this?"
@@ -115,10 +117,12 @@ SwimmermGeorgeSeenText:
 	done
 
 SwimmermGeorgeBeatenText:
+	ntag "George"
 	text "Pant, pant…"
 	done
 
 SwimmermGeorgeAfterBattleText:
+	ntag "George"
 	text "It's so far to"
 	line "Cianwood."
 
@@ -139,11 +143,13 @@ SwimmermBerkeSeenText:
 	done
 
 SwimmermBerkeBeatenText:
+	ntag "Berke"
 	text "What's the secret"
 	line "to your strength?"
 	done
 
 SwimmermBerkeAfterBattleText:
+	ntag "Berke"
 	text "It was a dark and"
 	line "stormy night…"
 
@@ -165,10 +171,12 @@ SwimmermKirkSeenText:
 	done
 
 SwimmermKirkBeatenText:
+	ntag "Kirk"
 	text "I'm beat!"
 	done
 
 SwimmermKirkAfterBattleText:
+	ntag "Kirk"
 	text "The currents keep"
 	line "me from reaching"
 	cont "that island."
@@ -181,11 +189,13 @@ SwimmermMathewSeenText:
 	done
 
 SwimmermMathewBeatenText:
+	ntag "Mathew"
 	text "Ooh, you've got"
 	line "great endurance!"
 	done
 
 SwimmermMathewAfterBattleText:
+	ntag "Mathew"
 	text "A secret about"
 	line "Whirl Islands…"
 
@@ -202,11 +212,13 @@ SwimmerfKayleeSeenText:
 	done
 
 SwimmerfKayleeBeatenText:
+	ntag "Kaylee"
 	text "Is that how you do"
 	line "it?"
 	done
 
 SwimmerfKayleeAfterBattleText:
+	ntag "Kaylee"
 	text "There's supposed"
 	line "to be a big #-"
 	cont "mon deep beneath"
@@ -223,10 +235,12 @@ SwimmerfSusieSeenText:
 	done
 
 SwimmerfSusieBeatenText:
+	ntag "Susie"
 	text "I'm crushed…"
 	done
 
 SwimmerfSusieAfterBattleText:
+	ntag "Susie"
 	text "Wasn't there a hit"
 	line "song about a boy"
 	cont "riding a Lapras?"
@@ -239,10 +253,12 @@ SwimmerfDeniseSeenText:
 	done
 
 SwimmerfDeniseBeatenText:
+	ntag "Denise"
 	text "Ohhh!"
 	done
 
 SwimmerfDeniseAfterBattleText:
+	ntag "Denise"
 	text "A sunburn is the"
 	line "worst for skin."
 
@@ -265,11 +281,13 @@ SwimmerfKaraSeenText:
 	done
 
 SwimmerfKaraBeatenText:
+	ntag "Kara"
 	text "Oh! You have more"
 	line "energy than I do."
 	done
 
 SwimmerfKaraAfterBattleText:
+	ntag "Kara"
 	text "I heard roars from"
 	line "deep inside the"
 	cont "Islands."
@@ -282,10 +300,12 @@ SwimmerfWendySeenText:
 	done
 
 SwimmerfWendyBeatenText:
+	ntag "Wendy"
 	text "Oh, dear…"
 	done
 
 SwimmerfWendyAfterBattleText:
+	ntag "Wendy"
 	text "The clusters of"
 	line "Staryu light up"
 	cont "at the same time."

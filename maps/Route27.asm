@@ -241,11 +241,13 @@ CooltrainerfBeth1SeenText:
 	done
 
 CooltrainerfBeth1BeatenText:
+	ntag "Beth"
 	text "#mon aren't"
 	line "tools of war."
 	done
 
 CooltrainerfBethAfterText:
+	ntag "Beth"
 	text "#mon are in-"
 	line "valuable, lifelong"
 	cont "partners."
@@ -258,10 +260,12 @@ CooltrainermBlakeSeenText:
 	done
 
 CooltrainermBlakeBeatenText:
+	ntag "Blake"
 	text "Yow!"
 	done
 
 CooltrainermBlakeAfterBattleText:
+	ntag "Blake"
 	text "If you prevail on"
 	line "this harsh trek,"
 	cont "the truth will be"
@@ -278,10 +282,12 @@ CooltrainermBrianSeenText:
 	done
 
 CooltrainermBrianBeatenText:
+	ntag "Brian"
 	text "Just as I thought!"
 	done
 
 CooltrainermBrianAfterBattleText:
+	ntag "Brian"
 	text "A good trainer can"
 	line "recognize other"
 	cont "good trainers."
@@ -295,11 +301,13 @@ CooltrainerfReenaSeenText:
 	done
 
 CooltrainerfReenaBeatenText:
+	ntag "Reena"
 	text "Oh! You're much"
 	line "too strong!"
 	done
 
 CooltrainerfReenaAfterBattleText:
+	ntag "Reena"
 	text "You're just a kid,"
 	line "but you're not to"
 	cont "be underestimated"
@@ -315,11 +323,13 @@ CooltrainerfMeganSeenText:
 	done
 
 CooltrainerfMeganBeatenText:
+	ntag "Megan"
 	text "Oh! You're really"
 	line "strong!"
 	done
 
 CooltrainerfMeganAfterBattleText:
+	ntag "Megan"
 	text "I'm checking out"
 	line "pre- and post-"
 	cont "evolution #mon."
@@ -347,10 +357,12 @@ PsychicGilbertSeenText:
 	done
 
 PsychicGilbertBeatenText:
+	ntag "Gilbert"
 	text "You're too much!"
 	done
 
 PsychicGilbertAfterBattleText:
+	ntag "Gilbert"
 	text "With your skills,"
 	line "you'll do well at"
 	cont "the League."

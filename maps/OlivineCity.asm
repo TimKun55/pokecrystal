@@ -311,6 +311,7 @@ OlivineCityBattleTowerSignText:
 	done
 
 OlivineCitySailorTutorAquaTailText:
+	ntag "Move Tutor"
 	text "Ho, there, young"
 	line "trainer!"
 	
@@ -323,12 +324,14 @@ OlivineCitySailorTutorAquaTailText:
 	done
 
 OlivineCitySailorTutorAquaTailText2:
+	ntag "Move Tutor"
 	text "Should I teach"
 	line "Aqua Tail for"
 	cont "¥5,000?"
 	done
 
 OlivineCitySailorTutorAquaTailRefused:
+	ntag "Move Tutor"
 	text "Come back when"
 	line "you like."
 	done
@@ -343,6 +346,7 @@ OlivineCitySailorTutorPayment:
 	done
 
 OlivineCitySailorTutorAquaTailTaught:
+	ntag "Move Tutor"
 	text "It does great"
 	line "damage and can"
 	cont "lower the target's"
@@ -350,6 +354,7 @@ OlivineCitySailorTutorAquaTailTaught:
 	done
 	
 OlivineCitySailorTutorNotEnough:
+	ntag "Move Tutor"
 	text "Sorry, you can't"
 	line "afford it."
 	done

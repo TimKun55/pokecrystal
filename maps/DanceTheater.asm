@@ -179,11 +179,13 @@ KimonoGirlNaokoSeenText:
 	done
 
 KimonoGirlNaokoBeatenText:
+	ntag "Naoko"
 	text "Oh, you are very"
 	line "strong."
 	done
 
 KimonoGirlNaokoAfterBattleText:
+	ntag "Naoko"
 	text "I enjoyed that"
 	line "bout. I would like"
 	cont "to see you again."
@@ -198,11 +200,13 @@ KimonoGirlSayoSeenText:
 	done
 
 KimonoGirlSayoBeatenText:
+	ntag "Sayo"
 	text "Oh, so close!"
 	line "I almost had you."
 	done
 
 KimonoGirlSayoAfterBattleText:
+	ntag "Sayo"
 	text "Rhythm is impor-"
 	line "tant for both"
 	cont "dancing and #-"
@@ -218,11 +222,13 @@ KimonoGirlZukiSeenText:
 	done
 
 KimonoGirlZukiBeatenText:
+	ntag "Zuki"
 	text "I don't have any"
 	line "#mon left…"
 	done
 
 KimonoGirlZukiAfterBattleText:
+	ntag "Zuki"
 	text "I put a different"
 	line "flower in my bar-"
 	cont "rette every month."
@@ -235,11 +241,13 @@ KimonoGirlKuniSeenText:
 	done
 
 KimonoGirlKuniBeatenText:
+	ntag "Kuni"
 	text "You're stronger"
 	line "than you look."
 	done
 
 KimonoGirlKuniAfterBattleText:
+	ntag "Kuni"
 	text "I trained a lot,"
 	line "so I thought I was"
 	cont "a capable trainer."
@@ -253,11 +261,13 @@ KimonoGirlMikiSeenText:
 	done
 
 KimonoGirlMikiBeatenText:
+	ntag "Miki"
 	text "Ooh, you're good"
 	line "at #mon too."
 	done
 
 KimonoGirlMikiAfterBattleText:
+	ntag "Miki"
 	text "I can keep dancing"
 	line "because there are"
 	cont "people who enjoy"
@@ -281,15 +291,18 @@ KimonoGirlSakuraSeenText:
 	done
 	
 KimonoGirlSakuraBeatenText:
+	ntag "Sakura"
 	text "Oh wow, we need"
 	line "more discipline."
 	done
 	
 SakuraRematchDefeatText:
+	ntag "Sakura"
 	text "Still not enough?"
 	done
 
 KimonoGirlSakuraAfterBattleText:
+	ntag "Sakura"
 	text "Our dancing and"
 	line "training programs"
 	cont "are pretty intense"
@@ -297,23 +310,27 @@ KimonoGirlSakuraAfterBattleText:
 	done
 	
 KimonoGirlSakuraNextTimeText:
+	ntag "Sakura"
 	text "You should come"
 	line "back for a rematch"
 	cont "sometime!"
 	done
 	
 SakuraRematchText:
+	ntag "Sakura"
 	text "You're back!"
 	line "Would you like"
 	cont "a rematch?"
 	done
 
 SakuraMaybeNextTimeText:
+	ntag "Sakura"
 	text "Oh, maybe next"
 	line "time, then."
 	done
 
 SakuraComeBackTomorrowText:
+	ntag "Sakura"
 	text "We've already had"
 	line "our battle today."
 	

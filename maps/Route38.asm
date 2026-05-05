@@ -327,11 +327,13 @@ BirdKeeperTobySeenText:
 	done
 
 BirdKeeperTobyBeatenText:
+	ntag "Toby"
 	text "I feel like just"
 	line "flying away now."
 	done
 
 BirdKeeperTobyAfterBattleText:
+	ntag "Toby"
 	text "I plan to train in"
 	line "Cianwood City to"
 	cont "teach my #mon"
@@ -345,11 +347,13 @@ SchoolboyChad1SeenText:
 	done
 
 SchoolboyChad1BeatenText:
+	ntag "Chad"
 	text "I didn't study"
 	line "enough, I guess."
 	done
 
 SchoolboyChadSoManyTestsText:
+	ntag "Chad"
 	text "I have to take so"
 	line "many tests, I"
 	cont "don't have much"
@@ -370,11 +374,13 @@ LassDana1SeenText:
 	done
 
 LassDana1BeatenText:
+	ntag "Dana"
 	text "I see. So you can"
 	line "battle that way."
 	done
 
 LassDanaMoomooMilkText:
+	ntag "Dana"
 	text "I know something"
 	line "good!"
 
@@ -392,11 +398,13 @@ BeautyValerieSeenText:
 	done
 
 BeautyValerieBeatenText:
+	ntag "Valerie"
 	text "I'm glad I got to"
 	line "see your #mon!"
 	done
 
 BeautyValerieAfterBattleText:
+	ntag "Valerie"
 	text "When I see #-"
 	line "mon, it seems to"
 	cont "soothe my nerves."
@@ -410,11 +418,13 @@ SailorHarrySeenText:
 	done
 
 SailorHarryBeatenText:
+	ntag "Harry"
 	text "Your skill is"
 	line "world class!"
 	done
 
 SailorHarryAfterBattleText:
+	ntag "Harry"
 	text "All kinds of peo-"
 	line "ple around the"
 	cont "world live happily"
@@ -428,11 +438,13 @@ BeautyOliviaSeenText:
 	done
 
 BeautyOliviaBeatenText:
+	ntag "Olivia"
 	text "We drink Moomoo"
 	line "Milk every day."
 	done
 
 BeautyOliviaAfterBattleText:
+	ntag "Olivia"
 	text "Moomoo Milk is"
 	line "good for beauty"
 	cont "and health!"
@@ -454,10 +466,12 @@ LadyKatSeenText:
 	done
 
 LadyKatBeatenText:
+	ntag "Kat"
 	text "Aww, I lost!"
 	done
 
 LadyKatAfterBattleText:
+	ntag "Kat"
 	text "Johto is such a"
 	line "beautiful region"
 	cont "but I miss Hoenn."

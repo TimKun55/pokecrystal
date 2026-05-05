@@ -117,10 +117,12 @@ CooltrainermSeanSeenText:
 	done
 
 CooltrainermSeanBeatenText:
+	ntag "Sean"
 	text "I wanted to win!"
 	done
 
 CooltrainermSeanAfterBattleText:
+	ntag "Sean"
 	text "Trainers from"
 	line "Johto can battle"
 	cont "with Kanto Gym"
@@ -133,11 +135,13 @@ CooltrainerfCarolSeenText:
 	done
 
 CooltrainerfCarolBeatenText:
+	ntag "Carol"
 	text "What's so differ-"
 	line "ent between us?"
 	done
 
 CooltrainerfCarolAfterBattleText:
+	ntag "Carol"
 	text "I'm going to beat"
 	line "you someday!"
 	done
@@ -149,10 +153,12 @@ PokemaniacTravisSeenText:
 	done
 
 PokemaniacTravisBeatenText:
+	ntag "Travis"
 	text "Gyaaaah!"
 	done
 
 PokemaniacTravisAfterBattleText:
+	ntag "Travis"
 	text "Lily's nice, but"
 	line "Mary's the best!"
 
@@ -167,11 +173,13 @@ HikerNolandSeenText:
 	done
 
 HikerNolandBeatenText:
+	ntag "Noland"
 	text "That's too much to"
 	line "handle!"
 	done
 
 HikerNolandAfterBattleText:
+	ntag "Noland"
 	text "I wonder if there"
 	line "are any mountains"
 	cont "worth climbing in"
@@ -194,11 +202,13 @@ SailorStanlySeenText:
 	done
 
 SailorStanlyBeatenText:
+	ntag "Stanly"
 	text "Sorry! It's all my"
 	line "fault!"
 	done
 
 SailorStanlyAfterBattleText:
+	ntag "Stanly"
 	text "Being a sailor, I"
 	line "have to do phys-"
 	cont "ical labor. It's"
@@ -212,11 +222,13 @@ GentlemanEdwardSeenText:
 	done
 
 GentlemanEdwardBeatenText:
+	ntag "Edward"
 	text "I… I can't find"
 	line "it…"
 	done
 
 GentlemanEdwardAfterBattleText:
+	ntag "Edward"
 	text "I give up."
 	line "You don't have to"
 	cont "look. Just forget"
@@ -229,11 +241,13 @@ BurglarCoreySeenText:
 	done
 
 BurglarCoreyBeatenText:
+	ntag "Corey"
 	text "How unlucky!"
 	line "I lost!"
 	done
 
 BurglarCoreyAfterBattleText:
+	ntag "Corey"
 	text "I found a pretty"
 	line "coin here."
 

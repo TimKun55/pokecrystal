@@ -131,14 +131,14 @@ TrainerPokefanmColin:
 	jumptext PokefanmColinAfterBattleText
 
 TrainerTwinsMegandpeg1:
-	trainer TWINS, MEGANDPEG1, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg1SeenText, TwinsMegandpeg1BeatenText, 0, .Script
+	trainer TWINS, MEGANDPEG1, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg1SeenText, TwinsMegandpegBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	jumptext TwinsMegandpeg1AfterBattleText
 
 TrainerTwinsMegandpeg2:
-	trainer TWINS, MEGANDPEG2, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg2SeenText, TwinsMegandpeg2BeatenText, 0, .Script
+	trainer TWINS, MEGANDPEG2, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg2SeenText, TwinsMegandpegBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -196,6 +196,7 @@ SSAquaGrandpaApproachesPlayerMovement:
 	step_end
 
 SSAquaCaptainExhaustingText:
+	ntag "Captain"
 	text "Whew! Thanks for"
 	line "coming along."
 
@@ -205,6 +206,7 @@ SSAquaCaptainExhaustingText:
 	done
 
 SSAquaCaptainHowDoYouLikeText:
+	ntag "Captain"
 	text "How do you like"
 	line "S.S.Aqua's ride?"
 
@@ -296,10 +298,12 @@ PokefanmColinSeenText:
 	done
 
 PokefanmColinBeatenText:
+	ntag "Colin"
 	text "You're strong!"
 	done
 
 PokefanmColinAfterBattleText:
+	ntag "Colin"
 	text "You're traveling"
 	line "all alone?"
 
@@ -313,11 +317,13 @@ TwinsMegandpeg1SeenText:
 	cont "That's not fair!"
 	done
 
-TwinsMegandpeg1BeatenText:
+TwinsMegandpegBeatenText:
+	ntag "Meg & Peg"
 	text "Oh! We lost!"
 	done
 
 TwinsMegandpeg1AfterBattleText:
+	ntag "Meg"
 	text "Baby is a rude"
 	line "name to call us"
 	cont "girls!"
@@ -330,11 +336,8 @@ TwinsMegandpeg2SeenText:
 	line "say to a lady!"
 	done
 
-TwinsMegandpeg2BeatenText:
-	text "Oh! We lost!"
-	done
-
 TwinsMegandpeg2AfterBattleText:
+	ntag "Peg"
 	text "Sometimes, kids"
 	line "are smarter than"
 	cont "grown-ups!"
@@ -347,11 +350,13 @@ PsychicRodneySeenText:
 	done
 
 PsychicRodneyBeatenText:
+	ntag "Rodney"
 	text "…I hear some-"
 	line "thing!"
 	done
 
 PsychicRodneyAfterBattleText:
+	ntag "Rodney"
 	text "I get it. You can"
 	line "hear Johto's radio"
 	cont "on the Fast Ship."
@@ -364,11 +369,13 @@ PokefanmJeremySeenText:
 	done
 
 PokefanmJeremyBeatenText:
+	ntag "Jeremy"
 	text "Oh, no! My beauti-"
 	line "ful #mon!"
 	done
 
 PokefanmJeremyAfterBattleText:
+	ntag "Jeremy"
 	text "I must go to the"
 	line "#mon Salon and"
 	cont "fix them up nice!"
@@ -381,11 +388,13 @@ PokefanfGeorgiaSeenText:
 	done
 
 PokefanfGeorgiaBeatenText:
+	ntag "Georgia"
 	text "What was I going"
 	line "to do?"
 	done
 
 PokefanfGeorgiaAfterBattleText:
+	ntag "Georgia"
 	text "Oh, yes! I have to"
 	line "get my #mon out"
 	cont "of Day-Care!"
@@ -398,11 +407,13 @@ SupernerdShawnSeenText:
 	done
 
 SupernerdShawnBeatenText:
+	ntag "Shawn"
 	text "Wait! Stop! Don't!"
 	line "Please!"
 	done
 
 SupernerdShawnAfterBattleText:
+	ntag "Shawn"
 	text "You should use the"
 	line "right Balls to fit"
 	cont "the situation."

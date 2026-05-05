@@ -1,4 +1,5 @@
 BrentAskNumber1Text:
+	ntag "Brent"
 	text "By the way, you're"
 	line "a #maniac…"
 
@@ -22,6 +23,7 @@ BrentAskNumber1Text:
 	done
 
 BrentAskNumber2Text:
+	ntag "Brent"
 	text "I'll teach you all"
 	line "I know about Bill,"
 
@@ -30,6 +32,7 @@ BrentAskNumber2Text:
 	done
 
 BrentNumberAcceptedText:
+	ntag "Brent"
 	text "Bill--he's more"
 	line "than amazing!"
 
@@ -40,6 +43,7 @@ BrentNumberAcceptedText:
 	done
 
 BrentNumberDeclinedText:
+	ntag "Brent"
 	text "You're going to"
 	line "regret it…"
 
@@ -47,6 +51,7 @@ BrentNumberDeclinedText:
 	done
 
 BrentPhoneFullText:
+	ntag "Brent"
 	text "Huh? Your phone"
 	line "list's full."
 
@@ -55,6 +60,7 @@ BrentPhoneFullText:
 	done
 
 BrentRematchText:
+	ntag "Brent"
 	text "I've been waiting."
 
 	para "Look, check out my"

@@ -45,11 +45,13 @@ SailorErnestSeenText:
 	done
 
 SailorErnestBeatenText:
+	ntag "Ernest"
 	text "Whoa, whoa. You're"
 	line "overwhelming!"
 	done
 
 SailorErnestAfterBattleText:
+	ntag "Ernest"
 	text "A Gym Leader isn't"
 	line "just about being"
 	cont "strong."
@@ -67,10 +69,12 @@ BirdKeeperDenisSeenText:
 	done
 
 BirdKeeperDenisBeatenText:
+	ntag "Denis"
 	text "Oops…They crashed…"
 	done
 
 BirdKeeperDenisAfterBattleText:
+	ntag "Denis"
 	text "My #mon learned"
 	line "how to use Fly in"
 	cont "Cianwood."

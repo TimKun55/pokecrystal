@@ -125,10 +125,12 @@ SwimmermSimonSeenText:
 	done
 
 SwimmermSimonBeatenText:
+	ntag "Simon"
 	text "OK! Uncle! I give!"
 	done
 
 SwimmermSimonAfterBattleText:
+	ntag "Simon"
 	text "Cianwood City is"
 	line "a good distance"
 	cont "away from here."
@@ -143,10 +145,12 @@ SwimmermRandallSeenText:
 	done
 
 SwimmermRandallBeatenText:
+	ntag "Randall"
 	text "Uh-oh. I lost…"
 	done
 
 SwimmermRandallAfterBattleText:
+	ntag "Randall"
 	text "Swimming exercises"
 	line "your entire body."
 	cont "It's healthy."
@@ -161,10 +165,12 @@ LadyAdaSeenText:
 	done
 
 LadyAdaBeatenText:
+	ntag "Ada"
 	text "A defeat!"
 	done
 
 LadyAdaAfterBattleText:
+	ntag "Ada"
 	text "You really are"
 	line "strong! Just like"
 	cont "the fairy-type!"
@@ -179,10 +185,12 @@ SwimmerfElaineSeenText:
 	done
 
 SwimmerfElaineBeatenText:
+	ntag "Elaine"
 	text "I lost that one!"
 	done
 
 SwimmerfElaineAfterBattleText:
+	ntag "Elaine"
 	text "I'd say I'm a bet-"
 	line "ter swimmer than"
 	cont "you. Yeah!"
@@ -197,11 +205,13 @@ SwimmerfPaulaSeenText:
 	done
 
 SwimmerfPaulaBeatenText:
+	ntag "Paula"
 	text "Ooh, I'm feeling"
 	line "dizzy!"
 	done
 
 SwimmerfPaulaAfterBattleText:
+	ntag "Paula"
 	text "While I float like"
 	line "this, the waves"
 	cont "carry me along."

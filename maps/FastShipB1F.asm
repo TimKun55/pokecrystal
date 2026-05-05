@@ -243,11 +243,13 @@ SailorJeffSeenText:
 	done
 
 SailorJeffBeatenText:
+	ntag "Jeff"
 	text "Win or lose, my"
 	line "break's over!"
 	done
 
 SailorJeffAfterBattleText:
+	ntag "Jeff"
 	text "I guess I can't"
 	line "win if I don't get"
 	cont "serious."
@@ -259,11 +261,13 @@ PicnickerDebraSeenText:
 	done
 
 PicnickerDebraBeatenText:
+	ntag "Debra"
 	text "Yow! You're too"
 	line "strong!"
 	done
 
 PicnickerDebraAfterBattleText:
+	ntag "Debra"
 	text "Saffron, Celadon…"
 	line "I hear there are"
 	cont "many big cities"
@@ -276,11 +280,13 @@ JugglerFritzSeenText:
 	done
 
 JugglerFritzBeatenText:
+	ntag "Fritz"
 	text "I can't move any-"
 	line "more…"
 	done
 
 JugglerFritzAfterBattleText:
+	ntag "Fritz"
 	text "No more ships for"
 	line "me. Next time,"
 	cont "I'm taking the"
@@ -293,11 +299,13 @@ SailorGarrettSeenText:
 	done
 
 SailorGarrettBeatenText:
+	ntag "Garrett"
 	text "I lost on my home"
 	line "field…"
 	done
 
 SailorGarrettAfterBattleText:
+	ntag "Garrett"
 	text "We get different"
 	line "passengers from"
 	cont "Vermilion City to"
@@ -314,11 +322,13 @@ FisherJonahSeenText:
 	done
 
 FisherJonahBeatenText:
+	ntag "Jonah"
 	text "I… I'm not bored"
 	line "anymore…"
 	done
 
 FisherJonahAfterBattleText:
+	ntag "Jonah"
 	text "I plan to fish off"
 	line "Vermilion's pier."
 	done
@@ -331,11 +341,13 @@ BlackbeltWaiSeenText:
 	done
 
 BlackbeltWaiBeatenText:
+	ntag "Wai"
 	text "Rocked and rolled"
 	line "over!"
 	done
 
 BlackbeltWaiAfterBattleText:
+	ntag "Wai"
 	text "I couldn't find"
 	line "the Karate King in"
 	cont "Johto."
@@ -354,11 +366,13 @@ SailorKennethSeenText:
 	done
 
 SailorKennethBeatenText:
+	ntag "Kenneth"
 	text "My lack of train-"
 	line "ing is obvious…"
 	done
 
 SailorKennethAfterBattleText:
+	ntag "Kenneth"
 	text "Eight Badges!"
 	
 	para "They must prove"
@@ -375,10 +389,12 @@ TeacherShirleySeenText:
 	done
 
 TeacherShirleyBeatenText:
+	ntag "Shirley"
 	text "Aaack!"
 	done
 
 TeacherShirleyAfterBattleText:
+	ntag "Shirley"
 	text "We're on a field"
 	line "trip to the Ruins"
 	cont "outside Violet."
@@ -390,10 +406,12 @@ SchoolboyNateSeenText:
 	done
 
 SchoolboyNateBeatenText:
+	ntag "Nate"
 	text "Yaargh!"
 	done
 
 SchoolboyNateAfterBattleText:
+	ntag "Nate"
 	text "Radios pick up"
 	line "strange signals"
 	cont "inside the Ruins."
@@ -406,10 +424,12 @@ SchoolboyRickySeenText:
 	done
 
 SchoolboyRickyBeatenText:
+	ntag "Ricky"
 	text "I was done in!"
 	done
 
 SchoolboyRickyAfterBattleText:
+	ntag "Ricky"
 	text "I read that there"
 	line "are four of those"
 	cont "stone panels."

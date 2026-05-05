@@ -345,11 +345,13 @@ FisherWilton1SeenText:
 	done
 
 FisherWilton1BeatenText:
+	ntag "Wilton"
 	text "Just forget about"
 	line "it."
 	done
 
 FisherWiltonHugePoliwagText:
+	ntag "Wilton"
 	text "That Poliwag that"
 	line "got away…"
 	cont "It was huge."
@@ -372,11 +374,13 @@ FisherEdgarSeenText:
 	done
 
 FisherEdgarBeatenText:
+	ntag "Edgar"
 	text "Hmmmm… "
 	line "This isn't right."
 	done
 
 FisherEdgarAfterBattleText:
+	ntag "Edgar"
 	text "That's 100 wins"
 	line "to 101 losses."
 
@@ -391,11 +395,13 @@ BirdKeeperVance1SeenText:
 	done
 
 BirdKeeperVance1BeatenText:
+	ntag "Vance"
 	text "Whew! You're hot"
 	line "stuff."
 	done
 
 BirdKeeperVanceLegendaryBirdsText:
+	ntag "Vance"
 	text "Articuno, Zapdos"
 	line "and Moltres are"
 	cont "the three legend-"
@@ -407,6 +413,7 @@ BirdKeeperVanceLegendaryBirdsText:
 	done
 
 BirdKeeperVance2BeatenText:
+	ntag "Vance"
 	text "Why can't I ever"
 	line "beat you?"
 
@@ -422,11 +429,13 @@ PsychicPhilSeenText:
 	done
 
 PsychicPhilBeatenText:
+	ntag "Phil"
 	text "Arrgh… That's a"
 	line "shocking loss…"
 	done
 
 PsychicPhilAfterBattleText:
+	ntag "Phil"
 	text "It's important to"
 	line "have conviction"
 	cont "on your side."
@@ -439,11 +448,13 @@ PokemaniacZachSeenText:
 	done
 
 PokemaniacZachBeatenText:
+	ntag "Zach"
 	text "Oooh, your #mon"
 	line "are so appealing."
 	done
 
 PokemaniacZachAfterBattleText:
+	ntag "Zach"
 	text "If a #mon has"
 	line "different colors"
 	cont "from usual, it's"
@@ -464,11 +475,13 @@ CooltrainermAllenSeenText:
 	done
 
 CooltrainermAllenBeatenText:
+	ntag "Allen"
 	text "Tch! It's a total"
 	line "loss on my part."
 	done
 
 CooltrainermAllenAfterBattleText:
+	ntag "Allen"
 	text "Wow. You have a"
 	line "lot of Badges."
 
@@ -493,11 +506,13 @@ CooltrainerfCybilSeenText:
 	done
 
 CooltrainerfCybilBeatenText:
+	ntag "Cybil"
 	text "Nope! This won't"
 	line "do at all."
 	done
 
 CooltrainerfCybilAfterBattleText:
+	ntag "Cybil"
 	text "We all get better"
 	line "by experiencing"
 	cont "many battles."
@@ -519,10 +534,12 @@ LadyAyaSeenText:
 	done
 
 LadyAyaBeatenText:
+	ntag "Aya"
 	text "Wow, thank you!"
 	done
 
 LadyAyaAfterBattleText:
+	ntag "Aya"
 	text "My sisters were"
 	line "right. You're"
 	cont "powerful."
@@ -539,11 +556,13 @@ BugManiacKeiranSeenText:
 	done
 
 BugManiacKeiranBeatenText:
+	ntag "Keiran"
 	text "Well, I guess"
 	line "you're stronger!"
 	done
 
 BugManiacKeiranAfterBattleText:
+	ntag "Keiran"
 	text "Good luck on your"
 	line "journey and make"
 	cont "sure not to"

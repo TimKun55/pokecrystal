@@ -62,11 +62,13 @@ PokemaniacMillerSeenText:
 	done
 
 PokemaniacMillerBeatenText:
+	ntag "Miller"
 	text "I lost to some"
 	line "kid…?"
 	done
 
 PokemaniacMillerAfterBattleText:
+	ntag "Miller"
 	text "A while back, this"
 	line "karate dude wanted"
 	cont "to battle. He was"
@@ -86,11 +88,13 @@ SupernerdMarkusSeenText:
 	done
 
 SupernerdMarkusBeatenText:
+	ntag "Markus"
 	text "I mistook you for"
 	line "someone else…"
 	done
 
 SupernerdMarkusAfterBattleText:
+	ntag "Markus"
 	text "I came to explore"
 	line "Mt.Mortar, but I"
 	cont "got separated from"

@@ -175,11 +175,13 @@ HikerBaileySeenText:
 	done
 
 HikerBaileyBeatenText:
+	ntag "Bailey"
 	text "Mercy! You showed"
 	line "me your power!"
 	done
 
 HikerBaileyAfterBattleText:
+	ntag "Bailey"
 	text "It's over. I don't"
 	line "mind. We Hikers"
 	cont "are like that."
@@ -194,10 +196,12 @@ CamperTedSeenText:
 	done
 
 CamperTedBeatenText:
+	ntag "Ted"
 	text "Wha…?"
 	done
 
 CamperTedAfterBattleText:
+	ntag "Ted"
 	text "I did my best but"
 	line "came up short."
 
@@ -214,21 +218,23 @@ PicnickerErin1SeenText:
 	done
 
 PicnickerErin1BeatenText:
+	ntag "Erin"
 	text "Oh, rats!"
 	done
 
 PicnickerErinAfterBattleText:
+	ntag "Erin"
 	text "I've been to many"
 	line "Gyms, but the Gym"
-
-	para "in Goldenrod is my"
-	line "favorite."
+	cont "in Goldenrod is my"
+	cont "favorite."
 
 	para "It's filled with"
 	line "pretty flowers!"
 	done
 
 PicnickerErin2BeatenText:
+	ntag "Erin"
 	text "Aww… I keep losing"
 	line "all the time!"
 
@@ -256,10 +262,12 @@ LadyGiaSeenText:
 	done
 
 LadyGiaBeatenText:
+	ntag "Gia"
 	text "Oh, I lost…"
 	done
 
 LadyGiaAfterBattleText:
+	ntag "Gia"
 	text "You're powerful!"
 	
 	para "You should talk"

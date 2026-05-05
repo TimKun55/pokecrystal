@@ -410,10 +410,12 @@ BlackbeltYoshiSeenText:
 	done
 
 BlackbeltYoshiBeatenText:
+	ntag "Yoshi"
 	text "This isn't real!"
 	done
 
 BlackbeltYoshiAfterText:
+	ntag "Yoshi"
 	text "You seem to have a"
 	line "strong bond with"
 	cont "your #mon too!"
@@ -425,10 +427,12 @@ BlackbeltLaoSeenText:
 	done
 
 BlackbeltLaoBeatenText:
+	ntag "Lao"
 	text "That's shocking!"
 	done
 
 BlackbeltLaoAfterText:
+	ntag "Lao"
 	text "Fighting #mon"
 	line "are afraid of psy-"
 	cont "chics…"
@@ -441,11 +445,13 @@ BlackbeltNobSeenText:
 	done
 
 BlackbeltNobBeatenText:
+	ntag "Nob"
 	text "…"
 	done
 
 BlackbeltNobAfterText:
-	text "I lost! "
+	ntag "Nob"
+	text "I lost!"
 	line "I'm speechless!"
 	done
 
@@ -456,10 +462,12 @@ BlackbeltLungSeenText:
 	done
 
 BlackbeltLungBeatenText:
+	ntag "Lung"
 	text "I got shattered!"
 	done
 
 BlackbeltLungAfterText:
+	ntag "Lung"
 	text "My #mon lost…"
 	line "My… my pride is"
 	cont "shattered…"

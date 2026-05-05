@@ -357,11 +357,13 @@ BoarderRonaldSeenText:
 	done
 
 BoarderRonaldBeatenText:
+	ntag "Ronald"
 	text "Darn. I couldn't"
 	line "do a thing."
 	done
 
 BoarderRonaldAfterBattleText:
+	ntag "Ronald"
 	text "I think there's a"
 	line "move a frostbitten"
 	cont "can use while it's"
@@ -381,11 +383,13 @@ BoarderBradSeenText:
 	done
 
 BoarderBradBeatenText:
+	ntag "Brad"
 	text "Do you see how"
 	line "serious we are?"
 	done
 
 BoarderBradAfterBattleText:
+	ntag "Brad"
 	text "This Gym is great."
 	line "I love boarding"
 	cont "with my #mon!"
@@ -397,11 +401,13 @@ BoarderDouglasSeenText:
 	done
 
 BoarderDouglasBeatenText:
+	ntag "Douglas"
 	text "OK. I'll tell you"
 	line "Pryce's secret."
 	done
 
 BoarderDouglasAfterBattleText:
+	ntag "Douglas"
 	text "The secret behind"
 	line "Pryce's power…"
 
@@ -423,11 +429,13 @@ SkierRoxanneSeenText:
 	done
 
 SkierRoxanneBeatenText:
+	ntag "Roxanne"
 	text "I wouldn't lose to"
 	line "you in skiing!"
 	done
 
 SkierRoxanneAfterBattleText:
+	ntag "Roxanne"
 	text "If you don't skate"
 	line "with precision,"
 	cont "you won't get far"
@@ -440,11 +448,13 @@ SkierClarissaSeenText:
 	done
 
 SkierClarissaBeatenText:
+	ntag "Clarissa"
 	text "No! You made me"
 	line "wipe out!"
 	done
 
 SkierClarissaAfterBattleText:
+	ntag "Clarissa"
 	text "I shouldn't have"
 	line "been bragging"
 	cont "about my skiing…"

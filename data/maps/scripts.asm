@@ -164,7 +164,6 @@ INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/MountMoonSquare.asm"
 INCLUDE "maps/MountMoonGiftShop.asm"
 INCLUDE "maps/TinTowerRoof.asm"
-INCLUDE "maps/GoldenrodFlowerShop.asm"
 
 
 SECTION "Map Scripts 9", ROMX
@@ -561,5 +560,11 @@ INCLUDE "maps/MrPokemonsHouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/Route37.asm"
+
+
+SECTION "Map Scripts 30", ROMX
+
+INCLUDE "maps/GoldenrodFlowerShop.asm"
+
 
 ENDSECTION

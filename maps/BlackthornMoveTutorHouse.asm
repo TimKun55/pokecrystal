@@ -80,6 +80,7 @@ BlackthornMoveTutorScript:
 	db "Cancel@"
 
 BlackthornAskTeachAMoveText:
+	ntag "Move Tutor"
 	text "Hi there!"
 	line "For ¥10,000, I can"
 	cont "teach your #mon"
@@ -88,11 +89,13 @@ BlackthornAskTeachAMoveText:
 	done
 	
 BlackthornAskYesNo:
+	ntag "Move Tutor"
 	text "Should I teach"
 	line "them a move?"
 	done
 
 BlackthornMoveTutorRefusalText:
+	ntag "Move Tutor"
 	text "Come back here"
 	line "if you want to"
 	cont "teach your"
@@ -101,11 +104,13 @@ BlackthornMoveTutorRefusalText:
 	done
 
 BlackthornMoveTutorWontRegretText:
+	ntag "Move Tutor"
 	text "Great! You won't"
 	line "regret it!"
 	done
 
 BlackthornMoveTutorWhichMoveText:
+	ntag "Move Tutor"
 	text "Which move should"
 	line "I teach?"
 	done
@@ -116,11 +121,13 @@ BlackthornMoveTutorPayment:
 	done
 	
 BlackthornMoveTutorNotEnough:
+	ntag "Move Tutor"
 	text "Ooh, sorry, you"
 	line "don't have enough…"
 	done
 
 BlackthornMoveTutorUseWisely:
+	ntag "Move Tutor"
 	text "See ya and"
 	line "good luck on"
 	cont "your journey!"

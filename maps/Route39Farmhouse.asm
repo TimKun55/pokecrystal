@@ -109,6 +109,7 @@ FarmhouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 FarmerMText_SickCow:
+	ntag "Pa"
 	text "My Miltank ain't"
 	line "givin' me milk"
 	cont "n'more."
@@ -126,6 +127,7 @@ FarmerMText_SickCow:
 	done
 
 FarmerMText_BuyMilk:
+	ntag "Pa"
 	text "How'd you like my"
 	line "Moomoo Milk?"
 
@@ -140,36 +142,43 @@ FarmerMText_BuyMilk:
 	done
 
 FarmerMText_GotMilk:
+	ntag "Pa"
 	text "Here ya go!"
 	line "Drink up'n enjoy!"
 	done
 
 FarmerMText_WhatCanIGetcha:
+	ntag "Pa"
 	text "What can I getcha?"
 	done
 
 FarmerMText_BuyMore:
+	ntag "Pa"
 	text "You fancy some"
 	line "more?"
 	done
 
 FarmerMText_NoMoney:
+	ntag "Pa"
 	text "Sorry, there."
 	line "No cash, no sale!"
 	done
 
 FarmerMText_NoRoom:
+	ntag "Pa"
 	text "I reckon yer"
 	line "Pack's full."
 	done
 
 FarmerMText_NoSale:
+	ntag "Pa"
 	text "You don't want"
 	line "any milk?"
 	cont "Come again, hear?"
 	done
 
 FarmerFText_InTrouble:
+	ntag "Ma"
 	text "Our milk even goes"
 	line "out to Kanto."
 
@@ -180,17 +189,19 @@ FarmerFText_InTrouble:
 	done
 
 FarmerFText_HealedMiltank:
+	ntag "Ma"
 	text "You fixed our"
-	line "Miltank, hon. Now"
-
-	para "it gives Moomoo"
-	line "Milk again."
+	line "Miltank, hon."
+	
+	para "Now it gives"
+	line "Moomoo Milk again."
 
 	para "Here's somethin'"
 	line "fer your trouble."
 	done
 
 FarmerFText_SnoreSpeech:
+	ntag "Ma"
 	text "That there's"
 	line "Snore."
 

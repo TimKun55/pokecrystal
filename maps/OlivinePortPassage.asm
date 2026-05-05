@@ -124,10 +124,10 @@ OlivinePortPassageNoTicketText:
 
 	ntag "Sailor"
 	para "Sorry!"
-	line "You may board only"
 
-	para "if you have an"
-	line "S.S.Ticket."
+	para "You may board only"
+	line "if you have an"
+	cont "S.S.Ticket."
 	done
 
 OlivinePortPassagePokefanMText:
