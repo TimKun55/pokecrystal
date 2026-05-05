@@ -281,18 +281,20 @@ GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText:
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseText:
+	ntag "Move Tutor"
 	text "Hello!"
 	line "Are you a trainer?"
 	
 	para "Would you like me"
 	line "to teach your"
 	cont "#mon a useful"
-	cont "defensive move"
-	cont "to defend against"
+	cont "move to strengthen"
+	cont "defence against"
 	cont "Physical attacks?"
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseText2:
+	ntag "Move Tutor"
 	text "I can teach your"
 	line "#mon how to use"
 	cont "Iron Defense for"
@@ -300,6 +302,7 @@ GoldenrodPokecenter1FMoveTutorIronDefenseText2:
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseRefused:
+	ntag "Move Tutor"
 	text "No problem."
 	done
 
@@ -309,16 +312,19 @@ GoldenrodPokecenter1FMoveTutorPayment:
 	done
 
 GoldenrodPokecenter1FMoveTutorIronDefenseTaught:
+	ntag "Move Tutor"
 	text "Nothing like a"
 	line "solid defense!"
 	done
 	
 GoldenrodPokecenter1FMoveTutorNotEnough:
+	ntag "Move Tutor"
 	text "Sorry, you can't"
 	line "afford it."
 	done
 
 GoldenrodPokecenter1FTMVendorIntroText:
+	ntag "TM Vendor"
 	text "Hello there!"
 
 	para "I've mastered the"
@@ -331,26 +337,31 @@ GoldenrodPokecenter1FTMVendorIntroText:
 	done
 
 GoldenrodPokecenter1FTMVendorWhichTMText:
+	ntag "TM Vendor"
 	text "Which TM would"
 	line "you like?"
 	done
 
 GoldenrodPokecenter1FTMVendorConfirmTM33Text:
+	ntag "TM Vendor"
 	text "TM33 Ice Punch."
 	line "Is that right?"
 	done
 
 GoldenrodPokecenter1FTMVendorConfirmTM41Text:
+	ntag "TM Vendor"
 	text "TM41 ThunderPunch."
 	line "Is that right?"
 	done
 
 GoldenrodPokecenter1FTMVendorConfirmTM48Text:
+	ntag "TM Vendor"
 	text "TM41 Fire Punch."
 	line "Is that right?"
 	done
 
 GoldenrodPokecenter1FTMVendorHereYouGoText:
+	ntag "TM Vendor"
 	text "Here you go!"
 	
 	para "Punch your way to"
@@ -358,27 +369,32 @@ GoldenrodPokecenter1FTMVendorHereYouGoText:
 	done
 	
 GoldenrodPokecenter1FTMVendorAlreadyHaveTMText:
+	ntag "TM Vendor"
 	text "But you already"
 	line "have that TM!"
 	done
 
 GoldenrodPokecenter1FTMVendorNeedMoreCoinsText:
+	ntag "TM Vendor"
 	text "Hmm, you'll need"
 	line "more coins."
 	done
 
 GoldenrodPokecenter1FTMVendorNoMoreRoomText:
+	ntag "TM Vendor"
 	text "Sorry. You can't"
 	line "carry any more."
 	done
 
 GoldenrodPokecenter1FTMVendorQuitText:
+	ntag "TM Vendor"
 	text "OK. Save those"
 	line "coins and come"
 	cont "again."
 	done
 
 GoldenrodPokecenter1FTMVendorNoCoinCaseText:
+	ntag "TM Vendor"
 	text "Oi! You don't have"
 	line "a Coin Case."
 	done

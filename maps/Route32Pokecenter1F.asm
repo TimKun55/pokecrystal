@@ -105,11 +105,13 @@ LadySueSeenText:
 	done
 
 LadySueBeatenText:
+	ntag "Sue"
 	text "Oh, wow, you are"
 	line "very strong."
 	done
 
 LadySueAfterBattleText:
+	ntag "Sue"
 	text "That was fun!"
 	line "You should see if"
 	cont "you can find all"

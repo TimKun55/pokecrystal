@@ -117,6 +117,8 @@ Buena:
 	closetext
 	iffalse .WrongAnswer
 	opentext
+	writetext RadioTower2FBuenaCorrectAnswerText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .WeekendCorrect
 	readvar VAR_WEEKDAY
@@ -125,7 +127,7 @@ Buena:
 	ifequal FRIDAY, .FriMonCorrect
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .FriMonCorrect
-	writetext RadioTower2FBuenaCorrectAnswerText
+	writetext RadioTower2FBuenaOnePointText
 	waitbutton
 	closetext
 	readvar VAR_BLUECARDBALANCE
@@ -176,7 +178,7 @@ Buena:
 	end
 
 .WeekendCorrect:
-	writetext RadioTower2FBuenaCorrectAnswerWeekendText
+	writetext RadioTower2FBuenaThreePointsText
 	waitbutton
 	closetext
 	readvar VAR_BLUECARDBALANCE
@@ -185,7 +187,7 @@ Buena:
 	sjump .FinishShow
 
 .FriMonCorrect:
-	writetext RadioTower2FBuenaCorrectAnswerFriMonText
+	writetext RadioTower2FBuenaTwoPointsText
 	waitbutton
 	closetext
 	readvar VAR_BLUECARDBALANCE
@@ -564,36 +566,29 @@ RadioTower2FBuenaCorrectAnswerText:
 
 	para "You did tune in!"
 	line "I'm so happy!"
+	done
 
-	para "You earned one"
+RadioTower2FBuenaOnePointText:
+	ntag "Buena"
+	text "You earned one"
 	line "point! Congrats!"
 	done
 
-RadioTower2FBuenaCorrectAnswerWeekendText:
+RadioTower2FBuenaTwoPointsText:
 	ntag "Buena"
-	text "YIPPEE!"
-	line "That's right!"
+	text "You earned two"
+	line "points! Congrats!"
+	done
 
-	para "You did tune in!"
-	line "I'm so happy!"
-
-	para "Because it's the"
+RadioTower2FBuenaThreePointsText:
+	ntag "Buena"
+	text "Because it's the"
 	line "weekend, you've"
 	cont "earned 3 points!"
 	cont "Congrats!"
 	done
 
-RadioTower2FBuenaCorrectAnswerFriMonText:
-	ntag "Buena"
-	text "YIPPEE!"
-	line "That's right!"
 
-	para "You did tune in!"
-	line "I'm so happy!"
-
-	para "You earned two"
-	line "points! Congrats!"
-	done
 
 RadioTower2FBuenaDidYouForgetText:
 	ntag "Buena"

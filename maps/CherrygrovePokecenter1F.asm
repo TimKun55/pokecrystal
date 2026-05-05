@@ -137,6 +137,7 @@ CherrygrovePokecenter1FTeacherText_CommCenterOpen:
 	done
 	
 CherrygrovePokecenter1FTutorIntro:
+	ntag "Move Tutor"
 	text "Hi there!"
 	line "I'm a Move Tutor!"
 	
@@ -148,11 +149,13 @@ CherrygrovePokecenter1FTutorIntro:
 	done
 	
 CherrygrovePokecenter1FAskYesNo:
+	ntag "Move Tutor"
 	text "Should I teach"
 	line "them a move?"
 	done
 
 CherrygrovePokecenter1FTutorRefusalText:
+	ntag "Move Tutor"
 	text "Come back here"
 	line "if you want to"
 	cont "teach your"
@@ -161,11 +164,13 @@ CherrygrovePokecenter1FTutorRefusalText:
 	done
 
 CherrygrovePokecenter1FTutorWontRegretText:
+	ntag "Move Tutor"
 	text "Great! You won't"
 	line "regret it!"
 	done
 
 CherrygrovePokecenter1FTutorWhichMoveText:
+	ntag "Move Tutor"
 	text "Which move should"
 	line "I teach?"
 	done
@@ -176,11 +181,13 @@ CherrygrovePokecenter1FTutorPayment:
 	done
 	
 CherrygrovePokecenter1FTutorNotEnough:
+	ntag "Move Tutor"
 	text "Ooh, sorry, you"
 	line "don't have enough…"
 	done
 
 CherrygrovePokecenter1FTutorUseWisely:
+	ntag "Move Tutor"
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle!"

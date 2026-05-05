@@ -151,8 +151,8 @@ VermilionCityGrampsText:
 	done
 
 VermilionCityMachopText1:
-	text "Machop: Guooh"
-	line "gogogoh!"
+	ntag "Machop"
+	text "Guooh gogogoh!"
 	done
 
 VermilionCityMachopText2:
@@ -299,16 +299,6 @@ PokemonFanClubSignText:
 VermilionCityPortSignText:
 	text "Vermilion Port"
 	line "Entrance"
-	done
-
-BattleHallSignText:
-	text "Battle Hall"
-	done
-
-BattleHallOpeningSoonText:
-	text "Battle Hall"
-	
-	para "Opening soon."
 	done
 
 VermilionCity_MapEvents:

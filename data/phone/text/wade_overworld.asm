@@ -1,4 +1,5 @@
 WadeAskNumber1Text:
+	ntag "Wade"
 	text "You're awesome!"
 	line "I like you!"
 
@@ -17,6 +18,7 @@ WadeAskNumber1Text:
 	done
 
 WadeAskNumber2Text:
+	ntag "Wade"
 	text "When I'm in the"
 	line "grass, I find all"
 	cont "kinds of Berries."
@@ -29,6 +31,7 @@ WadeAskNumber2Text:
 	done
 
 WadeNumberAcceptedText:
+	ntag "Wade"
 	text "You'll hear from"
 	line "me as soon as I"
 
@@ -37,23 +40,27 @@ WadeNumberAcceptedText:
 	done
 
 WadeNumberDeclinedText:
+	ntag "Wade"
 	text "Oh well. Don't be"
 	line "shy if you want to"
 	cont "get my number."
 	done
 
 WadePhoneFullText:
+	ntag "Wade"
 	text "Your phone list"
 	line "has no room for my"
 	cont "number."
 	done
 
 WadeRematchText:
+	ntag "Wade"
 	text "I was waiting for"
 	line "you. Let's battle!"
 	done
 
 WadeGiftText:
+	ntag "Wade"
 	text "Good to see you!"
 	line "See? This is what"
 
@@ -62,6 +69,7 @@ WadeGiftText:
 	done
 
 WadePackFullText:
+	ntag "Wade"
 	text "Oops, your Pack's"
 	line "full. Too bad."
 

@@ -1,4 +1,5 @@
 JackAskNumber1Text:
+	ntag "Jack"
 	text "Your knowledge is"
 	line "impressive!"
 
@@ -15,6 +16,7 @@ JackAskNumber1Text:
 	done
 
 JackAskNumber2Text:
+	ntag "Jack"
 	text "Want to trade"
 	line "battle tips?"
 
@@ -26,11 +28,13 @@ JackAskNumber2Text:
 	done
 
 JackNumberAcceptedText:
+	ntag "Jack"
 	text "I'll call you if I"
 	line "hear anything!"
 	done
 
 JackNumberDeclinedText:
+	ntag "Jack"
 	text "Oh, OK. Too bad…"
 
 	para "Well, if you ever"
@@ -39,6 +43,7 @@ JackNumberDeclinedText:
 	done
 
 JackPhoneFullText:
+	ntag "Jack"
 	text "Oh?"
 	line "Your phone's full."
 
@@ -47,6 +52,7 @@ JackPhoneFullText:
 	done
 
 JackRematchText:
+	ntag "Jack"
 	text "Hi, I was waiting"
 	line "for you to show!"
 

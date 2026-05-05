@@ -517,10 +517,12 @@ FisherJustinSeenText:
 	done
 
 FisherJustinBeatenText:
+	ntag "Justin"
 	text "Sploosh!"
 	done
 
 FisherJustinAfterText:
+	ntag "Justin"
 	text "Calm, collected…"
 	line "The essence of"
 	cont "fishing and #-"
@@ -537,11 +539,13 @@ FisherRalph1SeenText:
 	done
 
 FisherRalph1BeatenText:
+	ntag "Ralph"
 	text "Tch! I tried to"
 	line "rush things…"
 	done
 
 FisherRalphAfterText:
+	ntag "Ralph"
 	text "Fishing is a life-"
 	line "long passion."
 
@@ -550,6 +554,7 @@ FisherRalphAfterText:
 	done
 
 FisherRalphSwarmText:
+	ntag "Ralph"
 	text "One, two, three…"
 	line "Muahahaha, what a"
 	cont "great haul!"
@@ -565,10 +570,12 @@ FisherHenrySeenText:
 	done
 
 FisherHenryBeatenText:
+	ntag "Henry"
 	text "Splash?"
 	done
 
 FisherHenryAfterText:
+	ntag "Henry"
 	text "Freshly caught"
 	line "#mon are no"
 	cont "match for properly"
@@ -584,10 +591,12 @@ YoungsterAlbertSeenText:
 	done
 
 YoungsterAlbertBeatenText:
+	ntag "Albert"
 	text "You're strong!"
 	done
 
 YoungsterAlbertAfterText:
+	ntag "Albert"
 	text "I'm going to try"
 	line "to be the best"
 	cont "with my favorites."
@@ -607,11 +616,13 @@ YoungsterGordonSeenText:
 	done
 
 YoungsterGordonBeatenText:
+	ntag "Gordon"
 	text "Darn. I thought I"
 	line "could win."
 	done
 
 YoungsterGordonAfterText:
+	ntag "Gordon"
 	text "The grass is full"
 	line "of clingy things."
 	done
@@ -622,11 +633,13 @@ CamperRolandSeenText:
 	done
 
 CamperRolandBeatenText:
+	ntag "Roland"
 	text "Hmmm. This is"
 	line "disappointing."
 	done
 
 CamperRolandAfterText:
+	ntag "Roland"
 	text "If you don't want"
 	line "to battle, just"
 	cont "avoid eye contact."
@@ -644,11 +657,13 @@ PicnickerLiz1SeenText:
 	done
 
 PicnickerLiz1BeatenText:
+	ntag "Liz"
 	text "Oh! I've got to"
 	line "relieve my anger!"
 	done
 
 PicnickerLiz1AfterText:
+	ntag "Liz"
 	text "I was having a"
 	line "nice chat too."
 	done
@@ -661,11 +676,13 @@ BirdKeeperPeterSeenText:
 	done
 
 BirdKeeperPeterBeatenText:
+	ntag "Peter"
 	text "I know what my"
 	line "weaknesses are."
 	done
 
 BirdKeeperPeterAfterText:
+	ntag "Peter"
 	text "I should train"
 	line "again at the Gym"
 	cont "in Violet City."

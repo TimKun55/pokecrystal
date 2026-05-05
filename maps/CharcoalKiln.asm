@@ -68,6 +68,7 @@ CharcoalKilnRadio:
 	jumpstd Radio2Script
 
 CharcoalKilnBossText1:
+	ntag "Kiln Boss"
 	text "All the Slowpoke"
 	line "have disappeared"
 	cont "from the town."
@@ -82,6 +83,7 @@ CharcoalKilnBossText1:
 	done
 
 CharcoalKilnBossText2:
+	ntag "Kiln Boss"
 	text "The Slowpoke have"
 	line "returned…"
 
@@ -94,6 +96,7 @@ CharcoalKilnBossText2:
 	done
 
 CharcoalKilnBossText3:
+	ntag "Kiln Boss"
 	text "You chased off"
 	line "Team Rocket and"
 	cont "went to Ilex"
@@ -105,6 +108,7 @@ CharcoalKilnBossText3:
 	done
 
 CharcoalKilnApprenticeText1:
+	ntag "Apprentice"
 	text "Where have all the"
 	line "Slowpoke gone?"
 
@@ -113,6 +117,7 @@ CharcoalKilnApprenticeText1:
 	done
 
 CharcoalKilnApprenticeText2:
+	ntag "Apprentice"
 	text "I'm sorry--I for-"
 	line "got to thank you."
 
@@ -125,6 +130,7 @@ CharcoalKilnApprenticeText2:
 	done
 
 CharcoalKilnApprenticeText3:
+	ntag "Apprentice"
 	text "The Slowpoke came"
 	line "back, and you even"
 	cont "found Farfetch'd."

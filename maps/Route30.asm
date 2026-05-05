@@ -303,11 +303,13 @@ YoungsterJoey1SeenText:
 	done
 
 YoungsterJoey1BeatenText:
+	ntag "Joey"
 	text "Ack! I lost again!"
 	line "Doggone it!"
 	done
 
 YoungsterJoey1AfterText:
+	ntag "Joey"
 	text "Do I have to have"
 	line "more #mon in"
 	cont "order to battle"
@@ -327,11 +329,13 @@ YoungsterMikeySeenText:
 	done
 
 YoungsterMikeyBeatenText:
+	ntag "Mikey"
 	text "That's strange."
 	line "I won before."
 	done
 
 YoungsterMikeyAfterText:
+	ntag "Mikey"
 	text "Becoming a good"
 	line "trainer is really"
 	cont "tough."
@@ -348,11 +352,13 @@ BugCatcherDonSeenText:
 	done
 
 BugCatcherDonBeatenText:
+	ntag "Don"
 	text "Argh! You're too"
 	line "strong!"
 	done
 
 BugCatcherDonAfterText:
+	ntag "Don"
 	text "I ran out of #"
 	line "Balls while I was"
 	cont "catching #mon."
@@ -409,6 +415,7 @@ Route30TrainerTipsText:
 	done
 
 YoungsterJoeyText_GiveHPUpAfterBattle:
+	ntag "Joey"
 	text "I lost again…"
 	line "Gee, you're tough!"
 

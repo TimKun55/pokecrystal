@@ -122,12 +122,14 @@ BlaineExitMovement:
 	step_end
 
 MoltresNestBlaineChallengerText:
-	text "Blaine: <PLAYER>!"
+	ntag "Blaine"
+	text "<PLAYER>!"
 	line "I should have"
 	cont "known!"
 	done
 
 MoltresNestBlaineIntroText:
+	ntag "Blaine"
 	text "Ohoho!"
 	line "I knew you'd"
 	cont "come here!"
@@ -143,11 +145,13 @@ MoltresNestBlaineIntroText:
 	done
 	
 MoltresNestBlaineWinLossText:
+	ntag "Blaine"
 	text "Amazing."
 	line "Just amazing!"
 	done
 	
 MoltresNestBlaineOutroText:
+	ntag "Blaine"
 	text "Ahahaha!"
 	
 	para "Kid! You did it!"
@@ -177,6 +181,7 @@ MoltresNestBlaineOutroText:
 	done
 
 MoltresNestBlaineReturnChallengeText:
+	ntag "Blaine"
 	text "You're back,"
 	line "<PLAYER>!"
 	
@@ -185,7 +190,8 @@ MoltresNestBlaineReturnChallengeText:
 	done
 
 MoltresText:
-	text "Moltres: Gshya!"
+	ntag "Moltres"
+	text "Gshya!"
 	done
 	
 CinnabarMoltresNest_MapEvents:

@@ -102,14 +102,14 @@ Route37Entei2bScript:
 	end
 
 TrainerTwinsAnnandanne1:
-	trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script
+	trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	jumptext TwinsAnnandanne1AfterBattleText
 
 TrainerTwinsAnnandanne2:
-	trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script
+	trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -206,38 +206,36 @@ Route37Entei2Movement:
 	step_end
 
 TwinsAnnandanne1SeenText:
-	text "Ann: Anne and I"
-	line "are in this to-"
-	cont "gether!"
+	ntag "Ann"
+	text "Anne and I are in"
+	line "this together!"
 	done
 
-TwinsAnnandanne1BeatenText:
-	text "Ann & Anne: Nnn… A"
-	line "little too strong."
+TwinsAnnandanneBeatenText:
+	ntag "Ann & Anne"
+	text "Nnn… A little"
+	line "too strong."
 	done
 
 TwinsAnnandanne1AfterBattleText:
-	text "Ann: I can tell"
-	line "what my sister and"
+	ntag "Ann"
+	text "I can tell what"
+	line "my sister and"
 	cont "my #mon are"
 	cont "thinking."
 	done
 
 TwinsAnnandanne2SeenText:
-	text "Anne: Ann and I"
-	line "are in this to-"
-	cont "gether!"
-	done
-
-TwinsAnnandanne2BeatenText:
-	text "Ann & Anne: Nnn… A"
-	line "little too strong."
+	ntag "Anne"
+	text "Ann and I are in"
+	line "this together!"
 	done
 
 TwinsAnnandanne2AfterBattleText:
-	text "Anne: We share the"
-	line "same feelings as"
-	cont "our #mon."
+	ntag "Anne"
+	text "We share the same"
+	line "feelings as our"
+	cont "#mon."
 	done
 
 PsychicGregSeenText:
@@ -250,11 +248,13 @@ PsychicGregSeenText:
 	done
 
 PsychicGregBeatenText:
+	ntag "Greg"
 	text "I lost. That's"
 	line "pretty sad…"
 	done
 
 PsychicGregAfterBattleText:
+	ntag "Greg"
 	text "Putting #mon to"
 	line "sleep or paralyz-"
 	cont "ing them are good"
@@ -268,10 +268,12 @@ BugManiacCarlSeenText:
 	done
 
 BugManiacCarlBeatenText:
+	ntag "Carl"
 	text "Well…"
 	done
 
 BugManiacCarlAfterBattleText:
+	ntag "Carl"
 	text "Haha, guess I"
 	line "should train more"
 

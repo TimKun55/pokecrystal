@@ -644,10 +644,9 @@ _ThrewAwayText::
 	text "(s)."
 	prompt
 
-_OakThisIsntTheTimeText::
-	text "Oak: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+_ThisIsntTheTimePromptText::
+	text "This isn't the"
+	line "time to use this…"
 	prompt
 
 _YouDontHaveAMonText::
@@ -1351,10 +1350,9 @@ _ItemsTooImportantText::
 	line "tant to toss out!"
 	prompt
 
-_ItemsOakWarningText::
-	text "Oak: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+_ThisIsntTheTimeText::
+	text "This isn't the"
+	line "time to use this…"
 	done
 
 _PokemonSwapItemText::

@@ -113,8 +113,6 @@ TrainerBugCatcherArnie:
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_YANMA_SWARM
-	iftrue .YanmaSwarming
 	checkcellnum PHONE_BUG_CATCHER_ARNIE
 	iftrue Route35NumberAcceptedM
 	checkevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
@@ -180,9 +178,6 @@ TrainerBugCatcherArnie:
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
-.YanmaSwarming:
-	writetextend BugCatcherArnieYanmaText
-
 TrainerFirebreatherWalt:
 	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script
 
@@ -232,10 +227,12 @@ CamperIvanSeenText:
 	done
 
 CamperIvanBeatenText:
+	ntag "Ivan"
 	text "I give!"
 	done
 
 CamperIvanAfterBattleText:
+	ntag "Ivan"
 	text "Music on the radio"
 	line "changes the moods"
 	cont "of wild #mon."
@@ -248,11 +245,13 @@ CamperElliotSeenText:
 	done
 
 CamperElliotBeatenText:
+	ntag "Elliot"
 	text "I wish you would"
 	line "have lost for me…"
 	done
 
 CamperElliotAfterBattleText:
+	ntag "Elliot"
 	text "I was humiliated"
 	line "in front of my"
 	cont "girlfriend…"
@@ -265,11 +264,13 @@ PicnickerBrookeSeenText:
 	done
 
 PicnickerBrookeBeatenText:
+	ntag "Brooke"
 	text "Oh, my! You're so"
 	line "strong!"
 	done
 
 PicnickerBrookeAfterBattleText:
+	ntag "Brooke"
 	text "I can count on my"
 	line "#mon more than"
 	cont "my boyfriend."
@@ -281,11 +282,13 @@ PicnickerKimSeenText:
 	done
 
 PicnickerKimBeatenText:
+	ntag "Kim"
 	text "Oh. I couldn't"
 	line "win…"
 	done
 
 PicnickerKimAfterBattleText:
+	ntag "Kim"
 	text "The Gym Badges are"
 	line "pretty. I collect"
 	cont "them."
@@ -297,11 +300,13 @@ BirdKeeperBryanSeenText:
 	done
 
 BirdKeeperBryanBeatenText:
+	ntag "Bryan"
 	text "Yikes! Not fast"
 	line "enough!"
 	done
 
 BirdKeeperBryanAfterBattleText:
+	ntag "Bryan"
 	text "Some #mon have"
 	line "a high Speed stat."
 
@@ -323,11 +328,13 @@ JugglerIrwin1SeenText:
 	done
 
 JugglerIrwin1BeatenText:
+	ntag "Irwin"
 	text "Whew! That was a"
 	line "jolt!"
 	done
 
 JugglerIrwinAfterBattleText:
+	ntag "Irwin"
 	text "I was going to"
 	line "dazzle you with my"
 	cont "prize #mon."
@@ -343,23 +350,17 @@ BugCatcherArnieSeenText:
 	done
 
 BugCatcherArnieBeatenText:
+	ntag "Arnie"
 	text "Huh? I shouldn't"
 	line "have lost that…"
 	done
 
 BugCatcherArnieAfterBattleText:
+	ntag "Arnie"
 	text "My Venonat won me"
 	line "the Bug-Catching"
 	cont "Contest at the"
 	cont "National Park."
-	done
-
-BugCatcherArnieYanmaText:
-	text "Wow… Look at all"
-	line "those Yanma!"
-
-	para "I'm so blown away,"
-	line "I can't move."
 	done
 
 FirebreatherWaltSeenText:
@@ -368,26 +369,31 @@ FirebreatherWaltSeenText:
 	done
 
 FirebreatherWaltBeatenText:
+	ntag "Walt"
 	text "Ow! I scorched the"
 	line "tip of my nose!"
 	done
 
 FirebreatherWaltAfterBattleText:
+	ntag "Walt"
 	text "The #mon March"
 	line "on the radio lures"
 	cont "wild #mon."
 	done
 
 OfficerDirkSeenText:
+	ntag "Officer Dirk"
 	text "Danger lurks in"
 	line "the night!"
 	done
 
 OfficerDirkBeatenText:
+	ntag "Officer Dirk"
 	text "Whoops!"
 	done
 
 OfficerDirkAfterBattleText:
+	ntag "Officer Dirk"
 	text "You know, night-"
 	line "time is fun in its"
 	cont "own ways."
@@ -397,6 +403,7 @@ OfficerDirkAfterBattleText:
 	done
 
 OfficerDirkPrettyToughText:
+	ntag "Officer Dirk"
 	text "Your #mon look"
 	line "pretty tough."
 

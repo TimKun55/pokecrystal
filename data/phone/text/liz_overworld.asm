@@ -1,4 +1,5 @@
 LizAskNumber1Text:
+	ntag "Liz"
 	text "Oh? You're on a"
 	line "big journey to see"
 	cont "the sights? Neat!"
@@ -13,6 +14,7 @@ LizAskNumber1Text:
 	done
 
 LizAskNumber2Text:
+	ntag "Liz"
 	text "Let's be friends!"
 	line "Can I have your"
 	cont "phone number?"
@@ -23,22 +25,26 @@ LizAskNumber2Text:
 	done
 
 LizNumberAcceptedText:
+	ntag "Liz"
 	text "I'll telephone you"
 	line "if I hear anything"
 	cont "interesting."
 	done
 
 LizNumberDeclinedText:
+	ntag "Liz"
 	text "Aww… You won't be"
 	line "my friend?"
 	done
 
 LizPhoneFullText:
+	ntag "Liz"
 	text "Wait! Your phone"
 	line "list is filled up!"
 	done
 
 LizRematchText:
+	ntag "Liz"
 	text "You're late! Let's"
 	line "get started now!"
 	done

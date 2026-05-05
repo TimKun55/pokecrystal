@@ -206,6 +206,7 @@ CooltrainerTrainAnytimeText:
 	done
 
 EarlsPokemonAcademyTeacherIntroText:
+	ntag "Penny"
 	text "Welcome to my"
 	line "Avanced course!"
 	
@@ -219,12 +220,12 @@ EarlsPokemonAcademyTeacherIntroText:
 	done
 
 EarlsPokemonAcademyTeacherExplainText:
-	text "Penny: The Macho"
-	line "Brace doubles the"
-	cont "amount of EVs"
-	cont "earned by the"
-	cont "#mon holding"
-	cont "it, but also"
+	ntag "Penny"
+	text "The Macho Brace"
+	line "doubles the amount"
+	cont "of EVs earned by"
+	cont "the #mon hold-"
+	cont "ing it, but also"
 	cont "reduces its speed."
 	
 	para "It's a very useful"
@@ -234,6 +235,7 @@ EarlsPokemonAcademyTeacherExplainText:
 	done
 
 EarlsPokemonAcademyTeacherNoRoomText:
+	ntag "Penny"
 	text "Oh, you have no"
 	line "room for this."
 	done

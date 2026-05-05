@@ -461,6 +461,7 @@ GoldenrodCityFlowerShopSignText:
 	done
 
 GoldenrodCityMoveTutorAskTeachAMoveText:
+	ntag "Move Tutor"
 	text "I can teach your"
 	line "#mon amazing"
 	cont "moves if you'd"
@@ -471,32 +472,38 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
 	done
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
+	ntag "Move Tutor"
 	text "It will cost you"
 	line "4000 coins. Okay?"
 	done
 
 GoldenrodCityMoveTutorAwwButTheyreAmazingText:
+	ntag "Move Tutor"
 	text "Aww… But they're"
 	line "amazing…"
 	done
 
 GoldenrodCityMoveTutorWontRegretText:
+	ntag "Move Tutor"
 	text "Wahahah! You won't"
 	line "regret it!"
 	done
 
 GoldenrodCityMoveTutorWhichMoveShouldITeachText:
+	ntag "Move Tutor"
 	text "Which move should"
 	line "I teach?"
 	done
 
 GoldenrodCityMoveTutorHmTooBadText:
+	ntag "Move Tutor"
 	text "Hm, too bad. I'll"
 	line "have to get some"
 	cont "cash from home…"
 	done
 
 GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
+	ntag "Move Tutor"
 	text "If you understand"
 	line "what's so amazing"
 	cont "about this move,"
@@ -505,11 +512,13 @@ GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	done
 
 GoldenrodCityMoveTutorFarewellKidText:
+	ntag "Move Tutor"
 	text "Wahahah!"
 	line "Farewell, kid!"
 	done
 
 GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:
+	ntag "Move Tutor"
 	text "…You don't have"
 	line "enough coins here…"
 	done

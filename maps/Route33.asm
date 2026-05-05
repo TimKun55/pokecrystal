@@ -19,8 +19,6 @@ TrainerHikerAnthony:
 	opentext
 	checkflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkflag ENGINE_DUNSPARCE_SWARM
-	iftrue .Swarm
 	checkcellnum PHONE_HIKER_ANTHONY
 	iftrue .NumberAccepted
 	checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
@@ -86,9 +84,6 @@ TrainerHikerAnthony:
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
-.Swarm:
-	writetextend HikerAnthonyDunsparceText
-
 .AskNumber1:
 	jumpstd AskNumber1MScript
 	end
@@ -131,25 +126,16 @@ HikerAnthonySeenText:
 	done
 
 HikerAnthonyBeatenText:
+	ntag "Anthony"
 	text "Whoa! You've got"
 	line "more zip than me!"
 	done
 
 HikerAnthonyAfterText:
+	ntag "Anthony"
 	text "We Hikers are at"
 	line "our best in the"
 	cont "mountains."
-	done
-
-HikerAnthonyDunsparceText:
-	text "Hey, did you get a"
-	line "Dunsparce?"
-
-	para "I caught one too."
-
-	para "Take a look at it"
-	line "in the light. It's"
-	cont "got a funny face!"
 	done
 
 Route33LassText:

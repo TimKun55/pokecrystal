@@ -80,6 +80,7 @@ Route35GoldenrodGateFisherScript:
 	jumptextfaceplayer Route35GoldenrodGateFisherText
 
 Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
+	ntag "Randy"
 	text "Excuse me, kid!"
 	line "Can you do a guy"
 	cont "a favor?"
@@ -92,6 +93,7 @@ Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
 	done
 
 Route35GoldenrodGateRandyThanksText:
+	ntag "Randy"
 	text "You will? Perfect!"
 	line "Thanks, kid!"
 
@@ -99,8 +101,9 @@ Route35GoldenrodGateRandyThanksText:
 	line "guy who snoozes"
 	cont "all the time."
 
-	para "You'll recognize"
-	line "him right away!"
+	para "His name's Kirby."
+	line "You'll recognize"
+	cont "him right away!"
 	done
 
 Route35GoldenrodGatePlayerReceivedAMonWithMailText:
@@ -109,6 +112,7 @@ Route35GoldenrodGatePlayerReceivedAMonWithMailText:
 	done
 
 Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
+	ntag "Randy"
 	text "You can read it,"
 	line "but don't lose it!"
 	cont "Route 31!"
@@ -122,16 +126,19 @@ Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
 	done
 
 Route35GoldenrodGateRandyCantCarryAnotherMonText:
+	ntag "Randy"
 	text "You can't carry"
 	line "another #mon…"
 	done
 
 Route35GoldenrodGateRandyOhNeverMindThenText:
+	ntag "Randy"
 	text "Oh… Never mind,"
 	line "then…"
 	done
 
 Route35GoldenrodGateRandySomethingForYourTroubleText:
+	ntag "Randy"
 	text "Thanks, kid! You"
 	line "made the delivery"
 	cont "for me!"
@@ -141,7 +148,8 @@ Route35GoldenrodGateRandySomethingForYourTroubleText:
 	done
 
 Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
-	text "My pal was snooz-"
+	ntag "Randy"
+	text "Kirby was snooz-"
 	line "ing, right? Heh,"
 	cont "what'd I say?"
 	done

@@ -513,10 +513,12 @@ PsychicMarkSeenText:
 	done
 
 PsychicMarkBeatenText:
+	ntag "Mark"
 	text "I misread you!"
 	done
 
 PsychicMarkAfterBattleText:
+	ntag "Mark"
 	text "I'd be strong if"
 	line "only I could tell"
 	cont "what my opponent"
@@ -531,12 +533,14 @@ SuperNerdGrantSeenText:
 	done
 
 SuperNerdGrantBeatenText:
+	ntag "Grant"
 	text "Hmm, maybe I"
 	line "should stick to"
 	cont "finding fossils."
 	done
 
 SuperNerdGrantAfterBattleText:
+	ntag "Grant"
 	text "It's so amazing"
 	line "that we have the"
 	cont "technology to turn"
@@ -554,11 +558,13 @@ SchoolboyAlan1SeenText:
 	done
 
 SchoolboyAlan1BeatenText:
+	ntag "Alan"
 	text "Oops! Computation"
 	line "error?"
 	done
 
 SchoolboyAlanBooksText:
+	ntag "Alan"
 	text "Darn. I study five"
 	line "hours a day too."
 

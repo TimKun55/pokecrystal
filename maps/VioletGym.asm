@@ -336,10 +336,12 @@ BirdKeeperRodSeenText:
 	done
 
 BirdKeeperRodBeatenText:
+	ntag "Rod"
 	text "Gaaah!"
 	done
 
 BirdKeeperRodAfterBattleText:
+	ntag "Rod"
 	text "Falkner's skills"
 	line "are for real!"
 
@@ -355,11 +357,13 @@ BirdKeeperAbeSeenText:
 	done
 
 BirdKeeperAbeBeatenText:
+	ntag "Abe"
 	text "This can't be"
 	line "true!"
 	done
 
 BirdKeeperAbeAfterBattleText:
+	ntag "Abe"
 	text "This is pathetic,"
 	line "losing to some"
 	cont "rookie trainer…"

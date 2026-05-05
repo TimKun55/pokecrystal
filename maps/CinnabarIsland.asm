@@ -47,6 +47,7 @@ CinnabarIslandBlueTeleport:
 	step_end
 
 CinnabarIslandBlueText:
+	ntag "Blue"
 	text "My name's Blue."
 
 	para "I was once the"
@@ -89,7 +90,8 @@ CinnabarIslandBlueText:
 	done
 
 CinnabarIslandBlue2Text:
-	text "Blue: <PLAYER>,"
+	ntag "Blue"
+	text "<PLAYER>,"
 	para "you're back."
 	
 	para "Oh, you've earned"

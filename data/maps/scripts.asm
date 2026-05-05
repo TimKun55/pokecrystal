@@ -79,7 +79,6 @@ INCLUDE "maps/Route1ViridianGate.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/GoldenrodFlowerShopGarden.asm"
 INCLUDE "maps/RuinsOfAlphCaveEntrance.asm"
-INCLUDE "maps/Route37.asm"
 INCLUDE "maps/SaffronAviculturalSociety2F.asm"
 INCLUDE "maps/FuchsiaCinnabarHouse1.asm"
 
@@ -275,7 +274,6 @@ INCLUDE "maps/TinTower8F.asm"
 INCLUDE "maps/TinTower9F.asm"
 INCLUDE "maps/BurnedTower1F.asm"
 INCLUDE "maps/BurnedTowerB1F.asm"
-INCLUDE "maps/ViridianGym.asm"
 
 
 SECTION "Map Scripts 15", ROMX
@@ -531,7 +529,6 @@ INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/LyrasHouse2F.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
-INCLUDE "maps/ManiasHouse.asm"
 
 
 SECTION "Map Scripts 28", ROMX
@@ -561,5 +558,8 @@ INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/SafariZoneNorthRestHouse.asm"
 INCLUDE "maps/MrPokemonsHouse.asm"
+INCLUDE "maps/ManiasHouse.asm"
+INCLUDE "maps/ViridianGym.asm"
+INCLUDE "maps/Route37.asm"
 
 ENDSECTION

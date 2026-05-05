@@ -174,25 +174,14 @@ RuinsOfAlphOutsideScientistWalkToLabMovement:
 	step UP
 	step RIGHT
 	step UP
-	step UP
-	step_end
-
 RuinsOfAlphOutsidePlayerEnterLabMovement:
 	step UP
-	step_end
-
-RuinsOfAlphOutsideFossilScientistMovement1:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
 	step_end
 
 RuinsOfAlphOutsideFossilScientistMovement2:
 	step DOWN
 	step RIGHT
+RuinsOfAlphOutsideFossilScientistMovement1:
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -239,6 +228,7 @@ SuperNerdStanSeenText:
 	done
 
 SuperNerdStanBeatenText:
+	ntag "Stan"
 	text "Sorry…"
 	line "I'm frustrated by"
 	cont "our lack of real"
@@ -246,6 +236,7 @@ SuperNerdStanBeatenText:
 	done
 
 SuperNerdStanAfterBattleText:
+	ntag "Stan"
 	text "The Ruins are from"
 	line "about 1500 years"
 	cont "ago."
@@ -268,10 +259,12 @@ PsychicNathanSeenText:
 	done
 
 PsychicNathanBeatenText:
+	ntag "Nathan"
 	text "…"
 	done
 
 PsychicNathanAfterBattleText:
+	ntag "Nathan"
 	text "I like thinking"
 	line "here."
 	done

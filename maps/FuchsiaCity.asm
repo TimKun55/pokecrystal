@@ -153,19 +153,24 @@ FuchsiaCityTeacherText:
 	done
 	
 FuchsiaCityLaprasText:
-	text "Lapras: Laaap!"
+	ntag "Lapras"
+	text "Laaap!"
 
 FuchsiaCityTaurosText:
-	text "Tauros: Rosss!"
+	ntag "Tauros"
+	text "Rosss!"
 
 FuchsiaCityPinsirText:
-	text "Pinsir: Sirrr!"
+	ntag "Pinsir"
+	text "Sirrr!"
 
 FuchsiaCityNidokingText:
-	text "Nidoking: Kinggg!"
+	ntag "Nidoking"
+	text "Kinggg!"
 
 FuchsiaCityNidoqueenText:
-	text "Nidoqueen: Qweeen!"
+	ntag "Nidoqueen"
+	text "Qweeen!"
 
 FuchsiaCitySignText:
 	text "Fuchsia City"

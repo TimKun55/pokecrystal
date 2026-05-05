@@ -1860,7 +1860,7 @@ ThrewAwayText:
 	text_end
 
 OakThisIsntTheTimeText:
-	text_far _OakThisIsntTheTimeText
+	text_far _ThisIsntTheTimePromptText
 	text_end
 
 YouDontHaveAMonText:

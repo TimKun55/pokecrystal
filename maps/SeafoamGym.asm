@@ -133,7 +133,8 @@ SeafoamGymStatue:
 	jumpstd GymStatue2Script
 
 BlaineIntroText:
-	text "Blaine: Waaah!"
+	ntag "Blaine"
+	text "Waaah!"
 
 	para "My original Gym"
 	line "was burned down"
@@ -159,7 +160,8 @@ BlaineIntroText:
 	done
 
 BlaineWinLossText:
-	text "Blaine: Awesome."
+	ntag "Blaine"
+	text "Awesome."
 	line "I've burned out…"
 
 	para "You've earned the"
@@ -172,8 +174,9 @@ ReceivedVolcanoBadgeText:
 	done
 
 BlaineAfterBattleText:
-	text "Blaine: I did lose"
-	line "this time, but I'm"
+	ntag "Blaine"
+	text "I did lose this"
+	line "time, but I'm"
 	cont "going to win the"
 	cont "next time."
 	
@@ -183,13 +186,15 @@ BlaineAfterBattleText:
 	done
 
 BlaineFightDoneText:
-	text "Blaine: My fire"
-	line "#mon will be"
-	cont "even stronger."
+	ntag "Blaine"
+	text "My fire #mon"
+	line "will be even"
+	cont "stronger."
 	cont "Just you watch!"
 	done
 	
 BlaineRematchIntroText:
+	ntag "Blaine"
 	text "Ah, <PLAYER>!"
 	line "You've come back;"
 	
@@ -197,11 +202,13 @@ BlaineRematchIntroText:
 	done
 	
 BlaineWinLossRematchText:
+	ntag "Blaine"
 	text "Lost the battle"
 	line "but not spirit!"
 	done
 	
 BlaineRematchAfterBattleText:
+	ntag "Blaine"
 	text "A loss is a loss"
 	line "but the fire"
 	cont "hasn't gone out!"
@@ -212,11 +219,13 @@ BlaineRematchAfterBattleText:
 	done
 
 BlaineComeBackTomorrowText:
+	ntag "Blaine"
 	text "Let's have another"
 	line "battle tomorrow!"
 	done
 
 BlaineNextTimeText:
+	ntag "Blaine"
 	text "A shame!"
 	done
 
@@ -279,12 +288,13 @@ SeafoamGymGuideWinText:
 	done
 
 MagmarText:
-	text "Magmar: Maaaar!!"
-	line "MarMagmar!"
+	ntag "Magmar"
+	text "Maaaar! MarMagmar!"
 	done
 
 MagmortarText:
-	text "Magmortar: Mooor!"
+	ntag "Magmortar"
+	text "Mooor! Taaar!"
 	done
 
 SeafoamGym_MapEvents:

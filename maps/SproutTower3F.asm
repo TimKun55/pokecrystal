@@ -244,11 +244,13 @@ SageJinSeenText:
 	done
 
 SageJinBeatenText:
+	ntag "Jin"
 	text "My training is"
 	line "incomplete…"
 	done
 
 SageJinAfterBattleText:
+	ntag "Jin"
 	text "As #mon grow"
 	line "stronger, so does"
 	cont "the trainer."
@@ -266,11 +268,13 @@ SageTroySeenText:
 	done
 
 SageTroyBeatenText:
+	ntag "Troy"
 	text "Yes, your trust is"
 	line "real!"
 	done
 
 SageTroyAfterBattleText:
+	ntag "Troy"
 	text "It is not far to"
 	line "the Elder."
 	done
@@ -282,11 +286,13 @@ SageNealSeenText:
 	done
 
 SageNealBeatenText:
+	ntag "Neal"
 	text "It is my head that"
 	line "is bright!"
 	done
 
 SageNealAfterBattleText:
+	ntag "Neal"
 	text "Let there be light"
 	line "on your journey."
 	done

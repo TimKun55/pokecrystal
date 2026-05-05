@@ -1,4 +1,5 @@
 JoeyAskNumber1Text:
+	ntag "Joey"
 	text "Listen, can I get"
 	line "your phone number?"
 
@@ -11,6 +12,7 @@ JoeyAskNumber1Text:
 	done
 
 JoeyAskNumber2Text:
+	ntag "Joey"
 	text "Can I get your"
 	line "phone number?"
 
@@ -22,12 +24,14 @@ JoeyAskNumber2Text:
 	done
 
 JoeyNumberAcceptedText:
+	ntag "Joey"
 	text "I'll ring you"
 	line "whenever I get the"
 	cont "urge to battle!"
 	done
 
 JoeyNumberDeclinedText:
+	ntag "Joey"
 	text "Oh, all right…"
 
 	para "But I won't lose"
@@ -35,16 +39,19 @@ JoeyNumberDeclinedText:
 	done
 
 JoeyPhoneFullText:
+	ntag "Joey"
 	text "Huh, what? Your"
 	line "phone's full."
 	done
 
 JoeyRematchText:
+	ntag "Joey"
 	text "I've been waiting!"
 	line "Let's battle now!"
 	done
 
 JoeyPackFullText:
+	ntag "Joey"
 	text "Hey, wait! Your"
 	line "Pack is stuffed!"
 
@@ -53,6 +60,7 @@ JoeyPackFullText:
 	done
 
 JoeyRematchGiftText:
+	ntag "Joey"
 	text "And yet another"
 	line "loss…"
 

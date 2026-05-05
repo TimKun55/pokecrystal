@@ -59,10 +59,12 @@ HikerPhillipSeenText:
 	done
 
 HikerPhillipBeatenText:
+	ntag "Phillip"
 	text "Uurggh…"
 	done
 
 HikerPhillipAfterBattleText:
+	ntag "Phillip"
 	text "I've been lost for"
 	line "a long time…"
 
@@ -77,11 +79,13 @@ HikerLeonardSeenText:
 	done
 
 HikerLeonardBeatenText:
+	ntag "Leonard"
 	text "Wahahah! You're a"
 	line "feisty one!"
 	done
 
 HikerLeonardAfterBattleText:
+	ntag "Leonard"
 	text "I live down here."
 
 	para "You can, too, if"
@@ -99,11 +103,13 @@ PokemaniacAndrewSeenText:
 	done
 
 PokemaniacAndrewBeatenText:
+	ntag "Andrew"
 	text "Go…"
 	line "Go away!"
 	done
 
 PokemaniacAndrewAfterBattleText:
+	ntag "Andrew"
 	text "Just me and my"
 	line "#mon. I'm de-"
 	cont "lirious with joy."
@@ -120,11 +126,13 @@ PokemaniacCalvinSeenText:
 	done
 
 PokemaniacCalvinBeatenText:
+	ntag "Calvin"
 	text "You demonstrated"
 	line "on me!"
 	done
 
 PokemaniacCalvinAfterBattleText:
+	ntag "Calvin"
 	text "I should compile"
 	line "and announce my"
 	cont "study findings."

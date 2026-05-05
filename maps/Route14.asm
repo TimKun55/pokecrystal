@@ -129,6 +129,7 @@ PokefanmTrevorAfterBattleText:
 	done
 	
 LadyEvaSeenText:
+	ntag "Eva"
 	text "Hi! I'm Eva."
 	line "You're the trainer"
 	cont "from Johto!"
@@ -142,11 +143,13 @@ LadyEvaSeenText:
 	done
 	
 LadyEvaBeatenText:
+	ntag "Eva"
 	text "You're really good"
 	line "at this!"
 	done
 
 LadyEvaAfterBattleText:
+	ntag "Eva"
 	text "I thought I would"
 	line "apply to be a Gym"
 	cont "Leader for the"
@@ -162,7 +165,8 @@ LadyEvaAfterBattleText:
 	done
 
 Route14TogekissText:
-	text "Togekiss: Toge!"
+	ntag "Togekiss"
+	text "Toge!"
 	done
 
 Route14_MapEvents:

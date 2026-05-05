@@ -66,49 +66,53 @@ NationalParkBugContestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 BugCatchingContestant1AText:
-	text "Don: I'm going to"
-	line "win! Don't bother"
-	cont "me."
+	ntag "Don"
+	text "I'm going to win!"
+	line "Don't bother me."
 	done
 
 BugCatchingContestant2AText:
-	text "Ed: My Parasect"
-	line "puts #mon to"
-	cont "sleep with Spore."
+	ntag "Ed"
+	text "My Parasect puts"
+	line "#mon to sleep"
+	cont "with Spore."
 	done
 
 BugCatchingContestant3AText:
-	text "Nick: I'm raising"
-	line "fast #mon for"
+	ntag "Nick"
+	text "I'm raising fast"
+	line "#mon for"
 	cont "battles."
 	done
 
 BugCatchingContestant4AText:
-	text "William: I'm not"
-	line "concerned about"
-	cont "winning."
+	ntag "William"
+	text "I'm not concerned"
+	line "about winning."
 
 	para "I'm just looking"
 	line "for rare #mon."
 	done
 
 BugCatchingContestant5AText:
-	text "Benny: Ssh! You'll"
-	line "scare off Scyther."
+	ntag "Benny"
+	text "Ssh! You'll scare"
+	line "off Scyther."
 
 	para "I'll talk to you"
 	line "later."
 	done
 
 BugCatchingContestant6AText:
-	text "Barry: You should"
-	line "weaken bug #mon"
-	cont "first, then throw"
-	cont "a Ball."
+	ntag "Barry"
+	text "You should weaken"
+	line "bug #mon first,"
+	cont "then throw a Ball."
 	done
 
 BugCatchingContestant7AText:
-	text "Cindy: I love bug"
+	ntag "Cindy"
+	text "I love bug"
 	line "#mon."
 
 	para "I guess you must"
@@ -116,7 +120,8 @@ BugCatchingContestant7AText:
 	done
 
 BugCatchingContestant8AText:
-	text "Josh: I've been"
+	ntag "Josh"
+	text "I've been"
 	line "collecting bug"
 	cont "#mon since I"
 	cont "was just a baby."
@@ -126,16 +131,17 @@ BugCatchingContestant8AText:
 	done
 
 BugCatchingContestant9AText:
-	text "Samuel: If you've"
-	line "got the time to"
-	cont "chat, go find some"
-	cont "bug #mon."
+	ntag "Samuel"
+	text "If you've got the"
+	line "time to chat, go"
+	cont "find some bug"
+	cont "#mon."
 	done
 
 BugCatchingContestant10AText:
-	text "Kipp: I've studied"
-	line "about bug #mon"
-	cont "a lot."
+	ntag "Kipp"
+	text "I've studied about"
+	line "bug #mon a lot."
 
 	para "I'm going to win"
 	line "for sure."
@@ -160,10 +166,10 @@ NationalParkBugContestBattleNoticeText:
 NationalParkBugContestTrainerTipsText:
 	text "Trainer Tips"
 
-	para "Visit the Mahogany"
-	line "Bakery for items"
-	cont "to power up your"
-	cont "#mon in battle."
+	para "Visit Route 39's"
+	line "Moomoo Farm for"
+	cont "some delicious"
+	cont "Moomoo Milk."
 	done
 
 NationalParkBugContest_MapEvents:

@@ -371,11 +371,13 @@ LassCarrieSeenText:
 	done
 
 LassCarrieBeatenText:
+	ntag "Carrie"
 	text "Darn… I thought"
 	line "you were weak…"
 	done
 
 LassCarrieAfterBattleText:
+	ntag "Carrie"
 	text "Do my #mon"
 	line "think I'm cute?"
 	done
@@ -390,10 +392,12 @@ LassBridgetSeenText:
 	done
 
 LassBridgetBeatenText:
+	ntag "Bridget"
 	text "Oh, no, no, no!"
 	done
 
 LassBridgetAfterBattleText:
+	ntag "Bridget"
 	text "I'm trying to beat"
 	line "Whitney, but…"
 	cont "It's depressing."
@@ -405,6 +409,7 @@ LassBridgetAfterBattleText:
 	done
 
 BridgetWhitneyCriesText:
+	ntag "Bridget"
 	text "Oh, no. You made"
 	line "Whitney cry."
 
@@ -423,11 +428,13 @@ BeautyVictoriaSeenText:
 	done
 
 BeautyVictoriaBeatenText:
+	ntag "Victoria"
 	text "Let's see… Oops,"
 	line "it's over?"
 	done
 
 BeautyVictoriaAfterBattleText:
+	ntag "Victoria"
 	text "Wow, you must be"
 	line "good to beat me."
 	cont "Keep it up!"
@@ -440,11 +447,13 @@ BeautySamanthaSeenText:
 	done
 
 BeautySamanthaBeatenText:
+	ntag "Samantha"
 	text "No! Oh, Meowth,"
 	line "I'm so sorry!"
 	done
 
 BeautySamanthaAfterBattleText:
+	ntag "Samantha"
 	text "I taught Meowth"
 	line "moves for taking"
 	cont "on any type…"

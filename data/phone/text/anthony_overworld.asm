@@ -1,4 +1,5 @@
 AnthonyAskNumber1Text:
+	ntag "Anthony"
 	text "By the way, I'm a"
 	line "Hiker, so I often"
 
@@ -17,6 +18,7 @@ AnthonyAskNumber1Text:
 	done
 
 AnthonyAskNumber2Text:
+	ntag "Anthony"
 	text "I could call you"
 	line "when I see some"
 	cont "rare #mon."
@@ -26,18 +28,21 @@ AnthonyAskNumber2Text:
 	done
 
 AnthonyNumberAcceptedText:
+	ntag "Anthony"
 	text "Be patient. I'll"
 	line "find some rare"
 	cont "#mon for you!"
 	done
 
 AnthonyNumberDeclinedText:
+	ntag "Anthony"
 	text "You're cold. I may"
 	line "as well head to"
 	cont "the mountains…"
 	done
 
 AnthonyPhoneFullText:
+	ntag "Anthony"
 	text "Your phone's full."
 
 	para "It can't register"
@@ -45,6 +50,7 @@ AnthonyPhoneFullText:
 	done
 
 AnthonyRematchText:
+	ntag "Anthony"
 	text "All righty, then!"
 
 	para "My #mon and I"

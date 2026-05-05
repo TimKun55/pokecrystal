@@ -1,9 +1,9 @@
 ArnieAskNumber1Text:
+	ntag "Arnie"
 	text "Do you get the"
 	line "feeling that there"
-
-	para "are more rare"
-	line "#mon around?"
+	cont "are more rare"
+	cont "#mon around?"
 
 	para "I'm positive there"
 	line "are, so I look all"
@@ -11,15 +11,15 @@ ArnieAskNumber1Text:
 
 	para "If I find one, I"
 	line "want to share the"
-
-	para "good news with"
-	line "everyone I know."
+	cont "good news with"
+	cont "everyone I know."
 
 	para "I know! Give me"
 	line "your phone number."
 	done
 
 ArnieAskNumber2Text:
+	ntag "Arnie"
 	text "I want to let"
 	line "people know if I"
 	cont "see rare #mon."
@@ -29,20 +29,22 @@ ArnieAskNumber2Text:
 	done
 
 ArnieNumberAcceptedText:
+	ntag "Arnie"
 	text "If I spot any"
 	line "awesome #mon,"
-
-	para "I'll be sure to"
-	line "give you a call!"
+	cont "I'll be sure to"
+	cont "give you a call!"
 	done
 
 ArnieNumberDeclinedText:
+	ntag "Arnie"
 	text "Aww! I want to"
 	line "tell someone about"
 	cont "my discoveries!"
 	done
 
 ArniePhoneFullText:
+	ntag "Arnie"
 	text "There's no space"
 	line "for my number."
 
@@ -51,6 +53,7 @@ ArniePhoneFullText:
 	done
 
 ArnieRematchText:
+	ntag "Arnie"
 	text "It's my turn to"
 	line "win now!"
 

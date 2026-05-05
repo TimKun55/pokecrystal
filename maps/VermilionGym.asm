@@ -306,8 +306,9 @@ VermilionGymStatue:
 	jumpstd GymStatue2Script
 
 LtSurgeIntroText:
-	text "Surge: Hey, you"
-	line "little tyke!"
+	ntag "Surge"
+	text "Hey, you little"
+	line "tyke!"
 
 	para "I have to hand it"
 	line "to you. It may not"
@@ -328,7 +329,8 @@ LtSurgeIntroText:
 	done
 
 LtSurgeWinLossText:
-	text "Surge: Arrrgh!"
+	ntag "Surge"
+	text "Arrrgh!"
 	line "You are strong!"
 
 	para "OK, kid. You get"
@@ -341,16 +343,18 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
-	text "Surge: Consider"
-	line "it proof that"
-	cont "you defeated me."
+	ntag "Surge"
+	text "Consider it proof"
+	line "that you defeated"
+	cont "me."
 
 	para "You wear it"
 	line "proudly, y'hear?"
 	done
 
 LtSurgeFightDoneText:
-	text "Surge: Hey, kid!"
+	ntag "Surge"
+	text "Hey, kid!"
 	line "Still slugging and"
 	cont "chugging away?"
 
@@ -359,6 +363,7 @@ LtSurgeFightDoneText:
 	done
 	
 LtSurgeRematchIntroText:
+	ntag "Surge"
 	text "Hey kid!"
 	line "You're back!"
 
@@ -367,10 +372,12 @@ LtSurgeRematchIntroText:
 	done
 	
 LtSurgeWinLossRematchText:
+	ntag "Surge"
 	text "Haha, shocking!"
 	done
 
 LtSurgeRematchAfterBattleText:
+	ntag "Surge"
 	text "I still need"
 	line "to work on"
 	cont "closing the gap"
@@ -381,12 +388,14 @@ LtSurgeRematchAfterBattleText:
 	done
 
 LtSurgeComeBackTomorrowText:
+	ntag "Surge"
 	text "Hey kid! Come"
 	line "back tomorrow, we"
 	cont "can battle again."
 	done
 
 LtSurgeNextTimeText:
+	ntag "Surge"
 	text "Make sure to keep"
 	line "up your training."
 	done
@@ -521,8 +530,8 @@ VermilionGymElectricFenceText:
 	done
 
 RaichuText:
-	text "Raichu: Rai!!"
-	line "Raichuuu!"
+	ntag "Raichu"
+	text "Rai! Raichuuu!"
 	done
 
 VermilionGym_MapEvents:

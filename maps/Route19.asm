@@ -251,7 +251,8 @@ Route19Fisher2Text_CompetitionOver:
 	done
 
 Route19SurfingPikachuText:
-	text "Pikachu: Chuu!!"
+	ntag "Pikachu"
+	text "Chuu!!"
 	done
 
 Route19SurfingPikachuWinnerText:

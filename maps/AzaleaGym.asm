@@ -139,14 +139,14 @@ AzaleaGymActivateRockets:
 	jumpstd RadioTowerRocketsScript
 
 TrainerTwinsAmyandmay1:
-	trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript
+	trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmayBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	jumptext TwinsAmyandmay1AfterBattleText
 
 TrainerTwinsAmyandmay2:
-	trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript
+	trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmayBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -828,11 +828,13 @@ BugCatcherBennySeenText:
 	done
 
 BugCatcherBennyBeatenText:
+	ntag "Benny"
 	text "Just evolving"
 	line "isn't enough!"
 	done
 
 BugCatcherBennyAfterBattleText:
+	ntag "Benny"
 	text "#mon become"
 	line "stronger if they"
 	cont "evolve. Really!"
@@ -847,11 +849,13 @@ BugCatcherAlSeenText:
 	done
 
 BugCatcherAlBeatenText:
+	ntag "Al"
 	text "You proved how"
 	line "tough you are…"
 	done
 
 BugCatcherAlAfterBattleText:
+	ntag "Al"
 	text "They're so cool,"
 	line "but most girls"
 
@@ -872,10 +876,12 @@ BugCatcherJoshSeenText:
 	done
 
 BugCatcherJoshBeatenText:
+	ntag "Josh"
 	text "Urrgggh!"
 	done
 
 BugCatcherJoshAfterBattleText:
+	ntag "Josh"
 	text "I guess I should"
 	line "teach them better"
 	cont "moves…"
@@ -891,45 +897,47 @@ BugManiacXanderSeenText:
 	done
 
 BugManiacXanderBeatenText:
+	ntag "Xander"
 	text "Aahhhh!"
 	done
 
 BugManiacXanderAfterBattleText:
+	ntag "Xander"
 	text "They're not weak"
 	line "but you're"
 	cont "definitely strong!"
 	done
 
 TwinsAmyandmay1SeenText:
-	text "Amy: Hi! Are you"
+	ntag "Amy"
+	text "Hi! Are you"
 	line "challenging the"
 	cont "Leader? No way!"
 	done
 
-TwinsAmyandmay1BeatenText:
-	text "Amy & May: Oh,"
-	line "double goodness!"
+TwinsAmyandmayBeatenText:
+	ntag "Amy & May"
+	text "Oh, double"
+	line "goodness!"
 	done
 
 TwinsAmyandmay1AfterBattleText:
-	text "Amy: You're"
-	line "really strong!"
+	ntag "Amy"
+	text "You're really"
+	line "strong!"
 	done
 
 TwinsAmyandmay2SeenText:
-	text "May: You want to"
-	line "see the Leader?"
+	ntag "May"
+	text "You want to see"
+	line "the Leader?"
 	cont "We come first!"
 	done
 
-TwinsAmyandmay2BeatenText:
-	text "Amy & May: Oh,"
-	line "double goodness!"
-	done
-
 TwinsAmyandmay2AfterBattleText:
-	text "May: Our bug #-"
-	line "mon lost! Oh, what"
+	ntag "Amy"
+	text "Our bug #mon"
+	line "lost! Oh, what"
 	cont "a shame."
 	done
 

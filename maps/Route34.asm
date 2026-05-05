@@ -540,12 +540,9 @@ Route34HiddenRareCandy:
 Route34HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_34_HIDDEN_SUPER_POTION
 
-Route34MovementData_DayCareManWalksBackInside:
-	slow_step RIGHT
-	step_end
-
 Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	slow_step UP
+Route34MovementData_DayCareManWalksBackInside:
 	slow_step RIGHT
 	step_end
 
@@ -660,11 +657,13 @@ YoungsterSamuelSeenText:
 	done
 
 YoungsterSamuelBeatenText:
+	ntag "Samuel"
 	text "Beaten by a"
 	line "passing stranger!"
 	done
 
 YoungsterSamuelAfterText:
+	ntag "Samuel"
 	text "I'm going to train"
 	line "even harder."
 
@@ -679,11 +678,13 @@ YoungsterIanSeenText:
 	done
 
 YoungsterIanBeatenText:
+	ntag "Ian"
 	text "No! There are bet-"
 	line "ter trainers…"
 	done
 
 YoungsterIanAfterText:
+	ntag "Ian"
 	text "I'm trying hard so"
 	line "I can be the star"
 	cont "in my class."
@@ -698,11 +699,13 @@ CamperTodd1SeenText:
 	done
 
 CamperTodd1BeatenText:
+	ntag "Todd"
 	text "Did I screw up my"
 	line "training?"
 	done
 
 CamperTodd1AfterText:
+	ntag "Todd"
 	text "Maybe I should"
 	line "take one to a Day-"
 	cont "Care. Or maybe use"
@@ -710,6 +713,7 @@ CamperTodd1AfterText:
 	done
 
 CamperToddSaleText:
+	ntag "Todd"
 	text "Shopping under the"
 	line "sky!"
 
@@ -725,28 +729,33 @@ PicnickerGina1SeenText:
 	done
 
 PicnickerGina1BeatenText:
+	ntag "Gina"
 	text "Oh, no! I just"
 	line "can't win…"
 	done
 
 PicnickerGina1AfterText:
+	ntag "Gina"
 	text "You're too strong"
 	line "to be a practice"
 	cont "partner."
 	done
 
 OfficerKeithSeenText:
+	ntag "Officer Keith"
 	text "Who goes there?"
 	line "What are you up"
 	cont "to?"
 	done
 
 OfficerKeithWinText:
+	ntag "Officer Keith"
 	text "You're a tough"
 	line "little kid."
 	done
 
 OfficerKeithAfterText:
+	ntag "Officer Keith"
 	text "Yep, I see nothing"
 	line "wrong today. You"
 	cont "be good and stay"
@@ -754,6 +763,7 @@ OfficerKeithAfterText:
 	done
 
 OfficerKeithDaytimeText:
+	ntag "Officer Keith"
 	text "I'm on patrol for"
 	line "suspicious indi-"
 	cont "viduals."
@@ -769,11 +779,13 @@ PokefanmBrandonSeenText:
 	done
 
 PokefanmBrandonBeatenText:
+	ntag "Brandon"
 	text "Why does it end"
 	line "this way?"
 	done
 
 PokefanmBrandonAfterText:
+	ntag "Brandon"
 	text "My #mon knew"
 	line "moves I didn't"
 	cont "know it had."
@@ -783,74 +795,83 @@ PokefanmBrandonAfterText:
 	done
 
 CooltrainerfIreneSeenText:
-	text "Irene: Kyaaah!"
+	text "Kyaaah!"
 	line "Someone found us!"
 	done
 
 CooltrainerfIreneBeatenText:
-	text "Irene: Ohhh!"
+	ntag "Irene"
+	text "Ohhh!"
 	line "Too strong!"
 	done
 
 CooltrainerfIreneAfterText1:
-	text "Irene: My sister"
-	line "Kate will get you"
+	ntag "Irene"
+	text "My sister Kate"
+	line "will get you"
 	cont "for this!"
 	done
 
 CooltrainerfIreneAfterText2:
-	text "Irene: Isn't this"
-	line "beach great?"
+	ntag "Irene"
+	text "Isn't this beach"
+	line "great?"
 
 	para "It's our secret"
 	line "little getaway!"
 	done
 
 CooltrainerfJennSeenText:
-	text "Jenn: You can't"
-	line "beat Irene and go"
+	text "You can't beat"
+	line "Irene and go"
 	cont "unpunished!"
 	done
 
 CooltrainerfJennBeatenText:
-	text "Jenn: So sorry,"
-	line "Irene! Sis!"
+	ntag "Jenn"
+	text "So sorry, Irene!"
+	line "Sis!"
 	done
 
 CooltrainerfJennAfterText1:
-	text "Jenn: Don't get"
-	line "cocky! My sister"
-	cont "Kate is tough!"
+	ntag "Jenn"
+	text "Don't get cocky!"
+	line "My sister Kate"
+	cont "is tough!"
 	done
 
 CooltrainerfJennAfterText2:
-	text "Jenn: Sunlight"
-	line "makes your body"
+	ntag "Jenn"
+	text "Sunlight makes"
+	line "your body"
 	cont "stronger."
 	done
 
 CooltrainerfKateSeenText:
-	text "Kate: You sure"
-	line "were mean to my"
-	cont "little sisters!"
+	text "You sure were "
+	line "mean to my little"
+	cont "sisters!"
 	done
 
 CooltrainerfKateBeatenText:
-	text "Kate: No! I can't"
+	ntag "Kate"
+	text "No! I can't"
 	line "believe I lost."
 	done
 
 CooltrainerfKateOfferSoftSandText:
-	text "Kate: You're too"
-	line "strong. I didn't"
-	cont "stand a chance."
+	ntag "Kate"
+	text "You're too strong."
+	line "I didn't stand a"
+	cont "chance."
 
 	para "Here. You deserve"
 	line "this."
 	done
 
 CooltrainerfKateAfterText:
-	text "Kate: I'm sorry we"
+	ntag "Kate"
+	text "I'm sorry we"
 	line "jumped you."
 
 	para "We never expected"
@@ -870,11 +891,13 @@ LadyBeaSeenText:
 	done
 
 LadyBeaBeatenText:
+	ntag "Bea"
 	text "Woah, so"
 	line "strong!"
 	done
 
 LadyBeaAfterBattleText:
+	ntag "Bea"
 	text "You may have"
 	line "defeated me, but"
 	cont "my sisters will"

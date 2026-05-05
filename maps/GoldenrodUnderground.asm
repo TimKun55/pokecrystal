@@ -455,10 +455,12 @@ SupernerdEricSeenText:
 	done
 
 SupernerdEricBeatenText:
+	ntag "Eric"
 	text "…Grumble…"
 	done
 
 SupernerdEricAfterBattleText:
+	ntag "Eric"
 	text "I guess I have to"
 	line "do things fair and"
 	cont "square…"
@@ -476,10 +478,12 @@ SupernerdTeruSeenText:
 	done
 
 SupernerdTeruBeatenText:
+	ntag "Teru"
 	text "Ow, ow, ow!"
 	done
 
 SupernerdTeruAfterBattleText:
+	ntag "Teru"
 	text "I know my #mon"
 	line "type alignments."
 
@@ -496,10 +500,12 @@ PokemaniacIssacSeenText:
 	done
 
 PokemaniacIssacBeatenText:
+	ntag "Issac"
 	text "Aiyeeee!"
 	done
 
 PokemaniacIssacAfterBattleText:
+	ntag "Issac"
 	text "Your #mon will"
 	line "like you more if"
 	cont "you give them"
@@ -515,11 +521,13 @@ PokemaniacDonaldSeenText:
 	done
 
 PokemaniacDonaldBeatenText:
+	ntag "Donald"
 	text "Gaah! I lost!"
 	line "That makes me mad!"
 	done
 
 PokemaniacDonaldAfterBattleText:
+	ntag "Donald"
 	text "Are you making a"
 	line "#dex? Here's a"
 	cont "hot tip."

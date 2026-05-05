@@ -94,7 +94,7 @@ CantUseItem:
 	ret
 
 ItemsOakWarningText:
-	text_far _ItemsOakWarningText
+	text_far _ThisIsntTheTimeText
 	text_end
 
 PartyMonItemName:

@@ -745,6 +745,7 @@ IlexForestPlayerStepsDownMovement:
 	step_end
 
 IlexForestApprenticeIntroText:
+	ntag "Apprentice"
 	text "Oh, man… My boss"
 	line "is going to be"
 	cont "steaming…"
@@ -763,6 +764,7 @@ IlexForestApprenticeIntroText:
 	done
 
 IlexForestApprenticeAfterText:
+	ntag "Apprentice"
 	text "Wow! Thanks a"
 	line "whole bunch!"
 
@@ -783,6 +785,7 @@ Text_Kwaaaa:
 	done
 
 Text_CharcoalMasterIntro:
+	ntag "Kiln Boss"
 	text "Ah! My Farfetch'd!"
 
 	para "You found it for"
@@ -803,6 +806,7 @@ Text_CharcoalMasterIntro:
 	done
 
 Text_CharcoalMasterOutro:
+	ntag "Kiln Boss"
 	text "That's the Cut HM."
 	line "Teach that to a"
 	cont "#mon to clear"
@@ -815,6 +819,7 @@ Text_CharcoalMasterOutro:
 	done
 
 Text_CharcoalMasterTalkAfter:
+	ntag "Kiln Boss"
 	text "Do you want to"
 	line "apprentice as a"
 	cont "charcoal maker"
@@ -921,11 +926,13 @@ BugCatcherWayneSeenText:
 	done
 
 BugCatcherWayneBeatenText:
+	ntag "Wayne"
 	text "I hadn't seen that"
 	line "#mon before…"
 	done
 
 BugCatcherWayneAfterBattleText:
+	ntag "Wayne"
 	text "A #mon I've"
 	line "never seen before"
 	cont "fell out of the"
@@ -945,10 +952,12 @@ BugManiacBobbySeenText:
 	done
 
 BugManiacBobbyBeatenText:
+	ntag "Bobby"
 	text "Not bad!"
 	done
 
 BugManiacBobbyAfterBattleText:
+	ntag "Bobby"
 	text "Wow, yeah you"
 	line "definitely beat"
 	cont "Bugsy with that"

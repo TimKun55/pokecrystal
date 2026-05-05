@@ -292,14 +292,15 @@ JanineText_DisappointYou:
 	done
 
 JanineText_ThatsMe:
+	ntag "Janine"
 	text "Janine of Fuchsia"
 	line "Gym, that's me!"
 	done
 
 JanineText_ToughOne:
-	text "Janine: You're a"
-	line "tough one. You"
-	cont "definitely won…"
+	ntag "Janine"
+	text "…!"
+	line "So… so strong!"
 
 	para "Here's the Soul-"
 	line "Badge. Take it."
@@ -311,9 +312,10 @@ Text_ReceivedSoulBadge:
 	done
 
 JanineText_ToxicSpeech:
-	text "Janine: You're so"
-	line "tough! I have a"
-	cont "special gift!"
+	ntag "Janine"
+	text "You're so tough!"
+	line "I have a special"
+	cont "gift for you!"
 
 	para "It's Toxic; a pow-"
 	line "erful poison that"
@@ -322,10 +324,11 @@ JanineText_ToxicSpeech:
 	done
 
 JanineText_ApplyMyself:
-	text "Janine: I'm going"
-	line "to really apply"
-	cont "myself and improve"
-	cont "my skills."
+	ntag "Janine"
+	text "I'm going to real-"
+	line "ly apply myself"
+	cont "and improve my"
+	cont "skills."
 
 	para "I want to become"
 	line "better than both"
@@ -333,6 +336,7 @@ JanineText_ApplyMyself:
 	done
 	
 JanineRematchIntroText:
+	ntag "Janine"
 	text "<PLAYER>."
 	line "Its good to see"
 	cont "you again."
@@ -342,11 +346,13 @@ JanineRematchIntroText:
 	done
 	
 JanineWinLossRematchText:
+	ntag "Janine"
 	text "You've got a great" 
 	line "battle technique!"
 	done
 	
 JanineRematchAfterBattleText:
+	ntag "Janine"
 	text "I'm going to keep"
 	line "training so I can"
 	cont "surpass both you"
@@ -358,12 +364,14 @@ JanineRematchAfterBattleText:
 	done
 
 JanineComeBackTomorrowText:
+	ntag "Janine"
 	text "Not now."
 	line "Come back tomorrow"
 	cont "for a rematch."
 	done
 
 JanineNextTimeText:
+	ntag "Janine"
 	text "I'll be here."
 	done
 
@@ -461,8 +469,8 @@ FuchsiaGymGuideWinText:
 	done
 
 WeezingText:
-	text "Weezing: Zing!!"
-	line "WeezingWee!"
+	ntag "Weezing"
+	text "Zing! WeezingWee!"
 	done
 
 FuchsiaGym_MapEvents:

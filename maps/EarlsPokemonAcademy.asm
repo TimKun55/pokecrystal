@@ -503,11 +503,13 @@ YoungsterGabeSeenText:
 	done
 
 YoungsterGabeBeatenText:
+	ntag "Gabe"
 	text "Oh, you're"
 	line "strong."
 	done
 
 YoungsterGabeAfterBattleText:
+	ntag "Gabe"
 	text "Status conditions"
 	line "can be scary"
 	cont "if you're not"
@@ -522,11 +524,13 @@ BugCatcherJonSeenText:
 	done
 
 BugCatcherJonBeatenText:
+	ntag "Jon"
 	text "I should have"
 	line "just studied."
 	done
 
 BugCatcherJonAfterBattleText:
+	ntag "Jon"
 	text "Watch out for"
 	line "your #mon"
 	cont "being poisoned."
@@ -548,11 +552,13 @@ LassMaiSeenText:
 	done
 
 LassMaiBeatenText:
+	ntag "Mai"
 	text "Aww, losing"
 	line "was scarier."
 	done
 
 LassMaiAfterBattleText:
+	ntag "Mai"
 	text "Most moves that"
 	line "put a #mon"
 	cont "to sleep are"
