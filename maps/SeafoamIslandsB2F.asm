@@ -46,11 +46,13 @@ SkierCadySeenText:
 	done
 
 SkierCadyBeatenText:
+	ntag "Cady"
 	text "Argh, all the way"
 	line "out here!"
 	done
 
 SkierCadyAfterBattleText:
+	ntag "Cady"
 	text "That was a hot"
 	line "battle!"
 	done
@@ -61,11 +63,13 @@ BoarderShaunSeenText:
 	done
 
 BoarderShaunBeatenText:
+	ntag "Shaun"
 	text "I got kicked"
 	line "around…"
 	done
 
 BoarderShaunAfterBattleText:
+	ntag "Shaun"
 	text "All right, please"
 	line "pass through!"
 	done
@@ -78,11 +82,13 @@ BoarderBryceSeenText:
 	done
 
 BoarderBryceBeatenText:
+	ntag "Bryce"
 	text "I lost all the"
 	line "way out here…"
 	done
 
 BoarderBryceAfterBattleText:
+	ntag "Bryce"
 	text "Trainers are"
 	line "everywhere."
 	done

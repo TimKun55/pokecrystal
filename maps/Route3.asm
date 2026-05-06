@@ -62,11 +62,13 @@ FirebreatherOtisSeenText:
 	done
 
 FirebreatherOtisBeatenText:
+	ntag "Otis"
 	text "It's sunny, but"
 	line "I'm all wet…"
 	done
 
 FirebreatherOtisAfterBattleText:
+	ntag "Otis"
 	text "When it rains,"
 	line "it's hard to get"
 	cont "ignition…"
@@ -78,10 +80,12 @@ YoungsterWarrenSeenText:
 	done
 
 YoungsterWarrenBeatenText:
+	ntag "Warren"
 	text "I knew I'd lose…"
 	done
 
 YoungsterWarrenAfterBattleText:
+	ntag "Warren"
 	text "You looked strong."
 
 	para "I was afraid to"
@@ -94,10 +98,12 @@ YoungsterJimmySeenText:
 	done
 
 YoungsterJimmyBeatenText:
+	ntag "Jimmy"
 	text "Blown away!"
 	done
 
 YoungsterJimmyAfterBattleText:
+	ntag "Jimmy"
 	text "I wear shorts the"
 	line "whole year round."
 
@@ -111,10 +117,12 @@ FirebreatherBurtSeenText:
 	done
 
 FirebreatherBurtBeatenText:
+	ntag "Burt"
 	text "Yow! That's hot!"
 	done
 
 FirebreatherBurtAfterBattleText:
+	ntag "Burt"
 	text "The greatest fire-"
 	line "breather in Kanto,"
 	cont "that's me."

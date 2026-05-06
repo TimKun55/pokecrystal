@@ -235,10 +235,12 @@ FirebreatherDickSeenText:
 	done
 
 FirebreatherDickBeatenText:
+	ntag "Dick"
 	text "Extinguished!"
 	done
 
 FirebreatherDickAfterBattleText:
+	ntag "Dick"
 	text "We've been working"
 	line "hard on getting"
 	cont "the Gym back up"
@@ -250,10 +252,12 @@ FirebreatherNedSeenText:
 	done
 
 FirebreatherNedBeatenText:
+	ntag "Ned"
 	text "…mera…?"
 	done
 
 FirebreatherNedAfterBattleText:
+	ntag "Ned"
 	text "All burnt out…"
 	
 	para "…mera…"

@@ -172,7 +172,8 @@ CeruleanCitySuperNerdText:
 	done
 
 CeruleanCitySlowbroText:
-	text "Slowbro: Yarah?"
+	ntag "Slowbro"
+	text "Yarah?"
 	done
 
 CeruleanCityCooltrainerFText1:

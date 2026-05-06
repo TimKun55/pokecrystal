@@ -465,6 +465,7 @@ AbraText:
 	done
 	
 IndigoPlateauPokecenter1FTutorIntroText:
+	ntag "Move Tutor"
 	text "If you've made it"
 	line "here, that must"
 	cont "mean you're aiming"
@@ -482,6 +483,7 @@ IndigoPlateauPokecenter1FGigaImpactClear:
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactForAPrice:
+	ntag "Move Tutor"
 	text "It'll cost you"
 	line "¥25,000."
 	
@@ -494,11 +496,13 @@ IndigoPlateauPokecenter1FGigaImpactPayment:
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactNotEnough:
+	ntag "Move Tutor"
 	text "Sorry kid, you"
 	line "don't have enough."
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactTaught:
+	ntag "Move Tutor"
 	text "It's perfect for"
 	line "a #mon with"
 	cont "high Attack!"
@@ -508,6 +512,7 @@ IndigoPlateauPokecenter1FGigaImpactTaught:
 	done
 	
 IndigoPlateauPokecenter1FTutorRefused:
+	ntag "Move Tutor"
 	text "But I thought you"
 	line "wanted to be the"
 	cont "best?"

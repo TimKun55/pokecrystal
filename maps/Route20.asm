@@ -59,10 +59,12 @@ SwimmerfNicoleSeenText:
 	done
 
 SwimmerfNicoleBeatenText:
+	ntag "Nicole"
 	text "Oh, no!"
 	done
 
 SwimmerfNicoleAfterBattleText:
+	ntag "Nicole"
 	text "Swimming exercises"
 	line "your full body."
 
@@ -78,10 +80,12 @@ SwimmerfLoriSeenText:
 	done
 
 SwimmerfLoriBeatenText:
+	ntag "Lori"
 	text "No!"
 	done
 
 SwimmerfLoriAfterBattleText:
+	ntag "Lori"
 	text "Surf is no longer"
 	line "the only HM move"
 	cont "you use in water."
@@ -95,10 +99,12 @@ SwimmermCameronSeenText:
 	done
 
 SwimmermCameronBeatenText:
+	ntag "Cameron"
 	text "Aiyah!"
 	done
 
 SwimmermCameronAfterBattleText:
+	ntag "Cameron"
 	text "Besides the sea, I"
 	line "can also swim in"
 	cont "ponds and rivers."
@@ -113,11 +119,13 @@ SwimmermHalSeenText:
 	done
 
 SwimmermHalBeatenText:
+	ntag "Hal"
 	text "Should have stuck"
 	line "to swimming."
 	done
 
 SwimmermHalAfterBattleText:
+	ntag "Hal"
 	text "I've gotta do a"
 	line "lot more training;"
 	cont "for #mon and"
@@ -133,11 +141,13 @@ SwimmermPatonSeenText:
 	done
 
 SwimmermPatonBeatenText:
+	ntag "Paton"
 	text "Frustrated AND"
 	line "disappointed."
 	done
 
 SwimmermPatonAfterBattleText:
+	ntag "Paton"
 	text "I want to explore"
 	line "more but I have a"
 	cont "bad sense of"

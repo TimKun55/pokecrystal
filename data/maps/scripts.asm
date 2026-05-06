@@ -104,7 +104,6 @@ INCLUDE "maps/Route1.asm"
 SECTION "Map Scripts 6", ROMX
 
 INCLUDE "maps/Route8.asm"
-INCLUDE "maps/MahoganyMart1F.asm"
 INCLUDE "maps/TeamRocketBaseB1F.asm"
 INCLUDE "maps/TeamRocketBaseB2F.asm"
 INCLUDE "maps/TeamRocketBaseB3F.asm"
@@ -485,7 +484,6 @@ INCLUDE "maps/Route2ViridianForestGate.asm"
 INCLUDE "maps/ViridianForest.asm"
 INCLUDE "maps/ViridianForestHouse.asm"
 INCLUDE "maps/ViridianForestRoute2Gate.asm"
-INCLUDE "maps/CianwoodMoveTutorHouse.asm"
 
 
 SECTION "Map Scripts 26", ROMX
@@ -565,6 +563,8 @@ INCLUDE "maps/Route37.asm"
 SECTION "Map Scripts 30", ROMX
 
 INCLUDE "maps/GoldenrodFlowerShop.asm"
+INCLUDE "maps/CianwoodMoveTutorHouse.asm"
+INCLUDE "maps/MahoganyMart1F.asm"
 
 
 ENDSECTION

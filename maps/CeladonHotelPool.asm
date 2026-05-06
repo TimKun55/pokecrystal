@@ -40,11 +40,13 @@ SwimmerMTonySeenText:
 	done
 
 SwimmerMTonyBeatenText:
+	ntag "Tony"
 	text "Washed up, washed"
 	line "out, washed away!"
 	done
 
 SwimmerMTonyAfterText:
+	ntag "Tony"
 	text "We're not from"
 	line "Kanto, but we"
 	cont "visit often."

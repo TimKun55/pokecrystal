@@ -63,11 +63,13 @@ PokefanmAlexSeenText:
 	done
 
 PokefanmAlexBeatenText:
+	ntag "Alex"
 	text "How… How dare you"
 	line "mock royalty!"
 	done
 
 PokefanmAlexAfterBattleText:
+	ntag "Alex"
 	text "Doesn't everyone"
 	line "wish to someday be"
 	cont "a king?"
@@ -80,10 +82,12 @@ PokefanmJoshuaSeenText:
 	done
 
 PokefanmJoshuaBeatenText:
+	ntag "Joshua"
 	text "Pi-Pikachu!"
 	done
 
 PokefanmJoshuaAfterBattleText:
+	ntag "Joshua"
 	text "You look like you"
 	line "have many #mon,"
 	cont "but Pikachu is"
@@ -97,11 +101,13 @@ BirdKeeperPerrySeenText:
 	done
 
 BirdKeeperPerryBeatenText:
+	ntag "Perry"
 	text "You beat me with"
 	line "your speed…"
 	done
 
 BirdKeeperPerryAfterBattleText:
+	ntag "Perry"
 	text "Your #mon are"
 	line "remarkably well-"
 	cont "trained."
@@ -115,11 +121,13 @@ BirdKeeperBretSeenText:
 	done
 
 BirdKeeperBretBeatenText:
+	ntag "Bret"
 	text "Shoot!"
 	line "Not good enough!"
 	done
 
 BirdKeeperBretAfterBattleText:
+	ntag "Bret"
 	text "If you groom them,"
 	line "#mon get happy."
 	done
@@ -131,10 +139,12 @@ HikerKennySeenText:
 	done
 
 HikerKennyBeatenText:
+	ntag "Kenny"
 	text "I lost…"
 	done
 
 HikerKennyAfterBattleText:
+	ntag "Kenny"
 	text "Geological fea-"
 	line "tures don't appear"
 	cont "to change."

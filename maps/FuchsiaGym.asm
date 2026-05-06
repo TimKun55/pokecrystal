@@ -386,10 +386,12 @@ LassAliceBeforeText:
 	done
 
 LassAliceBeatenText:
+	ntag "Alice"
 	text "I had you fooled…"
 	done
 
 LassAliceAfterText:
+	ntag "Alice"
 	text "How will you dis-"
 	line "tinguish our real"
 	cont "Leader?"
@@ -401,11 +403,13 @@ LassLindaBeforeText:
 	done
 
 LassLindaBeatenText:
+	ntag "Linda"
 	text "Ooh… I lost…"
 	line "You're not weak…"
 	done
 
 LassLindaAfterText:
+	ntag "Linda"
 	text "Well? Wasn't my"
 	line "disguise perfect?"
 	done
@@ -420,11 +424,13 @@ PicnickerCindyBeforeText:
 	done
 
 PicnickerCindyBeatenText:
+	ntag "Cindy"
 	text "Darn it!"
 	line "I wanted to win!"
 	done
 
 PicnickerCindyAfterText:
+	ntag "Cindy"
 	text "You must be"
 	line "getting tired."
 	done
@@ -437,11 +443,13 @@ CamperBarryBeforeText:
 	done
 
 CamperBarryBeatenText:
+	ntag "Barry"
 	text "My disguise was"
 	line "right on! Dang!"
 	done
 
 CamperBarryAfterText:
+	ntag "Barry"
 	text "Hey, you. Was my"
 	line "disguise cute or"
 	cont "what, huh?"

@@ -239,11 +239,13 @@ CamperJerrySeenText:
 	done
 
 CamperJerryBeatenText:
+	ntag "Jerry"
 	text "I have to win"
 	line "these battles…"
 	done
 
 CamperJerryAfterBattleText:
+	ntag "Jerry"
 	text "Hey, you! Trainer"
 	line "from Johto!"
 	
@@ -259,11 +261,13 @@ CamperDavidSeenText:
 	done
 
 CamperDavidBeatenText:
+	ntag "David"
 	text "You've got mud"
 	line "on your face."
 	done
 
 CamperDavidAfterBattleText:
+	ntag "David"
 	text "I lost;"
 	line "big disgrace."
 	done

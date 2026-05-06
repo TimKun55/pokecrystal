@@ -217,11 +217,13 @@ BugManiacVanSeenText:
 	done
 
 BugManiacVanBeatenText:
+	ntag "Van"
 	text "A battle…?"
 	line "I lost?"
 	done
 
 BugManiacVanAfterBattleText:
+	ntag "Van"
 	text "I've been in here"
 	line "for days looking"
 	cont "for rare #mon."
@@ -235,10 +237,12 @@ LassVeritySeenText:
 	done
 
 LassVerityBeatenText:
+	ntag "Verity"
 	text "Wow, too strong!"
 	done
 
 LassVerityAfterBattleText:
+	ntag "Verity"
 	text "I'm on the lookout"
 	line "for Clefable!"
 	done
@@ -252,10 +256,12 @@ SuperNerdDaveSeenText:
 	done
 
 SuperNerdDaveBeatenText:
+	ntag "Dave"
 	text "You got me!"
 	done
 
 SuperNerdDaveAfterBattleText:
+	ntag "Dave"
 	text "Team Rocket used"
 	line "to lurk around"
 	cont "here."
@@ -273,10 +279,12 @@ HikerDanSeenText:
 	done
 
 HikerDanBeatenText:
+	ntag "Dan"
 	text "I've been rocked!"
 	done
 
 HikerDanAfterBattleText:
+	ntag "Dan"
 	text "My goal is to"
 	line "hike all the way"
 	cont "to Mt. Mortar!"
@@ -290,10 +298,12 @@ HikerMickySeenText:
 	done
 
 HikerMickyBeatenText:
+	ntag "Micky"
 	text "I fell!"
 	done
 
 HikerMickyAfterBattleText:
+	ntag "Micky"
 	text "I may have lost"
 	line "the battle, but"
 	cont "I'll never lose"

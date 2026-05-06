@@ -92,9 +92,8 @@ HallOfFame_LanceText:
 
 	para "This is where we"
 	line "honor the League"
-
-	para "Champions for all"
-	line "eternity."
+	cont "Champions for all"
+	cont "eternity."
 
 	para "Their courageous"
 	line "#mon are also"

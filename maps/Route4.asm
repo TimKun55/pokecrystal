@@ -58,11 +58,13 @@ BirdKeeperHankSeenText:
 	done
 
 BirdKeeperHankBeatenText:
+	ntag "Hank"
 	text "Ack! I lost that"
 	line "one…"
 	done
 
 BirdKeeperHankAfterBattleText:
+	ntag "Hank"
 	text "If you have a"
 	line "specific #mon"
 	cont "that you want to"
@@ -83,11 +85,13 @@ PicnickerHopeSeenText:
 	done
 
 PicnickerHopeBeatenText:
+	ntag "Hope"
 	text "Aww, you are too"
 	line "strong."
 	done
 
 PicnickerHopeAfterBattleText:
+	ntag "Hope"
 	text "I heard Clefairy"
 	line "appear at Mt.Moon."
 
@@ -101,10 +105,12 @@ PicnickerSharonSeenText:
 	done
 
 PicnickerSharonBeatenText:
+	ntag "Sharon"
 	text "…"
 	done
 
 PicnickerSharonAfterBattleText:
+	ntag "Sharon"
 	text "……I'll go train"
 	line "some more…"
 	done

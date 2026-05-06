@@ -19,104 +19,104 @@ FightingDojoBlackBelt:
 FightingDojoHPBlackBelt:
 	faceplayer
 	opentext
-	writetext HPSpecialistText
+	writetext BlackbeltKonHPSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltKonWinLossText, 0
 	loadtrainer BLACKBELT_T, KON
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltKonAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltKonTrainAnytimeText
 
 FightingDojoAttackBlackBelt:
 	faceplayer
 	opentext
-	writetext AttackSpecialistText
+	writetext BlackbeltBoAttackSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltBoWinLossText, 0
 	loadtrainer BLACKBELT_T, BO
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltBoAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltBoTrainAnytimeText
 
 FightingDojoDefenseBlackBelt:
 	faceplayer
 	opentext
-	writetext DefenseSpecialistText
+	writetext BlackbeltTomoDefenseSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltTomoWinLossText, 0
 	loadtrainer BLACKBELT_T, TOMO
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltTomoAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltTomoTrainAnytimeText
 
 FightingDojoSpAtkBlackBelt:
 	faceplayer
 	opentext
-	writetext SpAtkSpecialistText
+	writetext BlackbeltChuuSpAtkSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltChuuWinLossText, 0
 	loadtrainer BLACKBELT_T, CHUU
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltChuuAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltChuuTrainAnytimeText
 
 FightingDojoSpDefBlackBelt:
 	faceplayer
 	opentext
-	writetext SpDefSpecialistText
+	writetext BlackbeltShinSpDefSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltShinWinLossText, 0
 	loadtrainer BLACKBELT_T, SHIN
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltShinAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltShinTrainAnytimeText
 
 FightingDojoSpeedBlackBelt:
 	faceplayer
 	opentext
-	writetext SpeedSpecialistText
+	writetext BlackbeltAanSpeedSpecialistText
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext BlackbeltWinLossText, 0
+	winlosstext BlackbeltAanWinLossText, 0
 	loadtrainer BLACKBELT_T, AAN
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend BlackbeltAfterBattleText
+	writetextend BlackbeltAanAfterBattleText
 
 .NoBattle
-	writetextend BlackbeltTrainAnytimeText
+	writetextend BlackbeltAanTrainAnytimeText
 
 FightingDojoSign1:
 	jumptext FightingDojoSign1Text
@@ -142,65 +142,165 @@ FightingDojoBlackBeltText:
 	cont "mon get stronger."
 	done
 
-HPSpecialistText:
-	text "I've been training"
+BlackbeltKonHPSpecialistText:
+	ntag "Kon"
+	text "I'm Kon and I've"
+	text "been training"
 	line "#mon to boost"
 	cont "their HP stat!"
 	
 	para "Shall we battle?"
 	done
 
-AttackSpecialistText:
-	text "I've been training"
+BlackbeltKonWinLossText:
+	ntag "Kon"
+	text "Out healthed!"
+	done
+
+BlackbeltKonAfterBattleText:
+	ntag "Kon"
+	text "Come back for more"
+	line "attack training."
+	done
+
+BlackbeltKonTrainAnytimeText:
+	ntag "Kon"
+	text "Come back if you"
+	line "want to train."
+	done
+
+BlackbeltBoAttackSpecialistText:
+	ntag "Bo"
+	text "I'm Bo and I've"
+	text "been training"
 	line "#mon to boost"
 	cont "their Atk stat!"
 	
 	para "Shall we battle?"
 	done
 
-DefenseSpecialistText:
-	text "I've been training"
+BlackbeltBoWinLossText:
+	ntag "Bo"
+	text "Out attacked!"
+	done
+
+BlackbeltBoAfterBattleText:
+	ntag "Bo"
+	text "Come back for more"
+	line "attack training."
+	done
+
+BlackbeltBoTrainAnytimeText:
+	ntag "Bo"
+	text "Come back if you"
+	line "want to train."
+	done
+
+BlackbeltTomoTrainAnytimeText:
+	ntag "Tomo"
+	text "I'm Tomo and I've"
+	text "been training"
 	line "#mon to boost"
 	cont "their Def stat!"
 	
 	para "Shall we battle?"
 	done
 
-SpAtkSpecialistText:
-	text "I've been training"
+BlackbeltTomoAfterBattleText:
+	ntag "Tomo"
+	text "Out defended!"
+	done
+
+BlackbeltTomoWinLossText:
+	ntag "Tomo"
+	text "Come back for more"
+	line "attack training."
+	done
+
+BlackbeltTomoDefenseSpecialistText:
+	ntag "Tomo"
+	text "Come back if you"
+	line "want to train."
+	done
+
+BlackbeltChuuSpAtkSpecialistText:
+	ntag "Chuu"
+	text "I'm Chuu and I've"
+	line "been training"
 	line "#mon to boost"
 	cont "their Sp.Atk stat!"
 	
 	para "Shall we battle?"
 	done
 
-SpDefSpecialistText:
-	text "I've been training"
+BlackbeltChuuWinLossText:
+	ntag "Chuu"
+	text "Overpowered!"
+	done
+
+BlackbeltChuuAfterBattleText:
+	ntag "Chuu"
+	text "Come back for more"
+	line "attack training."
+	done
+
+BlackbeltChuuTrainAnytimeText:
+	ntag "Chuu"
+	text "Come back if you"
+	line "want to train."
+	done
+
+BlackbeltShinSpDefSpecialistText:
+	ntag "Shin"
+	text "I'm Shin and I've"
+	line "been training"
 	line "#mon to boost"
 	cont "their Sp.Def stat!"
 	
 	para "Shall we battle?"
 	done
 
-SpeedSpecialistText:
-	text "I've been training"
+BlackbeltShinWinLossText:
+	ntag "Shin"
+	text "Overwhelmed!"
+	done
+
+BlackbeltShinAfterBattleText:
+	ntag "Shin"
+	text "Come back for more"
+	line "attack training."
+	done
+
+BlackbeltShinTrainAnytimeText:
+	ntag "Shin"
+	text "Come back if you"
+	line "want to train."
+	done
+
+BlackbeltAanSpeedSpecialistText:
+	ntag "Aan"
+	text "I'm Aan and I've"
+	line "been training"
 	line "#mon to boost"
 	cont "their Speed stat!"
 	
 	para "Shall we battle?"
 	done
 
-BlackbeltWinLossText:
-	text "Great training!"
+BlackbeltAanWinLossText:
+	ntag "Aan"
+	text "Outsped!"
+
+BlackbeltAanAfterBattleText:
+	ntag "Aan"
+	text "Come back for more"
+	line "attack training."
 	done
 
-BlackbeltAfterBattleText:
-	text "Come back for"
-	line "more training."
-	done
-
-BlackbeltTrainAnytimeText:
-	text "Come back anytime."
+BlackbeltAanTrainAnytimeText:
+	ntag "Aan"
+	text "Come back if you"
+	line "want to train."
 	done
 
 FightingDojoSign1Text:

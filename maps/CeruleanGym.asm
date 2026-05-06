@@ -353,11 +353,13 @@ SwimmerfDianaSeenText:
 	done
 
 SwimmerfDianaBeatenText:
+	ntag "Diana"
 	text "I give up! You're"
 	line "the winner!"
 	done
 
 SwimmerfDianaAfterBattleText:
+	ntag "Diana"
 	text "I'll be swimming"
 	line "quietly."
 	done
@@ -369,11 +371,13 @@ SwimmerfBrianaSeenText:
 	done
 
 SwimmerfBrianaBeatenText:
+	ntag "Briana"
 	text "Ooh, you calmly"
 	line "disposed of me…"
 	done
 
 SwimmerfBrianaAfterBattleText:
+	ntag "Briana"
 	text "Don't be too smug"
 	line "about beating me."
 
@@ -390,10 +394,12 @@ SwimmermParkerSeenText:
 	done
 
 SwimmermParkerBeatenText:
+	ntag "Parker"
 	text "This can't be…"
 	done
 
 SwimmermParkerAfterBattleText:
+	ntag "Parker"
 	text "Misty has gotten"
 	line "much better in the"
 	cont "past few years."

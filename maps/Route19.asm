@@ -117,10 +117,12 @@ SwimmermHaroldSeenText:
 	done
 
 SwimmermHaroldBeatenText:
+	ntag "Harold"
 	text "Glub…"
 	done
 
 SwimmermHaroldAfterBattleText:
+	ntag "Harold"
 	text "At night, the sea"
 	line "turns black. It"
 	cont "feels like it will"
@@ -135,10 +137,12 @@ SwimmermTuckerSeenText:
 	done
 
 SwimmermTuckerBeatenText:
+	ntag "Tucker"
 	text "I'm drowning!"
 	done
 
 SwimmermTuckerAfterBattleText:
+	ntag "Tucker"
 	text "I… asked my girl-"
 	line "friend to swim to"
 	cont "Fuchsia… Gasp…"
@@ -152,10 +156,12 @@ SwimmermWalterSeenText:
 	done
 
 SwimmermWalterBeatenText:
+	ntag "Walter"
 	text "Ahh, a defeat!"
 	done
 
 SwimmermWalterAfterBattleText:
+	ntag "Walter"
 	text "One day…"
 	line "One day, I'll get"
 	cont "a date with Misty!"
@@ -167,11 +173,13 @@ SwimmerfDawnSeenText:
 	done
 
 SwimmerfDawnBeatenText:
+	ntag "Dawn"
 	text "I could beat you"
 	line "at swimming…"
 	done
 
 SwimmerfDawnAfterBattleText:
+	ntag "Dawn"
 	text "It's a quick swim"
 	line "between Fuchsia"
 	cont "and Seafoam Is-"
@@ -188,11 +196,13 @@ SwimmerfJillSeenText:
 	done
 
 SwimmerfJillBeatenText:
+	ntag "Jill"
 	text "I need to wake"
 	line "up earlier…"
 	done
 
 SwimmerfJillAfterBattleText:
+	ntag "Jill"
 	text "If I get up at 5am"
 	line "and you beat me,"
 	cont "what time do you"
@@ -209,11 +219,13 @@ SwimmermJeromeSeenText:
 	done
 
 SwimmermJeromeBeatenText:
+	ntag "Jerome"
 	text "I thought I could"
 	line "win."
 	done
 
 SwimmermJeromeAfterBattleText:
+	ntag "Jerome"
 	text "I might be bad at"
 	line "swimming, but I"
 	cont "love the sea."

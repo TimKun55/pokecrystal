@@ -33,7 +33,6 @@ ViridianForestRoute2GateParasectText:
 	text "Parasss!"
 	done
 
-
 ViridianForestRoute2Gate_MapEvents:
 	db 0, 0 ; filler
 

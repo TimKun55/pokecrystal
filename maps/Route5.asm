@@ -78,10 +78,12 @@ SupernerdGreggSeenText:
 	done
 
 SupernerdGreggBeatenText:
+	ntag "Gregg"
 	text "Rare and strong!"
 	done
 
 SupernerdGreggAfterBattleText:
+	ntag "Gregg"
 	text "That guy Jay says"
 	line "Misty is better"
 	cont "than Sabrina."
@@ -94,10 +96,12 @@ SupernerdJaySeenText:
 	done
 
 SupernerdJayBeatenText:
+	ntag "Jay"
 	text "A miscalculation!"
 	done
 
 SupernerdJayAfterBattleText:
+	ntag "Jay"
 	text "That guy Gregg"
 	line "says Sabrina is"
 	cont "better than Misty."

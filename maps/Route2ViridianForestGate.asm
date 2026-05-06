@@ -33,7 +33,6 @@ Route2ViridianForestGateBeedrillText:
 	text "Beeeeee!"
 	done
 
-
 Route2ViridianForestGate_MapEvents:
 	db 0, 0 ; filler
 

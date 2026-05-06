@@ -276,10 +276,12 @@ CooltrainerMErickSeenText:
 	done
 
 CooltrainerMErickBeatenText:
+	ntag "Erick"
 	text "Yep! Too good!"
 	done
 
 CooltrainerMErickAfterBattleText:
+	ntag "Erick"
 	text "This used to be"
 	line "a ground-type Gym."
 	done
@@ -291,10 +293,12 @@ BeautyJulieSeenText:
 	done
 
 BeautyJulieBeatenText:
+	ntag "Julie"
 	text "Cute and strong!"
 	done
 
 BeautyJulieAfterBattleText:
+	ntag "Julie"
 	text "When Blue became"
 	line "Leader he"
 	cont "remodeled the Gym."
@@ -310,10 +314,12 @@ BeautyJessicaSeenText:
 	done
 
 BeautyJessicaBeatenText:
+	ntag "Jessica"
 	text "Round and round."
 	done
 
 BeautyJessicaAfterBattleText:
+	ntag "Jessica"
 	text "Can I be honest?"
 
 	para "I'm not a fan of"
@@ -332,10 +338,12 @@ SuperNerdNortonSeenText:
 	done
 
 SuperNerdNortonBeatenText:
+	ntag "Norton"
 	text "Whatever!"
 	done
 	
 SuperNerdNortonAfterBattleText:
+	ntag "Norton"
 	text "There are many"
 	line "Gyms in the world,"
 	cont "but I really like"
@@ -348,10 +356,12 @@ HexManiacMargretSeenText:
 	done
 
 HexManiacMargretBeatenText:
+	ntag "Margret"
 	text "Unforseen!"
 	done
 
 HexManiacMargretAfterBattleText:
+	ntag "Margret"
 	text "Perhaps being"
 	line "dizzy has weakened"
 	cont "my Inner Eye."
@@ -366,10 +376,12 @@ PokefanMTerrySeenText:
 	done
 
 PokefanMTerryBeatenText:
+	ntag "Terry"
 	text "Aww, I lost?"
 	done
 
 PokefanMTerryAfterBattleText:
+	ntag "Terry"
 	text "I need more train-"
 	line "ing, but please"
 	cont "don't tell Blue."
@@ -404,9 +416,10 @@ ViridianGymGuideWinText:
 
 	para "That was a heck of"
 	line "an inspirational"
+	cont "battle."
 
-	para "battle. It brought"
-	line "tears to my eyes."
+	para "It brought tears"
+	line "to my eyes."
 	done
 
 ArcanineText:

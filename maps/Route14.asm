@@ -77,10 +77,12 @@ PokefanmCarterSeenText:
 	done
 
 PokefanmCarterBeatenText:
+	ntag "Carter"
 	text "Awaaah!"
 	done
 
 PokefanmCarterAfterBattleText:
+	ntag "Carter"
 	text "Squirtle, Charman-"
 	line "der and Bulbasaur…"
 
@@ -95,11 +97,13 @@ BirdKeeperRoySeenText:
 	done
 
 BirdKeeperRoyBeatenText:
+	ntag "Roy"
 	text "I can dream, but I"
 	line "can't ever fly…"
 	done
 
 BirdKeeperRoyAfterBattleText:
+	ntag "Roy"
 	text "You have #mon"
 	line "that know the HM"
 	cont "move Fly, don't"
@@ -117,11 +121,13 @@ PokefanmTrevorSeenText:
 	done
 
 PokefanmTrevorBeatenText:
+	ntag "Trevor"
 	text "Where did I meet"
 	line "this Golduck?"
 	done
 
 PokefanmTrevorAfterBattleText:
+	ntag "Trevor"
 	text "If only there were"
 	line "an easy way to"
 	cont "identify where I"

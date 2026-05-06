@@ -51,9 +51,11 @@ DaisyScript:
 
 DaisyHelloText:
 	ntag "Daisy"
-	text "Hi! My kid brother"
-	line "is the Gym Leader"
-	cont "in Viridian City."
+	text "Hi! I'm Daisy."
+	
+	para "My kid brother is"
+	line "the Gym Leader in"
+	cont "Viridian City."
 
 	para "But he goes out"
 	line "of town so often,"

@@ -94,10 +94,12 @@ BikerRileySeenText:
 	done
 
 BikerRileyBeatenText:
+	ntag "Riley"
 	text "Whoa, you kick!"
 	done
 
 BikerRileyAfterBattleText:
+	ntag "Riley"
 	text "Don't get cocky,"
 	line "you Johto punk!"
 	done
@@ -108,11 +110,13 @@ BikerJoelSeenText:
 	done
 
 BikerJoelBeatenText:
+	ntag "Joel"
 	text "But you don't just"
 	line "look cool…"
 	done
 
 BikerJoelAfterBattleText:
+	ntag "Joel"
 	text "I look cool, but"
 	line "I'm weak, so I'm"
 	cont "not really cool."
@@ -127,11 +131,13 @@ BikerGlennSeenText:
 	done
 
 BikerGlennBeatenText:
+	ntag "Glenn"
 	text "Yikes! You've got"
 	line "awesome torque!"
 	done
 
 BikerGlennAfterBattleText:
+	ntag "Glenn"
 	text "Hands-free riding"
 	line "is considered cool"
 	cont "on Cycling Road."
@@ -143,11 +149,13 @@ BikerCharlesSeenText:
 	done
 
 BikerCharlesBeatenText:
+	ntag "Charles"
 	text "Arrrgh! Crash and"
 	line "burn!"
 	done
 
 BikerCharlesAfterBattleText:
+	ntag "Charles"
 	text "Reckless driving"
 	line "causes accidents!"
 	cont "Take it easy!"
@@ -159,11 +167,13 @@ BikerBennySeenText:
 	done
 
 BikerBennyBeatenText:
+	ntag "Benny"
 	text "I shouldn't have"
 	line "stopped you…"
 	done
 
 BikerBennyAfterBattleText:
+	ntag "Benny"
 	text "Well, off you go!"
 	line "Enjoy the ride."
 	done
@@ -177,11 +187,13 @@ BikerKazuSeenText:
 	done
 
 BikerKazuBeatenText:
+	ntag "Kazu"
 	text "Wow, were"
 	line "you ready!"
 	done
 
 BikerKazuAfterBattleText:
+	ntag "Kazu"
 	text "Sorry I mouthed"
 	line "off before."
 	done
@@ -191,10 +203,12 @@ BikerOrvilleSeenText:
 	done
 
 BikerOrvilleBeatenText:
+	ntag "Orville"
 	text "We rode!"
 	done
 
 BikerOrvilleAfterBattleText:
+	ntag "Orville"
 	text "Nothing beats"
 	line "biking around!"
 	done
@@ -205,11 +219,13 @@ BikerBertSeenText:
 	done
 
 BikerBertBeatenText:
+	ntag "Bert"
 	text "Woah, stronger"
 	line "than granite?!"
 	done
 
 BikerBertAfterBattleText:
+	ntag "Bert"
 	text "I train by riding"
 	line "up and down, each"
 	cont "and every day."
@@ -222,10 +238,12 @@ BikerMannySeenText:
 	done
 
 BikerMannyBeatenText:
+	ntag "Manny"
 	text "Woah! Zoomed past!"
 	done
 
 BikerMannyAfterBattleText:
+	ntag "Manny"
 	text "Man, I wish there"
 	line "was an engine, or"
 	cont "a bike #mon."

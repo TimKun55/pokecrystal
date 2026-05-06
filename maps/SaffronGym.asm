@@ -265,11 +265,13 @@ HexManiacRebeccaSeenText:
 	done
 
 HexManiacRebeccaBeatenText:
+	ntag "Rebecca"
 	text "Strong…"
 	line "Far too strong…"
 	done
 
 HexManiacRebeccaAfterBattleText:
+	ntag "Rebecca"
 	text "What is the source"
 	line "of your power?"
 	done
@@ -281,11 +283,13 @@ PsychicFranklinSeenText:
 	done
 
 PsychicFranklinBeatenText:
+	ntag "Franklin"
 	text "Your soul has more"
 	line "power than mine!"
 	done
 
 PsychicFranklinAfterBattleText:
+	ntag "Franklin"
 	text "You made your soul"
 	line "stronger, not just"
 	cont "your abilities."
@@ -300,11 +304,13 @@ HexManiacDorisSeenText:
 	done
 
 HexManiacDorisBeatenText:
+	ntag "Doris"
 	text "Though I read you,"
 	line "I still lost…"
 	done
 
 HexManiacDorisAfterBattleText:
+	ntag "Doris"
 	text "Darn! I forgot"
 	line "that I predicted I"
 	cont "would lose to you."
@@ -317,10 +323,12 @@ PsychicJaredSeenText:
 	done
 
 PsychicJaredBeatenText:
+	ntag "Jared"
 	text "I was no match…"
 	done
 
 PsychicJaredAfterBattleText:
+	ntag "Jared"
 	text "Karate King, the"
 	line "master of the"
 	cont "Fighting Dojo, was"

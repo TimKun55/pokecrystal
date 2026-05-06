@@ -73,10 +73,12 @@ CamperDeanSeenText:
 	done
 
 CamperDeanBeatenText:
+	ntag "Dean"
 	text "Whoa! Danger, man."
 	done
 
 CamperDeanAfterBattleText:
+	ntag "Dean"
 	text "My #mon were"
 	line "hurt before even"
 	cont "entering Rock"
@@ -96,10 +98,12 @@ PicnickerHeidiSeenText:
 	done
 
 PicnickerHeidiBeatenText:
+	ntag "Heidi"
 	text "Ohhhh!"
 	done
 
 PicnickerHeidiAfterBattleText:
+	ntag "Heidi"
 	text "We bake lots of"
 	line "goodies and share"
 	cont "them all around."
@@ -112,11 +116,13 @@ CamperSidSeenText:
 	done
 
 CamperSidBeatenText:
+	ntag "Sid"
 	text "I was just point-"
 	line "ing out…"
 	done
 
 CamperSidAfterBattleText:
+	ntag "Sid"
 	text "Sorry. You weren't"
 	line "littering. It was"
 	cont "my mistake."
@@ -129,10 +135,12 @@ PicnickerEdnaSeenText:
 	done
 
 PicnickerEdnaBeatenText:
+	ntag "Edna"
 	text "Ohh… I lost…"
 	done
 
 PicnickerEdnaAfterBattleText:
+	ntag "Edna"
 	text "Conserving energy"
 	line "is important, but"
 	cont "the environment is"
@@ -149,11 +157,13 @@ HikerTimSeenText:
 	done
 
 HikerTimBeatenText:
+	ntag "Tim"
 	text "I was too busy"
 	line "singing…"
 	done
 
 HikerTimAfterBattleText:
+	ntag "Tim"
 	text "Battles are about"
 	line "concentration."
 	done
@@ -167,11 +177,13 @@ HikerSidneySeenText:
 	done
 
 HikerSidneyBeatenText:
+	ntag "Sidney"
 	text "Oh, dang!"
 	line "I lost that…"
 	done
 
 HikerSidneyAfterBattleText:
+	ntag "Sidney"
 	text "The Power Plant is"
 	line "across a small"
 	cont "river."
@@ -183,10 +195,12 @@ LadyZoeSeenText:
 	done
 
 LadyZoeBeatenText:
+	ntag "Zoe"
 	text "DEFEAT!!"
 	done
 
 LadyZoeAfterBattleText:
+	ntag "Zoe"
 	text "YOU'RE the trainer"
 	line "from Johto?!"
 

@@ -265,10 +265,12 @@ LassMichelleSeenText:
 	done
 
 LassMichelleBeatenText:
+	ntag "Michelle"
 	text "Oh, bleah!"
 	done
 
 LassMichelleAfterBattleText:
+	ntag "Michelle"
 	text "I just got care-"
 	line "less, that's all!"
 	done
@@ -280,10 +282,12 @@ PicnickerTanyaSeenText:
 	done
 
 PicnickerTanyaBeatenText:
+	ntag "Tanya"
 	text "Oh, that's it?"
 	done
 
 PicnickerTanyaAfterBattleText:
+	ntag "Tanya"
 	text "Oh, look at all"
 	line "your Badges. No"
 	cont "wonder I couldn't"
@@ -297,10 +301,12 @@ BeautyJuliaSeenText:
 	done
 
 BeautyJuliaBeatenText:
+	ntag "Julia"
 	text "How annoying!"
 	done
 
 BeautyJuliaAfterBattleText:
+	ntag "Julia"
 	text "How do I go about"
 	line "becoming ladylike"
 	cont "like Erika?"
@@ -313,10 +319,12 @@ TwinsJoAndZoe1SeenText:
 	done
 
 TwinsJoAndZoe1BeatenText:
+	ntag "Jo & Zoe"
 	text "Oh… We lost…"
 	done
 
 TwinsJoAndZoe1AfterBattleText:
+	ntag "Jo"
 	text "Erika will get you"
 	line "back for us!"
 	done
@@ -327,10 +335,12 @@ TwinsJoAndZoe2SeenText:
 	done
 
 TwinsJoAndZoe2BeatenText:
+	ntag "Jo & Zoe"
 	text "We couldn't win…"
 	done
 
 TwinsJoAndZoe2AfterBattleText:
+	ntag "Zoe"
 	text "Erika is much,"
 	line "much stronger!"
 	done
@@ -341,10 +351,12 @@ LassSandySeenText:
 	done
 
 LassSandyBeatenText:
+	ntag "Sandy"
 	text "Oh, so rough!"
 	done
 
 LassSandyAfterBattleText:
+	ntag "Sandy"
 	text "Our gym is pretty"
 	line "but it's a lot of"
 	cont "work to maintain."

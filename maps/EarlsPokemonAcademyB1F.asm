@@ -19,15 +19,15 @@ EarlsPokemonAcademyTyler:
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainermTylerWinLossText, 0
 	loadtrainer COOLTRAINERM, TYLER
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainermTylerAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainermTylerTrainAnytimeText
 
 EarlsPokemonAcademyCarla: ; Def
 	faceplayer
@@ -36,15 +36,15 @@ EarlsPokemonAcademyCarla: ; Def
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainerfCarlaWinLossText, 0
 	loadtrainer COOLTRAINERF, CARLA
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainerfCarlaAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainerfCarlaTrainAnytimeText
 
 EarlsPokemonAcademyCatt: ; SpAtk
 	faceplayer
@@ -53,15 +53,15 @@ EarlsPokemonAcademyCatt: ; SpAtk
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainerfCattWinLossText, 0
 	loadtrainer COOLTRAINERF, CATT
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainerfCattAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainerfCattTrainAnytimeText
 
 EarlsPokemonAcademySteve: ; SpDef
 	faceplayer
@@ -70,15 +70,15 @@ EarlsPokemonAcademySteve: ; SpDef
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainermSteveWinLossText, 0
 	loadtrainer COOLTRAINERM, STEVE
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainermSteveAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainermSteveTrainAnytimeText
 
 EarlsPokemonAcademyJamie: ; Speed
 	faceplayer
@@ -87,15 +87,15 @@ EarlsPokemonAcademyJamie: ; Speed
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainermJamieWinLossText, 0
 	loadtrainer COOLTRAINERM, JAMIE
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainermJamieAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainermJamieTrainAnytimeText
 
 EarlsPokemonAcademyPam: ; HP
 	faceplayer
@@ -104,15 +104,15 @@ EarlsPokemonAcademyPam: ; HP
 	yesorno
 	iffalse .NoBattle
 	closetext
-	winlosstext CooltrainerWinLossText, 0
+	winlosstext CooltrainerfPamWinLossText, 0
 	loadtrainer COOLTRAINERF, PAM
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetextend CooltrainerAfterBattleText
+	writetextend CooltrainerfPamAfterBattleText
 
 .NoBattle
-	writetextend CooltrainerTrainAnytimeText
+	writetextend CooltrainerfPamTrainAnytimeText
 
 EarlsPokemonAcademyTeacher:
 	faceplayer
@@ -149,20 +149,57 @@ SpeedEVSign:
 	jumptext SpeedEVSignText
 
 EarlsPokemonAcademyTylerText:
+	ntag "Tyler"
 	text "I specialise in"
 	line "training Attack."
 
 	para "Want to battle?"
 	done
 
+CooltrainermTylerWinLossText:
+	ntag "Tyler"
+	text "Such power!"
+	done
+
+CooltrainermTylerAfterBattleText:
+	ntag "Tyler"
+	text "Come back for more"
+	line "attack training."
+	done
+
+CooltrainermTylerTrainAnytimeText:
+	ntag "Tyler"
+	text "Come back if you"
+	line "want to train."
+	done
+
 EarlsPokemonAcademyCarlaText:
+	ntag "Carla"
 	text "I specialise in"
 	line "training Defense."
 
 	para "Want to battle?"
 	done
 
+CooltrainerfCarlaWinLossText:
+	ntag "Carla"
+	text "Such resistance!"
+	done
+
+CooltrainerfCarlaAfterBattleText:
+	ntag "Carla"
+	text "Come back for more"
+	line "defense training."
+	done
+
+CooltrainerfCarlaTrainAnytimeText:
+	ntag "Carla"
+	text "Come back if you"
+	line "want to train."
+	done
+
 EarlsPokemonAcademyCattText:
+	ntag "Catt"
 	text "I specialise in"
 	line "training Special"
 	cont "Attack."
@@ -170,7 +207,27 @@ EarlsPokemonAcademyCattText:
 	para "Want to battle?"
 	done
 
+CooltrainerfCattWinLossText:
+	ntag "Catt"
+	text "Such special"
+	line "power!"
+	done
+
+CooltrainerfCattAfterBattleText:
+	ntag "Catt"
+	text "Come back for more"
+	line "special attack"
+	cont "training."
+	done
+
+CooltrainerfCattTrainAnytimeText:
+	ntag "Catt"
+	text "Come back if you"
+	line "want to train."
+	done
+
 EarlsPokemonAcademySteveText:
+	ntag "Steve"
 	text "I specialise in"
 	line "training Special"
 	cont "Defense."
@@ -178,31 +235,73 @@ EarlsPokemonAcademySteveText:
 	para "Want to battle?"
 	done
 
+CooltrainermSteveWinLossText:
+	ntag "Steve"
+	text "Such special"
+	line "resistance!"
+	done
+
+CooltrainermSteveAfterBattleText:
+	ntag "Steve"
+	text "Come back for more"
+	line "special defense"
+	cont "training."
+	done
+
+CooltrainermSteveTrainAnytimeText:
+	ntag "Steve"
+	text "Come back if you"
+	line "want to train."
+	done
+
 EarlsPokemonAcademyJamieText:
+	ntag "Jamie"
 	text "I specialise in"
 	line "training Speed."
 
 	para "Want to battle?"
 	done
 
+CooltrainermJamieWinLossText:
+	ntag "Jamie"
+	text "Such agility!"
+	done
+
+CooltrainermJamieAfterBattleText:
+	ntag "Jamie"
+	text "Come back for more"
+	line "speed training."
+	done
+
+CooltrainermJamieTrainAnytimeText:
+	ntag "Jamie"
+	text "Come back if you"
+	line "want to train."
+	done
+
 EarlsPokemonAcademyPamText:
+	ntag "Pam"
 	text "I specialise in"
 	line "training HP."
 
 	para "Want to battle?"
 	done
 
-CooltrainerWinLossText:
-	text "Great training!"
+CooltrainerfPamWinLossText:
+	ntag "Pam"
+	text "Such robustness!"
 	done
 
-CooltrainerAfterBattleText:
-	text "Come back for"
-	line "more training."
+CooltrainerfPamAfterBattleText:
+	ntag "Pam"
+	text "Come back for more"
+	line "HP training."
 	done
 
-CooltrainerTrainAnytimeText:
-	text "Come back anytime."
+CooltrainerfPamTrainAnytimeText:
+	ntag "Pam"
+	text "Come back if you"
+	line "want to train."
 	done
 
 EarlsPokemonAcademyTeacherIntroText:
@@ -241,27 +340,33 @@ EarlsPokemonAcademyTeacherNoRoomText:
 	done
 
 AttackEVSignText:
-	text "Attack is best."
+	text "Tyler says:"
+	line "Attack is best."
 	done
 
 DefenseEVSignText:
-	text "Defense is best."
+	text "Carla says:"
+	line "Defense is best."
 	done
 
 SpAttackEVSignText:
-	text "Spcl.Atk is best."
+	text "Catt says:"
+	line "Spcl.Atk is best."
 	done
 
 SpDefenseEVSignText:
-	text "Spcl.Def is best."
+	text "Steve says:"
+	line "Spcl.Def is best."
 	done
 
 HPEVSignText:
-	text "HP is best."
+	text "Pam says:"
+	line "HP is best."
 	done
 
 SpeedEVSignText:
-	text "Speed is best."
+	text "Jamie says:"
+	line "Speed is best."
 	done
 
 EarlsPokemonAcademyB1F_MapEvents:

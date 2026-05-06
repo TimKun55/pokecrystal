@@ -248,10 +248,12 @@ SchoolboyDudleySeenText:
 	done
 
 SchoolboyDudleyBeatenText:
+	ntag "Dudley"
 	text "Whoo! Good stuff."
 	done
 
 SchoolboyDudleyAfterBattleText:
+	ntag "Dudley"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -262,10 +264,12 @@ LassEllenSeenText:
 	done
 
 LassEllenBeatenText:
+	ntag "Ellen"
 	text "How could I lose?"
 	done
 
 LassEllenAfterBattleText:
+	ntag "Ellen"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -276,10 +280,12 @@ SchoolboyJoeSeenText:
 	done
 
 SchoolboyJoeBeatenText:
+	ntag "Joe"
 	text "Ow! Stomped flat!"
 	done
 
 SchoolboyJoeAfterBattleText:
+	ntag "Joe"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -290,10 +296,12 @@ LassLauraSeenText:
 	done
 
 LassLauraBeatenText:
+	ntag "Laura"
 	text "I lost too…"
 	done
 
 LassLauraAfterBattleText:
+	ntag "Laura"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -304,10 +312,12 @@ CamperLloydSeenText:
 	done
 
 CamperLloydBeatenText:
+	ntag "Lloyd"
 	text "Whoa! Too much."
 	done
 
 CamperLloydAfterBattleText:
+	ntag "Lloyd"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -319,10 +329,12 @@ LassShannonSeenText:
 	done
 
 LassShannonBeatenText:
+	ntag "Shannon"
 	text "You're kidding."
 	done
 
 LassShannonAfterBattleText:
+	ntag "Shannon"
 	text "I did my best."
 	line "I have no regrets."
 	done
@@ -341,11 +353,13 @@ SupernerdPatSeenText:
 	done
 
 SupernerdPatBeatenText:
+	ntag "Pat"
 	text "Aren't you tired"
 	line "at all?"
 	done
 
 SupernerdPatAfterBattleText:
+	ntag "Pat"
 	text "I'm sorry… I won't"
 	line "cheat anymore…"
 	done
@@ -371,11 +385,13 @@ CooltrainermKevinSeenText:
 	done
 
 CooltrainermKevinBeatenText:
+	ntag "Kevin"
 	text "I've never had a"
 	line "battle this good!"
 	done
 
 CooltrainermKevinAfterBattleText:
+	ntag "Kevin"
 	text "That was a great"
 	line "battle!"
 

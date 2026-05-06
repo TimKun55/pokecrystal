@@ -149,14 +149,14 @@ KogasRoom_EnterMovement:
 	step_end
 
 KogaBeforeText:
-	text "Fwahahahaha!"
-
-	para "I am Koga of the"
-	line "Elite Four.@"
+	text "Fwahahahaha!@"
 	text_promptbutton
 
 	ntag "Koga"
-	text "I live in shadows,"
+	text "I am Koga of the"
+	line "Elite Four."
+
+	para "I live in shadows,"
 	line "a ninja!"
 
 	para "My intricate style"

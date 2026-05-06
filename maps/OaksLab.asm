@@ -90,9 +90,8 @@ OakWelcomeKantoText:
 	ntag "Prof.Oak"
 	text "Ah, <PLAY_G>!"
 	line "It's good of you"
-
-	para "to come all this"
-	line "way to Kanto."
+	cont "to come all this"
+	cont "way to Kanto."
 
 	para "What do you think"
 	line "of the trainers"

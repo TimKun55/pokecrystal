@@ -176,15 +176,13 @@ BrunoBeforeText:
 
 	para "Hm? I see no fear"
 	line "in you. You look"
-
-	para "determined. Per-"
-	line "fect for battle!"
+	cont "determined. Per-"
+	cont "fect for battle!"
 
 	para "Ready, <PLAYER>?"
 	line "You will bow down"
-
-	para "to our overwhelm-"
-	line "ing power!"
+	cont "to our overwhelm-"
+	cont "ing power!"
 
 	para "Hoo hah!"
 	done
@@ -253,9 +251,8 @@ Bruno16BadgesDefeatText:
 	
 	para "It's good to see"
 	line "one as young as"
-	
-	para "you devoted to"
-	line "their training."
+	cont "you devoted to"
+	cont "their training."
 	
 	para "Go on. Show your"
 	line "progress to"
