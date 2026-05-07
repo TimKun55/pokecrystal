@@ -37,7 +37,8 @@ FarawayIslandMew:
 	end
 
 MewText:
-	text "Mew: Mew!"
+	ntag "Mew"
+	text "Mew!"
 	done
 
 FarawayIslandInside_MapEvents:

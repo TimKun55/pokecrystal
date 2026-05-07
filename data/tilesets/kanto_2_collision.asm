@@ -112,7 +112,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 6f
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 70
 	tilecoll WALL, WALL, WALL, WALL ; 71
-	tilecoll HOP_DOWN, WALL, WALL, WALL ; 72
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 72
 	tilecoll WALL, WALL, WALL, WALL ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
 	tilecoll WALL, WALL, WALL, WALL ; 75
