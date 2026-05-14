@@ -82,5 +82,5 @@ TrainerPicPointers::
 	dba BlainePic
 	dba InverPic
 	dba ThortonPic
-	dba KrisPic
+	dba KrisTrainerPic
 	assert_table_length NUM_TRAINER_CLASSES
