@@ -469,6 +469,7 @@ Azalea_Map_Names:
 	dw Azalea_Map_Name5 ; map_const AZALEA_GYM
 	dw Azalea_Map_Name6 ; map_const ROUTE_33
 	dw Azalea_Map_Name7 ; map_const AZALEA_TOWN
+	dw Azalea_Map_Name8 ; map_const AZALEA_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_AZALEA_MAPS
 
 Azalea_Map_Name1: db "Azalea <PKMN> Center@"
@@ -478,6 +479,7 @@ Azalea_Map_Name4: db "Kurt's House@"
 Azalea_Map_Name5: db "Azalea Gym@"
 Azalea_Map_Name6: db "Route 33@"
 Azalea_Map_Name7: db "Azalea Town@"
+Azalea_Map_Name8: db "Azalea Tutor@"
 
 Lake_of_Rage_Map_Names:
 	table_width 2
@@ -512,6 +514,7 @@ Violet_Map_Names:
 	dw Violet_Map_Name12 ; map_const ROUTE_36_RUINS_OF_ALPH_GATE
 	dw Violet_Map_Name13 ; map_const ROUTE_36_VIOLET_GATE
 	dw Violet_Map_Name14 ; map_const EARLS_POKEMON_ACADEMY_B1F
+	dw Violet_Map_Name15 ; map_const VIOLET_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_VIOLET_MAPS
 
 Violet_Map_Name1:  db "Route 32@"
@@ -528,6 +531,7 @@ Violet_Map_Name11: db "Route 32 <PKMN> Cen.@"
 Violet_Map_Name12: db "Route 36 Gate 2@"
 Violet_Map_Name13: db "Route 36 Gate 1@"
 Violet_Map_Name14: db "Earl's Academy B1F@"
+Violet_Map_Name15: db "Violet Tutor@"
 
 Goldenrod_Map_Names:
 	table_width 2
@@ -1039,6 +1043,7 @@ Cherrygrove_Map_Names:
 	dw Cherrygrove_Map_Name9  ; map_const ROUTE_30_BERRY_HOUSE
 	dw Cherrygrove_Map_Name10 ; map_const MR_POKEMONS_HOUSE
 	dw Cherrygrove_Map_Name11 ; map_const ROUTE_31_VIOLET_GATE
+	dw Cherrygrove_Map_Name12 ; map_const CHERRYGROVE_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_CHERRYGROVE_MAPS
 
 Cherrygrove_Map_Name1:  db "Route 30@"
@@ -1052,6 +1057,7 @@ Cherrygrove_Map_Name8:  db "Cherryg. House 2@"
 Cherrygrove_Map_Name9:  db "Route 30 House@"
 Cherrygrove_Map_Name10: db "Mr. #mon House@"
 Cherrygrove_Map_Name11: db "Route 31 Gate@"
+Cherrygrove_Map_Name12: db "Cherrygrove Tutor@"
 
 Safari_Map_Names:
 	table_width 2

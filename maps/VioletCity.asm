@@ -312,6 +312,7 @@ VioletCity_MapEvents:
 	warp_event 39, 31, ROUTE_31_VIOLET_GATE, 2
 	warp_event  0, 14, ROUTE_36_VIOLET_GATE, 3
 	warp_event  0, 15, ROUTE_36_VIOLET_GATE, 4
+	warp_event  9, 23, VIOLET_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events
 

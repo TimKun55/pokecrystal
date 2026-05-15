@@ -565,6 +565,9 @@ SECTION "Map Scripts 30", ROMX
 INCLUDE "maps/GoldenrodFlowerShop.asm"
 INCLUDE "maps/CianwoodMoveTutorHouse.asm"
 INCLUDE "maps/MahoganyMart1F.asm"
+INCLUDE "maps/CherrygroveMoveTutorHouse.asm"
+INCLUDE "maps/VioletMoveTutorHouse.asm"
+INCLUDE "maps/AzaleaMoveTutorHouse.asm"
 
 
 ENDSECTION

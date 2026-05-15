@@ -504,6 +504,7 @@ AzaleaTown_MapEvents:
 	warp_event 31,  7, SLOWPOKE_WELL_ENTRANCE, 1
 	warp_event  2, 10, ILEX_FOREST_AZALEA_GATE, 3
 	warp_event  2, 11, ILEX_FOREST_AZALEA_GATE, 4
+	warp_event 21,  5, AZALEA_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events
 	coord_event 10, 17, SCENE_AZALEATOWN_NOOP, AzaleaTownResetGymLevers

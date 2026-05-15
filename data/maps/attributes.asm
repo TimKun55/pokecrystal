@@ -560,6 +560,7 @@ ENDM
 	map_attributes AzaleaMart, AZALEA_MART, $00, 0
 	map_attributes KurtsHouse, KURTS_HOUSE, $00, 0
 	map_attributes AzaleaGym, AZALEA_GYM, $00, 0
+	map_attributes AzaleaMoveTutorHouse, AZALEA_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes LakeOfRageHiddenPowerHouse, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, $00, 0
 	map_attributes LakeOfRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $00, 0
@@ -572,6 +573,7 @@ ENDM
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes VioletKylesHouse, VIOLET_KYLES_HOUSE, $00, 0
 	map_attributes VioletPrimosHouse, VIOLET_PRIMOS_HOUSE, $00, 0
+	map_attributes VioletMoveTutorHouse, VIOLET_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes Route32RuinsOfAlphGate, ROUTE_32_RUINS_OF_ALPH_GATE, $00, 0
 	map_attributes Route32Pokecenter1F, ROUTE_32_POKECENTER_1F, $00, 0
 	map_attributes Route35GoldenrodGate, ROUTE_35_GOLDENROD_GATE, $00, 0
@@ -767,3 +769,4 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
+	map_attributes CherrygroveMoveTutorHouse, CHERRYGROVE_MOVE_TUTOR_HOUSE, $00, 0

@@ -248,6 +248,7 @@ ENDM
 	map_const AZALEA_GYM,                                   9, 16 ;  5
 	map_const ROUTE_33,                                    10, 10 ;  6
 	map_const AZALEA_TOWN,                                 20, 10 ;  7
+	map_const AZALEA_MOVE_TUTOR_HOUSE,                      4,  4 ;  8
 	endgroup
 
 	newgroup LAKE_OF_RAGE                                         ;  9
@@ -274,6 +275,7 @@ ENDM
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  4,  4 ; 12
 	map_const ROUTE_36_VIOLET_GATE,                         5,  4 ; 13
 	map_const EARLS_POKEMON_ACADEMY_B1F,                    7,  7 ; 14
+	map_const VIOLET_MOVE_TUTOR_HOUSE,                      4,  4 ; 15
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11
@@ -544,6 +546,7 @@ ENDM
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ; 10
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
+	map_const CHERRYGROVE_MOVE_TUTOR_HOUSE,                 4,  4 ; 12
 	endgroup
 	
 	newgroup SAFARI												  ; 27

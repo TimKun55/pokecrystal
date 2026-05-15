@@ -108,6 +108,7 @@ OlivineGoodRodHouse_Blocks:
 BillsFamilysHouse_Blocks:
 CherrygroveGymSpeechHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
+CherrygroveMoveTutorHouse_Blocks:
 	INCBIN "maps/JohtoHouse1.ablk"
 
 GoldenrodHappinessRater_Blocks:
@@ -146,6 +147,8 @@ EcruteakSwarmHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
 VioletPrimosHouse_Blocks:
+VioletMoveTutorHouse_Blocks:
+AzaleaMoveTutorHouse_Blocks:
 	INCBIN "maps/TraditionalHouse.ablk"
 
 CeruleanPoliceStation_Blocks:
