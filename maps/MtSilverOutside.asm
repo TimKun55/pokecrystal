@@ -8,9 +8,6 @@ MtSilverOutsideFlypointCallback:
 	setflag ENGINE_FLYPOINT_MT_SILVER
 	endcallback
 
-MtSilverPokecenterSign:
-	jumpstd PokecenterSignScript
-
 MtSilverSign:
 	jumptext MtSilverSignText
 	
@@ -29,12 +26,12 @@ MtSilverOutside_MapEvents:
 
 	def_warp_events
 	warp_event 23, 13, MT_SILVER_POKECENTER_1F, 1
+	warp_event 24, 13, MT_SILVER_POKECENTER_1F, 2
 	warp_event 18,  5, MT_SILVER_ROOM_1, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 13, BGEVENT_READ, MtSilverPokecenterSign
 	bg_event 17,  7, BGEVENT_READ, MtSilverSign
 	bg_event  9, 19, BGEVENT_ITEM, MtSilverOutsideHiddenFullRestore
 

@@ -253,9 +253,6 @@ GoldenrodCityUndergroundSignNorth:
 GoldenrodCityUndergroundSignSouth:
 	jumptext GoldenrodCityUndergroundSignText
 
-GoldenrodCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
 GoldenrodCityFlowerShopSign:
 	jumptext GoldenrodCityFlowerShopSignText
 
@@ -551,6 +548,7 @@ GoldenrodCity_MapEvents:
 	warp_event 13,  5, GOLDENROD_UNDERGROUND_ENTRANCES, 2
 	warp_event 13, 29, GOLDENROD_UNDERGROUND_ENTRANCES, 5
 	warp_event 17, 27, GOLDENROD_POKECENTER_1F, 1
+	warp_event 18, 27, GOLDENROD_POKECENTER_1F, 2
 
 	def_coord_events
 
@@ -566,7 +564,6 @@ GoldenrodCity_MapEvents:
 	bg_event 15,  7, BGEVENT_READ, GoldenrodCityNameRaterSign
 	bg_event 12,  6, BGEVENT_READ, GoldenrodCityUndergroundSignNorth
 	bg_event 14, 30, BGEVENT_READ, GoldenrodCityUndergroundSignSouth
-	bg_event 18, 27, BGEVENT_UP, GoldenrodCityPokecenterSign
 	bg_event 30,  6, BGEVENT_READ, GoldenrodCityFlowerShopSign
 
 	def_object_events

@@ -140,12 +140,6 @@ OlivineLighthouseSign:
 OlivineCityBattleTowerSign:
 	jumptext OlivineCityBattleTowerSignText
 
-OlivineCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-OlivineCityMartSign:
-	jumpstd MartSignScript
-
 OlivineCityRivalApproachesTopMovement:
 	step DOWN
 	step RIGHT
@@ -364,12 +358,12 @@ OlivineCity_MapEvents:
 
 	def_warp_events
 	warp_event 13, 21, OLIVINE_POKECENTER_1F, 1
+	warp_event 14, 21, OLIVINE_POKECENTER_1F, 2
 	warp_event 10,  9, OLIVINE_GYM, 1
 	warp_event 25, 12, OLIVINE_TIMS_HOUSE, 1
 	warp_event 11, 15, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
 	warp_event 17, 15, OLIVINE_GOOD_ROD_HOUSE, 1
 	warp_event  7, 21, OLIVINE_CAFE, 1
-	warp_event 23, 21, OLIVINE_MART, 2
 	warp_event 31, 21, OLIVINE_LIGHTHOUSE_1F, 1
 	warp_event 32, 21, OLIVINE_LIGHTHOUSE_1F, 2
 	warp_event 19, 31, OLIVINE_PORT_PASSAGE, 1
@@ -385,8 +379,6 @@ OlivineCity_MapEvents:
 	bg_event  8,  9, BGEVENT_READ, OlivineGymSign
 	bg_event 33, 26, BGEVENT_READ, OlivineLighthouseSign
 	bg_event  3, 24, BGEVENT_READ, OlivineCityBattleTowerSign
-	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
-	bg_event 24, 21, BGEVENT_READ, OlivineCityMartSign
 
 	def_object_events
 	object_event 25, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1

@@ -7,6 +7,11 @@ MtSilverPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, MtSilverPokecenter1FNoDownStairsCallback
+
+MtSilverPokecenter1FNoDownStairsCallback:
+	changeblock 10,  6, $01 ; regular floor
+	endcallback
 
 MtSilverPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript

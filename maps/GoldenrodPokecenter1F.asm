@@ -289,7 +289,7 @@ GoldenrodPokecenter1FMoveTutorIronDefenseText:
 	line "to teach your"
 	cont "#mon a useful"
 	cont "move to strengthen"
-	cont "defence against"
+	cont "defense against"
 	cont "Physical attacks?"
 	done
 
@@ -404,7 +404,7 @@ GoldenrodPokecenter1F_MapEvents:
 
 	def_warp_events
 	warp_event  7,  7, GOLDENROD_CITY, 20
-	warp_event  8,  7, GOLDENROD_CITY, 20
+	warp_event  8,  7, GOLDENROD_CITY, 21
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -423,4 +423,4 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event 13,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Aizen, -1
 	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FMoveTutor, -1
-	object_event 15,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FTMVendorScript, -1
+	object_event 14,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FTMVendorScript, -1

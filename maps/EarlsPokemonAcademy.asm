@@ -678,8 +678,8 @@ EarlsPokemonAcademy_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15, 15, VIOLET_CITY, 3
-	warp_event 16, 15, VIOLET_CITY, 3
+	warp_event 15, 15, VIOLET_CITY, 2
+	warp_event 16, 15, VIOLET_CITY, 2
 	warp_event 16, 10, EARLS_POKEMON_ACADEMY_B1F, 1
 
 	def_coord_events

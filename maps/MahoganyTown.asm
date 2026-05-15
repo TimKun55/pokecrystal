@@ -97,9 +97,6 @@ MahoganyMoveTutorHouseSign:
 MahoganyGymSign:
 	jumptext MahoganyGymSignText
 
-MahoganyTownPokecenterSign:
-	jumpstd PokecenterSignScript
-
 MahoganyTownPlayerStepLeftMovement:
 	step LEFT
 	step_end
@@ -228,6 +225,7 @@ MahoganyTown_MapEvents:
 	warp_event 17,  7, MAHOGANY_RED_GYARADOS_SPEECH_HOUSE, 1
 	warp_event  6, 13, MAHOGANY_GYM, 1
 	warp_event 15, 13, MAHOGANY_POKECENTER_1F, 1
+	warp_event 16, 13, MAHOGANY_POKECENTER_1F, 2
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 	warp_event 10,  1, ROUTE_43_MAHOGANY_GATE, 4
 	warp_event  3,  5, MAHOGANY_MOVE_TUTOR_HOUSE, 1
@@ -240,7 +238,6 @@ MahoganyTown_MapEvents:
 	bg_event  7,  4, BGEVENT_READ, MahoganyTownSign
 	bg_event 11,  7, BGEVENT_READ, MahoganyTownRagecandybarSign
 	bg_event  4, 13, BGEVENT_READ, MahoganyGymSign
-	bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign
 	bg_event  1,  5, BGEVENT_READ, MahoganyMoveTutorHouseSign
 
 	def_object_events

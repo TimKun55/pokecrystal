@@ -74,12 +74,6 @@ SproutTowerSign:
 EarlsPokemonAcademySign:
 	jumptext EarlsPokemonAcademySignText
 
-VioletCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-VioletCityMartSign:
-	jumpstd MartSignScript
-
 VioletCityPPUp:
 	itemball PP_UP
 
@@ -306,11 +300,11 @@ VioletCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 23, VIOLET_MART, 2
 	warp_event 18, 23, VIOLET_GYM, 1
 	warp_event 30, 23, EARLS_POKEMON_ACADEMY, 1
 	warp_event  3, 21, VIOLET_NICKNAME_SPEECH_HOUSE, 1
 	warp_event 31, 31, VIOLET_POKECENTER_1F, 1
+	warp_event 32, 31, VIOLET_POKECENTER_1F, 2
 	warp_event 21, 35, VIOLET_KYLES_HOUSE, 1
 	warp_event 11, 29, VIOLET_PRIMOS_HOUSE, 1
 	warp_event 23,  5, SPROUT_TOWER_1F, 1
@@ -326,8 +320,6 @@ VioletCity_MapEvents:
 	bg_event 16, 23, BGEVENT_READ, VioletGymSign
 	bg_event 25,  6, BGEVENT_READ, SproutTowerSign
 	bg_event 27, 23, BGEVENT_READ, EarlsPokemonAcademySign
-	bg_event 32, 31, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 10, 23, BGEVENT_READ, VioletCityMartSign
 	bg_event 37, 20, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	def_object_events

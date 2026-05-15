@@ -35,8 +35,8 @@ Route43MahoganyGate_MapEvents:
 	def_warp_events
 	warp_event  3,  0, ROUTE_43, 1
 	warp_event  4,  0, ROUTE_43, 2
-	warp_event  3,  7, MAHOGANY_TOWN, 5
-	warp_event  4,  7, MAHOGANY_TOWN, 6
+	warp_event  3,  7, MAHOGANY_TOWN, 6
+	warp_event  4,  7, MAHOGANY_TOWN, 7
 
 	def_coord_events
 

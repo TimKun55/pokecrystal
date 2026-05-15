@@ -403,9 +403,6 @@ Route32RuinsSign:
 Route32UnionCaveSign:
 	jumptext Route32UnionCaveSignText
 
-Route32PokecenterSign:
-	jumpstd PokecenterSignScript
-
 Route32HiddenGreatBall:
 	hiddenitem GREAT_BALL, EVENT_ROUTE_32_HIDDEN_GREAT_BALL
 
@@ -782,6 +779,7 @@ Route32_MapEvents:
 
 	def_warp_events
 	warp_event 11, 73, ROUTE_32_POKECENTER_1F, 1
+	warp_event 12, 73, ROUTE_32_POKECENTER_1F, 2
 	warp_event  4,  2, ROUTE_32_RUINS_OF_ALPH_GATE, 3
 	warp_event  4,  3, ROUTE_32_RUINS_OF_ALPH_GATE, 4
 	warp_event  6, 79, UNION_CAVE_1F, 4
@@ -794,7 +792,6 @@ Route32_MapEvents:
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
 	bg_event  7,  1, BGEVENT_READ, Route32RuinsSign
 	bg_event  8, 84, BGEVENT_READ, Route32UnionCaveSign
-	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
 	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSunStone
 

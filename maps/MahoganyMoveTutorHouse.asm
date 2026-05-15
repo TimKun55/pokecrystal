@@ -324,22 +324,21 @@ TutorHouseBookshelfLeftText:
 	cont "ger and Fire moves"
 	cont "weaker."
 
-	para "It also gives"
-	line "Thunder full"
-	cont "accuracy, as well"
-	cont "as Hurricane."
+	para "It gives Thunder"
+	line "full accuracy, as"
+	cont "well as Hurricane."
 
 	para "It also weakens"
 	line "Solarbeam."
 
 	para "Sunny Day makes"
 	line "Fire moves stron-"
-	cont "get and Water"
+	cont "ger and Water"
 	cont "moves weaker."
 
 	para "Solarbeam fires"
 	line "off without a"
-	cont "charge up turn."
+	cont "charge-up turn."
 	done
 
 TutorHouseBookshelfRightText:
@@ -372,8 +371,8 @@ MahoganyMoveTutorHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, MAHOGANY_TOWN, 7
-	warp_event  3,  7, MAHOGANY_TOWN, 7
+	warp_event  2,  7, MAHOGANY_TOWN, 8
+	warp_event  3,  7, MAHOGANY_TOWN, 8
 
 	def_coord_events
 

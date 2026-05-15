@@ -148,9 +148,6 @@ CianwoodGymSign:
 CianwoodPharmacySign:
 	jumptext CianwoodPharmacySignText
 
-CianwoodPokecenterSign:
-	jumpstd PokecenterSignScript
-
 CianwoodCityRock:
 	jumpstd SmashRockScript
 
@@ -396,6 +393,7 @@ CianwoodCity_MapEvents:
 	warp_event 17, 41, MANIAS_HOUSE, 1
 	warp_event  8, 45, CIANWOOD_GYM, 1
 	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
+	warp_event 24, 43, CIANWOOD_POKECENTER_1F, 2
 	warp_event 17, 47, CIANWOOD_PHARMACY, 1
 	warp_event  7, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 17, CIANWOOD_BEASTS_HOUSE, 1
@@ -408,7 +406,6 @@ CianwoodCity_MapEvents:
 	def_bg_events
 	bg_event 14, 38, BGEVENT_READ, CianwoodCitySign
 	bg_event  6, 45, BGEVENT_READ, CianwoodGymSign
-	bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 15, 47, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther

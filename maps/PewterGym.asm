@@ -144,7 +144,7 @@ BrockWinLossText:
 	text "Your #mon's"
 	line "powerful attacks"
 	cont "overcame my rock-"
-	cont "hard defence…"
+	cont "hard defense…"
 
 	para "You're stronger"
 	line "than I expected…"

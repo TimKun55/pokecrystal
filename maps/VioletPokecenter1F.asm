@@ -5,7 +5,6 @@
 	const VIOLETPOKECENTER1F_GENTLEMAN
 	const VIOLETPOKECENTER1F_YOUNGSTER
 	const VIOLETPOKECENTER1F_ELMS_AIDE
-	const VIOLETPOKECENTER1F_TUTOR
 
 VioletPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -75,69 +74,6 @@ VioletPokecenter1F_ElmsAideScript:
 	writetext VioletPokecenterElmsAideAskEggText
 	sjump .AskTakeEgg
 	
-VioletPokecenter1FTutor:
-	faceplayer
-	opentext
-	writetext VioletPokecenter1FTutorIntro
-	waitbutton
-	special PlaceMoneyTopRight
-	checkmoney YOUR_MONEY, 2500
-	ifequal HAVE_LESS, .NotEnough
-	writetext VioletPokecenter1FAskYesNo
-	yesorno
-	iffalse .Refused
-	writetext VioletPokecenter1FTutorWontRegretText
-	waitbutton
-.TutorLoop:
-	writetext VioletPokecenter1FTutorWhichMoveText
-	loadmenu .MoveMenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .IcicleSpear
-	ifequal 2, .SandTomb
-	sjump .Refused
-
-.IcicleSpear:
-	setval ICICLE_SPEAR
-	writetext VioletPokecenter1FTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-
-.SandTomb:
-	setval SAND_TOMB
-	writetext VioletPokecenter1FTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-	
-.Refused:
-	writetextend VioletPokecenter1FTutorRefusalText
-	
-.NotEnough:
-	writetextend VioletPokecenter1FTutorNotEnough
-
-.TeachMove:
-	writetext VioletPokecenter1FTutorPayment
-	takemoney YOUR_MONEY, 2500
-	waitbutton
-	playsound SFX_TRANSACTION
-	special PlaceMoneyTopRight
-	writetextend VioletPokecenter1FTutorUseWisely
-	
-.MoveMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 4, 15, TEXTBOX_Y
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "Icicle Spear@"
-	db "Sand Tomb@"
-	db "Cancel@"
-
 VioletPokecenter1FGameboyKidScript:
 	jumptextfaceplayer VioletPokecenter1FGameboyKidText
 
@@ -224,64 +160,6 @@ VioletPokecenterElmsAideAskEggText:
 	line "take the Egg?"
 	done
 
-VioletPokecenter1FTutorIntro:
-	text "Hi there!"
-	line "I'm a Move Tutor!"
-	
-	para "For ¥2,500,"
-	line "I can teach your"
-	cont "#mon a pretty"
-	cont "useful move if"
-	cont "you'd like."
-	done
-
-VioletPokecenter1FAskYesNo:
-	text "Should I teach"
-	line "them a move?"
-	done
-
-VioletPokecenter1FTutorRefusalText:
-	text "Come back here"
-	line "if you want to"
-	cont "teach your"
-	cont "#mon a new"
-	cont "move!"
-	done
-
-VioletPokecenter1FTutorWontRegretText:
-	text "Great! You won't"
-	line "regret it!"
-	done
-
-VioletPokecenter1FTutorWhichMoveText:
-	text "Which move should"
-	line "I teach?"
-	done
-
-VioletPokecenter1FTutorPayment:
-	text "<PLAYER> gave the"
-	line "Tutor ¥2,500."
-	done
-
-VioletPokecenter1FTutorNotEnough:
-	text "I'm sorry, you"
-	line "can't afford it."
-	done
-
-VioletPokecenter1FTutorUseWisely:
-	text "Use these wisely"
-	line "to your advantage"
-	cont "in battle."
-
-	para "Goodbye and"
-	line "good luck on"
-	cont "your journey."
-	done
-
-VioletPokecenter1FTutorMoveText:
-	text_start
-	done
-
 VioletPokecenter1FGameboyKidText:
 	text "A guy named Bill"
 	line "made the #mon"
@@ -317,9 +195,10 @@ VioletPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  7, VIOLET_CITY, 5
+	warp_event  5,  7, VIOLET_CITY, 4
 	warp_event  6,  7, VIOLET_CITY, 5
 	warp_event  0,  7, POKECENTER_2F, 1
+	warp_event 11,  7, VIOLET_MART, 1
 
 	def_coord_events
 
@@ -329,7 +208,6 @@ VioletPokecenter1F_MapEvents:
 	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenterNurse, -1
 	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FChansey, -1
 	object_event  8,  4, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGameboyKidScript, -1
-	object_event  2,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
-	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
+	object_event 10,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
+	object_event  2,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
-	object_event  8,  1, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FTutor, -1

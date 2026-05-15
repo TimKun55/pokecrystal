@@ -219,12 +219,6 @@ CharcoalKilnSign:
 AzaleaTownIlextForestSign:
 	jumptext AzaleaTownIlexForestSignText
 
-AzaleaTownPokecenterSign:
-	jumpstd PokecenterSignScript
-
-AzaleaTownMartSign:
-	jumpstd MartSignScript
-
 WhiteApricornTree:
 	fruittree FRUITTREE_AZALEA_TOWN_WHT_APRICORN
 
@@ -503,8 +497,8 @@ AzaleaTown_MapEvents:
 
 	def_warp_events
 	warp_event 15,  9, AZALEA_POKECENTER_1F, 1
+	warp_event 16,  9, AZALEA_POKECENTER_1F, 2
 	warp_event 21, 13, CHARCOAL_KILN, 1
-	warp_event 21,  5, AZALEA_MART, 2
 	warp_event  9,  5, KURTS_HOUSE, 1
 	warp_event 10, 16, AZALEA_GYM, 1
 	warp_event 31,  7, SLOWPOKE_WELL_ENTRANCE, 1
@@ -518,13 +512,11 @@ AzaleaTown_MapEvents:
 	coord_event  9,  6, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL, AzaleaTownCelebiScene
 
 	def_bg_events
-	bg_event 19,  9, BGEVENT_READ, AzaleaTownSign
+	bg_event 19,  8, BGEVENT_READ, AzaleaTownSign
 	bg_event 10,  8, BGEVENT_READ, KurtsHouseSign
 	bg_event  8, 16, BGEVENT_READ, AzaleaGymSign
 	bg_event 29,  8, BGEVENT_READ, SlowpokeWellSign
 	bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign
-	bg_event 16,  9, BGEVENT_READ, AzaleaTownPokecenterSign
-	bg_event 22,  5, BGEVENT_READ, AzaleaTownMartSign
 	bg_event  3,  9, BGEVENT_READ, AzaleaTownIlextForestSign
 	bg_event 31,  6, BGEVENT_ITEM, AzaleaTownHiddenFullHeal
 
@@ -534,7 +526,7 @@ AzaleaTown_MapEvents:
 	object_event 15, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1
 	object_event  7,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
 	object_event  8, 18, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
-	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
+	object_event 13,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 15, 16, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 18, 16, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownProtonSlowpokeScript, EVENT_REPENTING_ROCKETS

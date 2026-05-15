@@ -31,7 +31,7 @@ MtSilverRoom1_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 33, MT_SILVER_OUTSIDE, 2
+	warp_event  9, 33, MT_SILVER_OUTSIDE, 3
 	warp_event 15,  1, MT_SILVER_ROOM_2, 1
 
 	def_coord_events

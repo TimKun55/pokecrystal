@@ -50,8 +50,8 @@ Route32RuinsOfAlphGate_MapEvents:
 	def_warp_events
 	warp_event  0,  4, RUINS_OF_ALPH_OUTSIDE, 11
 	warp_event  0,  5, RUINS_OF_ALPH_OUTSIDE, 12
-	warp_event  9,  4, ROUTE_32, 2
-	warp_event  9,  5, ROUTE_32, 3
+	warp_event  9,  4, ROUTE_32, 3
+	warp_event  9,  5, ROUTE_32, 4
 
 	def_coord_events
 

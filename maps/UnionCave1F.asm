@@ -189,7 +189,7 @@ UnionCave1F_MapEvents:
 	warp_event  3,  3, UNION_CAVE_B1F, 3
 	warp_event  7, 41, UNION_CAVE_B1F, 4
 	warp_event 21, 41, ROUTE_33, 1
-	warp_event 23, 11, ROUTE_32, 4
+	warp_event 23, 11, ROUTE_32, 5
 
 	def_coord_events
 

@@ -375,8 +375,8 @@ OlivineGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 17, OLIVINE_CITY, 2
-	warp_event  7, 17, OLIVINE_CITY, 2
+	warp_event  6, 17, OLIVINE_CITY, 3
+	warp_event  7, 17, OLIVINE_CITY, 3
 
 	def_coord_events
 

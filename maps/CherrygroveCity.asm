@@ -41,7 +41,7 @@ CherrygroveCityGuideGent:
 	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2
 	turnobject PLAYER, UP
 	opentext
-	writetext GuideGentMartText
+	writetext GuideGentMoveTutorHouseText
 	waitbutton
 	closetext
 	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3
@@ -198,12 +198,6 @@ CherrygroveCitySign:
 GuideGentsHouseSign:
 	jumptext GuideGentsHouseSignText
 
-CherrygroveCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-CherrygroveCityMartSign:
-	jumpstd MartSignScript
-
 CherrygroveCityHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_CHERRYGROVE_CITY_HIDDEN_MAX_REVIVE
 
@@ -331,20 +325,32 @@ GuideGentPokecenterText:
 	line "on them a lot, so"
 	cont "you better learn"
 	cont "about them."
-	
-	para "Look for the red"
-	line "coloured roof."
-	done
 
-GuideGentMartText:
-	ntag "Guide Gent"
-	text "This is a #mon"
-	line "Mart."
+	para "Go downstairs for"
+	line "the #mon Mart."
 
 	para "They sell Balls"
 	line "for catching wild"
 	cont "#mon and other"
 	cont "useful items."
+	
+	para "Look for the red"
+	line "coloured roof."
+	done
+
+GuideGentMoveTutorHouseText:
+	ntag "Guide Gent"
+	text "Most Cities and"
+	line "Towns have special"
+	cont "houses like this."
+	
+	para "Move Tutors live"
+	line "here and can teach"
+	cont "your #mon new"
+	cont "moves!"
+	
+	para "For a price,"
+	cont "of course."
 
 	para "Look for the blue"
 	line "coloured roof."
@@ -520,8 +526,8 @@ CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 23,  3, CHERRYGROVE_MART, 2
 	warp_event 29,  3, CHERRYGROVE_POKECENTER_1F, 1
+	warp_event 30,  3, CHERRYGROVE_POKECENTER_1F, 2
 	warp_event 17,  8, CHERRYGROVE_GYM_SPEECH_HOUSE, 1
 	warp_event 25, 10, GUIDE_GENTS_HOUSE, 1
 	warp_event 31, 12, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1
@@ -533,8 +539,6 @@ CherrygroveCity_MapEvents:
 	def_bg_events
 	bg_event 24,  6, BGEVENT_READ, CherrygroveCitySign
 	bg_event 23, 10, BGEVENT_READ, GuideGentsHouseSign
-	bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign
-	bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign
 	bg_event 36,  3, BGEVENT_ITEM, CherrygroveCityHiddenMaxRevive
 
 	def_object_events

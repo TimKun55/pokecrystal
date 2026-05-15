@@ -9,6 +9,11 @@ Route32Pokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, Route32Pokecenter1FNoDownStairsCallback
+
+Route32Pokecenter1FNoDownStairsCallback:
+	changeblock 10,  6, $01 ; regular floor
+	endcallback
 
 Route32Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -126,7 +131,7 @@ Route32Pokecenter1F_MapEvents:
 
 	def_warp_events
 	warp_event  5,  7, ROUTE_32, 1
-	warp_event  6,  7, ROUTE_32, 1
+	warp_event  6,  7, ROUTE_32, 2
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
@@ -136,6 +141,6 @@ Route32Pokecenter1F_MapEvents:
 	def_object_events
 	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
 	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FChansey, -1
-	object_event  1,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
+	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
 	object_event  9,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
 	object_event  4,  3, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, Route32Pokecenter1FLadySue, -1
