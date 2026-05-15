@@ -27,7 +27,7 @@ FuchsiaCinnabarHouseSailor:
 	clearevent EVENT_VERMILION_SAILORS_HOUSE_SAILOR
 	readvar VAR_FACING
 	ifnotequal UP, .PathClear
-	applymovement PLAYER, PlayerMovement
+	applymovement PLAYER, FuchsiaCinnabarHousePlayerMovement
 .PathClear:
 	applymovement FUCHSIACINNABARHOUSE1_SAILOR, FuchsiaCinnabarHouseSailorExitMovement
 	disappear FUCHSIACINNABARHOUSE1_SAILOR
@@ -50,7 +50,7 @@ FuchsiaCinnabarHouseScientist:
 .IslandVisited:
 	writetextend ScientistVisitedIslandText
 
-PlayerMovement:
+FuchsiaCinnabarHousePlayerMovement:
 	step LEFT
 	turn_head RIGHT
 	step_end

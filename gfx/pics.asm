@@ -746,7 +746,7 @@ UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.animated.2bpp
 UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
 PersianFrontpic:          INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
 ThortonPic:               INCBIN "gfx/trainers/thorton.2bpp.lz"
-KrisPic:                  INCBIN "gfx/trainers/kris.2bpp.lz"
+KrisTrainerPic:           INCBIN "gfx/trainers/kris.2bpp.lz"
 MagnezoneFrontpic:        INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
 SunfloraFrontpic:         INCBIN "gfx/pokemon/sunflora/front.animated.2bpp.lz"
 SunfloraBackpic:          INCBIN "gfx/pokemon/sunflora/back.2bpp.lz"
