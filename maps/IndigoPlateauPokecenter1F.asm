@@ -295,9 +295,6 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step DOWN
 	step_end
-	
-PokemonJournalGiovanniScript:
-	jumptext PokemonJournalGiovanniText
 
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "Are you ready to"
@@ -518,24 +515,6 @@ IndigoPlateauPokecenter1FTutorRefused:
 	cont "best?"
 	done
 	
-PokemonJournalGiovanniText:
-	text "#mon Journal"
-
-	para "Special Feature:"
-	line "Boss Giovanni!"
-
-	para "When police sear-"
-	line "ched the abandoned"
-	cont "Viridian Gym, they"
-
-	para "discovered that"
-	line "its Leader,"
-	cont "Giovanni, had"
-
-	para "also been the"
-	line "Team Rocket Boss."
-	done
-
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 

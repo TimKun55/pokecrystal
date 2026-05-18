@@ -105,6 +105,7 @@ Route38_Blocks:
 OlivineTimsHouse_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:
+OlivineMoveTutorHouse_Blocks:
 BillsFamilysHouse_Blocks:
 CherrygroveGymSpeechHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
@@ -113,6 +114,7 @@ CherrygroveMoveTutorHouse_Blocks:
 
 GoldenrodHappinessRater_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
+GoldenrodMoveTutorHouse_Blocks:
 GuideGentsHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
@@ -144,6 +146,7 @@ Route30BerryHouse_Blocks:
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
 EcruteakSwarmHouse_Blocks:
+EcruteakMoveTutorHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
 VioletPrimosHouse_Blocks:

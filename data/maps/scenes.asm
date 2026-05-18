@@ -41,10 +41,8 @@ MapScenes::
 	scene_var CINNABAR_VOLCANO_1F,                         wCinnabarVolcano1FSceneID
 	scene_var OLIVINE_CITY,                                wOlivineCitySceneID
 	scene_var ROUTE_34,                                    wRoute34SceneID
-	scene_var ROUTE_34_ILEX_FOREST_GATE,                   wRoute34IlexForestGateSceneID ; unused
 	scene_var ECRUTEAK_TIN_TOWER_ENTRANCE,                 wEcruteakTinTowerEntranceSceneID
 	scene_var WISE_TRIOS_ROOM,                             wWiseTriosRoomSceneID
-	scene_var ECRUTEAK_POKECENTER_1F,                      wEcruteakPokecenter1FSceneID
 	scene_var ECRUTEAK_GYM,                                wEcruteakGymSceneID
 	scene_var MAHOGANY_TOWN,                               wMahoganyTownSceneID
 	scene_var ROUTE_42,                                    wRoute42SceneID
@@ -53,7 +51,6 @@ MapScenes::
 	scene_var BATTLE_TOWER_BATTLE_ROOM,                    wBattleTowerBattleRoomSceneID
 	scene_var BATTLE_TOWER_ELEVATOR,                       wBattleTowerElevatorSceneID
 	scene_var BATTLE_TOWER_HALLWAY,                        wBattleTowerHallwaySceneID
-	scene_var BATTLE_TOWER_OUTSIDE,                        wBattleTowerOutsideSceneID ; unused
 	scene_var ROUTE_43_GATE,                               wRoute43GateSceneID
 	scene_var MOUNT_MOON_1F,                               wMountMoon1FSceneID
 	scene_var SPROUT_TOWER_3F,                             wSproutTower3FSceneID

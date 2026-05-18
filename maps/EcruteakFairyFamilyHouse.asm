@@ -125,7 +125,7 @@ EcruteakFairyFamilyHouseGrannyScript:
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 5, 15, TEXTBOX_Y
+	menu_coords 0, 5, 12, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
@@ -291,11 +291,10 @@ FairyGrannyWelcomeText:
 	para "My granddaughters"
 	line "love to battle."
 	
-	para "If you can"
-	line "find, battle and"
-	cont "defeat them,"
-	cont "we will gladly"
-	cont "teach your"
+	para "If you can find,"
+	line "battle and defeat"
+	cont "them, we will"
+	cont "gladly teach your"
 	cont "#mon some fairy"
 	cont "-type moves!"
 	

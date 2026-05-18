@@ -72,6 +72,7 @@ Olivine_Map_Names:
 	dw Olivine_Map_Name11 ; map_const ROUTE_38
 	dw Olivine_Map_Name12 ; map_const ROUTE_39
 	dw Olivine_Map_Name13 ; map_const OLIVINE_CITY
+	dw Olivine_Map_Name14 ; map_const OLIVINE_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_OLIVINE_MAPS
 
 Olivine_Map_Name1:  db "Olivine <PKMN> Center@"
@@ -87,6 +88,7 @@ Olivine_Map_Name10: db "Route 39 House@"
 Olivine_Map_Name11: db "Route 38@"
 Olivine_Map_Name12: db "Route 39@"
 Olivine_Map_Name13: db "Olivine City@"
+Olivine_Map_Name14: db "Olivine Tutor@"
 
 Mahogany_Map_Names:
 	table_width 2
@@ -107,7 +109,7 @@ Mahogany_Map_Name4: db "Route 42 Gate@"
 Mahogany_Map_Name5: db "Route 42@"
 Mahogany_Map_Name6: db "Route 44@"
 Mahogany_Map_Name7: db "Mahogany Town@" 
-Mahogany_Map_Name8: db "Mahogany House@" 
+Mahogany_Map_Name8: db "Mahogany Tutor@" 
 	
 Dungeons_Map_Names:
 	table_width 2
@@ -335,6 +337,7 @@ Ecruteak_Map_Names:
 	dw Ecruteak_Map_Name15 ; map_const ROUTE_35_GOLDENROD_GATE
 	dw Ecruteak_Map_Name16 ; map_const ROUTE_35_NATIONAL_PARK_GATE
 	dw Ecruteak_Map_Name17 ; map_const ROUTE_36_NATIONAL_PARK_GATE
+	dw Ecruteak_Map_Name18 ; map_const ECRUTEAK_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_ECRUTEAK_MAPS
 
 Ecruteak_Map_Name1:  db "Route 35@"
@@ -354,6 +357,7 @@ Ecruteak_Map_Name14: db "Swarm House@"
 Ecruteak_Map_Name15: db "Route 35 Gate 1@"
 Ecruteak_Map_Name16: db "Route 35 Gate 2@"
 Ecruteak_Map_Name17: db "Route 36 Gate@"
+Ecruteak_Map_Name18: db "Ecruteak Tutor@"
 
 Blackthorn_Map_Names:
 	table_width 2
@@ -379,7 +383,7 @@ Blackthorn_Map_Name6:  db "Blkth. <PKMN> Center@"
 Blackthorn_Map_Name7:  db "Route 45@"
 Blackthorn_Map_Name8:  db "Route 46@"
 Blackthorn_Map_Name9:  db "Blackthorn City@"
-Blackthorn_Map_Name10: db "Blackthorn House@"	
+Blackthorn_Map_Name10: db "Blackthorn Tutor@"	
 Blackthorn_Map_Name11: db "Madam Items@"
 
 Cinnabar_Map_Names:
@@ -563,6 +567,7 @@ Goldenrod_Map_Names:
 	dw Goldenrod_Map_Name26 ; map_const GOLDENROD_HOME_DECOR_STORE_3
 	dw Goldenrod_Map_Name27 ; map_const GOLDENROD_HOME_DECOR_STORE_4
 	dw Goldenrod_Map_Name28 ; map_const GOLDENROD_FLOWER_SHOP_GARDEN
+	dw Goldenrod_Map_Name29 ; map_const GOLDENROD_MOVE_TUTOR_HOUSE
 	assert_table_length NUM_GOLDENROD_MAPS
 
 Goldenrod_Map_Name1:  db "Route 34@"
@@ -593,6 +598,7 @@ Goldenrod_Map_Name25: db "Gold.DecorStore 2@"
 Goldenrod_Map_Name26: db "Gold.DecorStore 3@"
 Goldenrod_Map_Name27: db "Gold.DecorStore 4@"
 Goldenrod_Map_Name28: db "Flower Shop Garden@"
+Goldenrod_Map_Name29: db "Goldenrod Tutor@"
 
 Vermilion_Map_Names:
 	table_width 2

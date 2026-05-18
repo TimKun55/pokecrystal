@@ -5,49 +5,37 @@
 	const ECRUTEAKPOKECENTER1F_COOLTRAINER_F
 	const ECRUTEAKPOKECENTER1F_GYM_GUIDE
 	const ECRUTEAKPOKECENTER1F_BILL
-	const ECRUTEAKPOKECENTER1F_TUTOR
 
 EcruteakPokecenter1F_MapScripts:
 	def_scene_scripts
-	scene_script EcruteakPokecenter1FMeetBillScene, SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL
-	scene_script EcruteakPokecenter1FNoopScene,     SCENE_ECRUTEAKPOKECENTER1F_NOOP
 
 	def_callbacks
 
-EcruteakPokecenter1FMeetBillScene:
-	sdefer EcruteakPokcenter1FBillMeetsPlayer
-EcruteakPokecenter1FNoopScene:
-	end
-
-EcruteakPokcenter1FBillMeetsPlayer:
-	pause 30
-	playsound SFX_EXIT_BUILDING
-	appear ECRUTEAKPOKECENTER1F_BILL
-	waitsfx
-	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement1
-	applymovement PLAYER, EcruteakPokecenter1FPlayerMovement1
-	turnobject ECRUTEAKPOKECENTER1F_NURSE, UP
-	pause 10
-	turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN
-	pause 30
-	turnobject ECRUTEAKPOKECENTER1F_NURSE, UP
-	pause 10
-	turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN
-	pause 20
-	turnobject ECRUTEAKPOKECENTER1F_BILL, DOWN
-	pause 10
+EcruteakPokecenter1FBill:
+	showemote EMOTE_SHOCK, ECRUTEAKPOKECENTER1F_BILL, 15
+	pause 15
+	faceplayer
 	opentext
 	writetext EcruteakPokecenter1F_BillText1
 	promptbutton
 	writetext EcruteakPokecenter1F_BillText2
 	waitbutton
 	closetext
+	readvar VAR_FACING
+	ifequal UP, .BillWalkAroundPlayer
+	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovementOneStepDown
 	turnobject PLAYER, DOWN
-	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement2
+	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovementThreeStepsDown
+	sjump .FinishBill
+
+.BillWalkAroundPlayer
+	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovementLongExit
+	turnobject PLAYER, DOWN
+	applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovementTwoStepsDown
+.FinishBill
 	playsound SFX_EXIT_BUILDING
 	disappear ECRUTEAKPOKECENTER1F_BILL
 	clearevent EVENT_MET_BILL
-	setscene SCENE_ECRUTEAKPOKECENTER1F_NOOP
 	waitsfx
 	end
 
@@ -57,78 +45,6 @@ EcruteakPokecenter1FNurseScript:
 EcruteakPokecenter1FChansey:
 	jumpstd PokecenterChanseyScript
 	
-EcruteakPokecenter1FTutor:
-	faceplayer
-	opentext
-	writetext EcruteakPokecenter1FTutorIntro
-	waitbutton
-	special PlaceMoneyTopRight
-	checkmoney YOUR_MONEY, 4000
-	ifequal HAVE_LESS, .NotEnough
-	writetext EcruteakPokecenter1FAskYesNo
-	yesorno
-	iffalse .Refused
-	writetext EcruteakPokecenter1FTutorWontRegretText
-	waitbutton
-.TutorLoop:
-	writetext EcruteakPokecenter1FTutorWhichMoveText
-	loadmenu .MoveMenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .RockBlast
-	ifequal 2, .GrowthPunch
-	ifequal 3, .FlameCharge
-	sjump .Refused
-
-.RockBlast:
-	setval ROCK_BLAST
-	writetext EcruteakPokecenter1FTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-
-.GrowthPunch:
-	setval GROWTH_PUNCH
-	writetext EcruteakPokecenter1FTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-
-.FlameCharge:
-	setval FLAME_CHARGE
-	writetext EcruteakPokecenter1FTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-	
-.Refused:
-	writetextend EcruteakPokecenter1FTutorRefusalText
-	
-.NotEnough:
-	writetextend EcruteakPokecenter1FTutorNotEnough
-
-.TeachMove:
-	writetext EcruteakPokecenter1FTutorPayment
-	takemoney YOUR_MONEY, 4000
-	waitbutton
-	playsound SFX_TRANSACTION
-	special PlaceMoneyTopRight
-	writetextend EcruteakPokecenter1FTutorUseWisely
-	
-.MoveMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "Rock Blast@"
-	db "Growth Punch@"
-	db "Flame Charge@"
-	db "Cancel@"
-
 EcruteakPokecenter1FPokefanMScript:
 	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
 
@@ -138,31 +54,18 @@ EcruteakPokecenter1FCooltrainerFScript:
 EcruteakPokecenter1FGymGuideScript:
 	jumptextfaceplayer EcruteakPokecenter1FGymGuideText
 
-EcruteakPokecenter1FBillMovement1:
+EcruteakPokecenter1FBillMovementLongExit:
 	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head UP
-	step_end
-
-EcruteakPokecenter1FBillMovement2:
-	step RIGHT
-	step DOWN
-	step DOWN
 	step DOWN
 	step DOWN
 	step_end
 
-EcruteakPokecenter1FPlayerMovement1:
-	step UP
-	step UP
-	step UP
+EcruteakPokecenter1FBillMovementThreeStepsDown:
+	step DOWN
+EcruteakPokecenter1FBillMovementTwoStepsDown:
+	step DOWN
+EcruteakPokecenter1FBillMovementOneStepDown:
+	step DOWN
 	step_end
 
 EcruteakPokecenter1F_BillText1:
@@ -178,7 +81,7 @@ EcruteakPokecenter1F_BillText2:
 	ntag "Bill"
 	text "I just finished"
 	line "visiting my"
-	cont "friends."
+	cont "friends upstairs."
 	
 	para "You probably know"
 	line "them as the"
@@ -199,64 +102,6 @@ EcruteakPokecenter1F_BillText2:
 	para "Buh-bye!"
 	done
 	
-EcruteakPokecenter1FTutorIntro:
-	text "Hi there!"
-	line "I'm a Move Tutor!"
-	
-	para "For ¥4000,"
-	line "I can teach your"
-	cont "#mon a pretty"
-	cont "useful move if"
-	cont "you'd like."
-	done
-	
-EcruteakPokecenter1FAskYesNo:
-	text "Should I teach"
-	line "them a move?"
-	done
-
-EcruteakPokecenter1FTutorRefusalText:
-	text "Come back here"
-	line "if you want to"
-	cont "teach your"
-	cont "#mon a new"
-	cont "move!"
-	done
-
-EcruteakPokecenter1FTutorWontRegretText:
-	text "Great! You won't"
-	line "regret it!"
-	done
-
-EcruteakPokecenter1FTutorWhichMoveText:
-	text "Which move should"
-	line "I teach?"
-	done
-
-EcruteakPokecenter1FTutorPayment:
-	text "<PLAYER> gave the"
-	line "Tutor ¥4000."
-	done
-	
-EcruteakPokecenter1FTutorNotEnough:
-	text "Oh, sorry, you"
-	line "can't afford it."
-	done
-
-EcruteakPokecenter1FTutorUseWisely:
-	text "Use these wisely"
-	line "to your advantage"
-	cont "in battle."
-
-	para "Goodbye and"
-	line "good luck on"
-	cont "your journey."
-	done
-	
-EcruteakPokecenter1FTutorMoveText:
-	text_start
-	done
-
 EcruteakPokecenter1FPokefanMText:
 	text "The way the Kimono"
 	line "Girls dance is"
@@ -318,5 +163,4 @@ EcruteakPokecenter1F_MapEvents:
 	object_event 10,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1
 	object_event  2,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
 	object_event  8,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
-	object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_POKE_CENTER_BILL
-	object_event  8,  1, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FTutor, -1
+	object_event  5,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FBill, EVENT_ECRUTEAK_POKE_CENTER_BILL

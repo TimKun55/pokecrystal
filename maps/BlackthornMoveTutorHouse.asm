@@ -1,6 +1,6 @@
 	object_const_def
 	const BLACKTHORNMOVETUTORHOUSE_GRANNY
-	const BLACKTHORNMOVETUTORHOUSE_COOLTRAINER_M
+	const BLACKTHORNMOVETUTORHOUSE_YOUNGSTER
 
 BlackthornMoveTutorHouse_MapScripts:
 	def_scene_scripts
@@ -79,40 +79,48 @@ BlackthornMoveTutorScript:
 	db "Zen Headbutt@"
 	db "Cancel@"
 
+BlackthornMoveTutorHouseYoungster:
+	jumptextfaceplayer BlackthornMoveTutorHouseYoungsterText
+
 BlackthornAskTeachAMoveText:
 	ntag "Move Tutor"
-	text "Hi there!"
-	line "For ¥10,000, I can"
-	cont "teach your #mon"
-	cont "amazing moves if"
-	cont "you'd like."
+	text "Hello, dear."
+	line "Have you come to"
+	cont "learn a new move?"
+	
+	para "For ¥10,000, I can"
+	line "teach your #mon"
+	cont "one of three:"
+
+	para "Acrobatics,"
+	line "Signal Beam, or"
+	cont "Zen Headbutt."
 	done
 	
 BlackthornAskYesNo:
 	ntag "Move Tutor"
 	text "Should I teach"
-	line "them a move?"
+	line "them a move, dear?"
 	done
 
 BlackthornMoveTutorRefusalText:
 	ntag "Move Tutor"
-	text "Come back here"
-	line "if you want to"
-	cont "teach your"
-	cont "#mon a new"
-	cont "move!"
+	text "Come back if you"
+	line "want a new move,"
+	cont "dear."
 	done
 
 BlackthornMoveTutorWontRegretText:
 	ntag "Move Tutor"
-	text "Great! You won't"
-	line "regret it!"
+	text "Very good. You"
+	line "won't regret it,"
+	cont "dear."
 	done
 
 BlackthornMoveTutorWhichMoveText:
 	ntag "Move Tutor"
 	text "Which move should"
-	line "I teach?"
+	line "I teach, dear?"
 	done
 
 BlackthornMoveTutorPayment:
@@ -122,19 +130,29 @@ BlackthornMoveTutorPayment:
 	
 BlackthornMoveTutorNotEnough:
 	ntag "Move Tutor"
-	text "Ooh, sorry, you"
-	line "don't have enough…"
+	text "Ooh, I'm sorry,"
+	line "dear, you don't"
+	cont "have enough…"
 	done
 
 BlackthornMoveTutorUseWisely:
 	ntag "Move Tutor"
-	text "See ya and"
-	line "good luck on"
-	cont "your journey!"
+	text "Bye-bye, dear."
+	
+	para "good luck on your"
+	line "journey and stay"
+	cont "safe out there."
 	done
 
 BlackthornMoveTutorMoveText:
 	text_start
+	done
+
+BlackthornMoveTutorHouseYoungsterText:
+	text "Oh, I'm not a"
+	line "Tutor, but I want"
+	cont "to be like Granny"
+	cont "when I grow up!"
 	done
 
 BlackthornMoveTutorHouse_MapEvents:
@@ -150,3 +168,4 @@ BlackthornMoveTutorHouse_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMoveTutorScript, -1
+	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMoveTutorHouseYoungster, -1

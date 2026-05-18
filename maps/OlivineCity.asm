@@ -3,7 +3,6 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_RIVAL
-	const OLIVINECITY_SAILOR3
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -97,34 +96,6 @@ OlivineCityStandingYoungsterScript:
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
 
-OlivineCitySailorTutorScript:
-	faceplayer
-	opentext
-	writetext OlivineCitySailorTutorAquaTailText
-	waitbutton
-	special PlaceMoneyTopRight
-	writetext OlivineCitySailorTutorAquaTailText2
-	checkmoney YOUR_MONEY, 5000
-	ifequal HAVE_LESS, .NotEnough
-	yesorno
-	iffalse .TutorRefused
-	setval AQUA_TAIL
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-.TutorRefused
-	writetextend OlivineCitySailorTutorAquaTailRefused
-	
-.TeachMove
-	writetext OlivineCitySailorTutorPayment
-	takemoney YOUR_MONEY, 5000
-	waitbutton
-	playsound SFX_TRANSACTION
-	special PlaceMoneyTopRight
-	writetextend OlivineCitySailorTutorAquaTailTaught
-
-.NotEnough
-	writetextend OlivineCitySailorTutorNotEnough
-	
 OlivineCitySign:
 	jumptext OlivineCitySignText
 
@@ -304,55 +275,6 @@ OlivineCityBattleTowerSignText:
 	line "Opening Now!"
 	done
 
-OlivineCitySailorTutorAquaTailText:
-	ntag "Move Tutor"
-	text "Ho, there, young"
-	line "trainer!"
-	
-	para "In my travels,"
-	line "I've come across"
-	cont "a useful water-"
-	cont "type move that I"
-	cont "can teach to your"
-	cont "#mon for a fee."
-	done
-
-OlivineCitySailorTutorAquaTailText2:
-	ntag "Move Tutor"
-	text "Should I teach"
-	line "Aqua Tail for"
-	cont "¥5,000?"
-	done
-
-OlivineCitySailorTutorAquaTailRefused:
-	ntag "Move Tutor"
-	text "Come back when"
-	line "you like."
-	done
-
-OlivineCitySailorTutorAquaTailClear:
-	text_start
-	done
-	
-OlivineCitySailorTutorPayment:
-	text "<PLAYER> gave the"
-	line "Tutor ¥5000."
-	done
-
-OlivineCitySailorTutorAquaTailTaught:
-	ntag "Move Tutor"
-	text "It does great"
-	line "damage and can"
-	cont "lower the target's"
-	cont "defense stat!"
-	done
-	
-OlivineCitySailorTutorNotEnough:
-	ntag "Move Tutor"
-	text "Sorry, you can't"
-	line "afford it."
-	done
-	
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -368,6 +290,7 @@ OlivineCity_MapEvents:
 	warp_event 32, 21, OLIVINE_LIGHTHOUSE_1F, 2
 	warp_event 19, 31, OLIVINE_PORT_PASSAGE, 1
 	warp_event 20, 31, OLIVINE_PORT_PASSAGE, 2
+	warp_event 23, 21, OLIVINE_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events
 	coord_event 13, 10, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop
@@ -385,4 +308,3 @@ OlivineCity_MapEvents:
 	object_event 20, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 19, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
-	object_event  5, 25, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailorTutorScript, -1

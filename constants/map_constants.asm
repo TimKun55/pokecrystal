@@ -49,6 +49,7 @@ ENDM
 	map_const ROUTE_38,                                    20, 10 ; 11
 	map_const ROUTE_39,                                    11, 19 ; 12
 	map_const OLIVINE_CITY,                                20, 18 ; 13
+	map_const OLIVINE_MOVE_TUTOR_HOUSE,                     4,  4 ; 14
 	endgroup
 
 	newgroup MAHOGANY                                             ;  2
@@ -184,6 +185,7 @@ ENDM
 	map_const ROUTE_35_GOLDENROD_GATE,                      4,  4 ; 15
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
+	map_const ECRUTEAK_MOVE_TUTOR_HOUSE,                    4,  4 ; 18
 	endgroup
 
 	newgroup BLACKTHORN                                           ;  5
@@ -307,6 +309,7 @@ ENDM
 	map_const GOLDENROD_HOME_DECO_STORE_3,                  4,  4 ; 26
 	map_const GOLDENROD_HOME_DECO_STORE_4,                  4,  4 ; 27
 	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 8,  8 ; 28
+	map_const GOLDENROD_MOVE_TUTOR_HOUSE,                   4,  4 ; 29
 	endgroup
 
 	newgroup VERMILION                                            ; 12

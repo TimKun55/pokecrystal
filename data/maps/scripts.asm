@@ -568,6 +568,9 @@ INCLUDE "maps/MahoganyMart1F.asm"
 INCLUDE "maps/CherrygroveMoveTutorHouse.asm"
 INCLUDE "maps/VioletMoveTutorHouse.asm"
 INCLUDE "maps/AzaleaMoveTutorHouse.asm"
+INCLUDE "maps/GoldenrodMoveTutorHouse.asm"
+INCLUDE "maps/EcruteakMoveTutorHouse.asm"
+INCLUDE "maps/OlivineMoveTutorHouse.asm"
 
 
 ENDSECTION

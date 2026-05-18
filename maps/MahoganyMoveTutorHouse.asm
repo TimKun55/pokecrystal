@@ -8,13 +8,13 @@ MahoganyMoveTutorHouse_MapScripts:
 
 	def_callbacks
 
-MahoganyMoveTutor1Script:
+MahoganyMoveTutorScript:
 	faceplayer
 	opentext
 	writetext AskTeachAMove1Text
 	waitbutton
 	special PlaceMoneyTopRight
-	checkmoney YOUR_MONEY, 8000
+	checkmoney YOUR_MONEY, 9000
 	ifequal HAVE_LESS, .NotEnough
 	writetext AskTeachAMoveTextYesNo
 	yesorno
@@ -60,7 +60,7 @@ MahoganyMoveTutor1Script:
 
 .TeachMove:
 	writetext MahoganyMoveTutor1Payment
-	takemoney YOUR_MONEY, 8000
+	takemoney YOUR_MONEY, 9000
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
@@ -68,7 +68,7 @@ MahoganyMoveTutor1Script:
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y
+	menu_coords 0, 2, 13, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
@@ -80,13 +80,13 @@ MahoganyMoveTutor1Script:
 	db "Air Slash@"
 	db "Cancel@"
 	
-MahoganyMoveTutor2:
+MahoganyWeatherMoveTutor1:
 	faceplayer
 	opentext
 	writetext AskTeachAMoveWeather1Text
 	waitbutton
 	special PlaceMoneyTopRight
-	checkmoney YOUR_MONEY, 2000
+	checkmoney YOUR_MONEY, 4000
 	ifequal HAVE_LESS, .NotEnough
 	writetext AskTeachAMoveTextYesNo
 	yesorno
@@ -124,7 +124,7 @@ MahoganyMoveTutor2:
 
 .TeachMove:
 	writetext MahoganyMoveTutorWeather1Payment
-	takemoney YOUR_MONEY, 2000
+	takemoney YOUR_MONEY, 4000
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
@@ -132,7 +132,7 @@ MahoganyMoveTutor2:
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 4, 15, TEXTBOX_Y
+	menu_coords 0, 4, 11, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
@@ -143,13 +143,13 @@ MahoganyMoveTutor2:
 	db "Sandstorm@"
 	db "Cancel@"
 
-MahoganyMoveTutor3:
+MahoganyWeatherMoveTutor2:
 	faceplayer
 	opentext
 	writetext AskTeachAMoveWeather2Text
 	waitbutton
 	special PlaceMoneyTopRight
-	checkmoney YOUR_MONEY, 1500
+	checkmoney YOUR_MONEY, 3000
 	ifequal HAVE_LESS, .NotEnough
 	writetext AskTeachAMoveTextYesNo
 	yesorno
@@ -187,7 +187,7 @@ MahoganyMoveTutor3:
 
 .TeachMove:
 	writetext MahoganyMoveTutorWeather2Payment
-	takemoney YOUR_MONEY, 1500
+	takemoney YOUR_MONEY, 3000
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
@@ -195,7 +195,7 @@ MahoganyMoveTutor3:
 	
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 4, 15, TEXTBOX_Y
+	menu_coords 0, 4, 12, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
@@ -216,10 +216,14 @@ AskTeachAMove1Text:
 	ntag "Move Tutor"
 	text "Hi there!"
 	
-	para "For ¥8,000, I can"
+	para "For ¥9,000, I can"
 	line "teach your #mon"
 	cont "amazing moves if"
-	cont "you'd like."
+	cont "you'd like:"
+	
+	para "Energy Ball,"
+	line "Dark Pulse, or"
+	cont "Air Slash."
 	done
 	
 AskTeachAMoveTextYesNo:
@@ -251,7 +255,7 @@ MahoganyMoveTutorWhichMoveShouldITeachText:
 
 MahoganyMoveTutor1Payment:
 	text "<PLAYER> gave the"
-	line "Tutor ¥8,000."
+	line "Tutor ¥9,000."
 	done
 	
 MahoganyMoveTutorNotEnough:
@@ -283,7 +287,7 @@ AskTeachAMoveWeather1Text:
 	para "I teach damaging"
 	line "Weather Moves to"
 	cont "#mon for"
-	cont "¥2,000."
+	cont "¥4,000."
 	done
 
 AskTeachAMoveWeather2Text:
@@ -293,17 +297,17 @@ AskTeachAMoveWeather2Text:
 	
 	para "I teach Weather"
 	line "Moves to #mon"
-	cont "for ¥1,500."
+	cont "for ¥3,000."
 	done
 
 MahoganyMoveTutorWeather1Payment:
 	text "<PLAYER> gave the"
-	line "Tutor ¥2,000."
+	line "Tutor ¥4,000."
 	done
 
 MahoganyMoveTutorWeather2Payment:
 	text "<PLAYER> gave the"
-	line "Tutor ¥1,500."
+	line "Tutor ¥3,000."
 	done
 
 MahoganyMoveTutorWeatherTutorUseWisely:
@@ -381,6 +385,6 @@ MahoganyMoveTutorHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, TutorHouseBookshelfRight
 
 	def_object_events
-	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor1Script, -1
-	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor2, -1
-	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutor3, -1
+	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMoveTutorScript, -1
+	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyWeatherMoveTutor1, -1
+	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyWeatherMoveTutor2, -1

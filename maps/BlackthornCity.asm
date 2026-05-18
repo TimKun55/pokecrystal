@@ -116,9 +116,6 @@ BlackthornCityTrainerTips:
 BlackthornCityMadamItemsSign:
 	jumptext MadamItemsSignText
 	
-BlackthornCityMoveTutorSign:
-	jumptext BlackthornMoveTutorSignText
-	
 BlackthornCitySitrusTree:
 	fruittree FRUITTREE_BLACKTHORN_CITY_SITRUS
 
@@ -295,11 +292,6 @@ MadamItemsSignText:
 	line "item needs!"
 	done
 	
-BlackthornMoveTutorSignText:
-	text "Blackthorn City"
-	line "Move Tutor"
-	done
-
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -323,7 +315,6 @@ BlackthornCity_MapEvents:
 	bg_event 23,  2, BGEVENT_READ, DragonDensSign
 	bg_event 11, 23, BGEVENT_READ, BlackthornCityTrainerTips
 	bg_event  7, 29, BGEVENT_READ, BlackthornCityMadamItemsSign
-	bg_event 21, 17, BGEVENT_READ, BlackthornCityMoveTutorSign
 
 	def_object_events
 	object_event 18, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM

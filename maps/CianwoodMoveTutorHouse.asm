@@ -1,150 +1,173 @@
 	object_const_def
-	const CIANWOODMOVETUTORHOUSE_COOLTRAINER_F
-	const CIANWOODMOVETUTORHOUSE_YOUNGSTER
+	const CIANWOODMOVETUTORHOUSE_BUG_MANIAC
+	const CIANWOODMOVETUTORHOUSE_BLACK_BELT
+	const CIANWOODMOVETUTORHOUSE_SAILOR
 
 CianwoodMoveTutorHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CianwoodMoveTutorScript:
+CianwoodMoveTutor1Script:
 	faceplayer
 	opentext
-	writetext CianwoodTutorIntro
+	writetext CianwoodMoveTutorXScissorText
 	waitbutton
 	special PlaceMoneyTopRight
+	writetext CianwoodMoveTutorAskTeachText
+	yesorno
+	iffalse .TutorRefused
 	checkmoney YOUR_MONEY, 8000
 	ifequal HAVE_LESS, .NotEnough
-	writetext CianwoodAskYesNo
-	yesorno
-	iffalse .Refused
-	writetext CianwoodMoveTutorWontRegretText
-	waitbutton
-.TutorLoop:
-	writetext CianwoodMoveTutorWhichMoveText
-	loadmenu .MoveMenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .XScissor
-	ifequal 2, .DrainPunch
-	ifequal 3, .WaterPulse
-	sjump .Refused
-
-.XScissor:
 	setval X_SCISSOR
-	writetext CianwoodMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
+.TutorRefused
+	writetextend CianwoodMoveTutorRefused
 
-.DrainPunch:
-	setval DRAIN_PUNCH
-	writetext CianwoodMoveTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-
-.WaterPulse:
-	setval WATER_PULSE
-	writetext CianwoodMoveTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .TutorLoop
-	
-.Refused:
-	writetextend CianwoodMoveTutorRefusalText
-	
-.NotEnough:
-	writetextend CianwoodMoveTutorNotEnough
-
-.TeachMove:
+.TeachMove
 	writetext CianwoodMoveTutorPayment
 	takemoney YOUR_MONEY, 8000
 	waitbutton
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
-	writetextend CianwoodMoveTutorUseWisely
-	
-.MoveMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y
-	dw .MenuData
-	db 1 ; default option
+	writetextend CianwoodMoveTutorXScissorTaught
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "X-Scissor@"
-	db "Drain Punch@"
-	db "Water Pulse@"
-	db "Cancel@"
+.NotEnough
+	writetextend CianwoodMoveTutorNotEnough
 
-Kai:
+CianwoodMoveTutor2Script:
 	faceplayer
 	opentext
-	trade NPC_TRADE_KAI
+	writetext CianwoodMoveTutorDrainPunchText
 	waitbutton
-	closetext
-	end
+	special PlaceMoneyTopRight
+	writetext CianwoodMoveTutorAskTeachText
+	yesorno
+	iffalse .TutorRefused
+	checkmoney YOUR_MONEY, 8000
+	ifequal HAVE_LESS, .NotEnough
+	setval DRAIN_PUNCH
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetextend CianwoodMoveTutorRefused
 
-CianwoodTutorIntro:
+.TeachMove
+	writetext CianwoodMoveTutorPayment
+	takemoney YOUR_MONEY, 8000
+	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetextend CianwoodMoveTutorDrainPunchTaught
+
+.NotEnough
+	writetextend CianwoodMoveTutorNotEnough
+
+CianwoodMoveTutor3Script:
+	faceplayer
+	opentext
+	writetext CianwoodMoveTutorWaterPulseText
+	waitbutton
+	special PlaceMoneyTopRight
+	writetext CianwoodMoveTutorAskTeachText
+	yesorno
+	iffalse .TutorRefused
+	checkmoney YOUR_MONEY, 8000
+	ifequal HAVE_LESS, .NotEnough
+	setval WATER_PULSE
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetextend CianwoodMoveTutorRefused
+
+.TeachMove
+	writetext CianwoodMoveTutorPayment
+	takemoney YOUR_MONEY, 8000
+	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetextend CianwoodMoveTutorWaterPulseTaught
+
+.NotEnough
+	writetextend CianwoodMoveTutorNotEnough
+	
+CianwoodMoveTutorXScissorText:
 	ntag "Move Tutor"
 	text "Hi there!"
-	line "For ¥8000, I can"
-	cont "teach your #mon"
 
-	para "amazing moves if"
-	line "you'd like."
+	para "I've been working"
+	line "on a new move;"
+	cont "X-Scissor!"
 	done
 	
-CianwoodAskYesNo:
+CianwoodMoveTutorXScissorTaught:
 	ntag "Move Tutor"
-	text "Should I teach"
-	line "them a move?"
-	done
-
-CianwoodMoveTutorRefusalText:
-	ntag "Move Tutor"
-	text "Come back here"
-	line "if you want to"
+	text "Nothing fancy."
+	line "Just a hard-hit-"
+	cont "ting move!"
 	
-	para "teach your"
-	line "#mon a new"
-	cont "move!"
+	para "Bugsy helped me"
+	line "develop it."
 	done
 
-CianwoodMoveTutorWontRegretText:
+CianwoodMoveTutorDrainPunchText:
 	ntag "Move Tutor"
-	text "Great! You won't"
-	line "regret it!"
+	text "Damage and healing"
+	line "in one attack."
+	
+	para "That is the move"
+	line "Drain Punch."
 	done
 
-CianwoodMoveTutorWhichMoveText:
+CianwoodMoveTutorDrainPunchTaught:
 	ntag "Move Tutor"
-	text "Which move should"
-	line "I teach?"
+	text "Punch your way to"
+	line "victory!"
+	done
+
+CianwoodMoveTutorWaterPulseText:
+	ntag "Move Tutor"
+	text "After all my years"
+	line "at sea, I can pass"
+	cont "on what I have"
+	cont "learned out there."
+	
+	para "Water Pulse!"
+	done
+
+CianwoodMoveTutorWaterPulseTaught:
+	ntag "Move Tutor"
+	text "Good damage and a"
+	line "chance to inflict"
+	cont "confusion."
+	
+	para "Just as wild as"
+	line "the sea!"
+	done
+
+CianwoodMoveTutorAskTeachText:
+	ntag "Move Tutor"
+	text "Shall I teach it"
+	line "to your #mon"
+	cont "for ¥8,000?"
 	done
 
 CianwoodMoveTutorPayment:
 	text "<PLAYER> gave the"
-	line "Tutor ¥8000."
+	line "Tutor ¥8,000."
 	done
-	
+
+CianwoodMoveTutorRefused:
+	ntag "Move Tutor"
+	text "Come back when"
+	line "you like."
+	done
+
 CianwoodMoveTutorNotEnough:
 	ntag "Move Tutor"
-	text "Ooh, sorry, you"
-	line "don't have enough…"
-	done
-
-CianwoodMoveTutorUseWisely:
-	ntag "Move Tutor"
-	para "See ya and"
-	line "good luck on"
-	cont "your journey!"
-	done
-
-CianwoodMoveTutorMoveText:
-	text_start
+	text "Sorry, you can't"
+	line "afford it."
 	done
 
 CianwoodMoveTutorHouse_MapEvents:
@@ -159,5 +182,6 @@ CianwoodMoveTutorHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMoveTutorScript, -1
-	object_event  5,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Kai, -1
+	object_event  2,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMoveTutor1Script, -1
+	object_event  4,  1, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMoveTutor2Script, -1
+	object_event  5,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMoveTutor3Script, -1

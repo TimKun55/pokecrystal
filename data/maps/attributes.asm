@@ -485,6 +485,7 @@ ENDM
 	map_attributes OlivineGoodRodHouse, OLIVINE_GOOD_ROD_HOUSE, $00, 0
 	map_attributes OlivineCafe, OLIVINE_CAFE, $00, 0
 	map_attributes OlivineMart, OLIVINE_MART, $00, 0
+	map_attributes OlivineMoveTutorHouse, OLIVINE_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes Route38EcruteakGate, ROUTE_38_ECRUTEAK_GATE, $00, 0
 	map_attributes Route39Barn, ROUTE_39_BARN, $00, 0
 	map_attributes Route39Farmhouse, ROUTE_39_FARMHOUSE, $00, 0
@@ -525,6 +526,7 @@ ENDM
 	map_attributes EcruteakMart, ECRUTEAK_MART, $00, 0
 	map_attributes EcruteakGym, ECRUTEAK_GYM, $00, 0
 	map_attributes EcruteakItemfinderHouse, ECRUTEAK_ITEMFINDER_HOUSE, $00, 0
+	map_attributes EcruteakMoveTutorHouse, ECRUTEAK_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes BlackthornGym1F, BLACKTHORN_GYM_1F, $00, 0
 	map_attributes BlackthornGym2F, BLACKTHORN_GYM_2F, $00, 0
 	map_attributes BlackthornDragonSpeechHouse, BLACKTHORN_DRAGON_SPEECH_HOUSE, $00, 0
@@ -588,6 +590,7 @@ ENDM
 	map_attributes GoldenrodMagnetTrainStation, GOLDENROD_MAGNET_TRAIN_STATION, $00, 0
 	map_attributes GoldenrodFlowerShop, GOLDENROD_FLOWER_SHOP, $00, 0
 	map_attributes GoldenrodFlowerShopGarden, GOLDENROD_FLOWER_SHOP_GARDEN, $45, 0
+	map_attributes GoldenrodMoveTutorHouse, GOLDENROD_MOVE_TUTOR_HOUSE, $00, 0
 	map_attributes GoldenrodPPSpeechHouse, GOLDENROD_PP_SPEECH_HOUSE, $00, 0
 	map_attributes GoldenrodNameRater, GOLDENROD_NAME_RATER, $00, 0
 	map_attributes GoldenrodDeptStore1F, GOLDENROD_DEPT_STORE_1F, $00, 0

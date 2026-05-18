@@ -254,7 +254,7 @@ VermilionCityTutorHurricaneRefused:
 
 VermilionCityTutorPayment:
 	text "<PLAYER> gave the"
-	line "Tutor ¥20000."
+	line "Tutor ¥20,000."
 	done
 
 VermilionCityTutorHurricaneTaught:

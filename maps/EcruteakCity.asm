@@ -222,7 +222,7 @@ EcruteakCity_MapEvents:
 	warp_event  5, 29, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
 	warp_event 23, 33, DANCE_THEATER, 1
 	warp_event  6, 39, ECRUTEAK_GYM, 1
-	warp_event 29, 33, ECRUTEAK_ITEMFINDER_HOUSE, 1
+	warp_event 13, 39, ECRUTEAK_ITEMFINDER_HOUSE, 1
 	warp_event  6, 13, BURNED_TOWER_1F, 1
 	warp_event 20,  4, WISE_TRIOS_ROOM, 1
 	warp_event 20,  5, WISE_TRIOS_ROOM, 2
@@ -231,6 +231,7 @@ EcruteakCity_MapEvents:
 	warp_event  0, 31, ROUTE_38_ECRUTEAK_GATE, 4
 	warp_event 13, 29, ECRUTEAK_FAIRY_FAMILY_HOUSE, 1
 	warp_event 29, 39, ECRUTEAK_SWARM_HOUSE, 1
+	warp_event 29, 33, ECRUTEAK_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events
 
@@ -245,8 +246,8 @@ EcruteakCity_MapEvents:
 	def_object_events
 	object_event 18, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
 	object_event 19, 33, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
-	object_event 14, 39, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
+	object_event 14, 35, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
 	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
-	object_event 10, 33, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
+	object_event  6, 32, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 26, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
 	object_event  8, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

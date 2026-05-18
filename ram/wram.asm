@@ -3171,10 +3171,8 @@ wGoldenrodMagnetTrainStationSceneID::             db
 wCinnabarVolcano1FSceneID::                       db
 wOlivineCitySceneID::                             db
 wRoute34SceneID::                                 db
-wRoute34IlexForestGateSceneID::                   db
 wEcruteakTinTowerEntranceSceneID::                db
 wWiseTriosRoomSceneID::                           db
-wEcruteakPokecenter1FSceneID::                    db
 wEcruteakGymSceneID::                             db
 wMahoganyTownSceneID::                            db
 wRoute42SceneID::                                 db
@@ -3183,7 +3181,6 @@ wBattleTower1FSceneID::                           db
 wBattleTowerBattleRoomSceneID::                   db
 wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
-wBattleTowerOutsideSceneID::                      db
 wRoute43GateSceneID::                             db
 wMountMoon1FSceneID::                             db
 wSproutTower3FSceneID::                           db
@@ -3242,7 +3239,7 @@ wRuinsOfAlphOmanyteWordRoomSceneID::              db
 wRuinsOfAlphAerodactylWordRoomSceneID::           db
 wFarawayIslandOutsideSceneID::                    db
 
-	ds 22
+	ds 25
 
 ; fight counts
 
