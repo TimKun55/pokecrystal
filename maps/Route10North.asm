@@ -52,9 +52,6 @@ RockTunnelSign:
 PowerPlantSign:
 	jumptext PowerPlantSignText
 
-Route10PokecenterSign:
-	jumpstd PokecenterSignScript
-
 Route10NorthHikerCuttingTreeText:
 	text "I was hired by"
 	line "the Power Plant"
@@ -88,6 +85,7 @@ Route10North_MapEvents:
 	def_warp_events
 	warp_event  4,  1, ROCK_TUNNEL_1F, 1
 	warp_event  9,  3, ROUTE_10_POKECENTER_1F, 1
+	warp_event 10,  3, ROUTE_10_POKECENTER_1F, 2
 	warp_event  5, 27, POWER_PLANT, 1
 
 	def_coord_events
@@ -95,7 +93,6 @@ Route10North_MapEvents:
 	def_bg_events
 	bg_event  6,  2, BGEVENT_READ, RockTunnelSign
 	bg_event  3, 29, BGEVENT_READ, PowerPlantSign
-	bg_event 10,  3, BGEVENT_READ, Route10PokecenterSign
 
 	def_object_events
 	object_event 14, 18, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route10NorthHikerCuttingTreeScript, EVENT_ROUTE_10_NORTH_HIKER_CUTTING_TREE

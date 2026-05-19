@@ -231,18 +231,6 @@ TrashCanText:
 	line "here…"
 	done
 
-PokeCenterSignText:
-	text "Heal Your #mon!"
-	line "#mon Center"
-	done
-
-MartSignText:
-	text "For All Your"
-	line "#mon Needs"
-
-	para "#mon Mart"
-	done
-
 ContestResults_ReadyToJudgeText:
 	text "We will now judge"
 	line "the #mon you've"

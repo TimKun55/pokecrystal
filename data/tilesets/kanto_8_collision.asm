@@ -92,10 +92,10 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 5b
 	tilecoll WALL, WALL, WALL, WALL ; 5c
 	tilecoll WALL, WALL, WALL, WALL ; 5d
-	tilecoll WALL, WALL, WALL, WALL ; 5e
-	tilecoll WALL, WALL, WALL, WALL ; 5f
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 5e
+	tilecoll WALL, WALL, UP_WALL, UP_WALL ; 5f
 	tilecoll WALL, WALL, WALL, DOOR ; 60
-	tilecoll WALL, WALL, WALL, WALL ; 61
+	tilecoll WALL, WALL, DOOR, WALL ; 61
 	tilecoll WALL, WALL, WALL, DOOR ; 62
 	tilecoll WALL, WALL, WALL, WALL ; 63
 	tilecoll WALL, WALL, WALL, FLOOR ; 64

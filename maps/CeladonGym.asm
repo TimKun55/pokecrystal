@@ -371,8 +371,8 @@ CeladonGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 16, 27, CELADON_CITY, 10
-	warp_event 17, 27, CELADON_CITY, 10
+	warp_event 16, 27, CELADON_CITY, 11
+	warp_event 17, 27, CELADON_CITY, 11
 
 	def_coord_events
 

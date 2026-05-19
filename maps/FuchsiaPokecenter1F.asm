@@ -90,9 +90,10 @@ FuchsiaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  7, FUCHSIA_CITY, 4
+	warp_event  5,  7, FUCHSIA_CITY, 3
 	warp_event  6,  7, FUCHSIA_CITY, 4
 	warp_event  0,  7, POKECENTER_2F, 1
+	warp_event 11,  7, FUCHSIA_MART, 1
 
 	def_coord_events
 

@@ -36,9 +36,6 @@ CinnabarIslandGymSign:
 CinnabarIslandSign:
 	jumptext CinnabarIslandSignText
 
-CinnabarIslandPokecenterSign:
-	jumpstd PokecenterSignScript
-
 CinnabarIslandHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
 
@@ -132,12 +129,12 @@ CinnabarIsland_MapEvents:
 
 	def_warp_events
 	warp_event 11, 17, CINNABAR_POKECENTER_1F, 1
+	warp_event 12, 17, CINNABAR_POKECENTER_1F, 2
 	warp_event 24, 13, CINNABAR_VOLCANO_1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 12, 17, BGEVENT_READ, CinnabarIslandPokecenterSign
 	bg_event 19, 18, BGEVENT_READ, CinnabarIslandGymSign
 	bg_event 14, 16, BGEVENT_READ, CinnabarIslandSign
 	bg_event 26, 15, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy

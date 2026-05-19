@@ -39,12 +39,6 @@ PewterCityMtMoonGiftShopSign:
 PewterCityWelcomeSign:
 	jumptext PewterCityWelcomeSignText
 
-PewterCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-PewterCityMartSign:
-	jumpstd MartSignScript
-
 PewterCityRawstTree:
 	fruittree FRUITTREE_PEWTER_CITY_RAWST
 
@@ -120,8 +114,8 @@ PewterCity_MapEvents:
 	def_warp_events
 	warp_event 25, 12, PEWTER_NIDORAN_SPEECH_HOUSE, 1
 	warp_event 10, 15, PEWTER_GYM, 1
-	warp_event 21, 19, PEWTER_MART, 2
 	warp_event 13, 25, PEWTER_POKECENTER_1F, 1
+	warp_event 14, 25, PEWTER_POKECENTER_1F, 2
 	warp_event  7, 28, PEWTER_SNOOZE_SPEECH_HOUSE, 1
 	warp_event 18,  6, PEWTER_MUSEUM_1F, 1
 
@@ -132,9 +126,7 @@ PewterCity_MapEvents:
 	bg_event  8, 15, BGEVENT_READ, PewterGymSign
 	bg_event 21,  8, BGEVENT_READ, PewterMuseumSign
 	bg_event 35, 16, BGEVENT_READ, PewterCityMtMoonGiftShopSign
-	bg_event 16, 25, BGEVENT_READ, PewterCityWelcomeSign
-	bg_event 14, 25, BGEVENT_READ, PewterCityPokecenterSign
-	bg_event 22, 19, BGEVENT_READ, PewterCityMartSign
+	bg_event 20, 16, BGEVENT_READ, PewterCityWelcomeSign
 
 	def_object_events
 	object_event 30, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1

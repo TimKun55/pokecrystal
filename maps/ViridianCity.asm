@@ -62,12 +62,6 @@ ViridianCityWelcomeSign:
 TrainerHouseSign:
 	jumptext TrainerHouseSignText
 
-ViridianCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-ViridianCityMartSign:
-	jumpstd MartSignScript
-
 ViridianCityCoffeeGrampsQuestionText:
 	text "Hey, kid! I just"
 	line "had a double shot"
@@ -195,9 +189,9 @@ ViridianCity_MapEvents:
 	def_warp_events
 	warp_event 30,  7, VIRIDIAN_GYM, 1
 	warp_event 23, 13, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1
-	warp_event 22, 19, TRAINER_HOUSE_1F, 1
-	warp_event 29, 19, VIRIDIAN_MART, 2
+	warp_event 24, 19, TRAINER_HOUSE_1F, 1
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
+	warp_event 24, 25, VIRIDIAN_POKECENTER_1F, 2
 	warp_event 19, 33, ROUTE_1_VIRIDIAN_GATE, 1
 	warp_event 20, 33, ROUTE_1_VIRIDIAN_GATE, 2
 
@@ -207,9 +201,7 @@ ViridianCity_MapEvents:
 	bg_event 17, 15, BGEVENT_READ, ViridianCitySign
 	bg_event 28,  7, BGEVENT_READ, ViridianGymSign
 	bg_event 17,  1, BGEVENT_READ, ViridianCityWelcomeSign
-	bg_event 20, 20, BGEVENT_READ, TrainerHouseSign
-	bg_event 24, 25, BGEVENT_READ, ViridianCityPokecenterSign
-	bg_event 30, 19, BGEVENT_READ, ViridianCityMartSign
+	bg_event 21, 19, BGEVENT_READ, TrainerHouseSign
 
 	def_object_events
 	object_event 18,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1

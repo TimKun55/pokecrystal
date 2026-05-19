@@ -9,6 +9,11 @@ Route10Pokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, Route10Pokecenter1FNoDownStairsCallback
+
+Route10Pokecenter1FNoDownStairsCallback:
+	changeblock 10,  6, $01 ; regular floor
+	endcallback
 
 Route10Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -77,7 +82,7 @@ Route10Pokecenter1F_MapEvents:
 
 	def_warp_events
 	warp_event  5,  7, ROUTE_10_NORTH, 2
-	warp_event  6,  7, ROUTE_10_NORTH, 2
+	warp_event  6,  7, ROUTE_10_NORTH, 3
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events

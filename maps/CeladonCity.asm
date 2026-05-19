@@ -125,9 +125,6 @@ CeladonCityGameCornerSign:
 CeladonCityTrainerTips:
 	jumptext CeladonCityTrainerTipsText
 
-CeladonCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
 CeladonCityHotelSign:
 	jumptext CeladonCityHotelSignText
 
@@ -328,8 +325,9 @@ CeladonCity_MapEvents:
 	warp_event 10,  9, CELADON_DEPT_STORE_1F, 1
 	warp_event 11,  9, CELADON_DEPT_STORE_1F, 2
 	warp_event 20,  9, CELADON_MANSION_1F, 1
-	warp_event 16,  3, CELADON_MANSION_1F, 3
+	warp_event 20,  3, CELADON_MANSION_1F, 3
 	warp_event 33,  9, CELADON_POKECENTER_1F, 1
+	warp_event 34,  9, CELADON_POKECENTER_1F, 2
 	warp_event 22, 17, CELADON_GAME_CORNER, 1
 	warp_event 23, 17, CELADON_GAME_CORNER, 2
 	warp_event 27, 17, CELADON_GAME_CORNER_PRIZE_ROOM, 1
@@ -355,7 +353,6 @@ CeladonCity_MapEvents:
 	bg_event 17,  9, BGEVENT_READ, CeladonCityMansionSign
 	bg_event 24, 19, BGEVENT_READ, CeladonCityGameCornerSign
 	bg_event 36, 19, BGEVENT_READ, CeladonCityTrainerTips
-	bg_event 34,  9, BGEVENT_READ, CeladonCityPokecenterSign
 	bg_event 33, 25, BGEVENT_READ, CeladonCityHotelSign
 	bg_event 39,  8, BGEVENT_ITEM, CeladonCityHiddenPpUp
 

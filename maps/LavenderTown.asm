@@ -43,12 +43,6 @@ VolunteerPokemonHouseSign:
 SoulHouseSign:
 	jumptext SoulHouseSignText
 
-LavenderPokecenterSignText:
-	jumpstd PokecenterSignScript
-
-LavenderMartSignText:
-	jumpstd MartSignScript
-
 LavenderTownPokefanMText:
 	text "That's quite some"
 	line "building, eh?"
@@ -121,10 +115,10 @@ LavenderTown_MapEvents:
 
 	def_warp_events
 	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
+	warp_event  4,  5, LAVENDER_POKECENTER_1F, 2
 	warp_event  7, 10, MR_FUJIS_HOUSE, 1
 	warp_event  5, 15, LAVENDER_SPEECH_HOUSE, 1
 	warp_event  9, 15, LAVENDER_NAME_RATER, 1
-	warp_event  7,  5, LAVENDER_MART, 2
 	warp_event 16, 13, SOUL_HOUSE, 1
 	warp_event 16,  7, LAV_RADIO_TOWER_1F, 1
 	warp_event  9, 19, ROUTE_12_LAVENDER_GATE, 1
@@ -137,8 +131,6 @@ LavenderTown_MapEvents:
 	bg_event 13,  7, BGEVENT_READ, KantoRadioStationSign
 	bg_event  5, 10, BGEVENT_READ, VolunteerPokemonHouseSign
 	bg_event 16, 15, BGEVENT_READ, SoulHouseSign
-	bg_event  4,  5, BGEVENT_READ, LavenderPokecenterSignText
-	bg_event  8,  5, BGEVENT_READ, LavenderMartSignText
 
 	def_object_events
 	object_event 15,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1

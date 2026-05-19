@@ -129,8 +129,8 @@ CeladonHotel1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  7, CELADON_CITY, 16
-	warp_event  4,  7, CELADON_CITY, 16
+	warp_event  3,  7, CELADON_CITY, 17
+	warp_event  4,  7, CELADON_CITY, 17
 	warp_event 12,  0, CELADON_HOTEL_POOL, 1
 
 	def_coord_events

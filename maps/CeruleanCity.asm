@@ -130,12 +130,6 @@ CeruleanCapeSign:
 CeruleanLockedDoor:
 	jumptext CeruleanLockedDoorText
 
-CeruleanCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-CeruleanCityMartSign:
-	jumpstd MartSignScript
-
 CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
@@ -271,8 +265,8 @@ CeruleanCity_MapEvents:
 	warp_event 31, 13, CERULEAN_POLICE_STATION, 1
 	warp_event 15, 19, CERULEAN_TRADE_SPEECH_HOUSE, 1
 	warp_event 19, 19, CERULEAN_POKECENTER_1F, 1
+	warp_event 20, 19, CERULEAN_POKECENTER_1F, 2
 	warp_event 28, 21, CERULEAN_GYM, 1
-	warp_event 19, 27, CERULEAN_MART, 2
 	warp_event 11, 13, CERULEAN_EMPTY_HOUSE, 1
 
 	def_coord_events
@@ -284,8 +278,6 @@ CeruleanCity_MapEvents:
 	bg_event 29, 13, BGEVENT_READ, CeruleanPoliceSign
 	bg_event 22, 10, BGEVENT_READ, CeruleanCapeSign
 	bg_event 11, 27, BGEVENT_READ, CeruleanLockedDoor
-	bg_event 20, 19, BGEVENT_READ, CeruleanCityPokecenterSign
-	bg_event 20, 27, BGEVENT_READ, CeruleanCityMartSign
 	bg_event  3, 14, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
 
 	def_object_events

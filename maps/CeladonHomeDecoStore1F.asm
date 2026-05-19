@@ -329,8 +329,8 @@ CeladonHomeDecoStore1F_MapEvents:
 	db 0, 0 ; filler
 	
 	def_warp_events
-	warp_event  5,  7, CELADON_CITY, 12
-	warp_event  6,  7, CELADON_CITY, 12
+	warp_event  5,  7, CELADON_CITY, 13
+	warp_event  6,  7, CELADON_CITY, 13
 	warp_event  6,  0, CELADON_HOME_DECO_STORE_B1F, 1
 
 	def_coord_events

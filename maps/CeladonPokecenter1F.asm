@@ -9,6 +9,11 @@ CeladonPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, CeladonPokecenter1FNoDownStairsCallback
+
+CeladonPokecenter1FNoDownStairsCallback:
+	changeblock 10,  6, $01 ; regular floor
+	endcallback
 
 CeladonPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -49,7 +54,7 @@ CeladonPokecenter1F_MapEvents:
 
 	def_warp_events
 	warp_event  5,  7, CELADON_CITY, 5
-	warp_event  6,  7, CELADON_CITY, 5
+	warp_event  6,  7, CELADON_CITY, 6
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events

@@ -54,7 +54,7 @@ CinnabarVolcano1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 13, CINNABAR_ISLAND, 2
+	warp_event 13, 13, CINNABAR_ISLAND, 3
 	warp_event  9,  5, CINNABAR_VOLCANO_2F, 1
 
 	def_coord_events

@@ -150,12 +150,6 @@ MrPsychicsHouseSign:
 SaffronCityMagnetTrainStationSign:
 	jumptext SaffronCityMagnetTrainStationSignText
 
-SaffronCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-SaffronCityMartSign:
-	jumpstd MartSignScript
-	
 SaffronDisguisedSlowMovement:
 	slow_step LEFT 
 	step_end
@@ -342,8 +336,8 @@ SaffronCity_MapEvents:
 	def_warp_events
 	warp_event 24,  7, FIGHTING_DOJO, 1
 	warp_event 32,  7, SAFFRON_GYM, 1
-	warp_event 27, 13, SAFFRON_MART, 2
 	warp_event 11, 31, SAFFRON_POKECENTER_1F, 1
+	warp_event 12, 31, SAFFRON_POKECENTER_1F, 2
 	warp_event 27, 31, MR_PSYCHICS_HOUSE, 1
 	warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 1
 	warp_event  7,  5, SAFFRON_MAGNET_TRAIN_STATION, 2
@@ -372,8 +366,6 @@ SaffronCity_MapEvents:
 	bg_event 17, 25, BGEVENT_READ, SilphCoSign
 	bg_event 25, 31, BGEVENT_READ, MrPsychicsHouseSign
 	bg_event  9,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
-	bg_event 12, 31, BGEVENT_READ, SaffronCityPokecenterSign
-	bg_event 28, 13, BGEVENT_READ, SaffronCityMartSign
 
 	def_object_events
 	object_event  7, 15, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1

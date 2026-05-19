@@ -20,8 +20,6 @@ StdScripts::
 	add_stdscript TrashCanScript
 	add_stdscript StrengthBoulderScript
 	add_stdscript SmashRockScript
-	add_stdscript PokecenterSignScript
-	add_stdscript MartSignScript
 	add_stdscript GoldenrodRocketsScript
 	add_stdscript RadioTowerRocketsScript
 	add_stdscript ElevatorButtonScript
@@ -289,12 +287,6 @@ StrengthBoulderScript:
 
 SmashRockScript:
 	farsjump AskRockSmashScript
-
-PokecenterSignScript:
-	farjumptext PokeCenterSignText
-
-MartSignScript:
-	farjumptext MartSignText
 
 DayToTextScript:
 	readvar VAR_WEEKDAY

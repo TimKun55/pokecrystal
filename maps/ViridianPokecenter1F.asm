@@ -65,9 +65,10 @@ ViridianPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  7, VIRIDIAN_CITY, 5
+	warp_event  5,  7, VIRIDIAN_CITY, 4
 	warp_event  6,  7, VIRIDIAN_CITY, 5
 	warp_event  0,  7, POKECENTER_2F, 1
+	warp_event 11,  7, VIRIDIAN_MART, 1
 
 	def_coord_events
 

@@ -118,12 +118,6 @@ TaurosSign:
 	closetext
 	end
 
-FuchsiaCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-FuchsiaCityMartSign:
-	jumpstd MartSignScript
-
 FuchsiaCityAspearTree:
 	fruittree FRUITTREE_FUCHSIA_CITY_ASPEAR
 
@@ -256,10 +250,10 @@ FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 19, FUCHSIA_MART, 2
 	warp_event  6, 27, FUCHSIA_GYM, 1
 	warp_event 11, 27, BILLS_OLDER_SISTERS_HOUSE, 1
 	warp_event 17, 27, FUCHSIA_POKECENTER_1F, 1
+	warp_event 18, 27, FUCHSIA_POKECENTER_1F, 2
 	warp_event 31, 25, SAFARI_ZONE_WARDENS_HOME, 1
 	warp_event 22,  3, SAFARI_ZONE_FUCHSIA_GATE, 3
 	warp_event 37, 20, ROUTE_15_FUCHSIA_GATE, 1
@@ -271,13 +265,11 @@ FuchsiaCity_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 18, BGEVENT_READ, FuchsiaCitySign
+	bg_event 18, 18, BGEVENT_READ, FuchsiaCitySign
 	bg_event  4, 27, BGEVENT_READ, FuchsiaGymSign
 	bg_event 21, 15, BGEVENT_READ, SafariZoneParkSign
 	bg_event 29, 27, BGEVENT_READ, WardensHomeSign
 	bg_event 21,  4, BGEVENT_READ, SafariZoneSign
-	bg_event 18, 27, BGEVENT_READ, FuchsiaCityPokecenterSign
-	bg_event 14, 19, BGEVENT_READ, FuchsiaCityMartSign
 	bg_event  9, 13, BGEVENT_READ, LaprasSign
 	bg_event 17, 11, BGEVENT_READ, PinsirSign
 	bg_event  9,  7, BGEVENT_READ, TaurosSign
@@ -287,7 +279,7 @@ FuchsiaCity_MapEvents:
 	def_object_events
 	object_event 27, 30, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityBirdKeeper, -1
 	object_event 10, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM, -1
-	object_event 23, 22, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
+	object_event 20, 19, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
 	object_event 29,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityAspearTree, -1
 	object_event  8, 12, SPRITE_LAPRAS_SAFARI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityLapras, -1
 	object_event  8,  6, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTauros, -1
