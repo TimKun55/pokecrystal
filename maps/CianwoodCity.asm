@@ -59,7 +59,7 @@ CianwoodCitySuicuneAndEusine:
 	checkevent EVENT_FOUGHT_EUSINE
 	iftrue .Done
 	setevent EVENT_FOUGHT_EUSINE
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	playmusic MUSIC_EUSINE_ENCOUNTER
 	appear CIANWOODCITY_EUSINE
 	applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineApproachMovement
 	opentext
@@ -72,7 +72,7 @@ CianwoodCitySuicuneAndEusine:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	playmusic MUSIC_EUSINE_ENCOUNTER
 	opentext
 	writetext EusineAfterText
 	waitbutton
