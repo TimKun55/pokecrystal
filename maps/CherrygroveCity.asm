@@ -350,7 +350,7 @@ GuideGentMoveTutorHouseText:
 	cont "moves!"
 	
 	para "For a price,"
-	cont "of course."
+	line "of course."
 
 	para "Look for the blue"
 	line "coloured roof."
@@ -489,10 +489,10 @@ CherrygroveYoungsterText_HavePokedex:
 	cont "road."
 
 	para "My #mon lost."
-	line "They're a mess! I"
-
-	para "must take them to"
-	line "a #mon Center."
+		
+	para "They're a mess! I"
+	line "must take them to"
+	cont "a #mon Center."
 	done
 
 MysticWaterGuyTextBefore:
