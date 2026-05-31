@@ -179,7 +179,7 @@ ItemDescriptions:
 	dw OldSeaMapDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama25Desc
+	dw MusicPlayerDesc
 	dw QuickClawDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -962,6 +962,10 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
+
+MusicPlayerDesc:
+	db   "Play any song"
+	next "from your Pack.@"
 
 QuickClawDesc:
 	db   "Raises 1st strike"

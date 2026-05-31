@@ -3132,7 +3132,11 @@ wFarfetchdPosition:: db
 
 wBattlePoints:: dw
 
-	ds 11
+wBattleMusicOverride:: ds 2
+
+wPersistentBattleMusicOverride:: ds 2
+
+	ds 7
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

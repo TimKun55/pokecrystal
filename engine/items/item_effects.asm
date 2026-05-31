@@ -192,9 +192,9 @@ ItemEffects:
 	dw NoEffect            ; OLD_SEA_MAP
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
-	assert_table_length ITEM_B3
-; The items past ITEM_B3 do not have effect entries:
+	dw MusicPlayerEffect   ; MUSIC_PLAYER
+	assert_table_length MUSIC_PLAYER
+; The items past MUSIC_PLAYER do not have effect entries:
 ;	QUICK_CLAW
 ;	SURF_MAIL
 ;	LITEBLUEMAIL
@@ -2306,6 +2306,26 @@ TypeChartEffect:
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
  	ret
+
+MusicPlayerEffect:
+	farcall BlankScreen
+	call LoadStandardFont
+	farcall _MusicPlayer
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+;	---Edited from CloseSubmenu---
+	call ClearBGPalettes
+	call ReloadTilesetAndPalettes
+	call UpdateSprites
+	call GSReloadPalettes
+	ld b, SCGB_MAPPALS
+	call GetSGBLayout
+	farcall LoadOW_BGPal7
+	call WaitBGMap2
+	farcall FadeInFromWhite
+	call EnableSpriteUpdates
+	ret
 
 OldRodEffect:
 	ld e, $0

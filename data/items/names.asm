@@ -178,7 +178,7 @@ ItemNames::
 	li "Old Sea Map"
 	li "Park Ball"
 	li "Rainbow Wing"
-	li "TERU-SAMA"
+	li "Music Player"
 	li "Quick Claw"
 	li "Surf Mail"
 	li "LiteBlueMail"

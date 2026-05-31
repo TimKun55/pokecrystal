@@ -195,6 +195,22 @@ GetVWFLength::
 	pop de
 	ret
 
+FarPlaceStringRet:
+	pop af
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+	ret
+
+FarPlaceString::
+	ldh a, [hROMBank]
+	push af
+	ld a, b
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+	ld bc, FarPlaceStringRet
+	push bc
+	; fallthrough
+
 PlaceString::
 	push hl
 	; fallthrough

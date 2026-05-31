@@ -212,8 +212,8 @@ ItemNameOrder:
 	db BICYCLE      ; 07
 	db ITEMFINDER   ; 37
 	db TYPE_CHART   ; ab
+	db MUSIC_PLAYER ; b3
 	db COIN_CASE    ; 36
-	db DIPLOMA      ; 49
 
 	; Rods
 	db OLD_ROD      ; 3a
@@ -221,6 +221,7 @@ ItemNameOrder:
 	db SUPER_ROD    ; 3d
 
 	; Items that are possibly seldom used
+	db DIPLOMA      ; 49
 	db BLUE_CARD    ; 74
 	db CLEAR_BELL   ; 46
 	db GS_BALL      ; 73
@@ -241,7 +242,7 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db ITEM_B3      ; b3
+;	db ITEM_B3      ; b3
 	db ITEM_BE      ; be
 	db ITEM_BF      ; bf
 

@@ -789,6 +789,11 @@ SECTION "Type Chart", ROMX
 INCLUDE "engine/items/type_chart.asm"
 
 
+SECTION "Music Player", ROMX
+
+INCLUDE "engine/items/music_player.asm"
+
+
 SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"

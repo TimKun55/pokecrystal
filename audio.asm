@@ -168,6 +168,8 @@ INCLUDE "audio/music/ceruleancity.asm"
 INCLUDE "audio/music/nuggetbridge.asm"
 INCLUDE "audio/music/cianwoodcity.asm"
 
+INCLUDE "data/music/musicplayer_songs.asm"
+
 
 SECTION "Sound Effects", ROMX
 
