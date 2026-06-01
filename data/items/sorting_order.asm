@@ -232,7 +232,6 @@ ItemNameOrder:
 	db SQUIRTBOTTLE ; af
 
 	; Temporary Key Items
-	db BALL_RELIC   ; 9a
 	db BASEMENT_KEY ; 85
 	db CARD_KEY     ; 7f
 	db LOST_ITEM    ; 82
@@ -242,6 +241,7 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
+	db ITEM_9A      ; 9a
 ;	db ITEM_B3      ; b3
 	db ITEM_BE      ; be
 	db ITEM_BF      ; bf

@@ -159,7 +159,7 @@
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
 	const PREMIER_BALL ; 99
-	const BALL_RELIC   ; 9a
+	const ITEM_9A      ; 9a
 	const MULCH        ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d

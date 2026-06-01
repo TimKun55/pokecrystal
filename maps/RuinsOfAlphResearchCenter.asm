@@ -64,20 +64,20 @@ RuinsOfAlphResearchCenterScientist3Script:
 	writetextend RuinsOfAlphResearchCenterScientist3Text
 
 .CaveDoorOpen:
-	checkitem GS_BALL
-	iftrue .GSBall
-	checkitem BALL_RELIC
-	iftrue .BallRelic
-	writetextend RuinsOfAlphResearchCenterScientist3_AllUnown
-
-.GSBall:
+	checkevent EVENT_RESEARCH_CENTER_GS_BALL
+	iffalse .CheckBallRelic
 	writetextend RuinsOfAlphResearchCenterScientist3_GSBall
 
-.BallRelic:
+.CheckBallRelic:
+	checkitem GS_BALL
+	iftrue .CleanUpGSBall
+	writetextend RuinsOfAlphResearchCenterScientist3_AllUnown
+
+.CleanUpGSBall:
 	writetext RuinsOfAlphResearchCenterScientist3_BallRelic1
 	waitbutton
 	closetext
-	takeitem BALL_RELIC
+	takeitem GS_BALL
 	turnobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, UP
 	playsound SFX_SWITCH_POKEMON
 	pause 30
