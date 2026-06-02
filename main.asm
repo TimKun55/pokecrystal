@@ -794,6 +794,11 @@ SECTION "Music Player", ROMX
 INCLUDE "engine/items/music_player.asm"
 
 
+SECTION "Item Icons", ROMX
+
+INCLUDE "gfx/items.asm"
+
+
 SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"

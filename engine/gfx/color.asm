@@ -1321,6 +1321,12 @@ INCLUDE "data/trainers/palettes.asm"
 
 INCLUDE "data/events/paintings/palettes.asm"
 
+ItemIconPalettes:
+INCLUDE "gfx/items/items.pal"
+
+TMHMTypeIconPals:
+INCLUDE "gfx/tm_hm_types.pal"
+
 LoadMapPals:
 	farcall LoadSpecialMapPalette
 	jr c, .got_pals

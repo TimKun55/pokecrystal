@@ -403,11 +403,11 @@ BuyMenu_InitGFX:
 	db $10, $10, $10, $10, $10, 0
 	db $10, $10, $10, $10, $10, 0
 	db $10, $10, $10, $10, $10, 0
-	db $10, $10, $10, $10, $10, 0 ; 	db $10, $13, $13, $13, $10, 0 ; Item icon
-	db $10, $10, $10, $10, $10, 0 ; 	db $11, $15, $16, $17, $12, 0
-	db $10, $10, $10, $10, $10, 0 ; 	db $11, $18, $19, $1a, $12, 0
-	db $10, $10, $10, $10, $10, 0 ; 	db $11, $1b, $1c, $1d, $12, 0
-	db $10, $10, $10, $10, $10, -1 ; 	db $10, $14, $14, $14, $10, -1
+	db $10, $13, $13, $13, $10, 0 ; Item icon
+	db $11, $1d, $1e, $1f, $12, 0
+	db $11, $20, $21, $22, $12, 0
+	db $11, $23, $24, $25, $12, 0
+	db $10, $14, $14, $14, $10, -1
 
 MartMenuGFX:
 INCBIN "gfx/mart/mart_menu.2bpp"
@@ -736,7 +736,7 @@ MenuHeader_Buy:
 	dbw 0, wCurMartCount
 	dba PlaceMartMenuItemName
 	dba .PrintBCDPrices
-	dba MartPlaceInBagQuantity
+	dba UpdateItemIconAndDescriptionAndBagQuantity
 
 .PrintBCDPrices:
 	ld a, [wScrollingMenuCursorPosition]
@@ -754,66 +754,6 @@ MenuHeader_Buy:
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
 	call PrintBCDNumber
-	ret
-
-MartPlaceInBagQuantity:
-	farcall UpdateItemDescription
-	farcall CheckItemPocket
-	ld a, [wItemAttributeValue]
-	cp ITEM
-	jr z, .get_item_pocket
-	cp BALL
-	jr z, .get_ball_pocket
-	cp MEDICINE
-	jr z, .get_medicine_pocket
-	cp BERRIES
-	jr z, .get_berry_pocket
-;	cp TM01
-	ret
-
-.get_item_pocket
-	ld hl, wNumItems
-	jr .check_bag
-
-.get_ball_pocket
-	ld hl, wNumBalls
-	jr .check_bag
-
-.get_medicine_pocket
-	ld hl, wNumMedicines
-	jr .check_bag
-
-.get_berry_pocket
-	ld hl, wNumBerries
-.check_bag
-	ld a, [wCurItem]
-	ld c, a
-	ld b, $0
-.loop
-	inc hl
-	ld a, [hli]
-	cp -1
-	jr z, .done
-	cp c
-	jr nz, .loop
-	ld a, [hl]
-	add b
-	ld b, a
-	jr nc, .loop
-	ld b, -1
-
-.done
-	ld a, b
-	sub 99
-	jr c, .done2
-	ld b, 99
-
-.done2
-	ld a, b
-	ld [wMenuSelectionQuantity], a
-	and a
-
-	farcall PlaceItemInBagQuantity
 	ret
 
 HerbShopLadyIntroText:
