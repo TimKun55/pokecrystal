@@ -150,7 +150,7 @@ VictoryRoad3FRivalBattleExitMovement2:
 	step_end
 
 VictoryRoadRivalBeforeText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "Hold it."
 
 	para "…Are you going to"
@@ -190,7 +190,7 @@ VictoryRoadRivalBeforeText:
 	done
 
 VictoryRoadRivalDefeatText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…I couldn't win…"
 
 	para "I gave it every-"
@@ -206,7 +206,7 @@ VictoryRoadRivalDefeatText:
 	done
 
 VictoryRoadRivalAfterText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…… …… ……"
 
 	para "I haven't given up"
@@ -230,7 +230,7 @@ VictoryRoadRivalAfterText:
 	done
 
 VictoryRoadRivalVictoryText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…Humph!"
 
 	para "When it comes down"

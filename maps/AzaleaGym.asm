@@ -665,7 +665,7 @@ AzaleaGymPit2ENoRedMovement:
 	step_end
 
 BugsyText_INeverLose:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "I'm Bugsy!"
 	line "I never lose when"
 	cont "it comes to bug"
@@ -682,7 +682,7 @@ BugsyText_INeverLose:
 	done
 
 BugsyText_ResearchIncomplete:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Whoa, amazing!"
 	line "You're an expert"
 	cont "on #mon!"
@@ -700,7 +700,7 @@ Text_ReceivedHiveBadge:
 	done
 
 BugsyText_HiveBadgeSpeech:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Do you know the"
 	line "benefits of the"
 	cont "HiveBadge?"
@@ -720,7 +720,7 @@ BugsyText_HiveBadgeSpeech:
 	done
 
 BugsyText_FuryCutterSpeech:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "TM49 contains"
 	line "Fury Cutter."
 
@@ -737,7 +737,7 @@ BugsyText_FuryCutterSpeech:
 	done
 
 BugsyText_BugMonsAreDeep:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Bug #mon are"
 	line "deep. There are"
 	cont "many mysteries to"
@@ -748,7 +748,7 @@ BugsyText_BugMonsAreDeep:
 	done
 	
 BugsyRematchIntroText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Oh, <PLAYER>!"
 	line "You're here!"
 	
@@ -757,13 +757,13 @@ BugsyRematchIntroText:
 	done
 	
 BugsyWinLossRematchText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Aww, that's the"
 	line "end of it…"
 	done
 	
 BugsyRematchAfterBattleText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Woah, I thought"
 	line "I had done enough"
 	cont "research!"
@@ -776,7 +776,7 @@ BugsyRematchAfterBattleText:
 	done
 	
 Bugsy16IntroText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "It's <PLAYER>!"
 	
 	para "You've been doing"
@@ -796,7 +796,7 @@ Bugsy16IntroText:
 	done
 	
 Bugsy16AfterBattleText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Wow!"
 	line "I learned a lot"
 	cont "from that battle!"
@@ -807,14 +807,14 @@ Bugsy16AfterBattleText:
 	done
 
 BugsyComeBackTomorrowText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "We just battled"
 	line "today, come back"
 	cont "tomorrow, ok?"
 	done
 	
 BugsyNextTimeText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "You can come"
 	line "back anytime!"
 	done
@@ -828,13 +828,13 @@ BugCatcherBennySeenText:
 	done
 
 BugCatcherBennyBeatenText:
-	ntag "Benny"
+	ntag " Benny "
 	text "Just evolving"
 	line "isn't enough!"
 	done
 
 BugCatcherBennyAfterBattleText:
-	ntag "Benny"
+	ntag " Benny "
 	text "#mon become"
 	line "stronger if they"
 	cont "evolve. Really!"
@@ -849,13 +849,13 @@ BugCatcherAlSeenText:
 	done
 
 BugCatcherAlBeatenText:
-	ntag "Al"
+	ntag " Al "
 	text "You proved how"
 	line "tough you are…"
 	done
 
 BugCatcherAlAfterBattleText:
-	ntag "Al"
+	ntag " Al "
 	text "They're so cool,"
 	line "but most girls"
 
@@ -876,12 +876,12 @@ BugCatcherJoshSeenText:
 	done
 
 BugCatcherJoshBeatenText:
-	ntag "Josh"
+	ntag " Josh "
 	text "Urrgggh!"
 	done
 
 BugCatcherJoshAfterBattleText:
-	ntag "Josh"
+	ntag " Josh "
 	text "I guess I should"
 	line "teach them better"
 	cont "moves…"
@@ -897,45 +897,45 @@ BugManiacXanderSeenText:
 	done
 
 BugManiacXanderBeatenText:
-	ntag "Xander"
+	ntag " Xander "
 	text "Aahhhh!"
 	done
 
 BugManiacXanderAfterBattleText:
-	ntag "Xander"
+	ntag " Xander "
 	text "They're not weak"
 	line "but you're"
 	cont "definitely strong!"
 	done
 
 TwinsAmyandmay1SeenText:
-	ntag "Amy"
+	ntag " Amy "
 	text "Hi! Are you"
 	line "challenging the"
 	cont "Leader? No way!"
 	done
 
 TwinsAmyandmayBeatenText:
-	ntag "Amy & May"
+	ntag " Amy & May "
 	text "Oh, double"
 	line "goodness!"
 	done
 
 TwinsAmyandmay1AfterBattleText:
-	ntag "Amy"
+	ntag " Amy "
 	text "You're really"
 	line "strong!"
 	done
 
 TwinsAmyandmay2SeenText:
-	ntag "May"
+	ntag " May "
 	text "You want to see"
 	line "the Leader?"
 	cont "We come first!"
 	done
 
 TwinsAmyandmay2AfterBattleText:
-	ntag "Amy"
+	ntag " Amy "
 	text "Our bug #mon"
 	line "lost! Oh, what"
 	cont "a shame."
@@ -974,7 +974,7 @@ AzaleaGymGuideWinText:
 	done
 	
 ScytherText:
-	ntag "Scyther"
+	ntag " Scyther "
 	text "Scyth! Scytherrr!"
 	done
 

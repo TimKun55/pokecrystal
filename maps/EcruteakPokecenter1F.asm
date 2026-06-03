@@ -69,7 +69,7 @@ EcruteakPokecenter1FBillMovementOneStepDown:
 	step_end
 
 EcruteakPokecenter1F_BillText1:
-	ntag "Bill"
+	ntag " Bill "
 	text "Hi, I'm Bill. And"
 	line "who are you?"
 
@@ -78,7 +78,7 @@ EcruteakPokecenter1F_BillText1:
 	done
 
 EcruteakPokecenter1F_BillText2:
-	ntag "Bill"
+	ntag " Bill "
 	text "I just finished"
 	line "visiting my"
 	cont "friends upstairs."

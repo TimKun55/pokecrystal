@@ -84,7 +84,7 @@ ViridianForestHouseGiovannisNotebook:
 	jumptext ViridianForestHouseGiovannisNotebookText
 	
 ViridianForestHouseArianaText:
-	ntag "Ariana"
+	ntag " Ariana "
 	text "Oh, it's you,"
 	line "<PLAY_G>."
 
@@ -113,7 +113,7 @@ ViridianForestHouseArianaText:
 	done
 
 GiovanniText_1:
-	ntag "Giovanni"
+	ntag " Giovanni "
 	text "So, you've found"
 	line "my hidden house."
 
@@ -146,14 +146,14 @@ GiovanniText_1:
 	done
 
 GiovanniText_AfterBattle:
-	ntag "Giovanni"
+	ntag " Giovanni "
 	text "Hahaha! The youth"
 	line "of today really"
 	cont "are amazing!"
 	done
 
 GiovanniSecretKeyText:
-	ntag "Giovanni"
+	ntag " Giovanni "
 	text "I think you might"
 	line "be able to use"
 	cont "this item."
@@ -167,7 +167,7 @@ Text_ReceivedSecretKey:
 	done
 
 GiovanniSecretKeySpeech:
-	ntag "Giovanni"
+	ntag " Giovanni "
 	text "That's the Key to"
 	line "a secret entrance"
 	cont "to Cerulean Cave"
@@ -175,7 +175,7 @@ GiovanniSecretKeySpeech:
 	done
 
 GiovanniSecretKeyExplainText:
-	ntag "Giovanni"
+	ntag " Giovanni "
 	text "There's an empty"
 	line "house in Cerulean."
 

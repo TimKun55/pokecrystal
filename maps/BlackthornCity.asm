@@ -205,18 +205,18 @@ MeetSantosText:
 	para "It's Saturday…@"
 	text_promptbutton
 
-	ntag "Santos"
+	ntag " Santos "
 	text "I'm Santos of"
 	line "Saturday…"
 	done
 
 SantosGivesGiftText:
-	ntag "Santos"
+	ntag " Santos "
 	text "You can have this…"
 	done
 
 SantosGaveGiftText:
-	ntag "Santos"
+	ntag " Santos "
 	text " …"
 
 	para "Spell Tag…"
@@ -229,7 +229,7 @@ SantosGaveGiftText:
 	done
 
 SantosSaturdayText:
-	ntag "Santos"
+	ntag " Santos "
 	text " …"
 
 	para "See you again on"
@@ -240,7 +240,7 @@ SantosSaturdayText:
 	done
 
 SantosNotSaturdayText:
-	ntag "Santos"
+	ntag " Santos "
 	text "Today's not"
 	line "Saturday…"
 	done

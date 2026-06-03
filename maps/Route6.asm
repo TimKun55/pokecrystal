@@ -90,12 +90,12 @@ PokefanmRexSeenText:
 	done
 
 PokefanmRexBeatenText:
-	ntag "Rex"
+	ntag " Rex "
 	text "My Donphan!"
 	done
 
 PokefanmRexAfterBattleText:
-	ntag "Rex"
+	ntag " Rex "
 	text "Look how adorable"
 	line "my Donphan acts!"
 
@@ -111,12 +111,12 @@ PokefanmAllanSeenText:
 	done
 
 PokefanmAllanBeatenText:
-	ntag "Allan"
+	ntag " Allan "
 	text "My Ursaring!"
 	done
 
 PokefanmAllanAfterBattleText:
-	ntag "Allan"
+	ntag " Allan "
 	text "Look how adorable"
 	line "my Ursaring acts!"
 
@@ -135,12 +135,12 @@ LadyLiaSeenText:
 	done
 
 LadyLiaBeatenText:
-	ntag "Lia"
+	ntag " Lia "
 	text "So strong!"
 	done
 
 LadyLiaAfterBattleText:
-	ntag "Lia"
+	ntag " Lia "
 	text "I'm trying to show"
 	line "the people of"
 	cont "Kanto how useful"
@@ -157,12 +157,12 @@ GentlemanVirgilSeenText:
 	done
 
 GentlemanVirgilBeatenText:
-	ntag "Virgil"
+	ntag " Virgil "
 	text "Oh my!"
 	done
 
 GentlemanVirgilAfterBattleText:
-	ntag "Virgil"
+	ntag " Virgil "
 	text "You're raising"
 	line "your #mon well."
 	done
@@ -173,12 +173,12 @@ CamperDaleSeenText:
 	done
 
 CamperDaleBeatenText:
-	ntag "Dale"
+	ntag " Dale "
 	text "You're strong."
 	done
 
 CamperDaleAfterBattleText:
-	ntag "Dale"
+	ntag " Dale "
 	text "Eventually, I want"
 	line "to challenge the"
 	cont "Gym Leaders."
@@ -191,12 +191,12 @@ BeautyTheresaSeenText:
 	done	
 
 BeautyTheresaBeatenText:
-	ntag "Theresa"
+	ntag " Theresa "
 	text "My beauties!"
 	done
 
 BeautyTheresaAfterBattleText:
-	ntag "Theresa"
+	ntag " Theresa "
 	text "I can't wait to"
 	line "add more beauties"
 	cont "to my team."

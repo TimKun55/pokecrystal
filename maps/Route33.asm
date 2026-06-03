@@ -126,13 +126,13 @@ HikerAnthonySeenText:
 	done
 
 HikerAnthonyBeatenText:
-	ntag "Anthony"
+	ntag " Anthony "
 	text "Whoa! You've got"
 	line "more zip than me!"
 	done
 
 HikerAnthonyAfterText:
-	ntag "Anthony"
+	ntag " Anthony "
 	text "We Hikers are at"
 	line "our best in the"
 	cont "mountains."

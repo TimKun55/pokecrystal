@@ -56,13 +56,13 @@ _UsedMulchText::
 	done
 
 _WhichApricornText::
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Which Apricorn"
 	line "should I use?"
 	done
 
 _HowManyShouldIMakeText::
-	ntag "Kurt"
+	ntag " Kurt "
 	text "How many should I"
 	line "make?"
 	done
@@ -240,7 +240,7 @@ _OakTimeNappedText::
 	done
 
 _OakTimeWhatDayIsItText::
-	ntag "Mum"
+	ntag " Mum "
 	text "What day is it?"
 	done
 
@@ -1139,14 +1139,14 @@ _AskFloorElevatorText::
 	done
 
 _BugCatchingContestTimeUpText::
-	ntag "Announcer"
+	ntag " Announcer "
 	text "BEEEP!"
 
 	para "Time's up!"
 	done
 
 _BugCatchingContestIsOverText::
-	ntag "Announcer"
+	ntag " Announcer "
 	text "The Contest"
 	line "is over!"
 	done
@@ -1388,7 +1388,7 @@ _NPCTradeAfterText4::
 	done
 
 _MumLeavingText1::
-	ntag "Mum"
+	ntag " Mum "
 	text "Wow, that's a cute"
 	line "#mon."
 
@@ -1417,7 +1417,7 @@ _MumLeavingText1::
 	done
 
 _MumLeavingText2::
-	ntag "Mum"
+	ntag " Mum "
 	text "OK, I'll take care"
 	line "of your money."
 
@@ -1425,7 +1425,7 @@ _MumLeavingText2::
 	prompt
 
 _MumLeavingText3::
-	ntag "Mum"
+	ntag " Mum "
 	text "Be careful."
 
 	para "#mon are your"
@@ -1436,7 +1436,7 @@ _MumLeavingText3::
 	done
 
 _MumIsThisAboutYourMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "Hi! Welcome home!"
 	line "You're trying very"
 	cont "hard, I see."
@@ -1449,55 +1449,55 @@ _MumIsThisAboutYourMoneyText::
 	done
 
 _MumBankWhatDoYouWantToDoText::
-	ntag "Mum"
+	ntag " Mum "
 	text "What do you want"
 	line "to do?"
 	done
 
 _MumStoreMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "How much do you"
 	line "want to save?"
 	done
 
 _MumTakeMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "How much do you"
 	line "want to take?"
 	done
 
 _MumSaveMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "Do you want to"
 	line "save some money?"
 	done
 
 _MumHaventSavedThatMuchText::
-	ntag "Mum"
+	ntag " Mum "
 	text "You haven't saved"
 	line "that much."
 	prompt
 
 _MumNotEnoughRoomInWalletText::
-	ntag "Mum"
+	ntag " Mum "
 	text "You can't take"
 	line "that much."
 	prompt
 
 _MumInsufficientFundsInWalletText::
-	ntag "Mum"
+	ntag " Mum "
 	text "You don't have"
 	line "that much."
 	prompt
 
 _MumNotEnoughRoomInBankText::
-	ntag "Mum"
+	ntag " Mum "
 	text "You can't save"
 	line "that much."
 	prompt
 
 _MumStartSavingMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "OK, I'll save your"
 	line "money. Trust me!"
 
@@ -1506,19 +1506,19 @@ _MumStartSavingMoneyText::
 	done
 
 _MumStoredMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "Your money's safe"
 	line "here! Get going!"
 	done
 
 _MumTakenMoneyText::
-	ntag "Mum"
+	ntag " Mum "
 	text "<PLAYER>, don't"
 	line "give up!"
 	done
 
 _MumJustDoWhatYouCanText::
-	ntag "Mum"
+	ntag " Mum "
 	text "Just do what"
 	line "you can."
 	done

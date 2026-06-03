@@ -1,5 +1,5 @@
 ErinAskNumber1Text:
-	ntag "Erin"
+	ntag " Erin "
 	text "It really made me"
 	line "angry to lose."
 
@@ -13,7 +13,7 @@ ErinAskNumber1Text:
 	done
 
 ErinAskNumber2Text:
-	ntag "Erin"
+	ntag " Erin "
 	text "I want to battle"
 	line "with you again."
 
@@ -22,14 +22,14 @@ ErinAskNumber2Text:
 	done
 
 ErinNumberAcceptedText:
-	ntag "Erin"
+	ntag " Erin "
 	text "I'll remember to"
 	line "call when I want"
 	cont "to battle again!"
 	done
 
 ErinNumberDeclinedText:
-	ntag "Erin"
+	ntag " Erin "
 	text "Oh… I'm sad…"
 	line "If you do want to"
 	cont "battle, come see"
@@ -37,19 +37,19 @@ ErinNumberDeclinedText:
 	done
 
 ErinPhoneFullText:
-	ntag "Erin"
+	ntag " Erin "
 	text "Oh no. Your phone"
 	line "is all filled up."
 	done
 
 ErinRematchText:
-	ntag "Erin"
+	ntag " Erin "
 	text "Yay! I waited!"
 	line "Let's start now!"
 	done
 
 ErinPackFullText:
-	ntag "Erin"
+	ntag " Erin "
 	text "That's too bad!"
 	line "You have no room…"
 
@@ -58,7 +58,7 @@ ErinPackFullText:
 	done
 
 ErinRematchGiftText:
-	ntag "Erin"
+	ntag " Erin "
 	text "Aww… I lost again!"
 
 	para "I wonder how many"

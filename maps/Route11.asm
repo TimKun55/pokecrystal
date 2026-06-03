@@ -90,13 +90,13 @@ YoungsterOwenSeenText:
 	done
 
 YoungsterOwenBeatenText:
-	ntag "Owen"
+	ntag " Owen "
 	text "Huh? How did this"
 	line "happen?"
 	done
 
 YoungsterOwenAfterBattleText:
-	ntag "Owen"
+	ntag " Owen "
 	text "I fought fair and"
 	line "square with honor."
 
@@ -112,13 +112,13 @@ YoungsterJasonSeenText:
 	done
 
 YoungsterJasonBeatenText:
-	ntag "Jason"
+	ntag " Jason "
 	text "Aiyaaah!"
 	line "I got stomped!"
 	done
 
 YoungsterJasonAfterBattleText:
-	ntag "Jason"
+	ntag " Jason "
 	text "I'm going to catch"
 	line "more #mon in"
 	cont "the grass."
@@ -129,12 +129,12 @@ PsychicHermanSeenText:
 	done
 
 PsychicHermanBeatenText:
-	ntag "Herman"
+	ntag " Herman "
 	text "…"
 	done
 
 PsychicHermanAfterBattleText:
-	ntag "Herman"
+	ntag " Herman "
 	text "…"
 
 	para "I lost while I had"
@@ -149,13 +149,13 @@ PsychicFidelSeenText:
 	done
 
 PsychicFidelBeatenText:
-	ntag "Fidel"
+	ntag " Fidel "
 	text "I couldn't foresee"
 	line "your power…"
 	done
 
 PsychicFidelAfterBattleText:
-	ntag "Fidel"
+	ntag " Fidel "
 	text "Strength in con-"
 	line "viction…"
 
@@ -170,12 +170,12 @@ JugglerAngusSeenText:
 	done
 
 JugglerAngusBeatenText:
-	ntag "Angus"
+	ntag " Angus "
 	text "Oh, they stopped."
 	done
 
 JugglerAngusAfterBattleText:
-	ntag "Angus"
+	ntag " Angus "
 	text "I need more"
 	line "concentration…"
 	done

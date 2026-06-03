@@ -244,12 +244,12 @@ BugCatcherWade1SeenText:
 	done
 
 BugCatcherWade1BeatenText:
-	ntag "Wade"
+	ntag " Wade "
 	text "Awwwww…"
 	done
 
 BugCatcherWade1AfterText:
-	ntag "Wade"
+	ntag " Wade "
 	text "You can catch"
 	line "#mon even if"
 	cont "you have six with"
@@ -281,7 +281,7 @@ Text_Route31SleepyManGotMail:
 	text "…Zzzz… Huh?@"
 	text_promptbutton
 	
-	ntag "Kirby"
+	ntag " Kirby "
 	text "Yes, I'm Kirby."
 	line "What's that? You"
 	cont "have Mail for me?"
@@ -294,7 +294,7 @@ Text_Route31HandOverMailMon:
 	done
 
 Text_Route31ReadingMail:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "Let's see…"
 
 	para "…Dark Cave leads"
@@ -319,7 +319,7 @@ Text_Route31ReadingMail:
 	done
 
 Text_Route31DescribeNightmare:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "TM50 is Nightmare."
 
 	para "It's a wicked move"
@@ -335,13 +335,13 @@ Text_Route31DescribeNightmare:
 	done
 
 Text_Route31WrongMail:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "This Mail isn't"
 	line "for me."
 	done
 
 Text_Route31MissingMail:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "Why is this #-"
 	line "mon so special?"
 
@@ -350,13 +350,13 @@ Text_Route31MissingMail:
 	done
 
 Text_Route31DeclinedToHandOverMail:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "What? You don't"
 	line "want anything?"
 	done
 
 Text_Route31CantTakeLastMon:
-	ntag "Kirby"
+	ntag " Kirby "
 	text "If I take that"
 	line "#mon from you,"
 	cont "what are you going"

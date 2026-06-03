@@ -29,12 +29,12 @@ HikerJimSeenText:
 	done
 
 HikerJimBeatenText:
-	ntag "Jim"
+	ntag " Jim "
 	text "Hahaha-hachoo!"
 	done
 
 HikerJimAfterBattleText:
-	ntag "Jim"
+	ntag " Jim "
 	text "Hay fever is"
 	line "making me sneeze!"
 	cont "Ahahah-CHOO!"
@@ -48,13 +48,13 @@ PokefanmRobertSeenText:
 	done
 
 PokefanmRobertBeatenText:
-	ntag "Robert"
+	ntag " Robert "
 	text "I'd have to say"
 	line "that's my loss."
 	done
 
 PokefanmRobertAfterBattleText:
-	ntag "Robert"
+	ntag " Robert "
 	text "Look what you did"
 	line "to my #mon…"
 

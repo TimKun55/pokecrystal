@@ -54,7 +54,7 @@ PewterPokecenter1FTeacherText:
 	done
 
 PewterJigglypuffText:
-	ntag "Jigglypuff"
+	ntag " Jigglypuff "
 	text "Puu puffpuff."
 	done
 

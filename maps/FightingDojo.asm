@@ -143,7 +143,7 @@ FightingDojoBlackBeltText:
 	done
 
 BlackbeltKonHPSpecialistText:
-	ntag "Kon"
+	ntag " Kon "
 	text "I'm Kon and I've"
 	text "been training"
 	line "#mon to boost"
@@ -153,24 +153,24 @@ BlackbeltKonHPSpecialistText:
 	done
 
 BlackbeltKonWinLossText:
-	ntag "Kon"
+	ntag " Kon "
 	text "Out healthed!"
 	done
 
 BlackbeltKonAfterBattleText:
-	ntag "Kon"
+	ntag " Kon "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltKonTrainAnytimeText:
-	ntag "Kon"
+	ntag " Kon "
 	text "Come back if you"
 	line "want to train."
 	done
 
 BlackbeltBoAttackSpecialistText:
-	ntag "Bo"
+	ntag " Bo "
 	text "I'm Bo and I've"
 	text "been training"
 	line "#mon to boost"
@@ -180,24 +180,24 @@ BlackbeltBoAttackSpecialistText:
 	done
 
 BlackbeltBoWinLossText:
-	ntag "Bo"
+	ntag " Bo "
 	text "Out attacked!"
 	done
 
 BlackbeltBoAfterBattleText:
-	ntag "Bo"
+	ntag " Bo "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltBoTrainAnytimeText:
-	ntag "Bo"
+	ntag " Bo "
 	text "Come back if you"
 	line "want to train."
 	done
 
 BlackbeltTomoTrainAnytimeText:
-	ntag "Tomo"
+	ntag " Tomo "
 	text "I'm Tomo and I've"
 	text "been training"
 	line "#mon to boost"
@@ -207,24 +207,24 @@ BlackbeltTomoTrainAnytimeText:
 	done
 
 BlackbeltTomoAfterBattleText:
-	ntag "Tomo"
+	ntag " Tomo "
 	text "Out defended!"
 	done
 
 BlackbeltTomoWinLossText:
-	ntag "Tomo"
+	ntag " Tomo "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltTomoDefenseSpecialistText:
-	ntag "Tomo"
+	ntag " Tomo "
 	text "Come back if you"
 	line "want to train."
 	done
 
 BlackbeltChuuSpAtkSpecialistText:
-	ntag "Chuu"
+	ntag " Chuu "
 	text "I'm Chuu and I've"
 	line "been training"
 	line "#mon to boost"
@@ -234,24 +234,24 @@ BlackbeltChuuSpAtkSpecialistText:
 	done
 
 BlackbeltChuuWinLossText:
-	ntag "Chuu"
+	ntag " Chuu "
 	text "Overpowered!"
 	done
 
 BlackbeltChuuAfterBattleText:
-	ntag "Chuu"
+	ntag " Chuu "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltChuuTrainAnytimeText:
-	ntag "Chuu"
+	ntag " Chuu "
 	text "Come back if you"
 	line "want to train."
 	done
 
 BlackbeltShinSpDefSpecialistText:
-	ntag "Shin"
+	ntag " Shin "
 	text "I'm Shin and I've"
 	line "been training"
 	line "#mon to boost"
@@ -261,24 +261,24 @@ BlackbeltShinSpDefSpecialistText:
 	done
 
 BlackbeltShinWinLossText:
-	ntag "Shin"
+	ntag " Shin "
 	text "Overwhelmed!"
 	done
 
 BlackbeltShinAfterBattleText:
-	ntag "Shin"
+	ntag " Shin "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltShinTrainAnytimeText:
-	ntag "Shin"
+	ntag " Shin "
 	text "Come back if you"
 	line "want to train."
 	done
 
 BlackbeltAanSpeedSpecialistText:
-	ntag "Aan"
+	ntag " Aan "
 	text "I'm Aan and I've"
 	line "been training"
 	line "#mon to boost"
@@ -288,17 +288,17 @@ BlackbeltAanSpeedSpecialistText:
 	done
 
 BlackbeltAanWinLossText:
-	ntag "Aan"
+	ntag " Aan "
 	text "Outsped!"
 
 BlackbeltAanAfterBattleText:
-	ntag "Aan"
+	ntag " Aan "
 	text "Come back for more"
 	line "attack training."
 	done
 
 BlackbeltAanTrainAnytimeText:
-	ntag "Aan"
+	ntag " Aan "
 	text "Come back if you"
 	line "want to train."
 	done

@@ -133,7 +133,7 @@ SeafoamGymStatue:
 	jumpstd GymStatue2Script
 
 BlaineIntroText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "Waaah!"
 
 	para "My original Gym"
@@ -160,7 +160,7 @@ BlaineIntroText:
 	done
 
 BlaineWinLossText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "Awesome."
 	line "I've burned out…"
 
@@ -174,7 +174,7 @@ ReceivedVolcanoBadgeText:
 	done
 
 BlaineAfterBattleText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "I did lose this"
 	line "time, but I'm"
 	cont "going to win the"
@@ -186,7 +186,7 @@ BlaineAfterBattleText:
 	done
 
 BlaineFightDoneText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "My fire #mon"
 	line "will be even"
 	cont "stronger."
@@ -194,7 +194,7 @@ BlaineFightDoneText:
 	done
 	
 BlaineRematchIntroText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "Ah, <PLAYER>!"
 	line "You've come back;"
 	
@@ -202,13 +202,13 @@ BlaineRematchIntroText:
 	done
 	
 BlaineWinLossRematchText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "Lost the battle"
 	line "but not spirit!"
 	done
 	
 BlaineRematchAfterBattleText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "A loss is a loss"
 	line "but the fire"
 	cont "hasn't gone out!"
@@ -219,13 +219,13 @@ BlaineRematchAfterBattleText:
 	done
 
 BlaineComeBackTomorrowText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "Let's have another"
 	line "battle tomorrow!"
 	done
 
 BlaineNextTimeText:
-	ntag "Blaine"
+	ntag " Blaine "
 	text "A shame!"
 	done
 
@@ -235,12 +235,12 @@ FirebreatherDickSeenText:
 	done
 
 FirebreatherDickBeatenText:
-	ntag "Dick"
+	ntag " Dick "
 	text "Extinguished!"
 	done
 
 FirebreatherDickAfterBattleText:
-	ntag "Dick"
+	ntag " Dick "
 	text "We've been working"
 	line "hard on getting"
 	cont "the Gym back up"
@@ -252,12 +252,12 @@ FirebreatherNedSeenText:
 	done
 
 FirebreatherNedBeatenText:
-	ntag "Ned"
+	ntag " Ned "
 	text "…mera…?"
 	done
 
 FirebreatherNedAfterBattleText:
-	ntag "Ned"
+	ntag " Ned "
 	text "All burnt out…"
 	
 	para "…mera…"
@@ -292,12 +292,12 @@ SeafoamGymGuideWinText:
 	done
 
 MagmarText:
-	ntag "Magmar"
-	text "Maaaar! MarMagmar!"
+	ntag " Magmar "
+	text "Maaaar! Magmaaar!"
 	done
 
 MagmortarText:
-	ntag "Magmortar"
+	ntag " Magmortar "
 	text "Mooor! Taaar!"
 	done
 

@@ -291,7 +291,7 @@ TinTower1FSage3EntersMovement:
 	step_end
 
 TinTower1FEusineSuicuneText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "Awesome!"
 	line "Too awesome, even!"
 
@@ -327,7 +327,7 @@ TinTower1FEusineSuicuneText:
 	done
 
 TinTower1FSage1Text:
-	ntag "Gaku"
+	ntag " Gaku "
 	text "According to"
 	line "legend…"
 
@@ -345,7 +345,7 @@ TinTower1FSage1Text:
 	done
 
 TinTower1FSage2Text:
-	ntag "Koji"
+	ntag " Koji "
 	text "When the Brass"
 	line "Tower burned down,"
 	cont "three nameless"
@@ -375,7 +375,7 @@ TinTower1FSage2Text:
 	done
 
 TinTower1FSage3Text:
-	ntag "Masa"
+	ntag " Masa "
 	text "The two Towers are"
 	line "said to have been"
 	cont "built to foster"
@@ -390,7 +390,7 @@ TinTower1FSage3Text:
 	done
 
 TinTower1FSage4Text1:
-	ntag "Gaku"
+	ntag " Gaku "
 	text "Use the Rainbow"
 	line "Wing to try and"
 	cont "summon Ho-Oh here,"
@@ -398,18 +398,18 @@ TinTower1FSage4Text1:
 	done
 
 TinTower1FSage5Text1:
-	ntag "Koji"
+	ntag " Koji "
 	text "This will protect"
 	line "you. Take it."
 	done
 
 TinTower1FSage5Text2:
-	ntag "Koji"
+	ntag " Koji "
 	text "Now, go."
 	done
 
 TinTower1FSage6Text1:
-	ntag "Masa"
+	ntag " Masa "
 	text "I believe you are"
 	line "being tested."
 
@@ -419,7 +419,7 @@ TinTower1FSage6Text1:
 	done
 
 TinTower1FEusineHoOhText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "I knew it."
 
 	para "I knew you'd get"
@@ -440,7 +440,7 @@ TinTower1FEusineHoOhText:
 	done
 
 TinTower1FSage4Text2:
-	ntag "Gaku"
+	ntag " Gaku "
 	text "The legendary"
 	line "#mon are said"
 	cont "to embody three"
@@ -457,7 +457,7 @@ TinTower1FSage4Text2:
 	done
 
 TinTower1FSage5Text3:
-	ntag "Koji"
+	ntag " Koji "
 	text "When the legendary"
 	line "#mon appeared…"
 
@@ -478,7 +478,7 @@ TinTower1FSage5Text3:
 	done
 
 TinTower1FSage6Text2:
-	ntag "Masa"
+	ntag " Masa "
 	text "Of the legendary"
 	line "#mon, Suicune"
 	cont "is said to be the"

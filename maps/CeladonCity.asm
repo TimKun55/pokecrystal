@@ -189,7 +189,7 @@ CeladonCityFisherText:
 	done
 
 CeladonCityPoliwrathText:
-	ntag "Poliwrath"
+	ntag " Poliwrath "
 	text "Croak!"
 	done
 

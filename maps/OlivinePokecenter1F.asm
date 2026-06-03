@@ -115,7 +115,7 @@ OlivinePokecenter1FTeacherText:
 	done
 	
 OlivinePokecenter1FTutorIntro:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hi there!"
 	line "I'm a Move Tutor!"
 	
@@ -127,13 +127,13 @@ OlivinePokecenter1FTutorIntro:
 	done
 	
 OlivinePokecenter1FAskYesNo:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Should I teach"
 	line "them a move?"
 	done
 
 OlivinePokecenter1FTutorRefusalText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back here"
 	line "if you want to"
 	
@@ -143,13 +143,13 @@ OlivinePokecenter1FTutorRefusalText:
 	done
 
 OlivinePokecenter1FTutorWontRegretText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Great! You won't"
 	line "regret it!"
 	done
 
 OlivinePokecenter1FTutorWhichMoveText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Which move should"
 	line "I teach?"
 	done
@@ -160,13 +160,13 @@ OlivinePokecenter1FTutorPayment:
 	done
 	
 OlivinePokecenter1FTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Oh, sorry, you"
 	line "can't afford it."
 	done
 
 OlivinePokecenter1FTutorUseWisely:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Use these wisely"
 	line "to your advantage"
 	cont "in battle."

@@ -1,5 +1,5 @@
 ReenaAskNumber1Text:
-	ntag "Reena"
+	ntag " Reena "
 	text "Not bad…"
 	line "It's something to"
 	cont "beat me, even by"
@@ -13,7 +13,7 @@ ReenaAskNumber1Text:
 	done
 
 ReenaAskNumber2Text:
-	ntag "Reena"
+	ntag " Reena "
 	text "Give me your phone"
 	line "number!"
 
@@ -23,7 +23,7 @@ ReenaAskNumber2Text:
 	done
 
 ReenaNumberAcceptedText:
-	ntag "Reena"
+	ntag " Reena "
 	text "Don't be too proud"
 	line "about beating me!"
 
@@ -31,20 +31,20 @@ ReenaNumberAcceptedText:
 	done
 
 ReenaNumberDeclinedText:
-	ntag "Reena"
+	ntag " Reena "
 	text "I don't believe"
 	line "it! You're going"
 	cont "to regret this!"
 	done
 
 ReenaPhoneFullText:
-	ntag "Reena"
+	ntag " Reena "
 	text "What? Your phone"
 	line "list has no room!"
 	done
 
 ReenaRematchText:
-	ntag "Reena"
+	ntag " Reena "
 	text "What took you?"
 	line "Start right away!"
 	done

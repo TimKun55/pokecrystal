@@ -247,7 +247,7 @@ LakeOfRageLanceIntroText:
 	para "You're <PLAYER>?@"
 	text_promptbutton
 
-	ntag "Lance"
+	ntag " Lance "
 	text "I'm Lance, a"
 	cont "trainer like you."
 
@@ -270,7 +270,7 @@ LakeOfRageLanceIntroText:
 	done
 
 LakeOfRageLanceRadioSignalText:
-	ntag "Lance"
+	ntag " Lance "
 	text "Excellent!"
 
 	para "It seems that the"
@@ -288,20 +288,20 @@ LakeOfRageLanceRadioSignalText:
 	done
 
 LakeOfRageLanceRefusedText:
-	ntag "Lance"
+	ntag " Lance "
 	text "Oh… Well, if you"
 	line "change your mind,"
 	cont "please help me."
 	done
 
 LakeOfRageLanceAskHelpText:
-	ntag "Lance"
+	ntag " Lance "
 	text "Hm? Are you going"
 	line "to help me?"
 	done
 
 LakeOfRageGyaradosCryText:
-	ntag "Gyarados"
+	ntag " Gyarados "
 	text "Gyashaa!"
 	done
 
@@ -351,7 +351,7 @@ FisherAndreSeenText:
 	done
 
 FisherAndreBeatenText:
-	ntag "Andre"
+	ntag " Andre "
 	text "I might be an ex-"
 	line "pert angler, but"
 	cont "I stink as a #-"
@@ -359,7 +359,7 @@ FisherAndreBeatenText:
 	done
 
 FisherAndreAfterBattleText:
-	ntag "Andre"
+	ntag " Andre "
 	text "I won't lose as an"
 	line "angler! I catch"
 	cont "#mon all day."
@@ -373,13 +373,13 @@ FisherRaymondSeenText:
 	done
 
 FisherRaymondBeatenText:
-	ntag "Raymond"
+	ntag " Raymond "
 	text "My line's all"
 	line "tangled up…"
 	done
 
 FisherRaymondAfterBattleText:
-	ntag "Raymond"
+	ntag " Raymond "
 	text "Why can't I catch"
 	line "any good #mon?"
 	done
@@ -395,13 +395,13 @@ CooltrainermAaronSeenText:
 	done
 
 CooltrainermAaronBeatenText:
-	ntag "Aaron"
+	ntag " Aaron "
 	text "Whew…"
 	line "Good battle."
 	done
 
 CooltrainermAaronAfterBattleText:
-	ntag "Aaron"
+	ntag " Aaron "
 	text "#mon and their"
 	line "trainer become"
 	cont "powerful through"
@@ -422,19 +422,19 @@ CooltrainerfLoisSeenText:
 	done
 
 CooltrainerfLoisBeatenText:
-	ntag "Lois"
+	ntag " Lois "
 	text "Good going!"
 	done
 
 CooltrainerfLoisAfterBattleText:
-	ntag "Lois"
+	ntag " Lois "
 	text "Come to think of"
 	line "it, I've seen a"
 	cont "pink Butterfree."
 	done
 
 MeetWesleyText:
-	ntag "Wesley"
+	ntag " Wesley "
 	text "Well, how"
 	line "do you do?"
 
@@ -445,21 +445,21 @@ MeetWesleyText:
 	done
 
 WesleyGivesGiftText:
-	ntag "Wesley"
+	ntag " Wesley "
 	text "Pleased to meet"
 	line "you. Please take a"
 	cont "souvenir."
 	done
 
 WesleyGaveGiftText:
-	ntag "Wesley"
+	ntag " Wesley "
 	text "Blackbelt beefs"
 	line "up the power of"
 	cont "fighting moves."
 	done
 
 WesleyWednesdayText:
-	ntag "Wesley"
+	ntag " Wesley "
 	text "Since you found"
 	line "me, you must have"
 	cont "met my brothers"
@@ -470,7 +470,7 @@ WesleyWednesdayText:
 	done
 
 WesleyNotWednesdayText:
-	ntag "Wesley"
+	ntag " Wesley "
 	text "Today's not"
 	line "Wednesday."
 	cont "That's too bad."

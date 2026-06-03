@@ -745,7 +745,7 @@ IlexForestPlayerStepsDownMovement:
 	step_end
 
 IlexForestApprenticeIntroText:
-	ntag "Apprentice"
+	ntag " Apprentice "
 	text "Oh, man… My boss"
 	line "is going to be"
 	cont "steaming…"
@@ -764,7 +764,7 @@ IlexForestApprenticeIntroText:
 	done
 
 IlexForestApprenticeAfterText:
-	ntag "Apprentice"
+	ntag " Apprentice "
 	text "Wow! Thanks a"
 	line "whole bunch!"
 
@@ -780,12 +780,12 @@ Text_ItsTheMissingPokemon:
 	done
 
 Text_Kwaaaa:
-	ntag "Farfetch'd"
+	ntag " Farfetch'd "
 	text "Kwaa!"
 	done
 
 Text_CharcoalMasterIntro:
-	ntag "Kiln Boss"
+	ntag " Kiln Boss "
 	text "Ah! My Farfetch'd!"
 
 	para "You found it for"
@@ -806,7 +806,7 @@ Text_CharcoalMasterIntro:
 	done
 
 Text_CharcoalMasterOutro:
-	ntag "Kiln Boss"
+	ntag " Kiln Boss "
 	text "That's the Cut HM."
 	line "Teach that to a"
 	cont "#mon to clear"
@@ -819,7 +819,7 @@ Text_CharcoalMasterOutro:
 	done
 
 Text_CharcoalMasterTalkAfter:
-	ntag "Kiln Boss"
+	ntag " Kiln Boss "
 	text "Do you want to"
 	line "apprentice as a"
 	cont "charcoal maker"
@@ -897,7 +897,7 @@ Text_InsertGSBall:
 	done
 
 Text_KurtCaughtCelebi:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Whew, wasn't that"
 	line "something!"
 
@@ -926,13 +926,13 @@ BugCatcherWayneSeenText:
 	done
 
 BugCatcherWayneBeatenText:
-	ntag "Wayne"
+	ntag " Wayne "
 	text "I hadn't seen that"
 	line "#mon before…"
 	done
 
 BugCatcherWayneAfterBattleText:
-	ntag "Wayne"
+	ntag " Wayne "
 	text "A #mon I've"
 	line "never seen before"
 	cont "fell out of the"
@@ -952,12 +952,12 @@ BugManiacBobbySeenText:
 	done
 
 BugManiacBobbyBeatenText:
-	ntag "Bobby"
+	ntag " Bobby "
 	text "Not bad!"
 	done
 
 BugManiacBobbyAfterBattleText:
-	ntag "Bobby"
+	ntag " Bobby "
 	text "Wow, yeah you"
 	line "definitely beat"
 	cont "Bugsy with that"

@@ -74,13 +74,13 @@ CooltrainermCodySeenText:
 	done
 
 CooltrainermCodyBeatenText:
-	ntag "Cody"
+	ntag " Cody "
 	text "Rats! If only I"
 	line "had a dragon!"
 	done
 
 CooltrainermCodyAfterBattleText:
-	ntag "Cody"
+	ntag " Cody "
 	text "Members of our"
 	line "dragon-user clan"
 	cont "can use dragon"
@@ -99,12 +99,12 @@ CooltrainerfFranSeenText:
 	done
 
 CooltrainerfFranBeatenText:
-	ntag "Fran"
+	ntag " Fran "
 	text "Awww… I lost…"
 	done
 
 CooltrainerfFranAfterBattleText:
-	ntag "Fran"
+	ntag " Fran "
 	text "Uh-oh… Clair is"
 	line "going to be mad…"
 	done

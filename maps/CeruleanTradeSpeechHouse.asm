@@ -51,12 +51,12 @@ CeruleanTradeSpeechHouseGrampsText:
 	done
 
 CeruleanTradeSpeechHouseKangaskhanText:
-	ntag "Kangaskhan"
+	ntag " Kangaskhan "
 	text "Garu garuu."
 	done
 
 CeruleanTradeSpeechHouseZubatText:
-	ntag "Zubat"
+	ntag " Zubat "
 	text "Zuba zubaa."
 	done
 

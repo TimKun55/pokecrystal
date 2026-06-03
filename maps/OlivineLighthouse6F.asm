@@ -223,7 +223,7 @@ JasmineCianwoodPharmacyText:
 	text " … oh, hello.@"
 	text_promptbutton
 
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "I'm Jasmine … "
 
 	para " … This #mon"
@@ -247,14 +247,14 @@ JasmineCianwoodPharmacyText:
 	done
 
 JasmineGetSomeMedicineText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "…May I ask you to"
 	line "get some medicine"
 	cont "for me? Please?"
 	done
 
 JasmineCureAmphyText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text " …Will that"
 	line "medicine cure"
 	cont "Amphy?"
@@ -267,7 +267,7 @@ PlayerHandedSecretpotionText:
 	done
 
 JasmineDontBeOffendedText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text " …Um, please don't"
 	line "be offended…"
 
@@ -277,7 +277,7 @@ JasmineDontBeOffendedText:
 	done
 
 JasmineAmphyHowAreYouFeelingText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text " …"
 
 	para "Amphy, how are you"
@@ -285,7 +285,7 @@ JasmineAmphyHowAreYouFeelingText:
 	done
 
 JasmineThankYouText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text " …Oh, I'm so"
 	line "relieved…"
 
@@ -300,17 +300,17 @@ JasmineThankYouText:
 	done
 
 JasmineISeeText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text " …I see…"
 	done
 
 JasmineAmphyHangOnText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "…Amphy, hang on!"
 	done
 
 AmphyPalPalooText:
-	ntag "Amphy"
+	ntag " Amphy "
 	text " …"
 	line "…Pa… paloo…"
 	done
@@ -321,7 +321,7 @@ AmphyBreathingLaboredText:
 	done
 
 AmphyPaluPaluluText:
-	ntag "Amphy"
+	ntag " Amphy "
 	text "Palu! Palulu!"
 	done
 

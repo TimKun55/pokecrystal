@@ -206,19 +206,19 @@ Route37Entei2Movement:
 	step_end
 
 TwinsAnnandanne1SeenText:
-	ntag "Ann"
+	ntag " Ann "
 	text "Anne and I are in"
 	line "this together!"
 	done
 
 TwinsAnnandanneBeatenText:
-	ntag "Ann & Anne"
+	ntag " Ann & Anne "
 	text "Nnn… A little"
 	line "too strong."
 	done
 
 TwinsAnnandanne1AfterBattleText:
-	ntag "Ann"
+	ntag " Ann "
 	text "I can tell what"
 	line "my sister and"
 	cont "my #mon are"
@@ -226,13 +226,13 @@ TwinsAnnandanne1AfterBattleText:
 	done
 
 TwinsAnnandanne2SeenText:
-	ntag "Anne"
+	ntag " Anne "
 	text "Ann and I are in"
 	line "this together!"
 	done
 
 TwinsAnnandanne2AfterBattleText:
-	ntag "Anne"
+	ntag " Anne"
 	text "We share the same"
 	line "feelings as our"
 	cont "#mon."
@@ -248,13 +248,13 @@ PsychicGregSeenText:
 	done
 
 PsychicGregBeatenText:
-	ntag "Greg"
+	ntag " Greg "
 	text "I lost. That's"
 	line "pretty sad…"
 	done
 
 PsychicGregAfterBattleText:
-	ntag "Greg"
+	ntag " Greg "
 	text "Putting #mon to"
 	line "sleep or paralyz-"
 	cont "ing them are good"
@@ -268,12 +268,12 @@ BugManiacCarlSeenText:
 	done
 
 BugManiacCarlBeatenText:
-	ntag "Carl"
+	ntag " Carl "
 	text "Well…"
 	done
 
 BugManiacCarlAfterBattleText:
-	ntag "Carl"
+	ntag " Carl "
 	text "Haha, guess I"
 	line "should train more"
 
@@ -282,7 +282,7 @@ BugManiacCarlAfterBattleText:
 	done
 
 MeetSunnyText:
-	ntag "Sunny"
+	ntag " Sunny "
 	text "Hi!"
 
 	para "I'm Sunny of Sun-"
@@ -291,14 +291,14 @@ MeetSunnyText:
 	done
 
 SunnyGivesGiftText:
-	ntag "Sunny"
+	ntag " Sunny "
 	text "I was told to give"
 	line "you this if I saw"
 	cont "you!"
 	done
 
 SunnyGaveGiftText:
-	ntag "Sunny"
+	ntag " Sunny "
 	text "That thing…"
 
 	para "Um…"
@@ -321,7 +321,7 @@ SunnyGaveGiftText:
 	done
 
 SunnySundayText:
-	ntag "Sunny"
+	ntag " Sunny "
 	text "My sisters and"
 	line "brothers are"
 	cont "Monica, Tuscany,"
@@ -333,7 +333,7 @@ SunnySundayText:
 	done
 
 SunnyNotSundayText:
-	ntag "Sunny"
+	ntag " Sunny "
 	text "Isn't today"
 	line "Sunday?"
 	cont "Um… I forgot!"

@@ -83,7 +83,7 @@ BlackthornMoveTutorHouseYoungster:
 	jumptextfaceplayer BlackthornMoveTutorHouseYoungsterText
 
 BlackthornAskTeachAMoveText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hello, dear."
 	line "Have you come to"
 	cont "learn a new move?"
@@ -98,27 +98,27 @@ BlackthornAskTeachAMoveText:
 	done
 	
 BlackthornAskYesNo:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Should I teach"
 	line "them a move, dear?"
 	done
 
 BlackthornMoveTutorRefusalText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back if you"
 	line "want a new move,"
 	cont "dear."
 	done
 
 BlackthornMoveTutorWontRegretText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Very good. You"
 	line "won't regret it,"
 	cont "dear."
 	done
 
 BlackthornMoveTutorWhichMoveText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Which move should"
 	line "I teach, dear?"
 	done
@@ -129,14 +129,14 @@ BlackthornMoveTutorPayment:
 	done
 	
 BlackthornMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Ooh, I'm sorry,"
 	line "dear, you don't"
 	cont "have enough…"
 	done
 
 BlackthornMoveTutorUseWisely:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Bye-bye, dear."
 	
 	para "good luck on your"

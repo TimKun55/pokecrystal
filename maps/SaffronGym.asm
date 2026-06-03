@@ -145,7 +145,7 @@ SaffronGymStatue:
 	jumpstd GymStatue2Script
 
 SabrinaIntroText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "I knew you were"
 	line "coming…"
 
@@ -170,7 +170,7 @@ SabrinaIntroText:
 	done
 
 SabrinaWinLossText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "Your power…"
 
 	para "It far exceeds"
@@ -192,7 +192,7 @@ ReceivedMarshBadgeText:
 	done
 
 SabrinaMarshBadgeText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "The MarshBadge"
 	line "draws out your"
 	cont "subliminal powers…"
@@ -209,7 +209,7 @@ SabrinaMarshBadgeText:
 	done
 
 SabrinaFightDoneText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "Your love for your"
 	line "#mon over-"
 	cont "whelmed my psychic"
@@ -222,7 +222,7 @@ SabrinaFightDoneText:
 	done
 
 SabrinaRematchIntroText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "<PLAYER>."
 	line "I had a feeling"
 	cont "you would be back."
@@ -232,12 +232,12 @@ SabrinaRematchIntroText:
 	done
 
 SabrinaWinLossRematchText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "I see…"
 	done
 
 SabrinaRematchAfterBattleText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "Your powers are"
 	line "growing well."
 
@@ -247,14 +247,14 @@ SabrinaRematchAfterBattleText:
 	done
 
 SabrinaComeBackTomorrowText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "Return tomorrow"
 	line "and we may battle"
 	cont "once more."
 	done
 
 SabrinaNextTimeText:
-	ntag "Sabrina"
+	ntag " Sabrina "
 	text "I see…"
 	done
 
@@ -265,13 +265,13 @@ HexManiacRebeccaSeenText:
 	done
 
 HexManiacRebeccaBeatenText:
-	ntag "Rebecca"
+	ntag " Rebecca "
 	text "Strong…"
 	line "Far too strong…"
 	done
 
 HexManiacRebeccaAfterBattleText:
-	ntag "Rebecca"
+	ntag " Rebecca "
 	text "What is the source"
 	line "of your power?"
 	done
@@ -283,13 +283,13 @@ PsychicFranklinSeenText:
 	done
 
 PsychicFranklinBeatenText:
-	ntag "Franklin"
+	ntag " Franklin "
 	text "Your soul has more"
 	line "power than mine!"
 	done
 
 PsychicFranklinAfterBattleText:
-	ntag "Franklin"
+	ntag " Franklin "
 	text "You made your soul"
 	line "stronger, not just"
 	cont "your abilities."
@@ -304,13 +304,13 @@ HexManiacDorisSeenText:
 	done
 
 HexManiacDorisBeatenText:
-	ntag "Doris"
+	ntag " Doris "
 	text "Though I read you,"
 	line "I still lost…"
 	done
 
 HexManiacDorisAfterBattleText:
-	ntag "Doris"
+	ntag " Doris "
 	text "Darn! I forgot"
 	line "that I predicted I"
 	cont "would lose to you."
@@ -323,12 +323,12 @@ PsychicJaredSeenText:
 	done
 
 PsychicJaredBeatenText:
-	ntag "Jared"
+	ntag " Jared "
 	text "I was no match…"
 	done
 
 PsychicJaredAfterBattleText:
-	ntag "Jared"
+	ntag " Jared "
 	text "Karate King, the"
 	line "master of the"
 	cont "Fighting Dojo, was"
@@ -359,7 +359,7 @@ SaffronGymGuideWinText:
 	done
 	
 AlakazamText:
-	ntag "Alakazam"
+	ntag " Alakazam "
 	text "Zaam! Kazaa!"
 	done
 

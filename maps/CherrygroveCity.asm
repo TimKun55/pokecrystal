@@ -294,7 +294,7 @@ CherrygroveCity_RivalExitsStageLeft:
 	step_end
 
 GuideGentIntroText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "You're a rookie"
 	line "trainer, aren't"
 	cont "you? I can tell!"
@@ -309,13 +309,13 @@ GuideGentIntroText:
 	done
 
 GuideGentTourText1:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "OK, then!"
 	line "Follow me!"
 	done
 
 GuideGentPokecenterText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "This is a #mon"
 	line "Center. They heal"
 	cont "your #mon in no"
@@ -339,7 +339,7 @@ GuideGentPokecenterText:
 	done
 
 GuideGentMoveTutorHouseText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "Most Cities and"
 	line "Towns have special"
 	cont "houses like this."
@@ -357,7 +357,7 @@ GuideGentMoveTutorHouseText:
 	done
 
 GuideGentRoute30Text:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "Route 30 is out"
 	line "this way."
 
@@ -368,7 +368,7 @@ GuideGentRoute30Text:
 	done
 
 GuideGentSeaText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "This is the sea,"
 	line "as you can see."
 
@@ -378,7 +378,7 @@ GuideGentSeaText:
 	done
 
 GuideGentGiftText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "Here…"
 
 	para "It's my house!"
@@ -395,7 +395,7 @@ GotMapCardText:
 	done
 
 GuideGentPokegearText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "#gear becomes"
 	line "more useful as you"
 	cont "add Cards."
@@ -405,7 +405,7 @@ GuideGentPokegearText:
 	done
 
 GuideGentNoText:
-	ntag "Guide Gent"
+	ntag " Guide Gent "
 	text "Oh… It's something"
 	line "I enjoy doing…"
 
@@ -414,7 +414,7 @@ GuideGentNoText:
 	done
 
 CherrygroveRivalText_Seen:
-	ntag "???"
+	ntag " ??? "
 	text "<……> <……> <……>"
 
 	para "You got a #mon"
@@ -436,19 +436,19 @@ CherrygroveRivalText_Seen:
 	done
 
 RivalCherrygroveWinText:
-	ntag "???"
+	ntag " ??? "
 	text "Humph. Are you"
 	line "happy you won?"
 	done
 
 RivalCherrygroveLossText:
-	ntag "???"
+	ntag " ??? "
 	text "Humph. That was a"
 	line "waste of time."
 	done
 
 CherrygroveRivalText_AfterBattle:
-	ntag "???"
+	ntag " ??? "
 	text "Oh no! You saw my"
 	line "Trainer Card!"
 	cont "Give that back!"

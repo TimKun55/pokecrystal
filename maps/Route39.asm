@@ -193,7 +193,7 @@ Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
 
 Route39MiltankText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "Mooo!"
 	done
 
@@ -206,12 +206,12 @@ SailorEugeneSeenText:
 	done
 
 SailorEugeneBeatenText:
-	ntag "Eugene"
+	ntag " Eugene "
 	text "Awaaargh!"
 	done
 
 SailorEugeneAfterBattleText:
-	ntag "Eugene"
+	ntag " Eugene "
 	text "My #mon were"
 	line "caught and raised"
 	cont "overseas."
@@ -228,13 +228,13 @@ PokefanmDerekSeenText:
 	done
 
 PokefanmDerekBeatenText:
-	ntag "Derek"
+	ntag " Derek "
 	text "I had no time to"
 	line "show off Pikachu…"
 	done
 
 PokefanMDerekText_NotBragging:
-	ntag "Derek"
+	ntag " Derek "
 	text "I'm not listening"
 	line "to your bragging!"
 
@@ -254,13 +254,13 @@ PokefanfRuthSeenText:
 	done
 
 PokefanfRuthBeatenText:
-	ntag "Ruth"
+	ntag " Ruth "
 	text "I don't mind"
 	line "losing."
 	done
 
 PokefanfRuthAfterBattleText:
-	ntag "Ruth"
+	ntag " Ruth "
 	text "Do you know about"
 	line "baby #mon?"
 
@@ -269,7 +269,7 @@ PokefanfRuthAfterBattleText:
 	done
 
 PokefanMDerekPikachuIsItText:
-	ntag "Derek"
+	ntag " Derek "
 	text "Pikachu is it!"
 	line "Don't you agree?"
 	done
@@ -281,13 +281,13 @@ PsychicNormanSeenText:
 	done
 
 PsychicNormanBeatenText:
-	ntag "Norman"
+	ntag " Norman "
 	text "Ooh, your #mon"
 	line "have potential."
 	done
 
 PsychicNormanAfterBattleText:
-	ntag "Norman"
+	ntag " Norman "
 	text "You know how #-"
 	line "mon have different"
 	cont "abilities?"
@@ -304,12 +304,12 @@ BugManiacPeteSeenText:
 	done
 
 BugManiacPeteBeatenText:
-	ntag "Pete"
+	ntag " Pete "
 	text "Oh, I lost?"
 	done
 
 BugManiacPeteAfterBattleText:
-	ntag "Pete"
+	ntag " Pete "
 	text "You're really"
 	line "good at this!"
 	done
@@ -320,7 +320,7 @@ PokefanfJaimeHopeItGetsDarkText:
 	done
 
 PokefanfJaimeBeatenHopeItGetsDarkText:
-	ntag "Jaime"
+	ntag " Jaime "
 	text "Ufufufu… I hope it"
 	line "gets dark soon."
 	done
@@ -333,13 +333,13 @@ PokefanfJaimeSeenText:
 	done
 
 PokefanfJaimeBeatenText:
-	ntag "Jaime"
+	ntag " Jaime "
 	text "Oh, how disap-"
 	line "pointing…"
 	done
 
 PokefanfJaimeAfterBattleText:
-	ntag "Jaime"
+	ntag " Jaime "
 	text "I met my Meowth at"
 	line "night, right here"
 	cont "on Route 39."

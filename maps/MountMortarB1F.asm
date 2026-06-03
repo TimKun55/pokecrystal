@@ -70,7 +70,7 @@ MountMortarB1FKiyoIntroText:
 	text "Hey!@"
 	text_promptbutton
 
-	ntag "Kiyo"
+	ntag " Kiyo "
 	para "I am Kiyo the"
 	line "Karate King!"
 
@@ -84,13 +84,13 @@ MountMortarB1FKiyoIntroText:
 	done
 
 MountMortarB1FKiyoWinText:
-	ntag "Kiyo"
+	ntag " Kiyo "
 	text "Waaaarggh!"
 	line "I'm beaten!"
 	done
 
 MountMortarB1FTyrogueRewardText:
-	ntag "Kiyo"
+	ntag " Kiyo "
 	text "I… I'm crushed…"
 
 	para "My training is"
@@ -111,7 +111,7 @@ MountMortarB1FReceiveMonText:
 	done
 
 MountMortarB1FKiyoGotTyrogueText:
-	ntag "Kiyo"
+	ntag " Kiyo "
 	text "Tyrogue is a"
 	line "fighting-type."
 
@@ -126,7 +126,7 @@ MountMortarB1FKiyoGotTyrogueText:
 	done
 
 MountMortarB1FKiyoFullPartyText:
-	ntag "Kiyo"
+	ntag " Kiyo "
 	text "You have no room"
 	line "in your party!"
 	done

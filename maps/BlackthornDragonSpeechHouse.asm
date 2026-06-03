@@ -38,7 +38,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	done
 
 BlackthornDragonSpeechHouseDratiniText:
-	ntag "Dratini"
+	ntag " Dratini "
 	text "Draa!"
 	done
 

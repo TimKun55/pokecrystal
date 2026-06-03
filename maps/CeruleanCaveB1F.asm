@@ -68,7 +68,7 @@ SomethingPowerfulText:
 	done
 
 MewtwoText:
-	ntag "Mewtwo"
+	ntag " Mewtwo "
 	text "Twoooooo!"
 	done
 

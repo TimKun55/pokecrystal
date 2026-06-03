@@ -159,7 +159,7 @@ BrunosRoom_EnterMovement:
 	step_end
 
 BrunoBeforeText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "I am Bruno of the"
 	line "Elite Four."
 
@@ -188,13 +188,13 @@ BrunoBeforeText:
 	done
 
 BrunoBeatenText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Why? How could we"
 	line "lose?"
 	done
 
 BrunoDefeatText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Having lost, I"
 	line "have no right to"
 	cont "say anything…"
@@ -204,7 +204,7 @@ BrunoDefeatText:
 	done
 
 BrunoChampionMatchBeforeText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "You've returned,"
 	line "Champion <PLAYER>."
 	
@@ -215,18 +215,18 @@ BrunoChampionMatchBeforeText:
 	done
 
 BrunoChampionMatchBeatenText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "We lost again!"
 	done
 
 BrunoChampionMatchDefeatText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "It's clear we need"
 	line "more training."
 	done
 
 Bruno16BadgesBeforeText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 	
@@ -240,12 +240,12 @@ Bruno16BadgesBeforeText:
 	done
 
 Bruno16BadgesBeatenText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Another defeat."
 	done
 
 Bruno16BadgesDefeatText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "You are quite the"
 	line "capable person."
 	
@@ -260,7 +260,7 @@ Bruno16BadgesDefeatText:
 	done
 
 BrunoGrandChampionBeforeText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Grand Champion,"
 	line "<PLAYER>."
 	
@@ -273,20 +273,20 @@ BrunoGrandChampionBeforeText:
 	done
 
 BrunoGrandChampionBeatenText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "Hoo hahahaha!"
 	line "You're too good!"
 	done
 
 BrunoGrandChampionDefeatText:
-	ntag "Bruno"
+	ntag " Bruno "
 	text "I expected nothing"
 	line "less from one of"
 	cont "the best trainers!"
 	done
 	
 MachampText:
-	ntag "Machamp"
+	ntag " Machamp "
 	text "Champ! Machmach!"
 	done
 

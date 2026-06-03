@@ -1,5 +1,5 @@
 DanaAskNumber1Text:
-	ntag "Dana"
+	ntag " Dana "
 	text "You're really good"
 	line "at #mon!"
 
@@ -17,7 +17,7 @@ DanaAskNumber1Text:
 	done
 
 DanaAskNumber2Text:
-	ntag "Dana"
+	ntag " Dana "
 	text "I'll share my"
 	line "gifts with you."
 
@@ -26,7 +26,7 @@ DanaAskNumber2Text:
 	done
 
 DanaNumberAcceptedText:
-	ntag "Dana"
+	ntag " Dana "
 	text "Next time a boy"
 	line "gives me something"
 	cont "after a battle,"
@@ -37,7 +37,7 @@ DanaNumberAcceptedText:
 	done
 
 DanaNumberDeclinedText:
-	ntag "Dana"
+	ntag " Dana "
 	text "Aww, you don't"
 	line "want anything?"
 
@@ -46,13 +46,13 @@ DanaNumberDeclinedText:
 	done
 
 DanaPhoneFullText:
-	ntag "Dana"
+	ntag " Dana "
 	text "But your phone's"
 	line "out of memory!"
 	done
 
 DanaRematchText:
-	ntag "Dana"
+	ntag " Dana "
 	text "You're really"
 	line "late!"
 
@@ -61,7 +61,7 @@ DanaRematchText:
 	done
 
 DanaGiftText:
-	ntag "Dana"
+	ntag " Dana "
 	text "Hi! Are you here"
 	line "for your gift?"
 
@@ -70,7 +70,7 @@ DanaGiftText:
 	done
 
 DanaPackFullText:
-	ntag "Dana"
+	ntag " Dana "
 	text "Where are you"
 	line "going to put this?"
 

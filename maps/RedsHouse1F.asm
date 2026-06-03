@@ -99,7 +99,7 @@ PlayerMovesForRedsMumMovement:
 	step_end
 
 RedsMumText1:
-	ntag "Red's Mum"
+	ntag " Red's Mum "
 	text "Hi!"
 
 	para "Red's been away"
@@ -119,7 +119,7 @@ RedsMumText1:
 	done
 
 RedsMumText2:
-	ntag "Red's Mum"
+	ntag " Red's Mum "
 	text "I worry about Red"
 	line "getting hurt or"
 	cont "sick, but he's"
@@ -131,7 +131,7 @@ RedsMumText2:
 	done
 
 RedsMumSomethingForPlayerText:
-	ntag "Red's Mum"
+	ntag " Red's Mum "
 	text "Oh, it's you!"
 	
 	para "Red stopped by"
@@ -150,7 +150,7 @@ RedsMumSomethingForPlayerText:
 	done
 
 RedsMumTrophyText:
-	ntag "Red's Mum"
+	ntag " Red's Mum "
 	text "This is a trophy"
 	line "Red earned from"
 	cont "being recognised"
@@ -178,7 +178,7 @@ CrystalTrophySentHomeText:
 	done
 	
 RedsMumTrophyAfterText:
-	ntag "Red's Mum"
+	ntag " Red's Mum "
 	text "I can't believe"
 	line "you beat my Red."
 	

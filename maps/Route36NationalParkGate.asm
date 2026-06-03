@@ -382,7 +382,7 @@ Route36NationalParkGatePlayerWaitWithContestantsMovement:
 	step_end
 
 Route36NationalParkGateOfficer1AskToParticipateText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Today's @"
 	text_ram wStringBuffer3
 	text "."
@@ -403,7 +403,7 @@ Route36NationalParkGateOfficer1AskToParticipateText:
 	done
 
 Route36NationalParkGateOfficer1GiveParkBallsText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Here are the Park"
 	line "Balls for the"
 	cont "Contest."
@@ -415,7 +415,7 @@ Route36NationalParkGatePlayerReceivedParkBallsText:
 	done
 
 Route36NationalParkGateOfficer1ExplainsRulesText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "The person who"
 	line "gets the strong-"
 	cont "est bug #mon"
@@ -439,7 +439,7 @@ Route36NationalParkGateOfficer1ExplainsRulesText:
 	done
 
 Route36NationalParkGateOfficer1AskToUseFirstMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 
 	para "You have more than"
@@ -457,7 +457,7 @@ Route36NationalParkGateOfficer1AskToUseFirstMonText:
 	done
 
 Route36NationalParkGateOfficer1WellHoldYourMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Fine, we'll hold"
 	line "your other #mon"
 	cont "while you compete."
@@ -470,7 +470,7 @@ Route36NationalParkGatePlayersMonLeftWithHelperText:
 	done
 
 Route36NationalParkGateOfficer1ChooseMonAndComeBackText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Please choose the"
 	line "#mon to be used"
 	cont "in the Contest,"
@@ -478,14 +478,14 @@ Route36NationalParkGateOfficer1ChooseMonAndComeBackText:
 	done
 
 Route36NationalParkGateOfficer1TakePartInFutureText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. We hope you'll"
 	line "take part in the"
 	cont "future."
 	done
 
 Route36NationalParkGateOfficer1FirstMonCantBattleText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "The first #mon"
 	cont "in your party"
@@ -498,7 +498,7 @@ Route36NationalParkGateOfficer1FirstMonCantBattleText:
 	done
 
 Route36NationalParkGateOfficer1MakeRoomText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "Both your party"
 	cont "and your PC Box"
@@ -515,7 +515,7 @@ Route36NationalParkGateOfficer1MakeRoomText:
 	done
 
 Route36NationalParkGateOfficer1EggAsFirstMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "You have an Egg as"
 	cont "the first #mon"
@@ -528,7 +528,7 @@ Route36NationalParkGateOfficer1EggAsFirstMonText:
 	done
 
 Route36NationalParkGateOfficer1WantToFinishText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "You still have @"
 	text_ram wStringBuffer3
 	text_start
@@ -539,7 +539,7 @@ Route36NationalParkGateOfficer1WantToFinishText:
 	done
 
 Route36NationalParkGateOfficer1WaitHereForAnnouncementText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. Please wait"
 	line "here for the"
 	cont "announcement of"
@@ -547,14 +547,14 @@ Route36NationalParkGateOfficer1WaitHereForAnnouncementText:
 	done
 
 Route36NationalParkGateOfficer1OkGoFinishText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. Please go back"
 	line "outside and finish"
 	cont "up."
 	done
 
 Route36NationalParkGateOfficer1ContestIsOverText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Today's Contest is"
 	line "over. We hope you"
 	cont "will participate"
@@ -562,21 +562,21 @@ Route36NationalParkGateOfficer1ContestIsOverText:
 	done
 
 Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Some #mon can"
 	line "only be seen in"
 	cont "the Park."
 	done
 
 BugCatchingContestant1BText:
-	ntag "Don"
+	ntag " Don "
 	text "Wow, you beat me."
 	line "You're pretty"
 	cont "good."
 	done
 
 BugCatchingContestant1BStillCompetingText:
-	ntag "Don"
+	ntag " Don "
 	text "Luck plays a big"
 	line "part in this."
 
@@ -586,27 +586,27 @@ BugCatchingContestant1BStillCompetingText:
 	done
 
 BugCatchingContestant2BText:
-	ntag "Ed"
+	ntag " Ed "
 	text "I envy you."
 	line "I just couldn't"
 	cont "do it this time."
 	done
 
 BugCatchingContestant2BStillCompetingText:
-	ntag "Ed"
+	ntag " Ed "
 	text "Maybe you win with"
 	line "big #mon?"
 	done
 
 BugCatchingContestant3BText:
-	ntag "Nick"
+	ntag " Nick "
 	text "Well done!"
 	line "I'm going to raise"
 	cont "my #mon better."
 	done
 
 BugCatchingContestant3BStillCompetingText:
-	ntag "Nick"
+	ntag " Nick "
 	text "Maybe you get a"
 	line "higher score for a"
 	cont "#mon of an"
@@ -614,14 +614,14 @@ BugCatchingContestant3BStillCompetingText:
 	done
 
 BugCatchingContestant4BText:
-	ntag "William"
+	ntag " William "
 	text "You're the winner?"
 	line "What did you"
 	cont "catch?"
 	done
 
 BugCatchingContestant4BStillCompetingText:
-	ntag "William"
+	ntag " William "
 	text "Well, I'm"
 	line "satisfied because"
 	cont "I caught a #mon"
@@ -629,28 +629,28 @@ BugCatchingContestant4BStillCompetingText:
 	done
 
 BugCatchingContestant5BText:
-	ntag "Benny"
+	ntag " Benny "
 	text "Congrats!"
 	line "You have earned my"
 	cont "respect!"
 	done
 
 BugCatchingContestant5BStillCompetingText:
-	ntag "Benny"
+	ntag " Benny "
 	text "I caught a Scyther"
 	line "before, but I"
 	cont "didn't win."
 	done
 
 BugCatchingContestant6BText:
-	ntag "Barry"
+	ntag " Barry "
 	text "That #mon you"
 	line "caught…"
 	cont "It's awesome!"
 	done
 
 BugCatchingContestant6BStillCompetingText:
-	ntag "Barry"
+	ntag " Barry "
 	text "It's easier to win"
 	line "if you get a high-"
 	cont "level bug #mon."
@@ -661,7 +661,7 @@ BugCatchingContestant6BStillCompetingText:
 	done
 
 BugCatchingContestant7BText:
-	ntag "Cindy"
+	ntag " Cindy "
 	text "You won?"
 	line "That's great!"
 
@@ -671,40 +671,40 @@ BugCatchingContestant7BText:
 	done
 
 BugCatchingContestant7BStillCompetingText:
-	ntag "Cindy"
+	ntag " Cindy "
 	text "I really love"
 	line "bug #mon!"
 	done
 
 BugCatchingContestant8BText:
-	ntag "Josh"
+	ntag " Josh "
 	text "I… I can't believe"
 	line "I lost at bug-"
 	cont "catching…"
 	done
 
 BugCatchingContestant8BStillCompetingText:
-	ntag "Josh"
+	ntag " Josh "
 	text "I heard that"
 	line "somebody won with"
 	cont "a Caterpie!"
 	done
 
 BugCatchingContestant9BText:
-	ntag "Samuel"
+	ntag " Samuel "
 	text "Next time, I'm"
 	line "going to win."
 	done
 
 BugCatchingContestant9BStillCompetingText:
-	ntag "Samuel"
+	ntag " Samuel "
 	text "Darn."
 	line "I thought I would"
 	cont "score higher…"
 	done
 
 BugCatchingContestant10BText:
-	ntag "Kipp"
+	ntag " Kipp "
 	text "Could you give me"
 	line "some tips?"
 
@@ -713,14 +713,14 @@ BugCatchingContestant10BText:
 	done
 
 BugCatchingContestant10BStillCompetingText:
-	ntag "Kipp"
+	ntag " Kipp "
 	text "I study a lot, but"
 	line "that's not good"
 	cont "enough to win."
 	done
 
 Route36NationalParkGateOfficer1WellHoldPrizeText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh… Your Pack"
 	line "is full."
 
@@ -733,7 +733,7 @@ Route36NationalParkGateOfficer1WellHoldPrizeText:
 	done
 
 Route36NationalParkGateOfficer1HeresThePrizeText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "<PLAYER>?"
 
 	para "Here's the prize"

@@ -414,7 +414,7 @@ SudowoodoAttackedText:
 	done
 
 FloriaText1:
-	ntag "Floria"
+	ntag " Floria "
 	text "I'm the Flower"
 	line "Shop's Floria!"
 
@@ -439,7 +439,7 @@ FloriaText1:
 	done
 
 FloriaText2:
-	ntag "Floria"
+	ntag " Floria "
 	text "When I told my sis"
 	line "about the jiggly"
 	cont "tree, she said"
@@ -513,12 +513,12 @@ PsychicMarkSeenText:
 	done
 
 PsychicMarkBeatenText:
-	ntag "Mark"
+	ntag " Mark "
 	text "I misread you!"
 	done
 
 PsychicMarkAfterBattleText:
-	ntag "Mark"
+	ntag " Mark "
 	text "I'd be strong if"
 	line "only I could tell"
 	cont "what my opponent"
@@ -533,14 +533,14 @@ SuperNerdGrantSeenText:
 	done
 
 SuperNerdGrantBeatenText:
-	ntag "Grant"
+	ntag " Grant "
 	text "Hmm, maybe I"
 	line "should stick to"
 	cont "finding fossils."
 	done
 
 SuperNerdGrantAfterBattleText:
-	ntag "Grant"
+	ntag " Grant "
 	text "It's so amazing"
 	line "that we have the"
 	cont "technology to turn"
@@ -558,13 +558,13 @@ SchoolboyAlan1SeenText:
 	done
 
 SchoolboyAlan1BeatenText:
-	ntag "Alan"
+	ntag " Alan "
 	text "Oops! Computation"
 	line "error?"
 	done
 
 SchoolboyAlanBooksText:
-	ntag "Alan"
+	ntag " Alan "
 	text "Darn. I study five"
 	line "hours a day too."
 
@@ -574,7 +574,7 @@ SchoolboyAlanBooksText:
 	done
 
 MeetArthurText:
-	ntag "Arthur"
+	ntag " Arthur "
 	text "I'm Arthur of"
 	line "Thursday."
 
@@ -582,13 +582,13 @@ MeetArthurText:
 	done
 
 ArthurGivesGiftText:
-	ntag "Arthur"
+	ntag " Arthur "
 	text "Here. You can have"
 	line "this."
 	done
 
 ArthurGaveGiftText:
-	ntag "Arthur"
+	ntag " Arthur "
 	text "A #mon that"
 	line "uses rock-type"
 	cont "moves should hold"
@@ -599,7 +599,7 @@ ArthurGaveGiftText:
 	done
 
 ArthurThursdayText:
-	ntag "Arthur"
+	ntag " Arthur "
 	text "I'm Arthur of"
 	line "Thursday. I'm"
 	cont "the second son out"
@@ -607,7 +607,7 @@ ArthurThursdayText:
 	done
 
 ArthurNotThursdayText:
-	ntag "Arthur"
+	ntag " Arthur "
 	text "Today's not"
 	line "Thursday. How"
 	cont "disappointing."

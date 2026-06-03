@@ -164,7 +164,7 @@ OlivineCityPlayerStepsAsideBottomMovement:
 	step_end
 
 OlivineCityRivalText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 
 	para "You again?"

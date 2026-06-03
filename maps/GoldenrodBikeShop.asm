@@ -59,7 +59,7 @@ GoldenrodBikeShopBicycle:
 	jumptext GoldenrodBikeShopBicycleText
 
 GoldenrodBikeShopClerkIntroText:
-	ntag "Owner"
+	ntag " Owner "
 	text "…sigh…"
 	line "I moved here,"
 	cont "but I can't sell"
@@ -73,7 +73,7 @@ GoldenrodBikeShopClerkIntroText:
 	done
 
 GoldenrodBikeShopClerkAgreedText:
-	ntag "Owner"
+	ntag " Owner "
 	text "Really? Great!"
 
 	para "Give me your name"
@@ -88,7 +88,7 @@ BorrowedABicycleText:
 	done
 
 GoldenrodBikeShopClerkFirstRateBikesText:
-	ntag "Owner"
+	ntag " Owner "
 	text "My Bicycles are"
 	line "first-rate!"
 
@@ -97,7 +97,7 @@ GoldenrodBikeShopClerkFirstRateBikesText:
 	done
 
 GoldenrodBikeShopClerkSoBusyText:
-	ntag "Owner"
+	ntag " Owner "
 	text "<PLAYER>!"
 	
 	para "Look at how busy"
@@ -112,7 +112,7 @@ GoldenrodBikeShopClerkSoBusyText:
 	done
 
 GoldenrodBikeShopClerkRefusedText:
-	ntag "Owner"
+	ntag " Owner "
 	text "…sigh… Oh, for"
 	line "the kindness of"
 	cont "people…"

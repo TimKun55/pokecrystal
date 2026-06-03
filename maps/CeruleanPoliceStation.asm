@@ -42,7 +42,7 @@ CeruleanPoliceStationPokefanFText:
 	done
 
 CeruleanDiglettText:
-	ntag "Diglett"
+	ntag " Diglett "
 	text "Dug dug."
 	done
 

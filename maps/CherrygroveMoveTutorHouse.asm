@@ -93,7 +93,7 @@ CherrygroveMoveTutor3Script:
 	writetextend CherrygroveMoveTutorNotEnough
 
 CherrygroveMoveTutorStoneEdgeText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Trainer!"
 	
 	para "I have mastered"
@@ -102,7 +102,7 @@ CherrygroveMoveTutorStoneEdgeText:
 	done
 
 CherrygroveMoveTutorStoneEdgeTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It's a powerful"
 	line "move that has a"
 	cont "high critical-hit"
@@ -110,7 +110,7 @@ CherrygroveMoveTutorStoneEdgeTaught:
 	done
 
 CherrygroveMoveTutorGunkShotText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hello there."
 	
 	para "I have mastered"
@@ -119,7 +119,7 @@ CherrygroveMoveTutorGunkShotText:
 	done
 
 CherrygroveMoveTutorGunkShotTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It might miss"
 	line "sometimes, but"
 	cont "it hits hard."
@@ -130,7 +130,7 @@ CherrygroveMoveTutorGunkShotTaught:
 	done
 
 CherrygroveMoveTutorFocusBlastText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hello, young"
 	line "trainer!"
 	
@@ -141,7 +141,7 @@ CherrygroveMoveTutorFocusBlastText:
 	done
 
 CherrygroveMoveTutorFocusBlastTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It might miss"
 	line "sometimes, but"
 	cont "it hits hard."
@@ -152,7 +152,7 @@ CherrygroveMoveTutorFocusBlastTaught:
 	done
 
 CherrygroveMoveTutorAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥20,000?"
@@ -164,13 +164,13 @@ CherrygroveMoveTutorPayment:
 	done
 
 CherrygroveMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back when"
 	line "you like."
 	done
 
 CherrygroveMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you can't"
 	line "afford it."
 	done

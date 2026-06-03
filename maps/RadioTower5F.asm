@@ -196,13 +196,13 @@ RadioTower5FPlayerTwoStepsLeftMovement:
 	step_end
 
 FakeDirectorTextBefore1:
-	ntag "Director"
+	ntag " Director "
 	text "Y-you! You came to"
 	line "rescue me?"
 	done
 
 FakeDirectorTextBefore2:
-	ntag "Director?"
+	ntag " Director? "
 	text "Is that what you"
 	line "were expecting?"
 
@@ -211,7 +211,7 @@ FakeDirectorTextBefore2:
 	done
 
 PetrelTextBefore:
-	ntag "???"
+	ntag " ??? "
 	text "I pretended to be"
 	line "the real thing to"
 	cont "prepare for our"
@@ -227,13 +227,13 @@ PetrelTextBefore:
 	done
 
 PetrelWinText:
-	ntag "Petrel"
+	ntag " Petrel "
 	text "OK, OK. I'll tell"
 	line "you where he is."
 	done
 
 PetrelTextAfter:
-	ntag "Petrel"
+	ntag " Petrel "
 	text "We stashed the"
 	line "real Director in"
 	cont "the Underground"
@@ -248,7 +248,7 @@ PetrelTextAfter:
 	done
 
 ArianaSeenText:
-	ntag "Ariana"
+	ntag " Ariana "
 	text "Remember me from"
 	line "the Hideout in"
 	cont "Mahogany Town?"
@@ -258,7 +258,7 @@ ArianaSeenText:
 	done
 
 ArianaBeatenText:
-	ntag "Ariana"
+	ntag " Ariana "
 	text "This can't be"
 	line "happening!"
 
@@ -267,7 +267,7 @@ ArianaBeatenText:
 	done
 
 ArianaAfterBattleText:
-	ntag "Ariana"
+	ntag " Ariana "
 	text "<PLAYER>, isn't it?"
 
 	para "A brat like you"
@@ -281,7 +281,7 @@ ArianaAfterBattleText:
 	done
 
 ArcherBeforeText:
-	ntag "???"
+	ntag " ??? "
 	text "Oh? You managed to"
 	line "get this far?"
 
@@ -309,13 +309,13 @@ ArcherBeforeText:
 	done
 
 ArcherWinText:
-	ntag "Archer"
+	ntag " Archer "
 	text "No! Forgive me,"
 	line "Giovanni!"
 	done
 
 ArcherAfterText:
-	ntag "Archer"
+	ntag " Archer "
 	text "How could this be?"
 
 	para "Our dreams have"
@@ -333,7 +333,7 @@ ArcherAfterText:
 	done
 
 RadioTower5FDirectorThankYouText:
-	ntag "Director"
+	ntag " Director "
 	text "<PLAY_G>,"
 	line "thank you!"
 
@@ -348,7 +348,7 @@ RadioTower5FDirectorThankYouText:
 	done
 
 RadioTower5FDirectorDescribeClearBellText:
-	ntag "Director"
+	ntag " Director "
 	text "There used to be a"
 	line "tower right here"
 	cont "in Goldenrod City."
@@ -397,7 +397,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	done
 
 RadioTower5FDirectorText:
-	ntag "Director"
+	ntag " Director "
 	text "Hello, <PLAY_G>!"
 
 	para "You know, I love"
@@ -414,7 +414,7 @@ RadioTower5FDirectorText:
 	done
 
 BenText:
-	ntag "Ben"
+	ntag " Ben "
 	text "Do you listen"
 	line "to our music?"
 	done

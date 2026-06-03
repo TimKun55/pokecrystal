@@ -196,7 +196,7 @@ SSAquaGrandpaApproachesPlayerMovement:
 	step_end
 
 SSAquaCaptainExhaustingText:
-	ntag "Captain"
+	ntag " Captain "
 	text "Whew! Thanks for"
 	line "coming along."
 
@@ -206,7 +206,7 @@ SSAquaCaptainExhaustingText:
 	done
 
 SSAquaCaptainHowDoYouLikeText:
-	ntag "Captain"
+	ntag " Captain "
 	text "How do you like"
 	line "S.S.Aqua's ride?"
 
@@ -298,12 +298,12 @@ PokefanmColinSeenText:
 	done
 
 PokefanmColinBeatenText:
-	ntag "Colin"
+	ntag " Colin "
 	text "You're strong!"
 	done
 
 PokefanmColinAfterBattleText:
-	ntag "Colin"
+	ntag " Colin "
 	text "You're traveling"
 	line "all alone?"
 
@@ -318,12 +318,12 @@ TwinsMegandpeg1SeenText:
 	done
 
 TwinsMegandpegBeatenText:
-	ntag "Meg & Peg"
+	ntag " Meg & Peg "
 	text "Oh! We lost!"
 	done
 
 TwinsMegandpeg1AfterBattleText:
-	ntag "Meg"
+	ntag " Meg "
 	text "Baby is a rude"
 	line "name to call us"
 	cont "girls!"
@@ -337,7 +337,7 @@ TwinsMegandpeg2SeenText:
 	done
 
 TwinsMegandpeg2AfterBattleText:
-	ntag "Peg"
+	ntag " Peg "
 	text "Sometimes, kids"
 	line "are smarter than"
 	cont "grown-ups!"
@@ -350,13 +350,13 @@ PsychicRodneySeenText:
 	done
 
 PsychicRodneyBeatenText:
-	ntag "Rodney"
+	ntag " Rodney "
 	text "…I hear some-"
 	line "thing!"
 	done
 
 PsychicRodneyAfterBattleText:
-	ntag "Rodney"
+	ntag " Rodney "
 	text "I get it. You can"
 	line "hear Johto's radio"
 	cont "on the Fast Ship."
@@ -369,13 +369,13 @@ PokefanmJeremySeenText:
 	done
 
 PokefanmJeremyBeatenText:
-	ntag "Jeremy"
+	ntag " Jeremy "
 	text "Oh, no! My beauti-"
 	line "ful #mon!"
 	done
 
 PokefanmJeremyAfterBattleText:
-	ntag "Jeremy"
+	ntag " Jeremy "
 	text "I must go to the"
 	line "#mon Salon and"
 	cont "fix them up nice!"
@@ -388,13 +388,13 @@ PokefanfGeorgiaSeenText:
 	done
 
 PokefanfGeorgiaBeatenText:
-	ntag "Georgia"
+	ntag " Georgia "
 	text "What was I going"
 	line "to do?"
 	done
 
 PokefanfGeorgiaAfterBattleText:
-	ntag "Georgia"
+	ntag " Georgia "
 	text "Oh, yes! I have to"
 	line "get my #mon out"
 	cont "of Day-Care!"
@@ -407,13 +407,13 @@ SupernerdShawnSeenText:
 	done
 
 SupernerdShawnBeatenText:
-	ntag "Shawn"
+	ntag " Shawn "
 	text "Wait! Stop! Don't!"
 	line "Please!"
 	done
 
 SupernerdShawnAfterBattleText:
-	ntag "Shawn"
+	ntag " Shawn "
 	text "You should use the"
 	line "right Balls to fit"
 	cont "the situation."

@@ -50,7 +50,7 @@ DaisyScript:
 	writetextend DaisyCantGroomEggText
 
 DaisyHelloText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "Hi! I'm Daisy."
 	
 	para "My kid brother is"
@@ -64,7 +64,7 @@ DaisyHelloText:
 	done
 
 DaisyOfferGroomingText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "Hi! Good timing."
 	line "I'm about to have"
 	cont "some tea."
@@ -80,13 +80,13 @@ DaisyOfferGroomingText:
 	done
 
 DaisyWhichMonText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "Which one should"
 	line "I groom?"
 	done
 
 DaisyAlrightText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "OK, I'll get them"
 	line "looking nice in"
 	cont "no time."
@@ -99,7 +99,7 @@ GroomedMonLooksContentText:
 	done
 
 DaisyAllDoneText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "There you go!"
 	line "All done."
 
@@ -111,14 +111,14 @@ DaisyAllDoneText:
 	done
 
 DaisyAlreadyGroomedText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "I always have tea"
 	line "around this time."
 	cont "Come join me."
 	done
 
 DaisyRefusedText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "You don't want to"
 	line "have one groomed?"
 	cont "OK, we'll just"
@@ -126,7 +126,7 @@ DaisyRefusedText:
 	done
 
 DaisyCantGroomEggText:
-	ntag "Daisy"
+	ntag " Daisy "
 	text "Oh, sorry."
 	line "I honestly can't"
 	cont "groom an Egg."

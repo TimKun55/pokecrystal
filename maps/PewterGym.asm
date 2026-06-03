@@ -116,7 +116,7 @@ PewterGymStatue:
 	jumpstd GymStatue2Script
 
 BrockIntroText:
-	ntag "Brock"
+	ntag " Brock "
 	text "Wow, it's not"
 	line "often that we get"
 	cont "a challenger from"
@@ -140,7 +140,7 @@ BrockIntroText:
 	done
 
 BrockWinLossText:
-	ntag "Brock"
+	ntag " Brock "
 	text "Your #mon's"
 	line "powerful attacks"
 	cont "overcame my rock-"
@@ -159,7 +159,7 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockBoulderBadgeText:
-	ntag "Brock"
+	ntag " Brock "
 	text "<PLAY_G>, thanks."
 	line "I enjoyed battling"
 	cont "you, even though I"
@@ -174,7 +174,7 @@ BrockBoulderBadgeText:
 	done
 
 BrockFightDoneText:
-	ntag "Brock"
+	ntag " Brock "
 	text "The world is huge."
 
 	para "There are still"
@@ -188,7 +188,7 @@ BrockFightDoneText:
 	done
 	
 BrockRematchIntroText:
-	ntag "Brock"
+	ntag " Brock "
 	text "<PLAYER>!"
 	line "Good to see"
 	cont "you again."
@@ -198,12 +198,12 @@ BrockRematchIntroText:
 	done
 	
 BrockWinLossRematchText:
-	ntag "Brock"
+	ntag " Brock "
 	text "All rocked out!"
 	done
 	
 BrockRematchAfterBattleText:
-	ntag "Brock"
+	ntag " Brock "
 	text "You're still"
 	line "so strong!"
 	
@@ -213,14 +213,14 @@ BrockRematchAfterBattleText:
 	done
 
 BrockComeBackTomorrowText:
-	ntag "Brock"
+	ntag " Brock "
 	text "Come back tomorrow"
 	line "and we'll battle"
 	cont "again."
 	done
 
 BrockNextTimeText:
-	ntag "Brock"
+	ntag " Brock "
 	text "No problem."
 	done
 
@@ -239,13 +239,13 @@ CamperJerrySeenText:
 	done
 
 CamperJerryBeatenText:
-	ntag "Jerry"
+	ntag " Jerry "
 	text "I have to win"
 	line "these battles…"
 	done
 
 CamperJerryAfterBattleText:
-	ntag "Jerry"
+	ntag " Jerry "
 	text "Hey, you! Trainer"
 	line "from Johto!"
 	
@@ -261,13 +261,13 @@ CamperDavidSeenText:
 	done
 
 CamperDavidBeatenText:
-	ntag "David"
+	ntag " David "
 	text "You've got mud"
 	line "on your face."
 	done
 
 CamperDavidAfterBattleText:
-	ntag "David"
+	ntag " David "
 	text "I lost;"
 	line "big disgrace."
 	done
@@ -300,7 +300,7 @@ PewterGymGuideWinText:
 	done
 	
 OnixText:
-	ntag "Onix"
+	ntag " Onix "
 	text "Nix! Onixnix!"
 	done
 

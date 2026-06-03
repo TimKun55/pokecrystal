@@ -85,7 +85,7 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	ntag "Lance"
+	ntag " Lance "
 	text "It's been a long"
 	line "time since I last"
 	cont "came here."
@@ -125,7 +125,7 @@ HallOfFame_LanceText:
 	done
 
 HallOfFame_LanceRegisterText:
-	ntag "Lance"
+	ntag " Lance "
 	text "As you know,"
 	line "this is where we"
 	cont "honor the League"
@@ -143,7 +143,7 @@ HallOfFame_LanceRegisterText:
 	done
 
 HallOfFame_LanceGrandChampionText:
-	ntag "Lance"
+	ntag " Lance "
 	text "Grand Champion"
 	line "<PLAYER>."
 

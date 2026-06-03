@@ -344,13 +344,13 @@ PokemaniacBenSeenText:
 	done
 
 PokemaniacBenBeatenText:
-	ntag "Ben"
+	ntag " Ben "
 	text "How could you do"
 	line "this to me?"
 	done
 
 PokemaniacBenAfterBattleText:
-	ntag "Ben"
+	ntag " Ben "
 	text "What else do I"
 	line "like besides"
 	cont "#mon?"
@@ -365,13 +365,13 @@ PokemaniacBrentSeenText:
 	done
 
 PokemaniacBrentBeatenText:
-	ntag "Brent"
+	ntag " Brent "
 	text "Oh, my poor #-"
 	line "mon! Darlings!"
 	done
 
 PokemaniacBrentAfterBattleText:
-	ntag "Brent"
+	ntag " Brent "
 	text "I'd be happy just"
 	line "to own a single"
 	cont "rare #mon."
@@ -390,13 +390,13 @@ PokemaniacRonSeenText:
 	done
 
 PokemaniacRonBeatenText:
-	ntag "Ron"
+	ntag " Ron "
 	text "My Nidoking did"
 	line "pretty right on!"
 	done
 
 PokemaniacRonAfterBattleText:
-	ntag "Ron"
+	ntag " Ron "
 	text "It's okay for"
 	line "people to like"
 	cont "different types"
@@ -418,13 +418,13 @@ FisherMarvinSeenText:
 	done
 
 FisherMarvinBeatenText:
-	ntag "Marvin"
+	ntag " Marvin "
 	text "I lost, but I feel"
 	line "better anyway."
 	done
 
 FisherMarvinAfterBattleText:
-	ntag "Marvin"
+	ntag " Marvin "
 	text "Kurt's Lure Ball"
 	line "is the best for"
 	cont "catching hooked"
@@ -442,13 +442,13 @@ CamperSpencerSeenText:
 	done
 
 CamperSpencerBeatenText:
-	ntag "Spencer"
+	ntag " Spencer "
 	text "Losing isn't fun"
 	line "at all…"
 	done
 
 CamperSpencerAfterBattleText:
-	ntag "Spencer"
+	ntag " Spencer "
 	text "What is going on"
 	line "at Lake Of Rage?"
 
@@ -465,12 +465,12 @@ PicnickerTiffanySeenText:
 	done
 
 PicnickerTiffanyBeatenText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "I played too much!"
 	done
 
 PicnickerTiffanyWantsPicnicText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "I'm having a pic-"
 	line "nic with #mon."
 
@@ -478,7 +478,7 @@ PicnickerTiffanyWantsPicnicText:
 	done
 
 PicnickerTiffanyClefairyText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Isn't my Clefairy"
 	line "just the most"
 	cont "adorable thing?"
@@ -491,12 +491,12 @@ LadyKaiSeenText:
 	done
 
 LadyKaiBeatenText:
-	ntag "Kai"
+	ntag " Kai "
 	text "My, my, my!"
 	done
 
 LadyKaiAfterBattleText:
-	ntag "Kai"
+	ntag " Kai "
 	text "That was fun!"
 	line "Are you the one"
 	cont "who's been taking"

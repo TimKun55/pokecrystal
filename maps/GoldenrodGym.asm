@@ -209,7 +209,7 @@ BridgetWalksAwayMovement:
 	step_end
 
 WhitneyBeforeText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Hi! I'm Whitney!"
 
 	para "Everyone was into"
@@ -225,7 +225,7 @@ WhitneyBeforeText:
 	done
 
 WhitneyShouldntBeSoSeriousText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Sob…"
 
 	para "…Waaaaaaah!"
@@ -237,7 +237,7 @@ WhitneyShouldntBeSoSeriousText:
 	done
 
 WhitneyYouMeanieText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Waaaaah!"
 
 	para "Waaaaah!"
@@ -247,7 +247,7 @@ WhitneyYouMeanieText:
 	done
 
 WhitneyWhatDoYouWantText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "…Sniff…"
 
 	para "What? What do you"
@@ -264,7 +264,7 @@ PlayerReceivedPlainBadgeText:
 	done
 
 WhitneyPlainBadgeText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "The PlainBadge"
 	line "lets your #mon"
 	cont "use Strength out"
@@ -275,7 +275,7 @@ WhitneyPlainBadgeText:
 	done
 
 WhitneyAttractText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "It's the move"
 	line "Attract!"
 
@@ -289,7 +289,7 @@ WhitneyAttractText:
 	done
 
 WhitneyGoodCryText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Ah, that was a"
 	line "good cry!"
 
@@ -298,7 +298,7 @@ WhitneyGoodCryText:
 	done
 
 WhitneyRematchIntroText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Oh, hi <PLAYER>!"
 	line "Good to see"
 	cont "you again."
@@ -308,13 +308,13 @@ WhitneyRematchIntroText:
 	done
 	
 WhitneyWinLossRematchText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "You really"
 	line "are strong!"
 	done
 	
 WhitneyRematchAfterBattleText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "I'm going to get"
 	line "even stronger,"
 	cont "Just you watch!"
@@ -325,7 +325,7 @@ WhitneyRematchAfterBattleText:
 	done
 	
 Whitney16IntroText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Wow, <PLAYER>!"
 	line "You did it!"
 	
@@ -341,7 +341,7 @@ Whitney16IntroText:
 	done
 	
 Whitney16AfterBattleText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Wow!"
 	line "That was an"
 	cont "amazing battle!"
@@ -351,14 +351,14 @@ Whitney16AfterBattleText:
 	done
 
 WhitneyComeBackTomorrowText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Hey, we just had"
 	line "a battle. Come"
 	cont "back tomorrow."
 	done
 	
 WhitneyNextTimeText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Aww, well come"
 	line "back soon."
 	done
@@ -371,13 +371,13 @@ LassCarrieSeenText:
 	done
 
 LassCarrieBeatenText:
-	ntag "Carrie"
+	ntag " Carrie "
 	text "Darn… I thought"
 	line "you were weak…"
 	done
 
 LassCarrieAfterBattleText:
-	ntag "Carrie"
+	ntag " Carrie "
 	text "Do my #mon"
 	line "think I'm cute?"
 	done
@@ -392,12 +392,12 @@ LassBridgetSeenText:
 	done
 
 LassBridgetBeatenText:
-	ntag "Bridget"
+	ntag " Bridget "
 	text "Oh, no, no, no!"
 	done
 
 LassBridgetAfterBattleText:
-	ntag "Bridget"
+	ntag " Bridget "
 	text "I'm trying to beat"
 	line "Whitney, but…"
 	cont "It's depressing."
@@ -409,7 +409,7 @@ LassBridgetAfterBattleText:
 	done
 
 BridgetWhitneyCriesText:
-	ntag "Bridget"
+	ntag " Bridget "
 	text "Oh, no. You made"
 	line "Whitney cry."
 
@@ -428,13 +428,13 @@ BeautyVictoriaSeenText:
 	done
 
 BeautyVictoriaBeatenText:
-	ntag "Victoria"
+	ntag " Victoria "
 	text "Let's see… Oops,"
 	line "it's over?"
 	done
 
 BeautyVictoriaAfterBattleText:
-	ntag "Victoria"
+	ntag " Victoria "
 	text "Wow, you must be"
 	line "good to beat me."
 	cont "Keep it up!"
@@ -447,13 +447,13 @@ BeautySamanthaSeenText:
 	done
 
 BeautySamanthaBeatenText:
-	ntag "Samantha"
+	ntag " Samantha "
 	text "No! Oh, Meowth,"
 	line "I'm so sorry!"
 	done
 
 BeautySamanthaAfterBattleText:
-	ntag "Samantha"
+	ntag " Samantha "
 	text "I taught Meowth"
 	line "moves for taking"
 	cont "on any type…"
@@ -479,7 +479,7 @@ GoldenrodGymGuideWinText:
 	done
 	
 MiltankText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "Mooo!"
 	done
 

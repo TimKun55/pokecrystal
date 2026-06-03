@@ -228,7 +228,7 @@ SuperNerdStanSeenText:
 	done
 
 SuperNerdStanBeatenText:
-	ntag "Stan"
+	ntag " Stan "
 	text "Sorry…"
 	line "I'm frustrated by"
 	cont "our lack of real"
@@ -236,7 +236,7 @@ SuperNerdStanBeatenText:
 	done
 
 SuperNerdStanAfterBattleText:
-	ntag "Stan"
+	ntag " Stan "
 	text "The Ruins are from"
 	line "about 1500 years"
 	cont "ago."
@@ -259,12 +259,12 @@ PsychicNathanSeenText:
 	done
 
 PsychicNathanBeatenText:
-	ntag "Nathan"
+	ntag " Nathan "
 	text "…"
 	done
 
 PsychicNathanAfterBattleText:
-	ntag "Nathan"
+	ntag " Nathan "
 	text "I like thinking"
 	line "here."
 	done

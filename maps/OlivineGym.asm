@@ -150,7 +150,7 @@ OlivineGymStatue:
 	jumpstd GymStatue3Script
 
 Jasmine_SteelTypeIntro:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Thank you for"
 	line "your help at the"
 	cont "Lighthouse…"
@@ -175,7 +175,7 @@ Jasmine_SteelTypeIntro:
 	done
 
 Jasmine_BetterTrainer:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "…You are a better"
 	line "trainer than me,"
 	cont "in both skill and"
@@ -193,27 +193,27 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "…Um… Please take"
 	line "this too…"
 	done
 
 Jasmine_IronTailSpeech:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "…You could use"
 	line "that TM to teach"
 	cont "Iron Tail."
 	done
 
 Jasmine_GoodLuck:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Um… I don't know"
 	line "how to say this,"
 	cont "but good luck…"
 	done
 	
 JasmineRematchIntroText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Oh, <PLAYER>,"
 	line "hello, good to"
 	cont "see you again."
@@ -223,12 +223,12 @@ JasmineRematchIntroText:
 	done
 	
 JasmineWinLossRematchText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Well done…"
 	done
 	
 JasmineRematchAfterBattleText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Properly tempered"
 	line "steel won't be"
 	cont "made rusty by"
@@ -245,7 +245,7 @@ JasmineRematchAfterBattleText:
 	done
 	
 Jasmine16IntroText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "<PLAYER>!"
 	line "You're back, and"
 	cont "you've done it!"
@@ -262,7 +262,7 @@ Jasmine16IntroText:
 	done
 	
 Jasmine16AfterBattleText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "As strong as the"
 	line "strongest steel!"
 	
@@ -275,14 +275,14 @@ Jasmine16AfterBattleText:
 	done
 
 JasmineComeBackTomorrowText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Please come back"
 	line "tomorrow for ano-"
 	cont "ther battle."
 	done
 
 JasmineNextTimeText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "You can come"
 	line "back anytime."
 	done
@@ -296,12 +296,12 @@ CooltrainerMAndySeenText:
 	done	
 
 CooltrainerMAndyBeatenText:
-	ntag "Andy"
+	ntag " Andy "
 	text "Yup! Definitely."
 	done
 
 CooltrainerMAndyAfterText:
-	ntag "Andy"
+	ntag " Andy "
 	text "I wanted to help"
 	line "but none of my"
 	cont "#mon can Surf."
@@ -314,12 +314,12 @@ BeautyJaclynSeenText:
 	done	
 
 BeautyJaclynBeatenText:
-	ntag "Jaclyn"
+	ntag " Jaclyn "
 	text "I was blinded!"
 	done
 
 BeautyJaclynAfterText:
-	ntag "Jaclyn"
+	ntag " Jaclyn "
 	text "Jasmine used to"
 	line "be a rock-type"
 	cont "trainer and trai-"	
@@ -367,7 +367,7 @@ OlivineGymGuidePreText:
 	done
 	
 SteelixText:
-	ntag "Steelix"
+	ntag " Steelix "
 	text "Stee! LixSteel!"
 	done
 

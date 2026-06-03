@@ -125,12 +125,12 @@ SwimmermSimonSeenText:
 	done
 
 SwimmermSimonBeatenText:
-	ntag "Simon"
+	ntag " Simon "
 	text "OK! Uncle! I give!"
 	done
 
 SwimmermSimonAfterBattleText:
-	ntag "Simon"
+	ntag " Simon "
 	text "Cianwood City is"
 	line "a good distance"
 	cont "away from here."
@@ -145,12 +145,12 @@ SwimmermRandallSeenText:
 	done
 
 SwimmermRandallBeatenText:
-	ntag "Randall"
+	ntag " Randall "
 	text "Uh-oh. I lost…"
 	done
 
 SwimmermRandallAfterBattleText:
-	ntag "Randall"
+	ntag " Randall "
 	text "Swimming exercises"
 	line "your entire body."
 	cont "It's healthy."
@@ -165,12 +165,12 @@ LadyAdaSeenText:
 	done
 
 LadyAdaBeatenText:
-	ntag "Ada"
+	ntag " Ada "
 	text "A defeat!"
 	done
 
 LadyAdaAfterBattleText:
-	ntag "Ada"
+	ntag " Ada "
 	text "You really are"
 	line "strong! Just like"
 	cont "the fairy-type!"
@@ -185,12 +185,12 @@ SwimmerfElaineSeenText:
 	done
 
 SwimmerfElaineBeatenText:
-	ntag "Elaine"
+	ntag " Elaine "
 	text "I lost that one!"
 	done
 
 SwimmerfElaineAfterBattleText:
-	ntag "Elaine"
+	ntag " Elaine "
 	text "I'd say I'm a bet-"
 	line "ter swimmer than"
 	cont "you. Yeah!"
@@ -205,13 +205,13 @@ SwimmerfPaulaSeenText:
 	done
 
 SwimmerfPaulaBeatenText:
-	ntag "Paula"
+	ntag " Paula "
 	text "Ooh, I'm feeling"
 	line "dizzy!"
 	done
 
 SwimmerfPaulaAfterBattleText:
-	ntag "Paula"
+	ntag " Paula "
 	text "While I float like"
 	line "this, the waves"
 	cont "carry me along."
@@ -258,7 +258,7 @@ Route40StandingYoungsterText:
 	done
 
 MeetMonicaText:
-	ntag "Monica"
+	ntag " Monica "
 	text "I'm Monica of"
 	line "Monday."
 
@@ -266,14 +266,14 @@ MeetMonicaText:
 	done
 
 MonicaGivesGiftText:
-	ntag "Monica"
+	ntag " Monica "
 	text "As a token of our"
 	line "friendship, I have"
 	cont "a gift for you!"
 	done
 
 MonicaGaveGiftText:
-	ntag "Monica"
+	ntag " Monica "
 	text "It's an item that"
 	line "raises the power"
 	cont "of flying-type"
@@ -281,7 +281,7 @@ MonicaGaveGiftText:
 	done
 
 MonicaMondayText:
-	ntag "Monica"
+	ntag " Monica "
 	text "My brothers and"
 	line "sisters are all"
 	cont "over the place."
@@ -291,7 +291,7 @@ MonicaMondayText:
 	done
 
 MonicaNotMondayText:
-	ntag "Monica"
+	ntag " Monica "
 	text "I don't think"
 	line "today is Monday."
 	cont "How sad…"

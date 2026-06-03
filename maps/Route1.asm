@@ -35,13 +35,13 @@ SchoolboyDannySeenText:
 	done
 
 SchoolboyDannyBeatenText:
-	ntag "Danny"
+	ntag " Danny "
 	text "Awww… I've got a"
 	line "losing record…"
 	done
 
 SchoolboyDannyAfterBattleText:
-	ntag "Danny"
+	ntag " Danny "
 	text "For trainers, it's"
 	line "a given that we'll"
 	cont "battle whenever we"
@@ -54,12 +54,12 @@ CooltrainerfQuinnSeenText:
 	done
 
 CooltrainerfQuinnBeatenText:
-	ntag "Quinn"
+	ntag " Quinn "
 	text "Down and out…"
 	done
 
 CooltrainerfQuinnAfterBattleText:
-	ntag "Quinn"
+	ntag " Quinn "
 	text "You're strong."
 
 	para "You obviously must"

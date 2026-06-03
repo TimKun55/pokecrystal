@@ -365,7 +365,7 @@ Route42LyraLeave:
 	step_end
 
 Route42LyraGreetingText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Hi, <PLAYER>!"
 
 	para "What a coinci-"
@@ -387,19 +387,19 @@ Route42LyraGreetingText:
 	done
 
 Route42LyraWinText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "You've earned this"
 	line "gift!"
 	done
 
 Route42LyraLossText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Better luck next"
 	line "time…"
 	done
 
 Route42LyraPresentText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Wow, you're"
 	line "getting really"
 	cont "strong, <PLAYER>!"
@@ -413,7 +413,7 @@ Route42LyraPresentText:
 	done
 
 Route42LyraWhirlpoolText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "That's Whirlpool."
 
 	para "Teach it to a"
@@ -446,13 +446,13 @@ FisherTullySeenText:
 	done
 
 FisherTullyBeatenText:
-	ntag "Tully"
+	ntag " Tully "
 	text "What? That's not"
 	line "right."
 	done
 
 FisherTullyAfterBattleText:
-	ntag "Tully"
+	ntag " Tully "
 	text "I want to become"
 	line "the trainer Champ"
 	cont "using the #mon"
@@ -469,12 +469,12 @@ HikerBenjaminSeenText:
 	done
 
 HikerBenjaminBeatenText:
-	ntag "Benjamin"
+	ntag " Benjamin "
 	text "Gahahah!"
 	done
 
 HikerBenjaminAfterBattleText:
-	ntag "Benjamin"
+	ntag " Benjamin "
 	text "Losing feels in-"
 	line "significant if you"
 	cont "look up at the big"
@@ -490,13 +490,13 @@ PokemaniacShaneSeenText:
 	done
 
 PokemaniacShaneBeatenText:
-	ntag "Shane"
+	ntag " Shane "
 	text "I should have used"
 	line "my Moon Stone…"
 	done
 
 PokemaniacShaneAfterBattleText:
-	ntag "Shane"
+	ntag " Shane "
 	text "You're working on"
 	line "a #dex?"
 

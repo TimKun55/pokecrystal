@@ -306,7 +306,7 @@ VermilionGymStatue:
 	jumpstd GymStatue2Script
 
 LtSurgeIntroText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Hey, you little"
 	line "tyke!"
 
@@ -329,7 +329,7 @@ LtSurgeIntroText:
 	done
 
 LtSurgeWinLossText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Arrrgh!"
 	line "You are strong!"
 
@@ -343,7 +343,7 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Consider it proof"
 	line "that you defeated"
 	cont "me."
@@ -353,7 +353,7 @@ LtSurgeThunderBadgeText:
 	done
 
 LtSurgeFightDoneText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Hey, kid!"
 	line "Still slugging and"
 	cont "chugging away?"
@@ -363,7 +363,7 @@ LtSurgeFightDoneText:
 	done
 	
 LtSurgeRematchIntroText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Hey kid!"
 	line "You're back!"
 
@@ -372,12 +372,12 @@ LtSurgeRematchIntroText:
 	done
 	
 LtSurgeWinLossRematchText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Haha, shocking!"
 	done
 
 LtSurgeRematchAfterBattleText:
-	ntag "Surge"
+	ntag " Surge "
 	text "I still need"
 	line "to work on"
 	cont "closing the gap"
@@ -388,14 +388,14 @@ LtSurgeRematchAfterBattleText:
 	done
 
 LtSurgeComeBackTomorrowText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Hey kid! Come"
 	line "back tomorrow, we"
 	cont "can battle again."
 	done
 
 LtSurgeNextTimeText:
-	ntag "Surge"
+	ntag " Surge "
 	text "Make sure to keep"
 	line "up your training."
 	done
@@ -409,12 +409,14 @@ GentlemanGregorySeenText:
 	done
 
 GentlemanGregoryBeatenText:
+	ntag " Gregory "
 	text "Sorry I failed"
 	line "you, Lt.Surge,"
 	cont "sir!"
 	done
 
 GentlemanGregoryAfterBattleText:
+	ntag " Gregory "
 	text "When I was still"
 	line "in the army, Lt."
 	cont "Surge saved my"
@@ -432,10 +434,12 @@ GuitaristVincentSeenText:
 	done
 
 GuitaristVincentBeatenText:
+	ntag " Vincent "
 	text "Ooh, how shocking!"
 	done
 
 GuitaristVincentAfterBattleText:
+	ntag " Vincent "
 	text "If the Gym's traps"
 	line "were working, you"
 	cont "would have been"
@@ -449,11 +453,13 @@ JugglerHortonSeenText:
 	done
 
 JugglerHortonBeatenText:
+	ntag " Horton "
 	text "Gwaaah!"
 	line "I was overpowered…"
 	done
 
 JugglerHortonAfterBattleText:
+	ntag " Horton "
 	text "Don't get too com-"
 	line "fortable about"
 	cont "beating me…"
@@ -530,7 +536,7 @@ VermilionGymElectricFenceText:
 	done
 
 RaichuText:
-	ntag "Raichu"
+	ntag " Raichu "
 	text "Rai! Raichuuu!"
 	done
 

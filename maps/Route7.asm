@@ -163,12 +163,12 @@ BugManiacEliSeenText:
 	done
 
 BugManiacEliBeatenText:
-	ntag "Eli"
+	ntag " Eli "
 	text "Well, I guess not!"
 	done
 
 BugManiacEliAfterBattleText:
-	ntag "Eli"
+	ntag " Eli "
 	text "Back to training I"
 	line "go! It's good to"
 	cont "have goals to"
@@ -181,12 +181,12 @@ PokefanMCarlosSeenText:
 	done
 
 PokefanMCarlosBeatenText:
-	ntag "Carlos"
+	ntag " Carlos "
 	text "My cuties!"
 	done
 
 PokefanMCarlosAfterBattleText:
-	ntag "Carlos"
+	ntag " Carlos "
 	text "I should go to"
 	line "the Fan Club in"
 	cont "Vermilion and show"
@@ -194,7 +194,7 @@ PokefanMCarlosAfterBattleText:
 	done
 
 Route7DisguisedScreamText:
-	ntag "???"
+	ntag " ??? "
 	text "Ahh!"
 	done
 

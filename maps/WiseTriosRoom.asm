@@ -183,13 +183,13 @@ SageGakuSeenText:
 	done
 
 SageGakuBeatenText:
-	ntag "Gaku"
+	ntag " Gaku "
 	text "Stronger than we"
 	line "thought? Perhaps…"
 	done
 
 SageGakuAfterBattleText:
-	ntag "Gaku"
+	ntag " Gaku "
 	text "Ah, so it is you"
 	line "who claim to have"
 	cont "seen Suicune,"
@@ -212,13 +212,13 @@ SageMasaSeenText:
 	done
 
 SageMasaBeatenText:
-	ntag "Masa"
+	ntag " Masa "
 	text "…I will tell you"
 	line "the truth…"
 	done
 
 SageMasaAfterBattleText:
-	ntag "Masa"
+	ntag " Masa "
 	text "In the past, there"
 	line "were two nine-tier"
 	cont "towers here."
@@ -268,13 +268,13 @@ SageKojiSeenText:
 	done
 
 SageKojiBeatenText:
-	ntag "Koji"
+	ntag " Koji "
 	text "Too strong!"
 	line "Why?"
 	done
 
 SageKojiAfterBattleQuestionText:
-	ntag "Koji"
+	ntag " Koji "
 	text "You… Are you the"
 	line "trainer who is"
 	cont "awaited by the"
@@ -282,7 +282,7 @@ SageKojiAfterBattleQuestionText:
 	done
 
 SageKojiAfterBattleSpeechText:
-	ntag "Koji"
+	ntag " Koji "
 	text "I see…"
 
 	para "We, the Wise Trio,"
@@ -306,7 +306,7 @@ SageKojiAfterBattleSpeechText:
 	done
 
 SageKojiAfterBattleFinalText:
-	ntag "Koji"
+	ntag " Koji "
 	text "Please, do go on."
 
 	para "Suicune will put"

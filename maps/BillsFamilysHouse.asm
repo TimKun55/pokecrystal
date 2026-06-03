@@ -83,7 +83,7 @@ BillsHouseRadio:
 	jumpstd Radio2Script
 
 BillTakeThisEeveeText:
-	ntag "Bill"
+	ntag " Bill "
 	text "Hi, <PLAYER>!"
 
 	para "On my way back"
@@ -102,7 +102,7 @@ BillTakeThisEeveeText:
 	done
 
 BillImCountingOnYouText:
-	ntag "Bill"
+	ntag " Bill "
 	text "I knew you'd"
 	line "come through!"
 
@@ -122,7 +122,7 @@ ReceivedEeveeText:
 	done
 
 BillEeveeMayEvolveText:
-	ntag "Bill"
+	ntag " Bill "
 	text "Prof.Elm claims"
 	line "Eevee may evolve"
 	cont "in new and"
@@ -130,20 +130,20 @@ BillEeveeMayEvolveText:
 	done
 
 BillPartyFullText:
-	ntag "Bill"
+	ntag " Bill "
 	text "Whoa, wait. You"
 	line "can't carry any"
 	cont "more #mon."
 	done
 
 BillNoEeveeText:
-	ntag "Bill"
+	ntag " Bill "
 	text "Oh… Now what to"
 	line "do?"
 	done
 
 BillPopWontWorkText:
-	ntag "Bill"
+	ntag " Bill "
 	text "My pop, he"
 	line "won't work."
 

@@ -168,12 +168,12 @@ MACRO ntag ;text_nametag
 ENDM
 
 ;UsageExampleText:
-;	ntag "SUPERNERD:"
+;	ntag " SUPERNERD "
 ;	text "Did you check out"
 ;	line "the MUSEUM?@" <- @ terminator before new ntag
 ;	text_promptbutton   <- promptbutton before new ntag
 ;
-;	ntag "NEW SPEAKER:"
+;	ntag " NEW SPEAKER "
 ;	text "text test"
 ;	done
 

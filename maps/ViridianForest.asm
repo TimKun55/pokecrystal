@@ -92,12 +92,12 @@ BugCatcherRobSeenText:
 	done
 
 BugCatcherRobBeatenText:
-	ntag "Rob"
+	ntag " Rob "
 	text "I was whipped…"
 	done
 
 BugCatcherRobAfterBattleText:
-	ntag "Rob"
+	ntag " Rob "
 	text "I'm going to look"
 	line "for stronger bug"
 	cont "#mon."
@@ -111,12 +111,12 @@ BugCatcherEdSeenText:
 	done
 
 BugCatcherEdBeatenText:
-	ntag "Ed"
+	ntag " Ed "
 	text "Ouch, ouch, ouch!"
 	done
 
 BugCatcherEdAfterBattleText:
-	ntag "Ed"
+	ntag " Ed "
 	text "They'll really"
 	line "sting when you"
 	cont "take a bath."
@@ -128,12 +128,12 @@ BugCatcherDougSeenText:
 	done
 
 BugCatcherDougBeatenText:
-	ntag "Doug"
+	ntag " Doug "
 	text "No good!"
 	done
 
 BugCatcherDougAfterBattleText:
-	ntag "Doug"
+	ntag " Doug "
 	text "Bug #mon squish"
 	line "like plush toys"
 	cont "when you squeeze"
@@ -149,12 +149,12 @@ BugManiacMattSeenText:
 	done
 
 BugManiacMattBeatenText:
-	ntag "Matt"
+	ntag " Matt "
 	text "Aww!!"
 	done
 
 BugManiacMattAfterBattleText:
-	ntag "Matt"
+	ntag " Matt "
 	text "Maybe it's too"
 	line "dark in here?"
 
@@ -170,13 +170,13 @@ BugManiacTobiSeenText:
 	done
 
 BugManiacTobiBeatenText:
-	ntag "Tobi"
+	ntag " Tobi "
 	text "Oh."
 	line "I guess I'm not."
 	done
 
 BugManiacTobiAfterBattleText:
-	ntag "Tobi"
+	ntag " Tobi "
 	text "I love my #mon"
 	line "but their types"
 	cont "are a bad matchup"

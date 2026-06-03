@@ -227,12 +227,12 @@ CamperIvanSeenText:
 	done
 
 CamperIvanBeatenText:
-	ntag "Ivan"
+	ntag " Ivan "
 	text "I give!"
 	done
 
 CamperIvanAfterBattleText:
-	ntag "Ivan"
+	ntag " Ivan "
 	text "Music on the radio"
 	line "changes the moods"
 	cont "of wild #mon."
@@ -245,13 +245,13 @@ CamperElliotSeenText:
 	done
 
 CamperElliotBeatenText:
-	ntag "Elliot"
+	ntag " Elliot "
 	text "I wish you would"
 	line "have lost for me…"
 	done
 
 CamperElliotAfterBattleText:
-	ntag "Elliot"
+	ntag " Elliot "
 	text "I was humiliated"
 	line "in front of my"
 	cont "girlfriend…"
@@ -264,13 +264,13 @@ PicnickerBrookeSeenText:
 	done
 
 PicnickerBrookeBeatenText:
-	ntag "Brooke"
+	ntag " Brooke "
 	text "Oh, my! You're so"
 	line "strong!"
 	done
 
 PicnickerBrookeAfterBattleText:
-	ntag "Brooke"
+	ntag " Brooke "
 	text "I can count on my"
 	line "#mon more than"
 	cont "my boyfriend."
@@ -282,13 +282,13 @@ PicnickerKimSeenText:
 	done
 
 PicnickerKimBeatenText:
-	ntag "Kim"
+	ntag " Kim "
 	text "Oh. I couldn't"
 	line "win…"
 	done
 
 PicnickerKimAfterBattleText:
-	ntag "Kim"
+	ntag " Kim "
 	text "The Gym Badges are"
 	line "pretty. I collect"
 	cont "them."
@@ -300,13 +300,13 @@ BirdKeeperBryanSeenText:
 	done
 
 BirdKeeperBryanBeatenText:
-	ntag "Bryan"
+	ntag " Bryan "
 	text "Yikes! Not fast"
 	line "enough!"
 	done
 
 BirdKeeperBryanAfterBattleText:
-	ntag "Bryan"
+	ntag " Bryan "
 	text "Some #mon have"
 	line "a high Speed stat."
 
@@ -328,13 +328,13 @@ JugglerIrwin1SeenText:
 	done
 
 JugglerIrwin1BeatenText:
-	ntag "Irwin"
+	ntag " Irwin "
 	text "Whew! That was a"
 	line "jolt!"
 	done
 
 JugglerIrwinAfterBattleText:
-	ntag "Irwin"
+	ntag " Irwin "
 	text "I was going to"
 	line "dazzle you with my"
 	cont "prize #mon."
@@ -350,13 +350,13 @@ BugCatcherArnieSeenText:
 	done
 
 BugCatcherArnieBeatenText:
-	ntag "Arnie"
+	ntag " Arnie "
 	text "Huh? I shouldn't"
 	line "have lost that…"
 	done
 
 BugCatcherArnieAfterBattleText:
-	ntag "Arnie"
+	ntag " Arnie "
 	text "My Venonat won me"
 	line "the Bug-Catching"
 	cont "Contest at the"
@@ -369,31 +369,31 @@ FirebreatherWaltSeenText:
 	done
 
 FirebreatherWaltBeatenText:
-	ntag "Walt"
+	ntag " Walt "
 	text "Ow! I scorched the"
 	line "tip of my nose!"
 	done
 
 FirebreatherWaltAfterBattleText:
-	ntag "Walt"
+	ntag " Walt "
 	text "The #mon March"
 	line "on the radio lures"
 	cont "wild #mon."
 	done
 
 OfficerDirkSeenText:
-	ntag "Officer Dirk"
+	ntag " Officer Dirk "
 	text "Danger lurks in"
 	line "the night!"
 	done
 
 OfficerDirkBeatenText:
-	ntag "Officer Dirk"
+	ntag " Officer Dirk "
 	text "Whoops!"
 	done
 
 OfficerDirkAfterBattleText:
-	ntag "Officer Dirk"
+	ntag " Officer Dirk "
 	text "You know, night-"
 	line "time is fun in its"
 	cont "own ways."
@@ -403,7 +403,7 @@ OfficerDirkAfterBattleText:
 	done
 
 OfficerDirkPrettyToughText:
-	ntag "Officer Dirk"
+	ntag " Officer Dirk "
 	text "Your #mon look"
 	line "pretty tough."
 

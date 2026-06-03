@@ -367,7 +367,7 @@ RadioTower2FTeacherText_Rockets:
 	done
 
 RadioTowerJigglypuffText:
-	ntag "Jigglypuff"
+	ntag " Jigglypuff "
 	text "Jiggly…"
 	done
 
@@ -474,7 +474,7 @@ GruntF2AfterBattleText:
 	done
 
 RadioTower2FBuenaShowIntroductionText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Hi! I'm Buena!"
 
 	para "Do you know about"
@@ -500,13 +500,13 @@ RadioTower2FBuenaShowIntroductionText:
 	done
 
 RadioTower2FBuenaTuneInToMyShowText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Tune in to my"
 	line "Password Show!"
 	done
 
 RadioTower2FBuenaDoYouKnowPasswordText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Hi!"
 	line "Did you tune in to"
 	cont "my radio show?"
@@ -516,7 +516,7 @@ RadioTower2FBuenaDoYouKnowPasswordText:
 	done
 
 RadioTower2FBuenaJoinTheShowText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Oh, wow!"
 	line "Thank you!"
 
@@ -530,7 +530,7 @@ RadioTower2FBuenaJoinTheShowText:
 	done
 
 RadioTower2FBuenaEveryoneSayPasswordText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Everyone ready?"
 
 	para "I want to hear you"
@@ -540,7 +540,7 @@ RadioTower2FBuenaEveryoneSayPasswordText:
 	done
 
 RadioTower2FBuenaComeBackAfterListeningText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Come back after"
 	line "you listen to my"
 	cont "show, OK?"
@@ -549,7 +549,7 @@ RadioTower2FBuenaComeBackAfterListeningText:
 	done
 
 RadioTower2FBuenaAlreadyPlayedText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Sorry…"
 
 	para "You get just one"
@@ -560,7 +560,7 @@ RadioTower2FBuenaAlreadyPlayedText:
 	done
 
 RadioTower2FBuenaCorrectAnswerText:
-	ntag "Buena"
+	ntag " Buena "
 	text "YIPPEE!"
 	line "That's right!"
 
@@ -569,29 +569,27 @@ RadioTower2FBuenaCorrectAnswerText:
 	done
 
 RadioTower2FBuenaOnePointText:
-	ntag "Buena"
+	ntag " Buena "
 	text "You earned one"
 	line "point! Congrats!"
 	done
 
 RadioTower2FBuenaTwoPointsText:
-	ntag "Buena"
+	ntag " Buena "
 	text "You earned two"
 	line "points! Congrats!"
 	done
 
 RadioTower2FBuenaThreePointsText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Because it's the"
 	line "weekend, you've"
 	cont "earned 3 points!"
 	cont "Congrats!"
 	done
 
-
-
 RadioTower2FBuenaDidYouForgetText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Aww…"
 	line "That's not it…"
 
@@ -600,7 +598,7 @@ RadioTower2FBuenaDidYouForgetText:
 	done
 
 RadioTower2FBuenaThanksForComingText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Yup!"
 	line "Our contestant was"
 	cont "<PLAY_G>."
@@ -615,7 +613,7 @@ RadioTower2FBuenaThanksForComingText:
 	done
 
 RadioTower2FBuenaPasswordIsHelpText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Huh?"
 	line "Today's password?"
 
@@ -623,7 +621,7 @@ RadioTower2FBuenaPasswordIsHelpText:
 	done
 
 RadioTower2FBuenaCardIsFullText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Your Blue Card"
 	line "is full."
 
@@ -632,7 +630,7 @@ RadioTower2FBuenaCardIsFullText:
 	done
 
 RadioTower2FBuenaTuneInAfterFiveText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Tune in to"
 	line "Password every"
 	cont "night from five"
@@ -643,7 +641,7 @@ RadioTower2FBuenaTuneInAfterFiveText:
 	done
 
 RadioTower2FBuenaNoBlueCardText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Oh? You forgot"
 	line "to bring your"
 	cont "Blue Card?"
@@ -654,7 +652,7 @@ RadioTower2FBuenaNoBlueCardText:
 	done
 
 RadioTower2FBuenaOfferPhoneNumberText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Oh! Your Blue Card"
 	line "reached {d:BLUE_CARD_POINT_CAP}"
 	cont "points today!"
@@ -676,7 +674,7 @@ RadioTower2FBuenaOfferPhoneNumberText:
 	done
 
 RadioTower2FBuenaOfferNumberAgainText:
-	ntag "Buena"
+	ntag " Buena "
 	text "<PLAY_G>, do you"
 	line "want to register"
 	cont "my phone number?"
@@ -688,19 +686,19 @@ RadioTower2FRegisteredBuenasNumberText:
 	done
 
 RadioTower2FBuenaCallMeText:
-	ntag "Buena"
+	ntag " Buena "
 	text "I look forward to"
 	line "hearing from you!"
 	done
 
 RadioTower2FBuenaSadRejectedText:
-	ntag "Buena"
+	ntag " Buena "
 	text "Aww… It's a"
 	line "special prize…"
 	done
 
 RadioTower2FBuenaYourPhoneIsFullText:
-	ntag "Buena"
+	ntag " Buena "
 	text "<PLAY_G>, your"
 	line "phone list has no"
 	cont "room left for me…"

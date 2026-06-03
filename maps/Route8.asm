@@ -68,12 +68,12 @@ BikerDwayneSeenText:
 	done
 
 BikerDwayneBeatenText:
-	ntag "Dwayne"
+	ntag " Dwayne "
 	text "S-sorry!"
 	done
 
 BikerDwayneAfterBattleText:
-	ntag "Dwayne"
+	ntag " Dwayne "
 	text "The Kanto #mon"
 	line "Federation will"
 	cont "never fall!"
@@ -87,12 +87,12 @@ BikerHarrisSeenText:
 	done
 
 BikerHarrisBeatenText:
-	ntag "Harris"
+	ntag " Harris "
 	text "F-forgive me!"
 	done
 
 BikerHarrisAfterBattleText:
-	ntag "Harris"
+	ntag " Harris "
 	text "Wiped out by some"
 	line "punk from Johto…"
 	done
@@ -105,12 +105,12 @@ BikerZekeSeenText:
 	done
 
 BikerZekeBeatenText:
-	ntag "Zeke"
+	ntag " Zeke "
 	text "Yikes! Sorry!"
 	done
 
 BikerZekeAfterBattleText:
-	ntag "Zeke"
+	ntag " Zeke "
 	text "We'll try not to"
 	line "disturb anyone"
 	cont "from now on…"
@@ -122,13 +122,13 @@ SupernerdSamSeenText:
 	done
 
 SupernerdSamBeatenText:
-	ntag "Sam"
+	ntag " Sam "
 	text "I just want to see"
 	line "the Magnet Train…"
 	done
 
 SupernerdSamAfterBattleText:
-	ntag "Sam"
+	ntag " Sam "
 	text "The power of mag-"
 	line "nets is awesome!"
 	done
@@ -139,13 +139,13 @@ SupernerdTomSeenText:
 	done
 
 SupernerdTomBeatenText:
-	ntag "Tom"
+	ntag " Tom "
 	text "Just as I thought…"
 	line "You're tough!"
 	done
 
 SupernerdTomAfterBattleText:
-	ntag "Tom"
+	ntag " Tom "
 	text "Gym Badges not"
 	line "only look great"
 	cont "but help out of"

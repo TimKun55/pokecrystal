@@ -94,12 +94,12 @@ AviculturalSocietyBirdKeeper2YouMayPassText:
 	done
 
 AviculturalSocietyMurkrowText:
-	ntag "Murkrow"
+	ntag " Murkrow "
 	text "Row! Krow! Mur!"
 	done
 
 AviculturalSocietySkarmoryText:
-	ntag "Skarmory"
+	ntag " Skarmory "
 	text "Skaaaar!"
 	done
 

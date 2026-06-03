@@ -420,13 +420,13 @@ KurtsHouseKurtExitHouseMovement:
 	step_end
 	
 KurtsHouseKurtGetStartedText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "I'll get started"
 	line "right now!"
 	done
 
 KurtsHouseKurtMakingBallsMustWaitText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Hm? Who are you?"
 
 	para "<PLAYER>, eh? You"
@@ -465,7 +465,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	done
 
 KurtsHouseKurtHonoredToMakeBallsText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Hi, <PLAYER>!"
 
 	para "You handled your-"
@@ -484,7 +484,7 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "I make Balls from"
 	line "Apricorns."
 
@@ -497,7 +497,7 @@ KurtsHouseKurtBallsFromApricornsText:
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "You have an"
 	line "Apricorn for me?"
 
@@ -506,26 +506,26 @@ KurtsHouseKurtAskYouHaveAnApricornText:
 	done
 
 KurtsHouseKurtThatsALetdownText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Oh…"
 	line "That's a letdown."
 	done
 
 KurtsHouseKurtDontBotherMeText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "I'm working!"
 	line "Don't bother me!"
 	done
 
 KurtsHouseKurtJustFinishedYourBallText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Ah, <PLAYER>!"
 	line "I just finished"
 	cont "your Ball. Here!"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "That turned out"
 	line "great."
 
@@ -534,7 +534,7 @@ KurtsHouseKurtTurnedOutGreatText:
 	done
 
 KurtsHouseKurtGranddaughterHelpingWorkFasterText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Now that my"
 	line "granddaughter is"
 	cont "helping me, I can"
@@ -542,7 +542,7 @@ KurtsHouseKurtGranddaughterHelpingWorkFasterText:
 	done
 
 KurtsHouseKurtWhatIsThatText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Wh-what is that?"
 
 	para "I've never seen"
@@ -558,19 +558,19 @@ KurtsHouseKurtWhatIsThatText:
 	done
 
 KurtsHouseKurtImCheckingItNowText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "I'm checking it"
 	line "now."
 	done
 
 KurtsHouseKurtAhHaISeeText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "Ah-ha! I see!"
 	line "So…"
 	done
 
 KurtsHouseKurtThisBallStartedToShakeText:
-	ntag "Kurt"
+	ntag " Kurt "
 	text "<PLAYER>!"
 
 	para "This Ball started"
@@ -633,7 +633,7 @@ KurtsGranddaughterGSBallText:
 	done
 
 KurtsHouseSlowpokeText:
-	ntag "Slowpoke"
+	ntag " Slowpoke "
 	text "…"
 	line "Yawn?"
 	done

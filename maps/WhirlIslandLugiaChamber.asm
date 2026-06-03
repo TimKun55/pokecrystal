@@ -97,7 +97,7 @@ WaterfallBurstText:
 	done
 
 LugiaText:
-	ntag "Lugia"
+	ntag " Lugia "
 	text "Gyaaas!"
 	done
 

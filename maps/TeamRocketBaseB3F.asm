@@ -297,7 +297,7 @@ RocketBaseRivalShovesPlayerMovement:
 	step_end
 
 LanceGetPasswordText:
-	ntag "Lance"
+	ntag " Lance "
 	text "It takes two"
 	line "passwords to get"
 	cont "into the boss's"
@@ -322,7 +322,7 @@ TeamRocketBaseB3FRocketText:
 	done
 
 RocketBaseRivalText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 
 	para "Didn't I tell you"
@@ -385,7 +385,7 @@ PetrelBeforeText:
 	done
 
 PetrelBeatenText:
-	ntag "Petrel"
+	ntag " Petrel "
 	text "I… I couldn't do a"
 	line "thing…"
 
@@ -394,7 +394,7 @@ PetrelBeatenText:
 	done
 
 PetrelAfterText:
-	ntag "Petrel"
+	ntag " Petrel "
 	text "No, I can't let"
 	line "this affect me."
 
@@ -403,7 +403,7 @@ PetrelAfterText:
 	done
 
 RocketBaseMurkrowText:
-	ntag "Murkrow"
+	ntag " Murkrow "
 	text "… … …"
 
 	para "Hail Giovanni."

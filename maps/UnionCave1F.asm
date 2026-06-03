@@ -71,12 +71,12 @@ HikerRussellSeenText:
 	done
 
 HikerRussellBeatenText:
-	ntag "Russell"
+	ntag " Russell "
 	text "Oh, oh, oh!"
 	done
 
 HikerRussellAfterBattleText:
-	ntag "Russell"
+	ntag " Russell "
 	text "All right, then!"
 	line "I've decided."
 
@@ -98,13 +98,13 @@ PokemaniacLarrySeenText:
 	done
 
 PokemaniacLarryBeatenText:
-	ntag "Larry"
+	ntag " Larry "
 	text "Ugh. My poor #-"
 	line "mon…"
 	done
 
 PokemaniacLarryAfterBattleText:
-	ntag "Larry"
+	ntag " Larry "
 	text "Every Friday, you"
 	line "can hear #mon"
 	cont "roars from deep"
@@ -120,13 +120,13 @@ HikerDanielSeenText:
 	done
 
 HikerDanielBeatenText:
-	ntag "Daniel"
+	ntag " Daniel "
 	text "Whoa! I'm beaten"
 	line "big time!"
 	done
 
 HikerDanielAfterBattleText:
-	ntag "Daniel"
+	ntag " Daniel "
 	text "I was conned into"
 	line "buying a Slowpoke-"
 	cont "Tail."
@@ -145,12 +145,12 @@ FirebreatherBillSeenText:
 	done
 
 FirebreatherBillBeatenText:
-	ntag "Bill"
+	ntag " Bill "
 	text "I flamed out!"
 	done
 
 FirebreatherBillAfterBattleText:
-	ntag "Bill"
+	ntag " Bill "
 	text "On weekends, you"
 	line "can hear strange"
 	cont "roars from deep in"
@@ -167,12 +167,12 @@ FirebreatherRaySeenText:
 	done
 
 FirebreatherRayBeatenText:
-	ntag "Ray"
+	ntag " Ray "
 	text "FLASH!"
 	done
 
 FirebreatherRayAfterBattleText:
-	ntag "Ray"
+	ntag " Ray "
 	text "It's my #mon's"
 	line "fire that lights"
 	cont "up this cave."

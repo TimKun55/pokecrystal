@@ -169,14 +169,14 @@ PlayerWalksTowardMumMovement:
 	step_end
 
 PlayerFinallyAwakeText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Oh, <PLAYER>!"
 	line "You're finally"
 	cont "awake, dear."
 	done
 
 ElmsLookingForYouText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Your friend Lyra"
 	line "was just here."
 
@@ -194,7 +194,7 @@ ElmsLookingForYouText:
 	done
 
 MumGivesPokegearText:
-	ntag "Mum"
+	ntag " Mum "
 	text "#mon Gear,"
 	line "or just #gear."
 
@@ -210,13 +210,13 @@ MumGivesPokegearText:
 	done
 
 IsItDSTText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Is it Daylight"
 	line "Saving Time now?"
 	done
 
 ComeHomeForDSTText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Come home to"
 	line "adjust your clock"
 	cont "for Daylight"
@@ -224,7 +224,7 @@ ComeHomeForDSTText:
 	done
 
 RunningShoesText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Also, don't forget"
 	line "about your new"
 	cont "Running Shoes."
@@ -241,7 +241,7 @@ RunningShoesText:
 	done
 
 HurryUpElmIsWaitingText:
-	ntag "Mum"
+	ntag " Mum "
 	text "Prof.Elm is wait-"
 	line "ing for you."
 
@@ -249,7 +249,7 @@ HurryUpElmIsWaitingText:
 	done
 
 SoWhatWasProfElmsErrandText:
-	ntag "Mum"
+	ntag " Mum "
 	text "So, what was Prof."
 	line "Elm's errand?"
 
@@ -264,7 +264,7 @@ SoWhatWasProfElmsErrandText:
 	done
 
 ImBehindYouText:
-	ntag "Mum"
+	ntag " Mum "
 	text "<PLAYER>, do it!"
 
 	para "I'm behind you all"

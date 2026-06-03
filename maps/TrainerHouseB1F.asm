@@ -355,20 +355,20 @@ TrainerHouseB1FPleaseComeAgainText:
 	done
 
 TrainerHouseB1FCalBeatenText:
-	ntag "Cal"
+	ntag " Cal "
 	text "I lost…"
 	line "Darn…"
 	done
 
 TrainerHouseB1FCalBeforeText:
-	ntag "Cal"
+	ntag " Cal "
 	text "I traveled here"
 	line "just so I could"
 	cont "battle you."
 	done
 
 TrainerHouseB1FInverBeforeText:
-	ntag "Inver"
+	ntag " Inver "
 	text "How wonderful to"
 	line "have another"
 	cont "challenger."
@@ -377,12 +377,12 @@ TrainerHouseB1FInverBeforeText:
 	done
 
 TrainerHouseB1FInverBeatenText:
-	ntag "Inver"
+	ntag " Inver "
 	text "A wonderful job."
 	done
 
 TrainerHouseB1FInverAfterText:
-	ntag "Inver"
+	ntag " Inver "
 	text "I look forward"
 	line "to battling you"
 	cont "again."
@@ -392,7 +392,7 @@ TrainerHouseB1FThortonBeforeText:
 	text "Bzweeeeep!@"
 	text_promptbutton
 
-	ntag "Thorton"
+	ntag " Thorton "
 	text "Sorry, don't"
 	line "mind me."
 
@@ -417,20 +417,20 @@ TrainerHouseB1FThortonBeforeText:
 	done
 
 TrainerHouseB1FThortonBeatenText:
-	ntag "Thorton"
+	ntag " Thorton "
 	text "Woah! You sure"
 	line "showed me!"
 	done
 
 TrainerHouseB1FThortonAfterText:
-	ntag "Thorton"
+	ntag " Thorton "
 	text "I can't wait to"
 	line "gather even more"
 	cont "data."
 	done
 
 TrainerHouseB1FAgathaBeforeText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "Ah, you're here,"
 	line "<PLAYER>."
 
@@ -438,12 +438,12 @@ TrainerHouseB1FAgathaBeforeText:
 	done
 
 TrainerHouseB1FAgathaBeatenText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "I lost again."
 	done
 
 TrainerHouseB1FAgathaAfterText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "It may sound odd,"
 	line "but I'm almost"
 	cont "glad I lost."
@@ -460,26 +460,26 @@ TrainerHouseB1FAgathaAfterText:
 	done
 
 TrainerHouseB1FLoreleiBeforeText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "Ah, you're here."
 
 	para "Let's battle."
 	done
 
 TrainerHouseB1FLoreleiBeatenText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "Still powerful."
 	done
 
 TrainerHouseB1FLoreleiAfterText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "I'm happy to see"
 	line "you're training so"
 	cont "seriously."
 	done
 
 TrainerHouseB1FOakBeforeText:
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "<PLAYER>!"
 
 	para "Time to test"
@@ -487,12 +487,12 @@ TrainerHouseB1FOakBeforeText:
 	done
 
 TrainerHouseB1FOakBeatenText:
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "Wow, that was fun!"
 	done
 
 TrainerHouseB1FOakAfterText:
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "I'm glad I decided"
 	line "to start battling"
 	cont "again."

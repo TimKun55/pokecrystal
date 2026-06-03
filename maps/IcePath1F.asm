@@ -74,7 +74,7 @@ IcePathLanceWaitText:
 	done
 
 IcePathLanceCongratulationsText:
-	ntag "Lance"
+	ntag " Lance "
 	text "I've been looking"
 	line "all over for you!"
 	
@@ -95,7 +95,7 @@ IcePathLanceCongratulationsText:
 	done
 
 IcePathLanceWaterfallText:
-	ntag "Lance"
+	ntag " Lance "
 	text "My Gyarados loves"
 	line "using it and I'm"
 	cont "sure you'll find"

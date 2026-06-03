@@ -44,7 +44,7 @@ VioletNicknameSpeechHouseLassText:
 	done
 
 VioletNicknameSpeechHouseBirdText:
-	ntag "Strawberry"
+	ntag " Strawberry "
 	text "Pijji!"
 	done
 

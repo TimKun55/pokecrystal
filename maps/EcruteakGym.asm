@@ -440,7 +440,7 @@ MarthaToPlayerMovement:
 	step_end
 
 MortyIntroText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Good of you to"
 	line "have come."
 
@@ -478,7 +478,7 @@ MortyIntroText:
 	done
 
 MortyWinLossText:
-	ntag "Morty"
+	ntag " Morty "
 	text "I'm not good"
 	line "enough yet…"
 
@@ -492,7 +492,7 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
-	ntag "Morty"
+	ntag " Morty "
 	text "By having the Fog-"
 	line "Badge, #mon up"
 	cont "to L50 will obey"
@@ -508,7 +508,7 @@ MortyText_FogBadgeSpeech:
 	done
 
 MortyText_ShadowBallSpeech:
-	ntag "Morty"
+	ntag " Morty "
 	text "It's Shadow Ball."
 
 	para "It causes damage"
@@ -520,7 +520,7 @@ MortyText_ShadowBallSpeech:
 	done
 
 MortyFightDoneText:
-	ntag "Morty"
+	ntag " Morty "
 	text "I see…"
 
 	para "Your journey has"
@@ -536,7 +536,7 @@ MortyFightDoneText:
 	done
 	
 MortyRematchIntroText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Hello, <PLAYER>!"
 	line "Welcome back."
 	
@@ -545,12 +545,12 @@ MortyRematchIntroText:
 	done
 	
 MortyWinLossRematchText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Still so strong."
 	done
 	
 MortyRematchAfterBattleText:
-	ntag "Morty"
+	ntag " Morty "
 	text "That was a great"
 	line "battle, but just"
 	cont "wait, I'm going to"
@@ -562,7 +562,7 @@ MortyRematchAfterBattleText:
 	done
 	
 Morty16IntroText:
-	ntag "Morty"
+	ntag " Morty "
 	text "<PLAYER>."
 	line "You've done it."
 	
@@ -578,7 +578,7 @@ Morty16IntroText:
 	done
 	
 Morty16AfterBattleText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Impressive."
 	line "I didn't think our"
 	cont "potentials are so"
@@ -590,14 +590,14 @@ Morty16AfterBattleText:
 	done
 
 MortyComeBackTomorrowText:
-	ntag "Morty"
+	ntag " Morty "
 	text "You should come"
 	line "back tomorrow for"
 	cont "a rematch."
 	done
 	
 MortyNextTimeText:
-	ntag "Morty"
+	ntag " Morty "
 	text "No problem."
 	line "Come back if you'd"
 	cont "like a rematch."
@@ -617,13 +617,13 @@ SageJeffreySeenText:
 	done
 
 SageJeffreyBeatenText:
-	ntag "Jeffrey"
+	ntag " Jeffrey "
 	text "Wins and losses, I"
 	line "experienced both."
 	done
 
 SageJeffreyAfterBattleText:
-	ntag "Jeffrey"
+	ntag " Jeffrey "
 	text "Where did #mon"
 	line "come from?"
 	done
@@ -635,12 +635,12 @@ SagePingSeenText:
 	done
 
 SagePingBeatenText:
-	ntag "Ping"
+	ntag " Ping "
 	text "Ah! Well done!"
 	done
 
 SagePingAfterBattleText:
-	ntag "Ping"
+	ntag " Ping "
 	text "We use only ghost-"
 	line "type #mon."
 
@@ -654,12 +654,12 @@ HexManiacMarthaSeenText:
 	done
 
 HexManiacMarthaBeatenText:
-	ntag "Martha"
+	ntag " Martha "
 	text "I, I, I lost!"
 	done
 
 HexManiacMarthaAfterBattleText:
-	ntag "Martha"
+	ntag " Martha "
 	text "The one who wants"
 	line "to win most--will!"
 	done
@@ -674,12 +674,12 @@ HexManiacGraceSeenText:
 	done
 
 HexManiacGraceBeatenText:
-	ntag "Grace"
+	ntag " Grace "
 	text "Wha-what?"
 	done
 
 HexManiacGraceAfterBattleText:
-	ntag "Grace"
+	ntag " Grace "
 	text "Look at the path"
 	line "carefully before"
 	cont "the battles."
@@ -716,7 +716,7 @@ EcruteakGymClosedText:
 	done
 	
 GengarText:
-	ntag "Gengar"
+	ntag " Gengar "
 	text "Gen! GengarGen!"
 	done
 

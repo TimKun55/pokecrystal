@@ -78,7 +78,7 @@ VermilionPortPassagePlayerStepsBackMovement:
 	step_end
 
 VermilionPortPassageAskBoardText:
-	ntag "Sailor"
+	ntag " Sailor "
 	text "Welcome to Fast"
 	line "Ship S.S.Aqua."
 
@@ -87,13 +87,13 @@ VermilionPortPassageAskBoardText:
 	done
 
 VermilionPortPassageAskTicketText:
-	ntag "Sailor"
+	ntag " Sailor "
 	text "May I see your"
 	line "S.S.Ticket?"
 	done
 
 VermilionPortPassageComeAgainText:
-	ntag "Sailor"
+	ntag " Sailor "
 	text "We hope to see you"
 	line "again!"
 	done
@@ -103,13 +103,13 @@ VermilionPortPassageFlashTicketText:
 	line "the Trainer Card.@"
 	text_promptbutton
 
-	ntag "Sailor"
+	ntag " Sailor "
 	text "That's it."
 	line "Thank you!"
 	done
 
 VermilionPortPassageGoOnThroughText:
-	ntag "Sailor"
+	ntag " Sailor "
 	text "I've seen your"
 	line "Ticket. Please, go"
 	cont "on through."
@@ -123,7 +123,7 @@ VermilionPortPassageNoTicketText:
 	para "…But no Ticket!@"
 	text_promptbutton
 
-	ntag "Sailor"
+	ntag " Sailor "
 	text "Sorry!"
 	
 	para "You may board only"

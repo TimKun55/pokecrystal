@@ -102,7 +102,7 @@ GrannysTV:
 	jumptext GrannyWatchTVText
 
 GrannyStreamingText:
-	ntag "Granny"
+	ntag " Granny "
 	text "Sorry, dear,"
 	line "I'm streaming"
 	cont "right now."
@@ -112,7 +112,7 @@ GrannyStreamingText:
 	done
 
 GrannySundaeScariesText:
-	ntag "Granny"
+	ntag " Granny "
 	text "URAAAAAAHHHHH!!!"
 	
 	para "Oh, dear, you"
@@ -129,7 +129,7 @@ GrannySundaeScariesText:
 	done
 	
 GrannyWatchingStreamText:
-	ntag "Granny"
+	ntag " Granny "
 	text "Today is a day"
 	line "off, but I like"
 	cont "watching others"
@@ -168,12 +168,12 @@ GrannyWatchingStreamText:
 	done
 	
 GrannyHousePsyduckText:
-	ntag "Psyduck"
+	ntag " Psyduck "
 	text "Psyyy?"
 	done
 
 GrannyHouseWooperText::
-	ntag "Wooper"
+	ntag " Wooper "
 	text "Oopa?"
 	
 	para "        :0        "

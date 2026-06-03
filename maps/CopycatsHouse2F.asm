@@ -181,23 +181,23 @@ CopycatSpinAroundMovementData:
 	step_end
 
 CopycatText_Male_1:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Hi! Do you like"
 	line "#mon?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Uh, no, I just"
 	line "asked you.@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Huh?"
 	line "You're strange!"
 	done
 
 CopycatText_QuickMimicking:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "Hmm?"
 	line "Quit mimicking?"
 
@@ -206,20 +206,20 @@ CopycatText_QuickMimicking:
 	done
 
 CopycatText_Male_2:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Hi!"
 	line "I heard that you"
 	cont "lost your favorite"
 	cont "# Doll.@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER>" 
 	text "<PLAYER>: If I find"
 	line "it, you'll give me"
 	cont "a rail Pass?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "I'll go find it"
 	line "for you."
 
@@ -229,7 +229,7 @@ CopycatText_Male_2:
 	done
 
 CopycatText_Worried:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "Pardon?"
 
 	para "I shouldn't decide"
@@ -242,7 +242,7 @@ CopycatText_Worried:
 	done
 
 CopycatText_GiveDoll:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "Yay!"
 	line "That's my Clefairy"
 	cont "# Doll!"
@@ -254,7 +254,7 @@ CopycatText_GiveDoll:
 	done
 
 CopycatText_GivePass:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "OK. Here's the"
 	line "Magnet Train Pass"
 	cont "like I promised!"
@@ -265,7 +265,7 @@ CopycatText_GivePass:
 	done
 
 CopycatText_ExplainPass:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "That's the Pass "
 	line "for the Magnet"
 	cont "Train."
@@ -278,58 +278,58 @@ CopycatText_ExplainPass:
 	done
 
 CopycatText_Male_3:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Hi!"
 	line "Thanks a lot for"
 	cont "the rail Pass!@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Pardon?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Is it that fun to"
 	line "mimic my every"
 	cont "move?"
 	done
 
 CopycatText_ItsAScream:
-	ntag "Copycat"
+	ntag " Copycat "
 	text "You bet!"
 	line "It's a scream!"
 	done
 
 CopycatText_Female_1:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Hi. You must like"
 	line "#mon.@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "No, not me."
 	line "I asked you.@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Pardon?"
 	line "You're weird!"
 	done
 
 CopycatText_Female_2:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Hi. Did you really"
 	line "lose your #"
 	cont "Doll?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "You'll really give"
 	line "me a rail Pass if"
 	cont "I find it for you?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	para "Sure, I'll look"
 	line "for it!@"
 
@@ -339,28 +339,28 @@ CopycatText_Female_2:
 	done
 
 CopycatText_Female_3:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "Thank you for the"
 	line "rail Pass!@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	para " …Pardon?@"
 	text_promptbutton
 
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	para "Is it really that"
 	line "fun to copy what"
 	cont "I say and do?"
 	done
 
 CopycatsDodrioText1:
-	ntag "Dodrio"
+	ntag " Dodrio "
 	text "Gii giii!"
 	done
 
 CopycatsDodrioText2:
-	ntag "Dodrio"
+	ntag " Dodrio "
 	text "MIRROR, MIRROR ON"
 	line "THE WALL, WHO'S"
 	cont "THE FAIREST ONE OF"

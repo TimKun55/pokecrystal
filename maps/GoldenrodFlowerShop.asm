@@ -310,7 +310,7 @@ NoRoomForMulchText:
 	done
 
 DescribeMulchText:
-	ntag "Floria"
+	ntag " Floria "
 	text "Our Mulch is a mix"
 	line "of high-quality"
 	cont "soil and #mon's"
@@ -338,13 +338,13 @@ GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	done
 
 GoldenrodFlowerShopFloriaItReallyWasAMonText:
-	ntag "Floria"
+	ntag " Floria "
 	text "So it really was a"
 	line "#mon!"
 	done
 	
 FlowerShopBellossomText:
-	ntag "Bellossom"
+	ntag " Bellossom "
 	text "Bel! Loslos!"
 	done
 

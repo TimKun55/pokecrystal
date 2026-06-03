@@ -64,7 +64,7 @@ VioletMoveTutor2Script:
 	writetextend VioletMoveTutorNotEnough
 
 VioletMoveTutorIcicleSpearText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hello, young one."
 	
 	para "I specialise in"
@@ -74,7 +74,7 @@ VioletMoveTutorIcicleSpearText:
 	done
 
 VioletMoveTutorIcicleSpearTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It can hit a few"
 	line "times and deal a"
 	cont "lot of damage."
@@ -88,7 +88,7 @@ VioletMoveTutorIcicleSpearTaught:
 	done
 
 VioletMoveTutorSandTombText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hello, dear."
 	
 	para "I specialise in"
@@ -98,7 +98,7 @@ VioletMoveTutorSandTombText:
 	done
 
 VioletMoveTutorSandTombTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It traps your foe"
 	line "and deals it extra"
 	cont "damage each turn."
@@ -111,7 +111,7 @@ VioletMoveTutorSandTombTaught:
 	done
 
 VioletMoveTutorAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥2,500?"
@@ -123,13 +123,13 @@ VioletMoveTutorPayment:
 	done
 
 VioletMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Please return when"
 	line "you see fit."
 	done
 
 VioletMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you can't"
 	line "afford it."
 	done

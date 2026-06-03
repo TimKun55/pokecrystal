@@ -274,7 +274,7 @@ RadioTower4FFisherText:
 	done
 
 RadioTower4FDJMaryText:
-	ntag "Mary"
+	ntag " Mary "
 	text "Why? Why do I have"
 	line "to suffer through"
 	cont "this?"
@@ -283,7 +283,7 @@ RadioTower4FDJMaryText:
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
-	ntag "Mary"
+	ntag " Mary "
 	text "Oh! You're my"
 	line "little savior!"
 
@@ -292,7 +292,7 @@ RadioTower4FDJMaryText_ClearedRockets:
 	done
 
 RadioTower4FDJMaryText_GivePinkBow:
-	ntag "Mary"
+	ntag " Mary "
 	text "It's just right"
 	line "for #mon that"
 	cont "know normal-type"
@@ -300,14 +300,14 @@ RadioTower4FDJMaryText_GivePinkBow:
 	done
 
 RadioTower4FDJMaryText_After:
-	ntag "Mary"
+	ntag " Mary "
 	text "Please tune into"
 	line "me on Prof.Oak's"
 	cont "#mon Talk show."
 	done
 
 RadioTower4FDJMaryText_Interview1:
-	ntag "Mary"
+	ntag " Mary "
 	text "Oh, you're hear to"
 	line "discuss becoming"
 	cont "Champion after the"
@@ -319,7 +319,7 @@ RadioTower4FDJMaryText_Interview1:
 	done
 
 RadioTower4FDJMaryText_Interview2:
-	ntag "Mary"
+	ntag " Mary "
 	text "Oh, you're hear to"
 	line "discuss restoring"
 	cont "power to Kanto and"
@@ -330,7 +330,7 @@ RadioTower4FDJMaryText_Interview2:
 	done
 
 RadioTower4FDJMaryText_Interview3:
-	ntag "Mary"
+	ntag " Mary "
 	text "Oh, you're hear to"
 	line "discuss becoming"
 	cont "Grand Champion"
@@ -341,7 +341,7 @@ RadioTower4FDJMaryText_Interview3:
 	done
 
 RadioTower4FDJMaryText_IntroducePlayer:
-	ntag "Mary"
+	ntag " Mary "
 	text "Listeners!"
 
 	para "In the studio, a"
@@ -350,7 +350,7 @@ RadioTower4FDJMaryText_IntroducePlayer:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview1:
-	ntag "Mary"
+	ntag " Mary "
 	text "Please welcome"
 	line "<PLAYER>, who"
 	cont "recently defeated"
@@ -362,7 +362,7 @@ RadioTower4FDJMaryText_IntroduceInterview1:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview2:
-	ntag "Mary"
+	ntag " Mary "
 	text "Please welcome"
 	line "<PLAYER>, who"
 	cont "recently defeated"
@@ -373,7 +373,7 @@ RadioTower4FDJMaryText_IntroduceInterview2:
 	done
 
 RadioTower4FDJMaryText_IntroduceInterview3:
-	ntag "Mary"
+	ntag " Mary "
 	text "Please welcome"
 	line "<PLAYER>."
 	
@@ -389,7 +389,7 @@ RadioTower4FDJMaryText_IntroduceInterview3:
 	done
 
 RadioTower4FDJMaryText_Interview1Start:
-	ntag "Mary"
+	ntag " Mary "
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of the struggles"
@@ -399,13 +399,13 @@ RadioTower4FDJMaryText_Interview1Start:
 	done
 
 RadioTower4FDJMaryText_PleaseElaborateText:
-	ntag "Mary"
+	ntag " Mary "
 	text "Can you please"
 	line "elaborate?"
 	done
 
 RadioTower4FDJMaryText_Interview1Finish:
-	ntag "Mary"
+	ntag " Mary "
 	text "So exciting!"
 
 	para "Well we've used up"
@@ -421,7 +421,7 @@ RadioTower4FDJMaryText_Interview1Finish:
 	done
 
 RadioTower4FDJMaryText_Interview2Start:
-	ntag "Mary"
+	ntag " Mary "
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of what it was"
@@ -430,12 +430,12 @@ RadioTower4FDJMaryText_Interview2Start:
 	done
 	
 RadioTower4FDJMaryText_Interview2FormerBoss:
-	ntag "Mary"
+	ntag " Mary "
 	text "The former Boss?!"
 	done
 
 RadioTower4FDJMaryText_Interview2RestorePower:
-	ntag "Mary"
+	ntag " Mary "
 	text "So exciting!"
 
 	para "And how did you"
@@ -444,14 +444,14 @@ RadioTower4FDJMaryText_Interview2RestorePower:
 	done
 
 RadioTower4FDJMaryText_Interview2InTheGym:
-	ntag "Mary"
+	ntag " Mary "
 	text "Oh my!"
 	line "It was in the Gym,"
 	cont "you say?!"
 	done
 
 RadioTower4FDJMaryText_Interview2Finish:
-	ntag "Mary"
+	ntag " Mary "
 	text "Amazing!"
 
 	para "Well we've used up"
@@ -467,7 +467,7 @@ RadioTower4FDJMaryText_Interview2Finish:
 	done
 
 RadioTower4FDJMaryText_Interview3Start:
-	ntag "Mary"
+	ntag " Mary "
 	text "<PLAYER>, please"
 	line "give us some idea"
 	cont "of what it was"
@@ -476,7 +476,7 @@ RadioTower4FDJMaryText_Interview3Start:
 	done
 
 RadioTower4FDJMaryText_Interview3Snorlax:
-	ntag "Mary"
+	ntag " Mary "
 	text "Wow!"
 	line "It was just laying"
 	cont "there, sleeping?"
@@ -485,7 +485,7 @@ RadioTower4FDJMaryText_Interview3Snorlax:
 	done
 
 RadioTower4FDJMaryText_Interview3DefeatLeaders:
-	ntag "Mary"
+	ntag " Mary "
 	text "Interesting!"
 
 	para "And what about"
@@ -494,13 +494,13 @@ RadioTower4FDJMaryText_Interview3DefeatLeaders:
 	done
 
 RadioTower4FDJMaryText_Interview3OnADate:
-	ntag "Mary"
+	ntag " Mary "
 	text "She was on a date?"
 	line "Goodness!"
 	done
 
 RadioTower4FDJMaryText_Interview3End:
-	ntag "Mary"
+	ntag " Mary "
 	text "Relocated because"
 	line "of the Volcano?"
 	
@@ -548,14 +548,14 @@ RadioTower4FDJMaryText_Interview3End:
 	done
 
 RadioTower4FDJMaryText_RegularSchedule:
-	ntag "Mary"
+	ntag " Mary "
 	text "And now, back"
 	line "to our regular"
 	cont "program!"
 	done
 
 RadioTower4FDJMaryText_InterviewGift:
-	ntag "Mary"
+	ntag " Mary "
 	text "And here's a very"
 	line "special thank you"
 	cont "for your time."
@@ -592,13 +592,13 @@ RadioTower4FTeddiursaDollSentHomeText:
 	done
 
 RadioTower4FDJMaryText_TalkAgain:
-	ntag "Mary"
+	ntag " Mary "
 	text "I can't wait to"
 	line "talk to you again!"
 	done
 
 RadioTower4FDJMaryText_ThanksForInterview:
-	ntag "Mary"
+	ntag " Mary "
 	text "Thanks for the"
 	line "interview!"
 
@@ -609,12 +609,12 @@ RadioTower4FDJMaryText_ThanksForInterview:
 	done
 
 RadioTower4FDJMaryInterview_PlayerResponse:
-	ntag "<PLAYER>"
+	ntag " <PLAYER> "
 	text "… … …@"
 	done
 
 RadioTowerMeowthText:
-	ntag "Meowth"
+	ntag " Meowth "
 	text "Nyaa…"
 	done
 
@@ -637,7 +637,7 @@ GruntM10AfterBattleText:
 	done
 
 RadioTowerProtonSeenText:
-	ntag "Proton"
+	ntag " Proton "
 	text "You! I haven't"
 	line "forgotten the way"
 	cont "you humiliated"
@@ -648,12 +648,12 @@ RadioTowerProtonSeenText:
 	done
 
 RadioTowerProtonBeatenText:
-	ntag "Proton"
+	ntag " Proton "
 	text "Humiliation again!"
 	done
 
 RadioTowerProtonAfterBattleText:
-	ntag "Proton"
+	ntag " Proton "
 	text "You've earned my"
 	line "respect, so here's"
 	cont "some advice."

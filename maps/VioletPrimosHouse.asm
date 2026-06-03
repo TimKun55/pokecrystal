@@ -82,7 +82,7 @@ PrimosHouseWooperScript:
 	end
 
 PrimoIntroText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Hi! I'm Primo."
 	line "I moved here from"
 	cont "Kanto not too"
@@ -98,7 +98,7 @@ PrimoIntroText:
 	done
 	
 PrimoBeatFalknerText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Hmm, you don't"
 	line "seem to have any"
 	cont "Gym Badges."
@@ -109,7 +109,7 @@ PrimoBeatFalknerText:
 	done
 
 PrimoTakeThisSlugmaText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Hey, you've got"
 	line "Falkner's Badge!"
 
@@ -118,7 +118,7 @@ PrimoTakeThisSlugmaText:
 	done
 
 PrimoAmazingText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Amazing!"
 	line "Slugma isn't easy"
 	cont "to raise but"
@@ -133,7 +133,7 @@ ReceivedSlugmaText:
 	done
 
 PrimoSlugmaComeInHandyText:
-	ntag "Primo"
+	ntag " Primo "
 	text "As a fire-type,"
 	line "Slugma will"
 	cont "definitely come"
@@ -142,14 +142,14 @@ PrimoSlugmaComeInHandyText:
 	done
 
 PrimoPartyFullText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Whoa, wait. You"
 	line "can't carry any"
 	cont "more #mon."
 	done
 
 PrimoNoSlugmaText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Oh… No problem."
 	
 	para "I'll see if the"
@@ -158,7 +158,7 @@ PrimoNoSlugmaText:
 	done
 
 PrimoLoveJohtoText:
-	ntag "Primo"
+	ntag " Primo "
 	text "Moving here from"
 	line "Viridian City was"
 	cont "a bit hectic!"
@@ -168,17 +168,17 @@ PrimoLoveJohtoText:
 	done
 
 PrimosHouseMareepText:
-	ntag "Mareep"
+	ntag " Mareep "
 	text "Meep!"
 	done
 
 PrimosHouseSlugmaText:
-	ntag "Slugma"
+	ntag " Slugma "
 	text "Maaag!"
 	done
 
 PrimosHouseWooperText:
-	ntag "Wooper"
+	ntag " Wooper "
 	text "Oopaa!"
 	done
 

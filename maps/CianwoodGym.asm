@@ -225,7 +225,7 @@ CianwoodGymStatue:
 	jumpstd GymStatue3Script
 
 ChuckIntroText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Ooomph!"
 
 	para "The pounding"
@@ -263,7 +263,7 @@ ChuckIntroText:
 	done
 
 ChuckLossText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Wha? Huh?"
 	line "I lost?"
 
@@ -278,7 +278,7 @@ GetStormBadgeText:
 	done
 
 ChuckExplainBadgeText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "The StormBadge"
 	line "makes all #mon"
 	cont "up to L70 obey,"
@@ -294,7 +294,7 @@ ChuckExplainBadgeText:
 	done
 
 ChuckExplainTMText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "That is"
 	line "DynamicPunch."
 
@@ -305,7 +305,7 @@ ChuckExplainTMText:
 	done
 
 ChuckAfterText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAH! I enjoyed"
 	line "battling you!"
 
@@ -318,7 +318,7 @@ ChuckAfterText:
 	done
 
 ChuckRematchIntroText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAHAHA!"
 	
 	para "Good to see you"
@@ -329,14 +329,14 @@ ChuckRematchIntroText:
 	done
 	
 ChuckWinLossRematchText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAH!" 
 	line "Smashed like"
 	cont "a rock!"
 	done
 	
 ChuckRematchAfterBattleText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Even after 24 hour"
 	line "training, I still"
 	cont "can't win!"
@@ -356,7 +356,7 @@ ChuckRematchAfterBattleText:
 	done
 	
 Chuck16IntroText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "<PLAYER>!"
 	line "You've done it!"
 	
@@ -373,7 +373,7 @@ Chuck16IntroText:
 	done
 	
 Chuck16AfterBattleText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAHAHA!"
 	line "That was an"
 	cont "amazing battle!"
@@ -388,13 +388,13 @@ Chuck16AfterBattleText:
 	done
 
 ChuckComeBackTomorrowText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Come and train"
 	line "again tomorrow."
 	done
 
 ChuckNextTimeText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Ahh, no problem."
 	line "Come back for"
 	cont "another round!"
@@ -410,12 +410,12 @@ BlackbeltYoshiSeenText:
 	done
 
 BlackbeltYoshiBeatenText:
-	ntag "Yoshi"
+	ntag " Yoshi "
 	text "This isn't real!"
 	done
 
 BlackbeltYoshiAfterText:
-	ntag "Yoshi"
+	ntag " Yoshi "
 	text "You seem to have a"
 	line "strong bond with"
 	cont "your #mon too!"
@@ -427,12 +427,12 @@ BlackbeltLaoSeenText:
 	done
 
 BlackbeltLaoBeatenText:
-	ntag "Lao"
+	ntag " Lao "
 	text "That's shocking!"
 	done
 
 BlackbeltLaoAfterText:
-	ntag "Lao"
+	ntag " Lao "
 	text "Fighting #mon"
 	line "are afraid of psy-"
 	cont "chics…"
@@ -445,12 +445,12 @@ BlackbeltNobSeenText:
 	done
 
 BlackbeltNobBeatenText:
-	ntag "Nob"
+	ntag " Nob "
 	text "…"
 	done
 
 BlackbeltNobAfterText:
-	ntag "Nob"
+	ntag " Nob "
 	text "I lost!"
 	line "I'm speechless!"
 	done
@@ -462,19 +462,19 @@ BlackbeltLungSeenText:
 	done
 
 BlackbeltLungBeatenText:
-	ntag "Lung"
+	ntag " Lung "
 	text "I got shattered!"
 	done
 
 BlackbeltLungAfterText:
-	ntag "Lung"
+	ntag " Lung "
 	text "My #mon lost…"
 	line "My… my pride is"
 	cont "shattered…"
 	done
 	
 PoliwrathText:
-	ntag "Poliwrath"
+	ntag " Poliwrath "
 	text "Poli!"
 	done
 

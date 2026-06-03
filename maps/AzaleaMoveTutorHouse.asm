@@ -64,7 +64,7 @@ AzaleaMoveTutor2Script:
 	writetextend AzaleaMoveTutorNotEnough
 
 AzaleaMoveTutorIronDefenseText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Yahooo!"
 	
 	para "Nothing like a"
@@ -77,7 +77,7 @@ AzaleaMoveTutorIronDefenseText:
 	done
 
 AzaleaMoveTutorIronDefenseTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Defense so high"
 	line "the foe can't"
 	cont "do anything."
@@ -88,7 +88,7 @@ AzaleaMoveTutorIronDefenseTaught:
 	done
 
 AzaleaMoveTutorIronDefenseAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥3,000?"
@@ -100,7 +100,7 @@ AzaleaMoveTutorIronDefensePayment:
 	done
 
 AzaleaMoveTutorSilverWindText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hi!"
 	
 	para "I've been training"
@@ -110,7 +110,7 @@ AzaleaMoveTutorSilverWindText:
 	done
 
 AzaleaMoveTutorSilverWindAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥5,500?"
@@ -122,7 +122,7 @@ AzaleaMoveTutorSilverWindPayment:
 	done
 
 AzaleaMoveTutorSilverWindTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It does decent"
 	line "damage and has a"
 	cont "chance to raise"
@@ -133,14 +133,14 @@ AzaleaMoveTutorSilverWindTaught:
 	done
 
 AzaleaMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Stop by again"
 	line "if you change"
 	cont "your mind."
 	done
 
 AzaleaMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you don't"
 	line "have enough."
 	done

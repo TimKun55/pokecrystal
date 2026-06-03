@@ -129,7 +129,7 @@ AgathaLeaveMovement:
 	step_end
 
 AgathaChallengerText:
-	ntag "???"
+	ntag " ??? "
 	text "Well, well, well."
 	
 	para "A challenger,"
@@ -137,7 +137,7 @@ AgathaChallengerText:
 	done
 
 AgathaIntroText:
-	ntag "???"
+	ntag " ??? "
 	text "So, you think you"
 	line "can battle a"
 	cont "Legendary Bird?"
@@ -157,7 +157,7 @@ AgathaIntroText:
 	cont "like you.@"
 	text_promptbutton
 
-	ntag "Agatha"
+	ntag " Agatha "
 	text "My name is Agatha."
 	
 	para "As a former Elite"
@@ -177,7 +177,7 @@ AgathaIntroText:
 	done
 
 AgathaReturnChallengeText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "Back again, eh?"
 	
 	para "Hehe, I like your"
@@ -185,14 +185,14 @@ AgathaReturnChallengeText:
 	done
 	
 AgathaWinLossText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "Well, well, well."
 	line "You really know"
 	cont "what you're doing."
 	done
 	
 AgathaOutroText:
-	ntag "Agatha"
+	ntag " Agatha "
 	text "You've done well,"
 	line "young challenger."
 	
@@ -230,7 +230,7 @@ AgathaOutroText:
 	done
 
 ZapdosText:
-	ntag "Zapdos"
+	ntag " Zapdos "
 	text "Gshya!"
 	done
 

@@ -340,7 +340,7 @@ EcruteakFairyFamilyHouseGrannyMoveText:
 	done
 	
 FairySylveonText:
-	ntag "Sylveon"
+	ntag " Sylveon "
 	text "Syl! Veon! Syl!"
 	done
 

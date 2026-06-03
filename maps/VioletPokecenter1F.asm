@@ -103,7 +103,7 @@ MovementData_AideFinishesLeavingPokecenter:
 	step_end
 
 VioletPokecenterElmsAideFavorText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "<PLAY_G>, long"
 	line "time, no see."
 
@@ -118,7 +118,7 @@ VioletPokecenterElmsAideFavorText:
 	done
 
 VioletPokecenterElmsAideGiveEggText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "We know that a"
 	line "#mon will not"
 	cont "hatch until it"
@@ -138,7 +138,7 @@ VioletPokecenterElmsAideGiveEggText:
 	done
 
 VioletCityElmsAideFullPartyText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "Oh, no. You can't"
 	line "carry any more"
 	cont "#mon with you."
@@ -149,13 +149,13 @@ VioletCityElmsAideFullPartyText:
 	done
 
 VioletPokecenterElmsAideRefuseText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "B-but… Prof.Elm"
 	line "asked for you…"
 	done
 
 VioletPokecenterElmsAideAskEggText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "<PLAY_G>, will you"
 	line "take the Egg?"
 	done

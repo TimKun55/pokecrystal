@@ -142,7 +142,7 @@ ViridianGymStatue:
 	jumpstd GymStatue2Script
 
 LeaderBlueBeforeText:
-	ntag "Blue"
+	ntag " Blue "
 	text "Yo! Finally got"
 	line "here, huh?"
 
@@ -174,7 +174,7 @@ LeaderBlueBeforeText:
 	done
 
 LeaderBlueWinText:
-	ntag "Blue"
+	ntag " Blue "
 	text "What?"
 
 	para "How the heck did I"
@@ -193,7 +193,7 @@ Text_ReceivedEarthBadge:
 	done
 
 LeaderBlueAfterText:
-	ntag "Blue"
+	ntag " Blue "
 	text " …"
 
 	para "All right, I was"
@@ -225,7 +225,7 @@ LeaderBlueAfterText:
 	done
 
 LeaderBlueEpilogueText:
-	ntag "Blue"
+	ntag " Blue "
 	text "Listen, you."
 
 	para "You'd better not"
@@ -234,7 +234,7 @@ LeaderBlueEpilogueText:
 	done
 
 BlueRematchIntroText:
-	ntag "Blue"
+	ntag " Blue "
 	text "Oh, <PLAYER>,"
 	line "you're back."
 
@@ -243,19 +243,19 @@ BlueRematchIntroText:
 	done
 	
 BlueWinLossRematchText:
-	ntag "Blue"
+	ntag " Blue "
 	text "Ahh, lost again?"
 	done
 	
 BlueRematchAfterBattleText:
-	ntag "Blue"
+	ntag " Blue "
 	text "You're still strong"
 	line "but I'll beat you"
 	cont "next time."
 	done
 
 BlueComeBackTomorrowText:
-	ntag "Blue"
+	ntag " Blue "
 	text "Another battle?"
 
 	para "Sure, but come"
@@ -263,7 +263,7 @@ BlueComeBackTomorrowText:
 	done
 
 BlueNextTimeText:
-	ntag "Blue"
+	ntag " Blue "
 	text "No? Well, come"
 	line "back when you're"
 	cont "feeling it."
@@ -276,12 +276,12 @@ CooltrainerMErickSeenText:
 	done
 
 CooltrainerMErickBeatenText:
-	ntag "Erick"
+	ntag " Erick "
 	text "Yep! Too good!"
 	done
 
 CooltrainerMErickAfterBattleText:
-	ntag "Erick"
+	ntag " Erick "
 	text "This used to be"
 	line "a ground-type Gym."
 	done
@@ -293,12 +293,12 @@ BeautyJulieSeenText:
 	done
 
 BeautyJulieBeatenText:
-	ntag "Julie"
+	ntag " Julie "
 	text "Cute and strong!"
 	done
 
 BeautyJulieAfterBattleText:
-	ntag "Julie"
+	ntag " Julie "
 	text "When Blue became"
 	line "Leader he"
 	cont "remodeled the Gym."
@@ -314,12 +314,12 @@ BeautyJessicaSeenText:
 	done
 
 BeautyJessicaBeatenText:
-	ntag "Jessica"
+	ntag " Jessica "
 	text "Round and round."
 	done
 
 BeautyJessicaAfterBattleText:
-	ntag "Jessica"
+	ntag " Jessica "
 	text "Can I be honest?"
 
 	para "I'm not a fan of"
@@ -338,12 +338,12 @@ SuperNerdNortonSeenText:
 	done
 
 SuperNerdNortonBeatenText:
-	ntag "Norton"
+	ntag " Norton "
 	text "Whatever!"
 	done
 	
 SuperNerdNortonAfterBattleText:
-	ntag "Norton"
+	ntag " Norton "
 	text "There are many"
 	line "Gyms in the world,"
 	cont "but I really like"
@@ -356,12 +356,12 @@ HexManiacMargretSeenText:
 	done
 
 HexManiacMargretBeatenText:
-	ntag "Margret"
+	ntag " Margret "
 	text "Unforseen!"
 	done
 
 HexManiacMargretAfterBattleText:
-	ntag "Margret"
+	ntag " Margret "
 	text "Perhaps being"
 	line "dizzy has weakened"
 	cont "my Inner Eye."
@@ -376,12 +376,12 @@ PokefanMTerrySeenText:
 	done
 
 PokefanMTerryBeatenText:
-	ntag "Terry"
+	ntag " Terry "
 	text "Aww, I lost?"
 	done
 
 PokefanMTerryAfterBattleText:
-	ntag "Terry"
+	ntag " Terry "
 	text "I need more train-"
 	line "ing, but please"
 	cont "don't tell Blue."
@@ -423,7 +423,7 @@ ViridianGymGuideWinText:
 	done
 
 ArcanineText:
-	ntag "Arcanine"
+	ntag " Arcanine "
 	text "Awooo!!"
 	done
 

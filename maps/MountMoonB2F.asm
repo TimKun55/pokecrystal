@@ -153,12 +153,12 @@ SuperNerdRussSeenText:
 	done
 
 SuperNerdRussBeatenText:
-	ntag "Russ"
+	ntag " Russ "
 	text "A huge loss."
 	done
 
 SuperNerdRussAfterBattleText:
-	ntag "Russ"
+	ntag " Russ "
 	text "I'm not great"
 	line "at battles."
 	done
@@ -173,13 +173,13 @@ YoungsterZakSeenText:
 	done
 
 YoungsterZakBeatenText:
-	ntag "Zak"
+	ntag " Zak "
 	text "You're not lost"
 	line "at all."
 	done
 
 YoungsterZakAfterBattleText:
-	ntag "Zak"
+	ntag " Zak "
 	text "With that team of"
 	line "#mon, you must"
 	cont "have explored a"
@@ -197,12 +197,12 @@ JugglerNeddSeenText:
 	done
 
 JugglerNeddBeatenText:
-	ntag "Nedd"
+	ntag " Nedd "
 	text "Dropped them all!"
 	done
 
 JugglerNeddAfterBattleText:
-	ntag "Nedd"
+	ntag " Nedd "
 	text "I guess I need to"
 	line "practice battles"
 	cont "as well."
@@ -216,12 +216,12 @@ HexManiacBethanySeenText:
 	done
 
 HexManiacBethanyBeatenText:
-	ntag "Bethany"
+	ntag " Bethany "
 	text "You will!"
 	done
 
 HexManiacBethanyAfterBattleText:
-	ntag "Bethany"
+	ntag " Bethany "
 	text "Magic mirror,"
 	line "great and wise,"
 	cont "failed to see my"
@@ -234,13 +234,13 @@ CamperHarveySeenText:
 	done
 
 CamperHarveyBeatenText:
-	ntag "Harvey"
+	ntag " Harvey "
 	text "Whoa!"
 	line "You've got it!"
 	done
 
 CamperHarveyAfterBattleText:
-	ntag "Harvey"
+	ntag " Harvey "
 	text "Style and charm"
 	line "go hand in hand."
 

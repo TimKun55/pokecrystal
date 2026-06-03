@@ -910,7 +910,7 @@ AfterChikoritaMovement:
 	step_end
 
 ElmText_Intro:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>!"
 	line "There you are!"
 	
@@ -941,7 +941,7 @@ ElmText_Intro:
 	done
 
 ElmText_Accepted:
-	ntag "Elm"
+	ntag " Elm "
 	text "Thanks, <PLAY_G>!"
 
 	para "You're a great"
@@ -949,13 +949,13 @@ ElmText_Accepted:
 	done
 
 ElmText_Refused:
-	ntag "Elm"
+	ntag " Elm "
 	text "But… Please, I"
 	line "need your help!"
 	done
 
 ElmText_ResearchAmbitions:
-	ntag "Elm"
+	ntag " Elm "
 	text "When I announce my"
 	line "findings, I'm sure"
 	cont "we'll delve a bit"
@@ -968,7 +968,7 @@ ElmText_ResearchAmbitions:
 	done
 
 ElmText_GotAnEmail:
-	ntag "Elm"
+	ntag " Elm "
 	text "Oh, hey! I got an"
 	line "e-mail!"
 
@@ -979,7 +979,7 @@ ElmText_GotAnEmail:
 	done
 
 ElmText_MissionFromMrPokemon:
-	ntag "Elm"
+	ntag " Elm "
 	text "Hey, listen."
 
 	para "I have an acquain-"
@@ -1011,7 +1011,7 @@ ElmText_MissionFromMrPokemon:
 	done
 
 ElmText_ChooseAPokemon:
-	ntag "Elm"
+	ntag " Elm "
 	text "I want you to"
 	line "raise one of the"
 	cont "#mon contained"
@@ -1025,41 +1025,41 @@ ElmText_ChooseAPokemon:
 	done
 
 ElmText_LetYourMonBattleIt:
-	ntag "Elm"
+	ntag " Elm "
 	text "If a wild #mon"
 	line "appears, let your"
 	cont "#mon battle it!"
 	done
 
 LabWhereGoingText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Wait! Where are"
 	line "you going?"
 	done
 
 TakeCyndaquilText:
-	ntag "Elm"
+	ntag " Elm "
 	text "You'll take"
 	line "Cyndaquil, the"
 	cont "fire #mon?"
 	done
 
 TakeTotodileText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Do you want"
 	line "Totodile, the"
 	cont "water #mon?"
 	done
 
 TakeChikoritaText:
-	ntag "Elm"
+	ntag " Elm "
 	text "So, you like"
 	line "Chikorita, the"
 	cont "grass #mon?"
 	done
 
 DidntChooseStarterText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Think it over"
 	line "carefully."
 
@@ -1068,7 +1068,7 @@ DidntChooseStarterText:
 	done
 
 ChoseStarterText:
-	ntag "Elm"
+	ntag " Elm "
 	text "I think that's a"
 	line "great #mon too!"
 	done
@@ -1081,7 +1081,7 @@ ReceivedStarterText:
 	done
 
 ElmDirectionsText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "Mr.#mon lives a"
 	line "little bit beyond"
 	cont "Cherrygrove, the"
@@ -1099,7 +1099,7 @@ ElmDirectionsText1:
 	done
 
 ElmDirectionsText2:
-	ntag "Elm"
+	ntag " Elm "
 	text "If your #mon is"
 	line "hurt, you should"
 	cont "heal it with this"
@@ -1110,7 +1110,7 @@ ElmDirectionsText2:
 	done
 
 ElmDirectionsText3:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>, I'm"
 	line "counting on you!"
 	done
@@ -1121,7 +1121,7 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Mr.#mon goes"
 	line "everywhere and"
 	cont "finds rarities."
@@ -1148,7 +1148,7 @@ ElmsLabHealingMachineText2:
 	done
 
 ElmAfterTheftText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>, this"
 	line "is terrible…"
 
@@ -1164,12 +1164,12 @@ ElmAfterTheftText2:
 	done
 
 ElmAfterTheftText3:
-	ntag "Elm"
+	ntag " Elm "
 	text "This?"
 	done
 
 ElmAfterTheftText4:
-	ntag "Elm"
+	ntag " Elm "
 	text "But… This is just"
 	line "a #mon Egg?"
 
@@ -1196,7 +1196,7 @@ ElmAfterTheftText4:
 	done
 
 ElmAfterTheftText5:
-	ntag "Elm"
+	ntag " Elm "
 	text "What?!?"
 
 	para "Prof.Oak gave you"
@@ -1230,7 +1230,7 @@ ElmAfterTheftText5:
 	done
 
 ElmAfterTheftText6:
-	ntag "Elm"
+	ntag " Elm "
 	text "…<PLAY_G>. The"
 	line "road to the"
 	cont "championship will"
@@ -1242,7 +1242,7 @@ ElmAfterTheftText6:
 	done
 
 ElmStudyingEggText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Don't give up!"
 	line "I'll call if"
 	cont "I learn anything"
@@ -1250,7 +1250,7 @@ ElmStudyingEggText:
 	done
 
 ElmAideHasEggText:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>?"
 	line "Didn't you meet my"
 	cont "assistant?"
@@ -1266,13 +1266,13 @@ ElmAideHasEggText:
 	done
 
 ElmWaitingEggHatchText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Hey, has that"
 	line "Egg changed any?"
 	done
 
 ElmThoughtEggHatchedText:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>? I thought"
 	line "the Egg hatched."
 
@@ -1281,19 +1281,19 @@ ElmThoughtEggHatchedText:
 	done
 
 ShowElmTogepiText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>, you"
 	line "look great!"
 	done
 
 ShowElmTogepiText2:
-	ntag "Elm"
+	ntag " Elm "
 	text "What?"
 	line "That #mon!?!"
 	done
 
 ShowElmTogepiText3:
-	ntag "Elm"
+	ntag " Elm "
 	text "The Egg hatched!"
 	line "So, Togepi exclus-"
 	cont "ively hatches from"
@@ -1310,7 +1310,7 @@ ShowElmTogepiText3:
 	done
 
 ElmGiveLuckyEggText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "Thanks, <PLAY_G>!"
 	line "You're helping"
 	cont "unravel #mon"
@@ -1322,7 +1322,7 @@ ElmGiveLuckyEggText1:
 	done
 	
 ElmGiveLuckyEggText2:
-	ntag "Elm"
+	ntag " Elm "
 	text "That's a"
 	line "Lucky Egg."
 
@@ -1339,7 +1339,7 @@ ElmGiveLuckyEggText2:
 	done
 
 ElmText_CallYou:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>, I'll"
 	line "call you if any-"
 	cont "thing comes up."
@@ -1359,7 +1359,7 @@ AideText_AfterTheft:
 	done
 
 ElmGiveMasterBallText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "Hi, <PLAY_G>!"
 	line "Thanks to you, my"
 	cont "research is going"
@@ -1371,7 +1371,7 @@ ElmGiveMasterBallText1:
 	done
 
 ElmGiveMasterBallText2:
-	ntag "Elm"
+	ntag " Elm "
 	text "The Master Ball is"
 	line "the best!"
 
@@ -1391,7 +1391,7 @@ ElmGiveMasterBallText2:
 	done
 
 ElmGiveTicketText1:
-	ntag "Elm"
+	ntag " Elm "
 	text "<PLAY_G>!"
 	line "There you are!"
 	
@@ -1435,7 +1435,7 @@ ElmGiveTicketText1:
 	done
 
 ElmGiveTicketText2:
-	ntag "Elm"
+	ntag " Elm "
 	text "The ship departs"
 	line "from Olivine City."
 
@@ -1448,7 +1448,7 @@ ElmGiveTicketText2:
 	done
 
 LyraAnnouncesGymChallengeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "There you are,"
 	line "<PLAYER>!"
 
@@ -1484,7 +1484,7 @@ LyraAnnouncesGymChallengeText:
 	done
 
 ElmAfterTicketText:
-	ntag "Elm"
+	ntag " Elm "
 	text "Well then,"
 	line "<PLAYER>, you both"
 	cont "have your own"
@@ -1499,21 +1499,21 @@ ElmAfterTicketText:
 	done
 
 AideText_GiveYouPotion:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "<PLAY_G>, I want"
 	line "you to have this"
 	cont "for your errand."
 	done
 
 AideText_AlwaysBusy:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "There are only two"
 	line "of us, so we're"
 	cont "always busy."
 	done
 
 AideText_TheftTestimony:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "There was a loud"
 	line "noise outside…"
 
@@ -1538,14 +1538,14 @@ AideText_TheftTestimony:
 	done
 
 AideText_EggText:
-	ntag "Elm's Aide"
+	ntag " Elm's Aide "
 	text "I wonder what"
 	line "will hatch from"
 	cont "that Egg?"
 	done
 
 ElmsLabOfficerText1:
-	ntag "Officer"
+	ntag " Officer "
 	text "I heard a #mon"
 	line "was stolen here."
 
@@ -1560,7 +1560,7 @@ ElmsLabOfficerText1:
 	done
 
 ElmsLabOfficerText2:
-	ntag "Officer"
+	ntag " Officer "
 	text "What?"
 
 	para "You battled a"
@@ -1571,7 +1571,7 @@ ElmsLabOfficerText2:
 	done
 
 ElmsLabOfficerText3:
-	ntag "Officer"
+	ntag " Officer "
 	text "OK! So <RIVAL>"
 	line "was his name."
 
@@ -1580,14 +1580,14 @@ ElmsLabOfficerText3:
 	done
 
 ElmsLabLyraWhichPokemonText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Which #mon are"
 	line "you going to pick,"
 	cont "<PLAYER>?"
 	done
 
 LyraChoosesStarterText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Then I'll pick"
 	line "this one!"
 	done
@@ -1608,72 +1608,72 @@ LyraReceivedTotodileText:
 	done
 
 LyraNicknamedChikoritaText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "It's so cute!"
 	line "I'll nickname it"
 	cont "Chicory!"
 	done
 
 LyraNicknamedCyndaquilText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "It's so cute!"
 	line "I'll nickname it"
 	cont "Cinder!"
 	done
 
 LyraNicknamedTotodileText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "It's so cute!"
 	line "I'll nickname it"
 	cont "Toto!"
 	done
 
 ElmsLabLyraGoodChoiceText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Your #mon"
 	line "looks cute too!"
 	done
 
 ElmsLabLyraPlayerWaitText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>!"
 	line "Wait up!"
 	done
 
 ElmsLabLyraChallengeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Let's get to know"
 	line "our #mon with"
 	cont "a battle!"
 	done
 
 ElmsLabLyraWinText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Good job,"
 	line "<PLAYER>!"
 	done
 
 ElmsLabLyraLossText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Yay! I won!"
 	done
 
 ElmsLabLyraText_YouWon:
 ElmsLabLyraText_YouLost:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "That was an"
 	line "exciting battle!"
 	done
 
 ElmsLabLyraThankYouText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Thank you for the"
 	line "#mon, Prof."
 	cont "Elm."
 	done
 
 ElmsLabLyraSeeYouText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>, I'll"
 	line "see you later!"
 
@@ -1682,7 +1682,7 @@ ElmsLabLyraSeeYouText:
 	done
 
 ElmsLabLyraTheftInnocentText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Hold on!"
 	line "<PLAYER> has noth-"
 	cont "ing to do with it!"
@@ -1693,7 +1693,7 @@ ElmsLabLyraTheftInnocentText:
 	done
 
 ElmsLabLyraTheftGoodbyeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>, I'm"
 	line "glad he understood"
 

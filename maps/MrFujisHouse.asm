@@ -76,17 +76,17 @@ MrFujisHouseLassText:
 	done
 
 MrFujisPsyduckText:
-	ntag "Psyduck"
+	ntag " Psyduck "
 	text "Gu-guwa?"
 	done
 
 MrFujisNidorinoText:
-	ntag "Nidorino"
+	ntag " Nidorino "
 	text "Gyun!"
 	done
 
 MrFujisPidgeyText:
-	ntag "Pidgey"
+	ntag " Pidgey "
 	text "Pijji!"
 	done
 

@@ -155,7 +155,7 @@ BlackthornGymStatue:
 	jumpstd GymStatue3Script
 
 ClairIntroText:
-	ntag "Clair"
+	ntag " Clair "
 	text "I am Clair."
 
 	para "The world's best"
@@ -179,7 +179,7 @@ ClairIntroText:
 	done
 
 ClairWinText:
-	ntag "Clair"
+	ntag " Clair "
 	text "I lost?"
 
 	para "I don't believe"
@@ -188,7 +188,7 @@ ClairWinText:
 	done
 
 ClairText_GoToDragonsDen:
-	ntag "Clair"
+	ntag " Clair "
 	text "I won't admit"
 	line "this."
 
@@ -221,7 +221,7 @@ ClairText_GoToDragonsDen:
 	done
 
 ClairText_TooMuchToExpect:
-	ntag "Clair"
+	ntag " Clair "
 	text "What's the matter?"
 
 	para "Is it too much to"
@@ -229,7 +229,7 @@ ClairText_TooMuchToExpect:
 	done
 
 BlackthornGymClairText_YouKeptMeWaiting:
-	ntag "Clair"
+	ntag " Clair "
 	text "You've kept me"
 	line "waiting!"
 
@@ -237,7 +237,7 @@ BlackthornGymClairText_YouKeptMeWaiting:
 	done
 
 BlackthornGymClairText_DescribeTM24:
-	ntag "Clair"
+	ntag " Clair "
 	text "That contains"
 	line "DragonBreath."
 
@@ -251,7 +251,7 @@ BlackthornGymClairText_DescribeTM24:
 	done
 
 BlackthornGymClairText_League:
-	ntag "Clair"
+	ntag " Clair "
 	text "What's the matter?"
 
 	para "Aren't you headed"
@@ -282,7 +282,7 @@ BlackthornGymClairText_League:
 	done
 	
 ClairRematchIntroText:
-	ntag "Clair"
+	ntag " Clair "
 	text "<PLAYER>."
 	line "You're here."
 	
@@ -291,12 +291,12 @@ ClairRematchIntroText:
 	done
 	
 ClairWinLossRematchText:
-	ntag "Clair"
+	ntag " Clair "
 	text "Its over…"
 	done
 	
 ClairRematchAfterBattleText:
-	ntag "Clair"
+	ntag " Clair "
 	text "You haven't been"
 	line "slacking off."
 	cont "Good."
@@ -307,7 +307,7 @@ ClairRematchAfterBattleText:
 	done
 	
 Clair16IntroText:
-	ntag "Clair"
+	ntag " Clair "
 	text "<PLAYER>."
 	line "You've done it."
 	
@@ -327,7 +327,7 @@ Clair16IntroText:
 	done
 	
 Clair16AfterBattleText:
-	ntag "Clair"
+	ntag " Clair "
 	text "Well, that's it."
 	line "My #mon and I"
 	cont "gave it our all."
@@ -340,14 +340,14 @@ Clair16AfterBattleText:
 	done
 
 ClairComeBackTomorrowText:
-	ntag "Clair"
+	ntag " Clair "
 	text "Come back tomorrow"
 	line "and we can have"
 	cont "another match."
 	done
 
 ClairNextTimeText:
-	ntag "Clair"
+	ntag " Clair "
 	text "I see."
 	done
 
@@ -360,13 +360,13 @@ CooltrainermPaulSeenText:
 	done
 
 CooltrainermPaulBeatenText:
-	ntag "Paul"
+	ntag " Paul "
 	text "My dragon #mon"
 	line "lost?"
 	done
 
 CooltrainermPaulAfterBattleText:
-	ntag "Paul"
+	ntag " Paul "
 	text "Lance told you"
 	line "that he'd like to"
 	cont "see you again?"
@@ -380,12 +380,12 @@ CooltrainermMikeSeenText:
 	done
 
 CooltrainermMikeBeatenText:
-	ntag "Mike"
+	ntag " Mike "
 	text "That's odd."
 	done
 
 CooltrainermMikeAfterBattleText:
-	ntag "Mike"
+	ntag " Mike "
 	text "I know my short-"
 	line "comings now."
 
@@ -407,12 +407,12 @@ CooltrainerfLolaSeenText:
 	done
 
 CooltrainerfLolaBeatenText:
-	ntag "Lola"
+	ntag " Lola "
 	text "Way to go!"
 	done
 
 CooltrainerfLolaAfterBattleText:
-	ntag "Lola"
+	ntag " Lola "
 	text "Dragons are weak"
 	line "against dragon-"
 	cont "type moves."
@@ -455,7 +455,7 @@ BlackthornGymGuideWinText:
 	done
 
 KingdraText:
-	ntag "Kingdra"
+	ntag " Kingdra "
 	text "Dra! DraKingdra!"
 	done
 

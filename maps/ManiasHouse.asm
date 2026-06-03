@@ -66,7 +66,7 @@ ManiaScript:
 	writetextend ManiaText_HappinessSpeech
 
 ManiaText_AskLookAfterShuckle:
-	ntag "Mania"
+	ntag " Mania "
 	text "I, I'm in shock!"
 
 	para "A guy about your"
@@ -89,7 +89,7 @@ ManiaText_AskLookAfterShuckle:
 	done
 
 ManiaText_TakeCareOfShuckle:
-	ntag "Mania"
+	ntag " Mania "
 	text "Oh, thank you!"
 
 	para "Take good care of"
@@ -107,14 +107,14 @@ ManiaText_PartyFull:
 	done
 
 ManiaText_IfHeComesBack:
-	ntag "Mania"
+	ntag " Mania "
 	text "Oh, no… What'll"
 	line "I do if he comes"
 	cont "back?"
 	done
 
 ManiaText_CanIHaveMyMonBack:
-	ntag "Mania"
+	ntag " Mania "
 	text "Hi! How's my #-"
 	line "mon?"
 
@@ -124,19 +124,19 @@ ManiaText_CanIHaveMyMonBack:
 	done
 
 ManiaText_ThankYou:
-	ntag "Mania"
+	ntag " Mania "
 	text "Thank you!"
 	done
 
 ManiaText_ShuckleNotThere:
-	ntag "Mania"
+	ntag " Mania "
 	text "Hey, you don't"
 	line "have my #mon"
 	cont "with you."
 	done
 
 ManiaText_ShuckleLikesYou:
-	ntag "Mania"
+	ntag " Mania "
 	text "My #mon has"
 	line "come to like you."
 
@@ -148,14 +148,14 @@ ManiaText_ShuckleLikesYou:
 	done
 
 ManiaText_SameAsBeingRobbed:
-	ntag "Mania"
+	ntag " Mania "
 	text "Oh, no, no… That's"
 	line "the same as being"
 	cont "robbed."
 	done
 
 ManiaText_HappinessSpeech:
-	ntag "Mania"
+	ntag " Mania "
 	text "For #mon, hap-"
 	line "piness is being"
 	cont "with a person who"
@@ -163,7 +163,7 @@ ManiaText_HappinessSpeech:
 	done
 
 ManiaText_ShuckleIsYourLastMon:
-	ntag "Mania"
+	ntag " Mania "
 	text "If I take my #-"
 	line "mon back, what are"
 	cont "you going to use"

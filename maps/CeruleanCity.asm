@@ -166,7 +166,7 @@ CeruleanCitySuperNerdText:
 	done
 
 CeruleanCitySlowbroText:
-	ntag "Slowbro"
+	ntag " Slowbro "
 	text "Yarah?"
 	done
 

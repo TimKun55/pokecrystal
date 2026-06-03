@@ -676,13 +676,13 @@ _PackEmptyText::
 	done
 
 _AreYouABoyOrAreYouAGirlText::
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "Are you a boy?"
 	line "Or are you a girl?"
 	done
 
 _SoThisIsYouText::
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "So this is you?"
 	done
 
@@ -1469,7 +1469,7 @@ _MayRegisterItemText::
 	done
 
 _OakText1::
-	ntag "???"
+	ntag " ??? "
 	text "Hello! Sorry to"
 	line "keep you waiting!"
 
@@ -1479,13 +1479,13 @@ _OakText1::
 	para "My name is Oak.@"
 	text_promptbutton
 
-	ntag "Oak"
+	ntag " Oak "
 	text "People call me the"
 	line "#mon Prof."
 	prompt
 
 _OakText2::
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "This world is in-"
 	line "habited by crea-"
 	cont "tures that we call"
@@ -1497,7 +1497,7 @@ _OakText3::
 	text_end
 
 _OakText4::
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "People and #mon"
 	line "live together by"
 
@@ -1510,7 +1510,7 @@ _OakText4::
 	prompt
 
 _OakText5::
-	ntag "Prof.Oak"
+	ntag " Prof.Oak "
 	text "But we don't know"
 	line "everything about"
 	cont "#mon yet."

@@ -270,7 +270,7 @@ CianwoodCityLassText:
 	done
 
 EusineSuicuneText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "Yo, <PLAYER>."
 
 	para "Wasn't that"
@@ -306,13 +306,13 @@ EusineSuicuneText:
 	done
 
 EusineBeatenText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "I hate to admit"
 	line "it, but you win."
 	done
 
 EusineAfterText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "You're amazing,"
 	line "<PLAYER>!"
 
@@ -346,12 +346,12 @@ LadyMaeSeenText:
 	done
 
 LadyMaeBeatenText:
-	ntag "Mae"
+	ntag " Mae "
 	text "Wow!"
 	done
 
 LadyMaeAfterBattleText:
-	ntag "Mae"
+	ntag " Mae "
 	text "You're powerful!"
 	line "You should talk to"
 	cont "my Dad in"

@@ -579,12 +579,12 @@ Route34LadyBea:
 	jumptext LadyBeaAfterBattleText
 
 Route34LyraText_Grandpa:
-	ntag "???"
+	ntag " ??? "
 	text "Grandpa!"
 	done
 
 Route34LyraGoodWorkText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Good work,"
 	line "Grandpa!"
 
@@ -597,12 +597,12 @@ Route34LyraGoodWorkText:
 	done
 
 Route34LyraGreetingText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Hi, <PLAYER>!"
 	done
 
 Route34LyraIntroductionText1:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "This is <PLAYER>."
 	line "He's a trainer."
 
@@ -614,7 +614,7 @@ Route34LyraIntroductionText1:
 	done
 
 Route34LyraIntroductionText2:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "This is <PLAYER>."
 	line "She's a trainer."
 
@@ -626,26 +626,26 @@ Route34LyraIntroductionText2:
 	done
 
 Route34LyraChallengeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>, why don't"
 	line "we show Grandpa"
 	cont "how good you are?"
 	done
 
 Route34LyraWinText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "You're even better"
 	line "than I thought!"
 	done
 
 Route34LyraLossText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Well, you're still"
 	line "getting better…"
 	done
 
 Route34LyraFollowMeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Let me introduce"
 	line "you to Grandma,"
 	cont "too!"
@@ -657,13 +657,13 @@ YoungsterSamuelSeenText:
 	done
 
 YoungsterSamuelBeatenText:
-	ntag "Samuel"
+	ntag " Samuel "
 	text "Beaten by a"
 	line "passing stranger!"
 	done
 
 YoungsterSamuelAfterText:
-	ntag "Samuel"
+	ntag " Samuel "
 	text "I'm going to train"
 	line "even harder."
 
@@ -678,13 +678,13 @@ YoungsterIanSeenText:
 	done
 
 YoungsterIanBeatenText:
-	ntag "Ian"
+	ntag " Ian "
 	text "No! There are bet-"
 	line "ter trainers…"
 	done
 
 YoungsterIanAfterText:
-	ntag "Ian"
+	ntag " Ian "
 	text "I'm trying hard so"
 	line "I can be the star"
 	cont "in my class."
@@ -699,13 +699,13 @@ CamperTodd1SeenText:
 	done
 
 CamperTodd1BeatenText:
-	ntag "Todd"
+	ntag " Todd "
 	text "Did I screw up my"
 	line "training?"
 	done
 
 CamperTodd1AfterText:
-	ntag "Todd"
+	ntag " Todd "
 	text "Maybe I should"
 	line "take one to a Day-"
 	cont "Care. Or maybe use"
@@ -713,7 +713,7 @@ CamperTodd1AfterText:
 	done
 
 CamperToddSaleText:
-	ntag "Todd"
+	ntag " Todd "
 	text "Shopping under the"
 	line "sky!"
 
@@ -729,33 +729,33 @@ PicnickerGina1SeenText:
 	done
 
 PicnickerGina1BeatenText:
-	ntag "Gina"
+	ntag " Gina "
 	text "Oh, no! I just"
 	line "can't win…"
 	done
 
 PicnickerGina1AfterText:
-	ntag "Gina"
+	ntag " Gina "
 	text "You're too strong"
 	line "to be a practice"
 	cont "partner."
 	done
 
 OfficerKeithSeenText:
-	ntag "Officer Keith"
+	ntag " Officer Keith "
 	text "Who goes there?"
 	line "What are you up"
 	cont "to?"
 	done
 
 OfficerKeithWinText:
-	ntag "Officer Keith"
+	ntag " Officer Keith "
 	text "You're a tough"
 	line "little kid."
 	done
 
 OfficerKeithAfterText:
-	ntag "Officer Keith"
+	ntag " Officer Keith "
 	text "Yep, I see nothing"
 	line "wrong today. You"
 	cont "be good and stay"
@@ -763,7 +763,7 @@ OfficerKeithAfterText:
 	done
 
 OfficerKeithDaytimeText:
-	ntag "Officer Keith"
+	ntag " Officer Keith "
 	text "I'm on patrol for"
 	line "suspicious indi-"
 	cont "viduals."
@@ -779,13 +779,13 @@ PokefanmBrandonSeenText:
 	done
 
 PokefanmBrandonBeatenText:
-	ntag "Brandon"
+	ntag " Brandon "
 	text "Why does it end"
 	line "this way?"
 	done
 
 PokefanmBrandonAfterText:
-	ntag "Brandon"
+	ntag " Brandon "
 	text "My #mon knew"
 	line "moves I didn't"
 	cont "know it had."
@@ -800,20 +800,20 @@ CooltrainerfIreneSeenText:
 	done
 
 CooltrainerfIreneBeatenText:
-	ntag "Irene"
+	ntag " Irene "
 	text "Ohhh!"
 	line "Too strong!"
 	done
 
 CooltrainerfIreneAfterText1:
-	ntag "Irene"
+	ntag " Irene "
 	text "My sister Kate"
 	line "will get you"
 	cont "for this!"
 	done
 
 CooltrainerfIreneAfterText2:
-	ntag "Irene"
+	ntag " Irene "
 	text "Isn't this beach"
 	line "great?"
 
@@ -828,20 +828,20 @@ CooltrainerfJennSeenText:
 	done
 
 CooltrainerfJennBeatenText:
-	ntag "Jenn"
+	ntag " Jenn "
 	text "So sorry, Irene!"
 	line "Sis!"
 	done
 
 CooltrainerfJennAfterText1:
-	ntag "Jenn"
+	ntag " Jenn "
 	text "Don't get cocky!"
 	line "My sister Kate"
 	cont "is tough!"
 	done
 
 CooltrainerfJennAfterText2:
-	ntag "Jenn"
+	ntag " Jenn "
 	text "Sunlight makes"
 	line "your body"
 	cont "stronger."
@@ -854,13 +854,13 @@ CooltrainerfKateSeenText:
 	done
 
 CooltrainerfKateBeatenText:
-	ntag "Kate"
+	ntag " Kate "
 	text "No! I can't"
 	line "believe I lost."
 	done
 
 CooltrainerfKateOfferSoftSandText:
-	ntag "Kate"
+	ntag " Kate "
 	text "You're too strong."
 	line "I didn't stand a"
 	cont "chance."
@@ -870,7 +870,7 @@ CooltrainerfKateOfferSoftSandText:
 	done
 
 CooltrainerfKateAfterText:
-	ntag "Kate"
+	ntag " Kate "
 	text "I'm sorry we"
 	line "jumped you."
 
@@ -891,13 +891,13 @@ LadyBeaSeenText:
 	done
 
 LadyBeaBeatenText:
-	ntag "Bea"
+	ntag " Bea "
 	text "Woah, so"
 	line "strong!"
 	done
 
 LadyBeaAfterBattleText:
-	ntag "Bea"
+	ntag " Bea "
 	text "You may have"
 	line "defeated me, but"
 	cont "my sisters will"

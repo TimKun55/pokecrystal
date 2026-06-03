@@ -41,13 +41,13 @@ BirdKeeperTheoSeenText:
 	done
 
 BirdKeeperTheoBeatenText:
-	ntag "Theo"
+	ntag " Theo "
 	text "You really are"
 	line "concerned…"
 	done
 
 BirdKeeperTheoAfterBattleText:
-	ntag "Theo"
+	ntag " Theo "
 	text "How the heck do"
 	line "you go up?"
 
@@ -64,13 +64,13 @@ SailorTerrellSeenText:
 	done
 
 SailorTerrellBeatenText:
-	ntag "Terrell"
+	ntag " Terrell "
 	text "You are both kind"
 	line "and strong…"
 	done
 
 SailorTerrellAfterBattleText:
-	ntag "Terrell"
+	ntag " Terrell "
 	text "Every time I come"
 	line "back to Olivine, I"
 	cont "visit the Gym."
@@ -89,13 +89,13 @@ GentlemanPrestonSeenText:
 	done
 
 GentlemanPrestonBeatenText:
-	ntag "Preston"
+	ntag " Preston "
 	text "…sigh… I must"
 	line "train some more…"
 	done
 
 GentlemanPrestonAfterBattleText:
-	ntag "Preston"
+	ntag " Preston "
 	text "Jasmine used to"
 	line "use rock #mon"
 	cont "like Onix."

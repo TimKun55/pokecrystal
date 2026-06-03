@@ -292,13 +292,13 @@ JanineText_DisappointYou:
 	done
 
 JanineText_ThatsMe:
-	ntag "Janine"
+	ntag " Janine "
 	text "Janine of Fuchsia"
 	line "Gym, that's me!"
 	done
 
 JanineText_ToughOne:
-	ntag "Janine"
+	ntag " Janine "
 	text "…!"
 	line "So… so strong!"
 
@@ -312,7 +312,7 @@ Text_ReceivedSoulBadge:
 	done
 
 JanineText_ToxicSpeech:
-	ntag "Janine"
+	ntag " Janine "
 	text "You're so tough!"
 	line "I have a special"
 	cont "gift for you!"
@@ -324,7 +324,7 @@ JanineText_ToxicSpeech:
 	done
 
 JanineText_ApplyMyself:
-	ntag "Janine"
+	ntag " Janine "
 	text "I'm going to real-"
 	line "ly apply myself"
 	cont "and improve my"
@@ -336,7 +336,7 @@ JanineText_ApplyMyself:
 	done
 	
 JanineRematchIntroText:
-	ntag "Janine"
+	ntag " Janine "
 	text "<PLAYER>."
 	line "Its good to see"
 	cont "you again."
@@ -346,13 +346,13 @@ JanineRematchIntroText:
 	done
 	
 JanineWinLossRematchText:
-	ntag "Janine"
+	ntag " Janine "
 	text "You've got a great" 
 	line "battle technique!"
 	done
 	
 JanineRematchAfterBattleText:
-	ntag "Janine"
+	ntag " Janine "
 	text "I'm going to keep"
 	line "training so I can"
 	cont "surpass both you"
@@ -364,14 +364,14 @@ JanineRematchAfterBattleText:
 	done
 
 JanineComeBackTomorrowText:
-	ntag "Janine"
+	ntag " Janine "
 	text "Not now."
 	line "Come back tomorrow"
 	cont "for a rematch."
 	done
 
 JanineNextTimeText:
-	ntag "Janine"
+	ntag " Janine "
 	text "I'll be here."
 	done
 
@@ -386,12 +386,12 @@ LassAliceBeforeText:
 	done
 
 LassAliceBeatenText:
-	ntag "Alice"
+	ntag " Alice "
 	text "I had you fooled…"
 	done
 
 LassAliceAfterText:
-	ntag "Alice"
+	ntag " Alice "
 	text "How will you dis-"
 	line "tinguish our real"
 	cont "Leader?"
@@ -403,13 +403,13 @@ LassLindaBeforeText:
 	done
 
 LassLindaBeatenText:
-	ntag "Linda"
+	ntag " Linda "
 	text "Ooh… I lost…"
 	line "You're not weak…"
 	done
 
 LassLindaAfterText:
-	ntag "Linda"
+	ntag " Linda "
 	text "Well? Wasn't my"
 	line "disguise perfect?"
 	done
@@ -424,13 +424,13 @@ PicnickerCindyBeforeText:
 	done
 
 PicnickerCindyBeatenText:
-	ntag "Cindy"
+	ntag " Cindy "
 	text "Darn it!"
 	line "I wanted to win!"
 	done
 
 PicnickerCindyAfterText:
-	ntag "Cindy"
+	ntag " Cindy "
 	text "You must be"
 	line "getting tired."
 	done
@@ -443,13 +443,13 @@ CamperBarryBeforeText:
 	done
 
 CamperBarryBeatenText:
-	ntag "Barry"
+	ntag " Barry "
 	text "My disguise was"
 	line "right on! Dang!"
 	done
 
 CamperBarryAfterText:
-	ntag "Barry"
+	ntag " Barry "
 	text "Hey, you. Was my"
 	line "disguise cute or"
 	cont "what, huh?"
@@ -477,7 +477,7 @@ FuchsiaGymGuideWinText:
 	done
 
 WeezingText:
-	ntag "Weezing"
+	ntag " Weezing "
 	text "Zing! WeezingWee!"
 	done
 

@@ -154,12 +154,12 @@ MovementDragonsDen_ClairWalksAway:
 	step_end
 
 ClairText_Wait:
-	ntag "???"
+	ntag " ??? "
 	text "Wait!"
 	done
 
 ClairText_GiveDragonbreathDragonDen:
-	ntag "Clair"
+	ntag " Clair "
 	text "I'm sorry about"
 	line "this."
 
@@ -168,7 +168,7 @@ ClairText_GiveDragonbreathDragonDen:
 	done
 
 ClairText_DescribeDragonbreathDragonDen:
-	ntag "Clair"
+	ntag " Clair "
 	text "That contains"
 	line "DragonBreath."
 
@@ -182,7 +182,7 @@ ClairText_DescribeDragonbreathDragonDen:
 	done
 
 ClairText_WhatsTheMatterDragonDen:
-	ntag "Clair"
+	ntag " Clair "
 	text "What's the matter?"
 	line "Aren't you going"
 
@@ -224,7 +224,7 @@ DragonShrineSignpostText:
 	done
 
 RivalText_Training1:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 	line "What? <PLAYER>?"
 
@@ -244,7 +244,7 @@ RivalText_Training1:
 	done
 
 RivalText_Training2:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 
 	para "Whew…"
@@ -259,12 +259,12 @@ CooltrainermDarinSeenText:
 	done
 
 CooltrainermDarinBeatenText:
-	ntag "Darin"
+	ntag " Darin "
 	text "S-strong!"
 	done
 
 CooltrainermDarinAfterBattleText:
-	ntag "Darin"
+	ntag " Darin "
 	text "The Shrine ahead"
 	line "is home to the"
 
@@ -281,12 +281,12 @@ CooltrainerfCaraSeenText:
 	done
 
 CooltrainerfCaraBeatenText:
-	ntag "Cara"
+	ntag " Cara "
 	text "Oh yikes, I lost!"
 	done
 
 CooltrainerfCaraAfterBattleText:
-	ntag "Cara"
+	ntag " Cara "
 	text "Soon I'm going to"
 	line "get permission"
 	cont "from our Master to"
@@ -306,13 +306,13 @@ TwinsLeaandpia1SeenText:
 	done
 
 TwinsLeaandpiaBeatenText:
-	ntag "Lea & Pia"
+	ntag " Lea & Pia "
 	text "Ouchies!"
 	line "Meanie!"
 	done
 
 TwinsLeaandpia1AfterBattleText:
-	ntag "Lea"
+	ntag " Lea "
 	text "It was like having"
 	line "to battle Lance."
 	done
@@ -322,7 +322,7 @@ TwinsLeaandpia2SeenText:
 	done
 
 TwinsLeaandpia2AfterBattleText:
-	ntag "Pia"
+	ntag " Pia "
 	text "We'll tell on you."
 
 	para "Master will be"

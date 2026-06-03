@@ -27,7 +27,7 @@ PewterNidoranSpeechHouseSuperNerdText:
 	done
 
 PewterNidoranText:
-	ntag "Nidoran♂"
+	ntag " Nidoran♂ "
 	text "Gau gau!"
 	done
 

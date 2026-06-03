@@ -18,7 +18,6 @@ INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
 INCLUDE "maps/CeladonCurseHouse.asm"
 INCLUDE "maps/EarlsPokemonAcademyB1F.asm"
-INCLUDE "maps/Route31VioletGate.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -173,8 +172,6 @@ INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
-INCLUDE "maps/Route27AerialAceHouse.asm"
-INCLUDE "maps/Route29Route46Gate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -204,6 +201,7 @@ INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
+INCLUDE "maps/Route29Route46Gate.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -219,6 +217,7 @@ INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/ViridianMart.asm"
+INCLUDE "maps/Route27AerialAceHouse.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -397,7 +396,6 @@ INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
-INCLUDE "maps/EusinesHouse.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -415,7 +413,6 @@ INCLUDE "maps/PewterPokecenter1F.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 INCLUDE "maps/BlackthornMoveTutorHouse.asm"
 INCLUDE "maps/Route3Pokecenter1F.asm"
-INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -571,6 +568,9 @@ INCLUDE "maps/AzaleaMoveTutorHouse.asm"
 INCLUDE "maps/GoldenrodMoveTutorHouse.asm"
 INCLUDE "maps/EcruteakMoveTutorHouse.asm"
 INCLUDE "maps/OlivineMoveTutorHouse.asm"
+INCLUDE "maps/Route31VioletGate.asm"
+INCLUDE "maps/EusinesHouse.asm"
+INCLUDE "maps/OaksLab.asm"
 
 
 ENDSECTION

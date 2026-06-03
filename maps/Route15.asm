@@ -66,12 +66,12 @@ TeacherColetteSeenText:
 	done
 
 TeacherColetteBeatenText:
-	ntag "Colette"
+	ntag " Colette "
 	text "Kyaaah!"
 	done
 
 TeacherColetteAfterBattleText:
-	ntag "Colette"
+	ntag " Colette "
 	text "Before I became a"
 	line "teacher, I used to"
 	cont "forget a lot of"
@@ -88,13 +88,13 @@ TeacherHillarySeenText:
 	done
 
 TeacherHillaryBeatenText:
-	ntag "Hillary"
+	ntag " Hillary "
 	text "I didn't want to"
 	line "lose…"
 	done
 
 TeacherHillaryAfterBattleText:
-	ntag "Hillary"
+	ntag " Hillary "
 	text "Studying is impor-"
 	line "tant, but exercise"
 	cont "is just as vital."
@@ -106,13 +106,13 @@ SchoolboyKippSeenText:
 	done
 
 SchoolboyKippBeatenText:
-	ntag "Kipp"
+	ntag " Kipp "
 	text "Sorry, Mum!"
 	line "I was beaten!"
 	done
 
 SchoolboyKippAfterBattleText:
-	ntag "Kipp"
+	ntag " Kipp "
 	text "My mum worries so"
 	line "much about me, I"
 	cont "have to phone her"
@@ -125,13 +125,13 @@ SchoolboyTommySeenText:
 	done
 
 SchoolboyTommyBeatenText:
-	ntag "Tommy"
+	ntag " Tommy "
 	text "I forgot to do my"
 	line "homework!"
 	done
 
 SchoolboyTommyAfterBattleText:
-	ntag "Tommy"
+	ntag " Tommy "
 	text "Sayonara! I just"
 	line "learned that in my"
 	cont "Japanese class."
@@ -145,13 +145,13 @@ SchoolboyJohnnySeenText:
 	done
 
 SchoolboyJohnnyBeatenText:
-	ntag "Johnny"
+	ntag " Johnny "
 	text "You're wickedly"
 	line "tough!"
 	done
 
 SchoolboyJohnnyAfterBattleText:
-	ntag "Johnny"
+	ntag " Johnny "
 	text "I'm tired of walk-"
 	line "ing. I need to"
 	cont "take a break."
@@ -163,13 +163,13 @@ SchoolboyBillySeenText:
 	done
 
 SchoolboyBillyBeatenText:
-	ntag "Billy"
+	ntag " Billy "
 	text "Oh, no!"
 	line "How could I lose?"
 	done
 
 SchoolboyBillyAfterBattleText:
-	ntag "Billy"
+	ntag " Billy "
 	text "If #mon were a"
 	line "subject at school,"
 	cont "I'd be the best!"

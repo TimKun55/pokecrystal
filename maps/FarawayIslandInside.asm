@@ -37,7 +37,7 @@ FarawayIslandMew:
 	end
 
 MewText:
-	ntag "Mew"
+	ntag " Mew "
 	text "Mew!"
 	done
 

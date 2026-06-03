@@ -259,7 +259,7 @@ CeruleanGymNote2Text:
 	done
 
 MistyIntroText:
-	ntag "Misty"
+	ntag " Misty "
 	text "I was expecting"
 	line "you, you pest!"
 
@@ -274,7 +274,7 @@ MistyIntroText:
 	done
 
 MistyWinLossText:
-	ntag "Misty"
+	ntag " Misty "
 	text "You really are"
 	line "good…"
 
@@ -291,7 +291,7 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	ntag "Misty"
+	ntag " Misty "
 	text "Are there many"
 	line "strong trainers"
 	cont "in Johto?"
@@ -305,7 +305,7 @@ MistyFightDoneText:
 	done
 	
 MistyRematchIntroText:
-	ntag "Misty"
+	ntag " Misty "
 	text "Oh, it's you"
 	line "<PLAYER>."
 	
@@ -314,13 +314,13 @@ MistyRematchIntroText:
 	done
 	
 MistyWinLossRematchText:
-	ntag "Misty"
+	ntag " Misty "
 	text "Looks like this"
 	line "is it…"
 	done
 	
 MistyRematchAfterBattleText:
-	ntag "Misty"
+	ntag " Misty "
 	text "Wow!"
 	
 	para "You are getting"
@@ -333,7 +333,7 @@ MistyRematchAfterBattleText:
 	done
 
 MistyComeBackTomorrowText:
-	ntag "Misty"
+	ntag " Misty "
 	text "I'm going to let"
 	line "my #mon rest."
 	
@@ -342,7 +342,7 @@ MistyComeBackTomorrowText:
 	done
 
 MistyNextTimeText:
-	ntag "Misty"
+	ntag " Misty "
 	text "Next time, then!"
 	done
 
@@ -353,13 +353,13 @@ SwimmerfDianaSeenText:
 	done
 
 SwimmerfDianaBeatenText:
-	ntag "Diana"
+	ntag " Diana "
 	text "I give up! You're"
 	line "the winner!"
 	done
 
 SwimmerfDianaAfterBattleText:
-	ntag "Diana"
+	ntag " Diana "
 	text "I'll be swimming"
 	line "quietly."
 	done
@@ -371,13 +371,13 @@ SwimmerfBrianaSeenText:
 	done
 
 SwimmerfBrianaBeatenText:
-	ntag "Briana"
+	ntag " Briana "
 	text "Ooh, you calmly"
 	line "disposed of me…"
 	done
 
 SwimmerfBrianaAfterBattleText:
-	ntag "Briana"
+	ntag " Briana "
 	text "Don't be too smug"
 	line "about beating me."
 
@@ -394,12 +394,12 @@ SwimmermParkerSeenText:
 	done
 
 SwimmermParkerBeatenText:
-	ntag "Parker"
+	ntag " Parker "
 	text "This can't be…"
 	done
 
 SwimmermParkerAfterBattleText:
-	ntag "Parker"
+	ntag " Parker "
 	text "Misty has gotten"
 	line "much better in the"
 	cont "past few years."
@@ -429,7 +429,7 @@ CeruleanGymGuideWinText:
 	done
 	
 StarmieText:
-	ntag "Starmie"
+	ntag " Starmie "
 	text "Staaar! Mieeeee!"
 	done
 

@@ -514,12 +514,12 @@ FisherJustinSeenText:
 	done
 
 FisherJustinBeatenText:
-	ntag "Justin"
+	ntag " Justin "
 	text "Sploosh!"
 	done
 
 FisherJustinAfterText:
-	ntag "Justin"
+	ntag " Justin "
 	text "Calm, collected…"
 	line "The essence of"
 	cont "fishing and #-"
@@ -536,13 +536,13 @@ FisherRalph1SeenText:
 	done
 
 FisherRalph1BeatenText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Tch! I tried to"
 	line "rush things…"
 	done
 
 FisherRalphAfterText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Fishing is a life-"
 	line "long passion."
 
@@ -551,7 +551,7 @@ FisherRalphAfterText:
 	done
 
 FisherRalphSwarmText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "One, two, three…"
 	line "Muahahaha, what a"
 	cont "great haul!"
@@ -567,12 +567,12 @@ FisherHenrySeenText:
 	done
 
 FisherHenryBeatenText:
-	ntag "Henry"
+	ntag " Henry "
 	text "Splash?"
 	done
 
 FisherHenryAfterText:
-	ntag "Henry"
+	ntag " Henry "
 	text "Freshly caught"
 	line "#mon are no"
 	cont "match for properly"
@@ -588,12 +588,12 @@ YoungsterAlbertSeenText:
 	done
 
 YoungsterAlbertBeatenText:
-	ntag "Albert"
+	ntag " Albert "
 	text "You're strong!"
 	done
 
 YoungsterAlbertAfterText:
-	ntag "Albert"
+	ntag " Albert "
 	text "I'm going to try"
 	line "to be the best"
 	cont "with my favorites."
@@ -613,13 +613,13 @@ YoungsterGordonSeenText:
 	done
 
 YoungsterGordonBeatenText:
-	ntag "Gordon"
+	ntag " Gordon "
 	text "Darn. I thought I"
 	line "could win."
 	done
 
 YoungsterGordonAfterText:
-	ntag "Gordon"
+	ntag " Gordon "
 	text "The grass is full"
 	line "of clingy things."
 	done
@@ -630,13 +630,13 @@ CamperRolandSeenText:
 	done
 
 CamperRolandBeatenText:
-	ntag "Roland"
+	ntag " Roland "
 	text "Hmmm. This is"
 	line "disappointing."
 	done
 
 CamperRolandAfterText:
-	ntag "Roland"
+	ntag " Roland "
 	text "If you don't want"
 	line "to battle, just"
 	cont "avoid eye contact."
@@ -654,13 +654,13 @@ PicnickerLiz1SeenText:
 	done
 
 PicnickerLiz1BeatenText:
-	ntag "Liz"
+	ntag " Liz "
 	text "Oh! I've got to"
 	line "relieve my anger!"
 	done
 
 PicnickerLiz1AfterText:
-	ntag "Liz"
+	ntag " Liz "
 	text "I was having a"
 	line "nice chat too."
 	done
@@ -673,13 +673,13 @@ BirdKeeperPeterSeenText:
 	done
 
 BirdKeeperPeterBeatenText:
-	ntag "Peter"
+	ntag " Peter "
 	text "I know what my"
 	line "weaknesses are."
 	done
 
 BirdKeeperPeterAfterText:
-	ntag "Peter"
+	ntag " Peter "
 	text "I should train"
 	line "again at the Gym"
 	cont "in Violet City."
@@ -712,18 +712,18 @@ MeetFriedaText:
 	line "Friday!@"
 	text_promptbutton
 
-	ntag "Frieda"
+	ntag " Frieda "
 	text "Nice to meet you!"
 	done
 
 FriedaGivesGiftText:
-	ntag "Frieda"
+	ntag " Frieda "
 	text "Here's a Poison"
 	line "Barb for you!"
 	done
 
 FriedaGaveGiftText:
-	ntag "Frieda"
+	ntag " Frieda "
 	text "Give it to a"
 	line "#mon that has"
 	cont "poison-type moves."
@@ -737,7 +737,7 @@ FriedaGaveGiftText:
 	done
 
 FriedaFridayText:
-	ntag "Frieda"
+	ntag " Frieda "
 	text "Hiya! What day"
 	line "do you like?"
 
@@ -749,7 +749,7 @@ FriedaFridayText:
 	done
 
 FriedaNotFridayText:
-	ntag "Frieda"
+	ntag " Frieda "
 	text "Isn't it Friday"
 	line "today?"
 

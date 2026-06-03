@@ -220,7 +220,7 @@ Text_FollowEarl:
 	done
 
 Text_HereTeacherIAm:
-	ntag "Earl"
+	ntag " Earl "
 	text "Here, teacher I"
 	line "am. Good it is"
 	cont "you study here!"

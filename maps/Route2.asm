@@ -61,12 +61,12 @@ BeautyCarolineSeenText:
 	done
 
 BeautyCarolineBeatenText:
-	ntag "Caroline"
+	ntag " Caroline "
 	text "Aww, meanie!"
 	done
 
 BeautyCarolineAfterBattleText:
-	ntag "Caroline"
+	ntag " Caroline "
 	text "I wonder if the"
 	line "Museum will get"
 	cont "new exhibits?"
@@ -81,13 +81,13 @@ BeautyCarleneSeenText:
 	done 
 
 BeautyCarleneBeatenText:
-	ntag "Carlene"
+	ntag " Carlene "
 	text "Well, that's"
 	line "not pretty!"
 	done
 
 BeautyCarleneAfterBattleText:
-	ntag "Carlene"
+	ntag " Carlene "
 	text "I'm sure the"
 	line "forest is nice"
 	cont "but, urgh, bugs."
@@ -99,12 +99,12 @@ CamperThomasSeenText:
 	done
 
 CamperThomasBeatenText:
-	ntag "Thomas"
+	ntag " Thomas "
 	text "So strong!"
 	done
 
 CamperThomasAfterBattleText:
-	ntag "Thomas"
+	ntag " Thomas "
 	text "I can't wait to"
 	line "visit the Lake"
 	cont "of Rage."
@@ -116,12 +116,12 @@ CamperLeroySeenText:
 	done
 
 CamperLeroyBeatenText:
-	ntag "Leroy"
+	ntag " Leroy "
 	text "Blown away!"
 	done
 
 CamperLeroyAfterBattleText:
-	ntag "Leroy"
+	ntag " Leroy "
 	text "I can't wait to"
 	line "visit the Safari"
 	cont "Zone in Fuchsia."

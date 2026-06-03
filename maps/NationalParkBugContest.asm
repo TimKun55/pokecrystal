@@ -66,27 +66,27 @@ NationalParkBugContestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 BugCatchingContestant1AText:
-	ntag "Don"
+	ntag " Don "
 	text "I'm going to win!"
 	line "Don't bother me."
 	done
 
 BugCatchingContestant2AText:
-	ntag "Ed"
+	ntag " Ed "
 	text "My Parasect puts"
 	line "#mon to sleep"
 	cont "with Spore."
 	done
 
 BugCatchingContestant3AText:
-	ntag "Nick"
+	ntag " Nick "
 	text "I'm raising fast"
 	line "#mon for"
 	cont "battles."
 	done
 
 BugCatchingContestant4AText:
-	ntag "William"
+	ntag " William "
 	text "I'm not concerned"
 	line "about winning."
 
@@ -95,7 +95,7 @@ BugCatchingContestant4AText:
 	done
 
 BugCatchingContestant5AText:
-	ntag "Benny"
+	ntag " Benny "
 	text "Ssh! You'll scare"
 	line "off Scyther."
 
@@ -104,14 +104,14 @@ BugCatchingContestant5AText:
 	done
 
 BugCatchingContestant6AText:
-	ntag "Barry"
+	ntag " Barry "
 	text "You should weaken"
 	line "bug #mon first,"
 	cont "then throw a Ball."
 	done
 
 BugCatchingContestant7AText:
-	ntag "Cindy"
+	ntag " Cindy "
 	text "I love bug"
 	line "#mon."
 
@@ -120,7 +120,7 @@ BugCatchingContestant7AText:
 	done
 
 BugCatchingContestant8AText:
-	ntag "Josh"
+	ntag " Josh "
 	text "I've been"
 	line "collecting bug"
 	cont "#mon since I"
@@ -131,7 +131,7 @@ BugCatchingContestant8AText:
 	done
 
 BugCatchingContestant9AText:
-	ntag "Samuel"
+	ntag " Samuel "
 	text "If you've got the"
 	line "time to chat, go"
 	cont "find some bug"
@@ -139,7 +139,7 @@ BugCatchingContestant9AText:
 	done
 
 BugCatchingContestant10AText:
-	ntag "Kipp"
+	ntag " Kipp "
 	text "I've studied about"
 	line "bug #mon a lot."
 

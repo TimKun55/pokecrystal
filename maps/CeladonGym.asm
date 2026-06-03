@@ -143,7 +143,7 @@ CeladonGymStatue:
 	jumpstd GymStatue2Script
 
 ErikaBeforeBattleText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Hello…"
 	line "Lovely weather,"
 	cont "isn't it?"
@@ -170,7 +170,7 @@ ErikaBeforeBattleText:
 	done
 
 ErikaBeatenText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Oh!"
 	line "I concede defeat…"
 
@@ -187,7 +187,7 @@ PlayerReceivedRainbowBadgeText:
 	done
 
 ErikaExplainTMText:
-	ntag "Erika"
+	ntag " Erika "
 	text "That was a"
 	line "delightful match."
 
@@ -208,7 +208,7 @@ ErikaExplainTMText:
 	done
 
 ErikaAfterBattleText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Losing leaves a"
 	line "bitter aftertaste…"
 
@@ -219,7 +219,7 @@ ErikaAfterBattleText:
 	done
 	
 ErikaRematchIntroText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Oh, <PLAYER>."
 	line "So good to see"
 	cont "you again."
@@ -229,13 +229,13 @@ ErikaRematchIntroText:
 	done
 	
 ErikaWinLossRematchText:
-	ntag "Erika"
+	ntag " Erika "
 	text "You have grown"
 	line "even stronger!"
 	done
 	
 ErikaRematchAfterBattleText:
-	ntag "Erika"
+	ntag " Erika "
 	text "You seem to be"
 	line "flourishing!"
 	
@@ -245,7 +245,7 @@ ErikaRematchAfterBattleText:
 	done
 
 ErikaComeBackTomorrowText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Oh, I'm tired now"
 	line "but come back"
 	cont "tomorrow for a"
@@ -253,7 +253,7 @@ ErikaComeBackTomorrowText:
 	done
 
 ErikaNextTimeText:
-	ntag "Erika"
+	ntag " Erika "
 	text "Maybe next"
 	line "time, then."
 	done
@@ -265,12 +265,12 @@ LassMichelleSeenText:
 	done
 
 LassMichelleBeatenText:
-	ntag "Michelle"
+	ntag " Michelle "
 	text "Oh, bleah!"
 	done
 
 LassMichelleAfterBattleText:
-	ntag "Michelle"
+	ntag " Michelle "
 	text "I just got care-"
 	line "less, that's all!"
 	done
@@ -282,12 +282,12 @@ PicnickerTanyaSeenText:
 	done
 
 PicnickerTanyaBeatenText:
-	ntag "Tanya"
+	ntag " Tanya "
 	text "Oh, that's it?"
 	done
 
 PicnickerTanyaAfterBattleText:
-	ntag "Tanya"
+	ntag " Tanya "
 	text "Oh, look at all"
 	line "your Badges. No"
 	cont "wonder I couldn't"
@@ -301,12 +301,12 @@ BeautyJuliaSeenText:
 	done
 
 BeautyJuliaBeatenText:
-	ntag "Julia"
+	ntag " Julia "
 	text "How annoying!"
 	done
 
 BeautyJuliaAfterBattleText:
-	ntag "Julia"
+	ntag " Julia "
 	text "How do I go about"
 	line "becoming ladylike"
 	cont "like Erika?"
@@ -319,12 +319,12 @@ TwinsJoAndZoe1SeenText:
 	done
 
 TwinsJoAndZoe1BeatenText:
-	ntag "Jo & Zoe"
+	ntag " Jo & Zoe "
 	text "Oh… We lost…"
 	done
 
 TwinsJoAndZoe1AfterBattleText:
-	ntag "Jo"
+	ntag " Jo "
 	text "Erika will get you"
 	line "back for us!"
 	done
@@ -335,12 +335,12 @@ TwinsJoAndZoe2SeenText:
 	done
 
 TwinsJoAndZoe2BeatenText:
-	ntag "Jo & Zoe"
+	ntag " Jo & Zoe "
 	text "We couldn't win…"
 	done
 
 TwinsJoAndZoe2AfterBattleText:
-	ntag "Zoe"
+	ntag " Zoe "
 	text "Erika is much,"
 	line "much stronger!"
 	done
@@ -351,19 +351,19 @@ LassSandySeenText:
 	done
 
 LassSandyBeatenText:
-	ntag "Sandy"
+	ntag " Sandy "
 	text "Oh, so rough!"
 	done
 
 LassSandyAfterBattleText:
-	ntag "Sandy"
+	ntag " Sandy "
 	text "Our gym is pretty"
 	line "but it's a lot of"
 	cont "work to maintain."
 	done
 
 BellossomText:
-	ntag "Bellossom"
+	ntag " Bellossom "
 	text "Som! BellBell!"
 	done
 

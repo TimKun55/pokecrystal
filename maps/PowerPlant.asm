@@ -347,7 +347,7 @@ PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	ntag "Manager"
+	ntag " Manager "
 	text "I, I, I'm ready"
 	line "to blast someone!"
 
@@ -364,7 +364,7 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
-	ntag "Manager"
+	ntag " Manager "
 	text "I won't forgive"
 	line "him!"
 
@@ -377,7 +377,7 @@ PowerPlantManagerIWontForgiveCulpritText:
 	done
 
 PowerPlantManagerThatsThePartText:
-	ntag "Manager"
+	ntag " Manager "
 	text "Ah! Yeah!"
 
 	para "That's the missing"
@@ -394,7 +394,7 @@ PowerPlantManagerGavePartText:
 	done
 
 PowerPlantManagerTakeThisTMText:
-	ntag "Manager"
+	ntag " Manager "
 	text "There!"
 	
 	para "Back up and work-"
@@ -407,7 +407,7 @@ PowerPlantManagerTakeThisTMText:
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	ntag "Manager"
+	ntag " Manager "
 	text "TM07 is my"
 	line "Zap Cannon."
 
@@ -421,7 +421,7 @@ PowerPlantManagerTM07IsZapCannonText:
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:
-	ntag "Manager"
+	ntag " Manager "
 	text "My beloved"
 	line "generator!"
 
@@ -430,7 +430,7 @@ PowerPlantManagerMyBelovedGeneratorText:
 	done
 	
 PowerPlantGiovanniSearchingText:
-	ntag "???"
+	ntag " ??? "
 	text "I heard a rumour"
 	line "that Team Rocket"
 	cont "had been spotted"
@@ -441,7 +441,7 @@ PowerPlantGiovanniSearchingText:
 	done
 	
 PowerPlantGiovanniLeavingText:
-	ntag "???"
+	ntag " ??? "
 	text "You found the"
 	line "Rocket member,"
 	cont "defeated him, and"

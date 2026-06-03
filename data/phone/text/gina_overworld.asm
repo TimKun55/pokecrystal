@@ -1,5 +1,5 @@
 GinaAskNumber1Text:
-	ntag "Gina"
+	ntag " Gina "
 	text "Whenever I see a"
 	line "strong trainer, I"
 	cont "want to be their"
@@ -20,7 +20,7 @@ GinaAskNumber1Text:
 	done
 
 GinaAskNumber2Text:
-	ntag "Gina"
+	ntag " Gina "
 	text "If I find an item,"
 	line "you can have it!"
 
@@ -29,25 +29,26 @@ GinaAskNumber2Text:
 	done
 
 GinaNumberAcceptedText:
+	ntag " Gina "
 	text "I'll call as soon"
 	line "as I get anything!"
 	done
 
 GinaNumberDeclinedText:
-	ntag "Gina"
+	ntag " Gina "
 	text "Is that so? Well,"
 	line "I'll still be"
 	cont "rooting for you!"
 	done
 
 GinaPhoneFullText:
-	ntag "Gina"
+	ntag " Gina "
 	text "But your phone is"
 	line "all filled up!"
 	done
 
 GinaRematchText:
-	ntag "Gina"
+	ntag " Gina "
 	text "I've been waiting!"
 
 	para "I've gotten a bit"
@@ -55,7 +56,7 @@ GinaRematchText:
 	done
 
 GinaGiftText:
-	ntag "Gina"
+	ntag " Gina "
 	text "So you're finally"
 	line "here!"
 
@@ -64,7 +65,7 @@ GinaGiftText:
 	done
 
 GinaPackFullText:
-	ntag "Gina"
+	ntag " Gina "
 	text "Your Pack looks"
 	line "completely full."
 

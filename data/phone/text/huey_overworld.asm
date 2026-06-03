@@ -1,5 +1,5 @@
 HueyAskNumber1Text:
-	ntag "Huey"
+	ntag " Huey "
 	text "Cool! That's the"
 	line "first time I've"
 	cont "lost in a while!"
@@ -14,7 +14,7 @@ HueyAskNumber1Text:
 	done
 
 HueyAskNumber2Text:
-	ntag "Huey"
+	ntag " Huey "
 	text "Hey, give me your"
 	line "phone number."
 
@@ -25,38 +25,38 @@ HueyAskNumber2Text:
 	done
 
 HueyNumberAcceptedText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Hey, let's battle"
 	line "again!"
 	done
 
 HueyNumberDeclinedText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Looks like you're"
 	line "a wimp…"
 	done
 
 HueyPhoneFullText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Hey! Your phone's"
 	line "already full!"
 	done
 
 HueyRematchText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Hey! I'm tired of"
 	line "waiting for you!"
 	done
 
 HueyPackFullText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Oh… Your Pack's"
 	line "full. I'll give it"
 	cont "to you later."
 	done
 
 HueyRematchGiftText:
-	ntag "Huey"
+	ntag " Huey "
 	text "Man! You're as"
 	line "tough as ever!"
 

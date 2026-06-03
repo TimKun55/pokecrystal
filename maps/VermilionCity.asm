@@ -145,7 +145,7 @@ VermilionCityGrampsText:
 	done
 
 VermilionCityMachopText1:
-	ntag "Machop"
+	ntag " Machop "
 	text "Guooh gogogoh!"
 	done
 

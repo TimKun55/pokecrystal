@@ -157,7 +157,7 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerRival_BeforeText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "<……> <……> <……>"
 
 	para "…Oh, it's you."
@@ -180,7 +180,7 @@ BurnedTowerRival_BeforeText:
 	done
 
 BurnedTowerRival_WinText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…Humph!"
 
 	para "This is why I hate"
@@ -191,7 +191,7 @@ BurnedTowerRival_WinText:
 	done
 
 BurnedTowerRival_AfterText1:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…Aw, whatever."
 
 	para "You would never be"
@@ -201,7 +201,7 @@ BurnedTowerRival_AfterText1:
 	done
 
 BurnedTowerRival_LossText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…Humph!"
 
 	para "This is why I hate"
@@ -212,7 +212,7 @@ BurnedTowerRival_LossText:
 	done
 
 BurnedTowerRival_AfterText2:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "Humph!"
 
 	para "What are you doing"
@@ -225,7 +225,7 @@ BurnedTowerRival_AfterText2:
 	done
 
 BurnedTower1FEusineIntroText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "My name's Eusine."
 
 	para "I'm on the trail"
@@ -247,7 +247,7 @@ BurnedTower1FEusineIntroText:
 	done
 
 BurnedTower1FEusineText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "I heard that"
 	line "Suicune is in"
 	cont "this Burned Tower,"
@@ -258,7 +258,7 @@ BurnedTower1FEusineText:
 	done
 
 BurnedTower1FMortyText:
-	ntag "Morty"
+	ntag " Morty "
 	text "My name is Morty."
 
 	para "I am Ecruteak's"

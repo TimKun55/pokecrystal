@@ -84,18 +84,18 @@ RedNoNtagText:
 	done
 
 RedWinLossText:
-	ntag "Red"
+	ntag " Red "
 	text "…"
 	done
 
 RedNtagText:
-	ntag "Red"
+	ntag " Red "
 	text "<……>"
 	line "<……>"
 	done
 	
 PikachuText:
-	ntag "Pikachu"
+	ntag " Pikachu "
 	text "Piii!"
 	done
 

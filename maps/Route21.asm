@@ -51,12 +51,12 @@ SwimmermSethSeenText:
 	done
 
 SwimmermSethBeatenText:
-	ntag "Seth"
+	ntag " Seth "
 	text "Glug…"
 	done
 
 SwimmermSethAfterBattleText:
-	ntag "Seth"
+	ntag " Seth "
 	text "This arrogant guy"
 	line "was at Cinnabar's"
 	cont "volcano."
@@ -69,13 +69,13 @@ SwimmerfNikkiSeenText:
 	done
 
 SwimmerfNikkiBeatenText:
-	ntag "Nikki"
+	ntag " Nikki "
 	text "I'm worried about"
 	line "sunburn…"
 	done
 
 SwimmerfNikkiAfterBattleText:
-	ntag "Nikki"
+	ntag " Nikki "
 	text "I have to watch"
 	line "out for blemishes"
 	cont "caused by the sun."
@@ -86,12 +86,12 @@ SwimmermDarylSeenText:
 	done
 
 SwimmermDarylBeatenText:
-	ntag "Daryl"
+	ntag " Daryl "
 	text "Too fast…"
 	done
 
 SwimmermDarylAfterBattleText:
-	ntag "Daryl"
+	ntag " Daryl "
 	text "Since the eruption"
 	line "happened, there"
 	cont "rocks everywhere."
@@ -104,13 +104,13 @@ SwimmerfLisaSeenText:
 	done
 
 SwimmerfLisaBeatenText:
-	ntag "Lisa"
+	ntag " Lisa "
 	text "What were we"
 	line "talking about…?"
 	done
 
 SwimmerfLisaAfterBattleText:
-	ntag "Lisa"
+	ntag " Lisa "
 	text "Fish #mon"
 	line "are friends."
 	done
@@ -121,12 +121,12 @@ FisherArnoldSeenText:
 	done
 
 FisherArnoldBeatenText:
-	ntag "Arnold"
+	ntag " Arnold "
 	text "Utter failure…"
 	done
 
 FisherArnoldAfterBattleText:
-	ntag "Arnold"
+	ntag " Arnold "
 	text "I'll just go back"
 	line "to fishing…"
 	done

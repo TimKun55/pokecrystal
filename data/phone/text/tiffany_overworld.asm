@@ -1,5 +1,5 @@
 TiffanyAskNumber1Text:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Hi! You like"
 	line "Clefairy too?"
 
@@ -17,7 +17,7 @@ TiffanyAskNumber1Text:
 	done
 
 TiffanyAskNumber2Text:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "I want to know"
 	line "your phone number!"
 
@@ -26,13 +26,13 @@ TiffanyAskNumber2Text:
 	done
 
 TiffanyNumberAcceptedText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Isn't my Clefairy"
 	line "super-adorable?"
 	done
 
 TiffanyNumberDeclinedText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Aww… Oh well."
 	line "Look for me if you"
 	cont "want to talk about"
@@ -40,13 +40,13 @@ TiffanyNumberDeclinedText:
 	done
 
 TiffanyPhoneFullText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Oh? Your phone"
 	line "registry is full."
 	done
 
 TiffanyRematchText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "There you are!"
 
 	para "Clefairy, I want"
@@ -54,7 +54,7 @@ TiffanyRematchText:
 	done
 
 TiffanyGiftText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "You took a long"
 	line "time. See this?"
 
@@ -63,7 +63,7 @@ TiffanyGiftText:
 	done
 
 TiffanyPackFullText:
-	ntag "Tiffany"
+	ntag " Tiffany "
 	text "Uh-oh. Your Pack"
 	line "is crammed full."
 	done

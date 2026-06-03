@@ -49,12 +49,12 @@ RocketUndergroundTunnelLeaveMovement:
 	step_end
 
 RocketUndergroundTunnelPetrelHuffText:
-	ntag "???"
+	ntag " ??? "
 	text "Huff… huff…"
 	done
 
 RocketUndergroundTunnelPetrelComplainText:
-	ntag "???"
+	ntag " ??? "
 	text "Sneaking around,"
 	line "digging out this"
 	cont "tunnel, and being"
@@ -74,7 +74,7 @@ RocketUndergroundTunnelPetrelComplainText:
 	done
 
 RocketUndergroundTunnelPetrelSighText:
-	ntag "???"
+	ntag " ??? "
 	text "Sigh…"
 	done
 

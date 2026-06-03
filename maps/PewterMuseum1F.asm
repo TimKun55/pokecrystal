@@ -359,7 +359,7 @@ PewterMuseum1FScientistText:
 	done
 
 PewterMuseumFossilScientistIntroText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Hiya!"
 
 	para "Did you know that"
@@ -372,20 +372,20 @@ PewterMuseumFossilScientistIntroText:
 	done
 
 PewterMuseumFossilScientistNoFossilText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "No fossils?"
 	line "Too bad!"
 	done
 
 PewterMuseumFossilScientistNoText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "No? Too bad!"
 
 	para "Come again!"
 	done
 
 PewterMuseumFossilScientistPartyFullText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Oh no!"
 
 	para "Your party is"
@@ -397,19 +397,19 @@ PewterMuseumFossilScientistPartyFullText:
 	done
 
 PewterMuseumFossilScientistTimeText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Give me a second…"
 	done
 
 PewterMuseumFossilScientistDoneText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "There we are!"
 
 	para "All done!"
 	done
 
 PewterMuseumFossilScientistIsHelixFossilText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Oh! That's a"
 	line "Helix Fossil!"
 
@@ -422,7 +422,7 @@ PewterMuseumFossilScientistIsHelixFossilText:
 	done
 
 PewterMuseumFossilScientistIsDomeFossilText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Oh! That's a"
 	line "Dome Fossil!"
 
@@ -435,7 +435,7 @@ PewterMuseumFossilScientistIsDomeFossilText:
 	done
 
 PewterMuseumFossilScientistIsOldAmberText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Oh! That's some"
 	line "Old Amber!"
 
@@ -448,7 +448,7 @@ PewterMuseumFossilScientistIsOldAmberText:
 	done
 
 PewterMuseumFossilScientistGiveText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "So! You hurry and"
 	line "give me that!"
 
@@ -472,7 +472,7 @@ PewterMuseumReceivedKabutoText:
 	done
 
 PewterMuseumFossilScientistGoodCareText:
-	ntag "Fossil Scientist"
+	ntag " Fossil Scientist "
 	text "Take good care"
 	line "of it!"
 	done

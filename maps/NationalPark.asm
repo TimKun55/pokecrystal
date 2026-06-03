@@ -367,7 +367,7 @@ NationalParkTeacher2Text:
 	done
 
 NationalParkPersianText:
-	ntag "Persian"
+	ntag " Persian "
 	text "Fufushaa!"
 	done
 
@@ -395,12 +395,12 @@ SchoolboyJack1SeenText:
 	done
 
 SchoolboyJack1BeatenText:
-	ntag "Jack"
+	ntag " Jack "
 	text "Wha-wha-what?"
 	done
 
 SchoolboyJackTradeMonText:
-	ntag "Jack"
+	ntag " Jack "
 	text "There is a lot"
 	line "to learn."
 
@@ -423,13 +423,13 @@ PokefanfBeverly1SeenText:
 	done
 
 PokefanfBeverly1BeatenText:
-	ntag "Beverly"
+	ntag " Beverly "
 	text "I can beat you in"
 	line "pride, but…"
 	done
 
 PokefanBeverlyCuteMonText:
-	ntag "Beverly"
+	ntag " Beverly "
 	text "I must say, your"
 	line "#mon are quite"
 	cont "cute, too."
@@ -445,12 +445,12 @@ PokefanmWilliamSeenText:
 	done
 
 PokefanmWilliamBeatenText:
-	ntag "William"
+	ntag " William "
 	text "M-my #mon!"
 	done
 
 PokefanmWilliamAfterBattleText:
-	ntag "William"
+	ntag " William "
 	text "I lost the battle,"
 	line "but my #mon win"
 	cont "the prize for"
@@ -458,7 +458,7 @@ PokefanmWilliamAfterBattleText:
 	done
 
 PokefanFBeverlyMarillFriendText:
-	ntag "Beverly"
+	ntag " Beverly "
 	text "My friend keeps a"
 	line "Marill!"
 
@@ -478,13 +478,13 @@ LadyMiaSeenText:
 	done
 
 LadyMiaBeatenText:
-	ntag "Mia"
+	ntag " Mia "
 	text "Haha! I was"
 	line "totally right!"
 	done
 
 LadyMiaAfterBattleText:
-	ntag "Mia"
+	ntag " Mia "
 	text "You battle like a"
 	line "pro! You should"
 	cont "visit the family"
@@ -502,12 +502,12 @@ LassKriseSeenText:
 	done
 
 LassKriseBeatenText:
-	ntag "Krise"
+	ntag " Krise "
 	text "…Hmmm…"
 	done
 
 LassKriseAfterBattleText:
-	ntag "Krise"
+	ntag " Krise "
 	text "I thought you were"
 	line "staring at me"
 	cont "because I'm cute!"

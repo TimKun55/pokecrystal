@@ -93,7 +93,7 @@ CianwoodMoveTutor3Script:
 	writetextend CianwoodMoveTutorNotEnough
 	
 CianwoodMoveTutorXScissorText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hi there!"
 
 	para "I've been working"
@@ -102,7 +102,7 @@ CianwoodMoveTutorXScissorText:
 	done
 	
 CianwoodMoveTutorXScissorTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Nothing fancy."
 	line "Just a hard-hit-"
 	cont "ting move!"
@@ -112,7 +112,7 @@ CianwoodMoveTutorXScissorTaught:
 	done
 
 CianwoodMoveTutorDrainPunchText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Damage and healing"
 	line "in one attack."
 	
@@ -121,13 +121,13 @@ CianwoodMoveTutorDrainPunchText:
 	done
 
 CianwoodMoveTutorDrainPunchTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Punch your way to"
 	line "victory!"
 	done
 
 CianwoodMoveTutorWaterPulseText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "After all my years"
 	line "at sea, I can pass"
 	cont "on what I have"
@@ -137,7 +137,7 @@ CianwoodMoveTutorWaterPulseText:
 	done
 
 CianwoodMoveTutorWaterPulseTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Good damage and a"
 	line "chance to inflict"
 	cont "confusion."
@@ -147,7 +147,7 @@ CianwoodMoveTutorWaterPulseTaught:
 	done
 
 CianwoodMoveTutorAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥8,000?"
@@ -159,13 +159,13 @@ CianwoodMoveTutorPayment:
 	done
 
 CianwoodMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back when"
 	line "you like."
 	done
 
 CianwoodMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you can't"
 	line "afford it."
 	done

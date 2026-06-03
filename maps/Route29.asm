@@ -204,7 +204,7 @@ LyraMovementData3:
 	step_end
 
 CatchingTutorialIntroText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>!"
 
 	para "You can catch wild"
@@ -214,7 +214,7 @@ CatchingTutorialIntroText:
 	done
 
 CatchingTutorialDebriefText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "See?"
 	line "Just like that!"
 
@@ -227,7 +227,7 @@ CatchingTutorialDebriefText:
 	done
 
 CatchingTutorialDeclinedText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Aww… I wanted to"
 	line "show off my cap-"
 	cont "turing skills a"
@@ -244,7 +244,7 @@ GetPokeballText:
 	done
 
 CatchingTutorialGoodbyeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "See you!"
 	done
 
@@ -292,7 +292,7 @@ Route29CooltrainerMText_WaitingForMorning:
 	done
 
 MeetTuscanyText:
-	ntag "???"
+	ntag " ??? "
 	text "I do believe"
 	line "that this is"
 	cont "the first time"
@@ -306,7 +306,7 @@ MeetTuscanyText:
 	done
 
 TuscanyGivesGiftText:
-	ntag "Tuscany"
+	ntag " Tuscany "
 	text "By way of intro-"
 	line "duction, please"
 	cont "accept this gift,"
@@ -314,7 +314,7 @@ TuscanyGivesGiftText:
 	done
 
 TuscanyGaveGiftText:
-	ntag "Tuscany"
+	ntag " Tuscany "
 	text "Wouldn't you agree"
 	line "that it is most"
 	cont "adorable?"
@@ -327,7 +327,7 @@ TuscanyGaveGiftText:
 	done
 
 TuscanyTuesdayText:
-	ntag "Tuscany"
+	ntag " Tuscany "
 	text "Have you met"
 	line "Monica, my older"
 	cont "sister?"
@@ -340,7 +340,7 @@ TuscanyTuesdayText:
 	done
 
 TuscanyNotTuesdayText:
-	ntag "Tuscany"
+	ntag " Tuscany "
 	text "Today is not"
 	line "Tuesday. That is"
 	cont "unfortunate…"

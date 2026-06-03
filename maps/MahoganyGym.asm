@@ -184,7 +184,7 @@ MahoganyGymStatue:
 	jumpstd GymStatue3Script
 
 PryceText_Intro:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "#mon have many"
 	line "experiences in"
 	cont "their lives, just "
@@ -213,7 +213,7 @@ PryceText_Intro:
 	done
 
 PryceText_Impressed:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Ah, I am impressed"
 	line "by your prowess."
 
@@ -232,7 +232,7 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "The GlacierBadge"
 	line "will let your"
 	cont "#mon use Whirl-"
@@ -244,7 +244,7 @@ PryceText_GlacierBadgeSpeech:
 	done
 
 PryceText_IcyWindSpeech:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "That TM contains"
 	line "Icy Wind."
 
@@ -257,7 +257,7 @@ PryceText_IcyWindSpeech:
 	done
 
 PryceText_CherishYourPokemon:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "When the ice and"
 	line "snow melt, spring"
 	cont "arrives."
@@ -272,7 +272,7 @@ PryceText_CherishYourPokemon:
 	done
 
 PryceRematchIntroText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "<PLAYER>."
 	line "You've returned."
 	
@@ -281,14 +281,14 @@ PryceRematchIntroText:
 	done
 	
 PryceWinLossRematchText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Hmm."
 	line "Seems as if my"
 	cont "luck has run out."
 	done
 	
 PryceRematchAfterBattleText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "A wonderful"
 	line "battle."
 	
@@ -298,7 +298,7 @@ PryceRematchAfterBattleText:
 	done
 	
 Pryce16IntroText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "<PLAYER>."
 	line "You have done it."
 	
@@ -324,7 +324,7 @@ Pryce16IntroText:
 	done
 	
 Pryce16AfterBattleText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "As your elder, it"
 	line "makes me truly"
 	cont "happy to see"
@@ -336,14 +336,14 @@ Pryce16AfterBattleText:
 	done
 
 PryceComeBackTomorrowText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Return tomorrow"
 	line "and we shall"
 	cont "battle again."
 	done
 	
 PryceNextTimeText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "I understand."
 	line "Come back when"
 	cont "you're able."
@@ -357,13 +357,13 @@ BoarderRonaldSeenText:
 	done
 
 BoarderRonaldBeatenText:
-	ntag "Ronald"
+	ntag " Ronald "
 	text "Darn. I couldn't"
 	line "do a thing."
 	done
 
 BoarderRonaldAfterBattleText:
-	ntag "Ronald"
+	ntag " Ronald "
 	text "I think there's a"
 	line "move a frostbitten"
 	cont "can use while it's"
@@ -383,13 +383,13 @@ BoarderBradSeenText:
 	done
 
 BoarderBradBeatenText:
-	ntag "Brad"
+	ntag " Brad "
 	text "Do you see how"
 	line "serious we are?"
 	done
 
 BoarderBradAfterBattleText:
-	ntag "Brad"
+	ntag " Brad "
 	text "This Gym is great."
 	line "I love boarding"
 	cont "with my #mon!"
@@ -401,13 +401,13 @@ BoarderDouglasSeenText:
 	done
 
 BoarderDouglasBeatenText:
-	ntag "Douglas"
+	ntag " Douglas "
 	text "OK. I'll tell you"
 	line "Pryce's secret."
 	done
 
 BoarderDouglasAfterBattleText:
-	ntag "Douglas"
+	ntag " Douglas "
 	text "The secret behind"
 	line "Pryce's power…"
 
@@ -429,13 +429,13 @@ SkierRoxanneSeenText:
 	done
 
 SkierRoxanneBeatenText:
-	ntag "Roxanne"
+	ntag " Roxanne "
 	text "I wouldn't lose to"
 	line "you in skiing!"
 	done
 
 SkierRoxanneAfterBattleText:
-	ntag "Roxanne"
+	ntag " Roxanne "
 	text "If you don't skate"
 	line "with precision,"
 	cont "you won't get far"
@@ -448,13 +448,13 @@ SkierClarissaSeenText:
 	done
 
 SkierClarissaBeatenText:
-	ntag "Clarissa"
+	ntag " Clarissa "
 	text "No! You made me"
 	line "wipe out!"
 	done
 
 SkierClarissaAfterBattleText:
-	ntag "Clarissa"
+	ntag " Clarissa "
 	text "I shouldn't have"
 	line "been bragging"
 	cont "about my skiing…"
@@ -489,12 +489,12 @@ MahoganyGymGuideWinText:
 	done
 
 PiloswineText:
-	ntag "Piloswine"
+	ntag " Piloswine "
 	text "Lo! PiloPilo!"
 	done
 	
 MamoswineText:
-	ntag "Mamoswine"
+	ntag " Mamoswine "
 	text "Mooo! Mammooo!"
 	done
 

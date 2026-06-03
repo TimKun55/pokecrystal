@@ -118,7 +118,7 @@ GoldenrodMoveTutorHouseRadio:
 	jumpstd Radio2Script
 
 GoldenrodMoveTutorHouseAskTeachAMoveText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Flamethrower,"
 	line "Thunderbolt,"
 	cont "Ice Beam."
@@ -133,38 +133,38 @@ GoldenrodMoveTutorHouseAskTeachAMoveText:
 	done
 
 GoldenrodMoveTutorHouseAsk4000CoinsOkayText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It will cost you"
 	line "4,000 coins. Okay?"
 	done
 
 GoldenrodMoveTutorHouseAwwButTheyreAmazingText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Aww… But they're"
 	line "amazing…"
 	done
 
 GoldenrodMoveTutorHouseWontRegretText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Wahahah! You won't"
 	line "regret it!"
 	done
 
 GoldenrodMoveTutorHouseWhichMoveShouldITeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Which move should"
 	line "I teach?"
 	done
 
 GoldenrodMoveTutorHouseHmTooBadText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hm, too bad. I'll"
 	line "have to get some"
 	cont "cash from home…"
 	done
 
 GoldenrodMoveTutorHouseIfYouUnderstandYouveMadeItText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "If you understand"
 	line "what's so amazing"
 	cont "about this move,"
@@ -173,19 +173,19 @@ GoldenrodMoveTutorHouseIfYouUnderstandYouveMadeItText:
 	done
 
 GoldenrodMoveTutorHouseFarewellKidText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Wahahah!"
 	line "Farewell, kid!"
 	done
 
 GoldenrodMoveTutorHouseYouDontHaveEnoughCoinsText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "…You don't have"
 	line "enough coins here…"
 	done
 
 GoldenrodMoveTutorHouseNotTeachingText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "I can teach your"
 	line "#mon powerful"
 	cont "moves-"
@@ -201,7 +201,7 @@ GoldenrodMoveTutorHouseNotTeachingText:
 	done
 
 GoldenrodMoveTutorHouseNoCoinCaseText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "I can teach your"
 	line "#mon powerful"
 	cont "moves-"

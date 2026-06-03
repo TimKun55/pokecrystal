@@ -238,7 +238,7 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
-	ntag "Earl"
+	ntag " Earl "
 	text "Earl, I am!"
 
 	para "Wonderful are"
@@ -254,7 +254,7 @@ AcademyEarlIntroText:
 	done
 
 AcademyEarlTeachHowToWinText:
-	ntag "Earl"
+	ntag " Earl "
 	text "Good! Teach you,"
 	line "I will!"
 
@@ -271,14 +271,14 @@ AcademyEarlTeachHowToWinText:
 	done
 
 AcademyEarlTeachMoreText:
-	ntag "Earl"
+	ntag " Earl "
 	text "So, want to know"
 	line "how to raise"
 	cont "#mon well?"
 	done
 
 AcademyEarlTeachHowToRaiseWellText:
-	ntag "Earl"
+	ntag " Earl "
 	text "Fine! Teach you,"
 	line "I will!"
 
@@ -299,7 +299,7 @@ AcademyEarlTeachHowToRaiseWellText:
 	done
 
 AcademyEarlNoMoreToTeachText:
-	ntag "Earl"
+	ntag " Earl "
 	text "Oh! Smart student"
 	line "you are! Nothing"
 	cont "more do I teach!"
@@ -466,9 +466,11 @@ AcademyNotebookText3:
 	cont "other trainers."
 
 	para "The next page"
-	line "is… Blank!"
+	line "is… blank!"
+	text_promptbutton
 
-	para "Boy: E-he-he…"
+	ntag " Boy "
+	para "E-he-he…"
 
 	para "I haven't written"
 	line "anymore…"
@@ -503,13 +505,13 @@ YoungsterGabeSeenText:
 	done
 
 YoungsterGabeBeatenText:
-	ntag "Gabe"
+	ntag " Gabe "
 	text "Oh, you're"
 	line "strong."
 	done
 
 YoungsterGabeAfterBattleText:
-	ntag "Gabe"
+	ntag " Gabe "
 	text "Status conditions"
 	line "can be scary"
 	cont "if you're not"
@@ -524,13 +526,13 @@ BugCatcherJonSeenText:
 	done
 
 BugCatcherJonBeatenText:
-	ntag "Jon"
+	ntag " Jon "
 	text "I should have"
 	line "just studied."
 	done
 
 BugCatcherJonAfterBattleText:
-	ntag "Jon"
+	ntag " Jon "
 	text "Watch out for"
 	line "your #mon"
 	cont "being poisoned."
@@ -552,13 +554,13 @@ LassMaiSeenText:
 	done
 
 LassMaiBeatenText:
-	ntag "Mai"
+	ntag " Mai "
 	text "Aww, losing"
 	line "was scarier."
 	done
 
 LassMaiAfterBattleText:
-	ntag "Mai"
+	ntag " Mai "
 	text "Most moves that"
 	line "put a #mon"
 	cont "to sleep are"
@@ -571,7 +573,7 @@ LassMaiAfterBattleText:
 	done
 	
 TeacherEnomotoIntroText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "I'm Enomoto."
 
 	para "Welcome to my"
@@ -588,21 +590,21 @@ TeacherEnomotoIntroText:
 	done
 
 TeacherEnomotoEndText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "Hmm, best to make"
 	line "sure you're fully"
 	cont "prepared."
 	done
 
 TeacherEnomotoBattleMoreText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "Hmm, I think you"
 	line "need to battle the"
 	cont "others first."
 	done
 
 TeacherEnomotoLetsBattleText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "You seem well"
 	line "prepared."
 
@@ -610,14 +612,14 @@ TeacherEnomotoLetsBattleText:
 	done
 
 EnomotoText_WellDone:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "Oh, my!"
 	line "You've done"
 	cont "very well!"
 	done
 
 TeacherEnomotoTakeThisText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "As a reward,"
 	line "take this item"
 	
@@ -626,7 +628,7 @@ TeacherEnomotoTakeThisText:
 	done
 
 TeacherEnomotoStrongerText:
-	ntag "Enomoto"
+	ntag " Enomoto "
 	text "The Eviolite will"
 	line "increase the"
 	cont "Defense and"

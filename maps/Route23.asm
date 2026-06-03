@@ -307,7 +307,7 @@ Route23JasmineBattleExitMovement:
 	step_end
 
 Route23FalknerBeforeText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "<PLAYER>!"
 	line "It's been a while!"
 
@@ -332,13 +332,13 @@ Route23FalknerBeforeText:
 	done
 
 Route23FalknerDefeatText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Haha, wow! You're"
 	line "as strong as ever."
 	done
 
 Route23FalknerAfterText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Seeing how strong"
 	line "you've become"
 	cont "makes me want to"
@@ -360,17 +360,17 @@ Route23FalknerAfterText:
 	done
 
 Route23FalknerVictoryText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Yeah! I won!!"
 	done
 	
 Route23NoctowlText:
-	ntag "Noctowl"
+	ntag " Noctowl "
 	text "Towl! NocTowl!"
 	done
 
 Route23BugsyBeforeText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Hey <PLAYER>!"
 	line "Did Falkner tell"
 	cont "you we all wanna"
@@ -387,13 +387,13 @@ Route23BugsyBeforeText:
 	done
 
 Route23BugsyDefeatText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Yeah, you're still"
 	line "super strong."
 	done
 
 Route23BugsyAfterText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Man, I still have"
 	line "a long way to go"
 	cont "both with my"
@@ -407,17 +407,17 @@ Route23BugsyAfterText:
 	done
 
 Route23BugsyVictoryText:
-	ntag "Bugsy"
+	ntag " Bugsy "
 	text "Yeah! I won!!"
 	done
 	
 Route23ScytherText:
-	ntag "Scyther"
+	ntag " Scyther "
 	text "Scyth! Scythaaaa!"
 	done
 	
 Route23WhitneyBeforeText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Hi <PLAYER>!"
 	line "I've been waiting"
 	cont "for you!"
@@ -431,12 +431,12 @@ Route23WhitneyBeforeText:
 	done
 
 Route23WhitneyDefeatText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Aww, I lost again?"
 	done
 
 Route23WhitneyAfterText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "I hate losing but"
 	line "at least I didn't"
 	cont "cry this time!"
@@ -449,17 +449,17 @@ Route23WhitneyAfterText:
 	done
 
 Route23WhitneyVictoryText:
-	ntag "Whitney"
+	ntag " Whitney "
 	text "Yeah! I won!!"
 	done
 	
 Route23MiltankText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "Miltaa!!"
 	done
 	
 Route23MortyBeforeText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Ah <PLAYER>,"
 	line "you've arrived."
 	
@@ -484,13 +484,13 @@ Route23MortyBeforeText:
 	done
 
 Route23MortyDefeatText:
-	ntag "Morty"
+	ntag " Morty "
 	text "Still not"
 	line "good enough…"
 	done
 
 Route23MortyAfterText:
-	ntag "Morty"
+	ntag " Morty "
 	text "One day I'll be"
 	line "strong enough to"
 	cont "encounter that"
@@ -507,17 +507,17 @@ Route23MortyAfterText:
 	done
 
 Route23MortyVictoryText:
-	ntag "Morty"
+	ntag " Morty "
 	text "I did it."
 	done
 	
 Route23GengarText:
-	ntag "Gengar"
+	ntag " Gengar "
 	text "Gen! GarGar!"
 	done
 	
 Route23ChuckBeforeText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAH!"
 	line "We meet again"
 	cont "<PLAYER>!"
@@ -531,13 +531,13 @@ Route23ChuckBeforeText:
 	done
 
 Route23ChuckDefeatText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "I lost again!"
 	line "WAHAHAH!"
 	done
 
 Route23ChuckAfterText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "Looks like I need"
 	line "more training!"
 
@@ -556,18 +556,18 @@ Route23ChuckAfterText:
 	done
 
 Route23ChuckVictoryText:
-	ntag "Chuck"
+	ntag " Chuck "
 	text "WAHAHAH!"
 	line "Victory!"
 	done
 	
 Route23PoliwrathText:
-	ntag "Poliwrath"
+	ntag " Poliwrath "
 	text "Wrath! Poli!"
 	done
 	
 Route23JasmineBeforeText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Oh, hello"
 	line "<PLAYER>."
 	
@@ -583,12 +583,12 @@ Route23JasmineBeforeText:
 	done
 
 Route23JasmineDefeatText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Well done."
 	done
 
 Route23JasmineAfterText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "As a Gym Leader"
 	line "it makes me happy"
 	cont "to see how strong"
@@ -609,17 +609,17 @@ Route23JasmineAfterText:
 	done
 
 Route23JasmineVictoryText:
-	ntag "Jasmine"
+	ntag " Jasmine "
 	text "Yay, I won!"
 	done
 	
 Route23SteelixText:
-	ntag "Steelix"
+	ntag " Steelix "
 	text "Stee! LixLix!"
 	done
 
 Route23PryceBeforeText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Ah, its young"
 	line "<PLAYER>."
 	
@@ -632,12 +632,12 @@ Route23PryceBeforeText:
 	done
 
 Route23PryceDefeatText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Mmm… Impressive!"
 	done
 
 Route23PryceAfterText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "Your experiences"
 	line "have been serving"
 	cont "you well, I see."
@@ -653,14 +653,14 @@ Route23PryceAfterText:
 	done
 
 Route23PryceVictoryText:
-	ntag "Pryce"
+	ntag " Pryce "
 	text "These old bones"
 	line "still have"
 	cont "strength in them."
 	done
 	
 Route23MamoswineText:
-	ntag "Mamoswine"
+	ntag " Mamoswine "
 	text "Mooo! Mammooo!"
 	done
 

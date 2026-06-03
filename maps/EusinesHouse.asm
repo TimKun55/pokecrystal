@@ -59,7 +59,7 @@ EusinesHouseGrampsScript:
 	writetextend EusinesHouseGrampsText2
 
 CeladonEusineText1:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "Hi!"
 
 	para "I'm back visiting"
@@ -70,7 +70,7 @@ CeladonEusineText1:
 	done
 
 EusineLeavesCeladonText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "<PLAYER>, have you"
 	line "heard?"
 
@@ -90,7 +90,7 @@ EusineLeavesCeladonText:
 	done
 
 NoBeastsText:
-	ntag "Eusine"
+	ntag " Eusine "
 	text "Oh, by the way,"
 	line "<PLAYER>."
 

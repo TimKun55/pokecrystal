@@ -1,5 +1,5 @@
 ToddAskNumber1Text:
-	ntag "Todd"
+	ntag " Todd "
 	text "From here, I can"
 	line "see Goldenrod's"
 	cont "Dept.Store."
@@ -17,7 +17,7 @@ ToddAskNumber1Text:
 	done
 
 ToddAskNumber2Text:
-	ntag "Todd"
+	ntag " Todd "
 	text "If you give me"
 	line "your number, I'll"
 	cont "call you when they"
@@ -25,7 +25,7 @@ ToddAskNumber2Text:
 	done
 
 ToddNumberAcceptedText:
-	ntag "Todd"
+	ntag " Todd "
 	text "I check Goldenrod"
 	line "Dept.Store every"
 	cont "day, so I know"
@@ -34,7 +34,7 @@ ToddNumberAcceptedText:
 	done
 
 ToddNumberDeclinedText:
-	ntag "Todd"
+	ntag " Todd "
 	text "Anyway…"
 
 	para "If you're short on"
@@ -46,14 +46,14 @@ ToddNumberDeclinedText:
 	done
 
 ToddPhoneFullText:
-	ntag "Todd"
+	ntag " Todd "
 	text "Your phone doesn't"
 	line "have enough memory"
 	cont "for more numbers."
 	done
 
 ToddRematchText:
-	ntag "Todd"
+	ntag " Todd "
 	text "I waited for you!"
 	line "I even cut back my"
 	cont "shopping to raise"

@@ -149,7 +149,7 @@ SpeedEVSign:
 	jumptext SpeedEVSignText
 
 EarlsPokemonAcademyTylerText:
-	ntag "Tyler"
+	ntag " Tyler "
 	text "I specialise in"
 	line "training Attack."
 
@@ -157,24 +157,24 @@ EarlsPokemonAcademyTylerText:
 	done
 
 CooltrainermTylerWinLossText:
-	ntag "Tyler"
+	ntag " Tyler "
 	text "Such power!"
 	done
 
 CooltrainermTylerAfterBattleText:
-	ntag "Tyler"
+	ntag " Tyler "
 	text "Come back for more"
 	line "attack training."
 	done
 
 CooltrainermTylerTrainAnytimeText:
-	ntag "Tyler"
+	ntag " Tyler "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademyCarlaText:
-	ntag "Carla"
+	ntag " Carla "
 	text "I specialise in"
 	line "training Defense."
 
@@ -182,24 +182,24 @@ EarlsPokemonAcademyCarlaText:
 	done
 
 CooltrainerfCarlaWinLossText:
-	ntag "Carla"
+	ntag " Carla "
 	text "Such resistance!"
 	done
 
 CooltrainerfCarlaAfterBattleText:
-	ntag "Carla"
+	ntag " Carla "
 	text "Come back for more"
 	line "defense training."
 	done
 
 CooltrainerfCarlaTrainAnytimeText:
-	ntag "Carla"
+	ntag " Carla "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademyCattText:
-	ntag "Catt"
+	ntag " Catt "
 	text "I specialise in"
 	line "training Special"
 	cont "Attack."
@@ -208,26 +208,26 @@ EarlsPokemonAcademyCattText:
 	done
 
 CooltrainerfCattWinLossText:
-	ntag "Catt"
+	ntag " Catt "
 	text "Such special"
 	line "power!"
 	done
 
 CooltrainerfCattAfterBattleText:
-	ntag "Catt"
+	ntag " Catt "
 	text "Come back for more"
 	line "special attack"
 	cont "training."
 	done
 
 CooltrainerfCattTrainAnytimeText:
-	ntag "Catt"
+	ntag " Catt "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademySteveText:
-	ntag "Steve"
+	ntag " Steve "
 	text "I specialise in"
 	line "training Special"
 	cont "Defense."
@@ -236,26 +236,26 @@ EarlsPokemonAcademySteveText:
 	done
 
 CooltrainermSteveWinLossText:
-	ntag "Steve"
+	ntag " Steve "
 	text "Such special"
 	line "resistance!"
 	done
 
 CooltrainermSteveAfterBattleText:
-	ntag "Steve"
+	ntag " Steve "
 	text "Come back for more"
 	line "special defense"
 	cont "training."
 	done
 
 CooltrainermSteveTrainAnytimeText:
-	ntag "Steve"
+	ntag " Steve "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademyJamieText:
-	ntag "Jamie"
+	ntag " Jamie "
 	text "I specialise in"
 	line "training Speed."
 
@@ -263,24 +263,24 @@ EarlsPokemonAcademyJamieText:
 	done
 
 CooltrainermJamieWinLossText:
-	ntag "Jamie"
+	ntag " Jamie "
 	text "Such agility!"
 	done
 
 CooltrainermJamieAfterBattleText:
-	ntag "Jamie"
+	ntag " Jamie "
 	text "Come back for more"
 	line "speed training."
 	done
 
 CooltrainermJamieTrainAnytimeText:
-	ntag "Jamie"
+	ntag " Jamie "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademyPamText:
-	ntag "Pam"
+	ntag " Pam "
 	text "I specialise in"
 	line "training HP."
 
@@ -288,24 +288,24 @@ EarlsPokemonAcademyPamText:
 	done
 
 CooltrainerfPamWinLossText:
-	ntag "Pam"
+	ntag " Pam "
 	text "Such robustness!"
 	done
 
 CooltrainerfPamAfterBattleText:
-	ntag "Pam"
+	ntag " Pam "
 	text "Come back for more"
 	line "HP training."
 	done
 
 CooltrainerfPamTrainAnytimeText:
-	ntag "Pam"
+	ntag " Pam "
 	text "Come back if you"
 	line "want to train."
 	done
 
 EarlsPokemonAcademyTeacherIntroText:
-	ntag "Penny"
+	ntag " Penny "
 	text "Welcome to my"
 	line "Avanced course!"
 	
@@ -319,7 +319,7 @@ EarlsPokemonAcademyTeacherIntroText:
 	done
 
 EarlsPokemonAcademyTeacherExplainText:
-	ntag "Penny"
+	ntag " Penny "
 	text "The Macho Brace"
 	line "doubles the amount"
 	cont "of EVs earned by"
@@ -334,7 +334,7 @@ EarlsPokemonAcademyTeacherExplainText:
 	done
 
 EarlsPokemonAcademyTeacherNoRoomText:
-	ntag "Penny"
+	ntag " Penny "
 	text "Oh, you have no"
 	line "room for this."
 	done

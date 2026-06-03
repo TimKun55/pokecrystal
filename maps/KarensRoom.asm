@@ -149,7 +149,7 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenBeforeText:
-	ntag "Karen"
+	ntag " Karen "
 	text "I am Karen of the"
 	line "Elite Four."
 
@@ -172,14 +172,14 @@ KarenBeforeText:
 	done
 
 KarenBeatenText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Well, aren't you"
 	line "good. I like that"
 	cont "in a trainer."
 	done
 
 KarenDefeatText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Strong #mon."
 
 	para "Weak #mon."
@@ -202,7 +202,7 @@ KarenDefeatText:
 	done
 
 KarenChampionMatchBeforeText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 	
@@ -213,12 +213,12 @@ KarenChampionMatchBeforeText:
 	done
 
 KarenChampionMatchBeatenText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Still strong!"
 	done
 
 KarenChampionMatchDefeatText:
-	ntag "Karen"
+	ntag " Karen "
 	text "You've done well."
 	
 	para "Go on, he's"
@@ -226,7 +226,7 @@ KarenChampionMatchDefeatText:
 	done
 
 Karen16BadgesBeforeText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 	
@@ -240,13 +240,13 @@ Karen16BadgesBeforeText:
 	done
 
 Karen16BadgesBeatenText:
-	ntag "Karen"
+	ntag " Karen "
 	text "You're raising"
 	line "your #mon well."
 	done
 
 Karen16BadgesDefeatText:
-	ntag "Karen"
+	ntag " Karen "
 	text "I can see why"
 	line "you were able to"
 	cont "collect all the"
@@ -257,7 +257,7 @@ Karen16BadgesDefeatText:
 	done
 
 KarenGrandChampionBeforeText:
-	ntag "Karen"
+	ntag " Karen "
 	text "Grand Champion,"
 	line "<PLAYER>!"
 	
@@ -269,13 +269,13 @@ KarenGrandChampionBeforeText:
 	done
 
 KarenGrandChampionBeatenText:
-	ntag "Karen"
+	ntag " Karen "
 	text "I expect nothing"
 	line "less from you!"
 	done
 
 KarenGrandChampionDefeatText:
-	ntag "Karen"
+	ntag " Karen "
 	text "You have become"
 	line "a truly skilled"
 	cont "trainer."
@@ -285,7 +285,7 @@ KarenGrandChampionDefeatText:
 	done
 	
 HoundoomText:
-	ntag "Houndoom"
+	ntag " Houndoom "
 	text "Grr! Awooo!"
 	done
 

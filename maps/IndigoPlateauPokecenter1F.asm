@@ -311,7 +311,7 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	done
 
 PlateauRivalText1:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "Hold it."
 
 	para "You're going to"
@@ -332,14 +332,14 @@ PlateauRivalText1:
 	done
 
 PlateauRivalWinText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 
 	para "OK--I lost…"
 	done
 
 PlateauRivalText2:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…Darn… I still"
 	line "can't win…"
 
@@ -352,7 +352,7 @@ PlateauRivalText2:
 	done
 
 PlateauRivalLoseText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 
 	para "Whew…"
@@ -362,7 +362,7 @@ PlateauRivalLoseText:
 	done
 
 PlateauLyraText1:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "<PLAYER>!"
 
 	para "I've been travel-"
@@ -388,24 +388,24 @@ PlateauLyraText1:
 	done
 
 PlateauLyraText2:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "as the #mon"
 	line "League Champion!"
 	done
 
 PlateauLyraWinText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "So you're still"
 	line "stronger than me…"
 	done
 
 PlateauLyraLoseText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "…I won?"
 	done
 
 PlateauLyraText3:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "I'm not angry that"
 	line "I lost."
 
@@ -457,12 +457,12 @@ TeleportGuyNoText:
 	done
 
 AbraText:
-	ntag "Abra"
+	ntag " Abra "
 	text "Aabraa…"
 	done
 	
 IndigoPlateauPokecenter1FTutorIntroText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "If you've made it"
 	line "here, that must"
 	cont "mean you're aiming"
@@ -480,7 +480,7 @@ IndigoPlateauPokecenter1FGigaImpactClear:
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactForAPrice:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It'll cost you"
 	line "¥25,000."
 	
@@ -493,13 +493,13 @@ IndigoPlateauPokecenter1FGigaImpactPayment:
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry kid, you"
 	line "don't have enough."
 	done
 	
 IndigoPlateauPokecenter1FGigaImpactTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It's perfect for"
 	line "a #mon with"
 	cont "high Attack!"
@@ -509,7 +509,7 @@ IndigoPlateauPokecenter1FGigaImpactTaught:
 	done
 	
 IndigoPlateauPokecenter1FTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "But I thought you"
 	line "wanted to be the"
 	cont "best?"

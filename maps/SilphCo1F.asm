@@ -197,7 +197,7 @@ SilphCoEmployeeDayBallFamilyText:
 	cont "Town? Great!@"
 	text_promptbutton
 
-	ntag "Ron"
+	ntag " Ron "
 	para "I'm Ron."
 
 	para "I'm glad my Maizie"
@@ -208,7 +208,7 @@ SilphCoEmployeeDayBallFamilyText:
 	done
 
 SilphCoEmployeeDayBagFullText:
-	ntag "Ron"
+	ntag " Ron "
 	text "Oh, looks like"
 	line "your bag is full."
 	done
@@ -225,7 +225,7 @@ SilphCoEmployeeBallInBagText:
 	done
 
 SilphCoEmployeeDayBallFavouriteText:
-	ntag "Ron"
+	ntag " Ron "
 	text "They don't have"
 	line "any special traits"
 	cont "like some other"
@@ -235,7 +235,7 @@ SilphCoEmployeeDayBallFavouriteText:
 	done
 
 SilphCoEmployeeDayFamilyText:
-	ntag "Ron"
+	ntag " Ron "
 	text "I love my job, but"
 	line "I miss being with"
 	cont "my family."

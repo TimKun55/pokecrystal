@@ -58,7 +58,7 @@ Route23ClairBattleExitMovement:
 	step_end
 	
 Route23ClairBeforeText:
-	ntag "Clair"
+	ntag " Clair "
 	text "<PLAYER>."
 	
 	para "I know we just"
@@ -75,13 +75,13 @@ Route23ClairBeforeText:
 	done
 
 Route23ClairDefeatText:
-	ntag "Clair"
+	ntag " Clair "
 	text "Mmm…"
 	line "Very well done."
 	done
 
 Route23ClairAfterText:
-	ntag "Clair"
+	ntag " Clair "
 	text "In the short time"
 	line "since we battled"
 	cont "you've become"
@@ -99,14 +99,14 @@ Route23ClairAfterText:
 	done
 
 Route23ClairVictoryText:
-	ntag "Clair"
+	ntag " Clair "
 	text "It seems I was"
 	line "the stronger one"
 	cont "this time."
 	done
 	
 Route23KingdraText:
-	ntag "Kingdra"
+	ntag " Kingdra "
 	text "Draa!"
 	done
 

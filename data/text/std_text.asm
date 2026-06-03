@@ -1,71 +1,71 @@
 NurseMornText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good morning!"
 	done
 
 NurseDayText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Hello!"
 	done
 
 NurseEveText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening!"
 	done
 
 NurseNiteText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening!"
 	line "You're out late."
 	done
 
 NurseMornChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good morning,"
 	line "Champion <PLAYER>!"
 	done
 
 NurseDayChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Hello, Champion"
 	line "<PLAYER>!"
 	done
 
 NurseEveChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening,"
 	line "Champion <PLAYER>!"
 	done
 
 NurseNiteChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening,"
 	line "Champion <PLAYER>!"
 	cont "You're out late."
 	done
 
 NurseMornGrandChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good morning,"
 	line "Grand Champion"
 	cont "<PLAYER>!"
 	done
 
 NurseDayGrandChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Hello, Grand"
 	line "Champion <PLAYER>!"
 	done
 
 NurseEveGrandChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening,"
 	line "Grand Champion"
 	cont "<PLAYER>!"
 	done
 
 NurseNiteGrandChampText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Good evening,"
 	line "Grand Champion"
 	cont "<PLAYER>!"
@@ -73,7 +73,7 @@ NurseNiteGrandChampText:
 	done
 
 NurseCenterWelcomeText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Is this your"
 	line "first visit to a"
 	cont "#mon Center?"
@@ -88,19 +88,19 @@ NurseCenterWelcomeText:
 	done
 
 NurseAskHealText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Shall we heal your"
 	line "#mon?"
 	done
 
 NurseTakePokemonText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "OK, may I see your"
 	line "#mon?"
 	done
 
 NurseReturnPokemonText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Thank you for"
 	line "waiting."
 
@@ -109,13 +109,13 @@ NurseReturnPokemonText:
 	done
 
 NurseGoodbyeText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Please, come back"
 	line "again any time!"
 	done
 
 NursePokerusText:
-	ntag "Nurse"
+	ntag " Nurse "
 	text "Your #mon"
 	line "appear to be"
 	cont "infected by tiny"
@@ -416,7 +416,7 @@ RegisteredNumber2Text:
 	done
 
 PokeCenterChanseyText:
-	ntag "Chansey"
+	ntag " Chansey "
 	text "Chansey!"
 	done
 

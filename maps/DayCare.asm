@@ -213,7 +213,7 @@ DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
 
 DayCareLyraHelloText1:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Grandma!"
 
 	para "Let me introduce"
@@ -222,7 +222,7 @@ DayCareLyraHelloText1:
 	para "This is <PLAYER>!@"
 	text_promptbutton
 
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Ah ha."
 
 	para "This is your"
@@ -232,7 +232,7 @@ DayCareLyraHelloText1:
 	done
 
 DayCareLyraHelloText2:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Grandma!"
 
 	para "Let me introduce"
@@ -241,7 +241,7 @@ DayCareLyraHelloText2:
 	para "This is <PLAYER>!@"
 	text_promptbutton
 
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Ah ha."
 
 	para "This is your"
@@ -251,7 +251,7 @@ DayCareLyraHelloText2:
 	done
 
 DayCareLyraProtestText1:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "What?"
 	line "Grandma…!"
 
@@ -262,7 +262,7 @@ DayCareLyraProtestText1:
 	line "nearby…@"
 	text_promptbutton
 
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Hahaha."
 	line "I know, I know."
 
@@ -275,7 +275,7 @@ DayCareLyraProtestText1:
 	done
 
 DayCareLyraProtestText2:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "What?"
 	line "Grandma…!"
 
@@ -286,7 +286,7 @@ DayCareLyraProtestText2:
 	line "nearby…@"
 	text_promptbutton
 
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Hahaha."
 	line "I know, I know."
 
@@ -299,14 +299,14 @@ DayCareLyraProtestText2:
 	done
 
 DayCareLyraGoodbyeText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Well, I'd better"
 	line "go now…"
 	cont "See ya!"
 	done
 
 DayCareLyraForgotText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Oh!"
 	line "I almost forgot!"
 
@@ -320,7 +320,7 @@ GotLyrasNumberText:
 	done
 
 DayCareLyraEmbarassedText:
-	ntag "Lyra"
+	ntag " Lyra "
 	text "Grandma!"
 
 	para "Don't you say"
@@ -334,13 +334,13 @@ DayCareLyraEmbarassedText:
 	done
 
 Text_GrampsLookingForYou:
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Gramps was looking"
 	line "for you."
 	done
 
 DayCareManText_GiveOddEgg:
-	ntag "Gramps"
+	ntag " Gramps "
 	text "Hello <PLAYER>."
 
 	para "Do you know about"
@@ -379,7 +379,7 @@ DayCareText_GotOddEgg:
 	done
 
 DayCareText_DescribeOddEgg:
-	ntag "Gramps"
+	ntag " Gramps "
 	text "We've been raising"
 	line "special #mon"
 	cont "for a promotion."
@@ -391,7 +391,7 @@ DayCareText_DescribeOddEgg:
 	done
 
 EggTicketText:
-	ntag "Gramps"
+	ntag " Gramps "
 	text "Oh! You've got"
 	line "an Egg Ticket!"
 	
@@ -406,7 +406,7 @@ TradedTicketForOddEggText:
 	done
 
 DayCareLadyText_GiveLyrasEgg:
-	ntag "Grandma"
+	ntag " Grandma "
 	text "Hello, dear."
 
 	para "Lyra told me this"
@@ -420,7 +420,7 @@ ReceivedLyrasEggText:
 	done
 
 DayCareLadyText_DescribeLyrasEgg:
-	ntag "Grandma"
+	ntag " Grandma "
 	text "That Egg came from"
 	line "her first #mon."
 
@@ -430,13 +430,13 @@ DayCareLadyText_DescribeLyrasEgg:
 	done
 
 DayCareManText_PartyFull:
-	ntag "Gramps"
+	ntag " Gramps "
 	text "You've no room for"
 	line "this."
 	done
 
 DayCareLadyText_PartyFull:
-	ntag "Grandma"
+	ntag " Grandma "
 	text "You've no room for"
 	line "this."
 	done

@@ -33,7 +33,7 @@ SoulHouseGrannyScript:
 	writetextend SoulHouseGrannyText
 	
 MrFujiText:
-	ntag "Mr.Fuji"
+	ntag " Mr.Fuji "
 	text "Welcome."
 
 	para "Hmm… You appear to"

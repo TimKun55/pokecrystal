@@ -1,5 +1,5 @@
 AlanAskNumber1Text:
-	ntag "Alan"
+	ntag " Alan "
 	text "Reading textbooks"
 	line "is worthwhile"
 	cont "every so often."
@@ -20,7 +20,7 @@ AlanAskNumber1Text:
 	done
 
 AlanAskNumber2Text:
-	ntag "Alan"
+	ntag " Alan "
 	text "If I find some-"
 	line "thing, it's yours."
 
@@ -29,7 +29,7 @@ AlanAskNumber2Text:
 	done
 
 AlanNumberAcceptedText:
-	ntag "Alan"
+	ntag " Alan "
 	text "I'll call you as"
 	line "soon as I find"
 
@@ -38,7 +38,7 @@ AlanNumberAcceptedText:
 	done
 
 AlanNumberDeclinedText:
-	ntag "Alan"
+	ntag " Alan "
 	text "Oh… I thought it"
 	line "would be a good"
 	cont "break to call you"
@@ -46,13 +46,13 @@ AlanNumberDeclinedText:
 	done
 
 AlanPhoneFullText:
-	ntag "Alan"
+	ntag " Alan "
 	text "There's no room"
 	line "for my number."
 	done
 
 AlanRematchText:
-	ntag "Alan"
+	ntag " Alan "
 	text "I waited around"
 	line "for you!"
 
@@ -61,13 +61,13 @@ AlanRematchText:
 	done
 
 AlanGiftText:
-	ntag "Alan"
+	ntag " Alan "
 	text "This, this! This"
 	line "is yours! Ta-da!"
 	done
 
 AlanPackFullText:
-	ntag "Alan"
+	ntag " Alan "
 	text "Whoops!"
 
 	para "You can't carry"

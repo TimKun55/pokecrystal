@@ -153,7 +153,7 @@ Route39BarnTwinWereFeedingMoomooText:
 	done
 
 MoomooWeakMooText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "…Moo…"
 	done
 
@@ -162,7 +162,7 @@ Route39BarnItsCryIsWeakText:
 	done
 
 MoomooHappyMooText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "Moomooo!"
 	done
 
@@ -204,7 +204,7 @@ Route39BarnRefusedBerryText:
 	done
 
 Route39BarnMiltankText:
-	ntag "Miltank"
+	ntag " Miltank "
 	text "Mooo!"
 	done
 

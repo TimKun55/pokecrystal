@@ -31,13 +31,13 @@ SailorKentSeenText:
 	done
 
 SailorKentBeatenText:
-	ntag "Kent"
+	ntag " Kent "
 	text "I can't manage a"
 	line "smile either…"
 	done
 
 SailorKentAfterBattleText:
-	ntag "Kent"
+	ntag " Kent "
 	text "Speaking of sick,"
 	line "I've heard there's"
 	cont "a good Pharmacy in"
@@ -56,12 +56,12 @@ LassConnieSeenText:
 	done
 
 LassConnieBeatenText:
-	ntag "Connie"
+	ntag " Connie "
 	text "Aaack! My #mon!"
 	done
 
 LassConnieAfterBattleText:
-	ntag "Connie"
+	ntag " Connie "
 	text "Right. Anybody"
 	line "would be worried"
 	cont "if his or her own"

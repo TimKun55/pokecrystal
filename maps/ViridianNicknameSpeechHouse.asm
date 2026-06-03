@@ -58,12 +58,12 @@ ViridianNicknameSpeechHouseLassText:
 	done
 
 KwaxsText:
-	ntag "Kwaxs"
+	ntag " Kwaxs "
 	text "Farrfarr!"
 	done
 
 RatteyText:
-	ntag "Rattey"
+	ntag " Rattey "
 	text "Kikiii!"
 	done
 

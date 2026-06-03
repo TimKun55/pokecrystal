@@ -159,7 +159,7 @@ VioletGymStatue:
 	jumpstd GymStatue3Script
 
 FalknerIntroText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "I'm Falkner, the"
 	line "Violet #mon Gym"
 	cont "leader!"
@@ -181,7 +181,7 @@ FalknerIntroText:
 	done
 
 FalknerWinLossText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "…Darn! My dad's"
 	line "cherished bird"
 	cont "#mon…"
@@ -200,7 +200,7 @@ ReceivedZephyrBadgeText:
 	done
 
 FalknerZephyrBadgeText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "The ZephyrBadge"
 	line "will enable"
 	cont "#mon to use"
@@ -212,7 +212,7 @@ FalknerZephyrBadgeText:
 	done
 
 FalknerTMMudSlapText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "By using a TM,"
 	line "a #mon will"
 	cont "instantly learn"
@@ -236,7 +236,7 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "There are #mon"
 	line "Gyms in cities and"
 	cont "towns ahead."
@@ -252,7 +252,7 @@ FalknerFightDoneText:
 	done
 
 FalknerRematchIntroText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "<PLAYER>!"
 	line "You're back!"
 
@@ -261,12 +261,12 @@ FalknerRematchIntroText:
 	done
 
 FalknerWinLossRematchText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Soaring high!"
 	done
 
 FalknerRematchAfterBattleText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "You're as strong"
 	line "as ever!"
 
@@ -276,7 +276,7 @@ FalknerRematchAfterBattleText:
 	done
 
 Falkner16IntroText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "<PLAYER>!"
 	line "You did it!"
 
@@ -292,7 +292,7 @@ Falkner16IntroText:
 	done
 
 Falkner16AfterBattleText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Wow!"
 	line "That was an"
 	cont "amazing battle!"
@@ -303,20 +303,20 @@ Falkner16AfterBattleText:
 	done
 
 FalknerComeBackTomorrowText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "We already battled"
 	line "today, but come"
 	cont "back tomorrow."
 	done
 
 FalknerNextTimeText:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Come back"
 	line "anytime!"
 	done
 
 FalknerComeBackTomorrow:
-	ntag "Falkner"
+	ntag " Falkner "
 	text "Battle again?"
 	line "Haha, we need a"
 	cont "rest! Come back"
@@ -336,12 +336,12 @@ BirdKeeperRodSeenText:
 	done
 
 BirdKeeperRodBeatenText:
-	ntag "Rod"
+	ntag " Rod "
 	text "Gaaah!"
 	done
 
 BirdKeeperRodAfterBattleText:
-	ntag "Rod"
+	ntag " Rod "
 	text "Falkner's skills"
 	line "are for real!"
 
@@ -357,13 +357,13 @@ BirdKeeperAbeSeenText:
 	done
 
 BirdKeeperAbeBeatenText:
-	ntag "Abe"
+	ntag " Abe "
 	text "This can't be"
 	line "true!"
 	done
 
 BirdKeeperAbeAfterBattleText:
-	ntag "Abe"
+	ntag " Abe "
 	text "This is pathetic,"
 	line "losing to some"
 	cont "rookie trainer…"
@@ -396,12 +396,12 @@ VioletGymGuideWinText:
 	done
 	
 HoothootText:
-	ntag "Hoothoot"
+	ntag " Hoothoot "
 	text "Hoo! Hoohoo!"
 	done
 	
 NoctowlText:
-	ntag "Noctowl"
+	ntag " Noctowl "
 	text "Noc! Towwwwl!"
 	done
 

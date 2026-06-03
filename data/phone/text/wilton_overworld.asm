@@ -1,5 +1,5 @@
 WiltonAskNumber1Text:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "Eh, our battle was"
 	line "fun, I'd say…"
 
@@ -13,7 +13,7 @@ WiltonAskNumber1Text:
 	done
 
 WiltonAskNumber2Text:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "If I snag an item"
 	line "while I'm fishing,"
 	cont "it's yours."
@@ -23,34 +23,34 @@ WiltonAskNumber2Text:
 	done
 
 WiltonNumberAcceptedText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "If I snag anything"
 	line "good, I'll be sure"
 	cont "to let you know."
 	done
 
 WiltonNumberDeclinedText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "All right… Come"
 	line "back if you have a"
 	cont "change of heart."
 	done
 
 WiltonPhoneFullText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "You can't register"
 	line "another number."
 	done
 
 WiltonRematchText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "Argh! You startled"
 	line "Poliwag into"
 	cont "fleeing again!"
 	done
 
 WiltonGiftText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "So here you are."
 
 	para "See this?"
@@ -60,7 +60,7 @@ WiltonGiftText:
 	done
 
 WiltonPackFullText:
-	ntag "Wilton"
+	ntag " Wilton "
 	text "Your Pack's full?"
 
 	para "I'll give it to"

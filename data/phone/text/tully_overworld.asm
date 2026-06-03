@@ -1,5 +1,5 @@
 TullyAskNumber1Text:
-	ntag "Tully"
+	ntag " Tully "
 	text "Hey, you're trying"
 	line "to be the ultimate"
 	cont "trainer too? Then"
@@ -15,7 +15,7 @@ TullyAskNumber1Text:
 	done
 
 TullyAskNumber2Text:
-	ntag "Tully"
+	ntag " Tully "
 	text "If I find any more"
 	line "items by the"
 	cont "water, I'll give"
@@ -26,21 +26,21 @@ TullyAskNumber2Text:
 	done
 
 TullyNumberAcceptedText:
-	ntag "Tully"
+	ntag " Tully "
 	text "You'll be hearing"
 	line "from me if I find"
 	cont "something good."
 	done
 
 TullyNumberDeclinedText:
-	ntag "Tully"
+	ntag " Tully "
 	text "Is that so? Then"
 	line "I'll just have to"
 	cont "use them myself."
 	done
 
 TullyPhoneFullText:
-	ntag "Tully"
+	ntag " Tully "
 	text "Your phone list is"
 	line "all filled up."
 
@@ -49,7 +49,7 @@ TullyPhoneFullText:
 	done
 
 TullyRematchText:
-	ntag "Tully"
+	ntag " Tully "
 	text "I've been doing"
 	line "more than just"
 	cont "fishing since we"
@@ -60,7 +60,7 @@ TullyRematchText:
 	done
 
 TullyGiftText:
-	ntag "Tully"
+	ntag " Tully "
 	text "Hey, there you"
 	line "are!"
 
@@ -69,7 +69,7 @@ TullyGiftText:
 	done
 
 TullyPackFullText:
-	ntag "Tully"
+	ntag " Tully "
 	text "Your Pack's full?"
 
 	para "Come back later--"

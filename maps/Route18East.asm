@@ -32,12 +32,12 @@ BirdKeeperBorisSeenText:
 	done
 
 BirdKeeperBorisBeatenText:
-	ntag "Boris"
+	ntag " Boris "
 	text "Ayieee!"
 	done
 
 BirdKeeperBorisAfterBattleText:
-	ntag "Boris"
+	ntag " Boris "
 	text "Since you're so"
 	line "strong, it must be"
 	cont "fun to battle."
@@ -50,12 +50,12 @@ BirdKeeperBobSeenText:
 	done
 
 BirdKeeperBobBeatenText:
-	ntag "Bob"
+	ntag " Bob "
 	text "…Whew!"
 	done
 
 BirdKeeperBobAfterBattleText:
-	ntag "Bob"
+	ntag " Bob "
 	text "If you don't have"
 	line "a Bicycle, you're"
 	cont "not allowed to use"

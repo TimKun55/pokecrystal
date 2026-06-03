@@ -198,7 +198,7 @@ Route35NationalParkGatePlayerEnterParkMovement:
 	step_end
 
 Route35NationalParkGateOfficer1AskToParticipateText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Today's @"
 	text_ram wStringBuffer3
 	text "."
@@ -219,7 +219,7 @@ Route35NationalParkGateOfficer1AskToParticipateText:
 	done
 
 Route35NationalParkGateOfficer1GiveParkBallsText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Here are the Park"
 	line "Balls for the"
 	cont "Contest."
@@ -231,7 +231,7 @@ Route35NationalParkGatePlayerReceivedParkBallsText:
 	done
 
 Route35NationalParkGateOfficer1ExplainsRulesText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "The person who"
 	line "gets the strong-"
 	cont "est bug #mon"
@@ -255,7 +255,7 @@ Route35NationalParkGateOfficer1ExplainsRulesText:
 	done
 
 Route35NationalParkGateOfficer1AskToUseFirstMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 
 	para "You have more than"
@@ -273,7 +273,7 @@ Route35NationalParkGateOfficer1AskToUseFirstMonText:
 	done
 
 Route35NationalParkGateOfficer1WellHoldYourMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Fine, we'll hold"
 	line "your other #mon"
 	cont "while you compete."
@@ -286,7 +286,7 @@ Route35NationalParkGatePlayersMonLeftWithHelperText:
 	done
 
 Route35NationalParkGateOfficer1ChooseMonAndComeBackText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Please choose the"
 	line "#mon to be used"
 	cont "in the Contest,"
@@ -294,14 +294,14 @@ Route35NationalParkGateOfficer1ChooseMonAndComeBackText:
 	done
 
 Route35NationalParkGateOfficer1TakePartInFutureText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. We hope you'll"
 	line "take part in the"
 	cont "future."
 	done
 
 Route35NationalParkGateOfficer1FirstMonCantBattleText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "The first #mon"
 	cont "in your party"
@@ -314,7 +314,7 @@ Route35NationalParkGateOfficer1FirstMonCantBattleText:
 	done
 
 Route35NationalParkGateOfficer1MakeRoomText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "Both your party"
 	cont "and your PC Box"
@@ -331,7 +331,7 @@ Route35NationalParkGateOfficer1MakeRoomText:
 	done
 
 Route35NationalParkGateOfficer1EggAsFirstMonText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Uh-oh…"
 	line "You have an Egg as"
 	cont "the first #mon"
@@ -344,7 +344,7 @@ Route35NationalParkGateOfficer1EggAsFirstMonText:
 	done
 
 Route35NationalParkGateOfficer1WantToFinishText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "You still have @"
 	text_ram wStringBuffer3
 	text_start
@@ -355,7 +355,7 @@ Route35NationalParkGateOfficer1WantToFinishText:
 	done
 
 Route35NationalParkGateOfficer1WaitAtNorthGateText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. Please wait at"
 	line "the North Gate for"
 	cont "the announcement"
@@ -363,14 +363,14 @@ Route35NationalParkGateOfficer1WaitAtNorthGateText:
 	done
 
 Route35NationalParkGateOfficer1OkGoFinishText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "OK. Please get"
 	line "back outside and"
 	cont "finish up."
 	done
 
 Route35NationalParkGateOfficer1ContestIsOverText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "Today's Contest is"
 	line "over. We hope you"
 	cont "will participate"
@@ -378,7 +378,7 @@ Route35NationalParkGateOfficer1ContestIsOverText:
 	done
 
 Route35NationalParkGateOfficer1WeHoldContestsText:
-	ntag "Gate Officer"
+	ntag " Gate Officer "
 	text "We hold Contests"
 	line "regularly in the"
 	cont "Park. You should"

@@ -36,7 +36,7 @@ CianwoodPharmacyShelf:
 	jumptext CianwoodPharmacyShelfScript
 
 PharmacistGiveSecretpotionText:
-	ntag "Pharmacist"
+	ntag " Pharmacist "
 	text "Your #mon ap-"
 	line "pear to be fine."
 
@@ -61,7 +61,7 @@ ReceivedSecretpotionText:
 	done
 
 PharmacistDescribeSecretpotionText:
-	ntag "Pharmacist"
+	ntag " Pharmacist "
 	text "My SecretPotion is"
 	line "a tad too strong."
 

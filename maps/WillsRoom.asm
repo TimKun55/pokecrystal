@@ -157,7 +157,7 @@ WillBeforeText:
 	cont "Will.@"
 	text_promptbutton
 
-	ntag "Will"
+	ntag " Will "
 	text "I have trained all"
 	line "around the world,"
 	cont "making my psychic"
@@ -175,13 +175,13 @@ WillBeforeText:
 	done
 
 WillBeatenText:
-	ntag "Will"
+	ntag " Will "
 	text "I… I can't…"
 	line "believe it…"
 	done
 
 WillDefeatText:
-	ntag "Will"
+	ntag " Will "
 	text "Even though I was"
 	line "defeated, I won't"
 	cont "change my course."
@@ -198,7 +198,7 @@ WillDefeatText:
 	done
 
 WillChampionMatchBeforeText:
-	ntag "Will"
+	ntag " Will "
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 
@@ -210,19 +210,19 @@ WillChampionMatchBeforeText:
 	done
 
 WillChampionMatchBeatenText:
-	ntag "Will"
+	ntag " Will "
 	text "Another loss!"
 	done
 
 WillChampionMatchDefeatText:
-	ntag "Will"
+	ntag " Will "
 	text "My #mon and I"
 	line "will keep aiming"
 	cont "for the top!"
 	done
 
 Will16BadgesBeforeText:
-	ntag "Will"
+	ntag " Will "
 	text "Welcome back,"
 	line "Champion <PLAYER>."
 
@@ -240,12 +240,12 @@ Will16BadgesBeforeText:
 	done
 
 Will16BadgesBeatenText:
-	ntag "Will"
+	ntag " Will "
 	text "Yet another loss!"
 	done
 
 Will16BadgesDefeatText:
-	ntag "Will"
+	ntag " Will "
 	text "I can see why"
 	line "you were able to"
 	cont "collect all the"
@@ -257,7 +257,7 @@ Will16BadgesDefeatText:
 	done
 
 WillGrandChampionBeforeText:
-	ntag "Will"
+	ntag " Will "
 	text "Grand Champion,"
 	line "<PLAYER>!"
 
@@ -268,19 +268,19 @@ WillGrandChampionBeforeText:
 	done
 
 WillGrandChampionBeatenText:
-	ntag "Will"
+	ntag " Will "
 	text "Ahh, another loss!"
 	done
 
 WillGrandChampionDefeatText:
-	ntag "Will"
+	ntag " Will "
 	text "You really have"
 	line "become one of the"
 	cont "best trainers!"
 	done
 
 XatuText:
-	ntag "Xatu"
+	ntag " Xatu "
 	text "Xaa! Xatuuu!"
 	done
 

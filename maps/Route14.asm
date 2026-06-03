@@ -77,12 +77,12 @@ PokefanmCarterSeenText:
 	done
 
 PokefanmCarterBeatenText:
-	ntag "Carter"
+	ntag " Carter "
 	text "Awaaah!"
 	done
 
 PokefanmCarterAfterBattleText:
-	ntag "Carter"
+	ntag " Carter "
 	text "Squirtle, Charman-"
 	line "der and Bulbasaur…"
 
@@ -97,13 +97,13 @@ BirdKeeperRoySeenText:
 	done
 
 BirdKeeperRoyBeatenText:
-	ntag "Roy"
+	ntag " Roy "
 	text "I can dream, but I"
 	line "can't ever fly…"
 	done
 
 BirdKeeperRoyAfterBattleText:
-	ntag "Roy"
+	ntag " Roy "
 	text "You have #mon"
 	line "that know the HM"
 	cont "move Fly, don't"
@@ -121,13 +121,13 @@ PokefanmTrevorSeenText:
 	done
 
 PokefanmTrevorBeatenText:
-	ntag "Trevor"
+	ntag " Trevor "
 	text "Where did I meet"
 	line "this Golduck?"
 	done
 
 PokefanmTrevorAfterBattleText:
-	ntag "Trevor"
+	ntag " Trevor "
 	text "If only there were"
 	line "an easy way to"
 	cont "identify where I"
@@ -135,7 +135,7 @@ PokefanmTrevorAfterBattleText:
 	done
 	
 LadyEvaSeenText:
-	ntag "Eva"
+	ntag " Eva "
 	text "Hi! I'm Eva."
 	line "You're the trainer"
 	cont "from Johto!"
@@ -149,13 +149,13 @@ LadyEvaSeenText:
 	done
 	
 LadyEvaBeatenText:
-	ntag "Eva"
+	ntag " Eva "
 	text "You're really good"
 	line "at this!"
 	done
 
 LadyEvaAfterBattleText:
-	ntag "Eva"
+	ntag " Eva "
 	text "I thought I would"
 	line "apply to be a Gym"
 	cont "Leader for the"
@@ -171,7 +171,7 @@ LadyEvaAfterBattleText:
 	done
 
 Route14TogekissText:
-	ntag "Togekiss"
+	ntag " Togekiss "
 	text "Toge!"
 	done
 

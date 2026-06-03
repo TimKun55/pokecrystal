@@ -66,17 +66,17 @@ CeladonMansionManagerText:
 	done
 
 CeladonMansion1FMeowthText:
-	ntag "Meowth"
+	ntag " Meowth "
 	text "Meow!"
 	done
 
 CeladonMansion1FClefairyText:
-	ntag "Clefairy"
+	ntag " Clefairy "
 	text "Clef cleff!"
 	done
 
 CeladonMansion1FNidoranFText:
-	ntag "Nidoran♀"
+	ntag " Nidoran♀ "
 	text "Kya kyaoo!"
 	done
 

@@ -1,5 +1,5 @@
 RalphAskNumber1Text:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Don't young people"
 	line "fish anymore?"
 
@@ -18,14 +18,14 @@ RalphAskNumber1Text:
 	done
 
 RalphAskNumber2Text:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Hm? So you do want"
 	line "me to phone if I"
 	cont "see rare #mon?"
 	done
 
 RalphNumberAcceptedText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Yep, phone if I"
 	line "see rare #mon."
 
@@ -34,7 +34,7 @@ RalphNumberAcceptedText:
 	done
 
 RalphNumberDeclinedText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Oh…"
 	line "My own kids won't"
 
@@ -46,7 +46,7 @@ RalphNumberDeclinedText:
 	done
 
 RalphPhoneFullText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Your phone's"
 	line "memory is full."
 
@@ -56,7 +56,7 @@ RalphPhoneFullText:
 	done
 
 RalphRematchText:
-	ntag "Ralph"
+	ntag " Ralph "
 	text "Hey, kid!"
 
 	para "No losing for me"

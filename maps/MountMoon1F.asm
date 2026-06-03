@@ -139,7 +139,7 @@ MountMoon1FHiddenBigNugget:
 	hiddenitem BIG_NUGGET, EVENT_MT_MOON_1F_HIDDEN_BIG_NUGGET
 
 MountMoon1FRivalTextBefore:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "<……> <……> <……>"
 
 	para "It's been a while,"
@@ -159,7 +159,7 @@ MountMoon1FRivalTextBefore:
 	done
 
 MountMoon1FRivalTextWin:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "<……> <……> <……>"
 
 	para "I thought I raised"
@@ -172,7 +172,7 @@ MountMoon1FRivalTextWin:
 	done
 
 MountMoon1FRivalTextAfter:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "<……> <……> <……>"
 
 	para "…You won, fair"
@@ -198,7 +198,7 @@ MountMoon1FRivalTextAfter:
 	done
 
 MountMoon1FRivalTextLoss:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "<……> <……> <……>"
 
 	para "I've repaid my"
@@ -217,13 +217,13 @@ BugManiacVanSeenText:
 	done
 
 BugManiacVanBeatenText:
-	ntag "Van"
+	ntag " Van "
 	text "A battle…?"
 	line "I lost?"
 	done
 
 BugManiacVanAfterBattleText:
-	ntag "Van"
+	ntag " Van "
 	text "I've been in here"
 	line "for days looking"
 	cont "for rare #mon."
@@ -237,12 +237,12 @@ LassVeritySeenText:
 	done
 
 LassVerityBeatenText:
-	ntag "Verity"
+	ntag " Verity "
 	text "Wow, too strong!"
 	done
 
 LassVerityAfterBattleText:
-	ntag "Verity"
+	ntag " Verity "
 	text "I'm on the lookout"
 	line "for Clefable!"
 	done
@@ -256,12 +256,12 @@ SuperNerdDaveSeenText:
 	done
 
 SuperNerdDaveBeatenText:
-	ntag "Dave"
+	ntag " Dave "
 	text "You got me!"
 	done
 
 SuperNerdDaveAfterBattleText:
-	ntag "Dave"
+	ntag " Dave "
 	text "Team Rocket used"
 	line "to lurk around"
 	cont "here."
@@ -279,12 +279,12 @@ HikerDanSeenText:
 	done
 
 HikerDanBeatenText:
-	ntag "Dan"
+	ntag " Dan "
 	text "I've been rocked!"
 	done
 
 HikerDanAfterBattleText:
-	ntag "Dan"
+	ntag " Dan "
 	text "My goal is to"
 	line "hike all the way"
 	cont "to Mt. Mortar!"
@@ -298,12 +298,12 @@ HikerMickySeenText:
 	done
 
 HikerMickyBeatenText:
-	ntag "Micky"
+	ntag " Micky "
 	text "I fell!"
 	done
 
 HikerMickyAfterBattleText:
-	ntag "Micky"
+	ntag " Micky "
 	text "I may have lost"
 	line "the battle, but"
 	cont "I'll never lose"

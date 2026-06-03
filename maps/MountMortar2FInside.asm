@@ -45,12 +45,12 @@ SupernerdHughSeenText:
 	done
 
 SupernerdHughBeatenText:
-	ntag "Hugh"
+	ntag " Hugh "
 	text "Sorry, my mistake."
 	done
 
 SupernerdHughAfterBattleText:
-	ntag "Hugh"
+	ntag " Hugh "
 	text "I'm investigating"
 	line "Mt.Mortar, but my"
 	cont "pal's gone AWOL."

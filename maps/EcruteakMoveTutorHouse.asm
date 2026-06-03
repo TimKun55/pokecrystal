@@ -93,7 +93,7 @@ EcruteakMoveTutor3Script:
 	writetextend EcruteakMoveTutorNotEnough
 
 EcruteakMoveTutorRockBlastText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "URAHHH!"
 	
 	para "Firing off rocks"
@@ -104,7 +104,7 @@ EcruteakMoveTutorRockBlastText:
 	done
 
 EcruteakMoveTutorRockBlastTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It can hit 2-5"
 	line "times per attack!"
 
@@ -112,7 +112,7 @@ EcruteakMoveTutorRockBlastTaught:
 	done
 
 EcruteakMoveTutorGrowthPunchText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hi-ya!"
 	
 	para "Damage your foe"
@@ -124,14 +124,14 @@ EcruteakMoveTutorGrowthPunchText:
 	done
 
 EcruteakMoveTutorGrowthPunchTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Everytime you use"
 	line "it, your #mon's"
 	cont "attack will rise!"
 	done
 
 EcruteakMoveTutorFlameChargeText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Fwoosh!"
 	
 	para "Using flames to"
@@ -143,7 +143,7 @@ EcruteakMoveTutorFlameChargeText:
 	done
 
 EcruteakMoveTutorFlameChargeTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It might not hit"
 	line "the hardest, but"
 	cont "boosting speed can"
@@ -151,7 +151,7 @@ EcruteakMoveTutorFlameChargeTaught:
 	done
 
 EcruteakMoveTutorAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥4,000?"
@@ -163,13 +163,13 @@ EcruteakMoveTutorPayment:
 	done
 
 EcruteakMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back when"
 	line "you like."
 	done
 
 EcruteakMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you can't"
 	line "afford it."
 	done

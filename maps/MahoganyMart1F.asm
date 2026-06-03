@@ -171,13 +171,13 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 	done
 
 MahoganyMart1FLanceDragoniteOutrageText:
-	ntag "Lance"
+	ntag " Lance "
 	text "Dragonite,"
 	line "Outrage!"
 	done
 
 MahoganyMart1FLanceRadioText:
-	ntag "Lance"
+	ntag " Lance "
 	text "What took you,"
 	line "<PLAY_G>?"
 
@@ -189,13 +189,13 @@ MahoganyMart1FLanceRadioText:
 	done
 
 MahoganyMart1FLanceStairsText:
-	ntag "Lance"
+	ntag " Lance "
 	text "The stairs are"
 	line "right here."
 	done
 
 MahoganyMart1FLanceSplitUpText:
-	ntag "Lance"
+	ntag " Lance "
 	text "<PLAY_G>, we"
 	line "should split up to"
 	cont "check this place."

@@ -154,13 +154,13 @@ SeafoamIslandsB4FZinc:
 	itemball ZINC
 
 LoreleiChallengerText:
-	ntag "???"
+	ntag " ??? "
 	text "Oh!"
 	line "And who are you?"
 	done
 
 LoreleiIntroText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "My name is Lorelei"
 	line "and I have been"
 	cont "tasked with watch-"
@@ -181,14 +181,14 @@ LoreleiIntroText:
 	done
 
 LoreleiWinLossText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "Oh my!"
 	line "You truly"
 	cont "are strong."
 	done
 
 LoreleiOutroText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "Very well done."
 
 	para "I did not expect"
@@ -219,7 +219,7 @@ LoreleiOutroText:
 	done
 
 LoreleiReturnChallengeText:
-	ntag "Lorelei"
+	ntag " Lorelei "
 	text "Back again?"
 
 	para "I'm always happy"
@@ -227,7 +227,7 @@ LoreleiReturnChallengeText:
 	done
 
 ArticunoText:
-	ntag "Articuno"
+	ntag " Articuno "
 	text "Gshya!"
 	done
 

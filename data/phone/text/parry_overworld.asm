@@ -1,5 +1,5 @@
 ParryAskNumber1Text:
-	ntag "Parry"
+	ntag " Parry "
 	text "Sheesh, the way"
 	line "you attacked! That"
 	cont "was something! We"
@@ -10,7 +10,7 @@ ParryAskNumber1Text:
 	done
 
 ParryAskNumber2Text:
-	ntag "Parry"
+	ntag " Parry "
 	text "So you want to"
 	line "register my phone"
 	cont "number for a re-"
@@ -18,14 +18,14 @@ ParryAskNumber2Text:
 	done
 
 ParryNumberAcceptedText:
-	ntag "Parry"
+	ntag " Parry "
 	text "I'll call you"
 	line "whenever I feel"
 	cont "like battling!"
 	done
 
 ParryNumberDeclinedText:
-	ntag "Parry"
+	ntag " Parry "
 	text "No? That's fine."
 
 	para "A definite no is"
@@ -37,14 +37,14 @@ ParryNumberDeclinedText:
 	done
 
 ParryPhoneFullText:
-	ntag "Parry"
+	ntag " Parry "
 	text "Oh? There's no"
 	line "room to register"
 	cont "my phone number."
 	done
 
 ParryRematchText:
-	ntag "Parry"
+	ntag " Parry "
 	text "Hey, here comes"
 	line "the kid! Let's go!"
 
@@ -54,7 +54,7 @@ ParryRematchText:
 	done
 
 ParryPackFullText:
-	ntag "Parry"
+	ntag " Parry "
 	text "Your Pack looks"
 	line "stuffed full!"
 
@@ -63,7 +63,7 @@ ParryPackFullText:
 	done
 
 ParryRematchGiftText:
-	ntag "Parry"
+	ntag " Parry "
 	text "Well, you're"
 	line "special all right."
 

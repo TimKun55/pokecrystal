@@ -105,12 +105,12 @@ PlayersNeighborText:
 	done
 	
 PlayersNeighborMagnemiteText:
-	ntag "Magnemite"
+	ntag " Magnemite "
 	text "Mag! MiteMagne!"
 	done
 
 PlayersNeighborPikachuText:
-	ntag "Pikachu"
+	ntag " Pikachu "
 	text "Pika! Pi!"
 	done
 

@@ -93,7 +93,7 @@ OlivineMoveTutor3Script:
 	writetextend OlivineMoveTutorNotEnough
 
 OlivineMoveTutorAquaTailText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Ho, there, young"
 	line "trainer!"
 	
@@ -103,7 +103,7 @@ OlivineMoveTutorAquaTailText:
 	done
 
 OlivineMoveTutorAquaTailTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It's a powerful"
 	line "move that has a"
 	cont "chance to lower"
@@ -114,7 +114,7 @@ OlivineMoveTutorAquaTailTaught:
 	done
 
 OlivineMoveTutorPoisonJabText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Hehehe."
 	
 	para "I can teach your"
@@ -123,7 +123,7 @@ OlivineMoveTutorPoisonJabText:
 	done
 
 OlivineMoveTutorPoisonJabTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It hits hard and"
 	line "has a good chance"
 	cont "to poison."
@@ -132,7 +132,7 @@ OlivineMoveTutorPoisonJabTaught:
 	done
 
 OlivineMoveTutorNightSlashText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Night Slash."
 	
 	para "The user slashes"
@@ -141,14 +141,14 @@ OlivineMoveTutorNightSlashText:
 	done
 
 OlivineMoveTutorNightSlashTaught:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "It's a wicked move"
 	line "with a high crit-"
 	cont "rate."
 	done
 
 OlivineMoveTutorAskTeachText:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Shall I teach it"
 	line "to your #mon"
 	cont "for ¥6,500?"
@@ -160,13 +160,13 @@ OlivineMoveTutorPayment:
 	done
 
 OlivineMoveTutorRefused:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Come back when"
 	line "you like."
 	done
 
 OlivineMoveTutorNotEnough:
-	ntag "Move Tutor"
+	ntag " Move Tutor "
 	text "Sorry, you can't"
 	line "afford it."
 	done

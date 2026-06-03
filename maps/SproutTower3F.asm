@@ -129,7 +129,7 @@ SproutTower3FRivalLeavesElderMovement:
 	step_end
 
 SproutTowerElderLecturesRivalText:
-	ntag "Elder"
+	ntag " Elder "
 	text "You are indeed"
 	line "skilled as a"
 	cont "trainer."
@@ -150,7 +150,7 @@ SproutTowerElderLecturesRivalText:
 	done
 
 SproutTowerRivalOnlyCareAboutStrongText:
-	ntag "<RIVAL>"
+	ntag " <RIVAL> "
 	text "…"
 	line "…Humph!"
 
@@ -181,7 +181,7 @@ SproutTowerRivalUsedEscapeRopeText:
 	done
 
 SageLiSeenText:
-	ntag "Elder"
+	ntag " Elder "
 	text "So good of you to"
 	line "come here!"
 
@@ -203,12 +203,12 @@ SageLiSeenText:
 	done
 
 SageLiBeatenText:
-	ntag "Elder Li"
+	ntag " Elder Li "
 	text "Ah, excellent!"
 	done
 
 SageLiTakeThisFlashText:
-	ntag "Elder Li"
+	ntag " Elder Li "
 	text "You and your #-"
 	line "mon should have"
 	cont "no problem using"
@@ -219,7 +219,7 @@ SageLiTakeThisFlashText:
 	done
 
 SageLiFlashExplanationText:
-	ntag "Elder Li"
+	ntag " Elder Li "
 	text "Flash illuminates"
 	line "even the darkest"
 	cont "of all places."
@@ -231,7 +231,7 @@ SageLiFlashExplanationText:
 	done
 
 SageLiAfterBattleText:
-	ntag "Elder Li"
+	ntag " Elder Li "
 	text "I hope you learn"
 	line "and grow from your"
 	cont "journey."
@@ -244,13 +244,13 @@ SageJinSeenText:
 	done
 
 SageJinBeatenText:
-	ntag "Jin"
+	ntag " Jin "
 	text "My training is"
 	line "incomplete…"
 	done
 
 SageJinAfterBattleText:
-	ntag "Jin"
+	ntag " Jin "
 	text "As #mon grow"
 	line "stronger, so does"
 	cont "the trainer."
@@ -268,13 +268,13 @@ SageTroySeenText:
 	done
 
 SageTroyBeatenText:
-	ntag "Troy"
+	ntag " Troy "
 	text "Yes, your trust is"
 	line "real!"
 	done
 
 SageTroyAfterBattleText:
-	ntag "Troy"
+	ntag " Troy "
 	text "It is not far to"
 	line "the Elder."
 	done
@@ -286,13 +286,13 @@ SageNealSeenText:
 	done
 
 SageNealBeatenText:
-	ntag "Neal"
+	ntag " Neal "
 	text "It is my head that"
 	line "is bright!"
 	done
 
 SageNealAfterBattleText:
-	ntag "Neal"
+	ntag " Neal "
 	text "Let there be light"
 	line "on your journey."
 	done

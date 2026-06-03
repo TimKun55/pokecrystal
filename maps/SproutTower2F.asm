@@ -35,13 +35,13 @@ SageNicoSeenText:
 	done
 
 SageNicoBeatenText:
-	ntag "Nico"
+	ntag " Nico "
 	text "I fought hard but"
 	line "I'm too weak."
 	done
 
 SageNicoAfterBattleText:
-	ntag "Nico"
+	ntag " Nico "
 	text "The flexible pil-"
 	line "lar protects the"
 	cont "Tower, even from"
@@ -54,12 +54,12 @@ SageEdmondSeenText:
 	done
 
 SageEdmondBeatenText:
-	ntag "Edmond"
+	ntag " Edmond "
 	text "Oh, I'm weak!"
 	done
 
 SageEdmondAfterBattleText:
-	ntag "Edmond"
+	ntag " Edmond "
 	text "I tried to copy"
 	line "Bellsprout's"
 	cont "gentle movements"

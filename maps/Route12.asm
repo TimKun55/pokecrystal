@@ -77,12 +77,12 @@ FisherMartinSeenText:
 	done
 
 FisherMartinBeatenText:
-	ntag "Martin"
+	ntag " Martin "
 	text "Gwaaah!"
 	done
 
 FisherMartinAfterBattleText:
-	ntag "Martin"
+	ntag " Martin "
 	text "I'm too impatient"
 	line "for fishing…"
 	done
@@ -95,13 +95,13 @@ FisherStephenSeenText:
 	done
 
 FisherStephenBeatenText:
-	ntag "Stephen"
+	ntag " Stephen "
 	text "My stupid radio"
 	line "distracted me!"
 	done
 
 FisherStephenAfterBattleText:
-	ntag "Stephen"
+	ntag " Stephen "
 	text "Have you checked"
 	line "out Kanto's radio"
 	cont "programs? We get a"
@@ -115,13 +115,13 @@ FisherBarneySeenText:
 	done
 
 FisherBarneyBeatenText:
-	ntag "Barney"
+	ntag " Barney "
 	text "The answer is"
 	line "coming up next!"
 	done
 
 FisherBarneyAfterBattleText:
-	ntag "Barney"
+	ntag " Barney "
 	text "I think electric-"
 	line "ity is the most"
 	cont "important thing in"
@@ -140,12 +140,12 @@ FisherKyleSeenText:
 	done
 
 FisherKyleBeatenText:
-	ntag "Kyle"
+	ntag " Kyle "
 	text "You do remember?"
 	done
 
 FisherKyleAfterBattleText:
-	ntag "Kyle"
+	ntag " Kyle "
 	text "The tug you feel"
 	line "on the Rod when"
 
@@ -163,12 +163,12 @@ BirdKeeperTeddySeenText:
 	done
 
 BirdKeeperTeddyBeatenText:
-	ntag "Teddy"
+	ntag " Teddy "
 	text "My awesome birds!"
 	done
 
 BirdKeeperTeddyAfterBattleText:
-	ntag "Teddy"
+	ntag " Teddy "
 	text "No matter the time"
 	line "of day, I'm always"
 	cont "looking out for"
@@ -181,12 +181,12 @@ BirdKeeperFredSeenText:
 	done
 
 BirdKeeperFredBeatenText:
-	ntag "Fred"
+	ntag " Fred "
 	text "My membership!"
 	done
 
 BirdKeeperFredAfterBattleText:
-	ntag "Fred"
+	ntag " Fred "
 	text "I'm a member of"
 	line "the Avicultural"
 	cont "Society in Saffron"
