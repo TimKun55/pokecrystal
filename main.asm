@@ -62,7 +62,6 @@ INCLUDE "engine/events/repel.asm"
 INCLUDE "engine/events/hidden_item.asm"
 INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
-INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
 
 
@@ -82,6 +81,7 @@ INCLUDE "engine/events/mum.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/pokemon/breeding.asm"
 INCLUDE "engine/events/prof_oaks_pc.asm"
+INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 
 
 SECTION "Roofs", ROMX

@@ -674,6 +674,126 @@ LavaBubbleTileFrames:
 	INCBIN "gfx/tilesets/lava/3.2bpp"
 	INCBIN "gfx/tilesets/lava/4.2bpp"
 
+AnimateBeachWater1Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .BeachWater1TileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.BeachWater1TileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.BeachWater1TileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.BeachWater1TileFrames:
+	INCBIN "gfx/tilesets/water/beach_water_1.2bpp"
+
+AnimateBeachWater2Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .BeachWater2TileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.BeachWater2TileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.BeachWater2TileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.BeachWater2TileFrames:
+	INCBIN "gfx/tilesets/water/beach_water_2.2bpp"
+
+AnimateBeachWater3Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .BeachWater3TileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.BeachWater3TileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.BeachWater3TileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.BeachWater3TileFrames:
+	INCBIN "gfx/tilesets/water/beach_water_3.2bpp"
+
+AnimateBeachWater4Tile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .BeachWater4TileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.BeachWater4TileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.BeachWater4TileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.BeachWater4TileFrames:
+	INCBIN "gfx/tilesets/water/beach_water_4.2bpp"
+
 AnimateTowerPillarTile:
 ; Input de points to the destination in VRAM, then the source tile frames
 

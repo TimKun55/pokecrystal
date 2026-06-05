@@ -9,6 +9,23 @@ ENDM
 
 Tileset0Anim:
 TilesetKantoAnim:
+	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe AnimateFlowerTile
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe AnimateBeachWater1Tile,       vTiles2 tile $5d
+	tileframe AnimateBeachWater2Tile,       vTiles2 tile $5e
+	tileframe AnimateBeachWater3Tile,       vTiles2 tile $6d
+	tileframe AnimateBeachWater4Tile,       vTiles2 tile $6e
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
 TilesetKanto3Anim:
 TilesetKanto4Anim:
 TilesetKanto5Anim:
@@ -71,6 +88,30 @@ TilesetForestAnim:
 
 TilesetJohtoAnim:
 TilesetJohto3Anim:
+	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe AnimateFlowerTile
+	tileframe ReadTileToAnimBuffer,			vTiles2 tile $54 ; waterfall
+	tileframe ScrollTileDown,				wTileAnimBuffer
+	tileframe ScrollTileDown,				wTileAnimBuffer
+	tileframe ScrollTileDown,				wTileAnimBuffer
+	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $54 ; waterfall
+	tileframe AnimateBeachWater1Tile,       vTiles2 tile $5a
+	tileframe AnimateBeachWater2Tile,       vTiles2 tile $5b
+	tileframe AnimateBeachWater3Tile,       vTiles2 tile $5c
+	tileframe AnimateBeachWater4Tile,       vTiles2 tile $5d
+	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames1
+	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames2
+	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames3
+	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames4
+	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
+	tileframe WaitTileAnimation
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
 TilesetJohto5Anim:
 	tileframe AnimateWaterTile,				vTiles2 tile $01
 	tileframe WaitTileAnimation
