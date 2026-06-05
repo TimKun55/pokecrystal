@@ -1271,6 +1271,9 @@ SetUpMoveScreenBG:
 	hlcoord 2, 0
 	lb bc, 2, 3
 	call ClearBox
+	hlcoord 14, 0
+	lb bc, 1, 5
+	call ClearBox
 	xor a
 	ld [wMonType], a
 	ld hl, wPartyMonNicknames
@@ -1281,7 +1284,7 @@ SetUpMoveScreenBG:
 	push bc
 	farcall CopyMonToTempMon
 	pop hl
-	hlcoord 5, 0
+	hlcoord 14, 0
 	call PrintLevel
 	
 	ld a, TEMPMON
@@ -1294,15 +1297,18 @@ SetUpMoveScreenBG:
 	ld a, '<FEMALE>'
 
 .got_gender
-	hlcoord 9, 0
+	hlcoord 17, 0
 	ld [hl], a
 
 	ld hl, wPlayerHPPal
 	call SetHPPal
 	ld b, SCGB_MOVE_LIST
 	call GetSGBLayout
-	hlcoord 16, 0
-	lb bc, 1, 3
+	hlcoord 01, 0
+	lb bc, 1, 1
+	call ClearBox
+	hlcoord 18, 0
+	lb bc, 1, 1
 	jp ClearBox
 
 SetUpMoveList:
@@ -1533,7 +1539,7 @@ PlaceMoveScreenLeftArrow:
 	ret
 
 .legal
-	hlcoord 16, 0
+	hlcoord 1, 0
 	ld [hl], '▶'
 	ret
 

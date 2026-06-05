@@ -363,9 +363,9 @@ ChooseMoveToLearn:
 	call TextboxBorder
 
 	; Adds a gap in the move list's text box border
-	; that prevents clipping with some names.
-	hlcoord 2, 1
-	lb bc, 1, 16
+	; that prevents clipping with the MONICON.
+	hlcoord 2, 0
+	lb bc, 2, 3
 	call ClearBox
 
 	; This replaces the tile using the identifier
@@ -394,15 +394,28 @@ ChooseMoveToLearn:
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
-	hlcoord  3, 1
+	hlcoord  5, 1
 	call PlaceString
+
+	farcall ClearSpriteAnims2
+	ld a, [wCurPartyMon]
+	ld e, a
+	ld d, 0
+	ld hl, wPartySpecies
+	add hl, de
+	ld a, [hl]
+	ld [wTempIconSpecies], a
+	ld e, MONICON_MOVES
+	farcall LoadMenuMonIcon
+
+	farcall PlaySpriteAnimations
 
 	; This displays the Pokémon's level
 	; at the coordinates defined at
 	; "hlcoord". In this case that is
 	; the top right of the screen.
 	farcall CopyMonToTempMon
-	hlcoord 14, 1
+	hlcoord 14, 0
 	call PrintLevel
 
 	ld a, TEMPMON
@@ -414,7 +427,7 @@ ChooseMoveToLearn:
 	jr nz, .got_gender
 	ld a, $33 ; '♀'
 .got_gender
-	hlcoord 17, 1
+	hlcoord 17, 0
 	ld [hl], a
 
 	; Creates the menu, sets the "B_BUTTON"

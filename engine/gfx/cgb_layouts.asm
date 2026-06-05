@@ -1531,23 +1531,18 @@ _CGB_MoveList:
 	call ByteFill
 
 ; Gender tile
-	hlcoord 17, 1, wAttrmap
+	hlcoord 17, 0, wAttrmap
 	ld bc, 1 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
 	ld a, $3 ; Palette 3
 	call ByteFill
-	
+
 ; fix left menu arrow, since we dont have left facing arrow
-	hlcoord 16, 0, wAttrmap
+	hlcoord 1, 0, wAttrmap
 	ld bc, 1 ; 1x1 Square
 	xor a ; pal 0, default palette
 	set 5, a ; flip on x axis
 	call ByteFill	
 
-	hlcoord 9, 0, wAttrmap
-	ld bc, 1
-	ld a, $3
-	call ByteFill
-	
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
