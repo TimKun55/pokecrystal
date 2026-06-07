@@ -333,7 +333,7 @@ DarkPulseDescription:
 	line "cause flinching.@"
 
 FlameChargeDescription:
-	db   "Cloaks with flame"
+	db   "Cloaks with flames"
 	line "to attack. Spd ▲1.@"
 
 DazzlingleamDescription:
@@ -341,8 +341,8 @@ DazzlingleamDescription:
 	line "powerful flash.@"
 
 SwordsDanceDescription:
-	db   "A frenetic dance."
-	line "Atk ▲2.@"
+	db   "A frenetic battle"
+	line "dance. Atk ▲2.@"
 
 CutDescription:
 	db   "Cuts with hardened"
@@ -393,7 +393,7 @@ SilverWindDescription:
 
 GrowthPunchDescription:
 	db   "Training punches."
-	line "When hit, Atk ▲1.@"
+	line "Atk ▲1 on hit.@"
 
 SandAttackDescription:
 	db   "Reduces Accuracy"
@@ -454,20 +454,20 @@ GunkShotDescription:
 	line "poison the foe.@"
 
 SignalBeamDescription:
-	db   "Sinister light."
-	line "May confuse.@"
+	db   "Fires a peculiar"
+	line "ray. May confuse.@"
 
 PinMissileDescription:
 	db   "Fires pins that"
 	line "strike 2-5 times.@"
 
 LeerDescription:
-	db   "Intimidating look."
-	line "Def ▼1.@"
+	db   "An intimidating"
+	line "stare. Def ▼1.@"
 
 GrowlDescription:
-	db   "Growls cutely."
-	line "Atk ▼1.@"
+	db   "Growls in a cute"
+	line "way. Atk ▼1.@"
 
 RoarDescription:
 	db   "Scares wild foes"
@@ -508,8 +508,8 @@ MistDescription:
 	line "stat reduction.@"
 
 WaterGunDescription:
-	db   "Squirts water to"
-	line "attack.@"
+	db   "Fires a forceful"
+	line "shot of water.@"
 
 HydroPumpDescription:
 	db   "A powerful water-"
@@ -547,8 +547,8 @@ DrillPeckDescription:
 	line "ning-peck attack.@"
 
 FocusBlastDescription:
-	db   "Fires focused pow-"
-	line "er. SpDef ▼1.@"
+	db   "Fires off focused"
+	line "power. SpDef ▼1.@"
 
 CounterDescription:
 	db   "Returns a physical"
@@ -652,8 +652,8 @@ MimicDescription:
 	line "by the foe.@"
 
 ScreechDescription:
-	db   "Earsplitting scre-"
-	line "ech. Def ▼2.@"
+	db   "An earsplitting"
+	line "sound. Def ▼2.@"
 
 DoubleTeamDescription:
 	db   "Makes illusory co-"
@@ -758,8 +758,8 @@ IronBashDescription:
 	line "to bash the foe.@"
 
 ChargeBeamDescription:
-	db   "Electric charge."
-	line "SpAtk ▲1.@"
+	db   "An electric charge"
+	line "fired. SpAtk ▲1.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -770,8 +770,8 @@ SporeDescription:
 	line "induces sleep.@"
 
 FlashDescription:
-	db   "Blinds foe."
-	line "Acc ▼1.@"
+	db   "Flashes a light at"
+	line "the foe. Acc ▼1.@"
 
 SplashDescription:
 	db   "Has no effect"
@@ -803,7 +803,7 @@ ConversionDescription:
 
 TriAttackDescription:
 	db   "3 Beams. May para,"
-	line "freeze or burn.@"
+	line "frost or burn.@"
 
 SuperFangDescription:
 	db   "Cuts the foe's HP"
@@ -927,8 +927,8 @@ EndureDescription:
 	line "least 1HP.@"
 
 CharmDescription:
-	db   "Looks very cute."
-	line "Atk ▼2.@"
+	db   "Charmingly looks"
+	line "at foe. Atk ▼2.@"
 
 RolloutDescription:
 	db   "Attacks 5 turns"
@@ -951,8 +951,8 @@ FuryCutterDescription:
 	line "raise power.@"
 
 SteelWingDescription:
-	db   "Hard wings hit."
-	line "Def ▲1.@"
+	db   "Hits with wings of"
+	line "Steel. Def ▲1.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
@@ -999,8 +999,8 @@ DynamicpunchDescription:
 	line "Will confuse.@"
 
 MegahornDescription:
-	db   "A powerful charge"
-	line "attack.@"
+	db   "Brutally rams with"
+	line "impressive horn.@"
 
 DragonbreathDescription:
 	db   "A blast of breath."
@@ -1039,8 +1039,8 @@ VitalThrowDescription:
 	line "that never misses.@"
 
 HealinglightDescription:
-	db   "Restores HP depen-"
-	line "ding on weather.@"
+	db   "Restores HP with"
+	line "mystical light.@"
 
 RockTombDescription:
 	db   "Hurles boulders to"
@@ -1091,8 +1091,8 @@ FutureSightDescription:
 	line "hits on 3rd turn.@"
 
 RockSmashDescription:
-	db   "Shattering punch."
-	line "Def ▼1.@"
+	db   "A rock shattering"
+	line "punch. Def ▼1.@"
 
 BeatUpDescription:
 	db   "Party #mon join"
@@ -1103,6 +1103,6 @@ MoonblastDescription:
 	line "Moon. SpAtk ▼1.@"
 	
 BugBuzzDescription:
-	db   "Vibrates loudly."
-	line "SpDef ▼1.@"
+	db   "Vibrates wings"
+	line "loudly. SpDef ▼1.@"
 	
