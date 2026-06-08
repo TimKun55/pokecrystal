@@ -125,7 +125,7 @@ RageCandyBarMerchantTryOneText:
 
 	para "Right now, it can"
 	line "be yours for just"
-	cont "¥300! Want one?"
+	cont "¥{d:MAHOGANYTOWN_RAGECANDYBAR_PRICE}! Want one?"
 	done
 
 RageCandyBarMerchantSavorItText:
