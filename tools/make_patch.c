@@ -152,7 +152,7 @@ void parse_symbols(const char *filename, struct Symbol **symbols) {
 		}
 	}
 
-	fclose(file);
+	xfclose(file);
 	buffer_free(buffer);
 }
 
@@ -406,8 +406,8 @@ struct Buffer *process_template(const char *template_filename, const char *patch
 	rewind(orig_rom);
 	rewind(new_rom);
 
-	fclose(input);
-	fclose(output);
+	xfclose(input);
+	xfclose(output);
 	buffer_free(buffer);
 	return patches;
 }
@@ -457,6 +457,9 @@ int main(int argc, char *argv[]) {
 
 	FILE *new_rom = xfopen(argv[3], 'r');
 	FILE *orig_rom = xfopen(argv[4], 'r');
+	if (new_rom == stdin || orig_rom == stdin) {
+		error_exit("Error: Cannot read ROM file from stdin (not rewindable)");
+	}
 	struct Buffer *patches = process_template(argv[5], argv[6], new_rom, orig_rom, symbols);
 
 	if (!verify_completeness(orig_rom, new_rom, patches)) {
@@ -464,8 +467,8 @@ int main(int argc, char *argv[]) {
 	}
 
 	symbol_free(symbols);
-	fclose(new_rom);
-	fclose(orig_rom);
+	xfclose(new_rom);
+	xfclose(orig_rom);
 	buffer_free(patches);
 	return 0;
 }
