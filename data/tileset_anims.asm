@@ -209,6 +209,7 @@ TilesetEFourChampionRoomAnim:
 	tileframe WaitTileAnimation
 	tileframe AnimateLavaBubbleTile1
 	tileframe WaitTileAnimation
+	tileframe AnimateWhirlpoolTile,			TorchFrames
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 

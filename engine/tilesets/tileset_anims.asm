@@ -1094,6 +1094,10 @@ FireFrames2: dw vTiles2 tile $59, FireTiles2
 FireTiles1: INCBIN "gfx/tilesets/fire/fire_left.2bpp"
 FireTiles2: INCBIN "gfx/tilesets/fire/fire_right.2bpp"
 
+TorchFrames: dw vTiles2 tile $4d, TorchTiles
+
+TorchTiles: INCBIN "gfx/tilesets/fire/lance_torch.2bpp"
+
 WaterfallBottomFrames: dw vTiles2 tile $7e, WaterfallBottomTiles
 WaterfallBottomPeakFrames: dw vTiles2 tile $04, WaterfallBottomTiles
 
