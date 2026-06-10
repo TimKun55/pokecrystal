@@ -131,7 +131,9 @@ LoadSpecialMapPalette:
 	jr z, .ruins_of_alph
 	cp TILESET_MUSEUM
 	jr z, .museum
-	jr .do_nothing
+	cp TILESET_TOWER
+	jr z, .tower
+	jp .do_nothing
 
 .darkness
 	call LoadDarknessPalette
@@ -181,6 +183,18 @@ LoadSpecialMapPalette:
 	call LoadMuseumPalette
 	scf
 	ret	
+
+.tower
+	ld a, [wEnvironment]
+	and $7
+	cp ROUTE ; Tin Tower Roof
+	jr z, .do_nothing
+    ld a, [wMapNumber]
+	cp MAP_BURNED_TOWER_1F
+	jr z, .do_nothing
+	call LoadTowerPalette
+	scf
+	ret
 
 .gym_palette
 	call LoadGymPalette
@@ -346,9 +360,20 @@ LoadGymPalette:
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
-	
+
 GymPalette:
 INCLUDE "gfx/tilesets/gym_palette.pal"	
+
+LoadTowerPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, TowerPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+TowerPalette:
+INCLUDE "gfx/tilesets/tower_palette.pal"	
 
 LoadFarawayPalette:
 	ld a, BANK(wBGPals1)

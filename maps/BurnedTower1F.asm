@@ -25,12 +25,12 @@ BurnedTower1FNoop2Scene:
 BurnedTower1FHoleAndLadderCallback:
 	checkevent EVENT_HOLE_IN_BURNED_TOWER
 	iftrue .KeepHoleOpen
-	changeblock 10, 8, $32 ; floor
+	changeblock 8, 8, $32 ; no floor hole
 .KeepHoleOpen:
 	checkevent EVENT_RELEASED_THE_BEASTS
-	iftrue .HideBasement
-	changeblock 6, 14, $09 ; ladder
-.HideBasement:
+	iftrue .Finish
+	changeblock 4, 14, $09 ; no ladder
+.Finish:
 	endcallback
 
 BurnedTower1FMeetEusineScript:
@@ -104,7 +104,7 @@ BurnedTowerRivalBattleScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_ENTER_DOOR
 	waitsfx
-	changeblock 10, 8, $25 ; hole
+	changeblock 8, 8, $25 ; hole
 	reloadmappart
 	pause 15
 	applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall
@@ -288,21 +288,21 @@ BurnedTower1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 15, ECRUTEAK_CITY, 10
-	warp_event 10, 15, ECRUTEAK_CITY, 10
-	warp_event 10,  9, BURNED_TOWER_B1F, 1
-	warp_event  7, 15, BURNED_TOWER_B1F, 2
+	warp_event  7, 15, ECRUTEAK_CITY, 10
+	warp_event  8, 15, ECRUTEAK_CITY, 10
+	warp_event  8,  9, BURNED_TOWER_B1F, 1
+	warp_event  5, 15, BURNED_TOWER_B1F, 2
 
 	def_coord_events
-	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript
+	coord_event  9,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript
 
 	def_bg_events
-	bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
-	bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall
+	bg_event  6,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
+	bg_event 11, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall
 
 	def_object_events
-	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
-	object_event 12, 12, SPRITE_EUSINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
-	object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
-	object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
-	object_event 14,  2, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
+	object_event 13,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
+	object_event 10, 12, SPRITE_EUSINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_PURPLE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
+	object_event  6,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
+	object_event 12, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
+	object_event 12,  2, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
