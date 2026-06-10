@@ -108,6 +108,7 @@ PlayBattleMusic:
 	jp .done
 
 .noOverride
+	ld a, [wOtherTrainerClass]
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jr z, .done
