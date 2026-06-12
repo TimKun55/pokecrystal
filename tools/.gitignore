@@ -1,7 +1,7 @@
 gbcpal
 bpp2png
 gfx
-lzcomp
+lzcompress
 make_patch
 palette
 png_dimensions

@@ -6,7 +6,7 @@ CFLAGS := -O3 -std=c11 -Wall -Wextra -pedantic
 tools := \
 	gbcpal \
 	bpp2png \
-	lzcomp \
+	lzcompress \
 	gfx \
 	make_patch \
 	png_dimensions \
@@ -30,10 +30,6 @@ stadium: common.h
 
 bpp2png: bpp2png.c lodepng/lodepng.c common.h lodepng/lodepng.h
 	$(CC) $(CFLAGS) -o $@ bpp2png.c lodepng/lodepng.c
-
-lzcomp: CFLAGS += -Wno-strict-overflow -Wno-sign-compare
-lzcomp: $(wildcard lz/*.c) $(wildcard lz/*.h)
-	$(CC) $(CFLAGS) -o $@ lz/*.c
 
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
