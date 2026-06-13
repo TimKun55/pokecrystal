@@ -260,7 +260,7 @@ FuchsiaCity_MapEvents:
 	warp_event 37, 21, ROUTE_15_FUCHSIA_GATE, 2
 	warp_event  7, 33, ROUTE_19_FUCHSIA_GATE, 1
 	warp_event  8, 33, ROUTE_19_FUCHSIA_GATE, 2
-	warp_event  9, 19, FUCHSIA_CINNABAR_HOUSE_1, 1
+	warp_event 11, 19, FUCHSIA_CINNABAR_HOUSE_1, 1
 
 	def_coord_events
 
