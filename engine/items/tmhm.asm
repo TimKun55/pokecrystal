@@ -246,21 +246,156 @@ TMHM_ShowTMMoveDescription:
 	call Textbox
 	ld a, [wCurItem]
 	cp NUM_TMS + NUM_HMS + 1
-	jr nc, .Cancel
+	jp nc, .Cancel
 	ld [wTempTMHM], a
 	predef GetTMHMMove
 	farcall LoadTMHMIconPalette
 	call SetDefaultBGPAndOBP
 	ld a, [wTempTMHM]
 	ld [wCurSpecies], a
-	hlcoord 1, 14
+
+; Place Move "Atk"/Pow String
+	hlcoord 2, 13
+	ld de, MoveAtkString ; string for "Pow"
+	call PlaceString
+
+; Place Move Cateogry
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	push af
+	and ~TYPE_MASK ; Specific to Phys/Spec split
+	swap a ; Specific to Phys/Spec split
+	srl a  ; Specific to Phys/Spec split
+	srl a  ; Specific to Phys/Spec split
+	dec a  ; Specific to Phys/Spec split
+	ld hl, CategoryIconGFX
+	ld bc, 2 tiles
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $60
+	lb bc, BANK(CategoryIconGFX), 2
+	call Request2bpp
+	hlcoord 16, 13
+	ld a, $60 ; category icon tile 1
+	ld [hli], a
+	ld [hl], $61 ; category icon tile 2
+; Place Move Type
+	pop af ; raw Move Type+category Byte, unmasked
+	and TYPE_MASK ; Phys/Spec Split specific
+	ld c, a
+	farcall GetMonTypeIndex
+	ld a, c
+; Type Index adjust done
+; Load Type GFX Tiles
+	ld hl, TypeIconGFX
+	ld bc, 4 * LEN_1BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $62 
+	lb bc, BANK(TypeIconGFX), 4
+	call Request1bpp
+	hlcoord 11, 13
+	ld a, $62 ; first Type Tile
+	ld [hli], a
+	inc a ; Tile $63
+	ld [hli], a
+	inc a ; Tile $64
+	ld [hli], a
+	ld [hl], $65 ; final Type Tile
+
+; Place Move Accuracy
+	hlcoord 2, 14
+	ld de, MoveAccString ; string for "Acc"
+	call PlaceString
+	hlcoord 9, 14
+	ld [hl], '<%>'
+
+	; getting the actual Move's accuracy
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_ACC
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	call Adjust_percent ; outputs accuracy in decimal instead of hex to print appropiatley
+	hlcoord 6, 14
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
+	call PrintNum
+; Place Move Effect Chance
+; repeat steps but for Move's effect chance
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_CHANCE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	hlcoord 15, 14
+	cp 2
+	jr c, .no_efct_chance
+
+	call Adjust_percent ; outputs chance in decimal instead of hex to print appropiatley
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
+	call PrintNum
+
+	hlcoord 11, 14
+	ld de, MoveEffString ; string for "Eff"
+	call PlaceString
+	hlcoord 18, 14
+	ld [hl], '<%>'
+.no_efct_chance
+
+; Print Pow Num
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_POWER
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	hlcoord 6, 13
+	cp 2
+	jr c, .no_power ; means it's a status move
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes of num being printed in 'b', max digits in 'c'
+	call PrintNum
+; Print Move Description
+	jr .description ; printed Pow, don't overwrite with "---", jump to print description
+.no_power
+	ld de, MoveNoPowerString ; string for "---"
+	call PlaceString
+
+.description
+	hlcoord 1, 15
 	call PrintMoveDescription
 	farcall LoadTMHMIcon
-	jr TMHM_JoypadLoop
+	jp TMHM_JoypadLoop
 
 .Cancel:
 	farcall ClearTMHMIcon
-	jr TMHM_JoypadLoop
+	jp TMHM_JoypadLoop
+
+MoveAtkString:
+	db "Pow/@"
+MoveAccString:
+	db "Acc/@"
+MoveEffString:
+	db "Eff/@"
+MoveNoPowerString:
+	db "---@"
 
 TMHM_ChooseTMorHM:
 	call TMHM_PlaySFX_ReadText2

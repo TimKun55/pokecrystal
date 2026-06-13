@@ -1605,19 +1605,16 @@ _CGB_PackPals:
 	ld a, $2
 	call FillBoxCGB
 
+	hlcoord 11, 13, wAttrmap ; move type and category icon
+	lb bc, 1, 7
+	ld a, $5
+	call FillBoxWithByte
+
 	hlcoord 1, 8, wAttrmap ; item icon
 	lb bc, 3, 3
 	ld a, $7
 	call FillBoxWithByte
 
-;	hlcoord 0, 7, wAttrmap
-;	lb bc, 3, 5
-;	ld a, $4
-;	call FillBoxCGB
-;	hlcoord 0, 3, wAttrmap
-;	lb bc, 5, 5
-;	ld a, $5
-;	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -1913,6 +1910,58 @@ BlackColor:
 	RGB 00, 00, 00
 
 LoadTMHMIconPalette:
+; Type Icon Pals
+	ld a, [wNamedObjectIndex]
+	ld hl, Moves + MOVE_TYPE
+
+	dec a
+	push bc
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	pop bc
+
+	and TYPE_MASK
+	ld hl, TypeIconPals
+	add a ; double the index, entries of TypeIconPals are 2 bytes (1 color). Same as a list of pointers
+	ld c, a
+	ld b, 0
+	add hl, bc
+
+	ld de, wBGPals1 palette 5 + 6 ; slot 4 of palette 5
+	ld bc, 2 ; 1 color (2 bytes)
+	call FarCopyColorWRAM
+
+; Type Category Pals
+	ld a, [wNamedObjectIndex]
+	ld hl, Moves + MOVE_TYPE
+
+	dec a
+	push bc
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	pop bc
+
+	and ~TYPE_MASK ; Specific to Phys/Spec split
+	swap a ; Specific to Phys/Spec split
+	srl a  ; Specific to Phys/Spec split
+	srl a  ; Specific to Phys/Spec split
+	dec a  ; Specific to Phys/Spec split
+	add a ; double the index
+	add a ; quadrouple the index
+	; since entries of CategoryIconPals are 4 bytes (2 colors, 2 bytes each) instead of normal 2 bytes (1 color) 
+	ld hl, CategoryIconPals
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld de, wBGPals1 palette 5 + 2 ; slot 2 of pal 5
+	ld bc, 4 ; 2 colors (4 bytes)
+	call FarCopyColorWRAM
+
+; TM Icon palette
 	ld a, [wNamedObjectIndex]
 	ld hl, Moves + MOVE_TYPE
 
