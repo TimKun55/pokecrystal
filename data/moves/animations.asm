@@ -2024,6 +2024,7 @@ BattleAnim_SandTomb:
 	anim_ret
 
 BattleAnim_Growl:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
 	anim_1gfx BATTLE_ANIM_GFX_NOISE
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_cry $0
@@ -2032,6 +2033,7 @@ BattleAnim_Growl:
 	anim_wait 16
 	anim_loop 3, .loop
 	anim_wait 17
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
 	anim_ret
 
 BattleAnim_Roar:
@@ -5125,22 +5127,23 @@ BattleAnim_Moonblast:
 	
 BattleAnim_BugBuzz:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GREEN
-	anim_1gfx BATTLE_ANIM_GFX_PSYCHIC
-	anim_bgeffect BATTLE_BG_EFFECT_PSYCHIC, $0, $0, $0
+	anim_2gfx BATTLE_ANIM_GFX_PSYCHIC, BATTLE_ANIM_GFX_NOISE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $40
+	anim_sound 6, 2, SFX_SUPERSONIC
+.soundloop
+	anim_call BattleAnimSub_Sound
+	anim_wait 16
+	anim_loop 2, .soundloop
+	anim_battlergfx_1row
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $2, $0
 .loop
-	anim_sound 6, 2, SFX_SUPERSONIC
+	anim_sound 0, 0, SFX_SNORE
 	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 80, $2
-	anim_wait 8
-	anim_sound 6, 2, SFX_SUPERSONIC
 	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $3
-	anim_wait 8
-	anim_sound 6, 2, SFX_SUPERSONIC
 	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 96, $4
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 32
-	anim_incbgeffect BATTLE_BG_EFFECT_PSYCHIC
-	anim_wait 4
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
 	anim_ret
 
