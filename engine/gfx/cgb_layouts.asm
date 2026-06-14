@@ -1791,6 +1791,12 @@ _CGB_NamingScreen:
 	ld a, $1
 	call FillBoxWithByte
 
+; Gender tile
+	hlcoord 1, 2, wAttrmap
+	ld bc, 1
+	ld a, $0
+	call ByteFill
+
 	call InitPartyMenuOBPals
 	call ApplyAttrmap
 	call ApplyPals

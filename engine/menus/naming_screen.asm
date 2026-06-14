@@ -117,9 +117,9 @@ NamingScreen:
 	ld [hl], '/'
 	farcall GetGender
 	jr c, .genderless
-	ld a, '♂'
+	ld a, '<MALE>'
 	jr nz, .place_gender
-	ld a, '♀'
+	ld a, '<FEMALE>'
 .place_gender
 	hlcoord 1, 2
 	ld [hl], a
@@ -824,6 +824,12 @@ LoadNamingScreenGFX:
 	ld hl, NamingScreenGFX_Border
 	ld bc, 8 tiles
 	ld a, BANK(NamingScreenGFX_Border)
+	call FarCopyBytes
+
+	ld de, vTiles2 tile $74
+	ld hl, SummaryScreenPageTilesGFX
+	ld bc, 4 tiles
+	ld a, BANK(SummaryScreenPageTilesGFX)
 	call FarCopyBytes
 
 	ld de, vTiles0 tile NAMINGSCREEN_CURSOR
