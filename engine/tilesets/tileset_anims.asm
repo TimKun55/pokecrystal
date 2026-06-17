@@ -231,6 +231,30 @@ AnimateWaterTile:
 .WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
 
+AnimateKantoWaterTile:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+	; period 8, offset to 1 tile (16 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 8
+	swap a
+
+	add LOW(.KantoWaterTileFrames)
+	ld l, a
+	adc HIGH(.KantoWaterTileFrames)
+	sub l
+	ld h, a
+
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.KantoWaterTileFrames:
+INCBIN "gfx/tilesets/water/water_kanto.2bpp"
+
 AnimateFarawayWaterTiles:
 	ld hl, sp + 0
 	ld b, h

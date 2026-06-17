@@ -9,7 +9,7 @@ ENDM
 
 Tileset0Anim:
 TilesetKantoAnim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
@@ -32,7 +32,7 @@ TilesetKanto5Anim:
 TilesetKanto6Anim:
 TilesetKanto8Anim:
 TilesetIndigoAnim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
@@ -47,7 +47,7 @@ TilesetIndigoAnim:
 	
 TilesetKanto2Anim:
 TilesetKanto7Anim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
 	tileframe WaitTileAnimation
 	tileframe AnimateFountainTile,			vTiles2 tile $5f
 	tileframe WaitTileAnimation
