@@ -162,44 +162,34 @@ AnimateFountainTile:
 	ld b, h
 	ld c, l
 
-	ld hl, .FountainTileFramePointers
-
-; A cycle of 8 frames, updating every tick
+; period 8, offset to pointer table (2 bytes)
 	ld a, [wTileAnimationTimer]
-	and %111
-
-; hl = [.FountainTileFramePointers + a * 2]
+	maskbits 8
 	add a
-	add l
-	ld l, a
-	jr nc, .okay
-	inc h
-.okay
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 
-; Write the tile graphic from hl (now sp) to de (now hl)
+	add LOW(.FountainTilePointers)
+	ld l, a
+	adc HIGH(.FountainTilePointers)
+	sub l
+	ld h, a
+
 	ld sp, hl
-	ld l, e
-	ld h, d
-	jp WriteTile
+	pop hl
 
-.FountainTileFramePointers:
-	dw .FountainTile1
-	dw .FountainTile2
-	dw .FountainTile3
-	dw .FountainTile4
-	dw .FountainTile3
-	dw .FountainTile4
-	dw .FountainTile5
-	dw .FountainTile1
+	jp WriteTileHLToDE
 
-.FountainTile1: INCBIN "gfx/tilesets/fountain/1.2bpp"
-.FountainTile2: INCBIN "gfx/tilesets/fountain/2.2bpp"
-.FountainTile3: INCBIN "gfx/tilesets/fountain/3.2bpp"
-.FountainTile4: INCBIN "gfx/tilesets/fountain/4.2bpp"
-.FountainTile5: INCBIN "gfx/tilesets/fountain/5.2bpp"
+.FountainTilePointers:
+	dw .FountainTileFrames + 0 tiles ; 0
+	dw .FountainTileFrames + 1 tiles ; 1
+	dw .FountainTileFrames + 2 tiles ; 2
+	dw .FountainTileFrames + 3 tiles ; 3
+	dw .FountainTileFrames + 2 tiles ; 4
+	dw .FountainTileFrames + 3 tiles ; 5
+	dw .FountainTileFrames + 4 tiles ; 6
+	dw .FountainTileFrames + 0 tiles ; 7
+
+.FountainTileFrames:
+INCBIN "gfx/tilesets/fountain/fountain.2bpp"
 
 AnimateWaterTile:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -231,19 +221,19 @@ AnimateWaterTile:
 .WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
 
-AnimateKantoWaterTile:
+AnimateSeaWaterTile:
 	ld hl, sp + 0
 	ld b, h
 	ld c, l
 
-	; period 8, offset to 1 tile (16 bytes)
+; period 8, offset to 1 tile (16 bytes)
 	ld a, [wTileAnimationTimer]
 	maskbits 8
 	swap a
 
-	add LOW(.KantoWaterTileFrames)
+	add LOW(.SeaWaterTileFrames)
 	ld l, a
-	adc HIGH(.KantoWaterTileFrames)
+	adc HIGH(.SeaWaterTileFrames)
 	sub l
 	ld h, a
 
@@ -252,8 +242,8 @@ AnimateKantoWaterTile:
 	ld h, d
 	jp WriteTile
 
-.KantoWaterTileFrames:
-INCBIN "gfx/tilesets/water/water_kanto.2bpp"
+.SeaWaterTileFrames:
+INCBIN "gfx/tilesets/water/water_sea.2bpp"
 
 AnimateFarawayWaterTiles:
 	ld hl, sp + 0
@@ -267,7 +257,7 @@ AnimateFarawayWaterTiles:
 	ld a, [hli]
 	ld d, a
 
-	; period 8, offset to 1 tile (16 bytes)
+; period 8, offset to 1 tile (16 bytes)
 	ld a, [wTileAnimationTimer]
 	maskbits 8
 	swap a
@@ -459,67 +449,92 @@ AnimateFlowerTile:
 	ld b, h
 	ld c, l
 
-; A cycle of 2 frames, updating every other tick
+; period 2, every 2 frames, offset to 1 tile (16 bytes)
 	ld a, [wTileAnimationTimer]
-	and %10
+	maskbits 2, 1
+	add a
+	add a
+	add a
 
-; CGB has different tile graphics for flowers
-	ld e, a
-	ldh a, [hCGB]
-	and 1
-	add e
+	add LOW(.FlowerTileFrames)
+	ld l, a
+	adc HIGH(.FlowerTileFrames)
+	sub l
+	ld h, a
 
-; hl = .FlowerTileFrames + a * 16
-	swap a
-	ld e, a
-	ld d, 0
-	ld hl, .FlowerTileFrames
-	add hl, de
-
-; Write the tile graphic from hl (now sp) to tile $02 (now hl)
-	ld sp, hl
-	ld hl, vTiles2 tile $02
-	jp WriteTile
+	jp WriteTileHLToDE
 
 .FlowerTileFrames:
-	INCBIN "gfx/tilesets/flower/dmg_1.2bpp"
-	INCBIN "gfx/tilesets/flower/cgb_1.2bpp"
-	INCBIN "gfx/tilesets/flower/dmg_2.2bpp"
-	INCBIN "gfx/tilesets/flower/cgb_2.2bpp"
+	INCBIN "gfx/tilesets/flower/flower.2bpp"
 
-AnimateFlower2Tile:
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
+AnimateBuoyTiles:
+	ld hl, sp + 0
 	ld b, h
 	ld c, l
 
-; A cycle of 2 frames, updating every other tick
+; period 4, every 2 frames, offset to 3 tiles (48 bytes)
 	ld a, [wTileAnimationTimer]
-	and %10
-
-; CGB has different tile graphics for flowers
-	ld e, a
-	ldh a, [hCGB]
-	and 1
-	add e
-
-; hl = .FlowerTileFrames + a * 16
+	maskbits 4, 1
 	swap a
-	ld e, a
-	ld d, 0
-	ld hl, .Flower2TileFrames
-	add hl, de
+	ld l, a
+	rrca
+	add l
 
-; Write the tile graphic from hl (now sp) to tile $02 (now hl)
-	ld sp, hl
-	ld hl, vTiles2 tile $02
-	jp WriteTile
+	add LOW(.BuoyTileFrames)
+	ld l, a
+	adc HIGH(.BuoyTileFrames)
+	sub l
+	ld h, a
 
-.Flower2TileFrames:
-	INCBIN "gfx/tilesets/flower_2/dmg_1.2bpp"
-	INCBIN "gfx/tilesets/flower_2/cgb_1.2bpp"
-	INCBIN "gfx/tilesets/flower_2/dmg_2.2bpp"
-	INCBIN "gfx/tilesets/flower_2/cgb_2.2bpp"
+	jp WriteThreeTilesHLToDE
+
+.BuoyTileFrames:
+INCBIN "gfx/tilesets/buoy/buoy.2bpp"
+
+AnimateFireTiles:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+; period 4, offset to 2 tiles (32 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 4
+	swap a
+	add a
+
+	add LOW(.FireTileFrames)
+	ld l, a
+	adc HIGH(.FireTileFrames)
+	sub l
+	ld h, a
+
+	jp WriteTwoTilesHLToDE
+
+.FireTileFrames:
+INCBIN "gfx/tilesets/fire/fire.2bpp"
+
+AnimateTorchTile:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+; period 2, every 2 frames, offset to 1 tile (16 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 2, 1
+	add a
+	add a
+	add a
+
+	add LOW(.TorchTileFrames)
+	ld l, a
+	adc HIGH(.TorchTileFrames)
+	sub l
+	ld h, a
+
+	jp WriteTileHLToDE
+
+.TorchTileFrames:
+INCBIN "gfx/tilesets/fire/torch.2bpp"
 
 AnimateKarenStar1Tile:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -640,63 +655,45 @@ INCBIN "gfx/tilesets/stars/star_7.2bpp"
 INCBIN "gfx/tilesets/stars/star_8.2bpp"
 
 AnimateLavaBubbleTile1:
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
+	ld hl, sp + 0
 	ld b, h
 	ld c, l
 
-; A cycle of 4 frames, updating every other tick
+; period 4, phase shift 2, every 2 frames, offset to 1 tile (16 bytes)
 	ld a, [wTileAnimationTimer]
-	and %110
-
-; Offset by 2 frames from AnimateLavaBubbleTile2
+	maskbits 4, 1
 	srl a
 	inc a
 	inc a
-	and %011
-
-; hl = LavaBubbleTileFrames + a * 16
+	maskbits 4
 	swap a
-	ld e, a
-	ld d, 0
-	ld hl, LavaBubbleTileFrames
-	add hl, de
 
-; Write the tile graphic from hl (now sp) to tile $5b (now hl)
-	ld sp, hl
-	ld hl, vTiles2 tile $6a
-	jp WriteTile
+	jr _FinishAnimateLavaBubbleTile
 
 AnimateLavaBubbleTile2:
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
+	ld hl, sp + 0
 	ld b, h
 	ld c, l
 
-; A cycle of 4 frames, updating every other tick
+; period 4, every 2 frames, offset to 1 tile (16 bytes)
 	ld a, [wTileAnimationTimer]
-	and %110
-
-; hl = LavaBubbleTileFrames + a * 8
-; (a was pre-multiplied by 2 from 'and %110')
+	maskbits 4, 1
 	add a
 	add a
 	add a
-	ld e, a
-	ld d, 0
-	ld hl, LavaBubbleTileFrames
-	add hl, de
+	; fallthrough
 
-; Write the tile graphic from hl (now sp) to tile $38 (now hl)
-	ld sp, hl
-	ld hl, vTiles2 tile $69
-	jp WriteTile
+_FinishAnimateLavaBubbleTile:
+	add LOW(.LavaBubbleFrames)
+	ld l, a
+	adc HIGH(.LavaBubbleFrames)
+	sub l
+	ld h, a
 
-LavaBubbleTileFrames:
-	INCBIN "gfx/tilesets/lava/1.2bpp"
-	INCBIN "gfx/tilesets/lava/2.2bpp"
-	INCBIN "gfx/tilesets/lava/3.2bpp"
-	INCBIN "gfx/tilesets/lava/4.2bpp"
+	jp WriteTileHLToDE
+
+.LavaBubbleFrames:
+INCBIN "gfx/tilesets/lava/lava.2bpp"
 
 AnimateBeachWater1Tile:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -860,7 +857,7 @@ AnimateTowerPillarTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jr WriteTile
+	jp WriteTile
 
 .TowerPillarTileFrameOffsets:
 	db 0 tiles
@@ -878,7 +875,7 @@ StandingTileFrame:
 	inc [hl]
 	ret
 
-AnimateWhirlpoolTile:
+Animate4FrameTile:
 ; Input de points to the destination in VRAM, then the source tile frames
 
 ; Save the stack pointer in bc for WriteTile to restore
@@ -912,7 +909,75 @@ AnimateWhirlpoolTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jr WriteTile
+	jp WriteTile
+
+AnimateWaterfallTiles:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+	; period 4, offset to 2 tiles (32 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 4
+	swap a
+	add a
+
+	add LOW(.WaterfallTileFrames)
+	ld l, a
+	adc HIGH(.WaterfallTileFrames)
+	sub l
+	ld h, a
+
+	jp WriteTwoTilesHLToDE
+
+.WaterfallTileFrames:
+INCBIN "gfx/tilesets/waterfall/waterfall.2bpp"
+
+AnimatePortBuoyTiles:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+; period 4, offset to 4 tiles (64 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 4
+	swap a
+	add a
+	add a
+
+	add LOW(.PortBuoyTileFrames)
+	ld l, a
+	adc HIGH(.PortBuoyTileFrames)
+	sub l
+	ld h, a
+
+	jp WriteFourTilesHLToDE
+
+.PortBuoyTileFrames:
+INCBIN "gfx/tilesets/buoy/port_buoy.2bpp"
+
+AnimateWhirlpoolTiles:
+	ld hl, sp + 0
+	ld b, h
+	ld c, l
+
+; period 4, offset to 4 tiles (64 bytes)
+	ld a, [wTileAnimationTimer]
+	maskbits 4
+	swap a
+	add a
+	add a
+
+	add LOW(.WhirlpoolTileFrames)
+	ld l, a
+	adc HIGH(.WhirlpoolTileFrames)
+	sub l
+	ld h, a
+
+	jp WriteFourTilesHLToDE
+
+.WhirlpoolTileFrames:
+INCBIN "gfx/tilesets/whirlpool/whirlpool.2bpp"
 
 WriteTileFromAnimBuffer:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -925,7 +990,7 @@ WriteTileFromAnimBuffer:
 	ld sp, hl
 	ld h, d
 	ld l, e
-	jr WriteTile
+	jp WriteTile
 
 ReadTileToAnimBuffer:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -938,6 +1003,77 @@ ReadTileToAnimBuffer:
 	ld l, e
 	ld sp, hl
 	ld hl, wTileAnimBuffer
+	jp WriteTile
+
+WriteFourTilesHLToDE:
+	ld sp, hl
+	ld l, e
+	ld h, d
+	; fallthrough
+
+WriteFourTiles:
+	pop de
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+rept 8
+	pop de
+	inc hl
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+endr
+
+	jr _FinishWritingThreeTiles
+
+WriteThreeTilesHLToDE:
+	ld sp, hl
+	ld l, e
+	ld h, d
+	; fallthrough
+
+WriteThreeTiles:
+	pop de
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+_FinishWritingThreeTiles:
+rept 8
+	pop de
+	inc hl
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+endr
+
+	jr _FinishWritingTwoTiles
+
+WriteTwoTilesHLToDE:
+	ld sp, hl
+	ld l, e
+	ld h, d
+	; fallthrough
+
+WriteTwoTiles:
+	pop de
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+_FinishWritingTwoTiles:
+rept 8
+	pop de
+	inc hl
+	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
+	inc hl
+	ld [hl], d
+endr
+
+	jr _FinishWritingOneTile
+
+WriteTileHLToDE:
+	ld sp, hl
+	ld l, e
+	ld h, d
 	; fallthrough
 
 WriteTile:
@@ -952,6 +1088,7 @@ WriteTile:
 	ld [hl], e
 	inc hl
 	ld [hl], d
+_FinishWritingOneTile:
 rept (LEN_2BPP_TILE - 2) / 2
 	pop de
 	inc hl
@@ -1101,31 +1238,6 @@ TowerPillarTile7:  INCBIN "gfx/tilesets/tower-pillar/7.2bpp"
 TowerPillarTile8:  INCBIN "gfx/tilesets/tower-pillar/8.2bpp"
 TowerPillarTile9:  INCBIN "gfx/tilesets/tower-pillar/9.2bpp"
 TowerPillarTile10: INCBIN "gfx/tilesets/tower-pillar/10.2bpp"
-
-WhirlpoolFrames1: dw vTiles2 tile $32, WhirlpoolTiles1
-WhirlpoolFrames2: dw vTiles2 tile $33, WhirlpoolTiles2
-WhirlpoolFrames3: dw vTiles2 tile $42, WhirlpoolTiles3
-WhirlpoolFrames4: dw vTiles2 tile $43, WhirlpoolTiles4
-
-WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
-WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
-WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
-WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
-
-FireFrames1: dw vTiles2 tile $58, FireTiles1
-FireFrames2: dw vTiles2 tile $59, FireTiles2
-
-FireTiles1: INCBIN "gfx/tilesets/fire/fire_left.2bpp"
-FireTiles2: INCBIN "gfx/tilesets/fire/fire_right.2bpp"
-
-TorchFrames: dw vTiles2 tile $4d, TorchTiles
-
-TorchTiles: INCBIN "gfx/tilesets/fire/lance_torch.2bpp"
-
-WaterfallBottomFrames: dw vTiles2 tile $7e, WaterfallBottomTiles
-WaterfallBottomPeakFrames: dw vTiles2 tile $04, WaterfallBottomTiles
-
-WaterfallBottomTiles: INCBIN "gfx/tilesets/waterfall_bottom/waterfall.2bpp"
 
 FarawayWaterFrames1: dw vTiles2 tile $14, FarawayWaterTiles1
 FarawayWaterFrames2: dw vTiles2 tile $15, FarawayWaterTiles2

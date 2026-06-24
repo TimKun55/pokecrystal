@@ -9,20 +9,17 @@ ENDM
 
 Tileset0Anim:
 TilesetKantoAnim:
-	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
 	tileframe AnimateBeachWater1Tile,       vTiles2 tile $5d
 	tileframe AnimateBeachWater2Tile,       vTiles2 tile $5e
 	tileframe AnimateBeachWater3Tile,       vTiles2 tile $6d
 	tileframe AnimateBeachWater4Tile,       vTiles2 tile $6e
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateBuoyTiles,				vTiles2 tile $22
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
@@ -32,14 +29,15 @@ TilesetKanto5Anim:
 TilesetKanto6Anim:
 TilesetKanto8Anim:
 TilesetIndigoAnim:
-	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe AnimateBuoyTiles,				vTiles2 tile $22
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
@@ -47,13 +45,15 @@ TilesetIndigoAnim:
 	
 TilesetKanto2Anim:
 TilesetKanto7Anim:
-	tileframe AnimateKantoWaterTile,		vTiles2 tile $01
-	tileframe WaitTileAnimation
 	tileframe AnimateFountainTile,			vTiles2 tile $5f
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
+	tileframe WaitTileAnimation
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe AnimateBuoyTiles,				vTiles2 tile $22
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
@@ -66,7 +66,7 @@ TilesetParkAnim:
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
@@ -80,114 +80,124 @@ TilesetForestAnim:
 	tileframe WaitTileAnimation
 	tileframe ForestTreeLeftAnimation2
 	tileframe ForestTreeRightAnimation2
-	tileframe AnimateFlowerTile
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
 	tileframe AnimateWaterTile,				vTiles2 tile $13
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetJohtoAnim:
-TilesetJohto3Anim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateWhirlpoolTiles,		vTiles2 tile $30
 	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $54 ; waterfall
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $54 ; waterfall
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $54
 	tileframe AnimateBeachWater1Tile,       vTiles2 tile $5a
 	tileframe AnimateBeachWater2Tile,       vTiles2 tile $5b
 	tileframe AnimateBeachWater3Tile,       vTiles2 tile $5c
 	tileframe AnimateBeachWater4Tile,       vTiles2 tile $5d
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames1
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames2
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames3
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames4
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $2c
+	tileframe AnimateBuoyTiles,				vTiles2 tile $2d
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
+TilesetJohto2Anim:
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $54
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $2c
+	tileframe AnimateBuoyTiles,				vTiles2 tile $2d
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
+TilesetJohto3Anim:
+	tileframe AnimateWhirlpoolTiles,		vTiles2 tile $30
+	tileframe WaitTileAnimation
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe WaitTileAnimation
+	tileframe AnimateBeachWater1Tile,       vTiles2 tile $5a
+	tileframe AnimateBeachWater2Tile,       vTiles2 tile $5b
+	tileframe AnimateBeachWater3Tile,       vTiles2 tile $5c
+	tileframe AnimateBeachWater4Tile,       vTiles2 tile $5d
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $2c
+	tileframe AnimateBuoyTiles,				vTiles2 tile $2d
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
+TilesetJohto4Anim:
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetJohto5Anim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateWhirlpoolTiles,		vTiles2 tile $30
+	tileframe WaitTileAnimation	
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $54
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe AnimateBuoyTiles,				vTiles2 tile $6d
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $54 ; waterfall
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $54 ; waterfall
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames1
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames2
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames3
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames4
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetJohtoPeakAnim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateWhirlpoolTiles,		vTiles2 tile $42
+	tileframe WaitTileAnimation	
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $03
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $14
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $03 ; waterfall
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $03 ; waterfall?
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames1
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames2
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames3
-	tileframe AnimateWhirlpoolTile,			WhirlpoolFrames4
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomPeakFrames
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
-TilesetJohto2Anim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $54 ; waterfall
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $54 ; waterfall?
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
-	tileframe WaitTileAnimation
-	tileframe StandingTileFrame8
-	tileframe DoneTileAnimation
-
-TilesetJohto4Anim:
 TilesetJohtoModernAnim:
 TilesetJohtoRuinsAnim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe AnimateBuoyTiles,				vTiles2 tile $6d
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateFlowerTile
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetPortAnim:
-	tileframe AnimateWaterTile,				vTiles2 tile $01
+	tileframe AnimatePortBuoyTiles,			vTiles2 tile $02
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateBuoyTiles,				vTiles2 tile $11
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
@@ -203,43 +213,30 @@ TilesetEFourChampionRoomAnim:
 	tileframe AnimateKarenStar2Tile
 	tileframe AnimateKarenStar3Tile
 	tileframe AnimateKarenStar4Tile
-	tileframe AnimateLavaBubbleTile2
+	tileframe AnimateLavaBubbleTile2,		vTiles2 tile $69
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateLavaBubbleTile1
+	tileframe AnimateLavaBubbleTile1,		vTiles2 tile $6a
 	tileframe WaitTileAnimation
-	tileframe AnimateWhirlpoolTile,			TorchFrames
+	tileframe AnimateTorchTile,				vTiles2 tile $4d
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetCaveAnim:
 	tileframe ReadTileToAnimBuffer,			vTiles2 tile $14
-	tileframe FlickeringCaveEntrancePalette
 	tileframe ScrollTileRightLeft,			wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
 	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $14
-	tileframe FlickeringCaveEntrancePalette
 	tileframe AnimateWaterPalette
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $40 ; waterfall
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $40 ; waterfall
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
-	tileframe FlickeringCaveEntrancePalette
-	tileframe AnimateLavaBubbleTile2
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $6b
+	tileframe AnimateLavaBubbleTile2,		vTiles2 tile $69
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateLavaBubbleTile1
+	tileframe AnimateLavaBubbleTile1,		vTiles2 tile $6a
 	tileframe WaitTileAnimation
-	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
 TilesetDarkCaveAnim:
@@ -251,40 +248,27 @@ TilesetDarkCaveAnim:
 	tileframe FlickeringCaveEntrancePalette
 	tileframe AnimateWaterPalette
 	tileframe FlickeringCaveEntrancePalette
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $40 ; waterfall
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $40 ; waterfall
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $02
 	tileframe FlickeringCaveEntrancePalette
 	tileframe WaitTileAnimation
-	tileframe StandingTileFrame8
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe DoneTileAnimation
 
 TilesetIcePathAnim:
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $14	
+	tileframe ReadTileToAnimBuffer,			vTiles2 tile $20	
 	tileframe FlickeringCaveEntrancePalette
 	tileframe ScrollTileRightLeft,			wTileAnimBuffer
 	tileframe FlickeringCaveEntrancePalette
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $14
+	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $20
 	tileframe FlickeringCaveEntrancePalette
 	tileframe WaitTileAnimation
 	tileframe FlickeringCaveEntrancePalette
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $35
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe FlickeringCaveEntrancePalette
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $35
-	tileframe FlickeringCaveEntrancePalette
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe DoneTileAnimation
 
 TilesetTowerAnim:
@@ -311,7 +295,7 @@ TilesetBattleTowerOutsideAnim:
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateFlower2Tile
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
@@ -331,8 +315,9 @@ TilesetFarawayAnim:
 	tileframe DoneTileAnimation
 
 TilesetTraditionalHouseAnim:
-	tileframe AnimateWhirlpoolTile,			FireFrames1
-	tileframe AnimateWhirlpoolTile,			FireFrames2
+	tileframe AnimateFireTiles,				vTiles2 tile $58
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
@@ -343,12 +328,9 @@ TilesetTraditionalHouseAnim:
 TilesetGymJohtoAnim:
 	tileframe AnimateWaterTile,				vTiles2 tile $55
 	tileframe WaitTileAnimation
-	tileframe ReadTileToAnimBuffer,			vTiles2 tile $56 ; waterfall
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe ScrollTileDown,				wTileAnimBuffer
-	tileframe WriteTileFromAnimBuffer,		vTiles2 tile $56 ; waterfall
-	tileframe AnimateWhirlpoolTile,			WaterfallBottomFrames
+	tileframe AnimateWaterfallTiles,		vTiles2 tile $1c
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation

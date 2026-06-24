@@ -30,17 +30,17 @@
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; 1d
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 1e
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; 1f
-	tilecoll WALL, WALL, WALL, WATER ; 20
-	tilecoll WALL, WALL, WATER, WATER ; 21
-	tilecoll WALL, WALL, WATER, WALL ; 22
+	tilecoll BUOY, BUOY, BUOY, WATER ; 20
+	tilecoll BUOY, BUOY, WATER, WATER ; 21
+	tilecoll BUOY, BUOY, WATER, BUOY ; 22
 	tilecoll WATER, WATER, WATER, WATER ; 23
-	tilecoll WALL, WATER, WALL, WATER ; 24
+	tilecoll BUOY, WATER, BUOY, WATER ; 24
 	tilecoll WATER, WATER, WATER, WATER ; 25
 	tilecoll WATER, WALL, WATER, WALL ; 26
 	tilecoll WATER, WATER, WATER, WATER ; 27
-	tilecoll WALL, WATER, WALL, WALL ; 28
-	tilecoll WATER, WATER, WALL, WALL ; 29
-	tilecoll WATER, WALL, WALL, WALL ; 2a
+	tilecoll BUOY, WATER, BUOY, BUOY ; 28
+	tilecoll WATER, WATER, BUOY, BUOY ; 29
+	tilecoll WATER, BUOY, BUOY, BUOY ; 2a
 	tilecoll WATER, WATER, WATER, WATER ; 2b
 	tilecoll WATER, WATER, WATER, WATER ; 2c
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2d
@@ -51,7 +51,7 @@
 	tilecoll WALL, WALL, FLOOR, WALL ; 32
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 33
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 34
-	tilecoll WALL, WALL, WALL, WALL ; 35
+	tilecoll BUOY, BUOY, BUOY, BUOY ; 35
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 36
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 37
 	tilecoll WALL, FLOOR, WALL, WALL ; 38
@@ -77,7 +77,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 4c
 	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR ; 4d
 	tilecoll WALL, WALL, WALL, WALL ; 4e
-	tilecoll WALL, WALL, WALL, WALL ; 4f
+	tilecoll WATER, WATER, BUOY, WATER ; 4f
 	tilecoll WALL, WALL, WALL, WALL ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51
 	tilecoll WALL, WALL, WALL, WALL ; 52
@@ -92,12 +92,12 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 5b
 	tilecoll WALL, WALL, WALL, WALL ; 5c
 	tilecoll WALL, WALL, WALL, WALL ; 5d
-	tilecoll WALL, WALL, WALL, WALL ; 5e
-	tilecoll WALL, WALL, WALL, WALL ; 5f
+	tilecoll WATER, WATER, WATER, BUOY ; 5e
+	tilecoll WATER, WATER, BUOY, WATER ; 5f
 	tilecoll WALL, WALL, WALL, DOOR ; 60
 	tilecoll WALL, WALL, DOOR, WALL ; 61
-	tilecoll WALL, WALL, WALL, DOOR ; 62
-	tilecoll WALL, WALL, WALL, WALL ; 63
+	tilecoll WATER, BUOY, WATER, WATER ; 62
+	tilecoll BUOY, WATER, WATER, WATER ; 63
 	tilecoll WALL, WALL, WALL, FLOOR ; 64
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 65
 	tilecoll WALL, WALL, FLOOR, WALL ; 66
@@ -181,7 +181,7 @@
 	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; b4
 	tilecoll FLOOR, WALL, WALL, WALL ; b5
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; b6
-	tilecoll WALL, WATER, WALL, WATER ; b7
+	tilecoll BUOY, WATER, BUOY, WATER ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR ; ba

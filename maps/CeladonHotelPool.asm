@@ -27,6 +27,7 @@ CeladonHotelPoolSurfingPikachuScript:
 	opentext
 	writetext SurfingPikachuText
 	cry PIKACHU
+	waitbutton
 	closetext
 	end
 
