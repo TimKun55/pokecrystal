@@ -363,7 +363,7 @@ BuyMenu_InitGFX:
 	call DisableLCD
 
 	ld hl, MartMenuGFX
-	ld de, vTiles2 tile $10
+	ld de, vTiles2 tile $18
 	ld bc, 14 tiles
 	ld a, BANK(MartMenuGFX)
 	call FarCopyBytes
@@ -399,15 +399,15 @@ BuyMenu_InitGFX:
 	ret
 
 .BuyLeftColumnTilemapString:
-	db $10, $10, $10, $10, $10, 0 ; Background
-	db $10, $10, $10, $10, $10, 0
-	db $10, $10, $10, $10, $10, 0
-	db $10, $10, $10, $10, $10, 0
-	db $10, $13, $13, $13, $10, 0 ; Item icon
-	db $11, $1d, $1e, $1f, $12, 0
-	db $11, $20, $21, $22, $12, 0
-	db $11, $23, $24, $25, $12, 0
-	db $10, $14, $14, $14, $10, -1
+	db $18, $18, $18, $18, $18, 0 ; Background
+	db $18, $18, $18, $18, $18, 0
+	db $18, $18, $18, $18, $18, 0
+	db $18, $18, $18, $18, $18, 0
+	db $18, $1b, $1b, $1b, $18, 0 ; Item icon
+	db $19, $1d, $1e, $1f, $1a, 0
+	db $19, $20, $21, $22, $1a, 0
+	db $19, $23, $24, $25, $1a, 0
+	db $18, $1c, $1c, $1c, $18, -1
 
 MartMenuGFX:
 INCBIN "gfx/mart/mart_menu.2bpp"
