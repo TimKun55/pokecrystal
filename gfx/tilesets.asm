@@ -19,10 +19,6 @@ Tileset0GFX::
 TilesetJohtoGFX::
 INCBIN "gfx/tilesets/johto.2bpp.lz"
 
-Tileset0Meta::
-TilesetJohtoMeta::
-INCBIN "data/tilesets/johto_metatiles.bin"
-
 
 SECTION "Tileset Data 2", ROMX
 
@@ -676,3 +672,7 @@ INCLUDE "data/tilesets/gym_kanto_collision.asm"
 
 TilesetGymKantoAttr::
 INCBIN "data/tilesets/gym_kanto_attributes.bin"
+
+Tileset0Meta::
+TilesetJohtoMeta::
+INCBIN "data/tilesets/johto_metatiles.bin"
