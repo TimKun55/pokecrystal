@@ -405,7 +405,7 @@ CianwoodCity_MapEvents:
 
 	def_bg_events
 	bg_event 14, 38, BGEVENT_READ, CianwoodCitySign
-	bg_event  6, 45, BGEVENT_READ, CianwoodGymSign
+	bg_event 10, 44, BGEVENT_READ, CianwoodGymSign
 	bg_event 15, 47, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther

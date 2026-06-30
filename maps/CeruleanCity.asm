@@ -273,7 +273,7 @@ CeruleanCity_MapEvents:
 
 	def_bg_events
 	bg_event 18, 22, BGEVENT_READ, CeruleanCitySign
-	bg_event 26, 21, BGEVENT_READ, CeruleanGymSign
+	bg_event 30, 20, BGEVENT_READ, CeruleanGymSign
 	bg_event  9, 27, BGEVENT_READ, CeruleanBikeShopSign
 	bg_event 29, 13, BGEVENT_READ, CeruleanPoliceSign
 	bg_event 22, 10, BGEVENT_READ, CeruleanCapeSign

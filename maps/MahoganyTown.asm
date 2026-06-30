@@ -237,7 +237,7 @@ MahoganyTown_MapEvents:
 	def_bg_events
 	bg_event  7,  4, BGEVENT_READ, MahoganyTownSign
 	bg_event 11,  7, BGEVENT_READ, MahoganyTownRagecandybarSign
-	bg_event  4, 13, BGEVENT_READ, MahoganyGymSign
+	bg_event  8, 12, BGEVENT_READ, MahoganyGymSign
 	bg_event  1,  5, BGEVENT_READ, MahoganyMoveTutorHouseSign
 
 	def_object_events

@@ -199,7 +199,7 @@ ViridianCity_MapEvents:
 
 	def_bg_events
 	bg_event 17, 15, BGEVENT_READ, ViridianCitySign
-	bg_event 28,  7, BGEVENT_READ, ViridianGymSign
+	bg_event 32,  6, BGEVENT_READ, ViridianGymSign
 	bg_event 17,  1, BGEVENT_READ, ViridianCityWelcomeSign
 	bg_event 21, 19, BGEVENT_READ, TrainerHouseSign
 

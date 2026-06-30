@@ -3,6 +3,7 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_RIVAL
+	const OLIVINECITY_POKEFAN_F
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -79,6 +80,9 @@ OlivineCityRivalSceneBottom:
 	setscene SCENE_OLIVINECITY_NOOP
 	special RestartMapMusic
 	end
+
+OlivineCityPokefanFScript:
+	jumptextfaceplayer OlivineCityPokefanFText
 
 OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
@@ -201,6 +205,15 @@ OlivineCityRivalText:
 	cont "less weak!"
 	done
 
+OlivineCityPokefanFText:
+	text "I've been planting"
+	line "flowers all around"
+	cont "the city!"
+	
+	para "Aren't they just"
+	line "so pretty?"
+	done
+
 OlivineCitySailor1Text:
 	text "Dark roads are"
 	line "dangerous at"
@@ -299,7 +312,7 @@ OlivineCity_MapEvents:
 	def_bg_events
 	bg_event 16,  8, BGEVENT_READ, OlivineCitySign
 	bg_event 17, 25, BGEVENT_READ, OlivineCityPortSign
-	bg_event  8,  9, BGEVENT_READ, OlivineGymSign
+	bg_event 12,  8, BGEVENT_READ, OlivineGymSign
 	bg_event 33, 26, BGEVENT_READ, OlivineLighthouseSign
 	bg_event  3, 24, BGEVENT_READ, OlivineCityBattleTowerSign
 
@@ -308,3 +321,5 @@ OlivineCity_MapEvents:
 	object_event 20, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 19, 26, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 14,  9, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityPokefanFScript, -1
+

@@ -266,7 +266,7 @@ FuchsiaCity_MapEvents:
 
 	def_bg_events
 	bg_event 18, 18, BGEVENT_READ, FuchsiaCitySign
-	bg_event  4, 27, BGEVENT_READ, FuchsiaGymSign
+	bg_event  8, 26, BGEVENT_READ, FuchsiaGymSign
 	bg_event 21, 15, BGEVENT_READ, SafariZoneParkSign
 	bg_event 29, 27, BGEVENT_READ, WardensHomeSign
 	bg_event 21,  4, BGEVENT_READ, SafariZoneSign

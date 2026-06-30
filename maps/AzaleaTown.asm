@@ -515,7 +515,7 @@ AzaleaTown_MapEvents:
 	def_bg_events
 	bg_event 19,  8, BGEVENT_READ, AzaleaTownSign
 	bg_event 10,  8, BGEVENT_READ, KurtsHouseSign
-	bg_event  8, 16, BGEVENT_READ, AzaleaGymSign
+	bg_event 12, 15, BGEVENT_READ, AzaleaGymSign
 	bg_event 29,  8, BGEVENT_READ, SlowpokeWellSign
 	bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign
 	bg_event  3,  9, BGEVENT_READ, AzaleaTownIlextForestSign

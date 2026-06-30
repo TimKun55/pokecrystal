@@ -195,9 +195,9 @@ ENDM
 	map_const BLACKTHORN_EMYS_HOUSE,                        4,  4 ;  4
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     6,  4 ;  6
-	map_const ROUTE_45,                                    10, 45 ;  7
+	map_const ROUTE_45,                                    15, 45 ;  7
 	map_const ROUTE_46,                                    10, 18 ;  8
-	map_const BLACKTHORN_CITY,                             20, 18 ;  9
+	map_const BLACKTHORN_CITY,                             22, 18 ;  9
 	map_const BLACKTHORN_MOVE_TUTOR_HOUSE,                  4,  4 ; 10	
 	map_const MADAM_ITEMS_HOUSE,						    4,  4 ; 11
 	endgroup

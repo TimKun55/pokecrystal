@@ -123,7 +123,7 @@ PewterCity_MapEvents:
 
 	def_bg_events
 	bg_event 25, 23, BGEVENT_READ, PewterCitySign
-	bg_event  8, 15, BGEVENT_READ, PewterGymSign
+	bg_event 12, 14, BGEVENT_READ, PewterGymSign
 	bg_event 21,  8, BGEVENT_READ, PewterMuseumSign
 	bg_event 35, 16, BGEVENT_READ, PewterCityMtMoonGiftShopSign
 	bg_event 20, 16, BGEVENT_READ, PewterCityWelcomeSign
