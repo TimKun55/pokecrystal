@@ -223,36 +223,36 @@ _DisplayUnownWords_CopyWord:
 	ret
 
 .YChar:
-	ld [hl], $5b
+	ld [hl], $60
 	inc hl
-	ld [hl], $5c
+	ld [hl], $61
 	ld bc, SCREEN_WIDTH - 1
 	add hl, bc
-	ld [hl], $4d
+	ld [hl], $70
 	inc hl
-	ld [hl], $5d
+	ld [hl], $71
 	pop hl
 	ret
 
 .ZChar:
-	ld [hl], $4e
+	ld [hl], $62
 	inc hl
-	ld [hl], $4f
+	ld [hl], $63
 	ld bc, SCREEN_WIDTH - 1
 	add hl, bc
-	ld [hl], $5e
+	ld [hl], $72
 	inc hl
-	ld [hl], $5f
+	ld [hl], $73
 	pop hl
 	ret
 
 .DashChar:
 	ld [hl], $2
 	inc hl
-	ld [hl], $3
+	ld [hl], $74
 	ld bc, SCREEN_WIDTH - 1
 	add hl, bc
-	ld [hl], $3
+	ld [hl], $74
 	inc hl
 	ld [hl], $2
 	pop hl
