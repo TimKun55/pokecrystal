@@ -163,35 +163,24 @@ _ComeBackText::
 	done
 
 _BootedTMText::
-	text "Booted up a TM."
+	text "Booted up the TM."
 	prompt
 
 _BootedHMText::
-	text "Booted up an HM."
+	text "Booted up the HM."
 	prompt
 
 _ContainedMoveText::
-	text "It contained"
-	line "@"
-	text_ram wStringBuffer2
-	text "."
-
-	para "Teach @"
+	text "Teach @"
 	text_ram wStringBuffer2
 	text_start
 	line "to a #mon?"
 	done
 
 _TMHMNotCompatibleText::
-	text_ram wStringBuffer2
-	text " is"
-	line "not compatible"
-	cont "with @"
 	text_ram wStringBuffer1
-	text "."
-
-	para "It can't learn"
-	line "@"
+	text " can't"
+	line "learn @"
 	text_ram wStringBuffer2
 	text "."
 	prompt
@@ -873,21 +862,12 @@ _PCGottaHavePokemonText::
 	line "#mon to call!"
 	prompt
 
-_PCWhatText::
-	text "What?"
-	done
-
 _PCMonHoldingMailText::
 	text "There is a #mon"
 	line "holding Mail."
 
 	para "Please remove the"
 	line "Mail."
-	prompt
-
-_PCNoSingleMonText::
-	text "You don't have a"
-	line "single #mon!"
 	prompt
 
 _PCCantDepositLastMonText::
@@ -1476,12 +1456,9 @@ _OakText1::
 	para "Welcome to the"
 	line "world of #mon!"
 
-	para "My name is Oak.@"
-	text_promptbutton
-
-	ntag " Oak "
-	text "People call me the"
-	line "#mon Prof."
+	para "My name is Oak."
+	line "People call me the"
+	cont "#mon Prof."
 	prompt
 
 _OakText2::
