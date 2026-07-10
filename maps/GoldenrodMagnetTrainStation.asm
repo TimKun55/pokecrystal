@@ -219,6 +219,10 @@ GoldenrodMagnetTrainStation_MapEvents:
 	bg_event  5, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
 	bg_event  6, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
 	bg_event  7, 19, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  4, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  5, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  6, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
+	bg_event  7, 15, BGEVENT_UP, GoldenrodMagnetTrainStationVendingMachine
 
 	def_object_events
 	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1

@@ -365,7 +365,7 @@ SaffronCity_MapEvents:
 	bg_event 22,  7, BGEVENT_READ, FightingDojoSign
 	bg_event 17, 25, BGEVENT_READ, SilphCoSign
 	bg_event 25, 31, BGEVENT_READ, MrPsychicsHouseSign
-	bg_event  9,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
+	bg_event  8,  6, BGEVENT_READ, SaffronCityMagnetTrainStationSign
 
 	def_object_events
 	object_event  7, 15, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1
@@ -377,5 +377,5 @@ SaffronCity_MapEvents:
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 30, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 39,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKETS_IN_KANTO
-	object_event  3,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityTeacherScript, -1
-	object_event  3,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster3Script, -1
+	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityTeacherScript, -1
+	object_event  3,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster3Script, -1

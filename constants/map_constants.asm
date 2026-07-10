@@ -287,7 +287,7 @@ ENDM
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
-	map_const GOLDENROD_MAGNET_TRAIN_STATION,              10, 11 ;  7
+	map_const GOLDENROD_MAGNET_TRAIN_STATION,              10,  9 ;  7
 	map_const GOLDENROD_FLOWER_SHOP,                        4,  4 ;  8
 	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
@@ -309,6 +309,7 @@ ENDM
 	map_const GOLDENROD_HOME_DECO_STORE_3,                  4,  4 ; 26
 	map_const GOLDENROD_HOME_DECO_STORE_4,                  4,  4 ; 27
 	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 8,  8 ; 28
+	map_const GOLDENROD_FLOWER_SHOP_GARDEN,                 8,  9 ; 28
 	map_const GOLDENROD_MOVE_TUTOR_HOUSE,                   4,  4 ; 29
 	endgroup
 

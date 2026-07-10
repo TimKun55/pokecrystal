@@ -24,7 +24,6 @@ TilesetKantoAnim:
 	tileframe DoneTileAnimation
 
 TilesetKanto3Anim:
-TilesetKanto4Anim:
 TilesetKanto5Anim:
 TilesetKanto6Anim:
 TilesetKanto8Anim:
@@ -42,7 +41,21 @@ TilesetIndigoAnim:
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
-	
+
+TilesetKanto4Anim:
+	tileframe AnimateFlowerTile,			vTiles2 tile $02
+	tileframe AnimateSeaWaterTile,			vTiles2 tile $01
+	tileframe AnimateWaterTile,				vTiles2 tile $3f
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
 TilesetKanto2Anim:
 TilesetKanto7Anim:
 	tileframe AnimateFountainTile,			vTiles2 tile $5f

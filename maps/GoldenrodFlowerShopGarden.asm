@@ -33,7 +33,7 @@ GoldenrodFlowerShopGarden_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7, 11, GOLDENROD_FLOWER_SHOP, 3
+	warp_event  7, 12, GOLDENROD_FLOWER_SHOP, 3
 
 	def_coord_events
 
@@ -41,9 +41,9 @@ GoldenrodFlowerShopGarden_MapEvents:
 
 	def_object_events
 	object_event  6,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenKelpsyTree, -1
-	object_event  4,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenQualotTree, -1
-	object_event  8,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenPomegTree, -1
+	object_event  4,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenQualotTree, -1
+	object_event  8,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenPomegTree, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenHondewTree, -1
-	object_event  5,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenGrepaTree, -1
-	object_event  9,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenTamatoTree, -1
+	object_event  5,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenGrepaTree, -1
+	object_event  9,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenTamatoTree, -1
 	
