@@ -110,7 +110,8 @@ GoldenrodDeptStoreB1FBlackBelt3Text:
 	done
 
 GoldenrodDeptStoreB1FMachokeText:
-	text "Machoke: Maaacho!"
+	ntag " Machoke "
+	text "Maaacho!"
 	done
 
 GoldenrodDeptStoreB1F_MapEvents:
