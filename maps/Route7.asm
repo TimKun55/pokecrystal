@@ -221,7 +221,6 @@ Route7LockedDoorText:
 	done
 
 Route7_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 27,  8, ROUTE_7_SAFFRON_GATE, 1

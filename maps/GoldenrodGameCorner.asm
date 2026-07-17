@@ -602,7 +602,6 @@ GoldenrodGameCornerPlayVoltorbFlipText:
 	done
 
 GoldenrodGameCorner_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 13, GOLDENROD_CITY, 12

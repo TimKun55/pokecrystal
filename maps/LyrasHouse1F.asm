@@ -90,7 +90,6 @@ LyrasTVText:
 	done
 
 LyrasHouse1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, NEW_BARK_TOWN, 5

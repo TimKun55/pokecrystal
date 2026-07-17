@@ -28,7 +28,6 @@ SeafoamIslandsB1FHiddenIceHeal:
 	hiddenitem ICE_HEAL, EVENT_SEAFOAM_ISLANDS_B1F_HIDDEN_ICE_HEAL
 
 SeafoamIslandsB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 27, 13, SEAFOAM_ISLANDS_1F, 2

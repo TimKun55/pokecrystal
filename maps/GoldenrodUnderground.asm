@@ -701,7 +701,6 @@ GoldenrodUndergroundNoEntryText:
 	done
 
 GoldenrodUnderground_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  3, GOLDENROD_UNDERGROUND_ENTRANCES, 1

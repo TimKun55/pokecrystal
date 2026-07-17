@@ -14,7 +14,6 @@ MtSilverItemRoomsFullRestore:
 	itemball FULL_RESTORE
 
 MtSilverItemRooms_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 13,  3, MT_SILVER_ROOM_2, 3

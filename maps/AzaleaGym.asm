@@ -993,7 +993,6 @@ AzaleaGymRedButtonText:
 	done
 
 AzaleaGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 31, AZALEA_TOWN, 5

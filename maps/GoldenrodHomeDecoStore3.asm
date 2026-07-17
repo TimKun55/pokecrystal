@@ -220,7 +220,6 @@ BigOnixDollText:
 	done
 
 GoldenrodHomeDecoStore3_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, GOLDENROD_UNDERGROUND, 11

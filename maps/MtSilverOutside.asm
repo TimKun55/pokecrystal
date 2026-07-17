@@ -22,7 +22,6 @@ MtSilverSignText:
 	done
 
 MtSilverOutside_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 23, 13, MT_SILVER_POKECENTER_1F, 1

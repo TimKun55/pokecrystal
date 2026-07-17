@@ -965,7 +965,6 @@ BugManiacBobbyAfterBattleText:
 	done
 
 IlexForest_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  7, ROUTE_34_ILEX_FOREST_GATE, 3

@@ -74,7 +74,6 @@ ElmsHouseFridgeText:
 	done
 
 ElmsHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  4, NEW_BARK_TOWN, 4

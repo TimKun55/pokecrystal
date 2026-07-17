@@ -50,7 +50,6 @@ Route18EastWestGateCannotPassText:
 	done
 
 Route18EastWestGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  4, ROUTE_18_WEST, 1

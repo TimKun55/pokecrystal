@@ -179,7 +179,6 @@ AviculturalSociety3FBookshelf2Text:
 	done
 
 SaffronAviculturalSociety3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12, 12, SAFFRON_AVICULTURAL_SOCIETY_2F, 2

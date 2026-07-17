@@ -256,7 +256,6 @@ BurglarCoreyAfterBattleText:
 	done
 
 FastShipCabins_NNW_NNE_NE_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, FAST_SHIP_1F, 2

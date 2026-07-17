@@ -516,7 +516,6 @@ IndigoPlateauPokecenter1FTutorRefused:
 	done
 	
 IndigoPlateauPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10, 17, INDIGO_PLATEAU, 1

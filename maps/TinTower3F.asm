@@ -10,7 +10,6 @@ TinTower3FFullHeal:
 	itemball FULL_HEAL
 
 TinTower3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 14, TIN_TOWER_2F, 1

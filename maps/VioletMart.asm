@@ -46,7 +46,6 @@ VioletMartCooltrainerMText:
 	done
 
 VioletMart_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11,  7, VIOLET_POKECENTER_1F, 4

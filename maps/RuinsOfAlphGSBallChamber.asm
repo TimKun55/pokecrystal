@@ -89,7 +89,6 @@ StrangePresenceText:
 	done
 
 RuinsOfAlphGSBallChamber_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 11, RUINS_OF_ALPH_CAVE_ENTRANCE, 4

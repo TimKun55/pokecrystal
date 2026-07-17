@@ -13,7 +13,6 @@ IcePathB2FBlackthornSideHiddenIceHeal:
 	hiddenitem ICE_HEAL, EVENT_ICE_PATH_B2F_BLACKTHORN_SIDE_HIDDEN_ICE_HEAL
 
 IcePathB2FBlackthornSide_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5, 17, ICE_PATH_B1F, 8

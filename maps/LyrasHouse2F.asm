@@ -76,7 +76,6 @@ LyrasHouseN64Text:
 	done
 
 LyrasHouse2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  0, LYRAS_HOUSE_1F, 3

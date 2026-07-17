@@ -250,7 +250,6 @@ BikerMannyAfterBattleText:
 	done
 
 Route17_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 

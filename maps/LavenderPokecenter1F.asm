@@ -76,7 +76,6 @@ LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
 	done
 
 LavenderPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, LAVENDER_TOWN, 1

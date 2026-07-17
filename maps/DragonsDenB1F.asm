@@ -330,7 +330,6 @@ TwinsLeaandpia2AfterBattleText:
 	done
 
 DragonsDenB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 20,  5, DRAGONS_DEN_1F, 2

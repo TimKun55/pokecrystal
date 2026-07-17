@@ -186,7 +186,6 @@ Route35GoldenrodGateFisherText:
 	done
 
 Route35GoldenrodGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, ROUTE_35, 1

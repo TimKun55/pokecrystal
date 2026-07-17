@@ -25,7 +25,6 @@ LavenderSpeechHousePokefanFText:
 	done
 
 LavenderSpeechHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, LAVENDER_TOWN, 4

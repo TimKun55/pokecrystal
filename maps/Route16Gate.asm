@@ -57,7 +57,6 @@ Route16GateCannotPassText:
 	done
 
 Route16Gate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  4, ROUTE_16, 2

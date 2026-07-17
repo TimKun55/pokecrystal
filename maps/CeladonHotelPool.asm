@@ -79,7 +79,6 @@ SurfingPikachuText:
 	done
 
 CeladonHotelPool_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10,  7, CELADON_HOTEL_1F, 3

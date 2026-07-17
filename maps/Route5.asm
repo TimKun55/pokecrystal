@@ -125,7 +125,6 @@ Route5UndergroundPathSignText:
 	done
 
 Route5_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 19, 37, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1

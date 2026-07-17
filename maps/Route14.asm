@@ -176,7 +176,6 @@ Route14TogekissText:
 	done
 
 Route14_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 

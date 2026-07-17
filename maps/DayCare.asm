@@ -442,7 +442,6 @@ DayCareLadyText_PartyFull:
 	done
 
 DayCare_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  4, ROUTE_34, 3

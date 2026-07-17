@@ -30,7 +30,6 @@ SafariZoneHubRestHouseSignText:
 	done
 
 SafariZoneHub_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 18, 29, SAFARI_ZONE_FUCHSIA_GATE, 1

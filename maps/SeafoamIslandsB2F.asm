@@ -94,7 +94,6 @@ BoarderBryceAfterBattleText:
 	done
 
 SeafoamIslandsB2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 21, 17, SEAFOAM_ISLANDS_B1F, 2

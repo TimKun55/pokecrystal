@@ -523,7 +523,6 @@ GuideGentsHouseSignText:
 	done
 
 CherrygroveCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 29,  3, CHERRYGROVE_POKECENTER_1F, 1

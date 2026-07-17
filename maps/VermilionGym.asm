@@ -541,7 +541,6 @@ RaichuText:
 	done
 
 VermilionGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  6, 19, VERMILION_CITY, 7

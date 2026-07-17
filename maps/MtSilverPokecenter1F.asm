@@ -35,7 +35,6 @@ MtSilverPokecenter1FGrannyText:
 	done
 
 MtSilverPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, MT_SILVER_OUTSIDE, 1

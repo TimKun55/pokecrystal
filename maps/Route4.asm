@@ -123,7 +123,6 @@ MtMoonSquareSignText:
 	done
 
 Route4_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  3, MOUNT_MOON_B1F, 11

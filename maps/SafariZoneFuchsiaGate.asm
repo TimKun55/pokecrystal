@@ -44,7 +44,6 @@ SafariZoneFuchsiaGateScientistText:
 	done
 
 SafariZoneFuchsiaGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  0, SAFARI_ZONE_HUB, 1

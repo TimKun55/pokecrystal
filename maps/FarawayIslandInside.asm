@@ -42,7 +42,6 @@ MewText:
 	done
 
 FarawayIslandInside_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12, 18, FARAWAY_ISLAND_OUTSIDE, 1

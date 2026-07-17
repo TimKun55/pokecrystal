@@ -16,7 +16,6 @@ TinTower5FHiddenCarbos:
 	hiddenitem CARBOS, EVENT_TIN_TOWER_5F_HIDDEN_CARBOS
 
 TinTower5F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 17, TIN_TOWER_6F, 2

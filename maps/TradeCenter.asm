@@ -43,7 +43,6 @@ TradeCenterFriendReadyText:
 	done
 
 TradeCenter_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  7, POKECENTER_2F, 2

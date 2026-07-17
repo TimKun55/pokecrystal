@@ -180,7 +180,6 @@ SailorHueyGiveProteinText:
 	done
 
 OlivineLighthouse2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  2, OLIVINE_LIGHTHOUSE_1F, 3

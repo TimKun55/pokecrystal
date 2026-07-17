@@ -230,7 +230,6 @@ AviculturalSocietyBookText:
 	done
 	
 SaffronAviculturalSociety2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11,  0, SAFFRON_AVICULTURAL_SOCIETY_1F, 3

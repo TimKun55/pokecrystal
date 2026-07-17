@@ -28,7 +28,6 @@ MtSilverRoom1HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_MT_SILVER_ROOM_1_HIDDEN_ULTRA_BALL
 
 MtSilverRoom1_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 33, MT_SILVER_OUTSIDE, 3

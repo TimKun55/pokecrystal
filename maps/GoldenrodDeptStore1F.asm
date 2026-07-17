@@ -76,7 +76,6 @@ GoldenrodDeptStore1FDirectoryText:
 	done
 
 GoldenrodDeptStore1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  7, GOLDENROD_CITY, 10

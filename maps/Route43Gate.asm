@@ -225,7 +225,6 @@ OfficerText_AvoidGrass:
 	done
 
 Route43Gate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, ROUTE_43, 5

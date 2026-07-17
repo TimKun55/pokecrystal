@@ -943,7 +943,6 @@ DayCareSignText:
 	done
 
 Route34_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17, 37, ROUTE_34_ILEX_FOREST_GATE, 1

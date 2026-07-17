@@ -289,7 +289,6 @@ KabutoPuzzleCompletedText:
 	done
 
 RuinsOfAlphKabutoChamber_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 2

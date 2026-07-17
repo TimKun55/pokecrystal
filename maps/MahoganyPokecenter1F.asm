@@ -60,7 +60,6 @@ MahoganyPokecenter1FCooltrainerFText:
 	done
 
 MahoganyPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, MAHOGANY_TOWN, 4

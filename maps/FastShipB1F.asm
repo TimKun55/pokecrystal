@@ -457,7 +457,6 @@ FastShipB1FGeneratorText:
 	done	
 
 FastShipB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3, 13, FAST_SHIP_1F, 11

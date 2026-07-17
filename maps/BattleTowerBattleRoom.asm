@@ -126,7 +126,6 @@ Script_BeatenAllTrainers2:
 	sjump Script_GivePlayerHisPrize
 
 BattleTowerBattleRoom_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, BATTLE_TOWER_HALLWAY, 4

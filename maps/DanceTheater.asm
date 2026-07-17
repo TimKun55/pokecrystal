@@ -436,7 +436,6 @@ DanceTheaterFancyPanelText:
 	done
 
 DanceTheater_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5, 13, ECRUTEAK_CITY, 7

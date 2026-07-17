@@ -21,7 +21,6 @@ Route36VioletGateOfficerText:
 	done
 
 Route36VioletGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  4, ROUTE_36, 5

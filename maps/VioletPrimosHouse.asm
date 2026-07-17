@@ -183,7 +183,6 @@ PrimosHouseWooperText:
 	done
 
 VioletPrimosHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, VIOLET_CITY, 7

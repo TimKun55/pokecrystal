@@ -240,7 +240,6 @@ BurnedTowerB1FEusineText:
 	done
 
 BurnedTowerB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10,  9, BURNED_TOWER_1F, 5

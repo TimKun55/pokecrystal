@@ -15,7 +15,6 @@ SeafoamGymSignText:
 	done	
 
 SeafoamIslands1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17,  7, ROUTE_20, 1

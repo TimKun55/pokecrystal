@@ -115,7 +115,6 @@ BlackthornGym2FBoulderFellText:
 	done
 
 BlackthornGym2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  9, BLACKTHORN_GYM_1F, 3

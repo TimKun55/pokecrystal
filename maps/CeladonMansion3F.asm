@@ -146,7 +146,6 @@ CeladonMansion3FReferenceMaterialText:
 	done
 
 CeladonMansion3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  0, CELADON_MANSION_ROOF, 1

@@ -100,7 +100,6 @@ PikachuText:
 	done
 
 MtSilverPeak_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 15, 49, MT_SILVER_ROOM_2, 2

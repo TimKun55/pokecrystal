@@ -733,7 +733,6 @@ TeamRocketBaseB1FSwitchOffText:
 	done
 
 TeamRocketBaseB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 27,  2, MAHOGANY_MART_1F, 3

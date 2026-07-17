@@ -14,7 +14,6 @@ VictoryRoadEntranceSignText:
 	done
 
 Route22_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  4, POKEMON_LEAGUE_GATE, 1

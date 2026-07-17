@@ -406,7 +406,6 @@ NoctowlText:
 	done
 
 VioletGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  6, 15, VIOLET_CITY, 1

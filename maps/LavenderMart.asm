@@ -43,7 +43,6 @@ LavenderMartRockerText:
 	done
 
 LavenderMart_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11,  7, LAVENDER_POKECENTER_1F, 4

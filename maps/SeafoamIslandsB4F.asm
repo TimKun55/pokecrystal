@@ -232,7 +232,6 @@ ArticunoText:
 	done
 
 SeafoamIslandsB4F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  3, SEAFOAM_ISLANDS_B3F,  5

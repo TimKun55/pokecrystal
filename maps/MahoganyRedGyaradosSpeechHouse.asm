@@ -46,7 +46,6 @@ MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
 	done
 
 MahoganyRedGyaradosSpeechHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, MAHOGANY_TOWN, 2

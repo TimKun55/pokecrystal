@@ -583,7 +583,6 @@ Route44Sign2Text:
 	done
 
 Route44_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 54,  7, ICE_PATH_1F, 1

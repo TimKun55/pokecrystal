@@ -209,7 +209,6 @@ Route39BarnMiltankText:
 	done
 
 Route39Barn_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  6,  7, ROUTE_39, 1

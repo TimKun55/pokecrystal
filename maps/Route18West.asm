@@ -35,7 +35,6 @@ Route18WBiker2Text:
 	done
 
 Route18West_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 21,  8, ROUTE_18_EAST_WEST_GATE, 1

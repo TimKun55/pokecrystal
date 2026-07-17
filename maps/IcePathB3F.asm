@@ -14,7 +14,6 @@ IcePathB3FRock:
 	jumpstd SmashRockScript
 
 IcePathB3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, ICE_PATH_B2F_MAHOGANY_SIDE, 2

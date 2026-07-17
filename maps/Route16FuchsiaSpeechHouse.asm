@@ -20,7 +20,6 @@ Route16FuchsiaSpeechHouseSuperNerdText:
 	done
 
 Route16FuchsiaSpeechHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, ROUTE_16, 1

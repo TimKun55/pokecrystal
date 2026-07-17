@@ -219,7 +219,6 @@ FarawayIslandSignText:
 	done
 
 FarawayIslandOutside_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 22,  8, FARAWAY_ISLAND_INSIDE, 1

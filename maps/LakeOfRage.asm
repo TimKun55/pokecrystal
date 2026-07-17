@@ -488,7 +488,6 @@ FishingGurusHouseSignText:
 	done
 
 LakeOfRage_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  3, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1

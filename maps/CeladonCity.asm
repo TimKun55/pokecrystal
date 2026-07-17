@@ -319,7 +319,6 @@ CeladonCityHotelSignText:
 	done
 
 CeladonCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8,  9, CELADON_DEPT_STORE_1F, 1

@@ -43,7 +43,6 @@ OlivineMartLassText:
 	done
 
 OlivineMart_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11,  7, OLIVINE_POKECENTER_1F, 4

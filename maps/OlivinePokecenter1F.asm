@@ -181,7 +181,6 @@ OlivinePokecenter1FTutorMoveText:
 	done
 
 OlivinePokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, OLIVINE_CITY, 1

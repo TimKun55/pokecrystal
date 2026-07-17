@@ -422,7 +422,6 @@ BinocularsRight3Text:
 	done
 
 OlivineLighthouse6F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10, 11, OLIVINE_LIGHTHOUSE_5F, 1

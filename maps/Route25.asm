@@ -406,7 +406,6 @@ BillsHouseSignText:
 	done
 
 Route25_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 49,  5, BILLS_HOUSE, 1

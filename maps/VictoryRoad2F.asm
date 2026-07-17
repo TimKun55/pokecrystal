@@ -36,7 +36,6 @@ VictoryRoad2FHiddenPPUp:
 	hiddenitem PP_UP, EVENT_VICTORY_ROAD_2F_HIDDEN_PP_UP
 
 VictoryRoad2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  3, VICTORY_ROAD_3F, 1

@@ -42,7 +42,6 @@ MrPsychicText2:
 	done
 
 MrPsychicsHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, SAFFRON_CITY, 5

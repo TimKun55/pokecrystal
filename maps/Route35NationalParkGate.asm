@@ -409,7 +409,6 @@ BugCatchingContestExplanationText:
 	done
 
 Route35NationalParkGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, NATIONAL_PARK, 3

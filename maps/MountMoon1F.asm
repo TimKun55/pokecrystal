@@ -311,7 +311,6 @@ HikerMickyAfterBattleText:
 	done
 
 MountMoon1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11, 23, ROUTE_3, 1

@@ -120,7 +120,6 @@ IndigoPlateauSignText:
 	done
 
 IndigoPlateau_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9,  5, INDIGO_PLATEAU_POKECENTER_1F, 1

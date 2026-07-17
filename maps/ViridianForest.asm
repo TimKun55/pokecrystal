@@ -198,7 +198,6 @@ ViridianForestSignText:
 	done
 
 ViridianForest_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 26, 39, ROUTE_2_VIRIDIAN_FOREST_GATE, 3

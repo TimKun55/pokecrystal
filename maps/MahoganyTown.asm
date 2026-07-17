@@ -218,7 +218,6 @@ MahoganyGymSignText:
 	done
 
 MahoganyTown_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 13,  7, MAHOGANY_MART_1F, 1

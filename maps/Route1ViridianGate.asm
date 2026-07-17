@@ -27,7 +27,6 @@ Route1ViridianGuardText:
 	done
 
 Route1ViridianGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, VIRIDIAN_CITY, 6

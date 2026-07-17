@@ -145,7 +145,6 @@ EcruteakPokecenter1FGymGuideText:
 	done
 
 EcruteakPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, ECRUTEAK_CITY, 4

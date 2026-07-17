@@ -20,7 +20,6 @@ RockTunnel1FHiddenXDefend:
 	hiddenitem X_DEFEND, EVENT_ROCK_TUNNEL_1F_HIDDEN_X_DEFEND
 
 RockTunnel1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 25,  3, ROUTE_10_NORTH, 1

@@ -311,7 +311,6 @@ SproutTower3FStatueText:
 	done
 
 SproutTower3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 14, SPROUT_TOWER_2F, 4

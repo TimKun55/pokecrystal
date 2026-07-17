@@ -6,7 +6,6 @@ CeruleanEmptyHouseUnderground_MapScripts:
 	def_callbacks
 
 CeruleanEmptyHouseUnderground_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 30,  3, CERULEAN_EMPTY_HOUSE, 2

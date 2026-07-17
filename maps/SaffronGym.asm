@@ -364,7 +364,6 @@ AlakazamText:
 	done
 
 SaffronGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12, 17, SAFFRON_CITY, 2

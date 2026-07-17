@@ -254,7 +254,6 @@ CeladonHomeDecoStoreB2FVirtualBoyText:
 	done
 
 CeladonHomeDecoStoreB2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  0, CELADON_HOME_DECO_STORE_B1F, 2

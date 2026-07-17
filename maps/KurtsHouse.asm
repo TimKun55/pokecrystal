@@ -650,7 +650,6 @@ KurtsHouseCelebiStatueText:
 	done
 
 KurtsHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, AZALEA_TOWN, 4

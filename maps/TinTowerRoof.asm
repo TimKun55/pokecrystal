@@ -112,7 +112,6 @@ HoOhStatueSignText:
 	done
 
 TinTowerRoof_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7, 17, TIN_TOWER_9F, 4

@@ -269,7 +269,6 @@ SlowpokeWellB1FTaillessSlowpokeText:
 	done
 
 SlowpokeWellB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 15, 15, SLOWPOKE_WELL_ENTRANCE, 2

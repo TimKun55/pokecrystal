@@ -296,7 +296,6 @@ VermilionCityPortSignText:
 	done
 
 VermilionCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 13,  5, VERMILION_FISHING_SPEECH_HOUSE, 1

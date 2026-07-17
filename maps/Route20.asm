@@ -159,7 +159,6 @@ SeafoamIslandsSignText:
 	done
 	
 Route20_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 56, 11, SEAFOAM_ISLANDS_1F, 1

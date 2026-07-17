@@ -17,7 +17,6 @@ Route5UndergroundPathEntranceTeacherText:
 	done
 
 Route5UndergroundPathEntrance_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, ROUTE_5, 1

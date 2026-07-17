@@ -70,7 +70,6 @@ BattleTowerOutsideSignText:
 	done
 
 BattleTowerOutside_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 21, ROUTE_40_BATTLE_TOWER_GATE, 3

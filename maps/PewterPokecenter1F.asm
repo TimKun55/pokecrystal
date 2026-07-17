@@ -71,7 +71,6 @@ PewterPokecenter1FBugCatcherText:
 	done
 
 PewterPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, PEWTER_CITY, 3

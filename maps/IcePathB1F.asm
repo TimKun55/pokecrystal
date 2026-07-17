@@ -68,7 +68,6 @@ IcePathBoulderFellThroughText:
 	done
 
 IcePathB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5, 17, ICE_PATH_1F, 3

@@ -385,7 +385,6 @@ TohjoFallsJohtoSignText:
 	done
 
 Route27_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 25,  5, ROUTE_27_AERIAL_ACE_HOUSE, 1

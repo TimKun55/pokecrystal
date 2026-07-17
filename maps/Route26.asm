@@ -492,7 +492,6 @@ TohjoFallsKantoSignText:
 	done
 
 Route26_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  5, POKEMON_LEAGUE_GATE, 5

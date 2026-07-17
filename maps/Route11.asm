@@ -204,7 +204,6 @@ Route11SignText:
 	done
 
 Route11_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  9, DIGLETTS_CAVE, 1

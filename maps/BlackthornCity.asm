@@ -293,7 +293,6 @@ MadamItemsSignText:
 	done
 	
 BlackthornCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 22, 11, BLACKTHORN_GYM_1F, 1

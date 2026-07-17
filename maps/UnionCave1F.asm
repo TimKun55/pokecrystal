@@ -183,7 +183,6 @@ UnionCave1FUnusedSignText:
 	done
 
 UnionCave1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  3, UNION_CAVE_B1F, 3

@@ -73,7 +73,6 @@ RuinsOfAlphInnerChamberStatueText:
 	done
 
 RuinsOfAlphInnerChamber_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10, 13, RUINS_OF_ALPH_CAVE_ENTRANCE, 3

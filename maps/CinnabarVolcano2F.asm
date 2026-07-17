@@ -6,7 +6,6 @@ CinnabarVolcano2F_MapScripts:
 	def_callbacks
 	
 CinnabarVolcano2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5, 15, CINNABAR_VOLCANO_1F, 2

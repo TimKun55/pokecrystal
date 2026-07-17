@@ -10,7 +10,6 @@ WhirlIslandSETMScald:
 	itemball TM_SCALD
 
 WhirlIslandSE_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7, 13, ROUTE_41, 4

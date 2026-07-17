@@ -302,7 +302,6 @@ MagmortarText:
 	done
 
 SeafoamGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 17, SEAFOAM_ISLANDS_1F, 5

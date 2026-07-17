@@ -4,7 +4,6 @@ TinTower2F_MapScripts:
 	def_callbacks
 
 TinTower2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 14, TIN_TOWER_3F, 1

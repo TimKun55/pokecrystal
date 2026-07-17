@@ -16,7 +16,6 @@ UndergroundPathHiddenXSpAtk:
 	hiddenitem X_SP_ATK, EVENT_UNDERGROUND_PATH_HIDDEN_X_SP_ATK
 
 UndergroundPath_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  2, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 3

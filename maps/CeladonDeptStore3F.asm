@@ -92,7 +92,6 @@ CeladonDeptStore3FDirectoryText:
 	done
 
 CeladonDeptStore3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12,  0, CELADON_DEPT_STORE_2F, 1

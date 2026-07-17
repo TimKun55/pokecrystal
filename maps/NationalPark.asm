@@ -539,7 +539,6 @@ NationalParkTrainerTipsText:
 	done
 
 NationalPark_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 35, 18, ROUTE_36_NATIONAL_PARK_GATE, 1

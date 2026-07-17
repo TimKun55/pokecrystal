@@ -10,7 +10,6 @@ TinTower9FHPUp:
 	itemball HP_UP
 
 TinTower9F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 10,  3, TIN_TOWER_8F, 2

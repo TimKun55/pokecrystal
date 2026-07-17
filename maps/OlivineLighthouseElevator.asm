@@ -27,7 +27,6 @@ OlivineLighthouseElevatorData:
 	db -1 ; end
 
 OlivineLighthouseElevator_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  3, OLIVINE_LIGHTHOUSE_1F, -1

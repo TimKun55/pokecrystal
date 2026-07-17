@@ -74,7 +74,6 @@ Route1SignText:
 	done
 
 Route1_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9,  1, ROUTE_1_VIRIDIAN_GATE, 3

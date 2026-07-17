@@ -450,7 +450,6 @@ ExchangeThankYouText:
 	done
 
 BattleTower2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  1, BATTLE_TOWER_1F, 4

@@ -292,7 +292,6 @@ SailorMorePreparedText:
 	done
 
 VermilionSailorsHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, VERMILION_CITY, 10

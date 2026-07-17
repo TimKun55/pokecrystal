@@ -62,7 +62,6 @@ SupernerdHughAfterBattleText:
 	done
 
 MountMortar2FInside_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17, 33, MOUNT_MORTAR_1F_OUTSIDE, 4

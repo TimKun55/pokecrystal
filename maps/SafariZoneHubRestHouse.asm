@@ -50,7 +50,6 @@ SafariZoneHubRestHouseJournalText:
 	done
 
 SafariZoneHubRestHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, SAFARI_ZONE_HUB, 9

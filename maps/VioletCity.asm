@@ -297,7 +297,6 @@ EarlsPokemonAcademySignText:
 	done
 
 VioletCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 18, 23, VIOLET_GYM, 1

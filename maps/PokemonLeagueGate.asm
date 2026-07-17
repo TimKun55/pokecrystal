@@ -197,7 +197,6 @@ PokemonLeagueGateCooltrainerFText:
 	done
 
 PokemonLeagueGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 41, 14, ROUTE_22, 1

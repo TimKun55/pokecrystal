@@ -273,7 +273,6 @@ MountMoonB2FNoRoomInBagForFossilText:
 	done
 
 MountMoonB2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11, 31, MOUNT_MOON_B1F, 5

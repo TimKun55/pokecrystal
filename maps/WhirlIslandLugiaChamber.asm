@@ -108,7 +108,6 @@ LugiaStatueSignText:
 	done
 
 WhirlIslandLugiaChamber_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 21, WHIRL_ISLAND_B2F, 3

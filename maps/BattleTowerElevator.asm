@@ -43,7 +43,6 @@ MovementData_BattleTowerElevatorPlayerWalksIn:
 	step_end
 
 BattleTowerElevator_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  3, BATTLE_TOWER_HALLWAY, 1

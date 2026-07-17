@@ -195,7 +195,6 @@ MoltresText:
 	done
 	
 CinnabarMoltresNest_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7, 17, CINNABAR_VOLCANO_2F, 6

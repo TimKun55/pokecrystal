@@ -433,7 +433,6 @@ CeladonGameCornerPlayVoltorbFlipText:
 	done
 
 CeladonGameCorner_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 13, CELADON_CITY, 7

@@ -70,7 +70,6 @@ VermilionPokecenter1FBugCatcherText:
 	done
 
 VermilionPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, VERMILION_CITY, 2

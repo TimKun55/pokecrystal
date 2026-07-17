@@ -205,7 +205,6 @@ PokeDollVendingMachineText:
 	done
 
 GoldenrodDeptStoreRoof_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 13,  3, GOLDENROD_DEPT_STORE_6F, 3

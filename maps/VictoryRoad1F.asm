@@ -36,7 +36,6 @@ VictoryRoad1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_VICTORY_ROAD_1F_HIDDEN_MAX_POTION
 
 VictoryRoad1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 23, 33, ROUTE_23, 3

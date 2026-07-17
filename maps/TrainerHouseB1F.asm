@@ -501,7 +501,6 @@ TrainerHouseB1FOakAfterText:
 	done
 
 TrainerHouseB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9,  1, TRAINER_HOUSE_1F, 3

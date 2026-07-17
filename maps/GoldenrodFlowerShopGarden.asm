@@ -30,7 +30,6 @@ GoldenrodFlowerShopGardenTamatoTree:
 	fruittree FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_TAMATO
 
 GoldenrodFlowerShopGarden_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7, 12, GOLDENROD_FLOWER_SHOP, 3

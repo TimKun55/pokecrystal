@@ -23,7 +23,6 @@ SeafoamIslandsB3FHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_SEAFOAM_ISLANDS_B3F_HIDDEN_RARE_CANDY
 
 SeafoamIslandsB3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 31,  9, SEAFOAM_ISLANDS_B2F, 5

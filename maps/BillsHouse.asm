@@ -416,7 +416,6 @@ BillsHousePCText3:
 	done
 
 BillsHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  7, ROUTE_25, 1

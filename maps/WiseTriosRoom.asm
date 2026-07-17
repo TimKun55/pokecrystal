@@ -314,7 +314,6 @@ SageKojiAfterBattleFinalText:
 	done
 
 WiseTriosRoom_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  4, ECRUTEAK_CITY, 11

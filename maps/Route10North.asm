@@ -80,7 +80,6 @@ PowerPlantSignText:
 	done
 
 Route10North_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  1, ROCK_TUNNEL_1F, 1

@@ -79,7 +79,6 @@ RocketUndergroundTunnelPetrelSighText:
 	done
 
 RocketUndergroundTunnel_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3, 11, CELADON_ROCKET_HIDEOUT_B4F, 1

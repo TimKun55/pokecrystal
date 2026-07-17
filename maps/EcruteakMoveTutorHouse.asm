@@ -175,7 +175,6 @@ EcruteakMoveTutorNotEnough:
 	done
 
 EcruteakMoveTutorHouse_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, ECRUTEAK_CITY, 18

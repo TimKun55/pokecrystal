@@ -192,7 +192,6 @@ VioletPokecenter1FYoungsterText:
 	done
 
 VioletPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, VIOLET_CITY, 4

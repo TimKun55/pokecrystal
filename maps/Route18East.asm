@@ -70,7 +70,6 @@ Route18SignText:
 	done
 
 Route18East_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2,  6, ROUTE_18_EAST_WEST_GATE, 3

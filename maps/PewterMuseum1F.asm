@@ -587,7 +587,6 @@ PewterMuseum1FSpaceDeptText:
 	done
 
 PewterMuseum1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12, 19, PEWTER_CITY, 6

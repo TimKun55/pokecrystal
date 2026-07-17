@@ -10,7 +10,6 @@ TinTower7FMaxRevive:
 	itemball MAX_REVIVE
 
 TinTower7F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  9, TIN_TOWER_6F, 1

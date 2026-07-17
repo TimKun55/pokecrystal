@@ -23,7 +23,6 @@ RuinsOfAlphAerodactylWordRoomNoopScene:
 	end
 
 RuinsOfAlphAerodactylWordRoom_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9,  5, RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM, 3

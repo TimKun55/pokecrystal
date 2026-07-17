@@ -158,7 +158,6 @@ Route33SignText:
 	done
 
 Route33_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 12,  9, UNION_CAVE_1F, 3

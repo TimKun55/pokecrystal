@@ -482,7 +482,6 @@ CeladonRocketHideoutB4F_MapScripts:
 	def_callbacks
 
 CeladonRocketHideoutB4F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  6, ROCKET_UNDERGROUND_TUNNEL, 1

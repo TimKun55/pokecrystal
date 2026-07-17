@@ -192,7 +192,6 @@ FastShipArrivedVermilionText:
 	done
 
 FastShipCabins_SW_SSW_NW_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  0, FAST_SHIP_1F, 5

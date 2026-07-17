@@ -4,7 +4,6 @@ WhirlIslandCave_MapScripts:
 	def_callbacks
 
 WhirlIslandCave_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7,  5, WHIRL_ISLAND_B1F, 9

@@ -258,7 +258,6 @@ CeruleanLockedDoorText:
 	done
 
 CeruleanCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17, 13, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1

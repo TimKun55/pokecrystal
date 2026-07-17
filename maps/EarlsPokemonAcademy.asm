@@ -677,7 +677,6 @@ AcademyReceptionistTextNoStairs:
 	done
 
 EarlsPokemonAcademy_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 15, 15, VIOLET_CITY, 2

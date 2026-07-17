@@ -78,7 +78,6 @@ Route10Pokecenter1FCooltrainerFText:
 	done
 	
 Route10Pokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, ROUTE_10_NORTH, 2

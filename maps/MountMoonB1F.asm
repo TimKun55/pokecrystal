@@ -12,7 +12,6 @@ MountMoonB1FHiddenMoonStone:
 	hiddenitem MOON_STONE, EVENT_MOUNT_MOON_B1F_HIDDEN_MOON_STONE
 
 MountMoonB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  3, MOUNT_MOON_1F, 2 ; from MountMoonSquare

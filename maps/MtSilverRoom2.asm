@@ -21,7 +21,6 @@ MtSilverRoom2HiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_MT_SILVER_ROOM_2_HIDDEN_MAX_POTION
 
 MtSilverRoom2_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 17, 31, MT_SILVER_ROOM_1, 2

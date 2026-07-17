@@ -6,7 +6,6 @@ CeruleanCave1F_MapScripts:
 	def_callbacks
 
 CeruleanCave1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 19, CERULEAN_EMPTY_HOUSE_UNDERGROUND, 4

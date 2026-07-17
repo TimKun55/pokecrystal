@@ -370,7 +370,6 @@ SpeedEVSignText:
 	done
 
 EarlsPokemonAcademyB1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  7, 13, EARLS_POKEMON_ACADEMY, 3

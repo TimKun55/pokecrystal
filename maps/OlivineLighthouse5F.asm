@@ -85,7 +85,6 @@ BirdKeeperDenisAfterBattleText:
 	done
 
 OlivineLighthouse5F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  9, 13, OLIVINE_LIGHTHOUSE_6F, 1

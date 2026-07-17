@@ -499,7 +499,6 @@ MamoswineText:
 	done
 
 MahoganyGym_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8, 27, MAHOGANY_TOWN, 3

@@ -108,7 +108,6 @@ CianwoodPokecenter1FSuperNerdText:
 	done
 	
 CianwoodPokecenter1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  7, CIANWOOD_CITY, 3

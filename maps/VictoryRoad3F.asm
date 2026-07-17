@@ -242,7 +242,6 @@ VictoryRoadRivalVictoryText:
 	done
 
 VictoryRoad3F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5,  9, VICTORY_ROAD_2F,  1

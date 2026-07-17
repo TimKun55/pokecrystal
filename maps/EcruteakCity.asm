@@ -211,7 +211,6 @@ TinTowerSignText:
 	done
 
 EcruteakCity_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 35, 38, ROUTE_42_ECRUTEAK_GATE, 1

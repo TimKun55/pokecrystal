@@ -125,7 +125,6 @@ CinnabarIslandSignText:
 	done
 
 CinnabarIsland_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 11, 17, CINNABAR_POKECENTER_1F, 1

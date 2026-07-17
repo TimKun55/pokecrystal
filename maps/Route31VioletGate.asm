@@ -26,7 +26,6 @@ Route31VioletGateCooltrainerFText:
 	done
 
 Route31VioletGate_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  4, VIOLET_CITY,  9

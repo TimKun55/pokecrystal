@@ -359,7 +359,6 @@ CrystalTrophyText:
 	done
 
 PlayersHouse1F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  8,  7, NEW_BARK_TOWN, 2

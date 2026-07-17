@@ -84,7 +84,6 @@ SafariZoneWestTrainerTips2SignText:
 	done
 
 SafariZoneWest_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 22,  4, SAFARI_ZONE_NORTH, 8

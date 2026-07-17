@@ -824,7 +824,6 @@ RocketBaseB2FDeactivateTransmitterText:
 	done
 
 TeamRocketBaseB2F_MapEvents:
-	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3, 14, TEAM_ROCKET_BASE_B1F, 2
