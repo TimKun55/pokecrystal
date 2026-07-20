@@ -397,8 +397,8 @@ GoldenrodCity_MapEvents:
 	warp_event 17, 27, GOLDENROD_POKECENTER_1F, 1
 	warp_event 18, 27, GOLDENROD_POKECENTER_1F, 2
 	warp_event 11, 21, GOLDENROD_MOVE_TUTOR_HOUSE, 1
-;	warp_event 32, 15, GOLDENROD_ART_GALLERY, 1
-;	warp_event 33, 15, GOLDENROD_ART_GALLERY, 2
+	warp_event 32, 15, GOLDENROD_ART_GALLERY, 1
+	warp_event 33, 15, GOLDENROD_ART_GALLERY, 2
 
 	def_coord_events
 

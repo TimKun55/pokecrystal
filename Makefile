@@ -342,6 +342,8 @@ gfx/sprites/big_onix.2bpp: tools/gfx += --remove-whitespace --remove-xflip
 gfx/battle/lyra_back.2bpp: RGBGFXFLAGS += --columns
 
 gfx/paintings/%.2bpp: RGBGFXFLAGS += --columns
+gfx/paintings/%.2bpp: gfx/paintings/%.png gfx/paintings/%.gbcpal
+	$(RGBGFX) $(RGBGFXFLAGS) --colors gbc:$(word 2,$^) -o $@ $<
 
 gfx/type_chart/bg.2bpp: tools/gfx += --remove-duplicates --remove-xflip --remove-yflip
 gfx/type_chart/bg0.2bpp: gfx/type_chart/bg.2bpp.vram1p gfx/type_chart/bg.2bpp.vram0p ; cat $^ > $@

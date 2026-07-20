@@ -331,9 +331,10 @@ DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
 	const REVIVE_HELIX_FOSSIL ; 3
 
 ; paintingpic arguments
-; PaintingPicPointers indexes (see data/events/paintings/pic_pointers.asm)
-; PaintingPalettes indexes (see data/events/paintings/palettes.asm)
+; PaintingPicPointers indexes (see data/paintings/pic_pointers.asm)
+; PaintingPalettes indexes (see data/paintings/palettes.asm)
 	const_def
+	const NO_PAINTING
 	const HO_OH_PAINTING
 	const LUGIA_PAINTING
 	const BELL_TOWER_PAINTING
@@ -346,4 +347,27 @@ DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
 	const OMANYTE_PUZZLE
 	const AERODACTYL_PUZZLE
 	const HO_OH_PUZZLE
+	const SPEAROW_PAINTING
+	const FEAROW_PAINTING
+	const LICKITUNG_PAINTING
+	const GOLDEEN_PAINTING
+	const SEAKING_PAINTING
+	const PICHU_PAINTING
+	const CLEFFA_PAINTING
+	const IGGLYBUFF_PAINTING
+	const AIPOM_PAINTING
+	const STANTLER_PAINTING
+	const SMOOCHUM_PAINTING
+	const ELEKID_PAINTING
+	const MAGBY_PAINTING
+	const LICKILICKY_PAINTING
+	const LEAFEON_PAINTING
+	const GLACEON_PAINTING
+	const AMBIPOM_PAINTING
+	const KLEAVOR_PAINTING
+	const URSALUNA_PAINTING
+	const WYRDEER_PAINTING
+	const ANNIHILAPE_PAINTING
+	const FARIGIRAF_PAINTING
+	const DUDUNSPARCE_PAINTING
 DEF NUM_PAINTINGS EQU const_value

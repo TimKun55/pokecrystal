@@ -622,6 +622,9 @@ ENDM
 	map_attributes GoldenrodDeptStoreRoof, GOLDENROD_DEPT_STORE_ROOF, $24
 	map_attributes GoldenrodGameCorner, GOLDENROD_GAME_CORNER, $00
 	map_attributes GoldenrodPokecenter1F, GOLDENROD_POKECENTER_1F, $00
+	map_attributes GoldenrodArtGallery, GOLDENROD_ART_GALLERY, $00
+	map_attributes GoldenrodArtGalleryEastWing, GOLDENROD_ART_GALLERY_EAST_WING, $00
+	map_attributes GoldenrodArtGalleryWestWing, GOLDENROD_ART_GALLERY_WEST_WING, $00
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00
 	map_attributes Route34IlexForestGate, ROUTE_34_ILEX_FOREST_GATE, $00
 	map_attributes DayCare, DAY_CARE, $00

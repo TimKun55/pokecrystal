@@ -568,6 +568,9 @@ Goldenrod_Map_Names:
 	dw Goldenrod_Map_Name27 ; map_const GOLDENROD_HOME_DECOR_STORE_4
 	dw Goldenrod_Map_Name28 ; map_const GOLDENROD_FLOWER_SHOP_GARDEN
 	dw Goldenrod_Map_Name29 ; map_const GOLDENROD_MOVE_TUTOR_HOUSE
+	dw Goldenrod_Map_Name30 ; map_const GOLDENROD_ART_GALLERY
+	dw Goldenrod_Map_Name31 ; map_const GOLDENROD_ART_GALLERY_EAST_WING
+	dw Goldenrod_Map_Name32 ; map_const GOLDENROD_ART_GALLERY_WEST_WING
 	assert_table_length NUM_GOLDENROD_MAPS
 
 Goldenrod_Map_Name1:  db "Route 34@"
@@ -599,6 +602,9 @@ Goldenrod_Map_Name26: db "Gold.DecorStore 3@"
 Goldenrod_Map_Name27: db "Gold.DecorStore 4@"
 Goldenrod_Map_Name28: db "Flower Shop Garden@"
 Goldenrod_Map_Name29: db "Goldenrod Tutor@"
+Goldenrod_Map_Name30: db "Art Gallery@"
+Goldenrod_Map_Name31: db "Art Gallery-East@"
+Goldenrod_Map_Name32: db "Art Gallery-West@"
 
 Vermilion_Map_Names:
 	table_width 2

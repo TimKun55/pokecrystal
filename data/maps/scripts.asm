@@ -573,4 +573,11 @@ INCLUDE "maps/EusinesHouse.asm"
 INCLUDE "maps/OaksLab.asm"
 
 
+SECTION "Map Scripts 31", ROMX
+
+INCLUDE "maps/GoldenrodArtGallery.asm"
+INCLUDE "maps/GoldenrodArtGalleryEastWing.asm"
+INCLUDE "maps/GoldenrodArtGalleryWestWing.asm"
+
+
 ENDSECTION

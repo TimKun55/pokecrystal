@@ -19,7 +19,7 @@ INCLUDE "data/trainers/pic_pointers.asm"
 
 SECTION "Painting Pic Pointers", ROMX
 
-INCLUDE "data/events/paintings/pic_pointers.asm"
+INCLUDE "data/paintings/pic_pointers.asm"
 
 
 SECTION "Pics 1", ROMX
@@ -751,8 +751,9 @@ MagnezoneFrontpic:        INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
 SunfloraFrontpic:         INCBIN "gfx/pokemon/sunflora/front.animated.2bpp.lz"
 SunfloraBackpic:          INCBIN "gfx/pokemon/sunflora/back.2bpp.lz"
 
-SECTION "Painting Pics", ROMX
+SECTION "Painting Pics 1", ROMX
 
+NoPaintingPic:        INCBIN "gfx/paintings/no_painting.2bpp.lz"
 HoOhPaintingPic:      INCBIN "gfx/paintings/ho_oh_painting.2bpp.lz"
 LugiaPaintingPic:     INCBIN "gfx/paintings/lugia_painting.2bpp.lz"
 BellTowerPaintingPic: INCBIN "gfx/paintings/bell_tower_painting.2bpp.lz"
@@ -765,3 +766,29 @@ KabutoPuzzlePic:      INCBIN "gfx/paintings/kabuto_puzzle.2bpp.lz"
 OmanytePuzzlePic:     INCBIN "gfx/paintings/omanyte_puzzle.2bpp.lz"
 AerodactylPuzzlePic:  INCBIN "gfx/paintings/aerodactyl_puzzle.2bpp.lz"
 HoOhPuzzlePic:        INCBIN "gfx/paintings/ho_oh_puzzle.2bpp.lz"
+SpearowPaintingPic:   INCBIN "gfx/paintings/spearow.2bpp.lz"
+FearowPaintingPic:    INCBIN "gfx/paintings/fearow.2bpp.lz"
+LickitungPaintingPic: INCBIN "gfx/paintings/lickitung.2bpp.lz"
+GoldeenPaintingPic:   INCBIN "gfx/paintings/goldeen.2bpp.lz"
+SeakingPaintingPic:   INCBIN "gfx/paintings/seaking.2bpp.lz"
+PichuPaintingPic:     INCBIN "gfx/paintings/pichu.2bpp.lz"
+CleffaPaintingPic:    INCBIN "gfx/paintings/cleffa.2bpp.lz"
+IgglybuffPaintingPic: INCBIN "gfx/paintings/igglybuff.2bpp.lz"
+AipomPaintingPic:     INCBIN "gfx/paintings/aipom.2bpp.lz"
+StantlerPaintingPic:  INCBIN "gfx/paintings/stantler.2bpp.lz"
+SmoochumPaintingPic:  INCBIN "gfx/paintings/smoochum.2bpp.lz"
+ElekidPaintingPic:    INCBIN "gfx/paintings/elekid.2bpp.lz"
+MagbyPaintingPic:     INCBIN "gfx/paintings/magby.2bpp.lz"
+
+SECTION "Painting Pics 2", ROMX
+
+LickilickyPaintingPic:  INCBIN "gfx/paintings/lickilicky.2bpp.lz"
+LeafeonPaintingPic:     INCBIN "gfx/paintings/leafeon.2bpp.lz"
+GlaceonPaintingPic:     INCBIN "gfx/paintings/glaceon.2bpp.lz"
+AmbipomPaintingPic:     INCBIN "gfx/paintings/ambipom.2bpp.lz"
+KleavorPaintingPic:     INCBIN "gfx/paintings/kleavor.2bpp.lz"
+UrsalunaPaintingPic:    INCBIN "gfx/paintings/ursaluna.2bpp.lz"
+WyrdeerPaintingPic:     INCBIN "gfx/paintings/wyrdeer.2bpp.lz"
+AnnihilapePaintingPic:  INCBIN "gfx/paintings/annihilape.2bpp.lz"
+FarigirafPaintingPic:   INCBIN "gfx/paintings/farigiraf.2bpp.lz"
+DudunsparcePaintingPic: INCBIN "gfx/paintings/dudunsparce.2bpp.lz"

@@ -19,8 +19,6 @@ INCLUDE "engine/events/poisonstep_pals.asm"
 
 SECTION "bank2", ROMX
 
-INCLUDE "engine/math/sine.asm"
-INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
 
 
@@ -466,6 +464,16 @@ SECTION "bank38", ROMX
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
+
+
+SECTION "Predef", ROMX
+
+INCLUDE "engine/predef.asm"
+
+
+SECTION "Sine", ROMX
+
+INCLUDE "engine/math/sine.asm"
 
 
 SECTION "bank39", ROMX

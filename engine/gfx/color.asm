@@ -1319,7 +1319,7 @@ INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"
 
-INCLUDE "data/events/paintings/palettes.asm"
+INCLUDE "data/paintings/palettes.asm"
 
 ItemIconPalettes:
 INCLUDE "gfx/items/items.pal"

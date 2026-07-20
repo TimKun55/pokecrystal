@@ -1112,4 +1112,13 @@ MadamItemsHouse_Blocks:
 SafariZoneFuchsiaGate_Blocks:
 	INCBIN "maps/SafariZoneFuchsiaGate.ablk"
 
+GoldenrodArtGallery_Blocks:
+	INCBIN "maps/GoldenrodArtGallery.ablk"
+
+GoldenrodArtGalleryEastWing_Blocks:
+	INCBIN "maps/GoldenrodArtGalleryEastWing.ablk"
+
+GoldenrodArtGalleryWestWing_Blocks:
+	INCBIN "maps/GoldenrodArtGalleryWestWing.ablk"
+
 ENDSECTION
