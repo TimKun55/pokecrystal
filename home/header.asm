@@ -60,7 +60,7 @@ SECTION "vblank", ROM0[$0040]
 	jp VBlank
 
 SECTION "lcd", ROM0[$0048]
-	jr hLCDInterruptFunction
+	jp hLCDInterruptFunction
 
 SECTION "timer", ROM0[$0050]
 	jp MobileTimer
