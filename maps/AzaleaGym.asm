@@ -24,15 +24,15 @@ AzaleaGymNoop2Scene:
 AzaleaGymRedBlueRopeActivationCallback:
 	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
 	iffalse .endcallback
-	changeblock  4,  6, $48 ; deactivated blue button
-	changeblock 10,  6, $44 ; deactivated blue button
-	changeblock 10, 14, $44 ; deactivated blue button
+	changeblock  4,  6, $48 ; deactivated blue lever
+	changeblock 10,  6, $44 ; deactivated blue lever
+	changeblock 10, 14, $f3 ; deactivated blue lever
 	changeblock  8, 10, $40 ; deactivated blue rope
 	changeblock 10, 10, $41 ; deactivated blue rope
 	changeblock 12, 10, $42 ; deactivated blue rope
 	checkevent EVENT_AZALEA_GYM_RED_LEVER
 	iffalse .endcallback
-	changeblock  2, 14, $46 ; deactivated red button
+	changeblock  2, 14, $46 ; deactivated red lever
 	changeblock  4,  8, $3d ; deactivated red rope
 	changeblock  6,  8, $3e ; deactivated red rope
 	changeblock  8,  8, $3f ; deactivated red rope
@@ -202,19 +202,19 @@ AzaleaGymStatue:
 .LyraToo
 	jumpstd GymStatue3Script
 
-AzaleaGymBlueButton:
+AzaleaGymBlueLever:
 	opentext
 	checkevent EVENT_AZALEA_GYM_BLUE_LEVER
 	iftrue .BlueReset
-	writetext AzaleaGymBlueButtonText
+	writetext AzaleaGymBlueLeverText
 	waitbutton
 	closetext
 	setevent EVENT_AZALEA_GYM_BLUE_LEVER	
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  4,  6, $48 ; deactivated blue button
-	changeblock 10,  6, $44 ; deactivated blue button
-	changeblock 10, 14, $44 ; deactivated blue button
+	changeblock  4,  6, $48 ; deactivated blue lever
+	changeblock 10,  6, $44 ; deactivated blue lever
+	changeblock 10, 14, $f3 ; deactivated blue lever
 	changeblock  8, 10, $40 ; deactivated blue rope
 	changeblock 10, 10, $41 ; deactivated blue rope
 	changeblock 12, 10, $42 ; deactivated blue rope
@@ -222,32 +222,32 @@ AzaleaGymBlueButton:
 	end
 
 .BlueReset:
-	writetext AzaleaGymBlueButtonText
+	writetext AzaleaGymBlueLeverText
 	waitbutton
 	closetext
 	clearevent EVENT_AZALEA_GYM_BLUE_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  4,  6, $47 ; activated blue button
-	changeblock 10,  6, $43 ; activated blue button
-	changeblock 10, 14, $43 ; activated blue button
+	changeblock  4,  6, $47 ; activated blue lever
+	changeblock 10,  6, $43 ; activated blue lever
+	changeblock 10, 14, $f2 ; activated blue lever
 	changeblock  8, 10, $37 ; activated blue rope
 	changeblock 10, 10, $38 ; activated blue rope
 	changeblock 12, 10, $39 ; activated blue rope
 	reloadmappart
 	end
 
-AzaleaGymRedButton:
+AzaleaGymRedLever:
 	opentext
 	checkevent EVENT_AZALEA_GYM_RED_LEVER
 	iftrue .RedReset
-	writetext AzaleaGymRedButtonText
+	writetext AzaleaGymRedLeverText
 	waitbutton
 	closetext
 	setevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  2, 14, $46 ; deactivated red button
+	changeblock  2, 14, $46 ; deactivated red lever
 	changeblock  4,  8, $3d ; deactivated red rope
 	changeblock  6,  8, $3e ; deactivated red rope
 	changeblock  8,  8, $3f ; deactivated red rope
@@ -255,13 +255,13 @@ AzaleaGymRedButton:
 	end
 
 .RedReset:
-	writetext AzaleaGymRedButtonText
+	writetext AzaleaGymRedLeverText
 	waitbutton
 	closetext
 	clearevent EVENT_AZALEA_GYM_RED_LEVER
 	pause 15
 	playsound SFX_STRENGTH
-	changeblock  2, 14, $45 ; activated red button
+	changeblock  2, 14, $45 ; activated red lever
 	changeblock  4,  8, $33 ; activated red rope
 	changeblock  6,  8, $34 ; activated red rope
 	changeblock  8,  8, $35 ; activated red rope
@@ -978,18 +978,18 @@ ScytherText:
 	text "Scyth! Scytherrr!"
 	done
 
-AzaleaGymBlueButtonText:
-	text "It's a blue button."
+AzaleaGymBlueLeverText:
+	text "It's a blue lever."
 	
 	para "<PLAYER> pushed"
-	line "the button."
+	line "the lever."
 	done
 
-AzaleaGymRedButtonText:
-	text "It's a red button."
+AzaleaGymRedLeverText:
+	text "It's a red lever."
 	
 	para "<PLAYER> pushed"
-	line "the button."
+	line "the lever."
 	done
 
 AzaleaGym_MapEvents:
@@ -1016,10 +1016,10 @@ AzaleaGym_MapEvents:
 	def_bg_events
 	bg_event  7, 29, BGEVENT_READ, AzaleaGymStatue
 	bg_event 10, 29, BGEVENT_READ, AzaleaGymStatue
-	bg_event  5,  6, BGEVENT_READ, AzaleaGymBlueButton
-	bg_event 10,  7, BGEVENT_READ, AzaleaGymBlueButton
-	bg_event 10, 15, BGEVENT_READ, AzaleaGymBlueButton
-	bg_event  3, 14, BGEVENT_READ, AzaleaGymRedButton
+	bg_event  5,  6, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event 10,  7, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event 10, 15, BGEVENT_READ, AzaleaGymBlueLever
+	bg_event  3, 14, BGEVENT_READ, AzaleaGymRedLever
 
 	def_object_events
 	object_event  8,  4, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1

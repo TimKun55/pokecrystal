@@ -237,3 +237,8 @@
 	tilecoll ICE, ICE, ICE, ICE ; ec
 	tilecoll ICE, ICE, ICE, ICE ; ed
 	tilecoll ICE, ICE, ICE, ICE ; ee
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ef
+	tilecoll WALL, FLOOR, WALL, FLOOR ; f0
+	tilecoll FLOOR, WALL, FLOOR, WALL ; f1
+	tilecoll FLOOR, WALL, WALL, WALL ; f2
+	tilecoll FLOOR, WALL, WALL, WALL ; f3
