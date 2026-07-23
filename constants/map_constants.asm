@@ -169,7 +169,7 @@ ENDM
 
 	newgroup ECRUTEAK                                             ;  4
 	map_const ROUTE_35,                                    10, 18 ;  1
-	map_const ROUTE_36,                                    30,  9 ;  2
+	map_const ROUTE_36,                                    31,  9 ;  2
 	map_const ROUTE_37,                                    10,  9 ;  3
 	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  4
 	map_const WISE_TRIOS_ROOM,                              4,  4 ;  5
@@ -249,7 +249,7 @@ ENDM
 	map_const KURTS_HOUSE,                                  8,  4 ;  4
 	map_const AZALEA_GYM,                                   9, 16 ;  5
 	map_const ROUTE_33,                                    10, 10 ;  6
-	map_const AZALEA_TOWN,                                 20, 10 ;  7
+	map_const AZALEA_TOWN,                                 21, 10 ;  7
 	map_const AZALEA_MOVE_TUTOR_HOUSE,                      4,  4 ;  8
 	endgroup
 
