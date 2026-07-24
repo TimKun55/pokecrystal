@@ -177,8 +177,8 @@ OWCutJumptable:
 	jumptable .dw, wJumptableIndex
 
 .dw
-	dw Cut_SpawnAnimateTree
 	dw Cut_SpawnAnimateLeaves
+	dw Cut_SpawnAnimateTree
 	dw Cut_StartWaiting
 	dw Cut_WaitAnimSFX
 
@@ -194,7 +194,7 @@ Cut_SpawnAnimateTree:
 ; Cut_StartWaiting
 	ld hl, wJumptableIndex
 	inc [hl]
-	inc [hl]
+;	inc [hl]
 	ret
 
 Cut_SpawnAnimateLeaves:
