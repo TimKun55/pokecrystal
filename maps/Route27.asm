@@ -387,7 +387,7 @@ TohjoFallsJohtoSignText:
 Route27_MapEvents:
 
 	def_warp_events
-	warp_event 25,  5, ROUTE_27_AERIAL_ACE_HOUSE, 1
+	warp_event 25,  6, ROUTE_27_AERIAL_ACE_HOUSE, 1
 	warp_event 72, 11, TOHJO_FALLS, 1
 
 	def_coord_events

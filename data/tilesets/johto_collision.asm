@@ -130,8 +130,8 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 81
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 82
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 83
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 84
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 85
+	tilecoll WALL, WALL, WALL, WALL ; 84
+	tilecoll WALL, WALL, WALL, WALL ; 85
 	tilecoll WALL, WALL, WALL, WALL ; 86
 	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 88
@@ -156,7 +156,7 @@
 	tilecoll PUDDLE, PUDDLE, PUDDLE, HEADBUTT_TREE ; 9b
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 9c
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, FLOOR, FLOOR ; 9d
-	tilecoll WALL, WALL, FLOOR, WALL ; 9e
+	tilecoll WALL, WALL, WALL, WALL ; 9e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9f
 	tilecoll WALL, WALL, WALL, WALL ; a0
 	tilecoll WALL, WALL, WALL, WALL ; a1
