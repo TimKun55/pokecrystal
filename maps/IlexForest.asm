@@ -808,9 +808,9 @@ Text_CharcoalMasterIntro:
 Text_CharcoalMasterOutro:
 	ntag " Kiln Boss "
 	text "That's the Cut HM."
-	line "Teach that to a"
-	cont "#mon to clear"
-	cont "small trees."
+	line "With it, you can"
+	cont "have a #mon"
+	cont "clear small trees."
 
 	para "Of course, you"
 	line "have to have the"
