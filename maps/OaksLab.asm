@@ -187,7 +187,7 @@ OakYesKantoBadgesText:
 	para "I imagine that"
 	line "it's hard, but the"
 	cont "experience is sure"
-	line "to help you."
+	cont "to help you."
 
 	para "Come see me when"
 	line "you get them all."
