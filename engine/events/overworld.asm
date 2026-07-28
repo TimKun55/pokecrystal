@@ -773,9 +773,6 @@ FlyFunction:
 	callasm HideSprites
 	special UpdateTimePals
 
-	callasm PrepareOverworldMove
-	scall FieldMovePokepicScript
-
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
