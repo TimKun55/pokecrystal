@@ -50,4 +50,7 @@ MapSetupCommands:
 	add_mapsetup ApplyMapPalettes ; 2b
 	add_mapsetup EnableTextAcceleration ; 2c
 	add_mapsetup InitMapNameSign ; 2d
-	add_mapsetup FadeOutPalettes ; 31
+	add_mapsetup FadeOutPalettes ; 2f
+	add_mapsetup DisableDynPalUpdates ; 30
+	add_mapsetup EnableDynPalUpdates ; 31
+	add_mapsetup EnableDynPalUpdatesNoApply ; 32

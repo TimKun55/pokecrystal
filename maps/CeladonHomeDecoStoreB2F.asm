@@ -265,7 +265,7 @@ CeladonHomeDecoStoreB2F_MapEvents:
 	def_object_events
 	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FClerk1Script, -1
 	object_event  3,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FYoungsterScript, -1
-	object_event  0,  2, SPRITE_FAMICOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FNESScript, -1
-	object_event  0,  4, SPRITE_SNES, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FSNESScript, -1
+	object_event  0,  2, SPRITE_FAMICOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FNESScript, -1
+	object_event  0,  4, SPRITE_SNES, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FSNESScript, -1
 	object_event  4,  4, SPRITE_N64, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FN64Script, -1
 	object_event  8,  4, SPRITE_VIRTUAL_BOY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonHomeDecoStoreB2FVirtualBoyScript, -1

@@ -59,4 +59,4 @@ RedsHouse2F_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, RedsHouse2FPCScript
 
 	def_object_events
-	object_event  2,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RedsCrystalTrophyScript, EVENT_REDS_HOUSE_2F_TROPHY
+	object_event  2,  1, SPRITE_TROPHY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, RedsCrystalTrophyScript, EVENT_REDS_HOUSE_2F_TROPHY

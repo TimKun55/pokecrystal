@@ -32,7 +32,7 @@ DaisyScript:
 	special LoadMapPalettes
 	playmusic MUSIC_HEAL
 	pause 60
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	special RestartMapMusic
 	opentext
 	writetext GroomedMonLooksContentText
