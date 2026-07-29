@@ -54,7 +54,7 @@ OlivineLighthouseJasmine:
 	special FadeOutPalettes
 	special LoadMapPalettes
 	pause 10
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	opentext
 	writetext AmphyPaluPaluluText
 	waitbutton
@@ -113,10 +113,10 @@ OlivineLighthouseAmphy:
 	closetext
 	special FadeOutPalettes
 	special LoadMapPalettes
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	special FadeOutPalettes
 	special LoadMapPalettes
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	end
 
 OlivineLighthouse6FElevatorSailorScript:
