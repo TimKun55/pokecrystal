@@ -7,7 +7,7 @@
 	db BUG, POISON ; type
 	db 255 ; catch rate
 	db 52 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db PECHA_BERRY, RED_APRICORN ; items
 	db GENDER_F50 ; gender ratio
 	db 1 ; step cycles to hatch
 	INCBIN "gfx/pokemon/weedle/front.dimensions"

@@ -7,7 +7,7 @@
 	db WATER, WATER ; type
 	db 45 ; catch rate
 	db 66 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, ORAN_BERRY ; items
 	db GENDER_F12_5 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/totodile/front.dimensions"

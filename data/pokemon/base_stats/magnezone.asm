@@ -7,7 +7,7 @@
 	db ELECTRIC, STEEL ; type
 	db 30 ; catch rate
 	db 211 ; base exp
-	db NO_ITEM, METAL_COAT ; items
+	db MAGNET, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magnezone/front.dimensions"

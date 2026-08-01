@@ -7,7 +7,7 @@
 	db GRASS, GRASS ; type
 	db 45 ; catch rate
 	db 208 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, SITRUS_BERRY ; items
 	db GENDER_F12_5 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/meganium/front.dimensions"

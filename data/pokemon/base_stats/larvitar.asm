@@ -7,7 +7,7 @@
 	db ROCK, GROUND ; type
 	db 60 ; catch rate
 	db 67 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, KELPSY_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 4 ; step cycles to hatch
 	INCBIN "gfx/pokemon/larvitar/front.dimensions"

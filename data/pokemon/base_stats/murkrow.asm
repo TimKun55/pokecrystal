@@ -7,7 +7,7 @@
 	db DARK, FLYING ; type
 	db 30 ; catch rate
 	db 107 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, NUGGET ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/murkrow/front.dimensions"

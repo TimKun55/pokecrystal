@@ -7,7 +7,7 @@
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
 	db 172 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, SHARP_BEAK ; items
 	db GENDER_F50 ; gender ratio
 	db 1 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pidgeot/front.dimensions"

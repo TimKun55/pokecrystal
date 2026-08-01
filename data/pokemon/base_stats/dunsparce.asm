@@ -7,7 +7,7 @@
 	db NORMAL, DRAGON ; type
 	db 190 ; catch rate
 	db 75 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, DRAGON_FANG ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dunsparce/front.dimensions"

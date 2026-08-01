@@ -7,7 +7,7 @@
 	db POISON, DARK ; type
 	db 75 ; catch rate
 	db 157 ; base exp
-	db NO_ITEM, NUGGET ; items
+	db NUGGET, BIG_NUGGET ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/muk/front.dimensions"

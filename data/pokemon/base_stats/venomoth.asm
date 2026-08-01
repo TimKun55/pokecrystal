@@ -7,7 +7,7 @@
 	db BUG, PSYCHIC_TYPE ; type
 	db 75 ; catch rate
 	db 138 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db SILVERPOWDER, BRIGHTPOWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/venomoth/front.dimensions"

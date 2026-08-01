@@ -7,7 +7,7 @@
 	db ICE, FLYING ; type
 	db 45 ; catch rate
 	db 183 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, RARE_CANDY ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/delibird/front.dimensions"

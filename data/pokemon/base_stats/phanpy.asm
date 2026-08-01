@@ -7,7 +7,7 @@
 	db GROUND, GROUND ; type
 	db 120 ; catch rate
 	db 124 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db ORAN_BERRY, BLK_APRICORN  ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/phanpy/front.dimensions"

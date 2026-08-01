@@ -7,7 +7,7 @@
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
 	db 177 ; base exp
-	db NO_ITEM, EVERSTONE ; items
+	db HARD_STONE, EVERSTONE ; items
 	db GENDER_F50 ; gender ratio
 	db 1 ; step cycles to hatch
 	INCBIN "gfx/pokemon/golem/front.dimensions"

@@ -7,7 +7,7 @@
 	db ICE, GROUND ; type
 	db 50 ; catch rate
 	db 239 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db ASPEAR_BERRY, SITRUS_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mamoswine/front.dimensions"

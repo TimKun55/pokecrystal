@@ -7,7 +7,7 @@
 	db FIRE, FLYING ; type
 	db 3 ; catch rate
 	db 217 ; base exp
-	db BRIGHTPOWDER, BRIGHTPOWDER ; items
+	db NO_ITEM, LUM_BERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 80 ; step cycles to hatch
 	INCBIN "gfx/pokemon/moltres/front.dimensions"

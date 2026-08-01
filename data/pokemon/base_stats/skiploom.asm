@@ -7,7 +7,7 @@
 	db GRASS, FLYING ; type
 	db 120 ; catch rate
 	db 136 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, MIRACLE_SEED ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/skiploom/front.dimensions"

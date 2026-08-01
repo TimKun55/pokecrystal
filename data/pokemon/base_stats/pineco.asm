@@ -7,7 +7,7 @@
 	db BUG, BUG ; type
 	db 190 ; catch rate
 	db 60 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, QUALOT_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 2 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pineco/front.dimensions"
