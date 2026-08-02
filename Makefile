@@ -72,10 +72,11 @@ crystal11_vc:    pokecrystal11.patch
 
 clean: tidy
 	find gfx \
-	     \( -name "*.[12]bpp" \
-	        -o -name "*.lz" \
-	        -o -name "*.gbcpal" \
-	        -o -name "*.sgb.tilemap" \) \
+	     \( -iname "*.[12]bpp" \
+	        -o -iname "*.lz" \
+	        -o -iname "*.gbcpal" \
+	        -o -iname "*.dimensions" \
+	        -o -iname "*.sgb.tilemap" \) \
 	     -delete
 	find gfx/pokemon -mindepth 1 \
 	     ! -path "gfx/pokemon/unown/*" \
