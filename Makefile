@@ -293,6 +293,9 @@ gfx/slots/slots_3.2bpp: tools/gfx += --interleave --png=$< --remove-duplicates -
 gfx/card_flip/card_flip_1.2bpp: tools/gfx += --trim-whitespace
 gfx/card_flip/card_flip_2.2bpp: tools/gfx += --remove-whitespace
 
+gfx/battle/substitute-back.2bpp: RGBGFXFLAGS += --columns
+gfx/battle/substitute-front.2bpp: RGBGFXFLAGS += --columns
+
 gfx/battle_anims/angels.2bpp: tools/gfx += --trim-whitespace
 gfx/battle_anims/beam.2bpp: tools/gfx += --remove-xflip --remove-yflip --remove-whitespace
 gfx/battle_anims/bubble.2bpp: tools/gfx += --trim-whitespace

@@ -21,6 +21,15 @@ UnusedEggPic::
 INCBIN "gfx/pokemon/egg/unused_front.2bpp.lz"
 
 
+SECTION "Battle Graphics", ROMX
+
+SubstituteFrontpic::
+INCBIN "gfx/battle/substitute-front.2bpp.lz"
+
+SubstituteBackpic::
+INCBIN "gfx/battle/substitute-back.2bpp.lz"
+
+
 SECTION "The End", ROMX
 
 TheEndGFX::
