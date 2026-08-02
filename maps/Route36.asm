@@ -48,12 +48,12 @@ Route36TileCallback:
 	endcallback
 
 .NarrowRoad
-	changeblock 32,  6, $32 ; top 2 and bottom right headbutt tree
-	changeblock 32,  8, $3d ; top right headbutt tree
-	changeblock 34,  8, $31 ; top 2 headbutt trees
+	changeblock 34,  6, $35 ; 4 headbutt trees
+	changeblock 34,  8, $3d ; top right headbutt tree
 	changeblock 36,  8, $31 ; top 2 headbutt trees
 	changeblock 38,  8, $31 ; top 2 headbutt trees
-	changeblock 34, 10, $34 ; left 3 headbutt trees
+	changeblock 40,  8, $31 ; top 2 headbutt trees
+	changeblock 36, 10, $34 ; left 2 headbutt trees
 	endcallback
 
 Route36SuicuneScript:
