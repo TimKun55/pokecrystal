@@ -477,6 +477,7 @@ MagmarEggMoves:
 PinsirEggMoves:
 	db FURY_STRIKES
 	db REVERSAL
+	db FALSE_SWIPE
 	db -1 ; end
 
 LaprasEggMoves:
@@ -739,6 +740,7 @@ HeracrossEggMoves:
 	db BIDE
 	db PURSUIT
 	db ROCK_BLAST
+	db FALSE_SWIPE
 	db -1 ; end
 
 DelibirdEggMoves:

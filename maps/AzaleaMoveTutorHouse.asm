@@ -1,6 +1,7 @@
 	object_const_def
 	const AZALEAMOVETUTORHOUSE_HIKER
 	const AZALEAMOVETUTORHOUSE_BUG_MANIAC
+	const AZALEAMOVETUTORHOUSE_GRAMPS
 
 AzaleaMoveTutorHouse_MapScripts:
 	def_scene_scripts
@@ -59,6 +60,34 @@ AzaleaMoveTutor2Script:
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
 	writetextend AzaleaMoveTutorSilverWindTaught
+
+.NotEnough
+	writetextend AzaleaMoveTutorNotEnough
+
+AzaleaMoveTutor3Script:
+	faceplayer
+	opentext
+	writetext AzaleaMoveTutorFalseSwipeText
+	waitbutton
+	special PlaceMoneyTopRight
+	writetext AzaleaMoveTutorFalseSwipeAskTeachText
+	yesorno
+	iffalse .TutorRefused
+	checkmoney YOUR_MONEY, 1000
+	ifequal HAVE_LESS, .NotEnough
+	setval FALSE_SWIPE
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+.TutorRefused
+	writetextend AzaleaMoveTutorRefused
+	
+.TeachMove
+	writetext AzaleaMoveTutorFalseSwipePayment
+	takemoney YOUR_MONEY, 1000
+	waitbutton
+	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
+	writetextend AzaleaMoveTutorFalseSwipeTaught
 
 .NotEnough
 	writetextend AzaleaMoveTutorNotEnough
@@ -132,6 +161,33 @@ AzaleaMoveTutorSilverWindTaught:
 	line "develop it."
 	done
 
+AzaleaMoveTutorFalseSwipeText:
+	ntag " Move Tutor "
+	text "If you're catching"
+	line "lots of #mon,"
+	cont "False Swipe is the"
+	cont "move for you!"
+	done
+
+AzaleaMoveTutorFalseSwipeAskTeachText:
+	ntag " Move Tutor "
+	text "Shall I teach it"
+	line "to your #mon"
+	cont "for ¥1,000?"
+	done
+
+AzaleaMoveTutorFalseSwipePayment:
+	text "<PLAYER> gave the"
+	line "Tutor ¥1,000."
+	done
+
+AzaleaMoveTutorFalseSwipeTaught:
+	ntag " Move Tutor "
+	text "It will always"
+	line "leave the target"
+	cont "with 1 HP!"
+	done
+
 AzaleaMoveTutorRefused:
 	ntag " Move Tutor "
 	text "Stop by again"
@@ -158,3 +214,4 @@ AzaleaMoveTutorHouse_MapEvents:
 	def_object_events
 	object_event  5,  4, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AzaleaMoveTutor1Script, -1
 	object_event  2,  3, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaMoveTutor2Script, -1
+	object_event  4,  1, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMoveTutor3Script, -1
