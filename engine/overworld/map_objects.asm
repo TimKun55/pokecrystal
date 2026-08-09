@@ -152,7 +152,7 @@ HandleObjectAction:
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit INVISIBLE_F, [hl]
-	jr nz, SetFacingStanding
+	jp nz, SetFacingStanding
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_6, [hl]
@@ -590,6 +590,8 @@ StepFunction_FromMovement:
 	dw MovementFunction_BoulderDust          ; 1a
 	dw MovementFunction_ShakingGrass         ; 1b
 	dw MovementFunction_SplashingPuddle      ; 1c
+	dw MovementFunction_BigLugia             ; 1d
+	dw MovementFunction_BigHoOh              ; 1e
 	assert_table_length NUM_SPRITEMOVEFN
 
 MovementFunction_Null:
@@ -1024,6 +1026,32 @@ MovementFunction_SplashingPuddle:
 	add hl, bc
 	ld [hl], OBJECT_ACTION_PUDDLE_SPLASH
 	jr ContinueMovement_Grass_Puddle
+
+MovementFunction_BigLugia:
+	ld a, OBJECT_ACTION_BIG_LUGIA
+	push af
+	call EndSpriteMovement
+	pop af
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_STANDING
+	ret
+
+MovementFunction_BigHoOh:
+	ld a, OBJECT_ACTION_BIG_HO_OH
+	push af
+	call EndSpriteMovement
+	pop af
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_STANDING
+	ret
 
 InitMovementField1dField1e:
 	ld hl, OBJECT_RANGE

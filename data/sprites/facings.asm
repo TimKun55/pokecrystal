@@ -35,6 +35,10 @@ Facings:
 	dw FacingGrass2
 	dw FacingSplash1
 	dw FacingSplash2
+	dw FacingBigLugia1
+	dw FacingBigLugia2
+	dw FacingBigHoOh1
+	dw FacingBigHoOh2
 	assert_table_length NUM_FACINGS
 	dw 0 ; end
 
@@ -248,3 +252,71 @@ FacingSplash2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $ff
 	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $ff
+
+FacingBigLugia1:
+	db 12 ; #
+	db  8,  0, 0, $00
+	db  8,  8, 0, $01
+	db 16,  0, 0, $02
+	db 16,  8, 0, $03
+	db 24,  8, 0, $05
+	db 24,  8, 0, $04
+	db  8, 23, X_FLIP, $00
+	db  8, 15, X_FLIP, $01
+	db 16, 23, X_FLIP, $02
+	db 16, 15, X_FLIP, $03
+	db 24, 15, X_FLIP, $05
+	db 24, 15, X_FLIP, $04
+
+FacingBigLugia2:
+	db 12 ; #
+	db  8,  8, 0, $07
+	db 16,  0, 0, $08
+	db 16,  8, 0, $09
+	db 24,  0, 0, $0a
+	db 24,  8, 0, $0b
+	db 24,  8, 0, $06
+	db  8, 15, X_FLIP, $07
+	db 16, 23, X_FLIP, $08
+	db 16, 15, X_FLIP, $09
+	db 24, 23, X_FLIP, $0a
+	db 24, 15, X_FLIP, $0b
+	db 24, 15, X_FLIP, $06
+
+FacingBigHoOh1:
+	db 16 ; #
+	db  8,  0, 0, $00
+	db  8,  8, 0, $01
+	db 16,  0, 0, $02
+	db 16,  8, 0, $03
+	db 24,  0, 0, $04
+	db 24,  8, 0, $05
+	db  9,  4, 0, $06
+	db 17,  4, 0, $07
+	db  8, 24, X_FLIP, $00
+	db  8, 16, X_FLIP, $01
+	db 16, 24, X_FLIP, $02
+	db 16, 16, X_FLIP, $03
+	db 24, 24, X_FLIP, $04
+	db 24, 16, X_FLIP, $05
+	db  9, 20, X_FLIP, $06
+	db 17, 20, X_FLIP, $07
+
+FacingBigHoOh2:
+	db 16 ; #
+	db  8,  0, 0, $80
+	db  8,  8, 0, $81
+	db 16,  0, 0, $82
+	db 16,  8, 0, $83
+	db 24,  0, 0, $84
+	db 24,  8, 0, $85
+	db 16,  4, 0, $86
+	db 24,  4, 0, $87
+	db  8, 24, X_FLIP, $80
+	db  8, 16, X_FLIP, $81
+	db 16, 24, X_FLIP, $82
+	db 16, 16, X_FLIP, $83
+	db 24, 24, X_FLIP, $84
+	db 24, 16, X_FLIP, $85
+	db 16, 20, X_FLIP, $86
+	db 24, 20, X_FLIP, $87

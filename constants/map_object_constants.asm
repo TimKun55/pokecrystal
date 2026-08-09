@@ -176,6 +176,8 @@ DEF MAPOBJECT_SCREEN_HEIGHT EQU (SCREEN_HEIGHT / 2) + 2
 	const SPRITEMOVEDATA_GRASS                ; 23
 	const SPRITEMOVEDATA_SWIM_WANDER          ; 24
 	const SPRITEMOVEDATA_PUDDLE               ; 25
+	const SPRITEMOVEDATA_BIG_LUGIA            ; 26
+	const SPRITEMOVEDATA_BIG_HO_OH            ; 27
 DEF NUM_SPRITEMOVEDATA EQU const_value
 
 ; StepFunction_FromMovement.Pointers indexes (see engine/overworld/map_objects.asm)
@@ -209,6 +211,8 @@ DEF NUM_SPRITEMOVEDATA EQU const_value
 	const SPRITEMOVEFN_BOULDERDUST           ; 1a
 	const SPRITEMOVEFN_GRASS                 ; 1b
 	const SPRITEMOVEFN_PUDDLE                ; 1c
+	const SPRITEMOVEFN_BIG_LUGIA             ; 1d
+	const SPRITEMOVEFN_BIG_HO_OH             ; 1e
 DEF NUM_SPRITEMOVEFN EQU const_value
 
 ; StepTypesJumptable indexes (see engine/overworld/map_objects.asm)
@@ -262,6 +266,8 @@ DEF NUM_STEP_TYPES EQU const_value
 	const OBJECT_ACTION_SKYFALL       ; 10
 	const OBJECT_ACTION_PUDDLE_SPLASH ; 11
 	const OBJECT_ACTION_RUN           ; 12
+	const OBJECT_ACTION_BIG_LUGIA     ; 13
+	const OBJECT_ACTION_BIG_HO_OH     ; 14
 DEF NUM_OBJECT_ACTIONS EQU const_value
 
 ; Facings indexes (see data/sprites/facings.asm)
@@ -300,6 +306,10 @@ DEF NUM_OBJECT_ACTIONS EQU const_value
 	const FACING_GRASS_2        ; 1f
 	const FACING_SPLASH_1       ; 20
 	const FACING_SPLASH_2       ; 21
+	const FACING_BIG_LUGIA_1    ; 22
+	const FACING_BIG_LUGIA_2    ; 23
+	const FACING_BIG_HO_OH_1    ; 24
+	const FACING_BIG_HO_OH_2    ; 25
 DEF NUM_FACINGS EQU const_value
 
 ; DoPlayerMovement.DoStep arguments (see engine/overworld/player_movement.asm)
