@@ -1,18 +1,18 @@
 	object_const_def
-	const SAFARIZONEWESTRESTHOUSE2_FISHER
+	const SAFARIZONEWESTRESTHOUSE2_FAT_GUY
 
 SafariZoneWestRestHouse2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	
-SafariZoneWestRestHouse2Fisher:
-	jumptextfaceplayer SafariZoneWestRestHouse2FisherText
+SafariZoneWestRestHouse2FatGuy:
+	jumptextfaceplayer SafariZoneWestRestHouse2FatGuyText
 	
 SafariZoneWestRestHouse2PokemonJournalScript:
 	jumpstd DifficultBookshelfScript
 	
-SafariZoneWestRestHouse2FisherText:
+SafariZoneWestRestHouse2FatGuyText:
 	text "Hi there!"
 	line "As a reward for"
 	cont "reaching this"
@@ -45,5 +45,5 @@ SafariZoneWestRestHouse2_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, SafariZoneWestRestHouse2PokemonJournalScript
 
 	def_object_events
-	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneWestRestHouse2Fisher, -1
+	object_event  2,  4, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneWestRestHouse2FatGuy, -1
 	

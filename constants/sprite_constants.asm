@@ -124,6 +124,9 @@
 	const SPRITE_MARY ; 78
 	const SPRITE_BIG_LUGIA ; 79
 	const SPRITE_BIG_HO_OH ; 7a
+	const SPRITE_FAT_GUY ; 7b
+	const SPRITE_FIREBREATHER ; 7c
+	const SPRITE_JUGGLER ; 7d
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

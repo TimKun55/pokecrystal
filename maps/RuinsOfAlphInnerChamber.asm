@@ -1,5 +1,5 @@
 	object_const_def
-	const RUINSOFALPHINNERCHAMBER_FISHER
+	const RUINSOFALPHINNERCHAMBER_FAT_GUY
 	const RUINSOFALPHINNERCHAMBER_TEACHER
 	const RUINSOFALPHINNERCHAMBER_GRAMPS
 
@@ -25,8 +25,8 @@ RuinsOfAlphInnerChamberStrangePresenceScript:
 	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_HIKER
 	end
 
-RuinsOfAlphInnerChamberFisherScript:
-	jumptextfaceplayer RuinsOfAlphInnerChamberFisherText
+RuinsOfAlphInnerChamberFatGuyScript:
+	jumptextfaceplayer RuinsOfAlphInnerChamberFatGuyText
 
 RuinsOfAlphInnerChamberTeacherScript:
 	jumptextfaceplayer RuinsOfAlphInnerChamberTeacherText
@@ -42,7 +42,7 @@ RuinsOfAlphStrangePresenceText:
 	line "presence here…"
 	done
 
-RuinsOfAlphInnerChamberFisherText:
+RuinsOfAlphInnerChamberFatGuyText:
 	text "This is a big"
 	line "room, but there's"
 	cont "nothing here."
@@ -112,6 +112,6 @@ RuinsOfAlphInnerChamber_MapEvents:
 	bg_event 17, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
 
 	def_object_events
-	object_event  3,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberFisherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
+	object_event  3,  7, SPRITE_FAT_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberFatGuyScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS

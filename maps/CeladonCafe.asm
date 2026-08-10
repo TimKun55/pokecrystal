@@ -1,8 +1,8 @@
 	object_const_def
 	const CELADONCAFE_SUPER_NERD
-	const CELADONCAFE_FISHER1
-	const CELADONCAFE_FISHER2
-	const CELADONCAFE_FISHER3
+	const CELADONCAFE_FAT_GUY1
+	const CELADONCAFE_FAT_GUY2
+	const CELADONCAFE_FAT_GUY3
 	const CELADONCAFE_TEACHER
 
 CeladonCafe_MapScripts:
@@ -13,43 +13,43 @@ CeladonCafe_MapScripts:
 CeladonCafeChef:
 	jumptextfaceplayer ChefText_Eatathon
 
-CeladonCafeFisher1:
+CeladonCafeFatGuy1:
 	opentext
-	writetext Fisher1Text_Snarfle
+	writetext FatGuy1Text_Snarfle
 	waitbutton
 	closetext
 	faceplayer
 	opentext
-	writetext Fisher1Text_Concentration
+	writetext FatGuy1Text_Concentration
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER1, LEFT
+	turnobject CELADONCAFE_FAT_GUY1, LEFT
 	end
 
-CeladonCafeFisher2:
+CeladonCafeFatGuy2:
 	opentext
-	writetext Fisher2Text_GulpChew
+	writetext FatGuy2Text_GulpChew
 	waitbutton
 	closetext
 	faceplayer
 	opentext
-	writetext Fisher2Text_Quantity
+	writetext FatGuy2Text_Quantity
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER2, RIGHT
+	turnobject CELADONCAFE_FAT_GUY2, RIGHT
 	end
 
-CeladonCafeFisher3:
+CeladonCafeFatGuy3:
 	opentext
-	writetext Fisher3Text_MunchMunch
+	writetext FatGuy3Text_MunchMunch
 	waitbutton
 	closetext
 	faceplayer
 	opentext
-	writetext Fisher3Text_GoldenrodIsBest
+	writetext FatGuy3Text_GoldenrodIsBest
 	waitbutton
 	closetext
-	turnobject CELADONCAFE_FISHER3, RIGHT
+	turnobject CELADONCAFE_FAT_GUY3, RIGHT
 	end
 
 CeladonCafeTeacher:
@@ -118,22 +118,22 @@ ChefText_Eatathon:
 	line "right now. Sorry."
 	done
 
-Fisher1Text_Snarfle:
+FatGuy1Text_Snarfle:
 	text "…Snarfle, chew…"
 	done
 
-Fisher1Text_Concentration:
+FatGuy1Text_Concentration:
 	text "Don't talk to me!"
 
 	para "You'll break my"
 	line "concentration!"
 	done
 
-Fisher2Text_GulpChew:
+FatGuy2Text_GulpChew:
 	text "…Gulp… Chew…"
 	done
 
-Fisher2Text_Quantity:
+FatGuy2Text_Quantity:
 	text "I take quantity"
 	line "over quality!"
 
@@ -141,11 +141,11 @@ Fisher2Text_Quantity:
 	line "full!"
 	done
 
-Fisher3Text_MunchMunch:
+FatGuy3Text_MunchMunch:
 	text "Munch, munch…"
 	done
 
-Fisher3Text_GoldenrodIsBest:
+FatGuy3Text_GoldenrodIsBest:
 	text "The food is good"
 	line "here, but Golden-"
 	cont "rod has the best"
@@ -209,7 +209,7 @@ CeladonCafe_MapEvents:
 
 	def_object_events
 	object_event  9,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChef, -1
-	object_event  4,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher1, -1
-	object_event  1,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher2, -1
-	object_event  1,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher3, -1
+	object_event  4,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFatGuy1, -1
+	object_event  1,  7, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCafeFatGuy2, -1
+	object_event  1,  2, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCafeFatGuy3, -1
 	object_event  4,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeTeacher, -1

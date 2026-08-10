@@ -1,6 +1,6 @@
 	object_const_def
 	const PALLETTOWN_TEACHER
-	const PALLETTOWN_FISHER
+	const PALLETTOWN_FAT_GUY
 
 PalletTown_MapScripts:
 	def_scene_scripts
@@ -15,8 +15,8 @@ PalletTownFlypointCallback:
 PalletTownTeacherScript:
 	jumptextfaceplayer PalletTownTeacherText
 
-PalletTownFisherScript:
-	jumptextfaceplayer PalletTownFisherText
+PalletTownFatGuyScript:
+	jumptextfaceplayer PalletTownFatGuyText
 
 PalletTownSign:
 	jumptext PalletTownSignText
@@ -38,7 +38,7 @@ PalletTownTeacherText:
 	line "private guards."
 	done
 
-PalletTownFisherText:
+PalletTownFatGuyText:
 	text "Technology is"
 	line "incredible!"
 
@@ -85,4 +85,4 @@ PalletTown_MapEvents:
 
 	def_object_events
 	object_event  3, 10, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
-	object_event 12, 16, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event 12, 16, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownFatGuyScript, -1

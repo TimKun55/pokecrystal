@@ -81,16 +81,16 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	warpcheck
 	end
 
-RuinsOfAlphOutsideFisherScript:
+RuinsOfAlphOutsideHikerScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TALKED_TO_RUINS_COWARD
 	iftrue .Next
 	setevent EVENT_TALKED_TO_RUINS_COWARD
-	writetext RuinsOfAlphOutsideFisherText1
+	writetext RuinsOfAlphOutsideHikerText1
 	promptbutton
 .Next:
-	writetextend RuinsOfAlphOutsideFisherText2
+	writetextend RuinsOfAlphOutsideHikerText2
 
 RuinsOfAlphOutsideYoungster1Script:
 	faceplayer
@@ -287,7 +287,7 @@ RuinsOfAlphResearchCenterSignText:
 	line "the Ruins Of Alph"
 	done
 
-RuinsOfAlphOutsideFisherText1:
+RuinsOfAlphOutsideHikerText1:
 	text "While exploring"
 	line "the Ruins, we"
 	cont "suddenly noticed"
@@ -300,7 +300,7 @@ RuinsOfAlphOutsideFisherText1:
 	line "careful too."
 	done
 
-RuinsOfAlphOutsideFisherText2:
+RuinsOfAlphOutsideHikerText2:
 	text "The Ruins hide a"
 	line "huge secret!"
 
@@ -406,7 +406,7 @@ RuinsOfAlphOutside_MapEvents:
 	def_object_events
 	object_event  4, 22, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1
 	object_event 12, 17, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
-	object_event 15, 20, SPRITE_HIKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_HIKER
+	object_event 15, 20, SPRITE_HIKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideHikerScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_HIKER
 	object_event 17, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFossilScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_FOSSIL_SCIENTIST

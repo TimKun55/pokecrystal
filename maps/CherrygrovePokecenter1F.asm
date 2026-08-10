@@ -1,7 +1,7 @@
 	object_const_def
 	const CHERRYGROVEPOKECENTER1F_NURSE
 	const CHERRYGROVEPOKECENTER1F_CHANSEY
-	const CHERRYGROVEPOKECENTER1F_FISHER
+	const CHERRYGROVEPOKECENTER1F_FAT_GUY
 	const CHERRYGROVEPOKECENTER1F_GENTLEMAN
 	const CHERRYGROVEPOKECENTER1F_TEACHER
 
@@ -16,8 +16,8 @@ CherrygrovePokecenter1FNurseScript:
 CherrygrovePokecenter1FChansey:
 	jumpstd PokecenterChanseyScript
 
-CherrygrovePokecenter1FFisherScript:
-	jumptextfaceplayer CherrygrovePokecenter1FFisherText
+CherrygrovePokecenter1FFatGuyScript:
+	jumptextfaceplayer CherrygrovePokecenter1FFatGuyText
 
 CherrygrovePokecenter1FGentlemanScript:
 	jumptextfaceplayer CherrygrovePokecenter1FGentlemanText
@@ -32,7 +32,7 @@ CherrygrovePokecenter1FTeacherScript:
 .CommCenterOpen:
 	writetextend CherrygrovePokecenter1FTeacherText_CommCenterOpen
 	
-CherrygrovePokecenter1FFisherText:
+CherrygrovePokecenter1FFatGuyText:
 	text "It's great. I can"
 	line "store any number"
 	cont "of #mon, and"
@@ -78,6 +78,6 @@ CherrygrovePokecenter1F_MapEvents:
 	def_object_events
 	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FNurseScript, -1
 	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FChansey, -1
-	object_event  4,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1
+	object_event  4,  3, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFatGuyScript, -1
 	object_event 10,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
 	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1

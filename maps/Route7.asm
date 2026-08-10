@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE7_BUG_MANIAC
 	const ROUTE7_POKEFAN_M
-	const ROUTE7_FISHER
+	const ROUTE7_FAT_GUY
 	const ROUTE7_FRUIT_TREE
 
 Route7_MapScripts:
@@ -31,7 +31,7 @@ Route7UndergroundPathOpenScript:
 	endcallback
 
 Route7DisguisedScene:
-	moveobject ROUTE7_FISHER,  5, 11
+	moveobject ROUTE7_FAT_GUY,  5, 11
 	pause 15
 	playsound SFX_ENTER_DOOR
 	changeblock  4, 10, $10 ; open gate doors
@@ -39,35 +39,35 @@ Route7DisguisedScene:
 	refreshscreen
 	setevent EVENT_ROUTE_7_UNDERGROUND_PATH_DOORS_OPEN
 	playsound SFX_EXIT_BUILDING
-	appear ROUTE7_FISHER
-	applymovement ROUTE7_FISHER, Route7DisguisedExitMovement
+	appear ROUTE7_FAT_GUY
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedExitMovement
 	pause 15
 	applymovement PLAYER, Route7PlayerSlowMovement
 	showemote EMOTE_QUESTION, PLAYER, 15
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundUpMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundUpMovement
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundDownMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundDownMovement
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundRightMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundRightMovement
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundLeftMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundLeftMovement
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundRightMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundRightMovement
 	pause 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundDownMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundDownMovement
 	pause 25
-	showemote EMOTE_QUESTION, ROUTE7_FISHER, 15
-	applymovement ROUTE7_FISHER, Route7DisguisedLookAroundRightMovement
+	showemote EMOTE_QUESTION, ROUTE7_FAT_GUY, 15
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedLookAroundRightMovement
 	pause 15
-	showemote EMOTE_SHOCK, ROUTE7_FISHER, 15
+	showemote EMOTE_SHOCK, ROUTE7_FAT_GUY, 15
 	opentext
 	writetext Route7DisguisedScreamText
 	waitbutton
 	closetext	
-	applymovement ROUTE7_FISHER, Route7DisguisedQuickExitMovement
+	applymovement ROUTE7_FAT_GUY, Route7DisguisedQuickExitMovement
 	playsound SFX_ENTER_DOOR
-	disappear ROUTE7_FISHER
+	disappear ROUTE7_FAT_GUY
 	pause 15
 	showemote EMOTE_QUESTION, PLAYER, 15
 	setscene SCENE_ROUTE7_NOOP
@@ -242,5 +242,5 @@ Route7_MapEvents:
 	def_object_events
 	object_event  7,  6, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugManiacEli, -1
 	object_event 22, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerPokefanMCarlos, -1
-	object_event 29,  0, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKETS_IN_KANTO
+	object_event 29,  0, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROCKETS_IN_KANTO
 	object_event 13, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7PomegTree, -1

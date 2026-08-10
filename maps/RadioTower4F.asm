@@ -1,5 +1,5 @@
 	object_const_def
-	const RADIOTOWER4F_FISHER
+	const RADIOTOWER4F_HIKER
 	const RADIOTOWER4F_MARY
 	const RADIOTOWER4F_MEOWTH
 	const RADIOTOWER4F_ROCKET1
@@ -12,8 +12,8 @@ RadioTower4F_MapScripts:
 
 	def_callbacks
 
-RadioTower4FFisherScript:
-	jumptextfaceplayer RadioTower4FFisherText
+RadioTower4FHikerScript:
+	jumptextfaceplayer RadioTower4FHikerText
 
 RadioTower4FDJMaryScript:
 	faceplayer
@@ -264,7 +264,7 @@ RadioTower4FPlayerWalksToMicrophoneMovement:
 	slow_step RIGHT
 	step_end
 
-RadioTower4FFisherText:
+RadioTower4FHikerText:
 	text "I listened to the"
 	line "radio while I was"
 	cont "at the Ruins."
@@ -730,7 +730,7 @@ RadioTower4F_MapEvents:
 	bg_event 15,  0, BGEVENT_READ, RadioTower4FStudio2Sign
 
 	def_object_events
-	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
+	object_event  6,  4, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower4FHikerScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 14,  5, SPRITE_MARY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER

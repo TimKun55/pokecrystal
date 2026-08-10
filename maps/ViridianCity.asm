@@ -1,7 +1,7 @@
 	object_const_def
 	const VIRIDIANCITY_GRAMPS1
 	const VIRIDIANCITY_GRAMPS2
-	const VIRIDIANCITY_FISHER
+	const VIRIDIANCITY_FAT_GUY
 	const VIRIDIANCITY_YOUNGSTER
 
 ViridianCity_MapScripts:
@@ -35,17 +35,17 @@ ViridianCityGrampsNearGym:
 .BlueReturned:
 	writetextend ViridianCityGrampsNearGymBlueReturnedText
 
-ViridianCityDreamEaterFisher:
+ViridianCityDreamEaterFatGuy:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TM42_DREAM_EATER
 	iftrue .GotDreamEater
-	writetext ViridianCityDreamEaterFisherText
+	writetext ViridianCityDreamEaterFatGuyText
 	promptbutton
 	verbosegiveitem TM_DREAM_EATER
 	setevent EVENT_GOT_TM42_DREAM_EATER
 .GotDreamEater:
-	writetextend ViridianCityDreamEaterFisherGotDreamEaterText
+	writetextend ViridianCityDreamEaterFatGuyGotDreamEaterText
 
 ViridianCityYoungsterScript:
 	jumptextfaceplayer ViridianCityYoungsterText
@@ -116,7 +116,7 @@ ViridianCityGrampsNearGymBlueReturnedText:
 	line "You'll need it."
 	done
 
-ViridianCityDreamEaterFisherText:
+ViridianCityDreamEaterFatGuyText:
 	text "Yawn!"
 
 	para "I must have dozed"
@@ -138,7 +138,7 @@ ViridianCityDreamEaterFisherText:
 	cont "this TM."
 	done
 
-ViridianCityDreamEaterFisherGotDreamEaterText:
+ViridianCityDreamEaterFatGuyGotDreamEaterText:
 	text "TM42 contains"
 	line "Dream Eater…"
 
@@ -205,5 +205,5 @@ ViridianCity_MapEvents:
 	def_object_events
 	object_event 18,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
 	object_event 31,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
-	object_event 10, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
+	object_event 10, 23, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFatGuy, -1
 	object_event 18, 26, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1

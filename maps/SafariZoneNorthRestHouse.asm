@@ -2,7 +2,7 @@
 	const SAFARIZONENORTHRESTHOUSE_SCIENTIST
 	const SAFARIZONENORTHRESTHOUSE_GENTLEMAN
 	const SAFARIZONENORTHRESTHOUSE_FISHING_GURU
-	const SAFARIZONENORTHRESTHOUSE_FISHER
+	const SAFARIZONENORTHRESTHOUSE_FAT_GUY
 
 SafariZoneNorthRestHouse_MapScripts:
 	def_scene_scripts
@@ -18,8 +18,8 @@ SafariZoneNorthRestHouseGentlemanScript:
 SafariZoneNorthRestHouseFishingGuruScript:
 	jumptextfaceplayer SafariZoneNorthRestHouseFishingGuruText
 
-SafariZoneNorthRestHouseFisherScript:
-	jumptextfaceplayer SafariZoneNorthRestHouseFisherText
+SafariZoneNorthRestHouseFatGuyScript:
+	jumptextfaceplayer SafariZoneNorthRestHouseFatGuyText
 
 SafariZoneNorthRestHouseJournalScript:
 	jumptext SafariZoneNorthRestHouseJournalText
@@ -58,7 +58,7 @@ SafariZoneNorthRestHouseFishingGuruText:
 	line "a prize!"
 	done
 
-SafariZoneNorthRestHouseFisherText:
+SafariZoneNorthRestHouseFatGuyText:
 	text "The Safari Zone"
 	line "is huge, wouldn't"
 	cont "you say?"
@@ -108,4 +108,4 @@ SafariZoneNorthRestHouse_MapEvents:
 	object_event  2,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthRestHouseScientistScript, -1
 	object_event  5,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthRestHouseGentlemanScript, -1
 	object_event  3,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthRestHouseFishingGuruScript, -1
-	object_event  0,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthRestHouseFisherScript, -1
+	object_event  0,  5, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneNorthRestHouseFatGuyScript, -1

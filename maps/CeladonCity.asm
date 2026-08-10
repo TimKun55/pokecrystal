@@ -1,5 +1,5 @@
 	object_const_def
-	const CELADONCITY_FISHER
+	const CELADONCITY_FAT_GUY
 	const CELADONCITY_POLIWRATH
 	const CELADONCITY_TEACHER1
 	const CELADONCITY_GRAMPS1
@@ -71,8 +71,8 @@ CeladonCityDisguisedRight:
 .end
 	end
 
-CeladonCityFisherScript:
-	jumptextfaceplayer CeladonCityFisherText
+CeladonCityFatGuyScript:
+	jumptextfaceplayer CeladonCityFatGuyText
 
 CeladonCityPoliwrath:
 	opentext
@@ -179,7 +179,7 @@ CeladonCityTamatoTree:
 CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
-CeladonCityFisherText:
+CeladonCityFatGuyText:
 	text "This Poliwrath is"
 	line "my partner."
 
@@ -356,7 +356,7 @@ CeladonCity_MapEvents:
 	bg_event 39,  8, BGEVENT_ITEM, CeladonCityHiddenPpUp
 
 	def_object_events
-	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
+	object_event 26, 12, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFatGuyScript, -1
 	object_event 27, 12, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
 	object_event 31, 21, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
 	object_event 16, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1

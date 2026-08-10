@@ -1,5 +1,5 @@
 	object_const_def
-	const LAKEOFRAGEHIDDENPOWERHOUSE_FISHER
+	const LAKEOFRAGEHIDDENPOWERHOUSE_FAT_GUY
 
 LakeOfRageHiddenPowerHouse_MapScripts:
 	def_scene_scripts
@@ -73,4 +73,4 @@ LakeOfRageHiddenPowerHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, HiddenPowerHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1
+	object_event  2,  3, SPRITE_FAT_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1

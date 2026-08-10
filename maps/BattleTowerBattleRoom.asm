@@ -24,7 +24,6 @@ Script_BattleRoomLoop:
 	setval SPRITE_BATTLE_TOWER_OPPONENT
 	special LoadOpponentTrainerAndPokemonWithOTSprite
 	appear BATTLETOWERBATTLEROOM_OPPONENT
-;	loadmem wObject1Palette, 1
 	warpsound
 	waitsfx
 	applymovement BATTLETOWERBATTLEROOM_OPPONENT, MovementData_BattleTowerBattleRoomOpponentWalksIn

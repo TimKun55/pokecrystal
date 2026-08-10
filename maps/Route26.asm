@@ -4,9 +4,9 @@
 	const ROUTE26_COOLTRAINER_F1
 	const ROUTE26_PSYCHIC
 	const ROUTE26_BIRD_KEEPER
-	const ROUTE26_FISHER1
+	const ROUTE26_FISHER
 	const ROUTE26_BUG_MANIAC
-	const ROUTE26_FISHER2
+	const ROUTE26_FAT_GUY
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
 	const ROUTE26_ROCK1
@@ -25,20 +25,20 @@ Route26Noop2Scene:
 	end
 	
 FirstStepIntoKantoScene:
-	turnobject ROUTE26_FISHER2, LEFT
-	showemote EMOTE_SHOCK, ROUTE26_FISHER2, 15
+	turnobject ROUTE26_FAT_GUY, LEFT
+	showemote EMOTE_SHOCK, ROUTE26_FAT_GUY, 15
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext Route26Fisher2HeyText
+	writetext Route26FatGuyHeyText
 	promptbutton
-	writetext Route26Fisher2Text
+	writetext Route26FatGuyText
 	waitbutton
 	closetext
 	setscene SCENE_ROUTE26_NOOP
 	end
 
-Route26Fisher2Script:
-	jumptextfaceplayer Route26Fisher2Text
+Route26FatGuyScript:
+	jumptextfaceplayer Route26FatGuyText
 
 TrainerCooltrainermJake:
 	trainer COOLTRAINERM, JAKE, EVENT_BEAT_COOLTRAINERM_JAKE, CooltrainermJakeSeenText, CooltrainermJakeBeatenText, 0, .Script
@@ -279,11 +279,11 @@ Route26MaxElixer:
 Route26PPUp:
 	itemball PP_UP
 	
-Route26Fisher2HeyText:
+Route26FatGuyHeyText:
 	text "Hey!"
 	done
 
-Route26Fisher2Text:
+Route26FatGuyText:
 	text "Do you know what"
 	line "you just did?"
 
@@ -517,7 +517,7 @@ Route26_MapEvents:
 	object_event 12,  72, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyBrenda, -1
 	object_event  8,  38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event  7,  45, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacNeville, -1
-	object_event  5,  90, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, Route26Fisher2Script, -1
+	object_event  5,  90, SPRITE_FAT_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, Route26FatGuyScript, -1
 	object_event 12,  51, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26RawstTree, -1
 	object_event   6, 15, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event  9,  96, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26Rock, -1

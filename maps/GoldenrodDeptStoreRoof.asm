@@ -1,7 +1,7 @@
 	object_const_def
 	const GOLDENRODDEPTSTOREROOF_CLERK
 	const GOLDENRODDEPTSTOREROOF_POKEFAN_F
-	const GOLDENRODDEPTSTOREROOF_FISHER
+	const GOLDENRODDEPTSTOREROOF_JUGGLER
 	const GOLDENRODDEPTSTOREROOF_TWIN
 	const GOLDENRODDEPTSTOREROOF_SUPER_NERD
 	const GOLDENRODDEPTSTOREROOF_POKEFAN_M
@@ -46,13 +46,13 @@ GoldenrodDeptStoreRoofClerkScript:
 GoldenrodDeptStoreRoofPokefanFScript:
 	jumptextfaceplayer GoldenrodDeptStoreRoofPokefanFText
 
-GoldenrodDeptStoreRoofFisherScript:
+GoldenrodDeptStoreRoofJugglerScript:
 	faceplayer
 	opentext
-	writetext GoldenrodDeptStoreRoofFisherText
+	writetext GoldenrodDeptStoreRoofJugglerText
 	waitbutton
 	closetext
-	turnobject GOLDENRODDEPTSTOREROOF_FISHER, UP
+	turnobject GOLDENRODDEPTSTOREROOF_JUGGLER, UP
 	end
 
 GoldenrodDeptStoreRoofTwinScript:
@@ -101,7 +101,7 @@ GoldenrodDeptStoreRoofPokefanFText:
 	cont "from shopping."
 	done
 
-GoldenrodDeptStoreRoofFisherText:
+GoldenrodDeptStoreRoofJugglerText:
 	text "Pardon? Who says"
 	line "an adult can't get"
 	cont "into this?"
@@ -220,7 +220,7 @@ GoldenrodDeptStoreRoof_MapEvents:
 	def_object_events
 	object_event  1,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofClerkScript, EVENT_GOLDENROD_SALE_OFF
 	object_event 10,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanFScript, -1
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofFisherScript, -1
+	object_event  2,  3, SPRITE_JUGGLER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofJugglerScript, -1
 	object_event  3,  6, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTwinScript, EVENT_GOLDENROD_SALE_ON
 	object_event 14,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofSuperNerdScript, EVENT_GOLDENROD_SALE_ON
 	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanMScript, EVENT_GOLDENROD_SALE_OFF

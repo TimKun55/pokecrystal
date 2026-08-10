@@ -1,18 +1,18 @@
 	object_const_def
-	const CELADONMANSIONROOF_FISHER
+	const CELADONMANSIONROOF_FAT_GUY
 
 CeladonMansionRoof_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeladonMansionRoofFisherScript:
-	jumptextfaceplayer CeladonMansionRoofFisherText
+CeladonMansionRoofFatGuyScript:
+	jumptextfaceplayer CeladonMansionRoofFatGuyText
 
 CeladonMansionRoofGraffiti:
 	jumptext CeladonMansionRoofGraffitiText
 
-CeladonMansionRoofFisherText:
+CeladonMansionRoofFatGuyText:
 	text "High places--I do"
 	line "love them so!"
 
@@ -43,4 +43,4 @@ CeladonMansionRoof_MapEvents:
 	bg_event  6,  1, BGEVENT_LEFT, CeladonMansionRoofGraffiti
 
 	def_object_events
-	object_event  7,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofFisherScript, -1
+	object_event  7,  5, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofFatGuyScript, -1

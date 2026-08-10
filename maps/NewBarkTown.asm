@@ -1,6 +1,6 @@
 	object_const_def
 	const NEWBARKTOWN_TEACHER
-	const NEWBARKTOWN_FISHER
+	const NEWBARKTOWN_FAT_GUY
 	const NEWBARKTOWN_RIVAL
 	const NEWBARKTOWN_LYRA
 	const NEWBARKTOWN_HOOTHOOT1
@@ -179,7 +179,7 @@ NewBarkTownTeacherScript:
 .CallMum:
 	writetextend Text_CallMumOnGear
 
-NewBarkTownFisherScript:
+NewBarkTownFatGuyScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownRivalScript:
@@ -545,7 +545,7 @@ NewBarkTown_MapEvents:
 
 	def_object_events
 	object_event  6,  8, SPRITE_MARY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event 12,  9, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownFatGuyScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event  1,  6, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LYRA_NEW_BARK_TOWN
 	object_event 16,  2, SPRITE_HOOTHOOT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, MORN, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkTownHoothootScript, EVENT_NEW_BARK_TOD_POKEMON

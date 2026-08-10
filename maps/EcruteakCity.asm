@@ -3,7 +3,7 @@
 	const ECRUTEAKCITY_GRAMPS2
 	const ECRUTEAKCITY_LASS1
 	const ECRUTEAKCITY_LASS2
-	const ECRUTEAKCITY_FISHER
+	const ECRUTEAKCITY_FAT_GUY
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
 
@@ -39,15 +39,15 @@ EcruteakCityLass2Script:
 .ReleasedBeasts:
 	writetextend EcruteakCityLass2Text_ReleasedBeasts
 
-EcruteakCityFisherScript:
+EcruteakCityFatGuyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iftrue .JasmineReturned
-	writetextend EcruteakCityFisherText
+	writetextend EcruteakCityFatGuyText
 
 .JasmineReturned:
-	writetextend EcruteakCityFisherText_JasmineReturned
+	writetextend EcruteakCityFatGuyText_JasmineReturned
 
 EcruteakCitySchoolboyScript:
 	jumptextfaceplayer EcruteakCitySchoolboyText
@@ -114,7 +114,7 @@ EcruteakCityLass2Text_ReleasedBeasts:
 	cont "What were they?"
 	done
 
-EcruteakCityFisherText:
+EcruteakCityFatGuyText:
 	text "I heard a rumor"
 	line "about Olivine"
 	cont "Lighthouse."
@@ -126,7 +126,7 @@ EcruteakCityFisherText:
 	cont "are in trouble."
 	done
 
-EcruteakCityFisherText_JasmineReturned:
+EcruteakCityFatGuyText_JasmineReturned:
 	text "The #mon at"
 	line "Olivine Lighthouse"
 	cont "has been cured."
@@ -247,6 +247,6 @@ EcruteakCity_MapEvents:
 	object_event 19, 33, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
 	object_event 14, 35, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
 	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
-	object_event  6, 32, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
+	object_event  6, 32, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFatGuyScript, -1
 	object_event 10, 26, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
 	object_event  8, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

@@ -3,7 +3,7 @@
 	const SAFFRONCITY_POKEFAN_M
 	const SAFFRONCITY_COOLTRAINER_M
 	const SAFFRONCITY_COOLTRAINER_F1
-	const SAFFRONCITY_FISHER
+	const SAFFRONCITY_FAT_GUY
 	const SAFFRONCITY_YOUNGSTER1
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
@@ -107,15 +107,15 @@ SaffronCityCooltrainerMScript:
 SaffronCityCooltrainerFScript:
 	jumptextfaceplayer SaffronCityCooltrainerFText
 
-SaffronCityFisherScript:
+SaffronCityFatGuyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	writetextend SaffronCityFisherText
+	writetextend SaffronCityFatGuyText
 
 .ReturnedMachinePart:
-	writetextend SaffronCityFisherText_ReturnedMachinePart
+	writetextend SaffronCityFatGuyText_ReturnedMachinePart
 
 SaffronCityYoungster1Script:
 	jumptextfaceplayer SaffronCityYoungster1Text
@@ -227,7 +227,7 @@ SaffronCityCooltrainerFText:
 	cont "that."
 	done
 
-SaffronCityFisherText:
+SaffronCityFatGuyText:
 	text "Chew… Chew…"
 
 	para "I hear there's big"
@@ -237,7 +237,7 @@ SaffronCityFisherText:
 	para "Chew… Chew…"
 	done
 
-SaffronCityFisherText_ReturnedMachinePart:
+SaffronCityFatGuyText_ReturnedMachinePart:
 	text "Chew… Chew…"
 
 	para "I hear there was"
@@ -371,7 +371,7 @@ SaffronCity_MapEvents:
 	object_event  5, 32, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronCityPokefanMScript, -1
 	object_event 17, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
 	object_event 16, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
-	object_event 30, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
+	object_event 30, 14, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronCityFatGuyScript, -1
 	object_event 24, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 30, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1

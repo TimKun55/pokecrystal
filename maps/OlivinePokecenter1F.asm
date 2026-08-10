@@ -2,7 +2,7 @@
 	const OLIVINEPOKECENTER1F_NURSE
 	const OLIVINEPOKECENTER1F_CHANSEY
 	const OLIVINEPOKECENTER1F_FISHING_GURU
-	const OLIVINEPOKECENTER1F_FISHER
+	const OLIVINEPOKECENTER1F_FAT_GUY
 	const OLIVINEPOKECENTER1F_TEACHER
 	const OLIVINEPOKECENTER1F_TUTOR
 
@@ -20,8 +20,8 @@ OlivinePokecenter1FChansey:
 OlivinePokecenter1FFishingGuruScript:
 	jumpstd HappinessCheckScript
 
-OlivinePokecenter1FFisherScript:
-	jumptextfaceplayer OlivinePokecenter1FFisherText
+OlivinePokecenter1FFatGuyScript:
+	jumptextfaceplayer OlivinePokecenter1FFatGuyText
 
 OlivinePokecenter1FTeacherScript:
 	jumptextfaceplayer OlivinePokecenter1FTeacherText
@@ -98,7 +98,7 @@ OlivinePokecenter1FTutor:
 	db "Night Slash@"
 	db "Cancel@"
 
-OlivinePokecenter1FFisherText:
+OlivinePokecenter1FFatGuyText:
 	text "I ate way too much"
 	line "in the Olivine Café"
 	cont "next door."
@@ -196,6 +196,6 @@ OlivinePokecenter1F_MapEvents:
 	object_event  5,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FNurseScript, -1
 	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FChansey, -1
 	object_event 10,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFishingGuruScript, -1
-	object_event  8,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFisherScript, -1
+	object_event  8,  4, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFatGuyScript, -1
 	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FTeacherScript, -1
 	object_event  8,  1, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FTutor, -1
