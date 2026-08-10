@@ -4,8 +4,6 @@ MACRO bt_trainer
 ENDM
 
 BattleTowerTrainers:
-; The trainer class is not used in Crystal 1.0 due to a bug.
-; Instead, the sixth character in the trainer's name is used.
 ; See BattleTowerText in engine/events/battle_tower/trainer_text.asm.
 	table_width (NAME_LENGTH - 1) + 1
 	bt_trainer FISHER,       "Hanson"
@@ -30,7 +28,6 @@ BattleTowerTrainers:
 	bt_trainer SKIER,        "Lancaster"
 	bt_trainer CAMPER,       "McMahill"
 	assert_table_length BATTLETOWER_NUM_UNIQUE_MON
-; The following can only be sampled in Crystal 1.1.
 	bt_trainer GENTLEMAN,    "Obrien"
 	bt_trainer BEAUTY,       "Frost"
 	bt_trainer SUPER_NERD,   "Morse"
