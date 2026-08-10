@@ -26,11 +26,11 @@ OlivinePortPassageTicketCheckScript:
 	end
 
 OlivinePortPassageSailorScript:
-	faceplayer
-	opentext	
+	faceplayer	
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iftrue _OlivinePortPassageTicketCheckScript.GoOnThrough
 _OlivinePortPassageTicketCheckScript:
+	opentext
 	writetext OlivinePortPassageAskBoardText
 	yesorno
 	iffalse OlivinePortPassageNotRidingScript
@@ -123,7 +123,7 @@ OlivinePortPassageNoTicketText:
 	text_promptbutton
 
 	ntag " Sailor "
-	para "Sorry!"
+	text "Sorry!"
 
 	para "You may board only"
 	line "if you have an"
