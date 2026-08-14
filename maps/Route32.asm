@@ -12,6 +12,7 @@
 	const ROUTE32_POKE_BALL1
 	const ROUTE32_JUGGLER
 	const ROUTE32_FRIEDA
+	const ROUTE32_LADY
 	const ROUTE32_POKE_BALL2
 
 Route32_MapScripts:
@@ -358,6 +359,13 @@ TrainerBirdKeeperPeter:
 	endifjustbattled
 	jumptext BirdKeeperPeterAfterText
 
+TrainerLadySue:
+	trainer LADY, SUE, EVENT_BEAT_LADY_SUE, LadySueSeenText, LadySueBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	jumptext LadySueAfterBattleText
+
 FriedaScript:
 	faceplayer
 	opentext
@@ -685,6 +693,33 @@ BirdKeeperPeterAfterText:
 	cont "in Violet City."
 	done
 
+LadySueSeenText:
+	text "Hello there!"
+	line "Do you know about"
+	cont "the fairy-type?"
+	
+	para "They're cute but"
+	line "don't underesti-"
+	cont "mate them."
+	done
+
+LadySueBeatenText:
+	ntag " Sue "
+	text "Oh, wow, you are"
+	line "very strong."
+	done
+
+LadySueAfterBattleText:
+	ntag " Sue "
+	text "That was fun!"
+	line "You should see if"
+	cont "you can find all"
+	cont "my sisters!"
+		
+	para "I'm sure they'd"
+	line "like to battle!"
+	done
+
 Text_RoarIntro:
 	text "WROOOOAR!"
 	line "PEOPLE RUN WHEN I"
@@ -808,4 +843,5 @@ Route32_MapEvents:
 	object_event  5, 53, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 15, 13, SPRITE_JUGGLER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
+	object_event 13, 76, SPRITE_LADY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerLadySue, -1
 	object_event  4, 26, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL

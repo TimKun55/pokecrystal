@@ -3,7 +3,6 @@
 	const ROUTE32POKECENTER1F_CHANSEY
 	const ROUTE32POKECENTER1F_FISHING_GURU
 	const ROUTE32POKECENTER1F_COOLTRAINER_F
-	const ROUTE32POKECENTER1F_LADY_SUE
 
 Route32Pokecenter1F_MapScripts:
 	def_scene_scripts
@@ -43,13 +42,6 @@ Route32Pokecenter1FFishingGuruScript:
 
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
-
-Route32Pokecenter1FLadySue:
-	trainer LADY, SUE, EVENT_BEAT_LADY_SUE, LadySueSeenText, LadySueBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	jumptext LadySueAfterBattleText
 
 Route32Pokecenter1FFishingGuruText_Question:
 	text "This is a great"
@@ -98,33 +90,6 @@ Route32Pokecenter1FCooltrainerFText:
 	line "increases Attack"
 	cont "power…"
 	done
-
-LadySueSeenText:
-	text "Hello there!"
-	line "Do you know about"
-	cont "the fairy-type?"
-	
-	para "They're cute but"
-	line "don't underesti-"
-	cont "mate them."
-	done
-
-LadySueBeatenText:
-	ntag " Sue "
-	text "Oh, wow, you are"
-	line "very strong."
-	done
-
-LadySueAfterBattleText:
-	ntag " Sue "
-	text "That was fun!"
-	line "You should see if"
-	cont "you can find all"
-	cont "my sisters!"
-		
-	para "I'm sure they'd"
-	line "like to battle!"
-	done
 	
 Route32Pokecenter1F_MapEvents:
 
@@ -142,4 +107,3 @@ Route32Pokecenter1F_MapEvents:
 	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FChansey, -1
 	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
 	object_event  9,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
-	object_event  4,  3, SPRITE_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, Route32Pokecenter1FLadySue, -1
