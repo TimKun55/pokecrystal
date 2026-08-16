@@ -130,7 +130,14 @@ IlexForestFarfetchdScript:
 	cry FARFETCH_D
 	waitbutton
 	closetext
+	readvar VAR_FACING
+	ifequal DOWN, .MoveAroundPlayer
 	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos1_Pos2
+	sjump .Finish	
+
+.MoveAroundPlayer
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos1_Pos2Extra
+.Finish
 	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -489,6 +496,8 @@ IlexForestShrineScript:
 .DidntCatchCelebi:
 	end
 
+MovementData_Farfetchd_Pos1_Pos2Extra:
+	big_step RIGHT
 MovementData_Farfetchd_Pos1_Pos2:
 	big_step UP
 	big_step UP
