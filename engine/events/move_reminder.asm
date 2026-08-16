@@ -384,6 +384,8 @@ ChooseMoveToLearn:
 	; it, an incorrect symbol will appear.
 	farcall LoadSummaryScreenPageTilesGFX
 
+	callfar InitPartyMenuPalettes
+
 	; This displays the Pokémon's species
 	; name (not nickname) at the
 	; coordinates defined at "hlcoord".
