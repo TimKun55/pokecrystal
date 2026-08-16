@@ -212,7 +212,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position5_Up:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Up
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos4_Up
 	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -220,7 +220,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position5_Right:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Right
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos4_Right
 	moveobject ILEXFOREST_FARFETCHD, 31, 32
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -230,7 +230,7 @@ IlexForestFarfetchdScript:
 .Position6:
 	scall .CryAndCheckFacing
 	ifequal RIGHT, .Position6_Right
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos7
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos6_Pos7
 	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -238,7 +238,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position6_Right:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos5
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos6_Pos5
 	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -249,7 +249,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal DOWN, .Position7_Down
 	ifequal LEFT, .Position7_Left
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos8
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos7_Pos8
 	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -257,7 +257,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position7_Left:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos6
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos7_Pos6
 	moveobject ILEXFOREST_FARFETCHD, 26, 45
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -265,7 +265,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position7_Down:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos5
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos7_Pos5
 	moveobject ILEXFOREST_FARFETCHD, 30, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -277,7 +277,7 @@ IlexForestFarfetchdScript:
 	ifequal UP, .Position8_Up
 	ifequal LEFT, .Position8_Left
 	ifequal RIGHT, .Position8_Right
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos9
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos8_Pos9
 	moveobject ILEXFOREST_FARFETCHD, 12, 45
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -285,7 +285,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position8_Right:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos7
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos8_Pos7
 	moveobject ILEXFOREST_FARFETCHD, 24, 41
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -294,7 +294,7 @@ IlexForestFarfetchdScript:
 
 .Position8_Up:
 .Position8_Left:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos2
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos8_Pos2
 	moveobject ILEXFOREST_FARFETCHD, 17, 35
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -305,7 +305,7 @@ IlexForestFarfetchdScript:
 	scall .CryAndCheckFacing
 	ifequal DOWN, .Position9_Down
 	ifequal RIGHT, .Position9_Right
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos10
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos9_Pos10
 	moveobject ILEXFOREST_FARFETCHD, 8, 38
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -316,7 +316,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position9_Right:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Right
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos9_Pos8_Right
 	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -324,7 +324,7 @@ IlexForestFarfetchdScript:
 	end
 
 .Position9_Down:
-	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Down
+	applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos9_Pos8_Down
 	moveobject ILEXFOREST_FARFETCHD, 17, 39
 	disappear ILEXFOREST_FARFETCHD
 	appear ILEXFOREST_FARFETCHD
@@ -568,7 +568,7 @@ MovementData_Farfetchd_Pos5_Pos7:
 	big_step LEFT
 	step_end
 
-MovementData_Farfetched_Pos5_Pos4_Up:
+MovementData_Farfetchd_Pos5_Pos4_Up:
 	big_step UP
 	big_step UP
 	big_step UP
@@ -576,7 +576,7 @@ MovementData_Farfetched_Pos5_Pos4_Up:
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos5_Pos4_Right:
+MovementData_Farfetchd_Pos5_Pos4_Right:
 	big_step RIGHT
 	turn_head UP
 	step_sleep 1
@@ -598,29 +598,27 @@ MovementData_Farfetched_Pos5_Pos4_Right:
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos6_Pos7:
+MovementData_Farfetchd_Pos6_Pos7:
 	big_step LEFT
 	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	step_end
-
-MovementData_Farfetched_Pos6_Pos5:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
 	big_step UP
 	big_step UP
 	big_step UP
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos7_Pos8:
+MovementData_Farfetchd_Pos6_Pos5:
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	step_end
+
+MovementData_Farfetchd_Pos7_Pos8:
 	big_step UP
 	big_step UP
 	big_step LEFT
@@ -630,7 +628,7 @@ MovementData_Farfetched_Pos7_Pos8:
 	big_step LEFT
 	step_end
 
-MovementData_Farfetched_Pos7_Pos6:
+MovementData_Farfetchd_Pos7_Pos6:
 	big_step DOWN
 	big_step DOWN
 	big_step LEFT
@@ -641,26 +639,8 @@ MovementData_Farfetched_Pos7_Pos6:
 	big_step RIGHT
 	step_end
 
-MovementData_Farfetched_Pos7_Pos5:
+MovementData_Farfetchd_Pos7_Pos5:
 	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetched_Pos8_Pos9:
-	big_step DOWN
-	big_step LEFT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
-MovementData_Farfetched_Pos8_Pos7:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -668,14 +648,32 @@ MovementData_Farfetched_Pos8_Pos7:
 	big_step RIGHT
 	step_end
 
-MovementData_Farfetched_Pos8_Pos2:
+MovementData_Farfetchd_Pos8_Pos9:
+	big_step DOWN
+	big_step LEFT
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	step_end
+
+MovementData_Farfetchd_Pos8_Pos7:
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	step_end
+
+MovementData_Farfetchd_Pos8_Pos2:
 	big_step UP
 	big_step UP
 	big_step UP
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos9_Pos10:
+MovementData_Farfetchd_Pos9_Pos10:
 	big_step LEFT
 	big_step LEFT
 	fix_facing
@@ -693,7 +691,7 @@ MovementData_Farfetched_Pos9_Pos10:
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos9_Pos8_Right:
+MovementData_Farfetchd_Pos9_Pos8_Right:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -705,7 +703,7 @@ MovementData_Farfetched_Pos9_Pos8_Right:
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos9_Pos8_Down:
+MovementData_Farfetchd_Pos9_Pos8_Down:
 	big_step LEFT
 	big_step LEFT
 	fix_facing
