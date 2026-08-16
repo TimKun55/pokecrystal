@@ -272,7 +272,7 @@ FuchsiaCity_MapEvents:
 	bg_event  9, 13, BGEVENT_READ, LaprasSign
 	bg_event 17, 11, BGEVENT_READ, PinsirSign
 	bg_event  9,  7, BGEVENT_READ, TaurosSign
-	bg_event 27, 13, BGEVENT_READ, NidokingSign
+	bg_event 29, 13, BGEVENT_READ, NidokingSign
 	bg_event 35,  7, BGEVENT_READ, NidoqueenSign
 
 	def_object_events
@@ -283,5 +283,5 @@ FuchsiaCity_MapEvents:
 	object_event  8, 12, SPRITE_LAPRAS_SAFARI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityLapras, -1
 	object_event  8,  6, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTauros, -1
 	object_event 16, 10, SPRITE_PINSIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPinsir, -1
-	object_event 26, 12, SPRITE_NIDOKING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityNidoking, -1
+	object_event 28, 12, SPRITE_NIDOKING, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityNidoking, -1
 	object_event 34,  6, SPRITE_NIDOQUEEN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityNidoqueen, -1
