@@ -278,7 +278,7 @@ OlderHaircutBrotherScript:
 	special LoadMapPalettes
 	playmusic MUSIC_HEAL
 	pause 60
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	special RestartMapMusic
 	opentext
 	writetext GoldenrodUndergroundOlderHaircutBrotherAllDoneText
@@ -352,7 +352,7 @@ YoungerHaircutBrotherScript:
 	special LoadMapPalettes
 	playmusic MUSIC_HEAL
 	pause 60
-	special FadeInFromWhite
+	special FadeInFromWhite_EnableDynNoApply
 	special RestartMapMusic
 	opentext
 	writetext GoldenrodUndergroundYoungerHaircutBrotherAllDoneText
