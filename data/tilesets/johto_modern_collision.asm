@@ -21,7 +21,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 14
 	tilecoll WATER, WATER, WATER, WATER ; 15
 	tilecoll WALL, HOP_LEFT, WALL, HOP_LEFT ; 16
-	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; 17
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 17
 	tilecoll WATER, WATER, WATER, WATER ; 18
 	tilecoll WATER, WATER, WATER, WATER ; 19
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 1a
