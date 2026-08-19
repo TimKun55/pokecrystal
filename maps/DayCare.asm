@@ -350,7 +350,7 @@ DayCareManText_GiveOddEgg:
 	line "#mon with my"
 	cont "wife, you see,"
 	cont "and one day,"
-	cont "We were shocked to"
+	cont "we were shocked to"
 	cont "find an Egg!"
 
 	para "Since then, we"
