@@ -60,41 +60,19 @@ Route34EggCheckCallback:
 	endcallback
 
 Route34LyraTrigger1:
+	scall StartRoute34Lyra
 	applymovement PLAYER, Route34PlayerMovement1
-	sjump Route34LyraTrigger2
+	sjump Route34LyraContinue
+
+Route34LyraTrigger2:
+	scall StartRoute34Lyra
+	applymovement PLAYER, Route34PlayerMovement2
+	sjump Route34LyraContinue
 
 Route34LyraTrigger3:
-	applymovement PLAYER, Route34PlayerMovement2
-Route34LyraTrigger2:
-	turnobject PLAYER, UP
-	moveobject ROUTE34_GRAMPS, 15, 15
-	playsound SFX_EXIT_BUILDING
-	appear ROUTE34_GRAMPS
-	applymovement ROUTE34_GRAMPS, Route34GrampsMovement
-	special FadeOutMusic
-	opentext
-	writetext Route34LyraText_Grandpa
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, ROUTE34_GRAMPS, 15
-	playmusic MUSIC_LYRA_ENCOUNTER
-	appear ROUTE34_LYRA
-	turnobject ROUTE34_GRAMPS, UP
-	pause 10
-	applymovement ROUTE34_LYRA, Route34LyraMovementComesDown
-	turnobject ROUTE34_GRAMPS, LEFT
-	opentext
-	writetext Route34LyraGoodWorkText
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, ROUTE34_LYRA, 15
-	pause 15
-	turnobject ROUTE34_LYRA, DOWN
-	opentext
-	writetext Route34LyraGreetingText
-	waitbutton
-	closetext
+	scall StartRoute34Lyra
 	applymovement PLAYER, Route34PlayerMovement3
+Route34LyraContinue:
 	pause 10
 	turnobject ROUTE34_LYRA, RIGHT
 	opentext
@@ -159,13 +137,44 @@ Route34LyraTrigger2:
 	stopfollow
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE34_LYRA
-	applymovement PLAYER, Route34PlayerMovement1
+	applymovement PLAYER, Route34PlayerMovement4
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
 	setscene SCENE_ROUTE34_NOOP
 	special FadeOutPalettes
 	pause 15
 	warpfacing RIGHT, DAY_CARE, 0, 4
+	end
+
+StartRoute34Lyra:
+	turnobject PLAYER, UP
+	moveobject ROUTE34_GRAMPS, 15, 15
+	playsound SFX_EXIT_BUILDING
+	appear ROUTE34_GRAMPS
+	applymovement ROUTE34_GRAMPS, Route34GrampsMovement
+	special FadeOutMusic
+	opentext
+	writetext Route34LyraText_Grandpa
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, ROUTE34_GRAMPS, 15
+	playmusic MUSIC_LYRA_ENCOUNTER
+	appear ROUTE34_LYRA
+	turnobject ROUTE34_GRAMPS, UP
+	pause 10
+	applymovement ROUTE34_LYRA, Route34LyraMovementComesDown
+	turnobject ROUTE34_GRAMPS, LEFT
+	opentext
+	writetext Route34LyraGoodWorkText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, ROUTE34_LYRA, 15
+	pause 15
+	turnobject ROUTE34_LYRA, DOWN
+	opentext
+	writetext Route34LyraGreetingText
+	waitbutton
+	closetext
 	end
 
 DayCareManScript_Outside:
@@ -559,15 +568,18 @@ Route34LyraMovementComesDown:
 
 Route34LyraMovementEntersDayCare:
 	step RIGHT
-Route34PlayerMovement1:
+Route34PlayerMovement4:
 	step RIGHT
 	step_end
 
-Route34PlayerMovement2:
+Route34PlayerMovement3:
 	step LEFT
+	step UP
 	step_end
 
-Route34PlayerMovement3:
+Route34PlayerMovement1:
+	step RIGHT
+Route34PlayerMovement2:
 	step UP
 	step_end
 
@@ -598,7 +610,7 @@ Route34LyraGoodWorkText:
 
 Route34LyraGreetingText:
 	ntag " Lyra "
-	text "Hi, <PLAYER>!"
+	text "Oh, hi, <PLAYER>!"
 	done
 
 Route34LyraIntroductionText1:
