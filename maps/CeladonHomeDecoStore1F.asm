@@ -89,9 +89,9 @@ CeladonHomeDecoStore1FClerk1Script:
 .MenuData1:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Magna     ¥30000@"
-	db "Tropic    ¥40000@"
-	db "Jumbo     ¥80000@"
+	db "Magna      ¥30000@"
+	db "Tropic     ¥40000@"
+	db "Jumbo      ¥80000@"
 	db "Cancel@"
 
 CeladonHomeDecoStore1FClerk2Script:
@@ -175,9 +175,9 @@ CeladonHomeDecoStore1FClerk2Script:
 .MenuData2:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Pikachu   ¥20000@"
-	db "Clefairy  ¥10000@"
-	db "Marill    ¥40000@"
+	db "Pikachu    ¥20000@"
+	db "Clefairy   ¥10000@"
+	db "Marill     ¥40000@"
 	db "Cancel@"
 
 CeladonHomeDecoStore1FPokefanfScript:

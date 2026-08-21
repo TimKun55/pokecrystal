@@ -93,9 +93,9 @@ CeladonHomeDecoStoreB2FClerk1Script:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "NES       ¥80000@"
-	db "SNES     ¥130000@"
-	db "N64      ¥180000@"
+	db "NES        ¥80000@"
+	db "SNES      ¥130000@"
+	db "N64       ¥180000@"
 	db "Cancel@"
 
 CeladonHomeDecoStoreB2FVirtualBoyScript:

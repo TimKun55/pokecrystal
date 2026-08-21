@@ -90,9 +90,9 @@ GoldenrodHomeDecoStore2Clerk1Script:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Red C.    ¥45000@"
-	db "Yellow C. ¥45000@"
-	db "Green C.  ¥45000@"
+	db "Red C.     ¥45000@"
+	db "Yellow C.  ¥45000@"
+	db "Green C.   ¥45000@"
 	db "Cancel@"
 
 GoldenrodHomeDecoStore2Clerk2Script:

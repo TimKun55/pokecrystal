@@ -179,9 +179,9 @@ GoldenrodHomeDecoStore1Clerk2Script:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "Pink      ¥62000@"
-	db "Polkadot  ¥94000@"
-	db "Pikachu  ¥126000@"
+	db "Pink       ¥62000@"
+	db "Polkadot   ¥94000@"
+	db "Pikachu   ¥126000@"
 	db "Cancel@"
 	
 HomeDecorVendingMachine:
