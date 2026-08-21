@@ -199,7 +199,10 @@ TrainerOfficerDirk:
 	winlosstext OfficerDirkBeatenText, 0
 	loadtrainer OFFICER, DIRK
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
+	playmapmusic
 	setevent EVENT_BEAT_OFFICER_DIRK
 	closetext
 	end

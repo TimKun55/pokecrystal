@@ -453,7 +453,10 @@ OfficerKeithScript:
 	winlosstext OfficerKeithWinText, 0
 	loadtrainer OFFICER, KEITH
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+	special DeleteSavedMusic
+	playmapmusic
 	setevent EVENT_BEAT_OFFICER_KEITH
 	closetext
 	end
