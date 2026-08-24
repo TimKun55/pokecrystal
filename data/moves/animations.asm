@@ -3553,6 +3553,7 @@ BattleAnim_Nightmare:
 	anim_ret
 
 BattleAnim_FlameWheel:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
 .loop
 	anim_sound 0, 0, SFX_EMBER
