@@ -514,9 +514,8 @@ PewterMuseum1FOldAmberText:
 PewterMuseum1FDomeFossilText:
 	text "A fossil from a"
 	line "prehistoric"
-
-	para "#mon that once"
-	line "lived in the sea."
+	cont "#mon that once"
+	cont "lived in the sea."
 	
 	para "It could be a"
 	line "shell or carapace."
@@ -525,9 +524,8 @@ PewterMuseum1FDomeFossilText:
 PewterMuseum1FHelixFossilText:
 	text "A fossil from a"
 	line "prehistoric"
-
-	para "#mon that once"
-	line "lived in the sea."
+	cont "#mon that once"
+	cont "lived in the sea."
 
 	para "It might be a"
 	line "piece of a"
@@ -604,10 +602,8 @@ PewterMuseum1F_MapEvents:
 	bg_event 16,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
 	bg_event 17,  3, BGEVENT_READ, PewterMuseum1FBookshelfScript
 	bg_event 28,  5, BGEVENT_READ, PewterMuseum1FMachineScript
-	bg_event  4,  7, BGEVENT_READ, PewterMuseum1FSpaceDeptScript
 	bg_event  5,  7, BGEVENT_READ, PewterMuseum1FSpaceDeptScript
 	bg_event 20,  7, BGEVENT_READ, PewterMuseum1FFossilDeptScript
-	bg_event 21,  7, BGEVENT_READ, PewterMuseum1FFossilDeptScript
 	bg_event 10, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
 	bg_event 11, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
 	bg_event 14, 15, BGEVENT_UP, PewterMuseum1FVendingMachine
@@ -616,8 +612,8 @@ PewterMuseum1F_MapEvents:
 	def_object_events
 	object_event 15, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
 	object_event 10, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FReceptionistScript, -1
-	object_event 24,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
-	object_event 28,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FFossilScientistScript, -1
+	object_event 24,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
+	object_event 28,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FFossilScientistScript, -1
 	object_event  8,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGrampsScript, -1
 	object_event 19, 10, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FYoungsterScript, -1
 	object_event 23,  5, SPRITE_FOSSILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FOldAmberScript, -1

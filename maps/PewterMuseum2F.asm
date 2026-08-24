@@ -174,7 +174,6 @@ PewterMuseum2F_MapEvents:
 	bg_event 17,  4, BGEVENT_READ, PewterMuseum2FSpaceShuttleSignpostScript
 	bg_event  4, 11, BGEVENT_READ, PewterMuseum2FCuboneArmorScript
 	bg_event  8,  5, BGEVENT_READ, PewterMuseum2FSpaceDeptScript
-	bg_event  9,  5, BGEVENT_READ, PewterMuseum2FSpaceDeptScript
 	bg_event 10,  3, BGEVENT_READ, PewterMuseum2FBookshelfScript
 	bg_event 11,  3, BGEVENT_READ, PewterMuseum2FBookshelfScript
 
