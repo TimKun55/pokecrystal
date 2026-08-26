@@ -53,16 +53,16 @@ FlowerShopTeacherScript:
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementToDoor
 	setevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
 	pause 15
-	playsound SFX_BUMP
+	playsound SFX_ENTER_DOOR
 	pause 15
-	changeblock 6, 0, $71 ; unlocked door
-	reloadmappart
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementFromDoor
 	opentext
 	writetext FlowerShopHiddenGardenUseText
 	waitbutton
 	closetext
 	applymovement GOLDENRODFLOWERSHOP_TEACHER, FlowerShopTeacherMovementLast
+	changeblock 6, 0, $71 ; unlocked door
+	reloadmappart
 	end
 
 .Lalala:
@@ -173,17 +173,11 @@ FlowerShopBellossomScript:
 	end
 
 FlowerShopDoor:
+	conditional_event EVENT_FLOWER_SHOP_UNLOCKED_DOOR, .Script
+
+.Script
 	opentext
-	checkevent EVENT_FLOWER_SHOP_UNLOCKED_DOOR
-	iffalse .LockedDoor
-	writetextend OpenDoorText
-
-.LockedDoor:
 	writetextend LockedDoorText
-
-FlowerShopPlayerMovement:
-	step DOWN
-	step_end
 
 FlowerShopTeacherMovementToDoor:
 	step RIGHT
@@ -205,6 +199,7 @@ FlowerShopTeacherMovementFromDoor:
 	step LEFT
 	step LEFT
 	step DOWN
+FlowerShopPlayerMovement:
 	step DOWN
 	step_end
 	
@@ -368,7 +363,7 @@ GoldenrodFlowerShop_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  0, BGEVENT_READ, FlowerShopDoor
+	bg_event  7,  0, BGEVENT_IFNOTSET, FlowerShopDoor
 
 	def_object_events
 	object_event  1,  4, SPRITE_MARY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
