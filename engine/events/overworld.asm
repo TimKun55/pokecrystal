@@ -1657,6 +1657,7 @@ RockSmashScript:
 	earthquake 84
 	applymovementlasttalked MovementData_RockSmash
 	disappear LAST_TALKED
+	waitsfx
 
 	callasm RockMonEncounter
 	readmem wTempWildMonSpecies
