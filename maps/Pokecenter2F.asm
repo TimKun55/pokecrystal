@@ -170,14 +170,18 @@ LinkReceptionistScript_Battle:
 
 Script_LeftCableTradeCenter:
 	special WaitForOtherPlayerToExit
-	scall Script_WalkOutOfLinkTradeRoom
+	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
 	setmapscene TRADE_CENTER, SCENE_TRADECENTER_INITIALIZE
 	setscene SCENE_POKECENTER2F_NOOP
 	end
 
 Script_LeftCableColosseum:
 	special WaitForOtherPlayerToExit
-	scall Script_WalkOutOfLinkBattleRoom
+	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
 	setmapscene COLOSSEUM, SCENE_COLOSSEUM_INITIALIZE
 	setscene SCENE_POKECENTER2F_NOOP
 	end
@@ -192,50 +196,6 @@ Pokecenter2F_EnterRoom:
 
 .Female
 	variablesprite SPRITE_LINK_TRAINER, SPRITE_KRIS
-	end
-
-Script_WalkOutOfLinkTradeRoom:
-	checkflag ENGINE_KRIS_IN_CABLE_CLUB
-	iftrue .Female
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	end
-
-.Female:
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesOneStepDown
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
-	playsound SFX_TINGLE
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_BLUE << 4)
-	special SetPlayerPalette
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
-	special UpdatePlayerSprite
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesTwoStepsDown
-	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	end
-
-Script_WalkOutOfLinkBattleRoom:
-	checkflag ENGINE_KRIS_IN_CABLE_CLUB
-	iftrue .Female
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	end
-
-.Female:
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesOneStepDown
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
-	playsound SFX_TINGLE
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_BLUE << 4)
-	special SetPlayerPalette
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
-	special UpdatePlayerSprite
-	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesTwoStepsDown
-	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
 	end
 
 Pokecenter2FLinkRecordSign:
@@ -274,21 +234,6 @@ Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3:
 	slow_step UP
 	slow_step LEFT
 	turn_head RIGHT
-	step_end
-
-Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	step_end
-
-Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head LEFT
 	step_end
 
 Text_BattleReceptionistIntro:

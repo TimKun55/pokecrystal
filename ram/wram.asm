@@ -131,7 +131,7 @@ wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
 
-	ds 3
+wPalFlags:: db
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
@@ -3109,8 +3109,6 @@ wGameTimeMinutes:: db
 wGameTimeSeconds:: db
 wGameTimeFrames::  db
 
-	ds 2
-
 wCurDay:: db
 
 wPokedexShinyToggle::
@@ -3133,10 +3131,16 @@ endr
 wStoneTableAddress:: dw
 
 ;	ds 40
-	ds 6
+	ds 1
 
 wPokerusBuffer::    db
 wMachoBraceBuffer:: db
+
+wUsedObjectPals:: db
+for n, 8
+wLoadedObjPal{d:n}:: db 
+endr
+wNeededPalIndex:: db
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3236,7 +3240,7 @@ wPlayerState:: db
 wHallOfFameCount:: db
 	ds 1
 wTradeFlags:: flag_array NUM_NPC_TRADES
-;	ds 1
+wEmotePal:: db
 wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
