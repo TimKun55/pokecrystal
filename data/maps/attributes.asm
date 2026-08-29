@@ -248,9 +248,9 @@ ENDM
 	connection south, Route29, ROUTE_29, -9
 	connection east, Route45, ROUTE_45, -36
 
-	map_attributes PewterCity, PEWTER_CITY, $45
+	map_attributes PewterCity, PEWTER_CITY, $2f
 	connection south, Route2, ROUTE_2, 5
-	connection east, Route3, ROUTE_3, 4
+	connection east, Route3, ROUTE_3, 5
 
 	map_attributes Route2, ROUTE_2, $2f
 	connection north, PewterCity, PEWTER_CITY, -5
@@ -379,7 +379,7 @@ ENDM
 	connection south, Route24, ROUTE_24, 0
 
 	map_attributes Route3, ROUTE_3, $45
-	connection west, PewterCity, PEWTER_CITY, -4
+	connection west, PewterCity, PEWTER_CITY, -5
 	connection east, Route4, ROUTE_4, 0
 
 	map_attributes Route4, ROUTE_4, $45
@@ -655,6 +655,7 @@ ENDM
 	map_attributes PewterSnoozeSpeechHouse, PEWTER_SNOOZE_SPEECH_HOUSE, $00
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00
+	map_attributes PewterBerrySpeechHouse, PEWTER_BERRY_SPEECH_HOUSE, $00
 	map_attributes Route3Pokecenter1F, ROUTE_3_POKECENTER_1F, $00
 	map_attributes OlivinePort, OLIVINE_PORT, $0a
 	map_attributes VermilionPort, VERMILION_PORT, $0a
@@ -747,6 +748,8 @@ ENDM
 	map_attributes BattleTowerOutside, BATTLE_TOWER_OUTSIDE, $05
 	map_attributes ViridianGym, VIRIDIAN_GYM, $00
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $00
+	map_attributes ViridianTrainerSpeechHouse, VIRIDIAN_TRAINER_SPEECH_HOUSE, $00
+	map_attributes ViridianWhitneyFanHouse, VIRIDIAN_WHITNEY_FAN_HOUSE, $00
 	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $00
 	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $00
 	map_attributes ViridianMart, VIRIDIAN_MART, $00

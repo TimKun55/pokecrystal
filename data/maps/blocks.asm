@@ -121,6 +121,8 @@ CeruleanTradeSpeechHouse_Blocks:
 BillsOlderSistersHouse_Blocks:
 LavenderSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
+ViridianTrainerSpeechHouse_Blocks:
+ViridianWhitneyFanHouse_Blocks:
 	INCBIN "maps/House2.ablk"
 
 MahoganyRedGyaradosSpeechHouse_Blocks:
@@ -170,6 +172,7 @@ LavenderNameRater_Blocks:
 
 PewterNidoranSpeechHouse_Blocks:
 PewterSnoozeSpeechHouse_Blocks:
+PewterBerrySpeechHouse_Blocks:
 Route12SuperRodHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:

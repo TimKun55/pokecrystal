@@ -344,7 +344,7 @@ ENDM
 
 	newgroup PEWTER                                               ; 14
 	map_const ROUTE_3,                                     35, 10 ;  1
-	map_const PEWTER_CITY,                                 20, 18 ;  2
+	map_const PEWTER_CITY,                                 20, 19 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const PEWTER_GYM,                                   7, 11 ;  4
 	map_const PEWTER_MART,                                  6,  4 ;  5
@@ -353,6 +353,7 @@ ENDM
 	map_const ROUTE_3_POKECENTER_1F,                        6,  4 ;  8
 	map_const PEWTER_MUSEUM_1F,                            15, 10 ;  9
 	map_const PEWTER_MUSEUM_2F,                            10,  7 ; 10
+	map_const PEWTER_BERRY_SPEECH_HOUSE,                    4,  4 ; 11
 	endgroup
 
 	newgroup FAST_SHIP                                            ; 15
@@ -487,22 +488,24 @@ ENDM
 	newgroup VIRIDIAN                                             ; 23
 	map_const ROUTE_2,                                     10, 36 ;  1
 	map_const ROUTE_22,                                    20,  9 ;  2
-	map_const ROUTE_26,                                    11, 54 ;  3	
+	map_const ROUTE_26,                                    11, 54 ;  3
 	map_const VIRIDIAN_CITY,                               20, 18 ;  4
 	map_const VIRIDIAN_GYM,                                 7, 23 ;  5
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  6
-	map_const TRAINER_HOUSE_1F,                             5,  6 ;  7
-	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  8
-	map_const VIRIDIAN_MART,                                6,  4 ;  9
-	map_const VIRIDIAN_POKECENTER_1F,                       6,  4 ; 10
-	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 11
-	map_const ROUTE_2_GATE,                                 4,  4 ; 12
-	map_const ROUTE_2_VIRIDIAN_FOREST_GATE,                 4,  4 ; 13
-	map_const VIRIDIAN_FOREST_ROUTE_2_GATE,                 4,  4 ; 14
-	map_const VIRIDIAN_FOREST_HOUSE,                        4,  4 ; 15
-	map_const POKEMON_LEAGUE_GATE,                         21, 16 ; 16
-	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 17
-	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 18
+	map_const VIRIDIAN_TRAINER_SPEECH_HOUSE,                4,  4 ;  7
+	map_const VIRIDIAN_WHITNEY_FAN_HOUSE,                   4,  4 ;  8
+	map_const TRAINER_HOUSE_1F,                             5,  6 ;  9
+	map_const TRAINER_HOUSE_B1F,                            5,  8 ; 10
+	map_const VIRIDIAN_MART,                                6,  4 ; 11
+	map_const VIRIDIAN_POKECENTER_1F,                       6,  4 ; 12
+	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 13
+	map_const ROUTE_2_GATE,                                 4,  4 ; 14
+	map_const ROUTE_2_VIRIDIAN_FOREST_GATE,                 4,  4 ; 15
+	map_const VIRIDIAN_FOREST_ROUTE_2_GATE,                 4,  4 ; 16
+	map_const VIRIDIAN_FOREST_HOUSE,                        4,  4 ; 17
+	map_const POKEMON_LEAGUE_GATE,                         21, 16 ; 18
+	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 19
+	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 20
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24

@@ -132,7 +132,7 @@ DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_next $80
 DEF SPRITE_POKEMON EQU const_value
-	const SPRITE_BULBASAUR ; 80      ; DOLL
+	const SPRITE_BULBASAUR ; 80      ; DOLL, ViridianTrainerSpeechHouse
 	const SPRITE_CHARMANDER ; 81     ; DOLL
 	const SPRITE_SQUIRTLE ; 82       ; DOLL
 	const SPRITE_BUTTERFREE ; 83     ; Route34IlexForestGate
@@ -149,7 +149,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_NIDORAN_M ; 8e      ; PewterNidoranSpeechHouse
 	const SPRITE_NIDORINO ; 8f       ; MrFujisHouse
 	const SPRITE_NIDOKING ; 90       ; FuchsiaCity
-	const SPRITE_CLEFAIRY ; 91       ; DOLL, CeladonMansion1F, CopycatsHouse2F, MountMoonGiftShop, MountMoonSquare, PokemonFanClub
+	const SPRITE_CLEFAIRY ; 91       ; DOLL, CeladonMansion1F, CopycatsHouse2F, MountMoonGiftShop, MountMoonSquare, PokemonFanClub, ViridianWhitneyFanHouse
 	const SPRITE_JIGGLYPUFF ; 92     ; DOLL, CeladonHomeDecorStore1F, PewterPokecenter1F, RadioTower2F
 	const SPRITE_ZUBAT ; 93          ; CeruleanTradeSpeechHouse
 	const SPRITE_ODDISH ; 94         ; DOLL

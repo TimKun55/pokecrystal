@@ -13,7 +13,7 @@ SpawnPoints:
 
 	spawn PALLET_TOWN,                 5,  8
 	spawn VIRIDIAN_CITY,              23, 26
-	spawn PEWTER_CITY,                13, 26
+	spawn PEWTER_CITY,                13, 28
 	spawn ROUTE_3,                    57,  6
 	spawn CERULEAN_CITY,              19, 20
 	spawn ROUTE_10_NORTH,              9,  4

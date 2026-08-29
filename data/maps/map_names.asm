@@ -670,11 +670,12 @@ Pewter_Map_Names:
 	dw Pewter_Map_Name8  ; map_const ROUTE_3_POKECENTER_1F
 	dw Pewter_Map_Name9  ; map_const PEWTER_MUSEUM_1F
 	dw Pewter_Map_Name10 ; map_const PEWTER_MUSEUM_2F
+	dw Pewter_Map_Name11 ; map_const PEWTER_BERRY_SPEECH_HOUSE
 	assert_table_length NUM_PEWTER_MAPS
 
 Pewter_Map_Name1:  db "Route 3@"
 Pewter_Map_Name2:  db "Pewter City@"
-Pewter_Map_Name3:  db "Pewter House 1@"
+Pewter_Map_Name3:  db "Pewter House 3@"
 Pewter_Map_Name4:  db "Pewter Gym@"
 Pewter_Map_Name5:  db "Pewter <POKE>Mart@"
 Pewter_Map_Name6:  db "Pewter <PKMN> Center@"
@@ -682,6 +683,7 @@ Pewter_Map_Name7:  db "Pewter House 2@"
 Pewter_Map_Name8:  db "Route 3 <PKMN> Cen.@" 
 Pewter_Map_Name9:  db "Pewter Museum 1F@" 
 Pewter_Map_Name10: db "Pewter Museum 2F@"
+Pewter_Map_Name11: db "Pewter House 1"
 
 Fast_Ship_Map_Names:
 	table_width 2
@@ -941,18 +943,20 @@ Viridian_Map_Names:
 	dw Viridian_Map_Name4  ; map_const VIRIDIAN_CITY
 	dw Viridian_Map_Name5  ; map_const VIRIDIAN_GYM
 	dw Viridian_Map_Name6  ; map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE
-	dw Viridian_Map_Name7  ; map_const TRAINER_HOUSE_1F
-	dw Viridian_Map_Name8  ; map_const TRAINER_HOUSE_B1F
-	dw Viridian_Map_Name9  ; map_const VIRIDIAN_MART
-	dw Viridian_Map_Name10 ; map_const VIRIDIAN_POKECENTER_1F
-	dw Viridian_Map_Name11 ; map_const ROUTE_2_NUGGET_HOUSE
-	dw Viridian_Map_Name12 ; map_const ROUTE_2_GATE
-	dw Viridian_Map_Name13 ; map_const ROUTE_2_VIRIDIAN_FOREST_GATE
-	dw Viridian_Map_Name14 ; map_const VIRIDIAN_FOREST_ROUTE_2_GATE
-	dw Viridian_Map_Name15 ; map_const VIRIDIAN_FOREST_HOUSE
-	dw Viridian_Map_Name16 ; map_const POKEMON_LEAGUE_GATE
-	dw Viridian_Map_Name17 ; map_const ROUTE_26_HEAL_HOUSE
-	dw Viridian_Map_Name18 ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE
+	dw Viridian_Map_Name7  ; map_const VIRIDIAN_TRAINER_SPEECH_HOUSE
+	dw Viridian_Map_Name8  ; map_const VIRIDIAN_WHITNEY_FAN_HOUSE
+	dw Viridian_Map_Name9  ; map_const TRAINER_HOUSE_1F
+	dw Viridian_Map_Name10 ; map_const TRAINER_HOUSE_B1F
+	dw Viridian_Map_Name11 ; map_const VIRIDIAN_MART
+	dw Viridian_Map_Name12 ; map_const VIRIDIAN_POKECENTER_1F
+	dw Viridian_Map_Name13 ; map_const ROUTE_2_NUGGET_HOUSE
+	dw Viridian_Map_Name14 ; map_const ROUTE_2_GATE
+	dw Viridian_Map_Name15 ; map_const ROUTE_2_VIRIDIAN_FOREST_GATE
+	dw Viridian_Map_Name16 ; map_const VIRIDIAN_FOREST_ROUTE_2_GATE
+	dw Viridian_Map_Name17 ; map_const VIRIDIAN_FOREST_HOUSE
+	dw Viridian_Map_Name18 ; map_const POKEMON_LEAGUE_GATE
+	dw Viridian_Map_Name19 ; map_const ROUTE_26_HEAL_HOUSE
+	dw Viridian_Map_Name20 ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE
 	assert_table_length NUM_VIRIDIAN_MAPS
 
 Viridian_Map_Name1:  db "Route 2@"
@@ -960,19 +964,21 @@ Viridian_Map_Name2:  db "Route 22@"
 Viridian_Map_Name3:  db "Route 26@"
 Viridian_Map_Name4:  db "Viridian City@"
 Viridian_Map_Name5:  db "Viridian Gym@"
-Viridian_Map_Name6:  db "Viridian House@"
-Viridian_Map_Name7:  db "Trainer House 1F@"
-Viridian_Map_Name8:  db "Trainer HouseB1F@"
-Viridian_Map_Name9:  db "Viridian <POKE>Mart@"
-Viridian_Map_Name10: db "Viridian <PKMN> Cen.@"
-Viridian_Map_Name11: db "Rt 2 Nugget House@"
-Viridian_Map_Name12: db "Route 2 Gate@"
-Viridian_Map_Name13: db "Route 2 VF Gate@"
-Viridian_Map_Name14: db "VF Route 2 Gate@"
-Viridian_Map_Name15: db "Forest House@"
-Viridian_Map_Name16: db "League Gate@"
-Viridian_Map_Name17: db "Route 26 House@"
-Viridian_Map_Name18: db "Day Siblings House@"
+Viridian_Map_Name6:  db "Viridian House 1@"
+Viridian_Map_Name7:  db "Viridian House 2@"
+Viridian_Map_Name8:  db "Viridian House 3@"
+Viridian_Map_Name9:  db "Trainer House 1F@"
+Viridian_Map_Name10: db "Trainer HouseB1F@"
+Viridian_Map_Name11: db "Viridian <POKE>Mart@"
+Viridian_Map_Name12: db "Viridian <PKMN> Cen.@"
+Viridian_Map_Name13: db "Rt 2 Nugget House@"
+Viridian_Map_Name14: db "Route 2 Gate@"
+Viridian_Map_Name15: db "Route 2 VF Gate@"
+Viridian_Map_Name16: db "VF Route 2 Gate@"
+Viridian_Map_Name17: db "Forest House@"
+Viridian_Map_Name18: db "League Gate@"
+Viridian_Map_Name19: db "Route 26 House@"
+Viridian_Map_Name20: db "Day Siblings House@"
 
 New_Bark_Map_Names:
 	table_width 2

@@ -2,6 +2,8 @@
 	const PEWTERCITY_COOLTRAINER_F
 	const PEWTERCITY_BUG_CATCHER
 	const PEWTERCITY_GRAMPS
+	const PEWTERCITY_FAT_GUY
+	const PEWTERCITY_HIKER
 	const PEWTERCITY_FRUIT_TREE1
 	const PEWTERCITY_FRUIT_TREE2
 
@@ -24,6 +26,12 @@ PewterCityBugCatcherScript:
 PewterCityGrampsScript:
 	jumptextfaceplayer PewterCityGrampsText
 
+PewterCityFatGuyScript:
+	jumptextfaceplayer PewterCityFatGuyText
+
+PewterCityHikerScript:
+	jumptextfaceplayer PewterCityHikerText
+
 PewterCitySign:
 	jumptext PewterCitySignText
 
@@ -35,9 +43,6 @@ PewterMuseumSign:
 
 PewterCityMtMoonGiftShopSign:
 	jumptext PewterCityMtMoonGiftShopSignText
-
-PewterCityWelcomeSign:
-	jumptext PewterCityWelcomeSignText
 
 PewterCityRawstTree:
 	fruittree FRUITTREE_PEWTER_CITY_RAWST
@@ -76,6 +81,19 @@ PewterCityGrampsText:
 	line "connected we are."
 	done
 
+PewterCityFatGuyText:
+	text "I'm taking care"
+	line "of our City's"
+	cont "flower garden."
+	done
+
+PewterCityHikerText:
+	text "I tried battling"
+	line "Brock, but he"
+	cont "was too strong"
+	cont "for me!"
+	done
+
 PewterCitySignText:
 	text "Pewter City"
 	line "A Stone Gray City"
@@ -103,33 +121,30 @@ PewterCityMtMoonGiftShopSignText:
 	line "Now open!"
 	done
 
-PewterCityWelcomeSignText:
-	text "Welcome to"
-	line "Pewter City!"
-	done
-
 PewterCity_MapEvents:
 
 	def_warp_events
-	warp_event 25, 12, PEWTER_NIDORAN_SPEECH_HOUSE, 1
-	warp_event 10, 15, PEWTER_GYM, 1
-	warp_event 13, 25, PEWTER_POKECENTER_1F, 1
-	warp_event 14, 25, PEWTER_POKECENTER_1F, 2
-	warp_event  7, 28, PEWTER_SNOOZE_SPEECH_HOUSE, 1
-	warp_event 18,  6, PEWTER_MUSEUM_1F, 1
+	warp_event 27, 32, PEWTER_NIDORAN_SPEECH_HOUSE, 1
+	warp_event 10, 19, PEWTER_GYM, 1
+	warp_event 13, 27, PEWTER_POKECENTER_1F, 1
+	warp_event 14, 27, PEWTER_POKECENTER_1F, 2
+	warp_event  7, 32, PEWTER_SNOOZE_SPEECH_HOUSE, 1
+	warp_event 18,  8, PEWTER_MUSEUM_1F, 1
+	warp_event 27, 16, PEWTER_BERRY_SPEECH_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 25, 23, BGEVENT_READ, PewterCitySign
-	bg_event 12, 14, BGEVENT_READ, PewterGymSign
-	bg_event 21,  8, BGEVENT_READ, PewterMuseumSign
-	bg_event 35, 16, BGEVENT_READ, PewterCityMtMoonGiftShopSign
-	bg_event 20, 16, BGEVENT_READ, PewterCityWelcomeSign
+	bg_event 23, 21, BGEVENT_READ, PewterCitySign
+	bg_event 12, 18, BGEVENT_READ, PewterGymSign
+	bg_event 21, 10, BGEVENT_READ, PewterMuseumSign
+	bg_event 35, 18, BGEVENT_READ, PewterCityMtMoonGiftShopSign
 
 	def_object_events
-	object_event 30, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
-	object_event 15, 28, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterCityBugCatcherScript, -1
-	object_event 28, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
-	object_event 30,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityRawstTree, -1
-	object_event 27,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityChestoTree, -1
+	object_event 25, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
+	object_event 16, 30, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterCityBugCatcherScript, -1
+	object_event 26, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
+	object_event 26, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFatGuyScript, -1
+	object_event 17, 15, SPRITE_HIKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityHikerScript, -1
+	object_event 30,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityRawstTree, -1
+	object_event 27,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityChestoTree, -1

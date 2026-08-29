@@ -187,12 +187,14 @@ ViridianCity_MapEvents:
 
 	def_warp_events
 	warp_event 30,  7, VIRIDIAN_GYM, 1
-	warp_event 23, 13, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1
-	warp_event 24, 19, TRAINER_HOUSE_1F, 1
+	warp_event 11,  7, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1
+	warp_event 12, 15, TRAINER_HOUSE_1F, 1
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
 	warp_event 24, 25, VIRIDIAN_POKECENTER_1F, 2
 	warp_event 19, 33, ROUTE_1_VIRIDIAN_GATE, 1
 	warp_event 20, 33, ROUTE_1_VIRIDIAN_GATE, 2
+	warp_event 23, 15, VIRIDIAN_TRAINER_SPEECH_HOUSE, 1
+	warp_event 31, 23, VIRIDIAN_WHITNEY_FAN_HOUSE, 1
 
 	def_coord_events
 
@@ -200,7 +202,7 @@ ViridianCity_MapEvents:
 	bg_event 17, 15, BGEVENT_READ, ViridianCitySign
 	bg_event 32,  6, BGEVENT_READ, ViridianGymSign
 	bg_event 17,  1, BGEVENT_READ, ViridianCityWelcomeSign
-	bg_event 21, 19, BGEVENT_READ, TrainerHouseSign
+	bg_event  9, 15, BGEVENT_READ, TrainerHouseSign
 
 	def_object_events
 	object_event 18,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
