@@ -249,7 +249,7 @@ TrainerHouseReceptionistScript:
 
 .MaybeLoreleiFight:
 	checkevent EVENT_BEAT_GUARDIAN_LORELEI
-	iffalse .Cal2Fight
+	iffalse .Cal1Fight
 	disappear TRAINERHOUSEB1F_ETHAN
 	disappear TRAINERHOUSEB1F_AGATHA
 	disappear TRAINERHOUSEB1F_OAK
@@ -274,7 +274,7 @@ TrainerHouseReceptionistScript:
 
 .MaybeOakFight:
 	checkevent EVENT_OPENED_MT_SILVER
-	iffalse .Cal2Fight
+	iffalse .Cal1Fight
 	disappear TRAINERHOUSEB1F_ETHAN
 	disappear TRAINERHOUSEB1F_AGATHA
 	disappear TRAINERHOUSEB1F_LORELEI
@@ -318,9 +318,6 @@ Movement_ExitTrainerHouseBattleRoom:
 	step UP
 	step UP
 	step UP
-	step RIGHT
-	step_end
-
 Movement_TrainerHouseTurnBack:
 	step RIGHT
 	step_end
