@@ -200,7 +200,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c7
 	tilecoll WALL, WALL, WALL, WALL ; c8
 	tilecoll WALL, WALL, WALL, WALL ; c9
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; ca
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; ca
 	tilecoll WATER, WATER, WATER, WATER ; cb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cc
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd

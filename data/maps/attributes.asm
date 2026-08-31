@@ -204,13 +204,13 @@ ENDM
 	connection south, GoldenrodCity, GOLDENROD_CITY, -6
 
 	map_attributes Route36, ROUTE_36, $05
-	connection north, Route37, ROUTE_37, 10
+	connection north, Route37, ROUTE_37, 11
 	connection south, Route35, ROUTE_35, 0
 	connection east, VioletCity, VIOLET_CITY, -3
 
 	map_attributes Route37, ROUTE_37, $05
 	connection north, EcruteakCity, ECRUTEAK_CITY, -5
-	connection south, Route36, ROUTE_36, -10
+	connection south, Route36, ROUTE_36, -11
 
 	map_attributes Route38, ROUTE_38, $05
 	connection west, Route39, ROUTE_39, 0
