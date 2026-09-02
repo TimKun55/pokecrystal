@@ -2,6 +2,11 @@
 	const ROUTE4_YOUNGSTER
 	const ROUTE4_LASS1
 	const ROUTE4_LASS2
+	const ROUTE4_ROCK1
+	const ROUTE4_ROCK2
+	const ROUTE4_ROCK3
+	const ROUTE4_ROCK4
+	const ROUTE4_ROCK5
 	const ROUTE4_POKE_BALL1
 	const ROUTE4_POKE_BALL2
 
@@ -38,6 +43,9 @@ TrainerPicnickerSharon:
 .Script:
 	endifjustbattled
 	jumptext PicnickerSharonAfterBattleText
+
+Route4Rock:
+	jumpstd SmashRockScript
 
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText
@@ -125,17 +133,22 @@ MtMoonSquareSignText:
 Route4_MapEvents:
 
 	def_warp_events
-	warp_event  2,  3, MOUNT_MOON_B1F, 11
+	warp_event  4,  3, MOUNT_MOON_B1F, 11
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  5,  5, BGEVENT_READ, MtMoonSquareSign
+	bg_event  6,  4, BGEVENT_READ, MtMoonSquareSign
 	bg_event 25,  5, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	def_object_events
 	object_event 39,  5, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
 	object_event 11,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
 	object_event 30,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
+	object_event  2,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4Rock, -1
+	object_event  8,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4Rock, -1
+	object_event  2,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4Rock, -1
+	object_event  6,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4Rock, -1
+	object_event  7,  9, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route4Rock, -1
 	object_event 55,  4, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
 	object_event 20, 17, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4FullRestore, EVENT_ROUTE_4_FULL_RESTORE

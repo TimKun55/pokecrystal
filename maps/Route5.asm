@@ -131,7 +131,7 @@ Route5_MapEvents:
 	warp_event 20, 37, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 2
 	warp_event 13, 41, ROUTE_5_SAFFRON_GATE, 1
 	warp_event 14, 41, ROUTE_5_SAFFRON_GATE, 2
-	warp_event 13, 23, ROUTE_5_CLEANSE_TAG_HOUSE, 1
+	warp_event 13, 25, ROUTE_5_CLEANSE_TAG_HOUSE, 1
 
 	def_coord_events
 
