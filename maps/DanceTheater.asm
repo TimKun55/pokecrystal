@@ -74,6 +74,8 @@ TrainerKimonoGirlSakura:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_KIMONO_GIRL_SAKURA
+	end
+
 .FightDone
 	opentext
 	writetextend KimonoGirlSakuraAfterBattleText
