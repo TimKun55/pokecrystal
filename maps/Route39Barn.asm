@@ -125,6 +125,13 @@ MoomooScript:
 	writetext MoomooHappyMooText
 	cry MILTANK
 	waitbutton
+	random 5
+	ifequal 4, .Gives3MooMooMilk
+	closetext
+	end
+
+.Gives3MooMooMilk:
+	verbosegiveitem MOOMOO_MILK, 3
 	closetext
 	end
 
@@ -137,6 +144,20 @@ Route39BarnMiltank:
 	pokepic MILTANK
 	waitbutton
 	closepokepic
+	random 10
+	ifequal 5, .Gives1MooMooMilk
+	ifequal 6, .Gives1MooMooMilk
+	ifequal 9, .Gives2MooMooMilk
+	closetext
+	end
+
+.Gives1MooMooMilk:
+	verbosegiveitem MOOMOO_MILK
+	closetext
+	end
+
+.Gives2MooMooMilk:
+	verbosegiveitem MOOMOO_MILK, 2
 	closetext
 	end
 
