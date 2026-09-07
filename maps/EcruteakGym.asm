@@ -7,6 +7,8 @@
 	const ECRUTEAKGYM_HEX_MANIAC2
 	const ECRUTEAKGYM_GYM_GUIDE
 	const ECRUTEAKGYM_GRAMPS
+	const ECRUTEAKGYM_ETHAN
+	const ECRUTEAKGYM_KRIS
 
 EcruteakGym_MapScripts:
 	def_scene_scripts
@@ -36,45 +38,45 @@ EcruteakGymLanternsCallback:
 	endcallback
 
 .MarthaLanternOff:
-	changeblock  4, 12, $90 ; floor, wall, floor, floor (lantern out)
-	changeblock  2, 10, $91 ; pit, floor, pit, floor (darkness creep)
-	changeblock  2, 12, $92 ; pit, floor, pit, floor
-	changeblock  6, 12, $93 ; pit, pit, floor, pit
-	changeblock  2, 14, $6b ; x4 pit
-	changeblock  4, 14, $83 ; floor, pit, floor, pit
-	changeblock  6, 14, $83 ; floor, pit, floor, pit
-	changeblock  4, 16, $8e ; x3 floor, pit
-	changeblock  6, 16, $88 ; floor, x3 pit
-	changeblock  4, 18, $84 ; pit, floor, pit, floor (darkness creep)
+	changeblock  6, 14, $90 ; floor, wall, floor, floor (lantern out)
+	changeblock  4, 12, $91 ; pit, floor, pit, floor (darkness creep)
+	changeblock  4, 14, $92 ; pit, floor, pit, floor
+	changeblock  8, 14, $93 ; pit, pit, floor, pit
+	changeblock  4, 16, $6b ; x4 pit
+	changeblock  6, 16, $83 ; floor, pit, floor, pit
+	changeblock  8, 16, $83 ; floor, pit, floor, pit
+	changeblock  6, 18, $8e ; x3 floor, pit
+	changeblock  8, 18, $88 ; floor, x3 pit
+	changeblock  6, 20, $84 ; pit, floor, pit, floor (darkness creep)
 	endcallback
 
 .JeffreyLanternOff:
-	changeblock  4, 18, $8b ; floor, pit, floor, pit (darkness creep)
-	changeblock  4, 20, $8c ; floor, wall, floor, floor (lantern)
-	changeblock  2, 22, $8d ; x2 floor, x2 pit
-	changeblock  4, 22, $82 ; x4 floor
-	changeblock  6, 22, $8e ; x3 floor, pit
-	changeblock  4, 24, $6b ; x4 pit
-	changeblock  6, 24, $6b ; x4 pit
-	changeblock  8, 22, $8f ; x2 floor, x2 pit (darkness creep)
+	changeblock  6, 20, $8b ; floor, pit, floor, pit (darkness creep)
+	changeblock  6, 22, $8c ; floor, wall, floor, floor (lantern)
+	changeblock  4, 24, $8d ; x2 floor, x2 pit
+	changeblock  6, 24, $82 ; x4 floor
+	changeblock  8, 24, $8e ; x3 floor, pit
+	changeblock  6, 26, $6b ; x4 pit
+	changeblock  8, 26, $6b ; x4 pit
+	changeblock 10, 24, $8f ; x2 floor, x2 pit (darkness creep)
 	endcallback
 
 .GraceLanternOff:
-	changeblock 10, 24, $86 ; wall, floor, pit, floor (lantern)
-	changeblock 10, 26, $87 ; pit, floor, pit, floor (darkness creep)
-	changeblock 12, 24, $88 ; floor, x3 pit
-	changeblock 10, 22, $89 ; floor, floor, pit, floor
-	changeblock 12, 22, $83 ; floor, pit, floor, pit
-	changeblock  8, 22, $8a ; x2 floor, x2 pit (darkness creep)
+	changeblock 12, 26, $86 ; wall, floor, pit, floor (lantern)
+	changeblock 12, 28, $87 ; pit, floor, pit, floor (darkness creep)
+	changeblock 14, 26, $88 ; floor, x3 pit
+	changeblock 12, 24, $89 ; floor, floor, pit, floor
+	changeblock 14, 24, $83 ; floor, pit, floor, pit
+	changeblock 10, 24, $8a ; x2 floor, x2 pit (darkness creep)
 	endcallback
 
 .PingLanternOff:
-	changeblock 10, 28, $82 ; x4 floor (lantern)
-	changeblock  8, 28, $82 ; x4 floor
-	changeblock  8, 30, $82 ; floor, pit, floor, pit
-	changeblock  8, 32, $83 ; floor, pit, floor, pit (darkness creep)
-	changeblock 10, 30, $6b ; x4 pit
-	changeblock 10, 26, $85 ; pit, floor, pit, floor
+	changeblock 12, 30, $82 ; x4 floor (lantern)
+	changeblock 10, 30, $82 ; x4 floor
+	changeblock 10, 32, $82 ; floor, pit, floor, pit
+	changeblock 10, 34, $83 ; floor, pit, floor, pit (darkness creep)
+	changeblock 12, 32, $6b ; x4 pit
+	changeblock 12, 28, $85 ; pit, floor, pit, floor
 	endcallback
 
 EcruteakGymMortyScript:
@@ -94,16 +96,16 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
-	changeblock  4, 12, $7c ; floor, wall, floor, floor (lantern on)
-	changeblock  2, 10, $70 ; pit, floor, pit, floor
-	changeblock  2, 12, $70 ; pit, floor, pit, floor
-	changeblock  6, 12, $7b ; pit, pit, floor, pit
-	changeblock  2, 14, $7a ; x4 pit
-	changeblock  4, 14, $6d ; floor, pit, floor, pit
-	changeblock  6, 14, $6c ; floor, pit, floor, pit
-	changeblock  4, 16, $76 ; x3 floor, pit
-	changeblock  6, 16, $72 ; floor, x3 pit
-	changeblock  4, 18, $6c ; pit, floor, pit, floor
+	changeblock  6, 14, $7c ; floor, wall, floor, floor (lantern on)
+	changeblock  4, 12, $70 ; pit, floor, pit, floor
+	changeblock  4, 14, $70 ; pit, floor, pit, floor
+	changeblock  8, 14, $7b ; pit, pit, floor, pit
+	changeblock  4, 16, $7a ; x4 pit
+	changeblock  6, 16, $6d ; floor, pit, floor, pit
+	changeblock  8, 16, $6c ; floor, pit, floor, pit
+	changeblock  6, 18, $76 ; x3 floor, pit
+	changeblock  8, 18, $72 ; floor, x3 pit
+	changeblock  6, 20, $6c ; pit, floor, pit, floor
 	refreshmap
 	opentext
 	writetext Text_ReceivedFogBadge
@@ -229,26 +231,26 @@ SageJeffreyCheck:
 	pause 20
 	special FadeOutToWhite
 	pause 10
-	changeblock  4, 20, $80 ; lantern out
+	changeblock  6, 22, $80 ; lantern out
 	reloadmappart
 	special FadeInFromWhite
 	pause 20
 	special FadeOutToBlack
 	pause 10
-	changeblock  4, 18, $8b ; floor, pit, floor, pit (darkness creep)
-	changeblock  4, 20, $8c ; floor, wall, floor, floor (lantern)
-	changeblock  2, 22, $8d ; x2 floor, x2 pit
-	changeblock  4, 22, $82 ; x4 floor
-	changeblock  6, 22, $8e ; x3 floor, pit
-	changeblock  4, 24, $6b ; x4 pit
-	changeblock  6, 24, $6b ; x4 pit
-	changeblock  8, 22, $8f ; x2 floor, x2 pit (darkness creep)
+	changeblock  6, 20, $8b ; floor, pit, floor, pit (darkness creep)
+	changeblock  6, 22, $8c ; floor, wall, floor, floor (lantern)
+	changeblock  4, 24, $8d ; x2 floor, x2 pit
+	changeblock  6, 24, $82 ; x4 floor
+	changeblock  8, 24, $8e ; x3 floor, pit
+	changeblock  6, 26, $6b ; x4 pit
+	changeblock  8, 26, $6b ; x4 pit
+	changeblock 10, 24, $8f ; x2 floor, x2 pit (darkness creep)
 	; reload Grace's tiles
-	changeblock 10, 24, $71 ; wall, floor, pit, floor (lantern)
-	changeblock 10, 26, $70 ; pit, floor, pit, floor (darkness creep)
-	changeblock 12, 24, $72 ; floor, x3 pit
-	changeblock 10, 22, $74 ; floor, floor, pit, floor
-	changeblock 12, 22, $8c ; floor, pit, floor, pit
+	changeblock 12, 26, $71 ; wall, floor, pit, floor (lantern)
+	changeblock 12, 28, $70 ; pit, floor, pit, floor (darkness creep)
+	changeblock 14, 26, $72 ; floor, x3 pit
+	changeblock 12, 24, $74 ; floor, floor, pit, floor
+	changeblock 14, 24, $8c ; floor, pit, floor, pit
 	reloadmappart
 	special FadeInFromBlack
 .End
@@ -277,18 +279,18 @@ SagePingCheck:
 	pause 20
 	special FadeOutToWhite
 	pause 10
-	changeblock 10, 28, $7e ; lantern out
+	changeblock 12, 30, $7e ; lantern out
 	refreshmap
 	special FadeInFromWhite
 	pause 20
 	special FadeOutToBlack
 	pause 10
-	changeblock 10, 28, $82 ; x4 floor (lantern)
-	changeblock  8, 28, $82 ; x4 floor
-	changeblock  8, 30, $82 ; floor, pit, floor, pit
-	changeblock  8, 32, $83 ; floor, pit, floor, pit (darkness creep)
-	changeblock 10, 30, $6b ; x4 pit
-	changeblock 10, 26, $85 ; pit, floor, pit, floor
+	changeblock 12, 30, $82 ; x4 floor (lantern)
+	changeblock 10, 30, $82 ; x4 floor
+	changeblock 10, 32, $82 ; floor, pit, floor, pit
+	changeblock 10, 34, $83 ; floor, pit, floor, pit (darkness creep)
+	changeblock 12, 32, $6b ; x4 pit
+	changeblock 12, 28, $85 ; pit, floor, pit, floor
 	refreshmap
 	special FadeInFromBlack
 .End
@@ -301,8 +303,28 @@ HexManiacMarthaCheck:
 	checkevent EVENT_BEAT_HEX_MANIAC_MARTHA
 	iftrue .End
 	playmusic MUSIC_SAGE_ENCOUNTER
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .ShowGirlPlaceholder
+	appear ECRUTEAKGYM_ETHAN
+	sjump .HidePlayer
+
+.ShowGirlPlaceholder
+	appear ECRUTEAKGYM_KRIS
+.HidePlayer
+	applymovement PLAYER, HideObjectMovement
+	applymovement PLAYER, BigStepUpMovement
 	showemote EMOTE_SHOCK, ECRUTEAKGYM_HEX_MANIAC1, 30
 	pause 15
+	applymovement PLAYER, BigStepDownFaceUpMovement
+	applymovement PLAYER, ShowObjectMovement
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .HideGirlPlaceholder
+	disappear ECRUTEAKGYM_ETHAN
+	sjump .HidPlaceholder
+
+.HideGirlPlaceholder
+	disappear ECRUTEAKGYM_KRIS
+.HidPlaceholder
 	applymovement ECRUTEAKGYM_HEX_MANIAC1, MarthaToPlayerMovement
 	opentext
 	writetext HexManiacMarthaSeenText
@@ -317,30 +339,30 @@ HexManiacMarthaCheck:
 	pause 20
 	special FadeOutToWhite
 	pause 10
-	changeblock 10, 24, $81 ; lantern out
+	changeblock 12, 26, $81 ; lantern out
 	reloadmappart
 	special FadeInFromWhite
 	pause 20
 	special FadeOutToBlack
 	pause 10
-	changeblock  4, 12, $90 ; floor, wall, floor, floor (lantern out)
-	changeblock  2, 10, $91 ; pit, floor, pit, floor (darkness creep)
-	changeblock  2, 12, $92 ; pit, floor, pit, floor
-	changeblock  6, 12, $93 ; pit, pit, floor, pit
-	changeblock  2, 14, $6b ; x4 pit
-	changeblock  4, 14, $83 ; floor, pit, floor, pit
-	changeblock  6, 14, $83 ; floor, pit, floor, pit
-	changeblock  4, 16, $8e ; x3 floor, pit
-	changeblock  6, 16, $88 ; floor, x3 pit
-	changeblock  4, 18, $84 ; pit, floor, pit, floor (darkness creep)
+	changeblock  6, 14, $90 ; floor, wall, floor, floor (lantern out)
+	changeblock  4, 12, $91 ; pit, floor, pit, floor (darkness creep)
+	changeblock  4, 14, $92 ; pit, floor, pit, floor
+	changeblock  8, 14, $93 ; pit, pit, floor, pit
+	changeblock  4, 16, $6b ; x4 pit
+	changeblock  6, 16, $83 ; floor, pit, floor, pit
+	changeblock  8, 16, $83 ; floor, pit, floor, pit
+	changeblock  6, 18, $8e ; x3 floor, pit
+	changeblock  8, 18, $88 ; floor, x3 pit
+	changeblock  6, 20, $84 ; pit, floor, pit, floor (darkness creep)
 	; reload Jeffrey's tiles
-	changeblock  4, 20, $7c ; floor, wall, floor, floor (lantern)
-	changeblock  2, 22, $75 ; x2 floor, x2 pit
-	changeblock  4, 22, $6e ; x4 floor
-	changeblock  6, 22, $76 ; x3 floor, pit
-	changeblock  4, 24, $77 ; x4 pit
-	changeblock  6, 24, $78 ; x4 pit
-	changeblock  8, 22, $75 ; x2 floor, x2 pit
+	changeblock  6, 22, $7c ; floor, wall, floor, floor (lantern)
+	changeblock  4, 24, $75 ; x2 floor, x2 pit
+	changeblock  6, 24, $6e ; x4 floor
+	changeblock  8, 24, $76 ; x3 floor, pit
+	changeblock  6, 26, $77 ; x4 pit
+	changeblock  8, 26, $78 ; x4 pit
+	changeblock 10, 24, $75 ; x2 floor, x2 pit
 	reloadmappart
 	special FadeInFromBlack
 .End
@@ -368,24 +390,24 @@ HexManiacGraceCheck:
 	pause 20
 	special FadeOutToWhite
 	pause 10
-	changeblock 10, 24, $7f ; lantern off
+	changeblock 12, 26, $7f ; lantern off
 	reloadmappart
 	special FadeInFromWhite
 	pause 20
 	special FadeOutToBlack
 	pause 10
-	changeblock 10, 24, $86 ; wall, floor, pit, floor (lantern)
-	changeblock 10, 26, $87 ; pit, floor, pit, floor (darkness creep)
-	changeblock 12, 24, $88 ; floor, x3 pit
-	changeblock 10, 22, $89 ; floor, floor, pit, floor
-	changeblock 12, 22, $83 ; floor, pit, floor, pit
-	changeblock  8, 22, $8a ; x2 floor, x2 pit (darkness creep)
+	changeblock 12, 26, $86 ; wall, floor, pit, floor (lantern)
+	changeblock 12, 28, $87 ; pit, floor, pit, floor (darkness creep)
+	changeblock 14, 26, $88 ; floor, x3 pit
+	changeblock 12, 24, $89 ; floor, floor, pit, floor
+	changeblock 14, 24, $83 ; floor, pit, floor, pit
+	changeblock 10, 24, $8a ; x2 floor, x2 pit (darkness creep)
 	; reload Ping's tiles
-	changeblock 10, 28, $6f ; x4 floor (lantern)
-	changeblock  8, 28, $6e ; x4 floor
-	changeblock  8, 30, $6d ; floor, pit, floor, pit
-	changeblock  8, 32, $6c ; floor, pit, floor, pit (darkness creep)
-	changeblock 10, 30, $73 ; x4 pit
+	changeblock 12, 30, $6f ; x4 floor (lantern)
+	changeblock 10, 30, $6e ; x4 floor
+	changeblock 10, 32, $6d ; floor, pit, floor, pit
+	changeblock 10, 34, $6c ; floor, pit, floor, pit (darkness creep)
+	changeblock 12, 32, $73 ; x4 pit
 	reloadmappart
 	special FadeInFromBlack
 .End
@@ -437,6 +459,23 @@ MarthaToPlayerMovement:
 	step DOWN
 	step DOWN
 	step DOWN
+	step_end
+
+BigStepUpMovement:
+	big_step UP
+	step_end
+
+BigStepDownFaceUpMovement:
+	big_step DOWN
+	turn_head UP
+	step_end
+
+ShowObjectMovement:
+	show_object
+	step_end
+
+HideObjectMovement:
+	hide_object
 	step_end
 
 MortyIntroText:
@@ -723,103 +762,105 @@ GengarText:
 EcruteakGym_MapEvents:
 
 	def_warp_events
-	warp_event  8, 39, ECRUTEAK_CITY, 8
-	warp_event  9, 39, ECRUTEAK_CITY, 8
-	warp_event  8, 34, ECRUTEAK_GYM, 4
-	warp_event  2,  6, ECRUTEAK_GYM, 3
-	warp_event  4,  6, ECRUTEAK_GYM, 3
-	warp_event  2,  7, ECRUTEAK_GYM, 3
-	warp_event  4,  7, ECRUTEAK_GYM, 3
-	warp_event  2,  8, ECRUTEAK_GYM, 3
+	warp_event 10, 41, ECRUTEAK_CITY, 8
+	warp_event 11, 41, ECRUTEAK_CITY, 8
+	warp_event 10, 36, ECRUTEAK_GYM, 4
 	warp_event  4,  8, ECRUTEAK_GYM, 3
-	warp_event  2,  9, ECRUTEAK_GYM, 3
+	warp_event  6,  8, ECRUTEAK_GYM, 3
 	warp_event  4,  9, ECRUTEAK_GYM, 3
-	warp_event  2, 10, ECRUTEAK_GYM, 3
+	warp_event  6,  9, ECRUTEAK_GYM, 3
 	warp_event  4, 10, ECRUTEAK_GYM, 3
-	warp_event  2, 11, ECRUTEAK_GYM, 3
+	warp_event  6, 10, ECRUTEAK_GYM, 3
 	warp_event  4, 11, ECRUTEAK_GYM, 3
-	warp_event  2, 12, ECRUTEAK_GYM, 3
+	warp_event  6, 11, ECRUTEAK_GYM, 3
+	warp_event  4, 12, ECRUTEAK_GYM, 3
 	warp_event  6, 12, ECRUTEAK_GYM, 3
-	warp_event  2, 13, ECRUTEAK_GYM, 3
-	warp_event  7, 13, ECRUTEAK_GYM, 3
-	warp_event  3, 14, ECRUTEAK_GYM, 3
-	warp_event  5, 14, ECRUTEAK_GYM, 3
-	warp_event  7, 14, ECRUTEAK_GYM, 3
-	warp_event  3, 15, ECRUTEAK_GYM, 3
-	warp_event  5, 15, ECRUTEAK_GYM, 3
-	warp_event  7, 15, ECRUTEAK_GYM, 3
-	warp_event  3, 16, ECRUTEAK_GYM, 3
+	warp_event  4, 13, ECRUTEAK_GYM, 3
+	warp_event  6, 13, ECRUTEAK_GYM, 3
+	warp_event  4, 14, ECRUTEAK_GYM, 3
+	warp_event  8, 14, ECRUTEAK_GYM, 3
+	warp_event  4, 15, ECRUTEAK_GYM, 3
+	warp_event  9, 15, ECRUTEAK_GYM, 3
+	warp_event  5, 16, ECRUTEAK_GYM, 3
 	warp_event  7, 16, ECRUTEAK_GYM, 3
-	warp_event  3, 17, ECRUTEAK_GYM, 3
+	warp_event  9, 16, ECRUTEAK_GYM, 3
 	warp_event  5, 17, ECRUTEAK_GYM, 3
-	warp_event  6, 17, ECRUTEAK_GYM, 3
-	warp_event  3, 18, ECRUTEAK_GYM, 3
+	warp_event  7, 17, ECRUTEAK_GYM, 3
+	warp_event  9, 17, ECRUTEAK_GYM, 3
 	warp_event  5, 18, ECRUTEAK_GYM, 3
-	warp_event  3, 19, ECRUTEAK_GYM, 3
+	warp_event  9, 18, ECRUTEAK_GYM, 3
 	warp_event  5, 19, ECRUTEAK_GYM, 3
-	warp_event  3, 20, ECRUTEAK_GYM, 3
+	warp_event  7, 19, ECRUTEAK_GYM, 3
+	warp_event  8, 19, ECRUTEAK_GYM, 3
 	warp_event  5, 20, ECRUTEAK_GYM, 3
-	warp_event  2, 21, ECRUTEAK_GYM, 3
-	warp_event  3, 21, ECRUTEAK_GYM, 3
-	warp_event  6, 21, ECRUTEAK_GYM, 3
+	warp_event  7, 20, ECRUTEAK_GYM, 3
+	warp_event  5, 21, ECRUTEAK_GYM, 3
 	warp_event  7, 21, ECRUTEAK_GYM, 3
-	warp_event  8, 21, ECRUTEAK_GYM, 3
-	warp_event  9, 21, ECRUTEAK_GYM, 3
-	warp_event 10, 21, ECRUTEAK_GYM, 3
-	warp_event 11, 21, ECRUTEAK_GYM, 3
-	warp_event 12, 21, ECRUTEAK_GYM, 3
-	warp_event  1, 22, ECRUTEAK_GYM, 3
-	warp_event 13, 22, ECRUTEAK_GYM, 3
-	warp_event  2, 23, ECRUTEAK_GYM, 3
-	warp_event  3, 23, ECRUTEAK_GYM, 3
-	warp_event  7, 23, ECRUTEAK_GYM, 3
+	warp_event  5, 22, ECRUTEAK_GYM, 3
+	warp_event  7, 22, ECRUTEAK_GYM, 3
+	warp_event  4, 23, ECRUTEAK_GYM, 3
+	warp_event  5, 23, ECRUTEAK_GYM, 3
 	warp_event  8, 23, ECRUTEAK_GYM, 3
 	warp_event  9, 23, ECRUTEAK_GYM, 3
 	warp_event 10, 23, ECRUTEAK_GYM, 3
+	warp_event 11, 23, ECRUTEAK_GYM, 3
+	warp_event 12, 23, ECRUTEAK_GYM, 3
 	warp_event 13, 23, ECRUTEAK_GYM, 3
-	warp_event  4, 24, ECRUTEAK_GYM, 3
-	warp_event  5, 24, ECRUTEAK_GYM, 3
-	warp_event  6, 24, ECRUTEAK_GYM, 3
-	warp_event 13, 24, ECRUTEAK_GYM, 3
+	warp_event 14, 23, ECRUTEAK_GYM, 3
+	warp_event  3, 24, ECRUTEAK_GYM, 3
+	warp_event 15, 24, ECRUTEAK_GYM, 3
+	warp_event  4, 25, ECRUTEAK_GYM, 3
+	warp_event  5, 25, ECRUTEAK_GYM, 3
+	warp_event  9, 25, ECRUTEAK_GYM, 3
 	warp_event 10, 25, ECRUTEAK_GYM, 3
+	warp_event 11, 25, ECRUTEAK_GYM, 3
 	warp_event 12, 25, ECRUTEAK_GYM, 3
-	warp_event 10, 26, ECRUTEAK_GYM, 3
-	warp_event 12, 26, ECRUTEAK_GYM, 3
-	warp_event  8, 27, ECRUTEAK_GYM, 3
-	warp_event  9, 27, ECRUTEAK_GYM, 3
-	warp_event 10, 27, ECRUTEAK_GYM, 3
+	warp_event 15, 25, ECRUTEAK_GYM, 3
+	warp_event  6, 26, ECRUTEAK_GYM, 3
+	warp_event  7, 26, ECRUTEAK_GYM, 3
+	warp_event  8, 26, ECRUTEAK_GYM, 3
+	warp_event 15, 26, ECRUTEAK_GYM, 3
 	warp_event 12, 27, ECRUTEAK_GYM, 3
-	warp_event  7, 28, ECRUTEAK_GYM, 3
+	warp_event 14, 27, ECRUTEAK_GYM, 3
 	warp_event 12, 28, ECRUTEAK_GYM, 3
-	warp_event  7, 29, ECRUTEAK_GYM, 3
+	warp_event 14, 28, ECRUTEAK_GYM, 3
+	warp_event 10, 29, ECRUTEAK_GYM, 3
+	warp_event 11, 29, ECRUTEAK_GYM, 3
 	warp_event 12, 29, ECRUTEAK_GYM, 3
-	warp_event  7, 30, ECRUTEAK_GYM, 3
+	warp_event 14, 29, ECRUTEAK_GYM, 3
 	warp_event  9, 30, ECRUTEAK_GYM, 3
-	warp_event 10, 30, ECRUTEAK_GYM, 3
-	warp_event 11, 30, ECRUTEAK_GYM, 3
-	warp_event  7, 31, ECRUTEAK_GYM, 3
+	warp_event 14, 30, ECRUTEAK_GYM, 3
 	warp_event  9, 31, ECRUTEAK_GYM, 3
-	warp_event  7, 32, ECRUTEAK_GYM, 3
+	warp_event 14, 31, ECRUTEAK_GYM, 3
 	warp_event  9, 32, ECRUTEAK_GYM, 3
-	warp_event  7, 33, ECRUTEAK_GYM, 3
+	warp_event 11, 32, ECRUTEAK_GYM, 3
+	warp_event 12, 32, ECRUTEAK_GYM, 3
+	warp_event 13, 32, ECRUTEAK_GYM, 3
 	warp_event  9, 33, ECRUTEAK_GYM, 3
+	warp_event 11, 33, ECRUTEAK_GYM, 3
+	warp_event  9, 34, ECRUTEAK_GYM, 3
+	warp_event 11, 34, ECRUTEAK_GYM, 3
+	warp_event  9, 35, ECRUTEAK_GYM, 3
+	warp_event 11, 35, ECRUTEAK_GYM, 3
 
 	def_coord_events
-	coord_event  8, 29, SCENE_ECRUTEAKGYM_NOOP, SagePingCheck
-	coord_event 11, 24, SCENE_ECRUTEAKGYM_NOOP, HexManiacGraceCheck
-	coord_event  6, 22, SCENE_ECRUTEAKGYM_NOOP, SageJeffreyCheck
-	coord_event  4, 16, SCENE_ECRUTEAKGYM_NOOP, HexManiacMarthaCheck
+	coord_event 10, 31, SCENE_ECRUTEAKGYM_NOOP, SagePingCheck
+	coord_event 13, 26, SCENE_ECRUTEAKGYM_NOOP, HexManiacGraceCheck
+	coord_event  8, 24, SCENE_ECRUTEAKGYM_NOOP, SageJeffreyCheck
+	coord_event  6, 18, SCENE_ECRUTEAKGYM_NOOP, HexManiacMarthaCheck
 
 	def_bg_events
-	bg_event  6, 37, BGEVENT_READ, EcruteakGymStatue
-	bg_event 11, 37, BGEVENT_READ, EcruteakGymStatue
+	bg_event  8, 39, BGEVENT_READ, EcruteakGymStatue
+	bg_event 13, 39, BGEVENT_READ, EcruteakGymStatue
 
 	def_object_events
-	object_event  2,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
-	object_event  3,  1, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengar, -1
-	object_event  2, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSageJeffrey, -1
-	object_event  9, 29, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSagePing, -1
-	object_event  4, 12, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacMartha, -1
-	object_event 11, 23, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacGrace, -1
-	object_event 10, 37, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
-	object_event  8, 36, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  4,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, EcruteakGymMortyScript, -1
+	object_event  5,  3, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengar, -1
+	object_event  4, 24, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSageJeffrey, -1
+	object_event 11, 31, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSagePing, -1
+	object_event  6, 14, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacMartha, -1
+	object_event 13, 25, SPRITE_HEX_MANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHexManiacGrace, -1
+	object_event 12, 39, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
+	object_event 10, 38, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  6, 18, SPRITE_ETHAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  6, 18, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
