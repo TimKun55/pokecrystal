@@ -7,16 +7,23 @@ LoadSpecialMapPalette:
 	jp z, .darkness
 
 .not_dark
+    cp GROUP_OLIVINE_POKECENTER_1F
+    jr nz, .continue1
+    ld a, [wMapNumber]
+    cp MAP_OLIVINE_GYM
+    jp z, .olivine_gym_palette
+
+.continue1
     ld a, [wMapGroup]
     cp GROUP_MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
-    jr nz, .continue1
+    jr nz, .continue2
     ld a, [wMapNumber]
     cp MAP_MAHOGANY_GYM
     jp z, .mahogany_gym_palette
 
-.continue1
+.continue2
     cp GROUP_SPROUT_TOWER_1F
-    jr nz, .continue2
+    jr nz, .continue3
     ld a, [wMapNumber]
     cp MAP_ILEX_FOREST
     jp z, .forest_palette
@@ -29,57 +36,71 @@ LoadSpecialMapPalette:
     cp MAP_CERULEAN_CAVE_B1F
     jp z, .cavevolcano_palette
 
-.continue2
+.continue3
+	cp GROUP_ROUTE_35
+    jr nz, .continue4
+    ld a, [wMapNumber]
+    cp MAP_ECRUTEAK_GYM
+    jp z, .ecruteak_gym_palette
+
+.continue4
+	cp GROUP_BLACKTHORN_GYM_1F
+    jr nz, .continue5
+    ld a, [wMapNumber]
+    cp MAP_BLACKTHORN_GYM_1F
+    jp z, .blackthorn_gym_palette
+
+.continue5
 	cp GROUP_CINNABAR_POKECENTER_1F
-    jr nz, .continue3
+    jr nz, .continue6
     ld a, [wMapNumber]
     cp MAP_CINNABAR_VOLCANO_1F
     jp z, .cavevolcano_palette
     cp MAP_CINNABAR_VOLCANO_2F
     jp z, .cavevolcano_palette
 
-.continue3
+.continue6
 	cp GROUP_AZALEA_POKECENTER_1F
-    jr nz, .continue4
+    jr nz, .continue7
     ld a, [wMapNumber]
     cp MAP_CHARCOAL_KILN
     jp z, .charcoalkiln_palette
 
-.continue4
+.continue7
 	cp GROUP_ROUTE_34
-    jr nz, .continue5
+    jr nz, .continue8
     ld a, [wMapNumber]
     cp MAP_GOLDENROD_GAME_CORNER
     jp z, .gym_palette
 
-.continue5
+.continue8
 	cp GROUP_ROUTE_6
-    jr nz, .continue6
+    jr nz, .continue9
     ld a, [wMapNumber]
     cp MAP_VERMILION_GYM
     jp z, .gym_palette
 
-.continue6
+.continue9
 	cp GROUP_OLIVINE_PORT
-    jr nz, .continue7
+    jr nz, .continue10
     ld a, [wMapNumber]
     cp MAP_FARAWAY_ISLAND_OUTSIDE
     jp z, .faraway_palette
 	cp MAP_FARAWAY_ISLAND_INSIDE
     jp z, .faraway_palette
 
-.continue7
+.continue10
     cp GROUP_ROUTE_23
-    jr nz, .continue8
+    jr nz, .continue11
     ld a, [wMapNumber]
     cp MAP_WILLS_ROOM
     jp z, .elite_four_palette
     cp MAP_KARENS_ROOM
     jp z, .elite_four_palette
 
-.continue8
+.continue11
     cp GROUP_CELADON_CITY
-    jr nz, .continue9
+    jr nz, .continue12
     ld a, [wMapNumber]
     cp MAP_CELADON_GAME_CORNER
     jp z, .gym_palette
@@ -90,30 +111,37 @@ LoadSpecialMapPalette:
     cp MAP_CELADON_HOTEL_POOL
     jp z, .cerulean_gym_palette
 
-.continue9
+.continue12
+    cp GROUP_ROUTE_40
+    jr nz, .continue13
+    ld a, [wMapNumber]
+    cp MAP_CIANWOOD_GYM
+    jp z, .cianwood_gym_palette
+
+.continue13
     cp GROUP_VIRIDIAN_CITY
-    jr nz, .continue10
+    jr nz, .continue14
     ld a, [wMapNumber]
     cp MAP_VIRIDIAN_GYM
     jp z, .viridian_gym_palette
 
-.continue10
+.continue14
     cp GROUP_SAFFRON_CITY
-    jr nz, .continue11
+    jr nz, .continue15
     ld a, [wMapNumber]
     cp MAP_SAFFRON_GYM
     jp z, .saffron_gym_palette
 	cp MAP_SILPH_CO_1F
     jp z, .silph_co_palette
 
-.continue11
+.continue15
     cp GROUP_CERULEAN_GYM_BADGE_SPEECH_HOUSE
-    jr nz, .continue12
+    jr nz, .continue16
     ld a, [wMapNumber]
     cp MAP_CERULEAN_GYM
     jp z, .cerulean_gym_palette
 
-.continue12
+.continue16
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -149,7 +177,7 @@ LoadSpecialMapPalette:
 	ld a, [wEnvironment]
 	and $7
 	cp INDOOR ; Hall of Fame
-	jr z, .do_nothing
+	jp z, .do_nothing
 	call LoadIcePathPalette
 	scf
 	ret
@@ -206,8 +234,28 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.cianwood_gym_palette
+	call LoadCianwoodGymPalette
+	scf
+	ret
+
+.olivine_gym_palette
+	call LoadOlivineGymPalette
+	scf
+	ret
+
 .mahogany_gym_palette
 	call LoadMahoganyGymPalette
+	scf
+	ret
+
+.blackthorn_gym_palette
+	call LoadBlackthornGymPalette
+	scf
+	ret
+
+.ecruteak_gym_palette
+	call LoadEcruteakGymPalette
 	scf
 	ret
 
@@ -430,6 +478,28 @@ LoadViridianGymPalette:
 ViridianGymPalette:
 INCLUDE "gfx/tilesets/viridian_gym_palette.pal"
 
+LoadCianwoodGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CianwoodGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+CianwoodGymPalette:
+INCLUDE "gfx/tilesets/cianwood_gym_palette.pal"
+
+LoadOlivineGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, OlivineGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+OlivineGymPalette:
+INCLUDE "gfx/tilesets/olivine_gym_palette.pal"
+
 LoadMahoganyGymPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
@@ -440,6 +510,28 @@ LoadMahoganyGymPalette:
 	
 MahoganyGymPalette:
 INCLUDE "gfx/tilesets/mahogany_gym_palette.pal"
+
+LoadBlackthornGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, BlackthornGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+BlackthornGymPalette:
+INCLUDE "gfx/tilesets/blackthorn_gym_palette.pal"
+
+LoadEcruteakGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, EcruteakGymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+EcruteakGymPalette:
+INCLUDE "gfx/tilesets/ecruteak_gym_palette.pal"
 
 LoadSaffronGymPalette:
 	ld a, BANK(wBGPals1)
