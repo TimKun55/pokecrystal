@@ -53,7 +53,7 @@ OlivineCityRivalSceneTop:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesTopMovement
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesMovement
 	setscene SCENE_OLIVINECITY_NOOP
 	disappear OLIVINECITY_RIVAL
 	special RestartMapMusic
@@ -75,7 +75,7 @@ OlivineCityRivalSceneBottom:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesBottomMovement
+	applymovement OLIVINECITY_RIVAL, OlivineCityRivalLeavesMovement
 	disappear OLIVINECITY_RIVAL
 	setscene SCENE_OLIVINECITY_NOOP
 	special RestartMapMusic
@@ -128,33 +128,14 @@ OlivineCityRivalApproachesBottomMovement:
 	step RIGHT
 	step_end
 
-OlivineCityRivalLeavesTopMovement:
+OlivineCityRivalLeavesMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-OlivineCityRivalLeavesBottomMovement:
 	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
 	step_end
 
 OlivineCityPlayerStepsAsideTopMovement:
