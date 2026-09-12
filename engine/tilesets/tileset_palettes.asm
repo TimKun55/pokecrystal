@@ -42,6 +42,8 @@ LoadSpecialMapPalette:
     ld a, [wMapNumber]
     cp MAP_ECRUTEAK_GYM
     jp z, .ecruteak_gym_palette
+	cp MAP_BELLCHIME_TRAIL
+    jp z, .bellchime_palette
 
 .continue4
 	cp GROUP_BLACKTHORN_GYM_1F
@@ -271,6 +273,11 @@ LoadSpecialMapPalette:
 
 .cerulean_gym_palette
 	call LoadCeruleanGymPalette
+	scf
+	ret
+
+.bellchime_palette
+	call LoadBellchimePalette
 	scf
 	ret
 
@@ -576,6 +583,31 @@ LoadEliteFourPalette:
 	
 EliteFourPalette:
 INCLUDE "gfx/tilesets/elite_four_palette.pal"
+
+LoadBellchimePalette:
+	ld a, [wTimeOfDay]
+	maskbits NUM_DAYTIMES
+	; Each time group contains 8 palettes (8 * 8 bytes = 64 bytes)
+	ld bc, 8 palettes
+	ld hl, BellchimePalette
+	call AddNTimes ; hl = BellchimePalette + (wTimeOfDay * 64)
+
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	scf ; Set carry flag to signal a special palette was loaded
+	ret
+
+BellchimePalette:
+; Morn (8 palettes)
+INCLUDE "gfx/tilesets/bellchime_morn.pal"
+; Day (8 palettes)
+INCLUDE "gfx/tilesets/bellchime_day.pal"
+; Nite (8 palettes)
+INCLUDE "gfx/tilesets/bellchime_nite.pal"
+; Eve (8 palettes)
+INCLUDE "gfx/tilesets/bellchime_eve.pal"
 
 LoadSpecialNPCPalette:
 	call GetMapTimeOfDay

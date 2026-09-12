@@ -115,6 +115,7 @@ TilesetJohtoAnim:
 	tileframe DoneTileAnimation
 
 TilesetJohto2Anim:
+TilesetJohto6Anim:
 	tileframe AnimateFlowerTile,			vTiles2 tile $02
 	tileframe AnimateWaterfallTiles,		vTiles2 tile $54
 	tileframe AnimateSeaWaterTile,			vTiles2 tile $01

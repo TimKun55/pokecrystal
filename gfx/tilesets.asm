@@ -676,3 +676,19 @@ INCBIN "data/tilesets/gym_kanto_attributes.bin"
 Tileset0Meta::
 TilesetJohtoMeta::
 INCBIN "data/tilesets/johto_metatiles.bin"
+
+
+SECTION "Tileset Data 28", ROMX
+
+
+TilesetJohto6GFX::
+INCBIN "gfx/tilesets/johto_6.2bpp.lz"
+
+TilesetJohto6Meta::
+INCBIN "data/tilesets/johto_6_metatiles.bin"
+
+TilesetJohto6Coll::
+INCLUDE "data/tilesets/johto_6_collision.asm"
+
+TilesetJohto6Attr::
+INCBIN "data/tilesets/johto_6_attributes.bin"

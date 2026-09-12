@@ -64,9 +64,6 @@ EcruteakDanceTheaterSign:
 BurnedTowerSign:
 	jumptext BurnedTowerSignText
 
-TinTowerSign:
-	jumptext TinTowerSignText
-
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
 
@@ -202,51 +199,39 @@ BurnedTowerSignText:
 	line "as it is unsafe."
 	done
 
-TinTowerSignText:
-	text "Tin Tower"
-
-	para "A legendary #-"
-	line "mon is said to"
-	cont "roost here."
-	done
-
 EcruteakCity_MapEvents:
 
 	def_warp_events
-	warp_event 35, 38, ROUTE_42_ECRUTEAK_GATE, 1
-	warp_event 35, 39, ROUTE_42_ECRUTEAK_GATE, 2
-	warp_event 17, 19, ECRUTEAK_TIN_TOWER_ENTRANCE, 1
-	warp_event 23, 39, ECRUTEAK_POKECENTER_1F, 1
-	warp_event 24, 39, ECRUTEAK_POKECENTER_1F, 2
-	warp_event  5, 29, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
-	warp_event 23, 33, DANCE_THEATER, 1
-	warp_event  6, 39, ECRUTEAK_GYM, 1
-	warp_event 13, 39, ECRUTEAK_ITEMFINDER_HOUSE, 1
-	warp_event  6, 13, BURNED_TOWER_1F, 1
-	warp_event 20,  4, WISE_TRIOS_ROOM, 1
-	warp_event 20,  5, WISE_TRIOS_ROOM, 2
-	warp_event 33, 13, TIN_TOWER_1F, 1
-	warp_event  0, 30, ROUTE_38_ECRUTEAK_GATE, 3
-	warp_event  0, 31, ROUTE_38_ECRUTEAK_GATE, 4
-	warp_event 13, 29, ECRUTEAK_FAIRY_FAMILY_HOUSE, 1
-	warp_event 29, 39, ECRUTEAK_SWARM_HOUSE, 1
-	warp_event 29, 33, ECRUTEAK_MOVE_TUTOR_HOUSE, 1
+	warp_event 37, 30, ROUTE_42_ECRUTEAK_GATE, 1
+	warp_event 37, 31, ROUTE_42_ECRUTEAK_GATE, 2
+	warp_event 19, 11, ECRUTEAK_TIN_TOWER_ENTRANCE, 1
+	warp_event 25, 31, ECRUTEAK_POKECENTER_1F, 1
+	warp_event 26, 31, ECRUTEAK_POKECENTER_1F, 2
+	warp_event  7, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
+	warp_event 25, 25, DANCE_THEATER, 1
+	warp_event  8, 31, ECRUTEAK_GYM, 1
+	warp_event 15, 31, ECRUTEAK_ITEMFINDER_HOUSE, 1
+	warp_event  7,  5, BURNED_TOWER_1F, 1
+	warp_event  0, 22, ROUTE_38_ECRUTEAK_GATE, 3
+	warp_event  0, 23, ROUTE_38_ECRUTEAK_GATE, 4
+	warp_event 15, 21, ECRUTEAK_FAIRY_FAMILY_HOUSE, 1
+	warp_event 31, 31, ECRUTEAK_SWARM_HOUSE, 1
+	warp_event 31, 25, ECRUTEAK_MOVE_TUTOR_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 15, 33, BGEVENT_READ, EcruteakCitySign
-	bg_event  8, 38, BGEVENT_READ, EcruteakGymSign
-	bg_event 20, 33, BGEVENT_READ, EcruteakDanceTheaterSign
-	bg_event  8, 22, BGEVENT_READ, BurnedTowerSign
-	bg_event 34, 14, BGEVENT_READ, TinTowerSign
-	bg_event 15, 20, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
+	bg_event 17, 25, BGEVENT_READ, EcruteakCitySign
+	bg_event 10, 30, BGEVENT_READ, EcruteakGymSign
+	bg_event 22, 25, BGEVENT_READ, EcruteakDanceTheaterSign
+	bg_event  9, 14, BGEVENT_READ, BurnedTowerSign
+	bg_event 21, 14, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
 
 	def_object_events
-	object_event 18, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
-	object_event 19, 33, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
-	object_event 14, 35, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
-	object_event  4, 17, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
-	object_event  6, 32, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFatGuyScript, -1
-	object_event 10, 26, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
-	object_event  8, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 20, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
+	object_event 21, 25, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
+	object_event 16, 27, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
+	object_event  6,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
+	object_event  8, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFatGuyScript, -1
+	object_event 12, 18, SPRITE_SCHOOLBOY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySchoolboyScript, -1
+	object_event 10,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS

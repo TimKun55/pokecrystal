@@ -48,11 +48,18 @@ Route36TileCallback:
 	endcallback
 
 .NarrowRoad
+	changeblock 32,  4, $02 ; grass
+	changeblock 32,  6, $3e ; bottom left headbutt tree
+	changeblock 32,  8, $39 ; bottom 2 headbutt trees
 	changeblock 34,  6, $35 ; 4 headbutt trees
 	changeblock 34,  8, $3d ; top right headbutt tree
 	changeblock 36,  8, $31 ; top 2 headbutt trees
+	changeblock 36, 10, $02 ; grass
+	changeblock 36, 12, $4b ; grass, stairs
+	changeblock 36, 14, $02 ; grass
 	changeblock 38,  8, $31 ; top 2 headbutt trees
 	changeblock 40,  8, $31 ; top 2 headbutt trees
+	changeblock 40,  8, $02 ; grass
 	changeblock 36, 10, $34 ; left 2 headbutt trees
 	endcallback
 

@@ -1124,4 +1124,7 @@ GoldenrodArtGalleryEastWing_Blocks:
 GoldenrodArtGalleryWestWing_Blocks:
 	INCBIN "maps/GoldenrodArtGalleryWestWing.ablk"
 
+BellchimeTrail_Blocks:
+	INCBIN "maps/BellchimeTrail.ablk"
+
 ENDSECTION

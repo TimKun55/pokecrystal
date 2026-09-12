@@ -145,9 +145,9 @@ ENDM
 	connection west, Route40, ROUTE_40, 9
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05
-	connection south, Route37, ROUTE_37, 5
-	connection west, Route38, ROUTE_38, 10
-	connection east, Route42, ROUTE_42, 15
+	connection south, Route37, ROUTE_37, 6
+	connection west, Route38, ROUTE_38, 6
+	connection east, Route42, ROUTE_42, 11
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $45
 	connection north, Route43, ROUTE_43, 0
@@ -209,12 +209,12 @@ ENDM
 	connection east, VioletCity, VIOLET_CITY, -3
 
 	map_attributes Route37, ROUTE_37, $05
-	connection north, EcruteakCity, ECRUTEAK_CITY, -5
+	connection north, EcruteakCity, ECRUTEAK_CITY, -6
 	connection south, Route36, ROUTE_36, -11
 
 	map_attributes Route38, ROUTE_38, $05
 	connection west, Route39, ROUTE_39, 0
-	connection east, EcruteakCity, ECRUTEAK_CITY, -10
+	connection east, EcruteakCity, ECRUTEAK_CITY, -6
 
 	map_attributes Route39, ROUTE_39, $05
 	connection south, OlivineCity, OLIVINE_CITY, -4
@@ -229,7 +229,7 @@ ENDM
 	connection west, CianwoodCity, CIANWOOD_CITY, 0
 
 	map_attributes Route42, ROUTE_42, $05
-	connection west, EcruteakCity, ECRUTEAK_CITY, -15
+	connection west, EcruteakCity, ECRUTEAK_CITY, -11
 	connection east, MahoganyTown, MAHOGANY_TOWN, 0
 
 	map_attributes Route43, ROUTE_43, $05
@@ -546,6 +546,7 @@ ENDM
 	map_attributes EcruteakGym, ECRUTEAK_GYM, $00
 	map_attributes EcruteakItemfinderHouse, ECRUTEAK_ITEMFINDER_HOUSE, $00
 	map_attributes EcruteakMoveTutorHouse, ECRUTEAK_MOVE_TUTOR_HOUSE, $00
+	map_attributes BellchimeTrail, BELLCHIME_TRAIL, $9f
 	map_attributes BlackthornGym1F, BLACKTHORN_GYM_1F, $00
 	map_attributes BlackthornGym2F, BLACKTHORN_GYM_2F, $00
 	map_attributes BlackthornDragonSpeechHouse, BLACKTHORN_DRAGON_SPEECH_HOUSE, $00

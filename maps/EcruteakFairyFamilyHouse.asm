@@ -347,8 +347,8 @@ FairySylveonText:
 EcruteakFairyFamilyHouse_MapEvents:
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 16
-	warp_event  4,  7, ECRUTEAK_CITY, 16
+	warp_event  3,  7, ECRUTEAK_CITY, 13
+	warp_event  4,  7, ECRUTEAK_CITY, 13
 
 	def_coord_events
 

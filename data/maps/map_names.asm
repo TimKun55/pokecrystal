@@ -338,6 +338,7 @@ Ecruteak_Map_Names:
 	dw Ecruteak_Map_Name16 ; map_const ROUTE_35_NATIONAL_PARK_GATE
 	dw Ecruteak_Map_Name17 ; map_const ROUTE_36_NATIONAL_PARK_GATE
 	dw Ecruteak_Map_Name18 ; map_const ECRUTEAK_MOVE_TUTOR_HOUSE
+	dw Ecruteak_Map_Name19 ; map_const BELLCHIME_TRAIL
 	assert_table_length NUM_ECRUTEAK_MAPS
 
 Ecruteak_Map_Name1:  db "Route 35@"
@@ -358,6 +359,7 @@ Ecruteak_Map_Name15: db "Route 35 Gate 1@"
 Ecruteak_Map_Name16: db "Route 35 Gate 2@"
 Ecruteak_Map_Name17: db "Route 36 Gate@"
 Ecruteak_Map_Name18: db "Ecruteak Tutor@"
+Ecruteak_Map_Name19: db "Bellchime Trail@"
 
 Blackthorn_Map_Names:
 	table_width 2

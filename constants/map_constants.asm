@@ -46,7 +46,7 @@ ENDM
 	map_const ROUTE_38_ECRUTEAK_GATE,                       5,  4 ;  8
 	map_const ROUTE_39_BARN,                                7,  4 ;  9
 	map_const ROUTE_39_FARMHOUSE,                           4,  4 ; 10
-	map_const ROUTE_38,                                    20, 10 ; 11
+	map_const ROUTE_38,                                    19, 10 ; 11
 	map_const ROUTE_39,                                    11, 19 ; 12
 	map_const OLIVINE_CITY,                                20, 18 ; 13
 	map_const OLIVINE_MOVE_TUTOR_HOUSE,                     4,  4 ; 14
@@ -170,7 +170,7 @@ ENDM
 	newgroup ECRUTEAK                                             ;  4
 	map_const ROUTE_35,                                    10, 18 ;  1
 	map_const ROUTE_36,                                    31,  9 ;  2
-	map_const ROUTE_37,                                    10,  9 ;  3
+	map_const ROUTE_37,                                    11,  9 ;  3
 	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  4
 	map_const WISE_TRIOS_ROOM,                              4,  4 ;  5
 	map_const ECRUTEAK_POKECENTER_1F,                       6,  4 ;  6
@@ -179,13 +179,14 @@ ENDM
 	map_const ECRUTEAK_MART,                                6,  4 ;  9
 	map_const ECRUTEAK_GYM,                                 9, 21 ; 10
 	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ; 11
-	map_const ECRUTEAK_CITY,                               20, 24 ; 12
+	map_const ECRUTEAK_CITY,                               21, 20 ; 12
 	map_const ECRUTEAK_FAIRY_FAMILY_HOUSE,                  4,  4 ; 13
 	map_const ECRUTEAK_SWARM_HOUSE,                         4,  4 ; 14 	
 	map_const ROUTE_35_GOLDENROD_GATE,                      4,  4 ; 15
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
 	map_const ECRUTEAK_MOVE_TUTOR_HOUSE,                    4,  4 ; 18
+	map_const BELLCHIME_TRAIL,                             13, 10 ; 19
 	endgroup
 
 	newgroup BLACKTHORN                                           ;  5

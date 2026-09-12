@@ -498,8 +498,8 @@ TinTower1FSage6Text2:
 TinTower1F_MapEvents:
 
 	def_warp_events
-	warp_event  7, 15, ECRUTEAK_CITY, 13
-	warp_event  8, 15, ECRUTEAK_CITY, 13
+	warp_event  7, 15, BELLCHIME_TRAIL, 3
+	warp_event  8, 15, BELLCHIME_TRAIL, 3
 	warp_event  8,  2, TIN_TOWER_2F, 2
 
 	def_coord_events

@@ -171,8 +171,8 @@ SkipSwarmText:
 EcruteakSwarmHouse_MapEvents:
 
 	def_warp_events
-	warp_event  3,  7, ECRUTEAK_CITY, 17
-	warp_event  4,  7, ECRUTEAK_CITY, 17
+	warp_event  3,  7, ECRUTEAK_CITY, 14
+	warp_event  4,  7, ECRUTEAK_CITY, 14
 
 	def_coord_events
 

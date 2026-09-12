@@ -581,6 +581,7 @@ SECTION "Map Scripts 31", ROMX
 INCLUDE "maps/GoldenrodArtGallery.asm"
 INCLUDE "maps/GoldenrodArtGalleryEastWing.asm"
 INCLUDE "maps/GoldenrodArtGalleryWestWing.asm"
+INCLUDE "maps/BellchimeTrail.asm"
 
 
 ENDSECTION
