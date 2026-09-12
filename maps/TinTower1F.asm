@@ -73,7 +73,7 @@ TinTower1FNPCsCallback:
 TinTower1FStairsCallback:
 	checkevent EVENT_GOT_RAINBOW_WING
 	iftrue .DontHideStairs
-	changeblock 10, 2, $09 ; floor
+	changeblock 8, 2, $09 ; floor
 .DontHideStairs:
 	endcallback
 
@@ -135,24 +135,24 @@ TinTower1FSuicuneBattleScript:
 	turnobject PLAYER, DOWN
 	playmusic MUSIC_EUSINE_ENCOUNTER
 	playsound SFX_ENTER_DOOR
-	moveobject TINTOWER1F_EUSINE, 10, 15
+	moveobject TINTOWER1F_EUSINE, 8, 15
 	appear TINTOWER1F_EUSINE
 	applymovement TINTOWER1F_EUSINE, TinTower1FEusineEntersMovement
 	playsound SFX_ENTER_DOOR
-	moveobject TINTOWER1F_SAGE1, 9, 15
+	moveobject TINTOWER1F_SAGE1, 7, 15
 	appear TINTOWER1F_SAGE1
 	applymovement TINTOWER1F_SAGE1, TinTower1FSage1EntersMovement
 	playsound SFX_ENTER_DOOR
-	moveobject TINTOWER1F_SAGE2, 9, 15
+	moveobject TINTOWER1F_SAGE2, 7, 15
 	appear TINTOWER1F_SAGE2
 	applymovement TINTOWER1F_SAGE2, TinTower1FSage2EntersMovement
 	playsound SFX_ENTER_DOOR
-	moveobject TINTOWER1F_SAGE3, 9, 15
+	moveobject TINTOWER1F_SAGE3, 7, 15
 	appear TINTOWER1F_SAGE3
 	applymovement TINTOWER1F_SAGE3, TinTower1FSage3EntersMovement
-	moveobject TINTOWER1F_SAGE1, 7, 13
-	moveobject TINTOWER1F_SAGE2, 9, 13
-	moveobject TINTOWER1F_SAGE3, 11, 13
+	moveobject TINTOWER1F_SAGE1, 5, 13
+	moveobject TINTOWER1F_SAGE2, 7, 13
+	moveobject TINTOWER1F_SAGE3, 9, 13
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext TinTower1FEusineSuicuneText
