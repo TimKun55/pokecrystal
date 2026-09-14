@@ -1,27 +1,27 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 02
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 03
+	tilecoll WALL, WALL, WALL, WALL ; 02
+	tilecoll WALL, WALL, WALL, WALL ; 03
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 04
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 05
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 06
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 07
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 08
+	tilecoll WALL, WALL, WALL, WALL ; 08
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 09
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 0a
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 0a
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 0b
 	tilecoll WALL, WALL, WALL, WALL ; 0c
-	tilecoll WALL, WALL, WALL, WALL ; 0d
-	tilecoll WALL, WALL, WALL, WALL ; 0e
-	tilecoll WALL, WALL, WALL, WALL ; 0f
-	tilecoll WALL, WALL, WALL, WALL ; 10
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 11
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 12
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 13
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 14
-	tilecoll WALL, WALL, WALL, FLOOR ; 15
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 16
-	tilecoll WALL, WALL, FLOOR, WALL ; 17
+	tilecoll LEFT_WALL, RIGHT_WALL, FLOOR, FLOOR ; 0d
+	tilecoll LEFT_WALL, RIGHT_WALL, LEFT_WALL, RIGHT_WALL ; 0e
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 0f
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 10
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 11
+	tilecoll WALL, WALL, WALL, WALL ; 12
+	tilecoll WALL, WALL, WALL, WALL ; 13
+	tilecoll WALL, WALL, WALL, WALL ; 14
+	tilecoll WALL, WALL, WALL, WALL ; 15
+	tilecoll WALL, WALL, WALL, WALL ; 16
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 17
 	tilecoll WALL, WALL, WALL, WALL ; 18
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 19
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1a
@@ -244,3 +244,7 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; f3
 	tilecoll WALL, WALL, WALL, WALL ; f4
 	tilecoll WALL, WALL, FLOOR, FLOOR ; f5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f9

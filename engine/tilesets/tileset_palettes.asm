@@ -11,7 +11,7 @@ LoadSpecialMapPalette:
     jr nz, .continue1
     ld a, [wMapNumber]
     cp MAP_OLIVINE_GYM
-    jp z, .olivine_gym_palette
+    jp z, .olivine_violet_gym_palette
 
 .continue1
     ld a, [wMapGroup]
@@ -144,6 +144,13 @@ LoadSpecialMapPalette:
     jp z, .cerulean_gym_palette
 
 .continue16
+    cp GROUP_ROUTE_32
+    jr nz, .continue17
+    ld a, [wMapNumber]
+    cp MAP_VIOLET_GYM
+    jp z, .olivine_violet_gym_palette
+
+.continue17
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
@@ -241,8 +248,8 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.olivine_gym_palette
-	call LoadOlivineGymPalette
+.olivine_violet_gym_palette
+	call LoadOlivineVioletGymPalette
 	scf
 	ret
 
@@ -496,16 +503,16 @@ LoadCianwoodGymPalette:
 CianwoodGymPalette:
 INCLUDE "gfx/tilesets/cianwood_gym_palette.pal"
 
-LoadOlivineGymPalette:
+LoadOlivineVioletGymPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, OlivineGymPalette
+	ld hl, OlivineVioletGymPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
 	
-OlivineGymPalette:
-INCLUDE "gfx/tilesets/olivine_gym_palette.pal"
+OlivineVioletGymPalette:
+INCLUDE "gfx/tilesets/olivine_violet_gym_palette.pal"
 
 LoadMahoganyGymPalette:
 	ld a, BANK(wBGPals1)
