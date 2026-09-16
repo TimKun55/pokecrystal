@@ -33,20 +33,21 @@ Route30EnteiScript:
 	pause 15
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
+	cry ENTEI
+	waitsfx
 	applymovement PLAYER, Route30PlayerMovement
 	playsound SFX_WARP_FROM
 	applymovement ROUTE30_ENTEI, Route30EnteiMovement
 	disappear ROUTE30_ENTEI
 	pause 10
 	setscene SCENE_ROUTE30_NOOP
+	clearevent EVENT_SAW_ENTEI_ON_ROUTE_37
 	checkevent EVENT_FOUGHT_SUICUNE
 	iffalse .EnteiLoop
-	clearevent EVENT_SAW_ENTEI_ON_ROUTE_37
 	setmapscene ROUTE_37, SCENE_ROUTE37_ENTEI2
 	end
 
 .EnteiLoop:
-	clearevent EVENT_SAW_ENTEI_ON_ROUTE_37
 	setmapscene ROUTE_37, SCENE_ROUTE37_ENTEI1
 	end
 

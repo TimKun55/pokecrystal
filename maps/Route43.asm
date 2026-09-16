@@ -51,6 +51,8 @@ Route43RaikouScriptTop:
 	pause 15
 	applymovement PLAYER, Route43PlayerMovement
 .RaikouLeave
+	cry RAIKOU
+	waitsfx
 	playsound SFX_WARP_FROM
 	applymovement ROUTE43_RAIKOU, Route43RaikouMovement
 	disappear ROUTE43_RAIKOU

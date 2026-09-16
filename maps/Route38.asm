@@ -35,6 +35,8 @@ Route38Raikou1bScript:
 	pause 15
 	showemote EMOTE_SHOCK, ROUTE38_RAIKOU, 15
 	pause 15
+	cry RAIKOU
+	waitsfx
 	playsound SFX_WARP_FROM
 	applymovement ROUTE38_RAIKOU, Route38RaikouMovement
 	disappear ROUTE38_RAIKOU

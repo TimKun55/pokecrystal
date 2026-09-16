@@ -42,6 +42,8 @@ Route44Raikou2Script:
 	turnobject ROUTE44_RAIKOU, RIGHT
 	pause 15
 .RaikouLeave
+	cry RAIKOU
+	waitsfx
 	playsound SFX_WARP_FROM
 	applymovement ROUTE44_RAIKOU, Route44RaikouMovement
 	disappear ROUTE44_RAIKOU

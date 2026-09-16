@@ -59,6 +59,8 @@ Route37Entei1bScript:
 	pause 15
 	applymovement PLAYER, Route37PlayerMovement1
 .Entei1Leave
+	cry ENTEI
+	waitsfx
 	playsound SFX_WARP_FROM
 	applymovement ROUTE37_ENTEI, Route37Entei1Movement
 	disappear ROUTE37_ENTEI
