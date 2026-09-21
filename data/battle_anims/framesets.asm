@@ -191,6 +191,7 @@ BattleAnimFrameData:
 	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
 	dw .Frameset_FireBlastImpact     ; BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT
 	dw .Frameset_Flamethrower_Alt    ; BATTLE_ANIM_FRAMESET_FLAMETHROWER_ALT
+	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -490,6 +491,10 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_20, 16
 	oamframe BATTLE_ANIM_OAMSET_21, 16
 	oamframe BATTLE_ANIM_OAMSET_1B, 16
+	oamend
+
+.Frameset_BubbleSplash:
+	oamframe BATTLE_ANIM_OAMSET_BD,  8
 	oamend
 
 .Frameset_Surf:

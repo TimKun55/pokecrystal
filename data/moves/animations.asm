@@ -3306,49 +3306,48 @@ BattleAnim_Barrier:
 BattleAnim_Waterfall:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_WATER
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_BUBBLE
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_RISING_BUBBLE, 64, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_RISING_BUBBLE, 32, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_RISING_BUBBLE, 48, 104, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect BATTLE_BG_EFFECT_BODY_SLAM, $0, BG_EFFECT_USER, $0
 	anim_wait 16
-	anim_call BattleAnim_ShowMon_0
-	anim_sound 0, 0, SFX_MENU
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 9, 4, 13, 0, $0
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 10, 4, 12, 2, $0
-	anim_wait 1
-	anim_sound 0, 0, SFX_MENU
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 11, 4, 11, 4, $0
-	anim_wait 2
-	anim_sound 0, 0, SFX_MENU
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 12, 4, 10, 6, $0
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 13, 4, 10, 0, $0
-	anim_wait 1
-	anim_sound 0, 0, SFX_MENU
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 14, 4, 9, 2, $0
-	anim_wait 2
-	anim_sound 0, 0, SFX_MENU
-	anim_obj BATTLE_ANIM_OBJ_HYDRO_PUMP, 15, 4, 8, 4, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_TARGET, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
+	anim_sound 0, 1, SFX_BUBBLEBEAM
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 134, 64, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 138, 64, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 130, 64, $10
 	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 134, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 138, 56, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 130, 56, $10
 	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 134, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 138, 48, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 130, 48, $10
 	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 134, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 138, 40, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 130, 40, $10
 	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 32, $0
-	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 24, $0
-	anim_wait 3
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
-	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BLUE
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 134, 32, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 138, 32, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 130, 32, $10
+	anim_wait 8
 	anim_ret
 
 BattleAnim_PsychicM:

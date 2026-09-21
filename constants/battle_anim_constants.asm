@@ -224,8 +224,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HAIL                ; bc
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_SMALL ; bd
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_BIG  ; be
-;	const BATTLE_ANIM_OBJ_GRAY_GLOW           ; bf
-;	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; c0
+	const BATTLE_ANIM_OBJ_RISING_BUBBLE       ; bf ; BATTLE_ANIM_OBJ_GRAY_GLOW
+	const BATTLE_ANIM_OBJ_BUBBLE_SPLASH       ; c0 ; BATTLE_ANIM_OBJ_FLASH_CANNON
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_R       ; c1
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_B       ; c2
 	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; c3
@@ -333,7 +333,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 53
 	const BATTLE_ANIM_FUNC_MOON                      ; 54
 	const BATTLE_ANIM_FUNC_STRAIGHT_DESCENT          ; 55
-	const BATTLE_ANIM_FUNC_FLAMETHROWER              ; 56          
+	const BATTLE_ANIM_FUNC_FLAMETHROWER              ; 56
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -528,6 +528,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_VORTEX                ; bb
 	const BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT     ; bc
 	const BATTLE_ANIM_FRAMESET_FLAMETHROWER_ALT      ; bd
+	const BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH         ; be
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)

@@ -21,7 +21,7 @@ AnimObjGFX:
 	anim_obj_gfx 10, NULL ; use AnimBallObjGFX
 	anim_obj_gfx 10, AnimObjPokeBallBGGFX
 	anim_obj_gfx  9, AnimObjPoisonGFX
-	anim_obj_gfx 13, AnimObjBubbleGFX
+	anim_obj_gfx 14, AnimObjBubbleGFX
 	anim_obj_gfx 16, AnimObjNoiseGFX
 	anim_obj_gfx  2, AnimObjPowderGFX
 	anim_obj_gfx 11, AnimObjBeamGFX
