@@ -469,19 +469,21 @@ IlexForestShrineScript:
 	writetext Text_InsertGSBall
 	waitbutton
 	closetext
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
 	pause 20
-	showemote EMOTE_SHOCK, PLAYER, 20
 	special FadeOutMusic
-	applymovement PLAYER, IlexForestPlayerStepsDownMovement
 	pause 30
+	cry CELEBI
+	waitsfx
+	pause 30
+	showemote EMOTE_SHOCK, PLAYER, 20
 	turnobject PLAYER, DOWN
-	pause 20
-	clearflag ENGINE_FOREST_IS_RESTLESS
 	special CelebiShrineEvent
+	clearflag ENGINE_FOREST_IS_RESTLESS
 	loadwildmon CELEBI, 30
 	startbattle
 	reloadmapafterbattle
-	pause 20
+	special RestartMapMusic
 	special CheckBattleCaughtResult
 	iffalse .DidntCatchCelebi
 	setflag ENGINE_PLAYER_CAUGHT_CELEBI
@@ -745,12 +747,6 @@ IlexForestKurtStepsDownMovement:
 	step DOWN
 	step_end
 
-IlexForestPlayerStepsDownMovement:
-	fix_facing
-	slow_step DOWN
-	remove_fixed_facing
-	step_end
-
 IlexForestApprenticeIntroText:
 	ntag " Apprentice "
 	text "Oh, man… My boss"
@@ -987,7 +983,6 @@ IlexForest_MapEvents:
 	bg_event 24, 16, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event 12, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event 11, 25, BGEVENT_UP, IlexForestShrineScript
-	bg_event 10, 25, BGEVENT_UP, IlexForestShrineScript
 
 	def_object_events
 	object_event 16, 41, SPRITE_FARFETCH_D_ILEX, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD
@@ -995,7 +990,7 @@ IlexForest_MapEvents:
 	object_event  7, 38, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	object_event 18, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1
 	object_event 22, 42, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
-	object_event 10, 32, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
+	object_event 11, 31, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  5, 34, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
 	object_event  3, 28, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBugManiacBobby, -1
 	object_event 14,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1

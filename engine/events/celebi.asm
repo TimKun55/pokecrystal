@@ -7,6 +7,8 @@ INCBIN "gfx/tilesets/forest-tree/3.2bpp"
 INCBIN "gfx/tilesets/forest-tree/4.2bpp"
 
 CelebiShrineEvent:
+	ld de, SFX_MORNING_SUN
+	call PlaySFX
 	call DelayFrame
 	ld a, [wStateFlags]
 	push af

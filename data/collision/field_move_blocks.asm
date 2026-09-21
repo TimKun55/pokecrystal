@@ -65,7 +65,7 @@ CutTreeBlockPointers:
 
 .forest:
 ; facing block, replacement block, animation
-	db $1f, $43, 0 ; tree (IlexForest)
+	db $1f, $42, 0 ; tree (IlexForest)
 	db $02, $01, 1 ; grass (IlexForest)
 	db $32, $0d, 1 ; grass (IlexForest)
 	db $33, $12, 1 ; grass (IlexForest)
