@@ -367,7 +367,7 @@ ForestTreeLeftAnimation2:
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .do_animation
-	ld hl, ForestTreeLeftFrames
+	ld hl, ForestTreeLeft2Frames
 	jr .got_frames
 
 .do_animation
@@ -383,16 +383,16 @@ ForestTreeLeftAnimation2:
 	add a
 	add a
 	add a
-	add LOW(ForestTreeLeftFrames)
+	add LOW(ForestTreeLeft2Frames)
 	ld l, a
 	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
+	adc HIGH(ForestTreeLeft2Frames)
 	ld h, a
 
 .got_frames
 ; Write the tile graphic from hl (now sp) to tile $0c (now hl)
 	ld sp, hl
-	ld hl, vTiles2 tile $0c
+	ld hl, vTiles2 tile $4c
 	jp WriteTile
 
 ForestTreeRightAnimation2:
@@ -405,7 +405,7 @@ ForestTreeRightAnimation2:
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .do_animation
-	ld hl, ForestTreeRightFrames
+	ld hl, ForestTreeRight2Frames
 	jr .got_frames
 
 .do_animation
@@ -421,20 +421,20 @@ ForestTreeRightAnimation2:
 	add a
 	add a
 	add a
-	add LOW(ForestTreeLeftFrames)
+	add LOW(ForestTreeLeft2Frames)
 	ld l, a
 	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
+	adc HIGH(ForestTreeLeft2Frames)
 	ld h, a
 	push bc
-	ld bc, ForestTreeRightFrames - ForestTreeLeftFrames
+	ld bc, ForestTreeRight2Frames - ForestTreeLeft2Frames
 	add hl, bc
 	pop bc
 
 .got_frames
 ; Write the tile graphic from hl (now sp) to tile $0f (now hl)
 	ld sp, hl
-	ld hl, vTiles2 tile $0f
+	ld hl, vTiles2 tile $4f
 	jp WriteTile
 
 GetForestTreeFrame:
@@ -442,6 +442,14 @@ GetForestTreeFrame:
 	and 1
 	add a
 	ret
+
+ForestTreeLeft2Frames:
+	INCBIN "gfx/tilesets/forest-tree/2_1.2bpp"
+	INCBIN "gfx/tilesets/forest-tree/2_2.2bpp"
+
+ForestTreeRight2Frames:
+	INCBIN "gfx/tilesets/forest-tree/2_3.2bpp"
+	INCBIN "gfx/tilesets/forest-tree/2_4.2bpp"
 
 AnimateFlowerTile:
 ; Save the stack pointer in bc for WriteTile to restore
