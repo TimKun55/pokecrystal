@@ -2305,7 +2305,9 @@ TypeChartEffect:
 	farcall Pack_InitGFX
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
- 	ret
+	xor a ; viewing the chart is not a battle action
+	ld [wItemEffectSucceeded], a
+	ret
 
 MusicPlayerEffect:
 	farcall BlankScreen
