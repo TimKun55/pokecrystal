@@ -63,6 +63,11 @@ PlayersHouse1FMumIntro:
 	promptbutton
 	writetext RunningShoesText
 	waitbutton
+	writetext TypeChartGiveText
+	waitbutton
+	verbosegiveitem TYPE_CHART
+	writetext TypeChartExplainText
+	waitbutton
 	closetext
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MUM1, LEFT
@@ -238,6 +243,28 @@ RunningShoesText:
 
 	para "They should put a"
 	line "zip in your step!"
+	done
+
+TypeChartGiveText:
+	ntag " Mum "
+	text "Oh! And don't"
+	line "forget your Type"
+	cont "Chart, too!"
+	done
+
+TypeChartExplainText:
+	ntag " Mum "
+	text "There are a lot"
+	line "of #mon types"
+	cont "to keep track of,"
+	
+	para "so use this to"
+	line "see how they work"
+	cont "with one another."
+	
+	para "Whew!"
+	line "I think that's"
+	cont "everything, dear!"
 	done
 
 HurryUpElmIsWaitingText:
