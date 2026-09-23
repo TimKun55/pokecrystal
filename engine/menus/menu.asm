@@ -374,6 +374,9 @@ Menu_WasButtonPressed:
 	ldh a, [hJoyPressed]
 	cp SELECT
 	call z, _TrainerBattleInfo
+	ldh a, [hJoyPressed]
+	cp START
+	call z, _BattleTypeChart
 	call JoyTextDelay
 	call GetMenuJoypad
 	and a
@@ -424,6 +427,44 @@ _TrainerBattleInfo:
 	farcall GetEnemyMonFrontpic
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
+	call GetMemSGBLayout
+	call SetDefaultBGPAndOBP
+	farcall GetWeatherImage
+	ret
+
+_BattleTypeChart:
+	; only do this during a battle
+	; (wBattleMode is 0 in the overworld, WILD_BATTLE/TRAINER_BATTLE in battle)
+	ld a, [wBattleMode]
+	and a
+	ret z
+
+	; only do this on the main menu of a battle
+	; (0 = Fight/PACK/<PKMN>/RUN, 1 = moves, 2 = pack, 3 = party, 4 = run)
+	ld a, [wCurrentBattleWindow]
+	and a
+	ret nz
+
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
+
+	call FadeToMenu
+	farcall _TypeChart
+; return to battle on exit
+	ld de, SFX_BUMP
+	call PlaySFX
+
+	; the type chart overwrote the tilemaps and some VRAM tiles,
+	; so put the battle screen back the way it was
+	call ClearSprites
+	call ClearPalettes
+	call DelayFrame
+	farcall LoadFontsBattleExtra
+	farcall _LoadHPBar
+	farcall GetBattleMonBackpic
+	farcall GetEnemyMonFrontpic
+	call CloseWindow ; restores the tiles and attrs FadeToMenu backed up
+	call WaitBGMap2 ; transfer the attrmap as well as the tilemap
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
 	farcall GetWeatherImage
