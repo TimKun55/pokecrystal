@@ -2708,7 +2708,7 @@ MonFaintedAnimation:
 	dec b
 	jr nz, .InnerLoop
 
-	ld bc, 20
+	ld bc, SCREEN_WIDTH
 	add hl, bc
 	ld de, .Spaces
 	call PlaceString
@@ -8436,7 +8436,7 @@ ReadAndPrintLinkBattleRecord:
 	pop hl
 	call PlaceString
 	pop hl
-	ld de, 26
+	ld de, SCREEN_WIDTH + 6
 	add hl, de
 	push hl
 	ld de, wLinkBattleRecordWins
