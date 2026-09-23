@@ -384,7 +384,14 @@ Menu_WasButtonPressed:
 	ret
 
 _TrainerBattleInfo:
+	; only do this during a battle
+	; (wBattleMode is 0 in the overworld, WILD_BATTLE/TRAINER_BATTLE in battle)
+	ld a, [wBattleMode]
+	and a
+	ret z
+
 	; only do this on the main menu of a battle
+	; (0 = Fight/PACK/<PKMN>/RUN, 1 = moves, 2 = pack, 3 = party, 4 = run)
 	ld a, [wCurrentBattleWindow]
 	and a
 	ret nz
