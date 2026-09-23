@@ -344,9 +344,24 @@ MenuJoypadLoop:
 .BGMap_OAM:
 	ldh a, [hOAMUpdate]
 	push af
+	ld a, [w2DMenuFlags1]
+	bit 6, a ; sprite animations enabled?
+	jr nz, .animate_sprites
 	ld a, $1
 	ldh [hOAMUpdate], a
 	call WaitBGMap
+	jr .waited
+
+.animate_sprites
+	ld a, 1
+	ldh [hBGMapMode], a
+	ld c, 4
+.animate_loop
+	callfar PlaySpriteAnimationsAndDelayFrame
+	dec c
+	jr nz, .animate_loop
+
+.waited
 	pop af
 	ldh [hOAMUpdate], a
 	xor a

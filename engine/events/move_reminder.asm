@@ -459,7 +459,7 @@ ChooseMoveToLearn:
 ; of "menu_coords" will determine where the
 ; vertical scroll arrows will be located.
 .MenuHeader:
-	db MENU_BACKUP_TILES
+	db MENU_BACKUP_TILES | MENU_SPRITE_ANIMS
 	menu_coords 1, 2, SCREEN_WIDTH - 2, 10
 	dw .MenuData
 	db 1

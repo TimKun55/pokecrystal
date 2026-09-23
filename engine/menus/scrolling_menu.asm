@@ -31,8 +31,20 @@ _ScrollingMenu::
 	call ScrollingMenu_InitDisplay
 	ld a, 1
 	ldh [hBGMapMode], a
+	ld a, [w2DMenuFlags1]
+	bit 6, a ; sprite animations enabled?
+	jr z, .wait_redraw
+	ld c, 3
+.animate_redraw
+	callfar PlaySpriteAnimationsAndDelayFrame
+	dec c
+	jr nz, .animate_redraw
+	jr .redraw_done
+
+.wait_redraw
 	ld c, 3
 	call DelayFrames
+.redraw_done
 	xor a
 	ldh [hBGMapMode], a
 	ret
@@ -288,6 +300,13 @@ ScrollingMenu_InitFlags:
 	set 1, a
 
 .skip_set_1
+	; Let sprites (e.g. an animated mon icon) keep animating while the
+	; menu is open, if the menu header asked for them.
+	ld hl, wMenuFlags
+	bit 4, [hl] ; MENU_SPRITE_ANIMS
+	jr z, .skip_sprite_anims
+	set 6, a ; w2DMenuFlags1 bit 6: enable sprite animations
+.skip_sprite_anims
 	ld [w2DMenuFlags1], a
 	xor a
 	ld [w2DMenuFlags2], a
