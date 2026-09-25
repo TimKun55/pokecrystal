@@ -309,8 +309,7 @@ DoPlayerMovement::
 	ret
 
 .walk
-	ld a, [wCurInput]
-	and B_BUTTON
+	call .CheckRun
 	jr nz, .run
 	ld a, STEP_WALK
 	call .DoStep
@@ -389,6 +388,21 @@ DoPlayerMovement::
 
 .surf_bump
 	xor a
+	ret
+
+; Return carry if the player should run.
+.CheckRun
+	ld a, [wOptions2]
+	bit RUNNING, a
+	jr z, .default_run
+	ld a, [wCurInput]
+	and B_BUTTON
+	cp B_BUTTON
+	ret
+.default_run
+	ld a, [wCurInput]
+	and B_BUTTON
+	cp NO_INPUT
 	ret
 
 .TryJump:
@@ -793,13 +807,22 @@ ENDM
 	cp PLAYER_SKATE
 	ret
 
+; Return zero if the player should run while surfing.
 .FastSurfCheck:
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	ret nz
+	ld a, [wOptions2]
+	bit RUNNING, a
+	jr z, .default_surf_run
 	ldh a, [hJoypadDown]
 	and B_BUTTON
-	cp B_BUTTON		; Delete this line to Default Fast Surf, Press B to Slow Surf
+	ret z
+	ret
+.default_surf_run
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
 	ret
 
 .CheckWalkable:

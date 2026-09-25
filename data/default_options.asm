@@ -11,7 +11,7 @@ DefaultOptions:
 	db GBPRINTER_NORMAL
 ; wFontType: font normal
 	db FONT_NORMAL
-; wOptions2: menu account on
+; wOptions2: menu account on, running off
 	db 1 << MENU_ACCOUNT
 
 	db $00

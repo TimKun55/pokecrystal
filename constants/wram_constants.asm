@@ -91,6 +91,7 @@ DEF NUM_FONTS EQU const_value
 ; wOptions2::
 	const_def
 	const MENU_ACCOUNT ; 0
+	const RUNNING      ; 1
 
 ; wWalkingDirection::
 	const_def -1

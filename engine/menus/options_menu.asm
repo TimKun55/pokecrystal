@@ -4,11 +4,15 @@
 	const OPT_BATTLE_SCENE  ; 1
 	const OPT_BATTLE_STYLE  ; 2
 	const OPT_SOUND         ; 3
-	const OPT_MENU_ACCOUNT  ; 4
-	const OPT_FRAME         ; 5
-	const OPT_FONT          ; 6
-	const OPT_CANCEL        ; 7
-DEF NUM_OPTIONS EQU const_value ; 8
+	const OPT_RUNNING       ; 4
+	const OPT_MENU_ACCOUNT  ; 5
+	const OPT_FRAME         ; 6
+	const OPT_FONT          ; 7
+	const OPT_CANCEL        ; 8
+DEF NUM_OPTIONS EQU const_value ; 9
+; Leave the lower rows free for the selected option's description.
+DEF NUM_VISIBLE_OPTIONS EQU 5
+DEF OPTIONS_SCROLL_BOTTOM EQU 4
 
 _Option:
 	call ClearJoypad
@@ -17,30 +21,14 @@ _Option:
 	push af
 	ld [hl], TRUE
 	call ClearBGPalettes
-	hlcoord 0, 0
-	ld b, SCREEN_HEIGHT - 2
-	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	hlcoord 2, 2
-	ld de, StringOptions
-	call PlaceString
+	call ClearTilemap
+	call Options_DrawFrame
 	xor a
 	ld [wJumptableIndex], a
-
-; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS - 2 ; omit frame type, the last option
-.print_text_loop
-	push bc
-	xor a
-	ldh [hJoyLast], a
-	call GetOptionPointer
-	pop bc
-	ld hl, wJumptableIndex
-	inc [hl]
-	dec c
-	jr nz, .print_text_loop
-	call UpdateFrame ; display the frame type
-	call UpdateFont
+	ld a, $ff
+	ld [wOptionsScrollPosition], a
+	call Options_UpdateWindow
+	call Options_UpdateDescription
 
 	xor a
 	ld [wJumptableIndex], a
@@ -62,7 +50,9 @@ _Option:
 	jr c, .ExitOptions
 
 .dpad
+	call Options_UpdateWindow
 	call Options_UpdateCursorPosition
+	call Options_UpdateDescription
 	ld c, 3
 	call DelayFrames
 	jr .joypad_loop
@@ -75,7 +65,19 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
-StringOptions:
+Options_DrawFrame:
+	hlcoord 0, 0
+	ld b, SCREEN_HEIGHT - 2
+	ld c, SCREEN_WIDTH - 2
+	jp Textbox
+
+Options_DrawDescriptionTextbox:
+	hlcoord 0, 13
+	ld b, 3
+	ld c, SCREEN_WIDTH - 2
+	jp Textbox
+
+StringOptions0:
 	db "Text Speed<LF>"
 	db "        :<LF>"
 	db "Battle Scene<LF>"
@@ -84,6 +86,48 @@ StringOptions:
 	db "        :<LF>"
 	db "Sound<LF>"
 	db "        :<LF>"
+	db "Running Shoes<LF>"
+	db "        :<LF>@"
+
+StringOptions1:
+	db "Battle Scene<LF>"
+	db "        :<LF>"
+	db "Battle Style<LF>"
+	db "        :<LF>"
+	db "Sound<LF>"
+	db "        :<LF>"
+	db "Running Shoes<LF>"
+	db "        :<LF>"
+	db "Menu Account<LF>"
+	db "        :<LF>@"
+
+StringOptions2:
+	db "Battle Style<LF>"
+	db "        :<LF>"
+	db "Sound<LF>"
+	db "        :<LF>"
+	db "Running Shoes<LF>"
+	db "        :<LF>"
+	db "Menu Account<LF>"
+	db "        :<LF>"
+	db "Frame<LF>"
+	db "        :Type<LF>@"
+
+StringOptions3:
+	db "Sound<LF>"
+	db "        :<LF>"
+	db "Running Shoes<LF>"
+	db "        :<LF>"
+	db "Menu Account<LF>"
+	db "        :<LF>"
+	db "Frame<LF>"
+	db "        :Type<LF>"
+	db "Font<LF>"
+	db "        :Font<LF>@"
+
+StringOptions4:
+	db "Running Shoes<LF>"
+	db "        :<LF>"
 	db "Menu Account<LF>"
 	db "        :<LF>"
 	db "Frame<LF>"
@@ -91,6 +135,33 @@ StringOptions:
 	db "Font<LF>"
 	db "        :Font<LF>"
 	db "Done@"
+
+Options_PlaceStrings:
+	ld a, [wOptionsScrollPosition]
+	or a
+	jr z, .string0
+	cp 1
+	jr z, .string1
+	cp 2
+	jr z, .string2
+	cp 3
+	jr z, .string3
+	ld de, StringOptions4
+	jr .place_string
+.string0
+	ld de, StringOptions0
+	jr .place_string
+.string1
+	ld de, StringOptions1
+	jr .place_string
+.string2
+	ld de, StringOptions2
+	jr .place_string
+.string3
+	ld de, StringOptions3
+.place_string
+	call PlaceString
+	ret
 
 GetOptionPointer:
 	jumptable .Pointers, wJumptableIndex
@@ -101,6 +172,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
+	dw Options_Running
 	dw Options_MenuAccount
 	dw Options_Frame
 	dw Options_Font
@@ -154,8 +226,7 @@ Options_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 3
-	call PlaceString
+	call Options_DisplayValue
 	and a
 	ret
 
@@ -233,8 +304,7 @@ Options_BattleScene:
 	ld de, .Off
 
 .Display:
-	hlcoord 11, 5
-	call PlaceString
+	call Options_DisplayValue
 	and a
 	ret
 
@@ -271,8 +341,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
-	call PlaceString
+	call Options_DisplayValue
 	and a
 	ret
 
@@ -316,13 +385,49 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
-	call PlaceString
+	call Options_DisplayValue
 	and a
 	ret
 
 .Mono:   db "Mono  @"
 .Stereo: db "Stereo@"
+
+Options_Running:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit RUNNING, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit RUNNING, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit RUNNING, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res RUNNING, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set RUNNING, [hl]
+	ld de, .On
+
+.Display:
+	call Options_DisplayValue
+	and a
+	ret
+
+.Off: db "Off@"
+.On:  db "On @"
 
 Options_MenuAccount:
 	ld hl, wOptions2
@@ -354,8 +459,7 @@ Options_MenuAccount:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 11
-	call PlaceString
+	call Options_DisplayValue
 	and a
 	ret
 
@@ -391,9 +495,8 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 13 ; where on the screen the number is drawn
 	add '1'
-	ld [hl], a
+	call Options_DisplayNumber
 	call LoadFontsExtra
 	and a
 	ret
@@ -429,9 +532,8 @@ Options_Font:
 	; fallthrough
 UpdateFont:
 	ld a, [wFontType]
-	hlcoord 16, 15
 	add '1'
-	ld [hl], a
+	call Options_DisplayNumber
 	call LoadStandardFont
 	and a
 	ret
@@ -505,8 +607,259 @@ Options_UpdateCursorPosition:
 	dec c
 	jr nz, .loop
 	hlcoord 1, 2
-	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wJumptableIndex]
+	ld b, a
+	ld a, [wOptionsScrollPosition]
+	ld c, a
+	ld a, b
+	sub c
+	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
 	ld [hl], '▶'
+	ret
+
+; Calculate the first option visible in the scrolling window.
+Options_GetScrollPosition:
+	ld a, [wOptionsScrollPosition]
+	cp $ff
+	jr nz, .have_offset
+	xor a
+	ret
+.have_offset
+	ld b, a
+	ldh a, [hJoyLast]
+	cp D_DOWN
+	jr z, .scroll_down
+	cp D_UP
+	jr z, .scroll_up
+	ld a, b
+	ret
+
+.scroll_down
+	ld a, [wJumptableIndex]
+	cp OPT_TEXT_SPEED
+	jr z, .top
+	ld a, b
+	add a, 4
+	ld c, a
+	ld a, [wJumptableIndex]
+	cp c
+	jr c, .keep_offset
+	ld a, b
+	cp OPTIONS_SCROLL_BOTTOM
+	jr z, .keep_offset
+	inc a
+	ret
+
+.scroll_up
+	ld a, [wJumptableIndex]
+	cp OPT_CANCEL
+	jr z, .bottom
+	ld a, b
+	and a
+	jr z, .keep_offset
+	ld a, [wJumptableIndex]
+	cp b
+	jr c, .move_up
+	jr z, .move_up
+.keep_offset
+	ld a, b
+	ret
+.move_up
+	dec b
+	ld a, b
+	ret
+.top
+	xor a
+	ret
+.bottom
+	ld a, OPTIONS_SCROLL_BOTTOM
+	ret
+
+; Redraw the option window, scrolling when the cursor reaches the last options.
+Options_UpdateWindow:
+	call Options_GetScrollPosition
+	ld b, a
+	ld a, [wOptionsScrollPosition]
+	cp b
+	jr z, .return
+	ld a, b
+	ld [wOptionsScrollPosition], a
+	hlcoord 2, 2
+	ld a, ' '
+	ld b, 11
+	ld c, 16
+	call FillBoxWithByte
+; FillBoxWithByte advances HL, so restore the label position.
+	hlcoord 2, 2
+	call Options_PlaceStrings
+	call Options_UpdateValues
+.return
+	ret
+
+Options_UpdateValues:
+	ld a, [wJumptableIndex]
+	push af
+	ldh a, [hJoyPressed]
+	push af
+	xor a
+	ldh [hJoyPressed], a
+	ld a, [wOptionsScrollPosition]
+	ld [wJumptableIndex], a
+	ld a, [wOptionsScrollPosition]
+	cp OPTIONS_SCROLL_BOTTOM
+	jr z, .four_options
+	ld a, NUM_VISIBLE_OPTIONS
+	jr .set_option_count
+.four_options
+	ld a, NUM_VISIBLE_OPTIONS - 1
+.set_option_count
+	ld b, a
+.loop
+	push bc
+	call GetOptionPointer
+	pop bc
+	ld hl, wJumptableIndex
+	inc [hl]
+	dec b
+	jr nz, .loop
+	ld a, [wOptionsScrollPosition]
+	cp 2
+	jr c, .load_fonts_only
+	ld a, OPT_FRAME
+	ld [wJumptableIndex], a
+	call UpdateFrame
+	ld a, [wOptionsScrollPosition]
+	cp 3
+	jr c, .load_standard_font
+	ld a, OPT_FONT
+	ld [wJumptableIndex], a
+	call UpdateFont
+	jr .font_loaded
+.load_fonts_only
+	call LoadFontsExtra
+.load_standard_font
+	ld a, [wFontType]
+	call LoadStandardFont
+.font_loaded
+	pop af
+	ldh [hJoyPressed], a
+	pop af
+	ld [wJumptableIndex], a
+	ret
+
+; Redraw the two-line description for the selected option.
+Options_UpdateDescription:
+	call Options_DrawDescriptionTextbox
+	ld a, [wJumptableIndex]
+	call Options_GetDescriptionLine1
+	push de
+	hlcoord 2, 14
+	ld a, ' '
+	ld b, 3
+	ld c, 16
+	call FillBoxWithByte
+	pop de
+	hlcoord 2, 14
+	call PlaceString
+	call Options_GetDescriptionLine2
+	hlcoord 2, 16
+	call PlaceString
+	ret
+
+Options_GetDescriptionLine1:
+	ld a, [wJumptableIndex]
+	ld e, a
+	ld d, 0
+	ld hl, .Pointers
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld e, l
+	ld d, h
+	ret
+.Pointers:
+	dw OptionsDescriptionTextSpeed1
+	dw OptionsDescriptionBattleScene1
+	dw OptionsDescriptionBattleStyle1
+	dw OptionsDescriptionSound1
+	dw OptionsDescriptionRunning1
+	dw OptionsDescriptionMenuAccount1
+	dw OptionsDescriptionFrame1
+	dw OptionsDescriptionFont1
+	dw OptionsDescriptionDone1
+
+OptionsDescriptionTextSpeed1: db "Change the speed@"
+OptionsDescriptionTextSpeed2: db "of game text@"
+OptionsDescriptionBattleScene1: db "Show animations@"
+OptionsDescriptionBattleScene2: db "in battle@"
+OptionsDescriptionBattleStyle1: db "Switch #mon@"
+OptionsDescriptionBattleStyle2: db "in battle@"
+OptionsDescriptionSound1: db "Play music in@"
+OptionsDescriptionSound2: db "Mono or Stereo@"
+OptionsDescriptionRunning1: db "Hold B to change@"
+OptionsDescriptionRunning2: db "travel speed@"
+OptionsDescriptionMenuAccount1: db "Show description@"
+OptionsDescriptionMenuAccount2: db "for Menu options@"
+OptionsDescriptionFrame1: db "Change the frame@"
+OptionsDescriptionFrame2: db "for textboxes@"
+OptionsDescriptionFont1: db "Change the font@"
+OptionsDescriptionFont2: db "of game text@"
+OptionsDescriptionDone1: db "Save changes@"
+OptionsDescriptionDone2: db "and Exit@"
+
+Options_GetDescriptionLine2:
+	ld a, [wJumptableIndex]
+	ld e, a
+	ld d, 0
+	ld hl, .Pointers
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld e, l
+	ld d, h
+	ret
+.Pointers:
+	dw OptionsDescriptionTextSpeed2
+	dw OptionsDescriptionBattleScene2
+	dw OptionsDescriptionBattleStyle2
+	dw OptionsDescriptionSound2
+	dw OptionsDescriptionRunning2
+	dw OptionsDescriptionMenuAccount2
+	dw OptionsDescriptionFrame2
+	dw OptionsDescriptionFont2
+	dw OptionsDescriptionDone2
+
+Options_DisplayValue:
+	push de
+	call Options_GetValuePosition
+	pop de
+	call PlaceString
+	and a
+	ret
+
+Options_DisplayNumber:
+	push af
+	call Options_GetValuePosition
+	ld bc, 5
+	add hl, bc
+	pop af
+	ld [hl], a
+	ret
+
+Options_GetValuePosition:
+	ld a, [wJumptableIndex]
+	ld b, a
+	ld a, [wOptionsScrollPosition]
+	ld c, a
+	ld a, b
+	sub c
+; BC already advances by two screen rows per option.
+	ld hl, wTilemap + 3 * SCREEN_WIDTH + 11
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
 	ret

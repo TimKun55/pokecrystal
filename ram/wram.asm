@@ -1927,6 +1927,8 @@ wOBP1:: db
 
 wNumHits:: db
 
+; runtime scroll position for the options menu
+wOptionsScrollPosition::
 	ds 1
 
 wOptions::
@@ -1958,7 +1960,8 @@ wFontType::
 ; bits 0-1: font 0-3
 	db
 wOptions2::
-; bit 1: menu account off/on
+; bit 0: menu account off/on
+; bit 1: running off/on
 	db
 	ds 1
 wOptionsEnd::
