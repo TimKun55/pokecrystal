@@ -100,8 +100,8 @@ OlivinePokecenter1FTutor:
 
 OlivinePokecenter1FFatGuyText:
 	text "I ate way too much"
-	line "in the Olivine Café"
-	cont "next door."
+	line "in the Café next"
+	cont "door."
 	done
 
 OlivinePokecenter1FTeacherText:
