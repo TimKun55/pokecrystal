@@ -600,7 +600,7 @@ OptionsControl:
 Options_UpdateCursorPosition:
 	hlcoord 1, 1
 	ld de, SCREEN_WIDTH
-	ld c, SCREEN_HEIGHT - 2
+	ld c, 12
 .loop
 	ld [hl], ' '
 	add hl, de
@@ -693,6 +693,7 @@ Options_UpdateWindow:
 ; FillBoxWithByte advances HL, so restore the label position.
 	hlcoord 2, 2
 	call Options_PlaceStrings
+	call Options_UpdateCursorPosition
 	call Options_UpdateValues
 .return
 	ret
