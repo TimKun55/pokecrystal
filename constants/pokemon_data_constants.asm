@@ -86,7 +86,8 @@ DEF MON_DEF_EV             rb
 DEF MON_SPD_EV             rb
 DEF MON_SAT_EV             rb
 DEF MON_SDF_EV             rb
-                           rb_skip 4
+DEF MON_CAUGHTBALL         rb
+                           rb_skip 3
 DEF MON_DVS                rw
 DEF MON_PP                 rb NUM_MOVES
 DEF MON_HAPPINESS          rb
@@ -125,8 +126,13 @@ rsset SAVEMON_STAT_EXP
 DEF SAVEMON_HP_EXP             rw
 DEF SAVEMON_ATK_EXP            rw
 DEF SAVEMON_DEF_EXP            rw
-DEF SAVEMON_SPD_EXP            rw
-DEF SAVEMON_SPC_EXP            rw
+; SAVEMON_SPD_EXP and SAVEMON_SPC_EXP were never written or read; stats are
+; derived from the DVs, and the union with box_struct means this space already
+; overlaps the box's EVs and padding. Reuse its first byte for the ball so the
+; field needs no encoding in EncodeBufferMon/DecodeBufferMon.
+; Offset must stay identical to MON_CAUGHTBALL.
+DEF SAVEMON_CAUGHTBALL         rb
+                           rb_skip 3
 DEF SAVEMON_DVS                rw
 ; savemon_struct is identical to party_struct before this point
 DEF SAVEMON_PP_UPS             rb
@@ -154,6 +160,8 @@ DEF REDMON_STRUCT_LENGTH EQU 44
 
 DEF CAUGHT_TIME_MASK  EQU %11000000
 DEF CAUGHT_LEVEL_MASK EQU %00111111
+
+DEF CAUGHT_BALL_DEFAULT EQU POKE_BALL
 
 DEF CAUGHT_GENDER_MASK   EQU %10000000
 DEF CAUGHT_LOCATION_MASK EQU %01111111

@@ -158,9 +158,13 @@ CaughtAskNicknameText:
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtBall
 	call GetPartyLocation
+	call SetCaughtBall
 SetBoxmonOrEggmonCaughtData:
+	; hl points at CaughtBall; CaughtData is 12 bytes further on.
+	ld de, MON_CAUGHTDATA - MON_CAUGHTBALL
+	add hl, de
 	ld a, [wTimeOfDay]
 	inc a
 	rrca
@@ -195,23 +199,29 @@ SetBoxmonOrEggmonCaughtData:
 	ret
 
 SetBoxMonCaughtData:
-	ld hl, wBufferMonCaughtData
+	ld hl, wBufferMonCaughtBall
+	call SetCaughtBall
 	call SetBoxmonOrEggmonCaughtData
 	newfarjp UpdateStorageBoxMonFromTemp
 
 SetGiftBoxMonCaughtData:
-	ld hl, wBufferMonCaughtLevel
+	ld hl, wBufferMonCaughtBall
 	call SetGiftMonCaughtData
 	newfarjp UpdateStorageBoxMonFromTemp
 
 SetGiftPartyMonCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtBall
 	push bc
 	call GetPartyLocation
 	pop bc
 SetGiftMonCaughtData:
+	; Gifts and trades were never caught in a ball.
+	ld a, CAUGHT_BALL_DEFAULT
+	ld [hl], a
+	ld de, MON_CAUGHTDATA - MON_CAUGHTBALL
+	add hl, de
 	xor a
 	ld [hli], a
 	ld a, LANDMARK_GIFT
@@ -222,8 +232,12 @@ SetGiftMonCaughtData:
 
 SetEggMonCaughtData:
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtBall
 	call GetPartyLocation
+	; An egg was not thrown in a ball; wCurItem is whatever the player last
+	; had selected in the bag, so it must not be recorded here.
+	ld a, CAUGHT_BALL_DEFAULT
+	ld [hl], a
 	ld a, [wCurPartyLevel]
 	push af
 	ld a, CAUGHT_EGG_LEVEL
@@ -231,4 +245,51 @@ SetEggMonCaughtData:
 	call SetBoxmonOrEggmonCaughtData
 	pop af
 	ld [wCurPartyLevel], a
+	ret
+
+SetCaughtBall:
+; Records wCurItem as the ball the mon was caught with, or CAUGHT_BALL_DEFAULT
+; if wCurItem isn't a ball. hl points at the mon's CaughtBall byte.
+	ld a, [wCurItem]
+	call NormalizeCaughtBall
+	ld [hl], a
+	ret
+
+GetCaughtBall:
+; hl points at a mon's CaughtBall byte.
+; Returns a in a, defaulting to CAUGHT_BALL_DEFAULT if it isn't a ball.
+	ld a, [hl]
+	jp NormalizeCaughtBall
+
+NormalizeCaughtBall:
+; Input: a = a candidate ball item id.
+; Output: a = a valid ball item id, or CAUGHT_BALL_DEFAULT if the candidate
+; isn't a ball. Also the tail of GetCaughtBall, so `a` must be the raw byte.
+; Clobbers b and c, and wItemAttributeValue. Preserves wCurItem.
+	ld b, a
+	ld c, a
+	and a
+	jr z, .default ; NO_ITEM
+	cp NUM_ITEMS + 1
+	jr nc, .default ; past the end of the item table
+	ld a, [wCurItem]
+	push af ; wCurItem must survive: callers read it after this (FRIEND_BALL)
+	ld a, b
+	ld [wCurItem], a
+	ld a, ITEMATTR_POCKET
+	newfarcall GetItemAttr ; returns the pocket in a; newfarcall preserves bc
+	cp BALL
+	jr nz, .not_ball
+	ld a, b
+	jr .result
+.not_ball
+	ld a, CAUGHT_BALL_DEFAULT
+.result
+	ld c, a
+	pop af
+	ld [wCurItem], a
+	ld a, c
+	ret
+.default
+	ld a, CAUGHT_BALL_DEFAULT
 	ret

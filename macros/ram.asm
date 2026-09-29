@@ -17,7 +17,8 @@ MACRO box_struct
 \1SpdEV::          db
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
-\1Padding::        ds 4
+\1CaughtBall::     db ; item id of the ball this mon was caught with
+\1Padding::        ds 3
 \1DVs::            dw
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
@@ -41,8 +42,8 @@ MACRO savemon_struct
 \1HPExp::          dw
 \1AtkExp::         dw
 \1DefExp::         dw
-\1SpdExp::         dw
-\1SpcExp::         dw
+\1CaughtBall::     db ; same offset as box_struct's CaughtBall
+\1Padding::        ds 3 ; unused SpdExp/SpcExp bytes
 \1DVs::            dw
 \1PPUps::          db
 \1Happiness::      db
