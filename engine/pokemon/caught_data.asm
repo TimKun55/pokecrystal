@@ -162,41 +162,43 @@ SetCaughtData:
 	call GetPartyLocation
 	call SetCaughtBall
 SetBoxmonOrEggmonCaughtData:
-	; hl points at CaughtBall; CaughtData is 12 bytes further on.
-	ld de, MON_CAUGHTDATA - MON_CAUGHTBALL
+	ld de, MON_CAUGHTLEVEL - MON_CAUGHTBALL
+	add hl, de
+	ld a, [wCurPartyLevel]
+	ld [hl], a
+	ld de, MON_CAUGHTDATA - MON_CAUGHTLEVEL
 	add hl, de
 	ld a, [wTimeOfDay]
 	inc a
 	rrca
 	rrca
 	and CAUGHT_TIME_MASK
-	ld b, a
-	ld a, [wCurPartyLevel]
-	or b
 	ld [hli], a
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	cp MAP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-	ld a, b
-	cp GROUP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-
-	ld a, [wBackupMapGroup]
-	ld b, a
-	ld a, [wBackupMapNumber]
-	ld c, a
-
-.NotPokecenter2F:
-	call GetWorldMapLocation
+	call GetCaughtLocationLandmark
 	ld b, a
 	ld a, [wPlayerGender]
 	rrca ; shift bit 0 (PLAYERGENDER_FEMALE_F) to bit 7 (CAUGHT_GENDER_MASK)
 	or b
 	ld [hl], a
 	ret
+
+GetCaughtLocationLandmark:
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	cp MAP_POKECENTER_2F
+	jr nz, .notPokecenter2F
+	ld a, b
+	cp GROUP_POKECENTER_2F
+	jr nz, .notPokecenter2F
+
+	ld a, [wBackupMapGroup]
+	ld b, a
+	ld a, [wBackupMapNumber]
+	ld c, a
+.notPokecenter2F:
+	jp GetWorldMapLocation
 
 SetBoxMonCaughtData:
 	ld hl, wBufferMonCaughtBall
@@ -217,16 +219,27 @@ SetGiftPartyMonCaughtData:
 	call GetPartyLocation
 	pop bc
 SetGiftMonCaughtData:
-	; Gifts and trades were never caught in a ball.
 	ld a, CAUGHT_BALL_DEFAULT
 	ld [hl], a
-	ld de, MON_CAUGHTDATA - MON_CAUGHTBALL
+	ld de, MON_CAUGHTLEVEL - MON_CAUGHTBALL
 	add hl, de
-	xor a
+	ld a, [wCurPartyLevel]
+	ld [hl], a
+	ld de, MON_CAUGHTDATA - MON_CAUGHTLEVEL
+	add hl, de
+	ld a, [wTimeOfDay]
+	inc a
+	rrca
+	rrca
+	and CAUGHT_TIME_MASK
+	or c
 	ld [hli], a
-	ld a, LANDMARK_GIFT
-	rrc b
-	or b
+	ld a, b
+	and CAUGHT_BY_GIRL
+	swap a
+	ld e, a
+	call GetCaughtLocationLandmark
+	or e
 	ld [hl], a
 	ret
 
@@ -234,6 +247,7 @@ SetEggMonCaughtData:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1CaughtBall
 	call GetPartyLocation
+	push hl
 	; An egg was not thrown in a ball; wCurItem is whatever the player last
 	; had selected in the bag, so it must not be recorded here.
 	ld a, CAUGHT_BALL_DEFAULT
@@ -245,6 +259,12 @@ SetEggMonCaughtData:
 	call SetBoxmonOrEggmonCaughtData
 	pop af
 	ld [wCurPartyLevel], a
+	pop hl
+	ld de, MON_CAUGHTDATA - MON_CAUGHTBALL
+	add hl, de
+	ld a, [hl]
+	or MON_HATCHED
+	ld [hl], a
 	ret
 
 SetCaughtBall:

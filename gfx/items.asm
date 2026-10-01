@@ -5,26 +5,31 @@ UpdateItemIconAndDescription::
 UpdateItemIconAndDescriptionAndBagQuantity::
 	farcall UpdateItemDescriptionAndBagQuantity
 _UpdateItemIcon:
-	ld hl, ItemIconPointers
 	ld a, [wCurItem]
-	cp NUM_ITEMS + 1
-	jr c, .has_icon
-	xor a
-.has_icon
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	ld c, a
 	ld de, vTiles2 tile $1d
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
+	call DecompressItemIcon
 	farcall LoadItemIconPalette
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ret
+
+DecompressItemIcon::
+	ld a, c
+	cp NUM_ITEMS + 1
+	jr c, .ok_id
+	xor a
+.ok_id
+	ld hl, ItemIconPointers
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	lb bc, BANK(NoItemIcon), $9
+	jp DecompressRequest2bpp
 
 LoadTMHMIcon::
 	ld hl, TMHMIcon
@@ -429,3 +434,19 @@ ItemBeIcon:
 ItemBfIcon:
 NoItemIcon: 		INCBIN "gfx/items/no_item.2bpp.lz"
 TMHMIcon:			INCBIN "gfx/items/tm_hm.2bpp.lz"
+
+SECTION "Summary Ball GFX", ROMX
+SummaryScreenBallGFX:
+INCBIN "gfx/summary/balls.2bpp"
+
+SECTION "Summary Ball Rim GFX", ROMX
+SummaryScreenBallRimGFX:
+INCBIN "gfx/summary/ball_rims.2bpp"
+
+SECTION "Summary Info Tiles GFX", ROMX
+SummaryInfoTilesGFX:
+INCBIN "gfx/summary/info_tiles.2bpp"
+
+SECTION "Summary Page Label GFX", ROMX
+SummaryScreenPageLabelGFX:
+INCBIN "gfx/summary/page_label.2bpp"

@@ -194,6 +194,7 @@ DoNPCTrade:
 	jr c, .incomplete
 	ld b, CAUGHT_BY_GIRL
 .incomplete
+	ld c, MON_TRADE
 	farcall SetGiftPartyMonCaughtData
 
 	ld e, NPCTRADE_NICKNAME

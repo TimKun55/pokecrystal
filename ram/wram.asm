@@ -1973,6 +1973,8 @@ wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
 
+wItemIconPatchCorners:: db
+
 
 SECTION "WRAM 1", WRAMX
 

@@ -18,16 +18,16 @@ MACRO box_struct
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
 \1CaughtBall::     db ; item id of the ball this mon was caught with
-\1Padding::        ds 3
+\1CaughtLevel::    db ; whole byte; used to be 6 bits packed into CaughtTime
+\1Padding::        ds 2
 \1DVs::            dw
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
-\1CaughtTime::
-\1CaughtLevel::    db
+\1CaughtTime::     db ; 7-6 time of day, 5-4 verb, 3-0 unused
 \1CaughtGender::
-\1CaughtLocation:: db
+\1CaughtLocation:: db ; bits 6-0 landmark, bit 7 met gender
 \1Level::          db
 \1BoxEnd::
 ENDM
@@ -43,16 +43,16 @@ MACRO savemon_struct
 \1AtkExp::         dw
 \1DefExp::         dw
 \1CaughtBall::     db ; same offset as box_struct's CaughtBall
-\1Padding::        ds 3 ; unused SpdExp/SpcExp bytes
+\1CaughtLevel::    db ; same offset too; used to be 6 bits packed into CaughtTime
+\1Padding::        ds 2 ; unused SpdExp/SpcExp bytes
 \1DVs::            dw
 \1PPUps::          db
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
-\1CaughtTime::
-\1CaughtLevel::    db
+\1CaughtTime::     db ; 7-6 time of day, 5-4 verb, 3-0 unused
 \1CaughtGender::
-\1CaughtLocation:: db
+\1CaughtLocation:: db ; bits 6-0 landmark, bit 7 met gender
 \1Level::          db
 \1AltSpecies::     db ; holds the alternative species byte (to handle eggs)
 \1Nickname::       ds MON_NAME_LENGTH - 1 ; terminator is implicit

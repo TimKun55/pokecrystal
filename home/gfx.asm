@@ -132,12 +132,58 @@ DecompressRequest2bpp::
 	ld a, b
 	call FarDecompress
 
+	call StripDecompressedItemIconCorners
+
 	pop bc
 	pop hl
 
 	ld de, sScratch
 	call Request2bpp
 	jp CloseSRAM
+
+StripDecompressedItemIconCorners:
+	ld a, [wItemIconPatchCorners]
+	and a
+	ret z
+	xor a
+	ld [wItemIconPatchCorners], a
+
+	ld hl, sScratch
+; top-left: byte 0, bit 7 (leftmost)
+	ld a, [hl]
+	and $7f
+	ld [hli], a
+	ld a, [hl]
+	and $7f
+	ld [hl], a
+; top-right: byte 32, bit 0 (rightmost). hl is on byte 1 here, so 31 more.
+	ld de, 31
+	add hl, de
+	ld a, [hl]
+	and $fe
+	ld [hli], a
+	ld a, [hl]
+	and $fe
+	ld [hl], a
+; bottom-left: byte 110 = tile 6 + row 7. hl is on byte 33, so 77 more.
+	ld de, 77
+	add hl, de
+	ld a, [hl]
+	and $7f
+	ld [hli], a
+	ld a, [hl]
+	and $7f
+	ld [hl], a
+; bottom-right: byte 142 = tile 8 + row 7. hl is on byte 111, so 31 more.
+	ld de, 31
+	add hl, de
+	ld a, [hl]
+	and $fe
+	ld [hli], a
+	ld a, [hl]
+	and $fe
+	ld [hl], a
+	ret
 
 FarCopyBytes::
 ; copy bc bytes from a:hl to de

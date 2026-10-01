@@ -1292,9 +1292,9 @@ SetUpMoveScreenBG:
 	callfar GetGender
 	ld a, ' '
 	jr c, .got_gender
-	ld a, '<MALE>'
+	ld a, $32
 	jr nz, .got_gender
-	ld a, '<FEMALE>'
+	ld a, $33
 
 .got_gender
 	hlcoord 17, 0

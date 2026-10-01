@@ -7,6 +7,66 @@ DEF NUM_STAT_PAGES EQU const_value
 
 DEF STAT_PAGE_MASK EQU %00000011
 
+; wSummaryScreenFlags bit 2: the blue page has been switched to its EVs, which A toggles.
+DEF BLUE_EVS_BIT EQU 2
+
+; The labels that sit in the panel above the bottom box.
+	const_def
+	const EXP_LABEL   ; 0
+	const ITEM_LABEL  ; 1
+	const DV_LABEL    ; 2
+	const EV_LABEL    ; 3
+	const MET_LABEL   ; 4
+DEF NUM_PAGE_LABELS EQU const_value
+
+; Caught ball icon
+DEF CAUGHT_BALL_X        EQU 17
+DEF CAUGHT_BALL_Y        EQU 7
+DEF CAUGHT_BALL_TILE     EQU $78 ; the 8x8 ball, drawn with BG palette 4
+DEF CAUGHT_BALL_RIM_L    EQU $74 ; sheet order: left, right, bottom, top
+DEF CAUGHT_BALL_RIM_R    EQU $75
+DEF CAUGHT_BALL_RIM_B    EQU $76
+DEF CAUGHT_BALL_RIM_T    EQU $77
+
+CaughtBallTiles:
+; Ball item id -> tile index in SummaryScreenBallGFX, terminated by -1.
+	db POKE_BALL,     0
+	db GREAT_BALL,    1
+	db ULTRA_BALL,    2
+	db MASTER_BALL,   3
+	db LEVEL_BALL,    4
+	db LURE_BALL,     5
+	db MOON_BALL,     6
+	db FRIEND_BALL,   7
+	db FAST_BALL,     8
+	db HEAVY_BALL,    9
+	db LOVE_BALL,    10
+	db NET_BALL,     11
+	db DUSK_BALL,    12
+	db PREMIER_BALL, 13
+	db PARK_BALL,    14
+	db -1
+
+; Page 1's window frame.
+DEF SUM_RBOX_TL  EQU $38 ; right box, top-left corner
+DEF SUM_RBOX_T   EQU $3b ; right box, top edge
+DEF SUM_RBOX_L   EQU $39 ; right box, left edge
+DEF SUM_RBOX_BL  EQU $3a ; right box, bottom-left corner
+DEF SUM_RBOX_B   EQU $3c ; right box, bottom edge
+DEF SUM_BBOX_T   EQU $3d ; bottom box, top edge
+DEF SUM_EXP_TC   EQU $47 ; page label panel, top corner
+DEF SUM_EXP_SB   EQU $48 ; page label panel, side and bottom
+DEF SUM_PKR      EQU $36 ; pokerus, infected
+DEF SUM_PKR_CURED EQU $37 ; pokerus, cured
+
+; The page label itsel
+DEF PAGE_LABEL_TILE  EQU $79 ; 6 tiles at $79-$7e, written by .PlacePageLabel
+DEF ITEM_ICON_TILE  EQU $52 ; 9 tiles at $52-$5a, written by the green page
+DEF INFO_TILE_X     EQU 15
+DEF INFO_TILE_Y     EQU 2
+DEF INFO_TILE_FIRST EQU $6c ; 4 tiles at $6c-$6f, written by the green page
+DEF DV_STAR_TILE    EQU $4a ; sheet tile 25, already resident from the $31-$50 load
+
 BattleSummaryScreenInit:
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
@@ -340,8 +400,8 @@ SummaryScreen_JoypadAction:
 	jr .load_mon
 
 .a_button
-	ret
-	
+	jp .press_a
+
 .d_right
 	inc c
 	ld a, ORANGE_PAGE ; last page
@@ -365,7 +425,9 @@ SummaryScreen_JoypadAction:
 	ret
 
 .set_page
-	ld a, [wSummaryScreenFlags]
+	ld hl, wSummaryScreenFlags
+	res BLUE_EVS_BIT, [hl]
+	ld a, [hl]
 	and ~STAT_PAGE_MASK
 	or c
 	ld [wSummaryScreenFlags], a
@@ -381,6 +443,8 @@ SummaryScreen_JoypadAction:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 .load_mon
+	ld hl, wSummaryScreenFlags
+	res BLUE_EVS_BIT, [hl]
 	ld h, 0
 	call SummaryScreen_SetJumptableIndex
 	ret
@@ -390,6 +454,37 @@ SummaryScreen_JoypadAction:
 	call SummaryScreen_SetJumptableIndex
 	ret
 
+.press_a:
+; On the green page it opens the move screen.
+; On the blue page it flips the bottom box between the DVs and the EVs.
+	ld a, c
+	cp BLUE_PAGE
+	jr z, .blue_evs
+	jr .move_screen
+
+.blue_evs:
+	ld hl, wSummaryScreenFlags
+	bit BLUE_EVS_BIT, [hl]
+	jr nz, .blue_back_to_dvs
+	set BLUE_EVS_BIT, [hl]
+	jr .blue_reload
+.blue_back_to_dvs:
+	res BLUE_EVS_BIT, [hl]
+.blue_reload:
+	ld h, 4
+	call SummaryScreen_SetJumptableIndex
+	ret
+
+.move_screen:
+	ld a, [wMonType]
+	and a
+	jr nz, .done
+	ld a, c
+	cp GREEN_PAGE
+	jr nz, .done
+	farcall ManagePokemonMoves
+	jr .load_mon
+
 SummaryScreen_InitUpperHalf:
 	call .PlaceHPBar
 	xor a
@@ -397,18 +492,6 @@ SummaryScreen_InitUpperHalf:
 	ld a, [wBaseDexNo]
 	ld [wTextDecimalByte], a
 	ld [wCurSpecies], a
-
-	hlcoord 1, 8
-	call PrintLevel
-
-	ld hl, .NicknamePointers
-	call GetNicknamePointer
-	call CopyNickname
-	hlcoord 1, 0
-	call PlaceString
-
-	hlcoord 5, 8
-	call .PlaceGenderChar
 
 	ld a, [wTempMonPokerusStatus]
 	ld a, [wMonType]
@@ -438,9 +521,7 @@ SummaryScreen_InitUpperHalf:
 	ld [hl], a
 	
 .done_status
-	call SummaryScreen_PlacePageBorder
 	call SummaryScreen_PlacePageSwitchArrows
-	call SummaryScreen_PlaceShinyIcon
 	ret
 
 .PlaceHPBar:
@@ -460,47 +541,47 @@ SummaryScreen_InitUpperHalf:
 	call DelayFrame
 	ret
 
-.PlaceGenderChar:
+.PlaceLevelAndGender:
+	hlcoord 2, 8
+	lb bc, 3, 3 ; the item icon
+	call ClearBox
+
+	ld a, [wMonType]
+	cp PARTYMON
+	jr nz, .done
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .done
+	hlcoord 1, 9
+	call PrintLevel
+	hlcoord 5, 9
 	push hl
 	farcall GetGender
 	pop hl
 	ret c
-	ld a, $32 ; '♂'
+	ld a, $32
 	jr nz, .got_gender
-	ld a, $33 ;  '♀'
-.got_gender
+	ld a, $33
+.got_gender:
 	ld [hl], a
+.done
 	ret
 
-.NicknamePointers:
-	dw wPartyMonNicknames
-	dw wOTPartyMonNicknames
-	dw wBufferMonNickname ; unused
-	dw wBufferMonNickname ; unused
-	dw wBufferMonNickname ; unused
-	dw wBufferMonNickname
-
-SummaryScreen_PlaceVerticalDivider: ; unreferenced
-; The Japanese summary screen has a vertical divider.
-	hlcoord 7, 0
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
-.loop
-	ld a, $31 ; vertical divider
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .loop
+.GetBallTile:
+	ld hl, CaughtBallTiles
+.tile_loop
+	ld a, [hli]
+	cp $ff
+	jr z, .tile_done
+	cp b
+	jr z, .tile_found
+	inc hl
+	jr .tile_loop
+.tile_done
+	ld c, 0 ; unknown ball
 	ret
-
-SummaryScreen_PlaceHorizontalDivider:
-	hlcoord 0, 7
-	ld b, SCREEN_WIDTH
-	ld a, $6e ; horizontal divider
-.loop
-	ld [hli], a
-	dec b
-	jr nz, .loop
+.tile_found
+	ld c, [hl]
 	ret
 
 SummaryScreen_PlacePageSwitchArrows:
@@ -518,92 +599,44 @@ SummaryScreen_PlacePageSwitchArrows:
 	ld [hl], $41 ; right arrow
 	ret
 
-SummaryScreen_PlacePageBorder:
-	hlcoord 0, 9
-	ld b, 7
-	ld a, $3a ; horizontal divider
-.loop1
-	ld [hli], a
-	dec b
-	jr nz, .loop1
-
-	hlcoord 7, 9
-	ld a, $3b
-	ld [hli], a
-	inc a
-	ld [hl], a
-
-	hlcoord 7, 1
-	ld a, $3d
-	ld [hli], a
-	inc a
-	ld [hl], a
-
-	hlcoord 8, 1
-	ld b, 12
-	ld a, $3a ; horizontal divider
-.loop2
-	ld [hli], a
-	dec b
-	jr nz, .loop2
-
-	hlcoord 7, 2
-	ld de, SCREEN_WIDTH
-	ld b, 7
-	ld a, $3c ; vertical divider
-.vertical_divider
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .vertical_divider
-	ret
-
 EggSummaryScreen_PlacePageBorder:
-	hlcoord 0, 9
+	hlcoord 0, 9 ; top of orange box
+	ld a, SUM_BBOX_T
 	ld b, SCREEN_WIDTH
-	ld a, $47 ; horizontal divider
-.loop1
+.lower_top
 	ld [hli], a
 	dec b
-	jr nz, .loop1
+	jr nz, .lower_top
 
-	hlcoord 8, 0
-	ld a, $49
+	hlcoord 8, 0 ; top left corner and top of blue box
+	ld a, SUM_RBOX_TL
 	ld [hli], a
-	inc a
-	ld [hl], a
-
-	hlcoord 8, 8
-	ld a, $4a
-	ld [hli], a
-	inc a
-	ld [hl], a
-
-	hlcoord 9, 0
-	ld b, 11
-	ld a, $47 ; horizontal divider
-.loop2
+	ld a, SUM_RBOX_T
+	ld b, SCREEN_WIDTH - 9
+.upper_top
 	ld [hli], a
 	dec b
-	jr nz, .loop2
+	jr nz, .upper_top
 
-	hlcoord 9, 8
-	ld b, 11
-	ld a, $4b ; horizontal divider
-.loop3
-	ld [hli], a
-	dec b
-	jr nz, .loop3
-
-	hlcoord 8, 1
+	hlcoord 8, 1 ; left side of blue box
+	ld a, SUM_RBOX_L
 	ld de, SCREEN_WIDTH
 	ld b, 7
-	ld a, $48 ; vertical divider
-.vertical_divider
+.upper_left
 	ld [hl], a
 	add hl, de
 	dec b
-	jr nz, .vertical_divider
+	jr nz, .upper_left
+
+	hlcoord 8, 8 ; bottom left corner and bottom of blue box
+	ld a, SUM_RBOX_BL
+	ld [hli], a
+	ld a, SUM_RBOX_B
+	ld b, SCREEN_WIDTH - 9
+.upper_bottom
+	ld [hli], a
+	dec b
+	jr nz, .upper_bottom
 	ret
 
 SummaryScreen_PlaceShinyIcon:
@@ -614,6 +647,23 @@ SummaryScreen_PlaceShinyIcon:
 	ld [hl], '⁂'
 	ret
 
+SummaryScreen_PlacePokerusIcon:
+	ld a, [wTempMonPokerusStatus]
+	ld b, a
+	and $f
+	jr nz, .has_pokerus
+	ld a, b
+	and $f0
+	ret z
+	ld a, SUM_PKR_CURED
+	jr .place
+.has_pokerus:
+	ld a, SUM_PKR
+.place:
+	hlcoord 0, 9
+	ld [hl], a
+	ret
+
 SummaryScreen_LoadGFX:
 	ld a, [wBaseDexNo]
 	ld [wTempSpecies], a
@@ -621,23 +671,41 @@ SummaryScreen_LoadGFX:
 	xor a
 	ldh [hBGMapMode], a
 	call .ClearBox
+
+	call SummaryScreen_InitUpperHalf.PlaceLevelAndGender
+	call SummaryScreen_PlaceShinyIcon
+	call SummaryScreen_PlacePokerusIcon
 	call .PageTilemap
+
+	ld a, [wSummaryScreenFlags]
+	maskbits NUM_STAT_PAGES
+	ld c, a
+	call SummaryScreen_LoadPageIndicators
 	call .LoadPals
 	ld hl, wSummaryScreenFlags
 	bit 4, [hl]
 	jr nz, .place_frontpic
 	call SetDefaultBGPAndOBP
-	ret
+	jr .push_map
 
 .place_frontpic
 	call SummaryScreen_PlaceFrontpic
-	ret
-
-.ClearBox:
+.push_map
+	call CopyTilemapAtOnce
+	ld a, [wBaseDexNo]
+	ld [wCurSpecies], a
 	ld a, [wSummaryScreenFlags]
 	maskbits NUM_STAT_PAGES
 	ld c, a
-	call SummaryScreen_LoadPageIndicators
+	farcall LoadSummaryScreenPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	call DelayFrame ; the vblank that puts the colour on screen
+	ld hl, wSummaryScreenFlags
+	set 5, [hl]
+	ret
+
+.ClearBox:
 	hlcoord 8, 2
 	lb bc, 8, 12
 	call ClearBox
@@ -648,13 +716,26 @@ SummaryScreen_LoadGFX:
 	ret
 
 .LoadPals:
-	ld a, [wSummaryScreenFlags]
-	maskbits NUM_STAT_PAGES
-	ld c, a
-	farcall LoadSummaryScreenPals
-	call DelayFrame
-	ld hl, wSummaryScreenFlags
-	set 5, [hl]
+	call .PlaceItemIconAttrmap
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+.PlaceItemIconAttrmap:
+	ld a, $1 ; the mon palette: the level's own ground
+	cp c
+	jr nz, .have_pal
+	ld a, [wTempMonItem]
+	and a
+	jr nz, .have_item
+	ld a, $1 ; green page, but nothing held: the level stays, so mon palette
+	jr .have_pal
+.have_item
+	ld a, $5 ; the ball/item palette
+.have_pal
+	hlcoord 2, 8, wAttrmap
+	lb bc, 3, 3
+	newfarcall FillBoxCGB
 	ret
 
 .PageTilemap:
@@ -673,74 +754,242 @@ SummaryScreen_LoadGFX:
 	dw LoadOrangePage
 	assert_table_length NUM_STAT_PAGES
 
+PlaceSummaryBoxes:
+	push af
+	hlcoord 7, 1 ; top left corner of top box
+	ld a, SUM_RBOX_TL
+	ld [hli], a
+	ld a, SUM_RBOX_T
+	ld bc, 12
+	call ByteFill
+	hlcoord 7, 2 ; left side of top box
+	ld a, SUM_RBOX_L
+	lb bc, 9, 1
+	call FillBoxWithByte
+	hlcoord 7, 11 ; bottom left corner of top box
+	ld a, SUM_RBOX_BL
+	ld [hli], a
+	ld a, SUM_RBOX_B
+	ld bc, 12
+	call ByteFill
+
+	hlcoord 8, 2 ; clear top box info
+	lb bc, 9, 12
+	call ClearBox
+
+	hlcoord 0, 12 ; top edge of bottom box
+	ld a, SUM_BBOX_T
+	ld bc, SCREEN_WIDTH
+	call ByteFill
+
+	hlcoord 1, 11 ; top right, page label
+	ld a, SUM_EXP_TC
+	ld [hl], a
+	hlcoord 5, 11 ; top left, page label
+	ld a, SUM_EXP_TC
+	ld [hl], a
+	hlcoord 1, 12 ; bottom right, page label
+	ld a, SUM_EXP_SB
+	ld [hl], a
+	hlcoord 5, 12 ; bottom left, page label
+	ld a, SUM_EXP_SB
+	ld [hl], a
+	pop af
+	ld c, a
+; fallthrough
+.PlacePageLabel:
+	ld hl, .PageLabelOffsets
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ld hl, SummaryScreenPageLabelGFX
+	add hl, de
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile PAGE_LABEL_TILE
+	lb bc, BANK(SummaryScreenPageLabelGFX), 6
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	call Request2bpp
+	pop af
+	ldh [rVBK], a
+	hlcoord 2, 11 ; the label's top row
+	ld a, PAGE_LABEL_TILE
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	hlcoord 2, 12 ; the label's bottom row
+	ld a, PAGE_LABEL_TILE + 3
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ret
+
+; The table_width and assert_table_length are needed.
+; assert_table_length measures back to the last table_width, and without
+; one here it would count from some unrelated table further up the file.
+	table_width 2
+.PageLabelOffsets:
+	dw 0    ; EXP_LABEL
+	dw 96   ; ITEM_LABEL
+	dw 192  ; DV_LABEL
+	dw 288  ; EV_LABEL
+	dw 384  ; MET_LABEL
+	assert_table_length NUM_PAGE_LABELS
+
 LoadPinkPage:
-	hlcoord 11, 2
+	ld a, EXP_LABEL
+	call PlaceSummaryBoxes
+	hlcoord 0, 0
+	lb bc, 1, 11
+	call ClearBox
+
+; dex number
+	hlcoord 8, 2
 	ld [hl], '№'
 	inc hl
 	ld [hl], '.'
 	inc hl
-	hlcoord 13, 2
+	ld a, [wBaseDexNo]
+	ld [wNamedObjectIndex], a
+	hlcoord 10, 2
 	call GetPokemonNumber
 	call PlaceString
 
-	hlcoord 9, 4
+; nickname
+	ld hl, .NicknamePointers
+	call GetNicknamePointer
+	call CopyNickname
+	hlcoord 8, 4
+	call PlaceString
+
+; species name
+	hlcoord 9, 5
 	ld a, [wBaseDexNo]
-	ld [wNamedObjectIndex], a
+	ld [wNamedObjectIndex], a ; same shared slot as the dex number above; see there
 	call GetPokemonName
 	call PlaceString
 
-	call PrintMonTypeTiles ; custom GFX function
+; type icons, on the same row as the caught ball
+	call PrintMonTypeTiles
+
+; caught ball and its rim, hard right on the type row
+	hlcoord CAUGHT_BALL_X, CAUGHT_BALL_Y
+	call .PlaceCaughtBallIcon
+
+; OT and trainer id
 	call PlaceOTInfo
 
+; experience information
 	ld de, .ExpPointStr
-	hlcoord 1, 11
+	hlcoord 1, 13
 	call PlaceString
-	hlcoord 12, 12
+
+	hlcoord 12, 13
 	lb bc, 3, 7
 	ld de, wTempMonExp
 	call PrintNum
+
 	call .CalcExpToNextLevel
 	hlcoord 12, 15
 	lb bc, 3, 7
 	ld de, wExpToNextLevel
 	call PrintNum
+
 	ld de, .ToNextLvStr
-	hlcoord 1, 14
+	hlcoord 1, 15
 	call PlaceString
-	hlcoord 12, 16
+
+	hlcoord 3, 17
 	ld a, [wTempMonLevel]
 	ld b, a
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
-	hlcoord 10, 16
+	hlcoord 1, 17
 	ld [hl], $70 ; left exp bar label
-	hlcoord 11, 16
+	hlcoord 2, 17
 	ld [hl], $71 ; right exp bar label
-	hlcoord 19, 16
+	hlcoord 10, 17
 	ld [hl], $6b ; exp bar end cap
-; Pokerus check
-	ld a, [wTempMonPokerusStatus]
-	ld b, a
-	and $f
-	jr nz, .HasPokerus
-	ld a, b
-	and $f0
-	jr z, .done_pokerus
-	hlcoord 9, 2
-	ld [hl], $36 ; Pokérus immunity face
-	jr .done_pokerus
 
-.HasPokerus:
-	hlcoord 8, 2
-	ld [hl], $37 ; left pkrs label
-	hlcoord 9, 2
-	ld [hl], $38 ; middle pkrs label
-	hlcoord 10, 2
-	ld [hl], $39 ; right pkrs label
-.done_pokerus
+	ld de, .ToStr
+	hlcoord 13, 17
+	call PlaceString
+	call .PrintNextLevel
+	ret
+
+.NicknamePointers:
+	dw wPartyMonNicknames
+	dw wOTPartyMonNicknames
+	dw wBufferMonNickname ; unused
+	dw wBufferMonNickname ; unused
+	dw wBufferMonNickname ; unused
+	dw wBufferMonNickname
+
+.PlaceCaughtBallIcon:
+	push hl
+	ld hl, wTempMonCaughtBall
+	call GetCaughtBall ; falls back to CAUGHT_BALL_DEFAULT
+	ld b, a
+	push bc ; AddNTimes and Request2bpp both use bc
+	call SummaryScreen_InitUpperHalf.GetBallTile
+	ld a, c
+	ld hl, SummaryScreenBallGFX
+	ld bc, LEN_2BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+
+	ld hl, vTiles2 tile CAUGHT_BALL_TILE
+	lb bc, BANK(SummaryScreenBallGFX), 1
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	call Request2bpp
+	pop af
+	ldh [rVBK], a
+	pop bc
+	pop hl
+	ld a, CAUGHT_BALL_TILE
+	ld [hl], a
+
+	ld de, SummaryScreenBallRimGFX
+	ld hl, vTiles2 tile CAUGHT_BALL_RIM_L
+	lb bc, BANK(SummaryScreenBallRimGFX), 4
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	call Request2bpp
+	pop af
+	ldh [rVBK], a
+
+	hlcoord CAUGHT_BALL_X, CAUGHT_BALL_Y - 1
+	ld a, CAUGHT_BALL_RIM_T
+	ld [hl], a
+	hlcoord CAUGHT_BALL_X - 1, CAUGHT_BALL_Y
+	ld a, CAUGHT_BALL_RIM_L
+	ld [hl], a
+	hlcoord CAUGHT_BALL_X + 1, CAUGHT_BALL_Y
+	ld a, CAUGHT_BALL_RIM_R
+	ld [hl], a
+	hlcoord CAUGHT_BALL_X, CAUGHT_BALL_Y + 1
+	ld a, CAUGHT_BALL_RIM_B
+	ld [hl], a
 	ret
 
 .PrintNextLevel:
+	hlcoord 16, 17
 	ld a, [wTempMonLevel]
 	push af
 	cp MAX_LEVEL
@@ -789,15 +1038,15 @@ LoadPinkPage:
 .ToNextLvStr:
 	db "To Next Lv@"
 
+.ToStr:
+	db "to@"
+
 PlaceOTInfo:
-	ld de, OTString
-	hlcoord 9, 8
-	call PlaceString
 	ld de, IDNoString
-	hlcoord 9, 9
+	hlcoord 8, 10
 	call PlaceString
 
-	hlcoord 13, 9
+	hlcoord 12, 10
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -805,7 +1054,13 @@ PlaceOTInfo:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 12, 8
+
+	ld de, OTString
+	hlcoord 8, 9
+	call PlaceString
+
+	ld de, wStringBuffer1
+	hlcoord 11, 9
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -837,29 +1092,98 @@ OTString:
 	db "OT:@"
 
 LoadGreenPage:
-	ld de, .Item
-	hlcoord 8, 4
-	call PlaceString
-	call .GetItemName
-	hlcoord 8, 6
-	call PlaceString
-
+	ld a, ITEM_LABEL
+	call PlaceSummaryBoxes
+	call .PlaceInfoPrompt
+	call .PlaceItemIcon
 	ld hl, wTempMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
 	ld bc, NUM_MOVES
 	call CopyBytes
-	hlcoord 1, 10
+	hlcoord 8, 3
 	ld a, SCREEN_WIDTH * 2
 	ld [wListMovesLineSpacing], a
 	predef ListMoves
-	hlcoord 11, 11
+	hlcoord 12, 4
 	ld a, SCREEN_WIDTH * 2
 	ld [wListMovesLineSpacing], a
 	predef ListMovePP
+
+	call .GetItemName
+	hlcoord 1, 13
+	call PlaceString
+	call .PrintItemDescription
+	ret
+
+.PlaceInfoPrompt:
+	ld hl, vTiles2 tile INFO_TILE_FIRST
+	ld de, SummaryInfoTilesGFX
+	lb bc, BANK(SummaryInfoTilesGFX), 4
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	call Request2bpp
+	pop af
+	ldh [rVBK], a
+
+	hlcoord INFO_TILE_X, INFO_TILE_Y
+	ld a, INFO_TILE_FIRST
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	ret
+
+.PlaceItemIcon:
+	ld a, [wTempMonItem]
+	and a
+	ret z
+	ld c, a
+	ld de, vTiles2 tile ITEM_ICON_TILE
+	ld a, 1
+	ld [wItemIconPatchCorners], a
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	farcall DecompressItemIcon
+	pop af
+	ldh [rVBK], a
+	hlcoord 2, 8
+	ld de, SCREEN_WIDTH - 3
+	lb bc, 3, 3
+	ld a, ITEM_ICON_TILE
+.icon_row
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .icon_row
+	ld c, 3
+	add hl, de
+	dec b
+	jr nz, .icon_row
+	ld a, ' '
+	hlcoord 1, 9
+	ld [hl], a
+	hlcoord 5, 9
+	ld [hl], a
+	ret
+
+.PrintItemDescription:
+	ld a, [wTempMonItem]
+	and a
+	ret z
+	ld [wCurSpecies], a
+	decoord 1, 15
+	farcall PrintItemDescription
 	ret
 
 .GetItemName:
-	ld de, .ThreeDashes
+	ld de, .NoHeldItem
 	ld a, [wTempMonItem]
 	and a
 	ret z
@@ -870,56 +1194,72 @@ LoadGreenPage:
 	call GetItemName
 	ret
 
-.Item:
-	db "Held Item@"
-
-.ThreeDashes:
-	db "     ---@"
+.NoHeldItem:
+	db "No Held Item@"
 
 LoadBluePage:
-	hlcoord 8, 2
+	ld hl, wSummaryScreenFlags
+	bit BLUE_EVS_BIT, [hl]
+	jr nz, .evs_label
+	ld a, DV_LABEL
+	jr .have_label
+.evs_label
+	ld a, EV_LABEL
+.have_label
+	call PlaceSummaryBoxes
+	hlcoord 8, 3
 	ld de, .HPString
 	call PlaceString
 
-	hlcoord 11, 3
+	hlcoord 11, 4
 	ld b, $0
 	call SummaryScreenDrawPlayerHP
-	hlcoord 19, 3
+	hlcoord 19, 4
 	ld [hl], $6b ; right HP/exp bar end cap
 
-	hlcoord 8, 4
+	hlcoord 8, 5
 	ld de, .AttackString
 	call PlaceString
-	hlcoord 8, 5
+	hlcoord 8, 6
 	ld de, .DefenseString
 	call PlaceString
-	hlcoord 8, 6
+	hlcoord 8, 7
 	ld de, .SpAttackString
 	call PlaceString
-	hlcoord 8, 7
+	hlcoord 8, 8
 	ld de, .SpDefenseString
 	call PlaceString
-	hlcoord 8, 8
+	hlcoord 8, 9
 	ld de, .SpeedString
 	call PlaceString
 
-	hlcoord 17, 4
+	hlcoord 17, 5
 	ld de, wTempMonAttack
 	call .PrintTempMonStats
-	hlcoord 17, 5
+	hlcoord 17, 6
 	ld de, wTempMonDefense
 	call .PrintTempMonStats
-	hlcoord 17, 6
+	hlcoord 17, 7
 	ld de, wTempMonSpclAtk
 	call .PrintTempMonStats
-	hlcoord 17, 7
+	hlcoord 17, 8
 	ld de, wTempMonSpclDef
 	call .PrintTempMonStats
-	hlcoord 17, 8
+	hlcoord 17, 9
 	ld de, wTempMonSpeed
 	call .PrintTempMonStats
 
+; The box shows the DVs or the EVs, never both.
+	hlcoord 0, 13
+	lb bc, 5, SCREEN_WIDTH
+	call ClearBox
+	ld hl, wSummaryScreenFlags
+	bit BLUE_EVS_BIT, [hl]
+	jr nz, .print_evs
 	call SummaryScreen_PrintDVs
+	ret
+
+.print_evs
 	call SummaryScreen_PrintEVs
 	ret
 
@@ -951,7 +1291,7 @@ SummaryScreenDrawPlayerHP:
 	ld [wWhichHPBar], a
 	push hl
 	push bc
-	; box mons have full HP
+; box mons have full HP
 	ld a, [wMonType]
 	cp BOXMON
 	jr z, .at_least_1_hp
@@ -1025,60 +1365,74 @@ SummaryScreenDrawPlayerHP:
 	ret
 
 SummaryScreen_PrintEVs:
-	hlcoord 13, 10
-	ld de, .EVNamestring
-	call PlaceString
-	
-	hlcoord 11, 11
+	hlcoord 2, 14
 	ld de, .EVHPstring
 	call PlaceString
-	hlcoord 15, 11
+	hlcoord 6, 14
 	lb bc, 1, 3
 	ld de, wTempMonHPEV
 	call PrintNum
+	hlcoord 9, 14
+	call .MaybeEVStar
 
-	hlcoord 11, 12
+	hlcoord 2, 15
 	ld de, .EVAtkstring
 	call PlaceString
-	hlcoord 15, 12
+	hlcoord 6, 15
 	lb bc, 1, 3
 	ld de, wTempMonAtkEV
 	call PrintNum
-
-	hlcoord 11, 13
-	ld de, .EVDefstring
-	call PlaceString
-	hlcoord 15, 13
-	lb bc, 1, 3
-	ld de, wTempMonDefEV
-	call PrintNum
-
-	hlcoord 11, 14
-	ld de, .EVSpAstring
-	call PlaceString
-	hlcoord 15, 14
-	lb bc, 1, 3
-	ld de, wTempMonSpclAtkEV
-	call PrintNum
+	hlcoord 9, 15
+	call .MaybeEVStar
 
 	hlcoord 11, 15
-	ld de, .EVSpDstring
+	ld de, .EVDefstring
 	call PlaceString
 	hlcoord 15, 15
 	lb bc, 1, 3
-	ld de, wTempMonSpclDefEV
+	ld de, wTempMonDefEV
 	call PrintNum
+	hlcoord 18, 15
+	call .MaybeEVStar
+
+	hlcoord 2, 16
+	ld de, .EVSpAstring
+	call PlaceString
+	hlcoord 6, 16
+	lb bc, 1, 3
+	ld de, wTempMonSpclAtkEV
+	call PrintNum
+	hlcoord 9, 16
+	call .MaybeEVStar
 
 	hlcoord 11, 16
-	ld de, .EVSpestring
+	ld de, .EVSpDstring
 	call PlaceString
 	hlcoord 15, 16
 	lb bc, 1, 3
+	ld de, wTempMonSpclDefEV
+	call PrintNum
+	hlcoord 18, 16
+	call .MaybeEVStar
+
+	hlcoord 11, 14
+	ld de, .EVSpestring
+	call PlaceString
+	hlcoord 15, 14
+	lb bc, 1, 3
 	ld de, wTempMonSpdEV
 	call PrintNum
+	hlcoord 18, 14
+	call .MaybeEVStar
+	ret
+.MaybeEVStar
+	ld a, [de]
+	cp MAX_EV
+	ret nz
+	ld a, DV_STAR_TILE
+	ld [hl], a
+	ret
 
-.EVNamestring:
-	db "EVs@"
 .EVHPstring:
 	db "HP :@"
 .EVAtkstring:
@@ -1093,22 +1447,23 @@ SummaryScreen_PrintEVs:
 	db "Spe:@"	
 
 SummaryScreen_PrintDVs:
-	hlcoord 4, 10
-	ld de, .DVNamestring
-	call PlaceString
-	hlcoord 2, 11
+	hlcoord 2, 14
 	ld de, .DVHPstring
 	call PlaceString
-	hlcoord 2, 12
+	
+	hlcoord 2, 15
 	ld de, .DVAtkstring
 	call PlaceString
-	hlcoord 2, 13
+	
+	hlcoord 11, 15
 	ld de, .DVDefstring
 	call PlaceString
-	hlcoord 2, 14
+	
+	hlcoord 2, 16
 	ld de, .DVSpcstring
 	call PlaceString
-	hlcoord 2, 15
+	
+	hlcoord 11, 14
 	ld de, .DVSpestring
 	call PlaceString
 
@@ -1131,8 +1486,10 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 12
+	hlcoord 6, 15
 	call PrintNum
+	hlcoord 8, 15
+	call .MaybeDVStar
 
 	; DEF DV
 	ld a, [wTempMonDVs] ; only get the first byte of the word
@@ -1151,8 +1508,10 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 13
+	hlcoord 15, 15
 	call PrintNum
+	hlcoord 17, 15
+	call .MaybeDVStar
 
 	; SPE DV
 	ld a, [wTempMonDVs + 1] ; second byte of word
@@ -1172,8 +1531,10 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 15 ; 1, 5, 9, 13
+	hlcoord 15, 14 ; 1, 5, 9, 13
 	call PrintNum
+	hlcoord 17, 14
+	call .MaybeDVStar
 
 	; SPC DV
 	ld a, [wTempMonDVs + 1] ; second byte of word
@@ -1192,8 +1553,10 @@ SummaryScreen_PrintDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 14
+	hlcoord 6, 16
 	call PrintNum
+	hlcoord 8, 16
+	call .MaybeDVStar
 	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
 	; call PrintNum
 
@@ -1213,12 +1576,19 @@ SummaryScreen_PrintDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 11 ; 1, 4, 7, 10, 13 
+	hlcoord 6, 14 ; 1, 4, 7, 10, 13 
 	call PrintNum
+	hlcoord 8, 14
+	call .MaybeDVStar
+	ret
+.MaybeDVStar
+	ld a, [wPokedexStatus]
+	cp 15
+	ret nz
+	ld a, DV_STAR_TILE
+	ld [hl], a
 	ret
 
-.DVNamestring:
-	db "DVs@"
 .DVHPstring:
 	db "HP :@"
 .DVAtkstring:
@@ -1231,20 +1601,21 @@ SummaryScreen_PrintDVs:
 	db "Spe:@"
 
 LoadOrangePage:
+	ld a, MET_LABEL
+	call PlaceSummaryBoxes
 	call SummaryScreen_PrintHappiness
 
+	call SummaryScreen_placeCaughtVerb
 	call SummaryScreen_placeCaughtTime
 	call SummaryScreen_placeCaughtLocation
 	call SummaryScreen_placeCaughtLevel
 	ret
 
 SummaryScreen_PrintHappiness:
-	hlcoord 8, 6
-	ld [hl], $35 ; heart icon
-	hlcoord 18, 6
+	hlcoord 9, 6
 	ld [hl], $35 ; heart icon
 	
-	hlcoord 10, 6
+	hlcoord 11, 6
 	lb bc, 1, 3
 	ld de, wTempMonHappiness
 	call PrintNum
@@ -1252,7 +1623,7 @@ SummaryScreen_PrintHappiness:
 	hlcoord 9, 4
 	call PlaceString
 	ld de, .outofMaxLoveString
-	hlcoord 13, 6
+	hlcoord 14, 6
 	call PlaceString
 	ret
 
@@ -1263,137 +1634,131 @@ SummaryScreen_PrintHappiness:
 	db "/255@"
 
 SummaryScreen_placeCaughtLocation:
-	ld de, .MetAtMapString
-	hlcoord 3, 11
-	call PlaceString
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
 	jr z, .unknown_location
-	cp LANDMARK_EVENT
+	cp LANDMARK_UNKNOWN
+	jr z, .unknown_location
+	cp LANDMARK_TRADE
 	jr z, .unknown_location
 	cp LANDMARK_GIFT
-	jr z, .unknown_location
+	jr z, .was_gift
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-	hlcoord 3, 13
+	hlcoord 1, 16
 	call PlaceString
 	ret	
+
+.was_gift:
+	ld de, .GiftString
+	hlcoord 1, 16
+	call PlaceString
+	ret
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 8, 11
+	hlcoord 1, 16
 	call PlaceString
 	ret
-.MetAtMapString:
-	db "Met: @"
+
 .MetUnknownMapString:
-	db "via Trade@"
+	db "Via Trade@"
+.GiftString:
+	db "Gift@"
+
+SummaryScreen_placeCaughtVerb:
+	ld a, [wTempMonCaughtTime]
+	and CAUGHT_VERB_MASK
+	cp MON_TRADE
+	ld de, .tradedString
+	jr z, .print
+	cp MON_GIFT
+	ld de, .giftString
+	jr z, .print
+	cp MON_HATCHED
+	ld de, .hatchedString
+	jr z, .print
+	ld de, .caughtString
+.print
+	hlcoord 5, 13
+	call PlaceString
+	ret
+
+.tradedString:
+	db "- Traded -@"
+.giftString:
+	db "- Gifted -@"
+.hatchedString:
+	db "- Hatched -@"
+.caughtString:
+	db "- Caught -@"
 
 SummaryScreen_placeCaughtTime:
-	; caught level
 	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK	
 	and a
 	jr z, .unknown_time
-
-	; caught level
-	xor a
-	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK
-	and a
-	jr z, .printnoneegg
-	cp 1 ; egg level
-	jr z, .printegginfo
-
-.printnoneegg:
-	ld a, [wTempMonCaughtTime]
-	and CAUGHT_TIME_MASK
-;	ret z ; no time
-	rlca
-	rlca
-	dec a
-	maskbits NUM_DAYTIMES
-	ld hl, .times
-	call GetNthString
-	ld d, h
-	ld e, l
-	call CopyName1
-	ld de, wStringBuffer2
-	hlcoord 8, 11
-	call PlaceString
-	ret
-
-.printegginfo:
-	ld a, [wTempMonCaughtTime]
-	and CAUGHT_TIME_MASK
-	rlca
-	rlca
-	dec a
-	maskbits NUM_DAYTIMES
-	ld hl, .times
-	call GetNthString
-	ld d, h
-	ld e, l
-	call CopyName1
-	ld de, wStringBuffer2
-	hlcoord 12, 11
-	call PlaceString
-	ret
+	hlcoord 3, 14
+	jr PlaceCaughtTimeOfDay
 
 .unknown_time:
 	ld de, .unknown_time_text
-	hlcoord 8, 11
+	hlcoord 3, 14
 	call PlaceString
 	ret
 
 .times
-	db "Morn@"
-	db "Day@"
-	db "Nite@"
-	db "Eve@"
+	db "Morning at@"
+	db "    Day at@"
+	db "  Night at@"
+	db "Evening at@"
 
 .unknown_time_text
-	db "@"
+	db "Unknown at@"
+
+PlaceCaughtTimeOfDay:
+	push hl
+	ld a, [wTempMonCaughtTime]
+	and CAUGHT_TIME_MASK
+	rlca
+	rlca
+	dec a
+	maskbits NUM_DAYTIMES
+	ld hl, SummaryScreen_placeCaughtTime.times
+	call GetNthString
+	ld d, h
+	ld e, l
+	call CopyName1
+	pop hl
+	ld de, wStringBuffer2
+	jp PlaceString
 
 SummaryScreen_placeCaughtLevel:
-	; caught level
 	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK	
 	and a
 	jr z, .unknown_level
-;	cp CAUGHT_EGG_LEVEL ; egg marker value
-;	jr nz, .print
-;	ld a, EGG_LEVEL ; egg hatch level
-	cp 1 ; egg level
-	jr z, .printegg
-
-;.print
+	cp MAX_LEVEL + 1
+	jr nc, .unknown_level
+	cp CAUGHT_EGG_LEVEL ; egg marker value
+	jr nz, .print
+	ld a, EGG_LEVEL ; egg hatch level
+.print
 	ld [wTextDecimalByte], a
-	hlcoord 14, 11
+	hlcoord 15, 14
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	hlcoord 13, 11
+	hlcoord 14, 14
 	ld [hl], '<LV>'
-	ret
-
-.printegg:
-	ld de, .HatchedString
-	hlcoord 3, 11
-	call PlaceString
 	ret
 
 .unknown_level
 	ld de, .MetUnknownLevelString
-	hlcoord 13, 11
+	hlcoord 15, 14
 	call PlaceString
 	ret  
 
-.HatchedString:
-	db "Hatched:"
-
 .MetUnknownLevelString:
-	db "@"
+	db "??@"
 
 SummaryScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
@@ -1772,7 +2137,7 @@ PrintMonTypeTiles:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx\summary\types_light.png)
-	hlcoord 10, 6
+	hlcoord 8, 7
 	ld [hl], $4c
 	inc hl
 	ld [hl], $4d
@@ -1800,9 +2165,9 @@ PrintMonTypeTiles:
 	ld hl, vTiles2 tile $5c
 	lb bc, BANK(TypeDarkIconGFX), 4 ; Bank in 'c', Number of Tiles in 'c'
 	call Request2bpp
-	
+
 ; place Type 2 GFX
-	hlcoord 14, 6
+	hlcoord 12, 7
 	ld [hl], $5c
 	inc hl
 	ld [hl], $5d

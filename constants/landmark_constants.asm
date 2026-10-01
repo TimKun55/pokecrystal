@@ -114,8 +114,9 @@ DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData
 	const_def $7f, -1
-	const LANDMARK_EVENT             ; $7f
-	const LANDMARK_GIFT              ; $7e
+	const LANDMARK_UNKNOWN   ; $7f  default and failsafe; never a real place
+	const LANDMARK_GIFT      ; $7e
+	const LANDMARK_TRADE     ; $7d
 
 ; Regions
 	const_def

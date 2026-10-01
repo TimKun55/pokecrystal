@@ -326,7 +326,7 @@ endr
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; CaughtData/CaughtTime
 	ld [de], a
 	inc de
 	; CaughtGender/CaughtLocation
@@ -389,7 +389,7 @@ endr
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; CaughtData/CaughtTime
 	ld [de], a
 	inc de
 	; CaughtGender/CaughtLocation
@@ -1410,6 +1410,7 @@ GivePoke::
 	ld [hli], a
 	ld [hl], LOW(RANDY_OT_ID)
 	pop bc
+	ld c, MON_GIFT
 	farcall SetGiftPartyMonCaughtData
 	jr .skip_nickname
 
@@ -1432,6 +1433,8 @@ GivePoke::
 	call Random
 	ld [hl], a
 	newfarcall UpdateStorageBoxMonFromTemp
+	; c only here: the ID randomisation above leaves c holding the ID's high byte.
+	ld c, MON_GIFT
 	farcall SetGiftBoxMonCaughtData
 	jr .skip_nickname
 

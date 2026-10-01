@@ -16,6 +16,7 @@ GiveShuckle:
 
 ; Caught data.
 	ld b, CAUGHT_BY_UNKNOWN
+	ld c, MON_GIFT
 	farcall SetGiftPartyMonCaughtData
 
 ; Holding a Berry Juice.

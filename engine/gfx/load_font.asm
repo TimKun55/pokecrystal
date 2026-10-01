@@ -142,6 +142,7 @@ SummaryScreen_LoadFont:
 	ld hl, vTiles2 tile $6c
 	lb bc, BANK(EnemyHPBarBorderGFX), 4
 	call Get1bppViaHDMA
+
 LoadSummaryScreenPageTilesGFX:
 	ld de, SummaryScreenPageTilesGFX
 	ld hl, vTiles2 tile $31

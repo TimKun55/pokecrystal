@@ -507,15 +507,11 @@ LoadSummaryScreenPals:
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 	ld a, [hli] ; byte 1 of the summary screen page color
-	ld [wBGPals1 palette 0], a ; into slot 1 byte 1 of pal 0
 	ld [wBGPals1 palette 2], a ; into slot 1 byte 1 of pal 2
-	ld [wBGPals1 palette 4 + 2], a ; into slot 2 byte 1 of pal 4
-	ld [wBGPals1 palette 7], a ; into slot 1 byte 1 of pal 7
+	ld [wBGPals1 palette 6 + 4], a ; into slot 2 byte 1 of pal 6
 	ld a, [hl]
-	ld [wBGPals1 palette 0 + 1], a ; into slot 1 byte 2 of pal 0
 	ld [wBGPals1 palette 2 + 1], a ; into slot 1 byte 2 of pal 2
-	ld [wBGPals1 palette 4 + 3], a ; into slot 2 byte 2 of pal 4
-	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
+	ld [wBGPals1 palette 6 + 5], a ; into slot 2 byte 2 of pal 6
 
 	xor a ; loading black into slot 4 of pal 6 and 7
 	ld [wBGPals1 palette 6 + 6], a
@@ -1311,6 +1307,9 @@ INCLUDE "gfx/battle/hp_bar.pal"
 
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
+
+GenderPalette:
+INCLUDE "gfx/battle/gender.pal"
 
 EggSummaryPals:
 INCLUDE "gfx/summary/egg_summary.pal"

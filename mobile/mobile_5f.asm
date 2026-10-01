@@ -2325,6 +2325,7 @@ Function17ded9:
 	call CopyBytes
 	ld a, [hli]
 	ld b, a
+	ld c, MON_GIFT
 	push hl
 	farcall SetGiftPartyMonCaughtData
 	pop hl

@@ -151,11 +151,13 @@ GetCaughtLevel:
 	ld bc, 4
 	call ByteFill
 
-	; caught level
-	; Limited to between 1 and 63 since it's a 6-bit quantity.
-	ld a, [wSeerCaughtData]
-	and CAUGHT_LEVEL_MASK
+	ld a, MON_CAUGHTLEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	and a
 	jr z, .unknown
+	cp MAX_LEVEL + 1
+	jr nc, .unknown
 	cp CAUGHT_EGG_LEVEL ; egg marker value
 	jr nz, .print
 	ld a, EGG_LEVEL ; egg hatch level
@@ -214,8 +216,10 @@ GetCaughtLocation:
 	ld a, [wSeerCaughtGender]
 	and CAUGHT_LOCATION_MASK
 	jr z, .Unknown
-	cp LANDMARK_EVENT
+	cp LANDMARK_UNKNOWN
 	jr z, .event
+	cp LANDMARK_TRADE
+	jr z, .fail
 	cp LANDMARK_GIFT
 	jr z, .fail
 	ld e, a
@@ -386,7 +390,11 @@ GetCaughtGender:
 	ld a, [hl]
 	and CAUGHT_LOCATION_MASK
 	jr z, .genderless
-	cp LANDMARK_EVENT
+	cp LANDMARK_UNKNOWN
+	jr z, .genderless
+	cp LANDMARK_TRADE
+	jr z, .genderless
+	cp LANDMARK_GIFT
 	jr z, .genderless
 
 	ld a, [hl]

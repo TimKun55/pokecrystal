@@ -106,7 +106,7 @@ SetDefaultBattlePalette:
 	dec a ; PAL_BATTLE_BG_PLAYER_HP
 	jr z, SetBattlePal_PlayerHP
 	dec a ; PAL_BATTLE_BG_EXP
-	jr z, SetBattlePal_Exp
+	jr z, SetBattlePal_Gender
 	dec a ; PAL_BATTLE_BG_5 (unused)
 	jr z, SetBattlePal_Player
 	dec a ; PAL_BATTLE_BG_6 (unused)
@@ -151,8 +151,8 @@ SetBattlePal_HP:
 	add hl, bc
 	jp LoadPalette_White_Col1_Col2_Black
 
-SetBattlePal_Exp:
-	ld hl, ExpBarPalette
+SetBattlePal_Gender:
+	ld hl, GenderPalette
 	jp LoadPalette_White_Col1_Col2_Black
 
 SetBattlePal_Text:
@@ -172,7 +172,7 @@ _CGB_BattleColors:
 	call SetBattlePal_Enemy
 	call SetBattlePal_EnemyHP
 	call SetBattlePal_PlayerHP
-	call SetBattlePal_Exp
+	call SetBattlePal_Gender
 	ld de, wOBPals1
 	call SetBattlePal_Enemy
 	call SetBattlePal_Player
@@ -348,9 +348,18 @@ _CGB_SummaryScreenHPPals:
 	call LoadPalette_White_Col1_Col2_Black ; mon palette, palette 1
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette, palette 2
+	ld hl, GenderPalette
+	call LoadPalette_White_Col1_Col2_Black ; gender palette, palette 3
 
-	ld hl, ExpBarPalette
-	call LoadPalette_White_Col1_Col2_Black ; BG_5
+	ld a, [wTempMonCaughtBall]
+	ld b, a
+	call LoadSummaryScreenBallPalette
+	ld a, [wTempMonItem]
+	call LoadSummaryScreenItemIconPalette
+
+	ld de, wBGPals1 palette 6
+	ld hl, .Palette6White
+	call LoadPalette_White_Col1_Col2_Black ; box frame palette, palette 6
 
 	call LoadSummaryScreenStatusIconPalette
 
@@ -359,10 +368,10 @@ _CGB_SummaryScreenHPPals:
 	ld a, [wBaseType1]
 	ld c, a ; farcall will clobber a for the bank
 	farcall GetMonTypeIndex
-; load the 1st type pal 
+; load the 1st type pal
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
-	call LoadMonBaseTypePal	
+	call LoadMonBaseTypePal
 
 	ld a, [wBaseType1]
 	ld b, a
@@ -371,47 +380,81 @@ _CGB_SummaryScreenHPPals:
 	jr z, .palettes_done
 	ld c, a ; farcall will clobber a for the bank
 	farcall GetMonTypeIndex
-; load the 2nd type pal 
+; load the 2nd type pal
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7, byte 1
-	call LoadMonBaseTypePal	
+	call LoadMonBaseTypePal
 .palettes_done
 	call WipeAttrmap
 
-	hlcoord 0, 0, wAttrmap
+	hlcoord 0, 0, wAttrmap ; fontpic
 	lb bc, 9, 7
 	ld a, $1 ; mon palette
 	call FillBoxCGB
 
-	hlcoord 7, 0, wAttrmap
+	hlcoord 7, 0, wAttrmap ; top right strip of screen
 	lb bc, 1, 13
 	ld a, $1 ; mon palette
 	call FillBoxCGB
 
-	hlcoord 7, 2, wAttrmap
-	lb bc, 7, 1
-	ld a, $4 ; 
+	hlcoord 0, 13, wAttrmap ; bottom box and exp bar
+	lb bc, 5, SCREEN_WIDTH
+	ld a, $2 ; exp palette
 	call FillBoxCGB
 
-	hlcoord 0, 9, wAttrmap
-	ld bc, 8
-	ld a, $4 ; 
-	call ByteFill
+	hlcoord 7, 2, wAttrmap ; top of right-hand box
+	lb bc, 10, 1
+	ld a, $6
+	call FillBoxCGB
 
-	hlcoord 7, 1, wAttrmap
+	hlcoord 7, 1, wAttrmap ; left side of right-hand box
 	ld bc, 13
-	ld a, $4 ; 
+	ld a, $6
 	call ByteFill
 
-	hlcoord 12, 16, wAttrmap
-	ld bc, 8
-	ld a, $2 ; exp palette
+	hlcoord 8, 11, wAttrmap ; bottom of right-hand box
+	ld bc, 12
+	ld a, $6
 	call ByteFill
-	
-; gender icon
-	hlcoord 5, 8, wAttrmap
-	lb bc, 1, 2 ; 1 Tile in HEIGHT, 2 Tiles in WIDTH
-	ld a, $3 ; gender palette
+
+	hlcoord 8, 2, wAttrmap ; right box and hp bar
+	lb bc, 9, 12
+	ld a, $0 
+	call FillBoxCGB
+
+	hlcoord 1, 11, wAttrmap ; top of page label
+	ld bc, 5
+	ld a, $6
+	call ByteFill
+
+	hlcoord 0, 12, wAttrmap ; top of bottom box
+	ld bc, SCREEN_WIDTH
+	ld a, $6
+	call ByteFill
+
+	hlcoord 2, 11, wAttrmap ; page label name
+	lb bc, 2, 3
+	ld a, $2
+	call FillBoxCGB
+
+	ld a, $6 | X_FLIP ; page label right side
+	hlcoord 5, 11, wAttrmap
+	lb bc, 2, 1 ; rows 11-12
+	call FillBoxCGB
+
+	hlcoord 0, 9, wAttrmap ; pokerus icon
+	ld bc, 1
+	ld a, $3
+	call ByteFill
+
+	hlcoord 5, 9, wAttrmap ; gender icon
+	ld bc, 1
+	ld a, $3
+	call ByteFill
+
+	hlcoord 16, 6, wAttrmap ; caught ball icon
+	lb bc, 3, 3
+	ld a, $4
 	call FillBoxCGB
 
 ; mon status
@@ -421,7 +464,7 @@ _CGB_SummaryScreenHPPals:
 	call FillBoxCGB
 
 ; mon type(s) 
-	hlcoord 10, 6, wAttrmap
+	hlcoord 8, 7, wAttrmap
 	lb bc, 1, 8 ; 1 Tile in HEIGHT, 8 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
 	call FillBoxCGB
@@ -429,24 +472,19 @@ _CGB_SummaryScreenHPPals:
 ; trainer gender icon
 	hlcoord 19, 9, wAttrmap
 	ld bc, 1
-	ld a, $2 ; gender palette
+	ld a, $3 ; gender palette
 	call ByteFill
 
-; pokerus icons
-	hlcoord 8, 2, wAttrmap
-	lb bc, 1, 3
-	ld a, $2 ; gender palette
+; item icon
+	hlcoord 2, 8, wAttrmap
+	lb bc, 3, 3
+	ld a, $5 ; item palette
 	call FillBoxCGB
 
-; Friendship Hearts
-	hlcoord 8, 6, wAttrmap
+; Friendship Heart
+	hlcoord 9, 6, wAttrmap
 	ld bc, 1
-	ld a, $2 ; gender palette
-	call ByteFill
-
-	hlcoord 18, 6, wAttrmap
-	ld bc, 1
-	ld a, $2 ; gender palette
+	ld a, $3 ; gender palette
 	call ByteFill
 
 	call ApplyAttrmap
@@ -454,6 +492,70 @@ _CGB_SummaryScreenHPPals:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
+
+.Palette6White
+	db $ff, $ff, $ff, $ff
+
+CopySummaryItemPalette:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld a, LOW(PALRGB_WHITE)
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_WHITE)
+	ld [de], a
+	inc de
+	ld c, 2 * PAL_COLOR_SIZE
+.copy_loop
+	ld a, b
+	call GetFarByte ; preserves hl
+	ld [de], a
+	inc de
+	inc hl
+	dec c
+	jr nz, .copy_loop
+	xor a ; black
+	ld [de], a
+	inc de
+	ld [de], a
+	pop af
+	ldh [rSVBK], a
+	ret
+
+LoadSummaryScreenBallPalette:
+	ld hl, BallColors
+.pal_scan
+	ld a, BANK(BallColors)
+	call GetFarByte ; a = this entry's item id; it preserves hl
+	cp b
+	jr z, .pal_found
+	inc a
+	jr z, .pal_default ; hit the -1 terminator
+	ld de, 1 + 2 * PAL_COLOR_SIZE
+	add hl, de
+	jr .pal_scan
+.pal_default
+	ld hl, BallColors
+	ld b, POKE_BALL
+	jr .pal_scan
+.pal_found
+	inc hl
+	ld b, BANK(BallColors) ; a is overwritten on entry to the copier
+	ld de, wBGPals1 palette 4
+	jr CopySummaryItemPalette
+
+LoadSummaryScreenItemIconPalette:
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld bc, ItemIconPalettes
+	add hl, bc
+	ld b, BANK(ItemIconPalettes) ; a is overwritten on entry to the copier
+	ld de, wBGPals1 palette 5
+	jr CopySummaryItemPalette
 
 SummaryScreenPals:
 INCLUDE "gfx/summary/summary.pal"
@@ -1491,7 +1593,7 @@ _CGB_MoveList:
 	ld de, wBGPals1 palette 2 + 6
 	call LoadSingleBlackPal
 
-	ld hl, ExpBarPalette
+	ld hl, GenderPalette
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
 
 ; Type Icon Pals
@@ -2031,7 +2133,7 @@ _CGB_EggSummaryScreen:
 
 	ld hl, EggSummaryPals
 	ld de, wBGPals1 palette 2
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
@@ -2051,6 +2153,11 @@ _CGB_EggSummaryScreen:
 	hlcoord 0, 9, wAttrmap
 	lb bc, 1, 20
 	ld a, $3 
+	call FillBoxCGB
+
+	hlcoord 0, 10, wAttrmap
+	lb bc, 8, 20
+	ld a, $4 
 	call FillBoxCGB
 
 	call ApplyAttrmap

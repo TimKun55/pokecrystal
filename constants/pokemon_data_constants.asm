@@ -87,19 +87,26 @@ DEF MON_SPD_EV             rb
 DEF MON_SAT_EV             rb
 DEF MON_SDF_EV             rb
 DEF MON_CAUGHTBALL         rb
-                           rb_skip 3
+DEF MON_CAUGHTLEVEL        rb
+                           rb_skip 2
 DEF MON_DVS                rw
 DEF MON_PP                 rb NUM_MOVES
 DEF MON_HAPPINESS          rb
 DEF MON_POKERUS            rb
-DEF MON_CAUGHTDATA         rw
-rsset MON_CAUGHTDATA
-DEF MON_CAUGHTTIME         rb
+; CaughtTime is a whole byte, but only its top four bits carry anything: 7-6
+; are the time of day and 5-4 the verb, so the low four are what the level that
+; used to share six bits with them gave up. That level has its own byte now, up
+; by the DVs with the ball. MON_LEVEL has to keep its offset, and CaughtLocation
+; is the same byte as CaughtGender, so the last rsset steps back to GENDER rather
+; than on.
+DEF MON_CAUGHTDATA         rb
+DEF MON_CAUGHTTIME EQU MON_CAUGHTDATA
 DEF MON_CAUGHTGENDER       rb
-rsset MON_CAUGHTDATA
-DEF MON_CAUGHTLEVEL        rb
+rsset MON_CAUGHTGENDER
 DEF MON_CAUGHTLOCATION     rb
 DEF MON_LEVEL              rb
+assert MON_CAUGHTTIME == MON_CAUGHTDATA
+assert MON_CAUGHTLOCATION == MON_CAUGHTGENDER
 DEF BOXMON_STRUCT_LENGTH EQU _RS
 DEF MON_STATUS             rb
                            rb_skip
@@ -132,21 +139,24 @@ DEF SAVEMON_DEF_EXP            rw
 ; field needs no encoding in EncodeBufferMon/DecodeBufferMon.
 ; Offset must stay identical to MON_CAUGHTBALL.
 DEF SAVEMON_CAUGHTBALL         rb
-                           rb_skip 3
+DEF SAVEMON_CAUGHTLEVEL        rb
+                           rb_skip 2
 DEF SAVEMON_DVS                rw
 ; savemon_struct is identical to party_struct before this point
 DEF SAVEMON_PP_UPS             rb
 ; savemon_struct is shifted from party_struct beyond this point
 DEF SAVEMON_HAPPINESS          rb
 DEF SAVEMON_PKRUS              rb
-DEF SAVEMON_CAUGHTDATA         rw
-rsset SAVEMON_CAUGHTDATA
-DEF SAVEMON_CAUGHTTIME         rb
+; As MON_*: the level has its own byte, the offsets below must not move, and
+; CaughtLocation aliases CaughtGender.
+DEF SAVEMON_CAUGHTDATA         rb
+DEF SAVEMON_CAUGHTTIME EQU SAVEMON_CAUGHTDATA
 DEF SAVEMON_CAUGHTGENDER       rb
-rsset SAVEMON_CAUGHTDATA
-DEF SAVEMON_CAUGHTLEVEL        rb
+rsset SAVEMON_CAUGHTGENDER
 DEF SAVEMON_CAUGHTLOCATION     rb
 DEF SAVEMON_LEVEL              rb
+assert SAVEMON_CAUGHTTIME == SAVEMON_CAUGHTDATA
+assert SAVEMON_CAUGHTLOCATION == SAVEMON_CAUGHTGENDER
 ; savemon_struct is different from party_struct beyond this point
 DEF SAVEMON_ALTSPECIES         rb
 DEF SAVEMON_NICKNAME           rb MON_NAME_LENGTH - 1
@@ -158,8 +168,21 @@ DEF REDMON_STRUCT_LENGTH EQU 44
 
 ; caught data
 
+; CaughtTime is a whole byte but only the top two bits carry anything; the
+; level that used to share its low six bits now has MON_CAUGHTLEVEL of its
+; own, so the CAUGHT_LEVEL_MASK that used to live here is gone.
 DEF CAUGHT_TIME_MASK  EQU %11000000
-DEF CAUGHT_LEVEL_MASK EQU %00111111
+
+; The low six bits of CaughtTime went spare when the caught level got a byte of
+; its own. Bits 5-4 now say how the mon arrived, which is what lets CaughtLocation
+; hold a real place for gifts and trades instead of a sentinel standing in for
+; one. The values are pre-shifted into their bits so a writer can `or c` straight
+; into the time byte without a shift.
+DEF CAUGHT_VERB_MASK  EQU %00110000
+DEF MON_CAUGHT        EQU %00000000 ; wild
+DEF MON_GIFT          EQU %00010000 ; handed to you
+DEF MON_TRADE         EQU %00100000 ; received from an NPC in a trade
+DEF MON_HATCHED       EQU %00110000 ; hatched from an egg
 
 DEF CAUGHT_BALL_DEFAULT EQU POKE_BALL
 
