@@ -913,10 +913,7 @@ BillsPC_PreviewTheme:
 	ld c, 1 * 2
 	call LoadHLBytesIntoDE
 	
-	ld hl, ExpBarPalette
-	ld c, a
-	ld b, 0
-	add hl, bc
+	ld hl, GenderPalette
 	ld de, wBGPals1 palette 0 + 2 ; slot 2 of pal 0
 	ld c, 4 ; 2 colors (4 bytes)
 	call LoadCPaletteBytesFromHLIntoDE
