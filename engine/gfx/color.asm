@@ -1014,7 +1014,7 @@ InitCGBPals::
 	ldh [rVBK], a
 	ld a, 1 << rBGPI_AUTO_INCREMENT
 	ldh [rBGPI], a
-	ld c, 4 * palettes
+	ld c, 4 palettes
 .bgpals_loop
 	ld a, LOW(PALRGB_WHITE)
 	ldh [rBGPD], a
@@ -1024,7 +1024,7 @@ InitCGBPals::
 	jr nz, .bgpals_loop
 	ld a, 1 << rOBPI_AUTO_INCREMENT
 	ldh [rOBPI], a
-	ld c, 4 * palettes
+	ld c, 4 palettes
 .obpals_loop
 	ld a, LOW(PALRGB_WHITE)
 	ldh [rOBPD], a
