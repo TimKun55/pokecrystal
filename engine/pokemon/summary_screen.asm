@@ -548,7 +548,10 @@ SummaryScreen_InitUpperHalf:
 
 	ld a, [wMonType]
 	cp PARTYMON
+	jr z, .print
+	cp BUFFERMON
 	jr nz, .done
+.print
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .done
@@ -1094,7 +1097,9 @@ OTString:
 LoadGreenPage:
 	ld a, ITEM_LABEL
 	call PlaceSummaryBoxes
-	call .PlaceInfoPrompt
+	ld a, [wMonType]
+	and a ; PARTYMON
+	call z, .PlaceInfoPrompt
 	call .PlaceItemIcon
 	ld hl, wTempMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
