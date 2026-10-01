@@ -1449,9 +1449,6 @@ _CGB_TrainerCardKanto:
 .KantoBadgePalettes:
 INCLUDE "gfx/trainer_card/kanto_badges.pal"
 
-KantoCardPals:
-INCLUDE "gfx/trainer_card/kanto_card.pal"
-
 _CGB_MoveList:
 	ld de, wBGPals1
 	ld a, PREDEFPAL_GOLDENROD

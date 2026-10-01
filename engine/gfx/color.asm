@@ -203,7 +203,7 @@ LoadBattleCategoryAndTypePals:
 	; type index is already in c
 	ld de, wBGPals1 palette 5
 	; fallthrough	
-LoadCategoryAndTypePals:
+;LoadCategoryAndTypePals:
 	; given: de holds the address of destination Palette and Slot
 	; adding a single white pal the way vanilla game does it
 	ldh a, [rSVBK]
@@ -423,28 +423,28 @@ LoadNthMiddleBGPal:
 	call LoadPalette_White_Col1_Col2_Black
 	ret
 
-ApplyMonOrTrainerPals:
-	call CheckCGB
-	ret z
-	ld a, e
-	and a
-	jr z, .get_trainer
-	ld a, [wCurPartySpecies]
-	call GetMonPalettePointer
-	jr .load_palettes
-
-.get_trainer
-	ld a, [wTrainerClass]
-	call GetTrainerPalettePointer
-
-.load_palettes
-	ld de, wBGPals1
-	call LoadPalette_White_Col1_Col2_Black
-	call WipeAttrmap
-	call ApplyAttrmap
-	call ApplyPals
-	ret
-
+;ApplyMonOrTrainerPals:
+;	call CheckCGB
+;	ret z
+;	ld a, e
+;	and a
+;	jr z, .get_trainer
+;	ld a, [wCurPartySpecies]
+;	call GetMonPalettePointer
+;	jr .load_palettes
+;
+;.get_trainer
+;	ld a, [wTrainerClass]
+;	call GetTrainerPalettePointer
+;
+;.load_palettes
+;	ld de, wBGPals1
+;	call LoadPalette_White_Col1_Col2_Black
+;	call WipeAttrmap
+;	call ApplyAttrmap
+;	call ApplyPals
+;	ret
+;
 ApplyHPBarPals:
 	ld a, [wWhichHPBar]
 	and a
