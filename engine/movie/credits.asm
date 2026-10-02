@@ -548,13 +548,14 @@ Credits_LoadBorderGFX:
 	cp $ff
 	jr z, .init
 
-	and %11
+	and %111
 	ld e, a
 	inc a
-	and %11
+	and %111
 	ld [hl], a
 	ld a, [wCreditsBorderMon]
 	and %11
+	add a
 	add a
 	add a
 	add e
@@ -574,23 +575,39 @@ Credits_LoadBorderGFX:
 
 .Frames:
 	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX + 16 tiles
 	dw CreditsBellossomGFX + 16 tiles
 	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX
+	dw CreditsBellossomGFX + 32 tiles
 	dw CreditsBellossomGFX + 32 tiles
 
 	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX    + 16 tiles
 	dw CreditsTogepiGFX    + 16 tiles
 	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX
+	dw CreditsTogepiGFX    + 32 tiles
 	dw CreditsTogepiGFX    + 32 tiles
 
 	dw CreditsDittoGFX
 	dw CreditsDittoGFX     + 16 tiles
 	dw CreditsDittoGFX     + 32 tiles
 	dw CreditsDittoGFX     + 48 tiles
+	dw CreditsDittoGFX
+	dw CreditsDittoGFX     + 16 tiles
+	dw CreditsDittoGFX     + 32 tiles
+	dw CreditsDittoGFX     + 48 tiles
 
 	dw CreditsSentretGFX
+	dw CreditsSentretGFX
+	dw CreditsSentretGFX   + 16 tiles
 	dw CreditsSentretGFX   + 16 tiles
 	dw CreditsSentretGFX   + 32 tiles
+	dw CreditsSentretGFX   + 32 tiles
+	dw CreditsSentretGFX   + 48 tiles
 	dw CreditsSentretGFX   + 48 tiles
 
 Credits_TheEnd:
