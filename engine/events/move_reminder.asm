@@ -386,16 +386,16 @@ ChooseMoveToLearn:
 
 	callfar InitPartyMenuPalettes
 
-	; This displays the Pokémon's species
-	; name (not nickname) at the
+	; This displays the Pokémon's nickname
+	; name (not species) at the
 	; coordinates defined at "hlcoord".
 	; In this case that is the
 	; top left of the screen.
 	xor a
 	ld [wMonType], a
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
+	ld hl, wPartyMonNicknames
+	ld a, [wCurPartyMon]
+	call GetNickname
 	hlcoord  5, 1
 	call PlaceString
 
