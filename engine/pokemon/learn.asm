@@ -1,3 +1,11 @@
+; Modes for the shared move screen, used when picking a move to forget.
+	const_def
+	const MOVESCREEN_NORMAL
+	const MOVESCREEN_NEWMOVE
+
+DEF MOVESCREEN_LIST_LENGTH EQU NUM_MOVES + 1 ; the move being learned is listed too
+DEF MAX_LIST_OFFSET EQU MOVESCREEN_LIST_LENGTH - NUM_MOVES ; four slots, five moves
+
 LearnMove:
 	call LoadTilemapToTempTilemap
 	ld a, [wCurPartyMon]
@@ -125,75 +133,34 @@ ForgetMove:
 	call YesNoBox
 	pop hl
 	ret c
-	ld bc, -NUM_MOVES
-	add hl, bc
-	push hl
-	ld de, wListMoves_MoveIndicesBuffer
-	ld bc, NUM_MOVES
-	call CopyBytes
-	pop hl
+
 .loop
-	push hl
-	ld hl, MoveAskForgetText
-	call PrintText
-	hlcoord 5, 2
-	ld b, NUM_MOVES * 2
-	ld c, MOVE_NAME_LENGTH
-	call Textbox
-	hlcoord 5 + 2, 2 + 2
-	ld a, SCREEN_WIDTH * 2
-	ld [wListMovesLineSpacing], a
-	predef ListMoves
-	; w2DMenuData
-	ld a, $4
-	ld [w2DMenuCursorInitY], a
-	ld a, $6
-	ld [w2DMenuCursorInitX], a
-	ld a, [wNumMoves]
-	inc a
-	ld [w2DMenuNumRows], a
-	ld a, $1
-	ld [w2DMenuNumCols], a
-	ld [wMenuCursorY], a
-	ld [wMenuCursorX], a
-	ld a, $3
-	ld [wMenuJoypadFilter], a
-	ld a, $20
-	ld [w2DMenuFlags1], a
-	xor a
-	ld [w2DMenuFlags2], a
-	ld a, $20
-	ld [w2DMenuCursorOffsets], a
-	call StaticMenuJoypad
-	push af
-	call SafeLoadTempTilemapToTilemap
-	pop af
-	pop hl
-	bit 1, a
-	jr nz, .cancel
-	push hl
-	ld a, [wMenuCursorY]
-	dec a
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	push de
+	call ChooseMoveToForget
+	pop de
+	jr c, .cancel
 	ld c, a
 	ld b, 0
+	ld h, d
+	ld l, e
 	add hl, bc
-	ld a, [hl]
-	push af
-	push bc
+	push hl
 	call IsHMMove
-	pop bc
-	pop de
-	ld a, d
-	jr c, .hmmove
 	pop hl
-	add hl, bc
+	jr c, .hmmove
+	ld a, [hl]
 	and a
 	ret
 
 .hmmove
 	ld hl, MoveCantForgetHMText
 	call PrintText
-	pop hl
 	jr .loop
 
 .cancel
@@ -219,6 +186,124 @@ DidNotLearnMoveText:
 AskForgetMoveText:
 	text_far _AskForgetMoveText
 	text_end
+
+ChooseMoveToForget:
+	ld hl, wOptions
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	ld a, [wPutativeTMHMMove]
+	push af
+	ld a, [wItemQuantity]
+	push af
+	ld a, [wCurItemQuantity]
+	push af
+	ld a, [wCurItem]
+	push af
+	call .BuildMoveList
+	farcall ChooseMoveToLearn
+	pop af
+	ld [wCurItem], a
+	pop af
+	ld [wCurItemQuantity], a
+	pop af
+	ld [wItemQuantity], a
+	pop af
+	ld [wPutativeTMHMMove], a
+	pop bc
+	ld a, b
+	ld [wOptions], a
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .cancel
+
+	ld a, [wMenuSelection]
+	ld hl, wPutativeTMHMMove
+	cp [hl]
+	jr z, .cancel ; the move being learned, so declining it
+	ld d, a ; the chosen move, in d: ld bc below would wipe b
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld c, NUM_MOVES
+.find_slot
+	ld a, [hl]
+	cp d
+	jr z, .found_slot
+	inc hl
+	dec c
+	jr nz, .find_slot
+	jr .cancel ; not one of the mon's moves after all
+.found_slot
+	ld a, NUM_MOVES
+	sub c
+	push af
+	call ClearSprites
+	call ClearTilemap
+	call .Teardown
+	pop af
+	and a
+	ret
+
+.cancel
+	call ClearSprites
+	call ClearTilemap
+	call .Teardown
+	scf
+	ret
+
+.BuildMoveList
+	ld a, NUM_MOVES
+	ld [wd002], a
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld de, wd002 + 1
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ld a, [wPutativeTMHMMove]
+	ld [de], a
+	inc de
+	xor a
+	ld [de], a ; the move list is zero terminated, as CheckAlreadyInList expects
+	ret
+
+; Rebuild whichever screen we interrupted.
+.Teardown
+	call ClearBGPalettes
+	ld a, [wBattleMode]
+	and a
+	jr z, .overworld
+	call ClearTilemap
+	call ClearSprites
+	call ClearPalettes
+	farcall GetBattleMonBackpic
+	farcall GetEnemyMonFrontpic
+	farcall _LoadBattleFontsHPBar
+	call UpdateSprites
+	call SafeLoadTempTilemapToTilemap
+	farcall FinishBattleAnim ; battle colours, then a frame
+	ret
+
+.overworld
+; Back to the party menu
+	ld a, [wCurPartyMon]
+	push af
+	xor a
+	ld [wPartyMenuActionText], a
+	farcall LoadPartyMenuGFX
+	farcall InitPartyMenuWithCancel
+	farcall InitPartyMenuGFX
+	farcall WritePartyMenuTilemap
+	pop af
+	ld [wCurPartyMon], a
+	call WaitBGMap
+	call SetDefaultBGPAndOBP
+	call SpeechTextbox
+	call DelayFrame
+	ret
 
 Text_1_2_and_Poof:
 	text_far Text_MoveForgetCount ; 1, 2 and…
