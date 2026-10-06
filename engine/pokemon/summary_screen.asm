@@ -59,13 +59,24 @@ DEF SUM_EXP_SB   EQU $48 ; page label panel, side and bottom
 DEF SUM_PKR      EQU $36 ; pokerus, infected
 DEF SUM_PKR_CURED EQU $37 ; pokerus, cured
 
-; The page label itsel
+; The page label itself
 DEF PAGE_LABEL_TILE  EQU $79 ; 6 tiles at $79-$7e, written by .PlacePageLabel
 DEF ITEM_ICON_TILE  EQU $52 ; 9 tiles at $52-$5a, written by the green page
 DEF INFO_TILE_X     EQU 15
 DEF INFO_TILE_Y     EQU 2
 DEF INFO_TILE_FIRST EQU $6c ; 4 tiles at $6c-$6f, written by the green page
 DEF DV_STAR_TILE    EQU $4a ; sheet tile 25, already resident from the $31-$50 load
+
+; The Hidden Power line on page 4 is drawn in the Unown font,
+; but only loads the necessary tiles in.
+DEF HIDDEN_POWER_LABEL_TILE EQU $52
+DEF HIDDEN_POWER_TYPE_TILE  EQU $54
+
+; The last tile this feature may write. $5c is where page 1's type icon lives.
+DEF HIDDEN_POWER_LAST_TILE EQU $5b
+
+; The middle column of the right box, which spans columns 7 to 19.
+DEF HIDDEN_POWER_CENTER_X   EQU 13
 
 BattleSummaryScreenInit:
 	ld a, [wLinkMode]
@@ -1610,6 +1621,16 @@ LoadOrangePage:
 	call PlaceSummaryBoxes
 	call SummaryScreen_PrintHappiness
 
+; Hide Hidden Power information until TM10 is received.
+	ld de, EVENT_GOT_TM10_HIDDEN_POWER
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .no_hidden_power
+	call SummaryScreen_PrintHiddenPower
+
+.no_hidden_power
 	call SummaryScreen_placeCaughtVerb
 	call SummaryScreen_placeCaughtTime
 	call SummaryScreen_placeCaughtLocation
@@ -1617,18 +1638,18 @@ LoadOrangePage:
 	ret
 
 SummaryScreen_PrintHappiness:
-	hlcoord 9, 6
+	hlcoord 9, 5
 	ld [hl], $35 ; heart icon
 	
-	hlcoord 11, 6
+	hlcoord 11, 5
 	lb bc, 1, 3
 	ld de, wTempMonHappiness
 	call PrintNum
 	ld de, .HappinessString
-	hlcoord 9, 4
+	hlcoord 9, 3
 	call PlaceString
 	ld de, .outofMaxLoveString
-	hlcoord 14, 6
+	hlcoord 14, 5
 	call PlaceString
 	ret
 
@@ -1637,6 +1658,120 @@ SummaryScreen_PrintHappiness:
 
 .outofMaxLoveString:
 	db "/255@"
+
+SummaryScreen_PrintHiddenPower:
+	ld de, wTempMonDVs
+	farcall GetHiddenPowerType
+	ld a, b
+	ld [wNamedObjectIndex], a
+	farcall GetTypeName
+
+	ld de, .HiddenPowerDashesString
+	hlcoord 11, 8 ; the rule, centred on HIDDEN_POWER_CENTER_X
+	call PlaceString
+
+	ld de, .HiddenPowerString
+	ld c, HIDDEN_POWER_LABEL_TILE
+	call .CopyGlyphs
+	hlcoord HIDDEN_POWER_CENTER_X, 8
+	ld de, .HiddenPowerString
+	ld c, HIDDEN_POWER_LABEL_TILE
+	call .PlaceGlyphs
+
+	ld de, wStringBuffer1
+	ld c, HIDDEN_POWER_TYPE_TILE
+	call .CopyGlyphs
+
+; Centre the type name under the HiddenPowerString.
+	ld a, c
+	sub HIDDEN_POWER_TYPE_TILE
+	dec a
+	srl a
+	ld b, a
+	ld a, HIDDEN_POWER_CENTER_X
+	sub b
+	ld c, a
+	ld b, 0
+	ld hl, wTilemap + 9 * SCREEN_WIDTH
+	add hl, bc
+
+	ld de, wStringBuffer1
+	ld c, HIDDEN_POWER_TYPE_TILE
+	call .PlaceGlyphs
+	ret
+
+.HiddenPowerDashesString:
+	db "-    -@"
+
+.HiddenPowerString:
+	db "HP@"
+
+.CopyGlyphs:
+.copy_loop
+	ld a, c
+	cp HIDDEN_POWER_LAST_TILE + 1
+	jr nc, .copy_done
+	ld a, [de]
+	cp '@'
+	ret z
+	inc de
+	call SummaryScreen_CopyUnownGlyph
+	inc c
+	jr .copy_loop
+.copy_done:
+	ret
+
+.PlaceGlyphs:
+.place_loop
+	ld a, c
+	cp HIDDEN_POWER_LAST_TILE + 1
+	jr nc, .place_done
+	ld a, [de]
+	cp '@'
+	ret z
+	inc de
+	ld a, c
+	ld [hli], a
+	inc c
+	jr .place_loop
+.place_done:
+	ret
+
+SummaryScreen_CopyUnownGlyph:
+	push de
+	push bc
+	and $1f
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, UnownFont
+	add hl, de
+	push hl
+	ld a, c
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, vTiles2
+	add hl, de
+	pop de
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	ld b, BANK(UnownFont)
+	ld c, 1
+	call Get2bpp
+	pop af
+	ldh [rVBK], a
+	pop bc
+	pop de
+	ret
 
 SummaryScreen_placeCaughtLocation:
 	ld a, [wTempMonCaughtLocation]
