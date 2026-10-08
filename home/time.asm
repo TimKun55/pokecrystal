@@ -216,7 +216,7 @@ SetClock::
 ; this block is totally pointless
 	ld [hl], RAMB_RTC_DH
 	ld a, [de]
-	bit B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	bit B_RTCREG_DH_HALT, a ; 6, a ; halt
 	ld [de], a
 
 ; seconds
@@ -238,7 +238,7 @@ SetClock::
 ; day hi
 	ld [hl], RAMB_RTC_DH
 	ldh a, [hRTCDayHi]
-	res B_RAMB_RTC_DH_HALT, a ; 6, a ; make sure timer is active
+	res B_RTCREG_DH_HALT, a ; 6, a ; make sure timer is active
 	ld [de], a
 
 ; cleanup

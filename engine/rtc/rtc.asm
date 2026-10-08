@@ -5,7 +5,7 @@ StopRTC: ; unreferenced
 	ld a, RAMB_RTC_DH
 	ld [rRAMB], a
 	ld a, [rRTCREG]
-	set B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	set B_RTCREG_DH_HALT, a ; 6, a ; halt
 	ld [rRTCREG], a
 	call CloseSRAM
 	ret
@@ -17,7 +17,7 @@ StartRTC:
 	ld a, RAMB_RTC_DH
 	ld [rRAMB], a
 	ld a, [rRTCREG]
-	res B_RAMB_RTC_DH_HALT, a ; 6, a ; halt
+	res B_RTCREG_DH_HALT, a ; 6, a ; halt
 	ld [rRTCREG], a
 	call CloseSRAM
 	ret
@@ -81,7 +81,7 @@ SaveRTC:
 	ld hl, rRTCREG
 	ld a, RAMB_RTC_DH
 	ld [rRAMB], a
-	res B_RAMB_RTC_DH_CARRY, [hl] ; 7, [hl]
+	res B_RTCREG_DH_CARRY, [hl] ; 7, [hl]
 	ld a, BANK(sRTCStatusFlags)
 	ld [rRAMB], a
 	xor a
@@ -104,9 +104,9 @@ StartClock::
 
 _FixDays:
 	ld hl, hRTCDayHi
-	bit B_RAMB_RTC_DH_CARRY, [hl] ; 7, [hl]
+	bit B_RTCREG_DH_CARRY, [hl] ; 7, [hl]
 	jr nz, .set_bit_7
-	bit B_RAMB_RTC_DH_HALT, [hl] ; 6, [hl]
+	bit B_RTCREG_DH_HALT, [hl] ; 6, [hl]
 	jr nz, .set_bit_7
 	xor a
 	ret
