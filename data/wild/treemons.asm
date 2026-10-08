@@ -29,12 +29,13 @@ RockSmashMons::
 	dw TreeMonSet_RockVermilion
 	assert_table_length NUM_ROCKSMASH_SETS
 
-; Two tables each (common, rare).
-; Structure:
-;	db  %, species, level
-
 TreeMonSet_None:
-; no encounter data
+; The tables must be terminated. If not, the TreeMonSet_Canyon set is read.
+; Two terminators, because every TreeMons set is a common table followed by a
+; rare table, and the reader steps over the common terminator before the rare
+; one.
+	db -1 ; end of common
+	db -1 ; end of rare
 
 TreeMonSet_Canyon:
 ; common

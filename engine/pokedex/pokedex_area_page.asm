@@ -1,6 +1,32 @@
+; The time-of-day icons get their own BG palette so they can be tinted separately from
+; the dex interface palette. The palette data is PokedexTimeOfDayIconPalette, built
+; into BG2 by _CGB_Pokedex (see engine/gfx/cgb_layouts.asm). Only the icon tiles are
+; switched over - see Set_area_tod_icon_attrs - so the rest of the box keeps BG0 and
+; the text in it is unaffected.
+DEF AREA_TOD_ICON_ATTR EQU 2 ; BG palette 2, VRAM bank 0
+
+; The icons sit at the same three columns on each of the three possible entry rows.
+DEF AREA_TOD_ICON_SPACING EQU 6
+
 INCLUDE "engine/pokedex/pokedex_area_page_trees_rocks.asm"
 INCLUDE "engine/pokedex/pokedex_area_page_fishing.asm"
 INCLUDE "data/wild/non_wildmon_locations.asm"
+
+; The encounter slots in data/wild/*_grass.asm and data/wild/*_water.asm are
+; 4 bytes each: db rate, species, min_lv, max_lv
+; The rate is stored per slot and is the real encounter chance for that slot.
+DEF AREA_ENTRY_SIZE_BYTES EQU 4
+
+; Table header is map group, map num, then the encounter rates: 3 of them for
+; grass (morn/day/nite) and 1 for surf.
+DEF AREA_GRASS_SPECIES_OFFSET EQU 2 + 3 + 1 ; 6
+DEF AREA_SURF_SPECIES_OFFSET  EQU 2 + 1 + 1 ; 4
+
+; Byte distance from one time-of-day group to the next within a grass table.
+DEF AREA_GRASS_TIMEGROUP_STRIDE EQU NUM_GRASSMON * AREA_ENTRY_SIZE_BYTES ; 28
+
+assert GRASS_WILDDATA_LENGTH == 2 + 3 + NUM_GRASSMON * AREA_ENTRY_SIZE_BYTES * 3
+assert WATER_WILDDATA_LENGTH  == 2 + 1 + NUM_WATERMON * AREA_ENTRY_SIZE_BYTES
 
 String_johto_text:
 	db "Johto:     @"
@@ -21,6 +47,7 @@ Pokedex_DetailedArea:
 	ret z
 .checkpoint
 	call Pokedex_Clearbox
+	call Set_area_tod_icon_attrs
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_AREA_NONE
 	jr c, .first
@@ -294,6 +321,27 @@ Dex_FindFirstList:
 	ret
 
 
+Set_area_tod_icon_attrs:
+	ld a, AREA_TOD_ICON_ATTR
+	ld hl, wAttrmap + 10 * SCREEN_WIDTH + 2
+	ld b, 3 ; rows 10, 12 and 14
+.row
+	push hl
+	ld c, 3 ; morn, day and nite icon columns
+.col
+	ld [hli], a
+	ld de, AREA_TOD_ICON_SPACING - 1
+	add hl, de
+	dec c
+	jr nz, .col
+	pop hl
+	ld de, 2 * SCREEN_WIDTH ; next entry, two lines down
+	add hl, de
+	dec b
+	jr nz, .row
+	ret
+
+
 Print_area_entry:
 ; morn,day,nite,space,map name
 ; time of day
@@ -444,13 +492,14 @@ Pokedex_DetailedArea_grass:
 	pop bc ; line counter
 	push bc ; line counter
 	push hl ; points to map group/num
-	; skip map encounter rates
-	inc hl
-	inc hl
-	inc hl
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
+	; skip map group, map num and the 3 morn/day/nite encounter rates,
+	; then the first slot's rate byte, landing on that slot's species
+	inc hl ; map num
+	inc hl ; first rate
+	inc hl ; second rate
+	inc hl ; third rate
+	inc hl ; first slot's rate
+	inc hl ; first slot's species
 ; morn
 	ld a, 0 ; morn
 	call Pokedex_Parse_grass ; encounter % in a
@@ -526,41 +575,41 @@ Pokedex_DetailedArea_grass:
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
 	push bc ; current print line
-	ld c, 14 ; 7 entries * 2 bytes
-	call SimpleMultiply
+	ld c, AREA_GRASS_TIMEGROUP_STRIDE
+	call SimpleMultiply ; a = time of day * bytes per group
 	ld b, 0
 	ld c, a ; time of day adjustment
 	add hl, bc
-	ld c, 0; up to NUM_GRASSMON ; * 3 ; total mon entries, morn/day/nite, 7 per
-	ld b, 0 ; for calcing encounter %
-	; 30%, 30%, 20%, 10%, 5%, 4%, 1%
-	push bc ; % and NUM_GRASSMON
+	ld c, NUM_GRASSMON ; slot counter
+	ld b, 0 ; running encounter chance
 .map_loop
+	dec hl                 ; this slot's rate byte
 	ld a, BANK(JohtoGrassWildMons)
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
-	; a is species
-	inc hl ; pointing to next mon lvl
-	inc hl ; pointing to next mon species
-	; a is mon species 
+	call GetFarByte        ; a = this slot's stored encounter chance
+	push af                ; hold it: a is needed again for the bank
+	inc hl                 ; this slot's species byte
+	ld a, BANK(JohtoGrassWildMons)
+	call GetFarByte        ; a = species
 	ld d, a
+	inc hl                 ; slot's min level
+	inc hl                 ; slot's max level
+	inc hl                 ; next slot's rate
+	inc hl                 ; next slot's species
 	ld a, [wCurSpecies]
-	pop bc ; % and NUM_GRASSMON
-	cp d ; mon species 
-	jr nz, .not_match
-	call Add_encounter_percent_grass
+	cp d                   ; mon species
+	jr z, .match
+	pop af                 ; drop this slot's rate
+	jr .next_slot
+.match
+	pop af                 ; a = this slot's encounter chance
 	add b
-	ld b, a
-.not_match
-	inc c
-	push bc ; % and NUM_GRASSMON
+	ld b, a ; new running encounter chance
+.next_slot
+	dec c
 	ld a, c
-	cp NUM_GRASSMON
-	jr z, .map_loop_end ; end of day group
-	jr .map_loop
+	jr nz, .map_loop
 
-.map_loop_end ; reach end of day group
-	pop bc ; % and NUM_GRASSMON
-	ld a, b ; %
+	ld a, b ; encounter chance
 	pop bc ; print line, do not modify
 	pop hl ; first species byte in morn
 	ret
@@ -572,7 +621,7 @@ Grass_check_any_remaining:
 
 .landmark_loop
 	call DexArea_IncWildMonIndex
-	ld bc, 6
+	ld bc, AREA_GRASS_SPECIES_OFFSET
 	add hl, bc
 	push hl ; now pointing to species
 ; morn
@@ -597,7 +646,7 @@ Grass_check_any_remaining:
 	jr nz, .entries_remaining
 
 	ld b, 0
-	ld c, GRASS_WILDDATA_LENGTH - 6 ; to be at the right pointer to read the -1 if it's there, aka the mapgroup/num ptr
+	ld c, GRASS_WILDDATA_LENGTH - AREA_GRASS_SPECIES_OFFSET ; to be at the right pointer to read the -1 if it's there, aka the mapgroup/num ptr
 	add hl, bc ; increment index without touching our wram index
 	; check to see if we've reached the end of the wild data file, -1
 	ld a, BANK(JohtoGrassWildMons)
@@ -614,37 +663,6 @@ Grass_check_any_remaining:
 ; since we've been incrementing the index, it now doesn't have to do so much searching to "find" this pointer again
 	ld a, 1 ; if a is not 0 when we return, it means that the pokemon is ahead in an upcoming entry, increment page and index
 	jr .done
-
-Add_encounter_percent_grass:
-	; total in b
-	; current count in c
-	push bc
-	call .body
-	ld a, b
-	pop bc
-	ret
-.body:
-	ld a, c
-	ld b, 30
-	and a
-	ret z
-	ld b, 30
-	cp 1
-	ret z
-	ld b, 20
-	cp 2
-	ret z
-	ld b, 10
-	cp 3
-	ret z
-	ld b, 5
-	cp 4
-	ret z
-	ld b, 4
-	cp 5
-	ret z
-	ld b, 1
-	ret
 
 ;;;;;;;;;;;;;;;;;;;;;;; SURF ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Pokedex_DetailedArea_surf:
@@ -705,11 +723,12 @@ Pokedex_DetailedArea_surf:
 	pop bc ; line counter
 	push bc ; line counter
 	push hl ; points to map group/num
-	; skip map encounter rates, surf only has one, grass has 3
-	inc hl
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
+	; skip map group, map num and the single encounter rate (surf has 1,
+	; grass has 3), then the first slot's rate byte, landing on its species
+	inc hl ; map num
+	inc hl ; encounter rate
+	inc hl ; first slot's rate
+	inc hl ; first slot's species
 ; morn
 	ld a, 0 ; morn
 	call Pokedex_Parse_surf ; encounter % in a
@@ -770,40 +789,40 @@ Pokedex_DetailedArea_surf:
 	db " Surfing @"
 
 Pokedex_Parse_surf:
-	push hl ; first species byte, surfing has no time of day
+	push hl ; first species byte
 	push bc ; current print line
-	ld c, 0; up to NUM_WATERMON ; unlike grass, which is 21, this is only 3. and no time of day shenanigans
-	ld b, 0 ; for calcing encounter %
-	; 60%, 30%, 10%
-	push bc ; % and NUM_WATERMON
+	ld c, NUM_WATERMON ; slot counter
+	ld b, 0 ; running encounter chance
 .map_loop
+	dec hl                 ; this slot's rate byte
 	ld a, BANK(JohtoWaterWildMons)
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
-	; a is species
-	inc hl ; pointing to next mon lvl
-	inc hl ; pointing to next mon species
-	; a is mon species 
+	call GetFarByte        ; a = this slot's stored encounter chance
+	push af                ; hold it: a is needed again for the bank
+	inc hl                 ; this slot's species byte
+	ld a, BANK(JohtoWaterWildMons)
+	call GetFarByte        ; a = species
 	ld d, a
+	inc hl                 ; slot's min level
+	inc hl                 ; slot's max level
+	inc hl                 ; next slot's rate
+	inc hl                 ; next slot's species
 	ld a, [wCurSpecies]
-	pop bc ; % and NUM_GRASSMON
-	cp d ; mon species 
-	jr nz, .not_match
-	call Add_encounter_percent_water
-	add b ; accumulated encounter total for this species is in b, this slot % is in a
-	ld b, a ; new accumulated encounter % total in b
-.not_match
-	inc c 
-	push bc ; % and NUM_WATERMON
+	cp d                   ; mon species
+	jr z, .match
+	pop af                 ; drop this slot's rate
+	jr .next_slot
+.match
+	pop af                 ; a = this slot's encounter chance
+	add b ; accumulated chance in b, this slot's chance in a
+	ld b, a ; new running encounter chance
+.next_slot
+	dec c
 	ld a, c
-	cp NUM_WATERMON
-	jr z, .map_loop_end ; end of day group
-	jr .map_loop
+	jr nz, .map_loop
 
-.map_loop_end ; reach end of day group
-	pop bc ; % and NUM_WATERMON
-	ld a, b ; %
+	ld a, b ; encounter chance
 	pop bc ; print line, do not modify
-	pop hl ; first species byte in morn
+	pop hl ; first species byte
 	ret
 
 Surf_check_any_remaining:
@@ -826,11 +845,10 @@ Surf_check_any_remaining:
 	pop bc ; line counter
 	push bc ; line counter
 	push hl ; points to map group/num
-	; skip map encounter rates, minus two for surf
-	inc hl
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
+	; skip map group, map num, the single encounter rate and the first
+	; slot's rate byte, landing on its species
+	ld bc, AREA_SURF_SPECIES_OFFSET
+	add hl, bc
 ; morn
 	ld a, 0 ; morn
 	call Pokedex_Parse_surf ; encounter % in a
@@ -870,25 +888,6 @@ Surf_check_any_remaining:
 	ld a, 1
 	ret
 
-Add_encounter_percent_water:
-	; total in b
-	; current count in c
-	ld a, c
-	and a
-	jr nz, .slot2
-	ld a, 60
-	jr .done
-.slot2
-	cp 1
-	jr nz, .slot3
-	ld a, 30
-	jr .done
-.slot3
-	ld a, 10
-.done
-	; whatever value is currently in a will added to b
-	ret
-
 ;;;;;;;; First Pass Checking ;;;;;;;;;;;;;;
 
 Dex_Check_Grass:
@@ -898,12 +897,12 @@ Dex_Check_Grass:
 	ret z
 .landmark_loop
 	push hl ; points to map group/num
-	inc hl
-	inc hl
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
-	inc hl
+	inc hl ; map num
+	inc hl ; first rate
+	inc hl ; second rate
+	inc hl ; third rate
+	inc hl ; first slot's rate
+	inc hl ; first slot's species
 	ld a, BANK(JohtoGrassWildMons)
 	call Pokedex_LookCheck_grass
 	and a
@@ -933,12 +932,12 @@ Pokedex_LookCheck_grass:
 	pop af
 	push af
 	push bc
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
-	; a is species
-	inc hl ; pointing to next mon lvl
-	inc hl ; pointing to next mon species
-	; a is mon species 
-	ld d, a
+	call GetFarByte ; a is species
+	inc hl ; slot's min level
+	inc hl ; slot's max level
+	inc hl ; next slot's rate
+	inc hl ; next slot's species
+	ld d, a ; a is mon species
 	ld a, [wCurSpecies]
 	pop bc
 	cp d
@@ -969,13 +968,13 @@ Dex_Check_Surf:
 .landmark_loop
 	push hl ; points to map group/num
 	; db 2 percent ; encounter rate
-	; db 15, WOOPER
-	; db 20, QUAGSIRE
-	; db 15, QUAGSIRE
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
-	inc hl
+	; db 60, WOOPER,        18,  20
+	; db 20, QUAGSIRE,      20,  23
+	; db 20, QUAGSIRE,      23,  25
+	inc hl ; map num
+	inc hl ; encounter rate
+	inc hl ; first slot's rate
+	inc hl ; first slot's species
 	ld a, BANK(JohtoWaterWildMons)
 	; ld a, BANK(KantoWaterWildMons)
 	call Pokedex_LookCheck_surf
@@ -1007,12 +1006,12 @@ Pokedex_LookCheck_surf:
 	pop af
 	push af
 	push bc
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
-	; a is species
-	inc hl ; pointing to next mon lvl
-	inc hl ; pointing to next mon species
-	; a is mon species 
-	ld d, a
+	call GetFarByte ; a is species
+	inc hl ; slot's min level
+	inc hl ; slot's max level
+	inc hl ; next slot's rate
+	inc hl ; next slot's species
+	ld d, a ; a is mon species
 	ld a, [wCurSpecies]
 	pop bc
 	cp d

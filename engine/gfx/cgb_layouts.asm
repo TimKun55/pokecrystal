@@ -585,6 +585,13 @@ _CGB_Pokedex:
 .not_shiny
 	call LoadPalette_White_Col1_Col2_Black ; mon palette
 
+; time of day icons for Area Page
+	ld a, BANK(wBGPals1)
+	ld hl, PokedexTimeOfDayIconPalette
+	ld de, wBGPals1 palette 2
+	ld bc, 1 palettes
+	call FarCopyWRAM
+
 ; black background for Pal 7
 	ld de, wBGPals1 palette 7 ; First color slot of Pal 7	
 	call LoadSingleBlackPal ; loads black into slot 1 of pal 7, since it is normally white
@@ -879,6 +886,9 @@ INCLUDE "gfx/pokedex/question_mark.pal"
 
 PokedexCursorPalette:
 INCLUDE "gfx/pokedex/cursor.pal"
+
+PokedexTimeOfDayIconPalette:
+INCLUDE "gfx/pokedex/time_of_day_icon.pal"
 
 _CGB_BillsPC:
 	newfarcall GetBoxTheme

@@ -14,7 +14,7 @@ DEF NPCTRADE_STRUCT_LENGTH EQU _RS
 
 ; NPCTrades indexes (see data/events/npc_trades.asm)
 	const_def
-	const NPC_TRADE_KYLE   ;  0	; VioletCity
+	const NPC_TRADE_KYLE   ;  0	; VioletKylesHouse
 	const NPC_TRADE_STAN   ;  1 ; AzaleaPokecenter1F
 	const NPC_TRADE_MIKE   ;  2	; GoldenrodDeptStore5F
 	const NPC_TRADE_JUNE   ;  3 ; GoldenrodUnderground
@@ -23,7 +23,7 @@ DEF NPCTRADE_STRUCT_LENGTH EQU _RS
 	const NPC_TRADE_AIZEN3 ;  6 ; GoldenrodPokecenter1F(Water)
 	const NPC_TRADE_SERENA ;  7	; EcruteakItemfinderHouse
 	const NPC_TRADE_TIM    ;  8	; OlivineTimsHouse
-	const NPC_TRADE_KAI    ;  9	; CianwoodMoveTutorHouse
+	const NPC_TRADE_KAI    ;  9	; CianwoodPokecenter1F
 	const NPC_TRADE_EMY    ; 10	; BlackthornEmysHouse
 	const NPC_TRADE_CHRIS  ; 11	; PewterPokecenter1F
 	const NPC_TRADE_KIM    ; 12	; Route14

@@ -370,9 +370,9 @@ Pokedex_UpdateDexEntryScreen:
 	and A_BUTTON
 	jr nz, .do_menu_action
 	ld a, [hl] ;
-;	and START ;
-;	jp nz, Area_Page_map ; .toCry ;
-;	ld a, [hl]
+	and START ;
+	jp nz, Area_Page_map ; show the encounter location on the map
+	ld a, [hl]
 	and SELECT ;
 	call nz, Pokedex_toggle_shininess_Entry
 	call Pokedex_NextOrPreviousDexEntry
@@ -474,17 +474,17 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
 
-;	ld a, [wPokedexEntryType]
-;	cp DEXENTRY_PICS
-;	jr c, .not_area
-;	; find first area entry or none?
-;	xor a
-;	ld [wPokedexEntryPageNum], a
-;	ld a, DEXENTRY_PICS
-;	ld [wPokedexEntryType], a
-;	call Area_Page
-;	jr .cont
-;.not_area
+	ld a, [wPokedexEntryType]
+	cp DEXENTRY_PICS
+	jr c, .not_area
+	; find first area entry or none?
+	xor a
+	ld [wPokedexEntryPageNum], a
+	ld a, DEXENTRY_PICS
+	ld [wPokedexEntryType], a
+	call Area_Page
+	jr .cont
+.not_area
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_PICS
 	jr nz, .evo
@@ -568,6 +568,13 @@ Pokedex_ReinitDexEntryScreen:
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
+
+	ld a, [wPokedexEntryType]
+	cp DEXENTRY_AREA_NONE
+	jr c, .no_tod_icon_attrs
+	farcall Set_area_tod_icon_attrs
+	farcall ApplyAttrmap
+.no_tod_icon_attrs
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	ld hl, wJumptableIndex
@@ -596,7 +603,7 @@ DexEntryScreen_MenuActionJumptable:
 	dw Pokedex_Page
 	dw BaseStat_Page
 	dw Moves_Page
-	dw Area_Page_map	;	dw Area_Page
+	dw Area_Page
 	dw Evos_Page
 	dw Pics_Page ; .SpriteAnim
 
@@ -646,11 +653,11 @@ Area_Page:
 	; only print map banner when you've pressed AREA first
 ; print map button banner, START > MAP
 	; START > $41, $42, $43
-	; > MAP $5e, $5f, $60
+	; > MAP $5d, $5e, $7f
 	hlcoord 2, 0
-;	ld a, [hl]
-;	cp $48 ; first tile of SELECT > SHINY
-;	jr nz, .button_done
+	ld a, [hl]
+	cp $48 ; first tile of SELECT > SHINY
+	jr nz, .button_done
 	ld a, $41 ; START #1
 	ld [hli], a
 	inc a ; $42, START #2
@@ -664,6 +671,7 @@ Area_Page:
 	ld [hl], $7f ; MAP #3
 .button_done	
 	farcall Pokedex_DetailedArea
+	farcall ApplyAttrmap
 	call WaitBGMap
 	pop af
 	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags

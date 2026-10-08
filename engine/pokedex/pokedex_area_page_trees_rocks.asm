@@ -81,7 +81,7 @@ Pokedex_DetailedArea_Trees:
 	ret
 
 Dex_Check_Trees_firstcommon:
-	ld a, DEXENTRY_AREA_TREES_RARE
+	ld a, DEXENTRY_AREA_TREES_COMMON
 	jr Dex_Check_Trees_firstrare.stub
 Dex_Check_Trees_firstrare:
 	ld a, DEXENTRY_AREA_TREES_RARE
