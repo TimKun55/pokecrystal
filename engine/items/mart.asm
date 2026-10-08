@@ -550,7 +550,7 @@ BuyMenuLoop:
 	call DoMartScrollingMenu
 	call SpeechTextbox
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp PAD_B
 	jp z, .set_carry
 	call MartAskPurchaseQuantity
 	jr c, .cancel

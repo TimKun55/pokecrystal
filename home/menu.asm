@@ -36,10 +36,10 @@ GetMenuJoypad::
 	push bc
 	push af
 	ldh a, [hJoyLast]
-	and D_PAD
+	and PAD_CTRL_PAD
 	ld b, a
 	ldh a, [hJoyPressed]
-	and BUTTONS
+	and PAD_BUTTONS
 	or b
 	ld b, a
 	pop af
@@ -622,14 +622,14 @@ InitMenuCursorAndButtonPermissions::
 	ld a, [wMenuDataFlags]
 	bit 3, a
 	jr z, .disallow_select
-	set START_F, [hl]
+	set B_PAD_START, [hl]
 
 .disallow_select
 	ld a, [wMenuDataFlags]
 	bit 2, a
 	jr z, .disallow_left_right
-	set D_LEFT_F, [hl]
-	set D_RIGHT_F, [hl]
+	set B_PAD_LEFT, [hl]
+	set B_PAD_RIGHT, [hl]
 
 .disallow_left_right
 	ret
@@ -646,32 +646,32 @@ GetStaticMenuJoypad::
 	call StaticMenuJoypad
 
 ContinueGettingMenuJoypad:
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .a_button
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .b_start
-	bit START_F, a
+	bit B_PAD_START, a
 	jr nz, .b_start
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .d_right
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .d_left
 	xor a
 	ld [wMenuJoypad], a
 	jr .done
 
 .d_right
-	ld a, D_RIGHT
+	ld a, PAD_RIGHT
 	ld [wMenuJoypad], a
 	jr .done
 
 .d_left
-	ld a, D_LEFT
+	ld a, PAD_LEFT
 	ld [wMenuJoypad], a
 	jr .done
 
 .a_button
-	ld a, A_BUTTON
+	ld a, PAD_A
 	ld [wMenuJoypad], a
 
 .done
@@ -782,7 +782,7 @@ ClearWindowData::
 
 MenuClickSound::
 	push af
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr z, .nosound
 	ld hl, wMenuFlags
 	bit 3, [hl]
