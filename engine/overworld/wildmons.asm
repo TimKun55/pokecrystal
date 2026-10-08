@@ -763,22 +763,25 @@ RandomUnseenWildMon:
 
 .GetGrassmon:
 	push hl
-	ld bc, 5 + 4 * 4 ; Location of the level of the 5th wild Pokemon in that map
+	ld bc, 5 + 4 * 4 ; offset of the 5th wild Pokemon slot (0-based slot 4) in this map
 	add hl, bc
 	call GetTimeOfDayNotEve
 	ld bc, NUM_GRASSMON * 4
 	call AddNTimes
+; hl is at slot 4, the first of the rare slots. Pick one of the NUM_GRASSMON - 4
+; slots from there; a plain "and %11" would run off the end of the group.
 .randloop1
 	call Random
-	and %11
-	jr z, .randloop1
-	dec a
+	and %111
+	cp NUM_GRASSMON - 4
+	jr nc, .randloop1
 	ld c, a
 	ld b, 0
-	add hl, bc
-	add hl, bc
 ; We now have the pointer to one of the last (rarest) three wild Pokemon found in that area.
-	inc hl
+	rept 4 ; each slot is db rate, species, min_lv, max_lv
+	add hl, bc
+	endr
+	inc hl ; skip the rate byte
 	ld c, [hl] ; Contains the species index of this rare Pokemon
 	pop hl
 	ld de, 5 + 0 * 4
@@ -790,6 +793,7 @@ RandomUnseenWildMon:
 	cp c ; Compare this most common Pokemon with the rare one stored in c.
 	jr z, .done
 	inc hl
+	inc hl ; skip min_lv and max_lv, not just min_lv
 	dec b
 	jr nz, .loop2
 ; This Pokemon truly is rare.
@@ -844,14 +848,21 @@ RandomPhoneWildMon:
 	jr .loop
 
 .done
+; Pick one of the NUM_GRASSMON slots in this time group; "and %11" would run past the
+; end of the group and into the next one.
+.randloop
 	call Random
-	and %11
+	and %111
+	cp NUM_GRASSMON
+	jr nc, .randloop
 	ld c, a
 	ld b, 0
+; each slot is db rate, species, min_lv, max_lv
+	rept 4
 	add hl, bc
-	add hl, bc
-	inc hl
-	ld a, [hl]
+	endr
+	inc hl ; skip the rate byte
+	ld a, [hl] ; species
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
 	ld hl, wStringBuffer1
