@@ -294,7 +294,7 @@ TMHM_ShowTMMoveDescription:
 ; Type Index adjust done
 ; Load Type GFX Tiles
 	ld hl, TypeIconGFX
-	ld bc, 4 * LEN_1BPP_TILE
+	ld bc, 4 * TILE_1BPP_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l

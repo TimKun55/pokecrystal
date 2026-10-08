@@ -572,7 +572,7 @@ Player_LoadNonFaintStatus:
 	push af ; status index
 ; Load Player Status Tiles GFX into VRAM
 	ld hl, StatusIconBattleGFX
-	ld bc, 2 * LEN_2BPP_TILE
+	ld bc, 2 * TILE_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -609,7 +609,7 @@ Enemy_LoadNonFaintStatus:
 ; Load Enemy Status Tiles GFX into VRAM
 	push af ; status condition index
 	ld hl, EnemyStatusIconGFX
-	ld bc, 2 * LEN_2BPP_TILE
+	ld bc, 2 * TILE_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l

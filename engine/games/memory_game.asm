@@ -33,7 +33,7 @@ _MemoryGame:
 	ld [hli], a
 	ld [hl], $00
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	call ByteFill
 	xor a
@@ -660,7 +660,7 @@ MemoryGame_DeleteCard:
 
 MemoryGame_InitStrings:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, $1
 	call ByteFill
 	ret

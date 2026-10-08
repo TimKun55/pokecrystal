@@ -86,13 +86,13 @@ _CGB_BattleGrayscale:
 	jp _CGB_FinishBattleScreenLayout
 
 SetDefaultBattlePalette:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wTempBattleMonSpecies)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call .do_it
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .do_it
@@ -124,7 +124,7 @@ SetDefaultBattlePalette:
 	call AddNTimes
 	call FarCopyWRAM
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 SetBattlePal_Player:
@@ -186,7 +186,7 @@ _CGB_BattleColors:
 _CGB_FinishBattleScreenLayout:
 	call InitPartyMenuBGPal7
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call ByteFill
 	hlcoord 0, 4, wAttrmap
@@ -437,7 +437,7 @@ _CGB_SummaryScreenHPPals:
 	ld a, $2
 	call FillBoxCGB
 
-	ld a, $6 | X_FLIP ; page label right side
+	ld a, $6 | OAM_XFLIP ; page label right side
 	hlcoord 5, 11, wAttrmap
 	lb bc, 2, 1 ; rows 11-12
 	call FillBoxCGB
@@ -507,7 +507,7 @@ CopySummaryItemPalette:
 	ld a, HIGH(PALRGB_WHITE)
 	ld [de], a
 	inc de
-	ld c, 2 * PAL_COLOR_SIZE
+	ld c, 2 * COLOR_SIZE
 .copy_loop
 	ld a, b
 	call GetFarByte ; preserves hl
@@ -533,7 +533,7 @@ LoadSummaryScreenBallPalette:
 	jr z, .pal_found
 	inc a
 	jr z, .pal_default ; hit the -1 terminator
-	ld de, 1 + 2 * PAL_COLOR_SIZE
+	ld de, 1 + 2 * COLOR_SIZE
 	add hl, de
 	jr .pal_scan
 .pal_default
@@ -672,7 +672,7 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; mon base types
 	hlcoord 9, 4, wAttrmap
 	lb bc, 1, 8
-	ld a, 7 | VRAM_BANK_1 ; mon base type pals ; VRAM 1
+	ld a, 7 | OAM_BANK1 ; mon base type pals ; VRAM 1
 	call FillBoxCGB
 ENDC
 
@@ -686,11 +686,11 @@ ENDC
 ; category enclosure + page nums + A >
 	hlcoord 18, 5, wAttrmap
 	ld bc, 2
-	ld a, 0 | VRAM_BANK_1 ; dex pal PREDEFPAL_POKEDEX
+	ld a, 0 | OAM_BANK1 ; dex pal PREDEFPAL_POKEDEX
 	call ByteFill
 	hlcoord 18, 7, wAttrmap
 	ld bc, 2
-	ld a, 0 | VRAM_BANK_1 ; dex pal PREDEFPAL_POKEDEX
+	ld a, 0 | OAM_BANK1 ; dex pal PREDEFPAL_POKEDEX
 	call ByteFill
 
 	call ApplyAttrmap
@@ -716,36 +716,36 @@ _CGB_Pokedex_EvoPage:
 ; main screen within border, vram 1
 	hlcoord 1, 1, wAttrmap
 	lb bc, 16, 19
-	ld a, 0 | VRAM_BANK_1 ; VRAM 1
+	ld a, 0 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; mon slot 1 types
 	hlcoord 16, 2, wAttrmap
 	lb bc, 2, 4
-	ld a, 1 | VRAM_BANK_1 ; VRAM 1
+	ld a, 1 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 ; mon slot 2 types
 	hlcoord 16, 5, wAttrmap
 	lb bc, 2, 4
-	ld a, 2 | VRAM_BANK_1 ; VRAM 1
+	ld a, 2 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 ; mon slot 3 types
 	hlcoord 16, 8, wAttrmap
 	lb bc, 3, 4
-	ld a, 3 | VRAM_BANK_1 ; VRAM 1
+	ld a, 3 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 ; mon slot 4 types
 	hlcoord 16, 12, wAttrmap
 	lb bc, 3, 4
-	ld a, 4 | VRAM_BANK_1 ; VRAM 1
+	ld a, 4 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 ENDC
 
 ; flip bottom row of sprite icon borders
 	hlcoord 1, 4, wAttrmap
 	ld bc, 4
-	ld a, 0 | Y_FLIP | VRAM_BANK_1 ; VRAM 1
+	ld a, 0 | OAM_YFLIP | OAM_BANK1 ; VRAM 1
 	call ByteFill
 	hlcoord 1, 8, wAttrmap
 	ld bc, 4
@@ -798,26 +798,26 @@ _CGB_Pokedex_PicsPage:
 ; animated front pic
 	hlcoord 2, 2, wAttrmap
 	lb bc, 7, 7
-	ld a, 1 | VRAM_BANK_1 ; VRAM 1
+	ld a, 1 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 
 ; ; back pic
 	hlcoord 12, 2, wAttrmap
 	lb bc, 6, 6
-	ld a, 1 | VRAM_BANK_1 ; VRAM 1
+	ld a, 1 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 
 ; sprite box border
 	hlcoord 2, 14, wAttrmap
 	lb bc, 2, 2
-	ld a, 0 | VRAM_BANK_1 ; VRAM 1
+	ld a, 0 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 
 IF USING_INCREASED_SPRITE_ANIMATION == FALSE
 ; > CRY, set VRAM	
 	hlcoord 14, 0, wAttrmap
 	lb bc, 1, 2
-	ld a, 0 | VRAM_BANK_1 ; VRAM 1
+	ld a, 0 | OAM_BANK1 ; VRAM 1
 	call FillBoxCGB
 ENDC
 
@@ -1255,17 +1255,17 @@ _CGB_UnownPuzzle:
 	ld a, PREDEFPAL_UNOWN_PUZZLE
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wOBPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wOBPals1
 	ld a, LOW(palred 31 + palgreen 0 + palblue 0)
 	ld [hli], a
 	ld a, HIGH(palred 31 + palgreen 0 + palblue 0)
 	ld [hl], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call WipeAttrmap
 	call ApplyAttrmap
 	ret
@@ -1287,7 +1287,7 @@ _CGB_TrainerCard:
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, [wPlayerGender]
 	and a
 	ld a, $1 ; kris
@@ -1365,7 +1365,7 @@ _CGB_TrainerCardJohto:
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, [wPlayerGender]
 	and a
 	ld a, $1 ; kris
@@ -1484,7 +1484,7 @@ _CGB_TrainerCardKanto:
 	
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, [wPlayerGender]
 	and a
 	ld a, $1 ; kris

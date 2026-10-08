@@ -1457,7 +1457,7 @@ PlayerTypeIcons:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeLightIcon2GFX ; from gfx/battle/types_light_2.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 tiles wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -1487,7 +1487,7 @@ PlayerTypeIcons:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeDarkIcon2GFX ; from gfx/battle/types_dark_2.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 Tiles Wide
 	call AddNTimes ; type index needs to be in 'a'
 	ld d, h
 	ld e, l
@@ -1514,7 +1514,7 @@ EnemyTypeIcons:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeLightIcon2GFX ; from gfx/battle/types_light_2.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 tiles wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -1544,7 +1544,7 @@ EnemyTypeIcons:
 	farcall GetMonTypeIndex
 	ld a, c
 	ld hl, TypeDarkIcon2GFX ; from gfx/battle/types_dark_2.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
+	ld bc, 4 * TILE_SIZE ; Type GFX is 4 Tiles Wide
 	call AddNTimes ; type index needs to be in 'a'
 	ld d, h
 	ld e, l

@@ -223,7 +223,7 @@ PlaceMapNameCenterAlign:
 	ret
 
 InitMapSignAttrmap:
-	ld a, PAL_BG_TEXT | PRIORITY
+	ld a, PAL_BG_TEXT | OAM_PRIO
 .loop
 	push bc
 .inner_loop

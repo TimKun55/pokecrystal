@@ -442,21 +442,21 @@ TradeAnim_InitTubeAnim:
 	ld a, 1
 	ldh [rVBK], a
 	hlbgcoord 12, 14
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 15
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 16
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	hlbgcoord 12, 17
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	inc hl
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 	xor a
 	ldh [rVBK], a
 .from_player
@@ -1366,7 +1366,7 @@ TradeAnim_Wait80Frames:
 
 TradeAnim_BlankTilemap:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, ' '
 	call ByteFill
 	ret
@@ -1418,10 +1418,10 @@ TradeAnim_FlashBGPals:
 	and %100
 	jr nz, .original_pal
 ; .flash_pal
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 		ld a, BANK(wBGPals2)
-		ldh [rSVBK], a
+		ldh [rWBK], a
 	; hmm...
 		; tubes (1)
 		ld hl, wBGPals2 palette 2 color 1
@@ -1458,13 +1458,13 @@ TradeAnim_FlashBGPals:
 		inc hl
 		ld [hl], b
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .done
 .original_pal
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 		ld a, BANK(wBGPals2)
-		ldh [rSVBK], a
+		ldh [rWBK], a
 		; tubes (1)
 		ld hl, wBGPals2 palette 2 color 1
 		ld bc, palred (31) + palgreen (31) + palblue (00)
@@ -1500,7 +1500,7 @@ TradeAnim_FlashBGPals:
 		inc hl
 		ld [hl], b
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 .done
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a

@@ -13,7 +13,7 @@ PlaceDiplomaOnScreen:
 	call Decompress
 	ld hl, DiplomaPage1Tilemap
 	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call CopyBytes
 	ld de, .Player
 	hlcoord 2, 3

@@ -50,7 +50,7 @@ WritePartyMenuTilemap:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, ' '
 	call ByteFill ; blank the tilemap
 	call GetPartyMenuQualityIndexes
@@ -921,7 +921,7 @@ LoadStatusIconSet:
 	; status index in a
 	ld a, $1 ; PSN Index
 	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -931,7 +931,7 @@ LoadStatusIconSet:
 
 	ld a, $2 ; PAR Index
 	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -941,7 +941,7 @@ LoadStatusIconSet:
 
 	ld a, $3 ; SLP
 	ld hl, StatusIconGFX ; Uses the Light Gray pixels, aka Pal Color 2
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -951,7 +951,7 @@ LoadStatusIconSet:
 
 	ld a, $4 ; BRN
 	ld hl, StatusIconGFX ; Uses the Dark Gray pixels, aka Pal Color 3
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -961,7 +961,7 @@ LoadStatusIconSet:
 
 	ld a, $5 ; FRZ
 	ld hl, StatusIconGFX ; Uses the Dark Gray pixels, aka Pal Color 3
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -971,7 +971,7 @@ LoadStatusIconSet:
 
 	ld a, $6 ; FNT Index
 	ld hl, StatusIconGFX ; FNT is only in the Player's set of Icons aka gfx\battle\status.png
-	ld bc, 2 * LEN_2BPP_TILE ; Status GFX is 2 Tiles Wide
+	ld bc, 2 * TILE_SIZE ; Status GFX is 2 Tiles Wide
 	call AddNTimes
 	ld d, h
 	ld e, l

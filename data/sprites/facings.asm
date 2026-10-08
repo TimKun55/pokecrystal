@@ -66,10 +66,10 @@ FacingStepDown1: ; walking down 1
 
 FacingStepDown3: ; walking down 2
 	db 4 ; #
-	db  0,  8, X_FLIP, $80
-	db  0,  0, X_FLIP, $81
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $82
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $83
+	db  0,  8, OAM_XFLIP, $80
+	db  0,  0, OAM_XFLIP, $81
+	db  8,  8, RELATIVE_ATTRIBUTES | OAM_XFLIP, $82
+	db  8,  0, RELATIVE_ATTRIBUTES | OAM_XFLIP, $83
 
 FacingStepUp0:
 FacingStepUp2: ; standing up
@@ -88,10 +88,10 @@ FacingStepUp1: ; walking up 1
 
 FacingStepUp3: ; walking up 2
 	db 4 ; #
-	db  0,  8, X_FLIP, $84
-	db  0,  0, X_FLIP, $85
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $86
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $87
+	db  0,  8, OAM_XFLIP, $84
+	db  0,  0, OAM_XFLIP, $85
+	db  8,  8, RELATIVE_ATTRIBUTES | OAM_XFLIP, $86
+	db  8,  0, RELATIVE_ATTRIBUTES | OAM_XFLIP, $87
 
 FacingStepLeft0:
 FacingStepLeft2: ; standing left
@@ -104,10 +104,10 @@ FacingStepLeft2: ; standing left
 FacingStepRight0:
 FacingStepRight2: ; standing right
 	db 4 ; #
-	db  0,  8, X_FLIP, $08
-	db  0,  0, X_FLIP, $09
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $0a
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $0b
+	db  0,  8, OAM_XFLIP, $08
+	db  0,  0, OAM_XFLIP, $09
+	db  8,  8, RELATIVE_ATTRIBUTES | OAM_XFLIP, $0a
+	db  8,  0, RELATIVE_ATTRIBUTES | OAM_XFLIP, $0b
 
 FacingStepLeft1:
 FacingStepLeft3: ; walking left
@@ -120,10 +120,10 @@ FacingStepLeft3: ; walking left
 FacingStepRight1:
 FacingStepRight3: ; walking right
 	db 4 ; #
-	db  0,  8, X_FLIP, $88
-	db  0,  0, X_FLIP, $89
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $8a
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $8b
+	db  0,  8, OAM_XFLIP, $88
+	db  0,  0, OAM_XFLIP, $89
+	db  8,  8, RELATIVE_ATTRIBUTES | OAM_XFLIP, $8a
+	db  8,  0, RELATIVE_ATTRIBUTES | OAM_XFLIP, $8b
 
 FacingFishDown: ; fishing down
 	db 5 ; #
@@ -147,14 +147,14 @@ FacingFishLeft: ; fishing left
 	db  0,  8, 0, $09
 	db  8,  0, RELATIVE_ATTRIBUTES, $0a
 	db  8,  8, RELATIVE_ATTRIBUTES, $0b
-	db  5, -8, ABSOLUTE_TILE_ID | X_FLIP, $fd
+	db  5, -8, ABSOLUTE_TILE_ID | OAM_XFLIP, $fd
 
 FacingFishRight: ; fishing right
 	db 5 ; #
-	db  0,  8, X_FLIP, $08
-	db  0,  0, X_FLIP, $09
-	db  8,  8, RELATIVE_ATTRIBUTES | X_FLIP, $0a
-	db  8,  0, RELATIVE_ATTRIBUTES | X_FLIP, $0b
+	db  0,  8, OAM_XFLIP, $08
+	db  0,  0, OAM_XFLIP, $09
+	db  8,  8, RELATIVE_ATTRIBUTES | OAM_XFLIP, $0a
+	db  8,  0, RELATIVE_ATTRIBUTES | OAM_XFLIP, $0b
 	db  5, 16, ABSOLUTE_TILE_ID, $fd
 
 FacingEmote: ; emote
@@ -167,7 +167,7 @@ FacingEmote: ; emote
 FacingShadow: ; shadow
 	db 2 ; #
 	db  0,  0, ABSOLUTE_TILE_ID, $fc
-	db  0,  8, ABSOLUTE_TILE_ID | X_FLIP, $fc
+	db  0,  8, ABSOLUTE_TILE_ID | OAM_XFLIP, $fc
 
 FacingBigDollSymmetric: ; big snorlax or lapras doll
 	db 16 ; #
@@ -179,14 +179,14 @@ FacingBigDollSymmetric: ; big snorlax or lapras doll
 	db 16,  8, 0, $05
 	db 24,  0, 0, $06
 	db 24,  8, 0, $07
-	db  0, 24, X_FLIP, $00
-	db  0, 16, X_FLIP, $01
-	db  8, 24, X_FLIP, $02
-	db  8, 16, X_FLIP, $03
-	db 16, 24, X_FLIP, $04
-	db 16, 16, X_FLIP, $05
-	db 24, 24, X_FLIP, $06
-	db 24, 16, X_FLIP, $07
+	db  0, 24, OAM_XFLIP, $00
+	db  0, 16, OAM_XFLIP, $01
+	db  8, 24, OAM_XFLIP, $02
+	db  8, 16, OAM_XFLIP, $03
+	db 16, 24, OAM_XFLIP, $04
+	db 16, 16, OAM_XFLIP, $05
+	db 24, 24, OAM_XFLIP, $06
+	db 24, 16, OAM_XFLIP, $07
 
 FacingWeirdTree1:
 	db 4 ; #
@@ -197,10 +197,10 @@ FacingWeirdTree1:
 
 FacingWeirdTree3:
 	db 4 ; #
-	db  0,  8, X_FLIP, $04
-	db  0,  0, X_FLIP, $05
-	db  8,  8, X_FLIP, $06
-	db  8,  0, X_FLIP, $07
+	db  0,  8, OAM_XFLIP, $04
+	db  0,  0, OAM_XFLIP, $05
+	db  8,  8, OAM_XFLIP, $06
+	db  8,  0, OAM_XFLIP, $07
 
 FacingBigDollAsymmetric: ; big doll other than snorlax or lapras
 	db 14 ; #
@@ -212,11 +212,11 @@ FacingBigDollAsymmetric: ; big doll other than snorlax or lapras
 	db 24,  8, 0, $0a
 	db  0, 24, 0, $03
 	db  0, 16, 0, $02
-	db  8, 24, X_FLIP, $02
+	db  8, 24, OAM_XFLIP, $02
 	db  8, 16, 0, $06
 	db 16, 24, 0, $09
 	db 16, 16, 0, $08
-	db 24, 24, X_FLIP, $04
+	db 24, 24, OAM_XFLIP, $04
 	db 24, 16, 0, $0b
 
 FacingBoulderDust1: ; boulder dust 1
@@ -236,22 +236,22 @@ FacingBoulderDust2: ; boulder dust 2
 FacingGrass1:
 	db 2 ; #
 	db  8,  0, ABSOLUTE_TILE_ID, $fe
-	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $fe
+	db  8,  8, ABSOLUTE_TILE_ID | OAM_XFLIP, $fe
 
 FacingGrass2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $fe
-	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fe
+	db  9,  9, ABSOLUTE_TILE_ID | OAM_XFLIP, $fe
 
 FacingSplash1:
 	db 2 ; #
 	db  8,  0, ABSOLUTE_TILE_ID, $ff
-	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $ff
+	db  8,  8, ABSOLUTE_TILE_ID | OAM_XFLIP, $ff
 
 FacingSplash2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $ff
-	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $ff
+	db  9,  9, ABSOLUTE_TILE_ID | OAM_XFLIP, $ff
 
 FacingBigLugia1:
 	db 12 ; #
@@ -261,12 +261,12 @@ FacingBigLugia1:
 	db 16,  8, 0, $03
 	db 24,  8, 0, $05
 	db 24,  8, 0, $04
-	db  8, 23, X_FLIP, $00
-	db  8, 15, X_FLIP, $01
-	db 16, 23, X_FLIP, $02
-	db 16, 15, X_FLIP, $03
-	db 24, 15, X_FLIP, $05
-	db 24, 15, X_FLIP, $04
+	db  8, 23, OAM_XFLIP, $00
+	db  8, 15, OAM_XFLIP, $01
+	db 16, 23, OAM_XFLIP, $02
+	db 16, 15, OAM_XFLIP, $03
+	db 24, 15, OAM_XFLIP, $05
+	db 24, 15, OAM_XFLIP, $04
 
 FacingBigLugia2:
 	db 12 ; #
@@ -276,12 +276,12 @@ FacingBigLugia2:
 	db 24,  0, 0, $0a
 	db 24,  8, 0, $0b
 	db 24,  8, 0, $06
-	db  8, 15, X_FLIP, $07
-	db 16, 23, X_FLIP, $08
-	db 16, 15, X_FLIP, $09
-	db 24, 23, X_FLIP, $0a
-	db 24, 15, X_FLIP, $0b
-	db 24, 15, X_FLIP, $06
+	db  8, 15, OAM_XFLIP, $07
+	db 16, 23, OAM_XFLIP, $08
+	db 16, 15, OAM_XFLIP, $09
+	db 24, 23, OAM_XFLIP, $0a
+	db 24, 15, OAM_XFLIP, $0b
+	db 24, 15, OAM_XFLIP, $06
 
 FacingBigHoOh1:
 	db 16 ; #
@@ -293,14 +293,14 @@ FacingBigHoOh1:
 	db 24,  8, 0, $05
 	db  9,  4, 0, $06
 	db 17,  4, 0, $07
-	db  8, 24, X_FLIP, $00
-	db  8, 16, X_FLIP, $01
-	db 16, 24, X_FLIP, $02
-	db 16, 16, X_FLIP, $03
-	db 24, 24, X_FLIP, $04
-	db 24, 16, X_FLIP, $05
-	db  9, 20, X_FLIP, $06
-	db 17, 20, X_FLIP, $07
+	db  8, 24, OAM_XFLIP, $00
+	db  8, 16, OAM_XFLIP, $01
+	db 16, 24, OAM_XFLIP, $02
+	db 16, 16, OAM_XFLIP, $03
+	db 24, 24, OAM_XFLIP, $04
+	db 24, 16, OAM_XFLIP, $05
+	db  9, 20, OAM_XFLIP, $06
+	db 17, 20, OAM_XFLIP, $07
 
 FacingBigHoOh2:
 	db 16 ; #
@@ -312,11 +312,11 @@ FacingBigHoOh2:
 	db 24,  8, 0, $85
 	db 16,  4, 0, $86
 	db 24,  4, 0, $87
-	db  8, 24, X_FLIP, $80
-	db  8, 16, X_FLIP, $81
-	db 16, 24, X_FLIP, $82
-	db 16, 16, X_FLIP, $83
-	db 24, 24, X_FLIP, $84
-	db 24, 16, X_FLIP, $85
-	db 16, 20, X_FLIP, $86
-	db 24, 20, X_FLIP, $87
+	db  8, 24, OAM_XFLIP, $80
+	db  8, 16, OAM_XFLIP, $81
+	db 16, 24, OAM_XFLIP, $82
+	db 16, 16, OAM_XFLIP, $83
+	db 24, 24, OAM_XFLIP, $84
+	db 24, 16, OAM_XFLIP, $85
+	db 16, 20, OAM_XFLIP, $86
+	db 24, 20, OAM_XFLIP, $87
