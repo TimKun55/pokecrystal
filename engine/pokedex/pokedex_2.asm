@@ -327,6 +327,19 @@ endr
 
 DisplayDexMonType_CustomGFX:
 	call GetBaseData
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE
+; the tiles are already in VRAM bank 1 - see LoadDexTypeIconTiles. All that
+; varies is whether there's a second type, so no type lookup is needed here.
+	hlcoord 9, 4
+	ld [hl], $77
+	inc hl
+	ld [hl], $78
+	inc hl
+	ld [hl], $79
+	inc hl
+	ld [hl], $7a
+ELSE 
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
 	ld a, [wBaseType1]
 
 IF SWAP_DARK_GHOST_TYPES == TRUE
@@ -335,8 +348,59 @@ ENDC
 	ld c, a ; farcall will clobber a for the bank
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
+	hlcoord 10, 4
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC
+
+; 2nd Type
+	ld a, [wBaseType1]
+	ld b, a
+	ld a, [wBaseType2]
+	cp b
+	ret z
+
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
-; load the tiles
+; the tiles are already in VRAM bank 1 - see LoadDexTypeIconTiles
+	hlcoord 13, 4
+	ld [hl], $7b
+	inc hl
+	ld [hl], $7c
+	inc hl
+	ld [hl], $7d
+	inc hl
+	ld [hl], $7e
+ELSE
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+IF SWAP_DARK_GHOST_TYPES == TRUE
+	call Pokedex_swap_GhostDark_Indexes
+ENDC
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
+	hlcoord 14, 4
+	ld [hl], '/'
+	inc hl
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC
+	ret
+
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE
+LoadDexTypeIconTiles:
+; Pull the type 1 and type 2 icon tiles for wCurSpecies into VRAM bank 1, ready
+; for DisplayDexMonType_CustomGFX to just point the tilemap at.
+; Request2bpp blocks for at least a frame per request, so doing this while the
+; player is still on the listing (Pokedex_LoadSelectedMonTiles) keeps the entry
+; screen from visibly lagging on the right-hand side.
+	call GetBaseData
+	ld a, [wBaseType1]
+
+IF SWAP_DARK_GHOST_TYPES == TRUE
+	call Pokedex_swap_GhostDark_Indexes
+ENDC
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * TILE_SIZE
 	call AddNTimes
@@ -349,29 +413,12 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	lb bc, BANK(TypeLightIconGFX), 4
 	call Request2bpp
 
-	hlcoord 9, 4
-	ld [hl], $77
-	inc hl
-	ld [hl], $78
-	inc hl
-	ld [hl], $79
-	inc hl
-	ld [hl], $7a
-
-	ld a, $0
-	ldh [rVBK], a
-ELSE 
-; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
-	hlcoord 10, 4
-	call DEX_NO_CUSTOM_GFX_PrintType_Short
-ENDC
-
-; 2nd Type
+; 2nd Type, if it has one
 	ld a, [wBaseType1]
 	ld b, a
 	ld a, [wBaseType2]
 	cp b
-	ret z
+	jr z, .done
 
 IF SWAP_DARK_GHOST_TYPES == TRUE
 	call Pokedex_swap_GhostDark_Indexes
@@ -380,39 +427,20 @@ ENDC
 	ld c, a ; farcall will clobber a for the bank
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
-
-IF USE_GEN3_STYLE_TYPE_GFX == TRUE
-; load type 2 tiles
 	ld hl, TypeDarkIconGFX
 	ld bc, 4 * TILE_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l
 
-	ld a, $1
-	ldh [rVBK], a
-
 	ld hl, vTiles2 tile $7b
 	lb bc, BANK(TypeDarkIconGFX), 4
 	call Request2bpp
-	hlcoord 13, 4
-	ld [hl], $7b
-	inc hl
-	ld [hl], $7c
-	inc hl
-	ld [hl], $7d
-	inc hl
-	ld [hl], $7e
+.done
 	ld a, $0
 	ldh [rVBK], a
-ELSE
-; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
-	hlcoord 14, 4
-	ld [hl], '/'
-	inc hl
-	call DEX_NO_CUSTOM_GFX_PrintType_Short
-ENDC
 	ret
+ENDC
 
 IF SWAP_DARK_GHOST_TYPES == TRUE
 Pokedex_swap_GhostDark_Indexes:

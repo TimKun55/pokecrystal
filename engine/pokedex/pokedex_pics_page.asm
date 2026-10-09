@@ -48,36 +48,12 @@ Pokedex_PlaceAnimatedFrontpic:
 	set 6, [hl]
 	ret
 
-Pokedex_PlayMonCry_AnimateFrontpic:
-	xor a
-	ld [wPokedexEntryType], a
-.loop
-	call .Pokedex_WaitAnim
-	call .PokedexWaitCry
-	ld a, [wPokedexEntryType]
-	;bit 7, a
-	cp 255
-	jr nz, .loop
-	xor a
-	ld [wPokedexEntryType], a
-
-	call WaitBGMap
-	ret
-
-.PokedexWaitCry:
-	ld a, [wPokedexEntryType]
-	inc a
-	ld [wPokedexEntryType], a
-	callfar PlaySpriteAnimations
-	ret
-
-.Pokedex_WaitAnim:
+Pokedex_StepFrontpicAnim:
 	ld hl, wSummaryScreenFlags
 	bit 6, [hl]
 	jr nz, .try_anim
 	bit 5, [hl]
 	jr nz, .finish
-	call DelayFrame
 	ret
 .try_anim
 	farcall SetUpPokeAnim

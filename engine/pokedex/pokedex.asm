@@ -339,10 +339,11 @@ Pokedex_InitDexEntryScreen:
 	ld [wPokedexEvoStage3], a
 	ldh [hBGMapMode], a
 	call ClearSprites
+; Same ordering as Pokedex_InitMainScreen / Pokedex_InitOptionScreen: draw
+; everything into the WRAM shadow, swap the palette, then let WaitBGMap push the
+; whole tilemap.
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
@@ -350,6 +351,10 @@ Pokedex_InitDexEntryScreen:
 	ld [wPrevDexEntry], a
 	call Pokedex_DrawFootprint
 	farcall DisplayDexEntry
+	call Pokedex_GetSelectedMon
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
 	call WaitBGMap
 	ld a, $a7
 	ldh [hWX], a
@@ -409,6 +414,7 @@ Pokedex_toggle_shininess_Entry:
 ; refresh palettes
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
+	call Pokedex_RestoreAreaTodIcons
 
 	; add or remove shiny icon
 	hlcoord 8, 1
@@ -439,6 +445,9 @@ Pokedex_toggle_shininess_Pics:
 .shinyicon_set
 	ld [hl], ' '
 .done	
+	xor a
+	ldh [hObjectStructIndex], a
+	farcall SetDexMonIconColor_SpritePage
 	call Pokedex_toggle_shininess2
 	ret
 
@@ -469,10 +478,12 @@ Pokedex_toggle_shininess2:
 Pokedex_ReinitDexEntryScreen:
 ; Reinitialize the Pokédex entry screen after changing the selected mon.
 	call Pokedex_BlackOutBG
-	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_LoadCurrentFootprint
+; grab the newly selected mon and load its tiles before drawing anything.
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
+	call Pokedex_LoadCurrentFootprint
+	call Pokedex_LoadSelectedMonTiles
+	call Pokedex_DrawDexEntryScreenBG
 
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_PICS
@@ -568,13 +579,7 @@ Pokedex_ReinitDexEntryScreen:
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
-
-	ld a, [wPokedexEntryType]
-	cp DEXENTRY_AREA_NONE
-	jr c, .no_tod_icon_attrs
-	farcall Set_area_tod_icon_attrs
-	farcall ApplyAttrmap
-.no_tod_icon_attrs
+	call Pokedex_RestoreAreaTodIcons
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	ld hl, wJumptableIndex
@@ -588,6 +593,17 @@ Pokedex_Handle_Reinit_Evo:
 	ld a, [wCurDexMode]
 	ld [wLastDexMode], a
 	jp Pokedex_IncrementDexPointer
+	ret
+
+Pokedex_RestoreAreaTodIcons:
+; _CGB_Pokedex starts by wiping the whole attrmap. Any screen that redisplays 
+; the Area page (Evo, Pics, the map view, the shiny toggle) has to put them 
+; back once the dex palette has been reloaded. Does nothing when we aren't on an Area page.
+	ld a, [wPokedexEntryType]
+	cp DEXENTRY_AREA_NONE
+	ret c
+	farcall Set_area_tod_icon_attrs
+	farcall ApplyAttrmap
 	ret
 
 DexEntryScreen_ArrowCursorData:
@@ -607,34 +623,12 @@ DexEntryScreen_MenuActionJumptable:
 	dw Evos_Page
 	dw Pics_Page ; .SpriteAnim
 
-Handle_Button_Banner:
-	hlcoord 2, 0
-	ld a, [hl]
-	cp $41 ; first tile of PAD_START > MAP button banner
-	ret nz
-; overwrite the button banner
-	ld a, $48 ; PAD_SELECT 1
-	ld [hli], a
-	inc a ; $49, PAD_SELECT 2
-	ld [hli], a
-	ld a, $43 ; PAD_SELECT 3
-	ld [hli], a
-	inc a ; $44, SHINY 1
-	ld [hli], a
-	ld a, $5f ; SHINY 2
-	ld [hli], a
-	inc a ; $60, SHINY 3
-	ld [hli], a
-	ret
-
 BaseStat_Page:
-	call Handle_Button_Banner
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexMonStats
 	ret
 
 Moves_Page:
-	call Handle_Button_Banner
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexMonMoves
 	ld a, [wCurPartySpecies]
@@ -649,27 +643,6 @@ Area_Page:
 	call Pokedex_GetSelectedMon
 	xor a
 	ldh [hBGMapMode], a
-	; print button banner based on the current category being displayed
-	; only print map banner when you've pressed AREA first
-; print map button banner, PAD_START > MAP
-	; PAD_START > $41, $42, $43
-	; > MAP $5d, $5e, $7f
-	hlcoord 2, 0
-	ld a, [hl]
-	cp $48 ; first tile of PAD_SELECT > SHINY
-	jr nz, .button_done
-	ld a, $41 ; PAD_START #1
-	ld [hli], a
-	inc a ; $42, PAD_START #2
-	ld [hli], a
-	inc a ; $43, PAD_START #3
-	ld [hli], a
-	ld a, $5d ; MAP #1
-	ld [hli], a
-	inc a ; $5e, MAP #2
-	ld [hli], a
-	ld [hl], $7f ; MAP #3
-.button_done	
 	farcall Pokedex_DetailedArea
 	farcall ApplyAttrmap
 	call WaitBGMap
@@ -704,13 +677,15 @@ Area_Page_map:
 	ld a, POKEDEX_SCX
 	ldh [hSCX], a
 	call DelayFrame
-	call Pokedex_RedisplayDexEntry
+; load the tiles before the redisplay:
 	call Pokedex_LoadSelectedMonTiles
+	call Pokedex_RedisplayDexEntry
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
+	call Pokedex_RestoreAreaTodIcons
 	pop af
 	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
 	ret
@@ -752,7 +727,7 @@ Evos_Page:
 	xor a
 	ldh [hBGMapMode], a
 	farcall HDMATransferTilemapToWRAMBank3
-	
+
 	ld a, $1
 	ldh [rVBK], a
 	ld de, Pokedex_ExtraTiles ; tile 19
@@ -763,10 +738,13 @@ Evos_Page:
 	ld a, $0
 	ldh [rVBK], a
 	call DelayFrame
-	
+
 	ld a, SCGB_POKEDEX_EVO
 	call Pokedex_GetSGBLayout
-.nextpage_jump
+; Set the "full redraw" flag here.
+	xor a
+	ld [wCurDamage + 2], a
+	.nextpage_jump
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
@@ -774,7 +752,11 @@ Evos_Page:
 	ld [wCurPartySpecies], a
 	push af
 	farcall DisplayDexMonEvos
+; The order of these matters.
 	call WaitBGMap
+	call DelayFrame
+	call DelayFrame
+	farcall _CGB_Pokedex_EvoPage_PalsOnly
 	pop af
 	ld [wCurPartySpecies], a 
 	ld [wTempSpecies], a
@@ -795,12 +777,7 @@ Evos_Page:
 	ld hl, hJoyPressed
 	ld a, [hl]
 	bit A_BUTTON_F, a
-	jp nz, .right_dpad
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_RIGHT
-	jp nz, .right_dpad
-	ld a, [hl]
+	jp nz, .flip_page
 .no_second_page
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -831,12 +808,9 @@ Evos_Page:
 	ldh [hSCX], a
 	farcall DrawDexEntryScreenRightEdge
 	call DelayFrame
-	call Pokedex_RedisplayDexEntry
+; load the tiles before the redisplay
 	call Pokedex_LoadSelectedMonTiles
-	call Pokedex_GetSelectedMon
-	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	call Pokedex_RedisplayDexEntry
 	pop de
 	pop bc
 	ld a, b
@@ -861,9 +835,23 @@ Evos_Page:
 	ld [hl], ' '
 .shiny_done	
 	call WaitBGMap
+; stay black until the whole map is in VRAM, then bring the colours up on the
+; finished screen - loading the palette earlier lit the Evo page back up for
+; the frames the map push was still running
+	call Pokedex_GetSelectedMon
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	call Pokedex_RestoreAreaTodIcons
 	ret
 
-.right_dpad
+.flip_page
+; Flipping to the next set of four only changes the slots, so tell
+; DisplayDexMonEvos to redraw those and leave the border alone. wCurDamage + 2 is
+; free here - DisplayDexMonEvos overwrites it with the species once it has
+; finished the stage 1 row.
+	ld a, TRUE
+	ld [wCurDamage + 2], a
 	ld a, [wCurDamage + 1]
 	cp -1
 	jp nz, .inc_evopage; .nextpage_jump
@@ -903,6 +891,9 @@ Pics_Page:
 	lb bc, SCREEN_HEIGHT, SCREEN_WIDTH
 	call ClearBox	
 	call Pokedex_BlackOutBG
+; the blackout only reaches the screen on the next palette update, so without
+; this the tail of the previous page is still on screen for a frame.
+	call DelayFrame
 	farcall HDMATransferTilemapToWRAMBank3	
 	call ClearSprites
 	call DisableSpriteUpdates
@@ -930,8 +921,7 @@ Pics_Page:
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
 	call GetBaseData
-	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout
+; the palette is applied at the end, just before WaitBGMap.
 	call Pokedex_GetSelectedMon
 
 	hlcoord 0, 0
@@ -960,12 +950,28 @@ Pics_Page:
 	ld [wSummaryScreenFlags], a
 	farcall Pokedex_PlaceAnimatedFrontpic
 	farcall Pokedex_PlaceBackPic
-	call WaitBGMap
+; place the icon before the push.
 	farcall Pokedex_place_Mon_Icon
+	ld hl, wSummaryScreenFlags
+	set 6, [hl]
+	; palette last. hlcoord writes go straight to VRAM - WaitBGMap only waits
+	; for vblank, it doesn't push - so Dex_Pics_DrawBorder puts the border
+	; and the three pic-box interiors on screen the instant it runs.
+	; Those interiors are filled with tile $7f, which only exists in VRAM bank 1
+	; (Pokedex_LoadPageNums writes it there), so on the bank this page displays
+	; they read as blank and show as three white boxes.
+	; The frontpic, backpic and icon then cover them one at a time as their
+	; tiles finish loading. Restoring the palette here rather than before the
+	; border keeps the screen black until all three are in place.
+	ld a, SCGB_POKEDEX_PICS
+	call Pokedex_GetSGBLayout
+	call WaitBGMap
 	callfar PlaySpriteAnimations
-	farcall Pokedex_PlayMonCry_AnimateFrontpic
+	xor a
+	ld [wPokedexEntryType], a
 .spritepage_loop
 	callfar PlaySpriteAnimations
+	farcall Pokedex_StepFrontpicAnim
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
@@ -1009,7 +1015,6 @@ Pics_Page:
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
-	call Pokedex_LoadPageNums
 	call Pokedex_LoadAllGFX
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawFootprint
@@ -1019,12 +1024,8 @@ Pics_Page:
 	ldh [hSCX], a
 	farcall DrawDexEntryScreenRightEdge
 	call DelayFrame
-	call Pokedex_RedisplayDexEntry
 	call Pokedex_LoadSelectedMonTiles
-	call Pokedex_GetSelectedMon
-	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	call Pokedex_RedisplayDexEntry
 	pop de
 	pop bc
 	ld a, b
@@ -1046,14 +1047,18 @@ Pics_Page:
 	ld [hl], ' '
 .shiny_done	
 	call WaitBGMap
+; Stay black until the map is fully in VRAM, so the Pics
+; page can't flash back up while the push is still running
+	call Pokedex_GetSelectedMon
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	call Pokedex_RestoreAreaTodIcons
 	ret
 .toggle_shininess:
 	xor a
 	ldh [hBGMapMode], a
-	call Pokedex_toggle_shininess_Pics
-	xor a
-	ldh [hObjectStructIndex], a
-	farcall SetDexMonIconColor_SpritePage
+	call Pokedex_toggle_shininess_Pics ; also sets the icon palette, before the SFX
 	call WaitBGMap
 	jp .spritepage_loop
 
@@ -1726,32 +1731,15 @@ Pokedex_DrawDexEntryScreenBG:
 	call Pokedex_FillColumn
 	ld [hl], $39
 
-; PAD_SELECT > SHINY, PAD_START > MAP
-	; PAD_SELECT > $48, $49, $4a
-	; > SHINY $61-63
-	hlcoord	1, 0
-	ld [hl], $57 ; new curved text border, left
-	inc hl
-	ld a, $48 ; PAD_SELECT 1
-	ld [hli], a
-	inc a ; $49, PAD_SELECT 2
-	ld [hli], a
-	ld a, $43 ; PAD_SELECT 3
-	ld [hli], a
-	inc a ; $44, SHINY 1
-	ld [hli], a
-	ld a, $5f ; SHINY 2
-	ld [hli], a
-	inc a ; $60, SHINY 3
-	ld [hli], a
-	ld [hl], $58 ; new curved text border, right
+; PAD_SELECT > SHINY and PAD_START > MAP.
+	hlcoord 1, 0
+	ld de, .ButtonBanner
+	call Pokedex_PlaceString
 ; clear the row for bottom menu
 	hlcoord 1, 17
 	ld bc, SCREEN_WIDTH - 2
 	ld a, ' '
 	call ByteFill
-	ld c, 4
-	call DelayFrames
 ; erase the bottom half of screen where info will go
 	lb bc, 8, SCREEN_WIDTH - 1 ; 8 tiles high, 19 tiles wide
 	hlcoord 1, 8 
@@ -1805,6 +1793,14 @@ Pokedex_DrawDexEntryScreenBG:
 	hlcoord 16, 1
 	ld [hl], $4f ; pokeball icon
 	ret
+
+.ButtonBanner:
+	db $57, \ ; text border - left
+		$48, $49, $43, $44, $5f, $60, \ ; PAD_SELECT > SHINY
+		$58, $34, $57, \ ; text border - right, top, text border - left
+		$41, $42, $43, $5d, $5e, $7f, \ ; PAD_START > MAP
+		$58, -1 ; new curved text border, right
+
 .MenuItems:
 	db $3b, " ", $79, $7a, " ", \ ; INFO
 		$71, $72, " ", \ ; STATS
@@ -3299,6 +3295,8 @@ Pokedex_LoadPointer:
 
 Pokedex_LoadSelectedMonTiles:
 ; Loads the tiles of the currently selected Pokémon.
+; Also preloads the entry screen's type icons, so that opening an entry doesn't
+; stall on a live Request2bpp while it's on screen.
 	call Pokedex_GetSelectedMon
 	call Pokedex_CheckSeen
 	jr z, .QuestionMark
@@ -3306,9 +3304,11 @@ Pokedex_LoadSelectedMonTiles:
 	ld [wUnownLetter], a
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a ; GetBaseData and LoadDexTypeIconTiles both read this
 	call GetBaseData
 	ld de, vTiles2
 	predef GetMonFrontpic
+	farcall LoadDexTypeIconTiles
 	ret
 
 .QuestionMark:
@@ -3364,6 +3364,7 @@ Pokedex_LoadAllGFX:
 
 	call Pokedex_LoadPageNums
 	call Pokedex_LoadInvertedFont
+	call Pokedex_PreloadEvoFont
 	call LoadFontsExtra
 	ld hl, vTiles2 tile $60
 	ld bc, $20 tiles
@@ -3466,12 +3467,20 @@ Pokedex_LoadPageNums:
 	ldh [rLCDC], a
 	ret
 
-Pokedex_LoadInversedFont:
+Pokedex_PreloadEvoFont:
 	ld a, 1
 	ldh [rVBK], a
 	ld hl, vTiles1
 	lb bc, BANK(FontNormalInversed), 128 ; $80 tiles
+	call Pokedex_ChooseInversedFont
+	ld a, BANK(FontNormalInversed) ; they're all in the same bank
+	call Get1bpp
+	ld a, $0
+	ldh [rVBK], a
+	ret
 
+Pokedex_ChooseInversedFont:
+; de = the inverted font matching wFontType. Leaves hl and bc alone.
 	ld a, [wFontType]
 	cp FONT_SERIF
 	jr z, .font_serif
@@ -3482,31 +3491,41 @@ Pokedex_LoadInversedFont:
 
 ; .font_1
 	ld de, FontNormalInversed
-	jr .finish
+	ret
 .font_serif
 	ld de, FontSerifInversed
-	jr .finish
+	ret
 .font_micr
 	ld de, FontMicrInversed
-	jr .finish
+	ret
 .font_small
 	ld de, FontSmallInversed
-.finish
+	ret
+
+Pokedex_LoadInversedFont:
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, vTiles1 tile $50
+	lb bc, BANK(FontNormalInversed), 36 ; $d0-$f3
+	call Pokedex_ChooseInversedFont
+	ld hl, $50 tiles
+	add hl, de
 	ld a, BANK(FontNormalInversed) ; they're all in the same bank
 	call Get1bpp
 
+; the Evo page's own tiles, unchanged
 	ld hl, vTiles0 tile $bb
 	lb bc, BANK(Pokedex_MathTiles), 5 ; 5 tiles
 	ld de, Pokedex_MathTiles
 	ld a, BANK(Pokedex_MathTiles)
 	call Get1bpp
-	
+
 	ld hl, vTiles0 tile $bf
 	lb bc, BANK(Pokedex_Imperial_Tiles), 2 ; 4 tiles
 	ld de, Pokedex_Imperial_Tiles
 	ld a, BANK(Pokedex_Imperial_Tiles)
 	call Get1bpp
-	
+
 	ld hl, vTiles0 tile $eb
 	lb bc, BANK(Pokedex_RightArrow_Tile), 1 ; 1 tiles
 	ld de, Pokedex_RightArrow_Tile
@@ -3617,6 +3636,11 @@ _NewPokedexEntry:
 	call GetBaseData
 	ld de, vTiles2
 	predef GetMonFrontpic
+; no listing preload on this path, so fetch the type icons now that the LCD is
+; back on (Request2bpp needs it) - the screen isn't visible until further down
+	ld a, [wTempSpecies]
+	ld [wCurSpecies], a
+	farcall LoadDexTypeIconTiles
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
 	ld a, [wCurPartySpecies]

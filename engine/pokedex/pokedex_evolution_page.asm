@@ -8,10 +8,28 @@ DisplayDexMonEvos:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
+	ld hl, wCurDamage + 2 ; set by Evos_Page: nonzero means "slots only"
+	ld a, [hl]
+	and a
+	jr z, .clear_slots_only
+	farcall Pokedex_BlackOutBG
+	call Delay3
+	hlcoord 1, 4
+	lb bc, SCREEN_HEIGHT - 6, SCREEN_WIDTH - 2
+	call ClearBox
+	jr .cleared
+.clear_slots_only
 	hlcoord 0, 4
 	lb bc, SCREEN_HEIGHT - 4, SCREEN_WIDTH
 	call ClearBox
+.cleared
+	ld hl, wCurDamage + 2
+	ld a, [hl]
+	and a
+	jr nz, .border_drawn
+; Skip EVO_Draw_border on a slots-only redraw.
 	call EVO_Draw_border
+.border_drawn
 
 	ld a, [wTempSpecies]
 	ld [wCurDamage + 2], a
@@ -675,6 +693,16 @@ IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 	call .determine_paladdr ; pal 1, 2, 3, or 4
 	farcall LoadDexTypePals
 	call SetDefaultBGPAndOBP ; call SetPalettes
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
+	ld hl, wBGPals2 palette 1
+	ld bc, 4 palettes
+	xor a
+	call ByteFill
+	pop af
+	ldh [rWBK], a
 	call DelayFrame
 ENDC
 
@@ -1126,7 +1154,7 @@ EVO_Draw_border:
 	call Request1bpp
 	lb bc, BANK(vTiles2), 16
 	ld de, $8c00 
-	ld hl, vTiles2 tile $10 ; + $10
+	ld hl, vTiles2 tile $10
 	call Request1bpp
 	lb bc, BANK(vTiles2), 16
 	ld de, $8c00 

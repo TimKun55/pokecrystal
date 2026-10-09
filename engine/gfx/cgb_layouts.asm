@@ -764,6 +764,26 @@ ENDC
 	ldh [hCGBPalUpdate], a
 	ret
 
+_CGB_Pokedex_EvoPage_PalsOnly:
+; The palette half of _CGB_Pokedex_EvoPage above, deliberately without the attrmap.
+; For when the Evo page has blacked itself out mid-draw and needs its colours back
+; once every row is in VRAM. Re-running the full layout instead re-applies
+; wAttrmap, which is rebuilt from scratch by WipeAttrmap/FillBoxCGB and stamped
+; back over the type icons' attributes that DisplayDexMonEvos writes straight
+; into VRAM as it places each slot - they come out white.
+	ld de, wBGPals1
+	call CheckPokedexColor
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
+	ld de, wBGPals1 palette 6
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
 _CGB_Pokedex_PicsPage:
 	call WipeAttrmap
 	ld de, wBGPals1
