@@ -196,37 +196,3 @@ ForceMapMusic:
 .notbiking
 	call TryRestartMapMusic
 	ret
-
-DecompressMetatiles:
-; Decompress the current tileset's metatile and attribute tables into WRAM,
-; so _LoadOverworldTilemap can draw the screen directly from them.
-; Skipped when the tileset did not change (e.g. most connection crossings),
-; so crossing a map border while walking stays hitch-free.
-	call TilesetUnchanged
-	ret z
-
-	ld hl, wTilesetBlocksBank
-	ld c, BANK(wDecompressedMetatiles)
-	ld de, wDecompressedMetatiles
-	call .Decompress
-
-	ld hl, wTilesetAttributesBank
-	ld c, BANK(wDecompressedAttributes)
-	ld de, wDecompressedAttributes
-
-.Decompress:
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [rSVBK]
-	push af
-	ld a, c
-	ld [rSVBK], a
-	ld a, b
-	ld bc, $1000
-	call FarDecompress
-	pop af
-	ld [rSVBK], a
-	ret

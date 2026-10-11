@@ -24,7 +24,7 @@ hSeconds:: db
 
 hVBlankCounter:: db
 
-hMapBorderBlock:: db
+	ds 1
 
 hROMBank:: db
 hVBlank:: db
@@ -44,7 +44,7 @@ hJoyLast::        db
 
 hInMenu:: db
 
-hMapWidthPlus6:: db
+	ds 1
 
 hPrinter:: db
 hGraphicStartTile:: db
