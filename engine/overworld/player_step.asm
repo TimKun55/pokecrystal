@@ -1,13 +1,11 @@
 _HandlePlayerStep::
 	ld a, [wPlayerStepFlags]
-	and a
-	ret z
-	bit PLAYERSTEP_START_F, a
-	jr nz, .update_overworld_map
-	bit PLAYERSTEP_STOP_F, a
-	jr nz, .update_player_coords
-	bit PLAYERSTEP_CONTINUE_F, a
-	jr nz, .finish
+	add a, a
+	jr c, .update_overworld_map ; starting step
+	add a, a
+	jr c, .update_player_coords ; finishing step
+	add a, a
+	jr c, .finish ; ongoing step
 	ret
 
 .update_overworld_map
