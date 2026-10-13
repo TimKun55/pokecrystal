@@ -766,9 +766,9 @@ EggHatch_AnimationSequence:
 
 Hatch_LoadFrontpicPal:
 	ld [wPlayerHPPal], a
-	ld b, SCGB_EVOLUTION
+	ld b, CGB_EVOLUTION
 	ld c, $0
-	jp GetSGBLayout
+	jp GetCGBLayout
 
 EggHatch_CrackShell:
 	ld a, [wFrameCounter]

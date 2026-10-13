@@ -53,8 +53,8 @@ PlaceDiplomaOnScreen:
 	call PrintNum
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_DIPLOMA
-	call GetSGBLayout
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	ret

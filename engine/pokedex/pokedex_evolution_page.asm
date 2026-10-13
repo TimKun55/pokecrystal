@@ -1196,8 +1196,8 @@ EVO_Draw_border:
 	xor a
 	ldh [hBGMapMode], a
 
-	ld b, SCGB_POKEDEX_EVO
-	call GetSGBLayout
+	ld b, CGB_POKEDEX_EVO
+	call GetCGBLayout
 	
 	; print b > back
 	hlcoord 16, 16

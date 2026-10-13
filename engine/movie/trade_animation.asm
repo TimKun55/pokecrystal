@@ -827,8 +827,8 @@ TradeAnim_ShowGivemonData:
 	ld a, [wPlayerTrademonDVs + 1]
 	ld [wTempMonDVs + 1], a
 ; works well enough
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0
 	call DmgToCgbBGPals
 	call TradeAnim_ShowGivemonFrontpic
@@ -853,8 +853,8 @@ TradeAnim_ShowGetmonData:
 	ld a, [wOTTrademonDVs + 1]
 	ld [wTempMonDVs + 1], a
 ; and here
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0
 	call DmgToCgbBGPals
 	call TradeAnim_ShowGetmonFrontpic

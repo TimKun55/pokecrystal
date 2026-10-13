@@ -713,8 +713,8 @@ OakSpeech:
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
-	ld b, SCGB_INTRO_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -736,8 +736,8 @@ OakSpeech:
 	ld [wTempMonDVs], a
 	ld [wTempMonDVs + 1], a
 
-	ld b, SCGB_INTRO_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -755,8 +755,8 @@ OakSpeech:
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
-	ld b, SCGB_INTRO_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -823,8 +823,8 @@ InitGender:
 
 	call InitGenderGraphics
 
-	ld b, SCGB_INTRO_GENDER_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_GENDER_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -849,8 +849,8 @@ InitGender:
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_INTRO_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -874,9 +874,9 @@ InitGender:
 	db "Boy@"
 	db "Girl@"
 
-AreYouABoyOrAreYouAGirlText:
-	; Are you a boy? Or are you a girl?
-	text_far _AreYouABoyOrAreYouAGirlText
+TrainerCardPhotoText:
+	; Which photo is on your Trainer Card?
+	text_far _TrainerCardPhotoText
 	text_end
 
 SoThisIsYouText:
@@ -899,12 +899,12 @@ InitGenderGraphics:
 
 	xor a
 	ldh [hGraphicStartTile], a
-	hlcoord 1, 4
+	hlcoord 3, 4
 	lb bc, 5, 7
 	predef PlaceGraphic
 	ld a, $23
 	ldh [hGraphicStartTile], a
-	hlcoord 13, 4
+	hlcoord 11, 4
 	lb bc, 5, 7
 	predef PlaceGraphic
 	ret
@@ -921,8 +921,8 @@ NamePlayer:
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_INTRO_PALS
-	call GetSGBLayout
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -1152,8 +1152,8 @@ StartTitleScreen:
 	ldh [hWX], a
 	ld a, $90
 	ldh [hWY], a
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call UpdateTimePals
 	ld a, [wTitleScreenSelectedOption]
 	cp NUM_TITLESCREENOPTIONS

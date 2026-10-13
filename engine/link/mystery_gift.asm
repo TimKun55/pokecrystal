@@ -64,8 +64,8 @@ endc
 	call ClearTilemap
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	pop de
 
@@ -1552,8 +1552,8 @@ InitMysteryGiftLayout:
 	ld [hl], $41
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_MYSTERY_GIFT
-	call GetSGBLayout
+	ld b, CGB_MYSTERY_GIFT
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ret
 
@@ -1724,8 +1724,8 @@ endr
 	call ClearTilemap
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ret
 

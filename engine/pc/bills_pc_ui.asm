@@ -188,8 +188,8 @@ BillsPC_LoadUI:
 	ld [wBillsPC_ApplyThemePals], a
 	; fallthrough
 _BillsPC_GetCGBLayout:
-	ld b, SCGB_BILLS_PC
-	jp GetSGBLayout
+	ld b, CGB_BILLS_PC
+	jp GetCGBLayout
 
 BillsPC_RefreshTheme:
 	ld a, 1

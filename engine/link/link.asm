@@ -566,8 +566,8 @@ LinkTimeout:
 	ld c, 15
 	call FadeToWhite
 	call ClearScreen
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call WaitBGMap2
 	ret
 
@@ -1648,8 +1648,8 @@ ExitLinkCommunications:
 	ld c, 15
 	call FadeToWhite
 	call ClearScreen
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call WaitBGMap2
 	xor a
 	ld [wUnusedLinkCommunicationByte], a
@@ -1972,8 +1972,8 @@ LinkTrade:
 	call DelayFrames
 	call ClearTilemap
 	call LoadFontsBattleExtra
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_2

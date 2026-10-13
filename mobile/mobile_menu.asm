@@ -808,8 +808,8 @@ Function4a6ab:
 	ld a, $2
 	call MenuClickSound
 	call ClearBGPalettes
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	farcall Function11c1ab
 	pop bc
 	call LoadFontsExtra

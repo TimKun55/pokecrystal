@@ -25,7 +25,6 @@ gfx/pc/pc.2bpp.lz: LZFLAGS += --literal-only --align 1
 gfx/player/chris_back.2bpp.lz: LZFLAGS += --align 4
 
 gfx/pokedex/pokedex.2bpp.lz: LZFLAGS += --prefer-alternate --align 1
-gfx/pokedex/pokedex_sgb.2bpp.lz: LZFLAGS += --prefer-alternate --align 1
 gfx/pokedex/question_mark.2bpp.lz: LZFLAGS += --align 4
 gfx/pokedex/slowpoke.2bpp.lz: LZFLAGS += --literal-only --align 1
 
@@ -41,7 +40,7 @@ gfx/pokemon/scyther/front.animated.2bpp.lz: LZFLAGS += --no-lookback-3
 gfx/pokemon/unown_g/front.animated.2bpp.lz: LZFLAGS += --no-lookback-3
 gfx/pokemon/voltorb/front.animated.2bpp.lz: LZFLAGS += --no-lookback-3
 
-gfx/sgb/gbc_only.2bpp.lz: LZFLAGS += --literal-only --align 1
+gfx/gbc_only.2bpp.lz: LZFLAGS += --literal-only --align 1
 
 gfx/slots/slots_1.2bpp.lz: LZFLAGS += --odd-alternate --align 4
 gfx/slots/slots_2.2bpp.lz: LZFLAGS += --align 4

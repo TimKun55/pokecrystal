@@ -1,8 +1,8 @@
 GetCrystalCGBLayout:
 	ld a, b
-	cp SCGB_DEFAULT
+	cp CGB_DEFAULT
 	jr nz, .not_default
-	ld a, [wDefaultSGBLayout]
+	ld a, [wDefaultCGBLayout]
 .not_default
 	push af
 	farcall ResetBGPals

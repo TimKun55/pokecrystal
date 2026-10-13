@@ -660,8 +660,8 @@ Function1163c0:
 	call ByteFill
 	call DelayFrame
 	farcall _RefreshSprites
-	ld b, SCGB_MAPPALS
-	call GetSGBLayout
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
 	ldh a, [rWBK]
 	push af
 	ld a, $5

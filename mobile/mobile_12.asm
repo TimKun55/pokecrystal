@@ -255,8 +255,8 @@ Function4820d:
 	call Function48d30
 	pop bc
 	call ClearTilemap
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	ld hl, wd479
 	set 1, [hl]
 	xor a

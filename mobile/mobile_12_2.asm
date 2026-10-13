@@ -29,8 +29,8 @@ Function4a94e:
 	xor a
 	ld [wd018], a
 	ld [wd019], a
-	ld b, SCGB_PACKPALS
-	call GetSGBLayout
+	ld b, CGB_PACKPALS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call Function4aa22
 	jr c, .asm_4a985

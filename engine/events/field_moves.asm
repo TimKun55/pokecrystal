@@ -15,8 +15,8 @@ BlindingFlash:
 	set STATUSFLAGS_FLASH_F, [hl]
 	farcall ReplaceTimeOfDayPals
 	farcall UpdateTimeOfDayPal
-	ld b, SCGB_MAPPALS
-	call GetSGBLayout
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
 	farcall LoadOW_BGPal7
 	farcall FadeInFromWhite
 	ret

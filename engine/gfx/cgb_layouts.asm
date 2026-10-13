@@ -1,17 +1,18 @@
-; Replaces the functionality of sgb.asm to work with CGB hardware.
+; Implements the CGB half of the layout dispatch.
+; The SGB equivalent was removed along with SGB support.
 
 CheckCGB:
 	ldh a, [hCGB]
 	and a
 	ret
 
-LoadSGBLayoutCGB:
+LoadCGBLayout:
 	ld a, b
-	cp SCGB_DEFAULT
+	cp CGB_DEFAULT
 	jr nz, .not_default
-	ld a, [wDefaultSGBLayout]
+	ld a, [wDefaultCGBLayout]
 .not_default
-	cp SCGB_PARTY_MENU_HP_BARS
+	cp CGB_PARTY_MENU_HP_BARS
 	jp z, CGB_ApplyPartyMenuHPPals
 	call ResetBGPals
 	ld l, a
@@ -29,7 +30,7 @@ LoadSGBLayoutCGB:
 	ret
 
 CGBLayoutJumptable:
-; entries correspond to SCGB_* constants (see constants/scgb_constants.asm)
+; entries correspond to CGB_* constants (see constants/cgb_constants.asm)
 	table_width 2
 	dw _CGB_BattleGrayscale
 	dw _CGB_BattleColors
@@ -46,8 +47,6 @@ CGBLayoutJumptable:
 	dw _CGB_Generic
 	dw _CGB_MoveList
  	dw _CGB_PokedexSearchOption
-	dw _CGB_Pokepic
-	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
 	dw _CGB_TrainerCardJohto
@@ -57,10 +56,8 @@ CGBLayoutJumptable:
 	dw _CGB_UnownPuzzle
 	dw _CGB_GamefreakLogo
 	dw _CGB_PlayerOrMonFrontpicPals
-	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
-	dw _CGB_Unused1E
 	dw _CGB_IntroPals
 	dw _CGB_IntroGenderPals
 	dw _CGB_NamingScreen
@@ -68,18 +65,18 @@ CGBLayoutJumptable:
 	dw _CGB_Plain
 	dw _CGB_EggSummaryScreen
 	dw _CGB_MusicPlayer
-	assert_table_length NUM_SCGB_LAYOUTS
+	assert_table_length NUM_CGB_LAYOUTS
 
 _CGB_BattleGrayscale:
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale
 	ld de, wBGPals1
 	ld c, 4
 	call CopyPalettes
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale
 	ld de, wBGPals1 palette PAL_BATTLE_BG_EXP
 	ld c, 4
 	call CopyPalettes
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale
 	ld de, wOBPals1
 	ld c, 2
 	call CopyPalettes
@@ -180,8 +177,8 @@ _CGB_BattleColors:
 	call LoadPlayerBattleCGBLayoutStatusIconPalette
 	call LoadEnemyBattleCGBLayoutStatusIconPalette
 
-	ld a, SCGB_BATTLE_COLORS
-	ld [wDefaultSGBLayout], a
+	ld a, CGB_BATTLE_COLORS
+	ld [wDefaultCGBLayout], a
 	call ApplyPals
 _CGB_FinishBattleScreenLayout:
 	call InitPartyMenuBGPal7
@@ -310,18 +307,6 @@ _CGB_PokegearPals:
 	ld bc, 8 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-
-;	ld de, wBGPals1 palette 7
-;	ld a, PREDEFPAL_POKEGEAR_TOD_ICONS
-;	call GetPredefPal
-;	call LoadHLPaletteIntoDE
-
-; for johto map arrow on dex area map
-;	hlcoord 18, 16, wAttrmap
-;	ld bc, 1 ; 1 tile
-;	ld a, 0 ; palette 0
-;	set 5, a ; flip on y axis
-;	call ByteFill
 
 	ld hl, PokegearOBPals
 	ld de, wOBPals1
@@ -983,31 +968,6 @@ BillsPC_PreviewTheme:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_Unknown: ; unreferenced
-	ld hl, BillsPCOrangePalette
-	call LoadHLPaletteIntoDE
-	jr .GotPalette
-
-.GetMonPalette: ; unreferenced
-	ld bc, wTempMonDVs
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-.GotPalette:
-	call WipeAttrmap
-	hlcoord 1, 1, wAttrmap
-	lb bc, 7, 7
-	ld a, $1 ; mon palette
-	call FillBoxCGB
-	call InitPartyMenuOBPals
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-BillsPCOrangePalette:
-INCLUDE "gfx/pc/orange.pal"
-
 _CGB_PokedexUnownMode:
 	ld de, wBGPals1
 	call CheckPokedexColor
@@ -1133,12 +1093,12 @@ _CGB_Diploma:
 
 _CGB_MapPals:
 	call LoadMapPals
-	ld a, SCGB_MAPPALS
-	ld [wDefaultSGBLayout], a
+	ld a, CGB_MAPPALS
+	ld [wDefaultCGBLayout], a
 	ret
 
 _CGB_PartyMenu:
-	ld hl, PalPacket_PartyMenu + 1
+	ld hl, PalPacket_PartyMenu
 	call CopyFourPalettes
 	call InitPartyMenuBGPal0
 	call InitPartyMenuBGPal7	
@@ -1262,14 +1222,14 @@ _CGB_Generic:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld hl, PalPacket_Generic + 1
+	ld hl, PalPacket_Generic
 	call CopyFourPalettes
 	call WipeAttrmap
 	call ApplyAttrmap
 	ret
 
 _CGB_UnownPuzzle:
-	ld hl, PalPacket_UnownPuzzle + 1
+	ld hl, PalPacket_UnownPuzzle
 	call CopyFourPalettes
 	ld de, wOBPals1
 	ld a, PREDEFPAL_UNOWN_PUZZLE
@@ -1753,57 +1713,6 @@ INCLUDE "gfx/pack/pack.pal"
 .KrisPackPals:
 INCLUDE "gfx/pack/pack_f.pal"
 
-_CGB_Pokepic:
-	call _CGB_MapPals
-	ld de, SCREEN_WIDTH
-	hlcoord 0, 0, wAttrmap
-	ld a, [wMenuBorderTopCoord]
-.loop
-	and a
-	jr z, .found_top
-	dec a
-	add hl, de
-	jr .loop
-
-.found_top
-	ld a, [wMenuBorderLeftCoord]
-	ld e, a
-	ld d, 0
-	add hl, de
-	ld a, [wMenuBorderTopCoord]
-	ld b, a
-	ld a, [wMenuBorderBottomCoord]
-	inc a
-	sub b
-	ld b, a
-	ld a, [wMenuBorderLeftCoord]
-	ld c, a
-	ld a, [wMenuBorderRightCoord]
-	sub c
-	inc a
-	ld c, a
-	ld a, PAL_BG_GRAY
-	call FillBoxCGB
-	call ApplyAttrmap
-	ret
-
-_CGB_MagnetTrain: ; unused
-	ld hl, PalPacket_MagnetTrain + 1
-	call CopyFourPalettes
-	call WipeAttrmap
-	hlcoord 0, 4, wAttrmap
-	lb bc, 10, SCREEN_WIDTH
-	ld a, PAL_BG_GREEN
-	call FillBoxCGB
-	hlcoord 0, 6, wAttrmap
-	lb bc, 6, SCREEN_WIDTH
-	ld a, PAL_BG_RED
-	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
 
 _CGB_GamefreakLogo:
 	ld de, wBGPals1
@@ -1832,14 +1741,6 @@ _CGB_PlayerOrMonFrontpicPals:
 	call ApplyPals
 	ret
 
-_CGB_Unused1E:
-	ld de, wBGPals1
-	ld a, [wCurPartySpecies]
-	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-	call WipeAttrmap
-	call ApplyAttrmap
-	ret
 
 _CGB_IntroPals:
 	ld de, wBGPals1
@@ -1958,21 +1859,6 @@ _CGB_BuyMenu:
 
 MartMenuPals:
 INCLUDE "gfx/mart/mart.pal"
-
-_CGB_TradeTube:
-	ld hl, PalPacket_TradeTube + 1
-	call CopyFourPalettes
-	ld hl, PartyMenuOBPals
-	ld de, wOBPals1
-	ld bc, 1 palettes
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-	ld de, wOBPals1 palette 7
-	ld a, PREDEFPAL_TRADE_TUBE
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	call WipeAttrmap
-	ret
 
 _CGB_TrainerOrMonFrontpicPals:
 	ld de, wBGPals1

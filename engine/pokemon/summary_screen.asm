@@ -547,8 +547,8 @@ SummaryScreen_InitUpperHalf:
 	farcall ComputeHPBarPixels
 	ld hl, wCurHPPal
 	call SetHPPal
-	ld b, SCGB_SUMMARY_SCREEN_HP_PALS
-	call GetSGBLayout
+	ld b, CGB_SUMMARY_SCREEN_HP_PALS
+	call GetCGBLayout
 	call DelayFrame
 	ret
 
@@ -2054,8 +2054,8 @@ EggSummaryScreen:
 	ldh [hBGMapMode], a
 	ld hl, wCurHPPal
 	call SetHPPal
-	ld b, SCGB_EGG_SUMMARY_SCREEN
-	call GetSGBLayout
+	ld b, CGB_EGG_SUMMARY_SCREEN
+	call GetCGBLayout
 	call EggSummaryScreen_PlacePageBorder
 	ld de, EggString
 	hlcoord 2, 0

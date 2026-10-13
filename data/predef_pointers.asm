@@ -53,8 +53,8 @@ PredefPointers::
 	add_predef GetUnownLetter
 	add_predef LoadPoisonBGPals
 	add_predef DummyPredef2F
-	add_predef InitSGBBorder
-	add_predef LoadSGBLayout
+	add_predef InitCGBBorderStub
+	add_predef LoadCGBLayout
 	add_predef Pokedex_GetArea
 	add_predef Unused_CheckShininess
 	add_predef DoBattleTransition

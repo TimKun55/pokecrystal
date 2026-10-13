@@ -549,11 +549,7 @@ Sprites_Sine:
 	calc_sine_wave
 
 AnimateEndOfExpBar:
-	ldh a, [hSGB]
 	ld de, EndOfExpBarGFX
-	and a
-	jr z, .load
-	ld de, SGBEndOfExpBarGFX
 
 .load
 	ld hl, vTiles0 tile $00
@@ -613,8 +609,6 @@ AnimateEndOfExpBar:
 
 EndOfExpBarGFX:
 INCBIN "gfx/battle/expbarend.2bpp"
-SGBEndOfExpBarGFX:
-INCBIN "gfx/battle/expbarend_sgb.2bpp"
 
 ClearSpriteAnims2:
 	push hl

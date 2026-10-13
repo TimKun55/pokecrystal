@@ -77,7 +77,7 @@ ClosePokepic::
 	call CopyMenuHeader
 	call ClearMenuBoxInterior
 	call WaitBGMap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	xor a
 	ldh [hBGMapMode], a
 	call LoadOverworldTilemapAndAttrmapPals
@@ -91,7 +91,7 @@ ClosePaintingpic::
 	call CopyMenuHeader
 	call ClearMenuBoxInterior
 	call WaitBGMap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	xor a
 	ldh [hBGMapMode], a
 	call LoadOverworldTilemapAndAttrmapPals

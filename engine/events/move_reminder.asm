@@ -442,8 +442,8 @@ ChooseMoveToLearn:
 	ld a, [wMenuSelection]
 	ld [wPutativeTMHMMove], a
 	and a
-	ld b, SCGB_MOVE_LIST
-	call GetSGBLayout
+	ld b, CGB_MOVE_LIST
+	call GetCGBLayout
 	ret
 
 ; Sets the carry flag and returns from
@@ -635,8 +635,8 @@ ChooseMoveToLearn:
 	ld [hli], a
 	ld [hl], $5e ; final Type Tile
 	
-	ld b, SCGB_MOVE_LIST
-	call GetSGBLayout ; reload proper palettes for new Move Type and Category, and apply
+	ld b, CGB_MOVE_LIST
+	call GetCGBLayout ; reload proper palettes for new Move Type and Category, and apply
 	ld a, $1 ; done editing the screen
 	ldh [hBGMapMode], a
 ; This code falls through into the ".print_move_chance" local jump.

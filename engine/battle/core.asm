@@ -703,8 +703,8 @@ ParsePlayerAction:
 	call MoveSelectionScreen
 	push af
 	call SafeLoadTempTilemapToTilemap
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle
@@ -2369,7 +2369,7 @@ ForcePlayerMonChoice:
 	call ExitMenu
 	call LoadTilemapToTempTilemap
 	call WaitBGMap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	xor a
 	ld c, a
@@ -2388,7 +2388,7 @@ ForcePlayerMonChoice:
 	call DelayFrame
 	call _LoadHPBar
 	call CloseWindow
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	call SendOutMonText
 	call NewBattleMonStatus
@@ -2620,8 +2620,8 @@ LostBattle:
 	jr nz, .LostLinkBattle
 
 ; Grayscale
-	ld b, SCGB_BATTLE_GRAYSCALE
-	call GetSGBLayout
+	ld b, CGB_BATTLE_GRAYSCALE
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	jr .end
 
@@ -4785,7 +4785,7 @@ BattleMenuPKMN_Loop:
 	call GetBattleMonBackpic
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	jp BattleMenu
 
@@ -4873,7 +4873,7 @@ TryPlayerSwitch:
 	call GetBattleMonBackpic
 	call WaitBGMap
 	call CloseWindow
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
@@ -5220,8 +5220,8 @@ MoveSelectionScreen:
 .place_textbox_start_over
 	push hl
 	call ClearSprites
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
@@ -5573,8 +5573,8 @@ MoveInfoBox:
 
 .skip_type_effectiveness
 ; set battle CGB layout	
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 .done
 	ret
 
@@ -6825,8 +6825,8 @@ FinishBattleAnim:
 	push bc
 	push de
 	push hl
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	pop hl
@@ -7996,8 +7996,8 @@ BattleIntro:
 	farcall ClearBattleRAM
 	call InitEnemy
 	call BackUpBGMap2
-	ld b, SCGB_BATTLE_GRAYSCALE
-	call GetSGBLayout
+	ld b, CGB_BATTLE_GRAYSCALE
+	call GetCGBLayout
 	ld hl, rLCDC
 	res B_LCDC_WIN_MAP, [hl] ; select vBGMap0/vBGMap2
 	call InitBattleDisplay
@@ -8395,8 +8395,8 @@ _DisplayLinkRecord:
 	ld bc, SCREEN_AREA
 	call ByteFill
 	call WaitBGMap2
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ld c, 8
 	call DelayFrames
@@ -8876,8 +8876,8 @@ InitBattleDisplay:
 	ldh [rWY], a
 	call WaitBGMap
 	call HideSprites
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ld a, $90
 	ldh [hWY], a

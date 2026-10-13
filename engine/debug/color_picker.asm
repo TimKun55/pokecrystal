@@ -36,12 +36,8 @@ DebugColorPicker: ; unreferenced
 ; A debug menu to test monster and trainer palettes at runtime.
 	ldh a, [hCGB]
 	and a
-	jr nz, .cgb
-	ldh a, [hSGB]
-	and a
 	ret z
 
-.cgb
 	ldh a, [hInMenu]
 	push af
 	ld a, TRUE
@@ -490,7 +486,7 @@ DebugColor_UpdatePalettes:
 	ret
 
 .sgb
-	ld hl, wSGBPals
+	ld hl, wPalScratch
 	ld a, 1
 	ld [hli], a
 	ld a, LOW(PALRGB_WHITE)
@@ -509,9 +505,6 @@ DebugColor_UpdatePalettes:
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-
-	ld hl, wSGBPals
-	call DebugColor_PushSGBPals
 
 	hlcoord 10, 2
 	ld de, wDebugLightColor
@@ -928,63 +921,6 @@ DebugColor_FillBoxWithByte:
 	jr nz, .row
 	ret
 
-DebugColor_PushSGBPals:
-	ld a, [wJoypadDisable]
-	push af
-	set JOYPAD_DISABLE_SGB_TRANSFER_F, a
-	ld [wJoypadDisable], a
-	call _DebugColor_PushSGBPals
-	pop af
-	ld [wJoypadDisable], a
-	ret
-
-_DebugColor_PushSGBPals:
-	ld a, [hl]
-	and $7
-	ret z
-	ld b, a
-.loop
-	push bc
-	xor a ; JOYP_SGB_START
-	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
-	ldh [rJOYP], a
-	ld b, JOYP_SGB_ONE
-.loop2
-	ld e, 8
-	ld a, [hli]
-	ld d, a
-.loop3
-	bit 0, d
-	ld a, JOYP_SGB_ONE
-	jr nz, .okay
-	ld a, JOYP_SGB_ZERO
-.okay
-	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
-	ldh [rJOYP], a
-	rr d
-	dec e
-	jr nz, .loop3
-	dec b
-	jr nz, .loop2
-	ld a, JOYP_SGB_ZERO
-	ldh [rJOYP], a
-	ld a, JOYP_SGB_FINISH
-	ldh [rJOYP], a
-	ld de, 7000
-.wait
-	nop
-	nop
-	nop
-	dec de
-	ld a, d
-	or e
-	jr nz, .wait
-	pop bc
-	dec b
-	jr nz, .loop
-	ret
 
 DebugColor_PlaceCursor:
 	ld a, DEBUGTEST_BLACK

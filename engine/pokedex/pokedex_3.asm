@@ -1,18 +1,8 @@
-LoadSGBPokedexGFX:
-	ld hl, SGBPokedexGFX_LZ
-	ld de, vTiles2 tile $31
-	call Decompress
+LoadDMGPokedexGFX:
 	ret
 
-LoadSGBPokedexGFX2:
-	ld hl, SGBPokedexGFX_LZ
-	ld de, vTiles2 tile $31
-	lb bc, BANK(SGBPokedexGFX_LZ), 58
-	call DecompressRequest2bpp
+LoadDMGPokedexGFX2:
 	ret
-
-SGBPokedexGFX_LZ:
-INCBIN "gfx/pokedex/pokedex_sgb.2bpp.lz"
 
 LoadQuestionMarkPic:
 	ld hl, .QuestionMarkLZ
@@ -175,8 +165,8 @@ DrawDexEntryScreenRightEdge_Evo:
 	hlcoord 19, 0, wAttrmap
 	call Pokedex_FillColumn2
 
-	; ld b, SCGB_POKEDEX_EVO
-	; call GetSGBLayout
+	; ld b, CGB_POKEDEX_EVO
+	; call GetCGBLayout
 
 	call WaitBGMap2
 	pop hl

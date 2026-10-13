@@ -148,4 +148,4 @@ GBCOnlyString:
 	next "Game Boy Color.@"
 
 GBCOnlyGFX:
-INCBIN "gfx/sgb/gbc_only.2bpp.lz"
+INCBIN "gfx/gbc_only.2bpp.lz"

@@ -255,8 +255,8 @@ Pokedex_InitMainScreen:
 	call Pokedex_ResetBGMapMode
 	ld a, -1
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_UpdateCursorOAM
 	farcall DrawPokedexListWindow
 	hlcoord 0, 17
@@ -353,8 +353,8 @@ Pokedex_InitDexEntryScreen:
 	farcall DisplayDexEntry
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call WaitBGMap
 	ld a, $a7
 	ldh [hWX], a
@@ -412,8 +412,8 @@ Pokedex_Page:
 Pokedex_toggle_shininess_Entry:
 	call Pokedex_toggle_shininess1
 ; refresh palettes
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_RestoreAreaTodIcons
 
 	; add or remove shiny icon
@@ -432,8 +432,8 @@ Pokedex_toggle_shininess_Entry:
 Pokedex_toggle_shininess_Pics:
 	call Pokedex_toggle_shininess1
 ; refresh palettes
-	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_PICS
+	call Pokedex_GetCGBLayout
 
 	; add or remove shiny icon
 	hlcoord 4, 11 ; 1, 9 ; 9, 7 ; 0, 9
@@ -577,8 +577,8 @@ Pokedex_ReinitDexEntryScreen:
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_RestoreAreaTodIcons
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
@@ -683,8 +683,8 @@ Area_Page_map:
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_RestoreAreaTodIcons
 	pop af
 	ld [wPrevDexEntryJumptableIndex], a ; same ram as wSummaryScreenFlags
@@ -739,8 +739,8 @@ Evos_Page:
 	ldh [rVBK], a
 	call DelayFrame
 
-	ld a, SCGB_POKEDEX_EVO
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_EVO
+	call Pokedex_GetCGBLayout
 ; Set the "full redraw" flag here.
 	xor a
 	ld [wCurDamage + 2], a
@@ -840,8 +840,8 @@ Evos_Page:
 ; the frames the map push was still running
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_RestoreAreaTodIcons
 	ret
 
@@ -963,8 +963,8 @@ Pics_Page:
 	; The frontpic, backpic and icon then cover them one at a time as their
 	; tiles finish loading. Restoring the palette here rather than before the
 	; border keeps the screen black until all three are in place.
-	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_PICS
+	call Pokedex_GetCGBLayout
 	call WaitBGMap
 	callfar PlaySpriteAnimations
 	xor a
@@ -1051,8 +1051,8 @@ Pics_Page:
 ; page can't flash back up while the push is still running
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_RestoreAreaTodIcons
 	ret
 .toggle_shininess:
@@ -1087,8 +1087,8 @@ Pokedex_InitOptionScreen:
 	ld [wDexArrowCursorPosIndex], a
 	call Pokedex_DisplayModeDescription
 	call WaitBGMap
-	ld a, SCGB_POKEDEX_SEARCH_OPTION
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_SEARCH_OPTION
+	call Pokedex_GetCGBLayout
 	call Pokedex_IncrementDexPointer
 	ret
 
@@ -1205,8 +1205,8 @@ Pokedex_InitSearchScreen:
 	ld [wDexSearchSlowpokeFrame], a
 	farcall DoDexSearchSlowpokeFrame
 	call WaitBGMap
-	ld a, SCGB_POKEDEX_SEARCH_OPTION
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_SEARCH_OPTION
+	call Pokedex_GetCGBLayout
 	call Pokedex_IncrementDexPointer
 	ret
 
@@ -1324,8 +1324,8 @@ Pokedex_InitSearchResultsScreen:
 	call Pokedex_UpdateSearchResultsCursorOAM
 	ld a, -1
 	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	call Pokedex_IncrementDexPointer
 	ret
 
@@ -1384,8 +1384,8 @@ Pokedex_InitUnownMode:
 	call Pokedex_UnownModePlaceCursor
 	farcall PrintUnownWord
 	call WaitBGMap
-	ld a, SCGB_POKEDEX_UNOWN_MODE
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_UNOWN_MODE
+	call Pokedex_GetCGBLayout
 	call Pokedex_IncrementDexPointer
 	ret
 
@@ -1402,13 +1402,13 @@ Pokedex_UpdateUnownMode:
 	ld a, DEXSTATE_OPTION_SCR
 	ld [wJumptableIndex], a
 	call DelayFrame
-	call Pokedex_CheckSGB
+	call Pokedex_CheckDMG
 IF USE_COMPRESSED_POKEDEX_GFX == TRUE
 	jr nz, .decompress
 ELSE
 	jp nz, Pokedex_LoadGFX
 ENDC
-	farcall LoadSGBPokedexGFX2
+	farcall LoadDMGPokedexGFX2
 IF USE_COMPRESSED_POKEDEX_GFX == TRUE
 	jr .done
 
@@ -3273,9 +3273,9 @@ Pokedex_ApplyPrintPals:
 	call DelayFrame
 	ret
 
-Pokedex_GetSGBLayout:
+Pokedex_GetCGBLayout:
 	ld b, a
-	call GetSGBLayout
+	call GetCGBLayout
 
 Pokedex_ApplyUsualPals:
 ; This applies the palettes used for most Pokédex screens.
@@ -3370,9 +3370,9 @@ Pokedex_LoadAllGFX:
 	ld bc, $20 tiles
 	call Pokedex_InvertTiles
 
-	call Pokedex_CheckSGB
+	call Pokedex_CheckDMG
 	jr nz, .LoadCGBPokedex
-	farcall LoadSGBPokedexGFX
+	farcall LoadDMGPokedexGFX
 	call Pokedex_Enable_LCD
 	jr .LoadSlowpokePokedex
 .LoadCGBPokedex
@@ -3564,7 +3564,7 @@ Pokedex_InvertTiles:
 	call Get1bpp
 	ret
 
-Pokedex_CheckSGB:
+Pokedex_CheckDMG:
 	ldh a, [hCGB]
 	or a
 	ret nz
@@ -3641,8 +3641,8 @@ _NewPokedexEntry:
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
 	farcall LoadDexTypeIconTiles
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	ret
@@ -3684,6 +3684,6 @@ Pokedex_InitColorOption:
 	ld a, [wCurPokedexColor]
 	ld [wDexArrowCursorPosIndex], a
 	call WaitBGMap
-	ld a, SCGB_POKEDEX_SEARCH_OPTION
-	call Pokedex_GetSGBLayout
+	ld a, CGB_POKEDEX_SEARCH_OPTION
+	call Pokedex_GetCGBLayout
 	jp Pokedex_IncrementDexPointer

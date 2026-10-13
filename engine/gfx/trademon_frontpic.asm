@@ -24,8 +24,8 @@ AnimateTrademonFrontpic:
 	ld [wTempMonDVs], a
 	ld a, [wOTTrademonDVs + 1]
 	ld [wTempMonDVs + 1], a
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0
 	call DmgToCgbBGPals
 	farcall TradeAnim_ShowGetmonFrontpic

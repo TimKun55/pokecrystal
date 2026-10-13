@@ -410,8 +410,8 @@ MagnetTrain_Jumptable_FirstRunThrough:
 	ld [wTimeOfDayPal], a
 	ld a, TOWN
 	ld [wEnvironment], a
-	ld b, SCGB_MAPPALS
-	call GetSGBLayout
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
 	call UpdateTimePals
 
 	ldh a, [rBGP]

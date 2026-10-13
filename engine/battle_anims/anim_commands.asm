@@ -1180,8 +1180,8 @@ BattleAnimCmd_BeatUp:
 .done
 	pop af
 	ld [wCurPartySpecies], a
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 
 	pop af
 	ldh [rWBK], a

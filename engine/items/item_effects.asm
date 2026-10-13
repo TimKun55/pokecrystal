@@ -2373,8 +2373,8 @@ MusicPlayerEffect:
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call GSReloadPalettes
-	ld b, SCGB_MAPPALS
-	call GetSGBLayout
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
 	farcall LoadOW_BGPal7
 	call WaitBGMap2
 	farcall FadeInFromWhite

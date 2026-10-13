@@ -387,8 +387,8 @@ BuyMenu_InitGFX:
 .ok
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_BUY_MENU
-	call GetSGBLayout
+	ld b, CGB_BUY_MENU
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 ; Not graphics-related, but common to all BuyMenu_InitGFX callers
 	xor a

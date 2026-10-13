@@ -74,8 +74,8 @@ DisplayCaughtContestMonStats:
 	ld [wOptions], a
 
 	call WaitBGMap
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ret
 

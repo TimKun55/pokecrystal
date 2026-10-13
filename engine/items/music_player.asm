@@ -26,8 +26,8 @@ _MusicPlayer:
 	call .DrawMusicPlayer
 
 	call WaitBGMap
-	ld b, SCGB_MUSIC_PLAYER
-	call GetSGBLayout
+	ld b, CGB_MUSIC_PLAYER
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 
 .loop

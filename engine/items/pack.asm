@@ -1668,8 +1668,8 @@ ClearPocketList:
 
 Pack_InitColors:
 	call WaitBGMap
-	ld b, SCGB_PACKPALS
-	call GetSGBLayout
+	ld b, CGB_PACKPALS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	ret

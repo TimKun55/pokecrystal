@@ -1302,8 +1302,8 @@ SetUpMoveScreenBG:
 
 	ld hl, wPlayerHPPal
 	call SetHPPal
-	ld b, SCGB_MOVE_LIST
-	call GetSGBLayout
+	ld b, CGB_MOVE_LIST
+	call GetCGBLayout
 	hlcoord 01, 0
 	lb bc, 1, 1
 	call ClearBox
@@ -1490,8 +1490,8 @@ PlaceMoveData:
 	hlcoord 1, 15
 	predef PrintMoveDescription
 
-	ld b, SCGB_MOVE_LIST
-	call GetSGBLayout ; reload proper palettes for new Move Type and Category, and apply
+	ld b, CGB_MOVE_LIST
+	call GetCGBLayout ; reload proper palettes for new Move Type and Category, and apply
 	ld a, $1 ; done editing the screen
 	ldh [hBGMapMode], a
 	ret

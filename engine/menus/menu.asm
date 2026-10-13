@@ -442,7 +442,7 @@ _TrainerBattleInfo:
 	farcall GetEnemyMonFrontpic
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	farcall GetWeatherImage
 	ret
@@ -480,7 +480,7 @@ _BattleTypeChart:
 	farcall GetEnemyMonFrontpic
 	call CloseWindow ; restores the tiles and attrs FadeToMenu backed up
 	call WaitBGMap2 ; transfer the attrmap as well as the tilemap
-	call GetMemSGBLayout
+	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	farcall GetWeatherImage
 	ret

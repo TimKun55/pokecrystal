@@ -508,8 +508,8 @@ ENDM
 	ld bc, vBGMap1 - vBGMap0
 	ld a, ' '
 	call ByteFill
-	ld b, SCGB_SLOT_MACHINE
-	call GetSGBLayout
+	ld b, CGB_SLOT_MACHINE
+	call GetCGBLayout
 	callfar ClearSpriteAnims
 	ld hl, wSlots
 	ld bc, wSlotsDataEnd - wSlots

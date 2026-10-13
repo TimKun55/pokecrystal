@@ -17,8 +17,8 @@ SplashScreen:
 	ld a, SCREEN_HEIGHT_PX
 	ldh [hWY], a
 	call WaitBGMap
-	ld b, SCGB_GAMEFREAK_LOGO
-	call GetSGBLayout
+	ld b, CGB_GAMEFREAK_LOGO
+	call GetCGBLayout
 
 ; Draw copyright screen
 	callfar Copyright
@@ -33,8 +33,8 @@ SplashScreen:
 	call DelayFrames
 	call ClearTilemap
 
-	ld b, SCGB_GAMEFREAK_LOGO
-	call GetSGBLayout
+	ld b, CGB_GAMEFREAK_LOGO
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 
 ; Play GameFreak logo animation

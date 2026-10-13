@@ -17,8 +17,8 @@ _MemoryGame:
 	call DelayFrame
 
 	call DisableLCD
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	callfar ClearSpriteAnims
 	ld hl, MemoryGameLZ
 	ld de, vTiles2 tile $00

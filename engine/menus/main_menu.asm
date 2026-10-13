@@ -29,8 +29,8 @@ MainMenu:
 	xor a
 	ld [wDisableTextAcceleration], a
 	call ClearTilemapEtc
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	ld hl, wGameTimerPaused
 	res GAME_TIMER_COUNTING_F, [hl]

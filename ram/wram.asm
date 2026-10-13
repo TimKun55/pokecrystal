@@ -815,11 +815,11 @@ wCardFlipFaceUpCard:: db
 wDiscardPile:: ds CARDFLIP_DECK_SIZE
 
 ; beta poker game
-wBetaPokerSGBPals:: dw
+wBetaPokerPals:: dw
 	ds 1
-wBetaPokerSGBAttr:: db
-wBetaPokerSGBCol:: db
-wBetaPokerSGBRow:: db
+wBetaPokerAttr:: db
+wBetaPokerCol:: db
+wBetaPokerRow:: db
 
 NEXTU
 ; unused memory game
@@ -1590,7 +1590,7 @@ wcd8c:: ds 1
 wcd8d:: ds 11
 ENDU
 
-wDefaultSGBLayout:: db
+wDefaultCGBLayout:: db
 
 wPlayerHPPal:: db
 wEnemyHPPal:: db
@@ -1600,7 +1600,11 @@ wCurHPPal:: db
 
 	ds 7
 
-wSGBPals:: ds 48
+wPalScratch::
+; Scratch buffer. Used as a party-member index by PlacePartyHPBar and
+; CGB_ApplyPartyMenuHPPals; also (unreachably, on CGB hardware) as an
+; SGB packet buffer by the debug color picker.
+	ds 48
 
 wAttrmap::
 ; 20x18 grid of bg tile attributes for 8x8 tiles
@@ -1769,7 +1773,7 @@ wTradeDialog::
 	db
 wFrameCounter2::
 wPrinterQueueLength::
-wUnusedSGB1eColorOffset::
+wUnusedColorOffset::
 	db
 wUnusedTradeAnimPlayEvolutionMusic:: db
 

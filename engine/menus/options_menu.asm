@@ -35,8 +35,8 @@ _Option:
 	inc a
 	ldh [hBGMapMode], a
 	call WaitBGMap
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 
 .joypad_loop

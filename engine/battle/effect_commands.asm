@@ -3775,8 +3775,8 @@ BattleCommand_SleepTarget:
 	inc a
 	ld [de], a
 	call UpdateOpponentInParty
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -3827,8 +3827,8 @@ BattleCommand_PoisonTarget:
 	call PoisonOpponent
 	ld de, ANIM_PSN
 	call PlayOpponentBattleAnim
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -3914,8 +3914,8 @@ BattleCommand_Poison:
 .apply_poison
 	call AnimateCurrentMove
 	call PoisonOpponent
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -4095,8 +4095,8 @@ BattleCommand_BurnTarget:
 	call CallBattleCore
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -4170,8 +4170,8 @@ BattleCommand_FreezeTarget:
 	call CallBattleCore
 	ld de, ANIM_FRZ
 	call PlayOpponentBattleAnim
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -4214,8 +4214,8 @@ BattleCommand_ParalyzeTarget:
 	call CallBattleCore
 	ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -4959,8 +4959,8 @@ BattleCommand_Burn:
 .apply_burn
 	call AnimateCurrentMove
 	call BurnOpponent
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -6030,8 +6030,8 @@ BattleCommand_Paralyze:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 	
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -6213,8 +6213,8 @@ BattleCommand_Heal:
 	call CallBattleCore
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds
@@ -6448,8 +6448,8 @@ BattleCommand_Defrost:
 	res FRZ, [hl]
 
 .done
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call DelayFrame	
 	call UpdateBattleHuds

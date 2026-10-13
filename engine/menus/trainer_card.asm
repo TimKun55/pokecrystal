@@ -50,8 +50,8 @@ TrainerCard:
 
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_TRAINER_CARD
-	call GetSGBLayout
+	ld b, CGB_TRAINER_CARD
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ld hl, wJumptableIndex
@@ -90,8 +90,8 @@ TrainerCard_Page1_LoadGFX:
 	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
 
-	ld b, SCGB_TRAINER_CARD
-	call GetSGBLayout
+	ld b, CGB_TRAINER_CARD
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 
@@ -121,8 +121,8 @@ TrainerCard_Page2_LoadGFX:
 	call ClearSprites
 	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
-	ld b, SCGB_TRAINER_CARD_JOHTO
-	call GetSGBLayout
+	ld b, CGB_TRAINER_CARD_JOHTO
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ld de, LeaderGFX
@@ -178,8 +178,8 @@ TrainerCard_Page3_LoadGFX:
 	call ClearSprites
 	call TrainerCardSetup_ClearBottomHalf
 	call WaitBGMap
-	ld b, SCGB_TRAINER_CARD_KANTO
-	call GetSGBLayout
+	ld b, CGB_TRAINER_CARD_KANTO
+	call GetCGBLayout
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ld de, LeaderGFX2

@@ -22,8 +22,8 @@ InitClock:
 	call FadeToBlack
 	call ClearTilemap
 	call ClearSprites
-	ld b, SCGB_GENERIC
-	call GetSGBLayout
+	ld b, CGB_GENERIC
+	call GetCGBLayout
 	xor a
 	ldh [hBGMapMode], a
 	call LoadStandardFont
