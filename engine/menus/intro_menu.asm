@@ -815,8 +815,8 @@ OakText7:
 	text_end
 
 InitGender:
-	ld c, 10
-	call DelayFrames
+	ld c, 15
+	call FadeToWhite
 	call ClearTilemap
 	call WaitBGMap2
 	call SetDefaultBGPAndOBP
@@ -828,17 +828,10 @@ InitGender:
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, AreYouABoyOrAreYouAGirlText
+	ld hl, TrainerCardPhotoText
 	call PrintText
 
-	ld hl, .MenuDataHeader
-	call LoadMenuHeader
-	call WaitBGMap2
-	call VerticalMenu
-	call CloseWindow
-	ld a, [wMenuCursorY]
-	dec a
-	ld [wPlayerGender], a
+	call GenderMenu
 
 	ld c, 15
 	call FadeToWhite
@@ -861,18 +854,103 @@ InitGender:
 	jr c, InitGender
 	ret
 
-.MenuDataHeader:
-	db $40 ; flags
-	db 04, 06 ; start coords
-	db 09, 12 ; end coords
-	dw .MenuData2
-	db 1 ; default option
+GenderMenu:
+; Both portraits are on screen at once. The cursor goes above the selected
+; one, and that portrait keeps its palette while the other is faded halfway
+; towards the background colour, so the cursor fades along with it.
+	ld a, ' '
+	ldcoord_a 5, 3
+	ldcoord_a 13, 3
 
-.MenuData2: 
-	db $a1 ; flags
-	db 2 ; items
-	db "Boy@"
-	db "Girl@"
+	ldh a, [hCGB]
+	and a
+	jr nz, .cgb
+	call SetDefaultBGPAndOBP
+	jr .restore_done
+.cgb
+	farcall ApplyPals
+.restore_done
+	call .FadeUnselectedPortrait
+
+	ld a, [wPlayerGender]
+	and a
+	jr nz, .girl
+	ld a, '▼'
+	ldcoord_a 5, 3
+	jr .ready
+.girl
+	ld a, '▼'
+	ldcoord_a 13, 3
+.ready
+	ld b, 1 ; flush the tilemap and request a CGB palette update
+	newfarcall _SafeCopyTilemapAtOnce
+
+.loop
+	call DelayFrame
+	call GetJoypad
+	ldh a, [hJoyPressed]
+	bit B_PAD_A, a
+	ret nz
+	bit B_PAD_RIGHT, a
+	jr nz, .d_right
+	bit B_PAD_LEFT, a
+	jr z, .loop
+
+	ld a, [wPlayerGender]
+	and a ; the selection can't go any further left
+	jr z, .got_gender
+	dec a
+
+	jr .got_gender
+
+.d_right
+	ld a, [wPlayerGender]
+	cp PLAYER_FEMALE ; nor any further right
+	jr z, .got_gender
+	inc a
+
+.got_gender
+	ld [wPlayerGender], a
+	jp GenderMenu
+
+.FadeUnselectedPortrait:
+	ldh a, [hCGB]
+	and a
+	ret z
+
+	ld a, [wPlayerGender]
+	and a
+	jr z, .fade_girl
+
+	ld hl, wBGPals2 palette 0 + 2 ; girl selected, so fade the boy
+	jr .fade
+
+.fade_girl
+	ld hl, wBGPals2 palette 2 + 2 ; boy selected, so fade the girl
+
+.fade
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals2)
+	ldh [rWBK], a
+	ld d, 3 ; colours 1 to 3; colour 0 is already white and is left alone
+.transparency_loop
+	ld a, [hli]
+	ld c, a
+	ld a, [hld]
+	ld b, a
+	push hl ; farcall clobbers hl (it holds the target address)
+	callfar ApplyWhiteTransparency
+	pop hl
+	ld a, c
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	dec d
+	jr nz, .transparency_loop
+	pop af
+	ldh [rWBK], a
+	ret
 
 TrainerCardPhotoText:
 	; Which photo is on your Trainer Card?

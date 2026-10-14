@@ -179,6 +179,13 @@ DEF PLAYERSPRITESETUP_RESET_ACTION_F    EQU 7
 ; wPlayerGender::
 DEF PLAYERGENDER_FEMALE_F EQU 0
 
+; wPlayerGender is an index into the two portraits shown at the start of a
+; new game. Bit 0 doubles as the female flag throughout the rest of the game.
+	const_def
+	const PLAYER_MALE   ; 0
+	const PLAYER_FEMALE ; 1
+DEF NUM_PLAYER_GENDERS EQU const_value
+
 ; wMapStatus::
 	const_def
 	const MAPSTATUS_START  ; 0

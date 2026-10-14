@@ -664,10 +664,10 @@ _PackEmptyText::
 	text_start
 	done
 
-_AreYouABoyOrAreYouAGirlText::
+_TrainerCardPhotoText::
 	ntag " Prof.Oak "
-	text "Are you a boy?"
-	line "Or are you a girl?"
+	text "Which photo is on"
+	line "your Trainer Card?"
 	done
 
 _SoThisIsYouText::

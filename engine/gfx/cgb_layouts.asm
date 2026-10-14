@@ -1766,30 +1766,30 @@ _CGB_IntroPals:
 	ret
 
 _CGB_IntroGenderPals:
-	ld de, wBGPals1
+	ld de, wBGPals1 palette 0
 	xor a ; ETHAN
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
 	ld hl, IntroGradientPalette
-	ld de, wBGPals1 palette 2
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
+
+	ld a, FALKNER ; KRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
 
 	call WipeAttrmap
 
 	hlcoord 0, 0, wAttrmap
 	lb bc, 3, 20
-	ld a, $2
+	ld a, $1
 	call FillBoxWithByte
 
-	hlcoord 13, 4, wAttrmap
-	lb bc, 8, 5
-	ld a, $1
+	hlcoord 11, 3, wAttrmap ; Kris' side
+	lb bc, 8, 5 ; 8 tall to count the cursor
+	ld a, $2
 	call FillBoxWithByte
 
 	call ApplyAttrmap

@@ -593,6 +593,23 @@ LoadPalette_White_Col1_Col2_Black:
 	ldh [rWBK], a
 	ret
 
+ApplyWhiteTransparency:
+; Blend the BGR555 colour in bc halfway towards white (31, 31, 31), so each
+; channel becomes (channel >> 1) + 16.
+	res 7, b ; clear the unused 16th colour bit
+	res 2, b ; and blue's LSB, so the shifts can't bleed between channels
+	ld a, c
+	and LOW(palred 30 + palgreen 30 + palblue 30) ; ditto for red and green
+	srl b
+	rra ; the carry holds green's LSB, which belongs back at the top of a
+	add LOW(palred 16 + palgreen 16 + palblue 16)
+	ld c, a
+	adc HIGH(palred 16 + palgreen 16 + palblue 16)
+	add b ; fold the low byte's carry back into the high byte
+	sub c
+	ld b, a
+	ret
+
 FillBoxCGB:
 .row
 	push bc
