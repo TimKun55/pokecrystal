@@ -7,6 +7,7 @@ LoadSpecialMapPalette:
 	jp z, .darkness
 
 .not_dark
+	ld a, [wMapGroup]
     cp GROUP_OLIVINE_POKECENTER_1F
     jr nz, .continue1
     ld a, [wMapNumber]
