@@ -245,7 +245,7 @@ OlivineCitySignText:
 	done
 
 OlivineCityPortSignText:
-	text "Olivin Port"
+	text "Olivine Port"
 	line "Fast Ship Pier"
 	done
 
