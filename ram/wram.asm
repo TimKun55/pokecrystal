@@ -639,35 +639,13 @@ wDebugDarkTileColor::  ds 2
 wDebugBlackTileColor:: ds 2
 
 NEXTU
-	ds NAME_LENGTH_JAPANESE - 1 ; unused
-UnusedMobileMon::     ds 52 ; unused mobile party struct (was party_struct)
-UnusedMobileMonOT::   ds NAME_LENGTH_JAPANESE - 1 ; unused
-UnusedMobileMonNick:: ds NAME_LENGTH_JAPANESE - 1 ; unused
-UnusedMobileMonMail:: ds 58 ; unused mobile mail struct (was mailmsg_jp)
-
-NEXTU
-UnusedMobileTradeOffer:: ds 163 ; was the mobile trade-offer struct
-NEXTU
-wUnknownGender::     db
-wUnknownSpecies::    db
-wUnknownReqGender::  db
-wUnknownReqSpecies:: db
-wUnknownMonSender::  ds NAME_LENGTH_JAPANESE - 1
-wUnknownMon::        party_struct wUnknownMon
-wUnknownMonOT::      ds NAME_LENGTH_JAPANESE - 1
-wUnknownMonNick::    ds NAME_LENGTH_JAPANESE - 1
-wUnknownMonMail::    mailmsg_jp wUnknownMonMail
-
-NEXTU
-wc608:: ds 7
-wc60f:: ds 9
-wc618:: ds 48
-wc648:: ds 2
-wc64a:: ds 62
-wc688:: ds 2
-wc68a:: ds 15
-wc699:: ds 15
-wc6a8:: ds 40
+; Collapsed from: UnusedMobileMon, UnusedMobileMonOT, UnusedMobileMonNick,
+; UnusedMobileMonMail (mobile party struct), UnusedMobileTradeOffer,
+; wUnknownGender, wUnknownSpecies, wUnknownReqGender, wUnknownReqSpecies,
+; wUnknownMonSender, wUnknownMon, wUnknownMonOT, wUnknownMonNick,
+; wUnknownMonMail, wc608, wc60f, wc618, wc648, wc64a, wc688, wc68a, wc699, wc6a8
+; 200 bytes preserves this union's original size.
+	ds 200
 ENDU
 
 ; This union spans 280 bytes.
@@ -1410,8 +1388,8 @@ wCreditsPos:: dw
 wCreditsTimer:: db
 
 NEXTU
-; mobile data (unused)
-UnusedMobileMonPointers:: ds 10 ; was the 5 mobile mon pointers
+; Collapsed from: UnusedMobileMonPointers (mobile mon pointers)
+	ds 10
 
 NEXTU
 ; more mobile data
@@ -1461,10 +1439,9 @@ wcd41:: ds 1
 wcd42:: ds 1
 wcd43:: ds 1
 
-; some sort of timer in link battles
-wMobileInactivityTimerMinutes:: db ; mins
-wMobileInactivityTimerSeconds:: db ; secs
-wMobileInactivityTimerFrames:: db ; frames
+; Collapsed from: wMobileInactivityTimerMinutes, wMobileInactivityTimerSeconds,
+; wMobileInactivityTimerFrames (a timer used in link battles)
+	ds 3
 wcd47:: ds 1
 
 	ds 1
@@ -2400,7 +2377,6 @@ wMedicinePocketScrollPosition:: db
 wSwitchMon::
 wSwitchItem::
 wSwappingMove::
-wd0e3:: ; mobile
 	db
 
 wMenuScrollPosition:: ds 4
@@ -2845,8 +2821,7 @@ wBreedingCompatibility::
 wMoveGrammar::
 wApplyStatLevelMultipliersToEnemy::
 wUsePPUp::
-wd265:: ; mobile
-	db
+	ds 1 ; Collapsed from: wd265 (mobile)
 
 wFailedToFlee:: db
 wNumFleeAttempts:: db
@@ -2886,8 +2861,7 @@ wLinkReceivedPartyEnd:: db
 NEXTU
 wPokedexShowPointerAddr:: dw
 wPokedexShowPointerBank:: db
-	ds 3
-wd271:: dw ; mobile
+	ds 5 ; Collapsed from: wd271 (mobile)
 
 NEXTU
 wUnusedEggHatchFlag:: db
@@ -2943,7 +2917,6 @@ wOtherTrainerType:: db
 wTrainerGroupBank:: db
 ;	ds 2
 
-wd430:: ; mobile
 wBattleAction:: db
 
 wLinkBattleSentAction:: db
@@ -3283,8 +3256,7 @@ wVermilionPortSceneID::                           db
 wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
-wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
+	ds 2 ; Collapsed from: wMobileTradeRoomSceneID, wMobileBattleRoomSceneID
 wAviculturalSociety1FSceneID::                    db
 wWhirlIslandLugiaChamberSceneID::                 db
 wTinTowerRoofSceneID::                            db

@@ -78,7 +78,6 @@ WritePartyMenuTilemap:
 	dw PlacePartyMonTMHMCompatibility
 	dw PlacePartyMonEvoStoneCompatibility
 	dw PlacePartyMonGender
-	dw PlacePartyMonMobileBattleSelection
 
 PlacePartyNicknames:
 	hlcoord 3, 1
@@ -543,83 +542,6 @@ PlacePartyMonGender:
 	dec c
 	jr nz, .loop
 	ret
-
-PlacePartyMonMobileBattleSelection:
-	ld a, [wPartyCount]
-	and a
-	ret z
-	ld c, a
-	ld b, 0
-	hlcoord 12, 1
-.loop
-	push bc
-	push hl
-	ld de, .String_Sanka_Shinai
-	call PlaceString
-	pop hl
-	ld de, 2 * SCREEN_WIDTH
-	add hl, de
-	pop bc
-	inc b
-	dec c
-	jr nz, .loop
-	ld a, l
-	ld e, MON_NAME_LENGTH
-	sub e
-	ld l, a
-	ld a, h
-	sbc $0
-	ld h, a
-	ld de, .String_Kettei_Yameru
-	call PlaceString
-	ld b, $3
-	ld c, $0
-	ld hl, wd002
-	ld a, [hl]
-.loop2
-	push hl
-	push bc
-	hlcoord 12, 1
-.loop3
-	and a
-	jr z, .done
-	ld de, 2 * SCREEN_WIDTH
-	add hl, de
-	dec a
-	jr .loop3
-
-.done
-	ld de, .String_Banme
-	push hl
-	call PlaceString
-	pop hl
-	pop bc
-	push bc
-	push hl
-	ld a, c
-	ld hl, .Strings_1_2_3
-	call GetNthString
-	ld d, h
-	ld e, l
-	pop hl
-	call PlaceString
-	pop bc
-	pop hl
-	inc hl
-	ld a, [hl]
-	inc c
-	dec b
-	ret z
-	jr .loop2
-
-.String_Banme:
-	db "　ばんめ　　@" ; Place
-.String_Sanka_Shinai:
-	db "さんかしない@" ; Cancel
-.String_Kettei_Yameru:
-	db "けってい　　やめる@" ; Quit
-.Strings_1_2_3:
-	db "１@", "２@", "３@" ; 1st, 2nd, 3rd
 
 PartyMenuCheckEgg:
 	ld a, LOW(wPartySpecies)

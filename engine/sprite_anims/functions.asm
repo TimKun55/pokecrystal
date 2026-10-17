@@ -35,8 +35,6 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_FlyFrom
 	dw SpriteAnimFunc_FlyLeaf
 	dw SpriteAnimFunc_FlyTo
-	dw SpriteAnimFunc_MobileTradeSentPulse
-	dw SpriteAnimFunc_MobileTradeOTPulse
 	dw SpriteAnimFunc_IntroSuicune
 	dw SpriteAnimFunc_IntroPichuWooper
 	dw SpriteAnimFunc_Celebi
@@ -523,12 +521,6 @@ SpriteAnimFunc_FlyTo:
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret
-
-SpriteAnimFunc_MobileTradeSentPulse:
-	ret
-
-SpriteAnimFunc_MobileTradeOTPulse:
 	ret
 
 SpriteAnimFunc_IntroSuicune:

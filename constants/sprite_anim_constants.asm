@@ -61,25 +61,19 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_EGG_HATCH                 ; 17
 	const SPRITE_ANIM_OBJ_BLUE_WALK                 ; 18
 	const SPRITE_ANIM_OBJ_MAGNET_TRAIN_BLUE         ; 19
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_SENT_BALL    ; 1a
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_OT_BALL      ; 1b
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_CABLE_BULGE  ; 1c
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_SENT_PULSE   ; 1d
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_OT_PULSE     ; 1e
-	const SPRITE_ANIM_OBJ_MOBILE_TRADE_PING         ; 1f
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE             ; 20
-	const SPRITE_ANIM_OBJ_INTRO_PICHU               ; 21
-	const SPRITE_ANIM_OBJ_INTRO_WOOPER              ; 22
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN               ; 23
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 24
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 25
-	const SPRITE_ANIM_OBJ_CELEBI                    ; 26
-	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 27
-	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 28
-	const SPRITE_ANIM_OBJ_PC_MODE                   ; 29
-	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 2a
-	const SPRITE_ANIM_OBJ_PC_PACK                   ; 2b
-	const SPRITE_ANIM_OBJ_SLOTS_COVER               ; 2c
+	const SPRITE_ANIM_OBJ_INTRO_SUICUNE             ; 1a
+	const SPRITE_ANIM_OBJ_INTRO_PICHU               ; 1b
+	const SPRITE_ANIM_OBJ_INTRO_WOOPER              ; 1c
+	const SPRITE_ANIM_OBJ_INTRO_UNOWN               ; 1d
+	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 1e
+	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 1f
+	const SPRITE_ANIM_OBJ_CELEBI                    ; 20
+	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 21
+	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 22
+	const SPRITE_ANIM_OBJ_PC_MODE                   ; 23
+	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 24
+	const SPRITE_ANIM_OBJ_PC_PACK                   ; 25
+	const SPRITE_ANIM_OBJ_SLOTS_COVER               ; 26
 DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 
 ; DoSpriteAnimFrame.Jumptable indexes (see engine/sprite_anims/functions.asm)
@@ -105,19 +99,17 @@ DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 	const SPRITE_ANIM_FUNC_FLY_FROM                  ; 12
 	const SPRITE_ANIM_FUNC_FLY_LEAF                  ; 13
 	const SPRITE_ANIM_FUNC_FLY_TO                    ; 14
-	const SPRITE_ANIM_FUNC_MOBILE_TRADE_SENT_PULSE   ; 15
-	const SPRITE_ANIM_FUNC_MOBILE_TRADE_OT_PULSE     ; 16
-	const SPRITE_ANIM_FUNC_INTRO_SUICUNE             ; 17
-	const SPRITE_ANIM_FUNC_INTRO_PICHU_WOOPER        ; 18
-	const SPRITE_ANIM_FUNC_CELEBI                    ; 19
-	const SPRITE_ANIM_FUNC_INTRO_UNOWN               ; 1a
-	const SPRITE_ANIM_FUNC_INTRO_UNOWN_F             ; 1b
-	const SPRITE_ANIM_FUNC_INTRO_SUICUNE_AWAY        ; 1c
-	const SPRITE_ANIM_FUNC_PC_CURSOR                 ; 1d
-	const SPRITE_ANIM_FUNC_PC_QUICK                  ; 1e
-	const SPRITE_ANIM_FUNC_PC_MODE                   ; 1f
-	const SPRITE_ANIM_FUNC_PC_PACK                   ; 20
-	const SPRITE_ANIM_FUNC_COVER                     ; 21
+	const SPRITE_ANIM_FUNC_INTRO_SUICUNE             ; 15
+	const SPRITE_ANIM_FUNC_INTRO_PICHU_WOOPER        ; 16
+	const SPRITE_ANIM_FUNC_CELEBI                    ; 17
+	const SPRITE_ANIM_FUNC_INTRO_UNOWN               ; 18
+	const SPRITE_ANIM_FUNC_INTRO_UNOWN_F             ; 19
+	const SPRITE_ANIM_FUNC_INTRO_SUICUNE_AWAY        ; 1a
+	const SPRITE_ANIM_FUNC_PC_CURSOR                 ; 1b
+	const SPRITE_ANIM_FUNC_PC_QUICK                  ; 1c
+	const SPRITE_ANIM_FUNC_PC_MODE                   ; 1d
+	const SPRITE_ANIM_FUNC_PC_PACK                   ; 1e
+	const SPRITE_ANIM_FUNC_COVER                     ; 1f
 DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
@@ -158,33 +150,27 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_HEADBUTT                  ; 21
 	const SPRITE_ANIM_FRAMESET_BLUE_WALK                 ; 22
 	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN_BLUE         ; 23
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_SENT_BALL    ; 24
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_OT_BALL      ; 25
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_CABLE_BULGE  ; 26
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_SENT_PULSE   ; 27
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_OT_PULSE     ; 28
-	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_PING         ; 29
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE             ; 2a
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2           ; 2b
-	const SPRITE_ANIM_FRAMESET_INTRO_PICHU               ; 2c
-	const SPRITE_ANIM_FRAMESET_INTRO_WOOPER              ; 2d
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1             ; 2e
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2             ; 2f
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3             ; 30
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4             ; 31
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2           ; 32
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_AWAY        ; 33
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 34
-	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 35
-	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 36
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 37
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 38
-	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 39
-	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 3a
-	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 3b
-	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 3c
-	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_WHITE         ; 3d
-	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_GREEN         ; 3e
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE             ; 24
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2           ; 25
+	const SPRITE_ANIM_FRAMESET_INTRO_PICHU               ; 26
+	const SPRITE_ANIM_FRAMESET_INTRO_WOOPER              ; 27
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1             ; 28
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2             ; 29
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3             ; 2a
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4             ; 2b
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2           ; 2c
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_AWAY        ; 2d
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 2e
+	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 2f
+	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 30
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 31
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 32
+	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 33
+	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 34
+	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 35
+	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 36
+	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_WHITE         ; 37
+	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_GREEN         ; 38
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
@@ -245,53 +231,46 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_BLUE_WALK_2                 ; 35
 	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_1         ; 36
 	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_2         ; 37
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_CABLE_BULGE_1  ; 38
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_CABLE_BULGE_2  ; 39
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_1         ; 3a
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_2         ; 3b
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_3         ; 3c
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_SENT_PULSE     ; 3d
-	const SPRITE_ANIM_OAMSET_MOBILE_TRADE_OT_PULSE       ; 3e
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1             ; 3f
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2             ; 40
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3             ; 41
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4             ; 42
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_1               ; 43
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_2               ; 44
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_3               ; 45
-	const SPRITE_ANIM_OAMSET_INTRO_WOOPER                ; 46
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_1               ; 47
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_2               ; 48
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_3               ; 49
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1           ; 4a
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2           ; 4b
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3           ; 4c
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4           ; 4d
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5           ; 4e
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY          ; 4f
-	const SPRITE_ANIM_OAMSET_CELEBI_1                    ; 50
-	const SPRITE_ANIM_OAMSET_CELEBI_2                    ; 51
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_1            ; 52
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_2            ; 53
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_3            ; 54
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_4            ; 55
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_5            ; 56
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_6            ; 57
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_7            ; 58
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_8            ; 59
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9            ; 5a
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10           ; 5b
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11           ; 5c
-	const SPRITE_ANIM_OAMSET_PARTY_MON_1                 ; 5d
-	const SPRITE_ANIM_OAMSET_PARTY_MON_2                 ; 5e
-	const SPRITE_ANIM_OAMSET_PC_CURSOR                   ; 5f
-	const SPRITE_ANIM_OAMSET_PC_CURSOR_ITEM              ; 60
-	const SPRITE_ANIM_OAMSET_PC_QUICK                    ; 61
-	const SPRITE_ANIM_OAMSET_PC_MODE                     ; 62
-	const SPRITE_ANIM_OAMSET_PC_MODE2                    ; 63
-	const SPRITE_ANIM_OAMSET_PC_PACK                     ; 64
-	const SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE           ; 65
-	const SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN           ; 66
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1             ; 38
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2             ; 39
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3             ; 3a
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4             ; 3b
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_1               ; 3c
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_2               ; 3d
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_3               ; 3e
+	const SPRITE_ANIM_OAMSET_INTRO_WOOPER                ; 3f
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_1               ; 40
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_2               ; 41
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_3               ; 42
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1           ; 43
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2           ; 44
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3           ; 45
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4           ; 46
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5           ; 47
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY          ; 48
+	const SPRITE_ANIM_OAMSET_CELEBI_1                    ; 49
+	const SPRITE_ANIM_OAMSET_CELEBI_2                    ; 4a
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_1            ; 4b
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_2            ; 4c
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_3            ; 4d
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_4            ; 4e
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_5            ; 4f
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_6            ; 50
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_7            ; 51
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_8            ; 52
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9            ; 53
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10           ; 54
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11           ; 55
+	const SPRITE_ANIM_OAMSET_PARTY_MON_1                 ; 56
+	const SPRITE_ANIM_OAMSET_PARTY_MON_2                 ; 57
+	const SPRITE_ANIM_OAMSET_PC_CURSOR                   ; 58
+	const SPRITE_ANIM_OAMSET_PC_CURSOR_ITEM              ; 59
+	const SPRITE_ANIM_OAMSET_PC_QUICK                    ; 5a
+	const SPRITE_ANIM_OAMSET_PC_MODE                     ; 5b
+	const SPRITE_ANIM_OAMSET_PC_MODE2                    ; 5c
+	const SPRITE_ANIM_OAMSET_PC_PACK                     ; 5d
+	const SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE           ; 5e
+	const SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN           ; 5f
 DEF NUM_SPRITE_ANIM_OAMSETS EQU const_value
 
 assert NUM_SPRITE_ANIM_OAMSETS <= FIRST_OAM_CMD, \

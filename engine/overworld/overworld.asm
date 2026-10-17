@@ -15,28 +15,6 @@ _UpdatePlayerSprite::
 	call GetUsedSprite
 	ret
 
-_RefreshSprites: ; mobile
-	ld hl, wSpriteFlags
-	ld a, [hl]
-	push af
-	res 7, [hl]
-	set 6, [hl]
-	call LoadUsedSpritesGFX
-	pop af
-	ld [wSpriteFlags], a
-	ret
-
-_ClearSprites: ; mobile
-	ld hl, wSpriteFlags
-	ld a, [hl]
-	push af
-	set 7, [hl]
-	res 6, [hl]
-	call LoadUsedSpritesGFX
-	pop af
-	ld [wSpriteFlags], a
-	ret
-
 GetPlayerSprite:
 ; Get Ethan or Kris's sprite.
 	ld hl, EthanStateSprites

@@ -1,7 +1,5 @@
 ; Link battle action exchange.
-;
 ; Moved here from mobile/mobile_40.asm.
-; The mobile-adapter-specific branch has been stripped out.
 
 _LinkBattleSendReceiveAction:
 	call .StageForSend
