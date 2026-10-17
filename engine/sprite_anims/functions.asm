@@ -35,7 +35,6 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_FlyFrom
 	dw SpriteAnimFunc_FlyLeaf
 	dw SpriteAnimFunc_FlyTo
-	dw SpriteAnimFunc_EZChatCursor
 	dw SpriteAnimFunc_MobileTradeSentPulse
 	dw SpriteAnimFunc_MobileTradeOTPulse
 	dw SpriteAnimFunc_IntroSuicune
@@ -527,11 +526,9 @@ SpriteAnimFunc_FlyTo:
 	ret
 
 SpriteAnimFunc_MobileTradeSentPulse:
-	farcall MobileTradeAnim_AnimateSentPulse
 	ret
 
 SpriteAnimFunc_MobileTradeOTPulse:
-	farcall MobileTradeAnim_AnimateOTPulse
 	ret
 
 SpriteAnimFunc_IntroSuicune:
@@ -621,10 +618,6 @@ SpriteAnimFunc_IntroSuicuneAway:
 	ld a, [hl]
 	add 16
 	ld [hl], a
-	ret
-
-SpriteAnimFunc_EZChatCursor:
-	farcall AnimateEZChatCursor
 	ret
 
 SpriteAnimFunc_Celebi:

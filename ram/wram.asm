@@ -219,34 +219,20 @@ wSpriteAnimationStructsEnd::
 
 NEXTU
 ; mobile data
-wMobileWRAM::
-wMobileErrorCodeBuffer:: ds 3
-wc303:: ds 2
-wc305:: ds 1
-wc306:: ds 1
-wc307:: ds 1
-wc308:: ds 1
-wc309:: ds 1
-wc30a:: ds 1
-wc30b:: ds 1
-wc30c:: ds 1
-wc30d:: ds 1
-wc30e:: ds 1
-wc30f:: ds 1
-wc310:: ds 1
-wc311:: ds 1
-wc312:: ds 1
-wc313:: ds 1
-wc314:: ds 5
-wc319:: db
-wc31a:: db
-wc31b:: db
-wc31c:: db
-wc31d:: db
-wc31e:: db
-wc31f:: db
-wc320:: ds 38
-wc346:: ds 102
+; Collapsed from: UnusedMobileErrorBuffer, wc303, wc305, wc306, wc307, wc308,
+; wc309, wc30a, wc30b, wc30c, wc30d, wc30e, wc30f, wc310, wc311, wc312,
+; wc313, wc314, wc319:
+; 3 (error buffer) + 2 (wc303) + 15 (wc305-wc313) + 5 (wc314) + 1 (wc319) = 26 bytes
+UnusedMobileErrorBuffer:: ds 26
+; Battle Tower room menu state (see engine/events/battle_tower/battle_tower.asm)
+wc31a:: db ; jumptable index
+wc31b:: db ; message pointer (low)
+wc31c:: db ; message pointer (high)
+wc31d:: db ; text cursor position (low)
+wc31e:: db ; text cursor position (high)
+wc31f:: db ; delay counter
+wc320:: ds 38 ; first half of a 140-byte buffer (wc320-wc3ab, filled 140 bytes from here)
+wc346:: ds 102 ; second half of the same buffer
 wc3ac:: ds 8
 ENDU
 
@@ -275,29 +261,12 @@ wSpriteAnimDataEnd::
 wCurIconForm:: db
 	ds 10
 
-; mobile data
-wc3cc:: ds 1
-wEmailAddress:: ds MOBILE_EMAIL_LENGTH
-	ds 1
-wc3ec:: ds 1
-wc3ed:: ds 1
-wc3ee:: ds 1
-wc3ef:: ds 1
-wc3f0:: ds 1
-wc3f1:: ds 1
-wc3f2:: ds 1
-wc3f3:: ds 1
-wc3f4:: ds 1
-wc3f5:: ds 1
-wc3f6:: ds 1
-wc3f7:: ds 1
-wc3f8:: ds 1
-wc3f9:: ds 1
-wc3fa:: ds 1
-wc3fb:: ds 1
-wc3fc:: ds 1
-	ds 3
-wMobileWRAMEnd::
+; mobile data (unused)
+; Collapsed from: UnusedMobileEmail, wc3ec, wc3ed, wc3ee, wc3ef, wc3f0,
+; wc3f1, wc3f2, wc3f3, wc3f4, wc3f5, wc3f6, wc3f7, wc3f8, wc3f9, wc3fa,
+; wc3fb, wc3fc, and 3 spare bytes:
+; 32 (email buffer) + 17 (wc3ec-wc3fc) + 3 (spare) = 52 bytes
+UnusedMobileEmail:: ds 52 ; was wc3cc + wEmailAddress + 1 spare
 
 
 SECTION "Sprites", WRAM0
@@ -625,7 +594,7 @@ wOTPatchLists:: ds SERIAL_PATCH_LIST_LENGTH
 SECTION UNION "Miscellaneous", WRAM0
 
 ; mobile
-wMobileTransferData:: ds 480
+	ds 480 ; mobile transfer data (unused)
 
 
 SECTION UNION "Miscellaneous", WRAM0
@@ -670,26 +639,14 @@ wDebugDarkTileColor::  ds 2
 wDebugBlackTileColor:: ds 2
 
 NEXTU
-wMobileMonSender:: ds NAME_LENGTH_JAPANESE - 1
-wMobileMon::       party_struct wMobileMon
-wMobileMonOT::     ds NAME_LENGTH_JAPANESE - 1
-wMobileMonNick::   ds NAME_LENGTH_JAPANESE - 1
-wMobileMonMail::   mailmsg_jp wMobileMonMail
+	ds NAME_LENGTH_JAPANESE - 1 ; unused
+UnusedMobileMon::     ds 52 ; unused mobile party struct (was party_struct)
+UnusedMobileMonOT::   ds NAME_LENGTH_JAPANESE - 1 ; unused
+UnusedMobileMonNick:: ds NAME_LENGTH_JAPANESE - 1 ; unused
+UnusedMobileMonMail:: ds 58 ; unused mobile mail struct (was mailmsg_jp)
 
 NEXTU
-wOfferEmail::      ds MOBILE_EMAIL_LENGTH
-wOfferTrainerID::  dw
-wOfferSecretID::   dw
-wOfferGender::     db
-wOfferSpecies::    db
-wOfferReqGender::  db
-wOfferReqSpecies:: db
-wOfferMonSender::  ds NAME_LENGTH_JAPANESE - 1
-wOfferMon::        party_struct wOfferMon
-wOfferMonOT::      ds NAME_LENGTH_JAPANESE - 1
-wOfferMonNick::    ds NAME_LENGTH_JAPANESE - 1
-wOfferMonMail::    mailmsg_jp wOfferMonMail
-
+UnusedMobileTradeOffer:: ds 163 ; was the mobile trade-offer struct
 NEXTU
 wUnknownGender::     db
 wUnknownSpecies::    db
@@ -1272,17 +1229,17 @@ wc80c:: dw
 wc80e:: db
 wc80f:: db
 wc810:: dw
-wMobileSDK_PacketChecksum:: dw
+	dw ; unused
 wc814:: db
 wc815:: db
 wc816:: dw
-wMobileSDK_AdapterType:: db
+	db ; unused
 wc819:: db
 wc81a:: db
 wc81b:: db
 wc81c:: db
 wc81d:: db
-wMobileSDK_SendCommandID:: db
+	db ; unused
 wc81f:: db
 wc820:: db
 wc821:: db
@@ -1351,7 +1308,7 @@ wc983:: dw
 wc985:: db
 wc986:: db
 wc987:: db
-wMobileAPIIndex:: db
+	db ; unused
 wc989:: db
 wc98a:: db
 wc98b:: db
@@ -1377,12 +1334,12 @@ wc9b2:: ds 3
 wc9b5:: db
 wc9b6:: ds 121
 
-wMobileSDK_ReceivePacketBufferAlt:: ds 11
-wMobileSDK_ReceivedBytes:: dw
-wMobileSDK_ReceivePacketBuffer:: ds 250
+	ds 11 ; unused
+	dw ; unused
+	ds 250 ; unused
 wcb36:: db
 	ds 16
-wMobileSDK_PacketBuffer:: ds 281
+	ds 281 ; unused
 wcc60:: ds 1
 wcc61:: ds 1
 wcc62:: ds 2
@@ -1453,12 +1410,8 @@ wCreditsPos:: dw
 wCreditsTimer:: db
 
 NEXTU
-; mobile data
-wMobileMonSpeciesPointer:: dw
-wMobileMonStructPointer:: dw
-wMobileMonOTPointer:: dw
-wMobileMonNicknamePointer:: dw
-wMobileMonMailPointer:: dw
+; mobile data (unused)
+UnusedMobileMonPointers:: ds 10 ; was the 5 mobile mon pointers
 
 NEXTU
 ; more mobile data
@@ -1467,14 +1420,12 @@ wcd21:: ds 1
 wcd22:: ds 1
 wcd23:: ds 1
 wcd24:: ds 1
-wMobileCommsJumptableIndex:: ds 1
+	ds 1 ; unused
 wcd26:: ds 1
 wcd27:: ds 1
 wcd28:: ds 1
 wcd29:: ds 1
 
-wMobileMonIndex::
-wMobileMonMiscSpecies::
 wcd2a:: db
 
 UNION
@@ -1535,7 +1486,6 @@ wcd50:: ds 1
 wcd51:: ds 1
 wcd52:: ds 1
 
-wMobileOpponentBattleMessage:: ; ds 12
 wcd53:: ds 1
 wcd54:: ds 1
 wcd55:: ds 1
@@ -1573,7 +1523,7 @@ wcd74:: ds 1
 wOTMonSelection:: ds 2 ; ds BATTLETOWER_PARTY_LENGTH
 wcd77:: ds 1
 
-wMobileCrashCheckPointer:: dw
+	dw ; unused
 wcd7a:: ds 2
 wcd7c:: ds 3
 wcd7f:: ds 1
@@ -2134,9 +2084,9 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; mobile participant nicknames
 	ds 4
-wMobileParticipant1Nickname:: ds NAME_LENGTH_JAPANESE
-wMobileParticipant2Nickname:: ds NAME_LENGTH_JAPANESE
-wMobileParticipant3Nickname:: ds NAME_LENGTH_JAPANESE
+	ds NAME_LENGTH_JAPANESE ; unused
+	ds NAME_LENGTH_JAPANESE ; unused
+	ds NAME_LENGTH_JAPANESE ; unused
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -3449,7 +3399,7 @@ wUnusedTwoDayTimerOn:: db
 wUnusedTwoDayTimer:: db
 wUnusedTwoDayTimerStartDate:: db
 	ds 4
-wMobileOrCable_LastSelection:: db
+	db ; unused
 wdc41:: ds 1
 wdc42:: ds 8
 wBuenasPassword:: db
@@ -3722,11 +3672,6 @@ w3_de00:: ds $200
 ENDU
 
 
-SECTION "News Script RAM", WRAMX
-
-w4_d000:: ds $1000
-
-
 SECTION "Surrounding Data", WRAMX
 
 wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
@@ -3855,17 +3800,11 @@ wSurfWaveBGEffectEnd::
 ENDU
 
 
-SECTION "Mobile RAM", WRAMX
+SECTION "WRAM 5", WRAMX
 
-w5_d800:: ds $200
-w5_da00:: ds $200
+	ds $400 ; unused
 w5_dc00:: ds $d
-w5_dc0d:: ds 4
-w5_dc11:: ds 9
-w5_MobileOpponentBattleMessages:: ds $c
-w5_MobileOpponentBattleStartMessage:: ds $c
-w5_MobileOpponentBattleWinMessage:: ds $c
-w5_MobileOpponentBattleLossMessage:: ds $c
+	ds $3d ; unused (was the mobile opponent battle messages)
 
 
 SECTION "Scratch RAM", WRAMX

@@ -1,3 +1,7 @@
+GiveOddEgg:
+	farcall _GiveOddEgg
+	ret
+
 _GiveOddEgg:
 	; Figure out which egg to give.
 
@@ -56,41 +60,77 @@ _GiveOddEgg:
 	ld hl, wNumItems
 	call TossItem
 
-	; load species in wMobileMonSpecies
-	ld a, EGG
-	ld [wMobileMonMiscSpecies], a
-
-	; load pointer to (wMobileMonSpecies - 1) in wMobileMonSpeciesPointer
-	ld a, LOW(wMobileMonMiscSpecies - 1)
-	ld [wMobileMonSpeciesPointer], a
-	ld a, HIGH(wMobileMonMiscSpecies - 1)
-	ld [wMobileMonSpeciesPointer + 1], a
-	; load pointer to wOddEgg in wMobileMonStructPointer
-	ld a, LOW(wOddEgg)
-	ld [wMobileMonStructPointer], a
-	ld a, HIGH(wOddEgg)
-	ld [wMobileMonStructPointer + 1], a
-
 	; load Odd Egg Name in wTempOddEggNickname
 	ld hl, .Odd
 	ld de, wTempOddEggNickname
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
-	; load pointer to wTempOddEggNickname in wMobileMonOTPointer
-	ld a, LOW(wTempOddEggNickname)
-	ld [wMobileMonOTPointer], a
-	ld a, HIGH(wTempOddEggNickname)
-	ld [wMobileMonOTPointer + 1], a
-	; load pointer to wOddEggName in wMobileMonNicknamePointer
-	ld a, LOW(wOddEggName)
-	ld [wMobileMonNicknamePointer], a
-	ld a, HIGH(wOddEggName)
-	ld [wMobileMonNicknamePointer + 1], a
-	farcall AddMobileMonToParty
+	farcall AddOddEggToParty
 	ret
 
 .Odd:
 	dname "Odd", MON_NAME_LENGTH + 1
 
 INCLUDE "data/events/odd_eggs.asm"
+
+; Add the Odd Egg to the party.
+; The caller must have checked there is room; see maps/DayCare.asm.
+; The mon's data is already built in wOddEgg, so it is copied rather than
+; generated. The Odd Egg carries no mail, so sPartyMail is left untouched.
+AddOddEggToParty:
+	ld hl, wPartyCount
+	ld a, [hl]
+	inc [hl]
+	ld [wCurPartyMon], a
+
+	; species, then the terminator
+	ld hl, wPartySpecies
+	ld a, [wCurPartyMon]
+	ld bc, 1
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld a, EGG
+	ld [de], a
+	inc de
+	ld a, -1
+	ld [de], a
+
+	; the mon itself
+	ld hl, wPartyMon1Species
+	ld a, [wCurPartyMon]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wOddEgg
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
+
+	; OT name, then the terminator
+	ld hl, wPartyMonOTs
+	ld a, [wCurPartyMon]
+	ld bc, NAME_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wTempOddEggNickname
+	ld bc, MON_NAME_LENGTH - 1
+	call CopyBytes
+	ld a, '@'
+	ld [de], a
+
+	; nickname, then the terminator
+	ld hl, wPartyMonNicknames
+	ld a, [wCurPartyMon]
+	ld bc, MON_NAME_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wOddEggName
+	ld bc, MON_NAME_LENGTH - 1
+	call CopyBytes
+	ld a, '@'
+	ld [de], a
+	ret

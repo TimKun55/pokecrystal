@@ -77,36 +77,6 @@ HDMATransferTilemapAndAttrmap_Overworld::
 
 	ret
 
-Mobile_HDMATransferTilemapAndAttrmap_Overworld:
-	ld hl, HDMATransferTilemapAndAttrmap_Overworld ; useless
-	ld hl, .Function
-	jp CallInSafeGFXMode
-
-.Function:
-	decoord 0, 0, wAttrmap
-	ld hl, wScratchAttrmap
-	call PadAttrmapForHDMATransfer
-	decoord 0, 0
-	ld hl, wScratchTilemap
-	call PadTilemapForHDMATransfer
-	call DelayFrame
-
-	di
-	ldh a, [rVBK]
-	push af
-	ld a, $1
-	ldh [rVBK], a
-	ld hl, wScratchAttrmap
-	call HDMATransfer_NoDI
-	ld a, $0
-	ldh [rVBK], a
-	ld hl, wScratchTilemap
-	call HDMATransfer_NoDI
-	pop af
-	ldh [rVBK], a
-	ei
-
-	ret
 
 Function1040d4: ; unreferenced
 	ld hl, .Function
@@ -176,31 +146,6 @@ _HDMATransferTilemapAndAttrmap_Menu::
 	ei
 	ret
 
-Mobile_HDMATransferTilemapAndAttrmap_Menu:
-	ld hl, .Function
-	jp CallInSafeGFXMode
-
-.Function:
-	; Transfer wAttrmap and Tilemap to BGMap
-	; Fill vBGAttrs with $00
-	; Fill vBGTiles with $ff
-	decoord 0, 0, wAttrmap
-	ld hl, wScratchAttrmap
-	call PadAttrmapForHDMATransfer
-	ld c, $ff
-	decoord 0, 0
-	ld hl, wScratchTilemap
-	call PadMapForHDMATransfer
-
-	ld a, $1
-	ldh [rVBK], a
-	ld hl, wScratchAttrmap
-	call HDMATransfer_WaitForScanline128_toBGMap
-	ld a, $0
-	ldh [rVBK], a
-	ld hl, wScratchTilemap
-	call HDMATransfer_WaitForScanline128_toBGMap
-	ret
 
 CallInSafeGFXMode:
 	ldh a, [hBGMapMode]

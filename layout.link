@@ -172,22 +172,24 @@ ROMX $3e
 ROMX $3f
 	"bank3F"
 ROMX $40
-	"mobile40"
+	"Sprites 3"
 ROMX $41
 	"bank41"
 ROMX $42
-	"mobile42"
 	"Intro Logo"
-	"Credits"
+	"Pics 21"
+	"Pics 23"
+	"Crystal Sound Effects"
+	"UpdateBattleHUDs"
 ROMX $43
 	"Title"
 ROMX $44
 	"Events"
 	"bank44"
 ROMX $45
-	"mobile45"
+	"Tileset Data 7"
 ROMX $46
-	"mobile46"
+	"Tileset Data 8"
 ROMX $47
 	"Battle Tower"
 ROMX $48
@@ -235,19 +237,15 @@ ROMX $5b
 	"bank5B"
 	"Pics 20"
 ROMX $5c
-	"mobile5C"
-	"Pics 21"
+	"Battle Tower 2"
 ROMX $5d
 	"Crystal Phone Text 2"
 	"Pics 22"
 ROMX $5e
-	"UpdateBattleHUDs"
-	"Songs 5"
-	"Crystal Sound Effects"
-	"mobile5E"
-	"Pics 23"
+	"Pics 24"
 ROMX $5f
-	"mobile5F"
+	"Credits"
+	"Songs 5"
 ROMX $60
 	"Map Scripts 13"
 	"Pokedex Entries 001-064"
@@ -304,7 +302,6 @@ ROMX $77
 	"European Mail"
 ROMX $78
 	"Debug Room"
-	"Tileset Data 7"
 ROMX $79
 	"The End"
 	"Map Scripts 26"
@@ -315,19 +312,11 @@ ROMX $7b
 ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
-	"Tileset Data 8"
+	"Tileset Data 9"
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
 	"Voltorb Flip"
-ROMX $80
-	"Pics 24"
-ROMX $81
-	"Tileset Data 9"
-ROMX $82
-	"Mobile Adapter SDK Mail"
-ROMX $83
-	"Mobile Adapter SDK"
 WRAM0
 	"Stack"
 	"Audio RAM"
@@ -354,15 +343,13 @@ WRAMX 2
 	"Surrounding Data"
 WRAMX 3
 	"Battle Tower RAM"
-WRAMX 4
-	"News Script RAM"
 WRAMX 5
 	align 8
 	"GBC Video"
 	org $d300
 	"Battle Animations"
 	org $d800
-	"Mobile RAM"
+	"WRAM 5"
 WRAMX 6
 	"Scratch RAM"
 WRAMX 7
@@ -389,13 +376,13 @@ SRAM $02
 SRAM $03
 	"PokeDB Bank 2"
 SRAM $04
-	"SRAM Mobile 1"
+	"SRAM Bank 4"
 SRAM $05
-	"SRAM Mobile 2"
+	"SRAM Bank 5"
 SRAM $06
-	"SRAM Mobile 3"
+	"SRAM Bank 6"
 SRAM $07
-	"SRAM Mobile 4"
+	"SRAM Bank 7"
 HRAM
 	"OAM DMA"
 	"HRAM"

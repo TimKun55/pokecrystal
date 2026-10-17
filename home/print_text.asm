@@ -103,10 +103,6 @@ PrintNum::
 	homecall _PrintNum
 	ret
 
-MobilePrintNum::
-	homecall _MobilePrintNum
-	ret
-
 FarPrintText::
 	ldh [hTempBank], a
 	ldh a, [hROMBank]

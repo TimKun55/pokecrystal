@@ -195,6 +195,57 @@ GetVWFLength::
 	pop de
 	ret
 
+; Checks that all c characters of the string at de are valid text codes.
+; Returns carry set if any byte falls outside the charmap's printable
+; ranges. Used on strings that arrived from outside the cartridge, where
+; a stray byte would otherwise be printed as a control code.
+CheckStringForErrors::
+; Valid character ranges:
+; $0, $5 - $13, $19 - $1c, $26 - $34, $3a - $3e, $40 - $48, $60 - $ff
+.loop
+	ld a, [de]
+	inc de
+	and a ; '<NULL>'
+	jr z, .NextChar
+	cp FIRST_REGULAR_TEXT_CHAR
+	jr nc, .NextChar
+	cp '<NEXT>'
+	jr z, .NextChar
+	cp '@'
+	jr z, .Done
+	cp 'ガ'
+	jr c, .Fail
+	cp '<PLAY_G>'
+	jr c, .NextChar
+	cp '<JP_18>' + 1
+	jr c, .Fail
+	cp '<NI>'
+	jr c, .NextChar
+	cp '<NO>' + 1
+	jr c, .Fail
+	cp '<ROUTE>'
+	jr c, .NextChar
+	cp '<GREEN>' + 1
+	jr c, .Fail
+	cp '<ENEMY>'
+	jr c, .NextChar
+	cp '<ENEMY>' + 1
+	jr c, .Fail
+	cp '<MUM>'
+	jr c, .NextChar
+
+.Fail:
+	scf
+	ret
+
+.NextChar:
+	dec c
+	jr nz, .loop
+
+.Done:
+	and a
+	ret
+
 FarPlaceStringRet:
 	pop af
 	ldh [hROMBank], a
@@ -248,7 +299,6 @@ MACRO dict
 	endc
 ENDM
 
-	dict '<MOBILE>',  MobileScriptChar
 	dict '<LINE>',    LineChar
 	dict '<NEXT>',    NextLineChar
 	dict '<CR>',      CarriageReturnChar
@@ -287,12 +337,6 @@ ENDM
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
-
-MobileScriptChar::
-	ld c, l
-	ld b, h
-	farcall RunMobileScript
-	jp PlaceNextChar
 
 MACRO print_name
 	push de
@@ -482,8 +526,6 @@ Paragraph::
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr z, .linkbattle
-	cp LINK_MOBILE
-	jr z, .linkbattle
 	call LoadBlinkingCursor
 
 .linkbattle
@@ -556,8 +598,6 @@ PromptText::
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr z, .ok
-	cp LINK_MOBILE
-	jr z, .ok
 	call LoadBlinkingCursor
 
 .ok
@@ -565,8 +605,6 @@ PromptText::
 	call PromptButton
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
-	jr z, DoneText
-	cp LINK_MOBILE
 	jr z, DoneText
 	call UnloadBlinkingCursor
 
@@ -858,8 +896,6 @@ TextCommand_PROMPT_BUTTON::
 ; wait for button press; show arrow
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
-	jp z, TextCommand_WAIT_BUTTON
-	cp LINK_MOBILE
 	jp z, TextCommand_WAIT_BUTTON
 
 	push hl

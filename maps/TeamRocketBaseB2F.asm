@@ -160,7 +160,6 @@ LanceHealsCommon:
 	closetext
 	special FadeOutPalettes
 	special LoadMapPalettes
-	special StubbedTrainerRankings_Healings
 	playsound SFX_FULL_HEAL
 	special HealParty
 	special FadeInFromWhite

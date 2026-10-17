@@ -15,24 +15,6 @@ LoadMobileTradeBorderTilemap:
 	call CopyBytes
 	ret
 
-TestMobileTradeBorderTilemap: ; unreferenced
-; Loads the mobile trade border graphics and tilemap,
-; with a placeholder CGB_GENERIC layout, and exits
-; after pressing A or B. Possibly used for testing.
-	call LoadStandardMenuHeader
-	call ClearBGPalettes
-	call ClearTilemap
-	call ClearSprites
-	farcall __LoadTradeScreenBorderGFX ; useless to farcall
-	farcall LoadMobileTradeBorderTilemap ; useless to farcall
-	ld b, CGB_GENERIC
-	call GetCGBLayout
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	call JoyWaitAorB
-	call Call_ExitMenu
-	ret
-
 MobileTradeBorderTilemap:
 INCBIN "gfx/trade/border_mobile.tilemap"
 

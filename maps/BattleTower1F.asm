@@ -106,7 +106,6 @@ Script_ChooseChallenge:
 	special BattleTowerAction
 	special BattleTowerRoomMenu
 	ifequal $a, Script_Menu_ChallengeExplanationCancel
-	ifnotequal $0, Script_MobileError
 	setval BATTLETOWERACTION_11
 	special BattleTowerAction
 	writetext Text_RightThisWayToYourBattleRoom
@@ -238,11 +237,6 @@ Script_MayNotEnterABattleRoomUnderL70:
 	writetext Text_MayNotEnterABattleRoomUnderL70
 	waitbutton
 	sjump Script_Menu_ChallengeExplanationCancel
-
-Script_MobileError:
-	special BattleTowerMobileError
-	closetext
-	end
 
 BattleTower_LeftWithoutSaving:
 	opentext
@@ -625,14 +619,6 @@ Text_WeveBeenWaitingForYou:
 	line "please."
 	done
 
-Text_FiveDayBattleLimit_Mobile:
-	text "You may enter only"
-	line "five Battle Rooms"
-	cont "each day."
-
-	para "Please come back"
-	line "tomorrow."
-	done
 
 Text_TooMuchTimeElapsedNoRegister:
 	text "Sorry, but it's"

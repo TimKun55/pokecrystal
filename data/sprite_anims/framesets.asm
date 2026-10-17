@@ -35,13 +35,6 @@ SpriteAnimFrameData:
 	dw .Frameset_EggHatch3
 	dw .Frameset_EggHatch4
 	dw .Frameset_HeadbuttTree
-	dw .Frameset_EZChatCursor1
-	dw .Frameset_EZChatCursor2
-	dw .Frameset_EZChatCursor3
-	dw .Frameset_EZChatCursor4
-	dw .Frameset_EZChatCursor5
-	dw .Frameset_EZChatCursor6
-	dw .Frameset_EZChatCursor7
 	dw .Frameset_BlueWalk
 	dw .Frameset_MagnetTrainBlue
 	dw .Frameset_MobileTradeSentBall
@@ -320,34 +313,6 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_TREE_1,           2
 	oamframe SPRITE_ANIM_OAMSET_HEADBUTT_TREE_2,  2, B_OAM_XFLIP
 	oamrestart
-
-.Frameset_EZChatCursor1:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_1,  2
-	oamend
-
-.Frameset_EZChatCursor2:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_2,  2
-	oamend
-
-.Frameset_EZChatCursor3:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_3,  2
-	oamend
-
-.Frameset_EZChatCursor4:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_4,  2
-	oamend
-
-.Frameset_EZChatCursor5:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_5,  2
-	oamend
-
-.Frameset_EZChatCursor6:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_6,  2
-	oamend
-
-.Frameset_EZChatCursor7:
-	oamframe SPRITE_ANIM_OAMSET_EZCHAT_CURSOR_7,  2
-	oamend
 
 .Frameset_MobileTradeSentBall:
 	oamframe SPRITE_ANIM_OAMSET_TRADE_POOF_1,  3

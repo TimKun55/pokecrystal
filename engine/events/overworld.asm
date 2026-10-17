@@ -861,7 +861,6 @@ Script_UsedWaterfall:
 	ld a, [wPlayerTileCollision]
 	call CheckWaterfallTile
 	ret z
-	farcall StubbedTrainerRankings_Waterfall
 	ld a, $1
 	ld [wScriptVar], a
 	ret

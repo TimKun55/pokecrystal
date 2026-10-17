@@ -123,7 +123,7 @@ hLCDCPointer::     db
 hLYOverrideStart:: db
 hLYOverrideEnd::   db
 
-hMobileReceive::             db
+UnusedMobileBuffer:: ds 1 ; unused mobile buffer
 hSerialReceivedNewData::     db
 hSerialConnectionStatus::    db
 hSerialIgnoringInitialData:: db
@@ -168,7 +168,7 @@ hCGB::          db
 hSGB::          db
 
 hDMATransfer:: db
-hMobile:: db
+UnusedMobileFlag:: db
 hSystemBooted:: db
 
 if DEF(_DEBUG)

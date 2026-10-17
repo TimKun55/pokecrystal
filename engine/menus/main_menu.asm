@@ -1,14 +1,8 @@
 	; MainMenuItems indexes
 	const_def
-	const MAINMENU_NEW_GAME               ; 0
-	const MAINMENU_CONTINUE               ; 1
-	const MAINMENU_MOBILE_MYSTERY         ; 2
-	const MAINMENU_MOBILE                 ; 3
-	const MAINMENU_MOBILE_STUDIUM         ; 4
-	const MAINMENU_MYSTERY_MOBILE_STUDIUM ; 5
-	const MAINMENU_MYSTERY                ; 6
-	const MAINMENU_MYSTERY_STUDIUM        ; 7
-	const MAINMENU_STUDIUM                ; 8
+	const MAINMENU_NEW_GAME ; 0
+	const MAINMENU_CONTINUE ; 1
+	const MAINMENU_MYSTERY  ; 2
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
@@ -16,12 +10,7 @@
 	const MAINMENUITEM_NEW_GAME       ; 1
 	const MAINMENUITEM_OPTION         ; 2
 	const MAINMENUITEM_MYSTERY_GIFT   ; 3
-	const MAINMENUITEM_MOBILE         ; 4
-	const MAINMENUITEM_MOBILE_STUDIUM ; 5
-	const MAINMENUITEM_DEBUG_ROOM     ; 6
-
-MobileMenuGFX:
-INCBIN "gfx/mobile/mobile_menu.2bpp"
+	const MAINMENUITEM_DEBUG_ROOM     ; 4
 
 MainMenu:
 	farcall DeleteSavedMusic
@@ -51,6 +40,12 @@ MainMenu:
 .quit
 	ret
 
+if DEF(_DEBUG)
+MainMenu_DebugRoom:
+	farcall _DebugRoom
+	ret
+endc
+
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 3, 15, 9
@@ -70,8 +65,6 @@ MainMenu:
 	db "New Game@"
 	db "Option@"
 	db "Mystery Gift@"
-	db "Mobile@"
-	db "Mobile Studium@"
 if DEF(_DEBUG)
 	db "DEBUG ROOM@"
 endc
@@ -82,8 +75,6 @@ endc
 	dw MainMenu_NewGame
 	dw MainMenu_Option
 	dw MainMenu_MysteryGift
-	dw MainMenu_Mobile
-	dw MainMenu_MobileStudium
 if DEF(_DEBUG)
 	dw MainMenu_DebugRoom
 endc
@@ -107,83 +98,12 @@ if DEF(_DEBUG)
 endc
 	db -1
 
-	; MAINMENU_MOBILE_MYSTERY
-	db 5 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
-	db MAINMENUITEM_MOBILE
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
-	; MAINMENU_MOBILE
-	db 4 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MOBILE
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
-	; MAINMENU_MOBILE_STUDIUM
-	db 5 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MOBILE
-	db MAINMENUITEM_MOBILE_STUDIUM
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
-	; MAINMENU_MYSTERY_MOBILE_STUDIUM
-	db 6 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
-	db MAINMENUITEM_MOBILE
-	db MAINMENUITEM_MOBILE_STUDIUM
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
 	; MAINMENU_MYSTERY
 	db 4 + DEF(_DEBUG)
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
 	db MAINMENUITEM_MYSTERY_GIFT
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
-	; MAINMENU_MYSTERY_STUDIUM
-	db 5 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
-	db MAINMENUITEM_MOBILE_STUDIUM
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
-	db -1
-
-	; MAINMENU_STUDIUM
-	db 4 + DEF(_DEBUG)
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MOBILE_STUDIUM
 if DEF(_DEBUG)
 	db MAINMENUITEM_DEBUG_ROOM
 endc
@@ -210,31 +130,10 @@ MainMenu_GetWhichMenu:
 	cp -1 ; locked?
 	call CloseSRAM
 	jr nz, .mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-	ld a, MAINMENU_CONTINUE
-	jr z, .ok
-	jr .ok
-
-.ok
-	jr .ok2
-
-.ok2
 	ld a, MAINMENU_CONTINUE
 	ret
 
 .mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-	jr z, .ok3
-	jr .ok3
-
-.ok3
-	jr .ok4
-
-.ok4
 	ld a, MAINMENU_MYSTERY
 	ret
 

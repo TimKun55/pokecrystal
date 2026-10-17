@@ -112,7 +112,6 @@ MrPokemonsHouse_OakScript:
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	playmusic MUSIC_HEAL
-	special StubbedTrainerRankings_Healings
 	special HealParty
 	pause 60
 	special FadeInFromBlack

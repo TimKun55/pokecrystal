@@ -75,17 +75,6 @@ AddHallOfFameEntry:
 	ld bc, wHallOfFamePokemonListEnd - wHallOfFamePokemonList + 1
 	call CopyBytes
 	call CloseSRAM
-; This vc_hook causes the Virtual Console to set [sGSBallFlag] and [sGSBallFlagBackup]
-; to GS_BALL_AVAILABLE, which enables you to get the GS Ball, take it to Kurt, and
-; encounter Celebi. It assumes that sGSBallFlag and sGSBallFlagBackup are at their
-; original addresses.
-	vc_hook Enable_GS_Ball_mobile_event
-	vc_assert BANK(sGSBallFlag) == $1 && sGSBallFlag == $be3c, \
-		"sGSBallFlag is no longer located at 01:be3c."
-	vc_assert BANK(sGSBallFlagBackup) == $1 && sGSBallFlagBackup == $be44, \
-		"sGSBallFlagBackup is no longer located at 01:be44."
-	vc_assert GS_BALL_AVAILABLE == $b, \
-		"GS_BALL_AVAILABLE is no longer equal to $b."
 	ret
 
 AskOverwriteSaveFile:
@@ -202,7 +191,6 @@ WriteBackupSave:
 ; on game load if we have a valid main save but not a backup save.
 	; Save storage, mail, mobile event and mystery gift to backup
 	farcall BackupPartyMonMail
-	farcall BackupGSBallFlag
 	farcall BackupMysteryGift
 	call SaveStorageSystem
 
@@ -321,29 +309,6 @@ EraseHallOfFame:
 	call ByteFill
 	jp CloseSRAM
 
-InitDefaultEZChatMsgs: ; unreferenced
-	ld a, BANK(sEZChatMessages) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
-	call OpenSRAM
-	ld hl, .Data
-	ld de, sEZChatMessages
-	ld bc, EASY_CHAT_MESSAGE_LENGTH * 4
-	call CopyBytes
-	jp CloseSRAM
-
-.Data:
-; introduction
-	db $0d, EZCHAT_GREETINGS,    $00, EZCHAT_EXCLAMATIONS, $00, EZCHAT_POKEMON
-	db $22, EZCHAT_GREETINGS,    $01, EZCHAT_EXCLAMATIONS, $00, EZCHAT_POKEMON
-; begin battle
-	db $03, EZCHAT_BATTLE,       $05, EZCHAT_CONDITIONS,   $03, EZCHAT_EXCLAMATIONS
-	db $0e, EZCHAT_CONVERSATION, $03, EZCHAT_GREETINGS,    $00, EZCHAT_POKEMON
-; win battle
-	db $39, EZCHAT_FEELINGS,     $07, EZCHAT_BATTLE,       $00, EZCHAT_EXCLAMATIONS
-	db $04, EZCHAT_FEELINGS,     $01, EZCHAT_EXCLAMATIONS, $00, EZCHAT_POKEMON
-; lose battle
-	db $0f, EZCHAT_EXCLAMATIONS, $14, EZCHAT_FEELINGS,     $05, EZCHAT_EXCLAMATIONS
-	db $11, EZCHAT_TIME,         $0c, EZCHAT_CONVERSATION, $06, EZCHAT_BATTLE
-
 EraseBattleTowerStatus:
 	ld a, BANK(sBattleTowerChallengeState)
 	call OpenSRAM
@@ -376,14 +341,6 @@ Function14d83: ; unreferenced
 	xor a
 	ld [s4_a60c], a ; address of MBC30 bank
 	ld [s4_a60d], a ; address of MBC30 bank
-	call CloseSRAM
-	ret
-
-DisableMobileStadium: ; unreferenced
-	ld a, BANK(sMobileStadiumFlag)
-	call OpenSRAM
-	xor a
-	ld [sMobileStadiumFlag], a
 	call CloseSRAM
 	ret
 
@@ -534,7 +491,6 @@ TryLoadSaveFile:
 	call WasMidSaveAborted
 	call z, WriteBackupSave
 	farcall RestorePartyMonMail
-	farcall RestoreGSBallFlag
 	farcall RestoreMysteryGift
 	call LoadStorageSystem
 
@@ -549,7 +505,6 @@ TryLoadSaveFile:
 	call LoadBackupPlayerData
 	call LoadBackupPokemonData
 	farcall RestorePartyMonMail
-	farcall RestoreGSBallFlag
 	farcall RestoreMysteryGift
 	call LoadStorageSystem
 	call SaveGameData

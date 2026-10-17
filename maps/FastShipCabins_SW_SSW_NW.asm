@@ -44,7 +44,6 @@ FastShipBed:
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	special StubbedTrainerRankings_Healings
 	special HealParty
 	playmusic MUSIC_HEAL
 	pause 60

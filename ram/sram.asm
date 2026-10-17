@@ -152,11 +152,11 @@ sHallOfFameEnd::
 
 SECTION "SRAM Crystal Data", SRAM
 
-sGSBallFlag:: db
+db ; unused (sGSBallFlag)
 
 sCrystalData:: ds wCrystalDataEnd - wCrystalData
 
-sGSBallFlagBackup:: db
+db ; unused (sGSBallFlagBackup)
 
 
 SECTION "SRAM Battle Tower", SRAM
@@ -197,16 +197,13 @@ SECTION "PokeDB Bank 2", SRAM
 sNewBoxMons2:: pokedb sNewBoxMons2, MONDB_ENTRIES
 
 
-SECTION "SRAM Mobile 1", SRAM
+SECTION "SRAM Bank 4", SRAM
 
 	ds $7
 
-sEZChatMessages::
-sEZChatIntroductionMessage:: ds EASY_CHAT_MESSAGE_LENGTH
-sEZChatBattleMessages::
-sEZChatBeginBattleMessage::  ds EASY_CHAT_MESSAGE_LENGTH
-sEZChatWinBattleMessage::    ds EASY_CHAT_MESSAGE_LENGTH
-sEZChatLoseBattleMessage::   ds EASY_CHAT_MESSAGE_LENGTH
+; Former Easy Chat messages (introduction + 3 battle greetings), 
+; 6 words x 2 bytes each.
+	ds 48
 
 s4_a037:: ds 4
 
@@ -222,16 +219,16 @@ s4_a60e:: dw
 
 	ds $1f0
 
-sMobileBattleTimer:: ds 3
+	ds 3 ; unused (mobile battle timer)
 
 	ds $7fd
 
-sMobileAdapterStatus:: db
+	db ; unused (mobile adapter status)
 
 
-SECTION "SRAM Mobile 2", SRAM
+SECTION "SRAM Bank 5", SRAM
 
-sGSBallFlagJP:: db ; unused
+db ; unused (sGSBallFlagJP)
 
 sTrainerRankings::
 sTrainerRankingGameTimeHOF:: ds 4
@@ -279,7 +276,7 @@ sTrainerRankingBugContestScore:: ds 2
 sTrainerRankingsChecksum:: ds 2
 sTrainerRankingsEnd::
 
-sGSBallFlagBackupJP:: db ; unused
+db ; unused (sGSBallFlagBackupJP)
 
 sTrainerRankingsBackup:: ds sTrainerRankingsEnd - sTrainerRankings
 
@@ -287,18 +284,11 @@ sTrainerRankingsBackup:: ds sTrainerRankingsEnd - sTrainerRankings
 
 s5_a800:: db
 
-sOfferEmail::      ds MOBILE_EMAIL_LENGTH
-sOfferTrainerID::  dw
-sOfferSecretID::   dw
-sOfferGender::     db
-sOfferSpecies::    db
-sOfferReqGender::  db
-sOfferReqSpecies:: db
-sOfferMonSender::  ds NAME_LENGTH_JAPANESE - 1
-sOfferMon::        party_struct sOfferMon
-sOfferMonOT::      ds NAME_LENGTH_JAPANESE - 1
-sOfferMonNick::    ds NAME_LENGTH_JAPANESE - 1
-sOfferMonMail::    mailmsg_jp sOfferMonMail
+; Former mobile trade offer structure (collapsed from sOffer* entries)
+; 30 (email) + 2 (Trainer ID) + 2 (Secret ID) + 1 (gender) + 1 (species)
+; + 1 (req gender) + 1 (req species) + 5 (sender name) + 48 (Pokémon struct)
+; + 5 (OT name) + 5 (nickname) + 42 (mail) = 143 bytes
+sOffer:: ds 143
 
 s5_a890:: db
 s5_a891:: db
@@ -324,11 +314,11 @@ s5_aa48:: db
 
 s5_aa4a:: db
 
-sMobileLoginPassword:: ds MOBILE_LOGIN_PASSWORD_LENGTH
+ds 17 ; mobile login password (unused), plus terminator byte below
 
 	ds $1
 
-s5_aa5d:: ds MOBILE_LOGIN_PASSWORD_LENGTH
+s5_aa5d:: ds 17 ; cleared daily (was the mobile login password)
 
 	ds $4
 
@@ -381,7 +371,7 @@ s5_be46:: db
 s5_bfff:: db
 
 
-SECTION "SRAM Mobile 3", SRAM
+SECTION "SRAM Bank 6", SRAM
 
 s6_a000:: db
 	db
@@ -391,13 +381,13 @@ s6_a004:: db
 s6_a005:: db
 s6_a006:: ds $1000
 
-SECTION "SRAM Mobile 4", SRAM
+SECTION "SRAM Bank 7", SRAM
 
-sMobileStadiumFlag:: db
+db ; unused (Mobile Stadium flag)
 s7_a001:: db
 
 	ds $7fe
 
-sMobileAdapterStatus2:: db
+	db ; unused (mobile adapter status)
 
 ENDSECTION

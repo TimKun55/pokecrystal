@@ -79,21 +79,8 @@ DEF HIDDEN_POWER_LAST_TILE EQU $5b
 DEF HIDDEN_POWER_CENTER_X   EQU 13
 
 BattleSummaryScreenInit:
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jr nz, SummaryScreenInit
-
-	ld a, [wBattleMode]
-	and a
-	jr z, SummaryScreenInit
-	jr _MobileSummaryScreenInit
-
 SummaryScreenInit:
 	ld hl, SummaryScreenMain
-	jr SummaryScreenInit_gotaddress
-
-_MobileSummaryScreenInit:
-	ld hl, SummaryScreenMobile
 	jr SummaryScreenInit_gotaddress
 
 SummaryScreenInit_gotaddress:
@@ -144,26 +131,6 @@ SummaryScreenMain:
 	ld a, [wJumptableIndex]
 	bit 7, a
 	jr z, .loop
-	ret
-
-SummaryScreenMobile:
-	xor a
-	ld [wJumptableIndex], a
-	ld [wSummaryScreenFlags], a ; PINK_PAGE
-.loop
-	farcall Mobile_SetOverworldDelay
-	ld a, [wJumptableIndex]
-	and $7f
-	ld hl, SummaryScreenPointerTable
-	rst JumpTable
-	call SummaryScreen_WaitAnim
-	farcall MobileComms_CheckInactivityTimer
-	jr c, .exit
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr z, .loop
-
-.exit
 	ret
 
 SummaryScreenPointerTable:

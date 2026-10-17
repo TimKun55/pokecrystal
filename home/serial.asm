@@ -6,10 +6,6 @@ Serial::
 	push de
 	push hl
 
-	ldh a, [hMobileReceive]
-	and a
-	jr nz, .mobile
-
 	ldh a, [hSerialConnectionStatus]
 	inc a ; is it equal to CONNECTION_NOT_ESTABLISHED?
 	jr z, .establish_connection
@@ -29,10 +25,6 @@ Serial::
 	ld a, SC_START | SC_EXTERNAL
 	ldh [rSC], a
 	jr .player2
-
-.mobile
-	call MobileReceive
-	jr .end
 
 .establish_connection
 	ldh a, [rSB]

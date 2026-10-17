@@ -22,7 +22,6 @@
 	const ENGINE_CAUGHT_POKERUS
 	const ENGINE_ROCKET_SIGNAL_ON_CH20
 	const ENGINE_CREDITS_SKIP
-	const ENGINE_MOBILE_SYSTEM ; unused
 ; wStatusFlags2
 	const ENGINE_BUG_CONTEST_TIMER
 	const ENGINE_SAFARI_ZONE
@@ -142,8 +141,6 @@
 ; wSwarmFlags
 	const ENGINE_BUENAS_PASSWORD_2
 	const ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
-; wGameTimerPaused
-	const ENGINE_62
 ; wPlayerGender
 	const ENGINE_PLAYER_IS_FEMALE
 ; wCelebiEvent

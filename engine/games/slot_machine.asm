@@ -118,7 +118,6 @@ _SlotMachine:
 	xor a
 	ld [hVBlankHookFunction], a
 	call ClearBGPalettes
-	farcall StubbedTrainerRankings_EndSlotsWinStreak
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC
@@ -2388,7 +2387,6 @@ Slots_GetPayout:
 	ld a, [hl]
 	ld [wPayout], a
 	ld d, a
-	farcall StubbedTrainerRankings_AddToSlotsPayouts
 	ret
 
 .PayoutTable:
@@ -2414,7 +2412,6 @@ Slots_PayoutText:
 	jr nz, .MatchedSomething
 	ld hl, .SlotsDarnText
 	call PrintText
-	farcall StubbedTrainerRankings_EndSlotsWinStreak
 	ret
 
 .MatchedSomething:
@@ -2438,7 +2435,6 @@ Slots_PayoutText:
 .return
 	ld hl, .Text_PrintPayout
 	call PrintText
-	farcall StubbedTrainerRankings_AddToSlotsWinStreak
 	ret
 
 .PayoutStrings:

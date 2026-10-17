@@ -44,10 +44,6 @@ BattleCommand_BatonPass:
 	call SetDefaultBGPAndOBP
 	call BatonPass_LinkPlayerSwitch
 
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, .BatonPass_EndMoveEffect
-
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
@@ -71,10 +67,6 @@ BattleCommand_BatonPass:
 	pop hl
 	res SUBSTATUS_SUBSTITUTE, [hl]
 	push hl
-
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, .BatonPass_EndMoveEffect
 
 ; Passed enemy PartyMon entrance
 	xor a

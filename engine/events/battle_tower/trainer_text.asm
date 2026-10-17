@@ -83,8 +83,6 @@ endc
 	call PrintTextboxTextAt
 	ret
 
-INCLUDE "mobile/fixed_words.asm"
-
 INCLUDE "data/trainers/genders.asm"
 
 BTMaleTrainerTexts:

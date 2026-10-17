@@ -1,5 +1,4 @@
 BattleCommand_Explosion:
-	farcall StubbedTrainerRankings_Explosion
 	ld a, BATTLEANIM_PLAYER_DAMAGE
 	ld [wNumHits], a
 	ld c, 3

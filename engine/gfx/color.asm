@@ -1147,9 +1147,6 @@ INCLUDE "data/maps/environment_colors.asm"
 
 INCLUDE "gfx/types_cats_status_pals.asm"
 
-PartyMenuBGMobilePalette:
-INCLUDE "gfx/summary/party_menu_bg_mobile.pal"
-
 PartyMenuBGPalette:
 INCLUDE "gfx/summary/party_menu_bg.pal"
 

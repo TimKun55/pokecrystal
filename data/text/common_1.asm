@@ -133,54 +133,6 @@ _CameToItsSensesText::
 	line "to its senses."
 	done
 
-_EnterNewPasscodeText::
-	text "Please enter any"
-	line "four-digit number."
-	done
-
-_ConfirmPasscodeText::
-	text "Enter the same"
-	line "number to confirm."
-	done
-
-_PasscodesNotSameText::
-	text "That's not the"
-	line "same number."
-	done
-
-_PasscodeSetText::
-	text "Your Passcode has"
-	line "been set."
-
-	para "Enter this number"
-	line "next time to open"
-	cont "the Card Folder."
-
-	para ""
-	done
-
-_FourZerosInvalidText::
-	text "0000 is invalid!"
-
-	para ""
-	done
-
-_EnterPasscodeText::
-	text "Enter the Card"
-	next "Folder Passcode."
-	done
-
-_IncorrectPasscodeText::
-	text "Incorrect"
-	line "Passcode!"
-
-	para ""
-	done
-
-_CardFolderOpenText::
-	text "Card Folder open.@"
-	text_end
-
 _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"
@@ -423,60 +375,6 @@ _ForYourMonWillTradeText::
 	text_ram wPlayerTrademonSpeciesName
 	text "."
 	done
-
-_MobilePlayerWillTradeMonText::
-	text_ram wPlayerTrademonSenderName
-	text " will"
-	line "trade @"
-	text_ram wPlayerTrademonSpeciesName
-	text_end
-
-_MobileForPartnersMonText::
-	text "for @"
-	text_ram wOTTrademonSenderName
-	text "'s"
-	line "@"
-	text_ram wOTTrademonSpeciesName
-	text "."
-	done
-
-_MobilePlayersMonTradeText::
-	text_ram wPlayerTrademonSenderName
-	text "'s"
-	line "@"
-	text_ram wPlayerTrademonSpeciesName
-	text " trade…"
-	done
-
-_MobileTakeGoodCareOfMonText::
-	text "Take good care of"
-	line "@"
-	text_ram wOTTrademonSpeciesName
-	text "."
-	done
-
-_MobilePlayersMonTrade2Text::
-	text_ram wPlayerTrademonSenderName
-	text "'s"
-	line "@"
-	text_ram wPlayerTrademonSpeciesName
-	text " trade…"
-	done
-
-_MobileTakeGoodCareOfText::
-	text "Take good care of"
-	line "@"
-	text_ram wOTTrademonSpeciesName
-	text "."
-	done
-
-_MobileTradeCameBackText::
-	text_ram wOTTrademonSpeciesName
-	text " came"
-	line "back!"
-	done
-
-; Oak's Pokémon Talk
 
 _OPT_IntroText1::
 	text_start
@@ -1088,51 +986,6 @@ _EnemyUsedOnText::
 	text_ram wEnemyMonNickname
 	text "!"
 	prompt
-
-; Mobile Adapter
-
-_NewCardArrivedText::
-	text "A new Card arrived"
-	line "from @"
-	text_ram wStringBuffer2
-	text "."
-	done
-
-_PutCardInCardFolderText::
-	text "Put this Card in"
-	line "the Card Folder?"
-	done
-
-_CardWasListedText::
-	text_ram wStringBuffer2
-	text "'s Card was"
-	line "listed as no.@"
-	text_decimal wStringBuffer1, 1, 2
-	text "."
-	prompt
-
-_StartingLinkText::
-	text "Starting link."
-	done
-
-_LinkTerminatedText::
-	text "Link terminated."
-	done
-
-_ClosingLinkText::
-	text "Closing link."
-	done
-
-_TradingMonForOTMonText::
-	text "Trading @"
-	text_ram wStringBuffer2
-	text_start
-	line "for @"
-	text_ram wStringBuffer1
-	text "…"
-	done
-
-; Mobile Adapter End
 
 _AskFloorElevatorText::
 	text "Which floor?"
