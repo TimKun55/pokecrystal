@@ -281,51 +281,20 @@ StartTrainerBattle_SetUpBGMap:
 	ret
 
 StartTrainerBattle_Flash:
-	call .DoFlashAnimation
-	ret nc
-	call StartTrainerBattle_NextScene
-	ret
-
-.DoFlashAnimation:
-	ld a, [wTimeOfDayPalset]
-	cp DARKNESS_PALSET
-	jr z, .done
-	ld hl, wBattleTransitionCounter
-	ld a, [hl]
-	inc [hl]
-	srl a
-	ld e, a
-	ld d, 0
-	ld hl, .pals
-	add hl, de
-	ld a, [hl]
-	cp %00000001
-	jr z, .done
-	ld [wBGP], a
-	call DmgToCgbBGPals
+; Fade the screen to black and back, instead of strobing the DMG palette 
+; registers. This keeps the Poké Ball graphic visible while it flashes.
+	ld a, PALFADE_BG | PALFADE_FLASH
+	ld [wPalFadeMode], a
+	ld a, [wOtherTrainerClass]
 	and a
-	ret
-
-.done
-	xor a
-	ld [wBattleTransitionCounter], a
-	scf
-	ret
-
-.pals:
-	dc 3, 3, 2, 1
-	dc 3, 3, 3, 2
-	dc 3, 3, 3, 3
-	dc 3, 3, 3, 2
-	dc 3, 3, 2, 1
-	dc 3, 2, 1, 0
-	dc 2, 1, 0, 0
-	dc 1, 0, 0, 0
-	dc 0, 0, 0, 0
-	dc 1, 0, 0, 0
-	dc 2, 1, 0, 0
-	dc 3, 2, 1, 0
-	dc 0, 0, 0, 1
+	jr z, .got_mode
+	; don't flash the Poké Ball palette
+	ld a, PALFADE_BG | PALFADE_FLASH | PALFADE_SKIP_FIRST
+	ld [wPalFadeMode], a
+.got_mode
+	ld c, 10
+	call DoFadePalettes
+	jr StartTrainerBattle_NextScene
 
 StartTrainerBattle_SetUpForWavyOutro:
 	vc_hook Stop_reducing_battle_transition_flashing_WavyOutro
