@@ -54,56 +54,55 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ICE_BEAM            ; 13
 	const BATTLE_ANIM_OBJ_RAZOR_LEAF          ; 14
 	const BATTLE_ANIM_OBJ_POKE_BALL           ; 15
-	const BATTLE_ANIM_OBJ_POKE_BALL_BG
-	const BATTLE_ANIM_OBJ_POKE_BALL_BLOCKED   ; 16
-	const BATTLE_ANIM_OBJ_EXPLOSION1          ; 17
-	const BATTLE_ANIM_OBJ_EXPLOSION2          ; 18
-	const BATTLE_ANIM_OBJ_ACID                ; 19
-	const BATTLE_ANIM_OBJ_SLUDGE              ; 1a
-	const BATTLE_ANIM_OBJ_ICE_SPEAR           ; 1b ; BETA_BALL_POOF
-	const BATTLE_ANIM_OBJ_BALL_POOF           ; 1c
-	const BATTLE_ANIM_OBJ_BIG_ROCK            ; 1d
-	const BATTLE_ANIM_OBJ_SMALL_ROCK          ; 1e
-	const BATTLE_ANIM_OBJ_STRENGTH            ; 1f
-	const BATTLE_ANIM_OBJ_SEISMIC_TOSS        ; 20
-	const BATTLE_ANIM_OBJ_BUBBLE              ; 21
-	const BATTLE_ANIM_OBJ_SURF                ; 22
-	const BATTLE_ANIM_OBJ_SING                ; 23
-	const BATTLE_ANIM_OBJ_WATER_GUN           ; 24
-	const BATTLE_ANIM_OBJ_HYDRO_PUMP          ; 25
-	const BATTLE_ANIM_OBJ_POWDER              ; 26
-	const BATTLE_ANIM_OBJ_BEAM                ; 27
-	const BATTLE_ANIM_OBJ_BEAM_TIP            ; 28
-	const BATTLE_ANIM_OBJ_ICE_BUILDUP         ; 29
-	const BATTLE_ANIM_OBJ_FROZEN              ; 2a
-	const BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE ; 2b
-	const BATTLE_ANIM_OBJ_RECOVER             ; 2c
-	const BATTLE_ANIM_OBJ_THUNDER_CENTER      ; 2d
-	const BATTLE_ANIM_OBJ_THUNDER_LEFT        ; 2e
-	const BATTLE_ANIM_OBJ_THUNDER_RIGHT       ; 2f
-	const BATTLE_ANIM_OBJ_THUNDER_WAVE        ; 30
-	const BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS  ; 31
-	const BATTLE_ANIM_OBJ_THUNDERBOLT_CORE    ; 32
-	const BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS ; 33 
-	const BATTLE_ANIM_OBJ_THUNDERSHOCK_CORE   ; 34
-	const BATTLE_ANIM_OBJ_ROCK_BLAST          ; 35 ; CLAMP
-	const BATTLE_ANIM_OBJ_BITE                ; 36
-	const BATTLE_ANIM_OBJ_CUT_DOWN_LEFT       ; 37
-	const BATTLE_ANIM_OBJ_CUT_DOWN_RIGHT      ; 38
-	const BATTLE_ANIM_OBJ_CUT_UP_RIGHT        ; 39
-	const BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT  ; 3a
-	const BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT ; 3b
-	const BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE   ; 3c
-	const BATTLE_ANIM_OBJ_ABSORB_CENTER       ; 3d
-	const BATTLE_ANIM_OBJ_GUST                ; 3e
-	const BATTLE_ANIM_OBJ_VINE_WHIP1          ; 3f
-	const BATTLE_ANIM_OBJ_VINE_WHIP2          ; 40
-	const BATTLE_ANIM_OBJ_RAZOR_WIND1         ; 41
-	const BATTLE_ANIM_OBJ_RAZOR_WIND2         ; 42
-	const BATTLE_ANIM_OBJ_SONICBOOM_JP        ; 43
-	const BATTLE_ANIM_OBJ_WARP                ; 44
-	const BATTLE_ANIM_OBJ_ABSORB              ; 45
-	const BATTLE_ANIM_OBJ_MOONBLAST           ; 46 ; EGG
+	const BATTLE_ANIM_OBJ_POKE_BALL_BG        ; 16
+	const BATTLE_ANIM_OBJ_POKE_BALL_BLOCKED   ; 17
+	const BATTLE_ANIM_OBJ_EXPLOSION1          ; 18
+	const BATTLE_ANIM_OBJ_EXPLOSION2          ; 19
+	const BATTLE_ANIM_OBJ_ACID                ; 1a
+	const BATTLE_ANIM_OBJ_SLUDGE              ; 1b
+	const BATTLE_ANIM_OBJ_ICE_SPEAR           ; 1c ; BETA_BALL_POOF
+	const BATTLE_ANIM_OBJ_BALL_POOF           ; 1d
+	const BATTLE_ANIM_OBJ_BIG_ROCK            ; 1e
+	const BATTLE_ANIM_OBJ_SMALL_ROCK          ; 1f
+	const BATTLE_ANIM_OBJ_STRENGTH            ; 20
+	const BATTLE_ANIM_OBJ_SEISMIC_TOSS        ; 21
+	const BATTLE_ANIM_OBJ_BUBBLE              ; 22
+	const BATTLE_ANIM_OBJ_SURF                ; 23
+	const BATTLE_ANIM_OBJ_SING                ; 24
+	const BATTLE_ANIM_OBJ_WATER_GUN           ; 25
+	const BATTLE_ANIM_OBJ_HYDRO_PUMP          ; 26
+	const BATTLE_ANIM_OBJ_POWDER              ; 27
+	const BATTLE_ANIM_OBJ_BEAM                ; 28
+	const BATTLE_ANIM_OBJ_BEAM_TIP            ; 29
+	const BATTLE_ANIM_OBJ_ICE_BUILDUP         ; 2a
+	const BATTLE_ANIM_OBJ_FROZEN              ; 2b
+	const BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE ; 2c
+	const BATTLE_ANIM_OBJ_RECOVER             ; 2d
+	const BATTLE_ANIM_OBJ_THUNDER_CENTER      ; 2e
+	const BATTLE_ANIM_OBJ_THUNDER_LEFT        ; 2f
+	const BATTLE_ANIM_OBJ_THUNDER_RIGHT       ; 30
+	const BATTLE_ANIM_OBJ_THUNDER_WAVE        ; 31
+	const BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS  ; 32
+	const BATTLE_ANIM_OBJ_THUNDERBOLT_CORE    ; 33
+	const BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS ; 34
+	const BATTLE_ANIM_OBJ_THUNDERSHOCK_CORE   ; 35
+	const BATTLE_ANIM_OBJ_ROCK_BLAST          ; 36 ; CLAMP
+	const BATTLE_ANIM_OBJ_BITE                ; 37
+	const BATTLE_ANIM_OBJ_CUT_DOWN_LEFT       ; 38
+	const BATTLE_ANIM_OBJ_CUT_DOWN_RIGHT      ; 39
+	const BATTLE_ANIM_OBJ_CUT_UP_RIGHT        ; 3a
+	const BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT  ; 3b
+	const BATTLE_ANIM_OBJ_CUT_LONG_DOWN_RIGHT ; 3c
+	const BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE   ; 3d
+	const BATTLE_ANIM_OBJ_ABSORB_CENTER       ; 3e
+	const BATTLE_ANIM_OBJ_GUST                ; 3f
+	const BATTLE_ANIM_OBJ_VINE_WHIP1          ; 40
+	const BATTLE_ANIM_OBJ_VINE_WHIP2          ; 41
+	const BATTLE_ANIM_OBJ_RAZOR_WIND1         ; 42
+	const BATTLE_ANIM_OBJ_RAZOR_WIND2         ; 43
+	const BATTLE_ANIM_OBJ_SONICBOOM_JP        ; 44
+	const BATTLE_ANIM_OBJ_WARP                ; 45
+	const BATTLE_ANIM_OBJ_ABSORB              ; 46
 	const BATTLE_ANIM_OBJ_FOCUS               ; 47
 	const BATTLE_ANIM_OBJ_BIND1               ; 48
 	const BATTLE_ANIM_OBJ_BIND2               ; 49
@@ -225,7 +224,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_SMALL ; bd
 	const BATTLE_ANIM_OBJ_SHRINKING_RING_BIG  ; be
 	const BATTLE_ANIM_OBJ_RISING_BUBBLE       ; bf ; BATTLE_ANIM_OBJ_GRAY_GLOW
-	const BATTLE_ANIM_OBJ_BUBBLE_SPLASH       ; c0 ; BATTLE_ANIM_OBJ_FLASH_CANNON
+	const BATTLE_ANIM_OBJ_BUBBLE_SPLASH       ; c0
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_R       ; c1
 	const BATTLE_ANIM_OBJ_SIGNAL_BEAM_B       ; c2
 	const BATTLE_ANIM_OBJ_HYDRO_PUMP_SHOT     ; c3
@@ -236,19 +235,16 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_HEAT_WAVE           ; c8
 	const BATTLE_ANIM_OBJ_PETAL_DANCE_IMPACT  ; c9
 	const BATTLE_ANIM_OBJ_GUNK_SHOT           ; ca
-	const BATTLE_ANIM_OBJ_MOON                ; cb
-	const BATTLE_ANIM_OBJ_MOON_CHARGE         ; cc
-	const BATTLE_ANIM_OBJ_STAT_UP             ; cd
-	const BATTLE_ANIM_OBJ_STAT_DOWN           ; ce
-	const BATTLE_ANIM_OBJ_SWIRL_SHORT         ; cf
-	const BATTLE_ANIM_OBJ_VORTEX              ; d0
-	const BATTLE_ANIM_OBJ_RADIAL_FLAME        ; d1
-	const BATTLE_ANIM_OBJ_FLAMETHROWER_ALT    ; d2
-	const BATTLE_ANIM_OBJ_RISING_MOON         ; d3
-	const BATTLE_ANIM_OBJ_RISING_SPARKLE      ; d4
-	const BATTLE_ANIM_OBJ_FLASH_CANNON        ; d5
-	const BATTLE_ANIM_OBJ_GLIMMER_YFIX        ; d6
-	const BATTLE_ANIM_OBJ_PULSING_SPARKLE_YFIX ; d7
+	const BATTLE_ANIM_OBJ_STAT_UP             ; cb
+	const BATTLE_ANIM_OBJ_STAT_DOWN           ; cc
+	const BATTLE_ANIM_OBJ_SWIRL_SHORT         ; cd
+	const BATTLE_ANIM_OBJ_VORTEX              ; ce
+	const BATTLE_ANIM_OBJ_RADIAL_FLAME        ; cf
+	const BATTLE_ANIM_OBJ_FLAMETHROWER_ALT    ; d0
+	const BATTLE_ANIM_OBJ_RISING_MOON         ; d1
+	const BATTLE_ANIM_OBJ_RISING_SPARKLE      ; d2
+	const BATTLE_ANIM_OBJ_GLIMMER_YFIX        ; d3
+	const BATTLE_ANIM_OBJ_PULSING_SPARKLE_YFIX ; d4
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
