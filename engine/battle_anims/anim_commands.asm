@@ -334,7 +334,7 @@ BattleAnimCommands::
 	dw BattleAnimCmd_OAMOff
 	dw BattleAnimCmd_ClearObjs
 	dw BattleAnimCmd_BeatUp
-	dw BattleAnimCmd_E7
+	dw BattleAnimCmd_ClearOpponentHud
 	dw BattleAnimCmd_UpdateActorPic
 	dw BattleAnimCmd_Minimize
 	dw BattleAnimCmd_SetBgPal
@@ -869,7 +869,27 @@ BattleAnimCmd_CheckPokeball:
 	ld [wBattleAnimVar], a
 	ret
 
-BattleAnimCmd_E7:
+BattleAnimCmd_ClearOpponentHud:
+; Clear the HUD of the target of the attack
+; (the opposite of ClearActorHud, which clears the attacker's HUD).
+; The script redraws both HUDs after the animation ends.
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy
+
+.player
+	hlcoord 9, 7
+	lb bc, 5, 11
+	jr .clear
+
+.enemy
+	hlcoord 1, 0
+	lb bc, 4, 10
+
+.clear
+	call ClearBox
+	ld a, $1
+	ldh [hBGMapMode], a
 	ret
 
 BattleAnimCmd_Transform:

@@ -156,9 +156,9 @@ MACRO anim_beatup
 	db anim_beatup_command
 ENDM
 
-	const anim_0xe7_command ; $e7
-MACRO anim_0xe7
-	db anim_0xe7_command
+	const anim_clearopponenthud_command ; $e7
+MACRO anim_clearopponenthud
+	db anim_clearopponenthud_command
 ENDM
 
 	const anim_updateactorpic_command ; $e8
