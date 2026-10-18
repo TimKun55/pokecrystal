@@ -192,6 +192,8 @@ BattleAnimFrameData:
 	dw .Frameset_FireBlastImpact     ; BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT
 	dw .Frameset_Flamethrower_Alt    ; BATTLE_ANIM_FRAMESET_FLAMETHROWER_ALT
 	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
+	dw .Frameset_SparkleLong         ; BATTLE_ANIM_FRAMESET_SPARKLE_LONG
+	dw .Frameset_PulsingSparkle      ; BATTLE_ANIM_FRAMESET_PULSING_SPARKLE
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1268,4 +1270,17 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_0A,  3
 	oamframe BATTLE_ANIM_OAMSET_0E,  4
 	oamframe BATTLE_ANIM_OAMSET_0A,  4
+	oamdelete
+
+.Frameset_SparkleLong:
+	oamframe BATTLE_ANIM_OAMSET_14,  3
+	oamframe BATTLE_ANIM_OAMSET_15,  3
+	oamrestart
+
+.Frameset_PulsingSparkle:
+	oamframe BATTLE_ANIM_OAMSET_14,  1
+	oamframe BATTLE_ANIM_OAMSET_15,  1
+	oamframe BATTLE_ANIM_OAMSET_74,  1
+	oamframe BATTLE_ANIM_OAMSET_15,  1
+	oamframe BATTLE_ANIM_OAMSET_14,  1
 	oamdelete

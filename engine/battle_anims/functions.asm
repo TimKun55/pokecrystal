@@ -100,6 +100,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_Moon
 	dw BattleAnimFunc_StraightDescent
 	dw BattleAnimFunc_Flamethrower
+	dw BattleAnimFunc_RadialMoveOut_VerySlow
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 BattleAnimFunc_Null:
@@ -3810,6 +3811,20 @@ Step_Short:
 	ld hl, 6.0 ; speed
 	call Set_Rad_Pos
 	cp 60 ; final position
+	jp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+BattleAnimFunc_RadialMoveOut_VerySlow:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_VerySlowFar ; for Moonblast
+
+Step_VerySlowFar:
+	call Get_Rad_Pos
+	ld hl, 0.5 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
 	jp nc, DeinitBattleAnimation
 	jr Rad_Move
 

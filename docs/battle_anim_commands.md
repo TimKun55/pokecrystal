@@ -138,9 +138,11 @@ Removes all active objects.
 ## `$E6`: `anim_beatup`
 
 
-## `$E7`: `anim_0xe7`
+## `$E7`: `anim_clearopponenthud`
 
-Does nothing. Unused.
+Clears the HUD box of the target of the attack (the opposite of the
+attacker's HUD, which is cleared before every animation and restored
+afterwards along with this one).
 
 
 ## `$E8`: `anim_updateactorpic`
