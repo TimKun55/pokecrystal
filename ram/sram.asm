@@ -36,21 +36,7 @@ for n, 1, MAILBOX_CAPACITY + 1
 sMailbox{d:n}Backup:: mailmsg sMailbox{d:n}Backup
 endr
 
-sMysteryGiftData::
-sMysteryGiftItem:: db
-sMysteryGiftUnlocked:: db
-sBackupMysteryGiftItem:: db
-sNumDailyMysteryGiftPartnerIDs:: db
-sDailyMysteryGiftPartnerIDs:: ds MAX_MYSTERY_GIFT_PARTNERS * 2
-sMysteryGiftDecorationsReceived:: flag_array NUM_DECOS
-	ds 4
-sMysteryGiftTimer:: dw
-	ds 1
-sMysteryGiftTrainerHouseFlag:: db
-sMysteryGiftPartnerName:: ds NAME_LENGTH
-sMysteryGiftUnusedFlag:: db
-sMysteryGiftTrainer:: ds wMysteryGiftTrainerEnd - wMysteryGiftTrainer
-sBackupMysteryGiftItemEnd::
+	ds 78 ; unused (old mysterygift entries)
 
 	ds $30
 

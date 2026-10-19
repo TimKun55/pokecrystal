@@ -16,11 +16,7 @@ DEF NO_INPUT EQU %00000000
 	const CHECK_FLAG
 
 ; G/S version ID: 0 = Gold, 1 = Silver (used by checkver)
-; Mystery Gift uses incremented values 1 and 2
 DEF GS_VERSION EQU 0
-; Pokémon Pikachu 2, a step counter / virtual pet device (used by Mystery Gift)
-DEF POKEMON_PIKACHU_2_VERSION EQU 3
-DEF RESERVED_GAME_VERSION EQU 4
 
 ; save file corruption check values
 DEF SAVE_CHECK_VALUE_1 EQU 99

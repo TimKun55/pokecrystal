@@ -90,12 +90,6 @@ InitCrystalData:
 	ld [wd479], a
 	ret
 
-MysteryGift:
-	call UpdateTime
-	farcall DoMysteryGiftIfDayHasPassed
-	farcall DoMysteryGift
-	ret
-
 Option:
 	farcall _Option
 	ret
@@ -203,16 +197,6 @@ _ResetWRAM:
 	ld [wRoamMon1MapNumber], a
 	ld [wRoamMon2MapNumber], a
 	ld [wRoamMon3MapNumber], a
-
-	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
-	call OpenSRAM
-	ld hl, sMysteryGiftItem
-	xor a
-	ld [hli], a
-	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
-	dec a ; -1
-	ld [hl], a
-	call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
 	call InitializeMagikarpHouse
@@ -369,7 +353,6 @@ Continue:
 	ld c, 20
 	call DelayFrames
 	farcall JumpRoamMons
-	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE

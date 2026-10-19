@@ -308,24 +308,6 @@ Battle_GetTrainerName::
 	ld c, a
 
 GetTrainerName::
-;	ld a, c
-;	cp CAL
-;	jr nz, .not_cal2
-;
-;	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-;	call OpenSRAM
-;	ld a, [sMysteryGiftTrainerHouseFlag]
-;	and a
-;	call CloseSRAM
-;	jr z, .not_cal2
-;
-;	ld a, BANK(sMysteryGiftPartnerName)
-;	call OpenSRAM
-;	ld hl, sMysteryGiftPartnerName
-;	call CopyTrainerName
-;	jp CloseSRAM
-;
-;.not_cal2
 	dec c
 	push bc
 	ld b, 0

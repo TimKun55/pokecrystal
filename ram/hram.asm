@@ -86,17 +86,6 @@ hMathBuffer:: ds 5
 NEXTU
 ; PrintNum scratch space
 hPrintNumBuffer:: ds 10
-
-NEXTU
-; Mystery Gift
-hMGExchangedByte:: db
-hMGExchangedWord:: dw
-hMGNumBits:: db
-hMGChecksum:: dw
-	ds 1
-hMGUnusedMsgLength:: db
-hMGRole:: db
-hMGStatusFlags:: db
 ENDU
 
 UNION
@@ -111,13 +100,7 @@ hCurSpriteTile::     db
 hCurSpriteOAMFlags:: db
 ENDU
 
-UNION
 hMoneyTemp:: ds 3
-NEXTU
-hMGJoypadPressed::  db
-hMGJoypadReleased:: db
-hMGPrevTIMA::       db
-ENDU
 
 hLCDCPointer::     db
 hLYOverrideStart:: db

@@ -1121,34 +1121,19 @@ wLinkOTMailEnd:: db
 
 SECTION UNION "Overworld Map", WRAM0
 
-; mystery gift data
-wMysteryGiftStaging:: ds 80
+	ds 80 ; unused (wMysteryGiftStaging)
 
 UNION
-wMysteryGiftTrainer:: ds 1 + (1 + 1 + NUM_MOVES) * PARTY_LENGTH + 1
-wMysteryGiftTrainerEnd::
+	ds 38 ; unused (wMysteryGiftTrainer and wMysteryGiftTrainerEnd)
 
 NEXTU
 wNameCardData:: ds NAME_LENGTH + 2 + 2 + 1 + 8 + 12
 wNameCardDataEnd::
-
-NEXTU
-wMysteryGiftCardHolderName:: ds PLAYER_NAME_LENGTH
 ENDU
 
 	ds 138
 
-wMysteryGiftPartnerData::
-wMysteryGiftPartnerGameVersion:: db
-wMysteryGiftPartnerID:: dw
-wMysteryGiftPartnerName:: ds NAME_LENGTH
-wMysteryGiftPartnerDexCaught:: db
-wMysteryGiftPartnerSentDeco:: db
-wMysteryGiftPartnerWhichItem:: db
-wMysteryGiftPartnerWhichDeco:: db
-wMysteryGiftPartnerBackupItem:: db
-	ds 1
-wMysteryGiftPartnerDataEnd::
+	ds 20 ; unused (mystery gift related)
 
 	ds 48
 
@@ -1157,27 +1142,14 @@ wSlotsWhichSpecialAnim:: ds 1
 SlotMachine_LCDCallback:: ds 16
 SlotMachine_VBlankCallback:: ds 1
 
-wMysteryGiftPlayerData::
-wMysteryGiftPlayerGameVersion:: db
-wMysteryGiftPlayerID:: dw
-wMysteryGiftPlayerName:: ds NAME_LENGTH
-wMysteryGiftPlayerDexCaught:: db
-wMysteryGiftPlayerSentDeco:: db
-wMysteryGiftPlayerWhichItem:: db
-wMysteryGiftPlayerWhichDeco:: db
-wMysteryGiftPlayerBackupItem:: db
-	ds 1
-wMysteryGiftPlayerDataEnd::
+	ds 20 ; unused (mystery gift related)
 
 
 SECTION UNION "Overworld Map", WRAM0
 
 	ds $200
 
-; mystery gift data
-wUnusedMysteryGiftStagedDataLength:: db
-wMysteryGiftMessageCount:: db
-wMysteryGiftStagedDataLength:: db
+	ds 3 ; unused (mystery gift related)
 
 
 SECTION UNION "Overworld Map", WRAM0
@@ -2713,7 +2685,6 @@ wCurEnemyItem:: db
 NEXTU
 ; miscellaneous words
 wBuySellItemPrice::
-wTempMysteryGiftTimer::
 wMagikarpLength:: dw
 ENDU
 

@@ -26,7 +26,6 @@ SaveMenu:
 SaveAfterLinkTrade:
 	call PauseGameLogic
 	farcall StageRTCTimeForSave
-	farcall BackupMysteryGift
 	call SavePokemonData
 	call SaveChecksum
 	call SaveBackupPokemonData
@@ -189,9 +188,8 @@ WriteBackupSave:
 ; Runs after saving the main copy. Writes the "pseudo-WRAM" copies of storage
 ; and mail, then creates the backup save. This process is automatically run
 ; on game load if we have a valid main save but not a backup save.
-	; Save storage, mail, mobile event and mystery gift to backup
+	; Save storage, mail, and mobile event to backup
 	farcall BackupPartyMonMail
-	farcall BackupMysteryGift
 	call SaveStorageSystem
 
 	; Save the backup copy of game data.
@@ -269,7 +267,6 @@ FindStackTop:
 ErasePreviousSave:
 	call EraseHallOfFame
 	call EraseLinkBattleStats
-	call EraseMysteryGift
 	call SaveData
 	call EraseBattleTowerStatus
 	ld a, BANK(sStackTop)
@@ -287,15 +284,6 @@ EraseLinkBattleStats:
 	call OpenSRAM
 	ld hl, sLinkBattleStats
 	ld bc, sLinkBattleStatsEnd - sLinkBattleStats
-	xor a
-	call ByteFill
-	jp CloseSRAM
-
-EraseMysteryGift:
-	ld a, BANK(sBackupMysteryGiftItem)
-	call OpenSRAM
-	ld hl, sBackupMysteryGiftItem
-	ld bc, sBackupMysteryGiftItemEnd - sBackupMysteryGiftItem
 	xor a
 	call ByteFill
 	jp CloseSRAM
@@ -491,7 +479,6 @@ TryLoadSaveFile:
 	call WasMidSaveAborted
 	call z, WriteBackupSave
 	farcall RestorePartyMonMail
-	farcall RestoreMysteryGift
 	call LoadStorageSystem
 
 	; Just in case
@@ -505,7 +492,6 @@ TryLoadSaveFile:
 	call LoadBackupPlayerData
 	call LoadBackupPokemonData
 	farcall RestorePartyMonMail
-	farcall RestoreMysteryGift
 	call LoadStorageSystem
 	call SaveGameData
 	and a

@@ -133,7 +133,6 @@ INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/events/move_deleter.asm"
 INCLUDE "engine/events/move_reminder.asm"
-INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
@@ -616,7 +615,6 @@ INCLUDE "engine/phone/scripts/lyra_callee.asm"
 SECTION "Temp", ROMX
 
 INCLUDE "engine/events/magikarp.asm"
-INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/link/time_capsule_2.asm"
 

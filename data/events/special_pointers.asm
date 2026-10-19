@@ -26,9 +26,6 @@ SpecialsPointers::
 	add_special Colosseum
 	add_special TimeCapsule
 	add_special CableClubCheckWhichPlayer
-	add_special CheckMysteryGift
-	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift
 	add_special CheckOtherPlayerGender
 
 ; Map events
@@ -115,7 +112,6 @@ SpecialsPointers::
 	add_special PlayCurMonCry
 	add_special ProfOaksPCBoot
 	add_special GameboyCheck
-	add_special TrainerHouse ; unused
 	add_special InitRoamMons
 	add_special FadeOutMusic
 	add_special Diploma

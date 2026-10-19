@@ -351,39 +351,6 @@ ConditionValueC = {dws_ 0xa1                0xdb                  PAD_A       0x
 ;	call	read_buf_clr                                                                                                        
 ;                                                                                                                           
                                                                                                                                                                           
-;001048dbh: 3E 02 EA 01 CA 3E 14 EA 02 CA F0 FF F5 CD 94 4A        
-;001048dbh: 3E 02 EA 01 CA 3E 14 EA 02 CA F0 FF F5 CD 9D 4A                           
-[infrared fake 0@Infrared_stage_party_data]                                                                                                           
-Mode = 1                                                                                                                    
-Address = {hex @}                                                                                  
-Fixcode={PATCH}                                                                                   
-                                                                                                                            
-               
-;00104c3ch: CD 66 4D CD 9E 4D CD E5 4D F0 BC FE 10 CA 24 4D   
-;00104a95h: F3 3E 3A 21 E9 4F CF CD 5E 4D CD 96 4D CD DD 4D ; ?:!镺贤^M蜄M洼M
-;00104a9ch: CD 5E 4D CD 96 4D CD DD 4D F0 BC FE 10          ; 蚟M蜄M洼M鸺?                                                                
-                                                                                                                     
-[infrared fake 1@Infrared_ExchangeMysteryGiftData_function]                                                                                                    
-Mode = 1                                                                                                             
-Address = {hex @}                                                                                              
-Fixcode={patch}                                           
-                                                                                                                     
-[infrared fake 2@Infrared_ExchangeMysteryGiftData_start]                                                                                                    
-Mode = 2                                                                                                             
-Address = {hex @}                                                                            
-Type = 101                                                                                                           
-                                                                                                                                                                                          
-[infrared fake 3@Infrared_ExchangeMysteryGiftData_loop_done]                    
-Mode = 2                             
-Address = {hex @}                 
-Type = 102                           
-                                     
-[infrared fake 4@Infrared_ExchangeMysteryGiftData_end]                    
-Mode = 2                             
-Address = {hex @}           
-Type = 103                           
-
-
 ;/////////////
 ;////fpa////////
 ;/////////rangel zhang ///////////
