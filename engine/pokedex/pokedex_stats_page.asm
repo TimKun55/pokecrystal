@@ -201,8 +201,6 @@ Pokedex_Get_Items:
 	and a
 	jr z, .Item1Done
 	ld b, a
-	farcall TimeCapsule_ReplaceTeruSama
-	ld a, b
 	ld [wNamedObjectIndex], a
 	call GetItemName
 .Item1Done
@@ -214,8 +212,6 @@ Pokedex_Get_Items:
 	and a
 	jr z, .Item2Done
 	ld b, a
-	farcall TimeCapsule_ReplaceTeruSama
-	ld a, b
 	ld [wNamedObjectIndex], a
 	call GetItemName
 .Item2Done

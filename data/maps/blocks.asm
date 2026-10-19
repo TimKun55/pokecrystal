@@ -387,7 +387,6 @@ Colosseum_Blocks:
 	INCBIN "maps/Colosseum.ablk"
 
 TradeCenter_Blocks:
-;TimeCapsule_Blocks:
 	INCBIN "maps/TradeCenter.ablk"
 
 UnionCaveB1F_Blocks:

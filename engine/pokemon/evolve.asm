@@ -161,8 +161,7 @@ EvolveAfterBattle_MasterLoop:
 	jr z, .proceed
 
 	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jp z, .dont_evolve_3
+; always check evolution
 
 	ld a, [wTempMonItem]
 	cp b

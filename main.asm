@@ -615,8 +615,6 @@ INCLUDE "engine/phone/scripts/lyra_callee.asm"
 SECTION "Temp", ROMX
 
 INCLUDE "engine/events/magikarp.asm"
-INCLUDE "engine/link/time_capsule.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
 
 
 SECTION "New Phone Text", ROMX

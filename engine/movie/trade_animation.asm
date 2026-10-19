@@ -1255,8 +1255,7 @@ TradeAnim_AnimateTrademonInTube:
 
 TradeAnim_SentToOTText:
 	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jr z, .time_capsule
+; always use normal trade text
 	ld hl, .MonNameSentToText
 	call PrintText
 	ld c, 189
@@ -1269,12 +1268,6 @@ TradeAnim_SentToOTText:
 	call TradeAnim_AdvanceScriptPointer
 	ret
 
-.time_capsule
-	ld hl, .MonWasSentToText
-	call PrintText
-	call TradeAnim_Wait80Frames
-	call TradeAnim_AdvanceScriptPointer
-	ret
 
 .MonWasSentToText:
 	text_far _MonWasSentToText

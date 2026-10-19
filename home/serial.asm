@@ -335,11 +335,11 @@ endc
 
 LinkTransfer::
 	push bc
-	ld b, SERIAL_TIMECAPSULE
+	ld b, SERIAL_TRADECENTER
 	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
+	cp LINK_TRADECENTER
 	jr z, .got_high_nybble
-	ld b, SERIAL_TIMECAPSULE
+	ld b, SERIAL_TRADECENTER
 	jr c, .got_high_nybble
 	cp LINK_TRADECENTER
 	ld b, SERIAL_TRADECENTER
@@ -390,17 +390,3 @@ LinkDataReceived::
 	ldh [rSC], a
 	ret
 
-SetBitsForTimeCapsuleRequestIfNotLinked:: ; unreferenced
-; Similar to SetBitsForTimeCapsuleRequest (see engine/link/link.asm).
-	ld a, [wLinkMode]
-	and a
-	ret nz
-	ld a, USING_INTERNAL_CLOCK
-	ldh [rSB], a
-	xor a
-	ldh [hSerialReceive], a
-	ld a, SC_EXTERNAL
-	ldh [rSC], a
-	ld a, SC_START | SC_EXTERNAL
-	ldh [rSC], a
-	ret

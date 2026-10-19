@@ -997,29 +997,7 @@ wLinkDataEnd::
 
 SECTION UNION "Overworld Map", WRAM0
 
-; player's party data, formatted for link transfer (Time Capsule link session)
-wLinkSendTimeCapsuleParty::
-wLinkSendTimeCapsulePartyPreamble:: ds SERIAL_PREAMBLE_LENGTH
-wLinkSendTimeCapsulePartyPlayerName:: ds NAME_LENGTH
-wLinkSendTimeCapsulePartyPartyCount::   db
-wLinkSendTimeCapsulePartyPartySpecies:: ds PARTY_LENGTH
-wLinkSendTimeCapsulePartyPartyEnd::     db ; older code doesn't check PartyCount
-; wLinkSendTimeCapsulePartyMon1 - wLinkSendTimeCapsulePartyMon6
-for n, 1, PARTY_LENGTH + 1
-wLinkSendTimeCapsulePartyMon{d:n}:: red_party_struct wLinkSendTimeCapsulePartyMon{d:n}
-endr
-wLinkSendTimeCapsulePartyMonOTs::
-; wLinkSendTimeCapsulePartyMon1OT - wLinkSendTimeCapsulePartyMon6OT
-for n, 1, PARTY_LENGTH + 1
-wLinkSendTimeCapsulePartyMon{d:n}OT:: ds NAME_LENGTH
-endr
-wLinkSendTimeCapsulePartyMonNicknames::
-; wLinkSendTimeCapsulePartyMon1Nickname - wLinkSendTimeCapsulePartyMon6Nickname
-for n, 1, PARTY_LENGTH + 1
-wLinkSendTimeCapsulePartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
-endr
-wLinkSendTimeCapsulePartyPadding:: ds SERIAL_PADDING_LENGTH
-wLinkSendTimeCapsulePartyEnd::
+ds 553 ; unused (TimeCapsule related)
 
 
 SECTION UNION "Overworld Map", WRAM0
@@ -1060,51 +1038,12 @@ wLinkPlayerPartyDataEnd::
 
 SECTION UNION "Overworld Map", WRAM0
 
-; after the initial link session (Gen 1), the other player's party data
-; is temporarily stored here before applying patch data
-wLinkTimeCapsulePartyData::
-
-; link player's name and party species are not patched,
-; as they normally don't contain SERIAL_NO_DATA_BYTE
-wLinkTimeCapsulePlayerName:: ds NAME_LENGTH
-wLinkTimeCapsulePartyCount::   db
-wLinkTimeCapsulePartySpecies:: ds PARTY_LENGTH
-wLinkTimeCapsulePartyEnd::     db ; older code doesn't check PartyCount
-
-wTimeCapsulePatchedData::
-; wTimeCapsulePartyMon1 - wTimeCapsulePartyMon6
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}:: red_party_struct wTimeCapsulePartyMon{d:n}
-endr
-
-wTimeCapsulePartyMonOTs::
-; wTimeCapsulePartyMon1OT - wTimeCapsulePartyMon6OT
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}OT:: ds NAME_LENGTH
-endr
-
-wTimeCapsulePartyMonNicknames::
-; wTimeCapsulePartyMon1Nickname - wTimeCapsulePartyMon6Nickname
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
-endr
-
-wLinkTimeCapsulePartyPadding:: ds SERIAL_PADDING_LENGTH
-
-wLinkTimeCapsulePartyDataEnd::
+ds 418 ; unused (TimeCapsule related)
 
 
 SECTION UNION "Overworld Map", WRAM0
 
-; Time Capsule link data prep
-	ds 1000
-wCurLinkOTPartyMonTypePointer:: dw
-
-wLinkOTPartyMonTypes::
-; wLinkOTPartyMon1Type - wLinkOTPartyMon6Type
-for n, 1, PARTY_LENGTH + 1
-wLinkOTPartyMon{d:n}Type:: dw
-endr
+ds 1014 ; unused (TimeCapsule related)
 
 
 SECTION UNION "Overworld Map", WRAM0
