@@ -19,7 +19,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_MoveFromUserToTargetAndDisappear
 	dw BattleAnimFunc_MoveInCircle
 	dw BattleAnimFunc_MoveWaveToTarget
-	dw BattleAnimFunc_ThrowFromUserToTarget
 	dw BattleAnimFunc_ThrowFromUserToTargetAndDisappear
 	dw BattleAnimFunc_Drop
 	dw BattleAnimFunc_MoveFromUserToTargetSpinAround
@@ -44,7 +43,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RazorWind
 	dw BattleAnimFunc_Kick
 	dw BattleAnimFunc_Absorb
-	dw BattleAnimFunc_RadialMoveOut_Slow
 	dw BattleAnimFunc_MoveUp
 	dw BattleAnimFunc_Wrap
 	dw BattleAnimFunc_LeechSeed
@@ -85,7 +83,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_SwaggerMorningSun
 	dw BattleAnimFunc_HiddenPower
 	dw BattleAnimFunc_Curse
-	dw BattleAnimFunc_PerishSong
 	dw BattleAnimFunc_RapidSpin
 	dw BattleAnimFunc_BetaPursuit
 	dw BattleAnimFunc_RainSandstorm
@@ -97,7 +94,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_RockTomb
 	dw BattleAnimFunc_Hurricane
 	dw BattleAnimFunc_RadialMoveOut
-	dw BattleAnimFunc_Moon
 	dw BattleAnimFunc_StraightDescent
 	dw BattleAnimFunc_Flamethrower
 	dw BattleAnimFunc_RadialMoveOut_VerySlow
@@ -110,12 +106,13 @@ BattleAnimFunc_Null:
 	dw DeinitBattleAnimation
 
 BattleAnimFunc_ThrowFromUserToTargetAndDisappear:
-	call BattleAnimFunc_ThrowFromUserToTarget
+	call BattleAnim_ThrowFromUserToTarget
 	jp nc, DeinitBattleAnimation
 	ret
 
-BattleAnimFunc_ThrowFromUserToTarget:
-	; If x coord at $88 or beyond, abort.
+BattleAnim_ThrowFromUserToTarget:
+; Shared helper, not a jumptable entry (used by the above, PokeBall and PokeBallBlocked)
+; If x coord at $88 or beyond, abort (carry clear); otherwise move toward the target and return carry set
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
@@ -304,7 +301,7 @@ BattleAnimFunc_PokeBall:
 	jp BattleAnim_IncAnonJumptableIndex
 
 .one
-	call BattleAnimFunc_ThrowFromUserToTarget
+	call BattleAnim_ThrowFromUserToTarget
 	ret c
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
@@ -408,7 +405,7 @@ BattleAnimFunc_PokeBallBlocked:
 	add hl, bc
 	ld a, [hl]
 	cp $70
-	jp c, BattleAnimFunc_ThrowFromUserToTarget
+	jp c, BattleAnim_ThrowFromUserToTarget
 	call BattleAnim_IncAnonJumptableIndex
 .two
 	ld hl, BATTLEANIMSTRUCT_YCOORD
@@ -2944,7 +2941,6 @@ BattleAnimFunc_GrowthSwordsDance:
 	dec [hl]
 	ret
 
-BattleAnimFunc_Moon:
 BattleAnimFunc_StrengthSeismicToss:
 ; Moves object up for $e0 frames, then shakes it vertically and throws it at the target. Uses anim_incobj to move to final phase
 ; Obj Param: Defined but not used
@@ -3430,35 +3426,6 @@ BattleAnimFunc_Curse:
 	inc [hl]
 	ret
 
-BattleAnimFunc_PerishSong:
-; Moves object in a large circle with a x radius of $50 and a y radius 1/4 or that, while also moving downwards
-; Obj Param: Defines starting position in the circle
-	ld d, $50
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	inc [hl]
-	inc [hl]
-	push af
-	push de
-	call BattleAnim_Sine
-	sra a
-	sra a
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	add [hl]
-	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	pop de
-	pop af
-	call BattleAnim_Cosine
-	ld hl, BATTLEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
 BattleAnimFunc_RapidSpin:
 ; Object moves upwards 4 pixels per frame until it disappears at y coord $d0
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -3768,12 +3735,6 @@ BattleAnimFunc_RadialMoveOut:
 	dw Step_VerySlow ; for Cross Chop
 	dw Step_Short ; for Cross Chop
 
-BattleAnimFunc_RadialMoveOut_Slow:
-	call BattleAnim_AnonJumptable
-
-	dw InitRadial
-	dw Step_Slow ; for Outrage
-
 InitRadial:
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
@@ -3787,14 +3748,6 @@ Step:
 	ld hl, 6.0 ; speed
 	call Set_Rad_Pos
 	cp 80 ; final position
-	jp nc, DeinitBattleAnimation
-	jr Rad_Move
-
-Step_Slow:
-	call Get_Rad_Pos
-	ld hl, 1.5 ; speed
-	call Set_Rad_Pos
-	cp 40 ; final position
 	jp nc, DeinitBattleAnimation
 	jr Rad_Move
 

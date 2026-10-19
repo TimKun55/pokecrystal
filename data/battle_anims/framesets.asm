@@ -31,7 +31,6 @@ BattleAnimFrameData:
 	dw .Frameset_Strength            ; BATTLE_ANIM_FRAMESET_STRENGTH
 	dw .Frameset_SkullCrossbone      ; BATTLE_ANIM_FRAMESET_SKULL_CROSSBONE
 	dw .Frameset_Acid                ; BATTLE_ANIM_FRAMESET_ACID
-	dw .Frameset_PoisonDropletUnused ; BATTLE_ANIM_FRAMESET_POISON_DROPLET_UNUSED
 	dw .Frameset_SludgeBubble        ; BATTLE_ANIM_FRAMESET_SLUDGE_BUBBLE
 	dw .Frameset_SludgeBubbleBurst   ; BATTLE_ANIM_FRAMESET_SLUDGE_BUBBLE_BURST
 	dw .Frameset_SmallBubble         ; BATTLE_ANIM_FRAMESET_SMALL_BUBBLE
@@ -64,7 +63,6 @@ BattleAnimFrameData:
 	dw .Frameset_Bite1               ; BATTLE_ANIM_FRAMESET_BITE_1
 	dw .Frameset_Bite2               ; BATTLE_ANIM_FRAMESET_BITE_2
 	dw .Frameset_CutDownLeft         ; BATTLE_ANIM_FRAMESET_CUT_DOWN_LEFT
-	dw .Frameset_CutDownRight        ; BATTLE_ANIM_FRAMESET_CUT_DOWN_RIGHT
 	dw .Frameset_CutUpRight          ; BATTLE_ANIM_FRAMESET_CUT_UP_RIGHT
 	dw .Frameset_CutLongDownLeft     ; BATTLE_ANIM_FRAMESET_CUT_LONG_DOWN_LEFT
 	dw .Frameset_CutLongDownRight    ; BATTLE_ANIM_FRAMESET_CUT_LONG_DOWN_RIGHT
@@ -81,7 +79,6 @@ BattleAnimFrameData:
 	dw .Frameset_GrowingBall         ; BATTLE_ANIM_FRAMESET_GROWING_BALL
 	dw .Frameset_WaterBall           ; BATTLE_ANIM_FRAMESET_WATER_BALL
 	dw .Frameset_GrowingBubble       ; BATTLE_ANIM_FRAMESET_GROWING_BUBBLE
-	dw .Frameset_Moonblast           ; BATTLE_ANIM_FRAMESET_MOONBLAST
 	dw .Frameset_Focus               ; BATTLE_ANIM_FRAMESET_FOCUS
 	dw .Frameset_Bind1               ; BATTLE_ANIM_FRAMESET_BIND_1
 	dw .Frameset_Bind2               ; BATTLE_ANIM_FRAMESET_BIND_2
@@ -126,7 +123,6 @@ BattleAnimFrameData:
 	dw .Frameset_Sparkle             ; BATTLE_ANIM_FRAMESET_SPARKLE
 	dw .Frameset_DragonPulse         ; BATTLE_ANIM_FRAMESET_DRAGON_PULSE
 	dw .Frameset_Lick                ; BATTLE_ANIM_FRAMESET_LICK
-	dw .Frameset_WithdrawShell       ; BATTLE_ANIM_FRAMESET_WITHDRAW_SHELL
 	dw .Frameset_ShrinkingChargeOrb  ; BATTLE_ANIM_FRAMESET_SHRINKING_CHARGE_ORB
 	dw .Frameset_Conversion          ; BATTLE_ANIM_FRAMESET_CONVERSION
 	dw .Frameset_Sword               ; BATTLE_ANIM_FRAMESET_SWORD
@@ -139,7 +135,6 @@ BattleAnimFrameData:
 	dw .Frameset_MetronomeHand       ; BATTLE_ANIM_FRAMESET_METRONOME_HAND
 	dw .Frameset_Agility             ; BATTLE_ANIM_FRAMESET_AGILITY
 	dw .Frameset_Cotton              ; BATTLE_ANIM_FRAMESET_COTTON
-	dw .Frameset_MilkBottle          ; BATTLE_ANIM_FRAMESET_MILK_BOTTLE
 	dw .Frameset_Spike               ; BATTLE_ANIM_FRAMESET_SPIKE
 	dw .Frameset_AngerVein           ; BATTLE_ANIM_FRAMESET_ANGER_VEIN
 	dw .Frameset_HealBell            ; BATTLE_ANIM_FRAMESET_HEAL_BELL
@@ -153,7 +148,6 @@ BattleAnimFrameData:
 	dw .Frameset_Icicle              ; BATTLE_ANIM_FRAMESET_ICICLE
 	dw .Frameset_Hurricane           ; BATTLE_ANIM_FRAMESET_HURRICANE
 	dw .Frameset_Safeguard           ; BATTLE_ANIM_FRAMESET_SAFEGUARD
-	dw .Frameset_MegaphoneUnused     ; BATTLE_ANIM_FRAMESET_MEGAPHONE_UNUSED
 	dw .Frameset_ItemBag             ; BATTLE_ANIM_FRAMESET_ITEM_BAG
 	dw .Frameset_BulkUp              ; BATTLE_ANIM_FRAMESET_BULK_UP
 	dw .Frameset_Cake                ; BATTLE_ANIM_FRAMESET_CAKE
@@ -166,7 +160,6 @@ BattleAnimFrameData:
 	dw .Frameset_DestinyBond         ; BATTLE_ANIM_FRAMESET_DESTINY_BOND
 	dw .Frameset_MorningSun          ; BATTLE_ANIM_FRAMESET_MORNING_SUN
 	dw .Frameset_Glimmer             ; BATTLE_ANIM_FRAMESET_GLIMMER
-	dw .Frameset_Moonlight           ; BATTLE_ANIM_FRAMESET_MOONLIGHT
 	dw .Frameset_CrossChop1          ; BATTLE_ANIM_FRAMESET_CROSS_CHOP_1
 	dw .Frameset_CrossChop2          ; BATTLE_ANIM_FRAMESET_CROSS_CHOP_2
 	dw .Frameset_ZapCannon           ; BATTLE_ANIM_FRAMESET_ZAP_CANNON
@@ -179,7 +172,6 @@ BattleAnimFrameData:
 	dw .Frameset_GrowingSparkle      ; BATTLE_ANIM_FRAMESET_GROWING_SPARKLE
 	dw .Frameset_Rain                ; BATTLE_ANIM_FRAMESET_RAIN
 	dw .Frameset_NastyPlot           ; BATTLE_ANIM_FRAMESET_NASTY_PLOT
-	dw .Frameset_SpiralUnused        ; BATTLE_ANIM_FRAMESET_SPIRAL_UNUSED
 	dw .Frameset_Aeroblast           ; BATTLE_ANIM_FRAMESET_AEROBLAST
 	dw .Frameset_Sandstorm           ; BATTLE_ANIM_FRAMESET_SANDSTORM
 	dw .Frameset_EnemyFeet1Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_1ROW
@@ -190,7 +182,6 @@ BattleAnimFrameData:
 	dw .Frameset_SwirlShort          ; BATTLE_ANIM_FRAMESET_SWIRL_SHORT
 	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
 	dw .Frameset_FireBlastImpact     ; BATTLE_ANIM_FRAMESET_FIRE_BLAST_IMPACT
-	dw .Frameset_Flamethrower_Alt    ; BATTLE_ANIM_FRAMESET_FLAMETHROWER_ALT
 	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
 	dw .Frameset_SparkleLong         ; BATTLE_ANIM_FRAMESET_SPARKLE_LONG
 	dw .Frameset_PulsingSparkle      ; BATTLE_ANIM_FRAMESET_PULSING_SPARKLE
@@ -246,19 +237,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_4E,  2
 	oamwait 2
 	oamframe BATTLE_ANIM_OAMSET_4E,  2
-	oamdelete
-
-.Frameset_CutDownRight:
-	oamframe BATTLE_ANIM_OAMSET_4B,  2, B_OAM_XFLIP
-	oamframe BATTLE_ANIM_OAMSET_4C,  2, B_OAM_XFLIP
-	oamframe BATTLE_ANIM_OAMSET_4D,  4, B_OAM_XFLIP
-	oamframe BATTLE_ANIM_OAMSET_4E,  2, B_OAM_XFLIP
-	oamwait 2
-	oamframe BATTLE_ANIM_OAMSET_4E,  2, B_OAM_XFLIP
-	oamwait 2
-	oamframe BATTLE_ANIM_OAMSET_4E,  2, B_OAM_XFLIP
-	oamwait 2
-	oamframe BATTLE_ANIM_OAMSET_4E,  2, B_OAM_XFLIP
 	oamdelete
 
 .Frameset_CutUpRight:
@@ -342,11 +320,6 @@ BattleAnimFrameData:
 	oamend
 
 .Frameset_Flamethrower:
-	oamframe BATTLE_ANIM_OAMSET_0A,  4
-	oamframe BATTLE_ANIM_OAMSET_0E,  4
-	oamrestart
-
-.Frameset_Flamethrower_Alt:
 	oamframe BATTLE_ANIM_OAMSET_0E,  4
 	oamframe BATTLE_ANIM_OAMSET_0A,  4
 	oamrestart
@@ -461,10 +434,6 @@ BattleAnimFrameData:
 
 .Frameset_Acid:
 	oamframe BATTLE_ANIM_OAMSET_1D,  8
-	oamend
-
-.Frameset_PoisonDropletUnused:
-	oamframe BATTLE_ANIM_OAMSET_17,  8
 	oamend
 
 .Frameset_SludgeBubble:
@@ -944,10 +913,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_9E,  2
 	oamdelete
 
-.Frameset_WithdrawShell:
-	oamframe BATTLE_ANIM_OAMSET_9F,  8
-	oamend
-
 .Frameset_Sword:
 	oamframe BATTLE_ANIM_OAMSET_6B, 24
 	oamdelete
@@ -960,7 +925,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_A2,  1
 	oamdelete
 
-.Frameset_Moonblast:
 .Frameset_SeismicToss:
 	oamframe BATTLE_ANIM_OAMSET_A3,  8
 	oamend
@@ -980,10 +944,6 @@ BattleAnimFrameData:
 
 .Frameset_Cotton:
 	oamframe BATTLE_ANIM_OAMSET_AD,  8
-	oamend
-
-.Frameset_MilkBottle:
-	oamframe BATTLE_ANIM_OAMSET_AE,  8
 	oamend
 
 .Frameset_Spike:
@@ -1021,10 +981,6 @@ BattleAnimFrameData:
 
 .Frameset_Safeguard:
 	oamframe BATTLE_ANIM_OAMSET_B4,  8
-	oamend
-
-.Frameset_MegaphoneUnused:
-	oamframe BATTLE_ANIM_OAMSET_6B,  8
 	oamend
 
 .Frameset_ItemBag:
@@ -1073,11 +1029,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_BF,  4
 	oamframe BATTLE_ANIM_OAMSET_C0,  4
 	oamframe BATTLE_ANIM_OAMSET_C1,  4
-	oamdelete
-
-.Frameset_Moonlight:
-	oamframe BATTLE_ANIM_OAMSET_C2, 32
-	oamframe BATTLE_ANIM_OAMSET_C2, 32
 	oamdelete
 
 .Frameset_CrossChop1:
@@ -1133,13 +1084,6 @@ BattleAnimFrameData:
 	oamframe BATTLE_ANIM_OAMSET_25,  2
 	oamframe BATTLE_ANIM_OAMSET_80,  2
 	oamframe BATTLE_ANIM_OAMSET_25,  2
-	oamrestart
-
-.Frameset_SpiralUnused:
-	oamframe BATTLE_ANIM_OAMSET_CD,  4
-	oamframe BATTLE_ANIM_OAMSET_CE,  4
-	oamframe BATTLE_ANIM_OAMSET_CD,  4, B_OAM_XFLIP, B_OAM_YFLIP
-	oamframe BATTLE_ANIM_OAMSET_CE,  4, B_OAM_XFLIP, B_OAM_YFLIP
 	oamrestart
 
 .Frameset_Aeroblast:
