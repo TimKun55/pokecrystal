@@ -647,12 +647,6 @@ INCLUDE "engine/events/diploma.asm"
 INCLUDE "engine/events/catch_tutorial_input.asm"
 INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 
-
-SECTION "European Mail", ROMX
-
-INCLUDE "engine/pokemon/european_mail.asm"
-
-
 SECTION "Debug Room", ROMX
 
 if DEF(_DEBUG)
