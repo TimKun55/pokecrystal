@@ -129,7 +129,7 @@ UpdateBGMap::
 	jr z, .Attr0
 
 ; BG Map 1
-	ld hl, vBGMap1
+	ld hl, vTilemap1
 	dec a ; 3
 	jr z, .Tiles1
 	dec a ; 4

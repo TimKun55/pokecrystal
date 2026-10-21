@@ -103,7 +103,7 @@ _UpdateBGMap::
 	dec a ; 2
 	jr z, .DoAttributes
 ; BG Map 1
-	ld hl, vBGMap1
+	ld hl, vTilemap1
 	dec a
 	jr z, .DoBGMap1Tiles
 	dec a

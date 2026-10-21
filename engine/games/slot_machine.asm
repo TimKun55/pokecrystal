@@ -504,7 +504,7 @@ ENDM
 	call DelayFrame
 	call DisableLCD
 	hlbgcoord 0, 0
-	ld bc, vBGMap1 - vBGMap0
+	ld bc, vTilemap1 - vTilemap0
 	ld a, ' '
 	call ByteFill
 	ld b, CGB_SLOT_MACHINE

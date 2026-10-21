@@ -168,7 +168,7 @@ RunTradeAnimScript:
 
 .NotCGB:
 	hlbgcoord 0, 0
-	ld bc, STARTOF(VRAM) + SIZEOF(VRAM) - vBGMap0
+	ld bc, STARTOF(VRAM) + SIZEOF(VRAM) - vTilemap0
 	ld a, ' '
 	call ByteFill
 	ld hl, TradeGameBoyLZ
@@ -614,7 +614,7 @@ TradeAnim_TubeToPlayer8:
 	call DisableLCD
 	callfar ClearSpriteAnims
 	hlbgcoord 0, 0
-	ld bc, STARTOF(VRAM) + SIZEOF(VRAM) - vBGMap0
+	ld bc, STARTOF(VRAM) + SIZEOF(VRAM) - vTilemap0
 	ld a, ' '
 	call ByteFill
 	xor a
@@ -628,8 +628,8 @@ TradeAnim_TubeToPlayer8:
 ; clear attrs
 	ld a, $1
 	ldh [rVBK], a
-	ld hl, vBGMap0
-	ld bc, vBGMap1 - vBGMap0
+	ld hl, vTilemap0
+	ld bc, vTilemap1 - vTilemap0
 	xor a
 	call ByteFill
 	ldh [rVBK], a
@@ -782,7 +782,7 @@ TradeAnim_TextboxScrollStart:
 
 TradeAnim_ScrollOutRight:
 	call WaitTop
-	ld a, HIGH(vBGMap1)
+	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
 	call WaitBGMap
 	ld a, $7
@@ -791,7 +791,7 @@ TradeAnim_ScrollOutRight:
 	ldh [hWY], a
 	call DelayFrame
 	call WaitTop
-	ld a, HIGH(vBGMap0)
+	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
 	call ClearTilemap
 	call TradeAnim_IncrementJumptableIndex
@@ -806,14 +806,14 @@ TradeAnim_ScrollOutRight2:
 	ret
 
 .done
-	ld a, HIGH(vBGMap1)
+	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
 	call WaitBGMap
 	ld a, $7
 	ldh [hWX], a
 	ld a, $90
 	ldh [hWY], a
-	ld a, HIGH(vBGMap0)
+	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
 	call TradeAnim_AdvanceScriptPointer
 	ret
@@ -986,7 +986,7 @@ ShowOTTrademonStats:
 TrademonStats_MonTemplate:
 	call WaitTop
 	call TradeAnim_BlankTilemap
-	ld a, HIGH(vBGMap1)
+	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
 	hlcoord 3, 0
 	ld b, $6
@@ -1006,7 +1006,7 @@ TrademonStats_MonTemplate:
 TrademonStats_Egg:
 	call WaitTop
 	call TradeAnim_BlankTilemap
-	ld a, HIGH(vBGMap1)
+	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
 	hlcoord 3, 0
 	ld b, 6
@@ -1026,7 +1026,7 @@ TrademonStats_Egg:
 TrademonStats_WaitBGMap:
 	call WaitBGMap
 	call WaitTop
-	ld a, HIGH(vBGMap0)
+	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
 	ret
 
