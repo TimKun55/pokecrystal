@@ -46,7 +46,6 @@ hInMenu:: db
 
 	ds 1
 
-hPrinter:: db
 hGraphicStartTile:: db
 hMoveMon:: db
 

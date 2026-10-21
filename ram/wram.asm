@@ -133,8 +133,6 @@ wMapTimeOfDay:: db
 
 	ds 3
 
-wPrinterConnectionOpen:: db
-wPrinterOpcode:: db
 wPrevDexEntry:: db
 wDisableTextAcceleration:: db
 wPrevLandmark:: db
@@ -814,42 +812,6 @@ SECTION UNION "Overworld Map", WRAM0
 ; overworld map blocks
 wOverworldMapBlocks:: ds 1300
 wOverworldMapBlocksEnd::
-
-
-SECTION UNION "Overworld Map", WRAM0
-
-; GB Printer data
-wGameboyPrinterRAM::
-wGameboyPrinter2bppSource:: ds 40 tiles
-wGameboyPrinter2bppSourceEnd::
-wUnusedGameboyPrinterSafeCancelFlag:: db
-wPrinterRowIndex:: db
-
-; Printer data
-wPrinterData:: ds 4
-wPrinterChecksum:: dw
-wPrinterHandshake:: db
-wPrinterStatusFlags::
-; bit 7: set if error 1 (battery low)
-; bit 6: set if error 4 (too hot or cold)
-; bit 5: set if error 3 (paper jammed or empty)
-; if this and the previous byte are both $ff: error 2 (connection error)
-	db
-
-wHandshakeFrameDelay:: db
-wPrinterSerialFrameDelay:: db
-wPrinterSendByteOffset:: dw
-wPrinterSendByteCounter:: dw
-
-; tilemap backup?
-wPrinterTilemapBuffer:: ds SCREEN_AREA
-wPrinterStatus:: db
-	ds 1
-; High nibble is for margin before the image, low nibble is for after.
-wPrinterMargins:: db
-wPrinterExposureTime:: db
-	ds 16
-wGameboyPrinterRAMEnd::
 
 
 SECTION UNION "Overworld Map", WRAM0
@@ -1610,7 +1572,6 @@ wHallOfFameMonCounter::
 wTradeDialog::
 	db
 wFrameCounter2::
-wPrinterQueueLength::
 wUnusedColorOffset::
 	db
 wUnusedTradeAnimPlayEvolutionMusic:: db
@@ -1790,14 +1751,7 @@ wTextboxFlags::
 ; bit 0: 1-frame text delay
 ; bit 4: no text delay
 	db
-wGBPrinterBrightness::
-; bit 0-6: brightness
-;   lightest: $00
-;   lighter:  $20
-;   normal:   $40 (default)
-;   darker:   $60
-;   darkest:  $7F
-	db
+	ds 1 ; unused (was wGBPrinterBrightness)
 wFontType::
 ; bits 0-1: font 0-3
 	db
