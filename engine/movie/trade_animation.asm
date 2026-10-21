@@ -679,7 +679,7 @@ TradeAnim_PlaceTrademonStatsOnTubeAnim:
 
 TradeAnim_EnterLinkTube1:
 	call ClearTilemap
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, $60
 	ldh [hSCX], a
 	call DelayFrame
@@ -781,7 +781,7 @@ TradeAnim_TextboxScrollStart:
 	ret
 
 TradeAnim_ScrollOutRight:
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
 	call WaitBGMap
@@ -790,7 +790,7 @@ TradeAnim_ScrollOutRight:
 	xor a
 	ldh [hWY], a
 	call DelayFrame
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
 	call ClearTilemap
@@ -899,7 +899,7 @@ TradeAnim_ShowFrontpic:
 	ld hl, vTiles2
 	lb bc, 10, $31
 	call Request2bpp
-	call WaitTop
+	call FinishBGMapTransfer
 	call TradeAnim_BlankTilemap
 	hlcoord 7, 2
 	xor a
@@ -984,7 +984,7 @@ ShowOTTrademonStats:
 	ret
 
 TrademonStats_MonTemplate:
-	call WaitTop
+	call FinishBGMapTransfer
 	call TradeAnim_BlankTilemap
 	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
@@ -1004,7 +1004,7 @@ TrademonStats_MonTemplate:
 	next "<ID>№.@"
 
 TrademonStats_Egg:
-	call WaitTop
+	call FinishBGMapTransfer
 	call TradeAnim_BlankTilemap
 	ld a, HIGH(vTilemap1)
 	ldh [hBGMapAddress + 1], a
@@ -1025,7 +1025,7 @@ TrademonStats_Egg:
 
 TrademonStats_WaitBGMap:
 	call WaitBGMap
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
 	ret
@@ -1296,7 +1296,7 @@ TradeAnim_OTBidsFarewell:
 	text_end
 
 TradeAnim_TakeCareOfText:
-	call WaitTop
+	call FinishBGMapTransfer
 	hlcoord 0, 10
 	ld bc, 8 * SCREEN_WIDTH
 	ld a, ' '

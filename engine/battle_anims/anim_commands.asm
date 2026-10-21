@@ -136,17 +136,17 @@ RunBattleAnimScript:
 
 BattleAnimClearHud:
 	call DelayFrame
-	call WaitTop
+	call FinishBGMapTransfer
 	call ClearActorHud
 	ld a, $1
 	ldh [hBGMapMode], a
 	call Delay3
-	call WaitTop
+	call FinishBGMapTransfer
 	ret
 
 BattleAnimRestoreHuds:
 	call DelayFrame
-	call WaitTop
+	call FinishBGMapTransfer
 
 	ldh a, [rWBK]
 	push af
@@ -161,7 +161,7 @@ BattleAnimRestoreHuds:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call Delay3
-	call WaitTop
+	call FinishBGMapTransfer
 	ret
 
 BattleAnimRequestPals:
@@ -1424,7 +1424,7 @@ ClearBattleAnims::
 	jp DelayFrame
 
 BattleAnim_RevertPals:
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, %11100100
 	ld [wBGP], a
 	ld [wOBP0], a

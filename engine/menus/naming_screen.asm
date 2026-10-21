@@ -56,7 +56,7 @@ NamingScreen:
 	ldh [rLCDC], a
 	call .GetNamingScreenSetup
 	call WaitBGMap
-	call WaitTop
+	call FinishBGMapTransfer
 	call SetDefaultBGPAndOBP
 	call NamingScreen_InitNameEntry
 	ret
@@ -268,7 +268,7 @@ NamingScreen_IsTargetBox:
 	ret
 
 NamingScreen_InitText:
-	call WaitTop
+	call FinishBGMapTransfer
 	call NamingScreen_DrawBorders
 	hlcoord 1, 1
 	lb bc, 4, SCREEN_WIDTH - 2
@@ -928,7 +928,7 @@ _ComposeMailMessage:
 	ld b, CGB_NAMING_SCREEN
 	call GetCGBLayout
 	call WaitBGMap
-	call WaitTop
+	call FinishBGMapTransfer
 	ld a, %11100100
 	call DmgToCgbBGPals
 	ld a, %11100100
@@ -952,7 +952,7 @@ INCBIN "gfx/naming_screen/mail.2bpp"
 	ret
 
 .InitCharset:
-	call WaitTop
+	call FinishBGMapTransfer
 	call NamingScreen_DrawBorders
 	hlcoord 1, 1
 	lb bc, 4, SCREEN_WIDTH - 2
