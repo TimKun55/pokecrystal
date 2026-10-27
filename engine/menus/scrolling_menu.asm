@@ -42,7 +42,7 @@ _ScrollingMenu::
 	jr .redraw_done
 
 .wait_redraw
-	ld c, 3
+	ld c, 1
 	call DelayFrames
 .redraw_done
 	xor a
@@ -57,6 +57,7 @@ ScrollingMenu_InitDisplay:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call ScrollingMenu_UpdateDisplay
+	call Move2DMenuCursor
 	call ScrollingMenu_PlaceCursor
 	call ScrollingMenu_CheckCallFunction3
 	pop af

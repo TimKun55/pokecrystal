@@ -9,6 +9,12 @@ WaitBGMap::
 	call DelayFrames
 	ret
 
+ApplyTilemapInVBlank::
+; Tell VBlank to update BG Map asynchronously
+	ld a, 1
+	ldh [hBGMapMode], a
+	ret
+
 WaitBGMap2::
 	ldh a, [hCGB]
 	and a

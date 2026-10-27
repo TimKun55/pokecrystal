@@ -11,7 +11,7 @@ _UpdateItemIcon:
 	call DecompressItemIcon
 	farcall LoadItemIconPalette
 	call SetDefaultBGPAndOBP
-	call WaitBGMap
+	call ApplyTilemapInVBlank
 	ret
 
 DecompressItemIcon::

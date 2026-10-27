@@ -1399,7 +1399,7 @@ Pack_PrintTextNoScroll:
 	ret
 
 WaitBGMap_DrawPackGFX:
-	call WaitBGMap
+	call ApplyTilemapInVBlank
 DrawPackGFX:
 	ld a, [wCurPocket]
 	maskbits NUM_POCKETS
@@ -1667,11 +1667,10 @@ ClearPocketList:
 	ret
 
 Pack_InitColors:
-	call WaitBGMap
+	call ApplyTilemapInVBlank
 	ld b, CGB_PACKPALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP
-	call DelayFrame
 	ret
 
 ItemsPocketMenuHeader:

@@ -299,7 +299,12 @@ MenuJoypadLoop:
 	jr nz, .animate_sprites
 	ld a, $1
 	ldh [hOAMUpdate], a
-	call WaitBGMap
+	ldh [hBGMapMode], a
+	ld a, [w2DMenuFlags1]
+	bit 6, a
+	call z, DelayFrame
+	ld c, 2
+	call DelayFrames
 	jr .waited
 
 .animate_sprites
