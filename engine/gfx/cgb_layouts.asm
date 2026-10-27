@@ -1859,6 +1859,10 @@ _CGB_TrainerOrMonFrontpicPals:
 LoadItemIconPalette:
 	ld a, [wCurItem]
 LoadItemIconPaletteFromA:
+	cp NUM_ITEMS + 1
+	jr c, .ok
+	xor a
+.ok
 	ld bc, ItemIconPalettes
 LoadIconPalette:
 	ld l, a

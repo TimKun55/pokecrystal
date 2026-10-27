@@ -385,6 +385,10 @@ TMHM_ShowTMMoveDescription:
 
 .Cancel:
 	farcall ClearTMHMIcon
+	xor a
+	ld [wCurItem], a
+	farcall LoadItemIconPalette
+	call SetDefaultBGPAndOBP
 	jp TMHM_JoypadLoop
 
 MoveAtkString:
