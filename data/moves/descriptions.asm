@@ -1047,7 +1047,7 @@ RockTombDescription:
 	line "trap. Spd ▼1.@"
 
 HiddenPowerDescription:
-	db   "The power varies"
+	db   "The type varies"
 	line "with the #mon.@"
 
 TwisterDescription:
