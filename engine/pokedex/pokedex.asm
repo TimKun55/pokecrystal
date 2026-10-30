@@ -1202,10 +1202,10 @@ Pokedex_InitSearchScreen:
 	call Pokedex_PlaceSearchScreenTypeStrings
 	xor a
 	ld [wDexSearchSlowpokeFrame], a
-	farcall DoDexSearchSlowpokeFrame
 	call WaitBGMap
 	ld a, CGB_POKEDEX_SEARCH_OPTION
 	call Pokedex_GetCGBLayout
+	farcall DoDexSearchSlowpokeFrame
 	call Pokedex_IncrementDexPointer
 	ret
 

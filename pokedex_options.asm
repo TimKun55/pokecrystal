@@ -30,7 +30,7 @@ DEF SWAP_DARK_GHOST_TYPES EQU FALSE
 
 	; Absolutely no room to have uncompressed PokedexGFX (PokedexLZ) (gfx/pokedex/pokedex.2bpp)?
 	; or Pokedex Slowpoke Search GFX (PokedexSlowpokeLZ)(gfx/pokedex/slowpoke.2bpp)?
-DEF USE_COMPRESSED_POKEDEX_GFX EQU TRUE
+DEF USE_COMPRESSED_POKEDEX_GFX EQU FALSE
 		; just be aware that using compression will cause ugly white flashes during some screen transitions in the Pokedex
 
 
