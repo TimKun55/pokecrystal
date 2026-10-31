@@ -796,6 +796,56 @@ wc7d0:: ds 1
 wc7d1:: ds 1
 wc7d2:: ds 1
 wc7d3:: ds 2
+NEXTU
+; surfing pikachu minigame
+wSurfingMinigameData:: db
+wSurfingMinigameRoutineNumber::       db
+wSurfingMinigamePikachuState::        db
+wSurfingMinigameWaveFunctionNumber::  dw
+wSurfingMinigameWaveRandomValue::     db
+wSurfingMinigamePikachuHP::           dw
+wSurfingMinigameLandingQuality::      db
+wSurfingMinigameRadnessMeter::       db
+wSurfingMinigameRadnessScore::        dw
+wSurfingMinigameTotalScore::          dw
+wSurfingMinigameBoardAngleOffset::    db
+wSurfingMinigameBoardAngleDecreasing:: db
+wSurfingMinigameBoardAngleTimer::     db
+wSurfingMinigameCrashTimer::          db
+wSurfingMinigamePikachuSpeed::        dw
+wSurfingMinigameDistance::            ds 3
+wSurfingMinigameWaveHeightBuffer::    dw
+wSurfingMinigamePikachuObjectHeight:: db
+wSurfingMinigameWaterSprayCounter::   db
+wSurfingMinigameJumpArcMagnitude::    db
+wSurfingMinigameJumpDescending::      db
+wSurfingMinigameJumpArcFraction::     db
+wSurfingMinigameMusicTempoEnabled::   db
+wSurfingMinigameCloudScrollFraction:: db
+wSurfingMinigameGameOver::            db
+wSurfingMinigameGameOverDelay::       db
+wSurfingMinigameRoutineDelay::        db
+wSurfingMinigameIntroAnimationFinished:: db
+wSurfingMinigameSCX::                 db
+wSurfingMinigameSCX2::                db
+wSurfingMinigameSCXHi::               db
+wSurfingMinigameXOffset::             db
+wSurfingMinigameTrickFlags::          db
+wSurfingMinigameWaveHeight::          ds SCREEN_WIDTH
+wSurfingMinigameBGMapReadBuffer::     ds 2
+wRedrawRowOrColumnSrcTiles::          ds 2 * SCREEN_HEIGHT
+wSurfingMinigameDataEnd::
+wSurfingMinigameHiScore::              dw ; little-endian BCD, kept across games
+
+; The LCD/VBlank callbacks are copied from ROM into WRAM and then executed
+; there, so the buffer must hold the whole trampoline (see the
+; .LCDCallbackPoint block in the minigame engine). Keep this in the minigame's
+; own union: the "Overworld Map" union overlays wOverworldMapBlocks, and the
+; minigame returns to the overworld without reloading the map, so a trampoline
+; copied there would corrupt the map's block buffer.
+SurfingPikachu_LCDCallback:: ds 32
+ds 1
+
 ENDU
 
 
@@ -1039,11 +1089,20 @@ ENDU
 	ds 48
 
 wSlotsWhichSpecialAnim:: ds 1
-; i don't feel like getting the actual length :(
-SlotMachine_LCDCallback:: ds 16
-SlotMachine_VBlankCallback:: ds 1
+; The LCD callback is copied from ROM into WRAM and then executed there, so
+; the buffer must hold the whole trampoline (see the .LCDCallbackPoint block
+; in the slot machine engine). The trampoline is 31 bytes; the previous 16-byte
+; reservation overflowed into the following variables.
+SlotMachine_LCDCallback:: ds 32
+ds 1
 
 	ds 20 ; unused (mystery gift related)
+
+; NOTE: Surfing Pikachu's trampoline buffer deliberately does *not* live here.
+; This section overlays wOverworldMapBlocks, and the minigame is entered from
+; the overworld without reloading the map afterwards, so copying the trampoline
+; here corrupted the map's block buffer (visible as stray tiles on exit).
+; Its buffer is in the minigame's own WRAM union instead (see "Miscellaneous").
 
 
 SECTION UNION "Overworld Map", WRAM0

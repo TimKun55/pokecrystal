@@ -46,6 +46,11 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_PcMode
 	dw SpriteAnimFunc_PcPack
 	dw SpriteAnimFunc_Cover
+	dw SpriteAnimFunc_Surf_Nop
+	dw SpriteAnimFunc_Surf_Pikachu
+	dw SpriteAnimFunc_Surf_MoveBanner
+	dw SpriteAnimFunc_Surf_FlippingPika
+	dw SpriteAnimFunc_Surf_IntroPikachu
 	assert_table_length NUM_SPRITE_ANIM_FUNCS
 
 SpriteAnimFunc_Null:
@@ -812,3 +817,29 @@ SpriteAnimFunc_Cover:
 	cp [hl]
 	ret nz
 	jp DeinitializeSprite
+
+; Surfing Pikachu minigame callbacks
+; The minigame engine lives in its own ROMX section (bank $94), so these
+; wrappers must cross banks rather than plain `jp`.
+; Note: `newfarjp` masks the target bank with `and $7f` (an MBC3 limitation
+; inherited from vanilla pokecrystal), which would redirect bank $94 to
+; bank $14 and run garbage. `farcall` switches banks without masking, so
+; use it here instead.
+SpriteAnimFunc_Surf_Nop:
+	ret
+
+SpriteAnimFunc_Surf_Pikachu:
+	farcall SurfingMinigameAnimatedObjectFn_Pikachu
+	ret
+
+SpriteAnimFunc_Surf_MoveBanner:
+	farcall SurfingMinigame_MoveBannerToCenter
+	ret
+
+SpriteAnimFunc_Surf_FlippingPika:
+	farcall SurfingMinigameAnimatedObjectFn_FlippingPika
+	ret
+
+SpriteAnimFunc_Surf_IntroPikachu:
+	farcall SurfingMinigameAnimatedObjectFn_IntroAnimationPikachu
+	ret

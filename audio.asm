@@ -167,6 +167,7 @@ INCLUDE "audio/music/surfingrby.asm"
 INCLUDE "audio/music/ceruleancity.asm"
 INCLUDE "audio/music/nuggetbridge.asm"
 INCLUDE "audio/music/cianwoodcity.asm"
+INCLUDE "audio/music/surfing_pikachu.asm"
 
 INCLUDE "data/music/musicplayer_songs.asm"
 

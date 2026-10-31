@@ -207,6 +207,14 @@ _UpdateSound::
 	ldh [rAUDVOL], a
 	; write SO on/off to hardware register
 	ld a, [wSoundOutput]
+	ld hl, wChannel8Flags1
+	bit SOUND_NOISE_TAIL, [hl]
+	jr z, .no_noise_tail
+	; keep the noise channel routed while its envelope rings out
+	ld a, [wChannel8Tracks]
+	ld hl, wSoundOutput
+	or [hl]
+.no_noise_tail
 	ldh [rAUDTERM], a
 	ret
 
@@ -491,6 +499,10 @@ endr
 	ret
 
 .ch4_rest
+	ld hl, CHANNEL_FLAGS1
+	add hl, bc
+	bit SOUND_NOISE_TAIL, [hl]
+	ret nz
 	ldh a, [rAUDENA]
 	and %10000111 ; ch4 off
 	ldh [rAUDENA], a
@@ -1408,7 +1420,7 @@ MusicCommands:
 	dw MusicEE ; unused
 	dw Music_StereoPanning
 	dw Music_SFXToggleNoise
-	dw MusicF1 ; nothing
+	dw Music_NoiseTail
 	dw MusicF2 ; nothing
 	dw MusicF3 ; nothing
 	dw MusicF4 ; nothing
@@ -1425,7 +1437,15 @@ MusicCommands:
 	dw Music_Ret
 	assert_table_length $100 - FIRST_MUSIC_CMD
 
-MusicF1:
+Music_NoiseTail:
+; let the noise channel's hardware envelope ring out
+; instead of muting it when the stream ends
+; params: none
+	ld hl, CHANNEL_FLAGS1
+	add hl, bc
+	set SOUND_NOISE_TAIL, [hl]
+	ret
+
 MusicF2:
 MusicF3:
 MusicF4:

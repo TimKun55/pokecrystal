@@ -122,4 +122,5 @@ Music:
 	dba Music_CeruleanCityHGSS
 	dba Music_NuggetBridgeHGSS
 	dba Music_CianwoodCityHGSS
+	dba Music_SurfingPikachu
 	assert_table_length NUM_MUSIC_SONGS

@@ -96,6 +96,8 @@ Init::
 	call ClearSprites
 	call ClearsScratch
 
+; WRAM0 is not wiped by ClearWRAM (which only clears banks 1-7). The Surfing
+; Pikachu hi-score is kept in WRAM and persisted via the save system.
 	; Set up LCD interrupt handler
 	ld a, RETI_INSTRUCTION
 	ldh [hFunctionInstruction], a

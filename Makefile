@@ -286,6 +286,7 @@ gfx/slots/slots_2.2bpp: tools/gfx += --interleave --png=$<
 gfx/slots/slots_3.2bpp: tools/gfx += --interleave --png=$< --remove-duplicates --keep-whitespace --remove-xflip
 
 gfx/card_flip/card_flip_1.2bpp: tools/gfx += --trim-whitespace
+gfx/surfing_pikachu/surfing_pikachu_1c.2bpp: tools/gfx += --trim-whitespace
 gfx/card_flip/card_flip_2.2bpp: tools/gfx += --remove-whitespace
 
 gfx/battle/substitute-back.2bpp: RGBGFXFLAGS += --columns

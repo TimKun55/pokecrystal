@@ -31,6 +31,13 @@ PlaySpriteAnimations:
 	pop hl
 	ret
 
+PlaySpriteAnimationsFromOAMOffset::
+; a = starting byte offset into wShadowOAM.
+; Used by the Surfing Pikachu minigame to reserve sprites 0-14
+; for static OAM (HP digits, progress marker, clouds).
+	ld [wCurSpriteOAMAddr], a
+	jp DoNextFrameForAllSprites
+
 DoNextFrameForAllSprites:
 	ld hl, wSpriteAnimationStructs
 	ld e, NUM_SPRITE_ANIM_STRUCTS
@@ -58,14 +65,20 @@ DoNextFrameForAllSprites:
 	ld a, [wCurSpriteOAMAddr]
 	ld l, a
 	ld h, HIGH(wShadowOAM)
+	call .GetClearEnd
 
-.loop2 ; Clear (wShadowOAM + [wCurSpriteOAMAddr] --> wShadowOAMEnd)
+.loop2 ; Clear (wShadowOAM + [wCurSpriteOAMAddr] --> c)
 	ld a, l
-	cp LOW(wShadowOAMEnd)
+	cp c
 	jr nc, .done
 	xor a
 	ld [hli], a
 	jr .loop2
+
+.GetClearEnd:
+; Always clear through the end of the OAM buffer.
+	ld c, LOW(wShadowOAMEnd)
+	ret
 
 .done
 	ret

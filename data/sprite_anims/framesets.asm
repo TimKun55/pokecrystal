@@ -58,6 +58,33 @@ SpriteAnimFrameData:
 	dw .Frameset_PCPack
 	dw .Frameset_SlotsCoverWhite
 	dw .Frameset_SlotsCoverGreen
+	dw .Frameset_Surf_Pikachu
+	dw .Frameset_Surf_Angle_00
+	dw .Frameset_Surf_Angle_01
+	dw .Frameset_Surf_Angle_02
+	dw .Frameset_Surf_Angle_03
+	dw .Frameset_Surf_Angle_04
+	dw .Frameset_Surf_Angle_05
+	dw .Frameset_Surf_Angle_06
+	dw .Frameset_Surf_Angle_07
+	dw .Frameset_Surf_Angle_08
+	dw .Frameset_Surf_Angle_09
+	dw .Frameset_Surf_Angle_10
+	dw .Frameset_Surf_Angle_11
+	dw .Frameset_Surf_Angle_12
+	dw .Frameset_Surf_Angle_13
+	dw .Frameset_Surf_ResultsPikachu
+	dw .Frameset_Surf_LargeSplash
+	dw .Frameset_Surf_StartText
+	dw .Frameset_Surf_OhNoText
+	dw .Frameset_Surf_WaterSpray
+	dw .Frameset_Surf_Plus50
+	dw .Frameset_Surf_Plus150
+	dw .Frameset_Surf_Plus350
+	dw .Frameset_Surf_Plus750
+	dw .Frameset_Surf_Plus180
+	dw .Frameset_Surf_Plus500
+	dw .Frameset_Surf_IntroPikachu
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -412,3 +439,170 @@ SpriteAnimFrameData:
 .Frameset_SlotsCoverGreen:
 	oamframe SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN, 1
 	oamend
+; Surfing Pikachu framesets (appended)
+
+.Frameset_Surf_Pikachu:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PIKACHU, 8
+	oamrestart
+
+.Frameset_Surf_Angle_00:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_00, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_01, 8
+	oamrestart
+
+.Frameset_Surf_Angle_01:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_02, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_03, 8
+	oamrestart
+
+.Frameset_Surf_Angle_02:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_04, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_05, 8
+	oamrestart
+
+.Frameset_Surf_Angle_03:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_06, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_07, 8
+	oamrestart
+
+.Frameset_Surf_Angle_04:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_08, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_09, 8
+	oamrestart
+
+.Frameset_Surf_Angle_05:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_10, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_11, 8
+	oamrestart
+
+.Frameset_Surf_Angle_06:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_12, 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_13, 8
+	oamrestart
+
+.Frameset_Surf_Angle_07:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_00, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_01, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_08:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_02, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_03, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_09:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_04, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_05, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_10:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_06, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_07, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_11:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_08, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_09, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_12:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_10, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_11, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_Angle_13:
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_12, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamframe SPRITE_ANIM_OAMSET_SURF_ANGLE_13, 8, B_OAM_XFLIP, B_OAM_YFLIP
+	oamrestart
+
+.Frameset_Surf_ResultsPikachu:
+	oamframe SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1, 7
+	oamframe SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2, 7
+	oamrestart
+
+.Frameset_Surf_LargeSplash:
+	oamframe SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH, 2
+	oamframe SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH, 2
+	oamwait 8
+	oamframe SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD, 2
+	oamend
+
+.Frameset_Surf_StartText:
+	oamframe SPRITE_ANIM_OAMSET_SURF_START_TEXT, 32
+	oamframe SPRITE_ANIM_OAMSET_SURF_START_TEXT, 32
+	oamdelete
+
+.Frameset_Surf_OhNoText:
+	oamframe SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT, 32
+	oamend
+
+.Frameset_Surf_WaterSpray:
+	oamframe SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY, 1
+	oamdelete
+
+.Frameset_Surf_Plus50:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_50, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_50, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_50, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_50, 1
+	oamdelete
+
+.Frameset_Surf_Plus150:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_150, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_150, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_150, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_150, 1
+	oamdelete
+
+.Frameset_Surf_Plus350:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_350, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_350, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_350, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_350, 1
+	oamdelete
+
+.Frameset_Surf_Plus750:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_750, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_750, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_750, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_750, 1
+	oamdelete
+
+.Frameset_Surf_Plus180:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_180, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_180, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_180, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_180, 1
+	oamdelete
+
+.Frameset_Surf_Plus500:
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_500, 4
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_500, 3
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_500, 2
+	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_SURF_PLUS_500, 1
+	oamdelete
+
+.Frameset_Surf_IntroPikachu:
+	oamframe SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU, 7
+	oamframe SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2, 7
+	oamframe SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3, 7
+	oamframe SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4, 7
+	oamrestart

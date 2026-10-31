@@ -173,6 +173,11 @@ _VoltorbFlip:
 	ld hl, VoltorbFlip
 	jr StartGameCornerGame
 
+_SurfingPikachu::
+	ld a, BANK(SurfingPikachu)
+	ld hl, SurfingPikachu
+	jr StartGameCornerGame
+
 MemoryGame:
 	call CheckCoinsAndCoinCase
 	ret c
@@ -182,6 +187,17 @@ MemoryGame:
 	ret
 
 StartGameCornerGame:
+; Save the map's music so it can be restored on the way out. The minigames
+; change the music themselves; without a backup, RestoreMusic falls back to
+; PlayMapMusic, which does nothing because wMapMusic still names the map track,
+; leaving the minigame music playing after the player returns to the overworld.
+; farcall clobbers a and hl, and callers pass the game routine in exactly those
+; registers, so preserve them across the call.
+	push af
+	push hl
+	farcall SaveMusic
+	pop hl
+	pop af
 	call FarQueueScript
 	call FadeToMenu
 	ld hl, wQueuedScriptBank
@@ -193,6 +209,7 @@ StartGameCornerGame:
 	pop af
 	rst FarCall
 	call ExitAllMenus
+	farcall RestoreMusic
 	ret
 
 CheckCoinsAndCoinCase:

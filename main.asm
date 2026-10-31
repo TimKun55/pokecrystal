@@ -126,6 +126,11 @@ INCLUDE "engine/battle/swarm_shiny.asm"
 INCLUDE "engine/games/slot_machine.asm"
 
 
+SECTION "Surfing Pikachu", ROMX
+
+INCLUDE "engine/games/surfing_pikachu.asm"
+
+
 SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"

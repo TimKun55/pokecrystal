@@ -1,0 +1,39 @@
+; Surfing Pikachu palettes (CGB)
+; Ported from Yellow's PAL_PIKACHUS_BEACH / PAL_PIKACHUS_BEACH_TITLE
+;
+; FORMAT: entries are in COLOUR-INDEX order (index 0..3), since the DMG
+; shade indirection (DmgToCgb*) has been dropped for this GBC-only hack.
+; Colour index 0 = white (sky), 1 = yellow (Pikachu), 2 = blue (water),
+; 3 = black (outlines) -- see Yellow's colour semantics below.
+;
+; Yellow's colour semantics (colour index -> meaning):
+;     0 = white  (sky)
+;     1 = yellow (Pikachu, beach sand)
+;     2 = blue   (water)
+;     3 = black  (outlines)
+;
+; ============================================================
+; BG palettes (loaded into wBGPals1, 1 palette used in gameplay)
+; ============================================================
+;
+; BG 0: playfield (water, sky, beach) -- used by every playfield tile
+;       colour-index order: white, yellow, blue, black
+	RGB 31,31,31, 31,31,00, 11,23,31, 03,03,03
+
+; BG 1: beach title screen -- sky, dark band, sand, black
+;       colour-index order: white, dark-gray, yellow, black
+	RGB 31,31,31, 09,09,09, 31,21,00, 03,03,03
+
+; ============================================================
+; OBJ palettes (loaded into wOBPals1, 2 palettes used)
+; ============================================================
+;
+; OBJ 0: Pikachu sprite, HP digits, clouds, progress marker
+;        colour-index order: white, yellow, blue, black
+;        rOBP0 = %11100100 (white, light, dark, black)
+	RGB 31,31,31, 31,31,00, 11,23,31, 03,03,03
+
+; OBJ 1: splashes, banners, water spray
+;        colour-index order: white, white, blue, black
+;        rOBP1 = %11100000 (white, white, dark, black)
+	RGB 31,31,31, 31,31,31, 11,23,31, 03,03,03

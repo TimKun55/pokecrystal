@@ -358,6 +358,10 @@ SaveOptions:
 	ld a, [wOptions]
 	and ~(1 << NO_TEXT_SCROLL)
 	ld [sOptions], a
+	ld hl, wSurfingMinigameHiScore
+	ld de, sSurfingMinigameHiScoreSRAM
+	ld bc, 2
+	call CopyBytes
 	jp CloseSRAM
 
 SavePlayerData:
@@ -413,8 +417,11 @@ SaveBackupOptions:
 	ld de, sBackupOptions
 	ld bc, wOptionsEnd - wOptions
 	call CopyBytes
-	call CloseSRAM
-	ret
+	ld hl, wSurfingMinigameHiScore
+	ld de, sBackupSurfingMinigameHiScoreSRAM
+	ld bc, 2
+	call CopyBytes
+	jp CloseSRAM
 
 SaveBackupPlayerData:
 	ld a, BANK(sBackupPlayerData)
@@ -427,8 +434,7 @@ SaveBackupPlayerData:
 	ld de, sBackupCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SaveBackupPokemonData:
 	ld a, BANK(sBackupPokemonData)
@@ -612,6 +618,13 @@ LoadPlayerData:
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
 	call CloseSRAM
+	ld a, BANK(sSurfingMinigameHiScoreSRAM)
+	call OpenSRAM
+	ld hl, sSurfingMinigameHiScoreSRAM
+	ld de, wSurfingMinigameHiScore
+	ld bc, 2
+	call CopyBytes
+	call CloseSRAM
 	ld a, BANK(sBattleTowerChallengeState)
 	call OpenSRAM
 	ld a, [sBattleTowerChallengeState]
@@ -660,6 +673,13 @@ LoadBackupPlayerData:
 	ld hl, sBackupCurMapData
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
+	call CopyBytes
+	call CloseSRAM
+	ld a, BANK(sBackupSurfingMinigameHiScoreSRAM)
+	call OpenSRAM
+	ld hl, sBackupSurfingMinigameHiScoreSRAM
+	ld de, wSurfingMinigameHiScore
+	ld bc, 2
 	call CopyBytes
 	call CloseSRAM
 	ret

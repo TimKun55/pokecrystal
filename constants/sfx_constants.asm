@@ -212,4 +212,8 @@
 	const SFX_THUNDERBOLT                 ; d0
 	const SFX_STAT_UP                     ; d1
 	const SFX_STAT_DOWN                   ; d2
+	const SFX_SURFING_JUMP                ; d3
+	const SFX_SURFING_FLIP                ; d4
+	const SFX_SURFING_CRASH               ; d5
+	const SFX_SURFING_LAND                ; d6
 DEF NUM_SFX EQU const_value

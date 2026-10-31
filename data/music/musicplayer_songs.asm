@@ -159,6 +159,7 @@ MusicPlayerSongNamePointers::
 	dba .Route24
 	dba .CianwoodCity
 
+	dba .SurfingPikachu
 	assert_table_length NUM_MUSIC_SONGS
 
 .None:                db "       None@"
@@ -279,3 +280,4 @@ MusicPlayerSongNamePointers::
 .CeruleanCity:        db "   Cerulean City@"
 .Route24:             db "     Route 24@"
 .CianwoodCity:        db "   Cianwood City@"
+.SurfingPikachu:      db "  Surfing Pikachu@"

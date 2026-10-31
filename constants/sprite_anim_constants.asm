@@ -74,6 +74,20 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 24
 	const SPRITE_ANIM_OBJ_PC_PACK                   ; 25
 	const SPRITE_ANIM_OBJ_SLOTS_COVER               ; 26
+; Surfing Pikachu minigame objects (see SurfingPikachuObjectSpawnData)
+	const SPRITE_ANIM_OBJ_SURF_UNUSED                ; 27
+	const SPRITE_ANIM_OBJ_SURF_PIKACHU               ; 28
+	const SPRITE_ANIM_OBJ_SURF_START                 ; 29
+	const SPRITE_ANIM_OBJ_SURF_GOAL                  ; 2a
+	const SPRITE_ANIM_OBJ_SURF_PLUS50                ; 2b
+	const SPRITE_ANIM_OBJ_SURF_PLUS150               ; 2c
+	const SPRITE_ANIM_OBJ_SURF_PLUS350               ; 2d
+	const SPRITE_ANIM_OBJ_SURF_PLUS750               ; 2e
+	const SPRITE_ANIM_OBJ_SURF_PLUS180               ; 2f
+	const SPRITE_ANIM_OBJ_SURF_PLUS500               ; 30
+	const SPRITE_ANIM_OBJ_SURF_WATER_SPRAY           ; 31
+	const SPRITE_ANIM_OBJ_SURF_OH_NO                 ; 32
+	const SPRITE_ANIM_OBJ_SURF_INTRO_PIKACHU         ; 33
 DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 
 ; DoSpriteAnimFrame.Jumptable indexes (see engine/sprite_anims/functions.asm)
@@ -110,6 +124,12 @@ DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 	const SPRITE_ANIM_FUNC_PC_MODE                   ; 1d
 	const SPRITE_ANIM_FUNC_PC_PACK                   ; 1e
 	const SPRITE_ANIM_FUNC_COVER                     ; 1f
+; Surfing Pikachu minigame callbacks (see SurfingPikachuObjectCallbacks)
+	const SPRITE_ANIM_FUNC_SURF_NOP                  ; 20
+	const SPRITE_ANIM_FUNC_SURF_PIKACHU              ; 21
+	const SPRITE_ANIM_FUNC_SURF_MOVE_BANNER          ; 22
+	const SPRITE_ANIM_FUNC_SURF_FLIPPING_PIKA        ; 23
+	const SPRITE_ANIM_FUNC_SURF_INTRO_PIKACHU        ; 24
 DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
@@ -171,6 +191,33 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 36
 	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_WHITE         ; 37
 	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_GREEN         ; 38
+	const SPRITE_ANIM_FRAMESET_SURF_PIKACHU              ; 39
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_00              ; 3a
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_01              ; 3b
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_02              ; 3c
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_03              ; 3d
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_04              ; 3e
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_05              ; 3f
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_06              ; 40
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_07              ; 41
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_08              ; 42
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_09              ; 43
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_10              ; 44
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_11              ; 45
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_12              ; 46
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_13              ; 47
+	const SPRITE_ANIM_FRAMESET_SURF_RESULTS_PIKACHU       ; 48
+	const SPRITE_ANIM_FRAMESET_SURF_LARGE_SPLASH          ; 49
+	const SPRITE_ANIM_FRAMESET_SURF_START_TEXT            ; 4a
+	const SPRITE_ANIM_FRAMESET_SURF_OH_NO_TEXT            ; 4b
+	const SPRITE_ANIM_FRAMESET_SURF_WATER_SPRAY           ; 4c
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_50               ; 4d
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_150              ; 4e
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_350              ; 4f
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_750              ; 50
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_180              ; 51
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_500              ; 52
+	const SPRITE_ANIM_FRAMESET_SURF_INTRO_PIKACHU         ; 53
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
@@ -271,6 +318,40 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_PC_PACK                     ; 5d
 	const SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE           ; 5e
 	const SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN           ; 5f
+	const SPRITE_ANIM_OAMSET_SURF_PIKACHU                ; 60
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_00                ; 61
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_01                ; 62
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_02                ; 63
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_03                ; 64
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_04                ; 65
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_05                ; 66
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_06                ; 67
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_07                ; 68
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_08                ; 69
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_09                ; 6a
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_10                ; 6b
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_11                ; 6c
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_12                ; 6d
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_13                ; 6e
+	const SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH           ; 6f
+	const SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH           ; 70
+	const SPRITE_ANIM_OAMSET_SURF_START_TEXT             ; 71
+	const SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT             ; 72
+	const SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY            ; 73
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_50                ; 74
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_150               ; 75
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_350               ; 76
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_750               ; 77
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_180               ; 78
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_500               ; 79
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU          ; 7a
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2        ; 7b
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3        ; 7c
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4        ; 7d
+	const SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD            ; 7e
+	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1      ; 7f
+	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2      ; 80
+DEF TYPE_ICON_FIRST_OAM EQU 15
 DEF NUM_SPRITE_ANIM_OAMSETS EQU const_value
 
 assert NUM_SPRITE_ANIM_OAMSETS <= FIRST_OAM_CMD, \

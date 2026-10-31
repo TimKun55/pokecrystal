@@ -353,3 +353,48 @@ Sfx_StatDown:
 	square_note 1, 14, 8, 1900
 	square_note 1, 14, 8, 1700
 	sound_ret
+
+Sfx_SurfingJump:
+	channel_count 1
+	channel 8, Sfx_SurfingJump_Ch8
+
+Sfx_SurfingJump_Ch8:	noise_note 6, 15, 1, 17
+	noise_note 7, 15, 2, 34
+	noise_note 8, 15, 3, 51
+	noise_note 9, 15, 4, 66
+	noise_note 10, 15, 5, 51
+	noise_note 11, 15, 6, 34
+	noise_note 12, 15, 7, 17
+	sound_ret
+
+Sfx_SurfingFlip:
+	channel_count 1
+	channel 5, Sfx_SurfingFlip_Ch5
+
+Sfx_SurfingFlip_Ch5:	duty_cycle 2
+	square_note 3, 12, 4, 1888
+	square_note 0, 10, 4, 1856
+	square_note 2, 12, 4, 1856
+	square_note 0, 10, 4, 1888
+	square_note 15, 12, 1, 1888
+	sound_ret
+
+Sfx_SurfingCrash:
+	channel_count 1
+	channel 8, Sfx_SurfingCrash_Ch8
+
+Sfx_SurfingCrash_Ch8:	noise_note 3, 15, 3, 102
+	noise_note 3, 3, 3, 83
+	noise_note 7, 15, 5, 81
+	noise_tail
+	sound_ret
+
+Sfx_SurfingLand:
+	channel_count 1
+	channel 8, Sfx_SurfingLand_Ch8
+
+Sfx_SurfingLand_Ch8:	noise_note 2, 15, 1, 50
+	noise_note 2, 0, 0, 0
+	noise_note 4, 14, 6, 33
+	sound_ret
+

@@ -101,8 +101,10 @@ _SlotMachine:
 	ld a, LOW(SlotMachine_LCDCallback)  :: ldh [hFunctionTargetLo], a
 	ld a, HIGH(SlotMachine_LCDCallback) :: ldh [hFunctionTargetHi], a
 	ld a, JP_INSTRUCTION                :: ldh [hVBlankHookFunction + 0], a
-	ld a, LOW(SlotMachine_VBlankCallback)  :: ldh [hVBlankHookFunction + 1], a
-	ld a, HIGH(SlotMachine_VBlankCallback) :: ldh [hVBlankHookFunction + 2], a
+; The VBlank hook has to enter the copied trampoline at its VBlank entry point,
+; not at the trailing byte that follows the buffer.
+	ld a, LOW(SlotMachine_LCDCallback + (.LCDCallbackPoint_VblankHook - .LCDCallbackPoint))  :: ldh [hVBlankHookFunction + 1], a
+	ld a, HIGH(SlotMachine_LCDCallback + (.LCDCallbackPoint_VblankHook - .LCDCallbackPoint)) :: ldh [hVBlankHookFunction + 2], a
 	call DelayFrame
 .loop
 	call SlotsLoop

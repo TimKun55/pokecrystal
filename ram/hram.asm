@@ -176,6 +176,16 @@ hVBlankHookFunction::
 			; $c9 [ret]
 	dw
 
-	ds 10
+hSurfingRedrawMode::   db
+hSurfingRedrawDest::   dw
+hSurfingVBCopySource:: dw
+hSurfingVBCopyDest::   dw
+hSurfingVBCopySize::   db
+hSurfingJoypadBuffer:: db
+; Counts down once per VBlank and reloads to 2 whenever the minigame samples
+; the held buttons, so input is polled once every three frames (Yellow's
+; hFrameCounter use). It must not reuse hVBlankCounter: that is pokecrystal's
+; frame clock, and overwriting it stalls DelayFrame.
+hSurfingJoypadTimer:: db
 
 ENDSECTION

@@ -106,6 +106,12 @@ OlivineCitySign:
 OlivineCityPortSign:
 	jumptext OlivineCityPortSignText
 
+OlivineCitySurfingPikachuSign:
+	refreshscreen
+	special _SurfingPikachu
+	closetext
+	end
+
 OlivineGymSign:
 	jumptext OlivineGymSignText
 
@@ -295,6 +301,7 @@ OlivineCity_MapEvents:
 	bg_event 12,  8, BGEVENT_READ, OlivineGymSign
 	bg_event 33, 26, BGEVENT_READ, OlivineLighthouseSign
 	bg_event  3, 24, BGEVENT_READ, OlivineCityBattleTowerSign
+	bg_event 17, 19, BGEVENT_READ, OlivineCitySurfingPikachuSign
 
 	def_object_events
 	object_event 25, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1

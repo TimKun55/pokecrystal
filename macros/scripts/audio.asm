@@ -237,9 +237,9 @@ MACRO sfx_toggle_noise
 	endc
 ENDM
 
-	const music0xf1_cmd ; $f1
-MACRO music0xf1
-	db music0xf1_cmd
+	const noise_tail_cmd ; $f1
+MACRO noise_tail
+	db noise_tail_cmd
 ENDM
 
 	const music0xf2_cmd ; $f2

@@ -85,6 +85,7 @@ DEF NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_SFX        ; 3
 	const SOUND_NOISE      ; 4
 	const SOUND_CRY        ; 5
+	const SOUND_NOISE_TAIL ; 6
 
 ; Flags2
 	const_def

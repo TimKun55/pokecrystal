@@ -57,8 +57,9 @@ sBackupPlayerData::  ds wPlayerDataEnd - wPlayerData
 sBackupCurMapData::  ds wCurMapDataEnd - wCurMapData
 sBackupPokemonData:: ds wPokemonDataEnd - wPokemonData
 sBackupGameDataEnd::
+sBackupSurfingMinigameHiScoreSRAM:: dw
 
-	ds $18a
+	ds $188
 
 sBackupChecksum:: dw
 
@@ -86,8 +87,9 @@ sPlayerData::  ds wPlayerDataEnd - wPlayerData
 sCurMapData::  ds wCurMapDataEnd - wCurMapData
 sPokemonData:: ds wPokemonDataEnd - wPokemonData
 sGameDataEnd::
+sSurfingMinigameHiScoreSRAM:: dw
 
-	ds $18a
+	ds $188
 
 sChecksum:: dw
 
