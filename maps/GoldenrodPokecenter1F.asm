@@ -79,6 +79,9 @@ Aizen:
 	closetext
 	end
 
+GoldenrodPokecenter1FYoungster:
+	jumptextfaceplayer GoldenrodPokecenter1FYoungsterText
+
 GoldenrodPokecenter1FMoveTutor:
 	faceplayer
 	opentext
@@ -206,6 +209,12 @@ GoldenrodPokecenter1FTMVendorMenuHeader:
 GoldenrodPokecenter1FVendingMachine:
 	jumpstd VendingMachineScript
 
+GoldenrodPokecenter1FSurfingPikachuGame:
+	refreshscreen
+	special _SurfingPikachu
+	closetext
+	end
+
 GoldenrodPokecenter1FGameboyKidText:
 	text "The Colosseum"
 	line "upstairs is for"
@@ -230,6 +239,16 @@ GoldenrodPokecenter1FLassText:
 	line "there is a single"
 	cont "#mon that is"
 	cont "the toughest."
+	done
+
+GoldenrodPokecenter1FYoungsterText:
+	text "I love this game"
+	line "but I'm not good"
+	cont "at it."
+	
+	para "I hear it's based"
+	line "off of a real"
+	cont "Pikachu!"
 	done
 
 GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText:
@@ -413,13 +432,15 @@ GoldenrodPokecenter1F_MapEvents:
 	bg_event  1,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
 	bg_event 14,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
 	bg_event 15,  1, BGEVENT_UP, GoldenrodPokecenter1FVendingMachine
+	bg_event 12,  1, BGEVENT_UP, GoldenrodPokecenter1FSurfingPikachuGame
 
 	def_object_events
 	object_event  7,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1
 	object_event  8,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FChansey, -1
 	object_event 10,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1
 	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
-	object_event 13,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
+	object_event  1,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Aizen, -1
 	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FMoveTutor, -1
 	object_event 14,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FTMVendorScript, -1
+	object_event 13,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FYoungster, -1
