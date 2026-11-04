@@ -821,6 +821,7 @@ wSurfingMinigameJumpArcMagnitude::    db
 wSurfingMinigameJumpDescending::      db
 wSurfingMinigameJumpArcFraction::     db
 wSurfingMinigameMusicTempoEnabled::   db
+wSurfingMinigameMusicTempo::          dw ; last tempo written to the music channels
 wSurfingMinigameCloudScrollFraction:: db
 wSurfingMinigameGameOver::            db
 wSurfingMinigameGameOverDelay::       db

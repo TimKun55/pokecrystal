@@ -13,27 +13,49 @@
 ;     3 = black  (outlines)
 ;
 ; ============================================================
-; BG palettes (loaded into wBGPals1, 1 palette used in gameplay)
+; BG palettes (5 palettes, loaded into wBGPals1 slots 0-4)
 ; ============================================================
 ;
-; BG 0: playfield (water, sky, beach) -- used by every playfield tile
-;       colour-index order: white, yellow, blue, black
-	RGB 31,31,31, 31,31,00, 11,23,31, 03,03,03
+; BG 0: sky + logo -- sky, 1st logo colour, 2nd logo colour, black
+;       colour-index order: sky, logo1, logo2, black
+	RGB 15,20,31, 31,26,00, 31,04,00, 00,00,00
 
-; BG 1: beach title screen -- sky, dark band, sand, black
-;       colour-index order: white, dark-gray, yellow, black
-	RGB 31,31,31, 09,09,09, 31,21,00, 03,03,03
+; BG 1: sand -- white, light sand, dark sand, black
+;       colour-index order: white, light-sand, dark-sand, black
+	RGB 31,31,31, 29,26,07, 23,15,11, 00,00,00
+
+; BG 2: water -- white, light sand, water, black
+;       colour-index order: white, light-sand, water, black
+	RGB 31,31,31, 29,26,07, 11,23,31, 00,00,00
+
+; BG 3: palm tree -- white, light sand, trunk, leaves
+;       colour-index order: white, light-sand, trunk, leaves
+	RGB 31,31,31, 29,26,07, 23,15,11, 04,22,10
+
+; BG 4: border colour -- white, light green, dark green, black
+;       colour-index order: white, light green, dark green, black
+	RGB 31,31,31, 09,19,05, 05,14,10, 00,00,00
 
 ; ============================================================
-; OBJ palettes (loaded into wOBPals1, 2 palettes used)
+; OBJ palettes (loaded into wOBPals1, 5 palettes used)
 ; ============================================================
 ;
-; OBJ 0: Pikachu sprite, HP digits, clouds, progress marker
+; OBJ 0: Pikachu sprite + surfboard
+;        colour-index order: white, yellow, red, black
+	RGB 31,31,31, 31,27,07, 27,06,00, 00,00,00
+
+; OBJ 1: Text "Oh no..", "Start", "Goal", splashes and water spray
+;        colour-index order: white, light blue, green, black
+	RGB 31,31,31, 11,23,31, 04,22,10, 00,00,00
+
+; OBJ 2: Clouds
+;        colour-index order: white, very light blue, light blue, black
+	RGB 31,31,31, 25,26,31, 21,24,31, 00,00,00
+
+; OBJ 3: Surf Icon (progress marker), plus points
 ;        colour-index order: white, yellow, blue, black
-;        rOBP0 = %11100100 (white, light, dark, black)
 	RGB 31,31,31, 31,31,00, 11,23,31, 03,03,03
 
-; OBJ 1: splashes, banners, water spray
+; OBJ 4: Splashes, water spray
 ;        colour-index order: white, white, blue, black
-;        rOBP1 = %11100000 (white, white, dark, black)
-	RGB 31,31,31, 31,31,31, 11,23,31, 03,03,03
+	RGB 31,31,31, 31,31,31, 11,23,31, 00,00,00

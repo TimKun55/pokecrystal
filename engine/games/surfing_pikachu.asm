@@ -10,8 +10,6 @@ SurfingPikachu::
 	ldh [hSurfingRedrawMode], a
 	ldh [hSurfingVBCopySize], a
 	call ClearBGPalettes
-	call ClearTilemap
-	call ClearSprites
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
@@ -38,20 +36,27 @@ ASSERT .LCDCallbackPoint_End - .LCDCallbackPoint <= 32, \
 ; Load graphics, tilemap and palettes. Ordering matters: the LCD is already
 ; off here, so the VRAM writes stick. This routine also zeroes the minigame
 ; state and initialises HP/speed/wave heights, which the game logic depends on.
+	call SurfingPikachuMinigame_LoadGraphics
 	call SurfingPikachuMinigame_LoadGFXAndLayout
 	call SurfingPikachuMinigameIntro
-; the intro overwrites the upper half of Graphics2 with Graphics3, so reload
-; the gameplay graphics, tilemaps and palettes before starting the game
+	ld a, [wSurfingMinigameRoutineNumber]
+	bit 7, a
+	jp nz, .exit
+; the intro overwrites part of Graphics2 and Graphics1 with Graphics3, so restore
+; just those bytes, then reload the gameplay tilemaps and palettes
+	call DisableLCD
+	call SurfingPikachuMinigame_RestoreIntroOverlap
+	call ClearSprites
+	farcall ClearSpriteAnims
 	call SurfingPikachuMinigame_LoadGFXAndLayout
 
 	ld a, LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_OBJ_ON | LCDC_BG_ON
 	ldh [rLCDC], a
 	call EnableLCD
 
-; clear any leftover VBlank-hook state from a previous run
+; Disable the VBlank copier so it can't overwrite the VBlank hook's tilemap updates.
 	xor a
-	ldh [hSurfingRedrawMode], a
-	ldh [hSurfingVBCopySize], a
+	ldh [hBGMapMode], a
 
 ; STAT interrupt used for per-scanline wave in Yellow. pokecrystal's
 ; init.asm already selects STAT_MODE_0 (HBlank) and IE_DEFAULT already
@@ -64,8 +69,6 @@ ASSERT .LCDCallbackPoint_End - .LCDCallbackPoint <= 32, \
 	bit 7, a
 	jr nz, .exit
 	call SurfingPikachu_GetJoypad_3FrameBuffer
-	call SurfingPikachu_CheckPressedSelect
-	jr nz, .exit
 	call RunSurfingMinigameRoutine
 	; `callfar` loads the target's bank into a, which would clobber the offset
 	; argument of PlaySpriteAnimationsFromOAMOffset, so store the offset here
@@ -292,10 +295,6 @@ SurfingPikachu_GetJoypad_3FrameBuffer:
 	ld [hSurfingJoypadBuffer], a
 	ret
 
-SurfingPikachu_CheckPressedSelect:
-	xor a
-	ret
-
 SurfingMinigame_StartGame:
 	ld a, SPRITE_ANIM_OBJ_SURF_START
 	lb de, $48, $e0
@@ -305,6 +304,10 @@ SurfingMinigame_StartGame:
 	ld a, TRUE
 	ld [wSurfingMinigameMusicTempoEnabled], a
 	ret
+
+; values for wSurfingMinigameMusicTempoEnabled
+DEF SURFING_MINIGAME_TEMPO_SPEED EQU 1 ; follow Pikachu's speed
+DEF SURFING_MINIGAME_TEMPO_RESET EQU 2 ; return to the song's normal tempo
 
 ; Yellow speeds the music up as Pikachu gets faster. Its sound engine keeps one
 ; global tempo; Crystal keeps one per channel, so the same 16-bit value has to
@@ -329,6 +332,15 @@ SurfingMinigame_UpdateMusicTempo:
 	cp 2
 	ret nc
 
+	ld a, [wSurfingMinigameMusicTempoEnabled]
+	cp SURFING_MINIGAME_TEMPO_RESET
+	jr nz, .follow_speed
+	xor a
+	ld [wSurfingMinigameMusicTempoEnabled], a
+	ld de, 117
+	jp SurfingMinigame_SetMusicTempo
+
+.follow_speed:
 	; de = ((speed & $3ff) >> 7) * 2, exactly as in Yellow
 	ld a, [wSurfingMinigamePikachuSpeed]
 	ld e, a
@@ -345,6 +357,13 @@ SurfingMinigame_UpdateMusicTempo:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
+	ld hl, wSurfingMinigameMusicTempo
+	ld a, [hli]
+	cp e
+	jr nz, SurfingMinigame_SetMusicTempo
+	ld a, [hl]
+	cp d
+	ret z
 	jr SurfingMinigame_SetMusicTempo
 
 .Tempos:
@@ -356,6 +375,10 @@ SurfingMinigame_UpdateMusicTempo:
 
 SurfingMinigame_SetMusicTempo:
 ; de = tempo to use for every music channel
+	ld hl, wSurfingMinigameMusicTempo
+	ld [hl], e
+	inc hl
+	ld [hl], d
 	ld hl, wChannel1 + CHANNEL_TEMPO
 	ld c, NUM_MUSIC_CHANS
 .loop
@@ -370,11 +393,6 @@ SurfingMinigame_SetMusicTempo:
 	dec c
 	jr nz, .loop
 	ret
-
-SurfingMinigame_ResetMusicTempo:
-; Yellow restores the music's normal tempo once the run is over.
-	ld de, 117
-	jr SurfingMinigame_SetMusicTempo
 
 SurfingMinigame_RunGame:
 	ld a, [wSurfingMinigameDistance]
@@ -398,7 +416,7 @@ SurfingMinigame_RunGame:
 .finished
 	ld hl, wSurfingMinigameRoutineNumber
 	inc [hl]
-	xor a
+	ld a, SURFING_MINIGAME_TEMPO_RESET
 	ld [wSurfingMinigameMusicTempoEnabled], a
 	ld a, 192
 	ld [wSurfingMinigameRoutineDelay], a
@@ -422,12 +440,11 @@ SurfingMinigame_RunGame:
 	ld hl, ANIM_OBJ_FIELD_C
 	add hl, bc
 	ld [hl], $30
-	xor a
+	ld a, SURFING_MINIGAME_TEMPO_RESET
 	ld [wSurfingMinigameMusicTempoEnabled], a
 	ret
 
 SurfingMinigame_WaitToShowResults:
-	call SurfingMinigame_ResetMusicTempo
 ; Match Yellow: keep the water undulating, bob Pikachu on the wave, and
 ; CoastAfterGoal (scroll forward + generate beach columns) so any wave that
 ; was on screen when the run ended scrolls off during the delay instead of
@@ -605,7 +622,6 @@ SurfingMinigame_ExitOnPressA:
 	ret
 
 SurfingMinigame_GameOver:
-	call SurfingMinigame_ResetMusicTempo
 	ld a, [wSurfingMinigameGameOverDelay]
 	and a
 	jr z, .done
@@ -633,6 +649,8 @@ SurfingMinigame_RunDelayTimer:
 	ret
 
 SurfingMinigame_UpdatePikachuDistance:
+	ld a, [wSurfingMinigameDistance + 1]
+	ld c, a
 	ld a, [wSurfingMinigamePikachuSpeed]
 	ld e, a
 	ld a, [wSurfingMinigamePikachuSpeed + 1]
@@ -645,18 +663,18 @@ SurfingMinigame_UpdatePikachuDistance:
 	ld a, [hl]
 	adc d
 	ld [hl], a
-	jr nc, .noCarry
-; every 65536 units of distance walked, nudge the progress marker sprite left
-	push hl
-	ld hl, wShadowOAMSprite04XCoord
-	dec [hl]
-	dec [hl]
-	pop hl
-.noCarry
 	dec hl
 	ld a, [hl]
 	adc 0
 	ld [hl], a
+; every 32768 units of distance walked (bit 7 of the middle byte flips), nudge
+; the progress marker sprite left by one pixel
+	ld a, [wSurfingMinigameDistance + 1]
+	xor c
+	and $80
+	ret z
+	ld hl, wShadowOAMSprite04XCoord
+	dec [hl]
 	ret
 
 SurfingMinigame_Deduct1HP:
@@ -707,11 +725,11 @@ SurfingMinigame_SetPikachuHeight:
 	ld hl, wSurfingMinigameWaveHeight + 8
 .gotWaveHeight
 	ld a, [wSurfingMinigameBGMapReadBuffer]
-	cp $6 ; rising slope
+	cp $c5 ; rising slope
 	jr z, .risingSlope
-	cp $14 ; wave crest
+	cp $e3 ; wave crest
 	jr z, .waveCrest
-	cp $7 ; falling slope
+	cp $c6 ; falling slope
 	jr z, .fallingSlope
 	ld a, [hl]
 	ld [wSurfingMinigamePikachuObjectHeight], a
@@ -735,7 +753,6 @@ SurfingMinigame_SetPikachuHeight:
 	ret
 
 SurfingMinigame_ReadBGMapBuffer:
-	ld a, [wSurfingMinigameBGMapReadBuffer] ; unused read
 	ldh a, [hSCX]
 	add 9 * TILE_WIDTH ; sample the wave nine tiles into the viewport
 	ld e, a
@@ -1251,28 +1268,28 @@ SurfingMinigame_LYOverridesInitialSineWave:
 SurfingMinigame_LYOverridesInitialSineWaveEnd:
 
 SurfingMinigame_BGMetatileTable: ; metatiles of 2x2 tiles
-	db $00, $00, $00, $00 ; 00 ; sky block (blank)
-	db $0b, $0b, $0b, $0b ; 01 ; water block
-	db $0b, $02, $02, $06 ; 02
-	db $03, $0b, $07, $03 ; 03
-	db $06, $06, $06, $06 ; 04
-	db $07, $07, $07, $07 ; 05
-	db $06, $04, $04, $08 ; 06
-	db $05, $07, $08, $05 ; 07
-	db $0b, $0b, $11, $12 ; 08
-	db $0b, $0b, $13, $03 ; 09
-	db $14, $12, $04, $08 ; 0a
-	db $13, $07, $08, $05 ; 0b
-	db $06, $14, $06, $14 ; 0c ; unused, identical to 11
-	db $13, $07, $13, $07 ; 0d
-	db $08, $08, $08, $08 ; 0e ; solid blue
-	db $14, $12, $14, $12 ; 0f
-	db $0b, $11, $02, $14 ; 10
-	db $06, $14, $06, $14 ; 11
-	db $0c, $0c, $0d, $0d ; 12 ; beach top block
-	db $0d, $0d, $0d, $0d ; 13 ; beach sand block
-	db $0e, $0f, $10, $0b ; 14 ; beach shore block
-	db $12, $13, $12, $13 ; 15
+	db $e9, $e9, $e9, $e9 ; 00 ; sky block (blank)
+	db $d0, $d0, $d0, $d0 ; 01 ; water block
+	db $d0, $c1, $c1, $c5 ; 02
+	db $c2, $d0, $c6, $c2 ; 03
+	db $c5, $c5, $c5, $c5 ; 04
+	db $c6, $c6, $c6, $c6 ; 05
+	db $c5, $c3, $c3, $c7 ; 06
+	db $c4, $c6, $c7, $c4 ; 07
+	db $d0, $d0, $e0, $e1 ; 08
+	db $d0, $d0, $e2, $c2 ; 09
+	db $e3, $e1, $c3, $c7 ; 0a
+	db $e2, $c6, $c7, $c4 ; 0b
+	db $c5, $e3, $c5, $e3 ; 0c ; unused, identical to 11
+	db $e2, $c6, $e2, $c6 ; 0d
+	db $c7, $c7, $c7, $c7 ; 0e ; solid blue
+	db $e3, $e1, $e3, $e1 ; 0f
+	db $d0, $e0, $c1, $e3 ; 10
+	db $c5, $e3, $c5, $e3 ; 11
+	db $d1, $d1, $d2, $d2 ; 12 ; beach top block
+	db $d2, $d2, $d2, $d2 ; 13 ; beach sand block
+	db $d3, $d4, $d5, $d0 ; 14 ; beach shore block
+	db $e1, $e2, $e1, $e2 ; 15
 
 SurfingMinigameWavePattern00:
 	db $00, $00, $00, $01, $01, $01, $01, $01
@@ -1434,86 +1451,34 @@ SurfingMinigame_TileInteraction:
 	ld a, [hl]
 	sub SPRITE_ANIM_FRAMESET_SURF_ANGLE_00 - 1
 	ld [wSurfingMinigameLandingQuality], a
+	cp 8
+	jr nc, .wipeout
+	ld e, a
+	ld d, 0
 	ld a, [wSurfingMinigameBGMapReadBuffer]
-	cp $6 ; rising slope
-	jr z, .risingSlope
-	cp $14 ; wave crest
-	jr z, .waveCrest
-	cp $12 ; wave face
-	jr z, .waveFace
-	cp $7 ; falling slope
-	jr z, .fallingSlope
-	ld a, [wSurfingMinigameLandingQuality]
-	cp $1
-	jp z, .wipeout
-	cp $2
+	cp $c5 ; rising slope
+	ld hl, .RisingSlopeOutcomes
+	jr z, .lookUp
+	cp $c6 ; falling slope
+	ld hl, .FallingSlopeOutcomes
+	jr z, .lookUp
+	cp $e1 ; wave face
+	ld hl, .WaveOutcomes
+	jr z, .lookUp
+	cp $e3 ; wave crest
+	ld hl, .WaveOutcomes
+	jr z, .lookUp
+	ld hl, .FlatOutcomes
+.lookUp
+	add hl, de
+	ld a, [hl]
+	cp LANDING_WIPEOUT
+	jr z, .wipeout
+	cp LANDING_HARD
 	jr z, .hardLanding
-	cp $3
+	cp LANDING_ROUGH
 	jr z, .roughLanding
-	cp $4
-	jr z, .cleanLanding
-	cp $5
-	jr z, .roughLanding
-	cp $6
-	jr z, .hardLanding
-	cp $7
-	jr z, .wipeout
-	jr .wipeout
-
-.risingSlope
-	ld a, [wSurfingMinigameLandingQuality]
-	cp $1
-	jr z, .wipeout
-	cp $2
-	jr z, .wipeout
-	cp $3
-	jr z, .wipeout
-	cp $4
-	jr z, .hardLanding
-	cp $5
-	jr z, .roughLanding
-	cp $6
-	jr z, .cleanLanding
-	cp $7
-	jr z, .roughLanding
-	jr .wipeout
-
-.fallingSlope
-	ld a, [wSurfingMinigameLandingQuality]
-	cp $1
-	jr z, .roughLanding
-	cp $2
-	jr z, .cleanLanding
-	cp $3
-	jr z, .roughLanding
-	cp $4
-	jr z, .hardLanding
-	cp $5
-	jr z, .wipeout
-	cp $6
-	jr z, .wipeout
-	cp $7
-	jr z, .wipeout
-	jr .wipeout
-
-.waveFace
-.waveCrest
-	ld a, [wSurfingMinigameLandingQuality]
-	cp $1
-	jr z, .wipeout
-	cp $2
-	jr z, .hardLanding
-	cp $3
-	jr z, .roughLanding
-	cp $4
-	jr z, .cleanLanding
-	cp $5
-	jr z, .cleanLanding
-	cp $6
-	jr z, .roughLanding
-	cp $7
-	jr z, .hardLanding
-	jr .wipeout
+	jr .cleanLanding
 
 .hardLanding
 	call SurfingMinigame_ReduceSpeedBy128
@@ -1534,6 +1499,21 @@ SurfingMinigame_TileInteraction:
 	ld [wSurfingMinigamePikachuSpeed + 1], a
 	scf
 	ret
+
+DEF LANDING_CLEAN   EQU 0
+DEF LANDING_ROUGH   EQU 1
+DEF LANDING_HARD    EQU 2
+DEF LANDING_WIPEOUT EQU 3
+
+; Indexed by landing quality (0-7). Index 0 and any unlisted value are wipeouts.
+.FlatOutcomes:
+	db LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_HARD, LANDING_ROUGH, LANDING_CLEAN, LANDING_ROUGH, LANDING_HARD, LANDING_WIPEOUT
+.RisingSlopeOutcomes:
+	db LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_HARD, LANDING_ROUGH, LANDING_CLEAN, LANDING_ROUGH
+.FallingSlopeOutcomes:
+	db LANDING_WIPEOUT, LANDING_ROUGH, LANDING_CLEAN, LANDING_ROUGH, LANDING_HARD, LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_WIPEOUT
+.WaveOutcomes:
+	db LANDING_WIPEOUT, LANDING_WIPEOUT, LANDING_HARD, LANDING_ROUGH, LANDING_CLEAN, LANDING_CLEAN, LANDING_ROUGH, LANDING_HARD
 
 SurfingMinigame_SpeedUpPikachu:
 	ld a, [wSurfingMinigamePikachuSpeed + 1]
@@ -1606,7 +1586,7 @@ SurfingMinigame_TryStartJump:
 	cp $5
 	jr nc, .noJump
 	ld a, [wSurfingMinigameBGMapReadBuffer]
-	cp $14 ; wave crest
+	cp $e3 ; wave crest
 	jr nz, .noJump
 	call SurfingMinigame_GetSpeedDividedBy32
 	cp $a
@@ -1628,11 +1608,11 @@ SurfingMinigame_UpdateSurfingFrame:
 	cp $5
 	ret nc
 	ld a, [wSurfingMinigameBGMapReadBuffer]
-	cp $6 ; rising slope
+	cp $c5 ; rising slope
 	jr z, .risingSlope
-	cp $14 ; wave crest
+	cp $e3 ; wave crest
 	jr z, .risingSlope
-	cp $7 ; falling slope
+	cp $c6 ; falling slope
 	jr z, .fallingSlope
 	call SurfingMinigame_UpdateBoardAngle
 	ld a, SPRITE_ANIM_FRAMESET_SURF_ANGLE_03
@@ -1734,11 +1714,11 @@ SurfingMinigame_SpawnWaterSpray:
 	ld hl, wSurfingMinigameWaveHeight + 9
 .gotHL
 	ld a, [wSurfingMinigameBGMapReadBuffer + 1]
-	cp $6 ; rising slope
+	cp $c5 ; rising slope
 	jr z, .risingSlope
-	cp $14 ; wave crest
+	cp $e3 ; wave crest
 	jr z, .waveCrest
-	cp $7 ; falling slope
+	cp $c6 ; falling slope
 	jr z, .fallingSlope
 	ld a, [hl]
 	ret
@@ -2063,14 +2043,14 @@ SurfingMinigame_DrawHP:
 	ld c, a
 	swap a
 	and $f
-	add $d0
+	add $d6
 	ld [hli], a
 	inc hl
 	inc hl
 	inc hl
 	ld a, c
 	and $f
-	add $d0
+	add $d6
 	ld [hl], a
 	dec de
 	ret
@@ -2081,13 +2061,57 @@ SurfingMinigame_DrawResultsScreen:
 ; frame, matching Yellow's hAutoBGTransferEnabled).
 	ld hl, wTilemap
 	ld bc, SCREEN_AREA
-	xor a
+	ld a, $e9
 	call ByteFill
 	ld hl, .BeachOutroTilemap
 	decoord 0, 6
 	ld bc, .BeachOutroTilemapEnd - .BeachOutroTilemap
 	call CopyBytes
 	call .PlaceTextbox
+
+; Set up attr map for results screen.
+	ld hl, wAttrmap
+	ld bc, SCREEN_AREA
+	xor a
+	call ByteFill
+; rows 6-15: cols 0-9 = BG 1, cols 10-19 = BG 2
+	ld hl, wAttrmap + 6 * SCREEN_WIDTH
+	ld b, 10
+.resultsAttrRow:
+	ld c, 10
+	ld a, SURF_PAL_BG_SAND
+.resultsAttrCol1:
+	ld [hli], a
+	dec c
+	jr nz, .resultsAttrCol1
+	ld c, 10
+	ld a, SURF_PAL_BG_WATER
+.resultsAttrCol2:
+	ld [hli], a
+	dec c
+	jr nz, .resultsAttrCol2
+	dec b
+	jr nz, .resultsAttrRow
+; results box (rows 1-9, cols 1-18): BG 4
+	ld hl, wAttrmap + 1 * SCREEN_WIDTH + 1
+	ld b, 9
+.resultsBoxRow:
+	ld c, 18
+	ld a, SURF_PAL_BG_EXTRA
+.resultsBoxCol:
+	ld [hli], a
+	dec c
+	jr nz, .resultsBoxCol
+	ld a, l
+	add 2  ; skip to next row (20 - 18 = 2)
+	ld l, a
+	jr nc, .noCarryResults
+	inc h
+.noCarryResults:
+	dec b
+	jr nz, .resultsBoxRow
+; copy the attr map to VRAM so the box (and the beach) take effect
+	farcall ApplyAttrmap
 ; hide the cloud sprites that are still part of the static layout
 	ld hl, wShadowOAMSprite05XCoord
 	ld bc, 9 * OBJ_SIZE
@@ -2109,40 +2133,40 @@ SurfingMinigame_DrawResultsScreen:
 
 .PlaceTextbox:
 	hlcoord 1, 1
-	lb de, $3b, $3c
-	ld a, $40
+	lb de, $3a, $3b
+	ld a, $3f
 	call .placeRow
 	hlcoord 1, 2
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 3
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 4
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 5
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 6
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 7
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 8
-	lb de, $3f, $3f
-	ld a, $ff
+	lb de, $3e, $3e
+	ld a, $e9
 	call .placeRow
 	hlcoord 1, 9
-	lb de, $3d, $3e
-	ld a, $40
+	lb de, $3c, $3d
+	ld a, $3f
 	call .placeRow
 	ret
 
@@ -2158,41 +2182,58 @@ SurfingMinigame_DrawResultsScreen:
 	ret
 
 SurfingMinigame_WriteHPLeft:
-	ld hl, .HP_Left
-	decoord 2, 2
-	ld bc, .HP_LeftEnd - .HP_Left
-	call CopyBytes
+	ld de, .HP_Left
+	hlcoord 2, 2
+	call SurfingMinigame_PrintText
 	call SurfingMinigame_BCDPrintHPLeft
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret
 
 .HP_Left:
-	db $20, $21, $ff, $22, $23, $24, $25 ; HP Left
-.HP_LeftEnd:
+	db "HP Left", 0
 
 SurfingMinigame_AddRemainingHPToTotal:
-	ld c, 99
-.loop
-	push bc
 	ld hl, wSurfingMinigamePikachuHP
+	jr SurfingMinigame_TransferToTotal
+
+SurfingMinigame_TransferToTotal:
+; hl = little-endian BCD score to move into the total, up to 99 points per call.
+; Carry is set, with no sound, if the score runs out before 99 points.
 	ld a, [hli]
-	or [hl]
+	ld c, a
+	ld a, [hld]
+	ld b, a
+	ld e, c
+	ld d, 1
+	ld a, b
 	and a
-	jr z, .dead
-	call SurfingMinigame_Deduct1HP
-	ld e, $1
+	jr nz, .full
+	ld a, c
+	cp $99
+	jr nz, .subtract
+.full
+	ld e, $99
+	ld d, 0
+.subtract
+	ld a, [hl]
+	sub e
+	daa
+	ld [hli], a
+	ld a, [hl]
+	sbc 0
+	daa
+	ld [hld], a
 	call SurfingMinigame_AddPointsToTotal
-	pop bc
-	dec c
-	jr nz, .loop
+	ld a, d
+	and a
+	jr nz, .ranOut
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	and a
 	ret
 
-.dead
-	pop bc
+.ranOut
 	scf
 	ret
 
@@ -2206,60 +2247,25 @@ SurfingMinigame_BCDPrintHPLeft:
 	call SurfingPikachu_PlaceBCDNumber
 	inc hl
 	inc hl
-	ld [hl], $21 ; P
-	inc hl
-	ld [hl], $25 ; t
-	inc hl
-	ld [hl], $26 ; s
+	ld de, SurfingMinigame_PtsText
+	call SurfingMinigame_PrintText
 	ret
 
 SurfingMinigame_WriteRadness:
-	ld hl, .Radness
-	decoord 2, 4
-	ld bc, .RadnessEnd - .Radness
-	call CopyBytes
+	ld de, .Radness
+	hlcoord 2, 4
+	call SurfingMinigame_PrintText
 	call SurfingMinigame_BCDPrintRadness
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret
 
 .Radness:
-	db $27, $28, $29, $2a, $23, $26, $26 ; Radness
-.RadnessEnd:
+	db "Radness", 0
 
 SurfingMinigame_AddRadnessToTotal:
-	ld c, 99
-.loop
-	push bc
 	ld hl, wSurfingMinigameRadnessScore
-	ld a, [hli]
-	ld e, a
-	or [hl]
-	jr z, .done
-	ld d, [hl]
-	ld a, e
-	sub $1
-	daa
-	ld e, a
-	ld a, d
-	sbc $0
-	daa
-	ld [hld], a
-	ld [hl], e
-	ld e, $1
-	call SurfingMinigame_AddPointsToTotal
-	pop bc
-	dec c
-	jr nz, .loop
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	and a
-	ret
-
-.done
-	pop bc
-	scf
-	ret
+	jr SurfingMinigame_TransferToTotal
 
 SurfingMinigame_BCDPrintRadness:
 	ld a, [wSurfingMinigameRadnessScore + 1]
@@ -2270,11 +2276,8 @@ SurfingMinigame_BCDPrintRadness:
 	call SurfingPikachu_PlaceBCDNumber
 	inc hl
 	inc hl
-	ld [hl], $21 ; P
-	inc hl
-	ld [hl], $25 ; t
-	inc hl
-	ld [hl], $26 ; s
+	ld de, SurfingMinigame_PtsText
+	call SurfingMinigame_PrintText
 	ret
 
 SurfingMinigame_AddPointsToTotal:
@@ -2301,18 +2304,14 @@ SurfingMinigame_BCDPrintTotalScore:
 	call SurfingPikachu_PlaceBCDNumber
 	inc hl
 	inc hl
-	ld [hl], $21 ; P
-	inc hl
-	ld [hl], $25 ; t
-	inc hl
-	ld [hl], $26 ; s
+	ld de, SurfingMinigame_PtsText
+	call SurfingMinigame_PrintText
 	ret
 
 SurfingMinigame_WriteTotal:
-	ld hl, .Total
-	decoord 2, 6
-	ld bc, .TotalEnd - .Total
-	call CopyBytes
+	ld de, .Total
+	hlcoord 2, 6
+	call SurfingMinigame_PrintText
 ; Yellow prints the radness digits here as well (the routine was reused for
 ; the total row), and then overwrites the right-hand side with the total.
 	call SurfingMinigame_BCDPrintRadness
@@ -2322,8 +2321,7 @@ SurfingMinigame_WriteTotal:
 	ret
 
 .Total:
-	db $2b, $2c, $25, $28, $2d ; Total
-.TotalEnd:
+	db "Total", 0
 
 DidPlayerGetAHighScore:
 	ld hl, wSurfingMinigameHiScore + 1
@@ -2353,17 +2351,15 @@ DidPlayerGetAHighScore:
 	ret
 
 SurfingMinigame_PrintTextHiScore:
-	ld hl, .Hi_Score
-	decoord 6, 8
-	ld bc, .Hi_ScoreEnd - .Hi_Score
-	call CopyBytes
+	ld de, .Hi_Score
+	hlcoord 6, 8
+	call SurfingMinigame_PrintText
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret
 
 .Hi_Score:
-	db $20, $2e, $2f, $30, $31, $2c, $32, $23, $33 ; Hi-Score!!
-.Hi_ScoreEnd:
+	db "Hi-Score#", 0 ; # is the double exclamation mark tile
 
 SurfingMinigame_ResetJumpArc:
 	xor a
@@ -2537,21 +2533,16 @@ SurfingMinigame_CalculateAndAddRadnessFromStunt:
 	cp $3 ; did a combination of front and back flips
 	jr z, .mixedChain
 	ld a, [wSurfingMinigameRadnessMeter]
-	ld d, a
-	ld e, $1
-	ld a, $0
-.getAmountOfRadness
-	add e
-	sla e
-	dec d
-	jr nz, .getAmountOfRadness
-.addRadness50AtATime
-	push af
-	ld e, $50
-	call SurfingMinigame_AddRadness
-	pop af
 	dec a
-	jr nz, .addRadness50AtATime
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, .SingleFlipRadness
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	call SurfingMinigame_AddRadness
 	ld hl, ANIM_OBJ_Y_COORD
 	add hl, bc
 	ld a, [hl]
@@ -2573,14 +2564,8 @@ SurfingMinigame_CalculateAndAddRadnessFromStunt:
 	ld a, [wSurfingMinigameRadnessMeter]
 	cp $3
 	jr c, .add180RadnessPoints
-	ld a, 10
-.add500Radness50AtATime
-	push af
-	ld e, $50
+	ld de, $0500
 	call SurfingMinigame_AddRadness
-	pop af
-	dec a
-	jr nz, .add500Radness50AtATime
 	ld hl, ANIM_OBJ_Y_COORD
 	add hl, bc
 	ld a, [hl]
@@ -2596,13 +2581,7 @@ SurfingMinigame_CalculateAndAddRadnessFromStunt:
 	ret
 
 .add180RadnessPoints
-	ld e, $50
-	call SurfingMinigame_AddRadness
-	ld e, $50
-	call SurfingMinigame_AddRadness
-	ld e, $50
-	call SurfingMinigame_AddRadness
-	ld e, $30
+	ld de, $0180
 	call SurfingMinigame_AddRadness
 	ld hl, ANIM_OBJ_Y_COORD
 	add hl, bc
@@ -2618,13 +2597,17 @@ SurfingMinigame_CalculateAndAddRadnessFromStunt:
 	pop bc
 	ret
 
+.SingleFlipRadness:
+	dw $0050, $0150, $0350
+
 SurfingMinigame_AddRadness:
+; de = amount to add to the radness score, as 4-digit BCD
 	ld a, [wSurfingMinigameRadnessScore]
 	add e
 	daa
 	ld [wSurfingMinigameRadnessScore], a
 	ld a, [wSurfingMinigameRadnessScore + 1]
-	adc $0
+	adc d
 	daa
 	ld [wSurfingMinigameRadnessScore + 1], a
 	ret nc
@@ -2633,15 +2616,83 @@ SurfingMinigame_AddRadness:
 	ld [wSurfingMinigameRadnessScore + 1], a
 	ret
 
+; de = 0-terminated ASCII string, hl = destination in wTilemap
+SurfingMinigame_PrintText:
+.loop
+	ld a, [de]
+	and a
+	ret z
+	inc de
+	call SurfingMinigame_CharToFontTile
+	ld [hli], a
+	jr .loop
+
+DEF FONT_TILE_BASE EQU $00 ; tile ID of font glyph 0 (font is loaded at tile $00)
+; a = ASCII character, returns a = tile ID of the glyph in the font
+; A-Z = 0-25, a-z = 26-51, ! = 52, !! = 53 (written as #), - = 54, : = 55, space = 56
+SurfingMinigame_CharToFontTile:
+	cp 'a'
+	jr c, .notLower
+	cp 'z' + 1
+	jr nc, .notLower
+	sub 'a' - (26 + FONT_TILE_BASE)
+	ret
+
+.notLower
+	cp 'A'
+	jr c, .notUpper
+	cp 'Z' + 1
+	jr nc, .notUpper
+	sub 'A' - FONT_TILE_BASE
+	ret
+
+.notUpper
+	cp ' '
+	jr nz, .notSpace
+	ld a, 56 + FONT_TILE_BASE
+	ret
+
+.notSpace
+	cp '!'
+	jr nz, .notBang
+	ld a, 52 + FONT_TILE_BASE
+	ret
+
+.notBang
+	cp '#'
+	jr nz, .notDoubleBang
+	ld a, 53 + FONT_TILE_BASE
+	ret
+
+.notDoubleBang
+	cp '-'
+	jr nz, .notHyphen
+	ld a, 54 + FONT_TILE_BASE
+	ret
+
+.notHyphen
+	cp ':'
+	jr nz, .notColon
+	ld a, 55 + FONT_TILE_BASE
+	ret
+
+.notColon
+	ld a, 56 + FONT_TILE_BASE ; unknown characters print as a space
+	ret
+
+SurfingMinigame_PtsText:
+	db "Pts", 0
+
 SurfingPikachu_PlaceBCDNumber:
+; writes two digits from a (BCD) using the digit tiles ($d0-$d9)
 	ld c, a
 	swap a
 	and $f
-	add $d0
+	add $d6
 	ld [hli], a
 	ld a, c
 	and $f
-	add $d0
+	add $d6
 	ld [hl], a
 	dec de
 	ret
@@ -2665,16 +2716,61 @@ SurfingPikachuMinigameIntro:
 	ldh [hBGMapMode], a
 	farcall ClearSpriteAnims
 
-; Graphics3 (the intro Pikachu and the title screen tiles) is loaded over the
-; upper half of Graphics2, exactly as Yellow does. The gameplay reloads
-; Graphics1/2 afterwards, so this is not destructive.
+; Graphics3 (the intro Pikachu and the title screen tiles) is loaded starting at
+; tile $50, so the intro-Pikachu sprite frames land in vTiles0 (sprite-only)
+; and the title-screen tiles continue into vTiles1 (BG-visible).
 	ld a, BANK(SurfingPikachu1Graphics3)
 	ld hl, SurfingPikachu1Graphics3
-	ld de, vTiles1
+	ld de, vTiles0 tile $50
 	ld bc, SurfingPikachu1Graphics3End - SurfingPikachu1Graphics3
 	call FarCopyBytes
 
 	call DrawSurfingPikachuMinigameIntroBackground
+
+; Fill wAttrmap with title attrs: rows 0-5 = 0, rows 6-17 cols 0-7 = 1, cols 8-19 = 2.
+	ld hl, wAttrmap
+	ld bc, 6 * SCREEN_WIDTH
+	xor a
+	call ByteFill
+	ld hl, wAttrmap + 6 * SCREEN_WIDTH
+	ld b, 12
+.tAttrRow:
+	ld c, 8
+	ld a, SURF_PAL_BG_SAND
+.tAttrCol1:
+	ld [hli], a
+	dec c
+	jr nz, .tAttrCol1
+	ld c, 12
+	ld a, SURF_PAL_BG_WATER
+.tAttrCol2:
+	ld [hli], a
+	dec c
+	jr nz, .tAttrCol2
+	dec b
+	jr nz, .tAttrRow
+
+; popup box (rows 8-14, cols 4-14): BG 4
+	ld hl, wAttrmap + 8 * SCREEN_WIDTH + 4
+	ld b, 7
+.titlePopupAttrRow:
+	ld c, 11
+	ld a, SURF_PAL_BG_EXTRA
+.titlePopupAttrCol:
+	ld [hli], a
+	dec c
+	jr nz, .titlePopupAttrCol
+	ld a, l
+	add SCREEN_WIDTH - 11
+	ld l, a
+	jr nc, .noCarryTitlePopup
+	inc h
+.noCarryTitlePopup:
+	dec b
+	jr nz, .titlePopupAttrRow
+
+; Transfer wAttrmap -> vAttrmap0 while the LCD is off.
+	farcall ApplyAttrmap
 
 ; Fully transfer the intro tilemap to VRAM while the LCD is off, so the screen
 ; shows the complete beach on the first frame. Disable the VBlank copier too,
@@ -2705,10 +2801,6 @@ SurfingPikachuMinigameIntro:
 	xor a
 	ldh [hBGMapMode], a
 
-; spawn the intro Pikachu, which walks across the beach
-	ld a, SPRITE_ANIM_OBJ_SURF_INTRO_PIKACHU
-	lb de, SURFING_MINIGAME_FLAT_WATER_Y, SURFING_MINIGAME_CENTER_X
-	call InitSpriteAnimStruct
 
 	xor a
 	ldh [hSCX], a
@@ -2732,18 +2824,26 @@ SurfingPikachuMinigameIntro:
 	call DelayFrame
 	call DelayFrame
 	call DelayFrame
-; GBC direct: palettes already loaded in LoadGFXAndLayout; just re-apply.
+; DMG registers (ignored in CGB mode); palettes were already applied in LoadGFXAndLayout.
 	ld a, %11100100
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
-	farcall ApplyPals
-	call ForceUpdateCGBPals
 	call DelayFrame
 
 	ld de, MUSIC_SURFING_PIKACHU
 	call PlayMusic
 
+; wait for A (start) or B (exit) with the title shown and Pikachu not yet on screen
+	call SurfingMinigame_TitleChoice
+	ld a, [wSurfingMinigameRoutineNumber]
+	bit 7, a
+	ret nz
+; A: remove the popup, then Pikachu paddles out to sea and the game starts
+	call SurfingMinigame_HideTitlePopup
+	ld a, SPRITE_ANIM_OBJ_SURF_INTRO_PIKACHU
+	lb de, SURFING_MINIGAME_FLAT_WATER_Y, SURFING_MINIGAME_CENTER_X
+	call InitSpriteAnimStruct
 	xor a
 	ld [wSurfingMinigameIntroAnimationFinished], a
 .loop
@@ -2759,7 +2859,7 @@ SurfingPikachuMinigameIntro:
 DrawSurfingPikachuMinigameIntroBackground:
 	ld hl, wTilemap
 	ld bc, SCREEN_AREA
-	ld a, $ff
+	ld a, $e9
 	call ByteFill
 	ld hl, SurfingMinigame_BeachIntroTilemap
 	decoord 0, 6
@@ -2769,17 +2869,7 @@ DrawSurfingPikachuMinigameIntroBackground:
 	hlcoord 4, 0
 	lb bc, 6, 12 ; title graphic dimensions: rows, columns
 	call .CopyBox
-	hlcoord 3, 7
-	lb bc, 3, SCREEN_WIDTH - 5 ; clear the instruction text area
-	call .FillBoxWithFF
-	ld hl, SurfingMinigame_UseControlPadTilemap
-	decoord 3, 7
-	ld bc, SurfingMinigame_UseControlPadTilemapEnd - SurfingMinigame_UseControlPadTilemap
-	call CopyBytes
-	ld hl, SurfingMinigame_ToSurfRadTilemap
-	decoord 4, 9
-	ld bc, SurfingMinigame_ToSurfRadTilemapEnd - SurfingMinigame_ToSurfRadTilemap
-	call CopyBytes
+	call SurfingMinigame_DrawTitlePopup
 	ret
 
 .CopyBox:
@@ -2800,41 +2890,191 @@ DrawSurfingPikachuMinigameIntroBackground:
 	jr nz, .copyRow
 	ret
 
-.FillBoxWithFF:
-.fillRow
-	push bc
-	push hl
-.fillColumn
-	ld [hl], $ff
-	inc hl
-	dec c
-	jr nz, .fillColumn
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .fillRow
-	ret
-
 SurfingMinigame_BeachIntroTilemap:
 	INCBIN "gfx/surfing_pikachu/beach_intro.tilemap"
 SurfingMinigame_BeachIntroTilemapEnd:
 	ASSERT SurfingMinigame_BeachIntroTilemapEnd - SurfingMinigame_BeachIntroTilemap == 12 * SCREEN_WIDTH
-SurfingMinigame_UseControlPadTilemap:
-	INCBIN "gfx/surfing_pikachu/use_control_pad.tilemap"
-SurfingMinigame_UseControlPadTilemapEnd:
-SurfingMinigame_ToSurfRadTilemap:
-	INCBIN "gfx/surfing_pikachu/to_surf_rad.tilemap"
-SurfingMinigame_ToSurfRadTilemapEnd:
+; boxed "A: Start / B: Exit" message on the title screen: 9 x 3 inside, rows 9-13
+SurfingMinigame_DrawTitlePopup:
+	ld hl, .PopupTop
+	decoord 4, 8
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupMiddle
+	decoord 4, 9
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupMiddle
+	decoord 4, 10
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupMiddle
+	decoord 4, 11
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupMiddle
+	decoord 4, 12
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupMiddle
+	decoord 4, 13
+	ld bc, 11
+	call CopyBytes
+	ld hl, .PopupBottom
+	decoord 4, 14
+	ld bc, 11
+	call CopyBytes
+	ld de, .PopupHiScore
+	hlcoord 5, 9
+	call SurfingMinigame_PrintText
+	hlcoord 7, 10
+	call SurfingMinigame_PrintTitleHiScore
+	ld de, .PopupStart
+	hlcoord 5, 12
+	call SurfingMinigame_PrintText
+	ld de, .PopupExit
+	hlcoord 5, 13
+	call SurfingMinigame_PrintText
+	ret
+
+.PopupTop:
+	db $3a, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3b
+.PopupMiddle:
+	db $3e, $e9, $e9, $e9, $e9, $e9, $e9, $e9, $e9, $e9, $3e
+.PopupBottom:
+	db $3c, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3f, $3d
+.PopupHiScore:
+	db "Hi-Score", 0
+.PopupStart:
+	db "A: Start", 0
+.PopupExit:
+	db "B: Exit", 0
+
+; prints the hi score as four digits at hl; shows "---" when there is no hi score
+SurfingMinigame_PrintTitleHiScore:
+	ld a, [wSurfingMinigameHiScore]
+	ld b, a
+	ld a, [wSurfingMinigameHiScore + 1]
+	or b
+	jr nz, .hasHiScore
+	ld a, 54 + FONT_TILE_BASE ; '-'
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ret
+.hasHiScore
+	ld a, [wSurfingMinigameHiScore + 1]
+	call SurfingMinigame_PrintBCDByte
+	ld a, [wSurfingMinigameHiScore]
+	call SurfingMinigame_PrintBCDByte
+	ret
+
+; a = BCD byte, hl = destination; writes two digit tiles and advances hl by 2
+SurfingMinigame_PrintBCDByte:
+	ld c, a
+	swap a
+	and $f
+	add $d6
+	ld [hli], a
+	ld a, c
+	and $f
+	add $d6
+	ld [hli], a
+	ret
+
+; redraws the beach over the popup box and copies it to VRAM
+SurfingMinigame_HideTitlePopup:
+	ld hl, SurfingMinigame_BeachIntroTilemap
+	decoord 0, 6
+	ld bc, 12 * SCREEN_WIDTH
+	call CopyBytes
+; restore the beach attr map (undo the popup's BG4 colouring)
+	ld hl, wAttrmap
+	ld bc, 6 * SCREEN_WIDTH
+	xor a
+	call ByteFill
+	ld hl, wAttrmap + 6 * SCREEN_WIDTH
+	ld b, 12
+.hideTitleAttrRow:
+	ld c, 8
+	ld a, SURF_PAL_BG_SAND
+.hideTitleAttrCol1:
+	ld [hli], a
+	dec c
+	jr nz, .hideTitleAttrCol1
+	ld c, 12
+	ld a, SURF_PAL_BG_WATER
+.hideTitleAttrCol2:
+	ld [hli], a
+	dec c
+	jr nz, .hideTitleAttrCol2
+	dec b
+	jr nz, .hideTitleAttrRow
+	farcall ApplyAttrmap
+	ld a, 1
+	ldh [hBGMapMode], a
+	call DelayFrame
+	call DelayFrame
+	call DelayFrame
+	xor a
+	ldh [hBGMapMode], a
+	ret
+
+; waits for a button on the title screen: A starts the game, B exits the minigame
+SurfingMinigame_TitleChoice:
+.waitRelease
+	call DelayFrame
+	call SurfingPikachu_GetJoypad_3FrameBuffer
+	ld a, [hSurfingJoypadBuffer]
+	and PAD_A | PAD_B
+	jr nz, .waitRelease
+.waitPress
+	call DelayFrame
+	call SurfingPikachu_GetJoypad_3FrameBuffer
+	ld a, [hSurfingJoypadBuffer]
+	and PAD_A
+	ret nz
+	ld a, [hSurfingJoypadBuffer]
+	and PAD_B
+	jr z, .waitPress
+	ld a, $80
+	ld [wSurfingMinigameRoutineNumber], a
+	ret
+
 SurfingMinigame_TitleTilemap:
 	INCBIN "gfx/surfing_pikachu/title.tilemap"
 SurfingMinigame_TitleTilemapEnd:
 	ASSERT SurfingMinigame_TitleTilemapEnd - SurfingMinigame_TitleTilemap == 6 * 12
 
+SurfingPikachuMinigame_LoadGraphics:
+	ld a, BANK(SurfingPikachu1Graphics1)
+	ld hl, SurfingPikachu1Graphics1
+	ld de, vTiles2
+	ld bc, SurfingPikachu1Graphics1End - SurfingPikachu1Graphics1
+	call FarCopyBytes
+; text font: now stored in Graphics1 (1a), which is loaded above.
+	ld a, BANK(SurfingPikachu1Graphics2)
+	ld hl, SurfingPikachu1Graphics2
+	ld de, vTiles0
+	ld bc, SurfingPikachu1Graphics2End - SurfingPikachu1Graphics2
+	call FarCopyBytes
+	ret
+
+SurfingPikachuMinigame_RestoreIntroOverlap:
+; Graphics3 was copied starting at tile $50, overwriting part of Graphics2.
+; Restore exactly that region from Graphics2 so gameplay gets its tiles back.
+	ld a, BANK(SurfingPikachu1Graphics2)
+	ld hl, SurfingPikachu1Graphics2 + $500
+	ld de, vTiles0 tile $50
+	ld bc, SurfingPikachu1Graphics3End - SurfingPikachu1Graphics3
+	call FarCopyBytes
+	ret
+
+ASSERT SurfingPikachu1Graphics3End - SurfingPikachu1Graphics3 <= 2048, \
+	"intro graphics must fit in the upper half of Graphics2"
+
 SurfingPikachuMinigame_LoadGFXAndLayout:
 	call SurfingPikachu_ClearTileMap
-	call ClearSprites
 	call DisableLCD
 
 ; zero all minigame state
@@ -2849,28 +3089,10 @@ SurfingPikachuMinigame_LoadGFXAndLayout:
 ; interrupt handler (LCDGeneric) both see the real bytes.
 	ld a, BANK(wLYOverrides)
 	ldh [rSVBK], a
-	ld hl, wLYOverrides
-	ld bc, wLYOverridesEnd - wLYOverrides
-	xor a
-	call ByteFill
 
 	xor a
 	ldh [rVBK], a
 	ldh [hBGMapMode], a
-	farcall ClearSpriteAnims
-
-; load gfx
-	ld a, BANK(SurfingPikachu1Graphics1)
-	ld hl, SurfingPikachu1Graphics1
-	ld de, vTiles2
-	ld bc, 1040
-	call FarCopyBytes
-
-	ld a, BANK(SurfingPikachu1Graphics2)
-	ld hl, SurfingPikachu1Graphics2
-	ld de, vTiles0
-	ld bc, 4096
-	call FarCopyBytes
 
 ; Yellow does NOT load SurfingPikachu1Graphics3 here: it only does so in
 ; SurfingPikachuMinigameIntro (the beach scene), where the tiles are copied to
@@ -2885,23 +3107,54 @@ SurfingPikachuMinigame_LoadGFXAndLayout:
 	ldh [rVBK], a
 	ld hl, vTilemap0
 	ld bc, 2 * TILEMAP_AREA
-	xor a
+	ld a, $e9
 	call ByteFill
 
 ; water tile across the playfield
 	hlbgcoord 0, 6, vTilemap0
 	ld bc, 12 * TILEMAP_WIDTH
-	ld a, $0b
+	ld a, $d0
 	call ByteFill
 
+; window attr map (vAttrmap1 at $9C00, bank 1): cleared to BG 2
+	xor a
+	ldh [hBGMapMode], a
 	ld a, 1
 	ldh [rVBK], a
-	ld hl, vTilemap0
+	ld hl, vAttrmap1
+	ld bc, TILEMAP_AREA
+	ld a, 2
+	call ByteFill
+
+	xor a
+	ldh [rVBK], a
+; fill wAttrmap (WRAM, 20-wide) for the VBlank copier
+	ld hl, wAttrmap
+	ld bc, 6 * SCREEN_WIDTH
+	xor a
+	call ByteFill
+	ld hl, wAttrmap + 6 * SCREEN_WIDTH
+	ld bc, 12 * SCREEN_WIDTH
+	ld a, SURF_PAL_BG_WATER
+	call ByteFill
+
+; the wave scrolls across all 32 columns of the BG map, but ApplyAttrmap only
+; copies the 20 visible ones, so fill the full width of vAttrmap0 here
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, vAttrmap0
 	ld bc, TILEMAP_AREA
 	xor a
 	call ByteFill
+	ld hl, vAttrmap0 + 6 * TILEMAP_WIDTH
+	ld bc, 12 * TILEMAP_WIDTH
+	ld a, SURF_PAL_BG_WATER
+	call ByteFill
 	xor a
-	ldh [rVBK], a
+	ldh [hBGMapMode], a
+; ensure attr map is transferred to VRAM (this overwrites bank 1 at vAttrmap0,
+; so the gameplay attrs must be written to wAttrmap before this point)
+	farcall ApplyAttrmap
 
 	xor a
 	ldh [rVBK], a
@@ -2938,6 +3191,7 @@ SurfingPikachuMinigame_LoadGFXAndLayout:
 
 	call SurfingPikachuMinigame_InitStaticSpriteLayout
 	call SurfingPikachuMinigame_DrawStaticTilemapLayout
+	call SurfingPikachuMinigame_ColourPalmTiles
 
 ; The playfield is written straight to VRAM (and thereafter maintained by the
 ; VBlank hook), so the tilemap copier must be switched off. If hBGMapMode is
@@ -2949,18 +3203,29 @@ SurfingPikachuMinigame_LoadGFXAndLayout:
 	ldh [hBGMapThird], a
 
 ; palettes (GBC direct: colour-index order, no DMG shade indirection)
-	ld b, CGB_GENERIC
-	call GetCGBLayout
+; Save both ROM and WRAM banks, switch to ROM bank 89 and WRAM bank 5,
+; copy palette data, then restore both.
+	ldh a, [hROMBank]
+	push af
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(SurfingPikachu)
+	rst Bankswitch
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
 	ld hl, SurfingPikachuPalettes
 	ld de, wBGPals1 palette 0
-	ld bc, 2 palettes          ; BG 0 (playfield) + BG 1 (title)
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ld hl, SurfingPikachuPalettes + 2 palettes
+	ld bc, 5 palettes          ; BG 0-4 (sky/logo, sand, water, palm, extra)
+	call CopyBytes
+	ld hl, SurfingPikachuPalettes + 5 palettes
 	ld de, wOBPals1 palette 0
-	ld bc, 2 palettes          ; OBJ 0 (Pikachu) + OBJ 1 (splashes)
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
+	ld bc, 5 palettes          ; OBJ 0-4
+	call CopyBytes
+	pop af
+	ldh [rWBK], a
+	pop af
+	rst Bankswitch
+
 ; DMG registers (ignored in CGB mode; kept for completeness)
 	ld a, %11100100
 	ldh [rBGP], a
@@ -3038,6 +3303,17 @@ SurfingPikachuMinigame_InitStaticSpriteLayout:
 	ld c, $80 ; OAM X
 	ld a, $4
 	call SurfingPikachuMinigame_PlaceSpriteRowFromTiles
+; recolour the static sprites: progress marker -> OBJ 3, clouds -> OBJ 2
+	ld a, SURF_PAL_OBJ_SURF
+	ld [wShadowOAMSprite04Attributes], a
+	ld hl, wShadowOAMSprite05Attributes
+	ld b, 9
+.cloudPalLoop:
+	ld [hl], SURF_PAL_OBJ_CLOUDS
+	ld de, 4
+	add hl, de
+	dec b
+	jr nz, .cloudPalLoop
 	ret
 
 SurfingPikachuMinigame_PlaceSpriteRowFromTiles:
@@ -3062,16 +3338,16 @@ SurfingPikachuMinigame_PlaceSpriteRowFromTiles:
 	ret
 
 SurfingPikachuMiniPikachuTile:
-	db $fe
+	db $b9
 
 SurfingPikachuHPDigitTiles:
-	db $d0, $d0, $d0, $d0
+	db $d6, $d6, $d6, $d6
 
 SurfingPikachuWideCloudTiles:
-	db $ec, $ed, $ed, $ee, $ef
+	db $a6, $a7, $a7, $a8, $a9
 
 SurfingPikachuNarrowCloudTiles:
-	db $ec, $ed, $ee, $ef
+	db $a6, $a7, $a8, $a9
 
 SurfingPikachuMinigame_DrawStaticTilemapLayout:
 	debgcoord 1, 1, vTilemap1
@@ -3084,22 +3360,48 @@ SurfingPikachuMinigame_DrawStaticTilemapLayout:
 	dec c
 	jr nz, .copyTileRow
 	hlbgcoord 1, 0, vTilemap1
-	ld [hl], $15
+	ld [hl], $e4
 	hlbgcoord 2, 0, vTilemap1
-	ld [hl], $16
+	ld [hl], $e5
 	hlbgcoord 12, 1, vTilemap1
-	ld [hl], $1b
+	ld [hl], $b6
 	hlbgcoord 13, 1, vTilemap1
-	ld [hl], $1c
+	ld [hl], $b7
+	ret
+
+; Colour any window cell showing a palm tile ($e4-$e7) with BG 3. The palm is in
+; the first two window rows, so only those rows are scanned.
+SurfingPikachuMinigame_ColourPalmTiles:
+	ld hl, vTilemap1
+	ld bc, 2 * TILEMAP_WIDTH
+.loop
+	xor a
+	ldh [rVBK], a
+	ld a, [hl]
+	sub $e4
+	cp 4
+	jr nc, .next
+	ld a, 1
+	ldh [rVBK], a
+	ld a, SURF_PAL_BG_PALM
+	ld [hl], a
+.next
+	inc hl
+	dec bc
+	ld a, b
+	or c
+	jr nz, .loop
+	xor a
+	ldh [rVBK], a
 	ret
 
 SurfingPikachuStatusBarTiles:
-	db $17, $18, $19, $19, $19, $19, $19, $19, $19
+	db $e6, $e7, $e8, $e8, $e8, $e8, $e8, $e8, $e8
 
 SurfingPikachu_ClearTileMap:
 	hlcoord 0, 0
 	ld bc, wTilemapEnd - wTilemap
-	xor a
+	ld a, $e9
 	call ByteFill
 	ret
 
@@ -3113,9 +3415,23 @@ DEF PAL_OBJ_PIKACHU   EQU 0  ; OBJ 0: Pikachu, HP digits, clouds, marker
 DEF PAL_OBJ_SPLASH    EQU 1  ; OBJ 1: splashes, banners, water spray
 
 SurfingPikachuPalettes::
-INCLUDE "gfx/surfing_pikachu/surfing_pikachu.pal"
+	INCLUDE "gfx/surfing_pikachu/surfing_pikachu.pal"
+
+; Palette slot assignments (CGB).
+DEF SURF_PAL_BG_SKY_LOGO EQU 0  ; BG 0: sky, 1st/2nd logo colour, black
+DEF SURF_PAL_BG_SAND     EQU 1  ; BG 1: white, light sand, dark sand, black
+DEF SURF_PAL_BG_WATER    EQU 2  ; BG 2: white, light sand, water, black
+DEF SURF_PAL_BG_PALM     EQU 3  ; BG 3: white, light sand, palm trunk, leaves
+DEF SURF_PAL_BG_EXTRA    EQU 4  ; BG 4: (placeholder) all black
+DEF SURF_PAL_OBJ_PIKACHU EQU 0  ; OBJ 0: Pikachu + surfboard
+DEF SURF_PAL_OBJ_TEXT    EQU 1  ; OBJ 1: text "Oh no..", "Start", "Goal", splashes and water spray
+DEF SURF_PAL_OBJ_CLOUDS  EQU 2  ; OBJ 2: clouds
+DEF SURF_PAL_OBJ_SURF    EQU 3  ; OBJ 3: surf icon, plus points
+DEF SURF_PAL_OBJ_SPLASH  EQU 4  ; OBJ 4: splashes, water spray
 
 SurfingPikachu1Graphics1:: INCBIN "gfx/surfing_pikachu/surfing_pikachu_1a.2bpp"
+SurfingPikachu1Graphics1End:
 SurfingPikachu1Graphics2:: INCBIN "gfx/surfing_pikachu/surfing_pikachu_1b.2bpp"
+SurfingPikachu1Graphics2End:
 SurfingPikachu1Graphics3:: INCBIN "gfx/surfing_pikachu/surfing_pikachu_1c.2bpp"
 SurfingPikachu1Graphics3End:

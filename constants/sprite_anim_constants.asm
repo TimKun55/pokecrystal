@@ -78,7 +78,6 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_SURF_UNUSED                ; 27
 	const SPRITE_ANIM_OBJ_SURF_PIKACHU               ; 28
 	const SPRITE_ANIM_OBJ_SURF_START                 ; 29
-	const SPRITE_ANIM_OBJ_SURF_GOAL                  ; 2a
 	const SPRITE_ANIM_OBJ_SURF_PLUS50                ; 2b
 	const SPRITE_ANIM_OBJ_SURF_PLUS150               ; 2c
 	const SPRITE_ANIM_OBJ_SURF_PLUS350               ; 2d

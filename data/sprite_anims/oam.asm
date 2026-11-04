@@ -124,27 +124,27 @@ SpriteAnimOAMData:
 	spriteanimoam $66, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_ANGLE_11
 	spriteanimoam $33, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_ANGLE_12
 	spriteanimoam $69, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_ANGLE_13
-	spriteanimoam $a7, .OAMData_SurfSmallSplash          ; SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH
-	spriteanimoam $a8, .OAMData_SurfLargeSplash          ; SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH
-	spriteanimoam $e0, .OAMData_SurfStartText            ; SPRITE_ANIM_OAMSET_SURF_START_TEXT
-	spriteanimoam $ca, .OAMData_SurfOhNoText             ; SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT
-	spriteanimoam $a7, .OAMData_SurfWaterSpray           ; SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY
+	spriteanimoam $6d, .OAMData_SurfSmallSplash          ; SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH
+	spriteanimoam $6e, .OAMData_SurfLargeSplash          ; SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH
+	spriteanimoam $9a, .OAMData_SurfStartText            ; SPRITE_ANIM_OAMSET_SURF_START_TEXT
+	spriteanimoam $ba, .OAMData_SurfOhNoText             ; SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT
+	spriteanimoam $6d, .OAMData_SurfWaterSpray           ; SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY
 	spriteanimoam $00, .OAMData_SurfPlus50               ; SPRITE_ANIM_OAMSET_SURF_PLUS_50
 	spriteanimoam $00, .OAMData_SurfPlus150              ; SPRITE_ANIM_OAMSET_SURF_PLUS_150
 	spriteanimoam $00, .OAMData_SurfPlus350              ; SPRITE_ANIM_OAMSET_SURF_PLUS_350
 	spriteanimoam $00, .OAMData_SurfPlus750              ; SPRITE_ANIM_OAMSET_SURF_PLUS_750
 	spriteanimoam $00, .OAMData_SurfPlus180              ; SPRITE_ANIM_OAMSET_SURF_PLUS_180
 	spriteanimoam $00, .OAMData_SurfPlus500              ; SPRITE_ANIM_OAMSET_SURF_PLUS_500
-	spriteanimoam $80, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU
-	spriteanimoam $84, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2
-	spriteanimoam $88, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3
-	spriteanimoam $8c, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4
-	spriteanimoam $98, .OAMData_SurfEmptyBoard           ; SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD
+	spriteanimoam $50, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU
+	spriteanimoam $54, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2
+	spriteanimoam $58, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3
+	spriteanimoam $5c, .OAMData_SurfIntroPikachu         ; SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4
+	spriteanimoam $96, .OAMData_SurfEmptyBoard           ; SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD
 	; Yellow's results-screen Pikachu (SurfingPikachuOAMData entries 17-18)
 	; reuses the same nine-tile grid as the surfing frames but points at the
-	; results-art blocks at $a0/$a3. The shared layout label is intentional.
-	spriteanimoam $a0, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1
-	spriteanimoam $a3, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2
+	; results-art blocks at $90/$93. The shared layout label is intentional.
+	spriteanimoam $90, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1
+	spriteanimoam $93, .OAMData_SurfPikachu              ; SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2
 	assert_table_length NUM_SPRITE_ANIM_OAMSETS
 
 .OAMData_1x1_Palette0:
@@ -853,52 +853,78 @@ SpriteAnimOAMData:
 	db   4,  -4, $21, 0
 	db   4,   4, $22, 0
 
+; Surfing Pikachu frames whose 3x3 grid had a tile moved to a non-contiguous spot.
+; These override the shared .OAMData_SurfPikachu layout for that one cell.
+.OAMData_SurfAngle06Moved:
+	db 9
+	db -12, -12, $00, 0
+	db -12,  -4, $01, 0
+	db -12,   4, $c7, 0
+	db  -4, -12, $10, 0
+	db  -4,  -4, $11, 0
+	db  -4,   4, $12, 0
+	db   4, -12, $20, 0
+	db   4,  -4, $21, 0
+	db   4,   4, $22, 0
+
+.OAMData_SurfAngle08Moved:
+	db 9
+	db -12, -12, $c5, 0
+	db -12,  -4, $c6, 0
+	db -12,   4, $c7, 0
+	db  -4, -12, $10, 0
+	db  -4,  -4, $11, 0
+	db  -4,   4, $12, 0
+	db   4, -12, $20, 0
+	db   4,  -4, $21, 0
+	db   4,   4, $22, 0
+
 .OAMData_SurfSmallSplash:
 	db 6
-	db  -4, -16, $00, 1 | OAM_PAL1 | OAM_XFLIP
-	db  -4,   8, $00, 1 | OAM_PAL1
-	db   4, -16, $10, 1 | OAM_PAL1 | OAM_XFLIP
-	db   4,  -8, $0f, 1 | OAM_PAL1 | OAM_XFLIP
-	db   4,   0, $0f, 1 | OAM_PAL1
-	db   4,   8, $10, 1 | OAM_PAL1
+	db  -4, -16, $00, 4 | OAM_PAL1 | OAM_XFLIP
+	db  -4,   8, $00, 4 | OAM_PAL1
+	db   4, -16, $10, 4 | OAM_PAL1 | OAM_XFLIP
+	db   4,  -8, $0f, 4 | OAM_PAL1 | OAM_XFLIP
+	db   4,   0, $0f, 4 | OAM_PAL1
+	db   4,   8, $10, 4 | OAM_PAL1
 
 .OAMData_SurfLargeSplash:
 	db 12
-	db -12, -16, $00, 1 | OAM_PAL1
-	db -12,  -8, $01, 1 | OAM_PAL1
-	db -12,   0, $01, 1 | OAM_PAL1 | OAM_XFLIP
-	db -12,   8, $00, 1 | OAM_PAL1 | OAM_XFLIP
-	db  -4, -16, $10, 1 | OAM_PAL1
-	db  -4,  -8, $11, 1 | OAM_PAL1
-	db  -4,   0, $11, 1 | OAM_PAL1 | OAM_XFLIP
-	db  -4,   8, $10, 1 | OAM_PAL1 | OAM_XFLIP
-	db   4, -16, $20, 1 | OAM_PAL1
-	db   4,  -8, $21, 1 | OAM_PAL1
-	db   4,   0, $21, 1 | OAM_PAL1 | OAM_XFLIP
-	db   4,   8, $20, 1 | OAM_PAL1 | OAM_XFLIP
+	db -12, -16, $00, 4 | OAM_PAL1
+	db -12,  -8, $01, 4 | OAM_PAL1
+	db -12,   0, $01, 4 | OAM_PAL1 | OAM_XFLIP
+	db -12,   8, $00, 4 | OAM_PAL1 | OAM_XFLIP
+	db  -4, -16, $10, 4 | OAM_PAL1
+	db  -4,  -8, $11, 4 | OAM_PAL1
+	db  -4,   0, $11, 4 | OAM_PAL1 | OAM_XFLIP
+	db  -4,   8, $10, 4 | OAM_PAL1 | OAM_XFLIP
+	db   4, -16, $20, 4 | OAM_PAL1
+	db   4,  -8, $21, 4 | OAM_PAL1
+	db   4,   0, $21, 4 | OAM_PAL1 | OAM_XFLIP
+	db   4,   8, $20, 4 | OAM_PAL1 | OAM_XFLIP
 
 .OAMData_SurfStartText:
 .OAMData_SurfGoalText:
 .OAMData_SurfOhNoText:
 	db 12
-	db  -8, -24, $00, 0
-	db  -8, -16, $01, 0
-	db  -8,  -8, $02, 0
-	db  -8,   0, $03, 0
-	db  -8,   8, $04, 0
-	db  -8,  16, $05, 0
-	db   0, -24, $10, 0
-	db   0, -16, $11, 0
-	db   0,  -8, $12, 0
-	db   0,   0, $13, 0
-	db   0,   8, $14, 0
-	db   0,  16, $15, 0
+	db  -8, -24, $00, 1 | OAM_PAL1
+	db  -8, -16, $01, 1 | OAM_PAL1
+	db  -8,  -8, $02, 1 | OAM_PAL1
+	db  -8,   0, $03, 1 | OAM_PAL1
+	db  -8,   8, $04, 1 | OAM_PAL1
+	db  -8,  16, $05, 1 | OAM_PAL1
+	db   0, -24, $10, 1 | OAM_PAL1
+	db   0, -16, $11, 1 | OAM_PAL1
+	db   0,  -8, $12, 1 | OAM_PAL1
+	db   0,   0, $13, 1 | OAM_PAL1
+	db   0,   8, $14, 1 | OAM_PAL1
+	db   0,  16, $15, 1 | OAM_PAL1
 
 .OAMData_SurfWaterSpray:
 	db 3
-	db  -4,  11, $00, 1 | OAM_PAL1
-	db   4,   3, $0f, 1 | OAM_PAL1
-	db   4,  11, $10, 1 | OAM_PAL1
+	db  -4,  11, $00, 4 | OAM_PAL1
+	db   4,   3, $0f, 4 | OAM_PAL1
+	db   4,  11, $10, 4 | OAM_PAL1
 
 .OAMData_SurfEmptyBoard:
 	db 3
@@ -908,44 +934,44 @@ SpriteAnimOAMData:
 
 .OAMData_SurfPlus50:
 	db 3
-	db  -4, -12, $bf, 0
-	db  -4,  -4, $d5, 0
-	db  -4,   4, $d0, 0
+	db  -4, -12, $99, 3 | OAM_PAL1
+	db  -4,  -4, $db, 3 | OAM_PAL1
+	db  -4,   4, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfPlus150:
 	db 4
-	db  -4, -16, $bf, 0
-	db  -4,  -8, $d1, 0
-	db  -4,   0, $d5, 0
-	db  -4,   8, $d0, 0
+	db  -4, -16, $99, 3 | OAM_PAL1
+	db  -4,  -8, $d7, 3 | OAM_PAL1
+	db  -4,   0, $db, 3 | OAM_PAL1
+	db  -4,   8, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfPlus350:
 	db 4
-	db  -4, -16, $bf, 0
-	db  -4,  -8, $d3, 0
-	db  -4,   0, $d5, 0
-	db  -4,   8, $d0, 0
+	db  -4, -16, $99, 3 | OAM_PAL1
+	db  -4,  -8, $d9, 3 | OAM_PAL1
+	db  -4,   0, $db, 3 | OAM_PAL1
+	db  -4,   8, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfPlus750:
 	db 4
-	db  -4, -16, $bf, 0
-	db  -4,  -8, $d7, 0
-	db  -4,   0, $d5, 0
-	db  -4,   8, $d0, 0
+	db  -4, -16, $99, 3 | OAM_PAL1
+	db  -4,  -8, $dd, 3 | OAM_PAL1
+	db  -4,   0, $db, 3 | OAM_PAL1
+	db  -4,   8, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfPlus180:
 	db 4
-	db  -4, -16, $bf, 0
-	db  -4,  -8, $d1, 0
-	db  -4,   0, $d8, 0
-	db  -4,   8, $d0, 0
+	db  -4, -16, $99, 3 | OAM_PAL1
+	db  -4,  -8, $d7, 3 | OAM_PAL1
+	db  -4,   0, $de, 3 | OAM_PAL1
+	db  -4,   8, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfPlus500:
 	db 4
-	db  -4, -16, $bf, 0
-	db  -4,  -8, $d5, 0
-	db  -4,   0, $d0, 0
-	db  -4,   8, $d0, 0
+	db  -4, -16, $99, 3 | OAM_PAL1
+	db  -4,  -8, $db, 3 | OAM_PAL1
+	db  -4,   0, $d6, 3 | OAM_PAL1
+	db  -4,   8, $d6, 3 | OAM_PAL1
 
 .OAMData_SurfIntroPikachu:
 	db 12
