@@ -292,14 +292,14 @@ TMHM_ShowTMMoveDescription:
 	ld a, c
 ; Type Index adjust done
 ; Load Type GFX Tiles
-	ld hl, TypeIconGFX
-	ld bc, 4 * TILE_1BPP_SIZE
+	ld hl, TypeLightIcon2GFX
+	ld bc, 4 * TILE_SIZE
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $62 
-	lb bc, BANK(TypeIconGFX), 4
-	call Request1bpp
+	lb bc, BANK(TypeLightIcon2GFX), 4
+	call Request2bpp
 	hlcoord 11, 13
 	ld a, $62 ; first Type Tile
 	ld [hli], a

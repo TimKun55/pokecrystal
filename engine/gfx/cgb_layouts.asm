@@ -1676,8 +1676,12 @@ _CGB_PackPals:
 	ld a, $2
 	call FillBoxCGB
 
-	hlcoord 11, 13, wAttrmap ; move type and category icon
-	lb bc, 1, 7
+	hlcoord 11, 13, wAttrmap ; move type icon
+	lb bc, 1, 4
+	ld a, $6
+	call FillBoxWithByte
+	hlcoord 15, 13, wAttrmap ; move category icon
+	lb bc, 1, 3
 	ld a, $5
 	call FillBoxWithByte
 
@@ -1879,6 +1883,9 @@ LoadIconPaletteFromHL:
 	call FarCopyColorWRAM
 	ret
 
+WhiteColor:
+	RGB 31, 31, 31
+
 BlackColor:
 	RGB 00, 00, 00
 
@@ -1902,8 +1909,14 @@ LoadTMHMIconPalette:
 	ld b, 0
 	add hl, bc
 
-	ld de, wBGPals1 palette 5 + 6 ; slot 4 of palette 5
+	ld de, wBGPals1 palette 6 + 2 ; slot 2 of palette 6
 	ld bc, 2 ; 1 color (2 bytes)
+	call FarCopyColorWRAM
+
+; Colour 0 of palette 6 = white
+	ld hl, WhiteColor
+	ld de, wBGPals1 palette 6
+	ld bc, 2
 	call FarCopyColorWRAM
 
 ; Type Category Pals
