@@ -5177,8 +5177,8 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 7 ; upper right corner of the textbox
-	ld b, 4 ; Box height
+	hlcoord 0, 8 ; upper right corner of the textbox
+	ld b, 3 ; Box height
 	ld c, 8 ; Box length
 	call Textbox
 
@@ -5242,7 +5242,7 @@ MoveInfoBox:
 	ld hl, vTiles2 tile $55 
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
-	hlcoord 3, 11 ; placing the Type Tiles in  the MoveInfoBox
+	hlcoord 1, 13 ; placing the Type Tiles
 	ld [hl], $55
 	inc hl
 	ld [hl], $56
@@ -5253,24 +5253,24 @@ MoveInfoBox:
 	pop bc
 	ld a, b ; Category Index
 	ld hl, CategoryIconGFX
-	ld bc, 2 tiles ; Move Category is 2 Tiles wide 
+	ld bc, 2 tiles ; Move Category is 2 Tiles wide
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
-	hlcoord 7, 11 ; placing the Category Tiles in the MoveInfoBox
+	hlcoord 3, 14 ; placing the Category Tiles
 	ld [hl], $59
 	inc hl
 	ld [hl], $5a
 
 ; print move BP (Base Power)
 	ld de, .power_string ; "BP"
-	hlcoord 1, 8
+	hlcoord 1, 9
 	call PlaceString
 
-	hlcoord 5, 8
+	hlcoord 5, 9
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_COUNTER
@@ -5316,10 +5316,10 @@ MoveInfoBox:
 	
 ; print move ACC
 .print_acc
-	hlcoord 1, 9
+	hlcoord 1, 10
 	ld de, .accuracy_string ; "Acc"
 	call PlaceString
-	hlcoord 5, 9
+	hlcoord 5, 10
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
 	call Adjust_Percent_Battle
 .print_num_acc
@@ -5327,14 +5327,14 @@ MoveInfoBox:
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
-	hlcoord 8, 9
+	hlcoord 8, 10
 	ld [hl], '<%>'
 	
 ; Effect Chance
-	hlcoord 1, 10
+	hlcoord 1, 11
 	ld de, .EffectChance
 	call PlaceString
-	hlcoord 5, 10
+	hlcoord 5, 11
 	ld a, [wPlayerMoveStruct + MOVE_CHANCE]
 	call Adjust_Percent_Battle
 	and a
@@ -5348,7 +5348,7 @@ MoveInfoBox:
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
-	hlcoord 8, 10
+	hlcoord 8, 11
 	ld [hl], '<%>'
 .effect_chance_done
 ; display type effectiveness in battle menu
@@ -5398,7 +5398,7 @@ MoveInfoBox:
 	; fallthrough
 
 .print_effectiveness
-	hlcoord 1, 11
+	hlcoord 1, 14
 	call PlaceString
 
 .skip_type_effectiveness
@@ -5412,19 +5412,19 @@ MoveInfoBox:
 	db "No use!@"
 
 .PrintPP:
-	hlcoord 3, 13
+	hlcoord 3, 15
 	ld [hl], ' '
 	ld de, wStringBuffer1
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 2, 14
+	hlcoord 2, 16
 	ld [hl], '/'
 	inc hl
 	ld [hl], ' '
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
-	hlcoord 1, 13
+	hlcoord 1, 15
 	ld a, 'P'
 	ld [hli], a
 	ld [hl], a

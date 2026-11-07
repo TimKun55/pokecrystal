@@ -241,16 +241,19 @@ _CGB_FinishBattleScreenLayout:
 	ld a, $6
 	call FillBoxCGB
 
-; check if we're in the MoveInfoBox
-	hlcoord 0, 12
-	ld a, [hl]
-	cp $be
-	jr nz, .done
-
-	; Move Type and Category pal
-	hlcoord 3, 11, wAttrmap
-	ld bc, 6
-	ld a, $5
+; Move Type and Category icons: palette 5 (initialised to the text
+; palette in _CGB_BattleColors; see LoadBattleCategoryAndTypePals).
+; The icons sit in the "lower box" at (1,13)/(3,14), i.e. over
+; textbox tiles, not over the backsprite, so sharing palette 5 with
+; the text area is safe and the palette can be restored to text on
+; close (see ParsePlayerAction).
+	hlcoord 1, 13, wAttrmap ; type icon, 4 tiles
+	ld bc, 4
+	ld a, $5 ; PAL_BATTLE_BG_5
+	call ByteFill
+	hlcoord 3, 14, wAttrmap ; category icon, 2 tiles
+	ld bc, 2
+	ld a, $5 ; PAL_BATTLE_BG_5
 	call ByteFill
 
 .done
