@@ -164,6 +164,13 @@ _CGB_BattleColors:
 	call SetBattlePal_EnemyHP
 	call SetBattlePal_PlayerHP
 	call SetBattlePal_Gender
+	; Palette 5 is reserved for the MoveInfoBox type/category icons,
+	; which now sit over textbox tiles (rows 13-14), not over the
+	; backsprite. Initialise it to the text palette, so that textbox
+	; tiles sharing its attrmap entry (e.g. the no-PP message) are
+	; not tinted by the icon colors.
+	; LoadBattleCategoryAndTypePals overwrites it on cursor movement.
+	call SetBattlePal_Text
 	ld de, wOBPals1
 	call SetBattlePal_Enemy
 	call SetBattlePal_Player

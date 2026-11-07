@@ -672,7 +672,7 @@ ParsePlayerAction:
 	jp nz, .reset_bide
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_BIDE
-	jr nz, .locked_in
+	jp nz, .locked_in
 	xor a
 	ld [wMoveSelectionMenuType], a
 	inc a ; TACKLE
@@ -680,8 +680,40 @@ ParsePlayerAction:
 	call MoveSelectionScreen
 	push af
 	call SafeLoadTempTilemapToTilemap
+	; GetCGBLayout (below) re-inits palette 5 to the text palette,
+	; and the icon strip (rows 13-14) is pointed at BG7, so no
+	; palette contents need to be restored for the closed box.
 	ld b, CGB_BATTLE_COLORS
 	call GetCGBLayout
+	; GetCGBLayout/ApplyPals does not set hCGBPalUpdate, so queue the
+	; restored palette for the atomic copy below.
+	call SetDefaultBGPAndOBP
+	; Point the icon strip (rows 13-14) at BG7, not BG5. A palette
+	; copy is only a snapshot: any later effect that rewrites BG7
+	; (GetCGBLayout/InitPartyMenuBGPal7, anim palette changes) would
+	; update the textbox but not a BG5 copy, tinting black text.
+	; Sharing the BG7 index makes the strip track it automatically.
+	hlcoord 1, 13, wAttrmap ; type icon strip -> text palette
+	ld bc, 4
+	ld a, PAL_BATTLE_BG_TEXT
+	call ByteFill
+	hlcoord 3, 14, wAttrmap ; category icon strip -> text palette
+	ld bc, 2
+	ld a, PAL_BATTLE_BG_TEXT
+	call ByteFill
+	; Flush palette, tilemap and attrmap atomically. Queuing the
+	; palette and tilemap separately would race in VBlank_Normal
+	; (palettes first, then the tilemap in thirds, bottom third
+	; last): the icon tiles in the bottom third would render in
+	; the text palette for ~2 frames (the solid-black flash).
+	; _SafeCopyTilemapAtOnce copies all three in one VBlank7.
+	ld a, 1 ; TRANSFER_TILEMAP
+	ldh [hBGMapMode], a
+	; Force b = 3 (attrmap included): the sprite-updates branch
+	; would give b = 11 (tilemap only) in battle, so the strip
+	; attrmap change above would never reach VRAM.
+	ld b, 3
+	newfarcall _SafeCopyTilemapAtOnce
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle
@@ -5402,9 +5434,29 @@ MoveInfoBox:
 	call PlaceString
 
 .skip_type_effectiveness
-; set battle CGB layout	
-	ld b, CGB_BATTLE_COLORS
-	call GetCGBLayout
+; Point the icon strip (rows 13-14) at BG5 before copying. The
+; close path sets it to BG7, and in battle sprite updates are
+; disabled so a tilemap-only copy would skip the attrmap and
+; re-opened icons would render in the text palette.
+	hlcoord 1, 13, wAttrmap ; type icon strip -> icon palette
+	ld bc, 4
+	ld a, PAL_BATTLE_BG_5
+	call ByteFill
+	hlcoord 3, 14, wAttrmap ; category icon strip -> icon palette
+	ld bc, 2
+	ld a, PAL_BATTLE_BG_5
+	call ByteFill
+; Flush the icon palette, tilemap and attrmap atomically. Palette 5
+; (icon colors) serves tiles in the textbox area (rows 13-14), and
+; VBlank_Normal services palette updates before tilemap updates, so
+; queuing both separately would tint those textbox tiles for a
+; frame. _SafeCopyTilemapAtOnce (b = 3: use the hCGBPalUpdate flag
+; set by SetDefaultBGPAndOBP above, attrmap included) copies all
+; three together in one VBlank7.
+	ld a, 1 ; TRANSFER_TILEMAP
+	ldh [hBGMapMode], a
+	ld b, 3
+	newfarcall _SafeCopyTilemapAtOnce
 .done
 	ret
 
