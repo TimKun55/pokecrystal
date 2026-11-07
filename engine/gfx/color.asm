@@ -222,7 +222,28 @@ GetMoveTypeCategory:
 	call GetFarByte
 	jp DecodeMoveTypeCategory
 
-	ld hl, CategoryIconPals ; from gfx\types_cats_status_pals.asm
+GetBattleMoveTypeCategory:
+; Decode the MOVE_TYPE byte of wPlayerMoveStruct, applying the
+; Hidden Power override: for Hidden Power, the displayed type is the
+; DV-derived type (see GetHiddenPowerType), not the stored NORMAL type.
+; output: b = category index, c = display type index
+; clobbers: a, de
+	call .Decode
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	cp HIDDEN_POWER
+	ret nz
+	push bc
+	ld de, wBattleMonDVs
+	farcall GetHiddenPowerType ; type returned in b (and a)
+	ld a, b
+	pop bc
+	ld c, a
+	ret
+
+.Decode:
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	jp DecodeMoveTypeCategory
+
 LoadCategoryIconPalette:
 ; Load the 2 colors of category b into the palette at de (color 1).
 ; Preserves bc and de.
@@ -271,9 +292,20 @@ LoadCategoryAndTypePals:
 	jp LoadTypeIconPalette
 
 LoadBattleCategoryAndTypePals:
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	call DecodeMoveTypeCategory ; b = category, c = type
-	; white color-0 block (unchanged from original)
+	call GetBattleMoveTypeCategory ; b = category, c = display type
+	; Ensure color 0 of palette 5 is white (1bpp type icon background).
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
+	ld a, LOW(PALRGB_WHITE)
+	ld de, wBGPals1 palette 5
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_WHITE)
+	ld [de], a
+	pop af
+	ldh [rWBK], a
 	ld de, wBGPals1 palette 5 + 2
 	jp LoadCategoryAndTypePals
 	

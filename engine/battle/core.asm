@@ -5231,10 +5231,8 @@ MoveInfoBox:
 	farcall LoadBattleCategoryAndTypePals
 	call SetDefaultBGPAndOBP
 
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
+	farcall GetBattleMoveTypeCategory ; b = category, c = display type
+	push bc
 	ld a, c ; Type Index
 	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
 	ld bc, 4 * TILE_1BPP_SIZE ; Type GFX is 4 Tiles Wide
@@ -5252,13 +5250,8 @@ MoveInfoBox:
 	ld [hl], $57
 	inc hl
 	ld [hl], $58
-
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	and ~TYPE_MASK
-	swap a
-	srl a
-	srl a
-	dec a
+	pop bc
+	ld a, b ; Category Index
 	ld hl, CategoryIconGFX
 	ld bc, 2 tiles ; Move Category is 2 Tiles wide 
 	call AddNTimes
