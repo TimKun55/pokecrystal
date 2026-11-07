@@ -5092,6 +5092,24 @@ MoveSelectionScreen:
 	call ClearSprites
 	ld b, CGB_BATTLE_COLORS
 	call GetCGBLayout
+	; Sync-restore the battle tilemap so the icon tiles leave VRAM
+	; BEFORE the text palette flush lands. GetCGBLayout has staged
+	; the strip (rows 13-14) at BG5 in the soft attrmap.
+	call SafeLoadTempTilemapToTilemap
+	; Point the icon strip at BG7, then copy tilemap+attrmap to
+	; VRAM synchronously (CopyTilemapAtOnce, not WaitBGMap thirds:
+	; ApplyTilemap skips the attrmap in battle because sprite
+	; updates are disabled, so the strip would stay BG5 in VRAM).
+	hlcoord 1, 13, wAttrmap ; type icon strip -> text palette
+	ld bc, 4
+	ld a, PAL_BATTLE_BG_TEXT
+	call ByteFill
+	hlcoord 3, 14, wAttrmap ; category icon strip -> text palette
+	ld bc, 2
+	ld a, PAL_BATTLE_BG_TEXT
+	call ByteFill
+	call CopyTilemapAtOnce
+	call SetDefaultBGPAndOBP ; flush palette 5 (text) onto restored tiles
 	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
