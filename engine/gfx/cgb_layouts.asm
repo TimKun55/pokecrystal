@@ -1538,56 +1538,25 @@ _CGB_MoveList:
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap
 
-; Category Icon Pals
-	ld hl, Moves + MOVE_TYPE
+; Category and Type Icon Pals
 	ld a, [wCurSpecies]
-	dec a
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	and ~TYPE_MASK ; Specific to Phys/Spec split
-	swap a ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	dec a  ; Specific to Phys/Spec split
-	add a ; double the index
-	add a ; quadrouple the index
-	; since entries of CategoryIconPals are 4 bytes (2 colors, 2 bytes each) instead of normal 2 bytes (1 color) 
-	ld hl, CategoryIconPals
 	ld c, a
-	ld b, 0
-	add hl, bc
+	call GetMoveTypeCategory ; b = category, c = type
+	push bc
 	ld de, wBGPals1 palette 2 + 2 ; slot 2 of pal 2
-	ld c, 4 ; 2 colors (4 bytes)
-	call LoadCPaletteBytesFromHLIntoDE
+	call LoadCategoryIconPalette
+	pop bc
 
 	ld de, wBGPals1 palette 2 + 6
 	call LoadSingleBlackPal
 
+	push bc ; LoadPalette_White_Col1_Col2_Black clobbers c (type)
 	ld hl, GenderPalette
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_5
+	pop bc
 
-; Type Icon Pals
-	ld hl, Moves + MOVE_TYPE
-	ld a, [wCurSpecies]
-	dec a
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	and TYPE_MASK
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
-	ld a, c
-	ld hl, TypeIconPals
-	add a ; double the index, entries of TypeIconPals are 2 bytes (1 color). Same as a list of pointers
-	ld c, a
-	ld b, 0
-	add hl, bc
 	ld de, wBGPals1 palette 4 + 2 ; slot 2 of palette 4
-	ld c, 2 ; 1 color (2 bytes)
-	call LoadCPaletteBytesFromHLIntoDE
+	call LoadTypeIconPalette
 
 ; Category tiles
 	hlcoord 16, 12, wAttrmap
@@ -1890,76 +1859,29 @@ BlackColor:
 	RGB 00, 00, 00
 
 LoadTMHMIconPalette:
-; Type Icon Pals
 	ld a, [wNamedObjectIndex]
-	ld hl, Moves + MOVE_TYPE
-
-	dec a
-	push bc
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop bc
-
-	and TYPE_MASK
-	ld hl, TypeIconPals
-	add a ; double the index, entries of TypeIconPals are 2 bytes (1 color). Same as a list of pointers
 	ld c, a
-	ld b, 0
-	add hl, bc
-
+	call GetMoveTypeCategory ; b = category, c = type
+	push bc
+; Type Icon Pals
 	ld de, wBGPals1 palette 6 + 2 ; slot 2 of palette 6
-	ld bc, 2 ; 1 color (2 bytes)
-	call FarCopyColorWRAM
+	call LoadTypeIconPalette
 
-; Colour 0 of palette 6 = white
+; Colour 0 of palette 6 = white (FarCopyColorWRAM clobbers bc)
+	push bc
 	ld hl, WhiteColor
 	ld de, wBGPals1 palette 6
 	ld bc, 2
 	call FarCopyColorWRAM
-
-; Type Category Pals
-	ld a, [wNamedObjectIndex]
-	ld hl, Moves + MOVE_TYPE
-
-	dec a
-	push bc
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
 	pop bc
 
-	and ~TYPE_MASK ; Specific to Phys/Spec split
-	swap a ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	dec a  ; Specific to Phys/Spec split
-	add a ; double the index
-	add a ; quadrouple the index
-	; since entries of CategoryIconPals are 4 bytes (2 colors, 2 bytes each) instead of normal 2 bytes (1 color) 
-	ld hl, CategoryIconPals
-	ld c, a
-	ld b, 0
-	add hl, bc
+; Category Icon Pals
 	ld de, wBGPals1 palette 5 + 2 ; slot 2 of pal 5
-	ld bc, 4 ; 2 colors (4 bytes)
-	call FarCopyColorWRAM
+	call LoadCategoryIconPalette
+	pop bc
 
 ; TM Icon palette
-	ld a, [wNamedObjectIndex]
-	ld hl, Moves + MOVE_TYPE
-
-	dec a
-	push bc
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop bc
-
-	and TYPE_MASK
+	ld a, c ; type index (restored from the stack above)
 	ld hl, TMHMTypeIconPals
 	ld c, a
 	ld b, 0

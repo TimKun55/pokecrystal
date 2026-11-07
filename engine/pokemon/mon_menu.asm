@@ -1364,20 +1364,12 @@ PlaceMoveData:
 	ld de, String_MoveAtk ; string for "Pow"
 	call PlaceString
 
-; Place Move Cateogry
+; Place Move Category
 	ld a, [wCurSpecies]
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	push af ; raw Move Type+category Byte, unmasked
-	and ~TYPE_MASK ; Specific to Phys/Spec split
-	swap a ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	srl a  ; Specific to Phys/Spec split
-	dec a  ; Specific to Phys/Spec split
+	ld c, a ; farcall-safe input (farcall clobbers a)
+	farcall GetMoveTypeCategory ; b = category, c = type
+	push bc
+	ld a, b
 	ld hl, CategoryIconGFX ; ptr to Category GFX loaded from PNG(2bpp)
 	ld bc, 2 tiles
 	call AddNTimes
@@ -1391,10 +1383,7 @@ PlaceMoveData:
 	ld [hli], a
 	ld [hl], $5a ; category icon tile 2
 ; Place Move Type
-	pop af ; raw Move Type+category Byte, unmasked
-	and TYPE_MASK ; Phys/Spec Split specific
-	ld c, a
-	farcall GetMonTypeIndex
+	pop bc
 	ld a, c
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette

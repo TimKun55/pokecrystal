@@ -187,64 +187,95 @@ InitPartyMenuStatusPals:
 	ld bc, 2 ; 1 Color (2 bytes)
 	jp FarCopyColorWRAM
 
-LoadBattleCategoryAndTypePals:
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	and ~TYPE_MASK ; Phys/Spec split only
-	swap a ; Phys/Spec split only
-	srl a ; Phys/Spec split only
-	srl a ; Phys/Spec split only
-	dec a ; Phys/Spec split only
-	ld b, a ; Move Category Index
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
-	; type index is already in c
-	ld de, wBGPals1 palette 5
-	; fallthrough	
-;LoadCategoryAndTypePals:
-	; given: de holds the address of destination Palette and Slot
-	; adding a single white pal the way vanilla game does it
-	ldh a, [rWBK]
+DecodeMoveTypeCategory:
+; Decode a raw MOVE_TYPE byte, in which the category is packed into
+; the top 2 bits and the type into the low 6 bits (see type_constants.asm).
+; input:  a = raw MOVE_TYPE byte
+; output: b = category index (0 = PHYSICAL, 1 = SPECIAL, 2 = STATUS)
+;         c = type index (0 = NORMAL .. 17 = FAIRY)
+; clobbers: a
 	push af
-	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
-	ld a, LOW(PALRGB_WHITE)
-	ld [de], a
-	inc de ; slot 1 + 1 byte, now pointing at 2nd byte of slot 1
-	ld a, HIGH(PALRGB_WHITE)
-	ld [de], a
-	inc de ; now pointing at slot 2
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
+	ld b, a
 	pop af
-	ldh [rWBK], a
-	; done adding the single white pal
+	and TYPE_MASK
+	ld c, a
+	ret
+
+GetMoveTypeCategory:
+; Decode the MOVE_TYPE byte of a move.
+; input:  c = 1-based move ID. Passed in c, not a, because farcall
+;         overwrites a (and hl) with the bank/address, while
+;         FarCall preserves bc and de.
+; output: b = category index, c = type index (see DecodeMoveTypeCategory)
+; clobbers: a, hl, bc
+	ld a, c
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	jp DecodeMoveTypeCategory
 
 	ld hl, CategoryIconPals ; from gfx\types_cats_status_pals.asm
+LoadCategoryIconPalette:
+; Load the 2 colors of category b into the palette at de (color 1).
+; Preserves bc and de.
+	ld hl, CategoryIconPals
 	ld a, b
 	add a ; doubles the Category Index
-	add a ; Quadruples the Category Index
-	; each Category has two colors, so each entry is 4 bytes long, 2 bytes per Color
+	add a ; quadruples the Category Index (entries are 4 bytes: 2 colors)
 	push bc
 	ld c, a
 	ld b, 0
 	add hl, bc
-	ld bc, 4 ; 4 bytes worth of colors means 2 slots are being filled at the same time, the two category colors
+	ld bc, 4 ; 2 colors (4 bytes)
 	push de
 	call FarCopyColorWRAM
-	pop de ; still pointing to Slot 2 of the Palette
-
-	ld hl, TypeIconPals ; from gfx\types_cats_status_pals.asm
+	pop de
 	pop bc
+	ret
+
+LoadTypeIconPalette:
+; Load the 1 color of type c into the palette at de (color 1).
+; Preserves bc and de.
+	ld hl, TypeIconPals
 	ld a, c
-	add a ; doubles the Index, since each color is 2 bytes
+	add a ; doubles the index (entries are 2 bytes: 1 color)
+	push bc
 	ld c, a
 	ld b, 0
 	add hl, bc
-	inc de 
+	ld bc, 2 ; 1 color (2 bytes)
+	push de
+	call FarCopyColorWRAM
+	pop de
+	pop bc
+	ret
+
+LoadCategoryAndTypePals:
+; Load a category + type icon palette into the palette at de (color 1):
+; the category colors at color 1-2, the type color at color 3. Color 0
+; (white) is left untouched, so the caller must ensure it is set.
+; input: b = category index, c = type index, de = palette + 2
+	call LoadCategoryIconPalette
 	inc de
 	inc de
-	inc de ; incs 4 bytes, skips 2 slots of a Palette, now at Slot 4
-	ld bc, 2 ; 2 bytes, 1 color, the type color in slot 4
-	jp FarCopyColorWRAM
+	inc de
+	inc de ; skip the 2 category colors, now at color 3
+	jp LoadTypeIconPalette
+
+LoadBattleCategoryAndTypePals:
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	call DecodeMoveTypeCategory ; b = category, c = type
+	; white color-0 block (unchanged from original)
+	ld de, wBGPals1 palette 5 + 2
+	jp LoadCategoryAndTypePals
 	
 LoadEnemyBattleCGBLayoutStatusIconPalette:
 	ld bc, 0	
