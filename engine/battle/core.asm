@@ -5234,19 +5234,22 @@ MoveInfoBox:
 
 	ld a, [wPlayerDisableCount]
 	and a
-	jr z, .not_disabled
+	jr z, .not_disabled_flag
 
 	swap a
 	and $f
 	ld b, a
 	ld a, [wMenuCursorY]
 	cp b
-	jr nz, .not_disabled
+	jr nz, .not_disabled_flag
 
-	hlcoord 1, 10
-	ld de, .Disabled
-	call PlaceString
-	jp .done
+	ld a, 1 ; disabled
+	push af
+	jr .not_disabled
+
+.not_disabled_flag
+	xor a ; not disabled
+	push af
 
 .not_disabled
 	ld hl, wMenuCursorY
@@ -5289,7 +5292,7 @@ MoveInfoBox:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $55 
+	ld hl, vTiles2 tile $55
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
 	hlcoord 1, 13 ; placing the Type Tiles
@@ -5316,6 +5319,13 @@ MoveInfoBox:
 	ld [hl], $5a
 
 ; print move BP (Base Power)
+; Skip Pow/Acc/Eff entirely if disabled (flag pushed on entry is
+; at sp+1: push af leaves the flags byte at sp+0, the value at sp+1).
+	ld hl, sp+1
+	ld a, [hl]
+	and a
+	jp nz, .type_effectiveness
+
 	ld de, .power_string ; "BP"
 	hlcoord 1, 9
 	call PlaceString
@@ -5401,6 +5411,7 @@ MoveInfoBox:
 	hlcoord 8, 11
 	ld [hl], '<%>'
 .effect_chance_done
+.type_effectiveness
 ; display type effectiveness in battle menu
 	; check if move has no power
 	; or not a special move like counter, mirror coat or seismic toss
@@ -5452,6 +5463,17 @@ MoveInfoBox:
 	call PlaceString
 
 .skip_type_effectiveness
+; If the move is disabled, print "No use!" (Pow/Acc/Eff were
+; skipped above, so its row is blank). Icons, effectiveness and
+; PP are loaded as usual either way.
+	pop af
+	and a
+	jr z, .no_disabled_text
+	hlcoord 1, 10
+	ld de, .Disabled
+	call PlaceString
+
+.no_disabled_text
 ; Point the icon strip (rows 13-14) at BG5 before copying. The
 ; close path sets it to BG7, and in battle sprite updates are
 ; disabled so a tilemap-only copy would skip the attrmap and
