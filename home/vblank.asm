@@ -94,22 +94,32 @@ VBlank_Normal::
 	ldh a, [hWX]
 	ldh [rWX], a
 
-	; There's only time to call one of these in one vblank.
-	; Calls are in order of priority.
+	; At CGB double speed there are ~2280 M-cycles in VBlank, so
+	; (as in Polished Crystal) these can all run in the same one.
 
+	; ~951 M-cycles worst case (overworld scrolling)
 	call UpdateBGMapBuffer
-	jr c, .done
+
+	; ~594 M-cycles worst case
 	call UpdatePalsIfCGB
-	jr c, .done
+
+	; a general-purpose HDMA halts the CPU for its whole length,
+	; so leave the rest of this VBlank to it
 	call DMATransfer
 	jr c, .done
-	call UpdateBGMap
 
 	; These have their own timing checks.
-
 	call Serve2bppRequest
 	call Serve1bppRequest
+
+	; cheap, and needs to run every frame to look smooth
 	call AnimateTileset
+
+	; Half the BG map (~950 M-cycles). Skip it if the work above
+	; already used too much of VBlank; it goes out next frame.
+	ldh a, [rLY]
+	cp LY_VBLANK + 5
+	call c, UpdateBGMap
 
 .done
 
