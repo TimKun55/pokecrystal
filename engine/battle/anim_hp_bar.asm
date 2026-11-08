@@ -286,74 +286,44 @@ HPBarAnim_BGMapUpdate:
 	ldh a, [hCGB]
 	and a
 	jr nz, .cgb
-	call DelayFrame
-	call DelayFrame
 	ret
 
 .cgb
 	ld a, [wWhichHPBar]
 	and a
 	jr z, .load_0
-	cp $1
+	dec a
 	jr z, .load_1
+; party menu: mons 1-4 have their HP rows in the top half,
+; mons 5-6 in the bottom half
 	ld a, [wCurPartyMon]
-	cp $3
-	jr nc, .bottom_half_of_screen
-	ld c, $0
-	jr .got_third
-
-.bottom_half_of_screen
-	ld c, $1
-.got_third
-	push af
-	cp $2
-	jr z, .skip_delay
-	cp $5
-	jr z, .skip_delay
-	ld a, $2
-	ldh [hBGMapMode], a
-	ld a, c
-	ldh [hBGMapThird], a
-	call DelayFrame
-.skip_delay
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld a, c
-	ldh [hBGMapThird], a
-	call DelayFrame
-	pop af
-	cp $2
-	jr z, .two_frames
-	cp $5
-	jr z, .two_frames
-	ret
-
-.two_frames
+	cp 4
+	ld c, 0
+	jr c, .got_half
 	inc c
-	ld a, $2
+.got_half
+	ld a, 2
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
-	ld a, $1
+	ld a, 1
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
-	call DelayFrame
-	ret
+	ldh [hBGMapHalf], a
+	jp DelayFrame
 
 .load_0
-	ld c, $0
+	ld c, 0
 	jr .finish
 
 .load_1
-	ld c, $1
+	ld c, 1
 .finish
 	call DelayFrame
 	ld a, c
-	ldh [hBGMapThird], a
-	call DelayFrame
-	ret
+	ldh [hBGMapHalf], a
+	jp DelayFrame
 
 ShortHPBar_CalcPixelFrame:
 	ld a, [wCurHPAnimMaxHP]

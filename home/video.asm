@@ -106,7 +106,7 @@ FinishBGMapTransfer::
 	and a
 	ret z
 
-	ldh a, [hBGMapThird]
+	ldh a, [hBGMapHalf]
 	and a
 	jr z, .done
 
@@ -118,8 +118,12 @@ FinishBGMapTransfer::
 	ldh [hBGMapMode], a
 	ret
 
+DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
+
 UpdateBGMap::
-; Update the BG Map, in thirds, from wTilemap and wAttrmap.
+; Update the BG Map, in halves, from wTilemap and wAttrmap.
+; (The game always runs in CGB double speed, so half the screen
+; fits in one VBlank; any two consecutive updates cover all of it.)
 
 	ldh a, [hBGMapMode]
 	and a ; 0
@@ -137,7 +141,42 @@ UpdateBGMap::
 	jr z, .Tiles1
 	dec a ; 4
 	jr z, .Attr1
-	ret
+	dec a ; 5
+	ret nz
+
+; 5: HALF_HEIGHT rows of BG Map 0 tiles, starting at row [hBGMapHalf]
+; (which must be at most SCREEN_HEIGHT - HALF_HEIGHT).
+; hBGMapHalf is left alone.
+	ldh a, [hBGMapHalf]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl ; row * 4
+	ld d, h
+	ld e, l
+	add hl, hl
+	add hl, hl ; row * 16
+	ld b, h
+	ld c, l
+	add hl, de ; row * 20
+	ld de, wTilemap
+	add hl, de
+	push hl
+	ld h, b
+	ld l, c
+	add hl, hl ; row * 32
+	ldh a, [hBGMapAddress]
+	add l
+	ld e, a
+	ldh a, [hBGMapAddress + 1]
+	adc h
+	ld d, a
+	pop hl
+	ld [hSPBuffer], sp
+	ld sp, hl
+	ld h, d
+	ld l, e
+	jr .start_rows
 
 .Attr0:
 	ldh a, [hBGMapAddress]
@@ -158,40 +197,25 @@ UpdateBGMap::
 .update
 	ld [hSPBuffer], sp
 
-; Which third?
-	ldh a, [hBGMapThird]
+; Which half?
+	ldh a, [hBGMapHalf]
 	and a ; 0
 	jr z, .attr_top
-	dec a ; 1
-	jr z, .attr_middle
-	; 2
-
-DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 
 .attr_bottom
-	coord sp, 0, 2 * THIRD_HEIGHT, wAttrmap
+	coord sp, 0, HALF_HEIGHT, wAttrmap
 
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, HALF_HEIGHT * TILEMAP_WIDTH
 	add hl, de
 
-; Next time: top third
+; Next time: top half
 	xor a
-	jr .start
-
-.attr_middle
-	coord sp, 0, THIRD_HEIGHT, wAttrmap
-
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
-
-; Next time: bottom third
-	ld a, 2
 	jr .start
 
 .attr_top
 	coord sp, 0, 0, wAttrmap
 
-; Next time: middle third
+; Next time: bottom half
 	jr .continue
 
 .Tiles0:
@@ -203,47 +227,36 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 .Tiles1:
 	ld [hSPBuffer], sp
 
-; Which third?
-	ldh a, [hBGMapThird]
+; Which half?
+	ldh a, [hBGMapHalf]
 	and a ; 0
 	jr z, .tiles_top
-	dec a ; 1
-	jr z, .tiles_middle
-	; 2
 
 .tiles_bottom
-	coord sp, 0, 2 * THIRD_HEIGHT
+	coord sp, 0, HALF_HEIGHT
 
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
+	ld de, HALF_HEIGHT * TILEMAP_WIDTH
 	add hl, de
 
-; Next time: top third
+; Next time: top half
 	xor a
-	jr .start
-
-.tiles_middle
-	coord sp, 0, THIRD_HEIGHT
-
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
-
-; Next time: bottom third
-	ld a, 2
 	jr .start
 
 .tiles_top
 	coord sp, 0, 0
 
-; Next time: middle third
+; Next time: bottom half
+
 .continue
 	inc a
 
 .start
-; Which third to update next time
-	ldh [hBGMapThird], a
+; Which half to update next time
+	ldh [hBGMapHalf], a
 
-; Rows of tiles in a third
-	ld a, THIRD_HEIGHT
+.start_rows
+; Rows of tiles in a half
+	ld a, HALF_HEIGHT
 
 ; Discrepancy between wTilemap and BGMap
 	ld bc, TILEMAP_WIDTH - (SCREEN_WIDTH - 1)
@@ -260,6 +273,19 @@ endr
 	pop de
 	ld [hl], e
 	inc l
+	ld [hl], d
+
+	add hl, bc
+	dec a
+	jr nz, .row
+
+	ldh a, [hSPBuffer]
+	ld l, a
+	ldh a, [hSPBuffer + 1]
+	ld h, a
+	ld sp, hl
+	ret
+
 	ld [hl], d
 
 	add hl, bc
