@@ -3,10 +3,30 @@ ClearBGPalettes::
 WaitBGMap::
 ; Tell VBlank to update BG Map
 	ld a, 1 ; BG Map 0 tiles
+	; fallthrough
+
+WaitBGMapInMode::
+; Set hBGMapMode to a and wait until VBlank has copied both halves
+; of the screen (2 frames, as in Polished Crystal), giving up after
+; 6 frames in case VBlank is busy with something else.
 	ldh [hBGMapMode], a
-; Wait for it to do its magic
-	ld c, 4
-	call DelayFrames
+	xor a
+	ldh [hBGMapHalf], a
+	ld c, 6
+.top
+	call DelayFrame
+	dec c
+	ret z
+	ldh a, [hBGMapHalf]
+	and a
+	jr z, .top
+.bottom
+	call DelayFrame
+	dec c
+	ret z
+	ldh a, [hBGMapHalf]
+	and a
+	jr nz, .bottom
 	ret
 
 ApplyTilemapInVBlank::
@@ -18,19 +38,11 @@ ApplyTilemapInVBlank::
 WaitBGMap2::
 	ldh a, [hCGB]
 	and a
-	jr z, .bg0
+	jr z, WaitBGMap
 
 	ld a, 2
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-
-.bg0
-	ld a, 1
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-	ret
+	call WaitBGMapInMode
+	jr WaitBGMap
 
 IsCGB::
 	ldh a, [hCGB]
