@@ -5,6 +5,7 @@ sScratch:: ds $60 tiles
 
 NEXTU
 sEnemyFrontpicTileCount:: db
+	ds 15 ; 16-byte aligned, so Get2bpp can copy the pic with GDMA
 sPaddedEnemyFrontpic:: ds 7 * 7 tiles
 ENDU
 

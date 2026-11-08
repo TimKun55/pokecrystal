@@ -301,6 +301,18 @@ GetTrainerPic:
 	cp NUM_TRAINER_CLASSES + 1
 	ret nc
 	call WaitBGMap
+	call _GetTrainerPic
+	jp WaitBGMap
+
+GetBattleTrainerPic:
+; GetTrainerPic without its two WaitBGMaps (8 frames): at battle start the
+; screen is black and InitBattleDisplay copies the whole tilemap anyway.
+	ld a, [wTrainerClass]
+	and a
+	ret z
+	cp NUM_TRAINER_CLASSES + 1
+	ret nc
+_GetTrainerPic:
 	xor a
 	ldh [hBGMapMode], a
 	ld hl, TrainerPicPointers
@@ -331,7 +343,6 @@ _Decompress7x7Pic:
 	call Get2bpp
 	pop af
 	ldh [rWBK], a
-	call WaitBGMap
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret

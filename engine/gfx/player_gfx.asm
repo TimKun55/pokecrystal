@@ -96,6 +96,7 @@ GetPlayerBackpic:
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, GetEthanBackpic
+	ld de, vTiles2 tile $31
 	call GetKrisBackpic
 	ret
 
@@ -179,9 +180,10 @@ KrisPic:
 INCBIN "gfx/player/kris.2bpp"
 
 GetKrisBackpic:
-; Kris's backpic is uncompressed.
+; Kris's backpic is uncompressed. de = destination.
+	ld h, d
+	ld l, e
 	ld de, KrisBackpic
-	ld hl, vTiles2 tile $31
 	lb bc, BANK(KrisBackpic), 7 * 7 ; dimensions
 	call Get2bpp
 	ret

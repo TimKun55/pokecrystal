@@ -1,4 +1,6 @@
-DEF TILES_PER_CYCLE EQU 8
+; The game runs in double speed, so VBlank has room for twice vanilla's
+; 8 tiles (Serve2bppRequest only starts within the first 2 lines of VBlank).
+DEF TILES_PER_CYCLE EQU 16
 
 Get2bppViaHDMA::
 	ldh a, [rLCDC]

@@ -334,6 +334,9 @@ HandleScreens:
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
+	ld de, vTiles2 tile $31
+GetTrainerBackpicToDE:
+; Same, to de.
 
 ; Special exception for Lyra.
 	ld b, BANK(LyraBackpic)
@@ -360,7 +363,6 @@ GetTrainerBackpic:
 	ld hl, EthanBackpic
 
 .Decompress:
-	ld de, vTiles2 tile $31
 	ld c, 7 * 7
 	predef DecompressGet2bpp
 	ret

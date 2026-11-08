@@ -7990,7 +7990,7 @@ InitEnemyTrainer:
 	callfar ReadTrainerParty
 
 	ld de, vTiles2
-	callfar GetTrainerPic
+	callfar GetBattleTrainerPic
 	xor a
 	ldh [hGraphicStartTile], a
 	dec a
@@ -8735,7 +8735,7 @@ InitBattleDisplay:
 	ld a, $90
 	ldh [hWY], a
 	ldh [rWY], a
-	call WaitBGMap
+	call CopyTilemapAtOnce ; the screen is still black: no need for WaitBGMap's 4 frames
 	xor a
 	ldh [hBGMapMode], a
 	farcall BattleIntroSlidingPics
@@ -8787,18 +8787,11 @@ InitBattleDisplay:
 	ret
 
 CopyBackpic:
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ldh [rWBK], a
-	ld hl, vTiles0
-	ld de, vTiles2 tile $31
-	ldh a, [hROMBank]
-	ld b, a
-	ld c, 7 * 7
-	call Get2bpp
-	pop af
-	ldh [rWBK], a
+; Also load the backpic into vTiles0 for the OAM copy. Loading it from
+; its source again (GDMA) is much faster than copying it out of
+; vTiles2 (VRAM to VRAM goes through Request2bpp, several frames).
+	ld de, vTiles0
+	farcall GetTrainerBackpicToDE
 	call .LoadTrainerBackpicAsOAM
 	ld a, $31
 	ldh [hGraphicStartTile], a

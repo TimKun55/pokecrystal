@@ -394,112 +394,129 @@ PadMapForHDMATransfer:
 	ldh [hMapObjectIndex], a
 	ret
 
+DEF HDMA_CHUNK_TILES EQU 64 ; wScratchTilemap holds 64 2bpp tiles
+
 HDMATransfer2bpp::
-	; 2bpp when [rLCDC] & $80
-	; switch to WRAM bank 6
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wScratchTilemap)
-	ldh [rWBK], a
-
-	push bc
-	push hl
-
-	; Copy c tiles of the 2bpp from b:de to wScratchTilemap
-	ld a, b ; bank
-	ld l, c ; number of tiles
-	ld h, $0
-	; multiply by 16 (16 bytes of a 2bpp = 8 x 8 tile)
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld b, h
-	ld c, l
-	ld h, d ; address
-	ld l, e
-	ld de, wScratchTilemap
-	call FarCopyBytes
-
-	pop hl
-	pop bc
-
-	push bc
-	call DelayFrame
-	pop bc
-
-	ld d, h
-	ld e, l
-	ld hl, wScratchTilemap
-	call HDMATransfer_WaitForScanline128
-
-	; restore the previous bank
-	pop af
-	ldh [rWBK], a
-	ret
-
-HDMATransfer1bpp::
-	; 1bpp when [rLCDC] & $80
+; Copy c 2bpp tiles from b:de to hl while the LCD is on.
+; The tiles are staged in wScratchTilemap (WRAM bank 6, 16-byte aligned)
+; and sent with SafeHDMATransfer (GDMA in H-Blanks), 64 tiles at a time.
+; Vanilla sent one 16-tile chunk per frame (wait for the frame, then for
+; scanline 128); this needs no frame waits, so e.g. the fonts at battle
+; start load in one go instead of over ~15 frames.
 .loop
 	ld a, c
-	cp $10
-	jp c, .bankswitch
-	jp z, .bankswitch
+	cp HDMA_CHUNK_TILES + 1
+	jr c, .Chunk
 	push bc
-	push hl
 	push de
-	ld c, $10
-	call .bankswitch
+	push hl
+	ld c, HDMA_CHUNK_TILES
+	call .Chunk
+	pop hl
+	ld bc, HDMA_CHUNK_TILES tiles
+	add hl, bc
 	pop de
-	ld hl, $80
-	add hl, de
+	push hl
+	ld h, d
+	ld l, e
+	add hl, bc
 	ld d, h
 	ld e, l
 	pop hl
-	lb bc, 1, 0
-	add hl, bc
 	pop bc
 	ld a, c
-	sub $10
+	sub HDMA_CHUNK_TILES
 	ld c, a
 	jr .loop
 
-.bankswitch
-	ldh a, [rWBK]
+.Chunk:
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wScratchTilemap)
-	ldh [rWBK], a
-
+	ldh [rSVBK], a
 	push bc
 	push hl
-
+	; copy c * 16 bytes from b:de to wScratchTilemap
 	ld a, b
 	ld l, c
-	ld h, $0
-	add hl, hl ; multiply by 8
-	add hl, hl ; multiply by 8
-	add hl, hl ; multiply by 8
-	ld c, l
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, hl
 	ld b, h
+	ld c, l
+	ld h, d
+	ld l, e
+	ld de, wScratchTilemap
+	call FarCopyBytes
+	pop hl
+	pop bc
+	jr HDMATransfer_SendScratch
+
+HDMATransfer1bpp::
+; Copy c 1bpp tiles from b:de to hl (as 2bpp) while the LCD is on,
+; like HDMATransfer2bpp.
+.loop
+	ld a, c
+	cp HDMA_CHUNK_TILES + 1
+	jr c, .Chunk
+	push bc
+	push de
+	push hl
+	ld c, HDMA_CHUNK_TILES
+	call .Chunk
+	pop hl
+	ld bc, HDMA_CHUNK_TILES tiles
+	add hl, bc
+	pop de
+	push hl
+	ld h, d
+	ld l, e
+	ld bc, HDMA_CHUNK_TILES * LEN_1BPP_TILE
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+	pop bc
+	ld a, c
+	sub HDMA_CHUNK_TILES
+	ld c, a
+	jr .loop
+
+.Chunk:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wScratchTilemap)
+	ldh [rSVBK], a
+	push bc
+	push hl
+	; copy c * 8 bytes from b:de to wScratchTilemap, doubling each byte
+	ld a, b
+	ld l, c
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld b, h
+	ld c, l
 	ld h, d
 	ld l, e
 	ld de, wScratchTilemap
 	call FarCopyBytesDouble_DoubleBankSwitch
-
 	pop hl
 	pop bc
+	; fallthrough
 
-	push bc
-	call DelayFrame
-	pop bc
-
-	ld d, h
-	ld e, l
-	ld hl, wScratchTilemap
-	call HDMATransfer_WaitForScanline128
-
+HDMATransfer_SendScratch:
+; GDMA c tiles from wScratchTilemap to hl, then restore rSVBK (pushed by
+; the caller's .Chunk).
+	ld de, wScratchTilemap
+	ldh a, [hROMBank]
+	ld b, a
+	call SafeHDMATransfer
 	pop af
-	ldh [rWBK], a
+	ldh [rSVBK], a
 	ret
 
 HDMATransfer_OnlyTopFourRows:
@@ -517,15 +534,14 @@ HDMATransfer_OnlyTopFourRows:
 	ldh [rVBK], a
 	ld c, $8
 	ld hl, wScratchTilemap + $80
-	debgcoord 0, 0, vAttrmap1
+	debgcoord 0, 0, vTilemap1
 	call HDMATransfer_WaitForScanline128
 	ld a, $0
 	ldh [rVBK], a
 	ld c, $8
 	ld hl, wScratchTilemap
 	debgcoord 0, 0, vTilemap1
-	call HDMATransfer_WaitForScanline128
-	ret
+	jp HDMATransfer_WaitForScanline128
 
 .Copy:
 	ld b, 4
@@ -538,7 +554,7 @@ HDMATransfer_OnlyTopFourRows:
 	dec c
 	jr nz, .inner_loop
 	ld a, l
-	add TILEMAP_WIDTH - SCREEN_WIDTH
+	add BG_MAP_WIDTH - SCREEN_WIDTH
 	ld l, a
 	ld a, h
 	adc 0

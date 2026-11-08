@@ -17,11 +17,15 @@ FindFirstAliveMonAndStartBattle:
 	ldh [hMapAnims], a
 	call DelayFrame
 	predef DoBattleTransition
-	farcall _LoadBattleFontsHPBar
-	ld a, 1
-	ldh [hBGMapMode], a
+; The screen is black from here until InitBattleDisplay slides the pics in,
+; so skip anything it redoes anyway: it reloads the battle fonts, and it
+; blanks the whole BG map in VRAM, so wTilemap only needs clearing (no
+; WaitBGMap).
 	call ClearSprites
-	call ClearTilemap
+	hlcoord 0, 0
+	ld a, " "
+	ld bc, wTilemapEnd - wTilemap
+	call ByteFill
 	xor a
 	ldh [hBGMapMode], a
 	ldh [hWY], a
