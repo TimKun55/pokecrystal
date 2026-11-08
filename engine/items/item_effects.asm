@@ -2376,7 +2376,7 @@ MusicPlayerEffect:
 	call GetCGBLayout
 	farcall LoadOW_BGPal7
 	call WaitBGMap2
-	farcall FadeInFromWhite
+	farcall FadeInPalettes
 	call EnableSpriteUpdates
 	ret
 

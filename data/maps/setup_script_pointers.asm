@@ -54,3 +54,4 @@ MapSetupCommands:
 	add_mapsetup EnableDynPalUpdates ; 2f
 	add_mapsetup EnableDynPalUpdatesNoApply ; 30
 	add_mapsetup FadeOutPalettes ; 31
+	add_mapsetup FadeInPalettes

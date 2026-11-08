@@ -47,7 +47,7 @@ MapSetupScript_Warp:
 	mapsetup RefreshMapSprites
 	mapsetup PlayMapMusicBike
 	mapsetup FadeInToMusic
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	db -1 ; end
@@ -73,7 +73,7 @@ MapSetupScript_BadWarp:
 	mapsetup SpawnInFacingDown
 	mapsetup RefreshMapSprites
 	mapsetup FadeToMapMusic
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	db -1 ; end
@@ -121,7 +121,7 @@ MapSetupScript_Train:
 	mapsetup EnableDynPalUpdatesNoApply
 	mapsetup RefreshMapSprites
 	mapsetup FadeToMapMusic
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	mapsetup UpdateRoamMons
@@ -142,7 +142,7 @@ MapSetupScript_ReloadMap:
 	mapsetup EnableDynPalUpdatesNoApply
 	mapsetup RefreshMapSprites
 	mapsetup ForceMapMusic
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	db -1 ; end
@@ -162,7 +162,7 @@ MapSetupScript_LinkReturn:
 	mapsetup EnableDynPalUpdatesNoApply
 	mapsetup RefreshMapSprites
 	mapsetup PlayMapMusicBike
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	mapsetup EnableTextAcceleration
@@ -185,7 +185,7 @@ MapSetupScript_Continue:
 	mapsetup EnableDynPalUpdatesNoApply
 	mapsetup RefreshMapSprites
 	mapsetup PlayMapMusicBike
-	mapsetup FadeInFromWhite
+	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
 	db -1 ; end
