@@ -127,6 +127,8 @@
 	const SPRITE_FAT_GUY ; 7b
 	const SPRITE_FIREBREATHER ; 7c
 	const SPRITE_JUGGLER ; 7d
+	const SPRITE_ETHAN_RUN ; 7e
+	const SPRITE_KRIS_RUN ; 7f
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

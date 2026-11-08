@@ -490,6 +490,7 @@ DoPlayerMovement::
 	db COLL_WARP_CARPET_RIGHT
 
 .DoStep:
+	call .UpdateRunningSprite
 	ld e, a
 	ld d, 0
 	ld hl, .Steps
@@ -798,6 +799,47 @@ ENDM
 
 .NotSurfable:
 	scf
+	ret
+
+.UpdateRunningSprite:
+; On foot, switch to the running sprite for STEP_RUN and back to the
+; walking sprite when walking, sliding on ice or standing still (as in
+; Polished Crystal). Turns, ledge hops and other steps keep the current
+; sprite. Preserves all registers.
+	push af
+	push bc
+	push de
+	push hl
+	ld b, a
+	ld a, [wPlayerState]
+	and a ; PLAYER_NORMAL?
+	jr nz, .running_done
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .stop_running
+	ld a, b
+	cp STEP_RUN
+	jr z, .start_running
+	cp STEP_WALK
+	jr z, .stop_running
+	cp STEP_ICE
+	jr nz, .running_done
+.stop_running
+	xor a
+	jr .set_running
+.start_running
+	ld a, TRUE
+.set_running
+	ld hl, wPlayerRunning
+	cp [hl]
+	jr z, .running_done
+	ld [hl], a
+	call UpdatePlayerSprite
+.running_done
+	pop hl
+	pop de
+	pop bc
+	pop af
 	ret
 
 .BikeCheck:

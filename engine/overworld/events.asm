@@ -233,6 +233,14 @@ PlayerEvents:
 	xor a
 	ld [wLandmarkSignTimer], a
 
+; Back to the walking sprite for whatever the event does (Polished Crystal).
+	ld a, [wPlayerRunning]
+	and a
+	jr z, .ok2
+	xor a
+	ld [wPlayerRunning], a
+	call UpdatePlayerSprite
+
 .ok2
 	scf
 	ret

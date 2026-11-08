@@ -2884,7 +2884,7 @@ wXYComparePointer:: dw
 	ds 4
 
 wBattleScriptFlags:: db
-	ds 1
+wPlayerRunning:: db ; nonzero: on-foot player uses the running sprite
 wPlayerSpriteSetupFlags::
 ; bit 7: if set, cancel wPlayerAction
 ; bit 6: RefreshMapSprites doesn't reload player sprite

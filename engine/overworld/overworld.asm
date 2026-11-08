@@ -45,6 +45,25 @@ GetPlayerSprite:
 
 .good
 	ld a, [hl]
+	; Running (Polished Crystal): the normal on-foot sprite becomes the
+	; running one while wPlayerRunning is set.
+	ld c, a
+	ld a, [wPlayerState]
+	and a ; PLAYER_NORMAL?
+	jr nz, .not_running
+	ld a, [wPlayerRunning]
+	and a
+	jr z, .not_running
+	ld a, c
+	cp SPRITE_ETHAN
+	ld c, SPRITE_ETHAN_RUN
+	jr z, .not_running
+	cp SPRITE_KRIS
+	ld c, SPRITE_KRIS_RUN
+	jr z, .not_running
+	ld c, a
+.not_running
+	ld a, c
 
 .finish
 	ld [wUsedSprites + 0], a
