@@ -54,11 +54,9 @@ ApplyTilemap::
 	and a
 	jr z, .dmg
 
-	ld a, [wSpriteUpdatesEnabled]
-	cp FALSE
-	jr z, .dmg
-
 	; if we're in doublespeed, use newbox applytilemap
+	; (as in Polished Crystal, also when sprite updates are disabled,
+	; e.g. in battle: it then copies just the tiles, in one frame)
 	push hl
 	ld hl, rKEY1
 	bit 7, [hl]
@@ -73,11 +71,7 @@ ApplyTilemap::
 
 .dmg
 ; WaitBGMap
-	ld a, 1
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-	ret
+	jr WaitBGMap
 
 CGBOnly_CopyTilemapAtOnce::
 	ldh a, [hCGB]
