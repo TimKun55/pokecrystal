@@ -1948,7 +1948,11 @@ FinishExitMenu::
 	ld b, CGB_MAPPALS
 	call GetCGBLayout
 	farcall LoadOW_BGPal7
-	call WaitBGMap2
+; The palettes are still white here (we're about to fade in), so the
+; attrmap and tilemap can go out together in one frame instead of
+; WaitBGMap2's 4.
+	ld b, 3 ; keep any pending palette update
+	farcall _SafeCopyTilemapAtOnce
 	farcall FadeInPalettes_EnableDynNoApply
 	jp EnableSpriteUpdates
 
