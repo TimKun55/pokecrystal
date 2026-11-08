@@ -26,9 +26,9 @@ CrystalIntro:
 	call PlayMusic
 
 .done
-	call ClearBGPalettes
+	call Intro_ClearBGPalettes
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a
@@ -97,7 +97,7 @@ IntroScene1:
 ; Setup the next scene.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -173,7 +173,7 @@ IntroScene3:
 ; More setup. Transition to the outdoor scene.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -235,7 +235,7 @@ IntroScene5:
 ; Go back to the Unown.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	ld a, RETI_INSTRUCTION
 	ld [hFunctionInstruction], a
 	xor a
@@ -335,7 +335,7 @@ IntroScene7:
 ; Back to the outdoor scene.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 
@@ -507,7 +507,7 @@ IntroScene11:
 ; Back to Unown again.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	ld a, RETI_INSTRUCTION
 	ld [hFunctionInstruction], a
 	xor a
@@ -633,7 +633,7 @@ IntroScene13:
 ; Switch scenes again.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -737,7 +737,7 @@ IntroScene15:
 ; Transition to a new scene.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -819,7 +819,7 @@ IntroScene17:
 ; ...
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -885,7 +885,7 @@ IntroScene19:
 ; More setup.
 	call Intro_ClearBGPals
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -1051,9 +1051,9 @@ IntroScene25:
 
 IntroScene26:
 ; Load the final scene.
-	call ClearBGPalettes
+	call Intro_ClearBGPalettes
 	call ClearSprites
-	call ClearTilemap
+	call Intro_ClearTilemap
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $1
@@ -1140,8 +1140,7 @@ IntroScene28:
 	ret
 
 .clear
-	call ClearBGPalettes
-	ret
+	jp Intro_ClearBGPalettes
 
 .done
 	ld hl, wJumptableIndex
@@ -1775,3 +1774,25 @@ INCBIN "gfx/intro/grass3.2bpp"
 
 IntroMotionLineGFX:
 INCBIN "gfx/intro/motion_line.2bpp"
+
+; The opening is timed against its music, so it keeps the original
+; fixed 4-frame BG map wait instead of the faster WaitBGMap.
+Intro_ClearBGPalettes:
+	call ClearPalettes
+	jr Intro_WaitBGMap
+
+Intro_ClearTilemap:
+	hlcoord 0, 0
+	ld a, " "
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	call ByteFill
+	ldh a, [rLCDC]
+	bit rLCDC_ENABLE, a
+	ret z
+	; fallthrough
+
+Intro_WaitBGMap:
+	ld a, 1
+	ldh [hBGMapMode], a
+	ld c, 4
+	jp DelayFrames
