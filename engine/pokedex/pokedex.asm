@@ -81,9 +81,14 @@ Pokedex:
 	ret
 
 InitPokedex:
-	call ClearBGPalettes
+; The palettes are white from here until the main screen is drawn,
+; so there's no need to wait for the cleared tilemap to go out.
+	call ClearPalettes
 	call ClearSprites
-	call ClearTilemap
+	hlcoord 0, 0
+	ld a, " "
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	call ByteFill
 	call Pokedex_LoadAllGFX
 
 	ld hl, wPokedexDataStart
@@ -3647,26 +3652,34 @@ _NewPokedexEntry:
 	ret
 
 Pokedex_SetBGMapMode3:
-	ld a, $3
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-	ret
+; Copy the tilemap to vBGMap1 (the list window) in one go
+; instead of over 4 frames.
+	ld b, 1 << 3 | 3 ; tiles only, keep any pending palette update
+	jr Pokedex_CopyTilemapToBGMap1
 
 Pokedex_SetBGMapMode4:
-	ld a, $4
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-	ret
-
 Pokedex_SetBGMapMode_3ifDMG_4ifCGB:
-	ldh a, [hCGB]
-	and a
-	jr z, .DMG
-	call Pokedex_SetBGMapMode4
-.DMG:
-	call Pokedex_SetBGMapMode3
+; Copy the attrmap and tilemap to vBGMap1 in one go
+; instead of over 4 + 4 frames.
+	ld b, 3 ; keep any pending palette update
+	; fallthrough
+
+Pokedex_CopyTilemapToBGMap1:
+	ldh a, [hBGMapAddress]
+	ld e, a
+	ldh a, [hBGMapAddress + 1]
+	ld d, a
+	push de
+	xor a
+	ldh [hBGMapAddress], a
+	ld a, HIGH(vTilemap1)
+	ldh [hBGMapAddress + 1], a
+	farcall _SafeCopyTilemapAtOnce
+	pop de
+	ld a, e
+	ldh [hBGMapAddress], a
+	ld a, d
+	ldh [hBGMapAddress + 1], a
 	ret
 
 Pokedex_ResetBGMapMode:
