@@ -1094,15 +1094,7 @@ LoadMapPals:
 	ldh [rWBK], a
 
 .got_pals
-	ld a, [wTimeOfDayPal]
-	maskbits NUM_DAYTIMES
-	ld bc, 8 palettes
-	ld hl, MapObjectPals
-	call AddNTimes
-	ld de, wOBPals1
-	ld bc, 8 palettes
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
+	farcall ClearSavedObjPals
 
 	farcall LoadSpecialNPCPalette
 
@@ -1169,7 +1161,15 @@ LoadMapPals:
 	inc hl
 	inc hl
 
-	ld de, wOBPals1 palette PAL_OW_PURPLE + 2
+	; ensure color 0 is white (transparent)
+	push hl
+	ld hl, wOBPals1 palette 3
+	ld a, $ff
+	ld [hli], a
+	ld [hl], a
+	pop hl
+
+	ld de, wOBPals1 palette 3 + 2
 	ld bc, 1 palettes - 2
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
@@ -1198,7 +1198,15 @@ LoadMapPals:
 	inc hl
 	inc hl
 
-	ld de, wOBPals1 palette PAL_OW_ROCK + 2
+	; ensure color 0 is white (transparent)
+	push hl
+	ld hl, wOBPals1 palette 4
+	ld a, $ff
+	ld [hli], a
+	ld [hl], a
+	pop hl
+
+	ld de, wOBPals1 palette 4 + 2
 	ld bc, 1 palettes - 2
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
@@ -1231,9 +1239,6 @@ BillsPC_WhitePalette:
 
 TilesetBGPalette:
 INCLUDE "gfx/tilesets/bg_tiles.pal"
-
-MapObjectPals::
-INCLUDE "gfx/overworld/npc_sprites.pal"
 
 RoofPals:
 	table_width COLOR_SIZE * 3 * 2

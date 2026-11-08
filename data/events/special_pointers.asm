@@ -134,7 +134,6 @@ SpecialsPointers::
 	add_special GiveDratini
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
-	add_special SetPlayerPalette
 	add_special UnusedBattleTowerDummySpecial2
 	add_special RefreshSprites
 	add_special AskRememberPassword
@@ -154,3 +153,4 @@ SpecialsPointers::
 	add_special RestoreMusic
 	add_special DeleteSavedMusic
 	add_special PlaceBPTopRight
+	add_special FadeInPalettes_EnableDynNoApply

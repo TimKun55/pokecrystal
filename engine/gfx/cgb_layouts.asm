@@ -931,6 +931,10 @@ BillsPC_PreviewTheme:
 	ld a, [wBillsPC_ApplyThemePals]
 	and a
 	jr nz, .apply_pals
+	ld de, wOBPals1
+	ld hl, PokegearOBPals
+	ld c, 8 palettes
+	call LoadHLBytesIntoDE
 	ld de, wOBPals1 palette 1
 	ld hl, BillsPC_CursorPalette
 	push hl

@@ -129,8 +129,8 @@ MACRO object_event
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
 	db \3, \2 + 4, \1 + 4, \4
 	dn \6, \5
-	db \7, \8
-	dn \9, \<10>
+	db \9, \8
+	db \<10>
 	db \<11>
 	dw \<12>, \<13>
 	; the dummy PlayerObjectTemplate object_event has no def_object_events

@@ -9,11 +9,15 @@ INCBIN "gfx/tilesets/forest-tree/4.2bpp"
 CelebiShrineEvent:
 	ld de, SFX_MORNING_SUN
 	call PlaySFX
-	call DelayFrame
+;	call DelayFrame
 	ld a, [wStateFlags]
 	push af
 	xor a
 	ld [wStateFlags], a
+
+	ld c, PAL_OW_GREEN
+	farcall CopySpritePalToOBPal7
+
 	call LoadCelebiGFX
 	depixel 0, 10, 7, 0
 	ld a, SPRITE_ANIM_OBJ_CELEBI

@@ -2,8 +2,10 @@ CopyBGGreenToOBPal7:
 ; Some overworld effects (Fly leaves, Cut leaves, Cut trees, Headbutt trees)
 ; have hard-coded OB palette 7 in their OAM data.
 	ld a, PAL_OW_COPY_BG_GREEN
+	ld c, a
 	; fallthrough
 CopySpritePalToOBPal7:
+	ld a, c
 	ld [wNeededPalIndex], a
 	ld [wLoadedObjPal7], a
 	ld de, wOBPals1 palette 7
@@ -61,7 +63,7 @@ CopySpritePal::
 .check_daytimes
 	ld a, [wPalFlags]
 	bit USE_DAYTIME_PAL_F, a
-	ld a, 1
+	ld a, DAY_F
 	jr nz, .daytime
 	ld a, [wTimeOfDayPal]
 .daytime
@@ -92,16 +94,16 @@ ApplyOBPals:
 	jp FarCopyColorWRAM
 
 MapObjectPals:
-	table_width 1 palettes
+	table_width 1 palettes, MapObjectPals
 INCLUDE "gfx/overworld/npc_sprites.pal"
 	assert_table_length NUM_OW_TIME_OF_DAY_PALS * NUM_DAYTIMES ; morn, day, nite, eve
 
 SingleObjectPals:
-	table_width 1 palettes
+	table_width 1 palettes, SingleObjectPals
 INCLUDE "gfx/overworld/npc_single_object.pal"
 	assert_table_length NUM_OW_INDIVIDUAL_PALS
 
 DarknessOBPalette:
-	table_width 1 palettes
+	table_width 1 palettes, DarknessOBPalette
 INCLUDE "gfx/overworld/npc_sprites_darkness.pal"
 	assert_table_length NUM_OW_TIME_OF_DAY_PALS + NUM_OW_INDIVIDUAL_PALS

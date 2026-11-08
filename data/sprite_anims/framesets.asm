@@ -25,7 +25,7 @@ SpriteAnimFrameData:
 	dw .Frameset_TrademonBubble
 	dw .Frameset_EvolutionBallOfLight
 	dw .Frameset_RadioTuningKnob
-	dw .Frameset_MagnetTrainRed
+	dw .Frameset_MagnetTrain
 	dw .Frameset_Unused1C
 	dw .Frameset_Leaf
 	dw .Frameset_CutTree
@@ -36,7 +36,6 @@ SpriteAnimFrameData:
 	dw .Frameset_EggHatch4
 	dw .Frameset_HeadbuttTree
 	dw .Frameset_BlueWalk
-	dw .Frameset_MagnetTrainBlue
 	dw .Frameset_IntroSuicune
 	dw .Frameset_IntroSuicune2
 	dw .Frameset_IntroPichu
@@ -135,12 +134,6 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_BLUE_WALK_2,  8, B_OAM_XFLIP
 	oamrestart
 
-.Frameset_MagnetTrainBlue:
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_1,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_2,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_1,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_2,  8, B_OAM_XFLIP
-	oamrestart
 
 .Frameset_TextEntryCursor:
 	oamframe SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR,  1
@@ -241,11 +234,11 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_RADIO_TUNING_KNOB, 32
 	oamend
 
-.Frameset_MagnetTrainRed:
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1,  8
-	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2,  8, B_OAM_XFLIP
+.Frameset_MagnetTrain:
+	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_1,  8
+	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_2,  8
+	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_1,  8
+	oamframe SPRITE_ANIM_OAMSET_MAGNET_TRAIN_2,  8, B_OAM_XFLIP
 	oamrestart
 
 .Frameset_Unknown1: ; unreferenced

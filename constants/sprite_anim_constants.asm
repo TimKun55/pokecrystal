@@ -52,7 +52,7 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_TRADEMON_BUBBLE           ; 0e
 	const SPRITE_ANIM_OBJ_EVOLUTION_BALL_OF_LIGHT   ; 0f
 	const SPRITE_ANIM_OBJ_RADIO_TUNING_KNOB         ; 10
-	const SPRITE_ANIM_OBJ_MAGNET_TRAIN_RED          ; 11
+	const SPRITE_ANIM_OBJ_MAGNET_TRAIN              ; 11
 	const SPRITE_ANIM_OBJ_LEAF                      ; 12
 	const SPRITE_ANIM_OBJ_CUT_TREE                  ; 13
 	const SPRITE_ANIM_OBJ_FLY_LEAF                  ; 14
@@ -60,33 +60,32 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_HEADBUTT                  ; 16
 	const SPRITE_ANIM_OBJ_EGG_HATCH                 ; 17
 	const SPRITE_ANIM_OBJ_BLUE_WALK                 ; 18
-	const SPRITE_ANIM_OBJ_MAGNET_TRAIN_BLUE         ; 19
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE             ; 1a
-	const SPRITE_ANIM_OBJ_INTRO_PICHU               ; 1b
-	const SPRITE_ANIM_OBJ_INTRO_WOOPER              ; 1c
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN               ; 1d
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 1e
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 1f
-	const SPRITE_ANIM_OBJ_CELEBI                    ; 20
-	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 21
-	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 22
-	const SPRITE_ANIM_OBJ_PC_MODE                   ; 23
-	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 24
-	const SPRITE_ANIM_OBJ_PC_PACK                   ; 25
-	const SPRITE_ANIM_OBJ_SLOTS_COVER               ; 26
+	const SPRITE_ANIM_OBJ_INTRO_SUICUNE             ; 19
+	const SPRITE_ANIM_OBJ_INTRO_PICHU               ; 1a
+	const SPRITE_ANIM_OBJ_INTRO_WOOPER              ; 1b
+	const SPRITE_ANIM_OBJ_INTRO_UNOWN               ; 1c
+	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 1d
+	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 1e
+	const SPRITE_ANIM_OBJ_CELEBI                    ; 1f
+	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 20
+	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 21
+	const SPRITE_ANIM_OBJ_PC_MODE                   ; 22
+	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 23
+	const SPRITE_ANIM_OBJ_PC_PACK                   ; 24
+	const SPRITE_ANIM_OBJ_SLOTS_COVER               ; 25
 ; Surfing Pikachu minigame objects (see SurfingPikachuObjectSpawnData)
-	const SPRITE_ANIM_OBJ_SURF_UNUSED                ; 27
-	const SPRITE_ANIM_OBJ_SURF_PIKACHU               ; 28
-	const SPRITE_ANIM_OBJ_SURF_START                 ; 29
-	const SPRITE_ANIM_OBJ_SURF_PLUS50                ; 2b
-	const SPRITE_ANIM_OBJ_SURF_PLUS150               ; 2c
-	const SPRITE_ANIM_OBJ_SURF_PLUS350               ; 2d
-	const SPRITE_ANIM_OBJ_SURF_PLUS750               ; 2e
-	const SPRITE_ANIM_OBJ_SURF_PLUS180               ; 2f
-	const SPRITE_ANIM_OBJ_SURF_PLUS500               ; 30
-	const SPRITE_ANIM_OBJ_SURF_WATER_SPRAY           ; 31
-	const SPRITE_ANIM_OBJ_SURF_OH_NO                 ; 32
-	const SPRITE_ANIM_OBJ_SURF_INTRO_PIKACHU         ; 33
+	const SPRITE_ANIM_OBJ_SURF_UNUSED                ; 26
+	const SPRITE_ANIM_OBJ_SURF_PIKACHU               ; 27
+	const SPRITE_ANIM_OBJ_SURF_START                 ; 28
+	const SPRITE_ANIM_OBJ_SURF_PLUS50                ; 2a
+	const SPRITE_ANIM_OBJ_SURF_PLUS150               ; 2b
+	const SPRITE_ANIM_OBJ_SURF_PLUS350               ; 2c
+	const SPRITE_ANIM_OBJ_SURF_PLUS750               ; 2d
+	const SPRITE_ANIM_OBJ_SURF_PLUS180               ; 2e
+	const SPRITE_ANIM_OBJ_SURF_PLUS500               ; 2f
+	const SPRITE_ANIM_OBJ_SURF_WATER_SPRAY           ; 30
+	const SPRITE_ANIM_OBJ_SURF_OH_NO                 ; 31
+	const SPRITE_ANIM_OBJ_SURF_INTRO_PIKACHU         ; 32
 DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 
 ; DoSpriteAnimFrame.Jumptable indexes (see engine/sprite_anims/functions.asm)
@@ -157,7 +156,7 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_TRADEMON_BUBBLE           ; 15
 	const SPRITE_ANIM_FRAMESET_EVOLUTION_BALL_OF_LIGHT   ; 16
 	const SPRITE_ANIM_FRAMESET_RADIO_TUNING_KNOB         ; 17
-	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN_RED          ; 18
+	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN              ; 18
 	const SPRITE_ANIM_FRAMESET_UNUSED_1C                 ; 19
 	const SPRITE_ANIM_FRAMESET_LEAF                      ; 1a
 	const SPRITE_ANIM_FRAMESET_CUT_TREE                  ; 1b
@@ -168,55 +167,54 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_EGG_HATCH_4               ; 20
 	const SPRITE_ANIM_FRAMESET_HEADBUTT                  ; 21
 	const SPRITE_ANIM_FRAMESET_BLUE_WALK                 ; 22
-	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN_BLUE         ; 23
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE             ; 24
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2           ; 25
-	const SPRITE_ANIM_FRAMESET_INTRO_PICHU               ; 26
-	const SPRITE_ANIM_FRAMESET_INTRO_WOOPER              ; 27
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1             ; 28
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2             ; 29
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3             ; 2a
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4             ; 2b
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2           ; 2c
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_AWAY        ; 2d
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 2e
-	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 2f
-	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 30
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 31
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 32
-	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 33
-	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 34
-	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 35
-	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 36
-	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_WHITE         ; 37
-	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_GREEN         ; 38
-	const SPRITE_ANIM_FRAMESET_SURF_PIKACHU              ; 39
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_00              ; 3a
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_01              ; 3b
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_02              ; 3c
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_03              ; 3d
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_04              ; 3e
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_05              ; 3f
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_06              ; 40
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_07              ; 41
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_08              ; 42
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_09              ; 43
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_10              ; 44
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_11              ; 45
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_12              ; 46
-	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_13              ; 47
-	const SPRITE_ANIM_FRAMESET_SURF_RESULTS_PIKACHU       ; 48
-	const SPRITE_ANIM_FRAMESET_SURF_LARGE_SPLASH          ; 49
-	const SPRITE_ANIM_FRAMESET_SURF_START_TEXT            ; 4a
-	const SPRITE_ANIM_FRAMESET_SURF_OH_NO_TEXT            ; 4b
-	const SPRITE_ANIM_FRAMESET_SURF_WATER_SPRAY           ; 4c
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_50               ; 4d
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_150              ; 4e
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_350              ; 4f
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_750              ; 50
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_180              ; 51
-	const SPRITE_ANIM_FRAMESET_SURF_PLUS_500              ; 52
-	const SPRITE_ANIM_FRAMESET_SURF_INTRO_PIKACHU         ; 53
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE             ; 23
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2           ; 24
+	const SPRITE_ANIM_FRAMESET_INTRO_PICHU               ; 25
+	const SPRITE_ANIM_FRAMESET_INTRO_WOOPER              ; 26
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1             ; 27
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2             ; 28
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3             ; 29
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4             ; 2a
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2           ; 2b
+	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_AWAY        ; 2c
+	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 2d
+	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 2e
+	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 2f
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 30
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 31
+	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 32
+	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 33
+	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 34
+	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 35
+	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_WHITE         ; 36
+	const SPRITE_ANIM_FRAMESET_SLOTS_COVER_GREEN         ; 37
+	const SPRITE_ANIM_FRAMESET_SURF_PIKACHU              ; 38
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_00              ; 39
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_01              ; 3a
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_02              ; 3b
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_03              ; 3c
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_04              ; 3d
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_05              ; 3e
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_06              ; 3f
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_07              ; 40
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_08              ; 41
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_09              ; 42
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_10              ; 43
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_11              ; 44
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_12              ; 45
+	const SPRITE_ANIM_FRAMESET_SURF_ANGLE_13              ; 46
+	const SPRITE_ANIM_FRAMESET_SURF_RESULTS_PIKACHU       ; 47
+	const SPRITE_ANIM_FRAMESET_SURF_LARGE_SPLASH          ; 48
+	const SPRITE_ANIM_FRAMESET_SURF_START_TEXT            ; 49
+	const SPRITE_ANIM_FRAMESET_SURF_OH_NO_TEXT            ; 4a
+	const SPRITE_ANIM_FRAMESET_SURF_WATER_SPRAY           ; 4b
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_50               ; 4c
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_150              ; 4d
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_350              ; 4e
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_750              ; 4f
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_180              ; 50
+	const SPRITE_ANIM_FRAMESET_SURF_PLUS_500              ; 51
+	const SPRITE_ANIM_FRAMESET_SURF_INTRO_PIKACHU         ; 52
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
@@ -251,8 +249,8 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_PARTY_MON_WITH_MAIL_2       ; 1b
 	const SPRITE_ANIM_OAMSET_PARTY_MON_WITH_ITEM_1       ; 1c
 	const SPRITE_ANIM_OAMSET_PARTY_MON_WITH_ITEM_2       ; 1d
-	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1          ; 1e
-	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2          ; 1f
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_1              ; 1e
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_2              ; 1f
 	const SPRITE_ANIM_OAMSET_UNUSED_43                   ; 20
 	const SPRITE_ANIM_OAMSET_UNUSED_44                   ; 21
 	const SPRITE_ANIM_OAMSET_UNUSED_45                   ; 22
@@ -275,81 +273,79 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_HEADBUTT_TREE_2             ; 33
 	const SPRITE_ANIM_OAMSET_BLUE_WALK_1                 ; 34
 	const SPRITE_ANIM_OAMSET_BLUE_WALK_2                 ; 35
-	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_1         ; 36
-	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_BLUE_2         ; 37
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1             ; 38
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2             ; 39
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3             ; 3a
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4             ; 3b
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_1               ; 3c
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_2               ; 3d
-	const SPRITE_ANIM_OAMSET_INTRO_PICHU_3               ; 3e
-	const SPRITE_ANIM_OAMSET_INTRO_WOOPER                ; 3f
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_1               ; 40
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_2               ; 41
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_3               ; 42
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1           ; 43
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2           ; 44
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3           ; 45
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4           ; 46
-	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5           ; 47
-	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY          ; 48
-	const SPRITE_ANIM_OAMSET_CELEBI_1                    ; 49
-	const SPRITE_ANIM_OAMSET_CELEBI_2                    ; 4a
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_1            ; 4b
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_2            ; 4c
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_3            ; 4d
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_4            ; 4e
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_5            ; 4f
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_6            ; 50
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_7            ; 51
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_8            ; 52
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9            ; 53
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10           ; 54
-	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11           ; 55
-	const SPRITE_ANIM_OAMSET_PARTY_MON_1                 ; 56
-	const SPRITE_ANIM_OAMSET_PARTY_MON_2                 ; 57
-	const SPRITE_ANIM_OAMSET_PC_CURSOR                   ; 58
-	const SPRITE_ANIM_OAMSET_PC_CURSOR_ITEM              ; 59
-	const SPRITE_ANIM_OAMSET_PC_QUICK                    ; 5a
-	const SPRITE_ANIM_OAMSET_PC_MODE                     ; 5b
-	const SPRITE_ANIM_OAMSET_PC_MODE2                    ; 5c
-	const SPRITE_ANIM_OAMSET_PC_PACK                     ; 5d
-	const SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE           ; 5e
-	const SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN           ; 5f
-	const SPRITE_ANIM_OAMSET_SURF_PIKACHU                ; 60
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_00                ; 61
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_01                ; 62
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_02                ; 63
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_03                ; 64
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_04                ; 65
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_05                ; 66
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_06                ; 67
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_07                ; 68
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_08                ; 69
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_09                ; 6a
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_10                ; 6b
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_11                ; 6c
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_12                ; 6d
-	const SPRITE_ANIM_OAMSET_SURF_ANGLE_13                ; 6e
-	const SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH           ; 6f
-	const SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH           ; 70
-	const SPRITE_ANIM_OAMSET_SURF_START_TEXT             ; 71
-	const SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT             ; 72
-	const SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY            ; 73
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_50                ; 74
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_150               ; 75
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_350               ; 76
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_750               ; 77
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_180               ; 78
-	const SPRITE_ANIM_OAMSET_SURF_PLUS_500               ; 79
-	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU          ; 7a
-	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2        ; 7b
-	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3        ; 7c
-	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4        ; 7d
-	const SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD            ; 7e
-	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1      ; 7f
-	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2      ; 80
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1             ; 36
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2             ; 37
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3             ; 38
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4             ; 39
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_1               ; 3a
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_2               ; 3b
+	const SPRITE_ANIM_OAMSET_INTRO_PICHU_3               ; 3c
+	const SPRITE_ANIM_OAMSET_INTRO_WOOPER                ; 3d
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_1               ; 3e
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_2               ; 3f
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_3               ; 40
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1           ; 41
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2           ; 42
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3           ; 43
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4           ; 44
+	const SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5           ; 45
+	const SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY          ; 46
+	const SPRITE_ANIM_OAMSET_CELEBI_1                    ; 47
+	const SPRITE_ANIM_OAMSET_CELEBI_2                    ; 48
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_1            ; 49
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_2            ; 4a
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_3            ; 4b
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_4            ; 4c
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_5            ; 4d
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_6            ; 4e
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_7            ; 4f
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_8            ; 50
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9            ; 51
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10           ; 52
+	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11           ; 53
+	const SPRITE_ANIM_OAMSET_PARTY_MON_1                 ; 54
+	const SPRITE_ANIM_OAMSET_PARTY_MON_2                 ; 55
+	const SPRITE_ANIM_OAMSET_PC_CURSOR                   ; 56
+	const SPRITE_ANIM_OAMSET_PC_CURSOR_ITEM              ; 57
+	const SPRITE_ANIM_OAMSET_PC_QUICK                    ; 58
+	const SPRITE_ANIM_OAMSET_PC_MODE                     ; 59
+	const SPRITE_ANIM_OAMSET_PC_MODE2                    ; 5a
+	const SPRITE_ANIM_OAMSET_PC_PACK                     ; 5b
+	const SPRITE_ANIM_OAMSET_SLOTS_COVER_WHITE           ; 5c
+	const SPRITE_ANIM_OAMSET_SLOTS_COVER_GREEN           ; 5d
+	const SPRITE_ANIM_OAMSET_SURF_PIKACHU                ; 5e
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_00                ; 5f
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_01                ; 60
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_02                ; 61
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_03                ; 62
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_04                ; 63
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_05                ; 64
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_06                ; 65
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_07                ; 66
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_08                ; 67
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_09                ; 68
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_10                ; 69
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_11                ; 6a
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_12                ; 6b
+	const SPRITE_ANIM_OAMSET_SURF_ANGLE_13                ; 6c
+	const SPRITE_ANIM_OAMSET_SURF_SMALL_SPLASH           ; 6d
+	const SPRITE_ANIM_OAMSET_SURF_LARGE_SPLASH           ; 6e
+	const SPRITE_ANIM_OAMSET_SURF_START_TEXT             ; 6f
+	const SPRITE_ANIM_OAMSET_SURF_OH_NO_TEXT             ; 70
+	const SPRITE_ANIM_OAMSET_SURF_WATER_SPRAY            ; 71
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_50                ; 72
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_150               ; 73
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_350               ; 74
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_750               ; 75
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_180               ; 76
+	const SPRITE_ANIM_OAMSET_SURF_PLUS_500               ; 77
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU          ; 78
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_2        ; 79
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_3        ; 7a
+	const SPRITE_ANIM_OAMSET_SURF_INTRO_PIKACHU_4        ; 7b
+	const SPRITE_ANIM_OAMSET_SURF_EMPTY_BOARD            ; 7c
+	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_1      ; 7d
+	const SPRITE_ANIM_OAMSET_SURF_RESULTS_PIKACHU_2      ; 7e
 DEF TYPE_ICON_FIRST_OAM EQU 15
 DEF NUM_SPRITE_ANIM_OAMSETS EQU const_value
 

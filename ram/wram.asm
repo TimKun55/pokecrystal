@@ -131,7 +131,9 @@ wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
 
-	ds 3
+wPalFlags:: db
+
+	ds 2
 
 wPrevDexEntry:: db
 wDisableTextAcceleration:: db
@@ -3209,7 +3211,13 @@ wRuinsOfAlphOmanyteWordRoomSceneID::              db
 wRuinsOfAlphAerodactylWordRoomSceneID::           db
 wFarawayIslandOutsideSceneID::                    db
 
-	ds 25
+wUsedObjectPals:: db
+for n, 8
+wLoadedObjPal{d:n}:: db
+endr
+wNeededPalIndex:: db
+
+	ds 15
 
 ; fight counts
 

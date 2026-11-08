@@ -83,6 +83,7 @@ ClosePokepic::
 	call LoadOverworldTilemapAndAttrmapPals
 	call CopyTilemapAtOnce
 	call UpdateSprites
+	farcall EnableDynPalUpdates
 	call LoadStandardFont
 	ret
 
