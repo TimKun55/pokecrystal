@@ -23,7 +23,7 @@ FindFirstAliveMonAndStartBattle:
 ; WaitBGMap).
 	call ClearSprites
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, wTilemapEnd - wTilemap
 	call ByteFill
 	xor a

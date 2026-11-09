@@ -1783,7 +1783,7 @@ Intro_ClearBGPalettes:
 
 Intro_ClearTilemap:
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	ldh a, [rLCDC]

@@ -169,8 +169,7 @@ DrawDexEntryScreenRightEdge_Evo:
 	; ld b, CGB_POKEDEX_EVO
 	; call GetCGBLayout
 
-	ld b, 3 ; tiles and attributes at once
-	farcall _SafeCopyTilemapAtOnce
+	call WaitBGMap2
 	pop hl
 	ld a, l
 	ldh [hBGMapAddress], a

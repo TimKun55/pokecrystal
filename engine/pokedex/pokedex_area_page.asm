@@ -323,6 +323,7 @@ Dex_FindFirstList:
 
 Set_area_tod_icon_attrs:
 	ld a, AREA_TOD_ICON_ATTR
+; grass / contest / trees / rocks: rows 10, 12, 14 x cols 2, 8, 14
 	ld hl, wAttrmap + 10 * SCREEN_WIDTH + 2
 	ld b, 3 ; rows 10, 12 and 14
 .row
@@ -339,6 +340,20 @@ Set_area_tod_icon_attrs:
 	add hl, de
 	dec b
 	jr nz, .row
+; fishing: rows 11, 13, 15 x cols 9 and 15
+	ld hl, wAttrmap + 11 * SCREEN_WIDTH + 9
+	ld b, 3 ; rows 11, 13 and 15
+.fish_row
+	push hl
+	ld [hl], a ; day icon
+	ld de, 6
+	add hl, de
+	ld [hl], a ; nite icon
+	pop hl
+	ld de, 2 * SCREEN_WIDTH
+	add hl, de
+	dec b
+	jr nz, .fish_row
 	ret
 
 

@@ -86,7 +86,7 @@ InitPokedex:
 	call ClearPalettes
 	call ClearSprites
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	call Pokedex_LoadAllGFX
@@ -975,6 +975,11 @@ Pics_Page:
 	ld [wPokedexEntryType], a
 .spritepage_loop
 	callfar PlaySpriteAnimations
+	ld hl, wSummaryScreenFlags
+	bit 6, [hl]
+	jr z, .no_extra_icon_anim
+	callfar PlaySpriteAnimations
+.no_extra_icon_anim
 	farcall Pokedex_StepFrontpicAnim
 	call JoyTextDelay
 	ld hl, hJoyPressed

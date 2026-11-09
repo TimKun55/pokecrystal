@@ -75,7 +75,7 @@ PokeGear:
 ; white palettes and the blank tilemap to be sent first.
 	call ClearPalettes
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
 	call ClearSprites

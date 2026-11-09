@@ -14,9 +14,16 @@ DisplayDexMonEvos:
 	jr z, .clear_slots_only
 	farcall Pokedex_BlackOutBG
 	call Delay3
+; Clear the stage-1 type-icon cells (rows 2-3, cols 16-19) so the old
+; BG tile doesn't flash during the one-frame palette lag.
+	hlcoord 16, 2
+	lb bc, 2, 4
+	call ClearBox
 	hlcoord 1, 4
 	lb bc, SCREEN_HEIGHT - 6, SCREEN_WIDTH - 2
 	call ClearBox
+	ld b, 3
+	farcall _SafeCopyTilemapAtOnce
 	jr .cleared
 .clear_slots_only
 	hlcoord 0, 4
