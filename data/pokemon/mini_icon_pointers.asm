@@ -212,7 +212,7 @@ MiniIconPointers:
 	mini_icon Slowking
 	mini_icon Misdreavus
 	mini_icon Mismagius
-	mini_icon Unown
+	mini_icon UnownA
 	mini_icon Wobbuffet
 	mini_icon Girafarig
 	mini_icon Pineco

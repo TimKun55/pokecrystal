@@ -416,7 +416,6 @@ SECTION "Mon Minis 5", ROMX
 
 MismagiusMini::          INCBIN "gfx/minis/mismagius.2bpp"
 MismagiusMiniMask::      INCBIN "gfx/minis/mismagius_mask.2bpp"
-UnownMini::              INCBIN "gfx/icons/unown.2bpp"
 WobbuffetMini::          INCBIN "gfx/minis/wobbuffet.2bpp"
 WobbuffetMiniMask::      INCBIN "gfx/minis/wobbuffet_mask.2bpp"
 GirafarigMini::          INCBIN "gfx/minis/girafarig.2bpp"

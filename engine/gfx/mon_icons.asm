@@ -41,18 +41,6 @@ SetMenuMonIconColor:
 	ld hl, wShadowOAMSprite00Attributes
 	jp _ApplyMenuMonIconColor
 
-SetMenuMonIconColor_NoShiny:
-	push hl
-	push de
-	push bc
-	push af
-
-	ld a, [wTempIconSpecies]
-	ld [wCurPartySpecies], a
-	and a
-	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wShadowOAMSprite00Attributes
-	jp _ApplyMenuMonIconColor
 
 LoadPartyMenuMonIconColors:
 	push hl
@@ -115,46 +103,11 @@ _FinishMenuMonIconColor:
 	pop hl
 	ret
 
-GetMonPalInBCDE:
-; Sets BCDE to mon icon palette.
-; Input: c = species, b = shininess (1=true, 0=false)
-	ld hl, MonMenuIconPals
-	dec c
-
-	; This sets z if mon is shiny.
-	dec b
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	jr z, .shiny
-	swap a
-.shiny
-	and $f
-
-	; Now we have the target color. Get the palette (+ 2 to avoid white).
-	ld hl, PartyMenuOBPals + 2
-	ld bc, 1 palettes
-	call AddNTimes
-
-	push hl
-	ld a, BANK(PartyMenuOBPals)
-	call GetFarWord
-	ld b, h
-	ld c, l
-	pop hl
-	inc hl
-	inc hl
-	ld a, BANK(PartyMenuOBPals)
-	call GetFarWord
-	ld d, h
-	ld e, l
-	ret
 
 GetMenuMonIconPalette:
 	ld c, l
 	ld b, h
 	farcall CheckShininess
-GetMenuMonIconPalette_PredeterminedShininess:
 	push af
 	ld a, [wCurPartySpecies]
 	dec a
@@ -251,7 +204,9 @@ InitPartyMenuIcon:
 	call GetPartyParamLocation
 	ld e, l
 	ld d, h
-	call GetMemMiniGFX
+	ld a, [wCurIconTile]
+	call GetMiniGFX
+	call AdvanceMiniTile
 	ldh a, [hObjectStructIndex]
 ; y coord
 	add a
@@ -315,7 +270,7 @@ NamingScreen_InitAnimatedMonIcon:
 	ld [wCurIcon], a
 	ld de, wTempMonDVs
 	xor a
-	call GetMiniGFX
+	call GetMiniNoItem
 	depixel 4, 4, 4, 0
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
@@ -348,7 +303,7 @@ MoveList_InitAnimatedMonIcon:
 	pop de
 	ld [wCurIcon], a
 	xor a
-	call GetMiniGFX
+	call GetMiniNoItem
 	ld d, 3 * TILE_WIDTH + 2 ; depixel 3, 4, 2, 4
 	ld e, 4 * TILE_WIDTH + 4
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
@@ -369,11 +324,18 @@ Pokedex_InitAnimatedMonIcon:
 	cp ICON_UNOWN
 	jr nz, .normal_mini
 	farcall Pokedex_SetUnownLetter
-	call Pokedex_LoadUnownMiniGFX
+	ld a, [wUnownLetter]
+	ld [wCurIconForm], a
+	ld de, 0
+	ld a, [wCurIconTile]
+	call GetMiniNoItem
+	call AdvanceMiniTile
 	jr .mini_done
 .normal_mini
 	ld de, wTempMonDVs
-	call GetMemMiniGFX
+	ld a, [wCurIconTile]
+	call GetMiniNoItem
+	call AdvanceMiniTile
 .mini_done
 
 	ld a, [wSummaryScreenFlags]
@@ -492,22 +454,9 @@ Pokedex_ApplyMiniPalette:
 	ld d, h
 	ld e, l                           ; de = destination
 	pop hl                            ; hl = source address
-	ld c, 4                           ; 4 bytes = the mon's two colours
 	ld b, BANK(PokemonPalettes)
-	ldh a, [rWBK]
-	push af                           ; save the current WRAM bank
-	ld a, BANK(wOBPals1)
-	ldh [rWBK], a                     ; select the palette buffer's bank
-.copy
-	ld a, b
-	call GetFarByte                   ; a = byte at bank b : hl, preserves hl
-	ld [de], a
-	inc de
-	inc hl
-	dec c
-	jr nz, .copy
-	pop af
-	ldh [rWBK], a                     ; restore the WRAM bank
+	ld c, BANK(wOBPals1)
+	call CopyMiniPaletteBytes
 	pop af                            ; a = palette number
 	push af
 	add a
@@ -564,7 +513,15 @@ Trade_LoadMonIconGFX:
 	ld a, $40
 	ld [wCurIconTile], a
 	ld de, wTempMonDVs
-	call GetMemMiniGFX
+	ld a, [wCurIconTile]
+	call GetMiniNoItem
+	call AdvanceMiniTile
+	ld a, [wCurIcon]
+	cp ICON_UNOWN
+	jr nz, .skip_form
+	ld a, [wUnownLetter]
+	ld [wCurIconForm], a
+.skip_form
 	call Trade_LoadMonMask
 	ret
 
@@ -586,23 +543,10 @@ Trade_SetMiniPalette:
 	ld de, 4
 	add hl, de
 .not_shiny
-	ld c, 4                           ; 4 bytes = the mon's two colours
 	ld b, BANK(PokemonPalettes)
-	ld de, wOBPals1 + 2               ; OBJ palette 0, colours 1-2
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wOBPals1)
-	ldh [rWBK], a
-.copy
-	ld a, b
-	call GetFarByte
-	ld [de], a
-	inc de
-	inc hl
-	dec c
-	jr nz, .copy
-	pop af
-	ldh [rWBK], a
+	ld c, BANK(wOBPals1)
+	ld de, wOBPals1 + 2
+	call CopyMiniPaletteBytes
 	; paint colour 0 white and colour 3 black for palette 0 (colours 1-2 are the mon's)
 	ldh a, [rWBK]
 	push af
@@ -624,22 +568,6 @@ Trade_SetMiniPalette:
 	ldh [hCGBPalUpdate], a
 	ret
 
-GetSpeciesIcon:
-; Load species icon into VRAM at tile a
-	push de
-	ld a, MON_DVS
-	call GetPartyParamLocation
-	call SetMenuMonIconColor
-	ld a, [wTempIconSpecies]
-	push hl
-	pop hl
-	ld [wCurIcon], a
-	pop de
-	ld a, e
-	ld e, l
-	ld d, h
-	call GetIconGFX
-	ret
 
 FlyFunction_GetMonIcon:
 	push de
@@ -663,30 +591,11 @@ SetOWFlyMonColor:
 	farcall SetFirstOBJPalette
 	ret
 
-GetMemIconGFX:
-	ld a, [wCurIconTile]
-GetIconGFX:
-	call GetIcon_a
-	ld de, 8 tiles
-	add hl, de
-	ld de, HeldItemIcons
-	lb bc, BANK(HeldItemIcons), 2
-	call Get2bppViaHDMA
-	ld a, [wCurIconTile]
-	add 10
-	ld [wCurIconTile], a
-	call Trade_LoadMonMask
-	ret
 
 HeldItemIcons:
 INCBIN "gfx/summary/mail.2bpp"
 INCBIN "gfx/summary/item.2bpp"
 
-GetIcon_de:
-; Load icon graphics into VRAM starting from tile de.
-	ld l, e
-	ld h, d
-	jr GetIcon
 
 GetIcon_a:
 ; Load icon graphics into VRAM starting from tile a.
@@ -751,14 +660,6 @@ GetIconBank:
 	ld b, BANK("Mon Icons 2")
 	ret
 
-GetMemMiniGFX:
-	ld a, [wCurIconTile]
-	call GetMiniGFX
-	ld a, [wCurIconTile]
-	add 10
-	ld [wCurIconTile], a
-	ret
-
 GetMiniGFX:
 ; Load the mini for wCurIcon into VRAM starting from tile a, followed by the held item tiles.
 ; de = DVs
@@ -770,6 +671,19 @@ GetMiniGFX:
 	ld de, HeldItemIcons
 	lb bc, BANK(HeldItemIcons), 2
 	jp Get2bppViaHDMA
+
+GetMiniNoItem:
+; Load the mini for wCurIcon into VRAM starting from tile a (8 tiles, no held item).
+; de = DVs
+	ld l, a
+	ld h, 0
+	jp GetMini
+
+AdvanceMiniTile:
+	ld a, [wCurIconTile]
+	add 10
+	ld [wCurIconTile], a
+	ret
 
 GetMini:
 ; Load mini graphics for wCurIcon into VRAM starting from tile hl.
@@ -787,10 +701,17 @@ endr
 	ld a, [wCurIcon]
 	cp ICON_UNOWN
 	jr nz, .not_unown
+	ld a, d
+	or e
+	jr nz, .have_dvs
+	ld a, [wCurIconForm]
+	jr .got_form
+.have_dvs
 	ld l, e
 	ld h, d
 	predef GetUnownLetter
 	ld a, [wUnownLetter]
+.got_form
 	ld l, a
 	ld h, 0
 	ld de, MiniUnownPointers
@@ -954,45 +875,6 @@ Pokedex_SetUnownLetter::
 	ld [wUnownLetter], a
 	ret
 
-Pokedex_LoadUnownMiniGFX:
-; Loads the Unown mini for wUnownLetter (already set) into VRAM at
-; wCurIconTile, followed by the held-item tiles, then advances wCurIconTile.
-	ld a, [wCurIconTile]
-	ld l, a
-	ld h, 0
-rept 4
-	add hl, hl
-endr
-	ld de, vTiles0
-	add hl, de
-	push hl                          ; destination for the mini
-	ld a, [wUnownLetter]
-	ld l, a
-	ld h, 0
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc                       ; hl = letter * 3
-	ld de, MiniUnownPointers
-	add hl, de
-	ld a, [hli]
-	ld b, a                          ; bank of the mini data
-	ld a, [hli]
-	ld e, a
-	ld a, [hl]
-	ld d, a                          ; de = mini data
-	pop hl                           ; hl = destination
-	ld c, 8
-	call Get2bppViaHDMA
-	ld de, 8 tiles
-	add hl, de
-	ld de, HeldItemIcons
-	lb bc, BANK(HeldItemIcons), 2
-	call Get2bppViaHDMA
-	ld a, [wCurIconTile]
-	add 10
-	ld [wCurIconTile], a
-	ret
 
 NamingScreen_SetMiniPalette:
 ; a = species, bc = DV pointer. Writes the mini's colours to OBJ palette 4
@@ -1013,23 +895,10 @@ NamingScreen_SetMiniPalette:
 	ld de, 4
 	add hl, de
 .not_shiny
-	ld c, 4                           ; 4 bytes = the mon's two colours
 	ld b, BANK(PokemonPalettes)
-	ld de, wOBPals1 + 4 * 8 + 2       ; OBJ palette 4, colours 1-2
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wOBPals1)
-	ldh [rWBK], a
-.copy
-	ld a, b
-	call GetFarByte
-	ld [de], a
-	inc de
-	inc hl
-	dec c
-	jr nz, .copy
-	pop af
-	ldh [rWBK], a
+	ld c, BANK(wOBPals1)
+	ld de, wOBPals1 + 4 * 8 + 2
+	call CopyMiniPaletteBytes
 	ld a, 4
 	call Pokedex_SetMiniPalette
 	farcall ApplyPals
@@ -1052,74 +921,27 @@ FlyMap_LoadMiniGFX::
 	ld hl, 8                          ; mini tile index
 	ld de, wTempMonDVs
 	call GetMini
+	ld a, [wCurIcon]
+	cp ICON_UNOWN
+	jr nz, .skip_form
+	ld a, [wUnownLetter]
+	ld [wCurIconForm], a
+.skip_form
 	call FlyMap_LoadSilhouetteGFX
 	ret
 
 FlyMap_LoadSilhouetteGFX:
-; Loads the mask for wCurIcon (or wUnownLetter for Unown) to vTiles0 tile $18.
-	ld a, [wCurIcon]
-	cp ICON_UNOWN
-	jr z, .unown
-	ld l, a
-	ld h, 0
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc                        ; hl = index * 3
-	ld de, MiniMaskPointers
-	jr .got_entry
-.unown
-	ld a, [wUnownLetter]
-	ld l, a
-	ld h, 0
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc                        ; hl = letter * 3
-	ld de, MiniUnownMaskPointers
-.got_entry
-	add hl, de
-	ld a, [hli]
-	ld b, a                           ; bank of the mask data
-	ld a, [hli]
-	ld e, a
-	ld a, [hl]
-	ld d, a                           ; de = mask data
-	ld hl, vTiles0 tile $18
+; Loads the mask for wCurIcon (wCurIconForm for Unown) to vTiles0 tile $18.
+	call LoadStorageMask
 	ld c, 8
+	ld hl, vTiles0 tile $18
 	call Get2bppViaHDMA
 	ret
 
 FlyMap_SetMiniPalette::
 ; Gives the picker's mini OBJ palette 4. Call after PokegearOBPals has been copied.
-	ld hl, wSpriteAnimationStructs
-	ld d, 0                           ; active structs before this one = OAM slot
-	ld b, NUM_SPRITE_ANIM_STRUCTS
-.find
-	ld a, [hl]
-	and a
-	jr z, .inactive
-	push hl
-	push bc
-	ld bc, SPRITEANIMSTRUCT_TILE_ID
-	add hl, bc
-	ld a, [hl]
-	pop bc
-	pop hl
-	cp 8
-	jr z, .found
-	inc d
-.inactive
-	ld a, l
-	add SPRITEANIMSTRUCT_LENGTH
-	ld l, a
-	jr nc, .next
-	inc h
-.next
-	dec b
-	jr nz, .find
-	ret                               ; no mini found
-.found
+	call FlyMap_FindMiniStruct
+	jr nc, .not_found
 	ld a, d
 	ldh [hObjectStructIndex], a
 	ld a, [wTempIconSpecies]
@@ -1138,23 +960,10 @@ FlyMap_SetMiniPalette::
 	ld de, 4
 	add hl, de
 .not_shiny
-	ld c, 4
 	ld b, BANK(PokemonPalettes)
-	ld de, wOBPals2 + 4 * 8 + 2       ; OBJ palette 4, colours 1-2
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wOBPals2)
-	ldh [rWBK], a
-.copy
-	ld a, b
-	call GetFarByte
-	ld [de], a
-	inc de
-	inc hl
-	dec c
-	jr nz, .copy
-	pop af
-	ldh [rWBK], a
+	ld c, BANK(wOBPals2)
+	ld de, wOBPals2 + 4 * 8 + 2
+	call CopyMiniPaletteBytes
 	ld a, 4
 	call Pokedex_SetMiniPalette
 	ldh a, [hObjectStructIndex]
@@ -1175,6 +984,75 @@ FlyMap_SetMiniPalette::
 	ldh [rWBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
+.not_found
+	ret
+
+FlyMap_FindMiniStruct::
+; Returns carry set and hl = sprite struct with tile id $08 if found.
+; d = number of active structs before it. Carry clear (hl = 0) if not found.
+; Preserves bc.
+	ld hl, wSpriteAnimationStructs
+	ld d, 0
+	ld e, NUM_SPRITE_ANIM_STRUCTS
+.loop
+	ld a, [hl]
+	and a
+	jr z, .inactive
+	push hl
+	push bc
+	ld bc, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	pop hl
+	cp $08
+	jr z, .found
+	inc d
+.inactive
+	ld a, l
+	add SPRITEANIMSTRUCT_LENGTH
+	ld l, a
+	jr nc, .next
+	inc h
+.next
+	dec e
+	jr nz, .loop
+	or a
+	ld hl, 0
+	ret
+.found
+	scf
+	ret
+
+CopyMiniPaletteBytes::
+; Copy 4 bytes from bank b:hl to de, with de in WRAM bank c.
+; Preserves b? b is source bank (used in loop); c is overwritten (dest bank).
+	ldh a, [rWBK]
+	push af
+	ld a, c
+	ldh [rWBK], a
+	ld a, b
+	call GetFarByte
+	ld [de], a
+	inc de
+	inc hl
+	ld a, b
+	call GetFarByte
+	ld [de], a
+	inc de
+	inc hl
+	ld a, b
+	call GetFarByte
+	ld [de], a
+	inc de
+	inc hl
+	ld a, b
+	call GetFarByte
+	ld [de], a
+	inc de
+	inc hl
+	pop af
+	ldh [rWBK], a
 	ret
 
 LoadStorageMask::
@@ -1202,96 +1080,13 @@ LoadStorageMask::
 	ld c, 4                           ; frame 1 only
 	ret
 
-Trade_CompositeMiniMask:
-; Composite the mini's mask into its VRAM tiles so that transparent
-; pixels inside the silhouette become opaque white (palette colour 3).
-; Mini is expected at vTiles0 tile $62 (8 tiles); mask from MiniMaskPointers.
-	ld a, [wCurIcon]
-	cp ICON_UNOWN
-	jr nz, .not_unown
-	ld de, MiniUnownMaskPointers
-	ld a, [wCurIconForm]
-	jr .got
-.not_unown
-	ld de, MiniMaskPointers
-	ld a, [wCurIcon]
-.got
-	ld l, a
-	ld h, 0
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc                 ; *3
-	add hl, de
-	ld a, [hli]
-	ld b, a                    ; b = mask bank
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a                    ; hl = mask ptr
-	ldh a, [hROMBank]
-	push af
-	ld a, b
-	rst Bankswitch
-	ld de, vTiles0 tile $62    ; de = mini VRAM ptr
-	ld c, 64                   ; 8 tiles * 8 rows
-.row_loop
-	ld a, [hl]
-	ld b, a                    ; b = mask low
-	inc hl
-	ld a, [hl]
-	or b                       ; a = mask low | mask high = maskFg
-	ld b, a                    ; b = maskFg
-	inc hl
-	push hl                    ; save mask ptr
-	ld a, [de]
-	ld h, a                    ; h = mini low
-	inc de
-	ld a, [de]
-	or h                       ; a = mini low | mini high
-	cpl                        ; a = ~(mini low | mini high)
-	and b                      ; a = to_set
-	ld b, a                    ; b = to_set
-	dec de
-	ld a, [de]
-	or b
-	ld [de], a                 ; mini low |= to_set
-	inc de
-	ld a, [de]
-	or b
-	ld [de], a                 ; mini high |= to_set
-	inc de
-	pop hl                     ; restore mask ptr
-	dec c
-	jr nz, .row_loop
-	pop af
-	rst Bankswitch
-	ret
 
 Trade_LoadMonMask::
 ; Loads the full 8-tile mask for wCurIcon (wCurIconForm for Unown) to tile $6A,
 ; and sets OBJ palette 6 colour 3 to white in wOBPals2 for the trade animation.
-	ld de, MiniMaskPointers
-	ld a, [wCurIcon]
-	cp ICON_UNOWN
-	jr nz, .got_table
-	ld de, MiniUnownMaskPointers
-	ld a, [wCurIconForm]
-.got_table
-	ld l, a
-	ld h, 0
-	ld b, h
-	ld c, l
-	add hl, hl
-	add hl, bc
-	add hl, de
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld e, a
-	ld a, [hl]
-	ld d, a
-	ld hl, vTiles0 tile $50
+	call LoadStorageMask
 	ld c, 8
+	ld hl, vTiles0 tile $50
 	call Request2bpp
 
 	ldh a, [rSVBK]
@@ -1309,7 +1104,6 @@ Trade_LoadMonMask::
 	ldh [hCGBPalUpdate], a
 	ret
 
-INCLUDE "data/pokemon/menu_icons.asm"
 
 INCLUDE "data/pokemon/menu_icon_pals.asm"
 

@@ -3031,33 +3031,9 @@ TownMapPlayerIcon:
 FlyMap_UpdateSilhouette:
 ; bc = silhouette's sprite struct. Copies its position to the mini (tile $08).
 	push bc
-	ld hl, wSpriteAnimationStructs
-	ld b, NUM_SPRITE_ANIM_STRUCTS
-.find
-	ld a, [hl]
-	and a
-	jr z, .next
-	push hl
-	ld de, SPRITEANIMSTRUCT_TILE_ID
-	add hl, de
-	ld a, [hl]
-	pop hl
-	cp $08
-	jr z, .found
-.next
-	ld a, l
-	add SPRITEANIMSTRUCT_LENGTH
-	ld l, a
-	jr nc, .skip
-	inc h
-.skip
-	dec b
-	jr nz, .find
+	farcall FlyMap_FindMiniStruct
 	pop bc
-	ret
-
-.found
-	pop bc                            ; bc = silhouette's struct
+	jr nc, .not_found
 	push hl                           ; mini's struct
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -3071,6 +3047,7 @@ FlyMap_UpdateSilhouette:
 	ld [hl], d
 	inc hl
 	ld [hl], e
+.not_found
 	ret
 
 LoadTownMapGFX:
