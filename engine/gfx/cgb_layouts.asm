@@ -1102,6 +1102,7 @@ _CGB_PartyMenu:
 	call InitPartyMenuBGPal0
 	call InitPartyMenuBGPal7	
 	call InitPartyMenuOBPals
+	call InitPartyMenuMonPals
 	call InitPartyMenuStatusPals ; this is the new function added in engine\gfx\color.asm
 
 	ld a, [wPartyCount]

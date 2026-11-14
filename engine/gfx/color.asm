@@ -418,6 +418,7 @@ InitPartyMenuPalettes:
 	call FarCopyWRAM
 	
 	call InitPartyMenuOBPals
+	call InitPartyMenuMonPals
 	call WipeAttrmap
 	ret
 
@@ -812,6 +813,73 @@ InitPartyMenuOBPals:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	ret
+
+InitPartyMenuMonPals:
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld a, [wCurPartyMon]
+	push af
+	ld a, [wPartyCount]
+	ld c, a
+	ld b, 0
+	ld de, wOBPals1 palette 2 + 2
+.loop
+	push bc
+	push de
+	ld a, b
+	ld [wCurPartyMon], a
+	ld a, MON_DVS
+	call GetPartyParamLocation
+	ld b, h
+	ld c, l
+	ld hl, wPartySpecies ; the species list has EGG for eggs
+	ld a, [wCurPartyMon]
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	call GetMonNormalOrShinyPalettePointer
+	ld bc, 4
+	pop de
+	push de
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	pop de
+	pop bc
+	ld hl, 8
+	add hl, de
+	ld d, h
+	ld e, l
+	inc b
+	dec c
+	jr nz, .loop
+	pop af
+	ld [wCurPartyMon], a
+	ret
+
+GetStorageMonPalInBCDE::
+; Returns the normal or shiny palette colors (shiny by DVs) of wBufferMon in bcde.
+	ld a, [wBufferMonAltSpecies]
+	ld bc, wBufferMonDVs
+	call GetMonNormalOrShinyPalettePointer
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ret
+
+LoadMoveMenuMonPalette::
+; e = species, bc = DVs
+	ld a, e
+	call GetMonNormalOrShinyPalettePointer
+	ld bc, 4
+	ld de, wOBPals1 palette 1 + 2
+	ld a, BANK(wOBPals1)
+	jp FarCopyWRAM
 
 SetFirstOBJPalette::
 ; input: e must contain the offset of the selected palette from PartyMenuOBPals

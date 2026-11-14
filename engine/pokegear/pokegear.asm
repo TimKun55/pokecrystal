@@ -2226,6 +2226,32 @@ _FlyMap:
 	ld b, CGB_POKEGEAR_PALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP
+; Load icons.pal (8 palettes) into wOBPals2 so the fly mon's icon palette
+; (from SetMenuMonIconColor) maps correctly.
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wOBPals2)
+	ldh [rWBK], a
+	ld hl, PokegearOBPals
+	ld de, wOBPals2
+	ld b, 8 * 8
+.pal_copy_loop
+	push bc
+	push de
+	ld a, BANK(PokegearOBPals)
+	call GetFarByte
+	pop de
+	ld [de], a
+	inc de
+	pop bc
+	inc hl
+	dec b
+	jr nz, .pal_copy_loop
+	pop af
+	ldh [rWBK], a
+	farcall FlyMap_SetMiniPalette
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 .loop
 	call JoyTextDelay
 	ld hl, hJoyPressed
@@ -2396,6 +2422,7 @@ GetMapCursorCoordinates:
 	ld hl, 5
 	add hl, bc
 	ld [hl], d
+	call FlyMap_UpdateSilhouette
 	ret
 
 CheckIfVisitedFlypoint:
@@ -2934,8 +2961,7 @@ TownMapMon:
 	ld a, [hl]
 	ld [wTempIconSpecies], a
 ; Get FlyMon icon
-	ld e, $08 ; starting tile in VRAM
-	farcall GetSpeciesIcon
+	farcall FlyMap_LoadMiniGFX
 ; Animation/palette
 	depixel 0, 0
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
@@ -2943,6 +2969,17 @@ TownMapMon:
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $08
+	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
+	add hl, bc
+	ld [hl], SPRITE_ANIM_FUNC_NULL
+
+; Silhouette behind the mini
+	depixel 0, 0
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
+	call InitSpriteAnimStruct
+	ld hl, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld [hl], $18
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
 	ld [hl], SPRITE_ANIM_FUNC_NULL
@@ -2989,6 +3026,51 @@ TownMapPlayerIcon:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld [hl], d
+	ret
+
+FlyMap_UpdateSilhouette:
+; bc = silhouette's sprite struct. Copies its position to the mini (tile $08).
+	push bc
+	ld hl, wSpriteAnimationStructs
+	ld b, NUM_SPRITE_ANIM_STRUCTS
+.find
+	ld a, [hl]
+	and a
+	jr z, .next
+	push hl
+	ld de, SPRITEANIMSTRUCT_TILE_ID
+	add hl, de
+	ld a, [hl]
+	pop hl
+	cp $08
+	jr z, .found
+.next
+	ld a, l
+	add SPRITEANIMSTRUCT_LENGTH
+	ld l, a
+	jr nc, .skip
+	inc h
+.skip
+	dec b
+	jr nz, .find
+	pop bc
+	ret
+
+.found
+	pop bc                            ; bc = silhouette's struct
+	push hl                           ; mini's struct
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld d, [hl]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	ld e, [hl]
+	pop hl
+	ld bc, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld [hl], d
+	inc hl
+	ld [hl], e
 	ret
 
 LoadTownMapGFX:

@@ -451,7 +451,7 @@ Pokedex_toggle_shininess_Pics:
 .done	
 	xor a
 	ldh [hObjectStructIndex], a
-	farcall SetDexMonIconColor_SpritePage
+	farcall Pokedex_ReapplyPicsMini
 	call Pokedex_toggle_shininess2
 	ret
 
@@ -969,6 +969,7 @@ Pics_Page:
 	; border keeps the screen black until all three are in place.
 	ld a, CGB_POKEDEX_PICS
 	call Pokedex_GetCGBLayout
+	farcall Pokedex_ReapplyPicsMini
 	call WaitBGMap
 	callfar PlaySpriteAnimations
 	xor a

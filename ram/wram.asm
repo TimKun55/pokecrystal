@@ -929,7 +929,7 @@ wBillsPC_QuickFrames:: db
 
 wBillsPC_ApplyThemePals:: db ; used by _CGB_BillsPC
 
-	ds 2
+	ds 6
 
 wBillsPC_Blank2bppTiles::
 ; Since we need GDMA for fast blank copy, reserve blank tiles here.

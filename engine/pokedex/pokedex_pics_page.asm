@@ -6,8 +6,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	ld [wCurPartySpecies], a
 	farcall Pokedex_GetSelectedMon
 	call GetBaseData
-	ld hl, wTempMonDVs
-	predef GetUnownLetter
+	farcall Pokedex_SetUnownLetter
 	ld bc, wTempSpecies
 	call SetDefaultBGPAndOBP
 	call .AnimateMon
@@ -75,8 +74,7 @@ Pokedex_PlaceBackPic:
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
 	call GetBaseData
-	ld hl, wTempMonDVs
-	predef GetUnownLetter
+	farcall Pokedex_SetUnownLetter
 	ld de, vTiles0 tile $d0
 	predef GetMonBackpic
 	ld a, $d0
@@ -131,7 +129,6 @@ ENDC
 	ld a, BANK(LoadMenuMonIcon)
 	ld e, MONICON_DEX
 	rst FarCall
-	farcall SetDexMonIconColor_SpritePage
 	pop hl
 	pop de
 	pop bc

@@ -455,6 +455,8 @@ BillsPC_BlankTiles:
 	push de
 	push bc
 	push af
+	xor a
+	ld b, a
 	ld c, 4
 	call BillsPC_SafeGet2bpp
 	pop af
@@ -745,15 +747,7 @@ WriteIconPaletteData:
 	push hl
 	push de
 	push bc
-	ld bc, wBufferMonDVs
-	newfarcall CheckShininess
-	ld a, [wBufferMonAltSpecies]
-	ld c, a
-	ld b, 1
-	jr c, .got_shininess
-	dec b
-.got_shininess
-	newfarcall GetMonPalInBCDE
+	newfarcall GetStorageMonPalInBCDE
 	ld h, b
 	ld l, c
 	pop bc
@@ -776,14 +770,22 @@ BillsPC_HideCursorAndMode:
 	call BillsPC_HideCursor
 	; fallthrough
 BillsPC_HideModeIcon:
-	ld hl, wShadowOAMSprite08
+	call BillsPC_CheckBagDisplay
+	ld hl, wShadowOAMSprite05
+	jr z, .got_mode_area
+	ld hl, wShadowOAMSprite12
+.got_mode_area
 	ld bc, 20
 	xor a
 	jp ByteFill
 
 BillsPC_HideCursor:
+	call BillsPC_CheckBagDisplay
 	ld hl, wShadowOAM
-	ld bc, 32
+	ld bc, 48
+	jr nz, .got_bytecount
+	ld c, 20
+.got_bytecount
 	xor a
 	jp ByteFill
 
@@ -1628,16 +1630,47 @@ BillsPC_CursorPick2:
 
 BillsPC_SetIcon:
 ; Writes icon tiles to hl depending on species data in de. Assumes vbk1.
+; If b is -1 (held or quick slot), also writes the silhouette mask after the mini.
 	ld a, [de]
 	inc de
 	ld [wCurIcon], a
 	ld a, [de]
 	ld [wCurIconForm], a
+	push bc
 	push hl
 	call BillsPC_SetPals
 	call DelayFrame
 	pop hl
-	newfarjp GetStorageIcon
+	pop bc
+
+	; Load the silhouette mask first when this is a held/quick slot,
+	; so it is already in VRAM before the mini.
+	ld a, b
+	inc a
+	jr nz, .load_mini_only
+
+	push hl
+	ld de, 4 tiles
+	add hl, de                        ; mask goes straight after the mini's frame 1
+	ldh a, [rVBK]
+	push af                           ; save the VRAM bank
+	ld a, 1
+	ldh [rVBK], a
+	push hl                           ; save the mask destination
+	farcall LoadStorageMask           ; b = bank, de = mask frame 1, c = 4
+	pop hl
+	call BillsPC_SafeGet2bpp
+	pop af
+	ldh [rVBK], a
+	pop hl
+
+.load_mini_only
+	push bc
+	push hl
+	newfarcall GetStorageIcon
+	pop hl
+	pop bc
+	ret
 
 BillsPC_MoveIconData:
 ; Copies icon data from slot bc to slot de, then blanks slot bc.
@@ -1721,6 +1754,7 @@ BillsPC_MoveIconData:
 	ld a, 1
 	call .GetAddr
 	xor a
+	ld [hli], a
 	ld [hli], a
 	ld a, 2
 	call .GetAddr
@@ -1898,6 +1932,7 @@ BillsPC_PrepareQuickAnim:
 	ld a, PCANIM_QUICKFRAMES
 	ld [wBillsPC_QuickFrames], a
 
+	; mini, with its silhouette built into its OAM data
 	lb de, 0, 0
 	ld a, SPRITE_ANIM_OBJ_PC_QUICK
 	call InitSpriteAnimStruct
@@ -2066,6 +2101,7 @@ BillsPC_FinishQuickAnim:
 	inc a
 	ldh [rVBK], a
 	ld hl, vTiles3 tile $14
+	ld a, 2
 	call BillsPC_BlankTiles
 	pop bc
 	ld a, b

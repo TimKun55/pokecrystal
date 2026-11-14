@@ -21,16 +21,16 @@ SpriteAnimOAMData:
 	spriteanimoam $3a, .OAMData_1x1_Palette1             ; SPRITE_ANIM_OAMSET_SLOTS_EGG
 	spriteanimoam $00, .OAMData_RedWalk                  ; SPRITE_ANIM_OAMSET_STILL_CURSOR
 	spriteanimoam $00, .OAMData_TradePokeBall1           ; SPRITE_ANIM_OAMSET_TRADE_POKE_BALL_1
-	spriteanimoam $02, .OAMData_MagnetTrain           ; SPRITE_ANIM_OAMSET_TRADE_POKE_BALL_2
+	spriteanimoam $02, .OAMData_MagnetTrain              ; SPRITE_ANIM_OAMSET_TRADE_POKE_BALL_2
 	spriteanimoam $06, .OAMData_TradePoofBubble          ; SPRITE_ANIM_OAMSET_TRADE_POOF_1
 	spriteanimoam $0a, .OAMData_TradePoofBubble          ; SPRITE_ANIM_OAMSET_TRADE_POOF_2
 	spriteanimoam $0e, .OAMData_TradePoofBubble          ; SPRITE_ANIM_OAMSET_TRADE_POOF_3
 	spriteanimoam $12, .OAMData_TradeTubeBulge           ; SPRITE_ANIM_OAMSET_TRADE_TUBE_BULGE_1
 	spriteanimoam $13, .OAMData_TradeTubeBulge           ; SPRITE_ANIM_OAMSET_TRADE_TUBE_BULGE_2
-	spriteanimoam $00, .OAMData_RedWalk                  ; SPRITE_ANIM_OAMSET_TRADEMON_ICON_1
-	spriteanimoam $04, .OAMData_RedWalk                  ; SPRITE_ANIM_OAMSET_TRADEMON_ICON_2
+	spriteanimoam $00, .OAMData_TradeMiniIcon1           ; SPRITE_ANIM_OAMSET_TRADEMON_ICON_1
+	spriteanimoam $00, .OAMData_TradeMiniIcon2           ; SPRITE_ANIM_OAMSET_TRADEMON_ICON_2
 	spriteanimoam $10, .OAMData_TradePoofBubble          ; SPRITE_ANIM_OAMSET_TRADEMON_BUBBLE
-	spriteanimoam $00, .OAMData_MagnetTrain           ; SPRITE_ANIM_OAMSET_EVOLUTION_BALL_OF_LIGHT_1
+	spriteanimoam $00, .OAMData_MagnetTrain              ; SPRITE_ANIM_OAMSET_EVOLUTION_BALL_OF_LIGHT_1
 	spriteanimoam $04, .OAMData_1x1_Palette0             ; SPRITE_ANIM_OAMSET_EVOLUTION_BALL_OF_LIGHT_2
 	spriteanimoam $00, .OAMData_RadioTuningKnob          ; SPRITE_ANIM_OAMSET_RADIO_TUNING_KNOB
 	spriteanimoam $00, .OAMData_PartyMonWithMail1        ; SPRITE_ANIM_OAMSET_PARTY_MON_WITH_MAIL_1
@@ -257,6 +257,28 @@ SpriteAnimOAMData:
 	dbsprite  0, -1,  0,  0, $01, PAL_OW_RED
 	dbsprite -1,  0,  0,  0, $02, PAL_OW_RED
 	dbsprite  0,  0,  0,  0, $03, PAL_OW_RED
+
+.OAMData_TradeMiniIcon1:
+	db 8
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_RED
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_RED
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_RED
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_RED
+	dbsprite -1, -1,  0,  0, $10, 6
+	dbsprite  0, -1,  0,  0, $11, 6
+	dbsprite -1,  0,  0,  0, $12, 6
+	dbsprite  0,  0,  0,  0, $13, 6
+
+.OAMData_TradeMiniIcon2:
+	db 8
+	dbsprite -1, -1,  0,  0, $04, PAL_OW_RED
+	dbsprite  0, -1,  0,  0, $05, PAL_OW_RED
+	dbsprite -1,  0,  0,  0, $06, PAL_OW_RED
+	dbsprite  0,  0,  0,  0, $07, PAL_OW_RED
+	dbsprite -1, -1,  0,  0, $14, 6
+	dbsprite  0, -1,  0,  0, $15, 6
+	dbsprite -1,  0,  0,  0, $16, 6
+	dbsprite  0,  0,  0,  0, $17, 6
 
 .OAMData_MagnetTrain:
 	db 4
@@ -759,7 +781,7 @@ SpriteAnimOAMData:
 	dbsprite  1,  0,  4,  0, $53, 1
 
 .OAMData_PCCursor:
-	db 8
+	db 12
 	; cursor
 	dsprite  0,  0,  0,  0, $04, $1 | OAM_BANK1
 	dsprite  0,  0,  1,  0, $04, $2 | OAM_BANK1 | OAM_XFLIP
@@ -770,6 +792,11 @@ SpriteAnimOAMData:
 	dsprite  1,  2,  1,  0, $09, $3 | OAM_BANK1
 	dsprite  2,  2,  0,  0, $0a, $3 | OAM_BANK1
 	dsprite  2,  2,  1,  0, $0b, $3 | OAM_BANK1
+	; mask behind the icon
+	dsprite  1,  2,  0,  0, $0c, $6 | OAM_BANK1
+	dsprite  1,  2,  1,  0, $0d, $6 | OAM_BANK1
+	dsprite  2,  2,  0,  0, $0e, $6 | OAM_BANK1
+	dsprite  2,  2,  1,  0, $0f, $6 | OAM_BANK1
 
 .OAMData_PCCursorItem:
 	db 5
@@ -782,12 +809,17 @@ SpriteAnimOAMData:
 	dsprite  2,  0,  0,  4, $08, $0 | OAM_BANK1
 
 .OAMData_PCQuick:
-	db 4
-	; icon or item (only uses 1 sprite with the rest blank)
+	db 8
+	; mini or item (only uses 1 sprite with the rest blank)
 	dsprite  0,  0,  0,  0, $14, $5 | OAM_BANK1
 	dsprite  0,  0,  1,  0, $15, $5 | OAM_BANK1
 	dsprite  1,  0,  0,  0, $16, $5 | OAM_BANK1
 	dsprite  1,  0,  1,  0, $17, $5 | OAM_BANK1
+	; mask behind the mini
+	dsprite  0,  0,  0,  0, $18, $6 | OAM_BANK1
+	dsprite  0,  0,  1,  0, $19, $6 | OAM_BANK1
+	dsprite  1,  0,  0,  0, $1A, $6 | OAM_BANK1
+	dsprite  1,  0,  1,  0, $1B, $6 | OAM_BANK1
 
 .OAMData_PCMode:
 	db 3

@@ -415,6 +415,10 @@ TradeAnim_InitTubeAnim:
 	ld a, SPRITE_ANIM_OBJ_TRADEMON_ICON
 	call InitSpriteAnimStruct
 
+	ld hl, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld [hl], $40                      ; trade mini at $40 (mask at $48)
+
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	pop bc
@@ -893,7 +897,20 @@ TradeAnim_ShowGivemonFrontpic:
 	jr TradeAnim_ShowFrontpic
 
 TradeAnim_ShowGetmonFrontpic:
-	ld de, vTiles0 tile $31
+	ld a, [wOTTrademonSpecies]
+	ld hl, wOTTrademonDVs
+	ld de, vTiles2
+	call TradeAnim_GetFrontpic
+	call FinishBGMapTransfer
+	call TradeAnim_BlankTilemap
+	hlcoord 7, 2
+	xor a
+	ldh [hGraphicStartTile], a
+	lb bc, 7, 7
+	predef PlaceGraphic
+	call WaitBGMap
+	ret
+
 TradeAnim_ShowFrontpic:
 	call DelayFrame
 	ld hl, vTiles2
@@ -1070,6 +1087,14 @@ TrademonStats_PrintTrademonID:
 	ret
 
 TradeAnim_RockingBall:
+	; make sure the pokeball uses its red palette
+	ld hl, LoadTradeBallAndCableGFX.RedBallPalette
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_OBJ_TRADE_POKE_BALL
 	call InitSpriteAnimStruct
@@ -1079,6 +1104,14 @@ TradeAnim_RockingBall:
 	ret
 
 TradeAnim_DropBall:
+	; make sure the pokeball uses its red palette
+	ld hl, LoadTradeBallAndCableGFX.RedBallPalette
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_OBJ_TRADE_POKE_BALL
 	call InitSpriteAnimStruct
@@ -1517,7 +1550,18 @@ LoadTradeBallAndCableGFX:
 	ld hl, wSpriteAnimDict
 	ld [hli], a
 	ld [hl], $62
+	; keep the pokeball's palette (OBJ 0) red
+	ld hl, .RedBallPalette
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	ret
+
+.RedBallPalette:
+	RGB 28, 31, 16, 31, 22, 10, 31, 07, 01, 00, 00, 00
 
 LoadTradeBubbleGFX:
 	ld e, MONICON_TRADE
