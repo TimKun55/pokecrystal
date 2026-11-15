@@ -979,8 +979,17 @@ DecodeBufferMon:
 	jr nz, .pp_loop
 
 	pop af
-	jr z, SetTempPartyMonData
+	jr nz, .bad_checksum_decode
+	ld a, [wSkipMonStats]
+	and a
+	jr nz, .skip_stats
+	jp SetTempPartyMonData
 
+.skip_stats
+	or 1
+	ret
+
+.bad_checksum_decode
 	ld hl, BadEgg
 	ld de, wBufferMon
 	ld bc, BadEggEnd - BadEgg

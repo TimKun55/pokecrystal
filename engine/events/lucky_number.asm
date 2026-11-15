@@ -11,6 +11,8 @@ CheckForLuckyNumberWinners:
 
 	ld b, NUM_BOXES
 	push bc ; will be where box+position number is stored
+	ld a, 1
+	ld [wSkipMonStats], a
 .outer_loop
 	inc b
 	dec b
@@ -66,6 +68,8 @@ CheckForLuckyNumberWinners:
 	bit 7, b ; check for reaching -1
 	jr z, .outer_loop
 .done
+	xor a
+	ld [wSkipMonStats], a
 	pop bc ; restores box + position, if applicable
 	call WaitSFX
 	ld a, [wScriptVar]
@@ -104,4 +108,3 @@ PrintTodaysLuckyNumber:
 	call PrintNum
 	ld a, '@'
 	ld [wStringBuffer3 + 5], a
-	ret

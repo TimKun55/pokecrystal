@@ -124,6 +124,7 @@ wAutoInputBank::    db
 wAutoInputLength::  db
 
 wDebugFlags:: db
+wSkipMonStats:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 
