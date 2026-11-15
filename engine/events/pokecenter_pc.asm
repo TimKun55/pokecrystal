@@ -247,7 +247,12 @@ _PlayersPC:
 	call UpdateTimePals
 	call DoNthMenu
 	jr c, .turn_off
+	; Remember the main menu cursor across submenus.
+	ld a, [wMenuCursorPosition]
+	ld [wMenuCursorPositionBackup], a
 	call MenuJumptable
+	ld a, [wMenuCursorPositionBackup]
+	ld [wMenuCursorPosition], a
 	jr nc, .loop
 	jr .done
 
@@ -327,19 +332,67 @@ ClearPCItemScreen:
 	ldh [hBGMapMode], a
 	call ClearBGPalettes
 	call ClearSprites
+	call ClearTilemap
+	call DisableLCD
+
+	ld hl, PCItemUITiles
+	ld de, vTiles2 tile $30
+	ld bc, 36 tiles
+	ld a, BANK(PCItemUITiles)
+	call FarCopyBytes
+
+	; Fill the entire top row with tile $30.
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, ' '
+	ld a, $30
+	ld bc, SCREEN_WIDTH
 	call ByteFill
-	hlcoord 0, 0
-	lb bc, 10, 18
-	call Textbox
+
+	; Draw the 5-wide left column (11 rows) from (0, 1) using a tilemap string.
+	hlcoord 0, 1
+	ld de, .PCItemTilemapString
+	ld bc, SCREEN_WIDTH - 5
+.loop
+	ld a, [de]
+	and a
+	jr nz, .continue
+	add hl, bc
+	jr .next
+.continue
+	cp $ff
+	jr z, .ok
+	ld [hli], a
+.next
+	inc de
+	jr .loop
+.ok
+
+	call EnableLCD
+	call WaitBGMap
+
+	ld b, CGB_PC_ITEM_STORAGE
+	call GetCGBLayout
+	call SetDefaultBGPAndOBP
+
+	; Bottom text box for the item description.
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Textbox
-	call WaitBGMap2
-	call SetDefaultBGPAndOBP ; load regular palettes?
+
+	call DelayFrame
 	ret
+
+.PCItemTilemapString:
+	db $31, $31, $31, $31, $31, 0 ; background tile/w line (bottom)
+	db $36, $37, $38, $39, $3A, 0 ; Withdraw Item graphic, row 1 
+	db $3B, $3C, $3D, $3E, $3F, 0 ; Withdraw Item graphic, row 2
+	db $40, $41, $42, $43, $44, 0 ; Withdraw Item graphic, row 3
+	db $40, $45, $46, $47, $44, 0 ; Withdraw Item graphic, row 4
+	db $40, $48, $49, $4A, $44, 0 ; Withdraw Item graphic, row 5
+	db $32, $33, $33, $33, $32, 0 ; background tile/w line (top, top&bottom)
+	db $34, $4B, $4C, $4D, $35, 0 ; item icon
+	db $34, $4E, $4F, $50, $35, 0 ; item icon
+	db $34, $51, $52, $53, $35, 0 ; item icon
+	db $30, $32, $32, $32, $30, -1 ; background tile/w line (top)
 
 PlayersPCAskWhatDoText:
 	text_far _PlayersPCAskWhatDoText
@@ -355,6 +408,7 @@ PlayerWithdrawItemMenu:
 	jr .loop
 
 .quit
+	call WaitSFX
 	call CloseSubmenu
 	xor a
 	ret
@@ -432,6 +486,7 @@ PlayerTossItemMenu:
 	jr .loop
 
 .quit
+	call WaitSFX
 	call CloseSubmenu
 	xor a
 	ret
@@ -465,6 +520,7 @@ PlayerDepositItemMenu:
 	jr .loop
 
 .close
+	call WaitSFX
 	call CloseSubmenu
 
 .nope
@@ -609,10 +665,6 @@ PCItemsJoypad:
 	ld [wSpriteUpdatesEnabled], a
 	ld hl, .PCItemsMenuData
 	call CopyMenuHeader
-	hlcoord 0, 0
-	ld b, 10
-	ld c, 18
-	call Textbox
 	ld a, [wPCItemsCursor]
 	ld [wMenuCursorPosition], a
 	ld a, [wPCItemsScrollPosition]
@@ -670,23 +722,26 @@ PCItemsJoypad:
 
 .PCItemsMenuData:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 1, 18, 10
+	menu_coords 6, 1, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db SCROLLINGMENU_ENABLE_SELECT | SCROLLINGMENU_ENABLE_FUNCTION3 | SCROLLINGMENU_DISPLAY_ARROWS ; flags
-	db 4, 8 ; rows, columns
+	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumPCItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePCItemIconAndDescription
 
 PC_DisplayText:
 	call MenuTextbox
 	call ExitMenu
 	ret
+
+PCItemUITiles::
+INCBIN "gfx/pc/pc_item_ui.2bpp"
 
 PokecenterPCTurnOnText:
 	text_far _PokecenterPCTurnOnText

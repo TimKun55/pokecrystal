@@ -64,6 +64,7 @@ CGBLayoutJumptable:
 	dw _CGB_Plain
 	dw _CGB_EggSummaryScreen
 	dw _CGB_MusicPlayer
+	dw _CGB_PCItemStorage
 	assert_table_length NUM_CGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1832,6 +1833,46 @@ _CGB_BuyMenu:
 
 MartMenuPals:
 INCLUDE "gfx/mart/mart.pal"
+
+_CGB_PCItemStorage:
+	ld hl, PCItemUIPals
+	ld de, wBGPals1
+	ld bc, 4 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call WipeAttrmap
+
+	; 5x5 area Withdraw Item graphic (BG1).
+	hlcoord 0, 2, wAttrmap
+	lb bc, 5, 5
+	ld a, 1
+	call FillBoxWithByte
+
+	; 'Item' and ball overlap (BG2).
+	hlcoord 1, 4, wAttrmap
+	lb bc, 1, 3
+	ld a, 2
+	call FillBoxWithByte
+
+	; ball icon (BG3).
+	hlcoord 1, 5, wAttrmap
+	lb bc, 2, 3
+	ld a, 3
+	call FillBoxWithByte
+
+	; Item icon (BG7).
+	hlcoord 1, 8, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxWithByte
+
+	call ApplyAttrmap
+	call ApplyPals
+	ret
+
+PCItemUIPals:
+INCLUDE "gfx/pc/pc_item_ui.pal"
 
 _CGB_TrainerOrMonFrontpicPals:
 	ld de, wBGPals1

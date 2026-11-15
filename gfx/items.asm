@@ -14,6 +14,17 @@ _UpdateItemIcon:
 	call ApplyTilemapInVBlank
 	ret
 
+UpdatePCItemIconAndDescription::
+	farcall UpdateItemDescription
+	ld a, [wCurItem]
+	ld c, a
+	ld de, vTiles2 tile $4b
+	call DecompressItemIcon
+	farcall LoadItemIconPalette
+	call SetDefaultBGPAndOBP
+	call ApplyTilemapInVBlank
+	ret
+
 DecompressItemIcon::
 	ld a, c
 	cp NUM_ITEMS + 1

@@ -1,0 +1,5 @@
+; PC item storage UI
+	RGB 31,31,31, 16,26,31, 11,21,30, 00,00,00 ; blue tiles
+	RGB 31,31,31, 29,17,05, 13,13,13, 00,00,00 ; orange 'withdraw item'
+	RGB 31,31,31, 29,17,05, 13,13,13, 31,26,15 ; orange pokeball (overlap)
+	RGB 31,31,31, 29,17,05, 31,26,15, 00,00,00 ; orange pokeball
