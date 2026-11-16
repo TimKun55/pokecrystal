@@ -208,7 +208,15 @@ CheckStringForErrors::
 	and a ; '<NULL>'
 	jr z, .NextChar
 	cp FIRST_REGULAR_TEXT_CHAR
+	jr c, .check_controls
+	; Reject $c0-$c4, which are blank in the standard/mail font.
+	cp $c0
+	jr c, .NextChar
+	cp $c5
 	jr nc, .NextChar
+	jr .Fail
+
+.check_controls:
 	cp '<NEXT>'
 	jr z, .NextChar
 	cp '@'

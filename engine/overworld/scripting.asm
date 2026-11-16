@@ -1722,7 +1722,7 @@ Script_givepokemail:
 	ld b, a
 	push bc
 	inc hl
-	ld bc, MAIL_MSG_LENGTH
+	ld bc, MAIL_MSG_LENGTH + 1
 	ld de, wMonMailMessageBuffer
 	ld a, [wScriptBank]
 	call FarCopyBytes

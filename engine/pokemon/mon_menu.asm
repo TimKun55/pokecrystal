@@ -591,7 +591,7 @@ ComposeMailMessage:
 	farcall _ComposeMailMessage
 	ld hl, wPlayerName
 	ld de, wTempMailAuthor
-	ld bc, NAME_LENGTH - 1
+	ld bc, PLAYER_NAME_LENGTH
 	call CopyBytes
 	ld hl, wPlayerID
 	ld bc, 2

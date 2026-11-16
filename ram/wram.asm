@@ -2352,7 +2352,8 @@ NEXTU
 wCurMessageScrollPosition:: db
 wCurMessageIndex:: db
 wMailboxCount:: db
-wMailboxItems:: ds MAILBOX_CAPACITY
+; +1 for the terminator written by InitMail
+wMailboxItems:: ds MAILBOX_CAPACITY + 1
 ENDU
 
 wListPointer:: dw

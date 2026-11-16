@@ -125,7 +125,7 @@ CheckPokeMail::
 	push de
 	farcall SelectMonFromParty
 	ld a, POKEMAIL_REFUSED
-	jr c, .pop_return
+	jp c, .pop_return
 
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Item
@@ -134,7 +134,7 @@ CheckPokeMail::
 	ld d, [hl]
 	farcall ItemIsMail
 	ld a, POKEMAIL_NO_MAIL
-	jr nc, .pop_return
+	jp nc, .pop_return
 
 	ld a, BANK(sPartyMail)
 	call OpenSRAM
@@ -156,7 +156,14 @@ CheckPokeMail::
 	ld a, b
 	call GetFarByte
 	cp '@'
-	jr z, .done
+	jr nz, .not_terminator
+	; Expected terminator: stored mail must also be terminated here.
+	ld a, c
+	cp '@'
+	ld a, POKEMAIL_WRONG_MAIL
+	jr nz, .close_sram_return
+	jr .done
+.not_terminator
 	cp c
 	ld a, POKEMAIL_WRONG_MAIL
 	jr nz, .close_sram_return
@@ -166,6 +173,17 @@ CheckPokeMail::
 	dec a
 	ld [wTempByteValue], a
 	jr nz, .loop
+
+	; If all 32 bytes matched, the 33rd byte must be the terminator.
+	ld a, b
+	call GetFarByte
+	cp '@'
+	ld a, POKEMAIL_WRONG_MAIL
+	jr nz, .close_sram_return
+	ld a, [de]
+	cp '@'
+	ld a, POKEMAIL_WRONG_MAIL
+	jr nz, .close_sram_return
 
 .done
 	farcall CheckCurPartyMonFainted
@@ -216,8 +234,13 @@ GivePokeMail::
 	ld hl, wPartyMonOTs
 	ld bc, NAME_LENGTH
 	call AddNTimes
-	ld bc, NAME_LENGTH - 1
+	ld bc, PLAYER_NAME_LENGTH
 	call CopyBytes
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
 	pop af
 	ld hl, wPartyMon1ID
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -352,7 +375,7 @@ MailboxPC_GetMailAuthor:
 	call OpenSRAM
 	ld de, wStringBuffer2
 	push de
-	ld bc, NAME_LENGTH - 1
+	ld bc, PLAYER_NAME_LENGTH
 	call CopyBytes
 	ld a, '@'
 	ld [de], a

@@ -29,13 +29,10 @@ ReadAnyMail:
 	call LoadFontsExtra
 	pop de
 	push de
-	ld a, BANK(sPartyMail)
-	call OpenSRAM
-	call CloseSRAM
-	ld de, StandardEnglishFont
+	ld de, FontNormal
 .got_font
 	ld hl, vTiles1
-	lb bc, BANK(StandardEnglishFont), $80
+	lb bc, BANK(Fonts), $80
 	call Get1bpp
 	pop de
 	call .LoadGFX
@@ -685,11 +682,11 @@ MailGFX_PlaceMessage:
 	call CloseSRAM
 	ld hl, wTempMailAuthor
 	ld de, wMonOrItemNameBuffer
-	ld bc, NAME_LENGTH - 1
+	ld bc, PLAYER_NAME_LENGTH
 	call CopyBytes
 	ld a, '@'
 	ld [wTempMailAuthor], a
-	ld [wMonOrItemNameBuffer + NAME_LENGTH - 1], a
+	ld [wMonOrItemNameBuffer + PLAYER_NAME_LENGTH - 1], a
 	ld de, wTempMailMessage
 	hlcoord 2, 7
 	call PlaceString
@@ -708,18 +705,6 @@ MailGFX_PlaceMessage:
 
 .place_author
 	jp PlaceString
-
-InvertBytes: ; unreferenced
-; invert bc bytes starting at hl
-.loop
-	ld a, [hl]
-	xor $ff
-	ld [hli], a
-	dec bc
-	ld a, b
-	or c
-	jr nz, .loop
-	ret
 
 DrawMailBorder:
 	hlcoord 0, 0
@@ -767,11 +752,6 @@ Mail_Place14TileAlternatingRow:
 	ld b, 14 / 2
 	jr Mail_PlaceAlternatingRow
 
-Mail_Place16TileAlternatingRow: ; unreferenced
-	push af
-	ld b, 16 / 2
-	jr Mail_PlaceAlternatingRow
-
 Mail_Place18TileAlternatingRow:
 	push af
 	ld b, 18 / 2
@@ -812,10 +792,6 @@ Mail_PlaceAlternatingColumn:
 	ld [hl], a
 	pop af
 	ret
-
-Mail_Draw7TileRow: ; unreferenced
-	ld b, 7
-	jr Mail_DrawRowLoop
 
 Mail_Draw13TileRow:
 	ld b, 13
@@ -921,6 +897,3 @@ ItemIsMail::
 	jp IsInArray
 
 INCLUDE "data/items/mail_items.asm"
-
-StandardEnglishFont:
-INCBIN "gfx/font/english.1bpp"

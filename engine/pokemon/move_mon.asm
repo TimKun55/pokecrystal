@@ -1032,8 +1032,7 @@ RemoveMonFromParty:
 	ld hl, wPartyCount
 	ld a, [wCurPartyMon]
 	cp [hl]
-	ret z
-	jr z, .close_sram
+	jr z, .clear_freed_slot
 	; Shift our mail messages up.
 	ld hl, sPartyMail
 	ld bc, MAIL_STRUCT_LENGTH
@@ -1058,7 +1057,17 @@ RemoveMonFromParty:
 	ld a, [wPartyCount]
 	cp b
 	jr nz, .loop2
-.close_sram
+
+.clear_freed_slot
+	; Zero the mail slot that was just freed.
+	ld a, [wPartyCount]
+	ld hl, sPartyMail
+	ld bc, MAIL_STRUCT_LENGTH
+	call AddNTimes
+	xor a
+	ld bc, MAIL_STRUCT_LENGTH
+	call ByteFill
+
 	jp CloseSRAM
 
 ComputeNPCTrademonStats:

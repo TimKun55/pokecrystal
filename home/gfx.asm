@@ -109,6 +109,14 @@ LoadStandardFont::
 	farcall _LoadStandardFont
 	ret
 
+GetFontPointer::
+	farcall _GetFontPointer
+	ret
+
+GetInversedFontPointer::
+	farcall _GetInversedFontPointer
+	ret
+
 LoadFontsBattleExtra::
 	farcall _LoadFontsBattleExtra
 	ret
@@ -119,7 +127,6 @@ LoadExpBarGFX::
 
 LoadFontsExtra::
 	farcall _LoadFontsExtra1
-	farcall _LoadFontsExtra2
 	ret
 
 DecompressRequest2bpp::

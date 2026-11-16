@@ -55,7 +55,7 @@ RandyScript:
 
 GiftFarfetchdMail:
 	db FLOWER_MAIL
-	db   "Dark Cave leads"
+	db   "Dark Cave leads "
 	next "to another road@"
 
 GiftFarfetchdName:

@@ -3489,28 +3489,32 @@ Pokedex_PreloadEvoFont:
 	ldh [rVBK], a
 	ret
 
-Pokedex_ChooseInversedFont:
-; de = the inverted font matching wFontType. Leaves hl and bc alone.
+_GetInversedFontPointer::
 	ld a, [wFontType]
 	cp FONT_SERIF
-	jr z, .font_serif
+	jr z, .serif
 	cp FONT_MICR
-	jr z, .font_micr
+	jr z, .micr
 	cp FONT_SMALL
-	jr z, .font_small
-
-; .font_1
+	jr z, .small
 	ld de, FontNormalInversed
 	ret
-.font_serif
+
+.serif
 	ld de, FontSerifInversed
 	ret
-.font_micr
+
+.micr
 	ld de, FontMicrInversed
 	ret
-.font_small
+
+.small
 	ld de, FontSmallInversed
 	ret
+
+Pokedex_ChooseInversedFont:
+; de = the inverted font matching wFontType. Leaves hl and bc alone.
+	jp GetInversedFontPointer
 
 Pokedex_LoadInversedFont:
 	ld a, 1
