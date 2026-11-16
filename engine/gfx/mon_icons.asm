@@ -1104,6 +1104,188 @@ Trade_LoadMonMask::
 	ldh [hCGBPalUpdate], a
 	ret
 
+; ---- Trainer info (Actual Stats page) minis --------------------------------
+; Player's battle mon: OBJ palette 4, tiles $40-$47, top-left of the player box.
+; Enemy's battle mon:  OBJ palette 5, tiles $50-$57, top-left of the enemy box.
+
+DEF TRAINER_INFO_PLAYER_TILE EQU $40
+DEF TRAINER_INFO_ENEMY_TILE  EQU $50
+
+TrainerInfo_ShowMinis::
+	callfar ClearSpriteAnims2
+	call TrainerInfo_ShowPlayerMini
+	jp TrainerInfo_ShowEnemyMini
+
+TrainerInfo_ShowPlayerMini:
+	ld a, [wBattleMonSpecies]
+	ld [wCurIcon], a
+	ld de, wBattleMonDVs
+	ld a, TRAINER_INFO_PLAYER_TILE
+	call GetMiniNoItem                ; 8 tiles from $40, DVs in de
+	ld d, $38                         ; y: row 7
+	ld e, $20                         ; x: column 4
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
+	call _InitSpriteAnimStruct        ; bc = struct
+	ret c                             ; no free struct: give up
+	ld hl, wBattleMonDVs
+	ld d, 4
+	ld e, TRAINER_INFO_PLAYER_TILE
+	jp TrainerInfo_FinishMini
+
+TrainerInfo_ShowEnemyMini:
+	ld a, [wEnemyMonSpecies]
+	ld [wCurIcon], a
+	ld de, wEnemyMonDVs
+	ld a, TRAINER_INFO_ENEMY_TILE
+	call GetMiniNoItem
+	ld d, $38                         ; y: row 7
+	ld e, $70                         ; x: column 14
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
+	call _InitSpriteAnimStruct
+	ret c                             ; no free struct: give up
+	ld hl, wEnemyMonDVs
+	ld d, 5
+	ld e, TRAINER_INFO_ENEMY_TILE
+; fallthrough
+; bc = sprite struct, hl = DV pointer, d = OBJ palette, e = first tile
+TrainerInfo_FinishMini:
+	push hl
+	push de
+	ld hl, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld [hl], e
+	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
+	add hl, bc
+	ld [hl], SPRITE_ANIM_FUNC_NULL
+	call TrainerInfo_SetOAMSlot       ; sets hObjectStructIndex from bc
+	pop de
+	pop hl
+	ld a, [wCurIcon]
+	jp TrainerInfo_SetMiniPalette
+
+; bc = sprite struct. hObjectStructIndex = number of active structs before it.
+TrainerInfo_SetOAMSlot:
+	ld hl, wSpriteAnimationStructs
+	ld d, 0
+.count
+	ld a, h
+	cp b
+	jr nz, .not_this
+	ld a, l
+	cp c
+	jr z, .counted
+.not_this
+	ld a, [hl]
+	and a
+	jr z, .inactive
+	inc d
+.inactive
+	ld a, l
+	add SPRITEANIMSTRUCT_LENGTH
+	ld l, a
+	jr nc, .count
+	inc h
+	jr .count
+.counted
+	ld a, d
+	ldh [hObjectStructIndex], a
+	ret
+
+; a = species, hl = DV pointer, d = OBJ palette number
+; Same colour copy as NamingScreen_SetMiniPalette, but for any palette and
+; shiny is decided by these DVs, not by the Pokedex toggle.
+TrainerInfo_SetMiniPalette:
+	push de
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, PokemonPalettes
+	add hl, de
+	pop bc                            ; bc = DV pointer
+	push hl
+	farcall CheckShininess            ; carry = shiny
+	pop hl
+	jr nc, .not_shiny
+	ld de, 4
+	add hl, de
+.not_shiny
+	pop de                            ; d = palette number
+	push de
+	push hl                           ; source
+	ld a, d
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, wOBPals1 + 2
+	add hl, de
+	ld d, h
+	ld e, l                           ; de = destination
+	pop hl
+	ld b, BANK(PokemonPalettes)
+	ld c, BANK(wOBPals1)
+	call CopyMiniPaletteBytes
+	pop de                            ; d = palette number
+	push de
+	ld a, d
+	add a
+	add a
+	add a                             ; a = palette * 8
+	ld e, a
+	ld d, 0
+	ld hl, wOBPals1 + 6               ; colour 3 of the palette
+	add hl, de
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wOBPals1)
+	ldh [rWBK], a
+	xor a
+	ld [hli], a                       ; black, low byte
+	ld [hl], a                        ; black, high byte
+	pop af
+	ldh [rWBK], a
+	pop de
+	ld a, d
+	call Pokedex_SetMiniPalette       ; uses hObjectStructIndex
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+; Deactivates both minis and clears OAM. Called on page change and on exit.
+TrainerInfo_HideMinis::
+	ld hl, wSpriteAnimationStructs
+	ld e, NUM_SPRITE_ANIM_STRUCTS
+.loop
+	ld a, [hl]
+	and a
+	jr z, .next
+	push hl
+	ld bc, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	cp TRAINER_INFO_PLAYER_TILE
+	jr z, .deactivate
+	cp TRAINER_INFO_ENEMY_TILE
+	jr nz, .next
+.deactivate
+	xor a
+	ld [hl], a
+.next
+	ld a, l
+	add SPRITEANIMSTRUCT_LENGTH
+	ld l, a
+	jr nc, .no_carry
+	inc h
+.no_carry
+	dec e
+	jr nz, .loop
+	jp ClearSprites
 
 INCLUDE "data/pokemon/menu_icon_pals.asm"
 

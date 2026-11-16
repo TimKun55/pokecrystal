@@ -643,6 +643,7 @@ TrainerBattleInfo:
 	call UpdatePageText
 	call StatChangesInfoBox
 	call WaitButtonInfoTrainer
+	farcall TrainerInfo_HideMinis
 	jp PopBCDEHL
 
 StatChangesInfoBox:
@@ -778,6 +779,7 @@ StatsInfoBox:
 	ld hl, wEnemyMonMaxHP
 	call StatsInfoBoxLoop
 
+	farcall TrainerInfo_ShowMinis
 	call PlayerTypeIcons
 	jp EnemyTypeIcons
 
@@ -1254,7 +1256,8 @@ FieldTexts:
 
 JoyWaitAorBorDPADInfoTrainer:
 .loop
-	call DelayFrame
+	callfar PlaySpriteAnimationsAndDelayFrame
+	call WaitBGMap
 	call GetJoypad
 	ldh a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON
@@ -1266,12 +1269,12 @@ JoyWaitAorBorDPADInfoTrainer:
 	and D_LEFT
 	call nz, InfoBoxLeftPress
 	call UpdateTimeAndPals
-	jr .loop
+	jp .loop
 
 WaitButtonInfoTrainer:
 	ldh a, [hOAMUpdate]
 	push af
-	ld a, 1
+	xor a                             ; 0 = let VBlank copy shadow OAM
 	ldh [hOAMUpdate], a
 	call WaitBGMap
 	call JoyWaitAorBorDPADInfoTrainer
@@ -1377,6 +1380,7 @@ DecreasePage:
 ; Update text for each page
 ; ========================
 UpdatePageText:
+	farcall TrainerInfo_HideMinis
 	hlcoord 0, -1
 	lb bc, 1, 18
 	call Textbox
@@ -1468,7 +1472,7 @@ PlayerTypeIcons:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
-	hlcoord 3, 4
+	hlcoord 5, 4
 	ld [hl], $00
 	inc hl
 	ld [hl], $01
@@ -1498,7 +1502,7 @@ PlayerTypeIcons:
 	call Request2bpp
 
 ; place Type 2 GFX
-	hlcoord 3, 5
+	hlcoord 5, 5
 	ld [hl], $04
 	inc hl
 	ld [hl], $05
@@ -1525,7 +1529,7 @@ EnemyTypeIcons:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
-	hlcoord 13, 4
+	hlcoord 15, 4
 	ld [hl], $08
 	inc hl
 	ld [hl], $09
@@ -1555,7 +1559,7 @@ EnemyTypeIcons:
 	call Request2bpp
 	
 ; place Type 2 GFX
-	hlcoord 13, 5
+	hlcoord 15, 5
 	ld [hl], $0c
 	inc hl
 	ld [hl], $0d
