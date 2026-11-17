@@ -222,21 +222,6 @@ _CGB_FinishBattleScreenLayout:
 	ld a, PAL_BATTLE_BG_TEXT
 	call ByteFill
 
-; flip reused tiles
-; HUD vertical bar thingy
-;	hlcoord 18, 10, wAttrmap
-;	ld bc, 1
-;	ld a, PAL_BATTLE_BG_PLAYER_HP
-;	set 5, a ; flips tiles on x axis
-;	call ByteFill
-
-; player exp
-;	hlcoord 10, 11, wAttrmap
-;	lb bc, 1, 8
-;	ld a, PAL_BATTLE_BG_EXP
-;	set 5, a ; flips tiles on x axis
-;	call FillBoxCGB
-
 ; status icons
 	; enemy
 	hlcoord 2, 1, wAttrmap
@@ -249,20 +234,13 @@ _CGB_FinishBattleScreenLayout:
 	ld a, $6
 	call FillBoxCGB
 
-; Move Type and Category icons: palette 5 (initialised to the text
-; palette in _CGB_BattleColors; see LoadBattleCategoryAndTypePals).
-; The icons sit in the "lower box" at (1,13)/(3,14), i.e. over
-; textbox tiles, not over the backsprite, so sharing palette 5 with
-; the text area is safe and the palette can be restored to text on
-; close (see ParsePlayerAction).
-	hlcoord 1, 13, wAttrmap ; type icon, 4 tiles
-	ld bc, 4
-	ld a, $5 ; PAL_BATTLE_BG_5
-	call ByteFill
-	hlcoord 3, 14, wAttrmap ; category icon, 2 tiles
-	ld bc, 2
-	ld a, $5 ; PAL_BATTLE_BG_5
-	call ByteFill
+; Move Type and Category icons: palette 5. These tiles sit over textbox
+; tiles, so they default to the text palette (BG7) here. MoveInfoBox
+; switches them to BG5 while the box is open and ParsePlayerAction
+; restores BG7 on close; leaving them as BG7 by default means later
+; GetCGBLayout calls do not re-assert BG5 (and thus do not expose them
+; to animation palette changes) while the box is closed.
+; 	(no attrmap fill; rows 12-17 already initialised to BG7 above)
 
 .done
 	ld hl, BattleObjectPals
