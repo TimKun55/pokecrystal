@@ -488,6 +488,8 @@ PokegearClock_Joypad:
 .clockreset
  	farcall RestartClock
  	call InitPokegearTilemap ; needed incase exit without setting the time
+	ld c, POKEGEARSTATE_CLOCKINIT
+	ld b, POKEGEARCARD_CLOCK
  	jr .done
 
 .no_map_card
