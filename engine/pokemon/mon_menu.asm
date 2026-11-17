@@ -191,6 +191,7 @@ SwitchPartyMons:
 	ld [wPartyMenuActionText], a
 
 	farcall LoadPartyMenuGFX
+	call SetDefaultBGPAndOBP
 	farcall InitPartyMenuWithCancel
 	farcall InitPartyMenuGFX
 
