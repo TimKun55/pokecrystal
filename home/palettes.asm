@@ -311,7 +311,7 @@ ReloadSpritesNoPalettes::
 	ld a, BANK(wBGPals2)
 	ldh [rWBK], a
 	ld hl, wBGPals2
-	ld bc, (8 palettes) + (2 palettes)
+	ld bc, (8 palettes) + (8 palettes)
 	xor a
 	call ByteFill
 	pop af

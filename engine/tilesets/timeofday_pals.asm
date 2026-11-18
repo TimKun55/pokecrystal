@@ -124,6 +124,8 @@ FadeInPalettes_EnableDynNoApply::
 	farcall EnableDynPalUpdatesNoApply
 	; fallthrough
 FadeInPalettes::
+	ld hl, wPalFlags
+	res DEFER_DYN_PAL_APPLY_F, [hl]
 	ld c, 10
 	call FadePalettes
 	ret
@@ -158,6 +160,8 @@ BattleTowerFade:
 	ret
 
 FadeInFromBlack:
+	ld hl, wPalFlags
+	res DEFER_DYN_PAL_APPLY_F, [hl]
 	ld c, $0
 	call GetTimePalFade
 	ld b, $4
@@ -165,6 +169,8 @@ FadeInFromBlack:
 	ret
 
 FadeOutToBlack:
+	ld hl, wPalFlags
+	set DEFER_DYN_PAL_APPLY_F, [hl]
 	ld c, $9
 	call GetTimePalFade
 	ld b, $4

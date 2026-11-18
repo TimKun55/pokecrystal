@@ -393,6 +393,7 @@ DEF NUM_UNLOCKED_UNOWN_SETS EQU const_value
 	const SCAN_OBJECTS_FIRST_F ; 1
 	const USE_DAYTIME_PAL_F    ; 2
 	const DISABLE_DYN_PAL_F    ; 3
+	const DEFER_DYN_PAL_APPLY_F ; 4
 
 ; hVBlank::
 ; VBlankHandlers indexes (see home/vblank.asm)

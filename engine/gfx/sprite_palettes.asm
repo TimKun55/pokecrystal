@@ -77,6 +77,8 @@ CopySpritePal::
 	ld hl, wPalFlags
 	bit NO_DYN_PAL_APPLY_F, [hl]
 	jr nz, .skip_apply
+	bit DEFER_DYN_PAL_APPLY_F, [hl]
+	jr nz, .skip_apply
 	call ApplyOBPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
