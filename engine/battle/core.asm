@@ -7068,8 +7068,8 @@ GiveExperiencePoints:
 	push hl
 	ld hl, 0
 	add hl, de
-	ld a, BANK(WriteDownOldStatsForGainCalculation)
-	ld de, WriteDownOldStatsForGainCalculation
+	ld a, BANK(SaveLevelUpOldStats)
+	ld de, SaveLevelUpOldStats
 	call FarCall_de
 	pop hl
 	pop de
@@ -7150,16 +7150,8 @@ GiveExperiencePoints:
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
-	hlcoord 9, 0
-	ld b, 10
-	ld c, 9
-	call Textbox
-	hlcoord 11, 1
-	ld bc, 4
+
 	predef PrintTempMonLevelUpStats
-;	ld c, 30
-;	call DelayFrames
-	call WaitPressAorB_BlinkCursor
 	call SafeLoadTempTilemapToTilemap
 	xor a ; PARTYMON
 	ld [wMonType], a

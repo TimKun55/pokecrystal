@@ -1428,6 +1428,7 @@ RareCandyEffect:
 
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
+	newfarcall SaveLevelUpOldStats
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
@@ -1460,69 +1461,12 @@ RareCandyEffect:
 	ld [wMonType], a
 	predef CopyMonToTempMon
 
-	hlcoord 9, 0
-	ld b, 10
-	ld c, 9
-	call Textbox
-
-	hlcoord 11, 1
-	ld bc, 4
-	predef PrintTempMonStats
-
-	call WaitPressAorB_BlinkCursor
-
-; Remove the stat box when a Pokemon learns a new move.
-	xor a
+; Draw the stat box on the party menu.
+	ld a, $1
 	ldh [hBGMapMode], a
-	hlcoord 9, 0, wAttrmap
-	ld c, 12
-.row
-	push bc
-	ld b, 11
-.col
-	ld [hli], a
-	dec b
-	jr nz, .col
-	pop bc
-	ld de, SCREEN_WIDTH - 11
-	add hl, de
-	dec c
-	jr nz, .row
 
-	hlcoord 9, 0
-	ld b, 12
-	ld c, 11
-	call ClearBox
+	predef PrintTempMonLevelUpStats
 
-	ld a, [wCurPartySpecies]
-	push af
-	ld a, [wCurPartyMon]
-	push af
-
-	ld a, [wOptions]
-	push af
-	set NO_TEXT_SCROLL, a
-	ld [wOptions], a
-	farcall PlacePartyNicknames
-	farcall PlacePartyHPBar
-	farcall PlacePartyMenuHPDigits
-	farcall PlacePartyMonLevel
-	farcall PlacePartyMonGender
-	farcall PlacePartyMonStatus
-	pop af
-	ld [wOptions], a
-	pop af
-	ld [wCurPartyMon], a
-	pop af
-	ld [wCurPartySpecies], a
-
-	call IsCGB
-	jr nz, .cgb
-	call WaitBGMap
-	jr .flushed
-.cgb
-	call CopyTilemapAtOnce
-.flushed
 	xor a ; PARTYMON
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]

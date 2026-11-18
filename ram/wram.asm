@@ -3226,8 +3226,8 @@ wNeededPalIndex:: db
 
 	ds 21
 
-wTempMonLevelUpStatGain:: ds NUM_BATTLE_STATS
-wTempMonStatGainDisplay:: db
+; low bytes of a mon's stats before a level-up (SaveLevelUpOldStats)
+wLevelUpOldStats:: ds NUM_STATS
 
 ;	ds 100
 

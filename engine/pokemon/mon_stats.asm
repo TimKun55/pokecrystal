@@ -82,75 +82,205 @@ DrawHP:
 	pop de
 	ret
 
-PrintTempMonLevelUpStats:
+SaveLevelUpOldStats::
+; hl = a party mon's MON_MAXHP, before a level-up changes its stats. Keep
+; the low byte of each stat (HP, Atk, Def, Spe, SpA, SpD) for
+; PrintTempMonLevelUpStats: a level-up's gain fits in a byte.
+; Preserves all registers.
 	push hl
-	call PrintTempMonStats
+	push de
+	push bc
+	push af
+	ld de, wLevelUpOldStats
+	ld b, NUM_STATS
+.loop
+	inc hl
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .loop
+	jp PopAFBCDEHL
+
+; scratch for PrintTempMonLevelUpStats
+DEF LVUP_OLD_STAT  EQUS "wStringBuffer3"     ; dw, big-endian
+DEF LVUP_GAIN      EQUS "wStringBuffer3 + 2" ; db
+DEF LVUP_GAIN_LEN  EQUS "wStringBuffer3 + 3" ; db: "+" and its digits
+DEF LVUP_SHOW_GAIN EQUS "wStringBuffer3 + 4" ; db
+
+	assert wTempMonSpclDef - wTempMonMaxHP == (NUM_STATS - 1) * 2, \
+		"wTempMon's stats must be MaxHP, Atk, Def, Spe, SpA, SpD"
+
+PrintTempMonLevelUpStats:
+; After a level-up (wTempMon = the mon now, wLevelUpOldStats from
+; SaveLevelUpOldStats), as in Polished Crystal: a box with each stat's
+; old value and its gain, then one with the new values. Each waits for
+; A or B.
+; The gain column is as wide as the largest gain needs.
+	lb bc, 2, 0 ; b = width ("+" and 1 digit), c = stat
+.width_loop
+	call .GetGain
+	ld d, 2
+	cp 10
+	jr c, .got_width
+	inc d
+	cp 100
+	jr c, .got_width
+	inc d
+.got_width
+	ld a, d
+	cp b
+	jr c, .not_wider
+	ld b, a
+.not_wider
+	inc c
+	ld a, c
+	cp NUM_STATS
+	jr nz, .width_loop
+	ld a, b
+	ld [LVUP_GAIN_LEN], a
+
+	ld a, TRUE
+	call .Page
+	xor a ; FALSE
+	; fallthrough
+
+.Page:
+; a: TRUE = old values and gains, FALSE = new values
+	ld [LVUP_SHOW_GAIN], a
+; the box: rows 4-11, from column 6 - width to the right edge
+	hlcoord 6, 4
+	call .LeftByGainLen
+	ld b, 6
+	ld a, [LVUP_GAIN_LEN]
+	add 12
+	ld c, a
+	call Textbox
+	hlcoord 7, 5
+	call .LeftByGainLen
+	ld de, .Names
+	ld bc, .Order
+.row
+	push bc
+	call PlaceString ; keeps hl, leaves de at the "@"
+	inc de
+	pop bc
+	push de
+	push hl
+	push bc
+	ld a, [bc]
+	ld c, a
+	call .GetGain
+	ld de, 9
+	add hl, de ; the value column
+	ld a, [LVUP_SHOW_GAIN]
+	and a
+	jr z, .new_value
+	push hl
+	ld de, LVUP_OLD_STAT
+	lb bc, 2, 3
+	call PrintNum
 	pop hl
+	inc hl
+	inc hl
+	inc hl
+	ld [hl], '+'
+	inc hl
+	ld a, [LVUP_GAIN_LEN]
+	dec a
+	ld c, a
+	dec a
+	jr z, .one_digit ; (PrintNum misplaces a lone digit)
+	ld b, 1
+	ld de, LVUP_GAIN
+	call PrintNum
+	jr .next_row
+
+.one_digit
+	ld a, [LVUP_GAIN]
+	add '0'
+	ld [hl], a
+	jr .next_row
+
+.new_value
+	ld b, 0
+	push hl
+	ld hl, wTempMonMaxHP
+	add hl, bc
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+	lb bc, 2, 3
+	call PrintNum
+
+.next_row
+	pop bc
+	pop hl
+	pop de
+	inc bc
+	push bc
 	ld bc, SCREEN_WIDTH
 	add hl, bc
-	lb bc, 1, 2 ; Parameters for PrintNum. "Print c digits of the b-byte value from de to hl."
-	ld a, [wTempMonLevelUpStatGain + 0]
-	ld e, a
-	ld a, [wTempMonAttack + 1] ; Big-endian.
-	call .PrintStatGain
+	pop bc
+	ld a, [bc]
+	cp -1
+	jr nz, .row
+	jp WaitPressAorB_BlinkCursor
 
-	ld a, [wTempMonLevelUpStatGain + 1]
-	ld e, a
-	ld a, [wTempMonDefense + 1] ; Big-endian.
-	call .PrintStatGain
-
-	ld a, [wTempMonLevelUpStatGain + 2]
-	ld e, a
-	ld a, [wTempMonSpclAtk + 1] ; Big-endian.
-	call .PrintStatGain
-
-	ld a, [wTempMonLevelUpStatGain + 3]
-	ld e, a
-	ld a, [wTempMonSpclDef + 1] ; Big-endian.
-	call .PrintStatGain
-
-	ld a, [wTempMonLevelUpStatGain + 4]
-	ld e, a
-	ld a, [wTempMonSpeed + 1] ; Big-endian.
-	; fallthrough
-	
-.PrintStatGain:
-	sub e ; Note: the amount of stat gain always fits within 1 byte during normal gameplay.
-	ld [wTempMonStatGainDisplay], a
-
-	inc hl
-	inc hl
-	inc hl
-	ld [hl], '→'
-	dec hl
-	dec hl
-	dec hl
-
-	push hl
-	cp 100
-	jr c, .ValueCapped
-
-	ld c, 3
-
-.ValueCapped
-	ld de, wTempMonStatGainDisplay
-	call PrintNum
-	ld c, 2
-	pop hl
-
-	push hl
-	ld a, [wTempMonStatGainDisplay]
-	cp 10
-	jr c, .OneDigit
-
-	dec hl ; If there are 2 digits, we shift the "+" sign to the left, so it overlaps the leading 0.
-.OneDigit
-	ld [hl], '+'
-	pop hl
-
-	ld de, SCREEN_WIDTH * 2
-	add hl, de
+.LeftByGainLen:
+; hl -= [LVUP_GAIN_LEN]
+	ld a, [LVUP_GAIN_LEN]
+	cpl
+	inc a
+	add l
+	ld l, a
+	ret c
+	dec h
 	ret
+
+.GetGain:
+; c = stat (MaxHP, Atk, Def, Spe, SpA, SpD). Returns its gain in a and
+; LVUP_GAIN, and its old value in LVUP_OLD_STAT. Preserves bc, de, hl.
+	push hl
+	push de
+	push bc
+	ld b, 0
+	ld hl, wLevelUpOldStats
+	add hl, bc
+	ld e, [hl]
+	ld hl, wTempMonMaxHP
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	sub e
+	ld b, a ; gain
+	ld a, [hl]
+	sub b
+	ld [LVUP_OLD_STAT + 1], a
+	ld a, d
+	sbc 0
+	ld [LVUP_OLD_STAT], a
+	ld a, b
+	ld [LVUP_GAIN], a
+	pop bc
+	pop de
+	pop hl
+	ret
+
+.Order:
+; shown in this order
+	db 0, 1, 2, 4, 5, 3, -1
+
+.Names:
+	db "Health@"
+	db "Attack@"
+	db "Defense@"
+	db "Sp.Atk@"
+	db "Sp.Def@"
+	db "Speed@"
 
 PrintTempMonStats:
 ; Print wTempMon's stats at hl, with spacing bc.

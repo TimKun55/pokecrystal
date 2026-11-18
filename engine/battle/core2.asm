@@ -552,30 +552,6 @@ HandleRedsPikachuDefenses:
 	ld b, 4
 	jp Divide
 
-WriteDownOldStatsForGainCalculation::
-	inc hl ; Max HP.
-	inc hl ; Max HP + 1.
-	inc hl ; Atk high byte (big-endian).
-	ld a, [hli]
-	ld [wTempMonLevelUpStatGain + 0], a ; Atk.
-	inc hl
-
-	ld a, [hli]
-	ld [wTempMonLevelUpStatGain + 1], a ; Def.
-	inc hl
-
-	ld a, [hli]
-	ld [wTempMonLevelUpStatGain + 4], a ; Speed.
-	inc hl
-
-	ld a, [hli]
-	ld [wTempMonLevelUpStatGain + 2], a ; Special atk.
-	inc hl
-
-	ld a, [hl]
-	ld [wTempMonLevelUpStatGain + 3], a ; Special def.
-	ret
-
 GetWeatherImage:
 	ld a, [wBattleWeather]
 	ld de, ClearWeatherImage
