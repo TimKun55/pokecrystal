@@ -23,6 +23,8 @@ FruitTreeScript::
 	sjump .end
 
 .fruit
+	setval 2
+	writemem wItemQuantityChange
 	farwritetext _HeyItsFruitText
 	callasm GetFruitTreeCount
 	ifequal FRUIT_TREE_1_MIN, .try_one
@@ -31,21 +33,21 @@ FruitTreeScript::
 	giveitem ITEM_FROM_MEM, $3
 	iffalse .try_two
 	promptbutton
-	writetext ObtainedThreeFruitText
+	writetext PickedFruitText
 	sjump .continue
 .try_two
 	readmem wCurFruit
 	giveitem ITEM_FROM_MEM, $2
 	iffalse .try_one
 	promptbutton
-	writetext ObtainedTwoFruitText
+	writetext PickedFruitText
 	sjump .continue
 .try_one
 	readmem wCurFruit
 	giveitem ITEM_FROM_MEM, $1
 	iffalse .packisfull
 	promptbutton
-	writetext ObtainedFruitText
+	writetext PickedFruitText
 .continue
 	callasm PickedFruitTree
 	specialsound
@@ -140,16 +142,8 @@ HeyItsFruitText:
 	text_far _HeyItsFruitText
 	text_end
 
-ObtainedFruitText:
-	text_far _ObtainedFruitText
-	text_end
-	
-ObtainedTwoFruitText:
-	text_far _ObtainedTwoFruitText
-	text_end
-
-ObtainedThreeFruitText:
-	text_far _ObtainedThreeFruitText
+PickedFruitText:
+	text_far _PickedFruitText
 	text_end
 
 FruitPackIsFullText:

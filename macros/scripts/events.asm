@@ -1086,4 +1086,10 @@ MACRO closepaintingpic
 	db closepaintingpic_command
 ENDM
 
+	const pluralise_command ; $ae
+MACRO pluralise
+	db pluralise_command
+	dw \1 ; pointer
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

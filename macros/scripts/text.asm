@@ -177,6 +177,11 @@ ENDM
 ;	text "text test"
 ;	done
 
+	const TX_PLURAL
+MACRO text_plural
+	db TX_PLURAL
+ENDM
+
 DEF NUM_TEXT_CMDS EQU const_value
 
 	const_next $50

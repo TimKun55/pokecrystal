@@ -147,6 +147,7 @@ wLinkMode::
 	db
 
 wScriptVar:: db
+wScriptVarBackup:: db
 
 wPlayerNextMovement:: db
 wPlayerMovement:: db

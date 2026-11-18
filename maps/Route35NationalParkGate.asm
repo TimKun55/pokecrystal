@@ -53,8 +53,12 @@ Route35NationalParkGateLeavingContestEarlyScript:
 	opentext
 	readvar VAR_CONTESTMINUTES
 	addval 1
+	writemem wScriptVarBackup
+	writemem wItemQuantityChange
 	getnum STRING_BUFFER_3
 	writetext Route35NationalParkGateOfficer1WantToFinishText
+	readmem wScriptVarBackup
+	writemem wItemQuantityChange
 	yesorno
 	iffalse .GoBackToContest
 	writetext Route35NationalParkGateOfficer1WaitAtNorthGateText
@@ -348,7 +352,10 @@ Route35NationalParkGateOfficer1WantToFinishText:
 	text "You still have @"
 	text_ram wStringBuffer3
 	text_start
-	line "minute(s) left."
+	line "@"
+	text "minute@"
+	text_plural
+	text " left."
 
 	para "Do you want to"
 	line "finish now?"

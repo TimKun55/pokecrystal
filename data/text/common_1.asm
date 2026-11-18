@@ -6,29 +6,19 @@ _FruitBearingTreeText::
 _HeyItsFruitText::
 	text "@"
 	text_ram wStringBuffer3
-	text "s"
+	text_plural
+	text_start
 	line "are growing!"
 	done
 
-_ObtainedFruitText::
-	text "Obtained one"
+_PickedFruitText::
+	text "<PLAYER> picked"
 	line "@"
+	text_decimal wItemQuantityChange, 1, 1
+	text " @"
 	text_ram wStringBuffer3
+	text_plural
 	text "!"
-	done
-	
-_ObtainedTwoFruitText::
-	text "Obtained two"
-	line "@"
-	text_ram wStringBuffer3
-	text "s!"
-	done
-	
-_ObtainedThreeFruitText::
-	text "Obtained three"
-	line "@"
-	text_ram wStringBuffer3
-	text "s!"
 	done
 
 _FruitPackIsFullText::

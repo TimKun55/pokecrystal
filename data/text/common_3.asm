@@ -119,9 +119,39 @@ _CoordinatesEventText::
 	text "Coordinates event"
 	done
 
-_ReceivedItemText::
+_GainedItemText::
 	text "<PLAYER> received"
 	line "@"
+	text_ram wStringBuffer4
+	text "."
+	done
+
+_GainedMultipleItemsText::
+	text "<PLAYER> received"
+	line "@"
+	text_decimal wItemQuantityChange, 1, 2
+	text " @"
+	text_ram wStringBuffer4
+	text_plural
+	text "."
+	done
+
+_GainedMulchText::
+	text "<PLAYER> received"
+	line "@"
+	text "a bag of @"
+	text_ram wStringBuffer4
+	text "."
+	done
+
+_GainedMultipleMulchesText::
+	text "<PLAYER> received"
+	line "@"
+	text_decimal wItemQuantityChange, 1, 2
+	text " @"
+	text "bag@"
+	text_plural
+	text " of @"
 	text_ram wStringBuffer4
 	text "."
 	done
@@ -130,6 +160,7 @@ _PutItemInPocketText::
 	text "<PLAYER> put the"
 	line "@"
 	text_ram wStringBuffer1
+	text_plural
 	text " in"
 	cont "the @"
 	text_ram wStringBuffer3
@@ -351,7 +382,8 @@ _MartFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(s)"
+	text_plural
+	text_start
 	line "will be ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -380,7 +412,8 @@ _HerbalLadyFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(s)"
+	text_plural
+	text_start
 	line "will be ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -463,7 +496,8 @@ _PharmacyFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
 	text_ram wStringBuffer2
-	text "(s)"
+	text_plural
+	text_start
 	line "will cost ¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text "."
@@ -583,7 +617,8 @@ _MartBoughtText::
 	text " for"
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)."
+	text_plural
+	text "."
 	done
 
 _SlotsBetHowManyCoinsText::

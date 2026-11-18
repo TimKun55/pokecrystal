@@ -767,6 +767,7 @@ TextCommands::
 	dw TextCommand_DAY           ; TX_DAY
 	dw TextCommand_FAR           ; TX_FAR
 	dw TextCommand_NAMETAG       ; TX_NAMETAG ; ntag
+	dw TextCommand_PLURAL        ; TX_PLURAL
 	assert_table_length NUM_TEXT_CMDS
 
 TextCommand_START::
@@ -961,6 +962,58 @@ TextCommand_DECIMAL::
 	pop hl
 	ret
 
+TextCommand_PLURAL::
+; Pluralise the last word if wItemQuantityChange != 1.
+	ld a, [wItemQuantityChange]
+	dec a
+	ret z
+
+	push hl
+	push bc
+
+	ld hl, PluralTable
+
+.check_match_loop
+	dec bc
+	ld a, [bc]
+
+	cp '@'
+	jr nz, .not_at_start
+	cp [hl]
+	jr nz, .no_match
+	inc hl
+	jr .match
+
+.not_at_start
+	cp [hl]
+	ld a, [hli]
+	jr z, .check_match_loop
+	cp '@'
+	jr nz, .no_match
+
+.match
+	inc bc
+	ld d, h
+	ld e, l
+	ld h, b
+	ld l, c
+	pop bc
+	call PlaceString
+	pop hl
+	ret
+
+.no_match
+	ld b, 2
+.no_match_loop
+	ld a, [hli]
+	cp '@'
+	jr nz, .no_match_loop
+	dec b
+	jr nz, .no_match_loop
+	pop bc
+	push bc
+	jr .check_match_loop
+
 TextCommand_PAUSE::
 ; wait for button press or 30 frames
 	push hl
@@ -1122,3 +1175,5 @@ TextCommand_DAY::
 .Fri:    db "Fri@"
 .Satur:  db "Satur@"
 .Day:    db "day@"
+
+INCLUDE "data/text/plural_table.asm"

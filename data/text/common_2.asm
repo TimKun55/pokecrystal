@@ -549,14 +549,16 @@ _AskQuantityThrowAwayText::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)?"
+	text_plural
+	text "?"
 	done
 
 _ThrewAwayText::
 	text "Threw away"
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)."
+	text_plural
+	text "."
 	prompt
 
 _ThisIsntTheTimePromptText::
@@ -971,7 +973,8 @@ _PlayersPCWithdrewItemsText::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)."
+	text_plural
+	text "."
 	prompt
 
 _PlayersPCNoRoomWithdrawText::
@@ -994,7 +997,8 @@ _PlayersPCDepositItemsText::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)."
+	text_plural
+	text "."
 	prompt
 
 _PlayersPCNoRoomDepositText::
@@ -1232,7 +1236,8 @@ _ItemsTossOutHowManyText::
 	text "Toss out how many"
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)?"
+	text_plural
+	text "?"
 	done
 
 _ItemsThrowAwayText::
@@ -1241,14 +1246,16 @@ _ItemsThrowAwayText::
 	text_start
 	line "@"
 	text_ram wStringBuffer2
-	text "(s)?"
+	text_plural
+	text "?"
 	done
 
 _ItemsDiscardedText::
 	text "Discarded"
 	line "@"
 	text_ram wStringBuffer1
-	text "(s)."
+	text_plural
+	text "."
 	prompt
 
 _ItemsTooImportantText::

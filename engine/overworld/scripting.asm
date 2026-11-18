@@ -238,6 +238,7 @@ ScriptCommandTable:
 	dw Script_writetextend               ; ab
 	dw Script_paintingpic                ; ac
 	dw Script_closepaintingpic           ; ad
+	dw Script_pluralise                  ; ae
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -469,6 +470,17 @@ Script_battletowertext:
 
 Script_verbosegiveitem:
 	call Script_giveitem
+	ld a, [wCurItem]
+	cp MULCH
+	jr nz, .normal
+	call CurItemName
+	ld de, wStringBuffer1
+	ld a, STRING_BUFFER_4
+	call CopyConvertedText
+	ld b, BANK(MulchGiveItemScript)
+	ld de, MulchGiveItemScript
+	jp ScriptCall
+.normal
 	call CurItemName
 	ld de, wStringBuffer1
 	ld a, STRING_BUFFER_4
@@ -479,12 +491,16 @@ Script_verbosegiveitem:
 	ld de, GiveItemScript
 	jp ScriptCall
 
-GiveItemScript_DummyFunction:
-	ret
-
 GiveItemScript:
-	callasm GiveItemScript_DummyFunction
-	writetext .ReceivedItemText
+	writemem wScriptVarBackup
+	readmem wItemQuantityChange
+	ifequal 1, .OneItem
+	writetext .GainedMultipleItemsText
+	sjump .FinishGiveItem
+.OneItem:
+	writetext .GainedItemText
+.FinishGiveItem:
+	readmem wScriptVarBackup
 	iffalse .Full
 	waitsfx
 	specialsound
@@ -497,8 +513,41 @@ GiveItemScript:
 	pocketisfull
 	end
 
-.ReceivedItemText:
-	text_far _ReceivedItemText
+.GainedItemText:
+	text_far _GainedItemText
+	text_end
+
+.GainedMultipleItemsText:
+	text_far _GainedMultipleItemsText
+	text_end
+
+MulchGiveItemScript:
+	writemem wScriptVarBackup
+	readmem wItemQuantityChange
+	ifequal 1, .One
+	writetext .GainedMultipleMulchesText
+	sjump .Finish
+.One:
+	writetext .GainedMulchText
+.Finish:
+	readmem wScriptVarBackup
+	iffalse .Full
+	waitsfx
+	specialsound
+	waitbutton
+	itemnotify
+	end
+.Full:
+	promptbutton
+	pocketisfull
+	end
+
+.GainedMulchText:
+	text_far _GainedMulchText
+	text_end
+
+.GainedMultipleMulchesText:
+	text_far _GainedMultipleMulchesText
 	text_end
 
 Script_verbosegiveitemvar:
@@ -2418,4 +2467,33 @@ Script_paintingpic:
 
 Script_closepaintingpic:
 	farcall ClosePaintingpic
+	ret
+
+Script_pluralise::
+	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+	; fallthrough (input in hl)
+Pluralise::
+	dec hl
+	ld a, [hl]
+	push hl
+	push af
+	ld a, '@'
+	ld [hli], a
+
+.terminator_loop
+	ld a, [hli]
+	cp '@'
+	jr nz, .terminator_loop
+	ld b, h
+	ld c, l
+	dec bc
+	call TextCommand_PLURAL
+	ld a, '@'
+	ld [bc], a
+	pop af
+	pop hl
+	ld [hl], a
 	ret
