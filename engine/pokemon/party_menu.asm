@@ -40,6 +40,7 @@ LoadPartyMenuGFX:
 	call LoadExpBarGFX
 	callfar InitPartyMenuPalettes
 	callfar ClearSpriteAnims2
+	callfar DeinitializeAllSprites
 	ret
 
 WritePartyMenuTilemap:

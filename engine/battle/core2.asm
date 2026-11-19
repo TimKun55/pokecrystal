@@ -611,6 +611,8 @@ TrainerBattleInfo:
 
 	farcall EmptyBattleTextbox
 	call ClearSprites
+	farcall DeinitializeAllSprites
+	farcall ClearSpriteAnims
 	push hl
 	push de
 	push bc

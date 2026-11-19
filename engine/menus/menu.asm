@@ -394,7 +394,6 @@ _TrainerBattleInfo:
 	farcall GetBattleMonBackpic
 	farcall GetEnemyMonFrontpic
 	call WaitBGMap
-	call LoadTilemapToTempTilemap
 	call GetMemCGBLayout
 	call SetDefaultBGPAndOBP
 	farcall GetWeatherImage

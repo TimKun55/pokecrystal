@@ -4660,6 +4660,8 @@ BattleMenuPKMN_Loop:
 
 .Cancel:
 	call ClearSprites
+	farcall DeinitializeAllSprites
+	farcall ClearSpriteAnims
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
