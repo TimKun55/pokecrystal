@@ -535,6 +535,10 @@ INCLUDE "engine/gfx/sprite_palettes.asm"
 INCLUDE "engine/gfx/dynamic_pals.asm"
 
 
+SECTION "Battle VS Intro", ROMX
+INCLUDE "engine/battle/vs_intro.asm"
+
+
 SECTION "bank5B", ROMX
 
 INCLUDE "engine/link/link_trade.asm"

@@ -3616,7 +3616,15 @@ wPalFadeDelay:: db
 	ds 104
 
 	align 8
+UNION
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
+NEXTU
+; Prism VS intro uses LCDGeneric directly, leaving the backup table free.
+wBattleVSPortraitScroll:: db
+wBattleVSNameScroll:: db
+wBattleVSShakeTimer:: db
+wBattleVSScrollTimer:: db
+ENDU
 wLYOverridesBackupEnd::
 
 

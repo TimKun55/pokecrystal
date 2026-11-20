@@ -3,7 +3,8 @@ DEF BATTLETRANSITION_CAVE             EQU $01
 DEF BATTLETRANSITION_CAVE_STRONGER    EQU $09
 DEF BATTLETRANSITION_NO_CAVE          EQU $10
 DEF BATTLETRANSITION_NO_CAVE_STRONGER EQU $18
-DEF BATTLETRANSITION_FINISH           EQU $20
+DEF BATTLETRANSITION_VS               EQU $20
+DEF BATTLETRANSITION_FINISH           EQU $29
 DEF BATTLETRANSITION_END              EQU $80
 
 DEF BATTLETRANSITION_SQUARE EQU '8' ; $fe
@@ -194,8 +195,30 @@ BattleTransitionJumptable:
 	dw StartTrainerBattle_SetUpForRandomScatterOutro ; 1e
 	dw StartTrainerBattle_SpeckleToBlack ; 1f
 
+	; Prism's Gym Leader / Elite Four introduction
+	dw StartTrainerBattle_LoadPokeBallGraphics ; 20
+	dw StartTrainerBattle_SetUpBGMap ; 21
+	dw StartTrainerBattle_Flash ; 22
+	dw StartTrainerBattle_Flash ; 23
+	dw StartTrainerBattle_Flash ; 24
+	dw StartTrainerBattle_NextScene ; 25
+	dw StartTrainerBattle_SetUpForTrainerPortrait ; 26
+	dw StartTrainerBattle_LoadTrainerPortrait ; 27
+	dw StartTrainerBattle_FadeToBlack ; 28
+
 	; BATTLETRANSITION_FINISH
-	dw StartTrainerBattle_Finish ; 20
+	dw StartTrainerBattle_Finish ; 29
+
+StartTrainerBattle_SetUpForTrainerPortrait:
+	farcall BattleVSIntro.SetUpTrainerPortrait
+	jr StartTrainerBattle_NextScene
+
+StartTrainerBattle_LoadTrainerPortrait:
+	farcall BattleVSIntro.LoadTrainerPortrait
+	jr StartTrainerBattle_NextScene
+
+StartTrainerBattle_FadeToBlack:
+	newfarjp BattleVSIntro.FadeToBlack
 
 ; transition animations
 	const_def
@@ -215,6 +238,11 @@ StartTrainerBattle_DetermineWhichAnimation:
 	and a
 	jr z, .wild
 	farcall SetTrainerBattleLevel
+	farcall ShouldShowTrainerVSIntro
+	jr nc, .wild
+	ld a, BATTLETRANSITION_VS
+	ld [wJumptableIndex], a
+	ret
 
 .wild
 	ld b, PARTY_LENGTH
