@@ -1025,7 +1025,16 @@ Pics_Page:
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
-	call Pokedex_LoadAllGFX
+; The screen is already black from the palette, so reload only the GFX that
+; the Pics page overwrote and leave the LCD on. Pokedex_LoadAllGFX toggles the
+; LCD repeatedly (white flashes) and reloads fonts with the LCD on (garbled).
+	call Pokedex_LoadPageNums
+	call Pokedex_LoadGFX ; restores vTiles2 $31-$7f, including the Pics border tiles
+; The Pics backpic is loaded into VRAM bank 1 at vTiles0 tile $d0, overlapping
+; the inverted font area. Evos_Page only reloads 36 of those 128 font tiles, so
+; restore the full preload here. Get1bpp uses the VBlank-safe request path
+; while the LCD is on; unlike Pokedex_InvertTiles it never writes VRAM directly.
+	call Pokedex_PreloadEvoFont
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawFootprint
 	ld a, $90
@@ -1056,9 +1065,12 @@ Pics_Page:
 .not_shiny
 	ld [hl], ' '
 .shiny_done	
-	call WaitBGMap
 ; Stay black until the map is fully in VRAM, so the Pics
-; page can't flash back up while the push is still running
+; page can't flash back up while the push is still running.
+; WaitBGMap can time out before both halves are pushed, so use the
+; guaranteed one-frame tile-and-attribute copy instead.
+	ld b, 3 ; tiles and attributes at once, keep any pending palette update
+	farcall _SafeCopyTilemapAtOnce
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	ld a, CGB_POKEDEX
@@ -3514,7 +3526,14 @@ _GetInversedFontPointer::
 
 Pokedex_ChooseInversedFont:
 ; de = the inverted font matching wFontType. Leaves hl and bc alone.
-	jp GetInversedFontPointer
+; GetInversedFontPointer is a farcall wrapper, so its macro clobbers hl;
+; preserve the VRAM destination and tile count expected by the callers.
+	push hl
+	push bc
+	call GetInversedFontPointer
+	pop bc
+	pop hl
+	ret
 
 Pokedex_LoadInversedFont:
 	ld a, 1
