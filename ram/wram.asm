@@ -3717,7 +3717,10 @@ wBattlePicResizeTempPointer:: dw
 ENDU
 
 UNION
-	ds 50
+	; Match the largest NEXTU allocation below before placing labels that
+	; must not alias its data.
+	ds $40
+wBattleAnimCustomPals:: ds 2 ; bit per palette slot changed by the current animation script
 wBattleAnimEnd::
 
 NEXTU

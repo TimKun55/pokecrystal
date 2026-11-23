@@ -119,9 +119,9 @@ SetDefaultBattlePalette:
 	ld hl, BattleObjectPals - 1 palettes
 	ld bc, 1 palettes
 	call AddNTimes
-	call FarCopyWRAM
-	pop af
-	ldh [rWBK], a
+	; FarCopyColorWRAM selects the correct WRAM bank and balances the
+	; bank pushed by SetDefaultBattlePalette's wrapper.
+	call FarCopyColorWRAM
 	ret
 
 SetBattlePal_Player:

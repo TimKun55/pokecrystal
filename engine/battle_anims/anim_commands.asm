@@ -17,6 +17,7 @@ _PlayBattleAnim:
 	ld c, 6
 	call DelayFrames
 
+	call ClearBattleAnimCustomPals
 	call BattleAnimAssignPals
 	call BattleAnimRequestPals
 	call DelayFrame
@@ -59,6 +60,8 @@ BattleAnimRunScript:
 	vc_hook Reduce_move_anim_flashing
 	call BattleAnimClearHud
 	call RunBattleAnimScript
+	; Put back any palette slots this script overrode before the next script starts.
+	call BattleAnim_RestoreCustomPals
 
 	call BattleAnimAssignPals
 	call BattleAnimRequestPals
@@ -88,6 +91,7 @@ BattleAnimRunScript:
 	call WaitSFX
 	call PlayHitSound
 	call RunBattleAnimScript
+	call BattleAnim_RestoreCustomPals
 
 .done
 	call BattleAnim_RevertPals
@@ -1114,11 +1118,18 @@ SetBattleAnimPal:
 	ld d, a
 
 .got_pal_target
+	; Remember this slot so the animation engine can restore its default later.
+	call BattleAnim_MarkCustomPal
+
 	; Get palette to change.
 	ld hl, wBGPals1
 	ld bc, 1 palettes
 	ld a, d
 	call AddNTimes
+
+	; Save the absolute slot before SwapHLDE overwrites d/e.
+	ld a, d
+	push af
 
 	; Get palette to set.
 	call SwapHLDE
@@ -1130,15 +1141,57 @@ SetBattleAnimPal:
 
 	; Write the palette.
 	call FarCopyColorWRAM
+	pop af
+	jr .done_setpal
+
+.SetDefaultPal:
+	pop af
+	ld b, a
+	farcall SetDefaultBattlePalette
 .done_setpal
 	pop bc
 	pop de
 	ret
 
-.SetDefaultPal:
-	ld b, h
-	farcall SetDefaultBattlePalette
-	jr .done_setpal
+BattleAnim_MarkCustomPal:
+; Mark the palette slot addressed by d (0-15, wBGPals1-relative) as overridden
+; by the current animation script. d is absolute here: 0-7 are BG, 8-15 are OBJ.
+	push de
+	push bc
+
+	; bit within the mask byte
+	ld a, d
+	and 7
+	ld c, a
+	ld a, 1
+.bit_loop
+	ld e, a
+	ld a, c
+	and a
+	jr z, .got_bit
+	ld a, e
+	add a
+	dec c
+	jr .bit_loop
+.got_bit
+	ld c, e
+
+	; byte within the two-byte mask
+	ld a, d
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ld d, 0
+	ld hl, wBattleAnimCustomPals
+	add hl, de
+	ld a, [hl]
+	or c
+	ld [hl], a
+
+	pop bc
+	pop de
+	ret
 
 CustomBattlePalettes:
 INCLUDE "gfx/battle_anims/custom.pal"
@@ -1422,6 +1475,53 @@ ClearBattleAnims::
 	call GetBattleAnimPointer
 	call BattleAnimAssignPals
 	jp DelayFrame
+
+ClearBattleAnimCustomPals:
+	xor a
+	ld hl, wBattleAnimCustomPals
+	ld [hli], a
+	ld [hl], a
+	ret
+
+BattleAnim_RestoreCustomPals:
+; Restore every palette slot that the current animation script overrode.
+; SetDefaultBattlePalette knows the correct default for each slot (mon pals,
+; HP bars, text, and the six shared battle object pals).
+	ld hl, wBattleAnimCustomPals
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a ; hl = dirty-slot bitmask
+	ld d, 0 ; absolute palette slot index
+.loop
+	ld a, h
+	or l
+	jr z, .done
+
+	srl h
+	rr l
+	jr nc, .next
+
+	push hl
+	push de
+	ld a, d        ; AddNTimes takes the count in a, not de
+	ld hl, wBGPals1
+	ld bc, 1 palettes
+	call AddNTimes ; hl = palette slot in wBGPals1/wOBPals1
+	ld e, d        ; preserve the absolute slot for SwapHLDE
+	ld d, 0
+	call SwapHLDE  ; de = destination, hl = 0:slot
+	ld b, l        ; b = absolute palette slot index
+	farcall SetDefaultBattlePalette
+	pop de
+	pop hl
+
+.next
+	inc d
+	jr .loop
+
+.done
+	call ClearBattleAnimCustomPals
+	ret
 
 BattleAnim_RevertPals:
 	call FinishBGMapTransfer
