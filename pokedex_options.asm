@@ -94,5 +94,5 @@ DEF USE_COMPRESSED_POKEDEX_GFX EQU FALSE
 	; should be compatible by default with no additional steps required
 ; https://github.com/pret/pokecrystal/wiki/Expand-tilesets-from-192-to-255-tiles
 
-; NOTE if yes, make sure the math symbols, and feet & inches symbols are aligned with your charmap!
+; NOTE if yes, make sure the Pokédex math symbols are aligned with your charmap!
 	; see 'engine\pokedex\pokedex.asm' Pokedex_InvertTiles and Pokedex_LoadInversedFont

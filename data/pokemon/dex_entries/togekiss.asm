@@ -1,5 +1,5 @@
 	db "Jubilee@" ; species name
-	dw 150, 380 ; height, width
+	dw 150, 380 ; height, weight
 
 	db   "It shares many"
 	next "blessings with"

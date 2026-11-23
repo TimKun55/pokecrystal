@@ -3,7 +3,7 @@
 
 	db   "These Diglett"
 	next "triplets dig over"
-	next "60 miles below sea"
+	next "100 km below sea"
 
 	page "level. No one"
 	next "knows what it's"

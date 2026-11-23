@@ -6059,7 +6059,7 @@ LoadEnemyMon:
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .Happiness
+	jp nz, .Happiness
 
 ; Species-specfic:
 
@@ -6073,14 +6073,7 @@ LoadEnemyMon:
 	predef GetUnownLetter
 
 .Magikarp:
-; These filters are untranslated.
-; They expect at wMagikarpLength a 2-byte value in mm,
-; but the value is in feet and inches (one byte each).
-
-; The first filter is supposed to make very large Magikarp even rarer,
-; by targeting those 1600 mm (= 5'3") or larger.
-; After the conversion to feet, it is unable to target any,
-; since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
+; wMagikarpLength is big-endian millimetres.
 	ld a, [wTempEnemyMonSpecies]
 	cp MAGIKARP
 	jr nz, .Happiness
@@ -6090,27 +6083,30 @@ LoadEnemyMon:
 	ld bc, wPlayerID
 	callfar CalcMagikarpLength
 
-; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
-	ld a, [wMagikarpLength]
-	cp 5
-	jr nz, .CheckMagikarpArea
+; Very large Magikarp (1600 mm or longer) are extra rare.
+	ld hl, wMagikarpLength
+	ld de, MAGIKARP_LENGTH_HUGE
+	call .CompareMagikarpLength
+	jr c, .CheckMagikarpArea
 
 ; 5% chance of skipping both size checks
 	call Random
 	cp 5 percent
 	jr c, .CheckMagikarpArea
-; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
-	ld a, [wMagikarpLength + 1]
-	cp 4
+; Try again if length >= 1616 mm
+	ld hl, wMagikarpLength
+	ld de, MAGIKARP_LENGTH_VERY_HUGE
+	call .CompareMagikarpLength
 	jp nc, .GenerateDVsFromBattleType
 
 ; 20% chance of skipping this check
 	call Random
 	cp 20 percent - 1
 	jr c, .CheckMagikarpArea
-; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
-	ld a, [wMagikarpLength + 1]
-	cp 3
+; Try again if length >= 1600 mm
+	ld hl, wMagikarpLength
+	ld de, MAGIKARP_LENGTH_HUGE
+	call .CompareMagikarpLength
 	jp nc, .GenerateDVsFromBattleType
 
 .CheckMagikarpArea:
@@ -6124,10 +6120,27 @@ LoadEnemyMon:
 	call Random
 	cp 39 percent + 1
 	jr c, .Happiness
-; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
-	ld a, [wMagikarpLength]
-	cp 3
+; Try again if length < 914 mm
+	ld hl, wMagikarpLength
+	ld de, MAGIKARP_LENGTH_LAKE_MIN
+	call .CompareMagikarpLength
 	jp c, .GenerateDVsFromBattleType ; try again
+	jr .Happiness
+
+.CompareMagikarpLength:
+; hl = wMagikarpLength, de = threshold (both big-endian).
+; Returns c if hl < de, nc if hl >= de.
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+	ld c, a
+	ld a, b
+	cp d
+	ret c
+	ret nz
+	ld a, c
+	cp e
+	ret
 
 ; Finally done with DVs
 

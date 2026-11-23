@@ -201,7 +201,7 @@ GoldenrodArtGalleryEastWingDudunsparceText:
 
 	para "into deep bedrock."
 	line "The nest can reach"
-	cont "over six miles."
+	cont "over ten km."
 	done
 
 GoldenrodArtGalleryEastWingLickilickyText:

@@ -704,7 +704,7 @@ ENDC
 	ld a, l
 	ld [wPoisonStepCount + 1], a ; weight ptr, 2 bytes
 	ld de, wPoisonStepCount ; weight ptr, 2 bytes
-; 2 digit weight (actually 3, but we are cutting off decimal since it's always 0)
+; 3-digit integer weight with one decimal (e.g. 120.0 kg)
 	ld a, h
 	cp 3
 	jr c, .normal_weight
@@ -717,21 +717,22 @@ ENDC
 .heavy_weight
 	
 IF DEF(MON_STAT_EXP) ; vanilla
-	hlcoord 14, 15
+	hlcoord 13, 15
 ELSE ; using EVs
-	hlcoord 14, 14
+	hlcoord 13, 14
 ENDC
 	lb bc, 2, (3 << 4) | 4
+	; Print the weight, with 3 of the 4 digits in front of the decimal point
 	call PrintNum
 IF DEF(MON_STAT_EXP) ; vanilla
-	hlcoord 17, 15
+	hlcoord 18, 15
 ELSE ; using EVs
-	hlcoord 17, 14
+	hlcoord 18, 14
 ENDC
-	ld de, .String_pounds
+	ld de, .String_kg
 	call PlaceString
 	jr .done
-; 3 digit weight (actually 4, but we are cutting off decimal since it's always 0)
+; 2-digit integer weight with one decimal (e.g. 6.9 kg)
 .normal_weight	
 	; Print the weight, with 3 of the 4 digits in front of the decimal point
 IF DEF(MON_STAT_EXP) ; vanilla
@@ -742,11 +743,11 @@ ENDC
 	lb bc, 2, (3 << 4) | 4
 	call PrintNum
 IF DEF(MON_STAT_EXP) ; vanilla
-	hlcoord 16, 15
+	hlcoord 18, 15
 ELSE ; using EVs
 	hlcoord 18, 14
 ENDC	
-	ld de, .String_pounds
+	ld de, .String_kg
 	call PlaceString
 .done	
 	pop de
@@ -754,8 +755,8 @@ ENDC
 	pop hl	
 	ret
 .String_HeightWeight_blank:
-	db "HT     <BOLD_m> WT       @" ; HT  ?'??"
-.String_pounds:
+	db "HT     <BOLD_m> WT       @"
+.String_kg:
 	db "Kg@"
 
 BS_HP_text:

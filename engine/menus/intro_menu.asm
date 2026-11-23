@@ -250,10 +250,11 @@ endc
 	ret
 
 InitializeMagikarpHouse:
-	ld hl, wBestMagikarpLengthFeet
-	ld a, $3
+; Default record is 1067 mm.
+	ld hl, wBestMagikarpLength
+	ld a, HIGH(MAGIKARP_LENGTH_INITIAL)
 	ld [hli], a
-	ld a, $6
+	ld a, LOW(MAGIKARP_LENGTH_INITIAL)
 	ld [hli], a
 	ld de, .Ralph
 	call CopyName2

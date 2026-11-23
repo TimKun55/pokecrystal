@@ -1,5 +1,5 @@
 	db "Big Boss@" ; species name
-	dw 090, 273 ; height, width
+	dw 090, 273 ; height, weight
 
 	db   "It is merciless by"
 	next "nature. It is said"

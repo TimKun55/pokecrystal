@@ -3553,12 +3553,6 @@ Pokedex_LoadInversedFont:
 	ld a, BANK(Pokedex_MathTiles)
 	call Get1bpp
 
-	ld hl, vTiles0 tile $bf
-	lb bc, BANK(Pokedex_Imperial_Tiles), 2 ; 4 tiles
-	ld de, Pokedex_Imperial_Tiles
-	ld a, BANK(Pokedex_Imperial_Tiles)
-	call Get1bpp
-
 	ld hl, vTiles0 tile $eb
 	lb bc, BANK(Pokedex_RightArrow_Tile), 1 ; 1 tiles
 	ld de, Pokedex_RightArrow_Tile
@@ -3590,11 +3584,6 @@ Pokedex_InvertTiles:
 	ld a, BANK(Pokedex_MathTiles)
 	call Get1bpp
 
-	ld hl, vTiles0 tile $bf
-	lb bc, BANK(Pokedex_Imperial_Tiles), 2 ; 2 tiles
-	ld de, Pokedex_Imperial_Tiles
-	ld a, BANK(Pokedex_Imperial_Tiles)
-	call Get1bpp
 	ret
 
 Pokedex_CheckDMG:

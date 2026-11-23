@@ -740,8 +740,6 @@ Pokedex_PicsPageBorderTiles:
 INCBIN "gfx/pokedex/pics_page_border.2bpp"
 Pokedex_MathTiles:
 INCBIN "gfx/pokedex/math_symbols_inverted.1bpp"
-Pokedex_Imperial_Tiles:
-INCBIN "gfx/pokedex/inversed_feet_inches.1bpp"
 Pokedex_RightArrow_Tile:
 INCBIN "gfx/pokedex/inversed_rightarrow.1bpp"
 

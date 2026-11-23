@@ -33,14 +33,14 @@ CheckMagikarpLength:
 
 	; Did we beat the record?
 	ld hl, wMagikarpLength
-	ld de, wBestMagikarpLengthFeet
+	ld de, wBestMagikarpLength
 	ld c, 2
 	call CompareBytes
 	jr nc, .not_long_enough
 
 	; NEW RECORD!!! Let's save that.
 	ld hl, wMagikarpLength
-	ld de, wBestMagikarpLengthFeet
+	ld de, wBestMagikarpLength
 	ld a, [hli]
 	ld [de], a
 	inc de
@@ -75,14 +75,49 @@ CheckMagikarpLength:
 	text_end
 
 PrintMagikarpLength:
+; wMagikarpLength is big-endian millimetres. Display rounded metres with
+; two decimal places, e.g. $042B (1067 mm) becomes "1.07m".
+	ld a, [wMagikarpLength]
+	ld h, a
+	ld a, [wMagikarpLength + 1]
+	ld l, a
+
+; cm = (mm + 5) / 10
+	ld bc, 5
+	add hl, bc
+	ld a, h
+	ldh [hDividend + 0], a
+	ld a, l
+	ldh [hDividend + 1], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hQuotient + 3]
+	ld [wStringBuffer2], a
+
+; metres = cm / 100, hundredths = cm % 100
+	xor a
+	ldh [hDividend + 0], a
+	ld a, [wStringBuffer2]
+	ldh [hDividend + 1], a
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hQuotient + 3]
+	ld [wStringBuffer2], a
+	ldh a, [hRemainder]
+	ld [wStringBuffer2 + 1], a
+
 	ld hl, wStringBuffer1
-	ld de, wMagikarpLength
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	ld de, wStringBuffer2
+	lb bc, PRINTNUM_LEFTALIGN | 1, 1
 	call PrintNum
 	ld [hl], '.'
 	inc hl
-	ld de, wMagikarpLength + 1
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	ld de, wStringBuffer2 + 1
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
 	ld [hl], '<BOLD_m>'
 	inc hl
@@ -90,26 +125,23 @@ PrintMagikarpLength:
 	ret
 
 CalcMagikarpLength:
-; Return Magikarp's length (in feet and inches) at wMagikarpLength (big endian).
+; Return Magikarp's length in millimetres at wMagikarpLength (big endian).
 ;
 ; input:
 ;   de: wEnemyMonDVs (first two bytes)
 ;   bc: wPlayerID
 
-; This function is poorly commented.
-
-; In short, it generates a value between 190 and 1786 using
+; In short, it generates a value between 190 and 1786 mm using
 ; a Magikarp's DVs and its trainer ID. This value is further
 ; filtered in LoadEnemyMon to make longer Magikarp even rarer.
 
 ; The value is generated from a lookup table.
-; The index is determined by the dv xored with the player's trainer id.
+; The index is determined by the DV bytes xored with the player's trainer ID.
 
 ; bc = rrc(dv[0]) ++ rrc(dv[1]) ^ rrc(id)
 
-; if bc < 10:    [wMagikarpLength] = c + 190
-; if bc ≥ $ff00: [wMagikarpLength] = c + 1370
-; else:          [wMagikarpLength] = z * 100 + (bc - x) / y
+; if bc < 10:    mm = c + 190
+; else:          mm = z * 100 + (bc - x) / y
 
 ; X, Y, and Z depend on the value of b as follows:
 
@@ -152,7 +184,7 @@ CalcMagikarpLength:
 	ld c, a
 
 	; if bc < 10:
-	;     de = bc + 190
+	;     mm = c + 190
 	;     break
 
 	ld a, b
@@ -228,41 +260,11 @@ CalcMagikarpLength:
 	ld e, l
 
 .done
-	; convert from mm to feet and inches
-	; in = mm / 25.4
-	; ft = in / 12
-
-	; hl = de × 10
-	ld h, d
-	ld l, e
-	add hl, hl
-	add hl, hl
-	add hl, de
-	add hl, hl
-
-	; hl = hl / 254
-	ld de, -254
-	ld a, -1
-.div_254
-	inc a
-	add hl, de
-	jr c, .div_254
-
-	; d, e = hl / 12, hl % 12
-	ld d, 0
-.mod_12
-	cp 12
-	jr c, .ok
-	sub 12
-	inc d
-	jr .mod_12
-.ok
-	ld e, a
-
+	; de is already millimetres; store it big-endian.
 	ld hl, wMagikarpLength
-	ld [hl], d ; ft
+	ld [hl], d
 	inc hl
-	ld [hl], e ; in
+	ld [hl], e
 	ret
 
 .BCLessThanDE:
@@ -286,9 +288,9 @@ CalcMagikarpLength:
 INCLUDE "data/events/magikarp_lengths.asm"
 
 MagikarpHouseSign:
-	ld a, [wBestMagikarpLengthFeet]
+	ld a, [wBestMagikarpLength]
 	ld [wMagikarpLength], a
-	ld a, [wBestMagikarpLengthInches]
+	ld a, [wBestMagikarpLength + 1]
 	ld [wMagikarpLength + 1], a
 	call PrintMagikarpLength
 	ld hl, .KarpGuruRecordText

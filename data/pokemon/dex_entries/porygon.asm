@@ -1,5 +1,5 @@
 	db "Virtual@" ; species name
-	dw 280, 365 ; height, weight
+	dw 80, 365 ; height, weight
 
 	db   "An artificial"
 	next "#mon created"
