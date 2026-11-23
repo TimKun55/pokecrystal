@@ -1201,7 +1201,8 @@ BugContest_Print:
 ; \1MapGroup::  db
 ; \1MapNumber:: db
 ; \1HP::        db
-; \1DVs::       dw
+; \1DVs::       3 db (HPAtk, DefSpe, SatSdf)
+; \1Personality:: dw ; low: shiny/nature, high: gender/unown form
 ; ENDM
 
 Dex_Check_roaming:
@@ -1341,19 +1342,19 @@ Dex_Print_Roamer_Info:
 
 .not_initd
 	pop bc ; current print line in c
-	pop hl ; ; now pointing to DVs
+	pop hl ; now pointing to the DV/personality block
 ; check if shiny
 	push bc  ; current print line in c
-	; check if DVs are init'd
+	; check if the roamer's DVs are initialized
 	and a ; will still be zero if we jumped here after DV check, else will be 1
 	jr z, .not_shiny
 
 	ld b, h
 	ld c, l
-	farcall CheckShininess ; ptr needs to be in bc
-	; scf if shiny
-	; jr nc, .not_shiny
-	; shiny tile is $64
+	farcall CheckShininess ; bc = DV-block pointer; reads personality
+	; carry set if shiny
+	jr nc, .not_shiny
+	; print the shiny icon
 	pop bc ; current print line in c
 	push bc ; current print line in c
 	hlcoord 1, 10

@@ -1,8 +1,3 @@
-DEF SHINY_ATK_MASK EQU %0010
-DEF SHINY_DEF_DV EQU 10
-DEF SHINY_SPD_DV EQU 10
-DEF SHINY_SPC_DV EQU 10
-
 LoadMonBaseTypePal:
 	; destination address of Palette and Slot is passed in 'de'
 	; Type Index (already fixed/adjusted if a Special Type) is passed in 'c'
@@ -86,34 +81,18 @@ LoadDexTypePals:
 	ret
 
 CheckShininess:
-; Check if a mon is shiny by DVs at bc.
+; Check if a mon is shiny from the personality word in its DV/personality block.
+; bc points at the start of the mon's DV block.
 ; Return carry if shiny.
 
-	ld l, c
 	ld h, b
-
-; Attack
+	ld l, c
+rept MON_PERSONALITY - MON_DVS
+	inc hl
+endr
 	ld a, [hl]
-	and SHINY_ATK_MASK << 4
+	and SHINY_MASK
 	jr z, .not_shiny
-
-; Defense
-	ld a, [hli]
-	and %1111
-	cp SHINY_DEF_DV
-	jr nz, .not_shiny
-
-; Speed
-	ld a, [hl]
-	and %1111 << 4
-	cp SHINY_SPD_DV << 4
-	jr nz, .not_shiny
-
-; Special
-	ld a, [hl]
-	and %1111
-	cp SHINY_SPC_DV
-	jr nz, .not_shiny
 
 ; shiny
 	scf
@@ -553,7 +532,7 @@ LoadSummaryScreenPals:
 	ld [wBGPals1 palette 6 + 7], a
 	ld [wBGPals1 palette 7 + 6], a
 	ld [wBGPals1 palette 7 + 7], a
-.done
+
 	pop af
 	ldh [rWBK], a
 	call ApplyPals
@@ -859,7 +838,8 @@ InitPartyMenuMonPals:
 	ret
 
 GetStorageMonPalInBCDE::
-; Returns the normal or shiny palette colors (shiny by DVs) of wBufferMon in bcde.
+; Returns the normal or shiny palette colors (shiny by personality) of
+; wBufferMon in bcde.
 	ld a, [wBufferMonAltSpecies]
 	ld bc, wBufferMonDVs
 	call GetMonNormalOrShinyPalettePointer
@@ -873,7 +853,7 @@ GetStorageMonPalInBCDE::
 	ret
 
 LoadMoveMenuMonPalette::
-; e = species, bc = DVs
+; e = species, bc = DV-block pointer
 	ld a, e
 	call GetMonNormalOrShinyPalettePointer
 	ld bc, 4

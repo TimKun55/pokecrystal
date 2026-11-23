@@ -550,6 +550,12 @@ ENDM
 
 DEF PAGED_VALUE_SIZE EQU 10
 
+; Flags stored in the last byte of a paged_value entry.
+DEF PAGED_VALUE_HEX_F                EQU 0
+DEF PAGED_VALUE_PRESERVE_HIGH_BIT_F  EQU 1
+DEF PAGED_VALUE_HEX                  EQU 1 << PAGED_VALUE_HEX_F
+DEF PAGED_VALUE_PRESERVE_HIGH_BIT    EQU 1 << PAGED_VALUE_PRESERVE_HIGH_BIT_F
+
 DebugRoom_EditPagedValues:
 	xor a
 	ld [wDebugRoomCurPage], a
@@ -674,11 +680,34 @@ DebugRoom_IncrementPagedValue:
 	inc hl
 	ld d, [hl]
 	inc hl
-	inc hl
-	ld a, [de] ; a = max value
-	cp [hl]
+	inc hl ; hl = max value
+	push hl
+	ld bc, 6
+	add hl, bc
+	ld a, [hl] ; a = flags
+	pop hl
+	ld b, a ; b = flags
+	ld a, [hl] ; a = max value
+	ld l, a ; l = max value, hl no longer needed as a pointer
+	ld a, [de] ; a = current value
+	ld c, a ; c = current value
+	bit PAGED_VALUE_PRESERVE_HIGH_BIT_F, b
+	jr z, .compare
+	and $80
+	ld h, a ; h = original high bit to preserve
+	ld a, c
+	and $7f
+	ld c, a
+.compare
+	ld a, l
+	cp c
 	ret z
-	inc a
+	inc c
+	ld a, c
+	bit PAGED_VALUE_PRESERVE_HIGH_BIT_F, b
+	jr z, .store
+	or h
+.store
 	ld [de], a
 	call DebugRoom_PrintPageBValueC
 	ret
@@ -688,11 +717,34 @@ DebugRoom_DecrementPagedValue:
 	ld e, [hl] ; de = value address
 	inc hl
 	ld d, [hl]
-	inc hl
-	ld a, [de] ; a = min value
-	cp [hl]
+	inc hl ; hl = min value
+	push hl
+	ld bc, 7
+	add hl, bc
+	ld a, [hl] ; a = flags
+	pop hl
+	ld b, a ; b = flags
+	ld a, [hl] ; a = min value
+	ld l, a ; l = min value, hl no longer needed as a pointer
+	ld a, [de] ; a = current value
+	ld c, a ; c = current value
+	bit PAGED_VALUE_PRESERVE_HIGH_BIT_F, b
+	jr z, .compare
+	and $80
+	ld h, a ; h = original high bit to preserve
+	ld a, c
+	and $7f
+	ld c, a
+.compare
+	ld a, l
+	cp c
 	ret z
-	dec a
+	dec c
+	ld a, c
+	bit PAGED_VALUE_PRESERVE_HIGH_BIT_F, b
+	jr z, .store
+	or h
+.store
 	ld [de], a
 	call DebugRoom_PrintPageBValueC
 	ret
@@ -969,8 +1021,8 @@ DebugRoom_PrintPagedValue:
 	push bc
 	inc bc
 	inc bc
-	ld a, [bc] ; a = is hex value?
-	or a
+	ld a, [bc] ; a = paged_value flags
+	bit PAGED_VALUE_HEX_F, a
 	jr nz, .hex
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
@@ -1103,13 +1155,35 @@ DebugRoomMenu_ItemGet_Page1Values:
 .ItemNameString: db "ITEM NAME@"
 .NumberString:   db "NUMBER@"
 
+DebugRoom_TogglePersonalityBit:
+; Nature and form share their bytes with the shiny and gender bits. A toggles
+; those high bits on their respective rows; left/right preserves them.
+	ld a, [wDebugRoomCurPage]
+	cp 2 ; page 3
+	ret nz
+	ld a, [wDebugRoomCurValue]
+	cp 3 ; nature
+	jr z, .shiny
+	cp 4 ; form
+	ret nz
+.gender
+	ld a, [wDebugRoomMonGender]
+	xor GENDER_MASK
+	ld [wDebugRoomMonGender], a
+	jp DebugRoom_PrintPageBValueC
+.shiny
+	ld a, [wDebugRoomMonShiny]
+	xor SHINY_MASK
+	ld [wDebugRoomMonShiny], a
+	jp DebugRoom_PrintPageBValueC
+
 DebugRoomMenu_PokemonGet:
 	ld hl, .PagedValuesHeader
 	call DebugRoom_EditPagedValues
 	ret
 
 .PagedValuesHeader:
-	dw NULL ; A function
+	dw DebugRoom_TogglePersonalityBit ; A function
 	dw NULL ; Select function
 	dw DebugRoom_SavePokemon ; Start function
 	dw NULL ; Auto function
@@ -1120,7 +1194,44 @@ DebugRoomMenu_PokemonGet:
 	dw DebugRoomMenu_PokemonGet_Page4Values
 
 DebugRoom_SavePokemon:
-	; IF YOU NEED THIS WORKING, ADAPT IT FOR NEWBOX!
+; Build a temporary party mon from the editable box struct and open its summary.
+	call DebugRoom_UpdateExpForLevel
+
+	ld hl, wDebugRoomMon
+	ld de, wBufferMon
+	ld bc, BOXMON_STRUCT_LENGTH
+	call CopyBytes
+
+	; Clear the party-only fields: status, HP, and calculated stats.
+	ld hl, wBufferMon + MON_STATUS
+	ld bc, PARTYMON_STRUCT_LENGTH - MON_STATUS
+	xor a
+	call ByteFill
+
+	ld a, [wDebugRoomMonSpecies]
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+	farcall CalcBufferMonStats
+
+	; Give the temporary mon a default nickname and OT.
+	ld a, [wDebugRoomMonSpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wBufferMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+	ld hl, wPlayerName
+	ld de, wBufferMonOT
+	ld bc, NAME_LENGTH
+	call CopyBytes
+
+	ld a, BUFFERMON
+	ld [wMonType], a
+	ld a, [wDebugRoomMonSpecies]
+	ld [wCurPartySpecies], a
+	farcall _OpenPartySummary
 	ret
 
 ; Used to reference old box data, now dummied out.
@@ -1286,10 +1397,10 @@ DebugRoomMenu_PokemonGet_Page1Values:
 	db 8
 	paged_value wDebugRoomMonSpecies,       1,   NUM_POKEMON, BULBASAUR,      DebugRoom_BoxStructStrings.Pokemon,   DebugRoom_PrintPokemonName, FALSE
 	paged_value wDebugRoomMonItem,          1,   $ff,         MASTER_BALL,    DebugRoom_BoxStructStrings.Item,      DebugRoom_PrintItemName2,   FALSE
-	paged_value wDebugRoomMonMoves+0,       1,   NUM_ATTACKS, POUND,          DebugRoom_BoxStructStrings.Move1,     DebugRoom_PrintMoveName,    FALSE
-	paged_value wDebugRoomMonMoves+1,       1,   NUM_ATTACKS, POUND,          DebugRoom_BoxStructStrings.Move2,     DebugRoom_PrintMoveName,    FALSE
-	paged_value wDebugRoomMonMoves+2,       1,   NUM_ATTACKS, POUND,          DebugRoom_BoxStructStrings.Move3,     DebugRoom_PrintMoveName,    FALSE
-	paged_value wDebugRoomMonMoves+3,       1,   NUM_ATTACKS, POUND,          DebugRoom_BoxStructStrings.Move4,     DebugRoom_PrintMoveName,    FALSE
+	paged_value wDebugRoomMonMoves+0,       1,   NUM_ATTACKS, TACKLE,         DebugRoom_BoxStructStrings.Move1,     DebugRoom_PrintMoveName,    FALSE
+	paged_value wDebugRoomMonMoves+1,       1,   NUM_ATTACKS, TACKLE,         DebugRoom_BoxStructStrings.Move2,     DebugRoom_PrintMoveName,    FALSE
+	paged_value wDebugRoomMonMoves+2,       1,   NUM_ATTACKS, TACKLE,         DebugRoom_BoxStructStrings.Move3,     DebugRoom_PrintMoveName,    FALSE
+	paged_value wDebugRoomMonMoves+3,       1,   NUM_ATTACKS, TACKLE,         DebugRoom_BoxStructStrings.Move4,     DebugRoom_PrintMoveName,    FALSE
 	paged_value wDebugRoomMonID+0,          $00, $ff,         HIGH(1234),     DebugRoom_BoxStructStrings.ID0,       NULL,                       FALSE
 	paged_value wDebugRoomMonID+1,          $00, $ff,         LOW(1234),      DebugRoom_BoxStructStrings.ID1,       NULL,                       FALSE
 
@@ -1303,9 +1414,12 @@ DebugRoomMenu_PokemonGet_Page2Values:
 	paged_value wDebugRoomMonSpclDefEV,     $00, $ff,         $00,            DebugRoom_BoxStructStrings.SpclDefEV, NULL,                       FALSE
 
 DebugRoomMenu_PokemonGet_Page3Values:
-	db 6
-	paged_value wDebugRoomMonDVs+0,         $00, $ff,         $00,            DebugRoom_BoxStructStrings.PowerRnd0, NULL,                       TRUE
-	paged_value wDebugRoomMonDVs+1,         $00, $ff,         $00,            DebugRoom_BoxStructStrings.PowerRnd1, NULL,                       TRUE
+	db 9
+	paged_value wDebugRoomMonDVs+0,         $00, $ff,         $00,            DebugRoom_BoxStructStrings.DV0,       NULL,                       TRUE
+	paged_value wDebugRoomMonDVs+1,         $00, $ff,         $00,            DebugRoom_BoxStructStrings.DV1,       NULL,                       TRUE
+	paged_value wDebugRoomMonDVs+2,         $00, $ff,         $00,            DebugRoom_BoxStructStrings.DV2,       NULL,                       TRUE
+	paged_value wDebugRoomMonNature,        $00, NUM_NATURES-1, $00,          DebugRoom_BoxStructStrings.Nature,    NULL,                       TRUE | PAGED_VALUE_PRESERVE_HIGH_BIT
+	paged_value wDebugRoomMonForm,          $00, FORM_MASK,   $00,            DebugRoom_BoxStructStrings.Form,      NULL,                       TRUE | PAGED_VALUE_PRESERVE_HIGH_BIT
 	paged_value wDebugRoomMonPP+0,          $00, $ff,         $00,            DebugRoom_BoxStructStrings.PP1,       NULL,                       FALSE
 	paged_value wDebugRoomMonPP+1,          $00, $ff,         $00,            DebugRoom_BoxStructStrings.PP2,       NULL,                       FALSE
 	paged_value wDebugRoomMonPP+2,          $00, $ff,         $00,            DebugRoom_BoxStructStrings.PP3,       NULL,                       FALSE
@@ -1338,8 +1452,11 @@ DebugRoom_BoxStructStrings:
 .SpeedEV:   db "SPEED EV@"
 .SpclAtkEV: db "SPCL ATK EV@"
 .SpclDefEV: db "SPCL DEF EV@"
-.PowerRnd0: db "POWER RND[0]<LF>  RARE:--1-1010@"
-.PowerRnd1: db "POWER RND[1]<LF>  RARE:10101010@"
+.DV0:       db "DV HP/ATK@"
+.DV1:       db "DV DEF/SPE@"
+.DV2:       db "DV SAT/SDF@"
+.Nature:    db "NATURE@" ; A toggles the shiny bit
+.Form:      db "GENDER/FORM@" ; A toggles the gender bit
 .PP1:       db "PP 1@"
 .PP2:       db "PP 2@"
 .PP3:       db "PP 3@"

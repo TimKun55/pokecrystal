@@ -93,7 +93,7 @@ CalcMagikarpLength:
 ; Return Magikarp's length (in feet and inches) at wMagikarpLength (big endian).
 ;
 ; input:
-;   de: wEnemyMonDVs
+;   de: wEnemyMonDVs (first two bytes)
 ;   bc: wPlayerID
 
 ; This function is poorly commented.

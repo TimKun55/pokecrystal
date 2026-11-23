@@ -20,10 +20,10 @@ AnimateTrademonFrontpic:
 	farcall ShowOTTrademonStats
 	ld a, [wOTTrademonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wOTTrademonDVs]
-	ld [wTempMonDVs], a
-	ld a, [wOTTrademonDVs + 1]
-	ld [wTempMonDVs + 1], a
+	ld hl, wOTTrademonDVs
+	ld de, wTempMonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0

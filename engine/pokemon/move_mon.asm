@@ -274,7 +274,8 @@ endr
 	push hl
 	farcall GetTrainerDVs
 	pop hl
-	jr .initializeDVs
+	ld a, PERSONALITY_NEVER_SHINY
+	jr .generate_personality
 
 .registerpokedex
 	ld a, [wCurPartySpecies]
@@ -291,17 +292,50 @@ endr
 	push hl
 	ld a, [wBattleMode]
 	and a
-	jr nz, .copywildmonDVs
+	jp nz, .copywildmonDVs
 
 	call Random
-	ld b, a
+	ld [wDVAndPersonalityBuffer], a
 	call Random
+	ld [wDVAndPersonalityBuffer + 1], a
+	call Random
+	ld [wDVAndPersonalityBuffer + 2], a
+	push hl
+	ld hl, wDVAndPersonalityBuffer + 2
+	farcall ApplyLegendaryDVs
+	pop hl
+	xor a ; flags
+
+.generate_personality
+; DE is the live party-mon destination and HL is the live party-mon base.
+; farcall clobbers both: e carries the flags, while HL is overwritten with the
+; GeneratePersonality entry address. Restore both before calculating HP.
+	push de
+	push hl
+	ld e, a
+	ld a, [wCurPartySpecies]
+	ld b, a
+	ld a, [wCurForm]
 	ld c, a
-.initializeDVs
-	ld a, b
+	farcall GeneratePersonality
+	pop hl
+	pop de
+
+; Copy the full 5-byte DV/personality block. Use direct buffer reads so hl
+; keeps pointing at the party mon for FillPP and the HP calculation.
+	ld a, [wDVAndPersonalityBuffer]
 	ld [de], a
 	inc de
-	ld a, c
+	ld a, [wDVAndPersonalityBuffer + 1]
+	ld [de], a
+	inc de
+	ld a, [wDVAndPersonalityBuffer + 2]
+	ld [de], a
+	inc de
+	ld a, [wDVAndPersonalityBuffer + MON_PERSONALITY - MON_DVS]
+	ld [de], a
+	inc de
+	ld a, [wDVAndPersonalityBuffer + MON_PERSONALITY - MON_DVS + 1]
 	ld [de], a
 	inc de
 
@@ -362,10 +396,20 @@ endr
 	jr .initstats
 
 .copywildmonDVs
+; Keep hl on the party mon struct; copy the enemy DV/personality block directly.
 	ld a, [wEnemyMonDVs]
 	ld [de], a
 	inc de
 	ld a, [wEnemyMonDVs + 1]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonDVs + 2]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonDVs + MON_PERSONALITY - MON_DVS]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonDVs + MON_PERSONALITY - MON_DVS + 1]
 	ld [de], a
 	inc de
 
@@ -814,7 +858,7 @@ SendMonIntoBox:
 	jr nz, .loop2
 
 	ld hl, wEnemyMonDVs
-	ld b, 2 + NUM_MOVES ; DVs and PP ; wEnemyMonHappiness - wEnemyMonDVs
+	ld b, (MON_PP - MON_DVS) + NUM_MOVES ; DVs, personality, and PP
 .loop3
 	ld a, [hli]
 	ld [de], a
@@ -1074,7 +1118,7 @@ ComputeNPCTrademonStats:
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 	ld a, [hl]
-	ld [MON_LEVEL], a ; should be "ld [wCurPartyLevel], a"
+	ld [wCurPartyLevel], a
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]
@@ -1154,9 +1198,15 @@ CalcMonStatC:
 	pop hl
 	push bc
 	ld bc, MON_DVS - MON_HP_EV + 1
-	add hl, bc
+	add hl, bc ; hl points to DV byte 0 (MON_DVS)
 	pop bc
+	; Extract the DV for this stat (high nibble / low nibble of three bytes).
+	; The layout is HP/Atk, Def/Spe, SpAtk/SpDef.
+	; Save the DV-base pointer so the nature lookup below can reuse it.
+	push hl
 	ld a, c
+	cp STAT_HP
+	jr z, .HP
 	cp STAT_ATK
 	jr z, .Attack
 	cp STAT_DEF
@@ -1164,60 +1214,43 @@ CalcMonStatC:
 	cp STAT_SPD
 	jr z, .Speed
 	cp STAT_SATK
-	jr z, .Special
-	cp STAT_SDEF
-	jr z, .Special
-; DV_HP = (DV_ATK & 1) << 3 | (DV_DEF & 1) << 2 | (DV_SPD & 1) << 1 | (DV_SPC & 1)
-	push bc
-	ld a, [hl]
-	swap a
-	and 1
-	add a
-	add a
-	add a
-	ld b, a
-	ld a, [hli]
-	and 1
-	add a
-	add a
-	add b
-	ld b, a
-	ld a, [hl]
-	swap a
-	and 1
-	add a
-	add b
-	ld b, a
-	ld a, [hl]
-	and 1
-	add b
-	pop bc
-	jr .GotDV
-
-.Attack:
-	ld a, [hl]
-	swap a
-	and $f
-	jr .GotDV
-
-.Defense:
-	ld a, [hl]
-	and $f
-	jr .GotDV
-
-.Speed:
+	jr z, .SpAtk
+	; STAT_SDEF: low nibble of byte 2
 	inc hl
-	ld a, [hl]
-	swap a
-	and $f
-	jr .GotDV
-
-.Special:
 	inc hl
 	ld a, [hl]
 	and $f
+	jr .GotDV
+
+.HP: ; high nibble of byte 0
+	ld a, [hl]
+	swap a
+	jr .GotDV
+
+.Attack: ; low nibble of byte 0
+	ld a, [hl]
+	jr .GotDV
+
+.Defense: ; high nibble of byte 1
+	inc hl
+	ld a, [hl]
+	swap a
+	jr .GotDV
+
+.Speed: ; low nibble of byte 1
+	inc hl
+	ld a, [hl]
+	jr .GotDV
+
+.SpAtk: ; high nibble of byte 2
+	inc hl
+	inc hl
+	ld a, [hl]
+	swap a
 
 .GotDV:
+	pop hl ; restore the pointer to MON_DVS
+	and $f
 	ld d, 0
 	add e
 	ld e, a
@@ -1225,8 +1258,10 @@ CalcMonStatC:
 	inc d
 
 .no_overflow_1
+	; de = (base + DV) * 2 + 1  (Polished's modern IV scaling)
 	sla e
 	rl d
+	inc e
 	srl b
 	srl b
 	ld a, b
@@ -1282,6 +1317,45 @@ CalcMonStatC:
 	ldh [hMultiplicand + 1], a
 
 .no_overflow_4
+	; Natures never affect HP. GetNatureStatMultiplier already returns neutral
+	; for STAT_HP, so skip the redundant multiply/divide entirely.
+	ld a, c
+	cp STAT_HP
+	jr z, .clamp_stat
+
+	; Apply the nature multiplier (9/10/11) before clamping, so a maxed
+	; stat can never end up above MAX_STAT_VALUE.
+	xor a
+	ldh [hMultiplicand + 0], a
+	push hl
+	push bc
+	ld bc, MON_NATURE - MON_DVS
+	add hl, bc ; hl points to the low personality byte (nature)
+	ld a, [hl]
+	and NATURE_MASK
+	pop bc
+	call GetNatureStatMultiplier
+	pop hl
+	ldh [hMultiplier], a
+	call Multiply
+	ldh a, [hProduct + 1]
+	ldh [hDividend + 0], a
+	ldh a, [hProduct + 2]
+	ldh [hDividend + 1], a
+	ldh a, [hProduct + 3]
+	ldh [hDividend + 2], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld a, 3
+	ld b, a
+	call Divide
+	ldh a, [hQuotient + 2]
+	ldh [hMultiplicand + 1], a
+	ldh a, [hQuotient + 3]
+	ldh [hMultiplicand + 2], a
+
+.clamp_stat
+	; Clamp to MAX_STAT_VALUE using this fork's hQuotient offsets (+2 high, +3 low).
 	ldh a, [hQuotient + 2]
 	cp HIGH(MAX_STAT_VALUE + 1) + 1
 	jr nc, .max_stat
@@ -1301,6 +1375,100 @@ CalcMonStatC:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+GetNatureStatMultiplier::
+; a contains the nature (0-24, masked)
+; c is 1-6 according to the stat (STAT_HP to STAT_SDEF)
+; returns a = 9 if lowered, 11 if raised, 10 if neutral
+	push de
+	ld d, a
+	ld a, c
+	cp STAT_HP
+	jr z, .neutral
+	ld a, d
+	and NATURE_MASK
+	cp NO_NATURE
+	jr z, .neutral
+	push bc
+	ld b, a
+	call GetNature ; defined below in this file
+	ld a, b
+	pop bc
+	cp NO_NATURE
+	jr z, .neutral
+	ld d, STAT_HP
+.loop
+	inc d
+	sub 5
+	jr nc, .loop
+	add 7 ; Atk-SDef is 2-6, not 0-4
+	cp c
+	jr z, .penalty
+	ld a, d
+	cp c
+	jr z, .bonus
+.neutral
+	ld a, 10
+	pop de
+	ret
+.bonus
+	ld a, 11
+	pop de
+	ret
+.penalty
+	; Neutral natures (divisible by 6) raise and lower the same stat,
+	; but +10% -10% isn't neutral (the result is 99%), so skip them.
+	cp d
+	jr z, .neutral
+	ld a, 9
+	pop de
+	ret
+
+GetNatureArrowStats::
+; a = masked nature (0..24, or NO_NATURE)
+; returns b = raised stat, c = lowered stat; both 0 if the nature is neutral.
+; Calls GetNatureStatMultiplier for the five battle stats so the displayed
+; arrows always match the actual stat calculation.
+	push de
+	ld d, a
+	ld e, STAT_ATK
+	ld b, 0
+	ld c, 0
+.loop
+	ld a, d
+	push bc
+	ld c, e
+	call GetNatureStatMultiplier
+	pop bc
+	cp 11
+	jr z, .raised
+	cp 9
+	jr z, .lowered
+	jr .next
+.raised
+	ld b, e
+	jr .next
+.lowered
+	ld c, e
+.next
+	inc e
+	ld a, e
+	cp STAT_SDEF + 1
+	jr nz, .loop
+	pop de
+	ret
+
+GetNature::
+; 'b' contains the nature to check
+; returns nature in b (this fork has no NATURES_OPT toggle, so identity)
+	ld a, b
+	and NATURE_MASK
+	cp NUM_NATURES
+	jr c, .okay
+	ld a, NO_NATURE
+.okay
+	ld b, a
 	ret
 
 GivePoke::

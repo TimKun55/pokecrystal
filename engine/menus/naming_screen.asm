@@ -98,11 +98,8 @@ NamingScreen:
 	call GetPartyParamLocation
 .start
 	ld de, wTempMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
 
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)

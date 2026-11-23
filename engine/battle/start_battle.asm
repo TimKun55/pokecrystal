@@ -219,9 +219,15 @@ ClearBattleRAM:
 
 	ld hl, wBattleMonDVs
 	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
 	ld [hl], a
 
 	ld hl, wEnemyMonDVs
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
 	ld [hli], a
 	ld [hl], a
 

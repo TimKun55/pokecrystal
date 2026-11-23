@@ -313,10 +313,9 @@ TradeAnim_TubeToOT1:
 	jr z, .player_2
 	ld hl, wPlayerTrademonDVs
 .player_2
-	ld a, [hli]
-	ld [wTempMonDVs], a
-	ld a, [hl]
-	ld [wTempMonDVs + 1], a
+	ld de, wTempMonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	xor a
 ; setup position of mon at top gameboy
 	depixel 5, 9, 4, 6
@@ -336,10 +335,9 @@ TradeAnim_TubeToPlayer1:
 	jr z, .player_2
 	ld hl, wOTTrademonDVs
 .player_2
-	ld a, [hli]
-	ld [wTempMonDVs], a
-	ld a, [hl]
-	ld [wTempMonDVs + 1], a
+	ld de, wTempMonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 ; setup position of mon at bottom gameboy
 	depixel 12, 9, 4, 6
 ; starting position of sprite jumptable
@@ -826,11 +824,10 @@ TradeAnim_ShowGivemonData:
 	call ShowPlayerTrademonStats
 	ld a, [wPlayerTrademonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wPlayerTrademonDVs]
-	ld [wTempMonDVs], a
-	ld a, [wPlayerTrademonDVs + 1]
-	ld [wTempMonDVs + 1], a
-; works well enough
+	ld hl, wPlayerTrademonDVs
+	ld de, wTempMonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0
@@ -852,11 +849,10 @@ TradeAnim_ShowGetmonData:
 	call ShowOTTrademonStats
 	ld a, [wOTTrademonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wOTTrademonDVs]
-	ld [wTempMonDVs], a
-	ld a, [wOTTrademonDVs + 1]
-	ld [wTempMonDVs + 1], a
-; and here
+	ld hl, wOTTrademonDVs
+	ld de, wTempMonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	ld a, %11100100 ; 3,2,1,0

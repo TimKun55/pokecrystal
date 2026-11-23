@@ -19,8 +19,15 @@ MACRO box_struct
 \1SpclDefEV::      db
 \1CaughtBall::     db ; item id of the ball this mon was caught with
 \1CaughtLevel::    db ; whole byte; used to be 6 bits packed into CaughtTime
-\1Padding::        ds 2
-\1DVs::            dw
+\1DVs::
+\1HPAtkDV::        db ; high nibble HP, low nibble Attack
+\1DefSpeDV::       db ; high nibble Defense, low nibble Speed
+\1SatSdfDV::       db ; high nibble Sp.Attack, low nibble Sp.Defense
+\1Personality::
+\1Shiny::
+\1Nature::         db ; low byte: bit 7 shiny, bits 4-0 nature
+\1Gender::
+\1Form::           db ; high byte: bit 7 gender, bits 4-0 unown form
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
@@ -44,8 +51,15 @@ MACRO savemon_struct
 \1DefExp::         dw
 \1CaughtBall::     db ; same offset as box_struct's CaughtBall
 \1CaughtLevel::    db ; same offset too; used to be 6 bits packed into CaughtTime
-\1Padding::        ds 2 ; unused SpdExp/SpcExp bytes
-\1DVs::            dw
+\1DVs::
+\1HPAtkDV::        db ; high nibble HP, low nibble Attack
+\1DefSpeDV::       db ; high nibble Defense, low nibble Speed
+\1SatSdfDV::       db ; high nibble Sp.Attack, low nibble Sp.Defense
+\1Personality::
+\1Shiny::
+\1Nature::         db ; low byte: bit 7 shiny, bits 4-0 nature
+\1Gender::
+\1Form::           db ; high byte: bit 7 gender, bits 4-0 unown form
 \1PPUps::          db
 \1Happiness::      db
 \1PokerusStatus::  db
@@ -126,7 +140,15 @@ MACRO battle_struct
 \1Species::   db
 \1Item::      db
 \1Moves::     ds NUM_MOVES
-\1DVs::       dw
+\1DVs::
+\1HPAtkDV::    db ; high nibble HP, low nibble Attack
+\1DefSpeDV::   db ; high nibble Defense, low nibble Speed
+\1SatSdfDV::   db ; high nibble Sp.Attack, low nibble Sp.Defense
+\1Personality::
+\1Shiny::
+\1Nature::     db ; low byte: bit 7 shiny, bits 4-0 nature
+\1Gender::
+\1Form::       db ; high byte: bit 7 gender, bits 4-0 unown form
 \1PP::        ds NUM_MOVES
 \1Happiness:: db
 \1Level::     db
@@ -267,7 +289,15 @@ MACRO roam_struct
 \1MapGroup::  db
 \1MapNumber:: db
 \1HP::        db
-\1DVs::       dw
+\1DVs::
+\1HPAtkDV::    db ; high nibble HP, low nibble Attack
+\1DefSpeDV::   db ; high nibble Defense, low nibble Speed
+\1SatSdfDV::   db ; high nibble Sp.Attack, low nibble Sp.Defense
+\1Personality::
+\1Shiny::
+\1Nature::     db ; low byte: bit 7 shiny, bits 4-0 nature
+\1Gender::
+\1Form::       db ; high byte: bit 7 gender, bits 4-0 unown form
 ENDM
 
 MACRO bugcontestwinner
@@ -277,10 +307,10 @@ MACRO bugcontestwinner
 ENDM
 
 MACRO hof_mon
-\1Species::  db
-\1ID::       dw
-\1DVs::      dw
-\1Level::    db
+\1Species::     db
+\1ID::          dw
+\1Personality:: dw ; only personality is stored; DVs are not needed in HoF
+\1Level::       db
 \1Nickname:: ds MON_NAME_LENGTH - 1
 \1End::
 ENDM
@@ -309,7 +339,15 @@ MACRO trademon
 \1Nickname::    ds MON_NAME_LENGTH
 \1SenderName::  ds NAME_LENGTH
 \1OTName::      ds NAME_LENGTH
-\1DVs::         dw
+\1DVs::
+\1HPAtkDV::      db ; high nibble HP, low nibble Attack
+\1DefSpeDV::     db ; high nibble Defense, low nibble Speed
+\1SatSdfDV::     db ; high nibble Sp.Attack, low nibble Sp.Defense
+\1Personality::
+\1Shiny::
+\1Nature::       db ; low byte: bit 7 shiny, bits 4-0 nature
+\1Gender::
+\1Form::         db ; high byte: bit 7 gender, bits 4-0 unown form
 \1ID::          dw
 \1CaughtData::  db
 \1End::

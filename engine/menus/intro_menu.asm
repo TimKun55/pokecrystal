@@ -715,8 +715,9 @@ OakSpeech:
 	call PrepMonFrontpic
 
 	xor a
-	ld [wTempMonDVs], a
-	ld [wTempMonDVs + 1], a
+	ld hl, wTempMonDVs
+	ld bc, MON_PP - MON_DVS
+	call ByteFill
 
 	ld b, CGB_INTRO_PALS
 	call GetCGBLayout

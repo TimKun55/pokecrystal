@@ -152,7 +152,8 @@ DoNPCTrade:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call Trade_GetAttributeOfCurrentPartymon
 	ld de, wPlayerTrademonDVs
-	call Trade_CopyTwoBytes
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -226,13 +227,15 @@ DoNPCTrade:
 	ld e, NPCTRADE_DVS
 	call GetTradeAttr
 	ld de, wOTTrademonDVs
-	call Trade_CopyTwoBytes
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call Trade_GetAttributeOfLastPartymon
 	ld hl, wOTTrademonDVs
-	call Trade_CopyTwoBytes
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 
 	ld e, NPCTRADE_OT_ID
 	call GetTradeAttr
@@ -274,16 +277,21 @@ DoNPCTrade:
 	ret
 
 GetTradeAttr:
+; de holds the attribute offset within an NPCTrades row.
 	ld d, 0
 	push de
 	ld a, [wJumptableIndex]
 	and $f
-	swap a
-	ld e, a
-	ld d, 0
+	ld b, a
+	and a
 	ld hl, NPCTrades
+	jr z, .got_row
+	ld de, NPCTRADE_STRUCT_LENGTH
+.row_loop
 	add hl, de
-	add hl, de
+	dec b
+	jr nz, .row_loop
+.got_row
 	pop de
 	add hl, de
 	ret

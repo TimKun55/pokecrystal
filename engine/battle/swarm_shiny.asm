@@ -69,33 +69,19 @@ GenerateSwarmShiny:
     cp HERACROSS
     jr nz, .skipshine	
     jr .rollshiny
-    ;fallthrough
 .rollshiny
     call Random
 	cp 15 ; adjust to desired percentage
 	jr nc, .trynext
-	ld b, ATKDEFDV_SHINY
-	ld c, SPDSPCDV_SHINY
-	jr .UpdateDVs
+	ld a, PERSONALITY_FORCE_SHINY
+	ret
 .trynext:
 	call Random
 	cp 15 ; adjust to desired percentage
 	jr nc, .skipshine
-	ld b, ATKDEFDV_SHINYF
-	ld c, SPDSPCDV_SHINY
-	jr .UpdateDVs
+	ld a, PERSONALITY_FORCE_SHINY
+	ret
 
 .skipshine:
-; Generate new random DVs
-	call BattleRandom
-	ld b, a
-	call BattleRandom
-	ld c, a
-
-.UpdateDVs:
-; Input DVs in register bc
-	ld hl, wEnemyMonDVs
-	ld a, b
-	ld [hli], a
-	ld [hl], c
+	xor a
 	ret

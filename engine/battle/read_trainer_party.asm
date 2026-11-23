@@ -138,20 +138,40 @@ ReadTrainerPartyPieces:
 	pop hl
 
 ; When reading DVs, treat PERFECT_DV as $ff
+	ld b, NUM_STATS / 2
+.read_dv
 	call GetNextTrainerDataByte
 	cp PERFECT_DV
-	jr nz, .atk_def_dv_nonzero
+	jr nz, .dv_nonzero
 	ld a, $ff
-.atk_def_dv_nonzero
+.dv_nonzero
 	ld [de], a
 	inc de
-	call GetNextTrainerDataByte
-	cp PERFECT_DV
-	jr nz, .spd_spc_dv_nonzero
-	ld a, $ff
-.spd_spc_dv_nonzero
-	ld [de], a
+	dec b
+	jr nz, .read_dv
 .no_dvs
+
+; personality override?
+; Only the high byte is used. A zero override keeps the generated gender/form.
+; A nonzero override replaces the form bits while preserving generated gender.
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_PERSONALITY_F, a
+	jr z, .no_personality
+	call GetNextTrainerDataByte
+	ld b, a
+	and a
+	jr z, .no_personality
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1Personality + 1
+	call GetPartyLocation
+	ld a, [hl]
+	and GENDER_MASK
+	or b
+	ld [hl], a
+	pop hl
+.no_personality
 ; item?
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_ITEM_F, a
@@ -233,6 +253,24 @@ ReadTrainerPartyPieces:
 
 	pop hl
 .no_moves
+
+; shiny override?
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_SHINY_F, a
+	jr z, .no_shiny
+	call GetNextTrainerDataByte
+	and a
+	jr z, .no_shiny
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1Personality
+	call GetPartyLocation
+	ld a, [hl]
+	or SHINY_MASK
+	ld [hl], a
+	pop hl
+.no_shiny
 
 ; Custom DVs affect stats, so recalculate them after TryAddMonToParty
 	ld a, [wOtherTrainerType]

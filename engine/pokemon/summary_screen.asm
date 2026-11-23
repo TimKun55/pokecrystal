@@ -67,6 +67,13 @@ DEF INFO_TILE_Y     EQU 2
 DEF INFO_TILE_FIRST EQU $6c ; 4 tiles at $6c-$6f, written by the green page
 DEF DV_STAR_TILE    EQU $4a ; sheet tile 25, already resident from the $31-$50 load
 
+; Nature arrows are sheet tiles 26 and 0. Both are already resident from the
+; initial $31-$50 sheet load: up at $4B, down at $31. Sheet tile 0 was an unused
+; leftover from the original UI, so no summary page displays it and the blue
+; page needs no per-load VRAM reload for the down arrow.
+DEF NATURE_UP_TILE   EQU $4B ; sheet tile 26
+DEF NATURE_DOWN_TILE EQU $31 ; sheet tile 0
+
 ; The Hidden Power line on page 4 is drawn in the Unown font,
 ; but only loads the necessary tiles in.
 DEF HIDDEN_POWER_LABEL_TILE EQU $52
@@ -697,26 +704,28 @@ SummaryScreen_LoadGFX:
 	ret
 
 .LoadPals:
-	call .PlaceItemIconAttrmap
+	ld a, c
+	cp BLUE_PAGE
+	jr z, .blue_page
+; Restore the baseline attributes of the arrow column. The blue page sets
+; them to the gender palette; the caught-ball rim lives at x16,y6-y8.
+	hlcoord 16, 5, wAttrmap
+	xor a ; baseline palette of x16,y5
+	ld [hl], a
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	ld a, 4 ; caught-ball rim, y6-y8
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	xor a ; baseline palette of x16,y9
+	ld [hl], a
+.blue_page
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
-	ret
-
-.PlaceItemIconAttrmap:
-	ld a, $1 ; the mon palette: the level's own ground
-	cp c
-	jr nz, .have_pal
-	ld a, [wTempMonItem]
-	and a
-	jr nz, .have_item
-	ld a, $1 ; green page, but nothing held: the level stays, so mon palette
-	jr .have_pal
-.have_item
-	ld a, $5 ; the ball/item palette
-.have_pal
-	hlcoord 2, 8, wAttrmap
-	lb bc, 3, 3
-	newfarcall FillBoxCGB
 	ret
 
 .PageTilemap:
@@ -1230,6 +1239,8 @@ LoadBluePage:
 	ld de, wTempMonSpeed
 	call .PrintTempMonStats
 
+	call .PlaceNatureArrows
+
 ; The box shows the DVs or the EVs, never both.
 	hlcoord 0, 13
 	lb bc, 5, SCREEN_WIDTH
@@ -1254,10 +1265,10 @@ LoadBluePage:
 	db "Defense@"
 
 .SpAttackString:
-	db "Spcl.Atk@"
+	db "Sp.Atk@"
 
 .SpDefenseString:
-	db "Spcl.Def@"
+	db "Sp.Def@"
 
 .SpeedString:
 	db "Speed@"
@@ -1265,6 +1276,75 @@ LoadBluePage:
 .PrintTempMonStats:
 	lb bc, 2, 3
 	call PrintNum
+	ret
+
+.PlaceNatureArrows:
+; Both arrows are already resident from the initial sheet load ($4B and $31).
+; Place one beside each nature-affected stat; BG palette 3 supplies the
+; existing gender colors.
+	ld a, [wTempMonNature]
+	and NATURE_MASK
+	cp NUM_NATURES
+	jr c, .got_nature
+	ld a, NO_NATURE
+.got_nature
+	newfarcall GetNatureArrowStats
+	; b = raised stat, c = lowered stat; both 0 for a neutral nature.
+
+	ld e, STAT_ATK
+	hlcoord 16, 5
+	call .WriteNatureArrowForStat
+
+	ld e, STAT_DEF
+	hlcoord 16, 6
+	call .WriteNatureArrowForStat
+
+	ld e, STAT_SATK
+	hlcoord 16, 7
+	call .WriteNatureArrowForStat
+
+	ld e, STAT_SDEF
+	hlcoord 16, 8
+	call .WriteNatureArrowForStat
+
+	ld e, STAT_SPD
+	hlcoord 16, 9
+	call .WriteNatureArrowForStat
+
+; BG palette 3 for the whole arrow column. .LoadPals restores the baseline
+; on every other page so the caught-ball rim keeps its own palette.
+	hlcoord 16, 5, wAttrmap
+	ld a, 3
+	ld bc, SCREEN_WIDTH
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	ret
+
+.WriteNatureArrowForStat:
+; e = stat shown on this row, hl = tilemap coordinate.
+; b and c are the raised/lowered stats returned by GetNatureArrowStats.
+	ld a, b
+	cp e
+	jr z, .arrow_raised
+	ld a, c
+	cp e
+	jr z, .arrow_lowered
+	ld a, ' '
+	jr .arrow_write
+.arrow_raised
+	ld a, NATURE_UP_TILE
+	jr .arrow_write
+.arrow_lowered
+	ld a, NATURE_DOWN_TILE
+.arrow_write
+	ld [hl], a
 	ret
 
 SummaryScreenDrawPlayerHP:
@@ -1428,140 +1508,68 @@ SummaryScreen_PrintEVs:
 	db "Spe:@"	
 
 SummaryScreen_PrintDVs:
+; Show the six stored DVs directly. They are packed as
+; byte 0: HP/Atk, byte 1: Def/Spe, byte 2: Sp.Atk/Sp.Def.
+; Display them in the same order as the EV page:
+; row 14: HP, Spe
+; row 15: Atk, Def
+; row 16: SpA, SpD
+
 	hlcoord 2, 14
 	ld de, .DVHPstring
 	call PlaceString
-	
-	hlcoord 2, 15
-	ld de, .DVAtkstring
-	call PlaceString
-	
-	hlcoord 11, 15
-	ld de, .DVDefstring
-	call PlaceString
-	
-	hlcoord 2, 16
-	ld de, .DVSpcstring
-	call PlaceString
-	
 	hlcoord 11, 14
 	ld de, .DVSpestring
 	call PlaceString
+	hlcoord 2, 15
+	ld de, .DVAtkstring
+	call PlaceString
+	hlcoord 11, 15
+	ld de, .DVDefstring
+	call PlaceString
+	hlcoord 2, 16
+	ld de, .DVSpAstring
+	call PlaceString
+	hlcoord 11, 16
+	ld de, .DVSpDstring
+	call PlaceString
 
-	; we're using wPokedexStatus because why not, nobody using it atm lol
-	; ATK DV
-	ld a, [wTempMonDVs] ; only get the first byte of the word
-	and %11110000 ; most significant nybble of first byte in word-sized wTempMonDVs
-	swap a ; so we can print it properly
-	ld [wPokedexStatus], a
-	ld c, 0
-	; calc HP stat contribution
-	and 1 ; a still has the ATK DV
-	jr z, .atk_not_odd
-	ld a, 0
-	add 8
-	ld b, 0
-	ld c, a
-	;
-.atk_not_odd
-	push bc
-	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
+	ld a, [wTempMonDVs]
+	swap a
+	hlcoord 6, 14
+	call .PrintDV
+	ld a, [wTempMonDVs + 1]
+	hlcoord 15, 14
+	call .PrintDV
+
+	ld a, [wTempMonDVs]
 	hlcoord 6, 15
-	call PrintNum
-	hlcoord 8, 15
-	call .MaybeDVStar
-
-	; DEF DV
-	ld a, [wTempMonDVs] ; only get the first byte of the word
-	and %00001111 ; least significant nybble, don't need to swap the bits of the byte
-	ld [wPokedexStatus], a ;DEF
-	; calc HP stat contribution
-	pop bc
-	and 1 ; a still has the DEF DV
-	jr z, .def_not_odd
-	ld a, c
-	add 4
-	ld b, 0
-	ld c, a
-	;
-.def_not_odd
-	push bc
-	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
+	call .PrintDV
+	ld a, [wTempMonDVs + 1]
+	swap a
 	hlcoord 15, 15
-	call PrintNum
-	hlcoord 17, 15
-	call .MaybeDVStar
+	call .PrintDV
 
-	; SPE DV
-	ld a, [wTempMonDVs + 1] ; second byte of word
-	and %11110000 ; most significant nybble of 2nd byte in word-sized wTempMonDVs
-	swap a ; so we can print it properly
-	ld [wPokedexStatus], a ;SPEED
-	; calc HP stat contribution
-	pop bc
-	and 1 ; a still has the SPEED DV
-	jr z, .speed_not_odd
-	ld a, c
-	add 2
-	ld b, 0
-	ld c, a
-	;
-.speed_not_odd
-	push bc
-	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 15, 14 ; 1, 5, 9, 13
-	call PrintNum
-	hlcoord 17, 14
-	call .MaybeDVStar
-
-	; SPC DV
-	ld a, [wTempMonDVs + 1] ; second byte of word
-	and %00001111 ; least significant nybble, don't need to swap the bits of the byte
-	ld [wPokedexStatus], a ;SPC
-	; calc HP stat contribution
-	pop bc
-	and 1 ; a still has the DEF DV
-	jr z, .spc_not_odd
-	ld a, c
-	add 1
-	ld b, 0
-	ld c, a
-	;
-.spc_not_odd
-	push bc
-	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
+	ld a, [wTempMonDVs + 2]
+	swap a
 	hlcoord 6, 16
-	call PrintNum
-	hlcoord 8, 16
-	call .MaybeDVStar
-	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
-	; call PrintNum
+	call .PrintDV
+	ld a, [wTempMonDVs + 2]
+	hlcoord 15, 16
+	call .PrintDV
+	ret
 
-	; HP
-	; HP DV is determined by the last bit of each of these four DVs
-	; odd Attack DV adds 8, Defense adds 4, Speed adds 2, and Special adds 1
-	;For example, a Lugia with the DVs 5 Atk, 15 Def, 13 Spe, and 13 Spc will have:
-	; 5 Attack = Odd, HP += 8
-	; 15 Defense = Odd, HP += 4
-	; 13 Speed = Odd, HP += 2
-	; 13 Special = Odd, HP += 1
-	;resulting in an HP stat of 15
-	; THANKS SMOGON
-	; going to "and 1" each final value and push a counter to stack to preserve it
-	pop bc
-	ld a, c
+.PrintDV:
+; a = packed DV byte; hl = tilemap destination
+	and $f
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 6, 14 ; 1, 4, 7, 10, 13 
 	call PrintNum
-	hlcoord 8, 14
+	; PrintNum leaves hl just past the two digits, where the star goes.
 	call .MaybeDVStar
 	ret
+
 .MaybeDVStar
 	ld a, [wPokedexStatus]
 	cp 15
@@ -1576,10 +1584,12 @@ SummaryScreen_PrintDVs:
 	db "Atk:@"
 .DVDefstring:
 	db "Def:@"
-.DVSpcstring:
-	db "Spc:@"
 .DVSpestring:
 	db "Spe:@"
+.DVSpAstring:
+	db "SpA:@"
+.DVSpDstring:
+	db "SpD:@"
 
 LoadOrangePage:
 	ld a, MET_LABEL
@@ -1600,7 +1610,29 @@ LoadOrangePage:
 	call SummaryScreen_placeCaughtTime
 	call SummaryScreen_placeCaughtLocation
 	call SummaryScreen_placeCaughtLevel
+
+	ld a, [wTempMonNature]
+	and NATURE_MASK
+	cp NUM_NATURES
+	jr c, .got_nature
+	ld a, NO_NATURE
+.got_nature
+
+	; PlaceString clobbers a as well as b/c, so preserve the clamped
+	; nature across the label print.
+	push af
+	hlcoord 8, 6
+	ld de, .NatureLabel2
+	call PlaceString
+	pop af
+
+	ld b, a
+	hlcoord 8, 7
+	predef PrintNature
 	ret
+
+.NatureLabel2:
+	db "Nature@"
 
 SummaryScreen_PrintHappiness:
 	hlcoord 9, 5
@@ -1748,6 +1780,8 @@ SummaryScreen_placeCaughtLocation:
 	jr z, .unknown_location
 	cp LANDMARK_GIFT
 	jr z, .was_gift
+	cp NUM_LANDMARKS
+	jr nc, .unknown_location
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1

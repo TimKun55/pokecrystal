@@ -97,7 +97,7 @@ LoadRandomBattleTowerMon:
 	ld a, [wBTChoiceOfLvlGroup]
 	dec a
 	ld hl, BattleTowerMons
-	ld bc, BATTLETOWER_NUM_UNIQUE_MON * PARTYMON_STRUCT_LENGTH
+	ld bc, BATTLETOWER_NUM_UNIQUE_MON * BATTLETOWER_MON_STRUCT_LENGTH
 	call AddNTimes
 
 	ldh a, [hRandomAdd]
@@ -115,7 +115,7 @@ LoadRandomBattleTowerMon:
 	; Check if mon was already loaded before
 	; Check current and the 2 previous teams
 	; includes check if item is double at the current team
-	ld bc, PARTYMON_STRUCT_LENGTH
+	ld bc, BATTLETOWER_MON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hli]
 	ld b, a
@@ -158,12 +158,83 @@ LoadRandomBattleTowerMon:
 	cp b
 	jr z, .FindARandomBattleTowerMon
 
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
-	call CopyBytes
+	; Copy only the compact fields into the already-zeroed OT party mon.
+	; ID, EXP, PP, status, caught data and stored stats stay zero; PP and
+	; stats are derived when the Battle Tower battle loads.
+	ld a, [hli]
+	ld [de], a ; species
+	inc de
+	ld a, [hli]
+	ld [de], a ; item
+	inc de
+
+	ld b, NUM_MOVES
+.copy_moves
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copy_moves
+
+	rept MON_EVS - (MON_MOVES + NUM_MOVES)
+	inc de ; ID and EXP
+	endr
+	ld b, NUM_STATS
+.copy_evs
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copy_evs
+
+	rept MON_DVS - (MON_EVS + NUM_STATS)
+	inc de ; caught ball and level
+	endr
+	ld b, NUM_STATS / 2
+.copy_dvs
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copy_dvs
+
+	ld b, 2
+.copy_personality
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copy_personality
+
+	rept MON_HAPPINESS - (MON_PERSONALITY + 2)
+	inc de ; PP
+	endr
+	ld a, [hli]
+	ld [de], a ; happiness
+	inc de
+
+	rept MON_LEVEL - (MON_HAPPINESS + 1)
+	inc de ; Pokerus and caught data
+	endr
+	ld a, [hli]
+	ld [de], a ; level
+	inc de
+
+	; hl already points at the next compact 19-byte row. Advance only de to
+	; the next NICKNAMED_MON_STRUCT_LENGTH destination block.
+	ld bc, NICKNAMED_MON_STRUCT_LENGTH - (MON_LEVEL + 1)
+	push hl
+	ld h, d
+	ld l, e
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
 
 	ld a, [wNamedObjectIndex]
 	push af
 	push de
+	push hl ; preserve the source pointer to the next compact row
 	ld hl, -NICKNAMED_MON_STRUCT_LENGTH
 	add hl, de
 	ld a, [hl]
@@ -178,6 +249,7 @@ LoadRandomBattleTowerMon:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
+	pop hl ; restore the source pointer to the next compact row
 	pop de
 	pop af
 	ld [wNamedObjectIndex], a

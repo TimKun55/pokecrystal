@@ -1297,14 +1297,13 @@ LinkTrade:
 	ld [wPlayerTrademonID], a
 	ld a, [hl]
 	ld [wPlayerTrademonID + 1], a
-; DVs
+; DVs and personality
 	ld hl, wPartyMon1DVs
 	ld a, [wCurTradePartyMon]
 	call GetPartyLocation
-	ld a, [hli]
-	ld [wPlayerTrademonDVs], a
-	ld a, [hl]
-	ld [wPlayerTrademonDVs + 1], a
+	ld de, wPlayerTrademonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 ; caught data
 	ld a, [wCurTradePartyMon]
 	ld hl, wPartyMon1Species
@@ -1344,14 +1343,13 @@ LinkTrade:
 	ld [wOTTrademonID], a
 	ld a, [hl]
 	ld [wOTTrademonID + 1], a
-; DVs
+; DVs and personality
 	ld hl, wOTPartyMon1DVs
 	ld a, [wCurOTTradePartyMon]
 	call GetPartyLocation
-	ld a, [hli]
-	ld [wOTTrademonDVs], a
-	ld a, [hl]
-	ld [wOTTrademonDVs + 1], a
+	ld de, wOTTrademonDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 ; caught data
 	ld a, [wCurOTTradePartyMon]
 	ld hl, wOTPartyMon1Species

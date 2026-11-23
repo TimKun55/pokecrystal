@@ -7,6 +7,20 @@ DEF BATTLETOWER_NUM_UNIQUE_TRAINERS EQU 70
 DEF BATTLETOWER_TRAINERDATALENGTH EQU 18 * 2 ; $24
 DEF BATTLE_TOWER_STRUCT_LENGTH EQU NAME_LENGTH + BATTLETOWER_PARTY_LENGTH * NICKNAMED_MON_STRUCT_LENGTH + BATTLETOWER_TRAINERDATALENGTH ; $e0
 
+; Compact Battle Tower mon layout (see data/battle_tower/parties.asm).
+; Only fields that cannot be derived at load time are stored.
+	rsreset
+DEF BT_MON_SPECIES     rb
+DEF BT_MON_ITEM        rb
+DEF BT_MON_MOVES       rb NUM_MOVES
+DEF BT_MON_EVS         rb NUM_STATS
+DEF BT_MON_DVS         rb NUM_STATS / 2
+DEF BT_MON_PERSONALITY rw
+DEF BT_MON_HAPPINESS   rb
+DEF BT_MON_LEVEL       rb
+DEF BATTLETOWER_MON_STRUCT_LENGTH EQU _RS
+	assert BATTLETOWER_MON_STRUCT_LENGTH == 19
+
 ; BattleTowerAction setval arguments (see engine/events/battle_tower/battle_tower.asm)
 	const_def
 	const BATTLETOWERACTION_CHECK_EXPLANATION_READ

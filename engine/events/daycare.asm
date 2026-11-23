@@ -552,10 +552,10 @@ DayCare_InitBreeding:
 	ld hl, wEggMonOT
 	ld bc, NAME_LENGTH
 	call ByteFill
-	ld a, [wBreedMon1DVs]
-	ld [wTempMonDVs], a
-	ld a, [wBreedMon1DVs + 1]
-	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon1Personality]
+	ld [wTempMonPersonality], a
+	ld a, [wBreedMon1Personality + 1]
+	ld [wTempMonPersonality + 1], a
 	ld a, [wBreedMon1Species]
 	ld [wCurPartySpecies], a
 	ld a, TEMPMON
@@ -638,62 +638,60 @@ DayCare_InitBreeding:
 	ld [hli], a
 	dec b
 	jr nz, .loop2
+; Start with three random DV bytes.
 	ld hl, wEggMonDVs
 	call Random
 	ld [hli], a
-	ld [wTempMonDVs], a
 	call Random
-	ld [hld], a
-	ld [wTempMonDVs + 1], a
-	ld de, wBreedMon1DVs
-	ld a, [wBreedMon1Species]
-	cp DITTO
-	jr z, .GotDVs
-	ld de, wBreedMon2DVs
-	ld a, [wBreedMon2Species]
-	cp DITTO
-	jr z, .GotDVs
-	ld a, TEMPMON
-	ld [wMonType], a
-	push hl
-	farcall GetGender
-	pop hl
-	ld de, wBreedMon1DVs
-	ld bc, wBreedMon2DVs
-	jr c, .SkipDVs
-	jr z, .ParentCheck2
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr z, .GotDVs
-	ld d, b
-	ld e, c
-	jr .GotDVs
-
-.ParentCheck2:
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr nz, .GotDVs
-	ld d, b
-	ld e, c
-
-.GotDVs:
-	ld a, [de]
-	inc de
-	and $f
-	ld b, a
-	ld a, [hl]
-	and $f0
-	add b
 	ld [hli], a
-	ld a, [de]
-	and $7
-	ld b, a
-	ld a, [hl]
-	and $f8
-	add b
+	call Random
 	ld [hl], a
 
-.SkipDVs:
+; Inherit three random DVs from the parents. Destiny Knot and the power items
+; do not exist in this fork, so the inheritance count is always three.
+	ld b, 3
+	ld c, 0
+.dv_inherit_loop
+	ld a, 12
+	call RandomRange
+	srl a ; carry selects parent 2
+	push af
+	ld a, 2
+	ld hl, wBreedMon1DVs
+	call c, GetParentAddr
+	pop af
+	ld e, a
+	call InheritDV
+	jr z, .dv_inherit_loop
+
+; Everstone: inherit that parent's nature. If both parents hold one,
+; CheckParentItem picks one at random.
+	ld hl, wBreedMon1Nature
+	ld a, EVERSTONE
+	call CheckParentItem
+	jr z, .random_nature
+	call GetParentAddr
+	ld a, [hl]
+	and NATURE_MASK
+	ld d, a
+	ld a, PERSONALITY_FORCE_NATURE
+	jr .got_nature_flags
+.random_nature
+	xor a
+.got_nature_flags
+	ld e, a ; flags for GeneratePersonality
+
+; Gender, shininess, and Unown form are re-rolled at creation.
+	ld a, [wCurPartySpecies]
+	ld b, a
+	ld a, [wCurForm]
+	ld c, a
+	farcall GeneratePersonality
+	ld hl, wDVAndPersonalityBuffer + MON_PERSONALITY - MON_DVS
+	ld de, wEggMonPersonality
+	ld bc, 2
+	call CopyBytes
+
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
 	ld bc, NAME_LENGTH
@@ -718,3 +716,110 @@ DayCare_InitBreeding:
 
 .String_EGG:
 	db "Egg@"
+
+CheckParentItem:
+; Returns nz if a parent holds item a. a is set to 1 or 2 depending on whether
+; parent 1 or 2 held it; if both held it, one is chosen at random.
+	push bc
+	ld b, a
+	ld a, [wBreedMon1Item]
+	cp b
+	jr z, .maybe_both
+	ld a, [wBreedMon2Item]
+	cp b
+	pop bc
+	ld a, 2
+	jr z, .ret_nz
+	xor a
+	ret
+.maybe_both
+	ld a, [wBreedMon2Item]
+	cp b
+	pop bc
+	ld a, 1
+	ret nz
+	inc a ; a = 2
+	call RandomRange
+	inc a ; 1 or 2
+.ret_nz
+	and a
+	ret
+
+GetParentAddr:
+; If a = 2, offset hl from parent 1 to parent 2.
+	cp 2
+	ret nz
+	push bc
+	ld bc, wBreedMon2 - wBreedMon1
+	add hl, bc
+	pop bc
+	ret
+
+InheritDV:
+; Inherit DV e (0=HP, 1=Atk, 2=Def, 3=Spe, 4=SAtk, 5=SDef) from the parent
+; DVs at hl into the egg DVs at wEggMonDVs.
+; Returns nz when no more DVs can be inherited.
+; b = inheritance count left, c = already-inherited bitfield.
+; Preserves de and hl.
+	ld a, b
+	and a
+	jr z, .cant_inherit_any_more
+	ld a, c
+	cp %111111
+	jr z, .cant_inherit_any_more
+
+; Have we already inherited this stat?
+	push de
+	ld d, %000001
+	inc e
+.dv_check_loop
+	dec e
+	jr z, .got_dv_bit
+	sla d
+	jr .dv_check_loop
+.got_dv_bit
+	ld a, d
+	and c
+	ld a, d
+	pop de
+	jr nz, .cant_inherit_this_stat
+
+; Mark the stat inherited and decrement the count.
+	or c
+	ld c, a
+	dec b
+	ld a, e ; restore this DV's index before choosing its byte
+
+; DV layout: %xxxxyyyy, %zzzzaaaa, %bbbbcccc
+; x=HP, y=Atk, z=Def, a=Spe, b=SAtk, c=SDef.
+; Even DVs take the high nibble from the parent; odd DVs take the low nibble.
+	push de
+	push hl
+	ld de, wEggMonDVs
+	srl a ; carry is set for odd DVs
+	inc a
+.find_dv_loop
+	dec a
+	jr z, .found_dv
+	inc de
+	inc hl
+	jr .find_dv_loop
+.found_dv
+	push de ; egg DV destination
+	call c, SwapHLDE
+	ld a, [hl]
+	and $f0
+	ld h, a
+	ld a, [de]
+	and $f
+	or h
+	pop de
+	ld [de], a
+	pop hl
+	pop de
+.cant_inherit_this_stat
+	xor a
+	ret
+.cant_inherit_any_more
+	or 1
+	ret

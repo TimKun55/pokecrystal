@@ -1,54 +1,18 @@
 GetUnownLetter:
-; Return Unown letter in wUnownLetter based on DVs at hl
+; Return Unown letter in wUnownLetter based on the stored form at hl.
+; hl points at the start of the mon's DV block.
 
-; Take the middle 2 bits of each DV and place them in order:
-;	atk  def  spd  spc
-;	.ww..xx.  .yy..zz.
-
-	; atk
+rept MON_FORM - MON_DVS
+	inc hl
+endr
 	ld a, [hl]
-	and %01100000
-	sla a
-	ld b, a
-	; def
-	ld a, [hli]
-	and %00000110
-	swap a
-	srl a
-	or b
-	ld b, a
-
-	; spd
-	ld a, [hl]
-	and %01100000
-	swap a
-	sla a
-	or b
-	ld b, a
-	; spc
-	ld a, [hl]
-	and %00000110
-	srl a
-	or b
-
-; Divide by 9 to get 0-28
-	ldh [hDividend + 3], a
-	xor a
-	ldh [hDividend], a
-	ldh [hDividend + 1], a
-	ldh [hDividend + 2], a
-	ld a, 9
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-
-; Increment to get 1-29
-	ldh a, [hQuotient + 3]
-	inc a
-; The valid range is 1-28, so use UNOWN_T (20) instead of 29
+	and FORM_MASK
+	jr z, .invalid
 	cp NUM_UNOWN + 1
 	jr c, .valid
-	ld a, UNOWN_T
+.invalid
+	; mons without a form byte still need a printable letter
+	ld a, UNOWN_A
 .valid
 	ld [wUnownLetter], a
 	ret

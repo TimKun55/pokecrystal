@@ -46,20 +46,19 @@ BattleCommand_Transform:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .mimic_enemy_backup
-	ld a, [de]
-	ld [wEnemyBackupDVs], a
-	inc de
-	ld a, [de]
-	ld [wEnemyBackupDVs + 1], a
-	dec de
+; Save the enemy's original DVs and personality before they are overwritten.
+	push hl
+	push de
+	ld hl, wEnemyMonDVs
+	ld de, wEnemyBackupDVs
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality
+	call CopyBytes
+	pop de
+	pop hl
 .mimic_enemy_backup
-; copy DVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
+; copy DVs and personality
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality
+	call CopyBytes
 ; move pointer to stats
 	ld bc, wBattleMonStats - wBattleMonPP
 	add hl, bc

@@ -470,7 +470,11 @@ wCurrentBattleWindow:: db
 
 wSafariMonAngerCount:: db ; unreferenced
 wSafariMonEating:: db
-wEnemyBackupDVs:: dw ; used when enemy is transformed
+wEnemyBackupDVs::
+wEnemyBackupHPAtkDV::  db ; high nibble HP, low nibble Attack
+wEnemyBackupDefSpeDV:: db ; high nibble Defense, low nibble Speed
+wEnemyBackupSatSdfDV:: db ; high nibble Sp.Attack, low nibble Sp.Defense
+wEnemyBackupPersonality:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db
 
 wDisabledMove:: db
@@ -620,7 +624,6 @@ NEXTU
 ; odd egg
 wOddEgg:: party_struct wOddEgg
 wOddEggName:: ds MON_NAME_LENGTH
-wOddEggOT:: ds NAME_LENGTH
 
 NEXTU
 ; debug mon color picker
@@ -856,9 +859,11 @@ ENDU
 
 SECTION "Unused Map Buffer", WRAM0
 
+wDVAndPersonalityBuffer:: ds 5
+
 ; This was a buffer for map-related pointers in the 1997 G/S prototype.
 ; See wMapBuffer in pokegold-spaceworld's wram.asm.
-wUnusedMapBuffer:: ds 24
+wUnusedMapBuffer:: ds 19
 wUnusedMapBufferEnd::
 
 
@@ -3402,7 +3407,9 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 20
+	; Reduced from 20 to 7 to absorb the 13 bytes of growth from
+	; 6 party_structs + 3 box_structs + 1 contest party_struct + 3 roam_structs.
+	ds 7
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
@@ -3521,7 +3528,9 @@ w3_d090:: ds $70
 
 w3_d100::
 wBT_OTTrainer:: battle_tower_struct wBT_OT
-	ds $20
+	; Reduced from $20 to $b to absorb the 3-byte growth of each
+	; battle_tower_struct (party structs grew by 1 byte each, 3 per struct).
+	ds $b
 wBT_TrainerTextIndex:: db
 	ds 1
 w3_d202:: battle_tower_struct w3_d202

@@ -289,7 +289,7 @@ ContestScore:
 
 	ld a, [wContestMonSpecies] ; Species
 	and a
-	jr z, .done
+	jp z, .done
 
 	; Tally the following:
 
@@ -344,6 +344,20 @@ ContestScore:
 	add d
 	add d
 
+	call .AddContestStat
+
+	; Sp.Atk/Sp.Def DV byte
+	ld a, [wContestMonDVs + 2]
+	ld b, a
+	and %0010
+	ld c, a
+
+	swap b
+	ld a, b
+	and %0010
+	srl a
+	add c
+	add c
 	call .AddContestStat
 
 	; Remaining HP / 8

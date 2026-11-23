@@ -177,7 +177,7 @@ GetHallOfFameParty:
 	ld [de], a
 	inc de
 
-	ld hl, MON_DVS
+	ld hl, MON_PERSONALITY
 	add hl, bc
 	ld a, [hli]
 	ld [de], a
@@ -227,9 +227,9 @@ AnimateHOFMonEntrance:
 	inc hl
 	inc hl
 	ld a, [hli]
-	ld [wTempMonDVs], a
+	ld [wTempMonPersonality], a
 	ld a, [hli]
-	ld [wTempMonDVs + 1], a
+	ld [wTempMonPersonality + 1], a
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	hlcoord 0, 0
@@ -253,6 +253,7 @@ AnimateHOFMonEntrance:
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP
+	call DelayFrame ; let the vblank commit the selected mon palette
 	call HOF_SlideBackpic
 	xor a
 	ld [wBoxAlignment], a
@@ -385,6 +386,7 @@ _HallOfFamePC:
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP
+	call DelayFrame ; let the vblank commit the selected mon palette
 	decoord 6, 5
 	ld c, ANIM_MON_HOF
 	predef HOF_AnimateFrontpic
@@ -436,9 +438,9 @@ DisplayHOFMon:
 	ld a, [hli]
 	ld [wTempMonID + 1], a
 	ld a, [hli]
-	ld [wTempMonDVs], a
+	ld [wTempMonPersonality], a
 	ld a, [hli]
-	ld [wTempMonDVs + 1], a
+	ld [wTempMonPersonality + 1], a
 	ld a, [hli]
 	ld [wTempMonLevel], a
 	ld de, wStringBuffer2
@@ -534,6 +536,7 @@ HOF_AnimatePlayerPic:
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP
+	call DelayFrame ; let the vblank commit the selected mon palette
 	call HOF_SlideBackpic
 	xor a
 	ld [wBoxAlignment], a

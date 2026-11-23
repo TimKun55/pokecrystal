@@ -522,7 +522,7 @@ CheckEncounterRoamMon:
 	ld hl, wRoamMon1MapGroup
 	ld c, a
 	ld b, 0
-	ld a, 7 ; length of the roam_struct
+	ld a, wRoamMon2Species - wRoamMon1Species ; length of the roam_struct
 	call AddNTimes
 	ld a, d
 	cp [hl]
@@ -918,12 +918,18 @@ RandomPhoneMon:
 ; c = mon length
 ; All trainers use 2 bytes for level and species
 	ld c, 2
-; TRAINERTYPE_DVS uses 2 more bytes
+; TRAINERTYPE_DVS uses 3 more bytes
 	bit TRAINERTYPE_DVS_F, b
 	jr z, .no_dvs
 	inc c
 	inc c
+	inc c
 .no_dvs
+; TRAINERTYPE_PERSONALITY uses 1 more byte
+	bit TRAINERTYPE_PERSONALITY_F, b
+	jr z, .no_personality
+	inc c
+.no_personality
 ; TRAINERTYPE_ITEM uses 1 more byte
 	bit TRAINERTYPE_ITEM_F, b
 	jr z, .no_item
@@ -936,6 +942,11 @@ RandomPhoneMon:
 	add c
 	ld c, a
 .no_moves
+; TRAINERTYPE_SHINY uses 1 more byte
+	bit TRAINERTYPE_SHINY_F, b
+	jr z, .no_shiny
+	inc c
+.no_shiny
 ; bc = mon length
 	xor a
 	ld b, a

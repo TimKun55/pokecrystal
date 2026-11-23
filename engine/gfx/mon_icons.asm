@@ -526,7 +526,7 @@ Trade_LoadMonIconGFX:
 	ret
 
 Trade_SetMiniPalette:
-; a = species, bc = DV pointer. Writes the mini's colours to OBJ palette 0.
+; a = species, bc = DV-block pointer. Writes the mini's colours to OBJ palette 0.
 	push bc
 	ld l, a
 	ld h, 0
@@ -535,9 +535,9 @@ Trade_SetMiniPalette:
 	add hl, hl                        ; 8 bytes per species entry
 	ld de, PokemonPalettes
 	add hl, de                        ; hl = palette entry for species a
-	pop bc                            ; bc = DV pointer
+	pop bc                            ; bc = DV-block pointer
 	push hl
-	farcall CheckShininess            ; carry = shiny, from DVs in bc
+	farcall CheckShininess            ; carry = shiny, from personality in the block at bc
 	pop hl
 	jr nc, .not_shiny
 	ld de, 4
@@ -877,7 +877,7 @@ Pokedex_SetUnownLetter::
 
 
 NamingScreen_SetMiniPalette:
-; a = species, bc = DV pointer. Writes the mini's colours to OBJ palette 4
+; a = species, bc = DV-block pointer. Writes the mini's colours to OBJ palette 4
 ; and points the icon at palette 4.
 	push bc
 	ld l, a
@@ -887,9 +887,9 @@ NamingScreen_SetMiniPalette:
 	add hl, hl                        ; 8 bytes per species entry
 	ld de, PokemonPalettes
 	add hl, de                        ; hl = palette entry for the species
-	pop bc                            ; bc = DV pointer
+	pop bc                            ; bc = DV-block pointer
 	push hl
-	farcall CheckShininess            ; carry = shiny, from the DVs in bc
+	farcall CheckShininess            ; carry = shiny, from personality in the block at bc
 	pop hl
 	jr nc, .not_shiny
 	ld de, 4
@@ -913,11 +913,8 @@ FlyMap_LoadMiniGFX::
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	ld de, wTempMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld hl, 8                          ; mini tile index
 	ld de, wTempMonDVs
 	call GetMini
@@ -954,7 +951,7 @@ FlyMap_SetMiniPalette::
 	add hl, de
 	ld bc, wTempMonDVs
 	push hl
-	farcall CheckShininess            ; carry = shiny, from the DVs in bc
+	farcall CheckShininess            ; carry = shiny, from personality in the block at bc
 	pop hl
 	jr nc, .not_shiny
 	ld de, 4
@@ -1147,7 +1144,7 @@ TrainerInfo_ShowEnemyMini:
 	ld d, 5
 	ld e, TRAINER_INFO_ENEMY_TILE
 ; fallthrough
-; bc = sprite struct, hl = DV pointer, d = OBJ palette, e = first tile
+; bc = sprite struct, hl = DV-block pointer, d = OBJ palette, e = first tile
 TrainerInfo_FinishMini:
 	push hl
 	push de
@@ -1191,9 +1188,9 @@ TrainerInfo_SetOAMSlot:
 	ldh [hObjectStructIndex], a
 	ret
 
-; a = species, hl = DV pointer, d = OBJ palette number
+; a = species, hl = DV-block pointer, d = OBJ palette number
 ; Same colour copy as NamingScreen_SetMiniPalette, but for any palette and
-; shiny is decided by these DVs, not by the Pokedex toggle.
+; shiny comes from the personality in that block, not the Pokedex toggle.
 TrainerInfo_SetMiniPalette:
 	push de
 	push hl
@@ -1204,7 +1201,7 @@ TrainerInfo_SetMiniPalette:
 	add hl, hl
 	ld de, PokemonPalettes
 	add hl, de
-	pop bc                            ; bc = DV pointer
+	pop bc                            ; bc = DV-block pointer
 	push hl
 	farcall CheckShininess            ; carry = shiny
 	pop hl

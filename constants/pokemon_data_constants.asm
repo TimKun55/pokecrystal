@@ -88,9 +88,24 @@ DEF MON_SAT_EV             rb
 DEF MON_SDF_EV             rb
 DEF MON_CAUGHTBALL         rb
 DEF MON_CAUGHTLEVEL        rb
-                           rb_skip 2
-DEF MON_DVS                rw
+DEF MON_DVS                rb NUM_STATS / 2
+rsset MON_DVS
+DEF MON_HP_ATK_DV          rb
+DEF MON_DEF_SPE_DV         rb
+DEF MON_SAT_SDF_DV         rb
+
+DEF MON_PERSONALITY        rw
+; low byte: bit 7 = shiny, bits 6-5 spare, bits 4-0 = nature
+; high byte: bit 7 = gender, bits 6-5 spare, bits 4-0 = unown form
+DEF MON_SHINY              EQU MON_PERSONALITY
+DEF MON_NATURE             EQU MON_PERSONALITY
+DEF MON_GENDER             EQU MON_PERSONALITY + 1
+DEF MON_FORM               EQU MON_PERSONALITY + 1
+
+assert MON_DVS == MON_CAUGHTLEVEL + 1
+
 DEF MON_PP                 rb NUM_MOVES
+assert MON_PP == MON_PERSONALITY + 2
 DEF MON_HAPPINESS          rb
 DEF MON_POKERUS            rb
 ; CaughtTime is a whole byte, but only its top four bits carry anything: 7-6
@@ -134,16 +149,29 @@ DEF SAVEMON_HP_EXP             rw
 DEF SAVEMON_ATK_EXP            rw
 DEF SAVEMON_DEF_EXP            rw
 ; SAVEMON_SPD_EXP and SAVEMON_SPC_EXP were never written or read; stats are
-; derived from the DVs, and the union with box_struct means this space already
-; overlaps the box's EVs and padding. Reuse its first byte for the ball so the
+; derived from DVs and natures, and the union with box_struct means this space
+; already overlaps the box's EVs and padding. Reuse its first byte for the ball so the
 ; field needs no encoding in EncodeBufferMon/DecodeBufferMon.
 ; Offset must stay identical to MON_CAUGHTBALL.
 DEF SAVEMON_CAUGHTBALL         rb
 DEF SAVEMON_CAUGHTLEVEL        rb
-                           rb_skip 2
-DEF SAVEMON_DVS                rw
+DEF SAVEMON_DVS                rb NUM_STATS / 2
+rsset SAVEMON_DVS
+DEF SAVEMON_HP_ATK_DV          rb
+DEF SAVEMON_DEF_SPE_DV         rb
+DEF SAVEMON_SAT_SDF_DV         rb
+
+DEF SAVEMON_PERSONALITY        rw
+DEF SAVEMON_SHINY              EQU SAVEMON_PERSONALITY
+DEF SAVEMON_NATURE             EQU SAVEMON_PERSONALITY
+DEF SAVEMON_GENDER             EQU SAVEMON_PERSONALITY + 1
+DEF SAVEMON_FORM               EQU SAVEMON_PERSONALITY + 1
+
+assert SAVEMON_DVS == SAVEMON_CAUGHTLEVEL + 1
+assert SAVEMON_PERSONALITY == MON_PERSONALITY
 ; savemon_struct is identical to party_struct before this point
 DEF SAVEMON_PP_UPS             rb
+assert SAVEMON_PP_UPS == SAVEMON_PERSONALITY + 2
 ; savemon_struct is shifted from party_struct beyond this point
 DEF SAVEMON_HAPPINESS          rb
 DEF SAVEMON_PKRUS              rb
@@ -163,8 +191,29 @@ DEF SAVEMON_NICKNAME           rb MON_NAME_LENGTH - 1
 DEF SAVEMON_OT                 rb PLAYER_NAME_LENGTH - 1
 DEF SAVEMON_STRUCT_LENGTH EQU _RS
 
+; Struct layout asserts
+assert BOXMON_STRUCT_LENGTH == 33
+assert PARTYMON_STRUCT_LENGTH == 49
+assert SAVEMON_STRUCT_LENGTH == 48
+assert MON_PP == MON_PERSONALITY + 2
+
 DEF NICKNAMED_MON_STRUCT_LENGTH EQU PARTYMON_STRUCT_LENGTH + MON_NAME_LENGTH
 DEF REDMON_STRUCT_LENGTH EQU 44
+
+; personality bit masks
+; low byte (shiny/nature)
+DEF SHINY_MASK  EQU %10000000
+DEF NATURE_MASK EQU %00011111
+DEF SHINY_F     EQU 7 ; bit index for SHINY_MASK
+; high byte (gender/unown form)
+DEF GENDER_MASK EQU %10000000
+DEF FORM_MASK   EQU %00011111
+DEF GENDER_F    EQU 7 ; bit index for GENDER_MASK
+
+; flags for GeneratePersonality
+DEF PERSONALITY_FORCE_SHINY  EQU 1
+DEF PERSONALITY_NEVER_SHINY  EQU 2
+DEF PERSONALITY_FORCE_NATURE EQU 4 ; d = nature to use
 
 ; caught data
 
@@ -203,12 +252,14 @@ DEF PARTY_LENGTH EQU 6
 ; boxes
 DEF MONS_PER_BOX EQU 20
 
-DEF MONDB_ENTRIES   EQU 174
+; 48-byte savemon entries no longer fit 174 per $2000 SRAM bank
+; (174 * 48 = $20A0). 170 is the largest count that fits (170 * 48 = $1FE0).
+DEF MONDB_ENTRIES   EQU 170
 DEF MIN_MONDB_SLACK EQU 10
 DEF NUM_BOXES       EQU (MONDB_ENTRIES * 2 - MIN_MONDB_SLACK) / MONS_PER_BOX ; 16
 
 ; hall of fame
-; hof_mon: species, id, dvs, level, nicknames
+; hof_mon: species, id, personality, level, nicknames
 DEF HOF_MON_LENGTH EQU 1 + 2 + 2 + 1 + (MON_NAME_LENGTH - 1) ; $10
 ; hall_of_fame: win count, party, terminator
 DEF HOF_LENGTH EQU 1 + HOF_MON_LENGTH * PARTY_LENGTH + 1 ; $62

@@ -46,10 +46,9 @@ NewPokedexEntry:
 	farcall Pokedex_PlaceFrontpicTopLeftCorner
 	call WaitBGMap2
 	farcall GetEnemyMonDVs
-	ld a, [hli]
-	ld [wTempMonDVs], a
-	ld a, [hl]
-	ld [wTempMonDVs + 1], a
+	ld de, wTempMonDVs
+	ld bc, MON_PERSONALITY - MON_DVS + 2 ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	call SetDefaultBGPAndOBP

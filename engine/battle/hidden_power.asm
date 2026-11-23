@@ -21,28 +21,61 @@ HiddenPowerDamage:
 	ret
 
 GetHiddenPowerType:
-	; Def & 3
-	ld a, [de]
-	and %0011
-	ld b, a
-
-	; + (Atk & 3) << 2
-	ld a, [de]
-	and %0011 << 4
+; Return the Hidden Power type in a and b from the three DVs at de.
+; Builds b = %00fedcba (SDf, SAt, Spe, Def, Atk, HP), then looks up
+; type = floor(b × 17 / 64) + 1 so all 17 non-Normal types occur evenly.
+	push de
+	ld h, d
+	ld l, e
+	ld bc, 3
+	ld e, 1
+.loop
+	ld a, [hli]
 	swap a
-	add a
-	add a
-	or b
-
-	; add the least significant bit of the Speed DV to increment 50% of the time (to reach Fairy type)
+	and %00010001
+	srl a
+	push af
+	call c, .add_bit
+	pop af
+	sla e
+	and a
+	call nz, .add_bit
+	sla e
+	dec c
+	jr nz, .loop
+	; b = 0..63
+	ld hl, HiddenPowerTypes
+	ld c, b
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
 	ld b, a
-	inc de ; the Speed DV lives in the second byte
-	ld a, [de]
-	swap a
-	and %0001
-	add b
+	pop de
+	ret
 
-; Skip Normal. The result is 1-17, i.e. FIGHTING..FAIRY.
-	inc a
+.add_bit
+	ld a, b
+	or e
 	ld b, a
 	ret
+
+HiddenPowerTypes:
+; 64 entries: floor(index × 17 / 64) + 1
+; 13 types occur 4 times; Rock/Fire/Psychic/Fairy occur 3 times.
+	db FIGHTING, FIGHTING, FIGHTING, FIGHTING
+	db FLYING, FLYING, FLYING, FLYING
+	db POISON, POISON, POISON, POISON
+	db GROUND, GROUND, GROUND, GROUND
+	db ROCK, ROCK, ROCK
+	db BUG, BUG, BUG, BUG
+	db GHOST, GHOST, GHOST, GHOST
+	db STEEL, STEEL, STEEL, STEEL
+	db FIRE, FIRE, FIRE
+	db WATER, WATER, WATER, WATER
+	db GRASS, GRASS, GRASS, GRASS
+	db ELECTRIC, ELECTRIC, ELECTRIC, ELECTRIC
+	db PSYCHIC_TYPE, PSYCHIC_TYPE, PSYCHIC_TYPE
+	db ICE, ICE, ICE, ICE
+	db DRAGON, DRAGON, DRAGON, DRAGON
+	db DARK, DARK, DARK, DARK
+	db FAIRY, FAIRY, FAIRY

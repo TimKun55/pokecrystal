@@ -405,11 +405,8 @@ FlyFunction_InitGFX:
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	ld de, wTempMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS ; 3 DVs + 2 personality bytes
+	call CopyBytes
 	ld e, FIELDMOVE_FLY
 	farcall FlyFunction_GetMonIcon
 	xor a

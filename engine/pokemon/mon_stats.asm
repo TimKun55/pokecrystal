@@ -321,6 +321,23 @@ PrintTempMonStats:
 	next "Speed"
 	next "@"
 
+GetGenderRatio::
+; c = species
+; Returns the species' gender ratio in c.
+	push hl
+	push de
+	ld a, c
+	dec a
+	ld hl, BaseData + BASE_GENDER
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+	ld a, BANK(BaseData)
+	call GetFarByte
+	pop de
+	pop hl
+	ld c, a
+	ret
+
 GetGender:
 ; Return the gender of a given monster (wCurPartyMon/wCurOTMon/wCurWildMon).
 ; When calling this function, a should be set to an appropriate wMonType value.
@@ -330,24 +347,24 @@ GetGender:
 ; a = 0: f = nc|z;  female
 ;        f = c:  genderless
 
-; This is determined by comparing the Attack and Speed DVs
-; with the species' gender ratio.
+; This is determined by the stored gender bit in the personality word,
+; which was already chosen using the species' gender ratio.
 
 ; Figure out what type of monster struct we're looking at.
 
 ; 0: PartyMon
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1Personality
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wMonType]
 	and a
 	jr z, .PartyMon
 
-	ld hl, wBufferMonDVs
+	ld hl, wBufferMonPersonality
 	cp BUFFERMON
-	jr z, .DVs
+	jr z, .Personality
 
 ; 1: OTPartyMon
-	ld hl, wOTPartyMon1DVs
+	ld hl, wOTPartyMon1Personality
 	dec a
 	jr z, .PartyMon
 
@@ -356,13 +373,13 @@ GetGender:
 	jr z, .sBoxMon
 
 ; 3: Unknown
-	ld hl, wTempMonDVs
+	ld hl, wTempMonPersonality
 	dec a
-	jr z, .DVs
+	jr z, .Personality
 
 ; else: WildMon
-	ld hl, wEnemyMonDVs
-	jr .DVs
+	ld hl, wEnemyMonPersonality
+	jr .Personality
 
 ; Get our place in the party/box.
 
@@ -375,43 +392,21 @@ GetGender:
 	ld a, [wCurPartyMon]
 	call AddNTimes
 
-.DVs:
-; Attack DV
+.Personality:
+; Gender is the high byte of the personality word.
+	inc hl
 	ld a, [hl]
-	cpl
-	and $10
-	swap a
-	add a
-	ld b, a   ; ~(Atk DV & 1) << 1
-; Defense DV
-	ld a, [hli]
-	and $1
-	add a
-	add a
-	or b
-	ld b, a   ; ~(Atk DV & 1) << 1 | (Def DV & 1) << 2
-; Special DV
-	ld a, [hl]
-	cpl
-	and $1
-	add a
-	add a
-	add a
-	or b
-	swap a
-	ld b, a   ; ~(Atk DV & 1) << 1 | (Def DV & 1) << 2 | ~(Spc DV & 1) << 3
+	and GENDER_MASK
+	ld b, a ; b = GENDER_MASK for female, 0 for male
 
-; We need the gender ratio to do anything with this.
+; We still need the gender ratio to handle fixed-gender species.
+; GetGenderRatio leaves the ratio in a as well as c, so the personality bit
+; can be restored from the stack before the fixed-gender checks below.
 	push bc
 	ld a, [wCurPartySpecies]
-	dec a
-	ld hl, BaseData + BASE_GENDER
-	ld bc, BASE_DATA_SIZE
-	call AddNTimes
+	ld c, a
+	call GetGenderRatio
 	pop bc
-
-	ld a, BANK(BaseData)
-	call GetFarByte
 
 ; The higher the ratio, the more likely the monster is to be female.
 
@@ -424,9 +419,10 @@ GetGender:
 	cp GENDER_F100
 	jr z, .Female
 
-; Values below the ratio are male, and vice versa.
-	cp b
-	jr c, .Male
+; Variable-gender species use the stored personality bit.
+	ld a, b
+	and a
+	jr z, .Male
 
 .Female:
 	xor a

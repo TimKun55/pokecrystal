@@ -3513,6 +3513,15 @@ GetEnemyMonDVs:
 	ld a, [wCurOTMon]
 	jp GetPartyLocation
 
+GetTempMonPersonality:
+	ld hl, wTempMonPersonality
+	ret
+
+GetCurPartyMonPersonality:
+	ld hl, wPartyMon1Personality
+	ld a, [wCurPartyMon]
+	jp GetPartyLocation
+
 ResetPlayerStatLevels:
 	ld a, BASE_STAT_LEVEL
 	ld b, NUM_LEVEL_STATS
@@ -3575,6 +3584,53 @@ InitEnemyMon:
 	jr nz, .loop
 	ld a, [wCurPartyMon]
 	ld [wCurOTMon], a
+	ret
+
+RecalcBattleTowerMonStats:
+; Battle Tower rows no longer store HP, stats or PP. Rebuild them from the
+; compact row that LoadRandomBattleTowerMon expanded into wOTPartyMon1.
+	ld a, [wCurPartyLevel]
+	push af
+
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1Species
+	call GetPartyLocation
+
+	push hl
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	ld [wCurPartyLevel], a
+	pop hl
+
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+
+	ld bc, MON_EVS - 1
+	add hl, bc
+	ld de, wEnemyMonMaxHP
+	ld b, TRUE
+	predef CalcMonStats
+
+	ld hl, wEnemyMonMaxHP
+	ld de, wEnemyMonHP
+	ld bc, 2
+	call CopyBytes
+
+	ld hl, wEnemyMonAttack
+	ld de, wEnemyStats
+	ld bc, NUM_BATTLE_STATS * 2
+	call CopyBytes
+
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+	predef FillPP
+
+	call ApplyStatusEffectOnEnemyStats
+
+	pop af
+	ld [wCurPartyLevel], a
 	ret
 
 SwitchPlayerMon:
@@ -4244,11 +4300,8 @@ PrintPlayerHUD:
 	ld hl, wPartyMon1DVs
 	call GetPartyLocation
 	ld de, wTempMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
 	ld hl, wBattleMonLevel
 	ld de, wTempMonLevel
 	ld bc, wTempMonStructEnd - wTempMonLevel
@@ -4331,11 +4384,8 @@ DrawEnemyHUD:
 	jr z, .ok
 	ld hl, wEnemyBackupDVs
 .ok
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
 
 	ld a, TEMPMON
 	ld [wMonType], a
@@ -5800,10 +5850,15 @@ LoadEnemyMon:
 	and a
 	jp nz, InitEnemyMon
 
-; and also not in a BattleTower-Battle
+; Battle Tower mons have compact data with no stored stats or PP.
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
-	jp nz, InitEnemyMon
+	jr z, .not_battle_tower
+	call InitEnemyMon
+	call RecalcBattleTowerMonStats
+	ret
+
+.not_battle_tower
 
 ; Make sure everything knows what species we're working with
 	ld a, [wTempEnemyMonSpecies]
@@ -5867,9 +5922,9 @@ LoadEnemyMon:
 .UpdateItem:
 	ld [wEnemyMonItem], a
 
-; Initialize DVs
+; Initialize the DV/personality block
 
-; If we're in a trainer battle, DVs are predetermined
+; If we're in a trainer battle, the block is predetermined
 	ld a, [wBattleMode]
 	and a
 	jr z, .InitDVs
@@ -5881,11 +5936,8 @@ LoadEnemyMon:
 ; Unknown
 	ld hl, wEnemyBackupDVs
 	ld de, wEnemyMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
 	jp .Happiness
 
 .InitDVs:
@@ -5893,17 +5945,17 @@ LoadEnemyMon:
 	dec a
 	jr z, .WildDVs
 
-; Trainer DVs
+; Trainer DV/personality block
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	jr .UpdateDVs
+	ld de, wDVAndPersonalityBuffer
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
+	jp .WriteDVPersonality
 
 .WildDVs:
-; Wild DVs
+; Wild DV/personality block
 ; Here's where the fun starts
 
 ; Roaming monsters (Entei, Raikou) work differently
@@ -5920,67 +5972,89 @@ LoadEnemyMon:
 ; We'll do something with the result in a minute
 	push af
 
-; Grab DVs
+; Grab DVs and personality
 	call GetRoamMonDVs
-	inc hl
-	ld a, [hld]
-	ld c, a
-	ld b, [hl]
+	ld de, wDVAndPersonalityBuffer
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
 
 ; Get back the result of our check
 	pop af
 ; If the RoamMon struct has already been initialized, we're done
-	jr nz, .UpdateDVs
+	jr nz, .WriteDVPersonality
 
 ; If it hasn't, we need to initialize the DVs
 ; (HP is initialized at the end of the battle)
+	call BattleRandom
+	ld [wDVAndPersonalityBuffer], a
+	call BattleRandom
+	ld [wDVAndPersonalityBuffer + 1], a
+	call BattleRandom
+	ld [wDVAndPersonalityBuffer + 2], a
+	ld hl, wDVAndPersonalityBuffer + 2
+	call ApplyLegendaryDVs
+	xor a
+	call .GeneratePersonality
 	call GetRoamMonDVs
-	inc hl
-	call BattleRandom
-	ld [hld], a
-	ld c, a
-	call BattleRandom
-	ld [hl], a
-	ld b, a
-; We're done with DVs
-	jr .UpdateDVs
+	ld de, wDVAndPersonalityBuffer
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
+	jr .WriteDVPersonality
 
 .NotRoaming:
-; Register a contains wBattleType
+.GenerateDVsFromBattleType:
+; Recompute the personality flags from wBattleType. Magikarp rerolls jump here
+; so a length byte is never mistaken for shiny/nature flags.
+	ld a, [wBattleType]
 
-; Forced shiny battle type
-; Used by Red Gyarados at Lake of Rage
+; Forced shiny and never-shiny battle types only affect the personality roll
 	cp BATTLETYPE_FORCESHINY
-	jr nz, .GenerateDVs
-
-	ld b, ATKDEFDV_SHINY ; $ea
-	ld c, SPDSPCDV_SHINY ; $aa
-	jr .UpdateDVs
+	jr z, .forced_shiny
+	cp BATTLETYPE_NEVER_SHINY
+	jr z, .never_shiny
+	xor a
+	jr .GenerateDVs
+.forced_shiny
+	ld a, PERSONALITY_FORCE_SHINY
+	jr .GenerateDVs
+.never_shiny
+	ld a, PERSONALITY_NEVER_SHINY
 
 .GenerateDVs:
-;checkswarm
+	ld e, a ; battle-type flags
+	and PERSONALITY_NEVER_SHINY
+	jr nz, .generate_dv_bytes ; never-shiny also suppresses swarm shinies
+
+; Swarm shinies override the normal roll through the personality flag
 	ld hl, wDailyFlags1
 	bit DAILYFLAGS1_SWARM_F, [hl]
-	jr z, .skipshine
-	
+	jr z, .generate_dv_bytes
 	farcall GenerateSwarmShiny
-	jr .next
+	and a
+	jr z, .generate_dv_bytes
+	ld e, PERSONALITY_FORCE_SHINY
 
-.skipshine:
-; Generate new random DVs
-
+.generate_dv_bytes:
+; Generate three random DV bytes
 	call BattleRandom
-	ld b, a
+	ld [wDVAndPersonalityBuffer], a
 	call BattleRandom
-	ld c, a
+	ld [wDVAndPersonalityBuffer + 1], a
+	call BattleRandom
+	ld [wDVAndPersonalityBuffer + 2], a
 
-.UpdateDVs:
-; Input DVs in register bc
-	ld hl, wEnemyMonDVs
-	ld a, b
-	ld [hli], a
-	ld [hl], c
-	
+	ld hl, wDVAndPersonalityBuffer + 2
+	call ApplyLegendaryDVs
+
+	ld a, e
+	call .GeneratePersonality
+
+.WriteDVPersonality:
+	ld hl, wDVAndPersonalityBuffer
+	ld de, wEnemyMonDVs
+	ld bc, MON_PP - MON_DVS
+	call CopyBytes
+
 .next
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
@@ -5994,13 +6068,9 @@ LoadEnemyMon:
 	cp UNOWN
 	jr nz, .Magikarp
 
-; Get letter based on DVs
+; The stored form was already checked against the unlock table.
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
-; Can't use any letters that haven't been unlocked
-; If combined with forced shiny battletype, causes an infinite loop
-	call CheckUnownLetter
-	jr c, .GenerateDVs ; try again
 
 .Magikarp:
 ; These filters are untranslated.
@@ -6032,7 +6102,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVsFromBattleType
 
 ; 20% chance of skipping this check
 	call Random
@@ -6041,7 +6111,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVsFromBattleType
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
@@ -6057,7 +6127,7 @@ LoadEnemyMon:
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp 3
-	jp c, .GenerateDVs ; try again
+	jp c, .GenerateDVsFromBattleType ; try again
 
 ; Finally done with DVs
 
@@ -6280,6 +6350,91 @@ LoadEnemyMon:
 	call ApplyStatusEffectOnEnemyStats
 	ret
 
+.GeneratePersonality:
+; a = personality flags; uses wTempEnemyMonSpecies and wCurForm
+	ld e, a
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wCurForm]
+	ld c, a
+	farcall GeneratePersonality
+	ret
+
+ApplyLegendaryDVs::
+; hl points at the last DV byte (wDVAndPersonalityBuffer + 2).
+; Give three random stats perfect DVs for legendary encounters.
+	push de
+	push bc
+	push hl
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_NEVER_SHINY
+	jr z, .okay
+
+	ld a, [wCurPartySpecies]
+	ld hl, LegendaryMons
+.search
+	ld c, [hl]
+	ld a, c
+	and a
+	jr z, .done ; terminator
+	ld a, [wCurPartySpecies]
+	cp c
+	jr z, .okay
+	inc hl
+	jr .search
+
+.okay
+	pop hl ; restore the DV-block pointer
+
+; Keep drawing until exactly three of the high six bits are set.
+.outer_loop
+	lb bc, 0, 6
+	call BattleRandom
+.loop
+	rlca
+	jr nc, .dont_apply
+	inc b
+.dont_apply
+	dec c
+	jr nz, .loop
+	ld c, a
+	ld a, b
+	cp 3
+	jr nz, .outer_loop
+
+; Bits are ordered SDef, SAtk, Spe, Def, Atk, HP while hl walks backward.
+.stat_loop
+	rrc c
+	jr nc, .skip_low_nibble
+	ld a, [hl]
+	or $f
+	ld [hl], a
+.skip_low_nibble
+	rrc c
+	jr nc, .skip_high_nibble
+	ld a, [hl]
+	or $f0
+	ld [hl], a
+.skip_high_nibble
+	dec hl
+	dec b
+	jr nz, .stat_loop
+
+	pop bc
+	pop de
+	ret
+
+.done
+	pop hl
+	pop bc
+	pop de
+	ret
+
+LegendaryMons:
+	db ARTICUNO, ZAPDOS, MOLTRES, RAIKOU, ENTEI, SUICUNE
+	db 0
+
 CheckSleepingTreeMon:
 ; Return carry if species is in the list
 ; for the current time of day
@@ -6311,7 +6466,7 @@ CheckSleepingTreeMon:
 
 INCLUDE "data/wild/treemons_asleep.asm"
 
-CheckUnownLetter:
+CheckUnownLetter::
 ; Return carry if the Unown letter hasn't been unlocked yet
 
 	ld a, [wUnlockedUnowns]

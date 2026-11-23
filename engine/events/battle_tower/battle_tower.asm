@@ -195,6 +195,105 @@ ReadBTTrainerParty:
 	jr nz, .otpartymon_loop
 	ld a, -1
 	ld [bc], a
+	call RecalcBattleTowerOTPartyStats
+	ret
+
+RecalcBattleTowerOTPartyStats:
+; Compact Battle Tower rows store no HP, battle stats or PP. Rebuild those
+; fields in all three OT party mons after ReadBTTrainerParty copies them in.
+	ldh a, [rWBK]
+	push af
+
+	; wCurPartyMon and wCurPartyLevel live in the same switchable WRAM bank as
+	; the OT party mons, so select it before reading or restoring them.
+	ld a, BANK(wOTPartyMon1Species)
+	ldh [rWBK], a
+
+	ld a, [wCurPartyMon]
+	push af
+	ld a, [wCurPartyLevel]
+	push af
+	ld a, [wCurSpecies]
+	push af
+
+	ld c, 0
+	ld b, BATTLETOWER_PARTY_LENGTH
+.loop
+	ld a, c
+	ld [wCurPartyMon], a
+	push bc ; save the mon index and remaining count around pointer math
+	ld hl, wOTPartyMon1Species
+	call GetPartyLocation
+
+	ld a, [hl]
+	ld [wCurSpecies], a
+	call GetBaseData
+
+	push hl
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	ld [wCurPartyLevel], a
+
+	push hl ; keep the mon base across the stat calculation
+	push hl
+	ld bc, MON_EVS - 1
+	add hl, bc
+	ld d, h
+	ld e, l ; de = EVs
+	pop hl
+	ld bc, MON_MAXHP
+	add hl, bc
+	push de ; save EVs
+	push hl ; save Max HP destination
+	pop de  ; de = Max HP destination
+	pop hl  ; hl = EVs
+	ld b, TRUE
+	predef CalcMonStats
+	pop hl ; mon base
+
+	; Copy Max HP to HP so the mon is not treated as fainted.
+	ld bc, MON_HP
+	add hl, bc
+	ld d, h
+	ld e, l ; de = HP
+	ld bc, MON_MAXHP - MON_HP
+	add hl, bc
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+
+	; Rebuild PP from the moves stored in the OT party mon.
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1Moves
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1PP
+	call GetPartyLocation
+	push de ; save moves
+	push hl ; save PP
+	pop de  ; de = PP
+	pop hl  ; hl = moves
+	predef FillPP
+
+	pop bc ; restore the mon index and remaining count
+	inc c
+	dec b
+	jp nz, .loop
+
+	pop af
+	ld [wCurSpecies], a
+	pop af
+	ld [wCurPartyLevel], a
+	pop af
+	ld [wCurPartyMon], a
+	pop af
+	ldh [rWBK], a
 	ret
 
 BT_ChrisName:

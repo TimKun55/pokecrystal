@@ -43,16 +43,16 @@ CheckOppositeGender:
 	push bc
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
-	ld hl, wEnemyMonDVs
+	ld hl, wEnemyMonPersonality
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	jr z, .not_transformed
-	ld hl, wEnemyBackupDVs
+	ld hl, wEnemyBackupPersonality
 .not_transformed
 	ld a, [hli]
-	ld [wTempMonDVs], a
+	ld [wTempMonPersonality], a
 	ld a, [hl]
-	ld [wTempMonDVs + 1], a
+	ld [wTempMonPersonality + 1], a
 	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender

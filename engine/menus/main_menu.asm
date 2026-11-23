@@ -38,12 +38,6 @@ MainMenu:
 .quit
 	ret
 
-if DEF(_DEBUG)
-MainMenu_DebugRoom:
-	farcall _DebugRoom
-	ret
-endc
-
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 3, 15, 9
@@ -93,6 +87,12 @@ if DEF(_DEBUG)
 	db MAINMENUITEM_DEBUG_ROOM
 endc
 	db -1
+
+if DEF(_DEBUG)
+MainMenu_DebugRoom:
+	farcall _DebugRoom
+	ret
+endc
 
 MainMenu_GetWhichMenu:
 	ld a, [wSaveFileExists]
