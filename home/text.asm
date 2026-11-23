@@ -772,6 +772,24 @@ TextCommands::
 
 TextCommand_START::
 ; write text until "@"
+	call TextStartPluralFollows
+	jr nz, .normal
+	push hl ; original string pointer
+	ld d, h
+	ld e, l
+	ld hl, wPluralScratch
+	call CopyAndPluralize ; de = pluralized string
+	ld h, b
+	ld l, c
+	call PlaceString
+	pop hl
+.find_plural
+	ld a, [hli]
+	cp '@'
+	jr nz, .find_plural
+	inc hl ; skip TX_PLURAL, which has already been applied
+	ret
+.normal
 	ld d, h
 	ld e, l
 	ld h, b
@@ -820,6 +838,18 @@ TextCommand_RAM::
 	ld e, a
 	ld a, [hli]
 	ld d, a
+	call TextPluralFollows
+	jr nz, .normal
+	push hl ; pointer to TX_PLURAL in the text stream
+	ld hl, wPluralScratch
+	call CopyAndPluralize ; de = pluralized string
+	ld h, b
+	ld l, c
+	call PlaceString
+	pop hl
+	inc hl ; skip TX_PLURAL, which has already been applied
+	ret
+.normal
 	push hl
 	ld h, b
 	ld l, c
@@ -960,6 +990,65 @@ TextCommand_DECIMAL::
 	ld b, h
 	ld c, l
 	pop hl
+	ret
+
+TextPluralFollows::
+; hl points at the command after a string. Return z if it is TX_PLURAL.
+	ld a, [hl]
+	cp TX_PLURAL
+	ret
+
+TextStartPluralFollows::
+; hl points at a TX_START string. Return z if a TX_PLURAL command follows it.
+	push hl
+.loop
+	ld a, [hli]
+	cp '@'
+	jr nz, .loop
+	ld a, [hl]
+	cp TX_PLURAL
+	pop hl
+	ret
+
+CopyAndPluralize::
+; de = source string, hl = destination scratch buffer
+; Copies the string to the buffer and pluralizes its last word there,
+; so PlaceString can print the plural form with the usual letter delays.
+; Returns de = destination scratch buffer; preserves bc (the tilemap cursor).
+	push bc
+	push hl
+.copy_loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	cp '@'
+	jr nz, .copy_loop
+	dec hl ; pointer to the '@' terminator
+	ld b, h
+	ld c, l ; bc = cursor for TextCommand_PLURAL
+	pop de ; de = destination start
+	push de
+	; keep the reverse suffix scan from crossing into the preceding WRAM byte
+	ld a, [wPluralScratch - 1]
+	push af
+	ld a, '@'
+	ld [wPluralScratch - 1], a
+	; rewriting the scratch buffer must not incur letter delays
+	ld a, [wTextboxFlags]
+	push af
+	res TEXT_DELAY_F, a
+	ld [wTextboxFlags], a
+	call TextCommand_PLURAL
+	; TextCommand_PLURAL leaves bc just past the replacement suffix;
+	; restore the '@' terminator in the scratch copy.
+	ld a, '@'
+	ld [bc], a
+	pop af
+	ld [wTextboxFlags], a
+	pop af
+	ld [wPluralScratch - 1], a
+	pop de
+	pop bc
 	ret
 
 TextCommand_PLURAL::

@@ -863,7 +863,10 @@ wDVAndPersonalityBuffer:: ds 5
 
 ; This was a buffer for map-related pointers in the 1997 G/S prototype.
 ; See wMapBuffer in pokegold-spaceworld's wram.asm.
-wUnusedMapBuffer:: ds 19
+; Reused as a scratch copy of a string whose last word is being pluralized.
+; The first byte is a sentinel that keeps pluralization from scanning too far back.
+wUnusedMapBuffer:: ds 1
+wPluralScratch:: ds 18
 wUnusedMapBufferEnd::
 
 
