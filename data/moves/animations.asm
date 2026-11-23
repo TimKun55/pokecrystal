@@ -2290,9 +2290,15 @@ BattleAnim_GigaImpact:
 
 BattleAnim_FocusBlast:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_FOCUS_BLAST
-	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnim_FocusEnergy
-	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, BG_EFFECT_USER, $40
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_call BattleAnim_FocusEnergyStub
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
+	anim_wait 13
 	anim_obj BATTLE_ANIM_OBJ_FOCUS_BLAST, 64, 88, $6
 	anim_wait 12
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
@@ -3672,6 +3678,7 @@ BattleAnim_Spite:
 	anim_ret
 
 BattleAnim_PowderSnow:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx BATTLE_ANIM_GFX_ICE
 .loop
 	anim_sound 6, 2, SFX_SHINE
