@@ -12,6 +12,18 @@ BattleCommand_Attract:
 	jr nz, .failed
 
 	set SUBSTATUS_IN_LOVE, [hl]
+
+; Destiny Knot: when its holder falls in love, the Pokémon that caused it
+; falls in love too. GetOpponentItem is side-neutral: here it is the target.
+	call GetOpponentItem
+	ld a, b
+	cp HELD_DESTINY_KNOT
+	jr nz, .no_destiny_knot
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	set SUBSTATUS_IN_LOVE, [hl]
+.no_destiny_knot
+
 	call AnimateCurrentMove
 
 ; 'fell in love!'

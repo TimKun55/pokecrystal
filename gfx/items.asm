@@ -211,7 +211,7 @@ ItemIconPointers:
     dw DragonScaleIcon
     dw BerserkGeneIcon
     dw PremierBallIcon
-    dw Item9AIcon
+    dw DestinyKnotIcon
     dw MulchIcon
     dw SacredAshIcon
     dw HeavyBallIcon
@@ -440,7 +440,7 @@ MorphMailIcon:		INCBIN "gfx/items/morph_mail.2bpp.lz"
 BlueSkyMailIcon:	INCBIN "gfx/items/bluesky_mail.2bpp.lz"
 MusicMailIcon:		INCBIN "gfx/items/music_mail.2bpp.lz"
 MirageMailIcon:		INCBIN "gfx/items/mirage_mail.2bpp.lz"
-Item9AIcon:
+DestinyKnotIcon:	INCBIN "gfx/items/destiny_knot.2bpp.lz"
 ItemBeIcon:
 ItemBfIcon:
 NoItemIcon: 		INCBIN "gfx/items/no_item.2bpp.lz"

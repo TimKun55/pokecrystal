@@ -190,7 +190,7 @@ ItemDescriptions:
 	dw BlueSkyMailDesc
 	dw MusicMailDesc
 	dw MirageMailDesc
-	dw TeruSama25Desc
+	dw DestinyKnotDesc
 	dw TeruSama25Desc
 	assert_table_length NUM_ITEMS
 	dw TeruSama26Desc
@@ -701,6 +701,10 @@ BigPearlDesc:
 EverStoneDesc:
 	db   "Stops evolution."
 	next "(Hold)@"
+
+DestinyKnotDesc:
+	db   "Infatuates the foe"
+	next "back. (Hold)@"
 
 SpellTagDesc:
 	db   "Powers up ghost-"

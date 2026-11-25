@@ -647,9 +647,19 @@ DayCare_InitBreeding:
 	call Random
 	ld [hl], a
 
-; Inherit three random DVs from the parents. Destiny Knot and the power items
-; do not exist in this fork, so the inheritance count is always three.
+; Inherit three random DVs from the parents, or five if either parent holds a
+; Destiny Knot. Power items do not exist in this fork.
+	ld a, [wBreedMon1Item]
+	cp DESTINY_KNOT
+	jr z, .destiny_knot
+	ld a, [wBreedMon2Item]
+	cp DESTINY_KNOT
+	jr z, .destiny_knot
 	ld b, 3
+	jr .got_dv_count
+.destiny_knot
+	ld b, 5
+.got_dv_count
 	ld c, 0
 .dv_inherit_loop
 	ld a, 12
@@ -681,7 +691,13 @@ DayCare_InitBreeding:
 .got_nature_flags
 	ld e, a ; flags for GeneratePersonality
 
-; Gender, shininess, and Unown form are re-rolled at creation.
+; Shiny inheritance: 1/3 with one shiny parent, 2/3 with both.
+; e must keep the Everstone flag; b is free until GeneratePersonality's args.
+	call GetShinyInheritanceFlags
+	or e
+	ld e, a
+
+; Gender, shininess (unless inherited), and Unown form are rolled at creation.
 	ld a, [wCurPartySpecies]
 	ld b, a
 	ld a, [wCurForm]
@@ -716,6 +732,35 @@ DayCare_InitBreeding:
 
 .String_EGG:
 	db "Egg@"
+
+GetShinyInheritanceFlags:
+; Return a = PERSONALITY_FORCE_SHINY if shininess is inherited, else 0.
+; Count the shiny parents, roll 0..2, and inherit when the roll is below the
+; count: 1/3 with one shiny parent, 2/3 with both, never with neither.
+; Preserves b, d, e and hl.
+	ld a, [wBreedMon1Personality]
+	and SHINY_MASK
+	ld b, 0
+	jr z, .check_parent2_shiny
+	inc b
+.check_parent2_shiny
+	ld a, [wBreedMon2Personality]
+	and SHINY_MASK
+	jr z, .got_shiny_parent_count
+	inc b
+.got_shiny_parent_count
+	ld a, b
+	and a
+	ret z
+	ld a, 3
+	call RandomRange ; a = 0..2, b = shiny parent count
+	cp b
+	jr nc, .no_shiny_inheritance
+	ld a, PERSONALITY_FORCE_SHINY
+	ret
+.no_shiny_inheritance
+	xor a
+	ret
 
 CheckParentItem:
 ; Returns nz if a parent holds item a. a is set to 1 or 2 depending on whether

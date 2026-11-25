@@ -153,7 +153,7 @@ ItemNames::
 	li "Dragon Scale"
 	li "Berserk Gene"
 	li "Premier Ball"
-	li "Ball Relic"
+	li "Destiny Knot"
 	li "Mulch"
 	li "Sacred Ash"
 	li "Heavy Ball"

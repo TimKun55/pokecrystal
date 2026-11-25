@@ -92,7 +92,7 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 7 ; # items
+	db 9 ; # items
 	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
@@ -100,20 +100,21 @@ MartGoldenrod2F1:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db FULL_HEAL
+	db REVIVE
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 10 ; # items
+	db 9 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db DUSK_BALL
 	db ESCAPE_ROPE
 	db REPEL
-	db REVIVE
-	db FULL_HEAL
 	db POKE_DOLL
 	db FLOWER_MAIL
 	db MORPH_MAIL
+	db DESTINY_KNOT
 	db -1 ; end
 
 MartGoldenrod3F:

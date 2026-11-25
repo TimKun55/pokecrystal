@@ -34,6 +34,7 @@ ItemNameOrder:
 	db CHOICE_BAND  ; 38
 	db CHOICE_SPECS ; 44
 	db CLEANSE_TAG  ; 5e
+	db DESTINY_KNOT ; 9a
 	db DRAGON_FANG  ; 90
 	db EVERSTONE    ; 70
 	db EVIOLITE     ; 87
@@ -241,7 +242,6 @@ ItemNameOrder:
 	db SECRETPOTION ; 43
 
 	; Unused Items
-	db ITEM_9A      ; 9a
 ;	db ITEM_B3      ; b3
 	db ITEM_BE      ; be
 	db ITEM_BF      ; bf

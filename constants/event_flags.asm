@@ -1519,7 +1519,8 @@
 	const EVENT_ROUTE_37_TM_BULLDOZE
 	const EVENT_SLOWPOKE_WELL_ENTRANCE_TM_MEGA_DRAIN
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_TM_SLUDGE
-; Unused: next 58 events
+	const EVENT_GOT_DESTINY_KNOT_FROM_DAYCARE
+; Unused: next 57 events
 
 	const_next 1800
 ; Kanto people

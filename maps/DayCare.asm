@@ -2,6 +2,7 @@
 	const DAYCARE_GRAMPS
 	const DAYCARE_GRANNY
 	const DAYCARE_LYRA
+	const DAYCARE_POKE_BALL
 
 DayCare_MapScripts:
 	def_scene_scripts
@@ -185,6 +186,37 @@ DayCareLadyScript:
 .HusbandWasLookingForYou:
 	writetextend Text_GrampsLookingForYou
 
+DayCareDestinyKnotItemBallScript:
+	getitemname STRING_BUFFER_3, DESTINY_KNOT
+	giveitem DESTINY_KNOT
+	iffalse .NoRoom
+	disappear DAYCARE_DESTINY_KNOT
+	setevent EVENT_GOT_DESTINY_KNOT_FROM_DAYCARE
+	opentext
+	writetext DayCareText_FoundDestinyKnot
+	playsound SFX_ITEM
+	pause 60
+	itemnotify
+	closetext
+	showemote EMOTE_SHOCK, DAYCARE_GRANNY, 15
+	pause 15
+	turnobject PLAYER, DOWN
+	turnobject DAYCARE_GRANNY, UP
+	opentext
+	writetext DayCareLadyText_DestinyKnot
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	opentext
+	writetext DayCareText_FoundDestinyKnot
+	waitbutton
+	writetext DayCareText_CantCarryDestinyKnot
+	waitbutton
+	closetext
+	end
+
 DayCareLyraApproachesGrandma:
 	step RIGHT
 	step RIGHT
@@ -339,6 +371,29 @@ Text_GrampsLookingForYou:
 	line "for you."
 	done
 
+DayCareLadyText_DestinyKnot:
+	ntag " Grandma "
+	text "Another trainer"
+	line "left that behind."
+
+	para "I'm sure you'll"
+	line "be able to put it"
+	cont "to good use."
+	done
+
+DayCareText_FoundDestinyKnot:
+	text "<PLAYER> found"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+DayCareText_CantCarryDestinyKnot:
+	text "But <PLAYER> can't"
+	line "carry any more"
+	cont "items."
+	done
+
 DayCareManText_GiveOddEgg:
 	ntag " Gramps "
 	text "Hello <PLAYER>."
@@ -458,3 +513,4 @@ DayCare_MapEvents:
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
 	object_event  0,  5, SPRITE_LYRA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LYRA_DAYCARE
+	object_event  4,  1, SPRITE_BALL_BOOK_POKEDEX, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareDestinyKnotItemBallScript, EVENT_GOT_DESTINY_KNOT_FROM_DAYCARE
