@@ -475,7 +475,6 @@ INCLUDE "engine/math/sine.asm"
 
 SECTION "bank39", ROMX
 
-INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
 INCLUDE "engine/events/bug_contest/display_stats.asm"
@@ -778,3 +777,7 @@ INCLUDE "engine/gfx/vwf.asm"
 SECTION "Fade System", ROMX
 
 INCLUDE "engine/gfx/fade.asm"
+
+SECTION "Options Menu", ROMX
+
+INCLUDE "engine/menus/options_menu.asm"

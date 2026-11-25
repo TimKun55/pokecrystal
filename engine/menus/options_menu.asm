@@ -22,6 +22,7 @@ _Option:
 	ld [hl], TRUE
 	call ClearBGPalettes
 	call ClearTilemap
+	call Options_LoadEdgeTiles
 	call Options_DrawFrame
 	xor a
 	ld [wJumptableIndex], a
@@ -35,8 +36,12 @@ _Option:
 	inc a
 	ldh [hBGMapMode], a
 	call WaitBGMap
-	ld b, CGB_GENERIC
+	ld b, CGB_PLAIN
 	call GetCGBLayout
+	ld hl, Options_BGPalettes
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
 	call SetDefaultBGPAndOBP
 
 .joypad_loop
@@ -65,15 +70,43 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
+Options_LoadEdgeTiles:
+	ld hl, .EdgeTiles
+	ld de, vTiles2 tile $00
+	lb bc, BANK(.EdgeTiles), 3
+	jp DecompressRequest2bpp
+
+.EdgeTiles:
+	INCBIN "gfx/options/edge.2bpp.lz"
+
+Options_BGPalettes:
+	INCLUDE "gfx/options/options_bg.pal"
+
+Options_DrawEdges:
+	hlcoord 0, 0
+	ld a, $01 ; left edge tile
+	ld bc, SCREEN_WIDTH - 2
+	ld d, 12
+.edge_loop
+	ld [hli], a
+	inc a ; $02 = right edge tile
+	add hl, bc
+	ld [hli], a
+	dec a ; $01 = left edge tile
+	dec d
+	jr nz, .edge_loop
+	ret
+
 Options_DrawFrame:
 	hlcoord 0, 0
 	ld b, SCREEN_HEIGHT - 2
 	ld c, SCREEN_WIDTH - 2
-	jp Textbox
+	call TextboxPalette
+	jp Options_DrawEdges
 
 Options_DrawDescriptionTextbox:
-	hlcoord 0, 13
-	ld b, 3
+	hlcoord 0, 12
+	ld b, 4
 	ld c, SCREEN_WIDTH - 2
 	jp Textbox
 
@@ -600,7 +633,7 @@ OptionsControl:
 Options_UpdateCursorPosition:
 	hlcoord 1, 1
 	ld de, SCREEN_WIDTH
-	ld c, 12
+	ld c, 11
 .loop
 	ld [hl], ' '
 	add hl, de
@@ -687,7 +720,7 @@ Options_UpdateWindow:
 	ld [wOptionsScrollPosition], a
 	hlcoord 2, 2
 	ld a, ' '
-	ld b, 11
+	ld b, 10
 	ld c, 16
 	call FillBoxWithByte
 ; FillBoxWithByte advances HL, so restore the label position.
@@ -755,16 +788,16 @@ Options_UpdateDescription:
 	ld a, [wJumptableIndex]
 	call Options_GetDescriptionLine1
 	push de
-	hlcoord 2, 14
+	hlcoord 1, 14
 	ld a, ' '
 	ld b, 3
 	ld c, 16
 	call FillBoxWithByte
 	pop de
-	hlcoord 2, 14
+	hlcoord 1, 14
 	call PlaceString
 	call Options_GetDescriptionLine2
-	hlcoord 2, 16
+	hlcoord 1, 16
 	call PlaceString
 	ret
 
