@@ -1830,6 +1830,7 @@ wFontType::
 wOptions2::
 ; bit 0: menu account off/on
 ; bit 1: running off/on
+; bit 2: real time clock on/off (NO_RTC set = the game's own clock)
 	db
 	ds 1
 wOptionsEnd::

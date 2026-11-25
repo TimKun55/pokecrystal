@@ -8,11 +8,12 @@
 	const OPT_MENU_ACCOUNT  ; 5
 	const OPT_FRAME         ; 6
 	const OPT_FONT          ; 7
-	const OPT_CANCEL        ; 8
-DEF NUM_OPTIONS EQU const_value ; 9
+	const OPT_NO_RTC        ; 8
+	const OPT_CANCEL        ; 9
+DEF NUM_OPTIONS EQU const_value ; 10
 ; Leave the lower rows free for the selected option's description.
 DEF NUM_VISIBLE_OPTIONS EQU 5
-DEF OPTIONS_SCROLL_BOTTOM EQU 4
+DEF OPTIONS_SCROLL_BOTTOM EQU 5
 
 _Option:
 	call ClearJoypad
@@ -167,6 +168,18 @@ StringOptions4:
 	db "        :Type<LF>"
 	db "Font<LF>"
 	db "        :Font<LF>"
+	db "RTC<LF>"
+	db "        :<LF>@"
+
+StringOptions5:
+	db "Menu Account<LF>"
+	db "        :<LF>"
+	db "Frame<LF>"
+	db "        :Type<LF>"
+	db "Font<LF>"
+	db "        :Font<LF>"
+	db "RTC<LF>"
+	db "        :<LF>"
 	db "Done@"
 
 Options_PlaceStrings:
@@ -179,6 +192,11 @@ Options_PlaceStrings:
 	jr z, .string2
 	cp 3
 	jr z, .string3
+	cp 4
+	jr z, .string4
+	ld de, StringOptions5
+	jr .place_string
+.string4
 	ld de, StringOptions4
 	jr .place_string
 .string0
@@ -209,6 +227,7 @@ GetOptionPointer:
 	dw Options_MenuAccount
 	dw Options_Frame
 	dw Options_Font
+	dw Options_RealTimeClock
 	dw Options_Done
 
 	const_def
@@ -571,6 +590,36 @@ UpdateFont:
 	and a
 	ret
 
+Options_RealTimeClock:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	and D_LEFT | D_RIGHT
+	jr z, .Display
+	ld a, [hl]
+	bit NO_RTC, a
+	jr nz, .SwitchOn
+; Start the game's clock from the time it is now.
+	call GetClock
+	ld hl, wOptions2
+	set NO_RTC, [hl]
+	jr .Display
+
+.SwitchOn:
+; Set the cartridge's clock to the game's time, so nothing jumps.
+	ld hl, wOptions2
+	res NO_RTC, [hl]
+	call SetClock
+
+.Display:
+	ld de, RTCOptionOn
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	jr z, .Place
+	ld de, RTCOptionOff
+.Place:
+	call Options_DisplayValue
+	ret
+
 Options_Done:
 	ldh a, [hJoyPressed]
 	and PAD_A
@@ -823,6 +872,7 @@ Options_GetDescriptionLine1:
 	dw OptionsDescriptionMenuAccount1
 	dw OptionsDescriptionFrame1
 	dw OptionsDescriptionFont1
+	dw RTCOptionDesc1
 	dw OptionsDescriptionDone1
 
 OptionsDescriptionTextSpeed1: db "Change the speed@"
@@ -866,7 +916,13 @@ Options_GetDescriptionLine2:
 	dw OptionsDescriptionMenuAccount2
 	dw OptionsDescriptionFrame2
 	dw OptionsDescriptionFont2
+	dw RTCOptionDesc2
 	dw OptionsDescriptionDone2
+
+RTCOptionOn:: db "On @"
+RTCOptionOff:: db "Off@"
+RTCOptionDesc1:: db "Off: time runs on-@"
+RTCOptionDesc2:: db "ly while playing.@"
 
 Options_DisplayValue:
 	push de

@@ -18,6 +18,11 @@ UpdateTime::
 GetClock::
 ; store clock data in hRTCDayHi-hRTCSeconds
 
+; with "Real Time Clock" Off the game's own clock lives in hRTC*
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	ret nz
+
 ; enable clock r/w
 	ld a, RAMG_SRAM_ENABLE
 	ld [rRAMG], a
@@ -201,6 +206,11 @@ ClearClock::
 SetClock::
 ; set clock data from hram
 
+; do not touch the clock hardware with "Real Time Clock" Off
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	jp nz, SaveSoftwareRTC
+
 ; enable clock r/w
 	ld a, RAMG_SRAM_ENABLE
 	ld [rRAMG], a
@@ -211,13 +221,6 @@ SetClock::
 	call LatchClock
 	ld hl, rRAMB
 	ld de, rRTCREG
-
-; seems to be a halt check that got partially commented out
-; this block is totally pointless
-	ld [hl], RAMB_RTC_DH
-	ld a, [de]
-	bit B_RTCREG_DH_HALT, a ; 6, a ; halt
-	ld [de], a
 
 ; seconds
 	ld [hl], RAMB_RTC_S

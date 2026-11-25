@@ -84,6 +84,7 @@ DEF NUM_FONTS EQU const_value
 	const_def
 	const MENU_ACCOUNT ; 0
 	const RUNNING      ; 1
+	const NO_RTC       ; 2
 
 ; wWalkingDirection::
 	const_def -1

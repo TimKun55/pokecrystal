@@ -42,7 +42,8 @@ endr
 	ds $30
 
 sRTCStatusFlags:: db
-	ds 7
+sSoftwareRTC:: ds 5 ; hRTCDayHi-hRTCSeconds, used when "Real Time Clock" is Off
+	ds 2
 sLuckyNumberDay:: db
 sLuckyIDNumber::  dw
 

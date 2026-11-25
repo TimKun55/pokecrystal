@@ -56,6 +56,38 @@ GameTimer::
 	xor a
 	ld [hl], a
 
+; The game's own clock gains NO_RTC_SPEEDUP seconds for every second played,
+; except during battles, where it runs at real time (1x).
+; Only do this when "Real Time Clock" is Off (NO_RTC set).
+	ld a, 0
+	ldh [rWBK], a
+	ld a, [wOptions2]
+	ld b, a
+	ld a, BANK(wGameTime)
+	ldh [rWBK], a
+	ld a, b
+	bit NO_RTC, a
+	jr z, .done
+; wBattleMode lives in WRAM bank 1, so switch banks to read it.
+	ld a, 1
+	ldh [rWBK], a
+	ld a, [wBattleMode]
+	ld b, a
+	ld a, [wBugContestMinsRemaining]
+	or b
+	ld b, a
+	ld a, BANK(wGameTime)
+	ldh [rWBK], a
+	ld a, b
+	and a
+	jr nz, .once
+rept NO_RTC_SPEEDUP
+	call UpdateNoRTC
+endr
+	jr .done
+.once
+	call UpdateNoRTC
+.done
 ; +1 second
 	ld hl, wGameTimeSeconds
 	ld a, [hl]
@@ -115,4 +147,31 @@ GameTimer::
 	ld [wGameTimeHours], a
 	ld a, l
 	ld [wGameTimeHours + 1], a
+	ret
+
+UpdateNoRTC::
+; add a second to the game's own clock (hRTC*)
+	ld hl, hRTCSeconds
+	inc [hl]
+	ld a, 60
+	sub [hl]
+	ret nz
+	ld [hld], a
+
+; +1 minute
+	inc [hl]
+	ld a, 60
+	sub [hl]
+	ret nz
+	ld [hld], a
+
+; +1 hour
+	inc [hl]
+	ld a, 24
+	sub [hl]
+	ret nz
+	ld [hld], a
+
+; +1 day (FixDays keeps the day count inside its 140 day loop)
+	inc [hl]
 	ret

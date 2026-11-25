@@ -28,6 +28,10 @@ DEF RTC_HALT_VALUE EQU $1234
 ; the RTC day count wraps after 20 weeks, preserving the day of the week
 DEF RTC_DAY_CYCLE EQU 20 * 7
 
+; The game's own clock runs this many times faster than real time while you
+; play (24 / 6 = a day lasts 4 hours).
+DEF NO_RTC_SPEEDUP EQU 6
+
 ; time of day boundaries
 DEF MORN_HOUR EQU 4  ; 4 AM
 DEF DAY_HOUR  EQU 10 ; 10 AM

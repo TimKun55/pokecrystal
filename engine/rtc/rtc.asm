@@ -75,7 +75,23 @@ StageRTCTimeForSave:
 	ret
 
 SaveRTC:
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	jp nz, SaveSoftwareRTC
+
 	ld a, RAMG_SRAM_ENABLE
+	ld [rRAMG], a
+	call LatchClock
+	ld hl, rRTCREG
+	ld a, RAMB_RTC_DH
+	ld [rRAMB], a
+	res B_RTCREG_DH_CARRY, [hl] ; 7, [hl]
+	ld a, BANK(sRTCStatusFlags)
+	ld [rRAMB], a
+	xor a
+	ld [sRTCStatusFlags], a
+	call CloseSRAM
+	ret
 	ld [rRAMG], a
 	call LatchClock
 	ld hl, rRTCREG
@@ -90,6 +106,10 @@ SaveRTC:
 	ret
 
 StartClock::
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	jr nz, .software
+
 	call GetClock
 	call _FixDays
 	call FixDays
@@ -100,6 +120,16 @@ StartClock::
 
 .skip_set
 	call StartRTC
+	ret
+
+.software
+	call LoadSoftwareRTC
+	call _FixDays
+	call FixDays
+	jr nc, .skip_set2
+	call RecordRTCStatus ; set flag on sRTCStatusFlags
+
+.skip_set2
 	ret
 
 _FixDays:
@@ -196,3 +226,29 @@ _InitTime::
 .okay_days
 	ld [de], a
 	ret
+
+SaveSoftwareRTC::
+; "Real Time Clock" Off: there is no hardware clock to read back later, so
+; keep the game's own clock (hRTC*) in the save
+	ld a, BANK(sSoftwareRTC)
+	call OpenSRAM
+	ld hl, hRTCDayHi
+	ld de, sSoftwareRTC
+	ld bc, 5
+	call CopyBytes
+	xor a
+	ld [sRTCStatusFlags], a
+	jp CloseSRAM
+
+LoadSoftwareRTC::
+; load the software clock from sSoftwareRTC, if used
+	ld a, [wOptions2]
+	bit NO_RTC, a
+	ret z
+	ld a, BANK(sSoftwareRTC)
+	call OpenSRAM
+	ld hl, sSoftwareRTC
+	ld de, hRTCDayHi
+	ld bc, 5
+	call CopyBytes
+	jp CloseSRAM
