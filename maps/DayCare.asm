@@ -190,7 +190,7 @@ DayCareDestinyKnotItemBallScript:
 	getitemname STRING_BUFFER_3, DESTINY_KNOT
 	giveitem DESTINY_KNOT
 	iffalse .NoRoom
-	disappear DAYCARE_DESTINY_KNOT
+	disappear DAYCARE_POKE_BALL
 	setevent EVENT_GOT_DESTINY_KNOT_FROM_DAYCARE
 	opentext
 	writetext DayCareText_FoundDestinyKnot
