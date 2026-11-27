@@ -99,30 +99,33 @@ GeneratePersonality::
 	pop hl
 	ret
 
-PrintNature:
-; Print nature b at hl.
+PrintNatureCentered:
+; Print nature b centred in a c-tile-wide area whose left edge is hl.
+; PlaceString is in the home bank, so a plain jp is enough; a farcall would
+; replace hl with PlaceString's address and lose the tilemap coordinate.
 	push hl
-	ld hl, NatureNames
-	jr _PrintNatureProperty
+	call GetNatureName
+	pop hl
+	call StringLength ; b = name length, de still points at the name
+	ld a, c
+	sub b
+	srl a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	jp PlaceString
 
-PrintNatureIndicators:
-; Retained only to preserve the predef index. The summary screen draws arrows.
-	ret
-
-_PrintNatureProperty:
+GetNatureName:
+; Return the name of nature b in de.
 	ld a, b
 	ld e, a
 	ld d, 0
+	ld hl, NatureNames
 	add hl, de
 	ld e, [hl]
 	add hl, de
-	ld e, l
 	ld d, h
-	pop hl
-	; PlaceString is in the home bank, so a plain call is enough.
-	; farcall would replace hl with PlaceString's address and lose the
-	; tilemap coordinate in hl.
-	call PlaceString
+	ld e, l
 	ret
 
 INCLUDE "data/natures.asm"

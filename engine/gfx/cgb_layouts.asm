@@ -441,7 +441,7 @@ _CGB_SummaryScreenHPPals:
 	call FillBoxCGB
 
 ; Friendship Heart
-	hlcoord 9, 5, wAttrmap
+	hlcoord 9, 4, wAttrmap
 	ld bc, 1
 	ld a, $3 ; gender palette
 	call ByteFill

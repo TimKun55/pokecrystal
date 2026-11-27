@@ -85,6 +85,10 @@ DEF HIDDEN_POWER_LAST_TILE EQU $5b
 ; The middle column of the right box, which spans columns 7 to 19.
 DEF HIDDEN_POWER_CENTER_X   EQU 13
 
+; Interior of the right-hand stat box (columns 8-19), used for centring text.
+DEF SUMMARY_BOX_X     EQU 8
+DEF SUMMARY_BOX_WIDTH EQU 12
+
 BattleSummaryScreenInit:
 SummaryScreenInit:
 	ld hl, SummaryScreenMain
@@ -478,7 +482,6 @@ SummaryScreen_InitUpperHalf:
 	ld [wTextDecimalByte], a
 	ld [wCurSpecies], a
 
-	ld a, [wTempMonPokerusStatus]
 	ld a, [wMonType]
 	cp BOXMON
 	jr z, .done_status
@@ -631,7 +634,7 @@ SummaryScreen_PlaceShinyIcon:
 	ld bc, wTempMonDVs
 	farcall CheckShininess
 	ret nc
-	hlcoord 6, 8
+	hlcoord 6, 9
 	ld [hl], '⁂'
 	ret
 
@@ -1609,7 +1612,6 @@ LoadOrangePage:
 	call SummaryScreen_placeCaughtVerb
 	call SummaryScreen_placeCaughtTime
 	call SummaryScreen_placeCaughtLocation
-	call SummaryScreen_placeCaughtLevel
 
 	ld a, [wTempMonNature]
 	and NATURE_MASK
@@ -1618,27 +1620,46 @@ LoadOrangePage:
 	ld a, NO_NATURE
 .got_nature
 
+	; "Nature" is six tiles wide, so centre it in the 12-tile box.
 	; PlaceString clobbers a as well as b/c, so preserve the clamped
 	; nature across the label print.
 	push af
-	hlcoord 8, 6
+	hlcoord SUMMARY_BOX_X + (SUMMARY_BOX_WIDTH - 6) / 2, 6
 	ld de, .NatureLabel2
 	call PlaceString
 	pop af
 
+	; PrintNatureCentered measures the name and centres it in the same box.
 	ld b, a
-	hlcoord 8, 7
-	predef PrintNature
+	ld c, SUMMARY_BOX_WIDTH
+	hlcoord SUMMARY_BOX_X, 7
+	predef PrintNatureCentered
+
+	; Flank the label with the nature arrows: up on the left, down on the right.
+	hlcoord 9, 6
+	ld a, NATURE_UP_TILE
+	ld [hl], a
+	hlcoord 18, 6
+	ld a, NATURE_DOWN_TILE
+	ld [hl], a
+
+	; Match the blue page and give both arrows the gender palette. Set here
+	; rather than in the shared CGB layout so other pages keep their colours.
+	hlcoord 9, 6, wAttrmap
+	ld a, 3
+	ld [hl], a
+	hlcoord 18, 6, wAttrmap
+	ld [hl], a
 	ret
 
 .NatureLabel2:
 	db "Nature@"
 
 SummaryScreen_PrintHappiness:
-	hlcoord 9, 5
+	hlcoord 9, 4
 	ld [hl], $35 ; heart icon
 	
-	hlcoord 11, 5
+	hlcoord 11, 4
 	lb bc, 1, 3
 	ld de, wTempMonHappiness
 	call PrintNum
@@ -1646,7 +1667,7 @@ SummaryScreen_PrintHappiness:
 	hlcoord 9, 3
 	call PlaceString
 	ld de, .outofMaxLoveString
-	hlcoord 14, 5
+	hlcoord 14, 4
 	call PlaceString
 	ret
 
@@ -1664,13 +1685,13 @@ SummaryScreen_PrintHiddenPower:
 	farcall GetTypeName
 
 	ld de, .HiddenPowerDashesString
-	hlcoord 11, 8 ; the rule, centred on HIDDEN_POWER_CENTER_X
+	hlcoord 11, 9 ; the rule, centred on HIDDEN_POWER_CENTER_X
 	call PlaceString
 
 	ld de, .HiddenPowerString
 	ld c, HIDDEN_POWER_LABEL_TILE
 	call .CopyGlyphs
-	hlcoord HIDDEN_POWER_CENTER_X, 8
+	hlcoord HIDDEN_POWER_CENTER_X, 9
 	ld de, .HiddenPowerString
 	ld c, HIDDEN_POWER_LABEL_TILE
 	call .PlaceGlyphs
@@ -1689,7 +1710,7 @@ SummaryScreen_PrintHiddenPower:
 	sub b
 	ld c, a
 	ld b, 0
-	ld hl, wTilemap + 9 * SCREEN_WIDTH
+	ld hl, wTilemap + 10 * SCREEN_WIDTH
 	add hl, bc
 
 	ld de, wStringBuffer1
@@ -1770,6 +1791,17 @@ SummaryScreen_CopyUnownGlyph:
 	pop de
 	ret
 
+SummaryScreen_CenterString:
+; Centre the "@"-terminated string in de on the row whose column 0 is hl.
+	call StringLength
+	ld a, SCREEN_WIDTH
+	sub b
+	srl a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	jp PlaceString
+
 SummaryScreen_placeCaughtLocation:
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
@@ -1785,19 +1817,19 @@ SummaryScreen_placeCaughtLocation:
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-	hlcoord 1, 16
-	call PlaceString
+	hlcoord 0, 16
+	call SummaryScreen_CenterString
 	ret	
 
 .was_gift:
 	ld de, .GiftString
-	hlcoord 1, 16
-	call PlaceString
+	hlcoord 0, 16
+	call SummaryScreen_CenterString
 	ret
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 1, 16
-	call PlaceString
+	hlcoord 0, 16
+	call SummaryScreen_CenterString
 	ret
 
 .MetUnknownMapString:
@@ -1819,8 +1851,8 @@ SummaryScreen_placeCaughtVerb:
 	jr z, .print
 	ld de, .caughtString
 .print
-	hlcoord 5, 13
-	call PlaceString
+	hlcoord 0, 13
+	call SummaryScreen_CenterString
 	ret
 
 .tradedString:
@@ -1833,45 +1865,54 @@ SummaryScreen_placeCaughtVerb:
 	db "- Caught -@"
 
 SummaryScreen_placeCaughtTime:
+; Print the time of day, "at" and the encounter level on row 14.
+; "at" is anchored at the screen centre so it lines up with the verb row.
 	ld a, [wTempMonCaughtLevel]
 	and a
-	jr z, .unknown_time
-	hlcoord 3, 14
-	jr PlaceCaughtTimeOfDay
-
-.unknown_time:
-	ld de, .unknown_time_text
-	hlcoord 3, 14
-	call PlaceString
-	ret
-
-.times
-	db "Morning at@"
-	db "    Day at@"
-	db "  Night at@"
-	db "Evening at@"
-
-.unknown_time_text
-	db "Unknown at@"
-
-PlaceCaughtTimeOfDay:
-	push hl
+	jr z, .unknown_time_string
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
 	rlca
 	rlca
 	dec a
 	maskbits NUM_DAYTIMES
-	ld hl, SummaryScreen_placeCaughtTime.times
+	ld hl, .times
 	call GetNthString
 	ld d, h
 	ld e, l
-	call CopyName1
-	pop hl
-	ld de, wStringBuffer2
-	jp PlaceString
+	jr .got_time_string
 
-SummaryScreen_placeCaughtLevel:
+.unknown_time_string:
+	ld de, .unknown_time_text
+
+.got_time_string:
+	call StringLength ; b = word length, de still points at the word
+
+	; Right-align the word so it ends at x7, leaving x8 as the space
+	; before "at" at x9-10.
+	ld a, 8
+	sub b
+	ld c, a
+	ld hl, wTilemap + 14 * SCREEN_WIDTH
+	ld b, 0
+	add hl, bc
+	call PlaceString
+
+	; "at" centred, matching "- Caught -".
+	hlcoord 9, 14
+	ld de, .AtString
+	call PlaceString
+
+	; Level, after the space at x11.
+	ld c, 12
+	call .PrintLevelAtC
+	ret
+
+.PrintLevelAtC:
+; Print the encounter level at column c on row 14.
+	ld hl, wTilemap + 14 * SCREEN_WIDTH
+	ld b, 0
+	add hl, bc
 	ld a, [wTempMonCaughtLevel]
 	and a
 	jr z, .unknown_level
@@ -1881,20 +1922,28 @@ SummaryScreen_placeCaughtLevel:
 	jr nz, .print
 	ld a, EGG_LEVEL ; egg hatch level
 .print
-	ld [wTextDecimalByte], a
-	hlcoord 15, 14
+	ld [hl], '<LV>'
+	inc hl
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	hlcoord 14, 14
-	ld [hl], '<LV>'
 	ret
 
 .unknown_level
 	ld de, .MetUnknownLevelString
-	hlcoord 15, 14
-	call PlaceString
-	ret  
+	jp PlaceString
+
+.times
+	db "Morning@"
+	db "Day@"
+	db "Night@"
+	db "Evening@"
+
+.unknown_time_text
+	db "Unknown@"
+
+.AtString:
+	db "at@"
 
 .MetUnknownLevelString:
 	db "??@"

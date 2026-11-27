@@ -81,6 +81,5 @@ PredefPointers::
 	add_predef Player_LoadNonFaintStatus
 	add_predef Enemy_LoadNonFaintStatus
 	add_predef GetMonTypeIndex
-	add_predef PrintNature
-	add_predef PrintNatureIndicators ; retained for the predef index; now a no-op
+	add_predef PrintNatureCentered
 	dbw -1, DummyEndPredef ; pointless

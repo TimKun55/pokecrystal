@@ -260,6 +260,22 @@ FarPlaceStringRet:
 	ld [rROMB0], a
 	ret
 
+StringLength::
+; Return the length of the "@"-terminated string at de in b.
+; de is preserved.
+	push de
+	ld b, 0
+.loop
+	ld a, [de]
+	cp '@'
+	jr z, .done
+	inc b
+	inc de
+	jr .loop
+.done
+	pop de
+	ret
+
 FarPlaceString::
 	ldh a, [hROMBank]
 	push af
