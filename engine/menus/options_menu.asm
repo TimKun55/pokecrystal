@@ -68,6 +68,7 @@ _Option:
 .notA
 	call OptionsControl
 	jr c, .dpad
+	call Options_SetRowContext
 	call GetOptionPointer
 	jr c, .ExitOptions
 	jr .joypad_loop
@@ -130,107 +131,114 @@ Options_DrawDescriptionTextbox:
 	ld c, SCREEN_WIDTH - 2
 	jp Textbox
 
-StringOptions0:
-	db "Text Speed<LF>"
-	db "        :<LF>"
-	db "Battle Scene<LF>"
-	db "        :<LF>"
-	db "Battle Style<LF>"
-	db "        :<LF>"
-	db "Sound<LF>"
-	db "        :<LF>"
-	db "Running Shoes<LF>"
-	db "        :<LF>@"
+Options_Names:
+	table_width 2
+	dw .TextSpeed
+	dw .BattleScene
+	dw .BattleStyle
+	dw .Sound
+	dw .Running
+	dw .MenuAccount
+	dw .Frame
+	dw .Font
+	dw .RTC
+	dw .Done
+	assert_table_length NUM_OPTIONS
 
-StringOptions1:
-	db "Battle Scene<LF>"
-	db "        :<LF>"
-	db "Battle Style<LF>"
-	db "        :<LF>"
-	db "Sound<LF>"
-	db "        :<LF>"
-	db "Running Shoes<LF>"
-	db "        :<LF>"
-	db "Menu Account<LF>"
-	db "        :<LF>@"
+.TextSpeed:   db "Text Speed@"
+.BattleScene: db "Battle Scene@"
+.BattleStyle: db "Battle Style@"
+.Sound:       db "Sound@"
+.Running:     db "Running Shoes@"
+.MenuAccount: db "Menu Account@"
+.Frame:       db "Frame@"
+.Font:        db "Font@"
+.RTC:         db "RTC@"
+.Done:        db "Done@"
 
-StringOptions2:
-	db "Battle Style<LF>"
-	db "        :<LF>"
-	db "Sound<LF>"
-	db "        :<LF>"
-	db "Running Shoes<LF>"
-	db "        :<LF>"
-	db "Menu Account<LF>"
-	db "        :<LF>"
-	db "Frame<LF>"
-	db "        :Type<LF>@"
-
-StringOptions3:
-	db "Sound<LF>"
-	db "        :<LF>"
-	db "Running Shoes<LF>"
-	db "        :<LF>"
-	db "Menu Account<LF>"
-	db "        :<LF>"
-	db "Frame<LF>"
-	db "        :Type<LF>"
-	db "Font<LF>"
-	db "        :Font<LF>@"
-
-StringOptions4:
-	db "Running Shoes<LF>"
-	db "        :<LF>"
-	db "Menu Account<LF>"
-	db "        :<LF>"
-	db "Frame<LF>"
-	db "        :Type<LF>"
-	db "Font<LF>"
-	db "        :Font<LF>"
-	db "RTC<LF>"
-	db "        :<LF>@"
-
-StringOptions5:
-	db "Menu Account<LF>"
-	db "        :<LF>"
-	db "Frame<LF>"
-	db "        :Type<LF>"
-	db "Font<LF>"
-	db "        :Font<LF>"
-	db "RTC<LF>"
-	db "        :<LF>"
-	db "Done@"
+Options_TypePrefix: db "Type@"
 
 Options_PlaceStrings:
 	ld a, [wOptionsScrollPosition]
-	or a
-	jr z, .string0
-	cp 1
-	jr z, .string1
-	cp 2
-	jr z, .string2
-	cp 3
-	jr z, .string3
-	cp 4
-	jr z, .string4
-	ld de, StringOptions5
-	jr .place_string
-.string4
-	ld de, StringOptions4
-	jr .place_string
-.string0
-	ld de, StringOptions0
-	jr .place_string
-.string1
-	ld de, StringOptions1
-	jr .place_string
-.string2
-	ld de, StringOptions2
-	jr .place_string
-.string3
-	ld de, StringOptions3
-.place_string
+	cp OPTIONS_SCROLL_BOTTOM + 1
+	jr c, .valid_scroll
+	ld a, OPTIONS_SCROLL_BOTTOM
+.valid_scroll
+	ld b, a
+	ld c, NUM_VISIBLE_OPTIONS
+	hlcoord 2, 1
+.loop
+	push bc
+	push hl
+
+	; Option index = first visible option + row within the window.
+	ld a, NUM_VISIBLE_OPTIONS
+	sub c
+	add b
+	cp OPT_CANCEL + 1
+	jr c, .valid_index
+	ld a, OPT_CANCEL
+.valid_index
+	ld [wOptionsMenuRowSelection], a
+
+	; Cache the value coordinate: one row down, nine columns right.
+	ld de, SCREEN_WIDTH + 9
+	add hl, de
+	ld a, l
+	ld [wOptionsMenuValueCoord], a
+	ld a, h
+	ld [wOptionsMenuValueCoord + 1], a
+
+	pop hl
+	push hl
+	call Options_GetOptionName
 	call PlaceString
+	pop hl
+
+	ld a, [wOptionsMenuRowSelection]
+	cp OPT_CANCEL
+	jr z, .next_row
+
+	push hl
+	ld de, SCREEN_WIDTH + 8
+	add hl, de
+	ld [hl], ':'
+	inc hl
+	ld a, [wOptionsMenuRowSelection]
+	cp OPT_FRAME
+	jr nz, .not_frame
+	ld de, Options_TypePrefix
+	call PlaceString
+	jr .value_done
+.not_frame
+	cp OPT_FONT
+	jr nz, .value_done
+	ld de, Options_Names.Font
+	call PlaceString
+.value_done
+	pop hl
+
+.next_row
+	ld de, 2 * SCREEN_WIDTH
+	add hl, de
+	pop bc
+	dec c
+	jr nz, .loop
+	ret
+
+Options_GetOptionName:
+; In: wOptionsMenuRowSelection = option index. Out: DE = name pointer. HL is preserved.
+	ld a, [wOptionsMenuRowSelection]
+	add a
+	ld e, a
+	ld d, 0
+	push hl
+	ld hl, Options_Names
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	pop hl
 	ret
 
 GetOptionPointer:
@@ -823,6 +831,7 @@ Options_UpdateValues:
 	ld b, a
 .loop
 	push bc
+	call Options_SetRowContext
 	call GetOptionPointer
 	pop bc
 	ld hl, wJumptableIndex
@@ -834,12 +843,14 @@ Options_UpdateValues:
 	jr c, .load_fonts_only
 	ld a, OPT_FRAME
 	ld [wJumptableIndex], a
+	call Options_SetRowContext
 	call UpdateFrame
 	ld a, [wOptionsScrollPosition]
 	cp 3
 	jr c, .load_standard_font
 	ld a, OPT_FONT
 	ld [wJumptableIndex], a
+	call Options_SetRowContext
 	call UpdateFont
 	jr .font_loaded
 .load_fonts_only
@@ -1223,14 +1234,30 @@ Options_DisplayNumber:
 	ret
 
 Options_GetValuePosition:
+	ld a, [wOptionsMenuValueCoord]
+	ld l, a
+	ld a, [wOptionsMenuValueCoord + 1]
+	ld h, a
+	ret
+
+; Prepare the row state used by the value-drawing routines.
+Options_SetRowContext:
 	ld a, [wJumptableIndex]
+	ld [wOptionsMenuRowSelection], a
 	ld b, a
 	ld a, [wOptionsScrollPosition]
 	ld c, a
 	ld a, b
 	sub c
-; BC already advances by two screen rows per option.
+	cp NUM_VISIBLE_OPTIONS
+	jr c, .valid_row
+	ld a, NUM_VISIBLE_OPTIONS - 1
+.valid_row
 	ld hl, wTilemap + 2 * SCREEN_WIDTH + 11
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
+	ld a, l
+	ld [wOptionsMenuValueCoord], a
+	ld a, h
+	ld [wOptionsMenuValueCoord + 1], a
 	ret

@@ -1805,6 +1805,10 @@ wNumHits:: db
 ; runtime scroll position for the options menu
 wOptionsScrollPosition::
 	ds 1
+wOptionsMenuRowSelection::
+	ds 1
+wOptionsMenuValueCoord::
+	ds 2
 
 ; description paging state for the options menu
 wOptionsMenuDescriptionAddr::
