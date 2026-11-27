@@ -381,7 +381,7 @@ PromptButton::
 	farcall _LyraAutoInput_A
 
 .input_wait_loop
-	call .blink_cursor
+	call BlinkTextCursor
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
 	and PAD_A | PAD_B
@@ -397,7 +397,9 @@ PromptButton::
 	ldh [hOAMUpdate], a
 	ret
 
-.blink_cursor
+; Toggle the standard textbox page cursor at 18,17.
+; Shared by PromptButton and nonblocking menus such as the Options pager.
+BlinkTextCursor::
 	ldh a, [hVBlankCounter]
 	and %00010000 ; bit 4, a
 	jr z, .cursor_off
@@ -405,9 +407,14 @@ PromptButton::
 	jr .load_cursor_state
 
 .cursor_off
-	lda_coord 17, 17
+	jp UnloadTextCursor
 
 .load_cursor_state
+	ldcoord_a 18, 17
+	ret
+
+UnloadTextCursor::
+	lda_coord 17, 17
 	ldcoord_a 18, 17
 	ret
 

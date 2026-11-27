@@ -13,7 +13,12 @@
 DEF NUM_OPTIONS EQU const_value ; 10
 ; Leave the lower rows free for the selected option's description.
 DEF NUM_VISIBLE_OPTIONS EQU 5
-DEF OPTIONS_SCROLL_BOTTOM EQU 5
+DEF OPTIONS_SCROLL_BOTTOM EQU NUM_OPTIONS - NUM_VISIBLE_OPTIONS
+
+DEF OPTDESCSTATE_PAGE   EQU 0
+DEF OPTDESCSTATE_SCROLL EQU 1
+DEF OPTDESCSTATE_DONE   EQU 2
+DEF OPTDESCSTATE_TYPING EQU 3
 
 _Option:
 	call ClearJoypad
@@ -25,18 +30,6 @@ _Option:
 	call ClearTilemap
 	call Options_LoadEdgeTiles
 	call Options_DrawFrame
-	xor a
-	ld [wJumptableIndex], a
-	ld a, $ff
-	ld [wOptionsScrollPosition], a
-	call Options_UpdateWindow
-	call Options_UpdateDescription
-
-	xor a
-	ld [wJumptableIndex], a
-	inc a
-	ldh [hBGMapMode], a
-	call WaitBGMap
 	ld b, CGB_PLAIN
 	call GetCGBLayout
 	ld hl, Options_BGPalettes
@@ -44,16 +37,40 @@ _Option:
 	ld bc, 1 palettes
 	call FarCopyColorWRAM
 	call SetDefaultBGPAndOBP
+	xor a
+	ld [wJumptableIndex], a
+	ld a, $ff
+	ld [wOptionsScrollPosition], a
+	call Options_UpdateWindow
+	call Options_UpdateDescription
+
+	ld a, 1
+	ldh [hBGMapMode], a
+	call WaitBGMap
 
 .joypad_loop
 	call JoyTextDelay
+	call DelayFrame
+	call Options_UpdateDescriptionTyping
+	call Options_AnimateDescriptionCursor
 	ldh a, [hJoyPressed]
 	and PAD_START | PAD_B
 	jr nz, .ExitOptions
+	ldh a, [hJoyPressed]
+	and PAD_A
+	jr z, .notA
+	ld a, [wJumptableIndex]
+	cp OPT_CANCEL
+	jr z, .ExitOptions
+	call PlayClickSFX
+	call Options_AdvanceDescription
+	jr .joypad_loop
+.notA
 	call OptionsControl
 	jr c, .dpad
 	call GetOptionPointer
 	jr c, .ExitOptions
+	jr .joypad_loop
 
 .dpad
 	call Options_UpdateWindow
@@ -82,6 +99,8 @@ Options_LoadEdgeTiles:
 
 Options_BGPalettes:
 	INCLUDE "gfx/options/options_bg.pal"
+
+INCLUDE "data/options/options_descriptions.asm"
 
 Options_DrawEdges:
 	hlcoord 0, 0
@@ -348,20 +367,17 @@ Options_BattleScene:
 
 .ToggleOn:
 	res BATTLE_SCENE, [hl]
-	ld de, .On
+	ld de, Options_OnText
 	jr .Display
 
 .ToggleOff:
 	set BATTLE_SCENE, [hl]
-	ld de, .Off
+	ld de, Options_OffText
 
 .Display:
 	call Options_DisplayValue
 	and a
 	ret
-
-.On:  db "On @"
-.Off: db "Off@"
 
 Options_BattleStyle:
 	ld hl, wOptions
@@ -466,20 +482,17 @@ Options_Running:
 
 .ToggleOff:
 	res RUNNING, [hl]
-	ld de, .Off
+	ld de, Options_OffText
 	jr .Display
 
 .ToggleOn:
 	set RUNNING, [hl]
-	ld de, .On
+	ld de, Options_OnText
 
 .Display:
 	call Options_DisplayValue
 	and a
 	ret
-
-.Off: db "Off@"
-.On:  db "On @"
 
 Options_MenuAccount:
 	ld hl, wOptions2
@@ -503,20 +516,17 @@ Options_MenuAccount:
 
 .ToggleOff:
 	res MENU_ACCOUNT, [hl]
-	ld de, .Off
+	ld de, Options_OffText
 	jr .Display
 
 .ToggleOn:
 	set MENU_ACCOUNT, [hl]
-	ld de, .On
+	ld de, Options_OnText
 
 .Display:
 	call Options_DisplayValue
 	and a
 	ret
-
-.Off: db "Off@"
-.On:  db "On @"
 
 Options_Frame:
 	ld hl, wTextboxFrame
@@ -611,14 +621,17 @@ Options_RealTimeClock:
 	call SetClock
 
 .Display:
-	ld de, RTCOptionOn
+	ld de, Options_OnText
 	ld a, [wOptions2]
 	bit NO_RTC, a
 	jr z, .Place
-	ld de, RTCOptionOff
+	ld de, Options_OffText
 .Place:
 	call Options_DisplayValue
 	ret
+
+Options_OnText::  db "On @"
+Options_OffText:: db "Off@"
 
 Options_Done:
 	ldh a, [hJoyPressed]
@@ -644,15 +657,10 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckMenuAccount
+	jr nz, .Increase
 	ld [hl], OPT_TEXT_SPEED ; first option
 	scf
 	ret
-
-.CheckMenuAccount: ; I have no idea why this exists...
-	cp OPT_MENU_ACCOUNT
-	jr nz, .Increase
-	ld [hl], OPT_MENU_ACCOUNT
 
 .Increase:
 	inc [hl]
@@ -661,15 +669,6 @@ OptionsControl:
 
 .UpPressed:
 	ld a, [hl]
-
-; Another thing where I'm not sure why it exists
-	cp OPT_FRAME
-	jr nz, .NotFrame
-	ld [hl], OPT_MENU_ACCOUNT
-	scf
-	ret
-
-.NotFrame:
 	and a ; OPT_TEXT_SPEED, minimum option index
 	jr nz, .Decrease
 	ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
@@ -682,13 +681,13 @@ OptionsControl:
 Options_UpdateCursorPosition:
 	hlcoord 1, 1
 	ld de, SCREEN_WIDTH
-	ld c, 11
+	ld c, 2 * NUM_VISIBLE_OPTIONS + 1
 .loop
 	ld [hl], ' '
 	add hl, de
 	dec c
 	jr nz, .loop
-	hlcoord 1, 2
+	hlcoord 1, 1
 	ld a, [wJumptableIndex]
 	ld b, a
 	ld a, [wOptionsScrollPosition]
@@ -698,6 +697,29 @@ Options_UpdateCursorPosition:
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
 	ld [hl], '▶'
+	ret
+
+; Scroll arrows on the right side of the menu box.
+Options_UpdateArrows:
+; Restore the rightmost interior cell, then show ▲ if scrolled down.
+	lda_coord 17, 0
+	ldcoord_a 18, 0
+	ld a, [wOptionsScrollPosition]
+	and a
+	jr z, .no_up
+	ld a, '▲'
+	ldcoord_a 18, 0
+.no_up
+; Restore the rightmost interior cell above the description box, then show
+; ▼ if there are more options below the current window.
+	lda_coord 17, 11
+	ldcoord_a 18, 11
+	ld a, [wOptionsScrollPosition]
+	cp OPTIONS_SCROLL_BOTTOM
+	jr z, .done
+	ld a, '▼'
+	ldcoord_a 18, 11
+.done
 	ret
 
 ; Calculate the first option visible in the scrolling window.
@@ -722,7 +744,7 @@ Options_GetScrollPosition:
 	cp OPT_TEXT_SPEED
 	jr z, .top
 	ld a, b
-	add a, 4
+	add a, NUM_VISIBLE_OPTIONS - 1
 	ld c, a
 	ld a, [wJumptableIndex]
 	cp c
@@ -767,16 +789,17 @@ Options_UpdateWindow:
 	jr z, .return
 	ld a, b
 	ld [wOptionsScrollPosition], a
-	hlcoord 2, 2
+	hlcoord 2, 1
 	ld a, ' '
 	ld b, 10
 	ld c, 16
 	call FillBoxWithByte
 ; FillBoxWithByte advances HL, so restore the label position.
-	hlcoord 2, 2
+	hlcoord 2, 1
 	call Options_PlaceStrings
 	call Options_UpdateCursorPosition
 	call Options_UpdateValues
+	call Options_UpdateArrows
 .return
 	ret
 
@@ -831,98 +854,356 @@ Options_UpdateValues:
 	ld [wJumptableIndex], a
 	ret
 
-; Redraw the two-line description for the selected option.
+; Redraw the description for the selected option.
 Options_UpdateDescription:
 	call Options_DrawDescriptionTextbox
+	call Options_LookupDescription
+	jp Options_StartDescriptionPage
+
+; Point at the selected description in this ROM bank. The renderer reads it
+; directly and stops at page markers without waiting for input.
+Options_LookupDescription:
 	ld a, [wJumptableIndex]
-	call Options_GetDescriptionLine1
-	push de
-	hlcoord 1, 14
-	ld a, ' '
-	ld b, 3
-	ld c, 16
-	call FillBoxWithByte
-	pop de
-	hlcoord 1, 14
-	call PlaceString
-	call Options_GetDescriptionLine2
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, OptionsDescriptions
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ld a, l
+	ld [wOptionsMenuDescriptionAddr], a
+	ld a, h
+	ld [wOptionsMenuDescriptionAddr + 1], a
+	xor a
+	ld [wOptionsMenuDescriptionState], a
+	ret
+
+; Start the current description page. Text Speed uses the configured text
+; speed so the player can see how fast the selected setting actually is.
+; Instant text keeps the original immediate renderer.
+Options_StartDescriptionPage:
+	ld a, [wJumptableIndex]
+	cp OPT_TEXT_SPEED
+	jr nz, .instant
+	ld a, [wOptions]
+	and TEXT_DELAY_MASK
+	jr z, .instant
+
+	ld a, [wOptionsMenuDescriptionState]
+	cp OPTDESCSTATE_SCROLL
+	jr z, .scroll
+	xor a
+	jr .set_scroll
+.scroll
+	ld a, TRUE
+.set_scroll
+	ld [wOptionsMenuDescriptionScroll], a
+
+	ld hl, wOptionsMenuDescriptionAddr
+	ld a, [hli]
+	ld [wOptionsMenuDescriptionPageAddr], a
+	ld a, [hl]
+	ld [wOptionsMenuDescriptionPageAddr + 1], a
+
+	xor a
+	ld [wOptionsMenuDescriptionVisibleChars], a
+	ld [wOptionsMenuDescriptionDelay], a
+	ld a, OPTDESCSTATE_TYPING
+	ld [wOptionsMenuDescriptionState], a
+	call Options_RedrawTypingPage
+	ret
+
+.instant
+	jp Options_PlaceDescriptionText
+
+; Called once per frame by the Options loop. Reveals one character when the
+; current frame delay has expired.
+Options_UpdateDescriptionTyping:
+	ld a, [wOptionsMenuDescriptionState]
+	cp OPTDESCSTATE_TYPING
+	ret nz
+	ld a, [wOptionsMenuDescriptionDelay]
+	and a
+	jr z, .reveal
+	dec a
+	ld [wOptionsMenuDescriptionDelay], a
+	jr nz, .done
+.reveal
+	jp Options_RedrawTypingPage
+.done
+	ret
+
+; Redraw the current page with wOptionsMenuDescriptionVisibleChars characters
+; shown. Control tokens are free; printable characters cost one delay each.
+Options_RedrawTypingPage:
+	call Options_ClearDescriptionRows
+
+	ld hl, wOptionsMenuDescriptionPageAddr
+	ld a, [hli]
+	ld e, a
+	ld a, [hl]
+	ld d, a
+
+	ld a, [wOptionsMenuDescriptionScroll]
+	and a
+	jr z, .fresh
+	bccoord 1, 16
+	jr .init_counts
+.fresh
+	bccoord 1, 14
+
+.init_counts
+	push bc
+	ld hl, wOptionsMenuDescriptionVisibleChars
+	inc [hl]
+	ld b, [hl] ; characters still to write
+	ld c, 0    ; total printable characters on this page
+	pop hl     ; tilemap destination
+
+.loop
+	ld a, [de]
+	cp '@'
+	jr z, .stop
+	cp '<PARA>'
+	jr z, .stop
+	cp '<CONT>'
+	jr z, .stop
+	cp '<PROMPT>'
+	jr z, .stop
+	cp '<DONE>'
+	jr z, .stop
+	cp '<LINE>'
+	jr z, .new_line
+	cp '<NEXT>'
+	jr z, .new_line
+
+	inc c
+	ld a, b
+	and a
+	jr z, .no_write
+	dec b
+	ld a, [de] ; reload the character; A was clobbered by the count test
+	ld [hli], a
+.no_write
+	inc de
+	jr .loop
+
+.new_line
+	inc de
 	hlcoord 1, 16
-	call PlaceString
+	jr .loop
+
+.stop
+	ld [wOptionsMenuDescriptionStopChar], a
+	inc de
+	ld a, e
+	ld [wOptionsMenuDescriptionResumeAddr], a
+	ld a, d
+	ld [wOptionsMenuDescriptionResumeAddr + 1], a
+
+	ld a, [wOptionsMenuDescriptionVisibleChars]
+	cp c
+	jr c, .still_typing
+
+	ld a, [wOptionsMenuDescriptionStopChar]
+	cp '<PARA>'
+	jr z, .more_para
+	cp '<CONT>'
+	jr z, .more_cont
+
+	call Options_HideDescriptionCursor
+	ld a, OPTDESCSTATE_DONE
+	ld [wOptionsMenuDescriptionState], a
 	ret
 
-Options_GetDescriptionLine1:
-	ld a, [wJumptableIndex]
-	ld e, a
-	ld d, 0
-	ld hl, .Pointers
-	add hl, de
-	add hl, de
+.more_para
+	call Options_CopyResumeAddr
+	xor a ; OPTDESCSTATE_PAGE
+	ld [wOptionsMenuDescriptionState], a
+	jp Options_ShowDescriptionCursor
+
+.more_cont
+	call Options_CopyResumeAddr
+	ld a, OPTDESCSTATE_SCROLL
+	ld [wOptionsMenuDescriptionState], a
+	jp Options_ShowDescriptionCursor
+
+.still_typing
+	; Use the currently selected speed for the next character. Changing the
+	; setting mid-description takes effect immediately.
+	ld a, [wOptions]
+	and TEXT_DELAY_MASK
+	ld [wOptionsMenuDescriptionDelay], a
+	ret
+
+Options_CopyResumeAddr:
+	ld a, [wOptionsMenuDescriptionResumeAddr]
+	ld [wOptionsMenuDescriptionAddr], a
+	ld a, [wOptionsMenuDescriptionResumeAddr + 1]
+	ld [wOptionsMenuDescriptionAddr + 1], a
+	ret
+
+; A button: advance one <PARA>/<CONT> page, or replay a finished description.
+; While the Text Speed description is printing, A finishes the current page.
+Options_AdvanceDescription:
+	ld a, [wOptionsMenuDescriptionState]
+	cp OPTDESCSTATE_TYPING
+	jr z, .finish_typing
+	cp OPTDESCSTATE_DONE
+	jr nz, .advance
+	call Options_UpdateDescription
+	jr .redraw_edges
+.finish_typing
+	ld a, 254
+	ld [wOptionsMenuDescriptionVisibleChars], a
+	call Options_RedrawTypingPage
+	jr .redraw_edges
+.advance
+	call Options_StartDescriptionPage
+.redraw_edges
+	jp ApplyTilemapInVBlank
+
+; Print the current description page without ever waiting for a button.
+Options_PlaceDescriptionText:
+	ld a, [wOptionsMenuDescriptionState]
+	cp OPTDESCSTATE_DONE
+	ret z
+	cp OPTDESCSTATE_SCROLL
+	jr z, .scroll
+
+	call Options_ClearDescriptionRows
+	ld hl, wOptionsMenuDescriptionAddr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld e, l
-	ld d, h
-	ret
-.Pointers:
-	dw OptionsDescriptionTextSpeed1
-	dw OptionsDescriptionBattleScene1
-	dw OptionsDescriptionBattleStyle1
-	dw OptionsDescriptionSound1
-	dw OptionsDescriptionRunning1
-	dw OptionsDescriptionMenuAccount1
-	dw OptionsDescriptionFrame1
-	dw OptionsDescriptionFont1
-	dw RTCOptionDesc1
-	dw OptionsDescriptionDone1
+	bccoord 1, 14
+	call Options_PrintDescriptionSegment
+	jr .check_stop
 
-OptionsDescriptionTextSpeed1: db "Change the speed@"
-OptionsDescriptionTextSpeed2: db "of game text@"
-OptionsDescriptionBattleScene1: db "Show animations@"
-OptionsDescriptionBattleScene2: db "in battle@"
-OptionsDescriptionBattleStyle1: db "Switch #mon@"
-OptionsDescriptionBattleStyle2: db "in battle@"
-OptionsDescriptionSound1: db "Play music in@"
-OptionsDescriptionSound2: db "Mono or Stereo@"
-OptionsDescriptionRunning1: db "Hold B to change@"
-OptionsDescriptionRunning2: db "travel speed@"
-OptionsDescriptionMenuAccount1: db "Show description@"
-OptionsDescriptionMenuAccount2: db "for Menu options@"
-OptionsDescriptionFrame1: db "Change the frame@"
-OptionsDescriptionFrame2: db "for textboxes@"
-OptionsDescriptionFont1: db "Change the font@"
-OptionsDescriptionFont2: db "of game text@"
-OptionsDescriptionDone1: db "Save changes@"
-OptionsDescriptionDone2: db "and Exit@"
-
-Options_GetDescriptionLine2:
-	ld a, [wJumptableIndex]
-	ld e, a
-	ld d, 0
-	ld hl, .Pointers
-	add hl, de
-	add hl, de
+.scroll
+	call Options_HideDescriptionCursor
+	call Options_ScrollDescriptionRows
+	ld hl, wOptionsMenuDescriptionAddr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld e, l
-	ld d, h
-	ret
-.Pointers:
-	dw OptionsDescriptionTextSpeed2
-	dw OptionsDescriptionBattleScene2
-	dw OptionsDescriptionBattleStyle2
-	dw OptionsDescriptionSound2
-	dw OptionsDescriptionRunning2
-	dw OptionsDescriptionMenuAccount2
-	dw OptionsDescriptionFrame2
-	dw OptionsDescriptionFont2
-	dw RTCOptionDesc2
-	dw OptionsDescriptionDone2
+	bccoord 1, 16
+	call Options_PrintDescriptionSegment
 
-RTCOptionOn:: db "On @"
-RTCOptionOff:: db "Off@"
-RTCOptionDesc1:: db "Off: time runs on-@"
-RTCOptionDesc2:: db "ly while playing.@"
+.check_stop
+	ld a, [wOptionsMenuDescriptionStopChar]
+	cp '<PARA>'
+	jr z, .more_para
+	cp '<CONT>'
+	jr z, .more_cont
+
+	call Options_HideDescriptionCursor
+	ld a, OPTDESCSTATE_DONE
+	ld [wOptionsMenuDescriptionState], a
+	ret
+
+.more_para
+	call Options_SaveResumeAddr
+	xor a ; OPTDESCSTATE_PAGE
+	ld [wOptionsMenuDescriptionState], a
+	jr Options_ShowDescriptionCursor
+
+.more_cont
+	call Options_SaveResumeAddr
+	ld a, OPTDESCSTATE_SCROLL
+	ld [wOptionsMenuDescriptionState], a
+	jr Options_ShowDescriptionCursor
+
+Options_ShowDescriptionCursor:
+	ld a, '▼'
+	ldcoord_a 18, 17
+	ret
+
+Options_SaveResumeAddr:
+	ld a, e
+	ld [wOptionsMenuDescriptionAddr], a
+	ld a, d
+	ld [wOptionsMenuDescriptionAddr + 1], a
+	ret
+
+Options_ClearDescriptionRows:
+	call Options_HideDescriptionCursor
+	ld a, ' '
+	hlcoord 1, 14
+	lb bc, 0, 18
+	call ByteFill
+	hlcoord 1, 16
+	lb bc, 0, 18
+	jp ByteFill
+
+Options_HideDescriptionCursor:
+	jp UnloadTextCursor
+
+; Use the game's standard textbox cursor blink. The Options loop is
+; nonblocking, so call the shared toggle directly instead of PromptButton.
+Options_AnimateDescriptionCursor:
+	ld a, [wOptionsMenuDescriptionState]
+	cp OPTDESCSTATE_DONE
+	ret z
+	cp OPTDESCSTATE_TYPING
+	ret z
+	jp BlinkTextCursor
+
+Options_ScrollDescriptionRows:
+	hlcoord 1, 14
+	decoord 1, 16
+	ld b, 18
+.loop
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec b
+	jr nz, .loop
+	hlcoord 1, 16
+	ld a, ' '
+	lb bc, 0, 18
+	jp ByteFill
+
+; Print directly from ROM until the next page/scroll/end marker.
+; In: HL = string pointer, BC = starting coordinates.
+; Out: DE = resume pointer, wOptionsMenuDescriptionStopChar = stop marker.
+Options_PrintDescriptionSegment:
+	ld d, h
+	ld e, l
+	ld h, b
+	ld l, c
+.loop
+	ld a, [de]
+	cp '@'
+	jr z, .found_stop
+	cp '<PARA>'
+	jr z, .found_stop
+	cp '<CONT>'
+	jr z, .found_stop
+	cp '<PROMPT>'
+	jr z, .found_stop
+	cp '<DONE>'
+	jr z, .found_stop
+	cp '<LINE>'
+	jr z, .new_line
+	cp '<NEXT>'
+	jr z, .new_line
+	ld [hli], a
+	inc de
+	jr .loop
+
+.new_line
+	inc de
+	hlcoord 1, 16
+	jr .loop
+
+.found_stop
+	ld [wOptionsMenuDescriptionStopChar], a
+	inc de
+	ret
 
 Options_DisplayValue:
 	push de
@@ -949,7 +1230,7 @@ Options_GetValuePosition:
 	ld a, b
 	sub c
 ; BC already advances by two screen rows per option.
-	ld hl, wTilemap + 3 * SCREEN_WIDTH + 11
+	ld hl, wTilemap + 2 * SCREEN_WIDTH + 11
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
 	ret

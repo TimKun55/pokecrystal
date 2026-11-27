@@ -1806,6 +1806,24 @@ wNumHits:: db
 wOptionsScrollPosition::
 	ds 1
 
+; description paging state for the options menu
+wOptionsMenuDescriptionAddr::
+	ds 2
+wOptionsMenuDescriptionState::
+	ds 1
+wOptionsMenuDescriptionStopChar::
+	ds 1
+wOptionsMenuDescriptionPageAddr::
+	ds 2
+wOptionsMenuDescriptionResumeAddr::
+	ds 2
+wOptionsMenuDescriptionVisibleChars::
+	ds 1
+wOptionsMenuDescriptionDelay::
+	ds 1
+wOptionsMenuDescriptionScroll::
+	ds 1
+
 wOptions::
 ; bit 0-2: number of frames to delay when printing text
 ;   fast 1; mid 3; slow 5
