@@ -1120,7 +1120,7 @@ TrainerInfo_ShowPlayerMini:
 	ld a, TRAINER_INFO_PLAYER_TILE
 	call GetMiniNoItem                ; 8 tiles from $40, DVs in de
 	ld d, $38                         ; y: row 7
-	ld e, $20                         ; x: column 4
+	ld e, $40                         ; x: column 8
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct        ; bc = struct
 	ret c                             ; no free struct: give up
@@ -1136,7 +1136,7 @@ TrainerInfo_ShowEnemyMini:
 	ld a, TRAINER_INFO_ENEMY_TILE
 	call GetMiniNoItem
 	ld d, $38                         ; y: row 7
-	ld e, $70                         ; x: column 14
+	ld e, $90                         ; x: column 18
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
 	ret c                             ; no free struct: give up

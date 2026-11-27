@@ -1450,7 +1450,7 @@ PlayerTypeIcons:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
-	hlcoord 5, 4
+	hlcoord 1, 4
 	ld [hl], $00
 	inc hl
 	ld [hl], $01
@@ -1480,7 +1480,7 @@ PlayerTypeIcons:
 	call Request2bpp
 
 ; place Type 2 GFX
-	hlcoord 5, 5
+	hlcoord 1, 5
 	ld [hl], $04
 	inc hl
 	ld [hl], $05
@@ -1507,7 +1507,7 @@ EnemyTypeIcons:
 	call Request2bpp
 
 ; placing the Type1 Tiles (from gfx/battle/types_light_2.png)
-	hlcoord 15, 4
+	hlcoord 11, 4
 	ld [hl], $08
 	inc hl
 	ld [hl], $09
@@ -1537,7 +1537,7 @@ EnemyTypeIcons:
 	call Request2bpp
 	
 ; place Type 2 GFX
-	hlcoord 15, 5
+	hlcoord 11, 5
 	ld [hl], $0c
 	inc hl
 	ld [hl], $0d

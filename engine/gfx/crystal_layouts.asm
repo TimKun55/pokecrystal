@@ -81,12 +81,12 @@ LoadBattleInfoBoxPals::
 	farcall LoadMonBaseTypePal
 .enemy_palettes_done
 
-	hlcoord 5, 4, wAttrmap
+	hlcoord 1, 4, wAttrmap
 	lb bc, 2, 4 ; height, width
 	ld a, $5 ; player type icon palette
 	call Crystal_FillBoxCGB
 
-	hlcoord 15, 4, wAttrmap
+	hlcoord 11, 4, wAttrmap
 	lb bc, 2, 4 ; height, width
 	ld a, $6 ; enemy type icon palette
 	call Crystal_FillBoxCGB
