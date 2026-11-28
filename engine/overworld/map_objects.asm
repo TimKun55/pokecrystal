@@ -157,7 +157,7 @@ HandleObjectAction:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_6, [hl]
-	jr nz, SetFacingStanding
+	jp nz, SetFacingStanding
 	bit FROZEN_F, [hl]
 	jr nz, _CallFrozenObjectAction
 ; use first column (normal)
@@ -168,7 +168,7 @@ HandleFrozenObjectAction:
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit INVISIBLE_F, [hl]
-	jr nz, SetFacingStanding
+	jp nz, SetFacingStanding
 _CallFrozenObjectAction:
 ; use second column (frozen)
 	ld de, ObjectActionPairPointers + 2
@@ -593,6 +593,7 @@ StepFunction_FromMovement:
 	dw MovementFunction_SplashingPuddle      ; 1c
 	dw MovementFunction_BigLugia             ; 1d
 	dw MovementFunction_BigHoOh              ; 1e
+	dw MovementFunction_Fruit                ; 1f
 	assert_table_length NUM_SPRITEMOVEFN
 
 MovementFunction_Null:
@@ -648,6 +649,17 @@ MovementFunction_Standing:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], OBJECT_ACTION_STAND
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_RESTORE
+	ret
+
+MovementFunction_Fruit:
+	call CopyLastCoordsToCoords
+	call EndSpriteMovement
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_FRUIT
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_RESTORE

@@ -39,10 +39,10 @@ GoldenrodFlowerShopGarden_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  6,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenKelpsyTree, -1
-	object_event  4,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenQualotTree, -1
-	object_event  8,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenPomegTree, -1
-	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenHondewTree, -1
-	object_event  5,  9, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenGrepaTree, -1
-	object_event  9,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopGardenTamatoTree, -1
+	fruittree_event 6, 5, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_KELPSY, PAL_NPC_BLUE, GoldenrodFlowerShopGardenKelpsyTree
+	fruittree_event 4, 7, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_QUALOT, PAL_NPC_PINK, GoldenrodFlowerShopGardenQualotTree
+	fruittree_event 8, 9, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_POMEG, PAL_NPC_ORANGE, GoldenrodFlowerShopGardenPomegTree
+	fruittree_event 7, 5, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_HONDEW, PAL_NPC_GREEN, GoldenrodFlowerShopGardenHondewTree
+	fruittree_event 5, 9, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_GREPA, PAL_NPC_YELLOW, GoldenrodFlowerShopGardenGrepaTree
+	fruittree_event 9, 7, FRUITTREE_GOLDENROD_FLOWER_SHOP_GARDEN_TAMATO, PAL_NPC_RED, GoldenrodFlowerShopGardenTamatoTree
 	

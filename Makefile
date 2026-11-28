@@ -259,6 +259,9 @@ gfx/trainers/swimmer_m.gbcpal: tools/gbcpal += --reverse
 gfx/new_game/shrink1.2bpp: RGBGFXFLAGS += --columns
 gfx/new_game/shrink2.2bpp: RGBGFXFLAGS += --columns
 
+gfx/sprites/tree_fruit_full.2bpp: gfx/sprites/tree_fruit.2bpp gfx/sprites/tree_fruit_blank.2bpp
+	cat $^ > $@
+
 gfx/mail/dragonite.1bpp: tools/gfx += --remove-whitespace
 gfx/mail/large_note.1bpp: tools/gfx += --remove-whitespace
 gfx/mail/surf_mail_border.1bpp: tools/gfx += --remove-whitespace

@@ -139,6 +139,17 @@ MACRO object_event
 	endc
 ENDM
 
+MACRO fruittree_event
+;\1: x: left to right, starts at 0
+;\2: y: top to bottom, starts at 0
+;\3: fruit tree id: a FRUITTREE_* constant
+;\4: palette: a PAL_NPC_* constant
+;\5: script pointer
+	; The fruit tree id minus 1 is kept in the x radius.
+	; SetFacingFruit reads it to pick the berry/apricorn/blank tile.
+	object_event \1, \2, SPRITE_TREE_FRUIT, SPRITEMOVEDATA_FRUIT, \3 - 1, 0, -1, -1, \4, OBJECTTYPE_SCRIPT, 0, \5, -1
+ENDM
+
 MACRO trainer
 ;\1: trainer group
 ;\2: trainer id

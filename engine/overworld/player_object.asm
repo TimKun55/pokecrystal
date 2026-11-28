@@ -506,6 +506,10 @@ CopyTempObjectToObjectStruct:
 
 .InitRadius:
 	ld h, a
+	ld a, [wTempObjectCopyMovement]
+	cp SPRITEMOVEDATA_FRUIT
+	ld a, h
+	jr z, .keep_radius
 	inc a
 	and $f
 	ld l, a
@@ -513,6 +517,7 @@ CopyTempObjectToObjectStruct:
 	add $10
 	and $f0
 	or l
+.keep_radius
 	ld hl, OBJECT_RADIUS
 	add hl, de
 	ld [hl], a

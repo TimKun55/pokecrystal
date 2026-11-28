@@ -39,6 +39,9 @@ Facings:
 	dw FacingBigLugia2
 	dw FacingBigHoOh1
 	dw FacingBigHoOh2
+	dw FacingApricorn
+	dw FacingBerry
+	dw FacingPickedFruit
 	assert_table_length NUM_FACINGS
 	dw 0 ; end
 
@@ -320,3 +323,15 @@ FacingBigHoOh2:
 	db 24, 16, OAM_XFLIP, $85
 	db 16, 20, OAM_XFLIP, $86
 	db 24, 20, OAM_XFLIP, $87
+
+FacingApricorn:
+	db 1 ; #
+	db  0,  4, 0, $01
+
+FacingBerry:
+	db 1 ; #
+	db 10,  3, 0, $00
+
+FacingPickedFruit:
+	db 1 ; #
+	db  0,  0, 0, $02

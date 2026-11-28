@@ -23,7 +23,40 @@ ObjectActionPairPointers:
 	dw SetFacingRunAction,             SetFacingCurrent
 	dw SetFacingBigLugia,              SetFacingFreezeBigLugia
 	dw SetFacingBigHoOh,               SetFacingFreezeBigHoOh
+	dw SetFacingFruit,                 SetFacingFruit
 	assert_table_length NUM_OBJECT_ACTIONS
+
+SetFacingFruit:
+; The fruit tree id minus 1 is stored in OBJECT_RADIUS.
+; Use wFruitTreeFlags to show the fruit, the empty tile, or nothing at all.
+	ld hl, OBJECT_RADIUS
+	add hl, bc
+	ld e, [hl]
+	push bc
+	ld d, 0
+	ld hl, wFruitTreeFlags
+	ld b, CHECK_FLAG
+	push de
+	call FlagAction
+	ld a, c
+	pop de
+	pop bc
+	and a
+	ld a, FACING_PICKED_FRUIT
+	jr nz, .done
+
+	ld a, e
+	cp FIRST_APRICORN_TREE - 1
+	jr c, .berry
+	cp FIRST_BERRY_TREE - 1
+	jr nc, .berry
+	ld a, FACING_APRICORN
+	jr .done
+
+.berry
+	ld a, FACING_BERRY
+.done
+	jp SetFixedFacing
 
 SetFacingStanding:
 	ld hl, OBJECT_FACING

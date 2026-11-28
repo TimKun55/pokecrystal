@@ -105,7 +105,7 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 68
 	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR ; 69
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 6a
-	tilecoll WALL, WALL, WALL, WALL ; 6b
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 6b
 	tilecoll WALL, FLOOR, WALL, WALL ; 6c
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 6d
 	tilecoll FLOOR, WALL, WALL, WALL ; 6e

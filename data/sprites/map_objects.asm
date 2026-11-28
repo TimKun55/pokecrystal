@@ -322,4 +322,12 @@ SpriteMovementData::
 	db HIGH_PRIORITY ; flags2
 	db STRENGTH_BOULDER | BIG_OBJECT ; palette flags
 
+; SPRITEMOVEDATA_FRUIT
+	db SPRITEMOVEFN_FRUIT ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_FRUIT ; action
+	db WONT_DELETE | FIXED_FACING | SLIDING | MOVE_ANYWHERE ; flags1
+	db 0 ; flags2
+	db 0 ; palette flags
+
 	assert_table_length NUM_SPRITEMOVEDATA

@@ -146,5 +146,5 @@ PewterCity_MapEvents:
 	object_event 26, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
 	object_event 26, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFatGuyScript, -1
 	object_event 17, 15, SPRITE_HIKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityHikerScript, -1
-	object_event 30,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityRawstTree, -1
-	object_event 27,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityChestoTree, -1
+	fruittree_event 30, 6, FRUITTREE_PEWTER_CITY_RAWST, PAL_NPC_BLUE, PewterCityRawstTree
+	fruittree_event 27, 6, FRUITTREE_PEWTER_CITY_CHESTO, PAL_NPC_PURPLE, PewterCityChestoTree
